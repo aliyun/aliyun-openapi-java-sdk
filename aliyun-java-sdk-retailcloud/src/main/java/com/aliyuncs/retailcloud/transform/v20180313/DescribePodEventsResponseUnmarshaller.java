@@ -38,14 +38,14 @@ public class DescribePodEventsResponseUnmarshaller {
 		List<PodEvent> podEvents = new ArrayList<PodEvent>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePodEventsResponse.Result.PodEvents.Length"); i++) {
 			PodEvent podEvent = new PodEvent();
+			podEvent.setType(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].Type"));
 			podEvent.setAction(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].Action"));
-			podEvent.setCount(_ctx.integerValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].Count"));
 			podEvent.setEventTime(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].EventTime"));
-			podEvent.setFirstTimestamp(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].FirstTimestamp"));
 			podEvent.setLastTimestamp(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].LastTimestamp"));
 			podEvent.setMessage(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].Message"));
 			podEvent.setReason(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].Reason"));
-			podEvent.setType(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].Type"));
+			podEvent.setCount(_ctx.integerValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].Count"));
+			podEvent.setFirstTimestamp(_ctx.stringValue("DescribePodEventsResponse.Result.PodEvents["+ i +"].FirstTimestamp"));
 
 			podEvents.add(podEvent);
 		}

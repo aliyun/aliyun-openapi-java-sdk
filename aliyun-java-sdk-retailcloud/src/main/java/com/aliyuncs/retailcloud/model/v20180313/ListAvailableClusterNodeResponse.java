@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAvailableClusterNodeResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,11 +35,17 @@ public class ListAvailableClusterNodeResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private List<ClusterNodeInfo> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -71,14 +79,6 @@ public class ListAvailableClusterNodeResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,76 +97,52 @@ public class ListAvailableClusterNodeResponse extends AcsResponse {
 
 	public static class ClusterNodeInfo {
 
-		private String oSName;
-
-		private String businessCode;
-
-		private String ecsConfiguration;
-
-		private String ecsCpu;
+		private String vpcId;
 
 		private String ecsEip;
 
-		private String ecsExpiredTime;
+		private String ecsOsType;
+
+		private String businessCode;
 
 		private String ecsLocalStorageCapacity;
 
-		private String ecsMemory;
-
-		private String ecsOsType;
-
-		private String ecsPrivateIp;
-
-		private String ecsPublicIp;
-
-		private String ecsZone;
-
 		private String instanceId;
-
-		private String instanceName;
-
-		private String instanceNetworkType;
-
-		private String instanceType;
-
-		private String internetMaxBandwidthIn;
 
 		private String internetMaxBandwidthOut;
 
+		private String internetMaxBandwidthIn;
+
+		private String instanceType;
+
+		private String ecsMemory;
+
+		private String ecsConfiguration;
+
 		private String regionId;
 
-		private String vpcId;
+		private String ecsPublicIp;
 
-		public String getOSName() {
-			return this.oSName;
+		private String ecsPrivateIp;
+
+		private String instanceNetworkType;
+
+		private String instanceName;
+
+		private String oSName;
+
+		private String ecsZone;
+
+		private String ecsExpiredTime;
+
+		private String ecsCpu;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setOSName(String oSName) {
-			this.oSName = oSName;
-		}
-
-		public String getBusinessCode() {
-			return this.businessCode;
-		}
-
-		public void setBusinessCode(String businessCode) {
-			this.businessCode = businessCode;
-		}
-
-		public String getEcsConfiguration() {
-			return this.ecsConfiguration;
-		}
-
-		public void setEcsConfiguration(String ecsConfiguration) {
-			this.ecsConfiguration = ecsConfiguration;
-		}
-
-		public String getEcsCpu() {
-			return this.ecsCpu;
-		}
-
-		public void setEcsCpu(String ecsCpu) {
-			this.ecsCpu = ecsCpu;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getEcsEip() {
@@ -177,12 +153,20 @@ public class ListAvailableClusterNodeResponse extends AcsResponse {
 			this.ecsEip = ecsEip;
 		}
 
-		public String getEcsExpiredTime() {
-			return this.ecsExpiredTime;
+		public String getEcsOsType() {
+			return this.ecsOsType;
 		}
 
-		public void setEcsExpiredTime(String ecsExpiredTime) {
-			this.ecsExpiredTime = ecsExpiredTime;
+		public void setEcsOsType(String ecsOsType) {
+			this.ecsOsType = ecsOsType;
+		}
+
+		public String getBusinessCode() {
+			return this.businessCode;
+		}
+
+		public void setBusinessCode(String businessCode) {
+			this.businessCode = businessCode;
 		}
 
 		public String getEcsLocalStorageCapacity() {
@@ -193,84 +177,12 @@ public class ListAvailableClusterNodeResponse extends AcsResponse {
 			this.ecsLocalStorageCapacity = ecsLocalStorageCapacity;
 		}
 
-		public String getEcsMemory() {
-			return this.ecsMemory;
-		}
-
-		public void setEcsMemory(String ecsMemory) {
-			this.ecsMemory = ecsMemory;
-		}
-
-		public String getEcsOsType() {
-			return this.ecsOsType;
-		}
-
-		public void setEcsOsType(String ecsOsType) {
-			this.ecsOsType = ecsOsType;
-		}
-
-		public String getEcsPrivateIp() {
-			return this.ecsPrivateIp;
-		}
-
-		public void setEcsPrivateIp(String ecsPrivateIp) {
-			this.ecsPrivateIp = ecsPrivateIp;
-		}
-
-		public String getEcsPublicIp() {
-			return this.ecsPublicIp;
-		}
-
-		public void setEcsPublicIp(String ecsPublicIp) {
-			this.ecsPublicIp = ecsPublicIp;
-		}
-
-		public String getEcsZone() {
-			return this.ecsZone;
-		}
-
-		public void setEcsZone(String ecsZone) {
-			this.ecsZone = ecsZone;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getInstanceNetworkType() {
-			return this.instanceNetworkType;
-		}
-
-		public void setInstanceNetworkType(String instanceNetworkType) {
-			this.instanceNetworkType = instanceNetworkType;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getInternetMaxBandwidthIn() {
-			return this.internetMaxBandwidthIn;
-		}
-
-		public void setInternetMaxBandwidthIn(String internetMaxBandwidthIn) {
-			this.internetMaxBandwidthIn = internetMaxBandwidthIn;
 		}
 
 		public String getInternetMaxBandwidthOut() {
@@ -281,6 +193,38 @@ public class ListAvailableClusterNodeResponse extends AcsResponse {
 			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
 		}
 
+		public String getInternetMaxBandwidthIn() {
+			return this.internetMaxBandwidthIn;
+		}
+
+		public void setInternetMaxBandwidthIn(String internetMaxBandwidthIn) {
+			this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getEcsMemory() {
+			return this.ecsMemory;
+		}
+
+		public void setEcsMemory(String ecsMemory) {
+			this.ecsMemory = ecsMemory;
+		}
+
+		public String getEcsConfiguration() {
+			return this.ecsConfiguration;
+		}
+
+		public void setEcsConfiguration(String ecsConfiguration) {
+			this.ecsConfiguration = ecsConfiguration;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -289,12 +233,68 @@ public class ListAvailableClusterNodeResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getEcsPublicIp() {
+			return this.ecsPublicIp;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setEcsPublicIp(String ecsPublicIp) {
+			this.ecsPublicIp = ecsPublicIp;
+		}
+
+		public String getEcsPrivateIp() {
+			return this.ecsPrivateIp;
+		}
+
+		public void setEcsPrivateIp(String ecsPrivateIp) {
+			this.ecsPrivateIp = ecsPrivateIp;
+		}
+
+		public String getInstanceNetworkType() {
+			return this.instanceNetworkType;
+		}
+
+		public void setInstanceNetworkType(String instanceNetworkType) {
+			this.instanceNetworkType = instanceNetworkType;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getOSName() {
+			return this.oSName;
+		}
+
+		public void setOSName(String oSName) {
+			this.oSName = oSName;
+		}
+
+		public String getEcsZone() {
+			return this.ecsZone;
+		}
+
+		public void setEcsZone(String ecsZone) {
+			this.ecsZone = ecsZone;
+		}
+
+		public String getEcsExpiredTime() {
+			return this.ecsExpiredTime;
+		}
+
+		public void setEcsExpiredTime(String ecsExpiredTime) {
+			this.ecsExpiredTime = ecsExpiredTime;
+		}
+
+		public String getEcsCpu() {
+			return this.ecsCpu;
+		}
+
+		public void setEcsCpu(String ecsCpu) {
+			this.ecsCpu = ecsCpu;
 		}
 	}
 

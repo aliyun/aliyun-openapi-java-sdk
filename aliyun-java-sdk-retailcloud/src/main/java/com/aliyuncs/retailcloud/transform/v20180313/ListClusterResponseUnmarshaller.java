@@ -36,23 +36,23 @@ public class ListClusterResponseUnmarshaller {
 		List<ClusterInfo> data = new ArrayList<ClusterInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListClusterResponse.Data.Length"); i++) {
 			ClusterInfo clusterInfo = new ClusterInfo();
+			clusterInfo.setVpcId(_ctx.stringValue("ListClusterResponse.Data["+ i +"].VpcId"));
+			clusterInfo.setStatus(_ctx.stringValue("ListClusterResponse.Data["+ i +"].Status"));
+			clusterInfo.setPodCIDR(_ctx.stringValue("ListClusterResponse.Data["+ i +"].PodCIDR"));
 			clusterInfo.setBusinessCode(_ctx.stringValue("ListClusterResponse.Data["+ i +"].BusinessCode"));
-			clusterInfo.setClusterTitle(_ctx.stringValue("ListClusterResponse.Data["+ i +"].ClusterTitle"));
-			clusterInfo.setCreateStatus(_ctx.stringValue("ListClusterResponse.Data["+ i +"].CreateStatus"));
-			clusterInfo.setEnvType(_ctx.stringValue("ListClusterResponse.Data["+ i +"].EnvType"));
-			clusterInfo.setId(_ctx.longValue("ListClusterResponse.Data["+ i +"].Id"));
 			clusterInfo.setInstanceId(_ctx.stringValue("ListClusterResponse.Data["+ i +"].InstanceId"));
+			clusterInfo.setCreateStatus(_ctx.stringValue("ListClusterResponse.Data["+ i +"].CreateStatus"));
+			clusterInfo.setClusterTitle(_ctx.stringValue("ListClusterResponse.Data["+ i +"].ClusterTitle"));
+			clusterInfo.setRegionId(_ctx.stringValue("ListClusterResponse.Data["+ i +"].RegionId"));
+			clusterInfo.setEnvType(_ctx.stringValue("ListClusterResponse.Data["+ i +"].EnvType"));
+			clusterInfo.setPassword(_ctx.stringValue("ListClusterResponse.Data["+ i +"].Password"));
+			clusterInfo.setWorkLoadMem(_ctx.stringValue("ListClusterResponse.Data["+ i +"].WorkLoadMem"));
+			clusterInfo.setServiceCIDR(_ctx.stringValue("ListClusterResponse.Data["+ i +"].ServiceCIDR"));
+			clusterInfo.setRegionName(_ctx.stringValue("ListClusterResponse.Data["+ i +"].RegionName"));
+			clusterInfo.setWorkLoadCpu(_ctx.stringValue("ListClusterResponse.Data["+ i +"].WorkLoadCpu"));
 			clusterInfo.setKeyPair(_ctx.stringValue("ListClusterResponse.Data["+ i +"].KeyPair"));
 			clusterInfo.setNetPlug(_ctx.stringValue("ListClusterResponse.Data["+ i +"].NetPlug"));
-			clusterInfo.setPassword(_ctx.stringValue("ListClusterResponse.Data["+ i +"].Password"));
-			clusterInfo.setPodCIDR(_ctx.stringValue("ListClusterResponse.Data["+ i +"].PodCIDR"));
-			clusterInfo.setRegionId(_ctx.stringValue("ListClusterResponse.Data["+ i +"].RegionId"));
-			clusterInfo.setRegionName(_ctx.stringValue("ListClusterResponse.Data["+ i +"].RegionName"));
-			clusterInfo.setServiceCIDR(_ctx.stringValue("ListClusterResponse.Data["+ i +"].ServiceCIDR"));
-			clusterInfo.setStatus(_ctx.stringValue("ListClusterResponse.Data["+ i +"].Status"));
-			clusterInfo.setVpcId(_ctx.stringValue("ListClusterResponse.Data["+ i +"].VpcId"));
-			clusterInfo.setWorkLoadCpu(_ctx.stringValue("ListClusterResponse.Data["+ i +"].WorkLoadCpu"));
-			clusterInfo.setWorkLoadMem(_ctx.stringValue("ListClusterResponse.Data["+ i +"].WorkLoadMem"));
+			clusterInfo.setId(_ctx.longValue("ListClusterResponse.Data["+ i +"].Id"));
 
 			List<String> ecsIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListClusterResponse.Data["+ i +"].EcsIds.Length"); j++) {

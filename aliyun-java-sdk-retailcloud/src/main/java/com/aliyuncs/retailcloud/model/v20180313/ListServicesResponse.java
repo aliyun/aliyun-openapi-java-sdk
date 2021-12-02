@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListServicesResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,15 +35,19 @@ public class ListServicesResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private String clusterIP;
 
-	private String clusterIP1;
-
 	private List<ServiceInstance> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -75,14 +81,6 @@ public class ListServicesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -99,14 +97,6 @@ public class ListServicesResponse extends AcsResponse {
 		this.clusterIP = clusterIP;
 	}
 
-	public String getClusterIP1() {
-		return this.clusterIP1;
-	}
-
-	public void setClusterIP1(String clusterIP1) {
-		this.clusterIP1 = clusterIP1;
-	}
-
 	public List<ServiceInstance> getData() {
 		return this.data;
 	}
@@ -117,39 +107,23 @@ public class ListServicesResponse extends AcsResponse {
 
 	public static class ServiceInstance {
 
-		private Long appId;
-
-		private Long envId;
-
 		private Boolean headless;
 
-		private String k8sServiceId;
-
-		private String name;
+		private Long appId;
 
 		private Long serviceId;
 
+		private String k8sServiceId;
+
 		private String serviceType;
+
+		private Long envId;
+
+		private String name;
 
 		private String clusterIP;
 
 		private List<ServicePortMapping> portMappings;
-
-		public Long getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
-
-		public Long getEnvId() {
-			return this.envId;
-		}
-
-		public void setEnvId(Long envId) {
-			this.envId = envId;
-		}
 
 		public Boolean getHeadless() {
 			return this.headless;
@@ -159,20 +133,12 @@ public class ListServicesResponse extends AcsResponse {
 			this.headless = headless;
 		}
 
-		public String getK8sServiceId() {
-			return this.k8sServiceId;
+		public Long getAppId() {
+			return this.appId;
 		}
 
-		public void setK8sServiceId(String k8sServiceId) {
-			this.k8sServiceId = k8sServiceId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setAppId(Long appId) {
+			this.appId = appId;
 		}
 
 		public Long getServiceId() {
@@ -183,12 +149,36 @@ public class ListServicesResponse extends AcsResponse {
 			this.serviceId = serviceId;
 		}
 
+		public String getK8sServiceId() {
+			return this.k8sServiceId;
+		}
+
+		public void setK8sServiceId(String k8sServiceId) {
+			this.k8sServiceId = k8sServiceId;
+		}
+
 		public String getServiceType() {
 			return this.serviceType;
 		}
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public Long getEnvId() {
+			return this.envId;
+		}
+
+		public void setEnvId(Long envId) {
+			this.envId = envId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getClusterIP() {
@@ -209,22 +199,22 @@ public class ListServicesResponse extends AcsResponse {
 
 		public static class ServicePortMapping {
 
-			private String name;
+			private String targetPort;
 
 			private Integer nodePort;
 
 			private Integer port;
 
+			private String name;
+
 			private String protocol;
 
-			private String targetPort;
-
-			public String getName() {
-				return this.name;
+			public String getTargetPort() {
+				return this.targetPort;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setTargetPort(String targetPort) {
+				this.targetPort = targetPort;
 			}
 
 			public Integer getNodePort() {
@@ -243,20 +233,20 @@ public class ListServicesResponse extends AcsResponse {
 				this.port = port;
 			}
 
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
 			public String getBizProtocol() {
 				return this.protocol;
 			}
 
 			public void setBizProtocol(String protocol) {
 				this.protocol = protocol;
-			}
-
-			public String getTargetPort() {
-				return this.targetPort;
-			}
-
-			public void setTargetPort(String targetPort) {
-				this.targetPort = targetPort;
 			}
 		}
 	}

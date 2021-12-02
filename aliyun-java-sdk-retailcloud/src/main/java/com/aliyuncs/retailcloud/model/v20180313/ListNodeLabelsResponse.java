@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNodeLabelsResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,11 +35,17 @@ public class ListNodeLabelsResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private List<ListNodeLabelResponse> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -71,14 +79,6 @@ public class ListNodeLabelsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,29 +97,13 @@ public class ListNodeLabelsResponse extends AcsResponse {
 
 	public static class ListNodeLabelResponse {
 
-		private String clusterId;
-
-		private Long id;
-
 		private String labelKey;
 
 		private String labelValue;
 
-		public String getClusterId() {
-			return this.clusterId;
-		}
+		private Long id;
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private String clusterId;
 
 		public String getLabelKey() {
 			return this.labelKey;
@@ -135,6 +119,22 @@ public class ListNodeLabelsResponse extends AcsResponse {
 
 		public void setLabelValue(String labelValue) {
 			this.labelValue = labelValue;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

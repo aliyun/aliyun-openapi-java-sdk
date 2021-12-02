@@ -79,9 +79,9 @@ public class DescribeAppMonitorMetricResponse extends AcsResponse {
 
 		private String name;
 
-		private List<Float> data;
-
 		private List<String> categories;
+
+		private List<Float> data;
 
 		public String getName() {
 			return this.name;
@@ -91,20 +91,20 @@ public class DescribeAppMonitorMetricResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public List<Float> getData() {
-			return this.data;
-		}
-
-		public void setData(List<Float> data) {
-			this.data = data;
-		}
-
 		public List<String> getCategories() {
 			return this.categories;
 		}
 
 		public void setCategories(List<String> categories) {
 			this.categories = categories;
+		}
+
+		public List<Float> getData() {
+			return this.data;
+		}
+
+		public void setData(List<Float> data) {
+			this.data = data;
 		}
 	}
 

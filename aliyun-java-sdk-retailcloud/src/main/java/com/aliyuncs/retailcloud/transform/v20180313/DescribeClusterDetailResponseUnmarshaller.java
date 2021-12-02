@@ -41,48 +41,48 @@ public class DescribeClusterDetailResponseUnmarshaller {
 		Result result = new Result();
 
 		BasicInfo basicInfo = new BasicInfo();
-		basicInfo.setBusinessCode(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.BusinessCode"));
-		basicInfo.setClusterId(_ctx.longValue("DescribeClusterDetailResponse.Result.BasicInfo.ClusterId"));
-		basicInfo.setClusterInstanceId(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.ClusterInstanceId"));
-		basicInfo.setClusterName(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.ClusterName"));
-		basicInfo.setEnvType(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.EnvType"));
-		basicInfo.setHasInstallArmsPilot(_ctx.booleanValue("DescribeClusterDetailResponse.Result.BasicInfo.HasInstallArmsPilot"));
+		basicInfo.setVpcId(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.VpcId"));
 		basicInfo.setHasInstallLogController(_ctx.booleanValue("DescribeClusterDetailResponse.Result.BasicInfo.HasInstallLogController"));
 		basicInfo.setInstallArmsInProcess(_ctx.booleanValue("DescribeClusterDetailResponse.Result.BasicInfo.InstallArmsInProcess"));
-		basicInfo.setInstallLogInProcess(_ctx.booleanValue("DescribeClusterDetailResponse.Result.BasicInfo.InstallLogInProcess"));
-		basicInfo.setMainUserId(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.MainUserId"));
-		basicInfo.setRegionId(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.RegionId"));
-		basicInfo.setRegionName(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.RegionName"));
+		basicInfo.setClusterInstanceId(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.ClusterInstanceId"));
+		basicInfo.setBusinessCode(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.BusinessCode"));
 		basicInfo.setUserNick(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.UserNick"));
-		basicInfo.setVpcId(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.VpcId"));
-
-		List<String> ecsIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeClusterDetailResponse.Result.BasicInfo.EcsIds.Length"); i++) {
-			ecsIds.add(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.EcsIds["+ i +"]"));
-		}
-		basicInfo.setEcsIds(ecsIds);
+		basicInfo.setEnvType(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.EnvType"));
+		basicInfo.setRegionId(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.RegionId"));
+		basicInfo.setInstallLogInProcess(_ctx.booleanValue("DescribeClusterDetailResponse.Result.BasicInfo.InstallLogInProcess"));
+		basicInfo.setRegionName(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.RegionName"));
+		basicInfo.setMainUserId(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.MainUserId"));
+		basicInfo.setClusterName(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.ClusterName"));
+		basicInfo.setHasInstallArmsPilot(_ctx.booleanValue("DescribeClusterDetailResponse.Result.BasicInfo.HasInstallArmsPilot"));
+		basicInfo.setClusterId(_ctx.longValue("DescribeClusterDetailResponse.Result.BasicInfo.ClusterId"));
 
 		List<String> vswitchs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterDetailResponse.Result.BasicInfo.Vswitchs.Length"); i++) {
 			vswitchs.add(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.Vswitchs["+ i +"]"));
 		}
 		basicInfo.setVswitchs(vswitchs);
+
+		List<String> ecsIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterDetailResponse.Result.BasicInfo.EcsIds.Length"); i++) {
+			ecsIds.add(_ctx.stringValue("DescribeClusterDetailResponse.Result.BasicInfo.EcsIds["+ i +"]"));
+		}
+		basicInfo.setEcsIds(ecsIds);
 		result.setBasicInfo(basicInfo);
 
 		InstanceInfo instanceInfo = new InstanceInfo();
-		instanceInfo.setAllocatePodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatePodCount"));
 		instanceInfo.setAppCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.InstanceInfo.AppCount"));
+		instanceInfo.setAllocatePodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatePodCount"));
 
 		List<AllocatedPodInstanceInfo> allocatedPodInfoList = new ArrayList<AllocatedPodInstanceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList.Length"); i++) {
 			AllocatedPodInstanceInfo allocatedPodInstanceInfo = new AllocatedPodInstanceInfo();
-			allocatedPodInstanceInfo.setAppId(_ctx.longValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].AppId"));
 			allocatedPodInstanceInfo.setAppName(_ctx.stringValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].AppName"));
-			allocatedPodInstanceInfo.setCupRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].CupRequest"));
-			allocatedPodInstanceInfo.setEnvId(_ctx.longValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].EnvId"));
 			allocatedPodInstanceInfo.setEnvName(_ctx.stringValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].EnvName"));
-			allocatedPodInstanceInfo.setMemRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].MemRequest"));
+			allocatedPodInstanceInfo.setAppId(_ctx.longValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].AppId"));
 			allocatedPodInstanceInfo.setPodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].PodCount"));
+			allocatedPodInstanceInfo.setMemRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].MemRequest"));
+			allocatedPodInstanceInfo.setEnvId(_ctx.longValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].EnvId"));
+			allocatedPodInstanceInfo.setCupRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.InstanceInfo.AllocatedPodInfoList["+ i +"].CupRequest"));
 
 			allocatedPodInfoList.add(allocatedPodInstanceInfo);
 		}
@@ -101,46 +101,46 @@ public class DescribeClusterDetailResponseUnmarshaller {
 		result.setInstanceInfo(instanceInfo);
 
 		NetInfo netInfo = new NetInfo();
-		netInfo.setNetPlugType(_ctx.stringValue("DescribeClusterDetailResponse.Result.NetInfo.NetPlugType"));
 		netInfo.setProdCIDR(_ctx.stringValue("DescribeClusterDetailResponse.Result.NetInfo.ProdCIDR"));
 		netInfo.setServiceCIDR(_ctx.stringValue("DescribeClusterDetailResponse.Result.NetInfo.ServiceCIDR"));
+		netInfo.setNetPlugType(_ctx.stringValue("DescribeClusterDetailResponse.Result.NetInfo.NetPlugType"));
 		result.setNetInfo(netInfo);
 
 		WorkLoad workLoad = new WorkLoad();
-		workLoad.setAllNodeCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.WorkLoad.AllNodeCount"));
-		workLoad.setAllocateAllPodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.WorkLoad.AllocateAllPodCount"));
-		workLoad.setAllocateAppPodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.WorkLoad.AllocateAppPodCount"));
-		workLoad.setCpuCapacityTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuCapacityTotal"));
-		workLoad.setCpuLevel(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuLevel"));
-		workLoad.setCpuRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuRequest"));
-		workLoad.setCpuRequestPercent(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuRequestPercent"));
-		workLoad.setCpuTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuTotal"));
-		workLoad.setCpuUse(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuUse"));
-		workLoad.setCpuUsePercent(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuUsePercent"));
 		workLoad.setMemCapacityTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemCapacityTotal"));
-		workLoad.setMemLevel(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemLevel"));
-		workLoad.setMemRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemRequest"));
-		workLoad.setMemRequestPercent(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemRequestPercent"));
-		workLoad.setMemTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemTotal"));
+		workLoad.setAllocateAllPodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.WorkLoad.AllocateAllPodCount"));
+		workLoad.setCpuRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuRequest"));
+		workLoad.setAllNodeCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.WorkLoad.AllNodeCount"));
+		workLoad.setAllocateAppPodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.WorkLoad.AllocateAppPodCount"));
 		workLoad.setMemUse(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemUse"));
+		workLoad.setCpuCapacityTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuCapacityTotal"));
+		workLoad.setCpuUsePercent(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuUsePercent"));
+		workLoad.setCpuRequestPercent(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuRequestPercent"));
+		workLoad.setMemRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemRequest"));
+		workLoad.setCpuLevel(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuLevel"));
 		workLoad.setMemUsePercent(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemUsePercent"));
+		workLoad.setMemLevel(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemLevel"));
+		workLoad.setCpuTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuTotal"));
+		workLoad.setMemTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemTotal"));
+		workLoad.setMemRequestPercent(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.MemRequestPercent"));
+		workLoad.setCpuUse(_ctx.stringValue("DescribeClusterDetailResponse.Result.WorkLoad.CpuUse"));
 		result.setWorkLoad(workLoad);
 
 		List<ClusterNodeWorkLoad> nodeWorkLoadList = new ArrayList<ClusterNodeWorkLoad>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList.Length"); i++) {
 			ClusterNodeWorkLoad clusterNodeWorkLoad = new ClusterNodeWorkLoad();
-			clusterNodeWorkLoad.setAppPodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].AppPodCount"));
 			clusterNodeWorkLoad.setCpuRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].CpuRequest"));
-			clusterNodeWorkLoad.setCpuTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].CpuTotal"));
-			clusterNodeWorkLoad.setCpuUse(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].CpuUse"));
-			clusterNodeWorkLoad.setInstanceId(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].InstanceId"));
-			clusterNodeWorkLoad.setMemRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].MemRequest"));
-			clusterNodeWorkLoad.setMemTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].MemTotal"));
 			clusterNodeWorkLoad.setMemUse(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].MemUse"));
+			clusterNodeWorkLoad.setMemRequest(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].MemRequest"));
+			clusterNodeWorkLoad.setInstanceId(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].InstanceId"));
+			clusterNodeWorkLoad.setCpuTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].CpuTotal"));
+			clusterNodeWorkLoad.setMemTotal(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].MemTotal"));
 			clusterNodeWorkLoad.setNodeName(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].NodeName"));
 			clusterNodeWorkLoad.setPodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].PodCount"));
 			clusterNodeWorkLoad.setReady(_ctx.booleanValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].Ready"));
+			clusterNodeWorkLoad.setCpuUse(_ctx.stringValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].CpuUse"));
 			clusterNodeWorkLoad.setUnschedulable(_ctx.booleanValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].Unschedulable"));
+			clusterNodeWorkLoad.setAppPodCount(_ctx.integerValue("DescribeClusterDetailResponse.Result.NodeWorkLoadList["+ i +"].AppPodCount"));
 
 			nodeWorkLoadList.add(clusterNodeWorkLoad);
 		}

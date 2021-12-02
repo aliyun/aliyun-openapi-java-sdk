@@ -109,13 +109,21 @@ public class DescribePodLogResponse extends AcsResponse {
 
 		public static class DeployLogStepRC {
 
+			private String status;
+
 			private String stepName;
 
 			private String stepCode;
 
 			private String stepLog;
 
-			private String status;
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
 			public String getStepName() {
 				return this.stepName;
@@ -139,14 +147,6 @@ public class DescribePodLogResponse extends AcsResponse {
 
 			public void setStepLog(String stepLog) {
 				this.stepLog = stepLog;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
 			}
 		}
 	}

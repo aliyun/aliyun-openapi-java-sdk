@@ -32,22 +32,22 @@ public class DescribeJobLogResponseUnmarshaller {
 		describeJobLogResponse.setErrMsg(_ctx.stringValue("DescribeJobLogResponse.ErrMsg"));
 
 		Result result = new Result();
-		result.setAppId(_ctx.longValue("DescribeJobLogResponse.Result.AppId"));
-		result.setEnvId(_ctx.longValue("DescribeJobLogResponse.Result.EnvId"));
-		result.setPodName(_ctx.stringValue("DescribeJobLogResponse.Result.PodName"));
 		result.setJobLog(_ctx.stringValue("DescribeJobLogResponse.Result.JobLog"));
+		result.setPodName(_ctx.stringValue("DescribeJobLogResponse.Result.PodName"));
+		result.setEnvId(_ctx.longValue("DescribeJobLogResponse.Result.EnvId"));
+		result.setAppId(_ctx.longValue("DescribeJobLogResponse.Result.AppId"));
 
 		List<Event> events = new ArrayList<Event>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeJobLogResponse.Result.Events.Length"); i++) {
 			Event event = new Event();
+			event.setType(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].Type"));
 			event.setAction(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].Action"));
-			event.setCount(_ctx.integerValue("DescribeJobLogResponse.Result.Events["+ i +"].Count"));
 			event.setEventTime(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].EventTime"));
-			event.setFirstTimestamp(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].FirstTimestamp"));
 			event.setLastTimestamp(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].LastTimestamp"));
 			event.setMesage(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].Mesage"));
 			event.setReason(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].Reason"));
-			event.setType(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].Type"));
+			event.setCount(_ctx.integerValue("DescribeJobLogResponse.Result.Events["+ i +"].Count"));
+			event.setFirstTimestamp(_ctx.stringValue("DescribeJobLogResponse.Result.Events["+ i +"].FirstTimestamp"));
 
 			events.add(event);
 		}

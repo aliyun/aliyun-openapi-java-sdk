@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppResourceAllocsResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,11 +35,17 @@ public class ListAppResourceAllocsResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private List<ListAppResourceAllocResponse> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -71,14 +79,6 @@ public class ListAppResourceAllocsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,15 +97,23 @@ public class ListAppResourceAllocsResponse extends AcsResponse {
 
 	public static class ListAppResourceAllocResponse {
 
+		private String resourceDef;
+
 		private Long appEnvId;
+
+		private Long id;
 
 		private Long appId;
 
 		private String clusterId;
 
-		private Long id;
+		public String getResourceDef() {
+			return this.resourceDef;
+		}
 
-		private String resourceDef;
+		public void setResourceDef(String resourceDef) {
+			this.resourceDef = resourceDef;
+		}
 
 		public Long getAppEnvId() {
 			return this.appEnvId;
@@ -113,6 +121,14 @@ public class ListAppResourceAllocsResponse extends AcsResponse {
 
 		public void setAppEnvId(Long appEnvId) {
 			this.appEnvId = appEnvId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public Long getAppId() {
@@ -129,22 +145,6 @@ public class ListAppResourceAllocsResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getResourceDef() {
-			return this.resourceDef;
-		}
-
-		public void setResourceDef(String resourceDef) {
-			this.resourceDef = resourceDef;
 		}
 	}
 

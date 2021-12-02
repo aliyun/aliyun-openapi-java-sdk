@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDeployConfigResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,11 +35,17 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private List<DeployConfigInstance> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -71,14 +79,6 @@ public class ListDeployConfigResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,9 +97,9 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 	public static class DeployConfigInstance {
 
-		private Long id;
-
 		private String name;
+
+		private Long id;
 
 		private Long appId;
 
@@ -109,20 +109,20 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 		private ContainerYamlConf containerYamlConf;
 
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public Long getAppId() {
@@ -172,33 +172,17 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 		public static class ContainerYamlConf {
 
-			private String deployment;
-
-			private String configMap;
-
 			private String statefulSet;
+
+			private String deployment;
 
 			private String cronJob;
 
-			private List<String> configMapList;
+			private String configMap;
 
 			private List<String> secretList;
 
-			public String getDeployment() {
-				return this.deployment;
-			}
-
-			public void setDeployment(String deployment) {
-				this.deployment = deployment;
-			}
-
-			public String getConfigMap() {
-				return this.configMap;
-			}
-
-			public void setConfigMap(String configMap) {
-				this.configMap = configMap;
-			}
+			private List<String> configMapList;
 
 			public String getStatefulSet() {
 				return this.statefulSet;
@@ -206,6 +190,14 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 			public void setStatefulSet(String statefulSet) {
 				this.statefulSet = statefulSet;
+			}
+
+			public String getDeployment() {
+				return this.deployment;
+			}
+
+			public void setDeployment(String deployment) {
+				this.deployment = deployment;
 			}
 
 			public String getCronJob() {
@@ -216,12 +208,12 @@ public class ListDeployConfigResponse extends AcsResponse {
 				this.cronJob = cronJob;
 			}
 
-			public List<String> getConfigMapList() {
-				return this.configMapList;
+			public String getConfigMap() {
+				return this.configMap;
 			}
 
-			public void setConfigMapList(List<String> configMapList) {
-				this.configMapList = configMapList;
+			public void setConfigMap(String configMap) {
+				this.configMap = configMap;
 			}
 
 			public List<String> getSecretList() {
@@ -230,6 +222,14 @@ public class ListDeployConfigResponse extends AcsResponse {
 
 			public void setSecretList(List<String> secretList) {
 				this.secretList = secretList;
+			}
+
+			public List<String> getConfigMapList() {
+				return this.configMapList;
+			}
+
+			public void setConfigMapList(List<String> configMapList) {
+				this.configMapList = configMapList;
 			}
 		}
 	}

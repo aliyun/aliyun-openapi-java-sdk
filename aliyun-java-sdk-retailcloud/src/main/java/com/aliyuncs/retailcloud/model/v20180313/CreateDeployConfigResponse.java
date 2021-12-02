@@ -66,18 +66,18 @@ public class CreateDeployConfigResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Long appId;
+		private Long schemaId;
 
 		private String name;
 
-		private Long schemaId;
+		private Long appId;
 
-		public Long getAppId() {
-			return this.appId;
+		public Long getSchemaId() {
+			return this.schemaId;
 		}
 
-		public void setAppId(Long appId) {
-			this.appId = appId;
+		public void setSchemaId(Long schemaId) {
+			this.schemaId = schemaId;
 		}
 
 		public String getName() {
@@ -88,12 +88,12 @@ public class CreateDeployConfigResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public Long getSchemaId() {
-			return this.schemaId;
+		public Long getAppId() {
+			return this.appId;
 		}
 
-		public void setSchemaId(Long schemaId) {
-			this.schemaId = schemaId;
+		public void setAppId(Long appId) {
+			this.appId = appId;
 		}
 	}
 

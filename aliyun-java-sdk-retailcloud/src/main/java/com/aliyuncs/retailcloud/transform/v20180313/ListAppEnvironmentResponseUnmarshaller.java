@@ -28,21 +28,21 @@ public class ListAppEnvironmentResponseUnmarshaller {
 		
 		listAppEnvironmentResponse.setRequestId(_ctx.stringValue("ListAppEnvironmentResponse.RequestId"));
 		listAppEnvironmentResponse.setCode(_ctx.integerValue("ListAppEnvironmentResponse.Code"));
+		listAppEnvironmentResponse.setErrorMsg(_ctx.stringValue("ListAppEnvironmentResponse.ErrorMsg"));
 		listAppEnvironmentResponse.setPageNumber(_ctx.integerValue("ListAppEnvironmentResponse.PageNumber"));
 		listAppEnvironmentResponse.setPageSize(_ctx.integerValue("ListAppEnvironmentResponse.PageSize"));
 		listAppEnvironmentResponse.setTotalCount(_ctx.longValue("ListAppEnvironmentResponse.TotalCount"));
-		listAppEnvironmentResponse.setErrorMsg(_ctx.stringValue("ListAppEnvironmentResponse.ErrorMsg"));
 
 		List<AppEnvironmentResponse> data = new ArrayList<AppEnvironmentResponse>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppEnvironmentResponse.Data.Length"); i++) {
 			AppEnvironmentResponse appEnvironmentResponse = new AppEnvironmentResponse();
+			appEnvironmentResponse.setAppSchemaId(_ctx.longValue("ListAppEnvironmentResponse.Data["+ i +"].AppSchemaId"));
+			appEnvironmentResponse.setEnvTypeName(_ctx.stringValue("ListAppEnvironmentResponse.Data["+ i +"].EnvTypeName"));
+			appEnvironmentResponse.setEnvName(_ctx.stringValue("ListAppEnvironmentResponse.Data["+ i +"].EnvName"));
+			appEnvironmentResponse.setRegion(_ctx.stringValue("ListAppEnvironmentResponse.Data["+ i +"].Region"));
 			appEnvironmentResponse.setAppId(_ctx.longValue("ListAppEnvironmentResponse.Data["+ i +"].AppId"));
 			appEnvironmentResponse.setEnvId(_ctx.longValue("ListAppEnvironmentResponse.Data["+ i +"].EnvId"));
-			appEnvironmentResponse.setEnvName(_ctx.stringValue("ListAppEnvironmentResponse.Data["+ i +"].EnvName"));
 			appEnvironmentResponse.setEnvType(_ctx.integerValue("ListAppEnvironmentResponse.Data["+ i +"].EnvType"));
-			appEnvironmentResponse.setEnvTypeName(_ctx.stringValue("ListAppEnvironmentResponse.Data["+ i +"].EnvTypeName"));
-			appEnvironmentResponse.setAppSchemaId(_ctx.longValue("ListAppEnvironmentResponse.Data["+ i +"].AppSchemaId"));
-			appEnvironmentResponse.setRegion(_ctx.stringValue("ListAppEnvironmentResponse.Data["+ i +"].Region"));
 
 			data.add(appEnvironmentResponse);
 		}

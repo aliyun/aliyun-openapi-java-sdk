@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppGroupMappingResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
-	private Integer pageNumber;
+	private String errorMsg;
 
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private Long totalCount;
 
-	private String errorMsg;
-
 	private List<AppGroupMappingDetail> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -47,20 +55,20 @@ public class ListAppGroupMappingResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -79,14 +87,6 @@ public class ListAppGroupMappingResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
 	public List<AppGroupMappingDetail> getData() {
 		return this.data;
 	}
@@ -97,21 +97,13 @@ public class ListAppGroupMappingResponse extends AcsResponse {
 
 	public static class AppGroupMappingDetail {
 
-		private Long id;
-
 		private String name;
 
 		private Long groupId;
 
 		private Long appId;
 
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long id;
 
 		public String getName() {
 			return this.name;
@@ -135,6 +127,14 @@ public class ListAppGroupMappingResponse extends AcsResponse {
 
 		public void setAppId(Long appId) {
 			this.appId = appId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

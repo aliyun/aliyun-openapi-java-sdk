@@ -28,9 +28,9 @@ public class CreateDeployConfigResponseUnmarshaller {
 		createDeployConfigResponse.setErrMessage(_ctx.stringValue("CreateDeployConfigResponse.ErrMessage"));
 
 		Result result = new Result();
-		result.setAppId(_ctx.longValue("CreateDeployConfigResponse.Result.AppId"));
-		result.setName(_ctx.stringValue("CreateDeployConfigResponse.Result.Name"));
 		result.setSchemaId(_ctx.longValue("CreateDeployConfigResponse.Result.SchemaId"));
+		result.setName(_ctx.stringValue("CreateDeployConfigResponse.Result.Name"));
+		result.setAppId(_ctx.longValue("CreateDeployConfigResponse.Result.AppId"));
 		createDeployConfigResponse.setResult(result);
 	 
 	 	return createDeployConfigResponse;

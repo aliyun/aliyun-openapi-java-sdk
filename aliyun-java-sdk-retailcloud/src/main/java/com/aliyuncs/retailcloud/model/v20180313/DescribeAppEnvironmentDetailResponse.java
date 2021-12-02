@@ -66,52 +66,28 @@ public class DescribeAppEnvironmentDetailResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Long appId;
-
-		private Long envId;
-
-		private String envName;
-
-		private Integer envType;
+		private Long appSchemaId;
 
 		private String envTypeName;
 
-		private Long appSchemaId;
+		private String envName;
 
 		private String region;
 
+		private Long appId;
+
 		private Integer replicas;
 
-		public Long getAppId() {
-			return this.appId;
+		private Long envId;
+
+		private Integer envType;
+
+		public Long getAppSchemaId() {
+			return this.appSchemaId;
 		}
 
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
-
-		public Long getEnvId() {
-			return this.envId;
-		}
-
-		public void setEnvId(Long envId) {
-			this.envId = envId;
-		}
-
-		public String getEnvName() {
-			return this.envName;
-		}
-
-		public void setEnvName(String envName) {
-			this.envName = envName;
-		}
-
-		public Integer getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(Integer envType) {
-			this.envType = envType;
+		public void setAppSchemaId(Long appSchemaId) {
+			this.appSchemaId = appSchemaId;
 		}
 
 		public String getEnvTypeName() {
@@ -122,12 +98,12 @@ public class DescribeAppEnvironmentDetailResponse extends AcsResponse {
 			this.envTypeName = envTypeName;
 		}
 
-		public Long getAppSchemaId() {
-			return this.appSchemaId;
+		public String getEnvName() {
+			return this.envName;
 		}
 
-		public void setAppSchemaId(Long appSchemaId) {
-			this.appSchemaId = appSchemaId;
+		public void setEnvName(String envName) {
+			this.envName = envName;
 		}
 
 		public String getRegion() {
@@ -138,12 +114,36 @@ public class DescribeAppEnvironmentDetailResponse extends AcsResponse {
 			this.region = region;
 		}
 
+		public Long getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(Long appId) {
+			this.appId = appId;
+		}
+
 		public Integer getReplicas() {
 			return this.replicas;
 		}
 
 		public void setReplicas(Integer replicas) {
 			this.replicas = replicas;
+		}
+
+		public Long getEnvId() {
+			return this.envId;
+		}
+
+		public void setEnvId(Long envId) {
+			this.envId = envId;
+		}
+
+		public Integer getEnvType() {
+			return this.envType;
+		}
+
+		public void setEnvType(Integer envType) {
+			this.envType = envType;
 		}
 	}
 

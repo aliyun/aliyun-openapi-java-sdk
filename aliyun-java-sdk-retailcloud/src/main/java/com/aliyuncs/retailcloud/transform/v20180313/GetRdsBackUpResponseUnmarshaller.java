@@ -32,31 +32,31 @@ public class GetRdsBackUpResponseUnmarshaller {
 		getRdsBackUpResponse.setErrMsg(_ctx.stringValue("GetRdsBackUpResponse.ErrMsg"));
 
 		Result result = new Result();
-		result.setTotalRecordCount(_ctx.stringValue("GetRdsBackUpResponse.Result.TotalRecordCount"));
+		result.setTotalBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.TotalBackupSize"));
 		result.setPageNumber(_ctx.stringValue("GetRdsBackUpResponse.Result.PageNumber"));
 		result.setPageRecordCount(_ctx.stringValue("GetRdsBackUpResponse.Result.PageRecordCount"));
-		result.setTotalBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.TotalBackupSize"));
+		result.setTotalRecordCount(_ctx.stringValue("GetRdsBackUpResponse.Result.TotalRecordCount"));
 
 		List<Backup> items = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("GetRdsBackUpResponse.Result.Items.Length"); i++) {
 			Backup backup = new Backup();
-			backup.setBackupId(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupId"));
-			backup.setDBInstanceId(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].DBInstanceId"));
-			backup.setBackupStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupStatus"));
-			backup.setBackupStartTime(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupStartTime"));
-			backup.setBackupEndTime(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupEndTime"));
-			backup.setBackupType(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupType"));
-			backup.setBackupMode(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupMode"));
-			backup.setBackupMethod(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupMethod"));
-			backup.setBackupLocation(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupLocation"));
-			backup.setBackupExtractionStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupExtractionStatus"));
-			backup.setBackupScale(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupScale"));
-			backup.setBackupDBNames(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupDBNames"));
-			backup.setTotalBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.Items["+ i +"].TotalBackupSize"));
-			backup.setBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupSize"));
-			backup.setHostInstanceID(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].HostInstanceID"));
 			backup.setStoreStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].StoreStatus"));
+			backup.setBackupStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupStatus"));
+			backup.setBackupLocation(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupLocation"));
+			backup.setBackupType(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupType"));
+			backup.setBackupStartTime(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupStartTime"));
+			backup.setTotalBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.Items["+ i +"].TotalBackupSize"));
 			backup.setMetaStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].MetaStatus"));
+			backup.setBackupEndTime(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupEndTime"));
+			backup.setBackupDBNames(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupDBNames"));
+			backup.setBackupScale(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupScale"));
+			backup.setBackupId(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupId"));
+			backup.setHostInstanceID(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].HostInstanceID"));
+			backup.setBackupSize(_ctx.longValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupSize"));
+			backup.setBackupMode(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupMode"));
+			backup.setDBInstanceId(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].DBInstanceId"));
+			backup.setBackupExtractionStatus(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupExtractionStatus"));
+			backup.setBackupMethod(_ctx.stringValue("GetRdsBackUpResponse.Result.Items["+ i +"].BackupMethod"));
 
 			items.add(backup);
 		}

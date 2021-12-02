@@ -39,10 +39,10 @@ public class DescribePodLogResponseUnmarshaller {
 		List<DeployLogStepRC> deployStepList = new ArrayList<DeployLogStepRC>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePodLogResponse.Result.DeployStepList.Length"); i++) {
 			DeployLogStepRC deployLogStepRC = new DeployLogStepRC();
+			deployLogStepRC.setStatus(_ctx.stringValue("DescribePodLogResponse.Result.DeployStepList["+ i +"].Status"));
 			deployLogStepRC.setStepName(_ctx.stringValue("DescribePodLogResponse.Result.DeployStepList["+ i +"].StepName"));
 			deployLogStepRC.setStepCode(_ctx.stringValue("DescribePodLogResponse.Result.DeployStepList["+ i +"].StepCode"));
 			deployLogStepRC.setStepLog(_ctx.stringValue("DescribePodLogResponse.Result.DeployStepList["+ i +"].StepLog"));
-			deployLogStepRC.setStatus(_ctx.stringValue("DescribePodLogResponse.Result.DeployStepList["+ i +"].Status"));
 
 			deployStepList.add(deployLogStepRC);
 		}

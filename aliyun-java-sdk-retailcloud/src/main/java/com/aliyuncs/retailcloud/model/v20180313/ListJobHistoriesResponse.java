@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListJobHistoriesResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
-	private Integer pageNumber;
+	private String errorMsg;
 
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private Long totalCount;
 
-	private String errorMsg;
-
 	private List<JobDetail> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -47,20 +55,20 @@ public class ListJobHistoriesResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -79,14 +87,6 @@ public class ListJobHistoriesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
 	public List<JobDetail> getData() {
 		return this.data;
 	}
@@ -97,43 +97,27 @@ public class ListJobHistoriesResponse extends AcsResponse {
 
 	public static class JobDetail {
 
-		private String name;
-
-		private String completionTime;
-
 		private String startTime;
 
-		private Integer succeeded;
-
 		private Integer failed;
-
-		private String message;
 
 		private Integer activeDeadlineSeconds;
 
 		private Integer backoffLimit;
 
-		private Integer completions;
+		private String message;
+
+		private Integer succeeded;
+
+		private String name;
+
+		private String completionTime;
 
 		private Integer parallelism;
 
+		private Integer completions;
+
 		private List<String> podList;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCompletionTime() {
-			return this.completionTime;
-		}
-
-		public void setCompletionTime(String completionTime) {
-			this.completionTime = completionTime;
-		}
 
 		public String getStartTime() {
 			return this.startTime;
@@ -143,28 +127,12 @@ public class ListJobHistoriesResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Integer getSucceeded() {
-			return this.succeeded;
-		}
-
-		public void setSucceeded(Integer succeeded) {
-			this.succeeded = succeeded;
-		}
-
 		public Integer getFailed() {
 			return this.failed;
 		}
 
 		public void setFailed(Integer failed) {
 			this.failed = failed;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
 		}
 
 		public Integer getActiveDeadlineSeconds() {
@@ -183,12 +151,36 @@ public class ListJobHistoriesResponse extends AcsResponse {
 			this.backoffLimit = backoffLimit;
 		}
 
-		public Integer getCompletions() {
-			return this.completions;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setCompletions(Integer completions) {
-			this.completions = completions;
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public Integer getSucceeded() {
+			return this.succeeded;
+		}
+
+		public void setSucceeded(Integer succeeded) {
+			this.succeeded = succeeded;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCompletionTime() {
+			return this.completionTime;
+		}
+
+		public void setCompletionTime(String completionTime) {
+			this.completionTime = completionTime;
 		}
 
 		public Integer getParallelism() {
@@ -197,6 +189,14 @@ public class ListJobHistoriesResponse extends AcsResponse {
 
 		public void setParallelism(Integer parallelism) {
 			this.parallelism = parallelism;
+		}
+
+		public Integer getCompletions() {
+			return this.completions;
+		}
+
+		public void setCompletions(Integer completions) {
+			this.completions = completions;
 		}
 
 		public List<String> getPodList() {

@@ -76,15 +76,23 @@ public class CreateAppResourceAllocResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String resourceDef;
+
 		private Long appEnvId;
+
+		private Long id;
 
 		private Long appId;
 
 		private String clusterId;
 
-		private Long id;
+		public String getResourceDef() {
+			return this.resourceDef;
+		}
 
-		private String resourceDef;
+		public void setResourceDef(String resourceDef) {
+			this.resourceDef = resourceDef;
+		}
 
 		public Long getAppEnvId() {
 			return this.appEnvId;
@@ -92,6 +100,14 @@ public class CreateAppResourceAllocResponse extends AcsResponse {
 
 		public void setAppEnvId(Long appEnvId) {
 			this.appEnvId = appEnvId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public Long getAppId() {
@@ -108,22 +124,6 @@ public class CreateAppResourceAllocResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getResourceDef() {
-			return this.resourceDef;
-		}
-
-		public void setResourceDef(String resourceDef) {
-			this.resourceDef = resourceDef;
 		}
 	}
 

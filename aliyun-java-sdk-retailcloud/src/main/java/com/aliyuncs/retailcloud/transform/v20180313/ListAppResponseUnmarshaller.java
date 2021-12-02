@@ -35,23 +35,23 @@ public class ListAppResponseUnmarshaller {
 		List<AppDetail> data = new ArrayList<AppDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppResponse.Data.Length"); i++) {
 			AppDetail appDetail = new AppDetail();
-			appDetail.setAppId(_ctx.longValue("ListAppResponse.Data["+ i +"].AppId"));
-			appDetail.setTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].Title"));
-			appDetail.setDescription(_ctx.stringValue("ListAppResponse.Data["+ i +"].Description"));
-			appDetail.setLanguage(_ctx.stringValue("ListAppResponse.Data["+ i +"].Language"));
-			appDetail.setOperatingSystem(_ctx.stringValue("ListAppResponse.Data["+ i +"].OperatingSystem"));
-			appDetail.setBizName(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizName"));
-			appDetail.setServiceType(_ctx.stringValue("ListAppResponse.Data["+ i +"].ServiceType"));
-			appDetail.setDeployType(_ctx.stringValue("ListAppResponse.Data["+ i +"].DeployType"));
-			appDetail.setBizTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizTitle"));
 			appDetail.setAppStateType(_ctx.stringValue("ListAppResponse.Data["+ i +"].AppStateType"));
+			appDetail.setDescription(_ctx.stringValue("ListAppResponse.Data["+ i +"].Description"));
+			appDetail.setDeployType(_ctx.stringValue("ListAppResponse.Data["+ i +"].DeployType"));
+			appDetail.setAppId(_ctx.longValue("ListAppResponse.Data["+ i +"].AppId"));
+			appDetail.setBizName(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizName"));
+			appDetail.setBizTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].BizTitle"));
+			appDetail.setServiceType(_ctx.stringValue("ListAppResponse.Data["+ i +"].ServiceType"));
+			appDetail.setTitle(_ctx.stringValue("ListAppResponse.Data["+ i +"].Title"));
+			appDetail.setOperatingSystem(_ctx.stringValue("ListAppResponse.Data["+ i +"].OperatingSystem"));
+			appDetail.setLanguage(_ctx.stringValue("ListAppResponse.Data["+ i +"].Language"));
 
 			List<MiddleWareInfo> middleWareList = new ArrayList<MiddleWareInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListAppResponse.Data["+ i +"].MiddleWareList.Length"); j++) {
 				MiddleWareInfo middleWareInfo = new MiddleWareInfo();
-				middleWareInfo.setAppId(_ctx.longValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].AppId"));
 				middleWareInfo.setCode(_ctx.integerValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].Code"));
 				middleWareInfo.setName(_ctx.stringValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].Name"));
+				middleWareInfo.setAppId(_ctx.longValue("ListAppResponse.Data["+ i +"].MiddleWareList["+ j +"].AppId"));
 
 				middleWareList.add(middleWareInfo);
 			}

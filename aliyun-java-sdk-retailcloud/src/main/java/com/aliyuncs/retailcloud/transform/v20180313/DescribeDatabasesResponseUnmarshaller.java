@@ -37,19 +37,19 @@ public class DescribeDatabasesResponseUnmarshaller {
 		List<DatabasesItem> databases = new ArrayList<DatabasesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDatabasesResponse.Result.Databases.Length"); i++) {
 			DatabasesItem databasesItem = new DatabasesItem();
-			databasesItem.setDBName(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBName"));
-			databasesItem.setDBStatus(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBStatus"));
 			databasesItem.setDBDescription(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBDescription"));
+			databasesItem.setDBStatus(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBStatus"));
+			databasesItem.setDBName(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBName"));
+			databasesItem.setDBInstanceId(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBInstanceId"));
 			databasesItem.setEngine(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Engine"));
 			databasesItem.setCharacterSetName(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].CharacterSetName"));
-			databasesItem.setDBInstanceId(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBInstanceId"));
 
 			List<AccountsItem> accounts = new ArrayList<AccountsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts.Length"); j++) {
 				AccountsItem accountsItem = new AccountsItem();
+				accountsItem.setAccount(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts["+ j +"].Account"));
 				accountsItem.setAccountPrivilegeDetail(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts["+ j +"].AccountPrivilegeDetail"));
 				accountsItem.setAccountPrivilege(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege"));
-				accountsItem.setAccount(_ctx.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts["+ j +"].Account"));
 
 				accounts.add(accountsItem);
 			}

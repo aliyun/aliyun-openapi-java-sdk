@@ -28,24 +28,24 @@ public class ListJobHistoriesResponseUnmarshaller {
 		
 		listJobHistoriesResponse.setRequestId(_ctx.stringValue("ListJobHistoriesResponse.RequestId"));
 		listJobHistoriesResponse.setCode(_ctx.integerValue("ListJobHistoriesResponse.Code"));
+		listJobHistoriesResponse.setErrorMsg(_ctx.stringValue("ListJobHistoriesResponse.ErrorMsg"));
 		listJobHistoriesResponse.setPageNumber(_ctx.integerValue("ListJobHistoriesResponse.PageNumber"));
 		listJobHistoriesResponse.setPageSize(_ctx.integerValue("ListJobHistoriesResponse.PageSize"));
 		listJobHistoriesResponse.setTotalCount(_ctx.longValue("ListJobHistoriesResponse.TotalCount"));
-		listJobHistoriesResponse.setErrorMsg(_ctx.stringValue("ListJobHistoriesResponse.ErrorMsg"));
 
 		List<JobDetail> data = new ArrayList<JobDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListJobHistoriesResponse.Data.Length"); i++) {
 			JobDetail jobDetail = new JobDetail();
-			jobDetail.setName(_ctx.stringValue("ListJobHistoriesResponse.Data["+ i +"].Name"));
-			jobDetail.setCompletionTime(_ctx.stringValue("ListJobHistoriesResponse.Data["+ i +"].CompletionTime"));
 			jobDetail.setStartTime(_ctx.stringValue("ListJobHistoriesResponse.Data["+ i +"].StartTime"));
-			jobDetail.setSucceeded(_ctx.integerValue("ListJobHistoriesResponse.Data["+ i +"].Succeeded"));
 			jobDetail.setFailed(_ctx.integerValue("ListJobHistoriesResponse.Data["+ i +"].Failed"));
-			jobDetail.setMessage(_ctx.stringValue("ListJobHistoriesResponse.Data["+ i +"].Message"));
 			jobDetail.setActiveDeadlineSeconds(_ctx.integerValue("ListJobHistoriesResponse.Data["+ i +"].ActiveDeadlineSeconds"));
 			jobDetail.setBackoffLimit(_ctx.integerValue("ListJobHistoriesResponse.Data["+ i +"].BackoffLimit"));
-			jobDetail.setCompletions(_ctx.integerValue("ListJobHistoriesResponse.Data["+ i +"].Completions"));
+			jobDetail.setMessage(_ctx.stringValue("ListJobHistoriesResponse.Data["+ i +"].Message"));
+			jobDetail.setSucceeded(_ctx.integerValue("ListJobHistoriesResponse.Data["+ i +"].Succeeded"));
+			jobDetail.setName(_ctx.stringValue("ListJobHistoriesResponse.Data["+ i +"].Name"));
+			jobDetail.setCompletionTime(_ctx.stringValue("ListJobHistoriesResponse.Data["+ i +"].CompletionTime"));
 			jobDetail.setParallelism(_ctx.integerValue("ListJobHistoriesResponse.Data["+ i +"].Parallelism"));
+			jobDetail.setCompletions(_ctx.integerValue("ListJobHistoriesResponse.Data["+ i +"].Completions"));
 
 			List<String> podList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListJobHistoriesResponse.Data["+ i +"].PodList.Length"); j++) {

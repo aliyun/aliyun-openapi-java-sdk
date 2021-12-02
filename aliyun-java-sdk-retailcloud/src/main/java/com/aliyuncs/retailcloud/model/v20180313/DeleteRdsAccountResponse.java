@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteRdsAccountResponse extends AcsResponse {
 
+	private Integer code;
+
 	private String requestId;
 
 	private String errMsg;
 
-	private Integer code;
-
 	private Result result;
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +54,6 @@ public class DeleteRdsAccountResponse extends AcsResponse {
 
 	public void setErrMsg(String errMsg) {
 		this.errMsg = errMsg;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
 	}
 
 	public Result getResult() {

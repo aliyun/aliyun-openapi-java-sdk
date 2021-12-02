@@ -129,21 +129,17 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 
 		public static class ClusterNodeWorkLoad {
 
-			private Integer appPodCount;
-
 			private String cpuRequest;
 
-			private String cpuTotal;
-
-			private String cpuUse;
-
-			private String instanceId;
+			private String memUse;
 
 			private String memRequest;
 
-			private String memTotal;
+			private String instanceId;
 
-			private String memUse;
+			private String cpuTotal;
+
+			private String memTotal;
 
 			private String nodeName;
 
@@ -151,15 +147,11 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 
 			private Boolean ready;
 
+			private String cpuUse;
+
 			private Boolean unschedulable;
 
-			public Integer getAppPodCount() {
-				return this.appPodCount;
-			}
-
-			public void setAppPodCount(Integer appPodCount) {
-				this.appPodCount = appPodCount;
-			}
+			private Integer appPodCount;
 
 			public String getCpuRequest() {
 				return this.cpuRequest;
@@ -169,28 +161,12 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 				this.cpuRequest = cpuRequest;
 			}
 
-			public String getCpuTotal() {
-				return this.cpuTotal;
+			public String getMemUse() {
+				return this.memUse;
 			}
 
-			public void setCpuTotal(String cpuTotal) {
-				this.cpuTotal = cpuTotal;
-			}
-
-			public String getCpuUse() {
-				return this.cpuUse;
-			}
-
-			public void setCpuUse(String cpuUse) {
-				this.cpuUse = cpuUse;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setMemUse(String memUse) {
+				this.memUse = memUse;
 			}
 
 			public String getMemRequest() {
@@ -201,20 +177,28 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 				this.memRequest = memRequest;
 			}
 
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getCpuTotal() {
+				return this.cpuTotal;
+			}
+
+			public void setCpuTotal(String cpuTotal) {
+				this.cpuTotal = cpuTotal;
+			}
+
 			public String getMemTotal() {
 				return this.memTotal;
 			}
 
 			public void setMemTotal(String memTotal) {
 				this.memTotal = memTotal;
-			}
-
-			public String getMemUse() {
-				return this.memUse;
-			}
-
-			public void setMemUse(String memUse) {
-				this.memUse = memUse;
 			}
 
 			public String getNodeName() {
@@ -241,6 +225,14 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 				this.ready = ready;
 			}
 
+			public String getCpuUse() {
+				return this.cpuUse;
+			}
+
+			public void setCpuUse(String cpuUse) {
+				this.cpuUse = cpuUse;
+			}
+
 			public Boolean getUnschedulable() {
 				return this.unschedulable;
 			}
@@ -248,88 +240,56 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 			public void setUnschedulable(Boolean unschedulable) {
 				this.unschedulable = unschedulable;
 			}
+
+			public Integer getAppPodCount() {
+				return this.appPodCount;
+			}
+
+			public void setAppPodCount(Integer appPodCount) {
+				this.appPodCount = appPodCount;
+			}
 		}
 
 		public static class BasicInfo {
 
-			private String businessCode;
-
-			private Long clusterId;
-
-			private String clusterInstanceId;
-
-			private String clusterName;
-
-			private String envType;
-
-			private Boolean hasInstallArmsPilot;
+			private String vpcId;
 
 			private Boolean hasInstallLogController;
 
 			private Boolean installArmsInProcess;
 
-			private Boolean installLogInProcess;
+			private String clusterInstanceId;
 
-			private String mainUserId;
-
-			private String regionId;
-
-			private String regionName;
+			private String businessCode;
 
 			private String userNick;
 
-			private String vpcId;
+			private String envType;
 
-			private List<String> ecsIds;
+			private String regionId;
+
+			private Boolean installLogInProcess;
+
+			private String regionName;
+
+			private String mainUserId;
+
+			private String clusterName;
+
+			private Boolean hasInstallArmsPilot;
+
+			private Long clusterId;
 
 			private List<String> vswitchs;
 
-			public String getBusinessCode() {
-				return this.businessCode;
+			private List<String> ecsIds;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setBusinessCode(String businessCode) {
-				this.businessCode = businessCode;
-			}
-
-			public Long getClusterId() {
-				return this.clusterId;
-			}
-
-			public void setClusterId(Long clusterId) {
-				this.clusterId = clusterId;
-			}
-
-			public String getClusterInstanceId() {
-				return this.clusterInstanceId;
-			}
-
-			public void setClusterInstanceId(String clusterInstanceId) {
-				this.clusterInstanceId = clusterInstanceId;
-			}
-
-			public String getClusterName() {
-				return this.clusterName;
-			}
-
-			public void setClusterName(String clusterName) {
-				this.clusterName = clusterName;
-			}
-
-			public String getEnvType() {
-				return this.envType;
-			}
-
-			public void setEnvType(String envType) {
-				this.envType = envType;
-			}
-
-			public Boolean getHasInstallArmsPilot() {
-				return this.hasInstallArmsPilot;
-			}
-
-			public void setHasInstallArmsPilot(Boolean hasInstallArmsPilot) {
-				this.hasInstallArmsPilot = hasInstallArmsPilot;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public Boolean getHasInstallLogController() {
@@ -348,36 +308,20 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 				this.installArmsInProcess = installArmsInProcess;
 			}
 
-			public Boolean getInstallLogInProcess() {
-				return this.installLogInProcess;
+			public String getClusterInstanceId() {
+				return this.clusterInstanceId;
 			}
 
-			public void setInstallLogInProcess(Boolean installLogInProcess) {
-				this.installLogInProcess = installLogInProcess;
+			public void setClusterInstanceId(String clusterInstanceId) {
+				this.clusterInstanceId = clusterInstanceId;
 			}
 
-			public String getMainUserId() {
-				return this.mainUserId;
+			public String getBusinessCode() {
+				return this.businessCode;
 			}
 
-			public void setMainUserId(String mainUserId) {
-				this.mainUserId = mainUserId;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getRegionName() {
-				return this.regionName;
-			}
-
-			public void setRegionName(String regionName) {
-				this.regionName = regionName;
+			public void setBusinessCode(String businessCode) {
+				this.businessCode = businessCode;
 			}
 
 			public String getUserNick() {
@@ -388,20 +332,68 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 				this.userNick = userNick;
 			}
 
-			public String getVpcId() {
-				return this.vpcId;
+			public String getEnvType() {
+				return this.envType;
 			}
 
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
+			public void setEnvType(String envType) {
+				this.envType = envType;
 			}
 
-			public List<String> getEcsIds() {
-				return this.ecsIds;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setEcsIds(List<String> ecsIds) {
-				this.ecsIds = ecsIds;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public Boolean getInstallLogInProcess() {
+				return this.installLogInProcess;
+			}
+
+			public void setInstallLogInProcess(Boolean installLogInProcess) {
+				this.installLogInProcess = installLogInProcess;
+			}
+
+			public String getRegionName() {
+				return this.regionName;
+			}
+
+			public void setRegionName(String regionName) {
+				this.regionName = regionName;
+			}
+
+			public String getMainUserId() {
+				return this.mainUserId;
+			}
+
+			public void setMainUserId(String mainUserId) {
+				this.mainUserId = mainUserId;
+			}
+
+			public String getClusterName() {
+				return this.clusterName;
+			}
+
+			public void setClusterName(String clusterName) {
+				this.clusterName = clusterName;
+			}
+
+			public Boolean getHasInstallArmsPilot() {
+				return this.hasInstallArmsPilot;
+			}
+
+			public void setHasInstallArmsPilot(Boolean hasInstallArmsPilot) {
+				this.hasInstallArmsPilot = hasInstallArmsPilot;
+			}
+
+			public Long getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(Long clusterId) {
+				this.clusterId = clusterId;
 			}
 
 			public List<String> getVswitchs() {
@@ -411,25 +403,25 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 			public void setVswitchs(List<String> vswitchs) {
 				this.vswitchs = vswitchs;
 			}
+
+			public List<String> getEcsIds() {
+				return this.ecsIds;
+			}
+
+			public void setEcsIds(List<String> ecsIds) {
+				this.ecsIds = ecsIds;
+			}
 		}
 
 		public static class InstanceInfo {
 
-			private Integer allocatePodCount;
-
 			private Integer appCount;
+
+			private Integer allocatePodCount;
 
 			private List<AllocatedPodInstanceInfo> allocatedPodInfoList;
 
 			private List<AvailablePodInstanceInfo> availablePodInfoList;
-
-			public Integer getAllocatePodCount() {
-				return this.allocatePodCount;
-			}
-
-			public void setAllocatePodCount(Integer allocatePodCount) {
-				this.allocatePodCount = allocatePodCount;
-			}
 
 			public Integer getAppCount() {
 				return this.appCount;
@@ -437,6 +429,14 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 
 			public void setAppCount(Integer appCount) {
 				this.appCount = appCount;
+			}
+
+			public Integer getAllocatePodCount() {
+				return this.allocatePodCount;
+			}
+
+			public void setAllocatePodCount(Integer allocatePodCount) {
+				this.allocatePodCount = allocatePodCount;
 			}
 
 			public List<AllocatedPodInstanceInfo> getAllocatedPodInfoList() {
@@ -457,27 +457,19 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 
 			public static class AllocatedPodInstanceInfo {
 
-				private Long appId;
-
 				private String appName;
-
-				private String cupRequest;
-
-				private Long envId;
 
 				private String envName;
 
-				private String memRequest;
+				private Long appId;
 
 				private Integer podCount;
 
-				public Long getAppId() {
-					return this.appId;
-				}
+				private String memRequest;
 
-				public void setAppId(Long appId) {
-					this.appId = appId;
-				}
+				private Long envId;
+
+				private String cupRequest;
 
 				public String getAppName() {
 					return this.appName;
@@ -485,22 +477,6 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 
 				public void setAppName(String appName) {
 					this.appName = appName;
-				}
-
-				public String getCupRequest() {
-					return this.cupRequest;
-				}
-
-				public void setCupRequest(String cupRequest) {
-					this.cupRequest = cupRequest;
-				}
-
-				public Long getEnvId() {
-					return this.envId;
-				}
-
-				public void setEnvId(Long envId) {
-					this.envId = envId;
 				}
 
 				public String getEnvName() {
@@ -511,12 +487,12 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 					this.envName = envName;
 				}
 
-				public String getMemRequest() {
-					return this.memRequest;
+				public Long getAppId() {
+					return this.appId;
 				}
 
-				public void setMemRequest(String memRequest) {
-					this.memRequest = memRequest;
+				public void setAppId(Long appId) {
+					this.appId = appId;
 				}
 
 				public Integer getPodCount() {
@@ -525,6 +501,30 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 
 				public void setPodCount(Integer podCount) {
 					this.podCount = podCount;
+				}
+
+				public String getMemRequest() {
+					return this.memRequest;
+				}
+
+				public void setMemRequest(String memRequest) {
+					this.memRequest = memRequest;
+				}
+
+				public Long getEnvId() {
+					return this.envId;
+				}
+
+				public void setEnvId(Long envId) {
+					this.envId = envId;
+				}
+
+				public String getCupRequest() {
+					return this.cupRequest;
+				}
+
+				public void setCupRequest(String cupRequest) {
+					this.cupRequest = cupRequest;
 				}
 			}
 
@@ -564,19 +564,11 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 
 		public static class NetInfo {
 
-			private String netPlugType;
-
 			private String prodCIDR;
 
 			private String serviceCIDR;
 
-			public String getNetPlugType() {
-				return this.netPlugType;
-			}
-
-			public void setNetPlugType(String netPlugType) {
-				this.netPlugType = netPlugType;
-			}
+			private String netPlugType;
 
 			public String getProdCIDR() {
 				return this.prodCIDR;
@@ -593,50 +585,58 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 			public void setServiceCIDR(String serviceCIDR) {
 				this.serviceCIDR = serviceCIDR;
 			}
+
+			public String getNetPlugType() {
+				return this.netPlugType;
+			}
+
+			public void setNetPlugType(String netPlugType) {
+				this.netPlugType = netPlugType;
+			}
 		}
 
 		public static class WorkLoad {
 
-			private Integer allNodeCount;
+			private String memCapacityTotal;
 
 			private Integer allocateAllPodCount;
 
-			private Integer allocateAppPodCount;
-
-			private String cpuCapacityTotal;
-
-			private String cpuLevel;
-
 			private String cpuRequest;
 
-			private String cpuRequestPercent;
+			private Integer allNodeCount;
 
-			private String cpuTotal;
-
-			private String cpuUse;
-
-			private String cpuUsePercent;
-
-			private String memCapacityTotal;
-
-			private String memLevel;
-
-			private String memRequest;
-
-			private String memRequestPercent;
-
-			private String memTotal;
+			private Integer allocateAppPodCount;
 
 			private String memUse;
 
+			private String cpuCapacityTotal;
+
+			private String cpuUsePercent;
+
+			private String cpuRequestPercent;
+
+			private String memRequest;
+
+			private String cpuLevel;
+
 			private String memUsePercent;
 
-			public Integer getAllNodeCount() {
-				return this.allNodeCount;
+			private String memLevel;
+
+			private String cpuTotal;
+
+			private String memTotal;
+
+			private String memRequestPercent;
+
+			private String cpuUse;
+
+			public String getMemCapacityTotal() {
+				return this.memCapacityTotal;
 			}
 
-			public void setAllNodeCount(Integer allNodeCount) {
-				this.allNodeCount = allNodeCount;
+			public void setMemCapacityTotal(String memCapacityTotal) {
+				this.memCapacityTotal = memCapacityTotal;
 			}
 
 			public Integer getAllocateAllPodCount() {
@@ -647,30 +647,6 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 				this.allocateAllPodCount = allocateAllPodCount;
 			}
 
-			public Integer getAllocateAppPodCount() {
-				return this.allocateAppPodCount;
-			}
-
-			public void setAllocateAppPodCount(Integer allocateAppPodCount) {
-				this.allocateAppPodCount = allocateAppPodCount;
-			}
-
-			public String getCpuCapacityTotal() {
-				return this.cpuCapacityTotal;
-			}
-
-			public void setCpuCapacityTotal(String cpuCapacityTotal) {
-				this.cpuCapacityTotal = cpuCapacityTotal;
-			}
-
-			public String getCpuLevel() {
-				return this.cpuLevel;
-			}
-
-			public void setCpuLevel(String cpuLevel) {
-				this.cpuLevel = cpuLevel;
-			}
-
 			public String getCpuRequest() {
 				return this.cpuRequest;
 			}
@@ -679,76 +655,20 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 				this.cpuRequest = cpuRequest;
 			}
 
-			public String getCpuRequestPercent() {
-				return this.cpuRequestPercent;
+			public Integer getAllNodeCount() {
+				return this.allNodeCount;
 			}
 
-			public void setCpuRequestPercent(String cpuRequestPercent) {
-				this.cpuRequestPercent = cpuRequestPercent;
+			public void setAllNodeCount(Integer allNodeCount) {
+				this.allNodeCount = allNodeCount;
 			}
 
-			public String getCpuTotal() {
-				return this.cpuTotal;
+			public Integer getAllocateAppPodCount() {
+				return this.allocateAppPodCount;
 			}
 
-			public void setCpuTotal(String cpuTotal) {
-				this.cpuTotal = cpuTotal;
-			}
-
-			public String getCpuUse() {
-				return this.cpuUse;
-			}
-
-			public void setCpuUse(String cpuUse) {
-				this.cpuUse = cpuUse;
-			}
-
-			public String getCpuUsePercent() {
-				return this.cpuUsePercent;
-			}
-
-			public void setCpuUsePercent(String cpuUsePercent) {
-				this.cpuUsePercent = cpuUsePercent;
-			}
-
-			public String getMemCapacityTotal() {
-				return this.memCapacityTotal;
-			}
-
-			public void setMemCapacityTotal(String memCapacityTotal) {
-				this.memCapacityTotal = memCapacityTotal;
-			}
-
-			public String getMemLevel() {
-				return this.memLevel;
-			}
-
-			public void setMemLevel(String memLevel) {
-				this.memLevel = memLevel;
-			}
-
-			public String getMemRequest() {
-				return this.memRequest;
-			}
-
-			public void setMemRequest(String memRequest) {
-				this.memRequest = memRequest;
-			}
-
-			public String getMemRequestPercent() {
-				return this.memRequestPercent;
-			}
-
-			public void setMemRequestPercent(String memRequestPercent) {
-				this.memRequestPercent = memRequestPercent;
-			}
-
-			public String getMemTotal() {
-				return this.memTotal;
-			}
-
-			public void setMemTotal(String memTotal) {
-				this.memTotal = memTotal;
+			public void setAllocateAppPodCount(Integer allocateAppPodCount) {
+				this.allocateAppPodCount = allocateAppPodCount;
 			}
 
 			public String getMemUse() {
@@ -759,12 +679,92 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 				this.memUse = memUse;
 			}
 
+			public String getCpuCapacityTotal() {
+				return this.cpuCapacityTotal;
+			}
+
+			public void setCpuCapacityTotal(String cpuCapacityTotal) {
+				this.cpuCapacityTotal = cpuCapacityTotal;
+			}
+
+			public String getCpuUsePercent() {
+				return this.cpuUsePercent;
+			}
+
+			public void setCpuUsePercent(String cpuUsePercent) {
+				this.cpuUsePercent = cpuUsePercent;
+			}
+
+			public String getCpuRequestPercent() {
+				return this.cpuRequestPercent;
+			}
+
+			public void setCpuRequestPercent(String cpuRequestPercent) {
+				this.cpuRequestPercent = cpuRequestPercent;
+			}
+
+			public String getMemRequest() {
+				return this.memRequest;
+			}
+
+			public void setMemRequest(String memRequest) {
+				this.memRequest = memRequest;
+			}
+
+			public String getCpuLevel() {
+				return this.cpuLevel;
+			}
+
+			public void setCpuLevel(String cpuLevel) {
+				this.cpuLevel = cpuLevel;
+			}
+
 			public String getMemUsePercent() {
 				return this.memUsePercent;
 			}
 
 			public void setMemUsePercent(String memUsePercent) {
 				this.memUsePercent = memUsePercent;
+			}
+
+			public String getMemLevel() {
+				return this.memLevel;
+			}
+
+			public void setMemLevel(String memLevel) {
+				this.memLevel = memLevel;
+			}
+
+			public String getCpuTotal() {
+				return this.cpuTotal;
+			}
+
+			public void setCpuTotal(String cpuTotal) {
+				this.cpuTotal = cpuTotal;
+			}
+
+			public String getMemTotal() {
+				return this.memTotal;
+			}
+
+			public void setMemTotal(String memTotal) {
+				this.memTotal = memTotal;
+			}
+
+			public String getMemRequestPercent() {
+				return this.memRequestPercent;
+			}
+
+			public void setMemRequestPercent(String memRequestPercent) {
+				this.memRequestPercent = memRequestPercent;
+			}
+
+			public String getCpuUse() {
+				return this.cpuUse;
+			}
+
+			public void setCpuUse(String cpuUse) {
+				this.cpuUse = cpuUse;
 			}
 		}
 	}

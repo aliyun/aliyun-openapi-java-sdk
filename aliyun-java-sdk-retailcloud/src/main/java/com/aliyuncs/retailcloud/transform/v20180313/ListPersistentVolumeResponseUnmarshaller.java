@@ -30,22 +30,22 @@ public class ListPersistentVolumeResponseUnmarshaller {
 		listPersistentVolumeResponse.setCode(_ctx.integerValue("ListPersistentVolumeResponse.Code"));
 		listPersistentVolumeResponse.setPageSize(_ctx.integerValue("ListPersistentVolumeResponse.PageSize"));
 		listPersistentVolumeResponse.setPageNumber(_ctx.integerValue("ListPersistentVolumeResponse.PageNumber"));
-		listPersistentVolumeResponse.setTotalCount(_ctx.longValue("ListPersistentVolumeResponse.TotalCount"));
 		listPersistentVolumeResponse.setErrMsg(_ctx.stringValue("ListPersistentVolumeResponse.ErrMsg"));
+		listPersistentVolumeResponse.setTotalCount(_ctx.longValue("ListPersistentVolumeResponse.TotalCount"));
 
 		List<PersistentVolumeDetail> data = new ArrayList<PersistentVolumeDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersistentVolumeResponse.Data.Length"); i++) {
 			PersistentVolumeDetail persistentVolumeDetail = new PersistentVolumeDetail();
-			persistentVolumeDetail.setName(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].Name"));
-			persistentVolumeDetail.setCapacity(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].Capacity"));
-			persistentVolumeDetail.setAccessModes(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].AccessModes"));
-			persistentVolumeDetail.setReclaimPolicy(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].ReclaimPolicy"));
-			persistentVolumeDetail.setStatus(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].Status"));
-			persistentVolumeDetail.setPvcName(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].PvcName"));
-			persistentVolumeDetail.setMountDir(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].MountDir"));
 			persistentVolumeDetail.setStorageClass(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].StorageClass"));
-			persistentVolumeDetail.setReason(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].Reason"));
+			persistentVolumeDetail.setStatus(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].Status"));
+			persistentVolumeDetail.setCapacity(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].Capacity"));
+			persistentVolumeDetail.setPvcName(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].PvcName"));
 			persistentVolumeDetail.setCreateTime(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].CreateTime"));
+			persistentVolumeDetail.setAccessModes(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].AccessModes"));
+			persistentVolumeDetail.setMountDir(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].MountDir"));
+			persistentVolumeDetail.setReclaimPolicy(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].ReclaimPolicy"));
+			persistentVolumeDetail.setName(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].Name"));
+			persistentVolumeDetail.setReason(_ctx.stringValue("ListPersistentVolumeResponse.Data["+ i +"].Reason"));
 
 			data.add(persistentVolumeDetail);
 		}

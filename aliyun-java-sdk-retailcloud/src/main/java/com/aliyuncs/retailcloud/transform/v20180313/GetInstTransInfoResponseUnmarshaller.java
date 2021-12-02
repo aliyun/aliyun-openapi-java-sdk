@@ -22,12 +22,12 @@ public class GetInstTransInfoResponseUnmarshaller {
 
 	public static GetInstTransInfoResponse unmarshall(GetInstTransInfoResponse getInstTransInfoResponse, UnmarshallerContext _ctx) {
 		
-		getInstTransInfoResponse.setInstanceId(_ctx.stringValue("GetInstTransInfoResponse.instanceId"));
 		getInstTransInfoResponse.setIsAutoRenew(_ctx.booleanValue("GetInstTransInfoResponse.isAutoRenew"));
 		getInstTransInfoResponse.setRenewCycle(_ctx.integerValue("GetInstTransInfoResponse.renewCycle"));
-		getInstTransInfoResponse.setChargeType(_ctx.stringValue("GetInstTransInfoResponse.chargeType"));
-		getInstTransInfoResponse.setEndTime(_ctx.longValue("GetInstTransInfoResponse.endTime"));
 		getInstTransInfoResponse.setStartTime(_ctx.longValue("GetInstTransInfoResponse.startTime"));
+		getInstTransInfoResponse.setChargeType(_ctx.stringValue("GetInstTransInfoResponse.chargeType"));
+		getInstTransInfoResponse.setInstanceId(_ctx.stringValue("GetInstTransInfoResponse.instanceId"));
+		getInstTransInfoResponse.setEndTime(_ctx.longValue("GetInstTransInfoResponse.endTime"));
 	 
 	 	return getInstTransInfoResponse;
 	}

@@ -29,11 +29,11 @@ public class CreateAppResourceAllocResponseUnmarshaller {
 		createAppResourceAllocResponse.setSuccess(_ctx.booleanValue("CreateAppResourceAllocResponse.Success"));
 
 		Result result = new Result();
+		result.setResourceDef(_ctx.stringValue("CreateAppResourceAllocResponse.Result.ResourceDef"));
 		result.setAppEnvId(_ctx.longValue("CreateAppResourceAllocResponse.Result.AppEnvId"));
+		result.setId(_ctx.longValue("CreateAppResourceAllocResponse.Result.Id"));
 		result.setAppId(_ctx.longValue("CreateAppResourceAllocResponse.Result.AppId"));
 		result.setClusterId(_ctx.stringValue("CreateAppResourceAllocResponse.Result.ClusterId"));
-		result.setId(_ctx.longValue("CreateAppResourceAllocResponse.Result.Id"));
-		result.setResourceDef(_ctx.stringValue("CreateAppResourceAllocResponse.Result.ResourceDef"));
 		createAppResourceAllocResponse.setResult(result);
 	 
 	 	return createAppResourceAllocResponse;

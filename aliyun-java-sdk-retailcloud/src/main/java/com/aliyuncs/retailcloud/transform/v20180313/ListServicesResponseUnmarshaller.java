@@ -34,28 +34,27 @@ public class ListServicesResponseUnmarshaller {
 		listServicesResponse.setPageSize(_ctx.integerValue("ListServicesResponse.PageSize"));
 		listServicesResponse.setTotalCount(_ctx.longValue("ListServicesResponse.TotalCount"));
 		listServicesResponse.setClusterIP(_ctx.stringValue("ListServicesResponse.ClusterIP"));
-		listServicesResponse.setClusterIP1(_ctx.stringValue("ListServicesResponse.ClusterIP"));
 
 		List<ServiceInstance> data = new ArrayList<ServiceInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListServicesResponse.Data.Length"); i++) {
 			ServiceInstance serviceInstance = new ServiceInstance();
-			serviceInstance.setAppId(_ctx.longValue("ListServicesResponse.Data["+ i +"].AppId"));
-			serviceInstance.setEnvId(_ctx.longValue("ListServicesResponse.Data["+ i +"].EnvId"));
 			serviceInstance.setHeadless(_ctx.booleanValue("ListServicesResponse.Data["+ i +"].Headless"));
-			serviceInstance.setK8sServiceId(_ctx.stringValue("ListServicesResponse.Data["+ i +"].K8sServiceId"));
-			serviceInstance.setName(_ctx.stringValue("ListServicesResponse.Data["+ i +"].Name"));
+			serviceInstance.setAppId(_ctx.longValue("ListServicesResponse.Data["+ i +"].AppId"));
 			serviceInstance.setServiceId(_ctx.longValue("ListServicesResponse.Data["+ i +"].ServiceId"));
+			serviceInstance.setK8sServiceId(_ctx.stringValue("ListServicesResponse.Data["+ i +"].K8sServiceId"));
 			serviceInstance.setServiceType(_ctx.stringValue("ListServicesResponse.Data["+ i +"].ServiceType"));
+			serviceInstance.setEnvId(_ctx.longValue("ListServicesResponse.Data["+ i +"].EnvId"));
+			serviceInstance.setName(_ctx.stringValue("ListServicesResponse.Data["+ i +"].Name"));
 			serviceInstance.setClusterIP(_ctx.stringValue("ListServicesResponse.Data["+ i +"].ClusterIP"));
 
 			List<ServicePortMapping> portMappings = new ArrayList<ServicePortMapping>();
 			for (int j = 0; j < _ctx.lengthValue("ListServicesResponse.Data["+ i +"].PortMappings.Length"); j++) {
 				ServicePortMapping servicePortMapping = new ServicePortMapping();
-				servicePortMapping.setName(_ctx.stringValue("ListServicesResponse.Data["+ i +"].PortMappings["+ j +"].Name"));
+				servicePortMapping.setTargetPort(_ctx.stringValue("ListServicesResponse.Data["+ i +"].PortMappings["+ j +"].TargetPort"));
 				servicePortMapping.setNodePort(_ctx.integerValue("ListServicesResponse.Data["+ i +"].PortMappings["+ j +"].NodePort"));
 				servicePortMapping.setPort(_ctx.integerValue("ListServicesResponse.Data["+ i +"].PortMappings["+ j +"].Port"));
+				servicePortMapping.setName(_ctx.stringValue("ListServicesResponse.Data["+ i +"].PortMappings["+ j +"].Name"));
 				servicePortMapping.setBizProtocol(_ctx.stringValue("ListServicesResponse.Data["+ i +"].PortMappings["+ j +"].Protocol"));
-				servicePortMapping.setTargetPort(_ctx.stringValue("ListServicesResponse.Data["+ i +"].PortMappings["+ j +"].TargetPort"));
 
 				portMappings.add(servicePortMapping);
 			}

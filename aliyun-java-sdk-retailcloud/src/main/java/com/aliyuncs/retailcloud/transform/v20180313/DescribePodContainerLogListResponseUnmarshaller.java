@@ -37,9 +37,9 @@ public class DescribePodContainerLogListResponseUnmarshaller {
 		List<PodContainerLog> containerLogList = new ArrayList<PodContainerLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePodContainerLogListResponse.Result.ContainerLogList.Length"); i++) {
 			PodContainerLog podContainerLog = new PodContainerLog();
+			podContainerLog.setPodName(_ctx.stringValue("DescribePodContainerLogListResponse.Result.ContainerLogList["+ i +"].PodName"));
 			podContainerLog.setContainerName(_ctx.stringValue("DescribePodContainerLogListResponse.Result.ContainerLogList["+ i +"].ContainerName"));
 			podContainerLog.setContent(_ctx.stringValue("DescribePodContainerLogListResponse.Result.ContainerLogList["+ i +"].Content"));
-			podContainerLog.setPodName(_ctx.stringValue("DescribePodContainerLogListResponse.Result.ContainerLogList["+ i +"].PodName"));
 
 			containerLogList.add(podContainerLog);
 		}

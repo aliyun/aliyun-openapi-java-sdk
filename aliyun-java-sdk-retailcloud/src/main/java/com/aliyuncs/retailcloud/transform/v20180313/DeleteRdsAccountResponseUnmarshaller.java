@@ -24,8 +24,8 @@ public class DeleteRdsAccountResponseUnmarshaller {
 	public static DeleteRdsAccountResponse unmarshall(DeleteRdsAccountResponse deleteRdsAccountResponse, UnmarshallerContext _ctx) {
 		
 		deleteRdsAccountResponse.setRequestId(_ctx.stringValue("DeleteRdsAccountResponse.RequestId"));
-		deleteRdsAccountResponse.setErrMsg(_ctx.stringValue("DeleteRdsAccountResponse.ErrMsg"));
 		deleteRdsAccountResponse.setCode(_ctx.integerValue("DeleteRdsAccountResponse.Code"));
+		deleteRdsAccountResponse.setErrMsg(_ctx.stringValue("DeleteRdsAccountResponse.ErrMsg"));
 
 		Result result = new Result();
 		result.setRequestId(_ctx.stringValue("DeleteRdsAccountResponse.Result.RequestId"));

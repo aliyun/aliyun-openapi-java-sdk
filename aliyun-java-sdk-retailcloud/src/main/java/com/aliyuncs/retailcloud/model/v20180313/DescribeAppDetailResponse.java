@@ -67,92 +67,36 @@ public class DescribeAppDetailResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String serviceType;
-
-		private String bizTitle;
-
-		private String bizName;
-
-		private Long appId;
-
-		private String language;
-
-		private String title;
-
-		private String operatingSystem;
-
-		private String deployType;
+		private String appStateType;
 
 		private String description;
 
-		private String appStateType;
+		private String deployType;
+
+		private Long appId;
+
+		private String bizName;
+
+		private String title;
+
+		private String bizTitle;
+
+		private String serviceType;
+
+		private String operatingSystem;
+
+		private String language;
 
 		private List<UserRole> userRoles;
 
 		private List<MiddleWareInfo> middleWareInfoList;
 
-		public String getServiceType() {
-			return this.serviceType;
+		public String getAppStateType() {
+			return this.appStateType;
 		}
 
-		public void setServiceType(String serviceType) {
-			this.serviceType = serviceType;
-		}
-
-		public String getBizTitle() {
-			return this.bizTitle;
-		}
-
-		public void setBizTitle(String bizTitle) {
-			this.bizTitle = bizTitle;
-		}
-
-		public String getBizName() {
-			return this.bizName;
-		}
-
-		public void setBizName(String bizName) {
-			this.bizName = bizName;
-		}
-
-		public Long getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
-
-		public String getLanguage() {
-			return this.language;
-		}
-
-		public void setLanguage(String language) {
-			this.language = language;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
-
-		public String getOperatingSystem() {
-			return this.operatingSystem;
-		}
-
-		public void setOperatingSystem(String operatingSystem) {
-			this.operatingSystem = operatingSystem;
-		}
-
-		public String getDeployType() {
-			return this.deployType;
-		}
-
-		public void setDeployType(String deployType) {
-			this.deployType = deployType;
+		public void setAppStateType(String appStateType) {
+			this.appStateType = appStateType;
 		}
 
 		public String getDescription() {
@@ -163,12 +107,68 @@ public class DescribeAppDetailResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getAppStateType() {
-			return this.appStateType;
+		public String getDeployType() {
+			return this.deployType;
 		}
 
-		public void setAppStateType(String appStateType) {
-			this.appStateType = appStateType;
+		public void setDeployType(String deployType) {
+			this.deployType = deployType;
+		}
+
+		public Long getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(Long appId) {
+			this.appId = appId;
+		}
+
+		public String getBizName() {
+			return this.bizName;
+		}
+
+		public void setBizName(String bizName) {
+			this.bizName = bizName;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getBizTitle() {
+			return this.bizTitle;
+		}
+
+		public void setBizTitle(String bizTitle) {
+			this.bizTitle = bizTitle;
+		}
+
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
+		public String getOperatingSystem() {
+			return this.operatingSystem;
+		}
+
+		public void setOperatingSystem(String operatingSystem) {
+			this.operatingSystem = operatingSystem;
+		}
+
+		public String getLanguage() {
+			return this.language;
+		}
+
+		public void setLanguage(String language) {
+			this.language = language;
 		}
 
 		public List<UserRole> getUserRoles() {
@@ -189,21 +189,13 @@ public class DescribeAppDetailResponse extends AcsResponse {
 
 		public static class UserRole {
 
-			private String userId;
-
 			private String userType;
-
-			private String realName;
 
 			private String roleName;
 
-			public String getUserId() {
-				return this.userId;
-			}
+			private String realName;
 
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
+			private String userId;
 
 			public String getUserType() {
 				return this.userType;
@@ -211,6 +203,14 @@ public class DescribeAppDetailResponse extends AcsResponse {
 
 			public void setUserType(String userType) {
 				this.userType = userType;
+			}
+
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
 			}
 
 			public String getRealName() {
@@ -221,30 +221,22 @@ public class DescribeAppDetailResponse extends AcsResponse {
 				this.realName = realName;
 			}
 
-			public String getRoleName() {
-				return this.roleName;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setRoleName(String roleName) {
-				this.roleName = roleName;
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 
 		public static class MiddleWareInfo {
 
-			private Long appId;
-
 			private Integer code;
 
 			private String name;
 
-			public Long getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(Long appId) {
-				this.appId = appId;
-			}
+			private Long appId;
 
 			public Integer getCode() {
 				return this.code;
@@ -260,6 +252,14 @@ public class DescribeAppDetailResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Long getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(Long appId) {
+				this.appId = appId;
 			}
 		}
 	}

@@ -67,22 +67,22 @@ public class GetRdsBackUpResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String totalRecordCount;
+		private Long totalBackupSize;
 
 		private String pageNumber;
 
 		private String pageRecordCount;
 
-		private Long totalBackupSize;
+		private String totalRecordCount;
 
 		private List<Backup> items;
 
-		public String getTotalRecordCount() {
-			return this.totalRecordCount;
+		public Long getTotalBackupSize() {
+			return this.totalBackupSize;
 		}
 
-		public void setTotalRecordCount(String totalRecordCount) {
-			this.totalRecordCount = totalRecordCount;
+		public void setTotalBackupSize(Long totalBackupSize) {
+			this.totalBackupSize = totalBackupSize;
 		}
 
 		public String getPageNumber() {
@@ -101,12 +101,12 @@ public class GetRdsBackUpResponse extends AcsResponse {
 			this.pageRecordCount = pageRecordCount;
 		}
 
-		public Long getTotalBackupSize() {
-			return this.totalBackupSize;
+		public String getTotalRecordCount() {
+			return this.totalRecordCount;
 		}
 
-		public void setTotalBackupSize(Long totalBackupSize) {
-			this.totalBackupSize = totalBackupSize;
+		public void setTotalRecordCount(String totalRecordCount) {
+			this.totalRecordCount = totalRecordCount;
 		}
 
 		public List<Backup> getItems() {
@@ -119,54 +119,46 @@ public class GetRdsBackUpResponse extends AcsResponse {
 
 		public static class Backup {
 
-			private String backupId;
-
-			private String dBInstanceId;
+			private String storeStatus;
 
 			private String backupStatus;
 
-			private String backupStartTime;
-
-			private String backupEndTime;
+			private String backupLocation;
 
 			private String backupType;
 
-			private String backupMode;
-
-			private String backupMethod;
-
-			private String backupLocation;
-
-			private String backupExtractionStatus;
-
-			private String backupScale;
-
-			private String backupDBNames;
+			private String backupStartTime;
 
 			private Long totalBackupSize;
 
-			private Long backupSize;
+			private String metaStatus;
+
+			private String backupEndTime;
+
+			private String backupDBNames;
+
+			private String backupScale;
+
+			private String backupId;
 
 			private String hostInstanceID;
 
-			private String storeStatus;
+			private Long backupSize;
 
-			private String metaStatus;
+			private String backupMode;
 
-			public String getBackupId() {
-				return this.backupId;
+			private String dBInstanceId;
+
+			private String backupExtractionStatus;
+
+			private String backupMethod;
+
+			public String getStoreStatus() {
+				return this.storeStatus;
 			}
 
-			public void setBackupId(String backupId) {
-				this.backupId = backupId;
-			}
-
-			public String getDBInstanceId() {
-				return this.dBInstanceId;
-			}
-
-			public void setDBInstanceId(String dBInstanceId) {
-				this.dBInstanceId = dBInstanceId;
+			public void setStoreStatus(String storeStatus) {
+				this.storeStatus = storeStatus;
 			}
 
 			public String getBackupStatus() {
@@ -177,20 +169,12 @@ public class GetRdsBackUpResponse extends AcsResponse {
 				this.backupStatus = backupStatus;
 			}
 
-			public String getBackupStartTime() {
-				return this.backupStartTime;
+			public String getBackupLocation() {
+				return this.backupLocation;
 			}
 
-			public void setBackupStartTime(String backupStartTime) {
-				this.backupStartTime = backupStartTime;
-			}
-
-			public String getBackupEndTime() {
-				return this.backupEndTime;
-			}
-
-			public void setBackupEndTime(String backupEndTime) {
-				this.backupEndTime = backupEndTime;
+			public void setBackupLocation(String backupLocation) {
+				this.backupLocation = backupLocation;
 			}
 
 			public String getBackupType() {
@@ -201,52 +185,12 @@ public class GetRdsBackUpResponse extends AcsResponse {
 				this.backupType = backupType;
 			}
 
-			public String getBackupMode() {
-				return this.backupMode;
+			public String getBackupStartTime() {
+				return this.backupStartTime;
 			}
 
-			public void setBackupMode(String backupMode) {
-				this.backupMode = backupMode;
-			}
-
-			public String getBackupMethod() {
-				return this.backupMethod;
-			}
-
-			public void setBackupMethod(String backupMethod) {
-				this.backupMethod = backupMethod;
-			}
-
-			public String getBackupLocation() {
-				return this.backupLocation;
-			}
-
-			public void setBackupLocation(String backupLocation) {
-				this.backupLocation = backupLocation;
-			}
-
-			public String getBackupExtractionStatus() {
-				return this.backupExtractionStatus;
-			}
-
-			public void setBackupExtractionStatus(String backupExtractionStatus) {
-				this.backupExtractionStatus = backupExtractionStatus;
-			}
-
-			public String getBackupScale() {
-				return this.backupScale;
-			}
-
-			public void setBackupScale(String backupScale) {
-				this.backupScale = backupScale;
-			}
-
-			public String getBackupDBNames() {
-				return this.backupDBNames;
-			}
-
-			public void setBackupDBNames(String backupDBNames) {
-				this.backupDBNames = backupDBNames;
+			public void setBackupStartTime(String backupStartTime) {
+				this.backupStartTime = backupStartTime;
 			}
 
 			public Long getTotalBackupSize() {
@@ -257,12 +201,44 @@ public class GetRdsBackUpResponse extends AcsResponse {
 				this.totalBackupSize = totalBackupSize;
 			}
 
-			public Long getBackupSize() {
-				return this.backupSize;
+			public String getMetaStatus() {
+				return this.metaStatus;
 			}
 
-			public void setBackupSize(Long backupSize) {
-				this.backupSize = backupSize;
+			public void setMetaStatus(String metaStatus) {
+				this.metaStatus = metaStatus;
+			}
+
+			public String getBackupEndTime() {
+				return this.backupEndTime;
+			}
+
+			public void setBackupEndTime(String backupEndTime) {
+				this.backupEndTime = backupEndTime;
+			}
+
+			public String getBackupDBNames() {
+				return this.backupDBNames;
+			}
+
+			public void setBackupDBNames(String backupDBNames) {
+				this.backupDBNames = backupDBNames;
+			}
+
+			public String getBackupScale() {
+				return this.backupScale;
+			}
+
+			public void setBackupScale(String backupScale) {
+				this.backupScale = backupScale;
+			}
+
+			public String getBackupId() {
+				return this.backupId;
+			}
+
+			public void setBackupId(String backupId) {
+				this.backupId = backupId;
 			}
 
 			public String getHostInstanceID() {
@@ -273,20 +249,44 @@ public class GetRdsBackUpResponse extends AcsResponse {
 				this.hostInstanceID = hostInstanceID;
 			}
 
-			public String getStoreStatus() {
-				return this.storeStatus;
+			public Long getBackupSize() {
+				return this.backupSize;
 			}
 
-			public void setStoreStatus(String storeStatus) {
-				this.storeStatus = storeStatus;
+			public void setBackupSize(Long backupSize) {
+				this.backupSize = backupSize;
 			}
 
-			public String getMetaStatus() {
-				return this.metaStatus;
+			public String getBackupMode() {
+				return this.backupMode;
 			}
 
-			public void setMetaStatus(String metaStatus) {
-				this.metaStatus = metaStatus;
+			public void setBackupMode(String backupMode) {
+				this.backupMode = backupMode;
+			}
+
+			public String getDBInstanceId() {
+				return this.dBInstanceId;
+			}
+
+			public void setDBInstanceId(String dBInstanceId) {
+				this.dBInstanceId = dBInstanceId;
+			}
+
+			public String getBackupExtractionStatus() {
+				return this.backupExtractionStatus;
+			}
+
+			public void setBackupExtractionStatus(String backupExtractionStatus) {
+				this.backupExtractionStatus = backupExtractionStatus;
+			}
+
+			public String getBackupMethod() {
+				return this.backupMethod;
+			}
+
+			public void setBackupMethod(String backupMethod) {
+				this.backupMethod = backupMethod;
 			}
 		}
 	}

@@ -67,30 +67,22 @@ public class DescribeJobLogResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Long appId;
-
-		private Long envId;
+		private String jobLog;
 
 		private String podName;
 
-		private String jobLog;
+		private Long envId;
+
+		private Long appId;
 
 		private List<Event> events;
 
-		public Long getAppId() {
-			return this.appId;
+		public String getJobLog() {
+			return this.jobLog;
 		}
 
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
-
-		public Long getEnvId() {
-			return this.envId;
-		}
-
-		public void setEnvId(Long envId) {
-			this.envId = envId;
+		public void setJobLog(String jobLog) {
+			this.jobLog = jobLog;
 		}
 
 		public String getPodName() {
@@ -101,12 +93,20 @@ public class DescribeJobLogResponse extends AcsResponse {
 			this.podName = podName;
 		}
 
-		public String getJobLog() {
-			return this.jobLog;
+		public Long getEnvId() {
+			return this.envId;
 		}
 
-		public void setJobLog(String jobLog) {
-			this.jobLog = jobLog;
+		public void setEnvId(Long envId) {
+			this.envId = envId;
+		}
+
+		public Long getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(Long appId) {
+			this.appId = appId;
 		}
 
 		public List<Event> getEvents() {
@@ -119,13 +119,11 @@ public class DescribeJobLogResponse extends AcsResponse {
 
 		public static class Event {
 
+			private String type;
+
 			private String action;
 
-			private Integer count;
-
 			private String eventTime;
-
-			private String firstTimestamp;
 
 			private String lastTimestamp;
 
@@ -133,7 +131,17 @@ public class DescribeJobLogResponse extends AcsResponse {
 
 			private String reason;
 
-			private String type;
+			private Integer count;
+
+			private String firstTimestamp;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 
 			public String getAction() {
 				return this.action;
@@ -143,28 +151,12 @@ public class DescribeJobLogResponse extends AcsResponse {
 				this.action = action;
 			}
 
-			public Integer getCount() {
-				return this.count;
-			}
-
-			public void setCount(Integer count) {
-				this.count = count;
-			}
-
 			public String getEventTime() {
 				return this.eventTime;
 			}
 
 			public void setEventTime(String eventTime) {
 				this.eventTime = eventTime;
-			}
-
-			public String getFirstTimestamp() {
-				return this.firstTimestamp;
-			}
-
-			public void setFirstTimestamp(String firstTimestamp) {
-				this.firstTimestamp = firstTimestamp;
 			}
 
 			public String getLastTimestamp() {
@@ -191,12 +183,20 @@ public class DescribeJobLogResponse extends AcsResponse {
 				this.reason = reason;
 			}
 
-			public String getType() {
-				return this.type;
+			public Integer getCount() {
+				return this.count;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setCount(Integer count) {
+				this.count = count;
+			}
+
+			public String getFirstTimestamp() {
+				return this.firstTimestamp;
+			}
+
+			public void setFirstTimestamp(String firstTimestamp) {
+				this.firstTimestamp = firstTimestamp;
 			}
 		}
 	}

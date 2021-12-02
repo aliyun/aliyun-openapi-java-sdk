@@ -28,21 +28,21 @@ public class ListPersistentVolumeClaimResponseUnmarshaller {
 		
 		listPersistentVolumeClaimResponse.setRequestId(_ctx.stringValue("ListPersistentVolumeClaimResponse.RequestId"));
 		listPersistentVolumeClaimResponse.setCode(_ctx.integerValue("ListPersistentVolumeClaimResponse.Code"));
+		listPersistentVolumeClaimResponse.setErrorMsg(_ctx.stringValue("ListPersistentVolumeClaimResponse.ErrorMsg"));
 		listPersistentVolumeClaimResponse.setPageNumber(_ctx.integerValue("ListPersistentVolumeClaimResponse.PageNumber"));
 		listPersistentVolumeClaimResponse.setPageSize(_ctx.integerValue("ListPersistentVolumeClaimResponse.PageSize"));
 		listPersistentVolumeClaimResponse.setTotalCount(_ctx.longValue("ListPersistentVolumeClaimResponse.TotalCount"));
-		listPersistentVolumeClaimResponse.setErrorMsg(_ctx.stringValue("ListPersistentVolumeClaimResponse.ErrorMsg"));
 
 		List<PersistentVolumeClaimDetail> data = new ArrayList<PersistentVolumeClaimDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersistentVolumeClaimResponse.Data.Length"); i++) {
 			PersistentVolumeClaimDetail persistentVolumeClaimDetail = new PersistentVolumeClaimDetail();
-			persistentVolumeClaimDetail.setName(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Name"));
-			persistentVolumeClaimDetail.setCapacity(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Capacity"));
-			persistentVolumeClaimDetail.setAccessModes(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].AccessModes"));
 			persistentVolumeClaimDetail.setStatus(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Status"));
 			persistentVolumeClaimDetail.setStorageClass(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].StorageClass"));
-			persistentVolumeClaimDetail.setVolumeName(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].VolumeName"));
+			persistentVolumeClaimDetail.setCapacity(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Capacity"));
 			persistentVolumeClaimDetail.setCreateTime(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].CreateTime"));
+			persistentVolumeClaimDetail.setAccessModes(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].AccessModes"));
+			persistentVolumeClaimDetail.setName(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].Name"));
+			persistentVolumeClaimDetail.setVolumeName(_ctx.stringValue("ListPersistentVolumeClaimResponse.Data["+ i +"].VolumeName"));
 
 			data.add(persistentVolumeClaimDetail);
 		}

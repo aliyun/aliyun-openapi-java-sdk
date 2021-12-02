@@ -29,10 +29,10 @@ public class CreateNodeLabelResponseUnmarshaller {
 		createNodeLabelResponse.setSuccess(_ctx.booleanValue("CreateNodeLabelResponse.Success"));
 
 		Result result = new Result();
-		result.setClusterId(_ctx.stringValue("CreateNodeLabelResponse.Result.ClusterId"));
-		result.setId(_ctx.longValue("CreateNodeLabelResponse.Result.Id"));
 		result.setLabelKey(_ctx.stringValue("CreateNodeLabelResponse.Result.LabelKey"));
 		result.setLabelValue(_ctx.stringValue("CreateNodeLabelResponse.Result.LabelValue"));
+		result.setId(_ctx.longValue("CreateNodeLabelResponse.Result.Id"));
+		result.setClusterId(_ctx.stringValue("CreateNodeLabelResponse.Result.ClusterId"));
 		createNodeLabelResponse.setResult(result);
 	 
 	 	return createNodeLabelResponse;

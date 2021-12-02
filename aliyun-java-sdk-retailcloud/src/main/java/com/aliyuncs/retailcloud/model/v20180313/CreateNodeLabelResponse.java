@@ -76,29 +76,13 @@ public class CreateNodeLabelResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String clusterId;
-
-		private Long id;
-
 		private String labelKey;
 
 		private String labelValue;
 
-		public String getClusterId() {
-			return this.clusterId;
-		}
+		private Long id;
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private String clusterId;
 
 		public String getLabelKey() {
 			return this.labelKey;
@@ -114,6 +98,22 @@ public class CreateNodeLabelResponse extends AcsResponse {
 
 		public void setLabelValue(String labelValue) {
 			this.labelValue = labelValue;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

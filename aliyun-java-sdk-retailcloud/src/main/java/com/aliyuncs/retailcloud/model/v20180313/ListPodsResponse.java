@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPodsResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,11 +35,17 @@ public class ListPodsResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private List<PodDetail> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -71,14 +79,6 @@ public class ListPodsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,7 +97,21 @@ public class ListPodsResponse extends AcsResponse {
 
 	public static class PodDetail {
 
+		private String hostIp;
+
+		private Integer status;
+
+		private String updateTime;
+
+		private Integer result;
+
+		private String statusName;
+
+		private String hostName;
+
 		private String appInstanceId;
+
+		private String startTime;
 
 		private Long deployOrderId;
 
@@ -105,27 +119,61 @@ public class ListPodsResponse extends AcsResponse {
 
 		private String groupName;
 
-		private String hostIp;
-
-		private String hostName;
-
-		private String podIp;
-
 		private String region;
-
-		private Integer result;
 
 		private String resultName;
 
-		private String startTime;
-
-		private Integer status;
-
-		private String statusName;
-
-		private String updateTime;
+		private String podIp;
 
 		private List<DeployStep> deploySteps;
+
+		public String getHostIp() {
+			return this.hostIp;
+		}
+
+		public void setHostIp(String hostIp) {
+			this.hostIp = hostIp;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public Integer getResult() {
+			return this.result;
+		}
+
+		public void setResult(Integer result) {
+			this.result = result;
+		}
+
+		public String getStatusName() {
+			return this.statusName;
+		}
+
+		public void setStatusName(String statusName) {
+			this.statusName = statusName;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
 
 		public String getAppInstanceId() {
 			return this.appInstanceId;
@@ -133,6 +181,14 @@ public class ListPodsResponse extends AcsResponse {
 
 		public void setAppInstanceId(String appInstanceId) {
 			this.appInstanceId = appInstanceId;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public Long getDeployOrderId() {
@@ -159,44 +215,12 @@ public class ListPodsResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getHostIp() {
-			return this.hostIp;
-		}
-
-		public void setHostIp(String hostIp) {
-			this.hostIp = hostIp;
-		}
-
-		public String getHostName() {
-			return this.hostName;
-		}
-
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
-		}
-
-		public String getPodIp() {
-			return this.podIp;
-		}
-
-		public void setPodIp(String podIp) {
-			this.podIp = podIp;
-		}
-
 		public String getRegion() {
 			return this.region;
 		}
 
 		public void setRegion(String region) {
 			this.region = region;
-		}
-
-		public Integer getResult() {
-			return this.result;
-		}
-
-		public void setResult(Integer result) {
-			this.result = result;
 		}
 
 		public String getResultName() {
@@ -207,36 +231,12 @@ public class ListPodsResponse extends AcsResponse {
 			this.resultName = resultName;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getPodIp() {
+			return this.podIp;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getStatusName() {
-			return this.statusName;
-		}
-
-		public void setStatusName(String statusName) {
-			this.statusName = statusName;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setPodIp(String podIp) {
+			this.podIp = podIp;
 		}
 
 		public List<DeployStep> getDeploySteps() {

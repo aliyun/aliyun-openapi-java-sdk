@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSlbAPsResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,11 +35,17 @@ public class ListSlbAPsResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private List<SlbAPInstance> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -71,14 +79,6 @@ public class ListSlbAPsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,33 +97,105 @@ public class ListSlbAPsResponse extends AcsResponse {
 
 	public static class SlbAPInstance {
 
+		private String slbId;
+
+		private String sslCertId;
+
+		private String protocol;
+
+		private Integer listenerPort;
+
+		private Integer realServerPort;
+
+		private String slbIp;
+
+		private Long slbAPId;
+
+		private String networkMode;
+
+		private Integer establishedTimeout;
+
 		private Long appId;
 
 		private Integer cookieTimeout;
 
 		private Long envId;
 
-		private Integer establishedTimeout;
-
-		private Integer listenerPort;
+		private Integer stickySession;
 
 		private String name;
 
-		private String networkMode;
+		public String getSlbId() {
+			return this.slbId;
+		}
 
-		private String protocol;
+		public void setSlbId(String slbId) {
+			this.slbId = slbId;
+		}
 
-		private Integer realServerPort;
+		public String getSslCertId() {
+			return this.sslCertId;
+		}
 
-		private Long slbAPId;
+		public void setSslCertId(String sslCertId) {
+			this.sslCertId = sslCertId;
+		}
 
-		private String slbId;
+		public String getBizProtocol() {
+			return this.protocol;
+		}
 
-		private String slbIp;
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
 
-		private String sslCertId;
+		public Integer getListenerPort() {
+			return this.listenerPort;
+		}
 
-		private Integer stickySession;
+		public void setListenerPort(Integer listenerPort) {
+			this.listenerPort = listenerPort;
+		}
+
+		public Integer getRealServerPort() {
+			return this.realServerPort;
+		}
+
+		public void setRealServerPort(Integer realServerPort) {
+			this.realServerPort = realServerPort;
+		}
+
+		public String getSlbIp() {
+			return this.slbIp;
+		}
+
+		public void setSlbIp(String slbIp) {
+			this.slbIp = slbIp;
+		}
+
+		public Long getSlbAPId() {
+			return this.slbAPId;
+		}
+
+		public void setSlbAPId(Long slbAPId) {
+			this.slbAPId = slbAPId;
+		}
+
+		public String getNetworkMode() {
+			return this.networkMode;
+		}
+
+		public void setNetworkMode(String networkMode) {
+			this.networkMode = networkMode;
+		}
+
+		public Integer getEstablishedTimeout() {
+			return this.establishedTimeout;
+		}
+
+		public void setEstablishedTimeout(Integer establishedTimeout) {
+			this.establishedTimeout = establishedTimeout;
+		}
 
 		public Long getAppId() {
 			return this.appId;
@@ -149,20 +221,12 @@ public class ListSlbAPsResponse extends AcsResponse {
 			this.envId = envId;
 		}
 
-		public Integer getEstablishedTimeout() {
-			return this.establishedTimeout;
+		public Integer getStickySession() {
+			return this.stickySession;
 		}
 
-		public void setEstablishedTimeout(Integer establishedTimeout) {
-			this.establishedTimeout = establishedTimeout;
-		}
-
-		public Integer getListenerPort() {
-			return this.listenerPort;
-		}
-
-		public void setListenerPort(Integer listenerPort) {
-			this.listenerPort = listenerPort;
+		public void setStickySession(Integer stickySession) {
+			this.stickySession = stickySession;
 		}
 
 		public String getName() {
@@ -171,70 +235,6 @@ public class ListSlbAPsResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getNetworkMode() {
-			return this.networkMode;
-		}
-
-		public void setNetworkMode(String networkMode) {
-			this.networkMode = networkMode;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
-		public Integer getRealServerPort() {
-			return this.realServerPort;
-		}
-
-		public void setRealServerPort(Integer realServerPort) {
-			this.realServerPort = realServerPort;
-		}
-
-		public Long getSlbAPId() {
-			return this.slbAPId;
-		}
-
-		public void setSlbAPId(Long slbAPId) {
-			this.slbAPId = slbAPId;
-		}
-
-		public String getSlbId() {
-			return this.slbId;
-		}
-
-		public void setSlbId(String slbId) {
-			this.slbId = slbId;
-		}
-
-		public String getSlbIp() {
-			return this.slbIp;
-		}
-
-		public void setSlbIp(String slbIp) {
-			this.slbIp = slbIp;
-		}
-
-		public String getSslCertId() {
-			return this.sslCertId;
-		}
-
-		public void setSslCertId(String sslCertId) {
-			this.sslCertId = sslCertId;
-		}
-
-		public Integer getStickySession() {
-			return this.stickySession;
-		}
-
-		public void setStickySession(Integer stickySession) {
-			this.stickySession = stickySession;
 		}
 	}
 

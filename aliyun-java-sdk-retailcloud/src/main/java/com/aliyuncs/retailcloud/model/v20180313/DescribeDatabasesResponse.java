@@ -79,26 +79,26 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public static class DatabasesItem {
 
-			private String dBName;
+			private String dBDescription;
 
 			private String dBStatus;
 
-			private String dBDescription;
+			private String dBName;
+
+			private String dBInstanceId;
 
 			private String engine;
 
 			private String characterSetName;
 
-			private String dBInstanceId;
-
 			private List<AccountsItem> accounts;
 
-			public String getDBName() {
-				return this.dBName;
+			public String getDBDescription() {
+				return this.dBDescription;
 			}
 
-			public void setDBName(String dBName) {
-				this.dBName = dBName;
+			public void setDBDescription(String dBDescription) {
+				this.dBDescription = dBDescription;
 			}
 
 			public String getDBStatus() {
@@ -109,12 +109,20 @@ public class DescribeDatabasesResponse extends AcsResponse {
 				this.dBStatus = dBStatus;
 			}
 
-			public String getDBDescription() {
-				return this.dBDescription;
+			public String getDBName() {
+				return this.dBName;
 			}
 
-			public void setDBDescription(String dBDescription) {
-				this.dBDescription = dBDescription;
+			public void setDBName(String dBName) {
+				this.dBName = dBName;
+			}
+
+			public String getDBInstanceId() {
+				return this.dBInstanceId;
+			}
+
+			public void setDBInstanceId(String dBInstanceId) {
+				this.dBInstanceId = dBInstanceId;
 			}
 
 			public String getEngine() {
@@ -133,14 +141,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 				this.characterSetName = characterSetName;
 			}
 
-			public String getDBInstanceId() {
-				return this.dBInstanceId;
-			}
-
-			public void setDBInstanceId(String dBInstanceId) {
-				this.dBInstanceId = dBInstanceId;
-			}
-
 			public List<AccountsItem> getAccounts() {
 				return this.accounts;
 			}
@@ -151,11 +151,19 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 			public static class AccountsItem {
 
+				private String account;
+
 				private String accountPrivilegeDetail;
 
 				private String accountPrivilege;
 
-				private String account;
+				public String getAccount() {
+					return this.account;
+				}
+
+				public void setAccount(String account) {
+					this.account = account;
+				}
 
 				public String getAccountPrivilegeDetail() {
 					return this.accountPrivilegeDetail;
@@ -171,14 +179,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 				public void setAccountPrivilege(String accountPrivilege) {
 					this.accountPrivilege = accountPrivilege;
-				}
-
-				public String getAccount() {
-					return this.account;
-				}
-
-				public void setAccount(String account) {
-					this.account = account;
 				}
 			}
 		}

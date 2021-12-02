@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPersistentVolumeClaimResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
-	private Integer pageNumber;
+	private String errorMsg;
 
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private Long totalCount;
 
-	private String errorMsg;
-
 	private List<PersistentVolumeClaimDetail> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -47,20 +55,20 @@ public class ListPersistentVolumeClaimResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -79,14 +87,6 @@ public class ListPersistentVolumeClaimResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
 	public List<PersistentVolumeClaimDetail> getData() {
 		return this.data;
 	}
@@ -97,43 +97,19 @@ public class ListPersistentVolumeClaimResponse extends AcsResponse {
 
 	public static class PersistentVolumeClaimDetail {
 
-		private String name;
-
-		private String capacity;
-
-		private String accessModes;
-
 		private String status;
 
 		private String storageClass;
 
-		private String volumeName;
+		private String capacity;
 
 		private String createTime;
 
-		public String getName() {
-			return this.name;
-		}
+		private String accessModes;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String name;
 
-		public String getCapacity() {
-			return this.capacity;
-		}
-
-		public void setCapacity(String capacity) {
-			this.capacity = capacity;
-		}
-
-		public String getAccessModes() {
-			return this.accessModes;
-		}
-
-		public void setAccessModes(String accessModes) {
-			this.accessModes = accessModes;
-		}
+		private String volumeName;
 
 		public String getStatus() {
 			return this.status;
@@ -151,12 +127,12 @@ public class ListPersistentVolumeClaimResponse extends AcsResponse {
 			this.storageClass = storageClass;
 		}
 
-		public String getVolumeName() {
-			return this.volumeName;
+		public String getCapacity() {
+			return this.capacity;
 		}
 
-		public void setVolumeName(String volumeName) {
-			this.volumeName = volumeName;
+		public void setCapacity(String capacity) {
+			this.capacity = capacity;
 		}
 
 		public String getCreateTime() {
@@ -165,6 +141,30 @@ public class ListPersistentVolumeClaimResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getAccessModes() {
+			return this.accessModes;
+		}
+
+		public void setAccessModes(String accessModes) {
+			this.accessModes = accessModes;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getVolumeName() {
+			return this.volumeName;
+		}
+
+		public void setVolumeName(String volumeName) {
+			this.volumeName = volumeName;
 		}
 	}
 

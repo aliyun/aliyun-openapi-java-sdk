@@ -38,8 +38,8 @@ public class ListDeployConfigResponseUnmarshaller {
 		List<DeployConfigInstance> data = new ArrayList<DeployConfigInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeployConfigResponse.Data.Length"); i++) {
 			DeployConfigInstance deployConfigInstance = new DeployConfigInstance();
-			deployConfigInstance.setId(_ctx.longValue("ListDeployConfigResponse.Data["+ i +"].Id"));
 			deployConfigInstance.setName(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].Name"));
+			deployConfigInstance.setId(_ctx.longValue("ListDeployConfigResponse.Data["+ i +"].Id"));
 			deployConfigInstance.setAppId(_ctx.longValue("ListDeployConfigResponse.Data["+ i +"].AppId"));
 			deployConfigInstance.setEnvType(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].EnvType"));
 
@@ -48,22 +48,22 @@ public class ListDeployConfigResponseUnmarshaller {
 			deployConfigInstance.setContainerCodePath(containerCodePath);
 
 			ContainerYamlConf containerYamlConf = new ContainerYamlConf();
-			containerYamlConf.setDeployment(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.Deployment"));
-			containerYamlConf.setConfigMap(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.ConfigMap"));
 			containerYamlConf.setStatefulSet(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.StatefulSet"));
+			containerYamlConf.setDeployment(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.Deployment"));
 			containerYamlConf.setCronJob(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.CronJob"));
-
-			List<String> configMapList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.ConfigMapList.Length"); j++) {
-				configMapList.add(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.ConfigMapList["+ j +"]"));
-			}
-			containerYamlConf.setConfigMapList(configMapList);
+			containerYamlConf.setConfigMap(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.ConfigMap"));
 
 			List<String> secretList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.SecretList.Length"); j++) {
 				secretList.add(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.SecretList["+ j +"]"));
 			}
 			containerYamlConf.setSecretList(secretList);
+
+			List<String> configMapList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.ConfigMapList.Length"); j++) {
+				configMapList.add(_ctx.stringValue("ListDeployConfigResponse.Data["+ i +"].ContainerYamlConf.ConfigMapList["+ j +"]"));
+			}
+			containerYamlConf.setConfigMapList(configMapList);
 			deployConfigInstance.setContainerYamlConf(containerYamlConf);
 
 			data.add(deployConfigInstance);

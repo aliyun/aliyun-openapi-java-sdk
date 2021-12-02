@@ -83,13 +83,13 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 
 			private String accountDescription;
 
-			private String accountName;
-
-			private String accountType;
-
 			private String privExceeded;
 
 			private String dBInstanceId;
+
+			private String accountType;
+
+			private String accountName;
 
 			private List<DatabasePrivilegesItem> databasePrivileges;
 
@@ -109,22 +109,6 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 				this.accountDescription = accountDescription;
 			}
 
-			public String getAccountName() {
-				return this.accountName;
-			}
-
-			public void setAccountName(String accountName) {
-				this.accountName = accountName;
-			}
-
-			public String getAccountType() {
-				return this.accountType;
-			}
-
-			public void setAccountType(String accountType) {
-				this.accountType = accountType;
-			}
-
 			public String getPrivExceeded() {
 				return this.privExceeded;
 			}
@@ -139,6 +123,22 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 
 			public void setDBInstanceId(String dBInstanceId) {
 				this.dBInstanceId = dBInstanceId;
+			}
+
+			public String getAccountType() {
+				return this.accountType;
+			}
+
+			public void setAccountType(String accountType) {
+				this.accountType = accountType;
+			}
+
+			public String getAccountName() {
+				return this.accountName;
+			}
+
+			public void setAccountName(String accountName) {
+				this.accountName = accountName;
 			}
 
 			public List<DatabasePrivilegesItem> getDatabasePrivileges() {

@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppGroupResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
-	private Integer pageNumber;
+	private String errorMsg;
 
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private Long totalCount;
 
-	private String errorMsg;
-
 	private List<AppGroupDetail> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -47,20 +55,20 @@ public class ListAppGroupResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,14 +85,6 @@ public class ListAppGroupResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
 	}
 
 	public List<AppGroupDetail> getData() {

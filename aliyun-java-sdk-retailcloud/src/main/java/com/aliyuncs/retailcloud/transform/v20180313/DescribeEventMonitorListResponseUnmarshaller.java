@@ -36,15 +36,15 @@ public class DescribeEventMonitorListResponseUnmarshaller {
 		List<EventInfo> data = new ArrayList<EventInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventMonitorListResponse.Data.Length"); i++) {
 			EventInfo eventInfo = new EventInfo();
-			eventInfo.setCount(_ctx.integerValue("DescribeEventMonitorListResponse.Data["+ i +"].Count"));
-			eventInfo.setEventTime(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].EventTime"));
-			eventInfo.setHostName(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].HostName"));
-			eventInfo.setKind(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].Kind"));
-			eventInfo.setLevel(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].Level"));
-			eventInfo.setMessage(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].Message"));
-			eventInfo.setNameSpace(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].NameSpace"));
 			eventInfo.setPodName(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].PodName"));
+			eventInfo.setEventTime(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].EventTime"));
+			eventInfo.setNameSpace(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].NameSpace"));
+			eventInfo.setKind(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].Kind"));
+			eventInfo.setMessage(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].Message"));
+			eventInfo.setHostName(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].HostName"));
 			eventInfo.setReason(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].Reason"));
+			eventInfo.setLevel(_ctx.stringValue("DescribeEventMonitorListResponse.Data["+ i +"].Level"));
+			eventInfo.setCount(_ctx.integerValue("DescribeEventMonitorListResponse.Data["+ i +"].Count"));
 
 			data.add(eventInfo);
 		}

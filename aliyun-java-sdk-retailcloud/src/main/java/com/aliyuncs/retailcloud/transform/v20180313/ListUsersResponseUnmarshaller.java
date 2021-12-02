@@ -36,9 +36,9 @@ public class ListUsersResponseUnmarshaller {
 		List<ListUserResponse> data = new ArrayList<ListUserResponse>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Data.Length"); i++) {
 			ListUserResponse listUserResponse = new ListUserResponse();
-			listUserResponse.setUserId(_ctx.stringValue("ListUsersResponse.Data["+ i +"].UserId"));
 			listUserResponse.setUserType(_ctx.stringValue("ListUsersResponse.Data["+ i +"].UserType"));
 			listUserResponse.setRealName(_ctx.stringValue("ListUsersResponse.Data["+ i +"].RealName"));
+			listUserResponse.setUserId(_ctx.stringValue("ListUsersResponse.Data["+ i +"].UserId"));
 
 			data.add(listUserResponse);
 		}

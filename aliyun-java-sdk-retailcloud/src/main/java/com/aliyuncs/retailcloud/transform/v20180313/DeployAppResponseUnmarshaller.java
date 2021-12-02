@@ -29,9 +29,9 @@ public class DeployAppResponseUnmarshaller {
 		deployAppResponse.setSuccess(_ctx.booleanValue("DeployAppResponse.Success"));
 
 		Result result = new Result();
-		result.setAdmitted(_ctx.booleanValue("DeployAppResponse.Result.Admitted"));
 		result.setBusinessCode(_ctx.stringValue("DeployAppResponse.Result.BusinessCode"));
 		result.setDeployOrderId(_ctx.longValue("DeployAppResponse.Result.DeployOrderId"));
+		result.setAdmitted(_ctx.booleanValue("DeployAppResponse.Result.Admitted"));
 		deployAppResponse.setResult(result);
 	 
 	 	return deployAppResponse;

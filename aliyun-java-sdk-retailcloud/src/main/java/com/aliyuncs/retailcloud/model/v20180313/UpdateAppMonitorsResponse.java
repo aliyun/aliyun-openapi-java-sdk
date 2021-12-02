@@ -28,9 +28,9 @@ public class UpdateAppMonitorsResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	public String getMsg() {
 		return this.msg;
@@ -48,20 +48,20 @@ public class UpdateAppMonitorsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

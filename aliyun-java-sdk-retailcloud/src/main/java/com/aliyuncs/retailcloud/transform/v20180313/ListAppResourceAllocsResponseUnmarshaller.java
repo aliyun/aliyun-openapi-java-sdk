@@ -36,11 +36,11 @@ public class ListAppResourceAllocsResponseUnmarshaller {
 		List<ListAppResourceAllocResponse> data = new ArrayList<ListAppResourceAllocResponse>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppResourceAllocsResponse.Data.Length"); i++) {
 			ListAppResourceAllocResponse listAppResourceAllocResponse = new ListAppResourceAllocResponse();
+			listAppResourceAllocResponse.setResourceDef(_ctx.stringValue("ListAppResourceAllocsResponse.Data["+ i +"].ResourceDef"));
 			listAppResourceAllocResponse.setAppEnvId(_ctx.longValue("ListAppResourceAllocsResponse.Data["+ i +"].AppEnvId"));
+			listAppResourceAllocResponse.setId(_ctx.longValue("ListAppResourceAllocsResponse.Data["+ i +"].Id"));
 			listAppResourceAllocResponse.setAppId(_ctx.longValue("ListAppResourceAllocsResponse.Data["+ i +"].AppId"));
 			listAppResourceAllocResponse.setClusterId(_ctx.stringValue("ListAppResourceAllocsResponse.Data["+ i +"].ClusterId"));
-			listAppResourceAllocResponse.setId(_ctx.longValue("ListAppResourceAllocsResponse.Data["+ i +"].Id"));
-			listAppResourceAllocResponse.setResourceDef(_ctx.stringValue("ListAppResourceAllocsResponse.Data["+ i +"].ResourceDef"));
 
 			data.add(listAppResourceAllocResponse);
 		}

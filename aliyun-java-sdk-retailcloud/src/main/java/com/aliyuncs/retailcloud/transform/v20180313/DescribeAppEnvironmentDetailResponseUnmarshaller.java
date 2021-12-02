@@ -28,14 +28,14 @@ public class DescribeAppEnvironmentDetailResponseUnmarshaller {
 		describeAppEnvironmentDetailResponse.setErrMsg(_ctx.stringValue("DescribeAppEnvironmentDetailResponse.ErrMsg"));
 
 		Result result = new Result();
-		result.setAppId(_ctx.longValue("DescribeAppEnvironmentDetailResponse.Result.AppId"));
-		result.setEnvId(_ctx.longValue("DescribeAppEnvironmentDetailResponse.Result.EnvId"));
-		result.setEnvName(_ctx.stringValue("DescribeAppEnvironmentDetailResponse.Result.EnvName"));
-		result.setEnvType(_ctx.integerValue("DescribeAppEnvironmentDetailResponse.Result.EnvType"));
-		result.setEnvTypeName(_ctx.stringValue("DescribeAppEnvironmentDetailResponse.Result.EnvTypeName"));
 		result.setAppSchemaId(_ctx.longValue("DescribeAppEnvironmentDetailResponse.Result.AppSchemaId"));
+		result.setEnvTypeName(_ctx.stringValue("DescribeAppEnvironmentDetailResponse.Result.EnvTypeName"));
+		result.setEnvName(_ctx.stringValue("DescribeAppEnvironmentDetailResponse.Result.EnvName"));
 		result.setRegion(_ctx.stringValue("DescribeAppEnvironmentDetailResponse.Result.Region"));
+		result.setAppId(_ctx.longValue("DescribeAppEnvironmentDetailResponse.Result.AppId"));
 		result.setReplicas(_ctx.integerValue("DescribeAppEnvironmentDetailResponse.Result.Replicas"));
+		result.setEnvId(_ctx.longValue("DescribeAppEnvironmentDetailResponse.Result.EnvId"));
+		result.setEnvType(_ctx.integerValue("DescribeAppEnvironmentDetailResponse.Result.EnvType"));
 		describeAppEnvironmentDetailResponse.setResult(result);
 	 
 	 	return describeAppEnvironmentDetailResponse;

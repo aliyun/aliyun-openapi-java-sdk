@@ -37,20 +37,20 @@ public class ListPodsResponseUnmarshaller {
 		List<PodDetail> data = new ArrayList<PodDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListPodsResponse.Data.Length"); i++) {
 			PodDetail podDetail = new PodDetail();
+			podDetail.setHostIp(_ctx.stringValue("ListPodsResponse.Data["+ i +"].HostIp"));
+			podDetail.setStatus(_ctx.integerValue("ListPodsResponse.Data["+ i +"].Status"));
+			podDetail.setUpdateTime(_ctx.stringValue("ListPodsResponse.Data["+ i +"].UpdateTime"));
+			podDetail.setResult(_ctx.integerValue("ListPodsResponse.Data["+ i +"].Result"));
+			podDetail.setStatusName(_ctx.stringValue("ListPodsResponse.Data["+ i +"].StatusName"));
+			podDetail.setHostName(_ctx.stringValue("ListPodsResponse.Data["+ i +"].HostName"));
 			podDetail.setAppInstanceId(_ctx.stringValue("ListPodsResponse.Data["+ i +"].AppInstanceId"));
+			podDetail.setStartTime(_ctx.stringValue("ListPodsResponse.Data["+ i +"].StartTime"));
 			podDetail.setDeployOrderId(_ctx.longValue("ListPodsResponse.Data["+ i +"].DeployOrderId"));
 			podDetail.setDeployPartitionNum(_ctx.integerValue("ListPodsResponse.Data["+ i +"].DeployPartitionNum"));
 			podDetail.setGroupName(_ctx.stringValue("ListPodsResponse.Data["+ i +"].GroupName"));
-			podDetail.setHostIp(_ctx.stringValue("ListPodsResponse.Data["+ i +"].HostIp"));
-			podDetail.setHostName(_ctx.stringValue("ListPodsResponse.Data["+ i +"].HostName"));
-			podDetail.setPodIp(_ctx.stringValue("ListPodsResponse.Data["+ i +"].PodIp"));
 			podDetail.setRegion(_ctx.stringValue("ListPodsResponse.Data["+ i +"].Region"));
-			podDetail.setResult(_ctx.integerValue("ListPodsResponse.Data["+ i +"].Result"));
 			podDetail.setResultName(_ctx.stringValue("ListPodsResponse.Data["+ i +"].ResultName"));
-			podDetail.setStartTime(_ctx.stringValue("ListPodsResponse.Data["+ i +"].StartTime"));
-			podDetail.setStatus(_ctx.integerValue("ListPodsResponse.Data["+ i +"].Status"));
-			podDetail.setStatusName(_ctx.stringValue("ListPodsResponse.Data["+ i +"].StatusName"));
-			podDetail.setUpdateTime(_ctx.stringValue("ListPodsResponse.Data["+ i +"].UpdateTime"));
+			podDetail.setPodIp(_ctx.stringValue("ListPodsResponse.Data["+ i +"].PodIp"));
 
 			List<DeployStep> deploySteps = new ArrayList<DeployStep>();
 			for (int j = 0; j < _ctx.lengthValue("ListPodsResponse.Data["+ i +"].DeploySteps.Length"); j++) {

@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstTransInfoResponse extends AcsResponse {
 
-	private String instanceId;
-
 	private Boolean isAutoRenew;
 
 	private Integer renewCycle;
 
-	private String chargeType;
-
-	private Long endTime;
-
 	private Long startTime;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private String chargeType;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
+	private String instanceId;
+
+	private Long endTime;
 
 	public Boolean getIsAutoRenew() {
 		return this.isAutoRenew;
@@ -60,6 +52,14 @@ public class GetInstTransInfoResponse extends AcsResponse {
 		this.renewCycle = renewCycle;
 	}
 
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
 	public String getChargeType() {
 		return this.chargeType;
 	}
@@ -68,20 +68,20 @@ public class GetInstTransInfoResponse extends AcsResponse {
 		this.chargeType = chargeType;
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
 	public Long getEndTime() {
 		return this.endTime;
 	}
 
 	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
 	}
 
 	@Override

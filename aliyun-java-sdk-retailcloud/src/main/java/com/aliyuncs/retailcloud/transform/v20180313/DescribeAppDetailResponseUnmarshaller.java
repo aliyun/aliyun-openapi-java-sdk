@@ -33,24 +33,24 @@ public class DescribeAppDetailResponseUnmarshaller {
 		describeAppDetailResponse.setErrMessage(_ctx.stringValue("DescribeAppDetailResponse.ErrMessage"));
 
 		Result result = new Result();
-		result.setServiceType(_ctx.stringValue("DescribeAppDetailResponse.Result.ServiceType"));
-		result.setBizTitle(_ctx.stringValue("DescribeAppDetailResponse.Result.BizTitle"));
-		result.setBizName(_ctx.stringValue("DescribeAppDetailResponse.Result.BizName"));
-		result.setAppId(_ctx.longValue("DescribeAppDetailResponse.Result.AppId"));
-		result.setLanguage(_ctx.stringValue("DescribeAppDetailResponse.Result.Language"));
-		result.setTitle(_ctx.stringValue("DescribeAppDetailResponse.Result.Title"));
-		result.setOperatingSystem(_ctx.stringValue("DescribeAppDetailResponse.Result.OperatingSystem"));
-		result.setDeployType(_ctx.stringValue("DescribeAppDetailResponse.Result.DeployType"));
-		result.setDescription(_ctx.stringValue("DescribeAppDetailResponse.Result.Description"));
 		result.setAppStateType(_ctx.stringValue("DescribeAppDetailResponse.Result.AppStateType"));
+		result.setDescription(_ctx.stringValue("DescribeAppDetailResponse.Result.Description"));
+		result.setDeployType(_ctx.stringValue("DescribeAppDetailResponse.Result.DeployType"));
+		result.setAppId(_ctx.longValue("DescribeAppDetailResponse.Result.AppId"));
+		result.setBizName(_ctx.stringValue("DescribeAppDetailResponse.Result.BizName"));
+		result.setTitle(_ctx.stringValue("DescribeAppDetailResponse.Result.Title"));
+		result.setBizTitle(_ctx.stringValue("DescribeAppDetailResponse.Result.BizTitle"));
+		result.setServiceType(_ctx.stringValue("DescribeAppDetailResponse.Result.ServiceType"));
+		result.setOperatingSystem(_ctx.stringValue("DescribeAppDetailResponse.Result.OperatingSystem"));
+		result.setLanguage(_ctx.stringValue("DescribeAppDetailResponse.Result.Language"));
 
 		List<UserRole> userRoles = new ArrayList<UserRole>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAppDetailResponse.Result.UserRoles.Length"); i++) {
 			UserRole userRole = new UserRole();
-			userRole.setUserId(_ctx.stringValue("DescribeAppDetailResponse.Result.UserRoles["+ i +"].UserId"));
 			userRole.setUserType(_ctx.stringValue("DescribeAppDetailResponse.Result.UserRoles["+ i +"].UserType"));
-			userRole.setRealName(_ctx.stringValue("DescribeAppDetailResponse.Result.UserRoles["+ i +"].RealName"));
 			userRole.setRoleName(_ctx.stringValue("DescribeAppDetailResponse.Result.UserRoles["+ i +"].RoleName"));
+			userRole.setRealName(_ctx.stringValue("DescribeAppDetailResponse.Result.UserRoles["+ i +"].RealName"));
+			userRole.setUserId(_ctx.stringValue("DescribeAppDetailResponse.Result.UserRoles["+ i +"].UserId"));
 
 			userRoles.add(userRole);
 		}
@@ -59,9 +59,9 @@ public class DescribeAppDetailResponseUnmarshaller {
 		List<MiddleWareInfo> middleWareInfoList = new ArrayList<MiddleWareInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAppDetailResponse.Result.MiddleWareInfoList.Length"); i++) {
 			MiddleWareInfo middleWareInfo = new MiddleWareInfo();
-			middleWareInfo.setAppId(_ctx.longValue("DescribeAppDetailResponse.Result.MiddleWareInfoList["+ i +"].AppId"));
 			middleWareInfo.setCode(_ctx.integerValue("DescribeAppDetailResponse.Result.MiddleWareInfoList["+ i +"].Code"));
 			middleWareInfo.setName(_ctx.stringValue("DescribeAppDetailResponse.Result.MiddleWareInfoList["+ i +"].Name"));
+			middleWareInfo.setAppId(_ctx.longValue("DescribeAppDetailResponse.Result.MiddleWareInfoList["+ i +"].AppId"));
 
 			middleWareInfoList.add(middleWareInfo);
 		}

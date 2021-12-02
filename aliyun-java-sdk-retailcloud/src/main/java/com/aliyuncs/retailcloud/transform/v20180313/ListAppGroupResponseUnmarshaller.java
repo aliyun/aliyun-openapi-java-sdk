@@ -28,10 +28,10 @@ public class ListAppGroupResponseUnmarshaller {
 		
 		listAppGroupResponse.setRequestId(_ctx.stringValue("ListAppGroupResponse.RequestId"));
 		listAppGroupResponse.setCode(_ctx.integerValue("ListAppGroupResponse.Code"));
+		listAppGroupResponse.setErrorMsg(_ctx.stringValue("ListAppGroupResponse.ErrorMsg"));
 		listAppGroupResponse.setPageNumber(_ctx.integerValue("ListAppGroupResponse.PageNumber"));
 		listAppGroupResponse.setPageSize(_ctx.integerValue("ListAppGroupResponse.PageSize"));
 		listAppGroupResponse.setTotalCount(_ctx.longValue("ListAppGroupResponse.TotalCount"));
-		listAppGroupResponse.setErrorMsg(_ctx.stringValue("ListAppGroupResponse.ErrorMsg"));
 
 		List<AppGroupDetail> data = new ArrayList<AppGroupDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppGroupResponse.Data.Length"); i++) {

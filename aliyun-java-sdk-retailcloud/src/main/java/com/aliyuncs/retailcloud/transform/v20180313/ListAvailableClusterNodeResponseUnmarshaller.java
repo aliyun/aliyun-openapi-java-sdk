@@ -36,26 +36,26 @@ public class ListAvailableClusterNodeResponseUnmarshaller {
 		List<ClusterNodeInfo> data = new ArrayList<ClusterNodeInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListAvailableClusterNodeResponse.Data.Length"); i++) {
 			ClusterNodeInfo clusterNodeInfo = new ClusterNodeInfo();
-			clusterNodeInfo.setOSName(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].OSName"));
-			clusterNodeInfo.setBusinessCode(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].BusinessCode"));
-			clusterNodeInfo.setEcsConfiguration(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsConfiguration"));
-			clusterNodeInfo.setEcsCpu(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsCpu"));
-			clusterNodeInfo.setEcsEip(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsEip"));
-			clusterNodeInfo.setEcsExpiredTime(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsExpiredTime"));
-			clusterNodeInfo.setEcsLocalStorageCapacity(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsLocalStorageCapacity"));
-			clusterNodeInfo.setEcsMemory(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsMemory"));
-			clusterNodeInfo.setEcsOsType(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsOsType"));
-			clusterNodeInfo.setEcsPrivateIp(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsPrivateIp"));
-			clusterNodeInfo.setEcsPublicIp(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsPublicIp"));
-			clusterNodeInfo.setEcsZone(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsZone"));
-			clusterNodeInfo.setInstanceId(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InstanceId"));
-			clusterNodeInfo.setInstanceName(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InstanceName"));
-			clusterNodeInfo.setInstanceNetworkType(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InstanceNetworkType"));
-			clusterNodeInfo.setInstanceType(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InstanceType"));
-			clusterNodeInfo.setInternetMaxBandwidthIn(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InternetMaxBandwidthIn"));
-			clusterNodeInfo.setInternetMaxBandwidthOut(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InternetMaxBandwidthOut"));
-			clusterNodeInfo.setRegionId(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].RegionId"));
 			clusterNodeInfo.setVpcId(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].VpcId"));
+			clusterNodeInfo.setEcsEip(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsEip"));
+			clusterNodeInfo.setEcsOsType(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsOsType"));
+			clusterNodeInfo.setBusinessCode(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].BusinessCode"));
+			clusterNodeInfo.setEcsLocalStorageCapacity(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsLocalStorageCapacity"));
+			clusterNodeInfo.setInstanceId(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InstanceId"));
+			clusterNodeInfo.setInternetMaxBandwidthOut(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InternetMaxBandwidthOut"));
+			clusterNodeInfo.setInternetMaxBandwidthIn(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InternetMaxBandwidthIn"));
+			clusterNodeInfo.setInstanceType(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InstanceType"));
+			clusterNodeInfo.setEcsMemory(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsMemory"));
+			clusterNodeInfo.setEcsConfiguration(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsConfiguration"));
+			clusterNodeInfo.setRegionId(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].RegionId"));
+			clusterNodeInfo.setEcsPublicIp(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsPublicIp"));
+			clusterNodeInfo.setEcsPrivateIp(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsPrivateIp"));
+			clusterNodeInfo.setInstanceNetworkType(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InstanceNetworkType"));
+			clusterNodeInfo.setInstanceName(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].InstanceName"));
+			clusterNodeInfo.setOSName(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].OSName"));
+			clusterNodeInfo.setEcsZone(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsZone"));
+			clusterNodeInfo.setEcsExpiredTime(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsExpiredTime"));
+			clusterNodeInfo.setEcsCpu(_ctx.stringValue("ListAvailableClusterNodeResponse.Data["+ i +"].EcsCpu"));
 
 			data.add(clusterNodeInfo);
 		}

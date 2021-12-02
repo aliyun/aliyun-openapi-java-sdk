@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListClusterResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,11 +35,17 @@ public class ListClusterResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private List<ClusterInfo> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -71,14 +79,6 @@ public class ListClusterResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,43 +97,67 @@ public class ListClusterResponse extends AcsResponse {
 
 	public static class ClusterInfo {
 
+		private String vpcId;
+
+		private String status;
+
+		private String podCIDR;
+
 		private String businessCode;
 
-		private String clusterTitle;
+		private String instanceId;
 
 		private String createStatus;
 
+		private String clusterTitle;
+
+		private String regionId;
+
 		private String envType;
 
-		private Long id;
+		private String password;
 
-		private String instanceId;
+		private String workLoadMem;
+
+		private String serviceCIDR;
+
+		private String regionName;
+
+		private String workLoadCpu;
 
 		private String keyPair;
 
 		private String netPlug;
 
-		private String password;
-
-		private String podCIDR;
-
-		private String regionId;
-
-		private String regionName;
-
-		private String serviceCIDR;
-
-		private String status;
-
-		private String vpcId;
-
-		private String workLoadCpu;
-
-		private String workLoadMem;
+		private Long id;
 
 		private List<String> ecsIds;
 
 		private List<String> vswitchIds;
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getPodCIDR() {
+			return this.podCIDR;
+		}
+
+		public void setPodCIDR(String podCIDR) {
+			this.podCIDR = podCIDR;
+		}
 
 		public String getBusinessCode() {
 			return this.businessCode;
@@ -143,12 +167,12 @@ public class ListClusterResponse extends AcsResponse {
 			this.businessCode = businessCode;
 		}
 
-		public String getClusterTitle() {
-			return this.clusterTitle;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setClusterTitle(String clusterTitle) {
-			this.clusterTitle = clusterTitle;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getCreateStatus() {
@@ -159,6 +183,22 @@ public class ListClusterResponse extends AcsResponse {
 			this.createStatus = createStatus;
 		}
 
+		public String getClusterTitle() {
+			return this.clusterTitle;
+		}
+
+		public void setClusterTitle(String clusterTitle) {
+			this.clusterTitle = clusterTitle;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getEnvType() {
 			return this.envType;
 		}
@@ -167,20 +207,44 @@ public class ListClusterResponse extends AcsResponse {
 			this.envType = envType;
 		}
 
-		public Long getId() {
-			return this.id;
+		public String getPassword() {
+			return this.password;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setPassword(String password) {
+			this.password = password;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getWorkLoadMem() {
+			return this.workLoadMem;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setWorkLoadMem(String workLoadMem) {
+			this.workLoadMem = workLoadMem;
+		}
+
+		public String getServiceCIDR() {
+			return this.serviceCIDR;
+		}
+
+		public void setServiceCIDR(String serviceCIDR) {
+			this.serviceCIDR = serviceCIDR;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getWorkLoadCpu() {
+			return this.workLoadCpu;
+		}
+
+		public void setWorkLoadCpu(String workLoadCpu) {
+			this.workLoadCpu = workLoadCpu;
 		}
 
 		public String getKeyPair() {
@@ -199,76 +263,12 @@ public class ListClusterResponse extends AcsResponse {
 			this.netPlug = netPlug;
 		}
 
-		public String getPassword() {
-			return this.password;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setPassword(String password) {
-			this.password = password;
-		}
-
-		public String getPodCIDR() {
-			return this.podCIDR;
-		}
-
-		public void setPodCIDR(String podCIDR) {
-			this.podCIDR = podCIDR;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getRegionName() {
-			return this.regionName;
-		}
-
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
-		}
-
-		public String getServiceCIDR() {
-			return this.serviceCIDR;
-		}
-
-		public void setServiceCIDR(String serviceCIDR) {
-			this.serviceCIDR = serviceCIDR;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getWorkLoadCpu() {
-			return this.workLoadCpu;
-		}
-
-		public void setWorkLoadCpu(String workLoadCpu) {
-			this.workLoadCpu = workLoadCpu;
-		}
-
-		public String getWorkLoadMem() {
-			return this.workLoadMem;
-		}
-
-		public void setWorkLoadMem(String workLoadMem) {
-			this.workLoadMem = workLoadMem;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<String> getEcsIds() {

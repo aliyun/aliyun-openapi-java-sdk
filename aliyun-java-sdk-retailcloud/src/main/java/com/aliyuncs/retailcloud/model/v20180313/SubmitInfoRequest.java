@@ -72,9 +72,9 @@ public class SubmitInfoRequest extends RpcAcsRequest<SubmitInfoResponse> {
 		this.ecsDescLists = ecsDescLists;	
 		if (ecsDescLists != null) {
 			for (int depth1 = 0; depth1 < ecsDescLists.size(); depth1++) {
-				putBodyParameter("EcsDescList." + (depth1 + 1) + ".ResourceId" , ecsDescLists.get(depth1).getResourceId());
 				putBodyParameter("EcsDescList." + (depth1 + 1) + ".BussinessDesc" , ecsDescLists.get(depth1).getBussinessDesc());
 				putBodyParameter("EcsDescList." + (depth1 + 1) + ".MiddleWareDesc" , ecsDescLists.get(depth1).getMiddleWareDesc());
+				putBodyParameter("EcsDescList." + (depth1 + 1) + ".ResourceId" , ecsDescLists.get(depth1).getResourceId());
 				putBodyParameter("EcsDescList." + (depth1 + 1) + ".OtherMiddleWareDesc" , ecsDescLists.get(depth1).getOtherMiddleWareDesc());
 				putBodyParameter("EcsDescList." + (depth1 + 1) + ".BussinessType" , ecsDescLists.get(depth1).getBussinessType());
 				putBodyParameter("EcsDescList." + (depth1 + 1) + ".AppType" , ecsDescLists.get(depth1).getAppType());
@@ -97,11 +97,11 @@ public class SubmitInfoRequest extends RpcAcsRequest<SubmitInfoResponse> {
 
 	public static class EcsDescList {
 
-		private String resourceId;
-
 		private String bussinessDesc;
 
 		private String middleWareDesc;
+
+		private String resourceId;
 
 		private String otherMiddleWareDesc;
 
@@ -112,14 +112,6 @@ public class SubmitInfoRequest extends RpcAcsRequest<SubmitInfoResponse> {
 		private String envType;
 
 		private String userId;
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
 
 		public String getBussinessDesc() {
 			return this.bussinessDesc;
@@ -135,6 +127,14 @@ public class SubmitInfoRequest extends RpcAcsRequest<SubmitInfoResponse> {
 
 		public void setMiddleWareDesc(String middleWareDesc) {
 			this.middleWareDesc = middleWareDesc;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public String getOtherMiddleWareDesc() {

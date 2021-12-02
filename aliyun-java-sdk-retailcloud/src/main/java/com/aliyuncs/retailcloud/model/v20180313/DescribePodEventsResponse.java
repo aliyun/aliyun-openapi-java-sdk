@@ -99,13 +99,11 @@ public class DescribePodEventsResponse extends AcsResponse {
 
 		public static class PodEvent {
 
+			private String type;
+
 			private String action;
 
-			private Integer count;
-
 			private String eventTime;
-
-			private String firstTimestamp;
 
 			private String lastTimestamp;
 
@@ -113,7 +111,17 @@ public class DescribePodEventsResponse extends AcsResponse {
 
 			private String reason;
 
-			private String type;
+			private Integer count;
+
+			private String firstTimestamp;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 
 			public String getAction() {
 				return this.action;
@@ -123,28 +131,12 @@ public class DescribePodEventsResponse extends AcsResponse {
 				this.action = action;
 			}
 
-			public Integer getCount() {
-				return this.count;
-			}
-
-			public void setCount(Integer count) {
-				this.count = count;
-			}
-
 			public String getEventTime() {
 				return this.eventTime;
 			}
 
 			public void setEventTime(String eventTime) {
 				this.eventTime = eventTime;
-			}
-
-			public String getFirstTimestamp() {
-				return this.firstTimestamp;
-			}
-
-			public void setFirstTimestamp(String firstTimestamp) {
-				this.firstTimestamp = firstTimestamp;
 			}
 
 			public String getLastTimestamp() {
@@ -171,12 +163,20 @@ public class DescribePodEventsResponse extends AcsResponse {
 				this.reason = reason;
 			}
 
-			public String getType() {
-				return this.type;
+			public Integer getCount() {
+				return this.count;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setCount(Integer count) {
+				this.count = count;
+			}
+
+			public String getFirstTimestamp() {
+				return this.firstTimestamp;
+			}
+
+			public void setFirstTimestamp(String firstTimestamp) {
+				this.firstTimestamp = firstTimestamp;
 			}
 		}
 	}

@@ -89,11 +89,19 @@ public class DescribePodContainerLogListResponse extends AcsResponse {
 
 		public static class PodContainerLog {
 
+			private String podName;
+
 			private String containerName;
 
 			private String content;
 
-			private String podName;
+			public String getPodName() {
+				return this.podName;
+			}
+
+			public void setPodName(String podName) {
+				this.podName = podName;
+			}
 
 			public String getContainerName() {
 				return this.containerName;
@@ -109,14 +117,6 @@ public class DescribePodContainerLogListResponse extends AcsResponse {
 
 			public void setContent(String content) {
 				this.content = content;
-			}
-
-			public String getPodName() {
-				return this.podName;
-			}
-
-			public void setPodName(String podName) {
-				this.podName = podName;
 			}
 		}
 	}

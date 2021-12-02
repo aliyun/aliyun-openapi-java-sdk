@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppEnvironmentResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
-	private Integer pageNumber;
+	private String errorMsg;
 
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private Long totalCount;
 
-	private String errorMsg;
-
 	private List<AppEnvironmentResponse> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -47,20 +55,20 @@ public class ListAppEnvironmentResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -79,14 +87,6 @@ public class ListAppEnvironmentResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
 	public List<AppEnvironmentResponse> getData() {
 		return this.data;
 	}
@@ -97,19 +97,51 @@ public class ListAppEnvironmentResponse extends AcsResponse {
 
 	public static class AppEnvironmentResponse {
 
+		private Long appSchemaId;
+
+		private String envTypeName;
+
+		private String envName;
+
+		private String region;
+
 		private Long appId;
 
 		private Long envId;
 
-		private String envName;
-
 		private Integer envType;
 
-		private String envTypeName;
+		public Long getAppSchemaId() {
+			return this.appSchemaId;
+		}
 
-		private Long appSchemaId;
+		public void setAppSchemaId(Long appSchemaId) {
+			this.appSchemaId = appSchemaId;
+		}
 
-		private String region;
+		public String getEnvTypeName() {
+			return this.envTypeName;
+		}
+
+		public void setEnvTypeName(String envTypeName) {
+			this.envTypeName = envTypeName;
+		}
+
+		public String getEnvName() {
+			return this.envName;
+		}
+
+		public void setEnvName(String envName) {
+			this.envName = envName;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
 
 		public Long getAppId() {
 			return this.appId;
@@ -127,44 +159,12 @@ public class ListAppEnvironmentResponse extends AcsResponse {
 			this.envId = envId;
 		}
 
-		public String getEnvName() {
-			return this.envName;
-		}
-
-		public void setEnvName(String envName) {
-			this.envName = envName;
-		}
-
 		public Integer getEnvType() {
 			return this.envType;
 		}
 
 		public void setEnvType(Integer envType) {
 			this.envType = envType;
-		}
-
-		public String getEnvTypeName() {
-			return this.envTypeName;
-		}
-
-		public void setEnvTypeName(String envTypeName) {
-			this.envTypeName = envTypeName;
-		}
-
-		public Long getAppSchemaId() {
-			return this.appSchemaId;
-		}
-
-		public void setAppSchemaId(Long appSchemaId) {
-			this.appSchemaId = appSchemaId;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
 		}
 	}
 

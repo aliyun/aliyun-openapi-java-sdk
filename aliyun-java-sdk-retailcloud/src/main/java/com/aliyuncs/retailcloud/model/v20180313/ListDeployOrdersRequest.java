@@ -38,9 +38,9 @@ public class ListDeployOrdersRequest extends RpcAcsRequest<ListDeployOrdersRespo
 
 	private String pauseType;
 
-	private List<Integer> resultLists;
-
 	private String startTimeGreaterThan;
+
+	private List<Integer> resultLists;
 
 	private String startTimeLessThan;
 
@@ -142,6 +142,17 @@ public class ListDeployOrdersRequest extends RpcAcsRequest<ListDeployOrdersRespo
 		}
 	}
 
+	public String getStartTimeGreaterThan() {
+		return this.startTimeGreaterThan;
+	}
+
+	public void setStartTimeGreaterThan(String startTimeGreaterThan) {
+		this.startTimeGreaterThan = startTimeGreaterThan;
+		if(startTimeGreaterThan != null){
+			putQueryParameter("StartTimeGreaterThan", startTimeGreaterThan);
+		}
+	}
+
 	public List<Integer> getResultLists() {
 		return this.resultLists;
 	}
@@ -153,17 +164,6 @@ public class ListDeployOrdersRequest extends RpcAcsRequest<ListDeployOrdersRespo
 				putBodyParameter("ResultList." + (i + 1) , resultLists.get(i));
 			}
 		}	
-	}
-
-	public String getStartTimeGreaterThan() {
-		return this.startTimeGreaterThan;
-	}
-
-	public void setStartTimeGreaterThan(String startTimeGreaterThan) {
-		this.startTimeGreaterThan = startTimeGreaterThan;
-		if(startTimeGreaterThan != null){
-			putQueryParameter("StartTimeGreaterThan", startTimeGreaterThan);
-		}
 	}
 
 	public String getStartTimeLessThan() {

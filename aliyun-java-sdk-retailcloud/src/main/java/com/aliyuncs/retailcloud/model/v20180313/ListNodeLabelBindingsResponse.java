@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNodeLabelBindingsResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer code;
 
 	private String errorMsg;
@@ -33,11 +35,17 @@ public class ListNodeLabelBindingsResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Long totalCount;
 
 	private List<ListNodeLabelBindingResponse> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -71,14 +79,6 @@ public class ListNodeLabelBindingsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,22 +97,22 @@ public class ListNodeLabelBindingsResponse extends AcsResponse {
 
 	public static class ListNodeLabelBindingResponse {
 
-		private Long id;
+		private String labelKey;
 
 		private String instanceId;
 
 		private String instanceType;
 
-		private String labelKey;
-
 		private String labelValue;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		public String getLabelKey() {
+			return this.labelKey;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setLabelKey(String labelKey) {
+			this.labelKey = labelKey;
 		}
 
 		public String getInstanceId() {
@@ -131,20 +131,20 @@ public class ListNodeLabelBindingsResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public String getLabelKey() {
-			return this.labelKey;
-		}
-
-		public void setLabelKey(String labelKey) {
-			this.labelKey = labelKey;
-		}
-
 		public String getLabelValue() {
 			return this.labelValue;
 		}
 
 		public void setLabelValue(String labelValue) {
 			this.labelValue = labelValue;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

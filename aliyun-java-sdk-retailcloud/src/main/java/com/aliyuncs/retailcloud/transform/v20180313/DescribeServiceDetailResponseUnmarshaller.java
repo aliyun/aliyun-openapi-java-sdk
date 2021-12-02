@@ -33,23 +33,23 @@ public class DescribeServiceDetailResponseUnmarshaller {
 		describeServiceDetailResponse.setSuccess(_ctx.booleanValue("DescribeServiceDetailResponse.Success"));
 
 		Result result = new Result();
-		result.setAppId(_ctx.longValue("DescribeServiceDetailResponse.Result.AppId"));
-		result.setEnvId(_ctx.longValue("DescribeServiceDetailResponse.Result.EnvId"));
 		result.setHeadless(_ctx.booleanValue("DescribeServiceDetailResponse.Result.Headless"));
-		result.setK8sServiceId(_ctx.stringValue("DescribeServiceDetailResponse.Result.K8sServiceId"));
-		result.setName(_ctx.stringValue("DescribeServiceDetailResponse.Result.Name"));
+		result.setAppId(_ctx.longValue("DescribeServiceDetailResponse.Result.AppId"));
 		result.setServiceId(_ctx.longValue("DescribeServiceDetailResponse.Result.ServiceId"));
+		result.setK8sServiceId(_ctx.stringValue("DescribeServiceDetailResponse.Result.K8sServiceId"));
 		result.setServiceType(_ctx.stringValue("DescribeServiceDetailResponse.Result.ServiceType"));
+		result.setEnvId(_ctx.longValue("DescribeServiceDetailResponse.Result.EnvId"));
+		result.setName(_ctx.stringValue("DescribeServiceDetailResponse.Result.Name"));
 		result.setClusterIP(_ctx.stringValue("DescribeServiceDetailResponse.Result.ClusterIP"));
 
 		List<ServicePortMapping> portMappings = new ArrayList<ServicePortMapping>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeServiceDetailResponse.Result.PortMappings.Length"); i++) {
 			ServicePortMapping servicePortMapping = new ServicePortMapping();
-			servicePortMapping.setName(_ctx.stringValue("DescribeServiceDetailResponse.Result.PortMappings["+ i +"].Name"));
+			servicePortMapping.setTargetPort(_ctx.stringValue("DescribeServiceDetailResponse.Result.PortMappings["+ i +"].TargetPort"));
 			servicePortMapping.setNodePort(_ctx.integerValue("DescribeServiceDetailResponse.Result.PortMappings["+ i +"].NodePort"));
 			servicePortMapping.setPort(_ctx.integerValue("DescribeServiceDetailResponse.Result.PortMappings["+ i +"].Port"));
+			servicePortMapping.setName(_ctx.stringValue("DescribeServiceDetailResponse.Result.PortMappings["+ i +"].Name"));
 			servicePortMapping.setBizProtocol(_ctx.stringValue("DescribeServiceDetailResponse.Result.PortMappings["+ i +"].Protocol"));
-			servicePortMapping.setTargetPort(_ctx.stringValue("DescribeServiceDetailResponse.Result.PortMappings["+ i +"].TargetPort"));
 
 			portMappings.add(servicePortMapping);
 		}

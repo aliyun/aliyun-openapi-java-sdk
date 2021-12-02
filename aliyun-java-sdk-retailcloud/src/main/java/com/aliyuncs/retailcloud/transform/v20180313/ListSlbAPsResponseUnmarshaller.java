@@ -36,20 +36,20 @@ public class ListSlbAPsResponseUnmarshaller {
 		List<SlbAPInstance> data = new ArrayList<SlbAPInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListSlbAPsResponse.Data.Length"); i++) {
 			SlbAPInstance slbAPInstance = new SlbAPInstance();
+			slbAPInstance.setSlbId(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].SlbId"));
+			slbAPInstance.setSslCertId(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].SslCertId"));
+			slbAPInstance.setBizProtocol(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].Protocol"));
+			slbAPInstance.setListenerPort(_ctx.integerValue("ListSlbAPsResponse.Data["+ i +"].ListenerPort"));
+			slbAPInstance.setRealServerPort(_ctx.integerValue("ListSlbAPsResponse.Data["+ i +"].RealServerPort"));
+			slbAPInstance.setSlbIp(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].SlbIp"));
+			slbAPInstance.setSlbAPId(_ctx.longValue("ListSlbAPsResponse.Data["+ i +"].SlbAPId"));
+			slbAPInstance.setNetworkMode(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].NetworkMode"));
+			slbAPInstance.setEstablishedTimeout(_ctx.integerValue("ListSlbAPsResponse.Data["+ i +"].EstablishedTimeout"));
 			slbAPInstance.setAppId(_ctx.longValue("ListSlbAPsResponse.Data["+ i +"].AppId"));
 			slbAPInstance.setCookieTimeout(_ctx.integerValue("ListSlbAPsResponse.Data["+ i +"].CookieTimeout"));
 			slbAPInstance.setEnvId(_ctx.longValue("ListSlbAPsResponse.Data["+ i +"].EnvId"));
-			slbAPInstance.setEstablishedTimeout(_ctx.integerValue("ListSlbAPsResponse.Data["+ i +"].EstablishedTimeout"));
-			slbAPInstance.setListenerPort(_ctx.integerValue("ListSlbAPsResponse.Data["+ i +"].ListenerPort"));
-			slbAPInstance.setName(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].Name"));
-			slbAPInstance.setNetworkMode(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].NetworkMode"));
-			slbAPInstance.setBizProtocol(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].Protocol"));
-			slbAPInstance.setRealServerPort(_ctx.integerValue("ListSlbAPsResponse.Data["+ i +"].RealServerPort"));
-			slbAPInstance.setSlbAPId(_ctx.longValue("ListSlbAPsResponse.Data["+ i +"].SlbAPId"));
-			slbAPInstance.setSlbId(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].SlbId"));
-			slbAPInstance.setSlbIp(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].SlbIp"));
-			slbAPInstance.setSslCertId(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].SslCertId"));
 			slbAPInstance.setStickySession(_ctx.integerValue("ListSlbAPsResponse.Data["+ i +"].StickySession"));
+			slbAPInstance.setName(_ctx.stringValue("ListSlbAPsResponse.Data["+ i +"].Name"));
 
 			data.add(slbAPInstance);
 		}

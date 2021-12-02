@@ -30,23 +30,23 @@ public class ListAppInstanceResponseUnmarshaller {
 		listAppInstanceResponse.setCode(_ctx.integerValue("ListAppInstanceResponse.Code"));
 		listAppInstanceResponse.setPageSize(_ctx.integerValue("ListAppInstanceResponse.PageSize"));
 		listAppInstanceResponse.setPageNumber(_ctx.integerValue("ListAppInstanceResponse.PageNumber"));
-		listAppInstanceResponse.setTotalCount(_ctx.longValue("ListAppInstanceResponse.TotalCount"));
 		listAppInstanceResponse.setErrMsg(_ctx.stringValue("ListAppInstanceResponse.ErrMsg"));
+		listAppInstanceResponse.setTotalCount(_ctx.longValue("ListAppInstanceResponse.TotalCount"));
 
 		List<AppInstanceDetail> data = new ArrayList<AppInstanceDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppInstanceResponse.Data.Length"); i++) {
 			AppInstanceDetail appInstanceDetail = new AppInstanceDetail();
-			appInstanceDetail.setAppInstanceId(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].AppInstanceId"));
-			appInstanceDetail.setCreateTime(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].CreateTime"));
-			appInstanceDetail.setSpec(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Spec"));
-			appInstanceDetail.setRestartCount(_ctx.integerValue("ListAppInstanceResponse.Data["+ i +"].RestartCount"));
-			appInstanceDetail.setHostIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].HostIp"));
-			appInstanceDetail.setPodIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].PodIp"));
-			appInstanceDetail.setHealth(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Health"));
-			appInstanceDetail.setRequests(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Requests"));
-			appInstanceDetail.setLimits(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Limits"));
-			appInstanceDetail.setVersion(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Version"));
 			appInstanceDetail.setStatus(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Status"));
+			appInstanceDetail.setLimits(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Limits"));
+			appInstanceDetail.setHostIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].HostIp"));
+			appInstanceDetail.setAppInstanceId(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].AppInstanceId"));
+			appInstanceDetail.setHealth(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Health"));
+			appInstanceDetail.setSpec(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Spec"));
+			appInstanceDetail.setVersion(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Version"));
+			appInstanceDetail.setCreateTime(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].CreateTime"));
+			appInstanceDetail.setPodIp(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].PodIp"));
+			appInstanceDetail.setRequests(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Requests"));
+			appInstanceDetail.setRestartCount(_ctx.integerValue("ListAppInstanceResponse.Data["+ i +"].RestartCount"));
 
 			data.add(appInstanceDetail);
 		}

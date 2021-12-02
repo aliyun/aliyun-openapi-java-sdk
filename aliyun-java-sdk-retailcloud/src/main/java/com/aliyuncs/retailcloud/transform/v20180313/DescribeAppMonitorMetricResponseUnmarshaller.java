@@ -36,17 +36,17 @@ public class DescribeAppMonitorMetricResponseUnmarshaller {
 			MetricItem metricItem = new MetricItem();
 			metricItem.setName(_ctx.stringValue("DescribeAppMonitorMetricResponse.Result["+ i +"].Name"));
 
-			List<Float> data = new ArrayList<Float>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeAppMonitorMetricResponse.Result["+ i +"].Data.Length"); j++) {
-				data.add(_ctx.floatValue("DescribeAppMonitorMetricResponse.Result["+ i +"].Data["+ j +"]"));
-			}
-			metricItem.setData(data);
-
 			List<String> categories = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAppMonitorMetricResponse.Result["+ i +"].Categories.Length"); j++) {
 				categories.add(_ctx.stringValue("DescribeAppMonitorMetricResponse.Result["+ i +"].Categories["+ j +"]"));
 			}
 			metricItem.setCategories(categories);
+
+			List<Float> data = new ArrayList<Float>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAppMonitorMetricResponse.Result["+ i +"].Data.Length"); j++) {
+				data.add(_ctx.floatValue("DescribeAppMonitorMetricResponse.Result["+ i +"].Data["+ j +"]"));
+			}
+			metricItem.setData(data);
 
 			result.add(metricItem);
 		}

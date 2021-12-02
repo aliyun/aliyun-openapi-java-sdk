@@ -28,18 +28,18 @@ public class ListAppGroupMappingResponseUnmarshaller {
 		
 		listAppGroupMappingResponse.setRequestId(_ctx.stringValue("ListAppGroupMappingResponse.RequestId"));
 		listAppGroupMappingResponse.setCode(_ctx.integerValue("ListAppGroupMappingResponse.Code"));
+		listAppGroupMappingResponse.setErrorMsg(_ctx.stringValue("ListAppGroupMappingResponse.ErrorMsg"));
 		listAppGroupMappingResponse.setPageNumber(_ctx.integerValue("ListAppGroupMappingResponse.PageNumber"));
 		listAppGroupMappingResponse.setPageSize(_ctx.integerValue("ListAppGroupMappingResponse.PageSize"));
 		listAppGroupMappingResponse.setTotalCount(_ctx.longValue("ListAppGroupMappingResponse.TotalCount"));
-		listAppGroupMappingResponse.setErrorMsg(_ctx.stringValue("ListAppGroupMappingResponse.ErrorMsg"));
 
 		List<AppGroupMappingDetail> data = new ArrayList<AppGroupMappingDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppGroupMappingResponse.Data.Length"); i++) {
 			AppGroupMappingDetail appGroupMappingDetail = new AppGroupMappingDetail();
-			appGroupMappingDetail.setId(_ctx.longValue("ListAppGroupMappingResponse.Data["+ i +"].Id"));
 			appGroupMappingDetail.setName(_ctx.stringValue("ListAppGroupMappingResponse.Data["+ i +"].Name"));
 			appGroupMappingDetail.setGroupId(_ctx.longValue("ListAppGroupMappingResponse.Data["+ i +"].GroupId"));
 			appGroupMappingDetail.setAppId(_ctx.longValue("ListAppGroupMappingResponse.Data["+ i +"].AppId"));
+			appGroupMappingDetail.setId(_ctx.longValue("ListAppGroupMappingResponse.Data["+ i +"].Id"));
 
 			data.add(appGroupMappingDetail);
 		}

@@ -33,9 +33,9 @@ public class ListPersistentVolumeResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Long totalCount;
-
 	private String errMsg;
+
+	private Long totalCount;
 
 	private List<PersistentVolumeDetail> data;
 
@@ -71,20 +71,20 @@ public class ListPersistentVolumeResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public String getErrMsg() {
 		return this.errMsg;
 	}
 
 	public void setErrMsg(String errMsg) {
 		this.errMsg = errMsg;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<PersistentVolumeDetail> getData() {
@@ -97,56 +97,32 @@ public class ListPersistentVolumeResponse extends AcsResponse {
 
 	public static class PersistentVolumeDetail {
 
-		private String name;
-
-		private String capacity;
-
-		private String accessModes;
-
-		private String reclaimPolicy;
+		private String storageClass;
 
 		private String status;
 
+		private String capacity;
+
 		private String pvcName;
-
-		private String mountDir;
-
-		private String storageClass;
-
-		private String reason;
 
 		private String createTime;
 
-		public String getName() {
-			return this.name;
+		private String accessModes;
+
+		private String mountDir;
+
+		private String reclaimPolicy;
+
+		private String name;
+
+		private String reason;
+
+		public String getStorageClass() {
+			return this.storageClass;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCapacity() {
-			return this.capacity;
-		}
-
-		public void setCapacity(String capacity) {
-			this.capacity = capacity;
-		}
-
-		public String getAccessModes() {
-			return this.accessModes;
-		}
-
-		public void setAccessModes(String accessModes) {
-			this.accessModes = accessModes;
-		}
-
-		public String getReclaimPolicy() {
-			return this.reclaimPolicy;
-		}
-
-		public void setReclaimPolicy(String reclaimPolicy) {
-			this.reclaimPolicy = reclaimPolicy;
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
 		}
 
 		public String getStatus() {
@@ -157,12 +133,36 @@ public class ListPersistentVolumeResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getCapacity() {
+			return this.capacity;
+		}
+
+		public void setCapacity(String capacity) {
+			this.capacity = capacity;
+		}
+
 		public String getPvcName() {
 			return this.pvcName;
 		}
 
 		public void setPvcName(String pvcName) {
 			this.pvcName = pvcName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getAccessModes() {
+			return this.accessModes;
+		}
+
+		public void setAccessModes(String accessModes) {
+			this.accessModes = accessModes;
 		}
 
 		public String getMountDir() {
@@ -173,12 +173,20 @@ public class ListPersistentVolumeResponse extends AcsResponse {
 			this.mountDir = mountDir;
 		}
 
-		public String getStorageClass() {
-			return this.storageClass;
+		public String getReclaimPolicy() {
+			return this.reclaimPolicy;
 		}
 
-		public void setStorageClass(String storageClass) {
-			this.storageClass = storageClass;
+		public void setReclaimPolicy(String reclaimPolicy) {
+			this.reclaimPolicy = reclaimPolicy;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getReason() {
@@ -187,14 +195,6 @@ public class ListPersistentVolumeResponse extends AcsResponse {
 
 		public void setReason(String reason) {
 			this.reason = reason;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

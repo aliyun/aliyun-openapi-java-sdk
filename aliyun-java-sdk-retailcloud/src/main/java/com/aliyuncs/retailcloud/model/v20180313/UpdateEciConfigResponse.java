@@ -15,30 +15,22 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.retailcloud.transform.v20180313.DeleteAppDetailResponseUnmarshaller;
+import com.aliyuncs.retailcloud.transform.v20180313.UpdateEciConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAppDetailResponse extends AcsResponse {
-
-	private Integer code;
+public class UpdateEciConfigResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String errMsg;
 
+	private Integer code;
+
 	private Result result;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,6 +46,14 @@ public class DeleteAppDetailResponse extends AcsResponse {
 
 	public void setErrMsg(String errMsg) {
 		this.errMsg = errMsg;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Result getResult() {
@@ -78,8 +78,8 @@ public class DeleteAppDetailResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteAppDetailResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAppDetailResponseUnmarshaller.unmarshall(this, context);
+	public UpdateEciConfigResponse getInstance(UnmarshallerContext context) {
+		return	UpdateEciConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

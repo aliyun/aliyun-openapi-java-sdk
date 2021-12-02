@@ -29,20 +29,20 @@ public class DescribeSlbAPDetailResponseUnmarshaller {
 		describeSlbAPDetailResponse.setSuccess(_ctx.booleanValue("DescribeSlbAPDetailResponse.Success"));
 
 		Result result = new Result();
+		result.setSlbId(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.SlbId"));
+		result.setSslCertId(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.SslCertId"));
+		result.setBizProtocol(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.Protocol"));
+		result.setListenerPort(_ctx.integerValue("DescribeSlbAPDetailResponse.Result.ListenerPort"));
+		result.setRealServerPort(_ctx.integerValue("DescribeSlbAPDetailResponse.Result.RealServerPort"));
+		result.setSlbIp(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.SlbIp"));
+		result.setSlbAPId(_ctx.longValue("DescribeSlbAPDetailResponse.Result.SlbAPId"));
+		result.setNetworkMode(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.NetworkMode"));
+		result.setEstablishedTimeout(_ctx.integerValue("DescribeSlbAPDetailResponse.Result.EstablishedTimeout"));
 		result.setAppId(_ctx.longValue("DescribeSlbAPDetailResponse.Result.AppId"));
 		result.setCookieTimeout(_ctx.integerValue("DescribeSlbAPDetailResponse.Result.CookieTimeout"));
 		result.setEnvId(_ctx.longValue("DescribeSlbAPDetailResponse.Result.EnvId"));
-		result.setEstablishedTimeout(_ctx.integerValue("DescribeSlbAPDetailResponse.Result.EstablishedTimeout"));
-		result.setListenerPort(_ctx.integerValue("DescribeSlbAPDetailResponse.Result.ListenerPort"));
-		result.setName(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.Name"));
-		result.setNetworkMode(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.NetworkMode"));
-		result.setBizProtocol(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.Protocol"));
-		result.setRealServerPort(_ctx.integerValue("DescribeSlbAPDetailResponse.Result.RealServerPort"));
-		result.setSlbAPId(_ctx.longValue("DescribeSlbAPDetailResponse.Result.SlbAPId"));
-		result.setSlbId(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.SlbId"));
-		result.setSlbIp(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.SlbIp"));
-		result.setSslCertId(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.SslCertId"));
 		result.setStickySession(_ctx.integerValue("DescribeSlbAPDetailResponse.Result.StickySession"));
+		result.setName(_ctx.stringValue("DescribeSlbAPDetailResponse.Result.Name"));
 		describeSlbAPDetailResponse.setResult(result);
 	 
 	 	return describeSlbAPDetailResponse;

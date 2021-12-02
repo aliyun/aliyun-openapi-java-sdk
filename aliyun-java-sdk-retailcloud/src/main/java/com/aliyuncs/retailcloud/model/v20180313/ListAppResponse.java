@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String errorMsg;
 
+	private String requestId;
+
 	private Integer totalCount;
 
 	private List<AppDetail> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class ListAppResponse extends AcsResponse {
 
 	public void setErrorMsg(String errorMsg) {
 		this.errorMsg = errorMsg;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -77,42 +77,34 @@ public class ListAppResponse extends AcsResponse {
 
 	public static class AppDetail {
 
-		private Long appId;
-
-		private String title;
+		private String appStateType;
 
 		private String description;
 
-		private String language;
+		private String deployType;
 
-		private String operatingSystem;
+		private Long appId;
 
 		private String bizName;
 
-		private String serviceType;
-
-		private String deployType;
-
 		private String bizTitle;
 
-		private String appStateType;
+		private String serviceType;
+
+		private String title;
+
+		private String operatingSystem;
+
+		private String language;
 
 		private List<MiddleWareInfo> middleWareList;
 
-		public Long getAppId() {
-			return this.appId;
+		public String getAppStateType() {
+			return this.appStateType;
 		}
 
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
+		public void setAppStateType(String appStateType) {
+			this.appStateType = appStateType;
 		}
 
 		public String getDescription() {
@@ -123,20 +115,20 @@ public class ListAppResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getLanguage() {
-			return this.language;
+		public String getDeployType() {
+			return this.deployType;
 		}
 
-		public void setLanguage(String language) {
-			this.language = language;
+		public void setDeployType(String deployType) {
+			this.deployType = deployType;
 		}
 
-		public String getOperatingSystem() {
-			return this.operatingSystem;
+		public Long getAppId() {
+			return this.appId;
 		}
 
-		public void setOperatingSystem(String operatingSystem) {
-			this.operatingSystem = operatingSystem;
+		public void setAppId(Long appId) {
+			this.appId = appId;
 		}
 
 		public String getBizName() {
@@ -147,22 +139,6 @@ public class ListAppResponse extends AcsResponse {
 			this.bizName = bizName;
 		}
 
-		public String getServiceType() {
-			return this.serviceType;
-		}
-
-		public void setServiceType(String serviceType) {
-			this.serviceType = serviceType;
-		}
-
-		public String getDeployType() {
-			return this.deployType;
-		}
-
-		public void setDeployType(String deployType) {
-			this.deployType = deployType;
-		}
-
 		public String getBizTitle() {
 			return this.bizTitle;
 		}
@@ -171,12 +147,36 @@ public class ListAppResponse extends AcsResponse {
 			this.bizTitle = bizTitle;
 		}
 
-		public String getAppStateType() {
-			return this.appStateType;
+		public String getServiceType() {
+			return this.serviceType;
 		}
 
-		public void setAppStateType(String appStateType) {
-			this.appStateType = appStateType;
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getOperatingSystem() {
+			return this.operatingSystem;
+		}
+
+		public void setOperatingSystem(String operatingSystem) {
+			this.operatingSystem = operatingSystem;
+		}
+
+		public String getLanguage() {
+			return this.language;
+		}
+
+		public void setLanguage(String language) {
+			this.language = language;
 		}
 
 		public List<MiddleWareInfo> getMiddleWareList() {
@@ -189,19 +189,11 @@ public class ListAppResponse extends AcsResponse {
 
 		public static class MiddleWareInfo {
 
-			private Long appId;
-
 			private Integer code;
 
 			private String name;
 
-			public Long getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(Long appId) {
-				this.appId = appId;
-			}
+			private Long appId;
 
 			public Integer getCode() {
 				return this.code;
@@ -217,6 +209,14 @@ public class ListAppResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Long getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(Long appId) {
+				this.appId = appId;
 			}
 		}
 	}

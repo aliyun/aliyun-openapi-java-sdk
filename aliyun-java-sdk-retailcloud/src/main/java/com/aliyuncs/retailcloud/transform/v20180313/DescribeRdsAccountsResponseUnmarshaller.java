@@ -39,10 +39,10 @@ public class DescribeRdsAccountsResponseUnmarshaller {
 			AccountsItem accountsItem = new AccountsItem();
 			accountsItem.setAccountStatus(_ctx.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountStatus"));
 			accountsItem.setAccountDescription(_ctx.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountDescription"));
-			accountsItem.setAccountName(_ctx.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountName"));
-			accountsItem.setAccountType(_ctx.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountType"));
 			accountsItem.setPrivExceeded(_ctx.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].PrivExceeded"));
 			accountsItem.setDBInstanceId(_ctx.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].DBInstanceId"));
+			accountsItem.setAccountType(_ctx.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountType"));
+			accountsItem.setAccountName(_ctx.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountName"));
 
 			List<DatabasePrivilegesItem> databasePrivileges = new ArrayList<DatabasePrivilegesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {

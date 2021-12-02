@@ -36,10 +36,10 @@ public class ListNodeLabelsResponseUnmarshaller {
 		List<ListNodeLabelResponse> data = new ArrayList<ListNodeLabelResponse>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodeLabelsResponse.Data.Length"); i++) {
 			ListNodeLabelResponse listNodeLabelResponse = new ListNodeLabelResponse();
-			listNodeLabelResponse.setClusterId(_ctx.stringValue("ListNodeLabelsResponse.Data["+ i +"].ClusterId"));
-			listNodeLabelResponse.setId(_ctx.longValue("ListNodeLabelsResponse.Data["+ i +"].Id"));
 			listNodeLabelResponse.setLabelKey(_ctx.stringValue("ListNodeLabelsResponse.Data["+ i +"].LabelKey"));
 			listNodeLabelResponse.setLabelValue(_ctx.stringValue("ListNodeLabelsResponse.Data["+ i +"].LabelValue"));
+			listNodeLabelResponse.setId(_ctx.longValue("ListNodeLabelsResponse.Data["+ i +"].Id"));
+			listNodeLabelResponse.setClusterId(_ctx.stringValue("ListNodeLabelsResponse.Data["+ i +"].ClusterId"));
 
 			data.add(listNodeLabelResponse);
 		}
