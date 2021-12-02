@@ -60,15 +60,9 @@ public class GetCommitResponse extends AcsResponse {
 
 		private String rollbackToCommitId;
 
-		private Map<Object,Object> appModel;
-
 		private String commitLog;
 
-		private List<Map<Object,Object>> logicModels;
-
-		private List<Map<Object,Object>> pageModels;
-
-		private List<Map<Object,Object>> dataModels;
+		private List<Map<Object,Object>> modelPack;
 
 		public String getCommitType() {
 			return this.commitType;
@@ -118,14 +112,6 @@ public class GetCommitResponse extends AcsResponse {
 			this.rollbackToCommitId = rollbackToCommitId;
 		}
 
-		public Map<Object,Object> getAppModel() {
-			return this.appModel;
-		}
-
-		public void setAppModel(Map<Object,Object> appModel) {
-			this.appModel = appModel;
-		}
-
 		public String getCommitLog() {
 			return this.commitLog;
 		}
@@ -134,28 +120,12 @@ public class GetCommitResponse extends AcsResponse {
 			this.commitLog = commitLog;
 		}
 
-		public List<Map<Object,Object>> getLogicModels() {
-			return this.logicModels;
+		public List<Map<Object,Object>> getModelPack() {
+			return this.modelPack;
 		}
 
-		public void setLogicModels(List<Map<Object,Object>> logicModels) {
-			this.logicModels = logicModels;
-		}
-
-		public List<Map<Object,Object>> getPageModels() {
-			return this.pageModels;
-		}
-
-		public void setPageModels(List<Map<Object,Object>> pageModels) {
-			this.pageModels = pageModels;
-		}
-
-		public List<Map<Object,Object>> getDataModels() {
-			return this.dataModels;
-		}
-
-		public void setDataModels(List<Map<Object,Object>> dataModels) {
-			this.dataModels = dataModels;
+		public void setModelPack(List<Map<Object,Object>> modelPack) {
+			this.modelPack = modelPack;
 		}
 	}
 

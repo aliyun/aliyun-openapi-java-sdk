@@ -34,9 +34,11 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String source;
 
-	private String templateId;
+	private String sourceAppId;
 
 	private String appName;
+
+	private Boolean templated;
 	public CreateAppRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateApp");
 		setMethod(MethodType.POST);
@@ -97,14 +99,14 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		}
 	}
 
-	public String getTemplateId() {
-		return this.templateId;
+	public String getSourceAppId() {
+		return this.sourceAppId;
 	}
 
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
+	public void setSourceAppId(String sourceAppId) {
+		this.sourceAppId = sourceAppId;
+		if(sourceAppId != null){
+			putQueryParameter("SourceAppId", sourceAppId);
 		}
 	}
 
@@ -116,6 +118,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public Boolean getTemplated() {
+		return this.templated;
+	}
+
+	public void setTemplated(Boolean templated) {
+		this.templated = templated;
+		if(templated != null){
+			putQueryParameter("Templated", templated.toString());
 		}
 	}
 

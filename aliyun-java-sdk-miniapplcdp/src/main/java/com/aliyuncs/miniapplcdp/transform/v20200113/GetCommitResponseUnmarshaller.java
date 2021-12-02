@@ -36,17 +36,10 @@ public class GetCommitResponseUnmarshaller {
 		data.setAppId(_ctx.stringValue("GetCommitResponse.Data.AppId"));
 		data.setCreateTime(_ctx.stringValue("GetCommitResponse.Data.CreateTime"));
 		data.setRollbackToCommitId(_ctx.stringValue("GetCommitResponse.Data.RollbackToCommitId"));
-		data.setAppModel(_ctx.mapValue("GetCommitResponse.Data.AppModel"));
 		data.setCommitLog(_ctx.stringValue("GetCommitResponse.Data.CommitLog"));
 
-		List<Map<Object, Object>> logicModels = _ctx.listMapValue("GetCommitResponse.Data.LogicModels");
-		data.setLogicModels(logicModels);
-
-		List<Map<Object, Object>> pageModels = _ctx.listMapValue("GetCommitResponse.Data.PageModels");
-		data.setPageModels(pageModels);
-
-		List<Map<Object, Object>> dataModels = _ctx.listMapValue("GetCommitResponse.Data.DataModels");
-		data.setDataModels(dataModels);
+		List<Map<Object, Object>> modelPack = _ctx.listMapValue("GetCommitResponse.Data.ModelPack");
+		data.setModelPack(modelPack);
 		getCommitResponse.setData(data);
 	 
 	 	return getCommitResponse;

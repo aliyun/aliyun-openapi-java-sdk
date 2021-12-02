@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 	   
 
+	private String imageProcessParameter;
+
 	private String description;
 
 	private String resourceType;
@@ -40,6 +42,17 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 	public ListResourcesRequest() {
 		super("miniapplcdp", "2020-01-13", "ListResources");
 		setMethod(MethodType.POST);
+	}
+
+	public String getImageProcessParameter() {
+		return this.imageProcessParameter;
+	}
+
+	public void setImageProcessParameter(String imageProcessParameter) {
+		this.imageProcessParameter = imageProcessParameter;
+		if(imageProcessParameter != null){
+			putQueryParameter("ImageProcessParameter", imageProcessParameter);
+		}
 	}
 
 	public String getDescription() {
