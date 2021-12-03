@@ -39,6 +39,8 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 
 	private List<Resource> resources;
 
+	private String serviceResourceType;
+
 	private String serviceDescription;
 	public CreateVpcEndpointServiceRequest() {
 		super("Privatelink", "2020-04-15", "CreateVpcEndpointService", "privatelink");
@@ -117,6 +119,17 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 				putQueryParameter("Resource." + (depth1 + 1) + ".ResourceId" , resources.get(depth1).getResourceId());
 			}
 		}	
+	}
+
+	public String getServiceResourceType() {
+		return this.serviceResourceType;
+	}
+
+	public void setServiceResourceType(String serviceResourceType) {
+		this.serviceResourceType = serviceResourceType;
+		if(serviceResourceType != null){
+			putQueryParameter("ServiceResourceType", serviceResourceType);
+		}
 	}
 
 	public String getServiceDescription() {

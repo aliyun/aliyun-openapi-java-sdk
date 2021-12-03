@@ -41,6 +41,7 @@ public class ListVpcEndpointServiceResourcesResponseUnmarshaller {
 			resource.setResourceId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].ResourceId"));
 			resource.setRegionId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].RegionId"));
 			resource.setRelatedEndpointCount(_ctx.longValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].RelatedEndpointCount"));
+			resource.setRelatedDeprecatedEndpointCount(_ctx.longValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].RelatedDeprecatedEndpointCount"));
 			resource.setAutoAllocatedEnabled(_ctx.booleanValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].AutoAllocatedEnabled"));
 			resource.setStatusInfo(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].StatusInfo"));
 

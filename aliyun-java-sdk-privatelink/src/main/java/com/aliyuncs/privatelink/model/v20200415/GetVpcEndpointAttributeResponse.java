@@ -62,6 +62,8 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	private Boolean zoneAffinityEnabled;
 
+	private String privateServiceName;
+
 	public String getPayer() {
 		return this.payer;
 	}
@@ -212,6 +214,14 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
 		this.zoneAffinityEnabled = zoneAffinityEnabled;
+	}
+
+	public String getPrivateServiceName() {
+		return this.privateServiceName;
+	}
+
+	public void setPrivateServiceName(String privateServiceName) {
+		this.privateServiceName = privateServiceName;
 	}
 
 	@Override

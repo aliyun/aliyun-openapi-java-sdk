@@ -77,6 +77,10 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 		private String serviceType;
 
+		private String serviceDescription;
+
+		private String privateServiceName;
+
 		private List<String> zones;
 
 		public String getPayer() {
@@ -117,6 +121,22 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public String getServiceDescription() {
+			return this.serviceDescription;
+		}
+
+		public void setServiceDescription(String serviceDescription) {
+			this.serviceDescription = serviceDescription;
+		}
+
+		public String getPrivateServiceName() {
+			return this.privateServiceName;
+		}
+
+		public void setPrivateServiceName(String privateServiceName) {
+			this.privateServiceName = privateServiceName;
 		}
 
 		public List<String> getZones() {

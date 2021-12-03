@@ -31,6 +31,8 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 
 	private List<String> securityGroupIds;
 
+	private String endpointType;
+
 	private List<Zone> zones;
 
 	private String serviceName;
@@ -38,6 +40,8 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 	private Boolean dryRun;
 
 	private String endpointDescription;
+
+	private Long zonePrivateIpAddressCount;
 
 	private String endpointName;
 
@@ -76,6 +80,17 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 				putQueryParameter("SecurityGroupId." + (i + 1) , securityGroupIds.get(i));
 			}
 		}	
+	}
+
+	public String getEndpointType() {
+		return this.endpointType;
+	}
+
+	public void setEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+		if(endpointType != null){
+			putQueryParameter("EndpointType", endpointType);
+		}
 	}
 
 	public List<Zone> getZones() {
@@ -123,6 +138,17 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 		this.endpointDescription = endpointDescription;
 		if(endpointDescription != null){
 			putQueryParameter("EndpointDescription", endpointDescription);
+		}
+	}
+
+	public Long getZonePrivateIpAddressCount() {
+		return this.zonePrivateIpAddressCount;
+	}
+
+	public void setZonePrivateIpAddressCount(Long zonePrivateIpAddressCount) {
+		this.zonePrivateIpAddressCount = zonePrivateIpAddressCount;
+		if(zonePrivateIpAddressCount != null){
+			putQueryParameter("ZonePrivateIpAddressCount", zonePrivateIpAddressCount.toString());
 		}
 	}
 

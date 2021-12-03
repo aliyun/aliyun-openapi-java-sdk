@@ -36,6 +36,8 @@ public class ListVpcEndpointConnectionsRequest extends RpcAcsRequest<ListVpcEndp
 
 	private Integer maxResults;
 
+	private String eniId;
+
 	private String serviceId;
 	public ListVpcEndpointConnectionsRequest() {
 		super("Privatelink", "2020-04-15", "ListVpcEndpointConnections", "privatelink");
@@ -99,6 +101,17 @@ public class ListVpcEndpointConnectionsRequest extends RpcAcsRequest<ListVpcEndp
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getEniId() {
+		return this.eniId;
+	}
+
+	public void setEniId(String eniId) {
+		this.eniId = eniId;
+		if(eniId != null){
+			putQueryParameter("EniId", eniId);
 		}
 	}
 

@@ -30,6 +30,8 @@ public class ListVpcEndpointServicesByEndUserRequest extends RpcAcsRequest<ListV
 
 	private String serviceName;
 
+	private String serviceType;
+
 	private Integer maxResults;
 
 	private String serviceId;
@@ -62,6 +64,17 @@ public class ListVpcEndpointServicesByEndUserRequest extends RpcAcsRequest<ListV
 		this.serviceName = serviceName;
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putQueryParameter("ServiceType", serviceType);
 		}
 	}
 

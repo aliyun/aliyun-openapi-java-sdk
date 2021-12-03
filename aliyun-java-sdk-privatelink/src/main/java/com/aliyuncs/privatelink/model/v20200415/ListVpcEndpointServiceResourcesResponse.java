@@ -83,6 +83,8 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 
 		private Long relatedEndpointCount;
 
+		private Long relatedDeprecatedEndpointCount;
+
 		private Boolean autoAllocatedEnabled;
 
 		private String statusInfo;
@@ -149,6 +151,14 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 
 		public void setRelatedEndpointCount(Long relatedEndpointCount) {
 			this.relatedEndpointCount = relatedEndpointCount;
+		}
+
+		public Long getRelatedDeprecatedEndpointCount() {
+			return this.relatedDeprecatedEndpointCount;
+		}
+
+		public void setRelatedDeprecatedEndpointCount(Long relatedDeprecatedEndpointCount) {
+			this.relatedDeprecatedEndpointCount = relatedDeprecatedEndpointCount;
 		}
 
 		public Boolean getAutoAllocatedEnabled() {

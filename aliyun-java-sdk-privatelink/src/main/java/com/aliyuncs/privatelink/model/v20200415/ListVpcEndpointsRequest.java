@@ -32,6 +32,8 @@ public class ListVpcEndpointsRequest extends RpcAcsRequest<ListVpcEndpointsRespo
 
 	private String nextToken;
 
+	private String endpointType;
+
 	private String serviceName;
 
 	private String connectionStatus;
@@ -81,6 +83,17 @@ public class ListVpcEndpointsRequest extends RpcAcsRequest<ListVpcEndpointsRespo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getEndpointType() {
+		return this.endpointType;
+	}
+
+	public void setEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+		if(endpointType != null){
+			putQueryParameter("EndpointType", endpointType);
 		}
 	}
 

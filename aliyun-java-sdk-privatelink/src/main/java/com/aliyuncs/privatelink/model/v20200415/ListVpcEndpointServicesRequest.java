@@ -38,6 +38,8 @@ public class ListVpcEndpointServicesRequest extends RpcAcsRequest<ListVpcEndpoin
 
 	private String serviceName;
 
+	private String serviceResourceType;
+
 	private Integer maxResults;
 
 	private String serviceId;
@@ -114,6 +116,17 @@ public class ListVpcEndpointServicesRequest extends RpcAcsRequest<ListVpcEndpoin
 		this.serviceName = serviceName;
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getServiceResourceType() {
+		return this.serviceResourceType;
+	}
+
+	public void setServiceResourceType(String serviceResourceType) {
+		this.serviceResourceType = serviceResourceType;
+		if(serviceResourceType != null){
+			putQueryParameter("ServiceResourceType", serviceResourceType);
 		}
 	}
 

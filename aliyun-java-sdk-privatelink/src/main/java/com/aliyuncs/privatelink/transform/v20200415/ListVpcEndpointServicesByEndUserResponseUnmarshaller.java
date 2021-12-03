@@ -38,6 +38,8 @@ public class ListVpcEndpointServicesByEndUserResponseUnmarshaller {
 			service.setServiceId(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceId"));
 			service.setServiceName(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceName"));
 			service.setServiceType(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceType"));
+			service.setServiceDescription(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceDescription"));
+			service.setPrivateServiceName(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].PrivateServiceName"));
 
 			List<String> zones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Zones.Length"); j++) {
