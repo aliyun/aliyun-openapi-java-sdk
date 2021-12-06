@@ -1,3 +1,6 @@
+2021-12-06 Version: 1.0.12
+- Modify the input parameter Action of DescribeCenInterRegionBandwidthLimits to be required.
+
 2021-12-01 Version: 1.0.11
 - Support not switching routes when VBR health check fails.
 - Support order type when cross-account authorization and display.

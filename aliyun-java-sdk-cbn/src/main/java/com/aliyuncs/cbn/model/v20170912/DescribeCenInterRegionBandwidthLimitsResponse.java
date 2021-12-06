@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<CenInterRegionBandwidthLimit> cenInterRegionBandwidthLimits;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<CenInterRegionBandwidthLimit> getCenInterRegionBandwidthLimits() {
@@ -77,36 +77,44 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 	public static class CenInterRegionBandwidthLimit {
 
-		private String cenId;
+		private String transitRouterAttachmentId;
 
-		private String localRegionId;
+		private String status;
+
+		private String bandwidthPackageId;
 
 		private String oppositeRegionId;
 
 		private String geographicSpanId;
 
+		private String cenId;
+
+		private String localRegionId;
+
 		private Long bandwidthLimit;
 
-		private String status;
-
-		private String transitRouterAttachmentId;
-
-		private String bandwidthPackageId;
-
-		public String getCenId() {
-			return this.cenId;
+		public String getTransitRouterAttachmentId() {
+			return this.transitRouterAttachmentId;
 		}
 
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
+		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+			this.transitRouterAttachmentId = transitRouterAttachmentId;
 		}
 
-		public String getLocalRegionId() {
-			return this.localRegionId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setLocalRegionId(String localRegionId) {
-			this.localRegionId = localRegionId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getBandwidthPackageId() {
+			return this.bandwidthPackageId;
+		}
+
+		public void setBandwidthPackageId(String bandwidthPackageId) {
+			this.bandwidthPackageId = bandwidthPackageId;
 		}
 
 		public String getOppositeRegionId() {
@@ -125,36 +133,28 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 			this.geographicSpanId = geographicSpanId;
 		}
 
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
+		}
+
+		public String getLocalRegionId() {
+			return this.localRegionId;
+		}
+
+		public void setLocalRegionId(String localRegionId) {
+			this.localRegionId = localRegionId;
+		}
+
 		public Long getBandwidthLimit() {
 			return this.bandwidthLimit;
 		}
 
 		public void setBandwidthLimit(Long bandwidthLimit) {
 			this.bandwidthLimit = bandwidthLimit;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getTransitRouterAttachmentId() {
-			return this.transitRouterAttachmentId;
-		}
-
-		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
-			this.transitRouterAttachmentId = transitRouterAttachmentId;
-		}
-
-		public String getBandwidthPackageId() {
-			return this.bandwidthPackageId;
-		}
-
-		public void setBandwidthPackageId(String bandwidthPackageId) {
-			this.bandwidthPackageId = bandwidthPackageId;
 		}
 	}
 
