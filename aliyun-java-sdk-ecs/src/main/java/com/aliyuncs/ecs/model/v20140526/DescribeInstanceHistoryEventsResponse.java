@@ -245,6 +245,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private List<InactiveDisk> inactiveDisks;
 
+			private List<String> migrationOptions;
+
 			public String getDevice() {
 				return this.device;
 			}
@@ -283,6 +285,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setInactiveDisks(List<InactiveDisk> inactiveDisks) {
 				this.inactiveDisks = inactiveDisks;
+			}
+
+			public List<String> getMigrationOptions() {
+				return this.migrationOptions;
+			}
+
+			public void setMigrationOptions(List<String> migrationOptions) {
+				this.migrationOptions = migrationOptions;
 			}
 
 			public static class InactiveDisk {

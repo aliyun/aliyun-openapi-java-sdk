@@ -1,3 +1,6 @@
+2021-12-06 Version: 4.24.12
+- Support Bond Eni.
+
 2021-10-18 Version: 4.24.11
 - Adjust ecs openapi endpoint.
 - Fix SDK array format.

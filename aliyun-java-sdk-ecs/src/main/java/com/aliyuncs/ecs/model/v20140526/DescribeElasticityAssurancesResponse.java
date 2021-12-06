@@ -101,6 +101,10 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 		private String totalAssuranceTimes;
 
+		private String instanceChargeType;
+
+		private String startTimeType;
+
 		private List<AllocatedResource> allocatedResources;
 
 		private List<Tag> tags;
@@ -199,6 +203,22 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 		public void setTotalAssuranceTimes(String totalAssuranceTimes) {
 			this.totalAssuranceTimes = totalAssuranceTimes;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getStartTimeType() {
+			return this.startTimeType;
+		}
+
+		public void setStartTimeType(String startTimeType) {
+			this.startTimeType = startTimeType;
 		}
 
 		public List<AllocatedResource> getAllocatedResources() {

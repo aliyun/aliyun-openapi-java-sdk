@@ -63,6 +63,12 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			extendedAttribute.setHostType(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostType"));
 			extendedAttribute.setHostId(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostId"));
 
+			List<String> migrationOptions = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MigrationOptions.Length"); j++) {
+				migrationOptions.add(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MigrationOptions["+ j +"]"));
+			}
+			extendedAttribute.setMigrationOptions(migrationOptions);
+
 			List<InactiveDisk> inactiveDisks = new ArrayList<InactiveDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks.Length"); j++) {
 				InactiveDisk inactiveDisk = new InactiveDisk();

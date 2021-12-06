@@ -103,6 +103,8 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		private String platform;
 
+		private String startTimeType;
+
 		private List<AllocatedResource> allocatedResources;
 
 		private List<Tag> tags;
@@ -209,6 +211,14 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		public void setPlatform(String platform) {
 			this.platform = platform;
+		}
+
+		public String getStartTimeType() {
+			return this.startTimeType;
+		}
+
+		public void setStartTimeType(String startTimeType) {
+			this.startTimeType = startTimeType;
 		}
 
 		public List<AllocatedResource> getAllocatedResources() {

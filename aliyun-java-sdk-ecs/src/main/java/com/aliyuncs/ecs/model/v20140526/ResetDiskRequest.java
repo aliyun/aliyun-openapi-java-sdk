@@ -31,6 +31,8 @@ public class ResetDiskRequest extends RpcAcsRequest<ResetDiskResponse> {
 
 	private String diskId;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -75,6 +77,17 @@ public class ResetDiskRequest extends RpcAcsRequest<ResetDiskResponse> {
 		this.diskId = diskId;
 		if(diskId != null){
 			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

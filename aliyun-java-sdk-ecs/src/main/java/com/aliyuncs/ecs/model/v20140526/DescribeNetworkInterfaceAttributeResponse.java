@@ -77,6 +77,10 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 	private Attachment attachment;
 
+	private BondInterfaceSpecification bondInterfaceSpecification;
+
+	private SlaveInterfaceSpecification slaveInterfaceSpecification;
+
 	public String getCreationTime() {
 		return this.creationTime;
 	}
@@ -285,6 +289,22 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 		this.attachment = attachment;
 	}
 
+	public BondInterfaceSpecification getBondInterfaceSpecification() {
+		return this.bondInterfaceSpecification;
+	}
+
+	public void setBondInterfaceSpecification(BondInterfaceSpecification bondInterfaceSpecification) {
+		this.bondInterfaceSpecification = bondInterfaceSpecification;
+	}
+
+	public SlaveInterfaceSpecification getSlaveInterfaceSpecification() {
+		return this.slaveInterfaceSpecification;
+	}
+
+	public void setSlaveInterfaceSpecification(SlaveInterfaceSpecification slaveInterfaceSpecification) {
+		this.slaveInterfaceSpecification = slaveInterfaceSpecification;
+	}
+
 	public static class PrivateIpSet {
 
 		private String privateIpAddress;
@@ -440,6 +460,95 @@ public class DescribeNetworkInterfaceAttributeResponse extends AcsResponse {
 
 		public void setMemberNetworkInterfaceIds(List<String> memberNetworkInterfaceIds) {
 			this.memberNetworkInterfaceIds = memberNetworkInterfaceIds;
+		}
+	}
+
+	public static class BondInterfaceSpecification {
+
+		private String bondMode;
+
+		private List<SlaveInterfaceSpecificationSet> slaveInterfaceSpecification2;
+
+		public String getBondMode() {
+			return this.bondMode;
+		}
+
+		public void setBondMode(String bondMode) {
+			this.bondMode = bondMode;
+		}
+
+		public List<SlaveInterfaceSpecificationSet> getSlaveInterfaceSpecification2() {
+			return this.slaveInterfaceSpecification2;
+		}
+
+		public void setSlaveInterfaceSpecification2(List<SlaveInterfaceSpecificationSet> slaveInterfaceSpecification2) {
+			this.slaveInterfaceSpecification2 = slaveInterfaceSpecification2;
+		}
+
+		public static class SlaveInterfaceSpecificationSet {
+
+			private String slaveNetworkInterfaceId;
+
+			private String workState;
+
+			private String bondNetworkInterfaceId;
+
+			public String getSlaveNetworkInterfaceId() {
+				return this.slaveNetworkInterfaceId;
+			}
+
+			public void setSlaveNetworkInterfaceId(String slaveNetworkInterfaceId) {
+				this.slaveNetworkInterfaceId = slaveNetworkInterfaceId;
+			}
+
+			public String getWorkState() {
+				return this.workState;
+			}
+
+			public void setWorkState(String workState) {
+				this.workState = workState;
+			}
+
+			public String getBondNetworkInterfaceId() {
+				return this.bondNetworkInterfaceId;
+			}
+
+			public void setBondNetworkInterfaceId(String bondNetworkInterfaceId) {
+				this.bondNetworkInterfaceId = bondNetworkInterfaceId;
+			}
+		}
+	}
+
+	public static class SlaveInterfaceSpecification {
+
+		private String slaveNetworkInterfaceId;
+
+		private String workState;
+
+		private String bondNetworkInterfaceId;
+
+		public String getSlaveNetworkInterfaceId() {
+			return this.slaveNetworkInterfaceId;
+		}
+
+		public void setSlaveNetworkInterfaceId(String slaveNetworkInterfaceId) {
+			this.slaveNetworkInterfaceId = slaveNetworkInterfaceId;
+		}
+
+		public String getWorkState() {
+			return this.workState;
+		}
+
+		public void setWorkState(String workState) {
+			this.workState = workState;
+		}
+
+		public String getBondNetworkInterfaceId() {
+			return this.bondNetworkInterfaceId;
+		}
+
+		public void setBondNetworkInterfaceId(String bondNetworkInterfaceId) {
+			this.bondNetworkInterfaceId = bondNetworkInterfaceId;
 		}
 	}
 

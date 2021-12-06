@@ -1001,6 +1001,15 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfaces.get(depth1).getSecurityGroupIdss().get(i));
 					}
 				}
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfaces.get(depth1).getNetworkInterfaceTrafficMode());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".QueuePairNumber" , networkInterfaces.get(depth1).getQueuePairNumber());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".InstanceType" , networkInterfaces.get(depth1).getInstanceType());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Ipv6AddressCount" , networkInterfaces.get(depth1).getIpv6AddressCount());
+				if (networkInterfaces.get(depth1).getIpv6Addresss() != null) {
+					for (int i = 0; i < networkInterfaces.get(depth1).getIpv6Addresss().size(); i++) {
+						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Ipv6Address." + (i + 1) , networkInterfaces.get(depth1).getIpv6Addresss().get(i));
+					}
+				}
 			}
 		}	
 	}
@@ -1225,6 +1234,16 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private List<String> securityGroupIdss;
 
+		private String networkInterfaceTrafficMode;
+
+		private Long queuePairNumber;
+
+		private String instanceType;
+
+		private Long ipv6AddressCount;
+
+		private List<String> ipv6Addresss;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1279,6 +1298,46 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
 			this.securityGroupIdss = securityGroupIdss;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Long getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Long queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Long getIpv6AddressCount() {
+			return this.ipv6AddressCount;
+		}
+
+		public void setIpv6AddressCount(Long ipv6AddressCount) {
+			this.ipv6AddressCount = ipv6AddressCount;
+		}
+
+		public List<String> getIpv6Addresss() {
+			return this.ipv6Addresss;
+		}
+
+		public void setIpv6Addresss(List<String> ipv6Addresss) {
+			this.ipv6Addresss = ipv6Addresss;
 		}
 	}
 

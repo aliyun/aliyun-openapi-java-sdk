@@ -20,9 +20,12 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.AssociatedPublicIp;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.Attachment;
+import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification;
+import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecificationSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.Ipv6Set;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.PrivateIpSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.PrivateIpSet.AssociatedPublicIp1;
+import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification;
 import com.aliyuncs.ecs.model.v20140526.DescribeNetworkInterfaceAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -74,6 +77,27 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		}
 		attachment.setMemberNetworkInterfaceIds(memberNetworkInterfaceIds);
 		describeNetworkInterfaceAttributeResponse.setAttachment(attachment);
+
+		BondInterfaceSpecification bondInterfaceSpecification = new BondInterfaceSpecification();
+		bondInterfaceSpecification.setBondMode(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.BondMode"));
+
+		List<SlaveInterfaceSpecificationSet> slaveInterfaceSpecification2 = new ArrayList<SlaveInterfaceSpecificationSet>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification.Length"); i++) {
+			SlaveInterfaceSpecificationSet slaveInterfaceSpecificationSet = new SlaveInterfaceSpecificationSet();
+			slaveInterfaceSpecificationSet.setSlaveNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].SlaveNetworkInterfaceId"));
+			slaveInterfaceSpecificationSet.setWorkState(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].WorkState"));
+			slaveInterfaceSpecificationSet.setBondNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].BondNetworkInterfaceId"));
+
+			slaveInterfaceSpecification2.add(slaveInterfaceSpecificationSet);
+		}
+		bondInterfaceSpecification.setSlaveInterfaceSpecification2(slaveInterfaceSpecification2);
+		describeNetworkInterfaceAttributeResponse.setBondInterfaceSpecification(bondInterfaceSpecification);
+
+		SlaveInterfaceSpecification slaveInterfaceSpecification = new SlaveInterfaceSpecification();
+		slaveInterfaceSpecification.setSlaveNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.SlaveNetworkInterfaceId"));
+		slaveInterfaceSpecification.setWorkState(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.WorkState"));
+		slaveInterfaceSpecification.setBondNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification.BondNetworkInterfaceId"));
+		describeNetworkInterfaceAttributeResponse.setSlaveInterfaceSpecification(slaveInterfaceSpecification);
 
 		List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.PrivateIpSets.Length"); i++) {

@@ -35,6 +35,8 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 	private Long ownerId;
 
 	private List<String> instanceIds;
+
+	private Integer portNumber;
 	public StartTerminalSessionRequest() {
 		super("Ecs", "2014-05-26", "StartTerminalSession", "ecs");
 		setMethod(MethodType.POST);
@@ -99,6 +101,17 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
+	}
+
+	public Integer getPortNumber() {
+		return this.portNumber;
+	}
+
+	public void setPortNumber(Integer portNumber) {
+		this.portNumber = portNumber;
+		if(portNumber != null){
+			putQueryParameter("PortNumber", portNumber.toString());
+		}
 	}
 
 	@Override
