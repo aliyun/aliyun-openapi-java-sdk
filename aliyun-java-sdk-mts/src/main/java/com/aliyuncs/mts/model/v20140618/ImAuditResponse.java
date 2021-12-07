@@ -26,32 +26,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ImAuditResponse extends AcsResponse {
 
-	private String status;
-
-	private String requestId;
+	private Boolean textQuotaExceed;
 
 	private Boolean imageQuotaExceed;
 
-	private Boolean textQuotaExceed;
+	private String requestId;
 
-	private List<TextResult> textResults;
+	private ImageResults imageResults;
 
-	private List<ImageResult> imageResults;
+	private TextResults textResults;
 
-	public String getStatus() {
-		return this.status;
+	public Boolean getTextQuotaExceed() {
+		return this.textQuotaExceed;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTextQuotaExceed(Boolean textQuotaExceed) {
+		this.textQuotaExceed = textQuotaExceed;
 	}
 
 	public Boolean getImageQuotaExceed() {
@@ -62,53 +52,298 @@ public class ImAuditResponse extends AcsResponse {
 		this.imageQuotaExceed = imageQuotaExceed;
 	}
 
-	public Boolean getTextQuotaExceed() {
-		return this.textQuotaExceed;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTextQuotaExceed(Boolean textQuotaExceed) {
-		this.textQuotaExceed = textQuotaExceed;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public List<TextResult> getTextResults() {
-		return this.textResults;
-	}
-
-	public void setTextResults(List<TextResult> textResults) {
-		this.textResults = textResults;
-	}
-
-	public List<ImageResult> getImageResults() {
+	public ImageResults getImageResults() {
 		return this.imageResults;
 	}
 
-	public void setImageResults(List<ImageResult> imageResults) {
+	public void setImageResults(ImageResults imageResults) {
 		this.imageResults = imageResults;
 	}
 
-	public static class TextResult {
+	public TextResults getTextResults() {
+		return this.textResults;
+	}
 
-		private Map<Object,Object> result;
+	public void setTextResults(TextResults textResults) {
+		this.textResults = textResults;
+	}
 
-		public Map<Object,Object> getResult() {
+	public static class ImageResults {
+
+		private List<ResultItem> result;
+
+		public List<ResultItem> getResult() {
 			return this.result;
 		}
 
-		public void setResult(Map<Object,Object> result) {
+		public void setResult(List<ResultItem> result) {
 			this.result = result;
+		}
+
+		public static class ResultItem {
+
+			private Long code;
+
+			private String dataId;
+
+			private Map<Object,Object> extras;
+
+			private String msg;
+
+			private String taskId;
+
+			private String url;
+
+			private List<Result> results;
+
+			public Long getCode() {
+				return this.code;
+			}
+
+			public void setCode(Long code) {
+				this.code = code;
+			}
+
+			public String getDataId() {
+				return this.dataId;
+			}
+
+			public void setDataId(String dataId) {
+				this.dataId = dataId;
+			}
+
+			public Map<Object,Object> getExtras() {
+				return this.extras;
+			}
+
+			public void setExtras(Map<Object,Object> extras) {
+				this.extras = extras;
+			}
+
+			public String getMsg() {
+				return this.msg;
+			}
+
+			public void setMsg(String msg) {
+				this.msg = msg;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public List<Result> getResults() {
+				return this.results;
+			}
+
+			public void setResults(List<Result> results) {
+				this.results = results;
+			}
+
+			public static class Result {
+
+				private String label;
+
+				private Double rate;
+
+				private String scene;
+
+				private String suggestion;
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
+				public Double getRate() {
+					return this.rate;
+				}
+
+				public void setRate(Double rate) {
+					this.rate = rate;
+				}
+
+				public String getScene() {
+					return this.scene;
+				}
+
+				public void setScene(String scene) {
+					this.scene = scene;
+				}
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
+			}
 		}
 	}
 
-	public static class ImageResult {
+	public static class TextResults {
 
-		private Map<Object,Object> result;
+		private List<ResultItem2> result1;
 
-		public Map<Object,Object> getResult() {
-			return this.result;
+		public List<ResultItem2> getResult1() {
+			return this.result1;
 		}
 
-		public void setResult(Map<Object,Object> result) {
-			this.result = result;
+		public void setResult1(List<ResultItem2> result1) {
+			this.result1 = result1;
+		}
+
+		public static class ResultItem2 {
+
+			private Long code;
+
+			private String content;
+
+			private String dataId;
+
+			private String msg;
+
+			private String taskId;
+
+			private List<Result4> results3;
+
+			public Long getCode() {
+				return this.code;
+			}
+
+			public void setCode(Long code) {
+				this.code = code;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+
+			public String getDataId() {
+				return this.dataId;
+			}
+
+			public void setDataId(String dataId) {
+				this.dataId = dataId;
+			}
+
+			public String getMsg() {
+				return this.msg;
+			}
+
+			public void setMsg(String msg) {
+				this.msg = msg;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
+			}
+
+			public List<Result4> getResults3() {
+				return this.results3;
+			}
+
+			public void setResults3(List<Result4> results3) {
+				this.results3 = results3;
+			}
+
+			public static class Result4 {
+
+				private String label;
+
+				private Double rate;
+
+				private String scene;
+
+				private String suggestion;
+
+				private List<DetailsItem> details;
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
+				public Double getRate() {
+					return this.rate;
+				}
+
+				public void setRate(Double rate) {
+					this.rate = rate;
+				}
+
+				public String getScene() {
+					return this.scene;
+				}
+
+				public void setScene(String scene) {
+					this.scene = scene;
+				}
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
+
+				public List<DetailsItem> getDetails() {
+					return this.details;
+				}
+
+				public void setDetails(List<DetailsItem> details) {
+					this.details = details;
+				}
+
+				public static class DetailsItem {
+
+					private String label;
+
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
+				}
+			}
 		}
 	}
 

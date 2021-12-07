@@ -27,7 +27,11 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 
 	private Long resourceOwnerId;
 
+	private String knowledgeConfig;
+
 	private String industry;
+
+	private String labelVersion;
 
 	private String scene;
 
@@ -37,6 +41,8 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 
 	private String faceCategoryIds;
 
+	private String keywordConfig;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -44,6 +50,8 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 	private Long ownerId;
 
 	private String analyseTypes;
+
+	private String labelType;
 	public AddSmarttagTemplateRequest() {
 		super("Mts", "2014-06-18", "AddSmarttagTemplate", "mts");
 		setMethod(MethodType.POST);
@@ -64,6 +72,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		}
 	}
 
+	public String getKnowledgeConfig() {
+		return this.knowledgeConfig;
+	}
+
+	public void setKnowledgeConfig(String knowledgeConfig) {
+		this.knowledgeConfig = knowledgeConfig;
+		if(knowledgeConfig != null){
+			putQueryParameter("KnowledgeConfig", knowledgeConfig);
+		}
+	}
+
 	public String getIndustry() {
 		return this.industry;
 	}
@@ -72,6 +91,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		this.industry = industry;
 		if(industry != null){
 			putQueryParameter("Industry", industry);
+		}
+	}
+
+	public String getLabelVersion() {
+		return this.labelVersion;
+	}
+
+	public void setLabelVersion(String labelVersion) {
+		this.labelVersion = labelVersion;
+		if(labelVersion != null){
+			putQueryParameter("LabelVersion", labelVersion);
 		}
 	}
 
@@ -119,6 +149,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		}
 	}
 
+	public String getKeywordConfig() {
+		return this.keywordConfig;
+	}
+
+	public void setKeywordConfig(String keywordConfig) {
+		this.keywordConfig = keywordConfig;
+		if(keywordConfig != null){
+			putQueryParameter("KeywordConfig", keywordConfig);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -160,6 +201,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		this.analyseTypes = analyseTypes;
 		if(analyseTypes != null){
 			putQueryParameter("AnalyseTypes", analyseTypes);
+		}
+	}
+
+	public String getLabelType() {
+		return this.labelType;
+	}
+
+	public void setLabelType(String labelType) {
+		this.labelType = labelType;
+		if(labelType != null){
+			putQueryParameter("LabelType", labelType);
 		}
 	}
 

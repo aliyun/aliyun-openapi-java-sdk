@@ -31,6 +31,8 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 
 	private String startOfJobCreatedTimeRange;
 
+	private String userData;
+
 	private String state;
 
 	private String endOfJobCreatedTimeRange;
@@ -87,6 +89,17 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
 		if(startOfJobCreatedTimeRange != null){
 			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 

@@ -27,13 +27,15 @@ public class QuerySmarttagJobRequest extends RpcAcsRequest<QuerySmarttagJobRespo
 
 	private Long resourceOwnerId;
 
+	private String jobId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String jobId;
+	private String params;
 	public QuerySmarttagJobRequest() {
 		super("Mts", "2014-06-18", "QuerySmarttagJob", "mts");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class QuerySmarttagJobRequest extends RpcAcsRequest<QuerySmarttagJobRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -87,14 +100,14 @@ public class QuerySmarttagJobRequest extends RpcAcsRequest<QuerySmarttagJobRespo
 		}
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getParams() {
+		return this.params;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
+	public void setParams(String params) {
+		this.params = params;
+		if(params != null){
+			putQueryParameter("Params", params);
 		}
 	}
 

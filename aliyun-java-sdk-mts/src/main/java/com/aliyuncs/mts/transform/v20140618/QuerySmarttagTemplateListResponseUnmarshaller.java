@@ -38,6 +38,10 @@ public class QuerySmarttagTemplateListResponseUnmarshaller {
 			template.setTemplateId(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].TemplateId"));
 			template.setFaceCategoryIds(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].FaceCategoryIds"));
 			template.setScene(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].Scene"));
+			template.setLabelType(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].LabelType"));
+			template.setLabelVersion(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].LabelVersion"));
+			template.setKnowledgeConfig(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].KnowledgeConfig"));
+			template.setKeywordConfig(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].KeywordConfig"));
 
 			templates.add(template);
 		}

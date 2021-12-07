@@ -61,6 +61,14 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 
 		private String scene;
 
+		private String labelType;
+
+		private String labelVersion;
+
+		private String knowledgeConfig;
+
+		private String keywordConfig;
+
 		public String getAnalyseTypes() {
 			return this.analyseTypes;
 		}
@@ -115,6 +123,38 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 
 		public void setScene(String scene) {
 			this.scene = scene;
+		}
+
+		public String getLabelType() {
+			return this.labelType;
+		}
+
+		public void setLabelType(String labelType) {
+			this.labelType = labelType;
+		}
+
+		public String getLabelVersion() {
+			return this.labelVersion;
+		}
+
+		public void setLabelVersion(String labelVersion) {
+			this.labelVersion = labelVersion;
+		}
+
+		public String getKnowledgeConfig() {
+			return this.knowledgeConfig;
+		}
+
+		public void setKnowledgeConfig(String knowledgeConfig) {
+			this.knowledgeConfig = knowledgeConfig;
+		}
+
+		public String getKeywordConfig() {
+			return this.keywordConfig;
+		}
+
+		public void setKeywordConfig(String keywordConfig) {
+			this.keywordConfig = keywordConfig;
 		}
 	}
 
