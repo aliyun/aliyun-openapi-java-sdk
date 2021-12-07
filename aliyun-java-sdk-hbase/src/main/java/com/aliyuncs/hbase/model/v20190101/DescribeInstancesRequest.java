@@ -36,6 +36,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private List<Tag> tags;
 
+	private String clusterId;
+
 	private String dbType;
 	public DescribeInstancesRequest() {
 		super("HBase", "2019-01-01", "DescribeInstances", "hbase");
@@ -102,6 +104,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
 	}
 
 	public String getDbType() {

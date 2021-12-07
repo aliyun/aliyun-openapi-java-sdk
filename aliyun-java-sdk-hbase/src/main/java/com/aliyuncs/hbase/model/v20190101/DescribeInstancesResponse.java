@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Long totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Long totalCount;
 
 	private List<Instance> instances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Instance> getInstances() {
@@ -77,96 +77,88 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
-		private String instanceName;
+		private String vpcId;
 
 		private String status;
 
-		private String payType;
-
-		private String createdTime;
-
-		private String expireTime;
-
-		private String majorVersion;
-
-		private String engine;
-
-		private Boolean isHa;
-
-		private String networkType;
-
-		private String vpcId;
+		private Integer moduleId;
 
 		private String vswitchId;
 
-		private String masterInstanceType;
+		private String backupStatus;
 
-		private Integer masterNodeCount;
-
-		private String masterDiskType;
-
-		private Integer masterDiskSize;
-
-		private String coreInstanceType;
-
-		private Integer coreNodeCount;
+		private String payType;
 
 		private String coreDiskType;
 
-		private Integer coreDiskSize;
+		private Integer masterNodeCount;
 
-		private String regionId;
-
-		private String zoneId;
-
-		private String coldStorageStatus;
-
-		private String backupStatus;
-
-		private String clusterType;
+		private String networkType;
 
 		private String createdTimeUTC;
 
+		private String parentId;
+
 		private String expireTimeUTC;
+
+		private String instanceName;
+
+		private String masterInstanceType;
+
+		private String coreInstanceType;
+
+		private String createdTime;
+
+		private Integer coreDiskSize;
 
 		private String clusterId;
 
-		private String clusterName;
+		private String expireTime;
+
+		private Boolean isHa;
+
+		private String instanceId;
+
+		private String coldStorageStatus;
 
 		private Boolean isDeletionProtection;
 
-		private String parentId;
+		private String regionId;
 
-		private Integer moduleId;
+		private Integer masterDiskSize;
 
-		private String moduleStackVersion;
-
-		private String coreDiskCount;
+		private String masterDiskType;
 
 		private Boolean autoRenewal;
 
-		private Integer duration;
+		private String clusterType;
 
 		private String resourceGroupId;
 
+		private String clusterName;
+
+		private String zoneId;
+
+		private Integer duration;
+
+		private String moduleStackVersion;
+
+		private String engine;
+
+		private String majorVersion;
+
+		private String coreDiskCount;
+
+		private Integer coreNodeCount;
+
 		private List<Tag> tags;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getStatus() {
@@ -177,68 +169,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getPayType() {
-			return this.payType;
+		public Integer getModuleId() {
+			return this.moduleId;
 		}
 
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getMajorVersion() {
-			return this.majorVersion;
-		}
-
-		public void setMajorVersion(String majorVersion) {
-			this.majorVersion = majorVersion;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public Boolean getIsHa() {
-			return this.isHa;
-		}
-
-		public void setIsHa(Boolean isHa) {
-			this.isHa = isHa;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setModuleId(Integer moduleId) {
+			this.moduleId = moduleId;
 		}
 
 		public String getVswitchId() {
@@ -249,52 +185,20 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.vswitchId = vswitchId;
 		}
 
-		public String getMasterInstanceType() {
-			return this.masterInstanceType;
+		public String getBackupStatus() {
+			return this.backupStatus;
 		}
 
-		public void setMasterInstanceType(String masterInstanceType) {
-			this.masterInstanceType = masterInstanceType;
+		public void setBackupStatus(String backupStatus) {
+			this.backupStatus = backupStatus;
 		}
 
-		public Integer getMasterNodeCount() {
-			return this.masterNodeCount;
+		public String getPayType() {
+			return this.payType;
 		}
 
-		public void setMasterNodeCount(Integer masterNodeCount) {
-			this.masterNodeCount = masterNodeCount;
-		}
-
-		public String getMasterDiskType() {
-			return this.masterDiskType;
-		}
-
-		public void setMasterDiskType(String masterDiskType) {
-			this.masterDiskType = masterDiskType;
-		}
-
-		public Integer getMasterDiskSize() {
-			return this.masterDiskSize;
-		}
-
-		public void setMasterDiskSize(Integer masterDiskSize) {
-			this.masterDiskSize = masterDiskSize;
-		}
-
-		public String getCoreInstanceType() {
-			return this.coreInstanceType;
-		}
-
-		public void setCoreInstanceType(String coreInstanceType) {
-			this.coreInstanceType = coreInstanceType;
-		}
-
-		public Integer getCoreNodeCount() {
-			return this.coreNodeCount;
-		}
-
-		public void setCoreNodeCount(Integer coreNodeCount) {
-			this.coreNodeCount = coreNodeCount;
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 
 		public String getCoreDiskType() {
@@ -305,52 +209,20 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.coreDiskType = coreDiskType;
 		}
 
-		public Integer getCoreDiskSize() {
-			return this.coreDiskSize;
+		public Integer getMasterNodeCount() {
+			return this.masterNodeCount;
 		}
 
-		public void setCoreDiskSize(Integer coreDiskSize) {
-			this.coreDiskSize = coreDiskSize;
+		public void setMasterNodeCount(Integer masterNodeCount) {
+			this.masterNodeCount = masterNodeCount;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getNetworkType() {
+			return this.networkType;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getColdStorageStatus() {
-			return this.coldStorageStatus;
-		}
-
-		public void setColdStorageStatus(String coldStorageStatus) {
-			this.coldStorageStatus = coldStorageStatus;
-		}
-
-		public String getBackupStatus() {
-			return this.backupStatus;
-		}
-
-		public void setBackupStatus(String backupStatus) {
-			this.backupStatus = backupStatus;
-		}
-
-		public String getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
 		}
 
 		public String getCreatedTimeUTC() {
@@ -361,12 +233,60 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.createdTimeUTC = createdTimeUTC;
 		}
 
+		public String getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
+		}
+
 		public String getExpireTimeUTC() {
 			return this.expireTimeUTC;
 		}
 
 		public void setExpireTimeUTC(String expireTimeUTC) {
 			this.expireTimeUTC = expireTimeUTC;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getMasterInstanceType() {
+			return this.masterInstanceType;
+		}
+
+		public void setMasterInstanceType(String masterInstanceType) {
+			this.masterInstanceType = masterInstanceType;
+		}
+
+		public String getCoreInstanceType() {
+			return this.coreInstanceType;
+		}
+
+		public void setCoreInstanceType(String coreInstanceType) {
+			this.coreInstanceType = coreInstanceType;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Integer getCoreDiskSize() {
+			return this.coreDiskSize;
+		}
+
+		public void setCoreDiskSize(Integer coreDiskSize) {
+			this.coreDiskSize = coreDiskSize;
 		}
 
 		public String getClusterId() {
@@ -377,12 +297,36 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.clusterId = clusterId;
 		}
 
-		public String getClusterName() {
-			return this.clusterName;
+		public String getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public Boolean getIsHa() {
+			return this.isHa;
+		}
+
+		public void setIsHa(Boolean isHa) {
+			this.isHa = isHa;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getColdStorageStatus() {
+			return this.coldStorageStatus;
+		}
+
+		public void setColdStorageStatus(String coldStorageStatus) {
+			this.coldStorageStatus = coldStorageStatus;
 		}
 
 		public Boolean getIsDeletionProtection() {
@@ -393,36 +337,28 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.isDeletionProtection = isDeletionProtection;
 		}
 
-		public String getParentId() {
-			return this.parentId;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setParentId(String parentId) {
-			this.parentId = parentId;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public Integer getModuleId() {
-			return this.moduleId;
+		public Integer getMasterDiskSize() {
+			return this.masterDiskSize;
 		}
 
-		public void setModuleId(Integer moduleId) {
-			this.moduleId = moduleId;
+		public void setMasterDiskSize(Integer masterDiskSize) {
+			this.masterDiskSize = masterDiskSize;
 		}
 
-		public String getModuleStackVersion() {
-			return this.moduleStackVersion;
+		public String getMasterDiskType() {
+			return this.masterDiskType;
 		}
 
-		public void setModuleStackVersion(String moduleStackVersion) {
-			this.moduleStackVersion = moduleStackVersion;
-		}
-
-		public String getCoreDiskCount() {
-			return this.coreDiskCount;
-		}
-
-		public void setCoreDiskCount(String coreDiskCount) {
-			this.coreDiskCount = coreDiskCount;
+		public void setMasterDiskType(String masterDiskType) {
+			this.masterDiskType = masterDiskType;
 		}
 
 		public Boolean getAutoRenewal() {
@@ -433,12 +369,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.autoRenewal = autoRenewal;
 		}
 
-		public Integer getDuration() {
-			return this.duration;
+		public String getClusterType() {
+			return this.clusterType;
 		}
 
-		public void setDuration(Integer duration) {
-			this.duration = duration;
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
 		}
 
 		public String getResourceGroupId() {
@@ -447,6 +383,70 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getModuleStackVersion() {
+			return this.moduleStackVersion;
+		}
+
+		public void setModuleStackVersion(String moduleStackVersion) {
+			this.moduleStackVersion = moduleStackVersion;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getMajorVersion() {
+			return this.majorVersion;
+		}
+
+		public void setMajorVersion(String majorVersion) {
+			this.majorVersion = majorVersion;
+		}
+
+		public String getCoreDiskCount() {
+			return this.coreDiskCount;
+		}
+
+		public void setCoreDiskCount(String coreDiskCount) {
+			this.coreDiskCount = coreDiskCount;
+		}
+
+		public Integer getCoreNodeCount() {
+			return this.coreNodeCount;
+		}
+
+		public void setCoreNodeCount(Integer coreNodeCount) {
+			this.coreNodeCount = coreNodeCount;
 		}
 
 		public List<Tag> getTags() {
