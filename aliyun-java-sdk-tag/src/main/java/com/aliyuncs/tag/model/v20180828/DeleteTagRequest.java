@@ -22,30 +22,20 @@ import com.aliyuncs.tag.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTagValuesRequest extends RpcAcsRequest<ListTagValuesResponse> {
+public class DeleteTagRequest extends RpcAcsRequest<DeleteTagResponse> {
 	   
 
-	private String nextToken;
-
-	private Integer pageSize;
-
-	private String tagFilterValue;
+	private String value;
 
 	private String key;
-
-	private String queryType;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String resourceType;
-
-	private String fuzzyType;
-	public ListTagValuesRequest() {
-		super("Tag", "2018-08-28", "ListTagValues", "tag");
+	public DeleteTagRequest() {
+		super("Tag", "2018-08-28", "DeleteTag", "tag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,36 +43,14 @@ public class ListTagValuesRequest extends RpcAcsRequest<ListTagValuesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getValue() {
+		return this.value;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getTagFilterValue() {
-		return this.tagFilterValue;
-	}
-
-	public void setTagFilterValue(String tagFilterValue) {
-		this.tagFilterValue = tagFilterValue;
-		if(tagFilterValue != null){
-			putQueryParameter("TagFilter.Value", tagFilterValue);
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
 		}
 	}
 
@@ -94,17 +62,6 @@ public class ListTagValuesRequest extends RpcAcsRequest<ListTagValuesResponse> {
 		this.key = key;
 		if(key != null){
 			putQueryParameter("Key", key);
-		}
-	}
-
-	public String getQueryType() {
-		return this.queryType;
-	}
-
-	public void setQueryType(String queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType);
 		}
 	}
 
@@ -141,31 +98,9 @@ public class ListTagValuesRequest extends RpcAcsRequest<ListTagValuesResponse> {
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public String getFuzzyType() {
-		return this.fuzzyType;
-	}
-
-	public void setFuzzyType(String fuzzyType) {
-		this.fuzzyType = fuzzyType;
-		if(fuzzyType != null){
-			putQueryParameter("FuzzyType", fuzzyType);
-		}
-	}
-
 	@Override
-	public Class<ListTagValuesResponse> getResponseClass() {
-		return ListTagValuesResponse.class;
+	public Class<DeleteTagResponse> getResponseClass() {
+		return DeleteTagResponse.class;
 	}
 
 }

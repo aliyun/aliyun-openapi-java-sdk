@@ -16,28 +16,20 @@ package com.aliyuncs.tag.model.v20180828;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.tag.transform.v20180828.ListTagResourcesResponseUnmarshaller;
+import com.aliyuncs.tag.transform.v20180828.ListResourcesByTagResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListTagResourcesResponse extends AcsResponse {
-
-	private String nextToken;
+public class ListResourcesByTagResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<TagResource> tagResources;
+	private String nextToken;
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
+	private List<TagResource> resources;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,26 +39,34 @@ public class ListTagResourcesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<TagResource> getTagResources() {
-		return this.tagResources;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setTagResources(List<TagResource> tagResources) {
-		this.tagResources = tagResources;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public List<TagResource> getResources() {
+		return this.resources;
+	}
+
+	public void setResources(List<TagResource> resources) {
+		this.resources = resources;
 	}
 
 	public static class TagResource {
 
-		private String resourceARN;
+		private String resourceId;
 
 		private List<Tag> tags;
 
-		public String getResourceARN() {
-			return this.resourceARN;
+		public String getResourceId() {
+			return this.resourceId;
 		}
 
-		public void setResourceARN(String resourceARN) {
-			this.resourceARN = resourceARN;
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public List<Tag> getTags() {
@@ -112,8 +112,8 @@ public class ListTagResourcesResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListTagResourcesResponse getInstance(UnmarshallerContext context) {
-		return	ListTagResourcesResponseUnmarshaller.unmarshall(this, context);
+	public ListResourcesByTagResponse getInstance(UnmarshallerContext context) {
+		return	ListResourcesByTagResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

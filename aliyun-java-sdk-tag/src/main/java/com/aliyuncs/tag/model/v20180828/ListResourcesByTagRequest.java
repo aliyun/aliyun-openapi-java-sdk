@@ -22,16 +22,16 @@ import com.aliyuncs.tag.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
+public class ListResourcesByTagRequest extends RpcAcsRequest<ListResourcesByTagResponse> {
 	   
 
 	private String tagFilterKey;
 
 	private String nextToken;
 
-	private Integer pageSize;
+	private Boolean includeAllTags;
 
-	private String queryType;
+	private String tagFilterValue;
 
 	private String resourceOwnerAccount;
 
@@ -41,11 +41,11 @@ public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 
 	private String resourceType;
 
-	private String fuzzyType;
+	private Integer maxResult;
 
-	private String category;
-	public ListTagKeysRequest() {
-		super("Tag", "2018-08-28", "ListTagKeys", "tag");
+	private String fuzzyType;
+	public ListResourcesByTagRequest() {
+		super("Tag", "2018-08-28", "ListResourcesByTag", "tag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,25 +75,25 @@ public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Boolean getIncludeAllTags() {
+		return this.includeAllTags;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setIncludeAllTags(Boolean includeAllTags) {
+		this.includeAllTags = includeAllTags;
+		if(includeAllTags != null){
+			putQueryParameter("IncludeAllTags", includeAllTags.toString());
 		}
 	}
 
-	public String getQueryType() {
-		return this.queryType;
+	public String getTagFilterValue() {
+		return this.tagFilterValue;
 	}
 
-	public void setQueryType(String queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType);
+	public void setTagFilterValue(String tagFilterValue) {
+		this.tagFilterValue = tagFilterValue;
+		if(tagFilterValue != null){
+			putQueryParameter("TagFilter.Value", tagFilterValue);
 		}
 	}
 
@@ -141,6 +141,17 @@ public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 		}
 	}
 
+	public Integer getMaxResult() {
+		return this.maxResult;
+	}
+
+	public void setMaxResult(Integer maxResult) {
+		this.maxResult = maxResult;
+		if(maxResult != null){
+			putQueryParameter("MaxResult", maxResult.toString());
+		}
+	}
+
 	public String getFuzzyType() {
 		return this.fuzzyType;
 	}
@@ -152,20 +163,9 @@ public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 		}
 	}
 
-	public String getCategory() {
-		return this.category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-		if(category != null){
-			putQueryParameter("Category", category);
-		}
-	}
-
 	@Override
-	public Class<ListTagKeysResponse> getResponseClass() {
-		return ListTagKeysResponse.class;
+	public Class<ListResourcesByTagResponse> getResponseClass() {
+		return ListResourcesByTagResponse.class;
 	}
 
 }

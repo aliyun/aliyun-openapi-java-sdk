@@ -57,9 +57,19 @@ public class ListTagKeysResponse extends AcsResponse {
 
 	public static class Key {
 
+		private String key;
+
 		private String category;
 
-		private String key;
+		private String description;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 
 		public String getCategory() {
 			return this.category;
@@ -69,12 +79,12 @@ public class ListTagKeysResponse extends AcsResponse {
 			this.category = category;
 		}
 
-		public String getKey() {
-			return this.key;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 
