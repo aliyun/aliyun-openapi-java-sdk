@@ -15,6 +15,7 @@
 package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkvisual.Endpoint;
 
@@ -22,12 +23,14 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAIActionRequest extends RpcAcsRequest<GetAIActionResponse> {
+public class QueryFaceUserBatchRequest extends RpcAcsRequest<QueryFaceUserBatchResponse> {
 	   
 
-	private String actionId;
-	public GetAIActionRequest() {
-		super("Linkvisual", "2018-01-20", "GetAIAction", "Linkvisual");
+	private List<String> userIdLists;
+
+	private String isolationId;
+	public QueryFaceUserBatchRequest() {
+		super("Linkvisual", "2018-01-20", "QueryFaceUserBatch", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +38,33 @@ public class GetAIActionRequest extends RpcAcsRequest<GetAIActionResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getActionId() {
-		return this.actionId;
+	public List<String> getUserIdLists() {
+		return this.userIdLists;
 	}
 
-	public void setActionId(String actionId) {
-		this.actionId = actionId;
-		if(actionId != null){
-			putQueryParameter("ActionId", actionId);
+	public void setUserIdLists(List<String> userIdLists) {
+		this.userIdLists = userIdLists;	
+		if (userIdLists != null) {
+			for (int i = 0; i < userIdLists.size(); i++) {
+				putQueryParameter("UserIdList." + (i + 1) , userIdLists.get(i));
+			}
+		}	
+	}
+
+	public String getIsolationId() {
+		return this.isolationId;
+	}
+
+	public void setIsolationId(String isolationId) {
+		this.isolationId = isolationId;
+		if(isolationId != null){
+			putQueryParameter("IsolationId", isolationId);
 		}
 	}
 
 	@Override
-	public Class<GetAIActionResponse> getResponseClass() {
-		return GetAIActionResponse.class;
+	public Class<QueryFaceUserBatchResponse> getResponseClass() {
+		return QueryFaceUserBatchResponse.class;
 	}
 
 }

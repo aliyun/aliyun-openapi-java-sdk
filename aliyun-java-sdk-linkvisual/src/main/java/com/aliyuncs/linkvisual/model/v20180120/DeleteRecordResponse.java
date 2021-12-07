@@ -15,22 +15,24 @@
 package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkvisual.transform.v20180120.BindAIPlanWithDevicesResponseUnmarshaller;
+import com.aliyuncs.linkvisual.transform.v20180120.DeleteRecordResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindAIPlanWithDevicesResponse extends AcsResponse {
+public class DeleteRecordResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
 	private String errorMessage;
 
-	private String code;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +50,6 @@ public class BindAIPlanWithDevicesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -64,13 +58,37 @@ public class BindAIPlanWithDevicesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	@Override
-	public BindAIPlanWithDevicesResponse getInstance(UnmarshallerContext context) {
-		return	BindAIPlanWithDevicesResponseUnmarshaller.unmarshall(this, context);
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Integer deletedCount;
+
+		public Integer getDeletedCount() {
+			return this.deletedCount;
+		}
+
+		public void setDeletedCount(Integer deletedCount) {
+			this.deletedCount = deletedCount;
+		}
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DeleteRecordResponse getInstance(UnmarshallerContext context) {
+		return	DeleteRecordResponseUnmarshaller.unmarshall(this, context);
 	}
 }

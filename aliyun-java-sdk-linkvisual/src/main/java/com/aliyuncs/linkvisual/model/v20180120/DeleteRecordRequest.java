@@ -15,6 +15,7 @@
 package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkvisual.Endpoint;
 
@@ -22,7 +23,7 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse> {
+public class DeleteRecordRequest extends RpcAcsRequest<DeleteRecordResponse> {
 	   
 
 	private String iotId;
@@ -31,15 +32,11 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 
 	private String productKey;
 
-	private String fileName;
-
-	private Integer seekTime;
+	private List<String> fileNameLists;
 
 	private String deviceName;
-
-	private Integer urlValidDuration;
-	public QueryRecordUrlRequest() {
-		super("Linkvisual", "2018-01-20", "QueryRecordUrl", "Linkvisual");
+	public DeleteRecordRequest() {
+		super("Linkvisual", "2018-01-20", "DeleteRecord", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -80,26 +77,17 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 		}
 	}
 
-	public String getFileName() {
-		return this.fileName;
+	public List<String> getFileNameLists() {
+		return this.fileNameLists;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
-		}
-	}
-
-	public Integer getSeekTime() {
-		return this.seekTime;
-	}
-
-	public void setSeekTime(Integer seekTime) {
-		this.seekTime = seekTime;
-		if(seekTime != null){
-			putQueryParameter("SeekTime", seekTime.toString());
-		}
+	public void setFileNameLists(List<String> fileNameLists) {
+		this.fileNameLists = fileNameLists;	
+		if (fileNameLists != null) {
+			for (int i = 0; i < fileNameLists.size(); i++) {
+				putQueryParameter("FileNameList." + (i + 1) , fileNameLists.get(i));
+			}
+		}	
 	}
 
 	public String getDeviceName() {
@@ -113,20 +101,9 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 		}
 	}
 
-	public Integer getUrlValidDuration() {
-		return this.urlValidDuration;
-	}
-
-	public void setUrlValidDuration(Integer urlValidDuration) {
-		this.urlValidDuration = urlValidDuration;
-		if(urlValidDuration != null){
-			putQueryParameter("UrlValidDuration", urlValidDuration.toString());
-		}
-	}
-
 	@Override
-	public Class<QueryRecordUrlResponse> getResponseClass() {
-		return QueryRecordUrlResponse.class;
+	public Class<DeleteRecordResponse> getResponseClass() {
+		return DeleteRecordResponse.class;
 	}
 
 }

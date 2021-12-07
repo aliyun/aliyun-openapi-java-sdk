@@ -22,24 +22,26 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse> {
+public class QueryRecordUrlByTimeRequest extends RpcAcsRequest<QueryRecordUrlByTimeResponse> {
 	   
 
 	private String iotId;
 
 	private String iotInstanceId;
 
+	private Integer streamType;
+
+	private Integer endTime;
+
+	private Integer beginTime;
+
 	private String productKey;
-
-	private String fileName;
-
-	private Integer seekTime;
 
 	private String deviceName;
 
 	private Integer urlValidDuration;
-	public QueryRecordUrlRequest() {
-		super("Linkvisual", "2018-01-20", "QueryRecordUrl", "Linkvisual");
+	public QueryRecordUrlByTimeRequest() {
+		super("Linkvisual", "2018-01-20", "QueryRecordUrlByTime", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +71,39 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 		}
 	}
 
+	public Integer getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(Integer streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType.toString());
+		}
+	}
+
+	public Integer getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Integer getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Integer beginTime) {
+		this.beginTime = beginTime;
+		if(beginTime != null){
+			putQueryParameter("BeginTime", beginTime.toString());
+		}
+	}
+
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -77,28 +112,6 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
-		}
-	}
-
-	public Integer getSeekTime() {
-		return this.seekTime;
-	}
-
-	public void setSeekTime(Integer seekTime) {
-		this.seekTime = seekTime;
-		if(seekTime != null){
-			putQueryParameter("SeekTime", seekTime.toString());
 		}
 	}
 
@@ -125,8 +138,8 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 	}
 
 	@Override
-	public Class<QueryRecordUrlResponse> getResponseClass() {
-		return QueryRecordUrlResponse.class;
+	public Class<QueryRecordUrlByTimeResponse> getResponseClass() {
+		return QueryRecordUrlByTimeResponse.class;
 	}
 
 }

@@ -15,22 +15,24 @@
 package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkvisual.transform.v20180120.UnbindAIPlanWithDevicesResponseUnmarshaller;
+import com.aliyuncs.linkvisual.transform.v20180120.QueryRecordUrlByTimeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UnbindAIPlanWithDevicesResponse extends AcsResponse {
+public class QueryRecordUrlByTimeResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
 	private String errorMessage;
 
-	private String code;
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +50,6 @@ public class UnbindAIPlanWithDevicesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -64,13 +58,24 @@ public class UnbindAIPlanWithDevicesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	@Override
-	public UnbindAIPlanWithDevicesResponse getInstance(UnmarshallerContext context) {
-		return	UnbindAIPlanWithDevicesResponseUnmarshaller.unmarshall(this, context);
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public QueryRecordUrlByTimeResponse getInstance(UnmarshallerContext context) {
+		return	QueryRecordUrlByTimeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -22,19 +22,36 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryAIAppRequest extends RpcAcsRequest<QueryAIAppResponse> {
+public class QueryFaceUserByNameRequest extends RpcAcsRequest<QueryFaceUserByNameResponse> {
 	   
+
+	private String isolationId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-	public QueryAIAppRequest() {
-		super("Linkvisual", "2018-01-20", "QueryAIApp", "Linkvisual");
+	private String params;
+
+	private Integer pageNo;
+
+	private String name;
+	public QueryFaceUserByNameRequest() {
+		super("Linkvisual", "2018-01-20", "QueryFaceUserByName", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIsolationId() {
+		return this.isolationId;
+	}
+
+	public void setIsolationId(String isolationId) {
+		this.isolationId = isolationId;
+		if(isolationId != null){
+			putQueryParameter("IsolationId", isolationId);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -48,20 +65,42 @@ public class QueryAIAppRequest extends RpcAcsRequest<QueryAIAppResponse> {
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public String getParams() {
+		return this.params;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
+	public void setParams(String params) {
+		this.params = params;
+		if(params != null){
+			putQueryParameter("Params", params);
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<QueryAIAppResponse> getResponseClass() {
-		return QueryAIAppResponse.class;
+	public Class<QueryFaceUserByNameResponse> getResponseClass() {
+		return QueryFaceUserByNameResponse.class;
 	}
 
 }
