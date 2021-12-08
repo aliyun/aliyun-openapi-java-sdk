@@ -53,6 +53,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String netType;
 
+	private String mseVersion;
+
 	private String region;
 	public CreateClusterRequest() {
 		super("mse", "2019-05-31", "CreateCluster");
@@ -214,6 +216,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.netType = netType;
 		if(netType != null){
 			putQueryParameter("NetType", netType);
+		}
+	}
+
+	public String getMseVersion() {
+		return this.mseVersion;
+	}
+
+	public void setMseVersion(String mseVersion) {
+		this.mseVersion = mseVersion;
+		if(mseVersion != null){
+			putQueryParameter("MseVersion", mseVersion);
 		}
 	}
 
