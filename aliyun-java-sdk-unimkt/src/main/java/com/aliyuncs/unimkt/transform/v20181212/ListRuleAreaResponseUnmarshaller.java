@@ -27,8 +27,8 @@ public class ListRuleAreaResponseUnmarshaller {
 	public static ListRuleAreaResponse unmarshall(ListRuleAreaResponse listRuleAreaResponse, UnmarshallerContext _ctx) {
 		
 		listRuleAreaResponse.setRequestId(_ctx.stringValue("ListRuleAreaResponse.RequestId"));
-		listRuleAreaResponse.setCode(_ctx.stringValue("ListRuleAreaResponse.Code"));
 		listRuleAreaResponse.setSuccess(_ctx.booleanValue("ListRuleAreaResponse.Success"));
+		listRuleAreaResponse.setCode(_ctx.stringValue("ListRuleAreaResponse.Code"));
 		listRuleAreaResponse.setMessage(_ctx.stringValue("ListRuleAreaResponse.Message"));
 		listRuleAreaResponse.setPageNumber(_ctx.integerValue("ListRuleAreaResponse.PageNumber"));
 		listRuleAreaResponse.setPageSize(_ctx.integerValue("ListRuleAreaResponse.PageSize"));
@@ -37,16 +37,16 @@ public class ListRuleAreaResponseUnmarshaller {
 		List<Rule> model = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("ListRuleAreaResponse.Model.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRecordId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].RecordId"));
-			rule.setTenantId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].TenantId"));
-			rule.setRuleName(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].RuleName"));
-			rule.setRuleId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].RuleId"));
-			rule.setRuleType(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].RuleType"));
-			rule.setMediaId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].MediaId"));
-			rule.setMediaName(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].MediaName"));
-			rule.setAdSlotId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].AdSlotId"));
-			rule.setAdSlotName(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].AdSlotName"));
 			rule.setStatus(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].Status"));
+			rule.setRuleType(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].RuleType"));
+			rule.setAdSlotId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].AdSlotId"));
+			rule.setRecordId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].RecordId"));
+			rule.setMediaName(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].MediaName"));
+			rule.setMediaId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].MediaId"));
+			rule.setAdSlotName(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].AdSlotName"));
+			rule.setRuleId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].RuleId"));
+			rule.setRuleName(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].RuleName"));
+			rule.setTenantId(_ctx.stringValue("ListRuleAreaResponse.Model["+ i +"].TenantId"));
 
 			model.add(rule);
 		}

@@ -25,23 +25,23 @@ public class UpdateUserResponseUnmarshaller {
 		
 		updateUserResponse.setRequestId(_ctx.stringValue("UpdateUserResponse.RequestId"));
 		updateUserResponse.setCode(_ctx.stringValue("UpdateUserResponse.Code"));
-		updateUserResponse.setSuccess(_ctx.booleanValue("UpdateUserResponse.Success"));
 		updateUserResponse.setMessage(_ctx.stringValue("UpdateUserResponse.Message"));
+		updateUserResponse.setSuccess(_ctx.booleanValue("UpdateUserResponse.Success"));
 
 		Model model = new Model();
+		model.setStatus(_ctx.stringValue("UpdateUserResponse.Model.Status"));
+		model.setYunPersonsId(_ctx.stringValue("UpdateUserResponse.Model.YunPersonsId"));
 		model.setSspUserId(_ctx.stringValue("UpdateUserResponse.Model.SspUserId"));
-		model.setGmtCreateTime(_ctx.longValue("UpdateUserResponse.Model.GmtCreateTime"));
+		model.setTenantUserId(_ctx.stringValue("UpdateUserResponse.Model.TenantUserId"));
+		model.setMobilePhone(_ctx.stringValue("UpdateUserResponse.Model.MobilePhone"));
+		model.setRoleCode(_ctx.stringValue("UpdateUserResponse.Model.RoleCode"));
 		model.setGmtModifiedTime(_ctx.longValue("UpdateUserResponse.Model.GmtModifiedTime"));
-		model.setIsDeleteTag(_ctx.stringValue("UpdateUserResponse.Model.IsDeleteTag"));
+		model.setGmtCreateTime(_ctx.longValue("UpdateUserResponse.Model.GmtCreateTime"));
+		model.setEmail(_ctx.stringValue("UpdateUserResponse.Model.Email"));
 		model.setUserName(_ctx.stringValue("UpdateUserResponse.Model.UserName"));
 		model.setYunUid(_ctx.stringValue("UpdateUserResponse.Model.YunUid"));
-		model.setYunPersonsId(_ctx.stringValue("UpdateUserResponse.Model.YunPersonsId"));
-		model.setMobilePhone(_ctx.stringValue("UpdateUserResponse.Model.MobilePhone"));
-		model.setEmail(_ctx.stringValue("UpdateUserResponse.Model.Email"));
-		model.setStatus(_ctx.stringValue("UpdateUserResponse.Model.Status"));
+		model.setIsDeleteTag(_ctx.stringValue("UpdateUserResponse.Model.IsDeleteTag"));
 		model.setTenantId(_ctx.stringValue("UpdateUserResponse.Model.TenantId"));
-		model.setTenantUserId(_ctx.stringValue("UpdateUserResponse.Model.TenantUserId"));
-		model.setRoleCode(_ctx.stringValue("UpdateUserResponse.Model.RoleCode"));
 		updateUserResponse.setModel(model);
 	 
 	 	return updateUserResponse;

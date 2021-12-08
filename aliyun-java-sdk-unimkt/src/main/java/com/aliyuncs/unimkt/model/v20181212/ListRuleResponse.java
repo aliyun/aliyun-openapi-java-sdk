@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRuleResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private Boolean success;
 
-	private String message;
+	private String code;
 
-	private String requestId;
+	private String message;
 
 	private Integer pageNumber;
 
@@ -41,12 +41,12 @@ public class ListRuleResponse extends AcsResponse {
 
 	private List<Rule> model;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -57,20 +57,20 @@ public class ListRuleResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,29 +107,45 @@ public class ListRuleResponse extends AcsResponse {
 
 	public static class Rule {
 
+		private String status;
+
+		private String ruleType;
+
 		private Long createTime;
+
+		private String ruleRId;
+
+		private String relatedAdSlots;
+
+		private String extInfo;
+
+		private String ruleName;
+
+		private String ruleId;
+
+		private Long version;
 
 		private Long modifyTime;
 
 		private String tenantId;
 
-		private String ruleName;
-
-		private String ruleRId;
-
-		private String ruleType;
-
-		private String relatedAdSlots;
-
 		private String ruleConfig;
 
-		private String status;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String extInfo;
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
-		private Long version;
+		public String getRuleType() {
+			return this.ruleType;
+		}
 
-		private String ruleId;
+		public void setRuleType(String ruleType) {
+			this.ruleType = ruleType;
+		}
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -137,6 +153,54 @@ public class ListRuleResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getRuleRId() {
+			return this.ruleRId;
+		}
+
+		public void setRuleRId(String ruleRId) {
+			this.ruleRId = ruleRId;
+		}
+
+		public String getRelatedAdSlots() {
+			return this.relatedAdSlots;
+		}
+
+		public void setRelatedAdSlots(String relatedAdSlots) {
+			this.relatedAdSlots = relatedAdSlots;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 
 		public Long getModifyTime() {
@@ -155,76 +219,12 @@ public class ListRuleResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getRuleRId() {
-			return this.ruleRId;
-		}
-
-		public void setRuleRId(String ruleRId) {
-			this.ruleRId = ruleRId;
-		}
-
-		public String getRuleType() {
-			return this.ruleType;
-		}
-
-		public void setRuleType(String ruleType) {
-			this.ruleType = ruleType;
-		}
-
-		public String getRelatedAdSlots() {
-			return this.relatedAdSlots;
-		}
-
-		public void setRelatedAdSlots(String relatedAdSlots) {
-			this.relatedAdSlots = relatedAdSlots;
-		}
-
 		public String getRuleConfig() {
 			return this.ruleConfig;
 		}
 
 		public void setRuleConfig(String ruleConfig) {
 			this.ruleConfig = ruleConfig;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
-		}
-
-		public String getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
 		}
 	}
 

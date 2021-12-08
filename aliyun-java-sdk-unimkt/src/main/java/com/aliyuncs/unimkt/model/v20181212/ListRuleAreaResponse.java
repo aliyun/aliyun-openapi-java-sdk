@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRuleAreaResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private Boolean success;
 
-	private String message;
+	private String code;
 
-	private String requestId;
+	private String message;
 
 	private Integer pageNumber;
 
@@ -41,12 +41,12 @@ public class ListRuleAreaResponse extends AcsResponse {
 
 	private List<Rule> model;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -57,20 +57,20 @@ public class ListRuleAreaResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,56 +107,32 @@ public class ListRuleAreaResponse extends AcsResponse {
 
 	public static class Rule {
 
-		private String recordId;
-
-		private String tenantId;
-
-		private String ruleName;
-
-		private String ruleId;
+		private String status;
 
 		private String ruleType;
 
-		private String mediaId;
+		private String adSlotId;
+
+		private String recordId;
 
 		private String mediaName;
 
-		private String adSlotId;
+		private String mediaId;
 
 		private String adSlotName;
 
-		private String status;
+		private String ruleId;
 
-		public String getRecordId() {
-			return this.recordId;
+		private String ruleName;
+
+		private String tenantId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
-		}
-
-		public String getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getRuleType() {
@@ -167,12 +143,20 @@ public class ListRuleAreaResponse extends AcsResponse {
 			this.ruleType = ruleType;
 		}
 
-		public String getMediaId() {
-			return this.mediaId;
+		public String getAdSlotId() {
+			return this.adSlotId;
 		}
 
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
+		public void setAdSlotId(String adSlotId) {
+			this.adSlotId = adSlotId;
+		}
+
+		public String getRecordId() {
+			return this.recordId;
+		}
+
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
 		}
 
 		public String getMediaName() {
@@ -183,12 +167,12 @@ public class ListRuleAreaResponse extends AcsResponse {
 			this.mediaName = mediaName;
 		}
 
-		public String getAdSlotId() {
-			return this.adSlotId;
+		public String getMediaId() {
+			return this.mediaId;
 		}
 
-		public void setAdSlotId(String adSlotId) {
-			this.adSlotId = adSlotId;
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 
 		public String getAdSlotName() {
@@ -199,12 +183,28 @@ public class ListRuleAreaResponse extends AcsResponse {
 			this.adSlotName = adSlotName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

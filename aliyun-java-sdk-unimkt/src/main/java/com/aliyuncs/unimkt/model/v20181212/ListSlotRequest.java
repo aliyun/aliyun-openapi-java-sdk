@@ -61,7 +61,7 @@ public class ListSlotRequest extends RpcAcsRequest<ListSlotResponse> {
 
 	private String adSlotName;
 	public ListSlotRequest() {
-		super("UniMkt", "2018-12-12", "ListSlot", "1.0.0");
+		super("UniMkt", "2018-12-12", "ListSlot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

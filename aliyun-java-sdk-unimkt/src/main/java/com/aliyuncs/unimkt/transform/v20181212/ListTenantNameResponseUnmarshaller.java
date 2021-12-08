@@ -27,8 +27,8 @@ public class ListTenantNameResponseUnmarshaller {
 	public static ListTenantNameResponse unmarshall(ListTenantNameResponse listTenantNameResponse, UnmarshallerContext _ctx) {
 		
 		listTenantNameResponse.setRequestId(_ctx.stringValue("ListTenantNameResponse.RequestId"));
-		listTenantNameResponse.setCode(_ctx.stringValue("ListTenantNameResponse.Code"));
 		listTenantNameResponse.setSuccess(_ctx.booleanValue("ListTenantNameResponse.Success"));
+		listTenantNameResponse.setCode(_ctx.stringValue("ListTenantNameResponse.Code"));
 		listTenantNameResponse.setMessage(_ctx.stringValue("ListTenantNameResponse.Message"));
 		listTenantNameResponse.setPageNumber(_ctx.integerValue("ListTenantNameResponse.PageNumber"));
 		listTenantNameResponse.setPageSize(_ctx.integerValue("ListTenantNameResponse.PageSize"));
@@ -37,9 +37,9 @@ public class ListTenantNameResponseUnmarshaller {
 		List<Tenant> model = new ArrayList<Tenant>();
 		for (int i = 0; i < _ctx.lengthValue("ListTenantNameResponse.Model.Length"); i++) {
 			Tenant tenant = new Tenant();
-			tenant.setTenantId(_ctx.stringValue("ListTenantNameResponse.Model["+ i +"].TenantId"));
-			tenant.setTenantName(_ctx.stringValue("ListTenantNameResponse.Model["+ i +"].TenantName"));
 			tenant.setTenantDescription(_ctx.stringValue("ListTenantNameResponse.Model["+ i +"].TenantDescription"));
+			tenant.setTenantName(_ctx.stringValue("ListTenantNameResponse.Model["+ i +"].TenantName"));
+			tenant.setTenantId(_ctx.stringValue("ListTenantNameResponse.Model["+ i +"].TenantId"));
 
 			model.add(tenant);
 		}

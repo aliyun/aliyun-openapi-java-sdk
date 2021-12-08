@@ -25,20 +25,20 @@ public class QueryTenantInfoResponseUnmarshaller {
 		
 		queryTenantInfoResponse.setRequestId(_ctx.stringValue("QueryTenantInfoResponse.RequestId"));
 		queryTenantInfoResponse.setCode(_ctx.stringValue("QueryTenantInfoResponse.Code"));
-		queryTenantInfoResponse.setSuccess(_ctx.booleanValue("QueryTenantInfoResponse.Success"));
 		queryTenantInfoResponse.setMessage(_ctx.stringValue("QueryTenantInfoResponse.Message"));
+		queryTenantInfoResponse.setSuccess(_ctx.booleanValue("QueryTenantInfoResponse.Success"));
 
 		Model model = new Model();
-		model.setCreateTime(_ctx.longValue("QueryTenantInfoResponse.Model.CreateTime"));
-		model.setModifyTime(_ctx.longValue("QueryTenantInfoResponse.Model.ModifyTime"));
-		model.setTenantId(_ctx.stringValue("QueryTenantInfoResponse.Model.TenantId"));
-		model.setBusiness(_ctx.stringValue("QueryTenantInfoResponse.Model.Business"));
-		model.setTenantName(_ctx.stringValue("QueryTenantInfoResponse.Model.TenantName"));
-		model.setTenantDescription(_ctx.stringValue("QueryTenantInfoResponse.Model.TenantDescription"));
 		model.setStatus(_ctx.stringValue("QueryTenantInfoResponse.Model.Status"));
 		model.setSettleInfo(_ctx.stringValue("QueryTenantInfoResponse.Model.SettleInfo"));
-		model.setExtInfo(_ctx.stringValue("QueryTenantInfoResponse.Model.ExtInfo"));
 		model.setVersion(_ctx.longValue("QueryTenantInfoResponse.Model.Version"));
+		model.setTenantDescription(_ctx.stringValue("QueryTenantInfoResponse.Model.TenantDescription"));
+		model.setTenantName(_ctx.stringValue("QueryTenantInfoResponse.Model.TenantName"));
+		model.setCreateTime(_ctx.longValue("QueryTenantInfoResponse.Model.CreateTime"));
+		model.setBusiness(_ctx.stringValue("QueryTenantInfoResponse.Model.Business"));
+		model.setExtInfo(_ctx.stringValue("QueryTenantInfoResponse.Model.ExtInfo"));
+		model.setTenantId(_ctx.stringValue("QueryTenantInfoResponse.Model.TenantId"));
+		model.setModifyTime(_ctx.longValue("QueryTenantInfoResponse.Model.ModifyTime"));
 		queryTenantInfoResponse.setModel(model);
 	 
 	 	return queryTenantInfoResponse;

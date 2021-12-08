@@ -23,8 +23,8 @@ public class RegistDeviceResponseUnmarshaller {
 	public static RegistDeviceResponse unmarshall(RegistDeviceResponse registDeviceResponse, UnmarshallerContext _ctx) {
 		
 		registDeviceResponse.setRequestId(_ctx.stringValue("RegistDeviceResponse.RequestId"));
-		registDeviceResponse.setStatus(_ctx.booleanValue("RegistDeviceResponse.Status"));
 		registDeviceResponse.setMsg(_ctx.stringValue("RegistDeviceResponse.Msg"));
+		registDeviceResponse.setStatus(_ctx.booleanValue("RegistDeviceResponse.Status"));
 		registDeviceResponse.setData(_ctx.stringValue("RegistDeviceResponse.Data"));
 		registDeviceResponse.setErrorCode(_ctx.stringValue("RegistDeviceResponse.ErrorCode"));
 	 

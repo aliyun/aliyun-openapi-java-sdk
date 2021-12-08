@@ -26,13 +26,13 @@ public class CountUserResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
+	private Integer model;
 
 	private String message;
 
 	private String requestId;
 
-	private Integer model;
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -42,12 +42,12 @@ public class CountUserResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getModel() {
+		return this.model;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setModel(Integer model) {
+		this.model = model;
 	}
 
 	public String getMessage() {
@@ -66,12 +66,12 @@ public class CountUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getModel() {
-		return this.model;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setModel(Integer model) {
-		this.model = model;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

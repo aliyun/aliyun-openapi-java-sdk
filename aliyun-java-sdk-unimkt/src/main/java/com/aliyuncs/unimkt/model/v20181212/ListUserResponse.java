@@ -25,28 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUserResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
 	private String message;
-
-	private String requestId;
-
-	private Long total;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
+	private Long total;
+
 	private List<SspUserDTOModel> model;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -57,6 +57,14 @@ public class ListUserResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
@@ -65,20 +73,12 @@ public class ListUserResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +89,12 @@ public class ListUserResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getTotal() {
+		return this.total;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotal(Long total) {
+		this.total = total;
 	}
 
 	public List<SspUserDTOModel> getModel() {
@@ -107,31 +107,47 @@ public class ListUserResponse extends AcsResponse {
 
 	public static class SspUserDTOModel {
 
+		private String status;
+
+		private String yunPersonsId;
+
 		private String sspUserId;
 
-		private Long gmtCreateTime;
+		private String tenantUserId;
+
+		private String mobilePhone;
+
+		private String roleCode;
 
 		private Long gmtModifiedTime;
 
-		private String isDeleteTag;
+		private Long gmtCreateTime;
+
+		private String email;
 
 		private String userName;
 
 		private String yunUid;
 
-		private String yunPersonsId;
-
-		private String mobilePhone;
-
-		private String email;
-
-		private String status;
+		private String isDeleteTag;
 
 		private String tenantId;
 
-		private String tenantUserId;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String roleCode;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getYunPersonsId() {
+			return this.yunPersonsId;
+		}
+
+		public void setYunPersonsId(String yunPersonsId) {
+			this.yunPersonsId = yunPersonsId;
+		}
 
 		public String getSspUserId() {
 			return this.sspUserId;
@@ -141,12 +157,28 @@ public class ListUserResponse extends AcsResponse {
 			this.sspUserId = sspUserId;
 		}
 
-		public Long getGmtCreateTime() {
-			return this.gmtCreateTime;
+		public String getTenantUserId() {
+			return this.tenantUserId;
 		}
 
-		public void setGmtCreateTime(Long gmtCreateTime) {
-			this.gmtCreateTime = gmtCreateTime;
+		public void setTenantUserId(String tenantUserId) {
+			this.tenantUserId = tenantUserId;
+		}
+
+		public String getMobilePhone() {
+			return this.mobilePhone;
+		}
+
+		public void setMobilePhone(String mobilePhone) {
+			this.mobilePhone = mobilePhone;
+		}
+
+		public String getRoleCode() {
+			return this.roleCode;
+		}
+
+		public void setRoleCode(String roleCode) {
+			this.roleCode = roleCode;
 		}
 
 		public Long getGmtModifiedTime() {
@@ -157,12 +189,20 @@ public class ListUserResponse extends AcsResponse {
 			this.gmtModifiedTime = gmtModifiedTime;
 		}
 
-		public String getIsDeleteTag() {
-			return this.isDeleteTag;
+		public Long getGmtCreateTime() {
+			return this.gmtCreateTime;
 		}
 
-		public void setIsDeleteTag(String isDeleteTag) {
-			this.isDeleteTag = isDeleteTag;
+		public void setGmtCreateTime(Long gmtCreateTime) {
+			this.gmtCreateTime = gmtCreateTime;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
 		}
 
 		public String getUserName() {
@@ -181,36 +221,12 @@ public class ListUserResponse extends AcsResponse {
 			this.yunUid = yunUid;
 		}
 
-		public String getYunPersonsId() {
-			return this.yunPersonsId;
+		public String getIsDeleteTag() {
+			return this.isDeleteTag;
 		}
 
-		public void setYunPersonsId(String yunPersonsId) {
-			this.yunPersonsId = yunPersonsId;
-		}
-
-		public String getMobilePhone() {
-			return this.mobilePhone;
-		}
-
-		public void setMobilePhone(String mobilePhone) {
-			this.mobilePhone = mobilePhone;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setIsDeleteTag(String isDeleteTag) {
+			this.isDeleteTag = isDeleteTag;
 		}
 
 		public String getTenantId() {
@@ -219,22 +235,6 @@ public class ListUserResponse extends AcsResponse {
 
 		public void setTenantId(String tenantId) {
 			this.tenantId = tenantId;
-		}
-
-		public String getTenantUserId() {
-			return this.tenantUserId;
-		}
-
-		public void setTenantUserId(String tenantUserId) {
-			this.tenantUserId = tenantUserId;
-		}
-
-		public String getRoleCode() {
-			return this.roleCode;
-		}
-
-		public void setRoleCode(String roleCode) {
-			this.roleCode = roleCode;
 		}
 	}
 

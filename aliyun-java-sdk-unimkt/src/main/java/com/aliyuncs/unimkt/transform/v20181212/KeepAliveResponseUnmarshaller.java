@@ -23,8 +23,8 @@ public class KeepAliveResponseUnmarshaller {
 	public static KeepAliveResponse unmarshall(KeepAliveResponse keepAliveResponse, UnmarshallerContext _ctx) {
 		
 		keepAliveResponse.setRequestId(_ctx.stringValue("KeepAliveResponse.RequestId"));
-		keepAliveResponse.setStatus(_ctx.booleanValue("KeepAliveResponse.Status"));
 		keepAliveResponse.setMsg(_ctx.stringValue("KeepAliveResponse.Msg"));
+		keepAliveResponse.setStatus(_ctx.booleanValue("KeepAliveResponse.Status"));
 		keepAliveResponse.setData(_ctx.stringValue("KeepAliveResponse.Data"));
 		keepAliveResponse.setErrorCode(_ctx.stringValue("KeepAliveResponse.ErrorCode"));
 	 

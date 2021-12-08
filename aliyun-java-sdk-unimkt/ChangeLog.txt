@@ -1,3 +1,6 @@
+2021-12-08 Version: 2.4.4-SNAPSHOT
+- Feature.
+
 2021-11-25 Version: 2.4.3
 - GetUnionTaskStatus add channelId.
 

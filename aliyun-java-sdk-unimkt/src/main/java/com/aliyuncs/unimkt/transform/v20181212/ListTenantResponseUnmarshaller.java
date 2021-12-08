@@ -27,8 +27,8 @@ public class ListTenantResponseUnmarshaller {
 	public static ListTenantResponse unmarshall(ListTenantResponse listTenantResponse, UnmarshallerContext _ctx) {
 		
 		listTenantResponse.setRequestId(_ctx.stringValue("ListTenantResponse.RequestId"));
-		listTenantResponse.setCode(_ctx.stringValue("ListTenantResponse.Code"));
 		listTenantResponse.setSuccess(_ctx.booleanValue("ListTenantResponse.Success"));
+		listTenantResponse.setCode(_ctx.stringValue("ListTenantResponse.Code"));
 		listTenantResponse.setMessage(_ctx.stringValue("ListTenantResponse.Message"));
 		listTenantResponse.setPageNumber(_ctx.integerValue("ListTenantResponse.PageNumber"));
 		listTenantResponse.setPageSize(_ctx.integerValue("ListTenantResponse.PageSize"));
@@ -37,17 +37,17 @@ public class ListTenantResponseUnmarshaller {
 		List<Tenant> model = new ArrayList<Tenant>();
 		for (int i = 0; i < _ctx.lengthValue("ListTenantResponse.Model.Length"); i++) {
 			Tenant tenant = new Tenant();
-			tenant.setCreateTime(_ctx.longValue("ListTenantResponse.Model["+ i +"].CreateTime"));
-			tenant.setModifyTime(_ctx.longValue("ListTenantResponse.Model["+ i +"].ModifyTime"));
-			tenant.setTenantId(_ctx.stringValue("ListTenantResponse.Model["+ i +"].TenantId"));
-			tenant.setBusiness(_ctx.stringValue("ListTenantResponse.Model["+ i +"].Business"));
-			tenant.setTenantName(_ctx.stringValue("ListTenantResponse.Model["+ i +"].TenantName"));
 			tenant.setStatus(_ctx.stringValue("ListTenantResponse.Model["+ i +"].Status"));
 			tenant.setSettleInfo(_ctx.stringValue("ListTenantResponse.Model["+ i +"].SettleInfo"));
-			tenant.setExtInfo(_ctx.stringValue("ListTenantResponse.Model["+ i +"].ExtInfo"));
-			tenant.setBizId(_ctx.stringValue("ListTenantResponse.Model["+ i +"].BizId"));
-			tenant.setVersion(_ctx.longValue("ListTenantResponse.Model["+ i +"].Version"));
 			tenant.setTenantDescription(_ctx.stringValue("ListTenantResponse.Model["+ i +"].TenantDescription"));
+			tenant.setVersion(_ctx.longValue("ListTenantResponse.Model["+ i +"].Version"));
+			tenant.setTenantName(_ctx.stringValue("ListTenantResponse.Model["+ i +"].TenantName"));
+			tenant.setCreateTime(_ctx.longValue("ListTenantResponse.Model["+ i +"].CreateTime"));
+			tenant.setBusiness(_ctx.stringValue("ListTenantResponse.Model["+ i +"].Business"));
+			tenant.setBizId(_ctx.stringValue("ListTenantResponse.Model["+ i +"].BizId"));
+			tenant.setExtInfo(_ctx.stringValue("ListTenantResponse.Model["+ i +"].ExtInfo"));
+			tenant.setTenantId(_ctx.stringValue("ListTenantResponse.Model["+ i +"].TenantId"));
+			tenant.setModifyTime(_ctx.longValue("ListTenantResponse.Model["+ i +"].ModifyTime"));
 
 			model.add(tenant);
 		}

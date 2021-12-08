@@ -26,11 +26,11 @@ public class QueryFlowResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private String message;
 
 	private String requestId;
+
+	private Boolean success;
 
 	private Model model;
 
@@ -40,14 +40,6 @@ public class QueryFlowResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -66,6 +58,14 @@ public class QueryFlowResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Model getModel() {
 		return this.model;
 	}
@@ -76,25 +76,7 @@ public class QueryFlowResponse extends AcsResponse {
 
 	public static class Model {
 
-		private String flowId;
-
-		private Long gmtCreateTime;
-
-		private Long gmtModifiedTime;
-
-		private String tenantId;
-
-		private String extInfo;
-
 		private String type;
-
-		private String businessKey;
-
-		private String reasonType;
-
-		private String oldData;
-
-		private String newData;
 
 		private String status;
 
@@ -102,49 +84,27 @@ public class QueryFlowResponse extends AcsResponse {
 
 		private String applyUserId;
 
-		private String approveUserId;
-
 		private Long approveTime;
 
-		public String getFlowId() {
-			return this.flowId;
-		}
+		private String flowId;
 
-		public void setFlowId(String flowId) {
-			this.flowId = flowId;
-		}
+		private String extInfo;
 
-		public Long getGmtCreateTime() {
-			return this.gmtCreateTime;
-		}
+		private Long gmtModifiedTime;
 
-		public void setGmtCreateTime(Long gmtCreateTime) {
-			this.gmtCreateTime = gmtCreateTime;
-		}
+		private String oldData;
 
-		public Long getGmtModifiedTime() {
-			return this.gmtModifiedTime;
-		}
+		private Long gmtCreateTime;
 
-		public void setGmtModifiedTime(Long gmtModifiedTime) {
-			this.gmtModifiedTime = gmtModifiedTime;
-		}
+		private String approveUserId;
 
-		public String getTenantId() {
-			return this.tenantId;
-		}
+		private String newData;
 
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
+		private String businessKey;
 
-		public String getExtInfo() {
-			return this.extInfo;
-		}
+		private String reasonType;
 
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
+		private String tenantId;
 
 		public String getType() {
 			return this.type;
@@ -152,38 +112,6 @@ public class QueryFlowResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getBusinessKey() {
-			return this.businessKey;
-		}
-
-		public void setBusinessKey(String businessKey) {
-			this.businessKey = businessKey;
-		}
-
-		public String getReasonType() {
-			return this.reasonType;
-		}
-
-		public void setReasonType(String reasonType) {
-			this.reasonType = reasonType;
-		}
-
-		public String getOldData() {
-			return this.oldData;
-		}
-
-		public void setOldData(String oldData) {
-			this.oldData = oldData;
-		}
-
-		public String getNewData() {
-			return this.newData;
-		}
-
-		public void setNewData(String newData) {
-			this.newData = newData;
 		}
 
 		public String getStatus() {
@@ -210,6 +138,54 @@ public class QueryFlowResponse extends AcsResponse {
 			this.applyUserId = applyUserId;
 		}
 
+		public Long getApproveTime() {
+			return this.approveTime;
+		}
+
+		public void setApproveTime(Long approveTime) {
+			this.approveTime = approveTime;
+		}
+
+		public String getFlowId() {
+			return this.flowId;
+		}
+
+		public void setFlowId(String flowId) {
+			this.flowId = flowId;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public Long getGmtModifiedTime() {
+			return this.gmtModifiedTime;
+		}
+
+		public void setGmtModifiedTime(Long gmtModifiedTime) {
+			this.gmtModifiedTime = gmtModifiedTime;
+		}
+
+		public String getOldData() {
+			return this.oldData;
+		}
+
+		public void setOldData(String oldData) {
+			this.oldData = oldData;
+		}
+
+		public Long getGmtCreateTime() {
+			return this.gmtCreateTime;
+		}
+
+		public void setGmtCreateTime(Long gmtCreateTime) {
+			this.gmtCreateTime = gmtCreateTime;
+		}
+
 		public String getApproveUserId() {
 			return this.approveUserId;
 		}
@@ -218,12 +194,36 @@ public class QueryFlowResponse extends AcsResponse {
 			this.approveUserId = approveUserId;
 		}
 
-		public Long getApproveTime() {
-			return this.approveTime;
+		public String getNewData() {
+			return this.newData;
 		}
 
-		public void setApproveTime(Long approveTime) {
-			this.approveTime = approveTime;
+		public void setNewData(String newData) {
+			this.newData = newData;
+		}
+
+		public String getBusinessKey() {
+			return this.businessKey;
+		}
+
+		public void setBusinessKey(String businessKey) {
+			this.businessKey = businessKey;
+		}
+
+		public String getReasonType() {
+			return this.reasonType;
+		}
+
+		public void setReasonType(String reasonType) {
+			this.reasonType = reasonType;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

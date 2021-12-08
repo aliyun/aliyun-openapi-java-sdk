@@ -25,18 +25,18 @@ public class QueryContentInfoResponseUnmarshaller {
 		
 		queryContentInfoResponse.setRequestId(_ctx.stringValue("QueryContentInfoResponse.RequestId"));
 		queryContentInfoResponse.setCode(_ctx.integerValue("QueryContentInfoResponse.Code"));
-		queryContentInfoResponse.setSuccess(_ctx.booleanValue("QueryContentInfoResponse.Success"));
 		queryContentInfoResponse.setErrorMessage(_ctx.stringValue("QueryContentInfoResponse.ErrorMessage"));
+		queryContentInfoResponse.setSuccess(_ctx.booleanValue("QueryContentInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setId(_ctx.longValue("QueryContentInfoResponse.Data.Id"));
-		data.setName(_ctx.stringValue("QueryContentInfoResponse.Data.Name"));
-		data.setBrandUserId(_ctx.longValue("QueryContentInfoResponse.Data.BrandUserId"));
-		data.setProxyUserId(_ctx.longValue("QueryContentInfoResponse.Data.ProxyUserId"));
 		data.setStatus(_ctx.integerValue("QueryContentInfoResponse.Data.Status"));
-		data.setTemplateType(_ctx.stringValue("QueryContentInfoResponse.Data.TemplateType"));
-		data.setChainValue(_ctx.stringValue("QueryContentInfoResponse.Data.ChainValue"));
+		data.setBrandUserId(_ctx.longValue("QueryContentInfoResponse.Data.BrandUserId"));
 		data.setOpenScene(_ctx.integerValue("QueryContentInfoResponse.Data.OpenScene"));
+		data.setProxyUserId(_ctx.longValue("QueryContentInfoResponse.Data.ProxyUserId"));
+		data.setTemplateType(_ctx.stringValue("QueryContentInfoResponse.Data.TemplateType"));
+		data.setName(_ctx.stringValue("QueryContentInfoResponse.Data.Name"));
+		data.setId(_ctx.longValue("QueryContentInfoResponse.Data.Id"));
+		data.setChainValue(_ctx.stringValue("QueryContentInfoResponse.Data.ChainValue"));
 		queryContentInfoResponse.setData(data);
 	 
 	 	return queryContentInfoResponse;

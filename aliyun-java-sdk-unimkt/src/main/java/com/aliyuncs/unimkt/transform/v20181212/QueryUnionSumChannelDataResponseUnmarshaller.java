@@ -25,9 +25,9 @@ public class QueryUnionSumChannelDataResponseUnmarshaller {
 		
 		queryUnionSumChannelDataResponse.setRequestId(_ctx.stringValue("QueryUnionSumChannelDataResponse.RequestId"));
 		queryUnionSumChannelDataResponse.setCode(_ctx.integerValue("QueryUnionSumChannelDataResponse.Code"));
-		queryUnionSumChannelDataResponse.setSuccess(_ctx.booleanValue("QueryUnionSumChannelDataResponse.Success"));
-		queryUnionSumChannelDataResponse.setErrorMsg(_ctx.stringValue("QueryUnionSumChannelDataResponse.ErrorMsg"));
 		queryUnionSumChannelDataResponse.setData(_ctx.mapValue("QueryUnionSumChannelDataResponse.Data"));
+		queryUnionSumChannelDataResponse.setErrorMsg(_ctx.stringValue("QueryUnionSumChannelDataResponse.ErrorMsg"));
+		queryUnionSumChannelDataResponse.setSuccess(_ctx.booleanValue("QueryUnionSumChannelDataResponse.Success"));
 	 
 	 	return queryUnionSumChannelDataResponse;
 	}

@@ -34,10 +34,10 @@ public class CheckDeviceResponseUnmarshaller {
 		List<PlanDto> plans = new ArrayList<PlanDto>();
 		for (int i = 0; i < _ctx.lengthValue("CheckDeviceResponse.Plans.Length"); i++) {
 			PlanDto planDto = new PlanDto();
-			planDto.setId(_ctx.longValue("CheckDeviceResponse.Plans["+ i +"].Id"));
-			planDto.setName(_ctx.stringValue("CheckDeviceResponse.Plans["+ i +"].Name"));
-			planDto.setStartTime(_ctx.stringValue("CheckDeviceResponse.Plans["+ i +"].StartTime"));
 			planDto.setEndTime(_ctx.stringValue("CheckDeviceResponse.Plans["+ i +"].EndTime"));
+			planDto.setStartTime(_ctx.stringValue("CheckDeviceResponse.Plans["+ i +"].StartTime"));
+			planDto.setName(_ctx.stringValue("CheckDeviceResponse.Plans["+ i +"].Name"));
+			planDto.setId(_ctx.longValue("CheckDeviceResponse.Plans["+ i +"].Id"));
 
 			plans.add(planDto);
 		}

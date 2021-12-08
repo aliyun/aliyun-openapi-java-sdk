@@ -26,11 +26,11 @@ public class QuerySlotTemplateResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private String message;
 
 	private String requestId;
+
+	private Boolean success;
 
 	private Model model;
 
@@ -40,14 +40,6 @@ public class QuerySlotTemplateResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -66,6 +58,14 @@ public class QuerySlotTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Model getModel() {
 		return this.model;
 	}
@@ -78,29 +78,29 @@ public class QuerySlotTemplateResponse extends AcsResponse {
 
 		private Long createTime;
 
-		private Long modifyTime;
+		private String adSlotTemplateTitle;
 
-		private String tenantId;
-
-		private String adSlotTemplateId;
+		private String adSlotType;
 
 		private String adSlotTemplateName;
 
-		private String adSlotTemplateTitle;
+		private String extInfo;
+
+		private String adSlotTemplateDescription;
+
+		private Long version;
 
 		private String adSlotTemplatePic;
 
 		private String adSlotTemplatePreview;
 
-		private String adSlotTemplateDescription;
-
-		private String adSlotType;
-
 		private String templateConfig;
 
-		private String extInfo;
+		private String adSlotTemplateId;
 
-		private Long version;
+		private Long modifyTime;
+
+		private String tenantId;
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -110,28 +110,20 @@ public class QuerySlotTemplateResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getModifyTime() {
-			return this.modifyTime;
+		public String getAdSlotTemplateTitle() {
+			return this.adSlotTemplateTitle;
 		}
 
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setAdSlotTemplateTitle(String adSlotTemplateTitle) {
+			this.adSlotTemplateTitle = adSlotTemplateTitle;
 		}
 
-		public String getTenantId() {
-			return this.tenantId;
+		public String getAdSlotType() {
+			return this.adSlotType;
 		}
 
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public String getAdSlotTemplateId() {
-			return this.adSlotTemplateId;
-		}
-
-		public void setAdSlotTemplateId(String adSlotTemplateId) {
-			this.adSlotTemplateId = adSlotTemplateId;
+		public void setAdSlotType(String adSlotType) {
+			this.adSlotType = adSlotType;
 		}
 
 		public String getAdSlotTemplateName() {
@@ -142,12 +134,28 @@ public class QuerySlotTemplateResponse extends AcsResponse {
 			this.adSlotTemplateName = adSlotTemplateName;
 		}
 
-		public String getAdSlotTemplateTitle() {
-			return this.adSlotTemplateTitle;
+		public String getExtInfo() {
+			return this.extInfo;
 		}
 
-		public void setAdSlotTemplateTitle(String adSlotTemplateTitle) {
-			this.adSlotTemplateTitle = adSlotTemplateTitle;
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public String getAdSlotTemplateDescription() {
+			return this.adSlotTemplateDescription;
+		}
+
+		public void setAdSlotTemplateDescription(String adSlotTemplateDescription) {
+			this.adSlotTemplateDescription = adSlotTemplateDescription;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 
 		public String getAdSlotTemplatePic() {
@@ -166,22 +174,6 @@ public class QuerySlotTemplateResponse extends AcsResponse {
 			this.adSlotTemplatePreview = adSlotTemplatePreview;
 		}
 
-		public String getAdSlotTemplateDescription() {
-			return this.adSlotTemplateDescription;
-		}
-
-		public void setAdSlotTemplateDescription(String adSlotTemplateDescription) {
-			this.adSlotTemplateDescription = adSlotTemplateDescription;
-		}
-
-		public String getAdSlotType() {
-			return this.adSlotType;
-		}
-
-		public void setAdSlotType(String adSlotType) {
-			this.adSlotType = adSlotType;
-		}
-
 		public String getTemplateConfig() {
 			return this.templateConfig;
 		}
@@ -190,20 +182,28 @@ public class QuerySlotTemplateResponse extends AcsResponse {
 			this.templateConfig = templateConfig;
 		}
 
-		public String getExtInfo() {
-			return this.extInfo;
+		public String getAdSlotTemplateId() {
+			return this.adSlotTemplateId;
 		}
 
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
+		public void setAdSlotTemplateId(String adSlotTemplateId) {
+			this.adSlotTemplateId = adSlotTemplateId;
 		}
 
-		public Long getVersion() {
-			return this.version;
+		public Long getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

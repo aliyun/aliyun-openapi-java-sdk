@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTenantResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private Boolean success;
 
-	private String message;
+	private String code;
 
-	private String requestId;
+	private String message;
 
 	private Integer pageNumber;
 
@@ -41,12 +41,12 @@ public class ListTenantResponse extends AcsResponse {
 
 	private List<Tenant> model;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -57,20 +57,20 @@ public class ListTenantResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,67 +107,27 @@ public class ListTenantResponse extends AcsResponse {
 
 	public static class Tenant {
 
-		private Long createTime;
-
-		private Long modifyTime;
-
-		private String tenantId;
-
-		private String business;
-
-		private String tenantName;
-
 		private String status;
 
 		private String settleInfo;
 
-		private String extInfo;
-
-		private String bizId;
+		private String tenantDescription;
 
 		private Long version;
 
-		private String tenantDescription;
+		private String tenantName;
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
+		private Long createTime;
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
+		private String business;
 
-		public Long getModifyTime() {
-			return this.modifyTime;
-		}
+		private String bizId;
 
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
-		}
+		private String extInfo;
 
-		public String getTenantId() {
-			return this.tenantId;
-		}
+		private String tenantId;
 
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public String getBusiness() {
-			return this.business;
-		}
-
-		public void setBusiness(String business) {
-			this.business = business;
-		}
-
-		public String getTenantName() {
-			return this.tenantName;
-		}
-
-		public void setTenantName(String tenantName) {
-			this.tenantName = tenantName;
-		}
+		private Long modifyTime;
 
 		public String getStatus() {
 			return this.status;
@@ -185,20 +145,12 @@ public class ListTenantResponse extends AcsResponse {
 			this.settleInfo = settleInfo;
 		}
 
-		public String getExtInfo() {
-			return this.extInfo;
+		public String getTenantDescription() {
+			return this.tenantDescription;
 		}
 
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setTenantDescription(String tenantDescription) {
+			this.tenantDescription = tenantDescription;
 		}
 
 		public Long getVersion() {
@@ -209,12 +161,60 @@ public class ListTenantResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public String getTenantDescription() {
-			return this.tenantDescription;
+		public String getTenantName() {
+			return this.tenantName;
 		}
 
-		public void setTenantDescription(String tenantDescription) {
-			this.tenantDescription = tenantDescription;
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getBusiness() {
+			return this.business;
+		}
+
+		public void setBusiness(String business) {
+			this.business = business;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

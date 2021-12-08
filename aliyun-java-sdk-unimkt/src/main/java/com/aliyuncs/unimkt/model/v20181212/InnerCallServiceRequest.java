@@ -12,10 +12,12 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181207;
+package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.unimkt.Endpoint;
 
@@ -23,13 +25,13 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetConsoleInfoRequest extends RpcAcsRequest<GetConsoleInfoResponse> {
+public class InnerCallServiceRequest extends RpcAcsRequest<InnerCallServiceResponse> {
 	   
 
-	private String message;
-	public GetConsoleInfoRequest() {
-		super("UniMkt", "2018-12-07", "GetConsoleInfo", "1.0.0");
-		setProtocol(ProtocolType.HTTPS);
+	@SerializedName("body")
+	private Map<String,String> body;
+	public InnerCallServiceRequest() {
+		super("UniMkt", "2018-12-12", "InnerCallService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,20 +39,20 @@ public class GetConsoleInfoRequest extends RpcAcsRequest<GetConsoleInfoResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Map<String,String> getBody() {
+		return this.body;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-		if(message != null){
-			putBodyParameter("Message", message);
-		}
+	public void setBody(Map<String,String> body) {
+		this.body = body;	
+		if (body != null) {
+			putBodyParameter("body" , new Gson().toJson(body));
+		}	
 	}
 
 	@Override
-	public Class<GetConsoleInfoResponse> getResponseClass() {
-		return GetConsoleInfoResponse.class;
+	public Class<InnerCallServiceResponse> getResponseClass() {
+		return InnerCallServiceResponse.class;
 	}
 
 }

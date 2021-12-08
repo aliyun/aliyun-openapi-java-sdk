@@ -25,23 +25,23 @@ public class QueryRuleResponseUnmarshaller {
 		
 		queryRuleResponse.setRequestId(_ctx.stringValue("QueryRuleResponse.RequestId"));
 		queryRuleResponse.setCode(_ctx.stringValue("QueryRuleResponse.Code"));
-		queryRuleResponse.setSuccess(_ctx.booleanValue("QueryRuleResponse.Success"));
 		queryRuleResponse.setMessage(_ctx.stringValue("QueryRuleResponse.Message"));
+		queryRuleResponse.setSuccess(_ctx.booleanValue("QueryRuleResponse.Success"));
 
 		Model model = new Model();
+		model.setStatus(_ctx.stringValue("QueryRuleResponse.Model.Status"));
+		model.setRuleType(_ctx.stringValue("QueryRuleResponse.Model.RuleType"));
 		model.setCreateTime(_ctx.longValue("QueryRuleResponse.Model.CreateTime"));
+		model.setRuleRId(_ctx.stringValue("QueryRuleResponse.Model.RuleRId"));
+		model.setRelatedAdSlots(_ctx.stringValue("QueryRuleResponse.Model.RelatedAdSlots"));
+		model.setExtInfo(_ctx.stringValue("QueryRuleResponse.Model.ExtInfo"));
+		model.setRuleId(_ctx.stringValue("QueryRuleResponse.Model.RuleId"));
+		model.setRuleName(_ctx.stringValue("QueryRuleResponse.Model.RuleName"));
+		model.setVersion(_ctx.longValue("QueryRuleResponse.Model.Version"));
+		model.setAccessStatus(_ctx.stringValue("QueryRuleResponse.Model.AccessStatus"));
 		model.setModifyTime(_ctx.longValue("QueryRuleResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("QueryRuleResponse.Model.TenantId"));
-		model.setRuleName(_ctx.stringValue("QueryRuleResponse.Model.RuleName"));
-		model.setRuleRId(_ctx.stringValue("QueryRuleResponse.Model.RuleRId"));
-		model.setRuleType(_ctx.stringValue("QueryRuleResponse.Model.RuleType"));
-		model.setRelatedAdSlots(_ctx.stringValue("QueryRuleResponse.Model.RelatedAdSlots"));
 		model.setRuleConfig(_ctx.stringValue("QueryRuleResponse.Model.RuleConfig"));
-		model.setStatus(_ctx.stringValue("QueryRuleResponse.Model.Status"));
-		model.setAccessStatus(_ctx.stringValue("QueryRuleResponse.Model.AccessStatus"));
-		model.setExtInfo(_ctx.stringValue("QueryRuleResponse.Model.ExtInfo"));
-		model.setVersion(_ctx.longValue("QueryRuleResponse.Model.Version"));
-		model.setRuleId(_ctx.stringValue("QueryRuleResponse.Model.RuleId"));
 		queryRuleResponse.setModel(model);
 	 
 	 	return queryRuleResponse;

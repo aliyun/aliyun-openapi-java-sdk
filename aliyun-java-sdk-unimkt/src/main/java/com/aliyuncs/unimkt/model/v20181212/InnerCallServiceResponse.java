@@ -12,25 +12,27 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181207;
+package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181207.GetConsoleInfoResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181212.InnerCallServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetConsoleInfoResponse extends AcsResponse {
+public class InnerCallServiceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer status;
+	private String result;
+
+	private Boolean code;
+
+	private String errorCode;
 
 	private String message;
-
-	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +42,28 @@ public class GetConsoleInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public String getResult() {
+		return this.result;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public Boolean getCode() {
+		return this.code;
+	}
+
+	public void setCode(Boolean code) {
+		this.code = code;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getMessage() {
@@ -56,16 +74,13 @@ public class GetConsoleInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
+	@Override
+	public InnerCallServiceResponse getInstance(UnmarshallerContext context) {
+		return	InnerCallServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public GetConsoleInfoResponse getInstance(UnmarshallerContext context) {
-		return	GetConsoleInfoResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
