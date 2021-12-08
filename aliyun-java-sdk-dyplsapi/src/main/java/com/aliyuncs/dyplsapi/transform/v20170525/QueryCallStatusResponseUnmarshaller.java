@@ -30,6 +30,7 @@ public class QueryCallStatusResponseUnmarshaller {
 		SecretCallStatusDTO secretCallStatusDTO = new SecretCallStatusDTO();
 		secretCallStatusDTO.setCalledNo(_ctx.stringValue("QueryCallStatusResponse.SecretCallStatusDTO.CalledNo"));
 		secretCallStatusDTO.setStatus(_ctx.integerValue("QueryCallStatusResponse.SecretCallStatusDTO.Status"));
+		secretCallStatusDTO.setExtension(_ctx.stringValue("QueryCallStatusResponse.SecretCallStatusDTO.Extension"));
 		queryCallStatusResponse.setSecretCallStatusDTO(secretCallStatusDTO);
 	 
 	 	return queryCallStatusResponse;

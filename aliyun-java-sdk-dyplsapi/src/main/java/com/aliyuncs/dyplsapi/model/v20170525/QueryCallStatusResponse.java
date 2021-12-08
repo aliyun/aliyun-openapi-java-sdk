@@ -70,6 +70,8 @@ public class QueryCallStatusResponse extends AcsResponse {
 
 		private Integer status;
 
+		private String extension;
+
 		public String getCalledNo() {
 			return this.calledNo;
 		}
@@ -84,6 +86,14 @@ public class QueryCallStatusResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public String getExtension() {
+			return this.extension;
+		}
+
+		public void setExtension(String extension) {
+			this.extension = extension;
 		}
 	}
 
