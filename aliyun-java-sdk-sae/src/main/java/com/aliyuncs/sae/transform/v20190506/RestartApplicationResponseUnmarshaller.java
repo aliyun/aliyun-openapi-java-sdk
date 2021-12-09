@@ -24,11 +24,11 @@ public class RestartApplicationResponseUnmarshaller {
 	public static RestartApplicationResponse unmarshall(RestartApplicationResponse restartApplicationResponse, UnmarshallerContext _ctx) {
 		
 		restartApplicationResponse.setRequestId(_ctx.stringValue("RestartApplicationResponse.RequestId"));
-		restartApplicationResponse.setCode(_ctx.stringValue("RestartApplicationResponse.Code"));
-		restartApplicationResponse.setSuccess(_ctx.booleanValue("RestartApplicationResponse.Success"));
-		restartApplicationResponse.setErrorCode(_ctx.stringValue("RestartApplicationResponse.ErrorCode"));
 		restartApplicationResponse.setMessage(_ctx.stringValue("RestartApplicationResponse.Message"));
 		restartApplicationResponse.setTraceId(_ctx.stringValue("RestartApplicationResponse.TraceId"));
+		restartApplicationResponse.setErrorCode(_ctx.stringValue("RestartApplicationResponse.ErrorCode"));
+		restartApplicationResponse.setCode(_ctx.stringValue("RestartApplicationResponse.Code"));
+		restartApplicationResponse.setSuccess(_ctx.booleanValue("RestartApplicationResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("RestartApplicationResponse.Data.ChangeOrderId"));

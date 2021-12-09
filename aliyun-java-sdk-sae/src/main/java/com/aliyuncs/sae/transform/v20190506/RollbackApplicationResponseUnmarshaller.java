@@ -32,6 +32,7 @@ public class RollbackApplicationResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("RollbackApplicationResponse.Data.ChangeOrderId"));
+		data.setIsNeedApproval(_ctx.booleanValue("RollbackApplicationResponse.Data.IsNeedApproval"));
 		rollbackApplicationResponse.setData(data);
 	 
 	 	return rollbackApplicationResponse;

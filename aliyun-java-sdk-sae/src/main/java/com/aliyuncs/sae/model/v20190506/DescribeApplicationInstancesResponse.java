@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApplicationInstancesResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String traceId;
 
@@ -39,20 +39,20 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getTraceId() {
@@ -97,21 +97,13 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer currentPage;
 
 		private Integer totalSize;
 
+		private Integer pageSize;
+
 		private List<Instance> instances;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -129,6 +121,14 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 			this.totalSize = totalSize;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public List<Instance> getInstances() {
 			return this.instances;
 		}
@@ -139,48 +139,34 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 		public static class Instance {
 
-			private String instanceContainerIp;
-
-			private String instanceHealthStatus;
-
-			private String instanceId;
+			private Long createTimeStamp;
 
 			private String vSwitchId;
 
-			private String imageUrl;
+			private String instanceContainerStatus;
+
+			private String instanceHealthStatus;
 
 			private Long instanceContainerRestarts;
 
-			private String packageVersion;
-
-			private String instanceContainerStatus;
-
-			private Long createTimeStamp;
-
 			private String groupId;
 
-			public String getInstanceContainerIp() {
-				return this.instanceContainerIp;
+			private String instanceContainerIp;
+
+			private String instanceId;
+
+			private String imageUrl;
+
+			private String packageVersion;
+
+			private String eip;
+
+			public Long getCreateTimeStamp() {
+				return this.createTimeStamp;
 			}
 
-			public void setInstanceContainerIp(String instanceContainerIp) {
-				this.instanceContainerIp = instanceContainerIp;
-			}
-
-			public String getInstanceHealthStatus() {
-				return this.instanceHealthStatus;
-			}
-
-			public void setInstanceHealthStatus(String instanceHealthStatus) {
-				this.instanceHealthStatus = instanceHealthStatus;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setCreateTimeStamp(Long createTimeStamp) {
+				this.createTimeStamp = createTimeStamp;
 			}
 
 			public String getVSwitchId() {
@@ -191,12 +177,20 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 				this.vSwitchId = vSwitchId;
 			}
 
-			public String getImageUrl() {
-				return this.imageUrl;
+			public String getInstanceContainerStatus() {
+				return this.instanceContainerStatus;
 			}
 
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
+			public void setInstanceContainerStatus(String instanceContainerStatus) {
+				this.instanceContainerStatus = instanceContainerStatus;
+			}
+
+			public String getInstanceHealthStatus() {
+				return this.instanceHealthStatus;
+			}
+
+			public void setInstanceHealthStatus(String instanceHealthStatus) {
+				this.instanceHealthStatus = instanceHealthStatus;
 			}
 
 			public Long getInstanceContainerRestarts() {
@@ -207,6 +201,38 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 				this.instanceContainerRestarts = instanceContainerRestarts;
 			}
 
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getInstanceContainerIp() {
+				return this.instanceContainerIp;
+			}
+
+			public void setInstanceContainerIp(String instanceContainerIp) {
+				this.instanceContainerIp = instanceContainerIp;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getImageUrl() {
+				return this.imageUrl;
+			}
+
+			public void setImageUrl(String imageUrl) {
+				this.imageUrl = imageUrl;
+			}
+
 			public String getPackageVersion() {
 				return this.packageVersion;
 			}
@@ -215,28 +241,12 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 				this.packageVersion = packageVersion;
 			}
 
-			public String getInstanceContainerStatus() {
-				return this.instanceContainerStatus;
+			public String getEip() {
+				return this.eip;
 			}
 
-			public void setInstanceContainerStatus(String instanceContainerStatus) {
-				this.instanceContainerStatus = instanceContainerStatus;
-			}
-
-			public Long getCreateTimeStamp() {
-				return this.createTimeStamp;
-			}
-
-			public void setCreateTimeStamp(Long createTimeStamp) {
-				this.createTimeStamp = createTimeStamp;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setEip(String eip) {
+				this.eip = eip;
 			}
 		}
 	}

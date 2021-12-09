@@ -33,31 +33,34 @@ public class ListApplicationsResponseUnmarshaller {
 		listApplicationsResponse.setErrorCode(_ctx.stringValue("ListApplicationsResponse.ErrorCode"));
 		listApplicationsResponse.setCode(_ctx.stringValue("ListApplicationsResponse.Code"));
 		listApplicationsResponse.setSuccess(_ctx.booleanValue("ListApplicationsResponse.Success"));
+		listApplicationsResponse.setCurrentPage(_ctx.integerValue("ListApplicationsResponse.CurrentPage"));
+		listApplicationsResponse.setTotalSize(_ctx.integerValue("ListApplicationsResponse.TotalSize"));
+		listApplicationsResponse.setPageSize(_ctx.integerValue("ListApplicationsResponse.PageSize"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("ListApplicationsResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("ListApplicationsResponse.Data.CurrentPage"));
 		data.setTotalSize(_ctx.integerValue("ListApplicationsResponse.Data.TotalSize"));
+		data.setPageSize(_ctx.integerValue("ListApplicationsResponse.Data.PageSize"));
 
 		List<Application> applications = new ArrayList<Application>();
 		for (int i = 0; i < _ctx.lengthValue("ListApplicationsResponse.Data.Applications.Length"); i++) {
 			Application application = new Application();
-			application.setInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Instances"));
-			application.setScaleRuleEnabled(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleEnabled"));
-			application.setAppDescription(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDescription"));
-			application.setAppId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppId"));
-			application.setRunningInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].RunningInstances"));
-			application.setRegionId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].RegionId"));
-			application.setNamespaceId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].NamespaceId"));
-			application.setScaleRuleType(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleType"));
-			application.setAppDeletingStatus(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDeletingStatus"));
 			application.setAppName(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppName"));
+			application.setNamespaceId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].NamespaceId"));
+			application.setAppDeletingStatus(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDeletingStatus"));
+			application.setAppId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppId"));
+			application.setScaleRuleEnabled(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleEnabled"));
+			application.setScaleRuleType(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleType"));
+			application.setRunningInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].RunningInstances"));
+			application.setInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Instances"));
+			application.setRegionId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].RegionId"));
+			application.setAppDescription(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDescription"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags.Length"); j++) {
 				TagsItem tagsItem = new TagsItem();
-				tagsItem.setValue(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags["+ j +"].Value"));
 				tagsItem.setKey(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags["+ j +"].Value"));
 
 				tags.add(tagsItem);
 			}

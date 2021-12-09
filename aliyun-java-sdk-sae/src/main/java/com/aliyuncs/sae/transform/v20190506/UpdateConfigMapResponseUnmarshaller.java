@@ -24,10 +24,10 @@ public class UpdateConfigMapResponseUnmarshaller {
 	public static UpdateConfigMapResponse unmarshall(UpdateConfigMapResponse updateConfigMapResponse, UnmarshallerContext _ctx) {
 		
 		updateConfigMapResponse.setRequestId(_ctx.stringValue("UpdateConfigMapResponse.RequestId"));
-		updateConfigMapResponse.setCode(_ctx.stringValue("UpdateConfigMapResponse.Code"));
 		updateConfigMapResponse.setMessage(_ctx.stringValue("UpdateConfigMapResponse.Message"));
-		updateConfigMapResponse.setErrorCode(_ctx.stringValue("UpdateConfigMapResponse.ErrorCode"));
 		updateConfigMapResponse.setTraceId(_ctx.stringValue("UpdateConfigMapResponse.TraceId"));
+		updateConfigMapResponse.setErrorCode(_ctx.stringValue("UpdateConfigMapResponse.ErrorCode"));
+		updateConfigMapResponse.setCode(_ctx.stringValue("UpdateConfigMapResponse.Code"));
 		updateConfigMapResponse.setSuccess(_ctx.booleanValue("UpdateConfigMapResponse.Success"));
 
 		Data data = new Data();

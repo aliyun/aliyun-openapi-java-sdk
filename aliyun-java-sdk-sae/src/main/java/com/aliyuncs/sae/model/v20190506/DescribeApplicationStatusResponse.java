@@ -26,15 +26,15 @@ public class DescribeApplicationStatusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
 	private String traceId;
 
-	private Boolean success;
-
 	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
 
 	private Data data;
 
@@ -44,14 +44,6 @@ public class DescribeApplicationStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -70,20 +62,28 @@ public class DescribeApplicationStatusResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -96,30 +96,36 @@ public class DescribeApplicationStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appId;
+		private String armsAdvancedEnabled;
 
 		private String lastChangeOrderId;
 
-		private String lastChangeOrderStatus;
-
-		private Boolean lastChangeOrderRunning;
-
-		private String currentStatus;
-
 		private String armsApmInfo;
-
-		private Integer runningInstances;
-
-		private String armsAdvancedEnabled;
 
 		private String createTime;
 
-		public String getAppId() {
-			return this.appId;
+		private String currentStatus;
+
+		private String appId;
+
+		private Boolean lastChangeOrderRunning;
+
+		private Integer runningInstances;
+
+		private String lastChangeOrderStatus;
+
+		private String subStatus;
+
+		private Boolean enableAgent;
+
+		private Long fileSizeLimit;
+
+		public String getArmsAdvancedEnabled() {
+			return this.armsAdvancedEnabled;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setArmsAdvancedEnabled(String armsAdvancedEnabled) {
+			this.armsAdvancedEnabled = armsAdvancedEnabled;
 		}
 
 		public String getLastChangeOrderId() {
@@ -130,20 +136,20 @@ public class DescribeApplicationStatusResponse extends AcsResponse {
 			this.lastChangeOrderId = lastChangeOrderId;
 		}
 
-		public String getLastChangeOrderStatus() {
-			return this.lastChangeOrderStatus;
+		public String getArmsApmInfo() {
+			return this.armsApmInfo;
 		}
 
-		public void setLastChangeOrderStatus(String lastChangeOrderStatus) {
-			this.lastChangeOrderStatus = lastChangeOrderStatus;
+		public void setArmsApmInfo(String armsApmInfo) {
+			this.armsApmInfo = armsApmInfo;
 		}
 
-		public Boolean getLastChangeOrderRunning() {
-			return this.lastChangeOrderRunning;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setLastChangeOrderRunning(Boolean lastChangeOrderRunning) {
-			this.lastChangeOrderRunning = lastChangeOrderRunning;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getCurrentStatus() {
@@ -154,12 +160,20 @@ public class DescribeApplicationStatusResponse extends AcsResponse {
 			this.currentStatus = currentStatus;
 		}
 
-		public String getArmsApmInfo() {
-			return this.armsApmInfo;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setArmsApmInfo(String armsApmInfo) {
-			this.armsApmInfo = armsApmInfo;
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public Boolean getLastChangeOrderRunning() {
+			return this.lastChangeOrderRunning;
+		}
+
+		public void setLastChangeOrderRunning(Boolean lastChangeOrderRunning) {
+			this.lastChangeOrderRunning = lastChangeOrderRunning;
 		}
 
 		public Integer getRunningInstances() {
@@ -170,20 +184,36 @@ public class DescribeApplicationStatusResponse extends AcsResponse {
 			this.runningInstances = runningInstances;
 		}
 
-		public String getArmsAdvancedEnabled() {
-			return this.armsAdvancedEnabled;
+		public String getLastChangeOrderStatus() {
+			return this.lastChangeOrderStatus;
 		}
 
-		public void setArmsAdvancedEnabled(String armsAdvancedEnabled) {
-			this.armsAdvancedEnabled = armsAdvancedEnabled;
+		public void setLastChangeOrderStatus(String lastChangeOrderStatus) {
+			this.lastChangeOrderStatus = lastChangeOrderStatus;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getSubStatus() {
+			return this.subStatus;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setSubStatus(String subStatus) {
+			this.subStatus = subStatus;
+		}
+
+		public Boolean getEnableAgent() {
+			return this.enableAgent;
+		}
+
+		public void setEnableAgent(Boolean enableAgent) {
+			this.enableAgent = enableAgent;
+		}
+
+		public Long getFileSizeLimit() {
+			return this.fileSizeLimit;
+		}
+
+		public void setFileSizeLimit(Long fileSizeLimit) {
+			this.fileSizeLimit = fileSizeLimit;
 		}
 	}
 

@@ -23,11 +23,11 @@ public class DeleteNamespaceResponseUnmarshaller {
 	public static DeleteNamespaceResponse unmarshall(DeleteNamespaceResponse deleteNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		deleteNamespaceResponse.setRequestId(_ctx.stringValue("DeleteNamespaceResponse.RequestId"));
-		deleteNamespaceResponse.setCode(_ctx.stringValue("DeleteNamespaceResponse.Code"));
-		deleteNamespaceResponse.setErrorCode(_ctx.stringValue("DeleteNamespaceResponse.ErrorCode"));
 		deleteNamespaceResponse.setMessage(_ctx.stringValue("DeleteNamespaceResponse.Message"));
-		deleteNamespaceResponse.setSuccess(_ctx.booleanValue("DeleteNamespaceResponse.Success"));
 		deleteNamespaceResponse.setTraceId(_ctx.stringValue("DeleteNamespaceResponse.TraceId"));
+		deleteNamespaceResponse.setErrorCode(_ctx.stringValue("DeleteNamespaceResponse.ErrorCode"));
+		deleteNamespaceResponse.setCode(_ctx.stringValue("DeleteNamespaceResponse.Code"));
+		deleteNamespaceResponse.setSuccess(_ctx.booleanValue("DeleteNamespaceResponse.Success"));
 	 
 	 	return deleteNamespaceResponse;
 	}

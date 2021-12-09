@@ -24,17 +24,17 @@ public class CreateNamespaceResponseUnmarshaller {
 	public static CreateNamespaceResponse unmarshall(CreateNamespaceResponse createNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		createNamespaceResponse.setRequestId(_ctx.stringValue("CreateNamespaceResponse.RequestId"));
-		createNamespaceResponse.setCode(_ctx.stringValue("CreateNamespaceResponse.Code"));
-		createNamespaceResponse.setErrorCode(_ctx.stringValue("CreateNamespaceResponse.ErrorCode"));
 		createNamespaceResponse.setMessage(_ctx.stringValue("CreateNamespaceResponse.Message"));
-		createNamespaceResponse.setSuccess(_ctx.booleanValue("CreateNamespaceResponse.Success"));
 		createNamespaceResponse.setTraceId(_ctx.stringValue("CreateNamespaceResponse.TraceId"));
+		createNamespaceResponse.setErrorCode(_ctx.stringValue("CreateNamespaceResponse.ErrorCode"));
+		createNamespaceResponse.setCode(_ctx.stringValue("CreateNamespaceResponse.Code"));
+		createNamespaceResponse.setSuccess(_ctx.booleanValue("CreateNamespaceResponse.Success"));
 
 		Data data = new Data();
-		data.setRegionId(_ctx.stringValue("CreateNamespaceResponse.Data.RegionId"));
+		data.setNamespaceDescription(_ctx.stringValue("CreateNamespaceResponse.Data.NamespaceDescription"));
 		data.setNamespaceId(_ctx.stringValue("CreateNamespaceResponse.Data.NamespaceId"));
 		data.setNamespaceName(_ctx.stringValue("CreateNamespaceResponse.Data.NamespaceName"));
-		data.setNamespaceDescription(_ctx.stringValue("CreateNamespaceResponse.Data.NamespaceDescription"));
+		data.setRegionId(_ctx.stringValue("CreateNamespaceResponse.Data.RegionId"));
 		createNamespaceResponse.setData(data);
 	 
 	 	return createNamespaceResponse;

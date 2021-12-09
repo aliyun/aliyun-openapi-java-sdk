@@ -21,6 +21,7 @@ import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.ConfigMapMountDescItem;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.MountDescItem;
+import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.OssMountDesc;
 import com.aliyuncs.sae.model.v20190506.DescribeApplicationConfigResponse.Data.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -37,48 +38,80 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		describeApplicationConfigResponse.setSuccess(_ctx.booleanValue("DescribeApplicationConfigResponse.Success"));
 
 		Data data = new Data();
-		data.setTimezone(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Timezone"));
-		data.setAppDescription(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppDescription"));
-		data.setPhpConfig(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpConfig"));
-		data.setNasId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.NasId"));
-		data.setWarStartOptions(_ctx.stringValue("DescribeApplicationConfigResponse.Data.WarStartOptions"));
-		data.setLiveness(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Liveness"));
-		data.setMemory(_ctx.integerValue("DescribeApplicationConfigResponse.Data.Memory"));
-		data.setWebContainer(_ctx.stringValue("DescribeApplicationConfigResponse.Data.WebContainer"));
-		data.setSlsConfigs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SlsConfigs"));
-		data.setCpu(_ctx.integerValue("DescribeApplicationConfigResponse.Data.Cpu"));
-		data.setPackageVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageVersion"));
-		data.setAppName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppName"));
-		data.setJdk(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Jdk"));
-		data.setJarStartArgs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.JarStartArgs"));
-		data.setMinReadyInstances(_ctx.integerValue("DescribeApplicationConfigResponse.Data.MinReadyInstances"));
-		data.setPreStop(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PreStop"));
+		data.setVpcId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.VpcId"));
 		data.setReadiness(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Readiness"));
-		data.setPhpArmsConfigLocation(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpArmsConfigLocation"));
-		data.setPackageType(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageType"));
-		data.setCommandArgs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.CommandArgs"));
-		data.setAcrAssumeRoleArn(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AcrAssumeRoleArn"));
-		data.setTerminationGracePeriodSeconds(_ctx.integerValue("DescribeApplicationConfigResponse.Data.TerminationGracePeriodSeconds"));
-		data.setEnvs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Envs"));
-		data.setVSwitchId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.VSwitchId"));
 		data.setSecurityGroupId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SecurityGroupId"));
-		data.setPostStart(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PostStart"));
+		data.setBatchWaitTime(_ctx.integerValue("DescribeApplicationConfigResponse.Data.BatchWaitTime"));
+		data.setJdk(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Jdk"));
 		data.setImageUrl(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ImageUrl"));
-		data.setMountHost(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MountHost"));
+		data.setSlsConfigs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SlsConfigs"));
+		data.setLiveness(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Liveness"));
+		data.setPackageUrl(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageUrl"));
+		data.setPackageType(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageType"));
+		data.setPreStop(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PreStop"));
+		data.setPackageVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageVersion"));
+		data.setJarStartArgs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.JarStartArgs"));
+		data.setAppName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppName"));
+		data.setAppId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppId"));
 		data.setJarStartOptions(_ctx.stringValue("DescribeApplicationConfigResponse.Data.JarStartOptions"));
 		data.setReplicas(_ctx.integerValue("DescribeApplicationConfigResponse.Data.Replicas"));
-		data.setCustomHostAlias(_ctx.stringValue("DescribeApplicationConfigResponse.Data.CustomHostAlias"));
-		data.setAppId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppId"));
-		data.setVpcId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.VpcId"));
-		data.setEdasContainerVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.EdasContainerVersion"));
-		data.setCommand(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Command"));
+		data.setUpdateStrategy(_ctx.stringValue("DescribeApplicationConfigResponse.Data.UpdateStrategy"));
+		data.setMinReadyInstances(_ctx.integerValue("DescribeApplicationConfigResponse.Data.MinReadyInstances"));
+		data.setMemory(_ctx.integerValue("DescribeApplicationConfigResponse.Data.Memory"));
+		data.setPhp(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Php"));
+		data.setPhpConfig(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpConfig"));
 		data.setPhpConfigLocation(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpConfigLocation"));
-		data.setPackageUrl(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PackageUrl"));
-		data.setBatchWaitTime(_ctx.integerValue("DescribeApplicationConfigResponse.Data.BatchWaitTime"));
-		data.setRegionId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.RegionId"));
+		data.setPhpExtensions(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpExtensions"));
+		data.setPhpPECLExtensions(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpPECLExtensions"));
+		data.setPostStart(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PostStart"));
+		data.setTerminationGracePeriodSeconds(_ctx.integerValue("DescribeApplicationConfigResponse.Data.TerminationGracePeriodSeconds"));
+		data.setCommandArgs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.CommandArgs"));
 		data.setNamespaceId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.NamespaceId"));
-		data.setEnableAhas(_ctx.stringValue("DescribeApplicationConfigResponse.Data.EnableAhas"));
+		data.setMountHost(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MountHost"));
 		data.setTomcatConfig(_ctx.stringValue("DescribeApplicationConfigResponse.Data.TomcatConfig"));
+		data.setRegionId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.RegionId"));
+		data.setVSwitchId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.VSwitchId"));
+		data.setCpu(_ctx.integerValue("DescribeApplicationConfigResponse.Data.Cpu"));
+		data.setEnvs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Envs"));
+		data.setEnableAhas(_ctx.stringValue("DescribeApplicationConfigResponse.Data.EnableAhas"));
+		data.setCustomHostAlias(_ctx.stringValue("DescribeApplicationConfigResponse.Data.CustomHostAlias"));
+		data.setWebContainer(_ctx.stringValue("DescribeApplicationConfigResponse.Data.WebContainer"));
+		data.setCommand(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Command"));
+		data.setWarStartOptions(_ctx.stringValue("DescribeApplicationConfigResponse.Data.WarStartOptions"));
+		data.setPhpArmsConfigLocation(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpArmsConfigLocation"));
+		data.setNasId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.NasId"));
+		data.setOssAkId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.OssAkId"));
+		data.setOssAkSecret(_ctx.stringValue("DescribeApplicationConfigResponse.Data.OssAkSecret"));
+		data.setEdasContainerVersion(_ctx.stringValue("DescribeApplicationConfigResponse.Data.EdasContainerVersion"));
+		data.setTimezone(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Timezone"));
+		data.setAppDescription(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AppDescription"));
+		data.setEnableGreyTagRoute(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.EnableGreyTagRoute"));
+		data.setMseApplicationId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.MseApplicationId"));
+		data.setAcrInstanceId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AcrInstanceId"));
+		data.setAcrAssumeRoleArn(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AcrAssumeRoleArn"));
+		data.setAssociateEip(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.AssociateEip"));
+
+		List<ConfigMapMountDescItem> configMapMountDesc = new ArrayList<ConfigMapMountDescItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc.Length"); i++) {
+			ConfigMapMountDescItem configMapMountDescItem = new ConfigMapMountDescItem();
+			configMapMountDescItem.setKey(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].Key"));
+			configMapMountDescItem.setConfigMapName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].ConfigMapName"));
+			configMapMountDescItem.setMountPath(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].MountPath"));
+			configMapMountDescItem.setConfigMapId(_ctx.longValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].ConfigMapId"));
+
+			configMapMountDesc.add(configMapMountDescItem);
+		}
+		data.setConfigMapMountDesc(configMapMountDesc);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		data.setTags(tags);
 
 		List<MountDescItem> mountDesc = new ArrayList<MountDescItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.MountDesc.Length"); i++) {
@@ -90,27 +123,17 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		}
 		data.setMountDesc(mountDesc);
 
-		List<Tag> tags = new ArrayList<Tag>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.Tags.Length"); i++) {
-			Tag tag = new Tag();
-			tag.setValue(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Tags["+ i +"].Value"));
-			tag.setKey(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Tags["+ i +"].Key"));
+		List<OssMountDesc> ossMountDescs = new ArrayList<OssMountDesc>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.OssMountDescs.Length"); i++) {
+			OssMountDesc ossMountDesc = new OssMountDesc();
+			ossMountDesc.setBucketName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.OssMountDescs["+ i +"].bucketName"));
+			ossMountDesc.setBucketPath(_ctx.stringValue("DescribeApplicationConfigResponse.Data.OssMountDescs["+ i +"].bucketPath"));
+			ossMountDesc.setMountPath(_ctx.stringValue("DescribeApplicationConfigResponse.Data.OssMountDescs["+ i +"].mountPath"));
+			ossMountDesc.setReadOnly(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.OssMountDescs["+ i +"].readOnly"));
 
-			tags.add(tag);
+			ossMountDescs.add(ossMountDesc);
 		}
-		data.setTags(tags);
-
-		List<ConfigMapMountDescItem> configMapMountDesc = new ArrayList<ConfigMapMountDescItem>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc.Length"); i++) {
-			ConfigMapMountDescItem configMapMountDescItem = new ConfigMapMountDescItem();
-			configMapMountDescItem.setMountPath(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].MountPath"));
-			configMapMountDescItem.setConfigMapId(_ctx.longValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].ConfigMapId"));
-			configMapMountDescItem.setConfigMapName(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].ConfigMapName"));
-			configMapMountDescItem.setKey(_ctx.stringValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc["+ i +"].Key"));
-
-			configMapMountDesc.add(configMapMountDescItem);
-		}
-		data.setConfigMapMountDesc(configMapMountDesc);
+		data.setOssMountDescs(ossMountDescs);
 		describeApplicationConfigResponse.setData(data);
 	 
 	 	return describeApplicationConfigResponse;

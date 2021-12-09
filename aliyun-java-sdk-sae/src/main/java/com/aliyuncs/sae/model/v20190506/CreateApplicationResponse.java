@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateApplicationResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String traceId;
 
@@ -38,20 +38,20 @@ public class CreateApplicationResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getTraceId() {
@@ -96,17 +96,9 @@ public class CreateApplicationResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appId;
-
 		private String changeOrderId;
 
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
+		private String appId;
 
 		public String getChangeOrderId() {
 			return this.changeOrderId;
@@ -114,6 +106,14 @@ public class CreateApplicationResponse extends AcsResponse {
 
 		public void setChangeOrderId(String changeOrderId) {
 			this.changeOrderId = changeOrderId;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 	}
 

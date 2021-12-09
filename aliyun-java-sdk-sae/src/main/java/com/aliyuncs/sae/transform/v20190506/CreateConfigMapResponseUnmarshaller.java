@@ -24,10 +24,10 @@ public class CreateConfigMapResponseUnmarshaller {
 	public static CreateConfigMapResponse unmarshall(CreateConfigMapResponse createConfigMapResponse, UnmarshallerContext _ctx) {
 		
 		createConfigMapResponse.setRequestId(_ctx.stringValue("CreateConfigMapResponse.RequestId"));
-		createConfigMapResponse.setCode(_ctx.stringValue("CreateConfigMapResponse.Code"));
 		createConfigMapResponse.setMessage(_ctx.stringValue("CreateConfigMapResponse.Message"));
-		createConfigMapResponse.setErrorCode(_ctx.stringValue("CreateConfigMapResponse.ErrorCode"));
 		createConfigMapResponse.setTraceId(_ctx.stringValue("CreateConfigMapResponse.TraceId"));
+		createConfigMapResponse.setErrorCode(_ctx.stringValue("CreateConfigMapResponse.ErrorCode"));
+		createConfigMapResponse.setCode(_ctx.stringValue("CreateConfigMapResponse.Code"));
 		createConfigMapResponse.setSuccess(_ctx.booleanValue("CreateConfigMapResponse.Success"));
 
 		Data data = new Data();

@@ -26,15 +26,15 @@ public class DeleteNamespaceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
+	private String message;
+
+	private String traceId;
 
 	private String errorCode;
 
-	private String message;
+	private String code;
 
 	private Boolean success;
-
-	private String traceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +42,6 @@ public class DeleteNamespaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getMessage() {
@@ -68,20 +52,36 @@ public class DeleteNamespaceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
 
 	public void setTraceId(String traceId) {
 		this.traceId = traceId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -24,10 +24,10 @@ public class RescaleApplicationResponseUnmarshaller {
 	public static RescaleApplicationResponse unmarshall(RescaleApplicationResponse rescaleApplicationResponse, UnmarshallerContext _ctx) {
 		
 		rescaleApplicationResponse.setRequestId(_ctx.stringValue("RescaleApplicationResponse.RequestId"));
-		rescaleApplicationResponse.setCode(_ctx.stringValue("RescaleApplicationResponse.Code"));
 		rescaleApplicationResponse.setMessage(_ctx.stringValue("RescaleApplicationResponse.Message"));
-		rescaleApplicationResponse.setSuccess(_ctx.booleanValue("RescaleApplicationResponse.Success"));
 		rescaleApplicationResponse.setErrorCode(_ctx.stringValue("RescaleApplicationResponse.ErrorCode"));
+		rescaleApplicationResponse.setCode(_ctx.stringValue("RescaleApplicationResponse.Code"));
+		rescaleApplicationResponse.setSuccess(_ctx.booleanValue("RescaleApplicationResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("RescaleApplicationResponse.Data.ChangeOrderId"));

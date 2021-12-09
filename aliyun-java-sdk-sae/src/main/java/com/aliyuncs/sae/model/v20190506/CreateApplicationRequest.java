@@ -27,9 +27,45 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String nasId;
 
-	private String webContainer;
-
 	private String jarStartArgs;
+
+	private String ossAkSecret;
+
+	private String mountHost;
+
+	private Boolean autoConfig;
+
+	private String envs;
+
+	private String phpArmsConfigLocation;
+
+	private String customHostAlias;
+
+	private Boolean deploy;
+
+	private String jarStartOptions;
+
+	private String appName;
+
+	private String namespaceId;
+
+	private String configMapMountDesc;
+
+	private String ossMountDescs;
+
+	private String preStop;
+
+	private Integer cpu;
+
+	private String vSwitchId;
+
+	private String packageType;
+
+	private String postStart;
+
+	private Boolean associateEip;
+
+	private String webContainer;
 
 	private Integer memory;
 
@@ -43,55 +79,31 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String timezone;
 
-	private String mountHost;
-
-	private Boolean autoConfig;
+	private String ossAkId;
 
 	private String liveness;
 
 	private String securityGroupId;
 
-	private String envs;
-
-	private String phpArmsConfigLocation;
-
 	private String packageVersion;
 
 	private String tomcatConfig;
 
-	private String customHostAlias;
-
-	private Boolean deploy;
-
 	private String warStartOptions;
 
-	private String jarStartOptions;
-
 	private String edasContainerVersion;
-
-	private String appName;
-
-	private String namespaceId;
 
 	private String packageUrl;
 
 	private Integer terminationGracePeriodSeconds;
 
-	private String configMapMountDesc;
-
 	private String phpConfig;
 
-	private String preStop;
-
 	private Integer replicas;
-
-	private Integer cpu;
 
 	private String command;
 
 	private String mountDesc;
-
-	private String vSwitchId;
 
 	private String jdk;
 
@@ -101,11 +113,7 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String imageUrl;
 
-	private String packageType;
-
 	private String phpConfigLocation;
-
-	private String postStart;
 	public CreateApplicationRequest() {
 		super("sae", "2019-05-06", "CreateApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/createApplication");
@@ -127,17 +135,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getWebContainer() {
-		return this.webContainer;
-	}
-
-	public void setWebContainer(String webContainer) {
-		this.webContainer = webContainer;
-		if(webContainer != null){
-			putQueryParameter("WebContainer", webContainer);
-		}
-	}
-
 	public String getJarStartArgs() {
 		return this.jarStartArgs;
 	}
@@ -146,6 +143,215 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.jarStartArgs = jarStartArgs;
 		if(jarStartArgs != null){
 			putQueryParameter("JarStartArgs", jarStartArgs);
+		}
+	}
+
+	public String getOssAkSecret() {
+		return this.ossAkSecret;
+	}
+
+	public void setOssAkSecret(String ossAkSecret) {
+		this.ossAkSecret = ossAkSecret;
+		if(ossAkSecret != null){
+			putBodyParameter("OssAkSecret", ossAkSecret);
+		}
+	}
+
+	public String getMountHost() {
+		return this.mountHost;
+	}
+
+	public void setMountHost(String mountHost) {
+		this.mountHost = mountHost;
+		if(mountHost != null){
+			putQueryParameter("MountHost", mountHost);
+		}
+	}
+
+	public Boolean getAutoConfig() {
+		return this.autoConfig;
+	}
+
+	public void setAutoConfig(Boolean autoConfig) {
+		this.autoConfig = autoConfig;
+		if(autoConfig != null){
+			putQueryParameter("AutoConfig", autoConfig.toString());
+		}
+	}
+
+	public String getEnvs() {
+		return this.envs;
+	}
+
+	public void setEnvs(String envs) {
+		this.envs = envs;
+		if(envs != null){
+			putQueryParameter("Envs", envs);
+		}
+	}
+
+	public String getPhpArmsConfigLocation() {
+		return this.phpArmsConfigLocation;
+	}
+
+	public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
+		this.phpArmsConfigLocation = phpArmsConfigLocation;
+		if(phpArmsConfigLocation != null){
+			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
+		}
+	}
+
+	public String getCustomHostAlias() {
+		return this.customHostAlias;
+	}
+
+	public void setCustomHostAlias(String customHostAlias) {
+		this.customHostAlias = customHostAlias;
+		if(customHostAlias != null){
+			putQueryParameter("CustomHostAlias", customHostAlias);
+		}
+	}
+
+	public Boolean getDeploy() {
+		return this.deploy;
+	}
+
+	public void setDeploy(Boolean deploy) {
+		this.deploy = deploy;
+		if(deploy != null){
+			putQueryParameter("Deploy", deploy.toString());
+		}
+	}
+
+	public String getJarStartOptions() {
+		return this.jarStartOptions;
+	}
+
+	public void setJarStartOptions(String jarStartOptions) {
+		this.jarStartOptions = jarStartOptions;
+		if(jarStartOptions != null){
+			putQueryParameter("JarStartOptions", jarStartOptions);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getConfigMapMountDesc() {
+		return this.configMapMountDesc;
+	}
+
+	public void setConfigMapMountDesc(String configMapMountDesc) {
+		this.configMapMountDesc = configMapMountDesc;
+		if(configMapMountDesc != null){
+			putBodyParameter("ConfigMapMountDesc", configMapMountDesc);
+		}
+	}
+
+	public String getOssMountDescs() {
+		return this.ossMountDescs;
+	}
+
+	public void setOssMountDescs(String ossMountDescs) {
+		this.ossMountDescs = ossMountDescs;
+		if(ossMountDescs != null){
+			putBodyParameter("OssMountDescs", ossMountDescs);
+		}
+	}
+
+	public String getPreStop() {
+		return this.preStop;
+	}
+
+	public void setPreStop(String preStop) {
+		this.preStop = preStop;
+		if(preStop != null){
+			putQueryParameter("PreStop", preStop);
+		}
+	}
+
+	public Integer getCpu() {
+		return this.cpu;
+	}
+
+	public void setCpu(Integer cpu) {
+		this.cpu = cpu;
+		if(cpu != null){
+			putQueryParameter("Cpu", cpu.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPackageType() {
+		return this.packageType;
+	}
+
+	public void setPackageType(String packageType) {
+		this.packageType = packageType;
+		if(packageType != null){
+			putQueryParameter("PackageType", packageType);
+		}
+	}
+
+	public String getPostStart() {
+		return this.postStart;
+	}
+
+	public void setPostStart(String postStart) {
+		this.postStart = postStart;
+		if(postStart != null){
+			putQueryParameter("PostStart", postStart);
+		}
+	}
+
+	public Boolean getAssociateEip() {
+		return this.associateEip;
+	}
+
+	public void setAssociateEip(Boolean associateEip) {
+		this.associateEip = associateEip;
+		if(associateEip != null){
+			putBodyParameter("AssociateEip", associateEip.toString());
+		}
+	}
+
+	public String getWebContainer() {
+		return this.webContainer;
+	}
+
+	public void setWebContainer(String webContainer) {
+		this.webContainer = webContainer;
+		if(webContainer != null){
+			putQueryParameter("WebContainer", webContainer);
 		}
 	}
 
@@ -215,25 +421,14 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getMountHost() {
-		return this.mountHost;
+	public String getOssAkId() {
+		return this.ossAkId;
 	}
 
-	public void setMountHost(String mountHost) {
-		this.mountHost = mountHost;
-		if(mountHost != null){
-			putQueryParameter("MountHost", mountHost);
-		}
-	}
-
-	public Boolean getAutoConfig() {
-		return this.autoConfig;
-	}
-
-	public void setAutoConfig(Boolean autoConfig) {
-		this.autoConfig = autoConfig;
-		if(autoConfig != null){
-			putQueryParameter("AutoConfig", autoConfig.toString());
+	public void setOssAkId(String ossAkId) {
+		this.ossAkId = ossAkId;
+		if(ossAkId != null){
+			putBodyParameter("OssAkId", ossAkId);
 		}
 	}
 
@@ -259,28 +454,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getEnvs() {
-		return this.envs;
-	}
-
-	public void setEnvs(String envs) {
-		this.envs = envs;
-		if(envs != null){
-			putQueryParameter("Envs", envs);
-		}
-	}
-
-	public String getPhpArmsConfigLocation() {
-		return this.phpArmsConfigLocation;
-	}
-
-	public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
-		this.phpArmsConfigLocation = phpArmsConfigLocation;
-		if(phpArmsConfigLocation != null){
-			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
-		}
-	}
-
 	public String getPackageVersion() {
 		return this.packageVersion;
 	}
@@ -303,28 +476,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getCustomHostAlias() {
-		return this.customHostAlias;
-	}
-
-	public void setCustomHostAlias(String customHostAlias) {
-		this.customHostAlias = customHostAlias;
-		if(customHostAlias != null){
-			putQueryParameter("CustomHostAlias", customHostAlias);
-		}
-	}
-
-	public Boolean getDeploy() {
-		return this.deploy;
-	}
-
-	public void setDeploy(Boolean deploy) {
-		this.deploy = deploy;
-		if(deploy != null){
-			putQueryParameter("Deploy", deploy.toString());
-		}
-	}
-
 	public String getWarStartOptions() {
 		return this.warStartOptions;
 	}
@@ -336,17 +487,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getJarStartOptions() {
-		return this.jarStartOptions;
-	}
-
-	public void setJarStartOptions(String jarStartOptions) {
-		this.jarStartOptions = jarStartOptions;
-		if(jarStartOptions != null){
-			putQueryParameter("JarStartOptions", jarStartOptions);
-		}
-	}
-
 	public String getEdasContainerVersion() {
 		return this.edasContainerVersion;
 	}
@@ -355,28 +495,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.edasContainerVersion = edasContainerVersion;
 		if(edasContainerVersion != null){
 			putQueryParameter("EdasContainerVersion", edasContainerVersion);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
@@ -402,17 +520,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getConfigMapMountDesc() {
-		return this.configMapMountDesc;
-	}
-
-	public void setConfigMapMountDesc(String configMapMountDesc) {
-		this.configMapMountDesc = configMapMountDesc;
-		if(configMapMountDesc != null){
-			putBodyParameter("ConfigMapMountDesc", configMapMountDesc);
-		}
-	}
-
 	public String getPhpConfig() {
 		return this.phpConfig;
 	}
@@ -424,17 +531,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getPreStop() {
-		return this.preStop;
-	}
-
-	public void setPreStop(String preStop) {
-		this.preStop = preStop;
-		if(preStop != null){
-			putQueryParameter("PreStop", preStop);
-		}
-	}
-
 	public Integer getReplicas() {
 		return this.replicas;
 	}
@@ -443,17 +539,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.replicas = replicas;
 		if(replicas != null){
 			putQueryParameter("Replicas", replicas.toString());
-		}
-	}
-
-	public Integer getCpu() {
-		return this.cpu;
-	}
-
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
 		}
 	}
 
@@ -476,17 +561,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.mountDesc = mountDesc;
 		if(mountDesc != null){
 			putQueryParameter("MountDesc", mountDesc);
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -534,17 +608,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getPackageType() {
-		return this.packageType;
-	}
-
-	public void setPackageType(String packageType) {
-		this.packageType = packageType;
-		if(packageType != null){
-			putQueryParameter("PackageType", packageType);
-		}
-	}
-
 	public String getPhpConfigLocation() {
 		return this.phpConfigLocation;
 	}
@@ -553,17 +616,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.phpConfigLocation = phpConfigLocation;
 		if(phpConfigLocation != null){
 			putQueryParameter("PhpConfigLocation", phpConfigLocation);
-		}
-	}
-
-	public String getPostStart() {
-		return this.postStart;
-	}
-
-	public void setPostStart(String postStart) {
-		this.postStart = postStart;
-		if(postStart != null){
-			putQueryParameter("PostStart", postStart);
 		}
 	}
 

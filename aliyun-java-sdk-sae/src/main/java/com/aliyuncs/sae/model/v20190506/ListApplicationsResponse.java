@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListApplicationsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String errorCode;
 
@@ -35,15 +35,13 @@ public class ListApplicationsResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Integer currentPage;
+
+	private Integer totalSize;
+
+	private Integer pageSize;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -51,6 +49,14 @@ public class ListApplicationsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorCode() {
@@ -77,6 +83,30 @@ public class ListApplicationsResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	public Integer getTotalSize() {
+		return this.totalSize;
+	}
+
+	public void setTotalSize(Integer totalSize) {
+		this.totalSize = totalSize;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -87,21 +117,13 @@ public class ListApplicationsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer currentPage;
 
 		private Integer totalSize;
 
+		private Integer pageSize;
+
 		private List<Application> applications;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -119,6 +141,14 @@ public class ListApplicationsResponse extends AcsResponse {
 			this.totalSize = totalSize;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public List<Application> getApplications() {
 			return this.applications;
 		}
@@ -129,74 +159,34 @@ public class ListApplicationsResponse extends AcsResponse {
 
 		public static class Application {
 
-			private Integer instances;
-
-			private Boolean scaleRuleEnabled;
-
-			private String appDescription;
-
-			private String appId;
-
-			private Integer runningInstances;
-
-			private String regionId;
+			private String appName;
 
 			private String namespaceId;
 
-			private String scaleRuleType;
-
 			private Boolean appDeletingStatus;
 
-			private String appName;
+			private String appId;
+
+			private Boolean scaleRuleEnabled;
+
+			private String scaleRuleType;
+
+			private Integer runningInstances;
+
+			private Integer instances;
+
+			private String regionId;
+
+			private String appDescription;
 
 			private List<TagsItem> tags;
 
-			public Integer getInstances() {
-				return this.instances;
+			public String getAppName() {
+				return this.appName;
 			}
 
-			public void setInstances(Integer instances) {
-				this.instances = instances;
-			}
-
-			public Boolean getScaleRuleEnabled() {
-				return this.scaleRuleEnabled;
-			}
-
-			public void setScaleRuleEnabled(Boolean scaleRuleEnabled) {
-				this.scaleRuleEnabled = scaleRuleEnabled;
-			}
-
-			public String getAppDescription() {
-				return this.appDescription;
-			}
-
-			public void setAppDescription(String appDescription) {
-				this.appDescription = appDescription;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-
-			public Integer getRunningInstances() {
-				return this.runningInstances;
-			}
-
-			public void setRunningInstances(Integer runningInstances) {
-				this.runningInstances = runningInstances;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setAppName(String appName) {
+				this.appName = appName;
 			}
 
 			public String getNamespaceId() {
@@ -207,14 +197,6 @@ public class ListApplicationsResponse extends AcsResponse {
 				this.namespaceId = namespaceId;
 			}
 
-			public String getScaleRuleType() {
-				return this.scaleRuleType;
-			}
-
-			public void setScaleRuleType(String scaleRuleType) {
-				this.scaleRuleType = scaleRuleType;
-			}
-
 			public Boolean getAppDeletingStatus() {
 				return this.appDeletingStatus;
 			}
@@ -223,12 +205,60 @@ public class ListApplicationsResponse extends AcsResponse {
 				this.appDeletingStatus = appDeletingStatus;
 			}
 
-			public String getAppName() {
-				return this.appName;
+			public String getAppId() {
+				return this.appId;
 			}
 
-			public void setAppName(String appName) {
-				this.appName = appName;
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public Boolean getScaleRuleEnabled() {
+				return this.scaleRuleEnabled;
+			}
+
+			public void setScaleRuleEnabled(Boolean scaleRuleEnabled) {
+				this.scaleRuleEnabled = scaleRuleEnabled;
+			}
+
+			public String getScaleRuleType() {
+				return this.scaleRuleType;
+			}
+
+			public void setScaleRuleType(String scaleRuleType) {
+				this.scaleRuleType = scaleRuleType;
+			}
+
+			public Integer getRunningInstances() {
+				return this.runningInstances;
+			}
+
+			public void setRunningInstances(Integer runningInstances) {
+				this.runningInstances = runningInstances;
+			}
+
+			public Integer getInstances() {
+				return this.instances;
+			}
+
+			public void setInstances(Integer instances) {
+				this.instances = instances;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getAppDescription() {
+				return this.appDescription;
+			}
+
+			public void setAppDescription(String appDescription) {
+				this.appDescription = appDescription;
 			}
 
 			public List<TagsItem> getTags() {
@@ -241,17 +271,9 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			public static class TagsItem {
 
-				private String value;
-
 				private String key;
 
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
+				private String value;
 
 				public String getKey() {
 					return this.key;
@@ -259,6 +281,14 @@ public class ListApplicationsResponse extends AcsResponse {
 
 				public void setKey(String key) {
 					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
 				}
 			}
 		}

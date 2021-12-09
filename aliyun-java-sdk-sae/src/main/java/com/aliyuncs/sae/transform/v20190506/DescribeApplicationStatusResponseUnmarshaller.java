@@ -24,22 +24,25 @@ public class DescribeApplicationStatusResponseUnmarshaller {
 	public static DescribeApplicationStatusResponse unmarshall(DescribeApplicationStatusResponse describeApplicationStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeApplicationStatusResponse.setRequestId(_ctx.stringValue("DescribeApplicationStatusResponse.RequestId"));
-		describeApplicationStatusResponse.setCode(_ctx.stringValue("DescribeApplicationStatusResponse.Code"));
 		describeApplicationStatusResponse.setMessage(_ctx.stringValue("DescribeApplicationStatusResponse.Message"));
 		describeApplicationStatusResponse.setTraceId(_ctx.stringValue("DescribeApplicationStatusResponse.TraceId"));
-		describeApplicationStatusResponse.setSuccess(_ctx.booleanValue("DescribeApplicationStatusResponse.Success"));
 		describeApplicationStatusResponse.setErrorCode(_ctx.stringValue("DescribeApplicationStatusResponse.ErrorCode"));
+		describeApplicationStatusResponse.setCode(_ctx.stringValue("DescribeApplicationStatusResponse.Code"));
+		describeApplicationStatusResponse.setSuccess(_ctx.booleanValue("DescribeApplicationStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setAppId(_ctx.stringValue("DescribeApplicationStatusResponse.Data.AppId"));
-		data.setLastChangeOrderId(_ctx.stringValue("DescribeApplicationStatusResponse.Data.LastChangeOrderId"));
-		data.setLastChangeOrderStatus(_ctx.stringValue("DescribeApplicationStatusResponse.Data.LastChangeOrderStatus"));
-		data.setLastChangeOrderRunning(_ctx.booleanValue("DescribeApplicationStatusResponse.Data.LastChangeOrderRunning"));
-		data.setCurrentStatus(_ctx.stringValue("DescribeApplicationStatusResponse.Data.CurrentStatus"));
-		data.setArmsApmInfo(_ctx.stringValue("DescribeApplicationStatusResponse.Data.ArmsApmInfo"));
-		data.setRunningInstances(_ctx.integerValue("DescribeApplicationStatusResponse.Data.RunningInstances"));
 		data.setArmsAdvancedEnabled(_ctx.stringValue("DescribeApplicationStatusResponse.Data.ArmsAdvancedEnabled"));
+		data.setLastChangeOrderId(_ctx.stringValue("DescribeApplicationStatusResponse.Data.LastChangeOrderId"));
+		data.setArmsApmInfo(_ctx.stringValue("DescribeApplicationStatusResponse.Data.ArmsApmInfo"));
 		data.setCreateTime(_ctx.stringValue("DescribeApplicationStatusResponse.Data.CreateTime"));
+		data.setCurrentStatus(_ctx.stringValue("DescribeApplicationStatusResponse.Data.CurrentStatus"));
+		data.setAppId(_ctx.stringValue("DescribeApplicationStatusResponse.Data.AppId"));
+		data.setLastChangeOrderRunning(_ctx.booleanValue("DescribeApplicationStatusResponse.Data.LastChangeOrderRunning"));
+		data.setRunningInstances(_ctx.integerValue("DescribeApplicationStatusResponse.Data.RunningInstances"));
+		data.setLastChangeOrderStatus(_ctx.stringValue("DescribeApplicationStatusResponse.Data.LastChangeOrderStatus"));
+		data.setSubStatus(_ctx.stringValue("DescribeApplicationStatusResponse.Data.SubStatus"));
+		data.setEnableAgent(_ctx.booleanValue("DescribeApplicationStatusResponse.Data.EnableAgent"));
+		data.setFileSizeLimit(_ctx.longValue("DescribeApplicationStatusResponse.Data.FileSizeLimit"));
 		describeApplicationStatusResponse.setData(data);
 	 
 	 	return describeApplicationStatusResponse;

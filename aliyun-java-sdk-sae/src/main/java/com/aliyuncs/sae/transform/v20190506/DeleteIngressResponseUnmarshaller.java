@@ -24,11 +24,11 @@ public class DeleteIngressResponseUnmarshaller {
 	public static DeleteIngressResponse unmarshall(DeleteIngressResponse deleteIngressResponse, UnmarshallerContext _ctx) {
 		
 		deleteIngressResponse.setRequestId(_ctx.stringValue("DeleteIngressResponse.RequestId"));
-		deleteIngressResponse.setCode(_ctx.stringValue("DeleteIngressResponse.Code"));
 		deleteIngressResponse.setMessage(_ctx.stringValue("DeleteIngressResponse.Message"));
-		deleteIngressResponse.setSuccess(_ctx.booleanValue("DeleteIngressResponse.Success"));
-		deleteIngressResponse.setErrorCode(_ctx.stringValue("DeleteIngressResponse.ErrorCode"));
 		deleteIngressResponse.setTraceId(_ctx.stringValue("DeleteIngressResponse.TraceId"));
+		deleteIngressResponse.setErrorCode(_ctx.stringValue("DeleteIngressResponse.ErrorCode"));
+		deleteIngressResponse.setCode(_ctx.stringValue("DeleteIngressResponse.Code"));
+		deleteIngressResponse.setSuccess(_ctx.booleanValue("DeleteIngressResponse.Success"));
 
 		Data data = new Data();
 		data.setIngressId(_ctx.longValue("DeleteIngressResponse.Data.IngressId"));

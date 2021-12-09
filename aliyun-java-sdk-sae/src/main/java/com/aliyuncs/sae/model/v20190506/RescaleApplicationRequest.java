@@ -30,6 +30,8 @@ public class RescaleApplicationRequest extends RoaAcsRequest<RescaleApplicationR
 	private Integer replicas;
 
 	private String appId;
+
+	private Boolean autoEnableApplicationScalingRule;
 	public RescaleApplicationRequest() {
 		super("sae", "2019-05-06", "RescaleApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/rescaleApplication");
@@ -70,6 +72,17 @@ public class RescaleApplicationRequest extends RoaAcsRequest<RescaleApplicationR
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Boolean getAutoEnableApplicationScalingRule() {
+		return this.autoEnableApplicationScalingRule;
+	}
+
+	public void setAutoEnableApplicationScalingRule(Boolean autoEnableApplicationScalingRule) {
+		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
+		if(autoEnableApplicationScalingRule != null){
+			putQueryParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule.toString());
 		}
 	}
 

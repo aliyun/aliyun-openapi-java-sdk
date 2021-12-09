@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePipelineResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String traceId;
 
@@ -39,20 +39,20 @@ public class DescribePipelineResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getTraceId() {
@@ -97,31 +97,23 @@ public class DescribePipelineResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pipelineStatus;
-
 		private Boolean showBatch;
+
+		private Integer pipelineStatus;
 
 		private Integer currentPoint;
 
-		private String pipelineName;
-
-		private String pipelineId;
-
 		private String currentStageId;
 
-		private String coStatus;
+		private String pipelineName;
 
 		private String nextPipelineId;
 
+		private String pipelineId;
+
+		private String coStatus;
+
 		private List<Stage> stageList;
-
-		public Integer getPipelineStatus() {
-			return this.pipelineStatus;
-		}
-
-		public void setPipelineStatus(Integer pipelineStatus) {
-			this.pipelineStatus = pipelineStatus;
-		}
 
 		public Boolean getShowBatch() {
 			return this.showBatch;
@@ -129,6 +121,14 @@ public class DescribePipelineResponse extends AcsResponse {
 
 		public void setShowBatch(Boolean showBatch) {
 			this.showBatch = showBatch;
+		}
+
+		public Integer getPipelineStatus() {
+			return this.pipelineStatus;
+		}
+
+		public void setPipelineStatus(Integer pipelineStatus) {
+			this.pipelineStatus = pipelineStatus;
 		}
 
 		public Integer getCurrentPoint() {
@@ -139,12 +139,28 @@ public class DescribePipelineResponse extends AcsResponse {
 			this.currentPoint = currentPoint;
 		}
 
+		public String getCurrentStageId() {
+			return this.currentStageId;
+		}
+
+		public void setCurrentStageId(String currentStageId) {
+			this.currentStageId = currentStageId;
+		}
+
 		public String getPipelineName() {
 			return this.pipelineName;
 		}
 
 		public void setPipelineName(String pipelineName) {
 			this.pipelineName = pipelineName;
+		}
+
+		public String getNextPipelineId() {
+			return this.nextPipelineId;
+		}
+
+		public void setNextPipelineId(String nextPipelineId) {
+			this.nextPipelineId = nextPipelineId;
 		}
 
 		public String getPipelineId() {
@@ -155,28 +171,12 @@ public class DescribePipelineResponse extends AcsResponse {
 			this.pipelineId = pipelineId;
 		}
 
-		public String getCurrentStageId() {
-			return this.currentStageId;
-		}
-
-		public void setCurrentStageId(String currentStageId) {
-			this.currentStageId = currentStageId;
-		}
-
 		public String getCoStatus() {
 			return this.coStatus;
 		}
 
 		public void setCoStatus(String coStatus) {
 			this.coStatus = coStatus;
-		}
-
-		public String getNextPipelineId() {
-			return this.nextPipelineId;
-		}
-
-		public void setNextPipelineId(String nextPipelineId) {
-			this.nextPipelineId = nextPipelineId;
 		}
 
 		public List<Stage> getStageList() {
@@ -191,11 +191,11 @@ public class DescribePipelineResponse extends AcsResponse {
 
 			private Integer status;
 
-			private String stageName;
+			private String stageId;
 
 			private Integer executorType;
 
-			private String stageId;
+			private String stageName;
 
 			private List<Task> taskList;
 
@@ -207,12 +207,12 @@ public class DescribePipelineResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getStageName() {
-				return this.stageName;
+			public String getStageId() {
+				return this.stageId;
 			}
 
-			public void setStageName(String stageName) {
-				this.stageName = stageName;
+			public void setStageId(String stageId) {
+				this.stageId = stageId;
 			}
 
 			public Integer getExecutorType() {
@@ -223,12 +223,12 @@ public class DescribePipelineResponse extends AcsResponse {
 				this.executorType = executorType;
 			}
 
-			public String getStageId() {
-				return this.stageId;
+			public String getStageName() {
+				return this.stageName;
 			}
 
-			public void setStageId(String stageId) {
-				this.stageId = stageId;
+			public void setStageName(String stageName) {
+				this.stageName = stageName;
 			}
 
 			public List<Task> getTaskList() {
@@ -243,21 +243,21 @@ public class DescribePipelineResponse extends AcsResponse {
 
 				private Integer status;
 
-				private Integer errorIgnore;
+				private String stageId;
 
-				private String taskId;
+				private String errorMessage;
+
+				private String errorCode;
+
+				private String taskName;
+
+				private Integer errorIgnore;
 
 				private String message;
 
 				private Boolean showManualIgnore;
 
-				private String taskName;
-
-				private String stageId;
-
-				private String errorCode;
-
-				private String errorMessage;
+				private String taskId;
 
 				public Integer getStatus() {
 					return this.status;
@@ -267,20 +267,44 @@ public class DescribePipelineResponse extends AcsResponse {
 					this.status = status;
 				}
 
+				public String getStageId() {
+					return this.stageId;
+				}
+
+				public void setStageId(String stageId) {
+					this.stageId = stageId;
+				}
+
+				public String getErrorMessage() {
+					return this.errorMessage;
+				}
+
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
+				}
+
+				public String getErrorCode() {
+					return this.errorCode;
+				}
+
+				public void setErrorCode(String errorCode) {
+					this.errorCode = errorCode;
+				}
+
+				public String getTaskName() {
+					return this.taskName;
+				}
+
+				public void setTaskName(String taskName) {
+					this.taskName = taskName;
+				}
+
 				public Integer getErrorIgnore() {
 					return this.errorIgnore;
 				}
 
 				public void setErrorIgnore(Integer errorIgnore) {
 					this.errorIgnore = errorIgnore;
-				}
-
-				public String getTaskId() {
-					return this.taskId;
-				}
-
-				public void setTaskId(String taskId) {
-					this.taskId = taskId;
 				}
 
 				public String getMessage() {
@@ -299,36 +323,12 @@ public class DescribePipelineResponse extends AcsResponse {
 					this.showManualIgnore = showManualIgnore;
 				}
 
-				public String getTaskName() {
-					return this.taskName;
+				public String getTaskId() {
+					return this.taskId;
 				}
 
-				public void setTaskName(String taskName) {
-					this.taskName = taskName;
-				}
-
-				public String getStageId() {
-					return this.stageId;
-				}
-
-				public void setStageId(String stageId) {
-					this.stageId = stageId;
-				}
-
-				public String getErrorCode() {
-					return this.errorCode;
-				}
-
-				public void setErrorCode(String errorCode) {
-					this.errorCode = errorCode;
-				}
-
-				public String getErrorMessage() {
-					return this.errorMessage;
-				}
-
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
+				public void setTaskId(String taskId) {
+					this.taskId = taskId;
 				}
 			}
 		}

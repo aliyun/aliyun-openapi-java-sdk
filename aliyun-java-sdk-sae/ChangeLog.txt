@@ -1,3 +1,6 @@
+2021-12-09 Version: 1.18.0
+- Support ACR EE, OSS, EIP for deploy.
+
 2021-03-25 Version: 1.15.0
 - Release autoscaling apis for timer features.
 

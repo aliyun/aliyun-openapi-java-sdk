@@ -36,35 +36,35 @@ public class DescribePipelineResponseUnmarshaller {
 		describePipelineResponse.setSuccess(_ctx.booleanValue("DescribePipelineResponse.Success"));
 
 		Data data = new Data();
-		data.setPipelineStatus(_ctx.integerValue("DescribePipelineResponse.Data.PipelineStatus"));
 		data.setShowBatch(_ctx.booleanValue("DescribePipelineResponse.Data.ShowBatch"));
+		data.setPipelineStatus(_ctx.integerValue("DescribePipelineResponse.Data.PipelineStatus"));
 		data.setCurrentPoint(_ctx.integerValue("DescribePipelineResponse.Data.CurrentPoint"));
-		data.setPipelineName(_ctx.stringValue("DescribePipelineResponse.Data.PipelineName"));
-		data.setPipelineId(_ctx.stringValue("DescribePipelineResponse.Data.PipelineId"));
 		data.setCurrentStageId(_ctx.stringValue("DescribePipelineResponse.Data.CurrentStageId"));
-		data.setCoStatus(_ctx.stringValue("DescribePipelineResponse.Data.CoStatus"));
+		data.setPipelineName(_ctx.stringValue("DescribePipelineResponse.Data.PipelineName"));
 		data.setNextPipelineId(_ctx.stringValue("DescribePipelineResponse.Data.NextPipelineId"));
+		data.setPipelineId(_ctx.stringValue("DescribePipelineResponse.Data.PipelineId"));
+		data.setCoStatus(_ctx.stringValue("DescribePipelineResponse.Data.CoStatus"));
 
 		List<Stage> stageList = new ArrayList<Stage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePipelineResponse.Data.StageList.Length"); i++) {
 			Stage stage = new Stage();
 			stage.setStatus(_ctx.integerValue("DescribePipelineResponse.Data.StageList["+ i +"].Status"));
-			stage.setStageName(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].StageName"));
-			stage.setExecutorType(_ctx.integerValue("DescribePipelineResponse.Data.StageList["+ i +"].ExecutorType"));
 			stage.setStageId(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].StageId"));
+			stage.setExecutorType(_ctx.integerValue("DescribePipelineResponse.Data.StageList["+ i +"].ExecutorType"));
+			stage.setStageName(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].StageName"));
 
 			List<Task> taskList = new ArrayList<Task>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList.Length"); j++) {
 				Task task = new Task();
 				task.setStatus(_ctx.integerValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].Status"));
+				task.setStageId(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].StageId"));
+				task.setErrorMessage(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].ErrorMessage"));
+				task.setErrorCode(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].ErrorCode"));
+				task.setTaskName(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].TaskName"));
 				task.setErrorIgnore(_ctx.integerValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].ErrorIgnore"));
-				task.setTaskId(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].TaskId"));
 				task.setMessage(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].Message"));
 				task.setShowManualIgnore(_ctx.booleanValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].ShowManualIgnore"));
-				task.setTaskName(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].TaskName"));
-				task.setStageId(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].StageId"));
-				task.setErrorCode(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].ErrorCode"));
-				task.setErrorMessage(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].ErrorMessage"));
+				task.setTaskId(_ctx.stringValue("DescribePipelineResponse.Data.StageList["+ i +"].TaskList["+ j +"].TaskId"));
 
 				taskList.add(task);
 			}

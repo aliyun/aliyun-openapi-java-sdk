@@ -32,6 +32,8 @@ public class DescribeApplicationInstancesRequest extends RoaAcsRequest<DescribeA
 	private Integer pageSize;
 
 	private Integer currentPage;
+
+	private Boolean reverse;
 	public DescribeApplicationInstancesRequest() {
 		super("sae", "2019-05-06", "DescribeApplicationInstances", "serverless");
 		setUriPattern("/pop/v1/sam/app/describeApplicationInstances");
@@ -83,6 +85,17 @@ public class DescribeApplicationInstancesRequest extends RoaAcsRequest<DescribeA
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Boolean getReverse() {
+		return this.reverse;
+	}
+
+	public void setReverse(Boolean reverse) {
+		this.reverse = reverse;
+		if(reverse != null){
+			putQueryParameter("Reverse", reverse.toString());
 		}
 	}
 

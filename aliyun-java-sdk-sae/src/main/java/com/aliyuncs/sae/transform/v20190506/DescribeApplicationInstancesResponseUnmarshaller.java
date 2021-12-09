@@ -35,23 +35,24 @@ public class DescribeApplicationInstancesResponseUnmarshaller {
 		describeApplicationInstancesResponse.setSuccess(_ctx.booleanValue("DescribeApplicationInstancesResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("DescribeApplicationInstancesResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("DescribeApplicationInstancesResponse.Data.CurrentPage"));
 		data.setTotalSize(_ctx.integerValue("DescribeApplicationInstancesResponse.Data.TotalSize"));
+		data.setPageSize(_ctx.integerValue("DescribeApplicationInstancesResponse.Data.PageSize"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationInstancesResponse.Data.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceContainerIp(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceContainerIp"));
-			instance.setInstanceHealthStatus(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceHealthStatus"));
-			instance.setInstanceId(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceId"));
-			instance.setVSwitchId(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].VSwitchId"));
-			instance.setImageUrl(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].ImageUrl"));
-			instance.setInstanceContainerRestarts(_ctx.longValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceContainerRestarts"));
-			instance.setPackageVersion(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].PackageVersion"));
-			instance.setInstanceContainerStatus(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceContainerStatus"));
 			instance.setCreateTimeStamp(_ctx.longValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].CreateTimeStamp"));
+			instance.setVSwitchId(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].VSwitchId"));
+			instance.setInstanceContainerStatus(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceContainerStatus"));
+			instance.setInstanceHealthStatus(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceHealthStatus"));
+			instance.setInstanceContainerRestarts(_ctx.longValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceContainerRestarts"));
 			instance.setGroupId(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].GroupId"));
+			instance.setInstanceContainerIp(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceContainerIp"));
+			instance.setInstanceId(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].InstanceId"));
+			instance.setImageUrl(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].ImageUrl"));
+			instance.setPackageVersion(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].PackageVersion"));
+			instance.setEip(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].Eip"));
 
 			instances.add(instance);
 		}

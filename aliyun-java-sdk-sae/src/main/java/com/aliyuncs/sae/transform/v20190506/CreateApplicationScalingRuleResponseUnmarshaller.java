@@ -34,24 +34,24 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 		createApplicationScalingRuleResponse.setTraceId(_ctx.stringValue("CreateApplicationScalingRuleResponse.TraceId"));
 
 		Data data = new Data();
-		data.setScaleRuleEnabled(_ctx.booleanValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleEnabled"));
-		data.setLastDisableTime(_ctx.longValue("CreateApplicationScalingRuleResponse.Data.LastDisableTime"));
+		data.setUpdateTime(_ctx.longValue("CreateApplicationScalingRuleResponse.Data.UpdateTime"));
 		data.setAppId(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.AppId"));
 		data.setCreateTime(_ctx.longValue("CreateApplicationScalingRuleResponse.Data.CreateTime"));
-		data.setUpdateTime(_ctx.longValue("CreateApplicationScalingRuleResponse.Data.UpdateTime"));
-		data.setScaleRuleName(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleName"));
+		data.setLastDisableTime(_ctx.longValue("CreateApplicationScalingRuleResponse.Data.LastDisableTime"));
+		data.setScaleRuleEnabled(_ctx.booleanValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleEnabled"));
 		data.setScaleRuleType(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleType"));
+		data.setScaleRuleName(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.ScaleRuleName"));
 
 		Timer timer = new Timer();
-		timer.setPeriod(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.Period"));
 		timer.setEndDate(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.EndDate"));
 		timer.setBeginDate(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.BeginDate"));
+		timer.setPeriod(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.Period"));
 
 		List<Schedule> schedules = new ArrayList<Schedule>();
 		for (int i = 0; i < _ctx.lengthValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules.Length"); i++) {
 			Schedule schedule = new Schedule();
-			schedule.setTargetReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].TargetReplicas"));
 			schedule.setAtTime(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].AtTime"));
+			schedule.setTargetReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Timer.Schedules["+ i +"].TargetReplicas"));
 
 			schedules.add(schedule);
 		}
@@ -59,14 +59,14 @@ public class CreateApplicationScalingRuleResponseUnmarshaller {
 		data.setTimer(timer);
 
 		Metric metric = new Metric();
-		metric.setMinReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Metric.MinReplicas"));
 		metric.setMaxReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Metric.MaxReplicas"));
+		metric.setMinReplicas(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Metric.MinReplicas"));
 
 		List<Metric1> metrics = new ArrayList<Metric1>();
 		for (int i = 0; i < _ctx.lengthValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics.Length"); i++) {
 			Metric1 metric1 = new Metric1();
-			metric1.setMetricType(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricType"));
 			metric1.setMetricTargetAverageUtilization(_ctx.integerValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricTargetAverageUtilization"));
+			metric1.setMetricType(_ctx.stringValue("CreateApplicationScalingRuleResponse.Data.Metric.Metrics["+ i +"].MetricType"));
 
 			metrics.add(metric1);
 		}

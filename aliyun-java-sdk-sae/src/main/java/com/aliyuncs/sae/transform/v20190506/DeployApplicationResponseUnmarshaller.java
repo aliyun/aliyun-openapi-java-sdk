@@ -31,8 +31,9 @@ public class DeployApplicationResponseUnmarshaller {
 		deployApplicationResponse.setSuccess(_ctx.booleanValue("DeployApplicationResponse.Success"));
 
 		Data data = new Data();
-		data.setAppId(_ctx.stringValue("DeployApplicationResponse.Data.AppId"));
 		data.setChangeOrderId(_ctx.stringValue("DeployApplicationResponse.Data.ChangeOrderId"));
+		data.setAppId(_ctx.stringValue("DeployApplicationResponse.Data.AppId"));
+		data.setIsNeedApproval(_ctx.booleanValue("DeployApplicationResponse.Data.IsNeedApproval"));
 		deployApplicationResponse.setData(data);
 	 
 	 	return deployApplicationResponse;

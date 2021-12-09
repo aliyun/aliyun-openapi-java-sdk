@@ -36,20 +36,22 @@ public class DescribeChangeOrderResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.integerValue("DescribeChangeOrderResponse.Data.Status"));
-		data.setDescription(_ctx.stringValue("DescribeChangeOrderResponse.Data.Description"));
-		data.setSupportAbortFreeze(_ctx.booleanValue("DescribeChangeOrderResponse.Data.SupportAbortFreeze"));
+		data.setSubStatus(_ctx.integerValue("DescribeChangeOrderResponse.Data.SubStatus"));
+		data.setApprovalId(_ctx.stringValue("DescribeChangeOrderResponse.Data.ApprovalId"));
+		data.setErrorMessage(_ctx.stringValue("DescribeChangeOrderResponse.Data.ErrorMessage"));
+		data.setBatchWaitTime(_ctx.integerValue("DescribeChangeOrderResponse.Data.BatchWaitTime"));
 		data.setCreateTime(_ctx.stringValue("DescribeChangeOrderResponse.Data.CreateTime"));
+		data.setBatchCount(_ctx.integerValue("DescribeChangeOrderResponse.Data.BatchCount"));
+		data.setCoTypeCode(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoTypeCode"));
+		data.setSupportAbortFreeze(_ctx.booleanValue("DescribeChangeOrderResponse.Data.SupportAbortFreeze"));
+		data.setSupportRollback(_ctx.booleanValue("DescribeChangeOrderResponse.Data.SupportRollback"));
 		data.setChangeOrderId(_ctx.stringValue("DescribeChangeOrderResponse.Data.ChangeOrderId"));
-		data.setBatchType(_ctx.stringValue("DescribeChangeOrderResponse.Data.BatchType"));
 		data.setAppName(_ctx.stringValue("DescribeChangeOrderResponse.Data.AppName"));
+		data.setBatchType(_ctx.stringValue("DescribeChangeOrderResponse.Data.BatchType"));
+		data.setDescription(_ctx.stringValue("DescribeChangeOrderResponse.Data.Description"));
+		data.setCoType(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoType"));
 		data.setAuto(_ctx.booleanValue("DescribeChangeOrderResponse.Data.Auto"));
 		data.setCurrentPipelineId(_ctx.stringValue("DescribeChangeOrderResponse.Data.CurrentPipelineId"));
-		data.setCoTypeCode(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoTypeCode"));
-		data.setSupportRollback(_ctx.booleanValue("DescribeChangeOrderResponse.Data.SupportRollback"));
-		data.setBatchWaitTime(_ctx.integerValue("DescribeChangeOrderResponse.Data.BatchWaitTime"));
-		data.setErrorMessage(_ctx.stringValue("DescribeChangeOrderResponse.Data.ErrorMessage"));
-		data.setCoType(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoType"));
-		data.setBatchCount(_ctx.integerValue("DescribeChangeOrderResponse.Data.BatchCount"));
 
 		List<String> coTargets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeChangeOrderResponse.Data.CoTargets.Length"); i++) {
@@ -61,12 +63,12 @@ public class DescribeChangeOrderResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeChangeOrderResponse.Data.Pipelines.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
 			pipeline.setStatus(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].Status"));
-			pipeline.setPipelineName(_ctx.stringValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].PipelineName"));
-			pipeline.setParallelCount(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].ParallelCount"));
-			pipeline.setUpdateTime(_ctx.longValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].UpdateTime"));
 			pipeline.setStartTime(_ctx.longValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].StartTime"));
-			pipeline.setPipelineId(_ctx.stringValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].PipelineId"));
+			pipeline.setUpdateTime(_ctx.longValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].UpdateTime"));
 			pipeline.setBatchType(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].BatchType"));
+			pipeline.setParallelCount(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].ParallelCount"));
+			pipeline.setPipelineName(_ctx.stringValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].PipelineName"));
+			pipeline.setPipelineId(_ctx.stringValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].PipelineId"));
 
 			pipelines.add(pipeline);
 		}

@@ -35,6 +35,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String slsConfigs;
 
+	private String ossAkSecret;
+
 	private String commandArgs;
 
 	private String acrAssumeRoleArn;
@@ -46,6 +48,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	private String mountHost;
 
 	private Integer batchWaitTime;
+
+	private String ossAkId;
 
 	private String liveness;
 
@@ -71,9 +75,13 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String configMapMountDesc;
 
+	private String ossMountDescs;
+
 	private String phpConfig;
 
 	private String preStop;
+
+	private Boolean enableGreyTagRoute;
 
 	private String command;
 
@@ -87,6 +95,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String changeOrderDesc;
 
+	private String acrInstanceId;
+
 	private String appId;
 
 	private String imageUrl;
@@ -96,6 +106,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	private String phpConfigLocation;
 
 	private String postStart;
+
+	private Boolean associateEip;
 	public DeployApplicationRequest() {
 		super("sae", "2019-05-06", "DeployApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/deployApplication");
@@ -158,6 +170,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.slsConfigs = slsConfigs;
 		if(slsConfigs != null){
 			putQueryParameter("SlsConfigs", slsConfigs);
+		}
+	}
+
+	public String getOssAkSecret() {
+		return this.ossAkSecret;
+	}
+
+	public void setOssAkSecret(String ossAkSecret) {
+		this.ossAkSecret = ossAkSecret;
+		if(ossAkSecret != null){
+			putBodyParameter("OssAkSecret", ossAkSecret);
 		}
 	}
 
@@ -224,6 +247,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.batchWaitTime = batchWaitTime;
 		if(batchWaitTime != null){
 			putQueryParameter("BatchWaitTime", batchWaitTime.toString());
+		}
+	}
+
+	public String getOssAkId() {
+		return this.ossAkId;
+	}
+
+	public void setOssAkId(String ossAkId) {
+		this.ossAkId = ossAkId;
+		if(ossAkId != null){
+			putBodyParameter("OssAkId", ossAkId);
 		}
 	}
 
@@ -359,6 +393,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getOssMountDescs() {
+		return this.ossMountDescs;
+	}
+
+	public void setOssMountDescs(String ossMountDescs) {
+		this.ossMountDescs = ossMountDescs;
+		if(ossMountDescs != null){
+			putBodyParameter("OssMountDescs", ossMountDescs);
+		}
+	}
+
 	public String getPhpConfig() {
 		return this.phpConfig;
 	}
@@ -378,6 +423,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.preStop = preStop;
 		if(preStop != null){
 			putQueryParameter("PreStop", preStop);
+		}
+	}
+
+	public Boolean getEnableGreyTagRoute() {
+		return this.enableGreyTagRoute;
+	}
+
+	public void setEnableGreyTagRoute(Boolean enableGreyTagRoute) {
+		this.enableGreyTagRoute = enableGreyTagRoute;
+		if(enableGreyTagRoute != null){
+			putQueryParameter("EnableGreyTagRoute", enableGreyTagRoute.toString());
 		}
 	}
 
@@ -447,6 +503,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getAcrInstanceId() {
+		return this.acrInstanceId;
+	}
+
+	public void setAcrInstanceId(String acrInstanceId) {
+		this.acrInstanceId = acrInstanceId;
+		if(acrInstanceId != null){
+			putBodyParameter("AcrInstanceId", acrInstanceId);
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -499,6 +566,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.postStart = postStart;
 		if(postStart != null){
 			putQueryParameter("PostStart", postStart);
+		}
+	}
+
+	public Boolean getAssociateEip() {
+		return this.associateEip;
+	}
+
+	public void setAssociateEip(Boolean associateEip) {
+		this.associateEip = associateEip;
+		if(associateEip != null){
+			putBodyParameter("AssociateEip", associateEip.toString());
 		}
 	}
 

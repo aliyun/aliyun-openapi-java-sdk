@@ -58,7 +58,7 @@ public class UpdateConfigMapRequest extends RoaAcsRequest<UpdateConfigMapRespons
 	public void setDescription(String description) {
 		this.description = description;
 		if(description != null){
-			putBodyParameter("Description", description);
+			putQueryParameter("Description", description);
 		}
 	}
 

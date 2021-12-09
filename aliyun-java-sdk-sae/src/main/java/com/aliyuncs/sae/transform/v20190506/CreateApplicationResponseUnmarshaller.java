@@ -31,8 +31,8 @@ public class CreateApplicationResponseUnmarshaller {
 		createApplicationResponse.setSuccess(_ctx.booleanValue("CreateApplicationResponse.Success"));
 
 		Data data = new Data();
-		data.setAppId(_ctx.stringValue("CreateApplicationResponse.Data.AppId"));
 		data.setChangeOrderId(_ctx.stringValue("CreateApplicationResponse.Data.ChangeOrderId"));
+		data.setAppId(_ctx.stringValue("CreateApplicationResponse.Data.AppId"));
 		createApplicationResponse.setData(data);
 	 
 	 	return createApplicationResponse;

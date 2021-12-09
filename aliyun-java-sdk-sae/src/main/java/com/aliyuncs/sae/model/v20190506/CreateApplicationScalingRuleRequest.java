@@ -27,6 +27,8 @@ public class CreateApplicationScalingRuleRequest extends RoaAcsRequest<CreateApp
 
 	private String scalingRuleName;
 
+	private Boolean scalingRuleEnable;
+
 	private String scalingRuleTimer;
 
 	private String appId;
@@ -50,6 +52,17 @@ public class CreateApplicationScalingRuleRequest extends RoaAcsRequest<CreateApp
 		this.scalingRuleName = scalingRuleName;
 		if(scalingRuleName != null){
 			putQueryParameter("ScalingRuleName", scalingRuleName);
+		}
+	}
+
+	public Boolean getScalingRuleEnable() {
+		return this.scalingRuleEnable;
+	}
+
+	public void setScalingRuleEnable(Boolean scalingRuleEnable) {
+		this.scalingRuleEnable = scalingRuleEnable;
+		if(scalingRuleEnable != null){
+			putQueryParameter("ScalingRuleEnable", scalingRuleEnable.toString());
 		}
 	}
 

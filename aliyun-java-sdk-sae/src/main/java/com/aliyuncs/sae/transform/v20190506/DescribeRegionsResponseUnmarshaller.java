@@ -27,15 +27,21 @@ public class DescribeRegionsResponseUnmarshaller {
 	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
 		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
-		describeRegionsResponse.setCode(_ctx.integerValue("DescribeRegionsResponse.Code"));
 		describeRegionsResponse.setMessage(_ctx.stringValue("DescribeRegionsResponse.Message"));
+		describeRegionsResponse.setCode(_ctx.integerValue("DescribeRegionsResponse.Code"));
 
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
-			region.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
 			region.setLocalName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
+			region.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
+			region.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
+
+			List<String> recommendZones = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeRegionsResponse.Regions["+ i +"].RecommendZones.Length"); j++) {
+				recommendZones.add(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RecommendZones["+ j +"]"));
+			}
+			region.setRecommendZones(recommendZones);
 
 			regions.add(region);
 		}

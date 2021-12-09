@@ -57,38 +57,30 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean scaleRuleEnabled;
-
-		private Long lastDisableTime;
+		private Long updateTime;
 
 		private String appId;
 
 		private Long createTime;
 
-		private Long updateTime;
+		private Long lastDisableTime;
 
-		private String scaleRuleName;
+		private Boolean scaleRuleEnabled;
 
 		private String scaleRuleType;
+
+		private String scaleRuleName;
 
 		private Timer timer;
 
 		private Metric metric;
 
-		public Boolean getScaleRuleEnabled() {
-			return this.scaleRuleEnabled;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setScaleRuleEnabled(Boolean scaleRuleEnabled) {
-			this.scaleRuleEnabled = scaleRuleEnabled;
-		}
-
-		public Long getLastDisableTime() {
-			return this.lastDisableTime;
-		}
-
-		public void setLastDisableTime(Long lastDisableTime) {
-			this.lastDisableTime = lastDisableTime;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getAppId() {
@@ -107,20 +99,20 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public Long getLastDisableTime() {
+			return this.lastDisableTime;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setLastDisableTime(Long lastDisableTime) {
+			this.lastDisableTime = lastDisableTime;
 		}
 
-		public String getScaleRuleName() {
-			return this.scaleRuleName;
+		public Boolean getScaleRuleEnabled() {
+			return this.scaleRuleEnabled;
 		}
 
-		public void setScaleRuleName(String scaleRuleName) {
-			this.scaleRuleName = scaleRuleName;
+		public void setScaleRuleEnabled(Boolean scaleRuleEnabled) {
+			this.scaleRuleEnabled = scaleRuleEnabled;
 		}
 
 		public String getScaleRuleType() {
@@ -129,6 +121,14 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 		public void setScaleRuleType(String scaleRuleType) {
 			this.scaleRuleType = scaleRuleType;
+		}
+
+		public String getScaleRuleName() {
+			return this.scaleRuleName;
+		}
+
+		public void setScaleRuleName(String scaleRuleName) {
+			this.scaleRuleName = scaleRuleName;
 		}
 
 		public Timer getTimer() {
@@ -149,21 +149,13 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 		public static class Timer {
 
-			private String period;
-
 			private String endDate;
 
 			private String beginDate;
 
+			private String period;
+
 			private List<Schedule> schedules;
-
-			public String getPeriod() {
-				return this.period;
-			}
-
-			public void setPeriod(String period) {
-				this.period = period;
-			}
 
 			public String getEndDate() {
 				return this.endDate;
@@ -181,6 +173,14 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 				this.beginDate = beginDate;
 			}
 
+			public String getPeriod() {
+				return this.period;
+			}
+
+			public void setPeriod(String period) {
+				this.period = period;
+			}
+
 			public List<Schedule> getSchedules() {
 				return this.schedules;
 			}
@@ -191,17 +191,9 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 			public static class Schedule {
 
-				private Integer targetReplicas;
-
 				private String atTime;
 
-				public Integer getTargetReplicas() {
-					return this.targetReplicas;
-				}
-
-				public void setTargetReplicas(Integer targetReplicas) {
-					this.targetReplicas = targetReplicas;
-				}
+				private Integer targetReplicas;
 
 				public String getAtTime() {
 					return this.atTime;
@@ -210,24 +202,24 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 				public void setAtTime(String atTime) {
 					this.atTime = atTime;
 				}
+
+				public Integer getTargetReplicas() {
+					return this.targetReplicas;
+				}
+
+				public void setTargetReplicas(Integer targetReplicas) {
+					this.targetReplicas = targetReplicas;
+				}
 			}
 		}
 
 		public static class Metric {
 
-			private Integer minReplicas;
-
 			private Integer maxReplicas;
 
+			private Integer minReplicas;
+
 			private List<Metric1> metrics;
-
-			public Integer getMinReplicas() {
-				return this.minReplicas;
-			}
-
-			public void setMinReplicas(Integer minReplicas) {
-				this.minReplicas = minReplicas;
-			}
 
 			public Integer getMaxReplicas() {
 				return this.maxReplicas;
@@ -235,6 +227,14 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 			public void setMaxReplicas(Integer maxReplicas) {
 				this.maxReplicas = maxReplicas;
+			}
+
+			public Integer getMinReplicas() {
+				return this.minReplicas;
+			}
+
+			public void setMinReplicas(Integer minReplicas) {
+				this.minReplicas = minReplicas;
 			}
 
 			public List<Metric1> getMetrics() {
@@ -247,17 +247,9 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 			public static class Metric1 {
 
-				private String metricType;
-
 				private Integer metricTargetAverageUtilization;
 
-				public String getMetricType() {
-					return this.metricType;
-				}
-
-				public void setMetricType(String metricType) {
-					this.metricType = metricType;
-				}
+				private String metricType;
 
 				public Integer getMetricTargetAverageUtilization() {
 					return this.metricTargetAverageUtilization;
@@ -265,6 +257,14 @@ public class CreateApplicationScalingRuleResponse extends AcsResponse {
 
 				public void setMetricTargetAverageUtilization(Integer metricTargetAverageUtilization) {
 					this.metricTargetAverageUtilization = metricTargetAverageUtilization;
+				}
+
+				public String getMetricType() {
+					return this.metricType;
+				}
+
+				public void setMetricType(String metricType) {
+					this.metricType = metricType;
 				}
 			}
 		}
