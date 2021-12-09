@@ -30,6 +30,8 @@ public class ListGatewayTransferPacketsRequest extends RpcAcsRequest<ListGateway
 
 	private Integer pageNumber;
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private String gwEui;
@@ -72,6 +74,17 @@ public class ListGatewayTransferPacketsRequest extends RpcAcsRequest<ListGateway
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

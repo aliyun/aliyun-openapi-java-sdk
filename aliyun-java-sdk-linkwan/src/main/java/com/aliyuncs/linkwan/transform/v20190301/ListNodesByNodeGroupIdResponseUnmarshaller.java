@@ -43,6 +43,9 @@ public class ListNodesByNodeGroupIdResponseUnmarshaller {
 			node.setBoundMillis(_ctx.longValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].BoundMillis"));
 			node.setMulticastGroupId(_ctx.stringValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].MulticastGroupId"));
 			node.setAuthTypes(_ctx.stringValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].AuthTypes"));
+			node.setJoinEui(_ctx.stringValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].JoinEui"));
+			node.setAppkey(_ctx.stringValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].Appkey"));
+			node.setNodeType(_ctx.stringValue("ListNodesByNodeGroupIdResponse.Data.List["+ i +"].NodeType"));
 
 			list.add(node);
 		}

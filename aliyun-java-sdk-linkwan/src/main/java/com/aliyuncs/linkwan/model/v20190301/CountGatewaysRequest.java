@@ -28,6 +28,8 @@ public class CountGatewaysRequest extends RpcAcsRequest<CountGatewaysResponse> {
 
 	private String fuzzyGwEui;
 
+	private String iotInstanceId;
+
 	private String fuzzyCity;
 
 	private String onlineState;
@@ -55,6 +57,17 @@ public class CountGatewaysRequest extends RpcAcsRequest<CountGatewaysResponse> {
 		this.fuzzyGwEui = fuzzyGwEui;
 		if(fuzzyGwEui != null){
 			putQueryParameter("FuzzyGwEui", fuzzyGwEui);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

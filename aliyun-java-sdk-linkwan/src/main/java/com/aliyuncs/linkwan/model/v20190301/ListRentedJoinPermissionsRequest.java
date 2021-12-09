@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -29,6 +28,8 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 	private String type;
 
 	private Boolean enabled;
+
+	private String iotInstanceId;
 
 	private String fuzzyJoinEui;
 
@@ -47,7 +48,6 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 	private String sortingField;
 	public ListRentedJoinPermissionsRequest() {
 		super("LinkWAN", "2019-03-01", "ListRentedJoinPermissions", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +74,17 @@ public class ListRentedJoinPermissionsRequest extends RpcAcsRequest<ListRentedJo
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

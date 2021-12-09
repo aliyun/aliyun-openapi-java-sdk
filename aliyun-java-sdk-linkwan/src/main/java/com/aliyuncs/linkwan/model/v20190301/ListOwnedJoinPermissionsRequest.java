@@ -28,6 +28,8 @@ public class ListOwnedJoinPermissionsRequest extends RpcAcsRequest<ListOwnedJoin
 
 	private Boolean enabled;
 
+	private String iotInstanceId;
+
 	private String fuzzyJoinEui;
 
 	private Long limit;
@@ -59,6 +61,17 @@ public class ListOwnedJoinPermissionsRequest extends RpcAcsRequest<ListOwnedJoin
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

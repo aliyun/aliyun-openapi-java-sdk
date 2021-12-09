@@ -28,6 +28,8 @@ public class ListNodeGroupsPacketStatRequest extends RpcAcsRequest<ListNodeGroup
 
 	private Long endMillis;
 
+	private String iotInstanceId;
+
 	private List<String> nodeGroupIdLists;
 
 	private Long beginMillis;
@@ -48,6 +50,17 @@ public class ListNodeGroupsPacketStatRequest extends RpcAcsRequest<ListNodeGroup
 		this.endMillis = endMillis;
 		if(endMillis != null){
 			putQueryParameter("EndMillis", endMillis.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

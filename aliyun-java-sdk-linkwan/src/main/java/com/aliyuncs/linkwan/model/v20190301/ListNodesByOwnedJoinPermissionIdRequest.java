@@ -28,6 +28,8 @@ public class ListNodesByOwnedJoinPermissionIdRequest extends RpcAcsRequest<ListN
 
 	private String joinPermissionId;
 
+	private String iotInstanceId;
+
 	private String fuzzyDevEui;
 
 	private Long limit;
@@ -55,6 +57,17 @@ public class ListNodesByOwnedJoinPermissionIdRequest extends RpcAcsRequest<ListN
 		this.joinPermissionId = joinPermissionId;
 		if(joinPermissionId != null){
 			putQueryParameter("JoinPermissionId", joinPermissionId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

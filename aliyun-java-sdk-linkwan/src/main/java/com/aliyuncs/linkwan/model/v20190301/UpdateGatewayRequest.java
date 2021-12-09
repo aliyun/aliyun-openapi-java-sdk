@@ -36,6 +36,8 @@ public class UpdateGatewayRequest extends RpcAcsRequest<UpdateGatewayResponse> {
 
 	private String gisCoordinateSystem;
 
+	private String iotInstanceId;
+
 	private Float longitude;
 
 	private String address;
@@ -111,6 +113,17 @@ public class UpdateGatewayRequest extends RpcAcsRequest<UpdateGatewayResponse> {
 		this.gisCoordinateSystem = gisCoordinateSystem;
 		if(gisCoordinateSystem != null){
 			putQueryParameter("GisCoordinateSystem", gisCoordinateSystem);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

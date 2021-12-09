@@ -28,6 +28,8 @@ public class GetGatewayPacketStatRequest extends RpcAcsRequest<GetGatewayPacketS
 
 	private Long endMillis;
 
+	private String iotInstanceId;
+
 	private String gwEui;
 
 	private Long beginMillis;
@@ -49,6 +51,17 @@ public class GetGatewayPacketStatRequest extends RpcAcsRequest<GetGatewayPacketS
 		this.endMillis = endMillis;
 		if(endMillis != null){
 			putQueryParameter("EndMillis", endMillis.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

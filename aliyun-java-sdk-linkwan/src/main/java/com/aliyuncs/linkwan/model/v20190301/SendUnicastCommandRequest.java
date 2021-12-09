@@ -29,6 +29,8 @@ public class SendUnicastCommandRequest extends RpcAcsRequest<SendUnicastCommandR
 
 	private String content;
 
+	private String iotInstanceId;
+
 	private Integer maxRetries;
 
 	private String devEui;
@@ -64,6 +66,17 @@ public class SendUnicastCommandRequest extends RpcAcsRequest<SendUnicastCommandR
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

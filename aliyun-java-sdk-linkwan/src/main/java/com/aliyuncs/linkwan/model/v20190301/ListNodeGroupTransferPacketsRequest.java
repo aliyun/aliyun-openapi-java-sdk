@@ -29,6 +29,8 @@ public class ListNodeGroupTransferPacketsRequest extends RpcAcsRequest<ListNodeG
 
 	private Integer pageNumber;
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Boolean ascending;
@@ -70,6 +72,17 @@ public class ListNodeGroupTransferPacketsRequest extends RpcAcsRequest<ListNodeG
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

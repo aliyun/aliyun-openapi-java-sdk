@@ -28,6 +28,8 @@ public class GetNodeTransferPacketRequest extends RpcAcsRequest<GetNodeTransferP
 
 	private String base64EncodedMacPayload;
 
+	private String iotInstanceId;
+
 	private Long logMillis;
 
 	private String devEui;
@@ -49,6 +51,17 @@ public class GetNodeTransferPacketRequest extends RpcAcsRequest<GetNodeTransferP
 		this.base64EncodedMacPayload = base64EncodedMacPayload;
 		if(base64EncodedMacPayload != null){
 			putQueryParameter("Base64EncodedMacPayload", base64EncodedMacPayload);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

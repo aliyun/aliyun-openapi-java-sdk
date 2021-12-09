@@ -93,8 +93,6 @@ public class ListRentedJoinPermissionsResponse extends AcsResponse {
 
 			private Boolean boundNodeGroup;
 
-			private String joinPermissionName;
-
 			private String type;
 
 			private String boundNodeGroupName;
@@ -104,6 +102,10 @@ public class ListRentedJoinPermissionsResponse extends AcsResponse {
 			private String rxDelay;
 
 			private String dataRate;
+
+			private String joinPermissionName;
+
+			private DataDispatchConfig dataDispatchConfig;
 
 			public String getJoinPermissionId() {
 				return this.joinPermissionId;
@@ -161,14 +163,6 @@ public class ListRentedJoinPermissionsResponse extends AcsResponse {
 				this.boundNodeGroup = boundNodeGroup;
 			}
 
-			public String getJoinPermissionName() {
-				return this.joinPermissionName;
-			}
-
-			public void setJoinPermissionName(String joinPermissionName) {
-				this.joinPermissionName = joinPermissionName;
-			}
-
 			public String getType() {
 				return this.type;
 			}
@@ -207,6 +201,141 @@ public class ListRentedJoinPermissionsResponse extends AcsResponse {
 
 			public void setDataRate(String dataRate) {
 				this.dataRate = dataRate;
+			}
+
+			public String getJoinPermissionName() {
+				return this.joinPermissionName;
+			}
+
+			public void setJoinPermissionName(String joinPermissionName) {
+				this.joinPermissionName = joinPermissionName;
+			}
+
+			public DataDispatchConfig getDataDispatchConfig() {
+				return this.dataDispatchConfig;
+			}
+
+			public void setDataDispatchConfig(DataDispatchConfig dataDispatchConfig) {
+				this.dataDispatchConfig = dataDispatchConfig;
+			}
+
+			public static class DataDispatchConfig {
+
+				private String destination;
+
+				private IotProduct iotProduct;
+
+				private OnsTopics onsTopics;
+
+				public String getDestination() {
+					return this.destination;
+				}
+
+				public void setDestination(String destination) {
+					this.destination = destination;
+				}
+
+				public IotProduct getIotProduct() {
+					return this.iotProduct;
+				}
+
+				public void setIotProduct(IotProduct iotProduct) {
+					this.iotProduct = iotProduct;
+				}
+
+				public OnsTopics getOnsTopics() {
+					return this.onsTopics;
+				}
+
+				public void setOnsTopics(OnsTopics onsTopics) {
+					this.onsTopics = onsTopics;
+				}
+
+				public static class IotProduct {
+
+					private String productName;
+
+					private String productKey;
+
+					private String productType;
+
+					private Boolean debugSwitch;
+
+					public String getProductName() {
+						return this.productName;
+					}
+
+					public void setProductName(String productName) {
+						this.productName = productName;
+					}
+
+					public String getProductKey() {
+						return this.productKey;
+					}
+
+					public void setProductKey(String productKey) {
+						this.productKey = productKey;
+					}
+
+					public String getProductType() {
+						return this.productType;
+					}
+
+					public void setProductType(String productType) {
+						this.productType = productType;
+					}
+
+					public Boolean getDebugSwitch() {
+						return this.debugSwitch;
+					}
+
+					public void setDebugSwitch(Boolean debugSwitch) {
+						this.debugSwitch = debugSwitch;
+					}
+				}
+
+				public static class OnsTopics {
+
+					private String downlinkRegionName;
+
+					private String downlinkTopic;
+
+					private String uplinkRegionName;
+
+					private String uplinkTopic;
+
+					public String getDownlinkRegionName() {
+						return this.downlinkRegionName;
+					}
+
+					public void setDownlinkRegionName(String downlinkRegionName) {
+						this.downlinkRegionName = downlinkRegionName;
+					}
+
+					public String getDownlinkTopic() {
+						return this.downlinkTopic;
+					}
+
+					public void setDownlinkTopic(String downlinkTopic) {
+						this.downlinkTopic = downlinkTopic;
+					}
+
+					public String getUplinkRegionName() {
+						return this.uplinkRegionName;
+					}
+
+					public void setUplinkRegionName(String uplinkRegionName) {
+						this.uplinkRegionName = uplinkRegionName;
+					}
+
+					public String getUplinkTopic() {
+						return this.uplinkTopic;
+					}
+
+					public void setUplinkTopic(String uplinkTopic) {
+						this.uplinkTopic = uplinkTopic;
+					}
+				}
 			}
 		}
 	}

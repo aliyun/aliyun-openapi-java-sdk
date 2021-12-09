@@ -28,11 +28,15 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 
 	private Long rxDelay;
 
+	private String iotInstanceId;
+
 	private Boolean useDefaultJoinEui;
 
 	private String classMode;
 
 	private Long freqBandPlanGroupId;
+
+	private String joinEui;
 
 	private String joinPermissionName;
 
@@ -55,6 +59,17 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 		this.rxDelay = rxDelay;
 		if(rxDelay != null){
 			putQueryParameter("RxDelay", rxDelay.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
@@ -88,6 +103,17 @@ public class CreateLocalJoinPermissionRequest extends RpcAcsRequest<CreateLocalJ
 		this.freqBandPlanGroupId = freqBandPlanGroupId;
 		if(freqBandPlanGroupId != null){
 			putQueryParameter("FreqBandPlanGroupId", freqBandPlanGroupId.toString());
+		}
+	}
+
+	public String getJoinEui() {
+		return this.joinEui;
+	}
+
+	public void setJoinEui(String joinEui) {
+		this.joinEui = joinEui;
+		if(joinEui != null){
+			putQueryParameter("JoinEui", joinEui);
 		}
 	}
 

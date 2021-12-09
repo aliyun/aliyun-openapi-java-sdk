@@ -93,6 +93,12 @@ public class ListNodesByNodeGroupIdResponse extends AcsResponse {
 
 			private String authTypes;
 
+			private String joinEui;
+
+			private String appkey;
+
+			private String nodeType;
+
 			public String getDevEui() {
 				return this.devEui;
 			}
@@ -147,6 +153,30 @@ public class ListNodesByNodeGroupIdResponse extends AcsResponse {
 
 			public void setAuthTypes(String authTypes) {
 				this.authTypes = authTypes;
+			}
+
+			public String getJoinEui() {
+				return this.joinEui;
+			}
+
+			public void setJoinEui(String joinEui) {
+				this.joinEui = joinEui;
+			}
+
+			public String getAppkey() {
+				return this.appkey;
+			}
+
+			public void setAppkey(String appkey) {
+				this.appkey = appkey;
+			}
+
+			public String getNodeType() {
+				return this.nodeType;
+			}
+
+			public void setNodeType(String nodeType) {
+				this.nodeType = nodeType;
 			}
 		}
 	}

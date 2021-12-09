@@ -47,6 +47,7 @@ public class GetOwnedJoinPermissionResponseUnmarshaller {
 		data.setMulticastNodeCount(_ctx.integerValue("GetOwnedJoinPermissionResponse.Data.MulticastNodeCount"));
 		data.setRxDelay(_ctx.longValue("GetOwnedJoinPermissionResponse.Data.RxDelay"));
 		data.setDataRate(_ctx.longValue("GetOwnedJoinPermissionResponse.Data.DataRate"));
+		data.setBoundProductName(_ctx.stringValue("GetOwnedJoinPermissionResponse.Data.BoundProductName"));
 		getOwnedJoinPermissionResponse.setData(data);
 	 
 	 	return getOwnedJoinPermissionResponse;

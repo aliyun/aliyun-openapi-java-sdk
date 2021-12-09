@@ -1,3 +1,6 @@
+2021-12-09 Version: 3.0.0
+- Generated 2019-03-01 for `LinkWAN`.
+
 2020-06-05 Version: 1.0.7
 - Generated 2019-03-01 for `LinkWAN`.
 

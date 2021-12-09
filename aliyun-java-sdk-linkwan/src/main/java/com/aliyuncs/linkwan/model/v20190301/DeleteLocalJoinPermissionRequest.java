@@ -27,6 +27,8 @@ public class DeleteLocalJoinPermissionRequest extends RpcAcsRequest<DeleteLocalJ
 	   
 
 	private String joinPermissionId;
+
+	private String iotInstanceId;
 	public DeleteLocalJoinPermissionRequest() {
 		super("LinkWAN", "2019-03-01", "DeleteLocalJoinPermission", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -45,6 +47,17 @@ public class DeleteLocalJoinPermissionRequest extends RpcAcsRequest<DeleteLocalJ
 		this.joinPermissionId = joinPermissionId;
 		if(joinPermissionId != null){
 			putQueryParameter("JoinPermissionId", joinPermissionId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

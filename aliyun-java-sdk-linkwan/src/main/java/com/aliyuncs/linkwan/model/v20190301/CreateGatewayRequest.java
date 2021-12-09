@@ -36,6 +36,8 @@ public class CreateGatewayRequest extends RpcAcsRequest<CreateGatewayResponse> {
 
 	private String gisCoordinateSystem;
 
+	private String iotInstanceId;
+
 	private Float longitude;
 
 	private String pinCode;
@@ -113,6 +115,17 @@ public class CreateGatewayRequest extends RpcAcsRequest<CreateGatewayResponse> {
 		this.gisCoordinateSystem = gisCoordinateSystem;
 		if(gisCoordinateSystem != null){
 			putQueryParameter("GisCoordinateSystem", gisCoordinateSystem);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

@@ -29,6 +29,8 @@ public class UpdateOwnedLocalJoinPermissionEnablingStateRequest extends RpcAcsRe
 	private String joinPermissionId;
 
 	private Boolean enabled;
+
+	private String iotInstanceId;
 	public UpdateOwnedLocalJoinPermissionEnablingStateRequest() {
 		super("LinkWAN", "2019-03-01", "UpdateOwnedLocalJoinPermissionEnablingState", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -58,6 +60,17 @@ public class UpdateOwnedLocalJoinPermissionEnablingStateRequest extends RpcAcsRe
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class ListGatewaysRequest extends RpcAcsRequest<ListGatewaysResponse> {
 
 	private String fuzzyGwEui;
 
+	private String iotInstanceId;
+
 	private Long limit;
 
 	private String fuzzyCity;
@@ -61,6 +63,17 @@ public class ListGatewaysRequest extends RpcAcsRequest<ListGatewaysResponse> {
 		this.fuzzyGwEui = fuzzyGwEui;
 		if(fuzzyGwEui != null){
 			putQueryParameter("FuzzyGwEui", fuzzyGwEui);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

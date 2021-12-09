@@ -96,6 +96,8 @@ public class GetOwnedJoinPermissionResponse extends AcsResponse {
 
 		private Long dataRate;
 
+		private String boundProductName;
+
 		public String getJoinPermissionId() {
 			return this.joinPermissionId;
 		}
@@ -254,6 +256,14 @@ public class GetOwnedJoinPermissionResponse extends AcsResponse {
 
 		public void setDataRate(Long dataRate) {
 			this.dataRate = dataRate;
+		}
+
+		public String getBoundProductName() {
+			return this.boundProductName;
+		}
+
+		public void setBoundProductName(String boundProductName) {
+			this.boundProductName = boundProductName;
 		}
 	}
 

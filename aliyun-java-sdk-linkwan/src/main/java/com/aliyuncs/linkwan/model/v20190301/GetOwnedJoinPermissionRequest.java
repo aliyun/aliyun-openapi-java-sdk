@@ -15,7 +15,6 @@
 package com.aliyuncs.linkwan.model.v20190301;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkwan.Endpoint;
 
@@ -27,9 +26,10 @@ public class GetOwnedJoinPermissionRequest extends RpcAcsRequest<GetOwnedJoinPer
 	   
 
 	private String joinPermissionId;
+
+	private String iotInstanceId;
 	public GetOwnedJoinPermissionRequest() {
 		super("LinkWAN", "2019-03-01", "GetOwnedJoinPermission", "linkwan");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,6 +45,17 @@ public class GetOwnedJoinPermissionRequest extends RpcAcsRequest<GetOwnedJoinPer
 		this.joinPermissionId = joinPermissionId;
 		if(joinPermissionId != null){
 			putQueryParameter("JoinPermissionId", joinPermissionId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

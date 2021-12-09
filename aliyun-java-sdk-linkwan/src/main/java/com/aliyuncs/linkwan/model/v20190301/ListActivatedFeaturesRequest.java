@@ -25,6 +25,8 @@ import com.aliyuncs.linkwan.Endpoint;
  */
 public class ListActivatedFeaturesRequest extends RpcAcsRequest<ListActivatedFeaturesResponse> {
 	   
+
+	private String environment;
 	public ListActivatedFeaturesRequest() {
 		super("LinkWAN", "2019-03-01", "ListActivatedFeatures", "linkwan");
 		setProtocol(ProtocolType.HTTPS);
@@ -33,6 +35,17 @@ public class ListActivatedFeaturesRequest extends RpcAcsRequest<ListActivatedFea
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEnvironment() {
+		return this.environment;
+	}
+
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+		if(environment != null){
+			putQueryParameter("Environment", environment);
+		}
 	}
 
 	@Override

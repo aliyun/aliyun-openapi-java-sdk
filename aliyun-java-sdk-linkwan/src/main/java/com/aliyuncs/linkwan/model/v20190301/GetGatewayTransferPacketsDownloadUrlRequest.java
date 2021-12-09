@@ -28,6 +28,8 @@ public class GetGatewayTransferPacketsDownloadUrlRequest extends RpcAcsRequest<G
 
 	private Long endMillis;
 
+	private String iotInstanceId;
+
 	private String gwEui;
 
 	private Boolean ascending;
@@ -57,6 +59,17 @@ public class GetGatewayTransferPacketsDownloadUrlRequest extends RpcAcsRequest<G
 		this.endMillis = endMillis;
 		if(endMillis != null){
 			putQueryParameter("EndMillis", endMillis.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

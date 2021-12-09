@@ -27,6 +27,8 @@ public class UpdateGatewaySshCtrlRequest extends RpcAcsRequest<UpdateGatewaySshC
 
 	private Boolean enabled;
 
+	private String iotInstanceId;
+
 	private String gwEui;
 	public UpdateGatewaySshCtrlRequest() {
 		super("LinkWAN", "2019-03-01", "UpdateGatewaySshCtrl", "linkwan");
@@ -45,6 +47,17 @@ public class UpdateGatewaySshCtrlRequest extends RpcAcsRequest<UpdateGatewaySshC
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

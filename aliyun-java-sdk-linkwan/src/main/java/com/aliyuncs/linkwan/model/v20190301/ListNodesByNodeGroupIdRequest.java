@@ -26,6 +26,8 @@ import com.aliyuncs.linkwan.Endpoint;
 public class ListNodesByNodeGroupIdRequest extends RpcAcsRequest<ListNodesByNodeGroupIdResponse> {
 	   
 
+	private String iotInstanceId;
+
 	private String fuzzyDevEui;
 
 	private Long limit;
@@ -45,6 +47,17 @@ public class ListNodesByNodeGroupIdRequest extends RpcAcsRequest<ListNodesByNode
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getFuzzyDevEui() {

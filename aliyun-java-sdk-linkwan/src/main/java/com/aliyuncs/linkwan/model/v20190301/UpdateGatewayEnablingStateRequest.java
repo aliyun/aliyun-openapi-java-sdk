@@ -28,6 +28,8 @@ public class UpdateGatewayEnablingStateRequest extends RpcAcsRequest<UpdateGatew
 
 	private Boolean enabled;
 
+	private String iotInstanceId;
+
 	private String gwEui;
 	public UpdateGatewayEnablingStateRequest() {
 		super("LinkWAN", "2019-03-01", "UpdateGatewayEnablingState", "linkwan");
@@ -47,6 +49,17 @@ public class UpdateGatewayEnablingStateRequest extends RpcAcsRequest<UpdateGatew
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

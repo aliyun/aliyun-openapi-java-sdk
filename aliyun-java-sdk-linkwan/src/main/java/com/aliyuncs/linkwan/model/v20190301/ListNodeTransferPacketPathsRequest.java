@@ -30,6 +30,8 @@ public class ListNodeTransferPacketPathsRequest extends RpcAcsRequest<ListNodeTr
 
 	private Integer pageNumber;
 
+	private String iotInstanceId;
+
 	private Long logMillis;
 
 	private Integer pageSize;
@@ -64,6 +66,17 @@ public class ListNodeTransferPacketPathsRequest extends RpcAcsRequest<ListNodeTr
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

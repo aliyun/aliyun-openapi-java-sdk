@@ -30,6 +30,8 @@ public class ListGatewaysPacketStatRequest extends RpcAcsRequest<ListGatewaysPac
 
 	private List<String> gwEuiLists;
 
+	private String iotInstanceId;
+
 	private Long beginMillis;
 	public ListGatewaysPacketStatRequest() {
 		super("LinkWAN", "2019-03-01", "ListGatewaysPacketStat", "linkwan");
@@ -62,6 +64,17 @@ public class ListGatewaysPacketStatRequest extends RpcAcsRequest<ListGatewaysPac
 				putQueryParameter("GwEuiList." + (i + 1) , gwEuiLists.get(i));
 			}
 		}	
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public Long getBeginMillis() {

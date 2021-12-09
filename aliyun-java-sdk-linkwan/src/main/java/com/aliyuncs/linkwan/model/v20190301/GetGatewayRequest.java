@@ -25,6 +25,8 @@ import com.aliyuncs.linkwan.Endpoint;
 public class GetGatewayRequest extends RpcAcsRequest<GetGatewayResponse> {
 	   
 
+	private String iotInstanceId;
+
 	private String gwEui;
 	public GetGatewayRequest() {
 		super("LinkWAN", "2019-03-01", "GetGateway", "linkwan");
@@ -33,6 +35,17 @@ public class GetGatewayRequest extends RpcAcsRequest<GetGatewayResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getGwEui() {
