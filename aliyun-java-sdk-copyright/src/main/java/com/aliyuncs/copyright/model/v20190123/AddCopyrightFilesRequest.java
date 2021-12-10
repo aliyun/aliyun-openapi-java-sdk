@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class AddCopyrightFilesRequest extends RpcAcsRequest<AddCopyrightFilesResponse> {
 	   
 
+	private String extInfo;
+
 	private String copyrightOwnersList;
 
 	private String bizType;
@@ -31,9 +33,22 @@ public class AddCopyrightFilesRequest extends RpcAcsRequest<AddCopyrightFilesRes
 	private String contactInfo;
 
 	private String files;
+
+	private String swtype;
 	public AddCopyrightFilesRequest() {
 		super("Copyright", "2019-01-23", "AddCopyrightFiles");
 		setMethod(MethodType.POST);
+	}
+
+	public String getExtInfo() {
+		return this.extInfo;
+	}
+
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+		if(extInfo != null){
+			putBodyParameter("ExtInfo", extInfo);
+		}
 	}
 
 	public String getCopyrightOwnersList() {
@@ -77,6 +92,17 @@ public class AddCopyrightFilesRequest extends RpcAcsRequest<AddCopyrightFilesRes
 		this.files = files;
 		if(files != null){
 			putBodyParameter("Files", files);
+		}
+	}
+
+	public String getSwtype() {
+		return this.swtype;
+	}
+
+	public void setSwtype(String swtype) {
+		this.swtype = swtype;
+		if(swtype != null){
+			putBodyParameter("Swtype", swtype);
 		}
 	}
 
