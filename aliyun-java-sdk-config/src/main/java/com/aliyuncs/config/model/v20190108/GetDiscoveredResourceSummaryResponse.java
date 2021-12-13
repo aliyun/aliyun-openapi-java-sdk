@@ -46,11 +46,19 @@ public class GetDiscoveredResourceSummaryResponse extends AcsResponse {
 
 	public static class DiscoveredResourceSummary {
 
+		private Integer regionCount;
+
 		private Integer resourceCount;
 
 		private Integer resourceTypeCount;
 
-		private Integer regionCount;
+		public Integer getRegionCount() {
+			return this.regionCount;
+		}
+
+		public void setRegionCount(Integer regionCount) {
+			this.regionCount = regionCount;
+		}
 
 		public Integer getResourceCount() {
 			return this.resourceCount;
@@ -66,14 +74,6 @@ public class GetDiscoveredResourceSummaryResponse extends AcsResponse {
 
 		public void setResourceTypeCount(Integer resourceTypeCount) {
 			this.resourceTypeCount = resourceTypeCount;
-		}
-
-		public Integer getRegionCount() {
-			return this.regionCount;
-		}
-
-		public void setRegionCount(Integer regionCount) {
-			this.regionCount = regionCount;
 		}
 	}
 

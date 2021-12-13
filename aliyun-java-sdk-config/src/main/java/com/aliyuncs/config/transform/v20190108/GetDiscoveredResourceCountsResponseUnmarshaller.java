@@ -35,8 +35,8 @@ public class GetDiscoveredResourceCountsResponseUnmarshaller {
 		List<GroupedResourceCount> groupedResourceCountList = new ArrayList<GroupedResourceCount>();
 		for (int i = 0; i < _ctx.lengthValue("GetDiscoveredResourceCountsResponse.GroupedResourceCounts.GroupedResourceCountList.Length"); i++) {
 			GroupedResourceCount groupedResourceCount = new GroupedResourceCount();
-			groupedResourceCount.setGroupName(_ctx.stringValue("GetDiscoveredResourceCountsResponse.GroupedResourceCounts.GroupedResourceCountList["+ i +"].GroupName"));
 			groupedResourceCount.setResourceCount(_ctx.longValue("GetDiscoveredResourceCountsResponse.GroupedResourceCounts.GroupedResourceCountList["+ i +"].ResourceCount"));
+			groupedResourceCount.setGroupName(_ctx.stringValue("GetDiscoveredResourceCountsResponse.GroupedResourceCounts.GroupedResourceCountList["+ i +"].GroupName"));
 
 			groupedResourceCountList.add(groupedResourceCount);
 		}

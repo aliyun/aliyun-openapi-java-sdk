@@ -39,16 +39,17 @@ public class ListConfigRulesResponseUnmarshaller {
 		List<ConfigRule> configRuleList = new ArrayList<ConfigRule>();
 		for (int i = 0; i < _ctx.lengthValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList.Length"); i++) {
 			ConfigRule configRule = new ConfigRule();
-			configRule.setAccountId(_ctx.longValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].AccountId"));
-			configRule.setConfigRuleArn(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleArn"));
-			configRule.setConfigRuleId(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleId"));
-			configRule.setConfigRuleName(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleName"));
-			configRule.setConfigRuleState(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleState"));
-			configRule.setDescription(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].Description"));
+			configRule.setCompliancePackId(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CompliancePackId"));
 			configRule.setRiskLevel(_ctx.integerValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].RiskLevel"));
-			configRule.setSourceIdentifier(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].SourceIdentifier"));
 			configRule.setSourceOwner(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].SourceOwner"));
+			configRule.setAccountId(_ctx.longValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].AccountId"));
+			configRule.setConfigRuleState(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleState"));
+			configRule.setSourceIdentifier(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].SourceIdentifier"));
+			configRule.setConfigRuleArn(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleArn"));
+			configRule.setDescription(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].Description"));
 			configRule.setAutomationType(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].AutomationType"));
+			configRule.setConfigRuleName(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleName"));
+			configRule.setConfigRuleId(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].ConfigRuleId"));
 
 			Compliance compliance = new Compliance();
 			compliance.setComplianceType(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].Compliance.ComplianceType"));
@@ -56,10 +57,12 @@ public class ListConfigRulesResponseUnmarshaller {
 			configRule.setCompliance(compliance);
 
 			CreateBy createBy = new CreateBy();
-			createBy.setCreatorId(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.CreatorId"));
+			createBy.setCompliancePackId(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.CompliancePackId"));
+			createBy.setConfigRuleSceneId(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.ConfigRuleSceneId"));
+			createBy.setCompliancePackName(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.CompliancePackName"));
 			createBy.setCreatorName(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.CreatorName"));
 			createBy.setCreatorType(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.CreatorType"));
-			createBy.setConfigRuleSceneId(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.ConfigRuleSceneId"));
+			createBy.setCreatorId(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.CreatorId"));
 			createBy.setConfigRuleSceneName(_ctx.stringValue("ListConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.ConfigRuleSceneName"));
 			configRule.setCreateBy(createBy);
 

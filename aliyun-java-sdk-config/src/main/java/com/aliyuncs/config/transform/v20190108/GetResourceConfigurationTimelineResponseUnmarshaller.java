@@ -37,19 +37,19 @@ public class GetResourceConfigurationTimelineResponseUnmarshaller {
 		List<ConfigurationListItem> configurationList = new ArrayList<ConfigurationListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList.Length"); i++) {
 			ConfigurationListItem configurationListItem = new ConfigurationListItem();
+			configurationListItem.setRelationship(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Relationship"));
+			configurationListItem.setTags(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Tags"));
 			configurationListItem.setAccountId(_ctx.longValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].AccountId"));
+			configurationListItem.setResourceEventType(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceEventType"));
+			configurationListItem.setRelationshipDiff(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].RelationshipDiff"));
 			configurationListItem.setAvailabilityZone(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].AvailabilityZone"));
+			configurationListItem.setResourceType(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceType"));
+			configurationListItem.setResourceCreateTime(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceCreateTime"));
+			configurationListItem.setRegion(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Region"));
 			configurationListItem.setCaptureTime(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].CaptureTime"));
 			configurationListItem.setConfigurationDiff(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ConfigurationDiff"));
-			configurationListItem.setRegion(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Region"));
-			configurationListItem.setRelationship(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Relationship"));
-			configurationListItem.setRelationshipDiff(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].RelationshipDiff"));
-			configurationListItem.setResourceCreateTime(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceCreateTime"));
 			configurationListItem.setResourceId(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceId"));
 			configurationListItem.setResourceName(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceName"));
-			configurationListItem.setResourceType(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceType"));
-			configurationListItem.setTags(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Tags"));
-			configurationListItem.setResourceEventType(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceEventType"));
 
 			configurationList.add(configurationListItem);
 		}

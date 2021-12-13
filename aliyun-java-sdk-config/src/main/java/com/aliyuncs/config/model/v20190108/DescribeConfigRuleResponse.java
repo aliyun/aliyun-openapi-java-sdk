@@ -48,82 +48,44 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 
 	public static class ConfigRule {
 
-		private String configRuleArn;
-
-		private String configRuleId;
-
-		private String configRuleName;
-
-		private String configRuleState;
-
-		private Long createTimestamp;
-
-		private String description;
+		private Integer riskLevel;
 
 		private Map<Object,Object> inputParameters;
 
-		private Long modifiedTimestamp;
-
-		private Integer riskLevel;
+		private String configRuleState;
 
 		private String maximumExecutionFrequency;
 
-		private CreateBy createBy;
+		private Boolean organizationRule;
 
-		private ConfigRuleEvaluationStatus configRuleEvaluationStatus;
+		private String configRuleArn;
 
-		private ManagedRule managedRule;
+		private String description;
+
+		private String configRuleName;
+
+		private String configRuleId;
+
+		private Long modifiedTimestamp;
+
+		private Long createTimestamp;
 
 		private Source source;
 
+		private ManagedRule managedRule;
+
+		private CreateBy createBy;
+
 		private Scope scope;
 
-		public String getConfigRuleArn() {
-			return this.configRuleArn;
+		private ConfigRuleEvaluationStatus configRuleEvaluationStatus;
+
+		public Integer getRiskLevel() {
+			return this.riskLevel;
 		}
 
-		public void setConfigRuleArn(String configRuleArn) {
-			this.configRuleArn = configRuleArn;
-		}
-
-		public String getConfigRuleId() {
-			return this.configRuleId;
-		}
-
-		public void setConfigRuleId(String configRuleId) {
-			this.configRuleId = configRuleId;
-		}
-
-		public String getConfigRuleName() {
-			return this.configRuleName;
-		}
-
-		public void setConfigRuleName(String configRuleName) {
-			this.configRuleName = configRuleName;
-		}
-
-		public String getConfigRuleState() {
-			return this.configRuleState;
-		}
-
-		public void setConfigRuleState(String configRuleState) {
-			this.configRuleState = configRuleState;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setRiskLevel(Integer riskLevel) {
+			this.riskLevel = riskLevel;
 		}
 
 		public Map<Object,Object> getInputParameters() {
@@ -134,20 +96,12 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 			this.inputParameters = inputParameters;
 		}
 
-		public Long getModifiedTimestamp() {
-			return this.modifiedTimestamp;
+		public String getConfigRuleState() {
+			return this.configRuleState;
 		}
 
-		public void setModifiedTimestamp(Long modifiedTimestamp) {
-			this.modifiedTimestamp = modifiedTimestamp;
-		}
-
-		public Integer getRiskLevel() {
-			return this.riskLevel;
-		}
-
-		public void setRiskLevel(Integer riskLevel) {
-			this.riskLevel = riskLevel;
+		public void setConfigRuleState(String configRuleState) {
+			this.configRuleState = configRuleState;
 		}
 
 		public String getMaximumExecutionFrequency() {
@@ -158,28 +112,60 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 			this.maximumExecutionFrequency = maximumExecutionFrequency;
 		}
 
-		public CreateBy getCreateBy() {
-			return this.createBy;
+		public Boolean getOrganizationRule() {
+			return this.organizationRule;
 		}
 
-		public void setCreateBy(CreateBy createBy) {
-			this.createBy = createBy;
+		public void setOrganizationRule(Boolean organizationRule) {
+			this.organizationRule = organizationRule;
 		}
 
-		public ConfigRuleEvaluationStatus getConfigRuleEvaluationStatus() {
-			return this.configRuleEvaluationStatus;
+		public String getConfigRuleArn() {
+			return this.configRuleArn;
 		}
 
-		public void setConfigRuleEvaluationStatus(ConfigRuleEvaluationStatus configRuleEvaluationStatus) {
-			this.configRuleEvaluationStatus = configRuleEvaluationStatus;
+		public void setConfigRuleArn(String configRuleArn) {
+			this.configRuleArn = configRuleArn;
 		}
 
-		public ManagedRule getManagedRule() {
-			return this.managedRule;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setManagedRule(ManagedRule managedRule) {
-			this.managedRule = managedRule;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getConfigRuleName() {
+			return this.configRuleName;
+		}
+
+		public void setConfigRuleName(String configRuleName) {
+			this.configRuleName = configRuleName;
+		}
+
+		public String getConfigRuleId() {
+			return this.configRuleId;
+		}
+
+		public void setConfigRuleId(String configRuleId) {
+			this.configRuleId = configRuleId;
+		}
+
+		public Long getModifiedTimestamp() {
+			return this.modifiedTimestamp;
+		}
+
+		public void setModifiedTimestamp(Long modifiedTimestamp) {
+			this.modifiedTimestamp = modifiedTimestamp;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
 		public Source getSource() {
@@ -190,6 +176,22 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 			this.source = source;
 		}
 
+		public ManagedRule getManagedRule() {
+			return this.managedRule;
+		}
+
+		public void setManagedRule(ManagedRule managedRule) {
+			this.managedRule = managedRule;
+		}
+
+		public CreateBy getCreateBy() {
+			return this.createBy;
+		}
+
+		public void setCreateBy(CreateBy createBy) {
+			this.createBy = createBy;
+		}
+
 		public Scope getScope() {
 			return this.scope;
 		}
@@ -198,17 +200,296 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 			this.scope = scope;
 		}
 
+		public ConfigRuleEvaluationStatus getConfigRuleEvaluationStatus() {
+			return this.configRuleEvaluationStatus;
+		}
+
+		public void setConfigRuleEvaluationStatus(ConfigRuleEvaluationStatus configRuleEvaluationStatus) {
+			this.configRuleEvaluationStatus = configRuleEvaluationStatus;
+		}
+
+		public static class Source {
+
+			private String owner;
+
+			private String identifier;
+
+			private List<SourceDetailsItem> sourceDetails;
+
+			private List<SourceConditionsItem> sourceConditions;
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
+			public String getIdentifier() {
+				return this.identifier;
+			}
+
+			public void setIdentifier(String identifier) {
+				this.identifier = identifier;
+			}
+
+			public List<SourceDetailsItem> getSourceDetails() {
+				return this.sourceDetails;
+			}
+
+			public void setSourceDetails(List<SourceDetailsItem> sourceDetails) {
+				this.sourceDetails = sourceDetails;
+			}
+
+			public List<SourceConditionsItem> getSourceConditions() {
+				return this.sourceConditions;
+			}
+
+			public void setSourceConditions(List<SourceConditionsItem> sourceConditions) {
+				this.sourceConditions = sourceConditions;
+			}
+
+			public static class SourceDetailsItem {
+
+				private String messageType;
+
+				private String eventSource;
+
+				private String maximumExecutionFrequency;
+
+				public String getMessageType() {
+					return this.messageType;
+				}
+
+				public void setMessageType(String messageType) {
+					this.messageType = messageType;
+				}
+
+				public String getEventSource() {
+					return this.eventSource;
+				}
+
+				public void setEventSource(String eventSource) {
+					this.eventSource = eventSource;
+				}
+
+				public String getMaximumExecutionFrequency() {
+					return this.maximumExecutionFrequency;
+				}
+
+				public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
+					this.maximumExecutionFrequency = maximumExecutionFrequency;
+				}
+			}
+
+			public static class SourceConditionsItem {
+
+				private String desiredValue;
+
+				private Boolean required;
+
+				private String tips;
+
+				private String operator;
+
+				private String name;
+
+				private String selectPath;
+
+				public String getDesiredValue() {
+					return this.desiredValue;
+				}
+
+				public void setDesiredValue(String desiredValue) {
+					this.desiredValue = desiredValue;
+				}
+
+				public Boolean getRequired() {
+					return this.required;
+				}
+
+				public void setRequired(Boolean required) {
+					this.required = required;
+				}
+
+				public String getTips() {
+					return this.tips;
+				}
+
+				public void setTips(String tips) {
+					this.tips = tips;
+				}
+
+				public String getOperator() {
+					return this.operator;
+				}
+
+				public void setOperator(String operator) {
+					this.operator = operator;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getSelectPath() {
+					return this.selectPath;
+				}
+
+				public void setSelectPath(String selectPath) {
+					this.selectPath = selectPath;
+				}
+			}
+		}
+
+		public static class ManagedRule {
+
+			private String helpUrl;
+
+			private String description;
+
+			private String identifier;
+
+			private Map<Object,Object> optionalInputParameterDetails;
+
+			private String managedRuleName;
+
+			private Map<Object,Object> compulsoryInputParameterDetails;
+
+			private List<SourceDetailsItem2> sourceDetails1;
+
+			private List<String> labels;
+
+			public String getHelpUrl() {
+				return this.helpUrl;
+			}
+
+			public void setHelpUrl(String helpUrl) {
+				this.helpUrl = helpUrl;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getIdentifier() {
+				return this.identifier;
+			}
+
+			public void setIdentifier(String identifier) {
+				this.identifier = identifier;
+			}
+
+			public Map<Object,Object> getOptionalInputParameterDetails() {
+				return this.optionalInputParameterDetails;
+			}
+
+			public void setOptionalInputParameterDetails(Map<Object,Object> optionalInputParameterDetails) {
+				this.optionalInputParameterDetails = optionalInputParameterDetails;
+			}
+
+			public String getManagedRuleName() {
+				return this.managedRuleName;
+			}
+
+			public void setManagedRuleName(String managedRuleName) {
+				this.managedRuleName = managedRuleName;
+			}
+
+			public Map<Object,Object> getCompulsoryInputParameterDetails() {
+				return this.compulsoryInputParameterDetails;
+			}
+
+			public void setCompulsoryInputParameterDetails(Map<Object,Object> compulsoryInputParameterDetails) {
+				this.compulsoryInputParameterDetails = compulsoryInputParameterDetails;
+			}
+
+			public List<SourceDetailsItem2> getSourceDetails1() {
+				return this.sourceDetails1;
+			}
+
+			public void setSourceDetails1(List<SourceDetailsItem2> sourceDetails1) {
+				this.sourceDetails1 = sourceDetails1;
+			}
+
+			public List<String> getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(List<String> labels) {
+				this.labels = labels;
+			}
+
+			public static class SourceDetailsItem2 {
+
+				private String messageType;
+
+				private String eventSource;
+
+				private String maximumExecutionFrequency;
+
+				public String getMessageType() {
+					return this.messageType;
+				}
+
+				public void setMessageType(String messageType) {
+					this.messageType = messageType;
+				}
+
+				public String getEventSource() {
+					return this.eventSource;
+				}
+
+				public void setEventSource(String eventSource) {
+					this.eventSource = eventSource;
+				}
+
+				public String getMaximumExecutionFrequency() {
+					return this.maximumExecutionFrequency;
+				}
+
+				public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
+					this.maximumExecutionFrequency = maximumExecutionFrequency;
+				}
+			}
+		}
+
 		public static class CreateBy {
+
+			private String configRuleSceneId;
+
+			private String creatorName;
 
 			private String creatorType;
 
 			private String creatorId;
 
-			private String creatorName;
-
-			private String configRuleSceneId;
-
 			private String configRuleSceneName;
+
+			public String getConfigRuleSceneId() {
+				return this.configRuleSceneId;
+			}
+
+			public void setConfigRuleSceneId(String configRuleSceneId) {
+				this.configRuleSceneId = configRuleSceneId;
+			}
+
+			public String getCreatorName() {
+				return this.creatorName;
+			}
+
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
+			}
 
 			public String getCreatorType() {
 				return this.creatorType;
@@ -226,22 +507,6 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 				this.creatorId = creatorId;
 			}
 
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
-			}
-
-			public String getConfigRuleSceneId() {
-				return this.configRuleSceneId;
-			}
-
-			public void setConfigRuleSceneId(String configRuleSceneId) {
-				this.configRuleSceneId = configRuleSceneId;
-			}
-
 			public String getConfigRuleSceneName() {
 				return this.configRuleSceneName;
 			}
@@ -251,13 +516,40 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 			}
 		}
 
+		public static class Scope {
+
+			private String complianceResourceId;
+
+			private List<String> complianceResourceTypes;
+
+			public String getComplianceResourceId() {
+				return this.complianceResourceId;
+			}
+
+			public void setComplianceResourceId(String complianceResourceId) {
+				this.complianceResourceId = complianceResourceId;
+			}
+
+			public List<String> getComplianceResourceTypes() {
+				return this.complianceResourceTypes;
+			}
+
+			public void setComplianceResourceTypes(List<String> complianceResourceTypes) {
+				this.complianceResourceTypes = complianceResourceTypes;
+			}
+		}
+
 		public static class ConfigRuleEvaluationStatus {
+
+			private String lastErrorCode;
+
+			private Long lastSuccessfulEvaluationTimestamp;
 
 			private Long firstActivatedTimestamp;
 
 			private Boolean firstEvaluationStarted;
 
-			private String lastErrorCode;
+			private Long lastSuccessfulInvocationTimestamp;
 
 			private String lastErrorMessage;
 
@@ -265,9 +557,21 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 
 			private Long lastFailedInvocationTimestamp;
 
-			private Long lastSuccessfulEvaluationTimestamp;
+			public String getLastErrorCode() {
+				return this.lastErrorCode;
+			}
 
-			private Long lastSuccessfulInvocationTimestamp;
+			public void setLastErrorCode(String lastErrorCode) {
+				this.lastErrorCode = lastErrorCode;
+			}
+
+			public Long getLastSuccessfulEvaluationTimestamp() {
+				return this.lastSuccessfulEvaluationTimestamp;
+			}
+
+			public void setLastSuccessfulEvaluationTimestamp(Long lastSuccessfulEvaluationTimestamp) {
+				this.lastSuccessfulEvaluationTimestamp = lastSuccessfulEvaluationTimestamp;
+			}
 
 			public Long getFirstActivatedTimestamp() {
 				return this.firstActivatedTimestamp;
@@ -285,12 +589,12 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 				this.firstEvaluationStarted = firstEvaluationStarted;
 			}
 
-			public String getLastErrorCode() {
-				return this.lastErrorCode;
+			public Long getLastSuccessfulInvocationTimestamp() {
+				return this.lastSuccessfulInvocationTimestamp;
 			}
 
-			public void setLastErrorCode(String lastErrorCode) {
-				this.lastErrorCode = lastErrorCode;
+			public void setLastSuccessfulInvocationTimestamp(Long lastSuccessfulInvocationTimestamp) {
+				this.lastSuccessfulInvocationTimestamp = lastSuccessfulInvocationTimestamp;
 			}
 
 			public String getLastErrorMessage() {
@@ -315,300 +619,6 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 
 			public void setLastFailedInvocationTimestamp(Long lastFailedInvocationTimestamp) {
 				this.lastFailedInvocationTimestamp = lastFailedInvocationTimestamp;
-			}
-
-			public Long getLastSuccessfulEvaluationTimestamp() {
-				return this.lastSuccessfulEvaluationTimestamp;
-			}
-
-			public void setLastSuccessfulEvaluationTimestamp(Long lastSuccessfulEvaluationTimestamp) {
-				this.lastSuccessfulEvaluationTimestamp = lastSuccessfulEvaluationTimestamp;
-			}
-
-			public Long getLastSuccessfulInvocationTimestamp() {
-				return this.lastSuccessfulInvocationTimestamp;
-			}
-
-			public void setLastSuccessfulInvocationTimestamp(Long lastSuccessfulInvocationTimestamp) {
-				this.lastSuccessfulInvocationTimestamp = lastSuccessfulInvocationTimestamp;
-			}
-		}
-
-		public static class ManagedRule {
-
-			private String managedRuleName;
-
-			private String description;
-
-			private String identifier;
-
-			private Map<Object,Object> compulsoryInputParameterDetails;
-
-			private Map<Object,Object> optionalInputParameterDetails;
-
-			private String helpUrl;
-
-			private List<SourceDetailsItem> sourceDetails;
-
-			private List<String> labels;
-
-			public String getManagedRuleName() {
-				return this.managedRuleName;
-			}
-
-			public void setManagedRuleName(String managedRuleName) {
-				this.managedRuleName = managedRuleName;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getIdentifier() {
-				return this.identifier;
-			}
-
-			public void setIdentifier(String identifier) {
-				this.identifier = identifier;
-			}
-
-			public Map<Object,Object> getCompulsoryInputParameterDetails() {
-				return this.compulsoryInputParameterDetails;
-			}
-
-			public void setCompulsoryInputParameterDetails(Map<Object,Object> compulsoryInputParameterDetails) {
-				this.compulsoryInputParameterDetails = compulsoryInputParameterDetails;
-			}
-
-			public Map<Object,Object> getOptionalInputParameterDetails() {
-				return this.optionalInputParameterDetails;
-			}
-
-			public void setOptionalInputParameterDetails(Map<Object,Object> optionalInputParameterDetails) {
-				this.optionalInputParameterDetails = optionalInputParameterDetails;
-			}
-
-			public String getHelpUrl() {
-				return this.helpUrl;
-			}
-
-			public void setHelpUrl(String helpUrl) {
-				this.helpUrl = helpUrl;
-			}
-
-			public List<SourceDetailsItem> getSourceDetails() {
-				return this.sourceDetails;
-			}
-
-			public void setSourceDetails(List<SourceDetailsItem> sourceDetails) {
-				this.sourceDetails = sourceDetails;
-			}
-
-			public List<String> getLabels() {
-				return this.labels;
-			}
-
-			public void setLabels(List<String> labels) {
-				this.labels = labels;
-			}
-
-			public static class SourceDetailsItem {
-
-				private String eventSource;
-
-				private String maximumExecutionFrequency;
-
-				private String messageType;
-
-				public String getEventSource() {
-					return this.eventSource;
-				}
-
-				public void setEventSource(String eventSource) {
-					this.eventSource = eventSource;
-				}
-
-				public String getMaximumExecutionFrequency() {
-					return this.maximumExecutionFrequency;
-				}
-
-				public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
-					this.maximumExecutionFrequency = maximumExecutionFrequency;
-				}
-
-				public String getMessageType() {
-					return this.messageType;
-				}
-
-				public void setMessageType(String messageType) {
-					this.messageType = messageType;
-				}
-			}
-		}
-
-		public static class Source {
-
-			private String identifier;
-
-			private String owner;
-
-			private List<SourceConditionsItem> sourceConditions;
-
-			private List<SourceDetailsItem2> sourceDetails1;
-
-			public String getIdentifier() {
-				return this.identifier;
-			}
-
-			public void setIdentifier(String identifier) {
-				this.identifier = identifier;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public List<SourceConditionsItem> getSourceConditions() {
-				return this.sourceConditions;
-			}
-
-			public void setSourceConditions(List<SourceConditionsItem> sourceConditions) {
-				this.sourceConditions = sourceConditions;
-			}
-
-			public List<SourceDetailsItem2> getSourceDetails1() {
-				return this.sourceDetails1;
-			}
-
-			public void setSourceDetails1(List<SourceDetailsItem2> sourceDetails1) {
-				this.sourceDetails1 = sourceDetails1;
-			}
-
-			public static class SourceConditionsItem {
-
-				private String desiredValue;
-
-				private String name;
-
-				private String operator;
-
-				private Boolean required;
-
-				private String selectPath;
-
-				private String tips;
-
-				public String getDesiredValue() {
-					return this.desiredValue;
-				}
-
-				public void setDesiredValue(String desiredValue) {
-					this.desiredValue = desiredValue;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getOperator() {
-					return this.operator;
-				}
-
-				public void setOperator(String operator) {
-					this.operator = operator;
-				}
-
-				public Boolean getRequired() {
-					return this.required;
-				}
-
-				public void setRequired(Boolean required) {
-					this.required = required;
-				}
-
-				public String getSelectPath() {
-					return this.selectPath;
-				}
-
-				public void setSelectPath(String selectPath) {
-					this.selectPath = selectPath;
-				}
-
-				public String getTips() {
-					return this.tips;
-				}
-
-				public void setTips(String tips) {
-					this.tips = tips;
-				}
-			}
-
-			public static class SourceDetailsItem2 {
-
-				private String eventSource;
-
-				private String maximumExecutionFrequency;
-
-				private String messageType;
-
-				public String getEventSource() {
-					return this.eventSource;
-				}
-
-				public void setEventSource(String eventSource) {
-					this.eventSource = eventSource;
-				}
-
-				public String getMaximumExecutionFrequency() {
-					return this.maximumExecutionFrequency;
-				}
-
-				public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
-					this.maximumExecutionFrequency = maximumExecutionFrequency;
-				}
-
-				public String getMessageType() {
-					return this.messageType;
-				}
-
-				public void setMessageType(String messageType) {
-					this.messageType = messageType;
-				}
-			}
-		}
-
-		public static class Scope {
-
-			private String complianceResourceId;
-
-			private List<String> complianceResourceTypes;
-
-			public String getComplianceResourceId() {
-				return this.complianceResourceId;
-			}
-
-			public void setComplianceResourceId(String complianceResourceId) {
-				this.complianceResourceId = complianceResourceId;
-			}
-
-			public List<String> getComplianceResourceTypes() {
-				return this.complianceResourceTypes;
-			}
-
-			public void setComplianceResourceTypes(List<String> complianceResourceTypes) {
-				this.complianceResourceTypes = complianceResourceTypes;
 			}
 		}
 	}

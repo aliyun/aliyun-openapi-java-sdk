@@ -34,9 +34,9 @@ public class StopConfigRulesResponseUnmarshaller {
 		List<OperateRuleItem> operateRuleItemList = new ArrayList<OperateRuleItem>();
 		for (int i = 0; i < _ctx.lengthValue("StopConfigRulesResponse.OperateRuleResult.OperateRuleItemList.Length"); i++) {
 			OperateRuleItem operateRuleItem = new OperateRuleItem();
-			operateRuleItem.setConfigRuleId(_ctx.stringValue("StopConfigRulesResponse.OperateRuleResult.OperateRuleItemList["+ i +"].ConfigRuleId"));
 			operateRuleItem.setErrorCode(_ctx.stringValue("StopConfigRulesResponse.OperateRuleResult.OperateRuleItemList["+ i +"].ErrorCode"));
 			operateRuleItem.setSuccess(_ctx.booleanValue("StopConfigRulesResponse.OperateRuleResult.OperateRuleItemList["+ i +"].Success"));
+			operateRuleItem.setConfigRuleId(_ctx.stringValue("StopConfigRulesResponse.OperateRuleResult.OperateRuleItemList["+ i +"].ConfigRuleId"));
 
 			operateRuleItemList.add(operateRuleItem);
 		}

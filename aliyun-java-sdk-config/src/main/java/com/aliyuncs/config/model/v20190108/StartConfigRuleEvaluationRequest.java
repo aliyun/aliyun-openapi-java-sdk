@@ -27,11 +27,11 @@ public class StartConfigRuleEvaluationRequest extends RpcAcsRequest<StartConfigR
 
 	private String configRuleId;
 
-	private Boolean multiAccount;
+	private String compliancePackId;
 
-	private Long memberId;
+	private Boolean revertEvaluation;
 	public StartConfigRuleEvaluationRequest() {
-		super("Config", "2019-01-08", "StartConfigRuleEvaluation", "Config");
+		super("Config", "2019-01-08", "StartConfigRuleEvaluation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,25 +50,25 @@ public class StartConfigRuleEvaluationRequest extends RpcAcsRequest<StartConfigR
 		}
 	}
 
-	public Boolean getMultiAccount() {
-		return this.multiAccount;
+	public String getCompliancePackId() {
+		return this.compliancePackId;
 	}
 
-	public void setMultiAccount(Boolean multiAccount) {
-		this.multiAccount = multiAccount;
-		if(multiAccount != null){
-			putQueryParameter("MultiAccount", multiAccount.toString());
+	public void setCompliancePackId(String compliancePackId) {
+		this.compliancePackId = compliancePackId;
+		if(compliancePackId != null){
+			putQueryParameter("CompliancePackId", compliancePackId);
 		}
 	}
 
-	public Long getMemberId() {
-		return this.memberId;
+	public Boolean getRevertEvaluation() {
+		return this.revertEvaluation;
 	}
 
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
-		if(memberId != null){
-			putQueryParameter("MemberId", memberId.toString());
+	public void setRevertEvaluation(Boolean revertEvaluation) {
+		this.revertEvaluation = revertEvaluation;
+		if(revertEvaluation != null){
+			putQueryParameter("RevertEvaluation", revertEvaluation.toString());
 		}
 	}
 

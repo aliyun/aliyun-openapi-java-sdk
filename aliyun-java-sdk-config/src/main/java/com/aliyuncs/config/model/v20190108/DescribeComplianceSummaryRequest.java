@@ -29,7 +29,7 @@ public class DescribeComplianceSummaryRequest extends RpcAcsRequest<DescribeComp
 
 	private Long memberId;
 	public DescribeComplianceSummaryRequest() {
-		super("Config", "2019-01-08", "DescribeComplianceSummary", "Config");
+		super("Config", "2019-01-08", "DescribeComplianceSummary");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

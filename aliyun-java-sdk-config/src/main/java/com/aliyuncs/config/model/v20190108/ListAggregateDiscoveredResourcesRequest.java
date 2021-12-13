@@ -22,16 +22,20 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListDiscoveredResourcesRequest extends RpcAcsRequest<ListDiscoveredResourcesResponse> {
+public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListAggregateDiscoveredResourcesResponse> {
 	   
 
 	private Integer resourceDeleted;
 
-	private Boolean multiAccount;
+	private Long resourceOwnerId;
 
 	private String regions;
 
+	private String aggregatorId;
+
 	private Integer pageNumber;
+
+	private String folderId;
 
 	private Integer pageSize;
 
@@ -40,10 +44,8 @@ public class ListDiscoveredResourcesRequest extends RpcAcsRequest<ListDiscovered
 	private String resourceId;
 
 	private String resourceTypes;
-
-	private Long memberId;
-	public ListDiscoveredResourcesRequest() {
-		super("Config", "2019-01-08", "ListDiscoveredResources");
+	public ListAggregateDiscoveredResourcesRequest() {
+		super("Config", "2019-01-08", "ListAggregateDiscoveredResources");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,14 +64,14 @@ public class ListDiscoveredResourcesRequest extends RpcAcsRequest<ListDiscovered
 		}
 	}
 
-	public Boolean getMultiAccount() {
-		return this.multiAccount;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setMultiAccount(Boolean multiAccount) {
-		this.multiAccount = multiAccount;
-		if(multiAccount != null){
-			putQueryParameter("MultiAccount", multiAccount.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -84,6 +86,17 @@ public class ListDiscoveredResourcesRequest extends RpcAcsRequest<ListDiscovered
 		}
 	}
 
+	public String getAggregatorId() {
+		return this.aggregatorId;
+	}
+
+	public void setAggregatorId(String aggregatorId) {
+		this.aggregatorId = aggregatorId;
+		if(aggregatorId != null){
+			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -92,6 +105,17 @@ public class ListDiscoveredResourcesRequest extends RpcAcsRequest<ListDiscovered
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getFolderId() {
+		return this.folderId;
+	}
+
+	public void setFolderId(String folderId) {
+		this.folderId = folderId;
+		if(folderId != null){
+			putQueryParameter("FolderId", folderId);
 		}
 	}
 
@@ -139,20 +163,9 @@ public class ListDiscoveredResourcesRequest extends RpcAcsRequest<ListDiscovered
 		}
 	}
 
-	public Long getMemberId() {
-		return this.memberId;
-	}
-
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
-		if(memberId != null){
-			putQueryParameter("MemberId", memberId.toString());
-		}
-	}
-
 	@Override
-	public Class<ListDiscoveredResourcesResponse> getResponseClass() {
-		return ListDiscoveredResourcesResponse.class;
+	public Class<ListAggregateDiscoveredResourcesResponse> getResponseClass() {
+		return ListAggregateDiscoveredResourcesResponse.class;
 	}
 
 }

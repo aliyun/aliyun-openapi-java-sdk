@@ -47,22 +47,22 @@ public class StartConfigurationRecorderResponse extends AcsResponse {
 
 	public static class ConfigurationRecorder {
 
-		private Long accountId;
+		private String organizationEnableStatus;
 
 		private String configurationRecorderStatus;
 
 		private Long organizationMasterId;
 
-		private String organizationEnableStatus;
+		private Long accountId;
 
 		private List<String> resourceTypes;
 
-		public Long getAccountId() {
-			return this.accountId;
+		public String getOrganizationEnableStatus() {
+			return this.organizationEnableStatus;
 		}
 
-		public void setAccountId(Long accountId) {
-			this.accountId = accountId;
+		public void setOrganizationEnableStatus(String organizationEnableStatus) {
+			this.organizationEnableStatus = organizationEnableStatus;
 		}
 
 		public String getConfigurationRecorderStatus() {
@@ -81,12 +81,12 @@ public class StartConfigurationRecorderResponse extends AcsResponse {
 			this.organizationMasterId = organizationMasterId;
 		}
 
-		public String getOrganizationEnableStatus() {
-			return this.organizationEnableStatus;
+		public Long getAccountId() {
+			return this.accountId;
 		}
 
-		public void setOrganizationEnableStatus(String organizationEnableStatus) {
-			this.organizationEnableStatus = organizationEnableStatus;
+		public void setAccountId(Long accountId) {
+			this.accountId = accountId;
 		}
 
 		public List<String> getResourceTypes() {

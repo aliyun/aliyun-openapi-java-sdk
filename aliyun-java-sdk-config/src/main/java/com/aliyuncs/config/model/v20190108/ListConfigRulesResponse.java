@@ -89,76 +89,38 @@ public class ListConfigRulesResponse extends AcsResponse {
 
 		public static class ConfigRule {
 
-			private Long accountId;
-
-			private String configRuleArn;
-
-			private String configRuleId;
-
-			private String configRuleName;
-
-			private String configRuleState;
-
-			private String description;
+			private String compliancePackId;
 
 			private Integer riskLevel;
 
-			private String sourceIdentifier;
-
 			private String sourceOwner;
 
+			private Long accountId;
+
+			private String configRuleState;
+
+			private String sourceIdentifier;
+
+			private String configRuleArn;
+
+			private String description;
+
 			private String automationType;
+
+			private String configRuleName;
+
+			private String configRuleId;
 
 			private Compliance compliance;
 
 			private CreateBy createBy;
 
-			public Long getAccountId() {
-				return this.accountId;
+			public String getCompliancePackId() {
+				return this.compliancePackId;
 			}
 
-			public void setAccountId(Long accountId) {
-				this.accountId = accountId;
-			}
-
-			public String getConfigRuleArn() {
-				return this.configRuleArn;
-			}
-
-			public void setConfigRuleArn(String configRuleArn) {
-				this.configRuleArn = configRuleArn;
-			}
-
-			public String getConfigRuleId() {
-				return this.configRuleId;
-			}
-
-			public void setConfigRuleId(String configRuleId) {
-				this.configRuleId = configRuleId;
-			}
-
-			public String getConfigRuleName() {
-				return this.configRuleName;
-			}
-
-			public void setConfigRuleName(String configRuleName) {
-				this.configRuleName = configRuleName;
-			}
-
-			public String getConfigRuleState() {
-				return this.configRuleState;
-			}
-
-			public void setConfigRuleState(String configRuleState) {
-				this.configRuleState = configRuleState;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
+			public void setCompliancePackId(String compliancePackId) {
+				this.compliancePackId = compliancePackId;
 			}
 
 			public Integer getRiskLevel() {
@@ -169,14 +131,6 @@ public class ListConfigRulesResponse extends AcsResponse {
 				this.riskLevel = riskLevel;
 			}
 
-			public String getSourceIdentifier() {
-				return this.sourceIdentifier;
-			}
-
-			public void setSourceIdentifier(String sourceIdentifier) {
-				this.sourceIdentifier = sourceIdentifier;
-			}
-
 			public String getSourceOwner() {
 				return this.sourceOwner;
 			}
@@ -185,12 +139,68 @@ public class ListConfigRulesResponse extends AcsResponse {
 				this.sourceOwner = sourceOwner;
 			}
 
+			public Long getAccountId() {
+				return this.accountId;
+			}
+
+			public void setAccountId(Long accountId) {
+				this.accountId = accountId;
+			}
+
+			public String getConfigRuleState() {
+				return this.configRuleState;
+			}
+
+			public void setConfigRuleState(String configRuleState) {
+				this.configRuleState = configRuleState;
+			}
+
+			public String getSourceIdentifier() {
+				return this.sourceIdentifier;
+			}
+
+			public void setSourceIdentifier(String sourceIdentifier) {
+				this.sourceIdentifier = sourceIdentifier;
+			}
+
+			public String getConfigRuleArn() {
+				return this.configRuleArn;
+			}
+
+			public void setConfigRuleArn(String configRuleArn) {
+				this.configRuleArn = configRuleArn;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
 			public String getAutomationType() {
 				return this.automationType;
 			}
 
 			public void setAutomationType(String automationType) {
 				this.automationType = automationType;
+			}
+
+			public String getConfigRuleName() {
+				return this.configRuleName;
+			}
+
+			public void setConfigRuleName(String configRuleName) {
+				this.configRuleName = configRuleName;
+			}
+
+			public String getConfigRuleId() {
+				return this.configRuleId;
+			}
+
+			public void setConfigRuleId(String configRuleId) {
+				this.configRuleId = configRuleId;
 			}
 
 			public Compliance getCompliance() {
@@ -234,22 +244,42 @@ public class ListConfigRulesResponse extends AcsResponse {
 
 			public static class CreateBy {
 
-				private String creatorId;
+				private String compliancePackId;
+
+				private String configRuleSceneId;
+
+				private String compliancePackName;
 
 				private String creatorName;
 
 				private String creatorType;
 
-				private String configRuleSceneId;
+				private String creatorId;
 
 				private String configRuleSceneName;
 
-				public String getCreatorId() {
-					return this.creatorId;
+				public String getCompliancePackId() {
+					return this.compliancePackId;
 				}
 
-				public void setCreatorId(String creatorId) {
-					this.creatorId = creatorId;
+				public void setCompliancePackId(String compliancePackId) {
+					this.compliancePackId = compliancePackId;
+				}
+
+				public String getConfigRuleSceneId() {
+					return this.configRuleSceneId;
+				}
+
+				public void setConfigRuleSceneId(String configRuleSceneId) {
+					this.configRuleSceneId = configRuleSceneId;
+				}
+
+				public String getCompliancePackName() {
+					return this.compliancePackName;
+				}
+
+				public void setCompliancePackName(String compliancePackName) {
+					this.compliancePackName = compliancePackName;
 				}
 
 				public String getCreatorName() {
@@ -268,12 +298,12 @@ public class ListConfigRulesResponse extends AcsResponse {
 					this.creatorType = creatorType;
 				}
 
-				public String getConfigRuleSceneId() {
-					return this.configRuleSceneId;
+				public String getCreatorId() {
+					return this.creatorId;
 				}
 
-				public void setConfigRuleSceneId(String configRuleSceneId) {
-					this.configRuleSceneId = configRuleSceneId;
+				public void setCreatorId(String creatorId) {
+					this.creatorId = creatorId;
 				}
 
 				public String getConfigRuleSceneName() {

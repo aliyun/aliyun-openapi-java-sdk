@@ -15,14 +15,14 @@
 package com.aliyuncs.config.model.v20190108;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.config.transform.v20190108.DescribeDiscoveredResourceResponseUnmarshaller;
+import com.aliyuncs.config.transform.v20190108.GetAggregateDiscoveredResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDiscoveredResourceResponse extends AcsResponse {
+public class GetAggregateDiscoveredResourceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -158,8 +158,8 @@ public class DescribeDiscoveredResourceResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeDiscoveredResourceResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDiscoveredResourceResponseUnmarshaller.unmarshall(this, context);
+	public GetAggregateDiscoveredResourceResponse getInstance(UnmarshallerContext context) {
+		return	GetAggregateDiscoveredResourceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

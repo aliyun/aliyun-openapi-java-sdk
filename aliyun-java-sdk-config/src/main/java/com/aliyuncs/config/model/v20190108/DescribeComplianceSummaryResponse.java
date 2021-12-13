@@ -46,17 +46,9 @@ public class DescribeComplianceSummaryResponse extends AcsResponse {
 
 	public static class ComplianceSummary {
 
-		private ComplianceSummaryByConfigRule complianceSummaryByConfigRule;
-
 		private ComplianceSummaryByResource complianceSummaryByResource;
 
-		public ComplianceSummaryByConfigRule getComplianceSummaryByConfigRule() {
-			return this.complianceSummaryByConfigRule;
-		}
-
-		public void setComplianceSummaryByConfigRule(ComplianceSummaryByConfigRule complianceSummaryByConfigRule) {
-			this.complianceSummaryByConfigRule = complianceSummaryByConfigRule;
-		}
+		private ComplianceSummaryByConfigRule complianceSummaryByConfigRule;
 
 		public ComplianceSummaryByResource getComplianceSummaryByResource() {
 			return this.complianceSummaryByResource;
@@ -66,23 +58,23 @@ public class DescribeComplianceSummaryResponse extends AcsResponse {
 			this.complianceSummaryByResource = complianceSummaryByResource;
 		}
 
-		public static class ComplianceSummaryByConfigRule {
+		public ComplianceSummaryByConfigRule getComplianceSummaryByConfigRule() {
+			return this.complianceSummaryByConfigRule;
+		}
 
-			private Long complianceSummaryTimestamp;
+		public void setComplianceSummaryByConfigRule(ComplianceSummaryByConfigRule complianceSummaryByConfigRule) {
+			this.complianceSummaryByConfigRule = complianceSummaryByConfigRule;
+		}
+
+		public static class ComplianceSummaryByResource {
 
 			private Integer compliantCount;
 
 			private Integer nonCompliantCount;
 
+			private Long complianceSummaryTimestamp;
+
 			private Long totalCount;
-
-			public Long getComplianceSummaryTimestamp() {
-				return this.complianceSummaryTimestamp;
-			}
-
-			public void setComplianceSummaryTimestamp(Long complianceSummaryTimestamp) {
-				this.complianceSummaryTimestamp = complianceSummaryTimestamp;
-			}
 
 			public Integer getCompliantCount() {
 				return this.compliantCount;
@@ -98,6 +90,14 @@ public class DescribeComplianceSummaryResponse extends AcsResponse {
 
 			public void setNonCompliantCount(Integer nonCompliantCount) {
 				this.nonCompliantCount = nonCompliantCount;
+			}
+
+			public Long getComplianceSummaryTimestamp() {
+				return this.complianceSummaryTimestamp;
+			}
+
+			public void setComplianceSummaryTimestamp(Long complianceSummaryTimestamp) {
+				this.complianceSummaryTimestamp = complianceSummaryTimestamp;
 			}
 
 			public Long getTotalCount() {
@@ -109,23 +109,15 @@ public class DescribeComplianceSummaryResponse extends AcsResponse {
 			}
 		}
 
-		public static class ComplianceSummaryByResource {
-
-			private Long complianceSummaryTimestamp;
+		public static class ComplianceSummaryByConfigRule {
 
 			private Integer compliantCount;
 
 			private Integer nonCompliantCount;
 
+			private Long complianceSummaryTimestamp;
+
 			private Long totalCount;
-
-			public Long getComplianceSummaryTimestamp() {
-				return this.complianceSummaryTimestamp;
-			}
-
-			public void setComplianceSummaryTimestamp(Long complianceSummaryTimestamp) {
-				this.complianceSummaryTimestamp = complianceSummaryTimestamp;
-			}
 
 			public Integer getCompliantCount() {
 				return this.compliantCount;
@@ -141,6 +133,14 @@ public class DescribeComplianceSummaryResponse extends AcsResponse {
 
 			public void setNonCompliantCount(Integer nonCompliantCount) {
 				this.nonCompliantCount = nonCompliantCount;
+			}
+
+			public Long getComplianceSummaryTimestamp() {
+				return this.complianceSummaryTimestamp;
+			}
+
+			public void setComplianceSummaryTimestamp(Long complianceSummaryTimestamp) {
+				this.complianceSummaryTimestamp = complianceSummaryTimestamp;
 			}
 
 			public Long getTotalCount() {

@@ -89,31 +89,47 @@ public class GetResourceConfigurationTimelineResponse extends AcsResponse {
 
 		public static class ConfigurationListItem {
 
+			private String relationship;
+
+			private String tags;
+
 			private Long accountId;
 
+			private String resourceEventType;
+
+			private String relationshipDiff;
+
 			private String availabilityZone;
+
+			private String resourceType;
+
+			private String resourceCreateTime;
+
+			private String region;
 
 			private String captureTime;
 
 			private String configurationDiff;
 
-			private String region;
-
-			private String relationship;
-
-			private String relationshipDiff;
-
-			private String resourceCreateTime;
-
 			private String resourceId;
 
 			private String resourceName;
 
-			private String resourceType;
+			public String getRelationship() {
+				return this.relationship;
+			}
 
-			private String tags;
+			public void setRelationship(String relationship) {
+				this.relationship = relationship;
+			}
 
-			private String resourceEventType;
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
 
 			public Long getAccountId() {
 				return this.accountId;
@@ -123,12 +139,52 @@ public class GetResourceConfigurationTimelineResponse extends AcsResponse {
 				this.accountId = accountId;
 			}
 
+			public String getResourceEventType() {
+				return this.resourceEventType;
+			}
+
+			public void setResourceEventType(String resourceEventType) {
+				this.resourceEventType = resourceEventType;
+			}
+
+			public String getRelationshipDiff() {
+				return this.relationshipDiff;
+			}
+
+			public void setRelationshipDiff(String relationshipDiff) {
+				this.relationshipDiff = relationshipDiff;
+			}
+
 			public String getAvailabilityZone() {
 				return this.availabilityZone;
 			}
 
 			public void setAvailabilityZone(String availabilityZone) {
 				this.availabilityZone = availabilityZone;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public String getResourceCreateTime() {
+				return this.resourceCreateTime;
+			}
+
+			public void setResourceCreateTime(String resourceCreateTime) {
+				this.resourceCreateTime = resourceCreateTime;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
 			}
 
 			public String getCaptureTime() {
@@ -147,38 +203,6 @@ public class GetResourceConfigurationTimelineResponse extends AcsResponse {
 				this.configurationDiff = configurationDiff;
 			}
 
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
-			}
-
-			public String getRelationship() {
-				return this.relationship;
-			}
-
-			public void setRelationship(String relationship) {
-				this.relationship = relationship;
-			}
-
-			public String getRelationshipDiff() {
-				return this.relationshipDiff;
-			}
-
-			public void setRelationshipDiff(String relationshipDiff) {
-				this.relationshipDiff = relationshipDiff;
-			}
-
-			public String getResourceCreateTime() {
-				return this.resourceCreateTime;
-			}
-
-			public void setResourceCreateTime(String resourceCreateTime) {
-				this.resourceCreateTime = resourceCreateTime;
-			}
-
 			public String getResourceId() {
 				return this.resourceId;
 			}
@@ -193,30 +217,6 @@ public class GetResourceConfigurationTimelineResponse extends AcsResponse {
 
 			public void setResourceName(String resourceName) {
 				this.resourceName = resourceName;
-			}
-
-			public String getResourceType() {
-				return this.resourceType;
-			}
-
-			public void setResourceType(String resourceType) {
-				this.resourceType = resourceType;
-			}
-
-			public String getTags() {
-				return this.tags;
-			}
-
-			public void setTags(String tags) {
-				this.tags = tags;
-			}
-
-			public String getResourceEventType() {
-				return this.resourceEventType;
-			}
-
-			public void setResourceEventType(String resourceEventType) {
-				this.resourceEventType = resourceEventType;
 			}
 		}
 	}

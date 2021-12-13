@@ -59,19 +59,11 @@ public class StopConfigRulesResponse extends AcsResponse {
 
 		public static class OperateRuleItem {
 
-			private String configRuleId;
-
 			private String errorCode;
 
 			private Boolean success;
 
-			public String getConfigRuleId() {
-				return this.configRuleId;
-			}
-
-			public void setConfigRuleId(String configRuleId) {
-				this.configRuleId = configRuleId;
-			}
+			private String configRuleId;
 
 			public String getErrorCode() {
 				return this.errorCode;
@@ -87,6 +79,14 @@ public class StopConfigRulesResponse extends AcsResponse {
 
 			public void setSuccess(Boolean success) {
 				this.success = success;
+			}
+
+			public String getConfigRuleId() {
+				return this.configRuleId;
+			}
+
+			public void setConfigRuleId(String configRuleId) {
+				this.configRuleId = configRuleId;
 			}
 		}
 	}

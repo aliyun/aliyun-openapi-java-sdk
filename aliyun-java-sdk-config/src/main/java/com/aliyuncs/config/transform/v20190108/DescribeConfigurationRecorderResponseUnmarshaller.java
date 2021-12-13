@@ -29,10 +29,10 @@ public class DescribeConfigurationRecorderResponseUnmarshaller {
 		describeConfigurationRecorderResponse.setRequestId(_ctx.stringValue("DescribeConfigurationRecorderResponse.RequestId"));
 
 		ConfigurationRecorder configurationRecorder = new ConfigurationRecorder();
-		configurationRecorder.setAccountId(_ctx.longValue("DescribeConfigurationRecorderResponse.ConfigurationRecorder.AccountId"));
+		configurationRecorder.setOrganizationEnableStatus(_ctx.stringValue("DescribeConfigurationRecorderResponse.ConfigurationRecorder.OrganizationEnableStatus"));
 		configurationRecorder.setConfigurationRecorderStatus(_ctx.stringValue("DescribeConfigurationRecorderResponse.ConfigurationRecorder.ConfigurationRecorderStatus"));
 		configurationRecorder.setOrganizationMasterId(_ctx.longValue("DescribeConfigurationRecorderResponse.ConfigurationRecorder.OrganizationMasterId"));
-		configurationRecorder.setOrganizationEnableStatus(_ctx.stringValue("DescribeConfigurationRecorderResponse.ConfigurationRecorder.OrganizationEnableStatus"));
+		configurationRecorder.setAccountId(_ctx.longValue("DescribeConfigurationRecorderResponse.ConfigurationRecorder.AccountId"));
 
 		List<String> resourceTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeConfigurationRecorderResponse.ConfigurationRecorder.ResourceTypes.Length"); i++) {

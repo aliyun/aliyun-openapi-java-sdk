@@ -39,22 +39,24 @@ public class DescribeEvaluationResultsResponseUnmarshaller {
 		List<EvaluationResult> evaluationResultList = new ArrayList<EvaluationResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList.Length"); i++) {
 			EvaluationResult evaluationResult = new EvaluationResult();
-			evaluationResult.setAnnotation(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].Annotation"));
+			evaluationResult.setRiskLevel(_ctx.integerValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].RiskLevel"));
 			evaluationResult.setComplianceType(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].ComplianceType"));
+			evaluationResult.setResultRecordedTimestamp(_ctx.longValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].ResultRecordedTimestamp"));
+			evaluationResult.setAnnotation(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].Annotation"));
 			evaluationResult.setConfigRuleInvokedTimestamp(_ctx.longValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].ConfigRuleInvokedTimestamp"));
 			evaluationResult.setInvokingEventMessageType(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].InvokingEventMessageType"));
-			evaluationResult.setResultRecordedTimestamp(_ctx.longValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].ResultRecordedTimestamp"));
-			evaluationResult.setRiskLevel(_ctx.integerValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].RiskLevel"));
+			evaluationResult.setRemediationEnabled(_ctx.booleanValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].RemediationEnabled"));
 
 			EvaluationResultIdentifier evaluationResultIdentifier = new EvaluationResultIdentifier();
 			evaluationResultIdentifier.setOrderingTimestamp(_ctx.longValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.OrderingTimestamp"));
 
 			EvaluationResultQualifier evaluationResultQualifier = new EvaluationResultQualifier();
 			evaluationResultQualifier.setConfigRuleArn(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleArn"));
-			evaluationResultQualifier.setConfigRuleId(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleId"));
+			evaluationResultQualifier.setResourceType(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceType"));
 			evaluationResultQualifier.setConfigRuleName(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleName"));
 			evaluationResultQualifier.setResourceId(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceId"));
-			evaluationResultQualifier.setResourceType(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceType"));
+			evaluationResultQualifier.setConfigRuleId(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleId"));
+			evaluationResultQualifier.setResourceName(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceName"));
 			evaluationResultQualifier.setRegionId(_ctx.stringValue("DescribeEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.RegionId"));
 			evaluationResultIdentifier.setEvaluationResultQualifier(evaluationResultQualifier);
 			evaluationResult.setEvaluationResultIdentifier(evaluationResultIdentifier);

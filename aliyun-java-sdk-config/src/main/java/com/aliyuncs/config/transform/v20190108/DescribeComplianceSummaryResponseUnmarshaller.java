@@ -29,19 +29,19 @@ public class DescribeComplianceSummaryResponseUnmarshaller {
 
 		ComplianceSummary complianceSummary = new ComplianceSummary();
 
-		ComplianceSummaryByConfigRule complianceSummaryByConfigRule = new ComplianceSummaryByConfigRule();
-		complianceSummaryByConfigRule.setComplianceSummaryTimestamp(_ctx.longValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByConfigRule.ComplianceSummaryTimestamp"));
-		complianceSummaryByConfigRule.setCompliantCount(_ctx.integerValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByConfigRule.CompliantCount"));
-		complianceSummaryByConfigRule.setNonCompliantCount(_ctx.integerValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByConfigRule.NonCompliantCount"));
-		complianceSummaryByConfigRule.setTotalCount(_ctx.longValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByConfigRule.TotalCount"));
-		complianceSummary.setComplianceSummaryByConfigRule(complianceSummaryByConfigRule);
-
 		ComplianceSummaryByResource complianceSummaryByResource = new ComplianceSummaryByResource();
-		complianceSummaryByResource.setComplianceSummaryTimestamp(_ctx.longValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByResource.ComplianceSummaryTimestamp"));
 		complianceSummaryByResource.setCompliantCount(_ctx.integerValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByResource.CompliantCount"));
 		complianceSummaryByResource.setNonCompliantCount(_ctx.integerValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByResource.NonCompliantCount"));
+		complianceSummaryByResource.setComplianceSummaryTimestamp(_ctx.longValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByResource.ComplianceSummaryTimestamp"));
 		complianceSummaryByResource.setTotalCount(_ctx.longValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByResource.TotalCount"));
 		complianceSummary.setComplianceSummaryByResource(complianceSummaryByResource);
+
+		ComplianceSummaryByConfigRule complianceSummaryByConfigRule = new ComplianceSummaryByConfigRule();
+		complianceSummaryByConfigRule.setCompliantCount(_ctx.integerValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByConfigRule.CompliantCount"));
+		complianceSummaryByConfigRule.setNonCompliantCount(_ctx.integerValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByConfigRule.NonCompliantCount"));
+		complianceSummaryByConfigRule.setComplianceSummaryTimestamp(_ctx.longValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByConfigRule.ComplianceSummaryTimestamp"));
+		complianceSummaryByConfigRule.setTotalCount(_ctx.longValue("DescribeComplianceSummaryResponse.ComplianceSummary.ComplianceSummaryByConfigRule.TotalCount"));
+		complianceSummary.setComplianceSummaryByConfigRule(complianceSummaryByConfigRule);
 		describeComplianceSummaryResponse.setComplianceSummary(complianceSummary);
 	 
 	 	return describeComplianceSummaryResponse;

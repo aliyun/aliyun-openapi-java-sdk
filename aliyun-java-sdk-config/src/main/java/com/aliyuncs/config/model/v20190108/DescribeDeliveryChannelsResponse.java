@@ -47,28 +47,36 @@ public class DescribeDeliveryChannelsResponse extends AcsResponse {
 
 	public static class DeliveryChannel {
 
-		private String deliveryChannelId;
+		private Integer status;
 
 		private String deliveryChannelName;
 
-		private String deliveryChannelType;
+		private String deliveryChannelId;
 
-		private String deliveryChannelTargetArn;
+		private String deliveryChannelType;
 
 		private String deliveryChannelAssumeRoleArn;
 
-		private String deliveryChannelCondition;
-
 		private String description;
 
-		private Integer status;
+		private String deliveryChannelCondition;
 
-		public String getDeliveryChannelId() {
-			return this.deliveryChannelId;
+		private String deliveryChannelTargetArn;
+
+		private Boolean configurationSnapshot;
+
+		private Boolean configurationItemChangeNotification;
+
+		private Boolean nonCompliantNotification;
+
+		private String oversizedDataOSSTargetArn;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setDeliveryChannelId(String deliveryChannelId) {
-			this.deliveryChannelId = deliveryChannelId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getDeliveryChannelName() {
@@ -79,20 +87,20 @@ public class DescribeDeliveryChannelsResponse extends AcsResponse {
 			this.deliveryChannelName = deliveryChannelName;
 		}
 
+		public String getDeliveryChannelId() {
+			return this.deliveryChannelId;
+		}
+
+		public void setDeliveryChannelId(String deliveryChannelId) {
+			this.deliveryChannelId = deliveryChannelId;
+		}
+
 		public String getDeliveryChannelType() {
 			return this.deliveryChannelType;
 		}
 
 		public void setDeliveryChannelType(String deliveryChannelType) {
 			this.deliveryChannelType = deliveryChannelType;
-		}
-
-		public String getDeliveryChannelTargetArn() {
-			return this.deliveryChannelTargetArn;
-		}
-
-		public void setDeliveryChannelTargetArn(String deliveryChannelTargetArn) {
-			this.deliveryChannelTargetArn = deliveryChannelTargetArn;
 		}
 
 		public String getDeliveryChannelAssumeRoleArn() {
@@ -103,14 +111,6 @@ public class DescribeDeliveryChannelsResponse extends AcsResponse {
 			this.deliveryChannelAssumeRoleArn = deliveryChannelAssumeRoleArn;
 		}
 
-		public String getDeliveryChannelCondition() {
-			return this.deliveryChannelCondition;
-		}
-
-		public void setDeliveryChannelCondition(String deliveryChannelCondition) {
-			this.deliveryChannelCondition = deliveryChannelCondition;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
@@ -119,12 +119,52 @@ public class DescribeDeliveryChannelsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getDeliveryChannelCondition() {
+			return this.deliveryChannelCondition;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setDeliveryChannelCondition(String deliveryChannelCondition) {
+			this.deliveryChannelCondition = deliveryChannelCondition;
+		}
+
+		public String getDeliveryChannelTargetArn() {
+			return this.deliveryChannelTargetArn;
+		}
+
+		public void setDeliveryChannelTargetArn(String deliveryChannelTargetArn) {
+			this.deliveryChannelTargetArn = deliveryChannelTargetArn;
+		}
+
+		public Boolean getConfigurationSnapshot() {
+			return this.configurationSnapshot;
+		}
+
+		public void setConfigurationSnapshot(Boolean configurationSnapshot) {
+			this.configurationSnapshot = configurationSnapshot;
+		}
+
+		public Boolean getConfigurationItemChangeNotification() {
+			return this.configurationItemChangeNotification;
+		}
+
+		public void setConfigurationItemChangeNotification(Boolean configurationItemChangeNotification) {
+			this.configurationItemChangeNotification = configurationItemChangeNotification;
+		}
+
+		public Boolean getNonCompliantNotification() {
+			return this.nonCompliantNotification;
+		}
+
+		public void setNonCompliantNotification(Boolean nonCompliantNotification) {
+			this.nonCompliantNotification = nonCompliantNotification;
+		}
+
+		public String getOversizedDataOSSTargetArn() {
+			return this.oversizedDataOSSTargetArn;
+		}
+
+		public void setOversizedDataOSSTargetArn(String oversizedDataOSSTargetArn) {
+			this.oversizedDataOSSTargetArn = oversizedDataOSSTargetArn;
 		}
 	}
 

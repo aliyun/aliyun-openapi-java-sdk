@@ -47,13 +47,21 @@ public class GetResourceComplianceTimelineResponse extends AcsResponse {
 
 	public static class ResourceComplianceTimeline {
 
+		private String nextToken;
+
 		private Integer limit;
 
 		private Long totalCount;
 
-		private String nextToken;
-
 		private List<ComplianceListItem> complianceList;
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
+		}
 
 		public Integer getLimit() {
 			return this.limit;
@@ -71,14 +79,6 @@ public class GetResourceComplianceTimelineResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
-
 		public List<ComplianceListItem> getComplianceList() {
 			return this.complianceList;
 		}
@@ -89,19 +89,23 @@ public class GetResourceComplianceTimelineResponse extends AcsResponse {
 
 		public static class ComplianceListItem {
 
+			private String tags;
+
 			private String accountId;
 
 			private String availabilityZone;
 
-			private Long captureTime;
+			private String resourceType;
 
-			private String configuration;
-
-			private String configurationDiff;
+			private Long resourceCreateTime;
 
 			private String region;
 
-			private Long resourceCreateTime;
+			private String configuration;
+
+			private Long captureTime;
+
+			private String configurationDiff;
 
 			private String resourceId;
 
@@ -109,9 +113,13 @@ public class GetResourceComplianceTimelineResponse extends AcsResponse {
 
 			private String resourceStatus;
 
-			private String resourceType;
+			public String getTags() {
+				return this.tags;
+			}
 
-			private String tags;
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
 
 			public String getAccountId() {
 				return this.accountId;
@@ -129,28 +137,20 @@ public class GetResourceComplianceTimelineResponse extends AcsResponse {
 				this.availabilityZone = availabilityZone;
 			}
 
-			public Long getCaptureTime() {
-				return this.captureTime;
+			public String getResourceType() {
+				return this.resourceType;
 			}
 
-			public void setCaptureTime(Long captureTime) {
-				this.captureTime = captureTime;
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
 			}
 
-			public String getConfiguration() {
-				return this.configuration;
+			public Long getResourceCreateTime() {
+				return this.resourceCreateTime;
 			}
 
-			public void setConfiguration(String configuration) {
-				this.configuration = configuration;
-			}
-
-			public String getConfigurationDiff() {
-				return this.configurationDiff;
-			}
-
-			public void setConfigurationDiff(String configurationDiff) {
-				this.configurationDiff = configurationDiff;
+			public void setResourceCreateTime(Long resourceCreateTime) {
+				this.resourceCreateTime = resourceCreateTime;
 			}
 
 			public String getRegion() {
@@ -161,12 +161,28 @@ public class GetResourceComplianceTimelineResponse extends AcsResponse {
 				this.region = region;
 			}
 
-			public Long getResourceCreateTime() {
-				return this.resourceCreateTime;
+			public String getConfiguration() {
+				return this.configuration;
 			}
 
-			public void setResourceCreateTime(Long resourceCreateTime) {
-				this.resourceCreateTime = resourceCreateTime;
+			public void setConfiguration(String configuration) {
+				this.configuration = configuration;
+			}
+
+			public Long getCaptureTime() {
+				return this.captureTime;
+			}
+
+			public void setCaptureTime(Long captureTime) {
+				this.captureTime = captureTime;
+			}
+
+			public String getConfigurationDiff() {
+				return this.configurationDiff;
+			}
+
+			public void setConfigurationDiff(String configurationDiff) {
+				this.configurationDiff = configurationDiff;
 			}
 
 			public String getResourceId() {
@@ -191,22 +207,6 @@ public class GetResourceComplianceTimelineResponse extends AcsResponse {
 
 			public void setResourceStatus(String resourceStatus) {
 				this.resourceStatus = resourceStatus;
-			}
-
-			public String getResourceType() {
-				return this.resourceType;
-			}
-
-			public void setResourceType(String resourceType) {
-				this.resourceType = resourceType;
-			}
-
-			public String getTags() {
-				return this.tags;
-			}
-
-			public void setTags(String tags) {
-				this.tags = tags;
 			}
 		}
 	}

@@ -31,14 +31,18 @@ public class DescribeDeliveryChannelsResponseUnmarshaller {
 		List<DeliveryChannel> deliveryChannels = new ArrayList<DeliveryChannel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDeliveryChannelsResponse.DeliveryChannels.Length"); i++) {
 			DeliveryChannel deliveryChannel = new DeliveryChannel();
-			deliveryChannel.setDeliveryChannelId(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelId"));
-			deliveryChannel.setDeliveryChannelName(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelName"));
-			deliveryChannel.setDeliveryChannelType(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelType"));
-			deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelTargetArn"));
-			deliveryChannel.setDeliveryChannelAssumeRoleArn(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelAssumeRoleArn"));
-			deliveryChannel.setDeliveryChannelCondition(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelCondition"));
-			deliveryChannel.setDescription(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].Description"));
 			deliveryChannel.setStatus(_ctx.integerValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].Status"));
+			deliveryChannel.setDeliveryChannelName(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelName"));
+			deliveryChannel.setDeliveryChannelId(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelId"));
+			deliveryChannel.setDeliveryChannelType(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelType"));
+			deliveryChannel.setDeliveryChannelAssumeRoleArn(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelAssumeRoleArn"));
+			deliveryChannel.setDescription(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].Description"));
+			deliveryChannel.setDeliveryChannelCondition(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelCondition"));
+			deliveryChannel.setDeliveryChannelTargetArn(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliveryChannelTargetArn"));
+			deliveryChannel.setConfigurationSnapshot(_ctx.booleanValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationSnapshot"));
+			deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationItemChangeNotification"));
+			deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].NonCompliantNotification"));
+			deliveryChannel.setOversizedDataOSSTargetArn(_ctx.stringValue("DescribeDeliveryChannelsResponse.DeliveryChannels["+ i +"].OversizedDataOSSTargetArn"));
 
 			deliveryChannels.add(deliveryChannel);
 		}

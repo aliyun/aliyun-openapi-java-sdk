@@ -41,7 +41,7 @@ public class DescribeEvaluationResultsRequest extends RpcAcsRequest<DescribeEval
 
 	private Long memberId;
 	public DescribeEvaluationResultsRequest() {
-		super("Config", "2019-01-08", "DescribeEvaluationResults", "Config");
+		super("Config", "2019-01-08", "DescribeEvaluationResults");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

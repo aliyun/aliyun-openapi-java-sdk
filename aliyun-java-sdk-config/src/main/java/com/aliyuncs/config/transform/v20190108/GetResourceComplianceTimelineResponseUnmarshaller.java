@@ -30,25 +30,25 @@ public class GetResourceComplianceTimelineResponseUnmarshaller {
 		getResourceComplianceTimelineResponse.setRequestId(_ctx.stringValue("GetResourceComplianceTimelineResponse.RequestId"));
 
 		ResourceComplianceTimeline resourceComplianceTimeline = new ResourceComplianceTimeline();
+		resourceComplianceTimeline.setNextToken(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.NextToken"));
 		resourceComplianceTimeline.setLimit(_ctx.integerValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.Limit"));
 		resourceComplianceTimeline.setTotalCount(_ctx.longValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.TotalCount"));
-		resourceComplianceTimeline.setNextToken(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.NextToken"));
 
 		List<ComplianceListItem> complianceList = new ArrayList<ComplianceListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList.Length"); i++) {
 			ComplianceListItem complianceListItem = new ComplianceListItem();
+			complianceListItem.setTags(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].Tags"));
 			complianceListItem.setAccountId(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].AccountId"));
 			complianceListItem.setAvailabilityZone(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].AvailabilityZone"));
-			complianceListItem.setCaptureTime(_ctx.longValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].CaptureTime"));
-			complianceListItem.setConfiguration(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].Configuration"));
-			complianceListItem.setConfigurationDiff(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].ConfigurationDiff"));
-			complianceListItem.setRegion(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].Region"));
+			complianceListItem.setResourceType(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].ResourceType"));
 			complianceListItem.setResourceCreateTime(_ctx.longValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].ResourceCreateTime"));
+			complianceListItem.setRegion(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].Region"));
+			complianceListItem.setConfiguration(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].Configuration"));
+			complianceListItem.setCaptureTime(_ctx.longValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].CaptureTime"));
+			complianceListItem.setConfigurationDiff(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].ConfigurationDiff"));
 			complianceListItem.setResourceId(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].ResourceId"));
 			complianceListItem.setResourceName(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].ResourceName"));
 			complianceListItem.setResourceStatus(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].ResourceStatus"));
-			complianceListItem.setResourceType(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].ResourceType"));
-			complianceListItem.setTags(_ctx.stringValue("GetResourceComplianceTimelineResponse.ResourceComplianceTimeline.ComplianceList["+ i +"].Tags"));
 
 			complianceList.add(complianceListItem);
 		}

@@ -22,20 +22,20 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDiscoveredResourceRequest extends RpcAcsRequest<DescribeDiscoveredResourceResponse> {
+public class GetAggregateDiscoveredResourceRequest extends RpcAcsRequest<GetAggregateDiscoveredResourceResponse> {
 	   
 
 	private String resourceId;
 
-	private Boolean multiAccount;
+	private Long resourceOwnerId;
+
+	private String aggregatorId;
 
 	private String resourceType;
 
 	private String region;
-
-	private Long memberId;
-	public DescribeDiscoveredResourceRequest() {
-		super("Config", "2019-01-08", "DescribeDiscoveredResource");
+	public GetAggregateDiscoveredResourceRequest() {
+		super("Config", "2019-01-08", "GetAggregateDiscoveredResource");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,14 +54,25 @@ public class DescribeDiscoveredResourceRequest extends RpcAcsRequest<DescribeDis
 		}
 	}
 
-	public Boolean getMultiAccount() {
-		return this.multiAccount;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setMultiAccount(Boolean multiAccount) {
-		this.multiAccount = multiAccount;
-		if(multiAccount != null){
-			putQueryParameter("MultiAccount", multiAccount.toString());
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAggregatorId() {
+		return this.aggregatorId;
+	}
+
+	public void setAggregatorId(String aggregatorId) {
+		this.aggregatorId = aggregatorId;
+		if(aggregatorId != null){
+			putQueryParameter("AggregatorId", aggregatorId);
 		}
 	}
 
@@ -87,20 +98,9 @@ public class DescribeDiscoveredResourceRequest extends RpcAcsRequest<DescribeDis
 		}
 	}
 
-	public Long getMemberId() {
-		return this.memberId;
-	}
-
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
-		if(memberId != null){
-			putQueryParameter("MemberId", memberId.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeDiscoveredResourceResponse> getResponseClass() {
-		return DescribeDiscoveredResourceResponse.class;
+	public Class<GetAggregateDiscoveredResourceResponse> getResponseClass() {
+		return GetAggregateDiscoveredResourceResponse.class;
 	}
 
 }

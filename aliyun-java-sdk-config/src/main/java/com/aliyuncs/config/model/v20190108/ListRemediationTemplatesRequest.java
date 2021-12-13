@@ -22,12 +22,14 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class ActiveConfigRulesRequest extends RpcAcsRequest<ActiveConfigRulesResponse> {
+public class ListRemediationTemplatesRequest extends RpcAcsRequest<ListRemediationTemplatesResponse> {
 	   
 
-	private String configRuleIds;
-	public ActiveConfigRulesRequest() {
-		super("Config", "2019-01-08", "ActiveConfigRules");
+	private String managedRuleIdentifier;
+
+	private String remediationType;
+	public ListRemediationTemplatesRequest() {
+		super("Config", "2019-01-08", "ListRemediationTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class ActiveConfigRulesRequest extends RpcAcsRequest<ActiveConfigRulesRes
 		} catch (Exception e) {}
 	}
 
-	public String getConfigRuleIds() {
-		return this.configRuleIds;
+	public String getManagedRuleIdentifier() {
+		return this.managedRuleIdentifier;
 	}
 
-	public void setConfigRuleIds(String configRuleIds) {
-		this.configRuleIds = configRuleIds;
-		if(configRuleIds != null){
-			putQueryParameter("ConfigRuleIds", configRuleIds);
+	public void setManagedRuleIdentifier(String managedRuleIdentifier) {
+		this.managedRuleIdentifier = managedRuleIdentifier;
+		if(managedRuleIdentifier != null){
+			putQueryParameter("ManagedRuleIdentifier", managedRuleIdentifier);
+		}
+	}
+
+	public String getRemediationType() {
+		return this.remediationType;
+	}
+
+	public void setRemediationType(String remediationType) {
+		this.remediationType = remediationType;
+		if(remediationType != null){
+			putQueryParameter("RemediationType", remediationType);
 		}
 	}
 
 	@Override
-	public Class<ActiveConfigRulesResponse> getResponseClass() {
-		return ActiveConfigRulesResponse.class;
+	public Class<ListRemediationTemplatesResponse> getResponseClass() {
+		return ListRemediationTemplatesResponse.class;
 	}
 
 }

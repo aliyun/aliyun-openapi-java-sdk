@@ -89,26 +89,28 @@ public class DescribeEvaluationResultsResponse extends AcsResponse {
 
 		public static class EvaluationResult {
 
-			private String annotation;
+			private Integer riskLevel;
 
 			private String complianceType;
+
+			private Long resultRecordedTimestamp;
+
+			private String annotation;
 
 			private Long configRuleInvokedTimestamp;
 
 			private String invokingEventMessageType;
 
-			private Long resultRecordedTimestamp;
-
-			private Integer riskLevel;
+			private Boolean remediationEnabled;
 
 			private EvaluationResultIdentifier evaluationResultIdentifier;
 
-			public String getAnnotation() {
-				return this.annotation;
+			public Integer getRiskLevel() {
+				return this.riskLevel;
 			}
 
-			public void setAnnotation(String annotation) {
-				this.annotation = annotation;
+			public void setRiskLevel(Integer riskLevel) {
+				this.riskLevel = riskLevel;
 			}
 
 			public String getComplianceType() {
@@ -117,6 +119,22 @@ public class DescribeEvaluationResultsResponse extends AcsResponse {
 
 			public void setComplianceType(String complianceType) {
 				this.complianceType = complianceType;
+			}
+
+			public Long getResultRecordedTimestamp() {
+				return this.resultRecordedTimestamp;
+			}
+
+			public void setResultRecordedTimestamp(Long resultRecordedTimestamp) {
+				this.resultRecordedTimestamp = resultRecordedTimestamp;
+			}
+
+			public String getAnnotation() {
+				return this.annotation;
+			}
+
+			public void setAnnotation(String annotation) {
+				this.annotation = annotation;
 			}
 
 			public Long getConfigRuleInvokedTimestamp() {
@@ -135,20 +153,12 @@ public class DescribeEvaluationResultsResponse extends AcsResponse {
 				this.invokingEventMessageType = invokingEventMessageType;
 			}
 
-			public Long getResultRecordedTimestamp() {
-				return this.resultRecordedTimestamp;
+			public Boolean getRemediationEnabled() {
+				return this.remediationEnabled;
 			}
 
-			public void setResultRecordedTimestamp(Long resultRecordedTimestamp) {
-				this.resultRecordedTimestamp = resultRecordedTimestamp;
-			}
-
-			public Integer getRiskLevel() {
-				return this.riskLevel;
-			}
-
-			public void setRiskLevel(Integer riskLevel) {
-				this.riskLevel = riskLevel;
+			public void setRemediationEnabled(Boolean remediationEnabled) {
+				this.remediationEnabled = remediationEnabled;
 			}
 
 			public EvaluationResultIdentifier getEvaluationResultIdentifier() {
@@ -185,13 +195,15 @@ public class DescribeEvaluationResultsResponse extends AcsResponse {
 
 					private String configRuleArn;
 
-					private String configRuleId;
+					private String resourceType;
 
 					private String configRuleName;
 
 					private String resourceId;
 
-					private String resourceType;
+					private String configRuleId;
+
+					private String resourceName;
 
 					private String regionId;
 
@@ -203,12 +215,12 @@ public class DescribeEvaluationResultsResponse extends AcsResponse {
 						this.configRuleArn = configRuleArn;
 					}
 
-					public String getConfigRuleId() {
-						return this.configRuleId;
+					public String getResourceType() {
+						return this.resourceType;
 					}
 
-					public void setConfigRuleId(String configRuleId) {
-						this.configRuleId = configRuleId;
+					public void setResourceType(String resourceType) {
+						this.resourceType = resourceType;
 					}
 
 					public String getConfigRuleName() {
@@ -227,12 +239,20 @@ public class DescribeEvaluationResultsResponse extends AcsResponse {
 						this.resourceId = resourceId;
 					}
 
-					public String getResourceType() {
-						return this.resourceType;
+					public String getConfigRuleId() {
+						return this.configRuleId;
 					}
 
-					public void setResourceType(String resourceType) {
-						this.resourceType = resourceType;
+					public void setConfigRuleId(String configRuleId) {
+						this.configRuleId = configRuleId;
+					}
+
+					public String getResourceName() {
+						return this.resourceName;
+					}
+
+					public void setResourceName(String resourceName) {
+						this.resourceName = resourceName;
 					}
 
 					public String getRegionId() {

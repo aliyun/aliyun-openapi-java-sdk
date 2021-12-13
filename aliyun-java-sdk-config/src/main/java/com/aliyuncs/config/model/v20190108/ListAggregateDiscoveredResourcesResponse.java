@@ -16,14 +16,14 @@ package com.aliyuncs.config.model.v20190108;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.config.transform.v20190108.ListDiscoveredResourcesResponseUnmarshaller;
+import com.aliyuncs.config.transform.v20190108.ListAggregateDiscoveredResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListDiscoveredResourcesResponse extends AcsResponse {
+public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -107,6 +107,8 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 			private String resourceStatus;
 
+			private Long resourceOwnerId;
+
 			public String getResourceType() {
 				return this.resourceType;
 			}
@@ -178,12 +180,20 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 			public void setResourceStatus(String resourceStatus) {
 				this.resourceStatus = resourceStatus;
 			}
+
+			public Long getResourceOwnerId() {
+				return this.resourceOwnerId;
+			}
+
+			public void setResourceOwnerId(Long resourceOwnerId) {
+				this.resourceOwnerId = resourceOwnerId;
+			}
 		}
 	}
 
 	@Override
-	public ListDiscoveredResourcesResponse getInstance(UnmarshallerContext context) {
-		return	ListDiscoveredResourcesResponseUnmarshaller.unmarshall(this, context);
+	public ListAggregateDiscoveredResourcesResponse getInstance(UnmarshallerContext context) {
+		return	ListAggregateDiscoveredResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -26,9 +26,9 @@ public class GetDiscoveredResourceSummaryResponseUnmarshaller {
 		getDiscoveredResourceSummaryResponse.setRequestId(_ctx.stringValue("GetDiscoveredResourceSummaryResponse.RequestId"));
 
 		DiscoveredResourceSummary discoveredResourceSummary = new DiscoveredResourceSummary();
+		discoveredResourceSummary.setRegionCount(_ctx.integerValue("GetDiscoveredResourceSummaryResponse.DiscoveredResourceSummary.RegionCount"));
 		discoveredResourceSummary.setResourceCount(_ctx.integerValue("GetDiscoveredResourceSummaryResponse.DiscoveredResourceSummary.ResourceCount"));
 		discoveredResourceSummary.setResourceTypeCount(_ctx.integerValue("GetDiscoveredResourceSummaryResponse.DiscoveredResourceSummary.ResourceTypeCount"));
-		discoveredResourceSummary.setRegionCount(_ctx.integerValue("GetDiscoveredResourceSummaryResponse.DiscoveredResourceSummary.RegionCount"));
 		getDiscoveredResourceSummaryResponse.setDiscoveredResourceSummary(discoveredResourceSummary);
 	 
 	 	return getDiscoveredResourceSummaryResponse;

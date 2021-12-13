@@ -27,21 +27,23 @@ public class ListConfigRulesRequest extends RpcAcsRequest<ListConfigRulesRespons
 
 	private Boolean multiAccount;
 
-	private String messageType;
-
 	private String configRuleState;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String compliancePackId;
+
 	private String complianceType;
 
 	private Integer riskLevel;
 
+	private String configRuleName;
+
 	private Long memberId;
 	public ListConfigRulesRequest() {
-		super("Config", "2019-01-08", "ListConfigRules", "Config");
+		super("Config", "2019-01-08", "ListConfigRules");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,17 +59,6 @@ public class ListConfigRulesRequest extends RpcAcsRequest<ListConfigRulesRespons
 		this.multiAccount = multiAccount;
 		if(multiAccount != null){
 			putQueryParameter("MultiAccount", multiAccount.toString());
-		}
-	}
-
-	public String getMessageType() {
-		return this.messageType;
-	}
-
-	public void setMessageType(String messageType) {
-		this.messageType = messageType;
-		if(messageType != null){
-			putQueryParameter("MessageType", messageType);
 		}
 	}
 
@@ -104,6 +95,17 @@ public class ListConfigRulesRequest extends RpcAcsRequest<ListConfigRulesRespons
 		}
 	}
 
+	public String getCompliancePackId() {
+		return this.compliancePackId;
+	}
+
+	public void setCompliancePackId(String compliancePackId) {
+		this.compliancePackId = compliancePackId;
+		if(compliancePackId != null){
+			putQueryParameter("CompliancePackId", compliancePackId);
+		}
+	}
+
 	public String getComplianceType() {
 		return this.complianceType;
 	}
@@ -123,6 +125,17 @@ public class ListConfigRulesRequest extends RpcAcsRequest<ListConfigRulesRespons
 		this.riskLevel = riskLevel;
 		if(riskLevel != null){
 			putQueryParameter("RiskLevel", riskLevel.toString());
+		}
+	}
+
+	public String getConfigRuleName() {
+		return this.configRuleName;
+	}
+
+	public void setConfigRuleName(String configRuleName) {
+		this.configRuleName = configRuleName;
+		if(configRuleName != null){
+			putQueryParameter("ConfigRuleName", configRuleName);
 		}
 	}
 

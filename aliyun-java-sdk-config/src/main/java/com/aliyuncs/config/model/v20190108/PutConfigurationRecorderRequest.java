@@ -27,7 +27,7 @@ public class PutConfigurationRecorderRequest extends RpcAcsRequest<PutConfigurat
 
 	private String resourceTypes;
 	public PutConfigurationRecorderRequest() {
-		super("Config", "2019-01-08", "PutConfigurationRecorder", "Config");
+		super("Config", "2019-01-08", "PutConfigurationRecorder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

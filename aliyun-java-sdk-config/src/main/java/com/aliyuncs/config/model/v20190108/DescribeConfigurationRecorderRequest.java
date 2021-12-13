@@ -25,7 +25,7 @@ import com.aliyuncs.config.Endpoint;
 public class DescribeConfigurationRecorderRequest extends RpcAcsRequest<DescribeConfigurationRecorderResponse> {
 	   
 	public DescribeConfigurationRecorderRequest() {
-		super("Config", "2019-01-08", "DescribeConfigurationRecorder", "Config");
+		super("Config", "2019-01-08", "DescribeConfigurationRecorder");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
