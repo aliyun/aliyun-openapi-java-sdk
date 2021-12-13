@@ -23,9 +23,9 @@ public class EvaluateResourceResponseUnmarshaller {
 	public static EvaluateResourceResponse unmarshall(EvaluateResourceResponse evaluateResourceResponse, UnmarshallerContext _ctx) {
 		
 		evaluateResourceResponse.setRequestId(_ctx.stringValue("EvaluateResourceResponse.RequestId"));
-		evaluateResourceResponse.setEngine(_ctx.stringValue("EvaluateResourceResponse.Engine"));
-		evaluateResourceResponse.setEngineVersion(_ctx.stringValue("EvaluateResourceResponse.EngineVersion"));
 		evaluateResourceResponse.setDBInstanceAvailable(_ctx.stringValue("EvaluateResourceResponse.DBInstanceAvailable"));
+		evaluateResourceResponse.setEngineVersion(_ctx.stringValue("EvaluateResourceResponse.EngineVersion"));
+		evaluateResourceResponse.setEngine(_ctx.stringValue("EvaluateResourceResponse.Engine"));
 	 
 	 	return evaluateResourceResponse;
 	}

@@ -27,9 +27,13 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 
 	private Long resourceOwnerId;
 
+	private String readonlyReplicas;
+
 	private String engineVersion;
 
 	private String shardsInfo;
+
+	private String replicationFactor;
 
 	private String securityToken;
 
@@ -66,6 +70,17 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 		}
 	}
 
+	public String getReadonlyReplicas() {
+		return this.readonlyReplicas;
+	}
+
+	public void setReadonlyReplicas(String readonlyReplicas) {
+		this.readonlyReplicas = readonlyReplicas;
+		if(readonlyReplicas != null){
+			putQueryParameter("ReadonlyReplicas", readonlyReplicas);
+		}
+	}
+
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -85,6 +100,17 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 		this.shardsInfo = shardsInfo;
 		if(shardsInfo != null){
 			putQueryParameter("ShardsInfo", shardsInfo);
+		}
+	}
+
+	public String getReplicationFactor() {
+		return this.replicationFactor;
+	}
+
+	public void setReplicationFactor(String replicationFactor) {
+		this.replicationFactor = replicationFactor;
+		if(replicationFactor != null){
+			putQueryParameter("ReplicationFactor", replicationFactor);
 		}
 	}
 

@@ -25,6 +25,8 @@ import com.aliyuncs.dds.Endpoint;
 public class CreateServerlessDBInstanceRequest extends RpcAcsRequest<CreateServerlessDBInstanceResponse> {
 	   
 
+	private String capacityUnit;
+
 	private Long resourceOwnerId;
 
 	private Integer dBInstanceStorage;
@@ -71,6 +73,17 @@ public class CreateServerlessDBInstanceRequest extends RpcAcsRequest<CreateServe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCapacityUnit() {
+		return this.capacityUnit;
+	}
+
+	public void setCapacityUnit(String capacityUnit) {
+		this.capacityUnit = capacityUnit;
+		if(capacityUnit != null){
+			putQueryParameter("CapacityUnit", capacityUnit);
+		}
 	}
 
 	public Long getResourceOwnerId() {

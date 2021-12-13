@@ -1,3 +1,6 @@
+2021-12-13 Version: 3.6.2
+- CreateServerlessDBInstance Add CapacityUnit.
+
 2021-11-12 Version: 3.6.1
 - Update by sdk platform.
 

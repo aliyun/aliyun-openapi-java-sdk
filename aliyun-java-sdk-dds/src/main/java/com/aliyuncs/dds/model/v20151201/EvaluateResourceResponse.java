@@ -24,13 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class EvaluateResourceResponse extends AcsResponse {
 
+	private String dBInstanceAvailable;
+
+	private String engineVersion;
+
 	private String requestId;
 
 	private String engine;
 
-	private String engineVersion;
+	public String getDBInstanceAvailable() {
+		return this.dBInstanceAvailable;
+	}
 
-	private String dBInstanceAvailable;
+	public void setDBInstanceAvailable(String dBInstanceAvailable) {
+		this.dBInstanceAvailable = dBInstanceAvailable;
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,22 +62,6 @@ public class EvaluateResourceResponse extends AcsResponse {
 
 	public void setEngine(String engine) {
 		this.engine = engine;
-	}
-
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-	}
-
-	public String getDBInstanceAvailable() {
-		return this.dBInstanceAvailable;
-	}
-
-	public void setDBInstanceAvailable(String dBInstanceAvailable) {
-		this.dBInstanceAvailable = dBInstanceAvailable;
 	}
 
 	@Override
