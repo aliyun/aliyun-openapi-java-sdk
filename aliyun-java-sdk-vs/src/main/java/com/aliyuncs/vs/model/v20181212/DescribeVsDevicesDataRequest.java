@@ -22,20 +22,18 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVsDomainRecordDataRequest extends RpcAcsRequest<DescribeVsDomainRecordDataResponse> {
+public class DescribeVsDevicesDataRequest extends RpcAcsRequest<DescribeVsDevicesDataResponse> {
 	   
 
 	private String startTime;
 
-	private String domainName;
+	private String groupId;
 
 	private String endTime;
 
 	private Long ownerId;
-
-	private String region;
-	public DescribeVsDomainRecordDataRequest() {
-		super("vs", "2018-12-12", "DescribeVsDomainRecordData");
+	public DescribeVsDevicesDataRequest() {
+		super("vs", "2018-12-12", "DescribeVsDevicesData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,14 +52,14 @@ public class DescribeVsDomainRecordDataRequest extends RpcAcsRequest<DescribeVsD
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -87,20 +85,9 @@ public class DescribeVsDomainRecordDataRequest extends RpcAcsRequest<DescribeVsD
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	@Override
-	public Class<DescribeVsDomainRecordDataResponse> getResponseClass() {
-		return DescribeVsDomainRecordDataResponse.class;
+	public Class<DescribeVsDevicesDataResponse> getResponseClass() {
+		return DescribeVsDevicesDataResponse.class;
 	}
 
 }

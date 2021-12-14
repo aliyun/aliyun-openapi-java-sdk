@@ -16,18 +16,18 @@ package com.aliyuncs.vs.model.v20181212;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vs.transform.v20181212.DescribeVsDomainRecordDataResponseUnmarshaller;
+import com.aliyuncs.vs.transform.v20181212.DescribeVsDevicesDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeVsDomainRecordDataResponse extends AcsResponse {
+public class DescribeVsDevicesDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DataModule> recordDataPerInterval;
+	private List<DataModule> devicesDataPerInterval;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,21 +37,19 @@ public class DescribeVsDomainRecordDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataModule> getRecordDataPerInterval() {
-		return this.recordDataPerInterval;
+	public List<DataModule> getDevicesDataPerInterval() {
+		return this.devicesDataPerInterval;
 	}
 
-	public void setRecordDataPerInterval(List<DataModule> recordDataPerInterval) {
-		this.recordDataPerInterval = recordDataPerInterval;
+	public void setDevicesDataPerInterval(List<DataModule> devicesDataPerInterval) {
+		this.devicesDataPerInterval = devicesDataPerInterval;
 	}
 
 	public static class DataModule {
 
 		private String timeStamp;
 
-		private String recordValue;
-
-		private String streamCountValue;
+		private String devicesDataValue;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -61,25 +59,17 @@ public class DescribeVsDomainRecordDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public String getRecordValue() {
-			return this.recordValue;
+		public String getDevicesDataValue() {
+			return this.devicesDataValue;
 		}
 
-		public void setRecordValue(String recordValue) {
-			this.recordValue = recordValue;
-		}
-
-		public String getStreamCountValue() {
-			return this.streamCountValue;
-		}
-
-		public void setStreamCountValue(String streamCountValue) {
-			this.streamCountValue = streamCountValue;
+		public void setDevicesDataValue(String devicesDataValue) {
+			this.devicesDataValue = devicesDataValue;
 		}
 	}
 
 	@Override
-	public DescribeVsDomainRecordDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeVsDomainRecordDataResponseUnmarshaller.unmarshall(this, context);
+	public DescribeVsDevicesDataResponse getInstance(UnmarshallerContext context) {
+		return	DescribeVsDevicesDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

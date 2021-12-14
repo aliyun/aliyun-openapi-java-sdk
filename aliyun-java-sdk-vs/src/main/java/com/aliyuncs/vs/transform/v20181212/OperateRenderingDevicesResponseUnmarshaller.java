@@ -14,6 +14,9 @@
 
 package com.aliyuncs.vs.transform.v20181212;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vs.model.v20181212.OperateRenderingDevicesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,6 +26,12 @@ public class OperateRenderingDevicesResponseUnmarshaller {
 	public static OperateRenderingDevicesResponse unmarshall(OperateRenderingDevicesResponse operateRenderingDevicesResponse, UnmarshallerContext _ctx) {
 		
 		operateRenderingDevicesResponse.setRequestId(_ctx.stringValue("OperateRenderingDevicesResponse.RequestId"));
+
+		List<String> failedIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OperateRenderingDevicesResponse.FailedIds.Length"); i++) {
+			failedIds.add(_ctx.stringValue("OperateRenderingDevicesResponse.FailedIds["+ i +"]"));
+		}
+		operateRenderingDevicesResponse.setFailedIds(failedIds);
 	 
 	 	return operateRenderingDevicesResponse;
 	}

@@ -296,7 +296,7 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 			private String status;
 
-			private List<PodInfo1> network;
+			private List<NetworkItem> network;
 
 			public String getPodId() {
 				return this.podId;
@@ -314,21 +314,21 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public List<PodInfo1> getNetwork() {
+			public List<NetworkItem> getNetwork() {
 				return this.network;
 			}
 
-			public void setNetwork(List<PodInfo1> network) {
+			public void setNetwork(List<NetworkItem> network) {
 				this.network = network;
 			}
 
-			public static class PodInfo1 {
+			public static class NetworkItem {
 
 				private String externalIp;
 
 				private String containerPorts;
 
-				private String externalPort;
+				private String externalPorts;
 
 				public String getExternalIp() {
 					return this.externalIp;
@@ -346,12 +346,12 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 					this.containerPorts = containerPorts;
 				}
 
-				public String getExternalPort() {
-					return this.externalPort;
+				public String getExternalPorts() {
+					return this.externalPorts;
 				}
 
-				public void setExternalPort(String externalPort) {
-					this.externalPort = externalPort;
+				public void setExternalPorts(String externalPorts) {
+					this.externalPorts = externalPorts;
 				}
 			}
 		}

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vs.model.v20181212;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vs.transform.v20181212.ResetRenderingDevicesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,6 +27,8 @@ public class ResetRenderingDevicesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<String> failedIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -34,8 +37,21 @@ public class ResetRenderingDevicesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<String> getFailedIds() {
+		return this.failedIds;
+	}
+
+	public void setFailedIds(List<String> failedIds) {
+		this.failedIds = failedIds;
+	}
+
 	@Override
 	public ResetRenderingDevicesResponse getInstance(UnmarshallerContext context) {
 		return	ResetRenderingDevicesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

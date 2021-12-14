@@ -27,12 +27,6 @@ public class DescribeVsDomainSnapshotDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String domainName;
-
-	private String startTime;
-
-	private String endTime;
-
 	private List<DataModule> snapshotDataPerInterval;
 
 	public String getRequestId() {
@@ -41,30 +35,6 @@ public class DescribeVsDomainSnapshotDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public List<DataModule> getSnapshotDataPerInterval() {

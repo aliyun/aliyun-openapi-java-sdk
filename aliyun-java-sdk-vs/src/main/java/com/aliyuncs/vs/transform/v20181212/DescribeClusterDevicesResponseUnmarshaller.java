@@ -21,7 +21,7 @@ import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse;
 import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device;
 import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device.IpInfo;
 import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device.PodInfo;
-import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device.PodInfo.PodInfo1;
+import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device.PodInfo.NetworkItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -71,14 +71,14 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 				podInfo.setPodId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].PodId"));
 				podInfo.setStatus(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Status"));
 
-				List<PodInfo1> network = new ArrayList<PodInfo1>();
+				List<NetworkItem> network = new ArrayList<NetworkItem>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network.Length"); k++) {
-					PodInfo1 podInfo1 = new PodInfo1();
-					podInfo1.setExternalIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIp"));
-					podInfo1.setContainerPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ContainerPorts"));
-					podInfo1.setExternalPort(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalPort"));
+					NetworkItem networkItem = new NetworkItem();
+					networkItem.setExternalIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIp"));
+					networkItem.setContainerPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ContainerPorts"));
+					networkItem.setExternalPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalPorts"));
 
-					network.add(podInfo1);
+					network.add(networkItem);
 				}
 				podInfo.setNetwork(network);
 

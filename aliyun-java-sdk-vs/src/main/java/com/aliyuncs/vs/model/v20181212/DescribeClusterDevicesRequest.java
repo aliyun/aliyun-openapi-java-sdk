@@ -27,6 +27,8 @@ public class DescribeClusterDevicesRequest extends RpcAcsRequest<DescribeCluster
 
 	private String description;
 
+	private String platform;
+
 	private Long pageSize;
 
 	private String specification;
@@ -53,6 +55,17 @@ public class DescribeClusterDevicesRequest extends RpcAcsRequest<DescribeCluster
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
 		}
 	}
 

@@ -14,6 +14,9 @@
 
 package com.aliyuncs.vs.transform.v20181212;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vs.model.v20181212.DeleteRenderingDevicesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,6 +26,12 @@ public class DeleteRenderingDevicesResponseUnmarshaller {
 	public static DeleteRenderingDevicesResponse unmarshall(DeleteRenderingDevicesResponse deleteRenderingDevicesResponse, UnmarshallerContext _ctx) {
 		
 		deleteRenderingDevicesResponse.setRequestId(_ctx.stringValue("DeleteRenderingDevicesResponse.RequestId"));
+
+		List<String> failedIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DeleteRenderingDevicesResponse.FailedIds.Length"); i++) {
+			failedIds.add(_ctx.stringValue("DeleteRenderingDevicesResponse.FailedIds["+ i +"]"));
+		}
+		deleteRenderingDevicesResponse.setFailedIds(failedIds);
 	 
 	 	return deleteRenderingDevicesResponse;
 	}

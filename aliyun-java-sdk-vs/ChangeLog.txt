@@ -1,3 +1,6 @@
+2021-12-14 Version: 1.11.9
+- Change up FlowControl for OperateRenderigDevices,ResetRenderingDevices and DeleteRenderingDevices.
+
 2021-12-01 Version: 1.11.7
 - Add UpgradeRenderingDevicesImage and UpgradeRenderingDevicesHostOS.
 
