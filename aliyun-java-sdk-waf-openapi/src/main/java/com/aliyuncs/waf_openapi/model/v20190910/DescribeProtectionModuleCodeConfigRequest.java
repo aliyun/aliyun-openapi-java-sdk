@@ -25,17 +25,13 @@ import com.aliyuncs.waf_openapi.Endpoint;
 public class DescribeProtectionModuleCodeConfigRequest extends RpcAcsRequest<DescribeProtectionModuleCodeConfigResponse> {
 	   
 
-	private Integer codeValue;
-
 	private String resourceGroupId;
+
+	private Integer codeValue;
 
 	private String instanceId;
 
-	private String sourceIp;
-
 	private Integer codeType;
-
-	private String lang;
 	public DescribeProtectionModuleCodeConfigRequest() {
 		super("waf-openapi", "2019-09-10", "DescribeProtectionModuleCodeConfig", "waf");
 		setMethod(MethodType.POST);
@@ -43,17 +39,6 @@ public class DescribeProtectionModuleCodeConfigRequest extends RpcAcsRequest<Des
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCodeValue() {
-		return this.codeValue;
-	}
-
-	public void setCodeValue(Integer codeValue) {
-		this.codeValue = codeValue;
-		if(codeValue != null){
-			putQueryParameter("CodeValue", codeValue.toString());
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -64,6 +49,17 @@ public class DescribeProtectionModuleCodeConfigRequest extends RpcAcsRequest<Des
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getCodeValue() {
+		return this.codeValue;
+	}
+
+	public void setCodeValue(Integer codeValue) {
+		this.codeValue = codeValue;
+		if(codeValue != null){
+			putQueryParameter("CodeValue", codeValue.toString());
 		}
 	}
 
@@ -78,17 +74,6 @@ public class DescribeProtectionModuleCodeConfigRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
 	public Integer getCodeType() {
 		return this.codeType;
 	}
@@ -97,17 +82,6 @@ public class DescribeProtectionModuleCodeConfigRequest extends RpcAcsRequest<Des
 		this.codeType = codeType;
 		if(codeType != null){
 			putQueryParameter("CodeType", codeType.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 
