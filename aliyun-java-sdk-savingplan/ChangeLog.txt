@@ -1,3 +1,6 @@
+2021-12-14 Version: 1.1.2
+- Update api version.
+
 2021-09-23 Version: 1.1.1
 - Update api version.
 

@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.savingplan.model.v20200715.QuerySavingPlanInstanceInnerResponse;
-import com.aliyuncs.savingplan.model.v20200715.QuerySavingPlanInstanceInnerResponse.Code;
-import com.aliyuncs.savingplan.model.v20200715.QuerySavingPlanInstanceInnerResponse.Code.SpnInstanceDetailDTO;
+import com.aliyuncs.savingplan.model.v20200715.QuerySavingPlanInstanceInnerResponse.Data;
+import com.aliyuncs.savingplan.model.v20200715.QuerySavingPlanInstanceInnerResponse.Data.SpnInstanceDetailDTO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,37 +29,37 @@ public class QuerySavingPlanInstanceInnerResponseUnmarshaller {
 		
 		querySavingPlanInstanceInnerResponse.setRequestId(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.RequestId"));
 		querySavingPlanInstanceInnerResponse.setMessage(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Message"));
-		querySavingPlanInstanceInnerResponse.setData(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data"));
+		querySavingPlanInstanceInnerResponse.setCode(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code"));
 		querySavingPlanInstanceInnerResponse.setSuccess(_ctx.booleanValue("QuerySavingPlanInstanceInnerResponse.Success"));
 
-		Code code = new Code();
-		code.setTotalCount(_ctx.integerValue("QuerySavingPlanInstanceInnerResponse.Code.TotalCount"));
-		code.setPageSize(_ctx.integerValue("QuerySavingPlanInstanceInnerResponse.Code.PageSize"));
-		code.setCurrentPage(_ctx.integerValue("QuerySavingPlanInstanceInnerResponse.Code.CurrentPage"));
+		Data data = new Data();
+		data.setTotalCount(_ctx.integerValue("QuerySavingPlanInstanceInnerResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.integerValue("QuerySavingPlanInstanceInnerResponse.Data.PageSize"));
+		data.setCurrentPage(_ctx.integerValue("QuerySavingPlanInstanceInnerResponse.Data.CurrentPage"));
 
 		List<SpnInstanceDetailDTO> datas = new ArrayList<SpnInstanceDetailDTO>();
-		for (int i = 0; i < _ctx.lengthValue("QuerySavingPlanInstanceInnerResponse.Code.Datas.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QuerySavingPlanInstanceInnerResponse.Data.Datas.Length"); i++) {
 			SpnInstanceDetailDTO spnInstanceDetailDTO = new SpnInstanceDetailDTO();
-			spnInstanceDetailDTO.setSpnInstanceId(_ctx.longValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].SpnInstanceId"));
-			spnInstanceDetailDTO.setSpnInstanceCode(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].SpnInstanceCode"));
-			spnInstanceDetailDTO.setPayMode(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].PayMode"));
-			spnInstanceDetailDTO.setSpnType(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].SpnType"));
-			spnInstanceDetailDTO.setInstanceFamily(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].InstanceFamily"));
-			spnInstanceDetailDTO.setRegion(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].Region"));
-			spnInstanceDetailDTO.setCycle(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].Cycle"));
-			spnInstanceDetailDTO.setStartTime(_ctx.longValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].StartTime"));
-			spnInstanceDetailDTO.setEndTime(_ctx.longValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].EndTime"));
-			spnInstanceDetailDTO.setPoolValue(_ctx.floatValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].PoolValue"));
-			spnInstanceDetailDTO.setUserId(_ctx.longValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].UserId"));
-			spnInstanceDetailDTO.setSite(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].Site"));
-			spnInstanceDetailDTO.setCurrency(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].Currency"));
-			spnInstanceDetailDTO.setCommodityCode(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].CommodityCode"));
-			spnInstanceDetailDTO.setStatus(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Code.Datas["+ i +"].Status"));
+			spnInstanceDetailDTO.setSpnInstanceId(_ctx.longValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].SpnInstanceId"));
+			spnInstanceDetailDTO.setSpnInstanceCode(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].SpnInstanceCode"));
+			spnInstanceDetailDTO.setPayMode(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].PayMode"));
+			spnInstanceDetailDTO.setSpnType(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].SpnType"));
+			spnInstanceDetailDTO.setInstanceFamily(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].InstanceFamily"));
+			spnInstanceDetailDTO.setRegion(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].Region"));
+			spnInstanceDetailDTO.setCycle(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].Cycle"));
+			spnInstanceDetailDTO.setStartTime(_ctx.longValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].StartTime"));
+			spnInstanceDetailDTO.setEndTime(_ctx.longValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].EndTime"));
+			spnInstanceDetailDTO.setPoolValue(_ctx.floatValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].PoolValue"));
+			spnInstanceDetailDTO.setUserId(_ctx.longValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].UserId"));
+			spnInstanceDetailDTO.setSite(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].Site"));
+			spnInstanceDetailDTO.setCurrency(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].Currency"));
+			spnInstanceDetailDTO.setCommodityCode(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].CommodityCode"));
+			spnInstanceDetailDTO.setStatus(_ctx.stringValue("QuerySavingPlanInstanceInnerResponse.Data.Datas["+ i +"].Status"));
 
 			datas.add(spnInstanceDetailDTO);
 		}
-		code.setDatas(datas);
-		querySavingPlanInstanceInnerResponse.setCode(code);
+		data.setDatas(datas);
+		querySavingPlanInstanceInnerResponse.setData(data);
 	 
 	 	return querySavingPlanInstanceInnerResponse;
 	}

@@ -29,11 +29,11 @@ public class QuerySavingPlanInstanceInnerResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
+	private String code;
 
 	private Boolean success;
 
-	private Code code;
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -51,12 +51,12 @@ public class QuerySavingPlanInstanceInnerResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -67,15 +67,15 @@ public class QuerySavingPlanInstanceInnerResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Code getCode() {
-		return this.code;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setCode(Code code) {
-		this.code = code;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public static class Code {
+	public static class Data {
 
 		private Integer totalCount;
 
