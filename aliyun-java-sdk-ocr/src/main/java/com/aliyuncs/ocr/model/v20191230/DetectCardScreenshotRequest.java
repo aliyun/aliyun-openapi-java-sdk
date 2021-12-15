@@ -27,7 +27,7 @@ public class DetectCardScreenshotRequest extends RpcAcsRequest<DetectCardScreens
 
 	private String imageURL;
 	public DetectCardScreenshotRequest() {
-		super("ocr", "2019-12-30", "DetectCardScreenshot", "ocr");
+		super("ocr", "2019-12-30", "DetectCardScreenshot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

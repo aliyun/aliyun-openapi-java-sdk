@@ -16,14 +16,14 @@ package com.aliyuncs.ocr.model.v20191230;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ocr.transform.v20191230.RecognizePDFResponseUnmarshaller;
+import com.aliyuncs.ocr.transform.v20191230.RecognizePdfResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RecognizePDFResponse extends AcsResponse {
+public class RecognizePdfResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -235,8 +235,8 @@ public class RecognizePDFResponse extends AcsResponse {
 	}
 
 	@Override
-	public RecognizePDFResponse getInstance(UnmarshallerContext context) {
-		return	RecognizePDFResponseUnmarshaller.unmarshall(this, context);
+	public RecognizePdfResponse getInstance(UnmarshallerContext context) {
+		return	RecognizePdfResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -61,9 +61,9 @@ public class RecognizeStampResponse extends AcsResponse {
 
 			private List<GeneralTextItem> generalText;
 
-			private Roi roi;
-
 			private Text text;
+
+			private Roi roi;
 
 			public List<GeneralTextItem> getGeneralText() {
 				return this.generalText;
@@ -71,14 +71,6 @@ public class RecognizeStampResponse extends AcsResponse {
 
 			public void setGeneralText(List<GeneralTextItem> generalText) {
 				this.generalText = generalText;
-			}
-
-			public Roi getRoi() {
-				return this.roi;
-			}
-
-			public void setRoi(Roi roi) {
-				this.roi = roi;
 			}
 
 			public Text getText() {
@@ -89,19 +81,19 @@ public class RecognizeStampResponse extends AcsResponse {
 				this.text = text;
 			}
 
-			public static class GeneralTextItem {
+			public Roi getRoi() {
+				return this.roi;
+			}
 
-				private String content;
+			public void setRoi(Roi roi) {
+				this.roi = roi;
+			}
+
+			public static class GeneralTextItem {
 
 				private Float confidence;
 
-				public String getContent() {
-					return this.content;
-				}
-
-				public void setContent(String content) {
-					this.content = content;
-				}
+				private String content;
 
 				public Float getConfidence() {
 					return this.confidence;
@@ -110,11 +102,40 @@ public class RecognizeStampResponse extends AcsResponse {
 				public void setConfidence(Float confidence) {
 					this.confidence = confidence;
 				}
+
+				public String getContent() {
+					return this.content;
+				}
+
+				public void setContent(String content) {
+					this.content = content;
+				}
+			}
+
+			public static class Text {
+
+				private Float confidence;
+
+				private String content;
+
+				public Float getConfidence() {
+					return this.confidence;
+				}
+
+				public void setConfidence(Float confidence) {
+					this.confidence = confidence;
+				}
+
+				public String getContent() {
+					return this.content;
+				}
+
+				public void setContent(String content) {
+					this.content = content;
+				}
 			}
 
 			public static class Roi {
-
-				private Integer left;
 
 				private Integer top;
 
@@ -122,13 +143,7 @@ public class RecognizeStampResponse extends AcsResponse {
 
 				private Integer height;
 
-				public Integer getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
+				private Integer left;
 
 				public Integer getTop() {
 					return this.top;
@@ -153,28 +168,13 @@ public class RecognizeStampResponse extends AcsResponse {
 				public void setHeight(Integer height) {
 					this.height = height;
 				}
-			}
 
-			public static class Text {
-
-				private String content;
-
-				private Float confidence;
-
-				public String getContent() {
-					return this.content;
+				public Integer getLeft() {
+					return this.left;
 				}
 
-				public void setContent(String content) {
-					this.content = content;
-				}
-
-				public Float getConfidence() {
-					return this.confidence;
-				}
-
-				public void setConfidence(Float confidence) {
-					this.confidence = confidence;
+				public void setLeft(Integer left) {
+					this.left = left;
 				}
 			}
 		}

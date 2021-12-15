@@ -46,19 +46,11 @@ public class DetectCardScreenshotResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean isCard;
-
 		private Boolean isBlur;
 
+		private Boolean isCard;
+
 		private SpoofResult spoofResult;
-
-		public Boolean getIsCard() {
-			return this.isCard;
-		}
-
-		public void setIsCard(Boolean isCard) {
-			this.isCard = isCard;
-		}
 
 		public Boolean getIsBlur() {
 			return this.isBlur;
@@ -66,6 +58,14 @@ public class DetectCardScreenshotResponse extends AcsResponse {
 
 		public void setIsBlur(Boolean isBlur) {
 			this.isBlur = isBlur;
+		}
+
+		public Boolean getIsCard() {
+			return this.isCard;
+		}
+
+		public void setIsCard(Boolean isCard) {
+			this.isCard = isCard;
 		}
 
 		public SpoofResult getSpoofResult() {
@@ -100,17 +100,9 @@ public class DetectCardScreenshotResponse extends AcsResponse {
 
 			public static class ResultMap {
 
-				private Float screenScore;
-
 				private Float screenThreshold;
 
-				public Float getScreenScore() {
-					return this.screenScore;
-				}
-
-				public void setScreenScore(Float screenScore) {
-					this.screenScore = screenScore;
-				}
+				private Float screenScore;
 
 				public Float getScreenThreshold() {
 					return this.screenThreshold;
@@ -118,6 +110,14 @@ public class DetectCardScreenshotResponse extends AcsResponse {
 
 				public void setScreenThreshold(Float screenThreshold) {
 					this.screenThreshold = screenThreshold;
+				}
+
+				public Float getScreenScore() {
+					return this.screenScore;
+				}
+
+				public void setScreenScore(Float screenScore) {
+					this.screenScore = screenScore;
 				}
 			}
 		}

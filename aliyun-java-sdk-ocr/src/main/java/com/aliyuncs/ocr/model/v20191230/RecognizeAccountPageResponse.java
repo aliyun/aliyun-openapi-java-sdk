@@ -47,49 +47,33 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Float angle;
-
-		private String name;
-
 		private String gender;
 
-		private String relation;
-
-		private String birthPlace;
+		private Float angle;
 
 		private String nationality;
 
-		private String nativePlace;
+		private String birthPlace;
 
 		private String birthDate;
 
+		private String relation;
+
+		private String nativePlace;
+
+		private String name;
+
 		private String iDNumber;
-
-		private List<InvalidStampArea> invalidStampAreas;
-
-		private List<UndertakeStampArea> undertakeStampAreas;
 
 		private List<RegisterStampArea> registerStampAreas;
 
 		private List<OtherStampArea> otherStampAreas;
 
+		private List<UndertakeStampArea> undertakeStampAreas;
+
+		private List<InvalidStampArea> invalidStampAreas;
+
 		private TitleArea titleArea;
-
-		public Float getAngle() {
-			return this.angle;
-		}
-
-		public void setAngle(Float angle) {
-			this.angle = angle;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getGender() {
 			return this.gender;
@@ -99,20 +83,12 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 			this.gender = gender;
 		}
 
-		public String getRelation() {
-			return this.relation;
+		public Float getAngle() {
+			return this.angle;
 		}
 
-		public void setRelation(String relation) {
-			this.relation = relation;
-		}
-
-		public String getBirthPlace() {
-			return this.birthPlace;
-		}
-
-		public void setBirthPlace(String birthPlace) {
-			this.birthPlace = birthPlace;
+		public void setAngle(Float angle) {
+			this.angle = angle;
 		}
 
 		public String getNationality() {
@@ -123,12 +99,12 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 			this.nationality = nationality;
 		}
 
-		public String getNativePlace() {
-			return this.nativePlace;
+		public String getBirthPlace() {
+			return this.birthPlace;
 		}
 
-		public void setNativePlace(String nativePlace) {
-			this.nativePlace = nativePlace;
+		public void setBirthPlace(String birthPlace) {
+			this.birthPlace = birthPlace;
 		}
 
 		public String getBirthDate() {
@@ -139,28 +115,36 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 			this.birthDate = birthDate;
 		}
 
+		public String getRelation() {
+			return this.relation;
+		}
+
+		public void setRelation(String relation) {
+			this.relation = relation;
+		}
+
+		public String getNativePlace() {
+			return this.nativePlace;
+		}
+
+		public void setNativePlace(String nativePlace) {
+			this.nativePlace = nativePlace;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getIDNumber() {
 			return this.iDNumber;
 		}
 
 		public void setIDNumber(String iDNumber) {
 			this.iDNumber = iDNumber;
-		}
-
-		public List<InvalidStampArea> getInvalidStampAreas() {
-			return this.invalidStampAreas;
-		}
-
-		public void setInvalidStampAreas(List<InvalidStampArea> invalidStampAreas) {
-			this.invalidStampAreas = invalidStampAreas;
-		}
-
-		public List<UndertakeStampArea> getUndertakeStampAreas() {
-			return this.undertakeStampAreas;
-		}
-
-		public void setUndertakeStampAreas(List<UndertakeStampArea> undertakeStampAreas) {
-			this.undertakeStampAreas = undertakeStampAreas;
 		}
 
 		public List<RegisterStampArea> getRegisterStampAreas() {
@@ -179,6 +163,22 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 			this.otherStampAreas = otherStampAreas;
 		}
 
+		public List<UndertakeStampArea> getUndertakeStampAreas() {
+			return this.undertakeStampAreas;
+		}
+
+		public void setUndertakeStampAreas(List<UndertakeStampArea> undertakeStampAreas) {
+			this.undertakeStampAreas = undertakeStampAreas;
+		}
+
+		public List<InvalidStampArea> getInvalidStampAreas() {
+			return this.invalidStampAreas;
+		}
+
+		public void setInvalidStampAreas(List<InvalidStampArea> invalidStampAreas) {
+			this.invalidStampAreas = invalidStampAreas;
+		}
+
 		public TitleArea getTitleArea() {
 			return this.titleArea;
 		}
@@ -187,109 +187,15 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 			this.titleArea = titleArea;
 		}
 
-		public static class InvalidStampArea {
-
-			private Integer left;
-
-			private Integer top;
-
-			private Integer height;
-
-			private Integer width;
-
-			public Integer getLeft() {
-				return this.left;
-			}
-
-			public void setLeft(Integer left) {
-				this.left = left;
-			}
-
-			public Integer getTop() {
-				return this.top;
-			}
-
-			public void setTop(Integer top) {
-				this.top = top;
-			}
-
-			public Integer getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Integer height) {
-				this.height = height;
-			}
-
-			public Integer getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(Integer width) {
-				this.width = width;
-			}
-		}
-
-		public static class UndertakeStampArea {
-
-			private Integer left;
-
-			private Integer top;
-
-			private Integer height;
-
-			private Integer width;
-
-			public Integer getLeft() {
-				return this.left;
-			}
-
-			public void setLeft(Integer left) {
-				this.left = left;
-			}
-
-			public Integer getTop() {
-				return this.top;
-			}
-
-			public void setTop(Integer top) {
-				this.top = top;
-			}
-
-			public Integer getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Integer height) {
-				this.height = height;
-			}
-
-			public Integer getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(Integer width) {
-				this.width = width;
-			}
-		}
-
 		public static class RegisterStampArea {
 
-			private Integer left;
-
 			private Integer top;
-
-			private Integer height;
 
 			private Integer width;
 
-			public Integer getLeft() {
-				return this.left;
-			}
+			private Integer height;
 
-			public void setLeft(Integer left) {
-				this.left = left;
-			}
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -297,6 +203,14 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 
 			public void setTop(Integer top) {
 				this.top = top;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 
 			public Integer getHeight() {
@@ -307,32 +221,24 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getWidth() {
-				return this.width;
+			public Integer getLeft() {
+				return this.left;
 			}
 
-			public void setWidth(Integer width) {
-				this.width = width;
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 
 		public static class OtherStampArea {
 
-			private Integer left;
-
 			private Integer top;
-
-			private Integer height;
 
 			private Integer width;
 
-			public Integer getLeft() {
-				return this.left;
-			}
+			private Integer height;
 
-			public void setLeft(Integer left) {
-				this.left = left;
-			}
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -340,6 +246,14 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 
 			public void setTop(Integer top) {
 				this.top = top;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 
 			public Integer getHeight() {
@@ -350,32 +264,110 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 				this.height = height;
 			}
 
+			public Integer getLeft() {
+				return this.left;
+			}
+
+			public void setLeft(Integer left) {
+				this.left = left;
+			}
+		}
+
+		public static class UndertakeStampArea {
+
+			private Integer top;
+
+			private Integer width;
+
+			private Integer height;
+
+			private Integer left;
+
+			public Integer getTop() {
+				return this.top;
+			}
+
+			public void setTop(Integer top) {
+				this.top = top;
+			}
+
 			public Integer getWidth() {
 				return this.width;
 			}
 
 			public void setWidth(Integer width) {
 				this.width = width;
+			}
+
+			public Integer getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(Integer height) {
+				this.height = height;
+			}
+
+			public Integer getLeft() {
+				return this.left;
+			}
+
+			public void setLeft(Integer left) {
+				this.left = left;
+			}
+		}
+
+		public static class InvalidStampArea {
+
+			private Integer top;
+
+			private Integer width;
+
+			private Integer height;
+
+			private Integer left;
+
+			public Integer getTop() {
+				return this.top;
+			}
+
+			public void setTop(Integer top) {
+				this.top = top;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
+			}
+
+			public Integer getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(Integer height) {
+				this.height = height;
+			}
+
+			public Integer getLeft() {
+				return this.left;
+			}
+
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 
 		public static class TitleArea {
 
-			private Integer left;
-
 			private Integer top;
-
-			private Integer height;
 
 			private Integer width;
 
-			public Integer getLeft() {
-				return this.left;
-			}
+			private Integer height;
 
-			public void setLeft(Integer left) {
-				this.left = left;
-			}
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -383,6 +375,14 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 
 			public void setTop(Integer top) {
 				this.top = top;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 
 			public Integer getHeight() {
@@ -393,12 +393,12 @@ public class RecognizeAccountPageResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getWidth() {
-				return this.width;
+			public Integer getLeft() {
+				return this.left;
 			}
 
-			public void setWidth(Integer width) {
-				this.width = width;
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 	}

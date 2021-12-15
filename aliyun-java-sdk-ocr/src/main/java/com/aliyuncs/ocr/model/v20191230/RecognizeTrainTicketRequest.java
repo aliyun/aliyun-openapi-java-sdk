@@ -27,7 +27,7 @@ public class RecognizeTrainTicketRequest extends RpcAcsRequest<RecognizeTrainTic
 
 	private String imageURL;
 	public RecognizeTrainTicketRequest() {
-		super("ocr", "2019-12-30", "RecognizeTrainTicket", "ocr");
+		super("ocr", "2019-12-30", "RecognizeTrainTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

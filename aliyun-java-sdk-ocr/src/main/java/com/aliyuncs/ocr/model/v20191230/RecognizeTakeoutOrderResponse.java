@@ -59,13 +59,21 @@ public class RecognizeTakeoutOrderResponse extends AcsResponse {
 
 		public static class Element {
 
+			private String value;
+
 			private Float score;
 
 			private String name;
 
-			private String value;
-
 			private List<Integer> boxes;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 
 			public Float getScore() {
 				return this.score;
@@ -81,14 +89,6 @@ public class RecognizeTakeoutOrderResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
 			}
 
 			public List<Integer> getBoxes() {

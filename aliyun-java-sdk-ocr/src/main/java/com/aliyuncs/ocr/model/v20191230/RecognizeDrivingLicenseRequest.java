@@ -29,7 +29,7 @@ public class RecognizeDrivingLicenseRequest extends RpcAcsRequest<RecognizeDrivi
 
 	private String imageURL;
 	public RecognizeDrivingLicenseRequest() {
-		super("ocr", "2019-12-30", "RecognizeDrivingLicense", "ocr");
+		super("ocr", "2019-12-30", "RecognizeDrivingLicense");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

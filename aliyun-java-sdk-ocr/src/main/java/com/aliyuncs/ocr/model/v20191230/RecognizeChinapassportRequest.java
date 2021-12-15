@@ -27,7 +27,7 @@ public class RecognizeChinapassportRequest extends RpcAcsRequest<RecognizeChinap
 
 	private String imageURL;
 	public RecognizeChinapassportRequest() {
-		super("ocr", "2019-12-30", "RecognizeChinapassport", "ocr");
+		super("ocr", "2019-12-30", "RecognizeChinapassport");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

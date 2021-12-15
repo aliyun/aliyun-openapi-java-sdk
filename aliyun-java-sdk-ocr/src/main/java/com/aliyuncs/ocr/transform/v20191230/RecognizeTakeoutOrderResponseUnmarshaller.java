@@ -34,9 +34,9 @@ public class RecognizeTakeoutOrderResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeTakeoutOrderResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
+			element.setValue(_ctx.stringValue("RecognizeTakeoutOrderResponse.Data.Elements["+ i +"].Value"));
 			element.setScore(_ctx.floatValue("RecognizeTakeoutOrderResponse.Data.Elements["+ i +"].Score"));
 			element.setName(_ctx.stringValue("RecognizeTakeoutOrderResponse.Data.Elements["+ i +"].Name"));
-			element.setValue(_ctx.stringValue("RecognizeTakeoutOrderResponse.Data.Elements["+ i +"].Value"));
 
 			List<Integer> boxes = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizeTakeoutOrderResponse.Data.Elements["+ i +"].Boxes.Length"); j++) {

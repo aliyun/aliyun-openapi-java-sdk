@@ -46,192 +46,56 @@ public class RecognizeChinapassportResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String authority;
-
-		private String birthDate;
-
-		private String birthDay;
-
-		private String birthPlace;
-
-		private String birthPlaceRaw;
-
-		private String country;
-
-		private String expiryDate;
-
-		private String expiryDay;
-
-		private String issueDate;
-
-		private String issuePlace;
-
-		private String issuePlaceRaw;
-
-		private String lineZero;
-
-		private String lineOne;
-
-		private String name;
-
-		private String nameChinese;
-
-		private String nameChineseRaw;
-
-		private String passportNo;
-
-		private String personId;
+		private String type;
 
 		private String sex;
 
-		private String sourceCountry;
+		private String authority;
+
+		private String issuePlaceRaw;
 
 		private Boolean success;
 
-		private String type;
+		private String lineOne;
 
-		public String getAuthority() {
-			return this.authority;
+		private String expiryDate;
+
+		private String birthPlace;
+
+		private String passportNo;
+
+		private String birthPlaceRaw;
+
+		private String issueDate;
+
+		private String sourceCountry;
+
+		private String birthDate;
+
+		private String nameChineseRaw;
+
+		private String issuePlace;
+
+		private String nameChinese;
+
+		private String lineZero;
+
+		private String country;
+
+		private String birthDay;
+
+		private String expiryDay;
+
+		private String name;
+
+		private String personId;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAuthority(String authority) {
-			this.authority = authority;
-		}
-
-		public String getBirthDate() {
-			return this.birthDate;
-		}
-
-		public void setBirthDate(String birthDate) {
-			this.birthDate = birthDate;
-		}
-
-		public String getBirthDay() {
-			return this.birthDay;
-		}
-
-		public void setBirthDay(String birthDay) {
-			this.birthDay = birthDay;
-		}
-
-		public String getBirthPlace() {
-			return this.birthPlace;
-		}
-
-		public void setBirthPlace(String birthPlace) {
-			this.birthPlace = birthPlace;
-		}
-
-		public String getBirthPlaceRaw() {
-			return this.birthPlaceRaw;
-		}
-
-		public void setBirthPlaceRaw(String birthPlaceRaw) {
-			this.birthPlaceRaw = birthPlaceRaw;
-		}
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public void setCountry(String country) {
-			this.country = country;
-		}
-
-		public String getExpiryDate() {
-			return this.expiryDate;
-		}
-
-		public void setExpiryDate(String expiryDate) {
-			this.expiryDate = expiryDate;
-		}
-
-		public String getExpiryDay() {
-			return this.expiryDay;
-		}
-
-		public void setExpiryDay(String expiryDay) {
-			this.expiryDay = expiryDay;
-		}
-
-		public String getIssueDate() {
-			return this.issueDate;
-		}
-
-		public void setIssueDate(String issueDate) {
-			this.issueDate = issueDate;
-		}
-
-		public String getIssuePlace() {
-			return this.issuePlace;
-		}
-
-		public void setIssuePlace(String issuePlace) {
-			this.issuePlace = issuePlace;
-		}
-
-		public String getIssuePlaceRaw() {
-			return this.issuePlaceRaw;
-		}
-
-		public void setIssuePlaceRaw(String issuePlaceRaw) {
-			this.issuePlaceRaw = issuePlaceRaw;
-		}
-
-		public String getLineZero() {
-			return this.lineZero;
-		}
-
-		public void setLineZero(String lineZero) {
-			this.lineZero = lineZero;
-		}
-
-		public String getLineOne() {
-			return this.lineOne;
-		}
-
-		public void setLineOne(String lineOne) {
-			this.lineOne = lineOne;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getNameChinese() {
-			return this.nameChinese;
-		}
-
-		public void setNameChinese(String nameChinese) {
-			this.nameChinese = nameChinese;
-		}
-
-		public String getNameChineseRaw() {
-			return this.nameChineseRaw;
-		}
-
-		public void setNameChineseRaw(String nameChineseRaw) {
-			this.nameChineseRaw = nameChineseRaw;
-		}
-
-		public String getPassportNo() {
-			return this.passportNo;
-		}
-
-		public void setPassportNo(String passportNo) {
-			this.passportNo = passportNo;
-		}
-
-		public String getPersonId() {
-			return this.personId;
-		}
-
-		public void setPersonId(String personId) {
-			this.personId = personId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getSex() {
@@ -242,12 +106,20 @@ public class RecognizeChinapassportResponse extends AcsResponse {
 			this.sex = sex;
 		}
 
-		public String getSourceCountry() {
-			return this.sourceCountry;
+		public String getAuthority() {
+			return this.authority;
 		}
 
-		public void setSourceCountry(String sourceCountry) {
-			this.sourceCountry = sourceCountry;
+		public void setAuthority(String authority) {
+			this.authority = authority;
+		}
+
+		public String getIssuePlaceRaw() {
+			return this.issuePlaceRaw;
+		}
+
+		public void setIssuePlaceRaw(String issuePlaceRaw) {
+			this.issuePlaceRaw = issuePlaceRaw;
 		}
 
 		public Boolean getSuccess() {
@@ -258,12 +130,140 @@ public class RecognizeChinapassportResponse extends AcsResponse {
 			this.success = success;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getLineOne() {
+			return this.lineOne;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setLineOne(String lineOne) {
+			this.lineOne = lineOne;
+		}
+
+		public String getExpiryDate() {
+			return this.expiryDate;
+		}
+
+		public void setExpiryDate(String expiryDate) {
+			this.expiryDate = expiryDate;
+		}
+
+		public String getBirthPlace() {
+			return this.birthPlace;
+		}
+
+		public void setBirthPlace(String birthPlace) {
+			this.birthPlace = birthPlace;
+		}
+
+		public String getPassportNo() {
+			return this.passportNo;
+		}
+
+		public void setPassportNo(String passportNo) {
+			this.passportNo = passportNo;
+		}
+
+		public String getBirthPlaceRaw() {
+			return this.birthPlaceRaw;
+		}
+
+		public void setBirthPlaceRaw(String birthPlaceRaw) {
+			this.birthPlaceRaw = birthPlaceRaw;
+		}
+
+		public String getIssueDate() {
+			return this.issueDate;
+		}
+
+		public void setIssueDate(String issueDate) {
+			this.issueDate = issueDate;
+		}
+
+		public String getSourceCountry() {
+			return this.sourceCountry;
+		}
+
+		public void setSourceCountry(String sourceCountry) {
+			this.sourceCountry = sourceCountry;
+		}
+
+		public String getBirthDate() {
+			return this.birthDate;
+		}
+
+		public void setBirthDate(String birthDate) {
+			this.birthDate = birthDate;
+		}
+
+		public String getNameChineseRaw() {
+			return this.nameChineseRaw;
+		}
+
+		public void setNameChineseRaw(String nameChineseRaw) {
+			this.nameChineseRaw = nameChineseRaw;
+		}
+
+		public String getIssuePlace() {
+			return this.issuePlace;
+		}
+
+		public void setIssuePlace(String issuePlace) {
+			this.issuePlace = issuePlace;
+		}
+
+		public String getNameChinese() {
+			return this.nameChinese;
+		}
+
+		public void setNameChinese(String nameChinese) {
+			this.nameChinese = nameChinese;
+		}
+
+		public String getLineZero() {
+			return this.lineZero;
+		}
+
+		public void setLineZero(String lineZero) {
+			this.lineZero = lineZero;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getBirthDay() {
+			return this.birthDay;
+		}
+
+		public void setBirthDay(String birthDay) {
+			this.birthDay = birthDay;
+		}
+
+		public String getExpiryDay() {
+			return this.expiryDay;
+		}
+
+		public void setExpiryDay(String expiryDay) {
+			this.expiryDay = expiryDay;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
 		}
 	}
 

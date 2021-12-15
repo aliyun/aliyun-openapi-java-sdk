@@ -115,9 +115,9 @@ public class RecognizeTaxiInvoiceResponse extends AcsResponse {
 
 					private Float angle;
 
-					private Center center;
-
 					private Size size;
+
+					private Center center;
 
 					public Float getAngle() {
 						return this.angle;
@@ -125,14 +125,6 @@ public class RecognizeTaxiInvoiceResponse extends AcsResponse {
 
 					public void setAngle(Float angle) {
 						this.angle = angle;
-					}
-
-					public Center getCenter() {
-						return this.center;
-					}
-
-					public void setCenter(Center center) {
-						this.center = center;
 					}
 
 					public Size getSize() {
@@ -143,42 +135,19 @@ public class RecognizeTaxiInvoiceResponse extends AcsResponse {
 						this.size = size;
 					}
 
-					public static class Center {
+					public Center getCenter() {
+						return this.center;
+					}
 
-						private Float x;
-
-						private Float y;
-
-						public Float getX() {
-							return this.x;
-						}
-
-						public void setX(Float x) {
-							this.x = x;
-						}
-
-						public Float getY() {
-							return this.y;
-						}
-
-						public void setY(Float y) {
-							this.y = y;
-						}
+					public void setCenter(Center center) {
+						this.center = center;
 					}
 
 					public static class Size {
 
-						private Float h;
-
 						private Float w;
 
-						public Float getH() {
-							return this.h;
-						}
-
-						public void setH(Float h) {
-							this.h = h;
-						}
+						private Float h;
 
 						public Float getW() {
 							return this.w;
@@ -187,27 +156,50 @@ public class RecognizeTaxiInvoiceResponse extends AcsResponse {
 						public void setW(Float w) {
 							this.w = w;
 						}
+
+						public Float getH() {
+							return this.h;
+						}
+
+						public void setH(Float h) {
+							this.h = h;
+						}
+					}
+
+					public static class Center {
+
+						private Float y;
+
+						private Float x;
+
+						public Float getY() {
+							return this.y;
+						}
+
+						public void setY(Float y) {
+							this.y = y;
+						}
+
+						public Float getX() {
+							return this.x;
+						}
+
+						public void setX(Float x) {
+							this.x = x;
+						}
 					}
 				}
 			}
 
 			public static class InvoiceRoi {
 
-				private Float h;
-
 				private Float w;
 
-				private Float x;
+				private Float h;
 
 				private Float y;
 
-				public Float getH() {
-					return this.h;
-				}
-
-				public void setH(Float h) {
-					this.h = h;
-				}
+				private Float x;
 
 				public Float getW() {
 					return this.w;
@@ -217,12 +209,12 @@ public class RecognizeTaxiInvoiceResponse extends AcsResponse {
 					this.w = w;
 				}
 
-				public Float getX() {
-					return this.x;
+				public Float getH() {
+					return this.h;
 				}
 
-				public void setX(Float x) {
-					this.x = x;
+				public void setH(Float h) {
+					this.h = h;
 				}
 
 				public Float getY() {
@@ -231,6 +223,14 @@ public class RecognizeTaxiInvoiceResponse extends AcsResponse {
 
 				public void setY(Float y) {
 					this.y = y;
+				}
+
+				public Float getX() {
+					return this.x;
+				}
+
+				public void setX(Float x) {
+					this.x = x;
 				}
 			}
 		}

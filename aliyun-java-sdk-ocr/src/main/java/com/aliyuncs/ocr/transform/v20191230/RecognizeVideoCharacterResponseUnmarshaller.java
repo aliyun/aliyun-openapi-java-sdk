@@ -34,6 +34,7 @@ public class RecognizeVideoCharacterResponseUnmarshaller {
 		Data data = new Data();
 		data.setWidth(_ctx.longValue("RecognizeVideoCharacterResponse.Data.Width"));
 		data.setHeight(_ctx.longValue("RecognizeVideoCharacterResponse.Data.Height"));
+		data.setInputFile(_ctx.stringValue("RecognizeVideoCharacterResponse.Data.InputFile"));
 
 		List<Frame> frames = new ArrayList<Frame>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeVideoCharacterResponse.Data.Frames.Length"); i++) {

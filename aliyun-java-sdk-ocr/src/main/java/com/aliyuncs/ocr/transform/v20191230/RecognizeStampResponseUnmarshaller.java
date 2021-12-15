@@ -38,23 +38,23 @@ public class RecognizeStampResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("RecognizeStampResponse.Data.Results.Length"); i++) {
 			ResultsItem resultsItem = new ResultsItem();
 
+			Text text = new Text();
+			text.setConfidence(_ctx.floatValue("RecognizeStampResponse.Data.Results["+ i +"].Text.Confidence"));
+			text.setContent(_ctx.stringValue("RecognizeStampResponse.Data.Results["+ i +"].Text.Content"));
+			resultsItem.setText(text);
+
 			Roi roi = new Roi();
-			roi.setLeft(_ctx.integerValue("RecognizeStampResponse.Data.Results["+ i +"].Roi.Left"));
 			roi.setTop(_ctx.integerValue("RecognizeStampResponse.Data.Results["+ i +"].Roi.Top"));
 			roi.setWidth(_ctx.integerValue("RecognizeStampResponse.Data.Results["+ i +"].Roi.Width"));
 			roi.setHeight(_ctx.integerValue("RecognizeStampResponse.Data.Results["+ i +"].Roi.Height"));
+			roi.setLeft(_ctx.integerValue("RecognizeStampResponse.Data.Results["+ i +"].Roi.Left"));
 			resultsItem.setRoi(roi);
-
-			Text text = new Text();
-			text.setContent(_ctx.stringValue("RecognizeStampResponse.Data.Results["+ i +"].Text.Content"));
-			text.setConfidence(_ctx.floatValue("RecognizeStampResponse.Data.Results["+ i +"].Text.Confidence"));
-			resultsItem.setText(text);
 
 			List<GeneralTextItem> generalText = new ArrayList<GeneralTextItem>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizeStampResponse.Data.Results["+ i +"].GeneralText.Length"); j++) {
 				GeneralTextItem generalTextItem = new GeneralTextItem();
-				generalTextItem.setContent(_ctx.stringValue("RecognizeStampResponse.Data.Results["+ i +"].GeneralText["+ j +"].Content"));
 				generalTextItem.setConfidence(_ctx.floatValue("RecognizeStampResponse.Data.Results["+ i +"].GeneralText["+ j +"].Confidence"));
+				generalTextItem.setContent(_ctx.stringValue("RecognizeStampResponse.Data.Results["+ i +"].GeneralText["+ j +"].Content"));
 
 				generalText.add(generalTextItem);
 			}

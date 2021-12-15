@@ -59,23 +59,15 @@ public class RecognizePassportMRZResponse extends AcsResponse {
 
 		public static class Region {
 
-			private String name;
-
 			private Float recognitionScore;
-
-			private String content;
 
 			private Float detectionScore;
 
+			private String name;
+
+			private String content;
+
 			private List<Float> bandBoxes;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public Float getRecognitionScore() {
 				return this.recognitionScore;
@@ -85,20 +77,28 @@ public class RecognizePassportMRZResponse extends AcsResponse {
 				this.recognitionScore = recognitionScore;
 			}
 
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
-			}
-
 			public Float getDetectionScore() {
 				return this.detectionScore;
 			}
 
 			public void setDetectionScore(Float detectionScore) {
 				this.detectionScore = detectionScore;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
 			}
 
 			public List<Float> getBandBoxes() {

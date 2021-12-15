@@ -46,28 +46,28 @@ public class RecognizeTrainTicketResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String date;
+		private Float price;
 
 		private String destination;
 
-		private String level;
+		private String departureStation;
+
+		private String date;
 
 		private String number;
 
-		private String name;
-
-		private String departureStation;
-
 		private String seat;
 
-		private Float price;
+		private String name;
 
-		public String getDate() {
-			return this.date;
+		private String level;
+
+		public Float getPrice() {
+			return this.price;
 		}
 
-		public void setDate(String date) {
-			this.date = date;
+		public void setPrice(Float price) {
+			this.price = price;
 		}
 
 		public String getDestination() {
@@ -78,12 +78,20 @@ public class RecognizeTrainTicketResponse extends AcsResponse {
 			this.destination = destination;
 		}
 
-		public String getLevel() {
-			return this.level;
+		public String getDepartureStation() {
+			return this.departureStation;
 		}
 
-		public void setLevel(String level) {
-			this.level = level;
+		public void setDepartureStation(String departureStation) {
+			this.departureStation = departureStation;
+		}
+
+		public String getDate() {
+			return this.date;
+		}
+
+		public void setDate(String date) {
+			this.date = date;
 		}
 
 		public String getNumber() {
@@ -94,22 +102,6 @@ public class RecognizeTrainTicketResponse extends AcsResponse {
 			this.number = number;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDepartureStation() {
-			return this.departureStation;
-		}
-
-		public void setDepartureStation(String departureStation) {
-			this.departureStation = departureStation;
-		}
-
 		public String getSeat() {
 			return this.seat;
 		}
@@ -118,12 +110,20 @@ public class RecognizeTrainTicketResponse extends AcsResponse {
 			this.seat = seat;
 		}
 
-		public Float getPrice() {
-			return this.price;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setPrice(Float price) {
-			this.price = price;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 	}
 

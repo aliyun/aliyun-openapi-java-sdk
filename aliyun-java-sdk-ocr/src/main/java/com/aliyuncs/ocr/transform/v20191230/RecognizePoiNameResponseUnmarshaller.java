@@ -45,10 +45,10 @@ public class RecognizePoiNameResponseUnmarshaller {
 			List<TextsItem> texts = new ArrayList<TextsItem>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizePoiNameResponse.Data.Signboards["+ i +"].Texts.Length"); j++) {
 				TextsItem textsItem = new TextsItem();
-				textsItem.setLabel(_ctx.stringValue("RecognizePoiNameResponse.Data.Signboards["+ i +"].Texts["+ j +"].Label"));
+				textsItem.setType(_ctx.stringValue("RecognizePoiNameResponse.Data.Signboards["+ i +"].Texts["+ j +"].Type"));
 				textsItem.setScore(_ctx.floatValue("RecognizePoiNameResponse.Data.Signboards["+ i +"].Texts["+ j +"].Score"));
 				textsItem.setTag(_ctx.stringValue("RecognizePoiNameResponse.Data.Signboards["+ i +"].Texts["+ j +"].Tag"));
-				textsItem.setType(_ctx.stringValue("RecognizePoiNameResponse.Data.Signboards["+ i +"].Texts["+ j +"].Type"));
+				textsItem.setLabel(_ctx.stringValue("RecognizePoiNameResponse.Data.Signboards["+ i +"].Texts["+ j +"].Label"));
 
 				List<Integer> points = new ArrayList<Integer>();
 				for (int k = 0; k < _ctx.lengthValue("RecognizePoiNameResponse.Data.Signboards["+ i +"].Texts["+ j +"].Points.Length"); k++) {

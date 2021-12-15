@@ -28,15 +28,15 @@ public class DetectCardScreenshotResponseUnmarshaller {
 		detectCardScreenshotResponse.setRequestId(_ctx.stringValue("DetectCardScreenshotResponse.RequestId"));
 
 		Data data = new Data();
-		data.setIsCard(_ctx.booleanValue("DetectCardScreenshotResponse.Data.IsCard"));
 		data.setIsBlur(_ctx.booleanValue("DetectCardScreenshotResponse.Data.IsBlur"));
+		data.setIsCard(_ctx.booleanValue("DetectCardScreenshotResponse.Data.IsCard"));
 
 		SpoofResult spoofResult = new SpoofResult();
 		spoofResult.setIsSpoof(_ctx.booleanValue("DetectCardScreenshotResponse.Data.SpoofResult.IsSpoof"));
 
 		ResultMap resultMap = new ResultMap();
-		resultMap.setScreenScore(_ctx.floatValue("DetectCardScreenshotResponse.Data.SpoofResult.ResultMap.ScreenScore"));
 		resultMap.setScreenThreshold(_ctx.floatValue("DetectCardScreenshotResponse.Data.SpoofResult.ResultMap.ScreenThreshold"));
+		resultMap.setScreenScore(_ctx.floatValue("DetectCardScreenshotResponse.Data.SpoofResult.ResultMap.ScreenScore"));
 		spoofResult.setResultMap(resultMap);
 		data.setSpoofResult(spoofResult);
 		detectCardScreenshotResponse.setData(data);

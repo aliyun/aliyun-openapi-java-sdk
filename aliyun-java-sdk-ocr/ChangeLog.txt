@@ -1,3 +1,6 @@
+2021-12-15 Version: 1.0.14
+- RecognizeVideoCharacter add output field inputFile.
+
 2021-11-23 Version: 1.0.13
 - Update RecognizeCharacter.
 

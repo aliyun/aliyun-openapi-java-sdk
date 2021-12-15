@@ -27,11 +27,11 @@ public class TrimDocumentRequest extends RpcAcsRequest<TrimDocumentResponse> {
 
 	private String fileType;
 
-	private String fileURL;
-
 	private String outputType;
+
+	private String fileURL;
 	public TrimDocumentRequest() {
-		super("ocr", "2019-12-30", "TrimDocument", "ocr");
+		super("ocr", "2019-12-30", "TrimDocument");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,17 +50,6 @@ public class TrimDocumentRequest extends RpcAcsRequest<TrimDocumentResponse> {
 		}
 	}
 
-	public String getFileURL() {
-		return this.fileURL;
-	}
-
-	public void setFileURL(String fileURL) {
-		this.fileURL = fileURL;
-		if(fileURL != null){
-			putBodyParameter("FileURL", fileURL);
-		}
-	}
-
 	public String getOutputType() {
 		return this.outputType;
 	}
@@ -69,6 +58,17 @@ public class TrimDocumentRequest extends RpcAcsRequest<TrimDocumentResponse> {
 		this.outputType = outputType;
 		if(outputType != null){
 			putBodyParameter("OutputType", outputType);
+		}
+	}
+
+	public String getFileURL() {
+		return this.fileURL;
+	}
+
+	public void setFileURL(String fileURL) {
+		this.fileURL = fileURL;
+		if(fileURL != null){
+			putBodyParameter("FileURL", fileURL);
 		}
 	}
 

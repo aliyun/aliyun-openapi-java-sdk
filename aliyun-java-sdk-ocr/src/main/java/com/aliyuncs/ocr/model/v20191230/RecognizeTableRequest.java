@@ -29,15 +29,15 @@ public class RecognizeTableRequest extends RpcAcsRequest<RecognizeTableResponse>
 
 	private Boolean skipDetection;
 
-	private String imageURL;
-
 	private String outputFormat;
 
 	private Boolean assureDirection;
 
 	private Boolean hasLine;
+
+	private String imageURL;
 	public RecognizeTableRequest() {
-		super("ocr", "2019-12-30", "RecognizeTable", "ocr");
+		super("ocr", "2019-12-30", "RecognizeTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,17 +64,6 @@ public class RecognizeTableRequest extends RpcAcsRequest<RecognizeTableResponse>
 		this.skipDetection = skipDetection;
 		if(skipDetection != null){
 			putBodyParameter("SkipDetection", skipDetection.toString());
-		}
-	}
-
-	public String getImageURL() {
-		return this.imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 
@@ -108,6 +97,17 @@ public class RecognizeTableRequest extends RpcAcsRequest<RecognizeTableResponse>
 		this.hasLine = hasLine;
 		if(hasLine != null){
 			putBodyParameter("HasLine", hasLine.toString());
+		}
+	}
+
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 

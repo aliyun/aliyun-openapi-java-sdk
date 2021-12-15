@@ -57,12 +57,12 @@ public class RecognizeTableResponseUnmarshaller {
 				List<TableColumn> tableColumns = new ArrayList<TableColumn>();
 				for (int k = 0; k < _ctx.lengthValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns.Length"); k++) {
 					TableColumn tableColumn = new TableColumn();
-					tableColumn.setStartColumn(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].StartColumn"));
-					tableColumn.setStartRow(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].StartRow"));
-					tableColumn.setEndColumn(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].EndColumn"));
 					tableColumn.setEndRow(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].EndRow"));
-					tableColumn.setHeight(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].Height"));
+					tableColumn.setEndColumn(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].EndColumn"));
 					tableColumn.setWidth(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].Width"));
+					tableColumn.setHeight(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].Height"));
+					tableColumn.setStartRow(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].StartRow"));
+					tableColumn.setStartColumn(_ctx.integerValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].StartColumn"));
 
 					List<String> texts = new ArrayList<String>();
 					for (int l = 0; l < _ctx.lengthValue("RecognizeTableResponse.Data.Tables["+ i +"].TableRows["+ j +"].TableColumns["+ k +"].Texts.Length"); l++) {

@@ -22,12 +22,12 @@ import com.aliyuncs.ocr.Endpoint;
  * @author auto create
  * @version 
  */
-public class RecognizePDFRequest extends RpcAcsRequest<RecognizePDFResponse> {
+public class RecognizePdfRequest extends RpcAcsRequest<RecognizePdfResponse> {
 	   
 
 	private String fileURL;
-	public RecognizePDFRequest() {
-		super("ocr", "2019-12-30", "RecognizePDF", "ocr");
+	public RecognizePdfRequest() {
+		super("ocr", "2019-12-30", "RecognizePdf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class RecognizePDFRequest extends RpcAcsRequest<RecognizePDFResponse> {
 	}
 
 	@Override
-	public Class<RecognizePDFResponse> getResponseClass() {
-		return RecognizePDFResponse.class;
+	public Class<RecognizePdfResponse> getResponseClass() {
+		return RecognizePdfResponse.class;
 	}
 
 }

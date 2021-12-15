@@ -51,17 +51,17 @@ public class RecognizeBusinessCardResponse extends AcsResponse {
 
 		private List<String> companies;
 
-		private List<String> departments;
-
 		private List<String> titles;
 
-		private List<String> cellPhoneNumbers;
+		private List<String> emails;
+
+		private List<String> departments;
 
 		private List<String> officePhoneNumbers;
 
-		private List<String> addresses;
+		private List<String> cellPhoneNumbers;
 
-		private List<String> emails;
+		private List<String> addresses;
 
 		public String getName() {
 			return this.name;
@@ -79,14 +79,6 @@ public class RecognizeBusinessCardResponse extends AcsResponse {
 			this.companies = companies;
 		}
 
-		public List<String> getDepartments() {
-			return this.departments;
-		}
-
-		public void setDepartments(List<String> departments) {
-			this.departments = departments;
-		}
-
 		public List<String> getTitles() {
 			return this.titles;
 		}
@@ -95,12 +87,20 @@ public class RecognizeBusinessCardResponse extends AcsResponse {
 			this.titles = titles;
 		}
 
-		public List<String> getCellPhoneNumbers() {
-			return this.cellPhoneNumbers;
+		public List<String> getEmails() {
+			return this.emails;
 		}
 
-		public void setCellPhoneNumbers(List<String> cellPhoneNumbers) {
-			this.cellPhoneNumbers = cellPhoneNumbers;
+		public void setEmails(List<String> emails) {
+			this.emails = emails;
+		}
+
+		public List<String> getDepartments() {
+			return this.departments;
+		}
+
+		public void setDepartments(List<String> departments) {
+			this.departments = departments;
 		}
 
 		public List<String> getOfficePhoneNumbers() {
@@ -111,20 +111,20 @@ public class RecognizeBusinessCardResponse extends AcsResponse {
 			this.officePhoneNumbers = officePhoneNumbers;
 		}
 
+		public List<String> getCellPhoneNumbers() {
+			return this.cellPhoneNumbers;
+		}
+
+		public void setCellPhoneNumbers(List<String> cellPhoneNumbers) {
+			this.cellPhoneNumbers = cellPhoneNumbers;
+		}
+
 		public List<String> getAddresses() {
 			return this.addresses;
 		}
 
 		public void setAddresses(List<String> addresses) {
 			this.addresses = addresses;
-		}
-
-		public List<String> getEmails() {
-			return this.emails;
-		}
-
-		public void setEmails(List<String> emails) {
-			this.emails = emails;
 		}
 	}
 

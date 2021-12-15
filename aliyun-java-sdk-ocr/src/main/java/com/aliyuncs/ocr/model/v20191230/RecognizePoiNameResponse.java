@@ -81,22 +81,22 @@ public class RecognizePoiNameResponse extends AcsResponse {
 
 			public static class TextsItem {
 
-				private String label;
+				private String type;
 
 				private Float score;
 
 				private String tag;
 
-				private String type;
+				private String label;
 
 				private List<Integer> points;
 
-				public String getLabel() {
-					return this.label;
+				public String getType() {
+					return this.type;
 				}
 
-				public void setLabel(String label) {
-					this.label = label;
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public Float getScore() {
@@ -115,12 +115,12 @@ public class RecognizePoiNameResponse extends AcsResponse {
 					this.tag = tag;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getLabel() {
+					return this.label;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setLabel(String label) {
+					this.label = label;
 				}
 
 				public List<Integer> getPoints() {

@@ -34,10 +34,10 @@ public class RecognizePassportMRZResponseUnmarshaller {
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizePassportMRZResponse.Data.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setName(_ctx.stringValue("RecognizePassportMRZResponse.Data.Regions["+ i +"].Name"));
 			region.setRecognitionScore(_ctx.floatValue("RecognizePassportMRZResponse.Data.Regions["+ i +"].RecognitionScore"));
-			region.setContent(_ctx.stringValue("RecognizePassportMRZResponse.Data.Regions["+ i +"].Content"));
 			region.setDetectionScore(_ctx.floatValue("RecognizePassportMRZResponse.Data.Regions["+ i +"].DetectionScore"));
+			region.setName(_ctx.stringValue("RecognizePassportMRZResponse.Data.Regions["+ i +"].Name"));
+			region.setContent(_ctx.stringValue("RecognizePassportMRZResponse.Data.Regions["+ i +"].Content"));
 
 			List<Float> bandBoxes = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizePassportMRZResponse.Data.Regions["+ i +"].BandBoxes.Length"); j++) {

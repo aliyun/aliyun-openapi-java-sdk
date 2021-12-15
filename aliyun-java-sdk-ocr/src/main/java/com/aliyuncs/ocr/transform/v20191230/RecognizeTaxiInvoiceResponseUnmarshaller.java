@@ -42,10 +42,10 @@ public class RecognizeTaxiInvoiceResponseUnmarshaller {
 			invoice.setRotateType(_ctx.integerValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].RotateType"));
 
 			InvoiceRoi invoiceRoi = new InvoiceRoi();
-			invoiceRoi.setH(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].InvoiceRoi.H"));
 			invoiceRoi.setW(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].InvoiceRoi.W"));
-			invoiceRoi.setX(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].InvoiceRoi.X"));
+			invoiceRoi.setH(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].InvoiceRoi.H"));
 			invoiceRoi.setY(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].InvoiceRoi.Y"));
+			invoiceRoi.setX(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].InvoiceRoi.X"));
 			invoice.setInvoiceRoi(invoiceRoi);
 
 			List<Item> items = new ArrayList<Item>();
@@ -56,15 +56,15 @@ public class RecognizeTaxiInvoiceResponseUnmarshaller {
 				ItemRoi itemRoi = new ItemRoi();
 				itemRoi.setAngle(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].Items["+ j +"].ItemRoi.Angle"));
 
-				Center center = new Center();
-				center.setX(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].Items["+ j +"].ItemRoi.Center.X"));
-				center.setY(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].Items["+ j +"].ItemRoi.Center.Y"));
-				itemRoi.setCenter(center);
-
 				Size size = new Size();
-				size.setH(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].Items["+ j +"].ItemRoi.Size.H"));
 				size.setW(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].Items["+ j +"].ItemRoi.Size.W"));
+				size.setH(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].Items["+ j +"].ItemRoi.Size.H"));
 				itemRoi.setSize(size);
+
+				Center center = new Center();
+				center.setY(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].Items["+ j +"].ItemRoi.Center.Y"));
+				center.setX(_ctx.floatValue("RecognizeTaxiInvoiceResponse.Data.Invoices["+ i +"].Items["+ j +"].ItemRoi.Center.X"));
+				itemRoi.setCenter(center);
 				item.setItemRoi(itemRoi);
 
 				items.add(item);

@@ -27,7 +27,7 @@ public class RecognizeBusinessLicenseRequest extends RpcAcsRequest<RecognizeBusi
 
 	private String imageURL;
 	public RecognizeBusinessLicenseRequest() {
-		super("ocr", "2019-12-30", "RecognizeBusinessLicense", "ocr");
+		super("ocr", "2019-12-30", "RecognizeBusinessLicense");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

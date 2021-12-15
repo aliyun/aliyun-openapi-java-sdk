@@ -37,23 +37,23 @@ public class RecognizeBusinessCardResponseUnmarshaller {
 		}
 		data.setCompanies(companies);
 
-		List<String> departments = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.Departments.Length"); i++) {
-			departments.add(_ctx.stringValue("RecognizeBusinessCardResponse.Data.Departments["+ i +"]"));
-		}
-		data.setDepartments(departments);
-
 		List<String> titles = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.Titles.Length"); i++) {
 			titles.add(_ctx.stringValue("RecognizeBusinessCardResponse.Data.Titles["+ i +"]"));
 		}
 		data.setTitles(titles);
 
-		List<String> cellPhoneNumbers = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.CellPhoneNumbers.Length"); i++) {
-			cellPhoneNumbers.add(_ctx.stringValue("RecognizeBusinessCardResponse.Data.CellPhoneNumbers["+ i +"]"));
+		List<String> emails = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.Emails.Length"); i++) {
+			emails.add(_ctx.stringValue("RecognizeBusinessCardResponse.Data.Emails["+ i +"]"));
 		}
-		data.setCellPhoneNumbers(cellPhoneNumbers);
+		data.setEmails(emails);
+
+		List<String> departments = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.Departments.Length"); i++) {
+			departments.add(_ctx.stringValue("RecognizeBusinessCardResponse.Data.Departments["+ i +"]"));
+		}
+		data.setDepartments(departments);
 
 		List<String> officePhoneNumbers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.OfficePhoneNumbers.Length"); i++) {
@@ -61,17 +61,17 @@ public class RecognizeBusinessCardResponseUnmarshaller {
 		}
 		data.setOfficePhoneNumbers(officePhoneNumbers);
 
+		List<String> cellPhoneNumbers = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.CellPhoneNumbers.Length"); i++) {
+			cellPhoneNumbers.add(_ctx.stringValue("RecognizeBusinessCardResponse.Data.CellPhoneNumbers["+ i +"]"));
+		}
+		data.setCellPhoneNumbers(cellPhoneNumbers);
+
 		List<String> addresses = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.Addresses.Length"); i++) {
 			addresses.add(_ctx.stringValue("RecognizeBusinessCardResponse.Data.Addresses["+ i +"]"));
 		}
 		data.setAddresses(addresses);
-
-		List<String> emails = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeBusinessCardResponse.Data.Emails.Length"); i++) {
-			emails.add(_ctx.stringValue("RecognizeBusinessCardResponse.Data.Emails["+ i +"]"));
-		}
-		data.setEmails(emails);
 		recognizeBusinessCardResponse.setData(data);
 	 
 	 	return recognizeBusinessCardResponse;

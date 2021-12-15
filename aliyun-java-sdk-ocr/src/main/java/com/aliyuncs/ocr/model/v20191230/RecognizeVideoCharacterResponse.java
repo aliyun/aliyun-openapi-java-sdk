@@ -51,6 +51,8 @@ public class RecognizeVideoCharacterResponse extends AcsResponse {
 
 		private Long height;
 
+		private String inputFile;
+
 		private List<Frame> frames;
 
 		public Long getWidth() {
@@ -67,6 +69,14 @@ public class RecognizeVideoCharacterResponse extends AcsResponse {
 
 		public void setHeight(Long height) {
 			this.height = height;
+		}
+
+		public String getInputFile() {
+			return this.inputFile;
+		}
+
+		public void setInputFile(String inputFile) {
+			this.inputFile = inputFile;
 		}
 
 		public List<Frame> getFrames() {

@@ -26,14 +26,14 @@ public class RecognizeTrainTicketResponseUnmarshaller {
 		recognizeTrainTicketResponse.setRequestId(_ctx.stringValue("RecognizeTrainTicketResponse.RequestId"));
 
 		Data data = new Data();
-		data.setDate(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Date"));
-		data.setDestination(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Destination"));
-		data.setLevel(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Level"));
-		data.setNumber(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Number"));
-		data.setName(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Name"));
-		data.setDepartureStation(_ctx.stringValue("RecognizeTrainTicketResponse.Data.DepartureStation"));
-		data.setSeat(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Seat"));
 		data.setPrice(_ctx.floatValue("RecognizeTrainTicketResponse.Data.Price"));
+		data.setDestination(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Destination"));
+		data.setDepartureStation(_ctx.stringValue("RecognizeTrainTicketResponse.Data.DepartureStation"));
+		data.setDate(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Date"));
+		data.setNumber(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Number"));
+		data.setSeat(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Seat"));
+		data.setName(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Name"));
+		data.setLevel(_ctx.stringValue("RecognizeTrainTicketResponse.Data.Level"));
 		recognizeTrainTicketResponse.setData(data);
 	 
 	 	return recognizeTrainTicketResponse;
