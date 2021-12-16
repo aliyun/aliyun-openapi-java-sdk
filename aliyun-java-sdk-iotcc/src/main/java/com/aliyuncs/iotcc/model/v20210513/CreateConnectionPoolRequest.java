@@ -39,7 +39,7 @@ public class CreateConnectionPoolRequest extends RpcAcsRequest<CreateConnectionP
 
 	private String ioTCloudConnectorId;
 	public CreateConnectionPoolRequest() {
-		super("IoTCC", "2021-05-13", "CreateConnectionPool", "cciot");
+		super("IoTCC", "2021-05-13", "CreateConnectionPool", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

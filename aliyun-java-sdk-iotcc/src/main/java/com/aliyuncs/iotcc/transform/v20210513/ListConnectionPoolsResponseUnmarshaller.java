@@ -38,6 +38,7 @@ public class ListConnectionPoolsResponseUnmarshaller {
 			connectionPoolModels.setConnectionPoolStatus(_ctx.stringValue("ListConnectionPoolsResponse.ConnectionPools["+ i +"].ConnectionPoolStatus"));
 			connectionPoolModels.setConnectionPoolName(_ctx.stringValue("ListConnectionPoolsResponse.ConnectionPools["+ i +"].ConnectionPoolName"));
 			connectionPoolModels.setConnectionPoolDescription(_ctx.stringValue("ListConnectionPoolsResponse.ConnectionPools["+ i +"].ConnectionPoolDescription"));
+			connectionPoolModels.setOperateResultRequestID(_ctx.stringValue("ListConnectionPoolsResponse.ConnectionPools["+ i +"].OperateResultRequestID"));
 
 			List<String> cidrs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListConnectionPoolsResponse.ConnectionPools["+ i +"].Cidrs.Length"); j++) {

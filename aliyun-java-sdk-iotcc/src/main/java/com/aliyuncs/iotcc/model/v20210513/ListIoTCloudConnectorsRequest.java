@@ -27,21 +27,21 @@ public class ListIoTCloudConnectorsRequest extends RpcAcsRequest<ListIoTCloudCon
 
 	private List<String> ioTCloudConnectorStatuss;
 
+	private List<String> iSPs;
+
 	private List<String> ioTCloudConnectorIdss;
 
 	private String nextToken;
 
-	private List<String> apnss;
+	private List<String> aPNs;
 
-	private List<String> vpcIdss;
-
-	private List<String> ispss;
+	private List<String> vpcIds;
 
 	private Integer maxResults;
 
 	private List<String> ioTCloudConnectorNames;
 	public ListIoTCloudConnectorsRequest() {
-		super("IoTCC", "2021-05-13", "ListIoTCloudConnectors", "cciot");
+		super("IoTCC", "2021-05-13", "ListIoTCloudConnectors", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 
@@ -54,6 +54,19 @@ public class ListIoTCloudConnectorsRequest extends RpcAcsRequest<ListIoTCloudCon
 		if (ioTCloudConnectorStatuss != null) {
 			for (int i = 0; i < ioTCloudConnectorStatuss.size(); i++) {
 				putQueryParameter("IoTCloudConnectorStatus." + (i + 1) , ioTCloudConnectorStatuss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getISPs() {
+		return this.iSPs;
+	}
+
+	public void setISPs(List<String> iSPs) {
+		this.iSPs = iSPs;	
+		if (iSPs != null) {
+			for (int i = 0; i < iSPs.size(); i++) {
+				putQueryParameter("ISP." + (i + 1) , iSPs.get(i));
 			}
 		}	
 	}
@@ -82,41 +95,28 @@ public class ListIoTCloudConnectorsRequest extends RpcAcsRequest<ListIoTCloudCon
 		}
 	}
 
-	public List<String> getApnss() {
-		return this.apnss;
+	public List<String> getAPNs() {
+		return this.aPNs;
 	}
 
-	public void setApnss(List<String> apnss) {
-		this.apnss = apnss;	
-		if (apnss != null) {
-			for (int i = 0; i < apnss.size(); i++) {
-				putQueryParameter("Apns." + (i + 1) , apnss.get(i));
+	public void setAPNs(List<String> aPNs) {
+		this.aPNs = aPNs;	
+		if (aPNs != null) {
+			for (int i = 0; i < aPNs.size(); i++) {
+				putQueryParameter("APN." + (i + 1) , aPNs.get(i));
 			}
 		}	
 	}
 
-	public List<String> getVpcIdss() {
-		return this.vpcIdss;
+	public List<String> getVpcIds() {
+		return this.vpcIds;
 	}
 
-	public void setVpcIdss(List<String> vpcIdss) {
-		this.vpcIdss = vpcIdss;	
-		if (vpcIdss != null) {
-			for (int i = 0; i < vpcIdss.size(); i++) {
-				putQueryParameter("VpcIds." + (i + 1) , vpcIdss.get(i));
-			}
-		}	
-	}
-
-	public List<String> getIspss() {
-		return this.ispss;
-	}
-
-	public void setIspss(List<String> ispss) {
-		this.ispss = ispss;	
-		if (ispss != null) {
-			for (int i = 0; i < ispss.size(); i++) {
-				putQueryParameter("Isps." + (i + 1) , ispss.get(i));
+	public void setVpcIds(List<String> vpcIds) {
+		this.vpcIds = vpcIds;	
+		if (vpcIds != null) {
+			for (int i = 0; i < vpcIds.size(); i++) {
+				putQueryParameter("VpcId." + (i + 1) , vpcIds.get(i));
 			}
 		}	
 	}

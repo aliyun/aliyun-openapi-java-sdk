@@ -37,7 +37,7 @@ public class ListConnectionPoolsRequest extends RpcAcsRequest<ListConnectionPool
 
 	private Integer maxResults;
 	public ListConnectionPoolsRequest() {
-		super("IoTCC", "2021-05-13", "ListConnectionPools", "cciot");
+		super("IoTCC", "2021-05-13", "ListConnectionPools", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

@@ -34,7 +34,7 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 
 	private String ioTCloudConnectorId;
 	public CreateServiceRequest() {
-		super("IoTCC", "2021-05-13", "CreateService", "cciot");
+		super("IoTCC", "2021-05-13", "CreateService", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

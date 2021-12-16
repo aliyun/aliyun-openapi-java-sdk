@@ -30,7 +30,7 @@ public class GetIoTCloudConnectorAccessLogRequest extends RpcAcsRequest<GetIoTCl
 
 	private String ioTCloudConnectorId;
 	public GetIoTCloudConnectorAccessLogRequest() {
-		super("IoTCC", "2021-05-13", "GetIoTCloudConnectorAccessLog", "cciot");
+		super("IoTCC", "2021-05-13", "GetIoTCloudConnectorAccessLog", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

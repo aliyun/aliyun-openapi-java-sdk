@@ -35,7 +35,7 @@ public class AssociateVSwitchWithIoTCloudConnectorRequest extends RpcAcsRequest<
 
 	private String vpcId;
 	public AssociateVSwitchWithIoTCloudConnectorRequest() {
-		super("IoTCC", "2021-05-13", "AssociateVSwitchWithIoTCloudConnector", "cciot");
+		super("IoTCC", "2021-05-13", "AssociateVSwitchWithIoTCloudConnector", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

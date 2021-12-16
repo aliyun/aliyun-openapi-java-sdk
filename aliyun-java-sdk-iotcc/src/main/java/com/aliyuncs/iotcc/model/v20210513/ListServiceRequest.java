@@ -37,7 +37,7 @@ public class ListServiceRequest extends RpcAcsRequest<ListServiceResponse> {
 
 	private Integer maxResults;
 	public ListServiceRequest() {
-		super("IoTCC", "2021-05-13", "ListService", "cciot");
+		super("IoTCC", "2021-05-13", "ListService", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

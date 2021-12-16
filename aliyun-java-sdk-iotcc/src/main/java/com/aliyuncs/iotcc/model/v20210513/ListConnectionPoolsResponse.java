@@ -85,6 +85,8 @@ public class ListConnectionPoolsResponse extends AcsResponse {
 
 		private String connectionPoolDescription;
 
+		private String operateResultRequestID;
+
 		private List<String> cidrs;
 
 		public String getConnectionPoolId() {
@@ -117,6 +119,14 @@ public class ListConnectionPoolsResponse extends AcsResponse {
 
 		public void setConnectionPoolDescription(String connectionPoolDescription) {
 			this.connectionPoolDescription = connectionPoolDescription;
+		}
+
+		public String getOperateResultRequestID() {
+			return this.operateResultRequestID;
+		}
+
+		public void setOperateResultRequestID(String operateResultRequestID) {
+			this.operateResultRequestID = operateResultRequestID;
 		}
 
 		public List<String> getCidrs() {

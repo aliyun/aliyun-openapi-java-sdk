@@ -27,6 +27,8 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 
 	private List<String> destinationTypes;
 
+	private List<String> destinations;
+
 	private List<String> authorizationRuleIdss;
 
 	private String nextToken;
@@ -41,7 +43,7 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 
 	private Integer maxResults;
 	public ListAuthorizationRulesRequest() {
-		super("IoTCC", "2021-05-13", "ListAuthorizationRules", "cciot");
+		super("IoTCC", "2021-05-13", "ListAuthorizationRules", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 
@@ -54,6 +56,19 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 		if (destinationTypes != null) {
 			for (int i = 0; i < destinationTypes.size(); i++) {
 				putQueryParameter("DestinationType." + (i + 1) , destinationTypes.get(i));
+			}
+		}	
+	}
+
+	public List<String> getDestinations() {
+		return this.destinations;
+	}
+
+	public void setDestinations(List<String> destinations) {
+		this.destinations = destinations;	
+		if (destinations != null) {
+			for (int i = 0; i < destinations.size(); i++) {
+				putQueryParameter("Destination." + (i + 1) , destinations.get(i));
 			}
 		}	
 	}

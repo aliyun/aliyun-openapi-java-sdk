@@ -32,13 +32,15 @@ public class CreateIoTCloudConnectorRequest extends RpcAcsRequest<CreateIoTCloud
 
 	private Boolean wildcardDomainEnabled;
 
+	private Long resourceUid;
+
 	private String aPN;
 
 	private Boolean dryRun;
 
 	private String ioTCloudConnectorName;
 	public CreateIoTCloudConnectorRequest() {
-		super("IoTCC", "2021-05-13", "CreateIoTCloudConnector", "cciot");
+		super("IoTCC", "2021-05-13", "CreateIoTCloudConnector", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 
@@ -83,6 +85,17 @@ public class CreateIoTCloudConnectorRequest extends RpcAcsRequest<CreateIoTCloud
 		this.wildcardDomainEnabled = wildcardDomainEnabled;
 		if(wildcardDomainEnabled != null){
 			putQueryParameter("WildcardDomainEnabled", wildcardDomainEnabled.toString());
+		}
+	}
+
+	public Long getResourceUid() {
+		return this.resourceUid;
+	}
+
+	public void setResourceUid(Long resourceUid) {
+		this.resourceUid = resourceUid;
+		if(resourceUid != null){
+			putQueryParameter("ResourceUid", resourceUid.toString());
 		}
 	}
 

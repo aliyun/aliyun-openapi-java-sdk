@@ -41,7 +41,7 @@ public class UpdateConnectionPoolAttributeRequest extends RpcAcsRequest<UpdateCo
 
 	private String ioTCloudConnectorId;
 	public UpdateConnectionPoolAttributeRequest() {
-		super("IoTCC", "2021-05-13", "UpdateConnectionPoolAttribute", "cciot");
+		super("IoTCC", "2021-05-13", "UpdateConnectionPoolAttribute", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

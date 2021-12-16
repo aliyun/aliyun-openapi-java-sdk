@@ -45,7 +45,7 @@ public class UpdateAuthorizationRuleAttributeRequest extends RpcAcsRequest<Updat
 
 	private String ioTCloudConnectorId;
 	public UpdateAuthorizationRuleAttributeRequest() {
-		super("IoTCC", "2021-05-13", "UpdateAuthorizationRuleAttribute", "cciot");
+		super("IoTCC", "2021-05-13", "UpdateAuthorizationRuleAttribute", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

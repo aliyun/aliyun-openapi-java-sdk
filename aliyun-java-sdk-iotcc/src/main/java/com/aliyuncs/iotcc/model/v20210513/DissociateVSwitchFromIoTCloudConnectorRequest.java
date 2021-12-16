@@ -30,7 +30,7 @@ public class DissociateVSwitchFromIoTCloudConnectorRequest extends RpcAcsRequest
 
 	private String ioTCloudConnectorId;
 	public DissociateVSwitchFromIoTCloudConnectorRequest() {
-		super("IoTCC", "2021-05-13", "DissociateVSwitchFromIoTCloudConnector", "cciot");
+		super("IoTCC", "2021-05-13", "DissociateVSwitchFromIoTCloudConnector", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

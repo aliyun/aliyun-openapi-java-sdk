@@ -81,11 +81,11 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 
 		private String ioTCloudConnectorStatus;
 
-		private String isp;
+		private String iSP;
 
 		private String ioTCloudConnectorBusinessStatus;
 
-		private String apn;
+		private String aPN;
 
 		private Long rateLimit;
 
@@ -97,7 +97,11 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 
 		private Boolean wildcardDomainEnabled;
 
-		private List<String> vSwitchIds;
+		private Long createTime;
+
+		private Long modifyTime;
+
+		private List<String> vSwitchList;
 
 		public String getIoTCloudConnectorId() {
 			return this.ioTCloudConnectorId;
@@ -115,12 +119,12 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 			this.ioTCloudConnectorStatus = ioTCloudConnectorStatus;
 		}
 
-		public String getIsp() {
-			return this.isp;
+		public String getISP() {
+			return this.iSP;
 		}
 
-		public void setIsp(String isp) {
-			this.isp = isp;
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 
 		public String getIoTCloudConnectorBusinessStatus() {
@@ -131,12 +135,12 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 			this.ioTCloudConnectorBusinessStatus = ioTCloudConnectorBusinessStatus;
 		}
 
-		public String getApn() {
-			return this.apn;
+		public String getAPN() {
+			return this.aPN;
 		}
 
-		public void setApn(String apn) {
-			this.apn = apn;
+		public void setAPN(String aPN) {
+			this.aPN = aPN;
 		}
 
 		public Long getRateLimit() {
@@ -179,12 +183,28 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 			this.wildcardDomainEnabled = wildcardDomainEnabled;
 		}
 
-		public List<String> getVSwitchIds() {
-			return this.vSwitchIds;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setVSwitchIds(List<String> vSwitchIds) {
-			this.vSwitchIds = vSwitchIds;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public List<String> getVSwitchList() {
+			return this.vSwitchList;
+		}
+
+		public void setVSwitchList(List<String> vSwitchList) {
+			this.vSwitchList = vSwitchList;
 		}
 	}
 

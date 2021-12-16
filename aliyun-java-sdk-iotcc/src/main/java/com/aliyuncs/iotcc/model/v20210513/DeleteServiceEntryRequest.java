@@ -34,7 +34,7 @@ public class DeleteServiceEntryRequest extends RpcAcsRequest<DeleteServiceEntryR
 
 	private String serviceId;
 	public DeleteServiceEntryRequest() {
-		super("IoTCC", "2021-05-13", "DeleteServiceEntry", "cciot");
+		super("IoTCC", "2021-05-13", "DeleteServiceEntry", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

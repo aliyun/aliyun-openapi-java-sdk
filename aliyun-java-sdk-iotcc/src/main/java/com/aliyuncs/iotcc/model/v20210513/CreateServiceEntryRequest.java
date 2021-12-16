@@ -40,7 +40,7 @@ public class CreateServiceEntryRequest extends RpcAcsRequest<CreateServiceEntryR
 
 	private String serviceId;
 	public CreateServiceEntryRequest() {
-		super("IoTCC", "2021-05-13", "CreateServiceEntry", "cciot");
+		super("IoTCC", "2021-05-13", "CreateServiceEntry", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

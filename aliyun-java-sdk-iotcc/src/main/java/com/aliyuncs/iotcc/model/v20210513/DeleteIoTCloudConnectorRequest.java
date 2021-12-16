@@ -30,7 +30,7 @@ public class DeleteIoTCloudConnectorRequest extends RpcAcsRequest<DeleteIoTCloud
 
 	private String ioTCloudConnectorId;
 	public DeleteIoTCloudConnectorRequest() {
-		super("IoTCC", "2021-05-13", "DeleteIoTCloudConnector", "cciot");
+		super("IoTCC", "2021-05-13", "DeleteIoTCloudConnector", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

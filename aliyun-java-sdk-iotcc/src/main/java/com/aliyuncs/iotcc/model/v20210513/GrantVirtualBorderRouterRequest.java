@@ -26,7 +26,7 @@ public class GrantVirtualBorderRouterRequest extends RpcAcsRequest<GrantVirtualB
 
 	private String virtualBorderRouterId;
 	public GrantVirtualBorderRouterRequest() {
-		super("IoTCC", "2021-05-13", "GrantVirtualBorderRouter", "cciot");
+		super("IoTCC", "2021-05-13", "GrantVirtualBorderRouter", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

@@ -32,7 +32,7 @@ public class DeleteAuthorizationRuleRequest extends RpcAcsRequest<DeleteAuthoriz
 
 	private String ioTCloudConnectorId;
 	public DeleteAuthorizationRuleRequest() {
-		super("IoTCC", "2021-05-13", "DeleteAuthorizationRule", "cciot");
+		super("IoTCC", "2021-05-13", "DeleteAuthorizationRule", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

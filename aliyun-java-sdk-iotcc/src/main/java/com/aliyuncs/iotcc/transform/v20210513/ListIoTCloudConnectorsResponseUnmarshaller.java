@@ -36,20 +36,22 @@ public class ListIoTCloudConnectorsResponseUnmarshaller {
 			IoTCloudConnectorModels ioTCloudConnectorModels = new IoTCloudConnectorModels();
 			ioTCloudConnectorModels.setIoTCloudConnectorId(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].IoTCloudConnectorId"));
 			ioTCloudConnectorModels.setIoTCloudConnectorStatus(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].IoTCloudConnectorStatus"));
-			ioTCloudConnectorModels.setIsp(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].Isp"));
+			ioTCloudConnectorModels.setISP(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].ISP"));
 			ioTCloudConnectorModels.setIoTCloudConnectorBusinessStatus(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].IoTCloudConnectorBusinessStatus"));
-			ioTCloudConnectorModels.setApn(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].Apn"));
+			ioTCloudConnectorModels.setAPN(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].APN"));
 			ioTCloudConnectorModels.setRateLimit(_ctx.longValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].RateLimit"));
 			ioTCloudConnectorModels.setVpcId(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].VpcId"));
 			ioTCloudConnectorModels.setIoTCloudConnectorName(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].IoTCloudConnectorName"));
 			ioTCloudConnectorModels.setIoTCloudConnectorDescription(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].IoTCloudConnectorDescription"));
 			ioTCloudConnectorModels.setWildcardDomainEnabled(_ctx.booleanValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].WildcardDomainEnabled"));
+			ioTCloudConnectorModels.setCreateTime(_ctx.longValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].CreateTime"));
+			ioTCloudConnectorModels.setModifyTime(_ctx.longValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].ModifyTime"));
 
-			List<String> vSwitchIds = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].VSwitchIds.Length"); j++) {
-				vSwitchIds.add(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].VSwitchIds["+ j +"]"));
+			List<String> vSwitchList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].VSwitchList.Length"); j++) {
+				vSwitchList.add(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].VSwitchList["+ j +"]"));
 			}
-			ioTCloudConnectorModels.setVSwitchIds(vSwitchIds);
+			ioTCloudConnectorModels.setVSwitchList(vSwitchList);
 
 			ioTCloudConnectors.add(ioTCloudConnectorModels);
 		}

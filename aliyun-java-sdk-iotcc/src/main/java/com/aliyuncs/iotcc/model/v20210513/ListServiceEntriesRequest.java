@@ -43,7 +43,7 @@ public class ListServiceEntriesRequest extends RpcAcsRequest<ListServiceEntriesR
 
 	private String serviceId;
 	public ListServiceEntriesRequest() {
-		super("IoTCC", "2021-05-13", "ListServiceEntries", "cciot");
+		super("IoTCC", "2021-05-13", "ListServiceEntries", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

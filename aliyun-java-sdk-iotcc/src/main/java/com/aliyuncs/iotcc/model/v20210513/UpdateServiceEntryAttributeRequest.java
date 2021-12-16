@@ -38,7 +38,7 @@ public class UpdateServiceEntryAttributeRequest extends RpcAcsRequest<UpdateServ
 
 	private String serviceId;
 	public UpdateServiceEntryAttributeRequest() {
-		super("IoTCC", "2021-05-13", "UpdateServiceEntryAttribute", "cciot");
+		super("IoTCC", "2021-05-13", "UpdateServiceEntryAttribute", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

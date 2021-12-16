@@ -30,7 +30,7 @@ public class DisableIoTCloudConnectorAccessLogRequest extends RpcAcsRequest<Disa
 
 	private String ioTCloudConnectorId;
 	public DisableIoTCloudConnectorAccessLogRequest() {
-		super("IoTCC", "2021-05-13", "DisableIoTCloudConnectorAccessLog", "cciot");
+		super("IoTCC", "2021-05-13", "DisableIoTCloudConnectorAccessLog", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

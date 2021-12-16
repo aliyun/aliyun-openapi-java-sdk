@@ -43,7 +43,7 @@ public class CreateAuthorizationRuleRequest extends RpcAcsRequest<CreateAuthoriz
 
 	private String ioTCloudConnectorId;
 	public CreateAuthorizationRuleRequest() {
-		super("IoTCC", "2021-05-13", "CreateAuthorizationRule", "cciot");
+		super("IoTCC", "2021-05-13", "CreateAuthorizationRule", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

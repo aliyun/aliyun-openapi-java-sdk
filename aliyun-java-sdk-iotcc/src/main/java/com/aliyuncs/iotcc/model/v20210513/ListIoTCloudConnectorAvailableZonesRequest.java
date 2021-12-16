@@ -26,7 +26,7 @@ public class ListIoTCloudConnectorAvailableZonesRequest extends RpcAcsRequest<Li
 
 	private String ioTCloudConnectorId;
 	public ListIoTCloudConnectorAvailableZonesRequest() {
-		super("IoTCC", "2021-05-13", "ListIoTCloudConnectorAvailableZones", "cciot");
+		super("IoTCC", "2021-05-13", "ListIoTCloudConnectorAvailableZones", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

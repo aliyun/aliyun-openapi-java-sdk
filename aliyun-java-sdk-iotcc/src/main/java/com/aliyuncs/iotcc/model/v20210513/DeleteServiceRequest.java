@@ -32,7 +32,7 @@ public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
 
 	private String serviceId;
 	public DeleteServiceRequest() {
-		super("IoTCC", "2021-05-13", "DeleteService", "cciot");
+		super("IoTCC", "2021-05-13", "DeleteService", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 

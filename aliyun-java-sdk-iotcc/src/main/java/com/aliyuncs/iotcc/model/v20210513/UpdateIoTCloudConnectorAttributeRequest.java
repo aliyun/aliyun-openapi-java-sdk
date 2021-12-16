@@ -36,7 +36,7 @@ public class UpdateIoTCloudConnectorAttributeRequest extends RpcAcsRequest<Updat
 
 	private String ioTCloudConnectorName;
 	public UpdateIoTCloudConnectorAttributeRequest() {
-		super("IoTCC", "2021-05-13", "UpdateIoTCloudConnectorAttribute", "cciot");
+		super("IoTCC", "2021-05-13", "UpdateIoTCloudConnectorAttribute", "IoTCC");
 		setMethod(MethodType.POST);
 	}
 
