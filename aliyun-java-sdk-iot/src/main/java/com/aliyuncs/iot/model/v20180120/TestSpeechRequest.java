@@ -35,7 +35,11 @@ public class TestSpeechRequest extends RpcAcsRequest<TestSpeechResponse> {
 
 	private String text;
 
+	private String soundCodeConfig;
+
 	private String speechType;
+
+	private Boolean enableSoundCode;
 
 	private Integer volume;
 
@@ -104,6 +108,17 @@ public class TestSpeechRequest extends RpcAcsRequest<TestSpeechResponse> {
 		}
 	}
 
+	public String getSoundCodeConfig() {
+		return this.soundCodeConfig;
+	}
+
+	public void setSoundCodeConfig(String soundCodeConfig) {
+		this.soundCodeConfig = soundCodeConfig;
+		if(soundCodeConfig != null){
+			putBodyParameter("SoundCodeConfig", soundCodeConfig);
+		}
+	}
+
 	public String getSpeechType() {
 		return this.speechType;
 	}
@@ -112,6 +127,17 @@ public class TestSpeechRequest extends RpcAcsRequest<TestSpeechResponse> {
 		this.speechType = speechType;
 		if(speechType != null){
 			putBodyParameter("SpeechType", speechType);
+		}
+	}
+
+	public Boolean getEnableSoundCode() {
+		return this.enableSoundCode;
+	}
+
+	public void setEnableSoundCode(Boolean enableSoundCode) {
+		this.enableSoundCode = enableSoundCode;
+		if(enableSoundCode != null){
+			putBodyParameter("EnableSoundCode", enableSoundCode.toString());
 		}
 	}
 

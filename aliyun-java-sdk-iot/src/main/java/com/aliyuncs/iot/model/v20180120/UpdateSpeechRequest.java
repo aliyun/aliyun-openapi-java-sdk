@@ -31,6 +31,10 @@ public class UpdateSpeechRequest extends RpcAcsRequest<UpdateSpeechResponse> {
 
 	private String iotInstanceId;
 
+	private String soundCodeConfig;
+
+	private Boolean enableSoundCode;
+
 	private Integer volume;
 
 	private Integer speechRate;
@@ -75,6 +79,28 @@ public class UpdateSpeechRequest extends RpcAcsRequest<UpdateSpeechResponse> {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getSoundCodeConfig() {
+		return this.soundCodeConfig;
+	}
+
+	public void setSoundCodeConfig(String soundCodeConfig) {
+		this.soundCodeConfig = soundCodeConfig;
+		if(soundCodeConfig != null){
+			putBodyParameter("SoundCodeConfig", soundCodeConfig);
+		}
+	}
+
+	public Boolean getEnableSoundCode() {
+		return this.enableSoundCode;
+	}
+
+	public void setEnableSoundCode(Boolean enableSoundCode) {
+		this.enableSoundCode = enableSoundCode;
+		if(enableSoundCode != null){
+			putBodyParameter("EnableSoundCode", enableSoundCode.toString());
 		}
 	}
 

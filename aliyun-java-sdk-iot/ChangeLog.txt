@@ -1,3 +1,6 @@
+2021-12-16 Version: 7.31.0
+- Update OTA API, including CreateOTADynamicUpgradeJob,CreateOTAStaticUpgradeJob,QueryOTAJob.
+
 2021-11-05 Version: 7.30.0
 - Update OTA API, including CreateOTAVerifyJob.
 

@@ -92,6 +92,10 @@ public class QuerySpeechResponse extends AcsResponse {
 
 		private String speechType;
 
+		private Boolean enableSoundCode;
+
+		private SoundCodeConfig soundCodeConfig;
+
 		public String getSpeechCode() {
 			return this.speechCode;
 		}
@@ -154,6 +158,45 @@ public class QuerySpeechResponse extends AcsResponse {
 
 		public void setSpeechType(String speechType) {
 			this.speechType = speechType;
+		}
+
+		public Boolean getEnableSoundCode() {
+			return this.enableSoundCode;
+		}
+
+		public void setEnableSoundCode(Boolean enableSoundCode) {
+			this.enableSoundCode = enableSoundCode;
+		}
+
+		public SoundCodeConfig getSoundCodeConfig() {
+			return this.soundCodeConfig;
+		}
+
+		public void setSoundCodeConfig(SoundCodeConfig soundCodeConfig) {
+			this.soundCodeConfig = soundCodeConfig;
+		}
+
+		public static class SoundCodeConfig {
+
+			private Integer additionalDuration;
+
+			private String soundCodeContent;
+
+			public Integer getAdditionalDuration() {
+				return this.additionalDuration;
+			}
+
+			public void setAdditionalDuration(Integer additionalDuration) {
+				this.additionalDuration = additionalDuration;
+			}
+
+			public String getSoundCodeContent() {
+				return this.soundCodeContent;
+			}
+
+			public void setSoundCodeContent(String soundCodeContent) {
+				this.soundCodeContent = soundCodeContent;
+			}
 		}
 	}
 

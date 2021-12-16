@@ -26,6 +26,8 @@ import com.aliyuncs.iot.Endpoint;
 public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTAStaticUpgradeJobResponse> {
 	   
 
+	private Boolean multiModuleMode;
+
 	private Integer retryCount;
 
 	private Integer timeoutInMinutes;
@@ -74,6 +76,17 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getMultiModuleMode() {
+		return this.multiModuleMode;
+	}
+
+	public void setMultiModuleMode(Boolean multiModuleMode) {
+		this.multiModuleMode = multiModuleMode;
+		if(multiModuleMode != null){
+			putQueryParameter("MultiModuleMode", multiModuleMode.toString());
+		}
 	}
 
 	public Integer getRetryCount() {

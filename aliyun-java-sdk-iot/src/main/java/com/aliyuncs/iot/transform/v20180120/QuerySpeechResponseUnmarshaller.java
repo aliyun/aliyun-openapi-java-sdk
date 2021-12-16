@@ -16,6 +16,7 @@ package com.aliyuncs.iot.transform.v20180120;
 
 import com.aliyuncs.iot.model.v20180120.QuerySpeechResponse;
 import com.aliyuncs.iot.model.v20180120.QuerySpeechResponse.Data;
+import com.aliyuncs.iot.model.v20180120.QuerySpeechResponse.Data.SoundCodeConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +38,12 @@ public class QuerySpeechResponseUnmarshaller {
 		data.setText(_ctx.stringValue("QuerySpeechResponse.Data.Text"));
 		data.setAudioFormat(_ctx.stringValue("QuerySpeechResponse.Data.AudioFormat"));
 		data.setSpeechType(_ctx.stringValue("QuerySpeechResponse.Data.SpeechType"));
+		data.setEnableSoundCode(_ctx.booleanValue("QuerySpeechResponse.Data.EnableSoundCode"));
+
+		SoundCodeConfig soundCodeConfig = new SoundCodeConfig();
+		soundCodeConfig.setAdditionalDuration(_ctx.integerValue("QuerySpeechResponse.Data.SoundCodeConfig.AdditionalDuration"));
+		soundCodeConfig.setSoundCodeContent(_ctx.stringValue("QuerySpeechResponse.Data.SoundCodeConfig.SoundCodeContent"));
+		data.setSoundCodeConfig(soundCodeConfig);
 		querySpeechResponse.setData(data);
 	 
 	 	return querySpeechResponse;

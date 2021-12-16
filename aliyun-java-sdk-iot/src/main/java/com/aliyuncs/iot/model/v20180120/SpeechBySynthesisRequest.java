@@ -22,24 +22,30 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class PrintByTemplateRequest extends RpcAcsRequest<PrintByTemplateResponse> {
+public class SpeechBySynthesisRequest extends RpcAcsRequest<SpeechBySynthesisResponse> {
 	   
 
-	private String templateBizCode;
+	private String voice;
+
+	private String speechId;
+
+	private String audioFormat;
 
 	private String iotId;
 
 	private String iotInstanceId;
 
-	private Boolean historyPrintTopic;
+	private String text;
 
 	private String productKey;
 
-	private String paramsJsonString;
+	private Integer volume;
 
 	private String deviceName;
-	public PrintByTemplateRequest() {
-		super("Iot", "2018-01-20", "PrintByTemplate", "iot");
+
+	private Integer speechRate;
+	public SpeechBySynthesisRequest() {
+		super("Iot", "2018-01-20", "SpeechBySynthesis", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,14 +53,36 @@ public class PrintByTemplateRequest extends RpcAcsRequest<PrintByTemplateRespons
 		} catch (Exception e) {}
 	}
 
-	public String getTemplateBizCode() {
-		return this.templateBizCode;
+	public String getVoice() {
+		return this.voice;
 	}
 
-	public void setTemplateBizCode(String templateBizCode) {
-		this.templateBizCode = templateBizCode;
-		if(templateBizCode != null){
-			putBodyParameter("TemplateBizCode", templateBizCode);
+	public void setVoice(String voice) {
+		this.voice = voice;
+		if(voice != null){
+			putBodyParameter("Voice", voice);
+		}
+	}
+
+	public String getSpeechId() {
+		return this.speechId;
+	}
+
+	public void setSpeechId(String speechId) {
+		this.speechId = speechId;
+		if(speechId != null){
+			putBodyParameter("SpeechId", speechId);
+		}
+	}
+
+	public String getAudioFormat() {
+		return this.audioFormat;
+	}
+
+	public void setAudioFormat(String audioFormat) {
+		this.audioFormat = audioFormat;
+		if(audioFormat != null){
+			putBodyParameter("AudioFormat", audioFormat);
 		}
 	}
 
@@ -80,14 +108,14 @@ public class PrintByTemplateRequest extends RpcAcsRequest<PrintByTemplateRespons
 		}
 	}
 
-	public Boolean getHistoryPrintTopic() {
-		return this.historyPrintTopic;
+	public String getText() {
+		return this.text;
 	}
 
-	public void setHistoryPrintTopic(Boolean historyPrintTopic) {
-		this.historyPrintTopic = historyPrintTopic;
-		if(historyPrintTopic != null){
-			putBodyParameter("HistoryPrintTopic", historyPrintTopic.toString());
+	public void setText(String text) {
+		this.text = text;
+		if(text != null){
+			putBodyParameter("Text", text);
 		}
 	}
 
@@ -102,14 +130,14 @@ public class PrintByTemplateRequest extends RpcAcsRequest<PrintByTemplateRespons
 		}
 	}
 
-	public String getParamsJsonString() {
-		return this.paramsJsonString;
+	public Integer getVolume() {
+		return this.volume;
 	}
 
-	public void setParamsJsonString(String paramsJsonString) {
-		this.paramsJsonString = paramsJsonString;
-		if(paramsJsonString != null){
-			putBodyParameter("ParamsJsonString", paramsJsonString);
+	public void setVolume(Integer volume) {
+		this.volume = volume;
+		if(volume != null){
+			putBodyParameter("Volume", volume.toString());
 		}
 	}
 
@@ -124,9 +152,20 @@ public class PrintByTemplateRequest extends RpcAcsRequest<PrintByTemplateRespons
 		}
 	}
 
+	public Integer getSpeechRate() {
+		return this.speechRate;
+	}
+
+	public void setSpeechRate(Integer speechRate) {
+		this.speechRate = speechRate;
+		if(speechRate != null){
+			putBodyParameter("SpeechRate", speechRate.toString());
+		}
+	}
+
 	@Override
-	public Class<PrintByTemplateResponse> getResponseClass() {
-		return PrintByTemplateResponse.class;
+	public Class<SpeechBySynthesisResponse> getResponseClass() {
+		return SpeechBySynthesisResponse.class;
 	}
 
 }

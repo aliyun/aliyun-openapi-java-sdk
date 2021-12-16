@@ -61,6 +61,7 @@ public class QueryOTAJobResponseUnmarshaller {
 		data.setGroupId(_ctx.stringValue("QueryOTAJobResponse.Data.GroupId"));
 		data.setGroupName(_ctx.stringValue("QueryOTAJobResponse.Data.GroupName"));
 		data.setDownloadProtocol(_ctx.stringValue("QueryOTAJobResponse.Data.DownloadProtocol"));
+		data.setMultiModuleMode(_ctx.booleanValue("QueryOTAJobResponse.Data.MultiModuleMode"));
 
 		List<String> srcVersions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOTAJobResponse.Data.SrcVersions.Length"); i++) {

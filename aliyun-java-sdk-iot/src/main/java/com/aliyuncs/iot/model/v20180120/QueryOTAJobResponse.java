@@ -133,6 +133,8 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		private String downloadProtocol;
 
+		private Boolean multiModuleMode;
+
 		private List<OtaTagDTO> tags;
 
 		private List<String> srcVersions;
@@ -359,6 +361,14 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		public void setDownloadProtocol(String downloadProtocol) {
 			this.downloadProtocol = downloadProtocol;
+		}
+
+		public Boolean getMultiModuleMode() {
+			return this.multiModuleMode;
+		}
+
+		public void setMultiModuleMode(Boolean multiModuleMode) {
+			this.multiModuleMode = multiModuleMode;
 		}
 
 		public List<OtaTagDTO> getTags() {

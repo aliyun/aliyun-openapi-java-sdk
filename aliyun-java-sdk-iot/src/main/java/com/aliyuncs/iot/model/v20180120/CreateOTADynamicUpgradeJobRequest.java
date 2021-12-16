@@ -28,6 +28,8 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 
 	private Integer dynamicMode;
 
+	private Boolean multiModuleMode;
+
 	private Integer retryCount;
 
 	private Integer timeoutInMinutes;
@@ -74,6 +76,17 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 		this.dynamicMode = dynamicMode;
 		if(dynamicMode != null){
 			putQueryParameter("DynamicMode", dynamicMode.toString());
+		}
+	}
+
+	public Boolean getMultiModuleMode() {
+		return this.multiModuleMode;
+	}
+
+	public void setMultiModuleMode(Boolean multiModuleMode) {
+		this.multiModuleMode = multiModuleMode;
+		if(multiModuleMode != null){
+			putQueryParameter("MultiModuleMode", multiModuleMode.toString());
 		}
 	}
 
