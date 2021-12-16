@@ -177,6 +177,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private String calleeLocation;
 
+			private String earlyMediaState;
+
 			public String getContactDisposition() {
 				return this.contactDisposition;
 			}
@@ -407,6 +409,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setCalleeLocation(String calleeLocation) {
 				this.calleeLocation = calleeLocation;
+			}
+
+			public String getEarlyMediaState() {
+				return this.earlyMediaState;
+			}
+
+			public void setEarlyMediaState(String earlyMediaState) {
+				this.earlyMediaState = earlyMediaState;
 			}
 		}
 	}

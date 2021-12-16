@@ -35,6 +35,8 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 
 	private Integer pageNumber;
 
+	private String earlyMediaStateList;
+
 	private String calledNumber;
 
 	private String satisfactionList;
@@ -121,6 +123,17 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getEarlyMediaStateList() {
+		return this.earlyMediaStateList;
+	}
+
+	public void setEarlyMediaStateList(String earlyMediaStateList) {
+		this.earlyMediaStateList = earlyMediaStateList;
+		if(earlyMediaStateList != null){
+			putQueryParameter("EarlyMediaStateList", earlyMediaStateList);
 		}
 	}
 

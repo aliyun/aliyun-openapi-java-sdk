@@ -69,6 +69,7 @@ public class ListCallDetailRecordsResponseUnmarshaller {
 			callDetailRecord.setSkillGroupIds(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].SkillGroupIds"));
 			callDetailRecord.setCallerLocation(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].CallerLocation"));
 			callDetailRecord.setCalleeLocation(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].CalleeLocation"));
+			callDetailRecord.setEarlyMediaState(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].EarlyMediaState"));
 
 			list.add(callDetailRecord);
 		}

@@ -1,3 +1,6 @@
+2021-12-16 Version: 2.2.0
+- Release for sprint 2_2_0.
+
 2021-11-29 Version: 2.1.0
 - Add API for unregister sip phone device, masked callee, etc.
 

@@ -61,6 +61,7 @@ public class GetCallDetailRecordResponseUnmarshaller {
 		data.setSkillGroupIds(_ctx.stringValue("GetCallDetailRecordResponse.Data.SkillGroupIds"));
 		data.setCallerLocation(_ctx.stringValue("GetCallDetailRecordResponse.Data.CallerLocation"));
 		data.setCalleeLocation(_ctx.stringValue("GetCallDetailRecordResponse.Data.CalleeLocation"));
+		data.setEarlyMediaState(_ctx.stringValue("GetCallDetailRecordResponse.Data.EarlyMediaState"));
 
 		List<AgentEventsItem> agentEvents = new ArrayList<AgentEventsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.AgentEvents.Length"); i++) {

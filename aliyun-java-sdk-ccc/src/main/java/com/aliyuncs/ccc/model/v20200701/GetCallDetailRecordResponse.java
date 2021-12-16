@@ -119,6 +119,8 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		private String calleeLocation;
 
+		private String earlyMediaState;
+
 		private List<AgentEventsItem> agentEvents;
 
 		private List<IvrEventsItem> ivrEvents;
@@ -293,6 +295,14 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		public void setCalleeLocation(String calleeLocation) {
 			this.calleeLocation = calleeLocation;
+		}
+
+		public String getEarlyMediaState() {
+			return this.earlyMediaState;
+		}
+
+		public void setEarlyMediaState(String earlyMediaState) {
+			this.earlyMediaState = earlyMediaState;
 		}
 
 		public List<AgentEventsItem> getAgentEvents() {

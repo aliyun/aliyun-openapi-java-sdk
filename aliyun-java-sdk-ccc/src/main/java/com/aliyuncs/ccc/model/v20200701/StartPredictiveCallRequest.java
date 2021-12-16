@@ -40,6 +40,8 @@ public class StartPredictiveCallRequest extends RpcAcsRequest<StartPredictiveCal
 	private String caller;
 
 	private String instanceId;
+
+	private String skillGroupId;
 	public StartPredictiveCallRequest() {
 		super("CCC", "2020-07-01", "StartPredictiveCall", "CCC");
 		setMethod(MethodType.POST);
@@ -134,6 +136,17 @@ public class StartPredictiveCallRequest extends RpcAcsRequest<StartPredictiveCal
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getSkillGroupId() {
+		return this.skillGroupId;
+	}
+
+	public void setSkillGroupId(String skillGroupId) {
+		this.skillGroupId = skillGroupId;
+		if(skillGroupId != null){
+			putQueryParameter("SkillGroupId", skillGroupId);
 		}
 	}
 
