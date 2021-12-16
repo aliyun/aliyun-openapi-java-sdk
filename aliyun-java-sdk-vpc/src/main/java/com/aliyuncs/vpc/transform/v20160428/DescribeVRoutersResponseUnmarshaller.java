@@ -27,19 +27,19 @@ public class DescribeVRoutersResponseUnmarshaller {
 	public static DescribeVRoutersResponse unmarshall(DescribeVRoutersResponse describeVRoutersResponse, UnmarshallerContext _ctx) {
 		
 		describeVRoutersResponse.setRequestId(_ctx.stringValue("DescribeVRoutersResponse.RequestId"));
-		describeVRoutersResponse.setTotalCount(_ctx.integerValue("DescribeVRoutersResponse.TotalCount"));
-		describeVRoutersResponse.setPageNumber(_ctx.integerValue("DescribeVRoutersResponse.PageNumber"));
 		describeVRoutersResponse.setPageSize(_ctx.integerValue("DescribeVRoutersResponse.PageSize"));
+		describeVRoutersResponse.setPageNumber(_ctx.integerValue("DescribeVRoutersResponse.PageNumber"));
+		describeVRoutersResponse.setTotalCount(_ctx.integerValue("DescribeVRoutersResponse.TotalCount"));
 
 		List<VRouter> vRouters = new ArrayList<VRouter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVRoutersResponse.VRouters.Length"); i++) {
 			VRouter vRouter = new VRouter();
-			vRouter.setRegionId(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].RegionId"));
 			vRouter.setVpcId(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].VpcId"));
-			vRouter.setVRouterName(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].VRouterName"));
-			vRouter.setDescription(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].Description"));
-			vRouter.setVRouterId(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].VRouterId"));
 			vRouter.setCreationTime(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].CreationTime"));
+			vRouter.setVRouterId(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].VRouterId"));
+			vRouter.setDescription(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].Description"));
+			vRouter.setVRouterName(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].VRouterName"));
+			vRouter.setRegionId(_ctx.stringValue("DescribeVRoutersResponse.VRouters["+ i +"].RegionId"));
 
 			List<String> routeTableIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVRoutersResponse.VRouters["+ i +"].RouteTableIds.Length"); j++) {

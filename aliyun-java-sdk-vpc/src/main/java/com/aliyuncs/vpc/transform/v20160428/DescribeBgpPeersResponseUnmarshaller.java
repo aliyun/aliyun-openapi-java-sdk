@@ -27,32 +27,32 @@ public class DescribeBgpPeersResponseUnmarshaller {
 	public static DescribeBgpPeersResponse unmarshall(DescribeBgpPeersResponse describeBgpPeersResponse, UnmarshallerContext _ctx) {
 		
 		describeBgpPeersResponse.setRequestId(_ctx.stringValue("DescribeBgpPeersResponse.RequestId"));
-		describeBgpPeersResponse.setTotalCount(_ctx.integerValue("DescribeBgpPeersResponse.TotalCount"));
-		describeBgpPeersResponse.setPageNumber(_ctx.integerValue("DescribeBgpPeersResponse.PageNumber"));
 		describeBgpPeersResponse.setPageSize(_ctx.integerValue("DescribeBgpPeersResponse.PageSize"));
+		describeBgpPeersResponse.setPageNumber(_ctx.integerValue("DescribeBgpPeersResponse.PageNumber"));
+		describeBgpPeersResponse.setTotalCount(_ctx.integerValue("DescribeBgpPeersResponse.TotalCount"));
 
 		List<BgpPeer> bgpPeers = new ArrayList<BgpPeer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBgpPeersResponse.BgpPeers.Length"); i++) {
 			BgpPeer bgpPeer = new BgpPeer();
-			bgpPeer.setName(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Name"));
-			bgpPeer.setDescription(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Description"));
-			bgpPeer.setBgpPeerId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].BgpPeerId"));
-			bgpPeer.setBgpGroupId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].BgpGroupId"));
-			bgpPeer.setPeerIpAddress(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].PeerIpAddress"));
-			bgpPeer.setPeerAsn(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].PeerAsn"));
-			bgpPeer.setAuthKey(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].AuthKey"));
-			bgpPeer.setRouterId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RouterId"));
-			bgpPeer.setBgpStatus(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].BgpStatus"));
 			bgpPeer.setStatus(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Status"));
-			bgpPeer.setKeepalive(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Keepalive"));
-			bgpPeer.setLocalAsn(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].LocalAsn"));
-			bgpPeer.setHold(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Hold"));
-			bgpPeer.setIsFake(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].IsFake"));
-			bgpPeer.setRouteLimit(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RouteLimit"));
-			bgpPeer.setRegionId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RegionId"));
-			bgpPeer.setEnableBfd(_ctx.booleanValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].EnableBfd"));
-			bgpPeer.setIpVersion(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].IpVersion"));
+			bgpPeer.setPeerIpAddress(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].PeerIpAddress"));
+			bgpPeer.setRouterId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RouterId"));
+			bgpPeer.setBgpGroupId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].BgpGroupId"));
+			bgpPeer.setBgpStatus(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].BgpStatus"));
 			bgpPeer.setBfdMultiHop(_ctx.integerValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].BfdMultiHop"));
+			bgpPeer.setPeerAsn(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].PeerAsn"));
+			bgpPeer.setLocalAsn(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].LocalAsn"));
+			bgpPeer.setRegionId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RegionId"));
+			bgpPeer.setBgpPeerId(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].BgpPeerId"));
+			bgpPeer.setEnableBfd(_ctx.booleanValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].EnableBfd"));
+			bgpPeer.setHold(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Hold"));
+			bgpPeer.setIpVersion(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].IpVersion"));
+			bgpPeer.setKeepalive(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Keepalive"));
+			bgpPeer.setDescription(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Description"));
+			bgpPeer.setRouteLimit(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RouteLimit"));
+			bgpPeer.setIsFake(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].IsFake"));
+			bgpPeer.setAuthKey(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].AuthKey"));
+			bgpPeer.setName(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Name"));
 
 			bgpPeers.add(bgpPeer);
 		}

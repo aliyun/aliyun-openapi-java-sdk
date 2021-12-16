@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVbrHaResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String vbrHaId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getVbrHaId() {
 		return this.vbrHaId;
@@ -42,6 +34,14 @@ public class CreateVbrHaResponse extends AcsResponse {
 
 	public void setVbrHaId(String vbrHaId) {
 		this.vbrHaId = vbrHaId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

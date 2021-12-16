@@ -23,14 +23,14 @@ public class CreateVpnRouteEntryResponseUnmarshaller {
 	public static CreateVpnRouteEntryResponse unmarshall(CreateVpnRouteEntryResponse createVpnRouteEntryResponse, UnmarshallerContext _ctx) {
 		
 		createVpnRouteEntryResponse.setRequestId(_ctx.stringValue("CreateVpnRouteEntryResponse.RequestId"));
-		createVpnRouteEntryResponse.setVpnInstanceId(_ctx.stringValue("CreateVpnRouteEntryResponse.VpnInstanceId"));
-		createVpnRouteEntryResponse.setRouteDest(_ctx.stringValue("CreateVpnRouteEntryResponse.RouteDest"));
 		createVpnRouteEntryResponse.setNextHop(_ctx.stringValue("CreateVpnRouteEntryResponse.NextHop"));
 		createVpnRouteEntryResponse.setWeight(_ctx.integerValue("CreateVpnRouteEntryResponse.Weight"));
-		createVpnRouteEntryResponse.setOverlayMode(_ctx.stringValue("CreateVpnRouteEntryResponse.OverlayMode"));
+		createVpnRouteEntryResponse.setRouteDest(_ctx.stringValue("CreateVpnRouteEntryResponse.RouteDest"));
 		createVpnRouteEntryResponse.setDescription(_ctx.stringValue("CreateVpnRouteEntryResponse.Description"));
 		createVpnRouteEntryResponse.setState(_ctx.stringValue("CreateVpnRouteEntryResponse.State"));
 		createVpnRouteEntryResponse.setCreateTime(_ctx.longValue("CreateVpnRouteEntryResponse.CreateTime"));
+		createVpnRouteEntryResponse.setOverlayMode(_ctx.stringValue("CreateVpnRouteEntryResponse.OverlayMode"));
+		createVpnRouteEntryResponse.setVpnInstanceId(_ctx.stringValue("CreateVpnRouteEntryResponse.VpnInstanceId"));
 	 
 	 	return createVpnRouteEntryResponse;
 	}

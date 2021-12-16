@@ -27,23 +27,23 @@ public class DescribeVpnRouteEntriesResponseUnmarshaller {
 	public static DescribeVpnRouteEntriesResponse unmarshall(DescribeVpnRouteEntriesResponse describeVpnRouteEntriesResponse, UnmarshallerContext _ctx) {
 		
 		describeVpnRouteEntriesResponse.setRequestId(_ctx.stringValue("DescribeVpnRouteEntriesResponse.RequestId"));
-		describeVpnRouteEntriesResponse.setTotalCount(_ctx.integerValue("DescribeVpnRouteEntriesResponse.TotalCount"));
-		describeVpnRouteEntriesResponse.setPageNumber(_ctx.integerValue("DescribeVpnRouteEntriesResponse.PageNumber"));
 		describeVpnRouteEntriesResponse.setPageSize(_ctx.integerValue("DescribeVpnRouteEntriesResponse.PageSize"));
+		describeVpnRouteEntriesResponse.setPageNumber(_ctx.integerValue("DescribeVpnRouteEntriesResponse.PageNumber"));
+		describeVpnRouteEntriesResponse.setTotalCount(_ctx.integerValue("DescribeVpnRouteEntriesResponse.TotalCount"));
 
 		List<VpnRouteEntry> vpnRouteEntries = new ArrayList<VpnRouteEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries.Length"); i++) {
 			VpnRouteEntry vpnRouteEntry = new VpnRouteEntry();
-			vpnRouteEntry.setVpnInstanceId(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].VpnInstanceId"));
-			vpnRouteEntry.setRouteDest(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].RouteDest"));
+			vpnRouteEntry.setRouteEntryType(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].RouteEntryType"));
 			vpnRouteEntry.setNextHop(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].NextHop"));
 			vpnRouteEntry.setWeight(_ctx.integerValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].Weight"));
-			vpnRouteEntry.setCreateTime(_ctx.longValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].CreateTime"));
-			vpnRouteEntry.setState(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].State"));
+			vpnRouteEntry.setRouteDest(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].RouteDest"));
 			vpnRouteEntry.setAsPath(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].AsPath"));
+			vpnRouteEntry.setState(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].State"));
+			vpnRouteEntry.setCreateTime(_ctx.longValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].CreateTime"));
 			vpnRouteEntry.setCommunity(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].Community"));
 			vpnRouteEntry.setSource(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].Source"));
-			vpnRouteEntry.setRouteEntryType(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].RouteEntryType"));
+			vpnRouteEntry.setVpnInstanceId(_ctx.stringValue("DescribeVpnRouteEntriesResponse.VpnRouteEntries["+ i +"].VpnInstanceId"));
 
 			vpnRouteEntries.add(vpnRouteEntry);
 		}

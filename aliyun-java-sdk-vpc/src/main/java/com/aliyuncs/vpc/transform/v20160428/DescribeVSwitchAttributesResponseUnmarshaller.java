@@ -28,20 +28,20 @@ public class DescribeVSwitchAttributesResponseUnmarshaller {
 	public static DescribeVSwitchAttributesResponse unmarshall(DescribeVSwitchAttributesResponse describeVSwitchAttributesResponse, UnmarshallerContext _ctx) {
 		
 		describeVSwitchAttributesResponse.setRequestId(_ctx.stringValue("DescribeVSwitchAttributesResponse.RequestId"));
-		describeVSwitchAttributesResponse.setVSwitchId(_ctx.stringValue("DescribeVSwitchAttributesResponse.VSwitchId"));
 		describeVSwitchAttributesResponse.setVpcId(_ctx.stringValue("DescribeVSwitchAttributesResponse.VpcId"));
 		describeVSwitchAttributesResponse.setStatus(_ctx.stringValue("DescribeVSwitchAttributesResponse.Status"));
-		describeVSwitchAttributesResponse.setCidrBlock(_ctx.stringValue("DescribeVSwitchAttributesResponse.CidrBlock"));
-		describeVSwitchAttributesResponse.setIpv6CidrBlock(_ctx.stringValue("DescribeVSwitchAttributesResponse.Ipv6CidrBlock"));
-		describeVSwitchAttributesResponse.setZoneId(_ctx.stringValue("DescribeVSwitchAttributesResponse.ZoneId"));
-		describeVSwitchAttributesResponse.setAvailableIpAddressCount(_ctx.longValue("DescribeVSwitchAttributesResponse.AvailableIpAddressCount"));
-		describeVSwitchAttributesResponse.setDescription(_ctx.stringValue("DescribeVSwitchAttributesResponse.Description"));
-		describeVSwitchAttributesResponse.setVSwitchName(_ctx.stringValue("DescribeVSwitchAttributesResponse.VSwitchName"));
 		describeVSwitchAttributesResponse.setCreationTime(_ctx.stringValue("DescribeVSwitchAttributesResponse.CreationTime"));
 		describeVSwitchAttributesResponse.setIsDefault(_ctx.booleanValue("DescribeVSwitchAttributesResponse.IsDefault"));
-		describeVSwitchAttributesResponse.setResourceGroupId(_ctx.stringValue("DescribeVSwitchAttributesResponse.ResourceGroupId"));
+		describeVSwitchAttributesResponse.setAvailableIpAddressCount(_ctx.longValue("DescribeVSwitchAttributesResponse.AvailableIpAddressCount"));
 		describeVSwitchAttributesResponse.setNetworkAclId(_ctx.stringValue("DescribeVSwitchAttributesResponse.NetworkAclId"));
 		describeVSwitchAttributesResponse.setOwnerId(_ctx.longValue("DescribeVSwitchAttributesResponse.OwnerId"));
+		describeVSwitchAttributesResponse.setVSwitchId(_ctx.stringValue("DescribeVSwitchAttributesResponse.VSwitchId"));
+		describeVSwitchAttributesResponse.setCidrBlock(_ctx.stringValue("DescribeVSwitchAttributesResponse.CidrBlock"));
+		describeVSwitchAttributesResponse.setDescription(_ctx.stringValue("DescribeVSwitchAttributesResponse.Description"));
+		describeVSwitchAttributesResponse.setResourceGroupId(_ctx.stringValue("DescribeVSwitchAttributesResponse.ResourceGroupId"));
+		describeVSwitchAttributesResponse.setZoneId(_ctx.stringValue("DescribeVSwitchAttributesResponse.ZoneId"));
+		describeVSwitchAttributesResponse.setIpv6CidrBlock(_ctx.stringValue("DescribeVSwitchAttributesResponse.Ipv6CidrBlock"));
+		describeVSwitchAttributesResponse.setVSwitchName(_ctx.stringValue("DescribeVSwitchAttributesResponse.VSwitchName"));
 		describeVSwitchAttributesResponse.setShareType(_ctx.stringValue("DescribeVSwitchAttributesResponse.ShareType"));
 
 		RouteTable routeTable = new RouteTable();
@@ -52,8 +52,8 @@ public class DescribeVSwitchAttributesResponseUnmarshaller {
 		List<CloudResourceSetType> cloudResources = new ArrayList<CloudResourceSetType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVSwitchAttributesResponse.CloudResources.Length"); i++) {
 			CloudResourceSetType cloudResourceSetType = new CloudResourceSetType();
-			cloudResourceSetType.setResourceType(_ctx.stringValue("DescribeVSwitchAttributesResponse.CloudResources["+ i +"].ResourceType"));
 			cloudResourceSetType.setResourceCount(_ctx.integerValue("DescribeVSwitchAttributesResponse.CloudResources["+ i +"].ResourceCount"));
+			cloudResourceSetType.setResourceType(_ctx.stringValue("DescribeVSwitchAttributesResponse.CloudResources["+ i +"].ResourceType"));
 
 			cloudResources.add(cloudResourceSetType);
 		}

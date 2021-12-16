@@ -47,20 +47,20 @@ public class DescribeServerRelatedGlobalAccelerationInstancesResponse extends Ac
 
 	public static class GlobalAccelerationInstance {
 
-		private String regionId;
+		private String serverIpAddress;
 
 		private String globalAccelerationInstanceId;
 
 		private String ipAddress;
 
-		private String serverIpAddress;
+		private String regionId;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getServerIpAddress() {
+			return this.serverIpAddress;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setServerIpAddress(String serverIpAddress) {
+			this.serverIpAddress = serverIpAddress;
 		}
 
 		public String getGlobalAccelerationInstanceId() {
@@ -79,12 +79,12 @@ public class DescribeServerRelatedGlobalAccelerationInstancesResponse extends Ac
 			this.ipAddress = ipAddress;
 		}
 
-		public String getServerIpAddress() {
-			return this.serverIpAddress;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setServerIpAddress(String serverIpAddress) {
-			this.serverIpAddress = serverIpAddress;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRouteTablesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<RouteTable> routeTables;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<RouteTable> getRouteTables() {
@@ -77,21 +77,37 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 	public static class RouteTable {
 
-		private String vRouterId;
+		private String creationTime;
 
-		private String routeTableId;
+		private String status;
+
+		private String vRouterId;
 
 		private String routeTableType;
 
-		private String creationTime;
-
 		private String resourceGroupId;
 
-		private String status;
+		private String routeTableId;
 
 		private List<RouteEntry> routeEntrys;
 
 		private List<String> vSwitchIds;
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getVRouterId() {
 			return this.vRouterId;
@@ -99,14 +115,6 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 		public void setVRouterId(String vRouterId) {
 			this.vRouterId = vRouterId;
-		}
-
-		public String getRouteTableId() {
-			return this.routeTableId;
-		}
-
-		public void setRouteTableId(String routeTableId) {
-			this.routeTableId = routeTableId;
 		}
 
 		public String getRouteTableType() {
@@ -117,14 +125,6 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 			this.routeTableType = routeTableType;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -133,12 +133,12 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRouteTableId() {
+			return this.routeTableId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setRouteTableId(String routeTableId) {
+			this.routeTableId = routeTableId;
 		}
 
 		public List<RouteEntry> getRouteEntrys() {
@@ -159,51 +159,35 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 		public static class RouteEntry {
 
-			private String routeTableId;
-
-			private String destinationCidrBlock;
-
 			private String type;
 
 			private String status;
 
-			private String instanceId;
+			private String nextHopOppsiteType;
 
 			private String nextHopType;
 
 			private String routeEntryName;
 
-			private String description;
+			private String nextHopRegionId;
 
 			private String routeEntryId;
 
-			private String nextHopRegionId;
+			private String nextHopOppsiteRegionId;
 
-			private String nextHopOppsiteType;
+			private String instanceId;
 
 			private String nextHopOppsiteInstanceId;
 
-			private String nextHopOppsiteRegionId;
+			private String routeTableId;
+
+			private String description;
+
+			private String destinationCidrBlock;
 
 			private String privateIpAddress;
 
 			private List<NextHop> nextHops;
-
-			public String getRouteTableId() {
-				return this.routeTableId;
-			}
-
-			public void setRouteTableId(String routeTableId) {
-				this.routeTableId = routeTableId;
-			}
-
-			public String getDestinationCidrBlock() {
-				return this.destinationCidrBlock;
-			}
-
-			public void setDestinationCidrBlock(String destinationCidrBlock) {
-				this.destinationCidrBlock = destinationCidrBlock;
-			}
 
 			public String getType() {
 				return this.type;
@@ -221,12 +205,12 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getNextHopOppsiteType() {
+				return this.nextHopOppsiteType;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setNextHopOppsiteType(String nextHopOppsiteType) {
+				this.nextHopOppsiteType = nextHopOppsiteType;
 			}
 
 			public String getNextHopType() {
@@ -245,12 +229,12 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 				this.routeEntryName = routeEntryName;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getNextHopRegionId() {
+				return this.nextHopRegionId;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
+			public void setNextHopRegionId(String nextHopRegionId) {
+				this.nextHopRegionId = nextHopRegionId;
 			}
 
 			public String getRouteEntryId() {
@@ -261,20 +245,20 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 				this.routeEntryId = routeEntryId;
 			}
 
-			public String getNextHopRegionId() {
-				return this.nextHopRegionId;
+			public String getNextHopOppsiteRegionId() {
+				return this.nextHopOppsiteRegionId;
 			}
 
-			public void setNextHopRegionId(String nextHopRegionId) {
-				this.nextHopRegionId = nextHopRegionId;
+			public void setNextHopOppsiteRegionId(String nextHopOppsiteRegionId) {
+				this.nextHopOppsiteRegionId = nextHopOppsiteRegionId;
 			}
 
-			public String getNextHopOppsiteType() {
-				return this.nextHopOppsiteType;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setNextHopOppsiteType(String nextHopOppsiteType) {
-				this.nextHopOppsiteType = nextHopOppsiteType;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getNextHopOppsiteInstanceId() {
@@ -285,12 +269,28 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 				this.nextHopOppsiteInstanceId = nextHopOppsiteInstanceId;
 			}
 
-			public String getNextHopOppsiteRegionId() {
-				return this.nextHopOppsiteRegionId;
+			public String getRouteTableId() {
+				return this.routeTableId;
 			}
 
-			public void setNextHopOppsiteRegionId(String nextHopOppsiteRegionId) {
-				this.nextHopOppsiteRegionId = nextHopOppsiteRegionId;
+			public void setRouteTableId(String routeTableId) {
+				this.routeTableId = routeTableId;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getDestinationCidrBlock() {
+				return this.destinationCidrBlock;
+			}
+
+			public void setDestinationCidrBlock(String destinationCidrBlock) {
+				this.destinationCidrBlock = destinationCidrBlock;
 			}
 
 			public String getPrivateIpAddress() {
@@ -311,29 +311,21 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 			public static class NextHop {
 
-				private String nextHopType;
-
 				private String nextHopId;
-
-				private Integer enabled;
 
 				private Integer weight;
 
-				private String nextHopRegionId;
-
 				private String nextHopOppsiteType;
 
-				private String nextHopOppsiteInstanceId;
+				private String nextHopType;
+
+				private Integer enabled;
+
+				private String nextHopRegionId;
 
 				private String nextHopOppsiteRegionId;
 
-				public String getNextHopType() {
-					return this.nextHopType;
-				}
-
-				public void setNextHopType(String nextHopType) {
-					this.nextHopType = nextHopType;
-				}
+				private String nextHopOppsiteInstanceId;
 
 				public String getNextHopId() {
 					return this.nextHopId;
@@ -341,14 +333,6 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 				public void setNextHopId(String nextHopId) {
 					this.nextHopId = nextHopId;
-				}
-
-				public Integer getEnabled() {
-					return this.enabled;
-				}
-
-				public void setEnabled(Integer enabled) {
-					this.enabled = enabled;
 				}
 
 				public Integer getWeight() {
@@ -359,14 +343,6 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 					this.weight = weight;
 				}
 
-				public String getNextHopRegionId() {
-					return this.nextHopRegionId;
-				}
-
-				public void setNextHopRegionId(String nextHopRegionId) {
-					this.nextHopRegionId = nextHopRegionId;
-				}
-
 				public String getNextHopOppsiteType() {
 					return this.nextHopOppsiteType;
 				}
@@ -375,12 +351,28 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 					this.nextHopOppsiteType = nextHopOppsiteType;
 				}
 
-				public String getNextHopOppsiteInstanceId() {
-					return this.nextHopOppsiteInstanceId;
+				public String getNextHopType() {
+					return this.nextHopType;
 				}
 
-				public void setNextHopOppsiteInstanceId(String nextHopOppsiteInstanceId) {
-					this.nextHopOppsiteInstanceId = nextHopOppsiteInstanceId;
+				public void setNextHopType(String nextHopType) {
+					this.nextHopType = nextHopType;
+				}
+
+				public Integer getEnabled() {
+					return this.enabled;
+				}
+
+				public void setEnabled(Integer enabled) {
+					this.enabled = enabled;
+				}
+
+				public String getNextHopRegionId() {
+					return this.nextHopRegionId;
+				}
+
+				public void setNextHopRegionId(String nextHopRegionId) {
+					this.nextHopRegionId = nextHopRegionId;
 				}
 
 				public String getNextHopOppsiteRegionId() {
@@ -389,6 +381,14 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 				public void setNextHopOppsiteRegionId(String nextHopOppsiteRegionId) {
 					this.nextHopOppsiteRegionId = nextHopOppsiteRegionId;
+				}
+
+				public String getNextHopOppsiteInstanceId() {
+					return this.nextHopOppsiteInstanceId;
+				}
+
+				public void setNextHopOppsiteInstanceId(String nextHopOppsiteInstanceId) {
+					this.nextHopOppsiteInstanceId = nextHopOppsiteInstanceId;
 				}
 			}
 		}

@@ -24,7 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHighDefinitionMonitorLogAttributeResponse extends AcsResponse {
 
+	private String logProject;
+
 	private String requestId;
+
+	private String logStore;
 
 	private String success;
 
@@ -32,9 +36,13 @@ public class DescribeHighDefinitionMonitorLogAttributeResponse extends AcsRespon
 
 	private String instanceType;
 
-	private String logProject;
+	public String getLogProject() {
+		return this.logProject;
+	}
 
-	private String logStore;
+	public void setLogProject(String logProject) {
+		this.logProject = logProject;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +50,14 @@ public class DescribeHighDefinitionMonitorLogAttributeResponse extends AcsRespon
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLogStore() {
+		return this.logStore;
+	}
+
+	public void setLogStore(String logStore) {
+		this.logStore = logStore;
 	}
 
 	public String getSuccess() {
@@ -66,22 +82,6 @@ public class DescribeHighDefinitionMonitorLogAttributeResponse extends AcsRespon
 
 	public void setInstanceType(String instanceType) {
 		this.instanceType = instanceType;
-	}
-
-	public String getLogProject() {
-		return this.logProject;
-	}
-
-	public void setLogProject(String logProject) {
-		this.logProject = logProject;
-	}
-
-	public String getLogStore() {
-		return this.logStore;
-	}
-
-	public void setLogStore(String logStore) {
-		this.logStore = logStore;
 	}
 
 	@Override

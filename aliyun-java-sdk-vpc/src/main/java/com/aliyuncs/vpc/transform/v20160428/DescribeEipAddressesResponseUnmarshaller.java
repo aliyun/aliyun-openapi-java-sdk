@@ -43,6 +43,7 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			eipAddress.setNetmode(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Netmode"));
 			eipAddress.setChargeType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ChargeType"));
 			eipAddress.setDescritpion(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Descritpion"));
+			eipAddress.setDescription(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Description"));
 			eipAddress.setMode(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Mode"));
 			eipAddress.setSegmentInstanceId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SegmentInstanceId"));
 			eipAddress.setReservationInternetChargeType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationInternetChargeType"));

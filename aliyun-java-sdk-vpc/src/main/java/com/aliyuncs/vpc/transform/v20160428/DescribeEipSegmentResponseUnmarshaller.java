@@ -27,21 +27,21 @@ public class DescribeEipSegmentResponseUnmarshaller {
 	public static DescribeEipSegmentResponse unmarshall(DescribeEipSegmentResponse describeEipSegmentResponse, UnmarshallerContext _ctx) {
 		
 		describeEipSegmentResponse.setRequestId(_ctx.stringValue("DescribeEipSegmentResponse.RequestId"));
-		describeEipSegmentResponse.setTotalCount(_ctx.integerValue("DescribeEipSegmentResponse.TotalCount"));
-		describeEipSegmentResponse.setPageNumber(_ctx.integerValue("DescribeEipSegmentResponse.PageNumber"));
 		describeEipSegmentResponse.setPageSize(_ctx.integerValue("DescribeEipSegmentResponse.PageSize"));
+		describeEipSegmentResponse.setPageNumber(_ctx.integerValue("DescribeEipSegmentResponse.PageNumber"));
+		describeEipSegmentResponse.setTotalCount(_ctx.integerValue("DescribeEipSegmentResponse.TotalCount"));
 
 		List<EipSegment> eipSegments = new ArrayList<EipSegment>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEipSegmentResponse.EipSegments.Length"); i++) {
 			EipSegment eipSegment = new EipSegment();
-			eipSegment.setInstanceId(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].InstanceId"));
-			eipSegment.setSegment(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Segment"));
+			eipSegment.setCreationTime(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].CreationTime"));
 			eipSegment.setStatus(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Status"));
-			eipSegment.setRegionId(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].RegionId"));
+			eipSegment.setDescritpion(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Descritpion"));
+			eipSegment.setInstanceId(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].InstanceId"));
 			eipSegment.setIpCount(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].IpCount"));
 			eipSegment.setName(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Name"));
-			eipSegment.setDescritpion(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Descritpion"));
-			eipSegment.setCreationTime(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].CreationTime"));
+			eipSegment.setSegment(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].Segment"));
+			eipSegment.setRegionId(_ctx.stringValue("DescribeEipSegmentResponse.EipSegments["+ i +"].RegionId"));
 
 			eipSegments.add(eipSegment);
 		}

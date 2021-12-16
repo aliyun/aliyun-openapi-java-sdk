@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEipSegmentResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<EipSegment> eipSegments;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeEipSegmentResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeEipSegmentResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<EipSegment> getEipSegments() {
@@ -77,36 +77,28 @@ public class DescribeEipSegmentResponse extends AcsResponse {
 
 	public static class EipSegment {
 
-		private String instanceId;
-
-		private String segment;
+		private String creationTime;
 
 		private String status;
 
-		private String regionId;
+		private String descritpion;
+
+		private String instanceId;
 
 		private String ipCount;
 
 		private String name;
 
-		private String descritpion;
+		private String segment;
 
-		private String creationTime;
+		private String regionId;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getSegment() {
-			return this.segment;
-		}
-
-		public void setSegment(String segment) {
-			this.segment = segment;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -117,12 +109,20 @@ public class DescribeEipSegmentResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getDescritpion() {
+			return this.descritpion;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setDescritpion(String descritpion) {
+			this.descritpion = descritpion;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getIpCount() {
@@ -141,20 +141,20 @@ public class DescribeEipSegmentResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDescritpion() {
-			return this.descritpion;
+		public String getSegment() {
+			return this.segment;
 		}
 
-		public void setDescritpion(String descritpion) {
-			this.descritpion = descritpion;
+		public void setSegment(String segment) {
+			this.segment = segment;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

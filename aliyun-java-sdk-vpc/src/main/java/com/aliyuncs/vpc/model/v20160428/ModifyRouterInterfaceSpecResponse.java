@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyRouterInterfaceSpecResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String spec;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSpec() {
 		return this.spec;
@@ -42,6 +34,14 @@ public class ModifyRouterInterfaceSpecResponse extends AcsResponse {
 
 	public void setSpec(String spec) {
 		this.spec = spec;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

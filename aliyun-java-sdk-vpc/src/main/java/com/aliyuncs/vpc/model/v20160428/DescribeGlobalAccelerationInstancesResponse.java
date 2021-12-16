@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<GlobalAccelerationInstance> globalAccelerationInstances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<GlobalAccelerationInstance> getGlobalAccelerationInstances() {
@@ -77,43 +77,43 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 	public static class GlobalAccelerationInstance {
 
-		private String regionId;
-
-		private String globalAccelerationInstanceId;
-
-		private String ipAddress;
-
-		private String status;
-
-		private String bandwidth;
-
-		private String internetChargeType;
-
-		private String chargeType;
-
-		private String bandwidthType;
-
-		private String accelerationLocation;
-
-		private String serviceLocation;
-
-		private String name;
-
-		private String description;
-
-		private String expiredTime;
+		private String reservationActiveTime;
 
 		private String creationTime;
 
-		private String hasReservationData;
+		private String status;
 
-		private String reservationBandwidth;
+		private String reservationOrderType;
+
+		private String bandwidthType;
+
+		private String chargeType;
+
+		private String globalAccelerationInstanceId;
+
+		private String serviceLocation;
 
 		private String reservationInternetChargeType;
 
-		private String reservationActiveTime;
+		private String regionId;
 
-		private String reservationOrderType;
+		private String accelerationLocation;
+
+		private String ipAddress;
+
+		private String description;
+
+		private String bandwidth;
+
+		private String expiredTime;
+
+		private String reservationBandwidth;
+
+		private String internetChargeType;
+
+		private String name;
+
+		private String hasReservationData;
 
 		private List<LockReason> operationLocks;
 
@@ -121,108 +121,12 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 		private List<PublicIpAddress> publicIpAddresses;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getGlobalAccelerationInstanceId() {
-			return this.globalAccelerationInstanceId;
-		}
-
-		public void setGlobalAccelerationInstanceId(String globalAccelerationInstanceId) {
-			this.globalAccelerationInstanceId = globalAccelerationInstanceId;
-		}
-
-		public String getIpAddress() {
-			return this.ipAddress;
-		}
-
-		public void setIpAddress(String ipAddress) {
-			this.ipAddress = ipAddress;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(String bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getInternetChargeType() {
-			return this.internetChargeType;
-		}
-
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getBandwidthType() {
-			return this.bandwidthType;
-		}
-
-		public void setBandwidthType(String bandwidthType) {
-			this.bandwidthType = bandwidthType;
-		}
-
-		public String getAccelerationLocation() {
-			return this.accelerationLocation;
-		}
-
-		public void setAccelerationLocation(String accelerationLocation) {
-			this.accelerationLocation = accelerationLocation;
-		}
-
-		public String getServiceLocation() {
-			return this.serviceLocation;
-		}
-
-		public void setServiceLocation(String serviceLocation) {
-			this.serviceLocation = serviceLocation;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
 		}
 
 		public String getCreationTime() {
@@ -233,20 +137,52 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getHasReservationData() {
-			return this.hasReservationData;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setHasReservationData(String hasReservationData) {
-			this.hasReservationData = hasReservationData;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getReservationBandwidth() {
-			return this.reservationBandwidth;
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
 		}
 
-		public void setReservationBandwidth(String reservationBandwidth) {
-			this.reservationBandwidth = reservationBandwidth;
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
+		}
+
+		public String getBandwidthType() {
+			return this.bandwidthType;
+		}
+
+		public void setBandwidthType(String bandwidthType) {
+			this.bandwidthType = bandwidthType;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getGlobalAccelerationInstanceId() {
+			return this.globalAccelerationInstanceId;
+		}
+
+		public void setGlobalAccelerationInstanceId(String globalAccelerationInstanceId) {
+			this.globalAccelerationInstanceId = globalAccelerationInstanceId;
+		}
+
+		public String getServiceLocation() {
+			return this.serviceLocation;
+		}
+
+		public void setServiceLocation(String serviceLocation) {
+			this.serviceLocation = serviceLocation;
 		}
 
 		public String getReservationInternetChargeType() {
@@ -257,20 +193,84 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 			this.reservationInternetChargeType = reservationInternetChargeType;
 		}
 
-		public String getReservationActiveTime() {
-			return this.reservationActiveTime;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setReservationActiveTime(String reservationActiveTime) {
-			this.reservationActiveTime = reservationActiveTime;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public String getReservationOrderType() {
-			return this.reservationOrderType;
+		public String getAccelerationLocation() {
+			return this.accelerationLocation;
 		}
 
-		public void setReservationOrderType(String reservationOrderType) {
-			this.reservationOrderType = reservationOrderType;
+		public void setAccelerationLocation(String accelerationLocation) {
+			this.accelerationLocation = accelerationLocation;
+		}
+
+		public String getIpAddress() {
+			return this.ipAddress;
+		}
+
+		public void setIpAddress(String ipAddress) {
+			this.ipAddress = ipAddress;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getReservationBandwidth() {
+			return this.reservationBandwidth;
+		}
+
+		public void setReservationBandwidth(String reservationBandwidth) {
+			this.reservationBandwidth = reservationBandwidth;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getHasReservationData() {
+			return this.hasReservationData;
+		}
+
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
 		}
 
 		public List<LockReason> getOperationLocks() {
@@ -312,20 +312,20 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 		public static class BackendServer {
 
-			private String regionId;
+			private String serverIpAddress;
 
 			private String serverId;
 
-			private String serverIpAddress;
-
 			private String serverType;
 
-			public String getRegionId() {
-				return this.regionId;
+			private String regionId;
+
+			public String getServerIpAddress() {
+				return this.serverIpAddress;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setServerIpAddress(String serverIpAddress) {
+				this.serverIpAddress = serverIpAddress;
 			}
 
 			public String getServerId() {
@@ -336,14 +336,6 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 				this.serverId = serverId;
 			}
 
-			public String getServerIpAddress() {
-				return this.serverIpAddress;
-			}
-
-			public void setServerIpAddress(String serverIpAddress) {
-				this.serverIpAddress = serverIpAddress;
-			}
-
 			public String getServerType() {
 				return this.serverType;
 			}
@@ -351,21 +343,21 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 			public void setServerType(String serverType) {
 				this.serverType = serverType;
 			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
 		}
 
 		public static class PublicIpAddress {
 
-			private String allocationId;
-
 			private String ipAddress;
 
-			public String getAllocationId() {
-				return this.allocationId;
-			}
-
-			public void setAllocationId(String allocationId) {
-				this.allocationId = allocationId;
-			}
+			private String allocationId;
 
 			public String getIpAddress() {
 				return this.ipAddress;
@@ -373,6 +365,14 @@ public class DescribeGlobalAccelerationInstancesResponse extends AcsResponse {
 
 			public void setIpAddress(String ipAddress) {
 				this.ipAddress = ipAddress;
+			}
+
+			public String getAllocationId() {
+				return this.allocationId;
+			}
+
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
 			}
 		}
 	}

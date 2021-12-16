@@ -47,66 +47,34 @@ public class DescribePhysicalConnectionLOAResponse extends AcsResponse {
 
 	public static class PhysicalConnectionLOAType {
 
-		private String instanceId;
-
-		private String companyName;
-
-		private String companyLocalizedName;
-
-		private String lineType;
-
-		private String lineCode;
+		private String status;
 
 		private String lineLabel;
 
+		private String lineCode;
+
 		private String constructionTime;
-
-		private String status;
-
-		private String loaUrl;
 
 		private String sI;
 
+		private String loaUrl;
+
+		private String companyLocalizedName;
+
+		private String instanceId;
+
+		private String lineType;
+
+		private String companyName;
+
 		private List<PMInfoItem> pMInfo;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getCompanyName() {
-			return this.companyName;
-		}
-
-		public void setCompanyName(String companyName) {
-			this.companyName = companyName;
-		}
-
-		public String getCompanyLocalizedName() {
-			return this.companyLocalizedName;
-		}
-
-		public void setCompanyLocalizedName(String companyLocalizedName) {
-			this.companyLocalizedName = companyLocalizedName;
-		}
-
-		public String getLineType() {
-			return this.lineType;
-		}
-
-		public void setLineType(String lineType) {
-			this.lineType = lineType;
-		}
-
-		public String getLineCode() {
-			return this.lineCode;
-		}
-
-		public void setLineCode(String lineCode) {
-			this.lineCode = lineCode;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getLineLabel() {
@@ -117,6 +85,14 @@ public class DescribePhysicalConnectionLOAResponse extends AcsResponse {
 			this.lineLabel = lineLabel;
 		}
 
+		public String getLineCode() {
+			return this.lineCode;
+		}
+
+		public void setLineCode(String lineCode) {
+			this.lineCode = lineCode;
+		}
+
 		public String getConstructionTime() {
 			return this.constructionTime;
 		}
@@ -125,12 +101,12 @@ public class DescribePhysicalConnectionLOAResponse extends AcsResponse {
 			this.constructionTime = constructionTime;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getSI() {
+			return this.sI;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setSI(String sI) {
+			this.sI = sI;
 		}
 
 		public String getLoaUrl() {
@@ -141,12 +117,36 @@ public class DescribePhysicalConnectionLOAResponse extends AcsResponse {
 			this.loaUrl = loaUrl;
 		}
 
-		public String getSI() {
-			return this.sI;
+		public String getCompanyLocalizedName() {
+			return this.companyLocalizedName;
 		}
 
-		public void setSI(String sI) {
-			this.sI = sI;
+		public void setCompanyLocalizedName(String companyLocalizedName) {
+			this.companyLocalizedName = companyLocalizedName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getLineType() {
+			return this.lineType;
+		}
+
+		public void setLineType(String lineType) {
+			this.lineType = lineType;
+		}
+
+		public String getCompanyName() {
+			return this.companyName;
+		}
+
+		public void setCompanyName(String companyName) {
+			this.companyName = companyName;
 		}
 
 		public List<PMInfoItem> getPMInfo() {
@@ -159,38 +159,22 @@ public class DescribePhysicalConnectionLOAResponse extends AcsResponse {
 
 		public static class PMInfoItem {
 
-			private String pMName;
-
-			private String pMContactInfo;
-
-			private String pMCertificateType;
+			private String pMGender;
 
 			private String pMCertificateNo;
 
-			private String pMGender;
+			private String pMName;
 
-			public String getPMName() {
-				return this.pMName;
+			private String pMCertificateType;
+
+			private String pMContactInfo;
+
+			public String getPMGender() {
+				return this.pMGender;
 			}
 
-			public void setPMName(String pMName) {
-				this.pMName = pMName;
-			}
-
-			public String getPMContactInfo() {
-				return this.pMContactInfo;
-			}
-
-			public void setPMContactInfo(String pMContactInfo) {
-				this.pMContactInfo = pMContactInfo;
-			}
-
-			public String getPMCertificateType() {
-				return this.pMCertificateType;
-			}
-
-			public void setPMCertificateType(String pMCertificateType) {
-				this.pMCertificateType = pMCertificateType;
+			public void setPMGender(String pMGender) {
+				this.pMGender = pMGender;
 			}
 
 			public String getPMCertificateNo() {
@@ -201,12 +185,28 @@ public class DescribePhysicalConnectionLOAResponse extends AcsResponse {
 				this.pMCertificateNo = pMCertificateNo;
 			}
 
-			public String getPMGender() {
-				return this.pMGender;
+			public String getPMName() {
+				return this.pMName;
 			}
 
-			public void setPMGender(String pMGender) {
-				this.pMGender = pMGender;
+			public void setPMName(String pMName) {
+				this.pMName = pMName;
+			}
+
+			public String getPMCertificateType() {
+				return this.pMCertificateType;
+			}
+
+			public void setPMCertificateType(String pMCertificateType) {
+				this.pMCertificateType = pMCertificateType;
+			}
+
+			public String getPMContactInfo() {
+				return this.pMContactInfo;
+			}
+
+			public void setPMContactInfo(String pMContactInfo) {
+				this.pMContactInfo = pMContactInfo;
 			}
 		}
 	}

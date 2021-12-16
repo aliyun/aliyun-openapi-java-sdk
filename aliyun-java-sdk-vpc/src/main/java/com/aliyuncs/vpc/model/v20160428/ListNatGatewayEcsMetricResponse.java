@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNatGatewayEcsMetricResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private Integer maxResults;
 
 	private List<MetricData> metricDataList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -47,6 +39,14 @@ public class ListNatGatewayEcsMetricResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getMaxResults() {
@@ -67,46 +67,30 @@ public class ListNatGatewayEcsMetricResponse extends AcsResponse {
 
 	public static class MetricData {
 
-		private String natGatewayId;
-
-		private String privateIpAddress;
-
-		private Long timestamp;
+		private Long rxBps;
 
 		private Long activeSessionNum;
 
-		private Long newSessionRate;
-
-		private Long rxBps;
-
 		private Long txBps;
 
-		private Long rxPps;
+		private Long newSessionRate;
 
 		private Long txPps;
 
-		public String getNatGatewayId() {
-			return this.natGatewayId;
+		private String natGatewayId;
+
+		private Long timestamp;
+
+		private Long rxPps;
+
+		private String privateIpAddress;
+
+		public Long getRxBps() {
+			return this.rxBps;
 		}
 
-		public void setNatGatewayId(String natGatewayId) {
-			this.natGatewayId = natGatewayId;
-		}
-
-		public String getPrivateIpAddress() {
-			return this.privateIpAddress;
-		}
-
-		public void setPrivateIpAddress(String privateIpAddress) {
-			this.privateIpAddress = privateIpAddress;
-		}
-
-		public Long getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
+		public void setRxBps(Long rxBps) {
+			this.rxBps = rxBps;
 		}
 
 		public Long getActiveSessionNum() {
@@ -117,6 +101,14 @@ public class ListNatGatewayEcsMetricResponse extends AcsResponse {
 			this.activeSessionNum = activeSessionNum;
 		}
 
+		public Long getTxBps() {
+			return this.txBps;
+		}
+
+		public void setTxBps(Long txBps) {
+			this.txBps = txBps;
+		}
+
 		public Long getNewSessionRate() {
 			return this.newSessionRate;
 		}
@@ -125,20 +117,28 @@ public class ListNatGatewayEcsMetricResponse extends AcsResponse {
 			this.newSessionRate = newSessionRate;
 		}
 
-		public Long getRxBps() {
-			return this.rxBps;
+		public Long getTxPps() {
+			return this.txPps;
 		}
 
-		public void setRxBps(Long rxBps) {
-			this.rxBps = rxBps;
+		public void setTxPps(Long txPps) {
+			this.txPps = txPps;
 		}
 
-		public Long getTxBps() {
-			return this.txBps;
+		public String getNatGatewayId() {
+			return this.natGatewayId;
 		}
 
-		public void setTxBps(Long txBps) {
-			this.txBps = txBps;
+		public void setNatGatewayId(String natGatewayId) {
+			this.natGatewayId = natGatewayId;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 
 		public Long getRxPps() {
@@ -149,12 +149,12 @@ public class ListNatGatewayEcsMetricResponse extends AcsResponse {
 			this.rxPps = rxPps;
 		}
 
-		public Long getTxPps() {
-			return this.txPps;
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
 		}
 
-		public void setTxPps(Long txPps) {
-			this.txPps = txPps;
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
 		}
 	}
 

@@ -34,25 +34,25 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 		List<TrafficMirrorFilter> trafficMirrorFilters = new ArrayList<TrafficMirrorFilter>();
 		for (int i = 0; i < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters.Length"); i++) {
 			TrafficMirrorFilter trafficMirrorFilter = new TrafficMirrorFilter();
-			trafficMirrorFilter.setTrafficMirrorFilterName(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterName"));
+			trafficMirrorFilter.setTrafficMirrorFilterStatus(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterStatus"));
 			trafficMirrorFilter.setTrafficMirrorFilterDescription(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterDescription"));
 			trafficMirrorFilter.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterId"));
-			trafficMirrorFilter.setTrafficMirrorFilterStatus(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterStatus"));
+			trafficMirrorFilter.setTrafficMirrorFilterName(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterName"));
 
 			List<TrafficMirrorRule> ingressRules = new ArrayList<TrafficMirrorRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules.Length"); j++) {
 				TrafficMirrorRule trafficMirrorRule = new TrafficMirrorRule();
-				trafficMirrorRule.setTrafficMirrorFilterRuleId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterRuleId"));
-				trafficMirrorRule.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterId"));
-				trafficMirrorRule.setTrafficDirection(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficDirection"));
-				trafficMirrorRule.setPriority(_ctx.integerValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Priority"));
-				trafficMirrorRule.setBizProtocol(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Protocol"));
-				trafficMirrorRule.setAction(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Action"));
-				trafficMirrorRule.setDestinationCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationCidrBlock"));
-				trafficMirrorRule.setDestinationPortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationPortRange"));
-				trafficMirrorRule.setSourceCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourceCidrBlock"));
-				trafficMirrorRule.setSourcePortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourcePortRange"));
 				trafficMirrorRule.setTrafficMirrorFilterRuleStatus(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterRuleStatus"));
+				trafficMirrorRule.setAction(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Action"));
+				trafficMirrorRule.setSourceCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourceCidrBlock"));
+				trafficMirrorRule.setTrafficDirection(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficDirection"));
+				trafficMirrorRule.setBizProtocol(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Protocol"));
+				trafficMirrorRule.setDestinationPortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationPortRange"));
+				trafficMirrorRule.setTrafficMirrorFilterRuleId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterRuleId"));
+				trafficMirrorRule.setDestinationCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationCidrBlock"));
+				trafficMirrorRule.setPriority(_ctx.integerValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Priority"));
+				trafficMirrorRule.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterId"));
+				trafficMirrorRule.setSourcePortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourcePortRange"));
 
 				ingressRules.add(trafficMirrorRule);
 			}
@@ -60,20 +60,20 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 
 			List<TrafficMirrorRule> egressRules = new ArrayList<TrafficMirrorRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules.Length"); j++) {
-				TrafficMirrorRule trafficMirrorRule_ = new TrafficMirrorRule();
-				trafficMirrorRule_.setTrafficMirrorFilterRuleId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleId"));
-				trafficMirrorRule_.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterId"));
-				trafficMirrorRule_.setTrafficDirection(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficDirection"));
-				trafficMirrorRule_.setPriority(_ctx.integerValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Priority"));
-				trafficMirrorRule_.setBizProtocol(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Protocol"));
-				trafficMirrorRule_.setAction(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Action"));
-				trafficMirrorRule_.setDestinationCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationCidrBlock"));
-				trafficMirrorRule_.setDestinationPortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationPortRange"));
-				trafficMirrorRule_.setSourceCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourceCidrBlock"));
-				trafficMirrorRule_.setSourcePortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourcePortRange"));
-				trafficMirrorRule_.setTrafficMirrorFilterRuleStatus(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleStatus"));
+				TrafficMirrorRule trafficMirrorRule1 = new TrafficMirrorRule();
+				trafficMirrorRule1.setTrafficMirrorFilterRuleStatus(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleStatus"));
+				trafficMirrorRule1.setAction(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Action"));
+				trafficMirrorRule1.setSourceCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourceCidrBlock"));
+				trafficMirrorRule1.setTrafficDirection(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficDirection"));
+				trafficMirrorRule1.setBizProtocol(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Protocol"));
+				trafficMirrorRule1.setDestinationPortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationPortRange"));
+				trafficMirrorRule1.setTrafficMirrorFilterRuleId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleId"));
+				trafficMirrorRule1.setDestinationCidrBlock(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationCidrBlock"));
+				trafficMirrorRule1.setPriority(_ctx.integerValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Priority"));
+				trafficMirrorRule1.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterId"));
+				trafficMirrorRule1.setSourcePortRange(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourcePortRange"));
 
-				egressRules.add(trafficMirrorRule_);
+				egressRules.add(trafficMirrorRule1);
 			}
 			trafficMirrorFilter.setEgressRules(egressRules);
 

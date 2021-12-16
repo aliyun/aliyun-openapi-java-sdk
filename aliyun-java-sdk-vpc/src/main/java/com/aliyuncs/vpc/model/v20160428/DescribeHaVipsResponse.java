@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHaVipsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<HaVip> haVips;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeHaVipsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<HaVip> getHaVips() {
@@ -77,33 +77,49 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 	public static class HaVip {
 
+		private String vpcId;
+
+		private String status;
+
 		private String haVipId;
 
-		private String regionId;
+		private String associatedInstanceType;
 
-		private String vpcId;
+		private String createTime;
+
+		private String chargeType;
+
+		private String regionId;
 
 		private String vSwitchId;
 
 		private String ipAddress;
 
-		private String status;
+		private String description;
 
 		private String masterInstanceId;
 
-		private String description;
-
 		private String name;
 
-		private String chargeType;
-
-		private String createTime;
-
-		private String associatedInstanceType;
+		private List<String> associatedEipAddresses;
 
 		private List<String> associatedInstances;
 
-		private List<String> associatedEipAddresses;
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getHaVipId() {
 			return this.haVipId;
@@ -113,20 +129,36 @@ public class DescribeHaVipsResponse extends AcsResponse {
 			this.haVipId = haVipId;
 		}
 
+		public String getAssociatedInstanceType() {
+			return this.associatedInstanceType;
+		}
+
+		public void setAssociatedInstanceType(String associatedInstanceType) {
+			this.associatedInstanceType = associatedInstanceType;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
 		}
 
 		public String getVSwitchId() {
@@ -145,12 +177,12 @@ public class DescribeHaVipsResponse extends AcsResponse {
 			this.ipAddress = ipAddress;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getMasterInstanceId() {
@@ -161,14 +193,6 @@ public class DescribeHaVipsResponse extends AcsResponse {
 			this.masterInstanceId = masterInstanceId;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public String getName() {
 			return this.name;
 		}
@@ -177,28 +201,12 @@ public class DescribeHaVipsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public List<String> getAssociatedEipAddresses() {
+			return this.associatedEipAddresses;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getAssociatedInstanceType() {
-			return this.associatedInstanceType;
-		}
-
-		public void setAssociatedInstanceType(String associatedInstanceType) {
-			this.associatedInstanceType = associatedInstanceType;
+		public void setAssociatedEipAddresses(List<String> associatedEipAddresses) {
+			this.associatedEipAddresses = associatedEipAddresses;
 		}
 
 		public List<String> getAssociatedInstances() {
@@ -207,14 +215,6 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 		public void setAssociatedInstances(List<String> associatedInstances) {
 			this.associatedInstances = associatedInstances;
-		}
-
-		public List<String> getAssociatedEipAddresses() {
-			return this.associatedEipAddresses;
-		}
-
-		public void setAssociatedEipAddresses(List<String> associatedEipAddresses) {
-			this.associatedEipAddresses = associatedEipAddresses;
 		}
 	}
 

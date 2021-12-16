@@ -27,28 +27,28 @@ public class DescribeIPv6TranslatorEntriesResponseUnmarshaller {
 	public static DescribeIPv6TranslatorEntriesResponse unmarshall(DescribeIPv6TranslatorEntriesResponse describeIPv6TranslatorEntriesResponse, UnmarshallerContext _ctx) {
 		
 		describeIPv6TranslatorEntriesResponse.setRequestId(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.RequestId"));
-		describeIPv6TranslatorEntriesResponse.setTotalCount(_ctx.integerValue("DescribeIPv6TranslatorEntriesResponse.TotalCount"));
-		describeIPv6TranslatorEntriesResponse.setPageNumber(_ctx.integerValue("DescribeIPv6TranslatorEntriesResponse.PageNumber"));
 		describeIPv6TranslatorEntriesResponse.setPageSize(_ctx.integerValue("DescribeIPv6TranslatorEntriesResponse.PageSize"));
+		describeIPv6TranslatorEntriesResponse.setPageNumber(_ctx.integerValue("DescribeIPv6TranslatorEntriesResponse.PageNumber"));
+		describeIPv6TranslatorEntriesResponse.setTotalCount(_ctx.integerValue("DescribeIPv6TranslatorEntriesResponse.TotalCount"));
 
 		List<Ipv6TranslatorEntry> ipv6TranslatorEntries = new ArrayList<Ipv6TranslatorEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries.Length"); i++) {
 			Ipv6TranslatorEntry ipv6TranslatorEntry = new Ipv6TranslatorEntry();
+			ipv6TranslatorEntry.setAclType(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AclType"));
+			ipv6TranslatorEntry.setEntryStatus(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].EntryStatus"));
+			ipv6TranslatorEntry.setTransProtocol(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].TransProtocol"));
 			ipv6TranslatorEntry.setIpv6TranslatorId(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].Ipv6TranslatorId"));
+			ipv6TranslatorEntry.setEntryDescription(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].EntryDescription"));
 			ipv6TranslatorEntry.setIpv6TranslatorEntryId(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].Ipv6TranslatorEntryId"));
-			ipv6TranslatorEntry.setAllocateIpv6Addr(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AllocateIpv6Addr"));
 			ipv6TranslatorEntry.setAllocateIpv6Port(_ctx.integerValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AllocateIpv6Port"));
 			ipv6TranslatorEntry.setBackendIpv4Addr(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].BackendIpv4Addr"));
 			ipv6TranslatorEntry.setBackendIpv4Port(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].BackendIpv4Port"));
-			ipv6TranslatorEntry.setTransProtocol(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].TransProtocol"));
-			ipv6TranslatorEntry.setEntryBandwidth(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].EntryBandwidth"));
-			ipv6TranslatorEntry.setEntryDescription(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].EntryDescription"));
-			ipv6TranslatorEntry.setEntryName(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].EntryName"));
-			ipv6TranslatorEntry.setEntryStatus(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].EntryStatus"));
-			ipv6TranslatorEntry.setAclStatus(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AclStatus"));
-			ipv6TranslatorEntry.setAclType(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AclType"));
-			ipv6TranslatorEntry.setAclId(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AclId"));
 			ipv6TranslatorEntry.setRegionId(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].RegionId"));
+			ipv6TranslatorEntry.setEntryBandwidth(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].EntryBandwidth"));
+			ipv6TranslatorEntry.setAclId(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AclId"));
+			ipv6TranslatorEntry.setEntryName(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].EntryName"));
+			ipv6TranslatorEntry.setAclStatus(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AclStatus"));
+			ipv6TranslatorEntry.setAllocateIpv6Addr(_ctx.stringValue("DescribeIPv6TranslatorEntriesResponse.Ipv6TranslatorEntries["+ i +"].AllocateIpv6Addr"));
 
 			ipv6TranslatorEntries.add(ipv6TranslatorEntry);
 		}

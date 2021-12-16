@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddIPv6TranslatorAclListEntryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String aclEntryId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getAclEntryId() {
 		return this.aclEntryId;
@@ -42,6 +34,14 @@ public class AddIPv6TranslatorAclListEntryResponse extends AcsResponse {
 
 	public void setAclEntryId(String aclEntryId) {
 		this.aclEntryId = aclEntryId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

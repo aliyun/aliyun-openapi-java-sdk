@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTrafficMirrorFilterResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String trafficMirrorFilterId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTrafficMirrorFilterId() {
 		return this.trafficMirrorFilterId;
@@ -42,6 +34,14 @@ public class CreateTrafficMirrorFilterResponse extends AcsResponse {
 
 	public void setTrafficMirrorFilterId(String trafficMirrorFilterId) {
 		this.trafficMirrorFilterId = trafficMirrorFilterId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

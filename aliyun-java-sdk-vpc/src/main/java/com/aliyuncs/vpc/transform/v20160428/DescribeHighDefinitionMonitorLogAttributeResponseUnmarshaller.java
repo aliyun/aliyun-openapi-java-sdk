@@ -23,11 +23,11 @@ public class DescribeHighDefinitionMonitorLogAttributeResponseUnmarshaller {
 	public static DescribeHighDefinitionMonitorLogAttributeResponse unmarshall(DescribeHighDefinitionMonitorLogAttributeResponse describeHighDefinitionMonitorLogAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeHighDefinitionMonitorLogAttributeResponse.setRequestId(_ctx.stringValue("DescribeHighDefinitionMonitorLogAttributeResponse.RequestId"));
+		describeHighDefinitionMonitorLogAttributeResponse.setLogProject(_ctx.stringValue("DescribeHighDefinitionMonitorLogAttributeResponse.LogProject"));
+		describeHighDefinitionMonitorLogAttributeResponse.setLogStore(_ctx.stringValue("DescribeHighDefinitionMonitorLogAttributeResponse.LogStore"));
 		describeHighDefinitionMonitorLogAttributeResponse.setSuccess(_ctx.stringValue("DescribeHighDefinitionMonitorLogAttributeResponse.Success"));
 		describeHighDefinitionMonitorLogAttributeResponse.setInstanceId(_ctx.stringValue("DescribeHighDefinitionMonitorLogAttributeResponse.InstanceId"));
 		describeHighDefinitionMonitorLogAttributeResponse.setInstanceType(_ctx.stringValue("DescribeHighDefinitionMonitorLogAttributeResponse.InstanceType"));
-		describeHighDefinitionMonitorLogAttributeResponse.setLogProject(_ctx.stringValue("DescribeHighDefinitionMonitorLogAttributeResponse.LogProject"));
-		describeHighDefinitionMonitorLogAttributeResponse.setLogStore(_ctx.stringValue("DescribeHighDefinitionMonitorLogAttributeResponse.LogStore"));
 	 
 	 	return describeHighDefinitionMonitorLogAttributeResponse;
 	}

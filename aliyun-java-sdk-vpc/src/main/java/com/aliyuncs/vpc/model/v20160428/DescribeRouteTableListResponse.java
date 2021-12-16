@@ -27,11 +27,11 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
 	private String code;
 
 	private String message;
-
-	private Boolean success;
 
 	private Integer pageSize;
 
@@ -49,6 +49,14 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
@@ -63,14 +71,6 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Integer getPageSize() {
@@ -109,29 +109,33 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		private String vpcId;
 
-		private String routerType;
-
-		private String routerId;
-
-		private String routeTableId;
-
-		private String routeTableName;
-
-		private String routeTableType;
-
-		private String description;
-
-		private String resourceGroupId;
-
 		private String creationTime;
 
 		private String status;
 
+		private String routerId;
+
+		private String associateType;
+
+		private String routeTableId;
+
 		private Long ownerId;
+
+		private String description;
+
+		private String routeTableType;
+
+		private String resourceGroupId;
+
+		private String routerType;
+
+		private String routeTableName;
 
 		private List<Tag> tags;
 
 		private List<String> vSwitchIds;
+
+		private List<String> gatewayIds;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -139,62 +143,6 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getRouterType() {
-			return this.routerType;
-		}
-
-		public void setRouterType(String routerType) {
-			this.routerType = routerType;
-		}
-
-		public String getRouterId() {
-			return this.routerId;
-		}
-
-		public void setRouterId(String routerId) {
-			this.routerId = routerId;
-		}
-
-		public String getRouteTableId() {
-			return this.routeTableId;
-		}
-
-		public void setRouteTableId(String routeTableId) {
-			this.routeTableId = routeTableId;
-		}
-
-		public String getRouteTableName() {
-			return this.routeTableName;
-		}
-
-		public void setRouteTableName(String routeTableName) {
-			this.routeTableName = routeTableName;
-		}
-
-		public String getRouteTableType() {
-			return this.routeTableType;
-		}
-
-		public void setRouteTableType(String routeTableType) {
-			this.routeTableType = routeTableType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getCreationTime() {
@@ -213,12 +161,76 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getRouterId() {
+			return this.routerId;
+		}
+
+		public void setRouterId(String routerId) {
+			this.routerId = routerId;
+		}
+
+		public String getAssociateType() {
+			return this.associateType;
+		}
+
+		public void setAssociateType(String associateType) {
+			this.associateType = associateType;
+		}
+
+		public String getRouteTableId() {
+			return this.routeTableId;
+		}
+
+		public void setRouteTableId(String routeTableId) {
+			this.routeTableId = routeTableId;
+		}
+
 		public Long getOwnerId() {
 			return this.ownerId;
 		}
 
 		public void setOwnerId(Long ownerId) {
 			this.ownerId = ownerId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getRouteTableType() {
+			return this.routeTableType;
+		}
+
+		public void setRouteTableType(String routeTableType) {
+			this.routeTableType = routeTableType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getRouterType() {
+			return this.routerType;
+		}
+
+		public void setRouterType(String routerType) {
+			this.routerType = routerType;
+		}
+
+		public String getRouteTableName() {
+			return this.routeTableName;
+		}
+
+		public void setRouteTableName(String routeTableName) {
+			this.routeTableName = routeTableName;
 		}
 
 		public List<Tag> getTags() {
@@ -235,6 +247,14 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		public void setVSwitchIds(List<String> vSwitchIds) {
 			this.vSwitchIds = vSwitchIds;
+		}
+
+		public List<String> getGatewayIds() {
+			return this.gatewayIds;
+		}
+
+		public void setGatewayIds(List<String> gatewayIds) {
+			this.gatewayIds = gatewayIds;
 		}
 
 		public static class Tag {

@@ -71,14 +71,14 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		this.egressAclEntriess = egressAclEntriess;	
 		if (egressAclEntriess != null) {
 			for (int depth1 = 0; depth1 < egressAclEntriess.size(); depth1++) {
-				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".NetworkAclEntryName" , egressAclEntriess.get(depth1).getNetworkAclEntryName());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".NetworkAclEntryId" , egressAclEntriess.get(depth1).getNetworkAclEntryId());
+				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".EntryType" , egressAclEntriess.get(depth1).getEntryType());
+				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".NetworkAclEntryName" , egressAclEntriess.get(depth1).getNetworkAclEntryName());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Policy" , egressAclEntriess.get(depth1).getPolicy());
+				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Description" , egressAclEntriess.get(depth1).getDescription());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Protocol" , egressAclEntriess.get(depth1).getBizProtocol());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".DestinationCidrIp" , egressAclEntriess.get(depth1).getDestinationCidrIp());
 				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Port" , egressAclEntriess.get(depth1).getPort());
-				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".EntryType" , egressAclEntriess.get(depth1).getEntryType());
-				putQueryParameter("EgressAclEntries." + (depth1 + 1) + ".Description" , egressAclEntriess.get(depth1).getDescription());
 			}
 		}	
 	}
@@ -157,43 +157,35 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		this.ingressAclEntriess = ingressAclEntriess;	
 		if (ingressAclEntriess != null) {
 			for (int depth1 = 0; depth1 < ingressAclEntriess.size(); depth1++) {
-				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".NetworkAclEntryName" , ingressAclEntriess.get(depth1).getNetworkAclEntryName());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".NetworkAclEntryId" , ingressAclEntriess.get(depth1).getNetworkAclEntryId());
-				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Policy" , ingressAclEntriess.get(depth1).getPolicy());
-				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Protocol" , ingressAclEntriess.get(depth1).getBizProtocol());
-				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".SourceCidrIp" , ingressAclEntriess.get(depth1).getSourceCidrIp());
-				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Port" , ingressAclEntriess.get(depth1).getPort());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".EntryType" , ingressAclEntriess.get(depth1).getEntryType());
+				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".NetworkAclEntryName" , ingressAclEntriess.get(depth1).getNetworkAclEntryName());
+				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Policy" , ingressAclEntriess.get(depth1).getPolicy());
+				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".SourceCidrIp" , ingressAclEntriess.get(depth1).getSourceCidrIp());
 				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Description" , ingressAclEntriess.get(depth1).getDescription());
+				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Protocol" , ingressAclEntriess.get(depth1).getBizProtocol());
+				putQueryParameter("IngressAclEntries." + (depth1 + 1) + ".Port" , ingressAclEntriess.get(depth1).getPort());
 			}
 		}	
 	}
 
 	public static class EgressAclEntries {
 
-		private String networkAclEntryName;
-
 		private String networkAclEntryId;
 
+		private String entryType;
+
+		private String networkAclEntryName;
+
 		private String policy;
+
+		private String description;
 
 		private String protocol;
 
 		private String destinationCidrIp;
 
 		private String port;
-
-		private String entryType;
-
-		private String description;
-
-		public String getNetworkAclEntryName() {
-			return this.networkAclEntryName;
-		}
-
-		public void setNetworkAclEntryName(String networkAclEntryName) {
-			this.networkAclEntryName = networkAclEntryName;
-		}
 
 		public String getNetworkAclEntryId() {
 			return this.networkAclEntryId;
@@ -203,12 +195,36 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 			this.networkAclEntryId = networkAclEntryId;
 		}
 
+		public String getEntryType() {
+			return this.entryType;
+		}
+
+		public void setEntryType(String entryType) {
+			this.entryType = entryType;
+		}
+
+		public String getNetworkAclEntryName() {
+			return this.networkAclEntryName;
+		}
+
+		public void setNetworkAclEntryName(String networkAclEntryName) {
+			this.networkAclEntryName = networkAclEntryName;
+		}
+
 		public String getPolicy() {
 			return this.policy;
 		}
 
 		public void setPolicy(String policy) {
 			this.policy = policy;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getBizProtocol() {
@@ -234,6 +250,33 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 		public void setPort(String port) {
 			this.port = port;
 		}
+	}
+
+	public static class IngressAclEntries {
+
+		private String networkAclEntryId;
+
+		private String entryType;
+
+		private String networkAclEntryName;
+
+		private String policy;
+
+		private String sourceCidrIp;
+
+		private String description;
+
+		private String protocol;
+
+		private String port;
+
+		public String getNetworkAclEntryId() {
+			return this.networkAclEntryId;
+		}
+
+		public void setNetworkAclEntryId(String networkAclEntryId) {
+			this.networkAclEntryId = networkAclEntryId;
+		}
 
 		public String getEntryType() {
 			return this.entryType;
@@ -243,47 +286,12 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 			this.entryType = entryType;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-	}
-
-	public static class IngressAclEntries {
-
-		private String networkAclEntryName;
-
-		private String networkAclEntryId;
-
-		private String policy;
-
-		private String protocol;
-
-		private String sourceCidrIp;
-
-		private String port;
-
-		private String entryType;
-
-		private String description;
-
 		public String getNetworkAclEntryName() {
 			return this.networkAclEntryName;
 		}
 
 		public void setNetworkAclEntryName(String networkAclEntryName) {
 			this.networkAclEntryName = networkAclEntryName;
-		}
-
-		public String getNetworkAclEntryId() {
-			return this.networkAclEntryId;
-		}
-
-		public void setNetworkAclEntryId(String networkAclEntryId) {
-			this.networkAclEntryId = networkAclEntryId;
 		}
 
 		public String getPolicy() {
@@ -294,14 +302,6 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 			this.policy = policy;
 		}
 
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
 		public String getSourceCidrIp() {
 			return this.sourceCidrIp;
 		}
@@ -310,28 +310,28 @@ public class UpdateNetworkAclEntriesRequest extends RpcAcsRequest<UpdateNetworkA
 			this.sourceCidrIp = sourceCidrIp;
 		}
 
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getEntryType() {
-			return this.entryType;
-		}
-
-		public void setEntryType(String entryType) {
-			this.entryType = entryType;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
 		}
 	}
 

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<ForwardTableEntry> forwardTableEntries;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ForwardTableEntry> getForwardTableEntries() {
@@ -77,30 +77,30 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 	public static class ForwardTableEntry {
 
-		private String forwardTableId;
+		private String status;
 
 		private String forwardEntryId;
-
-		private String externalIp;
-
-		private String externalPort;
-
-		private String ipProtocol;
 
 		private String internalIp;
 
 		private String internalPort;
 
-		private String status;
-
 		private String forwardEntryName;
 
-		public String getForwardTableId() {
-			return this.forwardTableId;
+		private String forwardTableId;
+
+		private String ipProtocol;
+
+		private String externalPort;
+
+		private String externalIp;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setForwardTableId(String forwardTableId) {
-			this.forwardTableId = forwardTableId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getForwardEntryId() {
@@ -109,30 +109,6 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		public void setForwardEntryId(String forwardEntryId) {
 			this.forwardEntryId = forwardEntryId;
-		}
-
-		public String getExternalIp() {
-			return this.externalIp;
-		}
-
-		public void setExternalIp(String externalIp) {
-			this.externalIp = externalIp;
-		}
-
-		public String getExternalPort() {
-			return this.externalPort;
-		}
-
-		public void setExternalPort(String externalPort) {
-			this.externalPort = externalPort;
-		}
-
-		public String getIpProtocol() {
-			return this.ipProtocol;
-		}
-
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
 		}
 
 		public String getInternalIp() {
@@ -151,20 +127,44 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 			this.internalPort = internalPort;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getForwardEntryName() {
 			return this.forwardEntryName;
 		}
 
 		public void setForwardEntryName(String forwardEntryName) {
 			this.forwardEntryName = forwardEntryName;
+		}
+
+		public String getForwardTableId() {
+			return this.forwardTableId;
+		}
+
+		public void setForwardTableId(String forwardTableId) {
+			this.forwardTableId = forwardTableId;
+		}
+
+		public String getIpProtocol() {
+			return this.ipProtocol;
+		}
+
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
+		}
+
+		public String getExternalPort() {
+			return this.externalPort;
+		}
+
+		public void setExternalPort(String externalPort) {
+			this.externalPort = externalPort;
+		}
+
+		public String getExternalIp() {
+			return this.externalIp;
+		}
+
+		public void setExternalIp(String externalIp) {
+			this.externalIp = externalIp;
 		}
 	}
 

@@ -203,8 +203,8 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 				putQueryParameter("PMInfo." + (depth1 + 1) + ".PMCertificateNo" , pMInfos.get(depth1).getPMCertificateNo());
 				putQueryParameter("PMInfo." + (depth1 + 1) + ".PMName" , pMInfos.get(depth1).getPMName());
 				putQueryParameter("PMInfo." + (depth1 + 1) + ".PMCertificateType" , pMInfos.get(depth1).getPMCertificateType());
-				putQueryParameter("PMInfo." + (depth1 + 1) + ".PMContactInfo" , pMInfos.get(depth1).getPMContactInfo());
 				putQueryParameter("PMInfo." + (depth1 + 1) + ".PMGender" , pMInfos.get(depth1).getPMGender());
+				putQueryParameter("PMInfo." + (depth1 + 1) + ".PMContactInfo" , pMInfos.get(depth1).getPMContactInfo());
 			}
 		}	
 	}
@@ -217,9 +217,9 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 
 		private String pMCertificateType;
 
-		private String pMContactInfo;
-
 		private String pMGender;
+
+		private String pMContactInfo;
 
 		public String getPMCertificateNo() {
 			return this.pMCertificateNo;
@@ -245,20 +245,20 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 			this.pMCertificateType = pMCertificateType;
 		}
 
-		public String getPMContactInfo() {
-			return this.pMContactInfo;
-		}
-
-		public void setPMContactInfo(String pMContactInfo) {
-			this.pMContactInfo = pMContactInfo;
-		}
-
 		public String getPMGender() {
 			return this.pMGender;
 		}
 
 		public void setPMGender(String pMGender) {
 			this.pMGender = pMGender;
+		}
+
+		public String getPMContactInfo() {
+			return this.pMContactInfo;
+		}
+
+		public void setPMContactInfo(String pMContactInfo) {
+			this.pMContactInfo = pMContactInfo;
 		}
 	}
 

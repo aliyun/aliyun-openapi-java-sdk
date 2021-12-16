@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<SnatTableEntry> snatTableEntries;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<SnatTableEntry> getSnatTableEntries() {
@@ -77,34 +77,34 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 	public static class SnatTableEntry {
 
-		private String snatTableId;
+		private String status;
 
-		private String snatEntryId;
+		private String snatEntryName;
 
 		private String sourceVSwitchId;
 
 		private String sourceCIDR;
 
+		private String snatEntryId;
+
+		private String snatTableId;
+
 		private String snatIp;
 
-		private String status;
-
-		private String snatEntryName;
-
-		public String getSnatTableId() {
-			return this.snatTableId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setSnatTableId(String snatTableId) {
-			this.snatTableId = snatTableId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getSnatEntryId() {
-			return this.snatEntryId;
+		public String getSnatEntryName() {
+			return this.snatEntryName;
 		}
 
-		public void setSnatEntryId(String snatEntryId) {
-			this.snatEntryId = snatEntryId;
+		public void setSnatEntryName(String snatEntryName) {
+			this.snatEntryName = snatEntryName;
 		}
 
 		public String getSourceVSwitchId() {
@@ -123,28 +123,28 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 			this.sourceCIDR = sourceCIDR;
 		}
 
+		public String getSnatEntryId() {
+			return this.snatEntryId;
+		}
+
+		public void setSnatEntryId(String snatEntryId) {
+			this.snatEntryId = snatEntryId;
+		}
+
+		public String getSnatTableId() {
+			return this.snatTableId;
+		}
+
+		public void setSnatTableId(String snatTableId) {
+			this.snatTableId = snatTableId;
+		}
+
 		public String getSnatIp() {
 			return this.snatIp;
 		}
 
 		public void setSnatIp(String snatIp) {
 			this.snatIp = snatIp;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getSnatEntryName() {
-			return this.snatEntryName;
-		}
-
-		public void setSnatEntryName(String snatEntryName) {
-			this.snatEntryName = snatEntryName;
 		}
 	}
 

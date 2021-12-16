@@ -27,17 +27,17 @@ public class GetNatGatewayConvertStatusResponseUnmarshaller {
 	public static GetNatGatewayConvertStatusResponse unmarshall(GetNatGatewayConvertStatusResponse getNatGatewayConvertStatusResponse, UnmarshallerContext _ctx) {
 		
 		getNatGatewayConvertStatusResponse.setRequestId(_ctx.stringValue("GetNatGatewayConvertStatusResponse.RequestId"));
-		getNatGatewayConvertStatusResponse.setNatGatewayId(_ctx.stringValue("GetNatGatewayConvertStatusResponse.NatGatewayId"));
-		getNatGatewayConvertStatusResponse.setBid(_ctx.stringValue("GetNatGatewayConvertStatusResponse.Bid"));
 		getNatGatewayConvertStatusResponse.setAliUid(_ctx.longValue("GetNatGatewayConvertStatusResponse.AliUid"));
 		getNatGatewayConvertStatusResponse.setDstNatType(_ctx.stringValue("GetNatGatewayConvertStatusResponse.DstNatType"));
+		getNatGatewayConvertStatusResponse.setBid(_ctx.stringValue("GetNatGatewayConvertStatusResponse.Bid"));
+		getNatGatewayConvertStatusResponse.setNatGatewayId(_ctx.stringValue("GetNatGatewayConvertStatusResponse.NatGatewayId"));
 
 		List<ConvertStep> convertSteps = new ArrayList<ConvertStep>();
 		for (int i = 0; i < _ctx.lengthValue("GetNatGatewayConvertStatusResponse.ConvertSteps.Length"); i++) {
 			ConvertStep convertStep = new ConvertStep();
+			convertStep.setStepStartTime(_ctx.stringValue("GetNatGatewayConvertStatusResponse.ConvertSteps["+ i +"].StepStartTime"));
 			convertStep.setStepName(_ctx.stringValue("GetNatGatewayConvertStatusResponse.ConvertSteps["+ i +"].StepName"));
 			convertStep.setStepStatus(_ctx.stringValue("GetNatGatewayConvertStatusResponse.ConvertSteps["+ i +"].StepStatus"));
-			convertStep.setStepStartTime(_ctx.stringValue("GetNatGatewayConvertStatusResponse.ConvertSteps["+ i +"].StepStartTime"));
 
 			convertSteps.add(convertStep);
 		}

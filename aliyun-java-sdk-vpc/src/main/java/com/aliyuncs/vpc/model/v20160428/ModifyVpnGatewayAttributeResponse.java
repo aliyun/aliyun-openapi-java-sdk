@@ -24,51 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String vpnGatewayId;
-
 	private String vpcId;
-
-	private String vSwitchId;
-
-	private String internetIp;
-
-	private String intranetIp;
-
-	private Long createTime;
-
-	private Long endTime;
-
-	private String spec;
-
-	private String name;
-
-	private String description;
 
 	private String status;
 
-	private String businessStatus;
+	private String internetIp;
 
-	private Boolean enableBgp;
+	private String spec;
+
+	private Long createTime;
 
 	private Boolean autoPropagate;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String vpnGatewayId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String intranetIp;
 
-	public String getVpnGatewayId() {
-		return this.vpnGatewayId;
-	}
+	private Long endTime;
 
-	public void setVpnGatewayId(String vpnGatewayId) {
-		this.vpnGatewayId = vpnGatewayId;
-	}
+	private String vSwitchId;
+
+	private String requestId;
+
+	private String description;
+
+	private Boolean enableBgp;
+
+	private String businessStatus;
+
+	private String name;
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -76,70 +60,6 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 
 	public void setVpcId(String vpcId) {
 		this.vpcId = vpcId;
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-	}
-
-	public String getInternetIp() {
-		return this.internetIp;
-	}
-
-	public void setInternetIp(String internetIp) {
-		this.internetIp = internetIp;
-	}
-
-	public String getIntranetIp() {
-		return this.intranetIp;
-	}
-
-	public void setIntranetIp(String intranetIp) {
-		this.intranetIp = intranetIp;
-	}
-
-	public Long getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(Long createTime) {
-		this.createTime = createTime;
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getSpec() {
-		return this.spec;
-	}
-
-	public void setSpec(String spec) {
-		this.spec = spec;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public String getStatus() {
@@ -150,12 +70,84 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getBusinessStatus() {
-		return this.businessStatus;
+	public String getInternetIp() {
+		return this.internetIp;
 	}
 
-	public void setBusinessStatus(String businessStatus) {
-		this.businessStatus = businessStatus;
+	public void setInternetIp(String internetIp) {
+		this.internetIp = internetIp;
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+	}
+
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
+
+	public Boolean getAutoPropagate() {
+		return this.autoPropagate;
+	}
+
+	public void setAutoPropagate(Boolean autoPropagate) {
+		this.autoPropagate = autoPropagate;
+	}
+
+	public String getVpnGatewayId() {
+		return this.vpnGatewayId;
+	}
+
+	public void setVpnGatewayId(String vpnGatewayId) {
+		this.vpnGatewayId = vpnGatewayId;
+	}
+
+	public String getIntranetIp() {
+		return this.intranetIp;
+	}
+
+	public void setIntranetIp(String intranetIp) {
+		this.intranetIp = intranetIp;
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Boolean getEnableBgp() {
@@ -166,12 +158,20 @@ public class ModifyVpnGatewayAttributeResponse extends AcsResponse {
 		this.enableBgp = enableBgp;
 	}
 
-	public Boolean getAutoPropagate() {
-		return this.autoPropagate;
+	public String getBusinessStatus() {
+		return this.businessStatus;
 	}
 
-	public void setAutoPropagate(Boolean autoPropagate) {
-		this.autoPropagate = autoPropagate;
+	public void setBusinessStatus(String businessStatus) {
+		this.businessStatus = businessStatus;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

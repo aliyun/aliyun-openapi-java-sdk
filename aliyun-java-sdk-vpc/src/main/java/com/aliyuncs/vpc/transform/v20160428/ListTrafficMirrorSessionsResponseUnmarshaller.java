@@ -33,18 +33,18 @@ public class ListTrafficMirrorSessionsResponseUnmarshaller {
 		List<TrafficMirrorSession> trafficMirrorSessions = new ArrayList<TrafficMirrorSession>();
 		for (int i = 0; i < _ctx.lengthValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions.Length"); i++) {
 			TrafficMirrorSession trafficMirrorSession = new TrafficMirrorSession();
-			trafficMirrorSession.setTrafficMirrorSessionName(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionName"));
-			trafficMirrorSession.setTrafficMirrorSessionDescription(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionDescription"));
-			trafficMirrorSession.setTrafficMirrorSessionId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionId"));
-			trafficMirrorSession.setTrafficMirrorSessionStatus(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionStatus"));
 			trafficMirrorSession.setTrafficMirrorTargetId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorTargetId"));
-			trafficMirrorSession.setTrafficMirrorTargetType(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorTargetType"));
-			trafficMirrorSession.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorFilterId"));
-			trafficMirrorSession.setVirtualNetworkId(_ctx.integerValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].VirtualNetworkId"));
+			trafficMirrorSession.setTrafficMirrorSessionId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionId"));
 			trafficMirrorSession.setPriority(_ctx.integerValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].Priority"));
-			trafficMirrorSession.setEnabled(_ctx.booleanValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].Enabled"));
+			trafficMirrorSession.setTrafficMirrorTargetType(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorTargetType"));
 			trafficMirrorSession.setPacketLength(_ctx.integerValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].PacketLength"));
+			trafficMirrorSession.setTrafficMirrorSessionDescription(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionDescription"));
+			trafficMirrorSession.setTrafficMirrorSessionStatus(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionStatus"));
+			trafficMirrorSession.setEnabled(_ctx.booleanValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].Enabled"));
 			trafficMirrorSession.setTrafficMirrorSessionBusinessStatus(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionBusinessStatus"));
+			trafficMirrorSession.setVirtualNetworkId(_ctx.integerValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].VirtualNetworkId"));
+			trafficMirrorSession.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorFilterId"));
+			trafficMirrorSession.setTrafficMirrorSessionName(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionName"));
 
 			List<String> trafficMirrorSourceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSourceIds.Length"); j++) {

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreatePhysicalConnectionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String physicalConnectionId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getPhysicalConnectionId() {
 		return this.physicalConnectionId;
@@ -42,6 +34,14 @@ public class CreatePhysicalConnectionResponse extends AcsResponse {
 
 	public void setPhysicalConnectionId(String physicalConnectionId) {
 		this.physicalConnectionId = physicalConnectionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

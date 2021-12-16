@@ -25,37 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDhcpOptionsSetResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String dhcpOptionsSetName;
-
 	private String dhcpOptionsSetDescription;
+
+	private String status;
+
+	private String requestId;
 
 	private String dhcpOptionsSetId;
 
-	private Long ownerId;
+	private String dhcpOptionsSetName;
 
-	private String status;
+	private Long ownerId;
 
 	private List<AssociateVpc> associateVpcs;
 
 	private DhcpOptions dhcpOptions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDhcpOptionsSetName() {
-		return this.dhcpOptionsSetName;
-	}
-
-	public void setDhcpOptionsSetName(String dhcpOptionsSetName) {
-		this.dhcpOptionsSetName = dhcpOptionsSetName;
-	}
 
 	public String getDhcpOptionsSetDescription() {
 		return this.dhcpOptionsSetDescription;
@@ -63,6 +47,22 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 	public void setDhcpOptionsSetDescription(String dhcpOptionsSetDescription) {
 		this.dhcpOptionsSetDescription = dhcpOptionsSetDescription;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDhcpOptionsSetId() {
@@ -73,20 +73,20 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 		this.dhcpOptionsSetId = dhcpOptionsSetId;
 	}
 
+	public String getDhcpOptionsSetName() {
+		return this.dhcpOptionsSetName;
+	}
+
+	public void setDhcpOptionsSetName(String dhcpOptionsSetName) {
+		this.dhcpOptionsSetName = dhcpOptionsSetName;
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public List<AssociateVpc> getAssociateVpcs() {
@@ -107,17 +107,9 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 	public static class AssociateVpc {
 
-		private String vpcId;
-
 		private String associateStatus;
 
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
+		private String vpcId;
 
 		public String getAssociateStatus() {
 			return this.associateStatus;
@@ -126,17 +118,33 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 		public void setAssociateStatus(String associateStatus) {
 			this.associateStatus = associateStatus;
 		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
 	}
 
 	public static class DhcpOptions {
+
+		private String tFTPServerName;
 
 		private String domainNameServers;
 
 		private String domainName;
 
-		private String tFTPServerName;
-
 		private String bootFileName;
+
+		public String getTFTPServerName() {
+			return this.tFTPServerName;
+		}
+
+		public void setTFTPServerName(String tFTPServerName) {
+			this.tFTPServerName = tFTPServerName;
+		}
 
 		public String getDomainNameServers() {
 			return this.domainNameServers;
@@ -152,14 +160,6 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
-		}
-
-		public String getTFTPServerName() {
-			return this.tFTPServerName;
-		}
-
-		public void setTFTPServerName(String tFTPServerName) {
-			this.tFTPServerName = tFTPServerName;
 		}
 
 		public String getBootFileName() {

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDhcpOptionsSetsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<DhcpOptionsSet> dhcpOptionsSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DhcpOptionsSet> getDhcpOptionsSets() {
@@ -57,27 +57,19 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 
 	public static class DhcpOptionsSet {
 
-		private String dhcpOptionsSetName;
-
 		private String dhcpOptionsSetDescription;
-
-		private Long ownerId;
 
 		private String status;
 
 		private String dhcpOptionsSetId;
 
+		private String dhcpOptionsSetName;
+
 		private Integer associateVpcCount;
 
+		private Long ownerId;
+
 		private DhcpOptions dhcpOptions;
-
-		public String getDhcpOptionsSetName() {
-			return this.dhcpOptionsSetName;
-		}
-
-		public void setDhcpOptionsSetName(String dhcpOptionsSetName) {
-			this.dhcpOptionsSetName = dhcpOptionsSetName;
-		}
 
 		public String getDhcpOptionsSetDescription() {
 			return this.dhcpOptionsSetDescription;
@@ -85,14 +77,6 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 
 		public void setDhcpOptionsSetDescription(String dhcpOptionsSetDescription) {
 			this.dhcpOptionsSetDescription = dhcpOptionsSetDescription;
-		}
-
-		public Long getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(Long ownerId) {
-			this.ownerId = ownerId;
 		}
 
 		public String getStatus() {
@@ -111,12 +95,28 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 			this.dhcpOptionsSetId = dhcpOptionsSetId;
 		}
 
+		public String getDhcpOptionsSetName() {
+			return this.dhcpOptionsSetName;
+		}
+
+		public void setDhcpOptionsSetName(String dhcpOptionsSetName) {
+			this.dhcpOptionsSetName = dhcpOptionsSetName;
+		}
+
 		public Integer getAssociateVpcCount() {
 			return this.associateVpcCount;
 		}
 
 		public void setAssociateVpcCount(Integer associateVpcCount) {
 			this.associateVpcCount = associateVpcCount;
+		}
+
+		public Long getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(Long ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public DhcpOptions getDhcpOptions() {

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIPv6TranslatorAclListsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<IPv6TranslatorAcl> ipv6TranslatorAcls;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeIPv6TranslatorAclListsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeIPv6TranslatorAclListsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<IPv6TranslatorAcl> getIpv6TranslatorAcls() {
@@ -77,17 +77,9 @@ public class DescribeIPv6TranslatorAclListsResponse extends AcsResponse {
 
 	public static class IPv6TranslatorAcl {
 
-		private String aclId;
-
 		private String aclName;
 
-		public String getAclId() {
-			return this.aclId;
-		}
-
-		public void setAclId(String aclId) {
-			this.aclId = aclId;
-		}
+		private String aclId;
 
 		public String getAclName() {
 			return this.aclName;
@@ -95,6 +87,14 @@ public class DescribeIPv6TranslatorAclListsResponse extends AcsResponse {
 
 		public void setAclName(String aclName) {
 			this.aclName = aclName;
+		}
+
+		public String getAclId() {
+			return this.aclId;
+		}
+
+		public void setAclId(String aclId) {
+			this.aclId = aclId;
 		}
 	}
 

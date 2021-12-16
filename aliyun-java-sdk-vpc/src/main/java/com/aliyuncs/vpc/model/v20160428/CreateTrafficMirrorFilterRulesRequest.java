@@ -82,12 +82,12 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 		this.ingressRuless = ingressRuless;	
 		if (ingressRuless != null) {
 			for (int depth1 = 0; depth1 < ingressRuless.size(); depth1++) {
-				putQueryParameter("IngressRules." + (depth1 + 1) + ".Priority" , ingressRuless.get(depth1).getPriority());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".Action" , ingressRuless.get(depth1).getAction());
-				putQueryParameter("IngressRules." + (depth1 + 1) + ".Protocol" , ingressRuless.get(depth1).getBizProtocol());
-				putQueryParameter("IngressRules." + (depth1 + 1) + ".DestinationCidrBlock" , ingressRuless.get(depth1).getDestinationCidrBlock());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".SourceCidrBlock" , ingressRuless.get(depth1).getSourceCidrBlock());
+				putQueryParameter("IngressRules." + (depth1 + 1) + ".Protocol" , ingressRuless.get(depth1).getBizProtocol());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".DestinationPortRange" , ingressRuless.get(depth1).getDestinationPortRange());
+				putQueryParameter("IngressRules." + (depth1 + 1) + ".Priority" , ingressRuless.get(depth1).getPriority());
+				putQueryParameter("IngressRules." + (depth1 + 1) + ".DestinationCidrBlock" , ingressRuless.get(depth1).getDestinationCidrBlock());
 				putQueryParameter("IngressRules." + (depth1 + 1) + ".SourcePortRange" , ingressRuless.get(depth1).getSourcePortRange());
 			}
 		}	
@@ -101,12 +101,12 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 		this.egressRuless = egressRuless;	
 		if (egressRuless != null) {
 			for (int depth1 = 0; depth1 < egressRuless.size(); depth1++) {
-				putQueryParameter("EgressRules." + (depth1 + 1) + ".Priority" , egressRuless.get(depth1).getPriority());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".Action" , egressRuless.get(depth1).getAction());
-				putQueryParameter("EgressRules." + (depth1 + 1) + ".Protocol" , egressRuless.get(depth1).getBizProtocol());
-				putQueryParameter("EgressRules." + (depth1 + 1) + ".DestinationCidrBlock" , egressRuless.get(depth1).getDestinationCidrBlock());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".SourceCidrBlock" , egressRuless.get(depth1).getSourceCidrBlock());
+				putQueryParameter("EgressRules." + (depth1 + 1) + ".Protocol" , egressRuless.get(depth1).getBizProtocol());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".DestinationPortRange" , egressRuless.get(depth1).getDestinationPortRange());
+				putQueryParameter("EgressRules." + (depth1 + 1) + ".Priority" , egressRuless.get(depth1).getPriority());
+				putQueryParameter("EgressRules." + (depth1 + 1) + ".DestinationCidrBlock" , egressRuless.get(depth1).getDestinationCidrBlock());
 				putQueryParameter("EgressRules." + (depth1 + 1) + ".SourcePortRange" , egressRuless.get(depth1).getSourcePortRange());
 			}
 		}	
@@ -169,27 +169,19 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 
 	public static class IngressRules {
 
-		private Integer priority;
-
 		private String action;
-
-		private String protocol;
-
-		private String destinationCidrBlock;
 
 		private String sourceCidrBlock;
 
+		private String protocol;
+
 		private String destinationPortRange;
 
+		private Integer priority;
+
+		private String destinationCidrBlock;
+
 		private String sourcePortRange;
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
 
 		public String getAction() {
 			return this.action;
@@ -197,22 +189,6 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 
 		public void setAction(String action) {
 			this.action = action;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
-		public String getDestinationCidrBlock() {
-			return this.destinationCidrBlock;
-		}
-
-		public void setDestinationCidrBlock(String destinationCidrBlock) {
-			this.destinationCidrBlock = destinationCidrBlock;
 		}
 
 		public String getSourceCidrBlock() {
@@ -223,12 +199,36 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 			this.sourceCidrBlock = sourceCidrBlock;
 		}
 
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
 		public String getDestinationPortRange() {
 			return this.destinationPortRange;
 		}
 
 		public void setDestinationPortRange(String destinationPortRange) {
 			this.destinationPortRange = destinationPortRange;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getDestinationCidrBlock() {
+			return this.destinationCidrBlock;
+		}
+
+		public void setDestinationCidrBlock(String destinationCidrBlock) {
+			this.destinationCidrBlock = destinationCidrBlock;
 		}
 
 		public String getSourcePortRange() {
@@ -242,27 +242,19 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 
 	public static class EgressRules {
 
-		private Integer priority;
-
 		private String action;
-
-		private String protocol;
-
-		private String destinationCidrBlock;
 
 		private String sourceCidrBlock;
 
+		private String protocol;
+
 		private String destinationPortRange;
 
+		private Integer priority;
+
+		private String destinationCidrBlock;
+
 		private String sourcePortRange;
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
 
 		public String getAction() {
 			return this.action;
@@ -270,22 +262,6 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 
 		public void setAction(String action) {
 			this.action = action;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
-		public String getDestinationCidrBlock() {
-			return this.destinationCidrBlock;
-		}
-
-		public void setDestinationCidrBlock(String destinationCidrBlock) {
-			this.destinationCidrBlock = destinationCidrBlock;
 		}
 
 		public String getSourceCidrBlock() {
@@ -296,12 +272,36 @@ public class CreateTrafficMirrorFilterRulesRequest extends RpcAcsRequest<CreateT
 			this.sourceCidrBlock = sourceCidrBlock;
 		}
 
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
 		public String getDestinationPortRange() {
 			return this.destinationPortRange;
 		}
 
 		public void setDestinationPortRange(String destinationPortRange) {
 			this.destinationPortRange = destinationPortRange;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getDestinationCidrBlock() {
+			return this.destinationCidrBlock;
+		}
+
+		public void setDestinationCidrBlock(String destinationCidrBlock) {
+			this.destinationCidrBlock = destinationCidrBlock;
 		}
 
 		public String getSourcePortRange() {

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateExpressCloudConnectionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String eccId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getEccId() {
 		return this.eccId;
@@ -42,6 +34,14 @@ public class CreateExpressCloudConnectionResponse extends AcsResponse {
 
 	public void setEccId(String eccId) {
 		this.eccId = eccId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

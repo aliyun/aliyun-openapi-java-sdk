@@ -32,8 +32,6 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 
 	private List<String> networkInterfaceIdss;
 
-	private String fullNatEntryStatus;
-
 	private String fullNatEntryId;
 
 	private String fullNatTableId;
@@ -93,17 +91,6 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 				putQueryParameter("NetworkInterfaceIds." + (i + 1) , networkInterfaceIdss.get(i));
 			}
 		}	
-	}
-
-	public String getFullNatEntryStatus() {
-		return this.fullNatEntryStatus;
-	}
-
-	public void setFullNatEntryStatus(String fullNatEntryStatus) {
-		this.fullNatEntryStatus = fullNatEntryStatus;
-		if(fullNatEntryStatus != null){
-			putQueryParameter("FullNatEntryStatus", fullNatEntryStatus);
-		}
 	}
 
 	public String getFullNatEntryId() {

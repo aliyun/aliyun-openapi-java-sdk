@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListIpsecServersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private Integer maxResults;
+	private String requestId;
 
 	private Integer totalCount;
 
+	private Integer maxResults;
+
 	private List<IpsecServer> ipsecServers;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -51,12 +43,12 @@ public class ListIpsecServersResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -65,6 +57,14 @@ public class ListIpsecServersResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<IpsecServer> getIpsecServers() {
@@ -77,54 +77,62 @@ public class ListIpsecServersResponse extends AcsResponse {
 
 	public static class IpsecServer {
 
-		private String regionId;
+		private String creationTime;
 
-		private String ipsecServerId;
+		private Integer onlineClientCount;
+
+		private String internetIp;
 
 		private String ipsecServerName;
+
+		private String iDaaSInstanceId;
+
+		private Boolean effectImmediately;
 
 		private String vpnGatewayId;
 
 		private String localSubnet;
 
-		private String clientIpPool;
+		private String psk;
 
-		private Boolean effectImmediately;
+		private String regionId;
 
 		private Boolean pskEnabled;
 
+		private String ipsecServerId;
+
 		private Boolean multiFactorAuthEnabled;
-
-		private String psk;
-
-		private String iDaaSInstanceId;
-
-		private Integer onlineClientCount;
 
 		private Integer maxConnections;
 
-		private String creationTime;
-
-		private String internetIp;
+		private String clientIpPool;
 
 		private IkeConfig ikeConfig;
 
 		private IpsecConfig ipsecConfig;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
-		public String getIpsecServerId() {
-			return this.ipsecServerId;
+		public Integer getOnlineClientCount() {
+			return this.onlineClientCount;
 		}
 
-		public void setIpsecServerId(String ipsecServerId) {
-			this.ipsecServerId = ipsecServerId;
+		public void setOnlineClientCount(Integer onlineClientCount) {
+			this.onlineClientCount = onlineClientCount;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
 		public String getIpsecServerName() {
@@ -133,6 +141,22 @@ public class ListIpsecServersResponse extends AcsResponse {
 
 		public void setIpsecServerName(String ipsecServerName) {
 			this.ipsecServerName = ipsecServerName;
+		}
+
+		public String getIDaaSInstanceId() {
+			return this.iDaaSInstanceId;
+		}
+
+		public void setIDaaSInstanceId(String iDaaSInstanceId) {
+			this.iDaaSInstanceId = iDaaSInstanceId;
+		}
+
+		public Boolean getEffectImmediately() {
+			return this.effectImmediately;
+		}
+
+		public void setEffectImmediately(Boolean effectImmediately) {
+			this.effectImmediately = effectImmediately;
 		}
 
 		public String getVpnGatewayId() {
@@ -151,20 +175,20 @@ public class ListIpsecServersResponse extends AcsResponse {
 			this.localSubnet = localSubnet;
 		}
 
-		public String getClientIpPool() {
-			return this.clientIpPool;
+		public String getPsk() {
+			return this.psk;
 		}
 
-		public void setClientIpPool(String clientIpPool) {
-			this.clientIpPool = clientIpPool;
+		public void setPsk(String psk) {
+			this.psk = psk;
 		}
 
-		public Boolean getEffectImmediately() {
-			return this.effectImmediately;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setEffectImmediately(Boolean effectImmediately) {
-			this.effectImmediately = effectImmediately;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public Boolean getPskEnabled() {
@@ -175,36 +199,20 @@ public class ListIpsecServersResponse extends AcsResponse {
 			this.pskEnabled = pskEnabled;
 		}
 
+		public String getIpsecServerId() {
+			return this.ipsecServerId;
+		}
+
+		public void setIpsecServerId(String ipsecServerId) {
+			this.ipsecServerId = ipsecServerId;
+		}
+
 		public Boolean getMultiFactorAuthEnabled() {
 			return this.multiFactorAuthEnabled;
 		}
 
 		public void setMultiFactorAuthEnabled(Boolean multiFactorAuthEnabled) {
 			this.multiFactorAuthEnabled = multiFactorAuthEnabled;
-		}
-
-		public String getPsk() {
-			return this.psk;
-		}
-
-		public void setPsk(String psk) {
-			this.psk = psk;
-		}
-
-		public String getIDaaSInstanceId() {
-			return this.iDaaSInstanceId;
-		}
-
-		public void setIDaaSInstanceId(String iDaaSInstanceId) {
-			this.iDaaSInstanceId = iDaaSInstanceId;
-		}
-
-		public Integer getOnlineClientCount() {
-			return this.onlineClientCount;
-		}
-
-		public void setOnlineClientCount(Integer onlineClientCount) {
-			this.onlineClientCount = onlineClientCount;
 		}
 
 		public Integer getMaxConnections() {
@@ -215,20 +223,12 @@ public class ListIpsecServersResponse extends AcsResponse {
 			this.maxConnections = maxConnections;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getClientIpPool() {
+			return this.clientIpPool;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
+		public void setClientIpPool(String clientIpPool) {
+			this.clientIpPool = clientIpPool;
 		}
 
 		public IkeConfig getIkeConfig() {
@@ -249,60 +249,28 @@ public class ListIpsecServersResponse extends AcsResponse {
 
 		public static class IkeConfig {
 
-			private String ikeVersion;
-
-			private String ikeMode;
-
-			private String ikeEncAlg;
-
-			private String ikeAuthAlg;
-
-			private String ikePfs;
+			private String remoteId;
 
 			private Long ikeLifetime;
 
+			private String ikeEncAlg;
+
 			private String localId;
 
-			private String remoteId;
+			private String ikeMode;
 
-			public String getIkeVersion() {
-				return this.ikeVersion;
+			private String ikeVersion;
+
+			private String ikePfs;
+
+			private String ikeAuthAlg;
+
+			public String getRemoteId() {
+				return this.remoteId;
 			}
 
-			public void setIkeVersion(String ikeVersion) {
-				this.ikeVersion = ikeVersion;
-			}
-
-			public String getIkeMode() {
-				return this.ikeMode;
-			}
-
-			public void setIkeMode(String ikeMode) {
-				this.ikeMode = ikeMode;
-			}
-
-			public String getIkeEncAlg() {
-				return this.ikeEncAlg;
-			}
-
-			public void setIkeEncAlg(String ikeEncAlg) {
-				this.ikeEncAlg = ikeEncAlg;
-			}
-
-			public String getIkeAuthAlg() {
-				return this.ikeAuthAlg;
-			}
-
-			public void setIkeAuthAlg(String ikeAuthAlg) {
-				this.ikeAuthAlg = ikeAuthAlg;
-			}
-
-			public String getIkePfs() {
-				return this.ikePfs;
-			}
-
-			public void setIkePfs(String ikePfs) {
-				this.ikePfs = ikePfs;
+			public void setRemoteId(String remoteId) {
+				this.remoteId = remoteId;
 			}
 
 			public Long getIkeLifetime() {
@@ -313,6 +281,14 @@ public class ListIpsecServersResponse extends AcsResponse {
 				this.ikeLifetime = ikeLifetime;
 			}
 
+			public String getIkeEncAlg() {
+				return this.ikeEncAlg;
+			}
+
+			public void setIkeEncAlg(String ikeEncAlg) {
+				this.ikeEncAlg = ikeEncAlg;
+			}
+
 			public String getLocalId() {
 				return this.localId;
 			}
@@ -321,32 +297,48 @@ public class ListIpsecServersResponse extends AcsResponse {
 				this.localId = localId;
 			}
 
-			public String getRemoteId() {
-				return this.remoteId;
+			public String getIkeMode() {
+				return this.ikeMode;
 			}
 
-			public void setRemoteId(String remoteId) {
-				this.remoteId = remoteId;
+			public void setIkeMode(String ikeMode) {
+				this.ikeMode = ikeMode;
+			}
+
+			public String getIkeVersion() {
+				return this.ikeVersion;
+			}
+
+			public void setIkeVersion(String ikeVersion) {
+				this.ikeVersion = ikeVersion;
+			}
+
+			public String getIkePfs() {
+				return this.ikePfs;
+			}
+
+			public void setIkePfs(String ikePfs) {
+				this.ikePfs = ikePfs;
+			}
+
+			public String getIkeAuthAlg() {
+				return this.ikeAuthAlg;
+			}
+
+			public void setIkeAuthAlg(String ikeAuthAlg) {
+				this.ikeAuthAlg = ikeAuthAlg;
 			}
 		}
 
 		public static class IpsecConfig {
 
-			private String ipsecEncAlg;
-
 			private String ipsecAuthAlg;
-
-			private String ipsecPfs;
 
 			private Long ipsecLifetime;
 
-			public String getIpsecEncAlg() {
-				return this.ipsecEncAlg;
-			}
+			private String ipsecEncAlg;
 
-			public void setIpsecEncAlg(String ipsecEncAlg) {
-				this.ipsecEncAlg = ipsecEncAlg;
-			}
+			private String ipsecPfs;
 
 			public String getIpsecAuthAlg() {
 				return this.ipsecAuthAlg;
@@ -356,20 +348,28 @@ public class ListIpsecServersResponse extends AcsResponse {
 				this.ipsecAuthAlg = ipsecAuthAlg;
 			}
 
-			public String getIpsecPfs() {
-				return this.ipsecPfs;
-			}
-
-			public void setIpsecPfs(String ipsecPfs) {
-				this.ipsecPfs = ipsecPfs;
-			}
-
 			public Long getIpsecLifetime() {
 				return this.ipsecLifetime;
 			}
 
 			public void setIpsecLifetime(Long ipsecLifetime) {
 				this.ipsecLifetime = ipsecLifetime;
+			}
+
+			public String getIpsecEncAlg() {
+				return this.ipsecEncAlg;
+			}
+
+			public void setIpsecEncAlg(String ipsecEncAlg) {
+				this.ipsecEncAlg = ipsecEncAlg;
+			}
+
+			public String getIpsecPfs() {
+				return this.ipsecPfs;
+			}
+
+			public void setIpsecPfs(String ipsecPfs) {
+				this.ipsecPfs = ipsecPfs;
 			}
 		}
 	}

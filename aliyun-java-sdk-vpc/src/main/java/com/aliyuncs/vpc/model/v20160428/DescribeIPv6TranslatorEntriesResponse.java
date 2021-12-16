@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Ipv6TranslatorEntry> ipv6TranslatorEntries;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Ipv6TranslatorEntry> getIpv6TranslatorEntries() {
@@ -77,11 +77,17 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 
 	public static class Ipv6TranslatorEntry {
 
+		private String aclType;
+
+		private String entryStatus;
+
+		private String transProtocol;
+
 		private String ipv6TranslatorId;
 
-		private String ipv6TranslatorEntryId;
+		private String entryDescription;
 
-		private String allocateIpv6Addr;
+		private String ipv6TranslatorEntryId;
 
 		private Integer allocateIpv6Port;
 
@@ -89,23 +95,41 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 
 		private String backendIpv4Port;
 
-		private String transProtocol;
+		private String regionId;
 
 		private String entryBandwidth;
 
-		private String entryDescription;
+		private String aclId;
 
 		private String entryName;
 
-		private String entryStatus;
-
 		private String aclStatus;
 
-		private String aclType;
+		private String allocateIpv6Addr;
 
-		private String aclId;
+		public String getAclType() {
+			return this.aclType;
+		}
 
-		private String regionId;
+		public void setAclType(String aclType) {
+			this.aclType = aclType;
+		}
+
+		public String getEntryStatus() {
+			return this.entryStatus;
+		}
+
+		public void setEntryStatus(String entryStatus) {
+			this.entryStatus = entryStatus;
+		}
+
+		public String getTransProtocol() {
+			return this.transProtocol;
+		}
+
+		public void setTransProtocol(String transProtocol) {
+			this.transProtocol = transProtocol;
+		}
 
 		public String getIpv6TranslatorId() {
 			return this.ipv6TranslatorId;
@@ -115,20 +139,20 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 			this.ipv6TranslatorId = ipv6TranslatorId;
 		}
 
+		public String getEntryDescription() {
+			return this.entryDescription;
+		}
+
+		public void setEntryDescription(String entryDescription) {
+			this.entryDescription = entryDescription;
+		}
+
 		public String getIpv6TranslatorEntryId() {
 			return this.ipv6TranslatorEntryId;
 		}
 
 		public void setIpv6TranslatorEntryId(String ipv6TranslatorEntryId) {
 			this.ipv6TranslatorEntryId = ipv6TranslatorEntryId;
-		}
-
-		public String getAllocateIpv6Addr() {
-			return this.allocateIpv6Addr;
-		}
-
-		public void setAllocateIpv6Addr(String allocateIpv6Addr) {
-			this.allocateIpv6Addr = allocateIpv6Addr;
 		}
 
 		public Integer getAllocateIpv6Port() {
@@ -155,12 +179,12 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 			this.backendIpv4Port = backendIpv4Port;
 		}
 
-		public String getTransProtocol() {
-			return this.transProtocol;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setTransProtocol(String transProtocol) {
-			this.transProtocol = transProtocol;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getEntryBandwidth() {
@@ -171,12 +195,12 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 			this.entryBandwidth = entryBandwidth;
 		}
 
-		public String getEntryDescription() {
-			return this.entryDescription;
+		public String getAclId() {
+			return this.aclId;
 		}
 
-		public void setEntryDescription(String entryDescription) {
-			this.entryDescription = entryDescription;
+		public void setAclId(String aclId) {
+			this.aclId = aclId;
 		}
 
 		public String getEntryName() {
@@ -187,14 +211,6 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 			this.entryName = entryName;
 		}
 
-		public String getEntryStatus() {
-			return this.entryStatus;
-		}
-
-		public void setEntryStatus(String entryStatus) {
-			this.entryStatus = entryStatus;
-		}
-
 		public String getAclStatus() {
 			return this.aclStatus;
 		}
@@ -203,28 +219,12 @@ public class DescribeIPv6TranslatorEntriesResponse extends AcsResponse {
 			this.aclStatus = aclStatus;
 		}
 
-		public String getAclType() {
-			return this.aclType;
+		public String getAllocateIpv6Addr() {
+			return this.allocateIpv6Addr;
 		}
 
-		public void setAclType(String aclType) {
-			this.aclType = aclType;
-		}
-
-		public String getAclId() {
-			return this.aclId;
-		}
-
-		public void setAclId(String aclId) {
-			this.aclId = aclId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setAllocateIpv6Addr(String allocateIpv6Addr) {
+			this.allocateIpv6Addr = allocateIpv6Addr;
 		}
 	}
 

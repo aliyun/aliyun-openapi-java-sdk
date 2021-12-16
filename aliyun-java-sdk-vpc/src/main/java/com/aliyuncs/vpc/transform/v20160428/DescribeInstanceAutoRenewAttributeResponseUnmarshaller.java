@@ -27,16 +27,16 @@ public class DescribeInstanceAutoRenewAttributeResponseUnmarshaller {
 	public static DescribeInstanceAutoRenewAttributeResponse unmarshall(DescribeInstanceAutoRenewAttributeResponse describeInstanceAutoRenewAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceAutoRenewAttributeResponse.setRequestId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.RequestId"));
-		describeInstanceAutoRenewAttributeResponse.setTotalCount(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.TotalCount"));
-		describeInstanceAutoRenewAttributeResponse.setPageSize(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.PageSize"));
 		describeInstanceAutoRenewAttributeResponse.setPageNumber(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.PageNumber"));
+		describeInstanceAutoRenewAttributeResponse.setPageSize(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.PageSize"));
+		describeInstanceAutoRenewAttributeResponse.setTotalCount(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.TotalCount"));
 
 		List<InstanceRenewAttribute> instanceRenewAttributes = new ArrayList<InstanceRenewAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes.Length"); i++) {
 			InstanceRenewAttribute instanceRenewAttribute = new InstanceRenewAttribute();
+			instanceRenewAttribute.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].Duration"));
 			instanceRenewAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
 			instanceRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].RenewalStatus"));
-			instanceRenewAttribute.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].Duration"));
 			instanceRenewAttribute.setPricingCycle(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].PricingCycle"));
 
 			instanceRenewAttributes.add(instanceRenewAttribute);

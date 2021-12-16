@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVpnPbrRouteEntriesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<VpnPbrRouteEntry> vpnPbrRouteEntries;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeVpnPbrRouteEntriesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeVpnPbrRouteEntriesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<VpnPbrRouteEntry> getVpnPbrRouteEntries() {
@@ -77,43 +77,19 @@ public class DescribeVpnPbrRouteEntriesResponse extends AcsResponse {
 
 	public static class VpnPbrRouteEntry {
 
-		private String vpnInstanceId;
-
-		private String routeSource;
-
-		private String routeDest;
-
 		private String nextHop;
 
 		private Integer weight;
 
-		private Long createTime;
+		private String routeDest;
 
 		private String state;
 
-		public String getVpnInstanceId() {
-			return this.vpnInstanceId;
-		}
+		private Long createTime;
 
-		public void setVpnInstanceId(String vpnInstanceId) {
-			this.vpnInstanceId = vpnInstanceId;
-		}
+		private String vpnInstanceId;
 
-		public String getRouteSource() {
-			return this.routeSource;
-		}
-
-		public void setRouteSource(String routeSource) {
-			this.routeSource = routeSource;
-		}
-
-		public String getRouteDest() {
-			return this.routeDest;
-		}
-
-		public void setRouteDest(String routeDest) {
-			this.routeDest = routeDest;
-		}
+		private String routeSource;
 
 		public String getNextHop() {
 			return this.nextHop;
@@ -131,12 +107,12 @@ public class DescribeVpnPbrRouteEntriesResponse extends AcsResponse {
 			this.weight = weight;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getRouteDest() {
+			return this.routeDest;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setRouteDest(String routeDest) {
+			this.routeDest = routeDest;
 		}
 
 		public String getState() {
@@ -145,6 +121,30 @@ public class DescribeVpnPbrRouteEntriesResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getVpnInstanceId() {
+			return this.vpnInstanceId;
+		}
+
+		public void setVpnInstanceId(String vpnInstanceId) {
+			this.vpnInstanceId = vpnInstanceId;
+		}
+
+		public String getRouteSource() {
+			return this.routeSource;
+		}
+
+		public void setRouteSource(String routeSource) {
+			this.routeSource = routeSource;
 		}
 	}
 

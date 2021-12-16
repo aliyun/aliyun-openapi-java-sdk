@@ -1,3 +1,7 @@
+2021-12-16 Version: 3.2.0
+- Support networkACL.
+- Support IPv6.
+
 2021-10-25 Version: 3.1.18
 - Supported SecurityProtectionTypes for AllocateEipAddress.
 - Supported SecurityProtectionTypes for CreateCommonBandwidthPackage.

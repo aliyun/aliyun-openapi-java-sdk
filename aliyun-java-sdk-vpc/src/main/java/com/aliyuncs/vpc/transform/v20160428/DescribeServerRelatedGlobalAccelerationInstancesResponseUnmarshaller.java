@@ -31,10 +31,10 @@ public class DescribeServerRelatedGlobalAccelerationInstancesResponseUnmarshalle
 		List<GlobalAccelerationInstance> globalAccelerationInstances = new ArrayList<GlobalAccelerationInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances.Length"); i++) {
 			GlobalAccelerationInstance globalAccelerationInstance = new GlobalAccelerationInstance();
-			globalAccelerationInstance.setRegionId(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].RegionId"));
+			globalAccelerationInstance.setServerIpAddress(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ServerIpAddress"));
 			globalAccelerationInstance.setGlobalAccelerationInstanceId(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].GlobalAccelerationInstanceId"));
 			globalAccelerationInstance.setIpAddress(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].IpAddress"));
-			globalAccelerationInstance.setServerIpAddress(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ServerIpAddress"));
+			globalAccelerationInstance.setRegionId(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].RegionId"));
 
 			globalAccelerationInstances.add(globalAccelerationInstance);
 		}

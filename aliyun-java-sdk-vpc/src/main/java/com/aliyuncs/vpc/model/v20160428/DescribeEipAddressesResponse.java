@@ -91,6 +91,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String descritpion;
 
+		private String description;
+
 		private String mode;
 
 		private String segmentInstanceId;
@@ -207,6 +209,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setDescritpion(String descritpion) {
 			this.descritpion = descritpion;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getMode() {

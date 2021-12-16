@@ -27,17 +27,17 @@ public class DescribeBgpNetworksResponseUnmarshaller {
 	public static DescribeBgpNetworksResponse unmarshall(DescribeBgpNetworksResponse describeBgpNetworksResponse, UnmarshallerContext _ctx) {
 		
 		describeBgpNetworksResponse.setRequestId(_ctx.stringValue("DescribeBgpNetworksResponse.RequestId"));
-		describeBgpNetworksResponse.setTotalCount(_ctx.integerValue("DescribeBgpNetworksResponse.TotalCount"));
-		describeBgpNetworksResponse.setPageNumber(_ctx.integerValue("DescribeBgpNetworksResponse.PageNumber"));
 		describeBgpNetworksResponse.setPageSize(_ctx.integerValue("DescribeBgpNetworksResponse.PageSize"));
+		describeBgpNetworksResponse.setPageNumber(_ctx.integerValue("DescribeBgpNetworksResponse.PageNumber"));
+		describeBgpNetworksResponse.setTotalCount(_ctx.integerValue("DescribeBgpNetworksResponse.TotalCount"));
 
 		List<BgpNetwork> bgpNetworks = new ArrayList<BgpNetwork>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBgpNetworksResponse.BgpNetworks.Length"); i++) {
 			BgpNetwork bgpNetwork = new BgpNetwork();
+			bgpNetwork.setStatus(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].Status"));
 			bgpNetwork.setVpcId(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].VpcId"));
 			bgpNetwork.setDstCidrBlock(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].DstCidrBlock"));
 			bgpNetwork.setRouterId(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].RouterId"));
-			bgpNetwork.setStatus(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].Status"));
 
 			bgpNetworks.add(bgpNetwork);
 		}

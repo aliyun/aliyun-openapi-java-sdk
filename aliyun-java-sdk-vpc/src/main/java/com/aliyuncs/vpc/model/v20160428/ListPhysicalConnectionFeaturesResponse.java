@@ -47,17 +47,9 @@ public class ListPhysicalConnectionFeaturesResponse extends AcsResponse {
 
 	public static class PhysicalConnectionFeature {
 
-		private String featureKey;
-
 		private String featureValue;
 
-		public String getFeatureKey() {
-			return this.featureKey;
-		}
-
-		public void setFeatureKey(String featureKey) {
-			this.featureKey = featureKey;
-		}
+		private String featureKey;
 
 		public String getFeatureValue() {
 			return this.featureValue;
@@ -65,6 +57,14 @@ public class ListPhysicalConnectionFeaturesResponse extends AcsResponse {
 
 		public void setFeatureValue(String featureValue) {
 			this.featureValue = featureValue;
+		}
+
+		public String getFeatureKey() {
+			return this.featureKey;
+		}
+
+		public void setFeatureKey(String featureKey) {
+			this.featureKey = featureKey;
 		}
 	}
 

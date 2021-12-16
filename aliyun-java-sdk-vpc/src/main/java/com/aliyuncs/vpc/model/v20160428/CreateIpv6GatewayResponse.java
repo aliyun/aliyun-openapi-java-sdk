@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateIpv6GatewayResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String ipv6GatewayId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getIpv6GatewayId() {
 		return this.ipv6GatewayId;
@@ -42,6 +34,14 @@ public class CreateIpv6GatewayResponse extends AcsResponse {
 
 	public void setIpv6GatewayId(String ipv6GatewayId) {
 		this.ipv6GatewayId = ipv6GatewayId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

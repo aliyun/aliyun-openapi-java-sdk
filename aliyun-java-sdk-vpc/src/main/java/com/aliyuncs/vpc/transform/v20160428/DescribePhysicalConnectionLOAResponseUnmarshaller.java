@@ -30,25 +30,25 @@ public class DescribePhysicalConnectionLOAResponseUnmarshaller {
 		describePhysicalConnectionLOAResponse.setRequestId(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.RequestId"));
 
 		PhysicalConnectionLOAType physicalConnectionLOAType = new PhysicalConnectionLOAType();
-		physicalConnectionLOAType.setInstanceId(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.InstanceId"));
-		physicalConnectionLOAType.setCompanyName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.CompanyName"));
-		physicalConnectionLOAType.setCompanyLocalizedName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.CompanyLocalizedName"));
-		physicalConnectionLOAType.setLineType(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineType"));
-		physicalConnectionLOAType.setLineCode(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineCode"));
-		physicalConnectionLOAType.setLineLabel(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineLabel"));
-		physicalConnectionLOAType.setConstructionTime(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.ConstructionTime"));
 		physicalConnectionLOAType.setStatus(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.Status"));
-		physicalConnectionLOAType.setLoaUrl(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LoaUrl"));
+		physicalConnectionLOAType.setLineLabel(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineLabel"));
+		physicalConnectionLOAType.setLineCode(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineCode"));
+		physicalConnectionLOAType.setConstructionTime(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.ConstructionTime"));
 		physicalConnectionLOAType.setSI(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.SI"));
+		physicalConnectionLOAType.setLoaUrl(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LoaUrl"));
+		physicalConnectionLOAType.setCompanyLocalizedName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.CompanyLocalizedName"));
+		physicalConnectionLOAType.setInstanceId(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.InstanceId"));
+		physicalConnectionLOAType.setLineType(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineType"));
+		physicalConnectionLOAType.setCompanyName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.CompanyName"));
 
 		List<PMInfoItem> pMInfo = new ArrayList<PMInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo.Length"); i++) {
 			PMInfoItem pMInfoItem = new PMInfoItem();
-			pMInfoItem.setPMName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMName"));
-			pMInfoItem.setPMContactInfo(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMContactInfo"));
-			pMInfoItem.setPMCertificateType(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateType"));
-			pMInfoItem.setPMCertificateNo(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateNo"));
 			pMInfoItem.setPMGender(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMGender"));
+			pMInfoItem.setPMCertificateNo(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateNo"));
+			pMInfoItem.setPMName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMName"));
+			pMInfoItem.setPMCertificateType(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateType"));
+			pMInfoItem.setPMContactInfo(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMContactInfo"));
 
 			pMInfo.add(pMInfoItem);
 		}

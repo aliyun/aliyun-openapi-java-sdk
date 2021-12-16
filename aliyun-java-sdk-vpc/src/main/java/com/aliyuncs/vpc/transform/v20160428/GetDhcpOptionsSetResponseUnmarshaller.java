@@ -28,24 +28,24 @@ public class GetDhcpOptionsSetResponseUnmarshaller {
 	public static GetDhcpOptionsSetResponse unmarshall(GetDhcpOptionsSetResponse getDhcpOptionsSetResponse, UnmarshallerContext _ctx) {
 		
 		getDhcpOptionsSetResponse.setRequestId(_ctx.stringValue("GetDhcpOptionsSetResponse.RequestId"));
-		getDhcpOptionsSetResponse.setDhcpOptionsSetName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptionsSetName"));
 		getDhcpOptionsSetResponse.setDhcpOptionsSetDescription(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptionsSetDescription"));
-		getDhcpOptionsSetResponse.setDhcpOptionsSetId(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptionsSetId"));
-		getDhcpOptionsSetResponse.setOwnerId(_ctx.longValue("GetDhcpOptionsSetResponse.OwnerId"));
 		getDhcpOptionsSetResponse.setStatus(_ctx.stringValue("GetDhcpOptionsSetResponse.Status"));
+		getDhcpOptionsSetResponse.setDhcpOptionsSetId(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptionsSetId"));
+		getDhcpOptionsSetResponse.setDhcpOptionsSetName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptionsSetName"));
+		getDhcpOptionsSetResponse.setOwnerId(_ctx.longValue("GetDhcpOptionsSetResponse.OwnerId"));
 
 		DhcpOptions dhcpOptions = new DhcpOptions();
+		dhcpOptions.setTFTPServerName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.TFTPServerName"));
 		dhcpOptions.setDomainNameServers(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.DomainNameServers"));
 		dhcpOptions.setDomainName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.DomainName"));
-		dhcpOptions.setTFTPServerName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.TFTPServerName"));
 		dhcpOptions.setBootFileName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.BootFileName"));
 		getDhcpOptionsSetResponse.setDhcpOptions(dhcpOptions);
 
 		List<AssociateVpc> associateVpcs = new ArrayList<AssociateVpc>();
 		for (int i = 0; i < _ctx.lengthValue("GetDhcpOptionsSetResponse.AssociateVpcs.Length"); i++) {
 			AssociateVpc associateVpc = new AssociateVpc();
-			associateVpc.setVpcId(_ctx.stringValue("GetDhcpOptionsSetResponse.AssociateVpcs["+ i +"].VpcId"));
 			associateVpc.setAssociateStatus(_ctx.stringValue("GetDhcpOptionsSetResponse.AssociateVpcs["+ i +"].AssociateStatus"));
+			associateVpc.setVpcId(_ctx.stringValue("GetDhcpOptionsSetResponse.AssociateVpcs["+ i +"].VpcId"));
 
 			associateVpcs.add(associateVpc);
 		}

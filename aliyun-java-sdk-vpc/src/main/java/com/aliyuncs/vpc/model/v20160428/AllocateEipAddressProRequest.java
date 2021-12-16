@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -54,6 +55,8 @@ public class AllocateEipAddressProRequest extends RpcAcsRequest<AllocateEipAddre
 	private String instanceId;
 
 	private String internetChargeType;
+
+	private List<String> securityProtectionTypess;
 
 	private String pricingCycle;
 	public AllocateEipAddressProRequest() {
@@ -228,6 +231,19 @@ public class AllocateEipAddressProRequest extends RpcAcsRequest<AllocateEipAddre
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
 		}
+	}
+
+	public List<String> getSecurityProtectionTypess() {
+		return this.securityProtectionTypess;
+	}
+
+	public void setSecurityProtectionTypess(List<String> securityProtectionTypess) {
+		this.securityProtectionTypess = securityProtectionTypess;	
+		if (securityProtectionTypess != null) {
+			for (int i = 0; i < securityProtectionTypess.size(); i++) {
+				putQueryParameter("SecurityProtectionTypes." + (i + 1) , securityProtectionTypess.get(i));
+			}
+		}	
 	}
 
 	public String getPricingCycle() {

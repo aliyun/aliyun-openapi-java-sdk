@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ConvertBandwidthPackageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String convertInstanceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getConvertInstanceId() {
 		return this.convertInstanceId;
@@ -42,6 +34,14 @@ public class ConvertBandwidthPackageResponse extends AcsResponse {
 
 	public void setConvertInstanceId(String convertInstanceId) {
 		this.convertInstanceId = convertInstanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

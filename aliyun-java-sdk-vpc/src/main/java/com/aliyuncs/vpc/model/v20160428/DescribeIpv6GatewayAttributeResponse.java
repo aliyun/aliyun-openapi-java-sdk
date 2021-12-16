@@ -24,53 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String regionId;
-
-	private String ipv6GatewayId;
-
 	private String vpcId;
 
 	private String status;
 
-	private String businessStatus;
-
-	private String name;
-
-	private String description;
+	private String creationTime;
 
 	private String spec;
 
+	private String regionId;
+
 	private String instanceChargeType;
+
+	private String requestId;
+
+	private String ipv6GatewayId;
+
+	private String description;
 
 	private String expiredTime;
 
-	private String creationTime;
+	private String businessStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getIpv6GatewayId() {
-		return this.ipv6GatewayId;
-	}
-
-	public void setIpv6GatewayId(String ipv6GatewayId) {
-		this.ipv6GatewayId = ipv6GatewayId;
-	}
+	private String name;
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -88,6 +64,70 @@ public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 		this.status = status;
 	}
 
+	public String getCreationTime() {
+		return this.creationTime;
+	}
+
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getIpv6GatewayId() {
+		return this.ipv6GatewayId;
+	}
+
+	public void setIpv6GatewayId(String ipv6GatewayId) {
+		this.ipv6GatewayId = ipv6GatewayId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getExpiredTime() {
+		return this.expiredTime;
+	}
+
+	public void setExpiredTime(String expiredTime) {
+		this.expiredTime = expiredTime;
+	}
+
 	public String getBusinessStatus() {
 		return this.businessStatus;
 	}
@@ -102,46 +142,6 @@ public class DescribeIpv6GatewayAttributeResponse extends AcsResponse {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getSpec() {
-		return this.spec;
-	}
-
-	public void setSpec(String spec) {
-		this.spec = spec;
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-	}
-
-	public String getExpiredTime() {
-		return this.expiredTime;
-	}
-
-	public void setExpiredTime(String expiredTime) {
-		this.expiredTime = expiredTime;
-	}
-
-	public String getCreationTime() {
-		return this.creationTime;
-	}
-
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
 	}
 
 	@Override

@@ -44,7 +44,7 @@ public class ListFullNatEntriesResponseUnmarshaller {
 			fullNatEntry.setNetworkInterfaceId(_ctx.stringValue("ListFullNatEntriesResponse.FullNatEntries["+ i +"].NetworkInterfaceId"));
 			fullNatEntry.setNetworkInterfaceType(_ctx.stringValue("ListFullNatEntriesResponse.FullNatEntries["+ i +"].NetworkInterfaceType"));
 			fullNatEntry.setFullNatEntryName(_ctx.stringValue("ListFullNatEntriesResponse.FullNatEntries["+ i +"].FullNatEntryName"));
-			fullNatEntry.setFullNatEntryDescribetion(_ctx.stringValue("ListFullNatEntriesResponse.FullNatEntries["+ i +"].FullNatEntryDescribetion"));
+			fullNatEntry.setFullNatEntryDescription(_ctx.stringValue("ListFullNatEntriesResponse.FullNatEntries["+ i +"].FullNatEntryDescription"));
 			fullNatEntry.setCreationTime(_ctx.stringValue("ListFullNatEntriesResponse.FullNatEntries["+ i +"].CreationTime"));
 			fullNatEntry.setFullNatEntryId(_ctx.stringValue("ListFullNatEntriesResponse.FullNatEntries["+ i +"].FullNatEntryId"));
 			fullNatEntry.setFullNatEntryStatus(_ctx.stringValue("ListFullNatEntriesResponse.FullNatEntries["+ i +"].FullNatEntryStatus"));

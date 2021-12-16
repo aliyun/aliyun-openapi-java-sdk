@@ -25,57 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String vSwitchId;
-
 	private String vpcId;
 
 	private String status;
-
-	private String cidrBlock;
-
-	private String ipv6CidrBlock;
-
-	private String zoneId;
-
-	private Long availableIpAddressCount;
-
-	private String description;
-
-	private String vSwitchName;
 
 	private String creationTime;
 
 	private Boolean isDefault;
 
-	private String resourceGroupId;
+	private Long availableIpAddressCount;
 
 	private String networkAclId;
 
 	private Long ownerId;
+
+	private String vSwitchId;
+
+	private String requestId;
+
+	private String cidrBlock;
+
+	private String description;
+
+	private String resourceGroupId;
+
+	private String zoneId;
+
+	private String ipv6CidrBlock;
+
+	private String vSwitchName;
 
 	private String shareType;
 
 	private List<CloudResourceSetType> cloudResources;
 
 	private RouteTable routeTable;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-	}
 
 	public String getVpcId() {
 		return this.vpcId;
@@ -91,54 +75,6 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getCidrBlock() {
-		return this.cidrBlock;
-	}
-
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-	}
-
-	public String getIpv6CidrBlock() {
-		return this.ipv6CidrBlock;
-	}
-
-	public void setIpv6CidrBlock(String ipv6CidrBlock) {
-		this.ipv6CidrBlock = ipv6CidrBlock;
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-	}
-
-	public Long getAvailableIpAddressCount() {
-		return this.availableIpAddressCount;
-	}
-
-	public void setAvailableIpAddressCount(Long availableIpAddressCount) {
-		this.availableIpAddressCount = availableIpAddressCount;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getVSwitchName() {
-		return this.vSwitchName;
-	}
-
-	public void setVSwitchName(String vSwitchName) {
-		this.vSwitchName = vSwitchName;
 	}
 
 	public String getCreationTime() {
@@ -157,12 +93,12 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 		this.isDefault = isDefault;
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public Long getAvailableIpAddressCount() {
+		return this.availableIpAddressCount;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
+	public void setAvailableIpAddressCount(Long availableIpAddressCount) {
+		this.availableIpAddressCount = availableIpAddressCount;
 	}
 
 	public String getNetworkAclId() {
@@ -179,6 +115,70 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+	}
+
+	public String getIpv6CidrBlock() {
+		return this.ipv6CidrBlock;
+	}
+
+	public void setIpv6CidrBlock(String ipv6CidrBlock) {
+		this.ipv6CidrBlock = ipv6CidrBlock;
+	}
+
+	public String getVSwitchName() {
+		return this.vSwitchName;
+	}
+
+	public void setVSwitchName(String vSwitchName) {
+		this.vSwitchName = vSwitchName;
 	}
 
 	public String getShareType() {
@@ -207,17 +207,9 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	public static class CloudResourceSetType {
 
-		private String resourceType;
-
 		private Integer resourceCount;
 
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
+		private String resourceType;
 
 		public Integer getResourceCount() {
 			return this.resourceCount;
@@ -225,6 +217,14 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 		public void setResourceCount(Integer resourceCount) {
 			this.resourceCount = resourceCount;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 	}
 

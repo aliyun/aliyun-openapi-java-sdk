@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIPv6TranslatorAclListAttributesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String aclId;
 
-	private String aclName;
-
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private Integer totalCount;
+
+	private String aclName;
+
 	private List<AclEntry> aclEntries;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getAclId() {
 		return this.aclId;
@@ -55,20 +47,12 @@ public class DescribeIPv6TranslatorAclListAttributesResponse extends AcsResponse
 		this.aclId = aclId;
 	}
 
-	public String getAclName() {
-		return this.aclName;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAclName(String aclName) {
-		this.aclName = aclName;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -87,6 +71,22 @@ public class DescribeIPv6TranslatorAclListAttributesResponse extends AcsResponse
 		this.pageSize = pageSize;
 	}
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getAclName() {
+		return this.aclName;
+	}
+
+	public void setAclName(String aclName) {
+		this.aclName = aclName;
+	}
+
 	public List<AclEntry> getAclEntries() {
 		return this.aclEntries;
 	}
@@ -97,11 +97,19 @@ public class DescribeIPv6TranslatorAclListAttributesResponse extends AcsResponse
 
 	public static class AclEntry {
 
+		private String aclEntryComment;
+
 		private String aclEntryId;
 
 		private String aclEntryIp;
 
-		private String aclEntryComment;
+		public String getAclEntryComment() {
+			return this.aclEntryComment;
+		}
+
+		public void setAclEntryComment(String aclEntryComment) {
+			this.aclEntryComment = aclEntryComment;
+		}
 
 		public String getAclEntryId() {
 			return this.aclEntryId;
@@ -117,14 +125,6 @@ public class DescribeIPv6TranslatorAclListAttributesResponse extends AcsResponse
 
 		public void setAclEntryIp(String aclEntryIp) {
 			this.aclEntryIp = aclEntryIp;
-		}
-
-		public String getAclEntryComment() {
-			return this.aclEntryComment;
-		}
-
-		public void setAclEntryComment(String aclEntryComment) {
-			this.aclEntryComment = aclEntryComment;
 		}
 	}
 

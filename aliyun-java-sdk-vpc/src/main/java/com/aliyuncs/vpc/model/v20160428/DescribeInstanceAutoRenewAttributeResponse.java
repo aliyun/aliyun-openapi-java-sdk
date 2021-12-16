@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
-	private String requestId;
+	private String pageNumber;
 
-	private String totalCount;
+	private String requestId;
 
 	private String pageSize;
 
-	private String pageNumber;
+	private String totalCount;
 
 	private List<InstanceRenewAttribute> instanceRenewAttributes;
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(String totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public String getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
+	public String getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<InstanceRenewAttribute> getInstanceRenewAttributes() {
@@ -77,13 +77,21 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 	public static class InstanceRenewAttribute {
 
+		private Integer duration;
+
 		private String instanceId;
 
 		private String renewalStatus;
 
-		private Integer duration;
-
 		private String pricingCycle;
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -99,14 +107,6 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 		public void setRenewalStatus(String renewalStatus) {
 			this.renewalStatus = renewalStatus;
-		}
-
-		public Integer getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Integer duration) {
-			this.duration = duration;
 		}
 
 		public String getPricingCycle() {

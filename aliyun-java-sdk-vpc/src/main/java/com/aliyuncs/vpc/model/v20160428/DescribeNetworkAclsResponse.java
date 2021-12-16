@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkAclsResponse extends AcsResponse {
 
-	private String requestId;
+	private String pageSize;
 
-	private String totalCount;
+	private String requestId;
 
 	private String pageNumber;
 
-	private String pageSize;
+	private String totalCount;
 
 	private List<NetworkAcl> networkAcls;
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(String totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public String getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public String getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<NetworkAcl> getNetworkAcls() {
@@ -77,21 +77,21 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 	public static class NetworkAcl {
 
-		private String networkAclId;
-
-		private String regionId;
-
-		private String networkAclName;
-
-		private String description;
+		private String status;
 
 		private String vpcId;
 
 		private String creationTime;
 
-		private String status;
+		private String description;
+
+		private String networkAclName;
+
+		private String networkAclId;
 
 		private Long ownerId;
+
+		private String regionId;
 
 		private List<IngressAclEntry> ingressAclEntries;
 
@@ -99,36 +99,12 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 		private List<Resource> resources;
 
-		public String getNetworkAclId() {
-			return this.networkAclId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setNetworkAclId(String networkAclId) {
-			this.networkAclId = networkAclId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getNetworkAclName() {
-			return this.networkAclName;
-		}
-
-		public void setNetworkAclName(String networkAclName) {
-			this.networkAclName = networkAclName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getVpcId() {
@@ -147,12 +123,28 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getNetworkAclName() {
+			return this.networkAclName;
+		}
+
+		public void setNetworkAclName(String networkAclName) {
+			this.networkAclName = networkAclName;
+		}
+
+		public String getNetworkAclId() {
+			return this.networkAclId;
+		}
+
+		public void setNetworkAclId(String networkAclId) {
+			this.networkAclId = networkAclId;
 		}
 
 		public Long getOwnerId() {
@@ -161,6 +153,14 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 		public void setOwnerId(Long ownerId) {
 			this.ownerId = ownerId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<IngressAclEntry> getIngressAclEntries() {
@@ -191,19 +191,19 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 			private String networkAclEntryId;
 
-			private String policy;
-
-			private String protocol;
-
-			private String sourceCidrIp;
-
-			private String port;
-
 			private String entryType;
 
 			private String networkAclEntryName;
 
+			private String policy;
+
 			private String description;
+
+			private String sourceCidrIp;
+
+			private String protocol;
+
+			private String port;
 
 			public String getNetworkAclEntryId() {
 				return this.networkAclEntryId;
@@ -211,38 +211,6 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 
 			public void setNetworkAclEntryId(String networkAclEntryId) {
 				this.networkAclEntryId = networkAclEntryId;
-			}
-
-			public String getPolicy() {
-				return this.policy;
-			}
-
-			public void setPolicy(String policy) {
-				this.policy = policy;
-			}
-
-			public String getBizProtocol() {
-				return this.protocol;
-			}
-
-			public void setBizProtocol(String protocol) {
-				this.protocol = protocol;
-			}
-
-			public String getSourceCidrIp() {
-				return this.sourceCidrIp;
-			}
-
-			public void setSourceCidrIp(String sourceCidrIp) {
-				this.sourceCidrIp = sourceCidrIp;
-			}
-
-			public String getPort() {
-				return this.port;
-			}
-
-			public void setPort(String port) {
-				this.port = port;
 			}
 
 			public String getEntryType() {
@@ -261,6 +229,14 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 				this.networkAclEntryName = networkAclEntryName;
 			}
 
+			public String getPolicy() {
+				return this.policy;
+			}
+
+			public void setPolicy(String policy) {
+				this.policy = policy;
+			}
+
 			public String getDescription() {
 				return this.description;
 			}
@@ -268,25 +244,49 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 			public void setDescription(String description) {
 				this.description = description;
 			}
+
+			public String getSourceCidrIp() {
+				return this.sourceCidrIp;
+			}
+
+			public void setSourceCidrIp(String sourceCidrIp) {
+				this.sourceCidrIp = sourceCidrIp;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
 		}
 
 		public static class EgressAclEntry {
 
 			private String networkAclEntryId;
 
+			private String entryType;
+
+			private String networkAclEntryName;
+
 			private String policy;
+
+			private String description;
 
 			private String protocol;
 
 			private String destinationCidrIp;
 
 			private String port;
-
-			private String entryType;
-
-			private String description;
-
-			private String networkAclEntryName;
 
 			public String getNetworkAclEntryId() {
 				return this.networkAclEntryId;
@@ -296,12 +296,36 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 				this.networkAclEntryId = networkAclEntryId;
 			}
 
+			public String getEntryType() {
+				return this.entryType;
+			}
+
+			public void setEntryType(String entryType) {
+				this.entryType = entryType;
+			}
+
+			public String getNetworkAclEntryName() {
+				return this.networkAclEntryName;
+			}
+
+			public void setNetworkAclEntryName(String networkAclEntryName) {
+				this.networkAclEntryName = networkAclEntryName;
+			}
+
 			public String getPolicy() {
 				return this.policy;
 			}
 
 			public void setPolicy(String policy) {
 				this.policy = policy;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getBizProtocol() {
@@ -327,46 +351,22 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 			public void setPort(String port) {
 				this.port = port;
 			}
-
-			public String getEntryType() {
-				return this.entryType;
-			}
-
-			public void setEntryType(String entryType) {
-				this.entryType = entryType;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getNetworkAclEntryName() {
-				return this.networkAclEntryName;
-			}
-
-			public void setNetworkAclEntryName(String networkAclEntryName) {
-				this.networkAclEntryName = networkAclEntryName;
-			}
 		}
 
 		public static class Resource {
 
-			private String resourceId;
+			private String status;
 
 			private String resourceType;
 
-			private String status;
+			private String resourceId;
 
-			public String getResourceId() {
-				return this.resourceId;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setResourceId(String resourceId) {
-				this.resourceId = resourceId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getResourceType() {
@@ -377,12 +377,12 @@ public class DescribeNetworkAclsResponse extends AcsResponse {
 				this.resourceType = resourceType;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getResourceId() {
+				return this.resourceId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
 			}
 		}
 	}

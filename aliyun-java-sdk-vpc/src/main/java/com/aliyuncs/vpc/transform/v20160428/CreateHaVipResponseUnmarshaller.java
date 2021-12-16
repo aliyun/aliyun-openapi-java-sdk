@@ -23,8 +23,8 @@ public class CreateHaVipResponseUnmarshaller {
 	public static CreateHaVipResponse unmarshall(CreateHaVipResponse createHaVipResponse, UnmarshallerContext _ctx) {
 		
 		createHaVipResponse.setRequestId(_ctx.stringValue("CreateHaVipResponse.RequestId"));
-		createHaVipResponse.setHaVipId(_ctx.stringValue("CreateHaVipResponse.HaVipId"));
 		createHaVipResponse.setIpAddress(_ctx.stringValue("CreateHaVipResponse.IpAddress"));
+		createHaVipResponse.setHaVipId(_ctx.stringValue("CreateHaVipResponse.HaVipId"));
 	 
 	 	return createHaVipResponse;
 	}

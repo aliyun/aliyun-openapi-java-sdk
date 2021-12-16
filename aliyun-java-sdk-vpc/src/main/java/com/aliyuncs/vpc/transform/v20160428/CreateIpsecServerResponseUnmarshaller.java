@@ -23,11 +23,11 @@ public class CreateIpsecServerResponseUnmarshaller {
 	public static CreateIpsecServerResponse unmarshall(CreateIpsecServerResponse createIpsecServerResponse, UnmarshallerContext _ctx) {
 		
 		createIpsecServerResponse.setRequestId(_ctx.stringValue("CreateIpsecServerResponse.RequestId"));
-		createIpsecServerResponse.setRegionId(_ctx.stringValue("CreateIpsecServerResponse.RegionId"));
+		createIpsecServerResponse.setCreationTime(_ctx.stringValue("CreateIpsecServerResponse.CreationTime"));
 		createIpsecServerResponse.setIpsecServerId(_ctx.stringValue("CreateIpsecServerResponse.IpsecServerId"));
 		createIpsecServerResponse.setIpsecServerName(_ctx.stringValue("CreateIpsecServerResponse.IpsecServerName"));
 		createIpsecServerResponse.setVpnGatewayId(_ctx.stringValue("CreateIpsecServerResponse.VpnGatewayId"));
-		createIpsecServerResponse.setCreationTime(_ctx.stringValue("CreateIpsecServerResponse.CreationTime"));
+		createIpsecServerResponse.setRegionId(_ctx.stringValue("CreateIpsecServerResponse.RegionId"));
 	 
 	 	return createIpsecServerResponse;
 	}

@@ -33,6 +33,8 @@ public class CreateRouteTableRequest extends RpcAcsRequest<CreateRouteTableRespo
 
 	private String routeTableName;
 
+	private String associateType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -90,6 +92,17 @@ public class CreateRouteTableRequest extends RpcAcsRequest<CreateRouteTableRespo
 		this.routeTableName = routeTableName;
 		if(routeTableName != null){
 			putQueryParameter("RouteTableName", routeTableName);
+		}
+	}
+
+	public String getAssociateType() {
+		return this.associateType;
+	}
+
+	public void setAssociateType(String associateType) {
+		this.associateType = associateType;
+		if(associateType != null){
+			putQueryParameter("AssociateType", associateType);
 		}
 	}
 

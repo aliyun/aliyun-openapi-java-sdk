@@ -27,15 +27,15 @@ public class DescribeIPv6TranslatorAclListsResponseUnmarshaller {
 	public static DescribeIPv6TranslatorAclListsResponse unmarshall(DescribeIPv6TranslatorAclListsResponse describeIPv6TranslatorAclListsResponse, UnmarshallerContext _ctx) {
 		
 		describeIPv6TranslatorAclListsResponse.setRequestId(_ctx.stringValue("DescribeIPv6TranslatorAclListsResponse.RequestId"));
-		describeIPv6TranslatorAclListsResponse.setTotalCount(_ctx.integerValue("DescribeIPv6TranslatorAclListsResponse.TotalCount"));
-		describeIPv6TranslatorAclListsResponse.setPageNumber(_ctx.integerValue("DescribeIPv6TranslatorAclListsResponse.PageNumber"));
 		describeIPv6TranslatorAclListsResponse.setPageSize(_ctx.integerValue("DescribeIPv6TranslatorAclListsResponse.PageSize"));
+		describeIPv6TranslatorAclListsResponse.setPageNumber(_ctx.integerValue("DescribeIPv6TranslatorAclListsResponse.PageNumber"));
+		describeIPv6TranslatorAclListsResponse.setTotalCount(_ctx.integerValue("DescribeIPv6TranslatorAclListsResponse.TotalCount"));
 
 		List<IPv6TranslatorAcl> ipv6TranslatorAcls = new ArrayList<IPv6TranslatorAcl>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIPv6TranslatorAclListsResponse.Ipv6TranslatorAcls.Length"); i++) {
 			IPv6TranslatorAcl iPv6TranslatorAcl = new IPv6TranslatorAcl();
-			iPv6TranslatorAcl.setAclId(_ctx.stringValue("DescribeIPv6TranslatorAclListsResponse.Ipv6TranslatorAcls["+ i +"].AclId"));
 			iPv6TranslatorAcl.setAclName(_ctx.stringValue("DescribeIPv6TranslatorAclListsResponse.Ipv6TranslatorAcls["+ i +"].AclName"));
+			iPv6TranslatorAcl.setAclId(_ctx.stringValue("DescribeIPv6TranslatorAclListsResponse.Ipv6TranslatorAcls["+ i +"].AclId"));
 
 			ipv6TranslatorAcls.add(iPv6TranslatorAcl);
 		}

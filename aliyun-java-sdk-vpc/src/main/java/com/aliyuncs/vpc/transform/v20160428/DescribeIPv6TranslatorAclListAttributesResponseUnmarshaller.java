@@ -28,17 +28,17 @@ public class DescribeIPv6TranslatorAclListAttributesResponseUnmarshaller {
 		
 		describeIPv6TranslatorAclListAttributesResponse.setRequestId(_ctx.stringValue("DescribeIPv6TranslatorAclListAttributesResponse.RequestId"));
 		describeIPv6TranslatorAclListAttributesResponse.setAclId(_ctx.stringValue("DescribeIPv6TranslatorAclListAttributesResponse.AclId"));
-		describeIPv6TranslatorAclListAttributesResponse.setAclName(_ctx.stringValue("DescribeIPv6TranslatorAclListAttributesResponse.AclName"));
-		describeIPv6TranslatorAclListAttributesResponse.setTotalCount(_ctx.integerValue("DescribeIPv6TranslatorAclListAttributesResponse.TotalCount"));
 		describeIPv6TranslatorAclListAttributesResponse.setPageNumber(_ctx.integerValue("DescribeIPv6TranslatorAclListAttributesResponse.PageNumber"));
 		describeIPv6TranslatorAclListAttributesResponse.setPageSize(_ctx.integerValue("DescribeIPv6TranslatorAclListAttributesResponse.PageSize"));
+		describeIPv6TranslatorAclListAttributesResponse.setTotalCount(_ctx.integerValue("DescribeIPv6TranslatorAclListAttributesResponse.TotalCount"));
+		describeIPv6TranslatorAclListAttributesResponse.setAclName(_ctx.stringValue("DescribeIPv6TranslatorAclListAttributesResponse.AclName"));
 
 		List<AclEntry> aclEntries = new ArrayList<AclEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIPv6TranslatorAclListAttributesResponse.AclEntries.Length"); i++) {
 			AclEntry aclEntry = new AclEntry();
+			aclEntry.setAclEntryComment(_ctx.stringValue("DescribeIPv6TranslatorAclListAttributesResponse.AclEntries["+ i +"].AclEntryComment"));
 			aclEntry.setAclEntryId(_ctx.stringValue("DescribeIPv6TranslatorAclListAttributesResponse.AclEntries["+ i +"].AclEntryId"));
 			aclEntry.setAclEntryIp(_ctx.stringValue("DescribeIPv6TranslatorAclListAttributesResponse.AclEntries["+ i +"].AclEntryIp"));
-			aclEntry.setAclEntryComment(_ctx.stringValue("DescribeIPv6TranslatorAclListAttributesResponse.AclEntries["+ i +"].AclEntryComment"));
 
 			aclEntries.add(aclEntry);
 		}

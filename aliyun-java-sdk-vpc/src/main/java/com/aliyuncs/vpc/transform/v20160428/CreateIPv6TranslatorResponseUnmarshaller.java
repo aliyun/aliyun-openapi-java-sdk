@@ -24,8 +24,8 @@ public class CreateIPv6TranslatorResponseUnmarshaller {
 		
 		createIPv6TranslatorResponse.setRequestId(_ctx.stringValue("CreateIPv6TranslatorResponse.RequestId"));
 		createIPv6TranslatorResponse.setIpv6TranslatorId(_ctx.stringValue("CreateIPv6TranslatorResponse.Ipv6TranslatorId"));
-		createIPv6TranslatorResponse.setName(_ctx.stringValue("CreateIPv6TranslatorResponse.Name"));
 		createIPv6TranslatorResponse.setSpec(_ctx.stringValue("CreateIPv6TranslatorResponse.Spec"));
+		createIPv6TranslatorResponse.setName(_ctx.stringValue("CreateIPv6TranslatorResponse.Name"));
 		createIPv6TranslatorResponse.setOrderId(_ctx.longValue("CreateIPv6TranslatorResponse.OrderId"));
 	 
 	 	return createIPv6TranslatorResponse;

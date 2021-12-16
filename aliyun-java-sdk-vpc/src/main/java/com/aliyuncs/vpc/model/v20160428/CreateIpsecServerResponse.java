@@ -24,32 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateIpsecServerResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String regionId;
+	private String creationTime;
 
 	private String ipsecServerId;
+
+	private String requestId;
 
 	private String ipsecServerName;
 
 	private String vpnGatewayId;
 
-	private String creationTime;
+	private String regionId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCreationTime() {
+		return this.creationTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
 	}
 
 	public String getIpsecServerId() {
@@ -58,6 +50,14 @@ public class CreateIpsecServerResponse extends AcsResponse {
 
 	public void setIpsecServerId(String ipsecServerId) {
 		this.ipsecServerId = ipsecServerId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getIpsecServerName() {
@@ -76,12 +76,12 @@ public class CreateIpsecServerResponse extends AcsResponse {
 		this.vpnGatewayId = vpnGatewayId;
 	}
 
-	public String getCreationTime() {
-		return this.creationTime;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	@Override

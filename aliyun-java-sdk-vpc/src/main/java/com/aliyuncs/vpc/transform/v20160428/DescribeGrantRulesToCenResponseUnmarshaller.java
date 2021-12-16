@@ -27,9 +27,9 @@ public class DescribeGrantRulesToCenResponseUnmarshaller {
 	public static DescribeGrantRulesToCenResponse unmarshall(DescribeGrantRulesToCenResponse describeGrantRulesToCenResponse, UnmarshallerContext _ctx) {
 		
 		describeGrantRulesToCenResponse.setRequestId(_ctx.stringValue("DescribeGrantRulesToCenResponse.RequestId"));
-		describeGrantRulesToCenResponse.setTotalCount(_ctx.integerValue("DescribeGrantRulesToCenResponse.TotalCount"));
-		describeGrantRulesToCenResponse.setPageNumber(_ctx.integerValue("DescribeGrantRulesToCenResponse.PageNumber"));
 		describeGrantRulesToCenResponse.setPageSize(_ctx.integerValue("DescribeGrantRulesToCenResponse.PageSize"));
+		describeGrantRulesToCenResponse.setPageNumber(_ctx.integerValue("DescribeGrantRulesToCenResponse.PageNumber"));
+		describeGrantRulesToCenResponse.setTotalCount(_ctx.integerValue("DescribeGrantRulesToCenResponse.TotalCount"));
 
 		List<CbnGrantRule> cenGrantRules = new ArrayList<CbnGrantRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGrantRulesToCenResponse.CenGrantRules.Length"); i++) {

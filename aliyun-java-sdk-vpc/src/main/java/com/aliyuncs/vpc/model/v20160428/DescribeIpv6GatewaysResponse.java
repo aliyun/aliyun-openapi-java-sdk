@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpv6GatewaysResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Ipv6Gateway> ipv6Gateways;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeIpv6GatewaysResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeIpv6GatewaysResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Ipv6Gateway> getIpv6Gateways() {
@@ -77,50 +77,34 @@ public class DescribeIpv6GatewaysResponse extends AcsResponse {
 
 	public static class Ipv6Gateway {
 
-		private String regionId;
-
-		private String ipv6GatewayId;
-
-		private String vpcId;
+		private String creationTime;
 
 		private String status;
 
-		private String name;
-
-		private String description;
+		private String vpcId;
 
 		private String spec;
 
-		private String instanceChargeType;
+		private String description;
 
-		private String businessStatus;
+		private String ipv6GatewayId;
 
 		private String expiredTime;
 
-		private String creationTime;
+		private String businessStatus;
 
-		public String getRegionId() {
-			return this.regionId;
+		private String name;
+
+		private String instanceChargeType;
+
+		private String regionId;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getIpv6GatewayId() {
-			return this.ipv6GatewayId;
-		}
-
-		public void setIpv6GatewayId(String ipv6GatewayId) {
-			this.ipv6GatewayId = ipv6GatewayId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -131,20 +115,12 @@ public class DescribeIpv6GatewaysResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getSpec() {
@@ -155,20 +131,20 @@ public class DescribeIpv6GatewaysResponse extends AcsResponse {
 			this.spec = spec;
 		}
 
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getBusinessStatus() {
-			return this.businessStatus;
+		public String getIpv6GatewayId() {
+			return this.ipv6GatewayId;
 		}
 
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
+		public void setIpv6GatewayId(String ipv6GatewayId) {
+			this.ipv6GatewayId = ipv6GatewayId;
 		}
 
 		public String getExpiredTime() {
@@ -179,12 +155,36 @@ public class DescribeIpv6GatewaysResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getBusinessStatus() {
+			return this.businessStatus;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -123,6 +123,8 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		private String accessPointId;
 
+		private String accessPointType;
+
 		private String hasReservationData;
 
 		private String physicalConnectionId;
@@ -323,6 +325,14 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		public void setAccessPointId(String accessPointId) {
 			this.accessPointId = accessPointId;
+		}
+
+		public String getAccessPointType() {
+			return this.accessPointType;
+		}
+
+		public void setAccessPointType(String accessPointType) {
+			this.accessPointType = accessPointType;
 		}
 
 		public String getHasReservationData() {

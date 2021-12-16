@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateBgpGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String bgpGroupId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getBgpGroupId() {
 		return this.bgpGroupId;
@@ -42,6 +34,14 @@ public class CreateBgpGroupResponse extends AcsResponse {
 
 	public void setBgpGroupId(String bgpGroupId) {
 		this.bgpGroupId = bgpGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

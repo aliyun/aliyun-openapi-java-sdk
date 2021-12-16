@@ -24,62 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVbrHaResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String vbrHaId;
-
-	private String regionId;
-
-	private String name;
-
-	private String description;
+	private String creationTime;
 
 	private String status;
 
-	private String vbrId;
+	private String requestId;
 
-	private String creationTime;
+	private String description;
+
+	private String vbrHaId;
 
 	private String peerVbrId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String name;
+
+	private String vbrId;
+
+	private String regionId;
+
+	public String getCreationTime() {
+		return this.creationTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getVbrHaId() {
-		return this.vbrHaId;
-	}
-
-	public void setVbrHaId(String vbrHaId) {
-		this.vbrHaId = vbrHaId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
 	}
 
 	public String getStatus() {
@@ -90,20 +58,28 @@ public class DescribeVbrHaResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getVbrId() {
-		return this.vbrId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setVbrId(String vbrId) {
-		this.vbrId = vbrId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getCreationTime() {
-		return this.creationTime;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getVbrHaId() {
+		return this.vbrHaId;
+	}
+
+	public void setVbrHaId(String vbrHaId) {
+		this.vbrHaId = vbrHaId;
 	}
 
 	public String getPeerVbrId() {
@@ -112,6 +88,30 @@ public class DescribeVbrHaResponse extends AcsResponse {
 
 	public void setPeerVbrId(String peerVbrId) {
 		this.peerVbrId = peerVbrId;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getVbrId() {
+		return this.vbrId;
+	}
+
+	public void setVbrId(String vbrId) {
+		this.vbrId = vbrId;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	@Override

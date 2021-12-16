@@ -28,17 +28,17 @@ public class ListVpnCertificateAssociationsResponseUnmarshaller {
 		
 		listVpnCertificateAssociationsResponse.setRequestId(_ctx.stringValue("ListVpnCertificateAssociationsResponse.RequestId"));
 		listVpnCertificateAssociationsResponse.setNextToken(_ctx.stringValue("ListVpnCertificateAssociationsResponse.NextToken"));
-		listVpnCertificateAssociationsResponse.setMaxResults(_ctx.integerValue("ListVpnCertificateAssociationsResponse.MaxResults"));
 		listVpnCertificateAssociationsResponse.setTotalCount(_ctx.integerValue("ListVpnCertificateAssociationsResponse.TotalCount"));
+		listVpnCertificateAssociationsResponse.setMaxResults(_ctx.integerValue("ListVpnCertificateAssociationsResponse.MaxResults"));
 
 		List<VpnCertificateRelation> vpnCertificateRelations = new ArrayList<VpnCertificateRelation>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpnCertificateAssociationsResponse.VpnCertificateRelations.Length"); i++) {
 			VpnCertificateRelation vpnCertificateRelation = new VpnCertificateRelation();
-			vpnCertificateRelation.setRegionId(_ctx.stringValue("ListVpnCertificateAssociationsResponse.VpnCertificateRelations["+ i +"].RegionId"));
 			vpnCertificateRelation.setVpnGatewayId(_ctx.stringValue("ListVpnCertificateAssociationsResponse.VpnCertificateRelations["+ i +"].VpnGatewayId"));
-			vpnCertificateRelation.setCertificateId(_ctx.stringValue("ListVpnCertificateAssociationsResponse.VpnCertificateRelations["+ i +"].CertificateId"));
 			vpnCertificateRelation.setCertificateType(_ctx.stringValue("ListVpnCertificateAssociationsResponse.VpnCertificateRelations["+ i +"].CertificateType"));
+			vpnCertificateRelation.setCertificateId(_ctx.stringValue("ListVpnCertificateAssociationsResponse.VpnCertificateRelations["+ i +"].CertificateId"));
 			vpnCertificateRelation.setAssociationTime(_ctx.stringValue("ListVpnCertificateAssociationsResponse.VpnCertificateRelations["+ i +"].AssociationTime"));
+			vpnCertificateRelation.setRegionId(_ctx.stringValue("ListVpnCertificateAssociationsResponse.VpnCertificateRelations["+ i +"].RegionId"));
 
 			vpnCertificateRelations.add(vpnCertificateRelation);
 		}

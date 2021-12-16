@@ -27,20 +27,20 @@ public class DescribeVpnPbrRouteEntriesResponseUnmarshaller {
 	public static DescribeVpnPbrRouteEntriesResponse unmarshall(DescribeVpnPbrRouteEntriesResponse describeVpnPbrRouteEntriesResponse, UnmarshallerContext _ctx) {
 		
 		describeVpnPbrRouteEntriesResponse.setRequestId(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.RequestId"));
-		describeVpnPbrRouteEntriesResponse.setTotalCount(_ctx.integerValue("DescribeVpnPbrRouteEntriesResponse.TotalCount"));
-		describeVpnPbrRouteEntriesResponse.setPageNumber(_ctx.integerValue("DescribeVpnPbrRouteEntriesResponse.PageNumber"));
 		describeVpnPbrRouteEntriesResponse.setPageSize(_ctx.integerValue("DescribeVpnPbrRouteEntriesResponse.PageSize"));
+		describeVpnPbrRouteEntriesResponse.setPageNumber(_ctx.integerValue("DescribeVpnPbrRouteEntriesResponse.PageNumber"));
+		describeVpnPbrRouteEntriesResponse.setTotalCount(_ctx.integerValue("DescribeVpnPbrRouteEntriesResponse.TotalCount"));
 
 		List<VpnPbrRouteEntry> vpnPbrRouteEntries = new ArrayList<VpnPbrRouteEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries.Length"); i++) {
 			VpnPbrRouteEntry vpnPbrRouteEntry = new VpnPbrRouteEntry();
-			vpnPbrRouteEntry.setVpnInstanceId(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].VpnInstanceId"));
-			vpnPbrRouteEntry.setRouteSource(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].RouteSource"));
-			vpnPbrRouteEntry.setRouteDest(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].RouteDest"));
 			vpnPbrRouteEntry.setNextHop(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].NextHop"));
 			vpnPbrRouteEntry.setWeight(_ctx.integerValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].Weight"));
-			vpnPbrRouteEntry.setCreateTime(_ctx.longValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].CreateTime"));
+			vpnPbrRouteEntry.setRouteDest(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].RouteDest"));
 			vpnPbrRouteEntry.setState(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].State"));
+			vpnPbrRouteEntry.setCreateTime(_ctx.longValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].CreateTime"));
+			vpnPbrRouteEntry.setVpnInstanceId(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].VpnInstanceId"));
+			vpnPbrRouteEntry.setRouteSource(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].RouteSource"));
 
 			vpnPbrRouteEntries.add(vpnPbrRouteEntry);
 		}

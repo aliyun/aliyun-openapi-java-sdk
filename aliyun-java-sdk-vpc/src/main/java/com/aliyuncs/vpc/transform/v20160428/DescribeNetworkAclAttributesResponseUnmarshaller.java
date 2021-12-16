@@ -32,26 +32,26 @@ public class DescribeNetworkAclAttributesResponseUnmarshaller {
 		describeNetworkAclAttributesResponse.setRequestId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.RequestId"));
 
 		NetworkAclAttribute networkAclAttribute = new NetworkAclAttribute();
-		networkAclAttribute.setNetworkAclId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.NetworkAclId"));
-		networkAclAttribute.setRegionId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.RegionId"));
-		networkAclAttribute.setNetworkAclName(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.NetworkAclName"));
-		networkAclAttribute.setDescription(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Description"));
+		networkAclAttribute.setStatus(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Status"));
 		networkAclAttribute.setVpcId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.VpcId"));
 		networkAclAttribute.setCreationTime(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.CreationTime"));
-		networkAclAttribute.setStatus(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Status"));
+		networkAclAttribute.setDescription(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Description"));
+		networkAclAttribute.setNetworkAclName(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.NetworkAclName"));
+		networkAclAttribute.setNetworkAclId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.NetworkAclId"));
 		networkAclAttribute.setOwnerId(_ctx.longValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.OwnerId"));
+		networkAclAttribute.setRegionId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.RegionId"));
 
 		List<IngressAclEntry> ingressAclEntries = new ArrayList<IngressAclEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries.Length"); i++) {
 			IngressAclEntry ingressAclEntry = new IngressAclEntry();
 			ingressAclEntry.setNetworkAclEntryId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].NetworkAclEntryId"));
-			ingressAclEntry.setPolicy(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Policy"));
-			ingressAclEntry.setBizProtocol(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Protocol"));
-			ingressAclEntry.setSourceCidrIp(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].SourceCidrIp"));
-			ingressAclEntry.setPort(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Port"));
 			ingressAclEntry.setEntryType(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].EntryType"));
 			ingressAclEntry.setNetworkAclEntryName(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].NetworkAclEntryName"));
+			ingressAclEntry.setPolicy(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Policy"));
 			ingressAclEntry.setDescription(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Description"));
+			ingressAclEntry.setSourceCidrIp(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].SourceCidrIp"));
+			ingressAclEntry.setBizProtocol(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Protocol"));
+			ingressAclEntry.setPort(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntries["+ i +"].Port"));
 
 			ingressAclEntries.add(ingressAclEntry);
 		}
@@ -61,13 +61,13 @@ public class DescribeNetworkAclAttributesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries.Length"); i++) {
 			EgressAclEntry egressAclEntry = new EgressAclEntry();
 			egressAclEntry.setNetworkAclEntryId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].NetworkAclEntryId"));
+			egressAclEntry.setEntryType(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].EntryType"));
+			egressAclEntry.setNetworkAclEntryName(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].NetworkAclEntryName"));
 			egressAclEntry.setPolicy(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Policy"));
+			egressAclEntry.setDescription(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Description"));
 			egressAclEntry.setBizProtocol(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Protocol"));
 			egressAclEntry.setDestinationCidrIp(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].DestinationCidrIp"));
 			egressAclEntry.setPort(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Port"));
-			egressAclEntry.setEntryType(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].EntryType"));
-			egressAclEntry.setDescription(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].Description"));
-			egressAclEntry.setNetworkAclEntryName(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntries["+ i +"].NetworkAclEntryName"));
 
 			egressAclEntries.add(egressAclEntry);
 		}
@@ -76,9 +76,9 @@ public class DescribeNetworkAclAttributesResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setResourceId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Resources["+ i +"].ResourceId"));
-			resource.setResourceType(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Resources["+ i +"].ResourceType"));
 			resource.setStatus(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Resources["+ i +"].Status"));
+			resource.setResourceType(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Resources["+ i +"].ResourceType"));
+			resource.setResourceId(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Resources["+ i +"].ResourceId"));
 
 			resources.add(resource);
 		}

@@ -30,44 +30,44 @@ public class ListIpsecServersResponseUnmarshaller {
 		
 		listIpsecServersResponse.setRequestId(_ctx.stringValue("ListIpsecServersResponse.RequestId"));
 		listIpsecServersResponse.setNextToken(_ctx.stringValue("ListIpsecServersResponse.NextToken"));
-		listIpsecServersResponse.setMaxResults(_ctx.integerValue("ListIpsecServersResponse.MaxResults"));
 		listIpsecServersResponse.setTotalCount(_ctx.integerValue("ListIpsecServersResponse.TotalCount"));
+		listIpsecServersResponse.setMaxResults(_ctx.integerValue("ListIpsecServersResponse.MaxResults"));
 
 		List<IpsecServer> ipsecServers = new ArrayList<IpsecServer>();
 		for (int i = 0; i < _ctx.lengthValue("ListIpsecServersResponse.IpsecServers.Length"); i++) {
 			IpsecServer ipsecServer = new IpsecServer();
-			ipsecServer.setRegionId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].RegionId"));
-			ipsecServer.setIpsecServerId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecServerId"));
+			ipsecServer.setCreationTime(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].CreationTime"));
+			ipsecServer.setOnlineClientCount(_ctx.integerValue("ListIpsecServersResponse.IpsecServers["+ i +"].OnlineClientCount"));
+			ipsecServer.setInternetIp(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].InternetIp"));
 			ipsecServer.setIpsecServerName(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecServerName"));
+			ipsecServer.setIDaaSInstanceId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IDaaSInstanceId"));
+			ipsecServer.setEffectImmediately(_ctx.booleanValue("ListIpsecServersResponse.IpsecServers["+ i +"].EffectImmediately"));
 			ipsecServer.setVpnGatewayId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].VpnGatewayId"));
 			ipsecServer.setLocalSubnet(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].LocalSubnet"));
-			ipsecServer.setClientIpPool(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].ClientIpPool"));
-			ipsecServer.setEffectImmediately(_ctx.booleanValue("ListIpsecServersResponse.IpsecServers["+ i +"].EffectImmediately"));
-			ipsecServer.setPskEnabled(_ctx.booleanValue("ListIpsecServersResponse.IpsecServers["+ i +"].PskEnabled"));
-			ipsecServer.setMultiFactorAuthEnabled(_ctx.booleanValue("ListIpsecServersResponse.IpsecServers["+ i +"].MultiFactorAuthEnabled"));
 			ipsecServer.setPsk(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].Psk"));
-			ipsecServer.setIDaaSInstanceId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IDaaSInstanceId"));
-			ipsecServer.setOnlineClientCount(_ctx.integerValue("ListIpsecServersResponse.IpsecServers["+ i +"].OnlineClientCount"));
+			ipsecServer.setRegionId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].RegionId"));
+			ipsecServer.setPskEnabled(_ctx.booleanValue("ListIpsecServersResponse.IpsecServers["+ i +"].PskEnabled"));
+			ipsecServer.setIpsecServerId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecServerId"));
+			ipsecServer.setMultiFactorAuthEnabled(_ctx.booleanValue("ListIpsecServersResponse.IpsecServers["+ i +"].MultiFactorAuthEnabled"));
 			ipsecServer.setMaxConnections(_ctx.integerValue("ListIpsecServersResponse.IpsecServers["+ i +"].MaxConnections"));
-			ipsecServer.setCreationTime(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].CreationTime"));
-			ipsecServer.setInternetIp(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].InternetIp"));
+			ipsecServer.setClientIpPool(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].ClientIpPool"));
 
 			IkeConfig ikeConfig = new IkeConfig();
-			ikeConfig.setIkeVersion(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeVersion"));
-			ikeConfig.setIkeMode(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeMode"));
-			ikeConfig.setIkeEncAlg(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeEncAlg"));
-			ikeConfig.setIkeAuthAlg(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeAuthAlg"));
-			ikeConfig.setIkePfs(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkePfs"));
-			ikeConfig.setIkeLifetime(_ctx.longValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeLifetime"));
-			ikeConfig.setLocalId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.LocalId"));
 			ikeConfig.setRemoteId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.RemoteId"));
+			ikeConfig.setIkeLifetime(_ctx.longValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeLifetime"));
+			ikeConfig.setIkeEncAlg(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeEncAlg"));
+			ikeConfig.setLocalId(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.LocalId"));
+			ikeConfig.setIkeMode(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeMode"));
+			ikeConfig.setIkeVersion(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeVersion"));
+			ikeConfig.setIkePfs(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkePfs"));
+			ikeConfig.setIkeAuthAlg(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IkeConfig.IkeAuthAlg"));
 			ipsecServer.setIkeConfig(ikeConfig);
 
 			IpsecConfig ipsecConfig = new IpsecConfig();
-			ipsecConfig.setIpsecEncAlg(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecConfig.IpsecEncAlg"));
 			ipsecConfig.setIpsecAuthAlg(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecConfig.IpsecAuthAlg"));
-			ipsecConfig.setIpsecPfs(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecConfig.IpsecPfs"));
 			ipsecConfig.setIpsecLifetime(_ctx.longValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecConfig.IpsecLifetime"));
+			ipsecConfig.setIpsecEncAlg(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecConfig.IpsecEncAlg"));
+			ipsecConfig.setIpsecPfs(_ctx.stringValue("ListIpsecServersResponse.IpsecServers["+ i +"].IpsecConfig.IpsecPfs"));
 			ipsecServer.setIpsecConfig(ipsecConfig);
 
 			ipsecServers.add(ipsecServer);

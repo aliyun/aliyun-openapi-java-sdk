@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVpnGatewayResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String vpnGatewayId;
+
+	private String requestId;
 
 	private String name;
 
 	private Long orderId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getVpnGatewayId() {
 		return this.vpnGatewayId;
@@ -46,6 +38,14 @@ public class CreateVpnGatewayResponse extends AcsResponse {
 
 	public void setVpnGatewayId(String vpnGatewayId) {
 		this.vpnGatewayId = vpnGatewayId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getName() {

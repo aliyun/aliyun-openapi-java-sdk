@@ -23,8 +23,8 @@ public class CreateRouterInterfaceResponseUnmarshaller {
 	public static CreateRouterInterfaceResponse unmarshall(CreateRouterInterfaceResponse createRouterInterfaceResponse, UnmarshallerContext _ctx) {
 		
 		createRouterInterfaceResponse.setRequestId(_ctx.stringValue("CreateRouterInterfaceResponse.RequestId"));
-		createRouterInterfaceResponse.setRouterInterfaceId(_ctx.stringValue("CreateRouterInterfaceResponse.RouterInterfaceId"));
 		createRouterInterfaceResponse.setOrderId(_ctx.longValue("CreateRouterInterfaceResponse.OrderId"));
+		createRouterInterfaceResponse.setRouterInterfaceId(_ctx.stringValue("CreateRouterInterfaceResponse.RouterInterfaceId"));
 	 
 	 	return createRouterInterfaceResponse;
 	}

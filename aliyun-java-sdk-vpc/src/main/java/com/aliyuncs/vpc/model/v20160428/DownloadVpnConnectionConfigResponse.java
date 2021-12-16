@@ -46,32 +46,24 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 	public static class VpnConnectionConfig {
 
-		private String localSubnet;
-
-		private String remoteSubnet;
+		private String remote;
 
 		private String local;
 
-		private String remote;
+		private String remoteSubnet;
+
+		private String localSubnet;
 
 		private IkeConfig ikeConfig;
 
 		private IpsecConfig ipsecConfig;
 
-		public String getLocalSubnet() {
-			return this.localSubnet;
+		public String getRemote() {
+			return this.remote;
 		}
 
-		public void setLocalSubnet(String localSubnet) {
-			this.localSubnet = localSubnet;
-		}
-
-		public String getRemoteSubnet() {
-			return this.remoteSubnet;
-		}
-
-		public void setRemoteSubnet(String remoteSubnet) {
-			this.remoteSubnet = remoteSubnet;
+		public void setRemote(String remote) {
+			this.remote = remote;
 		}
 
 		public String getLocal() {
@@ -82,12 +74,20 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 			this.local = local;
 		}
 
-		public String getRemote() {
-			return this.remote;
+		public String getRemoteSubnet() {
+			return this.remoteSubnet;
 		}
 
-		public void setRemote(String remote) {
-			this.remote = remote;
+		public void setRemoteSubnet(String remoteSubnet) {
+			this.remoteSubnet = remoteSubnet;
+		}
+
+		public String getLocalSubnet() {
+			return this.localSubnet;
+		}
+
+		public void setLocalSubnet(String localSubnet) {
+			this.localSubnet = localSubnet;
 		}
 
 		public IkeConfig getIkeConfig() {
@@ -108,70 +108,30 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 
 		public static class IkeConfig {
 
-			private String psk;
-
-			private String ikeVersion;
-
-			private String ikeMode;
-
-			private String ikeEncAlg;
-
-			private String ikeAuthAlg;
-
-			private String ikePfs;
+			private String remoteId;
 
 			private Long ikeLifetime;
 
+			private String ikeEncAlg;
+
 			private String localId;
 
-			private String remoteId;
+			private String ikeMode;
 
-			public String getPsk() {
-				return this.psk;
+			private String ikeVersion;
+
+			private String ikePfs;
+
+			private String psk;
+
+			private String ikeAuthAlg;
+
+			public String getRemoteId() {
+				return this.remoteId;
 			}
 
-			public void setPsk(String psk) {
-				this.psk = psk;
-			}
-
-			public String getIkeVersion() {
-				return this.ikeVersion;
-			}
-
-			public void setIkeVersion(String ikeVersion) {
-				this.ikeVersion = ikeVersion;
-			}
-
-			public String getIkeMode() {
-				return this.ikeMode;
-			}
-
-			public void setIkeMode(String ikeMode) {
-				this.ikeMode = ikeMode;
-			}
-
-			public String getIkeEncAlg() {
-				return this.ikeEncAlg;
-			}
-
-			public void setIkeEncAlg(String ikeEncAlg) {
-				this.ikeEncAlg = ikeEncAlg;
-			}
-
-			public String getIkeAuthAlg() {
-				return this.ikeAuthAlg;
-			}
-
-			public void setIkeAuthAlg(String ikeAuthAlg) {
-				this.ikeAuthAlg = ikeAuthAlg;
-			}
-
-			public String getIkePfs() {
-				return this.ikePfs;
-			}
-
-			public void setIkePfs(String ikePfs) {
-				this.ikePfs = ikePfs;
+			public void setRemoteId(String remoteId) {
+				this.remoteId = remoteId;
 			}
 
 			public Long getIkeLifetime() {
@@ -182,6 +142,14 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 				this.ikeLifetime = ikeLifetime;
 			}
 
+			public String getIkeEncAlg() {
+				return this.ikeEncAlg;
+			}
+
+			public void setIkeEncAlg(String ikeEncAlg) {
+				this.ikeEncAlg = ikeEncAlg;
+			}
+
 			public String getLocalId() {
 				return this.localId;
 			}
@@ -190,32 +158,56 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 				this.localId = localId;
 			}
 
-			public String getRemoteId() {
-				return this.remoteId;
+			public String getIkeMode() {
+				return this.ikeMode;
 			}
 
-			public void setRemoteId(String remoteId) {
-				this.remoteId = remoteId;
+			public void setIkeMode(String ikeMode) {
+				this.ikeMode = ikeMode;
+			}
+
+			public String getIkeVersion() {
+				return this.ikeVersion;
+			}
+
+			public void setIkeVersion(String ikeVersion) {
+				this.ikeVersion = ikeVersion;
+			}
+
+			public String getIkePfs() {
+				return this.ikePfs;
+			}
+
+			public void setIkePfs(String ikePfs) {
+				this.ikePfs = ikePfs;
+			}
+
+			public String getPsk() {
+				return this.psk;
+			}
+
+			public void setPsk(String psk) {
+				this.psk = psk;
+			}
+
+			public String getIkeAuthAlg() {
+				return this.ikeAuthAlg;
+			}
+
+			public void setIkeAuthAlg(String ikeAuthAlg) {
+				this.ikeAuthAlg = ikeAuthAlg;
 			}
 		}
 
 		public static class IpsecConfig {
 
-			private String ipsecEncAlg;
-
 			private String ipsecAuthAlg;
-
-			private String ipsecPfs;
 
 			private Long ipsecLifetime;
 
-			public String getIpsecEncAlg() {
-				return this.ipsecEncAlg;
-			}
+			private String ipsecEncAlg;
 
-			public void setIpsecEncAlg(String ipsecEncAlg) {
-				this.ipsecEncAlg = ipsecEncAlg;
-			}
+			private String ipsecPfs;
 
 			public String getIpsecAuthAlg() {
 				return this.ipsecAuthAlg;
@@ -225,20 +217,28 @@ public class DownloadVpnConnectionConfigResponse extends AcsResponse {
 				this.ipsecAuthAlg = ipsecAuthAlg;
 			}
 
-			public String getIpsecPfs() {
-				return this.ipsecPfs;
-			}
-
-			public void setIpsecPfs(String ipsecPfs) {
-				this.ipsecPfs = ipsecPfs;
-			}
-
 			public Long getIpsecLifetime() {
 				return this.ipsecLifetime;
 			}
 
 			public void setIpsecLifetime(Long ipsecLifetime) {
 				this.ipsecLifetime = ipsecLifetime;
+			}
+
+			public String getIpsecEncAlg() {
+				return this.ipsecEncAlg;
+			}
+
+			public void setIpsecEncAlg(String ipsecEncAlg) {
+				this.ipsecEncAlg = ipsecEncAlg;
+			}
+
+			public String getIpsecPfs() {
+				return this.ipsecPfs;
+			}
+
+			public void setIpsecPfs(String ipsecPfs) {
+				this.ipsecPfs = ipsecPfs;
 			}
 		}
 	}

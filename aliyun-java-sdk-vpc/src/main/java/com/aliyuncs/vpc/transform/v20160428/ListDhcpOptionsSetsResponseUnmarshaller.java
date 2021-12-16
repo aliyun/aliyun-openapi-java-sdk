@@ -33,12 +33,12 @@ public class ListDhcpOptionsSetsResponseUnmarshaller {
 		List<DhcpOptionsSet> dhcpOptionsSets = new ArrayList<DhcpOptionsSet>();
 		for (int i = 0; i < _ctx.lengthValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets.Length"); i++) {
 			DhcpOptionsSet dhcpOptionsSet = new DhcpOptionsSet();
-			dhcpOptionsSet.setDhcpOptionsSetName(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptionsSetName"));
 			dhcpOptionsSet.setDhcpOptionsSetDescription(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptionsSetDescription"));
-			dhcpOptionsSet.setOwnerId(_ctx.longValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].OwnerId"));
 			dhcpOptionsSet.setStatus(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].Status"));
 			dhcpOptionsSet.setDhcpOptionsSetId(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptionsSetId"));
+			dhcpOptionsSet.setDhcpOptionsSetName(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptionsSetName"));
 			dhcpOptionsSet.setAssociateVpcCount(_ctx.integerValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].AssociateVpcCount"));
+			dhcpOptionsSet.setOwnerId(_ctx.longValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].OwnerId"));
 
 			DhcpOptions dhcpOptions = new DhcpOptions();
 			dhcpOptions.setDomainNameServers(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.DomainNameServers"));

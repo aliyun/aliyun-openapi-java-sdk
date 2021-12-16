@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AllocateIpv6InternetBandwidthResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String ipv6AddressId;
 
+	private String requestId;
+
 	private String internetBandwidthId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getIpv6AddressId() {
 		return this.ipv6AddressId;
@@ -44,6 +36,14 @@ public class AllocateIpv6InternetBandwidthResponse extends AcsResponse {
 
 	public void setIpv6AddressId(String ipv6AddressId) {
 		this.ipv6AddressId = ipv6AddressId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getInternetBandwidthId() {

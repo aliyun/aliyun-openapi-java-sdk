@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTrafficMirrorServiceStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean enabled;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -42,6 +34,14 @@ public class GetTrafficMirrorServiceStatusResponse extends AcsResponse {
 
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private String totalCount;
 
 	private List<TrafficMirrorFilter> trafficMirrorFilters;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -47,6 +39,14 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTotalCount() {
@@ -67,24 +67,24 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 	public static class TrafficMirrorFilter {
 
-		private String trafficMirrorFilterName;
+		private String trafficMirrorFilterStatus;
 
 		private String trafficMirrorFilterDescription;
 
 		private String trafficMirrorFilterId;
 
-		private String trafficMirrorFilterStatus;
+		private String trafficMirrorFilterName;
 
 		private List<TrafficMirrorRule> ingressRules;
 
 		private List<TrafficMirrorRule> egressRules;
 
-		public String getTrafficMirrorFilterName() {
-			return this.trafficMirrorFilterName;
+		public String getTrafficMirrorFilterStatus() {
+			return this.trafficMirrorFilterStatus;
 		}
 
-		public void setTrafficMirrorFilterName(String trafficMirrorFilterName) {
-			this.trafficMirrorFilterName = trafficMirrorFilterName;
+		public void setTrafficMirrorFilterStatus(String trafficMirrorFilterStatus) {
+			this.trafficMirrorFilterStatus = trafficMirrorFilterStatus;
 		}
 
 		public String getTrafficMirrorFilterDescription() {
@@ -103,12 +103,12 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 			this.trafficMirrorFilterId = trafficMirrorFilterId;
 		}
 
-		public String getTrafficMirrorFilterStatus() {
-			return this.trafficMirrorFilterStatus;
+		public String getTrafficMirrorFilterName() {
+			return this.trafficMirrorFilterName;
 		}
 
-		public void setTrafficMirrorFilterStatus(String trafficMirrorFilterStatus) {
-			this.trafficMirrorFilterStatus = trafficMirrorFilterStatus;
+		public void setTrafficMirrorFilterName(String trafficMirrorFilterName) {
+			this.trafficMirrorFilterName = trafficMirrorFilterName;
 		}
 
 		public List<TrafficMirrorRule> getIngressRules() {
@@ -129,66 +129,34 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 		public static class TrafficMirrorRule {
 
-			private String trafficMirrorFilterRuleId;
-
-			private String trafficMirrorFilterId;
-
-			private String trafficDirection;
-
-			private Integer priority;
-
-			private String protocol;
+			private String trafficMirrorFilterRuleStatus;
 
 			private String action;
 
-			private String destinationCidrBlock;
+			private String sourceCidrBlock;
+
+			private String trafficDirection;
+
+			private String protocol;
 
 			private String destinationPortRange;
 
-			private String sourceCidrBlock;
+			private String trafficMirrorFilterRuleId;
+
+			private String destinationCidrBlock;
+
+			private Integer priority;
+
+			private String trafficMirrorFilterId;
 
 			private String sourcePortRange;
 
-			private String trafficMirrorFilterRuleStatus;
-
-			public String getTrafficMirrorFilterRuleId() {
-				return this.trafficMirrorFilterRuleId;
+			public String getTrafficMirrorFilterRuleStatus() {
+				return this.trafficMirrorFilterRuleStatus;
 			}
 
-			public void setTrafficMirrorFilterRuleId(String trafficMirrorFilterRuleId) {
-				this.trafficMirrorFilterRuleId = trafficMirrorFilterRuleId;
-			}
-
-			public String getTrafficMirrorFilterId() {
-				return this.trafficMirrorFilterId;
-			}
-
-			public void setTrafficMirrorFilterId(String trafficMirrorFilterId) {
-				this.trafficMirrorFilterId = trafficMirrorFilterId;
-			}
-
-			public String getTrafficDirection() {
-				return this.trafficDirection;
-			}
-
-			public void setTrafficDirection(String trafficDirection) {
-				this.trafficDirection = trafficDirection;
-			}
-
-			public Integer getPriority() {
-				return this.priority;
-			}
-
-			public void setPriority(Integer priority) {
-				this.priority = priority;
-			}
-
-			public String getBizProtocol() {
-				return this.protocol;
-			}
-
-			public void setBizProtocol(String protocol) {
-				this.protocol = protocol;
+			public void setTrafficMirrorFilterRuleStatus(String trafficMirrorFilterRuleStatus) {
+				this.trafficMirrorFilterRuleStatus = trafficMirrorFilterRuleStatus;
 			}
 
 			public String getAction() {
@@ -199,12 +167,28 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 				this.action = action;
 			}
 
-			public String getDestinationCidrBlock() {
-				return this.destinationCidrBlock;
+			public String getSourceCidrBlock() {
+				return this.sourceCidrBlock;
 			}
 
-			public void setDestinationCidrBlock(String destinationCidrBlock) {
-				this.destinationCidrBlock = destinationCidrBlock;
+			public void setSourceCidrBlock(String sourceCidrBlock) {
+				this.sourceCidrBlock = sourceCidrBlock;
+			}
+
+			public String getTrafficDirection() {
+				return this.trafficDirection;
+			}
+
+			public void setTrafficDirection(String trafficDirection) {
+				this.trafficDirection = trafficDirection;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
 			}
 
 			public String getDestinationPortRange() {
@@ -215,12 +199,36 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 				this.destinationPortRange = destinationPortRange;
 			}
 
-			public String getSourceCidrBlock() {
-				return this.sourceCidrBlock;
+			public String getTrafficMirrorFilterRuleId() {
+				return this.trafficMirrorFilterRuleId;
 			}
 
-			public void setSourceCidrBlock(String sourceCidrBlock) {
-				this.sourceCidrBlock = sourceCidrBlock;
+			public void setTrafficMirrorFilterRuleId(String trafficMirrorFilterRuleId) {
+				this.trafficMirrorFilterRuleId = trafficMirrorFilterRuleId;
+			}
+
+			public String getDestinationCidrBlock() {
+				return this.destinationCidrBlock;
+			}
+
+			public void setDestinationCidrBlock(String destinationCidrBlock) {
+				this.destinationCidrBlock = destinationCidrBlock;
+			}
+
+			public Integer getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(Integer priority) {
+				this.priority = priority;
+			}
+
+			public String getTrafficMirrorFilterId() {
+				return this.trafficMirrorFilterId;
+			}
+
+			public void setTrafficMirrorFilterId(String trafficMirrorFilterId) {
+				this.trafficMirrorFilterId = trafficMirrorFilterId;
 			}
 
 			public String getSourcePortRange() {
@@ -229,14 +237,6 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 			public void setSourcePortRange(String sourcePortRange) {
 				this.sourcePortRange = sourcePortRange;
-			}
-
-			public String getTrafficMirrorFilterRuleStatus() {
-				return this.trafficMirrorFilterRuleStatus;
-			}
-
-			public void setTrafficMirrorFilterRuleStatus(String trafficMirrorFilterRuleStatus) {
-				this.trafficMirrorFilterRuleStatus = trafficMirrorFilterRuleStatus;
 			}
 		}
 	}

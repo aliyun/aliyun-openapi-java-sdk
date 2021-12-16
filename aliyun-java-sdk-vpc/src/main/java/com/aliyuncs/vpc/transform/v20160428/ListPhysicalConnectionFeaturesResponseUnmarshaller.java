@@ -31,8 +31,8 @@ public class ListPhysicalConnectionFeaturesResponseUnmarshaller {
 		List<PhysicalConnectionFeature> physicalConnectionFeatures = new ArrayList<PhysicalConnectionFeature>();
 		for (int i = 0; i < _ctx.lengthValue("ListPhysicalConnectionFeaturesResponse.PhysicalConnectionFeatures.Length"); i++) {
 			PhysicalConnectionFeature physicalConnectionFeature = new PhysicalConnectionFeature();
-			physicalConnectionFeature.setFeatureKey(_ctx.stringValue("ListPhysicalConnectionFeaturesResponse.PhysicalConnectionFeatures["+ i +"].FeatureKey"));
 			physicalConnectionFeature.setFeatureValue(_ctx.stringValue("ListPhysicalConnectionFeaturesResponse.PhysicalConnectionFeatures["+ i +"].FeatureValue"));
+			physicalConnectionFeature.setFeatureKey(_ctx.stringValue("ListPhysicalConnectionFeaturesResponse.PhysicalConnectionFeatures["+ i +"].FeatureKey"));
 
 			physicalConnectionFeatures.add(physicalConnectionFeature);
 		}

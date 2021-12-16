@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpnCertificateAssociationsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private Integer maxResults;
+	private String requestId;
 
 	private Integer totalCount;
 
+	private Integer maxResults;
+
 	private List<VpnCertificateRelation> vpnCertificateRelations;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -51,12 +43,12 @@ public class ListVpnCertificateAssociationsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -65,6 +57,14 @@ public class ListVpnCertificateAssociationsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<VpnCertificateRelation> getVpnCertificateRelations() {
@@ -77,23 +77,15 @@ public class ListVpnCertificateAssociationsResponse extends AcsResponse {
 
 	public static class VpnCertificateRelation {
 
-		private String regionId;
-
 		private String vpnGatewayId;
-
-		private String certificateId;
 
 		private String certificateType;
 
+		private String certificateId;
+
 		private String associationTime;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public String getVpnGatewayId() {
 			return this.vpnGatewayId;
@@ -101,14 +93,6 @@ public class ListVpnCertificateAssociationsResponse extends AcsResponse {
 
 		public void setVpnGatewayId(String vpnGatewayId) {
 			this.vpnGatewayId = vpnGatewayId;
-		}
-
-		public String getCertificateId() {
-			return this.certificateId;
-		}
-
-		public void setCertificateId(String certificateId) {
-			this.certificateId = certificateId;
 		}
 
 		public String getCertificateType() {
@@ -119,12 +103,28 @@ public class ListVpnCertificateAssociationsResponse extends AcsResponse {
 			this.certificateType = certificateType;
 		}
 
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
+		}
+
 		public String getAssociationTime() {
 			return this.associationTime;
 		}
 
 		public void setAssociationTime(String associationTime) {
 			this.associationTime = associationTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

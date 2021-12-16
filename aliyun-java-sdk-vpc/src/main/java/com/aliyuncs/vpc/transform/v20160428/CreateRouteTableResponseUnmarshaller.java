@@ -24,6 +24,7 @@ public class CreateRouteTableResponseUnmarshaller {
 		
 		createRouteTableResponse.setRequestId(_ctx.stringValue("CreateRouteTableResponse.RequestId"));
 		createRouteTableResponse.setRouteTableId(_ctx.stringValue("CreateRouteTableResponse.RouteTableId"));
+		createRouteTableResponse.setAssociateType(_ctx.stringValue("CreateRouteTableResponse.AssociateType"));
 	 
 	 	return createRouteTableResponse;
 	}

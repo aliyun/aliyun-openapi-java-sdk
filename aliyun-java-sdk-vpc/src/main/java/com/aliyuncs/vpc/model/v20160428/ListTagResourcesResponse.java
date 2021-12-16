@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTagResourcesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<TagResource> tagResources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<TagResource> getTagResources() {
@@ -57,31 +57,15 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	public static class TagResource {
 
-		private String tagKey;
-
-		private String tagValue;
-
 		private String resourcId;
 
 		private String resourceType;
 
+		private String tagValue;
+
 		private String resourceId;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
-
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
-		}
+		private String tagKey;
 
 		public String getResourcId() {
 			return this.resourcId;
@@ -99,12 +83,28 @@ public class ListTagResourcesResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
+
 		public String getResourceId() {
 			return this.resourceId;
 		}
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

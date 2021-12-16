@@ -47,7 +47,6 @@ public class Endpoint {
             put("cn-hangzhou-internal-test-1", "vpc.aliyuncs.com");
             put("eu-west-1-oxs", "vpc-nebula.cn-shenzhen-cloudstone.aliyuncs.com");
             put("cn-zhangbei-na61-b01", "vpc.aliyuncs.com");
-            put("cn-beijing-finance-1", "vpc.aliyuncs.com");
             put("cn-hangzhou-internal-test-3", "vpc.aliyuncs.com");
             put("cn-shenzhen-finance-1", "vpc.aliyuncs.com");
             put("cn-hangzhou-internal-test-2", "vpc.aliyuncs.com");

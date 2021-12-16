@@ -113,7 +113,7 @@ public class ListFullNatEntriesResponse extends AcsResponse {
 
 		private String fullNatEntryName;
 
-		private String fullNatEntryDescribetion;
+		private String fullNatEntryDescription;
 
 		private String creationTime;
 
@@ -185,12 +185,12 @@ public class ListFullNatEntriesResponse extends AcsResponse {
 			this.fullNatEntryName = fullNatEntryName;
 		}
 
-		public String getFullNatEntryDescribetion() {
-			return this.fullNatEntryDescribetion;
+		public String getFullNatEntryDescription() {
+			return this.fullNatEntryDescription;
 		}
 
-		public void setFullNatEntryDescribetion(String fullNatEntryDescribetion) {
-			this.fullNatEntryDescribetion = fullNatEntryDescribetion;
+		public void setFullNatEntryDescription(String fullNatEntryDescription) {
+			this.fullNatEntryDescription = fullNatEntryDescription;
 		}
 
 		public String getCreationTime() {

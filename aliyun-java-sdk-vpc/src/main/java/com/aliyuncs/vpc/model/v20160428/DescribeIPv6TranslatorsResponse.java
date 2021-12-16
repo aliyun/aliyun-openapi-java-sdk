@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIPv6TranslatorsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Ipv6Translator> ipv6Translators;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeIPv6TranslatorsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeIPv6TranslatorsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Ipv6Translator> getIpv6Translators() {
@@ -77,27 +77,15 @@ public class DescribeIPv6TranslatorsResponse extends AcsResponse {
 
 	public static class Ipv6Translator {
 
-		private String ipv6TranslatorId;
-
-		private Long createTime;
-
-		private Long endTime;
+		private String status;
 
 		private String spec;
 
-		private String name;
-
-		private String description;
-
-		private String status;
-
-		private String businessStatus;
+		private Long createTime;
 
 		private String payType;
 
-		private Integer bandwidth;
-
-		private String allocateIpv6Addr;
+		private String ipv6TranslatorId;
 
 		private String allocateIpv4Addr;
 
@@ -105,30 +93,26 @@ public class DescribeIPv6TranslatorsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Long endTime;
+
+		private String description;
+
+		private Integer bandwidth;
+
+		private String businessStatus;
+
+		private String allocateIpv6Addr;
+
+		private String name;
+
 		private List<String> ipv6TranslatorEntryIds;
 
-		public String getIpv6TranslatorId() {
-			return this.ipv6TranslatorId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setIpv6TranslatorId(String ipv6TranslatorId) {
-			this.ipv6TranslatorId = ipv6TranslatorId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getSpec() {
@@ -139,36 +123,12 @@ public class DescribeIPv6TranslatorsResponse extends AcsResponse {
 			this.spec = spec;
 		}
 
-		public String getName() {
-			return this.name;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getPayType() {
@@ -179,20 +139,12 @@ public class DescribeIPv6TranslatorsResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
-		public Integer getBandwidth() {
-			return this.bandwidth;
+		public String getIpv6TranslatorId() {
+			return this.ipv6TranslatorId;
 		}
 
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getAllocateIpv6Addr() {
-			return this.allocateIpv6Addr;
-		}
-
-		public void setAllocateIpv6Addr(String allocateIpv6Addr) {
-			this.allocateIpv6Addr = allocateIpv6Addr;
+		public void setIpv6TranslatorId(String ipv6TranslatorId) {
+			this.ipv6TranslatorId = ipv6TranslatorId;
 		}
 
 		public String getAllocateIpv4Addr() {
@@ -217,6 +169,54 @@ public class DescribeIPv6TranslatorsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getAllocateIpv6Addr() {
+			return this.allocateIpv6Addr;
+		}
+
+		public void setAllocateIpv6Addr(String allocateIpv6Addr) {
+			this.allocateIpv6Addr = allocateIpv6Addr;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getIpv6TranslatorEntryIds() {

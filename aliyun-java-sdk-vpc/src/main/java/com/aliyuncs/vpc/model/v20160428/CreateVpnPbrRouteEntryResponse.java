@@ -24,19 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVpnPbrRouteEntryResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String vpnInstanceId;
-
-	private String routeSource;
-
-	private String routeDest;
-
 	private String nextHop;
 
 	private Integer weight;
 
-	private String overlayMode;
+	private String routeDest;
+
+	private String requestId;
 
 	private String description;
 
@@ -44,37 +38,11 @@ public class CreateVpnPbrRouteEntryResponse extends AcsResponse {
 
 	private Long createTime;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String overlayMode;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String routeSource;
 
-	public String getVpnInstanceId() {
-		return this.vpnInstanceId;
-	}
-
-	public void setVpnInstanceId(String vpnInstanceId) {
-		this.vpnInstanceId = vpnInstanceId;
-	}
-
-	public String getRouteSource() {
-		return this.routeSource;
-	}
-
-	public void setRouteSource(String routeSource) {
-		this.routeSource = routeSource;
-	}
-
-	public String getRouteDest() {
-		return this.routeDest;
-	}
-
-	public void setRouteDest(String routeDest) {
-		this.routeDest = routeDest;
-	}
+	private String vpnInstanceId;
 
 	public String getNextHop() {
 		return this.nextHop;
@@ -92,12 +60,20 @@ public class CreateVpnPbrRouteEntryResponse extends AcsResponse {
 		this.weight = weight;
 	}
 
-	public String getOverlayMode() {
-		return this.overlayMode;
+	public String getRouteDest() {
+		return this.routeDest;
 	}
 
-	public void setOverlayMode(String overlayMode) {
-		this.overlayMode = overlayMode;
+	public void setRouteDest(String routeDest) {
+		this.routeDest = routeDest;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDescription() {
@@ -122,6 +98,30 @@ public class CreateVpnPbrRouteEntryResponse extends AcsResponse {
 
 	public void setCreateTime(Long createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getOverlayMode() {
+		return this.overlayMode;
+	}
+
+	public void setOverlayMode(String overlayMode) {
+		this.overlayMode = overlayMode;
+	}
+
+	public String getRouteSource() {
+		return this.routeSource;
+	}
+
+	public void setRouteSource(String routeSource) {
+		this.routeSource = routeSource;
+	}
+
+	public String getVpnInstanceId() {
+		return this.vpnInstanceId;
+	}
+
+	public void setVpnInstanceId(String vpnInstanceId) {
+		this.vpnInstanceId = vpnInstanceId;
 	}
 
 	@Override

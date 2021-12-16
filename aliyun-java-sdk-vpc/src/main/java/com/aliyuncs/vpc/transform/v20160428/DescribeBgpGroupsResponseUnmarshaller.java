@@ -27,27 +27,27 @@ public class DescribeBgpGroupsResponseUnmarshaller {
 	public static DescribeBgpGroupsResponse unmarshall(DescribeBgpGroupsResponse describeBgpGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describeBgpGroupsResponse.setRequestId(_ctx.stringValue("DescribeBgpGroupsResponse.RequestId"));
-		describeBgpGroupsResponse.setTotalCount(_ctx.integerValue("DescribeBgpGroupsResponse.TotalCount"));
-		describeBgpGroupsResponse.setPageNumber(_ctx.integerValue("DescribeBgpGroupsResponse.PageNumber"));
 		describeBgpGroupsResponse.setPageSize(_ctx.integerValue("DescribeBgpGroupsResponse.PageSize"));
+		describeBgpGroupsResponse.setPageNumber(_ctx.integerValue("DescribeBgpGroupsResponse.PageNumber"));
+		describeBgpGroupsResponse.setTotalCount(_ctx.integerValue("DescribeBgpGroupsResponse.TotalCount"));
 
 		List<BgpGroup> bgpGroups = new ArrayList<BgpGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBgpGroupsResponse.BgpGroups.Length"); i++) {
 			BgpGroup bgpGroup = new BgpGroup();
-			bgpGroup.setName(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Name"));
-			bgpGroup.setDescription(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Description"));
-			bgpGroup.setBgpGroupId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].BgpGroupId"));
-			bgpGroup.setPeerAsn(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].PeerAsn"));
-			bgpGroup.setAuthKey(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].AuthKey"));
-			bgpGroup.setRouterId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouterId"));
 			bgpGroup.setStatus(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Status"));
-			bgpGroup.setKeepalive(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Keepalive"));
+			bgpGroup.setBgpGroupId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].BgpGroupId"));
+			bgpGroup.setRouterId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouterId"));
+			bgpGroup.setPeerAsn(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].PeerAsn"));
 			bgpGroup.setLocalAsn(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].LocalAsn"));
+			bgpGroup.setRegionId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RegionId"));
 			bgpGroup.setHold(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Hold"));
+			bgpGroup.setIpVersion(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].IpVersion"));
+			bgpGroup.setDescription(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Description"));
+			bgpGroup.setKeepalive(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Keepalive"));
 			bgpGroup.setIsFake(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].IsFake"));
 			bgpGroup.setRouteLimit(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouteLimit"));
-			bgpGroup.setRegionId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RegionId"));
-			bgpGroup.setIpVersion(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].IpVersion"));
+			bgpGroup.setName(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Name"));
+			bgpGroup.setAuthKey(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].AuthKey"));
 
 			bgpGroups.add(bgpGroup);
 		}

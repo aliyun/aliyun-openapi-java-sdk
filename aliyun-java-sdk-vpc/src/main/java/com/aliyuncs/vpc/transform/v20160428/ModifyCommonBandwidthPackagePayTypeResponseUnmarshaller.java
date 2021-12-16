@@ -23,9 +23,9 @@ public class ModifyCommonBandwidthPackagePayTypeResponseUnmarshaller {
 	public static ModifyCommonBandwidthPackagePayTypeResponse unmarshall(ModifyCommonBandwidthPackagePayTypeResponse modifyCommonBandwidthPackagePayTypeResponse, UnmarshallerContext _ctx) {
 		
 		modifyCommonBandwidthPackagePayTypeResponse.setRequestId(_ctx.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.RequestId"));
-		modifyCommonBandwidthPackagePayTypeResponse.setOrderId(_ctx.longValue("ModifyCommonBandwidthPackagePayTypeResponse.OrderId"));
 		modifyCommonBandwidthPackagePayTypeResponse.setCode(_ctx.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.Code"));
 		modifyCommonBandwidthPackagePayTypeResponse.setMessage(_ctx.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.Message"));
+		modifyCommonBandwidthPackagePayTypeResponse.setOrderId(_ctx.longValue("ModifyCommonBandwidthPackagePayTypeResponse.OrderId"));
 	 
 	 	return modifyCommonBandwidthPackagePayTypeResponse;
 	}

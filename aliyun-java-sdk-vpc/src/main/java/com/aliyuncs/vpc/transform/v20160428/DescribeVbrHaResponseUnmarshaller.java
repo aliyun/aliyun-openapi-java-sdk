@@ -23,14 +23,14 @@ public class DescribeVbrHaResponseUnmarshaller {
 	public static DescribeVbrHaResponse unmarshall(DescribeVbrHaResponse describeVbrHaResponse, UnmarshallerContext _ctx) {
 		
 		describeVbrHaResponse.setRequestId(_ctx.stringValue("DescribeVbrHaResponse.RequestId"));
-		describeVbrHaResponse.setVbrHaId(_ctx.stringValue("DescribeVbrHaResponse.VbrHaId"));
-		describeVbrHaResponse.setRegionId(_ctx.stringValue("DescribeVbrHaResponse.RegionId"));
-		describeVbrHaResponse.setName(_ctx.stringValue("DescribeVbrHaResponse.Name"));
-		describeVbrHaResponse.setDescription(_ctx.stringValue("DescribeVbrHaResponse.Description"));
-		describeVbrHaResponse.setStatus(_ctx.stringValue("DescribeVbrHaResponse.Status"));
-		describeVbrHaResponse.setVbrId(_ctx.stringValue("DescribeVbrHaResponse.VbrId"));
 		describeVbrHaResponse.setCreationTime(_ctx.stringValue("DescribeVbrHaResponse.CreationTime"));
+		describeVbrHaResponse.setStatus(_ctx.stringValue("DescribeVbrHaResponse.Status"));
+		describeVbrHaResponse.setDescription(_ctx.stringValue("DescribeVbrHaResponse.Description"));
+		describeVbrHaResponse.setVbrHaId(_ctx.stringValue("DescribeVbrHaResponse.VbrHaId"));
 		describeVbrHaResponse.setPeerVbrId(_ctx.stringValue("DescribeVbrHaResponse.PeerVbrId"));
+		describeVbrHaResponse.setName(_ctx.stringValue("DescribeVbrHaResponse.Name"));
+		describeVbrHaResponse.setVbrId(_ctx.stringValue("DescribeVbrHaResponse.VbrId"));
+		describeVbrHaResponse.setRegionId(_ctx.stringValue("DescribeVbrHaResponse.RegionId"));
 	 
 	 	return describeVbrHaResponse;
 	}

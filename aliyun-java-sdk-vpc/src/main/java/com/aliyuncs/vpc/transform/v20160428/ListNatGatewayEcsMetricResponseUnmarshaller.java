@@ -33,15 +33,15 @@ public class ListNatGatewayEcsMetricResponseUnmarshaller {
 		List<MetricData> metricDataList = new ArrayList<MetricData>();
 		for (int i = 0; i < _ctx.lengthValue("ListNatGatewayEcsMetricResponse.MetricDataList.Length"); i++) {
 			MetricData metricData = new MetricData();
-			metricData.setNatGatewayId(_ctx.stringValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].NatGatewayId"));
-			metricData.setPrivateIpAddress(_ctx.stringValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].PrivateIpAddress"));
-			metricData.setTimestamp(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].Timestamp"));
-			metricData.setActiveSessionNum(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].ActiveSessionNum"));
-			metricData.setNewSessionRate(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].NewSessionRate"));
 			metricData.setRxBps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].RxBps"));
+			metricData.setActiveSessionNum(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].ActiveSessionNum"));
 			metricData.setTxBps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].TxBps"));
-			metricData.setRxPps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].RxPps"));
+			metricData.setNewSessionRate(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].NewSessionRate"));
 			metricData.setTxPps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].TxPps"));
+			metricData.setNatGatewayId(_ctx.stringValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].NatGatewayId"));
+			metricData.setTimestamp(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].Timestamp"));
+			metricData.setRxPps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].RxPps"));
+			metricData.setPrivateIpAddress(_ctx.stringValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].PrivateIpAddress"));
 
 			metricDataList.add(metricData);
 		}

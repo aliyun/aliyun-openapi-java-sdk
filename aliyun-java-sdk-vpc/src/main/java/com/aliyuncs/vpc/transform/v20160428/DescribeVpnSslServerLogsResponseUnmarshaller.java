@@ -26,10 +26,10 @@ public class DescribeVpnSslServerLogsResponseUnmarshaller {
 	public static DescribeVpnSslServerLogsResponse unmarshall(DescribeVpnSslServerLogsResponse describeVpnSslServerLogsResponse, UnmarshallerContext _ctx) {
 		
 		describeVpnSslServerLogsResponse.setRequestId(_ctx.stringValue("DescribeVpnSslServerLogsResponse.RequestId"));
+		describeVpnSslServerLogsResponse.setPageSize(_ctx.integerValue("DescribeVpnSslServerLogsResponse.PageSize"));
+		describeVpnSslServerLogsResponse.setPageNumber(_ctx.integerValue("DescribeVpnSslServerLogsResponse.PageNumber"));
 		describeVpnSslServerLogsResponse.setCount(_ctx.integerValue("DescribeVpnSslServerLogsResponse.Count"));
 		describeVpnSslServerLogsResponse.setIsCompleted(_ctx.booleanValue("DescribeVpnSslServerLogsResponse.IsCompleted"));
-		describeVpnSslServerLogsResponse.setPageNumber(_ctx.integerValue("DescribeVpnSslServerLogsResponse.PageNumber"));
-		describeVpnSslServerLogsResponse.setPageSize(_ctx.integerValue("DescribeVpnSslServerLogsResponse.PageSize"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpnSslServerLogsResponse.Data.Length"); i++) {

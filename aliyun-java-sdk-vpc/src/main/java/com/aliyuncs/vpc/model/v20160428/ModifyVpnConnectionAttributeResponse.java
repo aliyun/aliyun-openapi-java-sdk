@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String vpnConnectionId;
-
-	private String customerGatewayId;
-
-	private String vpnGatewayId;
-
-	private String name;
-
-	private String description;
-
-	private String localSubnet;
-
-	private String remoteSubnet;
+	private Boolean enableNatTraversal;
 
 	private Long createTime;
 
 	private Boolean effectImmediately;
 
-	private Boolean enableDpd;
+	private String vpnGatewayId;
 
-	private Boolean enableNatTraversal;
+	private String localSubnet;
+
+	private String requestId;
+
+	private String vpnConnectionId;
+
+	private String description;
+
+	private String remoteSubnet;
+
+	private String customerGatewayId;
+
+	private String name;
+
+	private Boolean enableDpd;
 
 	private IkeConfig ikeConfig;
 
@@ -56,68 +56,12 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
 	private VpnBgpConfig vpnBgpConfig;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getEnableNatTraversal() {
+		return this.enableNatTraversal;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getVpnConnectionId() {
-		return this.vpnConnectionId;
-	}
-
-	public void setVpnConnectionId(String vpnConnectionId) {
-		this.vpnConnectionId = vpnConnectionId;
-	}
-
-	public String getCustomerGatewayId() {
-		return this.customerGatewayId;
-	}
-
-	public void setCustomerGatewayId(String customerGatewayId) {
-		this.customerGatewayId = customerGatewayId;
-	}
-
-	public String getVpnGatewayId() {
-		return this.vpnGatewayId;
-	}
-
-	public void setVpnGatewayId(String vpnGatewayId) {
-		this.vpnGatewayId = vpnGatewayId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getLocalSubnet() {
-		return this.localSubnet;
-	}
-
-	public void setLocalSubnet(String localSubnet) {
-		this.localSubnet = localSubnet;
-	}
-
-	public String getRemoteSubnet() {
-		return this.remoteSubnet;
-	}
-
-	public void setRemoteSubnet(String remoteSubnet) {
-		this.remoteSubnet = remoteSubnet;
+	public void setEnableNatTraversal(Boolean enableNatTraversal) {
+		this.enableNatTraversal = enableNatTraversal;
 	}
 
 	public Long getCreateTime() {
@@ -136,20 +80,76 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 		this.effectImmediately = effectImmediately;
 	}
 
+	public String getVpnGatewayId() {
+		return this.vpnGatewayId;
+	}
+
+	public void setVpnGatewayId(String vpnGatewayId) {
+		this.vpnGatewayId = vpnGatewayId;
+	}
+
+	public String getLocalSubnet() {
+		return this.localSubnet;
+	}
+
+	public void setLocalSubnet(String localSubnet) {
+		this.localSubnet = localSubnet;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getVpnConnectionId() {
+		return this.vpnConnectionId;
+	}
+
+	public void setVpnConnectionId(String vpnConnectionId) {
+		this.vpnConnectionId = vpnConnectionId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getRemoteSubnet() {
+		return this.remoteSubnet;
+	}
+
+	public void setRemoteSubnet(String remoteSubnet) {
+		this.remoteSubnet = remoteSubnet;
+	}
+
+	public String getCustomerGatewayId() {
+		return this.customerGatewayId;
+	}
+
+	public void setCustomerGatewayId(String customerGatewayId) {
+		this.customerGatewayId = customerGatewayId;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public Boolean getEnableDpd() {
 		return this.enableDpd;
 	}
 
 	public void setEnableDpd(Boolean enableDpd) {
 		this.enableDpd = enableDpd;
-	}
-
-	public Boolean getEnableNatTraversal() {
-		return this.enableNatTraversal;
-	}
-
-	public void setEnableNatTraversal(Boolean enableNatTraversal) {
-		this.enableNatTraversal = enableNatTraversal;
 	}
 
 	public IkeConfig getIkeConfig() {
@@ -186,70 +186,30 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
 	public static class IkeConfig {
 
-		private String psk;
-
-		private String ikeVersion;
-
-		private String ikeMode;
-
-		private String ikeEncAlg;
-
-		private String ikeAuthAlg;
-
-		private String ikePfs;
+		private String remoteId;
 
 		private Long ikeLifetime;
 
+		private String ikeEncAlg;
+
 		private String localId;
 
-		private String remoteId;
+		private String ikeMode;
 
-		public String getPsk() {
-			return this.psk;
+		private String ikeVersion;
+
+		private String ikePfs;
+
+		private String psk;
+
+		private String ikeAuthAlg;
+
+		public String getRemoteId() {
+			return this.remoteId;
 		}
 
-		public void setPsk(String psk) {
-			this.psk = psk;
-		}
-
-		public String getIkeVersion() {
-			return this.ikeVersion;
-		}
-
-		public void setIkeVersion(String ikeVersion) {
-			this.ikeVersion = ikeVersion;
-		}
-
-		public String getIkeMode() {
-			return this.ikeMode;
-		}
-
-		public void setIkeMode(String ikeMode) {
-			this.ikeMode = ikeMode;
-		}
-
-		public String getIkeEncAlg() {
-			return this.ikeEncAlg;
-		}
-
-		public void setIkeEncAlg(String ikeEncAlg) {
-			this.ikeEncAlg = ikeEncAlg;
-		}
-
-		public String getIkeAuthAlg() {
-			return this.ikeAuthAlg;
-		}
-
-		public void setIkeAuthAlg(String ikeAuthAlg) {
-			this.ikeAuthAlg = ikeAuthAlg;
-		}
-
-		public String getIkePfs() {
-			return this.ikePfs;
-		}
-
-		public void setIkePfs(String ikePfs) {
-			this.ikePfs = ikePfs;
+		public void setRemoteId(String remoteId) {
+			this.remoteId = remoteId;
 		}
 
 		public Long getIkeLifetime() {
@@ -260,6 +220,14 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 			this.ikeLifetime = ikeLifetime;
 		}
 
+		public String getIkeEncAlg() {
+			return this.ikeEncAlg;
+		}
+
+		public void setIkeEncAlg(String ikeEncAlg) {
+			this.ikeEncAlg = ikeEncAlg;
+		}
+
 		public String getLocalId() {
 			return this.localId;
 		}
@@ -268,32 +236,56 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 			this.localId = localId;
 		}
 
-		public String getRemoteId() {
-			return this.remoteId;
+		public String getIkeMode() {
+			return this.ikeMode;
 		}
 
-		public void setRemoteId(String remoteId) {
-			this.remoteId = remoteId;
+		public void setIkeMode(String ikeMode) {
+			this.ikeMode = ikeMode;
+		}
+
+		public String getIkeVersion() {
+			return this.ikeVersion;
+		}
+
+		public void setIkeVersion(String ikeVersion) {
+			this.ikeVersion = ikeVersion;
+		}
+
+		public String getIkePfs() {
+			return this.ikePfs;
+		}
+
+		public void setIkePfs(String ikePfs) {
+			this.ikePfs = ikePfs;
+		}
+
+		public String getPsk() {
+			return this.psk;
+		}
+
+		public void setPsk(String psk) {
+			this.psk = psk;
+		}
+
+		public String getIkeAuthAlg() {
+			return this.ikeAuthAlg;
+		}
+
+		public void setIkeAuthAlg(String ikeAuthAlg) {
+			this.ikeAuthAlg = ikeAuthAlg;
 		}
 	}
 
 	public static class IpsecConfig {
 
-		private String ipsecEncAlg;
-
 		private String ipsecAuthAlg;
-
-		private String ipsecPfs;
 
 		private Long ipsecLifetime;
 
-		public String getIpsecEncAlg() {
-			return this.ipsecEncAlg;
-		}
+		private String ipsecEncAlg;
 
-		public void setIpsecEncAlg(String ipsecEncAlg) {
-			this.ipsecEncAlg = ipsecEncAlg;
-		}
+		private String ipsecPfs;
 
 		public String getIpsecAuthAlg() {
 			return this.ipsecAuthAlg;
@@ -303,14 +295,6 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 			this.ipsecAuthAlg = ipsecAuthAlg;
 		}
 
-		public String getIpsecPfs() {
-			return this.ipsecPfs;
-		}
-
-		public void setIpsecPfs(String ipsecPfs) {
-			this.ipsecPfs = ipsecPfs;
-		}
-
 		public Long getIpsecLifetime() {
 			return this.ipsecLifetime;
 		}
@@ -318,13 +302,25 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 		public void setIpsecLifetime(Long ipsecLifetime) {
 			this.ipsecLifetime = ipsecLifetime;
 		}
+
+		public String getIpsecEncAlg() {
+			return this.ipsecEncAlg;
+		}
+
+		public void setIpsecEncAlg(String ipsecEncAlg) {
+			this.ipsecEncAlg = ipsecEncAlg;
+		}
+
+		public String getIpsecPfs() {
+			return this.ipsecPfs;
+		}
+
+		public void setIpsecPfs(String ipsecPfs) {
+			this.ipsecPfs = ipsecPfs;
+		}
 	}
 
 	public static class VcoHealthCheck {
-
-		private String enable;
-
-		private String sip;
 
 		private String dip;
 
@@ -332,21 +328,9 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 
 		private Integer retry;
 
-		public String getEnable() {
-			return this.enable;
-		}
+		private String sip;
 
-		public void setEnable(String enable) {
-			this.enable = enable;
-		}
-
-		public String getSip() {
-			return this.sip;
-		}
-
-		public void setSip(String sip) {
-			this.sip = sip;
-		}
+		private String enable;
 
 		public String getDip() {
 			return this.dip;
@@ -371,46 +355,46 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 		public void setRetry(Integer retry) {
 			this.retry = retry;
 		}
+
+		public String getSip() {
+			return this.sip;
+		}
+
+		public void setSip(String sip) {
+			this.sip = sip;
+		}
+
+		public String getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(String enable) {
+			this.enable = enable;
+		}
 	}
 
 	public static class VpnBgpConfig {
 
-		private String enableBgp;
-
-		private String tunnelCidr;
-
-		private String localBgpIp;
+		private String status;
 
 		private String peerBgpIp;
 
-		private Integer localAsn;
+		private String tunnelCidr;
+
+		private String enableBgp;
+
+		private String localBgpIp;
 
 		private Integer peerAsn;
 
-		private String status;
+		private Integer localAsn;
 
-		public String getEnableBgp() {
-			return this.enableBgp;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setEnableBgp(String enableBgp) {
-			this.enableBgp = enableBgp;
-		}
-
-		public String getTunnelCidr() {
-			return this.tunnelCidr;
-		}
-
-		public void setTunnelCidr(String tunnelCidr) {
-			this.tunnelCidr = tunnelCidr;
-		}
-
-		public String getLocalBgpIp() {
-			return this.localBgpIp;
-		}
-
-		public void setLocalBgpIp(String localBgpIp) {
-			this.localBgpIp = localBgpIp;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getPeerBgpIp() {
@@ -421,12 +405,28 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 			this.peerBgpIp = peerBgpIp;
 		}
 
-		public Integer getLocalAsn() {
-			return this.localAsn;
+		public String getTunnelCidr() {
+			return this.tunnelCidr;
 		}
 
-		public void setLocalAsn(Integer localAsn) {
-			this.localAsn = localAsn;
+		public void setTunnelCidr(String tunnelCidr) {
+			this.tunnelCidr = tunnelCidr;
+		}
+
+		public String getEnableBgp() {
+			return this.enableBgp;
+		}
+
+		public void setEnableBgp(String enableBgp) {
+			this.enableBgp = enableBgp;
+		}
+
+		public String getLocalBgpIp() {
+			return this.localBgpIp;
+		}
+
+		public void setLocalBgpIp(String localBgpIp) {
+			this.localBgpIp = localBgpIp;
 		}
 
 		public Integer getPeerAsn() {
@@ -437,12 +437,12 @@ public class ModifyVpnConnectionAttributeResponse extends AcsResponse {
 			this.peerAsn = peerAsn;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Integer getLocalAsn() {
+			return this.localAsn;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setLocalAsn(Integer localAsn) {
+			this.localAsn = localAsn;
 		}
 	}
 

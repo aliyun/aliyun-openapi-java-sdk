@@ -27,27 +27,27 @@ public class DescribeIPv6TranslatorsResponseUnmarshaller {
 	public static DescribeIPv6TranslatorsResponse unmarshall(DescribeIPv6TranslatorsResponse describeIPv6TranslatorsResponse, UnmarshallerContext _ctx) {
 		
 		describeIPv6TranslatorsResponse.setRequestId(_ctx.stringValue("DescribeIPv6TranslatorsResponse.RequestId"));
-		describeIPv6TranslatorsResponse.setTotalCount(_ctx.integerValue("DescribeIPv6TranslatorsResponse.TotalCount"));
-		describeIPv6TranslatorsResponse.setPageNumber(_ctx.integerValue("DescribeIPv6TranslatorsResponse.PageNumber"));
 		describeIPv6TranslatorsResponse.setPageSize(_ctx.integerValue("DescribeIPv6TranslatorsResponse.PageSize"));
+		describeIPv6TranslatorsResponse.setPageNumber(_ctx.integerValue("DescribeIPv6TranslatorsResponse.PageNumber"));
+		describeIPv6TranslatorsResponse.setTotalCount(_ctx.integerValue("DescribeIPv6TranslatorsResponse.TotalCount"));
 
 		List<Ipv6Translator> ipv6Translators = new ArrayList<Ipv6Translator>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIPv6TranslatorsResponse.Ipv6Translators.Length"); i++) {
 			Ipv6Translator ipv6Translator = new Ipv6Translator();
-			ipv6Translator.setIpv6TranslatorId(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Ipv6TranslatorId"));
-			ipv6Translator.setCreateTime(_ctx.longValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].CreateTime"));
-			ipv6Translator.setEndTime(_ctx.longValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].EndTime"));
-			ipv6Translator.setSpec(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Spec"));
-			ipv6Translator.setName(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Name"));
-			ipv6Translator.setDescription(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Description"));
 			ipv6Translator.setStatus(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Status"));
-			ipv6Translator.setBusinessStatus(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].BusinessStatus"));
+			ipv6Translator.setSpec(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Spec"));
+			ipv6Translator.setCreateTime(_ctx.longValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].CreateTime"));
 			ipv6Translator.setPayType(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].PayType"));
-			ipv6Translator.setBandwidth(_ctx.integerValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Bandwidth"));
-			ipv6Translator.setAllocateIpv6Addr(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].AllocateIpv6Addr"));
+			ipv6Translator.setIpv6TranslatorId(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Ipv6TranslatorId"));
 			ipv6Translator.setAllocateIpv4Addr(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].AllocateIpv4Addr"));
 			ipv6Translator.setAvailableBandwidth(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].AvailableBandwidth"));
 			ipv6Translator.setRegionId(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].RegionId"));
+			ipv6Translator.setEndTime(_ctx.longValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].EndTime"));
+			ipv6Translator.setDescription(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Description"));
+			ipv6Translator.setBandwidth(_ctx.integerValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Bandwidth"));
+			ipv6Translator.setBusinessStatus(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].BusinessStatus"));
+			ipv6Translator.setAllocateIpv6Addr(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].AllocateIpv6Addr"));
+			ipv6Translator.setName(_ctx.stringValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Name"));
 
 			List<String> ipv6TranslatorEntryIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeIPv6TranslatorsResponse.Ipv6Translators["+ i +"].Ipv6TranslatorEntryIds.Length"); j++) {

@@ -77,86 +77,94 @@ public class DescribeExpressCloudConnectionsResponse extends AcsResponse {
 
 	public static class ExpressCloudConnectionType {
 
-		private String instanceId;
+		private String reservationActiveTime;
+
+		private String type;
 
 		private String status;
 
-		private String name;
+		private String reservationOrderType;
+
+		private Integer distance;
+
+		private String constructionPeriod;
+
+		private String chargeType;
+
+		private String applicationBandwidth;
+
+		private String ceIp;
+
+		private String bgpAs;
+
+		private String iDCardNo;
+
+		private String reservationInternetChargeType;
+
+		private Integer bandwidth;
 
 		private String description;
 
-		private String gmtCreate;
+		private String reservationBandwidth;
 
-		private String gmtModify;
+		private String applicationStatus;
 
 		private String peerCity;
 
 		private String peerLocation;
 
-		private String portType;
-
-		private Integer bandwidth;
-
-		private Integer distance;
-
-		private String redundantEccId;
-
-		private String circuitCode;
-
-		private String isp;
-
-		private String type;
-
-		private String idcSP;
-
-		private String businessStatus;
-
-		private String hasReservationData;
-
-		private String reservationBandwidth;
-
-		private String reservationInternetChargeType;
-
-		private String reservationActiveTime;
-
-		private String reservationOrderType;
-
-		private String applicationType;
-
-		private String applicationId;
-
-		private String applicationStatus;
-
-		private String applicationBandwidth;
-
-		private String endTime;
-
-		private String chargeType;
-
-		private String contactTel;
-
-		private String contactMail;
-
-		private String iDCardNo;
-
-		private String estimatedTime;
-
-		private String bgpAs;
+		private String name;
 
 		private String peIp;
 
-		private String ceIp;
+		private String contactMail;
 
-		private String constructionPeriod;
+		private String gmtModify;
+
+		private String circuitCode;
+
+		private String applicationType;
+
+		private String instanceId;
+
+		private String redundantEccId;
+
+		private String isp;
+
+		private String endTime;
+
+		private String contactTel;
+
+		private String idcSP;
+
+		private String estimatedTime;
+
+		private String portType;
+
+		private String gmtCreate;
+
+		private String businessStatus;
+
+		private String applicationId;
+
+		private String hasReservationData;
 
 		private List<VirtualBorderRouterModel> virtualBorderRouterModels;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getStatus() {
@@ -167,12 +175,84 @@ public class DescribeExpressCloudConnectionsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
+		}
+
+		public Integer getDistance() {
+			return this.distance;
+		}
+
+		public void setDistance(Integer distance) {
+			this.distance = distance;
+		}
+
+		public String getConstructionPeriod() {
+			return this.constructionPeriod;
+		}
+
+		public void setConstructionPeriod(String constructionPeriod) {
+			this.constructionPeriod = constructionPeriod;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getApplicationBandwidth() {
+			return this.applicationBandwidth;
+		}
+
+		public void setApplicationBandwidth(String applicationBandwidth) {
+			this.applicationBandwidth = applicationBandwidth;
+		}
+
+		public String getCeIp() {
+			return this.ceIp;
+		}
+
+		public void setCeIp(String ceIp) {
+			this.ceIp = ceIp;
+		}
+
+		public String getBgpAs() {
+			return this.bgpAs;
+		}
+
+		public void setBgpAs(String bgpAs) {
+			this.bgpAs = bgpAs;
+		}
+
+		public String getIDCardNo() {
+			return this.iDCardNo;
+		}
+
+		public void setIDCardNo(String iDCardNo) {
+			this.iDCardNo = iDCardNo;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
 		}
 
 		public String getDescription() {
@@ -183,20 +263,20 @@ public class DescribeExpressCloudConnectionsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getReservationBandwidth() {
+			return this.reservationBandwidth;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setReservationBandwidth(String reservationBandwidth) {
+			this.reservationBandwidth = reservationBandwidth;
 		}
 
-		public String getGmtModify() {
-			return this.gmtModify;
+		public String getApplicationStatus() {
+			return this.applicationStatus;
 		}
 
-		public void setGmtModify(String gmtModify) {
-			this.gmtModify = gmtModify;
+		public void setApplicationStatus(String applicationStatus) {
+			this.applicationStatus = applicationStatus;
 		}
 
 		public String getPeerCity() {
@@ -215,204 +295,12 @@ public class DescribeExpressCloudConnectionsResponse extends AcsResponse {
 			this.peerLocation = peerLocation;
 		}
 
-		public String getPortType() {
-			return this.portType;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setPortType(String portType) {
-			this.portType = portType;
-		}
-
-		public Integer getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public Integer getDistance() {
-			return this.distance;
-		}
-
-		public void setDistance(Integer distance) {
-			this.distance = distance;
-		}
-
-		public String getRedundantEccId() {
-			return this.redundantEccId;
-		}
-
-		public void setRedundantEccId(String redundantEccId) {
-			this.redundantEccId = redundantEccId;
-		}
-
-		public String getCircuitCode() {
-			return this.circuitCode;
-		}
-
-		public void setCircuitCode(String circuitCode) {
-			this.circuitCode = circuitCode;
-		}
-
-		public String getIsp() {
-			return this.isp;
-		}
-
-		public void setIsp(String isp) {
-			this.isp = isp;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getIdcSP() {
-			return this.idcSP;
-		}
-
-		public void setIdcSP(String idcSP) {
-			this.idcSP = idcSP;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
-		}
-
-		public String getHasReservationData() {
-			return this.hasReservationData;
-		}
-
-		public void setHasReservationData(String hasReservationData) {
-			this.hasReservationData = hasReservationData;
-		}
-
-		public String getReservationBandwidth() {
-			return this.reservationBandwidth;
-		}
-
-		public void setReservationBandwidth(String reservationBandwidth) {
-			this.reservationBandwidth = reservationBandwidth;
-		}
-
-		public String getReservationInternetChargeType() {
-			return this.reservationInternetChargeType;
-		}
-
-		public void setReservationInternetChargeType(String reservationInternetChargeType) {
-			this.reservationInternetChargeType = reservationInternetChargeType;
-		}
-
-		public String getReservationActiveTime() {
-			return this.reservationActiveTime;
-		}
-
-		public void setReservationActiveTime(String reservationActiveTime) {
-			this.reservationActiveTime = reservationActiveTime;
-		}
-
-		public String getReservationOrderType() {
-			return this.reservationOrderType;
-		}
-
-		public void setReservationOrderType(String reservationOrderType) {
-			this.reservationOrderType = reservationOrderType;
-		}
-
-		public String getApplicationType() {
-			return this.applicationType;
-		}
-
-		public void setApplicationType(String applicationType) {
-			this.applicationType = applicationType;
-		}
-
-		public String getApplicationId() {
-			return this.applicationId;
-		}
-
-		public void setApplicationId(String applicationId) {
-			this.applicationId = applicationId;
-		}
-
-		public String getApplicationStatus() {
-			return this.applicationStatus;
-		}
-
-		public void setApplicationStatus(String applicationStatus) {
-			this.applicationStatus = applicationStatus;
-		}
-
-		public String getApplicationBandwidth() {
-			return this.applicationBandwidth;
-		}
-
-		public void setApplicationBandwidth(String applicationBandwidth) {
-			this.applicationBandwidth = applicationBandwidth;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getContactTel() {
-			return this.contactTel;
-		}
-
-		public void setContactTel(String contactTel) {
-			this.contactTel = contactTel;
-		}
-
-		public String getContactMail() {
-			return this.contactMail;
-		}
-
-		public void setContactMail(String contactMail) {
-			this.contactMail = contactMail;
-		}
-
-		public String getIDCardNo() {
-			return this.iDCardNo;
-		}
-
-		public void setIDCardNo(String iDCardNo) {
-			this.iDCardNo = iDCardNo;
-		}
-
-		public String getEstimatedTime() {
-			return this.estimatedTime;
-		}
-
-		public void setEstimatedTime(String estimatedTime) {
-			this.estimatedTime = estimatedTime;
-		}
-
-		public String getBgpAs() {
-			return this.bgpAs;
-		}
-
-		public void setBgpAs(String bgpAs) {
-			this.bgpAs = bgpAs;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getPeIp() {
@@ -423,20 +311,132 @@ public class DescribeExpressCloudConnectionsResponse extends AcsResponse {
 			this.peIp = peIp;
 		}
 
-		public String getCeIp() {
-			return this.ceIp;
+		public String getContactMail() {
+			return this.contactMail;
 		}
 
-		public void setCeIp(String ceIp) {
-			this.ceIp = ceIp;
+		public void setContactMail(String contactMail) {
+			this.contactMail = contactMail;
 		}
 
-		public String getConstructionPeriod() {
-			return this.constructionPeriod;
+		public String getGmtModify() {
+			return this.gmtModify;
 		}
 
-		public void setConstructionPeriod(String constructionPeriod) {
-			this.constructionPeriod = constructionPeriod;
+		public void setGmtModify(String gmtModify) {
+			this.gmtModify = gmtModify;
+		}
+
+		public String getCircuitCode() {
+			return this.circuitCode;
+		}
+
+		public void setCircuitCode(String circuitCode) {
+			this.circuitCode = circuitCode;
+		}
+
+		public String getApplicationType() {
+			return this.applicationType;
+		}
+
+		public void setApplicationType(String applicationType) {
+			this.applicationType = applicationType;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRedundantEccId() {
+			return this.redundantEccId;
+		}
+
+		public void setRedundantEccId(String redundantEccId) {
+			this.redundantEccId = redundantEccId;
+		}
+
+		public String getIsp() {
+			return this.isp;
+		}
+
+		public void setIsp(String isp) {
+			this.isp = isp;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getContactTel() {
+			return this.contactTel;
+		}
+
+		public void setContactTel(String contactTel) {
+			this.contactTel = contactTel;
+		}
+
+		public String getIdcSP() {
+			return this.idcSP;
+		}
+
+		public void setIdcSP(String idcSP) {
+			this.idcSP = idcSP;
+		}
+
+		public String getEstimatedTime() {
+			return this.estimatedTime;
+		}
+
+		public void setEstimatedTime(String estimatedTime) {
+			this.estimatedTime = estimatedTime;
+		}
+
+		public String getPortType() {
+			return this.portType;
+		}
+
+		public void setPortType(String portType) {
+			this.portType = portType;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getApplicationId() {
+			return this.applicationId;
+		}
+
+		public void setApplicationId(String applicationId) {
+			this.applicationId = applicationId;
+		}
+
+		public String getHasReservationData() {
+			return this.hasReservationData;
+		}
+
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
 		}
 
 		public List<VirtualBorderRouterModel> getVirtualBorderRouterModels() {

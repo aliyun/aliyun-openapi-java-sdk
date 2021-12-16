@@ -26,9 +26,9 @@ public class AllocateEipSegmentAddressResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String eipSegmentInstanceId;
-
 	private Long orderId;
+
+	private String eipSegmentInstanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class AllocateEipSegmentAddressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getEipSegmentInstanceId() {
-		return this.eipSegmentInstanceId;
-	}
-
-	public void setEipSegmentInstanceId(String eipSegmentInstanceId) {
-		this.eipSegmentInstanceId = eipSegmentInstanceId;
-	}
-
 	public Long getOrderId() {
 		return this.orderId;
 	}
 
 	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getEipSegmentInstanceId() {
+		return this.eipSegmentInstanceId;
+	}
+
+	public void setEipSegmentInstanceId(String eipSegmentInstanceId) {
+		this.eipSegmentInstanceId = eipSegmentInstanceId;
 	}
 
 	@Override

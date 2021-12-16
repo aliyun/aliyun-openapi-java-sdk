@@ -23,8 +23,8 @@ public class AllocateEipSegmentAddressResponseUnmarshaller {
 	public static AllocateEipSegmentAddressResponse unmarshall(AllocateEipSegmentAddressResponse allocateEipSegmentAddressResponse, UnmarshallerContext _ctx) {
 		
 		allocateEipSegmentAddressResponse.setRequestId(_ctx.stringValue("AllocateEipSegmentAddressResponse.RequestId"));
-		allocateEipSegmentAddressResponse.setEipSegmentInstanceId(_ctx.stringValue("AllocateEipSegmentAddressResponse.EipSegmentInstanceId"));
 		allocateEipSegmentAddressResponse.setOrderId(_ctx.longValue("AllocateEipSegmentAddressResponse.OrderId"));
+		allocateEipSegmentAddressResponse.setEipSegmentInstanceId(_ctx.stringValue("AllocateEipSegmentAddressResponse.EipSegmentInstanceId"));
 	 
 	 	return allocateEipSegmentAddressResponse;
 	}

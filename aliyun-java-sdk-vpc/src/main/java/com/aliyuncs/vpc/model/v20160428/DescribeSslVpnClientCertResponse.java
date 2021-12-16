@@ -24,100 +24,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSslVpnClientCertResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String regionId;
-
-	private String sslVpnClientCertId;
-
-	private String name;
-
-	private String sslVpnServerId;
-
-	private String caCert;
-
-	private String clientCert;
-
-	private String clientKey;
-
-	private String clientConfig;
+	private String status;
 
 	private Long createTime;
 
+	private String clientKey;
+
+	private String regionId;
+
+	private String clientConfig;
+
 	private Long endTime;
 
-	private String status;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String clientCert;
+
+	private String caCert;
+
+	private String sslVpnClientCertId;
+
+	private String sslVpnServerId;
+
+	private String name;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getSslVpnClientCertId() {
-		return this.sslVpnClientCertId;
-	}
-
-	public void setSslVpnClientCertId(String sslVpnClientCertId) {
-		this.sslVpnClientCertId = sslVpnClientCertId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSslVpnServerId() {
-		return this.sslVpnServerId;
-	}
-
-	public void setSslVpnServerId(String sslVpnServerId) {
-		this.sslVpnServerId = sslVpnServerId;
-	}
-
-	public String getCaCert() {
-		return this.caCert;
-	}
-
-	public void setCaCert(String caCert) {
-		this.caCert = caCert;
-	}
-
-	public String getClientCert() {
-		return this.clientCert;
-	}
-
-	public void setClientCert(String clientCert) {
-		this.clientCert = clientCert;
-	}
-
-	public String getClientKey() {
-		return this.clientKey;
-	}
-
-	public void setClientKey(String clientKey) {
-		this.clientKey = clientKey;
-	}
-
-	public String getClientConfig() {
-		return this.clientConfig;
-	}
-
-	public void setClientConfig(String clientConfig) {
-		this.clientConfig = clientConfig;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public Long getCreateTime() {
@@ -128,6 +64,30 @@ public class DescribeSslVpnClientCertResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
+	public String getClientKey() {
+		return this.clientKey;
+	}
+
+	public void setClientKey(String clientKey) {
+		this.clientKey = clientKey;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getClientConfig() {
+		return this.clientConfig;
+	}
+
+	public void setClientConfig(String clientConfig) {
+		this.clientConfig = clientConfig;
+	}
+
 	public Long getEndTime() {
 		return this.endTime;
 	}
@@ -136,12 +96,52 @@ public class DescribeSslVpnClientCertResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getClientCert() {
+		return this.clientCert;
+	}
+
+	public void setClientCert(String clientCert) {
+		this.clientCert = clientCert;
+	}
+
+	public String getCaCert() {
+		return this.caCert;
+	}
+
+	public void setCaCert(String caCert) {
+		this.caCert = caCert;
+	}
+
+	public String getSslVpnClientCertId() {
+		return this.sslVpnClientCertId;
+	}
+
+	public void setSslVpnClientCertId(String sslVpnClientCertId) {
+		this.sslVpnClientCertId = sslVpnClientCertId;
+	}
+
+	public String getSslVpnServerId() {
+		return this.sslVpnServerId;
+	}
+
+	public void setSslVpnServerId(String sslVpnServerId) {
+		this.sslVpnServerId = sslVpnServerId;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

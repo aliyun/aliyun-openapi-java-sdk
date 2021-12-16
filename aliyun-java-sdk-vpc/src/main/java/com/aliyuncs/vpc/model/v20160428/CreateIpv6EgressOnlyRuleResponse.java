@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateIpv6EgressOnlyRuleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String ipv6EgressRuleId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getIpv6EgressRuleId() {
 		return this.ipv6EgressRuleId;
@@ -42,6 +34,14 @@ public class CreateIpv6EgressOnlyRuleResponse extends AcsResponse {
 
 	public void setIpv6EgressRuleId(String ipv6EgressRuleId) {
 		this.ipv6EgressRuleId = ipv6EgressRuleId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

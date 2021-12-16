@@ -27,37 +27,37 @@ public class DescribeHaVipsResponseUnmarshaller {
 	public static DescribeHaVipsResponse unmarshall(DescribeHaVipsResponse describeHaVipsResponse, UnmarshallerContext _ctx) {
 		
 		describeHaVipsResponse.setRequestId(_ctx.stringValue("DescribeHaVipsResponse.RequestId"));
-		describeHaVipsResponse.setTotalCount(_ctx.integerValue("DescribeHaVipsResponse.TotalCount"));
-		describeHaVipsResponse.setPageNumber(_ctx.integerValue("DescribeHaVipsResponse.PageNumber"));
 		describeHaVipsResponse.setPageSize(_ctx.integerValue("DescribeHaVipsResponse.PageSize"));
+		describeHaVipsResponse.setPageNumber(_ctx.integerValue("DescribeHaVipsResponse.PageNumber"));
+		describeHaVipsResponse.setTotalCount(_ctx.integerValue("DescribeHaVipsResponse.TotalCount"));
 
 		List<HaVip> haVips = new ArrayList<HaVip>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHaVipsResponse.HaVips.Length"); i++) {
 			HaVip haVip = new HaVip();
-			haVip.setHaVipId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].HaVipId"));
-			haVip.setRegionId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].RegionId"));
 			haVip.setVpcId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].VpcId"));
+			haVip.setStatus(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Status"));
+			haVip.setHaVipId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].HaVipId"));
+			haVip.setAssociatedInstanceType(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstanceType"));
+			haVip.setCreateTime(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].CreateTime"));
+			haVip.setChargeType(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].ChargeType"));
+			haVip.setRegionId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].RegionId"));
 			haVip.setVSwitchId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].VSwitchId"));
 			haVip.setIpAddress(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].IpAddress"));
-			haVip.setStatus(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Status"));
-			haVip.setMasterInstanceId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].MasterInstanceId"));
 			haVip.setDescription(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Description"));
+			haVip.setMasterInstanceId(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].MasterInstanceId"));
 			haVip.setName(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Name"));
-			haVip.setChargeType(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].ChargeType"));
-			haVip.setCreateTime(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].CreateTime"));
-			haVip.setAssociatedInstanceType(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstanceType"));
-
-			List<String> associatedInstances = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstances.Length"); j++) {
-				associatedInstances.add(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstances["+ j +"]"));
-			}
-			haVip.setAssociatedInstances(associatedInstances);
 
 			List<String> associatedEipAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedEipAddresses.Length"); j++) {
 				associatedEipAddresses.add(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedEipAddresses["+ j +"]"));
 			}
 			haVip.setAssociatedEipAddresses(associatedEipAddresses);
+
+			List<String> associatedInstances = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstances.Length"); j++) {
+				associatedInstances.add(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstances["+ j +"]"));
+			}
+			haVip.setAssociatedInstances(associatedInstances);
 
 			haVips.add(haVip);
 		}

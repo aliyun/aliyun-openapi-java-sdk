@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private String totalCount;
 
 	private List<TrafficMirrorSession> trafficMirrorSessions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -47,6 +39,14 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTotalCount() {
@@ -67,46 +67,38 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 
 	public static class TrafficMirrorSession {
 
-		private String trafficMirrorSessionName;
-
-		private String trafficMirrorSessionDescription;
+		private String trafficMirrorTargetId;
 
 		private String trafficMirrorSessionId;
 
-		private String trafficMirrorSessionStatus;
-
-		private String trafficMirrorTargetId;
+		private Integer priority;
 
 		private String trafficMirrorTargetType;
 
-		private String trafficMirrorFilterId;
+		private Integer packetLength;
 
-		private Integer virtualNetworkId;
+		private String trafficMirrorSessionDescription;
 
-		private Integer priority;
+		private String trafficMirrorSessionStatus;
 
 		private Boolean enabled;
 
-		private Integer packetLength;
-
 		private String trafficMirrorSessionBusinessStatus;
+
+		private Integer virtualNetworkId;
+
+		private String trafficMirrorFilterId;
+
+		private String trafficMirrorSessionName;
 
 		private List<String> trafficMirrorSourceIds;
 
-		public String getTrafficMirrorSessionName() {
-			return this.trafficMirrorSessionName;
+		public String getTrafficMirrorTargetId() {
+			return this.trafficMirrorTargetId;
 		}
 
-		public void setTrafficMirrorSessionName(String trafficMirrorSessionName) {
-			this.trafficMirrorSessionName = trafficMirrorSessionName;
-		}
-
-		public String getTrafficMirrorSessionDescription() {
-			return this.trafficMirrorSessionDescription;
-		}
-
-		public void setTrafficMirrorSessionDescription(String trafficMirrorSessionDescription) {
-			this.trafficMirrorSessionDescription = trafficMirrorSessionDescription;
+		public void setTrafficMirrorTargetId(String trafficMirrorTargetId) {
+			this.trafficMirrorTargetId = trafficMirrorTargetId;
 		}
 
 		public String getTrafficMirrorSessionId() {
@@ -117,20 +109,12 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 			this.trafficMirrorSessionId = trafficMirrorSessionId;
 		}
 
-		public String getTrafficMirrorSessionStatus() {
-			return this.trafficMirrorSessionStatus;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setTrafficMirrorSessionStatus(String trafficMirrorSessionStatus) {
-			this.trafficMirrorSessionStatus = trafficMirrorSessionStatus;
-		}
-
-		public String getTrafficMirrorTargetId() {
-			return this.trafficMirrorTargetId;
-		}
-
-		public void setTrafficMirrorTargetId(String trafficMirrorTargetId) {
-			this.trafficMirrorTargetId = trafficMirrorTargetId;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 
 		public String getTrafficMirrorTargetType() {
@@ -141,28 +125,28 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 			this.trafficMirrorTargetType = trafficMirrorTargetType;
 		}
 
-		public String getTrafficMirrorFilterId() {
-			return this.trafficMirrorFilterId;
+		public Integer getPacketLength() {
+			return this.packetLength;
 		}
 
-		public void setTrafficMirrorFilterId(String trafficMirrorFilterId) {
-			this.trafficMirrorFilterId = trafficMirrorFilterId;
+		public void setPacketLength(Integer packetLength) {
+			this.packetLength = packetLength;
 		}
 
-		public Integer getVirtualNetworkId() {
-			return this.virtualNetworkId;
+		public String getTrafficMirrorSessionDescription() {
+			return this.trafficMirrorSessionDescription;
 		}
 
-		public void setVirtualNetworkId(Integer virtualNetworkId) {
-			this.virtualNetworkId = virtualNetworkId;
+		public void setTrafficMirrorSessionDescription(String trafficMirrorSessionDescription) {
+			this.trafficMirrorSessionDescription = trafficMirrorSessionDescription;
 		}
 
-		public Integer getPriority() {
-			return this.priority;
+		public String getTrafficMirrorSessionStatus() {
+			return this.trafficMirrorSessionStatus;
 		}
 
-		public void setPriority(Integer priority) {
-			this.priority = priority;
+		public void setTrafficMirrorSessionStatus(String trafficMirrorSessionStatus) {
+			this.trafficMirrorSessionStatus = trafficMirrorSessionStatus;
 		}
 
 		public Boolean getEnabled() {
@@ -173,20 +157,36 @@ public class ListTrafficMirrorSessionsResponse extends AcsResponse {
 			this.enabled = enabled;
 		}
 
-		public Integer getPacketLength() {
-			return this.packetLength;
-		}
-
-		public void setPacketLength(Integer packetLength) {
-			this.packetLength = packetLength;
-		}
-
 		public String getTrafficMirrorSessionBusinessStatus() {
 			return this.trafficMirrorSessionBusinessStatus;
 		}
 
 		public void setTrafficMirrorSessionBusinessStatus(String trafficMirrorSessionBusinessStatus) {
 			this.trafficMirrorSessionBusinessStatus = trafficMirrorSessionBusinessStatus;
+		}
+
+		public Integer getVirtualNetworkId() {
+			return this.virtualNetworkId;
+		}
+
+		public void setVirtualNetworkId(Integer virtualNetworkId) {
+			this.virtualNetworkId = virtualNetworkId;
+		}
+
+		public String getTrafficMirrorFilterId() {
+			return this.trafficMirrorFilterId;
+		}
+
+		public void setTrafficMirrorFilterId(String trafficMirrorFilterId) {
+			this.trafficMirrorFilterId = trafficMirrorFilterId;
+		}
+
+		public String getTrafficMirrorSessionName() {
+			return this.trafficMirrorSessionName;
+		}
+
+		public void setTrafficMirrorSessionName(String trafficMirrorSessionName) {
+			this.trafficMirrorSessionName = trafficMirrorSessionName;
 		}
 
 		public List<String> getTrafficMirrorSourceIds() {

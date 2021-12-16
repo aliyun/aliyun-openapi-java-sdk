@@ -34,28 +34,28 @@ public class DescribeRouteEntryListResponseUnmarshaller {
 		List<RouteEntry> routeEntrys = new ArrayList<RouteEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRouteEntryListResponse.RouteEntrys.Length"); i++) {
 			RouteEntry routeEntry = new RouteEntry();
-			routeEntry.setRouteTableId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteTableId"));
-			routeEntry.setDestinationCidrBlock(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].DestinationCidrBlock"));
-			routeEntry.setType(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Type"));
-			routeEntry.setRouteEntryId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteEntryId"));
-			routeEntry.setRouteEntryName(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteEntryName"));
-			routeEntry.setDescription(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Description"));
 			routeEntry.setStatus(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Status"));
+			routeEntry.setType(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Type"));
 			routeEntry.setIpVersion(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].IpVersion"));
+			routeEntry.setDescription(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].Description"));
+			routeEntry.setRouteEntryName(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteEntryName"));
+			routeEntry.setDestinationCidrBlock(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].DestinationCidrBlock"));
+			routeEntry.setRouteEntryId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteEntryId"));
+			routeEntry.setRouteTableId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].RouteTableId"));
 
 			List<NextHop> nextHops = new ArrayList<NextHop>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops.Length"); j++) {
 				NextHop nextHop = new NextHop();
-				nextHop.setNextHopType(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopType"));
+				nextHop.setNextHopRegionId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopRegionId"));
+				nextHop.setWeight(_ctx.integerValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].Weight"));
 				nextHop.setNextHopId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopId"));
 				nextHop.setEnabled(_ctx.integerValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].Enabled"));
-				nextHop.setWeight(_ctx.integerValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].Weight"));
-				nextHop.setNextHopRegionId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopRegionId"));
+				nextHop.setNextHopType(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopType"));
 
 				NextHopRelatedInfo nextHopRelatedInfo = new NextHopRelatedInfo();
+				nextHopRelatedInfo.setInstanceId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopRelatedInfo.InstanceId"));
 				nextHopRelatedInfo.setInstanceType(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopRelatedInfo.InstanceType"));
 				nextHopRelatedInfo.setRegionId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopRelatedInfo.RegionId"));
-				nextHopRelatedInfo.setInstanceId(_ctx.stringValue("DescribeRouteEntryListResponse.RouteEntrys["+ i +"].NextHops["+ j +"].NextHopRelatedInfo.InstanceId"));
 				nextHop.setNextHopRelatedInfo(nextHopRelatedInfo);
 
 				nextHops.add(nextHop);

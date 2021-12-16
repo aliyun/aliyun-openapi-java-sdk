@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDhcpOptionsSetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dhcpOptionsSetId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDhcpOptionsSetId() {
 		return this.dhcpOptionsSetId;
@@ -42,6 +34,14 @@ public class CreateDhcpOptionsSetResponse extends AcsResponse {
 
 	public void setDhcpOptionsSetId(String dhcpOptionsSetId) {
 		this.dhcpOptionsSetId = dhcpOptionsSetId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpv6EgressOnlyRulesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Ipv6EgressOnlyRule> ipv6EgressOnlyRules;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeIpv6EgressOnlyRulesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeIpv6EgressOnlyRulesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Ipv6EgressOnlyRule> getIpv6EgressOnlyRules() {
@@ -77,17 +77,33 @@ public class DescribeIpv6EgressOnlyRulesResponse extends AcsResponse {
 
 	public static class Ipv6EgressOnlyRule {
 
-		private String ipv6EgressOnlyRuleId;
+		private String status;
 
-		private String instanceType;
+		private String description;
+
+		private String ipv6EgressOnlyRuleId;
 
 		private String instanceId;
 
-		private String status;
+		private String instanceType;
 
 		private String name;
 
-		private String description;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getIpv6EgressOnlyRuleId() {
 			return this.ipv6EgressOnlyRuleId;
@@ -95,14 +111,6 @@ public class DescribeIpv6EgressOnlyRulesResponse extends AcsResponse {
 
 		public void setIpv6EgressOnlyRuleId(String ipv6EgressOnlyRuleId) {
 			this.ipv6EgressOnlyRuleId = ipv6EgressOnlyRuleId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
 		}
 
 		public String getInstanceId() {
@@ -113,12 +121,12 @@ public class DescribeIpv6EgressOnlyRulesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getName() {
@@ -127,14 +135,6 @@ public class DescribeIpv6EgressOnlyRulesResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 

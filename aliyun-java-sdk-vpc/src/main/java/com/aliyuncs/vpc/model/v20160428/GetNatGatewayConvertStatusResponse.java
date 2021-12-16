@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetNatGatewayConvertStatusResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String natGatewayId;
-
-	private String bid;
-
 	private Long aliUid;
+
+	private String requestId;
 
 	private String dstNatType;
 
+	private String bid;
+
+	private String natGatewayId;
+
 	private List<ConvertStep> convertSteps;
+
+	public Long getAliUid() {
+		return this.aliUid;
+	}
+
+	public void setAliUid(Long aliUid) {
+		this.aliUid = aliUid;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class GetNatGatewayConvertStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNatGatewayId() {
-		return this.natGatewayId;
+	public String getDstNatType() {
+		return this.dstNatType;
 	}
 
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
+	public void setDstNatType(String dstNatType) {
+		this.dstNatType = dstNatType;
 	}
 
 	public String getBid() {
@@ -61,20 +69,12 @@ public class GetNatGatewayConvertStatusResponse extends AcsResponse {
 		this.bid = bid;
 	}
 
-	public Long getAliUid() {
-		return this.aliUid;
+	public String getNatGatewayId() {
+		return this.natGatewayId;
 	}
 
-	public void setAliUid(Long aliUid) {
-		this.aliUid = aliUid;
-	}
-
-	public String getDstNatType() {
-		return this.dstNatType;
-	}
-
-	public void setDstNatType(String dstNatType) {
-		this.dstNatType = dstNatType;
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
 	}
 
 	public List<ConvertStep> getConvertSteps() {
@@ -87,11 +87,19 @@ public class GetNatGatewayConvertStatusResponse extends AcsResponse {
 
 	public static class ConvertStep {
 
+		private String stepStartTime;
+
 		private String stepName;
 
 		private String stepStatus;
 
-		private String stepStartTime;
+		public String getStepStartTime() {
+			return this.stepStartTime;
+		}
+
+		public void setStepStartTime(String stepStartTime) {
+			this.stepStartTime = stepStartTime;
+		}
 
 		public String getStepName() {
 			return this.stepName;
@@ -107,14 +115,6 @@ public class GetNatGatewayConvertStatusResponse extends AcsResponse {
 
 		public void setStepStatus(String stepStatus) {
 			this.stepStatus = stepStatus;
-		}
-
-		public String getStepStartTime() {
-			return this.stepStartTime;
-		}
-
-		public void setStepStartTime(String stepStartTime) {
-			this.stepStartTime = stepStartTime;
 		}
 	}
 
