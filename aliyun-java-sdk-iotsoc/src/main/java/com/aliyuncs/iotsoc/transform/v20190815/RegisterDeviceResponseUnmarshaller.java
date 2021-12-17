@@ -25,6 +25,8 @@ public class RegisterDeviceResponseUnmarshaller {
 		registerDeviceResponse.setRequestId(_ctx.stringValue("RegisterDeviceResponse.RequestId"));
 		registerDeviceResponse.setCode(_ctx.stringValue("RegisterDeviceResponse.Code"));
 		registerDeviceResponse.setData(_ctx.stringValue("RegisterDeviceResponse.Data"));
+		registerDeviceResponse.setMessage(_ctx.stringValue("RegisterDeviceResponse.Message"));
+		registerDeviceResponse.setSuccess(_ctx.stringValue("RegisterDeviceResponse.Success"));
 	 
 	 	return registerDeviceResponse;
 	}

@@ -29,7 +29,7 @@ public class QueryCveListForPackagePatchRequest extends RpcAcsRequest<QueryCveLi
 
 	private String patchName;
 	public QueryCveListForPackagePatchRequest() {
-		super("Iotsoc", "2019-08-15", "QueryCveListForPackagePatch", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "QueryCveListForPackagePatch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

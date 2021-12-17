@@ -30,7 +30,7 @@ public class VerifyLoginTokenRequest extends RpcAcsRequest<VerifyLoginTokenRespo
 
 	private String loginToken;
 	public VerifyLoginTokenRequest() {
-		super("Iotsoc", "2019-08-15", "VerifyLoginToken", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "VerifyLoginToken");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -25,7 +25,7 @@ import com.aliyuncs.iotsoc.Endpoint;
 public class QueryElfPatternRequest extends RpcAcsRequest<QueryElfPatternResponse> {
 	   
 	public QueryElfPatternRequest() {
-		super("Iotsoc", "2019-08-15", "QueryElfPattern", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "QueryElfPattern");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

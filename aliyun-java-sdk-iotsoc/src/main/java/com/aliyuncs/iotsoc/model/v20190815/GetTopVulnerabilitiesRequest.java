@@ -25,7 +25,7 @@ import com.aliyuncs.iotsoc.Endpoint;
 public class GetTopVulnerabilitiesRequest extends RpcAcsRequest<GetTopVulnerabilitiesResponse> {
 	   
 	public GetTopVulnerabilitiesRequest() {
-		super("Iotsoc", "2019-08-15", "GetTopVulnerabilities", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "GetTopVulnerabilities");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

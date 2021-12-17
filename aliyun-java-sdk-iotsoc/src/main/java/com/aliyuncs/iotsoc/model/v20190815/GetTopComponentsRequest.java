@@ -25,7 +25,7 @@ import com.aliyuncs.iotsoc.Endpoint;
 public class GetTopComponentsRequest extends RpcAcsRequest<GetTopComponentsResponse> {
 	   
 	public GetTopComponentsRequest() {
-		super("Iotsoc", "2019-08-15", "GetTopComponents", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "GetTopComponents");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

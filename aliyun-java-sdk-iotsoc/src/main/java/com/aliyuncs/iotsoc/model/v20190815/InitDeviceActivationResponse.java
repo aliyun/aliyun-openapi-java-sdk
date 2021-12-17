@@ -30,6 +30,10 @@ public class InitDeviceActivationResponse extends AcsResponse {
 
 	private String data;
 
+	private String message;
+
+	private String success;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +56,22 @@ public class InitDeviceActivationResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

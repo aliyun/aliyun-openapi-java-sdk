@@ -25,7 +25,7 @@ import com.aliyuncs.iotsoc.Endpoint;
 public class GetDeviceRankSummaryRequest extends RpcAcsRequest<GetDeviceRankSummaryResponse> {
 	   
 	public GetDeviceRankSummaryRequest() {
-		super("Iotsoc", "2019-08-15", "GetDeviceRankSummary", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "GetDeviceRankSummary");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

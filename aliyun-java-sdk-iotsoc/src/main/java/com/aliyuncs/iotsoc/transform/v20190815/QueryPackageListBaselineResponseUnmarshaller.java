@@ -14,18 +14,18 @@
 
 package com.aliyuncs.iotsoc.transform.v20190815;
 
-import com.aliyuncs.iotsoc.model.v20190815.GetDeviceNetworkInfoResponse;
+import com.aliyuncs.iotsoc.model.v20190815.QueryPackageListBaselineResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetDeviceNetworkInfoResponseUnmarshaller {
+public class QueryPackageListBaselineResponseUnmarshaller {
 
-	public static GetDeviceNetworkInfoResponse unmarshall(GetDeviceNetworkInfoResponse getDeviceNetworkInfoResponse, UnmarshallerContext _ctx) {
+	public static QueryPackageListBaselineResponse unmarshall(QueryPackageListBaselineResponse queryPackageListBaselineResponse, UnmarshallerContext _ctx) {
 		
-		getDeviceNetworkInfoResponse.setRequestId(_ctx.stringValue("GetDeviceNetworkInfoResponse.RequestId"));
-		getDeviceNetworkInfoResponse.setCode(_ctx.stringValue("GetDeviceNetworkInfoResponse.Code"));
-		getDeviceNetworkInfoResponse.setData(_ctx.stringValue("GetDeviceNetworkInfoResponse.Data"));
+		queryPackageListBaselineResponse.setRequestId(_ctx.stringValue("QueryPackageListBaselineResponse.RequestId"));
+		queryPackageListBaselineResponse.setCode(_ctx.stringValue("QueryPackageListBaselineResponse.Code"));
+		queryPackageListBaselineResponse.setData(_ctx.stringValue("QueryPackageListBaselineResponse.Data"));
 	 
-	 	return getDeviceNetworkInfoResponse;
+	 	return queryPackageListBaselineResponse;
 	}
 }

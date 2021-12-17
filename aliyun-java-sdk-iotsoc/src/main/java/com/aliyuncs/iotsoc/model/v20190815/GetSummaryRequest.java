@@ -25,7 +25,7 @@ import com.aliyuncs.iotsoc.Endpoint;
 public class GetSummaryRequest extends RpcAcsRequest<GetSummaryResponse> {
 	   
 	public GetSummaryRequest() {
-		super("Iotsoc", "2019-08-15", "GetSummary", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "GetSummary");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

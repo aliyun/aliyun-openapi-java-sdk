@@ -57,18 +57,18 @@ public class GetDeviceRiskStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String riskLevel;
+		private Integer score;
 
 		private List<RiskInfo> riskInfoList;
 
 		private Device device;
 
-		public String getRiskLevel() {
-			return this.riskLevel;
+		public Integer getScore() {
+			return this.score;
 		}
 
-		public void setRiskLevel(String riskLevel) {
-			this.riskLevel = riskLevel;
+		public void setScore(Integer score) {
+			this.score = score;
 		}
 
 		public List<RiskInfo> getRiskInfoList() {
@@ -89,18 +89,20 @@ public class GetDeviceRiskStatusResponse extends AcsResponse {
 
 		public static class RiskInfo {
 
-			private String riskName;
+			private String name;
 
 			private String description;
 
-			private Integer score;
+			private String code;
 
-			public String getRiskName() {
-				return this.riskName;
+			private String severity;
+
+			public String getName() {
+				return this.name;
 			}
 
-			public void setRiskName(String riskName) {
-				this.riskName = riskName;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getDescription() {
@@ -111,12 +113,20 @@ public class GetDeviceRiskStatusResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public Integer getScore() {
-				return this.score;
+			public String getCode() {
+				return this.code;
 			}
 
-			public void setScore(Integer score) {
-				this.score = score;
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getSeverity() {
+				return this.severity;
+			}
+
+			public void setSeverity(String severity) {
+				this.severity = severity;
 			}
 		}
 

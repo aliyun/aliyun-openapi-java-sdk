@@ -15,18 +15,22 @@
 package com.aliyuncs.iotsoc.model.v20190815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iotsoc.transform.v20190815.GetDeviceNetworkInfoResponseUnmarshaller;
+import com.aliyuncs.iotsoc.transform.v20190815.QueryPackageUpdateConfigInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDeviceNetworkInfoResponse extends AcsResponse {
+public class QueryPackageUpdateConfigInfoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String success;
+
 	private String code;
+
+	private String message;
 
 	private String data;
 
@@ -38,12 +42,28 @@ public class GetDeviceNetworkInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getData() {
@@ -55,8 +75,8 @@ public class GetDeviceNetworkInfoResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetDeviceNetworkInfoResponse getInstance(UnmarshallerContext context) {
-		return	GetDeviceNetworkInfoResponseUnmarshaller.unmarshall(this, context);
+	public QueryPackageUpdateConfigInfoResponse getInstance(UnmarshallerContext context) {
+		return	QueryPackageUpdateConfigInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

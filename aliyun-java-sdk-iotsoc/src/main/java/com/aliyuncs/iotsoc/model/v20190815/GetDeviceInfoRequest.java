@@ -30,7 +30,7 @@ public class GetDeviceInfoRequest extends RpcAcsRequest<GetDeviceInfoResponse> {
 
 	private String deviceName;
 	public GetDeviceInfoRequest() {
-		super("Iotsoc", "2019-08-15", "GetDeviceInfo", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "GetDeviceInfo");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

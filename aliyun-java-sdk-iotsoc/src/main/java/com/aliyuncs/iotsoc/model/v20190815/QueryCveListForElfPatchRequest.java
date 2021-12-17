@@ -27,7 +27,7 @@ public class QueryCveListForElfPatchRequest extends RpcAcsRequest<QueryCveListFo
 
 	private String patchName;
 	public QueryCveListForElfPatchRequest() {
-		super("Iotsoc", "2019-08-15", "QueryCveListForElfPatch", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "QueryCveListForElfPatch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,7 +28,7 @@ public class GetDeviceRiskStatusRequest extends RpcAcsRequest<GetDeviceRiskStatu
 
 	private String attestationToken;
 	public GetDeviceRiskStatusRequest() {
-		super("Iotsoc", "2019-08-15", "GetDeviceRiskStatus", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "GetDeviceRiskStatus");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

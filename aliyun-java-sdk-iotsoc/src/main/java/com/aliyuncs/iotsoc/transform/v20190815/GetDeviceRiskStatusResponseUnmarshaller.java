@@ -32,7 +32,7 @@ public class GetDeviceRiskStatusResponseUnmarshaller {
 		getDeviceRiskStatusResponse.setCode(_ctx.stringValue("GetDeviceRiskStatusResponse.Code"));
 
 		Data data = new Data();
-		data.setRiskLevel(_ctx.stringValue("GetDeviceRiskStatusResponse.Data.RiskLevel"));
+		data.setScore(_ctx.integerValue("GetDeviceRiskStatusResponse.Data.Score"));
 
 		Device device = new Device();
 		device.setProductKey(_ctx.stringValue("GetDeviceRiskStatusResponse.Data.Device.ProductKey"));
@@ -42,9 +42,10 @@ public class GetDeviceRiskStatusResponseUnmarshaller {
 		List<RiskInfo> riskInfoList = new ArrayList<RiskInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetDeviceRiskStatusResponse.Data.RiskInfoList.Length"); i++) {
 			RiskInfo riskInfo = new RiskInfo();
-			riskInfo.setRiskName(_ctx.stringValue("GetDeviceRiskStatusResponse.Data.RiskInfoList["+ i +"].RiskName"));
+			riskInfo.setName(_ctx.stringValue("GetDeviceRiskStatusResponse.Data.RiskInfoList["+ i +"].Name"));
 			riskInfo.setDescription(_ctx.stringValue("GetDeviceRiskStatusResponse.Data.RiskInfoList["+ i +"].Description"));
-			riskInfo.setScore(_ctx.integerValue("GetDeviceRiskStatusResponse.Data.RiskInfoList["+ i +"].Score"));
+			riskInfo.setCode(_ctx.stringValue("GetDeviceRiskStatusResponse.Data.RiskInfoList["+ i +"].Code"));
+			riskInfo.setSeverity(_ctx.stringValue("GetDeviceRiskStatusResponse.Data.RiskInfoList["+ i +"].Severity"));
 
 			riskInfoList.add(riskInfo);
 		}

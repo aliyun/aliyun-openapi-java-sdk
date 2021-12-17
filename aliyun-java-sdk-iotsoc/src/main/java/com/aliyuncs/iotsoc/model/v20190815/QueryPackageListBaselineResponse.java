@@ -15,14 +15,14 @@
 package com.aliyuncs.iotsoc.model.v20190815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iotsoc.transform.v20190815.GetNetflowTopologyResponseUnmarshaller;
+import com.aliyuncs.iotsoc.transform.v20190815.QueryPackageListBaselineResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetNetflowTopologyResponse extends AcsResponse {
+public class QueryPackageListBaselineResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -55,8 +55,8 @@ public class GetNetflowTopologyResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetNetflowTopologyResponse getInstance(UnmarshallerContext context) {
-		return	GetNetflowTopologyResponseUnmarshaller.unmarshall(this, context);
+	public QueryPackageListBaselineResponse getInstance(UnmarshallerContext context) {
+		return	QueryPackageListBaselineResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -22,46 +22,59 @@ import com.aliyuncs.iotsoc.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetVulnerabilityTrendRequest extends RpcAcsRequest<GetVulnerabilityTrendResponse> {
+public class QueryPackageUpdateConfigInfoRequest extends RpcAcsRequest<QueryPackageUpdateConfigInfoResponse> {
 	   
 
-	private Integer days;
+	private Boolean releaseFlag;
 
-	private String status;
-	public GetVulnerabilityTrendRequest() {
-		super("Iotsoc", "2019-08-15", "GetVulnerabilityTrend", "Iotsoc");
-		setMethod(MethodType.GET);
+	private String oSEntry;
+
+	private String arch;
+	public QueryPackageUpdateConfigInfoRequest() {
+		super("Iotsoc", "2019-08-15", "QueryPackageUpdateConfigInfo");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Integer getDays() {
-		return this.days;
+	public Boolean getReleaseFlag() {
+		return this.releaseFlag;
 	}
 
-	public void setDays(Integer days) {
-		this.days = days;
-		if(days != null){
-			putQueryParameter("Days", days.toString());
+	public void setReleaseFlag(Boolean releaseFlag) {
+		this.releaseFlag = releaseFlag;
+		if(releaseFlag != null){
+			putQueryParameter("ReleaseFlag", releaseFlag.toString());
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getOSEntry() {
+		return this.oSEntry;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setOSEntry(String oSEntry) {
+		this.oSEntry = oSEntry;
+		if(oSEntry != null){
+			putQueryParameter("OSEntry", oSEntry);
+		}
+	}
+
+	public String getArch() {
+		return this.arch;
+	}
+
+	public void setArch(String arch) {
+		this.arch = arch;
+		if(arch != null){
+			putQueryParameter("Arch", arch);
 		}
 	}
 
 	@Override
-	public Class<GetVulnerabilityTrendResponse> getResponseClass() {
-		return GetVulnerabilityTrendResponse.class;
+	public Class<QueryPackageUpdateConfigInfoResponse> getResponseClass() {
+		return QueryPackageUpdateConfigInfoResponse.class;
 	}
 
 }

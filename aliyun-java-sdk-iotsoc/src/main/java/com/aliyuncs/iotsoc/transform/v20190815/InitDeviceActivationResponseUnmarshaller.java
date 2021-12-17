@@ -25,6 +25,8 @@ public class InitDeviceActivationResponseUnmarshaller {
 		initDeviceActivationResponse.setRequestId(_ctx.stringValue("InitDeviceActivationResponse.RequestId"));
 		initDeviceActivationResponse.setCode(_ctx.stringValue("InitDeviceActivationResponse.Code"));
 		initDeviceActivationResponse.setData(_ctx.stringValue("InitDeviceActivationResponse.Data"));
+		initDeviceActivationResponse.setMessage(_ctx.stringValue("InitDeviceActivationResponse.Message"));
+		initDeviceActivationResponse.setSuccess(_ctx.stringValue("InitDeviceActivationResponse.Success"));
 	 
 	 	return initDeviceActivationResponse;
 	}

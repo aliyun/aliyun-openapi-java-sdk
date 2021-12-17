@@ -15,6 +15,7 @@
 package com.aliyuncs.iotsoc.model.v20190815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iotsoc.Endpoint;
 
@@ -29,7 +30,8 @@ public class InitDeviceActivationRequest extends RpcAcsRequest<InitDeviceActivat
 
 	private String token;
 	public InitDeviceActivationRequest() {
-		super("Iotsoc", "2019-08-15", "InitDeviceActivation", "Iotsoc");
+		super("Iotsoc", "2019-08-15", "InitDeviceActivation");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
