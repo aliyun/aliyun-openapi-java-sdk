@@ -43,6 +43,8 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 
 	private Long zonePrivateIpAddressCount;
 
+	private Boolean protectedEnabled;
+
 	private String endpointName;
 
 	private String vpcId;
@@ -149,6 +151,17 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 		this.zonePrivateIpAddressCount = zonePrivateIpAddressCount;
 		if(zonePrivateIpAddressCount != null){
 			putQueryParameter("ZonePrivateIpAddressCount", zonePrivateIpAddressCount.toString());
+		}
+	}
+
+	public Boolean getProtectedEnabled() {
+		return this.protectedEnabled;
+	}
+
+	public void setProtectedEnabled(Boolean protectedEnabled) {
+		this.protectedEnabled = protectedEnabled;
+		if(protectedEnabled != null){
+			putQueryParameter("ProtectedEnabled", protectedEnabled.toString());
 		}
 	}
 
