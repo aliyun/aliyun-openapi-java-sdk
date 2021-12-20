@@ -57,6 +57,7 @@ public class DescribeClusterServiceConfigResponseUnmarshaller {
 				configItemValue.setValue(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].Value"));
 				configItemValue.setIsCustom(_ctx.booleanValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].IsCustom"));
 				configItemValue.setDescription(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].Description"));
+				configItemValue.setValueScope(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].ValueScope"));
 
 				configItemValueList.add(configItemValue);
 			}

@@ -189,6 +189,8 @@ public class DescribeClusterServiceConfigResponse extends AcsResponse {
 
 				private String description;
 
+				private String valueScope;
+
 				public String getItemName() {
 					return this.itemName;
 				}
@@ -219,6 +221,14 @@ public class DescribeClusterServiceConfigResponse extends AcsResponse {
 
 				public void setDescription(String description) {
 					this.description = description;
+				}
+
+				public String getValueScope() {
+					return this.valueScope;
+				}
+
+				public void setValueScope(String valueScope) {
+					this.valueScope = valueScope;
 				}
 			}
 		}
