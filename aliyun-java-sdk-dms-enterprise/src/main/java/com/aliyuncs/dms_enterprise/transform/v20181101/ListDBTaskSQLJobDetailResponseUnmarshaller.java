@@ -45,6 +45,10 @@ public class ListDBTaskSQLJobDetailResponseUnmarshaller {
 			dBTaskSQLJobDetail.setSqlType(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].SqlType"));
 			dBTaskSQLJobDetail.setStatus(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Status"));
 			dBTaskSQLJobDetail.setLog(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Log"));
+			dBTaskSQLJobDetail.setStartTime(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].StartTime"));
+			dBTaskSQLJobDetail.setEndTime(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].EndTime"));
+			dBTaskSQLJobDetail.setTimeDelay(_ctx.longValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].TimeDelay"));
+			dBTaskSQLJobDetail.setAffectRows(_ctx.longValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].AffectRows"));
 
 			dBTaskSQLJobDetailList.add(dBTaskSQLJobDetail);
 		}

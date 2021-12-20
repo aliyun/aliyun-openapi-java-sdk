@@ -99,6 +99,8 @@ public class ListLogicDatabasesResponse extends AcsResponse {
 
 		private String envType;
 
+		private String alias;
+
 		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
@@ -149,6 +151,14 @@ public class ListLogicDatabasesResponse extends AcsResponse {
 
 		public void setEnvType(String envType) {
 			this.envType = envType;
+		}
+
+		public String getAlias() {
+			return this.alias;
+		}
+
+		public void setAlias(String alias) {
+			this.alias = alias;
 		}
 
 		public List<String> getOwnerIdList() {

@@ -41,6 +41,7 @@ public class ListLogicDatabasesResponseUnmarshaller {
 			logicDatabase.setSchemaName(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].SchemaName"));
 			logicDatabase.setSearchName(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].SearchName"));
 			logicDatabase.setEnvType(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].EnvType"));
+			logicDatabase.setAlias(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].Alias"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].OwnerIdList.Length"); j++) {

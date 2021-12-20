@@ -107,6 +107,14 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 
 		private String log;
 
+		private String startTime;
+
+		private String endTime;
+
+		private Long timeDelay;
+
+		private Long affectRows;
+
 		public Long getJobDetailId() {
 			return this.jobDetailId;
 		}
@@ -185,6 +193,38 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 
 		public void setLog(String log) {
 			this.log = log;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public Long getTimeDelay() {
+			return this.timeDelay;
+		}
+
+		public void setTimeDelay(Long timeDelay) {
+			this.timeDelay = timeDelay;
+		}
+
+		public Long getAffectRows() {
+			return this.affectRows;
+		}
+
+		public void setAffectRows(Long affectRows) {
+			this.affectRows = affectRows;
 		}
 	}
 

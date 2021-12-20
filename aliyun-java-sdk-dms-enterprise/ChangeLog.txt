@@ -1,3 +1,7 @@
+2021-12-20 Version: 1.26.0
+- Supported ListLogicDatabases to return Alias information.
+- Supported ListDBTaskSQLJobDetail to return sql execute startTime and endTime information.
+
 2021-11-29 Version: 1.25.0
 - Supported ListLogicTableRouteConfig, AddLogicTableRouteConfig, DeleteLogicTableRouteConfig API.
 - Supported ModifyDataCorrectExecSQL, RetryDataCorrectPreCheck API.
