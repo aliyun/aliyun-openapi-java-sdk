@@ -243,6 +243,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private String zoneId;
 
+			private Integer ipv6AddressCount;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -545,6 +547,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+
+			public Integer getIpv6AddressCount() {
+				return this.ipv6AddressCount;
+			}
+
+			public void setIpv6AddressCount(Integer ipv6AddressCount) {
+				this.ipv6AddressCount = ipv6AddressCount;
 			}
 
 			public List<DataDisk> getDataDisks() {

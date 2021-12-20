@@ -52,6 +52,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private String launchTemplateId;
 
+	private Integer ipv6AddressCount;
+
 	private Long ownerId;
 
 	private String vSwitchId;
@@ -273,6 +275,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.launchTemplateId = launchTemplateId;
 		if(launchTemplateId != null){
 			putQueryParameter("LaunchTemplateId", launchTemplateId);
+		}
+	}
+
+	public Integer getIpv6AddressCount() {
+		return this.ipv6AddressCount;
+	}
+
+	public void setIpv6AddressCount(Integer ipv6AddressCount) {
+		this.ipv6AddressCount = ipv6AddressCount;
+		if(ipv6AddressCount != null){
+			putQueryParameter("Ipv6AddressCount", ipv6AddressCount.toString());
 		}
 	}
 

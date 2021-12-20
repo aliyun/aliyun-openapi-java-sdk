@@ -85,6 +85,7 @@ public class DescribeLaunchTemplateVersionsResponseUnmarshaller {
 			launchTemplateData.setResourceGroupId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ResourceGroupId"));
 			launchTemplateData.setInternetChargeType(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetChargeType"));
 			launchTemplateData.setZoneId(_ctx.stringValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ZoneId"));
+			launchTemplateData.setIpv6AddressCount(_ctx.integerValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Ipv6AddressCount"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplateVersionsResponse.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds.Length"); j++) {

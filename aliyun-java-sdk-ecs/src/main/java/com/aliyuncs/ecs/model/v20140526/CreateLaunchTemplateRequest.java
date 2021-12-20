@@ -52,6 +52,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private Integer period;
 
+	private Integer ipv6AddressCount;
+
 	private String templateResourceGroupId;
 
 	private Long ownerId;
@@ -278,6 +280,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Integer getIpv6AddressCount() {
+		return this.ipv6AddressCount;
+	}
+
+	public void setIpv6AddressCount(Integer ipv6AddressCount) {
+		this.ipv6AddressCount = ipv6AddressCount;
+		if(ipv6AddressCount != null){
+			putQueryParameter("Ipv6AddressCount", ipv6AddressCount.toString());
 		}
 	}
 

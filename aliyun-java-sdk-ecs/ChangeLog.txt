@@ -1,3 +1,7 @@
+2021-12-20 Version: 4.24.13
+- Add Request Param Ipv6AddressCount For API CreateLaunchTemplate AND CreateLaunchTemplateVersion.
+- Add Response Data Ipv6AddressCount For API DescribeLaunchTemplateVersions.
+
 2021-12-06 Version: 4.24.12
 - Support Bond Eni.
 
