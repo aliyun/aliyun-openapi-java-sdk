@@ -27,24 +27,24 @@ public class ListTransitRouterVbrAttachmentsResponseUnmarshaller {
 	public static ListTransitRouterVbrAttachmentsResponse unmarshall(ListTransitRouterVbrAttachmentsResponse listTransitRouterVbrAttachmentsResponse, UnmarshallerContext _ctx) {
 		
 		listTransitRouterVbrAttachmentsResponse.setRequestId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.RequestId"));
+		listTransitRouterVbrAttachmentsResponse.setNextToken(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.NextToken"));
 		listTransitRouterVbrAttachmentsResponse.setTotalCount(_ctx.integerValue("ListTransitRouterVbrAttachmentsResponse.TotalCount"));
 		listTransitRouterVbrAttachmentsResponse.setMaxResults(_ctx.integerValue("ListTransitRouterVbrAttachmentsResponse.MaxResults"));
-		listTransitRouterVbrAttachmentsResponse.setNextToken(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.NextToken"));
 
 		List<TransitRouterAttachment> transitRouterAttachments = new ArrayList<TransitRouterAttachment>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments.Length"); i++) {
 			TransitRouterAttachment transitRouterAttachment = new TransitRouterAttachment();
+			transitRouterAttachment.setCreationTime(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].CreationTime"));
+			transitRouterAttachment.setStatus(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].Status"));
 			transitRouterAttachment.setTransitRouterAttachmentId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentId"));
+			transitRouterAttachment.setTransitRouterId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterId"));
+			transitRouterAttachment.setResourceType(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].ResourceType"));
 			transitRouterAttachment.setVbrRegionId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].VbrRegionId"));
+			transitRouterAttachment.setTransitRouterAttachmentDescription(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription"));
 			transitRouterAttachment.setVbrOwnerId(_ctx.longValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].VbrOwnerId"));
+			transitRouterAttachment.setAutoPublishRouteEnabled(_ctx.booleanValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled"));
 			transitRouterAttachment.setVbrId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].VbrId"));
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
-			transitRouterAttachment.setResourceType(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].ResourceType"));
-			transitRouterAttachment.setStatus(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].Status"));
-			transitRouterAttachment.setTransitRouterAttachmentDescription(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription"));
-			transitRouterAttachment.setCreationTime(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].CreationTime"));
-			transitRouterAttachment.setAutoPublishRouteEnabled(_ctx.booleanValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled"));
-			transitRouterAttachment.setTransitRouterId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterId"));
 
 			transitRouterAttachments.add(transitRouterAttachment);
 		}

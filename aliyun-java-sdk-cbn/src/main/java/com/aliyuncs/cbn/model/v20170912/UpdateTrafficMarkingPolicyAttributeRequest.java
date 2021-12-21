@@ -43,7 +43,7 @@ public class UpdateTrafficMarkingPolicyAttributeRequest extends RpcAcsRequest<Up
 
 	private Long ownerId;
 	public UpdateTrafficMarkingPolicyAttributeRequest() {
-		super("Cbn", "2017-09-12", "UpdateTrafficMarkingPolicyAttribute", "cbn");
+		super("Cbn", "2017-09-12", "UpdateTrafficMarkingPolicyAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

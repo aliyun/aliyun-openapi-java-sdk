@@ -39,7 +39,7 @@ public class DeleteFlowlogRequest extends RpcAcsRequest<DeleteFlowlogResponse> {
 
 	private String flowLogId;
 	public DeleteFlowlogRequest() {
-		super("Cbn", "2017-09-12", "DeleteFlowlog", "cbn");
+		super("Cbn", "2017-09-12", "DeleteFlowlog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

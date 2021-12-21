@@ -47,7 +47,7 @@ public class ListCenInterRegionTrafficQosPoliciesRequest extends RpcAcsRequest<L
 
 	private Integer maxResults;
 	public ListCenInterRegionTrafficQosPoliciesRequest() {
-		super("Cbn", "2017-09-12", "ListCenInterRegionTrafficQosPolicies", "cbn");
+		super("Cbn", "2017-09-12", "ListCenInterRegionTrafficQosPolicies");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

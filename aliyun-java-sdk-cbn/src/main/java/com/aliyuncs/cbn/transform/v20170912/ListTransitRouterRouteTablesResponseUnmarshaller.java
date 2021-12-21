@@ -27,19 +27,19 @@ public class ListTransitRouterRouteTablesResponseUnmarshaller {
 	public static ListTransitRouterRouteTablesResponse unmarshall(ListTransitRouterRouteTablesResponse listTransitRouterRouteTablesResponse, UnmarshallerContext _ctx) {
 		
 		listTransitRouterRouteTablesResponse.setRequestId(_ctx.stringValue("ListTransitRouterRouteTablesResponse.RequestId"));
+		listTransitRouterRouteTablesResponse.setNextToken(_ctx.stringValue("ListTransitRouterRouteTablesResponse.NextToken"));
 		listTransitRouterRouteTablesResponse.setTotalCount(_ctx.integerValue("ListTransitRouterRouteTablesResponse.TotalCount"));
 		listTransitRouterRouteTablesResponse.setMaxResults(_ctx.integerValue("ListTransitRouterRouteTablesResponse.MaxResults"));
-		listTransitRouterRouteTablesResponse.setNextToken(_ctx.stringValue("ListTransitRouterRouteTablesResponse.NextToken"));
 
 		List<TransitRouterRouteTable> transitRouterRouteTables = new ArrayList<TransitRouterRouteTable>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables.Length"); i++) {
 			TransitRouterRouteTable transitRouterRouteTable = new TransitRouterRouteTable();
 			transitRouterRouteTable.setTransitRouterRouteTableStatus(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableStatus"));
-			transitRouterRouteTable.setTransitRouterRouteTableName(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableName"));
-			transitRouterRouteTable.setTransitRouterRouteTableId(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableId"));
-			transitRouterRouteTable.setTransitRouterRouteTableDescription(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableDescription"));
 			transitRouterRouteTable.setTransitRouterRouteTableType(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableType"));
 			transitRouterRouteTable.setCreateTime(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].CreateTime"));
+			transitRouterRouteTable.setTransitRouterRouteTableId(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableId"));
+			transitRouterRouteTable.setTransitRouterRouteTableName(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableName"));
+			transitRouterRouteTable.setTransitRouterRouteTableDescription(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableDescription"));
 
 			transitRouterRouteTables.add(transitRouterRouteTable);
 		}

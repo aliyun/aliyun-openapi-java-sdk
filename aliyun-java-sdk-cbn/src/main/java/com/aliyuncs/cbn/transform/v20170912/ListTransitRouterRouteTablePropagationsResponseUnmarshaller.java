@@ -27,18 +27,18 @@ public class ListTransitRouterRouteTablePropagationsResponseUnmarshaller {
 	public static ListTransitRouterRouteTablePropagationsResponse unmarshall(ListTransitRouterRouteTablePropagationsResponse listTransitRouterRouteTablePropagationsResponse, UnmarshallerContext _ctx) {
 		
 		listTransitRouterRouteTablePropagationsResponse.setRequestId(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.RequestId"));
+		listTransitRouterRouteTablePropagationsResponse.setNextToken(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.NextToken"));
 		listTransitRouterRouteTablePropagationsResponse.setTotalCount(_ctx.integerValue("ListTransitRouterRouteTablePropagationsResponse.TotalCount"));
 		listTransitRouterRouteTablePropagationsResponse.setMaxResults(_ctx.integerValue("ListTransitRouterRouteTablePropagationsResponse.MaxResults"));
-		listTransitRouterRouteTablePropagationsResponse.setNextToken(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.NextToken"));
 
 		List<TransitRouterPropagation> transitRouterPropagations = new ArrayList<TransitRouterPropagation>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations.Length"); i++) {
 			TransitRouterPropagation transitRouterPropagation = new TransitRouterPropagation();
-			transitRouterPropagation.setStatus(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations["+ i +"].Status"));
 			transitRouterPropagation.setTransitRouterAttachmentId(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations["+ i +"].TransitRouterAttachmentId"));
-			transitRouterPropagation.setTransitRouterRouteTableId(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations["+ i +"].TransitRouterRouteTableId"));
-			transitRouterPropagation.setResourceId(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations["+ i +"].ResourceId"));
+			transitRouterPropagation.setStatus(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations["+ i +"].Status"));
 			transitRouterPropagation.setResourceType(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations["+ i +"].ResourceType"));
+			transitRouterPropagation.setResourceId(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations["+ i +"].ResourceId"));
+			transitRouterPropagation.setTransitRouterRouteTableId(_ctx.stringValue("ListTransitRouterRouteTablePropagationsResponse.TransitRouterPropagations["+ i +"].TransitRouterRouteTableId"));
 
 			transitRouterPropagations.add(transitRouterPropagation);
 		}

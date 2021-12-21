@@ -1,3 +1,6 @@
+2021-12-21 Version: 1.0.13
+- Support Darabonba API.
+
 2021-12-06 Version: 1.0.12
 - Modify the input parameter Action of DescribeCenInterRegionBandwidthLimits to be required.
 

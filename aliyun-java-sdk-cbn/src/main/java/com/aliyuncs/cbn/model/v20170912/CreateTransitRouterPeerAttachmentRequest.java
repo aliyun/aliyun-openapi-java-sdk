@@ -27,6 +27,8 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 
 	private Long resourceOwnerId;
 
+	private String bandwidthType;
+
 	private String clientToken;
 
 	private String cenId;
@@ -55,7 +57,7 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 
 	private String peerTransitRouterId;
 	public CreateTransitRouterPeerAttachmentRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "cbn");
+		super("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBandwidthType() {
+		return this.bandwidthType;
+	}
+
+	public void setBandwidthType(String bandwidthType) {
+		this.bandwidthType = bandwidthType;
+		if(bandwidthType != null){
+			putQueryParameter("BandwidthType", bandwidthType);
 		}
 	}
 

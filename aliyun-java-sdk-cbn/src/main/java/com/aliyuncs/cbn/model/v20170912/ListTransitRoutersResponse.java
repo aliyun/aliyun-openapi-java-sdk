@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTransitRoutersResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<TransitRouter> transitRouters;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListTransitRoutersResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<TransitRouter> getTransitRouters() {
@@ -77,62 +77,30 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 	public static class TransitRouter {
 
-		private String transitRouterId;
-
-		private String status;
-
-		private String cenId;
-
-		private String regionId;
-
-		private Long aliUid;
+		private String creationTime;
 
 		private String type;
 
-		private String creationTime;
+		private String status;
 
-		private String transitRouterName;
+		private String transitRouterId;
 
 		private String transitRouterDescription;
 
-		public String getTransitRouterId() {
-			return this.transitRouterId;
+		private String transitRouterName;
+
+		private String cenId;
+
+		private Long aliUid;
+
+		private String regionId;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setTransitRouterId(String transitRouterId) {
-			this.transitRouterId = transitRouterId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCenId() {
-			return this.cenId;
-		}
-
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getType() {
@@ -143,12 +111,28 @@ public class ListTransitRoutersResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
+		public String getTransitRouterDescription() {
+			return this.transitRouterDescription;
+		}
+
+		public void setTransitRouterDescription(String transitRouterDescription) {
+			this.transitRouterDescription = transitRouterDescription;
 		}
 
 		public String getTransitRouterName() {
@@ -159,12 +143,28 @@ public class ListTransitRoutersResponse extends AcsResponse {
 			this.transitRouterName = transitRouterName;
 		}
 
-		public String getTransitRouterDescription() {
-			return this.transitRouterDescription;
+		public String getCenId() {
+			return this.cenId;
 		}
 
-		public void setTransitRouterDescription(String transitRouterDescription) {
-			this.transitRouterDescription = transitRouterDescription;
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

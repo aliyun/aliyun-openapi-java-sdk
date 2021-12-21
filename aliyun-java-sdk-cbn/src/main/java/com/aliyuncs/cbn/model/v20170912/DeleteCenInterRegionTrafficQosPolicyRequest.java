@@ -39,7 +39,7 @@ public class DeleteCenInterRegionTrafficQosPolicyRequest extends RpcAcsRequest<D
 
 	private Long ownerId;
 	public DeleteCenInterRegionTrafficQosPolicyRequest() {
-		super("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosPolicy", "cbn");
+		super("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

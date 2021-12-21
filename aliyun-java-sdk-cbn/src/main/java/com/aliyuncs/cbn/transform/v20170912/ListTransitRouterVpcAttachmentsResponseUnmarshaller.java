@@ -28,23 +28,23 @@ public class ListTransitRouterVpcAttachmentsResponseUnmarshaller {
 	public static ListTransitRouterVpcAttachmentsResponse unmarshall(ListTransitRouterVpcAttachmentsResponse listTransitRouterVpcAttachmentsResponse, UnmarshallerContext _ctx) {
 		
 		listTransitRouterVpcAttachmentsResponse.setRequestId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.RequestId"));
+		listTransitRouterVpcAttachmentsResponse.setNextToken(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.NextToken"));
 		listTransitRouterVpcAttachmentsResponse.setTotalCount(_ctx.integerValue("ListTransitRouterVpcAttachmentsResponse.TotalCount"));
 		listTransitRouterVpcAttachmentsResponse.setMaxResults(_ctx.integerValue("ListTransitRouterVpcAttachmentsResponse.MaxResults"));
-		listTransitRouterVpcAttachmentsResponse.setNextToken(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.NextToken"));
 
 		List<TransitRouterAttachment> transitRouterAttachments = new ArrayList<TransitRouterAttachment>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments.Length"); i++) {
 			TransitRouterAttachment transitRouterAttachment = new TransitRouterAttachment();
-			transitRouterAttachment.setTransitRouterAttachmentId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentId"));
-			transitRouterAttachment.setVpcRegionId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcRegionId"));
-			transitRouterAttachment.setVpcOwnerId(_ctx.longValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcOwnerId"));
-			transitRouterAttachment.setVpcId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcId"));
-			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
-			transitRouterAttachment.setResourceType(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ResourceType"));
-			transitRouterAttachment.setStatus(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].Status"));
-			transitRouterAttachment.setTransitRouterAttachmentDescription(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription"));
 			transitRouterAttachment.setCreationTime(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].CreationTime"));
+			transitRouterAttachment.setStatus(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].Status"));
+			transitRouterAttachment.setVpcId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcId"));
+			transitRouterAttachment.setTransitRouterAttachmentId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentId"));
 			transitRouterAttachment.setTransitRouterId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterId"));
+			transitRouterAttachment.setResourceType(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ResourceType"));
+			transitRouterAttachment.setTransitRouterAttachmentDescription(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription"));
+			transitRouterAttachment.setVpcOwnerId(_ctx.longValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcOwnerId"));
+			transitRouterAttachment.setVpcRegionId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcRegionId"));
+			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
 
 			List<ZoneMapping> zoneMappings = new ArrayList<ZoneMapping>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ZoneMappings.Length"); j++) {

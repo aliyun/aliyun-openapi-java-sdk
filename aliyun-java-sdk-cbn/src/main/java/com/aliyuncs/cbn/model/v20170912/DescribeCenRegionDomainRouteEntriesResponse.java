@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer totalCount;
 
-	private Integer pageSize;
-
 	private List<CenRouteEntry> cenRouteEntries;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public List<CenRouteEntry> getCenRouteEntries() {
 		return this.cenRouteEntries;
 	}
@@ -77,19 +77,19 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 
 	public static class CenRouteEntry {
 
-		private String destinationCidrBlock;
+		private String toOtherRegionStatus;
 
 		private String type;
 
-		private String nextHopInstanceId;
+		private String status;
 
 		private String nextHopType;
 
+		private String nextHopInstanceId;
+
 		private String nextHopRegionId;
 
-		private String status;
-
-		private String toOtherRegionStatus;
+		private String destinationCidrBlock;
 
 		private Integer preference;
 
@@ -97,16 +97,16 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 
 		private List<CenOutRouteMapRecord> cenOutRouteMapRecords;
 
-		private List<String> asPaths;
-
 		private List<String> communities;
 
-		public String getDestinationCidrBlock() {
-			return this.destinationCidrBlock;
+		private List<String> asPaths;
+
+		public String getToOtherRegionStatus() {
+			return this.toOtherRegionStatus;
 		}
 
-		public void setDestinationCidrBlock(String destinationCidrBlock) {
-			this.destinationCidrBlock = destinationCidrBlock;
+		public void setToOtherRegionStatus(String toOtherRegionStatus) {
+			this.toOtherRegionStatus = toOtherRegionStatus;
 		}
 
 		public String getType() {
@@ -117,12 +117,12 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getNextHopInstanceId() {
-			return this.nextHopInstanceId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setNextHopInstanceId(String nextHopInstanceId) {
-			this.nextHopInstanceId = nextHopInstanceId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getNextHopType() {
@@ -133,6 +133,14 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 			this.nextHopType = nextHopType;
 		}
 
+		public String getNextHopInstanceId() {
+			return this.nextHopInstanceId;
+		}
+
+		public void setNextHopInstanceId(String nextHopInstanceId) {
+			this.nextHopInstanceId = nextHopInstanceId;
+		}
+
 		public String getNextHopRegionId() {
 			return this.nextHopRegionId;
 		}
@@ -141,20 +149,12 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 			this.nextHopRegionId = nextHopRegionId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDestinationCidrBlock() {
+			return this.destinationCidrBlock;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getToOtherRegionStatus() {
-			return this.toOtherRegionStatus;
-		}
-
-		public void setToOtherRegionStatus(String toOtherRegionStatus) {
-			this.toOtherRegionStatus = toOtherRegionStatus;
+		public void setDestinationCidrBlock(String destinationCidrBlock) {
+			this.destinationCidrBlock = destinationCidrBlock;
 		}
 
 		public Integer getPreference() {
@@ -181,14 +181,6 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 			this.cenOutRouteMapRecords = cenOutRouteMapRecords;
 		}
 
-		public List<String> getAsPaths() {
-			return this.asPaths;
-		}
-
-		public void setAsPaths(List<String> asPaths) {
-			this.asPaths = asPaths;
-		}
-
 		public List<String> getCommunities() {
 			return this.communities;
 		}
@@ -197,19 +189,19 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 			this.communities = communities;
 		}
 
-		public static class CenRouteMapRecord {
+		public List<String> getAsPaths() {
+			return this.asPaths;
+		}
 
-			private String regionId;
+		public void setAsPaths(List<String> asPaths) {
+			this.asPaths = asPaths;
+		}
+
+		public static class CenRouteMapRecord {
 
 			private String routeMapId;
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String regionId;
 
 			public String getRouteMapId() {
 				return this.routeMapId;
@@ -217,22 +209,22 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 
 			public void setRouteMapId(String routeMapId) {
 				this.routeMapId = routeMapId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 
 		public static class CenOutRouteMapRecord {
 
-			private String regionId;
-
 			private String routeMapId;
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String regionId;
 
 			public String getRouteMapId() {
 				return this.routeMapId;
@@ -240,6 +232,14 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 
 			public void setRouteMapId(String routeMapId) {
 				this.routeMapId = routeMapId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

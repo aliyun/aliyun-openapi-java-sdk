@@ -27,22 +27,22 @@ public class ListTransitRouterRouteEntriesResponseUnmarshaller {
 	public static ListTransitRouterRouteEntriesResponse unmarshall(ListTransitRouterRouteEntriesResponse listTransitRouterRouteEntriesResponse, UnmarshallerContext _ctx) {
 		
 		listTransitRouterRouteEntriesResponse.setRequestId(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.RequestId"));
-		listTransitRouterRouteEntriesResponse.setMaxResults(_ctx.integerValue("ListTransitRouterRouteEntriesResponse.MaxResults"));
 		listTransitRouterRouteEntriesResponse.setNextToken(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.NextToken"));
 		listTransitRouterRouteEntriesResponse.setTotalCount(_ctx.integerValue("ListTransitRouterRouteEntriesResponse.TotalCount"));
+		listTransitRouterRouteEntriesResponse.setMaxResults(_ctx.integerValue("ListTransitRouterRouteEntriesResponse.MaxResults"));
 
 		List<TransitRouterRouteEntry> transitRouterRouteEntries = new ArrayList<TransitRouterRouteEntry>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries.Length"); i++) {
 			TransitRouterRouteEntry transitRouterRouteEntry = new TransitRouterRouteEntry();
-			transitRouterRouteEntry.setTransitRouterRouteEntryDescription(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDescription"));
-			transitRouterRouteEntry.setTransitRouterRouteEntryDestinationCidrBlock(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDestinationCidrBlock"));
 			transitRouterRouteEntry.setTransitRouterRouteEntryId(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryId"));
-			transitRouterRouteEntry.setTransitRouterRouteEntryName(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryName"));
-			transitRouterRouteEntry.setTransitRouterRouteEntryNextHopId(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopId"));
-			transitRouterRouteEntry.setTransitRouterRouteEntryNextHopType(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopType"));
-			transitRouterRouteEntry.setTransitRouterRouteEntryStatus(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryStatus"));
+			transitRouterRouteEntry.setTransitRouterRouteEntryDestinationCidrBlock(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDestinationCidrBlock"));
 			transitRouterRouteEntry.setTransitRouterRouteEntryType(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryType"));
 			transitRouterRouteEntry.setCreateTime(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].CreateTime"));
+			transitRouterRouteEntry.setTransitRouterRouteEntryName(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryName"));
+			transitRouterRouteEntry.setTransitRouterRouteEntryStatus(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryStatus"));
+			transitRouterRouteEntry.setTransitRouterRouteEntryNextHopType(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopType"));
+			transitRouterRouteEntry.setTransitRouterRouteEntryNextHopId(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopId"));
+			transitRouterRouteEntry.setTransitRouterRouteEntryDescription(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDescription"));
 
 			transitRouterRouteEntries.add(transitRouterRouteEntry);
 		}

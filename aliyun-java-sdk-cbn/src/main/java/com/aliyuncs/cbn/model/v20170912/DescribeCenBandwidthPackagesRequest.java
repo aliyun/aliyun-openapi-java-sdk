@@ -44,7 +44,7 @@ public class DescribeCenBandwidthPackagesRequest extends RpcAcsRequest<DescribeC
 
 	private List<Filter> filters;
 	public DescribeCenBandwidthPackagesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenBandwidthPackages", "cbn");
+		super("Cbn", "2017-09-12", "DescribeCenBandwidthPackages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

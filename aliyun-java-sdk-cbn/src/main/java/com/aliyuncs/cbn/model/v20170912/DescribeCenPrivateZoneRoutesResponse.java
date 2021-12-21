@@ -27,15 +27,15 @@ public class DescribeCenPrivateZoneRoutesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String cenId;
-
 	private String privateZoneDnsServers;
+
+	private String cenId;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private Integer pageSize;
+
+	private Integer totalCount;
 
 	private List<PrivateZoneInfo> privateZoneInfos;
 
@@ -47,20 +47,20 @@ public class DescribeCenPrivateZoneRoutesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCenId() {
-		return this.cenId;
-	}
-
-	public void setCenId(String cenId) {
-		this.cenId = cenId;
-	}
-
 	public String getPrivateZoneDnsServers() {
 		return this.privateZoneDnsServers;
 	}
 
 	public void setPrivateZoneDnsServers(String privateZoneDnsServers) {
 		this.privateZoneDnsServers = privateZoneDnsServers;
+	}
+
+	public String getCenId() {
+		return this.cenId;
+	}
+
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
 	}
 
 	public Integer getPageNumber() {
@@ -71,20 +71,20 @@ public class DescribeCenPrivateZoneRoutesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<PrivateZoneInfo> getPrivateZoneInfos() {
@@ -97,13 +97,21 @@ public class DescribeCenPrivateZoneRoutesResponse extends AcsResponse {
 
 	public static class PrivateZoneInfo {
 
+		private String status;
+
 		private String accessRegionId;
 
 		private String hostRegionId;
 
 		private String hostVpcId;
 
-		private String status;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getAccessRegionId() {
 			return this.accessRegionId;
@@ -127,14 +135,6 @@ public class DescribeCenPrivateZoneRoutesResponse extends AcsResponse {
 
 		public void setHostVpcId(String hostVpcId) {
 			this.hostVpcId = hostVpcId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 	}
 

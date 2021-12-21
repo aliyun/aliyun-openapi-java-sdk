@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<TransitRouterAttachment> transitRouterAttachments;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<TransitRouterAttachment> getTransitRouterAttachments() {
 		return this.transitRouterAttachments;
 	}
@@ -77,86 +77,46 @@ public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 
 	public static class TransitRouterAttachment {
 
-		private String transitRouterAttachmentId;
-
-		private String peerTransitRouterRegionId;
-
-		private Long peerTransitRouterOwnerId;
-
-		private String peerTransitRouterId;
-
-		private String transitRouterAttachmentName;
-
-		private String resourceType;
+		private String creationTime;
 
 		private String status;
 
-		private String transitRouterAttachmentDescription;
-
-		private String creationTime;
-
-		private Boolean autoPublishRouteEnabled;
-
-		private String transitRouterId;
-
-		private Integer bandwidth;
-
-		private String bandwidthPackageId;
-
-		private String regionId;
-
-		private String geographicSpanId;
-
-		private String cenBandwidthPackageId;
+		private String transitRouterAttachmentId;
 
 		private String bandwidthType;
 
-		public String getTransitRouterAttachmentId() {
-			return this.transitRouterAttachmentId;
+		private String cenBandwidthPackageId;
+
+		private String transitRouterAttachmentDescription;
+
+		private String regionId;
+
+		private String peerTransitRouterId;
+
+		private String bandwidthPackageId;
+
+		private String transitRouterId;
+
+		private String peerTransitRouterRegionId;
+
+		private String resourceType;
+
+		private Integer bandwidth;
+
+		private String geographicSpanId;
+
+		private Long peerTransitRouterOwnerId;
+
+		private Boolean autoPublishRouteEnabled;
+
+		private String transitRouterAttachmentName;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
-			this.transitRouterAttachmentId = transitRouterAttachmentId;
-		}
-
-		public String getPeerTransitRouterRegionId() {
-			return this.peerTransitRouterRegionId;
-		}
-
-		public void setPeerTransitRouterRegionId(String peerTransitRouterRegionId) {
-			this.peerTransitRouterRegionId = peerTransitRouterRegionId;
-		}
-
-		public Long getPeerTransitRouterOwnerId() {
-			return this.peerTransitRouterOwnerId;
-		}
-
-		public void setPeerTransitRouterOwnerId(Long peerTransitRouterOwnerId) {
-			this.peerTransitRouterOwnerId = peerTransitRouterOwnerId;
-		}
-
-		public String getPeerTransitRouterId() {
-			return this.peerTransitRouterId;
-		}
-
-		public void setPeerTransitRouterId(String peerTransitRouterId) {
-			this.peerTransitRouterId = peerTransitRouterId;
-		}
-
-		public String getTransitRouterAttachmentName() {
-			return this.transitRouterAttachmentName;
-		}
-
-		public void setTransitRouterAttachmentName(String transitRouterAttachmentName) {
-			this.transitRouterAttachmentName = transitRouterAttachmentName;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -167,68 +127,20 @@ public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTransitRouterAttachmentDescription() {
-			return this.transitRouterAttachmentDescription;
+		public String getTransitRouterAttachmentId() {
+			return this.transitRouterAttachmentId;
 		}
 
-		public void setTransitRouterAttachmentDescription(String transitRouterAttachmentDescription) {
-			this.transitRouterAttachmentDescription = transitRouterAttachmentDescription;
+		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+			this.transitRouterAttachmentId = transitRouterAttachmentId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getBandwidthType() {
+			return this.bandwidthType;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public Boolean getAutoPublishRouteEnabled() {
-			return this.autoPublishRouteEnabled;
-		}
-
-		public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
-			this.autoPublishRouteEnabled = autoPublishRouteEnabled;
-		}
-
-		public String getTransitRouterId() {
-			return this.transitRouterId;
-		}
-
-		public void setTransitRouterId(String transitRouterId) {
-			this.transitRouterId = transitRouterId;
-		}
-
-		public Integer getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getBandwidthPackageId() {
-			return this.bandwidthPackageId;
-		}
-
-		public void setBandwidthPackageId(String bandwidthPackageId) {
-			this.bandwidthPackageId = bandwidthPackageId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getGeographicSpanId() {
-			return this.geographicSpanId;
-		}
-
-		public void setGeographicSpanId(String geographicSpanId) {
-			this.geographicSpanId = geographicSpanId;
+		public void setBandwidthType(String bandwidthType) {
+			this.bandwidthType = bandwidthType;
 		}
 
 		public String getCenBandwidthPackageId() {
@@ -239,12 +151,100 @@ public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 			this.cenBandwidthPackageId = cenBandwidthPackageId;
 		}
 
-		public String getBandwidthType() {
-			return this.bandwidthType;
+		public String getTransitRouterAttachmentDescription() {
+			return this.transitRouterAttachmentDescription;
 		}
 
-		public void setBandwidthType(String bandwidthType) {
-			this.bandwidthType = bandwidthType;
+		public void setTransitRouterAttachmentDescription(String transitRouterAttachmentDescription) {
+			this.transitRouterAttachmentDescription = transitRouterAttachmentDescription;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getPeerTransitRouterId() {
+			return this.peerTransitRouterId;
+		}
+
+		public void setPeerTransitRouterId(String peerTransitRouterId) {
+			this.peerTransitRouterId = peerTransitRouterId;
+		}
+
+		public String getBandwidthPackageId() {
+			return this.bandwidthPackageId;
+		}
+
+		public void setBandwidthPackageId(String bandwidthPackageId) {
+			this.bandwidthPackageId = bandwidthPackageId;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
+		public String getPeerTransitRouterRegionId() {
+			return this.peerTransitRouterRegionId;
+		}
+
+		public void setPeerTransitRouterRegionId(String peerTransitRouterRegionId) {
+			this.peerTransitRouterRegionId = peerTransitRouterRegionId;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getGeographicSpanId() {
+			return this.geographicSpanId;
+		}
+
+		public void setGeographicSpanId(String geographicSpanId) {
+			this.geographicSpanId = geographicSpanId;
+		}
+
+		public Long getPeerTransitRouterOwnerId() {
+			return this.peerTransitRouterOwnerId;
+		}
+
+		public void setPeerTransitRouterOwnerId(Long peerTransitRouterOwnerId) {
+			this.peerTransitRouterOwnerId = peerTransitRouterOwnerId;
+		}
+
+		public Boolean getAutoPublishRouteEnabled() {
+			return this.autoPublishRouteEnabled;
+		}
+
+		public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
+			this.autoPublishRouteEnabled = autoPublishRouteEnabled;
+		}
+
+		public String getTransitRouterAttachmentName() {
+			return this.transitRouterAttachmentName;
+		}
+
+		public void setTransitRouterAttachmentName(String transitRouterAttachmentName) {
+			this.transitRouterAttachmentName = transitRouterAttachmentName;
 		}
 	}
 

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCenGeographicSpanRemainingBandwidthResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long remainingBandwidth;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getRemainingBandwidth() {
 		return this.remainingBandwidth;
@@ -42,6 +34,14 @@ public class DescribeCenGeographicSpanRemainingBandwidthResponse extends AcsResp
 
 	public void setRemainingBandwidth(Long remainingBandwidth) {
 		this.remainingBandwidth = remainingBandwidth;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

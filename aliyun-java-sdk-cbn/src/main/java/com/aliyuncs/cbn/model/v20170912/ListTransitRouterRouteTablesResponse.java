@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<TransitRouterRouteTable> transitRouterRouteTables;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<TransitRouterRouteTable> getTransitRouterRouteTables() {
 		return this.transitRouterRouteTables;
 	}
@@ -79,15 +79,15 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 		private String transitRouterRouteTableStatus;
 
-		private String transitRouterRouteTableName;
-
-		private String transitRouterRouteTableId;
-
-		private String transitRouterRouteTableDescription;
-
 		private String transitRouterRouteTableType;
 
 		private String createTime;
+
+		private String transitRouterRouteTableId;
+
+		private String transitRouterRouteTableName;
+
+		private String transitRouterRouteTableDescription;
 
 		public String getTransitRouterRouteTableStatus() {
 			return this.transitRouterRouteTableStatus;
@@ -95,30 +95,6 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 		public void setTransitRouterRouteTableStatus(String transitRouterRouteTableStatus) {
 			this.transitRouterRouteTableStatus = transitRouterRouteTableStatus;
-		}
-
-		public String getTransitRouterRouteTableName() {
-			return this.transitRouterRouteTableName;
-		}
-
-		public void setTransitRouterRouteTableName(String transitRouterRouteTableName) {
-			this.transitRouterRouteTableName = transitRouterRouteTableName;
-		}
-
-		public String getTransitRouterRouteTableId() {
-			return this.transitRouterRouteTableId;
-		}
-
-		public void setTransitRouterRouteTableId(String transitRouterRouteTableId) {
-			this.transitRouterRouteTableId = transitRouterRouteTableId;
-		}
-
-		public String getTransitRouterRouteTableDescription() {
-			return this.transitRouterRouteTableDescription;
-		}
-
-		public void setTransitRouterRouteTableDescription(String transitRouterRouteTableDescription) {
-			this.transitRouterRouteTableDescription = transitRouterRouteTableDescription;
 		}
 
 		public String getTransitRouterRouteTableType() {
@@ -135,6 +111,30 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getTransitRouterRouteTableId() {
+			return this.transitRouterRouteTableId;
+		}
+
+		public void setTransitRouterRouteTableId(String transitRouterRouteTableId) {
+			this.transitRouterRouteTableId = transitRouterRouteTableId;
+		}
+
+		public String getTransitRouterRouteTableName() {
+			return this.transitRouterRouteTableName;
+		}
+
+		public void setTransitRouterRouteTableName(String transitRouterRouteTableName) {
+			this.transitRouterRouteTableName = transitRouterRouteTableName;
+		}
+
+		public String getTransitRouterRouteTableDescription() {
+			return this.transitRouterRouteTableDescription;
+		}
+
+		public void setTransitRouterRouteTableDescription(String transitRouterRouteTableDescription) {
+			this.transitRouterRouteTableDescription = transitRouterRouteTableDescription;
 		}
 	}
 

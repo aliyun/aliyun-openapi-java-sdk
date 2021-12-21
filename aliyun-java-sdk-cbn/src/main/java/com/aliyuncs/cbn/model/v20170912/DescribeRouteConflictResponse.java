@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRouteConflictResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer totalCount;
 
-	private Integer pageSize;
-
 	private List<RouteConflict> routeConflicts;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeRouteConflictResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public List<RouteConflict> getRouteConflicts() {
 		return this.routeConflicts;
 	}
@@ -77,15 +77,23 @@ public class DescribeRouteConflictResponse extends AcsResponse {
 
 	public static class RouteConflict {
 
-		private String destinationCidrBlock;
+		private String status;
 
-		private String regionId;
+		private String destinationCidrBlock;
 
 		private String instanceId;
 
 		private String instanceType;
 
-		private String status;
+		private String regionId;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getDestinationCidrBlock() {
 			return this.destinationCidrBlock;
@@ -93,14 +101,6 @@ public class DescribeRouteConflictResponse extends AcsResponse {
 
 		public void setDestinationCidrBlock(String destinationCidrBlock) {
 			this.destinationCidrBlock = destinationCidrBlock;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 
 		public String getInstanceId() {
@@ -119,12 +119,12 @@ public class DescribeRouteConflictResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

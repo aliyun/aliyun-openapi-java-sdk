@@ -27,18 +27,18 @@ public class ListTransitRouterRouteTableAssociationsResponseUnmarshaller {
 	public static ListTransitRouterRouteTableAssociationsResponse unmarshall(ListTransitRouterRouteTableAssociationsResponse listTransitRouterRouteTableAssociationsResponse, UnmarshallerContext _ctx) {
 		
 		listTransitRouterRouteTableAssociationsResponse.setRequestId(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.RequestId"));
+		listTransitRouterRouteTableAssociationsResponse.setNextToken(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.NextToken"));
 		listTransitRouterRouteTableAssociationsResponse.setTotalCount(_ctx.integerValue("ListTransitRouterRouteTableAssociationsResponse.TotalCount"));
 		listTransitRouterRouteTableAssociationsResponse.setMaxResults(_ctx.integerValue("ListTransitRouterRouteTableAssociationsResponse.MaxResults"));
-		listTransitRouterRouteTableAssociationsResponse.setNextToken(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.NextToken"));
 
 		List<TransitRouterAssociation> transitRouterAssociations = new ArrayList<TransitRouterAssociation>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations.Length"); i++) {
 			TransitRouterAssociation transitRouterAssociation = new TransitRouterAssociation();
-			transitRouterAssociation.setStatus(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations["+ i +"].Status"));
 			transitRouterAssociation.setTransitRouterAttachmentId(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations["+ i +"].TransitRouterAttachmentId"));
-			transitRouterAssociation.setTransitRouterRouteTableId(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations["+ i +"].TransitRouterRouteTableId"));
-			transitRouterAssociation.setResourceId(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations["+ i +"].ResourceId"));
+			transitRouterAssociation.setStatus(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations["+ i +"].Status"));
 			transitRouterAssociation.setResourceType(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations["+ i +"].ResourceType"));
+			transitRouterAssociation.setResourceId(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations["+ i +"].ResourceId"));
+			transitRouterAssociation.setTransitRouterRouteTableId(_ctx.stringValue("ListTransitRouterRouteTableAssociationsResponse.TransitRouterAssociations["+ i +"].TransitRouterRouteTableId"));
 
 			transitRouterAssociations.add(transitRouterAssociation);
 		}

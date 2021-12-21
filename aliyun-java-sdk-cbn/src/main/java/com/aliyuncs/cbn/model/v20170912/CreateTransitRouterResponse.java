@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTransitRouterResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String transitRouterId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTransitRouterId() {
 		return this.transitRouterId;
@@ -42,6 +34,14 @@ public class CreateTransitRouterResponse extends AcsResponse {
 
 	public void setTransitRouterId(String transitRouterId) {
 		this.transitRouterId = transitRouterId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

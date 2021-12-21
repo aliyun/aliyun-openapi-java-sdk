@@ -41,7 +41,7 @@ public class WithdrawPublishedRouteEntriesRequest extends RpcAcsRequest<Withdraw
 
 	private String childInstanceRouteTableId;
 	public WithdrawPublishedRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "WithdrawPublishedRouteEntries", "cbn");
+		super("Cbn", "2017-09-12", "WithdrawPublishedRouteEntries");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

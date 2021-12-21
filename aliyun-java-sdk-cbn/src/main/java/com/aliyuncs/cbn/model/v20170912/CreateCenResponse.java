@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCenResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String cenId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getCenId() {
 		return this.cenId;
@@ -42,6 +34,14 @@ public class CreateCenResponse extends AcsResponse {
 
 	public void setCenId(String cenId) {
 		this.cenId = cenId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

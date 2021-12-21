@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCenBandwidthPackageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String cenBandwidthPackageId;
 
 	private String cenBandwidthPackageOrderId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getCenBandwidthPackageId() {
 		return this.cenBandwidthPackageId;
@@ -52,6 +44,14 @@ public class CreateCenBandwidthPackageResponse extends AcsResponse {
 
 	public void setCenBandwidthPackageOrderId(String cenBandwidthPackageOrderId) {
 		this.cenBandwidthPackageOrderId = cenBandwidthPackageOrderId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

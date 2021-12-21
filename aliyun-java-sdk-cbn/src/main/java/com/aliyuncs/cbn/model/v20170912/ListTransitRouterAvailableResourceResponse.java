@@ -27,9 +27,9 @@ public class ListTransitRouterAvailableResourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> masterZones;
-
 	private List<String> slaveZones;
+
+	private List<String> masterZones;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,20 +39,20 @@ public class ListTransitRouterAvailableResourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getMasterZones() {
-		return this.masterZones;
-	}
-
-	public void setMasterZones(List<String> masterZones) {
-		this.masterZones = masterZones;
-	}
-
 	public List<String> getSlaveZones() {
 		return this.slaveZones;
 	}
 
 	public void setSlaveZones(List<String> slaveZones) {
 		this.slaveZones = slaveZones;
+	}
+
+	public List<String> getMasterZones() {
+		return this.masterZones;
+	}
+
+	public void setMasterZones(List<String> masterZones) {
+		this.masterZones = masterZones;
 	}
 
 	@Override

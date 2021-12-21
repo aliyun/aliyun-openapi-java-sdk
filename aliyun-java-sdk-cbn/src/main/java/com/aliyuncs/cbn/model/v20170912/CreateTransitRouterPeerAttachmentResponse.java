@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTransitRouterPeerAttachmentResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String transitRouterAttachmentId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTransitRouterAttachmentId() {
 		return this.transitRouterAttachmentId;
@@ -42,6 +34,14 @@ public class CreateTransitRouterPeerAttachmentResponse extends AcsResponse {
 
 	public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
 		this.transitRouterAttachmentId = transitRouterAttachmentId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

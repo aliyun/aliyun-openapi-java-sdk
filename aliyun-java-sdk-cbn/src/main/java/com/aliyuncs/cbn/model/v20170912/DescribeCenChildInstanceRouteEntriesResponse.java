@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer totalCount;
 
-	private Integer pageSize;
-
 	private List<CenRouteEntry> cenRouteEntries;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public List<CenRouteEntry> getCenRouteEntries() {
 		return this.cenRouteEntries;
 	}
@@ -77,21 +77,21 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 
 	public static class CenRouteEntry {
 
-		private String destinationCidrBlock;
+		private String status;
 
 		private String type;
 
-		private String nextHopInstanceId;
+		private String publishStatus;
 
 		private String nextHopType;
 
-		private String nextHopRegionId;
-
-		private String status;
-
 		private Boolean operationalMode;
 
-		private String publishStatus;
+		private String nextHopRegionId;
+
+		private String nextHopInstanceId;
+
+		private String destinationCidrBlock;
 
 		private String routeTableId;
 
@@ -99,16 +99,16 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 
 		private List<Conflict> conflicts;
 
-		private List<String> asPaths;
-
 		private List<String> communities;
 
-		public String getDestinationCidrBlock() {
-			return this.destinationCidrBlock;
+		private List<String> asPaths;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDestinationCidrBlock(String destinationCidrBlock) {
-			this.destinationCidrBlock = destinationCidrBlock;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -119,12 +119,12 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getNextHopInstanceId() {
-			return this.nextHopInstanceId;
+		public String getPublishStatus() {
+			return this.publishStatus;
 		}
 
-		public void setNextHopInstanceId(String nextHopInstanceId) {
-			this.nextHopInstanceId = nextHopInstanceId;
+		public void setPublishStatus(String publishStatus) {
+			this.publishStatus = publishStatus;
 		}
 
 		public String getNextHopType() {
@@ -135,22 +135,6 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 			this.nextHopType = nextHopType;
 		}
 
-		public String getNextHopRegionId() {
-			return this.nextHopRegionId;
-		}
-
-		public void setNextHopRegionId(String nextHopRegionId) {
-			this.nextHopRegionId = nextHopRegionId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public Boolean getOperationalMode() {
 			return this.operationalMode;
 		}
@@ -159,12 +143,28 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 			this.operationalMode = operationalMode;
 		}
 
-		public String getPublishStatus() {
-			return this.publishStatus;
+		public String getNextHopRegionId() {
+			return this.nextHopRegionId;
 		}
 
-		public void setPublishStatus(String publishStatus) {
-			this.publishStatus = publishStatus;
+		public void setNextHopRegionId(String nextHopRegionId) {
+			this.nextHopRegionId = nextHopRegionId;
+		}
+
+		public String getNextHopInstanceId() {
+			return this.nextHopInstanceId;
+		}
+
+		public void setNextHopInstanceId(String nextHopInstanceId) {
+			this.nextHopInstanceId = nextHopInstanceId;
+		}
+
+		public String getDestinationCidrBlock() {
+			return this.destinationCidrBlock;
+		}
+
+		public void setDestinationCidrBlock(String destinationCidrBlock) {
+			this.destinationCidrBlock = destinationCidrBlock;
 		}
 
 		public String getRouteTableId() {
@@ -191,14 +191,6 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 			this.conflicts = conflicts;
 		}
 
-		public List<String> getAsPaths() {
-			return this.asPaths;
-		}
-
-		public void setAsPaths(List<String> asPaths) {
-			this.asPaths = asPaths;
-		}
-
 		public List<String> getCommunities() {
 			return this.communities;
 		}
@@ -207,19 +199,19 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 			this.communities = communities;
 		}
 
-		public static class CenRouteMapRecord {
+		public List<String> getAsPaths() {
+			return this.asPaths;
+		}
 
-			private String regionId;
+		public void setAsPaths(List<String> asPaths) {
+			this.asPaths = asPaths;
+		}
+
+		public static class CenRouteMapRecord {
 
 			private String routeMapId;
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String regionId;
 
 			public String getRouteMapId() {
 				return this.routeMapId;
@@ -228,27 +220,6 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 			public void setRouteMapId(String routeMapId) {
 				this.routeMapId = routeMapId;
 			}
-		}
-
-		public static class Conflict {
-
-			private String destinationCidrBlock;
-
-			private String regionId;
-
-			private String instanceId;
-
-			private String instanceType;
-
-			private String status;
-
-			public String getDestinationCidrBlock() {
-				return this.destinationCidrBlock;
-			}
-
-			public void setDestinationCidrBlock(String destinationCidrBlock) {
-				this.destinationCidrBlock = destinationCidrBlock;
-			}
 
 			public String getRegionId() {
 				return this.regionId;
@@ -256,6 +227,35 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+		}
+
+		public static class Conflict {
+
+			private String status;
+
+			private String destinationCidrBlock;
+
+			private String instanceId;
+
+			private String instanceType;
+
+			private String regionId;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDestinationCidrBlock() {
+				return this.destinationCidrBlock;
+			}
+
+			public void setDestinationCidrBlock(String destinationCidrBlock) {
+				this.destinationCidrBlock = destinationCidrBlock;
 			}
 
 			public String getInstanceId() {
@@ -274,12 +274,12 @@ public class DescribeCenChildInstanceRouteEntriesResponse extends AcsResponse {
 				this.instanceType = instanceType;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

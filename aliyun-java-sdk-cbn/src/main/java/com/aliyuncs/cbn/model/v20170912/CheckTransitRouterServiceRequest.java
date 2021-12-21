@@ -35,7 +35,7 @@ public class CheckTransitRouterServiceRequest extends RpcAcsRequest<CheckTransit
 
 	private Long ownerId;
 	public CheckTransitRouterServiceRequest() {
-		super("Cbn", "2017-09-12", "CheckTransitRouterService", "cbn");
+		super("Cbn", "2017-09-12", "CheckTransitRouterService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

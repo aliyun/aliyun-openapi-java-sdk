@@ -27,9 +27,9 @@ public class DescribeGeographicRegionMembershipResponseUnmarshaller {
 	public static DescribeGeographicRegionMembershipResponse unmarshall(DescribeGeographicRegionMembershipResponse describeGeographicRegionMembershipResponse, UnmarshallerContext _ctx) {
 		
 		describeGeographicRegionMembershipResponse.setRequestId(_ctx.stringValue("DescribeGeographicRegionMembershipResponse.RequestId"));
-		describeGeographicRegionMembershipResponse.setTotalCount(_ctx.integerValue("DescribeGeographicRegionMembershipResponse.TotalCount"));
-		describeGeographicRegionMembershipResponse.setPageNumber(_ctx.integerValue("DescribeGeographicRegionMembershipResponse.PageNumber"));
 		describeGeographicRegionMembershipResponse.setPageSize(_ctx.integerValue("DescribeGeographicRegionMembershipResponse.PageSize"));
+		describeGeographicRegionMembershipResponse.setPageNumber(_ctx.integerValue("DescribeGeographicRegionMembershipResponse.PageNumber"));
+		describeGeographicRegionMembershipResponse.setTotalCount(_ctx.integerValue("DescribeGeographicRegionMembershipResponse.TotalCount"));
 
 		List<RegionId> regionIds = new ArrayList<RegionId>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGeographicRegionMembershipResponse.RegionIds.Length"); i++) {

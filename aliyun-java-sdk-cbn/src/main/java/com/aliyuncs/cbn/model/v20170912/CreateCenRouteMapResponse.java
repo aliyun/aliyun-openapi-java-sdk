@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCenRouteMapResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String routeMapId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getRouteMapId() {
 		return this.routeMapId;
@@ -42,6 +34,14 @@ public class CreateCenRouteMapResponse extends AcsResponse {
 
 	public void setRouteMapId(String routeMapId) {
 		this.routeMapId = routeMapId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

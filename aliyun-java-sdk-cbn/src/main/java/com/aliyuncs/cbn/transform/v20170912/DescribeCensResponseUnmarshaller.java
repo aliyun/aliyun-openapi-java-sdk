@@ -28,21 +28,21 @@ public class DescribeCensResponseUnmarshaller {
 	public static DescribeCensResponse unmarshall(DescribeCensResponse describeCensResponse, UnmarshallerContext _ctx) {
 		
 		describeCensResponse.setRequestId(_ctx.stringValue("DescribeCensResponse.RequestId"));
-		describeCensResponse.setTotalCount(_ctx.integerValue("DescribeCensResponse.TotalCount"));
-		describeCensResponse.setPageNumber(_ctx.integerValue("DescribeCensResponse.PageNumber"));
 		describeCensResponse.setPageSize(_ctx.integerValue("DescribeCensResponse.PageSize"));
+		describeCensResponse.setPageNumber(_ctx.integerValue("DescribeCensResponse.PageNumber"));
+		describeCensResponse.setTotalCount(_ctx.integerValue("DescribeCensResponse.TotalCount"));
 
 		List<Cen> cens = new ArrayList<Cen>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCensResponse.Cens.Length"); i++) {
 			Cen cen = new Cen();
-			cen.setCenId(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].CenId"));
-			cen.setName(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Name"));
-			cen.setDescription(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Description"));
-			cen.setProtectionLevel(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].ProtectionLevel"));
 			cen.setStatus(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Status"));
 			cen.setCreationTime(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].CreationTime"));
 			cen.setIpv6Level(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Ipv6Level"));
+			cen.setDescription(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Description"));
 			cen.setResourceGroupId(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].ResourceGroupId"));
+			cen.setCenId(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].CenId"));
+			cen.setProtectionLevel(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].ProtectionLevel"));
+			cen.setName(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Name"));
 
 			List<String> cenBandwidthPackageIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {

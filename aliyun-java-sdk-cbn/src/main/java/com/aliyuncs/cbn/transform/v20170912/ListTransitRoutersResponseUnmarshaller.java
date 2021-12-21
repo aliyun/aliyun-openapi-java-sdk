@@ -27,22 +27,22 @@ public class ListTransitRoutersResponseUnmarshaller {
 	public static ListTransitRoutersResponse unmarshall(ListTransitRoutersResponse listTransitRoutersResponse, UnmarshallerContext _ctx) {
 		
 		listTransitRoutersResponse.setRequestId(_ctx.stringValue("ListTransitRoutersResponse.RequestId"));
-		listTransitRoutersResponse.setTotalCount(_ctx.integerValue("ListTransitRoutersResponse.TotalCount"));
-		listTransitRoutersResponse.setPageNumber(_ctx.integerValue("ListTransitRoutersResponse.PageNumber"));
 		listTransitRoutersResponse.setPageSize(_ctx.integerValue("ListTransitRoutersResponse.PageSize"));
+		listTransitRoutersResponse.setPageNumber(_ctx.integerValue("ListTransitRoutersResponse.PageNumber"));
+		listTransitRoutersResponse.setTotalCount(_ctx.integerValue("ListTransitRoutersResponse.TotalCount"));
 
 		List<TransitRouter> transitRouters = new ArrayList<TransitRouter>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRoutersResponse.TransitRouters.Length"); i++) {
 			TransitRouter transitRouter = new TransitRouter();
-			transitRouter.setTransitRouterId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterId"));
-			transitRouter.setStatus(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Status"));
-			transitRouter.setCenId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].CenId"));
-			transitRouter.setRegionId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].RegionId"));
-			transitRouter.setAliUid(_ctx.longValue("ListTransitRoutersResponse.TransitRouters["+ i +"].AliUid"));
-			transitRouter.setType(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Type"));
 			transitRouter.setCreationTime(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].CreationTime"));
-			transitRouter.setTransitRouterName(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterName"));
+			transitRouter.setType(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Type"));
+			transitRouter.setStatus(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Status"));
+			transitRouter.setTransitRouterId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterId"));
 			transitRouter.setTransitRouterDescription(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterDescription"));
+			transitRouter.setTransitRouterName(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterName"));
+			transitRouter.setCenId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].CenId"));
+			transitRouter.setAliUid(_ctx.longValue("ListTransitRoutersResponse.TransitRouters["+ i +"].AliUid"));
+			transitRouter.setRegionId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].RegionId"));
 
 			transitRouters.add(transitRouter);
 		}

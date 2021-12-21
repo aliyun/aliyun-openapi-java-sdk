@@ -27,19 +27,19 @@ public class DescribeCenPrivateZoneRoutesResponseUnmarshaller {
 	public static DescribeCenPrivateZoneRoutesResponse unmarshall(DescribeCenPrivateZoneRoutesResponse describeCenPrivateZoneRoutesResponse, UnmarshallerContext _ctx) {
 		
 		describeCenPrivateZoneRoutesResponse.setRequestId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.RequestId"));
-		describeCenPrivateZoneRoutesResponse.setCenId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.CenId"));
 		describeCenPrivateZoneRoutesResponse.setPrivateZoneDnsServers(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneDnsServers"));
+		describeCenPrivateZoneRoutesResponse.setCenId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.CenId"));
 		describeCenPrivateZoneRoutesResponse.setPageNumber(_ctx.integerValue("DescribeCenPrivateZoneRoutesResponse.PageNumber"));
-		describeCenPrivateZoneRoutesResponse.setTotalCount(_ctx.integerValue("DescribeCenPrivateZoneRoutesResponse.TotalCount"));
 		describeCenPrivateZoneRoutesResponse.setPageSize(_ctx.integerValue("DescribeCenPrivateZoneRoutesResponse.PageSize"));
+		describeCenPrivateZoneRoutesResponse.setTotalCount(_ctx.integerValue("DescribeCenPrivateZoneRoutesResponse.TotalCount"));
 
 		List<PrivateZoneInfo> privateZoneInfos = new ArrayList<PrivateZoneInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos.Length"); i++) {
 			PrivateZoneInfo privateZoneInfo = new PrivateZoneInfo();
+			privateZoneInfo.setStatus(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].Status"));
 			privateZoneInfo.setAccessRegionId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].AccessRegionId"));
 			privateZoneInfo.setHostRegionId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].HostRegionId"));
 			privateZoneInfo.setHostVpcId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].HostVpcId"));
-			privateZoneInfo.setStatus(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].Status"));
 
 			privateZoneInfos.add(privateZoneInfo);
 		}

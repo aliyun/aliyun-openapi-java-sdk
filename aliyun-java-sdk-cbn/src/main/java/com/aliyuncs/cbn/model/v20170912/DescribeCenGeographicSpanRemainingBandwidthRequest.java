@@ -43,7 +43,7 @@ public class DescribeCenGeographicSpanRemainingBandwidthRequest extends RpcAcsRe
 
 	private Long ownerId;
 	public DescribeCenGeographicSpanRemainingBandwidthRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth", "cbn");
+		super("Cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

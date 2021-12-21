@@ -31,8 +31,8 @@ public class DescribeChildInstanceRegionsResponseUnmarshaller {
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeChildInstanceRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setRegionId(_ctx.stringValue("DescribeChildInstanceRegionsResponse.Regions["+ i +"].RegionId"));
 			region.setLocalName(_ctx.stringValue("DescribeChildInstanceRegionsResponse.Regions["+ i +"].LocalName"));
+			region.setRegionId(_ctx.stringValue("DescribeChildInstanceRegionsResponse.Regions["+ i +"].RegionId"));
 
 			regions.add(region);
 		}

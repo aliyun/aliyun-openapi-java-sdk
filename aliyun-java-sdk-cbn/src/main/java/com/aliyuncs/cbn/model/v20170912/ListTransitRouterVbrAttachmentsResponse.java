@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<TransitRouterAttachment> transitRouterAttachments;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<TransitRouterAttachment> getTransitRouterAttachments() {
 		return this.transitRouterAttachments;
 	}
@@ -77,27 +77,43 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 	public static class TransitRouterAttachment {
 
+		private String creationTime;
+
+		private String status;
+
 		private String transitRouterAttachmentId;
+
+		private String transitRouterId;
+
+		private String resourceType;
 
 		private String vbrRegionId;
 
+		private String transitRouterAttachmentDescription;
+
 		private Long vbrOwnerId;
+
+		private Boolean autoPublishRouteEnabled;
 
 		private String vbrId;
 
 		private String transitRouterAttachmentName;
 
-		private String resourceType;
+		public String getCreationTime() {
+			return this.creationTime;
+		}
 
-		private String status;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
-		private String transitRouterAttachmentDescription;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String creationTime;
-
-		private Boolean autoPublishRouteEnabled;
-
-		private String transitRouterId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getTransitRouterAttachmentId() {
 			return this.transitRouterAttachmentId;
@@ -105,6 +121,22 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
 			this.transitRouterAttachmentId = transitRouterAttachmentId;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getVbrRegionId() {
@@ -115,12 +147,28 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 			this.vbrRegionId = vbrRegionId;
 		}
 
+		public String getTransitRouterAttachmentDescription() {
+			return this.transitRouterAttachmentDescription;
+		}
+
+		public void setTransitRouterAttachmentDescription(String transitRouterAttachmentDescription) {
+			this.transitRouterAttachmentDescription = transitRouterAttachmentDescription;
+		}
+
 		public Long getVbrOwnerId() {
 			return this.vbrOwnerId;
 		}
 
 		public void setVbrOwnerId(Long vbrOwnerId) {
 			this.vbrOwnerId = vbrOwnerId;
+		}
+
+		public Boolean getAutoPublishRouteEnabled() {
+			return this.autoPublishRouteEnabled;
+		}
+
+		public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
+			this.autoPublishRouteEnabled = autoPublishRouteEnabled;
 		}
 
 		public String getVbrId() {
@@ -137,54 +185,6 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		public void setTransitRouterAttachmentName(String transitRouterAttachmentName) {
 			this.transitRouterAttachmentName = transitRouterAttachmentName;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getTransitRouterAttachmentDescription() {
-			return this.transitRouterAttachmentDescription;
-		}
-
-		public void setTransitRouterAttachmentDescription(String transitRouterAttachmentDescription) {
-			this.transitRouterAttachmentDescription = transitRouterAttachmentDescription;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public Boolean getAutoPublishRouteEnabled() {
-			return this.autoPublishRouteEnabled;
-		}
-
-		public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
-			this.autoPublishRouteEnabled = autoPublishRouteEnabled;
-		}
-
-		public String getTransitRouterId() {
-			return this.transitRouterId;
-		}
-
-		public void setTransitRouterId(String transitRouterId) {
-			this.transitRouterId = transitRouterId;
 		}
 	}
 

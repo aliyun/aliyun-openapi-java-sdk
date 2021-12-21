@@ -27,18 +27,18 @@ public class DescribeRouteConflictResponseUnmarshaller {
 	public static DescribeRouteConflictResponse unmarshall(DescribeRouteConflictResponse describeRouteConflictResponse, UnmarshallerContext _ctx) {
 		
 		describeRouteConflictResponse.setRequestId(_ctx.stringValue("DescribeRouteConflictResponse.RequestId"));
+		describeRouteConflictResponse.setPageSize(_ctx.integerValue("DescribeRouteConflictResponse.PageSize"));
 		describeRouteConflictResponse.setPageNumber(_ctx.integerValue("DescribeRouteConflictResponse.PageNumber"));
 		describeRouteConflictResponse.setTotalCount(_ctx.integerValue("DescribeRouteConflictResponse.TotalCount"));
-		describeRouteConflictResponse.setPageSize(_ctx.integerValue("DescribeRouteConflictResponse.PageSize"));
 
 		List<RouteConflict> routeConflicts = new ArrayList<RouteConflict>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRouteConflictResponse.RouteConflicts.Length"); i++) {
 			RouteConflict routeConflict = new RouteConflict();
+			routeConflict.setStatus(_ctx.stringValue("DescribeRouteConflictResponse.RouteConflicts["+ i +"].Status"));
 			routeConflict.setDestinationCidrBlock(_ctx.stringValue("DescribeRouteConflictResponse.RouteConflicts["+ i +"].DestinationCidrBlock"));
-			routeConflict.setRegionId(_ctx.stringValue("DescribeRouteConflictResponse.RouteConflicts["+ i +"].RegionId"));
 			routeConflict.setInstanceId(_ctx.stringValue("DescribeRouteConflictResponse.RouteConflicts["+ i +"].InstanceId"));
 			routeConflict.setInstanceType(_ctx.stringValue("DescribeRouteConflictResponse.RouteConflicts["+ i +"].InstanceType"));
-			routeConflict.setStatus(_ctx.stringValue("DescribeRouteConflictResponse.RouteConflicts["+ i +"].Status"));
+			routeConflict.setRegionId(_ctx.stringValue("DescribeRouteConflictResponse.RouteConflicts["+ i +"].RegionId"));
 
 			routeConflicts.add(routeConflict);
 		}

@@ -88,7 +88,7 @@ public class ModifyCenRouteMapRequest extends RpcAcsRequest<ModifyCenRouteMapRes
 
 	private String cenRegionId;
 	public ModifyCenRouteMapRequest() {
-		super("Cbn", "2017-09-12", "ModifyCenRouteMap", "cbn");
+		super("Cbn", "2017-09-12", "ModifyCenRouteMap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

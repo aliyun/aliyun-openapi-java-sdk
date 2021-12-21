@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<TransitRouterAttachment> transitRouterAttachments;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<TransitRouterAttachment> getTransitRouterAttachments() {
 		return this.transitRouterAttachments;
 	}
@@ -77,74 +77,34 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 	public static class TransitRouterAttachment {
 
-		private String transitRouterAttachmentId;
-
-		private String vpcRegionId;
-
-		private Long vpcOwnerId;
-
-		private String vpcId;
-
-		private String transitRouterAttachmentName;
-
-		private String resourceType;
+		private String creationTime;
 
 		private String status;
 
-		private String transitRouterAttachmentDescription;
+		private String vpcId;
 
-		private String creationTime;
+		private String transitRouterAttachmentId;
 
 		private String transitRouterId;
 
+		private String resourceType;
+
+		private String transitRouterAttachmentDescription;
+
+		private Long vpcOwnerId;
+
+		private String vpcRegionId;
+
+		private String transitRouterAttachmentName;
+
 		private List<ZoneMapping> zoneMappings;
 
-		public String getTransitRouterAttachmentId() {
-			return this.transitRouterAttachmentId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
-			this.transitRouterAttachmentId = transitRouterAttachmentId;
-		}
-
-		public String getVpcRegionId() {
-			return this.vpcRegionId;
-		}
-
-		public void setVpcRegionId(String vpcRegionId) {
-			this.vpcRegionId = vpcRegionId;
-		}
-
-		public Long getVpcOwnerId() {
-			return this.vpcOwnerId;
-		}
-
-		public void setVpcOwnerId(Long vpcOwnerId) {
-			this.vpcOwnerId = vpcOwnerId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getTransitRouterAttachmentName() {
-			return this.transitRouterAttachmentName;
-		}
-
-		public void setTransitRouterAttachmentName(String transitRouterAttachmentName) {
-			this.transitRouterAttachmentName = transitRouterAttachmentName;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -155,20 +115,20 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTransitRouterAttachmentDescription() {
-			return this.transitRouterAttachmentDescription;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setTransitRouterAttachmentDescription(String transitRouterAttachmentDescription) {
-			this.transitRouterAttachmentDescription = transitRouterAttachmentDescription;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getTransitRouterAttachmentId() {
+			return this.transitRouterAttachmentId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+			this.transitRouterAttachmentId = transitRouterAttachmentId;
 		}
 
 		public String getTransitRouterId() {
@@ -177,6 +137,46 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		public void setTransitRouterId(String transitRouterId) {
 			this.transitRouterId = transitRouterId;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getTransitRouterAttachmentDescription() {
+			return this.transitRouterAttachmentDescription;
+		}
+
+		public void setTransitRouterAttachmentDescription(String transitRouterAttachmentDescription) {
+			this.transitRouterAttachmentDescription = transitRouterAttachmentDescription;
+		}
+
+		public Long getVpcOwnerId() {
+			return this.vpcOwnerId;
+		}
+
+		public void setVpcOwnerId(Long vpcOwnerId) {
+			this.vpcOwnerId = vpcOwnerId;
+		}
+
+		public String getVpcRegionId() {
+			return this.vpcRegionId;
+		}
+
+		public void setVpcRegionId(String vpcRegionId) {
+			this.vpcRegionId = vpcRegionId;
+		}
+
+		public String getTransitRouterAttachmentName() {
+			return this.transitRouterAttachmentName;
+		}
+
+		public void setTransitRouterAttachmentName(String transitRouterAttachmentName) {
+			this.transitRouterAttachmentName = transitRouterAttachmentName;
 		}
 
 		public List<ZoneMapping> getZoneMappings() {

@@ -27,19 +27,19 @@ public class DescribeCenAttachedChildInstancesResponseUnmarshaller {
 	public static DescribeCenAttachedChildInstancesResponse unmarshall(DescribeCenAttachedChildInstancesResponse describeCenAttachedChildInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeCenAttachedChildInstancesResponse.setRequestId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.RequestId"));
-		describeCenAttachedChildInstancesResponse.setTotalCount(_ctx.integerValue("DescribeCenAttachedChildInstancesResponse.TotalCount"));
-		describeCenAttachedChildInstancesResponse.setPageNumber(_ctx.integerValue("DescribeCenAttachedChildInstancesResponse.PageNumber"));
 		describeCenAttachedChildInstancesResponse.setPageSize(_ctx.integerValue("DescribeCenAttachedChildInstancesResponse.PageSize"));
+		describeCenAttachedChildInstancesResponse.setPageNumber(_ctx.integerValue("DescribeCenAttachedChildInstancesResponse.PageNumber"));
+		describeCenAttachedChildInstancesResponse.setTotalCount(_ctx.integerValue("DescribeCenAttachedChildInstancesResponse.TotalCount"));
 
 		List<ChildInstance> childInstances = new ArrayList<ChildInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCenAttachedChildInstancesResponse.ChildInstances.Length"); i++) {
 			ChildInstance childInstance = new ChildInstance();
-			childInstance.setCenId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].CenId"));
-			childInstance.setChildInstanceId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceId"));
 			childInstance.setChildInstanceType(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceType"));
+			childInstance.setStatus(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].Status"));
 			childInstance.setChildInstanceRegionId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceRegionId"));
 			childInstance.setChildInstanceOwnerId(_ctx.longValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceOwnerId"));
-			childInstance.setStatus(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].Status"));
+			childInstance.setChildInstanceId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceId"));
+			childInstance.setCenId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].CenId"));
 			childInstance.setChildInstanceAttachTime(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceAttachTime"));
 
 			childInstances.add(childInstance);

@@ -48,7 +48,7 @@ public class CreateCenInterRegionTrafficQosPolicyRequest extends RpcAcsRequest<C
 
 	private String transitRouterAttachmentId;
 	public CreateCenInterRegionTrafficQosPolicyRequest() {
-		super("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy", "cbn");
+		super("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

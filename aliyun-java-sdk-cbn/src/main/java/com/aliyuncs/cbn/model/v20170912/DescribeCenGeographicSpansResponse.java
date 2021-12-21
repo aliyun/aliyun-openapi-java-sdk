@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCenGeographicSpansResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<GeographicSpanModel> geographicSpanModels;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCenGeographicSpansResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCenGeographicSpansResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<GeographicSpanModel> getGeographicSpanModels() {
@@ -77,19 +77,11 @@ public class DescribeCenGeographicSpansResponse extends AcsResponse {
 
 	public static class GeographicSpanModel {
 
-		private String geographicSpanId;
-
 		private String localGeoRegionId;
 
+		private String geographicSpanId;
+
 		private String oppositeGeoRegionId;
-
-		public String getGeographicSpanId() {
-			return this.geographicSpanId;
-		}
-
-		public void setGeographicSpanId(String geographicSpanId) {
-			this.geographicSpanId = geographicSpanId;
-		}
 
 		public String getLocalGeoRegionId() {
 			return this.localGeoRegionId;
@@ -97,6 +89,14 @@ public class DescribeCenGeographicSpansResponse extends AcsResponse {
 
 		public void setLocalGeoRegionId(String localGeoRegionId) {
 			this.localGeoRegionId = localGeoRegionId;
+		}
+
+		public String getGeographicSpanId() {
+			return this.geographicSpanId;
+		}
+
+		public void setGeographicSpanId(String geographicSpanId) {
+			this.geographicSpanId = geographicSpanId;
 		}
 
 		public String getOppositeGeoRegionId() {

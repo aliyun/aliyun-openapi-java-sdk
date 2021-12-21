@@ -27,17 +27,17 @@ public class ListTransitRouterAvailableResourceResponseUnmarshaller {
 		
 		listTransitRouterAvailableResourceResponse.setRequestId(_ctx.stringValue("ListTransitRouterAvailableResourceResponse.RequestId"));
 
-		List<String> masterZones = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterAvailableResourceResponse.MasterZones.Length"); i++) {
-			masterZones.add(_ctx.stringValue("ListTransitRouterAvailableResourceResponse.MasterZones["+ i +"]"));
-		}
-		listTransitRouterAvailableResourceResponse.setMasterZones(masterZones);
-
 		List<String> slaveZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterAvailableResourceResponse.SlaveZones.Length"); i++) {
 			slaveZones.add(_ctx.stringValue("ListTransitRouterAvailableResourceResponse.SlaveZones["+ i +"]"));
 		}
 		listTransitRouterAvailableResourceResponse.setSlaveZones(slaveZones);
+
+		List<String> masterZones = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ListTransitRouterAvailableResourceResponse.MasterZones.Length"); i++) {
+			masterZones.add(_ctx.stringValue("ListTransitRouterAvailableResourceResponse.MasterZones["+ i +"]"));
+		}
+		listTransitRouterAvailableResourceResponse.setMasterZones(masterZones);
 	 
 	 	return listTransitRouterAvailableResourceResponse;
 	}

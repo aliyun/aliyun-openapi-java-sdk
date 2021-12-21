@@ -43,7 +43,7 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 
 	private String transitRouterDescription;
 	public CreateTransitRouterRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouter", "cbn");
+		super("Cbn", "2017-09-12", "CreateTransitRouter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

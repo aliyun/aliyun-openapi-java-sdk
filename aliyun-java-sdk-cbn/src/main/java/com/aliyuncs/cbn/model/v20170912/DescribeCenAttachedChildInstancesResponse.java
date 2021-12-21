@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<ChildInstance> childInstances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ChildInstance> getChildInstances() {
@@ -77,35 +77,19 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
 	public static class ChildInstance {
 
-		private String cenId;
-
-		private String childInstanceId;
-
 		private String childInstanceType;
+
+		private String status;
 
 		private String childInstanceRegionId;
 
 		private Long childInstanceOwnerId;
 
-		private String status;
+		private String childInstanceId;
+
+		private String cenId;
 
 		private String childInstanceAttachTime;
-
-		public String getCenId() {
-			return this.cenId;
-		}
-
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
-		}
-
-		public String getChildInstanceId() {
-			return this.childInstanceId;
-		}
-
-		public void setChildInstanceId(String childInstanceId) {
-			this.childInstanceId = childInstanceId;
-		}
 
 		public String getChildInstanceType() {
 			return this.childInstanceType;
@@ -113,6 +97,14 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
 		public void setChildInstanceType(String childInstanceType) {
 			this.childInstanceType = childInstanceType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getChildInstanceRegionId() {
@@ -131,12 +123,20 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 			this.childInstanceOwnerId = childInstanceOwnerId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getChildInstanceId() {
+			return this.childInstanceId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setChildInstanceId(String childInstanceId) {
+			this.childInstanceId = childInstanceId;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
 		}
 
 		public String getChildInstanceAttachTime() {

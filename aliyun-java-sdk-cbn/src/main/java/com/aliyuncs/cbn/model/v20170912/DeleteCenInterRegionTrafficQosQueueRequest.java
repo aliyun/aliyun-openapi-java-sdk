@@ -39,7 +39,7 @@ public class DeleteCenInterRegionTrafficQosQueueRequest extends RpcAcsRequest<De
 
 	private String qosQueueId;
 	public DeleteCenInterRegionTrafficQosQueueRequest() {
-		super("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosQueue", "cbn");
+		super("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosQueue");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

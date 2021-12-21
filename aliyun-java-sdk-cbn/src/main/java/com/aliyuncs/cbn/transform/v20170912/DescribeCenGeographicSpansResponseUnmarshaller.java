@@ -27,15 +27,15 @@ public class DescribeCenGeographicSpansResponseUnmarshaller {
 	public static DescribeCenGeographicSpansResponse unmarshall(DescribeCenGeographicSpansResponse describeCenGeographicSpansResponse, UnmarshallerContext _ctx) {
 		
 		describeCenGeographicSpansResponse.setRequestId(_ctx.stringValue("DescribeCenGeographicSpansResponse.RequestId"));
-		describeCenGeographicSpansResponse.setTotalCount(_ctx.integerValue("DescribeCenGeographicSpansResponse.TotalCount"));
-		describeCenGeographicSpansResponse.setPageNumber(_ctx.integerValue("DescribeCenGeographicSpansResponse.PageNumber"));
 		describeCenGeographicSpansResponse.setPageSize(_ctx.integerValue("DescribeCenGeographicSpansResponse.PageSize"));
+		describeCenGeographicSpansResponse.setPageNumber(_ctx.integerValue("DescribeCenGeographicSpansResponse.PageNumber"));
+		describeCenGeographicSpansResponse.setTotalCount(_ctx.integerValue("DescribeCenGeographicSpansResponse.TotalCount"));
 
 		List<GeographicSpanModel> geographicSpanModels = new ArrayList<GeographicSpanModel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCenGeographicSpansResponse.GeographicSpanModels.Length"); i++) {
 			GeographicSpanModel geographicSpanModel = new GeographicSpanModel();
-			geographicSpanModel.setGeographicSpanId(_ctx.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].GeographicSpanId"));
 			geographicSpanModel.setLocalGeoRegionId(_ctx.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].LocalGeoRegionId"));
+			geographicSpanModel.setGeographicSpanId(_ctx.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].GeographicSpanId"));
 			geographicSpanModel.setOppositeGeoRegionId(_ctx.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].OppositeGeoRegionId"));
 
 			geographicSpanModels.add(geographicSpanModel);

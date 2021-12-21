@@ -27,15 +27,15 @@ public class DescribeCenAttachedChildInstanceAttributeResponseUnmarshaller {
 	public static DescribeCenAttachedChildInstanceAttributeResponse unmarshall(DescribeCenAttachedChildInstanceAttributeResponse describeCenAttachedChildInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeCenAttachedChildInstanceAttributeResponse.setRequestId(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.RequestId"));
-		describeCenAttachedChildInstanceAttributeResponse.setCenId(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.CenId"));
-		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceId(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceId"));
+		describeCenAttachedChildInstanceAttributeResponse.setStatus(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.Status"));
 		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceType(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceType"));
 		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceRegionId(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceRegionId"));
 		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceOwnerId(_ctx.longValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceOwnerId"));
-		describeCenAttachedChildInstanceAttributeResponse.setStatus(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.Status"));
+		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceId(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceId"));
+		describeCenAttachedChildInstanceAttributeResponse.setCenId(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.CenId"));
 		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceName(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceName"));
-		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceAttachTime(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttachTime"));
 		describeCenAttachedChildInstanceAttributeResponse.setIpv6StatusInCen(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.Ipv6StatusInCen"));
+		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceAttachTime(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttachTime"));
 
 		List<ChildInstanceRouteTable> childInstanceRouteTables = new ArrayList<ChildInstanceRouteTable>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceRouteTables.Length"); i++) {

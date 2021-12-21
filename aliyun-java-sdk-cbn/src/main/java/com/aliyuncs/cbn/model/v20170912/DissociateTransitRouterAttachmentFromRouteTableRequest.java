@@ -41,7 +41,7 @@ public class DissociateTransitRouterAttachmentFromRouteTableRequest extends RpcA
 
 	private String transitRouterAttachmentId;
 	public DissociateTransitRouterAttachmentFromRouteTableRequest() {
-		super("Cbn", "2017-09-12", "DissociateTransitRouterAttachmentFromRouteTable", "cbn");
+		super("Cbn", "2017-09-12", "DissociateTransitRouterAttachmentFromRouteTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

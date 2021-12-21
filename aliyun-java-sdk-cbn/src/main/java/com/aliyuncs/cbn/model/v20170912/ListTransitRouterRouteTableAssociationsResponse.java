@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTransitRouterRouteTableAssociationsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<TransitRouterAssociation> transitRouterAssociations;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class ListTransitRouterRouteTableAssociationsResponse extends AcsResponse
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<TransitRouterAssociation> getTransitRouterAssociations() {
 		return this.transitRouterAssociations;
 	}
@@ -77,23 +77,15 @@ public class ListTransitRouterRouteTableAssociationsResponse extends AcsResponse
 
 	public static class TransitRouterAssociation {
 
-		private String status;
-
 		private String transitRouterAttachmentId;
 
-		private String transitRouterRouteTableId;
-
-		private String resourceId;
+		private String status;
 
 		private String resourceType;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private String resourceId;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String transitRouterRouteTableId;
 
 		public String getTransitRouterAttachmentId() {
 			return this.transitRouterAttachmentId;
@@ -103,12 +95,20 @@ public class ListTransitRouterRouteTableAssociationsResponse extends AcsResponse
 			this.transitRouterAttachmentId = transitRouterAttachmentId;
 		}
 
-		public String getTransitRouterRouteTableId() {
-			return this.transitRouterRouteTableId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setTransitRouterRouteTableId(String transitRouterRouteTableId) {
-			this.transitRouterRouteTableId = transitRouterRouteTableId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public String getResourceId() {
@@ -119,12 +119,12 @@ public class ListTransitRouterRouteTableAssociationsResponse extends AcsResponse
 			this.resourceId = resourceId;
 		}
 
-		public String getResourceType() {
-			return this.resourceType;
+		public String getTransitRouterRouteTableId() {
+			return this.transitRouterRouteTableId;
 		}
 
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
+		public void setTransitRouterRouteTableId(String transitRouterRouteTableId) {
+			this.transitRouterRouteTableId = transitRouterRouteTableId;
 		}
 	}
 

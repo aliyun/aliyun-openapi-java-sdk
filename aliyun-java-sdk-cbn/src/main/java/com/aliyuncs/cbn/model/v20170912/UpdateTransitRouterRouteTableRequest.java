@@ -43,7 +43,7 @@ public class UpdateTransitRouterRouteTableRequest extends RpcAcsRequest<UpdateTr
 
 	private Long ownerId;
 	public UpdateTransitRouterRouteTableRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterRouteTable", "cbn");
+		super("Cbn", "2017-09-12", "UpdateTransitRouterRouteTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

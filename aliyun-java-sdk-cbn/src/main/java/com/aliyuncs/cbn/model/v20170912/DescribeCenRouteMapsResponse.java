@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCenRouteMapsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<RouteMap> routeMaps;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<RouteMap> getRouteMaps() {
@@ -77,83 +77,75 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 	public static class RouteMap {
 
-		private String status;
-
 		private String routeMapId;
 
-		private String cenId;
-
-		private String cenRegionId;
-
-		private String description;
-
-		private String mapResult;
-
-		private Integer priority;
-
-		private Integer nextPriority;
-
-		private String cidrMatchMode;
-
-		private String asPathMatchMode;
-
-		private String communityMatchMode;
-
-		private String communityOperateMode;
-
-		private Integer preference;
+		private String status;
 
 		private String transmitDirection;
 
 		private Boolean sourceInstanceIdsReverseMatch;
 
-		private Boolean destinationInstanceIdsReverseMatch;
+		private String cenRegionId;
 
-		private String gatewayZoneId;
+		private String cenId;
 
-		private String matchAddressType;
+		private Integer priority;
 
 		private String transitRouterRouteTableId;
 
-		private List<String> sourceInstanceIds;
+		private String communityOperateMode;
 
-		private List<String> destinationInstanceIds;
+		private String mapResult;
 
-		private List<String> sourceRouteTableIds;
+		private String communityMatchMode;
 
-		private List<String> destinationRouteTableIds;
+		private String description;
+
+		private String asPathMatchMode;
+
+		private Integer preference;
+
+		private Boolean destinationInstanceIdsReverseMatch;
+
+		private String cidrMatchMode;
+
+		private Integer nextPriority;
+
+		private String matchAddressType;
+
+		private String gatewayZoneId;
 
 		private List<String> sourceRegionIds;
 
 		private List<String> sourceChildInstanceTypes;
 
-		private List<String> destinationChildInstanceTypes;
+		private List<String> destinationRouteTableIds;
+
+		private List<String> sourceInstanceIds;
 
 		private List<String> destinationCidrBlocks;
 
-		private List<String> routeTypes;
+		private List<String> destinationRegionIds;
 
-		private List<String> matchAsns;
+		private List<String> sourceRouteTableIds;
 
 		private List<String> matchCommunitySet;
 
-		private List<String> operateCommunitySet;
-
 		private List<String> prependAsPath;
 
-		private List<String> destinationRegionIds;
+		private List<String> routeTypes;
 
 		private List<String> originalRouteTableIds;
 
+		private List<String> destinationChildInstanceTypes;
+
+		private List<String> destinationInstanceIds;
+
+		private List<String> matchAsns;
+
+		private List<String> operateCommunitySet;
+
 		private List<String> srcZoneIds;
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
 
 		public String getRouteMapId() {
 			return this.routeMapId;
@@ -163,92 +155,12 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.routeMapId = routeMapId;
 		}
 
-		public String getCenId() {
-			return this.cenId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
-		}
-
-		public String getCenRegionId() {
-			return this.cenRegionId;
-		}
-
-		public void setCenRegionId(String cenRegionId) {
-			this.cenRegionId = cenRegionId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getMapResult() {
-			return this.mapResult;
-		}
-
-		public void setMapResult(String mapResult) {
-			this.mapResult = mapResult;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public Integer getNextPriority() {
-			return this.nextPriority;
-		}
-
-		public void setNextPriority(Integer nextPriority) {
-			this.nextPriority = nextPriority;
-		}
-
-		public String getCidrMatchMode() {
-			return this.cidrMatchMode;
-		}
-
-		public void setCidrMatchMode(String cidrMatchMode) {
-			this.cidrMatchMode = cidrMatchMode;
-		}
-
-		public String getAsPathMatchMode() {
-			return this.asPathMatchMode;
-		}
-
-		public void setAsPathMatchMode(String asPathMatchMode) {
-			this.asPathMatchMode = asPathMatchMode;
-		}
-
-		public String getCommunityMatchMode() {
-			return this.communityMatchMode;
-		}
-
-		public void setCommunityMatchMode(String communityMatchMode) {
-			this.communityMatchMode = communityMatchMode;
-		}
-
-		public String getCommunityOperateMode() {
-			return this.communityOperateMode;
-		}
-
-		public void setCommunityOperateMode(String communityOperateMode) {
-			this.communityOperateMode = communityOperateMode;
-		}
-
-		public Integer getPreference() {
-			return this.preference;
-		}
-
-		public void setPreference(Integer preference) {
-			this.preference = preference;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getTransmitDirection() {
@@ -267,28 +179,28 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.sourceInstanceIdsReverseMatch = sourceInstanceIdsReverseMatch;
 		}
 
-		public Boolean getDestinationInstanceIdsReverseMatch() {
-			return this.destinationInstanceIdsReverseMatch;
+		public String getCenRegionId() {
+			return this.cenRegionId;
 		}
 
-		public void setDestinationInstanceIdsReverseMatch(Boolean destinationInstanceIdsReverseMatch) {
-			this.destinationInstanceIdsReverseMatch = destinationInstanceIdsReverseMatch;
+		public void setCenRegionId(String cenRegionId) {
+			this.cenRegionId = cenRegionId;
 		}
 
-		public String getGatewayZoneId() {
-			return this.gatewayZoneId;
+		public String getCenId() {
+			return this.cenId;
 		}
 
-		public void setGatewayZoneId(String gatewayZoneId) {
-			this.gatewayZoneId = gatewayZoneId;
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
 		}
 
-		public String getMatchAddressType() {
-			return this.matchAddressType;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setMatchAddressType(String matchAddressType) {
-			this.matchAddressType = matchAddressType;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 
 		public String getTransitRouterRouteTableId() {
@@ -299,36 +211,92 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.transitRouterRouteTableId = transitRouterRouteTableId;
 		}
 
-		public List<String> getSourceInstanceIds() {
-			return this.sourceInstanceIds;
+		public String getCommunityOperateMode() {
+			return this.communityOperateMode;
 		}
 
-		public void setSourceInstanceIds(List<String> sourceInstanceIds) {
-			this.sourceInstanceIds = sourceInstanceIds;
+		public void setCommunityOperateMode(String communityOperateMode) {
+			this.communityOperateMode = communityOperateMode;
 		}
 
-		public List<String> getDestinationInstanceIds() {
-			return this.destinationInstanceIds;
+		public String getMapResult() {
+			return this.mapResult;
 		}
 
-		public void setDestinationInstanceIds(List<String> destinationInstanceIds) {
-			this.destinationInstanceIds = destinationInstanceIds;
+		public void setMapResult(String mapResult) {
+			this.mapResult = mapResult;
 		}
 
-		public List<String> getSourceRouteTableIds() {
-			return this.sourceRouteTableIds;
+		public String getCommunityMatchMode() {
+			return this.communityMatchMode;
 		}
 
-		public void setSourceRouteTableIds(List<String> sourceRouteTableIds) {
-			this.sourceRouteTableIds = sourceRouteTableIds;
+		public void setCommunityMatchMode(String communityMatchMode) {
+			this.communityMatchMode = communityMatchMode;
 		}
 
-		public List<String> getDestinationRouteTableIds() {
-			return this.destinationRouteTableIds;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setDestinationRouteTableIds(List<String> destinationRouteTableIds) {
-			this.destinationRouteTableIds = destinationRouteTableIds;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getAsPathMatchMode() {
+			return this.asPathMatchMode;
+		}
+
+		public void setAsPathMatchMode(String asPathMatchMode) {
+			this.asPathMatchMode = asPathMatchMode;
+		}
+
+		public Integer getPreference() {
+			return this.preference;
+		}
+
+		public void setPreference(Integer preference) {
+			this.preference = preference;
+		}
+
+		public Boolean getDestinationInstanceIdsReverseMatch() {
+			return this.destinationInstanceIdsReverseMatch;
+		}
+
+		public void setDestinationInstanceIdsReverseMatch(Boolean destinationInstanceIdsReverseMatch) {
+			this.destinationInstanceIdsReverseMatch = destinationInstanceIdsReverseMatch;
+		}
+
+		public String getCidrMatchMode() {
+			return this.cidrMatchMode;
+		}
+
+		public void setCidrMatchMode(String cidrMatchMode) {
+			this.cidrMatchMode = cidrMatchMode;
+		}
+
+		public Integer getNextPriority() {
+			return this.nextPriority;
+		}
+
+		public void setNextPriority(Integer nextPriority) {
+			this.nextPriority = nextPriority;
+		}
+
+		public String getMatchAddressType() {
+			return this.matchAddressType;
+		}
+
+		public void setMatchAddressType(String matchAddressType) {
+			this.matchAddressType = matchAddressType;
+		}
+
+		public String getGatewayZoneId() {
+			return this.gatewayZoneId;
+		}
+
+		public void setGatewayZoneId(String gatewayZoneId) {
+			this.gatewayZoneId = gatewayZoneId;
 		}
 
 		public List<String> getSourceRegionIds() {
@@ -347,12 +315,20 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.sourceChildInstanceTypes = sourceChildInstanceTypes;
 		}
 
-		public List<String> getDestinationChildInstanceTypes() {
-			return this.destinationChildInstanceTypes;
+		public List<String> getDestinationRouteTableIds() {
+			return this.destinationRouteTableIds;
 		}
 
-		public void setDestinationChildInstanceTypes(List<String> destinationChildInstanceTypes) {
-			this.destinationChildInstanceTypes = destinationChildInstanceTypes;
+		public void setDestinationRouteTableIds(List<String> destinationRouteTableIds) {
+			this.destinationRouteTableIds = destinationRouteTableIds;
+		}
+
+		public List<String> getSourceInstanceIds() {
+			return this.sourceInstanceIds;
+		}
+
+		public void setSourceInstanceIds(List<String> sourceInstanceIds) {
+			this.sourceInstanceIds = sourceInstanceIds;
 		}
 
 		public List<String> getDestinationCidrBlocks() {
@@ -363,20 +339,20 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.destinationCidrBlocks = destinationCidrBlocks;
 		}
 
-		public List<String> getRouteTypes() {
-			return this.routeTypes;
+		public List<String> getDestinationRegionIds() {
+			return this.destinationRegionIds;
 		}
 
-		public void setRouteTypes(List<String> routeTypes) {
-			this.routeTypes = routeTypes;
+		public void setDestinationRegionIds(List<String> destinationRegionIds) {
+			this.destinationRegionIds = destinationRegionIds;
 		}
 
-		public List<String> getMatchAsns() {
-			return this.matchAsns;
+		public List<String> getSourceRouteTableIds() {
+			return this.sourceRouteTableIds;
 		}
 
-		public void setMatchAsns(List<String> matchAsns) {
-			this.matchAsns = matchAsns;
+		public void setSourceRouteTableIds(List<String> sourceRouteTableIds) {
+			this.sourceRouteTableIds = sourceRouteTableIds;
 		}
 
 		public List<String> getMatchCommunitySet() {
@@ -387,14 +363,6 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.matchCommunitySet = matchCommunitySet;
 		}
 
-		public List<String> getOperateCommunitySet() {
-			return this.operateCommunitySet;
-		}
-
-		public void setOperateCommunitySet(List<String> operateCommunitySet) {
-			this.operateCommunitySet = operateCommunitySet;
-		}
-
 		public List<String> getPrependAsPath() {
 			return this.prependAsPath;
 		}
@@ -403,12 +371,12 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 			this.prependAsPath = prependAsPath;
 		}
 
-		public List<String> getDestinationRegionIds() {
-			return this.destinationRegionIds;
+		public List<String> getRouteTypes() {
+			return this.routeTypes;
 		}
 
-		public void setDestinationRegionIds(List<String> destinationRegionIds) {
-			this.destinationRegionIds = destinationRegionIds;
+		public void setRouteTypes(List<String> routeTypes) {
+			this.routeTypes = routeTypes;
 		}
 
 		public List<String> getOriginalRouteTableIds() {
@@ -417,6 +385,38 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		public void setOriginalRouteTableIds(List<String> originalRouteTableIds) {
 			this.originalRouteTableIds = originalRouteTableIds;
+		}
+
+		public List<String> getDestinationChildInstanceTypes() {
+			return this.destinationChildInstanceTypes;
+		}
+
+		public void setDestinationChildInstanceTypes(List<String> destinationChildInstanceTypes) {
+			this.destinationChildInstanceTypes = destinationChildInstanceTypes;
+		}
+
+		public List<String> getDestinationInstanceIds() {
+			return this.destinationInstanceIds;
+		}
+
+		public void setDestinationInstanceIds(List<String> destinationInstanceIds) {
+			this.destinationInstanceIds = destinationInstanceIds;
+		}
+
+		public List<String> getMatchAsns() {
+			return this.matchAsns;
+		}
+
+		public void setMatchAsns(List<String> matchAsns) {
+			this.matchAsns = matchAsns;
+		}
+
+		public List<String> getOperateCommunitySet() {
+			return this.operateCommunitySet;
+		}
+
+		public void setOperateCommunitySet(List<String> operateCommunitySet) {
+			this.operateCommunitySet = operateCommunitySet;
 		}
 
 		public List<String> getSrcZoneIds() {
