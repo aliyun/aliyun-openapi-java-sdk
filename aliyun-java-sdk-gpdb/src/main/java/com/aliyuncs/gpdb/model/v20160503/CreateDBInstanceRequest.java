@@ -25,21 +25,17 @@ import com.aliyuncs.gpdb.Endpoint;
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
 	   
 
-	private String clientToken;
-
 	private String engineVersion;
 
-	private String engine;
+	private String dBInstanceCategory;
+
+	private String storageType;
 
 	private String dBInstanceDescription;
-
-	private String dBInstanceGroupCount;
 
 	private String period;
 
 	private Long ownerId;
-
-	private String usedTime;
 
 	private String dBInstanceClass;
 
@@ -49,13 +45,33 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String privateIpAddress;
 
-	private String vPCId;
-
 	private String zoneId;
 
-	private String payType;
-
 	private String instanceNetworkType;
+
+	private String clientToken;
+
+	private String instanceSpec;
+
+	private Long storageSize;
+
+	private String segStorageType;
+
+	private String masterNodeNum;
+
+	private String segNodeNum;
+
+	private String engine;
+
+	private String dBInstanceGroupCount;
+
+	private String dBInstanceMode;
+
+	private String usedTime;
+
+	private String vPCId;
+
+	private String payType;
 	public CreateDBInstanceRequest() {
 		super("gpdb", "2016-05-03", "CreateDBInstance");
 		setMethod(MethodType.POST);
@@ -63,17 +79,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getEngineVersion() {
@@ -87,14 +92,25 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
+	public String getDBInstanceCategory() {
+		return this.dBInstanceCategory;
 	}
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
+	public void setDBInstanceCategory(String dBInstanceCategory) {
+		this.dBInstanceCategory = dBInstanceCategory;
+		if(dBInstanceCategory != null){
+			putQueryParameter("DBInstanceCategory", dBInstanceCategory);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 
@@ -106,17 +122,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceDescription = dBInstanceDescription;
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
-		}
-	}
-
-	public String getDBInstanceGroupCount() {
-		return this.dBInstanceGroupCount;
-	}
-
-	public void setDBInstanceGroupCount(String dBInstanceGroupCount) {
-		this.dBInstanceGroupCount = dBInstanceGroupCount;
-		if(dBInstanceGroupCount != null){
-			putQueryParameter("DBInstanceGroupCount", dBInstanceGroupCount);
 		}
 	}
 
@@ -139,17 +144,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(String usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
 		}
 	}
 
@@ -197,17 +191,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getVPCId() {
-		return this.vPCId;
-	}
-
-	public void setVPCId(String vPCId) {
-		this.vPCId = vPCId;
-		if(vPCId != null){
-			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -219,17 +202,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType);
-		}
-	}
-
 	public String getInstanceNetworkType() {
 		return this.instanceNetworkType;
 	}
@@ -238,6 +210,138 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.instanceNetworkType = instanceNetworkType;
 		if(instanceNetworkType != null){
 			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getInstanceSpec() {
+		return this.instanceSpec;
+	}
+
+	public void setInstanceSpec(String instanceSpec) {
+		this.instanceSpec = instanceSpec;
+		if(instanceSpec != null){
+			putQueryParameter("InstanceSpec", instanceSpec);
+		}
+	}
+
+	public Long getStorageSize() {
+		return this.storageSize;
+	}
+
+	public void setStorageSize(Long storageSize) {
+		this.storageSize = storageSize;
+		if(storageSize != null){
+			putQueryParameter("StorageSize", storageSize.toString());
+		}
+	}
+
+	public String getSegStorageType() {
+		return this.segStorageType;
+	}
+
+	public void setSegStorageType(String segStorageType) {
+		this.segStorageType = segStorageType;
+		if(segStorageType != null){
+			putQueryParameter("SegStorageType", segStorageType);
+		}
+	}
+
+	public String getMasterNodeNum() {
+		return this.masterNodeNum;
+	}
+
+	public void setMasterNodeNum(String masterNodeNum) {
+		this.masterNodeNum = masterNodeNum;
+		if(masterNodeNum != null){
+			putQueryParameter("MasterNodeNum", masterNodeNum);
+		}
+	}
+
+	public String getSegNodeNum() {
+		return this.segNodeNum;
+	}
+
+	public void setSegNodeNum(String segNodeNum) {
+		this.segNodeNum = segNodeNum;
+		if(segNodeNum != null){
+			putQueryParameter("SegNodeNum", segNodeNum);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getDBInstanceGroupCount() {
+		return this.dBInstanceGroupCount;
+	}
+
+	public void setDBInstanceGroupCount(String dBInstanceGroupCount) {
+		this.dBInstanceGroupCount = dBInstanceGroupCount;
+		if(dBInstanceGroupCount != null){
+			putQueryParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+		}
+	}
+
+	public String getDBInstanceMode() {
+		return this.dBInstanceMode;
+	}
+
+	public void setDBInstanceMode(String dBInstanceMode) {
+		this.dBInstanceMode = dBInstanceMode;
+		if(dBInstanceMode != null){
+			putQueryParameter("DBInstanceMode", dBInstanceMode);
+		}
+	}
+
+	public String getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(String usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public String getVPCId() {
+		return this.vPCId;
+	}
+
+	public void setVPCId(String vPCId) {
+		this.vPCId = vPCId;
+		if(vPCId != null){
+			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

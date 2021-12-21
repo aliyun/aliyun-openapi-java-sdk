@@ -63,9 +63,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	public void setDBInstanceModes(List<String> dBInstanceModes) {
 		this.dBInstanceModes = dBInstanceModes;	
 		if (dBInstanceModes != null) {
-			for (int depth1 = 0; depth1 < dBInstanceModes.size(); depth1++) {
-				putQueryParameter("DBInstanceModes." + (depth1 + 1) , dBInstanceModes.get(depth1));
+			String dBInstanceModesArrVal = "";
+			for(int depth1 = 0; depth1 < dBInstanceModes.size(); depth1++) {
+				dBInstanceModesArrVal = dBInstanceModes.get(depth1) + ",";
 			}
+			if (dBInstanceModesArrVal.length() > 0) {
+				dBInstanceModesArrVal = dBInstanceModesArrVal.substring(0, dBInstanceModesArrVal.length() - 1);
+			}
+			putQueryParameter("DBInstanceModes" , dBInstanceModesArrVal);
 		}	
 	}
 
@@ -76,9 +81,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	public void setDBInstanceStatuses(List<String> dBInstanceStatuses) {
 		this.dBInstanceStatuses = dBInstanceStatuses;	
 		if (dBInstanceStatuses != null) {
-			for (int depth1 = 0; depth1 < dBInstanceStatuses.size(); depth1++) {
-				putQueryParameter("DBInstanceStatuses." + (depth1 + 1) , dBInstanceStatuses.get(depth1));
+			String dBInstanceStatusesArrVal = "";
+			for(int depth1 = 0; depth1 < dBInstanceStatuses.size(); depth1++) {
+				dBInstanceStatusesArrVal = dBInstanceStatuses.get(depth1) + ",";
 			}
+			if (dBInstanceStatusesArrVal.length() > 0) {
+				dBInstanceStatusesArrVal = dBInstanceStatusesArrVal.substring(0, dBInstanceStatusesArrVal.length() - 1);
+			}
+			putQueryParameter("DBInstanceStatuses" , dBInstanceStatusesArrVal);
 		}	
 	}
 
@@ -158,9 +168,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	public void setDBInstanceCategories(List<String> dBInstanceCategories) {
 		this.dBInstanceCategories = dBInstanceCategories;	
 		if (dBInstanceCategories != null) {
-			for (int depth1 = 0; depth1 < dBInstanceCategories.size(); depth1++) {
-				putQueryParameter("DBInstanceCategories." + (depth1 + 1) , dBInstanceCategories.get(depth1));
+			String dBInstanceCategoriesArrVal = "";
+			for(int depth1 = 0; depth1 < dBInstanceCategories.size(); depth1++) {
+				dBInstanceCategoriesArrVal = dBInstanceCategories.get(depth1) + ",";
 			}
+			if (dBInstanceCategoriesArrVal.length() > 0) {
+				dBInstanceCategoriesArrVal = dBInstanceCategoriesArrVal.substring(0, dBInstanceCategoriesArrVal.length() - 1);
+			}
+			putQueryParameter("DBInstanceCategories" , dBInstanceCategoriesArrVal);
 		}	
 	}
 
@@ -171,9 +186,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	public void setInstanceDeployTypes(List<String> instanceDeployTypes) {
 		this.instanceDeployTypes = instanceDeployTypes;	
 		if (instanceDeployTypes != null) {
-			for (int depth1 = 0; depth1 < instanceDeployTypes.size(); depth1++) {
-				putQueryParameter("InstanceDeployTypes." + (depth1 + 1) , instanceDeployTypes.get(depth1));
+			String instanceDeployTypesArrVal = "";
+			for(int depth1 = 0; depth1 < instanceDeployTypes.size(); depth1++) {
+				instanceDeployTypesArrVal = instanceDeployTypes.get(depth1) + ",";
 			}
+			if (instanceDeployTypesArrVal.length() > 0) {
+				instanceDeployTypesArrVal = instanceDeployTypesArrVal.substring(0, instanceDeployTypesArrVal.length() - 1);
+			}
+			putQueryParameter("InstanceDeployTypes" , instanceDeployTypesArrVal);
 		}	
 	}
 
