@@ -28,9 +28,6 @@ import com.aliyuncs.config.Endpoint;
 public class CreateAggregateCompliancePackRequest extends RpcAcsRequest<CreateAggregateCompliancePackResponse> {
 	   
 
-	@SerializedName("configRules")
-	private List<ConfigRules> configRules;
-
 	private String compliancePackName;
 
 	private String clientToken;
@@ -41,6 +38,9 @@ public class CreateAggregateCompliancePackRequest extends RpcAcsRequest<CreateAg
 
 	private String aggregatorId;
 
+	@SerializedName("configRules")
+	private List<ConfigRules> configRules;
+
 	private Integer riskLevel;
 	public CreateAggregateCompliancePackRequest() {
 		super("Config", "2020-09-07", "CreateAggregateCompliancePack");
@@ -49,17 +49,6 @@ public class CreateAggregateCompliancePackRequest extends RpcAcsRequest<CreateAg
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<ConfigRules> getConfigRules() {
-		return this.configRules;
-	}
-
-	public void setConfigRules(List<ConfigRules> configRules) {
-		this.configRules = configRules;	
-		if (configRules != null) {
-			putBodyParameter("ConfigRules" , new Gson().toJson(configRules));
-		}	
 	}
 
 	public String getCompliancePackName() {
@@ -115,6 +104,17 @@ public class CreateAggregateCompliancePackRequest extends RpcAcsRequest<CreateAg
 		if(aggregatorId != null){
 			putBodyParameter("AggregatorId", aggregatorId);
 		}
+	}
+
+	public List<ConfigRules> getConfigRules() {
+		return this.configRules;
+	}
+
+	public void setConfigRules(List<ConfigRules> configRules) {
+		this.configRules = configRules;	
+		if (configRules != null) {
+			putBodyParameter("ConfigRules" , new Gson().toJson(configRules));
+		}	
 	}
 
 	public Integer getRiskLevel() {

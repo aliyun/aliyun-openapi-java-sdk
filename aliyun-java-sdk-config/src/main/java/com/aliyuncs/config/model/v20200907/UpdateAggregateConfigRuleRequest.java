@@ -104,9 +104,14 @@ public class UpdateAggregateConfigRuleRequest extends RpcAcsRequest<UpdateAggreg
 	public void setResourceTypesScope(List<String> resourceTypesScope) {
 		this.resourceTypesScope = resourceTypesScope;	
 		if (resourceTypesScope != null) {
-			for (int depth1 = 0; depth1 < resourceTypesScope.size(); depth1++) {
-				putBodyParameter("ResourceTypesScope." + (depth1 + 1) , resourceTypesScope.get(depth1));
+			String resourceTypesScopeArrVal = "";
+			for(int depth1 = 0; depth1 < resourceTypesScope.size(); depth1++) {
+				resourceTypesScopeArrVal = resourceTypesScope.get(depth1) + ",";
 			}
+			if (resourceTypesScopeArrVal.length() > 0) {
+				resourceTypesScopeArrVal = resourceTypesScopeArrVal.substring(0, resourceTypesScopeArrVal.length() - 1);
+			}
+			putBodyParameter("ResourceTypesScope" , resourceTypesScopeArrVal);
 		}	
 	}
 

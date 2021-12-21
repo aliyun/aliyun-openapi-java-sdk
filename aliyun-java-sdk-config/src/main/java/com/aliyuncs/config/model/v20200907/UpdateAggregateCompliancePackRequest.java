@@ -28,9 +28,6 @@ import com.aliyuncs.config.Endpoint;
 public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAggregateCompliancePackResponse> {
 	   
 
-	@SerializedName("configRules")
-	private List<ConfigRules> configRules;
-
 	private String compliancePackName;
 
 	private String clientToken;
@@ -39,9 +36,12 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 
 	private String aggregatorId;
 
-	private Integer riskLevel;
-
 	private String compliancePackId;
+
+	@SerializedName("configRules")
+	private List<ConfigRules> configRules;
+
+	private Integer riskLevel;
 	public UpdateAggregateCompliancePackRequest() {
 		super("Config", "2020-09-07", "UpdateAggregateCompliancePack");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<ConfigRules> getConfigRules() {
-		return this.configRules;
-	}
-
-	public void setConfigRules(List<ConfigRules> configRules) {
-		this.configRules = configRules;	
-		if (configRules != null) {
-			putBodyParameter("ConfigRules" , new Gson().toJson(configRules));
-		}	
 	}
 
 	public String getCompliancePackName() {
@@ -106,17 +95,6 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 		}
 	}
 
-	public Integer getRiskLevel() {
-		return this.riskLevel;
-	}
-
-	public void setRiskLevel(Integer riskLevel) {
-		this.riskLevel = riskLevel;
-		if(riskLevel != null){
-			putBodyParameter("RiskLevel", riskLevel.toString());
-		}
-	}
-
 	public String getCompliancePackId() {
 		return this.compliancePackId;
 	}
@@ -125,6 +103,28 @@ public class UpdateAggregateCompliancePackRequest extends RpcAcsRequest<UpdateAg
 		this.compliancePackId = compliancePackId;
 		if(compliancePackId != null){
 			putBodyParameter("CompliancePackId", compliancePackId);
+		}
+	}
+
+	public List<ConfigRules> getConfigRules() {
+		return this.configRules;
+	}
+
+	public void setConfigRules(List<ConfigRules> configRules) {
+		this.configRules = configRules;	
+		if (configRules != null) {
+			putBodyParameter("ConfigRules" , new Gson().toJson(configRules));
+		}	
+	}
+
+	public Integer getRiskLevel() {
+		return this.riskLevel;
+	}
+
+	public void setRiskLevel(Integer riskLevel) {
+		this.riskLevel = riskLevel;
+		if(riskLevel != null){
+			putBodyParameter("RiskLevel", riskLevel.toString());
 		}
 	}
 
