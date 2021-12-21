@@ -38,18 +38,18 @@ public class TakeBreakResponseUnmarshaller {
 		takeBreakResponse.setParams(params);
 
 		Data data = new Data();
-		data.setBreakCode(_ctx.stringValue("TakeBreakResponse.Data.BreakCode"));
-		data.setDeviceId(_ctx.stringValue("TakeBreakResponse.Data.DeviceId"));
 		data.setExtension(_ctx.stringValue("TakeBreakResponse.Data.Extension"));
 		data.setHeartbeat(_ctx.longValue("TakeBreakResponse.Data.Heartbeat"));
-		data.setInstanceId(_ctx.stringValue("TakeBreakResponse.Data.InstanceId"));
-		data.setJobId(_ctx.stringValue("TakeBreakResponse.Data.JobId"));
-		data.setMobile(_ctx.stringValue("TakeBreakResponse.Data.Mobile"));
-		data.setOutboundScenario(_ctx.booleanValue("TakeBreakResponse.Data.OutboundScenario"));
-		data.setReserved(_ctx.longValue("TakeBreakResponse.Data.Reserved"));
-		data.setUserId(_ctx.stringValue("TakeBreakResponse.Data.UserId"));
-		data.setUserState(_ctx.stringValue("TakeBreakResponse.Data.UserState"));
 		data.setWorkMode(_ctx.stringValue("TakeBreakResponse.Data.WorkMode"));
+		data.setDeviceId(_ctx.stringValue("TakeBreakResponse.Data.DeviceId"));
+		data.setUserId(_ctx.stringValue("TakeBreakResponse.Data.UserId"));
+		data.setReserved(_ctx.longValue("TakeBreakResponse.Data.Reserved"));
+		data.setBreakCode(_ctx.stringValue("TakeBreakResponse.Data.BreakCode"));
+		data.setInstanceId(_ctx.stringValue("TakeBreakResponse.Data.InstanceId"));
+		data.setOutboundScenario(_ctx.booleanValue("TakeBreakResponse.Data.OutboundScenario"));
+		data.setMobile(_ctx.stringValue("TakeBreakResponse.Data.Mobile"));
+		data.setJobId(_ctx.stringValue("TakeBreakResponse.Data.JobId"));
+		data.setUserState(_ctx.stringValue("TakeBreakResponse.Data.UserState"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("TakeBreakResponse.Data.SignedSkillGroupIdList.Length"); i++) {

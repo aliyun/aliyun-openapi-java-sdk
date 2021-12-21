@@ -37,7 +37,7 @@ public class CoachCallRequest extends RpcAcsRequest<CoachCallResponse> {
 
 	private String instanceId;
 	public CoachCallRequest() {
-		super("CCC", "2020-07-01", "CoachCall", "CCC");
+		super("CCC", "2020-07-01", "CoachCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

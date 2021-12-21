@@ -23,10 +23,10 @@ public class ModifyUserLevelsOfSkillGroupResponseUnmarshaller {
 	public static ModifyUserLevelsOfSkillGroupResponse unmarshall(ModifyUserLevelsOfSkillGroupResponse modifyUserLevelsOfSkillGroupResponse, UnmarshallerContext _ctx) {
 		
 		modifyUserLevelsOfSkillGroupResponse.setRequestId(_ctx.stringValue("ModifyUserLevelsOfSkillGroupResponse.RequestId"));
-		modifyUserLevelsOfSkillGroupResponse.setCode(_ctx.stringValue("ModifyUserLevelsOfSkillGroupResponse.Code"));
-		modifyUserLevelsOfSkillGroupResponse.setData(_ctx.stringValue("ModifyUserLevelsOfSkillGroupResponse.Data"));
 		modifyUserLevelsOfSkillGroupResponse.setHttpStatusCode(_ctx.integerValue("ModifyUserLevelsOfSkillGroupResponse.HttpStatusCode"));
+		modifyUserLevelsOfSkillGroupResponse.setCode(_ctx.stringValue("ModifyUserLevelsOfSkillGroupResponse.Code"));
 		modifyUserLevelsOfSkillGroupResponse.setMessage(_ctx.stringValue("ModifyUserLevelsOfSkillGroupResponse.Message"));
+		modifyUserLevelsOfSkillGroupResponse.setData(_ctx.stringValue("ModifyUserLevelsOfSkillGroupResponse.Data"));
 	 
 	 	return modifyUserLevelsOfSkillGroupResponse;
 	}

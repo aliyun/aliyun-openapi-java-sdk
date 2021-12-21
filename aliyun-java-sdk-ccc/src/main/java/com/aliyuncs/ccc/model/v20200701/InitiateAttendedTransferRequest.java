@@ -39,7 +39,7 @@ public class InitiateAttendedTransferRequest extends RpcAcsRequest<InitiateAtten
 
 	private String instanceId;
 	public InitiateAttendedTransferRequest() {
-		super("CCC", "2020-07-01", "InitiateAttendedTransfer", "CCC");
+		super("CCC", "2020-07-01", "InitiateAttendedTransfer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

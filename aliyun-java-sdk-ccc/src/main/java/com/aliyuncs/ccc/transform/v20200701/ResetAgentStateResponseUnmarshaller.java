@@ -38,15 +38,15 @@ public class ResetAgentStateResponseUnmarshaller {
 		resetAgentStateResponse.setParams(params);
 
 		Data data = new Data();
-		data.setBreakCode(_ctx.stringValue("ResetAgentStateResponse.Data.BreakCode"));
-		data.setDeviceId(_ctx.stringValue("ResetAgentStateResponse.Data.DeviceId"));
 		data.setExtension(_ctx.stringValue("ResetAgentStateResponse.Data.Extension"));
-		data.setInstanceId(_ctx.stringValue("ResetAgentStateResponse.Data.InstanceId"));
-		data.setJobId(_ctx.stringValue("ResetAgentStateResponse.Data.JobId"));
-		data.setOutboundScenario(_ctx.booleanValue("ResetAgentStateResponse.Data.OutboundScenario"));
-		data.setUserId(_ctx.stringValue("ResetAgentStateResponse.Data.UserId"));
-		data.setUserState(_ctx.stringValue("ResetAgentStateResponse.Data.UserState"));
 		data.setWorkMode(_ctx.stringValue("ResetAgentStateResponse.Data.WorkMode"));
+		data.setDeviceId(_ctx.stringValue("ResetAgentStateResponse.Data.DeviceId"));
+		data.setJobId(_ctx.stringValue("ResetAgentStateResponse.Data.JobId"));
+		data.setUserId(_ctx.stringValue("ResetAgentStateResponse.Data.UserId"));
+		data.setBreakCode(_ctx.stringValue("ResetAgentStateResponse.Data.BreakCode"));
+		data.setInstanceId(_ctx.stringValue("ResetAgentStateResponse.Data.InstanceId"));
+		data.setOutboundScenario(_ctx.booleanValue("ResetAgentStateResponse.Data.OutboundScenario"));
+		data.setUserState(_ctx.stringValue("ResetAgentStateResponse.Data.UserState"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ResetAgentStateResponse.Data.SignedSkillGroupIdList.Length"); i++) {

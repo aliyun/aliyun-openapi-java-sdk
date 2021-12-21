@@ -51,19 +51,19 @@ public class RetrieveCallResponseUnmarshaller {
 		List<ChannelContext> channelContexts = new ArrayList<ChannelContext>();
 		for (int i = 0; i < _ctx.lengthValue("RetrieveCallResponse.Data.CallContext.ChannelContexts.Length"); i++) {
 			ChannelContext channelContext = new ChannelContext();
-			channelContext.setAssociatedData(_ctx.mapValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
-			channelContext.setCallType(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
-			channelContext.setChannelId(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
+			channelContext.setReleaseInitiator(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator"));
 			channelContext.setChannelState(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelState"));
 			channelContext.setDestination(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].Destination"));
-			channelContext.setJobId(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
-			channelContext.setOriginator(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
-			channelContext.setReleaseInitiator(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator"));
-			channelContext.setReleaseReason(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
+			channelContext.setUserId(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setSkillGroupId(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
+			channelContext.setAssociatedData(_ctx.mapValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
+			channelContext.setReleaseReason(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
+			channelContext.setCallType(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
+			channelContext.setJobId(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
+			channelContext.setChannelId(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
+			channelContext.setOriginator(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
 			channelContext.setUserExtension(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
-			channelContext.setUserId(_ctx.stringValue("RetrieveCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 
 			channelContexts.add(channelContext);
 		}
@@ -71,18 +71,18 @@ public class RetrieveCallResponseUnmarshaller {
 		data.setCallContext(callContext);
 
 		UserContext userContext = new UserContext();
-		userContext.setBreakCode(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.BreakCode"));
-		userContext.setDeviceId(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.DeviceId"));
 		userContext.setExtension(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.Extension"));
 		userContext.setHeartbeat(_ctx.longValue("RetrieveCallResponse.Data.UserContext.Heartbeat"));
-		userContext.setInstanceId(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.InstanceId"));
-		userContext.setJobId(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.JobId"));
-		userContext.setMobile(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.Mobile"));
-		userContext.setOutboundScenario(_ctx.booleanValue("RetrieveCallResponse.Data.UserContext.OutboundScenario"));
-		userContext.setReserved(_ctx.longValue("RetrieveCallResponse.Data.UserContext.Reserved"));
-		userContext.setUserId(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.UserId"));
-		userContext.setUserState(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.UserState"));
 		userContext.setWorkMode(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.WorkMode"));
+		userContext.setDeviceId(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.DeviceId"));
+		userContext.setUserId(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.UserId"));
+		userContext.setReserved(_ctx.longValue("RetrieveCallResponse.Data.UserContext.Reserved"));
+		userContext.setBreakCode(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.BreakCode"));
+		userContext.setInstanceId(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.InstanceId"));
+		userContext.setOutboundScenario(_ctx.booleanValue("RetrieveCallResponse.Data.UserContext.OutboundScenario"));
+		userContext.setMobile(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.Mobile"));
+		userContext.setJobId(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.JobId"));
+		userContext.setUserState(_ctx.stringValue("RetrieveCallResponse.Data.UserContext.UserState"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RetrieveCallResponse.Data.UserContext.SignedSkillGroupIdList.Length"); i++) {

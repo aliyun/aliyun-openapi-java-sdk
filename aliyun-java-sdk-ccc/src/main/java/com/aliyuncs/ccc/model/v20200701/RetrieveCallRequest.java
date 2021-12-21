@@ -35,7 +35,7 @@ public class RetrieveCallRequest extends RpcAcsRequest<RetrieveCallResponse> {
 
 	private String channelId;
 	public RetrieveCallRequest() {
-		super("CCC", "2020-07-01", "RetrieveCall", "CCC");
+		super("CCC", "2020-07-01", "RetrieveCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

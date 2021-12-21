@@ -31,7 +31,7 @@ public class AddSkillGroupsToUserRequest extends RpcAcsRequest<AddSkillGroupsToU
 
 	private String skillLevelList;
 	public AddSkillGroupsToUserRequest() {
-		super("CCC", "2020-07-01", "AddSkillGroupsToUser", "CCC");
+		super("CCC", "2020-07-01", "AddSkillGroupsToUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

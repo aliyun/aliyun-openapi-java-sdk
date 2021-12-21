@@ -33,7 +33,7 @@ public class ReadyForServiceRequest extends RpcAcsRequest<ReadyForServiceRespons
 
 	private String instanceId;
 	public ReadyForServiceRequest() {
-		super("CCC", "2020-07-01", "ReadyForService", "CCC");
+		super("CCC", "2020-07-01", "ReadyForService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

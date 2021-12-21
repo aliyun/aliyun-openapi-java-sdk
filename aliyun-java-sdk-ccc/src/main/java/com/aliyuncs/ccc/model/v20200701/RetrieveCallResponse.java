@@ -152,54 +152,38 @@ public class RetrieveCallResponse extends AcsResponse {
 
 			public static class ChannelContext {
 
-				private Map<Object,Object> associatedData;
-
-				private String callType;
-
-				private String channelId;
+				private String releaseInitiator;
 
 				private String channelState;
 
 				private String destination;
 
-				private String jobId;
-
-				private String originator;
-
-				private String releaseInitiator;
-
-				private String releaseReason;
+				private String userId;
 
 				private String skillGroupId;
 
 				private Long timestamp;
 
+				private Map<Object,Object> associatedData;
+
+				private String releaseReason;
+
+				private String callType;
+
+				private String jobId;
+
+				private String channelId;
+
+				private String originator;
+
 				private String userExtension;
 
-				private String userId;
-
-				public Map<Object,Object> getAssociatedData() {
-					return this.associatedData;
+				public String getReleaseInitiator() {
+					return this.releaseInitiator;
 				}
 
-				public void setAssociatedData(Map<Object,Object> associatedData) {
-					this.associatedData = associatedData;
-				}
-
-				public String getCallType() {
-					return this.callType;
-				}
-
-				public void setCallType(String callType) {
-					this.callType = callType;
-				}
-
-				public String getChannelId() {
-					return this.channelId;
-				}
-
-				public void setChannelId(String channelId) {
-					this.channelId = channelId;
+				public void setReleaseInitiator(String releaseInitiator) {
+					this.releaseInitiator = releaseInitiator;
 				}
 
 				public String getChannelState() {
@@ -218,36 +202,12 @@ public class RetrieveCallResponse extends AcsResponse {
 					this.destination = destination;
 				}
 
-				public String getJobId() {
-					return this.jobId;
+				public String getUserId() {
+					return this.userId;
 				}
 
-				public void setJobId(String jobId) {
-					this.jobId = jobId;
-				}
-
-				public String getOriginator() {
-					return this.originator;
-				}
-
-				public void setOriginator(String originator) {
-					this.originator = originator;
-				}
-
-				public String getReleaseInitiator() {
-					return this.releaseInitiator;
-				}
-
-				public void setReleaseInitiator(String releaseInitiator) {
-					this.releaseInitiator = releaseInitiator;
-				}
-
-				public String getReleaseReason() {
-					return this.releaseReason;
-				}
-
-				public void setReleaseReason(String releaseReason) {
-					this.releaseReason = releaseReason;
+				public void setUserId(String userId) {
+					this.userId = userId;
 				}
 
 				public String getSkillGroupId() {
@@ -266,6 +226,54 @@ public class RetrieveCallResponse extends AcsResponse {
 					this.timestamp = timestamp;
 				}
 
+				public Map<Object,Object> getAssociatedData() {
+					return this.associatedData;
+				}
+
+				public void setAssociatedData(Map<Object,Object> associatedData) {
+					this.associatedData = associatedData;
+				}
+
+				public String getReleaseReason() {
+					return this.releaseReason;
+				}
+
+				public void setReleaseReason(String releaseReason) {
+					this.releaseReason = releaseReason;
+				}
+
+				public String getCallType() {
+					return this.callType;
+				}
+
+				public void setCallType(String callType) {
+					this.callType = callType;
+				}
+
+				public String getJobId() {
+					return this.jobId;
+				}
+
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
+				}
+
+				public String getChannelId() {
+					return this.channelId;
+				}
+
+				public void setChannelId(String channelId) {
+					this.channelId = channelId;
+				}
+
+				public String getOriginator() {
+					return this.originator;
+				}
+
+				public void setOriginator(String originator) {
+					this.originator = originator;
+				}
+
 				public String getUserExtension() {
 					return this.userExtension;
 				}
@@ -273,60 +281,36 @@ public class RetrieveCallResponse extends AcsResponse {
 				public void setUserExtension(String userExtension) {
 					this.userExtension = userExtension;
 				}
-
-				public String getUserId() {
-					return this.userId;
-				}
-
-				public void setUserId(String userId) {
-					this.userId = userId;
-				}
 			}
 		}
 
 		public static class UserContext {
 
-			private String breakCode;
-
-			private String deviceId;
-
 			private String extension;
 
 			private Long heartbeat;
 
-			private String instanceId;
+			private String workMode;
 
-			private String jobId;
-
-			private String mobile;
-
-			private Boolean outboundScenario;
-
-			private Long reserved;
+			private String deviceId;
 
 			private String userId;
 
+			private Long reserved;
+
+			private String breakCode;
+
+			private String instanceId;
+
+			private Boolean outboundScenario;
+
+			private String mobile;
+
+			private String jobId;
+
 			private String userState;
 
-			private String workMode;
-
 			private List<String> signedSkillGroupIdList;
-
-			public String getBreakCode() {
-				return this.breakCode;
-			}
-
-			public void setBreakCode(String breakCode) {
-				this.breakCode = breakCode;
-			}
-
-			public String getDeviceId() {
-				return this.deviceId;
-			}
-
-			public void setDeviceId(String deviceId) {
-				this.deviceId = deviceId;
-			}
 
 			public String getExtension() {
 				return this.extension;
@@ -344,44 +328,20 @@ public class RetrieveCallResponse extends AcsResponse {
 				this.heartbeat = heartbeat;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getWorkMode() {
+				return this.workMode;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setWorkMode(String workMode) {
+				this.workMode = workMode;
 			}
 
-			public String getJobId() {
-				return this.jobId;
+			public String getDeviceId() {
+				return this.deviceId;
 			}
 
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
-			}
-
-			public String getMobile() {
-				return this.mobile;
-			}
-
-			public void setMobile(String mobile) {
-				this.mobile = mobile;
-			}
-
-			public Boolean getOutboundScenario() {
-				return this.outboundScenario;
-			}
-
-			public void setOutboundScenario(Boolean outboundScenario) {
-				this.outboundScenario = outboundScenario;
-			}
-
-			public Long getReserved() {
-				return this.reserved;
-			}
-
-			public void setReserved(Long reserved) {
-				this.reserved = reserved;
+			public void setDeviceId(String deviceId) {
+				this.deviceId = deviceId;
 			}
 
 			public String getUserId() {
@@ -392,20 +352,60 @@ public class RetrieveCallResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
+			public Long getReserved() {
+				return this.reserved;
+			}
+
+			public void setReserved(Long reserved) {
+				this.reserved = reserved;
+			}
+
+			public String getBreakCode() {
+				return this.breakCode;
+			}
+
+			public void setBreakCode(String breakCode) {
+				this.breakCode = breakCode;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Boolean getOutboundScenario() {
+				return this.outboundScenario;
+			}
+
+			public void setOutboundScenario(Boolean outboundScenario) {
+				this.outboundScenario = outboundScenario;
+			}
+
+			public String getMobile() {
+				return this.mobile;
+			}
+
+			public void setMobile(String mobile) {
+				this.mobile = mobile;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
+
 			public String getUserState() {
 				return this.userState;
 			}
 
 			public void setUserState(String userState) {
 				this.userState = userState;
-			}
-
-			public String getWorkMode() {
-				return this.workMode;
-			}
-
-			public void setWorkMode(String workMode) {
-				this.workMode = workMode;
 			}
 
 			public List<String> getSignedSkillGroupIdList() {

@@ -51,19 +51,19 @@ public class StartBack2BackCallResponseUnmarshaller {
 		List<ChannelContext> channelContexts = new ArrayList<ChannelContext>();
 		for (int i = 0; i < _ctx.lengthValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts.Length"); i++) {
 			ChannelContext channelContext = new ChannelContext();
-			channelContext.setAssociatedData(_ctx.mapValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
-			channelContext.setCallType(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
-			channelContext.setChannelFlags(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
-			channelContext.setChannelId(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
+			channelContext.setReleaseInitiator(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator"));
 			channelContext.setChannelState(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelState"));
 			channelContext.setDestination(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].Destination"));
-			channelContext.setJobId(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
-			channelContext.setOriginator(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
-			channelContext.setReleaseInitiator(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator"));
-			channelContext.setReleaseReason(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
-			channelContext.setTimestamp(_ctx.longValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setUserExtension(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
 			channelContext.setUserId(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
+			channelContext.setChannelFlags(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
+			channelContext.setTimestamp(_ctx.longValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
+			channelContext.setAssociatedData(_ctx.mapValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
+			channelContext.setReleaseReason(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
+			channelContext.setCallType(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
+			channelContext.setJobId(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
+			channelContext.setChannelId(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
+			channelContext.setOriginator(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
+			channelContext.setUserExtension(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
 
 			channelContexts.add(channelContext);
 		}
@@ -71,20 +71,20 @@ public class StartBack2BackCallResponseUnmarshaller {
 		data.setCallContext(callContext);
 
 		UserContext userContext = new UserContext();
-		userContext.setBreakCode(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.BreakCode"));
-		userContext.setDeviceId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.DeviceId"));
-		userContext.setDeviceState(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.DeviceState"));
 		userContext.setExtension(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.Extension"));
 		userContext.setHeartbeat(_ctx.longValue("StartBack2BackCallResponse.Data.UserContext.Heartbeat"));
-		userContext.setInstanceId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.InstanceId"));
-		userContext.setJobId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.JobId"));
-		userContext.setMobile(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.Mobile"));
-		userContext.setOutboundScenario(_ctx.booleanValue("StartBack2BackCallResponse.Data.UserContext.OutboundScenario"));
-		userContext.setReserved(_ctx.longValue("StartBack2BackCallResponse.Data.UserContext.Reserved"));
-		userContext.setUri(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.Uri"));
-		userContext.setUserId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.UserId"));
-		userContext.setUserState(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.UserState"));
 		userContext.setWorkMode(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.WorkMode"));
+		userContext.setDeviceId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.DeviceId"));
+		userContext.setUserId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.UserId"));
+		userContext.setReserved(_ctx.longValue("StartBack2BackCallResponse.Data.UserContext.Reserved"));
+		userContext.setBreakCode(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.BreakCode"));
+		userContext.setInstanceId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.InstanceId"));
+		userContext.setOutboundScenario(_ctx.booleanValue("StartBack2BackCallResponse.Data.UserContext.OutboundScenario"));
+		userContext.setUri(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.Uri"));
+		userContext.setDeviceState(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.DeviceState"));
+		userContext.setMobile(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.Mobile"));
+		userContext.setJobId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.JobId"));
+		userContext.setUserState(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.UserState"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("StartBack2BackCallResponse.Data.UserContext.SignedSkillGroupIdList.Length"); i++) {

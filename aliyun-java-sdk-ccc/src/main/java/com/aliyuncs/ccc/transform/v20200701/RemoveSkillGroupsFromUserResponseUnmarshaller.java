@@ -23,10 +23,10 @@ public class RemoveSkillGroupsFromUserResponseUnmarshaller {
 	public static RemoveSkillGroupsFromUserResponse unmarshall(RemoveSkillGroupsFromUserResponse removeSkillGroupsFromUserResponse, UnmarshallerContext _ctx) {
 		
 		removeSkillGroupsFromUserResponse.setRequestId(_ctx.stringValue("RemoveSkillGroupsFromUserResponse.RequestId"));
-		removeSkillGroupsFromUserResponse.setCode(_ctx.stringValue("RemoveSkillGroupsFromUserResponse.Code"));
-		removeSkillGroupsFromUserResponse.setData(_ctx.stringValue("RemoveSkillGroupsFromUserResponse.Data"));
 		removeSkillGroupsFromUserResponse.setHttpStatusCode(_ctx.integerValue("RemoveSkillGroupsFromUserResponse.HttpStatusCode"));
+		removeSkillGroupsFromUserResponse.setCode(_ctx.stringValue("RemoveSkillGroupsFromUserResponse.Code"));
 		removeSkillGroupsFromUserResponse.setMessage(_ctx.stringValue("RemoveSkillGroupsFromUserResponse.Message"));
+		removeSkillGroupsFromUserResponse.setData(_ctx.stringValue("RemoveSkillGroupsFromUserResponse.Data"));
 	 
 	 	return removeSkillGroupsFromUserResponse;
 	}

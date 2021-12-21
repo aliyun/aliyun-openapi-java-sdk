@@ -29,7 +29,7 @@ public class SubmitCampaignRequest extends RpcAcsRequest<SubmitCampaignResponse>
 
 	private String campaignId;
 	public SubmitCampaignRequest() {
-		super("CCC", "2020-07-01", "SubmitCampaign", "CCC");
+		super("CCC", "2020-07-01", "SubmitCampaign");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

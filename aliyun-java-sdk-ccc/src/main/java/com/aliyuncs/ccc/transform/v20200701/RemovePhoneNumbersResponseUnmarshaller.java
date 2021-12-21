@@ -26,22 +26,22 @@ public class RemovePhoneNumbersResponseUnmarshaller {
 	public static RemovePhoneNumbersResponse unmarshall(RemovePhoneNumbersResponse removePhoneNumbersResponse, UnmarshallerContext _ctx) {
 		
 		removePhoneNumbersResponse.setRequestId(_ctx.stringValue("RemovePhoneNumbersResponse.RequestId"));
-		removePhoneNumbersResponse.setCode(_ctx.stringValue("RemovePhoneNumbersResponse.Code"));
-		removePhoneNumbersResponse.setData(_ctx.stringValue("RemovePhoneNumbersResponse.Data"));
 		removePhoneNumbersResponse.setHttpStatusCode(_ctx.integerValue("RemovePhoneNumbersResponse.HttpStatusCode"));
+		removePhoneNumbersResponse.setCode(_ctx.stringValue("RemovePhoneNumbersResponse.Code"));
 		removePhoneNumbersResponse.setMessage(_ctx.stringValue("RemovePhoneNumbersResponse.Message"));
-
-		List<String> params = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("RemovePhoneNumbersResponse.Params.Length"); i++) {
-			params.add(_ctx.stringValue("RemovePhoneNumbersResponse.Params["+ i +"]"));
-		}
-		removePhoneNumbersResponse.setParams(params);
+		removePhoneNumbersResponse.setData(_ctx.stringValue("RemovePhoneNumbersResponse.Data"));
 
 		List<String> failureList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RemovePhoneNumbersResponse.FailureList.Length"); i++) {
 			failureList.add(_ctx.stringValue("RemovePhoneNumbersResponse.FailureList["+ i +"]"));
 		}
 		removePhoneNumbersResponse.setFailureList(failureList);
+
+		List<String> params = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("RemovePhoneNumbersResponse.Params.Length"); i++) {
+			params.add(_ctx.stringValue("RemovePhoneNumbersResponse.Params["+ i +"]"));
+		}
+		removePhoneNumbersResponse.setParams(params);
 	 
 	 	return removePhoneNumbersResponse;
 	}

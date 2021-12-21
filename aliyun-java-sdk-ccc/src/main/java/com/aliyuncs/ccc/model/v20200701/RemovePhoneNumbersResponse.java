@@ -25,35 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RemovePhoneNumbersResponse extends AcsResponse {
 
-	private String code;
-
-	private String data;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
-	private String requestId;
+	private String data;
 
-	private List<String> params;
+	private String requestId;
 
 	private List<String> failureList;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private List<String> params;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -61,6 +45,14 @@ public class RemovePhoneNumbersResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -71,6 +63,14 @@ public class RemovePhoneNumbersResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -79,20 +79,20 @@ public class RemovePhoneNumbersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getParams() {
-		return this.params;
-	}
-
-	public void setParams(List<String> params) {
-		this.params = params;
-	}
-
 	public List<String> getFailureList() {
 		return this.failureList;
 	}
 
 	public void setFailureList(List<String> failureList) {
 		this.failureList = failureList;
+	}
+
+	public List<String> getParams() {
+		return this.params;
+	}
+
+	public void setParams(List<String> params) {
+		this.params = params;
 	}
 
 	@Override

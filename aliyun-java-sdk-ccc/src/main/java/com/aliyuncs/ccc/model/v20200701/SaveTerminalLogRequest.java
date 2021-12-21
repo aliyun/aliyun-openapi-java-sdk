@@ -43,7 +43,7 @@ public class SaveTerminalLogRequest extends RpcAcsRequest<SaveTerminalLogRespons
 
 	private String methodName;
 	public SaveTerminalLogRequest() {
-		super("CCC", "2020-07-01", "SaveTerminalLog", "CCC");
+		super("CCC", "2020-07-01", "SaveTerminalLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

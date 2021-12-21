@@ -38,15 +38,15 @@ public class SignInGroupResponseUnmarshaller {
 		signInGroupResponse.setParams(params);
 
 		Data data = new Data();
-		data.setBreakCode(_ctx.stringValue("SignInGroupResponse.Data.BreakCode"));
-		data.setDeviceId(_ctx.stringValue("SignInGroupResponse.Data.DeviceId"));
 		data.setExtension(_ctx.stringValue("SignInGroupResponse.Data.Extension"));
-		data.setInstanceId(_ctx.stringValue("SignInGroupResponse.Data.InstanceId"));
-		data.setJobId(_ctx.stringValue("SignInGroupResponse.Data.JobId"));
-		data.setOutboundScenario(_ctx.booleanValue("SignInGroupResponse.Data.OutboundScenario"));
-		data.setUserId(_ctx.stringValue("SignInGroupResponse.Data.UserId"));
-		data.setUserState(_ctx.stringValue("SignInGroupResponse.Data.UserState"));
 		data.setWorkMode(_ctx.stringValue("SignInGroupResponse.Data.WorkMode"));
+		data.setDeviceId(_ctx.stringValue("SignInGroupResponse.Data.DeviceId"));
+		data.setJobId(_ctx.stringValue("SignInGroupResponse.Data.JobId"));
+		data.setUserId(_ctx.stringValue("SignInGroupResponse.Data.UserId"));
+		data.setBreakCode(_ctx.stringValue("SignInGroupResponse.Data.BreakCode"));
+		data.setInstanceId(_ctx.stringValue("SignInGroupResponse.Data.InstanceId"));
+		data.setOutboundScenario(_ctx.booleanValue("SignInGroupResponse.Data.OutboundScenario"));
+		data.setUserState(_ctx.stringValue("SignInGroupResponse.Data.UserState"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("SignInGroupResponse.Data.SignedSkillGroupIdList.Length"); i++) {

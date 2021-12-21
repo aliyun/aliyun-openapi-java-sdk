@@ -29,7 +29,7 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 
 	private String instanceId;
 	public ModifyInstanceRequest() {
-		super("CCC", "2020-07-01", "ModifyInstance", "CCC");
+		super("CCC", "2020-07-01", "ModifyInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

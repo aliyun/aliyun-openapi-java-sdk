@@ -87,32 +87,40 @@ public class SignInGroupResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String breakCode;
-
-		private String deviceId;
-
 		private String extension;
-
-		private String instanceId;
-
-		private String jobId;
-
-		private Boolean outboundScenario;
-
-		private String userId;
-
-		private String userState;
 
 		private String workMode;
 
+		private String deviceId;
+
+		private String jobId;
+
+		private String userId;
+
+		private String breakCode;
+
+		private String instanceId;
+
+		private Boolean outboundScenario;
+
+		private String userState;
+
 		private List<String> signedSkillGroupIdList;
 
-		public String getBreakCode() {
-			return this.breakCode;
+		public String getExtension() {
+			return this.extension;
 		}
 
-		public void setBreakCode(String breakCode) {
-			this.breakCode = breakCode;
+		public void setExtension(String extension) {
+			this.extension = extension;
+		}
+
+		public String getWorkMode() {
+			return this.workMode;
+		}
+
+		public void setWorkMode(String workMode) {
+			this.workMode = workMode;
 		}
 
 		public String getDeviceId() {
@@ -123,36 +131,12 @@ public class SignInGroupResponse extends AcsResponse {
 			this.deviceId = deviceId;
 		}
 
-		public String getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(String extension) {
-			this.extension = extension;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
 		public String getJobId() {
 			return this.jobId;
 		}
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
-		}
-
-		public Boolean getOutboundScenario() {
-			return this.outboundScenario;
-		}
-
-		public void setOutboundScenario(Boolean outboundScenario) {
-			this.outboundScenario = outboundScenario;
 		}
 
 		public String getUserId() {
@@ -163,20 +147,36 @@ public class SignInGroupResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
+		public String getBreakCode() {
+			return this.breakCode;
+		}
+
+		public void setBreakCode(String breakCode) {
+			this.breakCode = breakCode;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Boolean getOutboundScenario() {
+			return this.outboundScenario;
+		}
+
+		public void setOutboundScenario(Boolean outboundScenario) {
+			this.outboundScenario = outboundScenario;
+		}
+
 		public String getUserState() {
 			return this.userState;
 		}
 
 		public void setUserState(String userState) {
 			this.userState = userState;
-		}
-
-		public String getWorkMode() {
-			return this.workMode;
-		}
-
-		public void setWorkMode(String workMode) {
-			this.workMode = workMode;
 		}
 
 		public List<String> getSignedSkillGroupIdList() {

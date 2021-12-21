@@ -27,7 +27,7 @@ public class GetTurnServerListRequest extends RpcAcsRequest<GetTurnServerListRes
 
 	private String instanceId;
 	public GetTurnServerListRequest() {
-		super("CCC", "2020-07-01", "GetTurnServerList", "CCC");
+		super("CCC", "2020-07-01", "GetTurnServerList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

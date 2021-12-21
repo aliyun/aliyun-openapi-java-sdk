@@ -38,18 +38,18 @@ public class SignOutGroupResponseUnmarshaller {
 		signOutGroupResponse.setParams(params);
 
 		Data data = new Data();
-		data.setBreakCode(_ctx.stringValue("SignOutGroupResponse.Data.BreakCode"));
-		data.setDeviceId(_ctx.stringValue("SignOutGroupResponse.Data.DeviceId"));
 		data.setExtension(_ctx.stringValue("SignOutGroupResponse.Data.Extension"));
 		data.setHeartbeat(_ctx.longValue("SignOutGroupResponse.Data.Heartbeat"));
-		data.setInstanceId(_ctx.stringValue("SignOutGroupResponse.Data.InstanceId"));
-		data.setJobId(_ctx.stringValue("SignOutGroupResponse.Data.JobId"));
-		data.setMobile(_ctx.stringValue("SignOutGroupResponse.Data.Mobile"));
-		data.setOutboundScenario(_ctx.booleanValue("SignOutGroupResponse.Data.OutboundScenario"));
-		data.setReserved(_ctx.longValue("SignOutGroupResponse.Data.Reserved"));
-		data.setUserId(_ctx.stringValue("SignOutGroupResponse.Data.UserId"));
-		data.setUserState(_ctx.stringValue("SignOutGroupResponse.Data.UserState"));
 		data.setWorkMode(_ctx.stringValue("SignOutGroupResponse.Data.WorkMode"));
+		data.setDeviceId(_ctx.stringValue("SignOutGroupResponse.Data.DeviceId"));
+		data.setUserId(_ctx.stringValue("SignOutGroupResponse.Data.UserId"));
+		data.setReserved(_ctx.longValue("SignOutGroupResponse.Data.Reserved"));
+		data.setBreakCode(_ctx.stringValue("SignOutGroupResponse.Data.BreakCode"));
+		data.setInstanceId(_ctx.stringValue("SignOutGroupResponse.Data.InstanceId"));
+		data.setOutboundScenario(_ctx.booleanValue("SignOutGroupResponse.Data.OutboundScenario"));
+		data.setMobile(_ctx.stringValue("SignOutGroupResponse.Data.Mobile"));
+		data.setJobId(_ctx.stringValue("SignOutGroupResponse.Data.JobId"));
+		data.setUserState(_ctx.stringValue("SignOutGroupResponse.Data.UserState"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("SignOutGroupResponse.Data.SignedSkillGroupIdList.Length"); i++) {

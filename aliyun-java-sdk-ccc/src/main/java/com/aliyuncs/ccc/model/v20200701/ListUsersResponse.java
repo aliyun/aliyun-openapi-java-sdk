@@ -149,6 +149,8 @@ public class ListUsersResponse extends AcsResponse {
 
 			private Boolean primaryAccount;
 
+			private Long ramId;
+
 			private List<PhoneNumber> personalOutboundNumberList;
 
 			private List<UserSkillLevel> skillLevelList;
@@ -231,6 +233,14 @@ public class ListUsersResponse extends AcsResponse {
 
 			public void setPrimaryAccount(Boolean primaryAccount) {
 				this.primaryAccount = primaryAccount;
+			}
+
+			public Long getRamId() {
+				return this.ramId;
+			}
+
+			public void setRamId(Long ramId) {
+				this.ramId = ramId;
 			}
 
 			public List<PhoneNumber> getPersonalOutboundNumberList() {

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyUserLevelsOfSkillGroupResponse extends AcsResponse {
 
-	private String code;
-
-	private String data;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
+	private String data;
+
 	private String requestId;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -58,12 +42,28 @@ public class ModifyUserLevelsOfSkillGroupResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {

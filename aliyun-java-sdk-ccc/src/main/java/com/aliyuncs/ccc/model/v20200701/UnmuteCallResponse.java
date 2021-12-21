@@ -152,66 +152,50 @@ public class UnmuteCallResponse extends AcsResponse {
 
 			public static class ChannelContext {
 
-				private Map<Object,Object> associatedData;
+				private Integer index;
 
-				private String callType;
-
-				private String channelFlags;
-
-				private String channelId;
+				private String releaseInitiator;
 
 				private String channelState;
 
 				private String destination;
 
-				private Integer index;
+				private String userId;
 
-				private String jobId;
-
-				private String originator;
-
-				private String releaseInitiator;
-
-				private String releaseReason;
+				private String channelFlags;
 
 				private String skillGroupId;
 
 				private Long timestamp;
 
+				private Map<Object,Object> associatedData;
+
+				private String releaseReason;
+
+				private String callType;
+
+				private String jobId;
+
+				private String channelId;
+
 				private String userExtension;
 
-				private String userId;
+				private String originator;
 
-				public Map<Object,Object> getAssociatedData() {
-					return this.associatedData;
+				public Integer getIndex() {
+					return this.index;
 				}
 
-				public void setAssociatedData(Map<Object,Object> associatedData) {
-					this.associatedData = associatedData;
+				public void setIndex(Integer index) {
+					this.index = index;
 				}
 
-				public String getCallType() {
-					return this.callType;
+				public String getReleaseInitiator() {
+					return this.releaseInitiator;
 				}
 
-				public void setCallType(String callType) {
-					this.callType = callType;
-				}
-
-				public String getChannelFlags() {
-					return this.channelFlags;
-				}
-
-				public void setChannelFlags(String channelFlags) {
-					this.channelFlags = channelFlags;
-				}
-
-				public String getChannelId() {
-					return this.channelId;
-				}
-
-				public void setChannelId(String channelId) {
-					this.channelId = channelId;
+				public void setReleaseInitiator(String releaseInitiator) {
+					this.releaseInitiator = releaseInitiator;
 				}
 
 				public String getChannelState() {
@@ -230,44 +214,20 @@ public class UnmuteCallResponse extends AcsResponse {
 					this.destination = destination;
 				}
 
-				public Integer getIndex() {
-					return this.index;
+				public String getUserId() {
+					return this.userId;
 				}
 
-				public void setIndex(Integer index) {
-					this.index = index;
+				public void setUserId(String userId) {
+					this.userId = userId;
 				}
 
-				public String getJobId() {
-					return this.jobId;
+				public String getChannelFlags() {
+					return this.channelFlags;
 				}
 
-				public void setJobId(String jobId) {
-					this.jobId = jobId;
-				}
-
-				public String getOriginator() {
-					return this.originator;
-				}
-
-				public void setOriginator(String originator) {
-					this.originator = originator;
-				}
-
-				public String getReleaseInitiator() {
-					return this.releaseInitiator;
-				}
-
-				public void setReleaseInitiator(String releaseInitiator) {
-					this.releaseInitiator = releaseInitiator;
-				}
-
-				public String getReleaseReason() {
-					return this.releaseReason;
-				}
-
-				public void setReleaseReason(String releaseReason) {
-					this.releaseReason = releaseReason;
+				public void setChannelFlags(String channelFlags) {
+					this.channelFlags = channelFlags;
 				}
 
 				public String getSkillGroupId() {
@@ -286,6 +246,46 @@ public class UnmuteCallResponse extends AcsResponse {
 					this.timestamp = timestamp;
 				}
 
+				public Map<Object,Object> getAssociatedData() {
+					return this.associatedData;
+				}
+
+				public void setAssociatedData(Map<Object,Object> associatedData) {
+					this.associatedData = associatedData;
+				}
+
+				public String getReleaseReason() {
+					return this.releaseReason;
+				}
+
+				public void setReleaseReason(String releaseReason) {
+					this.releaseReason = releaseReason;
+				}
+
+				public String getCallType() {
+					return this.callType;
+				}
+
+				public void setCallType(String callType) {
+					this.callType = callType;
+				}
+
+				public String getJobId() {
+					return this.jobId;
+				}
+
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
+				}
+
+				public String getChannelId() {
+					return this.channelId;
+				}
+
+				public void setChannelId(String channelId) {
+					this.channelId = channelId;
+				}
+
 				public String getUserExtension() {
 					return this.userExtension;
 				}
@@ -294,56 +294,48 @@ public class UnmuteCallResponse extends AcsResponse {
 					this.userExtension = userExtension;
 				}
 
-				public String getUserId() {
-					return this.userId;
+				public String getOriginator() {
+					return this.originator;
 				}
 
-				public void setUserId(String userId) {
-					this.userId = userId;
+				public void setOriginator(String originator) {
+					this.originator = originator;
 				}
 			}
 		}
 
 		public static class UserContext {
 
-			private String breakCode;
-
-			private String deviceId;
+			private Long heartbeat;
 
 			private String extension;
 
-			private Long heartbeat;
-
-			private String instanceId;
-
-			private String jobId;
+			private String workMode;
 
 			private String mobile;
 
-			private Boolean outboundScenario;
+			private String deviceId;
+
+			private String jobId;
 
 			private String userId;
 
-			private String userState;
+			private String breakCode;
 
-			private String workMode;
+			private String instanceId;
+
+			private Boolean outboundScenario;
+
+			private String userState;
 
 			private List<String> signedSkillGroupIdList;
 
-			public String getBreakCode() {
-				return this.breakCode;
+			public Long getHeartbeat() {
+				return this.heartbeat;
 			}
 
-			public void setBreakCode(String breakCode) {
-				this.breakCode = breakCode;
-			}
-
-			public String getDeviceId() {
-				return this.deviceId;
-			}
-
-			public void setDeviceId(String deviceId) {
-				this.deviceId = deviceId;
+			public void setHeartbeat(Long heartbeat) {
+				this.heartbeat = heartbeat;
 			}
 
 			public String getExtension() {
@@ -354,28 +346,12 @@ public class UnmuteCallResponse extends AcsResponse {
 				this.extension = extension;
 			}
 
-			public Long getHeartbeat() {
-				return this.heartbeat;
+			public String getWorkMode() {
+				return this.workMode;
 			}
 
-			public void setHeartbeat(Long heartbeat) {
-				this.heartbeat = heartbeat;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getJobId() {
-				return this.jobId;
-			}
-
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
+			public void setWorkMode(String workMode) {
+				this.workMode = workMode;
 			}
 
 			public String getMobile() {
@@ -386,12 +362,20 @@ public class UnmuteCallResponse extends AcsResponse {
 				this.mobile = mobile;
 			}
 
-			public Boolean getOutboundScenario() {
-				return this.outboundScenario;
+			public String getDeviceId() {
+				return this.deviceId;
 			}
 
-			public void setOutboundScenario(Boolean outboundScenario) {
-				this.outboundScenario = outboundScenario;
+			public void setDeviceId(String deviceId) {
+				this.deviceId = deviceId;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
 			}
 
 			public String getUserId() {
@@ -402,20 +386,36 @@ public class UnmuteCallResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
+			public String getBreakCode() {
+				return this.breakCode;
+			}
+
+			public void setBreakCode(String breakCode) {
+				this.breakCode = breakCode;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Boolean getOutboundScenario() {
+				return this.outboundScenario;
+			}
+
+			public void setOutboundScenario(Boolean outboundScenario) {
+				this.outboundScenario = outboundScenario;
+			}
+
 			public String getUserState() {
 				return this.userState;
 			}
 
 			public void setUserState(String userState) {
 				this.userState = userState;
-			}
-
-			public String getWorkMode() {
-				return this.workMode;
-			}
-
-			public void setWorkMode(String workMode) {
-				this.workMode = workMode;
 			}
 
 			public List<String> getSignedSkillGroupIdList() {

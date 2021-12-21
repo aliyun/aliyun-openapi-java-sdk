@@ -87,47 +87,31 @@ public class TakeBreakResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String breakCode;
-
-		private String deviceId;
-
 		private String extension;
 
 		private Long heartbeat;
 
-		private String instanceId;
+		private String workMode;
 
-		private String jobId;
-
-		private String mobile;
-
-		private Boolean outboundScenario;
-
-		private Long reserved;
+		private String deviceId;
 
 		private String userId;
 
+		private Long reserved;
+
+		private String breakCode;
+
+		private String instanceId;
+
+		private Boolean outboundScenario;
+
+		private String mobile;
+
+		private String jobId;
+
 		private String userState;
 
-		private String workMode;
-
 		private List<String> signedSkillGroupIdList;
-
-		public String getBreakCode() {
-			return this.breakCode;
-		}
-
-		public void setBreakCode(String breakCode) {
-			this.breakCode = breakCode;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
 
 		public String getExtension() {
 			return this.extension;
@@ -145,44 +129,20 @@ public class TakeBreakResponse extends AcsResponse {
 			this.heartbeat = heartbeat;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getWorkMode() {
+			return this.workMode;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setWorkMode(String workMode) {
+			this.workMode = workMode;
 		}
 
-		public String getJobId() {
-			return this.jobId;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getMobile() {
-			return this.mobile;
-		}
-
-		public void setMobile(String mobile) {
-			this.mobile = mobile;
-		}
-
-		public Boolean getOutboundScenario() {
-			return this.outboundScenario;
-		}
-
-		public void setOutboundScenario(Boolean outboundScenario) {
-			this.outboundScenario = outboundScenario;
-		}
-
-		public Long getReserved() {
-			return this.reserved;
-		}
-
-		public void setReserved(Long reserved) {
-			this.reserved = reserved;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
 		public String getUserId() {
@@ -193,20 +153,60 @@ public class TakeBreakResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
+		public Long getReserved() {
+			return this.reserved;
+		}
+
+		public void setReserved(Long reserved) {
+			this.reserved = reserved;
+		}
+
+		public String getBreakCode() {
+			return this.breakCode;
+		}
+
+		public void setBreakCode(String breakCode) {
+			this.breakCode = breakCode;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Boolean getOutboundScenario() {
+			return this.outboundScenario;
+		}
+
+		public void setOutboundScenario(Boolean outboundScenario) {
+			this.outboundScenario = outboundScenario;
+		}
+
+		public String getMobile() {
+			return this.mobile;
+		}
+
+		public void setMobile(String mobile) {
+			this.mobile = mobile;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
 		public String getUserState() {
 			return this.userState;
 		}
 
 		public void setUserState(String userState) {
 			this.userState = userState;
-		}
-
-		public String getWorkMode() {
-			return this.workMode;
-		}
-
-		public void setWorkMode(String workMode) {
-			this.workMode = workMode;
 		}
 
 		public List<String> getSignedSkillGroupIdList() {

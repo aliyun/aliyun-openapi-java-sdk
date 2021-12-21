@@ -31,7 +31,7 @@ public class RemoveUsersFromSkillGroupRequest extends RpcAcsRequest<RemoveUsersF
 
 	private String skillGroupId;
 	public RemoveUsersFromSkillGroupRequest() {
-		super("CCC", "2020-07-01", "RemoveUsersFromSkillGroup", "CCC");
+		super("CCC", "2020-07-01", "RemoveUsersFromSkillGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
