@@ -44,6 +44,8 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 
 	private String scheduler;
 
+	private String eipTransmit;
+
 	private Integer listenerPort;
 
 	private Integer healthCheckConnectPort;
@@ -159,6 +161,17 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 		this.scheduler = scheduler;
 		if(scheduler != null){
 			putQueryParameter("Scheduler", scheduler);
+		}
+	}
+
+	public String getEipTransmit() {
+		return this.eipTransmit;
+	}
+
+	public void setEipTransmit(String eipTransmit) {
+		this.eipTransmit = eipTransmit;
+		if(eipTransmit != null){
+			putQueryParameter("EipTransmit", eipTransmit);
 		}
 	}
 

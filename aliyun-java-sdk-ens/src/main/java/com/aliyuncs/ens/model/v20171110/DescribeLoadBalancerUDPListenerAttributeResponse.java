@@ -54,6 +54,8 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private String healthCheckExp;
 
+	private String eipTransmit;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -172,6 +174,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setHealthCheckExp(String healthCheckExp) {
 		this.healthCheckExp = healthCheckExp;
+	}
+
+	public String getEipTransmit() {
+		return this.eipTransmit;
+	}
+
+	public void setEipTransmit(String eipTransmit) {
+		this.eipTransmit = eipTransmit;
 	}
 
 	@Override

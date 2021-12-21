@@ -26,6 +26,8 @@ public class RescaleDeviceServiceRequest extends RpcAcsRequest<RescaleDeviceServ
 
 	private String resourceSelector;
 
+	private String resourceInfo;
+
 	private String rescaleType;
 
 	private String imageId;
@@ -54,6 +56,17 @@ public class RescaleDeviceServiceRequest extends RpcAcsRequest<RescaleDeviceServ
 		this.resourceSelector = resourceSelector;
 		if(resourceSelector != null){
 			putBodyParameter("ResourceSelector", resourceSelector);
+		}
+	}
+
+	public String getResourceInfo() {
+		return this.resourceInfo;
+	}
+
+	public void setResourceInfo(String resourceInfo) {
+		this.resourceInfo = resourceInfo;
+		if(resourceInfo != null){
+			putBodyParameter("ResourceInfo", resourceInfo);
 		}
 	}
 

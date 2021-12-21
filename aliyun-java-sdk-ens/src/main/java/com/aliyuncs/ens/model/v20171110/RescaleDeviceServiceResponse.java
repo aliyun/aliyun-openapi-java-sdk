@@ -27,6 +27,8 @@ public class RescaleDeviceServiceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String orderId;
+
 	private List<ResourceDetailInfo> resourceDetailInfos;
 
 	private List<String> deviceIds;
@@ -37,6 +39,14 @@ public class RescaleDeviceServiceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public List<ResourceDetailInfo> getResourceDetailInfos() {

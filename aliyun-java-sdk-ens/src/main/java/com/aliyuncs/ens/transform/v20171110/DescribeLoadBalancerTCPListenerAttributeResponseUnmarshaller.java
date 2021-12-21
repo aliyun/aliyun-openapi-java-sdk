@@ -41,6 +41,7 @@ public class DescribeLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerTCPListenerAttributeResponse.setHealthCheckType(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.HealthCheckType"));
 		describeLoadBalancerTCPListenerAttributeResponse.setBackendServerPort(_ctx.integerValue("DescribeLoadBalancerTCPListenerAttributeResponse.BackendServerPort"));
 		describeLoadBalancerTCPListenerAttributeResponse.setHealthCheckConnectPort(_ctx.integerValue("DescribeLoadBalancerTCPListenerAttributeResponse.HealthCheckConnectPort"));
+		describeLoadBalancerTCPListenerAttributeResponse.setEipTransmit(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.EipTransmit"));
 	 
 	 	return describeLoadBalancerTCPListenerAttributeResponse;
 	}

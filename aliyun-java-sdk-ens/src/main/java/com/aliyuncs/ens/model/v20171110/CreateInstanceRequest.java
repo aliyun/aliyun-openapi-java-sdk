@@ -38,6 +38,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String period;
 
+	private Boolean publicIpIdentification;
+
 	private Long ownerId;
 
 	private String vSwitchId;
@@ -144,6 +146,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
+		}
+	}
+
+	public Boolean getPublicIpIdentification() {
+		return this.publicIpIdentification;
+	}
+
+	public void setPublicIpIdentification(Boolean publicIpIdentification) {
+		this.publicIpIdentification = publicIpIdentification;
+		if(publicIpIdentification != null){
+			putQueryParameter("PublicIpIdentification", publicIpIdentification.toString());
 		}
 	}
 

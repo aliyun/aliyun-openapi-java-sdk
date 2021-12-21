@@ -27,6 +27,7 @@ public class RescaleDeviceServiceResponseUnmarshaller {
 	public static RescaleDeviceServiceResponse unmarshall(RescaleDeviceServiceResponse rescaleDeviceServiceResponse, UnmarshallerContext _ctx) {
 		
 		rescaleDeviceServiceResponse.setRequestId(_ctx.stringValue("RescaleDeviceServiceResponse.RequestId"));
+		rescaleDeviceServiceResponse.setOrderId(_ctx.stringValue("RescaleDeviceServiceResponse.OrderId"));
 
 		List<String> deviceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RescaleDeviceServiceResponse.DeviceIds.Length"); i++) {

@@ -26,6 +26,8 @@ public class DescribeDeviceServiceRequest extends RpcAcsRequest<DescribeDeviceSe
 
 	private String ensRegionId;
 
+	private String orderId;
+
 	private String instanceId;
 
 	private String appId;
@@ -44,6 +46,17 @@ public class DescribeDeviceServiceRequest extends RpcAcsRequest<DescribeDeviceSe
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 

@@ -46,6 +46,8 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private String scheduler;
 
+	private String eipTransmit;
+
 	private Integer listenerPort;
 
 	private String healthCheckType;
@@ -176,6 +178,17 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.scheduler = scheduler;
 		if(scheduler != null){
 			putQueryParameter("Scheduler", scheduler);
+		}
+	}
+
+	public String getEipTransmit() {
+		return this.eipTransmit;
+	}
+
+	public void setEipTransmit(String eipTransmit) {
+		this.eipTransmit = eipTransmit;
+		if(eipTransmit != null){
+			putQueryParameter("EipTransmit", eipTransmit);
 		}
 	}
 

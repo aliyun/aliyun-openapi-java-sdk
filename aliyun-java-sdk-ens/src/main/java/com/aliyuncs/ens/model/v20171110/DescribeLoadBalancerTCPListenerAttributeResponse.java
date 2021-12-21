@@ -62,6 +62,8 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	private Integer healthCheckConnectPort;
 
+	private String eipTransmit;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -212,6 +214,14 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
 		this.healthCheckConnectPort = healthCheckConnectPort;
+	}
+
+	public String getEipTransmit() {
+		return this.eipTransmit;
+	}
+
+	public void setEipTransmit(String eipTransmit) {
+		this.eipTransmit = eipTransmit;
 	}
 
 	@Override
