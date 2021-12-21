@@ -38,9 +38,9 @@ public class ListGroupsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListGroupsResponse.Data.AppGroups.Length"); i++) {
 			AppGroup appGroup = new AppGroup();
 			appGroup.setAppName(_ctx.stringValue("ListGroupsResponse.Data.AppGroups["+ i +"].AppName"));
-			appGroup.setGroupId(_ctx.stringValue("ListGroupsResponse.Data.AppGroups["+ i +"].GroupId"));
 			appGroup.setAppKey(_ctx.stringValue("ListGroupsResponse.Data.AppGroups["+ i +"].AppKey"));
 			appGroup.setDescription(_ctx.stringValue("ListGroupsResponse.Data.AppGroups["+ i +"].Description"));
+			appGroup.setGroupId(_ctx.stringValue("ListGroupsResponse.Data.AppGroups["+ i +"].GroupId"));
 
 			appGroups.add(appGroup);
 		}

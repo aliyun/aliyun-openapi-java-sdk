@@ -24,8 +24,8 @@ public class DisableWorkflowResponseUnmarshaller {
 		
 		disableWorkflowResponse.setRequestId(_ctx.stringValue("DisableWorkflowResponse.RequestId"));
 		disableWorkflowResponse.setCode(_ctx.integerValue("DisableWorkflowResponse.Code"));
-		disableWorkflowResponse.setSuccess(_ctx.booleanValue("DisableWorkflowResponse.Success"));
 		disableWorkflowResponse.setMessage(_ctx.stringValue("DisableWorkflowResponse.Message"));
+		disableWorkflowResponse.setSuccess(_ctx.booleanValue("DisableWorkflowResponse.Success"));
 	 
 	 	return disableWorkflowResponse;
 	}

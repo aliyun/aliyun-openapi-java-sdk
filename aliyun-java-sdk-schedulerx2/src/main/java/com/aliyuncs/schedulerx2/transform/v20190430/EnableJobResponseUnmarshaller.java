@@ -24,8 +24,8 @@ public class EnableJobResponseUnmarshaller {
 		
 		enableJobResponse.setRequestId(_ctx.stringValue("EnableJobResponse.RequestId"));
 		enableJobResponse.setCode(_ctx.integerValue("EnableJobResponse.Code"));
-		enableJobResponse.setSuccess(_ctx.booleanValue("EnableJobResponse.Success"));
 		enableJobResponse.setMessage(_ctx.stringValue("EnableJobResponse.Message"));
+		enableJobResponse.setSuccess(_ctx.booleanValue("EnableJobResponse.Success"));
 	 
 	 	return enableJobResponse;
 	}

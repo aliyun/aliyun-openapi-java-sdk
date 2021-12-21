@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class ListGroupsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -91,11 +91,11 @@ public class ListGroupsResponse extends AcsResponse {
 
 			private String appName;
 
-			private String groupId;
-
 			private String appKey;
 
 			private String description;
+
+			private String groupId;
 
 			public String getAppName() {
 				return this.appName;
@@ -103,14 +103,6 @@ public class ListGroupsResponse extends AcsResponse {
 
 			public void setAppName(String appName) {
 				this.appName = appName;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
 			}
 
 			public String getAppKey() {
@@ -127,6 +119,14 @@ public class ListGroupsResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 		}
 	}

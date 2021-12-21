@@ -24,8 +24,8 @@ public class BatchDisableJobsResponseUnmarshaller {
 		
 		batchDisableJobsResponse.setRequestId(_ctx.stringValue("BatchDisableJobsResponse.RequestId"));
 		batchDisableJobsResponse.setCode(_ctx.integerValue("BatchDisableJobsResponse.Code"));
-		batchDisableJobsResponse.setSuccess(_ctx.booleanValue("BatchDisableJobsResponse.Success"));
 		batchDisableJobsResponse.setMessage(_ctx.stringValue("BatchDisableJobsResponse.Message"));
+		batchDisableJobsResponse.setSuccess(_ctx.booleanValue("BatchDisableJobsResponse.Success"));
 	 
 	 	return batchDisableJobsResponse;
 	}

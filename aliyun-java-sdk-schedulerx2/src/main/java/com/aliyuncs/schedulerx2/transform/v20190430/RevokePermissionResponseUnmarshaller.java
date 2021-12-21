@@ -24,8 +24,8 @@ public class RevokePermissionResponseUnmarshaller {
 		
 		revokePermissionResponse.setRequestId(_ctx.stringValue("RevokePermissionResponse.RequestId"));
 		revokePermissionResponse.setCode(_ctx.integerValue("RevokePermissionResponse.Code"));
-		revokePermissionResponse.setSuccess(_ctx.booleanValue("RevokePermissionResponse.Success"));
 		revokePermissionResponse.setMessage(_ctx.stringValue("RevokePermissionResponse.Message"));
+		revokePermissionResponse.setSuccess(_ctx.booleanValue("RevokePermissionResponse.Success"));
 	 
 	 	return revokePermissionResponse;
 	}

@@ -24,8 +24,8 @@ public class GrantPermissionResponseUnmarshaller {
 		
 		grantPermissionResponse.setRequestId(_ctx.stringValue("GrantPermissionResponse.RequestId"));
 		grantPermissionResponse.setCode(_ctx.integerValue("GrantPermissionResponse.Code"));
-		grantPermissionResponse.setSuccess(_ctx.booleanValue("GrantPermissionResponse.Success"));
 		grantPermissionResponse.setMessage(_ctx.stringValue("GrantPermissionResponse.Message"));
+		grantPermissionResponse.setSuccess(_ctx.booleanValue("GrantPermissionResponse.Success"));
 	 
 	 	return grantPermissionResponse;
 	}

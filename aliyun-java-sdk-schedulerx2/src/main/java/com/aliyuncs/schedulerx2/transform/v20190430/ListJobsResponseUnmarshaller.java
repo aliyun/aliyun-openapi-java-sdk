@@ -42,50 +42,50 @@ public class ListJobsResponseUnmarshaller {
 		List<Job> jobs = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("ListJobsResponse.Data.Jobs.Length"); i++) {
 			Job job = new Job();
-			job.setClassName(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].ClassName"));
-			job.setJarUrl(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].JarUrl"));
-			job.setContent(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Content"));
-			job.setName(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Name"));
-			job.setDescription(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Description"));
 			job.setStatus(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].Status"));
-			job.setExecuteMode(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].ExecuteMode"));
-			job.setParameters(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Parameters"));
-			job.setMaxConcurrency(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].MaxConcurrency"));
+			job.setJarUrl(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].JarUrl"));
 			job.setMaxAttempt(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MaxAttempt"));
-			job.setAttemptInterval(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].AttemptInterval"));
+			job.setParameters(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Parameters"));
+			job.setDescription(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Description"));
 			job.setJobId(_ctx.longValue("ListJobsResponse.Data.Jobs["+ i +"].JobId"));
+			job.setExecuteMode(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].ExecuteMode"));
+			job.setMaxConcurrency(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].MaxConcurrency"));
+			job.setName(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Name"));
+			job.setClassName(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].ClassName"));
+			job.setContent(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].Content"));
+			job.setAttemptInterval(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].AttemptInterval"));
 
 			MapTaskXAttrs mapTaskXAttrs = new MapTaskXAttrs();
-			mapTaskXAttrs.setPageSize(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.PageSize"));
+			mapTaskXAttrs.setTaskMaxAttempt(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.TaskMaxAttempt"));
+			mapTaskXAttrs.setTaskAttemptInterval(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.TaskAttemptInterval"));
 			mapTaskXAttrs.setConsumerSize(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.ConsumerSize"));
 			mapTaskXAttrs.setQueueSize(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.QueueSize"));
 			mapTaskXAttrs.setDispatcherSize(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.DispatcherSize"));
-			mapTaskXAttrs.setTaskMaxAttempt(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.TaskMaxAttempt"));
-			mapTaskXAttrs.setTaskAttemptInterval(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.TaskAttemptInterval"));
+			mapTaskXAttrs.setPageSize(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].MapTaskXAttrs.PageSize"));
 			job.setMapTaskXAttrs(mapTaskXAttrs);
 
 			TimeConfig timeConfig = new TimeConfig();
-			timeConfig.setTimeType(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].TimeConfig.TimeType"));
-			timeConfig.setTimeExpression(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].TimeConfig.TimeExpression"));
 			timeConfig.setCalendar(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].TimeConfig.Calendar"));
+			timeConfig.setTimeType(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].TimeConfig.TimeType"));
 			timeConfig.setDataOffset(_ctx.integerValue("ListJobsResponse.Data.Jobs["+ i +"].TimeConfig.DataOffset"));
+			timeConfig.setTimeExpression(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].TimeConfig.TimeExpression"));
 			job.setTimeConfig(timeConfig);
 
 			JobMonitorInfo jobMonitorInfo = new JobMonitorInfo();
 
 			MonitorConfig monitorConfig = new MonitorConfig();
-			monitorConfig.setTimeoutEnable(_ctx.booleanValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.TimeoutEnable"));
 			monitorConfig.setTimeout(_ctx.longValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.Timeout"));
-			monitorConfig.setTimeoutKillEnable(_ctx.booleanValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.TimeoutKillEnable"));
-			monitorConfig.setFailEnable(_ctx.booleanValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.FailEnable"));
 			monitorConfig.setSendChannel(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.SendChannel"));
+			monitorConfig.setTimeoutKillEnable(_ctx.booleanValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.TimeoutKillEnable"));
+			monitorConfig.setTimeoutEnable(_ctx.booleanValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.TimeoutEnable"));
+			monitorConfig.setFailEnable(_ctx.booleanValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.FailEnable"));
 			jobMonitorInfo.setMonitorConfig(monitorConfig);
 
 			List<ContactInfoItem> contactInfo = new ArrayList<ContactInfoItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.ContactInfo.Length"); j++) {
 				ContactInfoItem contactInfoItem = new ContactInfoItem();
-				contactInfoItem.setUserName(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.ContactInfo["+ j +"].UserName"));
 				contactInfoItem.setUserPhone(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.ContactInfo["+ j +"].UserPhone"));
+				contactInfoItem.setUserName(_ctx.stringValue("ListJobsResponse.Data.Jobs["+ i +"].JobMonitorInfo.ContactInfo["+ j +"].UserName"));
 
 				contactInfo.add(contactInfoItem);
 			}

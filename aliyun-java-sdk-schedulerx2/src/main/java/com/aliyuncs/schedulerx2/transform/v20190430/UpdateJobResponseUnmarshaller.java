@@ -24,8 +24,8 @@ public class UpdateJobResponseUnmarshaller {
 		
 		updateJobResponse.setRequestId(_ctx.stringValue("UpdateJobResponse.RequestId"));
 		updateJobResponse.setCode(_ctx.integerValue("UpdateJobResponse.Code"));
-		updateJobResponse.setSuccess(_ctx.booleanValue("UpdateJobResponse.Success"));
 		updateJobResponse.setMessage(_ctx.stringValue("UpdateJobResponse.Message"));
+		updateJobResponse.setSuccess(_ctx.booleanValue("UpdateJobResponse.Success"));
 	 
 	 	return updateJobResponse;
 	}

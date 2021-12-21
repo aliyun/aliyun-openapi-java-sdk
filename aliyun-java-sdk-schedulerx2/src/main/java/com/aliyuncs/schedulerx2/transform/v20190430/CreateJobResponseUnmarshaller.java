@@ -25,8 +25,8 @@ public class CreateJobResponseUnmarshaller {
 		
 		createJobResponse.setRequestId(_ctx.stringValue("CreateJobResponse.RequestId"));
 		createJobResponse.setCode(_ctx.integerValue("CreateJobResponse.Code"));
-		createJobResponse.setSuccess(_ctx.booleanValue("CreateJobResponse.Success"));
 		createJobResponse.setMessage(_ctx.stringValue("CreateJobResponse.Message"));
+		createJobResponse.setSuccess(_ctx.booleanValue("CreateJobResponse.Success"));
 
 		Data data = new Data();
 		data.setJobId(_ctx.longValue("CreateJobResponse.Data.JobId"));

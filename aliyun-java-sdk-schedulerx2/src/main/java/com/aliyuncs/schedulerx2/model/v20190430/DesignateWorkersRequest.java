@@ -22,22 +22,26 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
+public class DesignateWorkersRequest extends RpcAcsRequest<DesignateWorkersResponse> {
 	   
 
 	private String namespaceSource;
 
-	private Boolean checkJobStatus;
-
 	private String groupId;
+
+	private Boolean transferable;
+
+	private String labels;
+
+	private Integer designateType;
 
 	private Long jobId;
 
 	private String namespace;
 
-	private String instanceParameters;
-	public ExecuteJobRequest() {
-		super("schedulerx2", "2019-04-30", "ExecuteJob");
+	private String workers;
+	public DesignateWorkersRequest() {
+		super("schedulerx2", "2019-04-30", "DesignateWorkers");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +60,6 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		}
 	}
 
-	public Boolean getCheckJobStatus() {
-		return this.checkJobStatus;
-	}
-
-	public void setCheckJobStatus(Boolean checkJobStatus) {
-		this.checkJobStatus = checkJobStatus;
-		if(checkJobStatus != null){
-			putQueryParameter("CheckJobStatus", checkJobStatus.toString());
-		}
-	}
-
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -75,6 +68,39 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Boolean getTransferable() {
+		return this.transferable;
+	}
+
+	public void setTransferable(Boolean transferable) {
+		this.transferable = transferable;
+		if(transferable != null){
+			putQueryParameter("Transferable", transferable.toString());
+		}
+	}
+
+	public String getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(String labels) {
+		this.labels = labels;
+		if(labels != null){
+			putQueryParameter("Labels", labels);
+		}
+	}
+
+	public Integer getDesignateType() {
+		return this.designateType;
+	}
+
+	public void setDesignateType(Integer designateType) {
+		this.designateType = designateType;
+		if(designateType != null){
+			putQueryParameter("DesignateType", designateType.toString());
 		}
 	}
 
@@ -100,20 +126,20 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		}
 	}
 
-	public String getInstanceParameters() {
-		return this.instanceParameters;
+	public String getWorkers() {
+		return this.workers;
 	}
 
-	public void setInstanceParameters(String instanceParameters) {
-		this.instanceParameters = instanceParameters;
-		if(instanceParameters != null){
-			putQueryParameter("InstanceParameters", instanceParameters);
+	public void setWorkers(String workers) {
+		this.workers = workers;
+		if(workers != null){
+			putQueryParameter("Workers", workers);
 		}
 	}
 
 	@Override
-	public Class<ExecuteJobResponse> getResponseClass() {
-		return ExecuteJobResponse.class;
+	public Class<DesignateWorkersResponse> getResponseClass() {
+		return DesignateWorkersResponse.class;
 	}
 
 }

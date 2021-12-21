@@ -24,8 +24,8 @@ public class DeleteWorkflowResponseUnmarshaller {
 		
 		deleteWorkflowResponse.setRequestId(_ctx.stringValue("DeleteWorkflowResponse.RequestId"));
 		deleteWorkflowResponse.setCode(_ctx.integerValue("DeleteWorkflowResponse.Code"));
-		deleteWorkflowResponse.setSuccess(_ctx.booleanValue("DeleteWorkflowResponse.Success"));
 		deleteWorkflowResponse.setMessage(_ctx.stringValue("DeleteWorkflowResponse.Message"));
+		deleteWorkflowResponse.setSuccess(_ctx.booleanValue("DeleteWorkflowResponse.Success"));
 	 
 	 	return deleteWorkflowResponse;
 	}

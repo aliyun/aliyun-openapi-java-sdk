@@ -14,19 +14,19 @@
 
 package com.aliyuncs.schedulerx2.transform.v20190430;
 
-import com.aliyuncs.schedulerx2.model.v20190430.BatchEnableJobsResponse;
+import com.aliyuncs.schedulerx2.model.v20190430.DesignateWorkersResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class BatchEnableJobsResponseUnmarshaller {
+public class DesignateWorkersResponseUnmarshaller {
 
-	public static BatchEnableJobsResponse unmarshall(BatchEnableJobsResponse batchEnableJobsResponse, UnmarshallerContext _ctx) {
+	public static DesignateWorkersResponse unmarshall(DesignateWorkersResponse designateWorkersResponse, UnmarshallerContext _ctx) {
 		
-		batchEnableJobsResponse.setRequestId(_ctx.stringValue("BatchEnableJobsResponse.RequestId"));
-		batchEnableJobsResponse.setCode(_ctx.integerValue("BatchEnableJobsResponse.Code"));
-		batchEnableJobsResponse.setMessage(_ctx.stringValue("BatchEnableJobsResponse.Message"));
-		batchEnableJobsResponse.setSuccess(_ctx.booleanValue("BatchEnableJobsResponse.Success"));
+		designateWorkersResponse.setRequestId(_ctx.stringValue("DesignateWorkersResponse.RequestId"));
+		designateWorkersResponse.setMessage(_ctx.stringValue("DesignateWorkersResponse.Message"));
+		designateWorkersResponse.setCode(_ctx.integerValue("DesignateWorkersResponse.Code"));
+		designateWorkersResponse.setSuccess(_ctx.booleanValue("DesignateWorkersResponse.Success"));
 	 
-	 	return batchEnableJobsResponse;
+	 	return designateWorkersResponse;
 	}
 }

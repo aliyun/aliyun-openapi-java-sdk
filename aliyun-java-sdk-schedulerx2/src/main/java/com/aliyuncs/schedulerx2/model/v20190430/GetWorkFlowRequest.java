@@ -22,22 +22,18 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
+public class GetWorkFlowRequest extends RpcAcsRequest<GetWorkFlowResponse> {
 	   
 
 	private String namespaceSource;
 
-	private Boolean checkJobStatus;
-
 	private String groupId;
-
-	private Long jobId;
 
 	private String namespace;
 
-	private String instanceParameters;
-	public ExecuteJobRequest() {
-		super("schedulerx2", "2019-04-30", "ExecuteJob");
+	private Long workflowId;
+	public GetWorkFlowRequest() {
+		super("schedulerx2", "2019-04-30", "GetWorkFlow");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +52,6 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		}
 	}
 
-	public Boolean getCheckJobStatus() {
-		return this.checkJobStatus;
-	}
-
-	public void setCheckJobStatus(Boolean checkJobStatus) {
-		this.checkJobStatus = checkJobStatus;
-		if(checkJobStatus != null){
-			putQueryParameter("CheckJobStatus", checkJobStatus.toString());
-		}
-	}
-
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -75,17 +60,6 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
 		}
 	}
 
@@ -100,20 +74,20 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		}
 	}
 
-	public String getInstanceParameters() {
-		return this.instanceParameters;
+	public Long getWorkflowId() {
+		return this.workflowId;
 	}
 
-	public void setInstanceParameters(String instanceParameters) {
-		this.instanceParameters = instanceParameters;
-		if(instanceParameters != null){
-			putQueryParameter("InstanceParameters", instanceParameters);
+	public void setWorkflowId(Long workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId.toString());
 		}
 	}
 
 	@Override
-	public Class<ExecuteJobResponse> getResponseClass() {
-		return ExecuteJobResponse.class;
+	public Class<GetWorkFlowResponse> getResponseClass() {
+		return GetWorkFlowResponse.class;
 	}
 
 }

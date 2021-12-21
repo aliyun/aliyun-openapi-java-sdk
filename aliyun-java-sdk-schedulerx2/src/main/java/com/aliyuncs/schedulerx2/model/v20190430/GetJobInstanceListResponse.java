@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetJobInstanceListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class GetJobInstanceListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -89,31 +89,55 @@ public class GetJobInstanceListResponse extends AcsResponse {
 
 		public static class JobInstanceDetailsItem {
 
+			private Integer status;
+
+			private String progress;
+
+			private String result;
+
 			private Long instanceId;
 
-			private Long jobId;
+			private Integer timeType;
 
-			private Integer status;
+			private Integer triggerType;
+
+			private String endTime;
 
 			private String startTime;
 
-			private String endTime;
+			private String executor;
+
+			private Long jobId;
 
 			private String scheduleTime;
 
 			private String dataTime;
 
-			private String executor;
-
 			private String workAddr;
 
-			private String result;
+			public Integer getStatus() {
+				return this.status;
+			}
 
-			private String progress;
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
 
-			private Integer timeType;
+			public String getProgress() {
+				return this.progress;
+			}
 
-			private Integer triggerType;
+			public void setProgress(String progress) {
+				this.progress = progress;
+			}
+
+			public String getResult() {
+				return this.result;
+			}
+
+			public void setResult(String result) {
+				this.result = result;
+			}
 
 			public Long getInstanceId() {
 				return this.instanceId;
@@ -123,20 +147,28 @@ public class GetJobInstanceListResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public Long getJobId() {
-				return this.jobId;
+			public Integer getTimeType() {
+				return this.timeType;
 			}
 
-			public void setJobId(Long jobId) {
-				this.jobId = jobId;
+			public void setTimeType(Integer timeType) {
+				this.timeType = timeType;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public Integer getTriggerType() {
+				return this.triggerType;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
+			public void setTriggerType(Integer triggerType) {
+				this.triggerType = triggerType;
+			}
+
+			public String getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public String getStartTime() {
@@ -147,12 +179,20 @@ public class GetJobInstanceListResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public String getExecutor() {
+				return this.executor;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setExecutor(String executor) {
+				this.executor = executor;
+			}
+
+			public Long getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(Long jobId) {
+				this.jobId = jobId;
 			}
 
 			public String getScheduleTime() {
@@ -171,52 +211,12 @@ public class GetJobInstanceListResponse extends AcsResponse {
 				this.dataTime = dataTime;
 			}
 
-			public String getExecutor() {
-				return this.executor;
-			}
-
-			public void setExecutor(String executor) {
-				this.executor = executor;
-			}
-
 			public String getWorkAddr() {
 				return this.workAddr;
 			}
 
 			public void setWorkAddr(String workAddr) {
 				this.workAddr = workAddr;
-			}
-
-			public String getResult() {
-				return this.result;
-			}
-
-			public void setResult(String result) {
-				this.result = result;
-			}
-
-			public String getProgress() {
-				return this.progress;
-			}
-
-			public void setProgress(String progress) {
-				this.progress = progress;
-			}
-
-			public Integer getTimeType() {
-				return this.timeType;
-			}
-
-			public void setTimeType(Integer timeType) {
-				this.timeType = timeType;
-			}
-
-			public Integer getTriggerType() {
-				return this.triggerType;
-			}
-
-			public void setTriggerType(Integer triggerType) {
-				this.triggerType = triggerType;
 			}
 		}
 	}
