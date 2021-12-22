@@ -26,8 +26,6 @@ public class AddCloudConnectorGatewayPrivilegeRequest extends RpcAcsRequest<AddC
 
 	private String userAliUid;
 
-	private String type;
-
 	private String ioTCloudConnectorGatewayId;
 	public AddCloudConnectorGatewayPrivilegeRequest() {
 		super("CCIoTGW", "2021-07-21", "AddCloudConnectorGatewayPrivilege");
@@ -42,17 +40,6 @@ public class AddCloudConnectorGatewayPrivilegeRequest extends RpcAcsRequest<AddC
 		this.userAliUid = userAliUid;
 		if(userAliUid != null){
 			putQueryParameter("UserAliUid", userAliUid);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 

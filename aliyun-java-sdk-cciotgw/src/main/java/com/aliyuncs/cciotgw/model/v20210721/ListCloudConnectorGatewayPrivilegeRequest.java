@@ -24,23 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class ListCloudConnectorGatewayPrivilegeRequest extends RpcAcsRequest<ListCloudConnectorGatewayPrivilegeResponse> {
 	   
 
-	private String type;
-
 	private String ioTCloudConnectorGatewayId;
 	public ListCloudConnectorGatewayPrivilegeRequest() {
 		super("CCIoTGW", "2021-07-21", "ListCloudConnectorGatewayPrivilege");
 		setMethod(MethodType.GET);
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
 	}
 
 	public String getIoTCloudConnectorGatewayId() {
