@@ -36,8 +36,8 @@ public class GetMediaAuditAudioResultDetailResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditAudioResultDetailResponse.MediaAuditAudioResultDetail.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setStartTime(_ctx.longValue("GetMediaAuditAudioResultDetailResponse.MediaAuditAudioResultDetail.List["+ i +"].StartTime"));
 			listItem.setEndTime(_ctx.longValue("GetMediaAuditAudioResultDetailResponse.MediaAuditAudioResultDetail.List["+ i +"].EndTime"));
+			listItem.setStartTime(_ctx.longValue("GetMediaAuditAudioResultDetailResponse.MediaAuditAudioResultDetail.List["+ i +"].StartTime"));
 			listItem.setText(_ctx.stringValue("GetMediaAuditAudioResultDetailResponse.MediaAuditAudioResultDetail.List["+ i +"].Text"));
 			listItem.setLabel(_ctx.stringValue("GetMediaAuditAudioResultDetailResponse.MediaAuditAudioResultDetail.List["+ i +"].Label"));
 

@@ -24,6 +24,8 @@ public class UploadStreamByURLResponseUnmarshaller {
 		
 		uploadStreamByURLResponse.setRequestId(_ctx.stringValue("UploadStreamByURLResponse.RequestId"));
 		uploadStreamByURLResponse.setStreamJobId(_ctx.stringValue("UploadStreamByURLResponse.StreamJobId"));
+		uploadStreamByURLResponse.setFileURL(_ctx.stringValue("UploadStreamByURLResponse.FileURL"));
+		uploadStreamByURLResponse.setSourceURL(_ctx.stringValue("UploadStreamByURLResponse.SourceURL"));
 	 
 	 	return uploadStreamByURLResponse;
 	}

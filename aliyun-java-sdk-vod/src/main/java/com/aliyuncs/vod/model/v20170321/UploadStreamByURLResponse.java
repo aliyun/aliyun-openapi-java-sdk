@@ -28,6 +28,10 @@ public class UploadStreamByURLResponse extends AcsResponse {
 
 	private String streamJobId;
 
+	private String fileURL;
+
+	private String sourceURL;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +46,22 @@ public class UploadStreamByURLResponse extends AcsResponse {
 
 	public void setStreamJobId(String streamJobId) {
 		this.streamJobId = streamJobId;
+	}
+
+	public String getFileURL() {
+		return this.fileURL;
+	}
+
+	public void setFileURL(String fileURL) {
+		this.fileURL = fileURL;
+	}
+
+	public String getSourceURL() {
+		return this.sourceURL;
+	}
+
+	public void setSourceURL(String sourceURL) {
+		this.sourceURL = sourceURL;
 	}
 
 	@Override

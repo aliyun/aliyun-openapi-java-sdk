@@ -79,21 +79,13 @@ public class GetMediaAuditAudioResultDetailResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private Long startTime;
-
 			private Long endTime;
+
+			private Long startTime;
 
 			private String text;
 
 			private String label;
-
-			public Long getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Long startTime) {
-				this.startTime = startTime;
-			}
 
 			public Long getEndTime() {
 				return this.endTime;
@@ -101,6 +93,14 @@ public class GetMediaAuditAudioResultDetailResponse extends AcsResponse {
 
 			public void setEndTime(Long endTime) {
 				this.endTime = endTime;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
 			}
 
 			public String getText() {
