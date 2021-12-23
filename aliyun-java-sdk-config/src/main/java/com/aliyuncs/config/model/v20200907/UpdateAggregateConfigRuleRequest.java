@@ -106,7 +106,7 @@ public class UpdateAggregateConfigRuleRequest extends RpcAcsRequest<UpdateAggreg
 		if (resourceTypesScope != null) {
 			String resourceTypesScopeArrVal = "";
 			for(int depth1 = 0; depth1 < resourceTypesScope.size(); depth1++) {
-				resourceTypesScopeArrVal = resourceTypesScope.get(depth1) + ",";
+				resourceTypesScopeArrVal += resourceTypesScope.get(depth1) + ",";
 			}
 			if (resourceTypesScopeArrVal.length() > 0) {
 				resourceTypesScopeArrVal = resourceTypesScopeArrVal.substring(0, resourceTypesScopeArrVal.length() - 1);

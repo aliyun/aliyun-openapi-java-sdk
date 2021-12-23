@@ -1,3 +1,6 @@
+2021-12-23 Version: 2.0.6
+- Fix array params.
+
 2021-12-21 Version: 2.0.5
 - Fix array params.
 
