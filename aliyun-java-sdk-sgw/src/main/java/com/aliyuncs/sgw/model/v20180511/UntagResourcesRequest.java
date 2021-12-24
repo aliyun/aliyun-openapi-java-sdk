@@ -35,6 +35,8 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 	private String securityToken;
 
 	private List<String> tagKeys;
+
+	private String resourceRegionId;
 	public UntagResourcesRequest() {
 		super("sgw", "2018-05-11", "UntagResources", "hcs_sgw");
 		setMethod(MethodType.POST);
@@ -101,6 +103,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
 			}
 		}	
+	}
+
+	public String getResourceRegionId() {
+		return this.resourceRegionId;
+	}
+
+	public void setResourceRegionId(String resourceRegionId) {
+		this.resourceRegionId = resourceRegionId;
+		if(resourceRegionId != null){
+			putQueryParameter("ResourceRegionId", resourceRegionId);
+		}
 	}
 
 	@Override

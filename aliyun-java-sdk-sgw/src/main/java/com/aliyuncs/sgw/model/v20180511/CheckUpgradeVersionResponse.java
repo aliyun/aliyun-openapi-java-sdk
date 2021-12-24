@@ -27,15 +27,15 @@ public class CheckUpgradeVersionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
+
+	private String latestVersion;
 
 	private String option;
 
-	private String latestVersion;
+	private String code;
+
+	private Boolean success;
 
 	private List<Patch> patches;
 
@@ -47,28 +47,20 @@ public class CheckUpgradeVersionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getLatestVersion() {
+		return this.latestVersion;
+	}
+
+	public void setLatestVersion(String latestVersion) {
+		this.latestVersion = latestVersion;
 	}
 
 	public String getOption() {
@@ -79,12 +71,20 @@ public class CheckUpgradeVersionResponse extends AcsResponse {
 		this.option = option;
 	}
 
-	public String getLatestVersion() {
-		return this.latestVersion;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setLatestVersion(String latestVersion) {
-		this.latestVersion = latestVersion;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Patch> getPatches() {
@@ -97,13 +97,29 @@ public class CheckUpgradeVersionResponse extends AcsResponse {
 
 	public static class Patch {
 
+		private String internalUrl;
+
+		private String url;
+
 		private String name;
 
 		private String mD5;
 
-		private String url;
+		public String getInternalUrl() {
+			return this.internalUrl;
+		}
 
-		private String internalUrl;
+		public void setInternalUrl(String internalUrl) {
+			this.internalUrl = internalUrl;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
 
 		public String getName() {
 			return this.name;
@@ -119,22 +135,6 @@ public class CheckUpgradeVersionResponse extends AcsResponse {
 
 		public void setMD5(String mD5) {
 			this.mD5 = mD5;
-		}
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-
-		public String getInternalUrl() {
-			return this.internalUrl;
-		}
-
-		public void setInternalUrl(String internalUrl) {
-			this.internalUrl = internalUrl;
 		}
 	}
 

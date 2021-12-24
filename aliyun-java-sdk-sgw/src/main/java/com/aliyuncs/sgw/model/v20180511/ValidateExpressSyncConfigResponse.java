@@ -26,15 +26,15 @@ public class ValidateExpressSyncConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
+
+	private String validateMessage;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Boolean isValid;
-
-	private String validateMessage;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +42,6 @@ public class ValidateExpressSyncConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -68,20 +52,36 @@ public class ValidateExpressSyncConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getIsValid() {
-		return this.isValid;
-	}
-
-	public void setIsValid(Boolean isValid) {
-		this.isValid = isValid;
-	}
-
 	public String getValidateMessage() {
 		return this.validateMessage;
 	}
 
 	public void setValidateMessage(String validateMessage) {
 		this.validateMessage = validateMessage;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Boolean getIsValid() {
+		return this.isValid;
+	}
+
+	public void setIsValid(Boolean isValid) {
+		this.isValid = isValid;
 	}
 
 	@Override

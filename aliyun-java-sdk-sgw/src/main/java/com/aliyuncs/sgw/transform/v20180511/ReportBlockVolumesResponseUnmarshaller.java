@@ -23,9 +23,9 @@ public class ReportBlockVolumesResponseUnmarshaller {
 	public static ReportBlockVolumesResponse unmarshall(ReportBlockVolumesResponse reportBlockVolumesResponse, UnmarshallerContext _ctx) {
 		
 		reportBlockVolumesResponse.setRequestId(_ctx.stringValue("ReportBlockVolumesResponse.RequestId"));
-		reportBlockVolumesResponse.setSuccess(_ctx.booleanValue("ReportBlockVolumesResponse.Success"));
-		reportBlockVolumesResponse.setCode(_ctx.stringValue("ReportBlockVolumesResponse.Code"));
 		reportBlockVolumesResponse.setMessage(_ctx.stringValue("ReportBlockVolumesResponse.Message"));
+		reportBlockVolumesResponse.setCode(_ctx.stringValue("ReportBlockVolumesResponse.Code"));
+		reportBlockVolumesResponse.setSuccess(_ctx.booleanValue("ReportBlockVolumesResponse.Success"));
 	 
 	 	return reportBlockVolumesResponse;
 	}

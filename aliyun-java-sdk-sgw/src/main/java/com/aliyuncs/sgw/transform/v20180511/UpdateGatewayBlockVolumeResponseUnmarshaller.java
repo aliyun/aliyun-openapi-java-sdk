@@ -23,10 +23,10 @@ public class UpdateGatewayBlockVolumeResponseUnmarshaller {
 	public static UpdateGatewayBlockVolumeResponse unmarshall(UpdateGatewayBlockVolumeResponse updateGatewayBlockVolumeResponse, UnmarshallerContext _ctx) {
 		
 		updateGatewayBlockVolumeResponse.setRequestId(_ctx.stringValue("UpdateGatewayBlockVolumeResponse.RequestId"));
-		updateGatewayBlockVolumeResponse.setSuccess(_ctx.booleanValue("UpdateGatewayBlockVolumeResponse.Success"));
-		updateGatewayBlockVolumeResponse.setCode(_ctx.stringValue("UpdateGatewayBlockVolumeResponse.Code"));
-		updateGatewayBlockVolumeResponse.setMessage(_ctx.stringValue("UpdateGatewayBlockVolumeResponse.Message"));
 		updateGatewayBlockVolumeResponse.setTaskId(_ctx.stringValue("UpdateGatewayBlockVolumeResponse.TaskId"));
+		updateGatewayBlockVolumeResponse.setMessage(_ctx.stringValue("UpdateGatewayBlockVolumeResponse.Message"));
+		updateGatewayBlockVolumeResponse.setCode(_ctx.stringValue("UpdateGatewayBlockVolumeResponse.Code"));
+		updateGatewayBlockVolumeResponse.setSuccess(_ctx.booleanValue("UpdateGatewayBlockVolumeResponse.Success"));
 	 
 	 	return updateGatewayBlockVolumeResponse;
 	}

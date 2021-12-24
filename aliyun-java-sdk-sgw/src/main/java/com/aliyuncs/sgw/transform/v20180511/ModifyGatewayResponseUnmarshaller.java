@@ -23,10 +23,10 @@ public class ModifyGatewayResponseUnmarshaller {
 	public static ModifyGatewayResponse unmarshall(ModifyGatewayResponse modifyGatewayResponse, UnmarshallerContext _ctx) {
 		
 		modifyGatewayResponse.setRequestId(_ctx.stringValue("ModifyGatewayResponse.RequestId"));
-		modifyGatewayResponse.setSuccess(_ctx.booleanValue("ModifyGatewayResponse.Success"));
-		modifyGatewayResponse.setCode(_ctx.stringValue("ModifyGatewayResponse.Code"));
 		modifyGatewayResponse.setMessage(_ctx.stringValue("ModifyGatewayResponse.Message"));
 		modifyGatewayResponse.setGatewayId(_ctx.stringValue("ModifyGatewayResponse.GatewayId"));
+		modifyGatewayResponse.setCode(_ctx.stringValue("ModifyGatewayResponse.Code"));
+		modifyGatewayResponse.setSuccess(_ctx.booleanValue("ModifyGatewayResponse.Success"));
 	 
 	 	return modifyGatewayResponse;
 	}

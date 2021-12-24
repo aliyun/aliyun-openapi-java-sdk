@@ -23,9 +23,9 @@ public class DescribeGatewayClassesResponseUnmarshaller {
 	public static DescribeGatewayClassesResponse unmarshall(DescribeGatewayClassesResponse describeGatewayClassesResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayClassesResponse.setRequestId(_ctx.stringValue("DescribeGatewayClassesResponse.RequestId"));
-		describeGatewayClassesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayClassesResponse.Success"));
-		describeGatewayClassesResponse.setCode(_ctx.stringValue("DescribeGatewayClassesResponse.Code"));
 		describeGatewayClassesResponse.setMessage(_ctx.stringValue("DescribeGatewayClassesResponse.Message"));
+		describeGatewayClassesResponse.setCode(_ctx.stringValue("DescribeGatewayClassesResponse.Code"));
+		describeGatewayClassesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayClassesResponse.Success"));
 		describeGatewayClassesResponse.setClasses(_ctx.stringValue("DescribeGatewayClassesResponse.Classes"));
 	 
 	 	return describeGatewayClassesResponse;

@@ -23,15 +23,15 @@ public class DescribeGatewayCredentialResponseUnmarshaller {
 	public static DescribeGatewayCredentialResponse unmarshall(DescribeGatewayCredentialResponse describeGatewayCredentialResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayCredentialResponse.setRequestId(_ctx.stringValue("DescribeGatewayCredentialResponse.RequestId"));
-		describeGatewayCredentialResponse.setSuccess(_ctx.booleanValue("DescribeGatewayCredentialResponse.Success"));
-		describeGatewayCredentialResponse.setCode(_ctx.stringValue("DescribeGatewayCredentialResponse.Code"));
-		describeGatewayCredentialResponse.setMessage(_ctx.stringValue("DescribeGatewayCredentialResponse.Message"));
-		describeGatewayCredentialResponse.setEcsIp(_ctx.stringValue("DescribeGatewayCredentialResponse.EcsIp"));
-		describeGatewayCredentialResponse.setEcsPassword(_ctx.stringValue("DescribeGatewayCredentialResponse.EcsPassword"));
-		describeGatewayCredentialResponse.setConsoleUsername(_ctx.stringValue("DescribeGatewayCredentialResponse.ConsoleUsername"));
-		describeGatewayCredentialResponse.setConsolePassword(_ctx.stringValue("DescribeGatewayCredentialResponse.ConsolePassword"));
 		describeGatewayCredentialResponse.setVpcId(_ctx.stringValue("DescribeGatewayCredentialResponse.VpcId"));
+		describeGatewayCredentialResponse.setMessage(_ctx.stringValue("DescribeGatewayCredentialResponse.Message"));
+		describeGatewayCredentialResponse.setConsoleUsername(_ctx.stringValue("DescribeGatewayCredentialResponse.ConsoleUsername"));
 		describeGatewayCredentialResponse.setVSwitchId(_ctx.stringValue("DescribeGatewayCredentialResponse.VSwitchId"));
+		describeGatewayCredentialResponse.setEcsIp(_ctx.stringValue("DescribeGatewayCredentialResponse.EcsIp"));
+		describeGatewayCredentialResponse.setConsolePassword(_ctx.stringValue("DescribeGatewayCredentialResponse.ConsolePassword"));
+		describeGatewayCredentialResponse.setEcsPassword(_ctx.stringValue("DescribeGatewayCredentialResponse.EcsPassword"));
+		describeGatewayCredentialResponse.setCode(_ctx.stringValue("DescribeGatewayCredentialResponse.Code"));
+		describeGatewayCredentialResponse.setSuccess(_ctx.booleanValue("DescribeGatewayCredentialResponse.Success"));
 	 
 	 	return describeGatewayCredentialResponse;
 	}

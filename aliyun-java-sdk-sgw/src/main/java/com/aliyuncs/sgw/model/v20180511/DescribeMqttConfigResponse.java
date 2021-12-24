@@ -24,57 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMqttConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
 	private String message;
+
+	private String requestId;
 
 	private Boolean isEnabled;
 
-	private String brokerUrl;
-
 	private String internalBrokerUrl;
 
-	private String publishTopic;
+	private String code;
 
-	private String subscribeTopic;
+	private Boolean success;
+
+	private String brokerUrl;
 
 	private String groupId;
 
 	private String mqttInstanceId;
 
-	private String authType;
-
 	private String username;
 
+	private String subscribeTopic;
+
+	private String publishTopic;
+
+	private String authType;
+
 	private String password;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -82,6 +58,14 @@ public class DescribeMqttConfigResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getIsEnabled() {
@@ -92,14 +76,6 @@ public class DescribeMqttConfigResponse extends AcsResponse {
 		this.isEnabled = isEnabled;
 	}
 
-	public String getBrokerUrl() {
-		return this.brokerUrl;
-	}
-
-	public void setBrokerUrl(String brokerUrl) {
-		this.brokerUrl = brokerUrl;
-	}
-
 	public String getInternalBrokerUrl() {
 		return this.internalBrokerUrl;
 	}
@@ -108,20 +84,28 @@ public class DescribeMqttConfigResponse extends AcsResponse {
 		this.internalBrokerUrl = internalBrokerUrl;
 	}
 
-	public String getPublishTopic() {
-		return this.publishTopic;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPublishTopic(String publishTopic) {
-		this.publishTopic = publishTopic;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public String getSubscribeTopic() {
-		return this.subscribeTopic;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setSubscribeTopic(String subscribeTopic) {
-		this.subscribeTopic = subscribeTopic;
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getBrokerUrl() {
+		return this.brokerUrl;
+	}
+
+	public void setBrokerUrl(String brokerUrl) {
+		this.brokerUrl = brokerUrl;
 	}
 
 	public String getGroupId() {
@@ -140,20 +124,36 @@ public class DescribeMqttConfigResponse extends AcsResponse {
 		this.mqttInstanceId = mqttInstanceId;
 	}
 
-	public String getAuthType() {
-		return this.authType;
-	}
-
-	public void setAuthType(String authType) {
-		this.authType = authType;
-	}
-
 	public String getUsername() {
 		return this.username;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getSubscribeTopic() {
+		return this.subscribeTopic;
+	}
+
+	public void setSubscribeTopic(String subscribeTopic) {
+		this.subscribeTopic = subscribeTopic;
+	}
+
+	public String getPublishTopic() {
+		return this.publishTopic;
+	}
+
+	public void setPublishTopic(String publishTopic) {
+		this.publishTopic = publishTopic;
+	}
+
+	public String getAuthType() {
+		return this.authType;
+	}
+
+	public void setAuthType(String authType) {
+		this.authType = authType;
 	}
 
 	public String getPassword() {

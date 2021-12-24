@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExpressSyncSharesResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Share> shares;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeExpressSyncSharesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeExpressSyncSharesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Share> getShares() {
@@ -77,23 +77,39 @@ public class DescribeExpressSyncSharesResponse extends AcsResponse {
 
 	public static class Share {
 
+		private String mnsQueue;
+
+		private String expressSyncId;
+
 		private String gatewayId;
+
+		private String expressSyncState;
+
+		private String gatewayName;
 
 		private String storageBundleId;
 
-		private String gatewayName;
+		private Integer syncProgress;
 
 		private String gatewayRegion;
 
 		private String shareName;
 
-		private String expressSyncState;
+		public String getMnsQueue() {
+			return this.mnsQueue;
+		}
 
-		private String expressSyncId;
+		public void setMnsQueue(String mnsQueue) {
+			this.mnsQueue = mnsQueue;
+		}
 
-		private String mnsQueue;
+		public String getExpressSyncId() {
+			return this.expressSyncId;
+		}
 
-		private Integer syncProgress;
+		public void setExpressSyncId(String expressSyncId) {
+			this.expressSyncId = expressSyncId;
+		}
 
 		public String getGatewayId() {
 			return this.gatewayId;
@@ -101,6 +117,22 @@ public class DescribeExpressSyncSharesResponse extends AcsResponse {
 
 		public void setGatewayId(String gatewayId) {
 			this.gatewayId = gatewayId;
+		}
+
+		public String getExpressSyncState() {
+			return this.expressSyncState;
+		}
+
+		public void setExpressSyncState(String expressSyncState) {
+			this.expressSyncState = expressSyncState;
+		}
+
+		public String getGatewayName() {
+			return this.gatewayName;
+		}
+
+		public void setGatewayName(String gatewayName) {
+			this.gatewayName = gatewayName;
 		}
 
 		public String getStorageBundleId() {
@@ -111,12 +143,12 @@ public class DescribeExpressSyncSharesResponse extends AcsResponse {
 			this.storageBundleId = storageBundleId;
 		}
 
-		public String getGatewayName() {
-			return this.gatewayName;
+		public Integer getSyncProgress() {
+			return this.syncProgress;
 		}
 
-		public void setGatewayName(String gatewayName) {
-			this.gatewayName = gatewayName;
+		public void setSyncProgress(Integer syncProgress) {
+			this.syncProgress = syncProgress;
 		}
 
 		public String getGatewayRegion() {
@@ -133,38 +165,6 @@ public class DescribeExpressSyncSharesResponse extends AcsResponse {
 
 		public void setShareName(String shareName) {
 			this.shareName = shareName;
-		}
-
-		public String getExpressSyncState() {
-			return this.expressSyncState;
-		}
-
-		public void setExpressSyncState(String expressSyncState) {
-			this.expressSyncState = expressSyncState;
-		}
-
-		public String getExpressSyncId() {
-			return this.expressSyncId;
-		}
-
-		public void setExpressSyncId(String expressSyncId) {
-			this.expressSyncId = expressSyncId;
-		}
-
-		public String getMnsQueue() {
-			return this.mnsQueue;
-		}
-
-		public void setMnsQueue(String mnsQueue) {
-			this.mnsQueue = mnsQueue;
-		}
-
-		public Integer getSyncProgress() {
-			return this.syncProgress;
-		}
-
-		public void setSyncProgress(Integer syncProgress) {
-			this.syncProgress = syncProgress;
 		}
 	}
 

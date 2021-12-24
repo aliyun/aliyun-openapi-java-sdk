@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateGatewayResponse extends AcsResponse {
 
+	private String buyURL;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
 	private String gatewayId;
 
-	private String buyURL;
+	private String code;
+
+	private Boolean success;
+
+	public String getBuyURL() {
+		return this.buyURL;
+	}
+
+	public void setBuyURL(String buyURL) {
+		this.buyURL = buyURL;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +50,6 @@ public class CreateGatewayResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -76,12 +68,20 @@ public class CreateGatewayResponse extends AcsResponse {
 		this.gatewayId = gatewayId;
 	}
 
-	public String getBuyURL() {
-		return this.buyURL;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setBuyURL(String buyURL) {
-		this.buyURL = buyURL;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

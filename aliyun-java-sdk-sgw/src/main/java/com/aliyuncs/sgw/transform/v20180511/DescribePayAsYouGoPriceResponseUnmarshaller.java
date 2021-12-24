@@ -23,12 +23,12 @@ public class DescribePayAsYouGoPriceResponseUnmarshaller {
 	public static DescribePayAsYouGoPriceResponse unmarshall(DescribePayAsYouGoPriceResponse describePayAsYouGoPriceResponse, UnmarshallerContext _ctx) {
 		
 		describePayAsYouGoPriceResponse.setRequestId(_ctx.stringValue("DescribePayAsYouGoPriceResponse.RequestId"));
-		describePayAsYouGoPriceResponse.setSuccess(_ctx.booleanValue("DescribePayAsYouGoPriceResponse.Success"));
-		describePayAsYouGoPriceResponse.setCode(_ctx.stringValue("DescribePayAsYouGoPriceResponse.Code"));
 		describePayAsYouGoPriceResponse.setMessage(_ctx.stringValue("DescribePayAsYouGoPriceResponse.Message"));
 		describePayAsYouGoPriceResponse.setCurrency(_ctx.stringValue("DescribePayAsYouGoPriceResponse.Currency"));
-		describePayAsYouGoPriceResponse.setGatewayClassPrice(_ctx.floatValue("DescribePayAsYouGoPriceResponse.GatewayClassPrice"));
 		describePayAsYouGoPriceResponse.setCacheCloudEfficiencySizePrice(_ctx.floatValue("DescribePayAsYouGoPriceResponse.CacheCloudEfficiencySizePrice"));
+		describePayAsYouGoPriceResponse.setGatewayClassPrice(_ctx.floatValue("DescribePayAsYouGoPriceResponse.GatewayClassPrice"));
+		describePayAsYouGoPriceResponse.setCode(_ctx.stringValue("DescribePayAsYouGoPriceResponse.Code"));
+		describePayAsYouGoPriceResponse.setSuccess(_ctx.booleanValue("DescribePayAsYouGoPriceResponse.Success"));
 		describePayAsYouGoPriceResponse.setCacheCloudSSDSizePrice(_ctx.floatValue("DescribePayAsYouGoPriceResponse.CacheCloudSSDSizePrice"));
 	 
 	 	return describePayAsYouGoPriceResponse;

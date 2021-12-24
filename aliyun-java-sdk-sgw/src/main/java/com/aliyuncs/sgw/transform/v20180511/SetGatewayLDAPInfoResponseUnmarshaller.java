@@ -23,10 +23,10 @@ public class SetGatewayLDAPInfoResponseUnmarshaller {
 	public static SetGatewayLDAPInfoResponse unmarshall(SetGatewayLDAPInfoResponse setGatewayLDAPInfoResponse, UnmarshallerContext _ctx) {
 		
 		setGatewayLDAPInfoResponse.setRequestId(_ctx.stringValue("SetGatewayLDAPInfoResponse.RequestId"));
-		setGatewayLDAPInfoResponse.setSuccess(_ctx.booleanValue("SetGatewayLDAPInfoResponse.Success"));
-		setGatewayLDAPInfoResponse.setCode(_ctx.stringValue("SetGatewayLDAPInfoResponse.Code"));
-		setGatewayLDAPInfoResponse.setMessage(_ctx.stringValue("SetGatewayLDAPInfoResponse.Message"));
 		setGatewayLDAPInfoResponse.setTaskId(_ctx.stringValue("SetGatewayLDAPInfoResponse.TaskId"));
+		setGatewayLDAPInfoResponse.setMessage(_ctx.stringValue("SetGatewayLDAPInfoResponse.Message"));
+		setGatewayLDAPInfoResponse.setCode(_ctx.stringValue("SetGatewayLDAPInfoResponse.Code"));
+		setGatewayLDAPInfoResponse.setSuccess(_ctx.booleanValue("SetGatewayLDAPInfoResponse.Success"));
 	 
 	 	return setGatewayLDAPInfoResponse;
 	}

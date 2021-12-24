@@ -23,11 +23,11 @@ public class ActivateGatewayResponseUnmarshaller {
 	public static ActivateGatewayResponse unmarshall(ActivateGatewayResponse activateGatewayResponse, UnmarshallerContext _ctx) {
 		
 		activateGatewayResponse.setRequestId(_ctx.stringValue("ActivateGatewayResponse.RequestId"));
-		activateGatewayResponse.setSuccess(_ctx.booleanValue("ActivateGatewayResponse.Success"));
-		activateGatewayResponse.setCode(_ctx.stringValue("ActivateGatewayResponse.Code"));
 		activateGatewayResponse.setMessage(_ctx.stringValue("ActivateGatewayResponse.Message"));
-		activateGatewayResponse.setGatewayId(_ctx.stringValue("ActivateGatewayResponse.GatewayId"));
 		activateGatewayResponse.setRegionId(_ctx.stringValue("ActivateGatewayResponse.RegionId"));
+		activateGatewayResponse.setGatewayId(_ctx.stringValue("ActivateGatewayResponse.GatewayId"));
+		activateGatewayResponse.setCode(_ctx.stringValue("ActivateGatewayResponse.Code"));
+		activateGatewayResponse.setSuccess(_ctx.booleanValue("ActivateGatewayResponse.Success"));
 	 
 	 	return activateGatewayResponse;
 	}

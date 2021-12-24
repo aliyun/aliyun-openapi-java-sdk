@@ -26,17 +26,17 @@ public class DescribeAccountConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
 
 	private Boolean isSupportServerSideEncryption;
 
 	private Boolean isSupportClientSideEncryption;
 
+	private String code;
+
 	private Boolean isSupportGatewayLogging;
+
+	private Boolean success;
 
 	private Boolean isSupportElasticGatewayBeta;
 
@@ -46,22 +46,6 @@ public class DescribeAccountConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -88,12 +72,28 @@ public class DescribeAccountConfigResponse extends AcsResponse {
 		this.isSupportClientSideEncryption = isSupportClientSideEncryption;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public Boolean getIsSupportGatewayLogging() {
 		return this.isSupportGatewayLogging;
 	}
 
 	public void setIsSupportGatewayLogging(Boolean isSupportGatewayLogging) {
 		this.isSupportGatewayLogging = isSupportGatewayLogging;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Boolean getIsSupportElasticGatewayBeta() {

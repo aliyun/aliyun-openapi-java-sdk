@@ -23,10 +23,10 @@ public class DescribeGatewayDNSResponseUnmarshaller {
 	public static DescribeGatewayDNSResponse unmarshall(DescribeGatewayDNSResponse describeGatewayDNSResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayDNSResponse.setRequestId(_ctx.stringValue("DescribeGatewayDNSResponse.RequestId"));
-		describeGatewayDNSResponse.setSuccess(_ctx.booleanValue("DescribeGatewayDNSResponse.Success"));
-		describeGatewayDNSResponse.setCode(_ctx.stringValue("DescribeGatewayDNSResponse.Code"));
 		describeGatewayDNSResponse.setMessage(_ctx.stringValue("DescribeGatewayDNSResponse.Message"));
+		describeGatewayDNSResponse.setCode(_ctx.stringValue("DescribeGatewayDNSResponse.Code"));
 		describeGatewayDNSResponse.setDnsServer(_ctx.stringValue("DescribeGatewayDNSResponse.DnsServer"));
+		describeGatewayDNSResponse.setSuccess(_ctx.booleanValue("DescribeGatewayDNSResponse.Success"));
 	 
 	 	return describeGatewayDNSResponse;
 	}

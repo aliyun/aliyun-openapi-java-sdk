@@ -23,10 +23,10 @@ public class SwitchToSubscriptionResponseUnmarshaller {
 	public static SwitchToSubscriptionResponse unmarshall(SwitchToSubscriptionResponse switchToSubscriptionResponse, UnmarshallerContext _ctx) {
 		
 		switchToSubscriptionResponse.setRequestId(_ctx.stringValue("SwitchToSubscriptionResponse.RequestId"));
-		switchToSubscriptionResponse.setSuccess(_ctx.booleanValue("SwitchToSubscriptionResponse.Success"));
-		switchToSubscriptionResponse.setCode(_ctx.stringValue("SwitchToSubscriptionResponse.Code"));
-		switchToSubscriptionResponse.setMessage(_ctx.stringValue("SwitchToSubscriptionResponse.Message"));
 		switchToSubscriptionResponse.setSubscriptionURL(_ctx.stringValue("SwitchToSubscriptionResponse.SubscriptionURL"));
+		switchToSubscriptionResponse.setMessage(_ctx.stringValue("SwitchToSubscriptionResponse.Message"));
+		switchToSubscriptionResponse.setCode(_ctx.stringValue("SwitchToSubscriptionResponse.Code"));
+		switchToSubscriptionResponse.setSuccess(_ctx.booleanValue("SwitchToSubscriptionResponse.Success"));
 	 
 	 	return switchToSubscriptionResponse;
 	}

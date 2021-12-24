@@ -23,9 +23,9 @@ public class ValidateGatewayNameResponseUnmarshaller {
 	public static ValidateGatewayNameResponse unmarshall(ValidateGatewayNameResponse validateGatewayNameResponse, UnmarshallerContext _ctx) {
 		
 		validateGatewayNameResponse.setRequestId(_ctx.stringValue("ValidateGatewayNameResponse.RequestId"));
-		validateGatewayNameResponse.setSuccess(_ctx.booleanValue("ValidateGatewayNameResponse.Success"));
-		validateGatewayNameResponse.setCode(_ctx.stringValue("ValidateGatewayNameResponse.Code"));
 		validateGatewayNameResponse.setMessage(_ctx.stringValue("ValidateGatewayNameResponse.Message"));
+		validateGatewayNameResponse.setCode(_ctx.stringValue("ValidateGatewayNameResponse.Code"));
+		validateGatewayNameResponse.setSuccess(_ctx.booleanValue("ValidateGatewayNameResponse.Success"));
 		validateGatewayNameResponse.setIsValid(_ctx.booleanValue("ValidateGatewayNameResponse.IsValid"));
 	 
 	 	return validateGatewayNameResponse;

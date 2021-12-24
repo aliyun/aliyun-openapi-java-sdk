@@ -23,12 +23,12 @@ public class ActivateAllInOneGatewayResponseUnmarshaller {
 	public static ActivateAllInOneGatewayResponse unmarshall(ActivateAllInOneGatewayResponse activateAllInOneGatewayResponse, UnmarshallerContext _ctx) {
 		
 		activateAllInOneGatewayResponse.setRequestId(_ctx.stringValue("ActivateAllInOneGatewayResponse.RequestId"));
-		activateAllInOneGatewayResponse.setSuccess(_ctx.booleanValue("ActivateAllInOneGatewayResponse.Success"));
-		activateAllInOneGatewayResponse.setCode(_ctx.stringValue("ActivateAllInOneGatewayResponse.Code"));
 		activateAllInOneGatewayResponse.setMessage(_ctx.stringValue("ActivateAllInOneGatewayResponse.Message"));
-		activateAllInOneGatewayResponse.setGatewayId(_ctx.stringValue("ActivateAllInOneGatewayResponse.GatewayId"));
 		activateAllInOneGatewayResponse.setRegionId(_ctx.stringValue("ActivateAllInOneGatewayResponse.RegionId"));
+		activateAllInOneGatewayResponse.setGatewayId(_ctx.stringValue("ActivateAllInOneGatewayResponse.GatewayId"));
 		activateAllInOneGatewayResponse.setLicenseContent(_ctx.stringValue("ActivateAllInOneGatewayResponse.LicenseContent"));
+		activateAllInOneGatewayResponse.setCode(_ctx.stringValue("ActivateAllInOneGatewayResponse.Code"));
+		activateAllInOneGatewayResponse.setSuccess(_ctx.booleanValue("ActivateAllInOneGatewayResponse.Success"));
 	 
 	 	return activateAllInOneGatewayResponse;
 	}

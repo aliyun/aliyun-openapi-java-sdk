@@ -23,10 +23,10 @@ public class CreateExpressSyncResponseUnmarshaller {
 	public static CreateExpressSyncResponse unmarshall(CreateExpressSyncResponse createExpressSyncResponse, UnmarshallerContext _ctx) {
 		
 		createExpressSyncResponse.setRequestId(_ctx.stringValue("CreateExpressSyncResponse.RequestId"));
-		createExpressSyncResponse.setSuccess(_ctx.booleanValue("CreateExpressSyncResponse.Success"));
-		createExpressSyncResponse.setCode(_ctx.stringValue("CreateExpressSyncResponse.Code"));
 		createExpressSyncResponse.setMessage(_ctx.stringValue("CreateExpressSyncResponse.Message"));
+		createExpressSyncResponse.setCode(_ctx.stringValue("CreateExpressSyncResponse.Code"));
 		createExpressSyncResponse.setExpressSyncId(_ctx.stringValue("CreateExpressSyncResponse.ExpressSyncId"));
+		createExpressSyncResponse.setSuccess(_ctx.booleanValue("CreateExpressSyncResponse.Success"));
 	 
 	 	return createExpressSyncResponse;
 	}

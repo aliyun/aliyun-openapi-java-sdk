@@ -27,15 +27,15 @@ public class DescribeGatewayStockResponseUnmarshaller {
 	public static DescribeGatewayStockResponse unmarshall(DescribeGatewayStockResponse describeGatewayStockResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayStockResponse.setRequestId(_ctx.stringValue("DescribeGatewayStockResponse.RequestId"));
-		describeGatewayStockResponse.setSuccess(_ctx.booleanValue("DescribeGatewayStockResponse.Success"));
-		describeGatewayStockResponse.setCode(_ctx.stringValue("DescribeGatewayStockResponse.Code"));
 		describeGatewayStockResponse.setMessage(_ctx.stringValue("DescribeGatewayStockResponse.Message"));
+		describeGatewayStockResponse.setCode(_ctx.stringValue("DescribeGatewayStockResponse.Code"));
+		describeGatewayStockResponse.setSuccess(_ctx.booleanValue("DescribeGatewayStockResponse.Success"));
 
 		List<Stock> stocks = new ArrayList<Stock>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewayStockResponse.Stocks.Length"); i++) {
 			Stock stock = new Stock();
-			stock.setZoneId(_ctx.stringValue("DescribeGatewayStockResponse.Stocks["+ i +"].ZoneId"));
 			stock.setStockInfo(_ctx.stringValue("DescribeGatewayStockResponse.Stocks["+ i +"].StockInfo"));
+			stock.setZoneId(_ctx.stringValue("DescribeGatewayStockResponse.Stocks["+ i +"].ZoneId"));
 
 			stocks.add(stock);
 		}

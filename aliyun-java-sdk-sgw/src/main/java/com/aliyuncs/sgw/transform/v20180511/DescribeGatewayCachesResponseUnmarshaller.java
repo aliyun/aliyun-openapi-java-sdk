@@ -27,25 +27,25 @@ public class DescribeGatewayCachesResponseUnmarshaller {
 	public static DescribeGatewayCachesResponse unmarshall(DescribeGatewayCachesResponse describeGatewayCachesResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayCachesResponse.setRequestId(_ctx.stringValue("DescribeGatewayCachesResponse.RequestId"));
-		describeGatewayCachesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayCachesResponse.Success"));
-		describeGatewayCachesResponse.setCode(_ctx.stringValue("DescribeGatewayCachesResponse.Code"));
 		describeGatewayCachesResponse.setMessage(_ctx.stringValue("DescribeGatewayCachesResponse.Message"));
+		describeGatewayCachesResponse.setCode(_ctx.stringValue("DescribeGatewayCachesResponse.Code"));
+		describeGatewayCachesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayCachesResponse.Success"));
 
 		List<Cache> caches = new ArrayList<Cache>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewayCachesResponse.Caches.Length"); i++) {
 			Cache cache = new Cache();
+			cache.setPerformanceLevel(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].PerformanceLevel"));
 			cache.setSizeInGB(_ctx.longValue("DescribeGatewayCachesResponse.Caches["+ i +"].SizeInGB"));
+			cache.setBuyURL(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].BuyURL"));
 			cache.setIops(_ctx.longValue("DescribeGatewayCachesResponse.Caches["+ i +"].Iops"));
 			cache.setCacheId(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].CacheId"));
 			cache.setCacheType(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].CacheType"));
 			cache.setIsUsed(_ctx.booleanValue("DescribeGatewayCachesResponse.Caches["+ i +"].IsUsed"));
-			cache.setLocalFilePath(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].LocalFilePath"));
-			cache.setRenewURL(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].RenewURL"));
 			cache.setExpiredTime(_ctx.longValue("DescribeGatewayCachesResponse.Caches["+ i +"].ExpiredTime"));
-			cache.setExpireStatus(_ctx.integerValue("DescribeGatewayCachesResponse.Caches["+ i +"].ExpireStatus"));
-			cache.setPerformanceLevel(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].PerformanceLevel"));
-			cache.setBuyURL(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].BuyURL"));
+			cache.setLocalFilePath(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].LocalFilePath"));
 			cache.setSubscriptionInstanceId(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].SubscriptionInstanceId"));
+			cache.setExpireStatus(_ctx.integerValue("DescribeGatewayCachesResponse.Caches["+ i +"].ExpireStatus"));
+			cache.setRenewURL(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].RenewURL"));
 
 			caches.add(cache);
 		}

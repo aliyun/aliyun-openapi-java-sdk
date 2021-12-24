@@ -35,6 +35,8 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 	private String nextToken;
 
 	private List<Tag> tags;
+
+	private String resourceRegionId;
 	public ListTagResourcesRequest() {
 		super("sgw", "2018-05-11", "ListTagResources", "hcs_sgw");
 		setMethod(MethodType.POST);
@@ -102,6 +104,17 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getResourceRegionId() {
+		return this.resourceRegionId;
+	}
+
+	public void setResourceRegionId(String resourceRegionId) {
+		this.resourceRegionId = resourceRegionId;
+		if(resourceRegionId != null){
+			putQueryParameter("ResourceRegionId", resourceRegionId);
+		}
 	}
 
 	public static class Tag {

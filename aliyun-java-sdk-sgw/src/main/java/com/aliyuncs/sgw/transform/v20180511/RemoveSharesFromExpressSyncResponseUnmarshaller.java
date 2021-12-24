@@ -23,10 +23,10 @@ public class RemoveSharesFromExpressSyncResponseUnmarshaller {
 	public static RemoveSharesFromExpressSyncResponse unmarshall(RemoveSharesFromExpressSyncResponse removeSharesFromExpressSyncResponse, UnmarshallerContext _ctx) {
 		
 		removeSharesFromExpressSyncResponse.setRequestId(_ctx.stringValue("RemoveSharesFromExpressSyncResponse.RequestId"));
-		removeSharesFromExpressSyncResponse.setSuccess(_ctx.booleanValue("RemoveSharesFromExpressSyncResponse.Success"));
-		removeSharesFromExpressSyncResponse.setCode(_ctx.stringValue("RemoveSharesFromExpressSyncResponse.Code"));
-		removeSharesFromExpressSyncResponse.setMessage(_ctx.stringValue("RemoveSharesFromExpressSyncResponse.Message"));
 		removeSharesFromExpressSyncResponse.setTaskId(_ctx.stringValue("RemoveSharesFromExpressSyncResponse.TaskId"));
+		removeSharesFromExpressSyncResponse.setMessage(_ctx.stringValue("RemoveSharesFromExpressSyncResponse.Message"));
+		removeSharesFromExpressSyncResponse.setCode(_ctx.stringValue("RemoveSharesFromExpressSyncResponse.Code"));
+		removeSharesFromExpressSyncResponse.setSuccess(_ctx.booleanValue("RemoveSharesFromExpressSyncResponse.Success"));
 	 
 	 	return removeSharesFromExpressSyncResponse;
 	}

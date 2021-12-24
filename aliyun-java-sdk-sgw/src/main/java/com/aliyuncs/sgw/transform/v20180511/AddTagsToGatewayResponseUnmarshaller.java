@@ -23,9 +23,9 @@ public class AddTagsToGatewayResponseUnmarshaller {
 	public static AddTagsToGatewayResponse unmarshall(AddTagsToGatewayResponse addTagsToGatewayResponse, UnmarshallerContext _ctx) {
 		
 		addTagsToGatewayResponse.setRequestId(_ctx.stringValue("AddTagsToGatewayResponse.RequestId"));
-		addTagsToGatewayResponse.setSuccess(_ctx.booleanValue("AddTagsToGatewayResponse.Success"));
-		addTagsToGatewayResponse.setCode(_ctx.stringValue("AddTagsToGatewayResponse.Code"));
 		addTagsToGatewayResponse.setMessage(_ctx.stringValue("AddTagsToGatewayResponse.Message"));
+		addTagsToGatewayResponse.setCode(_ctx.stringValue("AddTagsToGatewayResponse.Code"));
+		addTagsToGatewayResponse.setSuccess(_ctx.booleanValue("AddTagsToGatewayResponse.Success"));
 	 
 	 	return addTagsToGatewayResponse;
 	}

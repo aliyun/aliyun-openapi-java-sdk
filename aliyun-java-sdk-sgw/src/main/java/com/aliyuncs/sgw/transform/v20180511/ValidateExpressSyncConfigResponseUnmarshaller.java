@@ -23,11 +23,11 @@ public class ValidateExpressSyncConfigResponseUnmarshaller {
 	public static ValidateExpressSyncConfigResponse unmarshall(ValidateExpressSyncConfigResponse validateExpressSyncConfigResponse, UnmarshallerContext _ctx) {
 		
 		validateExpressSyncConfigResponse.setRequestId(_ctx.stringValue("ValidateExpressSyncConfigResponse.RequestId"));
-		validateExpressSyncConfigResponse.setSuccess(_ctx.booleanValue("ValidateExpressSyncConfigResponse.Success"));
-		validateExpressSyncConfigResponse.setCode(_ctx.stringValue("ValidateExpressSyncConfigResponse.Code"));
 		validateExpressSyncConfigResponse.setMessage(_ctx.stringValue("ValidateExpressSyncConfigResponse.Message"));
-		validateExpressSyncConfigResponse.setIsValid(_ctx.booleanValue("ValidateExpressSyncConfigResponse.IsValid"));
 		validateExpressSyncConfigResponse.setValidateMessage(_ctx.stringValue("ValidateExpressSyncConfigResponse.ValidateMessage"));
+		validateExpressSyncConfigResponse.setCode(_ctx.stringValue("ValidateExpressSyncConfigResponse.Code"));
+		validateExpressSyncConfigResponse.setSuccess(_ctx.booleanValue("ValidateExpressSyncConfigResponse.Success"));
+		validateExpressSyncConfigResponse.setIsValid(_ctx.booleanValue("ValidateExpressSyncConfigResponse.IsValid"));
 	 
 	 	return validateExpressSyncConfigResponse;
 	}

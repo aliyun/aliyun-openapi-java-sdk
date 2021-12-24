@@ -23,10 +23,10 @@ public class UploadGatewayLogResponseUnmarshaller {
 	public static UploadGatewayLogResponse unmarshall(UploadGatewayLogResponse uploadGatewayLogResponse, UnmarshallerContext _ctx) {
 		
 		uploadGatewayLogResponse.setRequestId(_ctx.stringValue("UploadGatewayLogResponse.RequestId"));
-		uploadGatewayLogResponse.setSuccess(_ctx.booleanValue("UploadGatewayLogResponse.Success"));
-		uploadGatewayLogResponse.setCode(_ctx.stringValue("UploadGatewayLogResponse.Code"));
-		uploadGatewayLogResponse.setMessage(_ctx.stringValue("UploadGatewayLogResponse.Message"));
 		uploadGatewayLogResponse.setTaskId(_ctx.stringValue("UploadGatewayLogResponse.TaskId"));
+		uploadGatewayLogResponse.setMessage(_ctx.stringValue("UploadGatewayLogResponse.Message"));
+		uploadGatewayLogResponse.setCode(_ctx.stringValue("UploadGatewayLogResponse.Code"));
+		uploadGatewayLogResponse.setSuccess(_ctx.booleanValue("UploadGatewayLogResponse.Success"));
 	 
 	 	return uploadGatewayLogResponse;
 	}

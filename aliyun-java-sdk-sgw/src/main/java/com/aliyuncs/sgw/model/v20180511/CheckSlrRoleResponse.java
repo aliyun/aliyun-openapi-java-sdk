@@ -24,48 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckSlrRoleResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private String message;
+	private Boolean requireOldWayCheck;
 
 	private Boolean exist;
 
-	private Boolean requireOldWayCheck;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String message;
+
+	private String code;
+
+	private Boolean success;
+
+	public Boolean getRequireOldWayCheck() {
+		return this.requireOldWayCheck;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setRequireOldWayCheck(Boolean requireOldWayCheck) {
+		this.requireOldWayCheck = requireOldWayCheck;
 	}
 
 	public Boolean getExist() {
@@ -76,12 +52,36 @@ public class CheckSlrRoleResponse extends AcsResponse {
 		this.exist = exist;
 	}
 
-	public Boolean getRequireOldWayCheck() {
-		return this.requireOldWayCheck;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setRequireOldWayCheck(Boolean requireOldWayCheck) {
-		this.requireOldWayCheck = requireOldWayCheck;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

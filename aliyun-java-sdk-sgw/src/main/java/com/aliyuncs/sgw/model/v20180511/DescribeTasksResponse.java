@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTasksResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String code;
+
+	private Boolean success;
 
 	private List<SimpleTask> tasks;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -73,12 +65,12 @@ public class DescribeTasksResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +81,20 @@ public class DescribeTasksResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<SimpleTask> getTasks() {
@@ -107,54 +107,32 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	public static class SimpleTask {
 
-		private String taskId;
-
-		private String name;
-
-		private Long createdTime;
-
-		private Long updatedTime;
+		private String stateCode;
 
 		private Integer progress;
 
-		private String stateCode;
+		private String messageParams;
 
-		private String stageCode;
+		private Long updatedTime;
 
 		private String messageKey;
 
-		private String messageParams;
+		private String name;
 
-		public String getTaskId() {
-			return this.taskId;
+		private String stageCode;
+
+		private Long createdTime;
+
+		private String taskId;
+
+		private String relatedResourceId;
+
+		public String getStateCode() {
+			return this.stateCode;
 		}
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public Long getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(Long updatedTime) {
-			this.updatedTime = updatedTime;
+		public void setStateCode(String stateCode) {
+			this.stateCode = stateCode;
 		}
 
 		public Integer getProgress() {
@@ -165,20 +143,20 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getStateCode() {
-			return this.stateCode;
+		public String getMessageParams() {
+			return this.messageParams;
 		}
 
-		public void setStateCode(String stateCode) {
-			this.stateCode = stateCode;
+		public void setMessageParams(String messageParams) {
+			this.messageParams = messageParams;
 		}
 
-		public String getStageCode() {
-			return this.stageCode;
+		public Long getUpdatedTime() {
+			return this.updatedTime;
 		}
 
-		public void setStageCode(String stageCode) {
-			this.stageCode = stageCode;
+		public void setUpdatedTime(Long updatedTime) {
+			this.updatedTime = updatedTime;
 		}
 
 		public String getMessageKey() {
@@ -189,12 +167,44 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.messageKey = messageKey;
 		}
 
-		public String getMessageParams() {
-			return this.messageParams;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setMessageParams(String messageParams) {
-			this.messageParams = messageParams;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getStageCode() {
+			return this.stageCode;
+		}
+
+		public void setStageCode(String stageCode) {
+			this.stageCode = stageCode;
+		}
+
+		public Long getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getRelatedResourceId() {
+			return this.relatedResourceId;
+		}
+
+		public void setRelatedResourceId(String relatedResourceId) {
+			this.relatedResourceId = relatedResourceId;
 		}
 	}
 

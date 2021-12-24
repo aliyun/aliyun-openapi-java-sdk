@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayStockResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Stock> stocks;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGatewayStockResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeGatewayStockResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Stock> getStocks() {
@@ -77,17 +77,9 @@ public class DescribeGatewayStockResponse extends AcsResponse {
 
 	public static class Stock {
 
-		private String zoneId;
-
 		private String stockInfo;
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
+		private String zoneId;
 
 		public String getStockInfo() {
 			return this.stockInfo;
@@ -95,6 +87,14 @@ public class DescribeGatewayStockResponse extends AcsResponse {
 
 		public void setStockInfo(String stockInfo) {
 			this.stockInfo = stockInfo;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

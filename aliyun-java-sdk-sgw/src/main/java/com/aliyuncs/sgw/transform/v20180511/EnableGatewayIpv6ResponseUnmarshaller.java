@@ -23,10 +23,10 @@ public class EnableGatewayIpv6ResponseUnmarshaller {
 	public static EnableGatewayIpv6Response unmarshall(EnableGatewayIpv6Response enableGatewayIpv6Response, UnmarshallerContext _ctx) {
 		
 		enableGatewayIpv6Response.setRequestId(_ctx.stringValue("EnableGatewayIpv6Response.RequestId"));
-		enableGatewayIpv6Response.setSuccess(_ctx.booleanValue("EnableGatewayIpv6Response.Success"));
-		enableGatewayIpv6Response.setCode(_ctx.stringValue("EnableGatewayIpv6Response.Code"));
-		enableGatewayIpv6Response.setMessage(_ctx.stringValue("EnableGatewayIpv6Response.Message"));
 		enableGatewayIpv6Response.setTaskId(_ctx.stringValue("EnableGatewayIpv6Response.TaskId"));
+		enableGatewayIpv6Response.setMessage(_ctx.stringValue("EnableGatewayIpv6Response.Message"));
+		enableGatewayIpv6Response.setCode(_ctx.stringValue("EnableGatewayIpv6Response.Code"));
+		enableGatewayIpv6Response.setSuccess(_ctx.booleanValue("EnableGatewayIpv6Response.Success"));
 	 
 	 	return enableGatewayIpv6Response;
 	}

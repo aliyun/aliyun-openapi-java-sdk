@@ -26,17 +26,17 @@ public class DescribePayAsYouGoPriceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
 
 	private String currency;
 
+	private Float cacheCloudEfficiencySizePrice;
+
 	private Float gatewayClassPrice;
 
-	private Float cacheCloudEfficiencySizePrice;
+	private String code;
+
+	private Boolean success;
 
 	private Float cacheCloudSSDSizePrice;
 
@@ -46,22 +46,6 @@ public class DescribePayAsYouGoPriceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -80,6 +64,14 @@ public class DescribePayAsYouGoPriceResponse extends AcsResponse {
 		this.currency = currency;
 	}
 
+	public Float getCacheCloudEfficiencySizePrice() {
+		return this.cacheCloudEfficiencySizePrice;
+	}
+
+	public void setCacheCloudEfficiencySizePrice(Float cacheCloudEfficiencySizePrice) {
+		this.cacheCloudEfficiencySizePrice = cacheCloudEfficiencySizePrice;
+	}
+
 	public Float getGatewayClassPrice() {
 		return this.gatewayClassPrice;
 	}
@@ -88,12 +80,20 @@ public class DescribePayAsYouGoPriceResponse extends AcsResponse {
 		this.gatewayClassPrice = gatewayClassPrice;
 	}
 
-	public Float getCacheCloudEfficiencySizePrice() {
-		return this.cacheCloudEfficiencySizePrice;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setCacheCloudEfficiencySizePrice(Float cacheCloudEfficiencySizePrice) {
-		this.cacheCloudEfficiencySizePrice = cacheCloudEfficiencySizePrice;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Float getCacheCloudSSDSizePrice() {

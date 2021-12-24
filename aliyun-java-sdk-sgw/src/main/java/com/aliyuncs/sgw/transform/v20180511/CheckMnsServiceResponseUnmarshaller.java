@@ -23,11 +23,11 @@ public class CheckMnsServiceResponseUnmarshaller {
 	public static CheckMnsServiceResponse unmarshall(CheckMnsServiceResponse checkMnsServiceResponse, UnmarshallerContext _ctx) {
 		
 		checkMnsServiceResponse.setRequestId(_ctx.stringValue("CheckMnsServiceResponse.RequestId"));
-		checkMnsServiceResponse.setSuccess(_ctx.booleanValue("CheckMnsServiceResponse.Success"));
-		checkMnsServiceResponse.setCode(_ctx.stringValue("CheckMnsServiceResponse.Code"));
 		checkMnsServiceResponse.setMessage(_ctx.stringValue("CheckMnsServiceResponse.Message"));
 		checkMnsServiceResponse.setIsEnabled(_ctx.booleanValue("CheckMnsServiceResponse.IsEnabled"));
 		checkMnsServiceResponse.setCheckMessage(_ctx.stringValue("CheckMnsServiceResponse.CheckMessage"));
+		checkMnsServiceResponse.setCode(_ctx.stringValue("CheckMnsServiceResponse.Code"));
+		checkMnsServiceResponse.setSuccess(_ctx.booleanValue("CheckMnsServiceResponse.Success"));
 	 
 	 	return checkMnsServiceResponse;
 	}

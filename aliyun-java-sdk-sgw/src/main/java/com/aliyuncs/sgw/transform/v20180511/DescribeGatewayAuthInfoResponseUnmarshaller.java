@@ -23,11 +23,11 @@ public class DescribeGatewayAuthInfoResponseUnmarshaller {
 	public static DescribeGatewayAuthInfoResponse unmarshall(DescribeGatewayAuthInfoResponse describeGatewayAuthInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayAuthInfoResponse.setRequestId(_ctx.stringValue("DescribeGatewayAuthInfoResponse.RequestId"));
-		describeGatewayAuthInfoResponse.setSuccess(_ctx.booleanValue("DescribeGatewayAuthInfoResponse.Success"));
-		describeGatewayAuthInfoResponse.setCode(_ctx.stringValue("DescribeGatewayAuthInfoResponse.Code"));
 		describeGatewayAuthInfoResponse.setMessage(_ctx.stringValue("DescribeGatewayAuthInfoResponse.Message"));
 		describeGatewayAuthInfoResponse.setPublicIp(_ctx.stringValue("DescribeGatewayAuthInfoResponse.PublicIp"));
 		describeGatewayAuthInfoResponse.setUsername(_ctx.stringValue("DescribeGatewayAuthInfoResponse.Username"));
+		describeGatewayAuthInfoResponse.setCode(_ctx.stringValue("DescribeGatewayAuthInfoResponse.Code"));
+		describeGatewayAuthInfoResponse.setSuccess(_ctx.booleanValue("DescribeGatewayAuthInfoResponse.Success"));
 		describeGatewayAuthInfoResponse.setPassword(_ctx.stringValue("DescribeGatewayAuthInfoResponse.Password"));
 	 
 	 	return describeGatewayAuthInfoResponse;

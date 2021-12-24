@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckGatewayEssdSupportResponse extends AcsResponse {
 
+	private Boolean isSupportEssd;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
-	private Boolean isSupportEssd;
-
 	private Boolean isServiceAffect;
+
+	private String code;
+
+	private Boolean success;
+
+	public Boolean getIsSupportEssd() {
+		return this.isSupportEssd;
+	}
+
+	public void setIsSupportEssd(Boolean isSupportEssd) {
+		this.isSupportEssd = isSupportEssd;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +50,6 @@ public class CheckGatewayEssdSupportResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -68,20 +60,28 @@ public class CheckGatewayEssdSupportResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getIsSupportEssd() {
-		return this.isSupportEssd;
-	}
-
-	public void setIsSupportEssd(Boolean isSupportEssd) {
-		this.isSupportEssd = isSupportEssd;
-	}
-
 	public Boolean getIsServiceAffect() {
 		return this.isServiceAffect;
 	}
 
 	public void setIsServiceAffect(Boolean isServiceAffect) {
 		this.isServiceAffect = isServiceAffect;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

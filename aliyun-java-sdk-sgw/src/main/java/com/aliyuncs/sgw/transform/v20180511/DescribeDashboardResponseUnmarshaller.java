@@ -23,10 +23,10 @@ public class DescribeDashboardResponseUnmarshaller {
 	public static DescribeDashboardResponse unmarshall(DescribeDashboardResponse describeDashboardResponse, UnmarshallerContext _ctx) {
 		
 		describeDashboardResponse.setRequestId(_ctx.stringValue("DescribeDashboardResponse.RequestId"));
-		describeDashboardResponse.setSuccess(_ctx.booleanValue("DescribeDashboardResponse.Success"));
-		describeDashboardResponse.setCode(_ctx.stringValue("DescribeDashboardResponse.Code"));
 		describeDashboardResponse.setMessage(_ctx.stringValue("DescribeDashboardResponse.Message"));
 		describeDashboardResponse.setOverview(_ctx.stringValue("DescribeDashboardResponse.Overview"));
+		describeDashboardResponse.setCode(_ctx.stringValue("DescribeDashboardResponse.Code"));
+		describeDashboardResponse.setSuccess(_ctx.booleanValue("DescribeDashboardResponse.Success"));
 	 
 	 	return describeDashboardResponse;
 	}

@@ -27,12 +27,12 @@ public class DescribeGatewaySMBUsersResponseUnmarshaller {
 	public static DescribeGatewaySMBUsersResponse unmarshall(DescribeGatewaySMBUsersResponse describeGatewaySMBUsersResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewaySMBUsersResponse.setRequestId(_ctx.stringValue("DescribeGatewaySMBUsersResponse.RequestId"));
-		describeGatewaySMBUsersResponse.setSuccess(_ctx.booleanValue("DescribeGatewaySMBUsersResponse.Success"));
-		describeGatewaySMBUsersResponse.setCode(_ctx.stringValue("DescribeGatewaySMBUsersResponse.Code"));
-		describeGatewaySMBUsersResponse.setMessage(_ctx.stringValue("DescribeGatewaySMBUsersResponse.Message"));
 		describeGatewaySMBUsersResponse.setTotalCount(_ctx.integerValue("DescribeGatewaySMBUsersResponse.TotalCount"));
-		describeGatewaySMBUsersResponse.setPageNumber(_ctx.integerValue("DescribeGatewaySMBUsersResponse.PageNumber"));
+		describeGatewaySMBUsersResponse.setMessage(_ctx.stringValue("DescribeGatewaySMBUsersResponse.Message"));
 		describeGatewaySMBUsersResponse.setPageSize(_ctx.integerValue("DescribeGatewaySMBUsersResponse.PageSize"));
+		describeGatewaySMBUsersResponse.setPageNumber(_ctx.integerValue("DescribeGatewaySMBUsersResponse.PageNumber"));
+		describeGatewaySMBUsersResponse.setCode(_ctx.stringValue("DescribeGatewaySMBUsersResponse.Code"));
+		describeGatewaySMBUsersResponse.setSuccess(_ctx.booleanValue("DescribeGatewaySMBUsersResponse.Success"));
 
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewaySMBUsersResponse.Users.Length"); i++) {

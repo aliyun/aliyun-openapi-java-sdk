@@ -24,27 +24,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStorageBundleResponse extends AcsResponse {
 
+	private String description;
+
+	private Long createdTime;
+
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
+	private String resourceGroupId;
 
 	private String message;
 
 	private String storageBundleId;
 
-	private String name;
-
-	private String description;
-
 	private String backendBucketRegionId;
+
+	private String code;
+
+	private Boolean success;
+
+	private String name;
 
 	private String location;
 
-	private Long createdTime;
+	public String getDescription() {
+		return this.description;
+	}
 
-	private String resourceGroupId;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Long getCreatedTime() {
+		return this.createdTime;
+	}
+
+	public void setCreatedTime(Long createdTime) {
+		this.createdTime = createdTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,20 +70,12 @@ public class DescribeStorageBundleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public String getMessage() {
@@ -86,22 +94,6 @@ public class DescribeStorageBundleResponse extends AcsResponse {
 		this.storageBundleId = storageBundleId;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public String getBackendBucketRegionId() {
 		return this.backendBucketRegionId;
 	}
@@ -110,28 +102,36 @@ public class DescribeStorageBundleResponse extends AcsResponse {
 		this.backendBucketRegionId = backendBucketRegionId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getLocation() {
 		return this.location;
 	}
 
 	public void setLocation(String location) {
 		this.location = location;
-	}
-
-	public Long getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(Long createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

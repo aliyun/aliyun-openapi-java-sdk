@@ -23,9 +23,9 @@ public class DisableGatewayLoggingResponseUnmarshaller {
 	public static DisableGatewayLoggingResponse unmarshall(DisableGatewayLoggingResponse disableGatewayLoggingResponse, UnmarshallerContext _ctx) {
 		
 		disableGatewayLoggingResponse.setRequestId(_ctx.stringValue("DisableGatewayLoggingResponse.RequestId"));
-		disableGatewayLoggingResponse.setSuccess(_ctx.booleanValue("DisableGatewayLoggingResponse.Success"));
-		disableGatewayLoggingResponse.setCode(_ctx.stringValue("DisableGatewayLoggingResponse.Code"));
 		disableGatewayLoggingResponse.setMessage(_ctx.stringValue("DisableGatewayLoggingResponse.Message"));
+		disableGatewayLoggingResponse.setCode(_ctx.stringValue("DisableGatewayLoggingResponse.Code"));
+		disableGatewayLoggingResponse.setSuccess(_ctx.booleanValue("DisableGatewayLoggingResponse.Success"));
 	 
 	 	return disableGatewayLoggingResponse;
 	}

@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String code;
+
+	private Boolean success;
 
 	private List<BucketCache> bucketCaches;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -73,12 +65,12 @@ public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +81,20 @@ public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<BucketCache> getBucketCaches() {
@@ -107,72 +107,40 @@ public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 
 	public static class BucketCache {
 
-		private String gatewayId;
-
-		private String gatewayName;
-
-		private String regionId;
-
-		private String location;
-
-		private String category;
+		private String vpcId;
 
 		private String type;
 
-		private String bucketName;
+		private String mountPoint;
+
+		private String gatewayId;
+
+		private String cacheMode;
 
 		private String protocol;
 
-		private String cacheMode;
+		private String gatewayName;
 
 		private String cacheStats;
 
 		private String shareName;
 
-		private String vpcId;
+		private String regionId;
 
 		private String vpcCidr;
 
-		private String mountPoint;
+		private String bucketName;
 
-		public String getGatewayId() {
-			return this.gatewayId;
+		private String category;
+
+		private String location;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setGatewayId(String gatewayId) {
-			this.gatewayId = gatewayId;
-		}
-
-		public String getGatewayName() {
-			return this.gatewayName;
-		}
-
-		public void setGatewayName(String gatewayName) {
-			this.gatewayName = gatewayName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getLocation() {
-			return this.location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getType() {
@@ -183,12 +151,28 @@ public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getBucketName() {
-			return this.bucketName;
+		public String getMountPoint() {
+			return this.mountPoint;
 		}
 
-		public void setBucketName(String bucketName) {
-			this.bucketName = bucketName;
+		public void setMountPoint(String mountPoint) {
+			this.mountPoint = mountPoint;
+		}
+
+		public String getGatewayId() {
+			return this.gatewayId;
+		}
+
+		public void setGatewayId(String gatewayId) {
+			this.gatewayId = gatewayId;
+		}
+
+		public String getCacheMode() {
+			return this.cacheMode;
+		}
+
+		public void setCacheMode(String cacheMode) {
+			this.cacheMode = cacheMode;
 		}
 
 		public String getBizProtocol() {
@@ -199,12 +183,12 @@ public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public String getCacheMode() {
-			return this.cacheMode;
+		public String getGatewayName() {
+			return this.gatewayName;
 		}
 
-		public void setCacheMode(String cacheMode) {
-			this.cacheMode = cacheMode;
+		public void setGatewayName(String gatewayName) {
+			this.gatewayName = gatewayName;
 		}
 
 		public String getCacheStats() {
@@ -223,12 +207,12 @@ public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 			this.shareName = shareName;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getVpcCidr() {
@@ -239,12 +223,28 @@ public class DescribeGatewayBucketCachesResponse extends AcsResponse {
 			this.vpcCidr = vpcCidr;
 		}
 
-		public String getMountPoint() {
-			return this.mountPoint;
+		public String getBucketName() {
+			return this.bucketName;
 		}
 
-		public void setMountPoint(String mountPoint) {
-			this.mountPoint = mountPoint;
+		public void setBucketName(String bucketName) {
+			this.bucketName = bucketName;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
 		}
 	}
 

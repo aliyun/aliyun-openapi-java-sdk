@@ -23,9 +23,9 @@ public class DeleteStorageBundleResponseUnmarshaller {
 	public static DeleteStorageBundleResponse unmarshall(DeleteStorageBundleResponse deleteStorageBundleResponse, UnmarshallerContext _ctx) {
 		
 		deleteStorageBundleResponse.setRequestId(_ctx.stringValue("DeleteStorageBundleResponse.RequestId"));
-		deleteStorageBundleResponse.setSuccess(_ctx.booleanValue("DeleteStorageBundleResponse.Success"));
-		deleteStorageBundleResponse.setCode(_ctx.stringValue("DeleteStorageBundleResponse.Code"));
 		deleteStorageBundleResponse.setMessage(_ctx.stringValue("DeleteStorageBundleResponse.Message"));
+		deleteStorageBundleResponse.setCode(_ctx.stringValue("DeleteStorageBundleResponse.Code"));
+		deleteStorageBundleResponse.setSuccess(_ctx.booleanValue("DeleteStorageBundleResponse.Success"));
 	 
 	 	return deleteStorageBundleResponse;
 	}

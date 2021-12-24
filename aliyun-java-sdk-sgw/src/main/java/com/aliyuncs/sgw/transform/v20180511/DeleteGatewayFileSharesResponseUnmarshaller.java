@@ -23,10 +23,10 @@ public class DeleteGatewayFileSharesResponseUnmarshaller {
 	public static DeleteGatewayFileSharesResponse unmarshall(DeleteGatewayFileSharesResponse deleteGatewayFileSharesResponse, UnmarshallerContext _ctx) {
 		
 		deleteGatewayFileSharesResponse.setRequestId(_ctx.stringValue("DeleteGatewayFileSharesResponse.RequestId"));
-		deleteGatewayFileSharesResponse.setSuccess(_ctx.booleanValue("DeleteGatewayFileSharesResponse.Success"));
-		deleteGatewayFileSharesResponse.setCode(_ctx.stringValue("DeleteGatewayFileSharesResponse.Code"));
-		deleteGatewayFileSharesResponse.setMessage(_ctx.stringValue("DeleteGatewayFileSharesResponse.Message"));
 		deleteGatewayFileSharesResponse.setTaskId(_ctx.stringValue("DeleteGatewayFileSharesResponse.TaskId"));
+		deleteGatewayFileSharesResponse.setMessage(_ctx.stringValue("DeleteGatewayFileSharesResponse.Message"));
+		deleteGatewayFileSharesResponse.setCode(_ctx.stringValue("DeleteGatewayFileSharesResponse.Code"));
+		deleteGatewayFileSharesResponse.setSuccess(_ctx.booleanValue("DeleteGatewayFileSharesResponse.Success"));
 	 
 	 	return deleteGatewayFileSharesResponse;
 	}

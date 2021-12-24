@@ -23,10 +23,10 @@ public class DeleteGatewayBlockVolumesResponseUnmarshaller {
 	public static DeleteGatewayBlockVolumesResponse unmarshall(DeleteGatewayBlockVolumesResponse deleteGatewayBlockVolumesResponse, UnmarshallerContext _ctx) {
 		
 		deleteGatewayBlockVolumesResponse.setRequestId(_ctx.stringValue("DeleteGatewayBlockVolumesResponse.RequestId"));
-		deleteGatewayBlockVolumesResponse.setSuccess(_ctx.booleanValue("DeleteGatewayBlockVolumesResponse.Success"));
-		deleteGatewayBlockVolumesResponse.setCode(_ctx.stringValue("DeleteGatewayBlockVolumesResponse.Code"));
-		deleteGatewayBlockVolumesResponse.setMessage(_ctx.stringValue("DeleteGatewayBlockVolumesResponse.Message"));
 		deleteGatewayBlockVolumesResponse.setTaskId(_ctx.stringValue("DeleteGatewayBlockVolumesResponse.TaskId"));
+		deleteGatewayBlockVolumesResponse.setMessage(_ctx.stringValue("DeleteGatewayBlockVolumesResponse.Message"));
+		deleteGatewayBlockVolumesResponse.setCode(_ctx.stringValue("DeleteGatewayBlockVolumesResponse.Code"));
+		deleteGatewayBlockVolumesResponse.setSuccess(_ctx.booleanValue("DeleteGatewayBlockVolumesResponse.Success"));
 	 
 	 	return deleteGatewayBlockVolumesResponse;
 	}

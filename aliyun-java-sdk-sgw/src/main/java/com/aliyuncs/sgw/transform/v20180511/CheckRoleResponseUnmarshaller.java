@@ -23,9 +23,9 @@ public class CheckRoleResponseUnmarshaller {
 	public static CheckRoleResponse unmarshall(CheckRoleResponse checkRoleResponse, UnmarshallerContext _ctx) {
 		
 		checkRoleResponse.setRequestId(_ctx.stringValue("CheckRoleResponse.RequestId"));
-		checkRoleResponse.setSuccess(_ctx.booleanValue("CheckRoleResponse.Success"));
-		checkRoleResponse.setCode(_ctx.stringValue("CheckRoleResponse.Code"));
 		checkRoleResponse.setMessage(_ctx.stringValue("CheckRoleResponse.Message"));
+		checkRoleResponse.setCode(_ctx.stringValue("CheckRoleResponse.Code"));
+		checkRoleResponse.setSuccess(_ctx.booleanValue("CheckRoleResponse.Success"));
 	 
 	 	return checkRoleResponse;
 	}

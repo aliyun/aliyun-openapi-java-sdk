@@ -24,11 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateStsTokenResponse extends AcsResponse {
 
+	private String securityToken;
+
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
+	private String supportBundleTarget;
 
 	private String message;
 
@@ -38,11 +38,19 @@ public class GenerateStsTokenResponse extends AcsResponse {
 
 	private String expiration;
 
-	private String securityToken;
-
-	private String supportBundleTarget;
-
 	private String environment;
+
+	private String code;
+
+	private Boolean success;
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,20 +60,12 @@ public class GenerateStsTokenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getSupportBundleTarget() {
+		return this.supportBundleTarget;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setSupportBundleTarget(String supportBundleTarget) {
+		this.supportBundleTarget = supportBundleTarget;
 	}
 
 	public String getMessage() {
@@ -100,28 +100,28 @@ public class GenerateStsTokenResponse extends AcsResponse {
 		this.expiration = expiration;
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-	}
-
-	public String getSupportBundleTarget() {
-		return this.supportBundleTarget;
-	}
-
-	public void setSupportBundleTarget(String supportBundleTarget) {
-		this.supportBundleTarget = supportBundleTarget;
-	}
-
 	public String getEnvironment() {
 		return this.environment;
 	}
 
 	public void setEnvironment(String environment) {
 		this.environment = environment;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

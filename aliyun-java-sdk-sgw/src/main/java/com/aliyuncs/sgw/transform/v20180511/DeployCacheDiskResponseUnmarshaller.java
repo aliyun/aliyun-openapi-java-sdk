@@ -23,10 +23,10 @@ public class DeployCacheDiskResponseUnmarshaller {
 	public static DeployCacheDiskResponse unmarshall(DeployCacheDiskResponse deployCacheDiskResponse, UnmarshallerContext _ctx) {
 		
 		deployCacheDiskResponse.setRequestId(_ctx.stringValue("DeployCacheDiskResponse.RequestId"));
-		deployCacheDiskResponse.setSuccess(_ctx.booleanValue("DeployCacheDiskResponse.Success"));
-		deployCacheDiskResponse.setCode(_ctx.stringValue("DeployCacheDiskResponse.Code"));
-		deployCacheDiskResponse.setMessage(_ctx.stringValue("DeployCacheDiskResponse.Message"));
 		deployCacheDiskResponse.setTaskId(_ctx.stringValue("DeployCacheDiskResponse.TaskId"));
+		deployCacheDiskResponse.setMessage(_ctx.stringValue("DeployCacheDiskResponse.Message"));
+		deployCacheDiskResponse.setCode(_ctx.stringValue("DeployCacheDiskResponse.Code"));
+		deployCacheDiskResponse.setSuccess(_ctx.booleanValue("DeployCacheDiskResponse.Success"));
 	 
 	 	return deployCacheDiskResponse;
 	}

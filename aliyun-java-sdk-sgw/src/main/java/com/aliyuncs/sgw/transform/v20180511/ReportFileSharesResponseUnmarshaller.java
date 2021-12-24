@@ -23,9 +23,9 @@ public class ReportFileSharesResponseUnmarshaller {
 	public static ReportFileSharesResponse unmarshall(ReportFileSharesResponse reportFileSharesResponse, UnmarshallerContext _ctx) {
 		
 		reportFileSharesResponse.setRequestId(_ctx.stringValue("ReportFileSharesResponse.RequestId"));
-		reportFileSharesResponse.setSuccess(_ctx.booleanValue("ReportFileSharesResponse.Success"));
-		reportFileSharesResponse.setCode(_ctx.stringValue("ReportFileSharesResponse.Code"));
 		reportFileSharesResponse.setMessage(_ctx.stringValue("ReportFileSharesResponse.Message"));
+		reportFileSharesResponse.setCode(_ctx.stringValue("ReportFileSharesResponse.Code"));
+		reportFileSharesResponse.setSuccess(_ctx.booleanValue("ReportFileSharesResponse.Success"));
 	 
 	 	return reportFileSharesResponse;
 	}

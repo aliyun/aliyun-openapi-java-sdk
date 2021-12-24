@@ -28,9 +28,9 @@ public class DescribeGatewaysTagsResponseUnmarshaller {
 	public static DescribeGatewaysTagsResponse unmarshall(DescribeGatewaysTagsResponse describeGatewaysTagsResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewaysTagsResponse.setRequestId(_ctx.stringValue("DescribeGatewaysTagsResponse.RequestId"));
-		describeGatewaysTagsResponse.setSuccess(_ctx.booleanValue("DescribeGatewaysTagsResponse.Success"));
-		describeGatewaysTagsResponse.setCode(_ctx.stringValue("DescribeGatewaysTagsResponse.Code"));
 		describeGatewaysTagsResponse.setMessage(_ctx.stringValue("DescribeGatewaysTagsResponse.Message"));
+		describeGatewaysTagsResponse.setCode(_ctx.stringValue("DescribeGatewaysTagsResponse.Code"));
+		describeGatewaysTagsResponse.setSuccess(_ctx.booleanValue("DescribeGatewaysTagsResponse.Success"));
 
 		List<GatewayTag> gatewayTags = new ArrayList<GatewayTag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewaysTagsResponse.GatewayTags.Length"); i++) {
@@ -40,8 +40,8 @@ public class DescribeGatewaysTagsResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGatewaysTagsResponse.GatewayTags["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeGatewaysTagsResponse.GatewayTags["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeGatewaysTagsResponse.GatewayTags["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeGatewaysTagsResponse.GatewayTags["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

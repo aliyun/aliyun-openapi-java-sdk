@@ -23,16 +23,16 @@ public class DescribeStorageBundleResponseUnmarshaller {
 	public static DescribeStorageBundleResponse unmarshall(DescribeStorageBundleResponse describeStorageBundleResponse, UnmarshallerContext _ctx) {
 		
 		describeStorageBundleResponse.setRequestId(_ctx.stringValue("DescribeStorageBundleResponse.RequestId"));
-		describeStorageBundleResponse.setSuccess(_ctx.booleanValue("DescribeStorageBundleResponse.Success"));
-		describeStorageBundleResponse.setCode(_ctx.stringValue("DescribeStorageBundleResponse.Code"));
-		describeStorageBundleResponse.setMessage(_ctx.stringValue("DescribeStorageBundleResponse.Message"));
-		describeStorageBundleResponse.setStorageBundleId(_ctx.stringValue("DescribeStorageBundleResponse.StorageBundleId"));
-		describeStorageBundleResponse.setName(_ctx.stringValue("DescribeStorageBundleResponse.Name"));
 		describeStorageBundleResponse.setDescription(_ctx.stringValue("DescribeStorageBundleResponse.Description"));
-		describeStorageBundleResponse.setBackendBucketRegionId(_ctx.stringValue("DescribeStorageBundleResponse.BackendBucketRegionId"));
-		describeStorageBundleResponse.setLocation(_ctx.stringValue("DescribeStorageBundleResponse.Location"));
 		describeStorageBundleResponse.setCreatedTime(_ctx.longValue("DescribeStorageBundleResponse.CreatedTime"));
 		describeStorageBundleResponse.setResourceGroupId(_ctx.stringValue("DescribeStorageBundleResponse.ResourceGroupId"));
+		describeStorageBundleResponse.setMessage(_ctx.stringValue("DescribeStorageBundleResponse.Message"));
+		describeStorageBundleResponse.setStorageBundleId(_ctx.stringValue("DescribeStorageBundleResponse.StorageBundleId"));
+		describeStorageBundleResponse.setBackendBucketRegionId(_ctx.stringValue("DescribeStorageBundleResponse.BackendBucketRegionId"));
+		describeStorageBundleResponse.setCode(_ctx.stringValue("DescribeStorageBundleResponse.Code"));
+		describeStorageBundleResponse.setSuccess(_ctx.booleanValue("DescribeStorageBundleResponse.Success"));
+		describeStorageBundleResponse.setName(_ctx.stringValue("DescribeStorageBundleResponse.Name"));
+		describeStorageBundleResponse.setLocation(_ctx.stringValue("DescribeStorageBundleResponse.Location"));
 	 
 	 	return describeStorageBundleResponse;
 	}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayBlockVolumesResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<BlockVolume> blockVolumes;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGatewayBlockVolumesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeGatewayBlockVolumesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<BlockVolume> getBlockVolumes() {
@@ -77,184 +77,64 @@ public class DescribeGatewayBlockVolumesResponse extends AcsResponse {
 
 	public static class BlockVolume {
 
-		private String name;
-
-		private String diskId;
-
-		private String diskType;
-
-		private String protocol;
-
-		private Long size;
-
-		private Boolean enabled;
-
-		private String state;
-
-		private Long totalUpload;
-
-		private Long totalDownload;
-
-		private String ossBucketName;
-
-		private String ossEndpoint;
-
-		private Boolean ossBucketSsl;
-
-		private String localPath;
-
-		private Integer chunkSize;
-
-		private String cacheMode;
-
-		private String address;
+		private Integer status;
 
 		private String serialNumber;
 
-		private String indexId;
+		private Integer chunkSize;
 
-		private String target;
+		private Long totalUpload;
+
+		private String diskType;
+
+		private String diskId;
 
 		private Integer port;
 
-		private Integer lunId;
-
-		private Boolean chapEnabled;
-
-		private String chapInUser;
+		private String indexId;
 
 		private String chapOutUser;
 
-		private Integer status;
+		private Long totalDownload;
+
+		private Boolean chapEnabled;
+
+		private Boolean enabled;
+
+		private String address;
+
+		private String name;
+
+		private String target;
+
+		private String ossEndpoint;
+
+		private String ossBucketName;
+
+		private String cacheMode;
+
+		private String state;
+
+		private String protocol;
+
+		private Integer lunId;
+
+		private Boolean ossBucketSsl;
 
 		private Integer volumeState;
 
-		public String getName() {
-			return this.name;
+		private String localPath;
+
+		private String chapInUser;
+
+		private Long size;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDiskId() {
-			return this.diskId;
-		}
-
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
-		}
-
-		public String getDiskType() {
-			return this.diskType;
-		}
-
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
-		}
-
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public Long getTotalUpload() {
-			return this.totalUpload;
-		}
-
-		public void setTotalUpload(Long totalUpload) {
-			this.totalUpload = totalUpload;
-		}
-
-		public Long getTotalDownload() {
-			return this.totalDownload;
-		}
-
-		public void setTotalDownload(Long totalDownload) {
-			this.totalDownload = totalDownload;
-		}
-
-		public String getOssBucketName() {
-			return this.ossBucketName;
-		}
-
-		public void setOssBucketName(String ossBucketName) {
-			this.ossBucketName = ossBucketName;
-		}
-
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
-		}
-
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
-		}
-
-		public Boolean getOssBucketSsl() {
-			return this.ossBucketSsl;
-		}
-
-		public void setOssBucketSsl(Boolean ossBucketSsl) {
-			this.ossBucketSsl = ossBucketSsl;
-		}
-
-		public String getLocalPath() {
-			return this.localPath;
-		}
-
-		public void setLocalPath(String localPath) {
-			this.localPath = localPath;
-		}
-
-		public Integer getChunkSize() {
-			return this.chunkSize;
-		}
-
-		public void setChunkSize(Integer chunkSize) {
-			this.chunkSize = chunkSize;
-		}
-
-		public String getCacheMode() {
-			return this.cacheMode;
-		}
-
-		public void setCacheMode(String cacheMode) {
-			this.cacheMode = cacheMode;
-		}
-
-		public String getAddress() {
-			return this.address;
-		}
-
-		public void setAddress(String address) {
-			this.address = address;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getSerialNumber() {
@@ -265,20 +145,36 @@ public class DescribeGatewayBlockVolumesResponse extends AcsResponse {
 			this.serialNumber = serialNumber;
 		}
 
-		public String getIndexId() {
-			return this.indexId;
+		public Integer getChunkSize() {
+			return this.chunkSize;
 		}
 
-		public void setIndexId(String indexId) {
-			this.indexId = indexId;
+		public void setChunkSize(Integer chunkSize) {
+			this.chunkSize = chunkSize;
 		}
 
-		public String getTarget() {
-			return this.target;
+		public Long getTotalUpload() {
+			return this.totalUpload;
 		}
 
-		public void setTarget(String target) {
-			this.target = target;
+		public void setTotalUpload(Long totalUpload) {
+			this.totalUpload = totalUpload;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
 		}
 
 		public Integer getPort() {
@@ -289,28 +185,12 @@ public class DescribeGatewayBlockVolumesResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public Integer getLunId() {
-			return this.lunId;
+		public String getIndexId() {
+			return this.indexId;
 		}
 
-		public void setLunId(Integer lunId) {
-			this.lunId = lunId;
-		}
-
-		public Boolean getChapEnabled() {
-			return this.chapEnabled;
-		}
-
-		public void setChapEnabled(Boolean chapEnabled) {
-			this.chapEnabled = chapEnabled;
-		}
-
-		public String getChapInUser() {
-			return this.chapInUser;
-		}
-
-		public void setChapInUser(String chapInUser) {
-			this.chapInUser = chapInUser;
+		public void setIndexId(String indexId) {
+			this.indexId = indexId;
 		}
 
 		public String getChapOutUser() {
@@ -321,12 +201,108 @@ public class DescribeGatewayBlockVolumesResponse extends AcsResponse {
 			this.chapOutUser = chapOutUser;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Long getTotalDownload() {
+			return this.totalDownload;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setTotalDownload(Long totalDownload) {
+			this.totalDownload = totalDownload;
+		}
+
+		public Boolean getChapEnabled() {
+			return this.chapEnabled;
+		}
+
+		public void setChapEnabled(Boolean chapEnabled) {
+			this.chapEnabled = chapEnabled;
+		}
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
+		}
+
+		public String getAddress() {
+			return this.address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getTarget() {
+			return this.target;
+		}
+
+		public void setTarget(String target) {
+			this.target = target;
+		}
+
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
+		}
+
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
+		}
+
+		public String getOssBucketName() {
+			return this.ossBucketName;
+		}
+
+		public void setOssBucketName(String ossBucketName) {
+			this.ossBucketName = ossBucketName;
+		}
+
+		public String getCacheMode() {
+			return this.cacheMode;
+		}
+
+		public void setCacheMode(String cacheMode) {
+			this.cacheMode = cacheMode;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public Integer getLunId() {
+			return this.lunId;
+		}
+
+		public void setLunId(Integer lunId) {
+			this.lunId = lunId;
+		}
+
+		public Boolean getOssBucketSsl() {
+			return this.ossBucketSsl;
+		}
+
+		public void setOssBucketSsl(Boolean ossBucketSsl) {
+			this.ossBucketSsl = ossBucketSsl;
 		}
 
 		public Integer getVolumeState() {
@@ -335,6 +311,30 @@ public class DescribeGatewayBlockVolumesResponse extends AcsResponse {
 
 		public void setVolumeState(Integer volumeState) {
 			this.volumeState = volumeState;
+		}
+
+		public String getLocalPath() {
+			return this.localPath;
+		}
+
+		public void setLocalPath(String localPath) {
+			this.localPath = localPath;
+		}
+
+		public String getChapInUser() {
+			return this.chapInUser;
+		}
+
+		public void setChapInUser(String chapInUser) {
+			this.chapInUser = chapInUser;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
 		}
 	}
 

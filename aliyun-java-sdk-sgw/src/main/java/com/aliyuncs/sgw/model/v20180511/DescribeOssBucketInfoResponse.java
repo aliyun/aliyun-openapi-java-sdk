@@ -26,25 +26,25 @@ public class DescribeOssBucketInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
 
 	private Boolean isArchive;
+
+	private Boolean isFresh;
+
+	private Boolean isSupportServerSideEncryption;
+
+	private Long storageSize;
+
+	private Boolean isVersioning;
 
 	private Boolean isBackToResource;
 
 	private Integer pollingInterval;
 
-	private Boolean isSupportServerSideEncryption;
+	private String code;
 
-	private Boolean isFresh;
-
-	private Long storageSize;
-
-	private Boolean isVersioning;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,22 +52,6 @@ public class DescribeOssBucketInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -86,20 +70,12 @@ public class DescribeOssBucketInfoResponse extends AcsResponse {
 		this.isArchive = isArchive;
 	}
 
-	public Boolean getIsBackToResource() {
-		return this.isBackToResource;
+	public Boolean getIsFresh() {
+		return this.isFresh;
 	}
 
-	public void setIsBackToResource(Boolean isBackToResource) {
-		this.isBackToResource = isBackToResource;
-	}
-
-	public Integer getPollingInterval() {
-		return this.pollingInterval;
-	}
-
-	public void setPollingInterval(Integer pollingInterval) {
-		this.pollingInterval = pollingInterval;
+	public void setIsFresh(Boolean isFresh) {
+		this.isFresh = isFresh;
 	}
 
 	public Boolean getIsSupportServerSideEncryption() {
@@ -108,14 +84,6 @@ public class DescribeOssBucketInfoResponse extends AcsResponse {
 
 	public void setIsSupportServerSideEncryption(Boolean isSupportServerSideEncryption) {
 		this.isSupportServerSideEncryption = isSupportServerSideEncryption;
-	}
-
-	public Boolean getIsFresh() {
-		return this.isFresh;
-	}
-
-	public void setIsFresh(Boolean isFresh) {
-		this.isFresh = isFresh;
 	}
 
 	public Long getStorageSize() {
@@ -132,6 +100,38 @@ public class DescribeOssBucketInfoResponse extends AcsResponse {
 
 	public void setIsVersioning(Boolean isVersioning) {
 		this.isVersioning = isVersioning;
+	}
+
+	public Boolean getIsBackToResource() {
+		return this.isBackToResource;
+	}
+
+	public void setIsBackToResource(Boolean isBackToResource) {
+		this.isBackToResource = isBackToResource;
+	}
+
+	public Integer getPollingInterval() {
+		return this.pollingInterval;
+	}
+
+	public void setPollingInterval(Integer pollingInterval) {
+		this.pollingInterval = pollingInterval;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -23,10 +23,10 @@ public class GenerateMqttTokenResponseUnmarshaller {
 	public static GenerateMqttTokenResponse unmarshall(GenerateMqttTokenResponse generateMqttTokenResponse, UnmarshallerContext _ctx) {
 		
 		generateMqttTokenResponse.setRequestId(_ctx.stringValue("GenerateMqttTokenResponse.RequestId"));
-		generateMqttTokenResponse.setSuccess(_ctx.booleanValue("GenerateMqttTokenResponse.Success"));
-		generateMqttTokenResponse.setCode(_ctx.stringValue("GenerateMqttTokenResponse.Code"));
 		generateMqttTokenResponse.setMessage(_ctx.stringValue("GenerateMqttTokenResponse.Message"));
 		generateMqttTokenResponse.setMqttToken(_ctx.stringValue("GenerateMqttTokenResponse.MqttToken"));
+		generateMqttTokenResponse.setCode(_ctx.stringValue("GenerateMqttTokenResponse.Code"));
+		generateMqttTokenResponse.setSuccess(_ctx.booleanValue("GenerateMqttTokenResponse.Success"));
 	 
 	 	return generateMqttTokenResponse;
 	}

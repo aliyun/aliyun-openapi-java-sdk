@@ -23,10 +23,10 @@ public class SetGatewayDNSResponseUnmarshaller {
 	public static SetGatewayDNSResponse unmarshall(SetGatewayDNSResponse setGatewayDNSResponse, UnmarshallerContext _ctx) {
 		
 		setGatewayDNSResponse.setRequestId(_ctx.stringValue("SetGatewayDNSResponse.RequestId"));
-		setGatewayDNSResponse.setSuccess(_ctx.booleanValue("SetGatewayDNSResponse.Success"));
-		setGatewayDNSResponse.setCode(_ctx.stringValue("SetGatewayDNSResponse.Code"));
-		setGatewayDNSResponse.setMessage(_ctx.stringValue("SetGatewayDNSResponse.Message"));
 		setGatewayDNSResponse.setTaskId(_ctx.stringValue("SetGatewayDNSResponse.TaskId"));
+		setGatewayDNSResponse.setMessage(_ctx.stringValue("SetGatewayDNSResponse.Message"));
+		setGatewayDNSResponse.setCode(_ctx.stringValue("SetGatewayDNSResponse.Code"));
+		setGatewayDNSResponse.setSuccess(_ctx.booleanValue("SetGatewayDNSResponse.Success"));
 	 
 	 	return setGatewayDNSResponse;
 	}

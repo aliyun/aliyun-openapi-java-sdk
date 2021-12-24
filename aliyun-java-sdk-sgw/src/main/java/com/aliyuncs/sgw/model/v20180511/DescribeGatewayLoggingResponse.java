@@ -24,19 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayLoggingResponse extends AcsResponse {
 
+	private String slsProject;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
 	private String gatewayLoggingStatus;
 
-	private String slsProject;
-
 	private String slsLogstore;
+
+	private String code;
+
+	private Boolean success;
+
+	public String getSlsProject() {
+		return this.slsProject;
+	}
+
+	public void setSlsProject(String slsProject) {
+		this.slsProject = slsProject;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,22 +52,6 @@ public class DescribeGatewayLoggingResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -78,20 +70,28 @@ public class DescribeGatewayLoggingResponse extends AcsResponse {
 		this.gatewayLoggingStatus = gatewayLoggingStatus;
 	}
 
-	public String getSlsProject() {
-		return this.slsProject;
-	}
-
-	public void setSlsProject(String slsProject) {
-		this.slsProject = slsProject;
-	}
-
 	public String getSlsLogstore() {
 		return this.slsLogstore;
 	}
 
 	public void setSlsLogstore(String slsLogstore) {
 		this.slsLogstore = slsLogstore;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

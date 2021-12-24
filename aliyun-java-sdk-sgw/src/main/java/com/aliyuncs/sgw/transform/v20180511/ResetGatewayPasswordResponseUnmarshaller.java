@@ -23,10 +23,10 @@ public class ResetGatewayPasswordResponseUnmarshaller {
 	public static ResetGatewayPasswordResponse unmarshall(ResetGatewayPasswordResponse resetGatewayPasswordResponse, UnmarshallerContext _ctx) {
 		
 		resetGatewayPasswordResponse.setRequestId(_ctx.stringValue("ResetGatewayPasswordResponse.RequestId"));
-		resetGatewayPasswordResponse.setSuccess(_ctx.booleanValue("ResetGatewayPasswordResponse.Success"));
-		resetGatewayPasswordResponse.setCode(_ctx.stringValue("ResetGatewayPasswordResponse.Code"));
-		resetGatewayPasswordResponse.setMessage(_ctx.stringValue("ResetGatewayPasswordResponse.Message"));
 		resetGatewayPasswordResponse.setTaskId(_ctx.stringValue("ResetGatewayPasswordResponse.TaskId"));
+		resetGatewayPasswordResponse.setMessage(_ctx.stringValue("ResetGatewayPasswordResponse.Message"));
+		resetGatewayPasswordResponse.setCode(_ctx.stringValue("ResetGatewayPasswordResponse.Code"));
+		resetGatewayPasswordResponse.setSuccess(_ctx.booleanValue("ResetGatewayPasswordResponse.Success"));
 	 
 	 	return resetGatewayPasswordResponse;
 	}

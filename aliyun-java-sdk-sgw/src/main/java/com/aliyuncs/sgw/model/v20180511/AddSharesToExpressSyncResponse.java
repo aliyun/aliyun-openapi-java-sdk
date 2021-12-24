@@ -24,15 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddSharesToExpressSyncResponse extends AcsResponse {
 
+	private String taskId;
+
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
-
-	private String taskId;
 
 	private String mnsTopic;
 
@@ -44,6 +40,18 @@ public class AddSharesToExpressSyncResponse extends AcsResponse {
 
 	private String mnsInnerEndpoint;
 
+	private String code;
+
+	private Boolean success;
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,36 +60,12 @@ public class AddSharesToExpressSyncResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
 	}
 
 	public String getMnsTopic() {
@@ -122,6 +106,22 @@ public class AddSharesToExpressSyncResponse extends AcsResponse {
 
 	public void setMnsInnerEndpoint(String mnsInnerEndpoint) {
 		this.mnsInnerEndpoint = mnsInnerEndpoint;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

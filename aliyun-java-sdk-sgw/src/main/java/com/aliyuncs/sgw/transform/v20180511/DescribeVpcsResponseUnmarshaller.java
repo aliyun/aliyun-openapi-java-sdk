@@ -27,20 +27,20 @@ public class DescribeVpcsResponseUnmarshaller {
 	public static DescribeVpcsResponse unmarshall(DescribeVpcsResponse describeVpcsResponse, UnmarshallerContext _ctx) {
 		
 		describeVpcsResponse.setRequestId(_ctx.stringValue("DescribeVpcsResponse.RequestId"));
-		describeVpcsResponse.setSuccess(_ctx.booleanValue("DescribeVpcsResponse.Success"));
-		describeVpcsResponse.setCode(_ctx.stringValue("DescribeVpcsResponse.Code"));
-		describeVpcsResponse.setMessage(_ctx.stringValue("DescribeVpcsResponse.Message"));
 		describeVpcsResponse.setTotalCount(_ctx.integerValue("DescribeVpcsResponse.TotalCount"));
-		describeVpcsResponse.setPageNumber(_ctx.integerValue("DescribeVpcsResponse.PageNumber"));
+		describeVpcsResponse.setMessage(_ctx.stringValue("DescribeVpcsResponse.Message"));
 		describeVpcsResponse.setPageSize(_ctx.integerValue("DescribeVpcsResponse.PageSize"));
+		describeVpcsResponse.setPageNumber(_ctx.integerValue("DescribeVpcsResponse.PageNumber"));
+		describeVpcsResponse.setCode(_ctx.stringValue("DescribeVpcsResponse.Code"));
+		describeVpcsResponse.setSuccess(_ctx.booleanValue("DescribeVpcsResponse.Success"));
 
 		List<Vpc> vpcs = new ArrayList<Vpc>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcsResponse.Vpcs.Length"); i++) {
 			Vpc vpc = new Vpc();
-			vpc.setName(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Name"));
-			vpc.setId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Id"));
 			vpc.setIsDefault(_ctx.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].IsDefault"));
 			vpc.setCidrBlock(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CidrBlock"));
+			vpc.setName(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Name"));
+			vpc.setId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Id"));
 
 			vpcs.add(vpc);
 		}

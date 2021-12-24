@@ -25,91 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayNFSClientsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private String message;
-
-	private Integer totalCount;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private Boolean version3Enabled;
-
 	private Boolean version40Enabled;
 
 	private Boolean version41Enabled;
 
+	private Integer totalCount;
+
+	private String requestId;
+
+	private String message;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private Boolean version3Enabled;
+
+	private String code;
+
+	private Boolean success;
+
 	private List<ClientInfo> clientInfoList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Boolean getVersion3Enabled() {
-		return this.version3Enabled;
-	}
-
-	public void setVersion3Enabled(Boolean version3Enabled) {
-		this.version3Enabled = version3Enabled;
-	}
 
 	public Boolean getVersion40Enabled() {
 		return this.version40Enabled;
@@ -127,6 +63,70 @@ public class DescribeGatewayNFSClientsResponse extends AcsResponse {
 		this.version41Enabled = version41Enabled;
 	}
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Boolean getVersion3Enabled() {
+		return this.version3Enabled;
+	}
+
+	public void setVersion3Enabled(Boolean version3Enabled) {
+		this.version3Enabled = version3Enabled;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<ClientInfo> getClientInfoList() {
 		return this.clientInfoList;
 	}
@@ -137,29 +137,13 @@ public class DescribeGatewayNFSClientsResponse extends AcsResponse {
 
 	public static class ClientInfo {
 
-		private String clientIpAddr;
-
-		private Boolean hasNFSv3;
-
 		private Boolean hasNFSv40;
 
 		private Boolean hasNFSv41;
 
-		public String getClientIpAddr() {
-			return this.clientIpAddr;
-		}
+		private Boolean hasNFSv3;
 
-		public void setClientIpAddr(String clientIpAddr) {
-			this.clientIpAddr = clientIpAddr;
-		}
-
-		public Boolean getHasNFSv3() {
-			return this.hasNFSv3;
-		}
-
-		public void setHasNFSv3(Boolean hasNFSv3) {
-			this.hasNFSv3 = hasNFSv3;
-		}
+		private String clientIpAddr;
 
 		public Boolean getHasNFSv40() {
 			return this.hasNFSv40;
@@ -175,6 +159,22 @@ public class DescribeGatewayNFSClientsResponse extends AcsResponse {
 
 		public void setHasNFSv41(Boolean hasNFSv41) {
 			this.hasNFSv41 = hasNFSv41;
+		}
+
+		public Boolean getHasNFSv3() {
+			return this.hasNFSv3;
+		}
+
+		public void setHasNFSv3(Boolean hasNFSv3) {
+			this.hasNFSv3 = hasNFSv3;
+		}
+
+		public String getClientIpAddr() {
+			return this.clientIpAddr;
+		}
+
+		public void setClientIpAddr(String clientIpAddr) {
+			this.clientIpAddr = clientIpAddr;
 		}
 	}
 

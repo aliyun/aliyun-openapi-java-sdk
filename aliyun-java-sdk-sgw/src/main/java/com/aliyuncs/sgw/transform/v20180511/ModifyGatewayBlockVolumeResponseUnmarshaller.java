@@ -23,10 +23,10 @@ public class ModifyGatewayBlockVolumeResponseUnmarshaller {
 	public static ModifyGatewayBlockVolumeResponse unmarshall(ModifyGatewayBlockVolumeResponse modifyGatewayBlockVolumeResponse, UnmarshallerContext _ctx) {
 		
 		modifyGatewayBlockVolumeResponse.setRequestId(_ctx.stringValue("ModifyGatewayBlockVolumeResponse.RequestId"));
-		modifyGatewayBlockVolumeResponse.setSuccess(_ctx.booleanValue("ModifyGatewayBlockVolumeResponse.Success"));
-		modifyGatewayBlockVolumeResponse.setCode(_ctx.stringValue("ModifyGatewayBlockVolumeResponse.Code"));
-		modifyGatewayBlockVolumeResponse.setMessage(_ctx.stringValue("ModifyGatewayBlockVolumeResponse.Message"));
 		modifyGatewayBlockVolumeResponse.setTaskId(_ctx.stringValue("ModifyGatewayBlockVolumeResponse.TaskId"));
+		modifyGatewayBlockVolumeResponse.setMessage(_ctx.stringValue("ModifyGatewayBlockVolumeResponse.Message"));
+		modifyGatewayBlockVolumeResponse.setCode(_ctx.stringValue("ModifyGatewayBlockVolumeResponse.Code"));
+		modifyGatewayBlockVolumeResponse.setSuccess(_ctx.booleanValue("ModifyGatewayBlockVolumeResponse.Success"));
 	 
 	 	return modifyGatewayBlockVolumeResponse;
 	}

@@ -23,10 +23,10 @@ public class SetGatewayADInfoResponseUnmarshaller {
 	public static SetGatewayADInfoResponse unmarshall(SetGatewayADInfoResponse setGatewayADInfoResponse, UnmarshallerContext _ctx) {
 		
 		setGatewayADInfoResponse.setRequestId(_ctx.stringValue("SetGatewayADInfoResponse.RequestId"));
-		setGatewayADInfoResponse.setSuccess(_ctx.booleanValue("SetGatewayADInfoResponse.Success"));
-		setGatewayADInfoResponse.setCode(_ctx.stringValue("SetGatewayADInfoResponse.Code"));
-		setGatewayADInfoResponse.setMessage(_ctx.stringValue("SetGatewayADInfoResponse.Message"));
 		setGatewayADInfoResponse.setTaskId(_ctx.stringValue("SetGatewayADInfoResponse.TaskId"));
+		setGatewayADInfoResponse.setMessage(_ctx.stringValue("SetGatewayADInfoResponse.Message"));
+		setGatewayADInfoResponse.setCode(_ctx.stringValue("SetGatewayADInfoResponse.Code"));
+		setGatewayADInfoResponse.setSuccess(_ctx.booleanValue("SetGatewayADInfoResponse.Success"));
 	 
 	 	return setGatewayADInfoResponse;
 	}

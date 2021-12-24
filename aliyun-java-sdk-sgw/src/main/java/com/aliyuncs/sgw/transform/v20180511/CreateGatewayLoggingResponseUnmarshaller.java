@@ -23,9 +23,9 @@ public class CreateGatewayLoggingResponseUnmarshaller {
 	public static CreateGatewayLoggingResponse unmarshall(CreateGatewayLoggingResponse createGatewayLoggingResponse, UnmarshallerContext _ctx) {
 		
 		createGatewayLoggingResponse.setRequestId(_ctx.stringValue("CreateGatewayLoggingResponse.RequestId"));
-		createGatewayLoggingResponse.setSuccess(_ctx.booleanValue("CreateGatewayLoggingResponse.Success"));
-		createGatewayLoggingResponse.setCode(_ctx.stringValue("CreateGatewayLoggingResponse.Code"));
 		createGatewayLoggingResponse.setMessage(_ctx.stringValue("CreateGatewayLoggingResponse.Message"));
+		createGatewayLoggingResponse.setCode(_ctx.stringValue("CreateGatewayLoggingResponse.Code"));
+		createGatewayLoggingResponse.setSuccess(_ctx.booleanValue("CreateGatewayLoggingResponse.Success"));
 	 
 	 	return createGatewayLoggingResponse;
 	}

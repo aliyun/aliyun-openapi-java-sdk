@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayCategoriesResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
-	private Boolean success;
+	private String categories;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private String categories;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +50,12 @@ public class DescribeGatewayCategoriesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getCategories() {
+		return this.categories;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCategories(String categories) {
+		this.categories = categories;
 	}
 
 	public String getCode() {
@@ -58,20 +66,12 @@ public class DescribeGatewayCategoriesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getCategories() {
-		return this.categories;
-	}
-
-	public void setCategories(String categories) {
-		this.categories = categories;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -23,11 +23,11 @@ public class DescribeSubscriptionPriceResponseUnmarshaller {
 	public static DescribeSubscriptionPriceResponse unmarshall(DescribeSubscriptionPriceResponse describeSubscriptionPriceResponse, UnmarshallerContext _ctx) {
 		
 		describeSubscriptionPriceResponse.setRequestId(_ctx.stringValue("DescribeSubscriptionPriceResponse.RequestId"));
-		describeSubscriptionPriceResponse.setSuccess(_ctx.booleanValue("DescribeSubscriptionPriceResponse.Success"));
-		describeSubscriptionPriceResponse.setCode(_ctx.stringValue("DescribeSubscriptionPriceResponse.Code"));
 		describeSubscriptionPriceResponse.setMessage(_ctx.stringValue("DescribeSubscriptionPriceResponse.Message"));
 		describeSubscriptionPriceResponse.setCurrency(_ctx.stringValue("DescribeSubscriptionPriceResponse.Currency"));
 		describeSubscriptionPriceResponse.setTradePrice(_ctx.floatValue("DescribeSubscriptionPriceResponse.TradePrice"));
+		describeSubscriptionPriceResponse.setCode(_ctx.stringValue("DescribeSubscriptionPriceResponse.Code"));
+		describeSubscriptionPriceResponse.setSuccess(_ctx.booleanValue("DescribeSubscriptionPriceResponse.Success"));
 	 
 	 	return describeSubscriptionPriceResponse;
 	}

@@ -24,9 +24,9 @@ public class DeleteExpressSyncResponseUnmarshaller {
 		
 		deleteExpressSyncResponse.setRequestId(_ctx.stringValue("DeleteExpressSyncResponse.RequestId"));
 		deleteExpressSyncResponse.setTaskId(_ctx.stringValue("DeleteExpressSyncResponse.TaskId"));
-		deleteExpressSyncResponse.setSuccess(_ctx.booleanValue("DeleteExpressSyncResponse.Success"));
-		deleteExpressSyncResponse.setCode(_ctx.stringValue("DeleteExpressSyncResponse.Code"));
 		deleteExpressSyncResponse.setMessage(_ctx.stringValue("DeleteExpressSyncResponse.Message"));
+		deleteExpressSyncResponse.setCode(_ctx.stringValue("DeleteExpressSyncResponse.Code"));
+		deleteExpressSyncResponse.setSuccess(_ctx.booleanValue("DeleteExpressSyncResponse.Success"));
 	 
 	 	return deleteExpressSyncResponse;
 	}

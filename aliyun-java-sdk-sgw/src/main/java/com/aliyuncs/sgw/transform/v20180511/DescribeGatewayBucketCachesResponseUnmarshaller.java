@@ -27,30 +27,30 @@ public class DescribeGatewayBucketCachesResponseUnmarshaller {
 	public static DescribeGatewayBucketCachesResponse unmarshall(DescribeGatewayBucketCachesResponse describeGatewayBucketCachesResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayBucketCachesResponse.setRequestId(_ctx.stringValue("DescribeGatewayBucketCachesResponse.RequestId"));
-		describeGatewayBucketCachesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayBucketCachesResponse.Success"));
-		describeGatewayBucketCachesResponse.setCode(_ctx.stringValue("DescribeGatewayBucketCachesResponse.Code"));
-		describeGatewayBucketCachesResponse.setMessage(_ctx.stringValue("DescribeGatewayBucketCachesResponse.Message"));
 		describeGatewayBucketCachesResponse.setTotalCount(_ctx.integerValue("DescribeGatewayBucketCachesResponse.TotalCount"));
-		describeGatewayBucketCachesResponse.setPageNumber(_ctx.integerValue("DescribeGatewayBucketCachesResponse.PageNumber"));
+		describeGatewayBucketCachesResponse.setMessage(_ctx.stringValue("DescribeGatewayBucketCachesResponse.Message"));
 		describeGatewayBucketCachesResponse.setPageSize(_ctx.integerValue("DescribeGatewayBucketCachesResponse.PageSize"));
+		describeGatewayBucketCachesResponse.setPageNumber(_ctx.integerValue("DescribeGatewayBucketCachesResponse.PageNumber"));
+		describeGatewayBucketCachesResponse.setCode(_ctx.stringValue("DescribeGatewayBucketCachesResponse.Code"));
+		describeGatewayBucketCachesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayBucketCachesResponse.Success"));
 
 		List<BucketCache> bucketCaches = new ArrayList<BucketCache>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewayBucketCachesResponse.BucketCaches.Length"); i++) {
 			BucketCache bucketCache = new BucketCache();
-			bucketCache.setGatewayId(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].GatewayId"));
-			bucketCache.setGatewayName(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].GatewayName"));
-			bucketCache.setRegionId(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].RegionId"));
-			bucketCache.setLocation(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].Location"));
-			bucketCache.setCategory(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].Category"));
+			bucketCache.setVpcId(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].VpcId"));
 			bucketCache.setType(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].Type"));
-			bucketCache.setBucketName(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].BucketName"));
-			bucketCache.setBizProtocol(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].Protocol"));
+			bucketCache.setMountPoint(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].MountPoint"));
+			bucketCache.setGatewayId(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].GatewayId"));
 			bucketCache.setCacheMode(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].CacheMode"));
+			bucketCache.setBizProtocol(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].Protocol"));
+			bucketCache.setGatewayName(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].GatewayName"));
 			bucketCache.setCacheStats(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].CacheStats"));
 			bucketCache.setShareName(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].ShareName"));
-			bucketCache.setVpcId(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].VpcId"));
+			bucketCache.setRegionId(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].RegionId"));
 			bucketCache.setVpcCidr(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].VpcCidr"));
-			bucketCache.setMountPoint(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].MountPoint"));
+			bucketCache.setBucketName(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].BucketName"));
+			bucketCache.setCategory(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].Category"));
+			bucketCache.setLocation(_ctx.stringValue("DescribeGatewayBucketCachesResponse.BucketCaches["+ i +"].Location"));
 
 			bucketCaches.add(bucketCache);
 		}

@@ -27,23 +27,23 @@ public class DescribeStorageBundlesResponseUnmarshaller {
 	public static DescribeStorageBundlesResponse unmarshall(DescribeStorageBundlesResponse describeStorageBundlesResponse, UnmarshallerContext _ctx) {
 		
 		describeStorageBundlesResponse.setRequestId(_ctx.stringValue("DescribeStorageBundlesResponse.RequestId"));
-		describeStorageBundlesResponse.setSuccess(_ctx.booleanValue("DescribeStorageBundlesResponse.Success"));
-		describeStorageBundlesResponse.setCode(_ctx.stringValue("DescribeStorageBundlesResponse.Code"));
-		describeStorageBundlesResponse.setMessage(_ctx.stringValue("DescribeStorageBundlesResponse.Message"));
 		describeStorageBundlesResponse.setTotalCount(_ctx.integerValue("DescribeStorageBundlesResponse.TotalCount"));
-		describeStorageBundlesResponse.setPageNumber(_ctx.integerValue("DescribeStorageBundlesResponse.PageNumber"));
+		describeStorageBundlesResponse.setMessage(_ctx.stringValue("DescribeStorageBundlesResponse.Message"));
 		describeStorageBundlesResponse.setPageSize(_ctx.integerValue("DescribeStorageBundlesResponse.PageSize"));
+		describeStorageBundlesResponse.setPageNumber(_ctx.integerValue("DescribeStorageBundlesResponse.PageNumber"));
+		describeStorageBundlesResponse.setCode(_ctx.stringValue("DescribeStorageBundlesResponse.Code"));
+		describeStorageBundlesResponse.setSuccess(_ctx.booleanValue("DescribeStorageBundlesResponse.Success"));
 
 		List<StorageBundle> storageBundles = new ArrayList<StorageBundle>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStorageBundlesResponse.StorageBundles.Length"); i++) {
 			StorageBundle storageBundle = new StorageBundle();
-			storageBundle.setStorageBundleId(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].StorageBundleId"));
-			storageBundle.setName(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].Name"));
 			storageBundle.setDescription(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].Description"));
 			storageBundle.setBackendBucketRegionId(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].BackendBucketRegionId"));
-			storageBundle.setLocation(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].Location"));
-			storageBundle.setCreatedTime(_ctx.longValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].CreatedTime"));
 			storageBundle.setResourceGroupId(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].ResourceGroupId"));
+			storageBundle.setStorageBundleId(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].StorageBundleId"));
+			storageBundle.setName(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].Name"));
+			storageBundle.setCreatedTime(_ctx.longValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].CreatedTime"));
+			storageBundle.setLocation(_ctx.stringValue("DescribeStorageBundlesResponse.StorageBundles["+ i +"].Location"));
 
 			storageBundles.add(storageBundle);
 		}

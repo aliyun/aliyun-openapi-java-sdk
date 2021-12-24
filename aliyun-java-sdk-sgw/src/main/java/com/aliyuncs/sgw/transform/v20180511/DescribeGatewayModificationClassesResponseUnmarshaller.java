@@ -27,9 +27,9 @@ public class DescribeGatewayModificationClassesResponseUnmarshaller {
 	public static DescribeGatewayModificationClassesResponse unmarshall(DescribeGatewayModificationClassesResponse describeGatewayModificationClassesResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayModificationClassesResponse.setRequestId(_ctx.stringValue("DescribeGatewayModificationClassesResponse.RequestId"));
-		describeGatewayModificationClassesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayModificationClassesResponse.Success"));
-		describeGatewayModificationClassesResponse.setCode(_ctx.stringValue("DescribeGatewayModificationClassesResponse.Code"));
 		describeGatewayModificationClassesResponse.setMessage(_ctx.stringValue("DescribeGatewayModificationClassesResponse.Message"));
+		describeGatewayModificationClassesResponse.setCode(_ctx.stringValue("DescribeGatewayModificationClassesResponse.Code"));
+		describeGatewayModificationClassesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayModificationClassesResponse.Success"));
 
 		List<TargetGatewayClass> targetGatewayClasses = new ArrayList<TargetGatewayClass>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewayModificationClassesResponse.TargetGatewayClasses.Length"); i++) {

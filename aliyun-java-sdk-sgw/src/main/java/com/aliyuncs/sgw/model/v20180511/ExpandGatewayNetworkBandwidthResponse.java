@@ -24,48 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ExpandGatewayNetworkBandwidthResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private String message;
+	private String buyURL;
 
 	private String taskId;
 
-	private String buyURL;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String message;
+
+	private String code;
+
+	private Boolean success;
+
+	public String getBuyURL() {
+		return this.buyURL;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setBuyURL(String buyURL) {
+		this.buyURL = buyURL;
 	}
 
 	public String getTaskId() {
@@ -76,12 +52,36 @@ public class ExpandGatewayNetworkBandwidthResponse extends AcsResponse {
 		this.taskId = taskId;
 	}
 
-	public String getBuyURL() {
-		return this.buyURL;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setBuyURL(String buyURL) {
-		this.buyURL = buyURL;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

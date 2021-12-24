@@ -26,15 +26,15 @@ public class ActivateGatewayResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
+
+	private String regionId;
 
 	private String gatewayId;
 
-	private String regionId;
+	private String code;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +42,6 @@ public class ActivateGatewayResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -68,6 +52,14 @@ public class ActivateGatewayResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
 	public String getGatewayId() {
 		return this.gatewayId;
 	}
@@ -76,12 +68,20 @@ public class ActivateGatewayResponse extends AcsResponse {
 		this.gatewayId = gatewayId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

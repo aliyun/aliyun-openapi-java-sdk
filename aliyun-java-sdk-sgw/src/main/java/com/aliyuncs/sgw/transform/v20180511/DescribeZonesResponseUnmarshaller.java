@@ -27,9 +27,9 @@ public class DescribeZonesResponseUnmarshaller {
 	public static DescribeZonesResponse unmarshall(DescribeZonesResponse describeZonesResponse, UnmarshallerContext _ctx) {
 		
 		describeZonesResponse.setRequestId(_ctx.stringValue("DescribeZonesResponse.RequestId"));
-		describeZonesResponse.setSuccess(_ctx.booleanValue("DescribeZonesResponse.Success"));
-		describeZonesResponse.setCode(_ctx.stringValue("DescribeZonesResponse.Code"));
 		describeZonesResponse.setMessage(_ctx.stringValue("DescribeZonesResponse.Message"));
+		describeZonesResponse.setCode(_ctx.stringValue("DescribeZonesResponse.Code"));
+		describeZonesResponse.setSuccess(_ctx.booleanValue("DescribeZonesResponse.Success"));
 
 		List<Zone> zones = new ArrayList<Zone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {

@@ -23,12 +23,12 @@ public class DescribeGatewayLoggingResponseUnmarshaller {
 	public static DescribeGatewayLoggingResponse unmarshall(DescribeGatewayLoggingResponse describeGatewayLoggingResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayLoggingResponse.setRequestId(_ctx.stringValue("DescribeGatewayLoggingResponse.RequestId"));
-		describeGatewayLoggingResponse.setSuccess(_ctx.booleanValue("DescribeGatewayLoggingResponse.Success"));
-		describeGatewayLoggingResponse.setCode(_ctx.stringValue("DescribeGatewayLoggingResponse.Code"));
+		describeGatewayLoggingResponse.setSlsProject(_ctx.stringValue("DescribeGatewayLoggingResponse.SlsProject"));
 		describeGatewayLoggingResponse.setMessage(_ctx.stringValue("DescribeGatewayLoggingResponse.Message"));
 		describeGatewayLoggingResponse.setGatewayLoggingStatus(_ctx.stringValue("DescribeGatewayLoggingResponse.GatewayLoggingStatus"));
-		describeGatewayLoggingResponse.setSlsProject(_ctx.stringValue("DescribeGatewayLoggingResponse.SlsProject"));
 		describeGatewayLoggingResponse.setSlsLogstore(_ctx.stringValue("DescribeGatewayLoggingResponse.SlsLogstore"));
+		describeGatewayLoggingResponse.setCode(_ctx.stringValue("DescribeGatewayLoggingResponse.Code"));
+		describeGatewayLoggingResponse.setSuccess(_ctx.booleanValue("DescribeGatewayLoggingResponse.Success"));
 	 
 	 	return describeGatewayLoggingResponse;
 	}

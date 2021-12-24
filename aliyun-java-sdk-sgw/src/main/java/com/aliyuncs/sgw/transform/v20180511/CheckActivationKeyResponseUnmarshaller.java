@@ -23,9 +23,9 @@ public class CheckActivationKeyResponseUnmarshaller {
 	public static CheckActivationKeyResponse unmarshall(CheckActivationKeyResponse checkActivationKeyResponse, UnmarshallerContext _ctx) {
 		
 		checkActivationKeyResponse.setRequestId(_ctx.stringValue("CheckActivationKeyResponse.RequestId"));
-		checkActivationKeyResponse.setSuccess(_ctx.booleanValue("CheckActivationKeyResponse.Success"));
-		checkActivationKeyResponse.setCode(_ctx.stringValue("CheckActivationKeyResponse.Code"));
 		checkActivationKeyResponse.setMessage(_ctx.stringValue("CheckActivationKeyResponse.Message"));
+		checkActivationKeyResponse.setCode(_ctx.stringValue("CheckActivationKeyResponse.Code"));
+		checkActivationKeyResponse.setSuccess(_ctx.booleanValue("CheckActivationKeyResponse.Success"));
 	 
 	 	return checkActivationKeyResponse;
 	}

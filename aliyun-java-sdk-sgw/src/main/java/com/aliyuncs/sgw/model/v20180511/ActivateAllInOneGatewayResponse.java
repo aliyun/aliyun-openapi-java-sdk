@@ -26,17 +26,17 @@ public class ActivateAllInOneGatewayResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
-
-	private String gatewayId;
 
 	private String regionId;
 
+	private String gatewayId;
+
 	private String licenseContent;
+
+	private String code;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,22 +44,6 @@ public class ActivateAllInOneGatewayResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -70,14 +54,6 @@ public class ActivateAllInOneGatewayResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getGatewayId() {
-		return this.gatewayId;
-	}
-
-	public void setGatewayId(String gatewayId) {
-		this.gatewayId = gatewayId;
-	}
-
 	public String getRegionId() {
 		return this.regionId;
 	}
@@ -86,12 +62,36 @@ public class ActivateAllInOneGatewayResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
+	public String getGatewayId() {
+		return this.gatewayId;
+	}
+
+	public void setGatewayId(String gatewayId) {
+		this.gatewayId = gatewayId;
+	}
+
 	public String getLicenseContent() {
 		return this.licenseContent;
 	}
 
 	public void setLicenseContent(String licenseContent) {
 		this.licenseContent = licenseContent;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

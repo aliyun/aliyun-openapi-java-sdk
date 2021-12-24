@@ -1,3 +1,6 @@
+2021-12-24 Version: 1.0.3
+- Updated CheckBlockVolumeName api for Checking the volume name has been already used by the OSS bucket folder.
+
 2021-05-28 Version: 1.0.1
 - Add TriggerRemoteSync api.
 

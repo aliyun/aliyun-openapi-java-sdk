@@ -27,20 +27,20 @@ public class DescribeExpressSyncsResponseUnmarshaller {
 	public static DescribeExpressSyncsResponse unmarshall(DescribeExpressSyncsResponse describeExpressSyncsResponse, UnmarshallerContext _ctx) {
 		
 		describeExpressSyncsResponse.setRequestId(_ctx.stringValue("DescribeExpressSyncsResponse.RequestId"));
-		describeExpressSyncsResponse.setSuccess(_ctx.booleanValue("DescribeExpressSyncsResponse.Success"));
-		describeExpressSyncsResponse.setCode(_ctx.stringValue("DescribeExpressSyncsResponse.Code"));
 		describeExpressSyncsResponse.setMessage(_ctx.stringValue("DescribeExpressSyncsResponse.Message"));
+		describeExpressSyncsResponse.setCode(_ctx.stringValue("DescribeExpressSyncsResponse.Code"));
+		describeExpressSyncsResponse.setSuccess(_ctx.booleanValue("DescribeExpressSyncsResponse.Success"));
 
 		List<ExpressSync> expressSyncs = new ArrayList<ExpressSync>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeExpressSyncsResponse.ExpressSyncs.Length"); i++) {
 			ExpressSync expressSync = new ExpressSync();
 			expressSync.setExpressSyncId(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].ExpressSyncId"));
-			expressSync.setName(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].Name"));
 			expressSync.setDescription(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].Description"));
-			expressSync.setBucketRegion(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].BucketRegion"));
 			expressSync.setBucketName(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].BucketName"));
+			expressSync.setName(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].Name"));
 			expressSync.setBucketPrefix(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].BucketPrefix"));
 			expressSync.setMnsTopic(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].MnsTopic"));
+			expressSync.setBucketRegion(_ctx.stringValue("DescribeExpressSyncsResponse.ExpressSyncs["+ i +"].BucketRegion"));
 
 			expressSyncs.add(expressSync);
 		}

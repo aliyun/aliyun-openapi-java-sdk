@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayActionsResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Action> actions;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGatewayActionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeGatewayActionsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Action> getActions() {
@@ -77,21 +77,37 @@ public class DescribeGatewayActionsResponse extends AcsResponse {
 
 	public static class Action {
 
+		private String smbUser;
+
+		private String adLdap;
+
 		private String gatewayId;
 
-		private String self;
-
 		private String monitor;
+
+		private String self;
 
 		private String disk;
 
 		private String cache;
 
-		private String smbUser;
-
-		private String adLdap;
-
 		private String target;
+
+		public String getSmbUser() {
+			return this.smbUser;
+		}
+
+		public void setSmbUser(String smbUser) {
+			this.smbUser = smbUser;
+		}
+
+		public String getAdLdap() {
+			return this.adLdap;
+		}
+
+		public void setAdLdap(String adLdap) {
+			this.adLdap = adLdap;
+		}
 
 		public String getGatewayId() {
 			return this.gatewayId;
@@ -101,20 +117,20 @@ public class DescribeGatewayActionsResponse extends AcsResponse {
 			this.gatewayId = gatewayId;
 		}
 
-		public String getSelf() {
-			return this.self;
-		}
-
-		public void setSelf(String self) {
-			this.self = self;
-		}
-
 		public String getMonitor() {
 			return this.monitor;
 		}
 
 		public void setMonitor(String monitor) {
 			this.monitor = monitor;
+		}
+
+		public String getSelf() {
+			return this.self;
+		}
+
+		public void setSelf(String self) {
+			this.self = self;
 		}
 
 		public String getDisk() {
@@ -131,22 +147,6 @@ public class DescribeGatewayActionsResponse extends AcsResponse {
 
 		public void setCache(String cache) {
 			this.cache = cache;
-		}
-
-		public String getSmbUser() {
-			return this.smbUser;
-		}
-
-		public void setSmbUser(String smbUser) {
-			this.smbUser = smbUser;
-		}
-
-		public String getAdLdap() {
-			return this.adLdap;
-		}
-
-		public void setAdLdap(String adLdap) {
-			this.adLdap = adLdap;
 		}
 
 		public String getTarget() {

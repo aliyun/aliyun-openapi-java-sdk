@@ -27,19 +27,19 @@ public class CheckUpgradeVersionResponseUnmarshaller {
 	public static CheckUpgradeVersionResponse unmarshall(CheckUpgradeVersionResponse checkUpgradeVersionResponse, UnmarshallerContext _ctx) {
 		
 		checkUpgradeVersionResponse.setRequestId(_ctx.stringValue("CheckUpgradeVersionResponse.RequestId"));
-		checkUpgradeVersionResponse.setSuccess(_ctx.booleanValue("CheckUpgradeVersionResponse.Success"));
-		checkUpgradeVersionResponse.setCode(_ctx.stringValue("CheckUpgradeVersionResponse.Code"));
 		checkUpgradeVersionResponse.setMessage(_ctx.stringValue("CheckUpgradeVersionResponse.Message"));
-		checkUpgradeVersionResponse.setOption(_ctx.stringValue("CheckUpgradeVersionResponse.Option"));
 		checkUpgradeVersionResponse.setLatestVersion(_ctx.stringValue("CheckUpgradeVersionResponse.LatestVersion"));
+		checkUpgradeVersionResponse.setOption(_ctx.stringValue("CheckUpgradeVersionResponse.Option"));
+		checkUpgradeVersionResponse.setCode(_ctx.stringValue("CheckUpgradeVersionResponse.Code"));
+		checkUpgradeVersionResponse.setSuccess(_ctx.booleanValue("CheckUpgradeVersionResponse.Success"));
 
 		List<Patch> patches = new ArrayList<Patch>();
 		for (int i = 0; i < _ctx.lengthValue("CheckUpgradeVersionResponse.Patches.Length"); i++) {
 			Patch patch = new Patch();
+			patch.setInternalUrl(_ctx.stringValue("CheckUpgradeVersionResponse.Patches["+ i +"].InternalUrl"));
+			patch.setUrl(_ctx.stringValue("CheckUpgradeVersionResponse.Patches["+ i +"].Url"));
 			patch.setName(_ctx.stringValue("CheckUpgradeVersionResponse.Patches["+ i +"].Name"));
 			patch.setMD5(_ctx.stringValue("CheckUpgradeVersionResponse.Patches["+ i +"].MD5"));
-			patch.setUrl(_ctx.stringValue("CheckUpgradeVersionResponse.Patches["+ i +"].Url"));
-			patch.setInternalUrl(_ctx.stringValue("CheckUpgradeVersionResponse.Patches["+ i +"].InternalUrl"));
 
 			patches.add(patch);
 		}

@@ -24,25 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayCredentialResponse extends AcsResponse {
 
+	private String vpcId;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
-	private String ecsIp;
-
-	private String ecsPassword;
-
 	private String consoleUsername;
+
+	private String vSwitchId;
+
+	private String ecsIp;
 
 	private String consolePassword;
 
-	private String vpcId;
+	private String ecsPassword;
 
-	private String vSwitchId;
+	private String code;
+
+	private Boolean success;
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,22 +58,6 @@ public class DescribeGatewayCredentialResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -76,28 +68,28 @@ public class DescribeGatewayCredentialResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getEcsIp() {
-		return this.ecsIp;
-	}
-
-	public void setEcsIp(String ecsIp) {
-		this.ecsIp = ecsIp;
-	}
-
-	public String getEcsPassword() {
-		return this.ecsPassword;
-	}
-
-	public void setEcsPassword(String ecsPassword) {
-		this.ecsPassword = ecsPassword;
-	}
-
 	public String getConsoleUsername() {
 		return this.consoleUsername;
 	}
 
 	public void setConsoleUsername(String consoleUsername) {
 		this.consoleUsername = consoleUsername;
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
+
+	public String getEcsIp() {
+		return this.ecsIp;
+	}
+
+	public void setEcsIp(String ecsIp) {
+		this.ecsIp = ecsIp;
 	}
 
 	public String getConsolePassword() {
@@ -108,20 +100,28 @@ public class DescribeGatewayCredentialResponse extends AcsResponse {
 		this.consolePassword = consolePassword;
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public String getEcsPassword() {
+		return this.ecsPassword;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
+	public void setEcsPassword(String ecsPassword) {
+		this.ecsPassword = ecsPassword;
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

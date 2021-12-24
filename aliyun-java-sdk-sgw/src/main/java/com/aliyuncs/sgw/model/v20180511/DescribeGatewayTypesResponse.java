@@ -24,38 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayTypesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
+	private String types;
 
 	private String message;
 
-	private String types;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String code;
+
+	private Boolean success;
+
+	public String getTypes() {
+		return this.types;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setTypes(String types) {
+		this.types = types;
 	}
 
 	public String getMessage() {
@@ -66,12 +50,28 @@ public class DescribeGatewayTypesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getTypes() {
-		return this.types;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTypes(String types) {
-		this.types = types;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

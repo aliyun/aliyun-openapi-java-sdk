@@ -24,38 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SwitchToSubscriptionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
+	private String subscriptionURL;
 
 	private String message;
 
-	private String subscriptionURL;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String code;
+
+	private Boolean success;
+
+	public String getSubscriptionURL() {
+		return this.subscriptionURL;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setSubscriptionURL(String subscriptionURL) {
+		this.subscriptionURL = subscriptionURL;
 	}
 
 	public String getMessage() {
@@ -66,12 +50,28 @@ public class SwitchToSubscriptionResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSubscriptionURL() {
-		return this.subscriptionURL;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSubscriptionURL(String subscriptionURL) {
-		this.subscriptionURL = subscriptionURL;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

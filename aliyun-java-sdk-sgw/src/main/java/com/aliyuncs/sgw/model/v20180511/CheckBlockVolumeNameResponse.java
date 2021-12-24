@@ -24,38 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckBlockVolumeNameResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
+	private String isRequireRecovery;
 
 	private String message;
 
-	private String isRequireRecovery;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String code;
+
+	private Boolean success;
+
+	private Boolean isAlreadyExist;
+
+	public String getIsRequireRecovery() {
+		return this.isRequireRecovery;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setIsRequireRecovery(String isRequireRecovery) {
+		this.isRequireRecovery = isRequireRecovery;
 	}
 
 	public String getMessage() {
@@ -66,12 +52,36 @@ public class CheckBlockVolumeNameResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getIsRequireRecovery() {
-		return this.isRequireRecovery;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsRequireRecovery(String isRequireRecovery) {
-		this.isRequireRecovery = isRequireRecovery;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Boolean getIsAlreadyExist() {
+		return this.isAlreadyExist;
+	}
+
+	public void setIsAlreadyExist(Boolean isAlreadyExist) {
+		this.isAlreadyExist = isAlreadyExist;
 	}
 
 	@Override

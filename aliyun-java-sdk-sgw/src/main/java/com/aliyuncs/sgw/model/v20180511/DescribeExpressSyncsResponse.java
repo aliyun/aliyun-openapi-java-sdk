@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExpressSyncsResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<ExpressSync> expressSyncs;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeExpressSyncsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeExpressSyncsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ExpressSync> getExpressSyncs() {
@@ -79,17 +79,17 @@ public class DescribeExpressSyncsResponse extends AcsResponse {
 
 		private String expressSyncId;
 
-		private String name;
-
 		private String description;
 
-		private String bucketRegion;
-
 		private String bucketName;
+
+		private String name;
 
 		private String bucketPrefix;
 
 		private String mnsTopic;
+
+		private String bucketRegion;
 
 		public String getExpressSyncId() {
 			return this.expressSyncId;
@@ -97,14 +97,6 @@ public class DescribeExpressSyncsResponse extends AcsResponse {
 
 		public void setExpressSyncId(String expressSyncId) {
 			this.expressSyncId = expressSyncId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getDescription() {
@@ -115,20 +107,20 @@ public class DescribeExpressSyncsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getBucketRegion() {
-			return this.bucketRegion;
-		}
-
-		public void setBucketRegion(String bucketRegion) {
-			this.bucketRegion = bucketRegion;
-		}
-
 		public String getBucketName() {
 			return this.bucketName;
 		}
 
 		public void setBucketName(String bucketName) {
 			this.bucketName = bucketName;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getBucketPrefix() {
@@ -145,6 +137,14 @@ public class DescribeExpressSyncsResponse extends AcsResponse {
 
 		public void setMnsTopic(String mnsTopic) {
 			this.mnsTopic = mnsTopic;
+		}
+
+		public String getBucketRegion() {
+			return this.bucketRegion;
+		}
+
+		public void setBucketRegion(String bucketRegion) {
+			this.bucketRegion = bucketRegion;
 		}
 	}
 

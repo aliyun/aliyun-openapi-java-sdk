@@ -23,10 +23,10 @@ public class ModifyStorageBundleResponseUnmarshaller {
 	public static ModifyStorageBundleResponse unmarshall(ModifyStorageBundleResponse modifyStorageBundleResponse, UnmarshallerContext _ctx) {
 		
 		modifyStorageBundleResponse.setRequestId(_ctx.stringValue("ModifyStorageBundleResponse.RequestId"));
-		modifyStorageBundleResponse.setSuccess(_ctx.booleanValue("ModifyStorageBundleResponse.Success"));
-		modifyStorageBundleResponse.setCode(_ctx.stringValue("ModifyStorageBundleResponse.Code"));
 		modifyStorageBundleResponse.setMessage(_ctx.stringValue("ModifyStorageBundleResponse.Message"));
 		modifyStorageBundleResponse.setStorageBundleId(_ctx.stringValue("ModifyStorageBundleResponse.StorageBundleId"));
+		modifyStorageBundleResponse.setCode(_ctx.stringValue("ModifyStorageBundleResponse.Code"));
+		modifyStorageBundleResponse.setSuccess(_ctx.booleanValue("ModifyStorageBundleResponse.Success"));
 	 
 	 	return modifyStorageBundleResponse;
 	}

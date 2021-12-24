@@ -23,10 +23,10 @@ public class DescribeExpireCachesResponseUnmarshaller {
 	public static DescribeExpireCachesResponse unmarshall(DescribeExpireCachesResponse describeExpireCachesResponse, UnmarshallerContext _ctx) {
 		
 		describeExpireCachesResponse.setRequestId(_ctx.stringValue("DescribeExpireCachesResponse.RequestId"));
-		describeExpireCachesResponse.setSuccess(_ctx.booleanValue("DescribeExpireCachesResponse.Success"));
-		describeExpireCachesResponse.setCode(_ctx.stringValue("DescribeExpireCachesResponse.Code"));
 		describeExpireCachesResponse.setMessage(_ctx.stringValue("DescribeExpireCachesResponse.Message"));
 		describeExpireCachesResponse.setCacheFilePaths(_ctx.stringValue("DescribeExpireCachesResponse.CacheFilePaths"));
+		describeExpireCachesResponse.setCode(_ctx.stringValue("DescribeExpireCachesResponse.Code"));
+		describeExpireCachesResponse.setSuccess(_ctx.booleanValue("DescribeExpireCachesResponse.Success"));
 	 
 	 	return describeExpireCachesResponse;
 	}

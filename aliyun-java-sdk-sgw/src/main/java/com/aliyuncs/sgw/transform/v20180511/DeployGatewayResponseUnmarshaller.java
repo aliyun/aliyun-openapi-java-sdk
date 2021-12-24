@@ -23,10 +23,10 @@ public class DeployGatewayResponseUnmarshaller {
 	public static DeployGatewayResponse unmarshall(DeployGatewayResponse deployGatewayResponse, UnmarshallerContext _ctx) {
 		
 		deployGatewayResponse.setRequestId(_ctx.stringValue("DeployGatewayResponse.RequestId"));
-		deployGatewayResponse.setSuccess(_ctx.booleanValue("DeployGatewayResponse.Success"));
-		deployGatewayResponse.setCode(_ctx.stringValue("DeployGatewayResponse.Code"));
-		deployGatewayResponse.setMessage(_ctx.stringValue("DeployGatewayResponse.Message"));
 		deployGatewayResponse.setTaskId(_ctx.stringValue("DeployGatewayResponse.TaskId"));
+		deployGatewayResponse.setMessage(_ctx.stringValue("DeployGatewayResponse.Message"));
+		deployGatewayResponse.setCode(_ctx.stringValue("DeployGatewayResponse.Code"));
+		deployGatewayResponse.setSuccess(_ctx.booleanValue("DeployGatewayResponse.Success"));
 	 
 	 	return deployGatewayResponse;
 	}

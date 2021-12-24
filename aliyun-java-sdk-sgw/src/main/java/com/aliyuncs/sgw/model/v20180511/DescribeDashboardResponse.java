@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDashboardResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
-	private Boolean success;
+	private String overview;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private String overview;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +50,12 @@ public class DescribeDashboardResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getOverview() {
+		return this.overview;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setOverview(String overview) {
+		this.overview = overview;
 	}
 
 	public String getCode() {
@@ -58,20 +66,12 @@ public class DescribeDashboardResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getOverview() {
-		return this.overview;
-	}
-
-	public void setOverview(String overview) {
-		this.overview = overview;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

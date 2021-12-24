@@ -23,16 +23,16 @@ public class DescribeOssBucketInfoResponseUnmarshaller {
 	public static DescribeOssBucketInfoResponse unmarshall(DescribeOssBucketInfoResponse describeOssBucketInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeOssBucketInfoResponse.setRequestId(_ctx.stringValue("DescribeOssBucketInfoResponse.RequestId"));
-		describeOssBucketInfoResponse.setSuccess(_ctx.booleanValue("DescribeOssBucketInfoResponse.Success"));
-		describeOssBucketInfoResponse.setCode(_ctx.stringValue("DescribeOssBucketInfoResponse.Code"));
 		describeOssBucketInfoResponse.setMessage(_ctx.stringValue("DescribeOssBucketInfoResponse.Message"));
 		describeOssBucketInfoResponse.setIsArchive(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsArchive"));
-		describeOssBucketInfoResponse.setIsBackToResource(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsBackToResource"));
-		describeOssBucketInfoResponse.setPollingInterval(_ctx.integerValue("DescribeOssBucketInfoResponse.PollingInterval"));
-		describeOssBucketInfoResponse.setIsSupportServerSideEncryption(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsSupportServerSideEncryption"));
 		describeOssBucketInfoResponse.setIsFresh(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsFresh"));
+		describeOssBucketInfoResponse.setIsSupportServerSideEncryption(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsSupportServerSideEncryption"));
 		describeOssBucketInfoResponse.setStorageSize(_ctx.longValue("DescribeOssBucketInfoResponse.StorageSize"));
 		describeOssBucketInfoResponse.setIsVersioning(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsVersioning"));
+		describeOssBucketInfoResponse.setIsBackToResource(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsBackToResource"));
+		describeOssBucketInfoResponse.setPollingInterval(_ctx.integerValue("DescribeOssBucketInfoResponse.PollingInterval"));
+		describeOssBucketInfoResponse.setCode(_ctx.stringValue("DescribeOssBucketInfoResponse.Code"));
+		describeOssBucketInfoResponse.setSuccess(_ctx.booleanValue("DescribeOssBucketInfoResponse.Success"));
 	 
 	 	return describeOssBucketInfoResponse;
 	}

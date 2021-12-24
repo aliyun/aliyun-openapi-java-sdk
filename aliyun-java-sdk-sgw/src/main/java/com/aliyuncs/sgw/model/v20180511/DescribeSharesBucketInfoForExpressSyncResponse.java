@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSharesBucketInfoForExpressSyncResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<BucketInfo> bucketInfos;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeSharesBucketInfoForExpressSyncResponse extends AcsResponse 
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeSharesBucketInfoForExpressSyncResponse extends AcsResponse 
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<BucketInfo> getBucketInfos() {
@@ -77,19 +77,11 @@ public class DescribeSharesBucketInfoForExpressSyncResponse extends AcsResponse 
 
 	public static class BucketInfo {
 
-		private String bucketRegion;
-
 		private String bucketName;
 
 		private String bucketPrefix;
 
-		public String getBucketRegion() {
-			return this.bucketRegion;
-		}
-
-		public void setBucketRegion(String bucketRegion) {
-			this.bucketRegion = bucketRegion;
-		}
+		private String bucketRegion;
 
 		public String getBucketName() {
 			return this.bucketName;
@@ -105,6 +97,14 @@ public class DescribeSharesBucketInfoForExpressSyncResponse extends AcsResponse 
 
 		public void setBucketPrefix(String bucketPrefix) {
 			this.bucketPrefix = bucketPrefix;
+		}
+
+		public String getBucketRegion() {
+			return this.bucketRegion;
+		}
+
+		public void setBucketRegion(String bucketRegion) {
+			this.bucketRegion = bucketRegion;
 		}
 	}
 

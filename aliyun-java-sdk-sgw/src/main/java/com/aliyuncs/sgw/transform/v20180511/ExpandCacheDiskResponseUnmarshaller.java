@@ -23,11 +23,11 @@ public class ExpandCacheDiskResponseUnmarshaller {
 	public static ExpandCacheDiskResponse unmarshall(ExpandCacheDiskResponse expandCacheDiskResponse, UnmarshallerContext _ctx) {
 		
 		expandCacheDiskResponse.setRequestId(_ctx.stringValue("ExpandCacheDiskResponse.RequestId"));
-		expandCacheDiskResponse.setSuccess(_ctx.booleanValue("ExpandCacheDiskResponse.Success"));
-		expandCacheDiskResponse.setCode(_ctx.stringValue("ExpandCacheDiskResponse.Code"));
-		expandCacheDiskResponse.setMessage(_ctx.stringValue("ExpandCacheDiskResponse.Message"));
-		expandCacheDiskResponse.setTaskId(_ctx.stringValue("ExpandCacheDiskResponse.TaskId"));
 		expandCacheDiskResponse.setBuyURL(_ctx.stringValue("ExpandCacheDiskResponse.BuyURL"));
+		expandCacheDiskResponse.setTaskId(_ctx.stringValue("ExpandCacheDiskResponse.TaskId"));
+		expandCacheDiskResponse.setMessage(_ctx.stringValue("ExpandCacheDiskResponse.Message"));
+		expandCacheDiskResponse.setCode(_ctx.stringValue("ExpandCacheDiskResponse.Code"));
+		expandCacheDiskResponse.setSuccess(_ctx.booleanValue("ExpandCacheDiskResponse.Success"));
 	 
 	 	return expandCacheDiskResponse;
 	}

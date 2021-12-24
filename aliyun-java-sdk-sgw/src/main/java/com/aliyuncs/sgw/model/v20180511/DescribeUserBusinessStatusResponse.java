@@ -24,69 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserBusinessStatusResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private String message;
-
-	private Boolean isEnabled;
-
-	private Boolean isIndebted;
-
 	private Boolean isIndebtedOverdue;
 
 	private Boolean isRiskControl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String message;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private Boolean isIndebted;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean isEnabled;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Boolean getIsEnabled() {
-		return this.isEnabled;
-	}
-
-	public void setIsEnabled(Boolean isEnabled) {
-		this.isEnabled = isEnabled;
-	}
-
-	public Boolean getIsIndebted() {
-		return this.isIndebted;
-	}
-
-	public void setIsIndebted(Boolean isIndebted) {
-		this.isIndebted = isIndebted;
-	}
+	private Boolean success;
 
 	public Boolean getIsIndebtedOverdue() {
 		return this.isIndebtedOverdue;
@@ -102,6 +54,54 @@ public class DescribeUserBusinessStatusResponse extends AcsResponse {
 
 	public void setIsRiskControl(Boolean isRiskControl) {
 		this.isRiskControl = isRiskControl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Boolean getIsIndebted() {
+		return this.isIndebted;
+	}
+
+	public void setIsIndebted(Boolean isIndebted) {
+		this.isIndebted = isIndebted;
+	}
+
+	public Boolean getIsEnabled() {
+		return this.isEnabled;
+	}
+
+	public void setIsEnabled(Boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

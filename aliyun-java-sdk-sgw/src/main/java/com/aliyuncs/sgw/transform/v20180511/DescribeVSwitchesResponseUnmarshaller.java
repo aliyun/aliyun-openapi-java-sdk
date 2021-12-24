@@ -27,21 +27,21 @@ public class DescribeVSwitchesResponseUnmarshaller {
 	public static DescribeVSwitchesResponse unmarshall(DescribeVSwitchesResponse describeVSwitchesResponse, UnmarshallerContext _ctx) {
 		
 		describeVSwitchesResponse.setRequestId(_ctx.stringValue("DescribeVSwitchesResponse.RequestId"));
-		describeVSwitchesResponse.setSuccess(_ctx.booleanValue("DescribeVSwitchesResponse.Success"));
-		describeVSwitchesResponse.setCode(_ctx.stringValue("DescribeVSwitchesResponse.Code"));
-		describeVSwitchesResponse.setMessage(_ctx.stringValue("DescribeVSwitchesResponse.Message"));
 		describeVSwitchesResponse.setTotalCount(_ctx.integerValue("DescribeVSwitchesResponse.TotalCount"));
-		describeVSwitchesResponse.setPageNumber(_ctx.integerValue("DescribeVSwitchesResponse.PageNumber"));
+		describeVSwitchesResponse.setMessage(_ctx.stringValue("DescribeVSwitchesResponse.Message"));
 		describeVSwitchesResponse.setPageSize(_ctx.integerValue("DescribeVSwitchesResponse.PageSize"));
+		describeVSwitchesResponse.setPageNumber(_ctx.integerValue("DescribeVSwitchesResponse.PageNumber"));
+		describeVSwitchesResponse.setCode(_ctx.stringValue("DescribeVSwitchesResponse.Code"));
+		describeVSwitchesResponse.setSuccess(_ctx.booleanValue("DescribeVSwitchesResponse.Success"));
 
 		List<VSwitch> vSwitches = new ArrayList<VSwitch>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVSwitchesResponse.VSwitches.Length"); i++) {
 			VSwitch vSwitch = new VSwitch();
+			vSwitch.setIsDefault(_ctx.booleanValue("DescribeVSwitchesResponse.VSwitches["+ i +"].IsDefault"));
+			vSwitch.setAvailableSelectionInfo(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].AvailableSelectionInfo"));
+			vSwitch.setZoneId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].ZoneId"));
 			vSwitch.setName(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].Name"));
 			vSwitch.setId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].Id"));
-			vSwitch.setIsDefault(_ctx.booleanValue("DescribeVSwitchesResponse.VSwitches["+ i +"].IsDefault"));
-			vSwitch.setZoneId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].ZoneId"));
-			vSwitch.setAvailableSelectionInfo(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].AvailableSelectionInfo"));
 
 			vSwitches.add(vSwitch);
 		}

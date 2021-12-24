@@ -23,11 +23,11 @@ public class CreateCacheResponseUnmarshaller {
 	public static CreateCacheResponse unmarshall(CreateCacheResponse createCacheResponse, UnmarshallerContext _ctx) {
 		
 		createCacheResponse.setRequestId(_ctx.stringValue("CreateCacheResponse.RequestId"));
-		createCacheResponse.setSuccess(_ctx.booleanValue("CreateCacheResponse.Success"));
-		createCacheResponse.setCode(_ctx.stringValue("CreateCacheResponse.Code"));
+		createCacheResponse.setBuyURL(_ctx.stringValue("CreateCacheResponse.BuyURL"));
 		createCacheResponse.setMessage(_ctx.stringValue("CreateCacheResponse.Message"));
 		createCacheResponse.setCacheId(_ctx.stringValue("CreateCacheResponse.CacheId"));
-		createCacheResponse.setBuyURL(_ctx.stringValue("CreateCacheResponse.BuyURL"));
+		createCacheResponse.setCode(_ctx.stringValue("CreateCacheResponse.Code"));
+		createCacheResponse.setSuccess(_ctx.booleanValue("CreateCacheResponse.Success"));
 	 
 	 	return createCacheResponse;
 	}

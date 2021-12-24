@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayImagesResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Image> images;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGatewayImagesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeGatewayImagesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Image> getImages() {
@@ -77,30 +77,30 @@ public class DescribeGatewayImagesResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String name;
+		private String type;
 
 		private String description;
 
-		private Long size;
-
-		private String modifiedDate;
-
 		private String version;
 
-		private String title;
-
-		private String type;
-
-		private String mD5;
+		private Long size;
 
 		private String url;
 
-		public String getName() {
-			return this.name;
+		private String title;
+
+		private String mD5;
+
+		private String name;
+
+		private String modifiedDate;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDescription() {
@@ -111,6 +111,14 @@ public class DescribeGatewayImagesResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
 		public Long getSize() {
 			return this.size;
 		}
@@ -119,20 +127,12 @@ public class DescribeGatewayImagesResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public String getModifiedDate() {
-			return this.modifiedDate;
+		public String getUrl() {
+			return this.url;
 		}
 
-		public void setModifiedDate(String modifiedDate) {
-			this.modifiedDate = modifiedDate;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
+		public void setUrl(String url) {
+			this.url = url;
 		}
 
 		public String getTitle() {
@@ -143,14 +143,6 @@ public class DescribeGatewayImagesResponse extends AcsResponse {
 			this.title = title;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
 		public String getMD5() {
 			return this.mD5;
 		}
@@ -159,12 +151,20 @@ public class DescribeGatewayImagesResponse extends AcsResponse {
 			this.mD5 = mD5;
 		}
 
-		public String getUrl() {
-			return this.url;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setUrl(String url) {
-			this.url = url;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getModifiedDate() {
+			return this.modifiedDate;
+		}
+
+		public void setModifiedDate(String modifiedDate) {
+			this.modifiedDate = modifiedDate;
 		}
 	}
 

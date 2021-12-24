@@ -23,10 +23,10 @@ public class ModifyGatewayFileShareWatermarkResponseUnmarshaller {
 	public static ModifyGatewayFileShareWatermarkResponse unmarshall(ModifyGatewayFileShareWatermarkResponse modifyGatewayFileShareWatermarkResponse, UnmarshallerContext _ctx) {
 		
 		modifyGatewayFileShareWatermarkResponse.setRequestId(_ctx.stringValue("ModifyGatewayFileShareWatermarkResponse.RequestId"));
-		modifyGatewayFileShareWatermarkResponse.setSuccess(_ctx.booleanValue("ModifyGatewayFileShareWatermarkResponse.Success"));
-		modifyGatewayFileShareWatermarkResponse.setCode(_ctx.stringValue("ModifyGatewayFileShareWatermarkResponse.Code"));
-		modifyGatewayFileShareWatermarkResponse.setMessage(_ctx.stringValue("ModifyGatewayFileShareWatermarkResponse.Message"));
 		modifyGatewayFileShareWatermarkResponse.setTaskId(_ctx.stringValue("ModifyGatewayFileShareWatermarkResponse.TaskId"));
+		modifyGatewayFileShareWatermarkResponse.setMessage(_ctx.stringValue("ModifyGatewayFileShareWatermarkResponse.Message"));
+		modifyGatewayFileShareWatermarkResponse.setCode(_ctx.stringValue("ModifyGatewayFileShareWatermarkResponse.Code"));
+		modifyGatewayFileShareWatermarkResponse.setSuccess(_ctx.booleanValue("ModifyGatewayFileShareWatermarkResponse.Success"));
 	 
 	 	return modifyGatewayFileShareWatermarkResponse;
 	}

@@ -23,9 +23,9 @@ public class ReportGatewayInfoResponseUnmarshaller {
 	public static ReportGatewayInfoResponse unmarshall(ReportGatewayInfoResponse reportGatewayInfoResponse, UnmarshallerContext _ctx) {
 		
 		reportGatewayInfoResponse.setRequestId(_ctx.stringValue("ReportGatewayInfoResponse.RequestId"));
-		reportGatewayInfoResponse.setSuccess(_ctx.booleanValue("ReportGatewayInfoResponse.Success"));
-		reportGatewayInfoResponse.setCode(_ctx.stringValue("ReportGatewayInfoResponse.Code"));
 		reportGatewayInfoResponse.setMessage(_ctx.stringValue("ReportGatewayInfoResponse.Message"));
+		reportGatewayInfoResponse.setCode(_ctx.stringValue("ReportGatewayInfoResponse.Code"));
+		reportGatewayInfoResponse.setSuccess(_ctx.booleanValue("ReportGatewayInfoResponse.Success"));
 	 
 	 	return reportGatewayInfoResponse;
 	}

@@ -23,10 +23,10 @@ public class GenerateGatewayTokenResponseUnmarshaller {
 	public static GenerateGatewayTokenResponse unmarshall(GenerateGatewayTokenResponse generateGatewayTokenResponse, UnmarshallerContext _ctx) {
 		
 		generateGatewayTokenResponse.setRequestId(_ctx.stringValue("GenerateGatewayTokenResponse.RequestId"));
-		generateGatewayTokenResponse.setSuccess(_ctx.booleanValue("GenerateGatewayTokenResponse.Success"));
-		generateGatewayTokenResponse.setCode(_ctx.stringValue("GenerateGatewayTokenResponse.Code"));
 		generateGatewayTokenResponse.setMessage(_ctx.stringValue("GenerateGatewayTokenResponse.Message"));
 		generateGatewayTokenResponse.setToken(_ctx.stringValue("GenerateGatewayTokenResponse.Token"));
+		generateGatewayTokenResponse.setCode(_ctx.stringValue("GenerateGatewayTokenResponse.Code"));
+		generateGatewayTokenResponse.setSuccess(_ctx.booleanValue("GenerateGatewayTokenResponse.Success"));
 	 
 	 	return generateGatewayTokenResponse;
 	}

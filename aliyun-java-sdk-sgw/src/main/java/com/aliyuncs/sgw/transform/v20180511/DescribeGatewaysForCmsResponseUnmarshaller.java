@@ -27,19 +27,19 @@ public class DescribeGatewaysForCmsResponseUnmarshaller {
 	public static DescribeGatewaysForCmsResponse unmarshall(DescribeGatewaysForCmsResponse describeGatewaysForCmsResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewaysForCmsResponse.setRequestId(_ctx.stringValue("DescribeGatewaysForCmsResponse.RequestId"));
-		describeGatewaysForCmsResponse.setSuccess(_ctx.booleanValue("DescribeGatewaysForCmsResponse.Success"));
-		describeGatewaysForCmsResponse.setCode(_ctx.stringValue("DescribeGatewaysForCmsResponse.Code"));
-		describeGatewaysForCmsResponse.setMessage(_ctx.stringValue("DescribeGatewaysForCmsResponse.Message"));
 		describeGatewaysForCmsResponse.setTotalCount(_ctx.integerValue("DescribeGatewaysForCmsResponse.TotalCount"));
-		describeGatewaysForCmsResponse.setPageNumber(_ctx.integerValue("DescribeGatewaysForCmsResponse.PageNumber"));
+		describeGatewaysForCmsResponse.setMessage(_ctx.stringValue("DescribeGatewaysForCmsResponse.Message"));
 		describeGatewaysForCmsResponse.setPageSize(_ctx.integerValue("DescribeGatewaysForCmsResponse.PageSize"));
+		describeGatewaysForCmsResponse.setPageNumber(_ctx.integerValue("DescribeGatewaysForCmsResponse.PageNumber"));
+		describeGatewaysForCmsResponse.setCode(_ctx.stringValue("DescribeGatewaysForCmsResponse.Code"));
+		describeGatewaysForCmsResponse.setSuccess(_ctx.booleanValue("DescribeGatewaysForCmsResponse.Success"));
 
 		List<Gateway> gateways = new ArrayList<Gateway>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewaysForCmsResponse.Gateways.Length"); i++) {
 			Gateway gateway = new Gateway();
 			gateway.setGatewayId(_ctx.stringValue("DescribeGatewaysForCmsResponse.Gateways["+ i +"].GatewayId"));
-			gateway.setName(_ctx.stringValue("DescribeGatewaysForCmsResponse.Gateways["+ i +"].Name"));
 			gateway.setDescription(_ctx.stringValue("DescribeGatewaysForCmsResponse.Gateways["+ i +"].Description"));
+			gateway.setName(_ctx.stringValue("DescribeGatewaysForCmsResponse.Gateways["+ i +"].Name"));
 
 			gateways.add(gateway);
 		}

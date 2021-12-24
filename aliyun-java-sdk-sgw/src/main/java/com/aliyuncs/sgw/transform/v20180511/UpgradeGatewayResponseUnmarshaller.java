@@ -23,10 +23,10 @@ public class UpgradeGatewayResponseUnmarshaller {
 	public static UpgradeGatewayResponse unmarshall(UpgradeGatewayResponse upgradeGatewayResponse, UnmarshallerContext _ctx) {
 		
 		upgradeGatewayResponse.setRequestId(_ctx.stringValue("UpgradeGatewayResponse.RequestId"));
-		upgradeGatewayResponse.setSuccess(_ctx.booleanValue("UpgradeGatewayResponse.Success"));
-		upgradeGatewayResponse.setCode(_ctx.stringValue("UpgradeGatewayResponse.Code"));
-		upgradeGatewayResponse.setMessage(_ctx.stringValue("UpgradeGatewayResponse.Message"));
 		upgradeGatewayResponse.setTaskId(_ctx.stringValue("UpgradeGatewayResponse.TaskId"));
+		upgradeGatewayResponse.setMessage(_ctx.stringValue("UpgradeGatewayResponse.Message"));
+		upgradeGatewayResponse.setCode(_ctx.stringValue("UpgradeGatewayResponse.Code"));
+		upgradeGatewayResponse.setSuccess(_ctx.booleanValue("UpgradeGatewayResponse.Success"));
 	 
 	 	return upgradeGatewayResponse;
 	}

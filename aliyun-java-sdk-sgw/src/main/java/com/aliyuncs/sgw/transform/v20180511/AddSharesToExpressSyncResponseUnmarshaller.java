@@ -23,15 +23,15 @@ public class AddSharesToExpressSyncResponseUnmarshaller {
 	public static AddSharesToExpressSyncResponse unmarshall(AddSharesToExpressSyncResponse addSharesToExpressSyncResponse, UnmarshallerContext _ctx) {
 		
 		addSharesToExpressSyncResponse.setRequestId(_ctx.stringValue("AddSharesToExpressSyncResponse.RequestId"));
-		addSharesToExpressSyncResponse.setSuccess(_ctx.booleanValue("AddSharesToExpressSyncResponse.Success"));
-		addSharesToExpressSyncResponse.setCode(_ctx.stringValue("AddSharesToExpressSyncResponse.Code"));
-		addSharesToExpressSyncResponse.setMessage(_ctx.stringValue("AddSharesToExpressSyncResponse.Message"));
 		addSharesToExpressSyncResponse.setTaskId(_ctx.stringValue("AddSharesToExpressSyncResponse.TaskId"));
+		addSharesToExpressSyncResponse.setMessage(_ctx.stringValue("AddSharesToExpressSyncResponse.Message"));
 		addSharesToExpressSyncResponse.setMnsTopic(_ctx.stringValue("AddSharesToExpressSyncResponse.MnsTopic"));
 		addSharesToExpressSyncResponse.setMnsQueues(_ctx.stringValue("AddSharesToExpressSyncResponse.MnsQueues"));
 		addSharesToExpressSyncResponse.setMnsFullSyncDelay(_ctx.longValue("AddSharesToExpressSyncResponse.MnsFullSyncDelay"));
 		addSharesToExpressSyncResponse.setMnsPublicEndpoint(_ctx.stringValue("AddSharesToExpressSyncResponse.MnsPublicEndpoint"));
 		addSharesToExpressSyncResponse.setMnsInnerEndpoint(_ctx.stringValue("AddSharesToExpressSyncResponse.MnsInnerEndpoint"));
+		addSharesToExpressSyncResponse.setCode(_ctx.stringValue("AddSharesToExpressSyncResponse.Code"));
+		addSharesToExpressSyncResponse.setSuccess(_ctx.booleanValue("AddSharesToExpressSyncResponse.Success"));
 	 
 	 	return addSharesToExpressSyncResponse;
 	}

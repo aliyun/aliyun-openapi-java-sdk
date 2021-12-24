@@ -23,10 +23,10 @@ public class CreateGatewaySMBUserResponseUnmarshaller {
 	public static CreateGatewaySMBUserResponse unmarshall(CreateGatewaySMBUserResponse createGatewaySMBUserResponse, UnmarshallerContext _ctx) {
 		
 		createGatewaySMBUserResponse.setRequestId(_ctx.stringValue("CreateGatewaySMBUserResponse.RequestId"));
-		createGatewaySMBUserResponse.setSuccess(_ctx.booleanValue("CreateGatewaySMBUserResponse.Success"));
-		createGatewaySMBUserResponse.setCode(_ctx.stringValue("CreateGatewaySMBUserResponse.Code"));
-		createGatewaySMBUserResponse.setMessage(_ctx.stringValue("CreateGatewaySMBUserResponse.Message"));
 		createGatewaySMBUserResponse.setTaskId(_ctx.stringValue("CreateGatewaySMBUserResponse.TaskId"));
+		createGatewaySMBUserResponse.setMessage(_ctx.stringValue("CreateGatewaySMBUserResponse.Message"));
+		createGatewaySMBUserResponse.setCode(_ctx.stringValue("CreateGatewaySMBUserResponse.Code"));
+		createGatewaySMBUserResponse.setSuccess(_ctx.booleanValue("CreateGatewaySMBUserResponse.Success"));
 	 
 	 	return createGatewaySMBUserResponse;
 	}

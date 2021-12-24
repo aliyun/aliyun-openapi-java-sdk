@@ -23,10 +23,10 @@ public class CreateElasticGatewayPrivateZoneResponseUnmarshaller {
 	public static CreateElasticGatewayPrivateZoneResponse unmarshall(CreateElasticGatewayPrivateZoneResponse createElasticGatewayPrivateZoneResponse, UnmarshallerContext _ctx) {
 		
 		createElasticGatewayPrivateZoneResponse.setRequestId(_ctx.stringValue("CreateElasticGatewayPrivateZoneResponse.RequestId"));
-		createElasticGatewayPrivateZoneResponse.setSuccess(_ctx.booleanValue("CreateElasticGatewayPrivateZoneResponse.Success"));
-		createElasticGatewayPrivateZoneResponse.setCode(_ctx.stringValue("CreateElasticGatewayPrivateZoneResponse.Code"));
-		createElasticGatewayPrivateZoneResponse.setMessage(_ctx.stringValue("CreateElasticGatewayPrivateZoneResponse.Message"));
 		createElasticGatewayPrivateZoneResponse.setTaskId(_ctx.stringValue("CreateElasticGatewayPrivateZoneResponse.TaskId"));
+		createElasticGatewayPrivateZoneResponse.setMessage(_ctx.stringValue("CreateElasticGatewayPrivateZoneResponse.Message"));
+		createElasticGatewayPrivateZoneResponse.setCode(_ctx.stringValue("CreateElasticGatewayPrivateZoneResponse.Code"));
+		createElasticGatewayPrivateZoneResponse.setSuccess(_ctx.booleanValue("CreateElasticGatewayPrivateZoneResponse.Success"));
 	 
 	 	return createElasticGatewayPrivateZoneResponse;
 	}

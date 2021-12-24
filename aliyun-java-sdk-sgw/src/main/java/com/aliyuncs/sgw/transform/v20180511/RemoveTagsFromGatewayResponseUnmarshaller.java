@@ -23,9 +23,9 @@ public class RemoveTagsFromGatewayResponseUnmarshaller {
 	public static RemoveTagsFromGatewayResponse unmarshall(RemoveTagsFromGatewayResponse removeTagsFromGatewayResponse, UnmarshallerContext _ctx) {
 		
 		removeTagsFromGatewayResponse.setRequestId(_ctx.stringValue("RemoveTagsFromGatewayResponse.RequestId"));
-		removeTagsFromGatewayResponse.setSuccess(_ctx.booleanValue("RemoveTagsFromGatewayResponse.Success"));
-		removeTagsFromGatewayResponse.setCode(_ctx.stringValue("RemoveTagsFromGatewayResponse.Code"));
 		removeTagsFromGatewayResponse.setMessage(_ctx.stringValue("RemoveTagsFromGatewayResponse.Message"));
+		removeTagsFromGatewayResponse.setCode(_ctx.stringValue("RemoveTagsFromGatewayResponse.Code"));
+		removeTagsFromGatewayResponse.setSuccess(_ctx.booleanValue("RemoveTagsFromGatewayResponse.Success"));
 	 
 	 	return removeTagsFromGatewayResponse;
 	}

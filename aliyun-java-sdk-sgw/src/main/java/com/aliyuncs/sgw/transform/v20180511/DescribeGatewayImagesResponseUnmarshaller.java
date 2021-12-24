@@ -27,22 +27,22 @@ public class DescribeGatewayImagesResponseUnmarshaller {
 	public static DescribeGatewayImagesResponse unmarshall(DescribeGatewayImagesResponse describeGatewayImagesResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayImagesResponse.setRequestId(_ctx.stringValue("DescribeGatewayImagesResponse.RequestId"));
-		describeGatewayImagesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayImagesResponse.Success"));
-		describeGatewayImagesResponse.setCode(_ctx.stringValue("DescribeGatewayImagesResponse.Code"));
 		describeGatewayImagesResponse.setMessage(_ctx.stringValue("DescribeGatewayImagesResponse.Message"));
+		describeGatewayImagesResponse.setCode(_ctx.stringValue("DescribeGatewayImagesResponse.Code"));
+		describeGatewayImagesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayImagesResponse.Success"));
 
 		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewayImagesResponse.Images.Length"); i++) {
 			Image image = new Image();
-			image.setName(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Name"));
-			image.setDescription(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Description"));
-			image.setSize(_ctx.longValue("DescribeGatewayImagesResponse.Images["+ i +"].Size"));
-			image.setModifiedDate(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].ModifiedDate"));
-			image.setVersion(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Version"));
-			image.setTitle(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Title"));
 			image.setType(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Type"));
-			image.setMD5(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].MD5"));
+			image.setDescription(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Description"));
+			image.setVersion(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Version"));
+			image.setSize(_ctx.longValue("DescribeGatewayImagesResponse.Images["+ i +"].Size"));
 			image.setUrl(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Url"));
+			image.setTitle(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Title"));
+			image.setMD5(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].MD5"));
+			image.setName(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].Name"));
+			image.setModifiedDate(_ctx.stringValue("DescribeGatewayImagesResponse.Images["+ i +"].ModifiedDate"));
 
 			images.add(image);
 		}

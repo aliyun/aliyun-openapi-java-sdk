@@ -23,9 +23,9 @@ public class DeleteGatewayLoggingResponseUnmarshaller {
 	public static DeleteGatewayLoggingResponse unmarshall(DeleteGatewayLoggingResponse deleteGatewayLoggingResponse, UnmarshallerContext _ctx) {
 		
 		deleteGatewayLoggingResponse.setRequestId(_ctx.stringValue("DeleteGatewayLoggingResponse.RequestId"));
-		deleteGatewayLoggingResponse.setSuccess(_ctx.booleanValue("DeleteGatewayLoggingResponse.Success"));
-		deleteGatewayLoggingResponse.setCode(_ctx.stringValue("DeleteGatewayLoggingResponse.Code"));
 		deleteGatewayLoggingResponse.setMessage(_ctx.stringValue("DeleteGatewayLoggingResponse.Message"));
+		deleteGatewayLoggingResponse.setCode(_ctx.stringValue("DeleteGatewayLoggingResponse.Code"));
+		deleteGatewayLoggingResponse.setSuccess(_ctx.booleanValue("DeleteGatewayLoggingResponse.Success"));
 	 
 	 	return deleteGatewayLoggingResponse;
 	}

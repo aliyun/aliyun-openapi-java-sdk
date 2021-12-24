@@ -23,10 +23,10 @@ public class DescribeGatewayCategoriesResponseUnmarshaller {
 	public static DescribeGatewayCategoriesResponse unmarshall(DescribeGatewayCategoriesResponse describeGatewayCategoriesResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayCategoriesResponse.setRequestId(_ctx.stringValue("DescribeGatewayCategoriesResponse.RequestId"));
-		describeGatewayCategoriesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayCategoriesResponse.Success"));
-		describeGatewayCategoriesResponse.setCode(_ctx.stringValue("DescribeGatewayCategoriesResponse.Code"));
 		describeGatewayCategoriesResponse.setMessage(_ctx.stringValue("DescribeGatewayCategoriesResponse.Message"));
 		describeGatewayCategoriesResponse.setCategories(_ctx.stringValue("DescribeGatewayCategoriesResponse.Categories"));
+		describeGatewayCategoriesResponse.setCode(_ctx.stringValue("DescribeGatewayCategoriesResponse.Code"));
+		describeGatewayCategoriesResponse.setSuccess(_ctx.booleanValue("DescribeGatewayCategoriesResponse.Success"));
 	 
 	 	return describeGatewayCategoriesResponse;
 	}

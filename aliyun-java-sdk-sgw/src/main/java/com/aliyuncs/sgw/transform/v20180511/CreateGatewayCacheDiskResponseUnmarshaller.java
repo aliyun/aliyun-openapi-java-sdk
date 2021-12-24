@@ -23,11 +23,11 @@ public class CreateGatewayCacheDiskResponseUnmarshaller {
 	public static CreateGatewayCacheDiskResponse unmarshall(CreateGatewayCacheDiskResponse createGatewayCacheDiskResponse, UnmarshallerContext _ctx) {
 		
 		createGatewayCacheDiskResponse.setRequestId(_ctx.stringValue("CreateGatewayCacheDiskResponse.RequestId"));
-		createGatewayCacheDiskResponse.setSuccess(_ctx.booleanValue("CreateGatewayCacheDiskResponse.Success"));
-		createGatewayCacheDiskResponse.setCode(_ctx.stringValue("CreateGatewayCacheDiskResponse.Code"));
-		createGatewayCacheDiskResponse.setMessage(_ctx.stringValue("CreateGatewayCacheDiskResponse.Message"));
-		createGatewayCacheDiskResponse.setTaskId(_ctx.stringValue("CreateGatewayCacheDiskResponse.TaskId"));
 		createGatewayCacheDiskResponse.setBuyURL(_ctx.stringValue("CreateGatewayCacheDiskResponse.BuyURL"));
+		createGatewayCacheDiskResponse.setTaskId(_ctx.stringValue("CreateGatewayCacheDiskResponse.TaskId"));
+		createGatewayCacheDiskResponse.setMessage(_ctx.stringValue("CreateGatewayCacheDiskResponse.Message"));
+		createGatewayCacheDiskResponse.setCode(_ctx.stringValue("CreateGatewayCacheDiskResponse.Code"));
+		createGatewayCacheDiskResponse.setSuccess(_ctx.booleanValue("CreateGatewayCacheDiskResponse.Success"));
 	 
 	 	return createGatewayCacheDiskResponse;
 	}

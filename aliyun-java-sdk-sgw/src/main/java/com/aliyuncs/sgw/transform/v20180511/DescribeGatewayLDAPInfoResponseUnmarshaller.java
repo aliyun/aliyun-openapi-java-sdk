@@ -23,14 +23,14 @@ public class DescribeGatewayLDAPInfoResponseUnmarshaller {
 	public static DescribeGatewayLDAPInfoResponse unmarshall(DescribeGatewayLDAPInfoResponse describeGatewayLDAPInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayLDAPInfoResponse.setRequestId(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.RequestId"));
-		describeGatewayLDAPInfoResponse.setSuccess(_ctx.booleanValue("DescribeGatewayLDAPInfoResponse.Success"));
-		describeGatewayLDAPInfoResponse.setCode(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.Code"));
-		describeGatewayLDAPInfoResponse.setMessage(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.Message"));
-		describeGatewayLDAPInfoResponse.setBaseDN(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.BaseDN"));
 		describeGatewayLDAPInfoResponse.setRootDN(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.RootDN"));
+		describeGatewayLDAPInfoResponse.setMessage(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.Message"));
+		describeGatewayLDAPInfoResponse.setIsEnabled(_ctx.booleanValue("DescribeGatewayLDAPInfoResponse.IsEnabled"));
+		describeGatewayLDAPInfoResponse.setBaseDN(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.BaseDN"));
 		describeGatewayLDAPInfoResponse.setServerIp(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.ServerIp"));
 		describeGatewayLDAPInfoResponse.setIsTls(_ctx.booleanValue("DescribeGatewayLDAPInfoResponse.IsTls"));
-		describeGatewayLDAPInfoResponse.setIsEnabled(_ctx.booleanValue("DescribeGatewayLDAPInfoResponse.IsEnabled"));
+		describeGatewayLDAPInfoResponse.setCode(_ctx.stringValue("DescribeGatewayLDAPInfoResponse.Code"));
+		describeGatewayLDAPInfoResponse.setSuccess(_ctx.booleanValue("DescribeGatewayLDAPInfoResponse.Success"));
 	 
 	 	return describeGatewayLDAPInfoResponse;
 	}

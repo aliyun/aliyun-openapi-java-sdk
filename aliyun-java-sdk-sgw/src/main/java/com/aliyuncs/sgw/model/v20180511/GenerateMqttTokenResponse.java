@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateMqttTokenResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
-	private Boolean success;
+	private String mqttToken;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private String mqttToken;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +50,12 @@ public class GenerateMqttTokenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMqttToken() {
+		return this.mqttToken;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMqttToken(String mqttToken) {
+		this.mqttToken = mqttToken;
 	}
 
 	public String getCode() {
@@ -58,20 +66,12 @@ public class GenerateMqttTokenResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getMqttToken() {
-		return this.mqttToken;
-	}
-
-	public void setMqttToken(String mqttToken) {
-		this.mqttToken = mqttToken;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

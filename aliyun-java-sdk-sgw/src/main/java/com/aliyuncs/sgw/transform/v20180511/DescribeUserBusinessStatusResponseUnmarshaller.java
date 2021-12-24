@@ -23,13 +23,13 @@ public class DescribeUserBusinessStatusResponseUnmarshaller {
 	public static DescribeUserBusinessStatusResponse unmarshall(DescribeUserBusinessStatusResponse describeUserBusinessStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeUserBusinessStatusResponse.setRequestId(_ctx.stringValue("DescribeUserBusinessStatusResponse.RequestId"));
-		describeUserBusinessStatusResponse.setSuccess(_ctx.booleanValue("DescribeUserBusinessStatusResponse.Success"));
-		describeUserBusinessStatusResponse.setCode(_ctx.stringValue("DescribeUserBusinessStatusResponse.Code"));
-		describeUserBusinessStatusResponse.setMessage(_ctx.stringValue("DescribeUserBusinessStatusResponse.Message"));
-		describeUserBusinessStatusResponse.setIsEnabled(_ctx.booleanValue("DescribeUserBusinessStatusResponse.IsEnabled"));
-		describeUserBusinessStatusResponse.setIsIndebted(_ctx.booleanValue("DescribeUserBusinessStatusResponse.IsIndebted"));
 		describeUserBusinessStatusResponse.setIsIndebtedOverdue(_ctx.booleanValue("DescribeUserBusinessStatusResponse.IsIndebtedOverdue"));
 		describeUserBusinessStatusResponse.setIsRiskControl(_ctx.booleanValue("DescribeUserBusinessStatusResponse.IsRiskControl"));
+		describeUserBusinessStatusResponse.setMessage(_ctx.stringValue("DescribeUserBusinessStatusResponse.Message"));
+		describeUserBusinessStatusResponse.setIsIndebted(_ctx.booleanValue("DescribeUserBusinessStatusResponse.IsIndebted"));
+		describeUserBusinessStatusResponse.setIsEnabled(_ctx.booleanValue("DescribeUserBusinessStatusResponse.IsEnabled"));
+		describeUserBusinessStatusResponse.setCode(_ctx.stringValue("DescribeUserBusinessStatusResponse.Code"));
+		describeUserBusinessStatusResponse.setSuccess(_ctx.booleanValue("DescribeUserBusinessStatusResponse.Success"));
 	 
 	 	return describeUserBusinessStatusResponse;
 	}

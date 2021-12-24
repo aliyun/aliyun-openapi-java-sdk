@@ -23,10 +23,10 @@ public class DeleteGatewayCacheDiskResponseUnmarshaller {
 	public static DeleteGatewayCacheDiskResponse unmarshall(DeleteGatewayCacheDiskResponse deleteGatewayCacheDiskResponse, UnmarshallerContext _ctx) {
 		
 		deleteGatewayCacheDiskResponse.setRequestId(_ctx.stringValue("DeleteGatewayCacheDiskResponse.RequestId"));
-		deleteGatewayCacheDiskResponse.setSuccess(_ctx.booleanValue("DeleteGatewayCacheDiskResponse.Success"));
-		deleteGatewayCacheDiskResponse.setCode(_ctx.stringValue("DeleteGatewayCacheDiskResponse.Code"));
-		deleteGatewayCacheDiskResponse.setMessage(_ctx.stringValue("DeleteGatewayCacheDiskResponse.Message"));
 		deleteGatewayCacheDiskResponse.setTaskId(_ctx.stringValue("DeleteGatewayCacheDiskResponse.TaskId"));
+		deleteGatewayCacheDiskResponse.setMessage(_ctx.stringValue("DeleteGatewayCacheDiskResponse.Message"));
+		deleteGatewayCacheDiskResponse.setCode(_ctx.stringValue("DeleteGatewayCacheDiskResponse.Code"));
+		deleteGatewayCacheDiskResponse.setSuccess(_ctx.booleanValue("DeleteGatewayCacheDiskResponse.Success"));
 	 
 	 	return deleteGatewayCacheDiskResponse;
 	}

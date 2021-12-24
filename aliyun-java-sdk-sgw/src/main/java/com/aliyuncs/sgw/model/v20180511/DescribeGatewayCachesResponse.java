@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayCachesResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Cache> caches;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Cache> getCaches() {
@@ -77,7 +77,11 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 
 	public static class Cache {
 
+		private String performanceLevel;
+
 		private Long sizeInGB;
+
+		private String buyURL;
 
 		private Long iops;
 
@@ -87,19 +91,23 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 
 		private Boolean isUsed;
 
+		private Long expiredTime;
+
 		private String localFilePath;
 
-		private String renewURL;
-
-		private Long expiredTime;
+		private String subscriptionInstanceId;
 
 		private Integer expireStatus;
 
-		private String performanceLevel;
+		private String renewURL;
 
-		private String buyURL;
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
 
-		private String subscriptionInstanceId;
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
 
 		public Long getSizeInGB() {
 			return this.sizeInGB;
@@ -107,6 +115,14 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 
 		public void setSizeInGB(Long sizeInGB) {
 			this.sizeInGB = sizeInGB;
+		}
+
+		public String getBuyURL() {
+			return this.buyURL;
+		}
+
+		public void setBuyURL(String buyURL) {
+			this.buyURL = buyURL;
 		}
 
 		public Long getIops() {
@@ -141,6 +157,14 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 			this.isUsed = isUsed;
 		}
 
+		public Long getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(Long expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
 		public String getLocalFilePath() {
 			return this.localFilePath;
 		}
@@ -149,20 +173,12 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 			this.localFilePath = localFilePath;
 		}
 
-		public String getRenewURL() {
-			return this.renewURL;
+		public String getSubscriptionInstanceId() {
+			return this.subscriptionInstanceId;
 		}
 
-		public void setRenewURL(String renewURL) {
-			this.renewURL = renewURL;
-		}
-
-		public Long getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(Long expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setSubscriptionInstanceId(String subscriptionInstanceId) {
+			this.subscriptionInstanceId = subscriptionInstanceId;
 		}
 
 		public Integer getExpireStatus() {
@@ -173,28 +189,12 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 			this.expireStatus = expireStatus;
 		}
 
-		public String getPerformanceLevel() {
-			return this.performanceLevel;
+		public String getRenewURL() {
+			return this.renewURL;
 		}
 
-		public void setPerformanceLevel(String performanceLevel) {
-			this.performanceLevel = performanceLevel;
-		}
-
-		public String getBuyURL() {
-			return this.buyURL;
-		}
-
-		public void setBuyURL(String buyURL) {
-			this.buyURL = buyURL;
-		}
-
-		public String getSubscriptionInstanceId() {
-			return this.subscriptionInstanceId;
-		}
-
-		public void setSubscriptionInstanceId(String subscriptionInstanceId) {
-			this.subscriptionInstanceId = subscriptionInstanceId;
+		public void setRenewURL(String renewURL) {
+			this.renewURL = renewURL;
 		}
 	}
 

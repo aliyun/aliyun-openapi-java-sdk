@@ -27,9 +27,9 @@ public class DescribeGatewayInfoResponseUnmarshaller {
 	public static DescribeGatewayInfoResponse unmarshall(DescribeGatewayInfoResponse describeGatewayInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayInfoResponse.setRequestId(_ctx.stringValue("DescribeGatewayInfoResponse.RequestId"));
-		describeGatewayInfoResponse.setSuccess(_ctx.booleanValue("DescribeGatewayInfoResponse.Success"));
-		describeGatewayInfoResponse.setCode(_ctx.stringValue("DescribeGatewayInfoResponse.Code"));
 		describeGatewayInfoResponse.setMessage(_ctx.stringValue("DescribeGatewayInfoResponse.Message"));
+		describeGatewayInfoResponse.setCode(_ctx.stringValue("DescribeGatewayInfoResponse.Code"));
+		describeGatewayInfoResponse.setSuccess(_ctx.booleanValue("DescribeGatewayInfoResponse.Success"));
 
 		List<GatewayInfo> gatewayInfos = new ArrayList<GatewayInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGatewayInfoResponse.GatewayInfos.Length"); i++) {

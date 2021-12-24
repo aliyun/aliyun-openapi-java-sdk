@@ -23,9 +23,9 @@ public class DescribeKmsKeyResponseUnmarshaller {
 	public static DescribeKmsKeyResponse unmarshall(DescribeKmsKeyResponse describeKmsKeyResponse, UnmarshallerContext _ctx) {
 		
 		describeKmsKeyResponse.setRequestId(_ctx.stringValue("DescribeKmsKeyResponse.RequestId"));
-		describeKmsKeyResponse.setSuccess(_ctx.booleanValue("DescribeKmsKeyResponse.Success"));
-		describeKmsKeyResponse.setCode(_ctx.stringValue("DescribeKmsKeyResponse.Code"));
 		describeKmsKeyResponse.setMessage(_ctx.stringValue("DescribeKmsKeyResponse.Message"));
+		describeKmsKeyResponse.setCode(_ctx.stringValue("DescribeKmsKeyResponse.Code"));
+		describeKmsKeyResponse.setSuccess(_ctx.booleanValue("DescribeKmsKeyResponse.Success"));
 		describeKmsKeyResponse.setIsValid(_ctx.booleanValue("DescribeKmsKeyResponse.IsValid"));
 	 
 	 	return describeKmsKeyResponse;

@@ -24,23 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayLDAPInfoResponse extends AcsResponse {
 
+	private String rootDN;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
-	private String baseDN;
+	private Boolean isEnabled;
 
-	private String rootDN;
+	private String baseDN;
 
 	private String serverIp;
 
 	private Boolean isTls;
 
-	private Boolean isEnabled;
+	private String code;
+
+	private Boolean success;
+
+	public String getRootDN() {
+		return this.rootDN;
+	}
+
+	public void setRootDN(String rootDN) {
+		this.rootDN = rootDN;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,22 +56,6 @@ public class DescribeGatewayLDAPInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -74,20 +66,20 @@ public class DescribeGatewayLDAPInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Boolean getIsEnabled() {
+		return this.isEnabled;
+	}
+
+	public void setIsEnabled(Boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+
 	public String getBaseDN() {
 		return this.baseDN;
 	}
 
 	public void setBaseDN(String baseDN) {
 		this.baseDN = baseDN;
-	}
-
-	public String getRootDN() {
-		return this.rootDN;
-	}
-
-	public void setRootDN(String rootDN) {
-		this.rootDN = rootDN;
 	}
 
 	public String getServerIp() {
@@ -106,12 +98,20 @@ public class DescribeGatewayLDAPInfoResponse extends AcsResponse {
 		this.isTls = isTls;
 	}
 
-	public Boolean getIsEnabled() {
-		return this.isEnabled;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setIsEnabled(Boolean isEnabled) {
-		this.isEnabled = isEnabled;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

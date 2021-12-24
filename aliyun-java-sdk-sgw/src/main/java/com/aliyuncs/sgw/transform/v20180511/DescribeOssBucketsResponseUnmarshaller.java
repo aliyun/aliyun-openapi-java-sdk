@@ -27,9 +27,9 @@ public class DescribeOssBucketsResponseUnmarshaller {
 	public static DescribeOssBucketsResponse unmarshall(DescribeOssBucketsResponse describeOssBucketsResponse, UnmarshallerContext _ctx) {
 		
 		describeOssBucketsResponse.setRequestId(_ctx.stringValue("DescribeOssBucketsResponse.RequestId"));
-		describeOssBucketsResponse.setSuccess(_ctx.booleanValue("DescribeOssBucketsResponse.Success"));
-		describeOssBucketsResponse.setCode(_ctx.stringValue("DescribeOssBucketsResponse.Code"));
 		describeOssBucketsResponse.setMessage(_ctx.stringValue("DescribeOssBucketsResponse.Message"));
+		describeOssBucketsResponse.setCode(_ctx.stringValue("DescribeOssBucketsResponse.Code"));
+		describeOssBucketsResponse.setSuccess(_ctx.booleanValue("DescribeOssBucketsResponse.Success"));
 
 		List<Bucket> buckets = new ArrayList<Bucket>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOssBucketsResponse.Buckets.Length"); i++) {

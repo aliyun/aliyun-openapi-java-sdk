@@ -23,10 +23,10 @@ public class DisableGatewayNFSVersionResponseUnmarshaller {
 	public static DisableGatewayNFSVersionResponse unmarshall(DisableGatewayNFSVersionResponse disableGatewayNFSVersionResponse, UnmarshallerContext _ctx) {
 		
 		disableGatewayNFSVersionResponse.setRequestId(_ctx.stringValue("DisableGatewayNFSVersionResponse.RequestId"));
-		disableGatewayNFSVersionResponse.setSuccess(_ctx.booleanValue("DisableGatewayNFSVersionResponse.Success"));
-		disableGatewayNFSVersionResponse.setCode(_ctx.stringValue("DisableGatewayNFSVersionResponse.Code"));
-		disableGatewayNFSVersionResponse.setMessage(_ctx.stringValue("DisableGatewayNFSVersionResponse.Message"));
 		disableGatewayNFSVersionResponse.setTaskId(_ctx.stringValue("DisableGatewayNFSVersionResponse.TaskId"));
+		disableGatewayNFSVersionResponse.setMessage(_ctx.stringValue("DisableGatewayNFSVersionResponse.Message"));
+		disableGatewayNFSVersionResponse.setCode(_ctx.stringValue("DisableGatewayNFSVersionResponse.Code"));
+		disableGatewayNFSVersionResponse.setSuccess(_ctx.booleanValue("DisableGatewayNFSVersionResponse.Success"));
 	 
 	 	return disableGatewayNFSVersionResponse;
 	}

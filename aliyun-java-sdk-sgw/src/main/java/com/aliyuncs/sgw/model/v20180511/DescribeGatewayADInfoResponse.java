@@ -26,19 +26,19 @@ public class DescribeGatewayADInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
+
+	private String domainName;
+
+	private Boolean isEnabled;
 
 	private String username;
 
 	private String serverIp;
 
-	private String domainName;
+	private String code;
 
-	private Boolean isEnabled;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,28 +48,28 @@ public class DescribeGatewayADInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public Boolean getIsEnabled() {
+		return this.isEnabled;
+	}
+
+	public void setIsEnabled(Boolean isEnabled) {
+		this.isEnabled = isEnabled;
 	}
 
 	public String getUsername() {
@@ -88,20 +88,20 @@ public class DescribeGatewayADInfoResponse extends AcsResponse {
 		this.serverIp = serverIp;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public Boolean getIsEnabled() {
-		return this.isEnabled;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setIsEnabled(Boolean isEnabled) {
-		this.isEnabled = isEnabled;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

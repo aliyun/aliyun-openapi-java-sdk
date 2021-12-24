@@ -23,10 +23,10 @@ public class DeleteGatewayResponseUnmarshaller {
 	public static DeleteGatewayResponse unmarshall(DeleteGatewayResponse deleteGatewayResponse, UnmarshallerContext _ctx) {
 		
 		deleteGatewayResponse.setRequestId(_ctx.stringValue("DeleteGatewayResponse.RequestId"));
-		deleteGatewayResponse.setSuccess(_ctx.booleanValue("DeleteGatewayResponse.Success"));
-		deleteGatewayResponse.setCode(_ctx.stringValue("DeleteGatewayResponse.Code"));
-		deleteGatewayResponse.setMessage(_ctx.stringValue("DeleteGatewayResponse.Message"));
 		deleteGatewayResponse.setTaskId(_ctx.stringValue("DeleteGatewayResponse.TaskId"));
+		deleteGatewayResponse.setMessage(_ctx.stringValue("DeleteGatewayResponse.Message"));
+		deleteGatewayResponse.setCode(_ctx.stringValue("DeleteGatewayResponse.Code"));
+		deleteGatewayResponse.setSuccess(_ctx.booleanValue("DeleteGatewayResponse.Success"));
 	 
 	 	return deleteGatewayResponse;
 	}

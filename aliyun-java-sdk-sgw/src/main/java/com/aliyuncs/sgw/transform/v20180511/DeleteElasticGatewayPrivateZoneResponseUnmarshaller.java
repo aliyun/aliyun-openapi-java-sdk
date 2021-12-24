@@ -23,10 +23,10 @@ public class DeleteElasticGatewayPrivateZoneResponseUnmarshaller {
 	public static DeleteElasticGatewayPrivateZoneResponse unmarshall(DeleteElasticGatewayPrivateZoneResponse deleteElasticGatewayPrivateZoneResponse, UnmarshallerContext _ctx) {
 		
 		deleteElasticGatewayPrivateZoneResponse.setRequestId(_ctx.stringValue("DeleteElasticGatewayPrivateZoneResponse.RequestId"));
-		deleteElasticGatewayPrivateZoneResponse.setSuccess(_ctx.booleanValue("DeleteElasticGatewayPrivateZoneResponse.Success"));
-		deleteElasticGatewayPrivateZoneResponse.setCode(_ctx.stringValue("DeleteElasticGatewayPrivateZoneResponse.Code"));
-		deleteElasticGatewayPrivateZoneResponse.setMessage(_ctx.stringValue("DeleteElasticGatewayPrivateZoneResponse.Message"));
 		deleteElasticGatewayPrivateZoneResponse.setTaskId(_ctx.stringValue("DeleteElasticGatewayPrivateZoneResponse.TaskId"));
+		deleteElasticGatewayPrivateZoneResponse.setMessage(_ctx.stringValue("DeleteElasticGatewayPrivateZoneResponse.Message"));
+		deleteElasticGatewayPrivateZoneResponse.setCode(_ctx.stringValue("DeleteElasticGatewayPrivateZoneResponse.Code"));
+		deleteElasticGatewayPrivateZoneResponse.setSuccess(_ctx.booleanValue("DeleteElasticGatewayPrivateZoneResponse.Success"));
 	 
 	 	return deleteElasticGatewayPrivateZoneResponse;
 	}

@@ -23,9 +23,9 @@ public class SwitchGatewayExpirationPolicyResponseUnmarshaller {
 	public static SwitchGatewayExpirationPolicyResponse unmarshall(SwitchGatewayExpirationPolicyResponse switchGatewayExpirationPolicyResponse, UnmarshallerContext _ctx) {
 		
 		switchGatewayExpirationPolicyResponse.setRequestId(_ctx.stringValue("SwitchGatewayExpirationPolicyResponse.RequestId"));
-		switchGatewayExpirationPolicyResponse.setSuccess(_ctx.booleanValue("SwitchGatewayExpirationPolicyResponse.Success"));
-		switchGatewayExpirationPolicyResponse.setCode(_ctx.stringValue("SwitchGatewayExpirationPolicyResponse.Code"));
 		switchGatewayExpirationPolicyResponse.setMessage(_ctx.stringValue("SwitchGatewayExpirationPolicyResponse.Message"));
+		switchGatewayExpirationPolicyResponse.setCode(_ctx.stringValue("SwitchGatewayExpirationPolicyResponse.Code"));
+		switchGatewayExpirationPolicyResponse.setSuccess(_ctx.booleanValue("SwitchGatewayExpirationPolicyResponse.Success"));
 	 
 	 	return switchGatewayExpirationPolicyResponse;
 	}

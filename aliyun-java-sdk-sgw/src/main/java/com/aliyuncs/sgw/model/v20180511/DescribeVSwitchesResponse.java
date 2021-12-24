@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVSwitchesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String code;
+
+	private Boolean success;
 
 	private List<VSwitch> vSwitches;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -73,12 +65,12 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +81,20 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<VSwitch> getVSwitches() {
@@ -107,15 +107,39 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 	public static class VSwitch {
 
+		private Boolean isDefault;
+
+		private String availableSelectionInfo;
+
+		private String zoneId;
+
 		private String name;
 
 		private String id;
 
-		private Boolean isDefault;
+		public Boolean getIsDefault() {
+			return this.isDefault;
+		}
 
-		private String zoneId;
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
+		}
 
-		private String availableSelectionInfo;
+		public String getAvailableSelectionInfo() {
+			return this.availableSelectionInfo;
+		}
+
+		public void setAvailableSelectionInfo(String availableSelectionInfo) {
+			this.availableSelectionInfo = availableSelectionInfo;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
 
 		public String getName() {
 			return this.name;
@@ -131,30 +155,6 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
-		}
-
-		public Boolean getIsDefault() {
-			return this.isDefault;
-		}
-
-		public void setIsDefault(Boolean isDefault) {
-			this.isDefault = isDefault;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getAvailableSelectionInfo() {
-			return this.availableSelectionInfo;
-		}
-
-		public void setAvailableSelectionInfo(String availableSelectionInfo) {
-			this.availableSelectionInfo = availableSelectionInfo;
 		}
 	}
 

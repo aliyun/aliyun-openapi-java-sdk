@@ -23,11 +23,11 @@ public class ExpandGatewayNetworkBandwidthResponseUnmarshaller {
 	public static ExpandGatewayNetworkBandwidthResponse unmarshall(ExpandGatewayNetworkBandwidthResponse expandGatewayNetworkBandwidthResponse, UnmarshallerContext _ctx) {
 		
 		expandGatewayNetworkBandwidthResponse.setRequestId(_ctx.stringValue("ExpandGatewayNetworkBandwidthResponse.RequestId"));
-		expandGatewayNetworkBandwidthResponse.setSuccess(_ctx.booleanValue("ExpandGatewayNetworkBandwidthResponse.Success"));
-		expandGatewayNetworkBandwidthResponse.setCode(_ctx.stringValue("ExpandGatewayNetworkBandwidthResponse.Code"));
-		expandGatewayNetworkBandwidthResponse.setMessage(_ctx.stringValue("ExpandGatewayNetworkBandwidthResponse.Message"));
-		expandGatewayNetworkBandwidthResponse.setTaskId(_ctx.stringValue("ExpandGatewayNetworkBandwidthResponse.TaskId"));
 		expandGatewayNetworkBandwidthResponse.setBuyURL(_ctx.stringValue("ExpandGatewayNetworkBandwidthResponse.BuyURL"));
+		expandGatewayNetworkBandwidthResponse.setTaskId(_ctx.stringValue("ExpandGatewayNetworkBandwidthResponse.TaskId"));
+		expandGatewayNetworkBandwidthResponse.setMessage(_ctx.stringValue("ExpandGatewayNetworkBandwidthResponse.Message"));
+		expandGatewayNetworkBandwidthResponse.setCode(_ctx.stringValue("ExpandGatewayNetworkBandwidthResponse.Code"));
+		expandGatewayNetworkBandwidthResponse.setSuccess(_ctx.booleanValue("ExpandGatewayNetworkBandwidthResponse.Success"));
 	 
 	 	return expandGatewayNetworkBandwidthResponse;
 	}

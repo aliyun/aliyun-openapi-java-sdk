@@ -23,10 +23,10 @@ public class RestartFileSharesResponseUnmarshaller {
 	public static RestartFileSharesResponse unmarshall(RestartFileSharesResponse restartFileSharesResponse, UnmarshallerContext _ctx) {
 		
 		restartFileSharesResponse.setRequestId(_ctx.stringValue("RestartFileSharesResponse.RequestId"));
-		restartFileSharesResponse.setSuccess(_ctx.booleanValue("RestartFileSharesResponse.Success"));
-		restartFileSharesResponse.setCode(_ctx.stringValue("RestartFileSharesResponse.Code"));
-		restartFileSharesResponse.setMessage(_ctx.stringValue("RestartFileSharesResponse.Message"));
 		restartFileSharesResponse.setTaskId(_ctx.stringValue("RestartFileSharesResponse.TaskId"));
+		restartFileSharesResponse.setMessage(_ctx.stringValue("RestartFileSharesResponse.Message"));
+		restartFileSharesResponse.setCode(_ctx.stringValue("RestartFileSharesResponse.Code"));
+		restartFileSharesResponse.setSuccess(_ctx.booleanValue("RestartFileSharesResponse.Success"));
 	 
 	 	return restartFileSharesResponse;
 	}

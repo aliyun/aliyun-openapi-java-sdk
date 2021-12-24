@@ -23,13 +23,13 @@ public class DescribeGatewayADInfoResponseUnmarshaller {
 	public static DescribeGatewayADInfoResponse unmarshall(DescribeGatewayADInfoResponse describeGatewayADInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayADInfoResponse.setRequestId(_ctx.stringValue("DescribeGatewayADInfoResponse.RequestId"));
-		describeGatewayADInfoResponse.setSuccess(_ctx.booleanValue("DescribeGatewayADInfoResponse.Success"));
-		describeGatewayADInfoResponse.setCode(_ctx.stringValue("DescribeGatewayADInfoResponse.Code"));
 		describeGatewayADInfoResponse.setMessage(_ctx.stringValue("DescribeGatewayADInfoResponse.Message"));
-		describeGatewayADInfoResponse.setUsername(_ctx.stringValue("DescribeGatewayADInfoResponse.Username"));
-		describeGatewayADInfoResponse.setServerIp(_ctx.stringValue("DescribeGatewayADInfoResponse.ServerIp"));
 		describeGatewayADInfoResponse.setDomainName(_ctx.stringValue("DescribeGatewayADInfoResponse.DomainName"));
 		describeGatewayADInfoResponse.setIsEnabled(_ctx.booleanValue("DescribeGatewayADInfoResponse.IsEnabled"));
+		describeGatewayADInfoResponse.setUsername(_ctx.stringValue("DescribeGatewayADInfoResponse.Username"));
+		describeGatewayADInfoResponse.setServerIp(_ctx.stringValue("DescribeGatewayADInfoResponse.ServerIp"));
+		describeGatewayADInfoResponse.setCode(_ctx.stringValue("DescribeGatewayADInfoResponse.Code"));
+		describeGatewayADInfoResponse.setSuccess(_ctx.booleanValue("DescribeGatewayADInfoResponse.Success"));
 	 
 	 	return describeGatewayADInfoResponse;
 	}

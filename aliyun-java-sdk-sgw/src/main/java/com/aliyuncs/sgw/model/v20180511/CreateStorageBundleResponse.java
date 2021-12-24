@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateStorageBundleResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
-	private Boolean success;
+	private String storageBundleId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private String storageBundleId;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +50,12 @@ public class CreateStorageBundleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getStorageBundleId() {
+		return this.storageBundleId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setStorageBundleId(String storageBundleId) {
+		this.storageBundleId = storageBundleId;
 	}
 
 	public String getCode() {
@@ -58,20 +66,12 @@ public class CreateStorageBundleResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getStorageBundleId() {
-		return this.storageBundleId;
-	}
-
-	public void setStorageBundleId(String storageBundleId) {
-		this.storageBundleId = storageBundleId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

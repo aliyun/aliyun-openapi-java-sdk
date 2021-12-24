@@ -27,16 +27,16 @@ public class DescribeSharesBucketInfoForExpressSyncResponseUnmarshaller {
 	public static DescribeSharesBucketInfoForExpressSyncResponse unmarshall(DescribeSharesBucketInfoForExpressSyncResponse describeSharesBucketInfoForExpressSyncResponse, UnmarshallerContext _ctx) {
 		
 		describeSharesBucketInfoForExpressSyncResponse.setRequestId(_ctx.stringValue("DescribeSharesBucketInfoForExpressSyncResponse.RequestId"));
-		describeSharesBucketInfoForExpressSyncResponse.setSuccess(_ctx.booleanValue("DescribeSharesBucketInfoForExpressSyncResponse.Success"));
-		describeSharesBucketInfoForExpressSyncResponse.setCode(_ctx.stringValue("DescribeSharesBucketInfoForExpressSyncResponse.Code"));
 		describeSharesBucketInfoForExpressSyncResponse.setMessage(_ctx.stringValue("DescribeSharesBucketInfoForExpressSyncResponse.Message"));
+		describeSharesBucketInfoForExpressSyncResponse.setCode(_ctx.stringValue("DescribeSharesBucketInfoForExpressSyncResponse.Code"));
+		describeSharesBucketInfoForExpressSyncResponse.setSuccess(_ctx.booleanValue("DescribeSharesBucketInfoForExpressSyncResponse.Success"));
 
 		List<BucketInfo> bucketInfos = new ArrayList<BucketInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSharesBucketInfoForExpressSyncResponse.BucketInfos.Length"); i++) {
 			BucketInfo bucketInfo = new BucketInfo();
-			bucketInfo.setBucketRegion(_ctx.stringValue("DescribeSharesBucketInfoForExpressSyncResponse.BucketInfos["+ i +"].BucketRegion"));
 			bucketInfo.setBucketName(_ctx.stringValue("DescribeSharesBucketInfoForExpressSyncResponse.BucketInfos["+ i +"].BucketName"));
 			bucketInfo.setBucketPrefix(_ctx.stringValue("DescribeSharesBucketInfoForExpressSyncResponse.BucketInfos["+ i +"].BucketPrefix"));
+			bucketInfo.setBucketRegion(_ctx.stringValue("DescribeSharesBucketInfoForExpressSyncResponse.BucketInfos["+ i +"].BucketRegion"));
 
 			bucketInfos.add(bucketInfo);
 		}

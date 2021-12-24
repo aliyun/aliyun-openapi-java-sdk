@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStorageBundlesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String code;
+
+	private Boolean success;
 
 	private List<StorageBundle> storageBundles;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeStorageBundlesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -73,12 +65,12 @@ public class DescribeStorageBundlesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +81,20 @@ public class DescribeStorageBundlesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<StorageBundle> getStorageBundles() {
@@ -107,35 +107,19 @@ public class DescribeStorageBundlesResponse extends AcsResponse {
 
 	public static class StorageBundle {
 
-		private String storageBundleId;
-
-		private String name;
-
 		private String description;
 
 		private String backendBucketRegionId;
 
-		private String location;
+		private String resourceGroupId;
+
+		private String storageBundleId;
+
+		private String name;
 
 		private Long createdTime;
 
-		private String resourceGroupId;
-
-		public String getStorageBundleId() {
-			return this.storageBundleId;
-		}
-
-		public void setStorageBundleId(String storageBundleId) {
-			this.storageBundleId = storageBundleId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String location;
 
 		public String getDescription() {
 			return this.description;
@@ -153,12 +137,28 @@ public class DescribeStorageBundlesResponse extends AcsResponse {
 			this.backendBucketRegionId = backendBucketRegionId;
 		}
 
-		public String getLocation() {
-			return this.location;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setLocation(String location) {
-			this.location = location;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getStorageBundleId() {
+			return this.storageBundleId;
+		}
+
+		public void setStorageBundleId(String storageBundleId) {
+			this.storageBundleId = storageBundleId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Long getCreatedTime() {
@@ -169,12 +169,12 @@ public class DescribeStorageBundlesResponse extends AcsResponse {
 			this.createdTime = createdTime;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getLocation() {
+			return this.location;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setLocation(String location) {
+			this.location = location;
 		}
 	}
 

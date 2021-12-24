@@ -23,10 +23,10 @@ public class CreateStorageBundleResponseUnmarshaller {
 	public static CreateStorageBundleResponse unmarshall(CreateStorageBundleResponse createStorageBundleResponse, UnmarshallerContext _ctx) {
 		
 		createStorageBundleResponse.setRequestId(_ctx.stringValue("CreateStorageBundleResponse.RequestId"));
-		createStorageBundleResponse.setSuccess(_ctx.booleanValue("CreateStorageBundleResponse.Success"));
-		createStorageBundleResponse.setCode(_ctx.stringValue("CreateStorageBundleResponse.Code"));
 		createStorageBundleResponse.setMessage(_ctx.stringValue("CreateStorageBundleResponse.Message"));
 		createStorageBundleResponse.setStorageBundleId(_ctx.stringValue("CreateStorageBundleResponse.StorageBundleId"));
+		createStorageBundleResponse.setCode(_ctx.stringValue("CreateStorageBundleResponse.Code"));
+		createStorageBundleResponse.setSuccess(_ctx.booleanValue("CreateStorageBundleResponse.Success"));
 	 
 	 	return createStorageBundleResponse;
 	}

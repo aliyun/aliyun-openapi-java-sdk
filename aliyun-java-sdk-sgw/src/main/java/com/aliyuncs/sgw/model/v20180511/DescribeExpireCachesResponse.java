@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExpireCachesResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
-	private Boolean success;
+	private String cacheFilePaths;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
-	private String cacheFilePaths;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +50,12 @@ public class DescribeExpireCachesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getCacheFilePaths() {
+		return this.cacheFilePaths;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCacheFilePaths(String cacheFilePaths) {
+		this.cacheFilePaths = cacheFilePaths;
 	}
 
 	public String getCode() {
@@ -58,20 +66,12 @@ public class DescribeExpireCachesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getCacheFilePaths() {
-		return this.cacheFilePaths;
-	}
-
-	public void setCacheFilePaths(String cacheFilePaths) {
-		this.cacheFilePaths = cacheFilePaths;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

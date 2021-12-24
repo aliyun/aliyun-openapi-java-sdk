@@ -23,10 +23,11 @@ public class CheckBlockVolumeNameResponseUnmarshaller {
 	public static CheckBlockVolumeNameResponse unmarshall(CheckBlockVolumeNameResponse checkBlockVolumeNameResponse, UnmarshallerContext _ctx) {
 		
 		checkBlockVolumeNameResponse.setRequestId(_ctx.stringValue("CheckBlockVolumeNameResponse.RequestId"));
-		checkBlockVolumeNameResponse.setSuccess(_ctx.booleanValue("CheckBlockVolumeNameResponse.Success"));
-		checkBlockVolumeNameResponse.setCode(_ctx.stringValue("CheckBlockVolumeNameResponse.Code"));
-		checkBlockVolumeNameResponse.setMessage(_ctx.stringValue("CheckBlockVolumeNameResponse.Message"));
 		checkBlockVolumeNameResponse.setIsRequireRecovery(_ctx.stringValue("CheckBlockVolumeNameResponse.IsRequireRecovery"));
+		checkBlockVolumeNameResponse.setMessage(_ctx.stringValue("CheckBlockVolumeNameResponse.Message"));
+		checkBlockVolumeNameResponse.setCode(_ctx.stringValue("CheckBlockVolumeNameResponse.Code"));
+		checkBlockVolumeNameResponse.setSuccess(_ctx.booleanValue("CheckBlockVolumeNameResponse.Success"));
+		checkBlockVolumeNameResponse.setIsAlreadyExist(_ctx.booleanValue("CheckBlockVolumeNameResponse.IsAlreadyExist"));
 	 
 	 	return checkBlockVolumeNameResponse;
 	}

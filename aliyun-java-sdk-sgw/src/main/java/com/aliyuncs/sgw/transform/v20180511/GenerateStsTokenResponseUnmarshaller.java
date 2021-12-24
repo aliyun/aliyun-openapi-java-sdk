@@ -23,15 +23,15 @@ public class GenerateStsTokenResponseUnmarshaller {
 	public static GenerateStsTokenResponse unmarshall(GenerateStsTokenResponse generateStsTokenResponse, UnmarshallerContext _ctx) {
 		
 		generateStsTokenResponse.setRequestId(_ctx.stringValue("GenerateStsTokenResponse.RequestId"));
-		generateStsTokenResponse.setSuccess(_ctx.booleanValue("GenerateStsTokenResponse.Success"));
-		generateStsTokenResponse.setCode(_ctx.stringValue("GenerateStsTokenResponse.Code"));
+		generateStsTokenResponse.setSecurityToken(_ctx.stringValue("GenerateStsTokenResponse.SecurityToken"));
+		generateStsTokenResponse.setSupportBundleTarget(_ctx.stringValue("GenerateStsTokenResponse.SupportBundleTarget"));
 		generateStsTokenResponse.setMessage(_ctx.stringValue("GenerateStsTokenResponse.Message"));
 		generateStsTokenResponse.setAccessKeyId(_ctx.stringValue("GenerateStsTokenResponse.AccessKeyId"));
 		generateStsTokenResponse.setAccessKeySecret(_ctx.stringValue("GenerateStsTokenResponse.AccessKeySecret"));
 		generateStsTokenResponse.setExpiration(_ctx.stringValue("GenerateStsTokenResponse.Expiration"));
-		generateStsTokenResponse.setSecurityToken(_ctx.stringValue("GenerateStsTokenResponse.SecurityToken"));
-		generateStsTokenResponse.setSupportBundleTarget(_ctx.stringValue("GenerateStsTokenResponse.SupportBundleTarget"));
 		generateStsTokenResponse.setEnvironment(_ctx.stringValue("GenerateStsTokenResponse.Environment"));
+		generateStsTokenResponse.setCode(_ctx.stringValue("GenerateStsTokenResponse.Code"));
+		generateStsTokenResponse.setSuccess(_ctx.booleanValue("GenerateStsTokenResponse.Success"));
 	 
 	 	return generateStsTokenResponse;
 	}

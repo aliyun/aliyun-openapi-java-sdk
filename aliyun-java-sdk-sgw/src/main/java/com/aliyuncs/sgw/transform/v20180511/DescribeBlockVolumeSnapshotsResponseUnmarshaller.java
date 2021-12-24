@@ -27,12 +27,12 @@ public class DescribeBlockVolumeSnapshotsResponseUnmarshaller {
 	public static DescribeBlockVolumeSnapshotsResponse unmarshall(DescribeBlockVolumeSnapshotsResponse describeBlockVolumeSnapshotsResponse, UnmarshallerContext _ctx) {
 		
 		describeBlockVolumeSnapshotsResponse.setRequestId(_ctx.stringValue("DescribeBlockVolumeSnapshotsResponse.RequestId"));
-		describeBlockVolumeSnapshotsResponse.setSuccess(_ctx.booleanValue("DescribeBlockVolumeSnapshotsResponse.Success"));
-		describeBlockVolumeSnapshotsResponse.setCode(_ctx.stringValue("DescribeBlockVolumeSnapshotsResponse.Code"));
-		describeBlockVolumeSnapshotsResponse.setMessage(_ctx.stringValue("DescribeBlockVolumeSnapshotsResponse.Message"));
 		describeBlockVolumeSnapshotsResponse.setTotalCount(_ctx.integerValue("DescribeBlockVolumeSnapshotsResponse.TotalCount"));
-		describeBlockVolumeSnapshotsResponse.setPageNumber(_ctx.integerValue("DescribeBlockVolumeSnapshotsResponse.PageNumber"));
+		describeBlockVolumeSnapshotsResponse.setMessage(_ctx.stringValue("DescribeBlockVolumeSnapshotsResponse.Message"));
 		describeBlockVolumeSnapshotsResponse.setPageSize(_ctx.integerValue("DescribeBlockVolumeSnapshotsResponse.PageSize"));
+		describeBlockVolumeSnapshotsResponse.setPageNumber(_ctx.integerValue("DescribeBlockVolumeSnapshotsResponse.PageNumber"));
+		describeBlockVolumeSnapshotsResponse.setCode(_ctx.stringValue("DescribeBlockVolumeSnapshotsResponse.Code"));
+		describeBlockVolumeSnapshotsResponse.setSuccess(_ctx.booleanValue("DescribeBlockVolumeSnapshotsResponse.Success"));
 
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBlockVolumeSnapshotsResponse.Snapshots.Length"); i++) {

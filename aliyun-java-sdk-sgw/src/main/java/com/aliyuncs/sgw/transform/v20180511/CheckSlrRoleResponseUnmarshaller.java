@@ -23,11 +23,11 @@ public class CheckSlrRoleResponseUnmarshaller {
 	public static CheckSlrRoleResponse unmarshall(CheckSlrRoleResponse checkSlrRoleResponse, UnmarshallerContext _ctx) {
 		
 		checkSlrRoleResponse.setRequestId(_ctx.stringValue("CheckSlrRoleResponse.RequestId"));
-		checkSlrRoleResponse.setSuccess(_ctx.booleanValue("CheckSlrRoleResponse.Success"));
-		checkSlrRoleResponse.setCode(_ctx.stringValue("CheckSlrRoleResponse.Code"));
-		checkSlrRoleResponse.setMessage(_ctx.stringValue("CheckSlrRoleResponse.Message"));
-		checkSlrRoleResponse.setExist(_ctx.booleanValue("CheckSlrRoleResponse.Exist"));
 		checkSlrRoleResponse.setRequireOldWayCheck(_ctx.booleanValue("CheckSlrRoleResponse.RequireOldWayCheck"));
+		checkSlrRoleResponse.setExist(_ctx.booleanValue("CheckSlrRoleResponse.Exist"));
+		checkSlrRoleResponse.setMessage(_ctx.stringValue("CheckSlrRoleResponse.Message"));
+		checkSlrRoleResponse.setCode(_ctx.stringValue("CheckSlrRoleResponse.Code"));
+		checkSlrRoleResponse.setSuccess(_ctx.booleanValue("CheckSlrRoleResponse.Success"));
 	 
 	 	return checkSlrRoleResponse;
 	}
