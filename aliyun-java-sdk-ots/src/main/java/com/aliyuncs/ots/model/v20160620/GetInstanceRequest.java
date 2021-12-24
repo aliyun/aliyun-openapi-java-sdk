@@ -28,7 +28,7 @@ public class GetInstanceRequest extends RpcAcsRequest<GetInstanceResponse> {
 
 	private String instanceName;
 	public GetInstanceRequest() {
-		super("Ots", "2016-06-20", "GetInstance", "ots");
+		super("Ots", "2016-06-20", "GetInstance");
 		setMethod(MethodType.GET);
 	}
 

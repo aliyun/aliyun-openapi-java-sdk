@@ -32,7 +32,7 @@ public class UnbindInstance2VpcRequest extends RpcAcsRequest<UnbindInstance2VpcR
 
 	private String instanceName;
 	public UnbindInstance2VpcRequest() {
-		super("Ots", "2016-06-20", "UnbindInstance2Vpc", "ots");
+		super("Ots", "2016-06-20", "UnbindInstance2Vpc");
 		setMethod(MethodType.POST);
 	}
 

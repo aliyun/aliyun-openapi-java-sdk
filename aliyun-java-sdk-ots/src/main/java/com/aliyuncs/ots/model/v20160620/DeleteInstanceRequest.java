@@ -28,7 +28,7 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private String instanceName;
 	public DeleteInstanceRequest() {
-		super("Ots", "2016-06-20", "DeleteInstance", "ots");
+		super("Ots", "2016-06-20", "DeleteInstance");
 		setMethod(MethodType.POST);
 	}
 

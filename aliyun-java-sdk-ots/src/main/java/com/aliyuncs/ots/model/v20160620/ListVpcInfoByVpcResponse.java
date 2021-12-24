@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpcInfoByVpcResponse extends AcsResponse {
 
-	private Long totalCount;
+	private String vpcId;
 
 	private Long pageNum;
 
-	private Long pageSize;
-
 	private String requestId;
 
-	private String vpcId;
+	private Long pageSize;
+
+	private Long totalCount;
 
 	private List<VpcInfo> vpcInfos;
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
 	}
 
 	public Long getPageNum() {
@@ -53,14 +53,6 @@ public class ListVpcInfoByVpcResponse extends AcsResponse {
 		this.pageNum = pageNum;
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -69,12 +61,20 @@ public class ListVpcInfoByVpcResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<VpcInfo> getVpcInfos() {
@@ -87,22 +87,22 @@ public class ListVpcInfoByVpcResponse extends AcsResponse {
 
 	public static class VpcInfo {
 
-		private String instanceName;
+		private String domain;
 
 		private String instanceVpcName;
 
-		private String endpoint;
-
-		private String domain;
-
 		private String regionNo;
 
-		public String getInstanceName() {
-			return this.instanceName;
+		private String instanceName;
+
+		private String endpoint;
+
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public String getInstanceVpcName() {
@@ -113,28 +113,28 @@ public class ListVpcInfoByVpcResponse extends AcsResponse {
 			this.instanceVpcName = instanceVpcName;
 		}
 
-		public String getEndpoint() {
-			return this.endpoint;
-		}
-
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
 		public String getRegionNo() {
 			return this.regionNo;
 		}
 
 		public void setRegionNo(String regionNo) {
 			this.regionNo = regionNo;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getEndpoint() {
+			return this.endpoint;
+		}
+
+		public void setEndpoint(String endpoint) {
+			this.endpoint = endpoint;
 		}
 	}
 

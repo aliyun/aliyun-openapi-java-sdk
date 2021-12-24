@@ -26,7 +26,7 @@ public class ListClusterTypeRequest extends RpcAcsRequest<ListClusterTypeRespons
 
 	private Long resourceOwnerId;
 	public ListClusterTypeRequest() {
-		super("Ots", "2016-06-20", "ListClusterType", "ots");
+		super("Ots", "2016-06-20", "ListClusterType");
 		setMethod(MethodType.GET);
 	}
 

@@ -35,7 +35,7 @@ public class ListVpcInfoByVpcRequest extends RpcAcsRequest<ListVpcInfoByVpcRespo
 
 	private List<TagInfo> tagInfos;
 	public ListVpcInfoByVpcRequest() {
-		super("Ots", "2016-06-20", "ListVpcInfoByVpc", "ots");
+		super("Ots", "2016-06-20", "ListVpcInfoByVpc");
 		setMethod(MethodType.GET);
 	}
 

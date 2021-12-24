@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTagsResponse extends AcsResponse {
 
-	private Long totalCount;
-
 	private Long pageNum;
-
-	private Long pageSize;
 
 	private String requestId;
 
+	private Long pageSize;
+
+	private Long totalCount;
+
 	private List<TagInfo> tagInfos;
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public Long getPageNum() {
 		return this.pageNum;
@@ -49,6 +41,14 @@ public class ListTagsResponse extends AcsResponse {
 
 	public void setPageNum(Long pageNum) {
 		this.pageNum = pageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageSize() {
@@ -59,12 +59,12 @@ public class ListTagsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<TagInfo> getTagInfos() {
@@ -77,17 +77,9 @@ public class ListTagsResponse extends AcsResponse {
 
 	public static class TagInfo {
 
-		private String tagKey;
-
 		private String tagValue;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -95,6 +87,14 @@ public class ListTagsResponse extends AcsResponse {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

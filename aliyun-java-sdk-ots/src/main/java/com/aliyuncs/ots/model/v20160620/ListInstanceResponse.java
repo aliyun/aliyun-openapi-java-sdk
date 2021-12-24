@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstanceResponse extends AcsResponse {
 
-	private Long totalCount;
-
 	private Long pageNum;
-
-	private Long pageSize;
 
 	private String requestId;
 
+	private Long pageSize;
+
+	private Long totalCount;
+
 	private List<InstanceInfo> instanceInfos;
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public Long getPageNum() {
 		return this.pageNum;
@@ -49,6 +41,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 	public void setPageNum(Long pageNum) {
 		this.pageNum = pageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageSize() {
@@ -59,12 +59,12 @@ public class ListInstanceResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<InstanceInfo> getInstanceInfos() {

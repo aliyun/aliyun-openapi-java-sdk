@@ -31,7 +31,7 @@ public class DeleteTagsRequest extends RpcAcsRequest<DeleteTagsResponse> {
 
 	private List<TagInfo> tagInfos;
 	public DeleteTagsRequest() {
-		super("Ots", "2016-06-20", "DeleteTags", "ots");
+		super("Ots", "2016-06-20", "DeleteTags");
 		setMethod(MethodType.POST);
 	}
 

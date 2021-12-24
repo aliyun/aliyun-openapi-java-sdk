@@ -38,7 +38,7 @@ public class BindInstance2VpcRequest extends RpcAcsRequest<BindInstance2VpcRespo
 
 	private String vpcId;
 	public BindInstance2VpcRequest() {
-		super("Ots", "2016-06-20", "BindInstance2Vpc", "ots");
+		super("Ots", "2016-06-20", "BindInstance2Vpc");
 		setMethod(MethodType.POST);
 	}
 

@@ -31,7 +31,7 @@ public class InsertTagsRequest extends RpcAcsRequest<InsertTagsResponse> {
 
 	private List<TagInfo> tagInfos;
 	public InsertTagsRequest() {
-		super("Ots", "2016-06-20", "InsertTags", "ots");
+		super("Ots", "2016-06-20", "InsertTags");
 		setMethod(MethodType.POST);
 	}
 

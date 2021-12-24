@@ -30,7 +30,7 @@ public class UpdateInstanceRequest extends RpcAcsRequest<UpdateInstanceResponse>
 
 	private String instanceName;
 	public UpdateInstanceRequest() {
-		super("Ots", "2016-06-20", "UpdateInstance", "ots");
+		super("Ots", "2016-06-20", "UpdateInstance");
 		setMethod(MethodType.POST);
 	}
 

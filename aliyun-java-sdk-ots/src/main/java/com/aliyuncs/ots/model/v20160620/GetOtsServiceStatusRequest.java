@@ -21,16 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class OpenOtsServiceRequest extends RpcAcsRequest<OpenOtsServiceResponse> {
+public class GetOtsServiceStatusRequest extends RpcAcsRequest<GetOtsServiceStatusResponse> {
 	   
-	public OpenOtsServiceRequest() {
-		super("Ots", "2016-06-20", "OpenOtsService");
-		setMethod(MethodType.POST);
+
+	private Long ownerId;
+	public GetOtsServiceStatusRequest() {
+		super("Ots", "2016-06-20", "GetOtsServiceStatus");
+		setMethod(MethodType.GET);
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override
-	public Class<OpenOtsServiceResponse> getResponseClass() {
-		return OpenOtsServiceResponse.class;
+	public Class<GetOtsServiceStatusResponse> getResponseClass() {
+		return GetOtsServiceStatusResponse.class;
 	}
 
 }

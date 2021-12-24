@@ -27,19 +27,19 @@ public class ListVpcInfoByVpcResponseUnmarshaller {
 	public static ListVpcInfoByVpcResponse unmarshall(ListVpcInfoByVpcResponse listVpcInfoByVpcResponse, UnmarshallerContext _ctx) {
 		
 		listVpcInfoByVpcResponse.setRequestId(_ctx.stringValue("ListVpcInfoByVpcResponse.RequestId"));
-		listVpcInfoByVpcResponse.setTotalCount(_ctx.longValue("ListVpcInfoByVpcResponse.TotalCount"));
+		listVpcInfoByVpcResponse.setVpcId(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcId"));
 		listVpcInfoByVpcResponse.setPageNum(_ctx.longValue("ListVpcInfoByVpcResponse.PageNum"));
 		listVpcInfoByVpcResponse.setPageSize(_ctx.longValue("ListVpcInfoByVpcResponse.PageSize"));
-		listVpcInfoByVpcResponse.setVpcId(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcId"));
+		listVpcInfoByVpcResponse.setTotalCount(_ctx.longValue("ListVpcInfoByVpcResponse.TotalCount"));
 
 		List<VpcInfo> vpcInfos = new ArrayList<VpcInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcInfoByVpcResponse.VpcInfos.Length"); i++) {
 			VpcInfo vpcInfo = new VpcInfo();
-			vpcInfo.setInstanceName(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcInfos["+ i +"].InstanceName"));
-			vpcInfo.setInstanceVpcName(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcInfos["+ i +"].InstanceVpcName"));
-			vpcInfo.setEndpoint(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcInfos["+ i +"].Endpoint"));
 			vpcInfo.setDomain(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcInfos["+ i +"].Domain"));
+			vpcInfo.setInstanceVpcName(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcInfos["+ i +"].InstanceVpcName"));
 			vpcInfo.setRegionNo(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcInfos["+ i +"].RegionNo"));
+			vpcInfo.setInstanceName(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcInfos["+ i +"].InstanceName"));
+			vpcInfo.setEndpoint(_ctx.stringValue("ListVpcInfoByVpcResponse.VpcInfos["+ i +"].Endpoint"));
 
 			vpcInfos.add(vpcInfo);
 		}

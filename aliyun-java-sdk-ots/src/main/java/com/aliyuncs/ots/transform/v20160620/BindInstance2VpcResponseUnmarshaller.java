@@ -23,8 +23,8 @@ public class BindInstance2VpcResponseUnmarshaller {
 	public static BindInstance2VpcResponse unmarshall(BindInstance2VpcResponse bindInstance2VpcResponse, UnmarshallerContext _ctx) {
 		
 		bindInstance2VpcResponse.setRequestId(_ctx.stringValue("BindInstance2VpcResponse.RequestId"));
-		bindInstance2VpcResponse.setEndpoint(_ctx.stringValue("BindInstance2VpcResponse.Endpoint"));
 		bindInstance2VpcResponse.setDomain(_ctx.stringValue("BindInstance2VpcResponse.Domain"));
+		bindInstance2VpcResponse.setEndpoint(_ctx.stringValue("BindInstance2VpcResponse.Endpoint"));
 	 
 	 	return bindInstance2VpcResponse;
 	}

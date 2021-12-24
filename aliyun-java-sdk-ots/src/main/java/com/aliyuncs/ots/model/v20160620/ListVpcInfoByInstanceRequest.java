@@ -32,7 +32,7 @@ public class ListVpcInfoByInstanceRequest extends RpcAcsRequest<ListVpcInfoByIns
 
 	private Long pageSize;
 	public ListVpcInfoByInstanceRequest() {
-		super("Ots", "2016-06-20", "ListVpcInfoByInstance", "ots");
+		super("Ots", "2016-06-20", "ListVpcInfoByInstance");
 		setMethod(MethodType.GET);
 	}
 

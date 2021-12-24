@@ -33,7 +33,7 @@ public class ListInstanceRequest extends RpcAcsRequest<ListInstanceResponse> {
 
 	private List<TagInfo> tagInfos;
 	public ListInstanceRequest() {
-		super("Ots", "2016-06-20", "ListInstance", "ots");
+		super("Ots", "2016-06-20", "ListInstance");
 		setMethod(MethodType.GET);
 	}
 

@@ -47,51 +47,27 @@ public class GetInstanceResponse extends AcsResponse {
 
 	public static class InstanceInfo {
 
-		private String instanceName;
-
-		private String userId;
-
-		private String network;
-
 		private Integer status;
 
-		private Integer writeCapacity;
+		private String network;
 
 		private Integer readCapacity;
 
 		private String description;
 
+		private String clusterType;
+
 		private String createTime;
 
-		private String clusterType;
+		private Integer writeCapacity;
+
+		private String instanceName;
+
+		private String userId;
 
 		private List<TagInfo> tagInfos;
 
 		private Quota quota;
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getNetwork() {
-			return this.network;
-		}
-
-		public void setNetwork(String network) {
-			this.network = network;
-		}
 
 		public Integer getStatus() {
 			return this.status;
@@ -101,12 +77,12 @@ public class GetInstanceResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Integer getWriteCapacity() {
-			return this.writeCapacity;
+		public String getNetwork() {
+			return this.network;
 		}
 
-		public void setWriteCapacity(Integer writeCapacity) {
-			this.writeCapacity = writeCapacity;
+		public void setNetwork(String network) {
+			this.network = network;
 		}
 
 		public Integer getReadCapacity() {
@@ -125,6 +101,14 @@ public class GetInstanceResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -133,12 +117,28 @@ public class GetInstanceResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getClusterType() {
-			return this.clusterType;
+		public Integer getWriteCapacity() {
+			return this.writeCapacity;
 		}
 
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
+		public void setWriteCapacity(Integer writeCapacity) {
+			this.writeCapacity = writeCapacity;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public List<TagInfo> getTagInfos() {
@@ -159,17 +159,9 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public static class TagInfo {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -177,6 +169,14 @@ public class GetInstanceResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 

@@ -31,15 +31,15 @@ public class GetInstanceResponseUnmarshaller {
 		getInstanceResponse.setRequestId(_ctx.stringValue("GetInstanceResponse.RequestId"));
 
 		InstanceInfo instanceInfo = new InstanceInfo();
-		instanceInfo.setInstanceName(_ctx.stringValue("GetInstanceResponse.InstanceInfo.InstanceName"));
-		instanceInfo.setUserId(_ctx.stringValue("GetInstanceResponse.InstanceInfo.UserId"));
-		instanceInfo.setNetwork(_ctx.stringValue("GetInstanceResponse.InstanceInfo.Network"));
 		instanceInfo.setStatus(_ctx.integerValue("GetInstanceResponse.InstanceInfo.Status"));
-		instanceInfo.setWriteCapacity(_ctx.integerValue("GetInstanceResponse.InstanceInfo.WriteCapacity"));
+		instanceInfo.setNetwork(_ctx.stringValue("GetInstanceResponse.InstanceInfo.Network"));
 		instanceInfo.setReadCapacity(_ctx.integerValue("GetInstanceResponse.InstanceInfo.ReadCapacity"));
 		instanceInfo.setDescription(_ctx.stringValue("GetInstanceResponse.InstanceInfo.Description"));
-		instanceInfo.setCreateTime(_ctx.stringValue("GetInstanceResponse.InstanceInfo.CreateTime"));
 		instanceInfo.setClusterType(_ctx.stringValue("GetInstanceResponse.InstanceInfo.ClusterType"));
+		instanceInfo.setCreateTime(_ctx.stringValue("GetInstanceResponse.InstanceInfo.CreateTime"));
+		instanceInfo.setWriteCapacity(_ctx.integerValue("GetInstanceResponse.InstanceInfo.WriteCapacity"));
+		instanceInfo.setInstanceName(_ctx.stringValue("GetInstanceResponse.InstanceInfo.InstanceName"));
+		instanceInfo.setUserId(_ctx.stringValue("GetInstanceResponse.InstanceInfo.UserId"));
 
 		Quota quota = new Quota();
 		quota.setEntityQuota(_ctx.integerValue("GetInstanceResponse.InstanceInfo.Quota.EntityQuota"));
@@ -48,8 +48,8 @@ public class GetInstanceResponseUnmarshaller {
 		List<TagInfo> tagInfos = new ArrayList<TagInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.InstanceInfo.TagInfos.Length"); i++) {
 			TagInfo tagInfo = new TagInfo();
-			tagInfo.setTagKey(_ctx.stringValue("GetInstanceResponse.InstanceInfo.TagInfos["+ i +"].TagKey"));
 			tagInfo.setTagValue(_ctx.stringValue("GetInstanceResponse.InstanceInfo.TagInfos["+ i +"].TagValue"));
+			tagInfo.setTagKey(_ctx.stringValue("GetInstanceResponse.InstanceInfo.TagInfos["+ i +"].TagKey"));
 
 			tagInfos.add(tagInfo);
 		}

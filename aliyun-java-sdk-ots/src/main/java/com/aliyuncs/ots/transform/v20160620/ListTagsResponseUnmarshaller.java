@@ -27,15 +27,15 @@ public class ListTagsResponseUnmarshaller {
 	public static ListTagsResponse unmarshall(ListTagsResponse listTagsResponse, UnmarshallerContext _ctx) {
 		
 		listTagsResponse.setRequestId(_ctx.stringValue("ListTagsResponse.RequestId"));
-		listTagsResponse.setTotalCount(_ctx.longValue("ListTagsResponse.TotalCount"));
 		listTagsResponse.setPageNum(_ctx.longValue("ListTagsResponse.PageNum"));
 		listTagsResponse.setPageSize(_ctx.longValue("ListTagsResponse.PageSize"));
+		listTagsResponse.setTotalCount(_ctx.longValue("ListTagsResponse.TotalCount"));
 
 		List<TagInfo> tagInfos = new ArrayList<TagInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagsResponse.TagInfos.Length"); i++) {
 			TagInfo tagInfo = new TagInfo();
-			tagInfo.setTagKey(_ctx.stringValue("ListTagsResponse.TagInfos["+ i +"].TagKey"));
 			tagInfo.setTagValue(_ctx.stringValue("ListTagsResponse.TagInfos["+ i +"].TagValue"));
+			tagInfo.setTagKey(_ctx.stringValue("ListTagsResponse.TagInfos["+ i +"].TagKey"));
 
 			tagInfos.add(tagInfo);
 		}
