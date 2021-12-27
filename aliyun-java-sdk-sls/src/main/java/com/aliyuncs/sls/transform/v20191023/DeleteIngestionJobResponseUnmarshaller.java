@@ -23,9 +23,9 @@ public class DeleteIngestionJobResponseUnmarshaller {
 	public static DeleteIngestionJobResponse unmarshall(DeleteIngestionJobResponse deleteIngestionJobResponse, UnmarshallerContext _ctx) {
 		
 		deleteIngestionJobResponse.setRequestId(_ctx.stringValue("DeleteIngestionJobResponse.RequestId"));
-		deleteIngestionJobResponse.setSuccess(_ctx.booleanValue("DeleteIngestionJobResponse.Success"));
 		deleteIngestionJobResponse.setCode(_ctx.stringValue("DeleteIngestionJobResponse.Code"));
 		deleteIngestionJobResponse.setMessage(_ctx.stringValue("DeleteIngestionJobResponse.Message"));
+		deleteIngestionJobResponse.setSuccess(_ctx.booleanValue("DeleteIngestionJobResponse.Success"));
 	 
 	 	return deleteIngestionJobResponse;
 	}

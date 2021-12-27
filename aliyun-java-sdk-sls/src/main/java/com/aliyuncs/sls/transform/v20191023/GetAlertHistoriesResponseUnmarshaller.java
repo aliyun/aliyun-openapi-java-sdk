@@ -23,10 +23,10 @@ public class GetAlertHistoriesResponseUnmarshaller {
 	public static GetAlertHistoriesResponse unmarshall(GetAlertHistoriesResponse getAlertHistoriesResponse, UnmarshallerContext _ctx) {
 		
 		getAlertHistoriesResponse.setRequestId(_ctx.stringValue("GetAlertHistoriesResponse.RequestId"));
-		getAlertHistoriesResponse.setSuccess(_ctx.booleanValue("GetAlertHistoriesResponse.Success"));
 		getAlertHistoriesResponse.setCode(_ctx.stringValue("GetAlertHistoriesResponse.Code"));
 		getAlertHistoriesResponse.setMessage(_ctx.stringValue("GetAlertHistoriesResponse.Message"));
 		getAlertHistoriesResponse.setData(_ctx.stringValue("GetAlertHistoriesResponse.Data"));
+		getAlertHistoriesResponse.setSuccess(_ctx.booleanValue("GetAlertHistoriesResponse.Success"));
 	 
 	 	return getAlertHistoriesResponse;
 	}

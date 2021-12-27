@@ -33,7 +33,7 @@ public class GetAlertRequest extends RpcAcsRequest<GetAlertResponse> {
 
 	private String alertId;
 	public GetAlertRequest() {
-		super("Sls", "2019-10-23", "GetAlert", "sls");
+		super("Sls", "2019-10-23", "GetAlert");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DeleteImportIngestionJobRequest extends RpcAcsRequest<DeleteImportI
 
 	private String jobName;
 	public DeleteImportIngestionJobRequest() {
-		super("Sls", "2019-10-23", "DeleteImportIngestionJob", "sls");
+		super("Sls", "2019-10-23", "DeleteImportIngestionJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

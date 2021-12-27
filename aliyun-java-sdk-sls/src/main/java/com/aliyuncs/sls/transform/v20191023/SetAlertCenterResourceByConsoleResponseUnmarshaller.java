@@ -23,9 +23,9 @@ public class SetAlertCenterResourceByConsoleResponseUnmarshaller {
 	public static SetAlertCenterResourceByConsoleResponse unmarshall(SetAlertCenterResourceByConsoleResponse setAlertCenterResourceByConsoleResponse, UnmarshallerContext _ctx) {
 		
 		setAlertCenterResourceByConsoleResponse.setRequestId(_ctx.stringValue("SetAlertCenterResourceByConsoleResponse.RequestId"));
-		setAlertCenterResourceByConsoleResponse.setSuccess(_ctx.booleanValue("SetAlertCenterResourceByConsoleResponse.Success"));
-		setAlertCenterResourceByConsoleResponse.setMessage(_ctx.stringValue("SetAlertCenterResourceByConsoleResponse.Message"));
 		setAlertCenterResourceByConsoleResponse.setCode(_ctx.stringValue("SetAlertCenterResourceByConsoleResponse.Code"));
+		setAlertCenterResourceByConsoleResponse.setMessage(_ctx.stringValue("SetAlertCenterResourceByConsoleResponse.Message"));
+		setAlertCenterResourceByConsoleResponse.setSuccess(_ctx.booleanValue("SetAlertCenterResourceByConsoleResponse.Success"));
 	 
 	 	return setAlertCenterResourceByConsoleResponse;
 	}

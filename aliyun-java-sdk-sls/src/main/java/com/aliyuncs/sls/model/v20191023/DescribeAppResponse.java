@@ -26,11 +26,11 @@ public class DescribeAppResponse extends AcsResponse {
 
 	private String code;
 
-	private String success;
-
 	private String message;
 
 	private String requestId;
+
+	private String success;
 
 	private AppModel appModel;
 
@@ -40,14 +40,6 @@ public class DescribeAppResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -66,6 +58,14 @@ public class DescribeAppResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
 	public AppModel getAppModel() {
 		return this.appModel;
 	}
@@ -76,20 +76,20 @@ public class DescribeAppResponse extends AcsResponse {
 
 	public static class AppModel {
 
-		private Long uid;
+		private String displayName;
 
 		private String appName;
 
 		private String config;
 
-		private String displayName;
+		private Long uid;
 
-		public Long getUid() {
-			return this.uid;
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setUid(Long uid) {
-			this.uid = uid;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
 		public String getAppName() {
@@ -108,12 +108,12 @@ public class DescribeAppResponse extends AcsResponse {
 			this.config = config;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
+		public Long getUid() {
+			return this.uid;
 		}
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
+		public void setUid(Long uid) {
+			this.uid = uid;
 		}
 	}
 

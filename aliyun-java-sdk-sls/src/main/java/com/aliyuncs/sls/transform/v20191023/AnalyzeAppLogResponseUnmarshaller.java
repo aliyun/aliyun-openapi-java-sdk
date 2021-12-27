@@ -24,8 +24,8 @@ public class AnalyzeAppLogResponseUnmarshaller {
 		
 		analyzeAppLogResponse.setRequestId(_ctx.stringValue("AnalyzeAppLogResponse.RequestId"));
 		analyzeAppLogResponse.setCode(_ctx.stringValue("AnalyzeAppLogResponse.Code"));
-		analyzeAppLogResponse.setSuccess(_ctx.stringValue("AnalyzeAppLogResponse.Success"));
 		analyzeAppLogResponse.setMessage(_ctx.stringValue("AnalyzeAppLogResponse.Message"));
+		analyzeAppLogResponse.setSuccess(_ctx.stringValue("AnalyzeAppLogResponse.Success"));
 	 
 	 	return analyzeAppLogResponse;
 	}

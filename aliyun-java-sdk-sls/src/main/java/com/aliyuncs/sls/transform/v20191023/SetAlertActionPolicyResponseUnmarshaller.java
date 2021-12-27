@@ -23,9 +23,9 @@ public class SetAlertActionPolicyResponseUnmarshaller {
 	public static SetAlertActionPolicyResponse unmarshall(SetAlertActionPolicyResponse setAlertActionPolicyResponse, UnmarshallerContext _ctx) {
 		
 		setAlertActionPolicyResponse.setRequestId(_ctx.stringValue("SetAlertActionPolicyResponse.RequestId"));
-		setAlertActionPolicyResponse.setSuccess(_ctx.booleanValue("SetAlertActionPolicyResponse.Success"));
-		setAlertActionPolicyResponse.setMessage(_ctx.stringValue("SetAlertActionPolicyResponse.Message"));
 		setAlertActionPolicyResponse.setCode(_ctx.stringValue("SetAlertActionPolicyResponse.Code"));
+		setAlertActionPolicyResponse.setMessage(_ctx.stringValue("SetAlertActionPolicyResponse.Message"));
+		setAlertActionPolicyResponse.setSuccess(_ctx.booleanValue("SetAlertActionPolicyResponse.Success"));
 	 
 	 	return setAlertActionPolicyResponse;
 	}

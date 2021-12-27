@@ -23,10 +23,10 @@ public class CheckResourceOrchestrationResponseUnmarshaller {
 	public static CheckResourceOrchestrationResponse unmarshall(CheckResourceOrchestrationResponse checkResourceOrchestrationResponse, UnmarshallerContext _ctx) {
 		
 		checkResourceOrchestrationResponse.setRequestId(_ctx.stringValue("CheckResourceOrchestrationResponse.RequestId"));
-		checkResourceOrchestrationResponse.setSuccess(_ctx.booleanValue("CheckResourceOrchestrationResponse.Success"));
-		checkResourceOrchestrationResponse.setMessage(_ctx.stringValue("CheckResourceOrchestrationResponse.Message"));
 		checkResourceOrchestrationResponse.setCode(_ctx.stringValue("CheckResourceOrchestrationResponse.Code"));
+		checkResourceOrchestrationResponse.setMessage(_ctx.stringValue("CheckResourceOrchestrationResponse.Message"));
 		checkResourceOrchestrationResponse.setData(_ctx.stringValue("CheckResourceOrchestrationResponse.Data"));
+		checkResourceOrchestrationResponse.setSuccess(_ctx.booleanValue("CheckResourceOrchestrationResponse.Success"));
 	 
 	 	return checkResourceOrchestrationResponse;
 	}

@@ -23,9 +23,9 @@ public class DeleteImportIngestionJobResponseUnmarshaller {
 	public static DeleteImportIngestionJobResponse unmarshall(DeleteImportIngestionJobResponse deleteImportIngestionJobResponse, UnmarshallerContext _ctx) {
 		
 		deleteImportIngestionJobResponse.setRequestId(_ctx.stringValue("DeleteImportIngestionJobResponse.RequestId"));
-		deleteImportIngestionJobResponse.setSuccess(_ctx.booleanValue("DeleteImportIngestionJobResponse.Success"));
 		deleteImportIngestionJobResponse.setCode(_ctx.stringValue("DeleteImportIngestionJobResponse.Code"));
 		deleteImportIngestionJobResponse.setMessage(_ctx.stringValue("DeleteImportIngestionJobResponse.Message"));
+		deleteImportIngestionJobResponse.setSuccess(_ctx.booleanValue("DeleteImportIngestionJobResponse.Success"));
 	 
 	 	return deleteImportIngestionJobResponse;
 	}

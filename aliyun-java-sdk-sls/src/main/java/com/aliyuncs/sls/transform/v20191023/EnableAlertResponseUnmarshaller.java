@@ -23,9 +23,9 @@ public class EnableAlertResponseUnmarshaller {
 	public static EnableAlertResponse unmarshall(EnableAlertResponse enableAlertResponse, UnmarshallerContext _ctx) {
 		
 		enableAlertResponse.setRequestId(_ctx.stringValue("EnableAlertResponse.RequestId"));
-		enableAlertResponse.setSuccess(_ctx.booleanValue("EnableAlertResponse.Success"));
 		enableAlertResponse.setCode(_ctx.stringValue("EnableAlertResponse.Code"));
 		enableAlertResponse.setMessage(_ctx.stringValue("EnableAlertResponse.Message"));
+		enableAlertResponse.setSuccess(_ctx.booleanValue("EnableAlertResponse.Success"));
 	 
 	 	return enableAlertResponse;
 	}

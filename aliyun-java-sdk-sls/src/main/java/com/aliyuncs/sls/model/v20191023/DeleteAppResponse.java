@@ -26,11 +26,11 @@ public class DeleteAppResponse extends AcsResponse {
 
 	private String code;
 
-	private String success;
-
 	private String message;
 
 	private String requestId;
+
+	private String success;
 
 	public String getCode() {
 		return this.code;
@@ -38,14 +38,6 @@ public class DeleteAppResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -62,6 +54,14 @@ public class DeleteAppResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

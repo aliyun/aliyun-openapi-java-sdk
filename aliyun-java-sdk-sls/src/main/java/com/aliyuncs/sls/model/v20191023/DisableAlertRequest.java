@@ -33,7 +33,7 @@ public class DisableAlertRequest extends RpcAcsRequest<DisableAlertResponse> {
 
 	private String alertId;
 	public DisableAlertRequest() {
-		super("Sls", "2019-10-23", "DisableAlert", "sls");
+		super("Sls", "2019-10-23", "DisableAlert");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

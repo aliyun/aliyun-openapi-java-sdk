@@ -24,9 +24,9 @@ public class CreateAppResponseUnmarshaller {
 		
 		createAppResponse.setRequestId(_ctx.stringValue("CreateAppResponse.RequestId"));
 		createAppResponse.setCode(_ctx.stringValue("CreateAppResponse.Code"));
-		createAppResponse.setSuccess(_ctx.stringValue("CreateAppResponse.Success"));
-		createAppResponse.setMessage(_ctx.stringValue("CreateAppResponse.Message"));
 		createAppResponse.setAppName(_ctx.stringValue("CreateAppResponse.AppName"));
+		createAppResponse.setMessage(_ctx.stringValue("CreateAppResponse.Message"));
+		createAppResponse.setSuccess(_ctx.stringValue("CreateAppResponse.Success"));
 	 
 	 	return createAppResponse;
 	}

@@ -23,9 +23,9 @@ public class SetAlertCenterResourceResponseUnmarshaller {
 	public static SetAlertCenterResourceResponse unmarshall(SetAlertCenterResourceResponse setAlertCenterResourceResponse, UnmarshallerContext _ctx) {
 		
 		setAlertCenterResourceResponse.setRequestId(_ctx.stringValue("SetAlertCenterResourceResponse.RequestId"));
-		setAlertCenterResourceResponse.setSuccess(_ctx.booleanValue("SetAlertCenterResourceResponse.Success"));
-		setAlertCenterResourceResponse.setMessage(_ctx.stringValue("SetAlertCenterResourceResponse.Message"));
 		setAlertCenterResourceResponse.setCode(_ctx.stringValue("SetAlertCenterResourceResponse.Code"));
+		setAlertCenterResourceResponse.setMessage(_ctx.stringValue("SetAlertCenterResourceResponse.Message"));
+		setAlertCenterResourceResponse.setSuccess(_ctx.booleanValue("SetAlertCenterResourceResponse.Success"));
 	 
 	 	return setAlertCenterResourceResponse;
 	}

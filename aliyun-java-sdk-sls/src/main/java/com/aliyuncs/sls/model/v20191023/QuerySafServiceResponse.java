@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySafServiceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String score;
 
+	private String requestId;
+
 	private Map<Object,Object> ext;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -55,6 +47,14 @@ public class QuerySafServiceResponse extends AcsResponse {
 
 	public void setScore(String score) {
 		this.score = score;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Map<Object,Object> getExt() {

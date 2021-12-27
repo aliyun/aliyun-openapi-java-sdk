@@ -31,7 +31,7 @@ public class InitUserAlertResourceRequest extends RpcAcsRequest<InitUserAlertRes
 
 	private String region;
 	public InitUserAlertResourceRequest() {
-		super("Sls", "2019-10-23", "InitUserAlertResource", "sls");
+		super("Sls", "2019-10-23", "InitUserAlertResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

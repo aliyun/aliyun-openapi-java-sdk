@@ -24,8 +24,8 @@ public class AnalyzeProductLogResponseUnmarshaller {
 		
 		analyzeProductLogResponse.setRequestId(_ctx.stringValue("AnalyzeProductLogResponse.RequestId"));
 		analyzeProductLogResponse.setCode(_ctx.stringValue("AnalyzeProductLogResponse.Code"));
-		analyzeProductLogResponse.setSuccess(_ctx.stringValue("AnalyzeProductLogResponse.Success"));
 		analyzeProductLogResponse.setMessage(_ctx.stringValue("AnalyzeProductLogResponse.Message"));
+		analyzeProductLogResponse.setSuccess(_ctx.stringValue("AnalyzeProductLogResponse.Success"));
 	 
 	 	return analyzeProductLogResponse;
 	}

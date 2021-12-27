@@ -29,7 +29,7 @@ public class SyncAlertGroupsRequest extends RpcAcsRequest<SyncAlertGroupsRespons
 
 	private String groups;
 	public SyncAlertGroupsRequest() {
-		super("Sls", "2019-10-23", "SyncAlertGroups", "sls");
+		super("Sls", "2019-10-23", "SyncAlertGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

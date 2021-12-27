@@ -25,7 +25,7 @@ import com.aliyuncs.sls.Endpoint;
 public class GetSlsServiceRequest extends RpcAcsRequest<GetSlsServiceResponse> {
 	   
 	public GetSlsServiceRequest() {
-		super("Sls", "2019-10-23", "GetSlsService", "sls");
+		super("Sls", "2019-10-23", "GetSlsService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

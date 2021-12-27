@@ -23,9 +23,9 @@ public class CreateIngestionJobResponseUnmarshaller {
 	public static CreateIngestionJobResponse unmarshall(CreateIngestionJobResponse createIngestionJobResponse, UnmarshallerContext _ctx) {
 		
 		createIngestionJobResponse.setRequestId(_ctx.stringValue("CreateIngestionJobResponse.RequestId"));
-		createIngestionJobResponse.setSuccess(_ctx.booleanValue("CreateIngestionJobResponse.Success"));
 		createIngestionJobResponse.setCode(_ctx.stringValue("CreateIngestionJobResponse.Code"));
 		createIngestionJobResponse.setMessage(_ctx.stringValue("CreateIngestionJobResponse.Message"));
+		createIngestionJobResponse.setSuccess(_ctx.booleanValue("CreateIngestionJobResponse.Success"));
 	 
 	 	return createIngestionJobResponse;
 	}

@@ -25,7 +25,7 @@ import com.aliyuncs.sls.Endpoint;
 public class OpenSlsServiceRequest extends RpcAcsRequest<OpenSlsServiceResponse> {
 	   
 	public OpenSlsServiceRequest() {
-		super("Sls", "2019-10-23", "OpenSlsService", "sls");
+		super("Sls", "2019-10-23", "OpenSlsService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

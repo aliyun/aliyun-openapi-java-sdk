@@ -29,7 +29,7 @@ public class SyncAlertUsersRequest extends RpcAcsRequest<SyncAlertUsersResponse>
 
 	private String users;
 	public SyncAlertUsersRequest() {
-		super("Sls", "2019-10-23", "SyncAlertUsers", "sls");
+		super("Sls", "2019-10-23", "SyncAlertUsers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

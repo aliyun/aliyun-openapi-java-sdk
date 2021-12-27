@@ -33,7 +33,7 @@ public class CreateResourceOrchestrationRequest extends RpcAcsRequest<CreateReso
 
 	private String assetsId;
 	public CreateResourceOrchestrationRequest() {
-		super("Sls", "2019-10-23", "CreateResourceOrchestration", "sls");
+		super("Sls", "2019-10-23", "CreateResourceOrchestration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

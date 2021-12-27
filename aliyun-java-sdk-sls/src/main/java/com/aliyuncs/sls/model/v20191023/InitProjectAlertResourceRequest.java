@@ -29,7 +29,7 @@ public class InitProjectAlertResourceRequest extends RpcAcsRequest<InitProjectAl
 
 	private String region;
 	public InitProjectAlertResourceRequest() {
-		super("Sls", "2019-10-23", "InitProjectAlertResource", "sls");
+		super("Sls", "2019-10-23", "InitProjectAlertResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

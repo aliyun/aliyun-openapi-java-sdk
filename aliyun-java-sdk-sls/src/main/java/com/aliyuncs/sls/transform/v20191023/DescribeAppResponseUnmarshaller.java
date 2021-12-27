@@ -25,14 +25,14 @@ public class DescribeAppResponseUnmarshaller {
 		
 		describeAppResponse.setRequestId(_ctx.stringValue("DescribeAppResponse.RequestId"));
 		describeAppResponse.setCode(_ctx.stringValue("DescribeAppResponse.Code"));
-		describeAppResponse.setSuccess(_ctx.stringValue("DescribeAppResponse.Success"));
 		describeAppResponse.setMessage(_ctx.stringValue("DescribeAppResponse.Message"));
+		describeAppResponse.setSuccess(_ctx.stringValue("DescribeAppResponse.Success"));
 
 		AppModel appModel = new AppModel();
-		appModel.setUid(_ctx.longValue("DescribeAppResponse.AppModel.Uid"));
+		appModel.setDisplayName(_ctx.stringValue("DescribeAppResponse.AppModel.DisplayName"));
 		appModel.setAppName(_ctx.stringValue("DescribeAppResponse.AppModel.AppName"));
 		appModel.setConfig(_ctx.stringValue("DescribeAppResponse.AppModel.Config"));
-		appModel.setDisplayName(_ctx.stringValue("DescribeAppResponse.AppModel.DisplayName"));
+		appModel.setUid(_ctx.longValue("DescribeAppResponse.AppModel.Uid"));
 		describeAppResponse.setAppModel(appModel);
 	 
 	 	return describeAppResponse;

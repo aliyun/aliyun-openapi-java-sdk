@@ -23,9 +23,9 @@ public class DisableAlertResponseUnmarshaller {
 	public static DisableAlertResponse unmarshall(DisableAlertResponse disableAlertResponse, UnmarshallerContext _ctx) {
 		
 		disableAlertResponse.setRequestId(_ctx.stringValue("DisableAlertResponse.RequestId"));
-		disableAlertResponse.setSuccess(_ctx.booleanValue("DisableAlertResponse.Success"));
 		disableAlertResponse.setCode(_ctx.stringValue("DisableAlertResponse.Code"));
 		disableAlertResponse.setMessage(_ctx.stringValue("DisableAlertResponse.Message"));
+		disableAlertResponse.setSuccess(_ctx.booleanValue("DisableAlertResponse.Success"));
 	 
 	 	return disableAlertResponse;
 	}

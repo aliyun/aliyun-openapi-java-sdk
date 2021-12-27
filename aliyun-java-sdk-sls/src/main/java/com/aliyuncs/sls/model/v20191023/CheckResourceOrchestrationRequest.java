@@ -31,7 +31,7 @@ public class CheckResourceOrchestrationRequest extends RpcAcsRequest<CheckResour
 
 	private String assetsId;
 	public CheckResourceOrchestrationRequest() {
-		super("Sls", "2019-10-23", "CheckResourceOrchestration", "sls");
+		super("Sls", "2019-10-23", "CheckResourceOrchestration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

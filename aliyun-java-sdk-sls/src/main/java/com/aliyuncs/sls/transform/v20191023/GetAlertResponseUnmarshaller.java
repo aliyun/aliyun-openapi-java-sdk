@@ -25,8 +25,8 @@ public class GetAlertResponseUnmarshaller {
 		getAlertResponse.setRequestId(_ctx.stringValue("GetAlertResponse.RequestId"));
 		getAlertResponse.setCode(_ctx.stringValue("GetAlertResponse.Code"));
 		getAlertResponse.setMessage(_ctx.stringValue("GetAlertResponse.Message"));
-		getAlertResponse.setSuccess(_ctx.booleanValue("GetAlertResponse.Success"));
 		getAlertResponse.setData(_ctx.stringValue("GetAlertResponse.Data"));
+		getAlertResponse.setSuccess(_ctx.booleanValue("GetAlertResponse.Success"));
 	 
 	 	return getAlertResponse;
 	}

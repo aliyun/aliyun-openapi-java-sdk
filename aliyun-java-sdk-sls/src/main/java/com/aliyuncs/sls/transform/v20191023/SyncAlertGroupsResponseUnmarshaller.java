@@ -23,10 +23,10 @@ public class SyncAlertGroupsResponseUnmarshaller {
 	public static SyncAlertGroupsResponse unmarshall(SyncAlertGroupsResponse syncAlertGroupsResponse, UnmarshallerContext _ctx) {
 		
 		syncAlertGroupsResponse.setRequestId(_ctx.stringValue("SyncAlertGroupsResponse.RequestId"));
-		syncAlertGroupsResponse.setSuccess(_ctx.booleanValue("SyncAlertGroupsResponse.Success"));
 		syncAlertGroupsResponse.setCode(_ctx.stringValue("SyncAlertGroupsResponse.Code"));
 		syncAlertGroupsResponse.setMessage(_ctx.stringValue("SyncAlertGroupsResponse.Message"));
 		syncAlertGroupsResponse.setData(_ctx.stringValue("SyncAlertGroupsResponse.Data"));
+		syncAlertGroupsResponse.setSuccess(_ctx.booleanValue("SyncAlertGroupsResponse.Success"));
 	 
 	 	return syncAlertGroupsResponse;
 	}

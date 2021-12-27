@@ -24,8 +24,8 @@ public class UpdateAppResponseUnmarshaller {
 		
 		updateAppResponse.setRequestId(_ctx.stringValue("UpdateAppResponse.RequestId"));
 		updateAppResponse.setCode(_ctx.stringValue("UpdateAppResponse.Code"));
-		updateAppResponse.setSuccess(_ctx.stringValue("UpdateAppResponse.Success"));
 		updateAppResponse.setMessage(_ctx.stringValue("UpdateAppResponse.Message"));
+		updateAppResponse.setSuccess(_ctx.stringValue("UpdateAppResponse.Success"));
 	 
 	 	return updateAppResponse;
 	}

@@ -23,9 +23,9 @@ public class OpenSlsServiceResponseUnmarshaller {
 	public static OpenSlsServiceResponse unmarshall(OpenSlsServiceResponse openSlsServiceResponse, UnmarshallerContext _ctx) {
 		
 		openSlsServiceResponse.setRequestId(_ctx.stringValue("OpenSlsServiceResponse.RequestId"));
-		openSlsServiceResponse.setSuccess(_ctx.booleanValue("OpenSlsServiceResponse.Success"));
-		openSlsServiceResponse.setMessage(_ctx.stringValue("OpenSlsServiceResponse.Message"));
 		openSlsServiceResponse.setCode(_ctx.stringValue("OpenSlsServiceResponse.Code"));
+		openSlsServiceResponse.setMessage(_ctx.stringValue("OpenSlsServiceResponse.Message"));
+		openSlsServiceResponse.setSuccess(_ctx.booleanValue("OpenSlsServiceResponse.Success"));
 	 
 	 	return openSlsServiceResponse;
 	}

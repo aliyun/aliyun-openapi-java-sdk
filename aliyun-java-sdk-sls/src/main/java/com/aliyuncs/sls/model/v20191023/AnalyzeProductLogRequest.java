@@ -35,6 +35,8 @@ public class AnalyzeProductLogRequest extends RpcAcsRequest<AnalyzeProductLogRes
 
 	private Integer tTL;
 
+	private Integer hotTTL;
+
 	private String clientIp;
 
 	private String lang;
@@ -45,7 +47,7 @@ public class AnalyzeProductLogRequest extends RpcAcsRequest<AnalyzeProductLogRes
 
 	private Boolean overwrite;
 	public AnalyzeProductLogRequest() {
-		super("Sls", "2019-10-23", "AnalyzeProductLog", "sls");
+		super("Sls", "2019-10-23", "AnalyzeProductLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -105,6 +107,17 @@ public class AnalyzeProductLogRequest extends RpcAcsRequest<AnalyzeProductLogRes
 		this.tTL = tTL;
 		if(tTL != null){
 			putQueryParameter("TTL", tTL.toString());
+		}
+	}
+
+	public Integer getHotTTL() {
+		return this.hotTTL;
+	}
+
+	public void setHotTTL(Integer hotTTL) {
+		this.hotTTL = hotTTL;
+		if(hotTTL != null){
+			putQueryParameter("HotTTL", hotTTL.toString());
 		}
 	}
 

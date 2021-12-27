@@ -26,13 +26,13 @@ public class CreateAppResponse extends AcsResponse {
 
 	private String code;
 
-	private String success;
+	private String appName;
 
 	private String message;
 
 	private String requestId;
 
-	private String appName;
+	private String success;
 
 	public String getCode() {
 		return this.code;
@@ -42,12 +42,12 @@ public class CreateAppResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setAppName(String appName) {
+		this.appName = appName;
 	}
 
 	public String getMessage() {
@@ -66,12 +66,12 @@ public class CreateAppResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override
