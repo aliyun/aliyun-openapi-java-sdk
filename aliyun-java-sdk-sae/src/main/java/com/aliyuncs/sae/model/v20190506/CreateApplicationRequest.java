@@ -109,6 +109,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String appDescription;
 
+	private String acrInstanceId;
+
 	private String vpcId;
 
 	private String imageUrl;
@@ -583,6 +585,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.appDescription = appDescription;
 		if(appDescription != null){
 			putQueryParameter("AppDescription", appDescription);
+		}
+	}
+
+	public String getAcrInstanceId() {
+		return this.acrInstanceId;
+	}
+
+	public void setAcrInstanceId(String acrInstanceId) {
+		this.acrInstanceId = acrInstanceId;
+		if(acrInstanceId != null){
+			putBodyParameter("AcrInstanceId", acrInstanceId);
 		}
 	}
 
