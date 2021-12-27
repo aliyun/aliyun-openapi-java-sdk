@@ -22,56 +22,17 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteScdnDomainRequest extends RpcAcsRequest<DeleteScdnDomainResponse> {
+public class DescribeScdnCcInfoRequest extends RpcAcsRequest<DescribeScdnCcInfoResponse> {
 	   
 
-	private String securityToken;
-
-	private String ownerAccount;
-
-	private String domainName;
-
 	private Long ownerId;
-	public DeleteScdnDomainRequest() {
-		super("scdn", "2017-11-15", "DeleteScdnDomain");
-		setMethod(MethodType.POST);
+	public DescribeScdnCcInfoRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnCcInfo");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -86,8 +47,8 @@ public class DeleteScdnDomainRequest extends RpcAcsRequest<DeleteScdnDomainRespo
 	}
 
 	@Override
-	public Class<DeleteScdnDomainResponse> getResponseClass() {
-		return DeleteScdnDomainResponse.class;
+	public Class<DescribeScdnCcInfoResponse> getResponseClass() {
+		return DescribeScdnCcInfoResponse.class;
 	}
 
 }

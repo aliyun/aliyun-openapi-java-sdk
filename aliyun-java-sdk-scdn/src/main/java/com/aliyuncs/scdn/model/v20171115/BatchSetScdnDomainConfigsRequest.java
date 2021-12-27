@@ -29,11 +29,11 @@ public class BatchSetScdnDomainConfigsRequest extends RpcAcsRequest<BatchSetScdn
 
 	private String domainNames;
 
+	private String securityToken;
+
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public BatchSetScdnDomainConfigsRequest() {
 		super("scdn", "2017-11-15", "BatchSetScdnDomainConfigs");
 		setMethod(MethodType.POST);
@@ -65,6 +65,17 @@ public class BatchSetScdnDomainConfigsRequest extends RpcAcsRequest<BatchSetScdn
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -84,17 +95,6 @@ public class BatchSetScdnDomainConfigsRequest extends RpcAcsRequest<BatchSetScdn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

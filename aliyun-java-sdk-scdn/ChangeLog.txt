@@ -1,3 +1,6 @@
+2021-12-27 Version: 2.2.7
+- Add DescribeScdnDomainCcInfo.
+
 2021-10-08 Version: 2.2.6
 - Fixed SDK update delay.
 

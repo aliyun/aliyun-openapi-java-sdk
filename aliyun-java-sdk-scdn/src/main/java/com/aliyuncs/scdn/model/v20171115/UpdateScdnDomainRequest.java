@@ -27,13 +27,13 @@ public class UpdateScdnDomainRequest extends RpcAcsRequest<UpdateScdnDomainRespo
 
 	private String sources;
 
-	private String domainName;
-
-	private Long ownerId;
-
 	private String resourceGroupId;
 
 	private String securityToken;
+
+	private String domainName;
+
+	private Long ownerId;
 	public UpdateScdnDomainRequest() {
 		super("scdn", "2017-11-15", "UpdateScdnDomain");
 		setMethod(MethodType.POST);
@@ -51,28 +51,6 @@ public class UpdateScdnDomainRequest extends RpcAcsRequest<UpdateScdnDomainRespo
 		this.sources = sources;
 		if(sources != null){
 			putQueryParameter("Sources", sources);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -95,6 +73,28 @@ public class UpdateScdnDomainRequest extends RpcAcsRequest<UpdateScdnDomainRespo
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
