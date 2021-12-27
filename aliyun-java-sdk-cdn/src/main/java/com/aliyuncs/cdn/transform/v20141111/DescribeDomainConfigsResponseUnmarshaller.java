@@ -25,7 +25,6 @@ import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConf
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.DynamicConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig;
-import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfig;
 import com.aliyuncs.cdn.model.v20141111.DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig;
@@ -174,12 +173,6 @@ public class DescribeDomainConfigsResponseUnmarshaller {
 		macServiceConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.ConfigId"));
 		macServiceConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.Status"));
 		domainConfigs.setMacServiceConfig(macServiceConfig);
-
-		GreenManagerConfig greenManagerConfig = new GreenManagerConfig();
-		greenManagerConfig.setEnabled(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.Enabled"));
-		greenManagerConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.ConfigId"));
-		greenManagerConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.Status"));
-		domainConfigs.setGreenManagerConfig(greenManagerConfig);
 
 		HttpsOptionConfig httpsOptionConfig = new HttpsOptionConfig();
 		httpsOptionConfig.setHttp2(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.Http2"));

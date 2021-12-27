@@ -12,12 +12,12 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.transform.v20180510;
+package com.aliyuncs.cdn.transform.v20141111;
 
-import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse;
-import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse.Configs;
-import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse.Configs.OssLogConfig;
-import com.aliyuncs.cdn.model.v20180510.DescribeUserConfigsResponse.Configs.WafConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeUserConfigsResponse;
+import com.aliyuncs.cdn.model.v20141111.DescribeUserConfigsResponse.Configs;
+import com.aliyuncs.cdn.model.v20141111.DescribeUserConfigsResponse.Configs.OssLogConfig;
+import com.aliyuncs.cdn.model.v20141111.DescribeUserConfigsResponse.Configs.WafConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

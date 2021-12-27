@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20180510;
+package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,18 +22,16 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetUserGreenManagerConfigRequest extends RpcAcsRequest<SetUserGreenManagerConfigResponse> {
+public class DescribeUserConfigsRequest extends RpcAcsRequest<DescribeUserConfigsResponse> {
 	   
 
 	private Long ownerId;
 
 	private String securityToken;
 
-	private String quota;
-
-	private String ratio;
-	public SetUserGreenManagerConfigRequest() {
-		super("Cdn", "2018-05-10", "SetUserGreenManagerConfig");
+	private String config;
+	public DescribeUserConfigsRequest() {
+		super("Cdn", "2014-11-11", "DescribeUserConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,31 +61,20 @@ public class SetUserGreenManagerConfigRequest extends RpcAcsRequest<SetUserGreen
 		}
 	}
 
-	public String getQuota() {
-		return this.quota;
+	public String getConfig() {
+		return this.config;
 	}
 
-	public void setQuota(String quota) {
-		this.quota = quota;
-		if(quota != null){
-			putQueryParameter("Quota", quota);
-		}
-	}
-
-	public String getRatio() {
-		return this.ratio;
-	}
-
-	public void setRatio(String ratio) {
-		this.ratio = ratio;
-		if(ratio != null){
-			putQueryParameter("Ratio", ratio);
+	public void setConfig(String config) {
+		this.config = config;
+		if(config != null){
+			putQueryParameter("Config", config);
 		}
 	}
 
 	@Override
-	public Class<SetUserGreenManagerConfigResponse> getResponseClass() {
-		return SetUserGreenManagerConfigResponse.class;
+	public Class<DescribeUserConfigsResponse> getResponseClass() {
+		return DescribeUserConfigsResponse.class;
 	}
 
 }

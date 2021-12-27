@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20180510;
+package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20180510.DescribeUserConfigsResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20141111.DescribeUserConfigsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**

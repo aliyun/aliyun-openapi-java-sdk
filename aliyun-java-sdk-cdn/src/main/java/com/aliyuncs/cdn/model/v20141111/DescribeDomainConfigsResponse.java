@@ -93,8 +93,6 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		private MacServiceConfig macServiceConfig;
 
-		private GreenManagerConfig greenManagerConfig;
-
 		private HttpsOptionConfig httpsOptionConfig;
 
 		private AliBusinessConfig aliBusinessConfig;
@@ -283,14 +281,6 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 		public void setMacServiceConfig(MacServiceConfig macServiceConfig) {
 			this.macServiceConfig = macServiceConfig;
-		}
-
-		public GreenManagerConfig getGreenManagerConfig() {
-			return this.greenManagerConfig;
-		}
-
-		public void setGreenManagerConfig(GreenManagerConfig greenManagerConfig) {
-			this.greenManagerConfig = greenManagerConfig;
 		}
 
 		public HttpsOptionConfig getHttpsOptionConfig() {
@@ -1337,39 +1327,6 @@ public class DescribeDomainConfigsResponse extends AcsResponse {
 
 			public void setProcessResult(String processResult) {
 				this.processResult = processResult;
-			}
-
-			public String getConfigId() {
-				return this.configId;
-			}
-
-			public void setConfigId(String configId) {
-				this.configId = configId;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-		}
-
-		public static class GreenManagerConfig {
-
-			private String enabled;
-
-			private String configId;
-
-			private String status;
-
-			public String getEnabled() {
-				return this.enabled;
-			}
-
-			public void setEnabled(String enabled) {
-				this.enabled = enabled;
 			}
 
 			public String getConfigId() {
