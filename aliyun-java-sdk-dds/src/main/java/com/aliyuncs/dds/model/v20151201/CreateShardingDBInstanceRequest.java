@@ -38,6 +38,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private String storageEngine;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String engine;
@@ -151,6 +153,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.storageEngine = storageEngine;
 		if(storageEngine != null){
 			putQueryParameter("StorageEngine", storageEngine);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

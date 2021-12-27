@@ -1,3 +1,6 @@
+2021-12-27 Version: 3.6.3
+- DescribeDBInstances Add CapacityUnit.
+
 2021-12-13 Version: 3.6.2
 - CreateServerlessDBInstance Add CapacityUnit.
 

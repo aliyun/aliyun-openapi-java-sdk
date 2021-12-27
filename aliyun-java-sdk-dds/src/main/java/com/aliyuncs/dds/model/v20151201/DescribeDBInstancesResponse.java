@@ -105,8 +105,6 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private Integer dBInstanceStorage;
 
-		private String capacityUnit;
-
 		private String resourceGroupId;
 
 		private String zoneId;
@@ -120,6 +118,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		private String replicationFactor;
 
 		private String kindCode;
+
+		private String cloudType;
+
+		private String capacityUnit;
 
 		private List<Tag> tags;
 
@@ -239,14 +241,6 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dBInstanceStorage = dBInstanceStorage;
 		}
 
-		public String getCapacityUnit() {
-			return this.capacityUnit;
-		}
-
-		public void setCapacityUnit(String capacityUnit) {
-			this.capacityUnit = capacityUnit;
-		}
-
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -301,6 +295,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setKindCode(String kindCode) {
 			this.kindCode = kindCode;
+		}
+
+		public String getCloudType() {
+			return this.cloudType;
+		}
+
+		public void setCloudType(String cloudType) {
+			this.cloudType = cloudType;
+		}
+
+		public String getCapacityUnit() {
+			return this.capacityUnit;
+		}
+
+		public void setCapacityUnit(String capacityUnit) {
+			this.capacityUnit = capacityUnit;
 		}
 
 		public List<Tag> getTags() {
