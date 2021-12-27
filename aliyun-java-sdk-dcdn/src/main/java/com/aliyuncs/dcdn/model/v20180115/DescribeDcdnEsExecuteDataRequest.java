@@ -22,14 +22,18 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableDcdnDomainOfflineLogDeliveryRequest extends RpcAcsRequest<DisableDcdnDomainOfflineLogDeliveryResponse> {
+public class DescribeDcdnEsExecuteDataRequest extends RpcAcsRequest<DescribeDcdnEsExecuteDataResponse> {
 	   
 
-	private String domainName;
+	private String startTime;
+
+	private String endTime;
 
 	private Long ownerId;
-	public DisableDcdnDomainOfflineLogDeliveryRequest() {
-		super("dcdn", "2018-01-15", "DisableDcdnDomainOfflineLogDelivery");
+
+	private String ruleId;
+	public DescribeDcdnEsExecuteDataRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnEsExecuteData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,25 @@ public class DisableDcdnDomainOfflineLogDeliveryRequest extends RpcAcsRequest<Di
 		} catch (Exception e) {}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putBodyParameter("DomainName", domainName);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -59,9 +74,20 @@ public class DisableDcdnDomainOfflineLogDeliveryRequest extends RpcAcsRequest<Di
 		}
 	}
 
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
+		}
+	}
+
 	@Override
-	public Class<DisableDcdnDomainOfflineLogDeliveryResponse> getResponseClass() {
-		return DisableDcdnDomainOfflineLogDeliveryResponse.class;
+	public Class<DescribeDcdnEsExecuteDataResponse> getResponseClass() {
+		return DescribeDcdnEsExecuteDataResponse.class;
 	}
 
 }

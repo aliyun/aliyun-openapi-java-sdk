@@ -16,18 +16,18 @@ package com.aliyuncs.dcdn.model.v20180115;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnOfflineLogDeliveryFieldResponseUnmarshaller;
+import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnEsExecuteDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDcdnOfflineLogDeliveryFieldResponse extends AcsResponse {
+public class DescribeDcdnEsExecuteDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Field> fields;
+	private List<Content> contents;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,50 +37,50 @@ public class DescribeDcdnOfflineLogDeliveryFieldResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Field> getFields() {
-		return this.fields;
+	public List<Content> getContents() {
+		return this.contents;
 	}
 
-	public void setFields(List<Field> fields) {
-		this.fields = fields;
+	public void setContents(List<Content> contents) {
+		this.contents = contents;
 	}
 
-	public static class Field {
+	public static class Content {
 
-		private String fieldId;
+		private String name;
 
-		private String fieldName;
+		private List<String> columns;
 
-		private String description;
+		private List<String> points;
 
-		public String getFieldId() {
-			return this.fieldId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setFieldId(String fieldId) {
-			this.fieldId = fieldId;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getFieldName() {
-			return this.fieldName;
+		public List<String> getColumns() {
+			return this.columns;
 		}
 
-		public void setFieldName(String fieldName) {
-			this.fieldName = fieldName;
+		public void setColumns(List<String> columns) {
+			this.columns = columns;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public List<String> getPoints() {
+			return this.points;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setPoints(List<String> points) {
+			this.points = points;
 		}
 	}
 
 	@Override
-	public DescribeDcdnOfflineLogDeliveryFieldResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDcdnOfflineLogDeliveryFieldResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDcdnEsExecuteDataResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDcdnEsExecuteDataResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -22,17 +22,45 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnOfflineLogDeliveryRegionsRequest extends RpcAcsRequest<DescribeDcdnOfflineLogDeliveryRegionsResponse> {
+public class DescribeDcdnEsExceptionDataRequest extends RpcAcsRequest<DescribeDcdnEsExceptionDataResponse> {
 	   
 
+	private String startTime;
+
+	private String endTime;
+
 	private Long ownerId;
-	public DescribeDcdnOfflineLogDeliveryRegionsRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnOfflineLogDeliveryRegions");
+
+	private String ruleId;
+	public DescribeDcdnEsExceptionDataRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnEsExceptionData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -46,9 +74,20 @@ public class DescribeDcdnOfflineLogDeliveryRegionsRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
+		}
+	}
+
 	@Override
-	public Class<DescribeDcdnOfflineLogDeliveryRegionsResponse> getResponseClass() {
-		return DescribeDcdnOfflineLogDeliveryRegionsResponse.class;
+	public Class<DescribeDcdnEsExceptionDataResponse> getResponseClass() {
+		return DescribeDcdnEsExceptionDataResponse.class;
 	}
 
 }
