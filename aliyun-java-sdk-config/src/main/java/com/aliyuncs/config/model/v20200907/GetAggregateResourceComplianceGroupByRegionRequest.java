@@ -22,32 +22,19 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class GenerateAggregateConfigRulesReportRequest extends RpcAcsRequest<GenerateAggregateConfigRulesReportResponse> {
+public class GetAggregateResourceComplianceGroupByRegionRequest extends RpcAcsRequest<GetAggregateResourceComplianceGroupByRegionResponse> {
 	   
-
-	private String clientToken;
 
 	private String configRuleIds;
 
 	private String aggregatorId;
-	public GenerateAggregateConfigRulesReportRequest() {
-		super("Config", "2020-09-07", "GenerateAggregateConfigRulesReport");
+	public GetAggregateResourceComplianceGroupByRegionRequest() {
+		super("Config", "2020-09-07", "GetAggregateResourceComplianceGroupByRegion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getConfigRuleIds() {
@@ -57,7 +44,7 @@ public class GenerateAggregateConfigRulesReportRequest extends RpcAcsRequest<Gen
 	public void setConfigRuleIds(String configRuleIds) {
 		this.configRuleIds = configRuleIds;
 		if(configRuleIds != null){
-			putBodyParameter("ConfigRuleIds", configRuleIds);
+			putQueryParameter("ConfigRuleIds", configRuleIds);
 		}
 	}
 
@@ -68,13 +55,13 @@ public class GenerateAggregateConfigRulesReportRequest extends RpcAcsRequest<Gen
 	public void setAggregatorId(String aggregatorId) {
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
-			putBodyParameter("AggregatorId", aggregatorId);
+			putQueryParameter("AggregatorId", aggregatorId);
 		}
 	}
 
 	@Override
-	public Class<GenerateAggregateConfigRulesReportResponse> getResponseClass() {
-		return GenerateAggregateConfigRulesReportResponse.class;
+	public Class<GetAggregateResourceComplianceGroupByRegionResponse> getResponseClass() {
+		return GetAggregateResourceComplianceGroupByRegionResponse.class;
 	}
 
 }

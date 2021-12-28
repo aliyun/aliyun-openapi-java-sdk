@@ -23,6 +23,7 @@ public class GenerateConfigRulesReportResponseUnmarshaller {
 	public static GenerateConfigRulesReportResponse unmarshall(GenerateConfigRulesReportResponse generateConfigRulesReportResponse, UnmarshallerContext _ctx) {
 		
 		generateConfigRulesReportResponse.setRequestId(_ctx.stringValue("GenerateConfigRulesReportResponse.RequestId"));
+		generateConfigRulesReportResponse.setReportId(_ctx.stringValue("GenerateConfigRulesReportResponse.ReportId"));
 	 
 	 	return generateConfigRulesReportResponse;
 	}

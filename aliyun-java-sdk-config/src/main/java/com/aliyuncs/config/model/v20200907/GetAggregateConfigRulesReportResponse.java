@@ -56,6 +56,8 @@ public class GetAggregateConfigRulesReportResponse extends AcsResponse {
 
 		private Long reportCreateTimestamp;
 
+		private String reportId;
+
 		public String getReportUrl() {
 			return this.reportUrl;
 		}
@@ -94,6 +96,14 @@ public class GetAggregateConfigRulesReportResponse extends AcsResponse {
 
 		public void setReportCreateTimestamp(Long reportCreateTimestamp) {
 			this.reportCreateTimestamp = reportCreateTimestamp;
+		}
+
+		public String getReportId() {
+			return this.reportId;
+		}
+
+		public void setReportId(String reportId) {
+			this.reportId = reportId;
 		}
 	}
 

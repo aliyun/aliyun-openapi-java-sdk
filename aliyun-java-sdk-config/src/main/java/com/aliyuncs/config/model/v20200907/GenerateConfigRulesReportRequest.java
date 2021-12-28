@@ -26,6 +26,8 @@ public class GenerateConfigRulesReportRequest extends RpcAcsRequest<GenerateConf
 	   
 
 	private String clientToken;
+
+	private String configRuleIds;
 	public GenerateConfigRulesReportRequest() {
 		super("Config", "2020-09-07", "GenerateConfigRulesReport");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GenerateConfigRulesReportRequest extends RpcAcsRequest<GenerateConf
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getConfigRuleIds() {
+		return this.configRuleIds;
+	}
+
+	public void setConfigRuleIds(String configRuleIds) {
+		this.configRuleIds = configRuleIds;
+		if(configRuleIds != null){
+			putBodyParameter("ConfigRuleIds", configRuleIds);
 		}
 	}
 

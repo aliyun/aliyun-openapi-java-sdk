@@ -28,6 +28,8 @@ public class GenerateAggregateConfigRulesReportResponse extends AcsResponse {
 
 	private String aggregatorId;
 
+	private String reportId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class GenerateAggregateConfigRulesReportResponse extends AcsResponse {
 
 	public void setAggregatorId(String aggregatorId) {
 		this.aggregatorId = aggregatorId;
+	}
+
+	public String getReportId() {
+		return this.reportId;
+	}
+
+	public void setReportId(String reportId) {
+		this.reportId = reportId;
 	}
 
 	@Override

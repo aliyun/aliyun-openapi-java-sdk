@@ -1,3 +1,6 @@
+2021-12-28 Version: 2.0.7
+- Support managed rule query.
+
 2021-12-23 Version: 2.0.6
 - Fix array params.
 

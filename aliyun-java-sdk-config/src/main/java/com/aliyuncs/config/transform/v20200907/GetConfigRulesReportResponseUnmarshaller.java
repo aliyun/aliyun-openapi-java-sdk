@@ -30,6 +30,7 @@ public class GetConfigRulesReportResponseUnmarshaller {
 		configRulesReport.setReportUrl(_ctx.stringValue("GetConfigRulesReportResponse.ConfigRulesReport.ReportUrl"));
 		configRulesReport.setAccountId(_ctx.longValue("GetConfigRulesReportResponse.ConfigRulesReport.AccountId"));
 		configRulesReport.setReportCreateTimestamp(_ctx.longValue("GetConfigRulesReportResponse.ConfigRulesReport.ReportCreateTimestamp"));
+		configRulesReport.setReportId(_ctx.stringValue("GetConfigRulesReportResponse.ConfigRulesReport.ReportId"));
 		getConfigRulesReportResponse.setConfigRulesReport(configRulesReport);
 	 
 	 	return getConfigRulesReportResponse;

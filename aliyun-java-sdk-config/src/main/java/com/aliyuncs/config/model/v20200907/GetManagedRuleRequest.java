@@ -22,12 +22,12 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetConfigRulesReportRequest extends RpcAcsRequest<GetConfigRulesReportResponse> {
+public class GetManagedRuleRequest extends RpcAcsRequest<GetManagedRuleResponse> {
 	   
 
-	private String reportId;
-	public GetConfigRulesReportRequest() {
-		super("Config", "2020-09-07", "GetConfigRulesReport");
+	private String identifier;
+	public GetManagedRuleRequest() {
+		super("Config", "2020-09-07", "GetManagedRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class GetConfigRulesReportRequest extends RpcAcsRequest<GetConfigRulesRep
 		} catch (Exception e) {}
 	}
 
-	public String getReportId() {
-		return this.reportId;
+	public String getIdentifier() {
+		return this.identifier;
 	}
 
-	public void setReportId(String reportId) {
-		this.reportId = reportId;
-		if(reportId != null){
-			putQueryParameter("ReportId", reportId);
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+		if(identifier != null){
+			putQueryParameter("Identifier", identifier);
 		}
 	}
 
 	@Override
-	public Class<GetConfigRulesReportResponse> getResponseClass() {
-		return GetConfigRulesReportResponse.class;
+	public Class<GetManagedRuleResponse> getResponseClass() {
+		return GetManagedRuleResponse.class;
 	}
 
 }

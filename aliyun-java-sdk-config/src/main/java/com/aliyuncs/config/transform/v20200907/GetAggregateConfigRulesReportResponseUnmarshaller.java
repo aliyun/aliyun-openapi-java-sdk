@@ -31,6 +31,7 @@ public class GetAggregateConfigRulesReportResponseUnmarshaller {
 		configRulesReport.setAccountId(_ctx.longValue("GetAggregateConfigRulesReportResponse.ConfigRulesReport.AccountId"));
 		configRulesReport.setAggregatorId(_ctx.stringValue("GetAggregateConfigRulesReportResponse.ConfigRulesReport.AggregatorId"));
 		configRulesReport.setReportCreateTimestamp(_ctx.longValue("GetAggregateConfigRulesReportResponse.ConfigRulesReport.ReportCreateTimestamp"));
+		configRulesReport.setReportId(_ctx.stringValue("GetAggregateConfigRulesReportResponse.ConfigRulesReport.ReportId"));
 		getAggregateConfigRulesReportResponse.setConfigRulesReport(configRulesReport);
 	 
 	 	return getAggregateConfigRulesReportResponse;

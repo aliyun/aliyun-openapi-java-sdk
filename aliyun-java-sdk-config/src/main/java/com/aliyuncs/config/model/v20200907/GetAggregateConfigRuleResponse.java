@@ -82,6 +82,8 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 		private String configRuleTriggerTypes;
 
+		private String tagKeyLogicScope;
+
 		private Source source;
 
 		private ManagedRule managedRule;
@@ -226,6 +228,14 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 		public void setConfigRuleTriggerTypes(String configRuleTriggerTypes) {
 			this.configRuleTriggerTypes = configRuleTriggerTypes;
+		}
+
+		public String getTagKeyLogicScope() {
+			return this.tagKeyLogicScope;
+		}
+
+		public void setTagKeyLogicScope(String tagKeyLogicScope) {
+			this.tagKeyLogicScope = tagKeyLogicScope;
 		}
 
 		public Source getSource() {

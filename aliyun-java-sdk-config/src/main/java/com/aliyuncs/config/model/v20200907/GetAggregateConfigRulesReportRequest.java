@@ -25,14 +25,27 @@ import com.aliyuncs.config.Endpoint;
 public class GetAggregateConfigRulesReportRequest extends RpcAcsRequest<GetAggregateConfigRulesReportResponse> {
 	   
 
+	private String reportId;
+
 	private String aggregatorId;
 	public GetAggregateConfigRulesReportRequest() {
 		super("Config", "2020-09-07", "GetAggregateConfigRulesReport");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReportId() {
+		return this.reportId;
+	}
+
+	public void setReportId(String reportId) {
+		this.reportId = reportId;
+		if(reportId != null){
+			putQueryParameter("ReportId", reportId);
+		}
 	}
 
 	public String getAggregatorId() {

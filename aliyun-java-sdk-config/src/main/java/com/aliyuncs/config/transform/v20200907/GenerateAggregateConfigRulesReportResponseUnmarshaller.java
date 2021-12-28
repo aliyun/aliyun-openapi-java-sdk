@@ -24,6 +24,7 @@ public class GenerateAggregateConfigRulesReportResponseUnmarshaller {
 		
 		generateAggregateConfigRulesReportResponse.setRequestId(_ctx.stringValue("GenerateAggregateConfigRulesReportResponse.RequestId"));
 		generateAggregateConfigRulesReportResponse.setAggregatorId(_ctx.stringValue("GenerateAggregateConfigRulesReportResponse.AggregatorId"));
+		generateAggregateConfigRulesReportResponse.setReportId(_ctx.stringValue("GenerateAggregateConfigRulesReportResponse.ReportId"));
 	 
 	 	return generateAggregateConfigRulesReportResponse;
 	}

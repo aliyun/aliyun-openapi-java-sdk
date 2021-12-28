@@ -26,12 +26,22 @@ public class GenerateConfigRulesReportResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String reportId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getReportId() {
+		return this.reportId;
+	}
+
+	public void setReportId(String reportId) {
+		this.reportId = reportId;
 	}
 
 	@Override

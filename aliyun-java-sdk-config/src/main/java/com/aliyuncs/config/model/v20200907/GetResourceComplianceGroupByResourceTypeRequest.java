@@ -22,32 +22,17 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class GenerateAggregateConfigRulesReportRequest extends RpcAcsRequest<GenerateAggregateConfigRulesReportResponse> {
+public class GetResourceComplianceGroupByResourceTypeRequest extends RpcAcsRequest<GetResourceComplianceGroupByResourceTypeResponse> {
 	   
 
-	private String clientToken;
-
 	private String configRuleIds;
-
-	private String aggregatorId;
-	public GenerateAggregateConfigRulesReportRequest() {
-		super("Config", "2020-09-07", "GenerateAggregateConfigRulesReport");
+	public GetResourceComplianceGroupByResourceTypeRequest() {
+		super("Config", "2020-09-07", "GetResourceComplianceGroupByResourceType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getConfigRuleIds() {
@@ -57,24 +42,13 @@ public class GenerateAggregateConfigRulesReportRequest extends RpcAcsRequest<Gen
 	public void setConfigRuleIds(String configRuleIds) {
 		this.configRuleIds = configRuleIds;
 		if(configRuleIds != null){
-			putBodyParameter("ConfigRuleIds", configRuleIds);
-		}
-	}
-
-	public String getAggregatorId() {
-		return this.aggregatorId;
-	}
-
-	public void setAggregatorId(String aggregatorId) {
-		this.aggregatorId = aggregatorId;
-		if(aggregatorId != null){
-			putBodyParameter("AggregatorId", aggregatorId);
+			putQueryParameter("ConfigRuleIds", configRuleIds);
 		}
 	}
 
 	@Override
-	public Class<GenerateAggregateConfigRulesReportResponse> getResponseClass() {
-		return GenerateAggregateConfigRulesReportResponse.class;
+	public Class<GetResourceComplianceGroupByResourceTypeResponse> getResponseClass() {
+		return GetResourceComplianceGroupByResourceTypeResponse.class;
 	}
 
 }

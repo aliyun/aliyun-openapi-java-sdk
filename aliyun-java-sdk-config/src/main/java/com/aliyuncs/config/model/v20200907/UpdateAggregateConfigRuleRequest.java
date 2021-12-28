@@ -52,6 +52,8 @@ public class UpdateAggregateConfigRuleRequest extends RpcAcsRequest<UpdateAggreg
 
 	private String configRuleName;
 
+	private String tagKeyLogicScope;
+
 	private String maximumExecutionFrequency;
 
 	private String excludeResourceIdsScope;
@@ -211,6 +213,17 @@ public class UpdateAggregateConfigRuleRequest extends RpcAcsRequest<UpdateAggreg
 		this.configRuleName = configRuleName;
 		if(configRuleName != null){
 			putBodyParameter("ConfigRuleName", configRuleName);
+		}
+	}
+
+	public String getTagKeyLogicScope() {
+		return this.tagKeyLogicScope;
+	}
+
+	public void setTagKeyLogicScope(String tagKeyLogicScope) {
+		this.tagKeyLogicScope = tagKeyLogicScope;
+		if(tagKeyLogicScope != null){
+			putBodyParameter("TagKeyLogicScope", tagKeyLogicScope);
 		}
 	}
 
