@@ -37,7 +37,11 @@ public class DescribeClientEventsRequest extends RpcAcsRequest<DescribeClientEve
 
 	private String desktopId;
 
+	private String desktopName;
+
 	private String endTime;
+
+	private String officeSiteName;
 
 	private String desktopIp;
 
@@ -119,6 +123,17 @@ public class DescribeClientEventsRequest extends RpcAcsRequest<DescribeClientEve
 		}
 	}
 
+	public String getDesktopName() {
+		return this.desktopName;
+	}
+
+	public void setDesktopName(String desktopName) {
+		this.desktopName = desktopName;
+		if(desktopName != null){
+			putQueryParameter("DesktopName", desktopName);
+		}
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -127,6 +142,17 @@ public class DescribeClientEventsRequest extends RpcAcsRequest<DescribeClientEve
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getOfficeSiteName() {
+		return this.officeSiteName;
+	}
+
+	public void setOfficeSiteName(String officeSiteName) {
+		this.officeSiteName = officeSiteName;
+		if(officeSiteName != null){
+			putQueryParameter("OfficeSiteName", officeSiteName);
 		}
 	}
 

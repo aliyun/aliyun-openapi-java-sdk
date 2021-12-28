@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScaleStrategysResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<ScaleStrategy> scaleStrategys;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribeScaleStrategysResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ScaleStrategy> getScaleStrategys() {
@@ -59,17 +59,17 @@ public class DescribeScaleStrategysResponse extends AcsResponse {
 
 		private String scaleStrategyId;
 
+		private Integer maxDesktopsCount;
+
+		private Integer maxAvailableDesktopsCount;
+
 		private String scaleStrategyName;
 
 		private String scaleStrategyType;
 
 		private Integer minDesktopsCount;
 
-		private Integer maxDesktopsCount;
-
 		private Integer minAvailableDesktopsCount;
-
-		private Integer maxAvailableDesktopsCount;
 
 		private Integer scaleStep;
 
@@ -79,6 +79,22 @@ public class DescribeScaleStrategysResponse extends AcsResponse {
 
 		public void setScaleStrategyId(String scaleStrategyId) {
 			this.scaleStrategyId = scaleStrategyId;
+		}
+
+		public Integer getMaxDesktopsCount() {
+			return this.maxDesktopsCount;
+		}
+
+		public void setMaxDesktopsCount(Integer maxDesktopsCount) {
+			this.maxDesktopsCount = maxDesktopsCount;
+		}
+
+		public Integer getMaxAvailableDesktopsCount() {
+			return this.maxAvailableDesktopsCount;
+		}
+
+		public void setMaxAvailableDesktopsCount(Integer maxAvailableDesktopsCount) {
+			this.maxAvailableDesktopsCount = maxAvailableDesktopsCount;
 		}
 
 		public String getScaleStrategyName() {
@@ -105,28 +121,12 @@ public class DescribeScaleStrategysResponse extends AcsResponse {
 			this.minDesktopsCount = minDesktopsCount;
 		}
 
-		public Integer getMaxDesktopsCount() {
-			return this.maxDesktopsCount;
-		}
-
-		public void setMaxDesktopsCount(Integer maxDesktopsCount) {
-			this.maxDesktopsCount = maxDesktopsCount;
-		}
-
 		public Integer getMinAvailableDesktopsCount() {
 			return this.minAvailableDesktopsCount;
 		}
 
 		public void setMinAvailableDesktopsCount(Integer minAvailableDesktopsCount) {
 			this.minAvailableDesktopsCount = minAvailableDesktopsCount;
-		}
-
-		public Integer getMaxAvailableDesktopsCount() {
-			return this.maxAvailableDesktopsCount;
-		}
-
-		public void setMaxAvailableDesktopsCount(Integer maxAvailableDesktopsCount) {
-			this.maxAvailableDesktopsCount = maxAvailableDesktopsCount;
 		}
 
 		public Integer getScaleStep() {

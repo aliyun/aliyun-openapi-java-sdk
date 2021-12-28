@@ -25,6 +25,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class ListDirectoryUsersRequest extends RpcAcsRequest<ListDirectoryUsersResponse> {
 	   
 
+	private String oUPath;
+
 	private String filter;
 
 	private String nextToken;
@@ -39,6 +41,17 @@ public class ListDirectoryUsersRequest extends RpcAcsRequest<ListDirectoryUsersR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOUPath() {
+		return this.oUPath;
+	}
+
+	public void setOUPath(String oUPath) {
+		this.oUPath = oUPath;
+		if(oUPath != null){
+			putQueryParameter("OUPath", oUPath);
+		}
 	}
 
 	public String getFilter() {

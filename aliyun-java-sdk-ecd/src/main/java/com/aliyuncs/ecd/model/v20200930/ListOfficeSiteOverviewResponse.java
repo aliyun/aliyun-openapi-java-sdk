@@ -61,15 +61,23 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 
 		private Integer totalEdsCount;
 
+		private Integer totalEdsCountForGroup;
+
 		private Integer willExpiredEdsCount;
+
+		private Integer willExpiredEdsCountForGroup;
 
 		private String officeSiteId;
 
 		private Integer runningEdsCount;
 
+		private Integer runningEdsCountForGroup;
+
 		private String officeSiteName;
 
 		private Integer hasExpiredEdsCount;
+
+		private Integer hasExpiredEdsCountForGroup;
 
 		private String regionId;
 
@@ -89,12 +97,28 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 			this.totalEdsCount = totalEdsCount;
 		}
 
+		public Integer getTotalEdsCountForGroup() {
+			return this.totalEdsCountForGroup;
+		}
+
+		public void setTotalEdsCountForGroup(Integer totalEdsCountForGroup) {
+			this.totalEdsCountForGroup = totalEdsCountForGroup;
+		}
+
 		public Integer getWillExpiredEdsCount() {
 			return this.willExpiredEdsCount;
 		}
 
 		public void setWillExpiredEdsCount(Integer willExpiredEdsCount) {
 			this.willExpiredEdsCount = willExpiredEdsCount;
+		}
+
+		public Integer getWillExpiredEdsCountForGroup() {
+			return this.willExpiredEdsCountForGroup;
+		}
+
+		public void setWillExpiredEdsCountForGroup(Integer willExpiredEdsCountForGroup) {
+			this.willExpiredEdsCountForGroup = willExpiredEdsCountForGroup;
 		}
 
 		public String getOfficeSiteId() {
@@ -113,6 +137,14 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 			this.runningEdsCount = runningEdsCount;
 		}
 
+		public Integer getRunningEdsCountForGroup() {
+			return this.runningEdsCountForGroup;
+		}
+
+		public void setRunningEdsCountForGroup(Integer runningEdsCountForGroup) {
+			this.runningEdsCountForGroup = runningEdsCountForGroup;
+		}
+
 		public String getOfficeSiteName() {
 			return this.officeSiteName;
 		}
@@ -127,6 +159,14 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 
 		public void setHasExpiredEdsCount(Integer hasExpiredEdsCount) {
 			this.hasExpiredEdsCount = hasExpiredEdsCount;
+		}
+
+		public Integer getHasExpiredEdsCountForGroup() {
+			return this.hasExpiredEdsCountForGroup;
+		}
+
+		public void setHasExpiredEdsCountForGroup(Integer hasExpiredEdsCountForGroup) {
+			this.hasExpiredEdsCountForGroup = hasExpiredEdsCountForGroup;
 		}
 
 		public String getRegionId() {

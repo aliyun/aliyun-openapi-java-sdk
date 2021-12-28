@@ -14,20 +14,27 @@
 
 package com.aliyuncs.ecd.model.v20200930;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.GetDesktopUsersResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.CreateOrderForHardwareResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDesktopUsersResponse extends AcsResponse {
+public class CreateOrderForHardwareResponse extends AcsResponse {
+
+	private Long orderId;
 
 	private String requestId;
 
-	private List<String> endUserIds;
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,17 +44,9 @@ public class GetDesktopUsersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getEndUserIds() {
-		return this.endUserIds;
-	}
-
-	public void setEndUserIds(List<String> endUserIds) {
-		this.endUserIds = endUserIds;
-	}
-
 	@Override
-	public GetDesktopUsersResponse getInstance(UnmarshallerContext context) {
-		return	GetDesktopUsersResponseUnmarshaller.unmarshall(this, context);
+	public CreateOrderForHardwareResponse getInstance(UnmarshallerContext context) {
+		return	CreateOrderForHardwareResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -34,29 +34,32 @@ public class DescribeBundlesResponseUnmarshaller {
 		List<Bundle> bundles = new ArrayList<Bundle>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBundlesResponse.Bundles.Length"); i++) {
 			Bundle bundle = new Bundle();
-			bundle.setImageId(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].ImageId"));
-			bundle.setBundleId(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].BundleId"));
-			bundle.setBundleType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].BundleType"));
-			bundle.setBundleName(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].BundleName"));
 			bundle.setDescription(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].Description"));
-			bundle.setDesktopType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopType"));
+			bundle.setBundleType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].BundleType"));
 			bundle.setOsType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].OsType"));
 			bundle.setStockState(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].StockState"));
+			bundle.setDesktopType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopType"));
 			bundle.setProtocolType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].ProtocolType"));
+			bundle.setBundleId(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].BundleId"));
+			bundle.setImageId(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].ImageId"));
 			bundle.setLanguage(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].Language"));
+			bundle.setBundleName(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].BundleName"));
+			bundle.setDesktopTypeFamily(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopTypeFamily"));
+			bundle.setCreationTime(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].CreationTime"));
 
 			DesktopTypeAttribute desktopTypeAttribute = new DesktopTypeAttribute();
 			desktopTypeAttribute.setCpuCount(_ctx.integerValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopTypeAttribute.CpuCount"));
-			desktopTypeAttribute.setMemorySize(_ctx.integerValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopTypeAttribute.MemorySize"));
 			desktopTypeAttribute.setGpuCount(_ctx.floatValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopTypeAttribute.GpuCount"));
 			desktopTypeAttribute.setGpuSpec(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopTypeAttribute.GpuSpec"));
+			desktopTypeAttribute.setMemorySize(_ctx.integerValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopTypeAttribute.MemorySize"));
 			bundle.setDesktopTypeAttribute(desktopTypeAttribute);
 
 			List<Disk> disks = new ArrayList<Disk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBundlesResponse.Bundles["+ i +"].Disks.Length"); j++) {
 				Disk disk = new Disk();
-				disk.setDiskSize(_ctx.integerValue("DescribeBundlesResponse.Bundles["+ i +"].Disks["+ j +"].DiskSize"));
 				disk.setDiskType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].Disks["+ j +"].DiskType"));
+				disk.setDiskSize(_ctx.integerValue("DescribeBundlesResponse.Bundles["+ i +"].Disks["+ j +"].DiskSize"));
+				disk.setDiskPerformanceLevel(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].Disks["+ j +"].DiskPerformanceLevel"));
 
 				disks.add(disk);
 			}

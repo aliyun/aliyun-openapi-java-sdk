@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserConnectionRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<ConnectionRecord> connectionRecords;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribeUserConnectionRecordsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ConnectionRecord> getConnectionRecords() {
@@ -61,13 +61,13 @@ public class DescribeUserConnectionRecordsResponse extends AcsResponse {
 
 		private String connectStartTime;
 
-		private String connectEndTime;
+		private String desktopName;
 
 		private String connectDuration;
 
-		private String desktopId;
+		private String connectEndTime;
 
-		private String desktopName;
+		private String desktopId;
 
 		public String getConnectionRecordId() {
 			return this.connectionRecordId;
@@ -85,12 +85,12 @@ public class DescribeUserConnectionRecordsResponse extends AcsResponse {
 			this.connectStartTime = connectStartTime;
 		}
 
-		public String getConnectEndTime() {
-			return this.connectEndTime;
+		public String getDesktopName() {
+			return this.desktopName;
 		}
 
-		public void setConnectEndTime(String connectEndTime) {
-			this.connectEndTime = connectEndTime;
+		public void setDesktopName(String desktopName) {
+			this.desktopName = desktopName;
 		}
 
 		public String getConnectDuration() {
@@ -101,20 +101,20 @@ public class DescribeUserConnectionRecordsResponse extends AcsResponse {
 			this.connectDuration = connectDuration;
 		}
 
+		public String getConnectEndTime() {
+			return this.connectEndTime;
+		}
+
+		public void setConnectEndTime(String connectEndTime) {
+			this.connectEndTime = connectEndTime;
+		}
+
 		public String getDesktopId() {
 			return this.desktopId;
 		}
 
 		public void setDesktopId(String desktopId) {
 			this.desktopId = desktopId;
-		}
-
-		public String getDesktopName() {
-			return this.desktopName;
-		}
-
-		public void setDesktopName(String desktopName) {
-			this.desktopName = desktopName;
 		}
 	}
 

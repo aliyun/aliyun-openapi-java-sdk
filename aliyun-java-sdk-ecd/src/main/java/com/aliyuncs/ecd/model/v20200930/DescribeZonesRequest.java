@@ -24,6 +24,8 @@ import com.aliyuncs.ecd.Endpoint;
  */
 public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	   
+
+	private String cloudType;
 	public DescribeZonesRequest() {
 		super("ecd", "2020-09-30", "DescribeZones");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCloudType() {
+		return this.cloudType;
+	}
+
+	public void setCloudType(String cloudType) {
+		this.cloudType = cloudType;
+		if(cloudType != null){
+			putQueryParameter("CloudType", cloudType);
+		}
 	}
 
 	@Override

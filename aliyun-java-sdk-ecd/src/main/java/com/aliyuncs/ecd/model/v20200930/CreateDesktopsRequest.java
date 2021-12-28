@@ -32,6 +32,10 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 	private String userAssignMode;
 
+	private String hostname;
+
+	private Boolean desktopNameSuffix;
+
 	private String directoryId;
 
 	private List<String> endUserIds;
@@ -100,6 +104,28 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		this.userAssignMode = userAssignMode;
 		if(userAssignMode != null){
 			putQueryParameter("UserAssignMode", userAssignMode);
+		}
+	}
+
+	public String getHostname() {
+		return this.hostname;
+	}
+
+	public void setHostname(String hostname) {
+		this.hostname = hostname;
+		if(hostname != null){
+			putQueryParameter("Hostname", hostname);
+		}
+	}
+
+	public Boolean getDesktopNameSuffix() {
+		return this.desktopNameSuffix;
+	}
+
+	public void setDesktopNameSuffix(Boolean desktopNameSuffix) {
+		this.desktopNameSuffix = desktopNameSuffix;
+		if(desktopNameSuffix != null){
+			putQueryParameter("DesktopNameSuffix", desktopNameSuffix.toString());
 		}
 	}
 

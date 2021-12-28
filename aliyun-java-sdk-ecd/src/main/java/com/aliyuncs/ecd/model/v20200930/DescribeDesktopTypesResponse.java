@@ -63,6 +63,8 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 
 		private String memorySize;
 
+		private String desktopTypeStatus;
+
 		private List<AllowDiskSizeItem> allowDiskSize;
 
 		public String getSystemDiskSize() {
@@ -129,6 +131,14 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 			this.memorySize = memorySize;
 		}
 
+		public String getDesktopTypeStatus() {
+			return this.desktopTypeStatus;
+		}
+
+		public void setDesktopTypeStatus(String desktopTypeStatus) {
+			this.desktopTypeStatus = desktopTypeStatus;
+		}
+
 		public List<AllowDiskSizeItem> getAllowDiskSize() {
 			return this.allowDiskSize;
 		}
@@ -142,6 +152,8 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 			private Integer dataDiskSize;
 
 			private Integer systemDiskSize;
+
+			private Integer defaultDataDiskSize;
 
 			public Integer getDataDiskSize() {
 				return this.dataDiskSize;
@@ -157,6 +169,14 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 
 			public void setSystemDiskSize(Integer systemDiskSize) {
 				this.systemDiskSize = systemDiskSize;
+			}
+
+			public Integer getDefaultDataDiskSize() {
+				return this.defaultDataDiskSize;
+			}
+
+			public void setDefaultDataDiskSize(Integer defaultDataDiskSize) {
+				this.defaultDataDiskSize = defaultDataDiskSize;
 			}
 		}
 	}

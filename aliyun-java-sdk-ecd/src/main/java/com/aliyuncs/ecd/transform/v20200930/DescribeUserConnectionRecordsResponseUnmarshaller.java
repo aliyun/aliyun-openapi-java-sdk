@@ -34,10 +34,10 @@ public class DescribeUserConnectionRecordsResponseUnmarshaller {
 			ConnectionRecord connectionRecord = new ConnectionRecord();
 			connectionRecord.setConnectionRecordId(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].ConnectionRecordId"));
 			connectionRecord.setConnectStartTime(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].ConnectStartTime"));
-			connectionRecord.setConnectEndTime(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].ConnectEndTime"));
-			connectionRecord.setConnectDuration(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].ConnectDuration"));
-			connectionRecord.setDesktopId(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].DesktopId"));
 			connectionRecord.setDesktopName(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].DesktopName"));
+			connectionRecord.setConnectDuration(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].ConnectDuration"));
+			connectionRecord.setConnectEndTime(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].ConnectEndTime"));
+			connectionRecord.setDesktopId(_ctx.stringValue("DescribeUserConnectionRecordsResponse.ConnectionRecords["+ i +"].DesktopId"));
 
 			connectionRecords.add(connectionRecord);
 		}

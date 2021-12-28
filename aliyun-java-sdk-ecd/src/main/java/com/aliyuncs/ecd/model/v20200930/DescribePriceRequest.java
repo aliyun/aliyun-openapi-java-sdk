@@ -25,11 +25,17 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	   
 
+	private String rootDiskPerformanceLevel;
+
+	private String userDiskPerformanceLevel;
+
 	private String instanceType;
 
 	private Integer period;
 
 	private Integer amount;
+
+	private String hardwareVersion;
 
 	private Integer bandwidth;
 
@@ -45,6 +51,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String internetChargeType;
 
+	private Integer packageSize;
+
 	private Integer rootDiskSizeGib;
 	public DescribePriceRequest() {
 		super("ecd", "2020-09-30", "DescribePrice");
@@ -53,6 +61,28 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRootDiskPerformanceLevel() {
+		return this.rootDiskPerformanceLevel;
+	}
+
+	public void setRootDiskPerformanceLevel(String rootDiskPerformanceLevel) {
+		this.rootDiskPerformanceLevel = rootDiskPerformanceLevel;
+		if(rootDiskPerformanceLevel != null){
+			putQueryParameter("RootDiskPerformanceLevel", rootDiskPerformanceLevel);
+		}
+	}
+
+	public String getUserDiskPerformanceLevel() {
+		return this.userDiskPerformanceLevel;
+	}
+
+	public void setUserDiskPerformanceLevel(String userDiskPerformanceLevel) {
+		this.userDiskPerformanceLevel = userDiskPerformanceLevel;
+		if(userDiskPerformanceLevel != null){
+			putQueryParameter("UserDiskPerformanceLevel", userDiskPerformanceLevel);
+		}
 	}
 
 	public String getInstanceType() {
@@ -85,6 +115,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public String getHardwareVersion() {
+		return this.hardwareVersion;
+	}
+
+	public void setHardwareVersion(String hardwareVersion) {
+		this.hardwareVersion = hardwareVersion;
+		if(hardwareVersion != null){
+			putQueryParameter("HardwareVersion", hardwareVersion);
 		}
 	}
 
@@ -162,6 +203,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public Integer getPackageSize() {
+		return this.packageSize;
+	}
+
+	public void setPackageSize(Integer packageSize) {
+		this.packageSize = packageSize;
+		if(packageSize != null){
+			putQueryParameter("PackageSize", packageSize.toString());
 		}
 	}
 

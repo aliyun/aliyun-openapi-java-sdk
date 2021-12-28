@@ -28,6 +28,8 @@ public class ListOfficeSiteOverviewRequest extends RpcAcsRequest<ListOfficeSiteO
 
 	private List<String> officeSiteIds;
 
+	private Integer queryRange;
+
 	private Boolean forceRefresh;
 
 	private String nextToken;
@@ -53,6 +55,17 @@ public class ListOfficeSiteOverviewRequest extends RpcAcsRequest<ListOfficeSiteO
 				putQueryParameter("OfficeSiteId." + (i + 1) , officeSiteIds.get(i));
 			}
 		}	
+	}
+
+	public Integer getQueryRange() {
+		return this.queryRange;
+	}
+
+	public void setQueryRange(Integer queryRange) {
+		this.queryRange = queryRange;
+		if(queryRange != null){
+			putQueryParameter("QueryRange", queryRange.toString());
+		}
 	}
 
 	public Boolean getForceRefresh() {

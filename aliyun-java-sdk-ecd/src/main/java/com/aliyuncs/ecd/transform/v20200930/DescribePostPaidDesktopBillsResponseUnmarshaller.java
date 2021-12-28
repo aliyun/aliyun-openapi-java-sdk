@@ -27,35 +27,35 @@ public class DescribePostPaidDesktopBillsResponseUnmarshaller {
 	public static DescribePostPaidDesktopBillsResponse unmarshall(DescribePostPaidDesktopBillsResponse describePostPaidDesktopBillsResponse, UnmarshallerContext _ctx) {
 		
 		describePostPaidDesktopBillsResponse.setRequestId(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.RequestId"));
-		describePostPaidDesktopBillsResponse.setPostPaidDesktopsCount(_ctx.integerValue("DescribePostPaidDesktopBillsResponse.PostPaidDesktopsCount"));
-		describePostPaidDesktopBillsResponse.setPostPaidDesktopsTotalAmount(_ctx.floatValue("DescribePostPaidDesktopBillsResponse.PostPaidDesktopsTotalAmount"));
 		describePostPaidDesktopBillsResponse.setPostPaidDesktopsBillsUrl(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.PostPaidDesktopsBillsUrl"));
+		describePostPaidDesktopBillsResponse.setPostPaidDesktopsCount(_ctx.integerValue("DescribePostPaidDesktopBillsResponse.PostPaidDesktopsCount"));
 		describePostPaidDesktopBillsResponse.setNextToken(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.NextToken"));
+		describePostPaidDesktopBillsResponse.setPostPaidDesktopsTotalAmount(_ctx.floatValue("DescribePostPaidDesktopBillsResponse.PostPaidDesktopsTotalAmount"));
 
 		List<Bill> bills = new ArrayList<Bill>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePostPaidDesktopBillsResponse.Bills.Length"); i++) {
 			Bill bill = new Bill();
 			bill.setBillId(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].BillId"));
-			bill.setBillStartTime(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].BillStartTime"));
-			bill.setBillEndTime(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].BillEndTime"));
-			bill.setBillType(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].BillType"));
+			bill.setDiscountPrice(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].DiscountPrice"));
 			bill.setProduct(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].Product"));
+			bill.setPriceUnit(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].PriceUnit"));
+			bill.setCashPayment(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].CashPayment"));
+			bill.setPayment(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].Payment"));
+			bill.setOriginalPrice(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].OriginalPrice"));
+			bill.setInstanceId(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].InstanceId"));
 			bill.setProductDetail(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ProductDetail"));
+			bill.setUsage(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].Usage"));
+			bill.setGoldNote(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].GoldNote"));
+			bill.setUsageUnit(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].UsageUnit"));
+			bill.setPrice(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].Price"));
+			bill.setBillStartTime(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].BillStartTime"));
+			bill.setBillType(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].BillType"));
+			bill.setResourceGroupId(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ResourceGroupId"));
+			bill.setChargeItem(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ChargeItem"));
+			bill.setResourceGroupName(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ResourceGroupName"));
 			bill.setConsumeTime(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ConsumeTime"));
 			bill.setConsumeType(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ConsumeType"));
-			bill.setResourceGroupId(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ResourceGroupId"));
-			bill.setResourceGroupName(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ResourceGroupName"));
-			bill.setInstanceId(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].InstanceId"));
-			bill.setChargeItem(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].ChargeItem"));
-			bill.setPrice(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].Price"));
-			bill.setPriceUnit(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].PriceUnit"));
-			bill.setUsage(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].Usage"));
-			bill.setUsageUnit(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].UsageUnit"));
-			bill.setOriginalPrice(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].OriginalPrice"));
-			bill.setDiscountPrice(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].DiscountPrice"));
-			bill.setPayment(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].Payment"));
-			bill.setCashPayment(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].CashPayment"));
-			bill.setGoldNote(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].GoldNote"));
+			bill.setBillEndTime(_ctx.stringValue("DescribePostPaidDesktopBillsResponse.Bills["+ i +"].BillEndTime"));
 
 			bills.add(bill);
 		}

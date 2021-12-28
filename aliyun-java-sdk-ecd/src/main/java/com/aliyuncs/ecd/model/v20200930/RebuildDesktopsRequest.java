@@ -26,6 +26,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class RebuildDesktopsRequest extends RpcAcsRequest<RebuildDesktopsResponse> {
 	   
 
+	private String imageId;
+
 	private List<String> desktopIds;
 	public RebuildDesktopsRequest() {
 		super("ecd", "2020-09-30", "RebuildDesktops");
@@ -34,6 +36,17 @@ public class RebuildDesktopsRequest extends RpcAcsRequest<RebuildDesktopsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public List<String> getDesktopIds() {

@@ -55,6 +55,7 @@ public class DescribeDirectoriesResponseUnmarshaller {
 			directory.setOuName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].OuName"));
 			directory.setName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Name"));
 			directory.setDirectoryId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DirectoryId"));
+			directory.setNeedVerifyLoginRisk(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].NeedVerifyLoginRisk"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDirectoriesResponse.Directories["+ i +"].VSwitchIds.Length"); j++) {

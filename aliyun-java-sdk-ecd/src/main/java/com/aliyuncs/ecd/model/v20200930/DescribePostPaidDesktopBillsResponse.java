@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePostPaidDesktopBillsResponse extends AcsResponse {
 
-	private String requestId;
+	private String postPaidDesktopsBillsUrl;
 
 	private Integer postPaidDesktopsCount;
 
-	private Float postPaidDesktopsTotalAmount;
-
-	private String postPaidDesktopsBillsUrl;
-
 	private String nextToken;
+
+	private String requestId;
+
+	private Float postPaidDesktopsTotalAmount;
 
 	private List<Bill> bills;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getPostPaidDesktopsBillsUrl() {
+		return this.postPaidDesktopsBillsUrl;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPostPaidDesktopsBillsUrl(String postPaidDesktopsBillsUrl) {
+		this.postPaidDesktopsBillsUrl = postPaidDesktopsBillsUrl;
 	}
 
 	public Integer getPostPaidDesktopsCount() {
@@ -53,28 +53,28 @@ public class DescribePostPaidDesktopBillsResponse extends AcsResponse {
 		this.postPaidDesktopsCount = postPaidDesktopsCount;
 	}
 
-	public Float getPostPaidDesktopsTotalAmount() {
-		return this.postPaidDesktopsTotalAmount;
-	}
-
-	public void setPostPaidDesktopsTotalAmount(Float postPaidDesktopsTotalAmount) {
-		this.postPaidDesktopsTotalAmount = postPaidDesktopsTotalAmount;
-	}
-
-	public String getPostPaidDesktopsBillsUrl() {
-		return this.postPaidDesktopsBillsUrl;
-	}
-
-	public void setPostPaidDesktopsBillsUrl(String postPaidDesktopsBillsUrl) {
-		this.postPaidDesktopsBillsUrl = postPaidDesktopsBillsUrl;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Float getPostPaidDesktopsTotalAmount() {
+		return this.postPaidDesktopsTotalAmount;
+	}
+
+	public void setPostPaidDesktopsTotalAmount(Float postPaidDesktopsTotalAmount) {
+		this.postPaidDesktopsTotalAmount = postPaidDesktopsTotalAmount;
 	}
 
 	public List<Bill> getBills() {
@@ -89,45 +89,45 @@ public class DescribePostPaidDesktopBillsResponse extends AcsResponse {
 
 		private String billId;
 
-		private String billStartTime;
-
-		private String billEndTime;
-
-		private String billType;
+		private String discountPrice;
 
 		private String product;
 
+		private String priceUnit;
+
+		private String cashPayment;
+
+		private String payment;
+
+		private String originalPrice;
+
+		private String instanceId;
+
 		private String productDetail;
+
+		private String usage;
+
+		private String goldNote;
+
+		private String usageUnit;
+
+		private String price;
+
+		private String billStartTime;
+
+		private String billType;
+
+		private String resourceGroupId;
+
+		private String chargeItem;
+
+		private String resourceGroupName;
 
 		private String consumeTime;
 
 		private String consumeType;
 
-		private String resourceGroupId;
-
-		private String resourceGroupName;
-
-		private String instanceId;
-
-		private String chargeItem;
-
-		private String price;
-
-		private String priceUnit;
-
-		private String usage;
-
-		private String usageUnit;
-
-		private String originalPrice;
-
-		private String discountPrice;
-
-		private String payment;
-
-		private String cashPayment;
-
-		private String goldNote;
+		private String billEndTime;
 
 		public String getBillId() {
 			return this.billId;
@@ -137,28 +137,12 @@ public class DescribePostPaidDesktopBillsResponse extends AcsResponse {
 			this.billId = billId;
 		}
 
-		public String getBillStartTime() {
-			return this.billStartTime;
+		public String getDiscountPrice() {
+			return this.discountPrice;
 		}
 
-		public void setBillStartTime(String billStartTime) {
-			this.billStartTime = billStartTime;
-		}
-
-		public String getBillEndTime() {
-			return this.billEndTime;
-		}
-
-		public void setBillEndTime(String billEndTime) {
-			this.billEndTime = billEndTime;
-		}
-
-		public String getBillType() {
-			return this.billType;
-		}
-
-		public void setBillType(String billType) {
-			this.billType = billType;
+		public void setDiscountPrice(String discountPrice) {
+			this.discountPrice = discountPrice;
 		}
 
 		public String getProduct() {
@@ -169,12 +153,124 @@ public class DescribePostPaidDesktopBillsResponse extends AcsResponse {
 			this.product = product;
 		}
 
+		public String getPriceUnit() {
+			return this.priceUnit;
+		}
+
+		public void setPriceUnit(String priceUnit) {
+			this.priceUnit = priceUnit;
+		}
+
+		public String getCashPayment() {
+			return this.cashPayment;
+		}
+
+		public void setCashPayment(String cashPayment) {
+			this.cashPayment = cashPayment;
+		}
+
+		public String getPayment() {
+			return this.payment;
+		}
+
+		public void setPayment(String payment) {
+			this.payment = payment;
+		}
+
+		public String getOriginalPrice() {
+			return this.originalPrice;
+		}
+
+		public void setOriginalPrice(String originalPrice) {
+			this.originalPrice = originalPrice;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getProductDetail() {
 			return this.productDetail;
 		}
 
 		public void setProductDetail(String productDetail) {
 			this.productDetail = productDetail;
+		}
+
+		public String getUsage() {
+			return this.usage;
+		}
+
+		public void setUsage(String usage) {
+			this.usage = usage;
+		}
+
+		public String getGoldNote() {
+			return this.goldNote;
+		}
+
+		public void setGoldNote(String goldNote) {
+			this.goldNote = goldNote;
+		}
+
+		public String getUsageUnit() {
+			return this.usageUnit;
+		}
+
+		public void setUsageUnit(String usageUnit) {
+			this.usageUnit = usageUnit;
+		}
+
+		public String getPrice() {
+			return this.price;
+		}
+
+		public void setPrice(String price) {
+			this.price = price;
+		}
+
+		public String getBillStartTime() {
+			return this.billStartTime;
+		}
+
+		public void setBillStartTime(String billStartTime) {
+			this.billStartTime = billStartTime;
+		}
+
+		public String getBillType() {
+			return this.billType;
+		}
+
+		public void setBillType(String billType) {
+			this.billType = billType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getChargeItem() {
+			return this.chargeItem;
+		}
+
+		public void setChargeItem(String chargeItem) {
+			this.chargeItem = chargeItem;
+		}
+
+		public String getResourceGroupName() {
+			return this.resourceGroupName;
+		}
+
+		public void setResourceGroupName(String resourceGroupName) {
+			this.resourceGroupName = resourceGroupName;
 		}
 
 		public String getConsumeTime() {
@@ -193,108 +289,12 @@ public class DescribePostPaidDesktopBillsResponse extends AcsResponse {
 			this.consumeType = consumeType;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getBillEndTime() {
+			return this.billEndTime;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getResourceGroupName() {
-			return this.resourceGroupName;
-		}
-
-		public void setResourceGroupName(String resourceGroupName) {
-			this.resourceGroupName = resourceGroupName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getChargeItem() {
-			return this.chargeItem;
-		}
-
-		public void setChargeItem(String chargeItem) {
-			this.chargeItem = chargeItem;
-		}
-
-		public String getPrice() {
-			return this.price;
-		}
-
-		public void setPrice(String price) {
-			this.price = price;
-		}
-
-		public String getPriceUnit() {
-			return this.priceUnit;
-		}
-
-		public void setPriceUnit(String priceUnit) {
-			this.priceUnit = priceUnit;
-		}
-
-		public String getUsage() {
-			return this.usage;
-		}
-
-		public void setUsage(String usage) {
-			this.usage = usage;
-		}
-
-		public String getUsageUnit() {
-			return this.usageUnit;
-		}
-
-		public void setUsageUnit(String usageUnit) {
-			this.usageUnit = usageUnit;
-		}
-
-		public String getOriginalPrice() {
-			return this.originalPrice;
-		}
-
-		public void setOriginalPrice(String originalPrice) {
-			this.originalPrice = originalPrice;
-		}
-
-		public String getDiscountPrice() {
-			return this.discountPrice;
-		}
-
-		public void setDiscountPrice(String discountPrice) {
-			this.discountPrice = discountPrice;
-		}
-
-		public String getPayment() {
-			return this.payment;
-		}
-
-		public void setPayment(String payment) {
-			this.payment = payment;
-		}
-
-		public String getCashPayment() {
-			return this.cashPayment;
-		}
-
-		public void setCashPayment(String cashPayment) {
-			this.cashPayment = cashPayment;
-		}
-
-		public String getGoldNote() {
-			return this.goldNote;
-		}
-
-		public void setGoldNote(String goldNote) {
-			this.goldNote = goldNote;
+		public void setBillEndTime(String billEndTime) {
+			this.billEndTime = billEndTime;
 		}
 	}
 

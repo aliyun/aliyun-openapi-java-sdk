@@ -27,6 +27,10 @@ public class ModifyDesktopSpecRequest extends RpcAcsRequest<ModifyDesktopSpecRes
 
 	private Boolean autoPay;
 
+	private String userDiskPerformanceLevel;
+
+	private String promotionId;
+
 	private Integer userDiskSizeGib;
 
 	private String desktopId;
@@ -51,6 +55,28 @@ public class ModifyDesktopSpecRequest extends RpcAcsRequest<ModifyDesktopSpecRes
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getUserDiskPerformanceLevel() {
+		return this.userDiskPerformanceLevel;
+	}
+
+	public void setUserDiskPerformanceLevel(String userDiskPerformanceLevel) {
+		this.userDiskPerformanceLevel = userDiskPerformanceLevel;
+		if(userDiskPerformanceLevel != null){
+			putQueryParameter("UserDiskPerformanceLevel", userDiskPerformanceLevel);
+		}
+	}
+
+	public String getPromotionId() {
+		return this.promotionId;
+	}
+
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
+		if(promotionId != null){
+			putQueryParameter("PromotionId", promotionId);
 		}
 	}
 

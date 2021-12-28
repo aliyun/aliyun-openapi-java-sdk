@@ -33,6 +33,8 @@ public class DescribeOfficeSitesRequest extends RpcAcsRequest<DescribeOfficeSite
 	private String nextToken;
 
 	private Integer maxResults;
+
+	private String status;
 	public DescribeOfficeSitesRequest() {
 		super("ecd", "2020-09-30", "DescribeOfficeSites");
 		setMethod(MethodType.POST);
@@ -85,6 +87,17 @@ public class DescribeOfficeSitesRequest extends RpcAcsRequest<DescribeOfficeSite
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

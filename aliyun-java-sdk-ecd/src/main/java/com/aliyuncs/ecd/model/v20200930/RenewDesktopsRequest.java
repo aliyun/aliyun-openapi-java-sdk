@@ -30,6 +30,8 @@ public class RenewDesktopsRequest extends RpcAcsRequest<RenewDesktopsResponse> {
 
 	private Boolean autoPay;
 
+	private String promotionId;
+
 	private String periodUnit;
 
 	private List<String> desktopIds;
@@ -61,6 +63,17 @@ public class RenewDesktopsRequest extends RpcAcsRequest<RenewDesktopsResponse> {
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getPromotionId() {
+		return this.promotionId;
+	}
+
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
+		if(promotionId != null){
+			putQueryParameter("PromotionId", promotionId);
 		}
 	}
 

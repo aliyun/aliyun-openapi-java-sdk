@@ -34,6 +34,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private List<RevokeSecurityPolicyRule> revokeSecurityPolicyRules;
 
+	private List<UsbSupplyRedirectRule> usbSupplyRedirectRules;
+
 	private String printerRedirection;
 
 	private List<String> preemptLoginUsers;
@@ -55,6 +57,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 	private String watermark;
 
 	private String html5Access;
+
+	private String gpuAcceleration;
 
 	private String html5FileTransfer;
 
@@ -127,6 +131,25 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 				putQueryParameter("RevokeSecurityPolicyRule." + (depth1 + 1) + ".Priority" , revokeSecurityPolicyRules.get(depth1).getPriority());
 				putQueryParameter("RevokeSecurityPolicyRule." + (depth1 + 1) + ".CidrIp" , revokeSecurityPolicyRules.get(depth1).getCidrIp());
 				putQueryParameter("RevokeSecurityPolicyRule." + (depth1 + 1) + ".Policy" , revokeSecurityPolicyRules.get(depth1).getPolicy());
+			}
+		}	
+	}
+
+	public List<UsbSupplyRedirectRule> getUsbSupplyRedirectRules() {
+		return this.usbSupplyRedirectRules;
+	}
+
+	public void setUsbSupplyRedirectRules(List<UsbSupplyRedirectRule> usbSupplyRedirectRules) {
+		this.usbSupplyRedirectRules = usbSupplyRedirectRules;	
+		if (usbSupplyRedirectRules != null) {
+			for (int depth1 = 0; depth1 < usbSupplyRedirectRules.size(); depth1++) {
+				putQueryParameter("UsbSupplyRedirectRule." + (depth1 + 1) + ".ProductId" , usbSupplyRedirectRules.get(depth1).getProductId());
+				putQueryParameter("UsbSupplyRedirectRule." + (depth1 + 1) + ".DeviceSubclass" , usbSupplyRedirectRules.get(depth1).getDeviceSubclass());
+				putQueryParameter("UsbSupplyRedirectRule." + (depth1 + 1) + ".UsbRedirectType" , usbSupplyRedirectRules.get(depth1).getUsbRedirectType());
+				putQueryParameter("UsbSupplyRedirectRule." + (depth1 + 1) + ".VendorId" , usbSupplyRedirectRules.get(depth1).getVendorId());
+				putQueryParameter("UsbSupplyRedirectRule." + (depth1 + 1) + ".Description" , usbSupplyRedirectRules.get(depth1).getDescription());
+				putQueryParameter("UsbSupplyRedirectRule." + (depth1 + 1) + ".DeviceClass" , usbSupplyRedirectRules.get(depth1).getDeviceClass());
+				putQueryParameter("UsbSupplyRedirectRule." + (depth1 + 1) + ".UsbRuleType" , usbSupplyRedirectRules.get(depth1).getUsbRuleType());
 			}
 		}	
 	}
@@ -262,6 +285,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.html5Access = html5Access;
 		if(html5Access != null){
 			putQueryParameter("Html5Access", html5Access);
+		}
+	}
+
+	public String getGpuAcceleration() {
+		return this.gpuAcceleration;
+	}
+
+	public void setGpuAcceleration(String gpuAcceleration) {
+		this.gpuAcceleration = gpuAcceleration;
+		if(gpuAcceleration != null){
+			putQueryParameter("GpuAcceleration", gpuAcceleration);
 		}
 	}
 
@@ -427,6 +461,79 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 		public void setPolicy(String policy) {
 			this.policy = policy;
+		}
+	}
+
+	public static class UsbSupplyRedirectRule {
+
+		private String productId;
+
+		private String deviceSubclass;
+
+		private Long usbRedirectType;
+
+		private String vendorId;
+
+		private String description;
+
+		private String deviceClass;
+
+		private Long usbRuleType;
+
+		public String getProductId() {
+			return this.productId;
+		}
+
+		public void setProductId(String productId) {
+			this.productId = productId;
+		}
+
+		public String getDeviceSubclass() {
+			return this.deviceSubclass;
+		}
+
+		public void setDeviceSubclass(String deviceSubclass) {
+			this.deviceSubclass = deviceSubclass;
+		}
+
+		public Long getUsbRedirectType() {
+			return this.usbRedirectType;
+		}
+
+		public void setUsbRedirectType(Long usbRedirectType) {
+			this.usbRedirectType = usbRedirectType;
+		}
+
+		public String getVendorId() {
+			return this.vendorId;
+		}
+
+		public void setVendorId(String vendorId) {
+			this.vendorId = vendorId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getDeviceClass() {
+			return this.deviceClass;
+		}
+
+		public void setDeviceClass(String deviceClass) {
+			this.deviceClass = deviceClass;
+		}
+
+		public Long getUsbRuleType() {
+			return this.usbRuleType;
+		}
+
+		public void setUsbRuleType(Long usbRuleType) {
+			this.usbRuleType = usbRuleType;
 		}
 	}
 

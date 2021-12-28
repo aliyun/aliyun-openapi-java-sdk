@@ -25,26 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer postPaidDesktopsCount;
+
+	private String nextToken;
 
 	private Integer paidDesktopsCount;
 
-	private Integer postPaidDesktopsCount;
+	private String requestId;
 
 	private Integer postPaidDesktopsTotalAmount;
-
-	private String nextToken;
 
 	private List<PaidDesktop> paidDesktops;
 
 	private List<PostPaidDesktop> postPaidDesktops;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPostPaidDesktopsCount() {
+		return this.postPaidDesktopsCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPostPaidDesktopsCount(Integer postPaidDesktopsCount) {
+		this.postPaidDesktopsCount = postPaidDesktopsCount;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public Integer getPaidDesktopsCount() {
@@ -55,12 +63,12 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 		this.paidDesktopsCount = paidDesktopsCount;
 	}
 
-	public Integer getPostPaidDesktopsCount() {
-		return this.postPaidDesktopsCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPostPaidDesktopsCount(Integer postPaidDesktopsCount) {
-		this.postPaidDesktopsCount = postPaidDesktopsCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPostPaidDesktopsTotalAmount() {
@@ -69,14 +77,6 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 	public void setPostPaidDesktopsTotalAmount(Integer postPaidDesktopsTotalAmount) {
 		this.postPaidDesktopsTotalAmount = postPaidDesktopsTotalAmount;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
 	}
 
 	public List<PaidDesktop> getPaidDesktops() {
@@ -97,32 +97,26 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 	public static class PaidDesktop {
 
-		private String desktopId;
-
-		private String desktopName;
+		private String endUserId;
 
 		private String desktopStatus;
 
+		private String desktopName;
+
 		private String connectionStatus;
 
-		private String endUserId;
+		private String desktopId;
 
 		private String endUserName;
 
-		public String getDesktopId() {
-			return this.desktopId;
+		private String managementFlag;
+
+		public String getEndUserId() {
+			return this.endUserId;
 		}
 
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
-		}
-
-		public String getDesktopName() {
-			return this.desktopName;
-		}
-
-		public void setDesktopName(String desktopName) {
-			this.desktopName = desktopName;
+		public void setEndUserId(String endUserId) {
+			this.endUserId = endUserId;
 		}
 
 		public String getDesktopStatus() {
@@ -133,6 +127,14 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.desktopStatus = desktopStatus;
 		}
 
+		public String getDesktopName() {
+			return this.desktopName;
+		}
+
+		public void setDesktopName(String desktopName) {
+			this.desktopName = desktopName;
+		}
+
 		public String getConnectionStatus() {
 			return this.connectionStatus;
 		}
@@ -141,12 +143,12 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.connectionStatus = connectionStatus;
 		}
 
-		public String getEndUserId() {
-			return this.endUserId;
+		public String getDesktopId() {
+			return this.desktopId;
 		}
 
-		public void setEndUserId(String endUserId) {
-			this.endUserId = endUserId;
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
 		}
 
 		public String getEndUserName() {
@@ -155,59 +157,45 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		public void setEndUserName(String endUserName) {
 			this.endUserName = endUserName;
+		}
+
+		public String getManagementFlag() {
+			return this.managementFlag;
+		}
+
+		public void setManagementFlag(String managementFlag) {
+			this.managementFlag = managementFlag;
 		}
 	}
 
 	public static class PostPaidDesktop {
 
-		private String desktopId;
-
-		private String desktopName;
-
-		private String desktopStatus;
-
-		private String connectionStatus;
+		private String createDuration;
 
 		private String endUserId;
 
-		private String endUserName;
+		private String desktopStatus;
 
 		private String createTime;
 
 		private String releaseTime;
 
-		private String createDuration;
+		private String desktopName;
 
-		public String getDesktopId() {
-			return this.desktopId;
+		private String connectionStatus;
+
+		private String desktopId;
+
+		private String endUserName;
+
+		private String managementFlag;
+
+		public String getCreateDuration() {
+			return this.createDuration;
 		}
 
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
-		}
-
-		public String getDesktopName() {
-			return this.desktopName;
-		}
-
-		public void setDesktopName(String desktopName) {
-			this.desktopName = desktopName;
-		}
-
-		public String getDesktopStatus() {
-			return this.desktopStatus;
-		}
-
-		public void setDesktopStatus(String desktopStatus) {
-			this.desktopStatus = desktopStatus;
-		}
-
-		public String getConnectionStatus() {
-			return this.connectionStatus;
-		}
-
-		public void setConnectionStatus(String connectionStatus) {
-			this.connectionStatus = connectionStatus;
+		public void setCreateDuration(String createDuration) {
+			this.createDuration = createDuration;
 		}
 
 		public String getEndUserId() {
@@ -218,12 +206,12 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.endUserId = endUserId;
 		}
 
-		public String getEndUserName() {
-			return this.endUserName;
+		public String getDesktopStatus() {
+			return this.desktopStatus;
 		}
 
-		public void setEndUserName(String endUserName) {
-			this.endUserName = endUserName;
+		public void setDesktopStatus(String desktopStatus) {
+			this.desktopStatus = desktopStatus;
 		}
 
 		public String getCreateTime() {
@@ -242,12 +230,44 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.releaseTime = releaseTime;
 		}
 
-		public String getCreateDuration() {
-			return this.createDuration;
+		public String getDesktopName() {
+			return this.desktopName;
 		}
 
-		public void setCreateDuration(String createDuration) {
-			this.createDuration = createDuration;
+		public void setDesktopName(String desktopName) {
+			this.desktopName = desktopName;
+		}
+
+		public String getConnectionStatus() {
+			return this.connectionStatus;
+		}
+
+		public void setConnectionStatus(String connectionStatus) {
+			this.connectionStatus = connectionStatus;
+		}
+
+		public String getDesktopId() {
+			return this.desktopId;
+		}
+
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
+		}
+
+		public String getEndUserName() {
+			return this.endUserName;
+		}
+
+		public void setEndUserName(String endUserName) {
+			this.endUserName = endUserName;
+		}
+
+		public String getManagementFlag() {
+			return this.managementFlag;
+		}
+
+		public void setManagementFlag(String managementFlag) {
+			this.managementFlag = managementFlag;
 		}
 	}
 

@@ -22,12 +22,10 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDesktopUsersRequest extends RpcAcsRequest<GetDesktopUsersResponse> {
+public class DescribeResourcePackageQuotaRequest extends RpcAcsRequest<DescribeResourcePackageQuotaResponse> {
 	   
-
-	private String desktopId;
-	public GetDesktopUsersRequest() {
-		super("ecd", "2020-09-30", "GetDesktopUsers");
+	public DescribeResourcePackageQuotaRequest() {
+		super("ecd", "2020-09-30", "DescribeResourcePackageQuota");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +33,9 @@ public class GetDesktopUsersRequest extends RpcAcsRequest<GetDesktopUsersRespons
 		} catch (Exception e) {}
 	}
 
-	public String getDesktopId() {
-		return this.desktopId;
-	}
-
-	public void setDesktopId(String desktopId) {
-		this.desktopId = desktopId;
-		if(desktopId != null){
-			putQueryParameter("DesktopId", desktopId);
-		}
-	}
-
 	@Override
-	public Class<GetDesktopUsersResponse> getResponseClass() {
-		return GetDesktopUsersResponse.class;
+	public Class<DescribeResourcePackageQuotaResponse> getResponseClass() {
+		return DescribeResourcePackageQuotaResponse.class;
 	}
 
 }

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDesktopGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String desktopGroupId;
 
+	private String requestId;
+
 	private List<String> orderIds;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDesktopGroupId() {
 		return this.desktopGroupId;
@@ -45,6 +37,14 @@ public class CreateDesktopGroupResponse extends AcsResponse {
 
 	public void setDesktopGroupId(String desktopGroupId) {
 		this.desktopGroupId = desktopGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getOrderIds() {

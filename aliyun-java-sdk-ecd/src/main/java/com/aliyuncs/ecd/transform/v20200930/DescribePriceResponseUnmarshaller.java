@@ -32,21 +32,23 @@ public class DescribePriceResponseUnmarshaller {
 		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
 
 		PriceInfo priceInfo = new PriceInfo();
+		priceInfo.setFreeCdsQuota(_ctx.booleanValue("DescribePriceResponse.PriceInfo.FreeCdsQuota"));
+		priceInfo.setFreeCdsSize(_ctx.longValue("DescribePriceResponse.PriceInfo.FreeCdsSize"));
 
 		Price price = new Price();
 		price.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.OriginalPrice"));
 		price.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DiscountPrice"));
-		price.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.TradePrice"));
 		price.setCurrency(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Currency"));
+		price.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.TradePrice"));
 
 		List<Promotion> promotions = new ArrayList<Promotion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.Promotions.Length"); i++) {
 			Promotion promotion = new Promotion();
+			promotion.setPromotionDesc(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].PromotionDesc"));
 			promotion.setOptionCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].OptionCode"));
+			promotion.setSelected(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].Selected"));
 			promotion.setPromotionId(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].PromotionId"));
 			promotion.setPromotionName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].PromotionName"));
-			promotion.setPromotionDesc(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].PromotionDesc"));
-			promotion.setSelected(_ctx.booleanValue("DescribePriceResponse.PriceInfo.Price.Promotions["+ i +"].Selected"));
 
 			promotions.add(promotion);
 		}
@@ -56,8 +58,8 @@ public class DescribePriceResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("DescribePriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 			rule.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.Rules["+ i +"].Description"));
+			rule.setRuleId(_ctx.longValue("DescribePriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

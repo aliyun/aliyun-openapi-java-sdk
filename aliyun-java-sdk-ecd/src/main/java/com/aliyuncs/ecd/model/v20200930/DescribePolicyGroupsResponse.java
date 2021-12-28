@@ -93,11 +93,15 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String localDrive;
 
+		private String gpuAcceleration;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
 
 		private List<ClientType> clientTypes;
+
+		private List<UsbSupplyRedirectRuleItem> usbSupplyRedirectRule;
 
 		private List<String> preemptLoginUsers;
 
@@ -245,6 +249,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 			this.localDrive = localDrive;
 		}
 
+		public String getGpuAcceleration() {
+			return this.gpuAcceleration;
+		}
+
+		public void setGpuAcceleration(String gpuAcceleration) {
+			this.gpuAcceleration = gpuAcceleration;
+		}
+
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {
 			return this.authorizeSecurityPolicyRules;
 		}
@@ -267,6 +279,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setClientTypes(List<ClientType> clientTypes) {
 			this.clientTypes = clientTypes;
+		}
+
+		public List<UsbSupplyRedirectRuleItem> getUsbSupplyRedirectRule() {
+			return this.usbSupplyRedirectRule;
+		}
+
+		public void setUsbSupplyRedirectRule(List<UsbSupplyRedirectRuleItem> usbSupplyRedirectRule) {
+			this.usbSupplyRedirectRule = usbSupplyRedirectRule;
 		}
 
 		public List<String> getPreemptLoginUsers() {
@@ -393,6 +413,79 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 			public void setClientType(String clientType) {
 				this.clientType = clientType;
+			}
+		}
+
+		public static class UsbSupplyRedirectRuleItem {
+
+			private String vendorId;
+
+			private String productId;
+
+			private String description;
+
+			private Long usbRedirectType;
+
+			private String deviceClass;
+
+			private String deviceSubclass;
+
+			private Long usbRuleType;
+
+			public String getVendorId() {
+				return this.vendorId;
+			}
+
+			public void setVendorId(String vendorId) {
+				this.vendorId = vendorId;
+			}
+
+			public String getProductId() {
+				return this.productId;
+			}
+
+			public void setProductId(String productId) {
+				this.productId = productId;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Long getUsbRedirectType() {
+				return this.usbRedirectType;
+			}
+
+			public void setUsbRedirectType(Long usbRedirectType) {
+				this.usbRedirectType = usbRedirectType;
+			}
+
+			public String getDeviceClass() {
+				return this.deviceClass;
+			}
+
+			public void setDeviceClass(String deviceClass) {
+				this.deviceClass = deviceClass;
+			}
+
+			public String getDeviceSubclass() {
+				return this.deviceSubclass;
+			}
+
+			public void setDeviceSubclass(String deviceSubclass) {
+				this.deviceSubclass = deviceSubclass;
+			}
+
+			public Long getUsbRuleType() {
+				return this.usbRuleType;
+			}
+
+			public void setUsbRuleType(Long usbRuleType) {
+				this.usbRuleType = usbRuleType;
 			}
 		}
 	}

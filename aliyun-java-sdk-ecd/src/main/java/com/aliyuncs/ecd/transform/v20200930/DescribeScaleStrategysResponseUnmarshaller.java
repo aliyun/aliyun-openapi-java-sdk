@@ -33,12 +33,12 @@ public class DescribeScaleStrategysResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeScaleStrategysResponse.ScaleStrategys.Length"); i++) {
 			ScaleStrategy scaleStrategy = new ScaleStrategy();
 			scaleStrategy.setScaleStrategyId(_ctx.stringValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].ScaleStrategyId"));
+			scaleStrategy.setMaxDesktopsCount(_ctx.integerValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].MaxDesktopsCount"));
+			scaleStrategy.setMaxAvailableDesktopsCount(_ctx.integerValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].MaxAvailableDesktopsCount"));
 			scaleStrategy.setScaleStrategyName(_ctx.stringValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].ScaleStrategyName"));
 			scaleStrategy.setScaleStrategyType(_ctx.stringValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].ScaleStrategyType"));
 			scaleStrategy.setMinDesktopsCount(_ctx.integerValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].MinDesktopsCount"));
-			scaleStrategy.setMaxDesktopsCount(_ctx.integerValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].MaxDesktopsCount"));
 			scaleStrategy.setMinAvailableDesktopsCount(_ctx.integerValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].MinAvailableDesktopsCount"));
-			scaleStrategy.setMaxAvailableDesktopsCount(_ctx.integerValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].MaxAvailableDesktopsCount"));
 			scaleStrategy.setScaleStep(_ctx.integerValue("DescribeScaleStrategysResponse.ScaleStrategys["+ i +"].ScaleStep"));
 
 			scaleStrategys.add(scaleStrategy);

@@ -38,6 +38,8 @@ public class CreateADConnectorDirectoryRequest extends RpcAcsRequest<CreateADCon
 
 	private String domainName;
 
+	private Long specification;
+
 	private String directoryName;
 
 	private List<String> vSwitchIds;
@@ -121,6 +123,17 @@ public class CreateADConnectorDirectoryRequest extends RpcAcsRequest<CreateADCon
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getSpecification() {
+		return this.specification;
+	}
+
+	public void setSpecification(Long specification) {
+		this.specification = specification;
+		if(specification != null){
+			putQueryParameter("Specification", specification.toString());
 		}
 	}
 

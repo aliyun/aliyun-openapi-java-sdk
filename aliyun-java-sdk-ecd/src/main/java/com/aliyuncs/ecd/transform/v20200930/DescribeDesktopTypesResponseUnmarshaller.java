@@ -40,12 +40,14 @@ public class DescribeDesktopTypesResponseUnmarshaller {
 			desktopType.setGpuSpec(_ctx.stringValue("DescribeDesktopTypesResponse.DesktopTypes["+ i +"].GpuSpec"));
 			desktopType.setInstanceTypeFamily(_ctx.stringValue("DescribeDesktopTypesResponse.DesktopTypes["+ i +"].InstanceTypeFamily"));
 			desktopType.setMemorySize(_ctx.stringValue("DescribeDesktopTypesResponse.DesktopTypes["+ i +"].MemorySize"));
+			desktopType.setDesktopTypeStatus(_ctx.stringValue("DescribeDesktopTypesResponse.DesktopTypes["+ i +"].DesktopTypeStatus"));
 
 			List<AllowDiskSizeItem> allowDiskSize = new ArrayList<AllowDiskSizeItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopTypesResponse.DesktopTypes["+ i +"].AllowDiskSize.Length"); j++) {
 				AllowDiskSizeItem allowDiskSizeItem = new AllowDiskSizeItem();
 				allowDiskSizeItem.setDataDiskSize(_ctx.integerValue("DescribeDesktopTypesResponse.DesktopTypes["+ i +"].AllowDiskSize["+ j +"].DataDiskSize"));
 				allowDiskSizeItem.setSystemDiskSize(_ctx.integerValue("DescribeDesktopTypesResponse.DesktopTypes["+ i +"].AllowDiskSize["+ j +"].SystemDiskSize"));
+				allowDiskSizeItem.setDefaultDataDiskSize(_ctx.integerValue("DescribeDesktopTypesResponse.DesktopTypes["+ i +"].AllowDiskSize["+ j +"].DefaultDataDiskSize"));
 
 				allowDiskSize.add(allowDiskSizeItem);
 			}

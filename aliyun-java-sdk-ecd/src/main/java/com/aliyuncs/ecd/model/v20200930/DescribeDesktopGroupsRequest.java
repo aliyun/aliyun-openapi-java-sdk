@@ -38,6 +38,10 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 	private String nextToken;
 
 	private Integer maxResults;
+
+	private String policyGroupId;
+
+	private Integer status;
 	public DescribeDesktopGroupsRequest() {
 		super("ecd", "2020-09-30", "DescribeDesktopGroups");
 		setMethod(MethodType.POST);
@@ -121,6 +125,28 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getPolicyGroupId() {
+		return this.policyGroupId;
+	}
+
+	public void setPolicyGroupId(String policyGroupId) {
+		this.policyGroupId = policyGroupId;
+		if(policyGroupId != null){
+			putQueryParameter("PolicyGroupId", policyGroupId);
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 

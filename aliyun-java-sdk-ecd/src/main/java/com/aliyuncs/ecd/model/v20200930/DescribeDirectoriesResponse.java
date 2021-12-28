@@ -99,6 +99,8 @@ public class DescribeDirectoriesResponse extends AcsResponse {
 
 		private String directoryId;
 
+		private Boolean needVerifyLoginRisk;
+
 		private List<ADConnector> aDConnectors;
 
 		private List<Log> logs;
@@ -277,6 +279,14 @@ public class DescribeDirectoriesResponse extends AcsResponse {
 
 		public void setDirectoryId(String directoryId) {
 			this.directoryId = directoryId;
+		}
+
+		public Boolean getNeedVerifyLoginRisk() {
+			return this.needVerifyLoginRisk;
+		}
+
+		public void setNeedVerifyLoginRisk(Boolean needVerifyLoginRisk) {
+			this.needVerifyLoginRisk = needVerifyLoginRisk;
 		}
 
 		public List<ADConnector> getADConnectors() {

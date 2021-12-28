@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -27,15 +28,21 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 
 	private String cenId;
 
+	private Long cenOwnerId;
+
+	private Boolean enableInternetAccess;
+
+	private String verifyCode;
+
+	private Boolean enableAdminAccess;
+
 	private Integer bandwidth;
 
 	private String desktopAccessType;
 
 	private String officeSiteName;
 
-	private Boolean enableInternetAccess;
-
-	private Boolean enableAdminAccess;
+	private List<String> vSwitchIds;
 
 	private String cidrBlock;
 	public CreateSimpleOfficeSiteRequest() {
@@ -55,6 +62,50 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public Long getCenOwnerId() {
+		return this.cenOwnerId;
+	}
+
+	public void setCenOwnerId(Long cenOwnerId) {
+		this.cenOwnerId = cenOwnerId;
+		if(cenOwnerId != null){
+			putQueryParameter("CenOwnerId", cenOwnerId.toString());
+		}
+	}
+
+	public Boolean getEnableInternetAccess() {
+		return this.enableInternetAccess;
+	}
+
+	public void setEnableInternetAccess(Boolean enableInternetAccess) {
+		this.enableInternetAccess = enableInternetAccess;
+		if(enableInternetAccess != null){
+			putQueryParameter("EnableInternetAccess", enableInternetAccess.toString());
+		}
+	}
+
+	public String getVerifyCode() {
+		return this.verifyCode;
+	}
+
+	public void setVerifyCode(String verifyCode) {
+		this.verifyCode = verifyCode;
+		if(verifyCode != null){
+			putQueryParameter("VerifyCode", verifyCode);
+		}
+	}
+
+	public Boolean getEnableAdminAccess() {
+		return this.enableAdminAccess;
+	}
+
+	public void setEnableAdminAccess(Boolean enableAdminAccess) {
+		this.enableAdminAccess = enableAdminAccess;
+		if(enableAdminAccess != null){
+			putQueryParameter("EnableAdminAccess", enableAdminAccess.toString());
 		}
 	}
 
@@ -91,26 +142,17 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 		}
 	}
 
-	public Boolean getEnableInternetAccess() {
-		return this.enableInternetAccess;
+	public List<String> getVSwitchIds() {
+		return this.vSwitchIds;
 	}
 
-	public void setEnableInternetAccess(Boolean enableInternetAccess) {
-		this.enableInternetAccess = enableInternetAccess;
-		if(enableInternetAccess != null){
-			putQueryParameter("EnableInternetAccess", enableInternetAccess.toString());
-		}
-	}
-
-	public Boolean getEnableAdminAccess() {
-		return this.enableAdminAccess;
-	}
-
-	public void setEnableAdminAccess(Boolean enableAdminAccess) {
-		this.enableAdminAccess = enableAdminAccess;
-		if(enableAdminAccess != null){
-			putQueryParameter("EnableAdminAccess", enableAdminAccess.toString());
-		}
+	public void setVSwitchIds(List<String> vSwitchIds) {
+		this.vSwitchIds = vSwitchIds;	
+		if (vSwitchIds != null) {
+			for (int i = 0; i < vSwitchIds.size(); i++) {
+				putQueryParameter("VSwitchId." + (i + 1) , vSwitchIds.get(i));
+			}
+		}	
 	}
 
 	public String getCidrBlock() {

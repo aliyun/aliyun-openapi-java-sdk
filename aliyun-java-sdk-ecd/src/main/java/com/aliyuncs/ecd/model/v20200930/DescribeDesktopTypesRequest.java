@@ -33,7 +33,11 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 
 	private String desktopTypeId;
 
+	private String desktopIdForModify;
+
 	private Integer cpuCount;
+
+	private String orderType;
 	public DescribeDesktopTypesRequest() {
 		super("ecd", "2020-09-30", "DescribeDesktopTypes");
 		setMethod(MethodType.POST);
@@ -87,6 +91,17 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 		}
 	}
 
+	public String getDesktopIdForModify() {
+		return this.desktopIdForModify;
+	}
+
+	public void setDesktopIdForModify(String desktopIdForModify) {
+		this.desktopIdForModify = desktopIdForModify;
+		if(desktopIdForModify != null){
+			putQueryParameter("DesktopIdForModify", desktopIdForModify);
+		}
+	}
+
 	public Integer getCpuCount() {
 		return this.cpuCount;
 	}
@@ -95,6 +110,17 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 		this.cpuCount = cpuCount;
 		if(cpuCount != null){
 			putQueryParameter("CpuCount", cpuCount.toString());
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 

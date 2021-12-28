@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDesktopsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private String nextToken;
-
 	private List<Desktop> desktops;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeDesktopsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<Desktop> getDesktops() {
 		return this.desktops;
 	}
@@ -67,71 +67,79 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 	public static class Desktop {
 
-		private String directoryId;
-
-		private String officeSiteId;
-
-		private String officeSiteName;
-
-		private String directoryType;
-
-		private String officeSiteType;
-
 		private String creationTime;
-
-		private String desktopId;
-
-		private String bundleId;
-
-		private String desktopStatus;
-
-		private String desktopName;
-
-		private String imageId;
-
-		private String desktopType;
-
-		private String systemDiskCategory;
-
-		private Integer systemDiskSize;
-
-		private String dataDiskCategory;
-
-		private String dataDiskSize;
-
-		private String policyGroupId;
-
-		private String policyGroupName;
-
-		private Integer cpu;
-
-		private Long memory;
-
-		private String networkInterfaceId;
-
-		private String expiredTime;
 
 		private String chargeType;
 
+		private String desktopName;
+
+		private String policyGroupName;
+
+		private Integer systemDiskSize;
+
+		private String policyGroupId;
+
+		private String desktopStatus;
+
+		private String desktopType;
+
 		private Float gpuCount;
-
-		private String gpuSpec;
-
-		private String startTime;
-
-		private String connectionStatus;
-
-		private String osType;
 
 		private String protocolType;
 
+		private Long memory;
+
+		private String gpuSpec;
+
+		private String imageId;
+
+		private String directoryId;
+
 		private String managementFlag;
 
-		private String networkInterfaceIp;
+		private String dataDiskCategory;
+
+		private String systemDiskCategory;
+
+		private String networkInterfaceId;
+
+		private String officeSiteId;
+
+		private String dataDiskSize;
 
 		private String desktopGroupId;
 
-		private String networkInterfaceIp1;
+		private String desktopId;
+
+		private String officeSiteName;
+
+		private String startTime;
+
+		private String directoryType;
+
+		private Integer cpu;
+
+		private String networkInterfaceIp;
+
+		private String expiredTime;
+
+		private String osType;
+
+		private String connectionStatus;
+
+		private String bundleId;
+
+		private String officeSiteType;
+
+		private String hostName;
+
+		private Long downgradeQuota;
+
+		private Long downgradedTimes;
+
+		private Long gpuCategory;
+
+		private String gpuDriverVersion;
 
 		private List<Disk> disks;
 
@@ -141,180 +149,12 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private List<String> endUserIds;
 
-		public String getDirectoryId() {
-			return this.directoryId;
-		}
-
-		public void setDirectoryId(String directoryId) {
-			this.directoryId = directoryId;
-		}
-
-		public String getOfficeSiteId() {
-			return this.officeSiteId;
-		}
-
-		public void setOfficeSiteId(String officeSiteId) {
-			this.officeSiteId = officeSiteId;
-		}
-
-		public String getOfficeSiteName() {
-			return this.officeSiteName;
-		}
-
-		public void setOfficeSiteName(String officeSiteName) {
-			this.officeSiteName = officeSiteName;
-		}
-
-		public String getDirectoryType() {
-			return this.directoryType;
-		}
-
-		public void setDirectoryType(String directoryType) {
-			this.directoryType = directoryType;
-		}
-
-		public String getOfficeSiteType() {
-			return this.officeSiteType;
-		}
-
-		public void setOfficeSiteType(String officeSiteType) {
-			this.officeSiteType = officeSiteType;
-		}
-
 		public String getCreationTime() {
 			return this.creationTime;
 		}
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getDesktopId() {
-			return this.desktopId;
-		}
-
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
-		}
-
-		public String getBundleId() {
-			return this.bundleId;
-		}
-
-		public void setBundleId(String bundleId) {
-			this.bundleId = bundleId;
-		}
-
-		public String getDesktopStatus() {
-			return this.desktopStatus;
-		}
-
-		public void setDesktopStatus(String desktopStatus) {
-			this.desktopStatus = desktopStatus;
-		}
-
-		public String getDesktopName() {
-			return this.desktopName;
-		}
-
-		public void setDesktopName(String desktopName) {
-			this.desktopName = desktopName;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getDesktopType() {
-			return this.desktopType;
-		}
-
-		public void setDesktopType(String desktopType) {
-			this.desktopType = desktopType;
-		}
-
-		public String getSystemDiskCategory() {
-			return this.systemDiskCategory;
-		}
-
-		public void setSystemDiskCategory(String systemDiskCategory) {
-			this.systemDiskCategory = systemDiskCategory;
-		}
-
-		public Integer getSystemDiskSize() {
-			return this.systemDiskSize;
-		}
-
-		public void setSystemDiskSize(Integer systemDiskSize) {
-			this.systemDiskSize = systemDiskSize;
-		}
-
-		public String getDataDiskCategory() {
-			return this.dataDiskCategory;
-		}
-
-		public void setDataDiskCategory(String dataDiskCategory) {
-			this.dataDiskCategory = dataDiskCategory;
-		}
-
-		public String getDataDiskSize() {
-			return this.dataDiskSize;
-		}
-
-		public void setDataDiskSize(String dataDiskSize) {
-			this.dataDiskSize = dataDiskSize;
-		}
-
-		public String getPolicyGroupId() {
-			return this.policyGroupId;
-		}
-
-		public void setPolicyGroupId(String policyGroupId) {
-			this.policyGroupId = policyGroupId;
-		}
-
-		public String getPolicyGroupName() {
-			return this.policyGroupName;
-		}
-
-		public void setPolicyGroupName(String policyGroupName) {
-			this.policyGroupName = policyGroupName;
-		}
-
-		public Integer getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
-		}
-
-		public Long getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Long memory) {
-			this.memory = memory;
-		}
-
-		public String getNetworkInterfaceId() {
-			return this.networkInterfaceId;
-		}
-
-		public void setNetworkInterfaceId(String networkInterfaceId) {
-			this.networkInterfaceId = networkInterfaceId;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
 		}
 
 		public String getChargeType() {
@@ -325,44 +165,60 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
+		public String getDesktopName() {
+			return this.desktopName;
+		}
+
+		public void setDesktopName(String desktopName) {
+			this.desktopName = desktopName;
+		}
+
+		public String getPolicyGroupName() {
+			return this.policyGroupName;
+		}
+
+		public void setPolicyGroupName(String policyGroupName) {
+			this.policyGroupName = policyGroupName;
+		}
+
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
+
+		public String getPolicyGroupId() {
+			return this.policyGroupId;
+		}
+
+		public void setPolicyGroupId(String policyGroupId) {
+			this.policyGroupId = policyGroupId;
+		}
+
+		public String getDesktopStatus() {
+			return this.desktopStatus;
+		}
+
+		public void setDesktopStatus(String desktopStatus) {
+			this.desktopStatus = desktopStatus;
+		}
+
+		public String getDesktopType() {
+			return this.desktopType;
+		}
+
+		public void setDesktopType(String desktopType) {
+			this.desktopType = desktopType;
+		}
+
 		public Float getGpuCount() {
 			return this.gpuCount;
 		}
 
 		public void setGpuCount(Float gpuCount) {
 			this.gpuCount = gpuCount;
-		}
-
-		public String getGpuSpec() {
-			return this.gpuSpec;
-		}
-
-		public void setGpuSpec(String gpuSpec) {
-			this.gpuSpec = gpuSpec;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getConnectionStatus() {
-			return this.connectionStatus;
-		}
-
-		public void setConnectionStatus(String connectionStatus) {
-			this.connectionStatus = connectionStatus;
-		}
-
-		public String getOsType() {
-			return this.osType;
-		}
-
-		public void setOsType(String osType) {
-			this.osType = osType;
 		}
 
 		public String getProtocolType() {
@@ -373,6 +229,38 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.protocolType = protocolType;
 		}
 
+		public Long getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Long memory) {
+			this.memory = memory;
+		}
+
+		public String getGpuSpec() {
+			return this.gpuSpec;
+		}
+
+		public void setGpuSpec(String gpuSpec) {
+			this.gpuSpec = gpuSpec;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getDirectoryId() {
+			return this.directoryId;
+		}
+
+		public void setDirectoryId(String directoryId) {
+			this.directoryId = directoryId;
+		}
+
 		public String getManagementFlag() {
 			return this.managementFlag;
 		}
@@ -381,12 +269,44 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.managementFlag = managementFlag;
 		}
 
-		public String getNetworkInterfaceIp() {
-			return this.networkInterfaceIp;
+		public String getDataDiskCategory() {
+			return this.dataDiskCategory;
 		}
 
-		public void setNetworkInterfaceIp(String networkInterfaceIp) {
-			this.networkInterfaceIp = networkInterfaceIp;
+		public void setDataDiskCategory(String dataDiskCategory) {
+			this.dataDiskCategory = dataDiskCategory;
+		}
+
+		public String getSystemDiskCategory() {
+			return this.systemDiskCategory;
+		}
+
+		public void setSystemDiskCategory(String systemDiskCategory) {
+			this.systemDiskCategory = systemDiskCategory;
+		}
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
+		}
+
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public String getOfficeSiteId() {
+			return this.officeSiteId;
+		}
+
+		public void setOfficeSiteId(String officeSiteId) {
+			this.officeSiteId = officeSiteId;
+		}
+
+		public String getDataDiskSize() {
+			return this.dataDiskSize;
+		}
+
+		public void setDataDiskSize(String dataDiskSize) {
+			this.dataDiskSize = dataDiskSize;
 		}
 
 		public String getDesktopGroupId() {
@@ -397,12 +317,132 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.desktopGroupId = desktopGroupId;
 		}
 
-		public String getNetworkInterfaceIp1() {
-			return this.networkInterfaceIp1;
+		public String getDesktopId() {
+			return this.desktopId;
 		}
 
-		public void setNetworkInterfaceIp1(String networkInterfaceIp1) {
-			this.networkInterfaceIp1 = networkInterfaceIp1;
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
+		}
+
+		public String getOfficeSiteName() {
+			return this.officeSiteName;
+		}
+
+		public void setOfficeSiteName(String officeSiteName) {
+			this.officeSiteName = officeSiteName;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getDirectoryType() {
+			return this.directoryType;
+		}
+
+		public void setDirectoryType(String directoryType) {
+			this.directoryType = directoryType;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
+		}
+
+		public String getNetworkInterfaceIp() {
+			return this.networkInterfaceIp;
+		}
+
+		public void setNetworkInterfaceIp(String networkInterfaceIp) {
+			this.networkInterfaceIp = networkInterfaceIp;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public String getConnectionStatus() {
+			return this.connectionStatus;
+		}
+
+		public void setConnectionStatus(String connectionStatus) {
+			this.connectionStatus = connectionStatus;
+		}
+
+		public String getBundleId() {
+			return this.bundleId;
+		}
+
+		public void setBundleId(String bundleId) {
+			this.bundleId = bundleId;
+		}
+
+		public String getOfficeSiteType() {
+			return this.officeSiteType;
+		}
+
+		public void setOfficeSiteType(String officeSiteType) {
+			this.officeSiteType = officeSiteType;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public Long getDowngradeQuota() {
+			return this.downgradeQuota;
+		}
+
+		public void setDowngradeQuota(Long downgradeQuota) {
+			this.downgradeQuota = downgradeQuota;
+		}
+
+		public Long getDowngradedTimes() {
+			return this.downgradedTimes;
+		}
+
+		public void setDowngradedTimes(Long downgradedTimes) {
+			this.downgradedTimes = downgradedTimes;
+		}
+
+		public Long getGpuCategory() {
+			return this.gpuCategory;
+		}
+
+		public void setGpuCategory(Long gpuCategory) {
+			this.gpuCategory = gpuCategory;
+		}
+
+		public String getGpuDriverVersion() {
+			return this.gpuDriverVersion;
+		}
+
+		public void setGpuDriverVersion(String gpuDriverVersion) {
+			this.gpuDriverVersion = gpuDriverVersion;
 		}
 
 		public List<Disk> getDisks() {
@@ -439,11 +479,19 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		public static class Disk {
 
+			private String diskType;
+
 			private String diskId;
 
 			private Integer diskSize;
 
-			private String diskType;
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
 
 			public String getDiskId() {
 				return this.diskId;
@@ -459,14 +507,6 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 			public void setDiskSize(Integer diskSize) {
 				this.diskSize = diskSize;
-			}
-
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
 			}
 		}
 

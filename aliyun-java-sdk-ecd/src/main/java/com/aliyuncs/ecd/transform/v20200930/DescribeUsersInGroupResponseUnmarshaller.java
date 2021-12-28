@@ -27,21 +27,21 @@ public class DescribeUsersInGroupResponseUnmarshaller {
 	public static DescribeUsersInGroupResponse unmarshall(DescribeUsersInGroupResponse describeUsersInGroupResponse, UnmarshallerContext _ctx) {
 		
 		describeUsersInGroupResponse.setRequestId(_ctx.stringValue("DescribeUsersInGroupResponse.RequestId"));
+		describeUsersInGroupResponse.setNextToken(_ctx.stringValue("DescribeUsersInGroupResponse.NextToken"));
 		describeUsersInGroupResponse.setUsersCount(_ctx.integerValue("DescribeUsersInGroupResponse.UsersCount"));
 		describeUsersInGroupResponse.setOnlineUsersCount(_ctx.integerValue("DescribeUsersInGroupResponse.OnlineUsersCount"));
-		describeUsersInGroupResponse.setNextToken(_ctx.stringValue("DescribeUsersInGroupResponse.NextToken"));
 
 		List<EndUser> endUsers = new ArrayList<EndUser>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUsersInGroupResponse.EndUsers.Length"); i++) {
 			EndUser endUser = new EndUser();
 			endUser.setEndUserId(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserId"));
-			endUser.setEndUserName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserName"));
-			endUser.setEndUserType(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserType"));
 			endUser.setEndUserEmail(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserEmail"));
-			endUser.setEndUserPhone(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserPhone"));
+			endUser.setDesktopName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].DesktopName"));
 			endUser.setConnectionStatus(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].ConnectionStatus"));
 			endUser.setDesktopId(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].DesktopId"));
-			endUser.setDesktopName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].DesktopName"));
+			endUser.setEndUserType(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserType"));
+			endUser.setEndUserPhone(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserPhone"));
+			endUser.setEndUserName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserName"));
 
 			endUsers.add(endUser);
 		}

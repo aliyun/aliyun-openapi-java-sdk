@@ -30,6 +30,8 @@ public class ModifyOfficeSiteAttributeRequest extends RpcAcsRequest<ModifyOffice
 	private String desktopAccessType;
 
 	private String officeSiteName;
+
+	private Boolean needVerifyLoginRisk;
 	public ModifyOfficeSiteAttributeRequest() {
 		super("ecd", "2020-09-30", "ModifyOfficeSiteAttribute");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class ModifyOfficeSiteAttributeRequest extends RpcAcsRequest<ModifyOffice
 		this.officeSiteName = officeSiteName;
 		if(officeSiteName != null){
 			putQueryParameter("OfficeSiteName", officeSiteName);
+		}
+	}
+
+	public Boolean getNeedVerifyLoginRisk() {
+		return this.needVerifyLoginRisk;
+	}
+
+	public void setNeedVerifyLoginRisk(Boolean needVerifyLoginRisk) {
+		this.needVerifyLoginRisk = needVerifyLoginRisk;
+		if(needVerifyLoginRisk != null){
+			putQueryParameter("NeedVerifyLoginRisk", needVerifyLoginRisk.toString());
 		}
 	}
 

@@ -59,27 +59,31 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String imageId;
-
-		private String imageType;
-
-		private String name;
+		private String status;
 
 		private String progress;
 
-		private Integer size;
-
 		private Integer dataDiskSize;
 
-		private Boolean gpuCategory;
-
-		private String status;
+		private String imageType;
 
 		private String description;
+
+		private Integer size;
 
 		private String osType;
 
 		private String protocolType;
+
+		private String name;
+
+		private String imageId;
+
+		private Boolean gpuCategory;
+
+		private String gpuDriverVersion;
+
+		private List<String> supportedLanguages;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -87,62 +91,6 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getImageType() {
-			return this.imageType;
-		}
-
-		public void setImageType(String imageType) {
-			this.imageType = imageType;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(String progress) {
-			this.progress = progress;
-		}
-
-		public Integer getSize() {
-			return this.size;
-		}
-
-		public void setSize(Integer size) {
-			this.size = size;
-		}
-
-		public Integer getDataDiskSize() {
-			return this.dataDiskSize;
-		}
-
-		public void setDataDiskSize(Integer dataDiskSize) {
-			this.dataDiskSize = dataDiskSize;
-		}
-
-		public Boolean getGpuCategory() {
-			return this.gpuCategory;
-		}
-
-		public void setGpuCategory(Boolean gpuCategory) {
-			this.gpuCategory = gpuCategory;
 		}
 
 		public String getStatus() {
@@ -153,12 +101,44 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
+		}
+
+		public Integer getDataDiskSize() {
+			return this.dataDiskSize;
+		}
+
+		public void setDataDiskSize(Integer dataDiskSize) {
+			this.dataDiskSize = dataDiskSize;
+		}
+
+		public String getImageType() {
+			return this.imageType;
+		}
+
+		public void setImageType(String imageType) {
+			this.imageType = imageType;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
 		public String getOsType() {
@@ -175,6 +155,46 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setProtocolType(String protocolType) {
 			this.protocolType = protocolType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public Boolean getGpuCategory() {
+			return this.gpuCategory;
+		}
+
+		public void setGpuCategory(Boolean gpuCategory) {
+			this.gpuCategory = gpuCategory;
+		}
+
+		public String getGpuDriverVersion() {
+			return this.gpuDriverVersion;
+		}
+
+		public void setGpuDriverVersion(String gpuDriverVersion) {
+			this.gpuDriverVersion = gpuDriverVersion;
+		}
+
+		public List<String> getSupportedLanguages() {
+			return this.supportedLanguages;
+		}
+
+		public void setSupportedLanguages(List<String> supportedLanguages) {
+			this.supportedLanguages = supportedLanguages;
 		}
 	}
 

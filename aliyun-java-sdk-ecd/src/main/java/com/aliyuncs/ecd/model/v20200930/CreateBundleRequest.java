@@ -26,17 +26,21 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateBundleRequest extends RpcAcsRequest<CreateBundleResponse> {
 	   
 
+	private String rootDiskPerformanceLevel;
+
 	private String imageId;
 
 	private String description;
 
 	private String language;
 
+	private String userDiskPerformanceLevel;
+
+	private String desktopType;
+
 	private String bundleName;
 
 	private List<Integer> userDiskSizeGibs;
-
-	private String desktopType;
 
 	private Integer rootDiskSizeGib;
 	public CreateBundleRequest() {
@@ -46,6 +50,17 @@ public class CreateBundleRequest extends RpcAcsRequest<CreateBundleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRootDiskPerformanceLevel() {
+		return this.rootDiskPerformanceLevel;
+	}
+
+	public void setRootDiskPerformanceLevel(String rootDiskPerformanceLevel) {
+		this.rootDiskPerformanceLevel = rootDiskPerformanceLevel;
+		if(rootDiskPerformanceLevel != null){
+			putQueryParameter("RootDiskPerformanceLevel", rootDiskPerformanceLevel);
+		}
 	}
 
 	public String getImageId() {
@@ -81,6 +96,28 @@ public class CreateBundleRequest extends RpcAcsRequest<CreateBundleResponse> {
 		}
 	}
 
+	public String getUserDiskPerformanceLevel() {
+		return this.userDiskPerformanceLevel;
+	}
+
+	public void setUserDiskPerformanceLevel(String userDiskPerformanceLevel) {
+		this.userDiskPerformanceLevel = userDiskPerformanceLevel;
+		if(userDiskPerformanceLevel != null){
+			putQueryParameter("UserDiskPerformanceLevel", userDiskPerformanceLevel);
+		}
+	}
+
+	public String getDesktopType() {
+		return this.desktopType;
+	}
+
+	public void setDesktopType(String desktopType) {
+		this.desktopType = desktopType;
+		if(desktopType != null){
+			putQueryParameter("DesktopType", desktopType);
+		}
+	}
+
 	public String getBundleName() {
 		return this.bundleName;
 	}
@@ -103,17 +140,6 @@ public class CreateBundleRequest extends RpcAcsRequest<CreateBundleResponse> {
 				putQueryParameter("UserDiskSizeGib." + (i + 1) , userDiskSizeGibs.get(i));
 			}
 		}	
-	}
-
-	public String getDesktopType() {
-		return this.desktopType;
-	}
-
-	public void setDesktopType(String desktopType) {
-		this.desktopType = desktopType;
-		if(desktopType != null){
-			putQueryParameter("DesktopType", desktopType);
-		}
 	}
 
 	public Integer getRootDiskSizeGib() {

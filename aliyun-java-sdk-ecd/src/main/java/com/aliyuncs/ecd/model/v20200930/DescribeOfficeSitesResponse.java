@@ -107,6 +107,10 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		private String officeSiteType;
 
+		private Boolean needVerifyLoginRisk;
+
+		private Long desktopCount;
+
 		private List<ADConnector> aDConnectors;
 
 		private List<Log> logs;
@@ -317,6 +321,22 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		public void setOfficeSiteType(String officeSiteType) {
 			this.officeSiteType = officeSiteType;
+		}
+
+		public Boolean getNeedVerifyLoginRisk() {
+			return this.needVerifyLoginRisk;
+		}
+
+		public void setNeedVerifyLoginRisk(Boolean needVerifyLoginRisk) {
+			this.needVerifyLoginRisk = needVerifyLoginRisk;
+		}
+
+		public Long getDesktopCount() {
+			return this.desktopCount;
+		}
+
+		public void setDesktopCount(Long desktopCount) {
+			this.desktopCount = desktopCount;
 		}
 
 		public List<ADConnector> getADConnectors() {

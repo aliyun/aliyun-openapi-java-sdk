@@ -27,6 +27,8 @@ public class ListOfficeSiteUsersRequest extends RpcAcsRequest<ListOfficeSiteUser
 
 	private String officeSiteId;
 
+	private String oUPath;
+
 	private String filter;
 
 	private String nextToken;
@@ -49,6 +51,17 @@ public class ListOfficeSiteUsersRequest extends RpcAcsRequest<ListOfficeSiteUser
 		this.officeSiteId = officeSiteId;
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public String getOUPath() {
+		return this.oUPath;
+	}
+
+	public void setOUPath(String oUPath) {
+		this.oUPath = oUPath;
+		if(oUPath != null){
+			putQueryParameter("OUPath", oUPath);
 		}
 	}
 

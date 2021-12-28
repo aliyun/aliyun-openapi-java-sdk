@@ -93,6 +93,10 @@ public class DescribeClientEventsResponse extends AcsResponse {
 
 		private String clientVersion;
 
+		private String officeSiteName;
+
+		private String desktopName;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -235,6 +239,22 @@ public class DescribeClientEventsResponse extends AcsResponse {
 
 		public void setClientVersion(String clientVersion) {
 			this.clientVersion = clientVersion;
+		}
+
+		public String getOfficeSiteName() {
+			return this.officeSiteName;
+		}
+
+		public void setOfficeSiteName(String officeSiteName) {
+			this.officeSiteName = officeSiteName;
+		}
+
+		public String getDesktopName() {
+			return this.desktopName;
+		}
+
+		public void setDesktopName(String desktopName) {
+			this.desktopName = desktopName;
 		}
 	}
 

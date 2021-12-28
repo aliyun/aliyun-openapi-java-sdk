@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateBundleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String bundleId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getBundleId() {
 		return this.bundleId;
@@ -42,6 +34,14 @@ public class CreateBundleResponse extends AcsResponse {
 
 	public void setBundleId(String bundleId) {
 		this.bundleId = bundleId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

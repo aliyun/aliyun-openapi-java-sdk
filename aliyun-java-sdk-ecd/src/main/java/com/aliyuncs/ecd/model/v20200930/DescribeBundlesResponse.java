@@ -57,61 +57,33 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 	public static class Bundle {
 
-		private String imageId;
-
-		private String bundleId;
-
-		private String bundleType;
-
-		private String bundleName;
-
 		private String description;
 
-		private String desktopType;
+		private String bundleType;
 
 		private String osType;
 
 		private String stockState;
 
+		private String desktopType;
+
 		private String protocolType;
 
+		private String bundleId;
+
+		private String imageId;
+
 		private String language;
+
+		private String bundleName;
+
+		private String desktopTypeFamily;
+
+		private String creationTime;
 
 		private List<Disk> disks;
 
 		private DesktopTypeAttribute desktopTypeAttribute;
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getBundleId() {
-			return this.bundleId;
-		}
-
-		public void setBundleId(String bundleId) {
-			this.bundleId = bundleId;
-		}
-
-		public String getBundleType() {
-			return this.bundleType;
-		}
-
-		public void setBundleType(String bundleType) {
-			this.bundleType = bundleType;
-		}
-
-		public String getBundleName() {
-			return this.bundleName;
-		}
-
-		public void setBundleName(String bundleName) {
-			this.bundleName = bundleName;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -121,12 +93,12 @@ public class DescribeBundlesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getDesktopType() {
-			return this.desktopType;
+		public String getBundleType() {
+			return this.bundleType;
 		}
 
-		public void setDesktopType(String desktopType) {
-			this.desktopType = desktopType;
+		public void setBundleType(String bundleType) {
+			this.bundleType = bundleType;
 		}
 
 		public String getOsType() {
@@ -145,6 +117,14 @@ public class DescribeBundlesResponse extends AcsResponse {
 			this.stockState = stockState;
 		}
 
+		public String getDesktopType() {
+			return this.desktopType;
+		}
+
+		public void setDesktopType(String desktopType) {
+			this.desktopType = desktopType;
+		}
+
 		public String getProtocolType() {
 			return this.protocolType;
 		}
@@ -153,12 +133,52 @@ public class DescribeBundlesResponse extends AcsResponse {
 			this.protocolType = protocolType;
 		}
 
+		public String getBundleId() {
+			return this.bundleId;
+		}
+
+		public void setBundleId(String bundleId) {
+			this.bundleId = bundleId;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
 		public String getLanguage() {
 			return this.language;
 		}
 
 		public void setLanguage(String language) {
 			this.language = language;
+		}
+
+		public String getBundleName() {
+			return this.bundleName;
+		}
+
+		public void setBundleName(String bundleName) {
+			this.bundleName = bundleName;
+		}
+
+		public String getDesktopTypeFamily() {
+			return this.desktopTypeFamily;
+		}
+
+		public void setDesktopTypeFamily(String desktopTypeFamily) {
+			this.desktopTypeFamily = desktopTypeFamily;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public List<Disk> getDisks() {
@@ -179,9 +199,19 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 		public static class Disk {
 
+			private String diskType;
+
 			private Integer diskSize;
 
-			private String diskType;
+			private String diskPerformanceLevel;
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
 
 			public Integer getDiskSize() {
 				return this.diskSize;
@@ -191,12 +221,12 @@ public class DescribeBundlesResponse extends AcsResponse {
 				this.diskSize = diskSize;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
+			public String getDiskPerformanceLevel() {
+				return this.diskPerformanceLevel;
 			}
 
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
+			public void setDiskPerformanceLevel(String diskPerformanceLevel) {
+				this.diskPerformanceLevel = diskPerformanceLevel;
 			}
 		}
 
@@ -204,11 +234,11 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 			private Integer cpuCount;
 
-			private Integer memorySize;
-
 			private Float gpuCount;
 
 			private String gpuSpec;
+
+			private Integer memorySize;
 
 			public Integer getCpuCount() {
 				return this.cpuCount;
@@ -216,14 +246,6 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 			public void setCpuCount(Integer cpuCount) {
 				this.cpuCount = cpuCount;
-			}
-
-			public Integer getMemorySize() {
-				return this.memorySize;
-			}
-
-			public void setMemorySize(Integer memorySize) {
-				this.memorySize = memorySize;
 			}
 
 			public Float getGpuCount() {
@@ -240,6 +262,14 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 			public void setGpuSpec(String gpuSpec) {
 				this.gpuSpec = gpuSpec;
+			}
+
+			public Integer getMemorySize() {
+				return this.memorySize;
+			}
+
+			public void setMemorySize(Integer memorySize) {
+				this.memorySize = memorySize;
 			}
 		}
 	}

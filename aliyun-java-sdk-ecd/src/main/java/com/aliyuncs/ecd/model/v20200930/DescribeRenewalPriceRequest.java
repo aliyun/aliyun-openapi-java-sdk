@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -29,9 +30,13 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 
 	private String resourceType;
 
+	private String promotionId;
+
 	private String periodUnit;
 
 	private String instanceId;
+
+	private List<String> instanceIdss;
 	public DescribeRenewalPriceRequest() {
 		super("ecd", "2020-09-30", "DescribeRenewalPrice");
 		setMethod(MethodType.POST);
@@ -63,6 +68,17 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		}
 	}
 
+	public String getPromotionId() {
+		return this.promotionId;
+	}
+
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
+		if(promotionId != null){
+			putQueryParameter("PromotionId", promotionId);
+		}
+	}
+
 	public String getPeriodUnit() {
 		return this.periodUnit;
 	}
@@ -83,6 +99,19 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
+	}
+
+	public List<String> getInstanceIdss() {
+		return this.instanceIdss;
+	}
+
+	public void setInstanceIdss(List<String> instanceIdss) {
+		this.instanceIdss = instanceIdss;	
+		if (instanceIdss != null) {
+			for (int i = 0; i < instanceIdss.size(); i++) {
+				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
+			}
+		}	
 	}
 
 	@Override

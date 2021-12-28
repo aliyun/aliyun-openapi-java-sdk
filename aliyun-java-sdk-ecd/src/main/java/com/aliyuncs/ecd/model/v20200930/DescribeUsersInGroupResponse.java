@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUsersInGroupResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer usersCount;
 
 	private Integer onlineUsersCount;
 
-	private String nextToken;
-
 	private List<EndUser> endUsers;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 		this.onlineUsersCount = onlineUsersCount;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<EndUser> getEndUsers() {
 		return this.endUsers;
 	}
@@ -79,19 +79,19 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 
 		private String endUserId;
 
-		private String endUserName;
-
-		private String endUserType;
-
 		private String endUserEmail;
 
-		private String endUserPhone;
+		private String desktopName;
 
 		private String connectionStatus;
 
 		private String desktopId;
 
-		private String desktopName;
+		private String endUserType;
+
+		private String endUserPhone;
+
+		private String endUserName;
 
 		public String getEndUserId() {
 			return this.endUserId;
@@ -99,22 +99,6 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 
 		public void setEndUserId(String endUserId) {
 			this.endUserId = endUserId;
-		}
-
-		public String getEndUserName() {
-			return this.endUserName;
-		}
-
-		public void setEndUserName(String endUserName) {
-			this.endUserName = endUserName;
-		}
-
-		public String getEndUserType() {
-			return this.endUserType;
-		}
-
-		public void setEndUserType(String endUserType) {
-			this.endUserType = endUserType;
 		}
 
 		public String getEndUserEmail() {
@@ -125,12 +109,12 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 			this.endUserEmail = endUserEmail;
 		}
 
-		public String getEndUserPhone() {
-			return this.endUserPhone;
+		public String getDesktopName() {
+			return this.desktopName;
 		}
 
-		public void setEndUserPhone(String endUserPhone) {
-			this.endUserPhone = endUserPhone;
+		public void setDesktopName(String desktopName) {
+			this.desktopName = desktopName;
 		}
 
 		public String getConnectionStatus() {
@@ -149,12 +133,28 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 			this.desktopId = desktopId;
 		}
 
-		public String getDesktopName() {
-			return this.desktopName;
+		public String getEndUserType() {
+			return this.endUserType;
 		}
 
-		public void setDesktopName(String desktopName) {
-			this.desktopName = desktopName;
+		public void setEndUserType(String endUserType) {
+			this.endUserType = endUserType;
+		}
+
+		public String getEndUserPhone() {
+			return this.endUserPhone;
+		}
+
+		public void setEndUserPhone(String endUserPhone) {
+			this.endUserPhone = endUserPhone;
+		}
+
+		public String getEndUserName() {
+			return this.endUserName;
+		}
+
+		public void setEndUserName(String endUserName) {
+			this.endUserName = endUserName;
 		}
 	}
 

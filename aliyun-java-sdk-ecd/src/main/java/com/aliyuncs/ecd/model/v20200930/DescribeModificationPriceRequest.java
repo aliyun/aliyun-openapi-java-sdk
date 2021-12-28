@@ -25,11 +25,21 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeModificationPriceRequest extends RpcAcsRequest<DescribeModificationPriceResponse> {
 	   
 
+	private String rootDiskPerformanceLevel;
+
+	private String userDiskPerformanceLevel;
+
+	private String instanceType;
+
+	private Integer bandwidth;
+
+	private String resourceType;
+
+	private String promotionId;
+
 	private Integer userDiskSizeGib;
 
 	private String instanceId;
-
-	private String instanceType;
 
 	private Integer rootDiskSizeGib;
 	public DescribeModificationPriceRequest() {
@@ -39,6 +49,72 @@ public class DescribeModificationPriceRequest extends RpcAcsRequest<DescribeModi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRootDiskPerformanceLevel() {
+		return this.rootDiskPerformanceLevel;
+	}
+
+	public void setRootDiskPerformanceLevel(String rootDiskPerformanceLevel) {
+		this.rootDiskPerformanceLevel = rootDiskPerformanceLevel;
+		if(rootDiskPerformanceLevel != null){
+			putQueryParameter("RootDiskPerformanceLevel", rootDiskPerformanceLevel);
+		}
+	}
+
+	public String getUserDiskPerformanceLevel() {
+		return this.userDiskPerformanceLevel;
+	}
+
+	public void setUserDiskPerformanceLevel(String userDiskPerformanceLevel) {
+		this.userDiskPerformanceLevel = userDiskPerformanceLevel;
+		if(userDiskPerformanceLevel != null){
+			putQueryParameter("UserDiskPerformanceLevel", userDiskPerformanceLevel);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getPromotionId() {
+		return this.promotionId;
+	}
+
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
+		if(promotionId != null){
+			putQueryParameter("PromotionId", promotionId);
+		}
 	}
 
 	public Integer getUserDiskSizeGib() {
@@ -60,17 +136,6 @@ public class DescribeModificationPriceRequest extends RpcAcsRequest<DescribeModi
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateScaleStrategyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String scaleStrategyId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getScaleStrategyId() {
 		return this.scaleStrategyId;
@@ -42,6 +34,14 @@ public class CreateScaleStrategyResponse extends AcsResponse {
 
 	public void setScaleStrategyId(String scaleStrategyId) {
 		this.scaleStrategyId = scaleStrategyId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

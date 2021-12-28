@@ -28,6 +28,10 @@ public class AttachCenRequest extends RpcAcsRequest<AttachCenResponse> {
 	private String officeSiteId;
 
 	private String cenId;
+
+	private Long cenOwnerId;
+
+	private String verifyCode;
 	public AttachCenRequest() {
 		super("ecd", "2020-09-30", "AttachCen");
 		setMethod(MethodType.POST);
@@ -56,6 +60,28 @@ public class AttachCenRequest extends RpcAcsRequest<AttachCenResponse> {
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public Long getCenOwnerId() {
+		return this.cenOwnerId;
+	}
+
+	public void setCenOwnerId(Long cenOwnerId) {
+		this.cenOwnerId = cenOwnerId;
+		if(cenOwnerId != null){
+			putQueryParameter("CenOwnerId", cenOwnerId.toString());
+		}
+	}
+
+	public String getVerifyCode() {
+		return this.verifyCode;
+	}
+
+	public void setVerifyCode(String verifyCode) {
+		this.verifyCode = verifyCode;
+		if(verifyCode != null){
+			putQueryParameter("VerifyCode", verifyCode);
 		}
 	}
 

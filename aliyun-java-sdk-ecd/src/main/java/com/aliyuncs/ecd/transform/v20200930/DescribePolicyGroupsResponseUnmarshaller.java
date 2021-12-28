@@ -22,6 +22,7 @@ import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePol
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.AuthorizeAccessPolicyRule;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.AuthorizeSecurityPolicyRule;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.ClientType;
+import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.UsbSupplyRedirectRuleItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +54,7 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setEdsCount(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].EdsCount"));
 			describePolicyGroup.setName(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].Name"));
 			describePolicyGroup.setLocalDrive(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].LocalDrive"));
+			describePolicyGroup.setGpuAcceleration(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].GpuAcceleration"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {
@@ -94,6 +96,21 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 				clientTypes.add(clientType);
 			}
 			describePolicyGroup.setClientTypes(clientTypes);
+
+			List<UsbSupplyRedirectRuleItem> usbSupplyRedirectRule = new ArrayList<UsbSupplyRedirectRuleItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].UsbSupplyRedirectRule.Length"); j++) {
+				UsbSupplyRedirectRuleItem usbSupplyRedirectRuleItem = new UsbSupplyRedirectRuleItem();
+				usbSupplyRedirectRuleItem.setVendorId(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].UsbSupplyRedirectRule["+ j +"].VendorId"));
+				usbSupplyRedirectRuleItem.setProductId(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].UsbSupplyRedirectRule["+ j +"].ProductId"));
+				usbSupplyRedirectRuleItem.setDescription(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].UsbSupplyRedirectRule["+ j +"].Description"));
+				usbSupplyRedirectRuleItem.setUsbRedirectType(_ctx.longValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].UsbSupplyRedirectRule["+ j +"].UsbRedirectType"));
+				usbSupplyRedirectRuleItem.setDeviceClass(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].UsbSupplyRedirectRule["+ j +"].DeviceClass"));
+				usbSupplyRedirectRuleItem.setDeviceSubclass(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].UsbSupplyRedirectRule["+ j +"].DeviceSubclass"));
+				usbSupplyRedirectRuleItem.setUsbRuleType(_ctx.longValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].UsbSupplyRedirectRule["+ j +"].UsbRuleType"));
+
+				usbSupplyRedirectRule.add(usbSupplyRedirectRuleItem);
+			}
+			describePolicyGroup.setUsbSupplyRedirectRule(usbSupplyRedirectRule);
 
 			describePolicyGroups.add(describePolicyGroup);
 		}

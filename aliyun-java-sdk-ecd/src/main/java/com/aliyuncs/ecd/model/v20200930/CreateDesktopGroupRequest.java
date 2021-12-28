@@ -56,6 +56,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private String comments;
 
+	private Long resetType;
+
 	private Integer ownType;
 
 	private Long keepDuration;
@@ -240,6 +242,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.comments = comments;
 		if(comments != null){
 			putQueryParameter("Comments", comments);
+		}
+	}
+
+	public Long getResetType() {
+		return this.resetType;
+	}
+
+	public void setResetType(Long resetType) {
+		this.resetType = resetType;
+		if(resetType != null){
+			putQueryParameter("ResetType", resetType.toString());
 		}
 	}
 

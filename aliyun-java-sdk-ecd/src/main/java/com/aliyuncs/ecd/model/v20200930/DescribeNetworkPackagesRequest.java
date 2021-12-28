@@ -30,6 +30,8 @@ public class DescribeNetworkPackagesRequest extends RpcAcsRequest<DescribeNetwor
 
 	private String nextToken;
 
+	private String internetChargeType;
+
 	private Integer maxResults;
 	public DescribeNetworkPackagesRequest() {
 		super("ecd", "2020-09-30", "DescribeNetworkPackages");
@@ -61,6 +63,17 @@ public class DescribeNetworkPackagesRequest extends RpcAcsRequest<DescribeNetwor
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 

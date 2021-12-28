@@ -35,6 +35,8 @@ public class DescribeDirectoriesRequest extends RpcAcsRequest<DescribeDirectorie
 	private Integer maxResults;
 
 	private List<String> directoryIds;
+
+	private String status;
 	public DescribeDirectoriesRequest() {
 		super("ecd", "2020-09-30", "DescribeDirectories");
 		setMethod(MethodType.POST);
@@ -99,6 +101,17 @@ public class DescribeDirectoriesRequest extends RpcAcsRequest<DescribeDirectorie
 				putQueryParameter("DirectoryId." + (i + 1) , directoryIds.get(i));
 			}
 		}	
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	@Override

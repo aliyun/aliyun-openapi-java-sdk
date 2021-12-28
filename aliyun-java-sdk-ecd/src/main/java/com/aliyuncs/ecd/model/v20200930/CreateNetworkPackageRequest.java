@@ -33,6 +33,8 @@ public class CreateNetworkPackageRequest extends RpcAcsRequest<CreateNetworkPack
 
 	private Integer bandwidth;
 
+	private String promotionId;
+
 	private String periodUnit;
 
 	private Boolean autoRenew;
@@ -88,6 +90,17 @@ public class CreateNetworkPackageRequest extends RpcAcsRequest<CreateNetworkPack
 		this.bandwidth = bandwidth;
 		if(bandwidth != null){
 			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getPromotionId() {
+		return this.promotionId;
+	}
+
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
+		if(promotionId != null){
+			putQueryParameter("PromotionId", promotionId);
 		}
 	}
 

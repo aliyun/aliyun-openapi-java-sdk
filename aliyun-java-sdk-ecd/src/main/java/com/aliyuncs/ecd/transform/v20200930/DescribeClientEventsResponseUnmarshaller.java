@@ -50,6 +50,8 @@ public class DescribeClientEventsResponseUnmarshaller {
 			event.setOfficeSiteType(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].OfficeSiteType"));
 			event.setDirectoryId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DirectoryId"));
 			event.setClientVersion(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].ClientVersion"));
+			event.setOfficeSiteName(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].OfficeSiteName"));
+			event.setDesktopName(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DesktopName"));
 
 			events.add(event);
 		}

@@ -33,17 +33,24 @@ public class DescribeImagesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeImagesResponse.Images.Length"); i++) {
 			Image image = new Image();
 			image.setCreationTime(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].CreationTime"));
-			image.setImageId(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageId"));
-			image.setImageType(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageType"));
-			image.setName(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Name"));
-			image.setProgress(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Progress"));
-			image.setSize(_ctx.integerValue("DescribeImagesResponse.Images["+ i +"].Size"));
-			image.setDataDiskSize(_ctx.integerValue("DescribeImagesResponse.Images["+ i +"].DataDiskSize"));
-			image.setGpuCategory(_ctx.booleanValue("DescribeImagesResponse.Images["+ i +"].GpuCategory"));
 			image.setStatus(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Status"));
+			image.setProgress(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Progress"));
+			image.setDataDiskSize(_ctx.integerValue("DescribeImagesResponse.Images["+ i +"].DataDiskSize"));
+			image.setImageType(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageType"));
 			image.setDescription(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Description"));
+			image.setSize(_ctx.integerValue("DescribeImagesResponse.Images["+ i +"].Size"));
 			image.setOsType(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].OsType"));
 			image.setProtocolType(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ProtocolType"));
+			image.setName(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Name"));
+			image.setImageId(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageId"));
+			image.setGpuCategory(_ctx.booleanValue("DescribeImagesResponse.Images["+ i +"].GpuCategory"));
+			image.setGpuDriverVersion(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].GpuDriverVersion"));
+
+			List<String> supportedLanguages = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeImagesResponse.Images["+ i +"].SupportedLanguages.Length"); j++) {
+				supportedLanguages.add(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].SupportedLanguages["+ j +"]"));
+			}
+			image.setSupportedLanguages(supportedLanguages);
 
 			images.add(image);
 		}

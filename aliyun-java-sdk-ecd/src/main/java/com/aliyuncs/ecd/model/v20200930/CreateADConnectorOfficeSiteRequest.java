@@ -34,9 +34,13 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 
 	private Boolean enableInternetAccess;
 
+	private String type;
+
 	private String subDomainName;
 
 	private String domainPassword;
+
+	private String verifyCode;
 
 	private Boolean enableAdminAccess;
 
@@ -45,6 +49,8 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 	private String desktopAccessType;
 
 	private String domainName;
+
+	private Long specification;
 
 	private String officeSiteName;
 
@@ -110,6 +116,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 		}
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	public String getSubDomainName() {
 		return this.subDomainName;
 	}
@@ -129,6 +146,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 		this.domainPassword = domainPassword;
 		if(domainPassword != null){
 			putQueryParameter("DomainPassword", domainPassword);
+		}
+	}
+
+	public String getVerifyCode() {
+		return this.verifyCode;
+	}
+
+	public void setVerifyCode(String verifyCode) {
+		this.verifyCode = verifyCode;
+		if(verifyCode != null){
+			putQueryParameter("VerifyCode", verifyCode);
 		}
 	}
 
@@ -173,6 +201,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getSpecification() {
+		return this.specification;
+	}
+
+	public void setSpecification(Long specification) {
+		this.specification = specification;
+		if(specification != null){
+			putQueryParameter("Specification", specification.toString());
 		}
 	}
 

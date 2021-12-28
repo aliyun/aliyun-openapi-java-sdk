@@ -42,6 +42,10 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String groupId;
 
+	private List<String> excludedEndUserIds;
+
+	private Boolean filterDesktopGroup;
+
 	private String expiredTime;
 
 	private Integer maxResults;
@@ -151,6 +155,30 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public List<String> getExcludedEndUserIds() {
+		return this.excludedEndUserIds;
+	}
+
+	public void setExcludedEndUserIds(List<String> excludedEndUserIds) {
+		this.excludedEndUserIds = excludedEndUserIds;	
+		if (excludedEndUserIds != null) {
+			for (int i = 0; i < excludedEndUserIds.size(); i++) {
+				putQueryParameter("ExcludedEndUserId." + (i + 1) , excludedEndUserIds.get(i));
+			}
+		}	
+	}
+
+	public Boolean getFilterDesktopGroup() {
+		return this.filterDesktopGroup;
+	}
+
+	public void setFilterDesktopGroup(Boolean filterDesktopGroup) {
+		this.filterDesktopGroup = filterDesktopGroup;
+		if(filterDesktopGroup != null){
+			putQueryParameter("FilterDesktopGroup", filterDesktopGroup.toString());
 		}
 	}
 

@@ -59,6 +59,8 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 			officeSite.setNetworkPackageId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NetworkPackageId"));
 			officeSite.setDnsUserName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DnsUserName"));
 			officeSite.setOfficeSiteType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OfficeSiteType"));
+			officeSite.setNeedVerifyLoginRisk(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NeedVerifyLoginRisk"));
+			officeSite.setDesktopCount(_ctx.longValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DesktopCount"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].VSwitchIds.Length"); j++) {

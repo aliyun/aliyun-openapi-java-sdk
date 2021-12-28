@@ -32,6 +32,8 @@ public class RenewNetworkPackagesRequest extends RpcAcsRequest<RenewNetworkPacka
 
 	private List<String> networkPackageIds;
 
+	private String promotionId;
+
 	private String periodUnit;
 	public RenewNetworkPackagesRequest() {
 		super("ecd", "2020-09-30", "RenewNetworkPackages");
@@ -75,6 +77,17 @@ public class RenewNetworkPackagesRequest extends RpcAcsRequest<RenewNetworkPacka
 				putQueryParameter("NetworkPackageId." + (i + 1) , networkPackageIds.get(i));
 			}
 		}	
+	}
+
+	public String getPromotionId() {
+		return this.promotionId;
+	}
+
+	public void setPromotionId(String promotionId) {
+		this.promotionId = promotionId;
+		if(promotionId != null){
+			putQueryParameter("PromotionId", promotionId);
+		}
 	}
 
 	public String getPeriodUnit() {

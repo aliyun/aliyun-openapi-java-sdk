@@ -26,19 +26,27 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse> {
 	   
 
-	private String imageType;
-
 	private List<String> imageIds;
 
 	private Boolean gpuCategory;
 
-	private String imageStatus;
+	private String desktopInstanceType;
+
+	private String languageType;
 
 	private String nextToken;
+
+	private String imageType;
+
+	private String osType;
+
+	private String imageStatus;
 
 	private Integer maxResults;
 
 	private String protocolType;
+
+	private String gpuDriverVersion;
 	public DescribeImagesRequest() {
 		super("ecd", "2020-09-30", "DescribeImages");
 		setMethod(MethodType.POST);
@@ -46,17 +54,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImageType() {
-		return this.imageType;
-	}
-
-	public void setImageType(String imageType) {
-		this.imageType = imageType;
-		if(imageType != null){
-			putQueryParameter("ImageType", imageType);
-		}
 	}
 
 	public List<String> getImageIds() {
@@ -83,14 +80,25 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getImageStatus() {
-		return this.imageStatus;
+	public String getDesktopInstanceType() {
+		return this.desktopInstanceType;
 	}
 
-	public void setImageStatus(String imageStatus) {
-		this.imageStatus = imageStatus;
-		if(imageStatus != null){
-			putQueryParameter("ImageStatus", imageStatus);
+	public void setDesktopInstanceType(String desktopInstanceType) {
+		this.desktopInstanceType = desktopInstanceType;
+		if(desktopInstanceType != null){
+			putQueryParameter("DesktopInstanceType", desktopInstanceType);
+		}
+	}
+
+	public String getLanguageType() {
+		return this.languageType;
+	}
+
+	public void setLanguageType(String languageType) {
+		this.languageType = languageType;
+		if(languageType != null){
+			putQueryParameter("LanguageType", languageType);
 		}
 	}
 
@@ -102,6 +110,39 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getImageType() {
+		return this.imageType;
+	}
+
+	public void setImageType(String imageType) {
+		this.imageType = imageType;
+		if(imageType != null){
+			putQueryParameter("ImageType", imageType);
+		}
+	}
+
+	public String getOsType() {
+		return this.osType;
+	}
+
+	public void setOsType(String osType) {
+		this.osType = osType;
+		if(osType != null){
+			putQueryParameter("OsType", osType);
+		}
+	}
+
+	public String getImageStatus() {
+		return this.imageStatus;
+	}
+
+	public void setImageStatus(String imageStatus) {
+		this.imageStatus = imageStatus;
+		if(imageStatus != null){
+			putQueryParameter("ImageStatus", imageStatus);
 		}
 	}
 
@@ -124,6 +165,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.protocolType = protocolType;
 		if(protocolType != null){
 			putQueryParameter("ProtocolType", protocolType);
+		}
+	}
+
+	public String getGpuDriverVersion() {
+		return this.gpuDriverVersion;
+	}
+
+	public void setGpuDriverVersion(String gpuDriverVersion) {
+		this.gpuDriverVersion = gpuDriverVersion;
+		if(gpuDriverVersion != null){
+			putQueryParameter("GpuDriverVersion", gpuDriverVersion);
 		}
 	}
 
