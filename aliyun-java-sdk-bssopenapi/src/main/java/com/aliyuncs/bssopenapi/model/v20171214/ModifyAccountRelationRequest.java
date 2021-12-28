@@ -28,19 +28,21 @@ public class ModifyAccountRelationRequest extends RpcAcsRequest<ModifyAccountRel
 
 	private String childNick;
 
+	private Long parentUserId;
+
+	private Long relationId;
+
+	private List<String> roleCodess;
+
 	private String relationOperation;
 
 	private String relationType;
-
-	private Long parentUserId;
 
 	private Long childUserId;
 
 	private String requestId;
 
 	private List<String> permissionCodess;
-
-	private List<String> roleCodess;
 	public ModifyAccountRelationRequest() {
 		super("BssOpenApi", "2017-12-14", "ModifyAccountRelation");
 		setMethod(MethodType.POST);
@@ -59,6 +61,41 @@ public class ModifyAccountRelationRequest extends RpcAcsRequest<ModifyAccountRel
 		if(childNick != null){
 			putQueryParameter("ChildNick", childNick);
 		}
+	}
+
+	public Long getParentUserId() {
+		return this.parentUserId;
+	}
+
+	public void setParentUserId(Long parentUserId) {
+		this.parentUserId = parentUserId;
+		if(parentUserId != null){
+			putQueryParameter("ParentUserId", parentUserId.toString());
+		}
+	}
+
+	public Long getRelationId() {
+		return this.relationId;
+	}
+
+	public void setRelationId(Long relationId) {
+		this.relationId = relationId;
+		if(relationId != null){
+			putQueryParameter("RelationId", relationId.toString());
+		}
+	}
+
+	public List<String> getRoleCodess() {
+		return this.roleCodess;
+	}
+
+	public void setRoleCodess(List<String> roleCodess) {
+		this.roleCodess = roleCodess;	
+		if (roleCodess != null) {
+			for (int i = 0; i < roleCodess.size(); i++) {
+				putQueryParameter("RoleCodes." + (i + 1) , roleCodess.get(i));
+			}
+		}	
 	}
 
 	public String getRelationOperation() {
@@ -80,17 +117,6 @@ public class ModifyAccountRelationRequest extends RpcAcsRequest<ModifyAccountRel
 		this.relationType = relationType;
 		if(relationType != null){
 			putQueryParameter("RelationType", relationType);
-		}
-	}
-
-	public Long getParentUserId() {
-		return this.parentUserId;
-	}
-
-	public void setParentUserId(Long parentUserId) {
-		this.parentUserId = parentUserId;
-		if(parentUserId != null){
-			putQueryParameter("ParentUserId", parentUserId.toString());
 		}
 	}
 
@@ -125,19 +151,6 @@ public class ModifyAccountRelationRequest extends RpcAcsRequest<ModifyAccountRel
 		if (permissionCodess != null) {
 			for (int i = 0; i < permissionCodess.size(); i++) {
 				putQueryParameter("PermissionCodes." + (i + 1) , permissionCodess.get(i));
-			}
-		}	
-	}
-
-	public List<String> getRoleCodess() {
-		return this.roleCodess;
-	}
-
-	public void setRoleCodess(List<String> roleCodess) {
-		this.roleCodess = roleCodess;	
-		if (roleCodess != null) {
-			for (int i = 0; i < roleCodess.size(); i++) {
-				putQueryParameter("RoleCodes." + (i + 1) , roleCodess.get(i));
 			}
 		}	
 	}

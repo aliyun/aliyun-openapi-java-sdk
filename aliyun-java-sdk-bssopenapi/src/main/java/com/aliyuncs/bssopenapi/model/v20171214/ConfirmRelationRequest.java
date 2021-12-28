@@ -37,6 +37,8 @@ public class ConfirmRelationRequest extends RpcAcsRequest<ConfirmRelationRespons
 	private String requestId;
 
 	private List<String> permissionCodess;
+
+	private Long relationId;
 	public ConfirmRelationRequest() {
 		super("BssOpenApi", "2017-12-14", "ConfirmRelation");
 		setMethod(MethodType.POST);
@@ -112,6 +114,17 @@ public class ConfirmRelationRequest extends RpcAcsRequest<ConfirmRelationRespons
 				putQueryParameter("PermissionCodes." + (i + 1) , permissionCodess.get(i));
 			}
 		}	
+	}
+
+	public Long getRelationId() {
+		return this.relationId;
+	}
+
+	public void setRelationId(Long relationId) {
+		this.relationId = relationId;
+		if(relationId != null){
+			putQueryParameter("RelationId", relationId.toString());
+		}
 	}
 
 	@Override

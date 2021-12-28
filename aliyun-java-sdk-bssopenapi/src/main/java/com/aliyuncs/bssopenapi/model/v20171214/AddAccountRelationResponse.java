@@ -78,12 +78,22 @@ public class AddAccountRelationResponse extends AcsResponse {
 
 		private String hostId;
 
+		private Long relationId;
+
 		public String getHostId() {
 			return this.hostId;
 		}
 
 		public void setHostId(String hostId) {
 			this.hostId = hostId;
+		}
+
+		public Long getRelationId() {
+			return this.relationId;
+		}
+
+		public void setRelationId(Long relationId) {
+			this.relationId = relationId;
 		}
 	}
 

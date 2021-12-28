@@ -30,6 +30,7 @@ public class AddAccountRelationResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setHostId(_ctx.stringValue("AddAccountRelationResponse.Data.HostId"));
+		data.setRelationId(_ctx.longValue("AddAccountRelationResponse.Data.RelationId"));
 		addAccountRelationResponse.setData(data);
 	 
 	 	return addAccountRelationResponse;

@@ -22,58 +22,19 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class RelieveAccountRelationRequest extends RpcAcsRequest<RelieveAccountRelationResponse> {
+public class GetAccountRelationRequest extends RpcAcsRequest<GetAccountRelationResponse> {
 	   
-
-	private String relationType;
-
-	private Long parentUserId;
-
-	private Long childUserId;
 
 	private String requestId;
 
 	private Long relationId;
-	public RelieveAccountRelationRequest() {
-		super("BssOpenApi", "2017-12-14", "RelieveAccountRelation");
-		setMethod(MethodType.POST);
+	public GetAccountRelationRequest() {
+		super("BssOpenApi", "2017-12-14", "GetAccountRelation");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRelationType() {
-		return this.relationType;
-	}
-
-	public void setRelationType(String relationType) {
-		this.relationType = relationType;
-		if(relationType != null){
-			putQueryParameter("RelationType", relationType);
-		}
-	}
-
-	public Long getParentUserId() {
-		return this.parentUserId;
-	}
-
-	public void setParentUserId(Long parentUserId) {
-		this.parentUserId = parentUserId;
-		if(parentUserId != null){
-			putQueryParameter("ParentUserId", parentUserId.toString());
-		}
-	}
-
-	public Long getChildUserId() {
-		return this.childUserId;
-	}
-
-	public void setChildUserId(Long childUserId) {
-		this.childUserId = childUserId;
-		if(childUserId != null){
-			putQueryParameter("ChildUserId", childUserId.toString());
-		}
 	}
 
 	public String getRequestId() {
@@ -99,8 +60,8 @@ public class RelieveAccountRelationRequest extends RpcAcsRequest<RelieveAccountR
 	}
 
 	@Override
-	public Class<RelieveAccountRelationResponse> getResponseClass() {
-		return RelieveAccountRelationResponse.class;
+	public Class<GetAccountRelationResponse> getResponseClass() {
+		return GetAccountRelationResponse.class;
 	}
 
 }
