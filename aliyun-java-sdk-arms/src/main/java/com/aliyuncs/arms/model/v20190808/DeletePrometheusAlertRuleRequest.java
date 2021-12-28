@@ -27,7 +27,7 @@ public class DeletePrometheusAlertRuleRequest extends RpcAcsRequest<DeletePromet
 
 	private Long alertId;
 	public DeletePrometheusAlertRuleRequest() {
-		super("ARMS", "2019-08-08", "DeletePrometheusAlertRule");
+		super("ARMS", "2019-08-08", "DeletePrometheusAlertRule", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

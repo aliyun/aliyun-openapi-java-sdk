@@ -47,21 +47,13 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 	public static class PageBean {
 
-		private Integer totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<AlertRuleEntity> alertRules;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -79,6 +71,14 @@ public class SearchAlertRulesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<AlertRuleEntity> getAlertRules() {
 			return this.alertRules;
 		}
@@ -89,39 +89,39 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 		public static class AlertRuleEntity {
 
-			private String alertTitle;
+			private String status;
 
-			private String alertLevel;
-
-			private Integer alertType;
-
-			private Integer alertVersion;
-
-			private String config;
+			private Long updateTime;
 
 			private String contactGroupIdList;
 
 			private Long createTime;
 
-			private Long id;
-
-			private String regionId;
-
-			private String status;
-
-			private Long taskId;
-
-			private String taskStatus;
-
-			private Long updateTime;
+			private String alertTitle;
 
 			private String userId;
 
-			private String title;
+			private Integer alertVersion;
+
+			private Boolean hostByAlertManager;
+
+			private Integer alertType;
 
 			private String contactGroupIds;
 
-			private Boolean hostByAlertManager;
+			private String config;
+
+			private String regionId;
+
+			private String alertLevel;
+
+			private String taskStatus;
+
+			private String title;
+
+			private Long taskId;
+
+			private Long id;
 
 			private List<String> alertWays;
 
@@ -135,44 +135,20 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			private Notice notice;
 
-			public String getAlertTitle() {
-				return this.alertTitle;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setAlertTitle(String alertTitle) {
-				this.alertTitle = alertTitle;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
-			public String getAlertLevel() {
-				return this.alertLevel;
+			public Long getUpdateTime() {
+				return this.updateTime;
 			}
 
-			public void setAlertLevel(String alertLevel) {
-				this.alertLevel = alertLevel;
-			}
-
-			public Integer getAlertType() {
-				return this.alertType;
-			}
-
-			public void setAlertType(Integer alertType) {
-				this.alertType = alertType;
-			}
-
-			public Integer getAlertVersion() {
-				return this.alertVersion;
-			}
-
-			public void setAlertVersion(Integer alertVersion) {
-				this.alertVersion = alertVersion;
-			}
-
-			public String getConfig() {
-				return this.config;
-			}
-
-			public void setConfig(String config) {
-				this.config = config;
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public String getContactGroupIdList() {
@@ -191,52 +167,12 @@ public class SearchAlertRulesResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Long getId() {
-				return this.id;
+			public String getAlertTitle() {
+				return this.alertTitle;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Long getTaskId() {
-				return this.taskId;
-			}
-
-			public void setTaskId(Long taskId) {
-				this.taskId = taskId;
-			}
-
-			public String getTaskStatus() {
-				return this.taskStatus;
-			}
-
-			public void setTaskStatus(String taskStatus) {
-				this.taskStatus = taskStatus;
-			}
-
-			public Long getUpdateTime() {
-				return this.updateTime;
-			}
-
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
+			public void setAlertTitle(String alertTitle) {
+				this.alertTitle = alertTitle;
 			}
 
 			public String getUserId() {
@@ -247,12 +183,28 @@ public class SearchAlertRulesResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getTitle() {
-				return this.title;
+			public Integer getAlertVersion() {
+				return this.alertVersion;
 			}
 
-			public void setTitle(String title) {
-				this.title = title;
+			public void setAlertVersion(Integer alertVersion) {
+				this.alertVersion = alertVersion;
+			}
+
+			public Boolean getHostByAlertManager() {
+				return this.hostByAlertManager;
+			}
+
+			public void setHostByAlertManager(Boolean hostByAlertManager) {
+				this.hostByAlertManager = hostByAlertManager;
+			}
+
+			public Integer getAlertType() {
+				return this.alertType;
+			}
+
+			public void setAlertType(Integer alertType) {
+				this.alertType = alertType;
 			}
 
 			public String getContactGroupIds() {
@@ -263,12 +215,60 @@ public class SearchAlertRulesResponse extends AcsResponse {
 				this.contactGroupIds = contactGroupIds;
 			}
 
-			public Boolean getHostByAlertManager() {
-				return this.hostByAlertManager;
+			public String getConfig() {
+				return this.config;
 			}
 
-			public void setHostByAlertManager(Boolean hostByAlertManager) {
-				this.hostByAlertManager = hostByAlertManager;
+			public void setConfig(String config) {
+				this.config = config;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getAlertLevel() {
+				return this.alertLevel;
+			}
+
+			public void setAlertLevel(String alertLevel) {
+				this.alertLevel = alertLevel;
+			}
+
+			public String getTaskStatus() {
+				return this.taskStatus;
+			}
+
+			public void setTaskStatus(String taskStatus) {
+				this.taskStatus = taskStatus;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public Long getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(Long taskId) {
+				this.taskId = taskId;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public List<String> getAlertWays() {
@@ -323,11 +323,11 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				private String alarmContentTemplate;
 
+				private String subTitle;
+
 				private String alarmContentSubTitle;
 
 				private String content;
-
-				private String subTitle;
 
 				public String getAlarmContentTemplate() {
 					return this.alarmContentTemplate;
@@ -335,6 +335,14 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				public void setAlarmContentTemplate(String alarmContentTemplate) {
 					this.alarmContentTemplate = alarmContentTemplate;
+				}
+
+				public String getSubTitle() {
+					return this.subTitle;
+				}
+
+				public void setSubTitle(String subTitle) {
+					this.subTitle = subTitle;
 				}
 
 				public String getAlarmContentSubTitle() {
@@ -351,14 +359,6 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				public void setContent(String content) {
 					this.content = content;
-				}
-
-				public String getSubTitle() {
-					return this.subTitle;
-				}
-
-				public void setSubTitle(String subTitle) {
-					this.subTitle = subTitle;
 				}
 			}
 
@@ -386,33 +386,17 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				public static class Rule {
 
-					private String aggregates;
-
-					private String alias;
-
 					private String measure;
+
+					private Float value;
+
+					private String aggregates;
 
 					private Integer nValue;
 
 					private String operator;
 
-					private Float value;
-
-					public String getAggregates() {
-						return this.aggregates;
-					}
-
-					public void setAggregates(String aggregates) {
-						this.aggregates = aggregates;
-					}
-
-					public String getAlias() {
-						return this.alias;
-					}
-
-					public void setAlias(String alias) {
-						this.alias = alias;
-					}
+					private String alias;
 
 					public String getMeasure() {
 						return this.measure;
@@ -420,6 +404,22 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 					public void setMeasure(String measure) {
 						this.measure = measure;
+					}
+
+					public Float getValue() {
+						return this.value;
+					}
+
+					public void setValue(Float value) {
+						this.value = value;
+					}
+
+					public String getAggregates() {
+						return this.aggregates;
+					}
+
+					public void setAggregates(String aggregates) {
+						this.aggregates = aggregates;
 					}
 
 					public Integer getNValue() {
@@ -438,17 +438,19 @@ public class SearchAlertRulesResponse extends AcsResponse {
 						this.operator = operator;
 					}
 
-					public Float getValue() {
-						return this.value;
+					public String getAlias() {
+						return this.alias;
 					}
 
-					public void setValue(Float value) {
-						this.value = value;
+					public void setAlias(String alias) {
+						this.alias = alias;
 					}
 				}
 			}
 
 			public static class MetricParam {
+
+				private String type;
 
 				private String appGroupId;
 
@@ -456,9 +458,15 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				private String pid;
 
-				private String type;
-
 				private List<Dimension> dimensions;
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
 
 				public String getAppGroupId() {
 					return this.appGroupId;
@@ -482,14 +490,6 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				public void setPid(String pid) {
 					this.pid = pid;
-				}
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
 				}
 
 				public List<Dimension> getDimensions() {
@@ -540,9 +540,9 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 				private Long noticeEndTime;
 
-				private Long noticeStartTime;
-
 				private Long startTime;
+
+				private Long noticeStartTime;
 
 				public Long getEndTime() {
 					return this.endTime;
@@ -560,20 +560,20 @@ public class SearchAlertRulesResponse extends AcsResponse {
 					this.noticeEndTime = noticeEndTime;
 				}
 
-				public Long getNoticeStartTime() {
-					return this.noticeStartTime;
-				}
-
-				public void setNoticeStartTime(Long noticeStartTime) {
-					this.noticeStartTime = noticeStartTime;
-				}
-
 				public Long getStartTime() {
 					return this.startTime;
 				}
 
 				public void setStartTime(Long startTime) {
 					this.startTime = startTime;
+				}
+
+				public Long getNoticeStartTime() {
+					return this.noticeStartTime;
+				}
+
+				public void setNoticeStartTime(Long noticeStartTime) {
+					this.noticeStartTime = noticeStartTime;
 				}
 			}
 		}

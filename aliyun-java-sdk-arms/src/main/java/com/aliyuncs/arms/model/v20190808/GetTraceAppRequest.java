@@ -27,7 +27,7 @@ public class GetTraceAppRequest extends RpcAcsRequest<GetTraceAppResponse> {
 
 	private String pid;
 	public GetTraceAppRequest() {
-		super("ARMS", "2019-08-08", "GetTraceApp");
+		super("ARMS", "2019-08-08", "GetTraceApp", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetUserCommercialStatusRequest extends RpcAcsRequest<GetUserCommerc
 
 	private String targetUserId;
 	public GetUserCommercialStatusRequest() {
-		super("ARMS", "2019-08-08", "GetUserCommercialStatus");
+		super("ARMS", "2019-08-08", "GetUserCommercialStatus", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CheckServiceStatusRequest extends RpcAcsRequest<CheckServiceStatusR
 
 	private String svcCode;
 	public CheckServiceStatusRequest() {
-		super("ARMS", "2019-08-08", "CheckServiceStatus");
+		super("ARMS", "2019-08-08", "CheckServiceStatus", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

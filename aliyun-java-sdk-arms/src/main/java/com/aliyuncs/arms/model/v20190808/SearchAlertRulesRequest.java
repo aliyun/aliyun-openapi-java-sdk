@@ -31,13 +31,15 @@ public class SearchAlertRulesRequest extends RpcAcsRequest<SearchAlertRulesRespo
 
 	private String pid;
 
+	private String systemRegionId;
+
 	private String title;
 
 	private String type;
 
 	private Integer pageSize;
 	public SearchAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "SearchAlertRules");
+		super("ARMS", "2019-08-08", "SearchAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,6 +77,17 @@ public class SearchAlertRulesRequest extends RpcAcsRequest<SearchAlertRulesRespo
 		this.pid = pid;
 		if(pid != null){
 			putQueryParameter("Pid", pid);
+		}
+	}
+
+	public String getSystemRegionId() {
+		return this.systemRegionId;
+	}
+
+	public void setSystemRegionId(String systemRegionId) {
+		this.systemRegionId = systemRegionId;
+		if(systemRegionId != null){
+			putQueryParameter("SystemRegionId", systemRegionId);
 		}
 	}
 

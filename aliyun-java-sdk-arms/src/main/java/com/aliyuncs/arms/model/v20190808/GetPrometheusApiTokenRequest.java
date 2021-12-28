@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class GetPrometheusApiTokenRequest extends RpcAcsRequest<GetPrometheusApiTokenResponse> {
 	   
 	public GetPrometheusApiTokenRequest() {
-		super("ARMS", "2019-08-08", "GetPrometheusApiToken");
+		super("ARMS", "2019-08-08", "GetPrometheusApiToken", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

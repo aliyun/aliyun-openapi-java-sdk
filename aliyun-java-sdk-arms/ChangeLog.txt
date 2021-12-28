@@ -1,3 +1,6 @@
+2021-12-28 Version: 2.7.42
+- Add param for flink alert.
+
 2021-11-26 Version: 2.7.40
 - New add addRecordingRule and getRecordingRule api.
 - Update ListDashBoards api.

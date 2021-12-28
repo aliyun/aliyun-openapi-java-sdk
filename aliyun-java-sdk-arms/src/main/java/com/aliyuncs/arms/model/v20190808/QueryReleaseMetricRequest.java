@@ -41,7 +41,7 @@ public class QueryReleaseMetricRequest extends RpcAcsRequest<QueryReleaseMetricR
 
 	private Long releaseStartTime;
 	public QueryReleaseMetricRequest() {
-		super("ARMS", "2019-08-08", "QueryReleaseMetric");
+		super("ARMS", "2019-08-08", "QueryReleaseMetric", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
