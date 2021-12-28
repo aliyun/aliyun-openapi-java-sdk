@@ -31,7 +31,7 @@ public class QueryZnodeDetailRequest extends RpcAcsRequest<QueryZnodeDetailRespo
 
 	private String requestPars;
 	public QueryZnodeDetailRequest() {
-		super("mse", "2019-05-31", "QueryZnodeDetail");
+		super("mse", "2019-05-31", "QueryZnodeDetail", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

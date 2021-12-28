@@ -27,7 +27,7 @@ public class GetGovernanceKubernetesClusterRequest extends RpcAcsRequest<GetGove
 
 	private String clusterId;
 	public GetGovernanceKubernetesClusterRequest() {
-		super("mse", "2019-05-31", "GetGovernanceKubernetesCluster");
+		super("mse", "2019-05-31", "GetGovernanceKubernetesCluster", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

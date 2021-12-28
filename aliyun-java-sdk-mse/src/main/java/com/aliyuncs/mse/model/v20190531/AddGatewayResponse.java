@@ -15,34 +15,26 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.CreateGovernanceKubernetesClusterResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.AddGatewayResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateGovernanceKubernetesClusterResponse extends AcsResponse {
-
-	private String message;
+public class AddGatewayResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long data;
+	private Integer httpStatusCode;
+
+	private String message;
 
 	private Integer code;
 
-	private String success;
+	private Boolean success;
 
-	private Integer httpStatusCode;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,30 +42,6 @@ public class CreateGovernanceKubernetesClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getData() {
-		return this.data;
-	}
-
-	public void setData(Long data) {
-		this.data = data;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -84,9 +52,41 @@ public class CreateGovernanceKubernetesClusterResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	@Override
-	public CreateGovernanceKubernetesClusterResponse getInstance(UnmarshallerContext context) {
-		return	CreateGovernanceKubernetesClusterResponseUnmarshaller.unmarshall(this, context);
+	public AddGatewayResponse getInstance(UnmarshallerContext context) {
+		return	AddGatewayResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

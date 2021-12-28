@@ -22,21 +22,19 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateGovernanceKubernetesClusterRequest extends RpcAcsRequest<CreateGovernanceKubernetesClusterResponse> {
+public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<QueryGovernanceKubernetesClusterResponse> {
 	   
 
 	private String clusterName;
 
-	private String nameSpaceInfos;
-
 	private String clusterId;
 
-	private String k8sVersion;
+	private Integer pageNumber;
 
-	private Long pilotStartTime;
-	public CreateGovernanceKubernetesClusterRequest() {
-		super("mse", "2019-05-31", "CreateGovernanceKubernetesCluster");
-		setMethod(MethodType.POST);
+	private Integer pageSize;
+	public QueryGovernanceKubernetesClusterRequest() {
+		super("mse", "2019-05-31", "QueryGovernanceKubernetesCluster", "mse");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -54,17 +52,6 @@ public class CreateGovernanceKubernetesClusterRequest extends RpcAcsRequest<Crea
 		}
 	}
 
-	public String getNameSpaceInfos() {
-		return this.nameSpaceInfos;
-	}
-
-	public void setNameSpaceInfos(String nameSpaceInfos) {
-		this.nameSpaceInfos = nameSpaceInfos;
-		if(nameSpaceInfos != null){
-			putQueryParameter("NameSpaceInfos", nameSpaceInfos);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -76,31 +63,31 @@ public class CreateGovernanceKubernetesClusterRequest extends RpcAcsRequest<Crea
 		}
 	}
 
-	public String getK8sVersion() {
-		return this.k8sVersion;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setK8sVersion(String k8sVersion) {
-		this.k8sVersion = k8sVersion;
-		if(k8sVersion != null){
-			putQueryParameter("K8sVersion", k8sVersion);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public Long getPilotStartTime() {
-		return this.pilotStartTime;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setPilotStartTime(Long pilotStartTime) {
-		this.pilotStartTime = pilotStartTime;
-		if(pilotStartTime != null){
-			putQueryParameter("PilotStartTime", pilotStartTime.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateGovernanceKubernetesClusterResponse> getResponseClass() {
-		return CreateGovernanceKubernetesClusterResponse.class;
+	public Class<QueryGovernanceKubernetesClusterResponse> getResponseClass() {
+		return QueryGovernanceKubernetesClusterResponse.class;
 	}
 
 }

@@ -41,7 +41,7 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 
 	private String info2;
 	public AddServiceSourceRequest() {
-		super("mse", "2019-05-31", "AddServiceSource");
+		super("mse", "2019-05-31", "AddServiceSource", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryClusterSpecificationResponse> {
 	   
 	public QueryClusterSpecificationRequest() {
-		super("mse", "2019-05-31", "QueryClusterSpecification");
+		super("mse", "2019-05-31", "QueryClusterSpecification", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

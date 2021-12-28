@@ -25,14 +25,27 @@ import com.aliyuncs.mse.Endpoint;
 public class GetGatewayOptionRequest extends RpcAcsRequest<GetGatewayOptionResponse> {
 	   
 
+	private String gatewayUniqueId;
+
 	private Long gatewayId;
 	public GetGatewayOptionRequest() {
-		super("mse", "2019-05-31", "GetGatewayOption");
+		super("mse", "2019-05-31", "GetGatewayOption", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGatewayUniqueId() {
+		return this.gatewayUniqueId;
+	}
+
+	public void setGatewayUniqueId(String gatewayUniqueId) {
+		this.gatewayUniqueId = gatewayUniqueId;
+		if(gatewayUniqueId != null){
+			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
 	}
 
 	public Long getGatewayId() {

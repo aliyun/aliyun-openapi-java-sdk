@@ -25,7 +25,7 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryGatewayRegionRequest extends RpcAcsRequest<QueryGatewayRegionResponse> {
 	   
 	public QueryGatewayRegionRequest() {
-		super("mse", "2019-05-31", "QueryGatewayRegion");
+		super("mse", "2019-05-31", "QueryGatewayRegion", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.mse.Endpoint;
 public class QuerySlbSpecRequest extends RpcAcsRequest<QuerySlbSpecResponse> {
 	   
 	public QuerySlbSpecRequest() {
-		super("mse", "2019-05-31", "QuerySlbSpec");
+		super("mse", "2019-05-31", "QuerySlbSpec", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

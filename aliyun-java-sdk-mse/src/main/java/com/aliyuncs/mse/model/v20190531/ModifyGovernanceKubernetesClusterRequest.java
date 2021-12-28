@@ -29,7 +29,7 @@ public class ModifyGovernanceKubernetesClusterRequest extends RpcAcsRequest<Modi
 
 	private String clusterId;
 	public ModifyGovernanceKubernetesClusterRequest() {
-		super("mse", "2019-05-31", "ModifyGovernanceKubernetesCluster");
+		super("mse", "2019-05-31", "ModifyGovernanceKubernetesCluster", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
