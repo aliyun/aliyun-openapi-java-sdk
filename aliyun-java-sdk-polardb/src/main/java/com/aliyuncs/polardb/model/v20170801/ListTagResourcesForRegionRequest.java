@@ -22,32 +22,20 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeScheduleTasksResponse> {
+public class ListTagResourcesForRegionRequest extends RpcAcsRequest<ListTagResourcesForRegionResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String dBClusterDescription;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String nextToken;
 
 	private String resourceOwnerAccount;
-
-	private String orderId;
-
-	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String taskAction;
-
-	private String status;
-	public DescribeScheduleTasksRequest() {
-		super("polardb", "2017-08-01", "DescribeScheduleTasks");
+	public ListTagResourcesForRegionRequest() {
+		super("polardb", "2017-08-01", "ListTagResourcesForRegion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,36 +54,14 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		}
 	}
 
-	public String getDBClusterDescription() {
-		return this.dBClusterDescription;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setDBClusterDescription(String dBClusterDescription) {
-		this.dBClusterDescription = dBClusterDescription;
-		if(dBClusterDescription != null){
-			putQueryParameter("DBClusterDescription", dBClusterDescription);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -107,28 +73,6 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -154,31 +98,9 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		}
 	}
 
-	public String getTaskAction() {
-		return this.taskAction;
-	}
-
-	public void setTaskAction(String taskAction) {
-		this.taskAction = taskAction;
-		if(taskAction != null){
-			putQueryParameter("TaskAction", taskAction);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	@Override
-	public Class<DescribeScheduleTasksResponse> getResponseClass() {
-		return DescribeScheduleTasksResponse.class;
+	public Class<ListTagResourcesForRegionResponse> getResponseClass() {
+		return ListTagResourcesForRegionResponse.class;
 	}
 
 }

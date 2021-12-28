@@ -22,10 +22,8 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNodePerformanceResponse> {
+public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBProxyPerformanceResponse> {
 	   
-
-	private String dBNodeId;
 
 	private String startTime;
 
@@ -34,24 +32,13 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 	private String dBClusterId;
 
 	private String endTime;
-	public DescribeDBNodePerformanceRequest() {
-		super("polardb", "2017-08-01", "DescribeDBNodePerformance");
+	public DescribeDBProxyPerformanceRequest() {
+		super("polardb", "2017-08-01", "DescribeDBProxyPerformance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDBNodeId() {
-		return this.dBNodeId;
-	}
-
-	public void setDBNodeId(String dBNodeId) {
-		this.dBNodeId = dBNodeId;
-		if(dBNodeId != null){
-			putQueryParameter("DBNodeId", dBNodeId);
-		}
 	}
 
 	public String getStartTime() {
@@ -99,8 +86,8 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 	}
 
 	@Override
-	public Class<DescribeDBNodePerformanceResponse> getResponseClass() {
-		return DescribeDBNodePerformanceResponse.class;
+	public Class<DescribeDBProxyPerformanceResponse> getResponseClass() {
+		return DescribeDBProxyPerformanceResponse.class;
 	}
 
 }

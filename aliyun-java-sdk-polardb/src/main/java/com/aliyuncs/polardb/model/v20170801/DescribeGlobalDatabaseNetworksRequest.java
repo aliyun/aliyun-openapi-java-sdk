@@ -41,7 +41,7 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 	public DescribeGlobalDatabaseNetworksRequest() {
-		super("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks", "polardb");
+		super("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

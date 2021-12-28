@@ -43,7 +43,7 @@ public class RestoreTableRequest extends RpcAcsRequest<RestoreTableResponse> {
 
 	private Long ownerId;
 	public RestoreTableRequest() {
-		super("polardb", "2017-08-01", "RestoreTable", "polardb");
+		super("polardb", "2017-08-01", "RestoreTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

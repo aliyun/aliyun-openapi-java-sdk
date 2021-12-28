@@ -39,7 +39,7 @@ public class RemoveDBClusterFromGDNRequest extends RpcAcsRequest<RemoveDBCluster
 
 	private Long ownerId;
 	public RemoveDBClusterFromGDNRequest() {
-		super("polardb", "2017-08-01", "RemoveDBClusterFromGDN", "polardb");
+		super("polardb", "2017-08-01", "RemoveDBClusterFromGDN");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

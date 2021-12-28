@@ -35,7 +35,7 @@ public class DeleteParameterGroupRequest extends RpcAcsRequest<DeleteParameterGr
 
 	private Long ownerId;
 	public DeleteParameterGroupRequest() {
-		super("polardb", "2017-08-01", "DeleteParameterGroup", "polardb");
+		super("polardb", "2017-08-01", "DeleteParameterGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

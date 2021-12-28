@@ -39,7 +39,7 @@ public class FailoverDBClusterRequest extends RpcAcsRequest<FailoverDBClusterRes
 
 	private String targetDBNodeId;
 	public FailoverDBClusterRequest() {
-		super("polardb", "2017-08-01", "FailoverDBCluster", "polardb");
+		super("polardb", "2017-08-01", "FailoverDBCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeChara
 
 	private Long ownerId;
 	public DescribeCharacterSetNameRequest() {
-		super("polardb", "2017-08-01", "DescribeCharacterSetName", "polardb");
+		super("polardb", "2017-08-01", "DescribeCharacterSetName");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

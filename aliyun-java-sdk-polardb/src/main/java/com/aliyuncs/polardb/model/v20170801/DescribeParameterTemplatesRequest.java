@@ -37,7 +37,7 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 
 	private String dBVersion;
 	public DescribeParameterTemplatesRequest() {
-		super("polardb", "2017-08-01", "DescribeParameterTemplates", "polardb");
+		super("polardb", "2017-08-01", "DescribeParameterTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

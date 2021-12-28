@@ -25,19 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
+	private Integer totalRecordCount;
+
+	private Integer pageRecordCount;
+
 	private String requestId;
+
+	private Integer pageNumber;
 
 	private String dBClusterId;
 
 	private String engine;
 
-	private Integer totalRecordCount;
-
-	private Integer pageNumber;
-
-	private Integer pageRecordCount;
-
 	private List<SQLSlowRecord> items;
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +61,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public String getDBClusterId() {
@@ -63,30 +87,6 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
 	public List<SQLSlowRecord> getItems() {
 		return this.items;
 	}
@@ -97,23 +97,33 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public static class SQLSlowRecord {
 
+		private String executionStartTime;
+
 		private String hostAddress;
-
-		private String dBName;
-
-		private String sQLText;
 
 		private Long queryTimes;
 
-		private Long lockTimes;
-
-		private Long parseRowCounts;
+		private String sQLText;
 
 		private Long returnRowCounts;
 
-		private String executionStartTime;
+		private Long parseRowCounts;
+
+		private String dBName;
+
+		private Long lockTimes;
 
 		private String dBNodeId;
+
+		private Long queryTimeMS;
+
+		public String getExecutionStartTime() {
+			return this.executionStartTime;
+		}
+
+		public void setExecutionStartTime(String executionStartTime) {
+			this.executionStartTime = executionStartTime;
+		}
 
 		public String getHostAddress() {
 			return this.hostAddress;
@@ -121,22 +131,6 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setHostAddress(String hostAddress) {
 			this.hostAddress = hostAddress;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
 		}
 
 		public Long getQueryTimes() {
@@ -147,20 +141,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.queryTimes = queryTimes;
 		}
 
-		public Long getLockTimes() {
-			return this.lockTimes;
+		public String getSQLText() {
+			return this.sQLText;
 		}
 
-		public void setLockTimes(Long lockTimes) {
-			this.lockTimes = lockTimes;
-		}
-
-		public Long getParseRowCounts() {
-			return this.parseRowCounts;
-		}
-
-		public void setParseRowCounts(Long parseRowCounts) {
-			this.parseRowCounts = parseRowCounts;
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
 		}
 
 		public Long getReturnRowCounts() {
@@ -171,12 +157,28 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.returnRowCounts = returnRowCounts;
 		}
 
-		public String getExecutionStartTime() {
-			return this.executionStartTime;
+		public Long getParseRowCounts() {
+			return this.parseRowCounts;
 		}
 
-		public void setExecutionStartTime(String executionStartTime) {
-			this.executionStartTime = executionStartTime;
+		public void setParseRowCounts(Long parseRowCounts) {
+			this.parseRowCounts = parseRowCounts;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public Long getLockTimes() {
+			return this.lockTimes;
+		}
+
+		public void setLockTimes(Long lockTimes) {
+			this.lockTimes = lockTimes;
 		}
 
 		public String getDBNodeId() {
@@ -185,6 +187,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setDBNodeId(String dBNodeId) {
 			this.dBNodeId = dBNodeId;
+		}
+
+		public Long getQueryTimeMS() {
+			return this.queryTimeMS;
+		}
+
+		public void setQueryTimeMS(Long queryTimeMS) {
+			this.queryTimeMS = queryTimeMS;
 		}
 	}
 

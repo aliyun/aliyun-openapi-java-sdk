@@ -39,7 +39,7 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 
 	private String parameters;
 	public ModifyDBClusterParametersRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterParameters", "polardb");
+		super("polardb", "2017-08-01", "ModifyDBClusterParameters");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class DescribeDBLinksRequest extends RpcAcsRequest<DescribeDBLinksRespons
 
 	private Long ownerId;
 	public DescribeDBLinksRequest() {
-		super("polardb", "2017-08-01", "DescribeDBLinks", "polardb");
+		super("polardb", "2017-08-01", "DescribeDBLinks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

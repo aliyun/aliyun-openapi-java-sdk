@@ -49,7 +49,7 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private String backupMode;
 	public DescribeBackupsRequest() {
-		super("polardb", "2017-08-01", "DescribeBackups", "polardb");
+		super("polardb", "2017-08-01", "DescribeBackups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

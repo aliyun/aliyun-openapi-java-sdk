@@ -37,7 +37,7 @@ public class ModifyDBClusterMaintainTimeRequest extends RpcAcsRequest<ModifyDBCl
 
 	private Long ownerId;
 	public ModifyDBClusterMaintainTimeRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterMaintainTime", "polardb");
+		super("polardb", "2017-08-01", "ModifyDBClusterMaintainTime");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

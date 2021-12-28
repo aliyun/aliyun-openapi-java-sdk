@@ -37,7 +37,7 @@ public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParame
 
 	private String dBVersion;
 	public DescribeParameterGroupsRequest() {
-		super("polardb", "2017-08-01", "DescribeParameterGroups", "polardb");
+		super("polardb", "2017-08-01", "DescribeParameterGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

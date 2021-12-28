@@ -39,7 +39,7 @@ public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptio
 
 	private String dBName;
 	public ModifyDBDescriptionRequest() {
-		super("polardb", "2017-08-01", "ModifyDBDescription", "polardb");
+		super("polardb", "2017-08-01", "ModifyDBDescription");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

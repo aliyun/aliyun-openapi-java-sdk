@@ -34,6 +34,8 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private Integer pageNumber;
 
+	private String dBNodeIds;
+
 	private String resourceGroupId;
 
 	private Integer pageSize;
@@ -48,9 +50,11 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private String dBType;
 
+	private String payType;
+
 	private String dBClusterIds;
 	public DescribeDBClustersRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusters", "polardb");
+		super("polardb", "2017-08-01", "DescribeDBClusters");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -99,6 +103,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDBNodeIds() {
+		return this.dBNodeIds;
+	}
+
+	public void setDBNodeIds(String dBNodeIds) {
+		this.dBNodeIds = dBNodeIds;
+		if(dBNodeIds != null){
+			putQueryParameter("DBNodeIds", dBNodeIds);
 		}
 	}
 
@@ -179,6 +194,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.dBType = dBType;
 		if(dBType != null){
 			putQueryParameter("DBType", dBType);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

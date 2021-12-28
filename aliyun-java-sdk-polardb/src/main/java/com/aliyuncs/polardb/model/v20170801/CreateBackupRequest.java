@@ -37,7 +37,7 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	private Long ownerId;
 	public CreateBackupRequest() {
-		super("polardb", "2017-08-01", "CreateBackup", "polardb");
+		super("polardb", "2017-08-01", "CreateBackup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

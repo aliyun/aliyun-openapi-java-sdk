@@ -83,6 +83,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Boolean isProxyLatestVersion;
 
+	private String storageType;
+
+	private String proxyCpuCores;
+
+	private String proxyType;
+
+	private String proxyStatus;
+
 	private List<DBNode> dBNodes;
 
 	private List<Tag> tags;
@@ -317,6 +325,38 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setIsProxyLatestVersion(Boolean isProxyLatestVersion) {
 		this.isProxyLatestVersion = isProxyLatestVersion;
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+	}
+
+	public String getProxyCpuCores() {
+		return this.proxyCpuCores;
+	}
+
+	public void setProxyCpuCores(String proxyCpuCores) {
+		this.proxyCpuCores = proxyCpuCores;
+	}
+
+	public String getProxyType() {
+		return this.proxyType;
+	}
+
+	public void setProxyType(String proxyType) {
+		this.proxyType = proxyType;
+	}
+
+	public String getProxyStatus() {
+		return this.proxyStatus;
+	}
+
+	public void setProxyStatus(String proxyStatus) {
+		this.proxyStatus = proxyStatus;
 	}
 
 	public List<DBNode> getDBNodes() {

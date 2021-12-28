@@ -35,7 +35,7 @@ public class RestartDBNodeRequest extends RpcAcsRequest<RestartDBNodeResponse> {
 
 	private Long ownerId;
 	public RestartDBNodeRequest() {
-		super("polardb", "2017-08-01", "RestartDBNode", "polardb");
+		super("polardb", "2017-08-01", "RestartDBNode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

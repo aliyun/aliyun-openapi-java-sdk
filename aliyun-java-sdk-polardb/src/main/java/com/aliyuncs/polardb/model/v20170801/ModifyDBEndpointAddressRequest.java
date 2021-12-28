@@ -47,7 +47,7 @@ public class ModifyDBEndpointAddressRequest extends RpcAcsRequest<ModifyDBEndpoi
 
 	private String netType;
 	public ModifyDBEndpointAddressRequest() {
-		super("polardb", "2017-08-01", "ModifyDBEndpointAddress", "polardb");
+		super("polardb", "2017-08-01", "ModifyDBEndpointAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class DescribeDBClustersWithBackupsRequest extends RpcAcsRequest<Describe
 
 	private String dBClusterIds;
 	public DescribeDBClustersWithBackupsRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClustersWithBackups", "polardb");
+		super("polardb", "2017-08-01", "DescribeDBClustersWithBackups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
