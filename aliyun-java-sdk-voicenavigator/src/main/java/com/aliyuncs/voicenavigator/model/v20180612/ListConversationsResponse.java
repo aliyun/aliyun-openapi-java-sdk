@@ -93,6 +93,8 @@ public class ListConversationsResponse extends AcsResponse {
 
 		private Integer rounds;
 
+		private Boolean hasLastPlaybackCompleted;
+
 		public Long getEndTime() {
 			return this.endTime;
 		}
@@ -155,6 +157,14 @@ public class ListConversationsResponse extends AcsResponse {
 
 		public void setRounds(Integer rounds) {
 			this.rounds = rounds;
+		}
+
+		public Boolean getHasLastPlaybackCompleted() {
+			return this.hasLastPlaybackCompleted;
+		}
+
+		public void setHasLastPlaybackCompleted(Boolean hasLastPlaybackCompleted) {
+			this.hasLastPlaybackCompleted = hasLastPlaybackCompleted;
 		}
 	}
 
