@@ -29,16 +29,17 @@ public class ListTLSCipherPoliciesResponseUnmarshaller {
 		
 		listTLSCipherPoliciesResponse.setRequestId(_ctx.stringValue("ListTLSCipherPoliciesResponse.RequestId"));
 		listTLSCipherPoliciesResponse.setNextToken(_ctx.stringValue("ListTLSCipherPoliciesResponse.NextToken"));
-		listTLSCipherPoliciesResponse.setIsTruncated(_ctx.booleanValue("ListTLSCipherPoliciesResponse.IsTruncated"));
 		listTLSCipherPoliciesResponse.setTotalCount(_ctx.integerValue("ListTLSCipherPoliciesResponse.TotalCount"));
+		listTLSCipherPoliciesResponse.setIsTruncated(_ctx.booleanValue("ListTLSCipherPoliciesResponse.IsTruncated"));
 
 		List<TLSCipherPolicy> tLSCipherPolicies = new ArrayList<TLSCipherPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies.Length"); i++) {
 			TLSCipherPolicy tLSCipherPolicy = new TLSCipherPolicy();
-			tLSCipherPolicy.setCreateTime(_ctx.longValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].CreateTime"));
+			tLSCipherPolicy.setServiceManagedMode(_ctx.stringValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].ServiceManagedMode"));
+			tLSCipherPolicy.setStatus(_ctx.stringValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].Status"));
 			tLSCipherPolicy.setInstanceId(_ctx.stringValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].InstanceId"));
 			tLSCipherPolicy.setName(_ctx.stringValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].Name"));
-			tLSCipherPolicy.setStatus(_ctx.stringValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].Status"));
+			tLSCipherPolicy.setCreateTime(_ctx.longValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].CreateTime"));
 
 			List<String> tLSVersions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].TLSVersions.Length"); j++) {
@@ -55,9 +56,9 @@ public class ListTLSCipherPoliciesResponseUnmarshaller {
 			List<RelateListener> relateListeners = new ArrayList<RelateListener>();
 			for (int j = 0; j < _ctx.lengthValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].RelateListeners.Length"); j++) {
 				RelateListener relateListener = new RelateListener();
-				relateListener.setLoadBalancerId(_ctx.stringValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].RelateListeners["+ j +"].LoadBalancerId"));
 				relateListener.setPort(_ctx.integerValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].RelateListeners["+ j +"].Port"));
 				relateListener.setBizProtocol(_ctx.stringValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].RelateListeners["+ j +"].Protocol"));
+				relateListener.setLoadBalancerId(_ctx.stringValue("ListTLSCipherPoliciesResponse.TLSCipherPolicies["+ i +"].RelateListeners["+ j +"].LoadBalancerId"));
 
 				relateListeners.add(relateListener);
 			}

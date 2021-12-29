@@ -27,21 +27,22 @@ public class DescribeMasterSlaveServerGroupAttributeResponseUnmarshaller {
 	public static DescribeMasterSlaveServerGroupAttributeResponse unmarshall(DescribeMasterSlaveServerGroupAttributeResponse describeMasterSlaveServerGroupAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeMasterSlaveServerGroupAttributeResponse.setRequestId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.RequestId"));
+		describeMasterSlaveServerGroupAttributeResponse.setServiceManagedMode(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.ServiceManagedMode"));
 		describeMasterSlaveServerGroupAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.LoadBalancerId"));
-		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupId"));
 		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupName(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupName"));
+		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupId"));
 
 		List<MasterSlaveBackendServer> masterSlaveBackendServers = new ArrayList<MasterSlaveBackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers.Length"); i++) {
 			MasterSlaveBackendServer masterSlaveBackendServer = new MasterSlaveBackendServer();
-			masterSlaveBackendServer.setServerId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerId"));
-			masterSlaveBackendServer.setPort(_ctx.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Port"));
-			masterSlaveBackendServer.setWeight(_ctx.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Weight"));
-			masterSlaveBackendServer.setServerType(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerType"));
-			masterSlaveBackendServer.setType(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Type"));
-			masterSlaveBackendServer.setServerIp(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
 			masterSlaveBackendServer.setVpcId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
+			masterSlaveBackendServer.setType(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Type"));
+			masterSlaveBackendServer.setWeight(_ctx.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Weight"));
 			masterSlaveBackendServer.setDescription(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Description"));
+			masterSlaveBackendServer.setServerIp(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
+			masterSlaveBackendServer.setPort(_ctx.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Port"));
+			masterSlaveBackendServer.setServerId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerId"));
+			masterSlaveBackendServer.setServerType(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerType"));
 
 			masterSlaveBackendServers.add(masterSlaveBackendServer);
 		}

@@ -33,6 +33,7 @@ public class DescribeMasterSlaveServerGroupsResponseUnmarshaller {
 		List<MasterSlaveServerGroup> masterSlaveServerGroups = new ArrayList<MasterSlaveServerGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups.Length"); i++) {
 			MasterSlaveServerGroup masterSlaveServerGroup = new MasterSlaveServerGroup();
+			masterSlaveServerGroup.setServiceManagedMode(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].ServiceManagedMode"));
 			masterSlaveServerGroup.setMasterSlaveServerGroupId(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupId"));
 			masterSlaveServerGroup.setMasterSlaveServerGroupName(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupName"));
 
@@ -41,8 +42,8 @@ public class DescribeMasterSlaveServerGroupsResponseUnmarshaller {
 			List<Listener> listeners = new ArrayList<Listener>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
 				Listener listener = new Listener();
-				listener.setBizProtocol(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
 				listener.setPort(_ctx.integerValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
+				listener.setBizProtocol(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
 
 				listeners.add(listener);
 			}

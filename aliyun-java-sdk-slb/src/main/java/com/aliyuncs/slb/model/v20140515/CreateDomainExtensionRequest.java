@@ -41,7 +41,7 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 
 	private String domain;
 	public CreateDomainExtensionRequest() {
-		super("Slb", "2014-05-15", "CreateDomainExtension", "slb");
+		super("Slb", "2014-05-15", "CreateDomainExtension", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

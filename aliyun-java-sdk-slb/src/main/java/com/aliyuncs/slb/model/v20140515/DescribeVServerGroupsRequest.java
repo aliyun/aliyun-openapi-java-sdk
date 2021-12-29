@@ -39,7 +39,7 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 
 	private String loadBalancerId;
 	public DescribeVServerGroupsRequest() {
-		super("Slb", "2014-05-15", "DescribeVServerGroups", "slb");
+		super("Slb", "2014-05-15", "DescribeVServerGroups", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

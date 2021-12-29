@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccessControlListsResponse extends AcsResponse {
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private Integer pageSize;
-
 	private Integer count;
 
-	private Integer pageNumber;
-
 	private List<Acl> acls;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,28 +69,12 @@ public class DescribeAccessControlListsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getCount() {
 		return this.count;
 	}
 
 	public void setCount(Integer count) {
 		this.count = count;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public List<Acl> getAcls() {
@@ -87,15 +87,25 @@ public class DescribeAccessControlListsResponse extends AcsResponse {
 
 	public static class Acl {
 
+		private String serviceManagedMode;
+
 		private String aclId;
 
-		private String aclName;
-
 		private String addressIPVersion;
+
+		private String aclName;
 
 		private String resourceGroupId;
 
 		private List<Tag> tags;
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
 
 		public String getAclId() {
 			return this.aclId;
@@ -105,20 +115,20 @@ public class DescribeAccessControlListsResponse extends AcsResponse {
 			this.aclId = aclId;
 		}
 
-		public String getAclName() {
-			return this.aclName;
-		}
-
-		public void setAclName(String aclName) {
-			this.aclName = aclName;
-		}
-
 		public String getAddressIPVersion() {
 			return this.addressIPVersion;
 		}
 
 		public void setAddressIPVersion(String addressIPVersion) {
 			this.addressIPVersion = addressIPVersion;
+		}
+
+		public String getAclName() {
+			return this.aclName;
+		}
+
+		public void setAclName(String aclName) {
+			this.aclName = aclName;
 		}
 
 		public String getResourceGroupId() {
@@ -139,17 +149,9 @@ public class DescribeAccessControlListsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -157,6 +159,14 @@ public class DescribeAccessControlListsResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

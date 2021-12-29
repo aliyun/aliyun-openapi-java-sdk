@@ -35,7 +35,7 @@ public class DeleteCACertificateRequest extends RpcAcsRequest<DeleteCACertificat
 
 	private String cACertificateId;
 	public DeleteCACertificateRequest() {
-		super("Slb", "2014-05-15", "DeleteCACertificate", "slb");
+		super("Slb", "2014-05-15", "DeleteCACertificate", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

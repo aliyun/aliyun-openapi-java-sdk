@@ -103,7 +103,7 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 
 	private String healthCheckHttpCode;
 	public CreateLoadBalancerHTTPSListenerRequest() {
-		super("Slb", "2014-05-15", "CreateLoadBalancerHTTPSListener", "slb");
+		super("Slb", "2014-05-15", "CreateLoadBalancerHTTPSListener", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

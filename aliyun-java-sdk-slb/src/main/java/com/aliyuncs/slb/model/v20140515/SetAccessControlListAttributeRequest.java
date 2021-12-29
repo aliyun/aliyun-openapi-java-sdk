@@ -37,7 +37,7 @@ public class SetAccessControlListAttributeRequest extends RpcAcsRequest<SetAcces
 
 	private Long ownerId;
 	public SetAccessControlListAttributeRequest() {
-		super("Slb", "2014-05-15", "SetAccessControlListAttribute", "slb");
+		super("Slb", "2014-05-15", "SetAccessControlListAttribute", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

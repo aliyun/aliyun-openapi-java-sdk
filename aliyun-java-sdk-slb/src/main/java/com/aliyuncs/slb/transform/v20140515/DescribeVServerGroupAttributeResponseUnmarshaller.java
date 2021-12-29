@@ -27,6 +27,7 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 	public static DescribeVServerGroupAttributeResponse unmarshall(DescribeVServerGroupAttributeResponse describeVServerGroupAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeVServerGroupAttributeResponse.setRequestId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.RequestId"));
+		describeVServerGroupAttributeResponse.setServiceManagedMode(_ctx.stringValue("DescribeVServerGroupAttributeResponse.ServiceManagedMode"));
 		describeVServerGroupAttributeResponse.setVServerGroupId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.VServerGroupId"));
 		describeVServerGroupAttributeResponse.setVServerGroupName(_ctx.stringValue("DescribeVServerGroupAttributeResponse.VServerGroupName"));
 		describeVServerGroupAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.LoadBalancerId"));
@@ -34,16 +35,16 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVServerGroupAttributeResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
-			backendServer.setServerId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerId"));
-			backendServer.setPort(_ctx.integerValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Port"));
-			backendServer.setWeight(_ctx.integerValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Weight"));
-			backendServer.setType(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Type"));
-			backendServer.setServerIp(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setVpcId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].VpcId"));
-			backendServer.setVbrId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].VbrId"));
-			backendServer.setServerRegionId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerRegionId"));
-			backendServer.setDescription(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Description"));
+			backendServer.setType(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Type"));
+			backendServer.setWeight(_ctx.integerValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setProxyProtocolV2Enabled(_ctx.booleanValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ProxyProtocolV2Enabled"));
+			backendServer.setDescription(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Description"));
+			backendServer.setServerRegionId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerRegionId"));
+			backendServer.setServerIp(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setPort(_ctx.integerValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Port"));
+			backendServer.setVbrId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].VbrId"));
+			backendServer.setServerId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerId"));
 
 			backendServers.add(backendServer);
 		}

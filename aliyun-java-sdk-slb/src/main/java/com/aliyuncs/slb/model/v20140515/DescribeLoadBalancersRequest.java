@@ -71,7 +71,7 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 
 	private String payType;
 	public DescribeLoadBalancersRequest() {
-		super("Slb", "2014-05-15", "DescribeLoadBalancers", "slb");
+		super("Slb", "2014-05-15", "DescribeLoadBalancers", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

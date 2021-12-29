@@ -32,8 +32,8 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 		List<AvailableResource> availableResources = new ArrayList<AvailableResource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableResources.Length"); i++) {
 			AvailableResource availableResource = new AvailableResource();
-			availableResource.setMasterZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].MasterZoneId"));
 			availableResource.setSlaveZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SlaveZoneId"));
+			availableResource.setMasterZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].MasterZoneId"));
 
 			List<SupportResource> supportResources = new ArrayList<SupportResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SupportResources.Length"); j++) {

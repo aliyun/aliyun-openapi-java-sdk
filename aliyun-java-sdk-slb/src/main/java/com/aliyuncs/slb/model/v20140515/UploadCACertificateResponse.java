@@ -24,73 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UploadCACertificateResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String cACertificateId;
-
-	private String cACertificateName;
-
-	private String fingerprint;
-
-	private String resourceGroupId;
-
-	private String createTime;
-
 	private Long createTimeStamp;
+
+	private String requestId;
 
 	private String expireTime;
 
-	private Long expireTimeStamp;
+	private String fingerprint;
+
+	private String createTime;
 
 	private String commonName;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String resourceGroupId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String cACertificateName;
 
-	public String getCACertificateId() {
-		return this.cACertificateId;
-	}
+	private Long expireTimeStamp;
 
-	public void setCACertificateId(String cACertificateId) {
-		this.cACertificateId = cACertificateId;
-	}
-
-	public String getCACertificateName() {
-		return this.cACertificateName;
-	}
-
-	public void setCACertificateName(String cACertificateName) {
-		this.cACertificateName = cACertificateName;
-	}
-
-	public String getFingerprint() {
-		return this.fingerprint;
-	}
-
-	public void setFingerprint(String fingerprint) {
-		this.fingerprint = fingerprint;
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
+	private String cACertificateId;
 
 	public Long getCreateTimeStamp() {
 		return this.createTimeStamp;
@@ -98,6 +50,14 @@ public class UploadCACertificateResponse extends AcsResponse {
 
 	public void setCreateTimeStamp(Long createTimeStamp) {
 		this.createTimeStamp = createTimeStamp;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getExpireTime() {
@@ -108,12 +68,20 @@ public class UploadCACertificateResponse extends AcsResponse {
 		this.expireTime = expireTime;
 	}
 
-	public Long getExpireTimeStamp() {
-		return this.expireTimeStamp;
+	public String getFingerprint() {
+		return this.fingerprint;
 	}
 
-	public void setExpireTimeStamp(Long expireTimeStamp) {
-		this.expireTimeStamp = expireTimeStamp;
+	public void setFingerprint(String fingerprint) {
+		this.fingerprint = fingerprint;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getCommonName() {
@@ -122,6 +90,38 @@ public class UploadCACertificateResponse extends AcsResponse {
 
 	public void setCommonName(String commonName) {
 		this.commonName = commonName;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getCACertificateName() {
+		return this.cACertificateName;
+	}
+
+	public void setCACertificateName(String cACertificateName) {
+		this.cACertificateName = cACertificateName;
+	}
+
+	public Long getExpireTimeStamp() {
+		return this.expireTimeStamp;
+	}
+
+	public void setExpireTimeStamp(Long expireTimeStamp) {
+		this.expireTimeStamp = expireTimeStamp;
+	}
+
+	public String getCACertificateId() {
+		return this.cACertificateId;
+	}
+
+	public void setCACertificateId(String cACertificateId) {
+		this.cACertificateId = cACertificateId;
 	}
 
 	@Override

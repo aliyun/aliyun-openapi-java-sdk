@@ -39,7 +39,7 @@ public class DescribeListenerAccessControlAttributeRequest extends RpcAcsRequest
 
 	private String loadBalancerId;
 	public DescribeListenerAccessControlAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "slb");
+		super("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,22 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
-	private String requestId;
+	private String serviceManagedMode;
 
 	private String vServerGroupId;
 
 	private String vServerGroupName;
 
+	private String requestId;
+
 	private String loadBalancerId;
 
 	private List<BackendServer> backendServers;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getServiceManagedMode() {
+		return this.serviceManagedMode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setServiceManagedMode(String serviceManagedMode) {
+		this.serviceManagedMode = serviceManagedMode;
 	}
 
 	public String getVServerGroupId() {
@@ -57,6 +59,14 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 	public void setVServerGroupName(String vServerGroupName) {
 		this.vServerGroupName = vServerGroupName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getLoadBalancerId() {
@@ -77,48 +87,32 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 	public static class BackendServer {
 
-		private String serverId;
-
-		private Integer port;
-
-		private Integer weight;
+		private String vpcId;
 
 		private String type;
 
-		private String serverIp;
-
-		private String vpcId;
-
-		private String vbrId;
-
-		private String serverRegionId;
-
-		private String description;
+		private Integer weight;
 
 		private Boolean proxyProtocolV2Enabled;
 
-		public String getServerId() {
-			return this.serverId;
+		private String description;
+
+		private String serverRegionId;
+
+		private String serverIp;
+
+		private Integer port;
+
+		private String vbrId;
+
+		private String serverId;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setServerId(String serverId) {
-			this.serverId = serverId;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public Integer getWeight() {
-			return this.weight;
-		}
-
-		public void setWeight(Integer weight) {
-			this.weight = weight;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getType() {
@@ -129,36 +123,20 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getServerIp() {
-			return this.serverIp;
+		public Integer getWeight() {
+			return this.weight;
 		}
 
-		public void setServerIp(String serverIp) {
-			this.serverIp = serverIp;
+		public void setWeight(Integer weight) {
+			this.weight = weight;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public Boolean getProxyProtocolV2Enabled() {
+			return this.proxyProtocolV2Enabled;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVbrId() {
-			return this.vbrId;
-		}
-
-		public void setVbrId(String vbrId) {
-			this.vbrId = vbrId;
-		}
-
-		public String getServerRegionId() {
-			return this.serverRegionId;
-		}
-
-		public void setServerRegionId(String serverRegionId) {
-			this.serverRegionId = serverRegionId;
+		public void setProxyProtocolV2Enabled(Boolean proxyProtocolV2Enabled) {
+			this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
 		}
 
 		public String getDescription() {
@@ -169,12 +147,44 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Boolean getProxyProtocolV2Enabled() {
-			return this.proxyProtocolV2Enabled;
+		public String getServerRegionId() {
+			return this.serverRegionId;
 		}
 
-		public void setProxyProtocolV2Enabled(Boolean proxyProtocolV2Enabled) {
-			this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
+		public void setServerRegionId(String serverRegionId) {
+			this.serverRegionId = serverRegionId;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getVbrId() {
+			return this.vbrId;
+		}
+
+		public void setVbrId(String vbrId) {
+			this.vbrId = vbrId;
+		}
+
+		public String getServerId() {
+			return this.serverId;
+		}
+
+		public void setServerId(String serverId) {
+			this.serverId = serverId;
 		}
 	}
 

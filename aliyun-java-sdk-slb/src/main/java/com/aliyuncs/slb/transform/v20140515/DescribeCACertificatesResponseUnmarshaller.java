@@ -32,25 +32,25 @@ public class DescribeCACertificatesResponseUnmarshaller {
 		List<CACertificate> cACertificates = new ArrayList<CACertificate>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCACertificatesResponse.CACertificates.Length"); i++) {
 			CACertificate cACertificate = new CACertificate();
-			cACertificate.setRegionId(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].RegionId"));
+			cACertificate.setCreateTimeStamp(_ctx.longValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CreateTimeStamp"));
+			cACertificate.setStandardType(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].StandardType"));
+			cACertificate.setExpireTime(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].ExpireTime"));
+			cACertificate.setCreateTime(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CreateTime"));
+			cACertificate.setEncryptionKeyLength(_ctx.integerValue("DescribeCACertificatesResponse.CACertificates["+ i +"].EncryptionKeyLength"));
+			cACertificate.setExpireTimeStamp(_ctx.longValue("DescribeCACertificatesResponse.CACertificates["+ i +"].ExpireTimeStamp"));
 			cACertificate.setCACertificateId(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CACertificateId"));
-			cACertificate.setCACertificateName(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CACertificateName"));
+			cACertificate.setRegionId(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].RegionId"));
+			cACertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].EncryptionAlgorithm"));
 			cACertificate.setFingerprint(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Fingerprint"));
 			cACertificate.setResourceGroupId(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].ResourceGroupId"));
-			cACertificate.setCreateTime(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CreateTime"));
-			cACertificate.setCreateTimeStamp(_ctx.longValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CreateTimeStamp"));
-			cACertificate.setExpireTime(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].ExpireTime"));
-			cACertificate.setExpireTimeStamp(_ctx.longValue("DescribeCACertificatesResponse.CACertificates["+ i +"].ExpireTimeStamp"));
 			cACertificate.setCommonName(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CommonName"));
-			cACertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].EncryptionAlgorithm"));
-			cACertificate.setEncryptionKeyLength(_ctx.integerValue("DescribeCACertificatesResponse.CACertificates["+ i +"].EncryptionKeyLength"));
-			cACertificate.setStandardType(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].StandardType"));
+			cACertificate.setCACertificateName(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CACertificateName"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMasterSlaveServerGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String masterSlaveServerGroupId;
 
+	private String requestId;
+
 	private List<MasterSlaveBackendServer> masterSlaveBackendServers;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMasterSlaveServerGroupId() {
 		return this.masterSlaveServerGroupId;
@@ -45,6 +37,14 @@ public class CreateMasterSlaveServerGroupResponse extends AcsResponse {
 
 	public void setMasterSlaveServerGroupId(String masterSlaveServerGroupId) {
 		this.masterSlaveServerGroupId = masterSlaveServerGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<MasterSlaveBackendServer> getMasterSlaveBackendServers() {
@@ -57,52 +57,28 @@ public class CreateMasterSlaveServerGroupResponse extends AcsResponse {
 
 	public static class MasterSlaveBackendServer {
 
-		private String serverId;
-
-		private Integer port;
-
-		private Integer weight;
-
-		private String serverType;
+		private String vpcId;
 
 		private String type;
 
-		private String serverIp;
-
-		private String vpcId;
+		private Integer weight;
 
 		private String description;
 
-		public String getServerId() {
-			return this.serverId;
+		private String serverIp;
+
+		private Integer port;
+
+		private String serverId;
+
+		private String serverType;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setServerId(String serverId) {
-			this.serverId = serverId;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public Integer getWeight() {
-			return this.weight;
-		}
-
-		public void setWeight(Integer weight) {
-			this.weight = weight;
-		}
-
-		public String getServerType() {
-			return this.serverType;
-		}
-
-		public void setServerType(String serverType) {
-			this.serverType = serverType;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getType() {
@@ -113,20 +89,12 @@ public class CreateMasterSlaveServerGroupResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getServerIp() {
-			return this.serverIp;
+		public Integer getWeight() {
+			return this.weight;
 		}
 
-		public void setServerIp(String serverIp) {
-			this.serverIp = serverIp;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setWeight(Integer weight) {
+			this.weight = weight;
 		}
 
 		public String getDescription() {
@@ -135,6 +103,38 @@ public class CreateMasterSlaveServerGroupResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getServerId() {
+			return this.serverId;
+		}
+
+		public void setServerId(String serverId) {
+			this.serverId = serverId;
+		}
+
+		public String getServerType() {
+			return this.serverType;
+		}
+
+		public void setServerType(String serverType) {
+			this.serverType = serverType;
 		}
 	}
 

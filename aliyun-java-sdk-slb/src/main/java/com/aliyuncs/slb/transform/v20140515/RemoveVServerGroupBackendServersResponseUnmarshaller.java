@@ -32,15 +32,15 @@ public class RemoveVServerGroupBackendServersResponseUnmarshaller {
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("RemoveVServerGroupBackendServersResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
-			backendServer.setServerId(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerId"));
-			backendServer.setPort(_ctx.integerValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Port"));
-			backendServer.setWeight(_ctx.integerValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Weight"));
-			backendServer.setType(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Type"));
-			backendServer.setServerIp(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setVpcId(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].VpcId"));
-			backendServer.setVbrId(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].VbrId"));
-			backendServer.setServerRegionId(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerRegionId"));
+			backendServer.setType(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Type"));
+			backendServer.setWeight(_ctx.integerValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setDescription(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Description"));
+			backendServer.setServerRegionId(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerRegionId"));
+			backendServer.setServerIp(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setPort(_ctx.integerValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].Port"));
+			backendServer.setVbrId(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].VbrId"));
+			backendServer.setServerId(_ctx.stringValue("RemoveVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerId"));
 
 			backendServers.add(backendServer);
 		}

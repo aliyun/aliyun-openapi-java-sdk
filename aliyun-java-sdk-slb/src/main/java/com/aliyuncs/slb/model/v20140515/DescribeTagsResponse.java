@@ -77,19 +77,11 @@ public class DescribeTagsResponse extends AcsResponse {
 
 	public static class TagSet {
 
-		private String tagKey;
-
 		private String tagValue;
 
 		private Integer instanceCount;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -105,6 +97,14 @@ public class DescribeTagsResponse extends AcsResponse {
 
 		public void setInstanceCount(Integer instanceCount) {
 			this.instanceCount = instanceCount;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

@@ -47,19 +47,11 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	public static class AvailableResource {
 
-		private String masterZoneId;
-
 		private String slaveZoneId;
 
+		private String masterZoneId;
+
 		private List<SupportResource> supportResources;
-
-		public String getMasterZoneId() {
-			return this.masterZoneId;
-		}
-
-		public void setMasterZoneId(String masterZoneId) {
-			this.masterZoneId = masterZoneId;
-		}
 
 		public String getSlaveZoneId() {
 			return this.slaveZoneId;
@@ -67,6 +59,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		public void setSlaveZoneId(String slaveZoneId) {
 			this.slaveZoneId = slaveZoneId;
+		}
+
+		public String getMasterZoneId() {
+			return this.masterZoneId;
+		}
+
+		public void setMasterZoneId(String masterZoneId) {
+			this.masterZoneId = masterZoneId;
 		}
 
 		public List<SupportResource> getSupportResources() {

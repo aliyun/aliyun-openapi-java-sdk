@@ -47,60 +47,28 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 	public static class BackendServer {
 
-		private Integer listenerPort;
-
-		private String serverId;
-
-		private Integer port;
-
-		private String serverHealthStatus;
-
-		private String serverIp;
+		private String type;
 
 		private String eniHost;
 
 		private String protocol;
 
-		private String type;
+		private String serverHealthStatus;
 
-		public Integer getListenerPort() {
-			return this.listenerPort;
+		private Integer listenerPort;
+
+		private String serverIp;
+
+		private Integer port;
+
+		private String serverId;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setListenerPort(Integer listenerPort) {
-			this.listenerPort = listenerPort;
-		}
-
-		public String getServerId() {
-			return this.serverId;
-		}
-
-		public void setServerId(String serverId) {
-			this.serverId = serverId;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public String getServerHealthStatus() {
-			return this.serverHealthStatus;
-		}
-
-		public void setServerHealthStatus(String serverHealthStatus) {
-			this.serverHealthStatus = serverHealthStatus;
-		}
-
-		public String getServerIp() {
-			return this.serverIp;
-		}
-
-		public void setServerIp(String serverIp) {
-			this.serverIp = serverIp;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getEniHost() {
@@ -119,12 +87,44 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getServerHealthStatus() {
+			return this.serverHealthStatus;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setServerHealthStatus(String serverHealthStatus) {
+			this.serverHealthStatus = serverHealthStatus;
+		}
+
+		public Integer getListenerPort() {
+			return this.listenerPort;
+		}
+
+		public void setListenerPort(Integer listenerPort) {
+			this.listenerPort = listenerPort;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getServerId() {
+			return this.serverId;
+		}
+
+		public void setServerId(String serverId) {
+			this.serverId = serverId;
 		}
 	}
 

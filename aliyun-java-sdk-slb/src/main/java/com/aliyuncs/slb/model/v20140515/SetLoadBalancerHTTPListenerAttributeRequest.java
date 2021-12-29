@@ -95,7 +95,7 @@ public class SetLoadBalancerHTTPListenerAttributeRequest extends RpcAcsRequest<S
 
 	private String vServerGroup;
 	public SetLoadBalancerHTTPListenerAttributeRequest() {
-		super("Slb", "2014-05-15", "SetLoadBalancerHTTPListenerAttribute", "slb");
+		super("Slb", "2014-05-15", "SetLoadBalancerHTTPListenerAttribute", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

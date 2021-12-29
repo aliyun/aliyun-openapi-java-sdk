@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RemoveBackendServersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String loadBalancerId;
 
+	private String requestId;
+
 	private List<BackendServer> backendServers;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getLoadBalancerId() {
 		return this.loadBalancerId;
@@ -45,6 +37,14 @@ public class RemoveBackendServersResponse extends AcsResponse {
 
 	public void setLoadBalancerId(String loadBalancerId) {
 		this.loadBalancerId = loadBalancerId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<BackendServer> getBackendServers() {
@@ -57,41 +57,17 @@ public class RemoveBackendServersResponse extends AcsResponse {
 
 	public static class BackendServer {
 
-		private String serverId;
-
-		private Integer weight;
-
-		private String serverIp;
-
 		private String vpcId;
 
 		private String type;
 
+		private Integer weight;
+
 		private String description;
 
-		public String getServerId() {
-			return this.serverId;
-		}
+		private String serverIp;
 
-		public void setServerId(String serverId) {
-			this.serverId = serverId;
-		}
-
-		public Integer getWeight() {
-			return this.weight;
-		}
-
-		public void setWeight(Integer weight) {
-			this.weight = weight;
-		}
-
-		public String getServerIp() {
-			return this.serverIp;
-		}
-
-		public void setServerIp(String serverIp) {
-			this.serverIp = serverIp;
-		}
+		private String serverId;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -109,12 +85,36 @@ public class RemoveBackendServersResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public Integer getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(Integer weight) {
+			this.weight = weight;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public String getServerId() {
+			return this.serverId;
+		}
+
+		public void setServerId(String serverId) {
+			this.serverId = serverId;
 		}
 	}
 

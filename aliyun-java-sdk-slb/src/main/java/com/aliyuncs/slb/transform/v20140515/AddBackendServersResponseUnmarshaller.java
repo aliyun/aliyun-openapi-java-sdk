@@ -32,12 +32,12 @@ public class AddBackendServersResponseUnmarshaller {
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("AddBackendServersResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
-			backendServer.setServerId(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].ServerId"));
-			backendServer.setWeight(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].Weight"));
-			backendServer.setServerIp(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setVpcId(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].VpcId"));
 			backendServer.setType(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].Type"));
+			backendServer.setWeight(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setDescription(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].Description"));
+			backendServer.setServerIp(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setServerId(_ctx.stringValue("AddBackendServersResponse.BackendServers["+ i +"].ServerId"));
 
 			backendServers.add(backendServer);
 		}

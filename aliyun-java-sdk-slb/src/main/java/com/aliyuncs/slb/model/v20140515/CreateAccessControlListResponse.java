@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAccessControlListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String aclId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getAclId() {
 		return this.aclId;
@@ -42,6 +34,14 @@ public class CreateAccessControlListResponse extends AcsResponse {
 
 	public void setAclId(String aclId) {
 		this.aclId = aclId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

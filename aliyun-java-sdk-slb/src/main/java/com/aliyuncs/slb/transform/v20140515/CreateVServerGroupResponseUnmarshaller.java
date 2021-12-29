@@ -32,15 +32,15 @@ public class CreateVServerGroupResponseUnmarshaller {
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("CreateVServerGroupResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
-			backendServer.setServerId(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].ServerId"));
-			backendServer.setPort(_ctx.integerValue("CreateVServerGroupResponse.BackendServers["+ i +"].Port"));
-			backendServer.setWeight(_ctx.integerValue("CreateVServerGroupResponse.BackendServers["+ i +"].Weight"));
-			backendServer.setType(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].Type"));
-			backendServer.setServerIp(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setVpcId(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].VpcId"));
-			backendServer.setVbrId(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].VbrId"));
-			backendServer.setServerRegionId(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].ServerRegionId"));
+			backendServer.setType(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].Type"));
+			backendServer.setWeight(_ctx.integerValue("CreateVServerGroupResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setDescription(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].Description"));
+			backendServer.setServerRegionId(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].ServerRegionId"));
+			backendServer.setServerIp(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setPort(_ctx.integerValue("CreateVServerGroupResponse.BackendServers["+ i +"].Port"));
+			backendServer.setVbrId(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].VbrId"));
+			backendServer.setServerId(_ctx.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].ServerId"));
 
 			backendServers.add(backendServer);
 		}

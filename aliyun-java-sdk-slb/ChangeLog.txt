@@ -1,3 +1,6 @@
+2021-12-29 Version: 3.3.9
+- Support tags.
+
 2021-07-21 Version: 3.3.8
 - Support HealthCheckMethod for HTTP and HTTPS listener.
 

@@ -31,8 +31,8 @@ public class CreateRulesResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("CreateRulesResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.stringValue("CreateRulesResponse.Rules["+ i +"].RuleId"));
 			rule.setRuleName(_ctx.stringValue("CreateRulesResponse.Rules["+ i +"].RuleName"));
+			rule.setRuleId(_ctx.stringValue("CreateRulesResponse.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

@@ -32,14 +32,14 @@ public class CreateMasterSlaveServerGroupResponseUnmarshaller {
 		List<MasterSlaveBackendServer> masterSlaveBackendServers = new ArrayList<MasterSlaveBackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers.Length"); i++) {
 			MasterSlaveBackendServer masterSlaveBackendServer = new MasterSlaveBackendServer();
-			masterSlaveBackendServer.setServerId(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerId"));
-			masterSlaveBackendServer.setPort(_ctx.integerValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].Port"));
-			masterSlaveBackendServer.setWeight(_ctx.integerValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].Weight"));
-			masterSlaveBackendServer.setServerType(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerType"));
-			masterSlaveBackendServer.setType(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].Type"));
-			masterSlaveBackendServer.setServerIp(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
 			masterSlaveBackendServer.setVpcId(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
+			masterSlaveBackendServer.setType(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].Type"));
+			masterSlaveBackendServer.setWeight(_ctx.integerValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].Weight"));
 			masterSlaveBackendServer.setDescription(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].Description"));
+			masterSlaveBackendServer.setServerIp(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
+			masterSlaveBackendServer.setPort(_ctx.integerValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].Port"));
+			masterSlaveBackendServer.setServerId(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerId"));
+			masterSlaveBackendServer.setServerType(_ctx.stringValue("CreateMasterSlaveServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerType"));
 
 			masterSlaveBackendServers.add(masterSlaveBackendServer);
 		}

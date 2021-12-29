@@ -25,37 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String domainExtensionId;
-
 	private String domain;
 
-	private String serverCertificateId;
+	private String requestId;
 
 	private String loadBalancerId;
 
 	private Integer listenerPort;
 
+	private String serverCertificateId;
+
+	private String domainExtensionId;
+
 	private List<Certificate> certificates;
 
 	private List<ServerCertificate> serverCertificates;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDomainExtensionId() {
-		return this.domainExtensionId;
-	}
-
-	public void setDomainExtensionId(String domainExtensionId) {
-		this.domainExtensionId = domainExtensionId;
-	}
 
 	public String getDomain() {
 		return this.domain;
@@ -65,12 +49,12 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 		this.domain = domain;
 	}
 
-	public String getServerCertificateId() {
-		return this.serverCertificateId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setServerCertificateId(String serverCertificateId) {
-		this.serverCertificateId = serverCertificateId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getLoadBalancerId() {
@@ -87,6 +71,22 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 
 	public void setListenerPort(Integer listenerPort) {
 		this.listenerPort = listenerPort;
+	}
+
+	public String getServerCertificateId() {
+		return this.serverCertificateId;
+	}
+
+	public void setServerCertificateId(String serverCertificateId) {
+		this.serverCertificateId = serverCertificateId;
+	}
+
+	public String getDomainExtensionId() {
+		return this.domainExtensionId;
+	}
+
+	public void setDomainExtensionId(String domainExtensionId) {
+		this.domainExtensionId = domainExtensionId;
 	}
 
 	public List<Certificate> getCertificates() {
@@ -107,17 +107,9 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 
 	public static class Certificate {
 
-		private String certificateId;
-
 		private String encryptionAlgorithm;
 
-		public String getCertificateId() {
-			return this.certificateId;
-		}
-
-		public void setCertificateId(String certificateId) {
-			this.certificateId = certificateId;
-		}
+		private String certificateId;
 
 		public String getEncryptionAlgorithm() {
 			return this.encryptionAlgorithm;
@@ -126,17 +118,6 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 		public void setEncryptionAlgorithm(String encryptionAlgorithm) {
 			this.encryptionAlgorithm = encryptionAlgorithm;
 		}
-	}
-
-	public static class ServerCertificate {
-
-		private String certificateId;
-
-		private String encryptionAlgorithm;
-
-		private String standardType;
-
-		private String bindingType;
 
 		public String getCertificateId() {
 			return this.certificateId;
@@ -145,6 +126,17 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 		public void setCertificateId(String certificateId) {
 			this.certificateId = certificateId;
 		}
+	}
+
+	public static class ServerCertificate {
+
+		private String encryptionAlgorithm;
+
+		private String standardType;
+
+		private String bindingType;
+
+		private String certificateId;
 
 		public String getEncryptionAlgorithm() {
 			return this.encryptionAlgorithm;
@@ -168,6 +160,14 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 
 		public void setBindingType(String bindingType) {
 			this.bindingType = bindingType;
+		}
+
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
 		}
 	}
 

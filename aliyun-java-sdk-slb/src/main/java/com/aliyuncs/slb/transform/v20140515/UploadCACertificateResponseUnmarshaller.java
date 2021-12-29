@@ -23,15 +23,15 @@ public class UploadCACertificateResponseUnmarshaller {
 	public static UploadCACertificateResponse unmarshall(UploadCACertificateResponse uploadCACertificateResponse, UnmarshallerContext _ctx) {
 		
 		uploadCACertificateResponse.setRequestId(_ctx.stringValue("UploadCACertificateResponse.RequestId"));
-		uploadCACertificateResponse.setCACertificateId(_ctx.stringValue("UploadCACertificateResponse.CACertificateId"));
-		uploadCACertificateResponse.setCACertificateName(_ctx.stringValue("UploadCACertificateResponse.CACertificateName"));
-		uploadCACertificateResponse.setFingerprint(_ctx.stringValue("UploadCACertificateResponse.Fingerprint"));
-		uploadCACertificateResponse.setResourceGroupId(_ctx.stringValue("UploadCACertificateResponse.ResourceGroupId"));
-		uploadCACertificateResponse.setCreateTime(_ctx.stringValue("UploadCACertificateResponse.CreateTime"));
 		uploadCACertificateResponse.setCreateTimeStamp(_ctx.longValue("UploadCACertificateResponse.CreateTimeStamp"));
 		uploadCACertificateResponse.setExpireTime(_ctx.stringValue("UploadCACertificateResponse.ExpireTime"));
-		uploadCACertificateResponse.setExpireTimeStamp(_ctx.longValue("UploadCACertificateResponse.ExpireTimeStamp"));
+		uploadCACertificateResponse.setFingerprint(_ctx.stringValue("UploadCACertificateResponse.Fingerprint"));
+		uploadCACertificateResponse.setCreateTime(_ctx.stringValue("UploadCACertificateResponse.CreateTime"));
 		uploadCACertificateResponse.setCommonName(_ctx.stringValue("UploadCACertificateResponse.CommonName"));
+		uploadCACertificateResponse.setResourceGroupId(_ctx.stringValue("UploadCACertificateResponse.ResourceGroupId"));
+		uploadCACertificateResponse.setCACertificateName(_ctx.stringValue("UploadCACertificateResponse.CACertificateName"));
+		uploadCACertificateResponse.setExpireTimeStamp(_ctx.longValue("UploadCACertificateResponse.ExpireTimeStamp"));
+		uploadCACertificateResponse.setCACertificateId(_ctx.stringValue("UploadCACertificateResponse.CACertificateId"));
 	 
 	 	return uploadCACertificateResponse;
 	}

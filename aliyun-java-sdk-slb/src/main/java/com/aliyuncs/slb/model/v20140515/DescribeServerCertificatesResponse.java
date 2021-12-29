@@ -47,90 +47,50 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 	public static class ServerCertificate {
 
-		private String serverCertificateId;
-
-		private String fingerprint;
-
-		private String serverCertificateName;
-
-		private String regionId;
-
-		private String regionIdAlias;
-
-		private String aliCloudCertificateId;
+		private Long createTimeStamp;
 
 		private String aliCloudCertificateName;
 
-		private Integer isAliCloudCertificate;
-
-		private String resourceGroupId;
-
-		private String createTime;
-
-		private Long createTimeStamp;
+		private String standardType;
 
 		private String expireTime;
 
+		private Integer encryptionKeyLength;
+
+		private String createTime;
+
+		private String serverCertificateId;
+
 		private Long expireTimeStamp;
 
-		private String commonName;
+		private String regionId;
 
 		private String encryptionAlgorithm;
 
-		private Integer encryptionKeyLength;
+		private String serverCertificateName;
 
-		private String standardType;
+		private String fingerprint;
+
+		private String commonName;
+
+		private String resourceGroupId;
+
+		private String regionIdAlias;
+
+		private Integer isAliCloudCertificate;
+
+		private String aliCloudCertificateId;
 
 		private List<Tag> tags;
 
 		private List<String> subjectAlternativeNames;
 
-		public String getServerCertificateId() {
-			return this.serverCertificateId;
+		public Long getCreateTimeStamp() {
+			return this.createTimeStamp;
 		}
 
-		public void setServerCertificateId(String serverCertificateId) {
-			this.serverCertificateId = serverCertificateId;
-		}
-
-		public String getFingerprint() {
-			return this.fingerprint;
-		}
-
-		public void setFingerprint(String fingerprint) {
-			this.fingerprint = fingerprint;
-		}
-
-		public String getServerCertificateName() {
-			return this.serverCertificateName;
-		}
-
-		public void setServerCertificateName(String serverCertificateName) {
-			this.serverCertificateName = serverCertificateName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getRegionIdAlias() {
-			return this.regionIdAlias;
-		}
-
-		public void setRegionIdAlias(String regionIdAlias) {
-			this.regionIdAlias = regionIdAlias;
-		}
-
-		public String getAliCloudCertificateId() {
-			return this.aliCloudCertificateId;
-		}
-
-		public void setAliCloudCertificateId(String aliCloudCertificateId) {
-			this.aliCloudCertificateId = aliCloudCertificateId;
+		public void setCreateTimeStamp(Long createTimeStamp) {
+			this.createTimeStamp = createTimeStamp;
 		}
 
 		public String getAliCloudCertificateName() {
@@ -141,36 +101,12 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 			this.aliCloudCertificateName = aliCloudCertificateName;
 		}
 
-		public Integer getIsAliCloudCertificate() {
-			return this.isAliCloudCertificate;
+		public String getStandardType() {
+			return this.standardType;
 		}
 
-		public void setIsAliCloudCertificate(Integer isAliCloudCertificate) {
-			this.isAliCloudCertificate = isAliCloudCertificate;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getCreateTimeStamp() {
-			return this.createTimeStamp;
-		}
-
-		public void setCreateTimeStamp(Long createTimeStamp) {
-			this.createTimeStamp = createTimeStamp;
+		public void setStandardType(String standardType) {
+			this.standardType = standardType;
 		}
 
 		public String getExpireTime() {
@@ -181,6 +117,30 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public Integer getEncryptionKeyLength() {
+			return this.encryptionKeyLength;
+		}
+
+		public void setEncryptionKeyLength(Integer encryptionKeyLength) {
+			this.encryptionKeyLength = encryptionKeyLength;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getServerCertificateId() {
+			return this.serverCertificateId;
+		}
+
+		public void setServerCertificateId(String serverCertificateId) {
+			this.serverCertificateId = serverCertificateId;
+		}
+
 		public Long getExpireTimeStamp() {
 			return this.expireTimeStamp;
 		}
@@ -189,12 +149,12 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 			this.expireTimeStamp = expireTimeStamp;
 		}
 
-		public String getCommonName() {
-			return this.commonName;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setCommonName(String commonName) {
-			this.commonName = commonName;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getEncryptionAlgorithm() {
@@ -205,20 +165,60 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 			this.encryptionAlgorithm = encryptionAlgorithm;
 		}
 
-		public Integer getEncryptionKeyLength() {
-			return this.encryptionKeyLength;
+		public String getServerCertificateName() {
+			return this.serverCertificateName;
 		}
 
-		public void setEncryptionKeyLength(Integer encryptionKeyLength) {
-			this.encryptionKeyLength = encryptionKeyLength;
+		public void setServerCertificateName(String serverCertificateName) {
+			this.serverCertificateName = serverCertificateName;
 		}
 
-		public String getStandardType() {
-			return this.standardType;
+		public String getFingerprint() {
+			return this.fingerprint;
 		}
 
-		public void setStandardType(String standardType) {
-			this.standardType = standardType;
+		public void setFingerprint(String fingerprint) {
+			this.fingerprint = fingerprint;
+		}
+
+		public String getCommonName() {
+			return this.commonName;
+		}
+
+		public void setCommonName(String commonName) {
+			this.commonName = commonName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getRegionIdAlias() {
+			return this.regionIdAlias;
+		}
+
+		public void setRegionIdAlias(String regionIdAlias) {
+			this.regionIdAlias = regionIdAlias;
+		}
+
+		public Integer getIsAliCloudCertificate() {
+			return this.isAliCloudCertificate;
+		}
+
+		public void setIsAliCloudCertificate(Integer isAliCloudCertificate) {
+			this.isAliCloudCertificate = isAliCloudCertificate;
+		}
+
+		public String getAliCloudCertificateId() {
+			return this.aliCloudCertificateId;
+		}
+
+		public void setAliCloudCertificateId(String aliCloudCertificateId) {
+			this.aliCloudCertificateId = aliCloudCertificateId;
 		}
 
 		public List<Tag> getTags() {
@@ -239,17 +239,9 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -257,6 +249,14 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

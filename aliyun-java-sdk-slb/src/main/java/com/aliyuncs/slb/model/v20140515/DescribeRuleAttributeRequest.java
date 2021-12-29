@@ -35,7 +35,7 @@ public class DescribeRuleAttributeRequest extends RpcAcsRequest<DescribeRuleAttr
 
 	private String ruleId;
 	public DescribeRuleAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeRuleAttribute", "slb");
+		super("Slb", "2014-05-15", "DescribeRuleAttribute", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

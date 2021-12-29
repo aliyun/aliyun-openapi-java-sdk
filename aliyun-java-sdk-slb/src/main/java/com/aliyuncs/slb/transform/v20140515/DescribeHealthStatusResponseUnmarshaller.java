@@ -31,14 +31,14 @@ public class DescribeHealthStatusResponseUnmarshaller {
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHealthStatusResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
-			backendServer.setListenerPort(_ctx.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ListenerPort"));
-			backendServer.setServerId(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerId"));
-			backendServer.setPort(_ctx.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Port"));
-			backendServer.setServerHealthStatus(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
-			backendServer.setServerIp(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setType(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Type"));
 			backendServer.setEniHost(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].EniHost"));
 			backendServer.setBizProtocol(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Protocol"));
-			backendServer.setType(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Type"));
+			backendServer.setServerHealthStatus(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
+			backendServer.setListenerPort(_ctx.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ListenerPort"));
+			backendServer.setServerIp(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setPort(_ctx.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Port"));
+			backendServer.setServerId(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerId"));
 
 			backendServers.add(backendServer);
 		}

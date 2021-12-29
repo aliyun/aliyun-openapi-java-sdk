@@ -47,76 +47,54 @@ public class DescribeRulesResponse extends AcsResponse {
 
 	public static class Rule {
 
-		private String ruleId;
-
-		private String ruleName;
-
-		private String domain;
-
-		private String url;
+		private String healthCheckHttpCode;
 
 		private String vServerGroupId;
 
-		private String listenerSync;
-
-		private String scheduler;
-
-		private String stickySession;
-
-		private String stickySessionType;
-
-		private Integer cookieTimeout;
+		private String domain;
 
 		private String cookie;
 
-		private String healthCheck;
+		private Integer healthCheckInterval;
 
-		private String healthCheckDomain;
+		private String url;
 
 		private String healthCheckURI;
 
-		private Integer healthyThreshold;
+		private String stickySessionType;
 
-		private Integer unhealthyThreshold;
+		private String ruleName;
 
-		private Integer healthCheckTimeout;
+		private String ruleId;
 
-		private Integer healthCheckInterval;
+		private String serviceManagedMode;
 
 		private Integer healthCheckConnectPort;
 
-		private String healthCheckHttpCode;
+		private String scheduler;
 
-		public String getRuleId() {
-			return this.ruleId;
+		private Integer healthCheckTimeout;
+
+		private String listenerSync;
+
+		private Integer healthyThreshold;
+
+		private Integer cookieTimeout;
+
+		private String healthCheckDomain;
+
+		private Integer unhealthyThreshold;
+
+		private String stickySession;
+
+		private String healthCheck;
+
+		public String getHealthCheckHttpCode() {
+			return this.healthCheckHttpCode;
 		}
 
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
+		public void setHealthCheckHttpCode(String healthCheckHttpCode) {
+			this.healthCheckHttpCode = healthCheckHttpCode;
 		}
 
 		public String getVServerGroupId() {
@@ -127,44 +105,12 @@ public class DescribeRulesResponse extends AcsResponse {
 			this.vServerGroupId = vServerGroupId;
 		}
 
-		public String getListenerSync() {
-			return this.listenerSync;
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setListenerSync(String listenerSync) {
-			this.listenerSync = listenerSync;
-		}
-
-		public String getScheduler() {
-			return this.scheduler;
-		}
-
-		public void setScheduler(String scheduler) {
-			this.scheduler = scheduler;
-		}
-
-		public String getStickySession() {
-			return this.stickySession;
-		}
-
-		public void setStickySession(String stickySession) {
-			this.stickySession = stickySession;
-		}
-
-		public String getStickySessionType() {
-			return this.stickySessionType;
-		}
-
-		public void setStickySessionType(String stickySessionType) {
-			this.stickySessionType = stickySessionType;
-		}
-
-		public Integer getCookieTimeout() {
-			return this.cookieTimeout;
-		}
-
-		public void setCookieTimeout(Integer cookieTimeout) {
-			this.cookieTimeout = cookieTimeout;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public String getCookie() {
@@ -175,20 +121,20 @@ public class DescribeRulesResponse extends AcsResponse {
 			this.cookie = cookie;
 		}
 
-		public String getHealthCheck() {
-			return this.healthCheck;
+		public Integer getHealthCheckInterval() {
+			return this.healthCheckInterval;
 		}
 
-		public void setHealthCheck(String healthCheck) {
-			this.healthCheck = healthCheck;
+		public void setHealthCheckInterval(Integer healthCheckInterval) {
+			this.healthCheckInterval = healthCheckInterval;
 		}
 
-		public String getHealthCheckDomain() {
-			return this.healthCheckDomain;
+		public String getUrl() {
+			return this.url;
 		}
 
-		public void setHealthCheckDomain(String healthCheckDomain) {
-			this.healthCheckDomain = healthCheckDomain;
+		public void setUrl(String url) {
+			this.url = url;
 		}
 
 		public String getHealthCheckURI() {
@@ -199,36 +145,36 @@ public class DescribeRulesResponse extends AcsResponse {
 			this.healthCheckURI = healthCheckURI;
 		}
 
-		public Integer getHealthyThreshold() {
-			return this.healthyThreshold;
+		public String getStickySessionType() {
+			return this.stickySessionType;
 		}
 
-		public void setHealthyThreshold(Integer healthyThreshold) {
-			this.healthyThreshold = healthyThreshold;
+		public void setStickySessionType(String stickySessionType) {
+			this.stickySessionType = stickySessionType;
 		}
 
-		public Integer getUnhealthyThreshold() {
-			return this.unhealthyThreshold;
+		public String getRuleName() {
+			return this.ruleName;
 		}
 
-		public void setUnhealthyThreshold(Integer unhealthyThreshold) {
-			this.unhealthyThreshold = unhealthyThreshold;
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 
-		public Integer getHealthCheckTimeout() {
-			return this.healthCheckTimeout;
+		public String getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setHealthCheckTimeout(Integer healthCheckTimeout) {
-			this.healthCheckTimeout = healthCheckTimeout;
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
 		}
 
-		public Integer getHealthCheckInterval() {
-			return this.healthCheckInterval;
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
 		}
 
-		public void setHealthCheckInterval(Integer healthCheckInterval) {
-			this.healthCheckInterval = healthCheckInterval;
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
 		}
 
 		public Integer getHealthCheckConnectPort() {
@@ -239,12 +185,76 @@ public class DescribeRulesResponse extends AcsResponse {
 			this.healthCheckConnectPort = healthCheckConnectPort;
 		}
 
-		public String getHealthCheckHttpCode() {
-			return this.healthCheckHttpCode;
+		public String getScheduler() {
+			return this.scheduler;
 		}
 
-		public void setHealthCheckHttpCode(String healthCheckHttpCode) {
-			this.healthCheckHttpCode = healthCheckHttpCode;
+		public void setScheduler(String scheduler) {
+			this.scheduler = scheduler;
+		}
+
+		public Integer getHealthCheckTimeout() {
+			return this.healthCheckTimeout;
+		}
+
+		public void setHealthCheckTimeout(Integer healthCheckTimeout) {
+			this.healthCheckTimeout = healthCheckTimeout;
+		}
+
+		public String getListenerSync() {
+			return this.listenerSync;
+		}
+
+		public void setListenerSync(String listenerSync) {
+			this.listenerSync = listenerSync;
+		}
+
+		public Integer getHealthyThreshold() {
+			return this.healthyThreshold;
+		}
+
+		public void setHealthyThreshold(Integer healthyThreshold) {
+			this.healthyThreshold = healthyThreshold;
+		}
+
+		public Integer getCookieTimeout() {
+			return this.cookieTimeout;
+		}
+
+		public void setCookieTimeout(Integer cookieTimeout) {
+			this.cookieTimeout = cookieTimeout;
+		}
+
+		public String getHealthCheckDomain() {
+			return this.healthCheckDomain;
+		}
+
+		public void setHealthCheckDomain(String healthCheckDomain) {
+			this.healthCheckDomain = healthCheckDomain;
+		}
+
+		public Integer getUnhealthyThreshold() {
+			return this.unhealthyThreshold;
+		}
+
+		public void setUnhealthyThreshold(Integer unhealthyThreshold) {
+			this.unhealthyThreshold = unhealthyThreshold;
+		}
+
+		public String getStickySession() {
+			return this.stickySession;
+		}
+
+		public void setStickySession(String stickySession) {
+			this.stickySession = stickySession;
+		}
+
+		public String getHealthCheck() {
+			return this.healthCheck;
+		}
+
+		public void setHealthCheck(String healthCheck) {
+			this.healthCheck = healthCheck;
 		}
 	}
 

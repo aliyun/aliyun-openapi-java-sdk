@@ -28,17 +28,17 @@ public class DescribeDomainExtensionAttributeResponseUnmarshaller {
 	public static DescribeDomainExtensionAttributeResponse unmarshall(DescribeDomainExtensionAttributeResponse describeDomainExtensionAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainExtensionAttributeResponse.setRequestId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.RequestId"));
-		describeDomainExtensionAttributeResponse.setDomainExtensionId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.DomainExtensionId"));
 		describeDomainExtensionAttributeResponse.setDomain(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.Domain"));
-		describeDomainExtensionAttributeResponse.setServerCertificateId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificateId"));
 		describeDomainExtensionAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.LoadBalancerId"));
 		describeDomainExtensionAttributeResponse.setListenerPort(_ctx.integerValue("DescribeDomainExtensionAttributeResponse.ListenerPort"));
+		describeDomainExtensionAttributeResponse.setServerCertificateId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificateId"));
+		describeDomainExtensionAttributeResponse.setDomainExtensionId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.DomainExtensionId"));
 
 		List<Certificate> certificates = new ArrayList<Certificate>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainExtensionAttributeResponse.Certificates.Length"); i++) {
 			Certificate certificate = new Certificate();
-			certificate.setCertificateId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.Certificates["+ i +"].CertificateId"));
 			certificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.Certificates["+ i +"].EncryptionAlgorithm"));
+			certificate.setCertificateId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.Certificates["+ i +"].CertificateId"));
 
 			certificates.add(certificate);
 		}
@@ -47,10 +47,10 @@ public class DescribeDomainExtensionAttributeResponseUnmarshaller {
 		List<ServerCertificate> serverCertificates = new ArrayList<ServerCertificate>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainExtensionAttributeResponse.ServerCertificates.Length"); i++) {
 			ServerCertificate serverCertificate = new ServerCertificate();
-			serverCertificate.setCertificateId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].CertificateId"));
 			serverCertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].EncryptionAlgorithm"));
 			serverCertificate.setStandardType(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].StandardType"));
 			serverCertificate.setBindingType(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].BindingType"));
+			serverCertificate.setCertificateId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificates["+ i +"].CertificateId"));
 
 			serverCertificates.add(serverCertificate);
 		}

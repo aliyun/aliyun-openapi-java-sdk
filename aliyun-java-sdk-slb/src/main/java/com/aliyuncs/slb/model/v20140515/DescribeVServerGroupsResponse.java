@@ -49,7 +49,11 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 
 		private String vServerGroupId;
 
+		private String serviceManagedMode;
+
 		private String vServerGroupName;
+
+		private Long serverCount;
 
 		private AssociatedObjects associatedObjects;
 
@@ -61,12 +65,28 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 			this.vServerGroupId = vServerGroupId;
 		}
 
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
 		public String getVServerGroupName() {
 			return this.vServerGroupName;
 		}
 
 		public void setVServerGroupName(String vServerGroupName) {
 			this.vServerGroupName = vServerGroupName;
+		}
+
+		public Long getServerCount() {
+			return this.serverCount;
+		}
+
+		public void setServerCount(Long serverCount) {
+			this.serverCount = serverCount;
 		}
 
 		public AssociatedObjects getAssociatedObjects() {
@@ -101,17 +121,9 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 
 			public static class Listener {
 
-				private String protocol;
-
 				private Integer port;
 
-				public String getBizProtocol() {
-					return this.protocol;
-				}
-
-				public void setBizProtocol(String protocol) {
-					this.protocol = protocol;
-				}
+				private String protocol;
 
 				public Integer getPort() {
 					return this.port;
@@ -120,24 +132,32 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 				public void setPort(Integer port) {
 					this.port = port;
 				}
+
+				public String getBizProtocol() {
+					return this.protocol;
+				}
+
+				public void setBizProtocol(String protocol) {
+					this.protocol = protocol;
+				}
 			}
 
 			public static class Rule {
 
-				private String ruleId;
+				private String url;
 
 				private String domain;
 
-				private String url;
-
 				private String ruleName;
 
-				public String getRuleId() {
-					return this.ruleId;
+				private String ruleId;
+
+				public String getUrl() {
+					return this.url;
 				}
 
-				public void setRuleId(String ruleId) {
-					this.ruleId = ruleId;
+				public void setUrl(String url) {
+					this.url = url;
 				}
 
 				public String getDomain() {
@@ -148,20 +168,20 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 					this.domain = domain;
 				}
 
-				public String getUrl() {
-					return this.url;
-				}
-
-				public void setUrl(String url) {
-					this.url = url;
-				}
-
 				public String getRuleName() {
 					return this.ruleName;
 				}
 
 				public void setRuleName(String ruleName) {
 					this.ruleName = ruleName;
+				}
+
+				public String getRuleId() {
+					return this.ruleId;
+				}
+
+				public void setRuleId(String ruleId) {
+					this.ruleId = ruleId;
 				}
 			}
 		}

@@ -32,15 +32,15 @@ public class ModifyVServerGroupBackendServersResponseUnmarshaller {
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyVServerGroupBackendServersResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
-			backendServer.setServerId(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerId"));
-			backendServer.setPort(_ctx.integerValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Port"));
-			backendServer.setWeight(_ctx.integerValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Weight"));
-			backendServer.setType(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Type"));
-			backendServer.setServerIp(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setVpcId(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].VpcId"));
-			backendServer.setVbrId(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].VbrId"));
-			backendServer.setServerRegionId(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerRegionId"));
+			backendServer.setType(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Type"));
+			backendServer.setWeight(_ctx.integerValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setDescription(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Description"));
+			backendServer.setServerRegionId(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerRegionId"));
+			backendServer.setServerIp(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setPort(_ctx.integerValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].Port"));
+			backendServer.setVbrId(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].VbrId"));
+			backendServer.setServerId(_ctx.stringValue("ModifyVServerGroupBackendServersResponse.BackendServers["+ i +"].ServerId"));
 
 			backendServers.add(backendServer);
 		}

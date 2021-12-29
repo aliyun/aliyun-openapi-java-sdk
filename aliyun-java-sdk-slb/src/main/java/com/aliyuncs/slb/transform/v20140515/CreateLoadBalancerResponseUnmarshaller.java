@@ -23,15 +23,15 @@ public class CreateLoadBalancerResponseUnmarshaller {
 	public static CreateLoadBalancerResponse unmarshall(CreateLoadBalancerResponse createLoadBalancerResponse, UnmarshallerContext _ctx) {
 		
 		createLoadBalancerResponse.setRequestId(_ctx.stringValue("CreateLoadBalancerResponse.RequestId"));
+		createLoadBalancerResponse.setVpcId(_ctx.stringValue("CreateLoadBalancerResponse.VpcId"));
+		createLoadBalancerResponse.setAddressIPVersion(_ctx.stringValue("CreateLoadBalancerResponse.AddressIPVersion"));
+		createLoadBalancerResponse.setVSwitchId(_ctx.stringValue("CreateLoadBalancerResponse.VSwitchId"));
+		createLoadBalancerResponse.setLoadBalancerName(_ctx.stringValue("CreateLoadBalancerResponse.LoadBalancerName"));
 		createLoadBalancerResponse.setLoadBalancerId(_ctx.stringValue("CreateLoadBalancerResponse.LoadBalancerId"));
 		createLoadBalancerResponse.setResourceGroupId(_ctx.stringValue("CreateLoadBalancerResponse.ResourceGroupId"));
 		createLoadBalancerResponse.setAddress(_ctx.stringValue("CreateLoadBalancerResponse.Address"));
-		createLoadBalancerResponse.setLoadBalancerName(_ctx.stringValue("CreateLoadBalancerResponse.LoadBalancerName"));
-		createLoadBalancerResponse.setVpcId(_ctx.stringValue("CreateLoadBalancerResponse.VpcId"));
-		createLoadBalancerResponse.setVSwitchId(_ctx.stringValue("CreateLoadBalancerResponse.VSwitchId"));
 		createLoadBalancerResponse.setNetworkType(_ctx.stringValue("CreateLoadBalancerResponse.NetworkType"));
 		createLoadBalancerResponse.setOrderId(_ctx.longValue("CreateLoadBalancerResponse.OrderId"));
-		createLoadBalancerResponse.setAddressIPVersion(_ctx.stringValue("CreateLoadBalancerResponse.AddressIPVersion"));
 	 
 	 	return createLoadBalancerResponse;
 	}

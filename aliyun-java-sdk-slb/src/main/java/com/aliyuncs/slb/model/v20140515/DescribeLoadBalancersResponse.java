@@ -77,125 +77,63 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 	public static class LoadBalancer {
 
-		private String loadBalancerId;
-
-		private String loadBalancerName;
-
-		private String loadBalancerStatus;
-
-		private String address;
-
-		private String addressType;
-
-		private String regionId;
-
-		private String regionIdAlias;
-
-		private String vSwitchId;
-
 		private String vpcId;
-
-		private String networkType;
-
-		private String masterZoneId;
-
-		private String slaveZoneId;
-
-		private String internetChargeType;
-
-		private String createTime;
 
 		private Long createTimeStamp;
 
+		private String loadBalancerId;
+
+		private String createTime;
+
 		private String payType;
 
-		private String resourceGroupId;
+		private String addressType;
+
+		private String networkType;
+
+		private String serviceManagedMode;
+
+		private Boolean specBpsFlag;
 
 		private String addressIPVersion;
 
-		private String businessStatus;
-
-		private String modificationProtectionStatus;
-
-		private String modificationProtectionReason;
+		private String loadBalancerName;
 
 		private Integer bandwidth;
+
+		private String address;
+
+		private String slaveZoneId;
+
+		private String masterZoneId;
 
 		private String internetChargeTypeAlias;
 
 		private String loadBalancerSpec;
 
-		private String deleteProtection;
-
-		private Boolean specBpsFlag;
-
 		private String specType;
 
+		private String regionId;
+
+		private String modificationProtectionReason;
+
+		private String modificationProtectionStatus;
+
+		private String vSwitchId;
+
+		private String loadBalancerStatus;
+
+		private String resourceGroupId;
+
+		private String internetChargeType;
+
+		private String businessStatus;
+
+		private String deleteProtection;
+
+		private String regionIdAlias;
+
 		private List<Tag> tags;
-
-		public String getLoadBalancerId() {
-			return this.loadBalancerId;
-		}
-
-		public void setLoadBalancerId(String loadBalancerId) {
-			this.loadBalancerId = loadBalancerId;
-		}
-
-		public String getLoadBalancerName() {
-			return this.loadBalancerName;
-		}
-
-		public void setLoadBalancerName(String loadBalancerName) {
-			this.loadBalancerName = loadBalancerName;
-		}
-
-		public String getLoadBalancerStatus() {
-			return this.loadBalancerStatus;
-		}
-
-		public void setLoadBalancerStatus(String loadBalancerStatus) {
-			this.loadBalancerStatus = loadBalancerStatus;
-		}
-
-		public String getAddress() {
-			return this.address;
-		}
-
-		public void setAddress(String address) {
-			this.address = address;
-		}
-
-		public String getAddressType() {
-			return this.addressType;
-		}
-
-		public void setAddressType(String addressType) {
-			this.addressType = addressType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getRegionIdAlias() {
-			return this.regionIdAlias;
-		}
-
-		public void setRegionIdAlias(String regionIdAlias) {
-			this.regionIdAlias = regionIdAlias;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -203,46 +141,6 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
-		}
-
-		public String getMasterZoneId() {
-			return this.masterZoneId;
-		}
-
-		public void setMasterZoneId(String masterZoneId) {
-			this.masterZoneId = masterZoneId;
-		}
-
-		public String getSlaveZoneId() {
-			return this.slaveZoneId;
-		}
-
-		public void setSlaveZoneId(String slaveZoneId) {
-			this.slaveZoneId = slaveZoneId;
-		}
-
-		public String getInternetChargeType() {
-			return this.internetChargeType;
-		}
-
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public Long getCreateTimeStamp() {
@@ -253,6 +151,22 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 			this.createTimeStamp = createTimeStamp;
 		}
 
+		public String getLoadBalancerId() {
+			return this.loadBalancerId;
+		}
+
+		public void setLoadBalancerId(String loadBalancerId) {
+			this.loadBalancerId = loadBalancerId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getPayType() {
 			return this.payType;
 		}
@@ -261,12 +175,36 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getAddressType() {
+			return this.addressType;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setAddressType(String addressType) {
+			this.addressType = addressType;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
+		public Boolean getSpecBpsFlag() {
+			return this.specBpsFlag;
+		}
+
+		public void setSpecBpsFlag(Boolean specBpsFlag) {
+			this.specBpsFlag = specBpsFlag;
 		}
 
 		public String getAddressIPVersion() {
@@ -277,28 +215,12 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 			this.addressIPVersion = addressIPVersion;
 		}
 
-		public String getBusinessStatus() {
-			return this.businessStatus;
+		public String getLoadBalancerName() {
+			return this.loadBalancerName;
 		}
 
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
-		}
-
-		public String getModificationProtectionStatus() {
-			return this.modificationProtectionStatus;
-		}
-
-		public void setModificationProtectionStatus(String modificationProtectionStatus) {
-			this.modificationProtectionStatus = modificationProtectionStatus;
-		}
-
-		public String getModificationProtectionReason() {
-			return this.modificationProtectionReason;
-		}
-
-		public void setModificationProtectionReason(String modificationProtectionReason) {
-			this.modificationProtectionReason = modificationProtectionReason;
+		public void setLoadBalancerName(String loadBalancerName) {
+			this.loadBalancerName = loadBalancerName;
 		}
 
 		public Integer getBandwidth() {
@@ -307,6 +229,30 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setBandwidth(Integer bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getAddress() {
+			return this.address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public String getSlaveZoneId() {
+			return this.slaveZoneId;
+		}
+
+		public void setSlaveZoneId(String slaveZoneId) {
+			this.slaveZoneId = slaveZoneId;
+		}
+
+		public String getMasterZoneId() {
+			return this.masterZoneId;
+		}
+
+		public void setMasterZoneId(String masterZoneId) {
+			this.masterZoneId = masterZoneId;
 		}
 
 		public String getInternetChargeTypeAlias() {
@@ -325,6 +271,78 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 			this.loadBalancerSpec = loadBalancerSpec;
 		}
 
+		public String getSpecType() {
+			return this.specType;
+		}
+
+		public void setSpecType(String specType) {
+			this.specType = specType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getModificationProtectionReason() {
+			return this.modificationProtectionReason;
+		}
+
+		public void setModificationProtectionReason(String modificationProtectionReason) {
+			this.modificationProtectionReason = modificationProtectionReason;
+		}
+
+		public String getModificationProtectionStatus() {
+			return this.modificationProtectionStatus;
+		}
+
+		public void setModificationProtectionStatus(String modificationProtectionStatus) {
+			this.modificationProtectionStatus = modificationProtectionStatus;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getLoadBalancerStatus() {
+			return this.loadBalancerStatus;
+		}
+
+		public void setLoadBalancerStatus(String loadBalancerStatus) {
+			this.loadBalancerStatus = loadBalancerStatus;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
 		public String getDeleteProtection() {
 			return this.deleteProtection;
 		}
@@ -333,20 +351,12 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 			this.deleteProtection = deleteProtection;
 		}
 
-		public Boolean getSpecBpsFlag() {
-			return this.specBpsFlag;
+		public String getRegionIdAlias() {
+			return this.regionIdAlias;
 		}
 
-		public void setSpecBpsFlag(Boolean specBpsFlag) {
-			this.specBpsFlag = specBpsFlag;
-		}
-
-		public String getSpecType() {
-			return this.specType;
-		}
-
-		public void setSpecType(String specType) {
-			this.specType = specType;
+		public void setRegionIdAlias(String regionIdAlias) {
+			this.regionIdAlias = regionIdAlias;
 		}
 
 		public List<Tag> getTags() {
@@ -359,17 +369,9 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -377,6 +379,14 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

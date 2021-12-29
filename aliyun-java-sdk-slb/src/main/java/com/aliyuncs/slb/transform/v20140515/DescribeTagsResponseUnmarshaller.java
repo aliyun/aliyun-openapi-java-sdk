@@ -34,9 +34,9 @@ public class DescribeTagsResponseUnmarshaller {
 		List<TagSet> tagSets = new ArrayList<TagSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTagsResponse.TagSets.Length"); i++) {
 			TagSet tagSet = new TagSet();
-			tagSet.setTagKey(_ctx.stringValue("DescribeTagsResponse.TagSets["+ i +"].TagKey"));
 			tagSet.setTagValue(_ctx.stringValue("DescribeTagsResponse.TagSets["+ i +"].TagValue"));
 			tagSet.setInstanceCount(_ctx.integerValue("DescribeTagsResponse.TagSets["+ i +"].InstanceCount"));
+			tagSet.setTagKey(_ctx.stringValue("DescribeTagsResponse.TagSets["+ i +"].TagKey"));
 
 			tagSets.add(tagSet);
 		}

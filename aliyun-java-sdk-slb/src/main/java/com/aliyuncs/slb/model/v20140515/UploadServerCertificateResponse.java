@@ -25,93 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UploadServerCertificateResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String serverCertificateId;
-
-	private String fingerprint;
-
-	private String serverCertificateName;
-
-	private String regionId;
-
-	private String regionIdAlias;
-
-	private String aliCloudCertificateId;
-
 	private String aliCloudCertificateName;
-
-	private Integer isAliCloudCertificate;
-
-	private String resourceGroupId;
-
-	private String createTime;
 
 	private Long createTimeStamp;
 
 	private String expireTime;
 
+	private String createTime;
+
+	private String serverCertificateId;
+
 	private Long expireTimeStamp;
+
+	private String regionId;
+
+	private String requestId;
+
+	private String fingerprint;
+
+	private String serverCertificateName;
 
 	private String commonName;
 
+	private String resourceGroupId;
+
+	private String regionIdAlias;
+
+	private String aliCloudCertificateId;
+
+	private Integer isAliCloudCertificate;
+
 	private List<String> subjectAlternativeNames;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getServerCertificateId() {
-		return this.serverCertificateId;
-	}
-
-	public void setServerCertificateId(String serverCertificateId) {
-		this.serverCertificateId = serverCertificateId;
-	}
-
-	public String getFingerprint() {
-		return this.fingerprint;
-	}
-
-	public void setFingerprint(String fingerprint) {
-		this.fingerprint = fingerprint;
-	}
-
-	public String getServerCertificateName() {
-		return this.serverCertificateName;
-	}
-
-	public void setServerCertificateName(String serverCertificateName) {
-		this.serverCertificateName = serverCertificateName;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getRegionIdAlias() {
-		return this.regionIdAlias;
-	}
-
-	public void setRegionIdAlias(String regionIdAlias) {
-		this.regionIdAlias = regionIdAlias;
-	}
-
-	public String getAliCloudCertificateId() {
-		return this.aliCloudCertificateId;
-	}
-
-	public void setAliCloudCertificateId(String aliCloudCertificateId) {
-		this.aliCloudCertificateId = aliCloudCertificateId;
-	}
 
 	public String getAliCloudCertificateName() {
 		return this.aliCloudCertificateName;
@@ -119,30 +63,6 @@ public class UploadServerCertificateResponse extends AcsResponse {
 
 	public void setAliCloudCertificateName(String aliCloudCertificateName) {
 		this.aliCloudCertificateName = aliCloudCertificateName;
-	}
-
-	public Integer getIsAliCloudCertificate() {
-		return this.isAliCloudCertificate;
-	}
-
-	public void setIsAliCloudCertificate(Integer isAliCloudCertificate) {
-		this.isAliCloudCertificate = isAliCloudCertificate;
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
 	}
 
 	public Long getCreateTimeStamp() {
@@ -161,6 +81,22 @@ public class UploadServerCertificateResponse extends AcsResponse {
 		this.expireTime = expireTime;
 	}
 
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getServerCertificateId() {
+		return this.serverCertificateId;
+	}
+
+	public void setServerCertificateId(String serverCertificateId) {
+		this.serverCertificateId = serverCertificateId;
+	}
+
 	public Long getExpireTimeStamp() {
 		return this.expireTimeStamp;
 	}
@@ -169,12 +105,76 @@ public class UploadServerCertificateResponse extends AcsResponse {
 		this.expireTimeStamp = expireTimeStamp;
 	}
 
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getFingerprint() {
+		return this.fingerprint;
+	}
+
+	public void setFingerprint(String fingerprint) {
+		this.fingerprint = fingerprint;
+	}
+
+	public String getServerCertificateName() {
+		return this.serverCertificateName;
+	}
+
+	public void setServerCertificateName(String serverCertificateName) {
+		this.serverCertificateName = serverCertificateName;
+	}
+
 	public String getCommonName() {
 		return this.commonName;
 	}
 
 	public void setCommonName(String commonName) {
 		this.commonName = commonName;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getRegionIdAlias() {
+		return this.regionIdAlias;
+	}
+
+	public void setRegionIdAlias(String regionIdAlias) {
+		this.regionIdAlias = regionIdAlias;
+	}
+
+	public String getAliCloudCertificateId() {
+		return this.aliCloudCertificateId;
+	}
+
+	public void setAliCloudCertificateId(String aliCloudCertificateId) {
+		this.aliCloudCertificateId = aliCloudCertificateId;
+	}
+
+	public Integer getIsAliCloudCertificate() {
+		return this.isAliCloudCertificate;
+	}
+
+	public void setIsAliCloudCertificate(Integer isAliCloudCertificate) {
+		this.isAliCloudCertificate = isAliCloudCertificate;
 	}
 
 	public List<String> getSubjectAlternativeNames() {

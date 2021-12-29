@@ -47,11 +47,21 @@ public class DescribeMasterSlaveServerGroupsResponse extends AcsResponse {
 
 	public static class MasterSlaveServerGroup {
 
+		private String serviceManagedMode;
+
 		private String masterSlaveServerGroupId;
 
 		private String masterSlaveServerGroupName;
 
 		private AssociatedObjects associatedObjects;
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
 
 		public String getMasterSlaveServerGroupId() {
 			return this.masterSlaveServerGroupId;
@@ -91,17 +101,9 @@ public class DescribeMasterSlaveServerGroupsResponse extends AcsResponse {
 
 			public static class Listener {
 
-				private String protocol;
-
 				private Integer port;
 
-				public String getBizProtocol() {
-					return this.protocol;
-				}
-
-				public void setBizProtocol(String protocol) {
-					this.protocol = protocol;
-				}
+				private String protocol;
 
 				public Integer getPort() {
 					return this.port;
@@ -109,6 +111,14 @@ public class DescribeMasterSlaveServerGroupsResponse extends AcsResponse {
 
 				public void setPort(Integer port) {
 					this.port = port;
+				}
+
+				public String getBizProtocol() {
+					return this.protocol;
+				}
+
+				public void setBizProtocol(String protocol) {
+					this.protocol = protocol;
 				}
 			}
 		}

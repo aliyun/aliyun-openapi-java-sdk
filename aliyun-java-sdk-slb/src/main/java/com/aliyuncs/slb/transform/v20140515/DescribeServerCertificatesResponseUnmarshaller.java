@@ -32,23 +32,23 @@ public class DescribeServerCertificatesResponseUnmarshaller {
 		List<ServerCertificate> serverCertificates = new ArrayList<ServerCertificate>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeServerCertificatesResponse.ServerCertificates.Length"); i++) {
 			ServerCertificate serverCertificate = new ServerCertificate();
-			serverCertificate.setServerCertificateId(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ServerCertificateId"));
-			serverCertificate.setFingerprint(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Fingerprint"));
-			serverCertificate.setServerCertificateName(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ServerCertificateName"));
-			serverCertificate.setRegionId(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].RegionId"));
-			serverCertificate.setRegionIdAlias(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].RegionIdAlias"));
-			serverCertificate.setAliCloudCertificateId(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].AliCloudCertificateId"));
-			serverCertificate.setAliCloudCertificateName(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].AliCloudCertificateName"));
-			serverCertificate.setIsAliCloudCertificate(_ctx.integerValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].IsAliCloudCertificate"));
-			serverCertificate.setResourceGroupId(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ResourceGroupId"));
-			serverCertificate.setCreateTime(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CreateTime"));
 			serverCertificate.setCreateTimeStamp(_ctx.longValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CreateTimeStamp"));
-			serverCertificate.setExpireTime(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ExpireTime"));
-			serverCertificate.setExpireTimeStamp(_ctx.longValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ExpireTimeStamp"));
-			serverCertificate.setCommonName(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CommonName"));
-			serverCertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].EncryptionAlgorithm"));
-			serverCertificate.setEncryptionKeyLength(_ctx.integerValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].EncryptionKeyLength"));
+			serverCertificate.setAliCloudCertificateName(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].AliCloudCertificateName"));
 			serverCertificate.setStandardType(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].StandardType"));
+			serverCertificate.setExpireTime(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ExpireTime"));
+			serverCertificate.setEncryptionKeyLength(_ctx.integerValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].EncryptionKeyLength"));
+			serverCertificate.setCreateTime(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CreateTime"));
+			serverCertificate.setServerCertificateId(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ServerCertificateId"));
+			serverCertificate.setExpireTimeStamp(_ctx.longValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ExpireTimeStamp"));
+			serverCertificate.setRegionId(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].RegionId"));
+			serverCertificate.setEncryptionAlgorithm(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].EncryptionAlgorithm"));
+			serverCertificate.setServerCertificateName(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ServerCertificateName"));
+			serverCertificate.setFingerprint(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Fingerprint"));
+			serverCertificate.setCommonName(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].CommonName"));
+			serverCertificate.setResourceGroupId(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].ResourceGroupId"));
+			serverCertificate.setRegionIdAlias(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].RegionIdAlias"));
+			serverCertificate.setIsAliCloudCertificate(_ctx.integerValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].IsAliCloudCertificate"));
+			serverCertificate.setAliCloudCertificateId(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].AliCloudCertificateId"));
 
 			List<String> subjectAlternativeNames = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].SubjectAlternativeNames.Length"); j++) {
@@ -59,8 +59,8 @@ public class DescribeServerCertificatesResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

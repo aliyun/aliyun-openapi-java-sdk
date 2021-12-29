@@ -73,7 +73,7 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String payType;
 	public CreateLoadBalancerRequest() {
-		super("Slb", "2014-05-15", "CreateLoadBalancer", "slb");
+		super("Slb", "2014-05-15", "CreateLoadBalancer", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

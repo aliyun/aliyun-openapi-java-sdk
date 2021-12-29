@@ -35,15 +35,17 @@ public class DescribeVServerGroupsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeVServerGroupsResponse.VServerGroups.Length"); i++) {
 			VServerGroup vServerGroup = new VServerGroup();
 			vServerGroup.setVServerGroupId(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupId"));
+			vServerGroup.setServiceManagedMode(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].ServiceManagedMode"));
 			vServerGroup.setVServerGroupName(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupName"));
+			vServerGroup.setServerCount(_ctx.longValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].ServerCount"));
 
 			AssociatedObjects associatedObjects = new AssociatedObjects();
 
 			List<Listener> listeners = new ArrayList<Listener>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
 				Listener listener = new Listener();
-				listener.setBizProtocol(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
 				listener.setPort(_ctx.integerValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
+				listener.setBizProtocol(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
 
 				listeners.add(listener);
 			}
@@ -52,10 +54,10 @@ public class DescribeVServerGroupsResponseUnmarshaller {
 			List<Rule> rules = new ArrayList<Rule>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules.Length"); j++) {
 				Rule rule = new Rule();
-				rule.setRuleId(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleId"));
-				rule.setDomain(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Domain"));
 				rule.setUrl(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Url"));
+				rule.setDomain(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Domain"));
 				rule.setRuleName(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleName"));
+				rule.setRuleId(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleId"));
 
 				rules.add(rule);
 			}

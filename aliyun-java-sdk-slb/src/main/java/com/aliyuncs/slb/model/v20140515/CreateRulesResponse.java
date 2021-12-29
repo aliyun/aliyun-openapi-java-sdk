@@ -47,17 +47,9 @@ public class CreateRulesResponse extends AcsResponse {
 
 	public static class Rule {
 
-		private String ruleId;
-
 		private String ruleName;
 
-		public String getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
+		private String ruleId;
 
 		public String getRuleName() {
 			return this.ruleName;
@@ -65,6 +57,14 @@ public class CreateRulesResponse extends AcsResponse {
 
 		public void setRuleName(String ruleName) {
 			this.ruleName = ruleName;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
 		}
 	}
 

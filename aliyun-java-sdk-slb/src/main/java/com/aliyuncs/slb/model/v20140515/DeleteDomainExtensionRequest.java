@@ -35,7 +35,7 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 
 	private Long ownerId;
 	public DeleteDomainExtensionRequest() {
-		super("Slb", "2014-05-15", "DeleteDomainExtension", "slb");
+		super("Slb", "2014-05-15", "DeleteDomainExtension", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

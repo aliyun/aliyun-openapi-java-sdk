@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeListenerAccessControlAttributeResponse extends AcsResponse {
 
-	private String requestId;
+	private String sourceItems;
 
 	private String accessControlStatus;
 
-	private String sourceItems;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getSourceItems() {
+		return this.sourceItems;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSourceItems(String sourceItems) {
+		this.sourceItems = sourceItems;
 	}
 
 	public String getAccessControlStatus() {
@@ -46,12 +46,12 @@ public class DescribeListenerAccessControlAttributeResponse extends AcsResponse 
 		this.accessControlStatus = accessControlStatus;
 	}
 
-	public String getSourceItems() {
-		return this.sourceItems;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSourceItems(String sourceItems) {
-		this.sourceItems = sourceItems;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

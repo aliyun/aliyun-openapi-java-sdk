@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddVServerGroupBackendServersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String vServerGroupId;
 
+	private String requestId;
+
 	private List<BackendServer> backendServers;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
@@ -45,6 +37,14 @@ public class AddVServerGroupBackendServersResponse extends AcsResponse {
 
 	public void setVServerGroupId(String vServerGroupId) {
 		this.vServerGroupId = vServerGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<BackendServer> getBackendServers() {
@@ -57,46 +57,30 @@ public class AddVServerGroupBackendServersResponse extends AcsResponse {
 
 	public static class BackendServer {
 
-		private String serverId;
-
-		private Integer port;
-
-		private Integer weight;
+		private String vpcId;
 
 		private String type;
 
-		private String serverIp;
-
-		private String vpcId;
-
-		private String vbrId;
-
-		private String serverRegionId;
+		private Integer weight;
 
 		private String description;
 
-		public String getServerId() {
-			return this.serverId;
+		private String serverRegionId;
+
+		private String serverIp;
+
+		private Integer port;
+
+		private String vbrId;
+
+		private String serverId;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setServerId(String serverId) {
-			this.serverId = serverId;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public Integer getWeight() {
-			return this.weight;
-		}
-
-		public void setWeight(Integer weight) {
-			this.weight = weight;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getType() {
@@ -107,28 +91,20 @@ public class AddVServerGroupBackendServersResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getServerIp() {
-			return this.serverIp;
+		public Integer getWeight() {
+			return this.weight;
 		}
 
-		public void setServerIp(String serverIp) {
-			this.serverIp = serverIp;
+		public void setWeight(Integer weight) {
+			this.weight = weight;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVbrId() {
-			return this.vbrId;
-		}
-
-		public void setVbrId(String vbrId) {
-			this.vbrId = vbrId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getServerRegionId() {
@@ -139,12 +115,36 @@ public class AddVServerGroupBackendServersResponse extends AcsResponse {
 			this.serverRegionId = serverRegionId;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getServerIp() {
+			return this.serverIp;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getVbrId() {
+			return this.vbrId;
+		}
+
+		public void setVbrId(String vbrId) {
+			this.vbrId = vbrId;
+		}
+
+		public String getServerId() {
+			return this.serverId;
+		}
+
+		public void setServerId(String serverId) {
+			this.serverId = serverId;
 		}
 	}
 

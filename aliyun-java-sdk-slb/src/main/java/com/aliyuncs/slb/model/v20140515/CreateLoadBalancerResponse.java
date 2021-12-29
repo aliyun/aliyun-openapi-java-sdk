@@ -24,7 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateLoadBalancerResponse extends AcsResponse {
 
+	private String vpcId;
+
+	private String addressIPVersion;
+
+	private String vSwitchId;
+
 	private String requestId;
+
+	private String loadBalancerName;
 
 	private String loadBalancerId;
 
@@ -32,17 +40,33 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	private String address;
 
-	private String loadBalancerName;
-
-	private String vpcId;
-
-	private String vSwitchId;
-
 	private String networkType;
 
 	private Long orderId;
 
-	private String addressIPVersion;
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,6 +74,14 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLoadBalancerName() {
+		return this.loadBalancerName;
+	}
+
+	public void setLoadBalancerName(String loadBalancerName) {
+		this.loadBalancerName = loadBalancerName;
 	}
 
 	public String getLoadBalancerId() {
@@ -76,30 +108,6 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 		this.address = address;
 	}
 
-	public String getLoadBalancerName() {
-		return this.loadBalancerName;
-	}
-
-	public void setLoadBalancerName(String loadBalancerName) {
-		this.loadBalancerName = loadBalancerName;
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-	}
-
 	public String getNetworkType() {
 		return this.networkType;
 	}
@@ -114,14 +122,6 @@ public class CreateLoadBalancerResponse extends AcsResponse {
 
 	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
-	}
-
-	public String getAddressIPVersion() {
-		return this.addressIPVersion;
-	}
-
-	public void setAddressIPVersion(String addressIPVersion) {
-		this.addressIPVersion = addressIPVersion;
 	}
 
 	@Override

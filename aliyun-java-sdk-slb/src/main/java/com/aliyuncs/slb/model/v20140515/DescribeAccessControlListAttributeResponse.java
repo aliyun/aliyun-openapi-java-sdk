@@ -25,26 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
-	private String requestId;
+	private String serviceManagedMode;
 
 	private String aclId;
 
-	private String aclName;
-
 	private String addressIPVersion;
 
+	private String requestId;
+
 	private String resourceGroupId;
+
+	private String aclName;
 
 	private List<AclEntry> aclEntrys;
 
 	private List<RelatedListener> relatedListeners;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getServiceManagedMode() {
+		return this.serviceManagedMode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setServiceManagedMode(String serviceManagedMode) {
+		this.serviceManagedMode = serviceManagedMode;
 	}
 
 	public String getAclId() {
@@ -55,14 +57,6 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 		this.aclId = aclId;
 	}
 
-	public String getAclName() {
-		return this.aclName;
-	}
-
-	public void setAclName(String aclName) {
-		this.aclName = aclName;
-	}
-
 	public String getAddressIPVersion() {
 		return this.addressIPVersion;
 	}
@@ -71,12 +65,28 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 		this.addressIPVersion = addressIPVersion;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getAclName() {
+		return this.aclName;
+	}
+
+	public void setAclName(String aclName) {
+		this.aclName = aclName;
 	}
 
 	public List<AclEntry> getAclEntrys() {
@@ -97,17 +107,9 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	public static class AclEntry {
 
-		private String aclEntryIP;
-
 		private String aclEntryComment;
 
-		public String getAclEntryIP() {
-			return this.aclEntryIP;
-		}
-
-		public void setAclEntryIP(String aclEntryIP) {
-			this.aclEntryIP = aclEntryIP;
-		}
+		private String aclEntryIP;
 
 		public String getAclEntryComment() {
 			return this.aclEntryComment;
@@ -116,11 +118,17 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 		public void setAclEntryComment(String aclEntryComment) {
 			this.aclEntryComment = aclEntryComment;
 		}
+
+		public String getAclEntryIP() {
+			return this.aclEntryIP;
+		}
+
+		public void setAclEntryIP(String aclEntryIP) {
+			this.aclEntryIP = aclEntryIP;
+		}
 	}
 
 	public static class RelatedListener {
-
-		private String loadBalancerId;
 
 		private Integer listenerPort;
 
@@ -128,13 +136,7 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 		private String protocol;
 
-		public String getLoadBalancerId() {
-			return this.loadBalancerId;
-		}
-
-		public void setLoadBalancerId(String loadBalancerId) {
-			this.loadBalancerId = loadBalancerId;
-		}
+		private String loadBalancerId;
 
 		public Integer getListenerPort() {
 			return this.listenerPort;
@@ -158,6 +160,14 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 		public void setBizProtocol(String protocol) {
 			this.protocol = protocol;
+		}
+
+		public String getLoadBalancerId() {
+			return this.loadBalancerId;
+		}
+
+		public void setLoadBalancerId(String loadBalancerId) {
+			this.loadBalancerId = loadBalancerId;
 		}
 	}
 

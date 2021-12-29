@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTLSCipherPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String tLSCipherPolicyId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTLSCipherPolicyId() {
 		return this.tLSCipherPolicyId;
@@ -42,6 +34,14 @@ public class CreateTLSCipherPolicyResponse extends AcsResponse {
 
 	public void setTLSCipherPolicyId(String tLSCipherPolicyId) {
 		this.tLSCipherPolicyId = tLSCipherPolicyId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -43,7 +43,7 @@ public class ModifyLoadBalancerPayTypeRequest extends RpcAcsRequest<ModifyLoadBa
 
 	private String pricingCycle;
 	public ModifyLoadBalancerPayTypeRequest() {
-		super("Slb", "2014-05-15", "ModifyLoadBalancerPayType", "slb");
+		super("Slb", "2014-05-15", "ModifyLoadBalancerPayType", "Slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

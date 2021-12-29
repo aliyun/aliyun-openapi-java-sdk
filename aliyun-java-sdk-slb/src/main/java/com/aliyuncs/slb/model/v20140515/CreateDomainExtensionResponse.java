@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDomainExtensionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer listenerPort;
 
+	private String requestId;
+
 	private String domainExtensionId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getListenerPort() {
 		return this.listenerPort;
@@ -44,6 +36,14 @@ public class CreateDomainExtensionResponse extends AcsResponse {
 
 	public void setListenerPort(Integer listenerPort) {
 		this.listenerPort = listenerPort;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDomainExtensionId() {

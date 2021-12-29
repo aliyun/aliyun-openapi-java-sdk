@@ -31,26 +31,27 @@ public class DescribeRulesResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRulesResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].RuleId"));
-			rule.setRuleName(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].RuleName"));
-			rule.setDomain(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Domain"));
-			rule.setUrl(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Url"));
-			rule.setVServerGroupId(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].VServerGroupId"));
-			rule.setListenerSync(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].ListenerSync"));
-			rule.setScheduler(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Scheduler"));
-			rule.setStickySession(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySession"));
-			rule.setStickySessionType(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySessionType"));
-			rule.setCookieTimeout(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].CookieTimeout"));
-			rule.setCookie(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Cookie"));
-			rule.setHealthCheck(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheck"));
-			rule.setHealthCheckDomain(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckDomain"));
-			rule.setHealthCheckURI(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckURI"));
-			rule.setHealthyThreshold(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthyThreshold"));
-			rule.setUnhealthyThreshold(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].UnhealthyThreshold"));
-			rule.setHealthCheckTimeout(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckTimeout"));
-			rule.setHealthCheckInterval(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckInterval"));
-			rule.setHealthCheckConnectPort(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckConnectPort"));
 			rule.setHealthCheckHttpCode(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckHttpCode"));
+			rule.setVServerGroupId(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].VServerGroupId"));
+			rule.setDomain(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Domain"));
+			rule.setCookie(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Cookie"));
+			rule.setHealthCheckInterval(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckInterval"));
+			rule.setUrl(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Url"));
+			rule.setHealthCheckURI(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckURI"));
+			rule.setStickySessionType(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySessionType"));
+			rule.setRuleName(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].RuleName"));
+			rule.setRuleId(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].RuleId"));
+			rule.setServiceManagedMode(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].ServiceManagedMode"));
+			rule.setHealthCheckConnectPort(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckConnectPort"));
+			rule.setScheduler(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Scheduler"));
+			rule.setHealthCheckTimeout(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckTimeout"));
+			rule.setListenerSync(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].ListenerSync"));
+			rule.setHealthyThreshold(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthyThreshold"));
+			rule.setCookieTimeout(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].CookieTimeout"));
+			rule.setHealthCheckDomain(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckDomain"));
+			rule.setUnhealthyThreshold(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].UnhealthyThreshold"));
+			rule.setStickySession(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySession"));
+			rule.setHealthCheck(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheck"));
 
 			rules.add(rule);
 		}

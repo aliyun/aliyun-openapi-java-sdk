@@ -24,107 +24,53 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRuleAttributeResponse extends AcsResponse {
 
-	private String ruleId;
-
-	private String requestId;
-
-	private String ruleName;
-
-	private String loadBalancerId;
-
-	private String listenerPort;
-
-	private String domain;
-
-	private String url;
-
 	private String vServerGroupId;
-
-	private String listenerSync;
-
-	private String scheduler;
-
-	private String stickySession;
-
-	private String stickySessionType;
-
-	private Integer cookieTimeout;
 
 	private String cookie;
 
-	private String healthCheck;
+	private String loadBalancerId;
 
-	private String healthCheckDomain;
+	private String ruleId;
 
-	private String healthCheckURI;
+	private String serviceManagedMode;
 
-	private Integer healthyThreshold;
-
-	private Integer unhealthyThreshold;
-
-	private Integer healthCheckTimeout;
-
-	private Integer healthCheckInterval;
+	private String requestId;
 
 	private Integer healthCheckConnectPort;
 
+	private Integer healthCheckTimeout;
+
+	private Integer cookieTimeout;
+
+	private String healthCheckDomain;
+
+	private Integer unhealthyThreshold;
+
 	private String healthCheckHttpCode;
 
-	public String getRuleId() {
-		return this.ruleId;
-	}
+	private String domain;
 
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-	}
+	private String listenerPort;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String url;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Integer healthCheckInterval;
 
-	public String getRuleName() {
-		return this.ruleName;
-	}
+	private String healthCheckURI;
 
-	public void setRuleName(String ruleName) {
-		this.ruleName = ruleName;
-	}
+	private String ruleName;
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
+	private String stickySessionType;
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-	}
+	private String scheduler;
 
-	public String getListenerPort() {
-		return this.listenerPort;
-	}
+	private String listenerSync;
 
-	public void setListenerPort(String listenerPort) {
-		this.listenerPort = listenerPort;
-	}
+	private Integer healthyThreshold;
 
-	public String getDomain() {
-		return this.domain;
-	}
+	private String stickySession;
 
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
+	private String healthCheck;
 
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
@@ -132,46 +78,6 @@ public class DescribeRuleAttributeResponse extends AcsResponse {
 
 	public void setVServerGroupId(String vServerGroupId) {
 		this.vServerGroupId = vServerGroupId;
-	}
-
-	public String getListenerSync() {
-		return this.listenerSync;
-	}
-
-	public void setListenerSync(String listenerSync) {
-		this.listenerSync = listenerSync;
-	}
-
-	public String getScheduler() {
-		return this.scheduler;
-	}
-
-	public void setScheduler(String scheduler) {
-		this.scheduler = scheduler;
-	}
-
-	public String getStickySession() {
-		return this.stickySession;
-	}
-
-	public void setStickySession(String stickySession) {
-		this.stickySession = stickySession;
-	}
-
-	public String getStickySessionType() {
-		return this.stickySessionType;
-	}
-
-	public void setStickySessionType(String stickySessionType) {
-		this.stickySessionType = stickySessionType;
-	}
-
-	public Integer getCookieTimeout() {
-		return this.cookieTimeout;
-	}
-
-	public void setCookieTimeout(Integer cookieTimeout) {
-		this.cookieTimeout = cookieTimeout;
 	}
 
 	public String getCookie() {
@@ -182,60 +88,36 @@ public class DescribeRuleAttributeResponse extends AcsResponse {
 		this.cookie = cookie;
 	}
 
-	public String getHealthCheck() {
-		return this.healthCheck;
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
 	}
 
-	public void setHealthCheck(String healthCheck) {
-		this.healthCheck = healthCheck;
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
 	}
 
-	public String getHealthCheckDomain() {
-		return this.healthCheckDomain;
+	public String getRuleId() {
+		return this.ruleId;
 	}
 
-	public void setHealthCheckDomain(String healthCheckDomain) {
-		this.healthCheckDomain = healthCheckDomain;
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
 	}
 
-	public String getHealthCheckURI() {
-		return this.healthCheckURI;
+	public String getServiceManagedMode() {
+		return this.serviceManagedMode;
 	}
 
-	public void setHealthCheckURI(String healthCheckURI) {
-		this.healthCheckURI = healthCheckURI;
+	public void setServiceManagedMode(String serviceManagedMode) {
+		this.serviceManagedMode = serviceManagedMode;
 	}
 
-	public Integer getHealthyThreshold() {
-		return this.healthyThreshold;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHealthyThreshold(Integer healthyThreshold) {
-		this.healthyThreshold = healthyThreshold;
-	}
-
-	public Integer getUnhealthyThreshold() {
-		return this.unhealthyThreshold;
-	}
-
-	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
-		this.unhealthyThreshold = unhealthyThreshold;
-	}
-
-	public Integer getHealthCheckTimeout() {
-		return this.healthCheckTimeout;
-	}
-
-	public void setHealthCheckTimeout(Integer healthCheckTimeout) {
-		this.healthCheckTimeout = healthCheckTimeout;
-	}
-
-	public Integer getHealthCheckInterval() {
-		return this.healthCheckInterval;
-	}
-
-	public void setHealthCheckInterval(Integer healthCheckInterval) {
-		this.healthCheckInterval = healthCheckInterval;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getHealthCheckConnectPort() {
@@ -246,12 +128,140 @@ public class DescribeRuleAttributeResponse extends AcsResponse {
 		this.healthCheckConnectPort = healthCheckConnectPort;
 	}
 
+	public Integer getHealthCheckTimeout() {
+		return this.healthCheckTimeout;
+	}
+
+	public void setHealthCheckTimeout(Integer healthCheckTimeout) {
+		this.healthCheckTimeout = healthCheckTimeout;
+	}
+
+	public Integer getCookieTimeout() {
+		return this.cookieTimeout;
+	}
+
+	public void setCookieTimeout(Integer cookieTimeout) {
+		this.cookieTimeout = cookieTimeout;
+	}
+
+	public String getHealthCheckDomain() {
+		return this.healthCheckDomain;
+	}
+
+	public void setHealthCheckDomain(String healthCheckDomain) {
+		this.healthCheckDomain = healthCheckDomain;
+	}
+
+	public Integer getUnhealthyThreshold() {
+		return this.unhealthyThreshold;
+	}
+
+	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
+		this.unhealthyThreshold = unhealthyThreshold;
+	}
+
 	public String getHealthCheckHttpCode() {
 		return this.healthCheckHttpCode;
 	}
 
 	public void setHealthCheckHttpCode(String healthCheckHttpCode) {
 		this.healthCheckHttpCode = healthCheckHttpCode;
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	public String getListenerPort() {
+		return this.listenerPort;
+	}
+
+	public void setListenerPort(String listenerPort) {
+		this.listenerPort = listenerPort;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public Integer getHealthCheckInterval() {
+		return this.healthCheckInterval;
+	}
+
+	public void setHealthCheckInterval(Integer healthCheckInterval) {
+		this.healthCheckInterval = healthCheckInterval;
+	}
+
+	public String getHealthCheckURI() {
+		return this.healthCheckURI;
+	}
+
+	public void setHealthCheckURI(String healthCheckURI) {
+		this.healthCheckURI = healthCheckURI;
+	}
+
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+	}
+
+	public String getStickySessionType() {
+		return this.stickySessionType;
+	}
+
+	public void setStickySessionType(String stickySessionType) {
+		this.stickySessionType = stickySessionType;
+	}
+
+	public String getScheduler() {
+		return this.scheduler;
+	}
+
+	public void setScheduler(String scheduler) {
+		this.scheduler = scheduler;
+	}
+
+	public String getListenerSync() {
+		return this.listenerSync;
+	}
+
+	public void setListenerSync(String listenerSync) {
+		this.listenerSync = listenerSync;
+	}
+
+	public Integer getHealthyThreshold() {
+		return this.healthyThreshold;
+	}
+
+	public void setHealthyThreshold(Integer healthyThreshold) {
+		this.healthyThreshold = healthyThreshold;
+	}
+
+	public String getStickySession() {
+		return this.stickySession;
+	}
+
+	public void setStickySession(String stickySession) {
+		this.stickySession = stickySession;
+	}
+
+	public String getHealthCheck() {
+		return this.healthCheck;
+	}
+
+	public void setHealthCheck(String healthCheck) {
+		this.healthCheck = healthCheck;
 	}
 
 	@Override

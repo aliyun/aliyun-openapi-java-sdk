@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTLSCipherPoliciesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private Boolean isTruncated;
+	private String requestId;
 
 	private Integer totalCount;
 
+	private Boolean isTruncated;
+
 	private List<TLSCipherPolicy> tLSCipherPolicies;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -51,12 +43,12 @@ public class ListTLSCipherPoliciesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Boolean getIsTruncated() {
-		return this.isTruncated;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsTruncated(Boolean isTruncated) {
-		this.isTruncated = isTruncated;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -65,6 +57,14 @@ public class ListTLSCipherPoliciesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Boolean getIsTruncated() {
+		return this.isTruncated;
+	}
+
+	public void setIsTruncated(Boolean isTruncated) {
+		this.isTruncated = isTruncated;
 	}
 
 	public List<TLSCipherPolicy> getTLSCipherPolicies() {
@@ -77,13 +77,15 @@ public class ListTLSCipherPoliciesResponse extends AcsResponse {
 
 	public static class TLSCipherPolicy {
 
-		private Long createTime;
+		private String serviceManagedMode;
+
+		private String status;
 
 		private String instanceId;
 
 		private String name;
 
-		private String status;
+		private Long createTime;
 
 		private List<RelateListener> relateListeners;
 
@@ -91,12 +93,20 @@ public class ListTLSCipherPoliciesResponse extends AcsResponse {
 
 		private List<String> ciphers;
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getInstanceId() {
@@ -115,12 +125,12 @@ public class ListTLSCipherPoliciesResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<RelateListener> getRelateListeners() {
@@ -149,19 +159,11 @@ public class ListTLSCipherPoliciesResponse extends AcsResponse {
 
 		public static class RelateListener {
 
-			private String loadBalancerId;
-
 			private Integer port;
 
 			private String protocol;
 
-			public String getLoadBalancerId() {
-				return this.loadBalancerId;
-			}
-
-			public void setLoadBalancerId(String loadBalancerId) {
-				this.loadBalancerId = loadBalancerId;
-			}
+			private String loadBalancerId;
 
 			public Integer getPort() {
 				return this.port;
@@ -177,6 +179,14 @@ public class ListTLSCipherPoliciesResponse extends AcsResponse {
 
 			public void setBizProtocol(String protocol) {
 				this.protocol = protocol;
+			}
+
+			public String getLoadBalancerId() {
+				return this.loadBalancerId;
+			}
+
+			public void setLoadBalancerId(String loadBalancerId) {
+				this.loadBalancerId = loadBalancerId;
 			}
 		}
 	}
