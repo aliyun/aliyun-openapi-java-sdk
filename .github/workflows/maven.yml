@@ -8,13 +8,16 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+defaults:
+  run:
+    shell: bash
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ '8', '9', '10' ]
+        java: [ 8, 11 ]
     name: Java ${{ matrix.Java }}
     steps:
     - uses: actions/checkout@v2
@@ -26,4 +29,4 @@ jobs:
     - name: Test with Maven
       run: mvn test -B -f ./aliyun-java-sdk-core/pom.xml
     - name: Post test coverage
-      run: bash <(curl -s https://codecov.io/bash)
+      run: bash <(curl -s https://codecov.io/bash) -cF java

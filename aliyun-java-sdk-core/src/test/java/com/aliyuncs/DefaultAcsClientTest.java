@@ -14,6 +14,7 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.*;
 import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
+import com.aliyuncs.policy.retry.RetryPolicy;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.utils.LogUtils;
@@ -249,6 +250,25 @@ public class DefaultAcsClientTest {
         verify(getHttpClient(client), Mockito.times(1)).restoreSSLCertificate();
     }
 
+    @Test
+    public void testSignature() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
+            IllegalAccessException, ClientException {
+        DefaultAcsClient client = initDefaultAcsClient();
+        client.setSignatureVersion(SignatureVersion.V3);
+        client.setSignatureAlgorithm(SignatureAlgorithm.ACS3_HMAC_SHA256);
+        Assert.assertTrue(SignatureVersion.V3 == client.getSignatureVersion());
+        Assert.assertTrue(SignatureAlgorithm.ACS3_HMAC_SHA256 == client.getSignatureAlgorithm());
+    }
+
+    @Test
+    public void testRetryPolicy() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
+            IllegalAccessException, ClientException {
+        DefaultAcsClient client = initDefaultAcsClient();
+        client.setSysRetryPolicy(RetryPolicy.defaultRetryPolicy(true));
+        Assert.assertTrue(3 == client.getSysRetryPolicy().maxNumberOfRetries());
+        Assert.assertTrue(2 * 60 * 1000 == client.getSysRetryPolicy().maxDelayTimeMillis());
+    }
+
     @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testGetAcsResponse() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
@@ -283,6 +303,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = initDefaultAcsClient();
         HttpResponse response = mock(HttpResponse.class);
         Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn(true).when(response).isSuccess();
         Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
@@ -304,6 +325,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = initDefaultAcsClientWithLogger(logger);
         HttpResponse response = mock(HttpResponse.class);
         Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn(true).when(response).isSuccess();
         Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
@@ -326,6 +348,7 @@ public class DefaultAcsClientTest {
         DefaultAcsClient client = initDefaultAcsClientWithLogger(logger);
         HttpResponse response = mock(HttpResponse.class);
         Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn(true).when(response).isSuccess();
         Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
@@ -824,6 +847,7 @@ public class DefaultAcsClientTest {
         GlobalTracer.registerIfAbsent(initTracer());
         HttpResponse response = mock(HttpResponse.class);
         Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn(true).when(response).isSuccess();
         Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
@@ -860,6 +884,7 @@ public class DefaultAcsClientTest {
         GlobalTracer.registerIfAbsent(initTracer());
         HttpResponse response = mock(HttpResponse.class);
         Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn(true).when(response).isSuccess();
         Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);

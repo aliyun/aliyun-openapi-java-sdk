@@ -24,6 +24,7 @@ import com.aliyuncs.auth.signers.SignatureAlgorithm;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.policy.retry.RetryPolicy;
 import com.aliyuncs.profile.IClientProfile;
 
 public interface IAcsClient {
@@ -78,4 +79,8 @@ public interface IAcsClient {
     SignatureAlgorithm getSignatureAlgorithm();
 
     void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm);
+
+    RetryPolicy getSysRetryPolicy();
+
+    void setSysRetryPolicy(RetryPolicy retryPolicy);
 }

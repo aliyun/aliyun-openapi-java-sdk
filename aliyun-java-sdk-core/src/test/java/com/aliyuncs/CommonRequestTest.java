@@ -4,6 +4,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.aliyuncs.policy.retry.RetryPolicy;
+import com.aliyuncs.policy.retry.RetryUtil;
+import com.aliyuncs.policy.retry.backoff.EqualJitterBackoffStrategy;
 import org.junit.Assert;
 import org.junit.Test;
 import org.powermock.reflect.Whitebox;
@@ -102,6 +105,15 @@ public class CommonRequestTest {
         Map<String, String> pathMap = request.getSysPathParameters();
         Assert.assertNotNull(pathMap);
         Assert.assertEquals("test", pathMap.get("test"));
+
+        request.setSysRetryPolicy(RetryPolicy.defaultRetryPolicy(true));
+        Assert.assertEquals(true, request.getSysRetryPolicy().enableAliyunThrottlingControl());
+        Assert.assertTrue(request.getSysRetryPolicy().backoffStrategy() instanceof EqualJitterBackoffStrategy);
+        Assert.assertEquals(RetryUtil.DEFAULT_MAX_RETRIES, request.getSysRetryPolicy().maxNumberOfRetries());
+        Assert.assertEquals(RetryUtil.MAX_BACKOFF, request.getSysRetryPolicy().maxDelayTimeMillis());
+
+        request.setSysRetryPolicy(RetryPolicy.none());
+        Assert.assertEquals(0, request.getSysRetryPolicy().maxNumberOfRetries());
     }
 
     @Test
