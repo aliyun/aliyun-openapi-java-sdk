@@ -5,11 +5,10 @@ import com.aliyuncs.auth.signers.SignatureAlgorithm;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.EndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ErrorCodeConstant;
-import com.aliyuncs.exceptions.ErrorMessageConstant;
-import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.exceptions.*;
 import com.aliyuncs.http.*;
+import com.aliyuncs.policy.retry.RetryPolicy;
+import com.aliyuncs.policy.retry.RetryPolicyContext;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
@@ -28,6 +27,7 @@ import org.slf4j.Logger;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -52,6 +52,8 @@ public class DefaultAcsClient implements IAcsClient {
     private final UserAgentConfig userAgentConfig = new UserAgentConfig();
     private SignatureVersion signatureVersion = SignatureVersion.V1;
     private SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.ACS3_HMAC_SHA256;
+    private final String SEPARATOR = "::";
+    private RetryPolicy retryPolicy = RetryPolicy.none();
 
 
     /**
@@ -343,33 +345,90 @@ public class DefaultAcsClient implements IAcsClient {
             if (null != request.getSysActionName()) {
                 request.putHeaderParameter("x-acs-action", request.getSysActionName());
             }
-            try {
+            String coordinate = credentials.getAccessKeyId() == null ? "" : credentials.getAccessKeyId()
+                    + SEPARATOR + request.getSysProduct()
+                    + SEPARATOR + request.getSysVersion()
+                    + SEPARATOR + request.getSysActionName()
+                    + SEPARATOR + request.getSysRegionId();
+            RetryPolicy retryPolicy = request.getSysRetryPolicy() != null ? request.getSysRetryPolicy() :
+                    this.retryPolicy != null ? this.retryPolicy : RetryPolicy.none();
+            int retriesAttempted = 0;
+            RetryPolicyContext context = RetryPolicyContext.builder()
+                    .coordinate(coordinate)
+                    .retriesAttempted(retriesAttempted)
+                    .build();
+            while (retryPolicy.shouldRetry(context)) {
+                TimeUnit.MILLISECONDS.sleep(retryPolicy.getBackoffDelay(context));
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
-                HttpUtil.debugHttpRequest(httpRequest);
-                startTime = LogUtils.localeNow();
-                long start = System.nanoTime();
-
-                response = this.httpClient.syncInvoke(httpRequest);
-                long end = System.nanoTime();
-                timeCost = TimeUnit.NANOSECONDS.toMillis(end - start) + "ms";
-                HttpUtil.debugHttpResponse(response);
-                return response;
-            } catch (SocketTimeoutException exp) {
-                errorMessage = exp.getMessage();
-                throw new ClientException("SDK.ReadTimeout",
-                        "SocketTimeoutException has occurred on a socket read or accept.The url is " +
-                                request.getSysUrl(), exp);
-            } catch (IOException exp) {
-                errorMessage = exp.getMessage();
-                throw new ClientException("SDK.ServerUnreachable",
-                        "Server unreachable: connection " + request.getSysUrl() + " failed", exp);
+                Exception ex;
+                try {
+                    HttpUtil.debugHttpRequest(httpRequest);
+                    startTime = LogUtils.localeNow();
+                    long start = System.nanoTime();
+                    response = this.httpClient.syncInvoke(httpRequest);
+                    long end = System.nanoTime();
+                    timeCost = TimeUnit.NANOSECONDS.toMillis(end - start) + "ms";
+                    HttpUtil.debugHttpResponse(response);
+                    if (response.isSuccess()) {
+                        return response;
+                    } else {
+                        FormatType responseFormat = response.getHttpContentType();
+                        AcsError error = readError(response, responseFormat);
+                        if (500 <= response.getStatus()) {
+                            ex = new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+                        } else {
+                            ex = new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+                        }
+                    }
+                } catch (SocketTimeoutException exp) {
+                    ex = exp;
+                } catch (IOException exp) {
+                    ex = exp;
+                }
+                context = RetryPolicyContext.builder()
+                        .coordinate(coordinate)
+                        .retriesAttempted(++retriesAttempted)
+                        .httpResponse(response)
+                        .exception(ex)
+                        .build();
             }
+            if (context.exception() != null) {
+                throw context.exception();
+            }
+            errorMessage = "Some errors occurred. Maybe the client triggered throttling policy.";
+            throw new ClientException("SDK.RequestTryOrRetryFailed", errorMessage, context.exception());
+        } catch (InterruptedException exp) {
+            errorMessage = exp.getMessage();
+            throw new ClientException("SDK.InterruptedException",
+                    "Client has been interrupted: connection " + request.getSysUrl() + " failed", exp);
         } catch (InvalidKeyException exp) {
             errorMessage = exp.getMessage();
             throw new ClientException("SDK.InvalidAccessSecret", "Specified access secret is not valid.", exp);
         } catch (NoSuchAlgorithmException exp) {
             errorMessage = exp.getMessage();
             throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.", exp);
+        } catch (UnsupportedEncodingException exp) {
+            errorMessage = exp.getMessage();
+            throw new ClientException("SDK.UnsupportedEncodingException", "UTF-8 encoding is not supported by client side.", exp);
+        } catch (Throwable exp) {
+            errorMessage = exp.getMessage();
+            if (SocketTimeoutException.class.isAssignableFrom(exp.getClass())) {
+                throw new ClientException("SDK.ReadTimeout",
+                        "SocketTimeoutException has occurred on a socket read or accept.The url is " +
+                                request.getSysUrl(), exp);
+            } else if (IOException.class.isAssignableFrom(exp.getClass())) {
+                throw new ClientException("SDK.ServerUnreachable",
+                        "Server unreachable: connection " + request.getSysUrl() + " failed", exp);
+            } else if (ServerException.class.isAssignableFrom(exp.getClass())) {
+                throw (ServerException) exp;
+            } else if (ThrottlingException.class.isAssignableFrom(exp.getClass())) {
+                throw new ClientException("SDK.RequestTryOrRetryFailed", errorMessage, exp);
+            } else if (ClientException.class.isAssignableFrom(exp.getClass())) {
+                throw (ClientException) exp;
+            } else {
+                throw new ClientException("SDK.RequestTryOrRetryFailed",
+                        "Some errors occurred. Error message for latest request is " + exp.getMessage(), exp);
+            }
         } finally {
             if (null != logger) {
                 try {
@@ -430,11 +489,7 @@ public class DefaultAcsClient implements IAcsClient {
 
     private AcsError readError(HttpResponse httpResponse, FormatType format) throws ClientException {
         AcsError error = new AcsError();
-        String responseEndpoint = "Error";
-        Reader reader = ReaderFactory.createInstance(format);
-        UnmarshallerContext context = new UnmarshallerContext();
         String stringContent = httpResponse.getHttpContentString();
-
         if (stringContent == null) {
             error.setErrorCode("(null)");
             error.setErrorMessage("(null)");
@@ -442,8 +497,20 @@ public class DefaultAcsClient implements IAcsClient {
             error.setStatusCode(httpResponse.getStatus());
             return error;
         } else {
-            context.setResponseMap(reader.read(stringContent, responseEndpoint));
-            return error.getInstance(context);
+            try {
+                String responseEndpoint = "Error";
+                Reader reader = ReaderFactory.createInstance(format);
+                UnmarshallerContext context = new UnmarshallerContext();
+                context.setResponseMap(reader.read(stringContent, responseEndpoint));
+                return error.getInstance(context);
+            } catch (Exception e) {
+                stringContent = "Server response has a bad format type: " + format + ";\nThe original return is: \n" + stringContent;
+                error.setErrorCode("(null)");
+                error.setErrorMessage(stringContent);
+                error.setRequestId("(null)");
+                error.setStatusCode(httpResponse.getStatus());
+                return error;
+            }
         }
     }
 
@@ -556,6 +623,16 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
+    }
+
+    @Override
+    public RetryPolicy getSysRetryPolicy() {
+        return this.retryPolicy;
+    }
+
+    @Override
+    public void setSysRetryPolicy(RetryPolicy retryPolicy) {
+        this.retryPolicy = retryPolicy;
     }
 
 }

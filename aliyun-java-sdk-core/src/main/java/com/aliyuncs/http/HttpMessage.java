@@ -1,6 +1,7 @@
 package com.aliyuncs.http;
 
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.policy.retry.RetryPolicy;
 import com.aliyuncs.utils.ParameterHelper;
 import lombok.ToString;
 
@@ -28,6 +29,7 @@ public abstract class HttpMessage {
     protected boolean ignoreSSLCerts = false;
     private KeyManager[] keyManagers = null;
     private X509TrustManager[] x509TrustManagers = null;
+    private RetryPolicy retryPolicy = null;
 
     public KeyManager[] getKeyManagers() {
         return keyManagers;
@@ -276,5 +278,13 @@ public abstract class HttpMessage {
 
     public String getSysStrToSign(){
         return null;
+    }
+
+    public RetryPolicy getSysRetryPolicy() {
+        return this.retryPolicy;
+    }
+
+    public void setSysRetryPolicy(RetryPolicy retryPolicy) {
+        this.retryPolicy = retryPolicy;
     }
 }

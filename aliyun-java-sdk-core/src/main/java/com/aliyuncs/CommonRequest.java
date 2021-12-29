@@ -5,6 +5,7 @@ import com.aliyuncs.auth.signers.SignatureAlgorithm;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.policy.retry.RetryPolicy;
 import com.aliyuncs.regions.ProductDomain;
 
 import java.util.HashMap;
@@ -37,6 +38,7 @@ public class CommonRequest {
 
     private SignatureVersion signatureVersion;
     private SignatureAlgorithm signatureAlgorithm;
+    private RetryPolicy retryPolicy = null;
 
     @SuppressWarnings("rawtypes")
     public AcsRequest buildRequest() {
@@ -45,6 +47,7 @@ public class CommonRequest {
             request.setSysUriPattern(uriPattern);
             request.setSysSignatureVersion(signatureVersion);
             request.setSysSignatureAlgorithm(signatureAlgorithm);
+            request.setSysRetryPolicy(retryPolicy);
             for (String pathParamKey : pathParameters.keySet()) {
                 request.putPathParameter(pathParamKey, pathParameters.get(pathParamKey));
             }
@@ -54,6 +57,7 @@ public class CommonRequest {
             CommonRpcRequest request = new CommonRpcRequest(product);
             request.setSysSignatureVersion(signatureVersion);
             request.setSysSignatureAlgorithm(signatureAlgorithm);
+            request.setSysRetryPolicy(retryPolicy);
             fillParams(request);
             return request;
         }
@@ -527,5 +531,13 @@ public class CommonRequest {
 
     public void setSysSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
+    }
+
+    public RetryPolicy getSysRetryPolicy() {
+        return this.retryPolicy;
+    }
+
+    public void setSysRetryPolicy(RetryPolicy retryPolicy) {
+        this.retryPolicy = retryPolicy;
     }
 }
