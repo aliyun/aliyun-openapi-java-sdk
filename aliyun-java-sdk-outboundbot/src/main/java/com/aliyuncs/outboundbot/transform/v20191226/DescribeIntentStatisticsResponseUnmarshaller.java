@@ -54,25 +54,25 @@ public class DescribeIntentStatisticsResponseUnmarshaller {
 
 		List<IntentStatisticsItem> globalIntents = new ArrayList<IntentStatisticsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIntentStatisticsResponse.GlobalIntents.Length"); i++) {
-			IntentStatisticsItem intentStatisticsItem_ = new IntentStatisticsItem();
-			intentStatisticsItem_.setInstanceId(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].InstanceId"));
-			intentStatisticsItem_.setGroupId(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].GroupId"));
-			intentStatisticsItem_.setIntentId(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].IntentId"));
-			intentStatisticsItem_.setIntentName(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].IntentName"));
-			intentStatisticsItem_.setType(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].Type"));
-			intentStatisticsItem_.setHitNum(_ctx.integerValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].HitNum"));
-			intentStatisticsItem_.setHitAfterNoAnswer(_ctx.integerValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].HitAfterNoAnswer"));
+			IntentStatisticsItem intentStatisticsItem1 = new IntentStatisticsItem();
+			intentStatisticsItem1.setInstanceId(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].InstanceId"));
+			intentStatisticsItem1.setGroupId(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].GroupId"));
+			intentStatisticsItem1.setIntentId(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].IntentId"));
+			intentStatisticsItem1.setIntentName(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].IntentName"));
+			intentStatisticsItem1.setType(_ctx.stringValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].Type"));
+			intentStatisticsItem1.setHitNum(_ctx.integerValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].HitNum"));
+			intentStatisticsItem1.setHitAfterNoAnswer(_ctx.integerValue("DescribeIntentStatisticsResponse.GlobalIntents["+ i +"].HitAfterNoAnswer"));
 
-			globalIntents.add(intentStatisticsItem_);
+			globalIntents.add(intentStatisticsItem1);
 		}
 		describeIntentStatisticsResponse.setGlobalIntents(globalIntents);
 
 		List<IntentStatisticsItem1> intentsAfterNoAnswer = new ArrayList<IntentStatisticsItem1>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer.Length"); i++) {
-			IntentStatisticsItem1 intentStatisticsItem1 = new IntentStatisticsItem1();
-			intentStatisticsItem1.setInstanceId(_ctx.stringValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer["+ i +"].InstanceId"));
+			IntentStatisticsItem1 intentStatisticsItem11 = new IntentStatisticsItem1();
+			intentStatisticsItem11.setInstanceId(_ctx.stringValue("DescribeIntentStatisticsResponse.IntentsAfterNoAnswer["+ i +"].InstanceId"));
 
-			intentsAfterNoAnswer.add(intentStatisticsItem1);
+			intentsAfterNoAnswer.add(intentStatisticsItem11);
 		}
 		describeIntentStatisticsResponse.setIntentsAfterNoAnswer(intentsAfterNoAnswer);
 	 

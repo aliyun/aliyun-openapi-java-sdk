@@ -23,10 +23,10 @@ public class SuspendCallWithFileResponseUnmarshaller {
 	public static SuspendCallWithFileResponse unmarshall(SuspendCallWithFileResponse suspendCallWithFileResponse, UnmarshallerContext _ctx) {
 		
 		suspendCallWithFileResponse.setRequestId(_ctx.stringValue("SuspendCallWithFileResponse.RequestId"));
-		suspendCallWithFileResponse.setSuccess(_ctx.booleanValue("SuspendCallWithFileResponse.Success"));
+		suspendCallWithFileResponse.setHttpStatusCode(_ctx.integerValue("SuspendCallWithFileResponse.HttpStatusCode"));
 		suspendCallWithFileResponse.setCode(_ctx.stringValue("SuspendCallWithFileResponse.Code"));
 		suspendCallWithFileResponse.setMessage(_ctx.stringValue("SuspendCallWithFileResponse.Message"));
-		suspendCallWithFileResponse.setHttpStatusCode(_ctx.integerValue("SuspendCallWithFileResponse.HttpStatusCode"));
+		suspendCallWithFileResponse.setSuccess(_ctx.booleanValue("SuspendCallWithFileResponse.Success"));
 	 
 	 	return suspendCallWithFileResponse;
 	}

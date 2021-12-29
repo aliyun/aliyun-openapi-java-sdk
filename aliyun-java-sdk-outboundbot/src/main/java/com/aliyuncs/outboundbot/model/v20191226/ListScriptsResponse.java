@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListScriptsResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -37,20 +37,20 @@ public class ListScriptsResponse extends AcsResponse {
 
 	private Scripts scripts;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -129,103 +129,33 @@ public class ListScriptsResponse extends AcsResponse {
 
 		public static class Script {
 
-			private String debugStatus;
-
-			private String failReason;
-
-			private String industry;
-
-			private Boolean isDebugDrafted;
-
-			private Boolean isDrafted;
-
-			private String scene;
-
-			private String scriptDescription;
-
-			private String scriptId;
-
-			private String scriptName;
-
 			private String status;
 
 			private Long updateTime;
 
-			private String rejectReason;
+			private String scriptId;
+
+			private Boolean isDebugDrafted;
+
+			private String industry;
+
+			private String scriptDescription;
+
+			private Boolean isDrafted;
+
+			private String debugStatus;
 
 			private Boolean miniPlaybackEnabled;
 
-			public String getDebugStatus() {
-				return this.debugStatus;
-			}
+			private String rejectReason;
 
-			public void setDebugStatus(String debugStatus) {
-				this.debugStatus = debugStatus;
-			}
+			private String failReason;
 
-			public String getFailReason() {
-				return this.failReason;
-			}
+			private String scene;
 
-			public void setFailReason(String failReason) {
-				this.failReason = failReason;
-			}
+			private String scriptName;
 
-			public String getIndustry() {
-				return this.industry;
-			}
-
-			public void setIndustry(String industry) {
-				this.industry = industry;
-			}
-
-			public Boolean getIsDebugDrafted() {
-				return this.isDebugDrafted;
-			}
-
-			public void setIsDebugDrafted(Boolean isDebugDrafted) {
-				this.isDebugDrafted = isDebugDrafted;
-			}
-
-			public Boolean getIsDrafted() {
-				return this.isDrafted;
-			}
-
-			public void setIsDrafted(Boolean isDrafted) {
-				this.isDrafted = isDrafted;
-			}
-
-			public String getScene() {
-				return this.scene;
-			}
-
-			public void setScene(String scene) {
-				this.scene = scene;
-			}
-
-			public String getScriptDescription() {
-				return this.scriptDescription;
-			}
-
-			public void setScriptDescription(String scriptDescription) {
-				this.scriptDescription = scriptDescription;
-			}
-
-			public String getScriptId() {
-				return this.scriptId;
-			}
-
-			public void setScriptId(String scriptId) {
-				this.scriptId = scriptId;
-			}
-
-			public String getScriptName() {
-				return this.scriptName;
-			}
-
-			public void setScriptName(String scriptName) {
-				this.scriptName = scriptName;
-			}
+			private Boolean newBargeInEnable;
 
 			public String getStatus() {
 				return this.status;
@@ -243,12 +173,52 @@ public class ListScriptsResponse extends AcsResponse {
 				this.updateTime = updateTime;
 			}
 
-			public String getRejectReason() {
-				return this.rejectReason;
+			public String getScriptId() {
+				return this.scriptId;
 			}
 
-			public void setRejectReason(String rejectReason) {
-				this.rejectReason = rejectReason;
+			public void setScriptId(String scriptId) {
+				this.scriptId = scriptId;
+			}
+
+			public Boolean getIsDebugDrafted() {
+				return this.isDebugDrafted;
+			}
+
+			public void setIsDebugDrafted(Boolean isDebugDrafted) {
+				this.isDebugDrafted = isDebugDrafted;
+			}
+
+			public String getIndustry() {
+				return this.industry;
+			}
+
+			public void setIndustry(String industry) {
+				this.industry = industry;
+			}
+
+			public String getScriptDescription() {
+				return this.scriptDescription;
+			}
+
+			public void setScriptDescription(String scriptDescription) {
+				this.scriptDescription = scriptDescription;
+			}
+
+			public Boolean getIsDrafted() {
+				return this.isDrafted;
+			}
+
+			public void setIsDrafted(Boolean isDrafted) {
+				this.isDrafted = isDrafted;
+			}
+
+			public String getDebugStatus() {
+				return this.debugStatus;
+			}
+
+			public void setDebugStatus(String debugStatus) {
+				this.debugStatus = debugStatus;
 			}
 
 			public Boolean getMiniPlaybackEnabled() {
@@ -257,6 +227,46 @@ public class ListScriptsResponse extends AcsResponse {
 
 			public void setMiniPlaybackEnabled(Boolean miniPlaybackEnabled) {
 				this.miniPlaybackEnabled = miniPlaybackEnabled;
+			}
+
+			public String getRejectReason() {
+				return this.rejectReason;
+			}
+
+			public void setRejectReason(String rejectReason) {
+				this.rejectReason = rejectReason;
+			}
+
+			public String getFailReason() {
+				return this.failReason;
+			}
+
+			public void setFailReason(String failReason) {
+				this.failReason = failReason;
+			}
+
+			public String getScene() {
+				return this.scene;
+			}
+
+			public void setScene(String scene) {
+				this.scene = scene;
+			}
+
+			public String getScriptName() {
+				return this.scriptName;
+			}
+
+			public void setScriptName(String scriptName) {
+				this.scriptName = scriptName;
+			}
+
+			public Boolean getNewBargeInEnable() {
+				return this.newBargeInEnable;
+			}
+
+			public void setNewBargeInEnable(Boolean newBargeInEnable) {
+				this.newBargeInEnable = newBargeInEnable;
 			}
 		}
 	}

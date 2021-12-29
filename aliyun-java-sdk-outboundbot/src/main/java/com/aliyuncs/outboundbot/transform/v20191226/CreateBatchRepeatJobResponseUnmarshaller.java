@@ -24,10 +24,10 @@ public class CreateBatchRepeatJobResponseUnmarshaller {
 	public static CreateBatchRepeatJobResponse unmarshall(CreateBatchRepeatJobResponse createBatchRepeatJobResponse, UnmarshallerContext _ctx) {
 		
 		createBatchRepeatJobResponse.setRequestId(_ctx.stringValue("CreateBatchRepeatJobResponse.RequestId"));
-		createBatchRepeatJobResponse.setSuccess(_ctx.booleanValue("CreateBatchRepeatJobResponse.Success"));
+		createBatchRepeatJobResponse.setHttpStatusCode(_ctx.integerValue("CreateBatchRepeatJobResponse.HttpStatusCode"));
 		createBatchRepeatJobResponse.setCode(_ctx.stringValue("CreateBatchRepeatJobResponse.Code"));
 		createBatchRepeatJobResponse.setMessage(_ctx.stringValue("CreateBatchRepeatJobResponse.Message"));
-		createBatchRepeatJobResponse.setHttpStatusCode(_ctx.integerValue("CreateBatchRepeatJobResponse.HttpStatusCode"));
+		createBatchRepeatJobResponse.setSuccess(_ctx.booleanValue("CreateBatchRepeatJobResponse.Success"));
 
 		JobGroup jobGroup = new JobGroup();
 		jobGroup.setId(_ctx.stringValue("CreateBatchRepeatJobResponse.JobGroup.Id"));

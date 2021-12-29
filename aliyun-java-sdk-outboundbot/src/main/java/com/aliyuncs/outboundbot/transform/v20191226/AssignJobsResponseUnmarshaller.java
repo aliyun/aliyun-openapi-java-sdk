@@ -26,11 +26,11 @@ public class AssignJobsResponseUnmarshaller {
 	public static AssignJobsResponse unmarshall(AssignJobsResponse assignJobsResponse, UnmarshallerContext _ctx) {
 		
 		assignJobsResponse.setRequestId(_ctx.stringValue("AssignJobsResponse.RequestId"));
-		assignJobsResponse.setCode(_ctx.stringValue("AssignJobsResponse.Code"));
 		assignJobsResponse.setHttpStatusCode(_ctx.integerValue("AssignJobsResponse.HttpStatusCode"));
 		assignJobsResponse.setJobGroupId(_ctx.stringValue("AssignJobsResponse.JobGroupId"));
-		assignJobsResponse.setMessage(_ctx.stringValue("AssignJobsResponse.Message"));
 		assignJobsResponse.setSuccess(_ctx.booleanValue("AssignJobsResponse.Success"));
+		assignJobsResponse.setCode(_ctx.stringValue("AssignJobsResponse.Code"));
+		assignJobsResponse.setMessage(_ctx.stringValue("AssignJobsResponse.Message"));
 
 		List<String> jobsId = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("AssignJobsResponse.JobsId.Length"); i++) {

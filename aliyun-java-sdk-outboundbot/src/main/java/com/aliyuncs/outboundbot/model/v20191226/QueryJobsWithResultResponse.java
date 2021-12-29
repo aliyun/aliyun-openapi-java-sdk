@@ -219,6 +219,8 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 				private Boolean hasHangUpByRejection;
 
+				private Boolean hasLastPlaybackCompleted;
+
 				private List<Extra> extras;
 
 				private List<TagHit> tagHits;
@@ -297,6 +299,14 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 				public void setHasHangUpByRejection(Boolean hasHangUpByRejection) {
 					this.hasHangUpByRejection = hasHangUpByRejection;
+				}
+
+				public Boolean getHasLastPlaybackCompleted() {
+					return this.hasLastPlaybackCompleted;
+				}
+
+				public void setHasLastPlaybackCompleted(Boolean hasLastPlaybackCompleted) {
+					this.hasLastPlaybackCompleted = hasLastPlaybackCompleted;
 				}
 
 				public List<Extra> getExtras() {

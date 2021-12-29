@@ -34,13 +34,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 
 	private String scene;
 
-	private String chatbotId;
-
-	private String instanceId;
-
 	private List<String> scriptWaveforms;
 
 	private String asrConfig;
+
+	private Boolean newBargeInEnable;
+
+	private Boolean miniPlaybackEnable;
+
+	private String chatbotId;
+
+	private String instanceId;
 
 	private String scriptDescription;
 
@@ -98,28 +102,6 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		}
 	}
 
-	public String getChatbotId() {
-		return this.chatbotId;
-	}
-
-	public void setChatbotId(String chatbotId) {
-		this.chatbotId = chatbotId;
-		if(chatbotId != null){
-			putQueryParameter("ChatbotId", chatbotId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public List<String> getScriptWaveforms() {
 		return this.scriptWaveforms;
 	}
@@ -141,6 +123,50 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		this.asrConfig = asrConfig;
 		if(asrConfig != null){
 			putQueryParameter("AsrConfig", asrConfig);
+		}
+	}
+
+	public Boolean getNewBargeInEnable() {
+		return this.newBargeInEnable;
+	}
+
+	public void setNewBargeInEnable(Boolean newBargeInEnable) {
+		this.newBargeInEnable = newBargeInEnable;
+		if(newBargeInEnable != null){
+			putQueryParameter("NewBargeInEnable", newBargeInEnable.toString());
+		}
+	}
+
+	public Boolean getMiniPlaybackEnable() {
+		return this.miniPlaybackEnable;
+	}
+
+	public void setMiniPlaybackEnable(Boolean miniPlaybackEnable) {
+		this.miniPlaybackEnable = miniPlaybackEnable;
+		if(miniPlaybackEnable != null){
+			putQueryParameter("MiniPlaybackEnable", miniPlaybackEnable.toString());
+		}
+	}
+
+	public String getChatbotId() {
+		return this.chatbotId;
+	}
+
+	public void setChatbotId(String chatbotId) {
+		this.chatbotId = chatbotId;
+		if(chatbotId != null){
+			putQueryParameter("ChatbotId", chatbotId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -68,6 +68,7 @@ public class QueryJobsWithResultResponseUnmarshaller {
 			latestTask.setCallTime(_ctx.longValue("QueryJobsWithResultResponse.Jobs.List["+ i +"].LatestTask.CallTime"));
 			latestTask.setCallDurationDisplay(_ctx.stringValue("QueryJobsWithResultResponse.Jobs.List["+ i +"].LatestTask.CallDurationDisplay"));
 			latestTask.setHasHangUpByRejection(_ctx.booleanValue("QueryJobsWithResultResponse.Jobs.List["+ i +"].LatestTask.HasHangUpByRejection"));
+			latestTask.setHasLastPlaybackCompleted(_ctx.booleanValue("QueryJobsWithResultResponse.Jobs.List["+ i +"].LatestTask.HasLastPlaybackCompleted"));
 
 			Contact contact = new Contact();
 			contact.setRound(_ctx.integerValue("QueryJobsWithResultResponse.Jobs.List["+ i +"].LatestTask.Contact.Round"));

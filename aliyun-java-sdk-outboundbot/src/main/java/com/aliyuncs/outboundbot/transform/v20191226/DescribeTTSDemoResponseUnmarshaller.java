@@ -23,10 +23,10 @@ public class DescribeTTSDemoResponseUnmarshaller {
 	public static DescribeTTSDemoResponse unmarshall(DescribeTTSDemoResponse describeTTSDemoResponse, UnmarshallerContext _ctx) {
 		
 		describeTTSDemoResponse.setRequestId(_ctx.stringValue("DescribeTTSDemoResponse.RequestId"));
+		describeTTSDemoResponse.setHttpStatusCode(_ctx.integerValue("DescribeTTSDemoResponse.HttpStatusCode"));
 		describeTTSDemoResponse.setSuccess(_ctx.booleanValue("DescribeTTSDemoResponse.Success"));
 		describeTTSDemoResponse.setCode(_ctx.stringValue("DescribeTTSDemoResponse.Code"));
 		describeTTSDemoResponse.setMessage(_ctx.stringValue("DescribeTTSDemoResponse.Message"));
-		describeTTSDemoResponse.setHttpStatusCode(_ctx.integerValue("DescribeTTSDemoResponse.HttpStatusCode"));
 		describeTTSDemoResponse.setAuditionUrl(_ctx.stringValue("DescribeTTSDemoResponse.AuditionUrl"));
 	 
 	 	return describeTTSDemoResponse;

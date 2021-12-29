@@ -28,8 +28,8 @@ public class ListScriptsResponseUnmarshaller {
 	public static ListScriptsResponse unmarshall(ListScriptsResponse listScriptsResponse, UnmarshallerContext _ctx) {
 		
 		listScriptsResponse.setRequestId(_ctx.stringValue("ListScriptsResponse.RequestId"));
-		listScriptsResponse.setCode(_ctx.stringValue("ListScriptsResponse.Code"));
 		listScriptsResponse.setHttpStatusCode(_ctx.integerValue("ListScriptsResponse.HttpStatusCode"));
+		listScriptsResponse.setCode(_ctx.stringValue("ListScriptsResponse.Code"));
 		listScriptsResponse.setMessage(_ctx.stringValue("ListScriptsResponse.Message"));
 		listScriptsResponse.setSuccess(_ctx.booleanValue("ListScriptsResponse.Success"));
 
@@ -41,19 +41,20 @@ public class ListScriptsResponseUnmarshaller {
 		List<Script> list = new ArrayList<Script>();
 		for (int i = 0; i < _ctx.lengthValue("ListScriptsResponse.Scripts.List.Length"); i++) {
 			Script script = new Script();
-			script.setDebugStatus(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].DebugStatus"));
-			script.setFailReason(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].FailReason"));
-			script.setIndustry(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].Industry"));
-			script.setIsDebugDrafted(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].IsDebugDrafted"));
-			script.setIsDrafted(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].IsDrafted"));
-			script.setScene(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].Scene"));
-			script.setScriptDescription(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptDescription"));
-			script.setScriptId(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptId"));
-			script.setScriptName(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptName"));
 			script.setStatus(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].Status"));
 			script.setUpdateTime(_ctx.longValue("ListScriptsResponse.Scripts.List["+ i +"].UpdateTime"));
-			script.setRejectReason(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].RejectReason"));
+			script.setScriptId(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptId"));
+			script.setIsDebugDrafted(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].IsDebugDrafted"));
+			script.setIndustry(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].Industry"));
+			script.setScriptDescription(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptDescription"));
+			script.setIsDrafted(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].IsDrafted"));
+			script.setDebugStatus(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].DebugStatus"));
 			script.setMiniPlaybackEnabled(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].MiniPlaybackEnabled"));
+			script.setRejectReason(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].RejectReason"));
+			script.setFailReason(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].FailReason"));
+			script.setScene(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].Scene"));
+			script.setScriptName(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptName"));
+			script.setNewBargeInEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].NewBargeInEnable"));
 
 			list.add(script);
 		}

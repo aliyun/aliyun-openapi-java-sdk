@@ -24,23 +24,23 @@ public class CreateScriptResponseUnmarshaller {
 	public static CreateScriptResponse unmarshall(CreateScriptResponse createScriptResponse, UnmarshallerContext _ctx) {
 		
 		createScriptResponse.setRequestId(_ctx.stringValue("CreateScriptResponse.RequestId"));
-		createScriptResponse.setCode(_ctx.stringValue("CreateScriptResponse.Code"));
 		createScriptResponse.setHttpStatusCode(_ctx.integerValue("CreateScriptResponse.HttpStatusCode"));
-		createScriptResponse.setMessage(_ctx.stringValue("CreateScriptResponse.Message"));
 		createScriptResponse.setSuccess(_ctx.booleanValue("CreateScriptResponse.Success"));
 		createScriptResponse.setChatbotId(_ctx.stringValue("CreateScriptResponse.ChatbotId"));
+		createScriptResponse.setCode(_ctx.stringValue("CreateScriptResponse.Code"));
+		createScriptResponse.setMessage(_ctx.stringValue("CreateScriptResponse.Message"));
 
 		Script script = new Script();
-		script.setDebugStatus(_ctx.stringValue("CreateScriptResponse.Script.DebugStatus"));
-		script.setIndustry(_ctx.stringValue("CreateScriptResponse.Script.Industry"));
-		script.setIsDebugDrafted(_ctx.booleanValue("CreateScriptResponse.Script.IsDebugDrafted"));
-		script.setIsDrafted(_ctx.booleanValue("CreateScriptResponse.Script.IsDrafted"));
-		script.setScene(_ctx.stringValue("CreateScriptResponse.Script.Scene"));
-		script.setScriptDescription(_ctx.stringValue("CreateScriptResponse.Script.ScriptDescription"));
-		script.setScriptId(_ctx.stringValue("CreateScriptResponse.Script.ScriptId"));
-		script.setScriptName(_ctx.stringValue("CreateScriptResponse.Script.ScriptName"));
 		script.setStatus(_ctx.stringValue("CreateScriptResponse.Script.Status"));
 		script.setUpdateTime(_ctx.longValue("CreateScriptResponse.Script.UpdateTime"));
+		script.setIndustry(_ctx.stringValue("CreateScriptResponse.Script.Industry"));
+		script.setScriptDescription(_ctx.stringValue("CreateScriptResponse.Script.ScriptDescription"));
+		script.setIsDrafted(_ctx.booleanValue("CreateScriptResponse.Script.IsDrafted"));
+		script.setDebugStatus(_ctx.stringValue("CreateScriptResponse.Script.DebugStatus"));
+		script.setScriptId(_ctx.stringValue("CreateScriptResponse.Script.ScriptId"));
+		script.setIsDebugDrafted(_ctx.booleanValue("CreateScriptResponse.Script.IsDebugDrafted"));
+		script.setScriptName(_ctx.stringValue("CreateScriptResponse.Script.ScriptName"));
+		script.setScene(_ctx.stringValue("CreateScriptResponse.Script.Scene"));
 		createScriptResponse.setScript(script);
 	 
 	 	return createScriptResponse;

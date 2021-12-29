@@ -26,6 +26,8 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse> {
 	   
 
+	private String recallStrategyJson;
+
 	private String jobGroupDescription;
 
 	private String jobGroupName;
@@ -46,6 +48,17 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRecallStrategyJson() {
+		return this.recallStrategyJson;
+	}
+
+	public void setRecallStrategyJson(String recallStrategyJson) {
+		this.recallStrategyJson = recallStrategyJson;
+		if(recallStrategyJson != null){
+			putQueryParameter("RecallStrategyJson", recallStrategyJson);
+		}
 	}
 
 	public String getJobGroupDescription() {

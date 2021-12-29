@@ -26,11 +26,13 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse> {
 	   
 
+	private String recallStrategyJson;
+
 	private String description;
 
-	private List<String> callingNumbers;
-
 	private String scriptId;
+
+	private List<String> callingNumbers;
 
 	private String instanceId;
 
@@ -50,6 +52,17 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		} catch (Exception e) {}
 	}
 
+	public String getRecallStrategyJson() {
+		return this.recallStrategyJson;
+	}
+
+	public void setRecallStrategyJson(String recallStrategyJson) {
+		this.recallStrategyJson = recallStrategyJson;
+		if(recallStrategyJson != null){
+			putQueryParameter("RecallStrategyJson", recallStrategyJson);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -58,6 +71,17 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getScriptId() {
+		return this.scriptId;
+	}
+
+	public void setScriptId(String scriptId) {
+		this.scriptId = scriptId;
+		if(scriptId != null){
+			putQueryParameter("ScriptId", scriptId);
 		}
 	}
 
@@ -72,17 +96,6 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 				putQueryParameter("CallingNumber." + (i + 1) , callingNumbers.get(i));
 			}
 		}	
-	}
-
-	public String getScriptId() {
-		return this.scriptId;
-	}
-
-	public void setScriptId(String scriptId) {
-		this.scriptId = scriptId;
-		if(scriptId != null){
-			putQueryParameter("ScriptId", scriptId);
-		}
 	}
 
 	public String getInstanceId() {
