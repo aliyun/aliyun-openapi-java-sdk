@@ -23,8 +23,8 @@ public class GetRepoBuildRecordStatusResponseUnmarshaller {
 	public static GetRepoBuildRecordStatusResponse unmarshall(GetRepoBuildRecordStatusResponse getRepoBuildRecordStatusResponse, UnmarshallerContext _ctx) {
 		
 		getRepoBuildRecordStatusResponse.setRequestId(_ctx.stringValue("GetRepoBuildRecordStatusResponse.RequestId"));
-		getRepoBuildRecordStatusResponse.setIsSuccess(_ctx.booleanValue("GetRepoBuildRecordStatusResponse.IsSuccess"));
 		getRepoBuildRecordStatusResponse.setCode(_ctx.stringValue("GetRepoBuildRecordStatusResponse.Code"));
+		getRepoBuildRecordStatusResponse.setIsSuccess(_ctx.booleanValue("GetRepoBuildRecordStatusResponse.IsSuccess"));
 		getRepoBuildRecordStatusResponse.setBuildStatus(_ctx.stringValue("GetRepoBuildRecordStatusResponse.BuildStatus"));
 	 
 	 	return getRepoBuildRecordStatusResponse;

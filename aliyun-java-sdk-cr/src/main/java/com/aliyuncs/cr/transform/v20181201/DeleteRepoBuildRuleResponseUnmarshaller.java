@@ -23,8 +23,8 @@ public class DeleteRepoBuildRuleResponseUnmarshaller {
 	public static DeleteRepoBuildRuleResponse unmarshall(DeleteRepoBuildRuleResponse deleteRepoBuildRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteRepoBuildRuleResponse.setRequestId(_ctx.stringValue("DeleteRepoBuildRuleResponse.RequestId"));
-		deleteRepoBuildRuleResponse.setIsSuccess(_ctx.booleanValue("DeleteRepoBuildRuleResponse.IsSuccess"));
 		deleteRepoBuildRuleResponse.setCode(_ctx.stringValue("DeleteRepoBuildRuleResponse.Code"));
+		deleteRepoBuildRuleResponse.setIsSuccess(_ctx.booleanValue("DeleteRepoBuildRuleResponse.IsSuccess"));
 	 
 	 	return deleteRepoBuildRuleResponse;
 	}

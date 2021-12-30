@@ -31,7 +31,7 @@ public class DeleteRepoTriggerRequest extends RpcAcsRequest<DeleteRepoTriggerRes
 
 	private String instanceId;
 	public DeleteRepoTriggerRequest() {
-		super("cr", "2018-12-01", "DeleteRepoTrigger", "acr");
+		super("cr", "2018-12-01", "DeleteRepoTrigger");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

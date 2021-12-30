@@ -29,9 +29,11 @@ public class GetRepoTagLayersRequest extends RpcAcsRequest<GetRepoTagLayersRespo
 
 	private String instanceId;
 
+	private String digest;
+
 	private String tag;
 	public GetRepoTagLayersRequest() {
-		super("cr", "2018-12-01", "GetRepoTagLayers", "acr");
+		super("cr", "2018-12-01", "GetRepoTagLayers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +60,17 @@ public class GetRepoTagLayersRequest extends RpcAcsRequest<GetRepoTagLayersRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDigest() {
+		return this.digest;
+	}
+
+	public void setDigest(String digest) {
+		this.digest = digest;
+		if(digest != null){
+			putQueryParameter("Digest", digest);
 		}
 	}
 

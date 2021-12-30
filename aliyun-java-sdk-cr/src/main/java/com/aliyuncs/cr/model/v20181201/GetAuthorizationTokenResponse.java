@@ -24,24 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAuthorizationTokenResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
+
+	private Long expireTime;
 
 	private String code;
 
-	private String requestId;
+	private Boolean isSuccess;
 
 	private String tempUsername;
 
 	private String authorizationToken;
 
-	private Long expireTime;
-
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(Long expireTime) {
+		this.expireTime = expireTime;
 	}
 
 	public String getCode() {
@@ -52,12 +60,12 @@ public class GetAuthorizationTokenResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public String getTempUsername() {
@@ -74,14 +82,6 @@ public class GetAuthorizationTokenResponse extends AcsResponse {
 
 	public void setAuthorizationToken(String authorizationToken) {
 		this.authorizationToken = authorizationToken;
-	}
-
-	public Long getExpireTime() {
-		return this.expireTime;
-	}
-
-	public void setExpireTime(Long expireTime) {
-		this.expireTime = expireTime;
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class ListNamespaceRequest extends RpcAcsRequest<ListNamespaceResponse> {
 
 	private String namespaceStatus;
 	public ListNamespaceRequest() {
-		super("cr", "2018-12-01", "ListNamespace", "acr");
+		super("cr", "2018-12-01", "ListNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

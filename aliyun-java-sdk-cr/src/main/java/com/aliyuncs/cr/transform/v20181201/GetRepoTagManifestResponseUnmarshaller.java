@@ -33,20 +33,20 @@ public class GetRepoTagManifestResponseUnmarshaller {
 	public static GetRepoTagManifestResponse unmarshall(GetRepoTagManifestResponse getRepoTagManifestResponse, UnmarshallerContext _ctx) {
 		
 		getRepoTagManifestResponse.setRequestId(_ctx.stringValue("GetRepoTagManifestResponse.RequestId"));
-		getRepoTagManifestResponse.setIsSuccess(_ctx.booleanValue("GetRepoTagManifestResponse.IsSuccess"));
 		getRepoTagManifestResponse.setCode(_ctx.stringValue("GetRepoTagManifestResponse.Code"));
+		getRepoTagManifestResponse.setIsSuccess(_ctx.booleanValue("GetRepoTagManifestResponse.IsSuccess"));
 
 		Manifest manifest = new Manifest();
-		manifest.setSchemaVersion(_ctx.integerValue("GetRepoTagManifestResponse.Manifest.SchemaVersion"));
-		manifest.setName(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Name"));
 		manifest.setTag(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Tag"));
-		manifest.setArchitecture(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Architecture"));
+		manifest.setName(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Name"));
 		manifest.setMediaType(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.MediaType"));
+		manifest.setSchemaVersion(_ctx.integerValue("GetRepoTagManifestResponse.Manifest.SchemaVersion"));
+		manifest.setArchitecture(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Architecture"));
 
 		Config config = new Config();
+		config.setDigest(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Config.Digest"));
 		config.setMediaType(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Config.MediaType"));
 		config.setSize(_ctx.longValue("GetRepoTagManifestResponse.Manifest.Config.Size"));
-		config.setDigest(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Config.Digest"));
 		manifest.setConfig(config);
 
 		List<FsLayersItem> fsLayers = new ArrayList<FsLayersItem>();
@@ -70,8 +70,8 @@ public class GetRepoTagManifestResponseUnmarshaller {
 		List<SignaturesItem> signatures = new ArrayList<SignaturesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRepoTagManifestResponse.Manifest.Signatures.Length"); i++) {
 			SignaturesItem signaturesItem = new SignaturesItem();
-			signaturesItem.setHeader(_ctx.mapValue("GetRepoTagManifestResponse.Manifest.Signatures["+ i +"].Header"));
 			signaturesItem.setSignature(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Signatures["+ i +"].Signature"));
+			signaturesItem.setHeader(_ctx.mapValue("GetRepoTagManifestResponse.Manifest.Signatures["+ i +"].Header"));
 			signaturesItem.set_Protected(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Signatures["+ i +"].Protected"));
 
 			signatures.add(signaturesItem);
@@ -81,9 +81,9 @@ public class GetRepoTagManifestResponseUnmarshaller {
 		List<LayersItem> layers = new ArrayList<LayersItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRepoTagManifestResponse.Manifest.Layers.Length"); i++) {
 			LayersItem layersItem = new LayersItem();
+			layersItem.setDigest(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Layers["+ i +"].Digest"));
 			layersItem.setMediaType(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Layers["+ i +"].MediaType"));
 			layersItem.setSize(_ctx.longValue("GetRepoTagManifestResponse.Manifest.Layers["+ i +"].Size"));
-			layersItem.setDigest(_ctx.stringValue("GetRepoTagManifestResponse.Manifest.Layers["+ i +"].Digest"));
 
 			layers.add(layersItem);
 		}

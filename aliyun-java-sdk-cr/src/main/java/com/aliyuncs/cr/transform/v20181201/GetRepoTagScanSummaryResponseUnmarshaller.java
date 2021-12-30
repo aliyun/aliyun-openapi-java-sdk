@@ -23,13 +23,13 @@ public class GetRepoTagScanSummaryResponseUnmarshaller {
 	public static GetRepoTagScanSummaryResponse unmarshall(GetRepoTagScanSummaryResponse getRepoTagScanSummaryResponse, UnmarshallerContext _ctx) {
 		
 		getRepoTagScanSummaryResponse.setRequestId(_ctx.stringValue("GetRepoTagScanSummaryResponse.RequestId"));
-		getRepoTagScanSummaryResponse.setIsSuccess(_ctx.booleanValue("GetRepoTagScanSummaryResponse.IsSuccess"));
-		getRepoTagScanSummaryResponse.setCode(_ctx.stringValue("GetRepoTagScanSummaryResponse.Code"));
-		getRepoTagScanSummaryResponse.setLowSeverity(_ctx.integerValue("GetRepoTagScanSummaryResponse.LowSeverity"));
-		getRepoTagScanSummaryResponse.setMediumSeverity(_ctx.integerValue("GetRepoTagScanSummaryResponse.MediumSeverity"));
-		getRepoTagScanSummaryResponse.setHighSeverity(_ctx.integerValue("GetRepoTagScanSummaryResponse.HighSeverity"));
 		getRepoTagScanSummaryResponse.setUnknownSeverity(_ctx.integerValue("GetRepoTagScanSummaryResponse.UnknownSeverity"));
 		getRepoTagScanSummaryResponse.setTotalSeverity(_ctx.integerValue("GetRepoTagScanSummaryResponse.TotalSeverity"));
+		getRepoTagScanSummaryResponse.setCode(_ctx.stringValue("GetRepoTagScanSummaryResponse.Code"));
+		getRepoTagScanSummaryResponse.setMediumSeverity(_ctx.integerValue("GetRepoTagScanSummaryResponse.MediumSeverity"));
+		getRepoTagScanSummaryResponse.setIsSuccess(_ctx.booleanValue("GetRepoTagScanSummaryResponse.IsSuccess"));
+		getRepoTagScanSummaryResponse.setHighSeverity(_ctx.integerValue("GetRepoTagScanSummaryResponse.HighSeverity"));
+		getRepoTagScanSummaryResponse.setLowSeverity(_ctx.integerValue("GetRepoTagScanSummaryResponse.LowSeverity"));
 	 
 	 	return getRepoTagScanSummaryResponse;
 	}

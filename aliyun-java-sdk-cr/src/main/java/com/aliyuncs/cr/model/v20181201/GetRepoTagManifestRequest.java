@@ -33,7 +33,7 @@ public class GetRepoTagManifestRequest extends RpcAcsRequest<GetRepoTagManifestR
 
 	private String tag;
 	public GetRepoTagManifestRequest() {
-		super("cr", "2018-12-01", "GetRepoTagManifest", "acr");
+		super("cr", "2018-12-01", "GetRepoTagManifest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

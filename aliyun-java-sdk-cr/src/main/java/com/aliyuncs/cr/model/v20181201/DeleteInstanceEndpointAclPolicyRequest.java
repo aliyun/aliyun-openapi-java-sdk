@@ -33,7 +33,7 @@ public class DeleteInstanceEndpointAclPolicyRequest extends RpcAcsRequest<Delete
 
 	private String moduleName;
 	public DeleteInstanceEndpointAclPolicyRequest() {
-		super("cr", "2018-12-01", "DeleteInstanceEndpointAclPolicy", "acr");
+		super("cr", "2018-12-01", "DeleteInstanceEndpointAclPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

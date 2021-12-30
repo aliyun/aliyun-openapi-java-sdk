@@ -24,51 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceUsageResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
-	private String code;
-
-	private String requestId;
-
-	private String namespaceQuota;
-
 	private String namespaceUsage;
 
 	private String repoQuota;
 
+	private String requestId;
+
+	private String chartNamespaceQuota;
+
 	private String repoUsage;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
-	}
+	private String namespaceQuota;
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
+	private String code;
 
-	public String getCode() {
-		return this.code;
-	}
+	private Boolean isSuccess;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String chartRepoUsage;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String chartNamespaceUsage;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getNamespaceQuota() {
-		return this.namespaceQuota;
-	}
-
-	public void setNamespaceQuota(String namespaceQuota) {
-		this.namespaceQuota = namespaceQuota;
-	}
+	private String chartRepoQuota;
 
 	public String getNamespaceUsage() {
 		return this.namespaceUsage;
@@ -86,12 +62,76 @@ public class GetInstanceUsageResponse extends AcsResponse {
 		this.repoQuota = repoQuota;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getChartNamespaceQuota() {
+		return this.chartNamespaceQuota;
+	}
+
+	public void setChartNamespaceQuota(String chartNamespaceQuota) {
+		this.chartNamespaceQuota = chartNamespaceQuota;
+	}
+
 	public String getRepoUsage() {
 		return this.repoUsage;
 	}
 
 	public void setRepoUsage(String repoUsage) {
 		this.repoUsage = repoUsage;
+	}
+
+	public String getNamespaceQuota() {
+		return this.namespaceQuota;
+	}
+
+	public void setNamespaceQuota(String namespaceQuota) {
+		this.namespaceQuota = namespaceQuota;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
+	public String getChartRepoUsage() {
+		return this.chartRepoUsage;
+	}
+
+	public void setChartRepoUsage(String chartRepoUsage) {
+		this.chartRepoUsage = chartRepoUsage;
+	}
+
+	public String getChartNamespaceUsage() {
+		return this.chartNamespaceUsage;
+	}
+
+	public void setChartNamespaceUsage(String chartNamespaceUsage) {
+		this.chartNamespaceUsage = chartNamespaceUsage;
+	}
+
+	public String getChartRepoQuota() {
+		return this.chartRepoQuota;
+	}
+
+	public void setChartRepoQuota(String chartRepoQuota) {
+		this.chartRepoQuota = chartRepoQuota;
 	}
 
 	@Override

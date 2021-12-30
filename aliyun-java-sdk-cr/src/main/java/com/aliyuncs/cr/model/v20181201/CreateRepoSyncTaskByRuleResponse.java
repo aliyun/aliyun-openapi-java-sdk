@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateRepoSyncTaskByRuleResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
 	private String code;
+
+	private Boolean isSuccess;
 
 	private String requestId;
 
 	private String syncTaskId;
-
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
-	}
-
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -46,6 +38,14 @@ public class CreateRepoSyncTaskByRuleResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public String getRequestId() {

@@ -29,37 +29,39 @@ public class ListRepoSyncTaskResponseUnmarshaller {
 	public static ListRepoSyncTaskResponse unmarshall(ListRepoSyncTaskResponse listRepoSyncTaskResponse, UnmarshallerContext _ctx) {
 		
 		listRepoSyncTaskResponse.setRequestId(_ctx.stringValue("ListRepoSyncTaskResponse.RequestId"));
-		listRepoSyncTaskResponse.setIsSuccess(_ctx.booleanValue("ListRepoSyncTaskResponse.IsSuccess"));
 		listRepoSyncTaskResponse.setCode(_ctx.stringValue("ListRepoSyncTaskResponse.Code"));
 		listRepoSyncTaskResponse.setPageNo(_ctx.integerValue("ListRepoSyncTaskResponse.PageNo"));
+		listRepoSyncTaskResponse.setIsSuccess(_ctx.booleanValue("ListRepoSyncTaskResponse.IsSuccess"));
 		listRepoSyncTaskResponse.setPageSize(_ctx.integerValue("ListRepoSyncTaskResponse.PageSize"));
 		listRepoSyncTaskResponse.setTotalCount(_ctx.stringValue("ListRepoSyncTaskResponse.TotalCount"));
 
 		List<SyncTasksItem> syncTasks = new ArrayList<SyncTasksItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRepoSyncTaskResponse.SyncTasks.Length"); i++) {
 			SyncTasksItem syncTasksItem = new SyncTasksItem();
+			syncTasksItem.setModifedTime(_ctx.longValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ModifedTime"));
+			syncTasksItem.setSyncRuleId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].SyncRuleId"));
 			syncTasksItem.setSyncTaskId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].SyncTaskId"));
 			syncTasksItem.setTaskStatus(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].TaskStatus"));
-			syncTasksItem.setTaskTrigger(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].TaskTrigger"));
-			syncTasksItem.setSyncRuleId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].SyncRuleId"));
-			syncTasksItem.setSyncBatchTaskId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].SyncBatchTaskId"));
 			syncTasksItem.setCreateTime(_ctx.longValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].CreateTime"));
-			syncTasksItem.setModifedTime(_ctx.longValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ModifedTime"));
+			syncTasksItem.setSyncBatchTaskId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].SyncBatchTaskId"));
+			syncTasksItem.setCrossUser(_ctx.booleanValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].CrossUser"));
+			syncTasksItem.setSyncTransAccelerate(_ctx.booleanValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].SyncTransAccelerate"));
+			syncTasksItem.setTaskTrigger(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].TaskTrigger"));
 
 			ImageFrom imageFrom = new ImageFrom();
-			imageFrom.setRegionId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageFrom.RegionId"));
 			imageFrom.setRepoNamespaceName(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageFrom.RepoNamespaceName"));
-			imageFrom.setRepoName(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageFrom.RepoName"));
-			imageFrom.setImageTag(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageFrom.ImageTag"));
 			imageFrom.setInstanceId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageFrom.InstanceId"));
+			imageFrom.setImageTag(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageFrom.ImageTag"));
+			imageFrom.setRepoName(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageFrom.RepoName"));
+			imageFrom.setRegionId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageFrom.RegionId"));
 			syncTasksItem.setImageFrom(imageFrom);
 
 			ImageTo imageTo = new ImageTo();
-			imageTo.setRegionId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageTo.RegionId"));
 			imageTo.setRepoNamespaceName(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageTo.RepoNamespaceName"));
-			imageTo.setRepoName(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageTo.RepoName"));
-			imageTo.setImageTag(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageTo.ImageTag"));
 			imageTo.setInstanceId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageTo.InstanceId"));
+			imageTo.setImageTag(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageTo.ImageTag"));
+			imageTo.setRepoName(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageTo.RepoName"));
+			imageTo.setRegionId(_ctx.stringValue("ListRepoSyncTaskResponse.SyncTasks["+ i +"].ImageTo.RegionId"));
 			syncTasksItem.setImageTo(imageTo);
 
 			syncTasks.add(syncTasksItem);

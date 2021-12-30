@@ -27,21 +27,21 @@ public class ListNamespaceResponseUnmarshaller {
 	public static ListNamespaceResponse unmarshall(ListNamespaceResponse listNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		listNamespaceResponse.setRequestId(_ctx.stringValue("ListNamespaceResponse.RequestId"));
-		listNamespaceResponse.setIsSuccess(_ctx.booleanValue("ListNamespaceResponse.IsSuccess"));
 		listNamespaceResponse.setCode(_ctx.stringValue("ListNamespaceResponse.Code"));
 		listNamespaceResponse.setPageNo(_ctx.integerValue("ListNamespaceResponse.PageNo"));
+		listNamespaceResponse.setIsSuccess(_ctx.booleanValue("ListNamespaceResponse.IsSuccess"));
 		listNamespaceResponse.setPageSize(_ctx.integerValue("ListNamespaceResponse.PageSize"));
 		listNamespaceResponse.setTotalCount(_ctx.stringValue("ListNamespaceResponse.TotalCount"));
 
 		List<NamespacesItem> namespaces = new ArrayList<NamespacesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNamespaceResponse.Namespaces.Length"); i++) {
 			NamespacesItem namespacesItem = new NamespacesItem();
-			namespacesItem.setNamespaceName(_ctx.stringValue("ListNamespaceResponse.Namespaces["+ i +"].NamespaceName"));
-			namespacesItem.setNamespaceStatus(_ctx.stringValue("ListNamespaceResponse.Namespaces["+ i +"].NamespaceStatus"));
-			namespacesItem.setAutoCreateRepo(_ctx.booleanValue("ListNamespaceResponse.Namespaces["+ i +"].AutoCreateRepo"));
 			namespacesItem.setDefaultRepoType(_ctx.stringValue("ListNamespaceResponse.Namespaces["+ i +"].DefaultRepoType"));
-			namespacesItem.setInstanceId(_ctx.stringValue("ListNamespaceResponse.Namespaces["+ i +"].InstanceId"));
+			namespacesItem.setNamespaceStatus(_ctx.stringValue("ListNamespaceResponse.Namespaces["+ i +"].NamespaceStatus"));
 			namespacesItem.setNamespaceId(_ctx.stringValue("ListNamespaceResponse.Namespaces["+ i +"].NamespaceId"));
+			namespacesItem.setAutoCreateRepo(_ctx.booleanValue("ListNamespaceResponse.Namespaces["+ i +"].AutoCreateRepo"));
+			namespacesItem.setInstanceId(_ctx.stringValue("ListNamespaceResponse.Namespaces["+ i +"].InstanceId"));
+			namespacesItem.setNamespaceName(_ctx.stringValue("ListNamespaceResponse.Namespaces["+ i +"].NamespaceName"));
 
 			namespaces.add(namespacesItem);
 		}

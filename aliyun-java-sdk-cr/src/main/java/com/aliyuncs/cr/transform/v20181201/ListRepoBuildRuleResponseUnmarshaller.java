@@ -27,21 +27,33 @@ public class ListRepoBuildRuleResponseUnmarshaller {
 	public static ListRepoBuildRuleResponse unmarshall(ListRepoBuildRuleResponse listRepoBuildRuleResponse, UnmarshallerContext _ctx) {
 		
 		listRepoBuildRuleResponse.setRequestId(_ctx.stringValue("ListRepoBuildRuleResponse.RequestId"));
-		listRepoBuildRuleResponse.setIsSuccess(_ctx.booleanValue("ListRepoBuildRuleResponse.IsSuccess"));
 		listRepoBuildRuleResponse.setCode(_ctx.stringValue("ListRepoBuildRuleResponse.Code"));
 		listRepoBuildRuleResponse.setPageNo(_ctx.integerValue("ListRepoBuildRuleResponse.PageNo"));
+		listRepoBuildRuleResponse.setIsSuccess(_ctx.booleanValue("ListRepoBuildRuleResponse.IsSuccess"));
 		listRepoBuildRuleResponse.setPageSize(_ctx.integerValue("ListRepoBuildRuleResponse.PageSize"));
 		listRepoBuildRuleResponse.setTotalCount(_ctx.stringValue("ListRepoBuildRuleResponse.TotalCount"));
 
 		List<BuildRulesItem> buildRules = new ArrayList<BuildRulesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRepoBuildRuleResponse.BuildRules.Length"); i++) {
 			BuildRulesItem buildRulesItem = new BuildRulesItem();
-			buildRulesItem.setBuildRuleId(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].BuildRuleId"));
 			buildRulesItem.setDockerfileLocation(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].DockerfileLocation"));
-			buildRulesItem.setDockerfileName(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].DockerfileName"));
+			buildRulesItem.setBuildRuleId(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].BuildRuleId"));
 			buildRulesItem.setPushType(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].PushType"));
 			buildRulesItem.setPushName(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].PushName"));
 			buildRulesItem.setImageTag(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].ImageTag"));
+			buildRulesItem.setDockerfileName(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].DockerfileName"));
+
+			List<String> platforms = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].Platforms.Length"); j++) {
+				platforms.add(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].Platforms["+ j +"]"));
+			}
+			buildRulesItem.setPlatforms(platforms);
+
+			List<String> buildArgs = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].BuildArgs.Length"); j++) {
+				buildArgs.add(_ctx.stringValue("ListRepoBuildRuleResponse.BuildRules["+ i +"].BuildArgs["+ j +"]"));
+			}
+			buildRulesItem.setBuildArgs(buildArgs);
 
 			buildRules.add(buildRulesItem);
 		}

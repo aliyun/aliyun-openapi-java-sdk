@@ -24,19 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRepositoryResponse extends AcsResponse {
 
+	private String summary;
+
+	private Long createTime;
+
 	private Boolean isSuccess;
 
-	private String code;
-
-	private String requestId;
-
 	private String instanceId;
-
-	private String repoId;
-
-	private String repoNamespaceName;
-
-	private String repoName;
 
 	private String repoStatus;
 
@@ -44,15 +38,37 @@ public class GetRepositoryResponse extends AcsResponse {
 
 	private String repoBuildType;
 
-	private String summary;
+	private Long modifiedTime;
+
+	private String requestId;
+
+	private String repoId;
+
+	private String code;
+
+	private String repoNamespaceName;
+
+	private Boolean tagImmutability;
+
+	private String repoName;
 
 	private String detail;
 
-	private Long createTime;
+	public String getSummary() {
+		return this.summary;
+	}
 
-	private Long modifiedTime;
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
 
-	private Boolean tagImmutability;
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
 
 	public Boolean getIsSuccess() {
 		return this.isSuccess;
@@ -62,52 +78,12 @@ public class GetRepositoryResponse extends AcsResponse {
 		this.isSuccess = isSuccess;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-	}
-
-	public String getRepoId() {
-		return this.repoId;
-	}
-
-	public void setRepoId(String repoId) {
-		this.repoId = repoId;
-	}
-
-	public String getRepoNamespaceName() {
-		return this.repoNamespaceName;
-	}
-
-	public void setRepoNamespaceName(String repoNamespaceName) {
-		this.repoNamespaceName = repoNamespaceName;
-	}
-
-	public String getRepoName() {
-		return this.repoName;
-	}
-
-	public void setRepoName(String repoName) {
-		this.repoName = repoName;
 	}
 
 	public String getRepoStatus() {
@@ -134,30 +110,6 @@ public class GetRepositoryResponse extends AcsResponse {
 		this.repoBuildType = repoBuildType;
 	}
 
-	public String getSummary() {
-		return this.summary;
-	}
-
-	public void setSummary(String summary) {
-		this.summary = summary;
-	}
-
-	public String getDetail() {
-		return this.detail;
-	}
-
-	public void setDetail(String detail) {
-		this.detail = detail;
-	}
-
-	public Long getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(Long createTime) {
-		this.createTime = createTime;
-	}
-
 	public Long getModifiedTime() {
 		return this.modifiedTime;
 	}
@@ -166,12 +118,60 @@ public class GetRepositoryResponse extends AcsResponse {
 		this.modifiedTime = modifiedTime;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getRepoId() {
+		return this.repoId;
+	}
+
+	public void setRepoId(String repoId) {
+		this.repoId = repoId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getRepoNamespaceName() {
+		return this.repoNamespaceName;
+	}
+
+	public void setRepoNamespaceName(String repoNamespaceName) {
+		this.repoNamespaceName = repoNamespaceName;
+	}
+
 	public Boolean getTagImmutability() {
 		return this.tagImmutability;
 	}
 
 	public void setTagImmutability(Boolean tagImmutability) {
 		this.tagImmutability = tagImmutability;
+	}
+
+	public String getRepoName() {
+		return this.repoName;
+	}
+
+	public void setRepoName(String repoName) {
+		this.repoName = repoName;
+	}
+
+	public String getDetail() {
+		return this.detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
 	}
 
 	@Override

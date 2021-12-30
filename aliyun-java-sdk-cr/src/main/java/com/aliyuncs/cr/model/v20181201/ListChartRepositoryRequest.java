@@ -37,7 +37,7 @@ public class ListChartRepositoryRequest extends RpcAcsRequest<ListChartRepositor
 
 	private String repoStatus;
 	public ListChartRepositoryRequest() {
-		super("cr", "2018-12-01", "ListChartRepository", "acr");
+		super("cr", "2018-12-01", "ListChartRepository");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

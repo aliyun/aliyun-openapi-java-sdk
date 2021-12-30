@@ -29,7 +29,7 @@ public class ListInstanceEndpointRequest extends RpcAcsRequest<ListInstanceEndpo
 
 	private String moduleName;
 	public ListInstanceEndpointRequest() {
-		super("cr", "2018-12-01", "ListInstanceEndpoint", "acr");
+		super("cr", "2018-12-01", "ListInstanceEndpoint");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

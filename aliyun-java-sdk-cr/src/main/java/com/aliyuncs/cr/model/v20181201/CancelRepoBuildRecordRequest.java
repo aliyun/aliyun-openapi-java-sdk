@@ -31,7 +31,7 @@ public class CancelRepoBuildRecordRequest extends RpcAcsRequest<CancelRepoBuildR
 
 	private String instanceId;
 	public CancelRepoBuildRecordRequest() {
-		super("cr", "2018-12-01", "CancelRepoBuildRecord", "acr");
+		super("cr", "2018-12-01", "CancelRepoBuildRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

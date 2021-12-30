@@ -28,17 +28,17 @@ public class GetInstanceEndpointResponseUnmarshaller {
 	public static GetInstanceEndpointResponse unmarshall(GetInstanceEndpointResponse getInstanceEndpointResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceEndpointResponse.setRequestId(_ctx.stringValue("GetInstanceEndpointResponse.RequestId"));
-		getInstanceEndpointResponse.setIsSuccess(_ctx.booleanValue("GetInstanceEndpointResponse.IsSuccess"));
-		getInstanceEndpointResponse.setCode(_ctx.stringValue("GetInstanceEndpointResponse.Code"));
-		getInstanceEndpointResponse.setEnable(_ctx.booleanValue("GetInstanceEndpointResponse.Enable"));
-		getInstanceEndpointResponse.setAclEnable(_ctx.booleanValue("GetInstanceEndpointResponse.AclEnable"));
 		getInstanceEndpointResponse.setStatus(_ctx.stringValue("GetInstanceEndpointResponse.Status"));
+		getInstanceEndpointResponse.setCode(_ctx.stringValue("GetInstanceEndpointResponse.Code"));
+		getInstanceEndpointResponse.setIsSuccess(_ctx.booleanValue("GetInstanceEndpointResponse.IsSuccess"));
+		getInstanceEndpointResponse.setAclEnable(_ctx.booleanValue("GetInstanceEndpointResponse.AclEnable"));
+		getInstanceEndpointResponse.setEnable(_ctx.booleanValue("GetInstanceEndpointResponse.Enable"));
 
 		List<Endpoints> domains = new ArrayList<Endpoints>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceEndpointResponse.Domains.Length"); i++) {
 			Endpoints endpoints = new Endpoints();
-			endpoints.setDomain(_ctx.stringValue("GetInstanceEndpointResponse.Domains["+ i +"].Domain"));
 			endpoints.setType(_ctx.stringValue("GetInstanceEndpointResponse.Domains["+ i +"].Type"));
+			endpoints.setDomain(_ctx.stringValue("GetInstanceEndpointResponse.Domains["+ i +"].Domain"));
 
 			domains.add(endpoints);
 		}
@@ -47,8 +47,8 @@ public class GetInstanceEndpointResponseUnmarshaller {
 		List<AclEntriesItem> aclEntries = new ArrayList<AclEntriesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceEndpointResponse.AclEntries.Length"); i++) {
 			AclEntriesItem aclEntriesItem = new AclEntriesItem();
-			aclEntriesItem.setEntry(_ctx.stringValue("GetInstanceEndpointResponse.AclEntries["+ i +"].Entry"));
 			aclEntriesItem.setComment(_ctx.stringValue("GetInstanceEndpointResponse.AclEntries["+ i +"].Comment"));
+			aclEntriesItem.setEntry(_ctx.stringValue("GetInstanceEndpointResponse.AclEntries["+ i +"].Entry"));
 
 			aclEntries.add(aclEntriesItem);
 		}

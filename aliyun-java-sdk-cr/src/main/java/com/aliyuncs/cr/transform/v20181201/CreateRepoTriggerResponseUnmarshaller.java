@@ -23,8 +23,8 @@ public class CreateRepoTriggerResponseUnmarshaller {
 	public static CreateRepoTriggerResponse unmarshall(CreateRepoTriggerResponse createRepoTriggerResponse, UnmarshallerContext _ctx) {
 		
 		createRepoTriggerResponse.setRequestId(_ctx.stringValue("CreateRepoTriggerResponse.RequestId"));
-		createRepoTriggerResponse.setIsSuccess(_ctx.booleanValue("CreateRepoTriggerResponse.IsSuccess"));
 		createRepoTriggerResponse.setCode(_ctx.stringValue("CreateRepoTriggerResponse.Code"));
+		createRepoTriggerResponse.setIsSuccess(_ctx.booleanValue("CreateRepoTriggerResponse.IsSuccess"));
 		createRepoTriggerResponse.setTriggerId(_ctx.stringValue("CreateRepoTriggerResponse.TriggerId"));
 	 
 	 	return createRepoTriggerResponse;

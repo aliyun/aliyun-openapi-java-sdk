@@ -31,7 +31,7 @@ public class DeleteChartRepositoryRequest extends RpcAcsRequest<DeleteChartRepos
 
 	private String repoName;
 	public DeleteChartRepositoryRequest() {
-		super("cr", "2018-12-01", "DeleteChartRepository", "acr");
+		super("cr", "2018-12-01", "DeleteChartRepository");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

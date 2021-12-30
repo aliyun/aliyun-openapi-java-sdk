@@ -23,8 +23,8 @@ public class GetInstanceCountResponseUnmarshaller {
 	public static GetInstanceCountResponse unmarshall(GetInstanceCountResponse getInstanceCountResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceCountResponse.setRequestId(_ctx.stringValue("GetInstanceCountResponse.RequestId"));
-		getInstanceCountResponse.setIsSuccess(_ctx.booleanValue("GetInstanceCountResponse.IsSuccess"));
 		getInstanceCountResponse.setCode(_ctx.stringValue("GetInstanceCountResponse.Code"));
+		getInstanceCountResponse.setIsSuccess(_ctx.booleanValue("GetInstanceCountResponse.IsSuccess"));
 		getInstanceCountResponse.setCount(_ctx.integerValue("GetInstanceCountResponse.Count"));
 	 
 	 	return getInstanceCountResponse;

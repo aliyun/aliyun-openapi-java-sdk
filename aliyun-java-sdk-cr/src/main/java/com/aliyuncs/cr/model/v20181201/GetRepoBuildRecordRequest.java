@@ -29,7 +29,7 @@ public class GetRepoBuildRecordRequest extends RpcAcsRequest<GetRepoBuildRecordR
 
 	private String instanceId;
 	public GetRepoBuildRecordRequest() {
-		super("cr", "2018-12-01", "GetRepoBuildRecord", "acr");
+		super("cr", "2018-12-01", "GetRepoBuildRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

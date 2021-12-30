@@ -27,21 +27,21 @@ public class ListChartNamespaceResponseUnmarshaller {
 	public static ListChartNamespaceResponse unmarshall(ListChartNamespaceResponse listChartNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		listChartNamespaceResponse.setRequestId(_ctx.stringValue("ListChartNamespaceResponse.RequestId"));
-		listChartNamespaceResponse.setIsSuccess(_ctx.booleanValue("ListChartNamespaceResponse.IsSuccess"));
 		listChartNamespaceResponse.setCode(_ctx.stringValue("ListChartNamespaceResponse.Code"));
 		listChartNamespaceResponse.setPageNo(_ctx.integerValue("ListChartNamespaceResponse.PageNo"));
+		listChartNamespaceResponse.setIsSuccess(_ctx.booleanValue("ListChartNamespaceResponse.IsSuccess"));
 		listChartNamespaceResponse.setPageSize(_ctx.integerValue("ListChartNamespaceResponse.PageSize"));
 		listChartNamespaceResponse.setTotalCount(_ctx.stringValue("ListChartNamespaceResponse.TotalCount"));
 
 		List<NamespacesItem> namespaces = new ArrayList<NamespacesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListChartNamespaceResponse.Namespaces.Length"); i++) {
 			NamespacesItem namespacesItem = new NamespacesItem();
-			namespacesItem.setNamespaceName(_ctx.stringValue("ListChartNamespaceResponse.Namespaces["+ i +"].NamespaceName"));
-			namespacesItem.setNamespaceStatus(_ctx.stringValue("ListChartNamespaceResponse.Namespaces["+ i +"].NamespaceStatus"));
-			namespacesItem.setAutoCreateRepo(_ctx.booleanValue("ListChartNamespaceResponse.Namespaces["+ i +"].AutoCreateRepo"));
 			namespacesItem.setDefaultRepoType(_ctx.stringValue("ListChartNamespaceResponse.Namespaces["+ i +"].DefaultRepoType"));
-			namespacesItem.setInstanceId(_ctx.stringValue("ListChartNamespaceResponse.Namespaces["+ i +"].InstanceId"));
+			namespacesItem.setNamespaceStatus(_ctx.stringValue("ListChartNamespaceResponse.Namespaces["+ i +"].NamespaceStatus"));
 			namespacesItem.setNamespaceId(_ctx.stringValue("ListChartNamespaceResponse.Namespaces["+ i +"].NamespaceId"));
+			namespacesItem.setAutoCreateRepo(_ctx.booleanValue("ListChartNamespaceResponse.Namespaces["+ i +"].AutoCreateRepo"));
+			namespacesItem.setInstanceId(_ctx.stringValue("ListChartNamespaceResponse.Namespaces["+ i +"].InstanceId"));
+			namespacesItem.setNamespaceName(_ctx.stringValue("ListChartNamespaceResponse.Namespaces["+ i +"].NamespaceName"));
 
 			namespaces.add(namespacesItem);
 		}

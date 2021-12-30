@@ -23,14 +23,14 @@ public class GetChartNamespaceResponseUnmarshaller {
 	public static GetChartNamespaceResponse unmarshall(GetChartNamespaceResponse getChartNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		getChartNamespaceResponse.setRequestId(_ctx.stringValue("GetChartNamespaceResponse.RequestId"));
-		getChartNamespaceResponse.setIsSuccess(_ctx.booleanValue("GetChartNamespaceResponse.IsSuccess"));
-		getChartNamespaceResponse.setCode(_ctx.stringValue("GetChartNamespaceResponse.Code"));
-		getChartNamespaceResponse.setNamespaceName(_ctx.stringValue("GetChartNamespaceResponse.NamespaceName"));
-		getChartNamespaceResponse.setNamespaceStatus(_ctx.stringValue("GetChartNamespaceResponse.NamespaceStatus"));
-		getChartNamespaceResponse.setAutoCreateRepo(_ctx.booleanValue("GetChartNamespaceResponse.AutoCreateRepo"));
 		getChartNamespaceResponse.setDefaultRepoType(_ctx.stringValue("GetChartNamespaceResponse.DefaultRepoType"));
-		getChartNamespaceResponse.setInstanceId(_ctx.stringValue("GetChartNamespaceResponse.InstanceId"));
 		getChartNamespaceResponse.setNamespaceId(_ctx.stringValue("GetChartNamespaceResponse.NamespaceId"));
+		getChartNamespaceResponse.setNamespaceStatus(_ctx.stringValue("GetChartNamespaceResponse.NamespaceStatus"));
+		getChartNamespaceResponse.setCode(_ctx.stringValue("GetChartNamespaceResponse.Code"));
+		getChartNamespaceResponse.setInstanceId(_ctx.stringValue("GetChartNamespaceResponse.InstanceId"));
+		getChartNamespaceResponse.setAutoCreateRepo(_ctx.booleanValue("GetChartNamespaceResponse.AutoCreateRepo"));
+		getChartNamespaceResponse.setIsSuccess(_ctx.booleanValue("GetChartNamespaceResponse.IsSuccess"));
+		getChartNamespaceResponse.setNamespaceName(_ctx.stringValue("GetChartNamespaceResponse.NamespaceName"));
 	 
 	 	return getChartNamespaceResponse;
 	}

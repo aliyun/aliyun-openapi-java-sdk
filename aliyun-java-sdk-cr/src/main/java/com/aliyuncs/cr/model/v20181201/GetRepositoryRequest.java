@@ -33,7 +33,7 @@ public class GetRepositoryRequest extends RpcAcsRequest<GetRepositoryResponse> {
 
 	private String repoName;
 	public GetRepositoryRequest() {
-		super("cr", "2018-12-01", "GetRepository", "acr");
+		super("cr", "2018-12-01", "GetRepository");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

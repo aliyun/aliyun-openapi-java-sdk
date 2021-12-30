@@ -23,8 +23,8 @@ public class UpdateInstanceEndpointStatusResponseUnmarshaller {
 	public static UpdateInstanceEndpointStatusResponse unmarshall(UpdateInstanceEndpointStatusResponse updateInstanceEndpointStatusResponse, UnmarshallerContext _ctx) {
 		
 		updateInstanceEndpointStatusResponse.setRequestId(_ctx.stringValue("UpdateInstanceEndpointStatusResponse.RequestId"));
-		updateInstanceEndpointStatusResponse.setIsSuccess(_ctx.booleanValue("UpdateInstanceEndpointStatusResponse.IsSuccess"));
 		updateInstanceEndpointStatusResponse.setCode(_ctx.stringValue("UpdateInstanceEndpointStatusResponse.Code"));
+		updateInstanceEndpointStatusResponse.setIsSuccess(_ctx.booleanValue("UpdateInstanceEndpointStatusResponse.IsSuccess"));
 	 
 	 	return updateInstanceEndpointStatusResponse;
 	}

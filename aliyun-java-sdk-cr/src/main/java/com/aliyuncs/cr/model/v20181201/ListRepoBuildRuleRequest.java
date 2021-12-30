@@ -33,7 +33,7 @@ public class ListRepoBuildRuleRequest extends RpcAcsRequest<ListRepoBuildRuleRes
 
 	private Integer pageSize;
 	public ListRepoBuildRuleRequest() {
-		super("cr", "2018-12-01", "ListRepoBuildRule", "acr");
+		super("cr", "2018-12-01", "ListRepoBuildRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

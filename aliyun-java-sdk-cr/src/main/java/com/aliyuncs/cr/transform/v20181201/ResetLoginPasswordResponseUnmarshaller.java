@@ -23,8 +23,8 @@ public class ResetLoginPasswordResponseUnmarshaller {
 	public static ResetLoginPasswordResponse unmarshall(ResetLoginPasswordResponse resetLoginPasswordResponse, UnmarshallerContext _ctx) {
 		
 		resetLoginPasswordResponse.setRequestId(_ctx.stringValue("ResetLoginPasswordResponse.RequestId"));
-		resetLoginPasswordResponse.setIsSuccess(_ctx.booleanValue("ResetLoginPasswordResponse.IsSuccess"));
 		resetLoginPasswordResponse.setCode(_ctx.stringValue("ResetLoginPasswordResponse.Code"));
+		resetLoginPasswordResponse.setIsSuccess(_ctx.booleanValue("ResetLoginPasswordResponse.IsSuccess"));
 	 
 	 	return resetLoginPasswordResponse;
 	}

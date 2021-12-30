@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListChartReleaseResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListChartReleaseResponse extends AcsResponse {
 
 	private List<ChartReleasesItem> chartReleases;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListChartReleaseResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,26 +97,42 @@ public class ListChartReleaseResponse extends AcsResponse {
 
 	public static class ChartReleasesItem {
 
-		private String chart;
+		private String status;
+
+		private Long modifiedTime;
+
+		private String repoId;
 
 		private String release;
-
-		private String status;
 
 		private String size;
 
 		private String instanceId;
 
-		private String repoId;
+		private String chart;
 
-		private Long modifiedTime;
-
-		public String getChart() {
-			return this.chart;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setChart(String chart) {
-			this.chart = chart;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Long getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(Long modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getRepoId() {
+			return this.repoId;
+		}
+
+		public void setRepoId(String repoId) {
+			this.repoId = repoId;
 		}
 
 		public String getRelease() {
@@ -125,14 +141,6 @@ public class ListChartReleaseResponse extends AcsResponse {
 
 		public void setRelease(String release) {
 			this.release = release;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 
 		public String getSize() {
@@ -151,20 +159,12 @@ public class ListChartReleaseResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getRepoId() {
-			return this.repoId;
+		public String getChart() {
+			return this.chart;
 		}
 
-		public void setRepoId(String repoId) {
-			this.repoId = repoId;
-		}
-
-		public Long getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(Long modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setChart(String chart) {
+			this.chart = chart;
 		}
 	}
 

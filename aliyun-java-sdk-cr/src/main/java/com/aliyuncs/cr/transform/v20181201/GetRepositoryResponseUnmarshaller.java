@@ -23,20 +23,20 @@ public class GetRepositoryResponseUnmarshaller {
 	public static GetRepositoryResponse unmarshall(GetRepositoryResponse getRepositoryResponse, UnmarshallerContext _ctx) {
 		
 		getRepositoryResponse.setRequestId(_ctx.stringValue("GetRepositoryResponse.RequestId"));
+		getRepositoryResponse.setSummary(_ctx.stringValue("GetRepositoryResponse.Summary"));
+		getRepositoryResponse.setCreateTime(_ctx.longValue("GetRepositoryResponse.CreateTime"));
 		getRepositoryResponse.setIsSuccess(_ctx.booleanValue("GetRepositoryResponse.IsSuccess"));
-		getRepositoryResponse.setCode(_ctx.stringValue("GetRepositoryResponse.Code"));
 		getRepositoryResponse.setInstanceId(_ctx.stringValue("GetRepositoryResponse.InstanceId"));
-		getRepositoryResponse.setRepoId(_ctx.stringValue("GetRepositoryResponse.RepoId"));
-		getRepositoryResponse.setRepoNamespaceName(_ctx.stringValue("GetRepositoryResponse.RepoNamespaceName"));
-		getRepositoryResponse.setRepoName(_ctx.stringValue("GetRepositoryResponse.RepoName"));
 		getRepositoryResponse.setRepoStatus(_ctx.stringValue("GetRepositoryResponse.RepoStatus"));
 		getRepositoryResponse.setRepoType(_ctx.stringValue("GetRepositoryResponse.RepoType"));
 		getRepositoryResponse.setRepoBuildType(_ctx.stringValue("GetRepositoryResponse.RepoBuildType"));
-		getRepositoryResponse.setSummary(_ctx.stringValue("GetRepositoryResponse.Summary"));
-		getRepositoryResponse.setDetail(_ctx.stringValue("GetRepositoryResponse.Detail"));
-		getRepositoryResponse.setCreateTime(_ctx.longValue("GetRepositoryResponse.CreateTime"));
 		getRepositoryResponse.setModifiedTime(_ctx.longValue("GetRepositoryResponse.ModifiedTime"));
+		getRepositoryResponse.setRepoId(_ctx.stringValue("GetRepositoryResponse.RepoId"));
+		getRepositoryResponse.setCode(_ctx.stringValue("GetRepositoryResponse.Code"));
+		getRepositoryResponse.setRepoNamespaceName(_ctx.stringValue("GetRepositoryResponse.RepoNamespaceName"));
 		getRepositoryResponse.setTagImmutability(_ctx.booleanValue("GetRepositoryResponse.TagImmutability"));
+		getRepositoryResponse.setRepoName(_ctx.stringValue("GetRepositoryResponse.RepoName"));
+		getRepositoryResponse.setDetail(_ctx.stringValue("GetRepositoryResponse.Detail"));
 	 
 	 	return getRepositoryResponse;
 	}

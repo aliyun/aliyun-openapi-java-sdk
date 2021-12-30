@@ -29,7 +29,7 @@ public class DeleteChartNamespaceRequest extends RpcAcsRequest<DeleteChartNamesp
 
 	private String instanceId;
 	public DeleteChartNamespaceRequest() {
-		super("cr", "2018-12-01", "DeleteChartNamespace", "acr");
+		super("cr", "2018-12-01", "DeleteChartNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

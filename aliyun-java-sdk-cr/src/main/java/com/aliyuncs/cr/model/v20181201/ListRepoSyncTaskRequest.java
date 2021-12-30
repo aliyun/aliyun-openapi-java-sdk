@@ -29,11 +29,17 @@ public class ListRepoSyncTaskRequest extends RpcAcsRequest<ListRepoSyncTaskRespo
 
 	private String instanceId;
 
+	private String repoNamespaceName;
+
+	private String repoName;
+
 	private Integer pageNo;
 
 	private Integer pageSize;
+
+	private String tag;
 	public ListRepoSyncTaskRequest() {
-		super("cr", "2018-12-01", "ListRepoSyncTask", "acr");
+		super("cr", "2018-12-01", "ListRepoSyncTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,6 +69,28 @@ public class ListRepoSyncTaskRequest extends RpcAcsRequest<ListRepoSyncTaskRespo
 		}
 	}
 
+	public String getRepoNamespaceName() {
+		return this.repoNamespaceName;
+	}
+
+	public void setRepoNamespaceName(String repoNamespaceName) {
+		this.repoNamespaceName = repoNamespaceName;
+		if(repoNamespaceName != null){
+			putQueryParameter("RepoNamespaceName", repoNamespaceName);
+		}
+	}
+
+	public String getRepoName() {
+		return this.repoName;
+	}
+
+	public void setRepoName(String repoName) {
+		this.repoName = repoName;
+		if(repoName != null){
+			putQueryParameter("RepoName", repoName);
+		}
+	}
+
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
@@ -82,6 +110,17 @@ public class ListRepoSyncTaskRequest extends RpcAcsRequest<ListRepoSyncTaskRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
 		}
 	}
 

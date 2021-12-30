@@ -23,8 +23,8 @@ public class DeleteChartRepositoryResponseUnmarshaller {
 	public static DeleteChartRepositoryResponse unmarshall(DeleteChartRepositoryResponse deleteChartRepositoryResponse, UnmarshallerContext _ctx) {
 		
 		deleteChartRepositoryResponse.setRequestId(_ctx.stringValue("DeleteChartRepositoryResponse.RequestId"));
-		deleteChartRepositoryResponse.setIsSuccess(_ctx.booleanValue("DeleteChartRepositoryResponse.IsSuccess"));
 		deleteChartRepositoryResponse.setCode(_ctx.stringValue("DeleteChartRepositoryResponse.Code"));
+		deleteChartRepositoryResponse.setIsSuccess(_ctx.booleanValue("DeleteChartRepositoryResponse.IsSuccess"));
 	 
 	 	return deleteChartRepositoryResponse;
 	}

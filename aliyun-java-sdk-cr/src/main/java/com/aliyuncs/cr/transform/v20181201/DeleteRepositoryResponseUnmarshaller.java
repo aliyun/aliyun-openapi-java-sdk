@@ -23,8 +23,8 @@ public class DeleteRepositoryResponseUnmarshaller {
 	public static DeleteRepositoryResponse unmarshall(DeleteRepositoryResponse deleteRepositoryResponse, UnmarshallerContext _ctx) {
 		
 		deleteRepositoryResponse.setRequestId(_ctx.stringValue("DeleteRepositoryResponse.RequestId"));
-		deleteRepositoryResponse.setIsSuccess(_ctx.booleanValue("DeleteRepositoryResponse.IsSuccess"));
 		deleteRepositoryResponse.setCode(_ctx.stringValue("DeleteRepositoryResponse.Code"));
+		deleteRepositoryResponse.setIsSuccess(_ctx.booleanValue("DeleteRepositoryResponse.IsSuccess"));
 	 
 	 	return deleteRepositoryResponse;
 	}

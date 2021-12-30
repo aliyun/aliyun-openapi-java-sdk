@@ -24,54 +24,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetNamespaceResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
-	private String code;
-
-	private String requestId;
-
-	private String namespaceName;
-
-	private String namespaceStatus;
-
-	private Boolean autoCreateRepo;
-
 	private String defaultRepoType;
-
-	private String instanceId;
 
 	private String namespaceId;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	private String namespaceStatus;
+
+	private String requestId;
+
+	private String code;
+
+	private String instanceId;
+
+	private Boolean autoCreateRepo;
+
+	private Boolean isSuccess;
+
+	private String namespaceName;
+
+	public String getDefaultRepoType() {
+		return this.defaultRepoType;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setDefaultRepoType(String defaultRepoType) {
+		this.defaultRepoType = defaultRepoType;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getNamespaceId() {
+		return this.namespaceId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getNamespaceName() {
-		return this.namespaceName;
-	}
-
-	public void setNamespaceName(String namespaceName) {
-		this.namespaceName = namespaceName;
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
 	}
 
 	public String getNamespaceStatus() {
@@ -82,20 +66,20 @@ public class GetNamespaceResponse extends AcsResponse {
 		this.namespaceStatus = namespaceStatus;
 	}
 
-	public Boolean getAutoCreateRepo() {
-		return this.autoCreateRepo;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAutoCreateRepo(Boolean autoCreateRepo) {
-		this.autoCreateRepo = autoCreateRepo;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getDefaultRepoType() {
-		return this.defaultRepoType;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setDefaultRepoType(String defaultRepoType) {
-		this.defaultRepoType = defaultRepoType;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getInstanceId() {
@@ -106,12 +90,28 @@ public class GetNamespaceResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
+	public Boolean getAutoCreateRepo() {
+		return this.autoCreateRepo;
 	}
 
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
+	public void setAutoCreateRepo(Boolean autoCreateRepo) {
+		this.autoCreateRepo = autoCreateRepo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
+	public String getNamespaceName() {
+		return this.namespaceName;
+	}
+
+	public void setNamespaceName(String namespaceName) {
+		this.namespaceName = namespaceName;
 	}
 
 	@Override

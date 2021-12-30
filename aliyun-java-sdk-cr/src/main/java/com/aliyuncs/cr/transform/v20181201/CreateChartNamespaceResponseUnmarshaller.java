@@ -23,8 +23,8 @@ public class CreateChartNamespaceResponseUnmarshaller {
 	public static CreateChartNamespaceResponse unmarshall(CreateChartNamespaceResponse createChartNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		createChartNamespaceResponse.setRequestId(_ctx.stringValue("CreateChartNamespaceResponse.RequestId"));
-		createChartNamespaceResponse.setIsSuccess(_ctx.booleanValue("CreateChartNamespaceResponse.IsSuccess"));
 		createChartNamespaceResponse.setCode(_ctx.stringValue("CreateChartNamespaceResponse.Code"));
+		createChartNamespaceResponse.setIsSuccess(_ctx.booleanValue("CreateChartNamespaceResponse.IsSuccess"));
 	 
 	 	return createChartNamespaceResponse;
 	}

@@ -27,9 +27,9 @@ public class ListRepoBuildRecordLogResponseUnmarshaller {
 	public static ListRepoBuildRecordLogResponse unmarshall(ListRepoBuildRecordLogResponse listRepoBuildRecordLogResponse, UnmarshallerContext _ctx) {
 		
 		listRepoBuildRecordLogResponse.setRequestId(_ctx.stringValue("ListRepoBuildRecordLogResponse.RequestId"));
-		listRepoBuildRecordLogResponse.setIsSuccess(_ctx.booleanValue("ListRepoBuildRecordLogResponse.IsSuccess"));
 		listRepoBuildRecordLogResponse.setCode(_ctx.stringValue("ListRepoBuildRecordLogResponse.Code"));
 		listRepoBuildRecordLogResponse.setPageNo(_ctx.integerValue("ListRepoBuildRecordLogResponse.PageNo"));
+		listRepoBuildRecordLogResponse.setIsSuccess(_ctx.booleanValue("ListRepoBuildRecordLogResponse.IsSuccess"));
 		listRepoBuildRecordLogResponse.setPageSize(_ctx.integerValue("ListRepoBuildRecordLogResponse.PageSize"));
 		listRepoBuildRecordLogResponse.setTotalCount(_ctx.stringValue("ListRepoBuildRecordLogResponse.TotalCount"));
 

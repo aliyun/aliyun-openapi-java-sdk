@@ -37,7 +37,7 @@ public class ListChartReleaseRequest extends RpcAcsRequest<ListChartReleaseRespo
 
 	private String chart;
 	public ListChartReleaseRequest() {
-		super("cr", "2018-12-01", "ListChartRelease", "acr");
+		super("cr", "2018-12-01", "ListChartRelease");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

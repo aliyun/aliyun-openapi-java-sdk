@@ -24,17 +24,17 @@ public class GetRepoBuildRecordResponseUnmarshaller {
 	public static GetRepoBuildRecordResponse unmarshall(GetRepoBuildRecordResponse getRepoBuildRecordResponse, UnmarshallerContext _ctx) {
 		
 		getRepoBuildRecordResponse.setRequestId(_ctx.stringValue("GetRepoBuildRecordResponse.RequestId"));
-		getRepoBuildRecordResponse.setIsSuccess(_ctx.booleanValue("GetRepoBuildRecordResponse.IsSuccess"));
-		getRepoBuildRecordResponse.setCode(_ctx.stringValue("GetRepoBuildRecordResponse.Code"));
-		getRepoBuildRecordResponse.setBuildRecordId(_ctx.stringValue("GetRepoBuildRecordResponse.BuildRecordId"));
-		getRepoBuildRecordResponse.setStartTime(_ctx.longValue("GetRepoBuildRecordResponse.StartTime"));
-		getRepoBuildRecordResponse.setEndTime(_ctx.longValue("GetRepoBuildRecordResponse.EndTime"));
 		getRepoBuildRecordResponse.setStatus(_ctx.stringValue("GetRepoBuildRecordResponse.Status"));
+		getRepoBuildRecordResponse.setEndTime(_ctx.longValue("GetRepoBuildRecordResponse.EndTime"));
+		getRepoBuildRecordResponse.setStartTime(_ctx.longValue("GetRepoBuildRecordResponse.StartTime"));
+		getRepoBuildRecordResponse.setCode(_ctx.stringValue("GetRepoBuildRecordResponse.Code"));
+		getRepoBuildRecordResponse.setIsSuccess(_ctx.booleanValue("GetRepoBuildRecordResponse.IsSuccess"));
+		getRepoBuildRecordResponse.setBuildRecordId(_ctx.stringValue("GetRepoBuildRecordResponse.BuildRecordId"));
 
 		Image image = new Image();
 		image.setRepoNamespaceName(_ctx.stringValue("GetRepoBuildRecordResponse.Image.RepoNamespaceName"));
-		image.setRepoName(_ctx.stringValue("GetRepoBuildRecordResponse.Image.RepoName"));
 		image.setImageTag(_ctx.stringValue("GetRepoBuildRecordResponse.Image.ImageTag"));
+		image.setRepoName(_ctx.stringValue("GetRepoBuildRecordResponse.Image.RepoName"));
 		getRepoBuildRecordResponse.setImage(image);
 	 
 	 	return getRepoBuildRecordResponse;

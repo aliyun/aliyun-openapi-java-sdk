@@ -23,12 +23,16 @@ public class GetInstanceUsageResponseUnmarshaller {
 	public static GetInstanceUsageResponse unmarshall(GetInstanceUsageResponse getInstanceUsageResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceUsageResponse.setRequestId(_ctx.stringValue("GetInstanceUsageResponse.RequestId"));
-		getInstanceUsageResponse.setIsSuccess(_ctx.booleanValue("GetInstanceUsageResponse.IsSuccess"));
-		getInstanceUsageResponse.setCode(_ctx.stringValue("GetInstanceUsageResponse.Code"));
-		getInstanceUsageResponse.setNamespaceQuota(_ctx.stringValue("GetInstanceUsageResponse.NamespaceQuota"));
 		getInstanceUsageResponse.setNamespaceUsage(_ctx.stringValue("GetInstanceUsageResponse.NamespaceUsage"));
 		getInstanceUsageResponse.setRepoQuota(_ctx.stringValue("GetInstanceUsageResponse.RepoQuota"));
+		getInstanceUsageResponse.setChartNamespaceQuota(_ctx.stringValue("GetInstanceUsageResponse.ChartNamespaceQuota"));
 		getInstanceUsageResponse.setRepoUsage(_ctx.stringValue("GetInstanceUsageResponse.RepoUsage"));
+		getInstanceUsageResponse.setNamespaceQuota(_ctx.stringValue("GetInstanceUsageResponse.NamespaceQuota"));
+		getInstanceUsageResponse.setCode(_ctx.stringValue("GetInstanceUsageResponse.Code"));
+		getInstanceUsageResponse.setIsSuccess(_ctx.booleanValue("GetInstanceUsageResponse.IsSuccess"));
+		getInstanceUsageResponse.setChartRepoUsage(_ctx.stringValue("GetInstanceUsageResponse.ChartRepoUsage"));
+		getInstanceUsageResponse.setChartNamespaceUsage(_ctx.stringValue("GetInstanceUsageResponse.ChartNamespaceUsage"));
+		getInstanceUsageResponse.setChartRepoQuota(_ctx.stringValue("GetInstanceUsageResponse.ChartRepoQuota"));
 	 
 	 	return getInstanceUsageResponse;
 	}

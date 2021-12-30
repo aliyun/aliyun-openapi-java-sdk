@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstanceEndpointResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
 	private String code;
+
+	private Boolean isSuccess;
 
 	private String requestId;
 
 	private List<EndpointsItem> endpoints;
-
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
-	}
-
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -47,6 +39,14 @@ public class ListInstanceEndpointResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public String getRequestId() {
@@ -67,13 +67,13 @@ public class ListInstanceEndpointResponse extends AcsResponse {
 
 	public static class EndpointsItem {
 
-		private String endpointType;
+		private String status;
 
-		private Boolean enable;
+		private String endpointType;
 
 		private Boolean aclEnable;
 
-		private String status;
+		private Boolean enable;
 
 		private List<DomainsItem> domains;
 
@@ -81,20 +81,20 @@ public class ListInstanceEndpointResponse extends AcsResponse {
 
 		private List<AclEntriesItem> aclEntries;
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getEndpointType() {
 			return this.endpointType;
 		}
 
 		public void setEndpointType(String endpointType) {
 			this.endpointType = endpointType;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
 		}
 
 		public Boolean getAclEnable() {
@@ -105,12 +105,12 @@ public class ListInstanceEndpointResponse extends AcsResponse {
 			this.aclEnable = aclEnable;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Boolean getEnable() {
+			return this.enable;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 
 		public List<DomainsItem> getDomains() {
@@ -139,17 +139,9 @@ public class ListInstanceEndpointResponse extends AcsResponse {
 
 		public static class DomainsItem {
 
-			private String domain;
-
 			private String type;
 
-			public String getDomain() {
-				return this.domain;
-			}
-
-			public void setDomain(String domain) {
-				this.domain = domain;
-			}
+			private String domain;
 
 			public String getType() {
 				return this.type;
@@ -157,6 +149,14 @@ public class ListInstanceEndpointResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getDomain() {
+				return this.domain;
+			}
+
+			public void setDomain(String domain) {
+				this.domain = domain;
 			}
 		}
 

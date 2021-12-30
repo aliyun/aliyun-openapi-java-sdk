@@ -24,36 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRepoTagScanSummaryResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
-	private String code;
+	private Integer unknownSeverity;
 
 	private String requestId;
 
-	private Integer lowSeverity;
+	private Integer totalSeverity;
+
+	private String code;
 
 	private Integer mediumSeverity;
 
+	private Boolean isSuccess;
+
 	private Integer highSeverity;
 
-	private Integer unknownSeverity;
+	private Integer lowSeverity;
 
-	private Integer totalSeverity;
-
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public Integer getUnknownSeverity() {
+		return this.unknownSeverity;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setUnknownSeverity(Integer unknownSeverity) {
+		this.unknownSeverity = unknownSeverity;
 	}
 
 	public String getRequestId() {
@@ -64,12 +56,20 @@ public class GetRepoTagScanSummaryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getLowSeverity() {
-		return this.lowSeverity;
+	public Integer getTotalSeverity() {
+		return this.totalSeverity;
 	}
 
-	public void setLowSeverity(Integer lowSeverity) {
-		this.lowSeverity = lowSeverity;
+	public void setTotalSeverity(Integer totalSeverity) {
+		this.totalSeverity = totalSeverity;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Integer getMediumSeverity() {
@@ -80,6 +80,14 @@ public class GetRepoTagScanSummaryResponse extends AcsResponse {
 		this.mediumSeverity = mediumSeverity;
 	}
 
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
 	public Integer getHighSeverity() {
 		return this.highSeverity;
 	}
@@ -88,20 +96,12 @@ public class GetRepoTagScanSummaryResponse extends AcsResponse {
 		this.highSeverity = highSeverity;
 	}
 
-	public Integer getUnknownSeverity() {
-		return this.unknownSeverity;
+	public Integer getLowSeverity() {
+		return this.lowSeverity;
 	}
 
-	public void setUnknownSeverity(Integer unknownSeverity) {
-		this.unknownSeverity = unknownSeverity;
-	}
-
-	public Integer getTotalSeverity() {
-		return this.totalSeverity;
-	}
-
-	public void setTotalSeverity(Integer totalSeverity) {
-		this.totalSeverity = totalSeverity;
+	public void setLowSeverity(Integer lowSeverity) {
+		this.lowSeverity = lowSeverity;
 	}
 
 	@Override

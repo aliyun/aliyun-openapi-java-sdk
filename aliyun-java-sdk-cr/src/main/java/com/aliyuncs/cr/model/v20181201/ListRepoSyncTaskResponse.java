@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepoSyncTaskResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 
 	private List<SyncTasksItem> syncTasks;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,23 +97,43 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 
 	public static class SyncTasksItem {
 
+		private Long modifedTime;
+
+		private String syncRuleId;
+
 		private String syncTaskId;
 
 		private String taskStatus;
 
-		private String taskTrigger;
-
-		private String syncRuleId;
+		private Long createTime;
 
 		private String syncBatchTaskId;
 
-		private Long createTime;
+		private Boolean crossUser;
 
-		private Long modifedTime;
+		private Boolean syncTransAccelerate;
+
+		private String taskTrigger;
 
 		private ImageFrom imageFrom;
 
 		private ImageTo imageTo;
+
+		public Long getModifedTime() {
+			return this.modifedTime;
+		}
+
+		public void setModifedTime(Long modifedTime) {
+			this.modifedTime = modifedTime;
+		}
+
+		public String getSyncRuleId() {
+			return this.syncRuleId;
+		}
+
+		public void setSyncRuleId(String syncRuleId) {
+			this.syncRuleId = syncRuleId;
+		}
 
 		public String getSyncTaskId() {
 			return this.syncTaskId;
@@ -131,20 +151,12 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 			this.taskStatus = taskStatus;
 		}
 
-		public String getTaskTrigger() {
-			return this.taskTrigger;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setTaskTrigger(String taskTrigger) {
-			this.taskTrigger = taskTrigger;
-		}
-
-		public String getSyncRuleId() {
-			return this.syncRuleId;
-		}
-
-		public void setSyncRuleId(String syncRuleId) {
-			this.syncRuleId = syncRuleId;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getSyncBatchTaskId() {
@@ -155,20 +167,28 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 			this.syncBatchTaskId = syncBatchTaskId;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public Boolean getCrossUser() {
+			return this.crossUser;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setCrossUser(Boolean crossUser) {
+			this.crossUser = crossUser;
 		}
 
-		public Long getModifedTime() {
-			return this.modifedTime;
+		public Boolean getSyncTransAccelerate() {
+			return this.syncTransAccelerate;
 		}
 
-		public void setModifedTime(Long modifedTime) {
-			this.modifedTime = modifedTime;
+		public void setSyncTransAccelerate(Boolean syncTransAccelerate) {
+			this.syncTransAccelerate = syncTransAccelerate;
+		}
+
+		public String getTaskTrigger() {
+			return this.taskTrigger;
+		}
+
+		public void setTaskTrigger(String taskTrigger) {
+			this.taskTrigger = taskTrigger;
 		}
 
 		public ImageFrom getImageFrom() {
@@ -189,23 +209,15 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 
 		public static class ImageFrom {
 
-			private String regionId;
-
 			private String repoNamespaceName;
-
-			private String repoName;
-
-			private String imageTag;
 
 			private String instanceId;
 
-			public String getRegionId() {
-				return this.regionId;
-			}
+			private String imageTag;
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String repoName;
+
+			private String regionId;
 
 			public String getRepoNamespaceName() {
 				return this.repoNamespaceName;
@@ -215,12 +227,12 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 				this.repoNamespaceName = repoNamespaceName;
 			}
 
-			public String getRepoName() {
-				return this.repoName;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setRepoName(String repoName) {
-				this.repoName = repoName;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getImageTag() {
@@ -231,34 +243,34 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 				this.imageTag = imageTag;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getRepoName() {
+				return this.repoName;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setRepoName(String repoName) {
+				this.repoName = repoName;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 
 		public static class ImageTo {
 
-			private String regionId;
-
 			private String repoNamespaceName;
-
-			private String repoName;
-
-			private String imageTag;
 
 			private String instanceId;
 
-			public String getRegionId() {
-				return this.regionId;
-			}
+			private String imageTag;
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String repoName;
+
+			private String regionId;
 
 			public String getRepoNamespaceName() {
 				return this.repoNamespaceName;
@@ -268,12 +280,12 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 				this.repoNamespaceName = repoNamespaceName;
 			}
 
-			public String getRepoName() {
-				return this.repoName;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setRepoName(String repoName) {
-				this.repoName = repoName;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getImageTag() {
@@ -284,12 +296,20 @@ public class ListRepoSyncTaskResponse extends AcsResponse {
 				this.imageTag = imageTag;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getRepoName() {
+				return this.repoName;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setRepoName(String repoName) {
+				this.repoName = repoName;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

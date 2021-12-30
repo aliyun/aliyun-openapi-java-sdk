@@ -33,7 +33,7 @@ public class CreateInstanceVpcEndpointLinkedVpcRequest extends RpcAcsRequest<Cre
 
 	private String moduleName;
 	public CreateInstanceVpcEndpointLinkedVpcRequest() {
-		super("cr", "2018-12-01", "CreateInstanceVpcEndpointLinkedVpc", "acr");
+		super("cr", "2018-12-01", "CreateInstanceVpcEndpointLinkedVpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

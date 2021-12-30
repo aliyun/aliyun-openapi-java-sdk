@@ -37,7 +37,7 @@ public class UpdateRepositoryRequest extends RpcAcsRequest<UpdateRepositoryRespo
 
 	private String detail;
 	public UpdateRepositoryRequest() {
-		super("cr", "2018-12-01", "UpdateRepository", "acr");
+		super("cr", "2018-12-01", "UpdateRepository");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

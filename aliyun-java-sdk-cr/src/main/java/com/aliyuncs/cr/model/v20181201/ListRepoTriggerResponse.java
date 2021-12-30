@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepoTriggerResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
 	private String code;
+
+	private Boolean isSuccess;
 
 	private String requestId;
 
 	private List<TriggersItem> triggers;
-
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
-	}
-
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -47,6 +39,14 @@ public class ListRepoTriggerResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public String getRequestId() {
@@ -67,25 +67,17 @@ public class ListRepoTriggerResponse extends AcsResponse {
 
 	public static class TriggersItem {
 
-		private String triggerId;
-
 		private String triggerName;
 
-		private String triggerUrl;
-
 		private String repoEvent;
+
+		private String triggerId;
+
+		private String triggerUrl;
 
 		private String triggerType;
 
 		private String triggerTag;
-
-		public String getTriggerId() {
-			return this.triggerId;
-		}
-
-		public void setTriggerId(String triggerId) {
-			this.triggerId = triggerId;
-		}
 
 		public String getTriggerName() {
 			return this.triggerName;
@@ -95,20 +87,28 @@ public class ListRepoTriggerResponse extends AcsResponse {
 			this.triggerName = triggerName;
 		}
 
-		public String getTriggerUrl() {
-			return this.triggerUrl;
-		}
-
-		public void setTriggerUrl(String triggerUrl) {
-			this.triggerUrl = triggerUrl;
-		}
-
 		public String getRepoEvent() {
 			return this.repoEvent;
 		}
 
 		public void setRepoEvent(String repoEvent) {
 			this.repoEvent = repoEvent;
+		}
+
+		public String getTriggerId() {
+			return this.triggerId;
+		}
+
+		public void setTriggerId(String triggerId) {
+			this.triggerId = triggerId;
+		}
+
+		public String getTriggerUrl() {
+			return this.triggerUrl;
+		}
+
+		public void setTriggerUrl(String triggerUrl) {
+			this.triggerUrl = triggerUrl;
 		}
 
 		public String getTriggerType() {

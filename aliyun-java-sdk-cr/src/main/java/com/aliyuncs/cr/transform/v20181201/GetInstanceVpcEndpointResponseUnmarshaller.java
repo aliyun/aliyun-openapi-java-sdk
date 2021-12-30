@@ -27,8 +27,8 @@ public class GetInstanceVpcEndpointResponseUnmarshaller {
 	public static GetInstanceVpcEndpointResponse unmarshall(GetInstanceVpcEndpointResponse getInstanceVpcEndpointResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceVpcEndpointResponse.setRequestId(_ctx.stringValue("GetInstanceVpcEndpointResponse.RequestId"));
-		getInstanceVpcEndpointResponse.setIsSuccess(_ctx.booleanValue("GetInstanceVpcEndpointResponse.IsSuccess"));
 		getInstanceVpcEndpointResponse.setCode(_ctx.stringValue("GetInstanceVpcEndpointResponse.Code"));
+		getInstanceVpcEndpointResponse.setIsSuccess(_ctx.booleanValue("GetInstanceVpcEndpointResponse.IsSuccess"));
 		getInstanceVpcEndpointResponse.setEnable(_ctx.booleanValue("GetInstanceVpcEndpointResponse.Enable"));
 
 		List<String> domains = new ArrayList<String>();
@@ -40,11 +40,11 @@ public class GetInstanceVpcEndpointResponseUnmarshaller {
 		List<LinkedVpcsItem> linkedVpcs = new ArrayList<LinkedVpcsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceVpcEndpointResponse.LinkedVpcs.Length"); i++) {
 			LinkedVpcsItem linkedVpcsItem = new LinkedVpcsItem();
+			linkedVpcsItem.setStatus(_ctx.stringValue("GetInstanceVpcEndpointResponse.LinkedVpcs["+ i +"].Status"));
 			linkedVpcsItem.setVpcId(_ctx.stringValue("GetInstanceVpcEndpointResponse.LinkedVpcs["+ i +"].VpcId"));
-			linkedVpcsItem.setVswitchId(_ctx.stringValue("GetInstanceVpcEndpointResponse.LinkedVpcs["+ i +"].VswitchId"));
 			linkedVpcsItem.setIp(_ctx.stringValue("GetInstanceVpcEndpointResponse.LinkedVpcs["+ i +"].Ip"));
 			linkedVpcsItem.setDefaultAccess(_ctx.booleanValue("GetInstanceVpcEndpointResponse.LinkedVpcs["+ i +"].DefaultAccess"));
-			linkedVpcsItem.setStatus(_ctx.stringValue("GetInstanceVpcEndpointResponse.LinkedVpcs["+ i +"].Status"));
+			linkedVpcsItem.setVswitchId(_ctx.stringValue("GetInstanceVpcEndpointResponse.LinkedVpcs["+ i +"].VswitchId"));
 
 			linkedVpcs.add(linkedVpcsItem);
 		}

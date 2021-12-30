@@ -27,16 +27,16 @@ public class ListRepoTriggerResponseUnmarshaller {
 	public static ListRepoTriggerResponse unmarshall(ListRepoTriggerResponse listRepoTriggerResponse, UnmarshallerContext _ctx) {
 		
 		listRepoTriggerResponse.setRequestId(_ctx.stringValue("ListRepoTriggerResponse.RequestId"));
-		listRepoTriggerResponse.setIsSuccess(_ctx.booleanValue("ListRepoTriggerResponse.IsSuccess"));
 		listRepoTriggerResponse.setCode(_ctx.stringValue("ListRepoTriggerResponse.Code"));
+		listRepoTriggerResponse.setIsSuccess(_ctx.booleanValue("ListRepoTriggerResponse.IsSuccess"));
 
 		List<TriggersItem> triggers = new ArrayList<TriggersItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRepoTriggerResponse.Triggers.Length"); i++) {
 			TriggersItem triggersItem = new TriggersItem();
-			triggersItem.setTriggerId(_ctx.stringValue("ListRepoTriggerResponse.Triggers["+ i +"].TriggerId"));
 			triggersItem.setTriggerName(_ctx.stringValue("ListRepoTriggerResponse.Triggers["+ i +"].TriggerName"));
-			triggersItem.setTriggerUrl(_ctx.stringValue("ListRepoTriggerResponse.Triggers["+ i +"].TriggerUrl"));
 			triggersItem.setRepoEvent(_ctx.stringValue("ListRepoTriggerResponse.Triggers["+ i +"].RepoEvent"));
+			triggersItem.setTriggerId(_ctx.stringValue("ListRepoTriggerResponse.Triggers["+ i +"].TriggerId"));
+			triggersItem.setTriggerUrl(_ctx.stringValue("ListRepoTriggerResponse.Triggers["+ i +"].TriggerUrl"));
 			triggersItem.setTriggerType(_ctx.stringValue("ListRepoTriggerResponse.Triggers["+ i +"].TriggerType"));
 			triggersItem.setTriggerTag(_ctx.stringValue("ListRepoTriggerResponse.Triggers["+ i +"].TriggerTag"));
 

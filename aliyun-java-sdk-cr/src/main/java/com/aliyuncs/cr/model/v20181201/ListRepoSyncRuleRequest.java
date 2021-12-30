@@ -39,7 +39,7 @@ public class ListRepoSyncRuleRequest extends RpcAcsRequest<ListRepoSyncRuleRespo
 
 	private String targetRegionId;
 	public ListRepoSyncRuleRequest() {
-		super("cr", "2018-12-01", "ListRepoSyncRule", "acr");
+		super("cr", "2018-12-01", "ListRepoSyncRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,8 +23,8 @@ public class UpdateChartRepositoryResponseUnmarshaller {
 	public static UpdateChartRepositoryResponse unmarshall(UpdateChartRepositoryResponse updateChartRepositoryResponse, UnmarshallerContext _ctx) {
 		
 		updateChartRepositoryResponse.setRequestId(_ctx.stringValue("UpdateChartRepositoryResponse.RequestId"));
-		updateChartRepositoryResponse.setIsSuccess(_ctx.booleanValue("UpdateChartRepositoryResponse.IsSuccess"));
 		updateChartRepositoryResponse.setCode(_ctx.stringValue("UpdateChartRepositoryResponse.Code"));
+		updateChartRepositoryResponse.setIsSuccess(_ctx.booleanValue("UpdateChartRepositoryResponse.IsSuccess"));
 	 
 	 	return updateChartRepositoryResponse;
 	}

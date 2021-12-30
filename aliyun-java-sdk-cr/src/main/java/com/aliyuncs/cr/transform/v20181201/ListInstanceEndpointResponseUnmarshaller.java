@@ -30,22 +30,22 @@ public class ListInstanceEndpointResponseUnmarshaller {
 	public static ListInstanceEndpointResponse unmarshall(ListInstanceEndpointResponse listInstanceEndpointResponse, UnmarshallerContext _ctx) {
 		
 		listInstanceEndpointResponse.setRequestId(_ctx.stringValue("ListInstanceEndpointResponse.RequestId"));
-		listInstanceEndpointResponse.setIsSuccess(_ctx.booleanValue("ListInstanceEndpointResponse.IsSuccess"));
 		listInstanceEndpointResponse.setCode(_ctx.stringValue("ListInstanceEndpointResponse.Code"));
+		listInstanceEndpointResponse.setIsSuccess(_ctx.booleanValue("ListInstanceEndpointResponse.IsSuccess"));
 
 		List<EndpointsItem> endpoints = new ArrayList<EndpointsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceEndpointResponse.Endpoints.Length"); i++) {
 			EndpointsItem endpointsItem = new EndpointsItem();
-			endpointsItem.setEndpointType(_ctx.stringValue("ListInstanceEndpointResponse.Endpoints["+ i +"].EndpointType"));
-			endpointsItem.setEnable(_ctx.booleanValue("ListInstanceEndpointResponse.Endpoints["+ i +"].Enable"));
-			endpointsItem.setAclEnable(_ctx.booleanValue("ListInstanceEndpointResponse.Endpoints["+ i +"].AclEnable"));
 			endpointsItem.setStatus(_ctx.stringValue("ListInstanceEndpointResponse.Endpoints["+ i +"].Status"));
+			endpointsItem.setEndpointType(_ctx.stringValue("ListInstanceEndpointResponse.Endpoints["+ i +"].EndpointType"));
+			endpointsItem.setAclEnable(_ctx.booleanValue("ListInstanceEndpointResponse.Endpoints["+ i +"].AclEnable"));
+			endpointsItem.setEnable(_ctx.booleanValue("ListInstanceEndpointResponse.Endpoints["+ i +"].Enable"));
 
 			List<DomainsItem> domains = new ArrayList<DomainsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListInstanceEndpointResponse.Endpoints["+ i +"].Domains.Length"); j++) {
 				DomainsItem domainsItem = new DomainsItem();
-				domainsItem.setDomain(_ctx.stringValue("ListInstanceEndpointResponse.Endpoints["+ i +"].Domains["+ j +"].Domain"));
 				domainsItem.setType(_ctx.stringValue("ListInstanceEndpointResponse.Endpoints["+ i +"].Domains["+ j +"].Type"));
+				domainsItem.setDomain(_ctx.stringValue("ListInstanceEndpointResponse.Endpoints["+ i +"].Domains["+ j +"].Domain"));
 
 				domains.add(domainsItem);
 			}

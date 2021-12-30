@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepoBuildRecordLogResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListRepoBuildRecordLogResponse extends AcsResponse {
 
 	private List<BuildRecordLogsItem> buildRecordLogs;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListRepoBuildRecordLogResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {

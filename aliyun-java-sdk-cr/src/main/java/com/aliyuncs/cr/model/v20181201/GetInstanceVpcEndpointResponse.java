@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceVpcEndpointResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
 	private String code;
+
+	private Boolean isSuccess;
 
 	private String requestId;
 
@@ -37,20 +37,20 @@ public class GetInstanceVpcEndpointResponse extends AcsResponse {
 
 	private List<String> domains;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
-	}
-
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public String getRequestId() {
@@ -87,15 +87,23 @@ public class GetInstanceVpcEndpointResponse extends AcsResponse {
 
 	public static class LinkedVpcsItem {
 
-		private String vpcId;
+		private String status;
 
-		private String vswitchId;
+		private String vpcId;
 
 		private String ip;
 
 		private Boolean defaultAccess;
 
-		private String status;
+		private String vswitchId;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -103,14 +111,6 @@ public class GetInstanceVpcEndpointResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getVswitchId() {
-			return this.vswitchId;
-		}
-
-		public void setVswitchId(String vswitchId) {
-			this.vswitchId = vswitchId;
 		}
 
 		public String getIp() {
@@ -129,12 +129,12 @@ public class GetInstanceVpcEndpointResponse extends AcsResponse {
 			this.defaultAccess = defaultAccess;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getVswitchId() {
+			return this.vswitchId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
 		}
 	}
 

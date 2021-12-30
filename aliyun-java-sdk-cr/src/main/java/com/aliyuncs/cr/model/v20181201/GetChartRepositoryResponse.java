@@ -24,29 +24,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetChartRepositoryResponse extends AcsResponse {
 
+	private String summary;
+
+	private Long createTime;
+
 	private Boolean isSuccess;
 
-	private String code;
-
-	private String requestId;
-
 	private String instanceId;
-
-	private String repoId;
-
-	private String repoNamespaceName;
-
-	private String repoName;
 
 	private String repoStatus;
 
 	private String repoType;
 
-	private String summary;
+	private String requestId;
 
-	private Long createTime;
+	private String repoId;
 
 	private Long modifiedTime;
+
+	private String code;
+
+	private String repoNamespaceName;
+
+	private String repoName;
+
+	public String getSummary() {
+		return this.summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
 
 	public Boolean getIsSuccess() {
 		return this.isSuccess;
@@ -56,52 +72,12 @@ public class GetChartRepositoryResponse extends AcsResponse {
 		this.isSuccess = isSuccess;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-	}
-
-	public String getRepoId() {
-		return this.repoId;
-	}
-
-	public void setRepoId(String repoId) {
-		this.repoId = repoId;
-	}
-
-	public String getRepoNamespaceName() {
-		return this.repoNamespaceName;
-	}
-
-	public void setRepoNamespaceName(String repoNamespaceName) {
-		this.repoNamespaceName = repoNamespaceName;
-	}
-
-	public String getRepoName() {
-		return this.repoName;
-	}
-
-	public void setRepoName(String repoName) {
-		this.repoName = repoName;
 	}
 
 	public String getRepoStatus() {
@@ -120,20 +96,20 @@ public class GetChartRepositoryResponse extends AcsResponse {
 		this.repoType = repoType;
 	}
 
-	public String getSummary() {
-		return this.summary;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Long getCreateTime() {
-		return this.createTime;
+	public String getRepoId() {
+		return this.repoId;
 	}
 
-	public void setCreateTime(Long createTime) {
-		this.createTime = createTime;
+	public void setRepoId(String repoId) {
+		this.repoId = repoId;
 	}
 
 	public Long getModifiedTime() {
@@ -142,6 +118,30 @@ public class GetChartRepositoryResponse extends AcsResponse {
 
 	public void setModifiedTime(Long modifiedTime) {
 		this.modifiedTime = modifiedTime;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getRepoNamespaceName() {
+		return this.repoNamespaceName;
+	}
+
+	public void setRepoNamespaceName(String repoNamespaceName) {
+		this.repoNamespaceName = repoNamespaceName;
+	}
+
+	public String getRepoName() {
+		return this.repoName;
+	}
+
+	public void setRepoName(String repoName) {
+		this.repoName = repoName;
 	}
 
 	@Override

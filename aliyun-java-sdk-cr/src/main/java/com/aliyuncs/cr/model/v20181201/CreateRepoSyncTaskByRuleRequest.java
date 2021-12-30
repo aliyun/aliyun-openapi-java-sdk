@@ -33,7 +33,7 @@ public class CreateRepoSyncTaskByRuleRequest extends RpcAcsRequest<CreateRepoSyn
 
 	private String syncRuleId;
 	public CreateRepoSyncTaskByRuleRequest() {
-		super("cr", "2018-12-01", "CreateRepoSyncTaskByRule", "acr");
+		super("cr", "2018-12-01", "CreateRepoSyncTaskByRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

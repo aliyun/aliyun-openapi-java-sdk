@@ -23,9 +23,9 @@ public class CreateRepoSyncRuleResponseUnmarshaller {
 	public static CreateRepoSyncRuleResponse unmarshall(CreateRepoSyncRuleResponse createRepoSyncRuleResponse, UnmarshallerContext _ctx) {
 		
 		createRepoSyncRuleResponse.setRequestId(_ctx.stringValue("CreateRepoSyncRuleResponse.RequestId"));
-		createRepoSyncRuleResponse.setIsSuccess(_ctx.booleanValue("CreateRepoSyncRuleResponse.IsSuccess"));
 		createRepoSyncRuleResponse.setCode(_ctx.stringValue("CreateRepoSyncRuleResponse.Code"));
 		createRepoSyncRuleResponse.setSyncRuleId(_ctx.stringValue("CreateRepoSyncRuleResponse.SyncRuleId"));
+		createRepoSyncRuleResponse.setIsSuccess(_ctx.booleanValue("CreateRepoSyncRuleResponse.IsSuccess"));
 	 
 	 	return createRepoSyncRuleResponse;
 	}

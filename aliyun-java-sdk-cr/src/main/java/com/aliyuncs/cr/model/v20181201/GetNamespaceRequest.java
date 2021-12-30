@@ -31,7 +31,7 @@ public class GetNamespaceRequest extends RpcAcsRequest<GetNamespaceResponse> {
 
 	private String namespaceId;
 	public GetNamespaceRequest() {
-		super("cr", "2018-12-01", "GetNamespace", "acr");
+		super("cr", "2018-12-01", "GetNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

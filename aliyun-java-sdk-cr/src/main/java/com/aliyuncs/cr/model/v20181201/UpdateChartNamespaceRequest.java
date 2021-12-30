@@ -33,7 +33,7 @@ public class UpdateChartNamespaceRequest extends RpcAcsRequest<UpdateChartNamesp
 
 	private String instanceId;
 	public UpdateChartNamespaceRequest() {
-		super("cr", "2018-12-01", "UpdateChartNamespace", "acr");
+		super("cr", "2018-12-01", "UpdateChartNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

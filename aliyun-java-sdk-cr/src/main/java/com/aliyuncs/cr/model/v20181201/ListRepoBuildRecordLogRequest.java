@@ -33,7 +33,7 @@ public class ListRepoBuildRecordLogRequest extends RpcAcsRequest<ListRepoBuildRe
 
 	private String instanceId;
 	public ListRepoBuildRecordLogRequest() {
-		super("cr", "2018-12-01", "ListRepoBuildRecordLog", "acr");
+		super("cr", "2018-12-01", "ListRepoBuildRecordLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

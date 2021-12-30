@@ -25,7 +25,7 @@ import com.aliyuncs.cr.Endpoint;
 public class GetInstanceCountRequest extends RpcAcsRequest<GetInstanceCountResponse> {
 	   
 	public GetInstanceCountRequest() {
-		super("cr", "2018-12-01", "GetInstanceCount", "acr");
+		super("cr", "2018-12-01", "GetInstanceCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

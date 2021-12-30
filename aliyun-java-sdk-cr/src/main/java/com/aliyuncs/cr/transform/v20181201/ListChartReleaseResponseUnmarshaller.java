@@ -27,22 +27,22 @@ public class ListChartReleaseResponseUnmarshaller {
 	public static ListChartReleaseResponse unmarshall(ListChartReleaseResponse listChartReleaseResponse, UnmarshallerContext _ctx) {
 		
 		listChartReleaseResponse.setRequestId(_ctx.stringValue("ListChartReleaseResponse.RequestId"));
-		listChartReleaseResponse.setIsSuccess(_ctx.booleanValue("ListChartReleaseResponse.IsSuccess"));
 		listChartReleaseResponse.setCode(_ctx.stringValue("ListChartReleaseResponse.Code"));
 		listChartReleaseResponse.setPageNo(_ctx.integerValue("ListChartReleaseResponse.PageNo"));
+		listChartReleaseResponse.setIsSuccess(_ctx.booleanValue("ListChartReleaseResponse.IsSuccess"));
 		listChartReleaseResponse.setPageSize(_ctx.integerValue("ListChartReleaseResponse.PageSize"));
 		listChartReleaseResponse.setTotalCount(_ctx.stringValue("ListChartReleaseResponse.TotalCount"));
 
 		List<ChartReleasesItem> chartReleases = new ArrayList<ChartReleasesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListChartReleaseResponse.ChartReleases.Length"); i++) {
 			ChartReleasesItem chartReleasesItem = new ChartReleasesItem();
-			chartReleasesItem.setChart(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].Chart"));
-			chartReleasesItem.setRelease(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].Release"));
 			chartReleasesItem.setStatus(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].Status"));
+			chartReleasesItem.setModifiedTime(_ctx.longValue("ListChartReleaseResponse.ChartReleases["+ i +"].ModifiedTime"));
+			chartReleasesItem.setRepoId(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].RepoId"));
+			chartReleasesItem.setRelease(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].Release"));
 			chartReleasesItem.setSize(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].Size"));
 			chartReleasesItem.setInstanceId(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].InstanceId"));
-			chartReleasesItem.setRepoId(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].RepoId"));
-			chartReleasesItem.setModifiedTime(_ctx.longValue("ListChartReleaseResponse.ChartReleases["+ i +"].ModifiedTime"));
+			chartReleasesItem.setChart(_ctx.stringValue("ListChartReleaseResponse.ChartReleases["+ i +"].Chart"));
 
 			chartReleases.add(chartReleasesItem);
 		}

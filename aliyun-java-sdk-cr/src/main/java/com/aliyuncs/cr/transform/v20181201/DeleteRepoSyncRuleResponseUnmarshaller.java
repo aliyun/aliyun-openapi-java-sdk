@@ -23,8 +23,8 @@ public class DeleteRepoSyncRuleResponseUnmarshaller {
 	public static DeleteRepoSyncRuleResponse unmarshall(DeleteRepoSyncRuleResponse deleteRepoSyncRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteRepoSyncRuleResponse.setRequestId(_ctx.stringValue("DeleteRepoSyncRuleResponse.RequestId"));
-		deleteRepoSyncRuleResponse.setIsSuccess(_ctx.booleanValue("DeleteRepoSyncRuleResponse.IsSuccess"));
 		deleteRepoSyncRuleResponse.setCode(_ctx.stringValue("DeleteRepoSyncRuleResponse.Code"));
+		deleteRepoSyncRuleResponse.setIsSuccess(_ctx.booleanValue("DeleteRepoSyncRuleResponse.IsSuccess"));
 	 
 	 	return deleteRepoSyncRuleResponse;
 	}

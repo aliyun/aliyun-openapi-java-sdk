@@ -23,8 +23,8 @@ public class DeleteChartNamespaceResponseUnmarshaller {
 	public static DeleteChartNamespaceResponse unmarshall(DeleteChartNamespaceResponse deleteChartNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		deleteChartNamespaceResponse.setRequestId(_ctx.stringValue("DeleteChartNamespaceResponse.RequestId"));
-		deleteChartNamespaceResponse.setIsSuccess(_ctx.booleanValue("DeleteChartNamespaceResponse.IsSuccess"));
 		deleteChartNamespaceResponse.setCode(_ctx.stringValue("DeleteChartNamespaceResponse.Code"));
+		deleteChartNamespaceResponse.setIsSuccess(_ctx.booleanValue("DeleteChartNamespaceResponse.IsSuccess"));
 	 
 	 	return deleteChartNamespaceResponse;
 	}

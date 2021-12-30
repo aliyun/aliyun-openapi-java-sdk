@@ -27,24 +27,25 @@ public class ListRepoTagScanResultResponseUnmarshaller {
 	public static ListRepoTagScanResultResponse unmarshall(ListRepoTagScanResultResponse listRepoTagScanResultResponse, UnmarshallerContext _ctx) {
 		
 		listRepoTagScanResultResponse.setRequestId(_ctx.stringValue("ListRepoTagScanResultResponse.RequestId"));
-		listRepoTagScanResultResponse.setIsSuccess(_ctx.booleanValue("ListRepoTagScanResultResponse.IsSuccess"));
 		listRepoTagScanResultResponse.setCode(_ctx.stringValue("ListRepoTagScanResultResponse.Code"));
 		listRepoTagScanResultResponse.setPageNo(_ctx.integerValue("ListRepoTagScanResultResponse.PageNo"));
+		listRepoTagScanResultResponse.setIsSuccess(_ctx.booleanValue("ListRepoTagScanResultResponse.IsSuccess"));
 		listRepoTagScanResultResponse.setPageSize(_ctx.integerValue("ListRepoTagScanResultResponse.PageSize"));
 		listRepoTagScanResultResponse.setTotalCount(_ctx.integerValue("ListRepoTagScanResultResponse.TotalCount"));
 
 		List<VulnerabilitiesItem> vulnerabilities = new ArrayList<VulnerabilitiesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRepoTagScanResultResponse.Vulnerabilities.Length"); i++) {
 			VulnerabilitiesItem vulnerabilitiesItem = new VulnerabilitiesItem();
+			vulnerabilitiesItem.setSeverity(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].Severity"));
+			vulnerabilitiesItem.setAddedBy(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].AddedBy"));
+			vulnerabilitiesItem.setCveName(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].CveName"));
+			vulnerabilitiesItem.setDescription(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].Description"));
 			vulnerabilitiesItem.setFeature(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].Feature"));
 			vulnerabilitiesItem.setVersion(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].Version"));
 			vulnerabilitiesItem.setVersionFormat(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].VersionFormat"));
-			vulnerabilitiesItem.setAddedBy(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].AddedBy"));
-			vulnerabilitiesItem.setCveName(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].CveName"));
 			vulnerabilitiesItem.setCveLink(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].CveLink"));
-			vulnerabilitiesItem.setDescription(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].Description"));
-			vulnerabilitiesItem.setSeverity(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].Severity"));
 			vulnerabilitiesItem.setVersionFixed(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].VersionFixed"));
+			vulnerabilitiesItem.setFixCmd(_ctx.stringValue("ListRepoTagScanResultResponse.Vulnerabilities["+ i +"].FixCmd"));
 
 			vulnerabilities.add(vulnerabilitiesItem);
 		}

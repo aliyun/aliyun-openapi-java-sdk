@@ -23,8 +23,8 @@ public class CreateRepoBuildRuleResponseUnmarshaller {
 	public static CreateRepoBuildRuleResponse unmarshall(CreateRepoBuildRuleResponse createRepoBuildRuleResponse, UnmarshallerContext _ctx) {
 		
 		createRepoBuildRuleResponse.setRequestId(_ctx.stringValue("CreateRepoBuildRuleResponse.RequestId"));
-		createRepoBuildRuleResponse.setIsSuccess(_ctx.booleanValue("CreateRepoBuildRuleResponse.IsSuccess"));
 		createRepoBuildRuleResponse.setCode(_ctx.stringValue("CreateRepoBuildRuleResponse.Code"));
+		createRepoBuildRuleResponse.setIsSuccess(_ctx.booleanValue("CreateRepoBuildRuleResponse.IsSuccess"));
 		createRepoBuildRuleResponse.setBuildRuleId(_ctx.stringValue("CreateRepoBuildRuleResponse.BuildRuleId"));
 	 
 	 	return createRepoBuildRuleResponse;

@@ -31,7 +31,7 @@ public class DeleteRepoTagRequest extends RpcAcsRequest<DeleteRepoTagResponse> {
 
 	private String tag;
 	public DeleteRepoTagRequest() {
-		super("cr", "2018-12-01", "DeleteRepoTag", "acr");
+		super("cr", "2018-12-01", "DeleteRepoTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

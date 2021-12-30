@@ -31,7 +31,7 @@ public class GetChartRepositoryRequest extends RpcAcsRequest<GetChartRepositoryR
 
 	private String repoName;
 	public GetChartRepositoryRequest() {
-		super("cr", "2018-12-01", "GetChartRepository", "acr");
+		super("cr", "2018-12-01", "GetChartRepository");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

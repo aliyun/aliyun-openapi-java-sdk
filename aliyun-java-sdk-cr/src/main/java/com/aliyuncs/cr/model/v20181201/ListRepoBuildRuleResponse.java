@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepoBuildRuleResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListRepoBuildRuleResponse extends AcsResponse {
 
 	private List<BuildRulesItem> buildRules;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListRepoBuildRuleResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,11 +97,9 @@ public class ListRepoBuildRuleResponse extends AcsResponse {
 
 	public static class BuildRulesItem {
 
-		private String buildRuleId;
-
 		private String dockerfileLocation;
 
-		private String dockerfileName;
+		private String buildRuleId;
 
 		private String pushType;
 
@@ -109,13 +107,11 @@ public class ListRepoBuildRuleResponse extends AcsResponse {
 
 		private String imageTag;
 
-		public String getBuildRuleId() {
-			return this.buildRuleId;
-		}
+		private String dockerfileName;
 
-		public void setBuildRuleId(String buildRuleId) {
-			this.buildRuleId = buildRuleId;
-		}
+		private List<String> platforms;
+
+		private List<String> buildArgs;
 
 		public String getDockerfileLocation() {
 			return this.dockerfileLocation;
@@ -125,12 +121,12 @@ public class ListRepoBuildRuleResponse extends AcsResponse {
 			this.dockerfileLocation = dockerfileLocation;
 		}
 
-		public String getDockerfileName() {
-			return this.dockerfileName;
+		public String getBuildRuleId() {
+			return this.buildRuleId;
 		}
 
-		public void setDockerfileName(String dockerfileName) {
-			this.dockerfileName = dockerfileName;
+		public void setBuildRuleId(String buildRuleId) {
+			this.buildRuleId = buildRuleId;
 		}
 
 		public String getPushType() {
@@ -155,6 +151,30 @@ public class ListRepoBuildRuleResponse extends AcsResponse {
 
 		public void setImageTag(String imageTag) {
 			this.imageTag = imageTag;
+		}
+
+		public String getDockerfileName() {
+			return this.dockerfileName;
+		}
+
+		public void setDockerfileName(String dockerfileName) {
+			this.dockerfileName = dockerfileName;
+		}
+
+		public List<String> getPlatforms() {
+			return this.platforms;
+		}
+
+		public void setPlatforms(List<String> platforms) {
+			this.platforms = platforms;
+		}
+
+		public List<String> getBuildArgs() {
+			return this.buildArgs;
+		}
+
+		public void setBuildArgs(List<String> buildArgs) {
+			this.buildArgs = buildArgs;
 		}
 	}
 

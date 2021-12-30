@@ -29,6 +29,8 @@ public class CreateRepoSyncRuleRequest extends RpcAcsRequest<CreateRepoSyncRuleR
 
 	private String targetRepoName;
 
+	private String targetUserId;
+
 	private String syncScope;
 
 	private String syncRuleName;
@@ -47,7 +49,7 @@ public class CreateRepoSyncRuleRequest extends RpcAcsRequest<CreateRepoSyncRuleR
 
 	private String syncTrigger;
 	public CreateRepoSyncRuleRequest() {
-		super("cr", "2018-12-01", "CreateRepoSyncRule", "acr");
+		super("cr", "2018-12-01", "CreateRepoSyncRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +76,17 @@ public class CreateRepoSyncRuleRequest extends RpcAcsRequest<CreateRepoSyncRuleR
 		this.targetRepoName = targetRepoName;
 		if(targetRepoName != null){
 			putQueryParameter("TargetRepoName", targetRepoName);
+		}
+	}
+
+	public String getTargetUserId() {
+		return this.targetUserId;
+	}
+
+	public void setTargetUserId(String targetUserId) {
+		this.targetUserId = targetUserId;
+		if(targetUserId != null){
+			putQueryParameter("TargetUserId", targetUserId);
 		}
 	}
 

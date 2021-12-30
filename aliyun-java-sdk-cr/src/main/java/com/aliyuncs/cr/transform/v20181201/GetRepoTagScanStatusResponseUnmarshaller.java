@@ -23,9 +23,10 @@ public class GetRepoTagScanStatusResponseUnmarshaller {
 	public static GetRepoTagScanStatusResponse unmarshall(GetRepoTagScanStatusResponse getRepoTagScanStatusResponse, UnmarshallerContext _ctx) {
 		
 		getRepoTagScanStatusResponse.setRequestId(_ctx.stringValue("GetRepoTagScanStatusResponse.RequestId"));
-		getRepoTagScanStatusResponse.setIsSuccess(_ctx.booleanValue("GetRepoTagScanStatusResponse.IsSuccess"));
-		getRepoTagScanStatusResponse.setCode(_ctx.stringValue("GetRepoTagScanStatusResponse.Code"));
 		getRepoTagScanStatusResponse.setStatus(_ctx.stringValue("GetRepoTagScanStatusResponse.Status"));
+		getRepoTagScanStatusResponse.setCode(_ctx.stringValue("GetRepoTagScanStatusResponse.Code"));
+		getRepoTagScanStatusResponse.setIsSuccess(_ctx.booleanValue("GetRepoTagScanStatusResponse.IsSuccess"));
+		getRepoTagScanStatusResponse.setScanService(_ctx.stringValue("GetRepoTagScanStatusResponse.ScanService"));
 	 
 	 	return getRepoTagScanStatusResponse;
 	}

@@ -33,7 +33,7 @@ public class UpdateInstanceEndpointStatusRequest extends RpcAcsRequest<UpdateIns
 
 	private String moduleName;
 	public UpdateInstanceEndpointStatusRequest() {
-		super("cr", "2018-12-01", "UpdateInstanceEndpointStatus", "acr");
+		super("cr", "2018-12-01", "UpdateInstanceEndpointStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

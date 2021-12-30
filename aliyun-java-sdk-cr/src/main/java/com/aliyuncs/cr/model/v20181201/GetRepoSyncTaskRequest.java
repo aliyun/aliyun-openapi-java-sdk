@@ -29,7 +29,7 @@ public class GetRepoSyncTaskRequest extends RpcAcsRequest<GetRepoSyncTaskRespons
 
 	private String instanceId;
 	public GetRepoSyncTaskRequest() {
-		super("cr", "2018-12-01", "GetRepoSyncTask", "acr");
+		super("cr", "2018-12-01", "GetRepoSyncTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

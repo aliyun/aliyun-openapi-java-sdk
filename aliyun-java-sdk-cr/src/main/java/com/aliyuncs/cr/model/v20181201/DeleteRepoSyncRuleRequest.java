@@ -29,7 +29,7 @@ public class DeleteRepoSyncRuleRequest extends RpcAcsRequest<DeleteRepoSyncRuleR
 
 	private String syncRuleId;
 	public DeleteRepoSyncRuleRequest() {
-		super("cr", "2018-12-01", "DeleteRepoSyncRule", "acr");
+		super("cr", "2018-12-01", "DeleteRepoSyncRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,38 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
-	private String code;
+	private Long modifiedTime;
 
 	private String requestId;
+
+	private Long createTime;
 
 	private String instanceName;
 
 	private String instanceSpecification;
 
+	private String code;
+
 	private String instanceStatus;
-
-	private Long createTime;
-
-	private Long modifiedTime;
 
 	private String instanceId;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	private Boolean isSuccess;
+
+	public Long getModifiedTime() {
+		return this.modifiedTime;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setModifiedTime(Long modifiedTime) {
+		this.modifiedTime = modifiedTime;
 	}
 
 	public String getRequestId() {
@@ -64,6 +56,14 @@ public class GetInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getInstanceName() {
@@ -82,6 +82,14 @@ public class GetInstanceResponse extends AcsResponse {
 		this.instanceSpecification = instanceSpecification;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getInstanceStatus() {
 		return this.instanceStatus;
 	}
@@ -90,28 +98,20 @@ public class GetInstanceResponse extends AcsResponse {
 		this.instanceStatus = instanceStatus;
 	}
 
-	public Long getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(Long createTime) {
-		this.createTime = createTime;
-	}
-
-	public Long getModifiedTime() {
-		return this.modifiedTime;
-	}
-
-	public void setModifiedTime(Long modifiedTime) {
-		this.modifiedTime = modifiedTime;
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	@Override

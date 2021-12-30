@@ -37,7 +37,7 @@ public class ListRepositoryRequest extends RpcAcsRequest<ListRepositoryResponse>
 
 	private String repoStatus;
 	public ListRepositoryRequest() {
-		super("cr", "2018-12-01", "ListRepository", "acr");
+		super("cr", "2018-12-01", "ListRepository");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

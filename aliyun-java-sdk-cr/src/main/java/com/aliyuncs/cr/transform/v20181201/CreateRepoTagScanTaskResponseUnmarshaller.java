@@ -23,8 +23,8 @@ public class CreateRepoTagScanTaskResponseUnmarshaller {
 	public static CreateRepoTagScanTaskResponse unmarshall(CreateRepoTagScanTaskResponse createRepoTagScanTaskResponse, UnmarshallerContext _ctx) {
 		
 		createRepoTagScanTaskResponse.setRequestId(_ctx.stringValue("CreateRepoTagScanTaskResponse.RequestId"));
-		createRepoTagScanTaskResponse.setIsSuccess(_ctx.booleanValue("CreateRepoTagScanTaskResponse.IsSuccess"));
 		createRepoTagScanTaskResponse.setCode(_ctx.stringValue("CreateRepoTagScanTaskResponse.Code"));
+		createRepoTagScanTaskResponse.setIsSuccess(_ctx.booleanValue("CreateRepoTagScanTaskResponse.IsSuccess"));
 	 
 	 	return createRepoTagScanTaskResponse;
 	}

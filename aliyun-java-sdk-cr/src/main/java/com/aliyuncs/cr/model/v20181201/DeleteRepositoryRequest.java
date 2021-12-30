@@ -29,7 +29,7 @@ public class DeleteRepositoryRequest extends RpcAcsRequest<DeleteRepositoryRespo
 
 	private String instanceId;
 	public DeleteRepositoryRequest() {
-		super("cr", "2018-12-01", "DeleteRepository", "acr");
+		super("cr", "2018-12-01", "DeleteRepository");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

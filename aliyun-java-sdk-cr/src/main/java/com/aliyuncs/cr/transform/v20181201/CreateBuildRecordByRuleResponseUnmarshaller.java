@@ -23,8 +23,8 @@ public class CreateBuildRecordByRuleResponseUnmarshaller {
 	public static CreateBuildRecordByRuleResponse unmarshall(CreateBuildRecordByRuleResponse createBuildRecordByRuleResponse, UnmarshallerContext _ctx) {
 		
 		createBuildRecordByRuleResponse.setRequestId(_ctx.stringValue("CreateBuildRecordByRuleResponse.RequestId"));
-		createBuildRecordByRuleResponse.setIsSuccess(_ctx.booleanValue("CreateBuildRecordByRuleResponse.IsSuccess"));
 		createBuildRecordByRuleResponse.setCode(_ctx.stringValue("CreateBuildRecordByRuleResponse.Code"));
+		createBuildRecordByRuleResponse.setIsSuccess(_ctx.booleanValue("CreateBuildRecordByRuleResponse.IsSuccess"));
 		createBuildRecordByRuleResponse.setBuildRecordId(_ctx.stringValue("CreateBuildRecordByRuleResponse.BuildRecordId"));
 	 
 	 	return createBuildRecordByRuleResponse;

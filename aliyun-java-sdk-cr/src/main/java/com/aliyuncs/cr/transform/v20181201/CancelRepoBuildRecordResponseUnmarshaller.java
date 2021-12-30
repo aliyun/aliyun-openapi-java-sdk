@@ -23,8 +23,8 @@ public class CancelRepoBuildRecordResponseUnmarshaller {
 	public static CancelRepoBuildRecordResponse unmarshall(CancelRepoBuildRecordResponse cancelRepoBuildRecordResponse, UnmarshallerContext _ctx) {
 		
 		cancelRepoBuildRecordResponse.setRequestId(_ctx.stringValue("CancelRepoBuildRecordResponse.RequestId"));
-		cancelRepoBuildRecordResponse.setIsSuccess(_ctx.booleanValue("CancelRepoBuildRecordResponse.IsSuccess"));
 		cancelRepoBuildRecordResponse.setCode(_ctx.stringValue("CancelRepoBuildRecordResponse.Code"));
+		cancelRepoBuildRecordResponse.setIsSuccess(_ctx.booleanValue("CancelRepoBuildRecordResponse.IsSuccess"));
 	 
 	 	return cancelRepoBuildRecordResponse;
 	}

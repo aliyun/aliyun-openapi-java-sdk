@@ -23,14 +23,14 @@ public class GetNamespaceResponseUnmarshaller {
 	public static GetNamespaceResponse unmarshall(GetNamespaceResponse getNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		getNamespaceResponse.setRequestId(_ctx.stringValue("GetNamespaceResponse.RequestId"));
-		getNamespaceResponse.setIsSuccess(_ctx.booleanValue("GetNamespaceResponse.IsSuccess"));
-		getNamespaceResponse.setCode(_ctx.stringValue("GetNamespaceResponse.Code"));
-		getNamespaceResponse.setNamespaceName(_ctx.stringValue("GetNamespaceResponse.NamespaceName"));
-		getNamespaceResponse.setNamespaceStatus(_ctx.stringValue("GetNamespaceResponse.NamespaceStatus"));
-		getNamespaceResponse.setAutoCreateRepo(_ctx.booleanValue("GetNamespaceResponse.AutoCreateRepo"));
 		getNamespaceResponse.setDefaultRepoType(_ctx.stringValue("GetNamespaceResponse.DefaultRepoType"));
-		getNamespaceResponse.setInstanceId(_ctx.stringValue("GetNamespaceResponse.InstanceId"));
 		getNamespaceResponse.setNamespaceId(_ctx.stringValue("GetNamespaceResponse.NamespaceId"));
+		getNamespaceResponse.setNamespaceStatus(_ctx.stringValue("GetNamespaceResponse.NamespaceStatus"));
+		getNamespaceResponse.setCode(_ctx.stringValue("GetNamespaceResponse.Code"));
+		getNamespaceResponse.setInstanceId(_ctx.stringValue("GetNamespaceResponse.InstanceId"));
+		getNamespaceResponse.setAutoCreateRepo(_ctx.booleanValue("GetNamespaceResponse.AutoCreateRepo"));
+		getNamespaceResponse.setIsSuccess(_ctx.booleanValue("GetNamespaceResponse.IsSuccess"));
+		getNamespaceResponse.setNamespaceName(_ctx.stringValue("GetNamespaceResponse.NamespaceName"));
 	 
 	 	return getNamespaceResponse;
 	}

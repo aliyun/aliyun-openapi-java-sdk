@@ -24,20 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRepoTagScanStatusResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String status;
 
 	private String code;
 
+	private Boolean isSuccess;
+
 	private String requestId;
 
-	private String status;
+	private String scanService;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getCode() {
@@ -48,6 +50,14 @@ public class GetRepoTagScanStatusResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -56,12 +66,12 @@ public class GetRepoTagScanStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getScanService() {
+		return this.scanService;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setScanService(String scanService) {
+		this.scanService = scanService;
 	}
 
 	@Override

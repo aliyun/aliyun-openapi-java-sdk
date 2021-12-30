@@ -23,8 +23,8 @@ public class CreateInstanceVpcEndpointLinkedVpcResponseUnmarshaller {
 	public static CreateInstanceVpcEndpointLinkedVpcResponse unmarshall(CreateInstanceVpcEndpointLinkedVpcResponse createInstanceVpcEndpointLinkedVpcResponse, UnmarshallerContext _ctx) {
 		
 		createInstanceVpcEndpointLinkedVpcResponse.setRequestId(_ctx.stringValue("CreateInstanceVpcEndpointLinkedVpcResponse.RequestId"));
-		createInstanceVpcEndpointLinkedVpcResponse.setIsSuccess(_ctx.booleanValue("CreateInstanceVpcEndpointLinkedVpcResponse.IsSuccess"));
 		createInstanceVpcEndpointLinkedVpcResponse.setCode(_ctx.stringValue("CreateInstanceVpcEndpointLinkedVpcResponse.Code"));
+		createInstanceVpcEndpointLinkedVpcResponse.setIsSuccess(_ctx.booleanValue("CreateInstanceVpcEndpointLinkedVpcResponse.IsSuccess"));
 	 
 	 	return createInstanceVpcEndpointLinkedVpcResponse;
 	}

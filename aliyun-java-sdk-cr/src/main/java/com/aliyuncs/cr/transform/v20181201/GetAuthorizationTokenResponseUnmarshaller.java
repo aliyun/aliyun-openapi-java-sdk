@@ -23,11 +23,11 @@ public class GetAuthorizationTokenResponseUnmarshaller {
 	public static GetAuthorizationTokenResponse unmarshall(GetAuthorizationTokenResponse getAuthorizationTokenResponse, UnmarshallerContext _ctx) {
 		
 		getAuthorizationTokenResponse.setRequestId(_ctx.stringValue("GetAuthorizationTokenResponse.RequestId"));
-		getAuthorizationTokenResponse.setIsSuccess(_ctx.booleanValue("GetAuthorizationTokenResponse.IsSuccess"));
+		getAuthorizationTokenResponse.setExpireTime(_ctx.longValue("GetAuthorizationTokenResponse.ExpireTime"));
 		getAuthorizationTokenResponse.setCode(_ctx.stringValue("GetAuthorizationTokenResponse.Code"));
+		getAuthorizationTokenResponse.setIsSuccess(_ctx.booleanValue("GetAuthorizationTokenResponse.IsSuccess"));
 		getAuthorizationTokenResponse.setTempUsername(_ctx.stringValue("GetAuthorizationTokenResponse.TempUsername"));
 		getAuthorizationTokenResponse.setAuthorizationToken(_ctx.stringValue("GetAuthorizationTokenResponse.AuthorizationToken"));
-		getAuthorizationTokenResponse.setExpireTime(_ctx.longValue("GetAuthorizationTokenResponse.ExpireTime"));
 	 
 	 	return getAuthorizationTokenResponse;
 	}

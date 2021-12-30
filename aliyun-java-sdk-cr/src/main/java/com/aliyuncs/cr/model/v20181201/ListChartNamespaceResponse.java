@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListChartNamespaceResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListChartNamespaceResponse extends AcsResponse {
 
 	private List<NamespacesItem> namespaces;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListChartNamespaceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,24 +97,24 @@ public class ListChartNamespaceResponse extends AcsResponse {
 
 	public static class NamespacesItem {
 
-		private String namespaceName;
+		private String defaultRepoType;
 
 		private String namespaceStatus;
 
-		private Boolean autoCreateRepo;
+		private String namespaceId;
 
-		private String defaultRepoType;
+		private Boolean autoCreateRepo;
 
 		private String instanceId;
 
-		private String namespaceId;
+		private String namespaceName;
 
-		public String getNamespaceName() {
-			return this.namespaceName;
+		public String getDefaultRepoType() {
+			return this.defaultRepoType;
 		}
 
-		public void setNamespaceName(String namespaceName) {
-			this.namespaceName = namespaceName;
+		public void setDefaultRepoType(String defaultRepoType) {
+			this.defaultRepoType = defaultRepoType;
 		}
 
 		public String getNamespaceStatus() {
@@ -125,20 +125,20 @@ public class ListChartNamespaceResponse extends AcsResponse {
 			this.namespaceStatus = namespaceStatus;
 		}
 
+		public String getNamespaceId() {
+			return this.namespaceId;
+		}
+
+		public void setNamespaceId(String namespaceId) {
+			this.namespaceId = namespaceId;
+		}
+
 		public Boolean getAutoCreateRepo() {
 			return this.autoCreateRepo;
 		}
 
 		public void setAutoCreateRepo(Boolean autoCreateRepo) {
 			this.autoCreateRepo = autoCreateRepo;
-		}
-
-		public String getDefaultRepoType() {
-			return this.defaultRepoType;
-		}
-
-		public void setDefaultRepoType(String defaultRepoType) {
-			this.defaultRepoType = defaultRepoType;
 		}
 
 		public String getInstanceId() {
@@ -149,12 +149,12 @@ public class ListChartNamespaceResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getNamespaceId() {
-			return this.namespaceId;
+		public String getNamespaceName() {
+			return this.namespaceName;
 		}
 
-		public void setNamespaceId(String namespaceId) {
-			this.namespaceId = namespaceId;
+		public void setNamespaceName(String namespaceName) {
+			this.namespaceName = namespaceName;
 		}
 	}
 

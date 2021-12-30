@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstanceResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListInstanceResponse extends AcsResponse {
 
 	private List<InstancesItem> instances;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListInstanceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,26 +97,26 @@ public class ListInstanceResponse extends AcsResponse {
 
 	public static class InstancesItem {
 
-		private String instanceId;
+		private String modifiedTime;
 
 		private String instanceName;
+
+		private String createTime;
 
 		private String instanceSpecification;
 
 		private String instanceStatus;
 
-		private String createTime;
-
-		private String modifiedTime;
+		private String instanceId;
 
 		private String regionId;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getInstanceName() {
@@ -125,6 +125,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getInstanceSpecification() {
@@ -143,20 +151,12 @@ public class ListInstanceResponse extends AcsResponse {
 			this.instanceStatus = instanceStatus;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getRegionId() {

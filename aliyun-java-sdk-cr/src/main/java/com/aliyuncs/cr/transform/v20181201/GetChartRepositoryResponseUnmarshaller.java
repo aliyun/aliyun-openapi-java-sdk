@@ -23,17 +23,17 @@ public class GetChartRepositoryResponseUnmarshaller {
 	public static GetChartRepositoryResponse unmarshall(GetChartRepositoryResponse getChartRepositoryResponse, UnmarshallerContext _ctx) {
 		
 		getChartRepositoryResponse.setRequestId(_ctx.stringValue("GetChartRepositoryResponse.RequestId"));
-		getChartRepositoryResponse.setIsSuccess(_ctx.booleanValue("GetChartRepositoryResponse.IsSuccess"));
-		getChartRepositoryResponse.setCode(_ctx.stringValue("GetChartRepositoryResponse.Code"));
-		getChartRepositoryResponse.setInstanceId(_ctx.stringValue("GetChartRepositoryResponse.InstanceId"));
-		getChartRepositoryResponse.setRepoId(_ctx.stringValue("GetChartRepositoryResponse.RepoId"));
-		getChartRepositoryResponse.setRepoNamespaceName(_ctx.stringValue("GetChartRepositoryResponse.RepoNamespaceName"));
-		getChartRepositoryResponse.setRepoName(_ctx.stringValue("GetChartRepositoryResponse.RepoName"));
-		getChartRepositoryResponse.setRepoStatus(_ctx.stringValue("GetChartRepositoryResponse.RepoStatus"));
-		getChartRepositoryResponse.setRepoType(_ctx.stringValue("GetChartRepositoryResponse.RepoType"));
 		getChartRepositoryResponse.setSummary(_ctx.stringValue("GetChartRepositoryResponse.Summary"));
 		getChartRepositoryResponse.setCreateTime(_ctx.longValue("GetChartRepositoryResponse.CreateTime"));
+		getChartRepositoryResponse.setIsSuccess(_ctx.booleanValue("GetChartRepositoryResponse.IsSuccess"));
+		getChartRepositoryResponse.setInstanceId(_ctx.stringValue("GetChartRepositoryResponse.InstanceId"));
+		getChartRepositoryResponse.setRepoStatus(_ctx.stringValue("GetChartRepositoryResponse.RepoStatus"));
+		getChartRepositoryResponse.setRepoType(_ctx.stringValue("GetChartRepositoryResponse.RepoType"));
+		getChartRepositoryResponse.setRepoId(_ctx.stringValue("GetChartRepositoryResponse.RepoId"));
 		getChartRepositoryResponse.setModifiedTime(_ctx.longValue("GetChartRepositoryResponse.ModifiedTime"));
+		getChartRepositoryResponse.setCode(_ctx.stringValue("GetChartRepositoryResponse.Code"));
+		getChartRepositoryResponse.setRepoNamespaceName(_ctx.stringValue("GetChartRepositoryResponse.RepoNamespaceName"));
+		getChartRepositoryResponse.setRepoName(_ctx.stringValue("GetChartRepositoryResponse.RepoName"));
 	 
 	 	return getChartRepositoryResponse;
 	}

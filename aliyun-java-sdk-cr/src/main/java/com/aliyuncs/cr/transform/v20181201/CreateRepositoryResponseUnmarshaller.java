@@ -23,9 +23,9 @@ public class CreateRepositoryResponseUnmarshaller {
 	public static CreateRepositoryResponse unmarshall(CreateRepositoryResponse createRepositoryResponse, UnmarshallerContext _ctx) {
 		
 		createRepositoryResponse.setRequestId(_ctx.stringValue("CreateRepositoryResponse.RequestId"));
-		createRepositoryResponse.setIsSuccess(_ctx.booleanValue("CreateRepositoryResponse.IsSuccess"));
 		createRepositoryResponse.setCode(_ctx.stringValue("CreateRepositoryResponse.Code"));
 		createRepositoryResponse.setRepoId(_ctx.stringValue("CreateRepositoryResponse.RepoId"));
+		createRepositoryResponse.setIsSuccess(_ctx.booleanValue("CreateRepositoryResponse.IsSuccess"));
 	 
 	 	return createRepositoryResponse;
 	}

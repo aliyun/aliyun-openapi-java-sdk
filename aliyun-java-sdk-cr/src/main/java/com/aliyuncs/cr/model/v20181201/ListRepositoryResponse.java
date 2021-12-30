@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepositoryResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListRepositoryResponse extends AcsResponse {
 
 	private List<RepositoriesItem> repositories;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListRepositoryResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,58 +97,34 @@ public class ListRepositoryResponse extends AcsResponse {
 
 	public static class RepositoriesItem {
 
-		private String repoNamespaceName;
-
-		private String repoName;
-
-		private String repoStatus;
-
-		private String repoType;
+		private String summary;
 
 		private String repoBuildType;
 
-		private String summary;
-
-		private String instanceId;
+		private Long modifiedTime;
 
 		private String repoId;
 
 		private Long createTime;
 
-		private Long modifiedTime;
+		private String repoNamespaceName;
 
 		private Boolean tagImmutability;
 
-		public String getRepoNamespaceName() {
-			return this.repoNamespaceName;
+		private String instanceId;
+
+		private String repoType;
+
+		private String repoStatus;
+
+		private String repoName;
+
+		public String getSummary() {
+			return this.summary;
 		}
 
-		public void setRepoNamespaceName(String repoNamespaceName) {
-			this.repoNamespaceName = repoNamespaceName;
-		}
-
-		public String getRepoName() {
-			return this.repoName;
-		}
-
-		public void setRepoName(String repoName) {
-			this.repoName = repoName;
-		}
-
-		public String getRepoStatus() {
-			return this.repoStatus;
-		}
-
-		public void setRepoStatus(String repoStatus) {
-			this.repoStatus = repoStatus;
-		}
-
-		public String getRepoType() {
-			return this.repoType;
-		}
-
-		public void setRepoType(String repoType) {
-			this.repoType = repoType;
+		public void setSummary(String summary) {
+			this.summary = summary;
 		}
 
 		public String getRepoBuildType() {
@@ -159,20 +135,12 @@ public class ListRepositoryResponse extends AcsResponse {
 			this.repoBuildType = repoBuildType;
 		}
 
-		public String getSummary() {
-			return this.summary;
+		public Long getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setSummary(String summary) {
-			this.summary = summary;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setModifiedTime(Long modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getRepoId() {
@@ -191,12 +159,12 @@ public class ListRepositoryResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getModifiedTime() {
-			return this.modifiedTime;
+		public String getRepoNamespaceName() {
+			return this.repoNamespaceName;
 		}
 
-		public void setModifiedTime(Long modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setRepoNamespaceName(String repoNamespaceName) {
+			this.repoNamespaceName = repoNamespaceName;
 		}
 
 		public Boolean getTagImmutability() {
@@ -205,6 +173,38 @@ public class ListRepositoryResponse extends AcsResponse {
 
 		public void setTagImmutability(Boolean tagImmutability) {
 			this.tagImmutability = tagImmutability;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRepoType() {
+			return this.repoType;
+		}
+
+		public void setRepoType(String repoType) {
+			this.repoType = repoType;
+		}
+
+		public String getRepoStatus() {
+			return this.repoStatus;
+		}
+
+		public void setRepoStatus(String repoStatus) {
+			this.repoStatus = repoStatus;
+		}
+
+		public String getRepoName() {
+			return this.repoName;
+		}
+
+		public void setRepoName(String repoName) {
+			this.repoName = repoName;
 		}
 	}
 

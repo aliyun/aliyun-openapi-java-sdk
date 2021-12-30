@@ -27,24 +27,24 @@ public class ListChartRepositoryResponseUnmarshaller {
 	public static ListChartRepositoryResponse unmarshall(ListChartRepositoryResponse listChartRepositoryResponse, UnmarshallerContext _ctx) {
 		
 		listChartRepositoryResponse.setRequestId(_ctx.stringValue("ListChartRepositoryResponse.RequestId"));
-		listChartRepositoryResponse.setIsSuccess(_ctx.booleanValue("ListChartRepositoryResponse.IsSuccess"));
 		listChartRepositoryResponse.setCode(_ctx.stringValue("ListChartRepositoryResponse.Code"));
 		listChartRepositoryResponse.setPageNo(_ctx.integerValue("ListChartRepositoryResponse.PageNo"));
+		listChartRepositoryResponse.setIsSuccess(_ctx.booleanValue("ListChartRepositoryResponse.IsSuccess"));
 		listChartRepositoryResponse.setPageSize(_ctx.integerValue("ListChartRepositoryResponse.PageSize"));
 		listChartRepositoryResponse.setTotalCount(_ctx.stringValue("ListChartRepositoryResponse.TotalCount"));
 
 		List<RepositoriesItem> repositories = new ArrayList<RepositoriesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListChartRepositoryResponse.Repositories.Length"); i++) {
 			RepositoriesItem repositoriesItem = new RepositoriesItem();
-			repositoriesItem.setRepoNamespaceName(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoNamespaceName"));
-			repositoriesItem.setRepoName(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoName"));
-			repositoriesItem.setRepoStatus(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoStatus"));
-			repositoriesItem.setRepoType(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoType"));
 			repositoriesItem.setSummary(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].Summary"));
-			repositoriesItem.setInstanceId(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].InstanceId"));
+			repositoriesItem.setModifiedTime(_ctx.longValue("ListChartRepositoryResponse.Repositories["+ i +"].ModifiedTime"));
 			repositoriesItem.setRepoId(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoId"));
 			repositoriesItem.setCreateTime(_ctx.longValue("ListChartRepositoryResponse.Repositories["+ i +"].CreateTime"));
-			repositoriesItem.setModifiedTime(_ctx.longValue("ListChartRepositoryResponse.Repositories["+ i +"].ModifiedTime"));
+			repositoriesItem.setRepoNamespaceName(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoNamespaceName"));
+			repositoriesItem.setInstanceId(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].InstanceId"));
+			repositoriesItem.setRepoType(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoType"));
+			repositoriesItem.setRepoStatus(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoStatus"));
+			repositoriesItem.setRepoName(_ctx.stringValue("ListChartRepositoryResponse.Repositories["+ i +"].RepoName"));
 
 			repositories.add(repositoriesItem);
 		}

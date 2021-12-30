@@ -26,21 +26,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRepoTagManifestResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
 	private String code;
+
+	private Boolean isSuccess;
 
 	private String requestId;
 
 	private Manifest manifest;
-
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
-	}
-
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -48,6 +40,14 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public String getRequestId() {
@@ -68,15 +68,15 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 	public static class Manifest {
 
-		private Integer schemaVersion;
+		private String tag;
 
 		private String name;
 
-		private String tag;
+		private String mediaType;
+
+		private Integer schemaVersion;
 
 		private String architecture;
-
-		private String mediaType;
 
 		private List<FsLayersItem> fsLayers;
 
@@ -88,12 +88,12 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 		private Config config;
 
-		public Integer getSchemaVersion() {
-			return this.schemaVersion;
+		public String getTag() {
+			return this.tag;
 		}
 
-		public void setSchemaVersion(Integer schemaVersion) {
-			this.schemaVersion = schemaVersion;
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 
 		public String getName() {
@@ -104,12 +104,20 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getTag() {
-			return this.tag;
+		public String getMediaType() {
+			return this.mediaType;
 		}
 
-		public void setTag(String tag) {
-			this.tag = tag;
+		public void setMediaType(String mediaType) {
+			this.mediaType = mediaType;
+		}
+
+		public Integer getSchemaVersion() {
+			return this.schemaVersion;
+		}
+
+		public void setSchemaVersion(Integer schemaVersion) {
+			this.schemaVersion = schemaVersion;
 		}
 
 		public String getArchitecture() {
@@ -118,14 +126,6 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
-		}
-
-		public String getMediaType() {
-			return this.mediaType;
-		}
-
-		public void setMediaType(String mediaType) {
-			this.mediaType = mediaType;
 		}
 
 		public List<FsLayersItem> getFsLayers() {
@@ -196,19 +196,11 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 		public static class SignaturesItem {
 
-			private Map<Object,Object> header;
-
 			private String signature;
 
+			private Map<Object,Object> header;
+
 			private String _protected;
-
-			public Map<Object,Object> getHeader() {
-				return this.header;
-			}
-
-			public void setHeader(Map<Object,Object> header) {
-				this.header = header;
-			}
 
 			public String getSignature() {
 				return this.signature;
@@ -216,6 +208,14 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 			public void setSignature(String signature) {
 				this.signature = signature;
+			}
+
+			public Map<Object,Object> getHeader() {
+				return this.header;
+			}
+
+			public void setHeader(Map<Object,Object> header) {
+				this.header = header;
 			}
 
 			public String get_Protected() {
@@ -229,11 +229,19 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 		public static class LayersItem {
 
+			private String digest;
+
 			private String mediaType;
 
 			private Long size;
 
-			private String digest;
+			public String getDigest() {
+				return this.digest;
+			}
+
+			public void setDigest(String digest) {
+				this.digest = digest;
+			}
 
 			public String getMediaType() {
 				return this.mediaType;
@@ -249,24 +257,24 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 			public void setSize(Long size) {
 				this.size = size;
-			}
-
-			public String getDigest() {
-				return this.digest;
-			}
-
-			public void setDigest(String digest) {
-				this.digest = digest;
 			}
 		}
 
 		public static class Config {
 
+			private String digest;
+
 			private String mediaType;
 
 			private Long size;
 
-			private String digest;
+			public String getDigest() {
+				return this.digest;
+			}
+
+			public void setDigest(String digest) {
+				this.digest = digest;
+			}
 
 			public String getMediaType() {
 				return this.mediaType;
@@ -282,14 +290,6 @@ public class GetRepoTagManifestResponse extends AcsResponse {
 
 			public void setSize(Long size) {
 				this.size = size;
-			}
-
-			public String getDigest() {
-				return this.digest;
-			}
-
-			public void setDigest(String digest) {
-				this.digest = digest;
 			}
 		}
 	}

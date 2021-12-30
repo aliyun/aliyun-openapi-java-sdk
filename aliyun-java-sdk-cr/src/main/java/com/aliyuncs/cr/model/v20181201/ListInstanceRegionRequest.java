@@ -27,7 +27,7 @@ public class ListInstanceRegionRequest extends RpcAcsRequest<ListInstanceRegionR
 
 	private String lang;
 	public ListInstanceRegionRequest() {
-		super("cr", "2018-12-01", "ListInstanceRegion", "acr");
+		super("cr", "2018-12-01", "ListInstanceRegion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

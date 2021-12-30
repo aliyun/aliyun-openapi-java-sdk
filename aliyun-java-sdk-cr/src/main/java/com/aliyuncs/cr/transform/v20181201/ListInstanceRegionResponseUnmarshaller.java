@@ -27,14 +27,14 @@ public class ListInstanceRegionResponseUnmarshaller {
 	public static ListInstanceRegionResponse unmarshall(ListInstanceRegionResponse listInstanceRegionResponse, UnmarshallerContext _ctx) {
 		
 		listInstanceRegionResponse.setRequestId(_ctx.stringValue("ListInstanceRegionResponse.RequestId"));
-		listInstanceRegionResponse.setIsSuccess(_ctx.booleanValue("ListInstanceRegionResponse.IsSuccess"));
 		listInstanceRegionResponse.setCode(_ctx.stringValue("ListInstanceRegionResponse.Code"));
+		listInstanceRegionResponse.setIsSuccess(_ctx.booleanValue("ListInstanceRegionResponse.IsSuccess"));
 
 		List<RegionsItem> regions = new ArrayList<RegionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceRegionResponse.Regions.Length"); i++) {
 			RegionsItem regionsItem = new RegionsItem();
-			regionsItem.setRegionId(_ctx.stringValue("ListInstanceRegionResponse.Regions["+ i +"].RegionId"));
 			regionsItem.setLocalName(_ctx.stringValue("ListInstanceRegionResponse.Regions["+ i +"].LocalName"));
+			regionsItem.setRegionId(_ctx.stringValue("ListInstanceRegionResponse.Regions["+ i +"].RegionId"));
 
 			regions.add(regionsItem);
 		}

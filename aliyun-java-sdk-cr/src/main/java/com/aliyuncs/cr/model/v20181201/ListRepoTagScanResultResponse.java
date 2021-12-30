@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepoTagScanResultResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListRepoTagScanResultResponse extends AcsResponse {
 
 	private List<VulnerabilitiesItem> vulnerabilities;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListRepoTagScanResultResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,23 +97,57 @@ public class ListRepoTagScanResultResponse extends AcsResponse {
 
 	public static class VulnerabilitiesItem {
 
+		private String severity;
+
+		private String addedBy;
+
+		private String cveName;
+
+		private String description;
+
 		private String feature;
 
 		private String version;
 
 		private String versionFormat;
 
-		private String addedBy;
-
-		private String cveName;
-
 		private String cveLink;
 
-		private String description;
-
-		private String severity;
-
 		private String versionFixed;
+
+		private String fixCmd;
+
+		public String getSeverity() {
+			return this.severity;
+		}
+
+		public void setSeverity(String severity) {
+			this.severity = severity;
+		}
+
+		public String getAddedBy() {
+			return this.addedBy;
+		}
+
+		public void setAddedBy(String addedBy) {
+			this.addedBy = addedBy;
+		}
+
+		public String getCveName() {
+			return this.cveName;
+		}
+
+		public void setCveName(String cveName) {
+			this.cveName = cveName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getFeature() {
 			return this.feature;
@@ -139,22 +173,6 @@ public class ListRepoTagScanResultResponse extends AcsResponse {
 			this.versionFormat = versionFormat;
 		}
 
-		public String getAddedBy() {
-			return this.addedBy;
-		}
-
-		public void setAddedBy(String addedBy) {
-			this.addedBy = addedBy;
-		}
-
-		public String getCveName() {
-			return this.cveName;
-		}
-
-		public void setCveName(String cveName) {
-			this.cveName = cveName;
-		}
-
 		public String getCveLink() {
 			return this.cveLink;
 		}
@@ -163,28 +181,20 @@ public class ListRepoTagScanResultResponse extends AcsResponse {
 			this.cveLink = cveLink;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getSeverity() {
-			return this.severity;
-		}
-
-		public void setSeverity(String severity) {
-			this.severity = severity;
-		}
-
 		public String getVersionFixed() {
 			return this.versionFixed;
 		}
 
 		public void setVersionFixed(String versionFixed) {
 			this.versionFixed = versionFixed;
+		}
+
+		public String getFixCmd() {
+			return this.fixCmd;
+		}
+
+		public void setFixCmd(String fixCmd) {
+			this.fixCmd = fixCmd;
 		}
 	}
 

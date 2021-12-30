@@ -31,7 +31,7 @@ public class DeleteRepoBuildRuleRequest extends RpcAcsRequest<DeleteRepoBuildRul
 
 	private String instanceId;
 	public DeleteRepoBuildRuleRequest() {
-		super("cr", "2018-12-01", "DeleteRepoBuildRule", "acr");
+		super("cr", "2018-12-01", "DeleteRepoBuildRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

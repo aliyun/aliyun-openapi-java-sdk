@@ -39,7 +39,7 @@ public class CreateRepositoryRequest extends RpcAcsRequest<CreateRepositoryRespo
 
 	private String detail;
 	public CreateRepositoryRequest() {
-		super("cr", "2018-12-01", "CreateRepository", "acr");
+		super("cr", "2018-12-01", "CreateRepository");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

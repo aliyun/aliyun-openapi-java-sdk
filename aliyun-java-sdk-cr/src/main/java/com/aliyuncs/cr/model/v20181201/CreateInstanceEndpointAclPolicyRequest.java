@@ -35,7 +35,7 @@ public class CreateInstanceEndpointAclPolicyRequest extends RpcAcsRequest<Create
 
 	private String comment;
 	public CreateInstanceEndpointAclPolicyRequest() {
-		super("cr", "2018-12-01", "CreateInstanceEndpointAclPolicy", "acr");
+		super("cr", "2018-12-01", "CreateInstanceEndpointAclPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

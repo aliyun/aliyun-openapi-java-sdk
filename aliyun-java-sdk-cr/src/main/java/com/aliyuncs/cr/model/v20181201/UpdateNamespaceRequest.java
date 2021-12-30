@@ -33,7 +33,7 @@ public class UpdateNamespaceRequest extends RpcAcsRequest<UpdateNamespaceRespons
 
 	private String instanceId;
 	public UpdateNamespaceRequest() {
-		super("cr", "2018-12-01", "UpdateNamespace", "acr");
+		super("cr", "2018-12-01", "UpdateNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class CreateRepoTriggerRequest extends RpcAcsRequest<CreateRepoTriggerRes
 
 	private String triggerName;
 	public CreateRepoTriggerRequest() {
-		super("cr", "2018-12-01", "CreateRepoTrigger", "acr");
+		super("cr", "2018-12-01", "CreateRepoTrigger");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

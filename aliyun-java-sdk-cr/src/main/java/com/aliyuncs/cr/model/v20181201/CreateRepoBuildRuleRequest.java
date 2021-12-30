@@ -39,7 +39,7 @@ public class CreateRepoBuildRuleRequest extends RpcAcsRequest<CreateRepoBuildRul
 
 	private String pushType;
 	public CreateRepoBuildRuleRequest() {
-		super("cr", "2018-12-01", "CreateRepoBuildRule", "acr");
+		super("cr", "2018-12-01", "CreateRepoBuildRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

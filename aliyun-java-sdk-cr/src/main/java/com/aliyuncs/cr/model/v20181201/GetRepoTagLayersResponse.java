@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRepoTagLayersResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
 	private String code;
+
+	private Boolean isSuccess;
 
 	private String requestId;
 
 	private List<LayersItem> layers;
-
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
-	}
-
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -47,6 +39,14 @@ public class GetRepoTagLayersResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public String getRequestId() {
@@ -69,13 +69,13 @@ public class GetRepoTagLayersResponse extends AcsResponse {
 
 		private String blobDigest;
 
-		private Long blobSize;
+		private Integer layerIndex;
 
 		private String layerInstruction;
 
 		private String layerCMD;
 
-		private Integer layerIndex;
+		private Long blobSize;
 
 		public String getBlobDigest() {
 			return this.blobDigest;
@@ -85,12 +85,12 @@ public class GetRepoTagLayersResponse extends AcsResponse {
 			this.blobDigest = blobDigest;
 		}
 
-		public Long getBlobSize() {
-			return this.blobSize;
+		public Integer getLayerIndex() {
+			return this.layerIndex;
 		}
 
-		public void setBlobSize(Long blobSize) {
-			this.blobSize = blobSize;
+		public void setLayerIndex(Integer layerIndex) {
+			this.layerIndex = layerIndex;
 		}
 
 		public String getLayerInstruction() {
@@ -109,12 +109,12 @@ public class GetRepoTagLayersResponse extends AcsResponse {
 			this.layerCMD = layerCMD;
 		}
 
-		public Integer getLayerIndex() {
-			return this.layerIndex;
+		public Long getBlobSize() {
+			return this.blobSize;
 		}
 
-		public void setLayerIndex(Integer layerIndex) {
-			this.layerIndex = layerIndex;
+		public void setBlobSize(Long blobSize) {
+			this.blobSize = blobSize;
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepoTagResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListRepoTagResponse extends AcsResponse {
 
 	private List<ImagesItem> images;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListRepoTagResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,43 +97,19 @@ public class ListRepoTagResponse extends AcsResponse {
 
 	public static class ImagesItem {
 
-		private String tag;
-
-		private String digest;
-
-		private String imageId;
-
 		private String status;
 
 		private Long imageSize;
 
 		private String imageCreate;
 
+		private String digest;
+
 		private String imageUpdate;
 
-		public String getTag() {
-			return this.tag;
-		}
+		private String tag;
 
-		public void setTag(String tag) {
-			this.tag = tag;
-		}
-
-		public String getDigest() {
-			return this.digest;
-		}
-
-		public void setDigest(String digest) {
-			this.digest = digest;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
+		private String imageId;
 
 		public String getStatus() {
 			return this.status;
@@ -159,12 +135,36 @@ public class ListRepoTagResponse extends AcsResponse {
 			this.imageCreate = imageCreate;
 		}
 
+		public String getDigest() {
+			return this.digest;
+		}
+
+		public void setDigest(String digest) {
+			this.digest = digest;
+		}
+
 		public String getImageUpdate() {
 			return this.imageUpdate;
 		}
 
 		public void setImageUpdate(String imageUpdate) {
 			this.imageUpdate = imageUpdate;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 	}
 

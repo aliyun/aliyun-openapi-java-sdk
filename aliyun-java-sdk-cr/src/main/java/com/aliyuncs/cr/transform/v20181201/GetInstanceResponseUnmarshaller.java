@@ -23,14 +23,14 @@ public class GetInstanceResponseUnmarshaller {
 	public static GetInstanceResponse unmarshall(GetInstanceResponse getInstanceResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceResponse.setRequestId(_ctx.stringValue("GetInstanceResponse.RequestId"));
-		getInstanceResponse.setIsSuccess(_ctx.booleanValue("GetInstanceResponse.IsSuccess"));
-		getInstanceResponse.setCode(_ctx.stringValue("GetInstanceResponse.Code"));
+		getInstanceResponse.setModifiedTime(_ctx.longValue("GetInstanceResponse.ModifiedTime"));
+		getInstanceResponse.setCreateTime(_ctx.longValue("GetInstanceResponse.CreateTime"));
 		getInstanceResponse.setInstanceName(_ctx.stringValue("GetInstanceResponse.InstanceName"));
 		getInstanceResponse.setInstanceSpecification(_ctx.stringValue("GetInstanceResponse.InstanceSpecification"));
+		getInstanceResponse.setCode(_ctx.stringValue("GetInstanceResponse.Code"));
 		getInstanceResponse.setInstanceStatus(_ctx.stringValue("GetInstanceResponse.InstanceStatus"));
-		getInstanceResponse.setCreateTime(_ctx.longValue("GetInstanceResponse.CreateTime"));
-		getInstanceResponse.setModifiedTime(_ctx.longValue("GetInstanceResponse.ModifiedTime"));
 		getInstanceResponse.setInstanceId(_ctx.stringValue("GetInstanceResponse.InstanceId"));
+		getInstanceResponse.setIsSuccess(_ctx.booleanValue("GetInstanceResponse.IsSuccess"));
 	 
 	 	return getInstanceResponse;
 	}

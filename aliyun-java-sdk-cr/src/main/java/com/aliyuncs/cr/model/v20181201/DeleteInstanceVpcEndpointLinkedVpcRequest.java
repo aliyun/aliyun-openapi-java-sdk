@@ -33,7 +33,7 @@ public class DeleteInstanceVpcEndpointLinkedVpcRequest extends RpcAcsRequest<Del
 
 	private String moduleName;
 	public DeleteInstanceVpcEndpointLinkedVpcRequest() {
-		super("cr", "2018-12-01", "DeleteInstanceVpcEndpointLinkedVpc", "acr");
+		super("cr", "2018-12-01", "DeleteInstanceVpcEndpointLinkedVpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

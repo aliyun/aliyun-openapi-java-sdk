@@ -29,7 +29,7 @@ public class DeleteNamespaceRequest extends RpcAcsRequest<DeleteNamespaceRespons
 
 	private String instanceId;
 	public DeleteNamespaceRequest() {
-		super("cr", "2018-12-01", "DeleteNamespace", "acr");
+		super("cr", "2018-12-01", "DeleteNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,8 +23,8 @@ public class UpdateRepositoryResponseUnmarshaller {
 	public static UpdateRepositoryResponse unmarshall(UpdateRepositoryResponse updateRepositoryResponse, UnmarshallerContext _ctx) {
 		
 		updateRepositoryResponse.setRequestId(_ctx.stringValue("UpdateRepositoryResponse.RequestId"));
-		updateRepositoryResponse.setIsSuccess(_ctx.booleanValue("UpdateRepositoryResponse.IsSuccess"));
 		updateRepositoryResponse.setCode(_ctx.stringValue("UpdateRepositoryResponse.Code"));
+		updateRepositoryResponse.setIsSuccess(_ctx.booleanValue("UpdateRepositoryResponse.IsSuccess"));
 	 
 	 	return updateRepositoryResponse;
 	}

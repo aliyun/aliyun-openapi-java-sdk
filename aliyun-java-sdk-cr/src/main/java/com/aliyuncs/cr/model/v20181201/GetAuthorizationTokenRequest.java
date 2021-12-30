@@ -27,7 +27,7 @@ public class GetAuthorizationTokenRequest extends RpcAcsRequest<GetAuthorization
 
 	private String instanceId;
 	public GetAuthorizationTokenRequest() {
-		super("cr", "2018-12-01", "GetAuthorizationToken", "acr");
+		super("cr", "2018-12-01", "GetAuthorizationToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

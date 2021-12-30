@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepoSyncRuleResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListRepoSyncRuleResponse extends AcsResponse {
 
 	private List<SyncRulesItem> syncRules;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListRepoSyncRuleResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,9 +97,29 @@ public class ListRepoSyncRuleResponse extends AcsResponse {
 
 	public static class SyncRulesItem {
 
-		private String syncRuleId;
+		private String syncTrigger;
+
+		private Long createTime;
 
 		private String localRegionId;
+
+		private String syncScope;
+
+		private String tagFilter;
+
+		private String targetNamespaceName;
+
+		private String targetInstanceId;
+
+		private String targetRepoName;
+
+		private String syncRuleId;
+
+		private Long modifiedTime;
+
+		private String syncRuleName;
+
+		private String targetRegionId;
 
 		private String localInstanceId;
 
@@ -107,27 +127,73 @@ public class ListRepoSyncRuleResponse extends AcsResponse {
 
 		private String localRepoName;
 
-		private String targetRegionId;
-
-		private String targetInstanceId;
-
-		private String targetNamespaceName;
-
-		private String targetRepoName;
-
-		private String tagFilter;
-
-		private String syncScope;
-
 		private String syncDirection;
 
-		private Long createTime;
+		private Boolean crossUser;
 
-		private Long modifiedTime;
+		public String getSyncTrigger() {
+			return this.syncTrigger;
+		}
 
-		private String syncRuleName;
+		public void setSyncTrigger(String syncTrigger) {
+			this.syncTrigger = syncTrigger;
+		}
 
-		private String syncTrigger;
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getLocalRegionId() {
+			return this.localRegionId;
+		}
+
+		public void setLocalRegionId(String localRegionId) {
+			this.localRegionId = localRegionId;
+		}
+
+		public String getSyncScope() {
+			return this.syncScope;
+		}
+
+		public void setSyncScope(String syncScope) {
+			this.syncScope = syncScope;
+		}
+
+		public String getTagFilter() {
+			return this.tagFilter;
+		}
+
+		public void setTagFilter(String tagFilter) {
+			this.tagFilter = tagFilter;
+		}
+
+		public String getTargetNamespaceName() {
+			return this.targetNamespaceName;
+		}
+
+		public void setTargetNamespaceName(String targetNamespaceName) {
+			this.targetNamespaceName = targetNamespaceName;
+		}
+
+		public String getTargetInstanceId() {
+			return this.targetInstanceId;
+		}
+
+		public void setTargetInstanceId(String targetInstanceId) {
+			this.targetInstanceId = targetInstanceId;
+		}
+
+		public String getTargetRepoName() {
+			return this.targetRepoName;
+		}
+
+		public void setTargetRepoName(String targetRepoName) {
+			this.targetRepoName = targetRepoName;
+		}
 
 		public String getSyncRuleId() {
 			return this.syncRuleId;
@@ -137,12 +203,28 @@ public class ListRepoSyncRuleResponse extends AcsResponse {
 			this.syncRuleId = syncRuleId;
 		}
 
-		public String getLocalRegionId() {
-			return this.localRegionId;
+		public Long getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setLocalRegionId(String localRegionId) {
-			this.localRegionId = localRegionId;
+		public void setModifiedTime(Long modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getSyncRuleName() {
+			return this.syncRuleName;
+		}
+
+		public void setSyncRuleName(String syncRuleName) {
+			this.syncRuleName = syncRuleName;
+		}
+
+		public String getTargetRegionId() {
+			return this.targetRegionId;
+		}
+
+		public void setTargetRegionId(String targetRegionId) {
+			this.targetRegionId = targetRegionId;
 		}
 
 		public String getLocalInstanceId() {
@@ -169,54 +251,6 @@ public class ListRepoSyncRuleResponse extends AcsResponse {
 			this.localRepoName = localRepoName;
 		}
 
-		public String getTargetRegionId() {
-			return this.targetRegionId;
-		}
-
-		public void setTargetRegionId(String targetRegionId) {
-			this.targetRegionId = targetRegionId;
-		}
-
-		public String getTargetInstanceId() {
-			return this.targetInstanceId;
-		}
-
-		public void setTargetInstanceId(String targetInstanceId) {
-			this.targetInstanceId = targetInstanceId;
-		}
-
-		public String getTargetNamespaceName() {
-			return this.targetNamespaceName;
-		}
-
-		public void setTargetNamespaceName(String targetNamespaceName) {
-			this.targetNamespaceName = targetNamespaceName;
-		}
-
-		public String getTargetRepoName() {
-			return this.targetRepoName;
-		}
-
-		public void setTargetRepoName(String targetRepoName) {
-			this.targetRepoName = targetRepoName;
-		}
-
-		public String getTagFilter() {
-			return this.tagFilter;
-		}
-
-		public void setTagFilter(String tagFilter) {
-			this.tagFilter = tagFilter;
-		}
-
-		public String getSyncScope() {
-			return this.syncScope;
-		}
-
-		public void setSyncScope(String syncScope) {
-			this.syncScope = syncScope;
-		}
-
 		public String getSyncDirection() {
 			return this.syncDirection;
 		}
@@ -225,36 +259,12 @@ public class ListRepoSyncRuleResponse extends AcsResponse {
 			this.syncDirection = syncDirection;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public Boolean getCrossUser() {
+			return this.crossUser;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(Long modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getSyncRuleName() {
-			return this.syncRuleName;
-		}
-
-		public void setSyncRuleName(String syncRuleName) {
-			this.syncRuleName = syncRuleName;
-		}
-
-		public String getSyncTrigger() {
-			return this.syncTrigger;
-		}
-
-		public void setSyncTrigger(String syncTrigger) {
-			this.syncTrigger = syncTrigger;
+		public void setCrossUser(Boolean crossUser) {
+			this.crossUser = crossUser;
 		}
 	}
 

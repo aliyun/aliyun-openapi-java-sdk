@@ -31,9 +31,11 @@ public class GetRepoTagScanSummaryRequest extends RpcAcsRequest<GetRepoTagScanSu
 
 	private String instanceId;
 
+	private String digest;
+
 	private String tag;
 	public GetRepoTagScanSummaryRequest() {
-		super("cr", "2018-12-01", "GetRepoTagScanSummary", "acr");
+		super("cr", "2018-12-01", "GetRepoTagScanSummary");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class GetRepoTagScanSummaryRequest extends RpcAcsRequest<GetRepoTagScanSu
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDigest() {
+		return this.digest;
+	}
+
+	public void setDigest(String digest) {
+		this.digest = digest;
+		if(digest != null){
+			putQueryParameter("Digest", digest);
 		}
 	}
 

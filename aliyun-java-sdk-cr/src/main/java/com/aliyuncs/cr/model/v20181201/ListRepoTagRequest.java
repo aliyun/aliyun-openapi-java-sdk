@@ -33,7 +33,7 @@ public class ListRepoTagRequest extends RpcAcsRequest<ListRepoTagResponse> {
 
 	private Integer pageSize;
 	public ListRepoTagRequest() {
-		super("cr", "2018-12-01", "ListRepoTag", "acr");
+		super("cr", "2018-12-01", "ListRepoTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

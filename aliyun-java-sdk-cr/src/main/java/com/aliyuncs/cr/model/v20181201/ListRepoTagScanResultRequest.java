@@ -37,9 +37,11 @@ public class ListRepoTagScanResultRequest extends RpcAcsRequest<ListRepoTagScanR
 
 	private Integer pageSize;
 
+	private String digest;
+
 	private String tag;
 	public ListRepoTagScanResultRequest() {
-		super("cr", "2018-12-01", "ListRepoTagScanResult", "acr");
+		super("cr", "2018-12-01", "ListRepoTagScanResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -110,6 +112,17 @@ public class ListRepoTagScanResultRequest extends RpcAcsRequest<ListRepoTagScanR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDigest() {
+		return this.digest;
+	}
+
+	public void setDigest(String digest) {
+		this.digest = digest;
+		if(digest != null){
+			putQueryParameter("Digest", digest);
 		}
 	}
 

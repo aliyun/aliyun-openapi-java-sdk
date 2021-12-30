@@ -35,7 +35,7 @@ public class DeleteChartReleaseRequest extends RpcAcsRequest<DeleteChartReleaseR
 
 	private String chart;
 	public DeleteChartReleaseRequest() {
-		super("cr", "2018-12-01", "DeleteChartRelease", "acr");
+		super("cr", "2018-12-01", "DeleteChartRelease");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

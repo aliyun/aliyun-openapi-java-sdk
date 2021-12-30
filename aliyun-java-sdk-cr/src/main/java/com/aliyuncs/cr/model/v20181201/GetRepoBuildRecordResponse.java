@@ -24,60 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRepoBuildRecordResponse extends AcsResponse {
 
-	private Boolean isSuccess;
-
-	private String code;
-
-	private String requestId;
-
-	private String buildRecordId;
-
-	private Long startTime;
+	private String status;
 
 	private Long endTime;
 
-	private String status;
+	private Long startTime;
+
+	private String requestId;
+
+	private String code;
+
+	private Boolean isSuccess;
+
+	private String buildRecordId;
 
 	private Image image;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getBuildRecordId() {
-		return this.buildRecordId;
-	}
-
-	public void setBuildRecordId(String buildRecordId) {
-		this.buildRecordId = buildRecordId;
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public Long getEndTime() {
@@ -88,12 +56,44 @@ public class GetRepoBuildRecordResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public Long getStartTime() {
+		return this.startTime;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
+	public String getBuildRecordId() {
+		return this.buildRecordId;
+	}
+
+	public void setBuildRecordId(String buildRecordId) {
+		this.buildRecordId = buildRecordId;
 	}
 
 	public Image getImage() {
@@ -108,9 +108,9 @@ public class GetRepoBuildRecordResponse extends AcsResponse {
 
 		private String repoNamespaceName;
 
-		private String repoName;
-
 		private String imageTag;
+
+		private String repoName;
 
 		public String getRepoNamespaceName() {
 			return this.repoNamespaceName;
@@ -120,20 +120,20 @@ public class GetRepoBuildRecordResponse extends AcsResponse {
 			this.repoNamespaceName = repoNamespaceName;
 		}
 
-		public String getRepoName() {
-			return this.repoName;
-		}
-
-		public void setRepoName(String repoName) {
-			this.repoName = repoName;
-		}
-
 		public String getImageTag() {
 			return this.imageTag;
 		}
 
 		public void setImageTag(String imageTag) {
 			this.imageTag = imageTag;
+		}
+
+		public String getRepoName() {
+			return this.repoName;
+		}
+
+		public void setRepoName(String repoName) {
+			this.repoName = repoName;
 		}
 	}
 

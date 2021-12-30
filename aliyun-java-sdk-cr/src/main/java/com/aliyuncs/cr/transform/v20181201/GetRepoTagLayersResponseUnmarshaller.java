@@ -27,17 +27,17 @@ public class GetRepoTagLayersResponseUnmarshaller {
 	public static GetRepoTagLayersResponse unmarshall(GetRepoTagLayersResponse getRepoTagLayersResponse, UnmarshallerContext _ctx) {
 		
 		getRepoTagLayersResponse.setRequestId(_ctx.stringValue("GetRepoTagLayersResponse.RequestId"));
-		getRepoTagLayersResponse.setIsSuccess(_ctx.booleanValue("GetRepoTagLayersResponse.IsSuccess"));
 		getRepoTagLayersResponse.setCode(_ctx.stringValue("GetRepoTagLayersResponse.Code"));
+		getRepoTagLayersResponse.setIsSuccess(_ctx.booleanValue("GetRepoTagLayersResponse.IsSuccess"));
 
 		List<LayersItem> layers = new ArrayList<LayersItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRepoTagLayersResponse.Layers.Length"); i++) {
 			LayersItem layersItem = new LayersItem();
 			layersItem.setBlobDigest(_ctx.stringValue("GetRepoTagLayersResponse.Layers["+ i +"].BlobDigest"));
-			layersItem.setBlobSize(_ctx.longValue("GetRepoTagLayersResponse.Layers["+ i +"].BlobSize"));
+			layersItem.setLayerIndex(_ctx.integerValue("GetRepoTagLayersResponse.Layers["+ i +"].LayerIndex"));
 			layersItem.setLayerInstruction(_ctx.stringValue("GetRepoTagLayersResponse.Layers["+ i +"].LayerInstruction"));
 			layersItem.setLayerCMD(_ctx.stringValue("GetRepoTagLayersResponse.Layers["+ i +"].LayerCMD"));
-			layersItem.setLayerIndex(_ctx.integerValue("GetRepoTagLayersResponse.Layers["+ i +"].LayerIndex"));
+			layersItem.setBlobSize(_ctx.longValue("GetRepoTagLayersResponse.Layers["+ i +"].BlobSize"));
 
 			layers.add(layersItem);
 		}

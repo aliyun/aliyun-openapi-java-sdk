@@ -15,6 +15,7 @@
 package com.aliyuncs.cr.model.v20181201;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cr.Endpoint;
 
@@ -31,17 +32,19 @@ public class UpdateRepoBuildRuleRequest extends RpcAcsRequest<UpdateRepoBuildRul
 
 	private String dockerfileName;
 
-	private String dockerfileLocation;
-
 	private String buildRuleId;
 
-	private String instanceId;
+	private List<String> platformss;
 
 	private String imageTag;
 
+	private String dockerfileLocation;
+
+	private String instanceId;
+
 	private String pushType;
 	public UpdateRepoBuildRuleRequest() {
-		super("cr", "2018-12-01", "UpdateRepoBuildRule", "acr");
+		super("cr", "2018-12-01", "UpdateRepoBuildRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,17 +85,6 @@ public class UpdateRepoBuildRuleRequest extends RpcAcsRequest<UpdateRepoBuildRul
 		}
 	}
 
-	public String getDockerfileLocation() {
-		return this.dockerfileLocation;
-	}
-
-	public void setDockerfileLocation(String dockerfileLocation) {
-		this.dockerfileLocation = dockerfileLocation;
-		if(dockerfileLocation != null){
-			putQueryParameter("DockerfileLocation", dockerfileLocation);
-		}
-	}
-
 	public String getBuildRuleId() {
 		return this.buildRuleId;
 	}
@@ -104,15 +96,17 @@ public class UpdateRepoBuildRuleRequest extends RpcAcsRequest<UpdateRepoBuildRul
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public List<String> getPlatformss() {
+		return this.platformss;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	public void setPlatformss(List<String> platformss) {
+		this.platformss = platformss;	
+		if (platformss != null) {
+			for (int i = 0; i < platformss.size(); i++) {
+				putQueryParameter("Platforms." + (i + 1) , platformss.get(i));
+			}
+		}	
 	}
 
 	public String getImageTag() {
@@ -123,6 +117,28 @@ public class UpdateRepoBuildRuleRequest extends RpcAcsRequest<UpdateRepoBuildRul
 		this.imageTag = imageTag;
 		if(imageTag != null){
 			putQueryParameter("ImageTag", imageTag);
+		}
+	}
+
+	public String getDockerfileLocation() {
+		return this.dockerfileLocation;
+	}
+
+	public void setDockerfileLocation(String dockerfileLocation) {
+		this.dockerfileLocation = dockerfileLocation;
+		if(dockerfileLocation != null){
+			putQueryParameter("DockerfileLocation", dockerfileLocation);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

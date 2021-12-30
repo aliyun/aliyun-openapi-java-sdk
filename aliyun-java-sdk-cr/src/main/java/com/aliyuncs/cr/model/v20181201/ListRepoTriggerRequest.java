@@ -29,7 +29,7 @@ public class ListRepoTriggerRequest extends RpcAcsRequest<ListRepoTriggerRespons
 
 	private String instanceId;
 	public ListRepoTriggerRequest() {
-		super("cr", "2018-12-01", "ListRepoTrigger", "acr");
+		super("cr", "2018-12-01", "ListRepoTrigger");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

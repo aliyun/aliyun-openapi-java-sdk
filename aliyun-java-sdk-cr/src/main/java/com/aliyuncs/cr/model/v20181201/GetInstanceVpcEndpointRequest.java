@@ -29,7 +29,7 @@ public class GetInstanceVpcEndpointRequest extends RpcAcsRequest<GetInstanceVpcE
 
 	private String moduleName;
 	public GetInstanceVpcEndpointRequest() {
-		super("cr", "2018-12-01", "GetInstanceVpcEndpoint", "acr");
+		super("cr", "2018-12-01", "GetInstanceVpcEndpoint");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

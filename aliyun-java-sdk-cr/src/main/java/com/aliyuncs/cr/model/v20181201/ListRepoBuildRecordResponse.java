@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRepoBuildRecordResponse extends AcsResponse {
 
-	private Boolean isSuccess;
+	private String requestId;
 
 	private String code;
 
-	private String requestId;
-
 	private Integer pageNo;
+
+	private Boolean isSuccess;
 
 	private Integer pageSize;
 
@@ -39,12 +39,12 @@ public class ListRepoBuildRecordResponse extends AcsResponse {
 
 	private List<BuildRecordsItem> buildRecords;
 
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -55,20 +55,20 @@ public class ListRepoBuildRecordResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
 	}
 
 	public Integer getPageSize() {
@@ -97,22 +97,22 @@ public class ListRepoBuildRecordResponse extends AcsResponse {
 
 	public static class BuildRecordsItem {
 
-		private String buildRecordId;
+		private String endTime;
 
 		private String startTime;
 
-		private String endTime;
-
 		private String buildStatus;
+
+		private String buildRecordId;
 
 		private Image image;
 
-		public String getBuildRecordId() {
-			return this.buildRecordId;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setBuildRecordId(String buildRecordId) {
-			this.buildRecordId = buildRecordId;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartTime() {
@@ -123,20 +123,20 @@ public class ListRepoBuildRecordResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
 		public String getBuildStatus() {
 			return this.buildStatus;
 		}
 
 		public void setBuildStatus(String buildStatus) {
 			this.buildStatus = buildStatus;
+		}
+
+		public String getBuildRecordId() {
+			return this.buildRecordId;
+		}
+
+		public void setBuildRecordId(String buildRecordId) {
+			this.buildRecordId = buildRecordId;
 		}
 
 		public Image getImage() {
@@ -149,21 +149,13 @@ public class ListRepoBuildRecordResponse extends AcsResponse {
 
 		public static class Image {
 
-			private String repoId;
-
 			private String repoNamespaceName;
-
-			private String repoName;
 
 			private String imageTag;
 
-			public String getRepoId() {
-				return this.repoId;
-			}
+			private String repoId;
 
-			public void setRepoId(String repoId) {
-				this.repoId = repoId;
-			}
+			private String repoName;
 
 			public String getRepoNamespaceName() {
 				return this.repoNamespaceName;
@@ -173,20 +165,28 @@ public class ListRepoBuildRecordResponse extends AcsResponse {
 				this.repoNamespaceName = repoNamespaceName;
 			}
 
-			public String getRepoName() {
-				return this.repoName;
-			}
-
-			public void setRepoName(String repoName) {
-				this.repoName = repoName;
-			}
-
 			public String getImageTag() {
 				return this.imageTag;
 			}
 
 			public void setImageTag(String imageTag) {
 				this.imageTag = imageTag;
+			}
+
+			public String getRepoId() {
+				return this.repoId;
+			}
+
+			public void setRepoId(String repoId) {
+				this.repoId = repoId;
+			}
+
+			public String getRepoName() {
+				return this.repoName;
+			}
+
+			public void setRepoName(String repoName) {
+				this.repoName = repoName;
 			}
 		}
 	}

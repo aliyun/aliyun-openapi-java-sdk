@@ -28,25 +28,25 @@ public class ListRepoBuildRecordResponseUnmarshaller {
 	public static ListRepoBuildRecordResponse unmarshall(ListRepoBuildRecordResponse listRepoBuildRecordResponse, UnmarshallerContext _ctx) {
 		
 		listRepoBuildRecordResponse.setRequestId(_ctx.stringValue("ListRepoBuildRecordResponse.RequestId"));
-		listRepoBuildRecordResponse.setIsSuccess(_ctx.booleanValue("ListRepoBuildRecordResponse.IsSuccess"));
 		listRepoBuildRecordResponse.setCode(_ctx.stringValue("ListRepoBuildRecordResponse.Code"));
 		listRepoBuildRecordResponse.setPageNo(_ctx.integerValue("ListRepoBuildRecordResponse.PageNo"));
+		listRepoBuildRecordResponse.setIsSuccess(_ctx.booleanValue("ListRepoBuildRecordResponse.IsSuccess"));
 		listRepoBuildRecordResponse.setPageSize(_ctx.integerValue("ListRepoBuildRecordResponse.PageSize"));
 		listRepoBuildRecordResponse.setTotalCount(_ctx.stringValue("ListRepoBuildRecordResponse.TotalCount"));
 
 		List<BuildRecordsItem> buildRecords = new ArrayList<BuildRecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRepoBuildRecordResponse.BuildRecords.Length"); i++) {
 			BuildRecordsItem buildRecordsItem = new BuildRecordsItem();
-			buildRecordsItem.setBuildRecordId(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].BuildRecordId"));
-			buildRecordsItem.setStartTime(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].StartTime"));
 			buildRecordsItem.setEndTime(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].EndTime"));
+			buildRecordsItem.setStartTime(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].StartTime"));
 			buildRecordsItem.setBuildStatus(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].BuildStatus"));
+			buildRecordsItem.setBuildRecordId(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].BuildRecordId"));
 
 			Image image = new Image();
-			image.setRepoId(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].Image.RepoId"));
 			image.setRepoNamespaceName(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].Image.RepoNamespaceName"));
-			image.setRepoName(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].Image.RepoName"));
 			image.setImageTag(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].Image.ImageTag"));
+			image.setRepoId(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].Image.RepoId"));
+			image.setRepoName(_ctx.stringValue("ListRepoBuildRecordResponse.BuildRecords["+ i +"].Image.RepoName"));
 			buildRecordsItem.setImage(image);
 
 			buildRecords.add(buildRecordsItem);

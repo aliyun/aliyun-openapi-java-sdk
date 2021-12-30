@@ -35,7 +35,7 @@ public class ListChartNamespaceRequest extends RpcAcsRequest<ListChartNamespaceR
 
 	private String namespaceStatus;
 	public ListChartNamespaceRequest() {
-		super("cr", "2018-12-01", "ListChartNamespace", "acr");
+		super("cr", "2018-12-01", "ListChartNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

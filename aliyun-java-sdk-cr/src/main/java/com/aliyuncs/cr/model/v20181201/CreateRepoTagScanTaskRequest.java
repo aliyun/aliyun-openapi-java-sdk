@@ -27,11 +27,15 @@ public class CreateRepoTagScanTaskRequest extends RpcAcsRequest<CreateRepoTagSca
 
 	private String repoId;
 
+	private String scanService;
+
 	private String instanceId;
+
+	private String digest;
 
 	private String tag;
 	public CreateRepoTagScanTaskRequest() {
-		super("cr", "2018-12-01", "CreateRepoTagScanTask", "acr");
+		super("cr", "2018-12-01", "CreateRepoTagScanTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +54,17 @@ public class CreateRepoTagScanTaskRequest extends RpcAcsRequest<CreateRepoTagSca
 		}
 	}
 
+	public String getScanService() {
+		return this.scanService;
+	}
+
+	public void setScanService(String scanService) {
+		this.scanService = scanService;
+		if(scanService != null){
+			putQueryParameter("ScanService", scanService);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -58,6 +73,17 @@ public class CreateRepoTagScanTaskRequest extends RpcAcsRequest<CreateRepoTagSca
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDigest() {
+		return this.digest;
+	}
+
+	public void setDigest(String digest) {
+		this.digest = digest;
+		if(digest != null){
+			putQueryParameter("Digest", digest);
 		}
 	}
 

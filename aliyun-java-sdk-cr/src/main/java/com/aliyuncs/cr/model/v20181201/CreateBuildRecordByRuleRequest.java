@@ -31,7 +31,7 @@ public class CreateBuildRecordByRuleRequest extends RpcAcsRequest<CreateBuildRec
 
 	private String instanceId;
 	public CreateBuildRecordByRuleRequest() {
-		super("cr", "2018-12-01", "CreateBuildRecordByRule", "acr");
+		super("cr", "2018-12-01", "CreateBuildRecordByRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

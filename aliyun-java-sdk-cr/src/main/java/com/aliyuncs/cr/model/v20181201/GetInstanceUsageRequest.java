@@ -27,7 +27,7 @@ public class GetInstanceUsageRequest extends RpcAcsRequest<GetInstanceUsageRespo
 
 	private String instanceId;
 	public GetInstanceUsageRequest() {
-		super("cr", "2018-12-01", "GetInstanceUsage", "acr");
+		super("cr", "2018-12-01", "GetInstanceUsage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
