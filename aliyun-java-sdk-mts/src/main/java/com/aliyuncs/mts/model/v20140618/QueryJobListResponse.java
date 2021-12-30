@@ -1806,6 +1806,12 @@ public class QueryJobListResponse extends AcsResponse {
 
 						private String level;
 
+						private String colorTransfer;
+
+						private String colorPrimaries;
+
+						private String bitsPerRawSample;
+
 						private NetworkCost networkCost;
 
 						public String getIndex() {
@@ -1982,6 +1988,30 @@ public class QueryJobListResponse extends AcsResponse {
 
 						public void setLevel(String level) {
 							this.level = level;
+						}
+
+						public String getColorTransfer() {
+							return this.colorTransfer;
+						}
+
+						public void setColorTransfer(String colorTransfer) {
+							this.colorTransfer = colorTransfer;
+						}
+
+						public String getColorPrimaries() {
+							return this.colorPrimaries;
+						}
+
+						public void setColorPrimaries(String colorPrimaries) {
+							this.colorPrimaries = colorPrimaries;
+						}
+
+						public String getBitsPerRawSample() {
+							return this.bitsPerRawSample;
+						}
+
+						public void setBitsPerRawSample(String bitsPerRawSample) {
+							this.bitsPerRawSample = bitsPerRawSample;
 						}
 
 						public NetworkCost getNetworkCost() {

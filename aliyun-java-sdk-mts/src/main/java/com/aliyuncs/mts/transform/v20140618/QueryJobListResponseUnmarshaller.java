@@ -271,6 +271,9 @@ public class QueryJobListResponseUnmarshaller {
 				videoStream.setCodecTag(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Streams.VideoStreamList["+ j +"].CodecTag"));
 				videoStream.setCodecTimeBase(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Streams.VideoStreamList["+ j +"].CodecTimeBase"));
 				videoStream.setLevel(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Streams.VideoStreamList["+ j +"].Level"));
+				videoStream.setColorTransfer(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Streams.VideoStreamList["+ j +"].colorTransfer"));
+				videoStream.setColorPrimaries(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Streams.VideoStreamList["+ j +"].colorPrimaries"));
+				videoStream.setBitsPerRawSample(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Streams.VideoStreamList["+ j +"].bitsPerRawSample"));
 
 				NetworkCost networkCost = new NetworkCost();
 				networkCost.setPreloadTime(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime"));

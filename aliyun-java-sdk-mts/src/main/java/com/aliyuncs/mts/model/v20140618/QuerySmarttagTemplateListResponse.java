@@ -59,6 +59,8 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 
 		private String faceCategoryIds;
 
+		private String faceCustomParamsConfig;
+
 		private String scene;
 
 		private String labelType;
@@ -115,6 +117,14 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 
 		public void setFaceCategoryIds(String faceCategoryIds) {
 			this.faceCategoryIds = faceCategoryIds;
+		}
+
+		public String getFaceCustomParamsConfig() {
+			return this.faceCustomParamsConfig;
+		}
+
+		public void setFaceCustomParamsConfig(String faceCustomParamsConfig) {
+			this.faceCustomParamsConfig = faceCustomParamsConfig;
 		}
 
 		public String getScene() {

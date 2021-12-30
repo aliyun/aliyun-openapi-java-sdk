@@ -35,6 +35,8 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 
 	private String scene;
 
+	private String faceCustomParamsConfig;
+
 	private String templateName;
 
 	private Boolean isDefault;
@@ -113,6 +115,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		this.scene = scene;
 		if(scene != null){
 			putQueryParameter("Scene", scene);
+		}
+	}
+
+	public String getFaceCustomParamsConfig() {
+		return this.faceCustomParamsConfig;
+	}
+
+	public void setFaceCustomParamsConfig(String faceCustomParamsConfig) {
+		this.faceCustomParamsConfig = faceCustomParamsConfig;
+		if(faceCustomParamsConfig != null){
+			putQueryParameter("FaceCustomParamsConfig", faceCustomParamsConfig);
 		}
 	}
 
