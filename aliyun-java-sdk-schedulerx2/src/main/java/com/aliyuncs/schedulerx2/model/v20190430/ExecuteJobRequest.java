@@ -31,9 +31,15 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 
 	private String groupId;
 
+	private String label;
+
+	private Integer designateType;
+
 	private Long jobId;
 
 	private String namespace;
+
+	private String worker;
 
 	private String instanceParameters;
 	public ExecuteJobRequest() {
@@ -78,6 +84,28 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		}
 	}
 
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+		if(label != null){
+			putQueryParameter("Label", label);
+		}
+	}
+
+	public Integer getDesignateType() {
+		return this.designateType;
+	}
+
+	public void setDesignateType(Integer designateType) {
+		this.designateType = designateType;
+		if(designateType != null){
+			putQueryParameter("DesignateType", designateType.toString());
+		}
+	}
+
 	public Long getJobId() {
 		return this.jobId;
 	}
@@ -97,6 +125,17 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getWorker() {
+		return this.worker;
+	}
+
+	public void setWorker(String worker) {
+		this.worker = worker;
+		if(worker != null){
+			putQueryParameter("Worker", worker);
 		}
 	}
 
