@@ -1,3 +1,6 @@
+2021-12-30 Version: 1.5.4
+- Supported UpdateApplication.
+
 2021-10-18 Version: 1.5.3
 - Supported UpdateApplication.
 

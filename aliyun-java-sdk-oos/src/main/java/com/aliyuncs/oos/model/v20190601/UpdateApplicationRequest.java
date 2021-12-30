@@ -27,6 +27,8 @@ public class UpdateApplicationRequest extends RpcAcsRequest<UpdateApplicationRes
 
 	private String description;
 
+	private String tags;
+
 	private String name;
 	public UpdateApplicationRequest() {
 		super("oos", "2019-06-01", "UpdateApplication", "oos");
@@ -45,6 +47,17 @@ public class UpdateApplicationRequest extends RpcAcsRequest<UpdateApplicationRes
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 
