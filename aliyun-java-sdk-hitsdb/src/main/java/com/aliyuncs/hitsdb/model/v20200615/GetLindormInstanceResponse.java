@@ -25,110 +25,90 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetLindormInstanceResponse extends AcsResponse {
 
-	private String requestId;
+	private String vpcId;
 
-	private String instanceId;
+	private String vswitchId;
 
-	private String instanceAlias;
-
-	private String regionId;
-
-	private String zoneId;
-
-	private String instanceStatus;
+	private String createTime;
 
 	private String payType;
 
 	private String networkType;
 
-	private String createTime;
-
-	private String expireTime;
-
-	private String instanceStorage;
-
-	private String vpcId;
-
-	private String vswitchId;
-
-	private Boolean autoRenew;
-
-	private Integer engineType;
-
 	private String serviceType;
-
-	private String deletionProtection;
-
-	private String diskCategory;
-
-	private Integer coldStorage;
-
-	private Boolean enableBDS;
-
-	private Long aliUid;
-
-	private Boolean enableFS;
-
-	private Boolean enablePhoenix;
-
-	private String diskUsage;
-
-	private String diskThreshold;
-
-	private Long createMilliseconds;
-
-	private Long expiredMilliseconds;
 
 	private Boolean enableKms;
 
+	private String diskUsage;
+
+	private String diskCategory;
+
+	private String requestId;
+
+	private Integer coldStorage;
+
+	private Long expiredMilliseconds;
+
+	private Integer engineType;
+
+	private String expireTime;
+
+	private Boolean autoRenew;
+
+	private String deletionProtection;
+
+	private String instanceStorage;
+
+	private Long aliUid;
+
+	private String instanceId;
+
+	private String regionId;
+
+	private Boolean enableFS;
+
+	private Long createMilliseconds;
+
+	private String instanceAlias;
+
+	private Boolean enableBDS;
+
+	private Boolean enablePhoenix;
+
+	private String diskThreshold;
+
+	private String zoneId;
+
+	private String instanceStatus;
+
+	private Boolean enableCompute;
+
+	private Boolean enableSSL;
+
 	private List<Engine> engineList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getVswitchId() {
+		return this.vswitchId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setVswitchId(String vswitchId) {
+		this.vswitchId = vswitchId;
 	}
 
-	public String getInstanceAlias() {
-		return this.instanceAlias;
+	public String getCreateTime() {
+		return this.createTime;
 	}
 
-	public void setInstanceAlias(String instanceAlias) {
-		this.instanceAlias = instanceAlias;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-	}
-
-	public String getInstanceStatus() {
-		return this.instanceStatus;
-	}
-
-	public void setInstanceStatus(String instanceStatus) {
-		this.instanceStatus = instanceStatus;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getPayType() {
@@ -147,62 +127,6 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.networkType = networkType;
 	}
 
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getExpireTime() {
-		return this.expireTime;
-	}
-
-	public void setExpireTime(String expireTime) {
-		this.expireTime = expireTime;
-	}
-
-	public String getInstanceStorage() {
-		return this.instanceStorage;
-	}
-
-	public void setInstanceStorage(String instanceStorage) {
-		this.instanceStorage = instanceStorage;
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-	}
-
-	public String getVswitchId() {
-		return this.vswitchId;
-	}
-
-	public void setVswitchId(String vswitchId) {
-		this.vswitchId = vswitchId;
-	}
-
-	public Boolean getAutoRenew() {
-		return this.autoRenew;
-	}
-
-	public void setAutoRenew(Boolean autoRenew) {
-		this.autoRenew = autoRenew;
-	}
-
-	public Integer getEngineType() {
-		return this.engineType;
-	}
-
-	public void setEngineType(Integer engineType) {
-		this.engineType = engineType;
-	}
-
 	public String getServiceType() {
 		return this.serviceType;
 	}
@@ -211,60 +135,12 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.serviceType = serviceType;
 	}
 
-	public String getDeletionProtection() {
-		return this.deletionProtection;
+	public Boolean getEnableKms() {
+		return this.enableKms;
 	}
 
-	public void setDeletionProtection(String deletionProtection) {
-		this.deletionProtection = deletionProtection;
-	}
-
-	public String getDiskCategory() {
-		return this.diskCategory;
-	}
-
-	public void setDiskCategory(String diskCategory) {
-		this.diskCategory = diskCategory;
-	}
-
-	public Integer getColdStorage() {
-		return this.coldStorage;
-	}
-
-	public void setColdStorage(Integer coldStorage) {
-		this.coldStorage = coldStorage;
-	}
-
-	public Boolean getEnableBDS() {
-		return this.enableBDS;
-	}
-
-	public void setEnableBDS(Boolean enableBDS) {
-		this.enableBDS = enableBDS;
-	}
-
-	public Long getAliUid() {
-		return this.aliUid;
-	}
-
-	public void setAliUid(Long aliUid) {
-		this.aliUid = aliUid;
-	}
-
-	public Boolean getEnableFS() {
-		return this.enableFS;
-	}
-
-	public void setEnableFS(Boolean enableFS) {
-		this.enableFS = enableFS;
-	}
-
-	public Boolean getEnablePhoenix() {
-		return this.enablePhoenix;
-	}
-
-	public void setEnablePhoenix(Boolean enablePhoenix) {
-		this.enablePhoenix = enablePhoenix;
+	public void setEnableKms(Boolean enableKms) {
+		this.enableKms = enableKms;
 	}
 
 	public String getDiskUsage() {
@@ -275,20 +151,28 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.diskUsage = diskUsage;
 	}
 
-	public String getDiskThreshold() {
-		return this.diskThreshold;
+	public String getDiskCategory() {
+		return this.diskCategory;
 	}
 
-	public void setDiskThreshold(String diskThreshold) {
-		this.diskThreshold = diskThreshold;
+	public void setDiskCategory(String diskCategory) {
+		this.diskCategory = diskCategory;
 	}
 
-	public Long getCreateMilliseconds() {
-		return this.createMilliseconds;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCreateMilliseconds(Long createMilliseconds) {
-		this.createMilliseconds = createMilliseconds;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getColdStorage() {
+		return this.coldStorage;
+	}
+
+	public void setColdStorage(Integer coldStorage) {
+		this.coldStorage = coldStorage;
 	}
 
 	public Long getExpiredMilliseconds() {
@@ -299,12 +183,148 @@ public class GetLindormInstanceResponse extends AcsResponse {
 		this.expiredMilliseconds = expiredMilliseconds;
 	}
 
-	public Boolean getEnableKms() {
-		return this.enableKms;
+	public Integer getEngineType() {
+		return this.engineType;
 	}
 
-	public void setEnableKms(Boolean enableKms) {
-		this.enableKms = enableKms;
+	public void setEngineType(Integer engineType) {
+		this.engineType = engineType;
+	}
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+	}
+
+	public String getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(String deletionProtection) {
+		this.deletionProtection = deletionProtection;
+	}
+
+	public String getInstanceStorage() {
+		return this.instanceStorage;
+	}
+
+	public void setInstanceStorage(String instanceStorage) {
+		this.instanceStorage = instanceStorage;
+	}
+
+	public Long getAliUid() {
+		return this.aliUid;
+	}
+
+	public void setAliUid(Long aliUid) {
+		this.aliUid = aliUid;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public Boolean getEnableFS() {
+		return this.enableFS;
+	}
+
+	public void setEnableFS(Boolean enableFS) {
+		this.enableFS = enableFS;
+	}
+
+	public Long getCreateMilliseconds() {
+		return this.createMilliseconds;
+	}
+
+	public void setCreateMilliseconds(Long createMilliseconds) {
+		this.createMilliseconds = createMilliseconds;
+	}
+
+	public String getInstanceAlias() {
+		return this.instanceAlias;
+	}
+
+	public void setInstanceAlias(String instanceAlias) {
+		this.instanceAlias = instanceAlias;
+	}
+
+	public Boolean getEnableBDS() {
+		return this.enableBDS;
+	}
+
+	public void setEnableBDS(Boolean enableBDS) {
+		this.enableBDS = enableBDS;
+	}
+
+	public Boolean getEnablePhoenix() {
+		return this.enablePhoenix;
+	}
+
+	public void setEnablePhoenix(Boolean enablePhoenix) {
+		this.enablePhoenix = enablePhoenix;
+	}
+
+	public String getDiskThreshold() {
+		return this.diskThreshold;
+	}
+
+	public void setDiskThreshold(String diskThreshold) {
+		this.diskThreshold = diskThreshold;
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+	}
+
+	public String getInstanceStatus() {
+		return this.instanceStatus;
+	}
+
+	public void setInstanceStatus(String instanceStatus) {
+		this.instanceStatus = instanceStatus;
+	}
+
+	public Boolean getEnableCompute() {
+		return this.enableCompute;
+	}
+
+	public void setEnableCompute(Boolean enableCompute) {
+		this.enableCompute = enableCompute;
+	}
+
+	public Boolean getEnableSSL() {
+		return this.enableSSL;
+	}
+
+	public void setEnableSSL(Boolean enableSSL) {
+		this.enableSSL = enableSSL;
 	}
 
 	public List<Engine> getEngineList() {
@@ -317,25 +337,19 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public static class Engine {
 
-		private String engine;
-
 		private String version;
 
 		private String cpuCount;
 
-		private String memorySize;
-
 		private String coreCount;
+
+		private String engine;
+
+		private String memorySize;
 
 		private Boolean isLastVersion;
 
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
+		private String latestVersion;
 
 		public String getVersion() {
 			return this.version;
@@ -353,14 +367,6 @@ public class GetLindormInstanceResponse extends AcsResponse {
 			this.cpuCount = cpuCount;
 		}
 
-		public String getMemorySize() {
-			return this.memorySize;
-		}
-
-		public void setMemorySize(String memorySize) {
-			this.memorySize = memorySize;
-		}
-
 		public String getCoreCount() {
 			return this.coreCount;
 		}
@@ -369,12 +375,36 @@ public class GetLindormInstanceResponse extends AcsResponse {
 			this.coreCount = coreCount;
 		}
 
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getMemorySize() {
+			return this.memorySize;
+		}
+
+		public void setMemorySize(String memorySize) {
+			this.memorySize = memorySize;
+		}
+
 		public Boolean getIsLastVersion() {
 			return this.isLastVersion;
 		}
 
 		public void setIsLastVersion(Boolean isLastVersion) {
 			this.isLastVersion = isLastVersion;
+		}
+
+		public String getLatestVersion() {
+			return this.latestVersion;
+		}
+
+		public void setLatestVersion(String latestVersion) {
+			this.latestVersion = latestVersion;
 		}
 	}
 
