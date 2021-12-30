@@ -50,9 +50,9 @@ public class DescribeRecordTemplatesResponseUnmarshaller {
 			template.setTemplateId(_ctx.stringValue("DescribeRecordTemplatesResponse.Templates["+ i +"].TemplateId"));
 			template.setTaskProfile(_ctx.stringValue("DescribeRecordTemplatesResponse.Templates["+ i +"].TaskProfile"));
 
-			List<Integer> layoutIds = new ArrayList<Integer>();
+			List<Long> layoutIds = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRecordTemplatesResponse.Templates["+ i +"].LayoutIds.Length"); j++) {
-				layoutIds.add(_ctx.integerValue("DescribeRecordTemplatesResponse.Templates["+ i +"].LayoutIds["+ j +"]"));
+				layoutIds.add(_ctx.longValue("DescribeRecordTemplatesResponse.Templates["+ i +"].LayoutIds["+ j +"]"));
 			}
 			template.setLayoutIds(layoutIds);
 

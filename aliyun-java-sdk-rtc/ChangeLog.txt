@@ -1,3 +1,6 @@
+2021-12-30 Version: 1.3.3
+- Support AUTH for CreateEventSubscribe.
+
 2021-11-25 Version: 1.3.2
 - Delete some abandoned interface.
 - Add some interfaces.

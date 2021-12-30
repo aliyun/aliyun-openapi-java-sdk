@@ -28,6 +28,8 @@ public class CreateEventSubscribeRequest extends RpcAcsRequest<CreateEventSubscr
 
 	private String clientToken;
 
+	private Boolean needCallbackAuth;
+
 	private List<String> eventss;
 
 	private Long ownerId;
@@ -56,6 +58,17 @@ public class CreateEventSubscribeRequest extends RpcAcsRequest<CreateEventSubscr
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getNeedCallbackAuth() {
+		return this.needCallbackAuth;
+	}
+
+	public void setNeedCallbackAuth(Boolean needCallbackAuth) {
+		this.needCallbackAuth = needCallbackAuth;
+		if(needCallbackAuth != null){
+			putQueryParameter("NeedCallbackAuth", needCallbackAuth.toString());
 		}
 	}
 

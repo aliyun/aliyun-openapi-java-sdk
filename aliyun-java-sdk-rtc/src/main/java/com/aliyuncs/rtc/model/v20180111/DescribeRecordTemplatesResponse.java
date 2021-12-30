@@ -99,7 +99,7 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 
 		private List<Watermark1> clockWidgets;
 
-		private List<Integer> layoutIds;
+		private List<Long> layoutIds;
 
 		private List<String> formats;
 
@@ -231,11 +231,11 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 			this.clockWidgets = clockWidgets;
 		}
 
-		public List<Integer> getLayoutIds() {
+		public List<Long> getLayoutIds() {
 			return this.layoutIds;
 		}
 
-		public void setLayoutIds(List<Integer> layoutIds) {
+		public void setLayoutIds(List<Long> layoutIds) {
 			this.layoutIds = layoutIds;
 		}
 
