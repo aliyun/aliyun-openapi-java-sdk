@@ -22,34 +22,30 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<DescribeUserClusterHostInstanceResponse> {
+public class ModifyInstanceTDERequest extends RpcAcsRequest<ModifyInstanceTDEResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
-
 	private String securityToken;
-
-	private String engine;
-
-	private String instanceStatus;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer maxRecordsPerPage;
-
-	private String clusterId;
+	private String encryptionKey;
 
 	private Long ownerId;
 
-	private String instanceIds;
+	private String encryptionName;
 
-	private String zoneId;
-	public DescribeUserClusterHostInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeUserClusterHostInstance", "redisa");
+	private String instanceId;
+
+	private String roleArn;
+
+	private String tDEStatus;
+	public ModifyInstanceTDERequest() {
+		super("R-kvstore", "2015-01-01", "ModifyInstanceTDE", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,17 +64,6 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -87,28 +72,6 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
-		}
-	}
-
-	public String getInstanceStatus() {
-		return this.instanceStatus;
-	}
-
-	public void setInstanceStatus(String instanceStatus) {
-		this.instanceStatus = instanceStatus;
-		if(instanceStatus != null){
-			putQueryParameter("InstanceStatus", instanceStatus);
 		}
 	}
 
@@ -134,25 +97,14 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Integer getMaxRecordsPerPage() {
-		return this.maxRecordsPerPage;
+	public String getEncryptionKey() {
+		return this.encryptionKey;
 	}
 
-	public void setMaxRecordsPerPage(Integer maxRecordsPerPage) {
-		this.maxRecordsPerPage = maxRecordsPerPage;
-		if(maxRecordsPerPage != null){
-			putQueryParameter("MaxRecordsPerPage", maxRecordsPerPage.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
@@ -167,31 +119,53 @@ public class DescribeUserClusterHostInstanceRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
+	public String getEncryptionName() {
+		return this.encryptionName;
 	}
 
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
+	public void setEncryptionName(String encryptionName) {
+		this.encryptionName = encryptionName;
+		if(encryptionName != null){
+			putQueryParameter("EncryptionName", encryptionName);
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getRoleArn() {
+		return this.roleArn;
+	}
+
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
+		if(roleArn != null){
+			putQueryParameter("RoleArn", roleArn);
+		}
+	}
+
+	public String getTDEStatus() {
+		return this.tDEStatus;
+	}
+
+	public void setTDEStatus(String tDEStatus) {
+		this.tDEStatus = tDEStatus;
+		if(tDEStatus != null){
+			putQueryParameter("TDEStatus", tDEStatus);
 		}
 	}
 
 	@Override
-	public Class<DescribeUserClusterHostInstanceResponse> getResponseClass() {
-		return DescribeUserClusterHostInstanceResponse.class;
+	public Class<ModifyInstanceTDEResponse> getResponseClass() {
+		return ModifyInstanceTDEResponse.class;
 	}
 
 }

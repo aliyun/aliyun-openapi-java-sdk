@@ -77,17 +77,25 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	public static class Parameter {
 
+		private String checkingCode;
+
 		private String parameterName;
 
 		private String parameterValue;
 
-		private Boolean modifiableStatus;
-
 		private Boolean forceRestart;
 
-		private String checkingCode;
-
 		private String parameterDescription;
+
+		private Boolean modifiableStatus;
+
+		public String getCheckingCode() {
+			return this.checkingCode;
+		}
+
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
+		}
 
 		public String getParameterName() {
 			return this.parameterName;
@@ -105,14 +113,6 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.parameterValue = parameterValue;
 		}
 
-		public Boolean getModifiableStatus() {
-			return this.modifiableStatus;
-		}
-
-		public void setModifiableStatus(Boolean modifiableStatus) {
-			this.modifiableStatus = modifiableStatus;
-		}
-
 		public Boolean getForceRestart() {
 			return this.forceRestart;
 		}
@@ -121,20 +121,20 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.forceRestart = forceRestart;
 		}
 
-		public String getCheckingCode() {
-			return this.checkingCode;
-		}
-
-		public void setCheckingCode(String checkingCode) {
-			this.checkingCode = checkingCode;
-		}
-
 		public String getParameterDescription() {
 			return this.parameterDescription;
 		}
 
 		public void setParameterDescription(String parameterDescription) {
 			this.parameterDescription = parameterDescription;
+		}
+
+		public Boolean getModifiableStatus() {
+			return this.modifiableStatus;
+		}
+
+		public void setModifiableStatus(Boolean modifiableStatus) {
+			this.modifiableStatus = modifiableStatus;
 		}
 	}
 

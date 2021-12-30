@@ -14,16 +14,17 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
-import com.aliyuncs.r_kvstore.model.v20150101.DeleteUserClusterHostResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstanceTDEStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteUserClusterHostResponseUnmarshaller {
+public class DescribeInstanceTDEStatusResponseUnmarshaller {
 
-	public static DeleteUserClusterHostResponse unmarshall(DeleteUserClusterHostResponse deleteUserClusterHostResponse, UnmarshallerContext _ctx) {
+	public static DescribeInstanceTDEStatusResponse unmarshall(DescribeInstanceTDEStatusResponse describeInstanceTDEStatusResponse, UnmarshallerContext _ctx) {
 		
-		deleteUserClusterHostResponse.setRequestId(_ctx.stringValue("DeleteUserClusterHostResponse.RequestId"));
+		describeInstanceTDEStatusResponse.setRequestId(_ctx.stringValue("DescribeInstanceTDEStatusResponse.RequestId"));
+		describeInstanceTDEStatusResponse.setTDEStatus(_ctx.stringValue("DescribeInstanceTDEStatusResponse.TDEStatus"));
 	 
-	 	return deleteUserClusterHostResponse;
+	 	return describeInstanceTDEStatusResponse;
 	}
 }

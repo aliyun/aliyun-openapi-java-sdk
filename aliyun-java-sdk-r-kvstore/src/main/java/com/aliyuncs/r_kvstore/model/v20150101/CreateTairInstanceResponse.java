@@ -24,56 +24,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTairInstanceResponse extends AcsResponse {
 
-	private Long bandwidth;
-
-	private String chargeType;
-
-	private String config;
+	private Long qPS;
 
 	private String connectionDomain;
 
-	private Long connections;
+	private String chargeType;
 
 	private String instanceId;
 
-	private String instanceName;
-
-	private String instanceStatus;
-
 	private Integer port;
 
-	private Long qPS;
+	private String config;
 
 	private String regionId;
 
 	private String requestId;
 
-	private String taskId;
+	private Long bandwidth;
+
+	private Long connections;
+
+	private String instanceName;
 
 	private String zoneId;
 
-	public Long getBandwidth() {
-		return this.bandwidth;
+	private String instanceStatus;
+
+	private String taskId;
+
+	public Long getQPS() {
+		return this.qPS;
 	}
 
-	public void setBandwidth(Long bandwidth) {
-		this.bandwidth = bandwidth;
-	}
-
-	public String getChargeType() {
-		return this.chargeType;
-	}
-
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
-	}
-
-	public String getConfig() {
-		return this.config;
-	}
-
-	public void setConfig(String config) {
-		this.config = config;
+	public void setQPS(Long qPS) {
+		this.qPS = qPS;
 	}
 
 	public String getConnectionDomain() {
@@ -84,12 +68,12 @@ public class CreateTairInstanceResponse extends AcsResponse {
 		this.connectionDomain = connectionDomain;
 	}
 
-	public Long getConnections() {
-		return this.connections;
+	public String getChargeType() {
+		return this.chargeType;
 	}
 
-	public void setConnections(Long connections) {
-		this.connections = connections;
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
 	}
 
 	public String getInstanceId() {
@@ -100,22 +84,6 @@ public class CreateTairInstanceResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-	}
-
-	public String getInstanceStatus() {
-		return this.instanceStatus;
-	}
-
-	public void setInstanceStatus(String instanceStatus) {
-		this.instanceStatus = instanceStatus;
-	}
-
 	public Integer getPort() {
 		return this.port;
 	}
@@ -124,12 +92,12 @@ public class CreateTairInstanceResponse extends AcsResponse {
 		this.port = port;
 	}
 
-	public Long getQPS() {
-		return this.qPS;
+	public String getConfig() {
+		return this.config;
 	}
 
-	public void setQPS(Long qPS) {
-		this.qPS = qPS;
+	public void setConfig(String config) {
+		this.config = config;
 	}
 
 	public String getRegionId() {
@@ -148,12 +116,28 @@ public class CreateTairInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public Long getBandwidth() {
+		return this.bandwidth;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+	}
+
+	public Long getConnections() {
+		return this.connections;
+	}
+
+	public void setConnections(Long connections) {
+		this.connections = connections;
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
 	}
 
 	public String getZoneId() {
@@ -162,6 +146,22 @@ public class CreateTairInstanceResponse extends AcsResponse {
 
 	public void setZoneId(String zoneId) {
 		this.zoneId = zoneId;
+	}
+
+	public String getInstanceStatus() {
+		return this.instanceStatus;
+	}
+
+	public void setInstanceStatus(String instanceStatus) {
+		this.instanceStatus = instanceStatus;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override

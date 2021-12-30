@@ -22,28 +22,24 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteUserClusterHostRequest extends RpcAcsRequest<DeleteUserClusterHostResponse> {
+public class DescribeEncryptionKeyRequest extends RpcAcsRequest<DescribeEncryptionKeyResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String hostId;
-
 	private String securityToken;
-
-	private String engine;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String clusterId;
+	private String encryptionKey;
 
 	private Long ownerId;
 
-	private String zoneId;
-	public DeleteUserClusterHostRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteUserClusterHost", "redisa");
+	private String instanceId;
+	public DescribeEncryptionKeyRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeEncryptionKey", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,17 +58,6 @@ public class DeleteUserClusterHostRequest extends RpcAcsRequest<DeleteUserCluste
 		}
 	}
 
-	public String getHostId() {
-		return this.hostId;
-	}
-
-	public void setHostId(String hostId) {
-		this.hostId = hostId;
-		if(hostId != null){
-			putQueryParameter("HostId", hostId);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -81,17 +66,6 @@ public class DeleteUserClusterHostRequest extends RpcAcsRequest<DeleteUserCluste
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -117,14 +91,14 @@ public class DeleteUserClusterHostRequest extends RpcAcsRequest<DeleteUserCluste
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getEncryptionKey() {
+		return this.encryptionKey;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
@@ -139,20 +113,20 @@ public class DeleteUserClusterHostRequest extends RpcAcsRequest<DeleteUserCluste
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<DeleteUserClusterHostResponse> getResponseClass() {
-		return DeleteUserClusterHostResponse.class;
+	public Class<DescribeEncryptionKeyResponse> getResponseClass() {
+		return DescribeEncryptionKeyResponse.class;
 	}
 
 }

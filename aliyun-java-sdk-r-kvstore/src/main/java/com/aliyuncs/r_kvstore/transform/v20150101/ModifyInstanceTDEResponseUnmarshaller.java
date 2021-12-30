@@ -14,18 +14,16 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
-import com.aliyuncs.r_kvstore.model.v20150101.CreateUserClusterHostResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.ModifyInstanceTDEResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateUserClusterHostResponseUnmarshaller {
+public class ModifyInstanceTDEResponseUnmarshaller {
 
-	public static CreateUserClusterHostResponse unmarshall(CreateUserClusterHostResponse createUserClusterHostResponse, UnmarshallerContext _ctx) {
+	public static ModifyInstanceTDEResponse unmarshall(ModifyInstanceTDEResponse modifyInstanceTDEResponse, UnmarshallerContext _ctx) {
 		
-		createUserClusterHostResponse.setRequestId(_ctx.stringValue("CreateUserClusterHostResponse.RequestId"));
-		createUserClusterHostResponse.setClusterId(_ctx.stringValue("CreateUserClusterHostResponse.ClusterId"));
-		createUserClusterHostResponse.setHostId(_ctx.stringValue("CreateUserClusterHostResponse.HostId"));
+		modifyInstanceTDEResponse.setRequestId(_ctx.stringValue("ModifyInstanceTDEResponse.RequestId"));
 	 
-	 	return createUserClusterHostResponse;
+	 	return modifyInstanceTDEResponse;
 	}
 }

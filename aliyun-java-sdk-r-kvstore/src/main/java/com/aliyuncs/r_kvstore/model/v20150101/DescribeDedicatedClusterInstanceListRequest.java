@@ -52,6 +52,8 @@ public class DescribeDedicatedClusterInstanceListRequest extends RpcAcsRequest<D
 	private Long ownerId;
 
 	private String instanceId;
+
+	private String zoneId;
 	public DescribeDedicatedClusterInstanceListRequest() {
 		super("R-kvstore", "2015-01-01", "DescribeDedicatedClusterInstanceList", "redisa");
 		setMethod(MethodType.POST);
@@ -212,6 +214,17 @@ public class DescribeDedicatedClusterInstanceListRequest extends RpcAcsRequest<D
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

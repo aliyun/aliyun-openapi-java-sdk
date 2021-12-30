@@ -14,19 +14,20 @@
 
 package com.aliyuncs.r_kvstore.model.v20150101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.ReplaceUserClusterHostResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.DescribeEncryptionKeyListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ReplaceUserClusterHostResponse extends AcsResponse {
+public class DescribeEncryptionKeyListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String newHostId;
+	private List<String> keyIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,21 +37,16 @@ public class ReplaceUserClusterHostResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNewHostId() {
-		return this.newHostId;
+	public List<String> getKeyIds() {
+		return this.keyIds;
 	}
 
-	public void setNewHostId(String newHostId) {
-		this.newHostId = newHostId;
-	}
-
-	@Override
-	public ReplaceUserClusterHostResponse getInstance(UnmarshallerContext context) {
-		return	ReplaceUserClusterHostResponseUnmarshaller.unmarshall(this, context);
+	public void setKeyIds(List<String> keyIds) {
+		this.keyIds = keyIds;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeEncryptionKeyListResponse getInstance(UnmarshallerContext context) {
+		return	DescribeEncryptionKeyListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

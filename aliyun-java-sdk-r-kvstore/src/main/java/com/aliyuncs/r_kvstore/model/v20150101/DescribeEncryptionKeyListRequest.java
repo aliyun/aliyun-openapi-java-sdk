@@ -22,28 +22,22 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class ReplaceUserClusterHostRequest extends RpcAcsRequest<ReplaceUserClusterHostResponse> {
+public class DescribeEncryptionKeyListRequest extends RpcAcsRequest<DescribeEncryptionKeyListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String hostId;
-
 	private String securityToken;
-
-	private String engine;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String clusterId;
-
 	private Long ownerId;
 
-	private String zoneId;
-	public ReplaceUserClusterHostRequest() {
-		super("R-kvstore", "2015-01-01", "ReplaceUserClusterHost", "redisa");
+	private String instanceId;
+	public DescribeEncryptionKeyListRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeEncryptionKeyList", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,17 +56,6 @@ public class ReplaceUserClusterHostRequest extends RpcAcsRequest<ReplaceUserClus
 		}
 	}
 
-	public String getHostId() {
-		return this.hostId;
-	}
-
-	public void setHostId(String hostId) {
-		this.hostId = hostId;
-		if(hostId != null){
-			putQueryParameter("HostId", hostId);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -81,17 +64,6 @@ public class ReplaceUserClusterHostRequest extends RpcAcsRequest<ReplaceUserClus
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -117,17 +89,6 @@ public class ReplaceUserClusterHostRequest extends RpcAcsRequest<ReplaceUserClus
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -139,20 +100,20 @@ public class ReplaceUserClusterHostRequest extends RpcAcsRequest<ReplaceUserClus
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<ReplaceUserClusterHostResponse> getResponseClass() {
-		return ReplaceUserClusterHostResponse.class;
+	public Class<DescribeEncryptionKeyListResponse> getResponseClass() {
+		return DescribeEncryptionKeyListResponse.class;
 	}
 
 }

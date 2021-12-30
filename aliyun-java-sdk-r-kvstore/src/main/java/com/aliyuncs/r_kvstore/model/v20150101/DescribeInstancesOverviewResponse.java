@@ -16,20 +16,16 @@ package com.aliyuncs.r_kvstore.model.v20150101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.DescribeInstancesResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.DescribeInstancesOverviewResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeInstancesResponse extends AcsResponse {
+public class DescribeInstancesOverviewResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
 
 	private Integer totalCount;
 
@@ -41,22 +37,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Integer getTotalCount() {
@@ -83,13 +63,9 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Long capacity;
 
-		private String replacateId;
-
 		private String createTime;
 
 		private String connectionDomain;
-
-		private Boolean isRds;
 
 		private String chargeType;
 
@@ -101,59 +77,29 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Long port;
 
-		private String secondaryZoneId;
-
 		private String engineVersion;
-
-		private String packageType;
-
-		private String config;
-
-		private String vpcCloudInstanceId;
-
-		private Long bandwidth;
 
 		private String instanceName;
 
-		private Integer shardCount;
-
-		private String userName;
-
 		private String globalInstanceId;
 
-		private Long qPS;
-
 		private String instanceClass;
-
-		private String destroyTime;
 
 		private String instanceId;
 
 		private String instanceType;
 
-		private Boolean hasRenewChangeOrder;
-
 		private String regionId;
-
-		private String searchKey;
 
 		private String endTime;
 
 		private String vSwitchId;
-
-		private String nodeType;
-
-		private Long connections;
 
 		private String resourceGroupId;
 
 		private String zoneId;
 
 		private String instanceStatus;
-
-		private Integer proxyCount;
-
-		private List<Tag> tags;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -179,14 +125,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.capacity = capacity;
 		}
 
-		public String getReplacateId() {
-			return this.replacateId;
-		}
-
-		public void setReplacateId(String replacateId) {
-			this.replacateId = replacateId;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -201,14 +139,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setConnectionDomain(String connectionDomain) {
 			this.connectionDomain = connectionDomain;
-		}
-
-		public Boolean getIsRds() {
-			return this.isRds;
-		}
-
-		public void setIsRds(Boolean isRds) {
-			this.isRds = isRds;
 		}
 
 		public String getChargeType() {
@@ -251,52 +181,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getSecondaryZoneId() {
-			return this.secondaryZoneId;
-		}
-
-		public void setSecondaryZoneId(String secondaryZoneId) {
-			this.secondaryZoneId = secondaryZoneId;
-		}
-
 		public String getEngineVersion() {
 			return this.engineVersion;
 		}
 
 		public void setEngineVersion(String engineVersion) {
 			this.engineVersion = engineVersion;
-		}
-
-		public String getPackageType() {
-			return this.packageType;
-		}
-
-		public void setPackageType(String packageType) {
-			this.packageType = packageType;
-		}
-
-		public String getConfig() {
-			return this.config;
-		}
-
-		public void setConfig(String config) {
-			this.config = config;
-		}
-
-		public String getVpcCloudInstanceId() {
-			return this.vpcCloudInstanceId;
-		}
-
-		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
-			this.vpcCloudInstanceId = vpcCloudInstanceId;
-		}
-
-		public Long getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Long bandwidth) {
-			this.bandwidth = bandwidth;
 		}
 
 		public String getInstanceName() {
@@ -307,22 +197,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public Integer getShardCount() {
-			return this.shardCount;
-		}
-
-		public void setShardCount(Integer shardCount) {
-			this.shardCount = shardCount;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
 		public String getGlobalInstanceId() {
 			return this.globalInstanceId;
 		}
@@ -331,28 +205,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.globalInstanceId = globalInstanceId;
 		}
 
-		public Long getQPS() {
-			return this.qPS;
-		}
-
-		public void setQPS(Long qPS) {
-			this.qPS = qPS;
-		}
-
 		public String getInstanceClass() {
 			return this.instanceClass;
 		}
 
 		public void setInstanceClass(String instanceClass) {
 			this.instanceClass = instanceClass;
-		}
-
-		public String getDestroyTime() {
-			return this.destroyTime;
-		}
-
-		public void setDestroyTime(String destroyTime) {
-			this.destroyTime = destroyTime;
 		}
 
 		public String getInstanceId() {
@@ -371,28 +229,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public Boolean getHasRenewChangeOrder() {
-			return this.hasRenewChangeOrder;
-		}
-
-		public void setHasRenewChangeOrder(Boolean hasRenewChangeOrder) {
-			this.hasRenewChangeOrder = hasRenewChangeOrder;
-		}
-
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getSearchKey() {
-			return this.searchKey;
-		}
-
-		public void setSearchKey(String searchKey) {
-			this.searchKey = searchKey;
 		}
 
 		public String getEndTime() {
@@ -409,22 +251,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
-		}
-
-		public String getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
-		}
-
-		public Long getConnections() {
-			return this.connections;
-		}
-
-		public void setConnections(Long connections) {
-			this.connections = connections;
 		}
 
 		public String getResourceGroupId() {
@@ -450,49 +276,15 @@ public class DescribeInstancesResponse extends AcsResponse {
 		public void setInstanceStatus(String instanceStatus) {
 			this.instanceStatus = instanceStatus;
 		}
-
-		public Integer getProxyCount() {
-			return this.proxyCount;
-		}
-
-		public void setProxyCount(Integer proxyCount) {
-			this.proxyCount = proxyCount;
-		}
-
-		public List<Tag> getTags() {
-			return this.tags;
-		}
-
-		public void setTags(List<Tag> tags) {
-			this.tags = tags;
-		}
-
-		public static class Tag {
-
-			private String key;
-
-			private String value;
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-		}
 	}
 
 	@Override
-	public DescribeInstancesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeInstancesResponseUnmarshaller.unmarshall(this, context);
+	public DescribeInstancesOverviewResponse getInstance(UnmarshallerContext context) {
+		return	DescribeInstancesOverviewResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

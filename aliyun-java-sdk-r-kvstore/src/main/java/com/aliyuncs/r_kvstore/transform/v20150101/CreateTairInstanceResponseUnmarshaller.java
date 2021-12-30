@@ -23,19 +23,19 @@ public class CreateTairInstanceResponseUnmarshaller {
 	public static CreateTairInstanceResponse unmarshall(CreateTairInstanceResponse createTairInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createTairInstanceResponse.setRequestId(_ctx.stringValue("CreateTairInstanceResponse.RequestId"));
-		createTairInstanceResponse.setBandwidth(_ctx.longValue("CreateTairInstanceResponse.Bandwidth"));
-		createTairInstanceResponse.setChargeType(_ctx.stringValue("CreateTairInstanceResponse.ChargeType"));
-		createTairInstanceResponse.setConfig(_ctx.stringValue("CreateTairInstanceResponse.Config"));
-		createTairInstanceResponse.setConnectionDomain(_ctx.stringValue("CreateTairInstanceResponse.ConnectionDomain"));
-		createTairInstanceResponse.setConnections(_ctx.longValue("CreateTairInstanceResponse.Connections"));
-		createTairInstanceResponse.setInstanceId(_ctx.stringValue("CreateTairInstanceResponse.InstanceId"));
-		createTairInstanceResponse.setInstanceName(_ctx.stringValue("CreateTairInstanceResponse.InstanceName"));
-		createTairInstanceResponse.setInstanceStatus(_ctx.stringValue("CreateTairInstanceResponse.InstanceStatus"));
-		createTairInstanceResponse.setPort(_ctx.integerValue("CreateTairInstanceResponse.Port"));
 		createTairInstanceResponse.setQPS(_ctx.longValue("CreateTairInstanceResponse.QPS"));
+		createTairInstanceResponse.setConnectionDomain(_ctx.stringValue("CreateTairInstanceResponse.ConnectionDomain"));
+		createTairInstanceResponse.setChargeType(_ctx.stringValue("CreateTairInstanceResponse.ChargeType"));
+		createTairInstanceResponse.setInstanceId(_ctx.stringValue("CreateTairInstanceResponse.InstanceId"));
+		createTairInstanceResponse.setPort(_ctx.integerValue("CreateTairInstanceResponse.Port"));
+		createTairInstanceResponse.setConfig(_ctx.stringValue("CreateTairInstanceResponse.Config"));
 		createTairInstanceResponse.setRegionId(_ctx.stringValue("CreateTairInstanceResponse.RegionId"));
-		createTairInstanceResponse.setTaskId(_ctx.stringValue("CreateTairInstanceResponse.TaskId"));
+		createTairInstanceResponse.setBandwidth(_ctx.longValue("CreateTairInstanceResponse.Bandwidth"));
+		createTairInstanceResponse.setConnections(_ctx.longValue("CreateTairInstanceResponse.Connections"));
+		createTairInstanceResponse.setInstanceName(_ctx.stringValue("CreateTairInstanceResponse.InstanceName"));
 		createTairInstanceResponse.setZoneId(_ctx.stringValue("CreateTairInstanceResponse.ZoneId"));
+		createTairInstanceResponse.setInstanceStatus(_ctx.stringValue("CreateTairInstanceResponse.InstanceStatus"));
+		createTairInstanceResponse.setTaskId(_ctx.stringValue("CreateTairInstanceResponse.TaskId"));
 	 
 	 	return createTairInstanceResponse;
 	}

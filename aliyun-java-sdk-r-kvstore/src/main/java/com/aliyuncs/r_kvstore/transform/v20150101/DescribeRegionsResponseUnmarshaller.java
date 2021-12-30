@@ -31,10 +31,10 @@ public class DescribeRegionsResponseUnmarshaller {
 		List<KVStoreRegion> regionIds = new ArrayList<KVStoreRegion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.RegionIds.Length"); i++) {
 			KVStoreRegion kVStoreRegion = new KVStoreRegion();
+			kVStoreRegion.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].RegionEndpoint"));
+			kVStoreRegion.setLocalName(_ctx.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].LocalName"));
 			kVStoreRegion.setRegionId(_ctx.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].RegionId"));
 			kVStoreRegion.setZoneIds(_ctx.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].ZoneIds"));
-			kVStoreRegion.setLocalName(_ctx.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].LocalName"));
-			kVStoreRegion.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.RegionIds["+ i +"].RegionEndpoint"));
 
 			List<String> zoneIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRegionsResponse.RegionIds["+ i +"].ZoneIdList.Length"); j++) {

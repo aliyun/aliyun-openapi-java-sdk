@@ -35,41 +35,41 @@ public class DescribeDedicatedClusterInstanceListResponseUnmarshaller {
 		List<InstancesItem> instances = new ArrayList<InstancesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedClusterInstanceListResponse.Instances.Length"); i++) {
 			InstancesItem instancesItem = new InstancesItem();
-			instancesItem.setCharacterType(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CharacterType"));
-			instancesItem.setClusterId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ClusterId"));
-			instancesItem.setClusterName(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ClusterName"));
-			instancesItem.setEngineVersion(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].EngineVersion"));
-			instancesItem.setInstanceId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceId"));
-			instancesItem.setInstanceStatus(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceStatus"));
-			instancesItem.setMaintainEndTime(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].MaintainEndTime"));
-			instancesItem.setMaintainStartTime(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].MaintainStartTime"));
-			instancesItem.setRegionId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].RegionId"));
 			instancesItem.setVpcId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].VpcId"));
+			instancesItem.setCharacterType(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CharacterType"));
 			instancesItem.setVswitchId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].VswitchId"));
-			instancesItem.setZoneId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ZoneId"));
-			instancesItem.setInstanceName(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceName"));
-			instancesItem.setCustomId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CustomId"));
 			instancesItem.setInstanceClass(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceClass"));
-			instancesItem.setEngine(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].Engine"));
-			instancesItem.setStorageType(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].StorageType"));
-			instancesItem.setConnectionDomain(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ConnectionDomain"));
+			instancesItem.setMaintainStartTime(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].MaintainStartTime"));
 			instancesItem.setCreateTime(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CreateTime"));
-			instancesItem.setShardCount(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ShardCount"));
-			instancesItem.setCurrentBandWidth(_ctx.longValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CurrentBandWidth"));
+			instancesItem.setConnectionDomain(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ConnectionDomain"));
+			instancesItem.setMaintainEndTime(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].MaintainEndTime"));
+			instancesItem.setStorageType(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].StorageType"));
+			instancesItem.setInstanceId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceId"));
 			instancesItem.setBandWidth(_ctx.longValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].BandWidth"));
+			instancesItem.setCurrentBandWidth(_ctx.longValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CurrentBandWidth"));
+			instancesItem.setEngineVersion(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].EngineVersion"));
+			instancesItem.setRegionId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].RegionId"));
+			instancesItem.setInstanceName(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceName"));
+			instancesItem.setZoneId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ZoneId"));
+			instancesItem.setClusterName(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ClusterName"));
+			instancesItem.setInstanceStatus(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceStatus"));
+			instancesItem.setEngine(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].Engine"));
+			instancesItem.setShardCount(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ShardCount"));
+			instancesItem.setCustomId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CustomId"));
 			instancesItem.setProxyCount(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ProxyCount"));
+			instancesItem.setClusterId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ClusterId"));
 
 			List<InstanceNodes> instanceNodeList = new ArrayList<InstanceNodes>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList.Length"); j++) {
 				InstanceNodes instanceNodes = new InstanceNodes();
-				instanceNodes.setNodeId(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].NodeId"));
 				instanceNodes.setNodeIp(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].NodeIp"));
+				instanceNodes.setDedicatedHostName(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].DedicatedHostName"));
 				instanceNodes.setNodeType(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].NodeType"));
-				instanceNodes.setPort(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].Port"));
-				instanceNodes.setRole(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].Role"));
 				instanceNodes.setZoneId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].ZoneId"));
 				instanceNodes.setInstanceId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].InstanceId"));
-				instanceNodes.setDedicatedHostName(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].DedicatedHostName"));
+				instanceNodes.setPort(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].Port"));
+				instanceNodes.setRole(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].Role"));
+				instanceNodes.setNodeId(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList["+ j +"].NodeId"));
 
 				instanceNodeList.add(instanceNodes);
 			}

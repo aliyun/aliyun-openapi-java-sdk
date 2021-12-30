@@ -15,16 +15,18 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.DeleteUserClusterHostResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.CheckCloudResourceAuthorizedResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteUserClusterHostResponse extends AcsResponse {
+public class CheckCloudResourceAuthorizedResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Integer authorizationState;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +36,17 @@ public class DeleteUserClusterHostResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getAuthorizationState() {
+		return this.authorizationState;
+	}
+
+	public void setAuthorizationState(Integer authorizationState) {
+		this.authorizationState = authorizationState;
+	}
+
 	@Override
-	public DeleteUserClusterHostResponse getInstance(UnmarshallerContext context) {
-		return	DeleteUserClusterHostResponseUnmarshaller.unmarshall(this, context);
+	public CheckCloudResourceAuthorizedResponse getInstance(UnmarshallerContext context) {
+		return	CheckCloudResourceAuthorizedResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

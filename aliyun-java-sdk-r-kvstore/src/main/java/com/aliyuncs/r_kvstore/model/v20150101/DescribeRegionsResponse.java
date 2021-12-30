@@ -47,15 +47,31 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class KVStoreRegion {
 
+		private String regionEndpoint;
+
+		private String localName;
+
 		private String regionId;
 
 		private String zoneIds;
 
-		private String localName;
-
-		private String regionEndpoint;
-
 		private List<String> zoneIdList;
+
+		public String getRegionEndpoint() {
+			return this.regionEndpoint;
+		}
+
+		public void setRegionEndpoint(String regionEndpoint) {
+			this.regionEndpoint = regionEndpoint;
+		}
+
+		public String getLocalName() {
+			return this.localName;
+		}
+
+		public void setLocalName(String localName) {
+			this.localName = localName;
+		}
 
 		public String getRegionId() {
 			return this.regionId;
@@ -71,22 +87,6 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setZoneIds(String zoneIds) {
 			this.zoneIds = zoneIds;
-		}
-
-		public String getLocalName() {
-			return this.localName;
-		}
-
-		public void setLocalName(String localName) {
-			this.localName = localName;
-		}
-
-		public String getRegionEndpoint() {
-			return this.regionEndpoint;
-		}
-
-		public void setRegionEndpoint(String regionEndpoint) {
-			this.regionEndpoint = regionEndpoint;
 		}
 
 		public List<String> getZoneIdList() {

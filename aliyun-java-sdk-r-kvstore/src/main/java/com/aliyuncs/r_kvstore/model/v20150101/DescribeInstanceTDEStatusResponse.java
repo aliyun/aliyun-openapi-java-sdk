@@ -15,20 +15,18 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.CreateUserClusterHostResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.DescribeInstanceTDEStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateUserClusterHostResponse extends AcsResponse {
+public class DescribeInstanceTDEStatusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterId;
-
-	private String hostId;
+	private String tDEStatus;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,29 +36,16 @@ public class CreateUserClusterHostResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getTDEStatus() {
+		return this.tDEStatus;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
-	public String getHostId() {
-		return this.hostId;
-	}
-
-	public void setHostId(String hostId) {
-		this.hostId = hostId;
+	public void setTDEStatus(String tDEStatus) {
+		this.tDEStatus = tDEStatus;
 	}
 
 	@Override
-	public CreateUserClusterHostResponse getInstance(UnmarshallerContext context) {
-		return	CreateUserClusterHostResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeInstanceTDEStatusResponse getInstance(UnmarshallerContext context) {
+		return	DescribeInstanceTDEStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 }

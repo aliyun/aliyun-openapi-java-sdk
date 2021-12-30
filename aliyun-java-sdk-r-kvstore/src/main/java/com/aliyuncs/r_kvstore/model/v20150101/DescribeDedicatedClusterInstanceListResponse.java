@@ -77,125 +77,53 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 	public static class InstancesItem {
 
-		private String characterType;
-
-		private String clusterId;
-
-		private String clusterName;
-
-		private String engineVersion;
-
-		private String instanceId;
-
-		private String instanceStatus;
-
-		private String maintainEndTime;
-
-		private String maintainStartTime;
-
-		private String regionId;
-
 		private String vpcId;
+
+		private String characterType;
 
 		private String vswitchId;
 
-		private String zoneId;
-
-		private String instanceName;
-
-		private String customId;
-
 		private String instanceClass;
 
-		private String engine;
-
-		private String storageType;
-
-		private String connectionDomain;
+		private String maintainStartTime;
 
 		private String createTime;
 
-		private Integer shardCount;
+		private String connectionDomain;
 
-		private Long currentBandWidth;
+		private String maintainEndTime;
+
+		private String storageType;
+
+		private String instanceId;
 
 		private Long bandWidth;
 
+		private Long currentBandWidth;
+
+		private String engineVersion;
+
+		private String regionId;
+
+		private String instanceName;
+
+		private String zoneId;
+
+		private String clusterName;
+
+		private String instanceStatus;
+
+		private String engine;
+
+		private Integer shardCount;
+
+		private String customId;
+
 		private Integer proxyCount;
 
+		private String clusterId;
+
 		private List<InstanceNodes> instanceNodeList;
-
-		public String getCharacterType() {
-			return this.characterType;
-		}
-
-		public void setCharacterType(String characterType) {
-			this.characterType = characterType;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceStatus() {
-			return this.instanceStatus;
-		}
-
-		public void setInstanceStatus(String instanceStatus) {
-			this.instanceStatus = instanceStatus;
-		}
-
-		public String getMaintainEndTime() {
-			return this.maintainEndTime;
-		}
-
-		public void setMaintainEndTime(String maintainEndTime) {
-			this.maintainEndTime = maintainEndTime;
-		}
-
-		public String getMaintainStartTime() {
-			return this.maintainStartTime;
-		}
-
-		public void setMaintainStartTime(String maintainStartTime) {
-			this.maintainStartTime = maintainStartTime;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -203,6 +131,14 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getCharacterType() {
+			return this.characterType;
+		}
+
+		public void setCharacterType(String characterType) {
+			this.characterType = characterType;
 		}
 
 		public String getVswitchId() {
@@ -213,30 +149,6 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 			this.vswitchId = vswitchId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getCustomId() {
-			return this.customId;
-		}
-
-		public void setCustomId(String customId) {
-			this.customId = customId;
-		}
-
 		public String getInstanceClass() {
 			return this.instanceClass;
 		}
@@ -245,28 +157,12 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 			this.instanceClass = instanceClass;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public String getMaintainStartTime() {
+			return this.maintainStartTime;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
-		public String getConnectionDomain() {
-			return this.connectionDomain;
-		}
-
-		public void setConnectionDomain(String connectionDomain) {
-			this.connectionDomain = connectionDomain;
+		public void setMaintainStartTime(String maintainStartTime) {
+			this.maintainStartTime = maintainStartTime;
 		}
 
 		public String getCreateTime() {
@@ -277,20 +173,36 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Integer getShardCount() {
-			return this.shardCount;
+		public String getConnectionDomain() {
+			return this.connectionDomain;
 		}
 
-		public void setShardCount(Integer shardCount) {
-			this.shardCount = shardCount;
+		public void setConnectionDomain(String connectionDomain) {
+			this.connectionDomain = connectionDomain;
 		}
 
-		public Long getCurrentBandWidth() {
-			return this.currentBandWidth;
+		public String getMaintainEndTime() {
+			return this.maintainEndTime;
 		}
 
-		public void setCurrentBandWidth(Long currentBandWidth) {
-			this.currentBandWidth = currentBandWidth;
+		public void setMaintainEndTime(String maintainEndTime) {
+			this.maintainEndTime = maintainEndTime;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Long getBandWidth() {
@@ -301,12 +213,100 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 			this.bandWidth = bandWidth;
 		}
 
+		public Long getCurrentBandWidth() {
+			return this.currentBandWidth;
+		}
+
+		public void setCurrentBandWidth(Long currentBandWidth) {
+			this.currentBandWidth = currentBandWidth;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getInstanceStatus() {
+			return this.instanceStatus;
+		}
+
+		public void setInstanceStatus(String instanceStatus) {
+			this.instanceStatus = instanceStatus;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public Integer getShardCount() {
+			return this.shardCount;
+		}
+
+		public void setShardCount(Integer shardCount) {
+			this.shardCount = shardCount;
+		}
+
+		public String getCustomId() {
+			return this.customId;
+		}
+
+		public void setCustomId(String customId) {
+			this.customId = customId;
+		}
+
 		public Integer getProxyCount() {
 			return this.proxyCount;
 		}
 
 		public void setProxyCount(Integer proxyCount) {
 			this.proxyCount = proxyCount;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public List<InstanceNodes> getInstanceNodeList() {
@@ -319,29 +319,21 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		public static class InstanceNodes {
 
-			private Integer nodeId;
-
 			private String nodeIp;
 
+			private String dedicatedHostName;
+
 			private String nodeType;
-
-			private Integer port;
-
-			private String role;
 
 			private String zoneId;
 
 			private String instanceId;
 
-			private String dedicatedHostName;
+			private Integer port;
 
-			public Integer getNodeId() {
-				return this.nodeId;
-			}
+			private String role;
 
-			public void setNodeId(Integer nodeId) {
-				this.nodeId = nodeId;
-			}
+			private Integer nodeId;
 
 			public String getNodeIp() {
 				return this.nodeIp;
@@ -351,28 +343,20 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 				this.nodeIp = nodeIp;
 			}
 
+			public String getDedicatedHostName() {
+				return this.dedicatedHostName;
+			}
+
+			public void setDedicatedHostName(String dedicatedHostName) {
+				this.dedicatedHostName = dedicatedHostName;
+			}
+
 			public String getNodeType() {
 				return this.nodeType;
 			}
 
 			public void setNodeType(String nodeType) {
 				this.nodeType = nodeType;
-			}
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
-			}
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
 			}
 
 			public String getZoneId() {
@@ -391,12 +375,28 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getDedicatedHostName() {
-				return this.dedicatedHostName;
+			public Integer getPort() {
+				return this.port;
 			}
 
-			public void setDedicatedHostName(String dedicatedHostName) {
-				this.dedicatedHostName = dedicatedHostName;
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public Integer getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(Integer nodeId) {
+				this.nodeId = nodeId;
 			}
 		}
 	}

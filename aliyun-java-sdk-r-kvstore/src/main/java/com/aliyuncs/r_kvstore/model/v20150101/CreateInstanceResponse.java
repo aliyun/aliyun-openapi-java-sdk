@@ -24,118 +24,54 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String instanceId;
-
-	private String instanceName;
-
-	private String connectionDomain;
-
-	private Integer port;
-
-	private String userName;
-
-	private String instanceStatus;
-
-	private String regionId;
-
-	private Long capacity;
+	private String vpcId;
 
 	private Long qPS;
 
-	private Long bandwidth;
+	private Long capacity;
 
-	private Long connections;
-
-	private String zoneId;
-
-	private String config;
+	private String connectionDomain;
 
 	private String chargeType;
 
-	private String endTime;
-
-	private String nodeType;
-
 	private String networkType;
 
-	private String vpcId;
+	private String instanceId;
+
+	private Integer port;
+
+	private String config;
+
+	private String regionId;
+
+	private String endTime;
 
 	private String vSwitchId;
 
+	private String requestId;
+
+	private String nodeType;
+
+	private Long connections;
+
+	private Long bandwidth;
+
+	private String instanceName;
+
+	private String zoneId;
+
+	private String instanceStatus;
+
 	private String privateIpAddr;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String userName;
+
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-	}
-
-	public String getConnectionDomain() {
-		return this.connectionDomain;
-	}
-
-	public void setConnectionDomain(String connectionDomain) {
-		this.connectionDomain = connectionDomain;
-	}
-
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getInstanceStatus() {
-		return this.instanceStatus;
-	}
-
-	public void setInstanceStatus(String instanceStatus) {
-		this.instanceStatus = instanceStatus;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public Long getCapacity() {
-		return this.capacity;
-	}
-
-	public void setCapacity(Long capacity) {
-		this.capacity = capacity;
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
 	}
 
 	public Long getQPS() {
@@ -146,36 +82,20 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.qPS = qPS;
 	}
 
-	public Long getBandwidth() {
-		return this.bandwidth;
+	public Long getCapacity() {
+		return this.capacity;
 	}
 
-	public void setBandwidth(Long bandwidth) {
-		this.bandwidth = bandwidth;
+	public void setCapacity(Long capacity) {
+		this.capacity = capacity;
 	}
 
-	public Long getConnections() {
-		return this.connections;
+	public String getConnectionDomain() {
+		return this.connectionDomain;
 	}
 
-	public void setConnections(Long connections) {
-		this.connections = connections;
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-	}
-
-	public String getConfig() {
-		return this.config;
-	}
-
-	public void setConfig(String config) {
-		this.config = config;
+	public void setConnectionDomain(String connectionDomain) {
+		this.connectionDomain = connectionDomain;
 	}
 
 	public String getChargeType() {
@@ -186,22 +106,6 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.chargeType = chargeType;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getNodeType() {
-		return this.nodeType;
-	}
-
-	public void setNodeType(String nodeType) {
-		this.nodeType = nodeType;
-	}
-
 	public String getNetworkType() {
 		return this.networkType;
 	}
@@ -210,12 +114,44 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.networkType = networkType;
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+	}
+
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getVSwitchId() {
@@ -226,12 +162,76 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.vSwitchId = vSwitchId;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+	}
+
+	public Long getConnections() {
+		return this.connections;
+	}
+
+	public void setConnections(Long connections) {
+		this.connections = connections;
+	}
+
+	public Long getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+	}
+
+	public String getInstanceStatus() {
+		return this.instanceStatus;
+	}
+
+	public void setInstanceStatus(String instanceStatus) {
+		this.instanceStatus = instanceStatus;
+	}
+
 	public String getPrivateIpAddr() {
 		return this.privateIpAddr;
 	}
 
 	public void setPrivateIpAddr(String privateIpAddr) {
 		this.privateIpAddr = privateIpAddr;
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	@Override

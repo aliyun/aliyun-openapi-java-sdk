@@ -15,14 +15,14 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.ModifyUserClusterHostResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.ModifyInstanceTDEResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyUserClusterHostResponse extends AcsResponse {
+public class ModifyInstanceTDEResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class ModifyUserClusterHostResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyUserClusterHostResponse getInstance(UnmarshallerContext context) {
-		return	ModifyUserClusterHostResponseUnmarshaller.unmarshall(this, context);
+	public ModifyInstanceTDEResponse getInstance(UnmarshallerContext context) {
+		return	ModifyInstanceTDEResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

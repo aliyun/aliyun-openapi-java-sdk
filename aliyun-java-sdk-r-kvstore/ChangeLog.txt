@@ -1,3 +1,6 @@
+2021-12-30 Version: 2.20.2
+- Update by sdk platform.
+
 2021-08-12 Version: 2.20.1
 - DescirbeAvailableResource add NodeId input parameter.
 - CreateTairInstance add GlobalInstanceId input paramter.

@@ -22,30 +22,24 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUserClusterHostRequest extends RpcAcsRequest<DescribeUserClusterHostResponse> {
+public class CheckCloudResourceAuthorizedRequest extends RpcAcsRequest<CheckCloudResourceAuthorizedResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
-
 	private String securityToken;
-
-	private String engine;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer maxRecordsPerPage;
-
-	private String clusterId;
-
 	private Long ownerId;
 
-	private String zoneId;
-	public DescribeUserClusterHostRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeUserClusterHost", "redisa");
+	private String instanceId;
+
+	private String roleArn;
+	public CheckCloudResourceAuthorizedRequest() {
+		super("R-kvstore", "2015-01-01", "CheckCloudResourceAuthorized", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,17 +58,6 @@ public class DescribeUserClusterHostRequest extends RpcAcsRequest<DescribeUserCl
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -83,17 +66,6 @@ public class DescribeUserClusterHostRequest extends RpcAcsRequest<DescribeUserCl
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -119,28 +91,6 @@ public class DescribeUserClusterHostRequest extends RpcAcsRequest<DescribeUserCl
 		}
 	}
 
-	public Integer getMaxRecordsPerPage() {
-		return this.maxRecordsPerPage;
-	}
-
-	public void setMaxRecordsPerPage(Integer maxRecordsPerPage) {
-		this.maxRecordsPerPage = maxRecordsPerPage;
-		if(maxRecordsPerPage != null){
-			putQueryParameter("MaxRecordsPerPage", maxRecordsPerPage.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -152,20 +102,31 @@ public class DescribeUserClusterHostRequest extends RpcAcsRequest<DescribeUserCl
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getRoleArn() {
+		return this.roleArn;
+	}
+
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
+		if(roleArn != null){
+			putQueryParameter("RoleArn", roleArn);
 		}
 	}
 
 	@Override
-	public Class<DescribeUserClusterHostResponse> getResponseClass() {
-		return DescribeUserClusterHostResponse.class;
+	public Class<CheckCloudResourceAuthorizedResponse> getResponseClass() {
+		return CheckCloudResourceAuthorizedResponse.class;
 	}
 
 }

@@ -14,17 +14,17 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
-import com.aliyuncs.r_kvstore.model.v20150101.ReplaceUserClusterHostResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.CheckCloudResourceAuthorizedResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ReplaceUserClusterHostResponseUnmarshaller {
+public class CheckCloudResourceAuthorizedResponseUnmarshaller {
 
-	public static ReplaceUserClusterHostResponse unmarshall(ReplaceUserClusterHostResponse replaceUserClusterHostResponse, UnmarshallerContext _ctx) {
+	public static CheckCloudResourceAuthorizedResponse unmarshall(CheckCloudResourceAuthorizedResponse checkCloudResourceAuthorizedResponse, UnmarshallerContext _ctx) {
 		
-		replaceUserClusterHostResponse.setRequestId(_ctx.stringValue("ReplaceUserClusterHostResponse.RequestId"));
-		replaceUserClusterHostResponse.setNewHostId(_ctx.stringValue("ReplaceUserClusterHostResponse.NewHostId"));
+		checkCloudResourceAuthorizedResponse.setRequestId(_ctx.stringValue("CheckCloudResourceAuthorizedResponse.RequestId"));
+		checkCloudResourceAuthorizedResponse.setAuthorizationState(_ctx.integerValue("CheckCloudResourceAuthorizedResponse.AuthorizationState"));
 	 
-	 	return replaceUserClusterHostResponse;
+	 	return checkCloudResourceAuthorizedResponse;
 	}
 }

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String instanceId;
 
+	private String requestId;
+
 	private List<BackupJob> backupJobs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -45,6 +37,14 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<BackupJob> getBackupJobs() {
@@ -57,19 +57,43 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 	public static class BackupJob {
 
+		private String startTime;
+
+		private String process;
+
+		private String jobMode;
+
 		private Integer backupJobID;
 
 		private String backupProgressStatus;
 
-		private String jobMode;
-
-		private String process;
-
-		private String startTime;
+		private String nodeId;
 
 		private String taskAction;
 
-		private String nodeId;
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getProcess() {
+			return this.process;
+		}
+
+		public void setProcess(String process) {
+			this.process = process;
+		}
+
+		public String getJobMode() {
+			return this.jobMode;
+		}
+
+		public void setJobMode(String jobMode) {
+			this.jobMode = jobMode;
+		}
 
 		public Integer getBackupJobID() {
 			return this.backupJobID;
@@ -87,28 +111,12 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 			this.backupProgressStatus = backupProgressStatus;
 		}
 
-		public String getJobMode() {
-			return this.jobMode;
+		public String getNodeId() {
+			return this.nodeId;
 		}
 
-		public void setJobMode(String jobMode) {
-			this.jobMode = jobMode;
-		}
-
-		public String getProcess() {
-			return this.process;
-		}
-
-		public void setProcess(String process) {
-			this.process = process;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 
 		public String getTaskAction() {
@@ -117,14 +125,6 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		public void setTaskAction(String taskAction) {
 			this.taskAction = taskAction;
-		}
-
-		public String getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
 		}
 	}
 

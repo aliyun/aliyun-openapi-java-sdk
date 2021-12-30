@@ -33,6 +33,8 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 
 	private String engineVersion;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private Boolean rebuildInstance;
@@ -100,6 +102,17 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
