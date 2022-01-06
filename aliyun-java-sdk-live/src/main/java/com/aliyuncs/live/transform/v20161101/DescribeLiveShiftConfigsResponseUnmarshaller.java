@@ -31,10 +31,11 @@ public class DescribeLiveShiftConfigsResponseUnmarshaller {
 		List<Config> content = new ArrayList<Config>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveShiftConfigsResponse.Content.Length"); i++) {
 			Config config = new Config();
-			config.setDomainName(_ctx.stringValue("DescribeLiveShiftConfigsResponse.Content["+ i +"].DomainName"));
 			config.setAppName(_ctx.stringValue("DescribeLiveShiftConfigsResponse.Content["+ i +"].AppName"));
-			config.setStreamName(_ctx.stringValue("DescribeLiveShiftConfigsResponse.Content["+ i +"].StreamName"));
 			config.setVision(_ctx.integerValue("DescribeLiveShiftConfigsResponse.Content["+ i +"].Vision"));
+			config.setDomainName(_ctx.stringValue("DescribeLiveShiftConfigsResponse.Content["+ i +"].DomainName"));
+			config.setStreamName(_ctx.stringValue("DescribeLiveShiftConfigsResponse.Content["+ i +"].StreamName"));
+			config.setIgnoreTranscode(_ctx.booleanValue("DescribeLiveShiftConfigsResponse.Content["+ i +"].IgnoreTranscode"));
 
 			content.add(config);
 		}

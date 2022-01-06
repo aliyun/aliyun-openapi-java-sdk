@@ -79,6 +79,12 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		private Integer channelEnable;
 
+		private String lastModified;
+
+		private String duration;
+
+		private Integer roomId;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -165,6 +171,30 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		public void setChannelEnable(Integer channelEnable) {
 			this.channelEnable = channelEnable;
+		}
+
+		public String getLastModified() {
+			return this.lastModified;
+		}
+
+		public void setLastModified(String lastModified) {
+			this.lastModified = lastModified;
+		}
+
+		public String getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
+
+		public Integer getRoomId() {
+			return this.roomId;
+		}
+
+		public void setRoomId(Integer roomId) {
+			this.roomId = roomId;
 		}
 	}
 

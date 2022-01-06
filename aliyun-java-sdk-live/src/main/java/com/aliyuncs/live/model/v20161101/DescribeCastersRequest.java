@@ -39,6 +39,10 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 
 	private Long ownerId;
 
+	private String orderByModifyAsc;
+
+	private Integer chargeType;
+
 	private Integer status;
 	public DescribeCastersRequest() {
 		super("live", "2016-11-01", "DescribeCasters", "live");
@@ -123,6 +127,28 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getOrderByModifyAsc() {
+		return this.orderByModifyAsc;
+	}
+
+	public void setOrderByModifyAsc(String orderByModifyAsc) {
+		this.orderByModifyAsc = orderByModifyAsc;
+		if(orderByModifyAsc != null){
+			putQueryParameter("OrderByModifyAsc", orderByModifyAsc);
+		}
+	}
+
+	public Integer getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(Integer chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType.toString());
 		}
 	}
 

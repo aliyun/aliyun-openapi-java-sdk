@@ -47,21 +47,15 @@ public class DescribeLiveShiftConfigsResponse extends AcsResponse {
 
 	public static class Config {
 
-		private String domainName;
-
 		private String appName;
-
-		private String streamName;
 
 		private Integer vision;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
+		private String domainName;
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String streamName;
+
+		private Boolean ignoreTranscode;
 
 		public String getAppName() {
 			return this.appName;
@@ -69,6 +63,22 @@ public class DescribeLiveShiftConfigsResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public Integer getVision() {
+			return this.vision;
+		}
+
+		public void setVision(Integer vision) {
+			this.vision = vision;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getStreamName() {
@@ -79,12 +89,12 @@ public class DescribeLiveShiftConfigsResponse extends AcsResponse {
 			this.streamName = streamName;
 		}
 
-		public Integer getVision() {
-			return this.vision;
+		public Boolean getIgnoreTranscode() {
+			return this.ignoreTranscode;
 		}
 
-		public void setVision(Integer vision) {
-			this.vision = vision;
+		public void setIgnoreTranscode(Boolean ignoreTranscode) {
+			this.ignoreTranscode = ignoreTranscode;
 		}
 	}
 

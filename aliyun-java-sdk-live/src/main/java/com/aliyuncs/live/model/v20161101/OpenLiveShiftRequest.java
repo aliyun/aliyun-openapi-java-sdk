@@ -31,6 +31,8 @@ public class OpenLiveShiftRequest extends RpcAcsRequest<OpenLiveShiftResponse> {
 
 	private String streamName;
 
+	private Boolean ignoreTranscode;
+
 	private String domainName;
 
 	private Long ownerId;
@@ -75,6 +77,17 @@ public class OpenLiveShiftRequest extends RpcAcsRequest<OpenLiveShiftResponse> {
 		this.streamName = streamName;
 		if(streamName != null){
 			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public Boolean getIgnoreTranscode() {
+		return this.ignoreTranscode;
+	}
+
+	public void setIgnoreTranscode(Boolean ignoreTranscode) {
+		this.ignoreTranscode = ignoreTranscode;
+		if(ignoreTranscode != null){
+			putQueryParameter("IgnoreTranscode", ignoreTranscode.toString());
 		}
 	}
 

@@ -73,6 +73,8 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 		private String rtmpUrl;
 
+		private String rtsUrl;
+
 		private Integer outputType;
 
 		private List<StreamInfo> streamInfos;
@@ -99,6 +101,14 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 		public void setRtmpUrl(String rtmpUrl) {
 			this.rtmpUrl = rtmpUrl;
+		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
 		}
 
 		public Integer getOutputType() {

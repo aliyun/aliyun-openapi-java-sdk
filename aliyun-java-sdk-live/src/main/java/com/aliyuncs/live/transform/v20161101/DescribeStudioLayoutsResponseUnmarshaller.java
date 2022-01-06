@@ -50,6 +50,7 @@ public class DescribeStudioLayoutsResponseUnmarshaller {
 			bgImageConfig.setId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.Id"));
 			bgImageConfig.setMaterialId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.MaterialId"));
 			bgImageConfig.setImageUrl(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.ImageUrl"));
+			bgImageConfig.setLocationId(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].BgImageConfig.LocationId"));
 			studioLayout.setBgImageConfig(bgImageConfig);
 
 			List<ScreenInputConfig> screenInputConfigList = new ArrayList<ScreenInputConfig>();

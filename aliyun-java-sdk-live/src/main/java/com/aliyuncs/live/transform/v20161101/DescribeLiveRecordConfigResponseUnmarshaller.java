@@ -68,14 +68,14 @@ public class DescribeLiveRecordConfigResponseUnmarshaller {
 
 			List<RecordFormat> transcodeRecordFormatList = new ArrayList<RecordFormat>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList.Length"); j++) {
-				RecordFormat recordFormat_ = new RecordFormat();
-				recordFormat_.setFormat(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].Format"));
-				recordFormat_.setOssObjectPrefix(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].OssObjectPrefix"));
-				recordFormat_.setSliceOssObjectPrefix(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceOssObjectPrefix"));
-				recordFormat_.setCycleDuration(_ctx.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].CycleDuration"));
-				recordFormat_.setSliceDuration(_ctx.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceDuration"));
+				RecordFormat recordFormat2 = new RecordFormat();
+				recordFormat2.setFormat(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].Format"));
+				recordFormat2.setOssObjectPrefix(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].OssObjectPrefix"));
+				recordFormat2.setSliceOssObjectPrefix(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceOssObjectPrefix"));
+				recordFormat2.setCycleDuration(_ctx.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].CycleDuration"));
+				recordFormat2.setSliceDuration(_ctx.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceDuration"));
 
-				transcodeRecordFormatList.add(recordFormat_);
+				transcodeRecordFormatList.add(recordFormat2);
 			}
 			liveAppRecord.setTranscodeRecordFormatList(transcodeRecordFormatList);
 

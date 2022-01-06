@@ -387,6 +387,8 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 			private String imageUrl;
 
+			private String locationId;
+
 			public String getId() {
 				return this.id;
 			}
@@ -409,6 +411,14 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 			public void setImageUrl(String imageUrl) {
 				this.imageUrl = imageUrl;
+			}
+
+			public String getLocationId() {
+				return this.locationId;
+			}
+
+			public void setLocationId(String locationId) {
+				this.locationId = locationId;
 			}
 		}
 	}

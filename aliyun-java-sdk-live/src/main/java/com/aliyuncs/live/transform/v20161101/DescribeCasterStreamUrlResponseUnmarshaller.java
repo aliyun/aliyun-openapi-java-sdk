@@ -37,6 +37,7 @@ public class DescribeCasterStreamUrlResponseUnmarshaller {
 			casterStream.setSceneId(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].SceneId"));
 			casterStream.setStreamUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamUrl"));
 			casterStream.setRtmpUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].RtmpUrl"));
+			casterStream.setRtsUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].RtsUrl"));
 			casterStream.setOutputType(_ctx.integerValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].OutputType"));
 
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();

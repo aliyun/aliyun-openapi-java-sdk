@@ -43,6 +43,9 @@ public class DescribeCastersResponseUnmarshaller {
 			caster.setChargeType(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ChargeType"));
 			caster.setCasterTemplate(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterTemplate"));
 			caster.setChannelEnable(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].ChannelEnable"));
+			caster.setLastModified(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].LastModified"));
+			caster.setDuration(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].Duration"));
+			caster.setRoomId(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].RoomId"));
 
 			casterList.add(caster);
 		}
