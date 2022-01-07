@@ -1,3 +1,6 @@
+2022-01-07 Version: 1.27.0
+- Supported GetSparkJobDetail,GetSparkJobExecutorLogs,KillSparkJob,GetSparkJobDriverLog,GetSparkJobLog,SubmitSparkJob API.
+
 2021-12-20 Version: 1.26.0
 - Supported ListLogicDatabases to return Alias information.
 - Supported ListDBTaskSQLJobDetail to return sql execute startTime and endTime information.
