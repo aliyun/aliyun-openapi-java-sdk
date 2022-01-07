@@ -31,6 +31,8 @@ public class RescaleApplicationRequest extends RoaAcsRequest<RescaleApplicationR
 
 	private String appId;
 
+	private Integer minReadyInstanceRatio;
+
 	private Boolean autoEnableApplicationScalingRule;
 	public RescaleApplicationRequest() {
 		super("sae", "2019-05-06", "RescaleApplication", "serverless");
@@ -72,6 +74,17 @@ public class RescaleApplicationRequest extends RoaAcsRequest<RescaleApplicationR
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Integer getMinReadyInstanceRatio() {
+		return this.minReadyInstanceRatio;
+	}
+
+	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+		this.minReadyInstanceRatio = minReadyInstanceRatio;
+		if(minReadyInstanceRatio != null){
+			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
 		}
 	}
 

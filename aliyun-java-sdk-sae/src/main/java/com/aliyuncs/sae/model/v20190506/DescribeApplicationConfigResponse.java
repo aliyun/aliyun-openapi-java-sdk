@@ -135,6 +135,8 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private Integer minReadyInstances;
 
+		private Integer minReadyInstanceRatio;
+
 		private Integer memory;
 
 		private String php;
@@ -359,6 +361,14 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setMinReadyInstances(Integer minReadyInstances) {
 			this.minReadyInstances = minReadyInstances;
+		}
+
+		public Integer getMinReadyInstanceRatio() {
+			return this.minReadyInstanceRatio;
+		}
+
+		public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+			this.minReadyInstanceRatio = minReadyInstanceRatio;
 		}
 
 		public Integer getMemory() {

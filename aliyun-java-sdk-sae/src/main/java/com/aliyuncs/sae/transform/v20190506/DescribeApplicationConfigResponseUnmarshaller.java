@@ -57,6 +57,7 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setReplicas(_ctx.integerValue("DescribeApplicationConfigResponse.Data.Replicas"));
 		data.setUpdateStrategy(_ctx.stringValue("DescribeApplicationConfigResponse.Data.UpdateStrategy"));
 		data.setMinReadyInstances(_ctx.integerValue("DescribeApplicationConfigResponse.Data.MinReadyInstances"));
+		data.setMinReadyInstanceRatio(_ctx.integerValue("DescribeApplicationConfigResponse.Data.MinReadyInstanceRatio"));
 		data.setMemory(_ctx.integerValue("DescribeApplicationConfigResponse.Data.Memory"));
 		data.setPhp(_ctx.stringValue("DescribeApplicationConfigResponse.Data.Php"));
 		data.setPhpConfig(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpConfig"));

@@ -27,11 +27,17 @@ public class CreateApplicationScalingRuleRequest extends RoaAcsRequest<CreateApp
 
 	private String scalingRuleName;
 
+	private Integer minReadyInstances;
+
 	private Boolean scalingRuleEnable;
 
 	private String scalingRuleTimer;
 
+	private String scalingRuleMetric;
+
 	private String appId;
+
+	private Integer minReadyInstanceRatio;
 
 	private String scalingRuleType;
 	public CreateApplicationScalingRuleRequest() {
@@ -52,6 +58,17 @@ public class CreateApplicationScalingRuleRequest extends RoaAcsRequest<CreateApp
 		this.scalingRuleName = scalingRuleName;
 		if(scalingRuleName != null){
 			putQueryParameter("ScalingRuleName", scalingRuleName);
+		}
+	}
+
+	public Integer getMinReadyInstances() {
+		return this.minReadyInstances;
+	}
+
+	public void setMinReadyInstances(Integer minReadyInstances) {
+		this.minReadyInstances = minReadyInstances;
+		if(minReadyInstances != null){
+			putQueryParameter("MinReadyInstances", minReadyInstances.toString());
 		}
 	}
 
@@ -77,6 +94,17 @@ public class CreateApplicationScalingRuleRequest extends RoaAcsRequest<CreateApp
 		}
 	}
 
+	public String getScalingRuleMetric() {
+		return this.scalingRuleMetric;
+	}
+
+	public void setScalingRuleMetric(String scalingRuleMetric) {
+		this.scalingRuleMetric = scalingRuleMetric;
+		if(scalingRuleMetric != null){
+			putQueryParameter("ScalingRuleMetric", scalingRuleMetric);
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -85,6 +113,17 @@ public class CreateApplicationScalingRuleRequest extends RoaAcsRequest<CreateApp
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Integer getMinReadyInstanceRatio() {
+		return this.minReadyInstanceRatio;
+	}
+
+	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+		this.minReadyInstanceRatio = minReadyInstanceRatio;
+		if(minReadyInstanceRatio != null){
+			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
 		}
 	}
 

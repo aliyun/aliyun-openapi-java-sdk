@@ -101,6 +101,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String imageUrl;
 
+	private Integer minReadyInstanceRatio;
+
 	private Boolean autoEnableApplicationScalingRule;
 
 	private String phpConfigLocation;
@@ -533,6 +535,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public Integer getMinReadyInstanceRatio() {
+		return this.minReadyInstanceRatio;
+	}
+
+	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+		this.minReadyInstanceRatio = minReadyInstanceRatio;
+		if(minReadyInstanceRatio != null){
+			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
 		}
 	}
 

@@ -33,6 +33,8 @@ public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicatio
 
 	private Integer batchWaitTime;
 
+	private Integer minReadyInstanceRatio;
+
 	private String autoEnableApplicationScalingRule;
 
 	private String updateStrategy;
@@ -87,6 +89,17 @@ public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicatio
 		this.batchWaitTime = batchWaitTime;
 		if(batchWaitTime != null){
 			putQueryParameter("BatchWaitTime", batchWaitTime.toString());
+		}
+	}
+
+	public Integer getMinReadyInstanceRatio() {
+		return this.minReadyInstanceRatio;
+	}
+
+	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+		this.minReadyInstanceRatio = minReadyInstanceRatio;
+		if(minReadyInstanceRatio != null){
+			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
 		}
 	}
 

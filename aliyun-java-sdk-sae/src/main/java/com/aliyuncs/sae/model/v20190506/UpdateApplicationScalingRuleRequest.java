@@ -27,9 +27,15 @@ public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApp
 
 	private String scalingRuleName;
 
+	private Integer minReadyInstances;
+
 	private String scalingRuleTimer;
 
+	private String scalingRuleMetric;
+
 	private String appId;
+
+	private Integer minReadyInstanceRatio;
 	public UpdateApplicationScalingRuleRequest() {
 		super("sae", "2019-05-06", "UpdateApplicationScalingRule", "serverless");
 		setUriPattern("/pop/v1/sam/scale/applicationScalingRule");
@@ -51,6 +57,17 @@ public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApp
 		}
 	}
 
+	public Integer getMinReadyInstances() {
+		return this.minReadyInstances;
+	}
+
+	public void setMinReadyInstances(Integer minReadyInstances) {
+		this.minReadyInstances = minReadyInstances;
+		if(minReadyInstances != null){
+			putQueryParameter("MinReadyInstances", minReadyInstances.toString());
+		}
+	}
+
 	public String getScalingRuleTimer() {
 		return this.scalingRuleTimer;
 	}
@@ -62,6 +79,17 @@ public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApp
 		}
 	}
 
+	public String getScalingRuleMetric() {
+		return this.scalingRuleMetric;
+	}
+
+	public void setScalingRuleMetric(String scalingRuleMetric) {
+		this.scalingRuleMetric = scalingRuleMetric;
+		if(scalingRuleMetric != null){
+			putQueryParameter("ScalingRuleMetric", scalingRuleMetric);
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -70,6 +98,17 @@ public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApp
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Integer getMinReadyInstanceRatio() {
+		return this.minReadyInstanceRatio;
+	}
+
+	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+		this.minReadyInstanceRatio = minReadyInstanceRatio;
+		if(minReadyInstanceRatio != null){
+			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
 		}
 	}
 

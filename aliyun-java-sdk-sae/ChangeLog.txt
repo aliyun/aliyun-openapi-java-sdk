@@ -1,3 +1,6 @@
+2022-01-07 Version: 1.18.15
+- Supported minReadyInstanceRatio parameter for deploy.
+
 2021-12-27 Version: 1.18.1
 - Support ACR EE, OSS, EIP for deploy.
 

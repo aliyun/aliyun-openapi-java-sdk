@@ -22,32 +22,30 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationResponse> {
+public class DescribeApplicationScalingRuleRequest extends RoaAcsRequest<DescribeApplicationScalingRuleResponse> {
 	   
 
-	private Integer minReadyInstances;
+	private String scalingRuleName;
 
 	private String appId;
-
-	private Integer minReadyInstanceRatio;
-	public RestartApplicationRequest() {
-		super("sae", "2019-05-06", "RestartApplication", "serverless");
-		setUriPattern("/pop/v1/sam/app/restartApplication");
-		setMethod(MethodType.PUT);
+	public DescribeApplicationScalingRuleRequest() {
+		super("sae", "2019-05-06", "DescribeApplicationScalingRule", "serverless");
+		setUriPattern("/pop/v1/sam/scale/applicationScalingRule");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Integer getMinReadyInstances() {
-		return this.minReadyInstances;
+	public String getScalingRuleName() {
+		return this.scalingRuleName;
 	}
 
-	public void setMinReadyInstances(Integer minReadyInstances) {
-		this.minReadyInstances = minReadyInstances;
-		if(minReadyInstances != null){
-			putQueryParameter("MinReadyInstances", minReadyInstances.toString());
+	public void setScalingRuleName(String scalingRuleName) {
+		this.scalingRuleName = scalingRuleName;
+		if(scalingRuleName != null){
+			putQueryParameter("ScalingRuleName", scalingRuleName);
 		}
 	}
 
@@ -62,20 +60,9 @@ public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationR
 		}
 	}
 
-	public Integer getMinReadyInstanceRatio() {
-		return this.minReadyInstanceRatio;
-	}
-
-	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
-		this.minReadyInstanceRatio = minReadyInstanceRatio;
-		if(minReadyInstanceRatio != null){
-			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
-		}
-	}
-
 	@Override
-	public Class<RestartApplicationResponse> getResponseClass() {
-		return RestartApplicationResponse.class;
+	public Class<DescribeApplicationScalingRuleResponse> getResponseClass() {
+		return DescribeApplicationScalingRuleResponse.class;
 	}
 
 }
