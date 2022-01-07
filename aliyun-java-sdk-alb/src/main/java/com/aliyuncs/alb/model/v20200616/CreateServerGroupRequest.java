@@ -38,6 +38,8 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 
 	private String protocol;
 
+	private String serviceName;
+
 	private StickySessionConfig stickySessionConfig;
 
 	private Boolean dryRun;
@@ -133,6 +135,17 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 		this.protocol = protocol;
 		if(protocol != null){
 			putQueryParameter("Protocol", protocol);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

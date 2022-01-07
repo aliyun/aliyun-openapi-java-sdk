@@ -36,6 +36,8 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 
 	private String serverGroupId;
 
+	private String serviceName;
+
 	private StickySessionConfig stickySessionConfig;
 
 	private Boolean dryRun;
@@ -116,6 +118,17 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 		this.serverGroupId = serverGroupId;
 		if(serverGroupId != null){
 			putQueryParameter("ServerGroupId", serverGroupId);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

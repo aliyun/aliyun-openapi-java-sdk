@@ -1,3 +1,6 @@
+2022-01-07 Version: 1.0.7
+- Support Service name.
+
 2021-11-30 Version: 1.0.6
 - Support health check paging.
 

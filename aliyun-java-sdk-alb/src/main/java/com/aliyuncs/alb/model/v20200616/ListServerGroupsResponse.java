@@ -101,6 +101,8 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private Integer serverCount;
 
+		private String serviceName;
+
 		private List<Tag> tags;
 
 		private HealthCheckConfig healthCheckConfig;
@@ -201,6 +203,14 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		public void setServerCount(Integer serverCount) {
 			this.serverCount = serverCount;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 
 		public List<Tag> getTags() {

@@ -49,6 +49,7 @@ public class ListServerGroupsResponseUnmarshaller {
 			serverGroup.setUpstreamKeepaliveEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].UpstreamKeepaliveEnabled"));
 			serverGroup.setIpv6Enabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].Ipv6Enabled"));
 			serverGroup.setServerCount(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServerCount"));
+			serverGroup.setServiceName(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServiceName"));
 
 			HealthCheckConfig healthCheckConfig = new HealthCheckConfig();
 			healthCheckConfig.setHealthCheckConnectPort(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].HealthCheckConfig.HealthCheckConnectPort"));
