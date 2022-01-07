@@ -22,20 +22,22 @@ import com.aliyuncs.dypnsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse> {
+public class QueryGateVerifyBillingPublicRequest extends RpcAcsRequest<QueryGateVerifyBillingPublicResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private Integer authenticationType;
+
 	private String resourceOwnerAccount;
 
-	private String phoneNumber;
+	private String prodCode;
 
 	private Long ownerId;
 
-	private String since;
-	public TwiceTelVerifyRequest() {
-		super("Dypnsapi", "2017-05-25", "TwiceTelVerify");
+	private String month;
+	public QueryGateVerifyBillingPublicRequest() {
+		super("Dypnsapi", "2017-05-25", "QueryGateVerifyBillingPublic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +56,17 @@ public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse>
 		}
 	}
 
+	public Integer getAuthenticationType() {
+		return this.authenticationType;
+	}
+
+	public void setAuthenticationType(Integer authenticationType) {
+		this.authenticationType = authenticationType;
+		if(authenticationType != null){
+			putQueryParameter("AuthenticationType", authenticationType.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -65,14 +78,14 @@ public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse>
 		}
 	}
 
-	public String getPhoneNumber() {
-		return this.phoneNumber;
+	public String getProdCode() {
+		return this.prodCode;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-		if(phoneNumber != null){
-			putQueryParameter("PhoneNumber", phoneNumber);
+	public void setProdCode(String prodCode) {
+		this.prodCode = prodCode;
+		if(prodCode != null){
+			putQueryParameter("ProdCode", prodCode);
 		}
 	}
 
@@ -87,20 +100,20 @@ public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse>
 		}
 	}
 
-	public String getSince() {
-		return this.since;
+	public String getMonth() {
+		return this.month;
 	}
 
-	public void setSince(String since) {
-		this.since = since;
-		if(since != null){
-			putQueryParameter("Since", since);
+	public void setMonth(String month) {
+		this.month = month;
+		if(month != null){
+			putQueryParameter("Month", month);
 		}
 	}
 
 	@Override
-	public Class<TwiceTelVerifyResponse> getResponseClass() {
-		return TwiceTelVerifyResponse.class;
+	public Class<QueryGateVerifyBillingPublicResponse> getResponseClass() {
+		return QueryGateVerifyBillingPublicResponse.class;
 	}
 
 }
