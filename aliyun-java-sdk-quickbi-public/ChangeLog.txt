@@ -1,3 +1,6 @@
+2022-01-07 Version: 1.8.2
+- Add or modify APIs, include, QueryEmbeddedStaus, QueryWorks, QueryWorksByWorkspace.
+
 2021-11-04 Version: 1.8.1
 - Added api AddUserGroupMembers.
 

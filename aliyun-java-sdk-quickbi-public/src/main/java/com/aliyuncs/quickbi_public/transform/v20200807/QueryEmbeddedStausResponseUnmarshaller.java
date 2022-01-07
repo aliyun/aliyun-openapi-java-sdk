@@ -23,8 +23,8 @@ public class QueryEmbeddedStausResponseUnmarshaller {
 	public static QueryEmbeddedStausResponse unmarshall(QueryEmbeddedStausResponse queryEmbeddedStausResponse, UnmarshallerContext _ctx) {
 		
 		queryEmbeddedStausResponse.setRequestId(_ctx.stringValue("QueryEmbeddedStausResponse.RequestId"));
-		queryEmbeddedStausResponse.setSuccess(_ctx.booleanValue("QueryEmbeddedStausResponse.Success"));
 		queryEmbeddedStausResponse.setResult(_ctx.booleanValue("QueryEmbeddedStausResponse.Result"));
+		queryEmbeddedStausResponse.setSuccess(_ctx.booleanValue("QueryEmbeddedStausResponse.Success"));
 	 
 	 	return queryEmbeddedStausResponse;
 	}
