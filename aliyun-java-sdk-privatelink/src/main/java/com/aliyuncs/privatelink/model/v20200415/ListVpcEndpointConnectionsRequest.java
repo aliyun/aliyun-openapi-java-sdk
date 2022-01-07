@@ -30,7 +30,11 @@ public class ListVpcEndpointConnectionsRequest extends RpcAcsRequest<ListVpcEndp
 
 	private Long endpointOwnerId;
 
+	private String replacedResourceId;
+
 	private String nextToken;
+
+	private String resourceId;
 
 	private String connectionStatus;
 
@@ -71,6 +75,17 @@ public class ListVpcEndpointConnectionsRequest extends RpcAcsRequest<ListVpcEndp
 		}
 	}
 
+	public String getReplacedResourceId() {
+		return this.replacedResourceId;
+	}
+
+	public void setReplacedResourceId(String replacedResourceId) {
+		this.replacedResourceId = replacedResourceId;
+		if(replacedResourceId != null){
+			putQueryParameter("ReplacedResourceId", replacedResourceId);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -79,6 +94,17 @@ public class ListVpcEndpointConnectionsRequest extends RpcAcsRequest<ListVpcEndp
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
 		}
 	}
 

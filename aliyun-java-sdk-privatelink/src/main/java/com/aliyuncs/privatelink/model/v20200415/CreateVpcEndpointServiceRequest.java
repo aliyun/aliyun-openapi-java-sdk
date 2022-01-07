@@ -117,6 +117,7 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 			for (int depth1 = 0; depth1 < resources.size(); depth1++) {
 				putQueryParameter("Resource." + (depth1 + 1) + ".ResourceType" , resources.get(depth1).getResourceType());
 				putQueryParameter("Resource." + (depth1 + 1) + ".ResourceId" , resources.get(depth1).getResourceId());
+				putQueryParameter("Resource." + (depth1 + 1) + ".ZoneId" , resources.get(depth1).getZoneId());
 			}
 		}	
 	}
@@ -149,6 +150,8 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 
 		private String resourceId;
 
+		private String zoneId;
+
 		public String getResourceType() {
 			return this.resourceType;
 		}
@@ -163,6 +166,14 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 
