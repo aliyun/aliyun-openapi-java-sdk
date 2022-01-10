@@ -12,23 +12,41 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.commondriver.model.v20151229;
+package com.aliyuncs.commondriver.model.v20160712;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.commondriver.transform.v20151229.GetOrderIdByQueryPurchaseResponseUnmarshaller;
+import com.aliyuncs.commondriver.transform.v20160712.GetPlanItemSpecificationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetOrderIdByQueryPurchaseResponse extends AcsResponse {
+public class GetPlanItemSpecificationResponse extends AcsResponse {
+
+	private String code;
+
+	private String data;
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Boolean data;
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,16 +64,13 @@ public class GetOrderIdByQueryPurchaseResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
+	@Override
+	public GetPlanItemSpecificationResponse getInstance(UnmarshallerContext context) {
+		return	GetPlanItemSpecificationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public GetOrderIdByQueryPurchaseResponse getInstance(UnmarshallerContext context) {
-		return	GetOrderIdByQueryPurchaseResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

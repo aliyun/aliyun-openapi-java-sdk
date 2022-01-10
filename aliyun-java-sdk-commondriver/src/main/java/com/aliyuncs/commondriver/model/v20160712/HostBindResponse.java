@@ -12,23 +12,51 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.commondriver.model.v20151229;
+package com.aliyuncs.commondriver.model.v20160712;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.commondriver.transform.v20151229.GetOrderIdByCheckBeforePayResponseUnmarshaller;
+import com.aliyuncs.commondriver.transform.v20160712.HostBindResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetOrderIdByCheckBeforePayResponse extends AcsResponse {
+public class HostBindResponse extends AcsResponse {
+
+	private String code;
+
+	private String message;
+
+	private String data;
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Boolean data;
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,16 +74,13 @@ public class GetOrderIdByCheckBeforePayResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
+	@Override
+	public HostBindResponse getInstance(UnmarshallerContext context) {
+		return	HostBindResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public GetOrderIdByCheckBeforePayResponse getInstance(UnmarshallerContext context) {
-		return	GetOrderIdByCheckBeforePayResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
