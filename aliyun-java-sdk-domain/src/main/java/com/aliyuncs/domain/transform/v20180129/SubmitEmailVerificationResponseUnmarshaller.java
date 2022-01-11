@@ -41,23 +41,23 @@ public class SubmitEmailVerificationResponseUnmarshaller {
 
 		List<SendResult> failList = new ArrayList<SendResult>();
 		for (int i = 0; i < _ctx.lengthValue("SubmitEmailVerificationResponse.FailList.Length"); i++) {
-			SendResult sendResult_ = new SendResult();
-			sendResult_.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Email"));
-			sendResult_.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Code"));
-			sendResult_.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Message"));
+			SendResult sendResult1 = new SendResult();
+			sendResult1.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Email"));
+			sendResult1.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Code"));
+			sendResult1.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Message"));
 
-			failList.add(sendResult_);
+			failList.add(sendResult1);
 		}
 		submitEmailVerificationResponse.setFailList(failList);
 
 		List<SendResult> existList = new ArrayList<SendResult>();
 		for (int i = 0; i < _ctx.lengthValue("SubmitEmailVerificationResponse.ExistList.Length"); i++) {
-			SendResult sendResult_ = new SendResult();
-			sendResult_.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Email"));
-			sendResult_.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Code"));
-			sendResult_.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Message"));
+			SendResult sendResult2 = new SendResult();
+			sendResult2.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Email"));
+			sendResult2.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Code"));
+			sendResult2.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Message"));
 
-			existList.add(sendResult_);
+			existList.add(sendResult2);
 		}
 		submitEmailVerificationResponse.setExistList(existList);
 	 

@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryAuctionsResponse extends AcsResponse {
 
+	private Integer currentPageNum;
+
+	private Integer totalPageNum;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer totalItemNum;
 
-	private Integer currentPageNum;
-
-	private Integer pageSize;
-
-	private Integer totalPageNum;
-
 	private List<AuctionDetail> data;
+
+	public Integer getCurrentPageNum() {
+		return this.currentPageNum;
+	}
+
+	public void setCurrentPageNum(Integer currentPageNum) {
+		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class QueryAuctionsResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
-	public Integer getCurrentPageNum() {
-		return this.currentPageNum;
-	}
-
-	public void setCurrentPageNum(Integer currentPageNum) {
-		this.currentPageNum = currentPageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
-	}
-
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
-	}
-
 	public List<AuctionDetail> getData() {
 		return this.data;
 	}
@@ -87,39 +87,31 @@ public class QueryAuctionsResponse extends AcsResponse {
 
 	public static class AuctionDetail {
 
-		private String domainName;
-
-		private String auctionId;
-
-		private String domainType;
-
-		private String bookedPartner;
-
-		private String partnerType;
-
-		private String currency;
-
-		private Float yourCurrentBid;
-
-		private Float yourMaxBid;
-
-		private Float highBid;
-
-		private Float nextValidBid;
+		private String status;
 
 		private Boolean reserveMet;
 
+		private Float highBid;
+
+		private Long deliveryTime;
+
 		private Float transferInPrice;
 
-		private Float payPrice;
+		private Float nextValidBid;
+
+		private String produceStatus;
 
 		private String highBidder;
 
-		private String status;
+		private String bookedPartner;
 
-		private String payStatus;
+		private String currency;
 
-		private String produceStatus;
+		private String domainName;
+
+		private Float yourCurrentBid;
+
+		private String failCode;
 
 		private Long auctionEndTime;
 
@@ -127,88 +119,28 @@ public class QueryAuctionsResponse extends AcsResponse {
 
 		private Long payEndTime;
 
-		private Long deliveryTime;
+		private String payStatus;
 
-		private String failCode;
+		private Float yourMaxBid;
 
-		public String getDomainName() {
-			return this.domainName;
+		private Float payPrice;
+
+		private String auctionId;
+
+		private String partnerType;
+
+		private String domainType;
+
+		private Long reserveMin;
+
+		private Long reserveMax;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getAuctionId() {
-			return this.auctionId;
-		}
-
-		public void setAuctionId(String auctionId) {
-			this.auctionId = auctionId;
-		}
-
-		public String getDomainType() {
-			return this.domainType;
-		}
-
-		public void setDomainType(String domainType) {
-			this.domainType = domainType;
-		}
-
-		public String getBookedPartner() {
-			return this.bookedPartner;
-		}
-
-		public void setBookedPartner(String bookedPartner) {
-			this.bookedPartner = bookedPartner;
-		}
-
-		public String getPartnerType() {
-			return this.partnerType;
-		}
-
-		public void setPartnerType(String partnerType) {
-			this.partnerType = partnerType;
-		}
-
-		public String getCurrency() {
-			return this.currency;
-		}
-
-		public void setCurrency(String currency) {
-			this.currency = currency;
-		}
-
-		public Float getYourCurrentBid() {
-			return this.yourCurrentBid;
-		}
-
-		public void setYourCurrentBid(Float yourCurrentBid) {
-			this.yourCurrentBid = yourCurrentBid;
-		}
-
-		public Float getYourMaxBid() {
-			return this.yourMaxBid;
-		}
-
-		public void setYourMaxBid(Float yourMaxBid) {
-			this.yourMaxBid = yourMaxBid;
-		}
-
-		public Float getHighBid() {
-			return this.highBid;
-		}
-
-		public void setHighBid(Float highBid) {
-			this.highBid = highBid;
-		}
-
-		public Float getNextValidBid() {
-			return this.nextValidBid;
-		}
-
-		public void setNextValidBid(Float nextValidBid) {
-			this.nextValidBid = nextValidBid;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Boolean getReserveMet() {
@@ -219,6 +151,22 @@ public class QueryAuctionsResponse extends AcsResponse {
 			this.reserveMet = reserveMet;
 		}
 
+		public Float getHighBid() {
+			return this.highBid;
+		}
+
+		public void setHighBid(Float highBid) {
+			this.highBid = highBid;
+		}
+
+		public Long getDeliveryTime() {
+			return this.deliveryTime;
+		}
+
+		public void setDeliveryTime(Long deliveryTime) {
+			this.deliveryTime = deliveryTime;
+		}
+
 		public Float getTransferInPrice() {
 			return this.transferInPrice;
 		}
@@ -227,12 +175,20 @@ public class QueryAuctionsResponse extends AcsResponse {
 			this.transferInPrice = transferInPrice;
 		}
 
-		public Float getPayPrice() {
-			return this.payPrice;
+		public Float getNextValidBid() {
+			return this.nextValidBid;
 		}
 
-		public void setPayPrice(Float payPrice) {
-			this.payPrice = payPrice;
+		public void setNextValidBid(Float nextValidBid) {
+			this.nextValidBid = nextValidBid;
+		}
+
+		public String getProduceStatus() {
+			return this.produceStatus;
+		}
+
+		public void setProduceStatus(String produceStatus) {
+			this.produceStatus = produceStatus;
 		}
 
 		public String getHighBidder() {
@@ -243,28 +199,44 @@ public class QueryAuctionsResponse extends AcsResponse {
 			this.highBidder = highBidder;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getBookedPartner() {
+			return this.bookedPartner;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setBookedPartner(String bookedPartner) {
+			this.bookedPartner = bookedPartner;
 		}
 
-		public String getPayStatus() {
-			return this.payStatus;
+		public String getCurrency() {
+			return this.currency;
 		}
 
-		public void setPayStatus(String payStatus) {
-			this.payStatus = payStatus;
+		public void setCurrency(String currency) {
+			this.currency = currency;
 		}
 
-		public String getProduceStatus() {
-			return this.produceStatus;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setProduceStatus(String produceStatus) {
-			this.produceStatus = produceStatus;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public Float getYourCurrentBid() {
+			return this.yourCurrentBid;
+		}
+
+		public void setYourCurrentBid(Float yourCurrentBid) {
+			this.yourCurrentBid = yourCurrentBid;
+		}
+
+		public String getFailCode() {
+			return this.failCode;
+		}
+
+		public void setFailCode(String failCode) {
+			this.failCode = failCode;
 		}
 
 		public Long getAuctionEndTime() {
@@ -291,20 +263,68 @@ public class QueryAuctionsResponse extends AcsResponse {
 			this.payEndTime = payEndTime;
 		}
 
-		public Long getDeliveryTime() {
-			return this.deliveryTime;
+		public String getPayStatus() {
+			return this.payStatus;
 		}
 
-		public void setDeliveryTime(Long deliveryTime) {
-			this.deliveryTime = deliveryTime;
+		public void setPayStatus(String payStatus) {
+			this.payStatus = payStatus;
 		}
 
-		public String getFailCode() {
-			return this.failCode;
+		public Float getYourMaxBid() {
+			return this.yourMaxBid;
 		}
 
-		public void setFailCode(String failCode) {
-			this.failCode = failCode;
+		public void setYourMaxBid(Float yourMaxBid) {
+			this.yourMaxBid = yourMaxBid;
+		}
+
+		public Float getPayPrice() {
+			return this.payPrice;
+		}
+
+		public void setPayPrice(Float payPrice) {
+			this.payPrice = payPrice;
+		}
+
+		public String getAuctionId() {
+			return this.auctionId;
+		}
+
+		public void setAuctionId(String auctionId) {
+			this.auctionId = auctionId;
+		}
+
+		public String getPartnerType() {
+			return this.partnerType;
+		}
+
+		public void setPartnerType(String partnerType) {
+			this.partnerType = partnerType;
+		}
+
+		public String getDomainType() {
+			return this.domainType;
+		}
+
+		public void setDomainType(String domainType) {
+			this.domainType = domainType;
+		}
+
+		public Long getReserveMin() {
+			return this.reserveMin;
+		}
+
+		public void setReserveMin(Long reserveMin) {
+			this.reserveMin = reserveMin;
+		}
+
+		public Long getReserveMax() {
+			return this.reserveMax;
+		}
+
+		public void setReserveMax(Long reserveMax) {
+			this.reserveMax = reserveMax;
 		}
 	}
 

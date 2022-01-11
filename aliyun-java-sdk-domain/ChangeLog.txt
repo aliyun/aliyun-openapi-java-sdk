@@ -1,3 +1,6 @@
+2022-01-11 Version: 3.14.7
+- Added reserve price range.
+
 2021-10-15 Version: 3.14.6
 - Added audit status.
 
