@@ -1,3 +1,6 @@
+2022-01-11 Version: 2.1.6
+- Add androidChannel.
+
 2021-08-30 Version: 3.0.6
 - Supported revoke for push.
 - Supported scheduler for push.
