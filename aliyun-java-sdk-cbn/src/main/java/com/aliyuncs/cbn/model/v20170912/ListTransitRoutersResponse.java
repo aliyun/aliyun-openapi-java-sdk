@@ -95,6 +95,8 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String serviceMode;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -165,6 +167,14 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getServiceMode() {
+			return this.serviceMode;
+		}
+
+		public void setServiceMode(String serviceMode) {
+			this.serviceMode = serviceMode;
 		}
 	}
 

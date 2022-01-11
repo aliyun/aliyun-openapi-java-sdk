@@ -97,6 +97,8 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		private String transitRouterAttachmentName;
 
+		private String serviceMode;
+
 		private List<ZoneMapping> zoneMappings;
 
 		public String getCreationTime() {
@@ -179,6 +181,14 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 			this.transitRouterAttachmentName = transitRouterAttachmentName;
 		}
 
+		public String getServiceMode() {
+			return this.serviceMode;
+		}
+
+		public void setServiceMode(String serviceMode) {
+			this.serviceMode = serviceMode;
+		}
+
 		public List<ZoneMapping> getZoneMappings() {
 			return this.zoneMappings;
 		}
@@ -192,6 +202,8 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 			private String zoneId;
 
 			private String vSwitchId;
+
+			private String networkInterfaceId;
 
 			public String getZoneId() {
 				return this.zoneId;
@@ -207,6 +219,14 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 			public void setVSwitchId(String vSwitchId) {
 				this.vSwitchId = vSwitchId;
+			}
+
+			public String getNetworkInterfaceId() {
+				return this.networkInterfaceId;
+			}
+
+			public void setNetworkInterfaceId(String networkInterfaceId) {
+				this.networkInterfaceId = networkInterfaceId;
 			}
 		}
 	}

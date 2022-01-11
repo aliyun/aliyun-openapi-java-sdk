@@ -45,12 +45,14 @@ public class ListTransitRouterVpcAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setVpcOwnerId(_ctx.longValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcOwnerId"));
 			transitRouterAttachment.setVpcRegionId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcRegionId"));
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
+			transitRouterAttachment.setServiceMode(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ServiceMode"));
 
 			List<ZoneMapping> zoneMappings = new ArrayList<ZoneMapping>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ZoneMappings.Length"); j++) {
 				ZoneMapping zoneMapping = new ZoneMapping();
 				zoneMapping.setZoneId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ZoneMappings["+ j +"].ZoneId"));
 				zoneMapping.setVSwitchId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ZoneMappings["+ j +"].VSwitchId"));
+				zoneMapping.setNetworkInterfaceId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ZoneMappings["+ j +"].NetworkInterfaceId"));
 
 				zoneMappings.add(zoneMapping);
 			}

@@ -1,3 +1,6 @@
+2022-01-11 Version: 1.0.14
+- Support  DeleteTransitRouter API.
+
 2021-12-21 Version: 1.0.13
 - Support Darabonba API.
 
