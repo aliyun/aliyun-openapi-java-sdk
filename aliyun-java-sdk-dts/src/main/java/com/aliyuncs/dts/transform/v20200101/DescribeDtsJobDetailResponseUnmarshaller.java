@@ -60,6 +60,7 @@ public class DescribeDtsJobDetailResponseUnmarshaller {
 		describeDtsJobDetailResponse.setGroupId(_ctx.stringValue("DescribeDtsJobDetailResponse.GroupId"));
 		describeDtsJobDetailResponse.setSynchronizationDirection(_ctx.stringValue("DescribeDtsJobDetailResponse.SynchronizationDirection"));
 		describeDtsJobDetailResponse.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobDetailResponse.DtsJobDirection"));
+		describeDtsJobDetailResponse.setDemoJob(_ctx.booleanValue("DescribeDtsJobDetailResponse.DemoJob"));
 
 		SourceEndpoint sourceEndpoint = new SourceEndpoint();
 		sourceEndpoint.setOracleSID(_ctx.stringValue("DescribeDtsJobDetailResponse.SourceEndpoint.OracleSID"));

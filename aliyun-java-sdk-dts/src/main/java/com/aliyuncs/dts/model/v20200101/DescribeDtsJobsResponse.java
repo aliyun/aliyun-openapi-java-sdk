@@ -45,7 +45,11 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 	private String dynamicCode;
 
+	private String jobType;
+
 	private List<DtsJobStatus> dtsJobList;
+
+	private List<DtsJobStatus> etlDemoList;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -127,12 +131,28 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
+	public String getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+	}
+
 	public List<DtsJobStatus> getDtsJobList() {
 		return this.dtsJobList;
 	}
 
 	public void setDtsJobList(List<DtsJobStatus> dtsJobList) {
 		this.dtsJobList = dtsJobList;
+	}
+
+	public List<DtsJobStatus> getEtlDemoList() {
+		return this.etlDemoList;
+	}
+
+	public void setEtlDemoList(List<DtsJobStatus> etlDemoList) {
+		this.etlDemoList = etlDemoList;
 	}
 
 	public static class DtsJobStatus {

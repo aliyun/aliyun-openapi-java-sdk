@@ -90,6 +90,8 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	private String dtsJobDirection;
 
+	private Boolean demoJob;
+
 	private SourceEndpoint sourceEndpoint;
 
 	private DestinationEndpoint destinationEndpoint;
@@ -362,6 +364,14 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	public void setDtsJobDirection(String dtsJobDirection) {
 		this.dtsJobDirection = dtsJobDirection;
+	}
+
+	public Boolean getDemoJob() {
+		return this.demoJob;
+	}
+
+	public void setDemoJob(Boolean demoJob) {
+		this.demoJob = demoJob;
 	}
 
 	public SourceEndpoint getSourceEndpoint() {

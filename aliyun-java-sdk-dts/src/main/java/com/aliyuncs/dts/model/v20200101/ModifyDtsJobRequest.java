@@ -29,7 +29,11 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 
 	private String clientToken;
 
+	private String modifyTypeEnum;
+
 	private String etlOperatorColumnReference;
+
+	private String reserved;
 
 	private String dtsInstanceId;
 
@@ -65,6 +69,17 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 		}
 	}
 
+	public String getModifyTypeEnum() {
+		return this.modifyTypeEnum;
+	}
+
+	public void setModifyTypeEnum(String modifyTypeEnum) {
+		this.modifyTypeEnum = modifyTypeEnum;
+		if(modifyTypeEnum != null){
+			putBodyParameter("ModifyTypeEnum", modifyTypeEnum);
+		}
+	}
+
 	public String getEtlOperatorColumnReference() {
 		return this.etlOperatorColumnReference;
 	}
@@ -73,6 +88,17 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 		this.etlOperatorColumnReference = etlOperatorColumnReference;
 		if(etlOperatorColumnReference != null){
 			putBodyParameter("EtlOperatorColumnReference", etlOperatorColumnReference);
+		}
+	}
+
+	public String getReserved() {
+		return this.reserved;
+	}
+
+	public void setReserved(String reserved) {
+		this.reserved = reserved;
+		if(reserved != null){
+			putBodyParameter("Reserved", reserved);
 		}
 	}
 

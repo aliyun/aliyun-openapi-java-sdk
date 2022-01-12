@@ -1,3 +1,6 @@
+2022-01-12 Version: 1.8.0
+- DTS SDK.
+
 2021-12-01 Version: 5.1.22-snapshots
 - Fix CreateDtsInstance bug.
 

@@ -58,6 +58,7 @@ public class DescribeDtsJobsResponseUnmarshaller {
 		describeDtsJobsResponse.setDynamicMessage(_ctx.stringValue("DescribeDtsJobsResponse.DynamicMessage"));
 		describeDtsJobsResponse.setPageNumber(_ctx.integerValue("DescribeDtsJobsResponse.PageNumber"));
 		describeDtsJobsResponse.setDynamicCode(_ctx.stringValue("DescribeDtsJobsResponse.DynamicCode"));
+		describeDtsJobsResponse.setJobType(_ctx.stringValue("DescribeDtsJobsResponse.JobType"));
 
 		List<DtsJobStatus> dtsJobList = new ArrayList<DtsJobStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDtsJobsResponse.DtsJobList.Length"); i++) {
@@ -284,6 +285,232 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			dtsJobList.add(dtsJobStatus);
 		}
 		describeDtsJobsResponse.setDtsJobList(dtsJobList);
+
+		List<DtsJobStatus> etlDemoList = new ArrayList<DtsJobStatus>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDtsJobsResponse.EtlDemoList.Length"); i++) {
+			DtsJobStatus dtsJobStatus1 = new DtsJobStatus();
+			dtsJobStatus1.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].Status"));
+			dtsJobStatus1.setOriginType(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].OriginType"));
+			dtsJobStatus1.setDtsJobName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DtsJobName"));
+			dtsJobStatus1.setDelay(_ctx.longValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].Delay"));
+			dtsJobStatus1.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ErrorMessage"));
+			dtsJobStatus1.setExpireTime(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ExpireTime"));
+			dtsJobStatus1.setDtsJobId(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DtsJobId"));
+			dtsJobStatus1.setCreateTime(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].CreateTime"));
+			dtsJobStatus1.setPayType(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PayType"));
+			dtsJobStatus1.setReserved(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].Reserved"));
+			dtsJobStatus1.setConsumptionClient(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ConsumptionClient"));
+			dtsJobStatus1.setDbObject(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DbObject"));
+			dtsJobStatus1.setDtsJobClass(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DtsJobClass"));
+			dtsJobStatus1.setConsumptionCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ConsumptionCheckpoint"));
+			dtsJobStatus1.setEndTimestamp(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].EndTimestamp"));
+			dtsJobStatus1.setAppName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].AppName"));
+			dtsJobStatus1.setBeginTimestamp(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].BeginTimestamp"));
+			dtsJobStatus1.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DtsInstanceID"));
+			dtsJobStatus1.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DtsJobDirection"));
+			dtsJobStatus1.setCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].Checkpoint"));
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DataInitializationStatus dataInitializationStatus2 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DataInitializationStatus();
+			dataInitializationStatus2.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataInitializationStatus.Status"));
+			dataInitializationStatus2.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataInitializationStatus.Percent"));
+			dataInitializationStatus2.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataInitializationStatus.ErrorMessage"));
+			dataInitializationStatus2.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataInitializationStatus.Progress"));
+			dtsJobStatus1.setDataInitializationStatus(dataInitializationStatus2);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DataSynchronizationStatus dataSynchronizationStatus2 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DataSynchronizationStatus();
+			dataSynchronizationStatus2.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataSynchronizationStatus.Status"));
+			dataSynchronizationStatus2.setNeedUpgrade(_ctx.booleanValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataSynchronizationStatus.NeedUpgrade"));
+			dataSynchronizationStatus2.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataSynchronizationStatus.Percent"));
+			dataSynchronizationStatus2.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataSynchronizationStatus.Progress"));
+			dataSynchronizationStatus2.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataSynchronizationStatus.ErrorMessage"));
+			dtsJobStatus1.setDataSynchronizationStatus(dataSynchronizationStatus2);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DataEtlStatus dataEtlStatus1 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DataEtlStatus();
+			dataEtlStatus1.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataEtlStatus.Status"));
+			dataEtlStatus1.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataEtlStatus.Percent"));
+			dataEtlStatus1.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataEtlStatus.ErrorMessage"));
+			dataEtlStatus1.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataEtlStatus.Progress"));
+			dtsJobStatus1.setDataEtlStatus(dataEtlStatus1);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DestinationEndpoint destinationEndpoint2 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DestinationEndpoint();
+			destinationEndpoint2.setSslSolutionEnum(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.SslSolutionEnum"));
+			destinationEndpoint2.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.OracleSID"));
+			destinationEndpoint2.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.Region"));
+			destinationEndpoint2.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.DatabaseName"));
+			destinationEndpoint2.setIp(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.Ip"));
+			destinationEndpoint2.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.InstanceID"));
+			destinationEndpoint2.setPort(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.Port"));
+			destinationEndpoint2.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.InstanceType"));
+			destinationEndpoint2.setUserName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.UserName"));
+			destinationEndpoint2.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DestinationEndpoint.EngineName"));
+			dtsJobStatus1.setDestinationEndpoint(destinationEndpoint2);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.MigrationMode migrationMode2 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.MigrationMode();
+			migrationMode2.setDataInitialization(_ctx.booleanValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].MigrationMode.DataInitialization"));
+			migrationMode2.setDataSynchronization(_ctx.booleanValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].MigrationMode.DataSynchronization"));
+			migrationMode2.setStructureInitialization(_ctx.booleanValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].MigrationMode.StructureInitialization"));
+			dtsJobStatus1.setMigrationMode(migrationMode2);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.Performance performance2 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.Performance();
+			performance2.setRps(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].Performance.Rps"));
+			performance2.setFlow(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].Performance.Flow"));
+			dtsJobStatus1.setPerformance(performance2);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.PrecheckStatus precheckStatus2 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.PrecheckStatus();
+			precheckStatus2.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.Status"));
+			precheckStatus2.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.Percent"));
+			precheckStatus2.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.ErrorMessage"));
+
+			List<PrecheckDetail> detail2 = new ArrayList<PrecheckDetail>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.Detail.Length"); j++) {
+				com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.PrecheckStatus.PrecheckDetail precheckDetail2 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.PrecheckStatus.PrecheckDetail();
+				precheckDetail2.setCheckResult(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.Detail["+ j +"].CheckResult"));
+				precheckDetail2.setCheckItemDescription(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.Detail["+ j +"].CheckItemDescription"));
+				precheckDetail2.setCheckItem(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.Detail["+ j +"].CheckItem"));
+				precheckDetail2.setRepairMethod(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.Detail["+ j +"].RepairMethod"));
+				precheckDetail2.setFailedReason(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].PrecheckStatus.Detail["+ j +"].FailedReason"));
+
+				detail2.add(precheckDetail2);
+			}
+			precheckStatus2.setDetail(detail2);
+			dtsJobStatus1.setPrecheckStatus(precheckStatus2);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob reverseJob1 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob();
+			reverseJob1.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.Status"));
+			reverseJob1.setDtsJobName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DtsJobName"));
+			reverseJob1.setDelay(_ctx.longValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.Delay"));
+			reverseJob1.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.ErrorMessage"));
+			reverseJob1.setDtsJobId(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DtsJobId"));
+			reverseJob1.setExpireTime(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.ExpireTime"));
+			reverseJob1.setCreateTime(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.CreateTime"));
+			reverseJob1.setPayType(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PayType"));
+			reverseJob1.setReserved(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.Reserved"));
+			reverseJob1.setDbObject(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DbObject"));
+			reverseJob1.setDtsJobClass(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DtsJobClass"));
+			reverseJob1.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DtsInstanceID"));
+			reverseJob1.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DtsJobDirection"));
+			reverseJob1.setCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.Checkpoint"));
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.DataInitializationStatus1 dataInitializationStatus11 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.DataInitializationStatus1();
+			dataInitializationStatus11.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataInitializationStatus.Status"));
+			dataInitializationStatus11.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataInitializationStatus.Percent"));
+			dataInitializationStatus11.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataInitializationStatus.ErrorMessage"));
+			dataInitializationStatus11.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataInitializationStatus.Progress"));
+			reverseJob1.setDataInitializationStatus1(dataInitializationStatus11);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.DataSynchronizationStatus2 dataSynchronizationStatus22 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.DataSynchronizationStatus2();
+			dataSynchronizationStatus22.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataSynchronizationStatus.Status"));
+			dataSynchronizationStatus22.setNeedUpgrade(_ctx.booleanValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataSynchronizationStatus.NeedUpgrade"));
+			dataSynchronizationStatus22.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataSynchronizationStatus.Percent"));
+			dataSynchronizationStatus22.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataSynchronizationStatus.Progress"));
+			dataSynchronizationStatus22.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DataSynchronizationStatus.ErrorMessage"));
+			reverseJob1.setDataSynchronizationStatus2(dataSynchronizationStatus22);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.DestinationEndpoint3 destinationEndpoint31 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.DestinationEndpoint3();
+			destinationEndpoint31.setSslSolutionEnum(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.SslSolutionEnum"));
+			destinationEndpoint31.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.OracleSID"));
+			destinationEndpoint31.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.Region"));
+			destinationEndpoint31.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.DatabaseName"));
+			destinationEndpoint31.setIp(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.Ip"));
+			destinationEndpoint31.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.InstanceID"));
+			destinationEndpoint31.setPort(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.Port"));
+			destinationEndpoint31.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.InstanceType"));
+			destinationEndpoint31.setUserName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.UserName"));
+			destinationEndpoint31.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.DestinationEndpoint.EngineName"));
+			reverseJob1.setDestinationEndpoint3(destinationEndpoint31);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.MigrationMode4 migrationMode41 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.MigrationMode4();
+			migrationMode41.setDataInitialization(_ctx.booleanValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.MigrationMode.DataInitialization"));
+			migrationMode41.setDataSynchronization(_ctx.booleanValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.MigrationMode.DataSynchronization"));
+			migrationMode41.setStructureInitialization(_ctx.booleanValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.MigrationMode.StructureInitialization"));
+			reverseJob1.setMigrationMode4(migrationMode41);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.Performance5 performance51 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.Performance5();
+			performance51.setRps(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.Performance.Rps"));
+			performance51.setFlow(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.Performance.Flow"));
+			reverseJob1.setPerformance5(performance51);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.PrecheckStatus6 precheckStatus61 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.PrecheckStatus6();
+			precheckStatus61.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.Status"));
+			precheckStatus61.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.Percent"));
+			precheckStatus61.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.ErrorMessage"));
+
+			List<PrecheckDetail10> detail91 = new ArrayList<PrecheckDetail10>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.Detail.Length"); j++) {
+				com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.PrecheckStatus6.PrecheckDetail10 precheckDetail101 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.PrecheckStatus6.PrecheckDetail10();
+				precheckDetail101.setCheckResult(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].CheckResult"));
+				precheckDetail101.setCheckItemDescription(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].CheckItemDescription"));
+				precheckDetail101.setCheckItem(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].CheckItem"));
+				precheckDetail101.setRepairMethod(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].RepairMethod"));
+				precheckDetail101.setFailedReason(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].FailedReason"));
+
+				detail91.add(precheckDetail101);
+			}
+			precheckStatus61.setDetail9(detail91);
+			reverseJob1.setPrecheckStatus6(precheckStatus61);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.SourceEndpoint7 sourceEndpoint71 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.SourceEndpoint7();
+			sourceEndpoint71.setSslSolutionEnum(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.SslSolutionEnum"));
+			sourceEndpoint71.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.OracleSID"));
+			sourceEndpoint71.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.Region"));
+			sourceEndpoint71.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.DatabaseName"));
+			sourceEndpoint71.setIp(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.Ip"));
+			sourceEndpoint71.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.InstanceID"));
+			sourceEndpoint71.setPort(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.Port"));
+			sourceEndpoint71.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.InstanceType"));
+			sourceEndpoint71.setUserName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.UserName"));
+			sourceEndpoint71.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.SourceEndpoint.EngineName"));
+			reverseJob1.setSourceEndpoint7(sourceEndpoint71);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.StructureInitializationStatus8 structureInitializationStatus81 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.StructureInitializationStatus8();
+			structureInitializationStatus81.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.StructureInitializationStatus.Status"));
+			structureInitializationStatus81.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.StructureInitializationStatus.Percent"));
+			structureInitializationStatus81.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.StructureInitializationStatus.ErrorMessage"));
+			structureInitializationStatus81.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].ReverseJob.StructureInitializationStatus.Progress"));
+			reverseJob1.setStructureInitializationStatus8(structureInitializationStatus81);
+			dtsJobStatus1.setReverseJob(reverseJob1);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.SourceEndpoint sourceEndpoint3 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.SourceEndpoint();
+			sourceEndpoint3.setSslSolutionEnum(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.SslSolutionEnum"));
+			sourceEndpoint3.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.OracleSID"));
+			sourceEndpoint3.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.Region"));
+			sourceEndpoint3.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.DatabaseName"));
+			sourceEndpoint3.setIp(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.Ip"));
+			sourceEndpoint3.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.InstanceID"));
+			sourceEndpoint3.setPort(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.Port"));
+			sourceEndpoint3.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.InstanceType"));
+			sourceEndpoint3.setUserName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.UserName"));
+			sourceEndpoint3.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].SourceEndpoint.EngineName"));
+			dtsJobStatus1.setSourceEndpoint(sourceEndpoint3);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.StructureInitializationStatus structureInitializationStatus3 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.StructureInitializationStatus();
+			structureInitializationStatus3.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].StructureInitializationStatus.Status"));
+			structureInitializationStatus3.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].StructureInitializationStatus.Percent"));
+			structureInitializationStatus3.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].StructureInitializationStatus.ErrorMessage"));
+			structureInitializationStatus3.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].StructureInitializationStatus.Progress"));
+			dtsJobStatus1.setStructureInitializationStatus(structureInitializationStatus3);
+
+			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.RetryState retryState1 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.RetryState();
+			retryState1.setRetryCount(_ctx.integerValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].RetryState.RetryCount"));
+			retryState1.setMaxRetryTime(_ctx.integerValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].RetryState.MaxRetryTime"));
+			retryState1.setErrMessage(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].RetryState.ErrMessage"));
+			retryState1.setRetryTarget(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].RetryState.RetryTarget"));
+			retryState1.setRetryTime(_ctx.integerValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].RetryState.RetryTime"));
+			dtsJobStatus1.setRetryState(retryState1);
+
+			List<DtsTag> tagList1 = new ArrayList<DtsTag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].TagList.Length"); j++) {
+				com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DtsTag dtsTag1 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DtsTag();
+				dtsTag1.setTagValue(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].TagList["+ j +"].TagValue"));
+				dtsTag1.setTagKey(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].TagList["+ j +"].TagKey"));
+
+				tagList1.add(dtsTag1);
+			}
+			dtsJobStatus1.setTagList(tagList1);
+
+			etlDemoList.add(dtsJobStatus1);
+		}
+		describeDtsJobsResponse.setEtlDemoList(etlDemoList);
 	 
 	 	return describeDtsJobsResponse;
 	}
