@@ -52,6 +52,7 @@ public class DescribeJobGroupResponseUnmarshaller {
 		jobGroup.setScriptName(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ScriptName"));
 		jobGroup.setModifyTime(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ModifyTime"));
 		jobGroup.setScriptVersion(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ScriptVersion"));
+		jobGroup.setRingingDuration(_ctx.longValue("DescribeJobGroupResponse.JobGroup.RingingDuration"));
 
 		List<String> callingNumbers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeJobGroupResponse.JobGroup.CallingNumbers.Length"); i++) {

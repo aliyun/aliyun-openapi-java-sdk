@@ -15,14 +15,14 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.SuspendCallResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.CreateNumberDistrictInfoDownloadUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SuspendCallResponse extends AcsResponse {
+public class CreateNumberDistrictInfoDownloadUrlResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
@@ -33,6 +33,8 @@ public class SuspendCallResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
+
+	private String fileHttpUrl;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -74,8 +76,21 @@ public class SuspendCallResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getFileHttpUrl() {
+		return this.fileHttpUrl;
+	}
+
+	public void setFileHttpUrl(String fileHttpUrl) {
+		this.fileHttpUrl = fileHttpUrl;
+	}
+
 	@Override
-	public SuspendCallResponse getInstance(UnmarshallerContext context) {
-		return	SuspendCallResponseUnmarshaller.unmarshall(this, context);
+	public CreateNumberDistrictInfoDownloadUrlResponse getInstance(UnmarshallerContext context) {
+		return	CreateNumberDistrictInfoDownloadUrlResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

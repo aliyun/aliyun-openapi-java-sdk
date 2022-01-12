@@ -15,14 +15,14 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.SuspendCallResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.CreateNumberDistrictInfoParsingTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SuspendCallResponse extends AcsResponse {
+public class CreateNumberDistrictInfoParsingTaskResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
@@ -75,7 +75,12 @@ public class SuspendCallResponse extends AcsResponse {
 	}
 
 	@Override
-	public SuspendCallResponse getInstance(UnmarshallerContext context) {
-		return	SuspendCallResponseUnmarshaller.unmarshall(this, context);
+	public CreateNumberDistrictInfoParsingTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateNumberDistrictInfoParsingTaskResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -43,6 +43,8 @@ public class CreateBatchRepeatJobRequest extends RpcAcsRequest<CreateBatchRepeat
 	private String name;
 
 	private String sourceGroupId;
+
+	private Long ringingDuration;
 	public CreateBatchRepeatJobRequest() {
 		super("OutboundBot", "2019-12-26", "CreateBatchRepeatJob", "outboundbot");
 		setMethod(MethodType.POST);
@@ -150,6 +152,17 @@ public class CreateBatchRepeatJobRequest extends RpcAcsRequest<CreateBatchRepeat
 		this.sourceGroupId = sourceGroupId;
 		if(sourceGroupId != null){
 			putQueryParameter("SourceGroupId", sourceGroupId);
+		}
+	}
+
+	public Long getRingingDuration() {
+		return this.ringingDuration;
+	}
+
+	public void setRingingDuration(Long ringingDuration) {
+		this.ringingDuration = ringingDuration;
+		if(ringingDuration != null){
+			putQueryParameter("RingingDuration", ringingDuration.toString());
 		}
 	}
 

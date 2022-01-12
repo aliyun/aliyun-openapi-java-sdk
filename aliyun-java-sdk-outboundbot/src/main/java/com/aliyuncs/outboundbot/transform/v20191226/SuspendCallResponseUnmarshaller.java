@@ -23,10 +23,10 @@ public class SuspendCallResponseUnmarshaller {
 	public static SuspendCallResponse unmarshall(SuspendCallResponse suspendCallResponse, UnmarshallerContext _ctx) {
 		
 		suspendCallResponse.setRequestId(_ctx.stringValue("SuspendCallResponse.RequestId"));
-		suspendCallResponse.setSuccess(_ctx.booleanValue("SuspendCallResponse.Success"));
+		suspendCallResponse.setHttpStatusCode(_ctx.integerValue("SuspendCallResponse.HttpStatusCode"));
 		suspendCallResponse.setCode(_ctx.stringValue("SuspendCallResponse.Code"));
 		suspendCallResponse.setMessage(_ctx.stringValue("SuspendCallResponse.Message"));
-		suspendCallResponse.setHttpStatusCode(_ctx.integerValue("SuspendCallResponse.HttpStatusCode"));
+		suspendCallResponse.setSuccess(_ctx.booleanValue("SuspendCallResponse.Success"));
 	 
 	 	return suspendCallResponse;
 	}

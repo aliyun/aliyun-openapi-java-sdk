@@ -24,32 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeJobDataParsingTaskProgressResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
+
+	private Boolean success;
 
 	private Progress progress;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -68,12 +60,20 @@ public class DescribeJobDataParsingTaskProgressResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Progress getProgress() {
@@ -86,23 +86,17 @@ public class DescribeJobDataParsingTaskProgressResponse extends AcsResponse {
 
 	public static class Progress {
 
-		private String status;
-
 		private String failErrorCode;
 
-		private String failReason;
-
-		private Integer totalJobCount;
+		private String status;
 
 		private Integer handledJobCount;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private Integer totalJobCount;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String failReason;
+
+		private String feedbackUrl;
 
 		public String getFailErrorCode() {
 			return this.failErrorCode;
@@ -112,12 +106,20 @@ public class DescribeJobDataParsingTaskProgressResponse extends AcsResponse {
 			this.failErrorCode = failErrorCode;
 		}
 
-		public String getFailReason() {
-			return this.failReason;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setFailReason(String failReason) {
-			this.failReason = failReason;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getHandledJobCount() {
+			return this.handledJobCount;
+		}
+
+		public void setHandledJobCount(Integer handledJobCount) {
+			this.handledJobCount = handledJobCount;
 		}
 
 		public Integer getTotalJobCount() {
@@ -128,12 +130,20 @@ public class DescribeJobDataParsingTaskProgressResponse extends AcsResponse {
 			this.totalJobCount = totalJobCount;
 		}
 
-		public Integer getHandledJobCount() {
-			return this.handledJobCount;
+		public String getFailReason() {
+			return this.failReason;
 		}
 
-		public void setHandledJobCount(Integer handledJobCount) {
-			this.handledJobCount = handledJobCount;
+		public void setFailReason(String failReason) {
+			this.failReason = failReason;
+		}
+
+		public String getFeedbackUrl() {
+			return this.feedbackUrl;
+		}
+
+		public void setFeedbackUrl(String feedbackUrl) {
+			this.feedbackUrl = feedbackUrl;
 		}
 	}
 

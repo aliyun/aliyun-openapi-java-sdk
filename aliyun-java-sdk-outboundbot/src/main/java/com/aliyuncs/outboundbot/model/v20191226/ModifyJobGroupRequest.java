@@ -32,17 +32,21 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 
 	private String scriptId;
 
+	private String strategyJson;
+
+	private Long ringingDuration;
+
+	private String scenarioId;
+
+	private String jobGroupStatus;
+
 	private List<String> callingNumbers;
 
 	private String instanceId;
 
-	private String strategyJson;
-
 	private String jobGroupId;
 
 	private String name;
-
-	private String scenarioId;
 	public ModifyJobGroupRequest() {
 		super("OutboundBot", "2019-12-26", "ModifyJobGroup", "outboundbot");
 		setMethod(MethodType.POST);
@@ -85,6 +89,50 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		}
 	}
 
+	public String getStrategyJson() {
+		return this.strategyJson;
+	}
+
+	public void setStrategyJson(String strategyJson) {
+		this.strategyJson = strategyJson;
+		if(strategyJson != null){
+			putQueryParameter("StrategyJson", strategyJson);
+		}
+	}
+
+	public Long getRingingDuration() {
+		return this.ringingDuration;
+	}
+
+	public void setRingingDuration(Long ringingDuration) {
+		this.ringingDuration = ringingDuration;
+		if(ringingDuration != null){
+			putQueryParameter("RingingDuration", ringingDuration.toString());
+		}
+	}
+
+	public String getScenarioId() {
+		return this.scenarioId;
+	}
+
+	public void setScenarioId(String scenarioId) {
+		this.scenarioId = scenarioId;
+		if(scenarioId != null){
+			putQueryParameter("ScenarioId", scenarioId);
+		}
+	}
+
+	public String getJobGroupStatus() {
+		return this.jobGroupStatus;
+	}
+
+	public void setJobGroupStatus(String jobGroupStatus) {
+		this.jobGroupStatus = jobGroupStatus;
+		if(jobGroupStatus != null){
+			putQueryParameter("JobGroupStatus", jobGroupStatus);
+		}
+	}
+
 	public List<String> getCallingNumbers() {
 		return this.callingNumbers;
 	}
@@ -109,17 +157,6 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		}
 	}
 
-	public String getStrategyJson() {
-		return this.strategyJson;
-	}
-
-	public void setStrategyJson(String strategyJson) {
-		this.strategyJson = strategyJson;
-		if(strategyJson != null){
-			putQueryParameter("StrategyJson", strategyJson);
-		}
-	}
-
 	public String getJobGroupId() {
 		return this.jobGroupId;
 	}
@@ -139,17 +176,6 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getScenarioId() {
-		return this.scenarioId;
-	}
-
-	public void setScenarioId(String scenarioId) {
-		this.scenarioId = scenarioId;
-		if(scenarioId != null){
-			putQueryParameter("ScenarioId", scenarioId);
 		}
 	}
 

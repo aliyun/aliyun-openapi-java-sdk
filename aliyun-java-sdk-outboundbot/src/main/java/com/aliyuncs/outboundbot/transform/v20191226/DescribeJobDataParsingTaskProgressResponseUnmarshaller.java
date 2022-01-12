@@ -24,17 +24,18 @@ public class DescribeJobDataParsingTaskProgressResponseUnmarshaller {
 	public static DescribeJobDataParsingTaskProgressResponse unmarshall(DescribeJobDataParsingTaskProgressResponse describeJobDataParsingTaskProgressResponse, UnmarshallerContext _ctx) {
 		
 		describeJobDataParsingTaskProgressResponse.setRequestId(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.RequestId"));
-		describeJobDataParsingTaskProgressResponse.setSuccess(_ctx.booleanValue("DescribeJobDataParsingTaskProgressResponse.Success"));
+		describeJobDataParsingTaskProgressResponse.setHttpStatusCode(_ctx.integerValue("DescribeJobDataParsingTaskProgressResponse.HttpStatusCode"));
 		describeJobDataParsingTaskProgressResponse.setCode(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.Code"));
 		describeJobDataParsingTaskProgressResponse.setMessage(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.Message"));
-		describeJobDataParsingTaskProgressResponse.setHttpStatusCode(_ctx.integerValue("DescribeJobDataParsingTaskProgressResponse.HttpStatusCode"));
+		describeJobDataParsingTaskProgressResponse.setSuccess(_ctx.booleanValue("DescribeJobDataParsingTaskProgressResponse.Success"));
 
 		Progress progress = new Progress();
-		progress.setStatus(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.Progress.Status"));
 		progress.setFailErrorCode(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.Progress.FailErrorCode"));
-		progress.setFailReason(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.Progress.FailReason"));
-		progress.setTotalJobCount(_ctx.integerValue("DescribeJobDataParsingTaskProgressResponse.Progress.TotalJobCount"));
+		progress.setStatus(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.Progress.Status"));
 		progress.setHandledJobCount(_ctx.integerValue("DescribeJobDataParsingTaskProgressResponse.Progress.HandledJobCount"));
+		progress.setTotalJobCount(_ctx.integerValue("DescribeJobDataParsingTaskProgressResponse.Progress.TotalJobCount"));
+		progress.setFailReason(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.Progress.FailReason"));
+		progress.setFeedbackUrl(_ctx.stringValue("DescribeJobDataParsingTaskProgressResponse.Progress.FeedbackUrl"));
 		describeJobDataParsingTaskProgressResponse.setProgress(progress);
 	 
 	 	return describeJobDataParsingTaskProgressResponse;

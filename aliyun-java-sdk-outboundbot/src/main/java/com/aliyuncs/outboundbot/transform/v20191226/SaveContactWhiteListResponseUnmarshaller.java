@@ -23,11 +23,11 @@ public class SaveContactWhiteListResponseUnmarshaller {
 	public static SaveContactWhiteListResponse unmarshall(SaveContactWhiteListResponse saveContactWhiteListResponse, UnmarshallerContext _ctx) {
 		
 		saveContactWhiteListResponse.setRequestId(_ctx.stringValue("SaveContactWhiteListResponse.RequestId"));
+		saveContactWhiteListResponse.setHttpStatusCode(_ctx.integerValue("SaveContactWhiteListResponse.HttpStatusCode"));
+		saveContactWhiteListResponse.setAffectedRows(_ctx.integerValue("SaveContactWhiteListResponse.AffectedRows"));
 		saveContactWhiteListResponse.setSuccess(_ctx.booleanValue("SaveContactWhiteListResponse.Success"));
 		saveContactWhiteListResponse.setCode(_ctx.stringValue("SaveContactWhiteListResponse.Code"));
 		saveContactWhiteListResponse.setMessage(_ctx.stringValue("SaveContactWhiteListResponse.Message"));
-		saveContactWhiteListResponse.setHttpStatusCode(_ctx.integerValue("SaveContactWhiteListResponse.HttpStatusCode"));
-		saveContactWhiteListResponse.setAffectedRows(_ctx.integerValue("SaveContactWhiteListResponse.AffectedRows"));
 	 
 	 	return saveContactWhiteListResponse;
 	}

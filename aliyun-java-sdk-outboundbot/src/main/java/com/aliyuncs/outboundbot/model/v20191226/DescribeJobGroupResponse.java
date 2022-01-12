@@ -111,6 +111,8 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		private String scriptVersion;
 
+		private Long ringingDuration;
+
 		private List<String> callingNumbers;
 
 		private ExportProgress exportProgress;
@@ -217,6 +219,14 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		public void setScriptVersion(String scriptVersion) {
 			this.scriptVersion = scriptVersion;
+		}
+
+		public Long getRingingDuration() {
+			return this.ringingDuration;
+		}
+
+		public void setRingingDuration(Long ringingDuration) {
+			this.ringingDuration = ringingDuration;
 		}
 
 		public List<String> getCallingNumbers() {

@@ -88,12 +88,22 @@ public class CreateBatchRepeatJobResponse extends AcsResponse {
 
 		private String id;
 
+		private Long ringingDuration;
+
 		public String getId() {
 			return this.id;
 		}
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public Long getRingingDuration() {
+			return this.ringingDuration;
+		}
+
+		public void setRingingDuration(Long ringingDuration) {
+			this.ringingDuration = ringingDuration;
 		}
 	}
 

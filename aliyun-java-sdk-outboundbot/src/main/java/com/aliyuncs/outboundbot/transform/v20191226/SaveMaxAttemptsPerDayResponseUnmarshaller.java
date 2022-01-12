@@ -23,10 +23,10 @@ public class SaveMaxAttemptsPerDayResponseUnmarshaller {
 	public static SaveMaxAttemptsPerDayResponse unmarshall(SaveMaxAttemptsPerDayResponse saveMaxAttemptsPerDayResponse, UnmarshallerContext _ctx) {
 		
 		saveMaxAttemptsPerDayResponse.setRequestId(_ctx.stringValue("SaveMaxAttemptsPerDayResponse.RequestId"));
-		saveMaxAttemptsPerDayResponse.setSuccess(_ctx.booleanValue("SaveMaxAttemptsPerDayResponse.Success"));
+		saveMaxAttemptsPerDayResponse.setHttpStatusCode(_ctx.integerValue("SaveMaxAttemptsPerDayResponse.HttpStatusCode"));
 		saveMaxAttemptsPerDayResponse.setCode(_ctx.stringValue("SaveMaxAttemptsPerDayResponse.Code"));
 		saveMaxAttemptsPerDayResponse.setMessage(_ctx.stringValue("SaveMaxAttemptsPerDayResponse.Message"));
-		saveMaxAttemptsPerDayResponse.setHttpStatusCode(_ctx.integerValue("SaveMaxAttemptsPerDayResponse.HttpStatusCode"));
+		saveMaxAttemptsPerDayResponse.setSuccess(_ctx.booleanValue("SaveMaxAttemptsPerDayResponse.Success"));
 	 
 	 	return saveMaxAttemptsPerDayResponse;
 	}

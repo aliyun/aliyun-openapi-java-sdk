@@ -23,10 +23,10 @@ public class SaveBaseStrategyPeriodResponseUnmarshaller {
 	public static SaveBaseStrategyPeriodResponse unmarshall(SaveBaseStrategyPeriodResponse saveBaseStrategyPeriodResponse, UnmarshallerContext _ctx) {
 		
 		saveBaseStrategyPeriodResponse.setRequestId(_ctx.stringValue("SaveBaseStrategyPeriodResponse.RequestId"));
-		saveBaseStrategyPeriodResponse.setSuccess(_ctx.booleanValue("SaveBaseStrategyPeriodResponse.Success"));
+		saveBaseStrategyPeriodResponse.setHttpStatusCode(_ctx.integerValue("SaveBaseStrategyPeriodResponse.HttpStatusCode"));
 		saveBaseStrategyPeriodResponse.setCode(_ctx.stringValue("SaveBaseStrategyPeriodResponse.Code"));
 		saveBaseStrategyPeriodResponse.setMessage(_ctx.stringValue("SaveBaseStrategyPeriodResponse.Message"));
-		saveBaseStrategyPeriodResponse.setHttpStatusCode(_ctx.integerValue("SaveBaseStrategyPeriodResponse.HttpStatusCode"));
+		saveBaseStrategyPeriodResponse.setSuccess(_ctx.booleanValue("SaveBaseStrategyPeriodResponse.Success"));
 	 
 	 	return saveBaseStrategyPeriodResponse;
 	}

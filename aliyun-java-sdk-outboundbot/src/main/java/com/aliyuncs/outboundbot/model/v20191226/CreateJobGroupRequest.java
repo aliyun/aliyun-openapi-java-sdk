@@ -40,6 +40,8 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 
 	private String strategyJson;
 
+	private Long ringingDuration;
+
 	private String scenarioId;
 	public CreateJobGroupRequest() {
 		super("OutboundBot", "2019-12-26", "CreateJobGroup", "outboundbot");
@@ -126,6 +128,17 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 		this.strategyJson = strategyJson;
 		if(strategyJson != null){
 			putQueryParameter("StrategyJson", strategyJson);
+		}
+	}
+
+	public Long getRingingDuration() {
+		return this.ringingDuration;
+	}
+
+	public void setRingingDuration(Long ringingDuration) {
+		this.ringingDuration = ringingDuration;
+		if(ringingDuration != null){
+			putQueryParameter("RingingDuration", ringingDuration.toString());
 		}
 	}
 

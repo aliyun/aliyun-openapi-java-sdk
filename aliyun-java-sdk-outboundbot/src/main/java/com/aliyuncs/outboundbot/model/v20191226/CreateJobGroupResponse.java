@@ -109,6 +109,8 @@ public class CreateJobGroupResponse extends AcsResponse {
 
 		private String modifyTime;
 
+		private Long ringingDuration;
+
 		private List<String> callingNumbers;
 
 		private ExportProgress exportProgress;
@@ -203,6 +205,14 @@ public class CreateJobGroupResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public Long getRingingDuration() {
+			return this.ringingDuration;
+		}
+
+		public void setRingingDuration(Long ringingDuration) {
+			this.ringingDuration = ringingDuration;
 		}
 
 		public List<String> getCallingNumbers() {

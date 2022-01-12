@@ -23,11 +23,11 @@ public class SaveContactBlockListResponseUnmarshaller {
 	public static SaveContactBlockListResponse unmarshall(SaveContactBlockListResponse saveContactBlockListResponse, UnmarshallerContext _ctx) {
 		
 		saveContactBlockListResponse.setRequestId(_ctx.stringValue("SaveContactBlockListResponse.RequestId"));
+		saveContactBlockListResponse.setHttpStatusCode(_ctx.integerValue("SaveContactBlockListResponse.HttpStatusCode"));
+		saveContactBlockListResponse.setAffectedRows(_ctx.integerValue("SaveContactBlockListResponse.AffectedRows"));
 		saveContactBlockListResponse.setSuccess(_ctx.booleanValue("SaveContactBlockListResponse.Success"));
 		saveContactBlockListResponse.setCode(_ctx.stringValue("SaveContactBlockListResponse.Code"));
 		saveContactBlockListResponse.setMessage(_ctx.stringValue("SaveContactBlockListResponse.Message"));
-		saveContactBlockListResponse.setHttpStatusCode(_ctx.integerValue("SaveContactBlockListResponse.HttpStatusCode"));
-		saveContactBlockListResponse.setAffectedRows(_ctx.integerValue("SaveContactBlockListResponse.AffectedRows"));
 	 
 	 	return saveContactBlockListResponse;
 	}
