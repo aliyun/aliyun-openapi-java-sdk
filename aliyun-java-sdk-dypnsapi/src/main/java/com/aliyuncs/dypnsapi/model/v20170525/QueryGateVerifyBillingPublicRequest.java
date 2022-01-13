@@ -25,13 +25,9 @@ import com.aliyuncs.dypnsapi.Endpoint;
 public class QueryGateVerifyBillingPublicRequest extends RpcAcsRequest<QueryGateVerifyBillingPublicResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private Integer authenticationType;
 
 	private String resourceOwnerAccount;
-
-	private String prodCode;
 
 	private Long ownerId;
 
@@ -43,17 +39,6 @@ public class QueryGateVerifyBillingPublicRequest extends RpcAcsRequest<QueryGate
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public Integer getAuthenticationType() {
@@ -75,17 +60,6 @@ public class QueryGateVerifyBillingPublicRequest extends RpcAcsRequest<QueryGate
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getProdCode() {
-		return this.prodCode;
-	}
-
-	public void setProdCode(String prodCode) {
-		this.prodCode = prodCode;
-		if(prodCode != null){
-			putQueryParameter("ProdCode", prodCode);
 		}
 	}
 

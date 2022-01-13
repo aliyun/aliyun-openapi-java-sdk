@@ -1,3 +1,6 @@
+2022-01-13 Version: 1.2.5
+- Supported New Features.
+
 2022-01-07 Version: 1.2.4
 - Support New API for Dypnsapi.
 
