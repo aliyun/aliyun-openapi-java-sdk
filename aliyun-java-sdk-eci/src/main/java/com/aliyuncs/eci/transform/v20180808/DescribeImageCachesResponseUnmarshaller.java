@@ -20,50 +20,65 @@ import java.util.List;
 import com.aliyuncs.eci.model.v20180808.DescribeImageCachesResponse;
 import com.aliyuncs.eci.model.v20180808.DescribeImageCachesResponse.ImageCache;
 import com.aliyuncs.eci.model.v20180808.DescribeImageCachesResponse.ImageCache.Event;
+import com.aliyuncs.eci.model.v20180808.DescribeImageCachesResponse.ImageCache.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeImageCachesResponseUnmarshaller {
 
-	public static DescribeImageCachesResponse unmarshall(DescribeImageCachesResponse describeImageCachesResponse, UnmarshallerContext _ctx) {
-		
-		describeImageCachesResponse.setRequestId(_ctx.stringValue("DescribeImageCachesResponse.RequestId"));
+    public static DescribeImageCachesResponse unmarshall(DescribeImageCachesResponse describeImageCachesResponse, UnmarshallerContext _ctx) {
 
-		List<ImageCache> imageCaches = new ArrayList<ImageCache>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeImageCachesResponse.ImageCaches.Length"); i++) {
-			ImageCache imageCache = new ImageCache();
-			imageCache.setContainerGroupId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].ContainerGroupId"));
-			imageCache.setImageCacheId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].ImageCacheId"));
-			imageCache.setImageCacheName(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].ImageCacheName"));
-			imageCache.setSnapshotId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].SnapshotId"));
-			imageCache.setFlashSnapshotId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].FlashSnapshotId"));
-			imageCache.setProgress(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Progress"));
-			imageCache.setStatus(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Status"));
+        describeImageCachesResponse.setRequestId(_ctx.stringValue("DescribeImageCachesResponse.RequestId"));
 
-			List<String> images = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Images.Length"); j++) {
-				images.add(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Images["+ j +"]"));
-			}
-			imageCache.setImages(images);
+        List<ImageCache> imageCaches = new ArrayList<ImageCache>();
+        for (int i = 0; i < _ctx.lengthValue("DescribeImageCachesResponse.ImageCaches.Length"); i++) {
+            ImageCache imageCache = new ImageCache();
+            imageCache.setContainerGroupId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].ContainerGroupId"));
+            imageCache.setImageCacheId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].ImageCacheId"));
+            imageCache.setImageCacheName(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].ImageCacheName"));
+            imageCache.setSnapshotId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].SnapshotId"));
+            imageCache.setFlashSnapshotId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].FlashSnapshotId"));
+            imageCache.setProgress(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Progress"));
+            imageCache.setStatus(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Status"));
+            imageCache.setLastMatchedTime(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].LastMatchedTime"));
+            imageCache.setExpireDateTime(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].ExpireDateTime"));
+            imageCache.setResourceGroupId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].ResourceGroupId"));
+            imageCache.setCreationTime(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].CreationTime"));
+            imageCache.setImageCacheSize(_ctx.integerValue("DescribeImageCachesResponse.ImageCaches[" + i + "].ImageCacheSize"));
 
-			List<Event> events = new ArrayList<Event>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Events.Length"); j++) {
-				Event event = new Event();
-				event.setCount(_ctx.integerValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Events["+ j +"].Count"));
-				event.setType(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Events["+ j +"].Type"));
-				event.setName(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Events["+ j +"].Name"));
-				event.setMessage(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Events["+ j +"].Message"));
-				event.setFirstTimestamp(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Events["+ j +"].FirstTimestamp"));
-				event.setLastTimestamp(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Events["+ j +"].LastTimestamp"));
+            List<String> images = new ArrayList<String>();
+            for (int j = 0; j < _ctx.lengthValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Images.Length"); j++) {
+                images.add(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Images[" + j + "]"));
+            }
+            imageCache.setImages(images);
 
-				events.add(event);
-			}
-			imageCache.setEvents(events);
+            List<Event> events = new ArrayList<Event>();
+            for (int j = 0; j < _ctx.lengthValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Events.Length"); j++) {
+                Event event = new Event();
+                event.setCount(_ctx.integerValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Events[" + j + "].Count"));
+                event.setType(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Events[" + j + "].Type"));
+                event.setName(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Events[" + j + "].Name"));
+                event.setMessage(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Events[" + j + "].Message"));
+                event.setFirstTimestamp(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Events[" + j + "].FirstTimestamp"));
+                event.setLastTimestamp(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Events[" + j + "].LastTimestamp"));
 
-			imageCaches.add(imageCache);
-		}
-		describeImageCachesResponse.setImageCaches(imageCaches);
-	 
-	 	return describeImageCachesResponse;
-	}
+                events.add(event);
+            }
+            imageCache.setEvents(events);
+
+            List<Tag> tags = new ArrayList<Tag>();
+            for (int j = 0; j < _ctx.lengthValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Tags.Length"); j++) {
+                Tag tag = new Tag();
+                tag.setKey(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Tags[" + j + "].Key"));
+                tag.setValue(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches[" + i + "].Tags[" + j + "].Value"));
+                tags.add(tag);
+            }
+            imageCache.setTags(tags);
+
+            imageCaches.add(imageCache);
+        }
+        describeImageCachesResponse.setImageCaches(imageCaches);
+
+        return describeImageCachesResponse;
+    }
 }
