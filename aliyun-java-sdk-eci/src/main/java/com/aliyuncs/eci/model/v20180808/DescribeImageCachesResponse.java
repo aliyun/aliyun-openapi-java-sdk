@@ -21,204 +21,279 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import java.util.List;
 
 /**
- * @author auto create
- * @version 
+ * @author xiaohui
+ * @version 1.2.9
  */
 public class DescribeImageCachesResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private List<ImageCache> imageCaches;
+    private List<ImageCache> imageCaches;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public List<ImageCache> getImageCaches() {
-		return this.imageCaches;
-	}
+    public List<ImageCache> getImageCaches() {
+        return this.imageCaches;
+    }
 
-	public void setImageCaches(List<ImageCache> imageCaches) {
-		this.imageCaches = imageCaches;
-	}
+    public void setImageCaches(List<ImageCache> imageCaches) {
+        this.imageCaches = imageCaches;
+    }
 
-	public static class ImageCache {
+    public static class ImageCache {
 
-		private String containerGroupId;
+        private List<String> images;
 
-		private String imageCacheId;
+        private String creationTime;
 
-		private String imageCacheName;
+        private String status;
 
-		private String snapshotId;
+        private String progress;
 
-		private String flashSnapshotId;
+        private String expireDateTime;
 
-		private String progress;
+        private String lastMatchedTime;
 
-		private String status;
+        private String containerGroupId;
 
-		private List<Event> events;
+        private List<Tag> tags;
 
-		private List<String> images;
+        private List<Event> events;
 
-		private String expireDateTime;
+        private String imageCacheId;
 
-		public String getExpireDateTime() {
-			return expireDateTime;
-		}
+        private String snapshotId;
 
-		public void setExpireDateTime(String expireDateTime) {
-			this.expireDateTime = expireDateTime;
-		}
+        private String flashSnapshotId;
 
-		public String getContainerGroupId() {
-			return this.containerGroupId;
-		}
+        private String resourceGroupId;
 
-		public void setContainerGroupId(String containerGroupId) {
-			this.containerGroupId = containerGroupId;
-		}
+        private Integer imageCacheSize;
 
-		public String getImageCacheId() {
-			return this.imageCacheId;
-		}
+        private String imageCacheName;
 
-		public void setImageCacheId(String imageCacheId) {
-			this.imageCacheId = imageCacheId;
-		}
 
-		public String getImageCacheName() {
-			return this.imageCacheName;
-		}
+        public String getCreationTime() {
+            return this.creationTime;
+        }
 
-		public void setImageCacheName(String imageCacheName) {
-			this.imageCacheName = imageCacheName;
-		}
+        public void setCreationTime(String creationTime) {
+            this.creationTime = creationTime;
+        }
 
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
+        public String getLastMatchedTime() {
+            return this.lastMatchedTime;
+        }
 
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
+        public void setLastMatchedTime(String lastMatchedTime) {
+            this.lastMatchedTime = lastMatchedTime;
+        }
 
-		public String getFlashSnapshotId() {
-			return this.flashSnapshotId;
-		}
+        public List<Tag> getTags() {
+            return this.tags;
+        }
 
-		public void setFlashSnapshotId(String flashSnapshotId) {
-			this.flashSnapshotId = flashSnapshotId;
-		}
+        public void setTags(List<Tag> tags) {
+            this.tags = tags;
+        }
 
-		public String getProgress() {
-			return this.progress;
-		}
+        public String getResourceGroupId() {
+            return this.resourceGroupId;
+        }
 
-		public void setProgress(String progress) {
-			this.progress = progress;
-		}
+        public void setResourceGroupId(String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+        }
 
-		public String getStatus() {
-			return this.status;
-		}
+        public Integer getImageCacheSize() {
+            return this.imageCacheSize;
+        }
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+        public void setImageCacheSize(Integer imageCacheSize) {
+            this.imageCacheSize = imageCacheSize;
+        }
 
-		public List<Event> getEvents() {
-			return this.events;
-		}
+        public String getExpireDateTime() {
+            return expireDateTime;
+        }
 
-		public void setEvents(List<Event> events) {
-			this.events = events;
-		}
+        public void setExpireDateTime(String expireDateTime) {
+            this.expireDateTime = expireDateTime;
+        }
 
-		public List<String> getImages() {
-			return this.images;
-		}
+        public String getContainerGroupId() {
+            return this.containerGroupId;
+        }
 
-		public void setImages(List<String> images) {
-			this.images = images;
-		}
+        public void setContainerGroupId(String containerGroupId) {
+            this.containerGroupId = containerGroupId;
+        }
 
-		public static class Event {
+        public String getImageCacheId() {
+            return this.imageCacheId;
+        }
 
-			private Integer count;
+        public void setImageCacheId(String imageCacheId) {
+            this.imageCacheId = imageCacheId;
+        }
 
-			private String type;
+        public String getImageCacheName() {
+            return this.imageCacheName;
+        }
 
-			private String name;
+        public void setImageCacheName(String imageCacheName) {
+            this.imageCacheName = imageCacheName;
+        }
 
-			private String message;
+        public String getSnapshotId() {
+            return this.snapshotId;
+        }
 
-			private String firstTimestamp;
+        public void setSnapshotId(String snapshotId) {
+            this.snapshotId = snapshotId;
+        }
 
-			private String lastTimestamp;
+        public String getFlashSnapshotId() {
+            return this.flashSnapshotId;
+        }
 
-			public Integer getCount() {
-				return this.count;
-			}
+        public void setFlashSnapshotId(String flashSnapshotId) {
+            this.flashSnapshotId = flashSnapshotId;
+        }
 
-			public void setCount(Integer count) {
-				this.count = count;
-			}
+        public String getProgress() {
+            return this.progress;
+        }
 
-			public String getType() {
-				return this.type;
-			}
+        public void setProgress(String progress) {
+            this.progress = progress;
+        }
 
-			public void setType(String type) {
-				this.type = type;
-			}
+        public String getStatus() {
+            return this.status;
+        }
 
-			public String getName() {
-				return this.name;
-			}
+        public void setStatus(String status) {
+            this.status = status;
+        }
 
-			public void setName(String name) {
-				this.name = name;
-			}
+        public List<Event> getEvents() {
+            return this.events;
+        }
 
-			public String getMessage() {
-				return this.message;
-			}
+        public void setEvents(List<Event> events) {
+            this.events = events;
+        }
 
-			public void setMessage(String message) {
-				this.message = message;
-			}
+        public List<String> getImages() {
+            return this.images;
+        }
 
-			public String getFirstTimestamp() {
-				return this.firstTimestamp;
-			}
+        public void setImages(List<String> images) {
+            this.images = images;
+        }
 
-			public void setFirstTimestamp(String firstTimestamp) {
-				this.firstTimestamp = firstTimestamp;
-			}
+        public static class Event {
 
-			public String getLastTimestamp() {
-				return this.lastTimestamp;
-			}
+            private Integer count;
 
-			public void setLastTimestamp(String lastTimestamp) {
-				this.lastTimestamp = lastTimestamp;
-			}
-		}
-	}
+            private String type;
 
-	@Override
-	public DescribeImageCachesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeImageCachesResponseUnmarshaller.unmarshall(this, context);
-	}
+            private String name;
 
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
+            private String message;
+
+            private String firstTimestamp;
+
+            private String lastTimestamp;
+
+            public Integer getCount() {
+                return this.count;
+            }
+
+            public void setCount(Integer count) {
+                this.count = count;
+            }
+
+            public String getType() {
+                return this.type;
+            }
+
+            public void setType(String type) {
+                this.type = type;
+            }
+
+            public String getName() {
+                return this.name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public String getMessage() {
+                return this.message;
+            }
+
+            public void setMessage(String message) {
+                this.message = message;
+            }
+
+            public String getFirstTimestamp() {
+                return this.firstTimestamp;
+            }
+
+            public void setFirstTimestamp(String firstTimestamp) {
+                this.firstTimestamp = firstTimestamp;
+            }
+
+            public String getLastTimestamp() {
+                return this.lastTimestamp;
+            }
+
+            public void setLastTimestamp(String lastTimestamp) {
+                this.lastTimestamp = lastTimestamp;
+            }
+        }
+
+        public static class Tag {
+
+            private String key;
+
+            private String value;
+
+            public String getKey() {
+                return this.key;
+            }
+
+            public void setKey(String key) {
+                this.key = key;
+            }
+
+            public String getValue() {
+                return this.value;
+            }
+
+            public void setValue(String value) {
+                this.value = value;
+            }
+        }
+
+    }
+
+    @Override
+    public DescribeImageCachesResponse getInstance(UnmarshallerContext context) {
+        return DescribeImageCachesResponseUnmarshaller.unmarshall(this, context);
+    }
+
+    @Override
+    public boolean checkShowJsonItemName() {
+        return false;
+    }
 }
