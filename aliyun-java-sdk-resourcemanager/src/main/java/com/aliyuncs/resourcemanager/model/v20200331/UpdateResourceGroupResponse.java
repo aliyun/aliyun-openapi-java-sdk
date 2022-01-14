@@ -46,22 +46,30 @@ public class UpdateResourceGroupResponse extends AcsResponse {
 
 	public static class ResourceGroup {
 
-		private String id;
-
-		private String name;
-
 		private String displayName;
-
-		private String createDate;
 
 		private String accountId;
 
-		public String getId() {
-			return this.id;
+		private String name;
+
+		private String createDate;
+
+		private String id;
+
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getName() {
@@ -72,14 +80,6 @@ public class UpdateResourceGroupResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
 		public String getCreateDate() {
 			return this.createDate;
 		}
@@ -88,12 +88,12 @@ public class UpdateResourceGroupResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
-		public String getAccountId() {
-			return this.accountId;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

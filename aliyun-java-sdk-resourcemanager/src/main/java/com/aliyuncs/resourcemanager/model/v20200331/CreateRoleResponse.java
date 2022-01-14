@@ -46,29 +46,21 @@ public class CreateRoleResponse extends AcsResponse {
 
 	public static class Role {
 
-		private String arn;
-
 		private String assumeRolePolicyDocument;
 
 		private String rolePrincipalName;
 
-		private String createDate;
-
 		private String description;
-
-		private String roleId;
-
-		private String roleName;
 
 		private Long maxSessionDuration;
 
-		public String getArn() {
-			return this.arn;
-		}
+		private String roleName;
 
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
+		private String createDate;
+
+		private String arn;
+
+		private String roleId;
 
 		public String getAssumeRolePolicyDocument() {
 			return this.assumeRolePolicyDocument;
@@ -86,14 +78,6 @@ public class CreateRoleResponse extends AcsResponse {
 			this.rolePrincipalName = rolePrincipalName;
 		}
 
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
@@ -102,12 +86,12 @@ public class CreateRoleResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getRoleId() {
-			return this.roleId;
+		public Long getMaxSessionDuration() {
+			return this.maxSessionDuration;
 		}
 
-		public void setRoleId(String roleId) {
-			this.roleId = roleId;
+		public void setMaxSessionDuration(Long maxSessionDuration) {
+			this.maxSessionDuration = maxSessionDuration;
 		}
 
 		public String getRoleName() {
@@ -118,12 +102,28 @@ public class CreateRoleResponse extends AcsResponse {
 			this.roleName = roleName;
 		}
 
-		public Long getMaxSessionDuration() {
-			return this.maxSessionDuration;
+		public String getCreateDate() {
+			return this.createDate;
 		}
 
-		public void setMaxSessionDuration(Long maxSessionDuration) {
-			this.maxSessionDuration = maxSessionDuration;
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
+
+		public String getRoleId() {
+			return this.roleId;
+		}
+
+		public void setRoleId(String roleId) {
+			this.roleId = roleId;
 		}
 	}
 

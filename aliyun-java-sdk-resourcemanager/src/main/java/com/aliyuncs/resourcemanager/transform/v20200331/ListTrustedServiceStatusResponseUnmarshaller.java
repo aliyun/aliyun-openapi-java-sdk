@@ -27,15 +27,15 @@ public class ListTrustedServiceStatusResponseUnmarshaller {
 	public static ListTrustedServiceStatusResponse unmarshall(ListTrustedServiceStatusResponse listTrustedServiceStatusResponse, UnmarshallerContext _ctx) {
 		
 		listTrustedServiceStatusResponse.setRequestId(_ctx.stringValue("ListTrustedServiceStatusResponse.RequestId"));
-		listTrustedServiceStatusResponse.setPageNumber(_ctx.integerValue("ListTrustedServiceStatusResponse.PageNumber"));
-		listTrustedServiceStatusResponse.setPageSize(_ctx.integerValue("ListTrustedServiceStatusResponse.PageSize"));
 		listTrustedServiceStatusResponse.setTotalCount(_ctx.integerValue("ListTrustedServiceStatusResponse.TotalCount"));
+		listTrustedServiceStatusResponse.setPageSize(_ctx.integerValue("ListTrustedServiceStatusResponse.PageSize"));
+		listTrustedServiceStatusResponse.setPageNumber(_ctx.integerValue("ListTrustedServiceStatusResponse.PageNumber"));
 
 		List<EnabledServicePrincipal> enabledServicePrincipals = new ArrayList<EnabledServicePrincipal>();
 		for (int i = 0; i < _ctx.lengthValue("ListTrustedServiceStatusResponse.EnabledServicePrincipals.Length"); i++) {
 			EnabledServicePrincipal enabledServicePrincipal = new EnabledServicePrincipal();
-			enabledServicePrincipal.setEnableTime(_ctx.stringValue("ListTrustedServiceStatusResponse.EnabledServicePrincipals["+ i +"].EnableTime"));
 			enabledServicePrincipal.setServicePrincipal(_ctx.stringValue("ListTrustedServiceStatusResponse.EnabledServicePrincipals["+ i +"].ServicePrincipal"));
+			enabledServicePrincipal.setEnableTime(_ctx.stringValue("ListTrustedServiceStatusResponse.EnabledServicePrincipals["+ i +"].EnableTime"));
 
 			enabledServicePrincipals.add(enabledServicePrincipal);
 		}

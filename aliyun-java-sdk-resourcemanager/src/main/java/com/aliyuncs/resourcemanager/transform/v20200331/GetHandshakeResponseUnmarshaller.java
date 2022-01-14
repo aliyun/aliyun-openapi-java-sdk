@@ -26,17 +26,19 @@ public class GetHandshakeResponseUnmarshaller {
 		getHandshakeResponse.setRequestId(_ctx.stringValue("GetHandshakeResponse.RequestId"));
 
 		Handshake handshake = new Handshake();
-		handshake.setHandshakeId(_ctx.stringValue("GetHandshakeResponse.Handshake.HandshakeId"));
-		handshake.setResourceDirectoryId(_ctx.stringValue("GetHandshakeResponse.Handshake.ResourceDirectoryId"));
-		handshake.setMasterAccountId(_ctx.stringValue("GetHandshakeResponse.Handshake.MasterAccountId"));
-		handshake.setMasterAccountName(_ctx.stringValue("GetHandshakeResponse.Handshake.MasterAccountName"));
-		handshake.setTargetEntity(_ctx.stringValue("GetHandshakeResponse.Handshake.TargetEntity"));
-		handshake.setTargetType(_ctx.stringValue("GetHandshakeResponse.Handshake.TargetType"));
-		handshake.setNote(_ctx.stringValue("GetHandshakeResponse.Handshake.Note"));
 		handshake.setStatus(_ctx.stringValue("GetHandshakeResponse.Handshake.Status"));
-		handshake.setCreateTime(_ctx.stringValue("GetHandshakeResponse.Handshake.CreateTime"));
-		handshake.setModifyTime(_ctx.stringValue("GetHandshakeResponse.Handshake.ModifyTime"));
 		handshake.setExpireTime(_ctx.stringValue("GetHandshakeResponse.Handshake.ExpireTime"));
+		handshake.setCreateTime(_ctx.stringValue("GetHandshakeResponse.Handshake.CreateTime"));
+		handshake.setTargetEntity(_ctx.stringValue("GetHandshakeResponse.Handshake.TargetEntity"));
+		handshake.setMasterAccountId(_ctx.stringValue("GetHandshakeResponse.Handshake.MasterAccountId"));
+		handshake.setHandshakeId(_ctx.stringValue("GetHandshakeResponse.Handshake.HandshakeId"));
+		handshake.setMasterAccountRealName(_ctx.stringValue("GetHandshakeResponse.Handshake.MasterAccountRealName"));
+		handshake.setResourceDirectoryId(_ctx.stringValue("GetHandshakeResponse.Handshake.ResourceDirectoryId"));
+		handshake.setInvitedAccountRealName(_ctx.stringValue("GetHandshakeResponse.Handshake.InvitedAccountRealName"));
+		handshake.setNote(_ctx.stringValue("GetHandshakeResponse.Handshake.Note"));
+		handshake.setMasterAccountName(_ctx.stringValue("GetHandshakeResponse.Handshake.MasterAccountName"));
+		handshake.setTargetType(_ctx.stringValue("GetHandshakeResponse.Handshake.TargetType"));
+		handshake.setModifyTime(_ctx.stringValue("GetHandshakeResponse.Handshake.ModifyTime"));
 		getHandshakeResponse.setHandshake(handshake);
 	 
 	 	return getHandshakeResponse;

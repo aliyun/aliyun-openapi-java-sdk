@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPayerForAccountResponse extends AcsResponse {
 
+	private String payerAccountName;
+
 	private String requestId;
 
 	private String payerAccountId;
 
-	private String payerAccountName;
+	public String getPayerAccountName() {
+		return this.payerAccountName;
+	}
+
+	public void setPayerAccountName(String payerAccountName) {
+		this.payerAccountName = payerAccountName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class GetPayerForAccountResponse extends AcsResponse {
 
 	public void setPayerAccountId(String payerAccountId) {
 		this.payerAccountId = payerAccountId;
-	}
-
-	public String getPayerAccountName() {
-		return this.payerAccountName;
-	}
-
-	public void setPayerAccountName(String payerAccountName) {
-		this.payerAccountName = payerAccountName;
 	}
 
 	@Override

@@ -47,35 +47,19 @@ public class DeleteResourceGroupResponse extends AcsResponse {
 
 	public static class ResourceGroup {
 
-		private String id;
-
-		private String name;
-
 		private String displayName;
 
 		private String status;
 
-		private String createDate;
-
 		private String accountId;
 
+		private String name;
+
+		private String createDate;
+
+		private String id;
+
 		private List<RegionStatus> regionStatuses;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -93,6 +77,22 @@ public class DeleteResourceGroupResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getCreateDate() {
 			return this.createDate;
 		}
@@ -101,12 +101,12 @@ public class DeleteResourceGroupResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
-		public String getAccountId() {
-			return this.accountId;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public List<RegionStatus> getRegionStatuses() {
@@ -119,17 +119,9 @@ public class DeleteResourceGroupResponse extends AcsResponse {
 
 		public static class RegionStatus {
 
-			private String regionId;
-
 			private String status;
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String regionId;
 
 			public String getStatus() {
 				return this.status;
@@ -137,6 +129,14 @@ public class DeleteResourceGroupResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

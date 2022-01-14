@@ -28,11 +28,17 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
+
+	private String displayName;
+
+	private String name;
 
 	private String status;
 	public ListResourceGroupsRequest() {
-		super("ResourceManager", "2020-03-31", "ListResourceGroups", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListResourceGroups");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -52,6 +58,17 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -60,6 +77,28 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDisplayName() {
+		return this.displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+		if(displayName != null){
+			putQueryParameter("DisplayName", displayName);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

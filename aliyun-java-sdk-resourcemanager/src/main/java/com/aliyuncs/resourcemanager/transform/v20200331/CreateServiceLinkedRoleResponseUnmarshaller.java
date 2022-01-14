@@ -26,13 +26,13 @@ public class CreateServiceLinkedRoleResponseUnmarshaller {
 		createServiceLinkedRoleResponse.setRequestId(_ctx.stringValue("CreateServiceLinkedRoleResponse.RequestId"));
 
 		Role role = new Role();
-		role.setArn(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.Arn"));
 		role.setAssumeRolePolicyDocument(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.AssumeRolePolicyDocument"));
 		role.setRolePrincipalName(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.RolePrincipalName"));
-		role.setCreateDate(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.CreateDate"));
 		role.setDescription(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.Description"));
-		role.setRoleId(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.RoleId"));
 		role.setRoleName(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.RoleName"));
+		role.setCreateDate(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.CreateDate"));
+		role.setArn(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.Arn"));
+		role.setRoleId(_ctx.stringValue("CreateServiceLinkedRoleResponse.Role.RoleId"));
 		role.setIsServiceLinkedRole(_ctx.booleanValue("CreateServiceLinkedRoleResponse.Role.IsServiceLinkedRole"));
 		createServiceLinkedRoleResponse.setRole(role);
 	 

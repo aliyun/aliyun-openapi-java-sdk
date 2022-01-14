@@ -28,7 +28,7 @@ public class CancelCreateCloudAccountRequest extends RpcAcsRequest<CancelCreateC
 
 	private String recordId;
 	public CancelCreateCloudAccountRequest() {
-		super("ResourceManager", "2020-03-31", "CancelCreateCloudAccount", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "CancelCreateCloudAccount");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

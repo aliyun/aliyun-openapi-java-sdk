@@ -27,24 +27,24 @@ public class ListHandshakesForResourceDirectoryResponseUnmarshaller {
 	public static ListHandshakesForResourceDirectoryResponse unmarshall(ListHandshakesForResourceDirectoryResponse listHandshakesForResourceDirectoryResponse, UnmarshallerContext _ctx) {
 		
 		listHandshakesForResourceDirectoryResponse.setRequestId(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.RequestId"));
-		listHandshakesForResourceDirectoryResponse.setPageNumber(_ctx.integerValue("ListHandshakesForResourceDirectoryResponse.PageNumber"));
-		listHandshakesForResourceDirectoryResponse.setPageSize(_ctx.integerValue("ListHandshakesForResourceDirectoryResponse.PageSize"));
 		listHandshakesForResourceDirectoryResponse.setTotalCount(_ctx.integerValue("ListHandshakesForResourceDirectoryResponse.TotalCount"));
+		listHandshakesForResourceDirectoryResponse.setPageSize(_ctx.integerValue("ListHandshakesForResourceDirectoryResponse.PageSize"));
+		listHandshakesForResourceDirectoryResponse.setPageNumber(_ctx.integerValue("ListHandshakesForResourceDirectoryResponse.PageNumber"));
 
 		List<Handshake> handshakes = new ArrayList<Handshake>();
 		for (int i = 0; i < _ctx.lengthValue("ListHandshakesForResourceDirectoryResponse.Handshakes.Length"); i++) {
 			Handshake handshake = new Handshake();
-			handshake.setHandshakeId(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].HandshakeId"));
+			handshake.setStatus(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].Status"));
+			handshake.setExpireTime(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].ExpireTime"));
 			handshake.setResourceDirectoryId(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].ResourceDirectoryId"));
+			handshake.setCreateTime(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].CreateTime"));
+			handshake.setNote(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].Note"));
+			handshake.setTargetEntity(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].TargetEntity"));
 			handshake.setMasterAccountId(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].MasterAccountId"));
 			handshake.setMasterAccountName(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].MasterAccountName"));
-			handshake.setTargetEntity(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].TargetEntity"));
-			handshake.setTargetType(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].TargetType"));
-			handshake.setNote(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].Note"));
-			handshake.setStatus(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].Status"));
-			handshake.setCreateTime(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].CreateTime"));
 			handshake.setModifyTime(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].ModifyTime"));
-			handshake.setExpireTime(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].ExpireTime"));
+			handshake.setTargetType(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].TargetType"));
+			handshake.setHandshakeId(_ctx.stringValue("ListHandshakesForResourceDirectoryResponse.Handshakes["+ i +"].HandshakeId"));
 
 			handshakes.add(handshake);
 		}

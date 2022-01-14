@@ -27,9 +27,9 @@ public class CreateFolderResponseUnmarshaller {
 
 		Folder folder = new Folder();
 		folder.setFolderId(_ctx.stringValue("CreateFolderResponse.Folder.FolderId"));
+		folder.setCreateTime(_ctx.stringValue("CreateFolderResponse.Folder.CreateTime"));
 		folder.setParentFolderId(_ctx.stringValue("CreateFolderResponse.Folder.ParentFolderId"));
 		folder.setFolderName(_ctx.stringValue("CreateFolderResponse.Folder.FolderName"));
-		folder.setCreateTime(_ctx.stringValue("CreateFolderResponse.Folder.CreateTime"));
 		createFolderResponse.setFolder(folder);
 	 
 	 	return createFolderResponse;

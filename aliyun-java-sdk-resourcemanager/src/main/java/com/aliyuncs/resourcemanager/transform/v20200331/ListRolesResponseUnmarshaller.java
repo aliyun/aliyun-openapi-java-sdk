@@ -28,26 +28,26 @@ public class ListRolesResponseUnmarshaller {
 	public static ListRolesResponse unmarshall(ListRolesResponse listRolesResponse, UnmarshallerContext _ctx) {
 		
 		listRolesResponse.setRequestId(_ctx.stringValue("ListRolesResponse.RequestId"));
-		listRolesResponse.setPageNumber(_ctx.integerValue("ListRolesResponse.PageNumber"));
-		listRolesResponse.setPageSize(_ctx.integerValue("ListRolesResponse.PageSize"));
 		listRolesResponse.setTotalCount(_ctx.integerValue("ListRolesResponse.TotalCount"));
+		listRolesResponse.setPageSize(_ctx.integerValue("ListRolesResponse.PageSize"));
+		listRolesResponse.setPageNumber(_ctx.integerValue("ListRolesResponse.PageNumber"));
 
 		List<Role> roles = new ArrayList<Role>();
 		for (int i = 0; i < _ctx.lengthValue("ListRolesResponse.Roles.Length"); i++) {
 			Role role = new Role();
-			role.setArn(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Arn"));
 			role.setRolePrincipalName(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RolePrincipalName"));
-			role.setCreateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].CreateDate"));
-			role.setDescription(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Description"));
 			role.setUpdateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].UpdateDate"));
-			role.setRoleId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
-			role.setRoleName(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleName"));
-			role.setIsServiceLinkedRole(_ctx.booleanValue("ListRolesResponse.Roles["+ i +"].IsServiceLinkedRole"));
+			role.setDescription(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Description"));
 			role.setMaxSessionDuration(_ctx.longValue("ListRolesResponse.Roles["+ i +"].MaxSessionDuration"));
+			role.setRoleName(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleName"));
+			role.setCreateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].CreateDate"));
+			role.setRoleId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
+			role.setArn(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Arn"));
+			role.setIsServiceLinkedRole(_ctx.booleanValue("ListRolesResponse.Roles["+ i +"].IsServiceLinkedRole"));
 
 			LatestDeletionTask latestDeletionTask = new LatestDeletionTask();
-			latestDeletionTask.setCreateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].LatestDeletionTask.CreateDate"));
 			latestDeletionTask.setDeletionTaskId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].LatestDeletionTask.DeletionTaskId"));
+			latestDeletionTask.setCreateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].LatestDeletionTask.CreateDate"));
 			role.setLatestDeletionTask(latestDeletionTask);
 
 			roles.add(role);

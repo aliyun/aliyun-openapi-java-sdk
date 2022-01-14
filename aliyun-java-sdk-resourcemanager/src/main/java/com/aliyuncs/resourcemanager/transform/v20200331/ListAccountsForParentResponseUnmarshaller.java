@@ -27,22 +27,22 @@ public class ListAccountsForParentResponseUnmarshaller {
 	public static ListAccountsForParentResponse unmarshall(ListAccountsForParentResponse listAccountsForParentResponse, UnmarshallerContext _ctx) {
 		
 		listAccountsForParentResponse.setRequestId(_ctx.stringValue("ListAccountsForParentResponse.RequestId"));
-		listAccountsForParentResponse.setPageNumber(_ctx.integerValue("ListAccountsForParentResponse.PageNumber"));
-		listAccountsForParentResponse.setPageSize(_ctx.integerValue("ListAccountsForParentResponse.PageSize"));
 		listAccountsForParentResponse.setTotalCount(_ctx.integerValue("ListAccountsForParentResponse.TotalCount"));
+		listAccountsForParentResponse.setPageSize(_ctx.integerValue("ListAccountsForParentResponse.PageSize"));
+		listAccountsForParentResponse.setPageNumber(_ctx.integerValue("ListAccountsForParentResponse.PageNumber"));
 
 		List<Account> accounts = new ArrayList<Account>();
 		for (int i = 0; i < _ctx.lengthValue("ListAccountsForParentResponse.Accounts.Length"); i++) {
 			Account account = new Account();
-			account.setResourceDirectoryId(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].ResourceDirectoryId"));
-			account.setAccountId(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].AccountId"));
+			account.setStatus(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].Status"));
+			account.setType(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].Type"));
 			account.setDisplayName(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].DisplayName"));
 			account.setFolderId(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].FolderId"));
-			account.setJoinMethod(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].JoinMethod"));
+			account.setResourceDirectoryId(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].ResourceDirectoryId"));
 			account.setJoinTime(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].JoinTime"));
+			account.setAccountId(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].AccountId"));
+			account.setJoinMethod(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].JoinMethod"));
 			account.setModifyTime(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].ModifyTime"));
-			account.setType(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].Type"));
-			account.setStatus(_ctx.stringValue("ListAccountsForParentResponse.Accounts["+ i +"].Status"));
 
 			accounts.add(account);
 		}

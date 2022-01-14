@@ -26,17 +26,17 @@ public class InviteAccountToResourceDirectoryResponseUnmarshaller {
 		inviteAccountToResourceDirectoryResponse.setRequestId(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.RequestId"));
 
 		Handshake handshake = new Handshake();
-		handshake.setHandshakeId(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.HandshakeId"));
+		handshake.setStatus(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.Status"));
+		handshake.setExpireTime(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.ExpireTime"));
 		handshake.setResourceDirectoryId(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.ResourceDirectoryId"));
+		handshake.setCreateTime(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.CreateTime"));
+		handshake.setNote(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.Note"));
+		handshake.setTargetEntity(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.TargetEntity"));
 		handshake.setMasterAccountId(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.MasterAccountId"));
 		handshake.setMasterAccountName(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.MasterAccountName"));
-		handshake.setTargetEntity(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.TargetEntity"));
-		handshake.setTargetType(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.TargetType"));
-		handshake.setNote(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.Note"));
-		handshake.setStatus(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.Status"));
-		handshake.setCreateTime(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.CreateTime"));
 		handshake.setModifyTime(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.ModifyTime"));
-		handshake.setExpireTime(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.ExpireTime"));
+		handshake.setTargetType(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.TargetType"));
+		handshake.setHandshakeId(_ctx.stringValue("InviteAccountToResourceDirectoryResponse.Handshake.HandshakeId"));
 		inviteAccountToResourceDirectoryResponse.setHandshake(handshake);
 	 
 	 	return inviteAccountToResourceDirectoryResponse;

@@ -30,7 +30,7 @@ public class SetDefaultPolicyVersionRequest extends RpcAcsRequest<SetDefaultPoli
 
 	private String policyName;
 	public SetDefaultPolicyVersionRequest() {
-		super("ResourceManager", "2020-03-31", "SetDefaultPolicyVersion", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "SetDefaultPolicyVersion");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

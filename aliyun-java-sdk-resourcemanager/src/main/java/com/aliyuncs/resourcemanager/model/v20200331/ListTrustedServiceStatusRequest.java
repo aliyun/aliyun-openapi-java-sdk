@@ -26,17 +26,30 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class ListTrustedServiceStatusRequest extends RpcAcsRequest<ListTrustedServiceStatusResponse> {
 	   
 
+	private String adminAccountId;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
 	public ListTrustedServiceStatusRequest() {
-		super("ResourceManager", "2020-03-31", "ListTrustedServiceStatus", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListTrustedServiceStatus");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAdminAccountId() {
+		return this.adminAccountId;
+	}
+
+	public void setAdminAccountId(String adminAccountId) {
+		this.adminAccountId = adminAccountId;
+		if(adminAccountId != null){
+			putQueryParameter("AdminAccountId", adminAccountId);
+		}
 	}
 
 	public Integer getPageNumber() {

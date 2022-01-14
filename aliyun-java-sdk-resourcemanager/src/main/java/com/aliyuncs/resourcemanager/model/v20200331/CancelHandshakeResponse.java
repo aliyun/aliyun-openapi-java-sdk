@@ -46,34 +46,42 @@ public class CancelHandshakeResponse extends AcsResponse {
 
 	public static class Handshake {
 
-		private String handshakeId;
+		private String status;
+
+		private String expireTime;
 
 		private String resourceDirectoryId;
+
+		private String createTime;
+
+		private String note;
+
+		private String targetEntity;
 
 		private String masterAccountId;
 
 		private String masterAccountName;
 
-		private String targetEntity;
+		private String modifyTime;
 
 		private String targetType;
 
-		private String note;
+		private String handshakeId;
 
-		private String status;
-
-		private String createTime;
-
-		private String modifyTime;
-
-		private String expireTime;
-
-		public String getHandshakeId() {
-			return this.handshakeId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setHandshakeId(String handshakeId) {
-			this.handshakeId = handshakeId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public String getResourceDirectoryId() {
@@ -82,6 +90,30 @@ public class CancelHandshakeResponse extends AcsResponse {
 
 		public void setResourceDirectoryId(String resourceDirectoryId) {
 			this.resourceDirectoryId = resourceDirectoryId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
+		}
+
+		public String getTargetEntity() {
+			return this.targetEntity;
+		}
+
+		public void setTargetEntity(String targetEntity) {
+			this.targetEntity = targetEntity;
 		}
 
 		public String getMasterAccountId() {
@@ -100,12 +132,12 @@ public class CancelHandshakeResponse extends AcsResponse {
 			this.masterAccountName = masterAccountName;
 		}
 
-		public String getTargetEntity() {
-			return this.targetEntity;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setTargetEntity(String targetEntity) {
-			this.targetEntity = targetEntity;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getTargetType() {
@@ -116,44 +148,12 @@ public class CancelHandshakeResponse extends AcsResponse {
 			this.targetType = targetType;
 		}
 
-		public String getNote() {
-			return this.note;
+		public String getHandshakeId() {
+			return this.handshakeId;
 		}
 
-		public void setNote(String note) {
-			this.note = note;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setHandshakeId(String handshakeId) {
+			this.handshakeId = handshakeId;
 		}
 	}
 

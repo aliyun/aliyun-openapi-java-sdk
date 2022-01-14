@@ -26,17 +26,17 @@ public class ResendCreateCloudAccountEmailResponseUnmarshaller {
 		resendCreateCloudAccountEmailResponse.setRequestId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.RequestId"));
 
 		Account account = new Account();
-		account.setResourceDirectoryId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.ResourceDirectoryId"));
-		account.setAccountId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.AccountId"));
+		account.setStatus(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.Status"));
+		account.setType(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.Type"));
 		account.setDisplayName(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.DisplayName"));
 		account.setFolderId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.FolderId"));
-		account.setJoinMethod(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.JoinMethod"));
-		account.setJoinTime(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.JoinTime"));
-		account.setType(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.Type"));
-		account.setStatus(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.Status"));
+		account.setResourceDirectoryId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.ResourceDirectoryId"));
 		account.setRecordId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.RecordId"));
-		account.setModifyTime(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.ModifyTime"));
+		account.setJoinTime(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.JoinTime"));
+		account.setAccountId(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.AccountId"));
+		account.setJoinMethod(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.JoinMethod"));
 		account.setAccountName(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.AccountName"));
+		account.setModifyTime(_ctx.stringValue("ResendCreateCloudAccountEmailResponse.Account.ModifyTime"));
 		resendCreateCloudAccountEmailResponse.setAccount(account);
 	 
 	 	return resendCreateCloudAccountEmailResponse;

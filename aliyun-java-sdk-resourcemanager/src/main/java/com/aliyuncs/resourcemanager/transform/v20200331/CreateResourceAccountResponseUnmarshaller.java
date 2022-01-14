@@ -26,16 +26,16 @@ public class CreateResourceAccountResponseUnmarshaller {
 		createResourceAccountResponse.setRequestId(_ctx.stringValue("CreateResourceAccountResponse.RequestId"));
 
 		Account account = new Account();
-		account.setResourceDirectoryId(_ctx.stringValue("CreateResourceAccountResponse.Account.ResourceDirectoryId"));
-		account.setAccountId(_ctx.stringValue("CreateResourceAccountResponse.Account.AccountId"));
-		account.setDisplayName(_ctx.stringValue("CreateResourceAccountResponse.Account.DisplayName"));
-		account.setAccountName(_ctx.stringValue("CreateResourceAccountResponse.Account.AccountName"));
-		account.setFolderId(_ctx.stringValue("CreateResourceAccountResponse.Account.FolderId"));
-		account.setJoinMethod(_ctx.stringValue("CreateResourceAccountResponse.Account.JoinMethod"));
-		account.setJoinTime(_ctx.stringValue("CreateResourceAccountResponse.Account.JoinTime"));
-		account.setModifyTime(_ctx.stringValue("CreateResourceAccountResponse.Account.ModifyTime"));
-		account.setType(_ctx.stringValue("CreateResourceAccountResponse.Account.Type"));
 		account.setStatus(_ctx.stringValue("CreateResourceAccountResponse.Account.Status"));
+		account.setType(_ctx.stringValue("CreateResourceAccountResponse.Account.Type"));
+		account.setDisplayName(_ctx.stringValue("CreateResourceAccountResponse.Account.DisplayName"));
+		account.setFolderId(_ctx.stringValue("CreateResourceAccountResponse.Account.FolderId"));
+		account.setResourceDirectoryId(_ctx.stringValue("CreateResourceAccountResponse.Account.ResourceDirectoryId"));
+		account.setJoinTime(_ctx.stringValue("CreateResourceAccountResponse.Account.JoinTime"));
+		account.setAccountId(_ctx.stringValue("CreateResourceAccountResponse.Account.AccountId"));
+		account.setJoinMethod(_ctx.stringValue("CreateResourceAccountResponse.Account.JoinMethod"));
+		account.setModifyTime(_ctx.stringValue("CreateResourceAccountResponse.Account.ModifyTime"));
+		account.setAccountName(_ctx.stringValue("CreateResourceAccountResponse.Account.AccountName"));
 		createResourceAccountResponse.setAccount(account);
 	 
 	 	return createResourceAccountResponse;

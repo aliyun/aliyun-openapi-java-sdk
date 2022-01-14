@@ -27,20 +27,20 @@ public class ListPolicyAttachmentsResponseUnmarshaller {
 	public static ListPolicyAttachmentsResponse unmarshall(ListPolicyAttachmentsResponse listPolicyAttachmentsResponse, UnmarshallerContext _ctx) {
 		
 		listPolicyAttachmentsResponse.setRequestId(_ctx.stringValue("ListPolicyAttachmentsResponse.RequestId"));
-		listPolicyAttachmentsResponse.setPageNumber(_ctx.integerValue("ListPolicyAttachmentsResponse.PageNumber"));
-		listPolicyAttachmentsResponse.setPageSize(_ctx.integerValue("ListPolicyAttachmentsResponse.PageSize"));
 		listPolicyAttachmentsResponse.setTotalCount(_ctx.integerValue("ListPolicyAttachmentsResponse.TotalCount"));
+		listPolicyAttachmentsResponse.setPageSize(_ctx.integerValue("ListPolicyAttachmentsResponse.PageSize"));
+		listPolicyAttachmentsResponse.setPageNumber(_ctx.integerValue("ListPolicyAttachmentsResponse.PageNumber"));
 
 		List<PolicyAttachment> policyAttachments = new ArrayList<PolicyAttachment>();
 		for (int i = 0; i < _ctx.lengthValue("ListPolicyAttachmentsResponse.PolicyAttachments.Length"); i++) {
 			PolicyAttachment policyAttachment = new PolicyAttachment();
+			policyAttachment.setDescription(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].Description"));
 			policyAttachment.setResourceGroupId(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].ResourceGroupId"));
-			policyAttachment.setPolicyType(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].PolicyType"));
 			policyAttachment.setPolicyName(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].PolicyName"));
-			policyAttachment.setPrincipalType(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].PrincipalType"));
 			policyAttachment.setPrincipalName(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].PrincipalName"));
 			policyAttachment.setAttachDate(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].AttachDate"));
-			policyAttachment.setDescription(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].Description"));
+			policyAttachment.setPolicyType(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].PolicyType"));
+			policyAttachment.setPrincipalType(_ctx.stringValue("ListPolicyAttachmentsResponse.PolicyAttachments["+ i +"].PrincipalType"));
 
 			policyAttachments.add(policyAttachment);
 		}

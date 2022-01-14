@@ -26,11 +26,11 @@ public class UpdateResourceGroupResponseUnmarshaller {
 		updateResourceGroupResponse.setRequestId(_ctx.stringValue("UpdateResourceGroupResponse.RequestId"));
 
 		ResourceGroup resourceGroup = new ResourceGroup();
-		resourceGroup.setId(_ctx.stringValue("UpdateResourceGroupResponse.ResourceGroup.Id"));
-		resourceGroup.setName(_ctx.stringValue("UpdateResourceGroupResponse.ResourceGroup.Name"));
 		resourceGroup.setDisplayName(_ctx.stringValue("UpdateResourceGroupResponse.ResourceGroup.DisplayName"));
-		resourceGroup.setCreateDate(_ctx.stringValue("UpdateResourceGroupResponse.ResourceGroup.CreateDate"));
 		resourceGroup.setAccountId(_ctx.stringValue("UpdateResourceGroupResponse.ResourceGroup.AccountId"));
+		resourceGroup.setName(_ctx.stringValue("UpdateResourceGroupResponse.ResourceGroup.Name"));
+		resourceGroup.setCreateDate(_ctx.stringValue("UpdateResourceGroupResponse.ResourceGroup.CreateDate"));
+		resourceGroup.setId(_ctx.stringValue("UpdateResourceGroupResponse.ResourceGroup.Id"));
 		updateResourceGroupResponse.setResourceGroup(resourceGroup);
 	 
 	 	return updateResourceGroupResponse;

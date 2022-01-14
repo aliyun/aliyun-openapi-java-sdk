@@ -26,9 +26,9 @@ public class GetPolicyVersionResponseUnmarshaller {
 		getPolicyVersionResponse.setRequestId(_ctx.stringValue("GetPolicyVersionResponse.RequestId"));
 
 		PolicyVersion policyVersion = new PolicyVersion();
-		policyVersion.setVersionId(_ctx.stringValue("GetPolicyVersionResponse.PolicyVersion.VersionId"));
 		policyVersion.setIsDefaultVersion(_ctx.booleanValue("GetPolicyVersionResponse.PolicyVersion.IsDefaultVersion"));
 		policyVersion.setPolicyDocument(_ctx.stringValue("GetPolicyVersionResponse.PolicyVersion.PolicyDocument"));
+		policyVersion.setVersionId(_ctx.stringValue("GetPolicyVersionResponse.PolicyVersion.VersionId"));
 		policyVersion.setCreateDate(_ctx.stringValue("GetPolicyVersionResponse.PolicyVersion.CreateDate"));
 		getPolicyVersionResponse.setPolicyVersion(policyVersion);
 	 

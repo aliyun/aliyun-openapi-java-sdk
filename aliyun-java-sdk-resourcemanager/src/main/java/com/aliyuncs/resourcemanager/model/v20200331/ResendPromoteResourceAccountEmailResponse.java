@@ -46,42 +46,42 @@ public class ResendPromoteResourceAccountEmailResponse extends AcsResponse {
 
 	public static class Account {
 
-		private String resourceDirectoryId;
+		private String status;
 
-		private String accountId;
+		private String type;
 
 		private String displayName;
 
 		private String folderId;
 
-		private String joinMethod;
-
-		private String joinTime;
-
-		private String type;
-
-		private String status;
+		private String resourceDirectoryId;
 
 		private String recordId;
 
-		private String modifyTime;
+		private String joinTime;
+
+		private String accountId;
+
+		private String joinMethod;
 
 		private String accountName;
 
-		public String getResourceDirectoryId() {
-			return this.resourceDirectoryId;
+		private String modifyTime;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setResourceDirectoryId(String resourceDirectoryId) {
-			this.resourceDirectoryId = resourceDirectoryId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getAccountId() {
-			return this.accountId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDisplayName() {
@@ -100,36 +100,12 @@ public class ResendPromoteResourceAccountEmailResponse extends AcsResponse {
 			this.folderId = folderId;
 		}
 
-		public String getJoinMethod() {
-			return this.joinMethod;
+		public String getResourceDirectoryId() {
+			return this.resourceDirectoryId;
 		}
 
-		public void setJoinMethod(String joinMethod) {
-			this.joinMethod = joinMethod;
-		}
-
-		public String getJoinTime() {
-			return this.joinTime;
-		}
-
-		public void setJoinTime(String joinTime) {
-			this.joinTime = joinTime;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setResourceDirectoryId(String resourceDirectoryId) {
+			this.resourceDirectoryId = resourceDirectoryId;
 		}
 
 		public String getRecordId() {
@@ -140,12 +116,28 @@ public class ResendPromoteResourceAccountEmailResponse extends AcsResponse {
 			this.recordId = recordId;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getJoinTime() {
+			return this.joinTime;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setJoinTime(String joinTime) {
+			this.joinTime = joinTime;
+		}
+
+		public String getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
+		}
+
+		public String getJoinMethod() {
+			return this.joinMethod;
+		}
+
+		public void setJoinMethod(String joinMethod) {
+			this.joinMethod = joinMethod;
 		}
 
 		public String getAccountName() {
@@ -154,6 +146,14 @@ public class ResendPromoteResourceAccountEmailResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

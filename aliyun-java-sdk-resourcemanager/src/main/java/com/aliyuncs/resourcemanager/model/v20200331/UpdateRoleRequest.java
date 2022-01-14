@@ -31,8 +31,10 @@ public class UpdateRoleRequest extends RpcAcsRequest<UpdateRoleResponse> {
 	private String roleName;
 
 	private Long newMaxSessionDuration;
+
+	private String newDescription;
 	public UpdateRoleRequest() {
-		super("ResourceManager", "2020-03-31", "UpdateRole", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "UpdateRole");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -71,6 +73,17 @@ public class UpdateRoleRequest extends RpcAcsRequest<UpdateRoleResponse> {
 		this.newMaxSessionDuration = newMaxSessionDuration;
 		if(newMaxSessionDuration != null){
 			putQueryParameter("NewMaxSessionDuration", newMaxSessionDuration.toString());
+		}
+	}
+
+	public String getNewDescription() {
+		return this.newDescription;
+	}
+
+	public void setNewDescription(String newDescription) {
+		this.newDescription = newDescription;
+		if(newDescription != null){
+			putQueryParameter("NewDescription", newDescription);
 		}
 	}
 

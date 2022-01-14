@@ -30,7 +30,7 @@ public class CreateResourceGroupRequest extends RpcAcsRequest<CreateResourceGrou
 
 	private String name;
 	public CreateResourceGroupRequest() {
-		super("ResourceManager", "2020-03-31", "CreateResourceGroup", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "CreateResourceGroup");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

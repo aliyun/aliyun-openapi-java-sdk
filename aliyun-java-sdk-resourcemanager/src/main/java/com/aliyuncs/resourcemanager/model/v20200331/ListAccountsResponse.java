@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAccountsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Account> accounts;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListAccountsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListAccountsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Account> getAccounts() {
@@ -77,38 +77,40 @@ public class ListAccountsResponse extends AcsResponse {
 
 	public static class Account {
 
-		private String resourceDirectoryId;
+		private String status;
 
-		private String accountId;
+		private String type;
 
 		private String displayName;
 
 		private String folderId;
 
-		private String joinMethod;
+		private String resourceDirectoryId;
 
 		private String joinTime;
 
+		private String accountId;
+
+		private String joinMethod;
+
 		private String modifyTime;
 
-		private String type;
+		private String resourceDirectoryPath;
 
-		private String status;
-
-		public String getResourceDirectoryId() {
-			return this.resourceDirectoryId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setResourceDirectoryId(String resourceDirectoryId) {
-			this.resourceDirectoryId = resourceDirectoryId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getAccountId() {
-			return this.accountId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDisplayName() {
@@ -127,12 +129,12 @@ public class ListAccountsResponse extends AcsResponse {
 			this.folderId = folderId;
 		}
 
-		public String getJoinMethod() {
-			return this.joinMethod;
+		public String getResourceDirectoryId() {
+			return this.resourceDirectoryId;
 		}
 
-		public void setJoinMethod(String joinMethod) {
-			this.joinMethod = joinMethod;
+		public void setResourceDirectoryId(String resourceDirectoryId) {
+			this.resourceDirectoryId = resourceDirectoryId;
 		}
 
 		public String getJoinTime() {
@@ -143,6 +145,22 @@ public class ListAccountsResponse extends AcsResponse {
 			this.joinTime = joinTime;
 		}
 
+		public String getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
+		}
+
+		public String getJoinMethod() {
+			return this.joinMethod;
+		}
+
+		public void setJoinMethod(String joinMethod) {
+			this.joinMethod = joinMethod;
+		}
+
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
@@ -151,20 +169,12 @@ public class ListAccountsResponse extends AcsResponse {
 			this.modifyTime = modifyTime;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getResourceDirectoryPath() {
+			return this.resourceDirectoryPath;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setResourceDirectoryPath(String resourceDirectoryPath) {
+			this.resourceDirectoryPath = resourceDirectoryPath;
 		}
 	}
 

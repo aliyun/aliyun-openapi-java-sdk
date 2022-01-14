@@ -27,9 +27,10 @@ public class GetFolderResponseUnmarshaller {
 
 		Folder folder = new Folder();
 		folder.setFolderId(_ctx.stringValue("GetFolderResponse.Folder.FolderId"));
-		folder.setFolderName(_ctx.stringValue("GetFolderResponse.Folder.FolderName"));
-		folder.setParentFolderId(_ctx.stringValue("GetFolderResponse.Folder.ParentFolderId"));
 		folder.setCreateTime(_ctx.stringValue("GetFolderResponse.Folder.CreateTime"));
+		folder.setParentFolderId(_ctx.stringValue("GetFolderResponse.Folder.ParentFolderId"));
+		folder.setFolderName(_ctx.stringValue("GetFolderResponse.Folder.FolderName"));
+		folder.setResourceDirectoryPath(_ctx.stringValue("GetFolderResponse.Folder.ResourceDirectoryPath"));
 		getFolderResponse.setFolder(folder);
 	 
 	 	return getFolderResponse;

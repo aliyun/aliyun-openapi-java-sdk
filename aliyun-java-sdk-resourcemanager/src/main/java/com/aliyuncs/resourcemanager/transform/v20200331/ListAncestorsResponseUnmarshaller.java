@@ -32,8 +32,8 @@ public class ListAncestorsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListAncestorsResponse.Folders.Length"); i++) {
 			Folder folder = new Folder();
 			folder.setFolderId(_ctx.stringValue("ListAncestorsResponse.Folders["+ i +"].FolderId"));
-			folder.setFolderName(_ctx.stringValue("ListAncestorsResponse.Folders["+ i +"].FolderName"));
 			folder.setCreateTime(_ctx.stringValue("ListAncestorsResponse.Folders["+ i +"].CreateTime"));
+			folder.setFolderName(_ctx.stringValue("ListAncestorsResponse.Folders["+ i +"].FolderName"));
 
 			folders.add(folder);
 		}

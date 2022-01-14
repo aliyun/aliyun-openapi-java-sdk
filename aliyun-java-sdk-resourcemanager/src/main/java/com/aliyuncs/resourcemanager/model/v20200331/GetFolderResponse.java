@@ -48,11 +48,13 @@ public class GetFolderResponse extends AcsResponse {
 
 		private String folderId;
 
-		private String folderName;
+		private String createTime;
 
 		private String parentFolderId;
 
-		private String createTime;
+		private String folderName;
+
+		private String resourceDirectoryPath;
 
 		public String getFolderId() {
 			return this.folderId;
@@ -62,12 +64,12 @@ public class GetFolderResponse extends AcsResponse {
 			this.folderId = folderId;
 		}
 
-		public String getFolderName() {
-			return this.folderName;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setFolderName(String folderName) {
-			this.folderName = folderName;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getParentFolderId() {
@@ -78,12 +80,20 @@ public class GetFolderResponse extends AcsResponse {
 			this.parentFolderId = parentFolderId;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getFolderName() {
+			return this.folderName;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setFolderName(String folderName) {
+			this.folderName = folderName;
+		}
+
+		public String getResourceDirectoryPath() {
+			return this.resourceDirectoryPath;
+		}
+
+		public void setResourceDirectoryPath(String resourceDirectoryPath) {
+			this.resourceDirectoryPath = resourceDirectoryPath;
 		}
 	}
 

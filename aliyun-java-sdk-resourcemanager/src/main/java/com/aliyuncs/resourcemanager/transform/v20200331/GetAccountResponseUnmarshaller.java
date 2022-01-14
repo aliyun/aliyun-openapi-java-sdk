@@ -26,17 +26,18 @@ public class GetAccountResponseUnmarshaller {
 		getAccountResponse.setRequestId(_ctx.stringValue("GetAccountResponse.RequestId"));
 
 		Account account = new Account();
-		account.setResourceDirectoryId(_ctx.stringValue("GetAccountResponse.Account.ResourceDirectoryId"));
-		account.setAccountId(_ctx.stringValue("GetAccountResponse.Account.AccountId"));
-		account.setDisplayName(_ctx.stringValue("GetAccountResponse.Account.DisplayName"));
-		account.setAccountName(_ctx.stringValue("GetAccountResponse.Account.AccountName"));
-		account.setFolderId(_ctx.stringValue("GetAccountResponse.Account.FolderId"));
-		account.setJoinMethod(_ctx.stringValue("GetAccountResponse.Account.JoinMethod"));
-		account.setJoinTime(_ctx.stringValue("GetAccountResponse.Account.JoinTime"));
-		account.setModifyTime(_ctx.stringValue("GetAccountResponse.Account.ModifyTime"));
-		account.setType(_ctx.stringValue("GetAccountResponse.Account.Type"));
 		account.setStatus(_ctx.stringValue("GetAccountResponse.Account.Status"));
+		account.setType(_ctx.stringValue("GetAccountResponse.Account.Type"));
+		account.setDisplayName(_ctx.stringValue("GetAccountResponse.Account.DisplayName"));
+		account.setFolderId(_ctx.stringValue("GetAccountResponse.Account.FolderId"));
+		account.setResourceDirectoryId(_ctx.stringValue("GetAccountResponse.Account.ResourceDirectoryId"));
 		account.setIdentityInformation(_ctx.stringValue("GetAccountResponse.Account.IdentityInformation"));
+		account.setJoinTime(_ctx.stringValue("GetAccountResponse.Account.JoinTime"));
+		account.setAccountId(_ctx.stringValue("GetAccountResponse.Account.AccountId"));
+		account.setJoinMethod(_ctx.stringValue("GetAccountResponse.Account.JoinMethod"));
+		account.setModifyTime(_ctx.stringValue("GetAccountResponse.Account.ModifyTime"));
+		account.setAccountName(_ctx.stringValue("GetAccountResponse.Account.AccountName"));
+		account.setResourceDirectoryPath(_ctx.stringValue("GetAccountResponse.Account.ResourceDirectoryPath"));
 		getAccountResponse.setAccount(account);
 	 
 	 	return getAccountResponse;

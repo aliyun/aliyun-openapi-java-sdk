@@ -46,40 +46,40 @@ public class CreateCloudAccountResponse extends AcsResponse {
 
 	public static class Account {
 
-		private String resourceDirectoryId;
+		private String status;
 
-		private String accountId;
+		private String type;
 
 		private String displayName;
 
-		private String accountName;
-
 		private String folderId;
+
+		private String resourceDirectoryId;
+
+		private String recordId;
+
+		private String accountId;
 
 		private String joinMethod;
 
 		private String modifyTime;
 
-		private String type;
+		private String accountName;
 
-		private String status;
-
-		private String recordId;
-
-		public String getResourceDirectoryId() {
-			return this.resourceDirectoryId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setResourceDirectoryId(String resourceDirectoryId) {
-			this.resourceDirectoryId = resourceDirectoryId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getAccountId() {
-			return this.accountId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDisplayName() {
@@ -90,20 +90,36 @@ public class CreateCloudAccountResponse extends AcsResponse {
 			this.displayName = displayName;
 		}
 
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
 		public String getFolderId() {
 			return this.folderId;
 		}
 
 		public void setFolderId(String folderId) {
 			this.folderId = folderId;
+		}
+
+		public String getResourceDirectoryId() {
+			return this.resourceDirectoryId;
+		}
+
+		public void setResourceDirectoryId(String resourceDirectoryId) {
+			this.resourceDirectoryId = resourceDirectoryId;
+		}
+
+		public String getRecordId() {
+			return this.recordId;
+		}
+
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
+		}
+
+		public String getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getJoinMethod() {
@@ -122,28 +138,12 @@ public class CreateCloudAccountResponse extends AcsResponse {
 			this.modifyTime = modifyTime;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getRecordId() {
-			return this.recordId;
-		}
-
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

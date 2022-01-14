@@ -27,16 +27,16 @@ public class ListFoldersForParentResponseUnmarshaller {
 	public static ListFoldersForParentResponse unmarshall(ListFoldersForParentResponse listFoldersForParentResponse, UnmarshallerContext _ctx) {
 		
 		listFoldersForParentResponse.setRequestId(_ctx.stringValue("ListFoldersForParentResponse.RequestId"));
-		listFoldersForParentResponse.setPageNumber(_ctx.integerValue("ListFoldersForParentResponse.PageNumber"));
-		listFoldersForParentResponse.setPageSize(_ctx.integerValue("ListFoldersForParentResponse.PageSize"));
 		listFoldersForParentResponse.setTotalCount(_ctx.integerValue("ListFoldersForParentResponse.TotalCount"));
+		listFoldersForParentResponse.setPageSize(_ctx.integerValue("ListFoldersForParentResponse.PageSize"));
+		listFoldersForParentResponse.setPageNumber(_ctx.integerValue("ListFoldersForParentResponse.PageNumber"));
 
 		List<Folder> folders = new ArrayList<Folder>();
 		for (int i = 0; i < _ctx.lengthValue("ListFoldersForParentResponse.Folders.Length"); i++) {
 			Folder folder = new Folder();
 			folder.setFolderId(_ctx.stringValue("ListFoldersForParentResponse.Folders["+ i +"].FolderId"));
-			folder.setFolderName(_ctx.stringValue("ListFoldersForParentResponse.Folders["+ i +"].FolderName"));
 			folder.setCreateTime(_ctx.stringValue("ListFoldersForParentResponse.Folders["+ i +"].CreateTime"));
+			folder.setFolderName(_ctx.stringValue("ListFoldersForParentResponse.Folders["+ i +"].FolderName"));
 
 			folders.add(folder);
 		}

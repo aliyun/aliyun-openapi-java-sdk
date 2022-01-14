@@ -26,16 +26,16 @@ public class UpdateAccountResponseUnmarshaller {
 		updateAccountResponse.setRequestId(_ctx.stringValue("UpdateAccountResponse.RequestId"));
 
 		Account account = new Account();
-		account.setResourceDirectoryId(_ctx.stringValue("UpdateAccountResponse.Account.ResourceDirectoryId"));
-		account.setAccountId(_ctx.stringValue("UpdateAccountResponse.Account.AccountId"));
-		account.setDisplayName(_ctx.stringValue("UpdateAccountResponse.Account.DisplayName"));
-		account.setAccountName(_ctx.stringValue("UpdateAccountResponse.Account.AccountName"));
-		account.setFolderId(_ctx.stringValue("UpdateAccountResponse.Account.FolderId"));
-		account.setJoinMethod(_ctx.stringValue("UpdateAccountResponse.Account.JoinMethod"));
-		account.setJoinTime(_ctx.stringValue("UpdateAccountResponse.Account.JoinTime"));
-		account.setModifyTime(_ctx.stringValue("UpdateAccountResponse.Account.ModifyTime"));
-		account.setType(_ctx.stringValue("UpdateAccountResponse.Account.Type"));
 		account.setStatus(_ctx.stringValue("UpdateAccountResponse.Account.Status"));
+		account.setType(_ctx.stringValue("UpdateAccountResponse.Account.Type"));
+		account.setDisplayName(_ctx.stringValue("UpdateAccountResponse.Account.DisplayName"));
+		account.setFolderId(_ctx.stringValue("UpdateAccountResponse.Account.FolderId"));
+		account.setResourceDirectoryId(_ctx.stringValue("UpdateAccountResponse.Account.ResourceDirectoryId"));
+		account.setJoinTime(_ctx.stringValue("UpdateAccountResponse.Account.JoinTime"));
+		account.setAccountId(_ctx.stringValue("UpdateAccountResponse.Account.AccountId"));
+		account.setJoinMethod(_ctx.stringValue("UpdateAccountResponse.Account.JoinMethod"));
+		account.setModifyTime(_ctx.stringValue("UpdateAccountResponse.Account.ModifyTime"));
+		account.setAccountName(_ctx.stringValue("UpdateAccountResponse.Account.AccountName"));
 		updateAccountResponse.setAccount(account);
 	 
 	 	return updateAccountResponse;

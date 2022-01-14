@@ -27,22 +27,23 @@ public class ListAccountsResponseUnmarshaller {
 	public static ListAccountsResponse unmarshall(ListAccountsResponse listAccountsResponse, UnmarshallerContext _ctx) {
 		
 		listAccountsResponse.setRequestId(_ctx.stringValue("ListAccountsResponse.RequestId"));
-		listAccountsResponse.setPageNumber(_ctx.integerValue("ListAccountsResponse.PageNumber"));
-		listAccountsResponse.setPageSize(_ctx.integerValue("ListAccountsResponse.PageSize"));
 		listAccountsResponse.setTotalCount(_ctx.integerValue("ListAccountsResponse.TotalCount"));
+		listAccountsResponse.setPageSize(_ctx.integerValue("ListAccountsResponse.PageSize"));
+		listAccountsResponse.setPageNumber(_ctx.integerValue("ListAccountsResponse.PageNumber"));
 
 		List<Account> accounts = new ArrayList<Account>();
 		for (int i = 0; i < _ctx.lengthValue("ListAccountsResponse.Accounts.Length"); i++) {
 			Account account = new Account();
-			account.setResourceDirectoryId(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].ResourceDirectoryId"));
-			account.setAccountId(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].AccountId"));
+			account.setStatus(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].Status"));
+			account.setType(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].Type"));
 			account.setDisplayName(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].DisplayName"));
 			account.setFolderId(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].FolderId"));
-			account.setJoinMethod(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].JoinMethod"));
+			account.setResourceDirectoryId(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].ResourceDirectoryId"));
 			account.setJoinTime(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].JoinTime"));
+			account.setAccountId(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].AccountId"));
+			account.setJoinMethod(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].JoinMethod"));
 			account.setModifyTime(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].ModifyTime"));
-			account.setType(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].Type"));
-			account.setStatus(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].Status"));
+			account.setResourceDirectoryPath(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].ResourceDirectoryPath"));
 
 			accounts.add(account);
 		}

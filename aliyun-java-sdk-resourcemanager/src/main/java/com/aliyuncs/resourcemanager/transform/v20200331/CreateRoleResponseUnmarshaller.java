@@ -26,14 +26,14 @@ public class CreateRoleResponseUnmarshaller {
 		createRoleResponse.setRequestId(_ctx.stringValue("CreateRoleResponse.RequestId"));
 
 		Role role = new Role();
-		role.setArn(_ctx.stringValue("CreateRoleResponse.Role.Arn"));
 		role.setAssumeRolePolicyDocument(_ctx.stringValue("CreateRoleResponse.Role.AssumeRolePolicyDocument"));
 		role.setRolePrincipalName(_ctx.stringValue("CreateRoleResponse.Role.RolePrincipalName"));
-		role.setCreateDate(_ctx.stringValue("CreateRoleResponse.Role.CreateDate"));
 		role.setDescription(_ctx.stringValue("CreateRoleResponse.Role.Description"));
-		role.setRoleId(_ctx.stringValue("CreateRoleResponse.Role.RoleId"));
-		role.setRoleName(_ctx.stringValue("CreateRoleResponse.Role.RoleName"));
 		role.setMaxSessionDuration(_ctx.longValue("CreateRoleResponse.Role.MaxSessionDuration"));
+		role.setRoleName(_ctx.stringValue("CreateRoleResponse.Role.RoleName"));
+		role.setCreateDate(_ctx.stringValue("CreateRoleResponse.Role.CreateDate"));
+		role.setArn(_ctx.stringValue("CreateRoleResponse.Role.Arn"));
+		role.setRoleId(_ctx.stringValue("CreateRoleResponse.Role.RoleId"));
 		createRoleResponse.setRole(role);
 	 
 	 	return createRoleResponse;

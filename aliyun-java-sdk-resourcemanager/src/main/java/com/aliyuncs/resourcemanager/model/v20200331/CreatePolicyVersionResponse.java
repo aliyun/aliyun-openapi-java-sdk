@@ -46,19 +46,11 @@ public class CreatePolicyVersionResponse extends AcsResponse {
 
 	public static class PolicyVersion {
 
-		private String versionId;
-
 		private Boolean isDefaultVersion;
 
+		private String versionId;
+
 		private String createDate;
-
-		public String getVersionId() {
-			return this.versionId;
-		}
-
-		public void setVersionId(String versionId) {
-			this.versionId = versionId;
-		}
 
 		public Boolean getIsDefaultVersion() {
 			return this.isDefaultVersion;
@@ -66,6 +58,14 @@ public class CreatePolicyVersionResponse extends AcsResponse {
 
 		public void setIsDefaultVersion(Boolean isDefaultVersion) {
 			this.isDefaultVersion = isDefaultVersion;
+		}
+
+		public String getVersionId() {
+			return this.versionId;
+		}
+
+		public void setVersionId(String versionId) {
+			this.versionId = versionId;
 		}
 
 		public String getCreateDate() {
