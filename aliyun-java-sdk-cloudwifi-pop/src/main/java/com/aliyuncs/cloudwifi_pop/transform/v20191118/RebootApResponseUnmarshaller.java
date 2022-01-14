@@ -25,9 +25,9 @@ public class RebootApResponseUnmarshaller {
 		
 		rebootApResponse.setRequestId(_ctx.stringValue("RebootApResponse.RequestId"));
 		rebootApResponse.setData(_ctx.mapValue("RebootApResponse.Data"));
+		rebootApResponse.setErrorMessage(_ctx.stringValue("RebootApResponse.ErrorMessage"));
 		rebootApResponse.setIsSuccess(_ctx.booleanValue("RebootApResponse.IsSuccess"));
 		rebootApResponse.setErrorCode(_ctx.integerValue("RebootApResponse.ErrorCode"));
-		rebootApResponse.setErrorMessage(_ctx.stringValue("RebootApResponse.ErrorMessage"));
 	 
 	 	return rebootApResponse;
 	}

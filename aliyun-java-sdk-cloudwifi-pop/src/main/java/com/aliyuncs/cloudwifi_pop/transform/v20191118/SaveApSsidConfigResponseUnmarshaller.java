@@ -24,9 +24,9 @@ public class SaveApSsidConfigResponseUnmarshaller {
 	public static SaveApSsidConfigResponse unmarshall(SaveApSsidConfigResponse saveApSsidConfigResponse, UnmarshallerContext _ctx) {
 		
 		saveApSsidConfigResponse.setData(_ctx.mapValue("SaveApSsidConfigResponse.Data"));
+		saveApSsidConfigResponse.setErrorMessage(_ctx.stringValue("SaveApSsidConfigResponse.ErrorMessage"));
 		saveApSsidConfigResponse.setIsSuccess(_ctx.booleanValue("SaveApSsidConfigResponse.IsSuccess"));
 		saveApSsidConfigResponse.setErrorCode(_ctx.integerValue("SaveApSsidConfigResponse.ErrorCode"));
-		saveApSsidConfigResponse.setErrorMessage(_ctx.stringValue("SaveApSsidConfigResponse.ErrorMessage"));
 	 
 	 	return saveApSsidConfigResponse;
 	}

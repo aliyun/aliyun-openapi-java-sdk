@@ -23,9 +23,9 @@ public class EffectApgroupConfigResponseUnmarshaller {
 	public static EffectApgroupConfigResponse unmarshall(EffectApgroupConfigResponse effectApgroupConfigResponse, UnmarshallerContext _ctx) {
 		
 		effectApgroupConfigResponse.setData(_ctx.stringValue("EffectApgroupConfigResponse.Data"));
+		effectApgroupConfigResponse.setErrorMessage(_ctx.stringValue("EffectApgroupConfigResponse.ErrorMessage"));
 		effectApgroupConfigResponse.setIsSuccess(_ctx.booleanValue("EffectApgroupConfigResponse.IsSuccess"));
 		effectApgroupConfigResponse.setErrorCode(_ctx.integerValue("EffectApgroupConfigResponse.ErrorCode"));
-		effectApgroupConfigResponse.setErrorMessage(_ctx.stringValue("EffectApgroupConfigResponse.ErrorMessage"));
 	 
 	 	return effectApgroupConfigResponse;
 	}

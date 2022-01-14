@@ -25,9 +25,9 @@ public class GetGroupMiscAggTimeSerResponseUnmarshaller {
 		
 		getGroupMiscAggTimeSerResponse.setRequestId(_ctx.stringValue("GetGroupMiscAggTimeSerResponse.RequestId"));
 		getGroupMiscAggTimeSerResponse.setData(_ctx.mapValue("GetGroupMiscAggTimeSerResponse.Data"));
+		getGroupMiscAggTimeSerResponse.setErrorMessage(_ctx.stringValue("GetGroupMiscAggTimeSerResponse.ErrorMessage"));
 		getGroupMiscAggTimeSerResponse.setIsSuccess(_ctx.booleanValue("GetGroupMiscAggTimeSerResponse.IsSuccess"));
 		getGroupMiscAggTimeSerResponse.setErrorCode(_ctx.integerValue("GetGroupMiscAggTimeSerResponse.ErrorCode"));
-		getGroupMiscAggTimeSerResponse.setErrorMessage(_ctx.stringValue("GetGroupMiscAggTimeSerResponse.ErrorMessage"));
 	 
 	 	return getGroupMiscAggTimeSerResponse;
 	}

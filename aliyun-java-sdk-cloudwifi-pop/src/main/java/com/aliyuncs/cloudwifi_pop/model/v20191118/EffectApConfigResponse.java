@@ -26,11 +26,11 @@ public class EffectApConfigResponse extends AcsResponse {
 
 	private String data;
 
+	private String errorMessage;
+
 	private Boolean isSuccess;
 
 	private Integer errorCode;
-
-	private String errorMessage;
 
 	public String getData() {
 		return this.data;
@@ -38,6 +38,14 @@ public class EffectApConfigResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getIsSuccess() {
@@ -54,14 +62,6 @@ public class EffectApConfigResponse extends AcsResponse {
 
 	public void setErrorCode(Integer errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	@Override

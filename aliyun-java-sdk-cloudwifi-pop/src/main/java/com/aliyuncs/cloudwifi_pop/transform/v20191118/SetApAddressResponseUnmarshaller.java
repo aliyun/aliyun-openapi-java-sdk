@@ -23,9 +23,9 @@ public class SetApAddressResponseUnmarshaller {
 	public static SetApAddressResponse unmarshall(SetApAddressResponse setApAddressResponse, UnmarshallerContext _ctx) {
 		
 		setApAddressResponse.setData(_ctx.stringValue("SetApAddressResponse.Data"));
+		setApAddressResponse.setErrorMessage(_ctx.stringValue("SetApAddressResponse.ErrorMessage"));
 		setApAddressResponse.setIsSuccess(_ctx.booleanValue("SetApAddressResponse.IsSuccess"));
 		setApAddressResponse.setErrorCode(_ctx.integerValue("SetApAddressResponse.ErrorCode"));
-		setApAddressResponse.setErrorMessage(_ctx.stringValue("SetApAddressResponse.ErrorMessage"));
 	 
 	 	return setApAddressResponse;
 	}

@@ -61,16 +61,16 @@ public class NewNetDeviceInfoRequest extends RpcAcsRequest<NewNetDeviceInfoRespo
 		this.devicess = devicess;	
 		if (devicess != null) {
 			for (int depth1 = 0; depth1 < devicess.size(); depth1++) {
+				putBodyParameter("Devices." + (depth1 + 1) + ".MgnIp" , devicess.get(depth1).getMgnIp());
 				putBodyParameter("Devices." + (depth1 + 1) + ".Password" , devicess.get(depth1).getPassword());
-				putBodyParameter("Devices." + (depth1 + 1) + ".Role" , devicess.get(depth1).getRole());
+				putBodyParameter("Devices." + (depth1 + 1) + ".Model" , devicess.get(depth1).getModel());
+				putBodyParameter("Devices." + (depth1 + 1) + ".LogicNetPod" , devicess.get(depth1).getLogicNetPod());
 				putBodyParameter("Devices." + (depth1 + 1) + ".ServiceTag" , devicess.get(depth1).getServiceTag());
 				putBodyParameter("Devices." + (depth1 + 1) + ".NetPod" , devicess.get(depth1).getNetPod());
-				putBodyParameter("Devices." + (depth1 + 1) + ".Idc" , devicess.get(depth1).getIdc());
-				putBodyParameter("Devices." + (depth1 + 1) + ".Model" , devicess.get(depth1).getModel());
-				putBodyParameter("Devices." + (depth1 + 1) + ".MgnIp" , devicess.get(depth1).getMgnIp());
 				putBodyParameter("Devices." + (depth1 + 1) + ".HostName" , devicess.get(depth1).getHostName());
+				putBodyParameter("Devices." + (depth1 + 1) + ".Role" , devicess.get(depth1).getRole());
+				putBodyParameter("Devices." + (depth1 + 1) + ".Idc" , devicess.get(depth1).getIdc());
 				putBodyParameter("Devices." + (depth1 + 1) + ".Manufacturer" , devicess.get(depth1).getManufacturer());
-				putBodyParameter("Devices." + (depth1 + 1) + ".LogicNetPod" , devicess.get(depth1).getLogicNetPod());
 				putBodyParameter("Devices." + (depth1 + 1) + ".Username" , devicess.get(depth1).getUsername());
 			}
 		}	
@@ -100,27 +100,35 @@ public class NewNetDeviceInfoRequest extends RpcAcsRequest<NewNetDeviceInfoRespo
 
 	public static class Devices {
 
+		private String mgnIp;
+
 		private String password;
 
-		private String role;
+		private String model;
+
+		private String logicNetPod;
 
 		private String serviceTag;
 
 		private String netPod;
 
-		private String idc;
-
-		private String model;
-
-		private String mgnIp;
-
 		private String hostName;
+
+		private String role;
+
+		private String idc;
 
 		private String manufacturer;
 
-		private String logicNetPod;
-
 		private String username;
+
+		public String getMgnIp() {
+			return this.mgnIp;
+		}
+
+		public void setMgnIp(String mgnIp) {
+			this.mgnIp = mgnIp;
+		}
 
 		public String getPassword() {
 			return this.password;
@@ -130,12 +138,20 @@ public class NewNetDeviceInfoRequest extends RpcAcsRequest<NewNetDeviceInfoRespo
 			this.password = password;
 		}
 
-		public String getRole() {
-			return this.role;
+		public String getModel() {
+			return this.model;
 		}
 
-		public void setRole(String role) {
-			this.role = role;
+		public void setModel(String model) {
+			this.model = model;
+		}
+
+		public String getLogicNetPod() {
+			return this.logicNetPod;
+		}
+
+		public void setLogicNetPod(String logicNetPod) {
+			this.logicNetPod = logicNetPod;
 		}
 
 		public String getServiceTag() {
@@ -154,30 +170,6 @@ public class NewNetDeviceInfoRequest extends RpcAcsRequest<NewNetDeviceInfoRespo
 			this.netPod = netPod;
 		}
 
-		public String getIdc() {
-			return this.idc;
-		}
-
-		public void setIdc(String idc) {
-			this.idc = idc;
-		}
-
-		public String getModel() {
-			return this.model;
-		}
-
-		public void setModel(String model) {
-			this.model = model;
-		}
-
-		public String getMgnIp() {
-			return this.mgnIp;
-		}
-
-		public void setMgnIp(String mgnIp) {
-			this.mgnIp = mgnIp;
-		}
-
 		public String getHostName() {
 			return this.hostName;
 		}
@@ -186,20 +178,28 @@ public class NewNetDeviceInfoRequest extends RpcAcsRequest<NewNetDeviceInfoRespo
 			this.hostName = hostName;
 		}
 
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getIdc() {
+			return this.idc;
+		}
+
+		public void setIdc(String idc) {
+			this.idc = idc;
+		}
+
 		public String getManufacturer() {
 			return this.manufacturer;
 		}
 
 		public void setManufacturer(String manufacturer) {
 			this.manufacturer = manufacturer;
-		}
-
-		public String getLogicNetPod() {
-			return this.logicNetPod;
-		}
-
-		public void setLogicNetPod(String logicNetPod) {
-			this.logicNetPod = logicNetPod;
 		}
 
 		public String getUsername() {

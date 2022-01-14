@@ -25,9 +25,9 @@ public class GetApRunHistoryTimeSerResponseUnmarshaller {
 		
 		getApRunHistoryTimeSerResponse.setRequestId(_ctx.stringValue("GetApRunHistoryTimeSerResponse.RequestId"));
 		getApRunHistoryTimeSerResponse.setData(_ctx.mapValue("GetApRunHistoryTimeSerResponse.Data"));
+		getApRunHistoryTimeSerResponse.setErrorMessage(_ctx.stringValue("GetApRunHistoryTimeSerResponse.ErrorMessage"));
 		getApRunHistoryTimeSerResponse.setIsSuccess(_ctx.booleanValue("GetApRunHistoryTimeSerResponse.IsSuccess"));
 		getApRunHistoryTimeSerResponse.setErrorCode(_ctx.integerValue("GetApRunHistoryTimeSerResponse.ErrorCode"));
-		getApRunHistoryTimeSerResponse.setErrorMessage(_ctx.stringValue("GetApRunHistoryTimeSerResponse.ErrorMessage"));
 	 
 	 	return getApRunHistoryTimeSerResponse;
 	}

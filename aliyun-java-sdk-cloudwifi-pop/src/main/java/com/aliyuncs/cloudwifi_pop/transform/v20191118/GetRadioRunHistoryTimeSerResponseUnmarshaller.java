@@ -25,9 +25,9 @@ public class GetRadioRunHistoryTimeSerResponseUnmarshaller {
 		
 		getRadioRunHistoryTimeSerResponse.setRequestId(_ctx.stringValue("GetRadioRunHistoryTimeSerResponse.RequestId"));
 		getRadioRunHistoryTimeSerResponse.setData(_ctx.mapValue("GetRadioRunHistoryTimeSerResponse.Data"));
+		getRadioRunHistoryTimeSerResponse.setErrorMessage(_ctx.stringValue("GetRadioRunHistoryTimeSerResponse.ErrorMessage"));
 		getRadioRunHistoryTimeSerResponse.setIsSuccess(_ctx.booleanValue("GetRadioRunHistoryTimeSerResponse.IsSuccess"));
 		getRadioRunHistoryTimeSerResponse.setErrorCode(_ctx.integerValue("GetRadioRunHistoryTimeSerResponse.ErrorCode"));
-		getRadioRunHistoryTimeSerResponse.setErrorMessage(_ctx.stringValue("GetRadioRunHistoryTimeSerResponse.ErrorMessage"));
 	 
 	 	return getRadioRunHistoryTimeSerResponse;
 	}

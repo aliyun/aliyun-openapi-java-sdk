@@ -24,9 +24,9 @@ public class GetApAddressByMacResponseUnmarshaller {
 	public static GetApAddressByMacResponse unmarshall(GetApAddressByMacResponse getApAddressByMacResponse, UnmarshallerContext _ctx) {
 		
 		getApAddressByMacResponse.setData(_ctx.mapValue("GetApAddressByMacResponse.Data"));
+		getApAddressByMacResponse.setErrorMessage(_ctx.stringValue("GetApAddressByMacResponse.ErrorMessage"));
 		getApAddressByMacResponse.setIsSuccess(_ctx.booleanValue("GetApAddressByMacResponse.IsSuccess"));
 		getApAddressByMacResponse.setErrorCode(_ctx.integerValue("GetApAddressByMacResponse.ErrorCode"));
-		getApAddressByMacResponse.setErrorMessage(_ctx.stringValue("GetApAddressByMacResponse.ErrorMessage"));
 	 
 	 	return getApAddressByMacResponse;
 	}

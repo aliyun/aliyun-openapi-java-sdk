@@ -23,9 +23,9 @@ public class DeleteApSsidConfigResponseUnmarshaller {
 	public static DeleteApSsidConfigResponse unmarshall(DeleteApSsidConfigResponse deleteApSsidConfigResponse, UnmarshallerContext _ctx) {
 		
 		deleteApSsidConfigResponse.setData(_ctx.stringValue("DeleteApSsidConfigResponse.Data"));
+		deleteApSsidConfigResponse.setErrorMessage(_ctx.stringValue("DeleteApSsidConfigResponse.ErrorMessage"));
 		deleteApSsidConfigResponse.setIsSuccess(_ctx.booleanValue("DeleteApSsidConfigResponse.IsSuccess"));
 		deleteApSsidConfigResponse.setErrorCode(_ctx.integerValue("DeleteApSsidConfigResponse.ErrorCode"));
-		deleteApSsidConfigResponse.setErrorMessage(_ctx.stringValue("DeleteApSsidConfigResponse.ErrorMessage"));
 	 
 	 	return deleteApSsidConfigResponse;
 	}

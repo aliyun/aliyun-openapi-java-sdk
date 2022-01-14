@@ -23,9 +23,9 @@ public class SetApNameResponseUnmarshaller {
 	public static SetApNameResponse unmarshall(SetApNameResponse setApNameResponse, UnmarshallerContext _ctx) {
 		
 		setApNameResponse.setData(_ctx.stringValue("SetApNameResponse.Data"));
+		setApNameResponse.setErrorMessage(_ctx.stringValue("SetApNameResponse.ErrorMessage"));
 		setApNameResponse.setIsSuccess(_ctx.booleanValue("SetApNameResponse.IsSuccess"));
 		setApNameResponse.setErrorCode(_ctx.integerValue("SetApNameResponse.ErrorCode"));
-		setApNameResponse.setErrorMessage(_ctx.stringValue("SetApNameResponse.ErrorMessage"));
 	 
 	 	return setApNameResponse;
 	}

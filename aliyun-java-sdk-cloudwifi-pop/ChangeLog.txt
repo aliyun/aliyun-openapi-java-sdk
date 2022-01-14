@@ -1,3 +1,6 @@
+2022-01-14 Version: 1.9.6
+- Add three APIs.
+
 2020-06-05 Version: 1.9.3
 - Modify 1 api.
 

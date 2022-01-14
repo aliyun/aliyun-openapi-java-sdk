@@ -23,9 +23,9 @@ public class GetApgroupIdResponseUnmarshaller {
 	public static GetApgroupIdResponse unmarshall(GetApgroupIdResponse getApgroupIdResponse, UnmarshallerContext _ctx) {
 		
 		getApgroupIdResponse.setData(_ctx.stringValue("GetApgroupIdResponse.Data"));
+		getApgroupIdResponse.setErrorMessage(_ctx.stringValue("GetApgroupIdResponse.ErrorMessage"));
 		getApgroupIdResponse.setIsSuccess(_ctx.booleanValue("GetApgroupIdResponse.IsSuccess"));
 		getApgroupIdResponse.setErrorCode(_ctx.integerValue("GetApgroupIdResponse.ErrorCode"));
-		getApgroupIdResponse.setErrorMessage(_ctx.stringValue("GetApgroupIdResponse.ErrorMessage"));
 	 
 	 	return getApgroupIdResponse;
 	}

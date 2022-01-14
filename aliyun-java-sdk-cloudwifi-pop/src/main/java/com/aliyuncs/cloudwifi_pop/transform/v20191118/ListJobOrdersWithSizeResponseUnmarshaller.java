@@ -28,9 +28,9 @@ public class ListJobOrdersWithSizeResponseUnmarshaller {
 	public static ListJobOrdersWithSizeResponse unmarshall(ListJobOrdersWithSizeResponse listJobOrdersWithSizeResponse, UnmarshallerContext _ctx) {
 		
 		listJobOrdersWithSizeResponse.setRequestId(_ctx.stringValue("ListJobOrdersWithSizeResponse.RequestId"));
+		listJobOrdersWithSizeResponse.setErrorMessage(_ctx.stringValue("ListJobOrdersWithSizeResponse.ErrorMessage"));
 		listJobOrdersWithSizeResponse.setIsSuccess(_ctx.booleanValue("ListJobOrdersWithSizeResponse.IsSuccess"));
 		listJobOrdersWithSizeResponse.setErrorCode(_ctx.integerValue("ListJobOrdersWithSizeResponse.ErrorCode"));
-		listJobOrdersWithSizeResponse.setErrorMessage(_ctx.stringValue("ListJobOrdersWithSizeResponse.ErrorMessage"));
 
 		Data data = new Data();
 		data.setCount(_ctx.longValue("ListJobOrdersWithSizeResponse.Data.Count"));

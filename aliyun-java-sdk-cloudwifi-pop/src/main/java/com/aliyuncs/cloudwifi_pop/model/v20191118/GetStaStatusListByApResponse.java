@@ -27,11 +27,11 @@ public class GetStaStatusListByApResponse extends AcsResponse {
 
 	private Map<Object,Object> data;
 
+	private String errorMessage;
+
 	private Boolean isSuccess;
 
 	private Integer errorCode;
-
-	private String errorMessage;
 
 	public Map<Object,Object> getData() {
 		return this.data;
@@ -39,6 +39,14 @@ public class GetStaStatusListByApResponse extends AcsResponse {
 
 	public void setData(Map<Object,Object> data) {
 		this.data = data;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getIsSuccess() {
@@ -55,14 +63,6 @@ public class GetStaStatusListByApResponse extends AcsResponse {
 
 	public void setErrorCode(Integer errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	@Override

@@ -23,9 +23,9 @@ public class DeleteApgroupConfigResponseUnmarshaller {
 	public static DeleteApgroupConfigResponse unmarshall(DeleteApgroupConfigResponse deleteApgroupConfigResponse, UnmarshallerContext _ctx) {
 		
 		deleteApgroupConfigResponse.setData(_ctx.stringValue("DeleteApgroupConfigResponse.Data"));
+		deleteApgroupConfigResponse.setErrorMessage(_ctx.stringValue("DeleteApgroupConfigResponse.ErrorMessage"));
 		deleteApgroupConfigResponse.setIsSuccess(_ctx.booleanValue("DeleteApgroupConfigResponse.IsSuccess"));
 		deleteApgroupConfigResponse.setErrorCode(_ctx.integerValue("DeleteApgroupConfigResponse.ErrorCode"));
-		deleteApgroupConfigResponse.setErrorMessage(_ctx.stringValue("DeleteApgroupConfigResponse.ErrorMessage"));
 	 
 	 	return deleteApgroupConfigResponse;
 	}

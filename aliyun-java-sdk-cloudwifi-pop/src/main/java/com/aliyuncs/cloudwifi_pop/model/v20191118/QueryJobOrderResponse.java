@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryJobOrderResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Map<Object,Object> data;
-
-	private Boolean isSuccess;
-
-	private Integer errorCode;
 
 	private String errorMessage;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Boolean isSuccess;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
+
+	private Integer errorCode;
 
 	public Map<Object,Object> getData() {
 		return this.data;
@@ -49,6 +41,14 @@ public class QueryJobOrderResponse extends AcsResponse {
 
 	public void setData(Map<Object,Object> data) {
 		this.data = data;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getIsSuccess() {
@@ -59,20 +59,20 @@ public class QueryJobOrderResponse extends AcsResponse {
 		this.isSuccess = isSuccess;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(Integer errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	@Override

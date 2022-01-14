@@ -26,9 +26,9 @@ public class DeleteNetDeviceInfoResponseUnmarshaller {
 	public static DeleteNetDeviceInfoResponse unmarshall(DeleteNetDeviceInfoResponse deleteNetDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
 		deleteNetDeviceInfoResponse.setRequestId(_ctx.stringValue("DeleteNetDeviceInfoResponse.RequestId"));
+		deleteNetDeviceInfoResponse.setErrorMessage(_ctx.stringValue("DeleteNetDeviceInfoResponse.ErrorMessage"));
 		deleteNetDeviceInfoResponse.setIsSuccess(_ctx.booleanValue("DeleteNetDeviceInfoResponse.IsSuccess"));
 		deleteNetDeviceInfoResponse.setErrorCode(_ctx.integerValue("DeleteNetDeviceInfoResponse.ErrorCode"));
-		deleteNetDeviceInfoResponse.setErrorMessage(_ctx.stringValue("DeleteNetDeviceInfoResponse.ErrorMessage"));
 
 		List<Long> data = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteNetDeviceInfoResponse.Data.Length"); i++) {

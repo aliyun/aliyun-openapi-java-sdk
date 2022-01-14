@@ -25,9 +25,9 @@ public class QueryJobOrderResponseUnmarshaller {
 		
 		queryJobOrderResponse.setRequestId(_ctx.stringValue("QueryJobOrderResponse.RequestId"));
 		queryJobOrderResponse.setData(_ctx.mapValue("QueryJobOrderResponse.Data"));
+		queryJobOrderResponse.setErrorMessage(_ctx.stringValue("QueryJobOrderResponse.ErrorMessage"));
 		queryJobOrderResponse.setIsSuccess(_ctx.booleanValue("QueryJobOrderResponse.IsSuccess"));
 		queryJobOrderResponse.setErrorCode(_ctx.integerValue("QueryJobOrderResponse.ErrorCode"));
-		queryJobOrderResponse.setErrorMessage(_ctx.stringValue("QueryJobOrderResponse.ErrorMessage"));
 	 
 	 	return queryJobOrderResponse;
 	}

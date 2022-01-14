@@ -22,10 +22,11 @@ public class RegisterApAssetResponseUnmarshaller {
 
 	public static RegisterApAssetResponse unmarshall(RegisterApAssetResponse registerApAssetResponse, UnmarshallerContext _ctx) {
 		
+		registerApAssetResponse.setRequestId(_ctx.stringValue("RegisterApAssetResponse.RequestId"));
 		registerApAssetResponse.setData(_ctx.stringValue("RegisterApAssetResponse.Data"));
+		registerApAssetResponse.setErrorMessage(_ctx.stringValue("RegisterApAssetResponse.ErrorMessage"));
 		registerApAssetResponse.setIsSuccess(_ctx.booleanValue("RegisterApAssetResponse.IsSuccess"));
 		registerApAssetResponse.setErrorCode(_ctx.integerValue("RegisterApAssetResponse.ErrorCode"));
-		registerApAssetResponse.setErrorMessage(_ctx.stringValue("RegisterApAssetResponse.ErrorMessage"));
 	 
 	 	return registerApAssetResponse;
 	}
