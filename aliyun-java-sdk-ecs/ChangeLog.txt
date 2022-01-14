@@ -1,3 +1,8 @@
+2022-01-14 Version: 4.24.14
+- Add Request Param ImageOptions For API RunInstances.
+- Add Request Param LoginAsNonRoot For API ReplaceSystemDisk.
+- Add Request Param LoginAsNonRoot For API ReInitDisk.
+
 2021-12-20 Version: 4.24.13
 - Add Request Param Ipv6AddressCount For API CreateLaunchTemplate AND CreateLaunchTemplateVersion.
 - Add Response Data Ipv6AddressCount For API DescribeLaunchTemplateVersions.

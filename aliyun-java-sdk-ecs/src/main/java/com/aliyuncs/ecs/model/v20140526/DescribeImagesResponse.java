@@ -137,6 +137,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private Long imageOwnerId;
 
+		private Boolean loginAsNonRootSupported;
+
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private List<Tag> tags;
@@ -339,6 +341,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setImageOwnerId(Long imageOwnerId) {
 			this.imageOwnerId = imageOwnerId;
+		}
+
+		public Boolean getLoginAsNonRootSupported() {
+			return this.loginAsNonRootSupported;
+		}
+
+		public void setLoginAsNonRootSupported(Boolean loginAsNonRootSupported) {
+			this.loginAsNonRootSupported = loginAsNonRootSupported;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {
