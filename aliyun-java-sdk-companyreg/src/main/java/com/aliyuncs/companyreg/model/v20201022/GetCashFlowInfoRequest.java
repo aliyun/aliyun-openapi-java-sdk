@@ -29,7 +29,7 @@ public class GetCashFlowInfoRequest extends RpcAcsRequest<GetCashFlowInfoRespons
 
 	private String bizId;
 	public GetCashFlowInfoRequest() {
-		super("companyreg", "2020-10-22", "GetCashFlowInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetCashFlowInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

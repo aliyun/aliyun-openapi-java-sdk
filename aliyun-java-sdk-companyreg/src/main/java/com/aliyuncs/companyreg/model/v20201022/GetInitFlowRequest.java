@@ -27,7 +27,7 @@ public class GetInitFlowRequest extends RpcAcsRequest<GetInitFlowResponse> {
 
 	private String bizId;
 	public GetInitFlowRequest() {
-		super("companyreg", "2020-10-22", "GetInitFlow", "companyreg");
+		super("companyreg", "2020-10-22", "GetInitFlow");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

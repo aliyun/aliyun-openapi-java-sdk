@@ -39,7 +39,7 @@ public class ScanInvoiceRequest extends RpcAcsRequest<ScanInvoiceResponse> {
 
 	private String invoiceCode;
 	public ScanInvoiceRequest() {
-		super("companyreg", "2020-10-22", "ScanInvoice", "companyreg");
+		super("companyreg", "2020-10-22", "ScanInvoice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

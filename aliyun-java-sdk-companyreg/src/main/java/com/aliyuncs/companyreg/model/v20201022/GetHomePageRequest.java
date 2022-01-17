@@ -27,7 +27,7 @@ public class GetHomePageRequest extends RpcAcsRequest<GetHomePageResponse> {
 
 	private String bizId;
 	public GetHomePageRequest() {
-		super("companyreg", "2020-10-22", "GetHomePage", "companyreg");
+		super("companyreg", "2020-10-22", "GetHomePage");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

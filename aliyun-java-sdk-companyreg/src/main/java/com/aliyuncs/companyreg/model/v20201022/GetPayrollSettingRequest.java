@@ -27,7 +27,7 @@ public class GetPayrollSettingRequest extends RpcAcsRequest<GetPayrollSettingRes
 
 	private String bizId;
 	public GetPayrollSettingRequest() {
-		super("companyreg", "2020-10-22", "GetPayrollSetting", "companyreg");
+		super("companyreg", "2020-10-22", "GetPayrollSetting");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

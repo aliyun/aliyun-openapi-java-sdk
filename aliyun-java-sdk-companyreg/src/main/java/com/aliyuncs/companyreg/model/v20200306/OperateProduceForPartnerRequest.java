@@ -33,7 +33,7 @@ public class OperateProduceForPartnerRequest extends RpcAcsRequest<OperateProduc
 
 	private String operateType;
 	public OperateProduceForPartnerRequest() {
-		super("companyreg", "2020-03-06", "OperateProduceForPartner", "companyreg");
+		super("companyreg", "2020-03-06", "OperateProduceForPartner");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

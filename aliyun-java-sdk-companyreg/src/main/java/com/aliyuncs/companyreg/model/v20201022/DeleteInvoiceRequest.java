@@ -29,7 +29,7 @@ public class DeleteInvoiceRequest extends RpcAcsRequest<DeleteInvoiceResponse> {
 
 	private Long id;
 	public DeleteInvoiceRequest() {
-		super("companyreg", "2020-10-22", "DeleteInvoice", "companyreg");
+		super("companyreg", "2020-10-22", "DeleteInvoice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

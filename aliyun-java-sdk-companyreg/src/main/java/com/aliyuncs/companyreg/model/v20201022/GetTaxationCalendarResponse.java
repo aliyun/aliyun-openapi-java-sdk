@@ -49,21 +49,23 @@ public class GetTaxationCalendarResponse extends AcsResponse {
 
 		private String declareEndDate;
 
-		private String declareProgress;
-
-		private String declareStartDate;
-
-		private String period;
-
-		private String userTaxStartDate;
-
-		private String userTaxEndDate;
+		private Boolean isCanBookkeeping;
 
 		private String bookkeepingStartDate;
 
+		private String declareProgress;
+
 		private String bookkeepingEndDate;
 
-		private Boolean isCanBookkeeping;
+		private String userTaxStartDate;
+
+		private String declareStartDate;
+
+		private String userTaxEndDate;
+
+		private String period;
+
+		private String errorMessage;
 
 		public String getDeclareEndDate() {
 			return this.declareEndDate;
@@ -73,44 +75,12 @@ public class GetTaxationCalendarResponse extends AcsResponse {
 			this.declareEndDate = declareEndDate;
 		}
 
-		public String getDeclareProgress() {
-			return this.declareProgress;
+		public Boolean getIsCanBookkeeping() {
+			return this.isCanBookkeeping;
 		}
 
-		public void setDeclareProgress(String declareProgress) {
-			this.declareProgress = declareProgress;
-		}
-
-		public String getDeclareStartDate() {
-			return this.declareStartDate;
-		}
-
-		public void setDeclareStartDate(String declareStartDate) {
-			this.declareStartDate = declareStartDate;
-		}
-
-		public String getPeriod() {
-			return this.period;
-		}
-
-		public void setPeriod(String period) {
-			this.period = period;
-		}
-
-		public String getUserTaxStartDate() {
-			return this.userTaxStartDate;
-		}
-
-		public void setUserTaxStartDate(String userTaxStartDate) {
-			this.userTaxStartDate = userTaxStartDate;
-		}
-
-		public String getUserTaxEndDate() {
-			return this.userTaxEndDate;
-		}
-
-		public void setUserTaxEndDate(String userTaxEndDate) {
-			this.userTaxEndDate = userTaxEndDate;
+		public void setIsCanBookkeeping(Boolean isCanBookkeeping) {
+			this.isCanBookkeeping = isCanBookkeeping;
 		}
 
 		public String getBookkeepingStartDate() {
@@ -121,6 +91,14 @@ public class GetTaxationCalendarResponse extends AcsResponse {
 			this.bookkeepingStartDate = bookkeepingStartDate;
 		}
 
+		public String getDeclareProgress() {
+			return this.declareProgress;
+		}
+
+		public void setDeclareProgress(String declareProgress) {
+			this.declareProgress = declareProgress;
+		}
+
 		public String getBookkeepingEndDate() {
 			return this.bookkeepingEndDate;
 		}
@@ -129,12 +107,44 @@ public class GetTaxationCalendarResponse extends AcsResponse {
 			this.bookkeepingEndDate = bookkeepingEndDate;
 		}
 
-		public Boolean getIsCanBookkeeping() {
-			return this.isCanBookkeeping;
+		public String getUserTaxStartDate() {
+			return this.userTaxStartDate;
 		}
 
-		public void setIsCanBookkeeping(Boolean isCanBookkeeping) {
-			this.isCanBookkeeping = isCanBookkeeping;
+		public void setUserTaxStartDate(String userTaxStartDate) {
+			this.userTaxStartDate = userTaxStartDate;
+		}
+
+		public String getDeclareStartDate() {
+			return this.declareStartDate;
+		}
+
+		public void setDeclareStartDate(String declareStartDate) {
+			this.declareStartDate = declareStartDate;
+		}
+
+		public String getUserTaxEndDate() {
+			return this.userTaxEndDate;
+		}
+
+		public void setUserTaxEndDate(String userTaxEndDate) {
+			this.userTaxEndDate = userTaxEndDate;
+		}
+
+		public String getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(String period) {
+			this.period = period;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 	}
 

@@ -27,7 +27,7 @@ public class GetLastMonthInvoiceCountRequest extends RpcAcsRequest<GetLastMonthI
 
 	private String bizId;
 	public GetLastMonthInvoiceCountRequest() {
-		super("companyreg", "2020-10-22", "GetLastMonthInvoiceCount", "companyreg");
+		super("companyreg", "2020-10-22", "GetLastMonthInvoiceCount");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

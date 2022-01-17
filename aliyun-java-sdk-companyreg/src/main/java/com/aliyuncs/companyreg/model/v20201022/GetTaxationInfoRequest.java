@@ -29,7 +29,7 @@ public class GetTaxationInfoRequest extends RpcAcsRequest<GetTaxationInfoRespons
 
 	private String bizId;
 	public GetTaxationInfoRequest() {
-		super("companyreg", "2020-10-22", "GetTaxationInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetTaxationInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

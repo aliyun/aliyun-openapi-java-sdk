@@ -34,6 +34,8 @@ public class GetServiceInfoResponse extends AcsResponse {
 
 	private Boolean isClearedTrialData;
 
+	private String orderVersion;
+
 	private String name;
 
 	private String openingBalanceStatus;
@@ -78,6 +80,14 @@ public class GetServiceInfoResponse extends AcsResponse {
 
 	public void setIsClearedTrialData(Boolean isClearedTrialData) {
 		this.isClearedTrialData = isClearedTrialData;
+	}
+
+	public String getOrderVersion() {
+		return this.orderVersion;
+	}
+
+	public void setOrderVersion(String orderVersion) {
+		this.orderVersion = orderVersion;
 	}
 
 	public String getName() {

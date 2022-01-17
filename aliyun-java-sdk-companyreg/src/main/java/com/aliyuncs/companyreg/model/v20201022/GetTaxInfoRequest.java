@@ -31,7 +31,7 @@ public class GetTaxInfoRequest extends RpcAcsRequest<GetTaxInfoResponse> {
 
 	private String periods;
 	public GetTaxInfoRequest() {
-		super("companyreg", "2020-10-22", "GetTaxInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetTaxInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

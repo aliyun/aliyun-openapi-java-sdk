@@ -31,7 +31,7 @@ public class GetBalanceSheetInfoRequest extends RpcAcsRequest<GetBalanceSheetInf
 
 	private String bizId;
 	public GetBalanceSheetInfoRequest() {
-		super("companyreg", "2020-10-22", "GetBalanceSheetInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetBalanceSheetInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

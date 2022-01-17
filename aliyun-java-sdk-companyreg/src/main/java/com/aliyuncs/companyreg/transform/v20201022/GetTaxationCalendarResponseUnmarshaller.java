@@ -32,14 +32,15 @@ public class GetTaxationCalendarResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetTaxationCalendarResponse.CalendarList.Length"); i++) {
 			CalendarListItem calendarListItem = new CalendarListItem();
 			calendarListItem.setDeclareEndDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].DeclareEndDate"));
-			calendarListItem.setDeclareProgress(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].DeclareProgress"));
-			calendarListItem.setDeclareStartDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].DeclareStartDate"));
-			calendarListItem.setPeriod(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].Period"));
-			calendarListItem.setUserTaxStartDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].UserTaxStartDate"));
-			calendarListItem.setUserTaxEndDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].UserTaxEndDate"));
-			calendarListItem.setBookkeepingStartDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].BookkeepingStartDate"));
-			calendarListItem.setBookkeepingEndDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].BookkeepingEndDate"));
 			calendarListItem.setIsCanBookkeeping(_ctx.booleanValue("GetTaxationCalendarResponse.CalendarList["+ i +"].IsCanBookkeeping"));
+			calendarListItem.setBookkeepingStartDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].BookkeepingStartDate"));
+			calendarListItem.setDeclareProgress(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].DeclareProgress"));
+			calendarListItem.setBookkeepingEndDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].BookkeepingEndDate"));
+			calendarListItem.setUserTaxStartDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].UserTaxStartDate"));
+			calendarListItem.setDeclareStartDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].DeclareStartDate"));
+			calendarListItem.setUserTaxEndDate(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].UserTaxEndDate"));
+			calendarListItem.setPeriod(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].Period"));
+			calendarListItem.setErrorMessage(_ctx.stringValue("GetTaxationCalendarResponse.CalendarList["+ i +"].ErrorMessage"));
 
 			calendarList.add(calendarListItem);
 		}

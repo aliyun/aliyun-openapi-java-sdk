@@ -31,7 +31,7 @@ public class AcceptBookkeepingDetailStatusChangeRequest extends RpcAcsRequest<Ac
 
 	private Integer status;
 	public AcceptBookkeepingDetailStatusChangeRequest() {
-		super("companyreg", "2019-05-08", "AcceptBookkeepingDetailStatusChange", "companyreg");
+		super("companyreg", "2019-05-08", "AcceptBookkeepingDetailStatusChange");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class UploadIcpBasicMaterialRequest extends RpcAcsRequest<UploadIcpBasicM
 
 	private String corporateName;
 	public UploadIcpBasicMaterialRequest() {
-		super("companyreg", "2019-05-08", "UploadIcpBasicMaterial", "companyreg");
+		super("companyreg", "2019-05-08", "UploadIcpBasicMaterial");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

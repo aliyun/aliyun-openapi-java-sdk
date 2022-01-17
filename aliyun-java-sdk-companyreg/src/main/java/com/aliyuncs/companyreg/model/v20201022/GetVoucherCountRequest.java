@@ -31,7 +31,7 @@ public class GetVoucherCountRequest extends RpcAcsRequest<GetVoucherCountRespons
 
 	private String endPeriod;
 	public GetVoucherCountRequest() {
-		super("companyreg", "2020-10-22", "GetVoucherCount", "companyreg");
+		super("companyreg", "2020-10-22", "GetVoucherCount");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

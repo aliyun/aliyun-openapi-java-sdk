@@ -31,7 +31,7 @@ public class GetQuarterIncomeStatementInfoRequest extends RpcAcsRequest<GetQuart
 
 	private Boolean isQuarter;
 	public GetQuarterIncomeStatementInfoRequest() {
-		super("companyreg", "2020-10-22", "GetQuarterIncomeStatementInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetQuarterIncomeStatementInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

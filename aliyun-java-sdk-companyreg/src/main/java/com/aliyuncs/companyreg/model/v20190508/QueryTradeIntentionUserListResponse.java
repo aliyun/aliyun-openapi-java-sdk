@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
+	private Integer currentPageNum;
+
+	private Integer totalPageNum;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer totalItemNum;
 
-	private Integer currentPageNum;
-
-	private Integer pageSize;
-
-	private Integer totalPageNum;
-
 	private List<Trademark> data;
+
+	public Integer getCurrentPageNum() {
+		return this.currentPageNum;
+	}
+
+	public void setCurrentPageNum(Integer currentPageNum) {
+		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
-	public Integer getCurrentPageNum() {
-		return this.currentPageNum;
-	}
-
-	public void setCurrentPageNum(Integer currentPageNum) {
-		this.currentPageNum = currentPageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
-	}
-
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
-	}
-
 	public List<Trademark> getData() {
 		return this.data;
 	}
@@ -87,74 +87,32 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
 	public static class Trademark {
 
-		private String registerNumber;
-
-		private String classification;
-
-		private String mobile;
-
-		private String userName;
-
-		private String bizId;
-
-		private String description;
+		private Integer type;
 
 		private Integer status;
 
-		private Integer area;
+		private Long updateTime;
 
-		private Integer type;
+		private String description;
+
+		private String registerNumber;
 
 		private Long createTime;
 
-		private Long updateTime;
+		private String bizId;
 
-		public String getRegisterNumber() {
-			return this.registerNumber;
+		private Integer area;
+
+		private String classification;
+
+		private String userName;
+
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setRegisterNumber(String registerNumber) {
-			this.registerNumber = registerNumber;
-		}
-
-		public String getClassification() {
-			return this.classification;
-		}
-
-		public void setClassification(String classification) {
-			this.classification = classification;
-		}
-
-		public String getMobile() {
-			return this.mobile;
-		}
-
-		public void setMobile(String mobile) {
-			this.mobile = mobile;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
 		public Integer getStatus() {
@@ -165,20 +123,28 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Integer getArea() {
-			return this.area;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setArea(Integer area) {
-			this.area = area;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public Integer getType() {
-			return this.type;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setType(Integer type) {
-			this.type = type;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getRegisterNumber() {
+			return this.registerNumber;
+		}
+
+		public void setRegisterNumber(String registerNumber) {
+			this.registerNumber = registerNumber;
 		}
 
 		public Long getCreateTime() {
@@ -189,12 +155,36 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getBizId() {
+			return this.bizId;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public Integer getArea() {
+			return this.area;
+		}
+
+		public void setArea(Integer area) {
+			this.area = area;
+		}
+
+		public String getClassification() {
+			return this.classification;
+		}
+
+		public void setClassification(String classification) {
+			this.classification = classification;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	}
 

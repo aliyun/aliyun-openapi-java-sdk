@@ -29,7 +29,7 @@ public class GetInvoiceInfoRequest extends RpcAcsRequest<GetInvoiceInfoResponse>
 
 	private Long id;
 	public GetInvoiceInfoRequest() {
-		super("companyreg", "2020-10-22", "GetInvoiceInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetInvoiceInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

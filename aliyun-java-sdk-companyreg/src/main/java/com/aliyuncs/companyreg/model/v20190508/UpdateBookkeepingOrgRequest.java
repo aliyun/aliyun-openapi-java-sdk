@@ -33,7 +33,7 @@ public class UpdateBookkeepingOrgRequest extends RpcAcsRequest<UpdateBookkeeping
 
 	private String orgMobile;
 	public UpdateBookkeepingOrgRequest() {
-		super("companyreg", "2019-05-08", "UpdateBookkeepingOrg", "companyreg");
+		super("companyreg", "2019-05-08", "UpdateBookkeepingOrg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

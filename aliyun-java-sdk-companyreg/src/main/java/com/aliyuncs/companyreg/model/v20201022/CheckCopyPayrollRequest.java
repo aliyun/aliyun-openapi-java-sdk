@@ -31,7 +31,7 @@ public class CheckCopyPayrollRequest extends RpcAcsRequest<CheckCopyPayrollRespo
 
 	private String bizId;
 	public CheckCopyPayrollRequest() {
-		super("companyreg", "2020-10-22", "CheckCopyPayroll", "companyreg");
+		super("companyreg", "2020-10-22", "CheckCopyPayroll");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

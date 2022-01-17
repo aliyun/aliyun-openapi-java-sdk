@@ -29,7 +29,7 @@ public class SaveOpeningBalanceStatusRequest extends RpcAcsRequest<SaveOpeningBa
 
 	private String bizId;
 	public SaveOpeningBalanceStatusRequest() {
-		super("companyreg", "2020-10-22", "SaveOpeningBalanceStatus", "companyreg");
+		super("companyreg", "2020-10-22", "SaveOpeningBalanceStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

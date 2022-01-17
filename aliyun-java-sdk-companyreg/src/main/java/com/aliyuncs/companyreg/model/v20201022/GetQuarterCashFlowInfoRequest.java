@@ -31,7 +31,7 @@ public class GetQuarterCashFlowInfoRequest extends RpcAcsRequest<GetQuarterCashF
 
 	private Boolean isQuarter;
 	public GetQuarterCashFlowInfoRequest() {
-		super("companyreg", "2020-10-22", "GetQuarterCashFlowInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetQuarterCashFlowInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

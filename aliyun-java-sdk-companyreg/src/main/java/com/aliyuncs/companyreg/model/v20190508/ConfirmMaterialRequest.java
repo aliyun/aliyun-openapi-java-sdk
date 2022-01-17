@@ -29,7 +29,7 @@ public class ConfirmMaterialRequest extends RpcAcsRequest<ConfirmMaterialRespons
 
 	private String bizId;
 	public ConfirmMaterialRequest() {
-		super("companyreg", "2019-05-08", "ConfirmMaterial", "companyreg");
+		super("companyreg", "2019-05-08", "ConfirmMaterial");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

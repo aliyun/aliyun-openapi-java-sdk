@@ -33,7 +33,7 @@ public class ListCashJournalRequest extends RpcAcsRequest<ListCashJournalRespons
 
 	private Integer pageIndex;
 	public ListCashJournalRequest() {
-		super("companyreg", "2020-10-22", "ListCashJournal", "companyreg");
+		super("companyreg", "2020-10-22", "ListCashJournal");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

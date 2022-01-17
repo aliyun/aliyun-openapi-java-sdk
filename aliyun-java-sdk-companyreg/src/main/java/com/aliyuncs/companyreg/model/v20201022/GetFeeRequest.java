@@ -29,7 +29,7 @@ public class GetFeeRequest extends RpcAcsRequest<GetFeeResponse> {
 
 	private Long id;
 	public GetFeeRequest() {
-		super("companyreg", "2020-10-22", "GetFee", "companyreg");
+		super("companyreg", "2020-10-22", "GetFee");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetSsoUserInfoRequest extends RpcAcsRequest<GetSsoUserInfoResponse>
 
 	private String token;
 	public GetSsoUserInfoRequest() {
-		super("companyreg", "2020-10-22", "GetSsoUserInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetSsoUserInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class PhotoInvoiceRequest extends RpcAcsRequest<PhotoInvoiceResponse> {
 
 	private Boolean isMobile;
 	public PhotoInvoiceRequest() {
-		super("companyreg", "2020-10-22", "PhotoInvoice", "companyreg");
+		super("companyreg", "2020-10-22", "PhotoInvoice");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

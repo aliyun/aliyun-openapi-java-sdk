@@ -33,7 +33,7 @@ public class QueryCommunicationLogsRequest extends RpcAcsRequest<QueryCommunicat
 
 	private Integer pageSize;
 	public QueryCommunicationLogsRequest() {
-		super("companyreg", "2019-05-08", "QueryCommunicationLogs", "companyreg");
+		super("companyreg", "2019-05-08", "QueryCommunicationLogs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

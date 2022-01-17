@@ -31,7 +31,7 @@ public class ReleaseProduceAuthorizationRequest extends RpcAcsRequest<ReleasePro
 
 	private String bizId;
 	public ReleaseProduceAuthorizationRequest() {
-		super("companyreg", "2020-03-06", "ReleaseProduceAuthorization", "companyreg");
+		super("companyreg", "2020-03-06", "ReleaseProduceAuthorization");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

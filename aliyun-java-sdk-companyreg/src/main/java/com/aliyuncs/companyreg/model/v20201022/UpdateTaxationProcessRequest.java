@@ -31,7 +31,7 @@ public class UpdateTaxationProcessRequest extends RpcAcsRequest<UpdateTaxationPr
 
 	private String targetProcess;
 	public UpdateTaxationProcessRequest() {
-		super("companyreg", "2020-10-22", "UpdateTaxationProcess", "companyreg");
+		super("companyreg", "2020-10-22", "UpdateTaxationProcess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

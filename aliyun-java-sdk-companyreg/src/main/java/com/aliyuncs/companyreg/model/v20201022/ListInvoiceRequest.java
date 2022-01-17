@@ -35,7 +35,7 @@ public class ListInvoiceRequest extends RpcAcsRequest<ListInvoiceResponse> {
 
 	private String key;
 	public ListInvoiceRequest() {
-		super("companyreg", "2020-10-22", "ListInvoice", "companyreg");
+		super("companyreg", "2020-10-22", "ListInvoice");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

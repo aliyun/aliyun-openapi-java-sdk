@@ -37,7 +37,7 @@ public class ConvertFeeRequest extends RpcAcsRequest<ConvertFeeResponse> {
 
 	private Long id;
 	public ConvertFeeRequest() {
-		super("companyreg", "2020-10-22", "ConvertFee", "companyreg");
+		super("companyreg", "2020-10-22", "ConvertFee");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

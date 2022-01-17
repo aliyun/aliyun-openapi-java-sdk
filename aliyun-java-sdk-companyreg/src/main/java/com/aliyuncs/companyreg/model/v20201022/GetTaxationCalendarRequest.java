@@ -27,7 +27,7 @@ public class GetTaxationCalendarRequest extends RpcAcsRequest<GetTaxationCalenda
 
 	private String bizId;
 	public GetTaxationCalendarRequest() {
-		super("companyreg", "2020-10-22", "GetTaxationCalendar", "companyreg");
+		super("companyreg", "2020-10-22", "GetTaxationCalendar");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -67,7 +67,7 @@ public class CheckSavePayrollDetailRequest extends RpcAcsRequest<CheckSavePayrol
 
 	private String corpMaternityInsurance;
 	public CheckSavePayrollDetailRequest() {
-		super("companyreg", "2020-10-22", "CheckSavePayrollDetail", "companyreg");
+		super("companyreg", "2020-10-22", "CheckSavePayrollDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

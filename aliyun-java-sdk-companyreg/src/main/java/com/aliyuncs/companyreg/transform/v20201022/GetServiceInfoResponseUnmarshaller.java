@@ -28,6 +28,7 @@ public class GetServiceInfoResponseUnmarshaller {
 		getServiceInfoResponse.setCurrentPeriod(_ctx.stringValue("GetServiceInfoResponse.CurrentPeriod"));
 		getServiceInfoResponse.setSystemTime(_ctx.longValue("GetServiceInfoResponse.SystemTime"));
 		getServiceInfoResponse.setIsClearedTrialData(_ctx.booleanValue("GetServiceInfoResponse.IsClearedTrialData"));
+		getServiceInfoResponse.setOrderVersion(_ctx.stringValue("GetServiceInfoResponse.OrderVersion"));
 		getServiceInfoResponse.setName(_ctx.stringValue("GetServiceInfoResponse.Name"));
 		getServiceInfoResponse.setOpeningBalanceStatus(_ctx.stringValue("GetServiceInfoResponse.OpeningBalanceStatus"));
 

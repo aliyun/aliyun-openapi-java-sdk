@@ -31,7 +31,7 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 
 	private String bizId;
 	public SendMessageRequest() {
-		super("companyreg", "2020-10-22", "SendMessage", "companyreg");
+		super("companyreg", "2020-10-22", "SendMessage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

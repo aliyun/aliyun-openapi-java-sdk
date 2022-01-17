@@ -29,7 +29,7 @@ public class GetOssStsRequest extends RpcAcsRequest<GetOssStsResponse> {
 
 	private String bizId;
 	public GetOssStsRequest() {
-		super("companyreg", "2020-10-22", "GetOssSts", "companyreg");
+		super("companyreg", "2020-10-22", "GetOssSts");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetPayrollInfoRequest extends RpcAcsRequest<GetPayrollInfoResponse>
 
 	private Long id;
 	public GetPayrollInfoRequest() {
-		super("companyreg", "2020-10-22", "GetPayrollInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetPayrollInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
