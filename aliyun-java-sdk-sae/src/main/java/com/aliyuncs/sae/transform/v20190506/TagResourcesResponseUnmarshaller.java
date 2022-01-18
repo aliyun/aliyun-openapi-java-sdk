@@ -23,12 +23,12 @@ public class TagResourcesResponseUnmarshaller {
 	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext _ctx) {
 		
 		tagResourcesResponse.setRequestId(_ctx.stringValue("TagResourcesResponse.RequestId"));
-		tagResourcesResponse.setCode(_ctx.stringValue("TagResourcesResponse.Code"));
+		tagResourcesResponse.setMessage(_ctx.stringValue("TagResourcesResponse.Message"));
+		tagResourcesResponse.setTraceId(_ctx.stringValue("TagResourcesResponse.TraceId"));
 		tagResourcesResponse.setData(_ctx.booleanValue("TagResourcesResponse.Data"));
 		tagResourcesResponse.setErrorCode(_ctx.stringValue("TagResourcesResponse.ErrorCode"));
-		tagResourcesResponse.setMessage(_ctx.stringValue("TagResourcesResponse.Message"));
+		tagResourcesResponse.setCode(_ctx.stringValue("TagResourcesResponse.Code"));
 		tagResourcesResponse.setSuccess(_ctx.booleanValue("TagResourcesResponse.Success"));
-		tagResourcesResponse.setTraceId(_ctx.stringValue("TagResourcesResponse.TraceId"));
 	 
 	 	return tagResourcesResponse;
 	}

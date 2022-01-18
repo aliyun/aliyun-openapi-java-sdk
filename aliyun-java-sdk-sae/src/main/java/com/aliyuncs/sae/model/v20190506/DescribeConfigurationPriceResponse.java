@@ -14,15 +14,16 @@
 
 package com.aliyuncs.sae.model.v20190506;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sae.transform.v20190506.QueryResourceStaticsResponseUnmarshaller;
+import com.aliyuncs.sae.transform.v20190506.DescribeConfigurationPriceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryResourceStaticsResponse extends AcsResponse {
+public class DescribeConfigurationPriceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -96,41 +97,64 @@ public class QueryResourceStaticsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String workload;
+		private List<Rule> rules;
 
-		private Summary summary;
+		private BagUsage bagUsage;
 
-		private RealTimeRes realTimeRes;
+		private Order order;
 
-		public String getWorkload() {
-			return this.workload;
+		public List<Rule> getRules() {
+			return this.rules;
 		}
 
-		public void setWorkload(String workload) {
-			this.workload = workload;
+		public void setRules(List<Rule> rules) {
+			this.rules = rules;
 		}
 
-		public Summary getSummary() {
-			return this.summary;
+		public BagUsage getBagUsage() {
+			return this.bagUsage;
 		}
 
-		public void setSummary(Summary summary) {
-			this.summary = summary;
+		public void setBagUsage(BagUsage bagUsage) {
+			this.bagUsage = bagUsage;
 		}
 
-		public RealTimeRes getRealTimeRes() {
-			return this.realTimeRes;
+		public Order getOrder() {
+			return this.order;
 		}
 
-		public void setRealTimeRes(RealTimeRes realTimeRes) {
-			this.realTimeRes = realTimeRes;
+		public void setOrder(Order order) {
+			this.order = order;
 		}
 
-		public static class Summary {
+		public static class Rule {
+
+			private Long ruleDescId;
+
+			private String name;
+
+			public Long getRuleDescId() {
+				return this.ruleDescId;
+			}
+
+			public void setRuleDescId(Long ruleDescId) {
+				this.ruleDescId = ruleDescId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
+		public static class BagUsage {
 
 			private Float cpu;
 
-			private Float memory;
+			private Float mem;
 
 			public Float getCpu() {
 				return this.cpu;
@@ -140,42 +164,62 @@ public class QueryResourceStaticsResponse extends AcsResponse {
 				this.cpu = cpu;
 			}
 
-			public Float getMemory() {
-				return this.memory;
+			public Float getMem() {
+				return this.mem;
 			}
 
-			public void setMemory(Float memory) {
-				this.memory = memory;
+			public void setMem(Float mem) {
+				this.mem = mem;
 			}
 		}
 
-		public static class RealTimeRes {
+		public static class Order {
 
-			private Float cpu;
+			private Float originalAmount;
 
-			private Float memory;
+			private Float discountAmount;
 
-			public Float getCpu() {
-				return this.cpu;
+			private Float tradeAmount;
+
+			private List<String> ruleIds;
+
+			public Float getOriginalAmount() {
+				return this.originalAmount;
 			}
 
-			public void setCpu(Float cpu) {
-				this.cpu = cpu;
+			public void setOriginalAmount(Float originalAmount) {
+				this.originalAmount = originalAmount;
 			}
 
-			public Float getMemory() {
-				return this.memory;
+			public Float getDiscountAmount() {
+				return this.discountAmount;
 			}
 
-			public void setMemory(Float memory) {
-				this.memory = memory;
+			public void setDiscountAmount(Float discountAmount) {
+				this.discountAmount = discountAmount;
+			}
+
+			public Float getTradeAmount() {
+				return this.tradeAmount;
+			}
+
+			public void setTradeAmount(Float tradeAmount) {
+				this.tradeAmount = tradeAmount;
+			}
+
+			public List<String> getRuleIds() {
+				return this.ruleIds;
+			}
+
+			public void setRuleIds(List<String> ruleIds) {
+				this.ruleIds = ruleIds;
 			}
 		}
 	}
 
 	@Override
-	public QueryResourceStaticsResponse getInstance(UnmarshallerContext context) {
-		return	QueryResourceStaticsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeConfigurationPriceResponse getInstance(UnmarshallerContext context) {
+		return	DescribeConfigurationPriceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

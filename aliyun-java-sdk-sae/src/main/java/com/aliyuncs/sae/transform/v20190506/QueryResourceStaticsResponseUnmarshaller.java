@@ -26,23 +26,24 @@ public class QueryResourceStaticsResponseUnmarshaller {
 	public static QueryResourceStaticsResponse unmarshall(QueryResourceStaticsResponse queryResourceStaticsResponse, UnmarshallerContext _ctx) {
 		
 		queryResourceStaticsResponse.setRequestId(_ctx.stringValue("QueryResourceStaticsResponse.RequestId"));
-		queryResourceStaticsResponse.setCode(_ctx.stringValue("QueryResourceStaticsResponse.Code"));
-		queryResourceStaticsResponse.setErrorCode(_ctx.stringValue("QueryResourceStaticsResponse.ErrorCode"));
 		queryResourceStaticsResponse.setMessage(_ctx.stringValue("QueryResourceStaticsResponse.Message"));
-		queryResourceStaticsResponse.setSuccess(_ctx.booleanValue("QueryResourceStaticsResponse.Success"));
 		queryResourceStaticsResponse.setTraceId(_ctx.stringValue("QueryResourceStaticsResponse.TraceId"));
+		queryResourceStaticsResponse.setErrorCode(_ctx.stringValue("QueryResourceStaticsResponse.ErrorCode"));
+		queryResourceStaticsResponse.setCode(_ctx.stringValue("QueryResourceStaticsResponse.Code"));
+		queryResourceStaticsResponse.setSuccess(_ctx.booleanValue("QueryResourceStaticsResponse.Success"));
 
 		Data data = new Data();
-
-		RealTimeRes realTimeRes = new RealTimeRes();
-		realTimeRes.setCpu(_ctx.floatValue("QueryResourceStaticsResponse.Data.RealTimeRes.Cpu"));
-		realTimeRes.setMemory(_ctx.floatValue("QueryResourceStaticsResponse.Data.RealTimeRes.Memory"));
-		data.setRealTimeRes(realTimeRes);
+		data.setWorkload(_ctx.stringValue("QueryResourceStaticsResponse.Data.Workload"));
 
 		Summary summary = new Summary();
 		summary.setCpu(_ctx.floatValue("QueryResourceStaticsResponse.Data.Summary.Cpu"));
 		summary.setMemory(_ctx.floatValue("QueryResourceStaticsResponse.Data.Summary.Memory"));
 		data.setSummary(summary);
+
+		RealTimeRes realTimeRes = new RealTimeRes();
+		realTimeRes.setCpu(_ctx.floatValue("QueryResourceStaticsResponse.Data.RealTimeRes.Cpu"));
+		realTimeRes.setMemory(_ctx.floatValue("QueryResourceStaticsResponse.Data.RealTimeRes.Memory"));
+		data.setRealTimeRes(realTimeRes);
 		queryResourceStaticsResponse.setData(data);
 	 
 	 	return queryResourceStaticsResponse;

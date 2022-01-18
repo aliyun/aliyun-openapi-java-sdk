@@ -1,3 +1,6 @@
+2022-01-18 Version: 1.18.16
+- Support describe price.
+
 2022-01-07 Version: 1.18.15
 - Supported minReadyInstanceRatio parameter for deploy.
 
