@@ -22,22 +22,14 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeDBClusterPerformanceResponse> {
+public class DescribeDBClusterNodeRequest extends RpcAcsRequest<DescribeDBClusterNodeResponse> {
 	   
 
 	private String nodeType;
 
-	private String startTime;
-
 	private String dBInstanceId;
-
-	private String key;
-
-	private String endTime;
-
-	private String nodes;
-	public DescribeDBClusterPerformanceRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBClusterPerformance");
+	public DescribeDBClusterNodeRequest() {
+		super("gpdb", "2016-05-03", "DescribeDBClusterNode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +48,6 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -78,42 +59,9 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		}
 	}
 
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getNodes() {
-		return this.nodes;
-	}
-
-	public void setNodes(String nodes) {
-		this.nodes = nodes;
-		if(nodes != null){
-			putQueryParameter("Nodes", nodes);
-		}
-	}
-
 	@Override
-	public Class<DescribeDBClusterPerformanceResponse> getResponseClass() {
-		return DescribeDBClusterPerformanceResponse.class;
+	public Class<DescribeDBClusterNodeResponse> getResponseClass() {
+		return DescribeDBClusterNodeResponse.class;
 	}
 
 }
