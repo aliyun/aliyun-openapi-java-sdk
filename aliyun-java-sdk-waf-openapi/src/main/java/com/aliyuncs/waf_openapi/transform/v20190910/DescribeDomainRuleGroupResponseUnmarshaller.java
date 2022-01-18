@@ -24,6 +24,7 @@ public class DescribeDomainRuleGroupResponseUnmarshaller {
 		
 		describeDomainRuleGroupResponse.setRequestId(_ctx.stringValue("DescribeDomainRuleGroupResponse.RequestId"));
 		describeDomainRuleGroupResponse.setRuleGroupId(_ctx.longValue("DescribeDomainRuleGroupResponse.RuleGroupId"));
+		describeDomainRuleGroupResponse.setWafAiStatus(_ctx.integerValue("DescribeDomainRuleGroupResponse.WafAiStatus"));
 	 
 	 	return describeDomainRuleGroupResponse;
 	}

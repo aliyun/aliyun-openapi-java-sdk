@@ -32,34 +32,22 @@ public class DescribeDomainResponseUnmarshaller {
 		describeDomainResponse.setRequestId(_ctx.stringValue("DescribeDomainResponse.RequestId"));
 
 		Domain domain = new Domain();
-		domain.setIpFollowStatus(_ctx.integerValue("DescribeDomainResponse.Domain.IpFollowStatus"));
 		domain.setHttpToUserIp(_ctx.integerValue("DescribeDomainResponse.Domain.HttpToUserIp"));
-		domain.setHttpsRedirect(_ctx.integerValue("DescribeDomainResponse.Domain.HttpsRedirect"));
-		domain.setLoadBalancing(_ctx.integerValue("DescribeDomainResponse.Domain.LoadBalancing"));
-		domain.setCname(_ctx.stringValue("DescribeDomainResponse.Domain.Cname"));
+		domain.setSniStatus(_ctx.integerValue("DescribeDomainResponse.Domain.SniStatus"));
 		domain.setIsAccessProduct(_ctx.integerValue("DescribeDomainResponse.Domain.IsAccessProduct"));
 		domain.setAccessHeaderMode(_ctx.integerValue("DescribeDomainResponse.Domain.AccessHeaderMode"));
+		domain.setHttpsRedirect(_ctx.integerValue("DescribeDomainResponse.Domain.HttpsRedirect"));
+		domain.setIpFollowStatus(_ctx.integerValue("DescribeDomainResponse.Domain.IpFollowStatus"));
+		domain.setLoadBalancing(_ctx.integerValue("DescribeDomainResponse.Domain.LoadBalancing"));
+		domain.setAccessType(_ctx.stringValue("DescribeDomainResponse.Domain.AccessType"));
 		domain.setVersion(_ctx.longValue("DescribeDomainResponse.Domain.Version"));
 		domain.setClusterType(_ctx.integerValue("DescribeDomainResponse.Domain.ClusterType"));
-		domain.setConnectionTime(_ctx.integerValue("DescribeDomainResponse.Domain.ConnectionTime"));
 		domain.setReadTime(_ctx.integerValue("DescribeDomainResponse.Domain.ReadTime"));
 		domain.setWriteTime(_ctx.integerValue("DescribeDomainResponse.Domain.WriteTime"));
-		domain.setResourceGroupId(_ctx.stringValue("DescribeDomainResponse.Domain.ResourceGroupId"));
-		domain.setAccessType(_ctx.stringValue("DescribeDomainResponse.Domain.AccessType"));
-		domain.setSniStatus(_ctx.integerValue("DescribeDomainResponse.Domain.SniStatus"));
 		domain.setSniHost(_ctx.stringValue("DescribeDomainResponse.Domain.SniHost"));
-
-		List<String> sourceIps = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.SourceIps.Length"); i++) {
-			sourceIps.add(_ctx.stringValue("DescribeDomainResponse.Domain.SourceIps["+ i +"]"));
-		}
-		domain.setSourceIps(sourceIps);
-
-		List<String> http2Port = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.Http2Port.Length"); i++) {
-			http2Port.add(_ctx.stringValue("DescribeDomainResponse.Domain.Http2Port["+ i +"]"));
-		}
-		domain.setHttp2Port(http2Port);
+		domain.setResourceGroupId(_ctx.stringValue("DescribeDomainResponse.Domain.ResourceGroupId"));
+		domain.setCname(_ctx.stringValue("DescribeDomainResponse.Domain.Cname"));
+		domain.setConnectionTime(_ctx.integerValue("DescribeDomainResponse.Domain.ConnectionTime"));
 
 		List<String> httpPort = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.HttpPort.Length"); i++) {
@@ -67,11 +55,17 @@ public class DescribeDomainResponseUnmarshaller {
 		}
 		domain.setHttpPort(httpPort);
 
-		List<String> accessHeaders = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.AccessHeaders.Length"); i++) {
-			accessHeaders.add(_ctx.stringValue("DescribeDomainResponse.Domain.AccessHeaders["+ i +"]"));
+		List<String> http2Port = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.Http2Port.Length"); i++) {
+			http2Port.add(_ctx.stringValue("DescribeDomainResponse.Domain.Http2Port["+ i +"]"));
 		}
-		domain.setAccessHeaders(accessHeaders);
+		domain.setHttp2Port(http2Port);
+
+		List<String> sourceIps = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.SourceIps.Length"); i++) {
+			sourceIps.add(_ctx.stringValue("DescribeDomainResponse.Domain.SourceIps["+ i +"]"));
+		}
+		domain.setSourceIps(sourceIps);
 
 		List<String> httpsPort = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.HttpsPort.Length"); i++) {
@@ -79,11 +73,17 @@ public class DescribeDomainResponseUnmarshaller {
 		}
 		domain.setHttpsPort(httpsPort);
 
+		List<String> accessHeaders = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.AccessHeaders.Length"); i++) {
+			accessHeaders.add(_ctx.stringValue("DescribeDomainResponse.Domain.AccessHeaders["+ i +"]"));
+		}
+		domain.setAccessHeaders(accessHeaders);
+
 		List<LogHeader> logHeaders = new ArrayList<LogHeader>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.LogHeaders.Length"); i++) {
 			LogHeader logHeader = new LogHeader();
-			logHeader.setV(_ctx.stringValue("DescribeDomainResponse.Domain.LogHeaders["+ i +"].v"));
 			logHeader.setK(_ctx.stringValue("DescribeDomainResponse.Domain.LogHeaders["+ i +"].k"));
+			logHeader.setV(_ctx.stringValue("DescribeDomainResponse.Domain.LogHeaders["+ i +"].v"));
 
 			logHeaders.add(logHeader);
 		}
@@ -92,16 +92,16 @@ public class DescribeDomainResponseUnmarshaller {
 		List<CloudNativeInstancesItem> cloudNativeInstances = new ArrayList<CloudNativeInstancesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.CloudNativeInstances.Length"); i++) {
 			CloudNativeInstancesItem cloudNativeInstancesItem = new CloudNativeInstancesItem();
-			cloudNativeInstancesItem.setCloudNativeProductName(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].CloudNativeProductName"));
 			cloudNativeInstancesItem.setRedirectionTypeName(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].RedirectionTypeName"));
+			cloudNativeInstancesItem.setCloudNativeProductName(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].CloudNativeProductName"));
 			cloudNativeInstancesItem.setInstanceId(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].InstanceId"));
 			cloudNativeInstancesItem.setIPAddressList(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].IPAddressList"));
 
 			List<ProtocolPortConfigsItem> protocolPortConfigs = new ArrayList<ProtocolPortConfigsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs.Length"); j++) {
 				ProtocolPortConfigsItem protocolPortConfigsItem = new ProtocolPortConfigsItem();
-				protocolPortConfigsItem.setBizProtocol(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Protocol"));
 				protocolPortConfigsItem.setPorts(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Ports"));
+				protocolPortConfigsItem.setBizProtocol(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Protocol"));
 
 				protocolPortConfigs.add(protocolPortConfigsItem);
 			}

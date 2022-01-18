@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProtectionModuleStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer moduleStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getModuleStatus() {
 		return this.moduleStatus;
@@ -42,6 +34,14 @@ public class DescribeProtectionModuleStatusResponse extends AcsResponse {
 
 	public void setModuleStatus(Integer moduleStatus) {
 		this.moduleStatus = moduleStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -46,48 +46,32 @@ public class DescribeInstanceInfoResponse extends AcsResponse {
 
 	public static class InstanceInfo {
 
-		private Integer inDebt;
-
-		private String instanceId;
-
-		private Integer payType;
+		private Integer status;
 
 		private Long endDate;
+
+		private String version;
 
 		private Integer remainDay;
 
 		private String region;
 
-		private Integer trial;
+		private Integer payType;
 
-		private Integer status;
+		private Integer inDebt;
+
+		private String instanceId;
 
 		private String subscriptionType;
 
-		private String version;
+		private Integer trial;
 
-		public Integer getInDebt() {
-			return this.inDebt;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setInDebt(Integer inDebt) {
-			this.inDebt = inDebt;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Integer getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(Integer payType) {
-			this.payType = payType;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Long getEndDate() {
@@ -96,6 +80,14 @@ public class DescribeInstanceInfoResponse extends AcsResponse {
 
 		public void setEndDate(Long endDate) {
 			this.endDate = endDate;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public Integer getRemainDay() {
@@ -114,20 +106,28 @@ public class DescribeInstanceInfoResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public Integer getTrial() {
-			return this.trial;
+		public Integer getPayType() {
+			return this.payType;
 		}
 
-		public void setTrial(Integer trial) {
-			this.trial = trial;
+		public void setPayType(Integer payType) {
+			this.payType = payType;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Integer getInDebt() {
+			return this.inDebt;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setInDebt(Integer inDebt) {
+			this.inDebt = inDebt;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getSubscriptionType() {
@@ -138,12 +138,12 @@ public class DescribeInstanceInfoResponse extends AcsResponse {
 			this.subscriptionType = subscriptionType;
 		}
 
-		public String getVersion() {
-			return this.version;
+		public Integer getTrial() {
+			return this.trial;
 		}
 
-		public void setVersion(String version) {
-			this.version = version;
+		public void setTrial(Integer trial) {
+			this.trial = trial;
 		}
 	}
 

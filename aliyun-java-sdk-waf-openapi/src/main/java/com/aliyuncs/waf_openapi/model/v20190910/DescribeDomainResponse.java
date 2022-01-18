@@ -47,59 +47,51 @@ public class DescribeDomainResponse extends AcsResponse {
 
 	public static class Domain {
 
-		private Integer ipFollowStatus;
-
 		private Integer httpToUserIp;
 
-		private Integer httpsRedirect;
-
-		private Integer loadBalancing;
-
-		private String cname;
+		private Integer sniStatus;
 
 		private Integer isAccessProduct;
 
 		private Integer accessHeaderMode;
 
+		private Integer httpsRedirect;
+
+		private Integer ipFollowStatus;
+
+		private Integer loadBalancing;
+
+		private String accessType;
+
 		private Long version;
 
 		private Integer clusterType;
-
-		private Integer connectionTime;
 
 		private Integer readTime;
 
 		private Integer writeTime;
 
+		private String sniHost;
+
 		private String resourceGroupId;
 
-		private String accessType;
+		private String cname;
 
-		private Integer sniStatus;
-
-		private String sniHost;
+		private Integer connectionTime;
 
 		private List<LogHeader> logHeaders;
 
 		private List<CloudNativeInstancesItem> cloudNativeInstances;
 
-		private List<String> sourceIps;
+		private List<String> httpPort;
 
 		private List<String> http2Port;
 
-		private List<String> httpPort;
-
-		private List<String> accessHeaders;
+		private List<String> sourceIps;
 
 		private List<String> httpsPort;
 
-		public Integer getIpFollowStatus() {
-			return this.ipFollowStatus;
-		}
-
-		public void setIpFollowStatus(Integer ipFollowStatus) {
-			this.ipFollowStatus = ipFollowStatus;
-		}
+		private List<String> accessHeaders;
 
 		public Integer getHttpToUserIp() {
 			return this.httpToUserIp;
@@ -109,28 +101,12 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.httpToUserIp = httpToUserIp;
 		}
 
-		public Integer getHttpsRedirect() {
-			return this.httpsRedirect;
+		public Integer getSniStatus() {
+			return this.sniStatus;
 		}
 
-		public void setHttpsRedirect(Integer httpsRedirect) {
-			this.httpsRedirect = httpsRedirect;
-		}
-
-		public Integer getLoadBalancing() {
-			return this.loadBalancing;
-		}
-
-		public void setLoadBalancing(Integer loadBalancing) {
-			this.loadBalancing = loadBalancing;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
+		public void setSniStatus(Integer sniStatus) {
+			this.sniStatus = sniStatus;
 		}
 
 		public Integer getIsAccessProduct() {
@@ -149,6 +125,38 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.accessHeaderMode = accessHeaderMode;
 		}
 
+		public Integer getHttpsRedirect() {
+			return this.httpsRedirect;
+		}
+
+		public void setHttpsRedirect(Integer httpsRedirect) {
+			this.httpsRedirect = httpsRedirect;
+		}
+
+		public Integer getIpFollowStatus() {
+			return this.ipFollowStatus;
+		}
+
+		public void setIpFollowStatus(Integer ipFollowStatus) {
+			this.ipFollowStatus = ipFollowStatus;
+		}
+
+		public Integer getLoadBalancing() {
+			return this.loadBalancing;
+		}
+
+		public void setLoadBalancing(Integer loadBalancing) {
+			this.loadBalancing = loadBalancing;
+		}
+
+		public String getAccessType() {
+			return this.accessType;
+		}
+
+		public void setAccessType(String accessType) {
+			this.accessType = accessType;
+		}
+
 		public Long getVersion() {
 			return this.version;
 		}
@@ -163,14 +171,6 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		public void setClusterType(Integer clusterType) {
 			this.clusterType = clusterType;
-		}
-
-		public Integer getConnectionTime() {
-			return this.connectionTime;
-		}
-
-		public void setConnectionTime(Integer connectionTime) {
-			this.connectionTime = connectionTime;
 		}
 
 		public Integer getReadTime() {
@@ -189,6 +189,14 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.writeTime = writeTime;
 		}
 
+		public String getSniHost() {
+			return this.sniHost;
+		}
+
+		public void setSniHost(String sniHost) {
+			this.sniHost = sniHost;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -197,28 +205,20 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getAccessType() {
-			return this.accessType;
+		public String getCname() {
+			return this.cname;
 		}
 
-		public void setAccessType(String accessType) {
-			this.accessType = accessType;
+		public void setCname(String cname) {
+			this.cname = cname;
 		}
 
-		public Integer getSniStatus() {
-			return this.sniStatus;
+		public Integer getConnectionTime() {
+			return this.connectionTime;
 		}
 
-		public void setSniStatus(Integer sniStatus) {
-			this.sniStatus = sniStatus;
-		}
-
-		public String getSniHost() {
-			return this.sniHost;
-		}
-
-		public void setSniHost(String sniHost) {
-			this.sniHost = sniHost;
+		public void setConnectionTime(Integer connectionTime) {
+			this.connectionTime = connectionTime;
 		}
 
 		public List<LogHeader> getLogHeaders() {
@@ -237,12 +237,12 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.cloudNativeInstances = cloudNativeInstances;
 		}
 
-		public List<String> getSourceIps() {
-			return this.sourceIps;
+		public List<String> getHttpPort() {
+			return this.httpPort;
 		}
 
-		public void setSourceIps(List<String> sourceIps) {
-			this.sourceIps = sourceIps;
+		public void setHttpPort(List<String> httpPort) {
+			this.httpPort = httpPort;
 		}
 
 		public List<String> getHttp2Port() {
@@ -253,20 +253,12 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.http2Port = http2Port;
 		}
 
-		public List<String> getHttpPort() {
-			return this.httpPort;
+		public List<String> getSourceIps() {
+			return this.sourceIps;
 		}
 
-		public void setHttpPort(List<String> httpPort) {
-			this.httpPort = httpPort;
-		}
-
-		public List<String> getAccessHeaders() {
-			return this.accessHeaders;
-		}
-
-		public void setAccessHeaders(List<String> accessHeaders) {
-			this.accessHeaders = accessHeaders;
+		public void setSourceIps(List<String> sourceIps) {
+			this.sourceIps = sourceIps;
 		}
 
 		public List<String> getHttpsPort() {
@@ -277,19 +269,19 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.httpsPort = httpsPort;
 		}
 
-		public static class LogHeader {
+		public List<String> getAccessHeaders() {
+			return this.accessHeaders;
+		}
 
-			private String v;
+		public void setAccessHeaders(List<String> accessHeaders) {
+			this.accessHeaders = accessHeaders;
+		}
+
+		public static class LogHeader {
 
 			private String k;
 
-			public String getV() {
-				return this.v;
-			}
-
-			public void setV(String v) {
-				this.v = v;
-			}
+			private String v;
 
 			public String getK() {
 				return this.k;
@@ -298,13 +290,21 @@ public class DescribeDomainResponse extends AcsResponse {
 			public void setK(String k) {
 				this.k = k;
 			}
+
+			public String getV() {
+				return this.v;
+			}
+
+			public void setV(String v) {
+				this.v = v;
+			}
 		}
 
 		public static class CloudNativeInstancesItem {
 
-			private String cloudNativeProductName;
-
 			private String redirectionTypeName;
+
+			private String cloudNativeProductName;
 
 			private String instanceId;
 
@@ -312,20 +312,20 @@ public class DescribeDomainResponse extends AcsResponse {
 
 			private List<ProtocolPortConfigsItem> protocolPortConfigs;
 
-			public String getCloudNativeProductName() {
-				return this.cloudNativeProductName;
-			}
-
-			public void setCloudNativeProductName(String cloudNativeProductName) {
-				this.cloudNativeProductName = cloudNativeProductName;
-			}
-
 			public String getRedirectionTypeName() {
 				return this.redirectionTypeName;
 			}
 
 			public void setRedirectionTypeName(String redirectionTypeName) {
 				this.redirectionTypeName = redirectionTypeName;
+			}
+
+			public String getCloudNativeProductName() {
+				return this.cloudNativeProductName;
+			}
+
+			public void setCloudNativeProductName(String cloudNativeProductName) {
+				this.cloudNativeProductName = cloudNativeProductName;
 			}
 
 			public String getInstanceId() {
@@ -354,17 +354,9 @@ public class DescribeDomainResponse extends AcsResponse {
 
 			public static class ProtocolPortConfigsItem {
 
-				private String protocol;
-
 				private String ports;
 
-				public String getBizProtocol() {
-					return this.protocol;
-				}
-
-				public void setBizProtocol(String protocol) {
-					this.protocol = protocol;
-				}
+				private String protocol;
 
 				public String getPorts() {
 					return this.ports;
@@ -372,6 +364,14 @@ public class DescribeDomainResponse extends AcsResponse {
 
 				public void setPorts(String ports) {
 					this.ports = ports;
+				}
+
+				public String getBizProtocol() {
+					return this.protocol;
+				}
+
+				public void setBizProtocol(String protocol) {
+					this.protocol = protocol;
 				}
 			}
 		}

@@ -28,14 +28,14 @@ public class DescribeInstanceSpecInfoResponseUnmarshaller {
 		
 		describeInstanceSpecInfoResponse.setRequestId(_ctx.stringValue("DescribeInstanceSpecInfoResponse.RequestId"));
 		describeInstanceSpecInfoResponse.setInstanceId(_ctx.stringValue("DescribeInstanceSpecInfoResponse.InstanceId"));
-		describeInstanceSpecInfoResponse.setVersion(_ctx.stringValue("DescribeInstanceSpecInfoResponse.Version"));
 		describeInstanceSpecInfoResponse.setExpireTime(_ctx.longValue("DescribeInstanceSpecInfoResponse.ExpireTime"));
+		describeInstanceSpecInfoResponse.setVersion(_ctx.stringValue("DescribeInstanceSpecInfoResponse.Version"));
 
 		List<InstanceSpecInfo> instanceSpecInfos = new ArrayList<InstanceSpecInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSpecInfoResponse.InstanceSpecInfos.Length"); i++) {
 			InstanceSpecInfo instanceSpecInfo = new InstanceSpecInfo();
-			instanceSpecInfo.setValue(_ctx.stringValue("DescribeInstanceSpecInfoResponse.InstanceSpecInfos["+ i +"].Value"));
 			instanceSpecInfo.setCode(_ctx.stringValue("DescribeInstanceSpecInfoResponse.InstanceSpecInfos["+ i +"].Code"));
+			instanceSpecInfo.setValue(_ctx.stringValue("DescribeInstanceSpecInfoResponse.InstanceSpecInfos["+ i +"].Value"));
 
 			instanceSpecInfos.add(instanceSpecInfo);
 		}

@@ -24,9 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainRuleGroupResponse extends AcsResponse {
 
+	private Long ruleGroupId;
+
 	private String requestId;
 
-	private Long ruleGroupId;
+	private Integer wafAiStatus;
+
+	public Long getRuleGroupId() {
+		return this.ruleGroupId;
+	}
+
+	public void setRuleGroupId(Long ruleGroupId) {
+		this.ruleGroupId = ruleGroupId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +46,12 @@ public class DescribeDomainRuleGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getRuleGroupId() {
-		return this.ruleGroupId;
+	public Integer getWafAiStatus() {
+		return this.wafAiStatus;
 	}
 
-	public void setRuleGroupId(Long ruleGroupId) {
-		this.ruleGroupId = ruleGroupId;
+	public void setWafAiStatus(Integer wafAiStatus) {
+		this.wafAiStatus = wafAiStatus;
 	}
 
 	@Override
