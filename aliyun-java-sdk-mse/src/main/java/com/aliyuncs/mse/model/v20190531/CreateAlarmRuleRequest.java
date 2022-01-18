@@ -37,6 +37,8 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 
 	private String contactGroupIds;
 
+	private String acceptLanguage;
+
 	private String alertWay;
 
 	private String aggregates;
@@ -114,6 +116,17 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 		this.contactGroupIds = contactGroupIds;
 		if(contactGroupIds != null){
 			putQueryParameter("ContactGroupIds", contactGroupIds);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

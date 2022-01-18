@@ -28,6 +28,8 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 	private String orderId;
 
 	private String instanceId;
+
+	private String acceptLanguage;
 	public QueryClusterDetailRequest() {
 		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

@@ -29,6 +29,8 @@ public class CloneNacosConfigRequest extends RpcAcsRequest<CloneNacosConfigRespo
 
 	private String instanceId;
 
+	private String acceptLanguage;
+
 	private String ids;
 
 	private String originNamespaceId;
@@ -62,6 +64,17 @@ public class CloneNacosConfigRequest extends RpcAcsRequest<CloneNacosConfigRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

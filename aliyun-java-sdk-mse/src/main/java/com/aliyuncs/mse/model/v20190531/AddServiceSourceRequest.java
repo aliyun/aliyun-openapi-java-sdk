@@ -31,15 +31,11 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 
 	private String type;
 
-	private Long gatewayId;
-
 	private String address;
-
-	private String info1;
 
 	private String name;
 
-	private String info2;
+	private String acceptLanguage;
 	public AddServiceSourceRequest() {
 		super("mse", "2019-05-31", "AddServiceSource", "mse");
 		setMethod(MethodType.POST);
@@ -82,17 +78,6 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 		}
 	}
 
-	public Long getGatewayId() {
-		return this.gatewayId;
-	}
-
-	public void setGatewayId(Long gatewayId) {
-		this.gatewayId = gatewayId;
-		if(gatewayId != null){
-			putQueryParameter("GatewayId", gatewayId.toString());
-		}
-	}
-
 	public String getAddress() {
 		return this.address;
 	}
@@ -101,17 +86,6 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 		this.address = address;
 		if(address != null){
 			putQueryParameter("Address", address);
-		}
-	}
-
-	public String getInfo1() {
-		return this.info1;
-	}
-
-	public void setInfo1(String info1) {
-		this.info1 = info1;
-		if(info1 != null){
-			putQueryParameter("Info1", info1);
 		}
 	}
 
@@ -126,14 +100,14 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 		}
 	}
 
-	public String getInfo2() {
-		return this.info2;
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
 	}
 
-	public void setInfo2(String info2) {
-		this.info2 = info2;
-		if(info2 != null){
-			putQueryParameter("Info2", info2);
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

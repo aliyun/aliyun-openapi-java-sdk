@@ -30,6 +30,8 @@ public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
 	private String clusterId;
 
 	private String path;
+
+	private String acceptLanguage;
 	public CreateZnodeRequest() {
 		super("mse", "2019-05-31", "CreateZnode", "mse");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
 		this.path = path;
 		if(path != null){
 			putQueryParameter("Path", path);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

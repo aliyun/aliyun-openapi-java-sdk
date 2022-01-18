@@ -33,6 +33,8 @@ public class CreateEngineNamespaceRequest extends RpcAcsRequest<CreateEngineName
 
 	private String name;
 
+	private String acceptLanguage;
+
 	private String desc;
 	public CreateEngineNamespaceRequest() {
 		super("mse", "2019-05-31", "CreateEngineNamespace", "mse");
@@ -84,6 +86,17 @@ public class CreateEngineNamespaceRequest extends RpcAcsRequest<CreateEngineName
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

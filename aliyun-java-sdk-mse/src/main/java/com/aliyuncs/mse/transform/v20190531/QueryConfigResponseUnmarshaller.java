@@ -49,6 +49,9 @@ public class QueryConfigResponseUnmarshaller {
 		data.setUserName(_ctx.stringValue("QueryConfigResponse.Data.UserName"));
 		data.setConfigSecretSupported(_ctx.booleanValue("QueryConfigResponse.Data.ConfigSecretSupported"));
 		data.setConfigSecretEnabled(_ctx.booleanValue("QueryConfigResponse.Data.ConfigSecretEnabled"));
+		data.setNamingCreateServiceSupported(_ctx.booleanValue("QueryConfigResponse.Data.NamingCreateServiceSupported"));
+		data.setMinSessionTimeout(_ctx.stringValue("QueryConfigResponse.Data.MinSessionTimeout"));
+		data.setMaxSessionTimeout(_ctx.stringValue("QueryConfigResponse.Data.MaxSessionTimeout"));
 		queryConfigResponse.setData(data);
 	 
 	 	return queryConfigResponse;

@@ -24,6 +24,8 @@ import com.aliyuncs.mse.Endpoint;
  */
 public class QueryGatewayRegionRequest extends RpcAcsRequest<QueryGatewayRegionResponse> {
 	   
+
+	private String acceptLanguage;
 	public QueryGatewayRegionRequest() {
 		super("mse", "2019-05-31", "QueryGatewayRegion", "mse");
 		setMethod(MethodType.GET);
@@ -31,6 +33,17 @@ public class QueryGatewayRegionRequest extends RpcAcsRequest<QueryGatewayRegionR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	@Override

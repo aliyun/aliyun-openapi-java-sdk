@@ -26,6 +26,8 @@ public class GetGovernanceKubernetesClusterRequest extends RpcAcsRequest<GetGove
 	   
 
 	private String clusterId;
+
+	private String acceptLanguage;
 	public GetGovernanceKubernetesClusterRequest() {
 		super("mse", "2019-05-31", "GetGovernanceKubernetesCluster", "mse");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetGovernanceKubernetesClusterRequest extends RpcAcsRequest<GetGove
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

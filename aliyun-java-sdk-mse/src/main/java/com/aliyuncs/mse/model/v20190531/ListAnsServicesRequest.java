@@ -41,6 +41,8 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 
 	private Integer pageSize;
 
+	private String acceptLanguage;
+
 	private String serviceName;
 	public ListAnsServicesRequest() {
 		super("mse", "2019-05-31", "ListAnsServices", "mse");
@@ -136,6 +138,17 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

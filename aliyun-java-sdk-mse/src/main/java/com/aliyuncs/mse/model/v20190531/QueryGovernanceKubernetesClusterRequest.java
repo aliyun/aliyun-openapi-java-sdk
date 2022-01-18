@@ -32,6 +32,8 @@ public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<Query
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String acceptLanguage;
 	public QueryGovernanceKubernetesClusterRequest() {
 		super("mse", "2019-05-31", "QueryGovernanceKubernetesCluster", "mse");
 		setMethod(MethodType.GET);
@@ -82,6 +84,17 @@ public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<Query
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

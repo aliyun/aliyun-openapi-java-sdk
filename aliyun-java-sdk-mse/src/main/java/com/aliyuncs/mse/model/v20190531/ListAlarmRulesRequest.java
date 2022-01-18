@@ -32,6 +32,8 @@ public class ListAlarmRulesRequest extends RpcAcsRequest<ListAlarmRulesResponse>
 	private String requestPars;
 
 	private Integer pageSize;
+
+	private String acceptLanguage;
 	public ListAlarmRulesRequest() {
 		super("mse", "2019-05-31", "ListAlarmRules", "mse");
 		setMethod(MethodType.GET);
@@ -82,6 +84,17 @@ public class ListAlarmRulesRequest extends RpcAcsRequest<ListAlarmRulesResponse>
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

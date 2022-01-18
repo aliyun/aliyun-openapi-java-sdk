@@ -1,3 +1,7 @@
+2022-01-18 Version: 3.0.4
+- ReportOneAgentInfo.
+
+
 2021-12-28 Version: 3.0.3
 - Report data.
 

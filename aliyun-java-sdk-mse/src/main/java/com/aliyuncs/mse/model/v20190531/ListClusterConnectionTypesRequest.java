@@ -24,6 +24,8 @@ import com.aliyuncs.mse.Endpoint;
  */
 public class ListClusterConnectionTypesRequest extends RpcAcsRequest<ListClusterConnectionTypesResponse> {
 	   
+
+	private String acceptLanguage;
 	public ListClusterConnectionTypesRequest() {
 		super("mse", "2019-05-31", "ListClusterConnectionTypes", "mse");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class ListClusterConnectionTypesRequest extends RpcAcsRequest<ListCluster
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	@Override

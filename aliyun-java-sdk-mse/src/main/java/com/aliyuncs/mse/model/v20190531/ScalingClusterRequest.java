@@ -34,6 +34,8 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 	private Long memoryCapacity;
 
 	private Integer instanceCount;
+
+	private String acceptLanguage;
 	public ScalingClusterRequest() {
 		super("mse", "2019-05-31", "ScalingCluster", "mse");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 		this.instanceCount = instanceCount;
 		if(instanceCount != null){
 			putQueryParameter("InstanceCount", instanceCount.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

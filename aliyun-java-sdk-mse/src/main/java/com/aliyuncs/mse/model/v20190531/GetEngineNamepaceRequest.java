@@ -29,6 +29,8 @@ public class GetEngineNamepaceRequest extends RpcAcsRequest<GetEngineNamepaceRes
 
 	private String instanceId;
 
+	private String acceptLanguage;
+
 	private String id;
 	public GetEngineNamepaceRequest() {
 		super("mse", "2019-05-31", "GetEngineNamepace", "mse");
@@ -58,6 +60,17 @@ public class GetEngineNamepaceRequest extends RpcAcsRequest<GetEngineNamepaceRes
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

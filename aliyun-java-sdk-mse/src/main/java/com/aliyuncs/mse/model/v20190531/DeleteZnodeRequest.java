@@ -30,6 +30,8 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 	private String path;
 
 	private String requestPars;
+
+	private String acceptLanguage;
 	public DeleteZnodeRequest() {
 		super("mse", "2019-05-31", "DeleteZnode", "mse");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

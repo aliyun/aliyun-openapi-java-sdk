@@ -26,6 +26,8 @@ public class QueryClusterDiskSpecificationRequest extends RpcAcsRequest<QueryClu
 	   
 
 	private String clusterType;
+
+	private String acceptLanguage;
 	public QueryClusterDiskSpecificationRequest() {
 		super("mse", "2019-05-31", "QueryClusterDiskSpecification", "mse");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class QueryClusterDiskSpecificationRequest extends RpcAcsRequest<QueryClu
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

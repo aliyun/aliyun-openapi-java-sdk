@@ -32,6 +32,8 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	private String requestPars;
 
 	private Integer pageSize;
+
+	private String acceptLanguage;
 	public ListClustersRequest() {
 		super("mse", "2019-05-31", "ListClusters", "mse");
 		setMethod(MethodType.GET);
@@ -82,6 +84,17 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

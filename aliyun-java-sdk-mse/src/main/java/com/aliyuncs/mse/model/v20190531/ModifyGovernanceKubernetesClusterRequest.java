@@ -28,6 +28,8 @@ public class ModifyGovernanceKubernetesClusterRequest extends RpcAcsRequest<Modi
 	private String namespaceInfos;
 
 	private String clusterId;
+
+	private String acceptLanguage;
 	public ModifyGovernanceKubernetesClusterRequest() {
 		super("mse", "2019-05-31", "ModifyGovernanceKubernetesCluster", "mse");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class ModifyGovernanceKubernetesClusterRequest extends RpcAcsRequest<Modi
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

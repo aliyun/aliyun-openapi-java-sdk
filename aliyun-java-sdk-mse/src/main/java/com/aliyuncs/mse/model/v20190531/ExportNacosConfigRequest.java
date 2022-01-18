@@ -33,6 +33,8 @@ public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigRes
 
 	private String namespaceId;
 
+	private String acceptLanguage;
+
 	private String ids;
 
 	private String group;
@@ -86,6 +88,17 @@ public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigRes
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

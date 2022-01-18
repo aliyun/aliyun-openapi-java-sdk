@@ -27,6 +27,8 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 
 	private String clusterId;
 
+	private String acceptLanguage;
+
 	private String versionCode;
 	public UpdateImageRequest() {
 		super("mse", "2019-05-31", "UpdateImage", "mse");
@@ -45,6 +47,17 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

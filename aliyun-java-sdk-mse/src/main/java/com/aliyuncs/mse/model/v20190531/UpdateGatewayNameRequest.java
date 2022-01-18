@@ -28,6 +28,8 @@ public class UpdateGatewayNameRequest extends RpcAcsRequest<UpdateGatewayNameRes
 	private String gatewayUniqueId;
 
 	private String name;
+
+	private String acceptLanguage;
 	public UpdateGatewayNameRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayName", "mse");
 		setMethod(MethodType.GET);
@@ -56,6 +58,17 @@ public class UpdateGatewayNameRequest extends RpcAcsRequest<UpdateGatewayNameRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

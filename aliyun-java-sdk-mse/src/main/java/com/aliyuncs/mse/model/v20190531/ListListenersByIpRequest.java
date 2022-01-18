@@ -32,6 +32,8 @@ public class ListListenersByIpRequest extends RpcAcsRequest<ListListenersByIpRes
 	private String namespaceId;
 
 	private String requestPars;
+
+	private String acceptLanguage;
 	public ListListenersByIpRequest() {
 		super("mse", "2019-05-31", "ListListenersByIp", "mse");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class ListListenersByIpRequest extends RpcAcsRequest<ListListenersByIpRes
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

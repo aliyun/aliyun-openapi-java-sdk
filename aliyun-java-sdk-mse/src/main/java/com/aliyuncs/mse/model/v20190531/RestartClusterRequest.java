@@ -32,6 +32,8 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 	private String instanceId;
 
 	private String requestPars;
+
+	private String acceptLanguage;
 	public RestartClusterRequest() {
 		super("mse", "2019-05-31", "RestartCluster", "mse");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

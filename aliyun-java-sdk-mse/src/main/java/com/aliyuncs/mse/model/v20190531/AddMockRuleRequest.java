@@ -43,6 +43,8 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 
 	private String name;
 
+	private String acceptLanguage;
+
 	private Long mockType;
 
 	private String region;
@@ -151,6 +153,17 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

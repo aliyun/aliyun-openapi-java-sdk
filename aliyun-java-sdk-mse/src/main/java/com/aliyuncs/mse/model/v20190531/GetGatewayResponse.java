@@ -92,15 +92,11 @@ public class GetGatewayResponse extends AcsResponse {
 
 		private String gatewayUniqueId;
 
-		private String gatewayType;
-
 		private String region;
 
 		private String primaryUser;
 
 		private Integer status;
-
-		private Boolean armsOn;
 
 		private String vpc;
 
@@ -152,14 +148,6 @@ public class GetGatewayResponse extends AcsResponse {
 			this.gatewayUniqueId = gatewayUniqueId;
 		}
 
-		public String getGatewayType() {
-			return this.gatewayType;
-		}
-
-		public void setGatewayType(String gatewayType) {
-			this.gatewayType = gatewayType;
-		}
-
 		public String getRegion() {
 			return this.region;
 		}
@@ -182,14 +170,6 @@ public class GetGatewayResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public Boolean getArmsOn() {
-			return this.armsOn;
-		}
-
-		public void setArmsOn(Boolean armsOn) {
-			this.armsOn = armsOn;
 		}
 
 		public String getVpc() {

@@ -33,6 +33,8 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private String appName;
 
+	private String acceptLanguage;
+
 	private String region;
 	public CreateApplicationRequest() {
 		super("mse", "2019-05-31", "CreateApplication", "mse");
@@ -84,6 +86,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

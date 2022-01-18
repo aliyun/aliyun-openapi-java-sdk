@@ -29,6 +29,8 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 
 	private String httpRewriteJSON;
 
+	private String acceptLanguage;
+
 	private Long id;
 
 	private Long gatewayId;
@@ -60,6 +62,17 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 		this.httpRewriteJSON = httpRewriteJSON;
 		if(httpRewriteJSON != null){
 			putQueryParameter("HttpRewriteJSON", httpRewriteJSON);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

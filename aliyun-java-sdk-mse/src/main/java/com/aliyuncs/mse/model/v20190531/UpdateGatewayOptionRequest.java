@@ -33,6 +33,8 @@ public class UpdateGatewayOptionRequest extends RpcAcsRequest<UpdateGatewayOptio
 	private GatewayOption gatewayOption;
 
 	private Long gatewayId;
+
+	private String acceptLanguage;
 	public UpdateGatewayOptionRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayOption", "mse");
 		setMethod(MethodType.POST);
@@ -72,6 +74,17 @@ public class UpdateGatewayOptionRequest extends RpcAcsRequest<UpdateGatewayOptio
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

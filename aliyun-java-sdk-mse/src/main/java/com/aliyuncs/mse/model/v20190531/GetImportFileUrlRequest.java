@@ -30,6 +30,8 @@ public class GetImportFileUrlRequest extends RpcAcsRequest<GetImportFileUrlRespo
 	private String instanceId;
 
 	private String namespaceId;
+
+	private String acceptLanguage;
 	public GetImportFileUrlRequest() {
 		super("mse", "2019-05-31", "GetImportFileUrl", "mse");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class GetImportFileUrlRequest extends RpcAcsRequest<GetImportFileUrlRespo
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

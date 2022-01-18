@@ -45,6 +45,8 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 
 	private String dataId;
 
+	private String acceptLanguage;
+
 	private String desc;
 
 	private String md5;
@@ -164,6 +166,17 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 		this.dataId = dataId;
 		if(dataId != null){
 			putQueryParameter("DataId", dataId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	private String path;
 
 	private String requestPars;
+
+	private String acceptLanguage;
 	public UpdateZnodeRequest() {
 		super("mse", "2019-05-31", "UpdateZnode", "mse");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

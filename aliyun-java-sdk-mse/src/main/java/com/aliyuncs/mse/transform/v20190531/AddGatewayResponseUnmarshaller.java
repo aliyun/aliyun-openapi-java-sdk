@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.transform.v20190531;
 
 import com.aliyuncs.mse.model.v20190531.AddGatewayResponse;
+import com.aliyuncs.mse.model.v20190531.AddGatewayResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,7 +28,10 @@ public class AddGatewayResponseUnmarshaller {
 		addGatewayResponse.setMessage(_ctx.stringValue("AddGatewayResponse.Message"));
 		addGatewayResponse.setCode(_ctx.integerValue("AddGatewayResponse.Code"));
 		addGatewayResponse.setSuccess(_ctx.booleanValue("AddGatewayResponse.Success"));
-		addGatewayResponse.setData(_ctx.stringValue("AddGatewayResponse.Data"));
+
+		Data data = new Data();
+		data.setGatewayUniqueId(_ctx.stringValue("AddGatewayResponse.Data.GatewayUniqueId"));
+		addGatewayResponse.setData(data);
 	 
 	 	return addGatewayResponse;
 	}

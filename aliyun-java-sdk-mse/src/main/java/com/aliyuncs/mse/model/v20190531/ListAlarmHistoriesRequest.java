@@ -37,6 +37,8 @@ public class ListAlarmHistoriesRequest extends RpcAcsRequest<ListAlarmHistoriesR
 
 	private Integer pageSize;
 
+	private String acceptLanguage;
+
 	private String alarmName;
 	public ListAlarmHistoriesRequest() {
 		super("mse", "2019-05-31", "ListAlarmHistories", "mse");
@@ -110,6 +112,17 @@ public class ListAlarmHistoriesRequest extends RpcAcsRequest<ListAlarmHistoriesR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

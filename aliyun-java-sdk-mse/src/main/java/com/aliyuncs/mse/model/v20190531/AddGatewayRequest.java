@@ -29,7 +29,7 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private Integer replica;
 
-	private String vswitch2;
+	private String vSwitchId2;
 
 	private String spec;
 
@@ -37,11 +37,13 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String vpc;
 
-	private String vswitch;
+	private String vSwitchId;
 
 	private String slbSpec;
 
 	private String name;
+
+	private String acceptLanguage;
 
 	private String region;
 	public AddGatewayRequest() {
@@ -75,14 +77,14 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
-	public String getVswitch2() {
-		return this.vswitch2;
+	public String getVSwitchId2() {
+		return this.vSwitchId2;
 	}
 
-	public void setVswitch2(String vswitch2) {
-		this.vswitch2 = vswitch2;
-		if(vswitch2 != null){
-			putQueryParameter("Vswitch2", vswitch2);
+	public void setVSwitchId2(String vSwitchId2) {
+		this.vSwitchId2 = vSwitchId2;
+		if(vSwitchId2 != null){
+			putQueryParameter("VSwitchId2", vSwitchId2);
 		}
 	}
 
@@ -119,14 +121,14 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
-	public String getVswitch() {
-		return this.vswitch;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setVswitch(String vswitch) {
-		this.vswitch = vswitch;
-		if(vswitch != null){
-			putQueryParameter("Vswitch", vswitch);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -149,6 +151,17 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

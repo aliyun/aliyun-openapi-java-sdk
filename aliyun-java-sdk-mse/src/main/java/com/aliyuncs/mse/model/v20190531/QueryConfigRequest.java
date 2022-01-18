@@ -32,6 +32,8 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 	private String instanceId;
 
 	private String requestPars;
+
+	private String acceptLanguage;
 	public QueryConfigRequest() {
 		super("mse", "2019-05-31", "QueryConfig", "mse");
 		setMethod(MethodType.GET);
@@ -82,6 +84,17 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

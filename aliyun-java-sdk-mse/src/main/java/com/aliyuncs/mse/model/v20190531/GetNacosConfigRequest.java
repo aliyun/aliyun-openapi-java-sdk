@@ -31,6 +31,8 @@ public class GetNacosConfigRequest extends RpcAcsRequest<GetNacosConfigResponse>
 
 	private String namespaceId;
 
+	private String acceptLanguage;
+
 	private Boolean beta;
 
 	private String group;
@@ -73,6 +75,17 @@ public class GetNacosConfigRequest extends RpcAcsRequest<GetNacosConfigResponse>
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

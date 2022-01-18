@@ -55,6 +55,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String mseVersion;
 
+	private String acceptLanguage;
+
 	private String region;
 	public CreateClusterRequest() {
 		super("mse", "2019-05-31", "CreateCluster", "mse");
@@ -227,6 +229,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.mseVersion = mseVersion;
 		if(mseVersion != null){
 			putQueryParameter("MseVersion", mseVersion);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

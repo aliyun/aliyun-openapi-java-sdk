@@ -28,6 +28,8 @@ public class RetryClusterRequest extends RpcAcsRequest<RetryClusterResponse> {
 	private String instanceId;
 
 	private String requestPars;
+
+	private String acceptLanguage;
 	public RetryClusterRequest() {
 		super("mse", "2019-05-31", "RetryCluster", "mse");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class RetryClusterRequest extends RpcAcsRequest<RetryClusterResponse> {
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

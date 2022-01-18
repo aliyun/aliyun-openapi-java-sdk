@@ -33,6 +33,8 @@ public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryC
 
 	private String namespaceId;
 
+	private String acceptLanguage;
+
 	private String group;
 	public GetNacosHistoryConfigRequest() {
 		super("mse", "2019-05-31", "GetNacosHistoryConfig", "mse");
@@ -84,6 +86,17 @@ public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryC
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

@@ -39,6 +39,7 @@ public class ListAnsServiceClustersResponseUnmarshaller {
 		data.setName(_ctx.stringValue("ListAnsServiceClustersResponse.Data.Name"));
 		data.setSelectorType(_ctx.stringValue("ListAnsServiceClustersResponse.Data.SelectorType"));
 		data.setMetadata(_ctx.mapValue("ListAnsServiceClustersResponse.Data.Metadata"));
+		data.setEphemeral(_ctx.booleanValue("ListAnsServiceClustersResponse.Data.Ephemeral"));
 
 		List<NacosAnsCluster> clusters = new ArrayList<NacosAnsCluster>();
 		for (int i = 0; i < _ctx.lengthValue("ListAnsServiceClustersResponse.Data.Clusters.Length"); i++) {

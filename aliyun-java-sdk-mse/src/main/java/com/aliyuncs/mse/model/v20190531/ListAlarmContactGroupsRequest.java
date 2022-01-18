@@ -30,6 +30,8 @@ public class ListAlarmContactGroupsRequest extends RpcAcsRequest<ListAlarmContac
 	private String requestPars;
 
 	private Integer pageSize;
+
+	private String acceptLanguage;
 	public ListAlarmContactGroupsRequest() {
 		super("mse", "2019-05-31", "ListAlarmContactGroups", "mse");
 		setMethod(MethodType.GET);
@@ -69,6 +71,17 @@ public class ListAlarmContactGroupsRequest extends RpcAcsRequest<ListAlarmContac
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

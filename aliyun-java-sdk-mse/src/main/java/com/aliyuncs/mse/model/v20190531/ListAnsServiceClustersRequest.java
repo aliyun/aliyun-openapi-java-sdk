@@ -33,11 +33,15 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 
 	private String groupName;
 
+	private String instanceId;
+
 	private String namespaceId;
 
 	private String requestPars;
 
 	private Integer pageSize;
+
+	private String acceptLanguage;
 
 	private String serviceName;
 	public ListAnsServiceClustersRequest() {
@@ -93,6 +97,17 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public String getNamespaceId() {
 		return this.namespaceId;
 	}
@@ -123,6 +138,17 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
