@@ -39,7 +39,7 @@ public class AddSmsTemplateRequest extends RpcAcsRequest<AddSmsTemplateResponse>
 
 	private String templateContent;
 	public AddSmsTemplateRequest() {
-		super("Dysmsapi", "2017-05-25", "AddSmsTemplate", "dysms");
+		super("Dysmsapi", "2017-05-25", "AddSmsTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

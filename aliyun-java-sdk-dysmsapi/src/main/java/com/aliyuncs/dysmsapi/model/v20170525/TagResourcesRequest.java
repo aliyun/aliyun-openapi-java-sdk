@@ -15,6 +15,7 @@
 package com.aliyuncs.dysmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dysmsapi.Endpoint;
 
@@ -22,26 +23,24 @@ import com.aliyuncs.dysmsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateResponse> {
+public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String remark;
+	private List<Tag> tags;
 
-	private Integer templateType;
-
-	private String templateName;
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
+	private String prodCode;
+
 	private Long ownerId;
 
-	private String templateContent;
-
-	private String templateCode;
-	public ModifySmsTemplateRequest() {
-		super("Dysmsapi", "2017-05-25", "ModifySmsTemplate");
+	private String resourceType;
+	public TagResourcesRequest() {
+		super("Dysmsapi", "2017-05-25", "TagResources");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,37 +59,31 @@ public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateRes
 		}
 	}
 
-	public String getRemark() {
-		return this.remark;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
-		}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
-	public Integer getTemplateType() {
-		return this.templateType;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setTemplateType(Integer templateType) {
-		this.templateType = templateType;
-		if(templateType != null){
-			putQueryParameter("TemplateType", templateType.toString());
-		}
-	}
-
-	public String getTemplateName() {
-		return this.templateName;
-	}
-
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putQueryParameter("TemplateName", templateName);
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -101,6 +94,17 @@ public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getProdCode() {
+		return this.prodCode;
+	}
+
+	public void setProdCode(String prodCode) {
+		this.prodCode = prodCode;
+		if(prodCode != null){
+			putQueryParameter("ProdCode", prodCode);
 		}
 	}
 
@@ -115,31 +119,43 @@ public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateRes
 		}
 	}
 
-	public String getTemplateContent() {
-		return this.templateContent;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setTemplateContent(String templateContent) {
-		this.templateContent = templateContent;
-		if(templateContent != null){
-			putQueryParameter("TemplateContent", templateContent);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
-	public String getTemplateCode() {
-		return this.templateCode;
-	}
+	public static class Tag {
 
-	public void setTemplateCode(String templateCode) {
-		this.templateCode = templateCode;
-		if(templateCode != null){
-			putQueryParameter("TemplateCode", templateCode);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
 	@Override
-	public Class<ModifySmsTemplateResponse> getResponseClass() {
-		return ModifySmsTemplateResponse.class;
+	public Class<TagResourcesResponse> getResponseClass() {
+		return TagResourcesResponse.class;
 	}
 
 }

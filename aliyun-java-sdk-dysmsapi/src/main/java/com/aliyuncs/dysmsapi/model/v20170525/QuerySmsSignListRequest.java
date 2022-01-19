@@ -22,26 +22,20 @@ import com.aliyuncs.dysmsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateResponse> {
+public class QuerySmsSignListRequest extends RpcAcsRequest<QuerySmsSignListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String remark;
+	private Integer pageSize;
 
-	private Integer templateType;
-
-	private String templateName;
+	private Integer pageIndex;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-
-	private String templateContent;
-
-	private String templateCode;
-	public ModifySmsTemplateRequest() {
-		super("Dysmsapi", "2017-05-25", "ModifySmsTemplate");
+	public QuerySmsSignListRequest() {
+		super("Dysmsapi", "2017-05-25", "QuerySmsSignList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,36 +54,25 @@ public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateRes
 		}
 	}
 
-	public String getRemark() {
-		return this.remark;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public Integer getTemplateType() {
-		return this.templateType;
+	public Integer getPageIndex() {
+		return this.pageIndex;
 	}
 
-	public void setTemplateType(Integer templateType) {
-		this.templateType = templateType;
-		if(templateType != null){
-			putQueryParameter("TemplateType", templateType.toString());
-		}
-	}
-
-	public String getTemplateName() {
-		return this.templateName;
-	}
-
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putQueryParameter("TemplateName", templateName);
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("PageIndex", pageIndex.toString());
 		}
 	}
 
@@ -115,31 +98,9 @@ public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateRes
 		}
 	}
 
-	public String getTemplateContent() {
-		return this.templateContent;
-	}
-
-	public void setTemplateContent(String templateContent) {
-		this.templateContent = templateContent;
-		if(templateContent != null){
-			putQueryParameter("TemplateContent", templateContent);
-		}
-	}
-
-	public String getTemplateCode() {
-		return this.templateCode;
-	}
-
-	public void setTemplateCode(String templateCode) {
-		this.templateCode = templateCode;
-		if(templateCode != null){
-			putQueryParameter("TemplateCode", templateCode);
-		}
-	}
-
 	@Override
-	public Class<ModifySmsTemplateResponse> getResponseClass() {
-		return ModifySmsTemplateResponse.class;
+	public Class<QuerySmsSignListResponse> getResponseClass() {
+		return QuerySmsSignListResponse.class;
 	}
 
 }

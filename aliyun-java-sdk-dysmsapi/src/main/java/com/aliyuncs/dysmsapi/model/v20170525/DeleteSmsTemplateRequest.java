@@ -33,7 +33,7 @@ public class DeleteSmsTemplateRequest extends RpcAcsRequest<DeleteSmsTemplateRes
 
 	private String templateCode;
 	public DeleteSmsTemplateRequest() {
-		super("Dysmsapi", "2017-05-25", "DeleteSmsTemplate", "dysms");
+		super("Dysmsapi", "2017-05-25", "DeleteSmsTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

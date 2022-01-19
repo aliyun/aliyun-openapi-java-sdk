@@ -1,3 +1,6 @@
+2022-01-19 Version: 2.2.1
+- Upgrade Service for SMS.
+
 2019-12-02 Version: 2.1.0
 - Remove QuerySmsProdStatus OpenAPI.
 

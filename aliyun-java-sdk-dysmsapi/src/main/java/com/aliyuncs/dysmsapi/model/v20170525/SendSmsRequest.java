@@ -43,7 +43,7 @@ public class SendSmsRequest extends RpcAcsRequest<SendSmsResponse> {
 
 	private String templateParam;
 	public SendSmsRequest() {
-		super("Dysmsapi", "2017-05-25", "SendSms", "dysms");
+		super("Dysmsapi", "2017-05-25", "SendSms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

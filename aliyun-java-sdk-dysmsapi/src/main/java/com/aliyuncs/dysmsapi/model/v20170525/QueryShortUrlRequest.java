@@ -22,26 +22,18 @@ import com.aliyuncs.dysmsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateResponse> {
+public class QueryShortUrlRequest extends RpcAcsRequest<QueryShortUrlResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String remark;
-
-	private Integer templateType;
-
-	private String templateName;
-
 	private String resourceOwnerAccount;
 
+	private String shortUrl;
+
 	private Long ownerId;
-
-	private String templateContent;
-
-	private String templateCode;
-	public ModifySmsTemplateRequest() {
-		super("Dysmsapi", "2017-05-25", "ModifySmsTemplate");
+	public QueryShortUrlRequest() {
+		super("Dysmsapi", "2017-05-25", "QueryShortUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,39 +52,6 @@ public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateRes
 		}
 	}
 
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
-		}
-	}
-
-	public Integer getTemplateType() {
-		return this.templateType;
-	}
-
-	public void setTemplateType(Integer templateType) {
-		this.templateType = templateType;
-		if(templateType != null){
-			putQueryParameter("TemplateType", templateType.toString());
-		}
-	}
-
-	public String getTemplateName() {
-		return this.templateName;
-	}
-
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putQueryParameter("TemplateName", templateName);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -101,6 +60,17 @@ public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getShortUrl() {
+		return this.shortUrl;
+	}
+
+	public void setShortUrl(String shortUrl) {
+		this.shortUrl = shortUrl;
+		if(shortUrl != null){
+			putBodyParameter("ShortUrl", shortUrl);
 		}
 	}
 
@@ -115,31 +85,9 @@ public class ModifySmsTemplateRequest extends RpcAcsRequest<ModifySmsTemplateRes
 		}
 	}
 
-	public String getTemplateContent() {
-		return this.templateContent;
-	}
-
-	public void setTemplateContent(String templateContent) {
-		this.templateContent = templateContent;
-		if(templateContent != null){
-			putQueryParameter("TemplateContent", templateContent);
-		}
-	}
-
-	public String getTemplateCode() {
-		return this.templateCode;
-	}
-
-	public void setTemplateCode(String templateCode) {
-		this.templateCode = templateCode;
-		if(templateCode != null){
-			putQueryParameter("TemplateCode", templateCode);
-		}
-	}
-
 	@Override
-	public Class<ModifySmsTemplateResponse> getResponseClass() {
-		return ModifySmsTemplateResponse.class;
+	public Class<QueryShortUrlResponse> getResponseClass() {
+		return QueryShortUrlResponse.class;
 	}
 
 }

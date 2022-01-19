@@ -33,7 +33,7 @@ public class DeleteSmsSignRequest extends RpcAcsRequest<DeleteSmsSignResponse> {
 
 	private String signName;
 	public DeleteSmsSignRequest() {
-		super("Dysmsapi", "2017-05-25", "DeleteSmsSign", "dysms");
+		super("Dysmsapi", "2017-05-25", "DeleteSmsSign");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
