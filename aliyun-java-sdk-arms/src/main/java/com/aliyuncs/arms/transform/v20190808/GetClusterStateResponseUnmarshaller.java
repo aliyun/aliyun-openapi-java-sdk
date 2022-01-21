@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.transform.v20190808;
 
 import com.aliyuncs.arms.model.v20190808.GetClusterStateResponse;
+import com.aliyuncs.arms.model.v20190808.GetClusterStateResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,7 +24,12 @@ public class GetClusterStateResponseUnmarshaller {
 	public static GetClusterStateResponse unmarshall(GetClusterStateResponse getClusterStateResponse, UnmarshallerContext _ctx) {
 		
 		getClusterStateResponse.setRequestId(_ctx.stringValue("GetClusterStateResponse.RequestId"));
-		getClusterStateResponse.setClusterState(_ctx.stringValue("GetClusterStateResponse.ClusterState"));
+
+		Result result = new Result();
+		result.setIsFlink(_ctx.booleanValue("GetClusterStateResponse.result.isFlink"));
+		result.setAgentState(_ctx.booleanValue("GetClusterStateResponse.result.agentState"));
+		result.setClusterState(_ctx.stringValue("GetClusterStateResponse.result.clusterState"));
+		getClusterStateResponse.setResult(result);
 	 
 	 	return getClusterStateResponse;
 	}

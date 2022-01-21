@@ -14,17 +14,17 @@
 
 package com.aliyuncs.arms.transform.v20190808;
 
-import com.aliyuncs.arms.model.v20190808.GetASMIntegrationStateResponse;
+import com.aliyuncs.arms.model.v20190808.GetIntegrationStateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetASMIntegrationStateResponseUnmarshaller {
+public class GetIntegrationStateResponseUnmarshaller {
 
-	public static GetASMIntegrationStateResponse unmarshall(GetASMIntegrationStateResponse getASMIntegrationStateResponse, UnmarshallerContext _ctx) {
+	public static GetIntegrationStateResponse unmarshall(GetIntegrationStateResponse getIntegrationStateResponse, UnmarshallerContext _ctx) {
 		
-		getASMIntegrationStateResponse.setRequestId(_ctx.stringValue("GetASMIntegrationStateResponse.RequestId"));
-		getASMIntegrationStateResponse.setState(_ctx.booleanValue("GetASMIntegrationStateResponse.State"));
+		getIntegrationStateResponse.setRequestId(_ctx.stringValue("GetIntegrationStateResponse.RequestId"));
+		getIntegrationStateResponse.setState(_ctx.booleanValue("GetIntegrationStateResponse.State"));
 	 
-	 	return getASMIntegrationStateResponse;
+	 	return getIntegrationStateResponse;
 	}
 }

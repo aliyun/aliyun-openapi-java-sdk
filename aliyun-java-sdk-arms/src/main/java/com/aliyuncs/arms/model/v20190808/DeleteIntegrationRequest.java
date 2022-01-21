@@ -22,17 +22,30 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteASMIntegrationRequest extends RpcAcsRequest<DeleteASMIntegrationResponse> {
+public class DeleteIntegrationRequest extends RpcAcsRequest<DeleteIntegrationResponse> {
 	   
 
+	private String integration;
+
 	private String clusterId;
-	public DeleteASMIntegrationRequest() {
-		super("ARMS", "2019-08-08", "DeleteASMIntegration");
+	public DeleteIntegrationRequest() {
+		super("ARMS", "2019-08-08", "DeleteIntegration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIntegration() {
+		return this.integration;
+	}
+
+	public void setIntegration(String integration) {
+		this.integration = integration;
+		if(integration != null){
+			putQueryParameter("Integration", integration);
+		}
 	}
 
 	public String getClusterId() {
@@ -47,8 +60,8 @@ public class DeleteASMIntegrationRequest extends RpcAcsRequest<DeleteASMIntegrat
 	}
 
 	@Override
-	public Class<DeleteASMIntegrationResponse> getResponseClass() {
-		return DeleteASMIntegrationResponse.class;
+	public Class<DeleteIntegrationResponse> getResponseClass() {
+		return DeleteIntegrationResponse.class;
 	}
 
 }

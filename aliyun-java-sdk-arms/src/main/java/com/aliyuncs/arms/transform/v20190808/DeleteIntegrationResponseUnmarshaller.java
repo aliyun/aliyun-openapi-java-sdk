@@ -14,17 +14,17 @@
 
 package com.aliyuncs.arms.transform.v20190808;
 
-import com.aliyuncs.arms.model.v20190808.DeleteASMIntegrationResponse;
+import com.aliyuncs.arms.model.v20190808.DeleteIntegrationResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteASMIntegrationResponseUnmarshaller {
+public class DeleteIntegrationResponseUnmarshaller {
 
-	public static DeleteASMIntegrationResponse unmarshall(DeleteASMIntegrationResponse deleteASMIntegrationResponse, UnmarshallerContext _ctx) {
+	public static DeleteIntegrationResponse unmarshall(DeleteIntegrationResponse deleteIntegrationResponse, UnmarshallerContext _ctx) {
 		
-		deleteASMIntegrationResponse.setRequestId(_ctx.stringValue("DeleteASMIntegrationResponse.RequestId"));
-		deleteASMIntegrationResponse.setState(_ctx.booleanValue("DeleteASMIntegrationResponse.State"));
+		deleteIntegrationResponse.setRequestId(_ctx.stringValue("DeleteIntegrationResponse.RequestId"));
+		deleteIntegrationResponse.setData(_ctx.stringValue("DeleteIntegrationResponse.Data"));
 	 
-	 	return deleteASMIntegrationResponse;
+	 	return deleteIntegrationResponse;
 	}
 }

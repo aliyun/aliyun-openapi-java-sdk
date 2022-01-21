@@ -15,14 +15,14 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.GetASMIntegrationStateResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.GetIntegrationStateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetASMIntegrationStateResponse extends AcsResponse {
+public class GetIntegrationStateResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,8 +45,8 @@ public class GetASMIntegrationStateResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetASMIntegrationStateResponse getInstance(UnmarshallerContext context) {
-		return	GetASMIntegrationStateResponseUnmarshaller.unmarshall(this, context);
+	public GetIntegrationStateResponse getInstance(UnmarshallerContext context) {
+		return	GetIntegrationStateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

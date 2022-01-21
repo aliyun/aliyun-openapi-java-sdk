@@ -22,17 +22,30 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetASMIntegrationStateRequest extends RpcAcsRequest<GetASMIntegrationStateResponse> {
+public class GetIntegrationStateRequest extends RpcAcsRequest<GetIntegrationStateResponse> {
 	   
 
+	private String integration;
+
 	private String clusterId;
-	public GetASMIntegrationStateRequest() {
-		super("ARMS", "2019-08-08", "GetASMIntegrationState");
+	public GetIntegrationStateRequest() {
+		super("ARMS", "2019-08-08", "GetIntegrationState");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIntegration() {
+		return this.integration;
+	}
+
+	public void setIntegration(String integration) {
+		this.integration = integration;
+		if(integration != null){
+			putQueryParameter("Integration", integration);
+		}
 	}
 
 	public String getClusterId() {
@@ -47,8 +60,8 @@ public class GetASMIntegrationStateRequest extends RpcAcsRequest<GetASMIntegrati
 	}
 
 	@Override
-	public Class<GetASMIntegrationStateResponse> getResponseClass() {
-		return GetASMIntegrationStateResponse.class;
+	public Class<GetIntegrationStateResponse> getResponseClass() {
+		return GetIntegrationStateResponse.class;
 	}
 
 }

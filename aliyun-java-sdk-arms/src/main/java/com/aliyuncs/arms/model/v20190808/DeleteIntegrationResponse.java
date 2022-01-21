@@ -15,18 +15,18 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.DeleteASMIntegrationResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.DeleteIntegrationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteASMIntegrationResponse extends AcsResponse {
+public class DeleteIntegrationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean state;
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +36,17 @@ public class DeleteASMIntegrationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getState() {
-		return this.state;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setState(Boolean state) {
-		this.state = state;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override
-	public DeleteASMIntegrationResponse getInstance(UnmarshallerContext context) {
-		return	DeleteASMIntegrationResponseUnmarshaller.unmarshall(this, context);
+	public DeleteIntegrationResponse getInstance(UnmarshallerContext context) {
+		return	DeleteIntegrationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

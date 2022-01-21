@@ -26,7 +26,7 @@ public class GetClusterStateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String clusterState;
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +36,45 @@ public class GetClusterStateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterState() {
-		return this.clusterState;
+	public Result getResult() {
+		return this.result;
 	}
 
-	public void setClusterState(String clusterState) {
-		this.clusterState = clusterState;
+	public void setResult(Result result) {
+		this.result = result;
+	}
+
+	public static class Result {
+
+		private Boolean isFlink;
+
+		private Boolean agentState;
+
+		private String clusterState;
+
+		public Boolean getIsFlink() {
+			return this.isFlink;
+		}
+
+		public void setIsFlink(Boolean isFlink) {
+			this.isFlink = isFlink;
+		}
+
+		public Boolean getAgentState() {
+			return this.agentState;
+		}
+
+		public void setAgentState(Boolean agentState) {
+			this.agentState = agentState;
+		}
+
+		public String getClusterState() {
+			return this.clusterState;
+		}
+
+		public void setClusterState(String clusterState) {
+			this.clusterState = clusterState;
+		}
 	}
 
 	@Override
