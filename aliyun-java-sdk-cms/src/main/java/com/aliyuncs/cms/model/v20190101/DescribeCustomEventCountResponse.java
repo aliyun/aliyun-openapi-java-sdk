@@ -77,18 +77,18 @@ public class DescribeCustomEventCountResponse extends AcsResponse {
 
 	public static class CustomEventCount {
 
-		private String name;
+		private Long time;
 
 		private Integer num;
 
-		private Long time;
+		private String name;
 
-		public String getName() {
-			return this.name;
+		public Long getTime() {
+			return this.time;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setTime(Long time) {
+			this.time = time;
 		}
 
 		public Integer getNum() {
@@ -99,12 +99,12 @@ public class DescribeCustomEventCountResponse extends AcsResponse {
 			this.num = num;
 		}
 
-		public Long getTime() {
-			return this.time;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setTime(Long time) {
-			this.time = time;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

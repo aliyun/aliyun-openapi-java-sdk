@@ -29,9 +29,9 @@ public class DescribeAlertLogHistogramResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	private List<AlertLogHistogramListItem> alertLogHistogramList;
 
@@ -51,20 +51,20 @@ public class DescribeAlertLogHistogramResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<AlertLogHistogramListItem> getAlertLogHistogramList() {
@@ -77,19 +77,11 @@ public class DescribeAlertLogHistogramResponse extends AcsResponse {
 
 	public static class AlertLogHistogramListItem {
 
-		private Integer count;
-
 		private Long from;
 
 		private Long to;
 
-		public Integer getCount() {
-			return this.count;
-		}
-
-		public void setCount(Integer count) {
-			this.count = count;
-		}
+		private Integer count;
 
 		public Long getFrom() {
 			return this.from;
@@ -105,6 +97,14 @@ public class DescribeAlertLogHistogramResponse extends AcsResponse {
 
 		public void setTo(Long to) {
 			this.to = to;
+		}
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

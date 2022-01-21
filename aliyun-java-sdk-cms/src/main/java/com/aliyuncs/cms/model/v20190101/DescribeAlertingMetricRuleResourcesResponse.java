@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Integer total;
 
+	private Boolean success;
+
 	private List<Resource> resources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -69,12 +53,28 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotal() {
 		return this.total;
 	}
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Resource> getResources() {
@@ -87,73 +87,41 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String ruleId;
-
-		private String ruleName;
-
-		private String groupId;
-
-		private String resource;
-
 		private String metricName;
-
-		private String namespace;
-
-		private String enable;
-
-		private String lastAlertTime;
-
-		private String lastModifyTime;
-
-		private String dimensions;
-
-		private String startTime;
-
-		private String metricValues;
 
 		private String retryTimes;
 
-		private String statistics;
+		private String metricValues;
 
-		private String threshold;
+		private String namespace;
+
+		private String ruleName;
+
+		private String ruleId;
 
 		private String productCategory;
 
+		private String startTime;
+
+		private String resource;
+
+		private String lastModifyTime;
+
+		private String groupId;
+
+		private String dimensions;
+
+		private String lastAlertTime;
+
 		private Integer level;
 
+		private String threshold;
+
+		private String statistics;
+
+		private String enable;
+
 		private List<Resource1> escalation;
-
-		public String getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getResource() {
-			return this.resource;
-		}
-
-		public void setResource(String resource) {
-			this.resource = resource;
-		}
 
 		public String getMetricName() {
 			return this.metricName;
@@ -161,62 +129,6 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 		public void setMetricName(String metricName) {
 			this.metricName = metricName;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(String enable) {
-			this.enable = enable;
-		}
-
-		public String getLastAlertTime() {
-			return this.lastAlertTime;
-		}
-
-		public void setLastAlertTime(String lastAlertTime) {
-			this.lastAlertTime = lastAlertTime;
-		}
-
-		public String getLastModifyTime() {
-			return this.lastModifyTime;
-		}
-
-		public void setLastModifyTime(String lastModifyTime) {
-			this.lastModifyTime = lastModifyTime;
-		}
-
-		public String getDimensions() {
-			return this.dimensions;
-		}
-
-		public void setDimensions(String dimensions) {
-			this.dimensions = dimensions;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getMetricValues() {
-			return this.metricValues;
-		}
-
-		public void setMetricValues(String metricValues) {
-			this.metricValues = metricValues;
 		}
 
 		public String getRetryTimes() {
@@ -227,20 +139,36 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 			this.retryTimes = retryTimes;
 		}
 
-		public String getStatistics() {
-			return this.statistics;
+		public String getMetricValues() {
+			return this.metricValues;
 		}
 
-		public void setStatistics(String statistics) {
-			this.statistics = statistics;
+		public void setMetricValues(String metricValues) {
+			this.metricValues = metricValues;
 		}
 
-		public String getThreshold() {
-			return this.threshold;
+		public String getNamespace() {
+			return this.namespace;
 		}
 
-		public void setThreshold(String threshold) {
-			this.threshold = threshold;
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
 		}
 
 		public String getProductCategory() {
@@ -251,12 +179,84 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 			this.productCategory = productCategory;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getResource() {
+			return this.resource;
+		}
+
+		public void setResource(String resource) {
+			this.resource = resource;
+		}
+
+		public String getLastModifyTime() {
+			return this.lastModifyTime;
+		}
+
+		public void setLastModifyTime(String lastModifyTime) {
+			this.lastModifyTime = lastModifyTime;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getDimensions() {
+			return this.dimensions;
+		}
+
+		public void setDimensions(String dimensions) {
+			this.dimensions = dimensions;
+		}
+
+		public String getLastAlertTime() {
+			return this.lastAlertTime;
+		}
+
+		public void setLastAlertTime(String lastAlertTime) {
+			this.lastAlertTime = lastAlertTime;
+		}
+
 		public Integer getLevel() {
 			return this.level;
 		}
 
 		public void setLevel(Integer level) {
 			this.level = level;
+		}
+
+		public String getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(String threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getStatistics() {
+			return this.statistics;
+		}
+
+		public void setStatistics(String statistics) {
+			this.statistics = statistics;
+		}
+
+		public String getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(String enable) {
+			this.enable = enable;
 		}
 
 		public List<Resource1> getEscalation() {
@@ -269,26 +269,26 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 		public static class Resource1 {
 
-			private String expression;
+			private String comparisonOperator;
 
 			private String preCondition;
 
-			private Integer level;
+			private String expression;
 
 			private Integer times;
-
-			private String comparisonOperator;
 
 			private String tag;
 
 			private String threshold;
 
-			public String getExpression() {
-				return this.expression;
+			private Integer level;
+
+			public String getComparisonOperator() {
+				return this.comparisonOperator;
 			}
 
-			public void setExpression(String expression) {
-				this.expression = expression;
+			public void setComparisonOperator(String comparisonOperator) {
+				this.comparisonOperator = comparisonOperator;
 			}
 
 			public String getPreCondition() {
@@ -299,12 +299,12 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 				this.preCondition = preCondition;
 			}
 
-			public Integer getLevel() {
-				return this.level;
+			public String getExpression() {
+				return this.expression;
 			}
 
-			public void setLevel(Integer level) {
-				this.level = level;
+			public void setExpression(String expression) {
+				this.expression = expression;
 			}
 
 			public Integer getTimes() {
@@ -313,14 +313,6 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 			public void setTimes(Integer times) {
 				this.times = times;
-			}
-
-			public String getComparisonOperator() {
-				return this.comparisonOperator;
-			}
-
-			public void setComparisonOperator(String comparisonOperator) {
-				this.comparisonOperator = comparisonOperator;
 			}
 
 			public String getTag() {
@@ -337,6 +329,14 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 			public void setThreshold(String threshold) {
 				this.threshold = threshold;
+			}
+
+			public Integer getLevel() {
+				return this.level;
+			}
+
+			public void setLevel(Integer level) {
+				this.level = level;
 			}
 		}
 	}

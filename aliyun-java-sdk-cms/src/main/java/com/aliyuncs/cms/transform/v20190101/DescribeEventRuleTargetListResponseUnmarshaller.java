@@ -21,6 +21,7 @@ import com.aliyuncs.cms.model.v20190101.DescribeEventRuleTargetListResponse;
 import com.aliyuncs.cms.model.v20190101.DescribeEventRuleTargetListResponse.ContactParameter;
 import com.aliyuncs.cms.model.v20190101.DescribeEventRuleTargetListResponse.FCParameter;
 import com.aliyuncs.cms.model.v20190101.DescribeEventRuleTargetListResponse.MnsParameter;
+import com.aliyuncs.cms.model.v20190101.DescribeEventRuleTargetListResponse.OpenApiParametersItem;
 import com.aliyuncs.cms.model.v20190101.DescribeEventRuleTargetListResponse.SlsParameter;
 import com.aliyuncs.cms.model.v20190101.DescribeEventRuleTargetListResponse.WebhookParameter;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -48,11 +49,11 @@ public class DescribeEventRuleTargetListResponseUnmarshaller {
 		List<FCParameter> fcParameters = new ArrayList<FCParameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleTargetListResponse.FcParameters.Length"); i++) {
 			FCParameter fCParameter = new FCParameter();
-			fCParameter.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.FcParameters["+ i +"].Region"));
 			fCParameter.setServiceName(_ctx.stringValue("DescribeEventRuleTargetListResponse.FcParameters["+ i +"].ServiceName"));
 			fCParameter.setFunctionName(_ctx.stringValue("DescribeEventRuleTargetListResponse.FcParameters["+ i +"].FunctionName"));
-			fCParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.FcParameters["+ i +"].Id"));
 			fCParameter.setArn(_ctx.stringValue("DescribeEventRuleTargetListResponse.FcParameters["+ i +"].Arn"));
+			fCParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.FcParameters["+ i +"].Id"));
+			fCParameter.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.FcParameters["+ i +"].Region"));
 
 			fcParameters.add(fCParameter);
 		}
@@ -61,10 +62,10 @@ public class DescribeEventRuleTargetListResponseUnmarshaller {
 		List<MnsParameter> mnsParameters = new ArrayList<MnsParameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleTargetListResponse.MnsParameters.Length"); i++) {
 			MnsParameter mnsParameter = new MnsParameter();
-			mnsParameter.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Region"));
 			mnsParameter.setQueue(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Queue"));
-			mnsParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Id"));
 			mnsParameter.setArn(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Arn"));
+			mnsParameter.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Region"));
+			mnsParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Id"));
 
 			mnsParameters.add(mnsParameter);
 		}
@@ -73,10 +74,10 @@ public class DescribeEventRuleTargetListResponseUnmarshaller {
 		List<WebhookParameter> webhookParameters = new ArrayList<WebhookParameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleTargetListResponse.WebhookParameters.Length"); i++) {
 			WebhookParameter webhookParameter = new WebhookParameter();
-			webhookParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.WebhookParameters["+ i +"].Id"));
-			webhookParameter.setBizProtocol(_ctx.stringValue("DescribeEventRuleTargetListResponse.WebhookParameters["+ i +"].Protocol"));
-			webhookParameter.setBizMethod(_ctx.stringValue("DescribeEventRuleTargetListResponse.WebhookParameters["+ i +"].Method"));
 			webhookParameter.setUrl(_ctx.stringValue("DescribeEventRuleTargetListResponse.WebhookParameters["+ i +"].Url"));
+			webhookParameter.setBizMethod(_ctx.stringValue("DescribeEventRuleTargetListResponse.WebhookParameters["+ i +"].Method"));
+			webhookParameter.setBizProtocol(_ctx.stringValue("DescribeEventRuleTargetListResponse.WebhookParameters["+ i +"].Protocol"));
+			webhookParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.WebhookParameters["+ i +"].Id"));
 
 			webhookParameters.add(webhookParameter);
 		}
@@ -85,15 +86,30 @@ public class DescribeEventRuleTargetListResponseUnmarshaller {
 		List<SlsParameter> slsParameters = new ArrayList<SlsParameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleTargetListResponse.SlsParameters.Length"); i++) {
 			SlsParameter slsParameter = new SlsParameter();
-			slsParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.SlsParameters["+ i +"].Id"));
-			slsParameter.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.SlsParameters["+ i +"].Region"));
 			slsParameter.setProject(_ctx.stringValue("DescribeEventRuleTargetListResponse.SlsParameters["+ i +"].Project"));
 			slsParameter.setLogStore(_ctx.stringValue("DescribeEventRuleTargetListResponse.SlsParameters["+ i +"].LogStore"));
 			slsParameter.setArn(_ctx.stringValue("DescribeEventRuleTargetListResponse.SlsParameters["+ i +"].Arn"));
+			slsParameter.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.SlsParameters["+ i +"].Region"));
+			slsParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.SlsParameters["+ i +"].Id"));
 
 			slsParameters.add(slsParameter);
 		}
 		describeEventRuleTargetListResponse.setSlsParameters(slsParameters);
+
+		List<OpenApiParametersItem> openApiParameters = new ArrayList<OpenApiParametersItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleTargetListResponse.OpenApiParameters.Length"); i++) {
+			OpenApiParametersItem openApiParametersItem = new OpenApiParametersItem();
+			openApiParametersItem.setAction(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Action"));
+			openApiParametersItem.setArn(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Arn"));
+			openApiParametersItem.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Id"));
+			openApiParametersItem.setProduct(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Product"));
+			openApiParametersItem.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Region"));
+			openApiParametersItem.setRole(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Role"));
+			openApiParametersItem.setVersion(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Version"));
+
+			openApiParameters.add(openApiParametersItem);
+		}
+		describeEventRuleTargetListResponse.setOpenApiParameters(openApiParameters);
 	 
 	 	return describeEventRuleTargetListResponse;
 	}

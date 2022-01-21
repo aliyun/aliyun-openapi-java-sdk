@@ -24,16 +24,16 @@ public class DescribeMetricRuleCountResponseUnmarshaller {
 	public static DescribeMetricRuleCountResponse unmarshall(DescribeMetricRuleCountResponse describeMetricRuleCountResponse, UnmarshallerContext _ctx) {
 		
 		describeMetricRuleCountResponse.setRequestId(_ctx.stringValue("DescribeMetricRuleCountResponse.RequestId"));
-		describeMetricRuleCountResponse.setSuccess(_ctx.booleanValue("DescribeMetricRuleCountResponse.Success"));
 		describeMetricRuleCountResponse.setCode(_ctx.stringValue("DescribeMetricRuleCountResponse.Code"));
 		describeMetricRuleCountResponse.setMessage(_ctx.stringValue("DescribeMetricRuleCountResponse.Message"));
+		describeMetricRuleCountResponse.setSuccess(_ctx.booleanValue("DescribeMetricRuleCountResponse.Success"));
 
 		MetricRuleCount metricRuleCount = new MetricRuleCount();
-		metricRuleCount.setAlarm(_ctx.integerValue("DescribeMetricRuleCountResponse.MetricRuleCount.Alarm"));
-		metricRuleCount.setDisable(_ctx.integerValue("DescribeMetricRuleCountResponse.MetricRuleCount.Disable"));
-		metricRuleCount.setNodata(_ctx.integerValue("DescribeMetricRuleCountResponse.MetricRuleCount.Nodata"));
 		metricRuleCount.setOk(_ctx.integerValue("DescribeMetricRuleCountResponse.MetricRuleCount.Ok"));
+		metricRuleCount.setNodata(_ctx.integerValue("DescribeMetricRuleCountResponse.MetricRuleCount.Nodata"));
+		metricRuleCount.setDisable(_ctx.integerValue("DescribeMetricRuleCountResponse.MetricRuleCount.Disable"));
 		metricRuleCount.setTotal(_ctx.integerValue("DescribeMetricRuleCountResponse.MetricRuleCount.Total"));
+		metricRuleCount.setAlarm(_ctx.integerValue("DescribeMetricRuleCountResponse.MetricRuleCount.Alarm"));
 		describeMetricRuleCountResponse.setMetricRuleCount(metricRuleCount);
 	 
 	 	return describeMetricRuleCountResponse;

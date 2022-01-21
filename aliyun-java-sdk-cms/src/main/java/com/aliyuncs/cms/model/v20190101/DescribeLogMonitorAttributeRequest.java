@@ -26,7 +26,7 @@ public class DescribeLogMonitorAttributeRequest extends RpcAcsRequest<DescribeLo
 
 	private String metricName;
 	public DescribeLogMonitorAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeLogMonitorAttribute", "cms");
+		super("Cms", "2019-01-01", "DescribeLogMonitorAttribute", "Cms");
 		setMethod(MethodType.GET);
 	}
 

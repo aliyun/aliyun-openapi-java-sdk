@@ -28,25 +28,25 @@ public class DescribeEventRuleAttributeResponseUnmarshaller {
 	public static DescribeEventRuleAttributeResponse unmarshall(DescribeEventRuleAttributeResponse describeEventRuleAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeEventRuleAttributeResponse.setRequestId(_ctx.stringValue("DescribeEventRuleAttributeResponse.RequestId"));
-		describeEventRuleAttributeResponse.setSuccess(_ctx.booleanValue("DescribeEventRuleAttributeResponse.Success"));
 		describeEventRuleAttributeResponse.setCode(_ctx.stringValue("DescribeEventRuleAttributeResponse.Code"));
 		describeEventRuleAttributeResponse.setMessage(_ctx.stringValue("DescribeEventRuleAttributeResponse.Message"));
+		describeEventRuleAttributeResponse.setSuccess(_ctx.booleanValue("DescribeEventRuleAttributeResponse.Success"));
 
 		Result result = new Result();
-		result.setDescription(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.Description"));
-		result.setName(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.Name"));
 		result.setEventType(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventType"));
 		result.setGroupId(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.GroupId"));
+		result.setName(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.Name"));
+		result.setDescription(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.Description"));
 		result.setState(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.State"));
 
 		EventPattern eventPattern = new EventPattern();
 		eventPattern.setProduct(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.Product"));
 
-		List<String> nameList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.NameList.Length"); i++) {
-			nameList.add(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.NameList["+ i +"]"));
+		List<String> levelList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.LevelList.Length"); i++) {
+			levelList.add(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.LevelList["+ i +"]"));
 		}
-		eventPattern.setNameList(nameList);
+		eventPattern.setLevelList(levelList);
 
 		List<String> statusList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.StatusList.Length"); i++) {
@@ -54,11 +54,11 @@ public class DescribeEventRuleAttributeResponseUnmarshaller {
 		}
 		eventPattern.setStatusList(statusList);
 
-		List<String> levelList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.LevelList.Length"); i++) {
-			levelList.add(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.LevelList["+ i +"]"));
+		List<String> nameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEventRuleAttributeResponse.Result.EventPattern.NameList.Length"); i++) {
+			nameList.add(_ctx.stringValue("DescribeEventRuleAttributeResponse.Result.EventPattern.NameList["+ i +"]"));
 		}
-		eventPattern.setLevelList(levelList);
+		eventPattern.setNameList(nameList);
 		result.setEventPattern(eventPattern);
 		describeEventRuleAttributeResponse.setResult(result);
 	 

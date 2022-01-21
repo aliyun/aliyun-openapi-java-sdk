@@ -28,11 +28,11 @@ public class CreateHostAvailabilityResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
-
 	private String requestId;
 
 	private Long taskId;
+
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -50,14 +50,6 @@ public class CreateHostAvailabilityResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +64,14 @@ public class CreateHostAvailabilityResponse extends AcsResponse {
 
 	public void setTaskId(Long taskId) {
 		this.taskId = taskId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

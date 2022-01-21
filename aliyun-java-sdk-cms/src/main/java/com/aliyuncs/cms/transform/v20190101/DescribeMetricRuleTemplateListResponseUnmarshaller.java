@@ -28,20 +28,20 @@ public class DescribeMetricRuleTemplateListResponseUnmarshaller {
 	public static DescribeMetricRuleTemplateListResponse unmarshall(DescribeMetricRuleTemplateListResponse describeMetricRuleTemplateListResponse, UnmarshallerContext _ctx) {
 		
 		describeMetricRuleTemplateListResponse.setRequestId(_ctx.stringValue("DescribeMetricRuleTemplateListResponse.RequestId"));
-		describeMetricRuleTemplateListResponse.setSuccess(_ctx.booleanValue("DescribeMetricRuleTemplateListResponse.Success"));
 		describeMetricRuleTemplateListResponse.setCode(_ctx.integerValue("DescribeMetricRuleTemplateListResponse.Code"));
 		describeMetricRuleTemplateListResponse.setMessage(_ctx.stringValue("DescribeMetricRuleTemplateListResponse.Message"));
 		describeMetricRuleTemplateListResponse.setTotal(_ctx.longValue("DescribeMetricRuleTemplateListResponse.Total"));
+		describeMetricRuleTemplateListResponse.setSuccess(_ctx.booleanValue("DescribeMetricRuleTemplateListResponse.Success"));
 
 		List<Template> templates = new ArrayList<Template>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMetricRuleTemplateListResponse.Templates.Length"); i++) {
 			Template template = new Template();
-			template.setName(_ctx.stringValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].Name"));
 			template.setDescription(_ctx.stringValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].Description"));
-			template.setRestVersion(_ctx.longValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].RestVersion"));
-			template.setTemplateId(_ctx.longValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].TemplateId"));
 			template.setGmtCreate(_ctx.longValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].GmtCreate"));
+			template.setName(_ctx.stringValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].Name"));
+			template.setRestVersion(_ctx.longValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].RestVersion"));
 			template.setGmtModified(_ctx.longValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].GmtModified"));
+			template.setTemplateId(_ctx.longValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].TemplateId"));
 
 			List<ApplyHistory> applyHistories = new ArrayList<ApplyHistory>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMetricRuleTemplateListResponse.Templates["+ i +"].ApplyHistories.Length"); j++) {

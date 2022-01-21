@@ -23,11 +23,11 @@ public class DescribeMonitoringConfigResponseUnmarshaller {
 	public static DescribeMonitoringConfigResponse unmarshall(DescribeMonitoringConfigResponse describeMonitoringConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeMonitoringConfigResponse.setRequestId(_ctx.stringValue("DescribeMonitoringConfigResponse.RequestId"));
+		describeMonitoringConfigResponse.setAutoInstall(_ctx.booleanValue("DescribeMonitoringConfigResponse.AutoInstall"));
+		describeMonitoringConfigResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringConfigResponse.Success"));
+		describeMonitoringConfigResponse.setEnableInstallAgentNewECS(_ctx.booleanValue("DescribeMonitoringConfigResponse.EnableInstallAgentNewECS"));
 		describeMonitoringConfigResponse.setCode(_ctx.stringValue("DescribeMonitoringConfigResponse.Code"));
 		describeMonitoringConfigResponse.setMessage(_ctx.stringValue("DescribeMonitoringConfigResponse.Message"));
-		describeMonitoringConfigResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringConfigResponse.Success"));
-		describeMonitoringConfigResponse.setAutoInstall(_ctx.booleanValue("DescribeMonitoringConfigResponse.AutoInstall"));
-		describeMonitoringConfigResponse.setEnableInstallAgentNewECS(_ctx.booleanValue("DescribeMonitoringConfigResponse.EnableInstallAgentNewECS"));
 	 
 	 	return describeMonitoringConfigResponse;
 	}

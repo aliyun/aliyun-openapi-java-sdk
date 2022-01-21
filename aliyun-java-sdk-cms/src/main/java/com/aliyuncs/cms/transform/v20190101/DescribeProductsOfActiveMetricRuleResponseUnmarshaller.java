@@ -28,10 +28,10 @@ public class DescribeProductsOfActiveMetricRuleResponseUnmarshaller {
 	public static DescribeProductsOfActiveMetricRuleResponse unmarshall(DescribeProductsOfActiveMetricRuleResponse describeProductsOfActiveMetricRuleResponse, UnmarshallerContext _ctx) {
 		
 		describeProductsOfActiveMetricRuleResponse.setRequestId(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.RequestId"));
-		describeProductsOfActiveMetricRuleResponse.setSuccess(_ctx.booleanValue("DescribeProductsOfActiveMetricRuleResponse.Success"));
 		describeProductsOfActiveMetricRuleResponse.setCode(_ctx.integerValue("DescribeProductsOfActiveMetricRuleResponse.Code"));
 		describeProductsOfActiveMetricRuleResponse.setMessage(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.Message"));
 		describeProductsOfActiveMetricRuleResponse.setDatapoints(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.Datapoints"));
+		describeProductsOfActiveMetricRuleResponse.setSuccess(_ctx.booleanValue("DescribeProductsOfActiveMetricRuleResponse.Success"));
 
 		List<AllProductInitMetricRule> allProductInitMetricRuleList = new ArrayList<AllProductInitMetricRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList.Length"); i++) {
@@ -41,11 +41,11 @@ public class DescribeProductsOfActiveMetricRuleResponseUnmarshaller {
 			List<AlertInitConfig> alertInitConfigList = new ArrayList<AlertInitConfig>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList.Length"); j++) {
 				AlertInitConfig alertInitConfig = new AlertInitConfig();
-				alertInitConfig.setNamespace(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList["+ j +"].Namespace"));
 				alertInitConfig.setMetricName(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList["+ j +"].MetricName"));
-				alertInitConfig.setStatistics(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList["+ j +"].Statistics"));
 				alertInitConfig.setEvaluationCount(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList["+ j +"].EvaluationCount"));
+				alertInitConfig.setNamespace(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList["+ j +"].Namespace"));
 				alertInitConfig.setThreshold(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList["+ j +"].Threshold"));
+				alertInitConfig.setStatistics(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList["+ j +"].Statistics"));
 				alertInitConfig.setPeriod(_ctx.stringValue("DescribeProductsOfActiveMetricRuleResponse.AllProductInitMetricRuleList["+ i +"].AlertInitConfigList["+ j +"].Period"));
 
 				alertInitConfigList.add(alertInitConfig);

@@ -34,9 +34,9 @@ public class DescribeSystemEventHistogramResponseUnmarshaller {
 		List<SystemEventHistogram> systemEventHistograms = new ArrayList<SystemEventHistogram>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSystemEventHistogramResponse.SystemEventHistograms.Length"); i++) {
 			SystemEventHistogram systemEventHistogram = new SystemEventHistogram();
-			systemEventHistogram.setCount(_ctx.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].Count"));
-			systemEventHistogram.setStartTime(_ctx.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].StartTime"));
 			systemEventHistogram.setEndTime(_ctx.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].EndTime"));
+			systemEventHistogram.setStartTime(_ctx.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].StartTime"));
+			systemEventHistogram.setCount(_ctx.longValue("DescribeSystemEventHistogramResponse.SystemEventHistograms["+ i +"].Count"));
 
 			systemEventHistograms.add(systemEventHistogram);
 		}

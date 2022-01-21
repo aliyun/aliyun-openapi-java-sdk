@@ -32,7 +32,7 @@ public class DescribeGroupMonitoringAgentProcessRequest extends RpcAcsRequest<De
 
 	private Integer pageSize;
 	public DescribeGroupMonitoringAgentProcessRequest() {
-		super("Cms", "2019-01-01", "DescribeGroupMonitoringAgentProcess", "cms");
+		super("Cms", "2019-01-01", "DescribeGroupMonitoringAgentProcess", "Cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -25,21 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private String code;
 
 	private String message;
 
-	private Boolean success;
-
-	private String requestId;
-
-	private String total;
+	private String pageNumber;
 
 	private String pageSize;
 
-	private String pageNumber;
+	private String total;
 
 	private List<Process> processes;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -57,28 +73,12 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(String total) {
-		this.total = total;
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public String getPageSize() {
@@ -89,12 +89,12 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
+	public String getTotal() {
+		return this.total;
 	}
 
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 	public List<Process> getProcesses() {
@@ -107,33 +107,17 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 
 	public static class Process {
 
-		private String id;
-
-		private String groupId;
-
 		private String processName;
 
 		private String matchExpressFilterRelation;
 
+		private String groupId;
+
+		private String id;
+
 		private List<MatchExpressItem> matchExpress;
 
 		private List<AlertConfigItem> alertConfig;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
 
 		public String getProcessName() {
 			return this.processName;
@@ -149,6 +133,22 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 
 		public void setMatchExpressFilterRelation(String matchExpressFilterRelation) {
 			this.matchExpressFilterRelation = matchExpressFilterRelation;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public List<MatchExpressItem> getMatchExpress() {
@@ -169,11 +169,19 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 
 		public static class MatchExpressItem {
 
+			private String value;
+
 			private String name;
 
 			private String function;
 
-			private String value;
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 
 			public String getName() {
 				return this.name;
@@ -190,50 +198,34 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 			public void setFunction(String function) {
 				this.function = function;
 			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
 		}
 
 		public static class AlertConfigItem {
 
-			private String effectiveInterval;
-
-			private String noEffectiveInterval;
+			private String comparisonOperator;
 
 			private String silenceTime;
 
 			private String webhook;
 
+			private String times;
+
 			private String escalationsLevel;
 
-			private String comparisonOperator;
+			private String noEffectiveInterval;
 
-			private String statistics;
+			private String effectiveInterval;
 
 			private String threshold;
 
-			private String times;
+			private String statistics;
 
-			public String getEffectiveInterval() {
-				return this.effectiveInterval;
+			public String getComparisonOperator() {
+				return this.comparisonOperator;
 			}
 
-			public void setEffectiveInterval(String effectiveInterval) {
-				this.effectiveInterval = effectiveInterval;
-			}
-
-			public String getNoEffectiveInterval() {
-				return this.noEffectiveInterval;
-			}
-
-			public void setNoEffectiveInterval(String noEffectiveInterval) {
-				this.noEffectiveInterval = noEffectiveInterval;
+			public void setComparisonOperator(String comparisonOperator) {
+				this.comparisonOperator = comparisonOperator;
 			}
 
 			public String getSilenceTime() {
@@ -252,6 +244,14 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 				this.webhook = webhook;
 			}
 
+			public String getTimes() {
+				return this.times;
+			}
+
+			public void setTimes(String times) {
+				this.times = times;
+			}
+
 			public String getEscalationsLevel() {
 				return this.escalationsLevel;
 			}
@@ -260,20 +260,20 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 				this.escalationsLevel = escalationsLevel;
 			}
 
-			public String getComparisonOperator() {
-				return this.comparisonOperator;
+			public String getNoEffectiveInterval() {
+				return this.noEffectiveInterval;
 			}
 
-			public void setComparisonOperator(String comparisonOperator) {
-				this.comparisonOperator = comparisonOperator;
+			public void setNoEffectiveInterval(String noEffectiveInterval) {
+				this.noEffectiveInterval = noEffectiveInterval;
 			}
 
-			public String getStatistics() {
-				return this.statistics;
+			public String getEffectiveInterval() {
+				return this.effectiveInterval;
 			}
 
-			public void setStatistics(String statistics) {
-				this.statistics = statistics;
+			public void setEffectiveInterval(String effectiveInterval) {
+				this.effectiveInterval = effectiveInterval;
 			}
 
 			public String getThreshold() {
@@ -284,12 +284,12 @@ public class DescribeGroupMonitoringAgentProcessResponse extends AcsResponse {
 				this.threshold = threshold;
 			}
 
-			public String getTimes() {
-				return this.times;
+			public String getStatistics() {
+				return this.statistics;
 			}
 
-			public void setTimes(String times) {
-				this.times = times;
+			public void setStatistics(String statistics) {
+				this.statistics = statistics;
 			}
 		}
 	}

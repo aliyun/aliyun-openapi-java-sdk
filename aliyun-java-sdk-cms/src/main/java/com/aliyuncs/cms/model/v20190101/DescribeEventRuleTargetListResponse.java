@@ -41,6 +41,8 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 	private List<SlsParameter> slsParameters;
 
+	private List<OpenApiParametersItem> openApiParameters;
+
 	public String getCode() {
 		return this.code;
 	}
@@ -105,6 +107,14 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 		this.slsParameters = slsParameters;
 	}
 
+	public List<OpenApiParametersItem> getOpenApiParameters() {
+		return this.openApiParameters;
+	}
+
+	public void setOpenApiParameters(List<OpenApiParametersItem> openApiParameters) {
+		this.openApiParameters = openApiParameters;
+	}
+
 	public static class ContactParameter {
 
 		private String contactGroupName;
@@ -140,23 +150,15 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 	public static class FCParameter {
 
-		private String region;
-
 		private String serviceName;
 
 		private String functionName;
 
-		private String id;
-
 		private String arn;
 
-		public String getRegion() {
-			return this.region;
-		}
+		private String id;
 
-		public void setRegion(String region) {
-			this.region = region;
-		}
+		private String region;
 
 		public String getServiceName() {
 			return this.serviceName;
@@ -174,6 +176,14 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 			this.functionName = functionName;
 		}
 
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
+
 		public String getId() {
 			return this.id;
 		}
@@ -182,25 +192,6 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getArn() {
-			return this.arn;
-		}
-
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
-	}
-
-	public static class MnsParameter {
-
-		private String region;
-
-		private String queue;
-
-		private String id;
-
-		private String arn;
-
 		public String getRegion() {
 			return this.region;
 		}
@@ -208,6 +199,17 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 		public void setRegion(String region) {
 			this.region = region;
 		}
+	}
+
+	public static class MnsParameter {
+
+		private String queue;
+
+		private String arn;
+
+		private String region;
+
+		private String id;
 
 		public String getQueue() {
 			return this.queue;
@@ -217,14 +219,6 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 			this.queue = queue;
 		}
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
 		public String getArn() {
 			return this.arn;
 		}
@@ -232,17 +226,14 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 		public void setArn(String arn) {
 			this.arn = arn;
 		}
-	}
 
-	public static class WebhookParameter {
+		public String getRegion() {
+			return this.region;
+		}
 
-		private String id;
-
-		private String protocol;
-
-		private String method;
-
-		private String url;
+		public void setRegion(String region) {
+			this.region = region;
+		}
 
 		public String getId() {
 			return this.id;
@@ -251,13 +242,24 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 		public void setId(String id) {
 			this.id = id;
 		}
+	}
 
-		public String getBizProtocol() {
-			return this.protocol;
+	public static class WebhookParameter {
+
+		private String url;
+
+		private String method;
+
+		private String protocol;
+
+		private String id;
+
+		public String getUrl() {
+			return this.url;
 		}
 
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
+		public void setUrl(String url) {
+			this.url = url;
 		}
 
 		public String getBizMethod() {
@@ -268,26 +270,13 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 			this.method = method;
 		}
 
-		public String getUrl() {
-			return this.url;
+		public String getBizProtocol() {
+			return this.protocol;
 		}
 
-		public void setUrl(String url) {
-			this.url = url;
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
 		}
-	}
-
-	public static class SlsParameter {
-
-		private String id;
-
-		private String region;
-
-		private String project;
-
-		private String logStore;
-
-		private String arn;
 
 		public String getId() {
 			return this.id;
@@ -296,14 +285,19 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 		public void setId(String id) {
 			this.id = id;
 		}
+	}
 
-		public String getRegion() {
-			return this.region;
-		}
+	public static class SlsParameter {
 
-		public void setRegion(String region) {
-			this.region = region;
-		}
+		private String project;
+
+		private String logStore;
+
+		private String arn;
+
+		private String region;
+
+		private String id;
 
 		public String getProject() {
 			return this.project;
@@ -327,6 +321,95 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 		public void setArn(String arn) {
 			this.arn = arn;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+	}
+
+	public static class OpenApiParametersItem {
+
+		private String action;
+
+		private String arn;
+
+		private String id;
+
+		private String product;
+
+		private String region;
+
+		private String role;
+
+		private String version;
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 	}
 

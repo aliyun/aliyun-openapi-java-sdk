@@ -29,7 +29,7 @@ public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMoni
 
 	private String groupId;
 	public CreateMonitorGroupInstancesRequest() {
-		super("Cms", "2019-01-01", "CreateMonitorGroupInstances", "cms");
+		super("Cms", "2019-01-01", "CreateMonitorGroupInstances", "Cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -41,8 +41,8 @@ public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMoni
 		this.instancess = instancess;	
 		if (instancess != null) {
 			for (int depth1 = 0; depth1 < instancess.size(); depth1++) {
-				putQueryParameter("Instances." + (depth1 + 1) + ".InstanceId" , instancess.get(depth1).getInstanceId());
 				putQueryParameter("Instances." + (depth1 + 1) + ".InstanceName" , instancess.get(depth1).getInstanceName());
+				putQueryParameter("Instances." + (depth1 + 1) + ".InstanceId" , instancess.get(depth1).getInstanceId());
 				putQueryParameter("Instances." + (depth1 + 1) + ".RegionId" , instancess.get(depth1).getRegionId());
 				putQueryParameter("Instances." + (depth1 + 1) + ".Category" , instancess.get(depth1).getCategory());
 			}
@@ -62,21 +62,13 @@ public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMoni
 
 	public static class Instances {
 
-		private String instanceId;
-
 		private String instanceName;
+
+		private String instanceId;
 
 		private String regionId;
 
 		private String category;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public String getInstanceName() {
 			return this.instanceName;
@@ -84,6 +76,14 @@ public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMoni
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getRegionId() {

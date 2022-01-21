@@ -26,11 +26,11 @@ public class DeleteLogMonitorResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private String message;
 
 	private String requestId;
+
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -38,14 +38,6 @@ public class DeleteLogMonitorResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -62,6 +54,14 @@ public class DeleteLogMonitorResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -29,7 +29,7 @@ public class PutMonitorGroupDynamicRuleRequest extends RpcAcsRequest<PutMonitorG
 
 	private Long groupId;
 	public PutMonitorGroupDynamicRuleRequest() {
-		super("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "cms");
+		super("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "Cms");
 		setMethod(MethodType.POST);
 	}
 

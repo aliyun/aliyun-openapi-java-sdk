@@ -28,7 +28,7 @@ public class CreateMonitorGroupRequest extends RpcAcsRequest<CreateMonitorGroupR
 
 	private String groupName;
 	public CreateMonitorGroupRequest() {
-		super("Cms", "2019-01-01", "CreateMonitorGroup", "cms");
+		super("Cms", "2019-01-01", "CreateMonitorGroup", "Cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -34,9 +34,9 @@ public class DescribeCustomEventHistogramResponseUnmarshaller {
 		List<EventHistogram> eventHistograms = new ArrayList<EventHistogram>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomEventHistogramResponse.EventHistograms.Length"); i++) {
 			EventHistogram eventHistogram = new EventHistogram();
-			eventHistogram.setCount(_ctx.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].Count"));
-			eventHistogram.setStartTime(_ctx.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].StartTime"));
 			eventHistogram.setEndTime(_ctx.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].EndTime"));
+			eventHistogram.setStartTime(_ctx.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].StartTime"));
+			eventHistogram.setCount(_ctx.longValue("DescribeCustomEventHistogramResponse.EventHistograms["+ i +"].Count"));
 
 			eventHistograms.add(eventHistogram);
 		}

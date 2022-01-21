@@ -23,9 +23,9 @@ public class DeleteContactResponseUnmarshaller {
 	public static DeleteContactResponse unmarshall(DeleteContactResponse deleteContactResponse, UnmarshallerContext _ctx) {
 		
 		deleteContactResponse.setRequestId(_ctx.stringValue("DeleteContactResponse.RequestId"));
-		deleteContactResponse.setSuccess(_ctx.booleanValue("DeleteContactResponse.Success"));
 		deleteContactResponse.setCode(_ctx.stringValue("DeleteContactResponse.Code"));
 		deleteContactResponse.setMessage(_ctx.stringValue("DeleteContactResponse.Message"));
+		deleteContactResponse.setSuccess(_ctx.booleanValue("DeleteContactResponse.Success"));
 	 
 	 	return deleteContactResponse;
 	}

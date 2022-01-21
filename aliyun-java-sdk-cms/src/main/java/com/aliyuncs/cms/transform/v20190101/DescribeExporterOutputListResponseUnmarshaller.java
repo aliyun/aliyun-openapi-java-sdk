@@ -28,24 +28,24 @@ public class DescribeExporterOutputListResponseUnmarshaller {
 	public static DescribeExporterOutputListResponse unmarshall(DescribeExporterOutputListResponse describeExporterOutputListResponse, UnmarshallerContext _ctx) {
 		
 		describeExporterOutputListResponse.setRequestId(_ctx.stringValue("DescribeExporterOutputListResponse.RequestId"));
+		describeExporterOutputListResponse.setSuccess(_ctx.booleanValue("DescribeExporterOutputListResponse.Success"));
 		describeExporterOutputListResponse.setCode(_ctx.stringValue("DescribeExporterOutputListResponse.Code"));
 		describeExporterOutputListResponse.setMessage(_ctx.stringValue("DescribeExporterOutputListResponse.Message"));
-		describeExporterOutputListResponse.setTotal(_ctx.integerValue("DescribeExporterOutputListResponse.Total"));
 		describeExporterOutputListResponse.setPageNumber(_ctx.integerValue("DescribeExporterOutputListResponse.PageNumber"));
-		describeExporterOutputListResponse.setSuccess(_ctx.booleanValue("DescribeExporterOutputListResponse.Success"));
+		describeExporterOutputListResponse.setTotal(_ctx.integerValue("DescribeExporterOutputListResponse.Total"));
 
 		List<Datapoint> datapoints = new ArrayList<Datapoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeExporterOutputListResponse.Datapoints.Length"); i++) {
 			Datapoint datapoint = new Datapoint();
-			datapoint.setDestName(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].DestName"));
 			datapoint.setDestType(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].DestType"));
 			datapoint.setCreateTime(_ctx.longValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].CreateTime"));
+			datapoint.setDestName(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].DestName"));
 
 			ConfigJson configJson = new ConfigJson();
+			configJson.setAk(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.ak"));
+			configJson.setEndpoint(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.endpoint"));
 			configJson.setLogstore(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.logstore"));
 			configJson.setProject(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.project"));
-			configJson.setEndpoint(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.endpoint"));
-			configJson.setAk(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.ak"));
 			datapoint.setConfigJson(configJson);
 
 			datapoints.add(datapoint);

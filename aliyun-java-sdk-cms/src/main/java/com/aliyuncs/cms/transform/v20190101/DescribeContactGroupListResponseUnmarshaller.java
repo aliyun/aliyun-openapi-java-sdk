@@ -27,10 +27,10 @@ public class DescribeContactGroupListResponseUnmarshaller {
 	public static DescribeContactGroupListResponse unmarshall(DescribeContactGroupListResponse describeContactGroupListResponse, UnmarshallerContext _ctx) {
 		
 		describeContactGroupListResponse.setRequestId(_ctx.stringValue("DescribeContactGroupListResponse.RequestId"));
-		describeContactGroupListResponse.setSuccess(_ctx.booleanValue("DescribeContactGroupListResponse.Success"));
 		describeContactGroupListResponse.setCode(_ctx.stringValue("DescribeContactGroupListResponse.Code"));
 		describeContactGroupListResponse.setMessage(_ctx.stringValue("DescribeContactGroupListResponse.Message"));
 		describeContactGroupListResponse.setTotal(_ctx.integerValue("DescribeContactGroupListResponse.Total"));
+		describeContactGroupListResponse.setSuccess(_ctx.booleanValue("DescribeContactGroupListResponse.Success"));
 
 		List<String> contactGroups = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeContactGroupListResponse.ContactGroups.Length"); i++) {
@@ -41,11 +41,11 @@ public class DescribeContactGroupListResponseUnmarshaller {
 		List<ContactGroup> contactGroupList = new ArrayList<ContactGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeContactGroupListResponse.ContactGroupList.Length"); i++) {
 			ContactGroup contactGroup = new ContactGroup();
-			contactGroup.setName(_ctx.stringValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].Name"));
 			contactGroup.setDescribe(_ctx.stringValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].Describe"));
-			contactGroup.setCreateTime(_ctx.longValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].CreateTime"));
 			contactGroup.setUpdateTime(_ctx.longValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].UpdateTime"));
+			contactGroup.setCreateTime(_ctx.longValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].CreateTime"));
 			contactGroup.setEnabledWeeklyReport(_ctx.booleanValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].EnabledWeeklyReport"));
+			contactGroup.setName(_ctx.stringValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].Name"));
 			contactGroup.setEnableSubscribed(_ctx.booleanValue("DescribeContactGroupListResponse.ContactGroupList["+ i +"].EnableSubscribed"));
 
 			List<String> contacts = new ArrayList<String>();

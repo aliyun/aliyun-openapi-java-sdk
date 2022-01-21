@@ -29,7 +29,7 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 
 	private List<GroupMetricRules> groupMetricRuless;
 	public CreateGroupMetricRulesRequest() {
-		super("Cms", "2019-01-01", "CreateGroupMetricRules", "cms");
+		super("Cms", "2019-01-01", "CreateGroupMetricRules", "Cms");
 		setMethod(MethodType.POST);
 	}
 

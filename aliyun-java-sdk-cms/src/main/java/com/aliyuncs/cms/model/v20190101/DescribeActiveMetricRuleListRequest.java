@@ -26,7 +26,7 @@ public class DescribeActiveMetricRuleListRequest extends RpcAcsRequest<DescribeA
 
 	private String product;
 	public DescribeActiveMetricRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeActiveMetricRuleList", "cms");
+		super("Cms", "2019-01-01", "DescribeActiveMetricRuleList", "Cms");
 		setMethod(MethodType.GET);
 	}
 

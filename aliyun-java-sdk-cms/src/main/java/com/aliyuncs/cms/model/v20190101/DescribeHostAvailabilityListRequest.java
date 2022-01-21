@@ -36,7 +36,7 @@ public class DescribeHostAvailabilityListRequest extends RpcAcsRequest<DescribeH
 
 	private Long id;
 	public DescribeHostAvailabilityListRequest() {
-		super("Cms", "2019-01-01", "DescribeHostAvailabilityList", "cms");
+		super("Cms", "2019-01-01", "DescribeHostAvailabilityList", "Cms");
 		setMethod(MethodType.POST);
 	}
 

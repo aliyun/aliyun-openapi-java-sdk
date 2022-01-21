@@ -23,10 +23,10 @@ public class CreateMonitorGroupResponseUnmarshaller {
 	public static CreateMonitorGroupResponse unmarshall(CreateMonitorGroupResponse createMonitorGroupResponse, UnmarshallerContext _ctx) {
 		
 		createMonitorGroupResponse.setRequestId(_ctx.stringValue("CreateMonitorGroupResponse.RequestId"));
-		createMonitorGroupResponse.setSuccess(_ctx.booleanValue("CreateMonitorGroupResponse.Success"));
 		createMonitorGroupResponse.setCode(_ctx.integerValue("CreateMonitorGroupResponse.Code"));
 		createMonitorGroupResponse.setMessage(_ctx.stringValue("CreateMonitorGroupResponse.Message"));
 		createMonitorGroupResponse.setGroupId(_ctx.longValue("CreateMonitorGroupResponse.GroupId"));
+		createMonitorGroupResponse.setSuccess(_ctx.booleanValue("CreateMonitorGroupResponse.Success"));
 	 
 	 	return createMonitorGroupResponse;
 	}

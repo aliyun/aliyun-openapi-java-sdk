@@ -27,7 +27,7 @@ public class PutCustomMetricRequest extends RpcAcsRequest<PutCustomMetricRespons
 
 	private List<MetricList> metricLists;
 	public PutCustomMetricRequest() {
-		super("Cms", "2019-01-01", "PutCustomMetric", "cms");
+		super("Cms", "2019-01-01", "PutCustomMetric", "Cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -43,8 +43,8 @@ public class PutCustomMetricRequest extends RpcAcsRequest<PutCustomMetricRespons
 				putQueryParameter("MetricList." + (depth1 + 1) + ".GroupId" , metricLists.get(depth1).getGroupId());
 				putQueryParameter("MetricList." + (depth1 + 1) + ".Values" , metricLists.get(depth1).getValues());
 				putQueryParameter("MetricList." + (depth1 + 1) + ".Time" , metricLists.get(depth1).getTime());
-				putQueryParameter("MetricList." + (depth1 + 1) + ".MetricName" , metricLists.get(depth1).getMetricName());
 				putQueryParameter("MetricList." + (depth1 + 1) + ".Type" , metricLists.get(depth1).getType());
+				putQueryParameter("MetricList." + (depth1 + 1) + ".MetricName" , metricLists.get(depth1).getMetricName());
 				putQueryParameter("MetricList." + (depth1 + 1) + ".Dimensions" , metricLists.get(depth1).getDimensions());
 			}
 		}	
@@ -60,9 +60,9 @@ public class PutCustomMetricRequest extends RpcAcsRequest<PutCustomMetricRespons
 
 		private String time;
 
-		private String metricName;
-
 		private String type;
+
+		private String metricName;
 
 		private String dimensions;
 
@@ -98,20 +98,20 @@ public class PutCustomMetricRequest extends RpcAcsRequest<PutCustomMetricRespons
 			this.time = time;
 		}
 
-		public String getMetricName() {
-			return this.metricName;
-		}
-
-		public void setMetricName(String metricName) {
-			this.metricName = metricName;
-		}
-
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
 		}
 
 		public String getDimensions() {

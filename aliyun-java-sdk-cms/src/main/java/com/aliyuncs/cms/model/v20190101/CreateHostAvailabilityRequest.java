@@ -65,7 +65,7 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 
 	private String alertConfigWebHook;
 	public CreateHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "CreateHostAvailability", "cms");
+		super("Cms", "2019-01-01", "CreateHostAvailability", "Cms");
 		setMethod(MethodType.POST);
 	}
 

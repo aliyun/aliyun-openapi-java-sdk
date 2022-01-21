@@ -24,49 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMonitoringAgentAccessKeyResponse extends AcsResponse {
 
-	private Integer code;
-
-	private String message;
-
-	private Boolean success;
-
-	private String requestId;
-
 	private String accessKey;
 
 	private String secretKey;
 
-	public Integer getCode() {
-		return this.code;
-	}
+	private String requestId;
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
+	private Boolean success;
 
-	public String getMessage() {
-		return this.message;
-	}
+	private Integer code;
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String message;
 
 	public String getAccessKey() {
 		return this.accessKey;
@@ -82,6 +50,38 @@ public class DescribeMonitoringAgentAccessKeyResponse extends AcsResponse {
 
 	public void setSecretKey(String secretKey) {
 		this.secretKey = secretKey;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

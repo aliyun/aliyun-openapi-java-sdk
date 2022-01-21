@@ -28,11 +28,11 @@ public class DeleteMonitorGroupNotifyPolicyResponse extends AcsResponse {
 
 	private String message;
 
-	private String success;
-
 	private String requestId;
 
 	private Integer result;
+
+	private String success;
 
 	public String getCode() {
 		return this.code;
@@ -50,14 +50,6 @@ public class DeleteMonitorGroupNotifyPolicyResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +64,14 @@ public class DeleteMonitorGroupNotifyPolicyResponse extends AcsResponse {
 
 	public void setResult(Integer result) {
 		this.result = result;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

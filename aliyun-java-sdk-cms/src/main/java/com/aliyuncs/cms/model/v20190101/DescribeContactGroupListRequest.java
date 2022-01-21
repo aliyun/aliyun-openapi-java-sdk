@@ -28,7 +28,7 @@ public class DescribeContactGroupListRequest extends RpcAcsRequest<DescribeConta
 
 	private Integer pageSize;
 	public DescribeContactGroupListRequest() {
-		super("Cms", "2019-01-01", "DescribeContactGroupList", "cms");
+		super("Cms", "2019-01-01", "DescribeContactGroupList", "Cms");
 		setMethod(MethodType.POST);
 	}
 

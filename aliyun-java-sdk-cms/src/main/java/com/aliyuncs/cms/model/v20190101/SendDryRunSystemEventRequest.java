@@ -32,7 +32,7 @@ public class SendDryRunSystemEventRequest extends RpcAcsRequest<SendDryRunSystem
 
 	private String eventContent;
 	public SendDryRunSystemEventRequest() {
-		super("Cms", "2019-01-01", "SendDryRunSystemEvent", "cms");
+		super("Cms", "2019-01-01", "SendDryRunSystemEvent", "Cms");
 		setMethod(MethodType.POST);
 	}
 

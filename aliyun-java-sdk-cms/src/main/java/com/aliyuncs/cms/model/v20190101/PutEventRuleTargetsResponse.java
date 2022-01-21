@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PutEventRuleTargetsResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
 	private String requestId;
+
+	private Boolean success;
 
 	private String failedParameterCount;
 
@@ -40,14 +40,6 @@ public class PutEventRuleTargetsResponse extends AcsResponse {
 	private List<MnsParameter> failedMnsParameters;
 
 	private List<FcParameter> failedFcParameters;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -71,6 +63,14 @@ public class PutEventRuleTargetsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getFailedParameterCount() {
@@ -107,19 +107,11 @@ public class PutEventRuleTargetsResponse extends AcsResponse {
 
 	public static class ContactParameter {
 
-		private Integer id;
-
 		private String contactGroupName;
 
+		private Integer id;
+
 		private String level;
-
-		public Integer getId() {
-			return this.id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
-		}
 
 		public String getContactGroupName() {
 			return this.contactGroupName;
@@ -127,6 +119,14 @@ public class PutEventRuleTargetsResponse extends AcsResponse {
 
 		public void setContactGroupName(String contactGroupName) {
 			this.contactGroupName = contactGroupName;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
 		}
 
 		public String getLevel() {
@@ -140,27 +140,11 @@ public class PutEventRuleTargetsResponse extends AcsResponse {
 
 	public static class MnsParameter {
 
+		private String queue;
+
 		private Integer id;
 
 		private String region;
-
-		private String queue;
-
-		public Integer getId() {
-			return this.id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
 
 		public String getQueue() {
 			return this.queue;
@@ -169,17 +153,6 @@ public class PutEventRuleTargetsResponse extends AcsResponse {
 		public void setQueue(String queue) {
 			this.queue = queue;
 		}
-	}
-
-	public static class FcParameter {
-
-		private Integer id;
-
-		private String region;
-
-		private String serviceName;
-
-		private String functionName;
 
 		public Integer getId() {
 			return this.id;
@@ -196,6 +169,17 @@ public class PutEventRuleTargetsResponse extends AcsResponse {
 		public void setRegion(String region) {
 			this.region = region;
 		}
+	}
+
+	public static class FcParameter {
+
+		private String serviceName;
+
+		private String functionName;
+
+		private Integer id;
+
+		private String region;
 
 		public String getServiceName() {
 			return this.serviceName;
@@ -211,6 +195,22 @@ public class PutEventRuleTargetsResponse extends AcsResponse {
 
 		public void setFunctionName(String functionName) {
 			this.functionName = functionName;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 	}
 

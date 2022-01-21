@@ -34,9 +34,9 @@ public class DescribeMonitoringAgentStatusesResponseUnmarshaller {
 		List<NodeStatus> nodeStatusList = new ArrayList<NodeStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList.Length"); i++) {
 			NodeStatus nodeStatus = new NodeStatus();
+			nodeStatus.setStatus(_ctx.stringValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].Status"));
 			nodeStatus.setInstanceId(_ctx.stringValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].InstanceId"));
 			nodeStatus.setAutoInstall(_ctx.booleanValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].AutoInstall"));
-			nodeStatus.setStatus(_ctx.stringValue("DescribeMonitoringAgentStatusesResponse.NodeStatusList["+ i +"].Status"));
 
 			nodeStatusList.add(nodeStatus);
 		}

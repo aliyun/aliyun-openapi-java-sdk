@@ -36,7 +36,7 @@ public class DescribeCustomMetricListRequest extends RpcAcsRequest<DescribeCusto
 
 	private String md5;
 	public DescribeCustomMetricListRequest() {
-		super("Cms", "2019-01-01", "DescribeCustomMetricList", "cms");
+		super("Cms", "2019-01-01", "DescribeCustomMetricList", "Cms");
 		setMethod(MethodType.POST);
 	}
 

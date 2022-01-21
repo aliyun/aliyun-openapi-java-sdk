@@ -23,10 +23,10 @@ public class PutEventRuleResponseUnmarshaller {
 	public static PutEventRuleResponse unmarshall(PutEventRuleResponse putEventRuleResponse, UnmarshallerContext _ctx) {
 		
 		putEventRuleResponse.setRequestId(_ctx.stringValue("PutEventRuleResponse.RequestId"));
-		putEventRuleResponse.setSuccess(_ctx.booleanValue("PutEventRuleResponse.Success"));
 		putEventRuleResponse.setCode(_ctx.stringValue("PutEventRuleResponse.Code"));
 		putEventRuleResponse.setMessage(_ctx.stringValue("PutEventRuleResponse.Message"));
 		putEventRuleResponse.setData(_ctx.stringValue("PutEventRuleResponse.Data"));
+		putEventRuleResponse.setSuccess(_ctx.booleanValue("PutEventRuleResponse.Success"));
 	 
 	 	return putEventRuleResponse;
 	}

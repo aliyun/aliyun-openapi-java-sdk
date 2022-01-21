@@ -29,16 +29,16 @@ public class PutEventRuleTargetsResponseUnmarshaller {
 	public static PutEventRuleTargetsResponse unmarshall(PutEventRuleTargetsResponse putEventRuleTargetsResponse, UnmarshallerContext _ctx) {
 		
 		putEventRuleTargetsResponse.setRequestId(_ctx.stringValue("PutEventRuleTargetsResponse.RequestId"));
-		putEventRuleTargetsResponse.setSuccess(_ctx.booleanValue("PutEventRuleTargetsResponse.Success"));
 		putEventRuleTargetsResponse.setCode(_ctx.stringValue("PutEventRuleTargetsResponse.Code"));
 		putEventRuleTargetsResponse.setMessage(_ctx.stringValue("PutEventRuleTargetsResponse.Message"));
+		putEventRuleTargetsResponse.setSuccess(_ctx.booleanValue("PutEventRuleTargetsResponse.Success"));
 		putEventRuleTargetsResponse.setFailedParameterCount(_ctx.stringValue("PutEventRuleTargetsResponse.FailedParameterCount"));
 
 		List<ContactParameter> failedContactParameters = new ArrayList<ContactParameter>();
 		for (int i = 0; i < _ctx.lengthValue("PutEventRuleTargetsResponse.FailedContactParameters.Length"); i++) {
 			ContactParameter contactParameter = new ContactParameter();
-			contactParameter.setId(_ctx.integerValue("PutEventRuleTargetsResponse.FailedContactParameters["+ i +"].Id"));
 			contactParameter.setContactGroupName(_ctx.stringValue("PutEventRuleTargetsResponse.FailedContactParameters["+ i +"].ContactGroupName"));
+			contactParameter.setId(_ctx.integerValue("PutEventRuleTargetsResponse.FailedContactParameters["+ i +"].Id"));
 			contactParameter.setLevel(_ctx.stringValue("PutEventRuleTargetsResponse.FailedContactParameters["+ i +"].Level"));
 
 			failedContactParameters.add(contactParameter);
@@ -48,9 +48,9 @@ public class PutEventRuleTargetsResponseUnmarshaller {
 		List<MnsParameter> failedMnsParameters = new ArrayList<MnsParameter>();
 		for (int i = 0; i < _ctx.lengthValue("PutEventRuleTargetsResponse.FailedMnsParameters.Length"); i++) {
 			MnsParameter mnsParameter = new MnsParameter();
+			mnsParameter.setQueue(_ctx.stringValue("PutEventRuleTargetsResponse.FailedMnsParameters["+ i +"].Queue"));
 			mnsParameter.setId(_ctx.integerValue("PutEventRuleTargetsResponse.FailedMnsParameters["+ i +"].Id"));
 			mnsParameter.setRegion(_ctx.stringValue("PutEventRuleTargetsResponse.FailedMnsParameters["+ i +"].Region"));
-			mnsParameter.setQueue(_ctx.stringValue("PutEventRuleTargetsResponse.FailedMnsParameters["+ i +"].Queue"));
 
 			failedMnsParameters.add(mnsParameter);
 		}
@@ -59,10 +59,10 @@ public class PutEventRuleTargetsResponseUnmarshaller {
 		List<FcParameter> failedFcParameters = new ArrayList<FcParameter>();
 		for (int i = 0; i < _ctx.lengthValue("PutEventRuleTargetsResponse.FailedFcParameters.Length"); i++) {
 			FcParameter fcParameter = new FcParameter();
-			fcParameter.setId(_ctx.integerValue("PutEventRuleTargetsResponse.FailedFcParameters["+ i +"].Id"));
-			fcParameter.setRegion(_ctx.stringValue("PutEventRuleTargetsResponse.FailedFcParameters["+ i +"].Region"));
 			fcParameter.setServiceName(_ctx.stringValue("PutEventRuleTargetsResponse.FailedFcParameters["+ i +"].ServiceName"));
 			fcParameter.setFunctionName(_ctx.stringValue("PutEventRuleTargetsResponse.FailedFcParameters["+ i +"].FunctionName"));
+			fcParameter.setId(_ctx.integerValue("PutEventRuleTargetsResponse.FailedFcParameters["+ i +"].Id"));
+			fcParameter.setRegion(_ctx.stringValue("PutEventRuleTargetsResponse.FailedFcParameters["+ i +"].Region"));
 
 			failedFcParameters.add(fcParameter);
 		}

@@ -107,15 +107,39 @@ public class DescribeMonitorGroupInstancesResponse extends AcsResponse {
 
 	public static class Resource {
 
+		private String category;
+
+		private String instanceId;
+
+		private String instanceName;
+
 		private Long id;
 
 		private String regionId;
 
-		private String instanceId;
+		public String getCategory() {
+			return this.category;
+		}
 
-		private String category;
+		public void setCategory(String category) {
+			this.category = category;
+		}
 
-		private String instanceName;
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
 
 		public Long getId() {
 			return this.id;
@@ -131,30 +155,6 @@ public class DescribeMonitorGroupInstancesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
 		}
 	}
 

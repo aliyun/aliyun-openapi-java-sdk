@@ -33,11 +33,13 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 
 	private String ruleName;
 
+	private List<OpenApiParameters> openApiParameterss;
+
 	private List<MnsParameters> mnsParameterss;
 
 	private List<FcParameters> fcParameterss;
 	public PutEventRuleTargetsRequest() {
-		super("Cms", "2019-01-01", "PutEventRuleTargets", "cms");
+		super("Cms", "2019-01-01", "PutEventRuleTargets", "Cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -97,6 +99,25 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 		if(ruleName != null){
 			putQueryParameter("RuleName", ruleName);
 		}
+	}
+
+	public List<OpenApiParameters> getOpenApiParameterss() {
+		return this.openApiParameterss;
+	}
+
+	public void setOpenApiParameterss(List<OpenApiParameters> openApiParameterss) {
+		this.openApiParameterss = openApiParameterss;	
+		if (openApiParameterss != null) {
+			for (int depth1 = 0; depth1 < openApiParameterss.size(); depth1++) {
+				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Product" , openApiParameterss.get(depth1).getProduct());
+				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Role" , openApiParameterss.get(depth1).getRole());
+				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Action" , openApiParameterss.get(depth1).getAction());
+				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Id" , openApiParameterss.get(depth1).getId());
+				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Arn" , openApiParameterss.get(depth1).getArn());
+				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Region" , openApiParameterss.get(depth1).getRegion());
+				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Version" , openApiParameterss.get(depth1).getVersion());
+			}
+		}	
 	}
 
 	public List<MnsParameters> getMnsParameterss() {
@@ -246,6 +267,79 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 
 		public void setLogStore(String logStore) {
 			this.logStore = logStore;
+		}
+	}
+
+	public static class OpenApiParameters {
+
+		private String product;
+
+		private String role;
+
+		private String action;
+
+		private String id;
+
+		private String arn;
+
+		private String region;
+
+		private String version;
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 	}
 

@@ -41,20 +41,20 @@ public class DescribeMonitorGroupInstanceAttributeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupInstanceAttributeResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
 			resource.setInstanceName(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].InstanceName"));
-			resource.setInstanceId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].InstanceId"));
-			resource.setDesc(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Desc"));
-			resource.setNetworkType(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].NetworkType"));
-			resource.setCategory(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Category"));
 			resource.setDimension(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Dimension"));
+			resource.setCategory(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Category"));
+			resource.setInstanceId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].InstanceId"));
+			resource.setNetworkType(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].NetworkType"));
+			resource.setDesc(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Desc"));
 
 			Region region = new Region();
-			region.setRegionId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Region.RegionId"));
 			region.setAvailabilityZone(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Region.AvailabilityZone"));
+			region.setRegionId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Region.RegionId"));
 			resource.setRegion(region);
 
 			Vpc vpc = new Vpc();
-			vpc.setVpcInstanceId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Vpc.VpcInstanceId"));
 			vpc.setVswitchInstanceId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Vpc.VswitchInstanceId"));
+			vpc.setVpcInstanceId(_ctx.stringValue("DescribeMonitorGroupInstanceAttributeResponse.Resources["+ i +"].Vpc.VpcInstanceId"));
 			resource.setVpc(vpc);
 
 			List<Tag> tags = new ArrayList<Tag>();

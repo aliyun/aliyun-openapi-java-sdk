@@ -25,8 +25,8 @@ public class CreateHostAvailabilityResponseUnmarshaller {
 		createHostAvailabilityResponse.setRequestId(_ctx.stringValue("CreateHostAvailabilityResponse.RequestId"));
 		createHostAvailabilityResponse.setCode(_ctx.stringValue("CreateHostAvailabilityResponse.Code"));
 		createHostAvailabilityResponse.setMessage(_ctx.stringValue("CreateHostAvailabilityResponse.Message"));
-		createHostAvailabilityResponse.setSuccess(_ctx.booleanValue("CreateHostAvailabilityResponse.Success"));
 		createHostAvailabilityResponse.setTaskId(_ctx.longValue("CreateHostAvailabilityResponse.TaskId"));
+		createHostAvailabilityResponse.setSuccess(_ctx.booleanValue("CreateHostAvailabilityResponse.Success"));
 	 
 	 	return createHostAvailabilityResponse;
 	}

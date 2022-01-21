@@ -28,9 +28,9 @@ public class DescribeMonitorGroupCategoriesResponseUnmarshaller {
 	public static DescribeMonitorGroupCategoriesResponse unmarshall(DescribeMonitorGroupCategoriesResponse describeMonitorGroupCategoriesResponse, UnmarshallerContext _ctx) {
 		
 		describeMonitorGroupCategoriesResponse.setRequestId(_ctx.stringValue("DescribeMonitorGroupCategoriesResponse.RequestId"));
-		describeMonitorGroupCategoriesResponse.setSuccess(_ctx.booleanValue("DescribeMonitorGroupCategoriesResponse.Success"));
 		describeMonitorGroupCategoriesResponse.setCode(_ctx.integerValue("DescribeMonitorGroupCategoriesResponse.Code"));
 		describeMonitorGroupCategoriesResponse.setMessage(_ctx.stringValue("DescribeMonitorGroupCategoriesResponse.Message"));
+		describeMonitorGroupCategoriesResponse.setSuccess(_ctx.booleanValue("DescribeMonitorGroupCategoriesResponse.Success"));
 
 		MonitorGroupCategories monitorGroupCategories = new MonitorGroupCategories();
 		monitorGroupCategories.setGroupId(_ctx.longValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.GroupId"));
@@ -38,8 +38,8 @@ public class DescribeMonitorGroupCategoriesResponseUnmarshaller {
 		List<CategoryItem> monitorGroupCategory = new ArrayList<CategoryItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory.Length"); i++) {
 			CategoryItem categoryItem = new CategoryItem();
-			categoryItem.setCategory(_ctx.stringValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory["+ i +"].Category"));
 			categoryItem.setCount(_ctx.integerValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory["+ i +"].Count"));
+			categoryItem.setCategory(_ctx.stringValue("DescribeMonitorGroupCategoriesResponse.MonitorGroupCategories.MonitorGroupCategory["+ i +"].Category"));
 
 			monitorGroupCategory.add(categoryItem);
 		}

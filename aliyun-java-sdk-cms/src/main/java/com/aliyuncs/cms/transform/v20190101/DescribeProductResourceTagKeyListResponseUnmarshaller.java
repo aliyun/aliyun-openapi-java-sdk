@@ -28,8 +28,8 @@ public class DescribeProductResourceTagKeyListResponseUnmarshaller {
 		describeProductResourceTagKeyListResponse.setRequestId(_ctx.stringValue("DescribeProductResourceTagKeyListResponse.RequestId"));
 		describeProductResourceTagKeyListResponse.setCode(_ctx.stringValue("DescribeProductResourceTagKeyListResponse.Code"));
 		describeProductResourceTagKeyListResponse.setMessage(_ctx.stringValue("DescribeProductResourceTagKeyListResponse.Message"));
-		describeProductResourceTagKeyListResponse.setSuccess(_ctx.booleanValue("DescribeProductResourceTagKeyListResponse.Success"));
 		describeProductResourceTagKeyListResponse.setNextToken(_ctx.stringValue("DescribeProductResourceTagKeyListResponse.NextToken"));
+		describeProductResourceTagKeyListResponse.setSuccess(_ctx.booleanValue("DescribeProductResourceTagKeyListResponse.Success"));
 
 		List<String> tagKeys = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProductResourceTagKeyListResponse.TagKeys.Length"); i++) {

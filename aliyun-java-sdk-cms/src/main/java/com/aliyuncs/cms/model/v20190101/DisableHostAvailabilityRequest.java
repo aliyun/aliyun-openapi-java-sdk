@@ -27,7 +27,7 @@ public class DisableHostAvailabilityRequest extends RpcAcsRequest<DisableHostAva
 
 	private List<Long> ids;
 	public DisableHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "DisableHostAvailability", "cms");
+		super("Cms", "2019-01-01", "DisableHostAvailability", "Cms");
 		setMethod(MethodType.POST);
 	}
 

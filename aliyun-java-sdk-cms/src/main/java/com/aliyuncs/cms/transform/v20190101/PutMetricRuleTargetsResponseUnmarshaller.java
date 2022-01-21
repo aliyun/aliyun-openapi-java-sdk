@@ -28,9 +28,9 @@ public class PutMetricRuleTargetsResponseUnmarshaller {
 	public static PutMetricRuleTargetsResponse unmarshall(PutMetricRuleTargetsResponse putMetricRuleTargetsResponse, UnmarshallerContext _ctx) {
 		
 		putMetricRuleTargetsResponse.setRequestId(_ctx.stringValue("PutMetricRuleTargetsResponse.RequestId"));
-		putMetricRuleTargetsResponse.setSuccess(_ctx.booleanValue("PutMetricRuleTargetsResponse.Success"));
 		putMetricRuleTargetsResponse.setCode(_ctx.stringValue("PutMetricRuleTargetsResponse.Code"));
 		putMetricRuleTargetsResponse.setMessage(_ctx.stringValue("PutMetricRuleTargetsResponse.Message"));
+		putMetricRuleTargetsResponse.setSuccess(_ctx.booleanValue("PutMetricRuleTargetsResponse.Success"));
 
 		FailData failData = new FailData();
 

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ApplyMetricRuleTemplateResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Resource resource;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class ApplyMetricRuleTemplateResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Resource getResource() {
@@ -99,22 +99,22 @@ public class ApplyMetricRuleTemplateResponse extends AcsResponse {
 
 		public static class Result {
 
-			private String ruleId;
+			private String code;
 
 			private String message;
 
-			private String ruleName;
-
-			private String code;
-
 			private Boolean success;
 
-			public String getRuleId() {
-				return this.ruleId;
+			private String ruleName;
+
+			private String ruleId;
+
+			public String getCode() {
+				return this.code;
 			}
 
-			public void setRuleId(String ruleId) {
-				this.ruleId = ruleId;
+			public void setCode(String code) {
+				this.code = code;
 			}
 
 			public String getMessage() {
@@ -125,6 +125,14 @@ public class ApplyMetricRuleTemplateResponse extends AcsResponse {
 				this.message = message;
 			}
 
+			public Boolean getSuccess() {
+				return this.success;
+			}
+
+			public void setSuccess(Boolean success) {
+				this.success = success;
+			}
+
 			public String getRuleName() {
 				return this.ruleName;
 			}
@@ -133,20 +141,12 @@ public class ApplyMetricRuleTemplateResponse extends AcsResponse {
 				this.ruleName = ruleName;
 			}
 
-			public String getCode() {
-				return this.code;
+			public String getRuleId() {
+				return this.ruleId;
 			}
 
-			public void setCode(String code) {
-				this.code = code;
-			}
-
-			public Boolean getSuccess() {
-				return this.success;
-			}
-
-			public void setSuccess(Boolean success) {
-				this.success = success;
+			public void setRuleId(String ruleId) {
+				this.ruleId = ruleId;
 			}
 		}
 	}

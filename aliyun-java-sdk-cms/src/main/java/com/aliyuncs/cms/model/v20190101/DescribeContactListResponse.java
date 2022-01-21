@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeContactListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
+	private Boolean success;
+
 	private List<Contact> contacts;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -61,6 +53,14 @@ public class DescribeContactListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotal() {
 		return this.total;
 	}
@@ -69,12 +69,12 @@ public class DescribeContactListResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Contact> getContacts() {
@@ -87,15 +87,15 @@ public class DescribeContactListResponse extends AcsResponse {
 
 	public static class Contact {
 
+		private Long updateTime;
+
 		private String name;
-
-		private String desc;
-
-		private String lang;
 
 		private Long createTime;
 
-		private Long updateTime;
+		private String lang;
+
+		private String desc;
 
 		private List<String> contactGroups;
 
@@ -103,28 +103,20 @@ public class DescribeContactListResponse extends AcsResponse {
 
 		private ChannelsState channelsState;
 
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
-		public String getLang() {
-			return this.lang;
-		}
-
-		public void setLang(String lang) {
-			this.lang = lang;
 		}
 
 		public Long getCreateTime() {
@@ -135,12 +127,20 @@ public class DescribeContactListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getLang() {
+			return this.lang;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setLang(String lang) {
+			this.lang = lang;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public List<String> getContactGroups() {
@@ -169,21 +169,13 @@ public class DescribeContactListResponse extends AcsResponse {
 
 		public static class Channels {
 
-			private String sMS;
-
 			private String mail;
 
 			private String aliIM;
 
 			private String dingWebHook;
 
-			public String getSMS() {
-				return this.sMS;
-			}
-
-			public void setSMS(String sMS) {
-				this.sMS = sMS;
-			}
+			private String sMS;
 
 			public String getMail() {
 				return this.mail;
@@ -207,26 +199,26 @@ public class DescribeContactListResponse extends AcsResponse {
 
 			public void setDingWebHook(String dingWebHook) {
 				this.dingWebHook = dingWebHook;
+			}
+
+			public String getSMS() {
+				return this.sMS;
+			}
+
+			public void setSMS(String sMS) {
+				this.sMS = sMS;
 			}
 		}
 
 		public static class ChannelsState {
 
-			private String sMS;
-
 			private String mail;
 
 			private String aliIM;
 
 			private String dingWebHook;
 
-			public String getSMS() {
-				return this.sMS;
-			}
-
-			public void setSMS(String sMS) {
-				this.sMS = sMS;
-			}
+			private String sMS;
 
 			public String getMail() {
 				return this.mail;
@@ -250,6 +242,14 @@ public class DescribeContactListResponse extends AcsResponse {
 
 			public void setDingWebHook(String dingWebHook) {
 				this.dingWebHook = dingWebHook;
+			}
+
+			public String getSMS() {
+				return this.sMS;
+			}
+
+			public void setSMS(String sMS) {
+				this.sMS = sMS;
 			}
 		}
 	}

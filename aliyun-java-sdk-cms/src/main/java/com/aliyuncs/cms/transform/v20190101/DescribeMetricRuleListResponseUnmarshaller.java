@@ -25,6 +25,9 @@ import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Esc
 import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Escalations.Critical;
 import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Escalations.Info;
 import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Escalations.Warn;
+import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.LabelsItem;
+import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Prometheus;
+import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Prometheus.AnnotationsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -61,6 +64,7 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			alarm.setGroupBy(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupBy"));
 			alarm.setResources(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Resources"));
 			alarm.setNoDataPolicy(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].NoDataPolicy"));
+			alarm.setOptions(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Options"));
 
 			Escalations escalations = new Escalations();
 
@@ -109,6 +113,32 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			}
 			compositeExpression.setExpressionList(expressionList);
 			alarm.setCompositeExpression(compositeExpression);
+
+			Prometheus prometheus = new Prometheus();
+			prometheus.setPromQL(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Prometheus.PromQL"));
+			prometheus.setLevel(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Prometheus.Level"));
+			prometheus.setTimes(_ctx.longValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Prometheus.Times"));
+
+			List<AnnotationsItem> annotations = new ArrayList<AnnotationsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Prometheus.Annotations.Length"); j++) {
+				AnnotationsItem annotationsItem = new AnnotationsItem();
+				annotationsItem.setKey(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Prometheus.Annotations["+ j +"].Key"));
+				annotationsItem.setValue(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Prometheus.Annotations["+ j +"].Value"));
+
+				annotations.add(annotationsItem);
+			}
+			prometheus.setAnnotations(annotations);
+			alarm.setPrometheus(prometheus);
+
+			List<LabelsItem> labels = new ArrayList<LabelsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Labels.Length"); j++) {
+				LabelsItem labelsItem = new LabelsItem();
+				labelsItem.setKey(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Labels["+ j +"].Key"));
+				labelsItem.setValue(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Labels["+ j +"].Value"));
+
+				labels.add(labelsItem);
+			}
+			alarm.setLabels(labels);
 
 			alarms.add(alarm);
 		}

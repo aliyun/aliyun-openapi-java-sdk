@@ -34,16 +34,16 @@ public class DescribeSystemEventAttributeResponseUnmarshaller {
 		List<SystemEvent> systemEvents = new ArrayList<SystemEvent>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSystemEventAttributeResponse.SystemEvents.Length"); i++) {
 			SystemEvent systemEvent = new SystemEvent();
-			systemEvent.setContent(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Content"));
-			systemEvent.setProduct(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Product"));
-			systemEvent.setName(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Name"));
-			systemEvent.setGroupId(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].GroupId"));
-			systemEvent.setLevel(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Level"));
 			systemEvent.setStatus(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Status"));
-			systemEvent.setResourceId(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].ResourceId"));
-			systemEvent.setRegionId(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].RegionId"));
-			systemEvent.setInstanceName(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].InstanceName"));
 			systemEvent.setTime(_ctx.longValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Time"));
+			systemEvent.setGroupId(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].GroupId"));
+			systemEvent.setProduct(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Product"));
+			systemEvent.setInstanceName(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].InstanceName"));
+			systemEvent.setResourceId(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].ResourceId"));
+			systemEvent.setName(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Name"));
+			systemEvent.setContent(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Content"));
+			systemEvent.setLevel(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].Level"));
+			systemEvent.setRegionId(_ctx.stringValue("DescribeSystemEventAttributeResponse.SystemEvents["+ i +"].RegionId"));
 
 			systemEvents.add(systemEvent);
 		}

@@ -23,9 +23,9 @@ public class EnableEventRulesResponseUnmarshaller {
 	public static EnableEventRulesResponse unmarshall(EnableEventRulesResponse enableEventRulesResponse, UnmarshallerContext _ctx) {
 		
 		enableEventRulesResponse.setRequestId(_ctx.stringValue("EnableEventRulesResponse.RequestId"));
-		enableEventRulesResponse.setSuccess(_ctx.booleanValue("EnableEventRulesResponse.Success"));
 		enableEventRulesResponse.setCode(_ctx.stringValue("EnableEventRulesResponse.Code"));
 		enableEventRulesResponse.setMessage(_ctx.stringValue("EnableEventRulesResponse.Message"));
+		enableEventRulesResponse.setSuccess(_ctx.booleanValue("EnableEventRulesResponse.Success"));
 	 
 	 	return enableEventRulesResponse;
 	}

@@ -23,11 +23,11 @@ public class DescribeSiteMonitorDataResponseUnmarshaller {
 	public static DescribeSiteMonitorDataResponse unmarshall(DescribeSiteMonitorDataResponse describeSiteMonitorDataResponse, UnmarshallerContext _ctx) {
 		
 		describeSiteMonitorDataResponse.setRequestId(_ctx.stringValue("DescribeSiteMonitorDataResponse.RequestId"));
-		describeSiteMonitorDataResponse.setCode(_ctx.stringValue("DescribeSiteMonitorDataResponse.Code"));
-		describeSiteMonitorDataResponse.setMessage(_ctx.stringValue("DescribeSiteMonitorDataResponse.Message"));
-		describeSiteMonitorDataResponse.setSuccess(_ctx.stringValue("DescribeSiteMonitorDataResponse.Success"));
 		describeSiteMonitorDataResponse.setNextToken(_ctx.stringValue("DescribeSiteMonitorDataResponse.NextToken"));
 		describeSiteMonitorDataResponse.setData(_ctx.stringValue("DescribeSiteMonitorDataResponse.Data"));
+		describeSiteMonitorDataResponse.setSuccess(_ctx.stringValue("DescribeSiteMonitorDataResponse.Success"));
+		describeSiteMonitorDataResponse.setCode(_ctx.stringValue("DescribeSiteMonitorDataResponse.Code"));
+		describeSiteMonitorDataResponse.setMessage(_ctx.stringValue("DescribeSiteMonitorDataResponse.Message"));
 	 
 	 	return describeSiteMonitorDataResponse;
 	}

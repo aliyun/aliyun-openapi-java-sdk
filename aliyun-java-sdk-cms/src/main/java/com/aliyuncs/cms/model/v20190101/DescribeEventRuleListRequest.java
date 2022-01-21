@@ -24,27 +24,16 @@ import com.aliyuncs.http.MethodType;
 public class DescribeEventRuleListRequest extends RpcAcsRequest<DescribeEventRuleListResponse> {
 	   
 
-	private String groupId;
-
 	private String pageNumber;
 
 	private String pageSize;
 
 	private String namePrefix;
+
+	private String groupId;
 	public DescribeEventRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeEventRuleList", "cms");
+		super("Cms", "2019-01-01", "DescribeEventRuleList", "Cms");
 		setMethod(MethodType.POST);
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
 	}
 
 	public String getPageNumber() {
@@ -77,6 +66,17 @@ public class DescribeEventRuleListRequest extends RpcAcsRequest<DescribeEventRul
 		this.namePrefix = namePrefix;
 		if(namePrefix != null){
 			putQueryParameter("NamePrefix", namePrefix);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

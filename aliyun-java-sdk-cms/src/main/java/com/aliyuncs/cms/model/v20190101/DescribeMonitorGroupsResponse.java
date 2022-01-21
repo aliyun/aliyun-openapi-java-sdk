@@ -107,55 +107,31 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private Long groupId;
-
-		private String groupName;
-
-		private String serviceId;
-
 		private String type;
 
-		private Long gmtModified;
-
-		private Long gmtCreate;
+		private String groupFounderTagValue;
 
 		private String bindUrl;
 
+		private String groupName;
+
+		private Long groupId;
+
+		private String serviceId;
+
 		private String dynamicTagRuleId;
+
+		private Long gmtCreate;
 
 		private String groupFounderTagKey;
 
-		private String groupFounderTagValue;
+		private Long gmtModified;
 
 		private List<ContactGroup> contactGroups;
 
 		private List<Tag> tags;
 
 		private List<String> templateIds;
-
-		public Long getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getServiceId() {
-			return this.serviceId;
-		}
-
-		public void setServiceId(String serviceId) {
-			this.serviceId = serviceId;
-		}
 
 		public String getType() {
 			return this.type;
@@ -165,20 +141,12 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public Long getGmtModified() {
-			return this.gmtModified;
+		public String getGroupFounderTagValue() {
+			return this.groupFounderTagValue;
 		}
 
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setGroupFounderTagValue(String groupFounderTagValue) {
+			this.groupFounderTagValue = groupFounderTagValue;
 		}
 
 		public String getBindUrl() {
@@ -189,12 +157,44 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 			this.bindUrl = bindUrl;
 		}
 
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
+		}
+
 		public String getDynamicTagRuleId() {
 			return this.dynamicTagRuleId;
 		}
 
 		public void setDynamicTagRuleId(String dynamicTagRuleId) {
 			this.dynamicTagRuleId = dynamicTagRuleId;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getGroupFounderTagKey() {
@@ -205,12 +205,12 @@ public class DescribeMonitorGroupsResponse extends AcsResponse {
 			this.groupFounderTagKey = groupFounderTagKey;
 		}
 
-		public String getGroupFounderTagValue() {
-			return this.groupFounderTagValue;
+		public Long getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setGroupFounderTagValue(String groupFounderTagValue) {
-			this.groupFounderTagValue = groupFounderTagValue;
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public List<ContactGroup> getContactGroups() {

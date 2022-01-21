@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAlertHistoryListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
-	private String total;
-
 	private String requestId;
 
+	private String total;
+
+	private Boolean success;
+
 	private List<AlarmHistory> alarmHistoryList;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -61,6 +53,14 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getTotal() {
 		return this.total;
 	}
@@ -69,12 +69,12 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<AlarmHistory> getAlarmHistoryList() {
@@ -87,72 +87,56 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 
 	public static class AlarmHistory {
 
-		private String ruleId;
-
-		private String groupId;
-
-		private String namespace;
+		private Integer status;
 
 		private String metricName;
 
-		private String dimensions;
-
-		private String expression;
-
 		private Integer evaluationCount;
-
-		private String value;
-
-		private Long alertTime;
-
-		private Long lastTime;
-
-		private String level;
-
-		private String preLevel;
-
-		private String ruleName;
 
 		private String state;
 
-		private Integer status;
+		private String preLevel;
+
+		private String namespace;
 
 		private String webhooks;
 
+		private String ruleName;
+
+		private String ruleId;
+
+		private Long lastTime;
+
+		private String value;
+
+		private String expression;
+
+		private String groupId;
+
+		private Long alertTime;
+
 		private String instanceName;
 
-		private List<String> contactGroups;
+		private String dimensions;
+
+		private String level;
 
 		private List<String> contacts;
 
 		private List<String> contactALIIMs;
 
-		private List<String> contactSmses;
-
 		private List<String> contactMails;
 
-		public String getRuleId() {
-			return this.ruleId;
+		private List<String> contactSmses;
+
+		private List<String> contactGroups;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getMetricName() {
@@ -163,76 +147,12 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 			this.metricName = metricName;
 		}
 
-		public String getDimensions() {
-			return this.dimensions;
-		}
-
-		public void setDimensions(String dimensions) {
-			this.dimensions = dimensions;
-		}
-
-		public String getExpression() {
-			return this.expression;
-		}
-
-		public void setExpression(String expression) {
-			this.expression = expression;
-		}
-
 		public Integer getEvaluationCount() {
 			return this.evaluationCount;
 		}
 
 		public void setEvaluationCount(Integer evaluationCount) {
 			this.evaluationCount = evaluationCount;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public Long getAlertTime() {
-			return this.alertTime;
-		}
-
-		public void setAlertTime(Long alertTime) {
-			this.alertTime = alertTime;
-		}
-
-		public Long getLastTime() {
-			return this.lastTime;
-		}
-
-		public void setLastTime(Long lastTime) {
-			this.lastTime = lastTime;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
-		public String getPreLevel() {
-			return this.preLevel;
-		}
-
-		public void setPreLevel(String preLevel) {
-			this.preLevel = preLevel;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
 		}
 
 		public String getState() {
@@ -243,12 +163,20 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getPreLevel() {
+			return this.preLevel;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setPreLevel(String preLevel) {
+			this.preLevel = preLevel;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
 		}
 
 		public String getWebhooks() {
@@ -259,6 +187,62 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 			this.webhooks = webhooks;
 		}
 
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public Long getLastTime() {
+			return this.lastTime;
+		}
+
+		public void setLastTime(Long lastTime) {
+			this.lastTime = lastTime;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getExpression() {
+			return this.expression;
+		}
+
+		public void setExpression(String expression) {
+			this.expression = expression;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Long getAlertTime() {
+			return this.alertTime;
+		}
+
+		public void setAlertTime(Long alertTime) {
+			this.alertTime = alertTime;
+		}
+
 		public String getInstanceName() {
 			return this.instanceName;
 		}
@@ -267,12 +251,20 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public List<String> getContactGroups() {
-			return this.contactGroups;
+		public String getDimensions() {
+			return this.dimensions;
 		}
 
-		public void setContactGroups(List<String> contactGroups) {
-			this.contactGroups = contactGroups;
+		public void setDimensions(String dimensions) {
+			this.dimensions = dimensions;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 
 		public List<String> getContacts() {
@@ -291,6 +283,14 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 			this.contactALIIMs = contactALIIMs;
 		}
 
+		public List<String> getContactMails() {
+			return this.contactMails;
+		}
+
+		public void setContactMails(List<String> contactMails) {
+			this.contactMails = contactMails;
+		}
+
 		public List<String> getContactSmses() {
 			return this.contactSmses;
 		}
@@ -299,12 +299,12 @@ public class DescribeAlertHistoryListResponse extends AcsResponse {
 			this.contactSmses = contactSmses;
 		}
 
-		public List<String> getContactMails() {
-			return this.contactMails;
+		public List<String> getContactGroups() {
+			return this.contactGroups;
 		}
 
-		public void setContactMails(List<String> contactMails) {
-			this.contactMails = contactMails;
+		public void setContactGroups(List<String> contactGroups) {
+			this.contactGroups = contactGroups;
 		}
 	}
 

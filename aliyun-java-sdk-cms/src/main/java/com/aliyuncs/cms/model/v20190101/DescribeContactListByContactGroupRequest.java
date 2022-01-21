@@ -26,7 +26,7 @@ public class DescribeContactListByContactGroupRequest extends RpcAcsRequest<Desc
 
 	private String contactGroupName;
 	public DescribeContactListByContactGroupRequest() {
-		super("Cms", "2019-01-01", "DescribeContactListByContactGroup", "cms");
+		super("Cms", "2019-01-01", "DescribeContactListByContactGroup", "Cms");
 		setMethod(MethodType.POST);
 	}
 

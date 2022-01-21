@@ -28,9 +28,9 @@ public class DeleteMonitorGroupResponseUnmarshaller {
 	public static DeleteMonitorGroupResponse unmarshall(DeleteMonitorGroupResponse deleteMonitorGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteMonitorGroupResponse.setRequestId(_ctx.stringValue("DeleteMonitorGroupResponse.RequestId"));
-		deleteMonitorGroupResponse.setSuccess(_ctx.booleanValue("DeleteMonitorGroupResponse.Success"));
 		deleteMonitorGroupResponse.setCode(_ctx.integerValue("DeleteMonitorGroupResponse.Code"));
 		deleteMonitorGroupResponse.setMessage(_ctx.stringValue("DeleteMonitorGroupResponse.Message"));
+		deleteMonitorGroupResponse.setSuccess(_ctx.booleanValue("DeleteMonitorGroupResponse.Success"));
 
 		Group group = new Group();
 		group.setGroupName(_ctx.stringValue("DeleteMonitorGroupResponse.Group.GroupName"));

@@ -23,9 +23,9 @@ public class ModifyMonitorGroupInstancesResponseUnmarshaller {
 	public static ModifyMonitorGroupInstancesResponse unmarshall(ModifyMonitorGroupInstancesResponse modifyMonitorGroupInstancesResponse, UnmarshallerContext _ctx) {
 		
 		modifyMonitorGroupInstancesResponse.setRequestId(_ctx.stringValue("ModifyMonitorGroupInstancesResponse.RequestId"));
-		modifyMonitorGroupInstancesResponse.setSuccess(_ctx.booleanValue("ModifyMonitorGroupInstancesResponse.Success"));
 		modifyMonitorGroupInstancesResponse.setCode(_ctx.integerValue("ModifyMonitorGroupInstancesResponse.Code"));
 		modifyMonitorGroupInstancesResponse.setMessage(_ctx.stringValue("ModifyMonitorGroupInstancesResponse.Message"));
+		modifyMonitorGroupInstancesResponse.setSuccess(_ctx.booleanValue("ModifyMonitorGroupInstancesResponse.Success"));
 	 
 	 	return modifyMonitorGroupInstancesResponse;
 	}

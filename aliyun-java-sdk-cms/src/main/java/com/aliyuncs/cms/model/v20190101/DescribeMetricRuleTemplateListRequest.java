@@ -36,7 +36,7 @@ public class DescribeMetricRuleTemplateListRequest extends RpcAcsRequest<Describ
 
 	private String keyword;
 	public DescribeMetricRuleTemplateListRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "cms");
+		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "Cms");
 		setMethod(MethodType.POST);
 	}
 

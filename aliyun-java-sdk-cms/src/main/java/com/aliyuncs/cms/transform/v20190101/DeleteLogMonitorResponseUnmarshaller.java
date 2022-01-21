@@ -24,8 +24,8 @@ public class DeleteLogMonitorResponseUnmarshaller {
 		
 		deleteLogMonitorResponse.setRequestId(_ctx.stringValue("DeleteLogMonitorResponse.RequestId"));
 		deleteLogMonitorResponse.setCode(_ctx.stringValue("DeleteLogMonitorResponse.Code"));
-		deleteLogMonitorResponse.setSuccess(_ctx.booleanValue("DeleteLogMonitorResponse.Success"));
 		deleteLogMonitorResponse.setMessage(_ctx.stringValue("DeleteLogMonitorResponse.Message"));
+		deleteLogMonitorResponse.setSuccess(_ctx.booleanValue("DeleteLogMonitorResponse.Success"));
 	 
 	 	return deleteLogMonitorResponse;
 	}

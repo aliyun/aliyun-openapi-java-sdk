@@ -25,8 +25,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEventRuleListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
@@ -35,15 +33,9 @@ public class DescribeEventRuleListResponse extends AcsResponse {
 
 	private Integer total;
 
+	private Boolean success;
+
 	private List<EventRule> eventRules;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -77,6 +69,14 @@ public class DescribeEventRuleListResponse extends AcsResponse {
 		this.total = total;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<EventRule> getEventRules() {
 		return this.eventRules;
 	}
@@ -87,24 +87,34 @@ public class DescribeEventRuleListResponse extends AcsResponse {
 
 	public static class EventRule {
 
-		private String name;
-
-		private String groupId;
-
 		private String eventType;
-
-		private String state;
 
 		private String description;
 
+		private String groupId;
+
+		private String name;
+
+		private String state;
+
+		private Long silenceTime;
+
 		private List<EventPatternItem> eventPattern;
 
-		public String getName() {
-			return this.name;
+		public String getEventType() {
+			return this.eventType;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getGroupId() {
@@ -115,12 +125,12 @@ public class DescribeEventRuleListResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getEventType() {
-			return this.eventType;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getState() {
@@ -131,12 +141,12 @@ public class DescribeEventRuleListResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Long getSilenceTime() {
+			return this.silenceTime;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setSilenceTime(Long silenceTime) {
+			this.silenceTime = silenceTime;
 		}
 
 		public List<EventPatternItem> getEventPattern() {
@@ -151,11 +161,17 @@ public class DescribeEventRuleListResponse extends AcsResponse {
 
 			private String product;
 
-			private List<String> nameList;
+			private String customFilters;
+
+			private String sQLFilter;
 
 			private List<String> levelList;
 
 			private List<String> eventTypeList;
+
+			private List<String> nameList;
+
+			private KeywordFilter keywordFilter;
 
 			public String getProduct() {
 				return this.product;
@@ -165,12 +181,20 @@ public class DescribeEventRuleListResponse extends AcsResponse {
 				this.product = product;
 			}
 
-			public List<String> getNameList() {
-				return this.nameList;
+			public String getCustomFilters() {
+				return this.customFilters;
 			}
 
-			public void setNameList(List<String> nameList) {
-				this.nameList = nameList;
+			public void setCustomFilters(String customFilters) {
+				this.customFilters = customFilters;
+			}
+
+			public String getSQLFilter() {
+				return this.sQLFilter;
+			}
+
+			public void setSQLFilter(String sQLFilter) {
+				this.sQLFilter = sQLFilter;
 			}
 
 			public List<String> getLevelList() {
@@ -187,6 +211,45 @@ public class DescribeEventRuleListResponse extends AcsResponse {
 
 			public void setEventTypeList(List<String> eventTypeList) {
 				this.eventTypeList = eventTypeList;
+			}
+
+			public List<String> getNameList() {
+				return this.nameList;
+			}
+
+			public void setNameList(List<String> nameList) {
+				this.nameList = nameList;
+			}
+
+			public KeywordFilter getKeywordFilter() {
+				return this.keywordFilter;
+			}
+
+			public void setKeywordFilter(KeywordFilter keywordFilter) {
+				this.keywordFilter = keywordFilter;
+			}
+
+			public static class KeywordFilter {
+
+				private String relation;
+
+				private List<String> keywords;
+
+				public String getRelation() {
+					return this.relation;
+				}
+
+				public void setRelation(String relation) {
+					this.relation = relation;
+				}
+
+				public List<String> getKeywords() {
+					return this.keywords;
+				}
+
+				public void setKeywords(List<String> keywords) {
+					this.keywords = keywords;
+				}
 			}
 		}
 	}

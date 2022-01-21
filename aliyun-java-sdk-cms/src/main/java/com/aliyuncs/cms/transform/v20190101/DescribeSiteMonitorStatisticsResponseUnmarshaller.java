@@ -25,8 +25,8 @@ public class DescribeSiteMonitorStatisticsResponseUnmarshaller {
 		describeSiteMonitorStatisticsResponse.setRequestId(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.RequestId"));
 		describeSiteMonitorStatisticsResponse.setCode(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Code"));
 		describeSiteMonitorStatisticsResponse.setMessage(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Message"));
-		describeSiteMonitorStatisticsResponse.setSuccess(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Success"));
 		describeSiteMonitorStatisticsResponse.setData(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Data"));
+		describeSiteMonitorStatisticsResponse.setSuccess(_ctx.stringValue("DescribeSiteMonitorStatisticsResponse.Success"));
 	 
 	 	return describeSiteMonitorStatisticsResponse;
 	}

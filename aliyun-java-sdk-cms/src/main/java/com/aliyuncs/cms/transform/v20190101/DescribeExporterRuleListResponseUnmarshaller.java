@@ -27,23 +27,23 @@ public class DescribeExporterRuleListResponseUnmarshaller {
 	public static DescribeExporterRuleListResponse unmarshall(DescribeExporterRuleListResponse describeExporterRuleListResponse, UnmarshallerContext _ctx) {
 		
 		describeExporterRuleListResponse.setRequestId(_ctx.stringValue("DescribeExporterRuleListResponse.RequestId"));
+		describeExporterRuleListResponse.setSuccess(_ctx.booleanValue("DescribeExporterRuleListResponse.Success"));
 		describeExporterRuleListResponse.setCode(_ctx.stringValue("DescribeExporterRuleListResponse.Code"));
 		describeExporterRuleListResponse.setMessage(_ctx.stringValue("DescribeExporterRuleListResponse.Message"));
-		describeExporterRuleListResponse.setTotal(_ctx.integerValue("DescribeExporterRuleListResponse.Total"));
 		describeExporterRuleListResponse.setPageNumber(_ctx.integerValue("DescribeExporterRuleListResponse.PageNumber"));
-		describeExporterRuleListResponse.setSuccess(_ctx.booleanValue("DescribeExporterRuleListResponse.Success"));
+		describeExporterRuleListResponse.setTotal(_ctx.integerValue("DescribeExporterRuleListResponse.Total"));
 
 		List<Datapoint> datapoints = new ArrayList<Datapoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeExporterRuleListResponse.Datapoints.Length"); i++) {
 			Datapoint datapoint = new Datapoint();
-			datapoint.setRuleName(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].RuleName"));
-			datapoint.setNamespace(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].Namespace"));
 			datapoint.setMetricName(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].MetricName"));
-			datapoint.setEnabled(_ctx.booleanValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].Enabled"));
-			datapoint.setTargetWindows(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].TargetWindows"));
 			datapoint.setDescribe(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].Describe"));
-			datapoint.setDimension(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].Dimension"));
+			datapoint.setTargetWindows(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].TargetWindows"));
 			datapoint.setCreateTime(_ctx.longValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].CreateTime"));
+			datapoint.setEnabled(_ctx.booleanValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].Enabled"));
+			datapoint.setDimension(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].Dimension"));
+			datapoint.setNamespace(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].Namespace"));
+			datapoint.setRuleName(_ctx.stringValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].RuleName"));
 
 			List<String> dstName = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeExporterRuleListResponse.Datapoints["+ i +"].DstName.Length"); j++) {

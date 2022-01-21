@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeContactGroupListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private Integer total;
 
-	private String requestId;
+	private Boolean success;
 
 	private List<ContactGroup> contactGroupList;
 
 	private List<String> contactGroups;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -63,6 +55,14 @@ public class DescribeContactGroupListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotal() {
 		return this.total;
 	}
@@ -71,12 +71,12 @@ public class DescribeContactGroupListResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ContactGroup> getContactGroupList() {
@@ -97,27 +97,19 @@ public class DescribeContactGroupListResponse extends AcsResponse {
 
 	public static class ContactGroup {
 
-		private String name;
-
 		private String describe;
-
-		private Long createTime;
 
 		private Long updateTime;
 
+		private Long createTime;
+
 		private Boolean enabledWeeklyReport;
+
+		private String name;
 
 		private Boolean enableSubscribed;
 
 		private List<String> contacts;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getDescribe() {
 			return this.describe;
@@ -125,14 +117,6 @@ public class DescribeContactGroupListResponse extends AcsResponse {
 
 		public void setDescribe(String describe) {
 			this.describe = describe;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 
 		public Long getUpdateTime() {
@@ -143,12 +127,28 @@ public class DescribeContactGroupListResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
 		public Boolean getEnabledWeeklyReport() {
 			return this.enabledWeeklyReport;
 		}
 
 		public void setEnabledWeeklyReport(Boolean enabledWeeklyReport) {
 			this.enabledWeeklyReport = enabledWeeklyReport;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Boolean getEnableSubscribed() {
