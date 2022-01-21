@@ -1,3 +1,6 @@
+2022-01-21 Version: 7.0.35
+- Add Event Rule sql filter.
+
 2022-01-21 Version: 7.0.33
 - Add Event Rule sql filter.
 
