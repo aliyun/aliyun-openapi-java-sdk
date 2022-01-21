@@ -1,3 +1,7 @@
+2022-01-21 Version: 1.28.0
+- Supported RestartDataCorrectSQLJob,PauseDataCorrectSQLJob API.
+- Supported ListDataCorrectPreCheckSQL to return tableNames information.
+
 2022-01-07 Version: 1.27.0
 - Supported GetSparkJobDetail,GetSparkJobExecutorLogs,KillSparkJob,GetSparkJobDriverLog,GetSparkJobLog,SubmitSparkJob API.
 
