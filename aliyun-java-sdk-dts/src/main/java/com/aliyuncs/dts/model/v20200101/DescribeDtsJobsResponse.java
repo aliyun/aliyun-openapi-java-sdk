@@ -45,8 +45,6 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 	private String dynamicCode;
 
-	private String jobType;
-
 	private List<DtsJobStatus> dtsJobList;
 
 	private List<DtsJobStatus> etlDemoList;
@@ -131,14 +129,6 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
-	public String getJobType() {
-		return this.jobType;
-	}
-
-	public void setJobType(String jobType) {
-		this.jobType = jobType;
-	}
-
 	public List<DtsJobStatus> getDtsJobList() {
 		return this.dtsJobList;
 	}
@@ -196,6 +186,8 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 		private String dtsJobDirection;
 
 		private String checkpoint;
+
+		private String jobType;
 
 		private List<DtsTag> tagList;
 
@@ -379,6 +371,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 		public void setCheckpoint(String checkpoint) {
 			this.checkpoint = checkpoint;
+		}
+
+		public String getJobType() {
+			return this.jobType;
+		}
+
+		public void setJobType(String jobType) {
+			this.jobType = jobType;
 		}
 
 		public List<DtsTag> getTagList() {

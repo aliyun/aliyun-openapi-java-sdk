@@ -195,7 +195,7 @@ public class ConfigureDtsJobRequest extends RpcAcsRequest<ConfigureDtsJobRespons
 	public void setDbList(String dbList) {
 		this.dbList = dbList;
 		if(dbList != null){
-			putQueryParameter("DbList", dbList);
+			putBodyParameter("DbList", dbList);
 		}
 	}
 
@@ -426,7 +426,7 @@ public class ConfigureDtsJobRequest extends RpcAcsRequest<ConfigureDtsJobRespons
 	public void setReserve(String reserve) {
 		this.reserve = reserve;
 		if(reserve != null){
-			putQueryParameter("Reserve", reserve);
+			putBodyParameter("Reserve", reserve);
 		}
 	}
 

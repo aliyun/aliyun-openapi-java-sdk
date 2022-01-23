@@ -58,7 +58,6 @@ public class DescribeDtsJobsResponseUnmarshaller {
 		describeDtsJobsResponse.setDynamicMessage(_ctx.stringValue("DescribeDtsJobsResponse.DynamicMessage"));
 		describeDtsJobsResponse.setPageNumber(_ctx.integerValue("DescribeDtsJobsResponse.PageNumber"));
 		describeDtsJobsResponse.setDynamicCode(_ctx.stringValue("DescribeDtsJobsResponse.DynamicCode"));
-		describeDtsJobsResponse.setJobType(_ctx.stringValue("DescribeDtsJobsResponse.JobType"));
 
 		List<DtsJobStatus> dtsJobList = new ArrayList<DtsJobStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDtsJobsResponse.DtsJobList.Length"); i++) {
@@ -83,6 +82,7 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			dtsJobStatus.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsInstanceID"));
 			dtsJobStatus.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobDirection"));
 			dtsJobStatus.setCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Checkpoint"));
+			dtsJobStatus.setJobType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].JobType"));
 
 			DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
 			dataInitializationStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataInitializationStatus.Status"));
@@ -309,6 +309,7 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			dtsJobStatus1.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DtsInstanceID"));
 			dtsJobStatus1.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DtsJobDirection"));
 			dtsJobStatus1.setCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].Checkpoint"));
+			dtsJobStatus1.setJobType(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].JobType"));
 
 			com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DataInitializationStatus dataInitializationStatus2 = new com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.DataInitializationStatus();
 			dataInitializationStatus2.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.EtlDemoList["+ i +"].DataInitializationStatus.Status"));
