@@ -1,3 +1,6 @@
+2022-01-25 Version: 1.8.4
+- Add APIs, include, ListSharedReports, ListFavoriteReports, ListRecentViewReports, CreateTicket, QueryTicketInfo, UpdateTicketNum, DelayTicketExpireTime, DelayTicketExpireTime.
+
 2022-01-07 Version: 1.8.3
 - Add or modify APIs, include, QueryEmbeddedStaus, QueryWorks, QueryWorksByWorkspace.
 
