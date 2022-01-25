@@ -1,3 +1,6 @@
+2022-01-25 Version: 3.0.2
+- Create Lindorm Open api.
+
 2021-12-30 Version: 3.0.1
 - Create Lindorm Open api.
 

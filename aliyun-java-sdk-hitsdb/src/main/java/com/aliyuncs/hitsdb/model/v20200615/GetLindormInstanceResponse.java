@@ -85,6 +85,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableSSL;
 
+	private Boolean enableCdc;
+
 	private List<Engine> engineList;
 
 	public String getVpcId() {
@@ -325,6 +327,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setEnableSSL(Boolean enableSSL) {
 		this.enableSSL = enableSSL;
+	}
+
+	public Boolean getEnableCdc() {
+		return this.enableCdc;
+	}
+
+	public void setEnableCdc(Boolean enableCdc) {
+		this.enableCdc = enableCdc;
 	}
 
 	public List<Engine> getEngineList() {
