@@ -97,8 +97,28 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".FixedResponseConfig.Content" , ruleActions.get(depth1).getFixedResponseConfig().getContent());
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".FixedResponseConfig.ContentType" , ruleActions.get(depth1).getFixedResponseConfig().getContentType());
 						}
+						if (ruleActions.get(depth1).getTrafficMirrorConfig() != null) {
+							
+								if (ruleActions.get(depth1).getTrafficMirrorConfig().getMirrorGroupConfig() != null) {
+									
+										if (ruleActions.get(depth1).getTrafficMirrorConfig().getMirrorGroupConfig().getServerGroupTuples() != null) {
+											for (int depth2 = 0; depth2 < ruleActions.get(depth1).getTrafficMirrorConfig().getMirrorGroupConfig().getServerGroupTuples().size(); depth2++) {
+												if (ruleActions.get(depth1).getTrafficMirrorConfig().getMirrorGroupConfig().getServerGroupTuples().get(depth2) != null) {
+													
+														putQueryParameter("RuleActions." + (depth1 + 1) + ".TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuples." + (depth2 + 1) + ".ServerGroupId" , ruleActions.get(depth1).getTrafficMirrorConfig().getMirrorGroupConfig().getServerGroupTuples().get(depth2).getServerGroupId());
+												}
+											}
+										}
+								}
+								putQueryParameter("RuleActions." + (depth1 + 1) + ".TrafficMirrorConfig.TargetType" , ruleActions.get(depth1).getTrafficMirrorConfig().getTargetType());
+						}
 						if (ruleActions.get(depth1).getForwardGroupConfig() != null) {
 							
+								if (ruleActions.get(depth1).getForwardGroupConfig().getServerGroupStickySession() != null) {
+									
+										putQueryParameter("RuleActions." + (depth1 + 1) + ".ForwardGroupConfig.ServerGroupStickySession.Enabled" , ruleActions.get(depth1).getForwardGroupConfig().getServerGroupStickySession().getEnabled());
+										putQueryParameter("RuleActions." + (depth1 + 1) + ".ForwardGroupConfig.ServerGroupStickySession.Timeout" , ruleActions.get(depth1).getForwardGroupConfig().getServerGroupStickySession().getTimeout());
+								}
 								if (ruleActions.get(depth1).getForwardGroupConfig().getServerGroupTuples() != null) {
 									for (int depth2 = 0; depth2 < ruleActions.get(depth1).getForwardGroupConfig().getServerGroupTuples().size(); depth2++) {
 										if (ruleActions.get(depth1).getForwardGroupConfig().getServerGroupTuples().get(depth2) != null) {
@@ -113,6 +133,10 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".InsertHeaderConfig.ValueType" , ruleActions.get(depth1).getInsertHeaderConfig().getValueType());
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".InsertHeaderConfig.Value" , ruleActions.get(depth1).getInsertHeaderConfig().getValue());
 								putQueryParameter("RuleActions." + (depth1 + 1) + ".InsertHeaderConfig.Key" , ruleActions.get(depth1).getInsertHeaderConfig().getKey());
+						}
+						if (ruleActions.get(depth1).getTrafficLimitConfig() != null) {
+							
+								putQueryParameter("RuleActions." + (depth1 + 1) + ".TrafficLimitConfig.QPS" , ruleActions.get(depth1).getTrafficLimitConfig().getQPS());
 						}
 						if (ruleActions.get(depth1).getRedirectConfig() != null) {
 							
@@ -151,6 +175,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 								if (ruleConditions.get(depth1).getMethodConfig().getValues() != null) {
 									for (int depth2 = 0; depth2 < ruleConditions.get(depth1).getMethodConfig().getValues().size(); depth2++) {
 										putQueryParameter("RuleConditions." + (depth1 + 1) + ".MethodConfig.Values." + (depth2 + 1) , ruleConditions.get(depth1).getMethodConfig().getValues().get(depth2));
+									}
+								}
+						}
+						if (ruleConditions.get(depth1).getSourceIpConfig() != null) {
+							
+								if (ruleConditions.get(depth1).getSourceIpConfig().getValues() != null) {
+									for (int depth2 = 0; depth2 < ruleConditions.get(depth1).getSourceIpConfig().getValues().size(); depth2++) {
+										putQueryParameter("RuleConditions." + (depth1 + 1) + ".SourceIpConfig.Values." + (depth2 + 1) , ruleConditions.get(depth1).getSourceIpConfig().getValues().get(depth2));
 									}
 								}
 						}
@@ -235,9 +267,13 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 		private FixedResponseConfig fixedResponseConfig;
 
+		private TrafficMirrorConfig trafficMirrorConfig;
+
 		private ForwardGroupConfig forwardGroupConfig;
 
 		private InsertHeaderConfig insertHeaderConfig;
+
+		private TrafficLimitConfig trafficLimitConfig;
 
 		private RedirectConfig redirectConfig;
 
@@ -255,6 +291,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 			this.fixedResponseConfig = fixedResponseConfig;
 		}
 
+		public TrafficMirrorConfig getTrafficMirrorConfig() {
+			return this.trafficMirrorConfig;
+		}
+
+		public void setTrafficMirrorConfig(TrafficMirrorConfig trafficMirrorConfig) {
+			this.trafficMirrorConfig = trafficMirrorConfig;
+		}
+
 		public ForwardGroupConfig getForwardGroupConfig() {
 			return this.forwardGroupConfig;
 		}
@@ -269,6 +313,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 		public void setInsertHeaderConfig(InsertHeaderConfig insertHeaderConfig) {
 			this.insertHeaderConfig = insertHeaderConfig;
+		}
+
+		public TrafficLimitConfig getTrafficLimitConfig() {
+			return this.trafficLimitConfig;
+		}
+
+		public void setTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
+			this.trafficLimitConfig = trafficLimitConfig;
 		}
 
 		public RedirectConfig getRedirectConfig() {
@@ -336,9 +388,68 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 			}
 		}
 
+		public static class TrafficMirrorConfig {
+
+			private MirrorGroupConfig mirrorGroupConfig;
+
+			private String targetType;
+
+			public MirrorGroupConfig getMirrorGroupConfig() {
+				return this.mirrorGroupConfig;
+			}
+
+			public void setMirrorGroupConfig(MirrorGroupConfig mirrorGroupConfig) {
+				this.mirrorGroupConfig = mirrorGroupConfig;
+			}
+
+			public String getTargetType() {
+				return this.targetType;
+			}
+
+			public void setTargetType(String targetType) {
+				this.targetType = targetType;
+			}
+
+			public static class MirrorGroupConfig {
+
+				private List<ServerGroupTuplesItem> serverGroupTuples;
+
+				public List<ServerGroupTuplesItem> getServerGroupTuples() {
+					return this.serverGroupTuples;
+				}
+
+				public void setServerGroupTuples(List<ServerGroupTuplesItem> serverGroupTuples) {
+					this.serverGroupTuples = serverGroupTuples;
+				}
+
+				public static class ServerGroupTuplesItem {
+
+					private String serverGroupId;
+
+					public String getServerGroupId() {
+						return this.serverGroupId;
+					}
+
+					public void setServerGroupId(String serverGroupId) {
+						this.serverGroupId = serverGroupId;
+					}
+				}
+			}
+		}
+
 		public static class ForwardGroupConfig {
 
+			private ServerGroupStickySession serverGroupStickySession;
+
 			private List<ServerGroupTuplesItem> serverGroupTuples;
+
+			public ServerGroupStickySession getServerGroupStickySession() {
+				return this.serverGroupStickySession;
+			}
+
+			public void setServerGroupStickySession(ServerGroupStickySession serverGroupStickySession) {
+				this.serverGroupStickySession = serverGroupStickySession;
+			}
 
 			public List<ServerGroupTuplesItem> getServerGroupTuples() {
 				return this.serverGroupTuples;
@@ -346,6 +457,29 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 			public void setServerGroupTuples(List<ServerGroupTuplesItem> serverGroupTuples) {
 				this.serverGroupTuples = serverGroupTuples;
+			}
+
+			public static class ServerGroupStickySession {
+
+				private Boolean enabled;
+
+				private Integer timeout;
+
+				public Boolean getEnabled() {
+					return this.enabled;
+				}
+
+				public void setEnabled(Boolean enabled) {
+					this.enabled = enabled;
+				}
+
+				public Integer getTimeout() {
+					return this.timeout;
+				}
+
+				public void setTimeout(Integer timeout) {
+					this.timeout = timeout;
+				}
 			}
 
 			public static class ServerGroupTuplesItem {
@@ -392,6 +526,19 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 			public void setKey(String key) {
 				this.key = key;
+			}
+		}
+
+		public static class TrafficLimitConfig {
+
+			private Integer qPS;
+
+			public Integer getQPS() {
+				return this.qPS;
+			}
+
+			public void setQPS(Integer qPS) {
+				this.qPS = qPS;
 			}
 		}
 
@@ -496,6 +643,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 		private MethodConfig methodConfig;
 
+		private SourceIpConfig sourceIpConfig;
+
 		private HostConfig hostConfig;
 
 		private QueryStringConfig queryStringConfig;
@@ -514,6 +663,14 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 		public void setMethodConfig(MethodConfig methodConfig) {
 			this.methodConfig = methodConfig;
+		}
+
+		public SourceIpConfig getSourceIpConfig() {
+			return this.sourceIpConfig;
+		}
+
+		public void setSourceIpConfig(SourceIpConfig sourceIpConfig) {
+			this.sourceIpConfig = sourceIpConfig;
 		}
 
 		public HostConfig getHostConfig() {
@@ -565,6 +722,19 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 
 		public static class MethodConfig {
+
+			private List<String> values;
+
+			public List<String> getValues() {
+				return this.values;
+			}
+
+			public void setValues(List<String> values) {
+				this.values = values;
+			}
+		}
+
+		public static class SourceIpConfig {
 
 			private List<String> values;
 
