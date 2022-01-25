@@ -25,11 +25,11 @@ import com.aliyuncs.schedulerx2.Endpoint;
 public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListResponse> {
 	   
 
-	private Long jobId;
-
 	private String namespaceSource;
 
 	private String groupId;
+
+	private Long jobId;
 
 	private String namespace;
 	public GetJobInstanceListRequest() {
@@ -39,17 +39,6 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
-		}
 	}
 
 	public String getNamespaceSource() {
@@ -71,6 +60,17 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Long getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(Long jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId.toString());
 		}
 	}
 

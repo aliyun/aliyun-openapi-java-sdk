@@ -76,6 +76,7 @@ public class GetJobInfoResponseUnmarshaller {
 		monitorConfig.setTimeoutKillEnable(_ctx.booleanValue("GetJobInfoResponse.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.TimeoutKillEnable"));
 		monitorConfig.setTimeoutEnable(_ctx.booleanValue("GetJobInfoResponse.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.TimeoutEnable"));
 		monitorConfig.setFailEnable(_ctx.booleanValue("GetJobInfoResponse.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.FailEnable"));
+		monitorConfig.setMissWorkerEnable(_ctx.booleanValue("GetJobInfoResponse.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.MissWorkerEnable"));
 		jobMonitorInfo.setMonitorConfig(monitorConfig);
 
 		List<ContactInfoItem> contactInfo = new ArrayList<ContactInfoItem>();
@@ -83,6 +84,8 @@ public class GetJobInfoResponseUnmarshaller {
 			ContactInfoItem contactInfoItem = new ContactInfoItem();
 			contactInfoItem.setUserPhone(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.JobMonitorInfo.ContactInfo["+ i +"].UserPhone"));
 			contactInfoItem.setUserName(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.JobMonitorInfo.ContactInfo["+ i +"].UserName"));
+			contactInfoItem.setUserMail(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.JobMonitorInfo.ContactInfo["+ i +"].UserMail"));
+			contactInfoItem.setDing(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.JobMonitorInfo.ContactInfo["+ i +"].Ding"));
 
 			contactInfo.add(contactInfoItem);
 		}
