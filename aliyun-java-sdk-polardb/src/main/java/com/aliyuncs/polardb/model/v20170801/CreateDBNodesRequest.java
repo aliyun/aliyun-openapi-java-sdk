@@ -45,8 +45,10 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 	private String plannedStartTime;
 
 	private List<DBNode> dBNodes;
+
+	private String imciSwitch;
 	public CreateDBNodesRequest() {
-		super("polardb", "2017-08-01", "CreateDBNodes");
+		super("polardb", "2017-08-01", "CreateDBNodes", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -165,6 +167,17 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 				putQueryParameter("DBNode." + (depth1 + 1) + ".ZoneId" , dBNodes.get(depth1).getZoneId());
 			}
 		}	
+	}
+
+	public String getImciSwitch() {
+		return this.imciSwitch;
+	}
+
+	public void setImciSwitch(String imciSwitch) {
+		this.imciSwitch = imciSwitch;
+		if(imciSwitch != null){
+			putQueryParameter("ImciSwitch", imciSwitch);
+		}
 	}
 
 	public static class DBNode {

@@ -22,12 +22,12 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterResponse> {
+public class ModifyDBNodeHotReplicaModeRequest extends RpcAcsRequest<ModifyDBNodeHotReplicaModeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String backupRetentionPolicyOnClusterDeletion;
+	private String dBNodeId;
 
 	private String resourceOwnerAccount;
 
@@ -36,8 +36,10 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DeleteDBClusterRequest() {
-		super("polardb", "2017-08-01", "DeleteDBCluster", "polardb");
+
+	private String hotReplicaMode;
+	public ModifyDBNodeHotReplicaModeRequest() {
+		super("polardb", "2017-08-01", "ModifyDBNodeHotReplicaMode", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +58,14 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
-	public String getBackupRetentionPolicyOnClusterDeletion() {
-		return this.backupRetentionPolicyOnClusterDeletion;
+	public String getDBNodeId() {
+		return this.dBNodeId;
 	}
 
-	public void setBackupRetentionPolicyOnClusterDeletion(String backupRetentionPolicyOnClusterDeletion) {
-		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
-		if(backupRetentionPolicyOnClusterDeletion != null){
-			putQueryParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion);
+	public void setDBNodeId(String dBNodeId) {
+		this.dBNodeId = dBNodeId;
+		if(dBNodeId != null){
+			putQueryParameter("DBNodeId", dBNodeId);
 		}
 	}
 
@@ -111,9 +113,20 @@ public class DeleteDBClusterRequest extends RpcAcsRequest<DeleteDBClusterRespons
 		}
 	}
 
+	public String getHotReplicaMode() {
+		return this.hotReplicaMode;
+	}
+
+	public void setHotReplicaMode(String hotReplicaMode) {
+		this.hotReplicaMode = hotReplicaMode;
+		if(hotReplicaMode != null){
+			putQueryParameter("HotReplicaMode", hotReplicaMode);
+		}
+	}
+
 	@Override
-	public Class<DeleteDBClusterResponse> getResponseClass() {
-		return DeleteDBClusterResponse.class;
+	public Class<ModifyDBNodeHotReplicaModeResponse> getResponseClass() {
+		return ModifyDBNodeHotReplicaModeResponse.class;
 	}
 
 }

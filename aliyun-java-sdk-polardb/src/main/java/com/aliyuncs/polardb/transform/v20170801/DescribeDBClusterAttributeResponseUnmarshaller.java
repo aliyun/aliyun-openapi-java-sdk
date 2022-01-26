@@ -73,6 +73,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setMaxConnections(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MaxConnections"));
 			dBNode.setDBNodeStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeStatus"));
 			dBNode.setDBNodeId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeId"));
+			dBNode.setImciSwitch(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ImciSwitch"));
+			dBNode.setHotReplicaMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].HotReplicaMode"));
 
 			dBNodes.add(dBNode);
 		}

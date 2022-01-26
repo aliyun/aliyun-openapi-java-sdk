@@ -40,7 +40,7 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	private String resourceType;
 	public TagResourcesRequest() {
-		super("polardb", "2017-08-01", "TagResources");
+		super("polardb", "2017-08-01", "TagResources", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

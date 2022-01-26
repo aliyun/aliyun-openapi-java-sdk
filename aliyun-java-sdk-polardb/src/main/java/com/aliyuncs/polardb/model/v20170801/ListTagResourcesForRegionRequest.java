@@ -35,7 +35,7 @@ public class ListTagResourcesForRegionRequest extends RpcAcsRequest<ListTagResou
 
 	private Long ownerId;
 	public ListTagResourcesForRegionRequest() {
-		super("polardb", "2017-08-01", "ListTagResourcesForRegion");
+		super("polardb", "2017-08-01", "ListTagResourcesForRegion", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

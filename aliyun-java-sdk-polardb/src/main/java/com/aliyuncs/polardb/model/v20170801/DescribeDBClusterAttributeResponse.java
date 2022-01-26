@@ -395,6 +395,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String dBNodeId;
 
+		private String imciSwitch;
+
+		private String hotReplicaMode;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -465,6 +469,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setDBNodeId(String dBNodeId) {
 			this.dBNodeId = dBNodeId;
+		}
+
+		public String getImciSwitch() {
+			return this.imciSwitch;
+		}
+
+		public void setImciSwitch(String imciSwitch) {
+			this.imciSwitch = imciSwitch;
+		}
+
+		public String getHotReplicaMode() {
+			return this.hotReplicaMode;
+		}
+
+		public void setHotReplicaMode(String hotReplicaMode) {
+			this.hotReplicaMode = hotReplicaMode;
 		}
 	}
 
