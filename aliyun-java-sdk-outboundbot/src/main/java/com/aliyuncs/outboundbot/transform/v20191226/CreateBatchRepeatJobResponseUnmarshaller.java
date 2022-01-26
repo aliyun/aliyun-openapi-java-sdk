@@ -32,6 +32,8 @@ public class CreateBatchRepeatJobResponseUnmarshaller {
 		JobGroup jobGroup = new JobGroup();
 		jobGroup.setId(_ctx.stringValue("CreateBatchRepeatJobResponse.JobGroup.Id"));
 		jobGroup.setRingingDuration(_ctx.longValue("CreateBatchRepeatJobResponse.JobGroup.RingingDuration"));
+		jobGroup.setPriority(_ctx.stringValue("CreateBatchRepeatJobResponse.JobGroup.Priority"));
+		jobGroup.setMinConcurrency(_ctx.longValue("CreateBatchRepeatJobResponse.JobGroup.MinConcurrency"));
 		createBatchRepeatJobResponse.setJobGroup(jobGroup);
 	 
 	 	return createBatchRepeatJobResponse;

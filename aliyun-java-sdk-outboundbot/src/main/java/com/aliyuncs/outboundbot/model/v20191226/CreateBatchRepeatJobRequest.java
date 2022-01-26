@@ -32,19 +32,23 @@ public class CreateBatchRepeatJobRequest extends RpcAcsRequest<CreateBatchRepeat
 
 	private String scriptId;
 
-	private List<String> callingNumbers;
-
-	private String instanceId;
-
 	private String filterStatus;
 
 	private String strategyJson;
+
+	private Long ringingDuration;
+
+	private String priority;
+
+	private List<String> callingNumbers;
+
+	private String instanceId;
 
 	private String name;
 
 	private String sourceGroupId;
 
-	private Long ringingDuration;
+	private Long minConcurrency;
 	public CreateBatchRepeatJobRequest() {
 		super("OutboundBot", "2019-12-26", "CreateBatchRepeatJob", "outboundbot");
 		setMethod(MethodType.POST);
@@ -87,6 +91,50 @@ public class CreateBatchRepeatJobRequest extends RpcAcsRequest<CreateBatchRepeat
 		}
 	}
 
+	public String getFilterStatus() {
+		return this.filterStatus;
+	}
+
+	public void setFilterStatus(String filterStatus) {
+		this.filterStatus = filterStatus;
+		if(filterStatus != null){
+			putQueryParameter("FilterStatus", filterStatus);
+		}
+	}
+
+	public String getStrategyJson() {
+		return this.strategyJson;
+	}
+
+	public void setStrategyJson(String strategyJson) {
+		this.strategyJson = strategyJson;
+		if(strategyJson != null){
+			putQueryParameter("StrategyJson", strategyJson);
+		}
+	}
+
+	public Long getRingingDuration() {
+		return this.ringingDuration;
+	}
+
+	public void setRingingDuration(Long ringingDuration) {
+		this.ringingDuration = ringingDuration;
+		if(ringingDuration != null){
+			putQueryParameter("RingingDuration", ringingDuration.toString());
+		}
+	}
+
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
+		}
+	}
+
 	public List<String> getCallingNumbers() {
 		return this.callingNumbers;
 	}
@@ -108,28 +156,6 @@ public class CreateBatchRepeatJobRequest extends RpcAcsRequest<CreateBatchRepeat
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getFilterStatus() {
-		return this.filterStatus;
-	}
-
-	public void setFilterStatus(String filterStatus) {
-		this.filterStatus = filterStatus;
-		if(filterStatus != null){
-			putQueryParameter("FilterStatus", filterStatus);
-		}
-	}
-
-	public String getStrategyJson() {
-		return this.strategyJson;
-	}
-
-	public void setStrategyJson(String strategyJson) {
-		this.strategyJson = strategyJson;
-		if(strategyJson != null){
-			putQueryParameter("StrategyJson", strategyJson);
 		}
 	}
 
@@ -155,14 +181,14 @@ public class CreateBatchRepeatJobRequest extends RpcAcsRequest<CreateBatchRepeat
 		}
 	}
 
-	public Long getRingingDuration() {
-		return this.ringingDuration;
+	public Long getMinConcurrency() {
+		return this.minConcurrency;
 	}
 
-	public void setRingingDuration(Long ringingDuration) {
-		this.ringingDuration = ringingDuration;
-		if(ringingDuration != null){
-			putQueryParameter("RingingDuration", ringingDuration.toString());
+	public void setMinConcurrency(Long minConcurrency) {
+		this.minConcurrency = minConcurrency;
+		if(minConcurrency != null){
+			putQueryParameter("MinConcurrency", minConcurrency.toString());
 		}
 	}
 

@@ -458,6 +458,8 @@ public class DescribeJobResponse extends AcsResponse {
 
 			private String hangUpDirection;
 
+			private Long ringingDuration;
+
 			private List<ConversationDetail> conversation;
 
 			private Contact3 contact3;
@@ -580,6 +582,14 @@ public class DescribeJobResponse extends AcsResponse {
 
 			public void setHangUpDirection(String hangUpDirection) {
 				this.hangUpDirection = hangUpDirection;
+			}
+
+			public Long getRingingDuration() {
+				return this.ringingDuration;
+			}
+
+			public void setRingingDuration(Long ringingDuration) {
+				this.ringingDuration = ringingDuration;
 			}
 
 			public List<ConversationDetail> getConversation() {

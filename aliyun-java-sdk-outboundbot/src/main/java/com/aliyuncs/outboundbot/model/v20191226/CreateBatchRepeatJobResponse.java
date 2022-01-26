@@ -90,6 +90,10 @@ public class CreateBatchRepeatJobResponse extends AcsResponse {
 
 		private Long ringingDuration;
 
+		private String priority;
+
+		private Long minConcurrency;
+
 		public String getId() {
 			return this.id;
 		}
@@ -104,6 +108,22 @@ public class CreateBatchRepeatJobResponse extends AcsResponse {
 
 		public void setRingingDuration(Long ringingDuration) {
 			this.ringingDuration = ringingDuration;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
+		public Long getMinConcurrency() {
+			return this.minConcurrency;
+		}
+
+		public void setMinConcurrency(Long minConcurrency) {
+			this.minConcurrency = minConcurrency;
 		}
 	}
 

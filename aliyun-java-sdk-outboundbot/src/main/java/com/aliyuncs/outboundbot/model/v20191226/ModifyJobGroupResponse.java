@@ -111,6 +111,10 @@ public class ModifyJobGroupResponse extends AcsResponse {
 
 		private Long ringingDuration;
 
+		private String priority;
+
+		private Long minConcurrency;
+
 		private List<String> callingNumbers;
 
 		private ExportProgress exportProgress;
@@ -213,6 +217,22 @@ public class ModifyJobGroupResponse extends AcsResponse {
 
 		public void setRingingDuration(Long ringingDuration) {
 			this.ringingDuration = ringingDuration;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
+		public Long getMinConcurrency() {
+			return this.minConcurrency;
+		}
+
+		public void setMinConcurrency(Long minConcurrency) {
+			this.minConcurrency = minConcurrency;
 		}
 
 		public List<String> getCallingNumbers() {

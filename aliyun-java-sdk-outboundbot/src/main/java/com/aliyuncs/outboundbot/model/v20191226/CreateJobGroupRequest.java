@@ -28,21 +28,25 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 
 	private String recallStrategyJson;
 
-	private String jobGroupDescription;
-
 	private String jobGroupName;
 
 	private String scriptId;
-
-	private List<String> callingNumbers;
-
-	private String instanceId;
 
 	private String strategyJson;
 
 	private Long ringingDuration;
 
 	private String scenarioId;
+
+	private String priority;
+
+	private String jobGroupDescription;
+
+	private List<String> callingNumbers;
+
+	private String instanceId;
+
+	private Long minConcurrency;
 	public CreateJobGroupRequest() {
 		super("OutboundBot", "2019-12-26", "CreateJobGroup", "outboundbot");
 		setMethod(MethodType.POST);
@@ -60,17 +64,6 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 		this.recallStrategyJson = recallStrategyJson;
 		if(recallStrategyJson != null){
 			putQueryParameter("RecallStrategyJson", recallStrategyJson);
-		}
-	}
-
-	public String getJobGroupDescription() {
-		return this.jobGroupDescription;
-	}
-
-	public void setJobGroupDescription(String jobGroupDescription) {
-		this.jobGroupDescription = jobGroupDescription;
-		if(jobGroupDescription != null){
-			putQueryParameter("JobGroupDescription", jobGroupDescription);
 		}
 	}
 
@@ -93,30 +86,6 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 		this.scriptId = scriptId;
 		if(scriptId != null){
 			putQueryParameter("ScriptId", scriptId);
-		}
-	}
-
-	public List<String> getCallingNumbers() {
-		return this.callingNumbers;
-	}
-
-	public void setCallingNumbers(List<String> callingNumbers) {
-		this.callingNumbers = callingNumbers;	
-		if (callingNumbers != null) {
-			for (int i = 0; i < callingNumbers.size(); i++) {
-				putQueryParameter("CallingNumber." + (i + 1) , callingNumbers.get(i));
-			}
-		}	
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -150,6 +119,63 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 		this.scenarioId = scenarioId;
 		if(scenarioId != null){
 			putQueryParameter("ScenarioId", scenarioId);
+		}
+	}
+
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
+		}
+	}
+
+	public String getJobGroupDescription() {
+		return this.jobGroupDescription;
+	}
+
+	public void setJobGroupDescription(String jobGroupDescription) {
+		this.jobGroupDescription = jobGroupDescription;
+		if(jobGroupDescription != null){
+			putQueryParameter("JobGroupDescription", jobGroupDescription);
+		}
+	}
+
+	public List<String> getCallingNumbers() {
+		return this.callingNumbers;
+	}
+
+	public void setCallingNumbers(List<String> callingNumbers) {
+		this.callingNumbers = callingNumbers;	
+		if (callingNumbers != null) {
+			for (int i = 0; i < callingNumbers.size(); i++) {
+				putQueryParameter("CallingNumber." + (i + 1) , callingNumbers.get(i));
+			}
+		}	
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Long getMinConcurrency() {
+		return this.minConcurrency;
+	}
+
+	public void setMinConcurrency(Long minConcurrency) {
+		this.minConcurrency = minConcurrency;
+		if(minConcurrency != null){
+			putQueryParameter("MinConcurrency", minConcurrency.toString());
 		}
 	}
 
