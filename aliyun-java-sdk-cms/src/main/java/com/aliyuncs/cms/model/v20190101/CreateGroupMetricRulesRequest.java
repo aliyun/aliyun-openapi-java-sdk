@@ -67,6 +67,7 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".CompositeExpression" , groupMetricRuless.get(depth1).getCompositeExpression());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Warn.Threshold" , groupMetricRuless.get(depth1).getEscalationsWarnThreshold());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Period" , groupMetricRuless.get(depth1).getPeriod());
+				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".ContactGroups" , groupMetricRuless.get(depth1).getContactGroups());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Critical.Statistics" , groupMetricRuless.get(depth1).getEscalationsCriticalStatistics());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Info.Times" , groupMetricRuless.get(depth1).getEscalationsInfoTimes());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Critical.Times" , groupMetricRuless.get(depth1).getEscalationsCriticalTimes());
@@ -114,6 +115,8 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 		private String escalationsWarnThreshold;
 
 		private String period;
+
+		private String contactGroups;
 
 		private String escalationsCriticalStatistics;
 
@@ -257,6 +260,14 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 
 		public void setPeriod(String period) {
 			this.period = period;
+		}
+
+		public String getContactGroups() {
+			return this.contactGroups;
+		}
+
+		public void setContactGroups(String contactGroups) {
+			this.contactGroups = contactGroups;
 		}
 
 		public String getEscalationsCriticalStatistics() {
