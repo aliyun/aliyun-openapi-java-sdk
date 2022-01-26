@@ -26,8 +26,6 @@ import com.aliyuncs.slb.Endpoint;
 public class CreateTLSCipherPolicyRequest extends RpcAcsRequest<CreateTLSCipherPolicyResponse> {
 	   
 
-	private String access_key_id;
-
 	private Long resourceOwnerId;
 
 	private List<String> cipherss;
@@ -48,17 +46,6 @@ public class CreateTLSCipherPolicyRequest extends RpcAcsRequest<CreateTLSCipherP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
 	}
 
 	public Long getResourceOwnerId() {
