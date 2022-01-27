@@ -15,31 +15,31 @@
 package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.CreateDiagnosticReportResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.GetAsyncErrorRequestListByCodeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDiagnosticReportResponse extends AcsResponse {
+public class GetAsyncErrorRequestListByCodeResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
 	private String data;
 
-	private String code;
+	private String requestId;
 
 	private String success;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -58,12 +58,12 @@ public class CreateDiagnosticReportResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSuccess() {
@@ -75,7 +75,12 @@ public class CreateDiagnosticReportResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateDiagnosticReportResponse getInstance(UnmarshallerContext context) {
-		return	CreateDiagnosticReportResponseUnmarshaller.unmarshall(this, context);
+	public GetAsyncErrorRequestListByCodeResponse getInstance(UnmarshallerContext context) {
+		return	GetAsyncErrorRequestListByCodeResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

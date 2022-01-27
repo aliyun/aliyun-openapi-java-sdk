@@ -29,6 +29,10 @@ public class GetResourceOptimizeHistoryListRequest extends RpcAcsRequest<GetReso
 
 	private String signature;
 
+	private String endTime;
+
+	private String startTime;
+
 	private String userId;
 
 	private String uid;
@@ -68,6 +72,28 @@ public class GetResourceOptimizeHistoryListRequest extends RpcAcsRequest<GetReso
 		this.signature = signature;
 		if(signature != null){
 			putQueryParameter("Signature", signature);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

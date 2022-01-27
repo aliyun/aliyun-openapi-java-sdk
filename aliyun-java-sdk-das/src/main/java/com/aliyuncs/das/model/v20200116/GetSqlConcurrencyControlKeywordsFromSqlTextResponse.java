@@ -15,24 +15,32 @@
 package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.GetEventOverviewResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.GetSqlConcurrencyControlKeywordsFromSqlTextResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetEventOverviewResponse extends AcsResponse {
-
-	private String message;
-
-	private String requestId;
-
-	private String data;
+public class GetSqlConcurrencyControlKeywordsFromSqlTextResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
+	private String data;
+
+	private String requestId;
+
 	private String success;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getMessage() {
 		return this.message;
@@ -40,14 +48,6 @@ public class GetEventOverviewResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getData() {
@@ -58,12 +58,12 @@ public class GetEventOverviewResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSuccess() {
@@ -75,7 +75,7 @@ public class GetEventOverviewResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetEventOverviewResponse getInstance(UnmarshallerContext context) {
-		return	GetEventOverviewResponseUnmarshaller.unmarshall(this, context);
+	public GetSqlConcurrencyControlKeywordsFromSqlTextResponse getInstance(UnmarshallerContext context) {
+		return	GetSqlConcurrencyControlKeywordsFromSqlTextResponseUnmarshaller.unmarshall(this, context);
 	}
 }

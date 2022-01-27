@@ -22,12 +22,16 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class RunCloudBenchTaskRequest extends RpcAcsRequest<RunCloudBenchTaskResponse> {
+public class GetRequestDiagnosisResultRequest extends RpcAcsRequest<GetRequestDiagnosisResultResponse> {
 	   
 
-	private String taskId;
-	public RunCloudBenchTaskRequest() {
-		super("DAS", "2020-01-16", "RunCloudBenchTask", "das");
+	private String messageId;
+
+	private String instanceId;
+
+	private String nodeId;
+	public GetRequestDiagnosisResultRequest() {
+		super("DAS", "2020-01-16", "GetRequestDiagnosisResult", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class RunCloudBenchTaskRequest extends RpcAcsRequest<RunCloudBenchTaskRes
 		} catch (Exception e) {}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getMessageId() {
+		return this.messageId;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+		if(messageId != null){
+			putQueryParameter("MessageId", messageId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
 	@Override
-	public Class<RunCloudBenchTaskResponse> getResponseClass() {
-		return RunCloudBenchTaskResponse.class;
+	public Class<GetRequestDiagnosisResultResponse> getResponseClass() {
+		return GetRequestDiagnosisResultResponse.class;
 	}
 
 }

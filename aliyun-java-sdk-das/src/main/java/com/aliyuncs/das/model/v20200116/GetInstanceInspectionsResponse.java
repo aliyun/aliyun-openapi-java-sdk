@@ -15,6 +15,7 @@
 package com.aliyuncs.das.model.v20200116;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.das.transform.v20200116.GetInstanceInspectionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -123,9 +124,9 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 
 			private Long startTime;
 
-			private String data;
+			private Map<Object,Object> data;
 
-			private String scoreMap;
+			private Map<Object,Object> scoreMap;
 
 			private Long gmtCreate;
 
@@ -149,19 +150,19 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getData() {
+			public Map<Object,Object> getData() {
 				return this.data;
 			}
 
-			public void setData(String data) {
+			public void setData(Map<Object,Object> data) {
 				this.data = data;
 			}
 
-			public String getScoreMap() {
+			public Map<Object,Object> getScoreMap() {
 				return this.scoreMap;
 			}
 
-			public void setScoreMap(String scoreMap) {
+			public void setScoreMap(Map<Object,Object> scoreMap) {
 				this.scoreMap = scoreMap;
 			}
 

@@ -22,12 +22,12 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class RunCloudBenchTaskRequest extends RpcAcsRequest<RunCloudBenchTaskResponse> {
+public class DeleteCloudBenchTaskRequest extends RpcAcsRequest<DeleteCloudBenchTaskResponse> {
 	   
 
 	private String taskId;
-	public RunCloudBenchTaskRequest() {
-		super("DAS", "2020-01-16", "RunCloudBenchTask", "das");
+	public DeleteCloudBenchTaskRequest() {
+		super("DAS", "2020-01-16", "DeleteCloudBenchTask", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class RunCloudBenchTaskRequest extends RpcAcsRequest<RunCloudBenchTaskRes
 	}
 
 	@Override
-	public Class<RunCloudBenchTaskResponse> getResponseClass() {
-		return RunCloudBenchTaskResponse.class;
+	public Class<DeleteCloudBenchTaskResponse> getResponseClass() {
+		return DeleteCloudBenchTaskResponse.class;
 	}
 
 }

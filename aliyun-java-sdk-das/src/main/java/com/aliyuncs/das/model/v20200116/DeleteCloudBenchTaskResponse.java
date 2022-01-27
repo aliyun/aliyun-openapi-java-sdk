@@ -15,14 +15,14 @@
 package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.CreateDiagnosticReportResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.DeleteCloudBenchTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDiagnosticReportResponse extends AcsResponse {
+public class DeleteCloudBenchTaskResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -75,7 +75,7 @@ public class CreateDiagnosticReportResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateDiagnosticReportResponse getInstance(UnmarshallerContext context) {
-		return	CreateDiagnosticReportResponseUnmarshaller.unmarshall(this, context);
+	public DeleteCloudBenchTaskResponse getInstance(UnmarshallerContext context) {
+		return	DeleteCloudBenchTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

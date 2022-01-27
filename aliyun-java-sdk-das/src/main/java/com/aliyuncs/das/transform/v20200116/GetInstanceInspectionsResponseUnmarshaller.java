@@ -21,6 +21,7 @@ import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse;
 import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse.Data;
 import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse.Data.BaseInspection;
 import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse.Data.BaseInspection.Instance;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,8 +44,8 @@ public class GetInstanceInspectionsResponseUnmarshaller {
 			BaseInspection baseInspection = new BaseInspection();
 			baseInspection.setEndTime(_ctx.longValue("GetInstanceInspectionsResponse.Data.List["+ i +"].EndTime"));
 			baseInspection.setStartTime(_ctx.longValue("GetInstanceInspectionsResponse.Data.List["+ i +"].StartTime"));
-			baseInspection.setData(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Data"));
-			baseInspection.setScoreMap(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].ScoreMap"));
+			baseInspection.setData(_ctx.mapValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Data"));
+			baseInspection.setScoreMap(_ctx.mapValue("GetInstanceInspectionsResponse.Data.List["+ i +"].ScoreMap"));
 			baseInspection.setGmtCreate(_ctx.longValue("GetInstanceInspectionsResponse.Data.List["+ i +"].GmtCreate"));
 			baseInspection.setScore(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Score"));
 

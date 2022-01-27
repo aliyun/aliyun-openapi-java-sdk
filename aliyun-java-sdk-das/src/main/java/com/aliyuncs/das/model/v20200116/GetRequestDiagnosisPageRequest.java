@@ -22,12 +22,8 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAutonomousNotifyEventsRequest extends RpcAcsRequest<GetAutonomousNotifyEventsResponse> {
+public class GetRequestDiagnosisPageRequest extends RpcAcsRequest<GetRequestDiagnosisPageResponse> {
 	   
-
-	private String __context;
-
-	private String level;
 
 	private String endTime;
 
@@ -35,44 +31,18 @@ public class GetAutonomousNotifyEventsRequest extends RpcAcsRequest<GetAutonomou
 
 	private String instanceId;
 
-	private String eventContext;
-
-	private String minLevel;
-
-	private String pageOffset;
+	private String pageNo;
 
 	private String pageSize;
 
 	private String nodeId;
-	public GetAutonomousNotifyEventsRequest() {
-		super("DAS", "2020-01-16", "GetAutonomousNotifyEvents", "das");
+	public GetRequestDiagnosisPageRequest() {
+		super("DAS", "2020-01-16", "GetRequestDiagnosisPage", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String get__Context() {
-		return this.__context;
-	}
-
-	public void set__Context(String __context) {
-		this.__context = __context;
-		if(__context != null){
-			putQueryParameter("__context", __context);
-		}
-	}
-
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
-		}
 	}
 
 	public String getEndTime() {
@@ -108,36 +78,14 @@ public class GetAutonomousNotifyEventsRequest extends RpcAcsRequest<GetAutonomou
 		}
 	}
 
-	public String getEventContext() {
-		return this.eventContext;
+	public String getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setEventContext(String eventContext) {
-		this.eventContext = eventContext;
-		if(eventContext != null){
-			putQueryParameter("EventContext", eventContext);
-		}
-	}
-
-	public String getMinLevel() {
-		return this.minLevel;
-	}
-
-	public void setMinLevel(String minLevel) {
-		this.minLevel = minLevel;
-		if(minLevel != null){
-			putQueryParameter("MinLevel", minLevel);
-		}
-	}
-
-	public String getPageOffset() {
-		return this.pageOffset;
-	}
-
-	public void setPageOffset(String pageOffset) {
-		this.pageOffset = pageOffset;
-		if(pageOffset != null){
-			putQueryParameter("PageOffset", pageOffset);
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo);
 		}
 	}
 
@@ -164,8 +112,8 @@ public class GetAutonomousNotifyEventsRequest extends RpcAcsRequest<GetAutonomou
 	}
 
 	@Override
-	public Class<GetAutonomousNotifyEventsResponse> getResponseClass() {
-		return GetAutonomousNotifyEventsResponse.class;
+	public Class<GetRequestDiagnosisPageResponse> getResponseClass() {
+		return GetRequestDiagnosisPageResponse.class;
 	}
 
 }

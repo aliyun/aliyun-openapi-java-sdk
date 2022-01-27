@@ -22,16 +22,18 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAutonomousNotifyEventDetailRequest extends RpcAcsRequest<GetAutonomousNotifyEventDetailResponse> {
+public class CreateRequestDiagnosisRequest extends RpcAcsRequest<CreateRequestDiagnosisResponse> {
 	   
 
-	private String __context;
+	private String sql;
 
-	private String spanId;
+	private String database;
 
 	private String instanceId;
-	public GetAutonomousNotifyEventDetailRequest() {
-		super("DAS", "2020-01-16", "GetAutonomousNotifyEventDetail", "das");
+
+	private String nodeId;
+	public CreateRequestDiagnosisRequest() {
+		super("DAS", "2020-01-16", "CreateRequestDiagnosis", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +41,25 @@ public class GetAutonomousNotifyEventDetailRequest extends RpcAcsRequest<GetAuto
 		} catch (Exception e) {}
 	}
 
-	public String get__Context() {
-		return this.__context;
+	public String getSql() {
+		return this.sql;
 	}
 
-	public void set__Context(String __context) {
-		this.__context = __context;
-		if(__context != null){
-			putQueryParameter("__context", __context);
+	public void setSql(String sql) {
+		this.sql = sql;
+		if(sql != null){
+			putQueryParameter("Sql", sql);
 		}
 	}
 
-	public String getSpanId() {
-		return this.spanId;
+	public String getDatabase() {
+		return this.database;
 	}
 
-	public void setSpanId(String spanId) {
-		this.spanId = spanId;
-		if(spanId != null){
-			putQueryParameter("SpanId", spanId);
+	public void setDatabase(String database) {
+		this.database = database;
+		if(database != null){
+			putQueryParameter("Database", database);
 		}
 	}
 
@@ -72,9 +74,20 @@ public class GetAutonomousNotifyEventDetailRequest extends RpcAcsRequest<GetAuto
 		}
 	}
 
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
+		}
+	}
+
 	@Override
-	public Class<GetAutonomousNotifyEventDetailResponse> getResponseClass() {
-		return GetAutonomousNotifyEventDetailResponse.class;
+	public Class<CreateRequestDiagnosisResponse> getResponseClass() {
+		return CreateRequestDiagnosisResponse.class;
 	}
 
 }

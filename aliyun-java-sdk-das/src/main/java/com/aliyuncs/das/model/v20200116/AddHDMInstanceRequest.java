@@ -25,23 +25,11 @@ import com.aliyuncs.das.Endpoint;
 public class AddHDMInstanceRequest extends RpcAcsRequest<AddHDMInstanceResponse> {
 	   
 
-	private String skipAuth;
-
-	private String signature;
-
 	private String networkType;
-
-	private String userId;
-
-	private String uid;
 
 	private String password;
 
-	private String accessKey;
-
 	private String engine;
-
-	private String timestamp;
 
 	private String __context;
 
@@ -71,28 +59,6 @@ public class AddHDMInstanceRequest extends RpcAcsRequest<AddHDMInstanceResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getSkipAuth() {
-		return this.skipAuth;
-	}
-
-	public void setSkipAuth(String skipAuth) {
-		this.skipAuth = skipAuth;
-		if(skipAuth != null){
-			putQueryParameter("skipAuth", skipAuth);
-		}
-	}
-
-	public String getSignature() {
-		return this.signature;
-	}
-
-	public void setSignature(String signature) {
-		this.signature = signature;
-		if(signature != null){
-			putQueryParameter("signature", signature);
-		}
-	}
-
 	public String getNetworkType() {
 		return this.networkType;
 	}
@@ -101,28 +67,6 @@ public class AddHDMInstanceRequest extends RpcAcsRequest<AddHDMInstanceResponse>
 		this.networkType = networkType;
 		if(networkType != null){
 			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getUid() {
-		return this.uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid);
 		}
 	}
 
@@ -137,17 +81,6 @@ public class AddHDMInstanceRequest extends RpcAcsRequest<AddHDMInstanceResponse>
 		}
 	}
 
-	public String getAccessKey() {
-		return this.accessKey;
-	}
-
-	public void setAccessKey(String accessKey) {
-		this.accessKey = accessKey;
-		if(accessKey != null){
-			putQueryParameter("accessKey", accessKey);
-		}
-	}
-
 	public String getEngine() {
 		return this.engine;
 	}
@@ -156,17 +89,6 @@ public class AddHDMInstanceRequest extends RpcAcsRequest<AddHDMInstanceResponse>
 		this.engine = engine;
 		if(engine != null){
 			putQueryParameter("Engine", engine);
-		}
-	}
-
-	public String getTimestamp() {
-		return this.timestamp;
-	}
-
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-		if(timestamp != null){
-			putQueryParameter("timestamp", timestamp);
 		}
 	}
 
