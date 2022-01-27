@@ -67,20 +67,20 @@ public class GetServiceListPageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer size;
+		private Integer totalPages;
 
 		private Integer totalElements;
 
-		private Integer totalPages;
+		private Integer size;
 
 		private List<MseServiceResponse> content;
 
-		public Integer getSize() {
-			return this.size;
+		public Integer getTotalPages() {
+			return this.totalPages;
 		}
 
-		public void setSize(Integer size) {
-			this.size = size;
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
 		}
 
 		public Integer getTotalElements() {
@@ -91,12 +91,12 @@ public class GetServiceListPageResponse extends AcsResponse {
 			this.totalElements = totalElements;
 		}
 
-		public Integer getTotalPages() {
-			return this.totalPages;
+		public Integer getSize() {
+			return this.size;
 		}
 
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
 		public List<MseServiceResponse> getContent() {
@@ -109,61 +109,21 @@ public class GetServiceListPageResponse extends AcsResponse {
 
 		public static class MseServiceResponse {
 
-			private String serviceId;
-
-			private String serviceName;
-
-			private String version;
-
-			private String group;
-
-			private String edasAppId;
-
 			private String edasAppName;
 
 			private Integer instanceNum;
 
+			private String version;
+
+			private String serviceId;
+
+			private String edasAppId;
+
+			private String serviceName;
+
 			private String registerType;
 
-			public String getServiceId() {
-				return this.serviceId;
-			}
-
-			public void setServiceId(String serviceId) {
-				this.serviceId = serviceId;
-			}
-
-			public String getServiceName() {
-				return this.serviceName;
-			}
-
-			public void setServiceName(String serviceName) {
-				this.serviceName = serviceName;
-			}
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
-			}
-
-			public String getGroup() {
-				return this.group;
-			}
-
-			public void setGroup(String group) {
-				this.group = group;
-			}
-
-			public String getEdasAppId() {
-				return this.edasAppId;
-			}
-
-			public void setEdasAppId(String edasAppId) {
-				this.edasAppId = edasAppId;
-			}
+			private String group;
 
 			public String getEdasAppName() {
 				return this.edasAppName;
@@ -181,12 +141,52 @@ public class GetServiceListPageResponse extends AcsResponse {
 				this.instanceNum = instanceNum;
 			}
 
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getServiceId() {
+				return this.serviceId;
+			}
+
+			public void setServiceId(String serviceId) {
+				this.serviceId = serviceId;
+			}
+
+			public String getEdasAppId() {
+				return this.edasAppId;
+			}
+
+			public void setEdasAppId(String edasAppId) {
+				this.edasAppId = edasAppId;
+			}
+
+			public String getServiceName() {
+				return this.serviceName;
+			}
+
+			public void setServiceName(String serviceName) {
+				this.serviceName = serviceName;
+			}
+
 			public String getRegisterType() {
 				return this.registerType;
 			}
 
 			public void setRegisterType(String registerType) {
 				this.registerType = registerType;
+			}
+
+			public String getGroup() {
+				return this.group;
+			}
+
+			public void setGroup(String group) {
+				this.group = group;
 			}
 		}
 	}

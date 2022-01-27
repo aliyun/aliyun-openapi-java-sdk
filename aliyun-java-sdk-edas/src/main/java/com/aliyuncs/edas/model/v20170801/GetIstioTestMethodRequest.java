@@ -41,7 +41,7 @@ public class GetIstioTestMethodRequest extends RoaAcsRequest<GetIstioTestMethodR
 
 	private String methodController;
 	public GetIstioTestMethodRequest() {
-		super("Edas", "2017-08-01", "GetIstioTestMethod", "edas");
+		super("Edas", "2017-08-01", "GetIstioTestMethod", "Edas");
 		setUriPattern("/pop/sp/api/mse/test/istio/method");
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class DescribeLocalitySettingRequest extends RoaAcsRequest<DescribeLocali
 
 	private String region;
 	public DescribeLocalitySettingRequest() {
-		super("Edas", "2017-08-01", "DescribeLocalitySetting", "edas");
+		super("Edas", "2017-08-01", "DescribeLocalitySetting", "Edas");
 		setUriPattern("/pop/sp/applications/locality/setting");
 		setMethod(MethodType.GET);
 		try {

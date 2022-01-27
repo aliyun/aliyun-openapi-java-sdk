@@ -31,7 +31,7 @@ public class DeleteK8sConfigMapRequest extends RoaAcsRequest<DeleteK8sConfigMapR
 
 	private String clusterId;
 	public DeleteK8sConfigMapRequest() {
-		super("Edas", "2017-08-01", "DeleteK8sConfigMap", "edas");
+		super("Edas", "2017-08-01", "DeleteK8sConfigMap", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_config_map");
 		setMethod(MethodType.DELETE);
 		try {

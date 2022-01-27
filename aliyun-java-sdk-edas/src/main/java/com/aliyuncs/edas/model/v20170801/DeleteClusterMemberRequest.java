@@ -29,7 +29,7 @@ public class DeleteClusterMemberRequest extends RoaAcsRequest<DeleteClusterMembe
 
 	private String clusterId;
 	public DeleteClusterMemberRequest() {
-		super("Edas", "2017-08-01", "DeleteClusterMember", "edas");
+		super("Edas", "2017-08-01", "DeleteClusterMember", "Edas");
 		setUriPattern("/pop/v5/resource/cluster_member");
 		setMethod(MethodType.DELETE);
 		try {

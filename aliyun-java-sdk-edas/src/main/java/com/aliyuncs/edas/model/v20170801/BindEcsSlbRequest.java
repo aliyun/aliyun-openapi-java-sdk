@@ -43,7 +43,7 @@ public class BindEcsSlbRequest extends RoaAcsRequest<BindEcsSlbResponse> {
 
 	private String vServerGroupName;
 	public BindEcsSlbRequest() {
-		super("Edas", "2017-08-01", "BindEcsSlb", "edas");
+		super("Edas", "2017-08-01", "BindEcsSlb", "Edas");
 		setUriPattern("/pop/v5/app/slb/bind_slb");
 		setMethod(MethodType.POST);
 		try {

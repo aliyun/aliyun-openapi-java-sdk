@@ -29,7 +29,7 @@ public class SwitchAdvancedMonitoringRequest extends RoaAcsRequest<SwitchAdvance
 
 	private String appId;
 	public SwitchAdvancedMonitoringRequest() {
-		super("Edas", "2017-08-01", "SwitchAdvancedMonitoring", "edas");
+		super("Edas", "2017-08-01", "SwitchAdvancedMonitoring", "Edas");
 		setUriPattern("/pop/v5/monitor/advancedMonitorInfo");
 		setMethod(MethodType.POST);
 		try {

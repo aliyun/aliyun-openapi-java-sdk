@@ -39,7 +39,7 @@ public class CreateApplicationScalingRuleRequest extends RoaAcsRequest<CreateApp
 
 	private String scalingRuleType;
 	public CreateApplicationScalingRuleRequest() {
-		super("Edas", "2017-08-01", "CreateApplicationScalingRule", "edas");
+		super("Edas", "2017-08-01", "CreateApplicationScalingRule", "Edas");
 		setUriPattern("/pop/v1/eam/scale/application_scaling_rule");
 		setMethod(MethodType.POST);
 		try {

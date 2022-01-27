@@ -37,7 +37,7 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 
 	private Boolean showRelatedApps;
 	public ListK8sSecretsRequest() {
-		super("Edas", "2017-08-01", "ListK8sSecrets", "edas");
+		super("Edas", "2017-08-01", "ListK8sSecrets", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_secret");
 		setMethod(MethodType.GET);
 		try {

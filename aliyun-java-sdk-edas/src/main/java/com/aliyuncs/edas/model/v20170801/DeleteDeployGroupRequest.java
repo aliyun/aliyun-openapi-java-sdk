@@ -29,7 +29,7 @@ public class DeleteDeployGroupRequest extends RoaAcsRequest<DeleteDeployGroupRes
 
 	private String groupName;
 	public DeleteDeployGroupRequest() {
-		super("Edas", "2017-08-01", "DeleteDeployGroup", "edas");
+		super("Edas", "2017-08-01", "DeleteDeployGroup", "Edas");
 		setUriPattern("/pop/v5/deploy_group");
 		setMethod(MethodType.DELETE);
 		try {

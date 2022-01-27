@@ -35,7 +35,7 @@ public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicatio
 
 	private String historyVersion;
 	public RollbackApplicationRequest() {
-		super("Edas", "2017-08-01", "RollbackApplication", "edas");
+		super("Edas", "2017-08-01", "RollbackApplication", "Edas");
 		setUriPattern("/pop/v5/changeorder/co_rollback");
 		setMethod(MethodType.POST);
 		try {

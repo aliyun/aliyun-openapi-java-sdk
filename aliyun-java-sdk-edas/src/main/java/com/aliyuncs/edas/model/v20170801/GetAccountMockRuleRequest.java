@@ -41,7 +41,7 @@ public class GetAccountMockRuleRequest extends RoaAcsRequest<GetAccountMockRuleR
 
 	private String consumerAppName;
 	public GetAccountMockRuleRequest() {
-		super("Edas", "2017-08-01", "GetAccountMockRule", "edas");
+		super("Edas", "2017-08-01", "GetAccountMockRule", "Edas");
 		setUriPattern("/pop/sp/api/mock/getAccountMockRule");
 		setMethod(MethodType.POST);
 		try {

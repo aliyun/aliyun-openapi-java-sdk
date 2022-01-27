@@ -27,7 +27,7 @@ public class GetMockRuleByIdRequest extends RoaAcsRequest<GetMockRuleByIdRespons
 
 	private Long id;
 	public GetMockRuleByIdRequest() {
-		super("Edas", "2017-08-01", "GetMockRuleById", "edas");
+		super("Edas", "2017-08-01", "GetMockRuleById", "Edas");
 		setUriPattern("/pop/sp/api/mock/getMockRuleById");
 		setMethod(MethodType.POST);
 		try {

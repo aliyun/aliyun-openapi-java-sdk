@@ -27,7 +27,7 @@ public class GetK8sStorageInfoRequest extends RoaAcsRequest<GetK8sStorageInfoRes
 
 	private String clusterId;
 	public GetK8sStorageInfoRequest() {
-		super("Edas", "2017-08-01", "GetK8sStorageInfo", "edas");
+		super("Edas", "2017-08-01", "GetK8sStorageInfo", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_storage");
 		setMethod(MethodType.GET);
 		try {

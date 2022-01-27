@@ -27,7 +27,7 @@ public class ListDegradeControlsRequest extends RoaAcsRequest<ListDegradeControl
 
 	private String appId;
 	public ListDegradeControlsRequest() {
-		super("Edas", "2017-08-01", "ListDegradeControls", "edas");
+		super("Edas", "2017-08-01", "ListDegradeControls", "Edas");
 		setUriPattern("/pop/v5/app/degradeControls");
 		setMethod(MethodType.GET);
 		try {

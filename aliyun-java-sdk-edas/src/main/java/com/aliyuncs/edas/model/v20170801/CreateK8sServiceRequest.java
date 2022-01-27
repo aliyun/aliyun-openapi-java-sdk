@@ -33,7 +33,7 @@ public class CreateK8sServiceRequest extends RoaAcsRequest<CreateK8sServiceRespo
 
 	private String servicePorts;
 	public CreateK8sServiceRequest() {
-		super("Edas", "2017-08-01", "CreateK8sService", "edas");
+		super("Edas", "2017-08-01", "CreateK8sService", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_service");
 		setMethod(MethodType.POST);
 		try {

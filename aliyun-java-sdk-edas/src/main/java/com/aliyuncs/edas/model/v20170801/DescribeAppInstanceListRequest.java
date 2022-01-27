@@ -29,7 +29,7 @@ public class DescribeAppInstanceListRequest extends RoaAcsRequest<DescribeAppIns
 
 	private Boolean withNodeInfo;
 	public DescribeAppInstanceListRequest() {
-		super("Edas", "2017-08-01", "DescribeAppInstanceList", "edas");
+		super("Edas", "2017-08-01", "DescribeAppInstanceList", "Edas");
 		setUriPattern("/pop/v5/oam/app_instance_list");
 		setMethod(MethodType.GET);
 		try {

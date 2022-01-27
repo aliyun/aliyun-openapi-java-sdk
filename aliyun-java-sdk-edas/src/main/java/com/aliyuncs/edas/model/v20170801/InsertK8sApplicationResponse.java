@@ -66,23 +66,31 @@ public class InsertK8sApplicationResponse extends AcsResponse {
 
 	public static class ApplicationInfo {
 
+		private String changeOrderId;
+
 		private String appName;
+
+		private Boolean dockerize;
+
+		private String owner;
+
+		private String edasId;
+
+		private Integer clusterType;
 
 		private String appId;
 
 		private String userId;
 
-		private String edasId;
-
-		private String owner;
-
-		private Boolean dockerize;
-
-		private Integer clusterType;
-
 		private String regionId;
 
-		private String changeOrderId;
+		public String getChangeOrderId() {
+			return this.changeOrderId;
+		}
+
+		public void setChangeOrderId(String changeOrderId) {
+			this.changeOrderId = changeOrderId;
+		}
 
 		public String getAppName() {
 			return this.appName;
@@ -90,6 +98,38 @@ public class InsertK8sApplicationResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public Boolean getDockerize() {
+			return this.dockerize;
+		}
+
+		public void setDockerize(Boolean dockerize) {
+			this.dockerize = dockerize;
+		}
+
+		public String getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(String owner) {
+			this.owner = owner;
+		}
+
+		public String getEdasId() {
+			return this.edasId;
+		}
+
+		public void setEdasId(String edasId) {
+			this.edasId = edasId;
+		}
+
+		public Integer getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(Integer clusterType) {
+			this.clusterType = clusterType;
 		}
 
 		public String getAppId() {
@@ -108,52 +148,12 @@ public class InsertK8sApplicationResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public String getEdasId() {
-			return this.edasId;
-		}
-
-		public void setEdasId(String edasId) {
-			this.edasId = edasId;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public Boolean getDockerize() {
-			return this.dockerize;
-		}
-
-		public void setDockerize(Boolean dockerize) {
-			this.dockerize = dockerize;
-		}
-
-		public Integer getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(Integer clusterType) {
-			this.clusterType = clusterType;
-		}
-
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getChangeOrderId() {
-			return this.changeOrderId;
-		}
-
-		public void setChangeOrderId(String changeOrderId) {
-			this.changeOrderId = changeOrderId;
 		}
 	}
 

@@ -39,7 +39,7 @@ public class GetServiceListRequest extends RoaAcsRequest<GetServiceListResponse>
 
 	private String searchValue;
 	public GetServiceListRequest() {
-		super("Edas", "2017-08-01", "GetServiceList", "edas");
+		super("Edas", "2017-08-01", "GetServiceList", "Edas");
 		setUriPattern("/pop/sp/api/mseForOam/getServiceList");
 		setMethod(MethodType.POST);
 		try {

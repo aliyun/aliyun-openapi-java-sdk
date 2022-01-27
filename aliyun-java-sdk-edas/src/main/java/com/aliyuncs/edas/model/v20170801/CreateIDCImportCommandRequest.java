@@ -27,7 +27,7 @@ public class CreateIDCImportCommandRequest extends RoaAcsRequest<CreateIDCImport
 
 	private String clusterId;
 	public CreateIDCImportCommandRequest() {
-		super("Edas", "2017-08-01", "CreateIDCImportCommand", "edas");
+		super("Edas", "2017-08-01", "CreateIDCImportCommand", "Edas");
 		setUriPattern("/pop/v5/create_idc_import_command");
 		setMethod(MethodType.POST);
 		try {

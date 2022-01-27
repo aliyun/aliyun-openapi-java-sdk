@@ -33,7 +33,7 @@ public class ConvertK8sResourceRequest extends RoaAcsRequest<ConvertK8sResourceR
 
 	private String resourceType;
 	public ConvertK8sResourceRequest() {
-		super("Edas", "2017-08-01", "ConvertK8sResource", "edas");
+		super("Edas", "2017-08-01", "ConvertK8sResource", "Edas");
 		setUriPattern("/pop/v5/oam/k8s_resource_convert");
 		setMethod(MethodType.POST);
 		try {

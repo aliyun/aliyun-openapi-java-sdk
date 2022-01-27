@@ -37,7 +37,7 @@ public class ListOperationLogsRequest extends RoaAcsRequest<ListOperationLogsRes
 
 	private String userId;
 	public ListOperationLogsRequest() {
-		super("Edas", "2017-08-01", "ListOperationLogs", "edas");
+		super("Edas", "2017-08-01", "ListOperationLogs", "Edas");
 		setUriPattern("/pop/v5/operationlog/log_list");
 		setMethod(MethodType.GET);
 		try {

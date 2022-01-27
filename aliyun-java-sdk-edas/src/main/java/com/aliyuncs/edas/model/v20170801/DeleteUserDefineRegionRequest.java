@@ -29,7 +29,7 @@ public class DeleteUserDefineRegionRequest extends RoaAcsRequest<DeleteUserDefin
 
 	private Long id;
 	public DeleteUserDefineRegionRequest() {
-		super("Edas", "2017-08-01", "DeleteUserDefineRegion", "edas");
+		super("Edas", "2017-08-01", "DeleteUserDefineRegion", "Edas");
 		setUriPattern("/pop/v5/user_region_def");
 		setMethod(MethodType.DELETE);
 		try {

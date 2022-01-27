@@ -27,7 +27,7 @@ public class DescribeApplicationScalingRulesRequest extends RoaAcsRequest<Descri
 
 	private String appId;
 	public DescribeApplicationScalingRulesRequest() {
-		super("Edas", "2017-08-01", "DescribeApplicationScalingRules", "edas");
+		super("Edas", "2017-08-01", "DescribeApplicationScalingRules", "Edas");
 		setUriPattern("/pop/v1/eam/scale/application_scaling_rules");
 		setMethod(MethodType.GET);
 		try {

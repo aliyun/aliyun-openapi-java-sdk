@@ -45,7 +45,7 @@ public class UpdateFlowControlRequest extends RoaAcsRequest<UpdateFlowControlRes
 
 	private String methodName;
 	public UpdateFlowControlRequest() {
-		super("Edas", "2017-08-01", "UpdateFlowControl", "edas");
+		super("Edas", "2017-08-01", "UpdateFlowControl", "Edas");
 		setUriPattern("/pop/v5/flowControl");
 		setMethod(MethodType.PUT);
 		try {

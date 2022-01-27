@@ -45,7 +45,7 @@ public class QueryServiceTimeConfigRequest extends RoaAcsRequest<QueryServiceTim
 
 	private Integer pageNumber;
 	public QueryServiceTimeConfigRequest() {
-		super("Edas", "2017-08-01", "QueryServiceTimeConfig", "edas");
+		super("Edas", "2017-08-01", "QueryServiceTimeConfig", "Edas");
 		setUriPattern("/pop/sp/api/timeout/page");
 		setMethod(MethodType.POST);
 		try {

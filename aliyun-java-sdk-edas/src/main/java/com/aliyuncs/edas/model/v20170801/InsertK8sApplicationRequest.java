@@ -63,6 +63,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String postStart;
 
+	private String customAffinity;
+
 	private String repoId;
 
 	private Integer internetTargetPort;
@@ -111,6 +113,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Integer limitCpu;
 
+	private String customTolerations;
+
 	private String webContainerConfig;
 
 	private Boolean isMultilingualApp;
@@ -139,7 +143,7 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String javaStartUpConfig;
 	public InsertK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertK8sApplication", "edas");
+		super("Edas", "2017-08-01", "InsertK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/create_k8s_app");
 		setMethod(MethodType.POST);
 		try {
@@ -354,6 +358,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.postStart = postStart;
 		if(postStart != null){
 			putQueryParameter("PostStart", postStart);
+		}
+	}
+
+	public String getCustomAffinity() {
+		return this.customAffinity;
+	}
+
+	public void setCustomAffinity(String customAffinity) {
+		this.customAffinity = customAffinity;
+		if(customAffinity != null){
+			putQueryParameter("CustomAffinity", customAffinity);
 		}
 	}
 
@@ -618,6 +633,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.limitCpu = limitCpu;
 		if(limitCpu != null){
 			putQueryParameter("LimitCpu", limitCpu.toString());
+		}
+	}
+
+	public String getCustomTolerations() {
+		return this.customTolerations;
+	}
+
+	public void setCustomTolerations(String customTolerations) {
+		this.customTolerations = customTolerations;
+		if(customTolerations != null){
+			putQueryParameter("CustomTolerations", customTolerations);
 		}
 	}
 

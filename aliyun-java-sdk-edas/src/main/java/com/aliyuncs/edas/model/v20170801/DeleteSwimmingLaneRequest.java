@@ -27,7 +27,7 @@ public class DeleteSwimmingLaneRequest extends RoaAcsRequest<DeleteSwimmingLaneR
 
 	private Long laneId;
 	public DeleteSwimmingLaneRequest() {
-		super("Edas", "2017-08-01", "DeleteSwimmingLane", "edas");
+		super("Edas", "2017-08-01", "DeleteSwimmingLane", "Edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lanes");
 		setMethod(MethodType.DELETE);
 		try {

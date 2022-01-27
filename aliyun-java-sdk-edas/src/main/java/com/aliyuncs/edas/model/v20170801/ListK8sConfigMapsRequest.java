@@ -37,7 +37,7 @@ public class ListK8sConfigMapsRequest extends RoaAcsRequest<ListK8sConfigMapsRes
 
 	private Boolean showRelatedApps;
 	public ListK8sConfigMapsRequest() {
-		super("Edas", "2017-08-01", "ListK8sConfigMaps", "edas");
+		super("Edas", "2017-08-01", "ListK8sConfigMaps", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_config_map");
 		setMethod(MethodType.GET);
 		try {

@@ -39,7 +39,7 @@ public class InsertDegradeControlRequest extends RoaAcsRequest<InsertDegradeCont
 
 	private String methodName;
 	public InsertDegradeControlRequest() {
-		super("Edas", "2017-08-01", "InsertDegradeControl", "edas");
+		super("Edas", "2017-08-01", "InsertDegradeControl", "Edas");
 		setUriPattern("/pop/v5/degradeControl");
 		setMethod(MethodType.POST);
 		try {

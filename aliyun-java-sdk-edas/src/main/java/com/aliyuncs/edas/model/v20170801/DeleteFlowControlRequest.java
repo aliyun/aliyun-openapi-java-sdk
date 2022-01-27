@@ -29,7 +29,7 @@ public class DeleteFlowControlRequest extends RoaAcsRequest<DeleteFlowControlRes
 
 	private String ruleId;
 	public DeleteFlowControlRequest() {
-		super("Edas", "2017-08-01", "DeleteFlowControl", "edas");
+		super("Edas", "2017-08-01", "DeleteFlowControl", "Edas");
 		setUriPattern("/pop/v5/flowControl");
 		setMethod(MethodType.DELETE);
 		try {

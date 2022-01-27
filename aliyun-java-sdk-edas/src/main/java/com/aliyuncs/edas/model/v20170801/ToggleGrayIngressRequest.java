@@ -31,7 +31,7 @@ public class ToggleGrayIngressRequest extends RoaAcsRequest<ToggleGrayIngressRes
 
 	private String pointcutName;
 	public ToggleGrayIngressRequest() {
-		super("Edas", "2017-08-01", "ToggleGrayIngress", "edas");
+		super("Edas", "2017-08-01", "ToggleGrayIngress", "Edas");
 		setUriPattern("/pop/v5/gray/env_switch");
 		setMethod(MethodType.PUT);
 		try {

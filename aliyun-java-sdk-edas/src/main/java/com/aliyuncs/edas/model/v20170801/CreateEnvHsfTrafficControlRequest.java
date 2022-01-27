@@ -43,7 +43,7 @@ public class CreateEnvHsfTrafficControlRequest extends RoaAcsRequest<CreateEnvHs
 
 	private String methodName;
 	public CreateEnvHsfTrafficControlRequest() {
-		super("Edas", "2017-08-01", "CreateEnvHsfTrafficControl", "edas");
+		super("Edas", "2017-08-01", "CreateEnvHsfTrafficControl", "Edas");
 		setUriPattern("/pop/v5/gray/env_hsf_traffic_control");
 		setMethod(MethodType.POST);
 		try {

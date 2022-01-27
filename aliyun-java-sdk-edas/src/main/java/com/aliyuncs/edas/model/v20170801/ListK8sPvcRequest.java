@@ -29,7 +29,7 @@ public class ListK8sPvcRequest extends RoaAcsRequest<ListK8sPvcResponse> {
 
 	private String clusterId;
 	public ListK8sPvcRequest() {
-		super("Edas", "2017-08-01", "ListK8sPvc", "edas");
+		super("Edas", "2017-08-01", "ListK8sPvc", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_pvc");
 		setMethod(MethodType.GET);
 		try {

@@ -29,7 +29,7 @@ public class DisableDegradeControlRequest extends RoaAcsRequest<DisableDegradeCo
 
 	private String ruleId;
 	public DisableDegradeControlRequest() {
-		super("Edas", "2017-08-01", "DisableDegradeControl", "edas");
+		super("Edas", "2017-08-01", "DisableDegradeControl", "Edas");
 		setUriPattern("/pop/v5/degradecontrol/disable");
 		setMethod(MethodType.PUT);
 		try {

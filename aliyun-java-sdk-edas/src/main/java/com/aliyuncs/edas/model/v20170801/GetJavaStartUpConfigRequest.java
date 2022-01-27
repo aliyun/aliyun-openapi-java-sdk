@@ -27,7 +27,7 @@ public class GetJavaStartUpConfigRequest extends RoaAcsRequest<GetJavaStartUpCon
 
 	private String appId;
 	public GetJavaStartUpConfigRequest() {
-		super("Edas", "2017-08-01", "GetJavaStartUpConfig", "edas");
+		super("Edas", "2017-08-01", "GetJavaStartUpConfig", "Edas");
 		setUriPattern("/pop/v5/oam/java_start_up_config");
 		setMethod(MethodType.GET);
 		try {

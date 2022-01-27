@@ -32,21 +32,21 @@ public class GetServiceListPageResponseUnmarshaller {
 		getServiceListPageResponse.setSuccess(_ctx.booleanValue("GetServiceListPageResponse.Success"));
 
 		Data data = new Data();
-		data.setSize(_ctx.integerValue("GetServiceListPageResponse.Data.Size"));
-		data.setTotalElements(_ctx.integerValue("GetServiceListPageResponse.Data.TotalElements"));
 		data.setTotalPages(_ctx.integerValue("GetServiceListPageResponse.Data.TotalPages"));
+		data.setTotalElements(_ctx.integerValue("GetServiceListPageResponse.Data.TotalElements"));
+		data.setSize(_ctx.integerValue("GetServiceListPageResponse.Data.Size"));
 
 		List<MseServiceResponse> content = new ArrayList<MseServiceResponse>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceListPageResponse.Data.Content.Length"); i++) {
 			MseServiceResponse mseServiceResponse = new MseServiceResponse();
-			mseServiceResponse.setServiceId(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].ServiceId"));
-			mseServiceResponse.setServiceName(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].ServiceName"));
-			mseServiceResponse.setVersion(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].Version"));
-			mseServiceResponse.setGroup(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].Group"));
-			mseServiceResponse.setEdasAppId(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].EdasAppId"));
 			mseServiceResponse.setEdasAppName(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].EdasAppName"));
 			mseServiceResponse.setInstanceNum(_ctx.integerValue("GetServiceListPageResponse.Data.Content["+ i +"].InstanceNum"));
+			mseServiceResponse.setVersion(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].Version"));
+			mseServiceResponse.setServiceId(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].ServiceId"));
+			mseServiceResponse.setEdasAppId(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].EdasAppId"));
+			mseServiceResponse.setServiceName(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].ServiceName"));
 			mseServiceResponse.setRegisterType(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].RegisterType"));
+			mseServiceResponse.setGroup(_ctx.stringValue("GetServiceListPageResponse.Data.Content["+ i +"].Group"));
 
 			content.add(mseServiceResponse);
 		}
