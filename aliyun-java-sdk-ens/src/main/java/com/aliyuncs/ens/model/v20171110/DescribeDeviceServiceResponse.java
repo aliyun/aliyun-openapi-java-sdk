@@ -95,6 +95,8 @@ public class DescribeDeviceServiceResponse extends AcsResponse {
 
 		private String deviceName;
 
+		private String imageID;
+
 		public String getRegionID() {
 			return this.regionID;
 		}
@@ -165,6 +167,14 @@ public class DescribeDeviceServiceResponse extends AcsResponse {
 
 		public void setDeviceName(String deviceName) {
 			this.deviceName = deviceName;
+		}
+
+		public String getImageID() {
+			return this.imageID;
+		}
+
+		public void setImageID(String imageID) {
+			this.imageID = imageID;
 		}
 	}
 

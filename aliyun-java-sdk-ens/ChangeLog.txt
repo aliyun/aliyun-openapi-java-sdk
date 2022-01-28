@@ -1,3 +1,6 @@
+2022-01-28 Version: 3.0.0
+- Support cloud disk.
+
 2021-12-22 Version: 2.0.1
 - Support cloud disk.
 

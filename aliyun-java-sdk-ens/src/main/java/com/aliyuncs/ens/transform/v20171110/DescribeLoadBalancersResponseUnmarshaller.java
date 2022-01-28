@@ -43,6 +43,7 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 			loadBalancer.setVSwitchId(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].VSwitchId"));
 			loadBalancer.setCreateTime(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].CreateTime"));
 			loadBalancer.setAddressIPVersion(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].AddressIPVersion"));
+			loadBalancer.setPayType(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].PayType"));
 
 			loadBalancers.add(loadBalancer);
 		}

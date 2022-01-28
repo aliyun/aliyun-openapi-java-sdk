@@ -21,29 +21,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeLoadBalancerAttributeRequest extends RpcAcsRequest<DescribeLoadBalancerAttributeResponse> {
+public class DescribeElbAvailableResourceInfoRequest extends RpcAcsRequest<DescribeElbAvailableResourceInfoResponse> {
 	   
-
-	private String loadBalancerId;
-	public DescribeLoadBalancerAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeLoadBalancerAttribute", "ens");
-		setMethod(MethodType.POST);
-	}
-
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
-		}
+	public DescribeElbAvailableResourceInfoRequest() {
+		super("Ens", "2017-11-10", "DescribeElbAvailableResourceInfo", "ens");
+		setMethod(MethodType.GET);
 	}
 
 	@Override
-	public Class<DescribeLoadBalancerAttributeResponse> getResponseClass() {
-		return DescribeLoadBalancerAttributeResponse.class;
+	public Class<DescribeElbAvailableResourceInfoResponse> getResponseClass() {
+		return DescribeElbAvailableResourceInfoResponse.class;
 	}
 
 }

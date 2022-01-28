@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeLoadBalancerAttributeRequest extends RpcAcsRequest<DescribeLoadBalancerAttributeResponse> {
+public class CreateElbBuyOrderRequest extends RpcAcsRequest<CreateElbBuyOrderResponse> {
 	   
 
-	private String loadBalancerId;
-	public DescribeLoadBalancerAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeLoadBalancerAttribute", "ens");
+	private String orderDetails;
+	public CreateElbBuyOrderRequest() {
+		super("Ens", "2017-11-10", "CreateElbBuyOrder", "ens");
 		setMethod(MethodType.POST);
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public String getOrderDetails() {
+		return this.orderDetails;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
+	public void setOrderDetails(String orderDetails) {
+		this.orderDetails = orderDetails;
+		if(orderDetails != null){
+			putQueryParameter("OrderDetails", orderDetails);
 		}
 	}
 
 	@Override
-	public Class<DescribeLoadBalancerAttributeResponse> getResponseClass() {
-		return DescribeLoadBalancerAttributeResponse.class;
+	public Class<CreateElbBuyOrderResponse> getResponseClass() {
+		return CreateElbBuyOrderResponse.class;
 	}
 
 }

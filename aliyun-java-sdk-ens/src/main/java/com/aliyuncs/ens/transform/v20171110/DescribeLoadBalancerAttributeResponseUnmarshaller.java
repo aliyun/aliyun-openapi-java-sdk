@@ -40,6 +40,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setCreateTime(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.CreateTime"));
 		describeLoadBalancerAttributeResponse.setEndTime(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.EndTime"));
 		describeLoadBalancerAttributeResponse.setAddressIPVersion(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.AddressIPVersion"));
+		describeLoadBalancerAttributeResponse.setPayType(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.PayType"));
 
 		List<String> listenerPorts = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPorts.Length"); i++) {

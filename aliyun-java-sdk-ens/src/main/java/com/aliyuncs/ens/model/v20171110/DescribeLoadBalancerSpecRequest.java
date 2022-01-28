@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeLoadBalancerAttributeRequest extends RpcAcsRequest<DescribeLoadBalancerAttributeResponse> {
+public class DescribeLoadBalancerSpecRequest extends RpcAcsRequest<DescribeLoadBalancerSpecResponse> {
 	   
 
-	private String loadBalancerId;
-	public DescribeLoadBalancerAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeLoadBalancerAttribute", "ens");
-		setMethod(MethodType.POST);
+	private String loadBalancerSpec;
+	public DescribeLoadBalancerSpecRequest() {
+		super("Ens", "2017-11-10", "DescribeLoadBalancerSpec", "ens");
+		setMethod(MethodType.GET);
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public String getLoadBalancerSpec() {
+		return this.loadBalancerSpec;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
+	public void setLoadBalancerSpec(String loadBalancerSpec) {
+		this.loadBalancerSpec = loadBalancerSpec;
+		if(loadBalancerSpec != null){
+			putQueryParameter("LoadBalancerSpec", loadBalancerSpec);
 		}
 	}
 
 	@Override
-	public Class<DescribeLoadBalancerAttributeResponse> getResponseClass() {
-		return DescribeLoadBalancerAttributeResponse.class;
+	public Class<DescribeLoadBalancerSpecResponse> getResponseClass() {
+		return DescribeLoadBalancerSpecResponse.class;
 	}
 
 }

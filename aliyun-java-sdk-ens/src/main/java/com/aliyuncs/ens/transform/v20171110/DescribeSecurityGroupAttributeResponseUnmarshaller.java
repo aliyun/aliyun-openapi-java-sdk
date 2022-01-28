@@ -43,6 +43,7 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setDestCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestCidrIp"));
 			permission.setPriority(_ctx.integerValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Priority"));
 			permission.setSourcePortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePortRange"));
+			permission.setDescription(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Description"));
 
 			permissions.add(permission);
 		}
