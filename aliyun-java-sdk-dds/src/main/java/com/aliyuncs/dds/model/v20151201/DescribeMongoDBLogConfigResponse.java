@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String userProjectName;
+
+	private String requestId;
 
 	private Integer isUserProjectLogstoreExist;
 
 	private Integer isEtlMetaExist;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String serviceType;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Boolean enableAudit;
+
+	private Long ttlForTrail;
+
+	private Long usedStorageForTrail;
+
+	private Long preserveStorageForTrail;
+
+	private Long ttlForStandard;
+
+	private Long usedStorageForStandard;
+
+	private Long preserveStorageForStandard;
 
 	public String getUserProjectName() {
 		return this.userProjectName;
@@ -46,6 +54,14 @@ public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 
 	public void setUserProjectName(String userProjectName) {
 		this.userProjectName = userProjectName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getIsUserProjectLogstoreExist() {
@@ -62,6 +78,70 @@ public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 
 	public void setIsEtlMetaExist(Integer isEtlMetaExist) {
 		this.isEtlMetaExist = isEtlMetaExist;
+	}
+
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+	}
+
+	public Boolean getEnableAudit() {
+		return this.enableAudit;
+	}
+
+	public void setEnableAudit(Boolean enableAudit) {
+		this.enableAudit = enableAudit;
+	}
+
+	public Long getTtlForTrail() {
+		return this.ttlForTrail;
+	}
+
+	public void setTtlForTrail(Long ttlForTrail) {
+		this.ttlForTrail = ttlForTrail;
+	}
+
+	public Long getUsedStorageForTrail() {
+		return this.usedStorageForTrail;
+	}
+
+	public void setUsedStorageForTrail(Long usedStorageForTrail) {
+		this.usedStorageForTrail = usedStorageForTrail;
+	}
+
+	public Long getPreserveStorageForTrail() {
+		return this.preserveStorageForTrail;
+	}
+
+	public void setPreserveStorageForTrail(Long preserveStorageForTrail) {
+		this.preserveStorageForTrail = preserveStorageForTrail;
+	}
+
+	public Long getTtlForStandard() {
+		return this.ttlForStandard;
+	}
+
+	public void setTtlForStandard(Long ttlForStandard) {
+		this.ttlForStandard = ttlForStandard;
+	}
+
+	public Long getUsedStorageForStandard() {
+		return this.usedStorageForStandard;
+	}
+
+	public void setUsedStorageForStandard(Long usedStorageForStandard) {
+		this.usedStorageForStandard = usedStorageForStandard;
+	}
+
+	public Long getPreserveStorageForStandard() {
+		return this.preserveStorageForStandard;
+	}
+
+	public void setPreserveStorageForStandard(Long preserveStorageForStandard) {
+		this.preserveStorageForStandard = preserveStorageForStandard;
 	}
 
 	@Override

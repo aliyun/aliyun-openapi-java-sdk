@@ -27,9 +27,9 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<NetworkAddress> networkAddresses;
-
 	private List<CompatibleConnection> compatibleConnections;
+
+	private List<NetworkAddress> networkAddresses;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,14 +37,6 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public List<NetworkAddress> getNetworkAddresses() {
-		return this.networkAddresses;
-	}
-
-	public void setNetworkAddresses(List<NetworkAddress> networkAddresses) {
-		this.networkAddresses = networkAddresses;
 	}
 
 	public List<CompatibleConnection> getCompatibleConnections() {
@@ -55,42 +47,44 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 		this.compatibleConnections = compatibleConnections;
 	}
 
-	public static class NetworkAddress {
+	public List<NetworkAddress> getNetworkAddresses() {
+		return this.networkAddresses;
+	}
 
-		private String networkAddress;
+	public void setNetworkAddresses(List<NetworkAddress> networkAddresses) {
+		this.networkAddresses = networkAddresses;
+	}
 
-		private String iPAddress;
+	public static class CompatibleConnection {
+
+		private String vswitchId;
+
+		private String expiredTime;
 
 		private String networkType;
 
 		private String port;
 
+		private String networkAddress;
+
 		private String vPCId;
 
-		private String vswitchId;
+		private String iPAddress;
 
-		private String nodeId;
-
-		private String expiredTime;
-
-		private String nodeType;
-
-		private String role;
-
-		public String getNetworkAddress() {
-			return this.networkAddress;
+		public String getVswitchId() {
+			return this.vswitchId;
 		}
 
-		public void setNetworkAddress(String networkAddress) {
-			this.networkAddress = networkAddress;
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
 		}
 
-		public String getIPAddress() {
-			return this.iPAddress;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public String getNetworkType() {
@@ -109,6 +103,14 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 			this.port = port;
 		}
 
+		public String getNetworkAddress() {
+			return this.networkAddress;
+		}
+
+		public void setNetworkAddress(String networkAddress) {
+			this.networkAddress = networkAddress;
+		}
+
 		public String getVPCId() {
 			return this.vPCId;
 		}
@@ -117,12 +119,99 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 			this.vPCId = vPCId;
 		}
 
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
+		}
+	}
+
+	public static class NetworkAddress {
+
+		private String nodeType;
+
+		private String vswitchId;
+
+		private String expiredTime;
+
+		private String networkType;
+
+		private String role;
+
+		private String port;
+
+		private String vPCId;
+
+		private String networkAddress;
+
+		private String nodeId;
+
+		private String iPAddress;
+
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
 		public String getVswitchId() {
 			return this.vswitchId;
 		}
 
 		public void setVswitchId(String vswitchId) {
 			this.vswitchId = vswitchId;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getNetworkAddress() {
+			return this.networkAddress;
+		}
+
+		public void setNetworkAddress(String networkAddress) {
+			this.networkAddress = networkAddress;
 		}
 
 		public String getNodeId() {
@@ -133,101 +222,12 @@ public class DescribeShardingNetworkAddressResponse extends AcsResponse {
 			this.nodeId = nodeId;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
-		}
-
-		public String getRole() {
-			return this.role;
-		}
-
-		public void setRole(String role) {
-			this.role = role;
-		}
-	}
-
-	public static class CompatibleConnection {
-
-		private String networkAddress;
-
-		private String iPAddress;
-
-		private String networkType;
-
-		private String port;
-
-		private String vPCId;
-
-		private String vswitchId;
-
-		private String expiredTime;
-
-		public String getNetworkAddress() {
-			return this.networkAddress;
-		}
-
-		public void setNetworkAddress(String networkAddress) {
-			this.networkAddress = networkAddress;
-		}
-
 		public String getIPAddress() {
 			return this.iPAddress;
 		}
 
 		public void setIPAddress(String iPAddress) {
 			this.iPAddress = iPAddress;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
-		}
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getVPCId() {
-			return this.vPCId;
-		}
-
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
-		}
-
-		public String getVswitchId() {
-			return this.vswitchId;
-		}
-
-		public void setVswitchId(String vswitchId) {
-			this.vswitchId = vswitchId;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
 		}
 	}
 

@@ -1,3 +1,6 @@
+2022-01-28 Version: 3.6.5
+- Update by SDK platform.
+
 2021-12-27 Version: 3.6.3
 - DescribeDBInstances Add CapacityUnit.
 

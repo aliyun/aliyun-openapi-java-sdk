@@ -31,6 +31,8 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 
 	private String securityToken;
 
+	private String auditLogSwitchSource;
+
 	private String dBInstanceId;
 
 	private String auditStatus;
@@ -40,6 +42,8 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String serviceType;
 	public ModifyAuditPolicyRequest() {
 		super("Dds", "2015-12-01", "ModifyAuditPolicy", "dds");
 		setMethod(MethodType.POST);
@@ -79,6 +83,17 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getAuditLogSwitchSource() {
+		return this.auditLogSwitchSource;
+	}
+
+	public void setAuditLogSwitchSource(String auditLogSwitchSource) {
+		this.auditLogSwitchSource = auditLogSwitchSource;
+		if(auditLogSwitchSource != null){
+			putQueryParameter("AuditLogSwitchSource", auditLogSwitchSource);
 		}
 	}
 
@@ -134,6 +149,17 @@ public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putQueryParameter("ServiceType", serviceType);
 		}
 	}
 
