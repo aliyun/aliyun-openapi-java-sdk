@@ -31,7 +31,7 @@ public class ListConfigItemsRequest extends RpcAcsRequest<ListConfigItemsRespons
 
 	private String objectId;
 	public ListConfigItemsRequest() {
-		super("CCC", "2020-07-01", "ListConfigItems", "CCC");
+		super("CCC", "2020-07-01", "ListConfigItems");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

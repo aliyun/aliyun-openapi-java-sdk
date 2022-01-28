@@ -33,7 +33,7 @@ public class ListContactFlowsRequest extends RpcAcsRequest<ListContactFlowsRespo
 
 	private Integer pageSize;
 	public ListContactFlowsRequest() {
-		super("CCC", "2020-07-01", "ListContactFlows", "CCC");
+		super("CCC", "2020-07-01", "ListContactFlows");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

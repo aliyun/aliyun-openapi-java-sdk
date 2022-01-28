@@ -37,7 +37,7 @@ public class SaveRTCStatsV2Request extends RpcAcsRequest<SaveRTCStatsV2Response>
 
 	private String generalInfo;
 	public SaveRTCStatsV2Request() {
-		super("CCC", "2020-07-01", "SaveRTCStatsV2", "CCC");
+		super("CCC", "2020-07-01", "SaveRTCStatsV2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

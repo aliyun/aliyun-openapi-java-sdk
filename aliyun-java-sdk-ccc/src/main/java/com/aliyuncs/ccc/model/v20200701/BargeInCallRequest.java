@@ -37,7 +37,7 @@ public class BargeInCallRequest extends RpcAcsRequest<BargeInCallResponse> {
 
 	private String instanceId;
 	public BargeInCallRequest() {
-		super("CCC", "2020-07-01", "BargeInCall", "CCC");
+		super("CCC", "2020-07-01", "BargeInCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

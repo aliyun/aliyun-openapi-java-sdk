@@ -22,56 +22,19 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelAttendedTransferRequest extends RpcAcsRequest<CancelAttendedTransferResponse> {
+public class GetCaseFileUploadUrlRequest extends RpcAcsRequest<GetCaseFileUploadUrlResponse> {
 	   
 
-	private String userId;
-
-	private String deviceId;
-
-	private String jobId;
-
 	private String instanceId;
-	public CancelAttendedTransferRequest() {
-		super("CCC", "2020-07-01", "CancelAttendedTransfer");
+
+	private String fileName;
+	public GetCaseFileUploadUrlRequest() {
+		super("CCC", "2020-07-01", "GetCaseFileUploadUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getDeviceId() {
-		return this.deviceId;
-	}
-
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		if(deviceId != null){
-			putQueryParameter("DeviceId", deviceId);
-		}
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -85,9 +48,20 @@ public class CancelAttendedTransferRequest extends RpcAcsRequest<CancelAttendedT
 		}
 	}
 
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
+		}
+	}
+
 	@Override
-	public Class<CancelAttendedTransferResponse> getResponseClass() {
-		return CancelAttendedTransferResponse.class;
+	public Class<GetCaseFileUploadUrlResponse> getResponseClass() {
+		return GetCaseFileUploadUrlResponse.class;
 	}
 
 }

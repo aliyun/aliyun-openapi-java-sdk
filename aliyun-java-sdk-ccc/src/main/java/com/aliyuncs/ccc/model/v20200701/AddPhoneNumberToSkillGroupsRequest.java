@@ -31,7 +31,7 @@ public class AddPhoneNumberToSkillGroupsRequest extends RpcAcsRequest<AddPhoneNu
 
 	private String skillGroupIdList;
 	public AddPhoneNumberToSkillGroupsRequest() {
-		super("CCC", "2020-07-01", "AddPhoneNumberToSkillGroups", "CCC");
+		super("CCC", "2020-07-01", "AddPhoneNumberToSkillGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

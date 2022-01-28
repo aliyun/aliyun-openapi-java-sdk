@@ -31,7 +31,7 @@ public class AddPersonalNumbersToUserRequest extends RpcAcsRequest<AddPersonalNu
 
 	private String instanceId;
 	public AddPersonalNumbersToUserRequest() {
-		super("CCC", "2020-07-01", "AddPersonalNumbersToUser", "CCC");
+		super("CCC", "2020-07-01", "AddPersonalNumbersToUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

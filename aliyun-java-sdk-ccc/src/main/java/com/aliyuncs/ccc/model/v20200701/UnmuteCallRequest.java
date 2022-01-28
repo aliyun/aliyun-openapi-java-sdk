@@ -35,7 +35,7 @@ public class UnmuteCallRequest extends RpcAcsRequest<UnmuteCallResponse> {
 
 	private String channelId;
 	public UnmuteCallRequest() {
-		super("CCC", "2020-07-01", "UnmuteCall", "CCC");
+		super("CCC", "2020-07-01", "UnmuteCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class RemovePersonalNumbersFromUserRequest extends RpcAcsRequest<RemovePe
 
 	private String instanceId;
 	public RemovePersonalNumbersFromUserRequest() {
-		super("CCC", "2020-07-01", "RemovePersonalNumbersFromUser", "CCC");
+		super("CCC", "2020-07-01", "RemovePersonalNumbersFromUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

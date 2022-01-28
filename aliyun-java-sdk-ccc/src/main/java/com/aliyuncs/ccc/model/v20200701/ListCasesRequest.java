@@ -35,7 +35,7 @@ public class ListCasesRequest extends RpcAcsRequest<ListCasesResponse> {
 
 	private Long pageNumber;
 	public ListCasesRequest() {
-		super("CCC", "2020-07-01", "ListCases", "CCC");
+		super("CCC", "2020-07-01", "ListCases");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

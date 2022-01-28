@@ -33,7 +33,7 @@ public class ListCampaignTrendingReportRequest extends RpcAcsRequest<ListCampaig
 
 	private String instanceId;
 	public ListCampaignTrendingReportRequest() {
-		super("CCC", "2020-07-01", "ListCampaignTrendingReport", "CCC");
+		super("CCC", "2020-07-01", "ListCampaignTrendingReport");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

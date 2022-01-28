@@ -1,3 +1,6 @@
+2022-01-28 Version: 2.3.0
+- Support SIP phone management.
+
 2022-01-05 Version: 2.2.2
 - Add new interface.
 

@@ -33,7 +33,7 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 
 	private String name;
 	public CreateSkillGroupRequest() {
-		super("CCC", "2020-07-01", "CreateSkillGroup", "CCC");
+		super("CCC", "2020-07-01", "CreateSkillGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

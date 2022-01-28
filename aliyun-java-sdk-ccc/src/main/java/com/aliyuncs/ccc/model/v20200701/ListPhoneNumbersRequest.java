@@ -37,7 +37,7 @@ public class ListPhoneNumbersRequest extends RpcAcsRequest<ListPhoneNumbersRespo
 
 	private Integer pageSize;
 	public ListPhoneNumbersRequest() {
-		super("CCC", "2020-07-01", "ListPhoneNumbers", "CCC");
+		super("CCC", "2020-07-01", "ListPhoneNumbers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

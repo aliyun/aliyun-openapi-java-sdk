@@ -22,18 +22,18 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelAttendedTransferRequest extends RpcAcsRequest<CancelAttendedTransferResponse> {
+public class RegisterDevicesRequest extends RpcAcsRequest<RegisterDevicesResponse> {
 	   
 
-	private String userId;
+	private String userIdListJson;
 
 	private String deviceId;
 
-	private String jobId;
+	private String password;
 
 	private String instanceId;
-	public CancelAttendedTransferRequest() {
-		super("CCC", "2020-07-01", "CancelAttendedTransfer");
+	public RegisterDevicesRequest() {
+		super("CCC", "2020-07-01", "RegisterDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +41,14 @@ public class CancelAttendedTransferRequest extends RpcAcsRequest<CancelAttendedT
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getUserIdListJson() {
+		return this.userIdListJson;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setUserIdListJson(String userIdListJson) {
+		this.userIdListJson = userIdListJson;
+		if(userIdListJson != null){
+			putQueryParameter("UserIdListJson", userIdListJson);
 		}
 	}
 
@@ -63,14 +63,14 @@ public class CancelAttendedTransferRequest extends RpcAcsRequest<CancelAttendedT
 		}
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getPassword() {
+		return this.password;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
 		}
 	}
 
@@ -86,8 +86,8 @@ public class CancelAttendedTransferRequest extends RpcAcsRequest<CancelAttendedT
 	}
 
 	@Override
-	public Class<CancelAttendedTransferResponse> getResponseClass() {
-		return CancelAttendedTransferResponse.class;
+	public Class<RegisterDevicesResponse> getResponseClass() {
+		return RegisterDevicesResponse.class;
 	}
 
 }

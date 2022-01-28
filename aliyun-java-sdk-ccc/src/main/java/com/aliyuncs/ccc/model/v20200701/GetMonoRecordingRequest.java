@@ -29,7 +29,7 @@ public class GetMonoRecordingRequest extends RpcAcsRequest<GetMonoRecordingRespo
 
 	private String instanceId;
 	public GetMonoRecordingRequest() {
-		super("CCC", "2020-07-01", "GetMonoRecording", "CCC");
+		super("CCC", "2020-07-01", "GetMonoRecording");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

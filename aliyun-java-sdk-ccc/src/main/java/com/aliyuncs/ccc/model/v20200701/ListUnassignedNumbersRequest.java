@@ -33,7 +33,7 @@ public class ListUnassignedNumbersRequest extends RpcAcsRequest<ListUnassignedNu
 
 	private Integer pageSize;
 	public ListUnassignedNumbersRequest() {
-		super("CCC", "2020-07-01", "ListUnassignedNumbers", "CCC");
+		super("CCC", "2020-07-01", "ListUnassignedNumbers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

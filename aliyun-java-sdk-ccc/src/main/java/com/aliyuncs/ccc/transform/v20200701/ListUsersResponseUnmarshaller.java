@@ -59,6 +59,10 @@ public class ListUsersResponseUnmarshaller {
 			userDetail.setRoleId(_ctx.stringValue("ListUsersResponse.Data.List["+ i +"].RoleId"));
 			userDetail.setPrimaryAccount(_ctx.booleanValue("ListUsersResponse.Data.List["+ i +"].PrimaryAccount"));
 			userDetail.setRamId(_ctx.longValue("ListUsersResponse.Data.List["+ i +"].RamId"));
+			userDetail.setExtension(_ctx.stringValue("ListUsersResponse.Data.List["+ i +"].Extension"));
+			userDetail.setDeviceId(_ctx.stringValue("ListUsersResponse.Data.List["+ i +"].DeviceId"));
+			userDetail.setDeviceExt(_ctx.stringValue("ListUsersResponse.Data.List["+ i +"].DeviceExt"));
+			userDetail.setDeviceState(_ctx.stringValue("ListUsersResponse.Data.List["+ i +"].DeviceState"));
 
 			List<PhoneNumber> personalOutboundNumberList = new ArrayList<PhoneNumber>();
 			for (int j = 0; j < _ctx.lengthValue("ListUsersResponse.Data.List["+ i +"].PersonalOutboundNumberList.Length"); j++) {

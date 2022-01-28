@@ -31,7 +31,7 @@ public class ResetAgentStateRequest extends RpcAcsRequest<ResetAgentStateRespons
 
 	private String instanceId;
 	public ResetAgentStateRequest() {
-		super("CCC", "2020-07-01", "ResetAgentState", "CCC");
+		super("CCC", "2020-07-01", "ResetAgentState");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

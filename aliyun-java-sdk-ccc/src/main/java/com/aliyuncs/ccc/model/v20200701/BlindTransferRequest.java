@@ -39,7 +39,7 @@ public class BlindTransferRequest extends RpcAcsRequest<BlindTransferResponse> {
 
 	private String instanceId;
 	public BlindTransferRequest() {
-		super("CCC", "2020-07-01", "BlindTransfer", "CCC");
+		super("CCC", "2020-07-01", "BlindTransfer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

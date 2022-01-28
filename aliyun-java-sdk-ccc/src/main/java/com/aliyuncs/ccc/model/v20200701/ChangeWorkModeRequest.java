@@ -33,7 +33,7 @@ public class ChangeWorkModeRequest extends RpcAcsRequest<ChangeWorkModeResponse>
 
 	private String instanceId;
 	public ChangeWorkModeRequest() {
-		super("CCC", "2020-07-01", "ChangeWorkMode", "CCC");
+		super("CCC", "2020-07-01", "ChangeWorkMode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

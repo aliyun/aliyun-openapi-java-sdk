@@ -35,7 +35,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String name;
 	public CreateInstanceRequest() {
-		super("CCC", "2020-07-01", "CreateInstance", "CCC");
+		super("CCC", "2020-07-01", "CreateInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

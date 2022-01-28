@@ -37,7 +37,7 @@ public class ListHistoricalAgentReportRequest extends RpcAcsRequest<ListHistoric
 
 	private Integer pageSize;
 	public ListHistoricalAgentReportRequest() {
-		super("CCC", "2020-07-01", "ListHistoricalAgentReport", "CCC");
+		super("CCC", "2020-07-01", "ListHistoricalAgentReport");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class InterceptCallRequest extends RpcAcsRequest<InterceptCallResponse> {
 
 	private String instanceId;
 	public InterceptCallRequest() {
-		super("CCC", "2020-07-01", "InterceptCall", "CCC");
+		super("CCC", "2020-07-01", "InterceptCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
