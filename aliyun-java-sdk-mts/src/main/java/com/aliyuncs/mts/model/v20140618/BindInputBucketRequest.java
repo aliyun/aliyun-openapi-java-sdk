@@ -25,7 +25,11 @@ import com.aliyuncs.mts.Endpoint;
 public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketResponse> {
 	   
 
+	private String referer;
+
 	private Long resourceOwnerId;
+
+	private String depositorCredentials;
 
 	private String resourceOwnerAccount;
 
@@ -45,6 +49,17 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 		} catch (Exception e) {}
 	}
 
+	public String getReferer() {
+		return this.referer;
+	}
+
+	public void setReferer(String referer) {
+		this.referer = referer;
+		if(referer != null){
+			putQueryParameter("Referer", referer);
+		}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -53,6 +68,17 @@ public class BindInputBucketRequest extends RpcAcsRequest<BindInputBucketRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDepositorCredentials() {
+		return this.depositorCredentials;
+	}
+
+	public void setDepositorCredentials(String depositorCredentials) {
+		this.depositorCredentials = depositorCredentials;
+		if(depositorCredentials != null){
+			putQueryParameter("DepositorCredentials", depositorCredentials);
 		}
 	}
 

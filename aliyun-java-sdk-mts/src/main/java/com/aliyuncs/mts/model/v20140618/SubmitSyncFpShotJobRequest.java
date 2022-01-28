@@ -22,30 +22,22 @@ import com.aliyuncs.mts.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelineResponse> {
+public class SubmitSyncFpShotJobRequest extends RpcAcsRequest<SubmitSyncFpShotJobResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String role;
-
-	private String state;
+	private String fpShotConfig;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String notifyConfig;
-
 	private Long ownerId;
 
-	private Integer priority;
-
-	private String pipelineId;
-
-	private String name;
-	public UpdateCoverPipelineRequest() {
-		super("Mts", "2014-06-18", "UpdateCoverPipeline", "mts");
+	private String input;
+	public SubmitSyncFpShotJobRequest() {
+		super("Mts", "2014-06-18", "SubmitSyncFpShotJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,25 +56,14 @@ public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelin
 		}
 	}
 
-	public String getRole() {
-		return this.role;
+	public String getFpShotConfig() {
+		return this.fpShotConfig;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
-		if(role != null){
-			putQueryParameter("Role", role);
-		}
-	}
-
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
+	public void setFpShotConfig(String fpShotConfig) {
+		this.fpShotConfig = fpShotConfig;
+		if(fpShotConfig != null){
+			putQueryParameter("FpShotConfig", fpShotConfig);
 		}
 	}
 
@@ -108,17 +89,6 @@ public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelin
 		}
 	}
 
-	public String getNotifyConfig() {
-		return this.notifyConfig;
-	}
-
-	public void setNotifyConfig(String notifyConfig) {
-		this.notifyConfig = notifyConfig;
-		if(notifyConfig != null){
-			putQueryParameter("NotifyConfig", notifyConfig);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -130,42 +100,20 @@ public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelin
 		}
 	}
 
-	public Integer getPriority() {
-		return this.priority;
+	public String getInput() {
+		return this.input;
 	}
 
-	public void setPriority(Integer priority) {
-		this.priority = priority;
-		if(priority != null){
-			putQueryParameter("Priority", priority.toString());
-		}
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		if(pipelineId != null){
-			putQueryParameter("PipelineId", pipelineId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 
 	@Override
-	public Class<UpdateCoverPipelineResponse> getResponseClass() {
-		return UpdateCoverPipelineResponse.class;
+	public Class<SubmitSyncFpShotJobResponse> getResponseClass() {
+		return SubmitSyncFpShotJobResponse.class;
 	}
 
 }
