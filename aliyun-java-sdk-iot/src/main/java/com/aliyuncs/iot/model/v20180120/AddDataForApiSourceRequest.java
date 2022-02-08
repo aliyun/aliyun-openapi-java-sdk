@@ -31,7 +31,7 @@ public class AddDataForApiSourceRequest extends RpcAcsRequest<AddDataForApiSourc
 
 	private String apiId;
 	public AddDataForApiSourceRequest() {
-		super("Iot", "2018-01-20", "AddDataForApiSource", "iot");
+		super("Iot", "2018-01-20", "AddDataForApiSource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

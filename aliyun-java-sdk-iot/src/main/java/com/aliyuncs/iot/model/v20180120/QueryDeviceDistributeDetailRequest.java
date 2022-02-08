@@ -27,7 +27,7 @@ public class QueryDeviceDistributeDetailRequest extends RpcAcsRequest<QueryDevic
 
 	private String jobId;
 	public QueryDeviceDistributeDetailRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceDistributeDetail", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceDistributeDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

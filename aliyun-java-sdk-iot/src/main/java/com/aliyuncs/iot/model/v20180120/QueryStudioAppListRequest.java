@@ -38,7 +38,7 @@ public class QueryStudioAppListRequest extends RpcAcsRequest<QueryStudioAppListR
 
 	private Integer pageNo;
 	public QueryStudioAppListRequest() {
-		super("Iot", "2018-01-20", "QueryStudioAppList", "iot");
+		super("Iot", "2018-01-20", "QueryStudioAppList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

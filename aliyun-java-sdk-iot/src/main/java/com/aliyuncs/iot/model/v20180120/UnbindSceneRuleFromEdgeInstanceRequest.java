@@ -31,7 +31,7 @@ public class UnbindSceneRuleFromEdgeInstanceRequest extends RpcAcsRequest<Unbind
 
 	private String ruleId;
 	public UnbindSceneRuleFromEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "UnbindSceneRuleFromEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "UnbindSceneRuleFromEdgeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

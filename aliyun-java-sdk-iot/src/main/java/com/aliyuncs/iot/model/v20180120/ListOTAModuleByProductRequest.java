@@ -29,7 +29,7 @@ public class ListOTAModuleByProductRequest extends RpcAcsRequest<ListOTAModuleBy
 
 	private String productKey;
 	public ListOTAModuleByProductRequest() {
-		super("Iot", "2018-01-20", "ListOTAModuleByProduct", "iot");
+		super("Iot", "2018-01-20", "ListOTAModuleByProduct");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

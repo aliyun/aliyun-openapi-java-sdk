@@ -29,7 +29,7 @@ public class QueryMessageInfoRequest extends RpcAcsRequest<QueryMessageInfoRespo
 
 	private String iotInstanceId;
 	public QueryMessageInfoRequest() {
-		super("Iot", "2018-01-20", "QueryMessageInfo", "iot");
+		super("Iot", "2018-01-20", "QueryMessageInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

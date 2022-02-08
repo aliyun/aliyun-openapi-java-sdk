@@ -34,7 +34,7 @@ public class SubscribeTopicRequest extends RpcAcsRequest<SubscribeTopicResponse>
 
 	private String deviceName;
 	public SubscribeTopicRequest() {
-		super("Iot", "2018-01-20", "SubscribeTopic", "iot");
+		super("Iot", "2018-01-20", "SubscribeTopic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

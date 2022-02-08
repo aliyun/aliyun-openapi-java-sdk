@@ -32,7 +32,7 @@ public class DeleteDeviceSpeechRequest extends RpcAcsRequest<DeleteDeviceSpeechR
 
 	private List<DeviceSpeechList> deviceSpeechLists;
 	public DeleteDeviceSpeechRequest() {
-		super("Iot", "2018-01-20", "DeleteDeviceSpeech", "iot");
+		super("Iot", "2018-01-20", "DeleteDeviceSpeech");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class ListTaskByPageRequest extends RpcAcsRequest<ListTaskByPageResponse>
 
 	private String status;
 	public ListTaskByPageRequest() {
-		super("Iot", "2018-01-20", "ListTaskByPage", "iot");
+		super("Iot", "2018-01-20", "ListTaskByPage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

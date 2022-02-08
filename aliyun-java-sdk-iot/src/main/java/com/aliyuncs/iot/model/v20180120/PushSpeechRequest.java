@@ -42,7 +42,7 @@ public class PushSpeechRequest extends RpcAcsRequest<PushSpeechResponse> {
 
 	private String deviceName;
 	public PushSpeechRequest() {
-		super("Iot", "2018-01-20", "PushSpeech", "iot");
+		super("Iot", "2018-01-20", "PushSpeech");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

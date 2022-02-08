@@ -31,7 +31,7 @@ public class QuerySubscribeRelationRequest extends RpcAcsRequest<QuerySubscribeR
 
 	private String productKey;
 	public QuerySubscribeRelationRequest() {
-		super("Iot", "2018-01-20", "QuerySubscribeRelation", "iot");
+		super("Iot", "2018-01-20", "QuerySubscribeRelation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class CreateDeviceDistributeJobRequest extends RpcAcsRequest<CreateDevice
 
 	private Integer strategy;
 	public CreateDeviceDistributeJobRequest() {
-		super("Iot", "2018-01-20", "CreateDeviceDistributeJob", "iot");
+		super("Iot", "2018-01-20", "CreateDeviceDistributeJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

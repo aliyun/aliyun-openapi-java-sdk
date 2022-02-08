@@ -39,7 +39,7 @@ public class QueryDetailSceneRuleLogRequest extends RpcAcsRequest<QueryDetailSce
 
 	private String ruleId;
 	public QueryDetailSceneRuleLogRequest() {
-		super("Iot", "2018-01-20", "QueryDetailSceneRuleLog", "iot");
+		super("Iot", "2018-01-20", "QueryDetailSceneRuleLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
