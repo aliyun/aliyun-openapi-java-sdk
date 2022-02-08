@@ -77,95 +77,39 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 	public static class InstanceItem {
 
-		private Long instanceId;
-
-		private Long orderId;
-
-		private String supplierName;
-
-		private String productCode;
-
-		private String productSkuCode;
-
-		private String productName;
-
-		private String productType;
-
 		private String status;
-
-		private Long beganOn;
-
-		private Long endOn;
-
-		private Long createdOn;
-
-		private String extendJson;
-
-		private String hostJson;
 
 		private String appJson;
 
 		private String apiJson;
 
+		private String productName;
+
 		private String imageJson;
+
+		private Long instanceId;
+
+		private String extendJson;
+
+		private Long beganOn;
+
+		private String productType;
+
+		private String hostJson;
+
+		private String productSkuCode;
+
+		private Long createdOn;
 
 		private String idaasJson;
 
-		public Long getInstanceId() {
-			return this.instanceId;
-		}
+		private Long endOn;
 
-		public void setInstanceId(Long instanceId) {
-			this.instanceId = instanceId;
-		}
+		private Long orderId;
 
-		public Long getOrderId() {
-			return this.orderId;
-		}
+		private String productCode;
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
-		}
-
-		public String getSupplierName() {
-			return this.supplierName;
-		}
-
-		public void setSupplierName(String supplierName) {
-			this.supplierName = supplierName;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public String getProductSkuCode() {
-			return this.productSkuCode;
-		}
-
-		public void setProductSkuCode(String productSkuCode) {
-			this.productSkuCode = productSkuCode;
-		}
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public String getProductType() {
-			return this.productType;
-		}
-
-		public void setProductType(String productType) {
-			this.productType = productType;
-		}
+		private String supplierName;
 
 		public String getStatus() {
 			return this.status;
@@ -173,46 +117,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public Long getBeganOn() {
-			return this.beganOn;
-		}
-
-		public void setBeganOn(Long beganOn) {
-			this.beganOn = beganOn;
-		}
-
-		public Long getEndOn() {
-			return this.endOn;
-		}
-
-		public void setEndOn(Long endOn) {
-			this.endOn = endOn;
-		}
-
-		public Long getCreatedOn() {
-			return this.createdOn;
-		}
-
-		public void setCreatedOn(Long createdOn) {
-			this.createdOn = createdOn;
-		}
-
-		public String getExtendJson() {
-			return this.extendJson;
-		}
-
-		public void setExtendJson(String extendJson) {
-			this.extendJson = extendJson;
-		}
-
-		public String getHostJson() {
-			return this.hostJson;
-		}
-
-		public void setHostJson(String hostJson) {
-			this.hostJson = hostJson;
 		}
 
 		public String getAppJson() {
@@ -231,6 +135,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.apiJson = apiJson;
 		}
 
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
 		public String getImageJson() {
 			return this.imageJson;
 		}
@@ -239,12 +151,100 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.imageJson = imageJson;
 		}
 
+		public Long getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getExtendJson() {
+			return this.extendJson;
+		}
+
+		public void setExtendJson(String extendJson) {
+			this.extendJson = extendJson;
+		}
+
+		public Long getBeganOn() {
+			return this.beganOn;
+		}
+
+		public void setBeganOn(Long beganOn) {
+			this.beganOn = beganOn;
+		}
+
+		public String getProductType() {
+			return this.productType;
+		}
+
+		public void setProductType(String productType) {
+			this.productType = productType;
+		}
+
+		public String getHostJson() {
+			return this.hostJson;
+		}
+
+		public void setHostJson(String hostJson) {
+			this.hostJson = hostJson;
+		}
+
+		public String getProductSkuCode() {
+			return this.productSkuCode;
+		}
+
+		public void setProductSkuCode(String productSkuCode) {
+			this.productSkuCode = productSkuCode;
+		}
+
+		public Long getCreatedOn() {
+			return this.createdOn;
+		}
+
+		public void setCreatedOn(Long createdOn) {
+			this.createdOn = createdOn;
+		}
+
 		public String getIdaasJson() {
 			return this.idaasJson;
 		}
 
 		public void setIdaasJson(String idaasJson) {
 			this.idaasJson = idaasJson;
+		}
+
+		public Long getEndOn() {
+			return this.endOn;
+		}
+
+		public void setEndOn(Long endOn) {
+			this.endOn = endOn;
+		}
+
+		public Long getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
+		}
+
+		public String getSupplierName() {
+			return this.supplierName;
+		}
+
+		public void setSupplierName(String supplierName) {
+			this.supplierName = supplierName;
 		}
 	}
 

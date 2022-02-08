@@ -27,24 +27,24 @@ public class DescribePriceResponseUnmarshaller {
 
 	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext _ctx) {
 		
-		describePriceResponse.setProductCode(_ctx.stringValue("DescribePriceResponse.ProductCode"));
-		describePriceResponse.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.OriginalPrice"));
-		describePriceResponse.setTradePrice(_ctx.floatValue("DescribePriceResponse.TradePrice"));
-		describePriceResponse.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.DiscountPrice"));
-		describePriceResponse.setCuxiao(_ctx.booleanValue("DescribePriceResponse.Cuxiao"));
-		describePriceResponse.setDuration(_ctx.integerValue("DescribePriceResponse.Duration"));
-		describePriceResponse.setCycle(_ctx.stringValue("DescribePriceResponse.Cycle"));
-		describePriceResponse.setInfoTitle(_ctx.stringValue("DescribePriceResponse.InfoTitle"));
 		describePriceResponse.setExpressionCode(_ctx.stringValue("DescribePriceResponse.ExpressionCode"));
+		describePriceResponse.setCuxiao(_ctx.booleanValue("DescribePriceResponse.Cuxiao"));
+		describePriceResponse.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.DiscountPrice"));
+		describePriceResponse.setCycle(_ctx.stringValue("DescribePriceResponse.Cycle"));
+		describePriceResponse.setTradePrice(_ctx.floatValue("DescribePriceResponse.TradePrice"));
+		describePriceResponse.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.OriginalPrice"));
+		describePriceResponse.setDuration(_ctx.integerValue("DescribePriceResponse.Duration"));
 		describePriceResponse.setCurrency(_ctx.stringValue("DescribePriceResponse.Currency"));
 		describePriceResponse.setExpressionMessage(_ctx.stringValue("DescribePriceResponse.ExpressionMessage"));
+		describePriceResponse.setInfoTitle(_ctx.stringValue("DescribePriceResponse.InfoTitle"));
+		describePriceResponse.setProductCode(_ctx.stringValue("DescribePriceResponse.ProductCode"));
 
 		List<PromotionRule> promotionRules = new ArrayList<PromotionRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PromotionRules.Length"); i++) {
 			PromotionRule promotionRule = new PromotionRule();
-			promotionRule.setRuleId(_ctx.stringValue("DescribePriceResponse.PromotionRules["+ i +"].RuleId"));
-			promotionRule.setName(_ctx.stringValue("DescribePriceResponse.PromotionRules["+ i +"].Name"));
 			promotionRule.setTitle(_ctx.stringValue("DescribePriceResponse.PromotionRules["+ i +"].Title"));
+			promotionRule.setName(_ctx.stringValue("DescribePriceResponse.PromotionRules["+ i +"].Name"));
+			promotionRule.setRuleId(_ctx.stringValue("DescribePriceResponse.PromotionRules["+ i +"].RuleId"));
 
 			promotionRules.add(promotionRule);
 		}
@@ -57,8 +57,8 @@ public class DescribePriceResponseUnmarshaller {
 			coupon.setCouponOptionNo(_ctx.stringValue("DescribePriceResponse.Coupons["+ i +"].CouponOptionNo"));
 			coupon.setCouponName(_ctx.stringValue("DescribePriceResponse.Coupons["+ i +"].CouponName"));
 			coupon.setCouponDesc(_ctx.stringValue("DescribePriceResponse.Coupons["+ i +"].CouponDesc"));
-			coupon.setCanPromFee(_ctx.floatValue("DescribePriceResponse.Coupons["+ i +"].CanPromFee"));
 			coupon.setIsSelected(_ctx.booleanValue("DescribePriceResponse.Coupons["+ i +"].IsSelected"));
+			coupon.setCanPromFee(_ctx.floatValue("DescribePriceResponse.Coupons["+ i +"].CanPromFee"));
 
 			coupons.add(coupon);
 		}

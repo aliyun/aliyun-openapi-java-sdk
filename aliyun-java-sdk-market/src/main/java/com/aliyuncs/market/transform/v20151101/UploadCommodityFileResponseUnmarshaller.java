@@ -27,8 +27,8 @@ public class UploadCommodityFileResponseUnmarshaller {
 		uploadCommodityFileResponse.setSuccess(_ctx.booleanValue("UploadCommodityFileResponse.Success"));
 
 		Data data = new Data();
-		data.setResourceType(_ctx.stringValue("UploadCommodityFileResponse.Data.ResourceType"));
 		data.setResource(_ctx.stringValue("UploadCommodityFileResponse.Data.Resource"));
+		data.setResourceType(_ctx.stringValue("UploadCommodityFileResponse.Data.ResourceType"));
 		uploadCommodityFileResponse.setData(data);
 	 
 	 	return uploadCommodityFileResponse;

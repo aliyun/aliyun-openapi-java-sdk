@@ -25,39 +25,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProductResponse extends AcsResponse {
 
-	private String code;
+	private Long frontCategoryId;
 
-	private String name;
+	private String status;
 
 	private String type;
 
 	private String picUrl;
 
-	private String description;
-
-	private String shortDescription;
+	private Float score;
 
 	private Long useCount;
 
-	private Float score;
-
-	private String status;
-
-	private String auditStatus;
-
-	private String auditFailMsg;
-
-	private Long auditTime;
-
-	private Long gmtCreated;
-
 	private Long gmtModified;
-
-	private String requestId;
 
 	private Long supplierPk;
 
-	private Long frontCategoryId;
+	private Long gmtCreated;
+
+	private String requestId;
+
+	private String shortDescription;
+
+	private String description;
+
+	private String code;
+
+	private String auditFailMsg;
+
+	private String name;
+
+	private Long auditTime;
+
+	private String auditStatus;
 
 	private List<ProductSku> productSkus;
 
@@ -65,20 +65,20 @@ public class DescribeProductResponse extends AcsResponse {
 
 	private ShopInfo shopInfo;
 
-	public String getCode() {
-		return this.code;
+	public Long getFrontCategoryId() {
+		return this.frontCategoryId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setFrontCategoryId(Long frontCategoryId) {
+		this.frontCategoryId = frontCategoryId;
 	}
 
-	public String getName() {
-		return this.name;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getType() {
@@ -97,20 +97,12 @@ public class DescribeProductResponse extends AcsResponse {
 		this.picUrl = picUrl;
 	}
 
-	public String getDescription() {
-		return this.description;
+	public Float getScore() {
+		return this.score;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getShortDescription() {
-		return this.shortDescription;
-	}
-
-	public void setShortDescription(String shortDescription) {
-		this.shortDescription = shortDescription;
+	public void setScore(Float score) {
+		this.score = score;
 	}
 
 	public Long getUseCount() {
@@ -121,68 +113,12 @@ public class DescribeProductResponse extends AcsResponse {
 		this.useCount = useCount;
 	}
 
-	public Float getScore() {
-		return this.score;
-	}
-
-	public void setScore(Float score) {
-		this.score = score;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getAuditStatus() {
-		return this.auditStatus;
-	}
-
-	public void setAuditStatus(String auditStatus) {
-		this.auditStatus = auditStatus;
-	}
-
-	public String getAuditFailMsg() {
-		return this.auditFailMsg;
-	}
-
-	public void setAuditFailMsg(String auditFailMsg) {
-		this.auditFailMsg = auditFailMsg;
-	}
-
-	public Long getAuditTime() {
-		return this.auditTime;
-	}
-
-	public void setAuditTime(Long auditTime) {
-		this.auditTime = auditTime;
-	}
-
-	public Long getGmtCreated() {
-		return this.gmtCreated;
-	}
-
-	public void setGmtCreated(Long gmtCreated) {
-		this.gmtCreated = gmtCreated;
-	}
-
 	public Long getGmtModified() {
 		return this.gmtModified;
 	}
 
 	public void setGmtModified(Long gmtModified) {
 		this.gmtModified = gmtModified;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Long getSupplierPk() {
@@ -193,12 +129,76 @@ public class DescribeProductResponse extends AcsResponse {
 		this.supplierPk = supplierPk;
 	}
 
-	public Long getFrontCategoryId() {
-		return this.frontCategoryId;
+	public Long getGmtCreated() {
+		return this.gmtCreated;
 	}
 
-	public void setFrontCategoryId(Long frontCategoryId) {
-		this.frontCategoryId = frontCategoryId;
+	public void setGmtCreated(Long gmtCreated) {
+		this.gmtCreated = gmtCreated;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getShortDescription() {
+		return this.shortDescription;
+	}
+
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getAuditFailMsg() {
+		return this.auditFailMsg;
+	}
+
+	public void setAuditFailMsg(String auditFailMsg) {
+		this.auditFailMsg = auditFailMsg;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Long getAuditTime() {
+		return this.auditTime;
+	}
+
+	public void setAuditTime(Long auditTime) {
+		this.auditTime = auditTime;
+	}
+
+	public String getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(String auditStatus) {
+		this.auditStatus = auditStatus;
 	}
 
 	public List<ProductSku> getProductSkus() {
@@ -227,26 +227,26 @@ public class DescribeProductResponse extends AcsResponse {
 
 	public static class ProductSku {
 
-		private String name;
+		private Boolean hidden;
 
 		private String code;
 
-		private String chargeType;
-
 		private String constraints;
 
-		private Boolean hidden;
+		private String name;
+
+		private String chargeType;
 
 		private List<OrderPeriod> orderPeriods;
 
 		private List<Module> modules;
 
-		public String getName() {
-			return this.name;
+		public Boolean getHidden() {
+			return this.hidden;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setHidden(Boolean hidden) {
+			this.hidden = hidden;
 		}
 
 		public String getCode() {
@@ -257,14 +257,6 @@ public class DescribeProductResponse extends AcsResponse {
 			this.code = code;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
 		public String getConstraints() {
 			return this.constraints;
 		}
@@ -273,12 +265,20 @@ public class DescribeProductResponse extends AcsResponse {
 			this.constraints = constraints;
 		}
 
-		public Boolean getHidden() {
-			return this.hidden;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setHidden(Boolean hidden) {
-			this.hidden = hidden;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 
 		public List<OrderPeriod> getOrderPeriods() {
@@ -322,20 +322,20 @@ public class DescribeProductResponse extends AcsResponse {
 
 		public static class Module {
 
-			private String id;
+			private String code;
 
 			private String name;
 
-			private String code;
+			private String id;
 
 			private List<Property> properties;
 
-			public String getId() {
-				return this.id;
+			public String getCode() {
+				return this.code;
 			}
 
-			public void setId(String id) {
-				this.id = id;
+			public void setCode(String code) {
+				this.code = code;
 			}
 
 			public String getName() {
@@ -346,12 +346,12 @@ public class DescribeProductResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getCode() {
-				return this.code;
+			public String getId() {
+				return this.id;
 			}
 
-			public void setCode(String code) {
-				this.code = code;
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public List<Property> getProperties() {
@@ -364,23 +364,15 @@ public class DescribeProductResponse extends AcsResponse {
 
 			public static class Property {
 
-				private String name;
-
 				private String key;
 
 				private String showType;
 
+				private String name;
+
 				private String displayUnit;
 
 				private List<PropertyValue> propertyValues;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
 
 				public String getKey() {
 					return this.key;
@@ -396,6 +388,14 @@ public class DescribeProductResponse extends AcsResponse {
 
 				public void setShowType(String showType) {
 					this.showType = showType;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public String getDisplayUnit() {
@@ -416,27 +416,19 @@ public class DescribeProductResponse extends AcsResponse {
 
 				public static class PropertyValue {
 
-					private String value;
-
 					private String displayName;
 
 					private String type;
 
-					private String min;
+					private String step;
+
+					private String value;
 
 					private String max;
 
-					private String step;
-
 					private String remark;
 
-					public String getValue() {
-						return this.value;
-					}
-
-					public void setValue(String value) {
-						this.value = value;
-					}
+					private String min;
 
 					public String getDisplayName() {
 						return this.displayName;
@@ -454,12 +446,20 @@ public class DescribeProductResponse extends AcsResponse {
 						this.type = type;
 					}
 
-					public String getMin() {
-						return this.min;
+					public String getStep() {
+						return this.step;
 					}
 
-					public void setMin(String min) {
-						this.min = min;
+					public void setStep(String step) {
+						this.step = step;
+					}
+
+					public String getValue() {
+						return this.value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
 					}
 
 					public String getMax() {
@@ -470,20 +470,20 @@ public class DescribeProductResponse extends AcsResponse {
 						this.max = max;
 					}
 
-					public String getStep() {
-						return this.step;
-					}
-
-					public void setStep(String step) {
-						this.step = step;
-					}
-
 					public String getRemark() {
 						return this.remark;
 					}
 
 					public void setRemark(String remark) {
 						this.remark = remark;
+					}
+
+					public String getMin() {
+						return this.min;
+					}
+
+					public void setMin(String min) {
+						this.min = min;
 					}
 				}
 			}
@@ -492,15 +492,23 @@ public class DescribeProductResponse extends AcsResponse {
 
 	public static class ProductExtra {
 
-		private String key;
+		private String type;
 
-		private String values;
+		private String key;
 
 		private String label;
 
 		private Integer order;
 
-		private String type;
+		private String values;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 
 		public String getKey() {
 			return this.key;
@@ -508,14 +516,6 @@ public class DescribeProductResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
-		}
-
-		public String getValues() {
-			return this.values;
-		}
-
-		public void setValues(String values) {
-			this.values = values;
 		}
 
 		public String getLabel() {
@@ -534,34 +534,26 @@ public class DescribeProductResponse extends AcsResponse {
 			this.order = order;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getValues() {
+			return this.values;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setValues(String values) {
+			this.values = values;
 		}
 	}
 
 	public static class ShopInfo {
 
-		private Long id;
-
 		private String name;
 
 		private String emails;
 
+		private Long id;
+
 		private List<WangWang> wangWangs;
 
 		private List<String> telephones;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
 
 		public String getName() {
 			return this.name;
@@ -577,6 +569,14 @@ public class DescribeProductResponse extends AcsResponse {
 
 		public void setEmails(String emails) {
 			this.emails = emails;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<WangWang> getWangWangs() {
@@ -597,17 +597,9 @@ public class DescribeProductResponse extends AcsResponse {
 
 		public static class WangWang {
 
-			private String userName;
-
 			private String remark;
 
-			public String getUserName() {
-				return this.userName;
-			}
-
-			public void setUserName(String userName) {
-				this.userName = userName;
-			}
+			private String userName;
 
 			public String getRemark() {
 				return this.remark;
@@ -615,6 +607,14 @@ public class DescribeProductResponse extends AcsResponse {
 
 			public void setRemark(String remark) {
 				this.remark = remark;
+			}
+
+			public String getUserName() {
+				return this.userName;
+			}
+
+			public void setUserName(String userName) {
+				this.userName = userName;
 			}
 		}
 	}

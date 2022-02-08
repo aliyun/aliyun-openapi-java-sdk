@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProjectAttachmentsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<ProjectAttachment> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ProjectAttachment> getResult() {
@@ -57,35 +57,43 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 
 	public static class ProjectAttachment {
 
+		private Long fileLinkGmtExpired;
+
 		private Integer stepNo;
 
-		private Long nodeId;
-
-		private String nodeName;
-
-		private String attachmentType;
+		private String attachmentToken;
 
 		private String fileName;
 
-		private String fileSuffix;
-
-		private Long fileSize;
-
 		private String operatorRole;
 
-		private Long operator;
+		private String nodeName;
 
 		private String operatorName;
 
 		private String fileLink;
 
-		private Long fileLinkGmtExpired;
+		private Long gmtCreate;
+
+		private String fileSuffix;
+
+		private Long operator;
 
 		private String content;
 
-		private Long gmtCreate;
+		private Long nodeId;
 
-		private String attachmentToken;
+		private String attachmentType;
+
+		private Long fileSize;
+
+		public Long getFileLinkGmtExpired() {
+			return this.fileLinkGmtExpired;
+		}
+
+		public void setFileLinkGmtExpired(Long fileLinkGmtExpired) {
+			this.fileLinkGmtExpired = fileLinkGmtExpired;
+		}
 
 		public Integer getStepNo() {
 			return this.stepNo;
@@ -95,28 +103,12 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 			this.stepNo = stepNo;
 		}
 
-		public Long getNodeId() {
-			return this.nodeId;
+		public String getAttachmentToken() {
+			return this.attachmentToken;
 		}
 
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
-		}
-
-		public String getNodeName() {
-			return this.nodeName;
-		}
-
-		public void setNodeName(String nodeName) {
-			this.nodeName = nodeName;
-		}
-
-		public String getAttachmentType() {
-			return this.attachmentType;
-		}
-
-		public void setAttachmentType(String attachmentType) {
-			this.attachmentType = attachmentType;
+		public void setAttachmentToken(String attachmentToken) {
+			this.attachmentToken = attachmentToken;
 		}
 
 		public String getFileName() {
@@ -127,22 +119,6 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 			this.fileName = fileName;
 		}
 
-		public String getFileSuffix() {
-			return this.fileSuffix;
-		}
-
-		public void setFileSuffix(String fileSuffix) {
-			this.fileSuffix = fileSuffix;
-		}
-
-		public Long getFileSize() {
-			return this.fileSize;
-		}
-
-		public void setFileSize(Long fileSize) {
-			this.fileSize = fileSize;
-		}
-
 		public String getOperatorRole() {
 			return this.operatorRole;
 		}
@@ -151,12 +127,12 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 			this.operatorRole = operatorRole;
 		}
 
-		public Long getOperator() {
-			return this.operator;
+		public String getNodeName() {
+			return this.nodeName;
 		}
 
-		public void setOperator(Long operator) {
-			this.operator = operator;
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
 		}
 
 		public String getOperatorName() {
@@ -175,12 +151,28 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 			this.fileLink = fileLink;
 		}
 
-		public Long getFileLinkGmtExpired() {
-			return this.fileLinkGmtExpired;
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setFileLinkGmtExpired(Long fileLinkGmtExpired) {
-			this.fileLinkGmtExpired = fileLinkGmtExpired;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getFileSuffix() {
+			return this.fileSuffix;
+		}
+
+		public void setFileSuffix(String fileSuffix) {
+			this.fileSuffix = fileSuffix;
+		}
+
+		public Long getOperator() {
+			return this.operator;
+		}
+
+		public void setOperator(Long operator) {
+			this.operator = operator;
 		}
 
 		public String getContent() {
@@ -191,20 +183,28 @@ public class DescribeProjectAttachmentsResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public Long getNodeId() {
+			return this.nodeId;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
 		}
 
-		public String getAttachmentToken() {
-			return this.attachmentToken;
+		public String getAttachmentType() {
+			return this.attachmentType;
 		}
 
-		public void setAttachmentToken(String attachmentToken) {
-			this.attachmentToken = attachmentToken;
+		public void setAttachmentType(String attachmentType) {
+			this.attachmentType = attachmentType;
+		}
+
+		public Long getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
 		}
 	}
 

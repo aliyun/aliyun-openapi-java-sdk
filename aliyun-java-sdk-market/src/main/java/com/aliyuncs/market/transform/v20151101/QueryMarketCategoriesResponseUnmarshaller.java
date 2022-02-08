@@ -35,16 +35,16 @@ public class QueryMarketCategoriesResponseUnmarshaller {
 		List<Category> categories = new ArrayList<Category>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMarketCategoriesResponse.Categories.Length"); i++) {
 			Category category = new Category();
-			category.setId(_ctx.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].Id"));
 			category.setCategoryCode(_ctx.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].CategoryCode"));
 			category.setCategoryName(_ctx.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].CategoryName"));
+			category.setId(_ctx.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].Id"));
 
 			List<ChildCategory> childCategories = new ArrayList<ChildCategory>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories.Length"); j++) {
 				ChildCategory childCategory = new ChildCategory();
-				childCategory.setId(_ctx.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].Id"));
 				childCategory.setCategoryCode(_ctx.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].CategoryCode"));
 				childCategory.setCategoryName(_ctx.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].CategoryName"));
+				childCategory.setId(_ctx.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].Id"));
 
 				childCategories.add(childCategory);
 			}

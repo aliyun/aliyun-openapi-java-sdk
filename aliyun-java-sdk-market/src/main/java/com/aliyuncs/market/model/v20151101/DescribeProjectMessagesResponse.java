@@ -27,9 +27,9 @@ public class DescribeProjectMessagesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private Long totalCount;
+
+	private Boolean success;
 
 	private List<ProjectMessage> result;
 
@@ -41,20 +41,20 @@ public class DescribeProjectMessagesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ProjectMessage> getResult() {
@@ -67,22 +67,22 @@ public class DescribeProjectMessagesResponse extends AcsResponse {
 
 	public static class ProjectMessage {
 
-		private String operatorRole;
+		private Long gmtCreate;
 
 		private Long operator;
 
-		private String operatorName;
+		private String operatorRole;
 
 		private String content;
 
-		private Long gmtCreate;
+		private String operatorName;
 
-		public String getOperatorRole() {
-			return this.operatorRole;
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setOperatorRole(String operatorRole) {
-			this.operatorRole = operatorRole;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public Long getOperator() {
@@ -93,12 +93,12 @@ public class DescribeProjectMessagesResponse extends AcsResponse {
 			this.operator = operator;
 		}
 
-		public String getOperatorName() {
-			return this.operatorName;
+		public String getOperatorRole() {
+			return this.operatorRole;
 		}
 
-		public void setOperatorName(String operatorName) {
-			this.operatorName = operatorName;
+		public void setOperatorRole(String operatorRole) {
+			this.operatorRole = operatorRole;
 		}
 
 		public String getContent() {
@@ -109,12 +109,12 @@ public class DescribeProjectMessagesResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public String getOperatorName() {
+			return this.operatorName;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setOperatorName(String operatorName) {
+			this.operatorName = operatorName;
 		}
 	}
 

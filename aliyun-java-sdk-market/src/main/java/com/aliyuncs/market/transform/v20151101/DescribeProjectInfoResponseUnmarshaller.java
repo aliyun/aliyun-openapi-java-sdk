@@ -27,23 +27,23 @@ public class DescribeProjectInfoResponseUnmarshaller {
 		describeProjectInfoResponse.setSuccess(_ctx.booleanValue("DescribeProjectInfoResponse.Success"));
 
 		Result result = new Result();
-		result.setInstanceId(_ctx.stringValue("DescribeProjectInfoResponse.Result.InstanceId"));
-		result.setOrderId(_ctx.longValue("DescribeProjectInfoResponse.Result.OrderId"));
-		result.setCustomerAliUid(_ctx.longValue("DescribeProjectInfoResponse.Result.CustomerAliUid"));
-		result.setSupplierAliUid(_ctx.longValue("DescribeProjectInfoResponse.Result.SupplierAliUid"));
-		result.setProductCode(_ctx.stringValue("DescribeProjectInfoResponse.Result.ProductCode"));
 		result.setProductName(_ctx.stringValue("DescribeProjectInfoResponse.Result.ProductName"));
-		result.setProductSkuCode(_ctx.stringValue("DescribeProjectInfoResponse.Result.ProductSkuCode"));
-		result.setProductSkuName(_ctx.stringValue("DescribeProjectInfoResponse.Result.ProductSkuName"));
-		result.setTemplateType(_ctx.stringValue("DescribeProjectInfoResponse.Result.TemplateType"));
-		result.setTemplateId(_ctx.longValue("DescribeProjectInfoResponse.Result.TemplateId"));
-		result.setCurrentStepNo(_ctx.integerValue("DescribeProjectInfoResponse.Result.CurrentStepNo"));
-		result.setFinalStepNo(_ctx.integerValue("DescribeProjectInfoResponse.Result.FinalStepNo"));
 		result.setProjectStatus(_ctx.stringValue("DescribeProjectInfoResponse.Result.ProjectStatus"));
-		result.setGmtCreate(_ctx.longValue("DescribeProjectInfoResponse.Result.GmtCreate"));
-		result.setGmtFinished(_ctx.longValue("DescribeProjectInfoResponse.Result.GmtFinished"));
+		result.setCustomerAliUid(_ctx.longValue("DescribeProjectInfoResponse.Result.CustomerAliUid"));
+		result.setTemplateType(_ctx.stringValue("DescribeProjectInfoResponse.Result.TemplateType"));
+		result.setInstanceId(_ctx.stringValue("DescribeProjectInfoResponse.Result.InstanceId"));
+		result.setProductSkuName(_ctx.stringValue("DescribeProjectInfoResponse.Result.ProductSkuName"));
+		result.setFinalStepNo(_ctx.integerValue("DescribeProjectInfoResponse.Result.FinalStepNo"));
+		result.setCurrentStepNo(_ctx.integerValue("DescribeProjectInfoResponse.Result.CurrentStepNo"));
 		result.setGmtExpired(_ctx.longValue("DescribeProjectInfoResponse.Result.GmtExpired"));
+		result.setGmtFinished(_ctx.longValue("DescribeProjectInfoResponse.Result.GmtFinished"));
+		result.setProductSkuCode(_ctx.stringValue("DescribeProjectInfoResponse.Result.ProductSkuCode"));
+		result.setGmtCreate(_ctx.longValue("DescribeProjectInfoResponse.Result.GmtCreate"));
+		result.setSupplierAliUid(_ctx.longValue("DescribeProjectInfoResponse.Result.SupplierAliUid"));
 		result.setFinishType(_ctx.stringValue("DescribeProjectInfoResponse.Result.FinishType"));
+		result.setTemplateId(_ctx.longValue("DescribeProjectInfoResponse.Result.TemplateId"));
+		result.setOrderId(_ctx.longValue("DescribeProjectInfoResponse.Result.OrderId"));
+		result.setProductCode(_ctx.stringValue("DescribeProjectInfoResponse.Result.ProductCode"));
 		describeProjectInfoResponse.setResult(result);
 	 
 	 	return describeProjectInfoResponse;

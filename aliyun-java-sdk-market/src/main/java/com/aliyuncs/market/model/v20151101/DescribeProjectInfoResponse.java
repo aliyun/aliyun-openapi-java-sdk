@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProjectInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class DescribeProjectInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Result getResult() {
@@ -56,79 +56,39 @@ public class DescribeProjectInfoResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String instanceId;
-
-		private Long orderId;
-
-		private Long customerAliUid;
-
-		private Long supplierAliUid;
-
-		private String productCode;
-
 		private String productName;
-
-		private String productSkuCode;
-
-		private String productSkuName;
-
-		private String templateType;
-
-		private Long templateId;
-
-		private Integer currentStepNo;
-
-		private Integer finalStepNo;
 
 		private String projectStatus;
 
-		private Long gmtCreate;
+		private Long customerAliUid;
 
-		private Long gmtFinished;
+		private String templateType;
+
+		private String instanceId;
+
+		private String productSkuName;
+
+		private Integer finalStepNo;
+
+		private Integer currentStepNo;
 
 		private Long gmtExpired;
 
+		private Long gmtFinished;
+
+		private String productSkuCode;
+
+		private Long gmtCreate;
+
+		private Long supplierAliUid;
+
 		private String finishType;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private Long templateId;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private Long orderId;
 
-		public Long getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
-		}
-
-		public Long getCustomerAliUid() {
-			return this.customerAliUid;
-		}
-
-		public void setCustomerAliUid(Long customerAliUid) {
-			this.customerAliUid = customerAliUid;
-		}
-
-		public Long getSupplierAliUid() {
-			return this.supplierAliUid;
-		}
-
-		public void setSupplierAliUid(Long supplierAliUid) {
-			this.supplierAliUid = supplierAliUid;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
+		private String productCode;
 
 		public String getProductName() {
 			return this.productName;
@@ -136,54 +96,6 @@ public class DescribeProjectInfoResponse extends AcsResponse {
 
 		public void setProductName(String productName) {
 			this.productName = productName;
-		}
-
-		public String getProductSkuCode() {
-			return this.productSkuCode;
-		}
-
-		public void setProductSkuCode(String productSkuCode) {
-			this.productSkuCode = productSkuCode;
-		}
-
-		public String getProductSkuName() {
-			return this.productSkuName;
-		}
-
-		public void setProductSkuName(String productSkuName) {
-			this.productSkuName = productSkuName;
-		}
-
-		public String getTemplateType() {
-			return this.templateType;
-		}
-
-		public void setTemplateType(String templateType) {
-			this.templateType = templateType;
-		}
-
-		public Long getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(Long templateId) {
-			this.templateId = templateId;
-		}
-
-		public Integer getCurrentStepNo() {
-			return this.currentStepNo;
-		}
-
-		public void setCurrentStepNo(Integer currentStepNo) {
-			this.currentStepNo = currentStepNo;
-		}
-
-		public Integer getFinalStepNo() {
-			return this.finalStepNo;
-		}
-
-		public void setFinalStepNo(Integer finalStepNo) {
-			this.finalStepNo = finalStepNo;
 		}
 
 		public String getProjectStatus() {
@@ -194,20 +106,52 @@ public class DescribeProjectInfoResponse extends AcsResponse {
 			this.projectStatus = projectStatus;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public Long getCustomerAliUid() {
+			return this.customerAliUid;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setCustomerAliUid(Long customerAliUid) {
+			this.customerAliUid = customerAliUid;
 		}
 
-		public Long getGmtFinished() {
-			return this.gmtFinished;
+		public String getTemplateType() {
+			return this.templateType;
 		}
 
-		public void setGmtFinished(Long gmtFinished) {
-			this.gmtFinished = gmtFinished;
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getProductSkuName() {
+			return this.productSkuName;
+		}
+
+		public void setProductSkuName(String productSkuName) {
+			this.productSkuName = productSkuName;
+		}
+
+		public Integer getFinalStepNo() {
+			return this.finalStepNo;
+		}
+
+		public void setFinalStepNo(Integer finalStepNo) {
+			this.finalStepNo = finalStepNo;
+		}
+
+		public Integer getCurrentStepNo() {
+			return this.currentStepNo;
+		}
+
+		public void setCurrentStepNo(Integer currentStepNo) {
+			this.currentStepNo = currentStepNo;
 		}
 
 		public Long getGmtExpired() {
@@ -218,12 +162,68 @@ public class DescribeProjectInfoResponse extends AcsResponse {
 			this.gmtExpired = gmtExpired;
 		}
 
+		public Long getGmtFinished() {
+			return this.gmtFinished;
+		}
+
+		public void setGmtFinished(Long gmtFinished) {
+			this.gmtFinished = gmtFinished;
+		}
+
+		public String getProductSkuCode() {
+			return this.productSkuCode;
+		}
+
+		public void setProductSkuCode(String productSkuCode) {
+			this.productSkuCode = productSkuCode;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Long getSupplierAliUid() {
+			return this.supplierAliUid;
+		}
+
+		public void setSupplierAliUid(Long supplierAliUid) {
+			this.supplierAliUid = supplierAliUid;
+		}
+
 		public String getFinishType() {
 			return this.finishType;
 		}
 
 		public void setFinishType(String finishType) {
 			this.finishType = finishType;
+		}
+
+		public Long getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(Long templateId) {
+			this.templateId = templateId;
+		}
+
+		public Long getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 	}
 

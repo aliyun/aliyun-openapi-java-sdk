@@ -32,21 +32,21 @@ public class DescribeProjectAttachmentsResponseUnmarshaller {
 		List<ProjectAttachment> result = new ArrayList<ProjectAttachment>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProjectAttachmentsResponse.Result.Length"); i++) {
 			ProjectAttachment projectAttachment = new ProjectAttachment();
+			projectAttachment.setFileLinkGmtExpired(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileLinkGmtExpired"));
 			projectAttachment.setStepNo(_ctx.integerValue("DescribeProjectAttachmentsResponse.Result["+ i +"].StepNo"));
-			projectAttachment.setNodeId(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].NodeId"));
-			projectAttachment.setNodeName(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].NodeName"));
-			projectAttachment.setAttachmentType(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].AttachmentType"));
+			projectAttachment.setAttachmentToken(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].AttachmentToken"));
 			projectAttachment.setFileName(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileName"));
-			projectAttachment.setFileSuffix(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileSuffix"));
-			projectAttachment.setFileSize(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileSize"));
 			projectAttachment.setOperatorRole(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].OperatorRole"));
-			projectAttachment.setOperator(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].Operator"));
+			projectAttachment.setNodeName(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].NodeName"));
 			projectAttachment.setOperatorName(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].OperatorName"));
 			projectAttachment.setFileLink(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileLink"));
-			projectAttachment.setFileLinkGmtExpired(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileLinkGmtExpired"));
-			projectAttachment.setContent(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].Content"));
 			projectAttachment.setGmtCreate(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].GmtCreate"));
-			projectAttachment.setAttachmentToken(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].AttachmentToken"));
+			projectAttachment.setFileSuffix(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileSuffix"));
+			projectAttachment.setOperator(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].Operator"));
+			projectAttachment.setContent(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].Content"));
+			projectAttachment.setNodeId(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].NodeId"));
+			projectAttachment.setAttachmentType(_ctx.stringValue("DescribeProjectAttachmentsResponse.Result["+ i +"].AttachmentType"));
+			projectAttachment.setFileSize(_ctx.longValue("DescribeProjectAttachmentsResponse.Result["+ i +"].FileSize"));
 
 			result.add(projectAttachment);
 		}

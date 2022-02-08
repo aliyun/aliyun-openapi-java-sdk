@@ -47,29 +47,37 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 	public static class License {
 
+		private String activateTime;
+
 		private String licenseStatus;
+
+		private String productName;
+
+		private String expiredTime;
+
+		private String productSkuId;
+
+		private String createTime;
 
 		private String licenseCode;
 
 		private String instanceId;
 
-		private String createTime;
-
-		private String expiredTime;
-
-		private String activateTime;
-
-		private String productSkuId;
+		private String supplierName;
 
 		private String productCode;
-
-		private String productName;
-
-		private String supplierName;
 
 		private List<LicenseAttribute> extendArray;
 
 		private ExtendInfo extendInfo;
+
+		public String getActivateTime() {
+			return this.activateTime;
+		}
+
+		public void setActivateTime(String activateTime) {
+			this.activateTime = activateTime;
+		}
 
 		public String getLicenseStatus() {
 			return this.licenseStatus;
@@ -77,6 +85,38 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 		public void setLicenseStatus(String licenseStatus) {
 			this.licenseStatus = licenseStatus;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getProductSkuId() {
+			return this.productSkuId;
+		}
+
+		public void setProductSkuId(String productSkuId) {
+			this.productSkuId = productSkuId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getLicenseCode() {
@@ -95,36 +135,12 @@ public class DescribeLicenseResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getSupplierName() {
+			return this.supplierName;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getActivateTime() {
-			return this.activateTime;
-		}
-
-		public void setActivateTime(String activateTime) {
-			this.activateTime = activateTime;
-		}
-
-		public String getProductSkuId() {
-			return this.productSkuId;
-		}
-
-		public void setProductSkuId(String productSkuId) {
-			this.productSkuId = productSkuId;
+		public void setSupplierName(String supplierName) {
+			this.supplierName = supplierName;
 		}
 
 		public String getProductCode() {
@@ -133,22 +149,6 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 		public void setProductCode(String productCode) {
 			this.productCode = productCode;
-		}
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public String getSupplierName() {
-			return this.supplierName;
-		}
-
-		public void setSupplierName(String supplierName) {
-			this.supplierName = supplierName;
 		}
 
 		public List<LicenseAttribute> getExtendArray() {
@@ -194,11 +194,11 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 			private Long aliUid;
 
+			private Long accountQuantity;
+
 			private String email;
 
 			private String mobile;
-
-			private Long accountQuantity;
 
 			public Long getAliUid() {
 				return this.aliUid;
@@ -206,6 +206,14 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 			public void setAliUid(Long aliUid) {
 				this.aliUid = aliUid;
+			}
+
+			public Long getAccountQuantity() {
+				return this.accountQuantity;
+			}
+
+			public void setAccountQuantity(Long accountQuantity) {
+				this.accountQuantity = accountQuantity;
 			}
 
 			public String getEmail() {
@@ -222,14 +230,6 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 			public void setMobile(String mobile) {
 				this.mobile = mobile;
-			}
-
-			public Long getAccountQuantity() {
-				return this.accountQuantity;
-			}
-
-			public void setAccountQuantity(Long accountQuantity) {
-				this.accountQuantity = accountQuantity;
 			}
 		}
 	}

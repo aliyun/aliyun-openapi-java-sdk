@@ -25,82 +25,58 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceResponse extends AcsResponse {
 
-	private Long instanceId;
+	private String status;
 
-	private Long orderId;
-
-	private String supplierName;
-
-	private String productCode;
-
-	private String productSkuCode;
+	private String appJson;
 
 	private String productName;
 
-	private String productType;
-
-	private String status;
-
-	private Long beganOn;
-
-	private Long endOn;
-
-	private Long createdOn;
+	private Long instanceId;
 
 	private String extendJson;
 
-	private String hostJson;
+	private Boolean isTrial;
 
-	private String appJson;
+	private Long beganOn;
 
 	private String componentJson;
 
 	private String constraints;
 
-	private Boolean isTrial;
+	private String productType;
+
+	private String hostJson;
+
+	private String productSkuCode;
+
+	private Long createdOn;
+
+	private Long endOn;
+
+	private Long orderId;
+
+	private String productCode;
+
+	private String supplierName;
 
 	private List<Module> modules;
 
 	private RelationalData relationalData;
 
-	public Long getInstanceId() {
-		return this.instanceId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setInstanceId(Long instanceId) {
-		this.instanceId = instanceId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-	public Long getOrderId() {
-		return this.orderId;
+	public String getAppJson() {
+		return this.appJson;
 	}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getSupplierName() {
-		return this.supplierName;
-	}
-
-	public void setSupplierName(String supplierName) {
-		this.supplierName = supplierName;
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
-
-	public String getProductSkuCode() {
-		return this.productSkuCode;
-	}
-
-	public void setProductSkuCode(String productSkuCode) {
-		this.productSkuCode = productSkuCode;
+	public void setAppJson(String appJson) {
+		this.appJson = appJson;
 	}
 
 	public String getProductName() {
@@ -111,44 +87,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 		this.productName = productName;
 	}
 
-	public String getProductType() {
-		return this.productType;
+	public Long getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public Long getBeganOn() {
-		return this.beganOn;
-	}
-
-	public void setBeganOn(Long beganOn) {
-		this.beganOn = beganOn;
-	}
-
-	public Long getEndOn() {
-		return this.endOn;
-	}
-
-	public void setEndOn(Long endOn) {
-		this.endOn = endOn;
-	}
-
-	public Long getCreatedOn() {
-		return this.createdOn;
-	}
-
-	public void setCreatedOn(Long createdOn) {
-		this.createdOn = createdOn;
+	public void setInstanceId(Long instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getExtendJson() {
@@ -159,20 +103,20 @@ public class DescribeInstanceResponse extends AcsResponse {
 		this.extendJson = extendJson;
 	}
 
-	public String getHostJson() {
-		return this.hostJson;
+	public Boolean getIsTrial() {
+		return this.isTrial;
 	}
 
-	public void setHostJson(String hostJson) {
-		this.hostJson = hostJson;
+	public void setIsTrial(Boolean isTrial) {
+		this.isTrial = isTrial;
 	}
 
-	public String getAppJson() {
-		return this.appJson;
+	public Long getBeganOn() {
+		return this.beganOn;
 	}
 
-	public void setAppJson(String appJson) {
-		this.appJson = appJson;
+	public void setBeganOn(Long beganOn) {
+		this.beganOn = beganOn;
 	}
 
 	public String getComponentJson() {
@@ -191,12 +135,68 @@ public class DescribeInstanceResponse extends AcsResponse {
 		this.constraints = constraints;
 	}
 
-	public Boolean getIsTrial() {
-		return this.isTrial;
+	public String getProductType() {
+		return this.productType;
 	}
 
-	public void setIsTrial(Boolean isTrial) {
-		this.isTrial = isTrial;
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
+	public String getHostJson() {
+		return this.hostJson;
+	}
+
+	public void setHostJson(String hostJson) {
+		this.hostJson = hostJson;
+	}
+
+	public String getProductSkuCode() {
+		return this.productSkuCode;
+	}
+
+	public void setProductSkuCode(String productSkuCode) {
+		this.productSkuCode = productSkuCode;
+	}
+
+	public Long getCreatedOn() {
+		return this.createdOn;
+	}
+
+	public void setCreatedOn(Long createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public Long getEndOn() {
+		return this.endOn;
+	}
+
+	public void setEndOn(Long endOn) {
+		this.endOn = endOn;
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	public String getSupplierName() {
+		return this.supplierName;
+	}
+
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
 	}
 
 	public List<Module> getModules() {
@@ -217,20 +217,20 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public static class Module {
 
-		private String id;
+		private String code;
 
 		private String name;
 
-		private String code;
+		private String id;
 
 		private List<Property> properties;
 
-		public String getId() {
-			return this.id;
+		public String getCode() {
+			return this.code;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setCode(String code) {
+			this.code = code;
 		}
 
 		public String getName() {
@@ -241,12 +241,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getCode() {
-			return this.code;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public List<Property> getProperties() {
@@ -259,23 +259,15 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public static class Property {
 
-			private String name;
-
 			private String key;
 
 			private String showType;
 
+			private String name;
+
 			private String displayUnit;
 
 			private List<PropertyValue> propertyValues;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getKey() {
 				return this.key;
@@ -291,6 +283,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setShowType(String showType) {
 				this.showType = showType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getDisplayUnit() {
@@ -311,27 +311,19 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public static class PropertyValue {
 
-				private String value;
-
 				private String displayName;
 
 				private String type;
 
-				private String min;
+				private String step;
+
+				private String value;
 
 				private String max;
 
-				private String step;
-
 				private String remark;
 
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
+				private String min;
 
 				public String getDisplayName() {
 					return this.displayName;
@@ -349,12 +341,20 @@ public class DescribeInstanceResponse extends AcsResponse {
 					this.type = type;
 				}
 
-				public String getMin() {
-					return this.min;
+				public String getStep() {
+					return this.step;
 				}
 
-				public void setMin(String min) {
-					this.min = min;
+				public void setStep(String step) {
+					this.step = step;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
 				}
 
 				public String getMax() {
@@ -365,20 +365,20 @@ public class DescribeInstanceResponse extends AcsResponse {
 					this.max = max;
 				}
 
-				public String getStep() {
-					return this.step;
-				}
-
-				public void setStep(String step) {
-					this.step = step;
-				}
-
 				public String getRemark() {
 					return this.remark;
 				}
 
 				public void setRemark(String remark) {
 					this.remark = remark;
+				}
+
+				public String getMin() {
+					return this.min;
+				}
+
+				public void setMin(String min) {
+					this.min = min;
 				}
 			}
 		}

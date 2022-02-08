@@ -25,62 +25,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePriceResponse extends AcsResponse {
 
-	private String productCode;
-
-	private Float originalPrice;
-
-	private Float tradePrice;
-
-	private Float discountPrice;
+	private String expressionCode;
 
 	private Boolean cuxiao;
 
-	private Integer duration;
+	private Float discountPrice;
 
 	private String cycle;
 
-	private String infoTitle;
+	private Float tradePrice;
 
-	private String expressionCode;
+	private Float originalPrice;
+
+	private Integer duration;
 
 	private String currency;
 
 	private String expressionMessage;
 
+	private String infoTitle;
+
+	private String productCode;
+
 	private List<PromotionRule> promotionRules;
 
 	private List<Coupon> coupons;
 
-	public String getProductCode() {
-		return this.productCode;
+	public String getExpressionCode() {
+		return this.expressionCode;
 	}
 
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
-
-	public Float getOriginalPrice() {
-		return this.originalPrice;
-	}
-
-	public void setOriginalPrice(Float originalPrice) {
-		this.originalPrice = originalPrice;
-	}
-
-	public Float getTradePrice() {
-		return this.tradePrice;
-	}
-
-	public void setTradePrice(Float tradePrice) {
-		this.tradePrice = tradePrice;
-	}
-
-	public Float getDiscountPrice() {
-		return this.discountPrice;
-	}
-
-	public void setDiscountPrice(Float discountPrice) {
-		this.discountPrice = discountPrice;
+	public void setExpressionCode(String expressionCode) {
+		this.expressionCode = expressionCode;
 	}
 
 	public Boolean getCuxiao() {
@@ -91,12 +67,12 @@ public class DescribePriceResponse extends AcsResponse {
 		this.cuxiao = cuxiao;
 	}
 
-	public Integer getDuration() {
-		return this.duration;
+	public Float getDiscountPrice() {
+		return this.discountPrice;
 	}
 
-	public void setDuration(Integer duration) {
-		this.duration = duration;
+	public void setDiscountPrice(Float discountPrice) {
+		this.discountPrice = discountPrice;
 	}
 
 	public String getCycle() {
@@ -107,20 +83,28 @@ public class DescribePriceResponse extends AcsResponse {
 		this.cycle = cycle;
 	}
 
-	public String getInfoTitle() {
-		return this.infoTitle;
+	public Float getTradePrice() {
+		return this.tradePrice;
 	}
 
-	public void setInfoTitle(String infoTitle) {
-		this.infoTitle = infoTitle;
+	public void setTradePrice(Float tradePrice) {
+		this.tradePrice = tradePrice;
 	}
 
-	public String getExpressionCode() {
-		return this.expressionCode;
+	public Float getOriginalPrice() {
+		return this.originalPrice;
 	}
 
-	public void setExpressionCode(String expressionCode) {
-		this.expressionCode = expressionCode;
+	public void setOriginalPrice(Float originalPrice) {
+		this.originalPrice = originalPrice;
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
 	}
 
 	public String getCurrency() {
@@ -137,6 +121,22 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public void setExpressionMessage(String expressionMessage) {
 		this.expressionMessage = expressionMessage;
+	}
+
+	public String getInfoTitle() {
+		return this.infoTitle;
+	}
+
+	public void setInfoTitle(String infoTitle) {
+		this.infoTitle = infoTitle;
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
 	}
 
 	public List<PromotionRule> getPromotionRules() {
@@ -157,18 +157,18 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public static class PromotionRule {
 
-		private String ruleId;
+		private String title;
 
 		private String name;
 
-		private String title;
+		private String ruleId;
 
-		public String getRuleId() {
-			return this.ruleId;
+		public String getTitle() {
+			return this.title;
 		}
 
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
+		public void setTitle(String title) {
+			this.title = title;
 		}
 
 		public String getName() {
@@ -179,12 +179,12 @@ public class DescribePriceResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getTitle() {
-			return this.title;
+		public String getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setTitle(String title) {
-			this.title = title;
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
 		}
 	}
 
@@ -198,9 +198,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private String couponDesc;
 
-		private Float canPromFee;
-
 		private Boolean isSelected;
+
+		private Float canPromFee;
 
 		public String getCouponOptionCode() {
 			return this.couponOptionCode;
@@ -234,20 +234,20 @@ public class DescribePriceResponse extends AcsResponse {
 			this.couponDesc = couponDesc;
 		}
 
-		public Float getCanPromFee() {
-			return this.canPromFee;
-		}
-
-		public void setCanPromFee(Float canPromFee) {
-			this.canPromFee = canPromFee;
-		}
-
 		public Boolean getIsSelected() {
 			return this.isSelected;
 		}
 
 		public void setIsSelected(Boolean isSelected) {
 			this.isSelected = isSelected;
+		}
+
+		public Float getCanPromFee() {
+			return this.canPromFee;
+		}
+
+		public void setCanPromFee(Float canPromFee) {
+			this.canPromFee = canPromFee;
 		}
 	}
 

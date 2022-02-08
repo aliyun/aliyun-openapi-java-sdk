@@ -77,148 +77,44 @@ public class DescribeProductsResponse extends AcsResponse {
 
 	public static class ProductItem {
 
-		private String code;
-
-		private String name;
-
-		private Long categoryId;
-
-		private Long supplierId;
-
-		private String supplierName;
-
-		private String shortDescription;
-
-		private String tags;
-
-		private String suggestedPrice;
-
-		private String targetUrl;
-
-		private String imageUrl;
-
-		private String score;
-
-		private String operationSystem;
-
-		private String warrantyDate;
-
-		private String deliveryDate;
+		private String priceInfo;
 
 		private String deliveryWay;
 
-		private String priceInfo;
+		private String imageUrl;
 
-		public String getCode() {
-			return this.code;
+		private String warrantyDate;
+
+		private String tags;
+
+		private String score;
+
+		private Long supplierId;
+
+		private String operationSystem;
+
+		private String shortDescription;
+
+		private String deliveryDate;
+
+		private String targetUrl;
+
+		private String code;
+
+		private Long categoryId;
+
+		private String name;
+
+		private String suggestedPrice;
+
+		private String supplierName;
+
+		public String getPriceInfo() {
+			return this.priceInfo;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getCategoryId() {
-			return this.categoryId;
-		}
-
-		public void setCategoryId(Long categoryId) {
-			this.categoryId = categoryId;
-		}
-
-		public Long getSupplierId() {
-			return this.supplierId;
-		}
-
-		public void setSupplierId(Long supplierId) {
-			this.supplierId = supplierId;
-		}
-
-		public String getSupplierName() {
-			return this.supplierName;
-		}
-
-		public void setSupplierName(String supplierName) {
-			this.supplierName = supplierName;
-		}
-
-		public String getShortDescription() {
-			return this.shortDescription;
-		}
-
-		public void setShortDescription(String shortDescription) {
-			this.shortDescription = shortDescription;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getSuggestedPrice() {
-			return this.suggestedPrice;
-		}
-
-		public void setSuggestedPrice(String suggestedPrice) {
-			this.suggestedPrice = suggestedPrice;
-		}
-
-		public String getTargetUrl() {
-			return this.targetUrl;
-		}
-
-		public void setTargetUrl(String targetUrl) {
-			this.targetUrl = targetUrl;
-		}
-
-		public String getImageUrl() {
-			return this.imageUrl;
-		}
-
-		public void setImageUrl(String imageUrl) {
-			this.imageUrl = imageUrl;
-		}
-
-		public String getScore() {
-			return this.score;
-		}
-
-		public void setScore(String score) {
-			this.score = score;
-		}
-
-		public String getOperationSystem() {
-			return this.operationSystem;
-		}
-
-		public void setOperationSystem(String operationSystem) {
-			this.operationSystem = operationSystem;
-		}
-
-		public String getWarrantyDate() {
-			return this.warrantyDate;
-		}
-
-		public void setWarrantyDate(String warrantyDate) {
-			this.warrantyDate = warrantyDate;
-		}
-
-		public String getDeliveryDate() {
-			return this.deliveryDate;
-		}
-
-		public void setDeliveryDate(String deliveryDate) {
-			this.deliveryDate = deliveryDate;
+		public void setPriceInfo(String priceInfo) {
+			this.priceInfo = priceInfo;
 		}
 
 		public String getDeliveryWay() {
@@ -229,12 +125,116 @@ public class DescribeProductsResponse extends AcsResponse {
 			this.deliveryWay = deliveryWay;
 		}
 
-		public String getPriceInfo() {
-			return this.priceInfo;
+		public String getImageUrl() {
+			return this.imageUrl;
 		}
 
-		public void setPriceInfo(String priceInfo) {
-			this.priceInfo = priceInfo;
+		public void setImageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
+		}
+
+		public String getWarrantyDate() {
+			return this.warrantyDate;
+		}
+
+		public void setWarrantyDate(String warrantyDate) {
+			this.warrantyDate = warrantyDate;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
+		}
+
+		public String getScore() {
+			return this.score;
+		}
+
+		public void setScore(String score) {
+			this.score = score;
+		}
+
+		public Long getSupplierId() {
+			return this.supplierId;
+		}
+
+		public void setSupplierId(Long supplierId) {
+			this.supplierId = supplierId;
+		}
+
+		public String getOperationSystem() {
+			return this.operationSystem;
+		}
+
+		public void setOperationSystem(String operationSystem) {
+			this.operationSystem = operationSystem;
+		}
+
+		public String getShortDescription() {
+			return this.shortDescription;
+		}
+
+		public void setShortDescription(String shortDescription) {
+			this.shortDescription = shortDescription;
+		}
+
+		public String getDeliveryDate() {
+			return this.deliveryDate;
+		}
+
+		public void setDeliveryDate(String deliveryDate) {
+			this.deliveryDate = deliveryDate;
+		}
+
+		public String getTargetUrl() {
+			return this.targetUrl;
+		}
+
+		public void setTargetUrl(String targetUrl) {
+			this.targetUrl = targetUrl;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public Long getCategoryId() {
+			return this.categoryId;
+		}
+
+		public void setCategoryId(Long categoryId) {
+			this.categoryId = categoryId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getSuggestedPrice() {
+			return this.suggestedPrice;
+		}
+
+		public void setSuggestedPrice(String suggestedPrice) {
+			this.suggestedPrice = suggestedPrice;
+		}
+
+		public String getSupplierName() {
+			return this.supplierName;
+		}
+
+		public void setSupplierName(String supplierName) {
+			this.supplierName = supplierName;
 		}
 	}
 

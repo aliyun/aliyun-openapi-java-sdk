@@ -23,8 +23,8 @@ public class ResumeProjectResponseUnmarshaller {
 	public static ResumeProjectResponse unmarshall(ResumeProjectResponse resumeProjectResponse, UnmarshallerContext _ctx) {
 		
 		resumeProjectResponse.setRequestId(_ctx.stringValue("ResumeProjectResponse.RequestId"));
-		resumeProjectResponse.setSuccess(_ctx.booleanValue("ResumeProjectResponse.Success"));
 		resumeProjectResponse.setResult(_ctx.booleanValue("ResumeProjectResponse.Result"));
+		resumeProjectResponse.setSuccess(_ctx.booleanValue("ResumeProjectResponse.Success"));
 	 
 	 	return resumeProjectResponse;
 	}

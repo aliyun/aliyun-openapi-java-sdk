@@ -35,16 +35,16 @@ public class DescribeCommoditiesResponseUnmarshaller {
 		data.setTotalCount(_ctx.longValue("DescribeCommoditiesResponse.Data.TotalCount"));
 
 		Pageable pageable = new Pageable();
-		pageable.setPageNumber(_ctx.integerValue("DescribeCommoditiesResponse.Data.Pageable.PageNumber"));
 		pageable.setPageSize(_ctx.integerValue("DescribeCommoditiesResponse.Data.Pageable.PageSize"));
+		pageable.setPageNumber(_ctx.integerValue("DescribeCommoditiesResponse.Data.Pageable.PageNumber"));
 		data.setPageable(pageable);
 
 		List<Commodity> commodities = new ArrayList<Commodity>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCommoditiesResponse.Data.Commodities.Length"); i++) {
 			Commodity commodity = new Commodity();
 			commodity.setCommodityId(_ctx.stringValue("DescribeCommoditiesResponse.Data.Commodities["+ i +"].CommodityId"));
-			commodity.setProperties(_ctx.stringValue("DescribeCommoditiesResponse.Data.Commodities["+ i +"].Properties"));
 			commodity.setApplicationId(_ctx.stringValue("DescribeCommoditiesResponse.Data.Commodities["+ i +"].ApplicationId"));
+			commodity.setProperties(_ctx.stringValue("DescribeCommoditiesResponse.Data.Commodities["+ i +"].Properties"));
 
 			commodities.add(commodity);
 		}

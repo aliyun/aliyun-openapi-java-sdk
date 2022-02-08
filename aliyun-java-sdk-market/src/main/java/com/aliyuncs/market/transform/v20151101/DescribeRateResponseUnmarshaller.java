@@ -23,21 +23,23 @@ public class DescribeRateResponseUnmarshaller {
 	public static DescribeRateResponse unmarshall(DescribeRateResponse describeRateResponse, UnmarshallerContext _ctx) {
 		
 		describeRateResponse.setRequestId(_ctx.stringValue("DescribeRateResponse.RequestId"));
-		describeRateResponse.setId(_ctx.longValue("DescribeRateResponse.Id"));
-		describeRateResponse.setOrderId(_ctx.stringValue("DescribeRateResponse.OrderId"));
-		describeRateResponse.setInstanceId(_ctx.stringValue("DescribeRateResponse.InstanceId"));
+		describeRateResponse.setType(_ctx.stringValue("DescribeRateResponse.Type"));
 		describeRateResponse.setAliUid(_ctx.longValue("DescribeRateResponse.AliUid"));
-		describeRateResponse.setProductId(_ctx.stringValue("DescribeRateResponse.ProductId"));
 		describeRateResponse.setScore(_ctx.stringValue("DescribeRateResponse.Score"));
-		describeRateResponse.setContent(_ctx.stringValue("DescribeRateResponse.Content"));
-		describeRateResponse.setGmtCreated(_ctx.longValue("DescribeRateResponse.GmtCreated"));
+		describeRateResponse.setInstanceId(_ctx.stringValue("DescribeRateResponse.InstanceId"));
 		describeRateResponse.setExplaintion(_ctx.stringValue("DescribeRateResponse.Explaintion"));
-		describeRateResponse.setGmtExplaintion(_ctx.longValue("DescribeRateResponse.GmtExplaintion"));
-		describeRateResponse.setAdditionalContent(_ctx.stringValue("DescribeRateResponse.AdditionalContent"));
 		describeRateResponse.setGmtAdditional(_ctx.longValue("DescribeRateResponse.GmtAdditional"));
+		describeRateResponse.setGmtCreated(_ctx.longValue("DescribeRateResponse.GmtCreated"));
 		describeRateResponse.setAdditionalExplaintion(_ctx.stringValue("DescribeRateResponse.AdditionalExplaintion"));
 		describeRateResponse.setGmtAdditionalExplaintion(_ctx.longValue("DescribeRateResponse.GmtAdditionalExplaintion"));
-		describeRateResponse.setType(_ctx.stringValue("DescribeRateResponse.Type"));
+		describeRateResponse.setProductId(_ctx.stringValue("DescribeRateResponse.ProductId"));
+		describeRateResponse.setGmtExplaintion(_ctx.longValue("DescribeRateResponse.GmtExplaintion"));
+		describeRateResponse.setContent(_ctx.stringValue("DescribeRateResponse.Content"));
+		describeRateResponse.setAdditionalContent(_ctx.stringValue("DescribeRateResponse.AdditionalContent"));
+		describeRateResponse.setId(_ctx.longValue("DescribeRateResponse.Id"));
+		describeRateResponse.setOrderId(_ctx.stringValue("DescribeRateResponse.OrderId"));
+		describeRateResponse.setPackageVersion(_ctx.stringValue("DescribeRateResponse.PackageVersion"));
+		describeRateResponse.setCustomerLabels(_ctx.stringValue("DescribeRateResponse.CustomerLabels"));
 	 
 	 	return describeRateResponse;
 	}

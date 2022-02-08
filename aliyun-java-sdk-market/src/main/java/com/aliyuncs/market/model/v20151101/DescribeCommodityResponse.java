@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCommodityResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Commodity commodity;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class DescribeCommodityResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Commodity getCommodity() {
@@ -56,29 +56,13 @@ public class DescribeCommodityResponse extends AcsResponse {
 
 	public static class Commodity {
 
-		private String commodityId;
-
-		private String properties;
-
 		private String commoditySpecs;
 
 		private String applicationId;
 
-		public String getCommodityId() {
-			return this.commodityId;
-		}
+		private String commodityId;
 
-		public void setCommodityId(String commodityId) {
-			this.commodityId = commodityId;
-		}
-
-		public String getProperties() {
-			return this.properties;
-		}
-
-		public void setProperties(String properties) {
-			this.properties = properties;
-		}
+		private String properties;
 
 		public String getCommoditySpecs() {
 			return this.commoditySpecs;
@@ -94,6 +78,22 @@ public class DescribeCommodityResponse extends AcsResponse {
 
 		public void setApplicationId(String applicationId) {
 			this.applicationId = applicationId;
+		}
+
+		public String getCommodityId() {
+			return this.commodityId;
+		}
+
+		public void setCommodityId(String commodityId) {
+			this.commodityId = commodityId;
+		}
+
+		public String getProperties() {
+			return this.properties;
+		}
+
+		public void setProperties(String properties) {
+			this.properties = properties;
 		}
 	}
 

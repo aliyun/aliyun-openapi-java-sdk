@@ -23,8 +23,8 @@ public class PauseProjectResponseUnmarshaller {
 	public static PauseProjectResponse unmarshall(PauseProjectResponse pauseProjectResponse, UnmarshallerContext _ctx) {
 		
 		pauseProjectResponse.setRequestId(_ctx.stringValue("PauseProjectResponse.RequestId"));
-		pauseProjectResponse.setSuccess(_ctx.booleanValue("PauseProjectResponse.Success"));
 		pauseProjectResponse.setResult(_ctx.booleanValue("PauseProjectResponse.Result"));
+		pauseProjectResponse.setSuccess(_ctx.booleanValue("PauseProjectResponse.Success"));
 	 
 	 	return pauseProjectResponse;
 	}
