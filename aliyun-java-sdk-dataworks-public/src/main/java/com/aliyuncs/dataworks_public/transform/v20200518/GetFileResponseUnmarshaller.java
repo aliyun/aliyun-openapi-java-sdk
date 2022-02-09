@@ -60,6 +60,7 @@ public class GetFileResponseUnmarshaller {
 		file.setLastEditTime(_ctx.longValue("GetFileResponse.Data.File.LastEditTime"));
 		file.setContent(_ctx.stringValue("GetFileResponse.Data.File.Content"));
 		file.setNodeId(_ctx.longValue("GetFileResponse.Data.File.NodeId"));
+		file.setAdvancedSettings(_ctx.stringValue("GetFileResponse.Data.File.AdvancedSettings"));
 		data.setFile(file);
 
 		NodeConfiguration nodeConfiguration = new NodeConfiguration();
@@ -76,6 +77,7 @@ public class GetFileResponseUnmarshaller {
 		nodeConfiguration.setAutoRerunTimes(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunTimes"));
 		nodeConfiguration.setAutoRerunIntervalMillis(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunIntervalMillis"));
 		nodeConfiguration.setCronExpress(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.CronExpress"));
+		nodeConfiguration.setStartImmediately(_ctx.booleanValue("GetFileResponse.Data.NodeConfiguration.StartImmediately"));
 
 		List<NodeInputOutput> inputList = new ArrayList<NodeInputOutput>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.InputList.Length"); i++) {

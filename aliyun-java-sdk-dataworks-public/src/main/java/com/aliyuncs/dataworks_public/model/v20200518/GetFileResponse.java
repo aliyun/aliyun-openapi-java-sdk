@@ -151,6 +151,8 @@ public class GetFileResponse extends AcsResponse {
 
 			private Long nodeId;
 
+			private String advancedSettings;
+
 			public Integer getCommitStatus() {
 				return this.commitStatus;
 			}
@@ -318,6 +320,14 @@ public class GetFileResponse extends AcsResponse {
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
 			}
+
+			public String getAdvancedSettings() {
+				return this.advancedSettings;
+			}
+
+			public void setAdvancedSettings(String advancedSettings) {
+				this.advancedSettings = advancedSettings;
+			}
 		}
 
 		public static class NodeConfiguration {
@@ -347,6 +357,8 @@ public class GetFileResponse extends AcsResponse {
 			private Integer autoRerunIntervalMillis;
 
 			private String cronExpress;
+
+			private Boolean startImmediately;
 
 			private List<NodeInputOutput> inputList;
 
@@ -454,6 +466,14 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setCronExpress(String cronExpress) {
 				this.cronExpress = cronExpress;
+			}
+
+			public Boolean getStartImmediately() {
+				return this.startImmediately;
+			}
+
+			public void setStartImmediately(Boolean startImmediately) {
+				this.startImmediately = startImmediately;
 			}
 
 			public List<NodeInputOutput> getInputList() {

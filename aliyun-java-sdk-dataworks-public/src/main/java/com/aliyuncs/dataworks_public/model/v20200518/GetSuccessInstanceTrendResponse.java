@@ -79,17 +79,9 @@ public class GetSuccessInstanceTrendResponse extends AcsResponse {
 
 		public static class TodayTrendItem {
 
-			private Integer count;
-
 			private String timePoint;
 
-			public Integer getCount() {
-				return this.count;
-			}
-
-			public void setCount(Integer count) {
-				this.count = count;
-			}
+			private Integer count;
 
 			public String getTimePoint() {
 				return this.timePoint;
@@ -97,22 +89,22 @@ public class GetSuccessInstanceTrendResponse extends AcsResponse {
 
 			public void setTimePoint(String timePoint) {
 				this.timePoint = timePoint;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
 			}
 		}
 
 		public static class YesterdayTrendItem {
 
-			private Integer count;
-
 			private String timePoint;
 
-			public Integer getCount() {
-				return this.count;
-			}
-
-			public void setCount(Integer count) {
-				this.count = count;
-			}
+			private Integer count;
 
 			public String getTimePoint() {
 				return this.timePoint;
@@ -120,22 +112,22 @@ public class GetSuccessInstanceTrendResponse extends AcsResponse {
 
 			public void setTimePoint(String timePoint) {
 				this.timePoint = timePoint;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
 			}
 		}
 
 		public static class AvgTrendItem {
 
-			private Integer count;
-
 			private String timePoint;
 
-			public Integer getCount() {
-				return this.count;
-			}
-
-			public void setCount(Integer count) {
-				this.count = count;
-			}
+			private Integer count;
 
 			public String getTimePoint() {
 				return this.timePoint;
@@ -143,6 +135,14 @@ public class GetSuccessInstanceTrendResponse extends AcsResponse {
 
 			public void setTimePoint(String timePoint) {
 				this.timePoint = timePoint;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
 			}
 		}
 	}
