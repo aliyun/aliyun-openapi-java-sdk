@@ -37,7 +37,7 @@ public class GetAutoResourceOptimizeConfigRequest extends RpcAcsRequest<GetAutoR
 
 	private String accessKey;
 	public GetAutoResourceOptimizeConfigRequest() {
-		super("DAS", "2020-01-16", "GetAutoResourceOptimizeConfig", "das");
+		super("DAS", "2020-01-16", "GetAutoResourceOptimizeConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

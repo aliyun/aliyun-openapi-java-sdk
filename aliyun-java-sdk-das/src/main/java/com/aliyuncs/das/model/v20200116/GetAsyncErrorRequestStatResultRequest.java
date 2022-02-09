@@ -41,7 +41,7 @@ public class GetAsyncErrorRequestStatResultRequest extends RpcAcsRequest<GetAsyn
 
 	private String nodeId;
 	public GetAsyncErrorRequestStatResultRequest() {
-		super("DAS", "2020-01-16", "GetAsyncErrorRequestStatResult", "das");
+		super("DAS", "2020-01-16", "GetAsyncErrorRequestStatResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

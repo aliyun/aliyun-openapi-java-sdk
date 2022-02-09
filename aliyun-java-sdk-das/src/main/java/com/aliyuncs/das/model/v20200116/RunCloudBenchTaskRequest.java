@@ -27,7 +27,7 @@ public class RunCloudBenchTaskRequest extends RpcAcsRequest<RunCloudBenchTaskRes
 
 	private String taskId;
 	public RunCloudBenchTaskRequest() {
-		super("DAS", "2020-01-16", "RunCloudBenchTask", "das");
+		super("DAS", "2020-01-16", "RunCloudBenchTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

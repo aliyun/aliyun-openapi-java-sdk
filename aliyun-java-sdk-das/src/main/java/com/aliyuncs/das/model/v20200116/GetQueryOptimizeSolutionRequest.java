@@ -27,13 +27,11 @@ public class GetQueryOptimizeSolutionRequest extends RpcAcsRequest<GetQueryOptim
 
 	private String sqlId;
 
-	private String consoleContext;
-
 	private String ruleIds;
 
 	private String engine;
 	public GetQueryOptimizeSolutionRequest() {
-		super("DAS", "2020-01-16", "GetQueryOptimizeSolution", "das");
+		super("DAS", "2020-01-16", "GetQueryOptimizeSolution");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,17 +47,6 @@ public class GetQueryOptimizeSolutionRequest extends RpcAcsRequest<GetQueryOptim
 		this.sqlId = sqlId;
 		if(sqlId != null){
 			putQueryParameter("SqlId", sqlId);
-		}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
 		}
 	}
 

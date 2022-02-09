@@ -22,7 +22,7 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateCloudbenchTasksRequest extends RpcAcsRequest<CreateCloudbenchTasksResponse> {
+public class CreateCloudBenchTasksRequest extends RpcAcsRequest<CreateCloudBenchTasksResponse> {
 	   
 
 	private String clientType;
@@ -78,8 +78,8 @@ public class CreateCloudbenchTasksRequest extends RpcAcsRequest<CreateCloudbench
 	private String gatewayVpcId;
 
 	private String smartPressureTime;
-	public CreateCloudbenchTasksRequest() {
-		super("DAS", "2020-01-16", "CreateCloudbenchTasks", "das");
+	public CreateCloudBenchTasksRequest() {
+		super("DAS", "2020-01-16", "CreateCloudBenchTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -385,8 +385,8 @@ public class CreateCloudbenchTasksRequest extends RpcAcsRequest<CreateCloudbench
 	}
 
 	@Override
-	public Class<CreateCloudbenchTasksResponse> getResponseClass() {
-		return CreateCloudbenchTasksResponse.class;
+	public Class<CreateCloudBenchTasksResponse> getResponseClass() {
+		return CreateCloudBenchTasksResponse.class;
 	}
 
 }

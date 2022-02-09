@@ -45,7 +45,7 @@ public class GetAutonomousNotifyEventsInRangeRequest extends RpcAcsRequest<GetAu
 
 	private String nodeId;
 	public GetAutonomousNotifyEventsInRangeRequest() {
-		super("DAS", "2020-01-16", "GetAutonomousNotifyEventsInRange", "das");
+		super("DAS", "2020-01-16", "GetAutonomousNotifyEventsInRange");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

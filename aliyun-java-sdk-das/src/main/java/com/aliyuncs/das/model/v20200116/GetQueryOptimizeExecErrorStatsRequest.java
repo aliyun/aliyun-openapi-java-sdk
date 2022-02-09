@@ -27,8 +27,6 @@ public class GetQueryOptimizeExecErrorStatsRequest extends RpcAcsRequest<GetQuer
 
 	private String keywords;
 
-	private String consoleContext;
-
 	private String engine;
 
 	private String pageSize;
@@ -47,7 +45,7 @@ public class GetQueryOptimizeExecErrorStatsRequest extends RpcAcsRequest<GetQuer
 
 	private String time;
 	public GetQueryOptimizeExecErrorStatsRequest() {
-		super("DAS", "2020-01-16", "GetQueryOptimizeExecErrorStats", "das");
+		super("DAS", "2020-01-16", "GetQueryOptimizeExecErrorStats");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,17 +61,6 @@ public class GetQueryOptimizeExecErrorStatsRequest extends RpcAcsRequest<GetQuer
 		this.keywords = keywords;
 		if(keywords != null){
 			putQueryParameter("Keywords", keywords);
-		}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
 		}
 	}
 

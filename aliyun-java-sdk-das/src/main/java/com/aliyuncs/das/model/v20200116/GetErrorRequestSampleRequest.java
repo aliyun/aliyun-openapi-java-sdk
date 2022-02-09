@@ -41,7 +41,7 @@ public class GetErrorRequestSampleRequest extends RpcAcsRequest<GetErrorRequestS
 
 	private String nodeId;
 	public GetErrorRequestSampleRequest() {
-		super("DAS", "2020-01-16", "GetErrorRequestSample", "das");
+		super("DAS", "2020-01-16", "GetErrorRequestSample");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

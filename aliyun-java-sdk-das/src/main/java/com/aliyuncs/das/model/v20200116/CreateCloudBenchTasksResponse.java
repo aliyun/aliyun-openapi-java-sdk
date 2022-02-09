@@ -16,14 +16,14 @@ package com.aliyuncs.das.model.v20200116;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.CreateCloudbenchTasksResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.CreateCloudBenchTasksResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateCloudbenchTasksResponse extends AcsResponse {
+public class CreateCloudBenchTasksResponse extends AcsResponse {
 
 	private String code;
 
@@ -76,7 +76,7 @@ public class CreateCloudbenchTasksResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateCloudbenchTasksResponse getInstance(UnmarshallerContext context) {
-		return	CreateCloudbenchTasksResponseUnmarshaller.unmarshall(this, context);
+	public CreateCloudBenchTasksResponse getInstance(UnmarshallerContext context) {
+		return	CreateCloudBenchTasksResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -31,7 +31,7 @@ public class DescribeHotBigKeysRequest extends RpcAcsRequest<DescribeHotBigKeysR
 
 	private String nodeId;
 	public DescribeHotBigKeysRequest() {
-		super("DAS", "2020-01-16", "DescribeHotBigKeys", "das");
+		super("DAS", "2020-01-16", "DescribeHotBigKeys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

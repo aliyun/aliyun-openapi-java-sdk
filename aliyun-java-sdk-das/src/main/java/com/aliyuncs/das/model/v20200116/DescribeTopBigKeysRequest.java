@@ -35,7 +35,7 @@ public class DescribeTopBigKeysRequest extends RpcAcsRequest<DescribeTopBigKeysR
 
 	private String nodeId;
 	public DescribeTopBigKeysRequest() {
-		super("DAS", "2020-01-16", "DescribeTopBigKeys", "das");
+		super("DAS", "2020-01-16", "DescribeTopBigKeys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,13 +27,11 @@ public class GetQueryOptimizeRuleListRequest extends RpcAcsRequest<GetQueryOptim
 
 	private String tagNames;
 
-	private String consoleContext;
-
 	private String engine;
 
 	private String instanceIds;
 	public GetQueryOptimizeRuleListRequest() {
-		super("DAS", "2020-01-16", "GetQueryOptimizeRuleList", "das");
+		super("DAS", "2020-01-16", "GetQueryOptimizeRuleList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,17 +47,6 @@ public class GetQueryOptimizeRuleListRequest extends RpcAcsRequest<GetQueryOptim
 		this.tagNames = tagNames;
 		if(tagNames != null){
 			putQueryParameter("TagNames", tagNames);
-		}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
 		}
 	}
 

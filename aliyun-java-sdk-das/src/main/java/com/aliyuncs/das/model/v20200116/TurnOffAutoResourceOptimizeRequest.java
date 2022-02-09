@@ -37,7 +37,7 @@ public class TurnOffAutoResourceOptimizeRequest extends RpcAcsRequest<TurnOffAut
 
 	private String accessKey;
 	public TurnOffAutoResourceOptimizeRequest() {
-		super("DAS", "2020-01-16", "TurnOffAutoResourceOptimize", "das");
+		super("DAS", "2020-01-16", "TurnOffAutoResourceOptimize");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

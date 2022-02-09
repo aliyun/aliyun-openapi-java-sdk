@@ -27,7 +27,7 @@ public class DeleteCloudBenchTaskRequest extends RpcAcsRequest<DeleteCloudBenchT
 
 	private String taskId;
 	public DeleteCloudBenchTaskRequest() {
-		super("DAS", "2020-01-16", "DeleteCloudBenchTask", "das");
+		super("DAS", "2020-01-16", "DeleteCloudBenchTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

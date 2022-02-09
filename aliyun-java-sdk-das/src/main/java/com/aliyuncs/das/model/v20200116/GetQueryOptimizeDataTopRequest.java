@@ -29,16 +29,14 @@ public class GetQueryOptimizeDataTopRequest extends RpcAcsRequest<GetQueryOptimi
 
 	private String tagNames;
 
-	private String consoleContext;
-
 	private String engine;
 
 	private String instanceIds;
 
 	private String time;
 	public GetQueryOptimizeDataTopRequest() {
-		super("DAS", "2020-01-16", "GetQueryOptimizeDataTop", "das");
-		setMethod(MethodType.POST);
+		super("DAS", "2020-01-16", "GetQueryOptimizeDataTop");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -64,17 +62,6 @@ public class GetQueryOptimizeDataTopRequest extends RpcAcsRequest<GetQueryOptimi
 		this.tagNames = tagNames;
 		if(tagNames != null){
 			putQueryParameter("TagNames", tagNames);
-		}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
 		}
 	}
 

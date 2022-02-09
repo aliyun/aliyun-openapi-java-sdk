@@ -31,7 +31,7 @@ public class GetRequestDiagnosisResultRequest extends RpcAcsRequest<GetRequestDi
 
 	private String nodeId;
 	public GetRequestDiagnosisResultRequest() {
-		super("DAS", "2020-01-16", "GetRequestDiagnosisResult", "das");
+		super("DAS", "2020-01-16", "GetRequestDiagnosisResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

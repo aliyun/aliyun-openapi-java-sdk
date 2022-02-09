@@ -45,7 +45,7 @@ public class GetResourceOptimizeHistoryListRequest extends RpcAcsRequest<GetReso
 
 	private Integer page;
 	public GetResourceOptimizeHistoryListRequest() {
-		super("DAS", "2020-01-16", "GetResourceOptimizeHistoryList", "das");
+		super("DAS", "2020-01-16", "GetResourceOptimizeHistoryList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

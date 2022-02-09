@@ -31,7 +31,7 @@ public class GetSqlConcurrencyControlKeywordsFromSqlTextRequest extends RpcAcsRe
 
 	private String sqlText;
 	public GetSqlConcurrencyControlKeywordsFromSqlTextRequest() {
-		super("DAS", "2020-01-16", "GetSqlConcurrencyControlKeywordsFromSqlText", "das");
+		super("DAS", "2020-01-16", "GetSqlConcurrencyControlKeywordsFromSqlText");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

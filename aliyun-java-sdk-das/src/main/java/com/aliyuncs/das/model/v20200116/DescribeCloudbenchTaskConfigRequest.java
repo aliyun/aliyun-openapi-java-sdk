@@ -27,7 +27,7 @@ public class DescribeCloudbenchTaskConfigRequest extends RpcAcsRequest<DescribeC
 
 	private String taskId;
 	public DescribeCloudbenchTaskConfigRequest() {
-		super("DAS", "2020-01-16", "DescribeCloudbenchTaskConfig", "das");
+		super("DAS", "2020-01-16", "DescribeCloudbenchTaskConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

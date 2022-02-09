@@ -27,15 +27,13 @@ public class GetQueryOptimizeExecErrorSampleRequest extends RpcAcsRequest<GetQue
 
 	private String sqlId;
 
-	private String consoleContext;
-
 	private String instanceId;
 
 	private String engine;
 
 	private String time;
 	public GetQueryOptimizeExecErrorSampleRequest() {
-		super("DAS", "2020-01-16", "GetQueryOptimizeExecErrorSample", "das");
+		super("DAS", "2020-01-16", "GetQueryOptimizeExecErrorSample");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,17 +49,6 @@ public class GetQueryOptimizeExecErrorSampleRequest extends RpcAcsRequest<GetQue
 		this.sqlId = sqlId;
 		if(sqlId != null){
 			putQueryParameter("SqlId", sqlId);
-		}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
 		}
 	}
 

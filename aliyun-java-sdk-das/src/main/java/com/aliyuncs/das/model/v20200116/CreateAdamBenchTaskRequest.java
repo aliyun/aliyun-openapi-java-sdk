@@ -49,7 +49,7 @@ public class CreateAdamBenchTaskRequest extends RpcAcsRequest<CreateAdamBenchTas
 
 	private String srcSqlOssAddr;
 	public CreateAdamBenchTaskRequest() {
-		super("DAS", "2020-01-16", "CreateAdamBenchTask", "das");
+		super("DAS", "2020-01-16", "CreateAdamBenchTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

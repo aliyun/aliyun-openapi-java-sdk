@@ -35,7 +35,7 @@ public class DescribeTopHotKeysRequest extends RpcAcsRequest<DescribeTopHotKeysR
 
 	private String nodeId;
 	public DescribeTopHotKeysRequest() {
-		super("DAS", "2020-01-16", "DescribeTopHotKeys", "das");
+		super("DAS", "2020-01-16", "DescribeTopHotKeys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

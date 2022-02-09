@@ -31,8 +31,6 @@ public class GetQueryOptimizeDataStatsRequest extends RpcAcsRequest<GetQueryOpti
 
 	private String rules;
 
-	private String consoleContext;
-
 	private String engine;
 
 	private String pageSize;
@@ -55,8 +53,8 @@ public class GetQueryOptimizeDataStatsRequest extends RpcAcsRequest<GetQueryOpti
 
 	private String time;
 	public GetQueryOptimizeDataStatsRequest() {
-		super("DAS", "2020-01-16", "GetQueryOptimizeDataStats", "das");
-		setMethod(MethodType.POST);
+		super("DAS", "2020-01-16", "GetQueryOptimizeDataStats");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -93,17 +91,6 @@ public class GetQueryOptimizeDataStatsRequest extends RpcAcsRequest<GetQueryOpti
 		this.rules = rules;
 		if(rules != null){
 			putQueryParameter("Rules", rules);
-		}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
 		}
 	}
 
