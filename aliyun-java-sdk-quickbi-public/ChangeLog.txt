@@ -1,3 +1,6 @@
+2022-02-09 Version: 1.8.5
+- Added api QueryWorksBloodRelationship.
+
 2022-01-25 Version: 1.8.4
 - Add APIs, include, ListSharedReports, ListFavoriteReports, ListRecentViewReports, CreateTicket, QueryTicketInfo, UpdateTicketNum, DelayTicketExpireTime, DelayTicketExpireTime.
 
