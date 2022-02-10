@@ -51,7 +51,7 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 
 	private String md5;
 	public UpdateNacosConfigRequest() {
-		super("mse", "2019-05-31", "UpdateNacosConfig", "mse");
+		super("mse", "2019-05-31", "UpdateNacosConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetGatewayServiceDetailRequest extends RpcAcsRequest<GetGatewayServ
 
 	private Long serviceId;
 	public GetGatewayServiceDetailRequest() {
-		super("mse", "2019-05-31", "GetGatewayServiceDetail", "mse");
+		super("mse", "2019-05-31", "GetGatewayServiceDetail");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

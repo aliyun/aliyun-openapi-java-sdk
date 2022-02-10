@@ -35,7 +35,7 @@ public class ListAlarmRulesRequest extends RpcAcsRequest<ListAlarmRulesResponse>
 
 	private String acceptLanguage;
 	public ListAlarmRulesRequest() {
-		super("mse", "2019-05-31", "ListAlarmRules", "mse");
+		super("mse", "2019-05-31", "ListAlarmRules");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

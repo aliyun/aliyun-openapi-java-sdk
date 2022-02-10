@@ -29,7 +29,7 @@ public class ListGatewaySlbRequest extends RpcAcsRequest<ListGatewaySlbResponse>
 
 	private String acceptLanguage;
 	public ListGatewaySlbRequest() {
-		super("mse", "2019-05-31", "ListGatewaySlb", "mse");
+		super("mse", "2019-05-31", "ListGatewaySlb");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

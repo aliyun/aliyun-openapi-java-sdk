@@ -33,7 +33,7 @@ public class DeleteZnodeRequest extends RpcAcsRequest<DeleteZnodeResponse> {
 
 	private String acceptLanguage;
 	public DeleteZnodeRequest() {
-		super("mse", "2019-05-31", "DeleteZnode", "mse");
+		super("mse", "2019-05-31", "DeleteZnode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

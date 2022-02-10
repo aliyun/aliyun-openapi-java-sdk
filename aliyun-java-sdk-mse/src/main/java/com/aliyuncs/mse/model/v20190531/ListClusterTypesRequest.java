@@ -27,7 +27,7 @@ public class ListClusterTypesRequest extends RpcAcsRequest<ListClusterTypesRespo
 
 	private String acceptLanguage;
 	public ListClusterTypesRequest() {
-		super("mse", "2019-05-31", "ListClusterTypes", "mse");
+		super("mse", "2019-05-31", "ListClusterTypes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

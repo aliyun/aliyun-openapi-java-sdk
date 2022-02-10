@@ -86,9 +86,29 @@ public class UpdateGatewayOptionResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Boolean enableHardwareAcceleration;
+
+		private Boolean disableHttp2Alpn;
+
 		private TraceDetails traceDetails;
 
 		private LogConfigDetails logConfigDetails;
+
+		public Boolean getEnableHardwareAcceleration() {
+			return this.enableHardwareAcceleration;
+		}
+
+		public void setEnableHardwareAcceleration(Boolean enableHardwareAcceleration) {
+			this.enableHardwareAcceleration = enableHardwareAcceleration;
+		}
+
+		public Boolean getDisableHttp2Alpn() {
+			return this.disableHttp2Alpn;
+		}
+
+		public void setDisableHttp2Alpn(Boolean disableHttp2Alpn) {
+			this.disableHttp2Alpn = disableHttp2Alpn;
+		}
 
 		public TraceDetails getTraceDetails() {
 			return this.traceDetails;

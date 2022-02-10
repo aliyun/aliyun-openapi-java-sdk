@@ -35,7 +35,7 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 
 	private String acceptLanguage;
 	public AddAuthResourceRequest() {
-		super("mse", "2019-05-31", "AddAuthResource", "mse");
+		super("mse", "2019-05-31", "AddAuthResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

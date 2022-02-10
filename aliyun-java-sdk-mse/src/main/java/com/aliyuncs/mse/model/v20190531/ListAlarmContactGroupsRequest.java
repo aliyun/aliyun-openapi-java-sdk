@@ -33,7 +33,7 @@ public class ListAlarmContactGroupsRequest extends RpcAcsRequest<ListAlarmContac
 
 	private String acceptLanguage;
 	public ListAlarmContactGroupsRequest() {
-		super("mse", "2019-05-31", "ListAlarmContactGroups", "mse");
+		super("mse", "2019-05-31", "ListAlarmContactGroups");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

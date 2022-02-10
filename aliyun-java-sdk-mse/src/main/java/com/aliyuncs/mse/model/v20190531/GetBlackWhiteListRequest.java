@@ -33,7 +33,7 @@ public class GetBlackWhiteListRequest extends RpcAcsRequest<GetBlackWhiteListRes
 
 	private String acceptLanguage;
 	public GetBlackWhiteListRequest() {
-		super("mse", "2019-05-31", "GetBlackWhiteList", "mse");
+		super("mse", "2019-05-31", "GetBlackWhiteList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

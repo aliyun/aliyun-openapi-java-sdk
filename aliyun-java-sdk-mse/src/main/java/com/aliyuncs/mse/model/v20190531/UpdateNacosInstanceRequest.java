@@ -49,7 +49,7 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 
 	private String acceptLanguage;
 	public UpdateNacosInstanceRequest() {
-		super("mse", "2019-05-31", "UpdateNacosInstance", "mse");
+		super("mse", "2019-05-31", "UpdateNacosInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

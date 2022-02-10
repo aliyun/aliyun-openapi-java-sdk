@@ -33,7 +33,7 @@ public class DeleteGatewaySlbRequest extends RpcAcsRequest<DeleteGatewaySlbRespo
 
 	private String id;
 	public DeleteGatewaySlbRequest() {
-		super("mse", "2019-05-31", "DeleteGatewaySlb", "mse");
+		super("mse", "2019-05-31", "DeleteGatewaySlb");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

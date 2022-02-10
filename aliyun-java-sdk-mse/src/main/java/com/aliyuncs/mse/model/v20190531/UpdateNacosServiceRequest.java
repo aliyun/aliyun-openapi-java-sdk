@@ -39,7 +39,7 @@ public class UpdateNacosServiceRequest extends RpcAcsRequest<UpdateNacosServiceR
 
 	private String protectThreshold;
 	public UpdateNacosServiceRequest() {
-		super("mse", "2019-05-31", "UpdateNacosService", "mse");
+		super("mse", "2019-05-31", "UpdateNacosService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

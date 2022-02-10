@@ -31,7 +31,7 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 
 	private String acceptLanguage;
 	public DeleteGatewayRequest() {
-		super("mse", "2019-05-31", "DeleteGateway", "mse");
+		super("mse", "2019-05-31", "DeleteGateway");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

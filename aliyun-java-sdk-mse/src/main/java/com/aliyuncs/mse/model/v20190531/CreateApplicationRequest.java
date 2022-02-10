@@ -37,7 +37,7 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private String region;
 	public CreateApplicationRequest() {
-		super("mse", "2019-05-31", "CreateApplication", "mse");
+		super("mse", "2019-05-31", "CreateApplication");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

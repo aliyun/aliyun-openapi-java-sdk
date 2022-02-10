@@ -31,7 +31,7 @@ public class DeleteServiceSourceRequest extends RpcAcsRequest<DeleteServiceSourc
 
 	private String acceptLanguage;
 	public DeleteServiceSourceRequest() {
-		super("mse", "2019-05-31", "DeleteServiceSource", "mse");
+		super("mse", "2019-05-31", "DeleteServiceSource");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

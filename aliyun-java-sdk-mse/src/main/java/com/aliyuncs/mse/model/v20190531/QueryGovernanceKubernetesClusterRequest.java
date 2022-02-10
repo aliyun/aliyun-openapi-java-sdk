@@ -35,7 +35,7 @@ public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<Query
 
 	private String acceptLanguage;
 	public QueryGovernanceKubernetesClusterRequest() {
-		super("mse", "2019-05-31", "QueryGovernanceKubernetesCluster", "mse");
+		super("mse", "2019-05-31", "QueryGovernanceKubernetesCluster");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

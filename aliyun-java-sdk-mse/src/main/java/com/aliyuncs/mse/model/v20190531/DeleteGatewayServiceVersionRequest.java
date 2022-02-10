@@ -33,7 +33,7 @@ public class DeleteGatewayServiceVersionRequest extends RpcAcsRequest<DeleteGate
 
 	private Long serviceId;
 	public DeleteGatewayServiceVersionRequest() {
-		super("mse", "2019-05-31", "DeleteGatewayServiceVersion", "mse");
+		super("mse", "2019-05-31", "DeleteGatewayServiceVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

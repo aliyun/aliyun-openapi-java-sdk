@@ -27,7 +27,7 @@ public class QueryGatewayTypeRequest extends RpcAcsRequest<QueryGatewayTypeRespo
 
 	private String acceptLanguage;
 	public QueryGatewayTypeRequest() {
-		super("mse", "2019-05-31", "QueryGatewayType", "mse");
+		super("mse", "2019-05-31", "QueryGatewayType");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

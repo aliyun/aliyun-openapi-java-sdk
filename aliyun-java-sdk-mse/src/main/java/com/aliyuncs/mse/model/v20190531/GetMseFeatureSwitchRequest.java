@@ -27,7 +27,7 @@ public class GetMseFeatureSwitchRequest extends RpcAcsRequest<GetMseFeatureSwitc
 
 	private String acceptLanguage;
 	public GetMseFeatureSwitchRequest() {
-		super("mse", "2019-05-31", "GetMseFeatureSwitch", "mse");
+		super("mse", "2019-05-31", "GetMseFeatureSwitch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

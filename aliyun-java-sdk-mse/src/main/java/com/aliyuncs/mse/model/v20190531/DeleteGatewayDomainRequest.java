@@ -31,7 +31,7 @@ public class DeleteGatewayDomainRequest extends RpcAcsRequest<DeleteGatewayDomai
 
 	private String id;
 	public DeleteGatewayDomainRequest() {
-		super("mse", "2019-05-31", "DeleteGatewayDomain", "mse");
+		super("mse", "2019-05-31", "DeleteGatewayDomain");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

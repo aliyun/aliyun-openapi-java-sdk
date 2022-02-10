@@ -33,7 +33,7 @@ public class PullServicesRequest extends RpcAcsRequest<PullServicesResponse> {
 
 	private String sourceType;
 	public PullServicesRequest() {
-		super("mse", "2019-05-31", "PullServices", "mse");
+		super("mse", "2019-05-31", "PullServices");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

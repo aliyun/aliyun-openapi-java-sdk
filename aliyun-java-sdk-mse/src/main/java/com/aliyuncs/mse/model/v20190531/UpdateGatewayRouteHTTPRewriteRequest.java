@@ -35,7 +35,7 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 
 	private Long gatewayId;
 	public UpdateGatewayRouteHTTPRewriteRequest() {
-		super("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite", "mse");
+		super("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

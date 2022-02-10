@@ -31,7 +31,7 @@ public class GetGatewayDomainDetailRequest extends RpcAcsRequest<GetGatewayDomai
 
 	private String id;
 	public GetGatewayDomainDetailRequest() {
-		super("mse", "2019-05-31", "GetGatewayDomainDetail", "mse");
+		super("mse", "2019-05-31", "GetGatewayDomainDetail");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

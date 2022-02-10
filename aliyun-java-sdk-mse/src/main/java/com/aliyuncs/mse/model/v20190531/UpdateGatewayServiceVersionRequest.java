@@ -33,7 +33,7 @@ public class UpdateGatewayServiceVersionRequest extends RpcAcsRequest<UpdateGate
 
 	private Long serviceId;
 	public UpdateGatewayServiceVersionRequest() {
-		super("mse", "2019-05-31", "UpdateGatewayServiceVersion", "mse");
+		super("mse", "2019-05-31", "UpdateGatewayServiceVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

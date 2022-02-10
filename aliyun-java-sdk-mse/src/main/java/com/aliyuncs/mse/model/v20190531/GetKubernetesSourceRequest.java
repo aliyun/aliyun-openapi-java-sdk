@@ -29,7 +29,7 @@ public class GetKubernetesSourceRequest extends RpcAcsRequest<GetKubernetesSourc
 
 	private String acceptLanguage;
 	public GetKubernetesSourceRequest() {
-		super("mse", "2019-05-31", "GetKubernetesSource", "mse");
+		super("mse", "2019-05-31", "GetKubernetesSource");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
