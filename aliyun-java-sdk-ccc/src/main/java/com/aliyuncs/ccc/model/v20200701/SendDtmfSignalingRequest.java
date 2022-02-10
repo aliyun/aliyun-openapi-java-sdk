@@ -37,7 +37,7 @@ public class SendDtmfSignalingRequest extends RpcAcsRequest<SendDtmfSignalingRes
 
 	private String channelId;
 	public SendDtmfSignalingRequest() {
-		super("CCC", "2020-07-01", "SendDtmfSignaling");
+		super("CCC", "2020-07-01", "SendDtmfSignaling", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

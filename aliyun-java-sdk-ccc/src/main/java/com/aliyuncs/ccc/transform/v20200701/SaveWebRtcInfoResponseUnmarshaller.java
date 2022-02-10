@@ -23,12 +23,12 @@ public class SaveWebRtcInfoResponseUnmarshaller {
 	public static SaveWebRtcInfoResponse unmarshall(SaveWebRtcInfoResponse saveWebRtcInfoResponse, UnmarshallerContext _ctx) {
 		
 		saveWebRtcInfoResponse.setRequestId(_ctx.stringValue("SaveWebRtcInfoResponse.RequestId"));
-		saveWebRtcInfoResponse.setCode(_ctx.stringValue("SaveWebRtcInfoResponse.Code"));
 		saveWebRtcInfoResponse.setHttpStatusCode(_ctx.longValue("SaveWebRtcInfoResponse.HttpStatusCode"));
-		saveWebRtcInfoResponse.setMessage(_ctx.stringValue("SaveWebRtcInfoResponse.Message"));
-		saveWebRtcInfoResponse.setRowCount(_ctx.longValue("SaveWebRtcInfoResponse.RowCount"));
 		saveWebRtcInfoResponse.setSuccess(_ctx.booleanValue("SaveWebRtcInfoResponse.Success"));
+		saveWebRtcInfoResponse.setCode(_ctx.stringValue("SaveWebRtcInfoResponse.Code"));
+		saveWebRtcInfoResponse.setMessage(_ctx.stringValue("SaveWebRtcInfoResponse.Message"));
 		saveWebRtcInfoResponse.setTimeStamp(_ctx.longValue("SaveWebRtcInfoResponse.TimeStamp"));
+		saveWebRtcInfoResponse.setRowCount(_ctx.longValue("SaveWebRtcInfoResponse.RowCount"));
 	 
 	 	return saveWebRtcInfoResponse;
 	}

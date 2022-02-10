@@ -39,7 +39,7 @@ public class ListRealtimeAgentStatesRequest extends RpcAcsRequest<ListRealtimeAg
 
 	private String stateList;
 	public ListRealtimeAgentStatesRequest() {
-		super("CCC", "2020-07-01", "ListRealtimeAgentStates");
+		super("CCC", "2020-07-01", "ListRealtimeAgentStates", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

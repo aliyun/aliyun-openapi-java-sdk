@@ -39,7 +39,7 @@ public class ListPhoneNumbersOfSkillGroupRequest extends RpcAcsRequest<ListPhone
 
 	private Integer pageSize;
 	public ListPhoneNumbersOfSkillGroupRequest() {
-		super("CCC", "2020-07-01", "ListPhoneNumbersOfSkillGroup");
+		super("CCC", "2020-07-01", "ListPhoneNumbersOfSkillGroup", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

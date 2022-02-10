@@ -33,7 +33,7 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private Integer pageSize;
 	public ListUsersRequest() {
-		super("CCC", "2020-07-01", "ListUsers");
+		super("CCC", "2020-07-01", "ListUsers", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

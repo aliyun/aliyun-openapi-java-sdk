@@ -33,7 +33,7 @@ public class ListIvrTrackingDetailsRequest extends RpcAcsRequest<ListIvrTracking
 
 	private Integer pageSize;
 	public ListIvrTrackingDetailsRequest() {
-		super("CCC", "2020-07-01", "ListIvrTrackingDetails");
+		super("CCC", "2020-07-01", "ListIvrTrackingDetails", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

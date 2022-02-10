@@ -39,7 +39,7 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 
 	private String instanceId;
 	public StartBack2BackCallRequest() {
-		super("CCC", "2020-07-01", "StartBack2BackCall");
+		super("CCC", "2020-07-01", "StartBack2BackCall", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

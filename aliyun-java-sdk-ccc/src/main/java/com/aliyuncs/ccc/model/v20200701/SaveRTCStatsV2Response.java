@@ -24,27 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SaveRTCStatsV2Response extends AcsResponse {
 
-	private String code;
-
 	private Long httpStatusCode;
-
-	private String message;
 
 	private String requestId;
 
-	private Long rowCount;
-
 	private Boolean success;
+
+	private String code;
+
+	private String message;
 
 	private Long timeStamp;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private Long rowCount;
 
 	public Long getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -52,14 +44,6 @@ public class SaveRTCStatsV2Response extends AcsResponse {
 
 	public void setHttpStatusCode(Long httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -70,14 +54,6 @@ public class SaveRTCStatsV2Response extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getRowCount() {
-		return this.rowCount;
-	}
-
-	public void setRowCount(Long rowCount) {
-		this.rowCount = rowCount;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -86,12 +62,36 @@ public class SaveRTCStatsV2Response extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Long getTimeStamp() {
 		return this.timeStamp;
 	}
 
 	public void setTimeStamp(Long timeStamp) {
 		this.timeStamp = timeStamp;
+	}
+
+	public Long getRowCount() {
+		return this.rowCount;
+	}
+
+	public void setRowCount(Long rowCount) {
+		this.rowCount = rowCount;
 	}
 
 	@Override

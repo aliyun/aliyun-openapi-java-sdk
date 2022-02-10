@@ -33,7 +33,7 @@ public class CancelAttendedTransferRequest extends RpcAcsRequest<CancelAttendedT
 
 	private String instanceId;
 	public CancelAttendedTransferRequest() {
-		super("CCC", "2020-07-01", "CancelAttendedTransfer");
+		super("CCC", "2020-07-01", "CancelAttendedTransfer", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

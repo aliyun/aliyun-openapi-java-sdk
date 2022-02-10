@@ -35,7 +35,7 @@ public class LaunchSurveyRequest extends RpcAcsRequest<LaunchSurveyResponse> {
 
 	private String instanceId;
 	public LaunchSurveyRequest() {
-		super("CCC", "2020-07-01", "LaunchSurvey");
+		super("CCC", "2020-07-01", "LaunchSurvey", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

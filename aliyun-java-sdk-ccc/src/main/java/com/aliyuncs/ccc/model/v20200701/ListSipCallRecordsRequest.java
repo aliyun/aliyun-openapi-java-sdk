@@ -29,7 +29,7 @@ public class ListSipCallRecordsRequest extends RpcAcsRequest<ListSipCallRecordsR
 
 	private String instanceId;
 	public ListSipCallRecordsRequest() {
-		super("CCC", "2020-07-01", "ListSipCallRecords");
+		super("CCC", "2020-07-01", "ListSipCallRecords", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

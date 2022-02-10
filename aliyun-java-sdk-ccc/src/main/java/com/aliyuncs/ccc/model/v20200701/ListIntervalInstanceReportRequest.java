@@ -33,7 +33,7 @@ public class ListIntervalInstanceReportRequest extends RpcAcsRequest<ListInterva
 
 	private String interval;
 	public ListIntervalInstanceReportRequest() {
-		super("CCC", "2020-07-01", "ListIntervalInstanceReport");
+		super("CCC", "2020-07-01", "ListIntervalInstanceReport", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

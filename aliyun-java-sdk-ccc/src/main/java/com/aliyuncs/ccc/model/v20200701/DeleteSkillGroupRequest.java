@@ -31,7 +31,7 @@ public class DeleteSkillGroupRequest extends RpcAcsRequest<DeleteSkillGroupRespo
 
 	private Boolean force;
 	public DeleteSkillGroupRequest() {
-		super("CCC", "2020-07-01", "DeleteSkillGroup");
+		super("CCC", "2020-07-01", "DeleteSkillGroup", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

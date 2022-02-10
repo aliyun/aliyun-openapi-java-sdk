@@ -31,7 +31,7 @@ public class ModifySkillLevelsOfUserRequest extends RpcAcsRequest<ModifySkillLev
 
 	private String skillLevelList;
 	public ModifySkillLevelsOfUserRequest() {
-		super("CCC", "2020-07-01", "ModifySkillLevelsOfUser");
+		super("CCC", "2020-07-01", "ModifySkillLevelsOfUser", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

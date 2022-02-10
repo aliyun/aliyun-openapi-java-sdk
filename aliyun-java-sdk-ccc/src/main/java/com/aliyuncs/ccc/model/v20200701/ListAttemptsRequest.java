@@ -51,7 +51,7 @@ public class ListAttemptsRequest extends RpcAcsRequest<ListAttemptsResponse> {
 
 	private String attemptId;
 	public ListAttemptsRequest() {
-		super("CCC", "2020-07-01", "ListAttempts");
+		super("CCC", "2020-07-01", "ListAttempts", "CCC");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

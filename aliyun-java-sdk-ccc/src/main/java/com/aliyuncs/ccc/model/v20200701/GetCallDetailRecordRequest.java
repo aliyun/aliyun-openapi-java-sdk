@@ -29,7 +29,7 @@ public class GetCallDetailRecordRequest extends RpcAcsRequest<GetCallDetailRecor
 
 	private String instanceId;
 	public GetCallDetailRecordRequest() {
-		super("CCC", "2020-07-01", "GetCallDetailRecord");
+		super("CCC", "2020-07-01", "GetCallDetailRecord", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

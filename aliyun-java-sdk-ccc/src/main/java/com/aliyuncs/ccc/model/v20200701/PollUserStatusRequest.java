@@ -31,7 +31,7 @@ public class PollUserStatusRequest extends RpcAcsRequest<PollUserStatusResponse>
 
 	private String instanceId;
 	public PollUserStatusRequest() {
-		super("CCC", "2020-07-01", "PollUserStatus");
+		super("CCC", "2020-07-01", "PollUserStatus", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
