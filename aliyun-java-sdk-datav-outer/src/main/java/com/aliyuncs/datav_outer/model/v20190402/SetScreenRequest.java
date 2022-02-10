@@ -33,6 +33,8 @@ public class SetScreenRequest extends RpcAcsRequest<SetScreenResponse> {
 
 	private Integer screenId;
 
+	private String meta;
+
 	private String domain;
 
 	private String name;
@@ -90,6 +92,17 @@ public class SetScreenRequest extends RpcAcsRequest<SetScreenResponse> {
 		this.screenId = screenId;
 		if(screenId != null){
 			putBodyParameter("ScreenId", screenId.toString());
+		}
+	}
+
+	public String getMeta() {
+		return this.meta;
+	}
+
+	public void setMeta(String meta) {
+		this.meta = meta;
+		if(meta != null){
+			putBodyParameter("Meta", meta);
 		}
 	}
 
