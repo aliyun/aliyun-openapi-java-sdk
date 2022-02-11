@@ -29,7 +29,7 @@ public class DeleteDeviceDynamicGroupRequest extends RpcAcsRequest<DeleteDeviceD
 
 	private String groupId;
 	public DeleteDeviceDynamicGroupRequest() {
-		super("Iot", "2018-01-20", "DeleteDeviceDynamicGroup");
+		super("Iot", "2018-01-20", "DeleteDeviceDynamicGroup", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -22,14 +23,16 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
+public class ReupgradeOTATaskRequest extends RpcAcsRequest<ReupgradeOTATaskResponse> {
 	   
 
 	private String jobId;
 
 	private String iotInstanceId;
-	public CancelJobRequest() {
-		super("Iot", "2018-01-20", "CancelJob", "iot");
+
+	private List<String> taskIds;
+	public ReupgradeOTATaskRequest() {
+		super("Iot", "2018-01-20", "ReupgradeOTATask", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,9 +62,22 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 		}
 	}
 
+	public List<String> getTaskIds() {
+		return this.taskIds;
+	}
+
+	public void setTaskIds(List<String> taskIds) {
+		this.taskIds = taskIds;	
+		if (taskIds != null) {
+			for (int i = 0; i < taskIds.size(); i++) {
+				putQueryParameter("TaskId." + (i + 1) , taskIds.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<CancelJobResponse> getResponseClass() {
-		return CancelJobResponse.class;
+	public Class<ReupgradeOTATaskResponse> getResponseClass() {
+		return ReupgradeOTATaskResponse.class;
 	}
 
 }

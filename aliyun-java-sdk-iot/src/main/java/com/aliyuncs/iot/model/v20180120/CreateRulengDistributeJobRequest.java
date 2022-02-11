@@ -31,7 +31,7 @@ public class CreateRulengDistributeJobRequest extends RpcAcsRequest<CreateRuleng
 
 	private String targetInstanceId;
 	public CreateRulengDistributeJobRequest() {
-		super("Iot", "2018-01-20", "CreateRulengDistributeJob");
+		super("Iot", "2018-01-20", "CreateRulengDistributeJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

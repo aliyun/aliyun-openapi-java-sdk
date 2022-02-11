@@ -29,7 +29,7 @@ public class ReleaseProductRequest extends RpcAcsRequest<ReleaseProductResponse>
 
 	private String productKey;
 	public ReleaseProductRequest() {
-		super("Iot", "2018-01-20", "ReleaseProduct");
+		super("Iot", "2018-01-20", "ReleaseProduct", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class RefreshStudioAppTokenOpenRequest extends RpcAcsRequest<RefreshStudi
 
 	private String appId;
 	public RefreshStudioAppTokenOpenRequest() {
-		super("Iot", "2018-01-20", "RefreshStudioAppTokenOpen");
+		super("Iot", "2018-01-20", "RefreshStudioAppTokenOpen", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

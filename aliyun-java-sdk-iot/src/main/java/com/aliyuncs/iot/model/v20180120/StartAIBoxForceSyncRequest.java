@@ -27,7 +27,7 @@ public class StartAIBoxForceSyncRequest extends RpcAcsRequest<StartAIBoxForceSyn
 
 	private String iotId;
 	public StartAIBoxForceSyncRequest() {
-		super("Iot", "2018-01-20", "StartAIBoxForceSync");
+		super("Iot", "2018-01-20", "StartAIBoxForceSync", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
