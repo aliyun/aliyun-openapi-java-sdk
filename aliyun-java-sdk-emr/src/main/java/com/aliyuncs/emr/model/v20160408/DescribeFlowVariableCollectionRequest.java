@@ -22,16 +22,14 @@ import com.aliyuncs.emr.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListFlowProjectUserRequest extends RpcAcsRequest<ListFlowProjectUserResponse> {
+public class DescribeFlowVariableCollectionRequest extends RpcAcsRequest<DescribeFlowVariableCollectionResponse> {
 	   
 
-	private Integer pageNumber;
+	private String entityId;
 
-	private Integer pageSize;
-
-	private String projectId;
-	public ListFlowProjectUserRequest() {
-		super("Emr", "2016-04-08", "ListFlowProjectUser");
+	private String resourceGroupId;
+	public DescribeFlowVariableCollectionRequest() {
+		super("Emr", "2016-04-08", "DescribeFlowVariableCollection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class ListFlowProjectUserRequest extends RpcAcsRequest<ListFlowProjectUse
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getEntityId() {
+		return this.entityId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setEntityId(String entityId) {
+		this.entityId = entityId;
+		if(entityId != null){
+			putQueryParameter("EntityId", entityId);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
 	@Override
-	public Class<ListFlowProjectUserResponse> getResponseClass() {
-		return ListFlowProjectUserResponse.class;
+	public Class<DescribeFlowVariableCollectionResponse> getResponseClass() {
+		return DescribeFlowVariableCollectionResponse.class;
 	}
 
 }

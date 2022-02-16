@@ -27,7 +27,7 @@ public class DescribeFlowProjectRequest extends RpcAcsRequest<DescribeFlowProjec
 
 	private String projectId;
 	public DescribeFlowProjectRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowProject", "emr");
+		super("Emr", "2016-04-08", "DescribeFlowProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

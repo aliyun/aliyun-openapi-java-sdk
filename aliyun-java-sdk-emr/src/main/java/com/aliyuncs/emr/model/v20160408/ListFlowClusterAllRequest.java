@@ -29,7 +29,7 @@ public class ListFlowClusterAllRequest extends RpcAcsRequest<ListFlowClusterAllR
 
 	private String resourceGroupId;
 	public ListFlowClusterAllRequest() {
-		super("Emr", "2016-04-08", "ListFlowClusterAll", "emr");
+		super("Emr", "2016-04-08", "ListFlowClusterAll");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

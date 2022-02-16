@@ -68,7 +68,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 
 	private String parentCategory;
 	public CreateFlowJobRequest() {
-		super("Emr", "2016-04-08", "CreateFlowJob", "emr");
+		super("Emr", "2016-04-08", "CreateFlowJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

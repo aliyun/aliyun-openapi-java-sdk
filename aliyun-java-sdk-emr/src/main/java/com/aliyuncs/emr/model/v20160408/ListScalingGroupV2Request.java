@@ -45,7 +45,7 @@ public class ListScalingGroupV2Request extends RpcAcsRequest<ListScalingGroupV2R
 
 	private String orderField;
 	public ListScalingGroupV2Request() {
-		super("Emr", "2016-04-08", "ListScalingGroupV2", "emr");
+		super("Emr", "2016-04-08", "ListScalingGroupV2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

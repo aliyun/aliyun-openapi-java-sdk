@@ -35,7 +35,7 @@ public class AddScalingConfigItemV2Request extends RpcAcsRequest<AddScalingConfi
 
 	private String configItemInformation;
 	public AddScalingConfigItemV2Request() {
-		super("Emr", "2016-04-08", "AddScalingConfigItemV2", "emr");
+		super("Emr", "2016-04-08", "AddScalingConfigItemV2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

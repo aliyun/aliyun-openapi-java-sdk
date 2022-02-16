@@ -31,7 +31,7 @@ public class RefreshClusterResourcePoolRequest extends RpcAcsRequest<RefreshClus
 
 	private String clusterId;
 	public RefreshClusterResourcePoolRequest() {
-		super("Emr", "2016-04-08", "RefreshClusterResourcePool", "emr");
+		super("Emr", "2016-04-08", "RefreshClusterResourcePool");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

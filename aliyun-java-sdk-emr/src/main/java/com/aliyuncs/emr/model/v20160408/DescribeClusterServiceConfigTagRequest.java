@@ -33,7 +33,7 @@ public class DescribeClusterServiceConfigTagRequest extends RpcAcsRequest<Descri
 
 	private String serviceName;
 	public DescribeClusterServiceConfigTagRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterServiceConfigTag", "emr");
+		super("Emr", "2016-04-08", "DescribeClusterServiceConfigTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -53,7 +53,7 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 
 	private String dataDiskType;
 	public ListEmrAvailableResourceRequest() {
-		super("Emr", "2016-04-08", "ListEmrAvailableResource", "emr");
+		super("Emr", "2016-04-08", "ListEmrAvailableResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

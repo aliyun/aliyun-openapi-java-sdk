@@ -33,7 +33,7 @@ public class ReleaseClusterHostGroupRequest extends RpcAcsRequest<ReleaseCluster
 
 	private String instanceIdList;
 	public ReleaseClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "ReleaseClusterHostGroup", "emr");
+		super("Emr", "2016-04-08", "ReleaseClusterHostGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

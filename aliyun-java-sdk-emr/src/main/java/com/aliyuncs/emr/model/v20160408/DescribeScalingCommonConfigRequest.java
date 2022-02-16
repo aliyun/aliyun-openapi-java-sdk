@@ -29,7 +29,7 @@ public class DescribeScalingCommonConfigRequest extends RpcAcsRequest<DescribeSc
 
 	private String resourceGroupId;
 	public DescribeScalingCommonConfigRequest() {
-		super("Emr", "2016-04-08", "DescribeScalingCommonConfig", "emr");
+		super("Emr", "2016-04-08", "DescribeScalingCommonConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

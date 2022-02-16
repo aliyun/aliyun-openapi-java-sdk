@@ -29,7 +29,7 @@ public class DescribeClusterResourcePoolSchedulerTypeRequest extends RpcAcsReque
 
 	private String clusterId;
 	public DescribeClusterResourcePoolSchedulerTypeRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterResourcePoolSchedulerType", "emr");
+		super("Emr", "2016-04-08", "DescribeClusterResourcePoolSchedulerType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
