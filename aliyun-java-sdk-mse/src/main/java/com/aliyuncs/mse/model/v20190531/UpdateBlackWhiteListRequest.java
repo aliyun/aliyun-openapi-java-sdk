@@ -31,6 +31,8 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 
 	private String content;
 
+	private Boolean isWhite;
+
 	private Long id;
 
 	private String resourceType;
@@ -77,6 +79,17 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public Boolean getIsWhite() {
+		return this.isWhite;
+	}
+
+	public void setIsWhite(Boolean isWhite) {
+		this.isWhite = isWhite;
+		if(isWhite != null){
+			putQueryParameter("IsWhite", isWhite.toString());
 		}
 	}
 

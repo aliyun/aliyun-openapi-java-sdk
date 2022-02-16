@@ -1,3 +1,6 @@
+2022-02-16 Version: 3.0.7
+- Fix normandy query api.
+
 2022-02-10 Version: 3.0.6
 - Add deleteNacosInstance.
 
