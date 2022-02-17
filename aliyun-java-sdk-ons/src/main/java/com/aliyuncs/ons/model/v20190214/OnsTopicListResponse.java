@@ -75,6 +75,8 @@ public class OnsTopicListResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private Integer serviceStatus;
+
 		private List<Tag> tags;
 
 		public Integer getMessageType() {
@@ -147,6 +149,14 @@ public class OnsTopicListResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Integer getServiceStatus() {
+			return this.serviceStatus;
+		}
+
+		public void setServiceStatus(Integer serviceStatus) {
+			this.serviceStatus = serviceStatus;
 		}
 
 		public List<Tag> getTags() {
