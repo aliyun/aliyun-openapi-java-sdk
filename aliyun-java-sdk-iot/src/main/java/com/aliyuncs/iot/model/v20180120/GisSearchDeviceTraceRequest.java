@@ -37,7 +37,7 @@ public class GisSearchDeviceTraceRequest extends RpcAcsRequest<GisSearchDeviceTr
 
 	private String deviceName;
 	public GisSearchDeviceTraceRequest() {
-		super("Iot", "2018-01-20", "GisSearchDeviceTrace", "iot");
+		super("Iot", "2018-01-20", "GisSearchDeviceTrace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

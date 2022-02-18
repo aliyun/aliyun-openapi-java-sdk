@@ -31,7 +31,7 @@ public class GetThingTemplateRequest extends RpcAcsRequest<GetThingTemplateRespo
 
 	private String iotInstanceId;
 	public GetThingTemplateRequest() {
-		super("Iot", "2018-01-20", "GetThingTemplate", "iot");
+		super("Iot", "2018-01-20", "GetThingTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

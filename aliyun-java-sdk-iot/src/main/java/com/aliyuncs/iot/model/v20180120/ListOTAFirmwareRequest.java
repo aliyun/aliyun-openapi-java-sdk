@@ -35,7 +35,7 @@ public class ListOTAFirmwareRequest extends RpcAcsRequest<ListOTAFirmwareRespons
 
 	private String destVersion;
 	public ListOTAFirmwareRequest() {
-		super("Iot", "2018-01-20", "ListOTAFirmware", "iot");
+		super("Iot", "2018-01-20", "ListOTAFirmware");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

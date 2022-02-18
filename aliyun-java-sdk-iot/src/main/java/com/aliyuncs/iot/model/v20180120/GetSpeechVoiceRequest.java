@@ -25,7 +25,7 @@ import com.aliyuncs.iot.Endpoint;
 public class GetSpeechVoiceRequest extends RpcAcsRequest<GetSpeechVoiceResponse> {
 	   
 	public GetSpeechVoiceRequest() {
-		super("Iot", "2018-01-20", "GetSpeechVoice", "iot");
+		super("Iot", "2018-01-20", "GetSpeechVoice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

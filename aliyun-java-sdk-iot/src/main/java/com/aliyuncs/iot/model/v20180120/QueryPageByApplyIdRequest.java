@@ -33,7 +33,7 @@ public class QueryPageByApplyIdRequest extends RpcAcsRequest<QueryPageByApplyIdR
 
 	private Long applyId;
 	public QueryPageByApplyIdRequest() {
-		super("Iot", "2018-01-20", "QueryPageByApplyId", "iot");
+		super("Iot", "2018-01-20", "QueryPageByApplyId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

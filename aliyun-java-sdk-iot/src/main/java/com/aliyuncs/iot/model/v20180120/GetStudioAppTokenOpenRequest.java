@@ -31,7 +31,7 @@ public class GetStudioAppTokenOpenRequest extends RpcAcsRequest<GetStudioAppToke
 
 	private String appId;
 	public GetStudioAppTokenOpenRequest() {
-		super("Iot", "2018-01-20", "GetStudioAppTokenOpen", "iot");
+		super("Iot", "2018-01-20", "GetStudioAppTokenOpen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

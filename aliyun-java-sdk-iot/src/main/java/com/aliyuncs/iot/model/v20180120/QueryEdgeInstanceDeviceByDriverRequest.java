@@ -37,7 +37,7 @@ public class QueryEdgeInstanceDeviceByDriverRequest extends RpcAcsRequest<QueryE
 
 	private String channelId;
 	public QueryEdgeInstanceDeviceByDriverRequest() {
-		super("Iot", "2018-01-20", "QueryEdgeInstanceDeviceByDriver", "iot");
+		super("Iot", "2018-01-20", "QueryEdgeInstanceDeviceByDriver");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class ReupgradeOTATaskRequest extends RpcAcsRequest<ReupgradeOTATaskRespo
 
 	private List<String> taskIds;
 	public ReupgradeOTATaskRequest() {
-		super("Iot", "2018-01-20", "ReupgradeOTATask", "iot");
+		super("Iot", "2018-01-20", "ReupgradeOTATask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

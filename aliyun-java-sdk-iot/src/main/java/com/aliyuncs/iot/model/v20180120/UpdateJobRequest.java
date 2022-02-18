@@ -35,7 +35,7 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 
 	private String timeoutConfig;
 	public UpdateJobRequest() {
-		super("Iot", "2018-01-20", "UpdateJob", "iot");
+		super("Iot", "2018-01-20", "UpdateJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

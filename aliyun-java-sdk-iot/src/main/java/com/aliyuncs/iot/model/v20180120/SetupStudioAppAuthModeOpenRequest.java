@@ -33,7 +33,7 @@ public class SetupStudioAppAuthModeOpenRequest extends RpcAcsRequest<SetupStudio
 
 	private String appId;
 	public SetupStudioAppAuthModeOpenRequest() {
-		super("Iot", "2018-01-20", "SetupStudioAppAuthModeOpen", "iot");
+		super("Iot", "2018-01-20", "SetupStudioAppAuthModeOpen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

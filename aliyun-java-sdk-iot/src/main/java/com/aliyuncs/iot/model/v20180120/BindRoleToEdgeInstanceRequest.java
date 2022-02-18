@@ -33,7 +33,7 @@ public class BindRoleToEdgeInstanceRequest extends RpcAcsRequest<BindRoleToEdgeI
 
 	private String roleArn;
 	public BindRoleToEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BindRoleToEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "BindRoleToEdgeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

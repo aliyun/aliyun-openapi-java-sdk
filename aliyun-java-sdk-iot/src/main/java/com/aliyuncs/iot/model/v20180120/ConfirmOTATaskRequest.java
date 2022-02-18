@@ -30,7 +30,7 @@ public class ConfirmOTATaskRequest extends RpcAcsRequest<ConfirmOTATaskResponse>
 
 	private List<String> taskIds;
 	public ConfirmOTATaskRequest() {
-		super("Iot", "2018-01-20", "ConfirmOTATask", "iot");
+		super("Iot", "2018-01-20", "ConfirmOTATask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

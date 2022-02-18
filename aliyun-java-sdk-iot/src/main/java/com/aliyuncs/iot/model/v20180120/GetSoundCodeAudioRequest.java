@@ -30,7 +30,7 @@ public class GetSoundCodeAudioRequest extends RpcAcsRequest<GetSoundCodeAudioRes
 
 	private List<String> soundCodeLists;
 	public GetSoundCodeAudioRequest() {
-		super("Iot", "2018-01-20", "GetSoundCodeAudio", "iot");
+		super("Iot", "2018-01-20", "GetSoundCodeAudio");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
