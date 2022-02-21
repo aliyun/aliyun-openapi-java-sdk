@@ -1,3 +1,7 @@
+2022-02-21 Version: 2.9.9
+- Add event tasks.
+- DescribeInstance taskProgress.
+
 2021-12-07 Version: 2.9.8
 - Fix DescribeInstances clusterId.
 
