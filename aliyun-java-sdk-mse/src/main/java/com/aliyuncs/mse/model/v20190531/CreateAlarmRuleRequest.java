@@ -37,13 +37,15 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 
 	private String contactGroupIds;
 
+	private String acceptLanguage;
+
 	private String alertWay;
 
 	private String aggregates;
 
 	private Float value;
 	public CreateAlarmRuleRequest() {
-		super("mse", "2019-05-31", "CreateAlarmRule", "mse");
+		super("mse", "2019-05-31", "CreateAlarmRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -114,6 +116,17 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 		this.contactGroupIds = contactGroupIds;
 		if(contactGroupIds != null){
 			putQueryParameter("ContactGroupIds", contactGroupIds);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

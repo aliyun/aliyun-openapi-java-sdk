@@ -89,6 +89,8 @@ public class ListDataCorrectPreCheckSQLResponse extends AcsResponse {
 
 		private String sqlType;
 
+		private String tableNames;
+
 		public String getCheckSQL() {
 			return this.checkSQL;
 		}
@@ -135,6 +137,14 @@ public class ListDataCorrectPreCheckSQLResponse extends AcsResponse {
 
 		public void setSqlType(String sqlType) {
 			this.sqlType = sqlType;
+		}
+
+		public String getTableNames() {
+			return this.tableNames;
+		}
+
+		public void setTableNames(String tableNames) {
+			this.tableNames = tableNames;
 		}
 	}
 

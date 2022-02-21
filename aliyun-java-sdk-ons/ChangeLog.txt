@@ -1,3 +1,6 @@
+2022-02-17 Version: 3.1.9
+- Adjusted the call frequency limit of some APIs.
+
 2021-11-23 Version: 3.1.8
 - Support the IP restrictions in ram policy.
 

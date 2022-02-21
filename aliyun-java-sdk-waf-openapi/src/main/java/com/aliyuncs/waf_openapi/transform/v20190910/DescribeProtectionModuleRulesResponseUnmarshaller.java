@@ -33,11 +33,11 @@ public class DescribeProtectionModuleRulesResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProtectionModuleRulesResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].RuleId"));
-			rule.setVersion(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Version"));
-			rule.setContent(_ctx.mapValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Content"));
-			rule.setTime(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Time"));
 			rule.setStatus(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Status"));
+			rule.setTime(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Time"));
+			rule.setContent(_ctx.mapValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Content"));
+			rule.setVersion(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Version"));
+			rule.setRuleId(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

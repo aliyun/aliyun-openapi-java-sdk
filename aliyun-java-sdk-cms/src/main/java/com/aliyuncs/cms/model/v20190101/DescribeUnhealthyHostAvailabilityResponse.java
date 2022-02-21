@@ -29,9 +29,9 @@ public class DescribeUnhealthyHostAvailabilityResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	private List<NodeTaskInstance> unhealthyList;
 
@@ -51,20 +51,20 @@ public class DescribeUnhealthyHostAvailabilityResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<NodeTaskInstance> getUnhealthyList() {

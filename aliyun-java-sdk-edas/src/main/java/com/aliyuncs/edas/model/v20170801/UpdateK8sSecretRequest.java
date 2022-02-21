@@ -41,7 +41,7 @@ public class UpdateK8sSecretRequest extends RoaAcsRequest<UpdateK8sSecretRespons
 
 	private String certRegionId;
 	public UpdateK8sSecretRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sSecret", "edas");
+		super("Edas", "2017-08-01", "UpdateK8sSecret", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_secret");
 		setMethod(MethodType.PUT);
 		try {

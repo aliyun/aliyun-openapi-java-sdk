@@ -26,16 +26,16 @@ public class DescribeInstanceInfoResponseUnmarshaller {
 		describeInstanceInfoResponse.setRequestId(_ctx.stringValue("DescribeInstanceInfoResponse.RequestId"));
 
 		InstanceInfo instanceInfo = new InstanceInfo();
-		instanceInfo.setInDebt(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.InDebt"));
-		instanceInfo.setInstanceId(_ctx.stringValue("DescribeInstanceInfoResponse.InstanceInfo.InstanceId"));
-		instanceInfo.setPayType(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.PayType"));
+		instanceInfo.setStatus(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.Status"));
 		instanceInfo.setEndDate(_ctx.longValue("DescribeInstanceInfoResponse.InstanceInfo.EndDate"));
+		instanceInfo.setVersion(_ctx.stringValue("DescribeInstanceInfoResponse.InstanceInfo.Version"));
 		instanceInfo.setRemainDay(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.RemainDay"));
 		instanceInfo.setRegion(_ctx.stringValue("DescribeInstanceInfoResponse.InstanceInfo.Region"));
-		instanceInfo.setTrial(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.Trial"));
-		instanceInfo.setStatus(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.Status"));
+		instanceInfo.setPayType(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.PayType"));
+		instanceInfo.setInDebt(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.InDebt"));
+		instanceInfo.setInstanceId(_ctx.stringValue("DescribeInstanceInfoResponse.InstanceInfo.InstanceId"));
 		instanceInfo.setSubscriptionType(_ctx.stringValue("DescribeInstanceInfoResponse.InstanceInfo.SubscriptionType"));
-		instanceInfo.setVersion(_ctx.stringValue("DescribeInstanceInfoResponse.InstanceInfo.Version"));
+		instanceInfo.setTrial(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.Trial"));
 		describeInstanceInfoResponse.setInstanceInfo(instanceInfo);
 	 
 	 	return describeInstanceInfoResponse;

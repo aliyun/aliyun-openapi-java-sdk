@@ -1,3 +1,12 @@
+2022-01-26 Version: 7.0.36
+- CreateContact API Add ContactGroupName.
+
+2022-01-21 Version: 7.0.35
+- Add Event Rule sql filter.
+
+2022-01-21 Version: 7.0.33
+- Add Event Rule sql filter.
+
 2021-11-19 Version: 7.0.26
 - Add site monitoring dial DNS_ match_ rule.
 

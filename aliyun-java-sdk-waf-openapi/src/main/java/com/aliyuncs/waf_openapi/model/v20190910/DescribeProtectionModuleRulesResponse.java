@@ -26,19 +26,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProtectionModuleRulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<Rule> rules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -46,6 +38,14 @@ public class DescribeProtectionModuleRulesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Rule> getRules() {
@@ -58,38 +58,22 @@ public class DescribeProtectionModuleRulesResponse extends AcsResponse {
 
 	public static class Rule {
 
-		private Long ruleId;
-
-		private Long version;
-
-		private Map<Object,Object> content;
+		private Long status;
 
 		private Long time;
 
-		private Long status;
+		private Map<Object,Object> content;
 
-		public Long getRuleId() {
-			return this.ruleId;
+		private Long version;
+
+		private Long ruleId;
+
+		public Long getStatus() {
+			return this.status;
 		}
 
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
-		}
-
-		public Map<Object,Object> getContent() {
-			return this.content;
-		}
-
-		public void setContent(Map<Object,Object> content) {
-			this.content = content;
+		public void setStatus(Long status) {
+			this.status = status;
 		}
 
 		public Long getTime() {
@@ -100,12 +84,28 @@ public class DescribeProtectionModuleRulesResponse extends AcsResponse {
 			this.time = time;
 		}
 
-		public Long getStatus() {
-			return this.status;
+		public Map<Object,Object> getContent() {
+			return this.content;
 		}
 
-		public void setStatus(Long status) {
-			this.status = status;
+		public void setContent(Map<Object,Object> content) {
+			this.content = content;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
+		public Long getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 	}
 

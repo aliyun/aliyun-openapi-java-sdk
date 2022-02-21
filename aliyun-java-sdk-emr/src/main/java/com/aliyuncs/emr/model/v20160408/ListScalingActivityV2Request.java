@@ -55,7 +55,7 @@ public class ListScalingActivityV2Request extends RpcAcsRequest<ListScalingActiv
 
 	private String status;
 	public ListScalingActivityV2Request() {
-		super("Emr", "2016-04-08", "ListScalingActivityV2", "emr");
+		super("Emr", "2016-04-08", "ListScalingActivityV2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

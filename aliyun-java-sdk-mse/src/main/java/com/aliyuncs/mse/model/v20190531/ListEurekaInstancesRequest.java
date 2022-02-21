@@ -33,9 +33,11 @@ public class ListEurekaInstancesRequest extends RpcAcsRequest<ListEurekaInstance
 
 	private Integer pageSize;
 
+	private String acceptLanguage;
+
 	private String serviceName;
 	public ListEurekaInstancesRequest() {
-		super("mse", "2019-05-31", "ListEurekaInstances", "mse");
+		super("mse", "2019-05-31", "ListEurekaInstances");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -84,6 +86,17 @@ public class ListEurekaInstancesRequest extends RpcAcsRequest<ListEurekaInstance
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

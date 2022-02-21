@@ -39,7 +39,7 @@ public class GetInstanceInspectionsRequest extends RpcAcsRequest<GetInstanceInsp
 
 	private String pageSize;
 	public GetInstanceInspectionsRequest() {
-		super("DAS", "2020-01-16", "GetInstanceInspections", "das");
+		super("DAS", "2020-01-16", "GetInstanceInspections");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

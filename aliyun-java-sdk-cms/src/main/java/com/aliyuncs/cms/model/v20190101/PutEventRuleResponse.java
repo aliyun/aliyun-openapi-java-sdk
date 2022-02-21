@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PutEventRuleResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
-	private String requestId;
-
 	private String data;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private String requestId;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -58,6 +50,14 @@ public class PutEventRuleResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -66,12 +66,12 @@ public class PutEventRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

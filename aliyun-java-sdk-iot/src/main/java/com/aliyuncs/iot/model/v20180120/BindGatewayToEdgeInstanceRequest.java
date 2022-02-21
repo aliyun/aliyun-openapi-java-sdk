@@ -35,7 +35,7 @@ public class BindGatewayToEdgeInstanceRequest extends RpcAcsRequest<BindGatewayT
 
 	private String deviceName;
 	public BindGatewayToEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BindGatewayToEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "BindGatewayToEdgeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

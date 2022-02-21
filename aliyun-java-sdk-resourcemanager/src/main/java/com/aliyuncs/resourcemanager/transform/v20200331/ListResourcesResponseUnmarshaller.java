@@ -27,19 +27,19 @@ public class ListResourcesResponseUnmarshaller {
 	public static ListResourcesResponse unmarshall(ListResourcesResponse listResourcesResponse, UnmarshallerContext _ctx) {
 		
 		listResourcesResponse.setRequestId(_ctx.stringValue("ListResourcesResponse.RequestId"));
-		listResourcesResponse.setPageNumber(_ctx.integerValue("ListResourcesResponse.PageNumber"));
-		listResourcesResponse.setPageSize(_ctx.integerValue("ListResourcesResponse.PageSize"));
 		listResourcesResponse.setTotalCount(_ctx.integerValue("ListResourcesResponse.TotalCount"));
+		listResourcesResponse.setPageSize(_ctx.integerValue("ListResourcesResponse.PageSize"));
+		listResourcesResponse.setPageNumber(_ctx.integerValue("ListResourcesResponse.PageNumber"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourcesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setResourceGroupId(_ctx.stringValue("ListResourcesResponse.Resources["+ i +"].ResourceGroupId"));
 			resource.setService(_ctx.stringValue("ListResourcesResponse.Resources["+ i +"].Service"));
 			resource.setResourceType(_ctx.stringValue("ListResourcesResponse.Resources["+ i +"].ResourceType"));
+			resource.setResourceGroupId(_ctx.stringValue("ListResourcesResponse.Resources["+ i +"].ResourceGroupId"));
 			resource.setResourceId(_ctx.stringValue("ListResourcesResponse.Resources["+ i +"].ResourceId"));
-			resource.setRegionId(_ctx.stringValue("ListResourcesResponse.Resources["+ i +"].RegionId"));
 			resource.setCreateDate(_ctx.stringValue("ListResourcesResponse.Resources["+ i +"].CreateDate"));
+			resource.setRegionId(_ctx.stringValue("ListResourcesResponse.Resources["+ i +"].RegionId"));
 
 			resources.add(resource);
 		}

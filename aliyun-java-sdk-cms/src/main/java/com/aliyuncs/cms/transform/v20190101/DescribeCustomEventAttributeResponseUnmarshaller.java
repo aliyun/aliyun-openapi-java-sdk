@@ -34,11 +34,11 @@ public class DescribeCustomEventAttributeResponseUnmarshaller {
 		List<CustomEvent> customEvents = new ArrayList<CustomEvent>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomEventAttributeResponse.CustomEvents.Length"); i++) {
 			CustomEvent customEvent = new CustomEvent();
-			customEvent.setId(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Id"));
-			customEvent.setContent(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Content"));
-			customEvent.setGroupId(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].GroupId"));
-			customEvent.setName(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Name"));
 			customEvent.setTime(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Time"));
+			customEvent.setName(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Name"));
+			customEvent.setGroupId(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].GroupId"));
+			customEvent.setContent(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Content"));
+			customEvent.setId(_ctx.stringValue("DescribeCustomEventAttributeResponse.CustomEvents["+ i +"].Id"));
 
 			customEvents.add(customEvent);
 		}

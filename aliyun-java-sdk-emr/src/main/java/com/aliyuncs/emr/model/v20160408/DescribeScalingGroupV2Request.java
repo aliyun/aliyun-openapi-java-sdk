@@ -33,7 +33,7 @@ public class DescribeScalingGroupV2Request extends RpcAcsRequest<DescribeScaling
 
 	private String hostGroupBizId;
 	public DescribeScalingGroupV2Request() {
-		super("Emr", "2016-04-08", "DescribeScalingGroupV2", "emr");
+		super("Emr", "2016-04-08", "DescribeScalingGroupV2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

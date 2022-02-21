@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogServiceStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<Status> domainStatus;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeLogServiceStatusResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Status> getDomainStatus() {
@@ -57,17 +57,9 @@ public class DescribeLogServiceStatusResponse extends AcsResponse {
 
 	public static class Status {
 
-		private Integer slsLogActive;
-
 		private String domain;
 
-		public Integer getSlsLogActive() {
-			return this.slsLogActive;
-		}
-
-		public void setSlsLogActive(Integer slsLogActive) {
-			this.slsLogActive = slsLogActive;
-		}
+		private Integer slsLogActive;
 
 		public String getDomain() {
 			return this.domain;
@@ -75,6 +67,14 @@ public class DescribeLogServiceStatusResponse extends AcsResponse {
 
 		public void setDomain(String domain) {
 			this.domain = domain;
+		}
+
+		public Integer getSlsLogActive() {
+			return this.slsLogActive;
+		}
+
+		public void setSlsLogActive(Integer slsLogActive) {
+			this.slsLogActive = slsLogActive;
 		}
 	}
 

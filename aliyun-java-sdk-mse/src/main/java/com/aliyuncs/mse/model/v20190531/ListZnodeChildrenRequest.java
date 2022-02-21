@@ -28,8 +28,10 @@ public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenRes
 	private String clusterId;
 
 	private String path;
+
+	private String acceptLanguage;
 	public ListZnodeChildrenRequest() {
-		super("mse", "2019-05-31", "ListZnodeChildren", "mse");
+		super("mse", "2019-05-31", "ListZnodeChildren");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenRes
 		this.path = path;
 		if(path != null){
 			putQueryParameter("Path", path);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

@@ -31,7 +31,7 @@ public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploa
 
 	private String fileName;
 	public GenerateUploadFilePolicyRequest() {
-		super("companyreg", "2020-03-06", "GenerateUploadFilePolicy", "companyreg");
+		super("companyreg", "2020-03-06", "GenerateUploadFilePolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -151,6 +151,14 @@ public class ListUsersResponse extends AcsResponse {
 
 			private Long ramId;
 
+			private String extension;
+
+			private String deviceId;
+
+			private String deviceExt;
+
+			private String deviceState;
+
 			private List<PhoneNumber> personalOutboundNumberList;
 
 			private List<UserSkillLevel> skillLevelList;
@@ -241,6 +249,38 @@ public class ListUsersResponse extends AcsResponse {
 
 			public void setRamId(Long ramId) {
 				this.ramId = ramId;
+			}
+
+			public String getExtension() {
+				return this.extension;
+			}
+
+			public void setExtension(String extension) {
+				this.extension = extension;
+			}
+
+			public String getDeviceId() {
+				return this.deviceId;
+			}
+
+			public void setDeviceId(String deviceId) {
+				this.deviceId = deviceId;
+			}
+
+			public String getDeviceExt() {
+				return this.deviceExt;
+			}
+
+			public void setDeviceExt(String deviceExt) {
+				this.deviceExt = deviceExt;
+			}
+
+			public String getDeviceState() {
+				return this.deviceState;
+			}
+
+			public void setDeviceState(String deviceState) {
+				this.deviceState = deviceState;
 			}
 
 			public List<PhoneNumber> getPersonalOutboundNumberList() {

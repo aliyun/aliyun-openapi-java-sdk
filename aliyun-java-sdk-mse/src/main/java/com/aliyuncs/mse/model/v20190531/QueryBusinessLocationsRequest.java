@@ -24,13 +24,26 @@ import com.aliyuncs.mse.Endpoint;
  */
 public class QueryBusinessLocationsRequest extends RpcAcsRequest<QueryBusinessLocationsResponse> {
 	   
+
+	private String acceptLanguage;
 	public QueryBusinessLocationsRequest() {
-		super("mse", "2019-05-31", "QueryBusinessLocations", "mse");
+		super("mse", "2019-05-31", "QueryBusinessLocations");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	@Override

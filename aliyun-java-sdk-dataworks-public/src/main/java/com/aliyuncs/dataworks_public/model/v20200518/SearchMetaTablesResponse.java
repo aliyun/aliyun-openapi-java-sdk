@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchMetaTablesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private Boolean success;
 
+	private String errorCode;
+
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMessage() {
@@ -61,12 +53,12 @@ public class SearchMetaTablesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -75,6 +67,14 @@ public class SearchMetaTablesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -131,23 +131,23 @@ public class SearchMetaTablesResponse extends AcsResponse {
 
 			private String tableName;
 
+			private String databaseName;
+
+			private Integer entityType;
+
+			private String projectName;
+
+			private Long projectId;
+
 			private String tableGuid;
 
 			private String ownerId;
 
-			private Long tenantId;
+			private String clusterId;
 
 			private Integer envType;
 
-			private Integer entityType;
-
-			private Long projectId;
-
-			private String projectName;
-
-			private String clusterId;
-
-			private String databaseName;
+			private Long tenantId;
 
 			public String getTableName() {
 				return this.tableName;
@@ -155,6 +155,38 @@ public class SearchMetaTablesResponse extends AcsResponse {
 
 			public void setTableName(String tableName) {
 				this.tableName = tableName;
+			}
+
+			public String getDatabaseName() {
+				return this.databaseName;
+			}
+
+			public void setDatabaseName(String databaseName) {
+				this.databaseName = databaseName;
+			}
+
+			public Integer getEntityType() {
+				return this.entityType;
+			}
+
+			public void setEntityType(Integer entityType) {
+				this.entityType = entityType;
+			}
+
+			public String getProjectName() {
+				return this.projectName;
+			}
+
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
 			}
 
 			public String getTableGuid() {
@@ -173,12 +205,12 @@ public class SearchMetaTablesResponse extends AcsResponse {
 				this.ownerId = ownerId;
 			}
 
-			public Long getTenantId() {
-				return this.tenantId;
+			public String getClusterId() {
+				return this.clusterId;
 			}
 
-			public void setTenantId(Long tenantId) {
-				this.tenantId = tenantId;
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
 			}
 
 			public Integer getEnvType() {
@@ -189,44 +221,12 @@ public class SearchMetaTablesResponse extends AcsResponse {
 				this.envType = envType;
 			}
 
-			public Integer getEntityType() {
-				return this.entityType;
+			public Long getTenantId() {
+				return this.tenantId;
 			}
 
-			public void setEntityType(Integer entityType) {
-				this.entityType = entityType;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
-			public String getClusterId() {
-				return this.clusterId;
-			}
-
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
-			}
-
-			public String getDatabaseName() {
-				return this.databaseName;
-			}
-
-			public void setDatabaseName(String databaseName) {
-				this.databaseName = databaseName;
+			public void setTenantId(Long tenantId) {
+				this.tenantId = tenantId;
 			}
 		}
 	}

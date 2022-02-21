@@ -46,15 +46,23 @@ public class InitResourceDirectoryResponse extends AcsResponse {
 
 	public static class ResourceDirectory {
 
+		private String rootFolderId;
+
 		private String resourceDirectoryId;
+
+		private String createTime;
 
 		private String masterAccountId;
 
 		private String masterAccountName;
 
-		private String rootFolderId;
+		public String getRootFolderId() {
+			return this.rootFolderId;
+		}
 
-		private String createTime;
+		public void setRootFolderId(String rootFolderId) {
+			this.rootFolderId = rootFolderId;
+		}
 
 		public String getResourceDirectoryId() {
 			return this.resourceDirectoryId;
@@ -62,6 +70,14 @@ public class InitResourceDirectoryResponse extends AcsResponse {
 
 		public void setResourceDirectoryId(String resourceDirectoryId) {
 			this.resourceDirectoryId = resourceDirectoryId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getMasterAccountId() {
@@ -78,22 +94,6 @@ public class InitResourceDirectoryResponse extends AcsResponse {
 
 		public void setMasterAccountName(String masterAccountName) {
 			this.masterAccountName = masterAccountName;
-		}
-
-		public String getRootFolderId() {
-			return this.rootFolderId;
-		}
-
-		public void setRootFolderId(String rootFolderId) {
-			this.rootFolderId = rootFolderId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

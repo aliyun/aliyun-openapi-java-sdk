@@ -40,6 +40,7 @@ public class ListDataCorrectPreCheckSQLResponseUnmarshaller {
 			preCheckSQL.setSQLReviewQueryKey(_ctx.stringValue("ListDataCorrectPreCheckSQLResponse.PreCheckSQLList["+ i +"].SQLReviewQueryKey"));
 			preCheckSQL.setSqlReviewStatus(_ctx.stringValue("ListDataCorrectPreCheckSQLResponse.PreCheckSQLList["+ i +"].SqlReviewStatus"));
 			preCheckSQL.setSqlType(_ctx.stringValue("ListDataCorrectPreCheckSQLResponse.PreCheckSQLList["+ i +"].SqlType"));
+			preCheckSQL.setTableNames(_ctx.stringValue("ListDataCorrectPreCheckSQLResponse.PreCheckSQLList["+ i +"].TableNames"));
 
 			preCheckSQLList.add(preCheckSQL);
 		}

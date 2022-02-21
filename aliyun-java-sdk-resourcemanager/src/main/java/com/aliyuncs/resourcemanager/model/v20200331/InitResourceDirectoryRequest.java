@@ -26,7 +26,7 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class InitResourceDirectoryRequest extends RpcAcsRequest<InitResourceDirectoryResponse> {
 	   
 	public InitResourceDirectoryRequest() {
-		super("ResourceManager", "2020-03-31", "InitResourceDirectory", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "InitResourceDirectory");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

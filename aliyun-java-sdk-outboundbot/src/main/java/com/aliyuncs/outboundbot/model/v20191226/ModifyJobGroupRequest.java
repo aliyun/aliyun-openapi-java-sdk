@@ -40,6 +40,8 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 
 	private String jobGroupStatus;
 
+	private String priority;
+
 	private List<String> callingNumbers;
 
 	private String instanceId;
@@ -47,6 +49,8 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 	private String jobGroupId;
 
 	private String name;
+
+	private Long minConcurrency;
 	public ModifyJobGroupRequest() {
 		super("OutboundBot", "2019-12-26", "ModifyJobGroup", "outboundbot");
 		setMethod(MethodType.POST);
@@ -133,6 +137,17 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		}
 	}
 
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority);
+		}
+	}
+
 	public List<String> getCallingNumbers() {
 		return this.callingNumbers;
 	}
@@ -176,6 +191,17 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getMinConcurrency() {
+		return this.minConcurrency;
+	}
+
+	public void setMinConcurrency(Long minConcurrency) {
+		this.minConcurrency = minConcurrency;
+		if(minConcurrency != null){
+			putQueryParameter("MinConcurrency", minConcurrency.toString());
 		}
 	}
 

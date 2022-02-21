@@ -37,7 +37,7 @@ public class DescribeClusterOperationHostTaskLogRequest extends RpcAcsRequest<De
 
 	private String status;
 	public DescribeClusterOperationHostTaskLogRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterOperationHostTaskLog", "emr");
+		super("Emr", "2016-04-08", "DescribeClusterOperationHostTaskLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

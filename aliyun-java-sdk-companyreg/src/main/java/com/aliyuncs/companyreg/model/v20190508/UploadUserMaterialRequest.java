@@ -32,7 +32,7 @@ public class UploadUserMaterialRequest extends RpcAcsRequest<UploadUserMaterialR
 
 	private Integer status;
 	public UploadUserMaterialRequest() {
-		super("companyreg", "2019-05-08", "UploadUserMaterial", "companyreg");
+		super("companyreg", "2019-05-08", "UploadUserMaterial");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

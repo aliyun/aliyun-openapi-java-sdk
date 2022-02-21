@@ -47,23 +47,15 @@ public class DescribeCertificatesResponse extends AcsResponse {
 
 	public static class Certificate {
 
-		private String commonName;
-
 		private Boolean isUsing;
 
 		private String certificateName;
 
 		private Long certificateId;
 
+		private String commonName;
+
 		private List<String> sans;
-
-		public String getCommonName() {
-			return this.commonName;
-		}
-
-		public void setCommonName(String commonName) {
-			this.commonName = commonName;
-		}
 
 		public Boolean getIsUsing() {
 			return this.isUsing;
@@ -87,6 +79,14 @@ public class DescribeCertificatesResponse extends AcsResponse {
 
 		public void setCertificateId(Long certificateId) {
 			this.certificateId = certificateId;
+		}
+
+		public String getCommonName() {
+			return this.commonName;
+		}
+
+		public void setCommonName(String commonName) {
+			this.commonName = commonName;
 		}
 
 		public List<String> getSans() {

@@ -29,11 +29,11 @@ public class DescribeProductResourceTagKeyListResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
+	private String nextToken;
 
 	private String requestId;
 
-	private String nextToken;
+	private Boolean success;
 
 	private List<String> tagKeys;
 
@@ -53,12 +53,12 @@ public class DescribeProductResourceTagKeyListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public String getRequestId() {
@@ -69,12 +69,12 @@ public class DescribeProductResourceTagKeyListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<String> getTagKeys() {

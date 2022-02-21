@@ -29,7 +29,7 @@ public class UpdateProduceRequest extends RpcAcsRequest<UpdateProduceResponse> {
 
 	private String bizId;
 	public UpdateProduceRequest() {
-		super("companyreg", "2019-05-08", "UpdateProduce", "companyreg");
+		super("companyreg", "2019-05-08", "UpdateProduce");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

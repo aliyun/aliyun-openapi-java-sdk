@@ -25,34 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTagResourcesResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorCode;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String traceId;
+
+	private String errorCode;
+
+	private String code;
 
 	private Boolean success;
 
-	private String traceId;
-
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -63,12 +55,28 @@ public class ListTagResourcesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,14 +85,6 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
 	}
 
 	public Data getData() {
@@ -119,20 +119,20 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 		public static class TagResource {
 
-			private String tagKey;
+			private String resourceType;
 
 			private String tagValue;
 
 			private String resourceId;
 
-			private String resourceType;
+			private String tagKey;
 
-			public String getTagKey() {
-				return this.tagKey;
+			public String getResourceType() {
+				return this.resourceType;
 			}
 
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
 			}
 
 			public String getTagValue() {
@@ -151,12 +151,12 @@ public class ListTagResourcesResponse extends AcsResponse {
 				this.resourceId = resourceId;
 			}
 
-			public String getResourceType() {
-				return this.resourceType;
+			public String getTagKey() {
+				return this.tagKey;
 			}
 
-			public void setResourceType(String resourceType) {
-				this.resourceType = resourceType;
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

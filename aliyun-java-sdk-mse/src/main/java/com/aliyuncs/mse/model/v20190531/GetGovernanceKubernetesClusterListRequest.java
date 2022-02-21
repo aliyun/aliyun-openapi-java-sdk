@@ -32,8 +32,10 @@ public class GetGovernanceKubernetesClusterListRequest extends RpcAcsRequest<Get
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String acceptLanguage;
 	public GetGovernanceKubernetesClusterListRequest() {
-		super("mse", "2019-05-31", "GetGovernanceKubernetesClusterList", "mse");
+		super("mse", "2019-05-31", "GetGovernanceKubernetesClusterList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class GetGovernanceKubernetesClusterListRequest extends RpcAcsRequest<Get
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

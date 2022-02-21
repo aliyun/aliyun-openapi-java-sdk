@@ -25,19 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExporterOutputListResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private String code;
 
 	private String message;
 
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer total;
 
-	private Integer pageNumber;
-
-	private Boolean success;
-
 	private List<Datapoint> datapoints;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -55,22 +71,6 @@ public class DescribeExporterOutputListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -79,12 +79,12 @@ public class DescribeExporterOutputListResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Datapoint> getDatapoints() {
@@ -97,21 +97,13 @@ public class DescribeExporterOutputListResponse extends AcsResponse {
 
 	public static class Datapoint {
 
-		private String destName;
-
 		private String destType;
 
 		private Long createTime;
 
+		private String destName;
+
 		private ConfigJson configJson;
-
-		public String getDestName() {
-			return this.destName;
-		}
-
-		public void setDestName(String destName) {
-			this.destName = destName;
-		}
 
 		public String getDestType() {
 			return this.destType;
@@ -129,6 +121,14 @@ public class DescribeExporterOutputListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getDestName() {
+			return this.destName;
+		}
+
+		public void setDestName(String destName) {
+			this.destName = destName;
+		}
+
 		public ConfigJson getConfigJson() {
 			return this.configJson;
 		}
@@ -139,13 +139,29 @@ public class DescribeExporterOutputListResponse extends AcsResponse {
 
 		public static class ConfigJson {
 
+			private String ak;
+
+			private String endpoint;
+
 			private String logstore;
 
 			private String project;
 
-			private String endpoint;
+			public String getAk() {
+				return this.ak;
+			}
 
-			private String ak;
+			public void setAk(String ak) {
+				this.ak = ak;
+			}
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
 
 			public String getLogstore() {
 				return this.logstore;
@@ -161,22 +177,6 @@ public class DescribeExporterOutputListResponse extends AcsResponse {
 
 			public void setProject(String project) {
 				this.project = project;
-			}
-
-			public String getEndpoint() {
-				return this.endpoint;
-			}
-
-			public void setEndpoint(String endpoint) {
-				this.endpoint = endpoint;
-			}
-
-			public String getAk() {
-				return this.ak;
-			}
-
-			public void setAk(String ak) {
-				this.ak = ak;
 			}
 		}
 	}

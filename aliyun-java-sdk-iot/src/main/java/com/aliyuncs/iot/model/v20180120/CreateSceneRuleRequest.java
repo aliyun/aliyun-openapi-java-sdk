@@ -33,7 +33,7 @@ public class CreateSceneRuleRequest extends RpcAcsRequest<CreateSceneRuleRespons
 
 	private String ruleContent;
 	public CreateSceneRuleRequest() {
-		super("Iot", "2018-01-20", "CreateSceneRule", "iot");
+		super("Iot", "2018-01-20", "CreateSceneRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

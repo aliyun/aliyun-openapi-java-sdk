@@ -36,7 +36,7 @@ public class DescribeMonitorGroupInstancesRequest extends RpcAcsRequest<Describe
 
 	private String keyword;
 	public DescribeMonitorGroupInstancesRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupInstances", "cms");
+		super("Cms", "2019-01-01", "DescribeMonitorGroupInstances", "Cms");
 		setMethod(MethodType.POST);
 	}
 

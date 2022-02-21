@@ -40,7 +40,7 @@ public class QuerySpeechPushJobRequest extends RpcAcsRequest<QuerySpeechPushJobR
 
 	private String jobCode;
 	public QuerySpeechPushJobRequest() {
-		super("Iot", "2018-01-20", "QuerySpeechPushJob", "iot");
+		super("Iot", "2018-01-20", "QuerySpeechPushJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

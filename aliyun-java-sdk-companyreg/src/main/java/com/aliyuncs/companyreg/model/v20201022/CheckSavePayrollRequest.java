@@ -51,7 +51,7 @@ public class CheckSavePayrollRequest extends RpcAcsRequest<CheckSavePayrollRespo
 
 	private String personSocialInsurance;
 	public CheckSavePayrollRequest() {
-		super("companyreg", "2020-10-22", "CheckSavePayroll", "companyreg");
+		super("companyreg", "2020-10-22", "CheckSavePayroll");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

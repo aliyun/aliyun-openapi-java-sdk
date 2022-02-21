@@ -34,9 +34,9 @@ public class DescribeAlertLogHistogramResponseUnmarshaller {
 		List<AlertLogHistogramListItem> alertLogHistogramList = new ArrayList<AlertLogHistogramListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAlertLogHistogramResponse.AlertLogHistogramList.Length"); i++) {
 			AlertLogHistogramListItem alertLogHistogramListItem = new AlertLogHistogramListItem();
-			alertLogHistogramListItem.setCount(_ctx.integerValue("DescribeAlertLogHistogramResponse.AlertLogHistogramList["+ i +"].Count"));
 			alertLogHistogramListItem.setFrom(_ctx.longValue("DescribeAlertLogHistogramResponse.AlertLogHistogramList["+ i +"].From"));
 			alertLogHistogramListItem.setTo(_ctx.longValue("DescribeAlertLogHistogramResponse.AlertLogHistogramList["+ i +"].To"));
+			alertLogHistogramListItem.setCount(_ctx.integerValue("DescribeAlertLogHistogramResponse.AlertLogHistogramList["+ i +"].Count"));
 
 			alertLogHistogramList.add(alertLogHistogramListItem);
 		}

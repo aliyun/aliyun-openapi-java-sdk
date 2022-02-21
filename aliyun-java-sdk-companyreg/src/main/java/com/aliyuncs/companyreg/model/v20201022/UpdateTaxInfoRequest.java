@@ -29,7 +29,7 @@ public class UpdateTaxInfoRequest extends RpcAcsRequest<UpdateTaxInfoResponse> {
 
 	private String bizId;
 	public UpdateTaxInfoRequest() {
-		super("companyreg", "2020-10-22", "UpdateTaxInfo", "companyreg");
+		super("companyreg", "2020-10-22", "UpdateTaxInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

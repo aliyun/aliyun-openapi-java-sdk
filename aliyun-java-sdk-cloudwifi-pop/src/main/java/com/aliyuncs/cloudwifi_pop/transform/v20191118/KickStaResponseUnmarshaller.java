@@ -23,9 +23,9 @@ public class KickStaResponseUnmarshaller {
 	public static KickStaResponse unmarshall(KickStaResponse kickStaResponse, UnmarshallerContext _ctx) {
 		
 		kickStaResponse.setData(_ctx.stringValue("KickStaResponse.Data"));
+		kickStaResponse.setErrorMessage(_ctx.stringValue("KickStaResponse.ErrorMessage"));
 		kickStaResponse.setIsSuccess(_ctx.booleanValue("KickStaResponse.IsSuccess"));
 		kickStaResponse.setErrorCode(_ctx.integerValue("KickStaResponse.ErrorCode"));
-		kickStaResponse.setErrorMessage(_ctx.stringValue("KickStaResponse.ErrorMessage"));
 	 
 	 	return kickStaResponse;
 	}

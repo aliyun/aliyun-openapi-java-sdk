@@ -23,10 +23,10 @@ public class SaveTerminalLogResponseUnmarshaller {
 	public static SaveTerminalLogResponse unmarshall(SaveTerminalLogResponse saveTerminalLogResponse, UnmarshallerContext _ctx) {
 		
 		saveTerminalLogResponse.setRequestId(_ctx.stringValue("SaveTerminalLogResponse.RequestId"));
-		saveTerminalLogResponse.setCode(_ctx.stringValue("SaveTerminalLogResponse.Code"));
 		saveTerminalLogResponse.setHttpStatusCode(_ctx.longValue("SaveTerminalLogResponse.HttpStatusCode"));
-		saveTerminalLogResponse.setMessage(_ctx.stringValue("SaveTerminalLogResponse.Message"));
 		saveTerminalLogResponse.setSuccess(_ctx.booleanValue("SaveTerminalLogResponse.Success"));
+		saveTerminalLogResponse.setCode(_ctx.stringValue("SaveTerminalLogResponse.Code"));
+		saveTerminalLogResponse.setMessage(_ctx.stringValue("SaveTerminalLogResponse.Message"));
 		saveTerminalLogResponse.setTimeStamp(_ctx.longValue("SaveTerminalLogResponse.TimeStamp"));
 	 
 	 	return saveTerminalLogResponse;

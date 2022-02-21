@@ -35,7 +35,7 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 
 	private List<AlertTemplates> alertTemplatess;
 	public ModifyMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "ModifyMetricRuleTemplate", "cms");
+		super("Cms", "2019-01-01", "ModifyMetricRuleTemplate", "Cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -91,8 +91,8 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 		this.alertTemplatess = alertTemplatess;	
 		if (alertTemplatess != null) {
 			for (int depth1 = 0; depth1 < alertTemplatess.size(); depth1++) {
-				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Period" , alertTemplatess.get(depth1).getPeriod());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.Threshold" , alertTemplatess.get(depth1).getEscalationsWarnThreshold());
+				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Period" , alertTemplatess.get(depth1).getPeriod());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Webhook" , alertTemplatess.get(depth1).getWebhook());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.ComparisonOperator" , alertTemplatess.get(depth1).getEscalationsWarnComparisonOperator());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Critical.Statistics" , alertTemplatess.get(depth1).getEscalationsCriticalStatistics());
@@ -101,14 +101,14 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Info.Statistics" , alertTemplatess.get(depth1).getEscalationsInfoStatistics());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Critical.Times" , alertTemplatess.get(depth1).getEscalationsCriticalTimes());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Info.ComparisonOperator" , alertTemplatess.get(depth1).getEscalationsInfoComparisonOperator());
-				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.Statistics" , alertTemplatess.get(depth1).getEscalationsWarnStatistics());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Info.Threshold" , alertTemplatess.get(depth1).getEscalationsInfoThreshold());
+				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.Statistics" , alertTemplatess.get(depth1).getEscalationsWarnStatistics());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Namespace" , alertTemplatess.get(depth1).getNamespace());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Selector" , alertTemplatess.get(depth1).getSelector());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".MetricName" , alertTemplatess.get(depth1).getMetricName());
+				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.Times" , alertTemplatess.get(depth1).getEscalationsWarnTimes());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Category" , alertTemplatess.get(depth1).getCategory());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Critical.ComparisonOperator" , alertTemplatess.get(depth1).getEscalationsCriticalComparisonOperator());
-				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Warn.Times" , alertTemplatess.get(depth1).getEscalationsWarnTimes());
 				putQueryParameter("AlertTemplates." + (depth1 + 1) + ".Escalations.Critical.Threshold" , alertTemplatess.get(depth1).getEscalationsCriticalThreshold());
 			}
 		}	
@@ -116,9 +116,9 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 
 	public static class AlertTemplates {
 
-		private Integer period;
-
 		private String escalationsWarnThreshold;
+
+		private Integer period;
 
 		private String webhook;
 
@@ -136,9 +136,9 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 
 		private String escalationsInfoComparisonOperator;
 
-		private String escalationsWarnStatistics;
-
 		private String escalationsInfoThreshold;
+
+		private String escalationsWarnStatistics;
 
 		private String namespace;
 
@@ -146,21 +146,13 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 
 		private String metricName;
 
+		private Integer escalationsWarnTimes;
+
 		private String category;
 
 		private String escalationsCriticalComparisonOperator;
 
-		private Integer escalationsWarnTimes;
-
 		private String escalationsCriticalThreshold;
-
-		public Integer getPeriod() {
-			return this.period;
-		}
-
-		public void setPeriod(Integer period) {
-			this.period = period;
-		}
 
 		public String getEscalationsWarnThreshold() {
 			return this.escalationsWarnThreshold;
@@ -168,6 +160,14 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 
 		public void setEscalationsWarnThreshold(String escalationsWarnThreshold) {
 			this.escalationsWarnThreshold = escalationsWarnThreshold;
+		}
+
+		public Integer getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Integer period) {
+			this.period = period;
 		}
 
 		public String getWebhook() {
@@ -234,20 +234,20 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 			this.escalationsInfoComparisonOperator = escalationsInfoComparisonOperator;
 		}
 
-		public String getEscalationsWarnStatistics() {
-			return this.escalationsWarnStatistics;
-		}
-
-		public void setEscalationsWarnStatistics(String escalationsWarnStatistics) {
-			this.escalationsWarnStatistics = escalationsWarnStatistics;
-		}
-
 		public String getEscalationsInfoThreshold() {
 			return this.escalationsInfoThreshold;
 		}
 
 		public void setEscalationsInfoThreshold(String escalationsInfoThreshold) {
 			this.escalationsInfoThreshold = escalationsInfoThreshold;
+		}
+
+		public String getEscalationsWarnStatistics() {
+			return this.escalationsWarnStatistics;
+		}
+
+		public void setEscalationsWarnStatistics(String escalationsWarnStatistics) {
+			this.escalationsWarnStatistics = escalationsWarnStatistics;
 		}
 
 		public String getNamespace() {
@@ -274,6 +274,14 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 			this.metricName = metricName;
 		}
 
+		public Integer getEscalationsWarnTimes() {
+			return this.escalationsWarnTimes;
+		}
+
+		public void setEscalationsWarnTimes(Integer escalationsWarnTimes) {
+			this.escalationsWarnTimes = escalationsWarnTimes;
+		}
+
 		public String getCategory() {
 			return this.category;
 		}
@@ -288,14 +296,6 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 
 		public void setEscalationsCriticalComparisonOperator(String escalationsCriticalComparisonOperator) {
 			this.escalationsCriticalComparisonOperator = escalationsCriticalComparisonOperator;
-		}
-
-		public Integer getEscalationsWarnTimes() {
-			return this.escalationsWarnTimes;
-		}
-
-		public void setEscalationsWarnTimes(Integer escalationsWarnTimes) {
-			this.escalationsWarnTimes = escalationsWarnTimes;
 		}
 
 		public String getEscalationsCriticalThreshold() {

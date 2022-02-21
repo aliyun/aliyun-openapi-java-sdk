@@ -29,7 +29,7 @@ public class CreateEnvAppGroupRequest extends RoaAcsRequest<CreateEnvAppGroupRes
 
 	private String scopes;
 	public CreateEnvAppGroupRequest() {
-		super("Edas", "2017-08-01", "CreateEnvAppGroup", "edas");
+		super("Edas", "2017-08-01", "CreateEnvAppGroup", "Edas");
 		setUriPattern("/pop/v5/gray/env_app_groups");
 		setMethod(MethodType.POST);
 		try {

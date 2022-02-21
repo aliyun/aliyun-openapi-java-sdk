@@ -27,35 +27,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String nasId;
 
-	private String webContainer;
-
-	private Boolean enableAhas;
-
-	private String slsConfigs;
-
-	private String readiness;
-
 	private String packageVersionId;
 
 	private Integer batchWaitTime;
-
-	private String liveness;
 
 	private String envs;
 
 	private Integer cpuLimit;
 
-	private String packageVersion;
-
 	private String storageType;
 
-	private String envFroms;
-
 	private String configMountDescs;
-
-	private String edasContainerVersion;
-
-	private String packageUrl;
 
 	private Integer memoryLimit;
 
@@ -71,27 +53,59 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String preStop;
 
+	private String localVolume;
+
+	private String updateStrategy;
+
+	private Boolean useBodyEncoding;
+
+	private String changeOrderDesc;
+
+	private String emptyDirs;
+
+	private Integer mcpuLimit;
+
+	private String runtimeClassName;
+
+	private String trafficControlStrategy;
+
+	private String postStart;
+
+	private String customAffinity;
+
+	private String webContainer;
+
+	private Boolean enableAhas;
+
+	private String slsConfigs;
+
+	private String readiness;
+
+	private String liveness;
+
+	private String packageVersion;
+
+	private String envFroms;
+
+	private String edasContainerVersion;
+
+	private String packageUrl;
+
 	private String mountDescs;
 
 	private Integer replicas;
+
+	private String customTolerations;
 
 	private Integer cpuRequest;
 
 	private String webContainerConfig;
 
-	private String localVolume;
-
 	private String command;
-
-	private String updateStrategy;
 
 	private String args;
 
 	private String jDK;
-
-	private Boolean useBodyEncoding;
-
-	private String changeOrderDesc;
 
 	private String uriEncoding;
 
@@ -101,23 +115,13 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String pvcMountDescs;
 
-	private String emptyDirs;
-
 	private Integer mcpuRequest;
-
-	private Integer mcpuLimit;
 
 	private String volumesStr;
 
-	private String runtimeClassName;
-
-	private String trafficControlStrategy;
-
-	private String postStart;
-
 	private String javaStartUpConfig;
 	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
+		super("Edas", "2017-08-01", "DeployK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.POST);
 		try {
@@ -134,50 +138,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.nasId = nasId;
 		if(nasId != null){
 			putQueryParameter("NasId", nasId);
-		}
-	}
-
-	public String getWebContainer() {
-		return this.webContainer;
-	}
-
-	public void setWebContainer(String webContainer) {
-		this.webContainer = webContainer;
-		if(webContainer != null){
-			putQueryParameter("WebContainer", webContainer);
-		}
-	}
-
-	public Boolean getEnableAhas() {
-		return this.enableAhas;
-	}
-
-	public void setEnableAhas(Boolean enableAhas) {
-		this.enableAhas = enableAhas;
-		if(enableAhas != null){
-			putQueryParameter("EnableAhas", enableAhas.toString());
-		}
-	}
-
-	public String getSlsConfigs() {
-		return this.slsConfigs;
-	}
-
-	public void setSlsConfigs(String slsConfigs) {
-		this.slsConfigs = slsConfigs;
-		if(slsConfigs != null){
-			putQueryParameter("SlsConfigs", slsConfigs);
-		}
-	}
-
-	public String getReadiness() {
-		return this.readiness;
-	}
-
-	public void setReadiness(String readiness) {
-		this.readiness = readiness;
-		if(readiness != null){
-			putQueryParameter("Readiness", readiness);
 		}
 	}
 
@@ -203,17 +163,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
-	public String getLiveness() {
-		return this.liveness;
-	}
-
-	public void setLiveness(String liveness) {
-		this.liveness = liveness;
-		if(liveness != null){
-			putQueryParameter("Liveness", liveness);
-		}
-	}
-
 	public String getEnvs() {
 		return this.envs;
 	}
@@ -236,17 +185,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
-	public String getPackageVersion() {
-		return this.packageVersion;
-	}
-
-	public void setPackageVersion(String packageVersion) {
-		this.packageVersion = packageVersion;
-		if(packageVersion != null){
-			putQueryParameter("PackageVersion", packageVersion);
-		}
-	}
-
 	public String getStorageType() {
 		return this.storageType;
 	}
@@ -258,17 +196,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
-	public String getEnvFroms() {
-		return this.envFroms;
-	}
-
-	public void setEnvFroms(String envFroms) {
-		this.envFroms = envFroms;
-		if(envFroms != null){
-			putQueryParameter("EnvFroms", envFroms);
-		}
-	}
-
 	public String getConfigMountDescs() {
 		return this.configMountDescs;
 	}
@@ -277,28 +204,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.configMountDescs = configMountDescs;
 		if(configMountDescs != null){
 			putQueryParameter("ConfigMountDescs", configMountDescs);
-		}
-	}
-
-	public String getEdasContainerVersion() {
-		return this.edasContainerVersion;
-	}
-
-	public void setEdasContainerVersion(String edasContainerVersion) {
-		this.edasContainerVersion = edasContainerVersion;
-		if(edasContainerVersion != null){
-			putQueryParameter("EdasContainerVersion", edasContainerVersion);
-		}
-	}
-
-	public String getPackageUrl() {
-		return this.packageUrl;
-	}
-
-	public void setPackageUrl(String packageUrl) {
-		this.packageUrl = packageUrl;
-		if(packageUrl != null){
-			putQueryParameter("PackageUrl", packageUrl);
 		}
 	}
 
@@ -379,6 +284,215 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public String getLocalVolume() {
+		return this.localVolume;
+	}
+
+	public void setLocalVolume(String localVolume) {
+		this.localVolume = localVolume;
+		if(localVolume != null){
+			putQueryParameter("LocalVolume", localVolume);
+		}
+	}
+
+	public String getUpdateStrategy() {
+		return this.updateStrategy;
+	}
+
+	public void setUpdateStrategy(String updateStrategy) {
+		this.updateStrategy = updateStrategy;
+		if(updateStrategy != null){
+			putQueryParameter("UpdateStrategy", updateStrategy);
+		}
+	}
+
+	public Boolean getUseBodyEncoding() {
+		return this.useBodyEncoding;
+	}
+
+	public void setUseBodyEncoding(Boolean useBodyEncoding) {
+		this.useBodyEncoding = useBodyEncoding;
+		if(useBodyEncoding != null){
+			putQueryParameter("UseBodyEncoding", useBodyEncoding.toString());
+		}
+	}
+
+	public String getChangeOrderDesc() {
+		return this.changeOrderDesc;
+	}
+
+	public void setChangeOrderDesc(String changeOrderDesc) {
+		this.changeOrderDesc = changeOrderDesc;
+		if(changeOrderDesc != null){
+			putQueryParameter("ChangeOrderDesc", changeOrderDesc);
+		}
+	}
+
+	public String getEmptyDirs() {
+		return this.emptyDirs;
+	}
+
+	public void setEmptyDirs(String emptyDirs) {
+		this.emptyDirs = emptyDirs;
+		if(emptyDirs != null){
+			putQueryParameter("EmptyDirs", emptyDirs);
+		}
+	}
+
+	public Integer getMcpuLimit() {
+		return this.mcpuLimit;
+	}
+
+	public void setMcpuLimit(Integer mcpuLimit) {
+		this.mcpuLimit = mcpuLimit;
+		if(mcpuLimit != null){
+			putQueryParameter("McpuLimit", mcpuLimit.toString());
+		}
+	}
+
+	public String getRuntimeClassName() {
+		return this.runtimeClassName;
+	}
+
+	public void setRuntimeClassName(String runtimeClassName) {
+		this.runtimeClassName = runtimeClassName;
+		if(runtimeClassName != null){
+			putQueryParameter("RuntimeClassName", runtimeClassName);
+		}
+	}
+
+	public String getTrafficControlStrategy() {
+		return this.trafficControlStrategy;
+	}
+
+	public void setTrafficControlStrategy(String trafficControlStrategy) {
+		this.trafficControlStrategy = trafficControlStrategy;
+		if(trafficControlStrategy != null){
+			putQueryParameter("TrafficControlStrategy", trafficControlStrategy);
+		}
+	}
+
+	public String getPostStart() {
+		return this.postStart;
+	}
+
+	public void setPostStart(String postStart) {
+		this.postStart = postStart;
+		if(postStart != null){
+			putQueryParameter("PostStart", postStart);
+		}
+	}
+
+	public String getCustomAffinity() {
+		return this.customAffinity;
+	}
+
+	public void setCustomAffinity(String customAffinity) {
+		this.customAffinity = customAffinity;
+		if(customAffinity != null){
+			putQueryParameter("CustomAffinity", customAffinity);
+		}
+	}
+
+	public String getWebContainer() {
+		return this.webContainer;
+	}
+
+	public void setWebContainer(String webContainer) {
+		this.webContainer = webContainer;
+		if(webContainer != null){
+			putQueryParameter("WebContainer", webContainer);
+		}
+	}
+
+	public Boolean getEnableAhas() {
+		return this.enableAhas;
+	}
+
+	public void setEnableAhas(Boolean enableAhas) {
+		this.enableAhas = enableAhas;
+		if(enableAhas != null){
+			putQueryParameter("EnableAhas", enableAhas.toString());
+		}
+	}
+
+	public String getSlsConfigs() {
+		return this.slsConfigs;
+	}
+
+	public void setSlsConfigs(String slsConfigs) {
+		this.slsConfigs = slsConfigs;
+		if(slsConfigs != null){
+			putQueryParameter("SlsConfigs", slsConfigs);
+		}
+	}
+
+	public String getReadiness() {
+		return this.readiness;
+	}
+
+	public void setReadiness(String readiness) {
+		this.readiness = readiness;
+		if(readiness != null){
+			putQueryParameter("Readiness", readiness);
+		}
+	}
+
+	public String getLiveness() {
+		return this.liveness;
+	}
+
+	public void setLiveness(String liveness) {
+		this.liveness = liveness;
+		if(liveness != null){
+			putQueryParameter("Liveness", liveness);
+		}
+	}
+
+	public String getPackageVersion() {
+		return this.packageVersion;
+	}
+
+	public void setPackageVersion(String packageVersion) {
+		this.packageVersion = packageVersion;
+		if(packageVersion != null){
+			putQueryParameter("PackageVersion", packageVersion);
+		}
+	}
+
+	public String getEnvFroms() {
+		return this.envFroms;
+	}
+
+	public void setEnvFroms(String envFroms) {
+		this.envFroms = envFroms;
+		if(envFroms != null){
+			putQueryParameter("EnvFroms", envFroms);
+		}
+	}
+
+	public String getEdasContainerVersion() {
+		return this.edasContainerVersion;
+	}
+
+	public void setEdasContainerVersion(String edasContainerVersion) {
+		this.edasContainerVersion = edasContainerVersion;
+		if(edasContainerVersion != null){
+			putQueryParameter("EdasContainerVersion", edasContainerVersion);
+		}
+	}
+
+	public String getPackageUrl() {
+		return this.packageUrl;
+	}
+
+	public void setPackageUrl(String packageUrl) {
+		this.packageUrl = packageUrl;
+		if(packageUrl != null){
+			putQueryParameter("PackageUrl", packageUrl);
+		}
+	}
+
 	public String getMountDescs() {
 		return this.mountDescs;
 	}
@@ -398,6 +512,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.replicas = replicas;
 		if(replicas != null){
 			putQueryParameter("Replicas", replicas.toString());
+		}
+	}
+
+	public String getCustomTolerations() {
+		return this.customTolerations;
+	}
+
+	public void setCustomTolerations(String customTolerations) {
+		this.customTolerations = customTolerations;
+		if(customTolerations != null){
+			putQueryParameter("CustomTolerations", customTolerations);
 		}
 	}
 
@@ -423,17 +548,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
-	public String getLocalVolume() {
-		return this.localVolume;
-	}
-
-	public void setLocalVolume(String localVolume) {
-		this.localVolume = localVolume;
-		if(localVolume != null){
-			putQueryParameter("LocalVolume", localVolume);
-		}
-	}
-
 	public String getCommand() {
 		return this.command;
 	}
@@ -442,17 +556,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.command = command;
 		if(command != null){
 			putQueryParameter("Command", command);
-		}
-	}
-
-	public String getUpdateStrategy() {
-		return this.updateStrategy;
-	}
-
-	public void setUpdateStrategy(String updateStrategy) {
-		this.updateStrategy = updateStrategy;
-		if(updateStrategy != null){
-			putQueryParameter("UpdateStrategy", updateStrategy);
 		}
 	}
 
@@ -475,28 +578,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.jDK = jDK;
 		if(jDK != null){
 			putQueryParameter("JDK", jDK);
-		}
-	}
-
-	public Boolean getUseBodyEncoding() {
-		return this.useBodyEncoding;
-	}
-
-	public void setUseBodyEncoding(Boolean useBodyEncoding) {
-		this.useBodyEncoding = useBodyEncoding;
-		if(useBodyEncoding != null){
-			putQueryParameter("UseBodyEncoding", useBodyEncoding.toString());
-		}
-	}
-
-	public String getChangeOrderDesc() {
-		return this.changeOrderDesc;
-	}
-
-	public void setChangeOrderDesc(String changeOrderDesc) {
-		this.changeOrderDesc = changeOrderDesc;
-		if(changeOrderDesc != null){
-			putQueryParameter("ChangeOrderDesc", changeOrderDesc);
 		}
 	}
 
@@ -544,17 +625,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
-	public String getEmptyDirs() {
-		return this.emptyDirs;
-	}
-
-	public void setEmptyDirs(String emptyDirs) {
-		this.emptyDirs = emptyDirs;
-		if(emptyDirs != null){
-			putQueryParameter("EmptyDirs", emptyDirs);
-		}
-	}
-
 	public Integer getMcpuRequest() {
 		return this.mcpuRequest;
 	}
@@ -566,17 +636,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
-	public Integer getMcpuLimit() {
-		return this.mcpuLimit;
-	}
-
-	public void setMcpuLimit(Integer mcpuLimit) {
-		this.mcpuLimit = mcpuLimit;
-		if(mcpuLimit != null){
-			putQueryParameter("McpuLimit", mcpuLimit.toString());
-		}
-	}
-
 	public String getVolumesStr() {
 		return this.volumesStr;
 	}
@@ -585,39 +644,6 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.volumesStr = volumesStr;
 		if(volumesStr != null){
 			putQueryParameter("VolumesStr", volumesStr);
-		}
-	}
-
-	public String getRuntimeClassName() {
-		return this.runtimeClassName;
-	}
-
-	public void setRuntimeClassName(String runtimeClassName) {
-		this.runtimeClassName = runtimeClassName;
-		if(runtimeClassName != null){
-			putQueryParameter("RuntimeClassName", runtimeClassName);
-		}
-	}
-
-	public String getTrafficControlStrategy() {
-		return this.trafficControlStrategy;
-	}
-
-	public void setTrafficControlStrategy(String trafficControlStrategy) {
-		this.trafficControlStrategy = trafficControlStrategy;
-		if(trafficControlStrategy != null){
-			putQueryParameter("TrafficControlStrategy", trafficControlStrategy);
-		}
-	}
-
-	public String getPostStart() {
-		return this.postStart;
-	}
-
-	public void setPostStart(String postStart) {
-		this.postStart = postStart;
-		if(postStart != null){
-			putQueryParameter("PostStart", postStart);
 		}
 	}
 

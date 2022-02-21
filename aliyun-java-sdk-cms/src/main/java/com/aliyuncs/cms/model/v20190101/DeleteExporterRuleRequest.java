@@ -26,7 +26,7 @@ public class DeleteExporterRuleRequest extends RpcAcsRequest<DeleteExporterRuleR
 
 	private String ruleName;
 	public DeleteExporterRuleRequest() {
-		super("Cms", "2019-01-01", "DeleteExporterRule", "cms");
+		super("Cms", "2019-01-01", "DeleteExporterRule", "Cms");
 		setMethod(MethodType.POST);
 	}
 

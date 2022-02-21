@@ -35,7 +35,7 @@ public class CreateStudioAppDomainOpenRequest extends RpcAcsRequest<CreateStudio
 
 	private String appId;
 	public CreateStudioAppDomainOpenRequest() {
-		super("Iot", "2018-01-20", "CreateStudioAppDomainOpen", "iot");
+		super("Iot", "2018-01-20", "CreateStudioAppDomainOpen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

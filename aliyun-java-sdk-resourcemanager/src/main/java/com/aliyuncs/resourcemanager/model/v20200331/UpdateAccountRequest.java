@@ -28,9 +28,11 @@ public class UpdateAccountRequest extends RpcAcsRequest<UpdateAccountResponse> {
 
 	private String newDisplayName;
 
+	private String newAccountType;
+
 	private String accountId;
 	public UpdateAccountRequest() {
-		super("ResourceManager", "2020-03-31", "UpdateAccount", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "UpdateAccount");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -47,6 +49,17 @@ public class UpdateAccountRequest extends RpcAcsRequest<UpdateAccountResponse> {
 		this.newDisplayName = newDisplayName;
 		if(newDisplayName != null){
 			putQueryParameter("NewDisplayName", newDisplayName);
+		}
+	}
+
+	public String getNewAccountType() {
+		return this.newAccountType;
+	}
+
+	public void setNewAccountType(String newAccountType) {
+		this.newAccountType = newAccountType;
+		if(newAccountType != null){
+			putQueryParameter("NewAccountType", newAccountType);
 		}
 	}
 

@@ -33,7 +33,7 @@ public class GetSqlConcurrencyControlRulesHistoryRequest extends RpcAcsRequest<G
 
 	private Long pageSize;
 	public GetSqlConcurrencyControlRulesHistoryRequest() {
-		super("DAS", "2020-01-16", "GetSqlConcurrencyControlRulesHistory", "das");
+		super("DAS", "2020-01-16", "GetSqlConcurrencyControlRulesHistory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

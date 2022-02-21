@@ -29,7 +29,7 @@ public class ListEcsNotInClusterRequest extends RoaAcsRequest<ListEcsNotInCluste
 
 	private Integer networkMode;
 	public ListEcsNotInClusterRequest() {
-		super("Edas", "2017-08-01", "ListEcsNotInCluster", "edas");
+		super("Edas", "2017-08-01", "ListEcsNotInCluster", "Edas");
 		setUriPattern("/pop/v5/resource/ecs_not_in_cluster");
 		setMethod(MethodType.GET);
 		try {

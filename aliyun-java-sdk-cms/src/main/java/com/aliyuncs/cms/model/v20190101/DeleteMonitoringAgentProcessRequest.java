@@ -30,7 +30,7 @@ public class DeleteMonitoringAgentProcessRequest extends RpcAcsRequest<DeleteMon
 
 	private String processId;
 	public DeleteMonitoringAgentProcessRequest() {
-		super("Cms", "2019-01-01", "DeleteMonitoringAgentProcess", "cms");
+		super("Cms", "2019-01-01", "DeleteMonitoringAgentProcess", "Cms");
 		setMethod(MethodType.POST);
 	}
 

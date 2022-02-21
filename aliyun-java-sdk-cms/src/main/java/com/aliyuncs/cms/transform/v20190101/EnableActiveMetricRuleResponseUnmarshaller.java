@@ -23,9 +23,9 @@ public class EnableActiveMetricRuleResponseUnmarshaller {
 	public static EnableActiveMetricRuleResponse unmarshall(EnableActiveMetricRuleResponse enableActiveMetricRuleResponse, UnmarshallerContext _ctx) {
 		
 		enableActiveMetricRuleResponse.setRequestId(_ctx.stringValue("EnableActiveMetricRuleResponse.RequestId"));
-		enableActiveMetricRuleResponse.setSuccess(_ctx.booleanValue("EnableActiveMetricRuleResponse.Success"));
 		enableActiveMetricRuleResponse.setCode(_ctx.stringValue("EnableActiveMetricRuleResponse.Code"));
 		enableActiveMetricRuleResponse.setMessage(_ctx.stringValue("EnableActiveMetricRuleResponse.Message"));
+		enableActiveMetricRuleResponse.setSuccess(_ctx.booleanValue("EnableActiveMetricRuleResponse.Success"));
 	 
 	 	return enableActiveMetricRuleResponse;
 	}

@@ -32,7 +32,7 @@ public class DescribeSiteMonitorISPCityListRequest extends RpcAcsRequest<Describ
 
 	private Boolean iPV6;
 	public DescribeSiteMonitorISPCityListRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorISPCityList", "cms");
+		super("Cms", "2019-01-01", "DescribeSiteMonitorISPCityList", "Cms");
 		setMethod(MethodType.POST);
 	}
 

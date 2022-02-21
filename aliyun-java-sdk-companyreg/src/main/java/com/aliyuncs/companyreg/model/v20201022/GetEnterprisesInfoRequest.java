@@ -29,7 +29,7 @@ public class GetEnterprisesInfoRequest extends RpcAcsRequest<GetEnterprisesInfoR
 
 	private String enterpriseName;
 	public GetEnterprisesInfoRequest() {
-		super("companyreg", "2020-10-22", "GetEnterprisesInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetEnterprisesInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

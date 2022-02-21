@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMetricRuleCountResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
 	private String requestId;
 
+	private Boolean success;
+
 	private MetricRuleCount metricRuleCount;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +58,14 @@ public class DescribeMetricRuleCountResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public MetricRuleCount getMetricRuleCount() {
 		return this.metricRuleCount;
 	}
@@ -76,30 +76,22 @@ public class DescribeMetricRuleCountResponse extends AcsResponse {
 
 	public static class MetricRuleCount {
 
-		private Integer alarm;
-
-		private Integer disable;
+		private Integer ok;
 
 		private Integer nodata;
 
-		private Integer ok;
+		private Integer disable;
 
 		private Integer total;
 
-		public Integer getAlarm() {
-			return this.alarm;
+		private Integer alarm;
+
+		public Integer getOk() {
+			return this.ok;
 		}
 
-		public void setAlarm(Integer alarm) {
-			this.alarm = alarm;
-		}
-
-		public Integer getDisable() {
-			return this.disable;
-		}
-
-		public void setDisable(Integer disable) {
-			this.disable = disable;
+		public void setOk(Integer ok) {
+			this.ok = ok;
 		}
 
 		public Integer getNodata() {
@@ -110,12 +102,12 @@ public class DescribeMetricRuleCountResponse extends AcsResponse {
 			this.nodata = nodata;
 		}
 
-		public Integer getOk() {
-			return this.ok;
+		public Integer getDisable() {
+			return this.disable;
 		}
 
-		public void setOk(Integer ok) {
-			this.ok = ok;
+		public void setDisable(Integer disable) {
+			this.disable = disable;
 		}
 
 		public Integer getTotal() {
@@ -124,6 +116,14 @@ public class DescribeMetricRuleCountResponse extends AcsResponse {
 
 		public void setTotal(Integer total) {
 			this.total = total;
+		}
+
+		public Integer getAlarm() {
+			return this.alarm;
+		}
+
+		public void setAlarm(Integer alarm) {
+			this.alarm = alarm;
 		}
 	}
 

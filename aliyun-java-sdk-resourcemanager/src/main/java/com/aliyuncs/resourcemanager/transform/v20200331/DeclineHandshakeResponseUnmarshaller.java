@@ -26,17 +26,17 @@ public class DeclineHandshakeResponseUnmarshaller {
 		declineHandshakeResponse.setRequestId(_ctx.stringValue("DeclineHandshakeResponse.RequestId"));
 
 		Handshake handshake = new Handshake();
-		handshake.setHandshakeId(_ctx.stringValue("DeclineHandshakeResponse.Handshake.HandshakeId"));
+		handshake.setStatus(_ctx.stringValue("DeclineHandshakeResponse.Handshake.Status"));
+		handshake.setExpireTime(_ctx.stringValue("DeclineHandshakeResponse.Handshake.ExpireTime"));
 		handshake.setResourceDirectoryId(_ctx.stringValue("DeclineHandshakeResponse.Handshake.ResourceDirectoryId"));
+		handshake.setCreateTime(_ctx.stringValue("DeclineHandshakeResponse.Handshake.CreateTime"));
+		handshake.setNote(_ctx.stringValue("DeclineHandshakeResponse.Handshake.Note"));
+		handshake.setTargetEntity(_ctx.stringValue("DeclineHandshakeResponse.Handshake.TargetEntity"));
 		handshake.setMasterAccountId(_ctx.stringValue("DeclineHandshakeResponse.Handshake.MasterAccountId"));
 		handshake.setMasterAccountName(_ctx.stringValue("DeclineHandshakeResponse.Handshake.MasterAccountName"));
-		handshake.setTargetEntity(_ctx.stringValue("DeclineHandshakeResponse.Handshake.TargetEntity"));
-		handshake.setTargetType(_ctx.stringValue("DeclineHandshakeResponse.Handshake.TargetType"));
-		handshake.setNote(_ctx.stringValue("DeclineHandshakeResponse.Handshake.Note"));
-		handshake.setStatus(_ctx.stringValue("DeclineHandshakeResponse.Handshake.Status"));
-		handshake.setCreateTime(_ctx.stringValue("DeclineHandshakeResponse.Handshake.CreateTime"));
 		handshake.setModifyTime(_ctx.stringValue("DeclineHandshakeResponse.Handshake.ModifyTime"));
-		handshake.setExpireTime(_ctx.stringValue("DeclineHandshakeResponse.Handshake.ExpireTime"));
+		handshake.setTargetType(_ctx.stringValue("DeclineHandshakeResponse.Handshake.TargetType"));
+		handshake.setHandshakeId(_ctx.stringValue("DeclineHandshakeResponse.Handshake.HandshakeId"));
 		declineHandshakeResponse.setHandshake(handshake);
 	 
 	 	return declineHandshakeResponse;

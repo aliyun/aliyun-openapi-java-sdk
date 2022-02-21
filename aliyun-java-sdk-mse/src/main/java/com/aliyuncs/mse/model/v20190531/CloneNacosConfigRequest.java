@@ -29,13 +29,15 @@ public class CloneNacosConfigRequest extends RpcAcsRequest<CloneNacosConfigRespo
 
 	private String instanceId;
 
+	private String acceptLanguage;
+
 	private String ids;
 
 	private String originNamespaceId;
 
 	private String policy;
 	public CloneNacosConfigRequest() {
-		super("mse", "2019-05-31", "CloneNacosConfig", "mse");
+		super("mse", "2019-05-31", "CloneNacosConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +64,17 @@ public class CloneNacosConfigRequest extends RpcAcsRequest<CloneNacosConfigRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

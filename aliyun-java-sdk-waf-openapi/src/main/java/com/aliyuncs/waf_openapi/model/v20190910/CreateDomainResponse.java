@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDomainResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String cname;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getCname() {
 		return this.cname;
@@ -42,6 +34,14 @@ public class CreateDomainResponse extends AcsResponse {
 
 	public void setCname(String cname) {
 		this.cname = cname;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

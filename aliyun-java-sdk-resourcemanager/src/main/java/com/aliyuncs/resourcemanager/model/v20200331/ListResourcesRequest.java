@@ -40,7 +40,7 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 
 	private String region;
 	public ListResourcesRequest() {
-		super("ResourceManager", "2020-03-31", "ListResources", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "ListResources");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

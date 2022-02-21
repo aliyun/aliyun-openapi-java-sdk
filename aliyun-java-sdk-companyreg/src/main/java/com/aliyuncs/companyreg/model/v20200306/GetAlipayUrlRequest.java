@@ -33,7 +33,7 @@ public class GetAlipayUrlRequest extends RpcAcsRequest<GetAlipayUrlResponse> {
 
 	private String returnUrl;
 	public GetAlipayUrlRequest() {
-		super("companyreg", "2020-03-06", "GetAlipayUrl", "companyreg");
+		super("companyreg", "2020-03-06", "GetAlipayUrl");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

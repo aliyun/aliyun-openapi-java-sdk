@@ -28,8 +28,6 @@ public class CreateDiagnosticReportResponse extends AcsResponse {
 
 	private String message;
 
-	private String synchro;
-
 	private String data;
 
 	private String code;
@@ -50,14 +48,6 @@ public class CreateDiagnosticReportResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getSynchro() {
-		return this.synchro;
-	}
-
-	public void setSynchro(String synchro) {
-		this.synchro = synchro;
 	}
 
 	public String getData() {

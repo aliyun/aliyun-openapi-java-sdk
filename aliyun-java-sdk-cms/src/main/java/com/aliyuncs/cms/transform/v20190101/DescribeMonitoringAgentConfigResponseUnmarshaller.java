@@ -23,12 +23,12 @@ public class DescribeMonitoringAgentConfigResponseUnmarshaller {
 	public static DescribeMonitoringAgentConfigResponse unmarshall(DescribeMonitoringAgentConfigResponse describeMonitoringAgentConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeMonitoringAgentConfigResponse.setRequestId(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.RequestId"));
+		describeMonitoringAgentConfigResponse.setEnableActiveAlert(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.EnableActiveAlert"));
+		describeMonitoringAgentConfigResponse.setAutoInstall(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.AutoInstall"));
+		describeMonitoringAgentConfigResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.Success"));
+		describeMonitoringAgentConfigResponse.setEnableInstallAgentNewECS(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.EnableInstallAgentNewECS"));
 		describeMonitoringAgentConfigResponse.setCode(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.Code"));
 		describeMonitoringAgentConfigResponse.setMessage(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.Message"));
-		describeMonitoringAgentConfigResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.Success"));
-		describeMonitoringAgentConfigResponse.setAutoInstall(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.AutoInstall"));
-		describeMonitoringAgentConfigResponse.setEnableInstallAgentNewECS(_ctx.booleanValue("DescribeMonitoringAgentConfigResponse.EnableInstallAgentNewECS"));
-		describeMonitoringAgentConfigResponse.setEnableActiveAlert(_ctx.stringValue("DescribeMonitoringAgentConfigResponse.EnableActiveAlert"));
 	 
 	 	return describeMonitoringAgentConfigResponse;
 	}

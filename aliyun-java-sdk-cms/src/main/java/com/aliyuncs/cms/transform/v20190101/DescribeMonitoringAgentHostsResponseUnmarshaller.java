@@ -27,31 +27,31 @@ public class DescribeMonitoringAgentHostsResponseUnmarshaller {
 	public static DescribeMonitoringAgentHostsResponse unmarshall(DescribeMonitoringAgentHostsResponse describeMonitoringAgentHostsResponse, UnmarshallerContext _ctx) {
 		
 		describeMonitoringAgentHostsResponse.setRequestId(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.RequestId"));
+		describeMonitoringAgentHostsResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentHostsResponse.Success"));
 		describeMonitoringAgentHostsResponse.setCode(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Code"));
 		describeMonitoringAgentHostsResponse.setMessage(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Message"));
-		describeMonitoringAgentHostsResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentHostsResponse.Success"));
+		describeMonitoringAgentHostsResponse.setPageNumber(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageNumber"));
+		describeMonitoringAgentHostsResponse.setPageSize(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageSize"));
 		describeMonitoringAgentHostsResponse.setPageTotal(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageTotal"));
 		describeMonitoringAgentHostsResponse.setTotal(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.Total"));
-		describeMonitoringAgentHostsResponse.setPageSize(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageSize"));
-		describeMonitoringAgentHostsResponse.setPageNumber(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageNumber"));
 
 		List<Host> hosts = new ArrayList<Host>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitoringAgentHostsResponse.Hosts.Length"); i++) {
 			Host host = new Host();
-			host.setInstanceId(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].InstanceId"));
 			host.setSerialNumber(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].SerialNumber"));
+			host.setNatIp(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].NatIp"));
 			host.setHostName(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].HostName"));
 			host.setAliUid(_ctx.longValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].AliUid"));
-			host.setOperatingSystem(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].OperatingSystem"));
-			host.setIpGroup(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].IpGroup"));
-			host.setRegion(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].Region"));
-			host.setAgentVersion(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].AgentVersion"));
-			host.setEipAddress(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].EipAddress"));
-			host.setEipId(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].EipId"));
-			host.setIsAliyunHost(_ctx.booleanValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].isAliyunHost"));
-			host.setNatIp(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].NatIp"));
 			host.setNetworkType(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].NetworkType"));
+			host.setInstanceId(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].InstanceId"));
+			host.setIsAliyunHost(_ctx.booleanValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].isAliyunHost"));
+			host.setEipAddress(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].EipAddress"));
+			host.setAgentVersion(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].AgentVersion"));
+			host.setIpGroup(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].IpGroup"));
+			host.setEipId(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].EipId"));
+			host.setRegion(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].Region"));
 			host.setInstanceTypeFamily(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].InstanceTypeFamily"));
+			host.setOperatingSystem(_ctx.stringValue("DescribeMonitoringAgentHostsResponse.Hosts["+ i +"].OperatingSystem"));
 
 			hosts.add(host);
 		}

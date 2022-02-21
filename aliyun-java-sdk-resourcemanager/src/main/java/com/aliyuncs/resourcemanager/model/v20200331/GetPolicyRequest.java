@@ -32,7 +32,7 @@ public class GetPolicyRequest extends RpcAcsRequest<GetPolicyResponse> {
 
 	private String policyName;
 	public GetPolicyRequest() {
-		super("ResourceManager", "2020-03-31", "GetPolicy", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "GetPolicy");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

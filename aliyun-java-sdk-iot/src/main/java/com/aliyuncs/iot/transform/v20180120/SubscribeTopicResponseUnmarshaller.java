@@ -14,9 +14,6 @@
 
 package com.aliyuncs.iot.transform.v20180120;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.iot.model.v20180120.SubscribeTopicResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -29,12 +26,6 @@ public class SubscribeTopicResponseUnmarshaller {
 		subscribeTopicResponse.setSuccess(_ctx.booleanValue("SubscribeTopicResponse.Success"));
 		subscribeTopicResponse.setCode(_ctx.stringValue("SubscribeTopicResponse.Code"));
 		subscribeTopicResponse.setErrorMessage(_ctx.stringValue("SubscribeTopicResponse.ErrorMessage"));
-
-		List<String> failureTopics = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("SubscribeTopicResponse.FailureTopics.Length"); i++) {
-			failureTopics.add(_ctx.stringValue("SubscribeTopicResponse.FailureTopics["+ i +"]"));
-		}
-		subscribeTopicResponse.setFailureTopics(failureTopics);
 	 
 	 	return subscribeTopicResponse;
 	}

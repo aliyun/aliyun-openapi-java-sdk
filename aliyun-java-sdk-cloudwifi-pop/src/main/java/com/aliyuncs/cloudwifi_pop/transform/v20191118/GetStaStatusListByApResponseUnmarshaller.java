@@ -24,9 +24,9 @@ public class GetStaStatusListByApResponseUnmarshaller {
 	public static GetStaStatusListByApResponse unmarshall(GetStaStatusListByApResponse getStaStatusListByApResponse, UnmarshallerContext _ctx) {
 		
 		getStaStatusListByApResponse.setData(_ctx.mapValue("GetStaStatusListByApResponse.Data"));
+		getStaStatusListByApResponse.setErrorMessage(_ctx.stringValue("GetStaStatusListByApResponse.ErrorMessage"));
 		getStaStatusListByApResponse.setIsSuccess(_ctx.booleanValue("GetStaStatusListByApResponse.IsSuccess"));
 		getStaStatusListByApResponse.setErrorCode(_ctx.integerValue("GetStaStatusListByApResponse.ErrorCode"));
-		getStaStatusListByApResponse.setErrorMessage(_ctx.stringValue("GetStaStatusListByApResponse.ErrorMessage"));
 	 
 	 	return getStaStatusListByApResponse;
 	}

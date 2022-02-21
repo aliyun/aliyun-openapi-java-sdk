@@ -32,7 +32,7 @@ public class DeleteCustomMetricRequest extends RpcAcsRequest<DeleteCustomMetricR
 
 	private String md5;
 	public DeleteCustomMetricRequest() {
-		super("Cms", "2019-01-01", "DeleteCustomMetric", "cms");
+		super("Cms", "2019-01-01", "DeleteCustomMetric", "Cms");
 		setMethod(MethodType.POST);
 	}
 

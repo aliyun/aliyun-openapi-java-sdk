@@ -31,6 +31,8 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String passWord;
 
+	private String minSessionTimeout;
+
 	private String maxClientCnxns;
 
 	private String requestPars;
@@ -40,6 +42,8 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	private String configType;
 
 	private String autopurgeSnapRetainCount;
+
+	private String maxSessionTimeout;
 
 	private Boolean configSecretEnabled;
 
@@ -55,11 +59,13 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String autopurgePurgeInterval;
 
+	private String acceptLanguage;
+
 	private String initLimit;
 
 	private String userName;
 	public UpdateConfigRequest() {
-		super("mse", "2019-05-31", "UpdateConfig", "mse");
+		super("mse", "2019-05-31", "UpdateConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -97,6 +103,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.passWord = passWord;
 		if(passWord != null){
 			putQueryParameter("PassWord", passWord);
+		}
+	}
+
+	public String getMinSessionTimeout() {
+		return this.minSessionTimeout;
+	}
+
+	public void setMinSessionTimeout(String minSessionTimeout) {
+		this.minSessionTimeout = minSessionTimeout;
+		if(minSessionTimeout != null){
+			putQueryParameter("MinSessionTimeout", minSessionTimeout);
 		}
 	}
 
@@ -152,6 +169,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.autopurgeSnapRetainCount = autopurgeSnapRetainCount;
 		if(autopurgeSnapRetainCount != null){
 			putQueryParameter("AutopurgeSnapRetainCount", autopurgeSnapRetainCount);
+		}
+	}
+
+	public String getMaxSessionTimeout() {
+		return this.maxSessionTimeout;
+	}
+
+	public void setMaxSessionTimeout(String maxSessionTimeout) {
+		this.maxSessionTimeout = maxSessionTimeout;
+		if(maxSessionTimeout != null){
+			putQueryParameter("MaxSessionTimeout", maxSessionTimeout);
 		}
 	}
 
@@ -229,6 +257,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.autopurgePurgeInterval = autopurgePurgeInterval;
 		if(autopurgePurgeInterval != null){
 			putQueryParameter("AutopurgePurgeInterval", autopurgePurgeInterval);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

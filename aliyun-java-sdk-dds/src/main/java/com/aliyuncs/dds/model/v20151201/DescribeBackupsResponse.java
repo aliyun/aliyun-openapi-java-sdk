@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Backup> backups;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Backup> getBackups() {
@@ -77,43 +77,27 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public static class Backup {
 
-		private String backupDBNames;
-
-		private Integer backupId;
-
 		private String backupStatus;
-
-		private String backupStartTime;
-
-		private String backupEndTime;
 
 		private String backupType;
 
-		private String backupMode;
-
-		private String backupMethod;
-
-		private String backupDownloadURL;
+		private String backupStartTime;
 
 		private String backupIntranetDownloadURL;
 
 		private Long backupSize;
 
-		public String getBackupDBNames() {
-			return this.backupDBNames;
-		}
+		private String backupDownloadURL;
 
-		public void setBackupDBNames(String backupDBNames) {
-			this.backupDBNames = backupDBNames;
-		}
+		private String backupMode;
 
-		public Integer getBackupId() {
-			return this.backupId;
-		}
+		private String backupEndTime;
 
-		public void setBackupId(Integer backupId) {
-			this.backupId = backupId;
-		}
+		private Integer backupId;
+
+		private String backupDBNames;
+
+		private String backupMethod;
 
 		public String getBackupStatus() {
 			return this.backupStatus;
@@ -121,22 +105,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupStatus(String backupStatus) {
 			this.backupStatus = backupStatus;
-		}
-
-		public String getBackupStartTime() {
-			return this.backupStartTime;
-		}
-
-		public void setBackupStartTime(String backupStartTime) {
-			this.backupStartTime = backupStartTime;
-		}
-
-		public String getBackupEndTime() {
-			return this.backupEndTime;
-		}
-
-		public void setBackupEndTime(String backupEndTime) {
-			this.backupEndTime = backupEndTime;
 		}
 
 		public String getBackupType() {
@@ -147,28 +115,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupType = backupType;
 		}
 
-		public String getBackupMode() {
-			return this.backupMode;
+		public String getBackupStartTime() {
+			return this.backupStartTime;
 		}
 
-		public void setBackupMode(String backupMode) {
-			this.backupMode = backupMode;
-		}
-
-		public String getBackupMethod() {
-			return this.backupMethod;
-		}
-
-		public void setBackupMethod(String backupMethod) {
-			this.backupMethod = backupMethod;
-		}
-
-		public String getBackupDownloadURL() {
-			return this.backupDownloadURL;
-		}
-
-		public void setBackupDownloadURL(String backupDownloadURL) {
-			this.backupDownloadURL = backupDownloadURL;
+		public void setBackupStartTime(String backupStartTime) {
+			this.backupStartTime = backupStartTime;
 		}
 
 		public String getBackupIntranetDownloadURL() {
@@ -185,6 +137,54 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupSize(Long backupSize) {
 			this.backupSize = backupSize;
+		}
+
+		public String getBackupDownloadURL() {
+			return this.backupDownloadURL;
+		}
+
+		public void setBackupDownloadURL(String backupDownloadURL) {
+			this.backupDownloadURL = backupDownloadURL;
+		}
+
+		public String getBackupMode() {
+			return this.backupMode;
+		}
+
+		public void setBackupMode(String backupMode) {
+			this.backupMode = backupMode;
+		}
+
+		public String getBackupEndTime() {
+			return this.backupEndTime;
+		}
+
+		public void setBackupEndTime(String backupEndTime) {
+			this.backupEndTime = backupEndTime;
+		}
+
+		public Integer getBackupId() {
+			return this.backupId;
+		}
+
+		public void setBackupId(Integer backupId) {
+			this.backupId = backupId;
+		}
+
+		public String getBackupDBNames() {
+			return this.backupDBNames;
+		}
+
+		public void setBackupDBNames(String backupDBNames) {
+			this.backupDBNames = backupDBNames;
+		}
+
+		public String getBackupMethod() {
+			return this.backupMethod;
+		}
+
+		public void setBackupMethod(String backupMethod) {
+			this.backupMethod = backupMethod;
 		}
 	}
 

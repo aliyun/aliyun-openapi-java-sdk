@@ -27,7 +27,7 @@ public class DescribeLoadBalancerAttributeRequest extends RpcAcsRequest<Describe
 	private String loadBalancerId;
 	public DescribeLoadBalancerAttributeRequest() {
 		super("Ens", "2017-11-10", "DescribeLoadBalancerAttribute", "ens");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 	}
 
 	public String getLoadBalancerId() {

@@ -28,15 +28,15 @@ public class InsertK8sApplicationResponseUnmarshaller {
 		insertK8sApplicationResponse.setMessage(_ctx.stringValue("InsertK8sApplicationResponse.Message"));
 
 		ApplicationInfo applicationInfo = new ApplicationInfo();
+		applicationInfo.setChangeOrderId(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.ChangeOrderId"));
 		applicationInfo.setAppName(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.AppName"));
+		applicationInfo.setDockerize(_ctx.booleanValue("InsertK8sApplicationResponse.ApplicationInfo.Dockerize"));
+		applicationInfo.setOwner(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.Owner"));
+		applicationInfo.setEdasId(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.EdasId"));
+		applicationInfo.setClusterType(_ctx.integerValue("InsertK8sApplicationResponse.ApplicationInfo.ClusterType"));
 		applicationInfo.setAppId(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.AppId"));
 		applicationInfo.setUserId(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.UserId"));
-		applicationInfo.setEdasId(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.EdasId"));
-		applicationInfo.setOwner(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.Owner"));
-		applicationInfo.setDockerize(_ctx.booleanValue("InsertK8sApplicationResponse.ApplicationInfo.Dockerize"));
-		applicationInfo.setClusterType(_ctx.integerValue("InsertK8sApplicationResponse.ApplicationInfo.ClusterType"));
 		applicationInfo.setRegionId(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.RegionId"));
-		applicationInfo.setChangeOrderId(_ctx.stringValue("InsertK8sApplicationResponse.ApplicationInfo.ChangeOrderId"));
 		insertK8sApplicationResponse.setApplicationInfo(applicationInfo);
 	 
 	 	return insertK8sApplicationResponse;

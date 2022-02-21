@@ -28,11 +28,11 @@ public class ListTagResourcesResponseUnmarshaller {
 	public static ListTagResourcesResponse unmarshall(ListTagResourcesResponse listTagResourcesResponse, UnmarshallerContext _ctx) {
 		
 		listTagResourcesResponse.setRequestId(_ctx.stringValue("ListTagResourcesResponse.RequestId"));
-		listTagResourcesResponse.setCode(_ctx.stringValue("ListTagResourcesResponse.Code"));
-		listTagResourcesResponse.setErrorCode(_ctx.stringValue("ListTagResourcesResponse.ErrorCode"));
 		listTagResourcesResponse.setMessage(_ctx.stringValue("ListTagResourcesResponse.Message"));
-		listTagResourcesResponse.setSuccess(_ctx.booleanValue("ListTagResourcesResponse.Success"));
 		listTagResourcesResponse.setTraceId(_ctx.stringValue("ListTagResourcesResponse.TraceId"));
+		listTagResourcesResponse.setErrorCode(_ctx.stringValue("ListTagResourcesResponse.ErrorCode"));
+		listTagResourcesResponse.setCode(_ctx.stringValue("ListTagResourcesResponse.Code"));
+		listTagResourcesResponse.setSuccess(_ctx.booleanValue("ListTagResourcesResponse.Success"));
 
 		Data data = new Data();
 		data.setNextToken(_ctx.stringValue("ListTagResourcesResponse.Data.NextToken"));
@@ -40,10 +40,10 @@ public class ListTagResourcesResponseUnmarshaller {
 		List<TagResource> tagResources = new ArrayList<TagResource>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagResourcesResponse.Data.TagResources.Length"); i++) {
 			TagResource tagResource = new TagResource();
-			tagResource.setTagKey(_ctx.stringValue("ListTagResourcesResponse.Data.TagResources["+ i +"].TagKey"));
+			tagResource.setResourceType(_ctx.stringValue("ListTagResourcesResponse.Data.TagResources["+ i +"].ResourceType"));
 			tagResource.setTagValue(_ctx.stringValue("ListTagResourcesResponse.Data.TagResources["+ i +"].TagValue"));
 			tagResource.setResourceId(_ctx.stringValue("ListTagResourcesResponse.Data.TagResources["+ i +"].ResourceId"));
-			tagResource.setResourceType(_ctx.stringValue("ListTagResourcesResponse.Data.TagResources["+ i +"].ResourceType"));
+			tagResource.setTagKey(_ctx.stringValue("ListTagResourcesResponse.Data.TagResources["+ i +"].TagKey"));
 
 			tagResources.add(tagResource);
 		}

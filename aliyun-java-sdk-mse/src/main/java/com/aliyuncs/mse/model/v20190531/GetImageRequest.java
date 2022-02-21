@@ -25,14 +25,27 @@ import com.aliyuncs.mse.Endpoint;
 public class GetImageRequest extends RpcAcsRequest<GetImageResponse> {
 	   
 
+	private String acceptLanguage;
+
 	private String versionCode;
 	public GetImageRequest() {
-		super("mse", "2019-05-31", "GetImage", "mse");
+		super("mse", "2019-05-31", "GetImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	public String getVersionCode() {

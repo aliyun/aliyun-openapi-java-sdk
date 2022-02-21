@@ -29,7 +29,7 @@ public class AuthorizeResourceGroupRequest extends RoaAcsRequest<AuthorizeResour
 
 	private String targetUserId;
 	public AuthorizeResourceGroupRequest() {
-		super("Edas", "2017-08-01", "AuthorizeResourceGroup", "edas");
+		super("Edas", "2017-08-01", "AuthorizeResourceGroup", "Edas");
 		setUriPattern("/pop/v5/account/authorize_res_group");
 		setMethod(MethodType.POST);
 		try {

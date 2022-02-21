@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCertificateByCertificateIdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long certificateId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getCertificateId() {
 		return this.certificateId;
@@ -42,6 +34,14 @@ public class CreateCertificateByCertificateIdResponse extends AcsResponse {
 
 	public void setCertificateId(Long certificateId) {
 		this.certificateId = certificateId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

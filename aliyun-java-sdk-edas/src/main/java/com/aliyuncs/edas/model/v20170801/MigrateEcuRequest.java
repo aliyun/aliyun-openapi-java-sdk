@@ -29,7 +29,7 @@ public class MigrateEcuRequest extends RoaAcsRequest<MigrateEcuResponse> {
 
 	private String logicalRegionId;
 	public MigrateEcuRequest() {
-		super("Edas", "2017-08-01", "MigrateEcu", "edas");
+		super("Edas", "2017-08-01", "MigrateEcu", "Edas");
 		setUriPattern("/pop/v5/resource/migrate_ecu");
 		setMethod(MethodType.POST);
 		try {

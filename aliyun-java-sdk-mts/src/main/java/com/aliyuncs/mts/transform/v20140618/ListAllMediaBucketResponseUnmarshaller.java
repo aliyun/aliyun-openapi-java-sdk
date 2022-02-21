@@ -34,6 +34,7 @@ public class ListAllMediaBucketResponseUnmarshaller {
 			MediaBucket mediaBucket = new MediaBucket();
 			mediaBucket.setType(_ctx.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Type"));
 			mediaBucket.setBucket(_ctx.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Bucket"));
+			mediaBucket.setReferer(_ctx.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Referer"));
 
 			mediaBucketList.add(mediaBucket);
 		}

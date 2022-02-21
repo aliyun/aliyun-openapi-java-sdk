@@ -29,7 +29,7 @@ public class DisableAllSqlConcurrencyControlRulesRequest extends RpcAcsRequest<D
 
 	private String instanceId;
 	public DisableAllSqlConcurrencyControlRulesRequest() {
-		super("DAS", "2020-01-16", "DisableAllSqlConcurrencyControlRules", "das");
+		super("DAS", "2020-01-16", "DisableAllSqlConcurrencyControlRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

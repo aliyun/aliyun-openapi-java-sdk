@@ -45,7 +45,7 @@ public class UpdateAutoResourceOptimizeConfigRequest extends RpcAcsRequest<Updat
 
 	private Float tableFragmentationRatio;
 	public UpdateAutoResourceOptimizeConfigRequest() {
-		super("DAS", "2020-01-16", "UpdateAutoResourceOptimizeConfig", "das");
+		super("DAS", "2020-01-16", "UpdateAutoResourceOptimizeConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,9 +23,9 @@ public class DeleteConnectionResponseUnmarshaller {
 	public static DeleteConnectionResponse unmarshall(DeleteConnectionResponse deleteConnectionResponse, UnmarshallerContext _ctx) {
 		
 		deleteConnectionResponse.setRequestId(_ctx.stringValue("DeleteConnectionResponse.RequestId"));
-		deleteConnectionResponse.setSuccess(_ctx.booleanValue("DeleteConnectionResponse.Success"));
 		deleteConnectionResponse.setHttpStatusCode(_ctx.stringValue("DeleteConnectionResponse.HttpStatusCode"));
 		deleteConnectionResponse.setData(_ctx.booleanValue("DeleteConnectionResponse.Data"));
+		deleteConnectionResponse.setSuccess(_ctx.booleanValue("DeleteConnectionResponse.Success"));
 	 
 	 	return deleteConnectionResponse;
 	}

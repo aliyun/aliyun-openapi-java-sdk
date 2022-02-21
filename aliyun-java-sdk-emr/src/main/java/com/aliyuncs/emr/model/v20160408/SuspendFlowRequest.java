@@ -29,7 +29,7 @@ public class SuspendFlowRequest extends RpcAcsRequest<SuspendFlowResponse> {
 
 	private String projectId;
 	public SuspendFlowRequest() {
-		super("Emr", "2016-04-08", "SuspendFlow", "emr");
+		super("Emr", "2016-04-08", "SuspendFlow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

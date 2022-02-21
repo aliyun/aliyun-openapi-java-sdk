@@ -24,19 +24,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMetricListResponse extends AcsResponse {
 
+	private String nextToken;
+
+	private String requestId;
+
+	private Boolean success;
+
+	private String datapoints;
+
 	private String code;
 
 	private String message;
 
-	private String requestId;
-
-	private String nextToken;
-
-	private String datapoints;
-
 	private String period;
 
-	private Boolean success;
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getDatapoints() {
+		return this.datapoints;
+	}
+
+	public void setDatapoints(String datapoints) {
+		this.datapoints = datapoints;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -54,44 +86,12 @@ public class DescribeMetricListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
-	public String getDatapoints() {
-		return this.datapoints;
-	}
-
-	public void setDatapoints(String datapoints) {
-		this.datapoints = datapoints;
-	}
-
 	public String getPeriod() {
 		return this.period;
 	}
 
 	public void setPeriod(String period) {
 		this.period = period;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	@Override

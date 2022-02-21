@@ -31,10 +31,10 @@ public class DescribeCertificatesResponseUnmarshaller {
 		List<Certificate> certificates = new ArrayList<Certificate>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCertificatesResponse.Certificates.Length"); i++) {
 			Certificate certificate = new Certificate();
-			certificate.setCommonName(_ctx.stringValue("DescribeCertificatesResponse.Certificates["+ i +"].CommonName"));
 			certificate.setIsUsing(_ctx.booleanValue("DescribeCertificatesResponse.Certificates["+ i +"].IsUsing"));
 			certificate.setCertificateName(_ctx.stringValue("DescribeCertificatesResponse.Certificates["+ i +"].CertificateName"));
 			certificate.setCertificateId(_ctx.longValue("DescribeCertificatesResponse.Certificates["+ i +"].CertificateId"));
+			certificate.setCommonName(_ctx.stringValue("DescribeCertificatesResponse.Certificates["+ i +"].CommonName"));
 
 			List<String> sans = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCertificatesResponse.Certificates["+ i +"].Sans.Length"); j++) {

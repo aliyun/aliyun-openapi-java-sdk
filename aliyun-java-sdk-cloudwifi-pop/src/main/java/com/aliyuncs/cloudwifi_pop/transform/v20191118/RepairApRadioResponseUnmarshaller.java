@@ -25,9 +25,9 @@ public class RepairApRadioResponseUnmarshaller {
 		
 		repairApRadioResponse.setRequestId(_ctx.stringValue("RepairApRadioResponse.RequestId"));
 		repairApRadioResponse.setData(_ctx.mapValue("RepairApRadioResponse.Data"));
+		repairApRadioResponse.setErrorMessage(_ctx.stringValue("RepairApRadioResponse.ErrorMessage"));
 		repairApRadioResponse.setIsSuccess(_ctx.booleanValue("RepairApRadioResponse.IsSuccess"));
 		repairApRadioResponse.setErrorCode(_ctx.booleanValue("RepairApRadioResponse.ErrorCode"));
-		repairApRadioResponse.setErrorMessage(_ctx.stringValue("RepairApRadioResponse.ErrorMessage"));
 	 
 	 	return repairApRadioResponse;
 	}

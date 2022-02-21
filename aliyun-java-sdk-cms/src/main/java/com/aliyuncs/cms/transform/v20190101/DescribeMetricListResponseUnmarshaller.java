@@ -23,12 +23,12 @@ public class DescribeMetricListResponseUnmarshaller {
 	public static DescribeMetricListResponse unmarshall(DescribeMetricListResponse describeMetricListResponse, UnmarshallerContext _ctx) {
 		
 		describeMetricListResponse.setRequestId(_ctx.stringValue("DescribeMetricListResponse.RequestId"));
+		describeMetricListResponse.setNextToken(_ctx.stringValue("DescribeMetricListResponse.NextToken"));
+		describeMetricListResponse.setSuccess(_ctx.booleanValue("DescribeMetricListResponse.Success"));
+		describeMetricListResponse.setDatapoints(_ctx.stringValue("DescribeMetricListResponse.Datapoints"));
 		describeMetricListResponse.setCode(_ctx.stringValue("DescribeMetricListResponse.Code"));
 		describeMetricListResponse.setMessage(_ctx.stringValue("DescribeMetricListResponse.Message"));
-		describeMetricListResponse.setNextToken(_ctx.stringValue("DescribeMetricListResponse.NextToken"));
-		describeMetricListResponse.setDatapoints(_ctx.stringValue("DescribeMetricListResponse.Datapoints"));
 		describeMetricListResponse.setPeriod(_ctx.stringValue("DescribeMetricListResponse.Period"));
-		describeMetricListResponse.setSuccess(_ctx.booleanValue("DescribeMetricListResponse.Success"));
 	 
 	 	return describeMetricListResponse;
 	}

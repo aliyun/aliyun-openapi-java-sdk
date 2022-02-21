@@ -24,60 +24,48 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRateResponse extends AcsResponse {
 
-	private Long id;
-
-	private String orderId;
-
-	private String instanceId;
+	private String type;
 
 	private Long aliUid;
 
-	private String productId;
-
 	private String score;
 
-	private String content;
-
-	private Long gmtCreated;
+	private String instanceId;
 
 	private String explaintion;
 
-	private Long gmtExplaintion;
-
-	private String additionalContent;
-
 	private Long gmtAdditional;
+
+	private Long gmtCreated;
+
+	private String requestId;
 
 	private String additionalExplaintion;
 
 	private Long gmtAdditionalExplaintion;
 
-	private String type;
+	private String productId;
 
-	private String requestId;
+	private Long gmtExplaintion;
 
-	public Long getId() {
-		return this.id;
+	private String content;
+
+	private String additionalContent;
+
+	private Long id;
+
+	private String orderId;
+
+	private String packageVersion;
+
+	private String customerLabels;
+
+	public String getType() {
+		return this.type;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public Long getAliUid() {
@@ -88,14 +76,6 @@ public class DescribeRateResponse extends AcsResponse {
 		this.aliUid = aliUid;
 	}
 
-	public String getProductId() {
-		return this.productId;
-	}
-
-	public void setProductId(String productId) {
-		this.productId = productId;
-	}
-
 	public String getScore() {
 		return this.score;
 	}
@@ -104,20 +84,12 @@ public class DescribeRateResponse extends AcsResponse {
 		this.score = score;
 	}
 
-	public String getContent() {
-		return this.content;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public Long getGmtCreated() {
-		return this.gmtCreated;
-	}
-
-	public void setGmtCreated(Long gmtCreated) {
-		this.gmtCreated = gmtCreated;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getExplaintion() {
@@ -128,28 +100,28 @@ public class DescribeRateResponse extends AcsResponse {
 		this.explaintion = explaintion;
 	}
 
-	public Long getGmtExplaintion() {
-		return this.gmtExplaintion;
-	}
-
-	public void setGmtExplaintion(Long gmtExplaintion) {
-		this.gmtExplaintion = gmtExplaintion;
-	}
-
-	public String getAdditionalContent() {
-		return this.additionalContent;
-	}
-
-	public void setAdditionalContent(String additionalContent) {
-		this.additionalContent = additionalContent;
-	}
-
 	public Long getGmtAdditional() {
 		return this.gmtAdditional;
 	}
 
 	public void setGmtAdditional(Long gmtAdditional) {
 		this.gmtAdditional = gmtAdditional;
+	}
+
+	public Long getGmtCreated() {
+		return this.gmtCreated;
+	}
+
+	public void setGmtCreated(Long gmtCreated) {
+		this.gmtCreated = gmtCreated;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getAdditionalExplaintion() {
@@ -168,20 +140,68 @@ public class DescribeRateResponse extends AcsResponse {
 		this.gmtAdditionalExplaintion = gmtAdditionalExplaintion;
 	}
 
-	public String getType() {
-		return this.type;
+	public String getProductId() {
+		return this.productId;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getGmtExplaintion() {
+		return this.gmtExplaintion;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setGmtExplaintion(Long gmtExplaintion) {
+		this.gmtExplaintion = gmtExplaintion;
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getAdditionalContent() {
+		return this.additionalContent;
+	}
+
+	public void setAdditionalContent(String additionalContent) {
+		this.additionalContent = additionalContent;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getPackageVersion() {
+		return this.packageVersion;
+	}
+
+	public void setPackageVersion(String packageVersion) {
+		this.packageVersion = packageVersion;
+	}
+
+	public String getCustomerLabels() {
+		return this.customerLabels;
+	}
+
+	public void setCustomerLabels(String customerLabels) {
+		this.customerLabels = customerLabels;
 	}
 
 	@Override

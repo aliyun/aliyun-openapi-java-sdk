@@ -27,7 +27,7 @@ public class GetSecureTokenRequest extends RoaAcsRequest<GetSecureTokenResponse>
 
 	private String namespaceId;
 	public GetSecureTokenRequest() {
-		super("Edas", "2017-08-01", "GetSecureToken", "edas");
+		super("Edas", "2017-08-01", "GetSecureToken", "Edas");
 		setUriPattern("/pop/v5/secure_token");
 		setMethod(MethodType.GET);
 		try {

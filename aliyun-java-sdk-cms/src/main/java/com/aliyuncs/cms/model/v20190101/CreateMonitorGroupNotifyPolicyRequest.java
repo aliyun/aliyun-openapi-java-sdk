@@ -32,7 +32,7 @@ public class CreateMonitorGroupNotifyPolicyRequest extends RpcAcsRequest<CreateM
 
 	private Long startTime;
 	public CreateMonitorGroupNotifyPolicyRequest() {
-		super("Cms", "2019-01-01", "CreateMonitorGroupNotifyPolicy", "cms");
+		super("Cms", "2019-01-01", "CreateMonitorGroupNotifyPolicy", "Cms");
 		setMethod(MethodType.POST);
 	}
 

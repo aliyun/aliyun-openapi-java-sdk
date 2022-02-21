@@ -27,17 +27,17 @@ public class DescribeProjectMessagesResponseUnmarshaller {
 	public static DescribeProjectMessagesResponse unmarshall(DescribeProjectMessagesResponse describeProjectMessagesResponse, UnmarshallerContext _ctx) {
 		
 		describeProjectMessagesResponse.setRequestId(_ctx.stringValue("DescribeProjectMessagesResponse.RequestId"));
-		describeProjectMessagesResponse.setSuccess(_ctx.booleanValue("DescribeProjectMessagesResponse.Success"));
 		describeProjectMessagesResponse.setTotalCount(_ctx.longValue("DescribeProjectMessagesResponse.TotalCount"));
+		describeProjectMessagesResponse.setSuccess(_ctx.booleanValue("DescribeProjectMessagesResponse.Success"));
 
 		List<ProjectMessage> result = new ArrayList<ProjectMessage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProjectMessagesResponse.Result.Length"); i++) {
 			ProjectMessage projectMessage = new ProjectMessage();
-			projectMessage.setOperatorRole(_ctx.stringValue("DescribeProjectMessagesResponse.Result["+ i +"].OperatorRole"));
-			projectMessage.setOperator(_ctx.longValue("DescribeProjectMessagesResponse.Result["+ i +"].Operator"));
-			projectMessage.setOperatorName(_ctx.stringValue("DescribeProjectMessagesResponse.Result["+ i +"].OperatorName"));
-			projectMessage.setContent(_ctx.stringValue("DescribeProjectMessagesResponse.Result["+ i +"].Content"));
 			projectMessage.setGmtCreate(_ctx.longValue("DescribeProjectMessagesResponse.Result["+ i +"].GmtCreate"));
+			projectMessage.setOperator(_ctx.longValue("DescribeProjectMessagesResponse.Result["+ i +"].Operator"));
+			projectMessage.setOperatorRole(_ctx.stringValue("DescribeProjectMessagesResponse.Result["+ i +"].OperatorRole"));
+			projectMessage.setContent(_ctx.stringValue("DescribeProjectMessagesResponse.Result["+ i +"].Content"));
+			projectMessage.setOperatorName(_ctx.stringValue("DescribeProjectMessagesResponse.Result["+ i +"].OperatorName"));
 
 			result.add(projectMessage);
 		}

@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProductsOfActiveMetricRuleResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private String datapoints;
 
+	private Boolean success;
+
 	private List<AllProductInitMetricRule> allProductInitMetricRuleList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -69,12 +53,28 @@ public class DescribeProductsOfActiveMetricRuleResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getDatapoints() {
 		return this.datapoints;
 	}
 
 	public void setDatapoints(String datapoints) {
 		this.datapoints = datapoints;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<AllProductInitMetricRule> getAllProductInitMetricRuleList() {
@@ -109,25 +109,17 @@ public class DescribeProductsOfActiveMetricRuleResponse extends AcsResponse {
 
 		public static class AlertInitConfig {
 
-			private String namespace;
-
 			private String metricName;
-
-			private String statistics;
 
 			private String evaluationCount;
 
+			private String namespace;
+
 			private String threshold;
 
+			private String statistics;
+
 			private String period;
-
-			public String getNamespace() {
-				return this.namespace;
-			}
-
-			public void setNamespace(String namespace) {
-				this.namespace = namespace;
-			}
 
 			public String getMetricName() {
 				return this.metricName;
@@ -135,14 +127,6 @@ public class DescribeProductsOfActiveMetricRuleResponse extends AcsResponse {
 
 			public void setMetricName(String metricName) {
 				this.metricName = metricName;
-			}
-
-			public String getStatistics() {
-				return this.statistics;
-			}
-
-			public void setStatistics(String statistics) {
-				this.statistics = statistics;
 			}
 
 			public String getEvaluationCount() {
@@ -153,12 +137,28 @@ public class DescribeProductsOfActiveMetricRuleResponse extends AcsResponse {
 				this.evaluationCount = evaluationCount;
 			}
 
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
 			public String getThreshold() {
 				return this.threshold;
 			}
 
 			public void setThreshold(String threshold) {
 				this.threshold = threshold;
+			}
+
+			public String getStatistics() {
+				return this.statistics;
+			}
+
+			public void setStatistics(String statistics) {
+				this.statistics = statistics;
 			}
 
 			public String getPeriod() {

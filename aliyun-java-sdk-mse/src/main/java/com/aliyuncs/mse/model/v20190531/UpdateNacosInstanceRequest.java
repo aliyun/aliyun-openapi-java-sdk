@@ -29,25 +29,27 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 
 	private String clusterName;
 
-	private String ip;
-
 	private Boolean ephemeral;
+
+	private Boolean enabled;
+
+	private String namespaceId;
+
+	private String serviceName;
+
+	private String ip;
 
 	private String weight;
 
 	private String groupName;
 
-	private Boolean enabled;
-
 	private String instanceId;
-
-	private String namespaceId;
 
 	private Integer port;
 
-	private String serviceName;
+	private String acceptLanguage;
 	public UpdateNacosInstanceRequest() {
-		super("mse", "2019-05-31", "UpdateNacosInstance", "mse");
+		super("mse", "2019-05-31", "UpdateNacosInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -77,17 +79,6 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 		}
 	}
 
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putQueryParameter("Ip", ip);
-		}
-	}
-
 	public Boolean getEphemeral() {
 		return this.ephemeral;
 	}
@@ -96,6 +87,50 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 		this.ephemeral = ephemeral;
 		if(ephemeral != null){
 			putQueryParameter("Ephemeral", ephemeral.toString());
+		}
+	}
+
+	public Boolean getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+		if(enabled != null){
+			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
 		}
 	}
 
@@ -121,17 +156,6 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 		}
 	}
 
-	public Boolean getEnabled() {
-		return this.enabled;
-	}
-
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-		if(enabled != null){
-			putQueryParameter("Enabled", enabled.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -140,17 +164,6 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
@@ -165,14 +178,14 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

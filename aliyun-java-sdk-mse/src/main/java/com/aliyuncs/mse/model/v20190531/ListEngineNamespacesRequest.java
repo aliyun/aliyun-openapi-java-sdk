@@ -26,8 +26,10 @@ public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespa
 	   
 
 	private String instanceId;
+
+	private String acceptLanguage;
 	public ListEngineNamespacesRequest() {
-		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
+		super("mse", "2019-05-31", "ListEngineNamespaces");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,6 +45,17 @@ public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespa
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

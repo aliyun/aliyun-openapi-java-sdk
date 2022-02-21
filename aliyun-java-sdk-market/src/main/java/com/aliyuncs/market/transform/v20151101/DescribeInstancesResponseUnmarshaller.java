@@ -34,23 +34,23 @@ public class DescribeInstancesResponseUnmarshaller {
 		List<InstanceItem> instanceItems = new ArrayList<InstanceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstancesResponse.InstanceItems.Length"); i++) {
 			InstanceItem instanceItem = new InstanceItem();
-			instanceItem.setInstanceId(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].InstanceId"));
-			instanceItem.setOrderId(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].OrderId"));
-			instanceItem.setSupplierName(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].SupplierName"));
-			instanceItem.setProductCode(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ProductCode"));
-			instanceItem.setProductSkuCode(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ProductSkuCode"));
-			instanceItem.setProductName(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ProductName"));
-			instanceItem.setProductType(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ProductType"));
 			instanceItem.setStatus(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].Status"));
-			instanceItem.setBeganOn(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].BeganOn"));
-			instanceItem.setEndOn(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].EndOn"));
-			instanceItem.setCreatedOn(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].CreatedOn"));
-			instanceItem.setExtendJson(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ExtendJson"));
-			instanceItem.setHostJson(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].HostJson"));
 			instanceItem.setAppJson(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].AppJson"));
 			instanceItem.setApiJson(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ApiJson"));
+			instanceItem.setProductName(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ProductName"));
 			instanceItem.setImageJson(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ImageJson"));
+			instanceItem.setInstanceId(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].InstanceId"));
+			instanceItem.setExtendJson(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ExtendJson"));
+			instanceItem.setBeganOn(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].BeganOn"));
+			instanceItem.setProductType(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ProductType"));
+			instanceItem.setHostJson(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].HostJson"));
+			instanceItem.setProductSkuCode(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ProductSkuCode"));
+			instanceItem.setCreatedOn(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].CreatedOn"));
 			instanceItem.setIdaasJson(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].IdaasJson"));
+			instanceItem.setEndOn(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].EndOn"));
+			instanceItem.setOrderId(_ctx.longValue("DescribeInstancesResponse.InstanceItems["+ i +"].OrderId"));
+			instanceItem.setProductCode(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].ProductCode"));
+			instanceItem.setSupplierName(_ctx.stringValue("DescribeInstancesResponse.InstanceItems["+ i +"].SupplierName"));
 
 			instanceItems.add(instanceItem);
 		}

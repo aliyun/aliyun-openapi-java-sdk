@@ -53,7 +53,7 @@ public class ConvertInvoiceRequest extends RpcAcsRequest<ConvertInvoiceResponse>
 
 	private String buyTarget;
 	public ConvertInvoiceRequest() {
-		super("companyreg", "2020-10-22", "ConvertInvoice", "companyreg");
+		super("companyreg", "2020-10-22", "ConvertInvoice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

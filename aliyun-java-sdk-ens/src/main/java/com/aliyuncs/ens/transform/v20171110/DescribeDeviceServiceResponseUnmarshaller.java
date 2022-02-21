@@ -63,6 +63,7 @@ public class DescribeDeviceServiceResponseUnmarshaller {
 			deviceInfo.setMac(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Mac"));
 			deviceInfo.setISP(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].ISP"));
 			deviceInfo.setDeviceName(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].DeviceName"));
+			deviceInfo.setImageID(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].ImageID"));
 
 			resourceDetailInfos.add(deviceInfo);
 		}

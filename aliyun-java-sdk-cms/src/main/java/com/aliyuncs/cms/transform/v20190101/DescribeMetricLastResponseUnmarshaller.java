@@ -23,12 +23,12 @@ public class DescribeMetricLastResponseUnmarshaller {
 	public static DescribeMetricLastResponse unmarshall(DescribeMetricLastResponse describeMetricLastResponse, UnmarshallerContext _ctx) {
 		
 		describeMetricLastResponse.setRequestId(_ctx.stringValue("DescribeMetricLastResponse.RequestId"));
+		describeMetricLastResponse.setNextToken(_ctx.stringValue("DescribeMetricLastResponse.NextToken"));
+		describeMetricLastResponse.setSuccess(_ctx.booleanValue("DescribeMetricLastResponse.Success"));
+		describeMetricLastResponse.setDatapoints(_ctx.stringValue("DescribeMetricLastResponse.Datapoints"));
 		describeMetricLastResponse.setCode(_ctx.stringValue("DescribeMetricLastResponse.Code"));
 		describeMetricLastResponse.setMessage(_ctx.stringValue("DescribeMetricLastResponse.Message"));
-		describeMetricLastResponse.setNextToken(_ctx.stringValue("DescribeMetricLastResponse.NextToken"));
-		describeMetricLastResponse.setDatapoints(_ctx.stringValue("DescribeMetricLastResponse.Datapoints"));
 		describeMetricLastResponse.setPeriod(_ctx.stringValue("DescribeMetricLastResponse.Period"));
-		describeMetricLastResponse.setSuccess(_ctx.booleanValue("DescribeMetricLastResponse.Success"));
 	 
 	 	return describeMetricLastResponse;
 	}

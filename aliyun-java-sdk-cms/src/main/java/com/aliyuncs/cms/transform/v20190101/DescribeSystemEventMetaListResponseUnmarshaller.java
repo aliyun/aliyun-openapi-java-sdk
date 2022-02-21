@@ -27,21 +27,21 @@ public class DescribeSystemEventMetaListResponseUnmarshaller {
 	public static DescribeSystemEventMetaListResponse unmarshall(DescribeSystemEventMetaListResponse describeSystemEventMetaListResponse, UnmarshallerContext _ctx) {
 		
 		describeSystemEventMetaListResponse.setRequestId(_ctx.stringValue("DescribeSystemEventMetaListResponse.RequestId"));
-		describeSystemEventMetaListResponse.setSuccess(_ctx.booleanValue("DescribeSystemEventMetaListResponse.Success"));
 		describeSystemEventMetaListResponse.setCode(_ctx.integerValue("DescribeSystemEventMetaListResponse.Code"));
 		describeSystemEventMetaListResponse.setMessage(_ctx.stringValue("DescribeSystemEventMetaListResponse.Message"));
+		describeSystemEventMetaListResponse.setSuccess(_ctx.booleanValue("DescribeSystemEventMetaListResponse.Success"));
 
 		List<Resource> data = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSystemEventMetaListResponse.Data.Length"); i++) {
 			Resource resource = new Resource();
+			resource.setStatus(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Status"));
+			resource.setEventType(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].EventType"));
 			resource.setProduct(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Product"));
-			resource.setName(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Name"));
 			resource.setNameDesc(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].NameDesc"));
 			resource.setNameDescEn(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].NameDesc.En"));
-			resource.setLevel(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Level"));
-			resource.setStatus(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Status"));
+			resource.setName(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Name"));
 			resource.setStatusDesc(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].StatusDesc"));
-			resource.setEventType(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].EventType"));
+			resource.setLevel(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Level"));
 
 			data.add(resource);
 		}

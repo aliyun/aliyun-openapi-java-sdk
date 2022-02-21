@@ -29,7 +29,7 @@ public class DeleteEnvAppGroupRequest extends RoaAcsRequest<DeleteEnvAppGroupRes
 
 	private String scopes;
 	public DeleteEnvAppGroupRequest() {
-		super("Edas", "2017-08-01", "DeleteEnvAppGroup", "edas");
+		super("Edas", "2017-08-01", "DeleteEnvAppGroup", "Edas");
 		setUriPattern("/pop/v5/gray/EnvAppGroups");
 		setMethod(MethodType.DELETE);
 		try {

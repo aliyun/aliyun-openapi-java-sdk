@@ -33,7 +33,7 @@ public class CreateK8sConfigMapRequest extends RoaAcsRequest<CreateK8sConfigMapR
 
 	private String clusterId;
 	public CreateK8sConfigMapRequest() {
-		super("Edas", "2017-08-01", "CreateK8sConfigMap", "edas");
+		super("Edas", "2017-08-01", "CreateK8sConfigMap", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_config_map");
 		setMethod(MethodType.POST);
 		try {

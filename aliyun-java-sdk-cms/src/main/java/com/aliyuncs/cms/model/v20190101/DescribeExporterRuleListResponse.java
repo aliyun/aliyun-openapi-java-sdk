@@ -25,19 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExporterRuleListResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private String code;
 
 	private String message;
 
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer total;
 
-	private Integer pageNumber;
-
-	private Boolean success;
-
 	private List<Datapoint> datapoints;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -55,22 +71,6 @@ public class DescribeExporterRuleListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -79,12 +79,12 @@ public class DescribeExporterRuleListResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Datapoint> getDatapoints() {
@@ -97,39 +97,23 @@ public class DescribeExporterRuleListResponse extends AcsResponse {
 
 	public static class Datapoint {
 
-		private String ruleName;
-
-		private String namespace;
-
 		private String metricName;
-
-		private Boolean enabled;
-
-		private String targetWindows;
 
 		private String describe;
 
-		private String dimension;
+		private String targetWindows;
 
 		private Long createTime;
 
+		private Boolean enabled;
+
+		private String dimension;
+
+		private String namespace;
+
+		private String ruleName;
+
 		private List<String> dstName;
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
 
 		public String getMetricName() {
 			return this.metricName;
@@ -137,22 +121,6 @@ public class DescribeExporterRuleListResponse extends AcsResponse {
 
 		public void setMetricName(String metricName) {
 			this.metricName = metricName;
-		}
-
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
-		public String getTargetWindows() {
-			return this.targetWindows;
-		}
-
-		public void setTargetWindows(String targetWindows) {
-			this.targetWindows = targetWindows;
 		}
 
 		public String getDescribe() {
@@ -163,12 +131,12 @@ public class DescribeExporterRuleListResponse extends AcsResponse {
 			this.describe = describe;
 		}
 
-		public String getDimension() {
-			return this.dimension;
+		public String getTargetWindows() {
+			return this.targetWindows;
 		}
 
-		public void setDimension(String dimension) {
-			this.dimension = dimension;
+		public void setTargetWindows(String targetWindows) {
+			this.targetWindows = targetWindows;
 		}
 
 		public Long getCreateTime() {
@@ -177,6 +145,38 @@ public class DescribeExporterRuleListResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
+		}
+
+		public String getDimension() {
+			return this.dimension;
+		}
+
+		public void setDimension(String dimension) {
+			this.dimension = dimension;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 
 		public List<String> getDstName() {

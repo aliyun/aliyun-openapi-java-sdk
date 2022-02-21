@@ -27,7 +27,7 @@ public class SendVcodeRequest extends RpcAcsRequest<SendVcodeResponse> {
 
 	private String mobile;
 	public SendVcodeRequest() {
-		super("companyreg", "2019-05-08", "SendVcode", "companyreg");
+		super("companyreg", "2019-05-08", "SendVcode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

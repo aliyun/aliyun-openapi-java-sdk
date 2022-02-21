@@ -34,9 +34,9 @@ public class DescribeCustomEventCountResponseUnmarshaller {
 		List<CustomEventCount> customEventCounts = new ArrayList<CustomEventCount>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomEventCountResponse.CustomEventCounts.Length"); i++) {
 			CustomEventCount customEventCount = new CustomEventCount();
-			customEventCount.setName(_ctx.stringValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Name"));
-			customEventCount.setNum(_ctx.integerValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Num"));
 			customEventCount.setTime(_ctx.longValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Time"));
+			customEventCount.setNum(_ctx.integerValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Num"));
+			customEventCount.setName(_ctx.stringValue("DescribeCustomEventCountResponse.CustomEventCounts["+ i +"].Name"));
 
 			customEventCounts.add(customEventCount);
 		}

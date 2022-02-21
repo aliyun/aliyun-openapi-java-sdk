@@ -25,6 +25,8 @@ import com.aliyuncs.dts.Endpoint;
 public class DescribeDtsJobDetailRequest extends RpcAcsRequest<DescribeDtsJobDetailResponse> {
 	   
 
+	private Boolean syncSubJobHistory;
+
 	private String dtsJobId;
 
 	private String dtsInstanceID;
@@ -37,6 +39,17 @@ public class DescribeDtsJobDetailRequest extends RpcAcsRequest<DescribeDtsJobDet
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getSyncSubJobHistory() {
+		return this.syncSubJobHistory;
+	}
+
+	public void setSyncSubJobHistory(Boolean syncSubJobHistory) {
+		this.syncSubJobHistory = syncSubJobHistory;
+		if(syncSubJobHistory != null){
+			putQueryParameter("SyncSubJobHistory", syncSubJobHistory.toString());
+		}
 	}
 
 	public String getDtsJobId() {

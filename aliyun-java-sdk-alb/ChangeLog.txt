@@ -1,3 +1,6 @@
+2022-01-25 Version: 1.0.8
+- Support Latest APIs.
+
 2022-01-07 Version: 1.0.7
 - Support Service name.
 

@@ -29,7 +29,7 @@ public class SubmitIntentionNoteRequest extends RpcAcsRequest<SubmitIntentionNot
 
 	private String intentionBizId;
 	public SubmitIntentionNoteRequest() {
-		super("companyreg", "2020-03-06", "SubmitIntentionNote", "companyreg");
+		super("companyreg", "2020-03-06", "SubmitIntentionNote");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

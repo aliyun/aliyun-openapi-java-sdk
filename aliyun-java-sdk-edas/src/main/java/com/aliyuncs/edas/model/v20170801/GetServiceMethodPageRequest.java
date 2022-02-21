@@ -59,7 +59,7 @@ public class GetServiceMethodPageRequest extends RoaAcsRequest<GetServiceMethodP
 
 	private String group;
 	public GetServiceMethodPageRequest() {
-		super("Edas", "2017-08-01", "GetServiceMethodPage", "edas");
+		super("Edas", "2017-08-01", "GetServiceMethodPage", "Edas");
 		setUriPattern("/pop/sp/api/mseForOam/getServiceMethodPage");
 		setMethod(MethodType.POST);
 		try {

@@ -27,8 +27,8 @@ public class GetApgroupSsidConfigResponseUnmarshaller {
 	public static GetApgroupSsidConfigResponse unmarshall(GetApgroupSsidConfigResponse getApgroupSsidConfigResponse, UnmarshallerContext _ctx) {
 		
 		getApgroupSsidConfigResponse.setIsSuccess(_ctx.booleanValue("GetApgroupSsidConfigResponse.IsSuccess"));
-		getApgroupSsidConfigResponse.setErrorCode(_ctx.integerValue("GetApgroupSsidConfigResponse.ErrorCode"));
 		getApgroupSsidConfigResponse.setErrorMessage(_ctx.stringValue("GetApgroupSsidConfigResponse.ErrorMessage"));
+		getApgroupSsidConfigResponse.setErrorCode(_ctx.integerValue("GetApgroupSsidConfigResponse.ErrorCode"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("GetApgroupSsidConfigResponse.Data");
 		getApgroupSsidConfigResponse.setData(data);

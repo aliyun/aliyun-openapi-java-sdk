@@ -29,7 +29,7 @@ public class GetIncomeStatementInfoRequest extends RpcAcsRequest<GetIncomeStatem
 
 	private String bizId;
 	public GetIncomeStatementInfoRequest() {
-		super("companyreg", "2020-10-22", "GetIncomeStatementInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetIncomeStatementInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

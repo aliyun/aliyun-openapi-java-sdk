@@ -35,11 +35,9 @@ public class GetGatewayResponseUnmarshaller {
 		data.setId(_ctx.longValue("GetGatewayResponse.Data.Id"));
 		data.setName(_ctx.stringValue("GetGatewayResponse.Data.Name"));
 		data.setGatewayUniqueId(_ctx.stringValue("GetGatewayResponse.Data.GatewayUniqueId"));
-		data.setGatewayType(_ctx.stringValue("GetGatewayResponse.Data.GatewayType"));
 		data.setRegion(_ctx.stringValue("GetGatewayResponse.Data.Region"));
 		data.setPrimaryUser(_ctx.stringValue("GetGatewayResponse.Data.PrimaryUser"));
 		data.setStatus(_ctx.integerValue("GetGatewayResponse.Data.Status"));
-		data.setArmsOn(_ctx.booleanValue("GetGatewayResponse.Data.ArmsOn"));
 		data.setVpc(_ctx.stringValue("GetGatewayResponse.Data.Vpc"));
 		data.setVswitch(_ctx.stringValue("GetGatewayResponse.Data.Vswitch"));
 		data.setSecurityGroup(_ctx.stringValue("GetGatewayResponse.Data.SecurityGroup"));

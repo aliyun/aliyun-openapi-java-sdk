@@ -23,9 +23,9 @@ public class EffectApConfigResponseUnmarshaller {
 	public static EffectApConfigResponse unmarshall(EffectApConfigResponse effectApConfigResponse, UnmarshallerContext _ctx) {
 		
 		effectApConfigResponse.setData(_ctx.stringValue("EffectApConfigResponse.Data"));
+		effectApConfigResponse.setErrorMessage(_ctx.stringValue("EffectApConfigResponse.ErrorMessage"));
 		effectApConfigResponse.setIsSuccess(_ctx.booleanValue("EffectApConfigResponse.IsSuccess"));
 		effectApConfigResponse.setErrorCode(_ctx.integerValue("EffectApConfigResponse.ErrorCode"));
-		effectApConfigResponse.setErrorMessage(_ctx.stringValue("EffectApConfigResponse.ErrorMessage"));
 	 
 	 	return effectApConfigResponse;
 	}

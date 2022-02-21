@@ -29,12 +29,12 @@ public class DescribeSiteMonitorQuotaResponseUnmarshaller {
 		describeSiteMonitorQuotaResponse.setSuccess(_ctx.stringValue("DescribeSiteMonitorQuotaResponse.Success"));
 
 		Data data = new Data();
-		data.setSiteMonitorIdcQuota(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorIdcQuota"));
 		data.setSiteMonitorOperatorQuotaQuota(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorOperatorQuotaQuota"));
-		data.setSiteMonitorTaskQuota(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorTaskQuota"));
-		data.setSiteMonitorQuotaTaskUsed(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorQuotaTaskUsed"));
-		data.setSiteMonitorVersion(_ctx.stringValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorVersion"));
 		data.setSecondMonitor(_ctx.booleanValue("DescribeSiteMonitorQuotaResponse.Data.SecondMonitor"));
+		data.setSiteMonitorQuotaTaskUsed(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorQuotaTaskUsed"));
+		data.setSiteMonitorTaskQuota(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorTaskQuota"));
+		data.setSiteMonitorVersion(_ctx.stringValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorVersion"));
+		data.setSiteMonitorIdcQuota(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorIdcQuota"));
 		describeSiteMonitorQuotaResponse.setData(data);
 	 
 	 	return describeSiteMonitorQuotaResponse;

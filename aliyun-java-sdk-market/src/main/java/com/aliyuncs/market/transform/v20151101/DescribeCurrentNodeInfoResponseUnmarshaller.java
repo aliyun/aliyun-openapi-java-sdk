@@ -27,22 +27,22 @@ public class DescribeCurrentNodeInfoResponseUnmarshaller {
 		describeCurrentNodeInfoResponse.setSuccess(_ctx.booleanValue("DescribeCurrentNodeInfoResponse.Success"));
 
 		Result result = new Result();
-		result.setStepNo(_ctx.integerValue("DescribeCurrentNodeInfoResponse.Result.StepNo"));
-		result.setFinalStepNo(_ctx.integerValue("DescribeCurrentNodeInfoResponse.Result.FinalStepNo"));
-		result.setParentNodeId(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.ParentNodeId"));
-		result.setNodeId(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.NodeId"));
-		result.setNodeName(_ctx.stringValue("DescribeCurrentNodeInfoResponse.Result.NodeName"));
-		result.setPreviousNodeId(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.PreviousNodeId"));
 		result.setNextNodeId(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.NextNodeId"));
-		result.setOperatorRole(_ctx.stringValue("DescribeCurrentNodeInfoResponse.Result.OperatorRole"));
+		result.setStepNo(_ctx.integerValue("DescribeCurrentNodeInfoResponse.Result.StepNo"));
 		result.setAutoFinishNode(_ctx.booleanValue("DescribeCurrentNodeInfoResponse.Result.AutoFinishNode"));
-		result.setNeedAttachment(_ctx.booleanValue("DescribeCurrentNodeInfoResponse.Result.NeedAttachment"));
+		result.setFinalStepNo(_ctx.integerValue("DescribeCurrentNodeInfoResponse.Result.FinalStepNo"));
+		result.setPreviousNodeId(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.PreviousNodeId"));
+		result.setParentNodeId(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.ParentNodeId"));
+		result.setGmtExpired(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.GmtExpired"));
+		result.setOperatorRole(_ctx.stringValue("DescribeCurrentNodeInfoResponse.Result.OperatorRole"));
+		result.setGmtStart(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.GmtStart"));
+		result.setNodeStatus(_ctx.stringValue("DescribeCurrentNodeInfoResponse.Result.NodeStatus"));
+		result.setNodeName(_ctx.stringValue("DescribeCurrentNodeInfoResponse.Result.NodeName"));
+		result.setGmtFinished(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.GmtFinished"));
 		result.setAllowRollbackNode(_ctx.booleanValue("DescribeCurrentNodeInfoResponse.Result.AllowRollbackNode"));
 		result.setTemplateForm(_ctx.stringValue("DescribeCurrentNodeInfoResponse.Result.TemplateForm"));
-		result.setNodeStatus(_ctx.stringValue("DescribeCurrentNodeInfoResponse.Result.NodeStatus"));
-		result.setGmtStart(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.GmtStart"));
-		result.setGmtExpired(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.GmtExpired"));
-		result.setGmtFinished(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.GmtFinished"));
+		result.setNeedAttachment(_ctx.booleanValue("DescribeCurrentNodeInfoResponse.Result.NeedAttachment"));
+		result.setNodeId(_ctx.longValue("DescribeCurrentNodeInfoResponse.Result.NodeId"));
 		describeCurrentNodeInfoResponse.setResult(result);
 	 
 	 	return describeCurrentNodeInfoResponse;

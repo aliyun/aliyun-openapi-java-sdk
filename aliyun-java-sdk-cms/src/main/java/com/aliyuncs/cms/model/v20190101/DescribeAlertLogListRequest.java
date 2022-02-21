@@ -53,8 +53,10 @@ public class DescribeAlertLogListRequest extends RpcAcsRequest<DescribeAlertLogL
 	private String groupBy;
 
 	private String namespace;
+
+	private String ruleId;
 	public DescribeAlertLogListRequest() {
-		super("Cms", "2019-01-01", "DescribeAlertLogList", "cms");
+		super("Cms", "2019-01-01", "DescribeAlertLogList", "Cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -220,6 +222,17 @@ public class DescribeAlertLogListRequest extends RpcAcsRequest<DescribeAlertLogL
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
 		}
 	}
 

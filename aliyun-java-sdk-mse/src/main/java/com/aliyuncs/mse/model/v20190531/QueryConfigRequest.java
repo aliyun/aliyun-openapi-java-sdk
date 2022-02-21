@@ -32,8 +32,10 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 	private String instanceId;
 
 	private String requestPars;
+
+	private String acceptLanguage;
 	public QueryConfigRequest() {
-		super("mse", "2019-05-31", "QueryConfig", "mse");
+		super("mse", "2019-05-31", "QueryConfig");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

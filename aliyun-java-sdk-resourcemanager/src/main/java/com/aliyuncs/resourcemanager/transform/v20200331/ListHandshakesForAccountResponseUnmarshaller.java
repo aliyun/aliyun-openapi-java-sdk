@@ -27,24 +27,24 @@ public class ListHandshakesForAccountResponseUnmarshaller {
 	public static ListHandshakesForAccountResponse unmarshall(ListHandshakesForAccountResponse listHandshakesForAccountResponse, UnmarshallerContext _ctx) {
 		
 		listHandshakesForAccountResponse.setRequestId(_ctx.stringValue("ListHandshakesForAccountResponse.RequestId"));
-		listHandshakesForAccountResponse.setPageNumber(_ctx.integerValue("ListHandshakesForAccountResponse.PageNumber"));
-		listHandshakesForAccountResponse.setPageSize(_ctx.integerValue("ListHandshakesForAccountResponse.PageSize"));
 		listHandshakesForAccountResponse.setTotalCount(_ctx.integerValue("ListHandshakesForAccountResponse.TotalCount"));
+		listHandshakesForAccountResponse.setPageSize(_ctx.integerValue("ListHandshakesForAccountResponse.PageSize"));
+		listHandshakesForAccountResponse.setPageNumber(_ctx.integerValue("ListHandshakesForAccountResponse.PageNumber"));
 
 		List<Handshake> handshakes = new ArrayList<Handshake>();
 		for (int i = 0; i < _ctx.lengthValue("ListHandshakesForAccountResponse.Handshakes.Length"); i++) {
 			Handshake handshake = new Handshake();
-			handshake.setHandshakeId(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].HandshakeId"));
+			handshake.setStatus(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].Status"));
+			handshake.setExpireTime(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].ExpireTime"));
 			handshake.setResourceDirectoryId(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].ResourceDirectoryId"));
+			handshake.setCreateTime(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].CreateTime"));
+			handshake.setNote(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].Note"));
+			handshake.setTargetEntity(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].TargetEntity"));
 			handshake.setMasterAccountId(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].MasterAccountId"));
 			handshake.setMasterAccountName(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].MasterAccountName"));
-			handshake.setTargetEntity(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].TargetEntity"));
-			handshake.setTargetType(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].TargetType"));
-			handshake.setNote(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].Note"));
-			handshake.setStatus(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].Status"));
-			handshake.setCreateTime(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].CreateTime"));
 			handshake.setModifyTime(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].ModifyTime"));
-			handshake.setExpireTime(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].ExpireTime"));
+			handshake.setTargetType(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].TargetType"));
+			handshake.setHandshakeId(_ctx.stringValue("ListHandshakesForAccountResponse.Handshakes["+ i +"].HandshakeId"));
 
 			handshakes.add(handshake);
 		}

@@ -33,15 +33,19 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 
 	private String groupName;
 
+	private String instanceId;
+
 	private String namespaceId;
 
 	private String requestPars;
 
 	private Integer pageSize;
 
+	private String acceptLanguage;
+
 	private String serviceName;
 	public ListAnsInstancesRequest() {
-		super("mse", "2019-05-31", "ListAnsInstances", "mse");
+		super("mse", "2019-05-31", "ListAnsInstances");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -93,6 +97,17 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public String getNamespaceId() {
 		return this.namespaceId;
 	}
@@ -123,6 +138,17 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

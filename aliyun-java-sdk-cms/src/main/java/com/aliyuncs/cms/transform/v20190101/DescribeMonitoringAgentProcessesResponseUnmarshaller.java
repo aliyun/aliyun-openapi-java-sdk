@@ -34,12 +34,12 @@ public class DescribeMonitoringAgentProcessesResponseUnmarshaller {
 		List<NodeProcess> nodeProcesses = new ArrayList<NodeProcess>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses.Length"); i++) {
 			NodeProcess nodeProcess = new NodeProcess();
-			nodeProcess.setProcessId(_ctx.longValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessId"));
-			nodeProcess.setInstanceId(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].InstanceId"));
 			nodeProcess.setProcessName(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessName"));
-			nodeProcess.setProcessUser(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessUser"));
-			nodeProcess.setCommand(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].Command"));
+			nodeProcess.setProcessId(_ctx.longValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessId"));
 			nodeProcess.setGroupId(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].GroupId"));
+			nodeProcess.setCommand(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].Command"));
+			nodeProcess.setProcessUser(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].ProcessUser"));
+			nodeProcess.setInstanceId(_ctx.stringValue("DescribeMonitoringAgentProcessesResponse.NodeProcesses["+ i +"].InstanceId"));
 
 			nodeProcesses.add(nodeProcess);
 		}

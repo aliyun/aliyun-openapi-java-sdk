@@ -32,8 +32,10 @@ public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<Query
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String acceptLanguage;
 	public QueryGovernanceKubernetesClusterRequest() {
-		super("mse", "2019-05-31", "QueryGovernanceKubernetesCluster", "mse");
+		super("mse", "2019-05-31", "QueryGovernanceKubernetesCluster");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<Query
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

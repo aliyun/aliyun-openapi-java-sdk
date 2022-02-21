@@ -29,17 +29,17 @@ public class DescribeMonitorGroupNotifyPolicyListResponseUnmarshaller {
 		describeMonitorGroupNotifyPolicyListResponse.setRequestId(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.RequestId"));
 		describeMonitorGroupNotifyPolicyListResponse.setCode(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Code"));
 		describeMonitorGroupNotifyPolicyListResponse.setMessage(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Message"));
-		describeMonitorGroupNotifyPolicyListResponse.setSuccess(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Success"));
 		describeMonitorGroupNotifyPolicyListResponse.setTotal(_ctx.integerValue("DescribeMonitorGroupNotifyPolicyListResponse.Total"));
+		describeMonitorGroupNotifyPolicyListResponse.setSuccess(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.Success"));
 
 		List<NotifyPolicy> notifyPolicyList = new ArrayList<NotifyPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList.Length"); i++) {
 			NotifyPolicy notifyPolicy = new NotifyPolicy();
-			notifyPolicy.setType(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].Type"));
-			notifyPolicy.setId(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].Id"));
-			notifyPolicy.setStartTime(_ctx.longValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].StartTime"));
 			notifyPolicy.setEndTime(_ctx.longValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].EndTime"));
+			notifyPolicy.setType(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].Type"));
+			notifyPolicy.setStartTime(_ctx.longValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].StartTime"));
 			notifyPolicy.setGroupId(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].GroupId"));
+			notifyPolicy.setId(_ctx.stringValue("DescribeMonitorGroupNotifyPolicyListResponse.NotifyPolicyList["+ i +"].Id"));
 
 			notifyPolicyList.add(notifyPolicy);
 		}

@@ -29,9 +29,11 @@ public class DeleteEngineNamespaceRequest extends RpcAcsRequest<DeleteEngineName
 
 	private String instanceId;
 
+	private String acceptLanguage;
+
 	private String id;
 	public DeleteEngineNamespaceRequest() {
-		super("mse", "2019-05-31", "DeleteEngineNamespace", "mse");
+		super("mse", "2019-05-31", "DeleteEngineNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +60,17 @@ public class DeleteEngineNamespaceRequest extends RpcAcsRequest<DeleteEngineName
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

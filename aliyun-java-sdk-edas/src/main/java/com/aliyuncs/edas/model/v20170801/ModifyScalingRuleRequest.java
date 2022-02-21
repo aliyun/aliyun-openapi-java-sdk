@@ -85,7 +85,7 @@ public class ModifyScalingRuleRequest extends RoaAcsRequest<ModifyScalingRuleRes
 
 	private String templateInstanceName;
 	public ModifyScalingRuleRequest() {
-		super("Edas", "2017-08-01", "ModifyScalingRule", "edas");
+		super("Edas", "2017-08-01", "ModifyScalingRule", "Edas");
 		setUriPattern("/pop/v5/app/scaling_rules");
 		setMethod(MethodType.POST);
 		try {

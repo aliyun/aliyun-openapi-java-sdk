@@ -29,9 +29,9 @@ public class DescribeInstanceSpecInfoResponse extends AcsResponse {
 
 	private String instanceId;
 
-	private String version;
-
 	private Long expireTime;
+
+	private String version;
 
 	private List<InstanceSpecInfo> instanceSpecInfos;
 
@@ -51,20 +51,20 @@ public class DescribeInstanceSpecInfoResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
 	public Long getExpireTime() {
 		return this.expireTime;
 	}
 
 	public void setExpireTime(Long expireTime) {
 		this.expireTime = expireTime;
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
 	public List<InstanceSpecInfo> getInstanceSpecInfos() {
@@ -77,17 +77,9 @@ public class DescribeInstanceSpecInfoResponse extends AcsResponse {
 
 	public static class InstanceSpecInfo {
 
-		private String value;
-
 		private String code;
 
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
+		private String value;
 
 		public String getCode() {
 			return this.code;
@@ -95,6 +87,14 @@ public class DescribeInstanceSpecInfoResponse extends AcsResponse {
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

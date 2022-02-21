@@ -33,9 +33,11 @@ public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryC
 
 	private String namespaceId;
 
+	private String acceptLanguage;
+
 	private String group;
 	public GetNacosHistoryConfigRequest() {
-		super("mse", "2019-05-31", "GetNacosHistoryConfig", "mse");
+		super("mse", "2019-05-31", "GetNacosHistoryConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -84,6 +86,17 @@ public class GetNacosHistoryConfigRequest extends RpcAcsRequest<GetNacosHistoryC
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

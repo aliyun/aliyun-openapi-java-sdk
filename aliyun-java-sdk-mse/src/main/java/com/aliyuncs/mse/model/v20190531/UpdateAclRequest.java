@@ -28,8 +28,10 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 	private String aclEntryList;
 
 	private String instanceId;
+
+	private String acceptLanguage;
 	public UpdateAclRequest() {
-		super("mse", "2019-05-31", "UpdateAcl", "mse");
+		super("mse", "2019-05-31", "UpdateAcl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class UpdateAclRequest extends RpcAcsRequest<UpdateAclResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

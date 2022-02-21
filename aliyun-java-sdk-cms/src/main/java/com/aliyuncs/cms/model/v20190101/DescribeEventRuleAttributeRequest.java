@@ -26,7 +26,7 @@ public class DescribeEventRuleAttributeRequest extends RpcAcsRequest<DescribeEve
 
 	private String ruleName;
 	public DescribeEventRuleAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeEventRuleAttribute", "cms");
+		super("Cms", "2019-01-01", "DescribeEventRuleAttribute", "Cms");
 		setMethod(MethodType.POST);
 	}
 

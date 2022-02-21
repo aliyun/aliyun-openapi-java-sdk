@@ -26,7 +26,7 @@ public class UninstallMonitoringAgentRequest extends RpcAcsRequest<UninstallMoni
 
 	private String instanceId;
 	public UninstallMonitoringAgentRequest() {
-		super("Cms", "2019-01-01", "UninstallMonitoringAgent", "cms");
+		super("Cms", "2019-01-01", "UninstallMonitoringAgent", "Cms");
 		setMethod(MethodType.POST);
 	}
 

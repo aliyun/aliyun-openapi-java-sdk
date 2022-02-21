@@ -1,3 +1,10 @@
+2022-02-09 Version: 1.0.10
+- Supported query optimize open API.
+- Optimize GetInstanceInspections.
+
+2022-01-27 Version: 1.0.9
+- Supported query optimize open api.
+
 2021-09-17 Version: 1.0.8
 - Fix Bugs for GetSqlOptimizeAdvice.
 

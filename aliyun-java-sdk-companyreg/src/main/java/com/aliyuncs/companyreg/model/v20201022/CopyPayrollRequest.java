@@ -29,7 +29,7 @@ public class CopyPayrollRequest extends RpcAcsRequest<CopyPayrollResponse> {
 
 	private String bizId;
 	public CopyPayrollRequest() {
-		super("companyreg", "2020-10-22", "CopyPayroll", "companyreg");
+		super("companyreg", "2020-10-22", "CopyPayroll");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

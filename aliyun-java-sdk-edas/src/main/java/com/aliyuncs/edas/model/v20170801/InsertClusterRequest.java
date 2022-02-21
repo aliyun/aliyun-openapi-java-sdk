@@ -39,7 +39,7 @@ public class InsertClusterRequest extends RoaAcsRequest<InsertClusterResponse> {
 
 	private Integer oversoldFactor;
 	public InsertClusterRequest() {
-		super("Edas", "2017-08-01", "InsertCluster", "edas");
+		super("Edas", "2017-08-01", "InsertCluster", "Edas");
 		setUriPattern("/pop/v5/resource/cluster");
 		setMethod(MethodType.POST);
 		try {

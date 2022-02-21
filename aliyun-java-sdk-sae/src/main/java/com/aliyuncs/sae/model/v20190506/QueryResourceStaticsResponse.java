@@ -24,34 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryResourceStaticsResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorCode;
+	private String requestId;
 
 	private String message;
 
-	private Boolean success;
-
 	private String traceId;
 
-	private String requestId;
+	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -62,14 +54,6 @@ public class QueryResourceStaticsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
@@ -78,12 +62,28 @@ public class QueryResourceStaticsResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -96,16 +96,18 @@ public class QueryResourceStaticsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private RealTimeRes realTimeRes;
+		private String workload;
 
 		private Summary summary;
 
-		public RealTimeRes getRealTimeRes() {
-			return this.realTimeRes;
+		private RealTimeRes realTimeRes;
+
+		public String getWorkload() {
+			return this.workload;
 		}
 
-		public void setRealTimeRes(RealTimeRes realTimeRes) {
-			this.realTimeRes = realTimeRes;
+		public void setWorkload(String workload) {
+			this.workload = workload;
 		}
 
 		public Summary getSummary() {
@@ -116,7 +118,15 @@ public class QueryResourceStaticsResponse extends AcsResponse {
 			this.summary = summary;
 		}
 
-		public static class RealTimeRes {
+		public RealTimeRes getRealTimeRes() {
+			return this.realTimeRes;
+		}
+
+		public void setRealTimeRes(RealTimeRes realTimeRes) {
+			this.realTimeRes = realTimeRes;
+		}
+
+		public static class Summary {
 
 			private Float cpu;
 
@@ -139,7 +149,7 @@ public class QueryResourceStaticsResponse extends AcsResponse {
 			}
 		}
 
-		public static class Summary {
+		public static class RealTimeRes {
 
 			private Float cpu;
 

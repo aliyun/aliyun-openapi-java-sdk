@@ -82,4 +82,9 @@ public class DescribeDomainWithIntegrityResponse extends AcsResponse {
 	public DescribeDomainWithIntegrityResponse getInstance(UnmarshallerContext context) {
 		return	DescribeDomainWithIntegrityResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

@@ -31,22 +31,22 @@ public class DescribeLicenseResponseUnmarshaller {
 		describeLicenseResponse.setRequestId(_ctx.stringValue("DescribeLicenseResponse.RequestId"));
 
 		License license = new License();
+		license.setActivateTime(_ctx.stringValue("DescribeLicenseResponse.License.ActivateTime"));
 		license.setLicenseStatus(_ctx.stringValue("DescribeLicenseResponse.License.LicenseStatus"));
+		license.setProductName(_ctx.stringValue("DescribeLicenseResponse.License.ProductName"));
+		license.setExpiredTime(_ctx.stringValue("DescribeLicenseResponse.License.ExpiredTime"));
+		license.setProductSkuId(_ctx.stringValue("DescribeLicenseResponse.License.ProductSkuId"));
+		license.setCreateTime(_ctx.stringValue("DescribeLicenseResponse.License.CreateTime"));
 		license.setLicenseCode(_ctx.stringValue("DescribeLicenseResponse.License.LicenseCode"));
 		license.setInstanceId(_ctx.stringValue("DescribeLicenseResponse.License.InstanceId"));
-		license.setCreateTime(_ctx.stringValue("DescribeLicenseResponse.License.CreateTime"));
-		license.setExpiredTime(_ctx.stringValue("DescribeLicenseResponse.License.ExpiredTime"));
-		license.setActivateTime(_ctx.stringValue("DescribeLicenseResponse.License.ActivateTime"));
-		license.setProductSkuId(_ctx.stringValue("DescribeLicenseResponse.License.ProductSkuId"));
-		license.setProductCode(_ctx.stringValue("DescribeLicenseResponse.License.ProductCode"));
-		license.setProductName(_ctx.stringValue("DescribeLicenseResponse.License.ProductName"));
 		license.setSupplierName(_ctx.stringValue("DescribeLicenseResponse.License.SupplierName"));
+		license.setProductCode(_ctx.stringValue("DescribeLicenseResponse.License.ProductCode"));
 
 		ExtendInfo extendInfo = new ExtendInfo();
 		extendInfo.setAliUid(_ctx.longValue("DescribeLicenseResponse.License.ExtendInfo.AliUid"));
+		extendInfo.setAccountQuantity(_ctx.longValue("DescribeLicenseResponse.License.ExtendInfo.AccountQuantity"));
 		extendInfo.setEmail(_ctx.stringValue("DescribeLicenseResponse.License.ExtendInfo.Email"));
 		extendInfo.setMobile(_ctx.stringValue("DescribeLicenseResponse.License.ExtendInfo.Mobile"));
-		extendInfo.setAccountQuantity(_ctx.longValue("DescribeLicenseResponse.License.ExtendInfo.AccountQuantity"));
 		license.setExtendInfo(extendInfo);
 
 		List<LicenseAttribute> extendArray = new ArrayList<LicenseAttribute>();

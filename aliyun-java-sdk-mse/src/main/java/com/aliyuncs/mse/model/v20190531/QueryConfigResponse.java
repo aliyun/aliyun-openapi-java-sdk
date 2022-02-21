@@ -124,6 +124,12 @@ public class QueryConfigResponse extends AcsResponse {
 
 		private Boolean configSecretEnabled;
 
+		private Boolean namingCreateServiceSupported;
+
+		private String minSessionTimeout;
+
+		private String maxSessionTimeout;
+
 		public String getMaxClientCnxns() {
 			return this.maxClientCnxns;
 		}
@@ -274,6 +280,30 @@ public class QueryConfigResponse extends AcsResponse {
 
 		public void setConfigSecretEnabled(Boolean configSecretEnabled) {
 			this.configSecretEnabled = configSecretEnabled;
+		}
+
+		public Boolean getNamingCreateServiceSupported() {
+			return this.namingCreateServiceSupported;
+		}
+
+		public void setNamingCreateServiceSupported(Boolean namingCreateServiceSupported) {
+			this.namingCreateServiceSupported = namingCreateServiceSupported;
+		}
+
+		public String getMinSessionTimeout() {
+			return this.minSessionTimeout;
+		}
+
+		public void setMinSessionTimeout(String minSessionTimeout) {
+			this.minSessionTimeout = minSessionTimeout;
+		}
+
+		public String getMaxSessionTimeout() {
+			return this.maxSessionTimeout;
+		}
+
+		public void setMaxSessionTimeout(String maxSessionTimeout) {
+			this.maxSessionTimeout = maxSessionTimeout;
 		}
 	}
 

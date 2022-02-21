@@ -23,8 +23,8 @@ public class FinishCurrentProjectNodeResponseUnmarshaller {
 	public static FinishCurrentProjectNodeResponse unmarshall(FinishCurrentProjectNodeResponse finishCurrentProjectNodeResponse, UnmarshallerContext _ctx) {
 		
 		finishCurrentProjectNodeResponse.setRequestId(_ctx.stringValue("FinishCurrentProjectNodeResponse.RequestId"));
-		finishCurrentProjectNodeResponse.setSuccess(_ctx.booleanValue("FinishCurrentProjectNodeResponse.Success"));
 		finishCurrentProjectNodeResponse.setResult(_ctx.booleanValue("FinishCurrentProjectNodeResponse.Result"));
+		finishCurrentProjectNodeResponse.setSuccess(_ctx.booleanValue("FinishCurrentProjectNodeResponse.Success"));
 	 
 	 	return finishCurrentProjectNodeResponse;
 	}

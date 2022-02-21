@@ -37,7 +37,7 @@ public class ListVoucherRequest extends RpcAcsRequest<ListVoucherResponse> {
 
 	private String text;
 	public ListVoucherRequest() {
-		super("companyreg", "2020-10-22", "ListVoucher", "companyreg");
+		super("companyreg", "2020-10-22", "ListVoucher");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

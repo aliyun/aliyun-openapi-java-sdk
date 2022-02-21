@@ -1,3 +1,6 @@
+2022-01-27 Version: 3.25.0
+- Update params for k8s application custom affinity and tolerations.
+
 2021-10-18 Version: 3.23.1
 - Fixed ListApplicationEcu.
 

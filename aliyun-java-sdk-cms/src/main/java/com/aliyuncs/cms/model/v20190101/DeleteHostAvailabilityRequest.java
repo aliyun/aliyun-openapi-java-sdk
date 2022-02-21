@@ -27,7 +27,7 @@ public class DeleteHostAvailabilityRequest extends RpcAcsRequest<DeleteHostAvail
 
 	private List<Long> ids;
 	public DeleteHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "DeleteHostAvailability", "cms");
+		super("Cms", "2019-01-01", "DeleteHostAvailability", "Cms");
 		setMethod(MethodType.POST);
 	}
 

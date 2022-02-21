@@ -34,6 +34,8 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 
 	private String groupId;
 
+	private String groupBy;
+
 	private String ruleIds;
 
 	private String namespace;
@@ -44,7 +46,7 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 
 	private String dimensions;
 	public DescribeMetricRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleList", "cms");
+		super("Cms", "2019-01-01", "DescribeMetricRuleList", "Cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -100,6 +102,17 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getGroupBy() {
+		return this.groupBy;
+	}
+
+	public void setGroupBy(String groupBy) {
+		this.groupBy = groupBy;
+		if(groupBy != null){
+			putQueryParameter("GroupBy", groupBy);
 		}
 	}
 

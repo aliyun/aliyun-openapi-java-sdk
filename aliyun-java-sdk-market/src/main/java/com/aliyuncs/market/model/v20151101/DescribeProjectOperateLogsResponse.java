@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProjectOperateLogsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<ProjectMessage> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeProjectOperateLogsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ProjectMessage> getResult() {
@@ -57,22 +57,22 @@ public class DescribeProjectOperateLogsResponse extends AcsResponse {
 
 	public static class ProjectMessage {
 
-		private String operatorRole;
+		private Long gmtCreate;
 
 		private Long operator;
 
-		private String operatorName;
+		private String operatorRole;
 
 		private String description;
 
-		private Long gmtCreate;
+		private String operatorName;
 
-		public String getOperatorRole() {
-			return this.operatorRole;
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setOperatorRole(String operatorRole) {
-			this.operatorRole = operatorRole;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public Long getOperator() {
@@ -83,12 +83,12 @@ public class DescribeProjectOperateLogsResponse extends AcsResponse {
 			this.operator = operator;
 		}
 
-		public String getOperatorName() {
-			return this.operatorName;
+		public String getOperatorRole() {
+			return this.operatorRole;
 		}
 
-		public void setOperatorName(String operatorName) {
-			this.operatorName = operatorName;
+		public void setOperatorRole(String operatorRole) {
+			this.operatorRole = operatorRole;
 		}
 
 		public String getDescription() {
@@ -99,12 +99,12 @@ public class DescribeProjectOperateLogsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public String getOperatorName() {
+			return this.operatorName;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setOperatorName(String operatorName) {
+			this.operatorName = operatorName;
 		}
 	}
 

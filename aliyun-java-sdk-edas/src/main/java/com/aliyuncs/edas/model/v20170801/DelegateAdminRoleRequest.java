@@ -27,7 +27,7 @@ public class DelegateAdminRoleRequest extends RoaAcsRequest<DelegateAdminRoleRes
 
 	private String targetUserId;
 	public DelegateAdminRoleRequest() {
-		super("Edas", "2017-08-01", "DelegateAdminRole", "edas");
+		super("Edas", "2017-08-01", "DelegateAdminRole", "Edas");
 		setUriPattern("/pop/v5/account/delegate_admin_role");
 		setMethod(MethodType.PUT);
 		try {

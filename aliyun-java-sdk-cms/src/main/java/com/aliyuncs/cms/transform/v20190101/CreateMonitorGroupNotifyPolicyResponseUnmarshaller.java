@@ -25,8 +25,8 @@ public class CreateMonitorGroupNotifyPolicyResponseUnmarshaller {
 		createMonitorGroupNotifyPolicyResponse.setRequestId(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.RequestId"));
 		createMonitorGroupNotifyPolicyResponse.setCode(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.Code"));
 		createMonitorGroupNotifyPolicyResponse.setMessage(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.Message"));
-		createMonitorGroupNotifyPolicyResponse.setSuccess(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.Success"));
 		createMonitorGroupNotifyPolicyResponse.setResult(_ctx.integerValue("CreateMonitorGroupNotifyPolicyResponse.Result"));
+		createMonitorGroupNotifyPolicyResponse.setSuccess(_ctx.stringValue("CreateMonitorGroupNotifyPolicyResponse.Success"));
 	 
 	 	return createMonitorGroupNotifyPolicyResponse;
 	}

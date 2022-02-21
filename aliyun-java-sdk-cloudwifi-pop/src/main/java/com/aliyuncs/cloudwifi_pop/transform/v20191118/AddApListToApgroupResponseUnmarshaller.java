@@ -23,9 +23,9 @@ public class AddApListToApgroupResponseUnmarshaller {
 	public static AddApListToApgroupResponse unmarshall(AddApListToApgroupResponse addApListToApgroupResponse, UnmarshallerContext _ctx) {
 		
 		addApListToApgroupResponse.setData(_ctx.stringValue("AddApListToApgroupResponse.Data"));
+		addApListToApgroupResponse.setErrorMessage(_ctx.stringValue("AddApListToApgroupResponse.ErrorMessage"));
 		addApListToApgroupResponse.setIsSuccess(_ctx.booleanValue("AddApListToApgroupResponse.IsSuccess"));
 		addApListToApgroupResponse.setErrorCode(_ctx.integerValue("AddApListToApgroupResponse.ErrorCode"));
-		addApListToApgroupResponse.setErrorMessage(_ctx.stringValue("AddApListToApgroupResponse.ErrorMessage"));
 	 
 	 	return addApListToApgroupResponse;
 	}

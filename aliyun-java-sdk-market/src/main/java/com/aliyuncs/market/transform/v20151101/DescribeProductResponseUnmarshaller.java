@@ -34,27 +34,27 @@ public class DescribeProductResponseUnmarshaller {
 	public static DescribeProductResponse unmarshall(DescribeProductResponse describeProductResponse, UnmarshallerContext _ctx) {
 		
 		describeProductResponse.setRequestId(_ctx.stringValue("DescribeProductResponse.RequestId"));
-		describeProductResponse.setCode(_ctx.stringValue("DescribeProductResponse.Code"));
-		describeProductResponse.setName(_ctx.stringValue("DescribeProductResponse.Name"));
+		describeProductResponse.setFrontCategoryId(_ctx.longValue("DescribeProductResponse.FrontCategoryId"));
+		describeProductResponse.setStatus(_ctx.stringValue("DescribeProductResponse.Status"));
 		describeProductResponse.setType(_ctx.stringValue("DescribeProductResponse.Type"));
 		describeProductResponse.setPicUrl(_ctx.stringValue("DescribeProductResponse.PicUrl"));
-		describeProductResponse.setDescription(_ctx.stringValue("DescribeProductResponse.Description"));
-		describeProductResponse.setShortDescription(_ctx.stringValue("DescribeProductResponse.ShortDescription"));
-		describeProductResponse.setUseCount(_ctx.longValue("DescribeProductResponse.UseCount"));
 		describeProductResponse.setScore(_ctx.floatValue("DescribeProductResponse.Score"));
-		describeProductResponse.setStatus(_ctx.stringValue("DescribeProductResponse.Status"));
-		describeProductResponse.setAuditStatus(_ctx.stringValue("DescribeProductResponse.AuditStatus"));
-		describeProductResponse.setAuditFailMsg(_ctx.stringValue("DescribeProductResponse.AuditFailMsg"));
-		describeProductResponse.setAuditTime(_ctx.longValue("DescribeProductResponse.AuditTime"));
-		describeProductResponse.setGmtCreated(_ctx.longValue("DescribeProductResponse.GmtCreated"));
+		describeProductResponse.setUseCount(_ctx.longValue("DescribeProductResponse.UseCount"));
 		describeProductResponse.setGmtModified(_ctx.longValue("DescribeProductResponse.GmtModified"));
 		describeProductResponse.setSupplierPk(_ctx.longValue("DescribeProductResponse.SupplierPk"));
-		describeProductResponse.setFrontCategoryId(_ctx.longValue("DescribeProductResponse.FrontCategoryId"));
+		describeProductResponse.setGmtCreated(_ctx.longValue("DescribeProductResponse.GmtCreated"));
+		describeProductResponse.setShortDescription(_ctx.stringValue("DescribeProductResponse.ShortDescription"));
+		describeProductResponse.setDescription(_ctx.stringValue("DescribeProductResponse.Description"));
+		describeProductResponse.setCode(_ctx.stringValue("DescribeProductResponse.Code"));
+		describeProductResponse.setAuditFailMsg(_ctx.stringValue("DescribeProductResponse.AuditFailMsg"));
+		describeProductResponse.setName(_ctx.stringValue("DescribeProductResponse.Name"));
+		describeProductResponse.setAuditTime(_ctx.longValue("DescribeProductResponse.AuditTime"));
+		describeProductResponse.setAuditStatus(_ctx.stringValue("DescribeProductResponse.AuditStatus"));
 
 		ShopInfo shopInfo = new ShopInfo();
-		shopInfo.setId(_ctx.longValue("DescribeProductResponse.ShopInfo.Id"));
 		shopInfo.setName(_ctx.stringValue("DescribeProductResponse.ShopInfo.Name"));
 		shopInfo.setEmails(_ctx.stringValue("DescribeProductResponse.ShopInfo.Emails"));
+		shopInfo.setId(_ctx.longValue("DescribeProductResponse.ShopInfo.Id"));
 
 		List<String> telephones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProductResponse.ShopInfo.Telephones.Length"); i++) {
@@ -65,8 +65,8 @@ public class DescribeProductResponseUnmarshaller {
 		List<WangWang> wangWangs = new ArrayList<WangWang>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProductResponse.ShopInfo.WangWangs.Length"); i++) {
 			WangWang wangWang = new WangWang();
-			wangWang.setUserName(_ctx.stringValue("DescribeProductResponse.ShopInfo.WangWangs["+ i +"].UserName"));
 			wangWang.setRemark(_ctx.stringValue("DescribeProductResponse.ShopInfo.WangWangs["+ i +"].Remark"));
+			wangWang.setUserName(_ctx.stringValue("DescribeProductResponse.ShopInfo.WangWangs["+ i +"].UserName"));
 
 			wangWangs.add(wangWang);
 		}
@@ -76,11 +76,11 @@ public class DescribeProductResponseUnmarshaller {
 		List<ProductSku> productSkus = new ArrayList<ProductSku>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProductResponse.ProductSkus.Length"); i++) {
 			ProductSku productSku = new ProductSku();
-			productSku.setName(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Name"));
-			productSku.setCode(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Code"));
-			productSku.setChargeType(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].ChargeType"));
-			productSku.setConstraints(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Constraints"));
 			productSku.setHidden(_ctx.booleanValue("DescribeProductResponse.ProductSkus["+ i +"].Hidden"));
+			productSku.setCode(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Code"));
+			productSku.setConstraints(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Constraints"));
+			productSku.setName(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Name"));
+			productSku.setChargeType(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].ChargeType"));
 
 			List<OrderPeriod> orderPeriods = new ArrayList<OrderPeriod>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeProductResponse.ProductSkus["+ i +"].OrderPeriods.Length"); j++) {
@@ -95,28 +95,28 @@ public class DescribeProductResponseUnmarshaller {
 			List<Module> modules = new ArrayList<Module>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeProductResponse.ProductSkus["+ i +"].Modules.Length"); j++) {
 				Module module = new Module();
-				module.setId(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Id"));
-				module.setName(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Name"));
 				module.setCode(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Code"));
+				module.setName(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Name"));
+				module.setId(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Id"));
 
 				List<Property> properties = new ArrayList<Property>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties.Length"); k++) {
 					Property property = new Property();
-					property.setName(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].Name"));
 					property.setKey(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].Key"));
 					property.setShowType(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].ShowType"));
+					property.setName(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].Name"));
 					property.setDisplayUnit(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].DisplayUnit"));
 
 					List<PropertyValue> propertyValues = new ArrayList<PropertyValue>();
 					for (int l = 0; l < _ctx.lengthValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues.Length"); l++) {
 						PropertyValue propertyValue = new PropertyValue();
-						propertyValue.setValue(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Value"));
 						propertyValue.setDisplayName(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].DisplayName"));
 						propertyValue.setType(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Type"));
-						propertyValue.setMin(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Min"));
-						propertyValue.setMax(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Max"));
 						propertyValue.setStep(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Step"));
+						propertyValue.setValue(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Value"));
+						propertyValue.setMax(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Max"));
 						propertyValue.setRemark(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Remark"));
+						propertyValue.setMin(_ctx.stringValue("DescribeProductResponse.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Min"));
 
 						propertyValues.add(propertyValue);
 					}
@@ -137,11 +137,11 @@ public class DescribeProductResponseUnmarshaller {
 		List<ProductExtra> productExtras = new ArrayList<ProductExtra>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProductResponse.ProductExtras.Length"); i++) {
 			ProductExtra productExtra = new ProductExtra();
+			productExtra.setType(_ctx.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Type"));
 			productExtra.setKey(_ctx.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Key"));
-			productExtra.setValues(_ctx.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Values"));
 			productExtra.setLabel(_ctx.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Label"));
 			productExtra.setOrder(_ctx.integerValue("DescribeProductResponse.ProductExtras["+ i +"].Order"));
-			productExtra.setType(_ctx.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Type"));
+			productExtra.setValues(_ctx.stringValue("DescribeProductResponse.ProductExtras["+ i +"].Values"));
 
 			productExtras.add(productExtra);
 		}

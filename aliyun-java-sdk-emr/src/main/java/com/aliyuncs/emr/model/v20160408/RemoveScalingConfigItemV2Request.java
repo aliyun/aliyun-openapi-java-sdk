@@ -35,7 +35,7 @@ public class RemoveScalingConfigItemV2Request extends RpcAcsRequest<RemoveScalin
 
 	private String resourceGroupId;
 	public RemoveScalingConfigItemV2Request() {
-		super("Emr", "2016-04-08", "RemoveScalingConfigItemV2", "emr");
+		super("Emr", "2016-04-08", "RemoveScalingConfigItemV2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

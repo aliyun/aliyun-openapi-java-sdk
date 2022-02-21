@@ -28,9 +28,9 @@ public class ApplyMetricRuleTemplateResponseUnmarshaller {
 	public static ApplyMetricRuleTemplateResponse unmarshall(ApplyMetricRuleTemplateResponse applyMetricRuleTemplateResponse, UnmarshallerContext _ctx) {
 		
 		applyMetricRuleTemplateResponse.setRequestId(_ctx.stringValue("ApplyMetricRuleTemplateResponse.RequestId"));
-		applyMetricRuleTemplateResponse.setSuccess(_ctx.booleanValue("ApplyMetricRuleTemplateResponse.Success"));
 		applyMetricRuleTemplateResponse.setCode(_ctx.integerValue("ApplyMetricRuleTemplateResponse.Code"));
 		applyMetricRuleTemplateResponse.setMessage(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Message"));
+		applyMetricRuleTemplateResponse.setSuccess(_ctx.booleanValue("ApplyMetricRuleTemplateResponse.Success"));
 
 		Resource resource = new Resource();
 		resource.setGroupId(_ctx.longValue("ApplyMetricRuleTemplateResponse.Resource.GroupId"));
@@ -38,11 +38,11 @@ public class ApplyMetricRuleTemplateResponseUnmarshaller {
 		List<Result> alertResults = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults.Length"); i++) {
 			Result result = new Result();
-			result.setRuleId(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].RuleId"));
-			result.setMessage(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].Message"));
-			result.setRuleName(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].RuleName"));
 			result.setCode(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].Code"));
+			result.setMessage(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].Message"));
 			result.setSuccess(_ctx.booleanValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].Success"));
+			result.setRuleName(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].RuleName"));
+			result.setRuleId(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].RuleId"));
 
 			alertResults.add(result);
 		}

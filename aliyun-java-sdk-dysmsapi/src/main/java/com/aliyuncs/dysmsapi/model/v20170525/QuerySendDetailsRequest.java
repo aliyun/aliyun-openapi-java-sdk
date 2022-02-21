@@ -41,7 +41,7 @@ public class QuerySendDetailsRequest extends RpcAcsRequest<QuerySendDetailsRespo
 
 	private String bizId;
 	public QuerySendDetailsRequest() {
-		super("Dysmsapi", "2017-05-25", "QuerySendDetails", "dysms");
+		super("Dysmsapi", "2017-05-25", "QuerySendDetails");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

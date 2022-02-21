@@ -37,7 +37,7 @@ public class EnableSqlConcurrencyControlRequest extends RpcAcsRequest<EnableSqlC
 
 	private Long maxConcurrency;
 	public EnableSqlConcurrencyControlRequest() {
-		super("DAS", "2020-01-16", "EnableSqlConcurrencyControl", "das");
+		super("DAS", "2020-01-16", "EnableSqlConcurrencyControl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

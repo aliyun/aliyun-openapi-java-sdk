@@ -30,9 +30,9 @@ public class BatchDisableJobsRequest extends RpcAcsRequest<BatchDisableJobsRespo
 
 	private String groupId;
 
-	private String namespace;
-
 	private List<Long> jobIdLists;
+
+	private String namespace;
 	public BatchDisableJobsRequest() {
 		super("schedulerx2", "2019-04-30", "BatchDisableJobs");
 		setMethod(MethodType.POST);
@@ -64,17 +64,6 @@ public class BatchDisableJobsRequest extends RpcAcsRequest<BatchDisableJobsRespo
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public List<Long> getJobIdLists() {
 		return this.jobIdLists;
 	}
@@ -86,6 +75,17 @@ public class BatchDisableJobsRequest extends RpcAcsRequest<BatchDisableJobsRespo
 				putBodyParameter("JobIdList." + (i + 1) , jobIdLists.get(i));
 			}
 		}	
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
 	}
 
 	@Override

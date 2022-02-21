@@ -27,13 +27,13 @@ public class RepairApRadioResponse extends AcsResponse {
 
 	private Map<Object,Object> data;
 
-	private Boolean isSuccess;
-
-	private Boolean errorCode;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String requestId;
+	private Boolean isSuccess;
+
+	private Boolean errorCode;
 
 	public Map<Object,Object> getData() {
 		return this.data;
@@ -41,6 +41,22 @@ public class RepairApRadioResponse extends AcsResponse {
 
 	public void setData(Map<Object,Object> data) {
 		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getIsSuccess() {
@@ -57,22 +73,6 @@ public class RepairApRadioResponse extends AcsResponse {
 
 	public void setErrorCode(Boolean errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	@Override

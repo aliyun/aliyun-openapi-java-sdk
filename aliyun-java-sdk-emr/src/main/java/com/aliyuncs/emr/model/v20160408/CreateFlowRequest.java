@@ -61,7 +61,7 @@ public class CreateFlowRequest extends RpcAcsRequest<CreateFlowResponse> {
 
 	private String parentCategory;
 	public CreateFlowRequest() {
-		super("Emr", "2016-04-08", "CreateFlow", "emr");
+		super("Emr", "2016-04-08", "CreateFlow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class AddClusterServiceRequest extends RpcAcsRequest<AddClusterServiceRes
 
 	private String comment;
 	public AddClusterServiceRequest() {
-		super("Emr", "2016-04-08", "AddClusterService", "emr");
+		super("Emr", "2016-04-08", "AddClusterService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

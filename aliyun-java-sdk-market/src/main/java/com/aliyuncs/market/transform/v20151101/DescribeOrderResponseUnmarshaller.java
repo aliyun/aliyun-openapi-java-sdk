@@ -27,25 +27,25 @@ public class DescribeOrderResponseUnmarshaller {
 	public static DescribeOrderResponse unmarshall(DescribeOrderResponse describeOrderResponse, UnmarshallerContext _ctx) {
 		
 		describeOrderResponse.setRequestId(_ctx.stringValue("DescribeOrderResponse.RequestId"));
-		describeOrderResponse.setOrderId(_ctx.longValue("DescribeOrderResponse.OrderId"));
-		describeOrderResponse.setAliUid(_ctx.longValue("DescribeOrderResponse.AliUid"));
-		describeOrderResponse.setSupplierCompanyName(_ctx.stringValue("DescribeOrderResponse.SupplierCompanyName"));
-		describeOrderResponse.setProductCode(_ctx.stringValue("DescribeOrderResponse.ProductCode"));
-		describeOrderResponse.setProductSkuCode(_ctx.stringValue("DescribeOrderResponse.ProductSkuCode"));
 		describeOrderResponse.setProductName(_ctx.stringValue("DescribeOrderResponse.ProductName"));
-		describeOrderResponse.setPeriodType(_ctx.stringValue("DescribeOrderResponse.PeriodType"));
-		describeOrderResponse.setQuantity(_ctx.integerValue("DescribeOrderResponse.Quantity"));
-		describeOrderResponse.setAccountQuantity(_ctx.longValue("DescribeOrderResponse.AccountQuantity"));
-		describeOrderResponse.setOrderType(_ctx.stringValue("DescribeOrderResponse.OrderType"));
-		describeOrderResponse.setOrderStatus(_ctx.stringValue("DescribeOrderResponse.OrderStatus"));
-		describeOrderResponse.setPayStatus(_ctx.stringValue("DescribeOrderResponse.PayStatus"));
-		describeOrderResponse.setPaidOn(_ctx.longValue("DescribeOrderResponse.PaidOn"));
-		describeOrderResponse.setCreatedOn(_ctx.longValue("DescribeOrderResponse.CreatedOn"));
+		describeOrderResponse.setSupplierCompanyName(_ctx.stringValue("DescribeOrderResponse.SupplierCompanyName"));
 		describeOrderResponse.setOriginalPrice(_ctx.floatValue("DescribeOrderResponse.OriginalPrice"));
-		describeOrderResponse.setTotalPrice(_ctx.floatValue("DescribeOrderResponse.TotalPrice"));
-		describeOrderResponse.setPaymentPrice(_ctx.floatValue("DescribeOrderResponse.PaymentPrice"));
+		describeOrderResponse.setAliUid(_ctx.longValue("DescribeOrderResponse.AliUid"));
 		describeOrderResponse.setCouponPrice(_ctx.floatValue("DescribeOrderResponse.CouponPrice"));
+		describeOrderResponse.setAccountQuantity(_ctx.longValue("DescribeOrderResponse.AccountQuantity"));
+		describeOrderResponse.setPeriodType(_ctx.stringValue("DescribeOrderResponse.PeriodType"));
+		describeOrderResponse.setPayStatus(_ctx.stringValue("DescribeOrderResponse.PayStatus"));
+		describeOrderResponse.setPaymentPrice(_ctx.floatValue("DescribeOrderResponse.PaymentPrice"));
+		describeOrderResponse.setOrderStatus(_ctx.stringValue("DescribeOrderResponse.OrderStatus"));
+		describeOrderResponse.setProductSkuCode(_ctx.stringValue("DescribeOrderResponse.ProductSkuCode"));
+		describeOrderResponse.setPaidOn(_ctx.longValue("DescribeOrderResponse.PaidOn"));
 		describeOrderResponse.setComponents(_ctx.mapValue("DescribeOrderResponse.Components"));
+		describeOrderResponse.setCreatedOn(_ctx.longValue("DescribeOrderResponse.CreatedOn"));
+		describeOrderResponse.setOrderType(_ctx.stringValue("DescribeOrderResponse.OrderType"));
+		describeOrderResponse.setTotalPrice(_ctx.floatValue("DescribeOrderResponse.TotalPrice"));
+		describeOrderResponse.setQuantity(_ctx.integerValue("DescribeOrderResponse.Quantity"));
+		describeOrderResponse.setOrderId(_ctx.longValue("DescribeOrderResponse.OrderId"));
+		describeOrderResponse.setProductCode(_ctx.stringValue("DescribeOrderResponse.ProductCode"));
 
 		List<String> supplierTelephones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOrderResponse.SupplierTelephones.Length"); i++) {

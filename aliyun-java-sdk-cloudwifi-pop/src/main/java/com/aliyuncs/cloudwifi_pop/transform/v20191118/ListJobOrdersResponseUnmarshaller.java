@@ -27,9 +27,9 @@ public class ListJobOrdersResponseUnmarshaller {
 	public static ListJobOrdersResponse unmarshall(ListJobOrdersResponse listJobOrdersResponse, UnmarshallerContext _ctx) {
 		
 		listJobOrdersResponse.setRequestId(_ctx.stringValue("ListJobOrdersResponse.RequestId"));
+		listJobOrdersResponse.setErrorMessage(_ctx.stringValue("ListJobOrdersResponse.ErrorMessage"));
 		listJobOrdersResponse.setIsSuccess(_ctx.booleanValue("ListJobOrdersResponse.IsSuccess"));
 		listJobOrdersResponse.setErrorCode(_ctx.integerValue("ListJobOrdersResponse.ErrorCode"));
-		listJobOrdersResponse.setErrorMessage(_ctx.stringValue("ListJobOrdersResponse.ErrorMessage"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("ListJobOrdersResponse.Data");
 		listJobOrdersResponse.setData(data);

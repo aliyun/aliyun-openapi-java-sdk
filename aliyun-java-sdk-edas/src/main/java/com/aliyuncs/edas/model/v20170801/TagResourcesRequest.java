@@ -33,7 +33,7 @@ public class TagResourcesRequest extends RoaAcsRequest<TagResourcesResponse> {
 
 	private String tags;
 	public TagResourcesRequest() {
-		super("Edas", "2017-08-01", "TagResources", "edas");
+		super("Edas", "2017-08-01", "TagResources", "Edas");
 		setUriPattern("/pop/v5/tag/tags");
 		setMethod(MethodType.POST);
 		try {

@@ -26,8 +26,10 @@ public class ListClusterVersionsRequest extends RpcAcsRequest<ListClusterVersion
 	   
 
 	private String clusterType;
+
+	private String acceptLanguage;
 	public ListClusterVersionsRequest() {
-		super("mse", "2019-05-31", "ListClusterVersions", "mse");
+		super("mse", "2019-05-31", "ListClusterVersions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,6 +45,17 @@ public class ListClusterVersionsRequest extends RpcAcsRequest<ListClusterVersion
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCommoditiesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeCommoditiesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -91,9 +91,9 @@ public class DescribeCommoditiesResponse extends AcsResponse {
 
 			private String commodityId;
 
-			private String properties;
-
 			private String applicationId;
+
+			private String properties;
 
 			public String getCommodityId() {
 				return this.commodityId;
@@ -103,14 +103,6 @@ public class DescribeCommoditiesResponse extends AcsResponse {
 				this.commodityId = commodityId;
 			}
 
-			public String getProperties() {
-				return this.properties;
-			}
-
-			public void setProperties(String properties) {
-				this.properties = properties;
-			}
-
 			public String getApplicationId() {
 				return this.applicationId;
 			}
@@ -118,21 +110,21 @@ public class DescribeCommoditiesResponse extends AcsResponse {
 			public void setApplicationId(String applicationId) {
 				this.applicationId = applicationId;
 			}
+
+			public String getProperties() {
+				return this.properties;
+			}
+
+			public void setProperties(String properties) {
+				this.properties = properties;
+			}
 		}
 
 		public static class Pageable {
 
-			private Integer pageNumber;
-
 			private Integer pageSize;
 
-			public Integer getPageNumber() {
-				return this.pageNumber;
-			}
-
-			public void setPageNumber(Integer pageNumber) {
-				this.pageNumber = pageNumber;
-			}
+			private Integer pageNumber;
 
 			public Integer getPageSize() {
 				return this.pageSize;
@@ -140,6 +132,14 @@ public class DescribeCommoditiesResponse extends AcsResponse {
 
 			public void setPageSize(Integer pageSize) {
 				this.pageSize = pageSize;
+			}
+
+			public Integer getPageNumber() {
+				return this.pageNumber;
+			}
+
+			public void setPageNumber(Integer pageNumber) {
+				this.pageNumber = pageNumber;
 			}
 		}
 	}

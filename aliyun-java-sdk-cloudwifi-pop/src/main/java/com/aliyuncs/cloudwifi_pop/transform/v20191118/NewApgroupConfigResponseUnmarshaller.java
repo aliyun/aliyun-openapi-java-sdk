@@ -23,9 +23,9 @@ public class NewApgroupConfigResponseUnmarshaller {
 	public static NewApgroupConfigResponse unmarshall(NewApgroupConfigResponse newApgroupConfigResponse, UnmarshallerContext _ctx) {
 		
 		newApgroupConfigResponse.setData(_ctx.stringValue("NewApgroupConfigResponse.Data"));
+		newApgroupConfigResponse.setErrorMessage(_ctx.stringValue("NewApgroupConfigResponse.ErrorMessage"));
 		newApgroupConfigResponse.setIsSuccess(_ctx.booleanValue("NewApgroupConfigResponse.IsSuccess"));
 		newApgroupConfigResponse.setErrorCode(_ctx.integerValue("NewApgroupConfigResponse.ErrorCode"));
-		newApgroupConfigResponse.setErrorMessage(_ctx.stringValue("NewApgroupConfigResponse.ErrorMessage"));
 	 
 	 	return newApgroupConfigResponse;
 	}

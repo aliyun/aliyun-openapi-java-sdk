@@ -37,7 +37,7 @@ public class UpdateMockRuleRequest extends RoaAcsRequest<UpdateMockRuleResponse>
 
 	private String region;
 	public UpdateMockRuleRequest() {
-		super("Edas", "2017-08-01", "UpdateMockRule", "edas");
+		super("Edas", "2017-08-01", "UpdateMockRule", "Edas");
 		setUriPattern("/pop/sp/api/mock/updateMockRule");
 		setMethod(MethodType.POST);
 		try {

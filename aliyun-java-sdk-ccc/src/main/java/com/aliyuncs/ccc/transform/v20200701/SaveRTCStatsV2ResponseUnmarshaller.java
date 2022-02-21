@@ -23,12 +23,12 @@ public class SaveRTCStatsV2ResponseUnmarshaller {
 	public static SaveRTCStatsV2Response unmarshall(SaveRTCStatsV2Response saveRTCStatsV2Response, UnmarshallerContext _ctx) {
 		
 		saveRTCStatsV2Response.setRequestId(_ctx.stringValue("SaveRTCStatsV2Response.RequestId"));
-		saveRTCStatsV2Response.setCode(_ctx.stringValue("SaveRTCStatsV2Response.Code"));
 		saveRTCStatsV2Response.setHttpStatusCode(_ctx.longValue("SaveRTCStatsV2Response.HttpStatusCode"));
-		saveRTCStatsV2Response.setMessage(_ctx.stringValue("SaveRTCStatsV2Response.Message"));
-		saveRTCStatsV2Response.setRowCount(_ctx.longValue("SaveRTCStatsV2Response.RowCount"));
 		saveRTCStatsV2Response.setSuccess(_ctx.booleanValue("SaveRTCStatsV2Response.Success"));
+		saveRTCStatsV2Response.setCode(_ctx.stringValue("SaveRTCStatsV2Response.Code"));
+		saveRTCStatsV2Response.setMessage(_ctx.stringValue("SaveRTCStatsV2Response.Message"));
 		saveRTCStatsV2Response.setTimeStamp(_ctx.longValue("SaveRTCStatsV2Response.TimeStamp"));
+		saveRTCStatsV2Response.setRowCount(_ctx.longValue("SaveRTCStatsV2Response.RowCount"));
 	 
 	 	return saveRTCStatsV2Response;
 	}

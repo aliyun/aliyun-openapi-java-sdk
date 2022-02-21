@@ -40,7 +40,7 @@ public class ModifySmsSignRequest extends RpcAcsRequest<ModifySmsSignResponse> {
 
 	private Integer signSource;
 	public ModifySmsSignRequest() {
-		super("Dysmsapi", "2017-05-25", "ModifySmsSign", "dysms");
+		super("Dysmsapi", "2017-05-25", "ModifySmsSign");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -89,8 +89,8 @@ public class ModifySmsSignRequest extends RpcAcsRequest<ModifySmsSignResponse> {
 		this.signFileLists = signFileLists;	
 		if (signFileLists != null) {
 			for (int depth1 = 0; depth1 < signFileLists.size(); depth1++) {
-				putQueryParameter("SignFileList." + (depth1 + 1) + ".FileContents" , signFileLists.get(depth1).getFileContents());
-				putQueryParameter("SignFileList." + (depth1 + 1) + ".FileSuffix" , signFileLists.get(depth1).getFileSuffix());
+				putBodyParameter("SignFileList." + (depth1 + 1) + ".FileContents" , signFileLists.get(depth1).getFileContents());
+				putBodyParameter("SignFileList." + (depth1 + 1) + ".FileSuffix" , signFileLists.get(depth1).getFileSuffix());
 			}
 		}	
 	}

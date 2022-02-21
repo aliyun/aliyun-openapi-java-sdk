@@ -33,8 +33,10 @@ public class UpdateGatewayOptionRequest extends RpcAcsRequest<UpdateGatewayOptio
 	private GatewayOption gatewayOption;
 
 	private Long gatewayId;
+
+	private String acceptLanguage;
 	public UpdateGatewayOptionRequest() {
-		super("mse", "2019-05-31", "UpdateGatewayOption", "mse");
+		super("mse", "2019-05-31", "UpdateGatewayOption");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,13 +77,46 @@ public class UpdateGatewayOptionRequest extends RpcAcsRequest<UpdateGatewayOptio
 		}
 	}
 
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
+	}
+
 	public static class GatewayOption {
+
+		@SerializedName("EnableHardwareAcceleration")
+		private Boolean enableHardwareAcceleration;
+
+		@SerializedName("DisableHttp2Alpn")
+		private Boolean disableHttp2Alpn;
 
 		@SerializedName("LogConfigDetails")
 		private LogConfigDetails logConfigDetails;
 
 		@SerializedName("TraceDetails")
 		private TraceDetails traceDetails;
+
+		public Boolean getEnableHardwareAcceleration() {
+			return this.enableHardwareAcceleration;
+		}
+
+		public void setEnableHardwareAcceleration(Boolean enableHardwareAcceleration) {
+			this.enableHardwareAcceleration = enableHardwareAcceleration;
+		}
+
+		public Boolean getDisableHttp2Alpn() {
+			return this.disableHttp2Alpn;
+		}
+
+		public void setDisableHttp2Alpn(Boolean disableHttp2Alpn) {
+			this.disableHttp2Alpn = disableHttp2Alpn;
+		}
 
 		public LogConfigDetails getLogConfigDetails() {
 			return this.logConfigDetails;

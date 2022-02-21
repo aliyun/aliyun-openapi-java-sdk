@@ -29,9 +29,11 @@ public class DeleteNacosConfigsRequest extends RpcAcsRequest<DeleteNacosConfigsR
 
 	private String namespaceId;
 
+	private String acceptLanguage;
+
 	private String ids;
 	public DeleteNacosConfigsRequest() {
-		super("mse", "2019-05-31", "DeleteNacosConfigs", "mse");
+		super("mse", "2019-05-31", "DeleteNacosConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +60,17 @@ public class DeleteNacosConfigsRequest extends RpcAcsRequest<DeleteNacosConfigsR
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

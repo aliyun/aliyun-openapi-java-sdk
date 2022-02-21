@@ -29,7 +29,7 @@ public class UpdateRoleRequest extends RoaAcsRequest<UpdateRoleResponse> {
 
 	private String actionData;
 	public UpdateRoleRequest() {
-		super("Edas", "2017-08-01", "UpdateRole", "edas");
+		super("Edas", "2017-08-01", "UpdateRole", "Edas");
 		setUriPattern("/pop/v5/account/edit_role");
 		setMethod(MethodType.POST);
 		try {

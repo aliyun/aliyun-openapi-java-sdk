@@ -33,11 +33,11 @@ public class DescribeProjectMetaResponse extends AcsResponse {
 
 	private String message;
 
-	private String total;
+	private String pageSize;
 
 	private String pageNumber;
 
-	private String pageSize;
+	private String total;
 
 	private List<Resource> resources;
 
@@ -73,12 +73,12 @@ public class DescribeProjectMetaResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getTotal() {
-		return this.total;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotal(String total) {
-		this.total = total;
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getPageNumber() {
@@ -89,12 +89,12 @@ public class DescribeProjectMetaResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public String getTotal() {
+		return this.total;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 	public List<Resource> getResources() {

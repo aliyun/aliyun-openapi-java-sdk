@@ -27,19 +27,19 @@ public class ListResourceGroupsResponseUnmarshaller {
 	public static ListResourceGroupsResponse unmarshall(ListResourceGroupsResponse listResourceGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listResourceGroupsResponse.setRequestId(_ctx.stringValue("ListResourceGroupsResponse.RequestId"));
-		listResourceGroupsResponse.setPageNumber(_ctx.integerValue("ListResourceGroupsResponse.PageNumber"));
-		listResourceGroupsResponse.setPageSize(_ctx.integerValue("ListResourceGroupsResponse.PageSize"));
 		listResourceGroupsResponse.setTotalCount(_ctx.integerValue("ListResourceGroupsResponse.TotalCount"));
+		listResourceGroupsResponse.setPageSize(_ctx.integerValue("ListResourceGroupsResponse.PageSize"));
+		listResourceGroupsResponse.setPageNumber(_ctx.integerValue("ListResourceGroupsResponse.PageNumber"));
 
 		List<ResourceGroup> resourceGroups = new ArrayList<ResourceGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourceGroupsResponse.ResourceGroups.Length"); i++) {
 			ResourceGroup resourceGroup = new ResourceGroup();
-			resourceGroup.setId(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Id"));
-			resourceGroup.setName(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Name"));
 			resourceGroup.setDisplayName(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].DisplayName"));
 			resourceGroup.setStatus(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Status"));
-			resourceGroup.setCreateDate(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].CreateDate"));
 			resourceGroup.setAccountId(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].AccountId"));
+			resourceGroup.setName(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Name"));
+			resourceGroup.setCreateDate(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].CreateDate"));
+			resourceGroup.setId(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Id"));
 
 			resourceGroups.add(resourceGroup);
 		}

@@ -28,9 +28,9 @@ public class GetNetDeviceInfoWithSizeResponseUnmarshaller {
 	public static GetNetDeviceInfoWithSizeResponse unmarshall(GetNetDeviceInfoWithSizeResponse getNetDeviceInfoWithSizeResponse, UnmarshallerContext _ctx) {
 		
 		getNetDeviceInfoWithSizeResponse.setRequestId(_ctx.stringValue("GetNetDeviceInfoWithSizeResponse.RequestId"));
+		getNetDeviceInfoWithSizeResponse.setErrorMessage(_ctx.stringValue("GetNetDeviceInfoWithSizeResponse.ErrorMessage"));
 		getNetDeviceInfoWithSizeResponse.setIsSuccess(_ctx.booleanValue("GetNetDeviceInfoWithSizeResponse.IsSuccess"));
 		getNetDeviceInfoWithSizeResponse.setErrorCode(_ctx.integerValue("GetNetDeviceInfoWithSizeResponse.ErrorCode"));
-		getNetDeviceInfoWithSizeResponse.setErrorMessage(_ctx.stringValue("GetNetDeviceInfoWithSizeResponse.ErrorMessage"));
 
 		Data data = new Data();
 		data.setCount(_ctx.longValue("GetNetDeviceInfoWithSizeResponse.Data.Count"));

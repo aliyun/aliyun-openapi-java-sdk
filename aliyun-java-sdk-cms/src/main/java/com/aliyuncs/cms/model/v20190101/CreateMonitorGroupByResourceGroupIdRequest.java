@@ -35,7 +35,7 @@ public class CreateMonitorGroupByResourceGroupIdRequest extends RpcAcsRequest<Cr
 
 	private List<String> contactGroupLists;
 	public CreateMonitorGroupByResourceGroupIdRequest() {
-		super("Cms", "2019-01-01", "CreateMonitorGroupByResourceGroupId", "cms");
+		super("Cms", "2019-01-01", "CreateMonitorGroupByResourceGroupId", "Cms");
 		setMethod(MethodType.POST);
 	}
 

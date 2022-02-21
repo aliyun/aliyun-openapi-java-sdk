@@ -27,9 +27,11 @@ public class GetGatewayOptionRequest extends RpcAcsRequest<GetGatewayOptionRespo
 
 	private String gatewayUniqueId;
 
+	private String acceptLanguage;
+
 	private Long gatewayId;
 	public GetGatewayOptionRequest() {
-		super("mse", "2019-05-31", "GetGatewayOption", "mse");
+		super("mse", "2019-05-31", "GetGatewayOption");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,6 +47,17 @@ public class GetGatewayOptionRequest extends RpcAcsRequest<GetGatewayOptionRespo
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

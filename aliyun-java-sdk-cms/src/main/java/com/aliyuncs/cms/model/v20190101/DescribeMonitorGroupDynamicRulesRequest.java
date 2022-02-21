@@ -26,7 +26,7 @@ public class DescribeMonitorGroupDynamicRulesRequest extends RpcAcsRequest<Descr
 
 	private Long groupId;
 	public DescribeMonitorGroupDynamicRulesRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupDynamicRules", "cms");
+		super("Cms", "2019-01-01", "DescribeMonitorGroupDynamicRules", "Cms");
 		setMethod(MethodType.POST);
 	}
 

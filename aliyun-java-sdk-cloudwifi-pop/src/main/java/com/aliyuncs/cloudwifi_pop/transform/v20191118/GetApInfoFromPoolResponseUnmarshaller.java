@@ -24,9 +24,9 @@ public class GetApInfoFromPoolResponseUnmarshaller {
 	public static GetApInfoFromPoolResponse unmarshall(GetApInfoFromPoolResponse getApInfoFromPoolResponse, UnmarshallerContext _ctx) {
 		
 		getApInfoFromPoolResponse.setData(_ctx.mapValue("GetApInfoFromPoolResponse.Data"));
+		getApInfoFromPoolResponse.setErrorMessage(_ctx.stringValue("GetApInfoFromPoolResponse.ErrorMessage"));
 		getApInfoFromPoolResponse.setIsSuccess(_ctx.booleanValue("GetApInfoFromPoolResponse.IsSuccess"));
 		getApInfoFromPoolResponse.setErrorCode(_ctx.integerValue("GetApInfoFromPoolResponse.ErrorCode"));
-		getApInfoFromPoolResponse.setErrorMessage(_ctx.stringValue("GetApInfoFromPoolResponse.ErrorMessage"));
 	 
 	 	return getApInfoFromPoolResponse;
 	}

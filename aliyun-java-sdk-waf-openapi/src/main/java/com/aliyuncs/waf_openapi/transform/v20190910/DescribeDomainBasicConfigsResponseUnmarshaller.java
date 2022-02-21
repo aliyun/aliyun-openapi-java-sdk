@@ -32,16 +32,16 @@ public class DescribeDomainBasicConfigsResponseUnmarshaller {
 		List<DomainConfig> domainConfigs = new ArrayList<DomainConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainBasicConfigsResponse.DomainConfigs.Length"); i++) {
 			DomainConfig domainConfig = new DomainConfig();
-			domainConfig.setOwner(_ctx.stringValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Owner"));
-			domainConfig.setWafStatus(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].WafStatus"));
-			domainConfig.setCcStatus(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].CcStatus"));
-			domainConfig.setCcMode(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].CcMode"));
-			domainConfig.setAclStatus(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].AclStatus"));
-			domainConfig.setWafMode(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].WafMode"));
-			domainConfig.setVersion(_ctx.longValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Version"));
-			domainConfig.setDomain(_ctx.stringValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Domain"));
 			domainConfig.setStatus(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Status"));
+			domainConfig.setDomain(_ctx.stringValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Domain"));
+			domainConfig.setOwner(_ctx.stringValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Owner"));
+			domainConfig.setCcMode(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].CcMode"));
+			domainConfig.setCcStatus(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].CcStatus"));
 			domainConfig.setAccessType(_ctx.stringValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].AccessType"));
+			domainConfig.setVersion(_ctx.longValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Version"));
+			domainConfig.setAclStatus(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].AclStatus"));
+			domainConfig.setWafStatus(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].WafStatus"));
+			domainConfig.setWafMode(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].WafMode"));
 
 			domainConfigs.add(domainConfig);
 		}

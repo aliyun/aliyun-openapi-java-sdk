@@ -27,7 +27,7 @@ public class PutCustomEventRequest extends RpcAcsRequest<PutCustomEventResponse>
 
 	private List<EventInfo> eventInfos;
 	public PutCustomEventRequest() {
-		super("Cms", "2019-01-01", "PutCustomEvent", "cms");
+		super("Cms", "2019-01-01", "PutCustomEvent", "Cms");
 		setMethod(MethodType.POST);
 	}
 

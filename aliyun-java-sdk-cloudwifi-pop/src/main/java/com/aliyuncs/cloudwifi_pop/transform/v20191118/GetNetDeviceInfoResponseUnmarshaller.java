@@ -27,9 +27,9 @@ public class GetNetDeviceInfoResponseUnmarshaller {
 	public static GetNetDeviceInfoResponse unmarshall(GetNetDeviceInfoResponse getNetDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
 		getNetDeviceInfoResponse.setRequestId(_ctx.stringValue("GetNetDeviceInfoResponse.RequestId"));
+		getNetDeviceInfoResponse.setErrorMessage(_ctx.stringValue("GetNetDeviceInfoResponse.ErrorMessage"));
 		getNetDeviceInfoResponse.setIsSuccess(_ctx.booleanValue("GetNetDeviceInfoResponse.IsSuccess"));
 		getNetDeviceInfoResponse.setErrorCode(_ctx.integerValue("GetNetDeviceInfoResponse.ErrorCode"));
-		getNetDeviceInfoResponse.setErrorMessage(_ctx.stringValue("GetNetDeviceInfoResponse.ErrorMessage"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("GetNetDeviceInfoResponse.Data");
 		getNetDeviceInfoResponse.setData(data);

@@ -25,21 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogMonitorListResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private String code;
 
 	private String message;
 
-	private Boolean success;
-
-	private String requestId;
-
-	private Long total;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Long total;
 
 	private List<LogMonitor> logMonitorList;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -57,28 +73,12 @@ public class DescribeLogMonitorListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +89,12 @@ public class DescribeLogMonitorListResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getTotal() {
+		return this.total;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotal(Long total) {
+		this.total = total;
 	}
 
 	public List<LogMonitor> getLogMonitorList() {
@@ -107,46 +107,30 @@ public class DescribeLogMonitorListResponse extends AcsResponse {
 
 	public static class LogMonitor {
 
-		private Long logId;
-
-		private String slsRegionId;
-
-		private String slsProject;
+		private String valueFilterRelation;
 
 		private String slsLogstore;
 
 		private String metricName;
 
+		private Long groupId;
+
+		private Long logId;
+
+		private String slsRegionId;
+
 		private Long gmtCreate;
 
-		private String valueFilterRelation;
-
-		private Long groupId;
+		private String slsProject;
 
 		private List<ValueFilterObject> valueFilter;
 
-		public Long getLogId() {
-			return this.logId;
+		public String getValueFilterRelation() {
+			return this.valueFilterRelation;
 		}
 
-		public void setLogId(Long logId) {
-			this.logId = logId;
-		}
-
-		public String getSlsRegionId() {
-			return this.slsRegionId;
-		}
-
-		public void setSlsRegionId(String slsRegionId) {
-			this.slsRegionId = slsRegionId;
-		}
-
-		public String getSlsProject() {
-			return this.slsProject;
-		}
-
-		public void setSlsProject(String slsProject) {
-			this.slsProject = slsProject;
+		public void setValueFilterRelation(String valueFilterRelation) {
+			this.valueFilterRelation = valueFilterRelation;
 		}
 
 		public String getSlsLogstore() {
@@ -165,6 +149,30 @@ public class DescribeLogMonitorListResponse extends AcsResponse {
 			this.metricName = metricName;
 		}
 
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
+		}
+
+		public Long getLogId() {
+			return this.logId;
+		}
+
+		public void setLogId(Long logId) {
+			this.logId = logId;
+		}
+
+		public String getSlsRegionId() {
+			return this.slsRegionId;
+		}
+
+		public void setSlsRegionId(String slsRegionId) {
+			this.slsRegionId = slsRegionId;
+		}
+
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -173,20 +181,12 @@ public class DescribeLogMonitorListResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getValueFilterRelation() {
-			return this.valueFilterRelation;
+		public String getSlsProject() {
+			return this.slsProject;
 		}
 
-		public void setValueFilterRelation(String valueFilterRelation) {
-			this.valueFilterRelation = valueFilterRelation;
-		}
-
-		public Long getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
+		public void setSlsProject(String slsProject) {
+			this.slsProject = slsProject;
 		}
 
 		public List<ValueFilterObject> getValueFilter() {
@@ -201,9 +201,9 @@ public class DescribeLogMonitorListResponse extends AcsResponse {
 
 			private String key;
 
-			private String operator;
-
 			private String value;
+
+			private String operator;
 
 			public String getKey() {
 				return this.key;
@@ -213,20 +213,20 @@ public class DescribeLogMonitorListResponse extends AcsResponse {
 				this.key = key;
 			}
 
-			public String getOperator() {
-				return this.operator;
-			}
-
-			public void setOperator(String operator) {
-				this.operator = operator;
-			}
-
 			public String getValue() {
 				return this.value;
 			}
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
 			}
 		}
 	}

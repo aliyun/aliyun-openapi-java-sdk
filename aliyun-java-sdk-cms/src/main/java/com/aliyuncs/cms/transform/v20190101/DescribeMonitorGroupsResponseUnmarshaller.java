@@ -39,16 +39,16 @@ public class DescribeMonitorGroupsResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupsResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setGroupId(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupId"));
-			resource.setGroupName(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupName"));
-			resource.setServiceId(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].ServiceId"));
 			resource.setType(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].Type"));
-			resource.setGmtModified(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtModified"));
-			resource.setGmtCreate(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtCreate"));
-			resource.setBindUrl(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].BindUrl"));
-			resource.setDynamicTagRuleId(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].DynamicTagRuleId"));
-			resource.setGroupFounderTagKey(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupFounderTagKey"));
 			resource.setGroupFounderTagValue(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupFounderTagValue"));
+			resource.setBindUrl(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].BindUrl"));
+			resource.setGroupName(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupName"));
+			resource.setGroupId(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupId"));
+			resource.setServiceId(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].ServiceId"));
+			resource.setDynamicTagRuleId(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].DynamicTagRuleId"));
+			resource.setGmtCreate(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtCreate"));
+			resource.setGroupFounderTagKey(_ctx.stringValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GroupFounderTagKey"));
+			resource.setGmtModified(_ctx.longValue("DescribeMonitorGroupsResponse.Resources["+ i +"].GmtModified"));
 
 			List<String> templateIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMonitorGroupsResponse.Resources["+ i +"].TemplateIds.Length"); j++) {

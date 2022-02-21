@@ -109,15 +109,15 @@ public class DescribeMonitorGroupInstanceAttributeResponse extends AcsResponse {
 
 		private String instanceName;
 
-		private String instanceId;
-
-		private String desc;
-
-		private String networkType;
+		private String dimension;
 
 		private String category;
 
-		private String dimension;
+		private String instanceId;
+
+		private String networkType;
+
+		private String desc;
 
 		private List<Tag> tags;
 
@@ -133,28 +133,12 @@ public class DescribeMonitorGroupInstanceAttributeResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getDimension() {
+			return this.dimension;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
+		public void setDimension(String dimension) {
+			this.dimension = dimension;
 		}
 
 		public String getCategory() {
@@ -165,12 +149,28 @@ public class DescribeMonitorGroupInstanceAttributeResponse extends AcsResponse {
 			this.category = category;
 		}
 
-		public String getDimension() {
-			return this.dimension;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setDimension(String dimension) {
-			this.dimension = dimension;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public List<Tag> getTags() {
@@ -222,17 +222,9 @@ public class DescribeMonitorGroupInstanceAttributeResponse extends AcsResponse {
 
 		public static class Region {
 
-			private String regionId;
-
 			private String availabilityZone;
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String regionId;
 
 			public String getAvailabilityZone() {
 				return this.availabilityZone;
@@ -241,21 +233,21 @@ public class DescribeMonitorGroupInstanceAttributeResponse extends AcsResponse {
 			public void setAvailabilityZone(String availabilityZone) {
 				this.availabilityZone = availabilityZone;
 			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
 		}
 
 		public static class Vpc {
 
-			private String vpcInstanceId;
-
 			private String vswitchInstanceId;
 
-			public String getVpcInstanceId() {
-				return this.vpcInstanceId;
-			}
-
-			public void setVpcInstanceId(String vpcInstanceId) {
-				this.vpcInstanceId = vpcInstanceId;
-			}
+			private String vpcInstanceId;
 
 			public String getVswitchInstanceId() {
 				return this.vswitchInstanceId;
@@ -263,6 +255,14 @@ public class DescribeMonitorGroupInstanceAttributeResponse extends AcsResponse {
 
 			public void setVswitchInstanceId(String vswitchInstanceId) {
 				this.vswitchInstanceId = vswitchInstanceId;
+			}
+
+			public String getVpcInstanceId() {
+				return this.vpcInstanceId;
+			}
+
+			public void setVpcInstanceId(String vpcInstanceId) {
+				this.vpcInstanceId = vpcInstanceId;
 			}
 		}
 	}

@@ -43,7 +43,7 @@ public class StopOrRollbackOptimizeTaskRequest extends RpcAcsRequest<StopOrRollb
 
 	private String taskUuid;
 	public StopOrRollbackOptimizeTaskRequest() {
-		super("DAS", "2020-01-16", "StopOrRollbackOptimizeTask", "das");
+		super("DAS", "2020-01-16", "StopOrRollbackOptimizeTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

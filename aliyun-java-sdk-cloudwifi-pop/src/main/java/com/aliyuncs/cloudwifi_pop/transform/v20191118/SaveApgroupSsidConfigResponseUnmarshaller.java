@@ -26,8 +26,8 @@ public class SaveApgroupSsidConfigResponseUnmarshaller {
 	public static SaveApgroupSsidConfigResponse unmarshall(SaveApgroupSsidConfigResponse saveApgroupSsidConfigResponse, UnmarshallerContext _ctx) {
 		
 		saveApgroupSsidConfigResponse.setIsSuccess(_ctx.booleanValue("SaveApgroupSsidConfigResponse.IsSuccess"));
-		saveApgroupSsidConfigResponse.setErrorCode(_ctx.integerValue("SaveApgroupSsidConfigResponse.ErrorCode"));
 		saveApgroupSsidConfigResponse.setErrorMessage(_ctx.stringValue("SaveApgroupSsidConfigResponse.ErrorMessage"));
+		saveApgroupSsidConfigResponse.setErrorCode(_ctx.integerValue("SaveApgroupSsidConfigResponse.ErrorCode"));
 
 		List<Long> data = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("SaveApgroupSsidConfigResponse.Data.Length"); i++) {

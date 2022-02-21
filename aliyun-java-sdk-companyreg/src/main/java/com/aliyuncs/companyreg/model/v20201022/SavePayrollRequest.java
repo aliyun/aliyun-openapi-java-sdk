@@ -49,7 +49,7 @@ public class SavePayrollRequest extends RpcAcsRequest<SavePayrollResponse> {
 
 	private String personSocialInsurance;
 	public SavePayrollRequest() {
-		super("companyreg", "2020-10-22", "SavePayroll", "companyreg");
+		super("companyreg", "2020-10-22", "SavePayroll");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

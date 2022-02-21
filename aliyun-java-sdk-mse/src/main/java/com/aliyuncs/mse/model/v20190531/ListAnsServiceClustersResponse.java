@@ -88,6 +88,8 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 
 		private Map<Object,Object> metadata;
 
+		private Boolean ephemeral;
+
 		private List<NacosAnsCluster> clusters;
 
 		public Float getProtectThreshold() {
@@ -128,6 +130,14 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 
 		public void setMetadata(Map<Object,Object> metadata) {
 			this.metadata = metadata;
+		}
+
+		public Boolean getEphemeral() {
+			return this.ephemeral;
+		}
+
+		public void setEphemeral(Boolean ephemeral) {
+			this.ephemeral = ephemeral;
 		}
 
 		public List<NacosAnsCluster> getClusters() {

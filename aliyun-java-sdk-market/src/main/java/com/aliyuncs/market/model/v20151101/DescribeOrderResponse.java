@@ -26,64 +26,56 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeOrderResponse extends AcsResponse {
 
-	private Long orderId;
-
-	private Long aliUid;
+	private String productName;
 
 	private String supplierCompanyName;
 
-	private String productCode;
-
-	private String productSkuCode;
-
-	private String productName;
-
-	private String periodType;
-
-	private Integer quantity;
-
-	private Long accountQuantity;
-
-	private String orderType;
-
-	private String orderStatus;
-
-	private String payStatus;
-
-	private Long paidOn;
-
-	private Long createdOn;
-
 	private Float originalPrice;
 
-	private Float totalPrice;
-
-	private Float paymentPrice;
+	private Long aliUid;
 
 	private Float couponPrice;
 
-	private Map<Object,Object> components;
+	private Long accountQuantity;
+
+	private String periodType;
 
 	private String requestId;
+
+	private String payStatus;
+
+	private Float paymentPrice;
+
+	private String orderStatus;
+
+	private String productSkuCode;
+
+	private Long paidOn;
+
+	private Map<Object,Object> components;
+
+	private Long createdOn;
+
+	private String orderType;
+
+	private Float totalPrice;
+
+	private Integer quantity;
+
+	private Long orderId;
+
+	private String productCode;
 
 	private List<String> supplierTelephones;
 
 	private List<String> instanceIds;
 
-	public Long getOrderId() {
-		return this.orderId;
+	public String getProductName() {
+		return this.productName;
 	}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-	}
-
-	public Long getAliUid() {
-		return this.aliUid;
-	}
-
-	public void setAliUid(Long aliUid) {
-		this.aliUid = aliUid;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 	public String getSupplierCompanyName() {
@@ -94,94 +86,6 @@ public class DescribeOrderResponse extends AcsResponse {
 		this.supplierCompanyName = supplierCompanyName;
 	}
 
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
-
-	public String getProductSkuCode() {
-		return this.productSkuCode;
-	}
-
-	public void setProductSkuCode(String productSkuCode) {
-		this.productSkuCode = productSkuCode;
-	}
-
-	public String getProductName() {
-		return this.productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-	public String getPeriodType() {
-		return this.periodType;
-	}
-
-	public void setPeriodType(String periodType) {
-		this.periodType = periodType;
-	}
-
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-
-	public Long getAccountQuantity() {
-		return this.accountQuantity;
-	}
-
-	public void setAccountQuantity(Long accountQuantity) {
-		this.accountQuantity = accountQuantity;
-	}
-
-	public String getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-	}
-
-	public String getOrderStatus() {
-		return this.orderStatus;
-	}
-
-	public void setOrderStatus(String orderStatus) {
-		this.orderStatus = orderStatus;
-	}
-
-	public String getPayStatus() {
-		return this.payStatus;
-	}
-
-	public void setPayStatus(String payStatus) {
-		this.payStatus = payStatus;
-	}
-
-	public Long getPaidOn() {
-		return this.paidOn;
-	}
-
-	public void setPaidOn(Long paidOn) {
-		this.paidOn = paidOn;
-	}
-
-	public Long getCreatedOn() {
-		return this.createdOn;
-	}
-
-	public void setCreatedOn(Long createdOn) {
-		this.createdOn = createdOn;
-	}
-
 	public Float getOriginalPrice() {
 		return this.originalPrice;
 	}
@@ -190,20 +94,12 @@ public class DescribeOrderResponse extends AcsResponse {
 		this.originalPrice = originalPrice;
 	}
 
-	public Float getTotalPrice() {
-		return this.totalPrice;
+	public Long getAliUid() {
+		return this.aliUid;
 	}
 
-	public void setTotalPrice(Float totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
-	public Float getPaymentPrice() {
-		return this.paymentPrice;
-	}
-
-	public void setPaymentPrice(Float paymentPrice) {
-		this.paymentPrice = paymentPrice;
+	public void setAliUid(Long aliUid) {
+		this.aliUid = aliUid;
 	}
 
 	public Float getCouponPrice() {
@@ -214,12 +110,20 @@ public class DescribeOrderResponse extends AcsResponse {
 		this.couponPrice = couponPrice;
 	}
 
-	public Map<Object,Object> getComponents() {
-		return this.components;
+	public Long getAccountQuantity() {
+		return this.accountQuantity;
 	}
 
-	public void setComponents(Map<Object,Object> components) {
-		this.components = components;
+	public void setAccountQuantity(Long accountQuantity) {
+		this.accountQuantity = accountQuantity;
+	}
+
+	public String getPeriodType() {
+		return this.periodType;
+	}
+
+	public void setPeriodType(String periodType) {
+		this.periodType = periodType;
 	}
 
 	public String getRequestId() {
@@ -228,6 +132,102 @@ public class DescribeOrderResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getPayStatus() {
+		return this.payStatus;
+	}
+
+	public void setPayStatus(String payStatus) {
+		this.payStatus = payStatus;
+	}
+
+	public Float getPaymentPrice() {
+		return this.paymentPrice;
+	}
+
+	public void setPaymentPrice(Float paymentPrice) {
+		this.paymentPrice = paymentPrice;
+	}
+
+	public String getOrderStatus() {
+		return this.orderStatus;
+	}
+
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public String getProductSkuCode() {
+		return this.productSkuCode;
+	}
+
+	public void setProductSkuCode(String productSkuCode) {
+		this.productSkuCode = productSkuCode;
+	}
+
+	public Long getPaidOn() {
+		return this.paidOn;
+	}
+
+	public void setPaidOn(Long paidOn) {
+		this.paidOn = paidOn;
+	}
+
+	public Map<Object,Object> getComponents() {
+		return this.components;
+	}
+
+	public void setComponents(Map<Object,Object> components) {
+		this.components = components;
+	}
+
+	public Long getCreatedOn() {
+		return this.createdOn;
+	}
+
+	public void setCreatedOn(Long createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+	}
+
+	public Float getTotalPrice() {
+		return this.totalPrice;
+	}
+
+	public void setTotalPrice(Float totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public Integer getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
 	}
 
 	public List<String> getSupplierTelephones() {

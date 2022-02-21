@@ -45,11 +45,13 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 
 	private String dataId;
 
+	private String acceptLanguage;
+
 	private String desc;
 
 	private String md5;
 	public UpdateNacosConfigRequest() {
-		super("mse", "2019-05-31", "UpdateNacosConfig", "mse");
+		super("mse", "2019-05-31", "UpdateNacosConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -164,6 +166,17 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 		this.dataId = dataId;
 		if(dataId != null){
 			putQueryParameter("DataId", dataId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

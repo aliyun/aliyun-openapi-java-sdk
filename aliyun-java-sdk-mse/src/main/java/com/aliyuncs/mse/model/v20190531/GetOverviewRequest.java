@@ -27,9 +27,11 @@ public class GetOverviewRequest extends RpcAcsRequest<GetOverviewResponse> {
 
 	private Integer period;
 
+	private String acceptLanguage;
+
 	private String region;
 	public GetOverviewRequest() {
-		super("mse", "2019-05-31", "GetOverview", "mse");
+		super("mse", "2019-05-31", "GetOverview");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,6 +47,17 @@ public class GetOverviewRequest extends RpcAcsRequest<GetOverviewResponse> {
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

@@ -35,7 +35,7 @@ public class ListFlowCategoryRequest extends RpcAcsRequest<ListFlowCategoryRespo
 
 	private String projectId;
 	public ListFlowCategoryRequest() {
-		super("Emr", "2016-04-08", "ListFlowCategory", "emr");
+		super("Emr", "2016-04-08", "ListFlowCategory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

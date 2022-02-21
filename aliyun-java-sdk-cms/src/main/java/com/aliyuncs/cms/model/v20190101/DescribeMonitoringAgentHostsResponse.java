@@ -25,23 +25,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private String code;
 
 	private String message;
 
-	private Boolean success;
+	private Integer pageNumber;
 
-	private String requestId;
+	private Integer pageSize;
 
 	private Integer pageTotal;
 
 	private Integer total;
 
-	private Integer pageSize;
-
-	private Integer pageNumber;
-
 	private List<Host> hosts;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -59,20 +75,20 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageTotal() {
@@ -91,22 +107,6 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public List<Host> getHosts() {
 		return this.hosts;
 	}
@@ -117,41 +117,33 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 
 	public static class Host {
 
-		private String instanceId;
-
 		private String serialNumber;
+
+		private String natIp;
 
 		private String hostName;
 
 		private Long aliUid;
 
-		private String operatingSystem;
+		private String networkType;
 
-		private String ipGroup;
-
-		private String region;
-
-		private String agentVersion;
-
-		private String eipAddress;
-
-		private String eipId;
+		private String instanceId;
 
 		private Boolean isAliyunHost;
 
-		private String natIp;
+		private String eipAddress;
 
-		private String networkType;
+		private String agentVersion;
+
+		private String ipGroup;
+
+		private String eipId;
+
+		private String region;
 
 		private String instanceTypeFamily;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String operatingSystem;
 
 		public String getSerialNumber() {
 			return this.serialNumber;
@@ -159,6 +151,14 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 
 		public void setSerialNumber(String serialNumber) {
 			this.serialNumber = serialNumber;
+		}
+
+		public String getNatIp() {
+			return this.natIp;
+		}
+
+		public void setNatIp(String natIp) {
+			this.natIp = natIp;
 		}
 
 		public String getHostName() {
@@ -177,52 +177,20 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 			this.aliUid = aliUid;
 		}
 
-		public String getOperatingSystem() {
-			return this.operatingSystem;
+		public String getNetworkType() {
+			return this.networkType;
 		}
 
-		public void setOperatingSystem(String operatingSystem) {
-			this.operatingSystem = operatingSystem;
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
 		}
 
-		public String getIpGroup() {
-			return this.ipGroup;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setIpGroup(String ipGroup) {
-			this.ipGroup = ipGroup;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getAgentVersion() {
-			return this.agentVersion;
-		}
-
-		public void setAgentVersion(String agentVersion) {
-			this.agentVersion = agentVersion;
-		}
-
-		public String getEipAddress() {
-			return this.eipAddress;
-		}
-
-		public void setEipAddress(String eipAddress) {
-			this.eipAddress = eipAddress;
-		}
-
-		public String getEipId() {
-			return this.eipId;
-		}
-
-		public void setEipId(String eipId) {
-			this.eipId = eipId;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Boolean getIsAliyunHost() {
@@ -233,20 +201,44 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 			this.isAliyunHost = isAliyunHost;
 		}
 
-		public String getNatIp() {
-			return this.natIp;
+		public String getEipAddress() {
+			return this.eipAddress;
 		}
 
-		public void setNatIp(String natIp) {
-			this.natIp = natIp;
+		public void setEipAddress(String eipAddress) {
+			this.eipAddress = eipAddress;
 		}
 
-		public String getNetworkType() {
-			return this.networkType;
+		public String getAgentVersion() {
+			return this.agentVersion;
 		}
 
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
+		public void setAgentVersion(String agentVersion) {
+			this.agentVersion = agentVersion;
+		}
+
+		public String getIpGroup() {
+			return this.ipGroup;
+		}
+
+		public void setIpGroup(String ipGroup) {
+			this.ipGroup = ipGroup;
+		}
+
+		public String getEipId() {
+			return this.eipId;
+		}
+
+		public void setEipId(String eipId) {
+			this.eipId = eipId;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getInstanceTypeFamily() {
@@ -255,6 +247,14 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 
 		public void setInstanceTypeFamily(String instanceTypeFamily) {
 			this.instanceTypeFamily = instanceTypeFamily;
+		}
+
+		public String getOperatingSystem() {
+			return this.operatingSystem;
+		}
+
+		public void setOperatingSystem(String operatingSystem) {
+			this.operatingSystem = operatingSystem;
 		}
 	}
 

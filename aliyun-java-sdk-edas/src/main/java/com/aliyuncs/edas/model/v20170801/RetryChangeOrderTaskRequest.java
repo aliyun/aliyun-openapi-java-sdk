@@ -29,7 +29,7 @@ public class RetryChangeOrderTaskRequest extends RoaAcsRequest<RetryChangeOrderT
 
 	private String taskId;
 	public RetryChangeOrderTaskRequest() {
-		super("Edas", "2017-08-01", "RetryChangeOrderTask", "edas");
+		super("Edas", "2017-08-01", "RetryChangeOrderTask", "Edas");
 		setUriPattern("/pop/v5/changeorder/task_retry");
 		setMethod(MethodType.GET);
 		try {

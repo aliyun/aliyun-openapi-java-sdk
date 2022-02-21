@@ -42,6 +42,7 @@ public class OnsTopicListResponseUnmarshaller {
 			publishInfoDo.setCreateTime(_ctx.longValue("OnsTopicListResponse.Data["+ i +"].CreateTime"));
 			publishInfoDo.setTopic(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].Topic"));
 			publishInfoDo.setInstanceId(_ctx.stringValue("OnsTopicListResponse.Data["+ i +"].InstanceId"));
+			publishInfoDo.setServiceStatus(_ctx.integerValue("OnsTopicListResponse.Data["+ i +"].ServiceStatus"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("OnsTopicListResponse.Data["+ i +"].Tags.Length"); j++) {

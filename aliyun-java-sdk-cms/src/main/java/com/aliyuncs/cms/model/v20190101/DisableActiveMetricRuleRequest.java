@@ -26,7 +26,7 @@ public class DisableActiveMetricRuleRequest extends RpcAcsRequest<DisableActiveM
 
 	private String product;
 	public DisableActiveMetricRuleRequest() {
-		super("Cms", "2019-01-01", "DisableActiveMetricRule", "cms");
+		super("Cms", "2019-01-01", "DisableActiveMetricRule", "Cms");
 		setMethod(MethodType.POST);
 	}
 

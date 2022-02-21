@@ -1,3 +1,6 @@
+2022-01-21 Version: 2.7.44
+- New add DeleteIntegration and GetIntegrationState api.
+
 2022-01-07 Version: 2.7.43
 - New add AddASMIntegration and DeleteASMIntegration and GetASMIntegrationState api.
 

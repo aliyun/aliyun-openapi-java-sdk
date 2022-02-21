@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMonitorGroupDynamicRulesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<ResourceItem> resource;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class DescribeMonitorGroupDynamicRulesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ResourceItem> getResource() {
@@ -109,11 +109,19 @@ public class DescribeMonitorGroupDynamicRulesResponse extends AcsResponse {
 
 		public static class Filter {
 
+			private String value;
+
 			private String function;
 
 			private String name;
 
-			private String value;
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 
 			public String getFunction() {
 				return this.function;
@@ -129,14 +137,6 @@ public class DescribeMonitorGroupDynamicRulesResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
 			}
 		}
 	}

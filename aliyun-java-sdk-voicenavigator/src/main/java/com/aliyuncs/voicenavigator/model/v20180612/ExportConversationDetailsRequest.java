@@ -15,6 +15,7 @@
 package com.aliyuncs.voicenavigator.model.v20180612;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.voicenavigator.Endpoint;
 
@@ -32,6 +33,8 @@ public class ExportConversationDetailsRequest extends RpcAcsRequest<ExportConver
 	private String instanceId;
 
 	private Long beginTimeRightRange;
+
+	private List<String> optionss;
 	public ExportConversationDetailsRequest() {
 		super("VoiceNavigator", "2018-06-12", "ExportConversationDetails", "voicebot");
 		setMethod(MethodType.POST);
@@ -83,6 +86,19 @@ public class ExportConversationDetailsRequest extends RpcAcsRequest<ExportConver
 		if(beginTimeRightRange != null){
 			putQueryParameter("BeginTimeRightRange", beginTimeRightRange.toString());
 		}
+	}
+
+	public List<String> getOptionss() {
+		return this.optionss;
+	}
+
+	public void setOptionss(List<String> optionss) {
+		this.optionss = optionss;	
+		if (optionss != null) {
+			for (int i = 0; i < optionss.size(); i++) {
+				putQueryParameter("Options." + (i + 1) , optionss.get(i));
+			}
+		}	
 	}
 
 	@Override

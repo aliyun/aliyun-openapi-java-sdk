@@ -77,38 +77,22 @@ public class DescribeCustomEventAttributeResponse extends AcsResponse {
 
 	public static class CustomEvent {
 
-		private String id;
-
-		private String content;
-
-		private String groupId;
+		private String time;
 
 		private String name;
 
-		private String time;
+		private String groupId;
 
-		public String getId() {
-			return this.id;
+		private String content;
+
+		private String id;
+
+		public String getTime() {
+			return this.time;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setTime(String time) {
+			this.time = time;
 		}
 
 		public String getName() {
@@ -119,12 +103,28 @@ public class DescribeCustomEventAttributeResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getTime() {
-			return this.time;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setTime(String time) {
-			this.time = time;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

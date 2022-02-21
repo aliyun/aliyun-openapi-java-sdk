@@ -19,21 +19,10 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            put("rus-west-1-pop", "dysmsapi.ap-southeast-1.aliyuncs.com");
             put("cn-beijing", "dysmsapi-proxy.cn-beijing.aliyuncs.com");
-            put("ap-south-1", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("eu-west-1", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("eu-west-1-oxs", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("ap-northeast-1", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("me-east-1", "dysmsapi.ap-southeast-1.aliyuncs.com");
+            put("cn-hongkong", "dysmsapi-xman.cn-hongkong.aliyuncs.com");
             put("ap-southeast-1", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("ap-southeast-2", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("ap-southeast-3", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("eu-central-1", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("ap-southeast-5", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("us-east-1", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("ap-northeast-2-pop", "dysmsapi.ap-southeast-1.aliyuncs.com");
-            put("us-west-1", "dysmsapi.ap-southeast-1.aliyuncs.com");
+            put("ap-southeast-5", "dysmsapi-xman.ap-southeast-5.aliyuncs.com");
         }
     };
 

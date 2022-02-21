@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMarketCategoriesResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private List<Category> categories;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -59,14 +67,6 @@ public class QueryMarketCategoriesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public List<Category> getCategories() {
 		return this.categories;
 	}
@@ -77,21 +77,13 @@ public class QueryMarketCategoriesResponse extends AcsResponse {
 
 	public static class Category {
 
-		private Long id;
-
 		private String categoryCode;
 
 		private String categoryName;
 
+		private Long id;
+
 		private List<ChildCategory> childCategories;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
 
 		public String getCategoryCode() {
 			return this.categoryCode;
@@ -109,6 +101,14 @@ public class QueryMarketCategoriesResponse extends AcsResponse {
 			this.categoryName = categoryName;
 		}
 
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public List<ChildCategory> getChildCategories() {
 			return this.childCategories;
 		}
@@ -119,19 +119,11 @@ public class QueryMarketCategoriesResponse extends AcsResponse {
 
 		public static class ChildCategory {
 
-			private Long id;
-
 			private String categoryCode;
 
 			private String categoryName;
 
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
+			private Long id;
 
 			public String getCategoryCode() {
 				return this.categoryCode;
@@ -147,6 +139,14 @@ public class QueryMarketCategoriesResponse extends AcsResponse {
 
 			public void setCategoryName(String categoryName) {
 				this.categoryName = categoryName;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

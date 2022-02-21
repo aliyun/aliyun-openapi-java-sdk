@@ -26,7 +26,7 @@ public class DeleteLogMonitorRequest extends RpcAcsRequest<DeleteLogMonitorRespo
 
 	private Long logId;
 	public DeleteLogMonitorRequest() {
-		super("Cms", "2019-01-01", "DeleteLogMonitor", "cms");
+		super("Cms", "2019-01-01", "DeleteLogMonitor", "Cms");
 		setMethod(MethodType.POST);
 	}
 

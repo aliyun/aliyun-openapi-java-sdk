@@ -24,9 +24,9 @@ public class NewJobOrderResponseUnmarshaller {
 	public static NewJobOrderResponse unmarshall(NewJobOrderResponse newJobOrderResponse, UnmarshallerContext _ctx) {
 		
 		newJobOrderResponse.setRequestId(_ctx.stringValue("NewJobOrderResponse.RequestId"));
+		newJobOrderResponse.setErrorMessage(_ctx.stringValue("NewJobOrderResponse.ErrorMessage"));
 		newJobOrderResponse.setIsSuccess(_ctx.booleanValue("NewJobOrderResponse.IsSuccess"));
 		newJobOrderResponse.setErrorCode(_ctx.integerValue("NewJobOrderResponse.ErrorCode"));
-		newJobOrderResponse.setErrorMessage(_ctx.stringValue("NewJobOrderResponse.ErrorMessage"));
 
 		Data data = new Data();
 		data.setOrderId(_ctx.longValue("NewJobOrderResponse.Data.OrderId"));

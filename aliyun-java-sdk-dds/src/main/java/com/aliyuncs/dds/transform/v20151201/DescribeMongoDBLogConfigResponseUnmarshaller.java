@@ -26,6 +26,14 @@ public class DescribeMongoDBLogConfigResponseUnmarshaller {
 		describeMongoDBLogConfigResponse.setUserProjectName(_ctx.stringValue("DescribeMongoDBLogConfigResponse.UserProjectName"));
 		describeMongoDBLogConfigResponse.setIsUserProjectLogstoreExist(_ctx.integerValue("DescribeMongoDBLogConfigResponse.IsUserProjectLogstoreExist"));
 		describeMongoDBLogConfigResponse.setIsEtlMetaExist(_ctx.integerValue("DescribeMongoDBLogConfigResponse.IsEtlMetaExist"));
+		describeMongoDBLogConfigResponse.setServiceType(_ctx.stringValue("DescribeMongoDBLogConfigResponse.ServiceType"));
+		describeMongoDBLogConfigResponse.setEnableAudit(_ctx.booleanValue("DescribeMongoDBLogConfigResponse.EnableAudit"));
+		describeMongoDBLogConfigResponse.setTtlForTrail(_ctx.longValue("DescribeMongoDBLogConfigResponse.TtlForTrail"));
+		describeMongoDBLogConfigResponse.setUsedStorageForTrail(_ctx.longValue("DescribeMongoDBLogConfigResponse.UsedStorageForTrail"));
+		describeMongoDBLogConfigResponse.setPreserveStorageForTrail(_ctx.longValue("DescribeMongoDBLogConfigResponse.PreserveStorageForTrail"));
+		describeMongoDBLogConfigResponse.setTtlForStandard(_ctx.longValue("DescribeMongoDBLogConfigResponse.TtlForStandard"));
+		describeMongoDBLogConfigResponse.setUsedStorageForStandard(_ctx.longValue("DescribeMongoDBLogConfigResponse.UsedStorageForStandard"));
+		describeMongoDBLogConfigResponse.setPreserveStorageForStandard(_ctx.longValue("DescribeMongoDBLogConfigResponse.PreserveStorageForStandard"));
 	 
 	 	return describeMongoDBLogConfigResponse;
 	}

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProjectNodesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<ProjectNode> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeProjectNodesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ProjectNode> getResult() {
@@ -57,85 +57,37 @@ public class DescribeProjectNodesResponse extends AcsResponse {
 
 	public static class ProjectNode {
 
-		private Integer stepNo;
-
-		private Integer finalStepNo;
-
-		private Long parentNodeId;
-
-		private Long nodeId;
-
-		private String nodeName;
-
-		private Long previousNodeId;
-
 		private Long nextNodeId;
 
-		private String operatorRole;
+		private Integer stepNo;
 
 		private Boolean autoFinishNode;
 
-		private Boolean needAttachment;
+		private Integer finalStepNo;
+
+		private Long previousNodeId;
+
+		private Long parentNodeId;
+
+		private Long gmtExpired;
+
+		private String operatorRole;
+
+		private Long gmtStart;
+
+		private String nodeStatus;
+
+		private String nodeName;
+
+		private Long gmtFinished;
 
 		private Boolean allowRollbackNode;
 
 		private String templateForm;
 
-		private String nodeStatus;
+		private Boolean needAttachment;
 
-		private Long gmtStart;
-
-		private Long gmtExpired;
-
-		private Long gmtFinished;
-
-		public Integer getStepNo() {
-			return this.stepNo;
-		}
-
-		public void setStepNo(Integer stepNo) {
-			this.stepNo = stepNo;
-		}
-
-		public Integer getFinalStepNo() {
-			return this.finalStepNo;
-		}
-
-		public void setFinalStepNo(Integer finalStepNo) {
-			this.finalStepNo = finalStepNo;
-		}
-
-		public Long getParentNodeId() {
-			return this.parentNodeId;
-		}
-
-		public void setParentNodeId(Long parentNodeId) {
-			this.parentNodeId = parentNodeId;
-		}
-
-		public Long getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
-		}
-
-		public String getNodeName() {
-			return this.nodeName;
-		}
-
-		public void setNodeName(String nodeName) {
-			this.nodeName = nodeName;
-		}
-
-		public Long getPreviousNodeId() {
-			return this.previousNodeId;
-		}
-
-		public void setPreviousNodeId(Long previousNodeId) {
-			this.previousNodeId = previousNodeId;
-		}
+		private Long nodeId;
 
 		public Long getNextNodeId() {
 			return this.nextNodeId;
@@ -145,12 +97,12 @@ public class DescribeProjectNodesResponse extends AcsResponse {
 			this.nextNodeId = nextNodeId;
 		}
 
-		public String getOperatorRole() {
-			return this.operatorRole;
+		public Integer getStepNo() {
+			return this.stepNo;
 		}
 
-		public void setOperatorRole(String operatorRole) {
-			this.operatorRole = operatorRole;
+		public void setStepNo(Integer stepNo) {
+			this.stepNo = stepNo;
 		}
 
 		public Boolean getAutoFinishNode() {
@@ -161,12 +113,76 @@ public class DescribeProjectNodesResponse extends AcsResponse {
 			this.autoFinishNode = autoFinishNode;
 		}
 
-		public Boolean getNeedAttachment() {
-			return this.needAttachment;
+		public Integer getFinalStepNo() {
+			return this.finalStepNo;
 		}
 
-		public void setNeedAttachment(Boolean needAttachment) {
-			this.needAttachment = needAttachment;
+		public void setFinalStepNo(Integer finalStepNo) {
+			this.finalStepNo = finalStepNo;
+		}
+
+		public Long getPreviousNodeId() {
+			return this.previousNodeId;
+		}
+
+		public void setPreviousNodeId(Long previousNodeId) {
+			this.previousNodeId = previousNodeId;
+		}
+
+		public Long getParentNodeId() {
+			return this.parentNodeId;
+		}
+
+		public void setParentNodeId(Long parentNodeId) {
+			this.parentNodeId = parentNodeId;
+		}
+
+		public Long getGmtExpired() {
+			return this.gmtExpired;
+		}
+
+		public void setGmtExpired(Long gmtExpired) {
+			this.gmtExpired = gmtExpired;
+		}
+
+		public String getOperatorRole() {
+			return this.operatorRole;
+		}
+
+		public void setOperatorRole(String operatorRole) {
+			this.operatorRole = operatorRole;
+		}
+
+		public Long getGmtStart() {
+			return this.gmtStart;
+		}
+
+		public void setGmtStart(Long gmtStart) {
+			this.gmtStart = gmtStart;
+		}
+
+		public String getNodeStatus() {
+			return this.nodeStatus;
+		}
+
+		public void setNodeStatus(String nodeStatus) {
+			this.nodeStatus = nodeStatus;
+		}
+
+		public String getNodeName() {
+			return this.nodeName;
+		}
+
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
+		}
+
+		public Long getGmtFinished() {
+			return this.gmtFinished;
+		}
+
+		public void setGmtFinished(Long gmtFinished) {
+			this.gmtFinished = gmtFinished;
 		}
 
 		public Boolean getAllowRollbackNode() {
@@ -185,36 +201,20 @@ public class DescribeProjectNodesResponse extends AcsResponse {
 			this.templateForm = templateForm;
 		}
 
-		public String getNodeStatus() {
-			return this.nodeStatus;
+		public Boolean getNeedAttachment() {
+			return this.needAttachment;
 		}
 
-		public void setNodeStatus(String nodeStatus) {
-			this.nodeStatus = nodeStatus;
+		public void setNeedAttachment(Boolean needAttachment) {
+			this.needAttachment = needAttachment;
 		}
 
-		public Long getGmtStart() {
-			return this.gmtStart;
+		public Long getNodeId() {
+			return this.nodeId;
 		}
 
-		public void setGmtStart(Long gmtStart) {
-			this.gmtStart = gmtStart;
-		}
-
-		public Long getGmtExpired() {
-			return this.gmtExpired;
-		}
-
-		public void setGmtExpired(Long gmtExpired) {
-			this.gmtExpired = gmtExpired;
-		}
-
-		public Long getGmtFinished() {
-			return this.gmtFinished;
-		}
-
-		public void setGmtFinished(Long gmtFinished) {
-			this.gmtFinished = gmtFinished;
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 

@@ -40,7 +40,7 @@ public class ApplyMetricRuleTemplateRequest extends RpcAcsRequest<ApplyMetricRul
 
 	private Long silenceTime;
 	public ApplyMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "ApplyMetricRuleTemplate", "cms");
+		super("Cms", "2019-01-01", "ApplyMetricRuleTemplate", "Cms");
 		setMethod(MethodType.POST);
 	}
 

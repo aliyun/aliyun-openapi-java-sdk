@@ -45,7 +45,7 @@ public class UpdateFeeRequest extends RpcAcsRequest<UpdateFeeResponse> {
 
 	private Long id;
 	public UpdateFeeRequest() {
-		super("companyreg", "2020-10-22", "UpdateFee", "companyreg");
+		super("companyreg", "2020-10-22", "UpdateFee");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

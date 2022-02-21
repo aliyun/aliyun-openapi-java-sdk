@@ -141,18 +141,18 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public static class ComponentsItem {
 
-				private String componentId;
+				private String type;
 
 				private String componentKey;
 
-				private String type;
+				private String componentId;
 
-				public String getComponentId() {
-					return this.componentId;
+				public String getType() {
+					return this.type;
 				}
 
-				public void setComponentId(String componentId) {
-					this.componentId = componentId;
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public String getComponentKey() {
@@ -163,55 +163,31 @@ public class GetK8sApplicationResponse extends AcsResponse {
 					this.componentKey = componentKey;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getComponentId() {
+					return this.componentId;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setComponentId(String componentId) {
+					this.componentId = componentId;
 				}
 			}
 		}
 
 		public static class ImageInfo {
 
-			private String imageUrl;
-
-			private String repoName;
-
-			private String regionId;
-
 			private String repoId;
 
-			private String repoNamespace;
+			private String imageUrl;
 
 			private String repoOriginType;
 
 			private String tag;
 
-			public String getImageUrl() {
-				return this.imageUrl;
-			}
+			private String repoName;
 
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
-			}
+			private String repoNamespace;
 
-			public String getRepoName() {
-				return this.repoName;
-			}
-
-			public void setRepoName(String repoName) {
-				this.repoName = repoName;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String regionId;
 
 			public String getRepoId() {
 				return this.repoId;
@@ -221,12 +197,12 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.repoId = repoId;
 			}
 
-			public String getRepoNamespace() {
-				return this.repoNamespace;
+			public String getImageUrl() {
+				return this.imageUrl;
 			}
 
-			public void setRepoNamespace(String repoNamespace) {
-				this.repoNamespace = repoNamespace;
+			public void setImageUrl(String imageUrl) {
+				this.imageUrl = imageUrl;
 			}
 
 			public String getRepoOriginType() {
@@ -244,64 +220,88 @@ public class GetK8sApplicationResponse extends AcsResponse {
 			public void setTag(String tag) {
 				this.tag = tag;
 			}
+
+			public String getRepoName() {
+				return this.repoName;
+			}
+
+			public void setRepoName(String repoName) {
+				this.repoName = repoName;
+			}
+
+			public String getRepoNamespace() {
+				return this.repoNamespace;
+			}
+
+			public void setRepoNamespace(String repoNamespace) {
+				this.repoNamespace = repoNamespace;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
 		}
 
 		public static class App {
 
-			private String applicationType;
+			private Integer requestMem;
 
-			private String cmd;
+			private Integer instancesBeforeScaling;
 
 			private String deployType;
 
-			private String edasContainerVersion;
+			private String applicationName;
+
+			private String applicationType;
+
+			private Integer instances;
+
+			private Integer limitMem;
+
+			private String cmd;
+
+			private String regionId;
 
 			private Integer buildpackId;
 
 			private String tomcatVersion;
 
-			private Integer instancesBeforeScaling;
-
-			private String appId;
-
-			private String applicationName;
-
-			private String clusterId;
-
-			private Integer instances;
-
 			private String csClusterId;
-
-			private Integer limitCpuM;
 
 			private Integer requestCpuM;
 
-			private Integer limitMem;
-
-			private Integer requestMem;
+			private String appId;
 
 			private String k8sNamespace;
 
-			private String regionId;
+			private String edasContainerVersion;
+
+			private Integer limitCpuM;
+
+			private String clusterId;
 
 			private List<Env> envList;
 
 			private List<String> cmdArgs;
 
-			public String getApplicationType() {
-				return this.applicationType;
+			public Integer getRequestMem() {
+				return this.requestMem;
 			}
 
-			public void setApplicationType(String applicationType) {
-				this.applicationType = applicationType;
+			public void setRequestMem(Integer requestMem) {
+				this.requestMem = requestMem;
 			}
 
-			public String getCmd() {
-				return this.cmd;
+			public Integer getInstancesBeforeScaling() {
+				return this.instancesBeforeScaling;
 			}
 
-			public void setCmd(String cmd) {
-				this.cmd = cmd;
+			public void setInstancesBeforeScaling(Integer instancesBeforeScaling) {
+				this.instancesBeforeScaling = instancesBeforeScaling;
 			}
 
 			public String getDeployType() {
@@ -312,12 +312,52 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.deployType = deployType;
 			}
 
-			public String getEdasContainerVersion() {
-				return this.edasContainerVersion;
+			public String getApplicationName() {
+				return this.applicationName;
 			}
 
-			public void setEdasContainerVersion(String edasContainerVersion) {
-				this.edasContainerVersion = edasContainerVersion;
+			public void setApplicationName(String applicationName) {
+				this.applicationName = applicationName;
+			}
+
+			public String getApplicationType() {
+				return this.applicationType;
+			}
+
+			public void setApplicationType(String applicationType) {
+				this.applicationType = applicationType;
+			}
+
+			public Integer getInstances() {
+				return this.instances;
+			}
+
+			public void setInstances(Integer instances) {
+				this.instances = instances;
+			}
+
+			public Integer getLimitMem() {
+				return this.limitMem;
+			}
+
+			public void setLimitMem(Integer limitMem) {
+				this.limitMem = limitMem;
+			}
+
+			public String getCmd() {
+				return this.cmd;
+			}
+
+			public void setCmd(String cmd) {
+				this.cmd = cmd;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public Integer getBuildpackId() {
@@ -336,60 +376,12 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.tomcatVersion = tomcatVersion;
 			}
 
-			public Integer getInstancesBeforeScaling() {
-				return this.instancesBeforeScaling;
-			}
-
-			public void setInstancesBeforeScaling(Integer instancesBeforeScaling) {
-				this.instancesBeforeScaling = instancesBeforeScaling;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-
-			public String getApplicationName() {
-				return this.applicationName;
-			}
-
-			public void setApplicationName(String applicationName) {
-				this.applicationName = applicationName;
-			}
-
-			public String getClusterId() {
-				return this.clusterId;
-			}
-
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
-			}
-
-			public Integer getInstances() {
-				return this.instances;
-			}
-
-			public void setInstances(Integer instances) {
-				this.instances = instances;
-			}
-
 			public String getCsClusterId() {
 				return this.csClusterId;
 			}
 
 			public void setCsClusterId(String csClusterId) {
 				this.csClusterId = csClusterId;
-			}
-
-			public Integer getLimitCpuM() {
-				return this.limitCpuM;
-			}
-
-			public void setLimitCpuM(Integer limitCpuM) {
-				this.limitCpuM = limitCpuM;
 			}
 
 			public Integer getRequestCpuM() {
@@ -400,20 +392,12 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.requestCpuM = requestCpuM;
 			}
 
-			public Integer getLimitMem() {
-				return this.limitMem;
+			public String getAppId() {
+				return this.appId;
 			}
 
-			public void setLimitMem(Integer limitMem) {
-				this.limitMem = limitMem;
-			}
-
-			public Integer getRequestMem() {
-				return this.requestMem;
-			}
-
-			public void setRequestMem(Integer requestMem) {
-				this.requestMem = requestMem;
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 
 			public String getK8sNamespace() {
@@ -424,12 +408,28 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.k8sNamespace = k8sNamespace;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
+			public String getEdasContainerVersion() {
+				return this.edasContainerVersion;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setEdasContainerVersion(String edasContainerVersion) {
+				this.edasContainerVersion = edasContainerVersion;
+			}
+
+			public Integer getLimitCpuM() {
+				return this.limitCpuM;
+			}
+
+			public void setLimitCpuM(Integer limitCpuM) {
+				this.limitCpuM = limitCpuM;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
 			}
 
 			public List<Env> getEnvList() {
@@ -474,99 +474,39 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 		public static class Conf {
 
-			private String jarStartArgs;
-
-			private String jarStartOptions;
-
-			private String k8sCmd;
-
-			private String k8sCmdArgs;
-
-			private String k8sLocalvolumeInfo;
-
-			private String k8sNasInfo;
-
-			private String k8sVolumeInfo;
-
-			private String liveness;
-
 			private String postStart;
-
-			private String preStop;
 
 			private String readiness;
 
-			private String runtimeClassName;
-
-			private String deployAcrossZones;
-
 			private Boolean ahasEnabled;
+
+			private String k8sCmdArgs;
+
+			private String liveness;
 
 			private String deployAcrossNodes;
 
-			public String getJarStartArgs() {
-				return this.jarStartArgs;
-			}
+			private String k8sCmd;
 
-			public void setJarStartArgs(String jarStartArgs) {
-				this.jarStartArgs = jarStartArgs;
-			}
+			private String preStop;
 
-			public String getJarStartOptions() {
-				return this.jarStartOptions;
-			}
+			private String deployAcrossZones;
 
-			public void setJarStartOptions(String jarStartOptions) {
-				this.jarStartOptions = jarStartOptions;
-			}
+			private String jarStartArgs;
 
-			public String getK8sCmd() {
-				return this.k8sCmd;
-			}
+			private String k8sNasInfo;
 
-			public void setK8sCmd(String k8sCmd) {
-				this.k8sCmd = k8sCmd;
-			}
+			private String jarStartOptions;
 
-			public String getK8sCmdArgs() {
-				return this.k8sCmdArgs;
-			}
+			private String runtimeClassName;
 
-			public void setK8sCmdArgs(String k8sCmdArgs) {
-				this.k8sCmdArgs = k8sCmdArgs;
-			}
+			private String k8sLocalvolumeInfo;
 
-			public String getK8sLocalvolumeInfo() {
-				return this.k8sLocalvolumeInfo;
-			}
+			private String k8sVolumeInfo;
 
-			public void setK8sLocalvolumeInfo(String k8sLocalvolumeInfo) {
-				this.k8sLocalvolumeInfo = k8sLocalvolumeInfo;
-			}
+			private String affinity;
 
-			public String getK8sNasInfo() {
-				return this.k8sNasInfo;
-			}
-
-			public void setK8sNasInfo(String k8sNasInfo) {
-				this.k8sNasInfo = k8sNasInfo;
-			}
-
-			public String getK8sVolumeInfo() {
-				return this.k8sVolumeInfo;
-			}
-
-			public void setK8sVolumeInfo(String k8sVolumeInfo) {
-				this.k8sVolumeInfo = k8sVolumeInfo;
-			}
-
-			public String getLiveness() {
-				return this.liveness;
-			}
-
-			public void setLiveness(String liveness) {
-				this.liveness = liveness;
-			}
+			private String tolerations;
 
 			public String getPostStart() {
 				return this.postStart;
@@ -574,14 +514,6 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setPostStart(String postStart) {
 				this.postStart = postStart;
-			}
-
-			public String getPreStop() {
-				return this.preStop;
-			}
-
-			public void setPreStop(String preStop) {
-				this.preStop = preStop;
 			}
 
 			public String getReadiness() {
@@ -592,12 +524,52 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.readiness = readiness;
 			}
 
-			public String getRuntimeClassName() {
-				return this.runtimeClassName;
+			public Boolean getAhasEnabled() {
+				return this.ahasEnabled;
 			}
 
-			public void setRuntimeClassName(String runtimeClassName) {
-				this.runtimeClassName = runtimeClassName;
+			public void setAhasEnabled(Boolean ahasEnabled) {
+				this.ahasEnabled = ahasEnabled;
+			}
+
+			public String getK8sCmdArgs() {
+				return this.k8sCmdArgs;
+			}
+
+			public void setK8sCmdArgs(String k8sCmdArgs) {
+				this.k8sCmdArgs = k8sCmdArgs;
+			}
+
+			public String getLiveness() {
+				return this.liveness;
+			}
+
+			public void setLiveness(String liveness) {
+				this.liveness = liveness;
+			}
+
+			public String getDeployAcrossNodes() {
+				return this.deployAcrossNodes;
+			}
+
+			public void setDeployAcrossNodes(String deployAcrossNodes) {
+				this.deployAcrossNodes = deployAcrossNodes;
+			}
+
+			public String getK8sCmd() {
+				return this.k8sCmd;
+			}
+
+			public void setK8sCmd(String k8sCmd) {
+				this.k8sCmd = k8sCmd;
+			}
+
+			public String getPreStop() {
+				return this.preStop;
+			}
+
+			public void setPreStop(String preStop) {
+				this.preStop = preStop;
 			}
 
 			public String getDeployAcrossZones() {
@@ -608,38 +580,78 @@ public class GetK8sApplicationResponse extends AcsResponse {
 				this.deployAcrossZones = deployAcrossZones;
 			}
 
-			public Boolean getAhasEnabled() {
-				return this.ahasEnabled;
+			public String getJarStartArgs() {
+				return this.jarStartArgs;
 			}
 
-			public void setAhasEnabled(Boolean ahasEnabled) {
-				this.ahasEnabled = ahasEnabled;
+			public void setJarStartArgs(String jarStartArgs) {
+				this.jarStartArgs = jarStartArgs;
 			}
 
-			public String getDeployAcrossNodes() {
-				return this.deployAcrossNodes;
+			public String getK8sNasInfo() {
+				return this.k8sNasInfo;
 			}
 
-			public void setDeployAcrossNodes(String deployAcrossNodes) {
-				this.deployAcrossNodes = deployAcrossNodes;
+			public void setK8sNasInfo(String k8sNasInfo) {
+				this.k8sNasInfo = k8sNasInfo;
+			}
+
+			public String getJarStartOptions() {
+				return this.jarStartOptions;
+			}
+
+			public void setJarStartOptions(String jarStartOptions) {
+				this.jarStartOptions = jarStartOptions;
+			}
+
+			public String getRuntimeClassName() {
+				return this.runtimeClassName;
+			}
+
+			public void setRuntimeClassName(String runtimeClassName) {
+				this.runtimeClassName = runtimeClassName;
+			}
+
+			public String getK8sLocalvolumeInfo() {
+				return this.k8sLocalvolumeInfo;
+			}
+
+			public void setK8sLocalvolumeInfo(String k8sLocalvolumeInfo) {
+				this.k8sLocalvolumeInfo = k8sLocalvolumeInfo;
+			}
+
+			public String getK8sVolumeInfo() {
+				return this.k8sVolumeInfo;
+			}
+
+			public void setK8sVolumeInfo(String k8sVolumeInfo) {
+				this.k8sVolumeInfo = k8sVolumeInfo;
+			}
+
+			public String getAffinity() {
+				return this.affinity;
+			}
+
+			public void setAffinity(String affinity) {
+				this.affinity = affinity;
+			}
+
+			public String getTolerations() {
+				return this.tolerations;
+			}
+
+			public void setTolerations(String tolerations) {
+				this.tolerations = tolerations;
 			}
 		}
 
 		public static class LatestVersion {
 
-			private String packageVersion;
-
 			private String url;
 
 			private String warUrl;
 
-			public String getPackageVersion() {
-				return this.packageVersion;
-			}
-
-			public void setPackageVersion(String packageVersion) {
-				this.packageVersion = packageVersion;
-			}
+			private String packageVersion;
 
 			public String getUrl() {
 				return this.url;
@@ -655,6 +667,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setWarUrl(String warUrl) {
 				this.warUrl = warUrl;
+			}
+
+			public String getPackageVersion() {
+				return this.packageVersion;
+			}
+
+			public void setPackageVersion(String packageVersion) {
+				this.packageVersion = packageVersion;
 			}
 		}
 	}

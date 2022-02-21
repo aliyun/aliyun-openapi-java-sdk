@@ -107,6 +107,12 @@ public class GetUserResponse extends AcsResponse {
 
 		private String roleId;
 
+		private String deviceId;
+
+		private String deviceExt;
+
+		private String deviceState;
+
 		public String getDisplayName() {
 			return this.displayName;
 		}
@@ -185,6 +191,30 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setRoleId(String roleId) {
 			this.roleId = roleId;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public String getDeviceExt() {
+			return this.deviceExt;
+		}
+
+		public void setDeviceExt(String deviceExt) {
+			this.deviceExt = deviceExt;
+		}
+
+		public String getDeviceState() {
+			return this.deviceState;
+		}
+
+		public void setDeviceState(String deviceState) {
+			this.deviceState = deviceState;
 		}
 	}
 

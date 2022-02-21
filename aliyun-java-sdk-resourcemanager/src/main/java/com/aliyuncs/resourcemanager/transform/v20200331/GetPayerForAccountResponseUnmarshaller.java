@@ -23,8 +23,8 @@ public class GetPayerForAccountResponseUnmarshaller {
 	public static GetPayerForAccountResponse unmarshall(GetPayerForAccountResponse getPayerForAccountResponse, UnmarshallerContext _ctx) {
 		
 		getPayerForAccountResponse.setRequestId(_ctx.stringValue("GetPayerForAccountResponse.RequestId"));
-		getPayerForAccountResponse.setPayerAccountId(_ctx.stringValue("GetPayerForAccountResponse.PayerAccountId"));
 		getPayerForAccountResponse.setPayerAccountName(_ctx.stringValue("GetPayerForAccountResponse.PayerAccountName"));
+		getPayerForAccountResponse.setPayerAccountId(_ctx.stringValue("GetPayerForAccountResponse.PayerAccountId"));
 	 
 	 	return getPayerForAccountResponse;
 	}

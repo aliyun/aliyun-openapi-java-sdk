@@ -29,7 +29,7 @@ public class DeleteEnvHsfTrafficControlRequest extends RoaAcsRequest<DeleteEnvHs
 
 	private String pointcutName;
 	public DeleteEnvHsfTrafficControlRequest() {
-		super("Edas", "2017-08-01", "DeleteEnvHsfTrafficControl", "edas");
+		super("Edas", "2017-08-01", "DeleteEnvHsfTrafficControl", "Edas");
 		setUriPattern("/pop/v5/gray/env_hsf_traffic_control");
 		setMethod(MethodType.DELETE);
 		try {

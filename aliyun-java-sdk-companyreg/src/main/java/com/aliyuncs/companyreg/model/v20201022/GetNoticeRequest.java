@@ -27,7 +27,7 @@ public class GetNoticeRequest extends RpcAcsRequest<GetNoticeResponse> {
 
 	private String bizId;
 	public GetNoticeRequest() {
-		super("companyreg", "2020-10-22", "GetNotice", "companyreg");
+		super("companyreg", "2020-10-22", "GetNotice");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,9 +23,9 @@ public class CreateMetricRuleTemplateResponseUnmarshaller {
 	public static CreateMetricRuleTemplateResponse unmarshall(CreateMetricRuleTemplateResponse createMetricRuleTemplateResponse, UnmarshallerContext _ctx) {
 		
 		createMetricRuleTemplateResponse.setRequestId(_ctx.stringValue("CreateMetricRuleTemplateResponse.RequestId"));
-		createMetricRuleTemplateResponse.setSuccess(_ctx.booleanValue("CreateMetricRuleTemplateResponse.Success"));
 		createMetricRuleTemplateResponse.setCode(_ctx.integerValue("CreateMetricRuleTemplateResponse.Code"));
 		createMetricRuleTemplateResponse.setMessage(_ctx.stringValue("CreateMetricRuleTemplateResponse.Message"));
+		createMetricRuleTemplateResponse.setSuccess(_ctx.booleanValue("CreateMetricRuleTemplateResponse.Success"));
 		createMetricRuleTemplateResponse.setId(_ctx.longValue("CreateMetricRuleTemplateResponse.Id"));
 	 
 	 	return createMetricRuleTemplateResponse;

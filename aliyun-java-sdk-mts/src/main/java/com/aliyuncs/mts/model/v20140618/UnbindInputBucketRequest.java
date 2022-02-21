@@ -27,6 +27,8 @@ public class UnbindInputBucketRequest extends RpcAcsRequest<UnbindInputBucketRes
 
 	private Long resourceOwnerId;
 
+	private String depositorCredentials;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -53,6 +55,17 @@ public class UnbindInputBucketRequest extends RpcAcsRequest<UnbindInputBucketRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDepositorCredentials() {
+		return this.depositorCredentials;
+	}
+
+	public void setDepositorCredentials(String depositorCredentials) {
+		this.depositorCredentials = depositorCredentials;
+		if(depositorCredentials != null){
+			putQueryParameter("DepositorCredentials", depositorCredentials);
 		}
 	}
 

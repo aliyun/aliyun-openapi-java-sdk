@@ -23,11 +23,11 @@ public class DescribeMonitoringAgentAccessKeyResponseUnmarshaller {
 	public static DescribeMonitoringAgentAccessKeyResponse unmarshall(DescribeMonitoringAgentAccessKeyResponse describeMonitoringAgentAccessKeyResponse, UnmarshallerContext _ctx) {
 		
 		describeMonitoringAgentAccessKeyResponse.setRequestId(_ctx.stringValue("DescribeMonitoringAgentAccessKeyResponse.RequestId"));
-		describeMonitoringAgentAccessKeyResponse.setCode(_ctx.integerValue("DescribeMonitoringAgentAccessKeyResponse.Code"));
-		describeMonitoringAgentAccessKeyResponse.setMessage(_ctx.stringValue("DescribeMonitoringAgentAccessKeyResponse.Message"));
-		describeMonitoringAgentAccessKeyResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentAccessKeyResponse.Success"));
 		describeMonitoringAgentAccessKeyResponse.setAccessKey(_ctx.stringValue("DescribeMonitoringAgentAccessKeyResponse.AccessKey"));
 		describeMonitoringAgentAccessKeyResponse.setSecretKey(_ctx.stringValue("DescribeMonitoringAgentAccessKeyResponse.SecretKey"));
+		describeMonitoringAgentAccessKeyResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentAccessKeyResponse.Success"));
+		describeMonitoringAgentAccessKeyResponse.setCode(_ctx.integerValue("DescribeMonitoringAgentAccessKeyResponse.Code"));
+		describeMonitoringAgentAccessKeyResponse.setMessage(_ctx.stringValue("DescribeMonitoringAgentAccessKeyResponse.Message"));
 	 
 	 	return describeMonitoringAgentAccessKeyResponse;
 	}

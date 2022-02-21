@@ -49,7 +49,7 @@ public class AddMockRuleRequest extends RoaAcsRequest<AddMockRuleResponse> {
 
 	private String region;
 	public AddMockRuleRequest() {
-		super("Edas", "2017-08-01", "AddMockRule", "edas");
+		super("Edas", "2017-08-01", "AddMockRule", "Edas");
 		setUriPattern("/pop/sp/api/mock/addMockRule");
 		setMethod(MethodType.POST);
 		try {

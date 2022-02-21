@@ -27,7 +27,7 @@ public class GetChangeOrderInfoRequest extends RoaAcsRequest<GetChangeOrderInfoR
 
 	private String changeOrderId;
 	public GetChangeOrderInfoRequest() {
-		super("Edas", "2017-08-01", "GetChangeOrderInfo", "edas");
+		super("Edas", "2017-08-01", "GetChangeOrderInfo", "Edas");
 		setUriPattern("/pop/v5/changeorder/change_order_info");
 		setMethod(MethodType.POST);
 		try {

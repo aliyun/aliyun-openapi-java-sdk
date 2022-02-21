@@ -24,13 +24,26 @@ import com.aliyuncs.mse.Endpoint;
  */
 public class GetMseFeatureSwitchRequest extends RpcAcsRequest<GetMseFeatureSwitchResponse> {
 	   
+
+	private String acceptLanguage;
 	public GetMseFeatureSwitchRequest() {
-		super("mse", "2019-05-31", "GetMseFeatureSwitch", "mse");
+		super("mse", "2019-05-31", "GetMseFeatureSwitch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	@Override

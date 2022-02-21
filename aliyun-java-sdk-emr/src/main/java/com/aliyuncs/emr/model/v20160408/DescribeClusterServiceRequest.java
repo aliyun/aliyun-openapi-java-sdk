@@ -31,7 +31,7 @@ public class DescribeClusterServiceRequest extends RpcAcsRequest<DescribeCluster
 
 	private String serviceName;
 	public DescribeClusterServiceRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterService", "emr");
+		super("Emr", "2016-04-08", "DescribeClusterService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -331,6 +331,8 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 				private String issuer;
 
+				private Integer keySize;
+
 				private List<String> domainNames;
 
 				public String getEndTime() {
@@ -363,6 +365,14 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 				public void setIssuer(String issuer) {
 					this.issuer = issuer;
+				}
+
+				public Integer getKeySize() {
+					return this.keySize;
+				}
+
+				public void setKeySize(Integer keySize) {
+					this.keySize = keySize;
 				}
 
 				public List<String> getDomainNames() {

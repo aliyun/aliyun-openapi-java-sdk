@@ -37,11 +37,11 @@ public class DescribeMonitorGroupInstancesResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupInstancesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
+			resource.setCategory(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].Category"));
+			resource.setInstanceId(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].InstanceId"));
+			resource.setInstanceName(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].InstanceName"));
 			resource.setId(_ctx.longValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].Id"));
 			resource.setRegionId(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].RegionId"));
-			resource.setInstanceId(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].InstanceId"));
-			resource.setCategory(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].Category"));
-			resource.setInstanceName(_ctx.stringValue("DescribeMonitorGroupInstancesResponse.Resources["+ i +"].InstanceName"));
 
 			resources.add(resource);
 		}

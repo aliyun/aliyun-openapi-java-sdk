@@ -31,7 +31,7 @@ public class EnableDeviceTunnelShareRequest extends RpcAcsRequest<EnableDeviceTu
 
 	private String deviceName;
 	public EnableDeviceTunnelShareRequest() {
-		super("Iot", "2018-01-20", "EnableDeviceTunnelShare", "iot");
+		super("Iot", "2018-01-20", "EnableDeviceTunnelShare");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

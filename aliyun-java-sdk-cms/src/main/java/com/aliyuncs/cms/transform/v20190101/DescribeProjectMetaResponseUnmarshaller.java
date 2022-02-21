@@ -30,9 +30,9 @@ public class DescribeProjectMetaResponseUnmarshaller {
 		describeProjectMetaResponse.setSuccess(_ctx.booleanValue("DescribeProjectMetaResponse.Success"));
 		describeProjectMetaResponse.setCode(_ctx.stringValue("DescribeProjectMetaResponse.Code"));
 		describeProjectMetaResponse.setMessage(_ctx.stringValue("DescribeProjectMetaResponse.Message"));
-		describeProjectMetaResponse.setTotal(_ctx.stringValue("DescribeProjectMetaResponse.Total"));
-		describeProjectMetaResponse.setPageNumber(_ctx.stringValue("DescribeProjectMetaResponse.PageNumber"));
 		describeProjectMetaResponse.setPageSize(_ctx.stringValue("DescribeProjectMetaResponse.PageSize"));
+		describeProjectMetaResponse.setPageNumber(_ctx.stringValue("DescribeProjectMetaResponse.PageNumber"));
+		describeProjectMetaResponse.setTotal(_ctx.stringValue("DescribeProjectMetaResponse.Total"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProjectMetaResponse.Resources.Length"); i++) {

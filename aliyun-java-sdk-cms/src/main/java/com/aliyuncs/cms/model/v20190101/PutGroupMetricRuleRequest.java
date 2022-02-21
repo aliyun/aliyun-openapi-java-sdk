@@ -82,7 +82,7 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 
 	private String dimensions;
 	public PutGroupMetricRuleRequest() {
-		super("Cms", "2019-01-01", "PutGroupMetricRule", "cms");
+		super("Cms", "2019-01-01", "PutGroupMetricRule", "Cms");
 		setMethod(MethodType.POST);
 	}
 

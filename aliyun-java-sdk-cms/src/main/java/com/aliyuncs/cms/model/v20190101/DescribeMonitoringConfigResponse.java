@@ -24,41 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMonitoringConfigResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
-
-	private Boolean success;
-
 	private String requestId;
 
 	private Boolean autoInstall;
 
+	private Boolean success;
+
 	private Boolean enableInstallAgentNewECS;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -76,12 +52,36 @@ public class DescribeMonitoringConfigResponse extends AcsResponse {
 		this.autoInstall = autoInstall;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Boolean getEnableInstallAgentNewECS() {
 		return this.enableInstallAgentNewECS;
 	}
 
 	public void setEnableInstallAgentNewECS(Boolean enableInstallAgentNewECS) {
 		this.enableInstallAgentNewECS = enableInstallAgentNewECS;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

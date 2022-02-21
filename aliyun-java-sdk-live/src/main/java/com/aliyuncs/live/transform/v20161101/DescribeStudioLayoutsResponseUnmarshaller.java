@@ -24,6 +24,7 @@ import com.aliyuncs.live.model.v20161101.DescribeStudioLayoutsResponse.StudioLay
 import com.aliyuncs.live.model.v20161101.DescribeStudioLayoutsResponse.StudioLayout.LayerOrderConfig;
 import com.aliyuncs.live.model.v20161101.DescribeStudioLayoutsResponse.StudioLayout.MediaInputConfig;
 import com.aliyuncs.live.model.v20161101.DescribeStudioLayoutsResponse.StudioLayout.ScreenInputConfig;
+import com.aliyuncs.live.model.v20161101.DescribeStudioLayoutsResponse.StudioLayout.ScreenInputConfig.AudioConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -65,6 +66,12 @@ public class DescribeStudioLayoutsResponseUnmarshaller {
 				screenInputConfig.setPositionY(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PositionY"));
 				screenInputConfig.setHeightNormalized(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].HeightNormalized"));
 				screenInputConfig.setPortraitType(_ctx.integerValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PortraitType"));
+				screenInputConfig.setOnlyAudio(_ctx.booleanValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].OnlyAudio"));
+
+				AudioConfig audioConfig = new AudioConfig();
+				audioConfig.setVolumeRate(_ctx.floatValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].AudioConfig.VolumeRate"));
+				audioConfig.setValidChannel(_ctx.stringValue("DescribeStudioLayoutsResponse.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].AudioConfig.ValidChannel"));
+				screenInputConfig.setAudioConfig(audioConfig);
 
 				screenInputConfigList.add(screenInputConfig);
 			}

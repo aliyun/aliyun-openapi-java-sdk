@@ -28,10 +28,10 @@ public class ListBaselineConfigsResponseUnmarshaller {
 	public static ListBaselineConfigsResponse unmarshall(ListBaselineConfigsResponse listBaselineConfigsResponse, UnmarshallerContext _ctx) {
 		
 		listBaselineConfigsResponse.setRequestId(_ctx.stringValue("ListBaselineConfigsResponse.RequestId"));
-		listBaselineConfigsResponse.setSuccess(_ctx.booleanValue("ListBaselineConfigsResponse.Success"));
-		listBaselineConfigsResponse.setErrorCode(_ctx.stringValue("ListBaselineConfigsResponse.ErrorCode"));
-		listBaselineConfigsResponse.setErrorMessage(_ctx.stringValue("ListBaselineConfigsResponse.ErrorMessage"));
 		listBaselineConfigsResponse.setHttpStatusCode(_ctx.integerValue("ListBaselineConfigsResponse.HttpStatusCode"));
+		listBaselineConfigsResponse.setErrorMessage(_ctx.stringValue("ListBaselineConfigsResponse.ErrorMessage"));
+		listBaselineConfigsResponse.setErrorCode(_ctx.stringValue("ListBaselineConfigsResponse.ErrorCode"));
+		listBaselineConfigsResponse.setSuccess(_ctx.booleanValue("ListBaselineConfigsResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListBaselineConfigsResponse.Data.PageNumber"));
@@ -41,20 +41,20 @@ public class ListBaselineConfigsResponseUnmarshaller {
 		List<BaselinesItem> baselines = new ArrayList<BaselinesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListBaselineConfigsResponse.Data.Baselines.Length"); i++) {
 			BaselinesItem baselinesItem = new BaselinesItem();
-			baselinesItem.setBaselineId(_ctx.longValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].BaselineId"));
-			baselinesItem.setPriority(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].Priority"));
-			baselinesItem.setBaselineName(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].BaselineName"));
-			baselinesItem.setOwner(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].Owner"));
-			baselinesItem.setProjectId(_ctx.longValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].ProjectId"));
-			baselinesItem.setUseFlag(_ctx.booleanValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].UseFlag"));
-			baselinesItem.setBaselineType(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].BaselineType"));
-			baselinesItem.setExpHour(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].ExpHour"));
-			baselinesItem.setExpMinu(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].ExpMinu"));
-			baselinesItem.setSlaHour(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].SlaHour"));
-			baselinesItem.setSlaMinu(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].SlaMinu"));
-			baselinesItem.setHourExpDetail(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].HourExpDetail"));
 			baselinesItem.setHourSlaDetail(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].HourSlaDetail"));
 			baselinesItem.setIsDefault(_ctx.booleanValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].IsDefault"));
+			baselinesItem.setOwner(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].Owner"));
+			baselinesItem.setProjectId(_ctx.longValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].ProjectId"));
+			baselinesItem.setPriority(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].Priority"));
+			baselinesItem.setSlaMinu(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].SlaMinu"));
+			baselinesItem.setSlaHour(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].SlaHour"));
+			baselinesItem.setBaselineId(_ctx.longValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].BaselineId"));
+			baselinesItem.setBaselineName(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].BaselineName"));
+			baselinesItem.setHourExpDetail(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].HourExpDetail"));
+			baselinesItem.setUseFlag(_ctx.booleanValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].UseFlag"));
+			baselinesItem.setExpHour(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].ExpHour"));
+			baselinesItem.setBaselineType(_ctx.stringValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].BaselineType"));
+			baselinesItem.setExpMinu(_ctx.integerValue("ListBaselineConfigsResponse.Data.Baselines["+ i +"].ExpMinu"));
 
 			baselines.add(baselinesItem);
 		}

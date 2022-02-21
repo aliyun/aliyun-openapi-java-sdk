@@ -32,11 +32,11 @@ public class DescribeProjectOperateLogsResponseUnmarshaller {
 		List<ProjectMessage> result = new ArrayList<ProjectMessage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProjectOperateLogsResponse.Result.Length"); i++) {
 			ProjectMessage projectMessage = new ProjectMessage();
-			projectMessage.setOperatorRole(_ctx.stringValue("DescribeProjectOperateLogsResponse.Result["+ i +"].OperatorRole"));
-			projectMessage.setOperator(_ctx.longValue("DescribeProjectOperateLogsResponse.Result["+ i +"].Operator"));
-			projectMessage.setOperatorName(_ctx.stringValue("DescribeProjectOperateLogsResponse.Result["+ i +"].OperatorName"));
-			projectMessage.setDescription(_ctx.stringValue("DescribeProjectOperateLogsResponse.Result["+ i +"].Description"));
 			projectMessage.setGmtCreate(_ctx.longValue("DescribeProjectOperateLogsResponse.Result["+ i +"].GmtCreate"));
+			projectMessage.setOperator(_ctx.longValue("DescribeProjectOperateLogsResponse.Result["+ i +"].Operator"));
+			projectMessage.setOperatorRole(_ctx.stringValue("DescribeProjectOperateLogsResponse.Result["+ i +"].OperatorRole"));
+			projectMessage.setDescription(_ctx.stringValue("DescribeProjectOperateLogsResponse.Result["+ i +"].Description"));
+			projectMessage.setOperatorName(_ctx.stringValue("DescribeProjectOperateLogsResponse.Result["+ i +"].OperatorName"));
 
 			result.add(projectMessage);
 		}

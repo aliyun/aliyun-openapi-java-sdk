@@ -41,9 +41,11 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 
 	private Integer pageSize;
 
+	private String acceptLanguage;
+
 	private String serviceName;
 	public ListAnsServicesRequest() {
-		super("mse", "2019-05-31", "ListAnsServices", "mse");
+		super("mse", "2019-05-31", "ListAnsServices");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -136,6 +138,17 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

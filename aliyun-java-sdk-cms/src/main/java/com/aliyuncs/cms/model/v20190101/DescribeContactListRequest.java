@@ -34,7 +34,7 @@ public class DescribeContactListRequest extends RpcAcsRequest<DescribeContactLis
 
 	private String chanelValue;
 	public DescribeContactListRequest() {
-		super("Cms", "2019-01-01", "DescribeContactList", "cms");
+		super("Cms", "2019-01-01", "DescribeContactList", "Cms");
 		setMethod(MethodType.POST);
 	}
 

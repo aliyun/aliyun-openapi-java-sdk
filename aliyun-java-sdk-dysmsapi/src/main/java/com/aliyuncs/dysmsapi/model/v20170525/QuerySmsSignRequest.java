@@ -33,7 +33,7 @@ public class QuerySmsSignRequest extends RpcAcsRequest<QuerySmsSignResponse> {
 
 	private String signName;
 	public QuerySmsSignRequest() {
-		super("Dysmsapi", "2017-05-25", "QuerySmsSign", "dysms");
+		super("Dysmsapi", "2017-05-25", "QuerySmsSign");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

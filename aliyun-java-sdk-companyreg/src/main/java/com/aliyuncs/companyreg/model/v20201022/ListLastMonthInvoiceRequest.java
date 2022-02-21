@@ -31,7 +31,7 @@ public class ListLastMonthInvoiceRequest extends RpcAcsRequest<ListLastMonthInvo
 
 	private Integer page;
 	public ListLastMonthInvoiceRequest() {
-		super("companyreg", "2020-10-22", "ListLastMonthInvoice", "companyreg");
+		super("companyreg", "2020-10-22", "ListLastMonthInvoice");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

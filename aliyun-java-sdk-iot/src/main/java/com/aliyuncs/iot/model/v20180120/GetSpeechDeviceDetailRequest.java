@@ -29,7 +29,7 @@ public class GetSpeechDeviceDetailRequest extends RpcAcsRequest<GetSpeechDeviceD
 
 	private String iotInstanceId;
 	public GetSpeechDeviceDetailRequest() {
-		super("Iot", "2018-01-20", "GetSpeechDeviceDetail", "iot");
+		super("Iot", "2018-01-20", "GetSpeechDeviceDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

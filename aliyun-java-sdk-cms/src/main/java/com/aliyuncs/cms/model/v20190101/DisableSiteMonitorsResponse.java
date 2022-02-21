@@ -28,9 +28,9 @@ public class DisableSiteMonitorsResponse extends AcsResponse {
 
 	private String message;
 
-	private String success;
-
 	private String requestId;
+
+	private String success;
 
 	private Data data;
 
@@ -50,20 +50,20 @@ public class DisableSiteMonitorsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public Data getData() {

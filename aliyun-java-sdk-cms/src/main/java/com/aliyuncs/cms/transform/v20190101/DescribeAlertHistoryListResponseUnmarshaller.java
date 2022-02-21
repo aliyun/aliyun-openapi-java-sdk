@@ -27,37 +27,31 @@ public class DescribeAlertHistoryListResponseUnmarshaller {
 	public static DescribeAlertHistoryListResponse unmarshall(DescribeAlertHistoryListResponse describeAlertHistoryListResponse, UnmarshallerContext _ctx) {
 		
 		describeAlertHistoryListResponse.setRequestId(_ctx.stringValue("DescribeAlertHistoryListResponse.RequestId"));
-		describeAlertHistoryListResponse.setSuccess(_ctx.booleanValue("DescribeAlertHistoryListResponse.Success"));
 		describeAlertHistoryListResponse.setCode(_ctx.stringValue("DescribeAlertHistoryListResponse.Code"));
 		describeAlertHistoryListResponse.setMessage(_ctx.stringValue("DescribeAlertHistoryListResponse.Message"));
 		describeAlertHistoryListResponse.setTotal(_ctx.stringValue("DescribeAlertHistoryListResponse.Total"));
+		describeAlertHistoryListResponse.setSuccess(_ctx.booleanValue("DescribeAlertHistoryListResponse.Success"));
 
 		List<AlarmHistory> alarmHistoryList = new ArrayList<AlarmHistory>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList.Length"); i++) {
 			AlarmHistory alarmHistory = new AlarmHistory();
-			alarmHistory.setRuleId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].RuleId"));
-			alarmHistory.setGroupId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].GroupId"));
-			alarmHistory.setNamespace(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Namespace"));
-			alarmHistory.setMetricName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].MetricName"));
-			alarmHistory.setDimensions(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Dimensions"));
-			alarmHistory.setExpression(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Expression"));
-			alarmHistory.setEvaluationCount(_ctx.integerValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].EvaluationCount"));
-			alarmHistory.setValue(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Value"));
-			alarmHistory.setAlertTime(_ctx.longValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].AlertTime"));
-			alarmHistory.setLastTime(_ctx.longValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].LastTime"));
-			alarmHistory.setLevel(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Level"));
-			alarmHistory.setPreLevel(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].PreLevel"));
-			alarmHistory.setRuleName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].RuleName"));
-			alarmHistory.setState(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].State"));
 			alarmHistory.setStatus(_ctx.integerValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Status"));
+			alarmHistory.setMetricName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].MetricName"));
+			alarmHistory.setEvaluationCount(_ctx.integerValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].EvaluationCount"));
+			alarmHistory.setState(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].State"));
+			alarmHistory.setPreLevel(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].PreLevel"));
+			alarmHistory.setNamespace(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Namespace"));
 			alarmHistory.setWebhooks(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Webhooks"));
+			alarmHistory.setRuleName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].RuleName"));
+			alarmHistory.setRuleId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].RuleId"));
+			alarmHistory.setLastTime(_ctx.longValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].LastTime"));
+			alarmHistory.setValue(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Value"));
+			alarmHistory.setExpression(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Expression"));
+			alarmHistory.setGroupId(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].GroupId"));
+			alarmHistory.setAlertTime(_ctx.longValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].AlertTime"));
 			alarmHistory.setInstanceName(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].InstanceName"));
-
-			List<String> contactGroups = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactGroups.Length"); j++) {
-				contactGroups.add(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactGroups["+ j +"]"));
-			}
-			alarmHistory.setContactGroups(contactGroups);
+			alarmHistory.setDimensions(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Dimensions"));
+			alarmHistory.setLevel(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Level"));
 
 			List<String> contacts = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].Contacts.Length"); j++) {
@@ -71,17 +65,23 @@ public class DescribeAlertHistoryListResponseUnmarshaller {
 			}
 			alarmHistory.setContactALIIMs(contactALIIMs);
 
+			List<String> contactMails = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactMails.Length"); j++) {
+				contactMails.add(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactMails["+ j +"]"));
+			}
+			alarmHistory.setContactMails(contactMails);
+
 			List<String> contactSmses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactSmses.Length"); j++) {
 				contactSmses.add(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactSmses["+ j +"]"));
 			}
 			alarmHistory.setContactSmses(contactSmses);
 
-			List<String> contactMails = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactMails.Length"); j++) {
-				contactMails.add(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactMails["+ j +"]"));
+			List<String> contactGroups = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactGroups.Length"); j++) {
+				contactGroups.add(_ctx.stringValue("DescribeAlertHistoryListResponse.AlarmHistoryList["+ i +"].ContactGroups["+ j +"]"));
 			}
-			alarmHistory.setContactMails(contactMails);
+			alarmHistory.setContactGroups(contactGroups);
 
 			alarmHistoryList.add(alarmHistory);
 		}

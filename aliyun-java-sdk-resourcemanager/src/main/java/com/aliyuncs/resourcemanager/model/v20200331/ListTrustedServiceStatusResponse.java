@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTrustedServiceStatusResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<EnabledServicePrincipal> enabledServicePrincipals;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListTrustedServiceStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListTrustedServiceStatusResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<EnabledServicePrincipal> getEnabledServicePrincipals() {
@@ -77,17 +77,9 @@ public class ListTrustedServiceStatusResponse extends AcsResponse {
 
 	public static class EnabledServicePrincipal {
 
-		private String enableTime;
-
 		private String servicePrincipal;
 
-		public String getEnableTime() {
-			return this.enableTime;
-		}
-
-		public void setEnableTime(String enableTime) {
-			this.enableTime = enableTime;
-		}
+		private String enableTime;
 
 		public String getServicePrincipal() {
 			return this.servicePrincipal;
@@ -95,6 +87,14 @@ public class ListTrustedServiceStatusResponse extends AcsResponse {
 
 		public void setServicePrincipal(String servicePrincipal) {
 			this.servicePrincipal = servicePrincipal;
+		}
+
+		public String getEnableTime() {
+			return this.enableTime;
+		}
+
+		public void setEnableTime(String enableTime) {
+			this.enableTime = enableTime;
 		}
 	}
 

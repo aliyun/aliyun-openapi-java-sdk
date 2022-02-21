@@ -211,6 +211,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private MetadataOptions metadataOptions;
 
+		private ImageOptions imageOptions;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -707,6 +709,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.metadataOptions = metadataOptions;
 		}
 
+		public ImageOptions getImageOptions() {
+			return this.imageOptions;
+		}
+
+		public void setImageOptions(ImageOptions imageOptions) {
+			this.imageOptions = imageOptions;
+		}
+
 		public static class NetworkInterface {
 
 			private String type;
@@ -1103,6 +1113,19 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setHttpTokens(String httpTokens) {
 				this.httpTokens = httpTokens;
+			}
+		}
+
+		public static class ImageOptions {
+
+			private Boolean loginAsNonRoot;
+
+			public Boolean getLoginAsNonRoot() {
+				return this.loginAsNonRoot;
+			}
+
+			public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+				this.loginAsNonRoot = loginAsNonRoot;
 			}
 		}
 	}

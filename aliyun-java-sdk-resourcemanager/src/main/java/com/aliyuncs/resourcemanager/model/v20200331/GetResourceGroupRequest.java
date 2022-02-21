@@ -28,7 +28,7 @@ public class GetResourceGroupRequest extends RpcAcsRequest<GetResourceGroupRespo
 
 	private String resourceGroupId;
 	public GetResourceGroupRequest() {
-		super("ResourceManager", "2020-03-31", "GetResourceGroup", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "GetResourceGroup");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

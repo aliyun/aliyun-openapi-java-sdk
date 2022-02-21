@@ -36,6 +36,7 @@ public class InvokeDataAPIServiceResponseUnmarshaller {
 		data.setPageNo(_ctx.integerValue("InvokeDataAPIServiceResponse.Data.PageNo"));
 		data.setPageSize(_ctx.integerValue("InvokeDataAPIServiceResponse.Data.PageSize"));
 		data.setApiSrn(_ctx.stringValue("InvokeDataAPIServiceResponse.Data.ApiSrn"));
+		data.setTotalSize(_ctx.integerValue("InvokeDataAPIServiceResponse.Data.TotalSize"));
 
 		List<String> fieldNameList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("InvokeDataAPIServiceResponse.Data.FieldNameList.Length"); i++) {

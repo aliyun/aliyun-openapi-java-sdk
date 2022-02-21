@@ -27,7 +27,7 @@ public class RefreshCustomerInfoRequest extends RpcAcsRequest<RefreshCustomerInf
 
 	private String bizId;
 	public RefreshCustomerInfoRequest() {
-		super("companyreg", "2020-10-22", "RefreshCustomerInfo", "companyreg");
+		super("companyreg", "2020-10-22", "RefreshCustomerInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

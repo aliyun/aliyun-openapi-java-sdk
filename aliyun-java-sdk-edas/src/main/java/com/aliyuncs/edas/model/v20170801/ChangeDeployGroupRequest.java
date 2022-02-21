@@ -33,7 +33,7 @@ public class ChangeDeployGroupRequest extends RoaAcsRequest<ChangeDeployGroupRes
 
 	private String groupName;
 	public ChangeDeployGroupRequest() {
-		super("Edas", "2017-08-01", "ChangeDeployGroup", "edas");
+		super("Edas", "2017-08-01", "ChangeDeployGroup", "Edas");
 		setUriPattern("/pop/v5/changeorder/co_change_group");
 		setMethod(MethodType.POST);
 		try {

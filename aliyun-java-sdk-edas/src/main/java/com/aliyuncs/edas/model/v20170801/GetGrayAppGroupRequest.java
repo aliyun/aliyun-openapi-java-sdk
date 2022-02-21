@@ -31,7 +31,7 @@ public class GetGrayAppGroupRequest extends RoaAcsRequest<GetGrayAppGroupRespons
 
 	private String pointcutName;
 	public GetGrayAppGroupRequest() {
-		super("Edas", "2017-08-01", "GetGrayAppGroup", "edas");
+		super("Edas", "2017-08-01", "GetGrayAppGroup", "Edas");
 		setUriPattern("/pop/v5/gray/app_group_list");
 		setMethod(MethodType.GET);
 		try {

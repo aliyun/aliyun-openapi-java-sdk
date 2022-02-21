@@ -33,7 +33,7 @@ public class ListPayrollRequest extends RpcAcsRequest<ListPayrollResponse> {
 
 	private Integer pageIndex;
 	public ListPayrollRequest() {
-		super("companyreg", "2020-10-22", "ListPayroll", "companyreg");
+		super("companyreg", "2020-10-22", "ListPayroll");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

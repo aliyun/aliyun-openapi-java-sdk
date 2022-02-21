@@ -29,11 +29,13 @@ public class ImportNacosConfigRequest extends RpcAcsRequest<ImportNacosConfigRes
 
 	private String namespaceId;
 
+	private String acceptLanguage;
+
 	private String fileUrl;
 
 	private String policy;
 	public ImportNacosConfigRequest() {
-		super("mse", "2019-05-31", "ImportNacosConfig", "mse");
+		super("mse", "2019-05-31", "ImportNacosConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class ImportNacosConfigRequest extends RpcAcsRequest<ImportNacosConfigRes
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

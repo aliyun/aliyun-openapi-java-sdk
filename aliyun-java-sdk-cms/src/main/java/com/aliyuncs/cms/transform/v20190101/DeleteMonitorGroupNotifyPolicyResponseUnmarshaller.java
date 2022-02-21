@@ -25,8 +25,8 @@ public class DeleteMonitorGroupNotifyPolicyResponseUnmarshaller {
 		deleteMonitorGroupNotifyPolicyResponse.setRequestId(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.RequestId"));
 		deleteMonitorGroupNotifyPolicyResponse.setCode(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Code"));
 		deleteMonitorGroupNotifyPolicyResponse.setMessage(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Message"));
-		deleteMonitorGroupNotifyPolicyResponse.setSuccess(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Success"));
 		deleteMonitorGroupNotifyPolicyResponse.setResult(_ctx.integerValue("DeleteMonitorGroupNotifyPolicyResponse.Result"));
+		deleteMonitorGroupNotifyPolicyResponse.setSuccess(_ctx.stringValue("DeleteMonitorGroupNotifyPolicyResponse.Success"));
 	 
 	 	return deleteMonitorGroupNotifyPolicyResponse;
 	}

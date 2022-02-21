@@ -31,7 +31,7 @@ public class ListEnterprisesRequest extends RpcAcsRequest<ListEnterprisesRespons
 
 	private Integer currentPage;
 	public ListEnterprisesRequest() {
-		super("companyreg", "2020-10-22", "ListEnterprises", "companyreg");
+		super("companyreg", "2020-10-22", "ListEnterprises");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

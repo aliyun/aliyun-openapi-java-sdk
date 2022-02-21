@@ -24,7 +24,6 @@ public class CreateDiagnosticReportResponseUnmarshaller {
 		
 		createDiagnosticReportResponse.setRequestId(_ctx.stringValue("CreateDiagnosticReportResponse.RequestId"));
 		createDiagnosticReportResponse.setMessage(_ctx.stringValue("CreateDiagnosticReportResponse.Message"));
-		createDiagnosticReportResponse.setSynchro(_ctx.stringValue("CreateDiagnosticReportResponse.Synchro"));
 		createDiagnosticReportResponse.setData(_ctx.stringValue("CreateDiagnosticReportResponse.Data"));
 		createDiagnosticReportResponse.setCode(_ctx.stringValue("CreateDiagnosticReportResponse.Code"));
 		createDiagnosticReportResponse.setSuccess(_ctx.stringValue("CreateDiagnosticReportResponse.Success"));

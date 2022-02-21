@@ -29,7 +29,7 @@ public class GetPeriodInfoRequest extends RpcAcsRequest<GetPeriodInfoResponse> {
 
 	private String bizId;
 	public GetPeriodInfoRequest() {
-		super("companyreg", "2020-10-22", "GetPeriodInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetPeriodInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

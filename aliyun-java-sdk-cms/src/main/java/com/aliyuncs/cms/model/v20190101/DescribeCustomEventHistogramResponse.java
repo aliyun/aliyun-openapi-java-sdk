@@ -77,18 +77,18 @@ public class DescribeCustomEventHistogramResponse extends AcsResponse {
 
 	public static class EventHistogram {
 
-		private Long count;
+		private Long endTime;
 
 		private Long startTime;
 
-		private Long endTime;
+		private Long count;
 
-		public Long getCount() {
-			return this.count;
+		public Long getEndTime() {
+			return this.endTime;
 		}
 
-		public void setCount(Long count) {
-			this.count = count;
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
 		}
 
 		public Long getStartTime() {
@@ -99,12 +99,12 @@ public class DescribeCustomEventHistogramResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Long getEndTime() {
-			return this.endTime;
+		public Long getCount() {
+			return this.count;
 		}
 
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
+		public void setCount(Long count) {
+			this.count = count;
 		}
 	}
 

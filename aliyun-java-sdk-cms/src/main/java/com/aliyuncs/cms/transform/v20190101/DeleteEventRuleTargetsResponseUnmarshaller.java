@@ -23,9 +23,9 @@ public class DeleteEventRuleTargetsResponseUnmarshaller {
 	public static DeleteEventRuleTargetsResponse unmarshall(DeleteEventRuleTargetsResponse deleteEventRuleTargetsResponse, UnmarshallerContext _ctx) {
 		
 		deleteEventRuleTargetsResponse.setRequestId(_ctx.stringValue("DeleteEventRuleTargetsResponse.RequestId"));
-		deleteEventRuleTargetsResponse.setSuccess(_ctx.booleanValue("DeleteEventRuleTargetsResponse.Success"));
 		deleteEventRuleTargetsResponse.setCode(_ctx.stringValue("DeleteEventRuleTargetsResponse.Code"));
 		deleteEventRuleTargetsResponse.setMessage(_ctx.stringValue("DeleteEventRuleTargetsResponse.Message"));
+		deleteEventRuleTargetsResponse.setSuccess(_ctx.booleanValue("DeleteEventRuleTargetsResponse.Success"));
 	 
 	 	return deleteEventRuleTargetsResponse;
 	}

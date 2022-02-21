@@ -24,13 +24,39 @@ import com.aliyuncs.mse.Endpoint;
  */
 public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryClusterSpecificationResponse> {
 	   
+
+	private String connectType;
+
+	private String acceptLanguage;
 	public QueryClusterSpecificationRequest() {
-		super("mse", "2019-05-31", "QueryClusterSpecification", "mse");
+		super("mse", "2019-05-31", "QueryClusterSpecification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getConnectType() {
+		return this.connectType;
+	}
+
+	public void setConnectType(String connectType) {
+		this.connectType = connectType;
+		if(connectType != null){
+			putQueryParameter("ConnectType", connectType);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	@Override

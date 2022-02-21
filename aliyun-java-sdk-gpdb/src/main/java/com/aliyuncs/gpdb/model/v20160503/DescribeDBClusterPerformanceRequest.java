@@ -25,6 +25,8 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeDBClusterPerformanceResponse> {
 	   
 
+	private String nodeType;
+
 	private String startTime;
 
 	private String dBInstanceId;
@@ -32,6 +34,8 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 	private String key;
 
 	private String endTime;
+
+	private String nodes;
 	public DescribeDBClusterPerformanceRequest() {
 		super("gpdb", "2016-05-03", "DescribeDBClusterPerformance");
 		setMethod(MethodType.POST);
@@ -39,6 +43,17 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
+		}
 	}
 
 	public String getStartTime() {
@@ -82,6 +97,17 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getNodes() {
+		return this.nodes;
+	}
+
+	public void setNodes(String nodes) {
+		this.nodes = nodes;
+		if(nodes != null){
+			putQueryParameter("Nodes", nodes);
 		}
 	}
 

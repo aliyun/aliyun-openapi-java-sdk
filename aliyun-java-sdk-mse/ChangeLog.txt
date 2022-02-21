@@ -1,3 +1,18 @@
+2022-02-21 Version: 3.0.11
+- Add DleteNacosInstance.
+- Change CreateCluster parameter.
+- Change UpdateNacosInstance errorCode.
+
+2022-02-16 Version: 3.0.7
+- Fix normandy query api.
+
+2022-02-10 Version: 3.0.6
+- Add deleteNacosInstance.
+
+2022-01-18 Version: 3.0.4
+- ReportOneAgentInfo.
+
+
 2021-12-28 Version: 3.0.3
 - Report data.
 

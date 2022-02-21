@@ -127,9 +127,15 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		private String noDataPolicy;
 
+		private String options;
+
+		private List<LabelsItem> labels;
+
 		private Escalations escalations;
 
 		private CompositeExpression compositeExpression;
+
+		private Prometheus prometheus;
 
 		public Integer getSilenceTime() {
 			return this.silenceTime;
@@ -291,6 +297,22 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 			this.noDataPolicy = noDataPolicy;
 		}
 
+		public String getOptions() {
+			return this.options;
+		}
+
+		public void setOptions(String options) {
+			this.options = options;
+		}
+
+		public List<LabelsItem> getLabels() {
+			return this.labels;
+		}
+
+		public void setLabels(List<LabelsItem> labels) {
+			this.labels = labels;
+		}
+
 		public Escalations getEscalations() {
 			return this.escalations;
 		}
@@ -305,6 +327,37 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		public void setCompositeExpression(CompositeExpression compositeExpression) {
 			this.compositeExpression = compositeExpression;
+		}
+
+		public Prometheus getPrometheus() {
+			return this.prometheus;
+		}
+
+		public void setPrometheus(Prometheus prometheus) {
+			this.prometheus = prometheus;
+		}
+
+		public static class LabelsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class Escalations {
@@ -611,6 +664,72 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				public void setId(String id) {
 					this.id = id;
+				}
+			}
+		}
+
+		public static class Prometheus {
+
+			private String promQL;
+
+			private String level;
+
+			private Long times;
+
+			private List<AnnotationsItem> annotations;
+
+			public String getPromQL() {
+				return this.promQL;
+			}
+
+			public void setPromQL(String promQL) {
+				this.promQL = promQL;
+			}
+
+			public String getLevel() {
+				return this.level;
+			}
+
+			public void setLevel(String level) {
+				this.level = level;
+			}
+
+			public Long getTimes() {
+				return this.times;
+			}
+
+			public void setTimes(Long times) {
+				this.times = times;
+			}
+
+			public List<AnnotationsItem> getAnnotations() {
+				return this.annotations;
+			}
+
+			public void setAnnotations(List<AnnotationsItem> annotations) {
+				this.annotations = annotations;
+			}
+
+			public static class AnnotationsItem {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
 				}
 			}
 		}

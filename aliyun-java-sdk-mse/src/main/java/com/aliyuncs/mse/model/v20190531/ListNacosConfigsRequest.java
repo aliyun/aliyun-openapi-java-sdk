@@ -41,9 +41,11 @@ public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsRespo
 
 	private Integer pageSize;
 
+	private String acceptLanguage;
+
 	private String group;
 	public ListNacosConfigsRequest() {
-		super("mse", "2019-05-31", "ListNacosConfigs", "mse");
+		super("mse", "2019-05-31", "ListNacosConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -136,6 +138,17 @@ public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

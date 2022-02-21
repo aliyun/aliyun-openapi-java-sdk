@@ -29,7 +29,7 @@ public class ListMethodsRequest extends RoaAcsRequest<ListMethodsResponse> {
 
 	private String serviceName;
 	public ListMethodsRequest() {
-		super("Edas", "2017-08-01", "ListMethods", "edas");
+		super("Edas", "2017-08-01", "ListMethods", "Edas");
 		setUriPattern("/pop/v5/service/list_methods");
 		setMethod(MethodType.GET);
 		try {

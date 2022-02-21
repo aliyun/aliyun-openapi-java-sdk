@@ -77,50 +77,42 @@ public class DescribeSystemEventCountResponse extends AcsResponse {
 
 	public static class SystemEventCount {
 
-		private String content;
-
-		private String product;
-
-		private String name;
-
-		private String groupId;
-
-		private Long num;
-
-		private String level;
-
 		private String status;
-
-		private String resourceId;
-
-		private String regionId;
-
-		private String instanceName;
 
 		private Long time;
 
-		public String getContent() {
-			return this.content;
+		private String groupId;
+
+		private String product;
+
+		private String instanceName;
+
+		private Long num;
+
+		private String resourceId;
+
+		private String name;
+
+		private String content;
+
+		private String level;
+
+		private String regionId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setContent(String content) {
-			this.content = content;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getProduct() {
-			return this.product;
+		public Long getTime() {
+			return this.time;
 		}
 
-		public void setProduct(String product) {
-			this.product = product;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setTime(Long time) {
+			this.time = time;
 		}
 
 		public String getGroupId() {
@@ -131,44 +123,12 @@ public class DescribeSystemEventCountResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public Long getNum() {
-			return this.num;
+		public String getProduct() {
+			return this.product;
 		}
 
-		public void setNum(Long num) {
-			this.num = num;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setProduct(String product) {
+			this.product = product;
 		}
 
 		public String getInstanceName() {
@@ -179,12 +139,52 @@ public class DescribeSystemEventCountResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public Long getTime() {
-			return this.time;
+		public Long getNum() {
+			return this.num;
 		}
 
-		public void setTime(Long time) {
-			this.time = time;
+		public void setNum(Long num) {
+			this.num = num;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -29,9 +29,9 @@ public class DescribeMonitoringAgentProcessesResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	private List<NodeProcess> nodeProcesses;
 
@@ -51,20 +51,20 @@ public class DescribeMonitoringAgentProcessesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<NodeProcess> getNodeProcesses() {
@@ -77,33 +77,17 @@ public class DescribeMonitoringAgentProcessesResponse extends AcsResponse {
 
 	public static class NodeProcess {
 
-		private Long processId;
-
-		private String instanceId;
-
 		private String processName;
 
-		private String processUser;
-
-		private String command;
+		private Long processId;
 
 		private String groupId;
 
-		public Long getProcessId() {
-			return this.processId;
-		}
+		private String command;
 
-		public void setProcessId(Long processId) {
-			this.processId = processId;
-		}
+		private String processUser;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String instanceId;
 
 		public String getProcessName() {
 			return this.processName;
@@ -113,12 +97,20 @@ public class DescribeMonitoringAgentProcessesResponse extends AcsResponse {
 			this.processName = processName;
 		}
 
-		public String getProcessUser() {
-			return this.processUser;
+		public Long getProcessId() {
+			return this.processId;
 		}
 
-		public void setProcessUser(String processUser) {
-			this.processUser = processUser;
+		public void setProcessId(Long processId) {
+			this.processId = processId;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
 		public String getCommand() {
@@ -129,12 +121,20 @@ public class DescribeMonitoringAgentProcessesResponse extends AcsResponse {
 			this.command = command;
 		}
 
-		public String getGroupId() {
-			return this.groupId;
+		public String getProcessUser() {
+			return this.processUser;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setProcessUser(String processUser) {
+			this.processUser = processUser;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

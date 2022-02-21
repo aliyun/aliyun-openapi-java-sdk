@@ -27,7 +27,7 @@ public class GetK8sServicesRequest extends RoaAcsRequest<GetK8sServicesResponse>
 
 	private String appId;
 	public GetK8sServicesRequest() {
-		super("Edas", "2017-08-01", "GetK8sServices", "edas");
+		super("Edas", "2017-08-01", "GetK8sServices", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_service");
 		setMethod(MethodType.GET);
 		try {

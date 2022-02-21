@@ -49,9 +49,9 @@ public class ListAncestorsResponse extends AcsResponse {
 
 		private String folderId;
 
-		private String folderName;
-
 		private String createTime;
+
+		private String folderName;
 
 		public String getFolderId() {
 			return this.folderId;
@@ -61,20 +61,20 @@ public class ListAncestorsResponse extends AcsResponse {
 			this.folderId = folderId;
 		}
 
-		public String getFolderName() {
-			return this.folderName;
-		}
-
-		public void setFolderName(String folderName) {
-			this.folderName = folderName;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getFolderName() {
+			return this.folderName;
+		}
+
+		public void setFolderName(String folderName) {
+			this.folderName = folderName;
 		}
 	}
 

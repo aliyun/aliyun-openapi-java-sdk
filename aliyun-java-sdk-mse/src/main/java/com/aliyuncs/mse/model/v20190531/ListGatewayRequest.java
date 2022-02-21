@@ -27,9 +27,6 @@ import com.aliyuncs.mse.Endpoint;
 public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 	   
 
-	@SerializedName("filterParams")
-	private FilterParams filterParams;
-
 	private Integer pageNumber;
 
 	private String orderItem;
@@ -37,24 +34,18 @@ public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 	private Integer pageSize;
 
 	private Boolean descSort;
+
+	@SerializedName("filterParams")
+	private FilterParams filterParams;
+
+	private String acceptLanguage;
 	public ListGatewayRequest() {
-		super("mse", "2019-05-31", "ListGateway", "mse");
+		super("mse", "2019-05-31", "ListGateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public FilterParams getFilterParams() {
-		return this.filterParams;
-	}
-
-	public void setFilterParams(FilterParams filterParams) {
-		this.filterParams = filterParams;	
-		if (filterParams != null) {
-			putQueryParameter("FilterParams" , new Gson().toJson(filterParams));
-		}	
 	}
 
 	public Integer getPageNumber() {
@@ -98,6 +89,28 @@ public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 		this.descSort = descSort;
 		if(descSort != null){
 			putQueryParameter("DescSort", descSort.toString());
+		}
+	}
+
+	public FilterParams getFilterParams() {
+		return this.filterParams;
+	}
+
+	public void setFilterParams(FilterParams filterParams) {
+		this.filterParams = filterParams;	
+		if (filterParams != null) {
+			putQueryParameter("FilterParams" , new Gson().toJson(filterParams));
+		}	
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

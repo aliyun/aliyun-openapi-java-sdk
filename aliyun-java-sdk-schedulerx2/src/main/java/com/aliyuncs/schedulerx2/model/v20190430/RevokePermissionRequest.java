@@ -29,9 +29,9 @@ public class RevokePermissionRequest extends RpcAcsRequest<RevokePermissionRespo
 
 	private String groupId;
 
-	private String namespace;
-
 	private String userId;
+
+	private String namespace;
 	public RevokePermissionRequest() {
 		super("schedulerx2", "2019-04-30", "RevokePermission");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class RevokePermissionRequest extends RpcAcsRequest<RevokePermissionRespo
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public String getUserId() {
 		return this.userId;
 	}
@@ -82,6 +71,17 @@ public class RevokePermissionRequest extends RpcAcsRequest<RevokePermissionRespo
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

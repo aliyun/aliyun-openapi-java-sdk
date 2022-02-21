@@ -35,7 +35,7 @@ public class PrintAcctgTransRequest extends RpcAcsRequest<PrintAcctgTransRespons
 
 	private String voucherIds;
 	public PrintAcctgTransRequest() {
-		super("companyreg", "2020-10-22", "PrintAcctgTrans", "companyreg");
+		super("companyreg", "2020-10-22", "PrintAcctgTrans");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

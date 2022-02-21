@@ -46,83 +46,31 @@ public class GetHandshakeResponse extends AcsResponse {
 
 	public static class Handshake {
 
-		private String handshakeId;
-
-		private String resourceDirectoryId;
-
-		private String masterAccountId;
-
-		private String masterAccountName;
-
-		private String targetEntity;
-
-		private String targetType;
-
-		private String note;
-
 		private String status;
-
-		private String createTime;
-
-		private String modifyTime;
 
 		private String expireTime;
 
-		public String getHandshakeId() {
-			return this.handshakeId;
-		}
+		private String createTime;
 
-		public void setHandshakeId(String handshakeId) {
-			this.handshakeId = handshakeId;
-		}
+		private String targetEntity;
 
-		public String getResourceDirectoryId() {
-			return this.resourceDirectoryId;
-		}
+		private String masterAccountId;
 
-		public void setResourceDirectoryId(String resourceDirectoryId) {
-			this.resourceDirectoryId = resourceDirectoryId;
-		}
+		private String handshakeId;
 
-		public String getMasterAccountId() {
-			return this.masterAccountId;
-		}
+		private String masterAccountRealName;
 
-		public void setMasterAccountId(String masterAccountId) {
-			this.masterAccountId = masterAccountId;
-		}
+		private String resourceDirectoryId;
 
-		public String getMasterAccountName() {
-			return this.masterAccountName;
-		}
+		private String invitedAccountRealName;
 
-		public void setMasterAccountName(String masterAccountName) {
-			this.masterAccountName = masterAccountName;
-		}
+		private String note;
 
-		public String getTargetEntity() {
-			return this.targetEntity;
-		}
+		private String masterAccountName;
 
-		public void setTargetEntity(String targetEntity) {
-			this.targetEntity = targetEntity;
-		}
+		private String targetType;
 
-		public String getTargetType() {
-			return this.targetType;
-		}
-
-		public void setTargetType(String targetType) {
-			this.targetType = targetType;
-		}
-
-		public String getNote() {
-			return this.note;
-		}
-
-		public void setNote(String note) {
-			this.note = note;
-		}
+		private String modifyTime;
 
 		public String getStatus() {
 			return this.status;
@@ -130,6 +78,14 @@ public class GetHandshakeResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public String getCreateTime() {
@@ -140,20 +96,84 @@ public class GetHandshakeResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getTargetEntity() {
+			return this.targetEntity;
+		}
+
+		public void setTargetEntity(String targetEntity) {
+			this.targetEntity = targetEntity;
+		}
+
+		public String getMasterAccountId() {
+			return this.masterAccountId;
+		}
+
+		public void setMasterAccountId(String masterAccountId) {
+			this.masterAccountId = masterAccountId;
+		}
+
+		public String getHandshakeId() {
+			return this.handshakeId;
+		}
+
+		public void setHandshakeId(String handshakeId) {
+			this.handshakeId = handshakeId;
+		}
+
+		public String getMasterAccountRealName() {
+			return this.masterAccountRealName;
+		}
+
+		public void setMasterAccountRealName(String masterAccountRealName) {
+			this.masterAccountRealName = masterAccountRealName;
+		}
+
+		public String getResourceDirectoryId() {
+			return this.resourceDirectoryId;
+		}
+
+		public void setResourceDirectoryId(String resourceDirectoryId) {
+			this.resourceDirectoryId = resourceDirectoryId;
+		}
+
+		public String getInvitedAccountRealName() {
+			return this.invitedAccountRealName;
+		}
+
+		public void setInvitedAccountRealName(String invitedAccountRealName) {
+			this.invitedAccountRealName = invitedAccountRealName;
+		}
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
+		}
+
+		public String getMasterAccountName() {
+			return this.masterAccountName;
+		}
+
+		public void setMasterAccountName(String masterAccountName) {
+			this.masterAccountName = masterAccountName;
+		}
+
+		public String getTargetType() {
+			return this.targetType;
+		}
+
+		public void setTargetType(String targetType) {
+			this.targetType = targetType;
+		}
+
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
 		}
 	}
 

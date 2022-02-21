@@ -27,7 +27,7 @@ public class GetIndustryCommerceInfoRequest extends RpcAcsRequest<GetIndustryCom
 
 	private String bizId;
 	public GetIndustryCommerceInfoRequest() {
-		super("companyreg", "2020-10-22", "GetIndustryCommerceInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetIndustryCommerceInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

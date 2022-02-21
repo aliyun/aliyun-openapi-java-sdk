@@ -27,7 +27,7 @@ public class GetClusterRequest extends RoaAcsRequest<GetClusterResponse> {
 
 	private String clusterId;
 	public GetClusterRequest() {
-		super("Edas", "2017-08-01", "GetCluster", "edas");
+		super("Edas", "2017-08-01", "GetCluster", "Edas");
 		setUriPattern("/pop/v5/resource/cluster");
 		setMethod(MethodType.GET);
 		try {

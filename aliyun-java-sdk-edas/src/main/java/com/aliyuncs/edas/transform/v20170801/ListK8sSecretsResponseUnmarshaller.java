@@ -59,6 +59,7 @@ public class ListK8sSecretsResponseUnmarshaller {
 				certDetail.setStatus(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.Status"));
 				certDetail.setStartTime(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.StartTime"));
 				certDetail.setIssuer(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.Issuer"));
+				certDetail.setKeySize(_ctx.integerValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.KeySize"));
 
 				List<String> domainNames = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.DomainNames.Length"); k++) {

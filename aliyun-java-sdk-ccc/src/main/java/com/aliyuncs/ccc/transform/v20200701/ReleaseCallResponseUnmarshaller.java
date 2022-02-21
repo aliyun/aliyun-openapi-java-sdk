@@ -42,6 +42,7 @@ public class ReleaseCallResponseUnmarshaller {
 		releaseCallResponse.setParams(params);
 
 		Data data = new Data();
+		data.setContextId(_ctx.longValue("ReleaseCallResponse.Data.ContextId"));
 
 		CallContext callContext = new CallContext();
 		callContext.setJobId(_ctx.stringValue("ReleaseCallResponse.Data.CallContext.JobId"));

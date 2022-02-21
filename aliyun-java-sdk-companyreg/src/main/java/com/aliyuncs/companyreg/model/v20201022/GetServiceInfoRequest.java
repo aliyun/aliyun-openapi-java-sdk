@@ -29,7 +29,7 @@ public class GetServiceInfoRequest extends RpcAcsRequest<GetServiceInfoResponse>
 
 	private String bizId;
 	public GetServiceInfoRequest() {
-		super("companyreg", "2020-10-22", "GetServiceInfo", "companyreg");
+		super("companyreg", "2020-10-22", "GetServiceInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

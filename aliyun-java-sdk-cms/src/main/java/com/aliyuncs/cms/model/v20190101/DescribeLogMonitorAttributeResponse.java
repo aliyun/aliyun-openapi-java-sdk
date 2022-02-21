@@ -27,11 +27,11 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private String message;
 
 	private String requestId;
+
+	private Boolean success;
 
 	private LogMonitor logMonitor;
 
@@ -41,14 +41,6 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -67,6 +59,14 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public LogMonitor getLogMonitor() {
 		return this.logMonitor;
 	}
@@ -77,23 +77,23 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 
 	public static class LogMonitor {
 
-		private Long logId;
-
-		private String slsRegionId;
-
-		private String slsProject;
+		private String valueFilterRelation;
 
 		private String slsLogstore;
 
 		private String metricName;
 
+		private Long groupId;
+
+		private Long logId;
+
 		private String metricExpress;
+
+		private String slsRegionId;
 
 		private Long gmtCreate;
 
-		private String valueFilterRelation;
-
-		private Long groupId;
+		private String slsProject;
 
 		private List<Aggregate> aggregates;
 
@@ -103,28 +103,12 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 
 		private List<String> groupbys;
 
-		public Long getLogId() {
-			return this.logId;
+		public String getValueFilterRelation() {
+			return this.valueFilterRelation;
 		}
 
-		public void setLogId(Long logId) {
-			this.logId = logId;
-		}
-
-		public String getSlsRegionId() {
-			return this.slsRegionId;
-		}
-
-		public void setSlsRegionId(String slsRegionId) {
-			this.slsRegionId = slsRegionId;
-		}
-
-		public String getSlsProject() {
-			return this.slsProject;
-		}
-
-		public void setSlsProject(String slsProject) {
-			this.slsProject = slsProject;
+		public void setValueFilterRelation(String valueFilterRelation) {
+			this.valueFilterRelation = valueFilterRelation;
 		}
 
 		public String getSlsLogstore() {
@@ -143,12 +127,36 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 			this.metricName = metricName;
 		}
 
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
+		}
+
+		public Long getLogId() {
+			return this.logId;
+		}
+
+		public void setLogId(Long logId) {
+			this.logId = logId;
+		}
+
 		public String getMetricExpress() {
 			return this.metricExpress;
 		}
 
 		public void setMetricExpress(String metricExpress) {
 			this.metricExpress = metricExpress;
+		}
+
+		public String getSlsRegionId() {
+			return this.slsRegionId;
+		}
+
+		public void setSlsRegionId(String slsRegionId) {
+			this.slsRegionId = slsRegionId;
 		}
 
 		public Long getGmtCreate() {
@@ -159,20 +167,12 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getValueFilterRelation() {
-			return this.valueFilterRelation;
+		public String getSlsProject() {
+			return this.slsProject;
 		}
 
-		public void setValueFilterRelation(String valueFilterRelation) {
-			this.valueFilterRelation = valueFilterRelation;
-		}
-
-		public Long getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
+		public void setSlsProject(String slsProject) {
+			this.slsProject = slsProject;
 		}
 
 		public List<Aggregate> getAggregates() {
@@ -209,15 +209,39 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 
 		public static class Aggregate {
 
+			private String max;
+
+			private String min;
+
+			private String function;
+
 			private String alias;
 
 			private String fieldName;
 
-			private String function;
+			public String getMax() {
+				return this.max;
+			}
 
-			private String min;
+			public void setMax(String max) {
+				this.max = max;
+			}
 
-			private String max;
+			public String getMin() {
+				return this.min;
+			}
+
+			public void setMin(String min) {
+				this.min = min;
+			}
+
+			public String getFunction() {
+				return this.function;
+			}
+
+			public void setFunction(String function) {
+				this.function = function;
+			}
 
 			public String getAlias() {
 				return this.alias;
@@ -234,39 +258,15 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 			public void setFieldName(String fieldName) {
 				this.fieldName = fieldName;
 			}
-
-			public String getFunction() {
-				return this.function;
-			}
-
-			public void setFunction(String function) {
-				this.function = function;
-			}
-
-			public String getMin() {
-				return this.min;
-			}
-
-			public void setMin(String min) {
-				this.min = min;
-			}
-
-			public String getMax() {
-				return this.max;
-			}
-
-			public void setMax(String max) {
-				this.max = max;
-			}
 		}
 
 		public static class ValueFilterObject {
 
 			private String key;
 
-			private String operator;
-
 			private String value;
+
+			private String operator;
 
 			public String getKey() {
 				return this.key;
@@ -276,20 +276,20 @@ public class DescribeLogMonitorAttributeResponse extends AcsResponse {
 				this.key = key;
 			}
 
-			public String getOperator() {
-				return this.operator;
-			}
-
-			public void setOperator(String operator) {
-				this.operator = operator;
-			}
-
 			public String getValue() {
 				return this.value;
 			}
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
 			}
 		}
 	}

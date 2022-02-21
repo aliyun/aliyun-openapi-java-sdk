@@ -34,17 +34,17 @@ public class DescribeSystemEventCountResponseUnmarshaller {
 		List<SystemEventCount> systemEventCounts = new ArrayList<SystemEventCount>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSystemEventCountResponse.SystemEventCounts.Length"); i++) {
 			SystemEventCount systemEventCount = new SystemEventCount();
-			systemEventCount.setContent(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Content"));
-			systemEventCount.setProduct(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Product"));
-			systemEventCount.setName(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Name"));
-			systemEventCount.setGroupId(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].GroupId"));
-			systemEventCount.setNum(_ctx.longValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Num"));
-			systemEventCount.setLevel(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Level"));
 			systemEventCount.setStatus(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Status"));
-			systemEventCount.setResourceId(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].ResourceId"));
-			systemEventCount.setRegionId(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].RegionId"));
-			systemEventCount.setInstanceName(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].InstanceName"));
 			systemEventCount.setTime(_ctx.longValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Time"));
+			systemEventCount.setGroupId(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].GroupId"));
+			systemEventCount.setProduct(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Product"));
+			systemEventCount.setInstanceName(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].InstanceName"));
+			systemEventCount.setNum(_ctx.longValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Num"));
+			systemEventCount.setResourceId(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].ResourceId"));
+			systemEventCount.setName(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Name"));
+			systemEventCount.setContent(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Content"));
+			systemEventCount.setLevel(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].Level"));
+			systemEventCount.setRegionId(_ctx.stringValue("DescribeSystemEventCountResponse.SystemEventCounts["+ i +"].RegionId"));
 
 			systemEventCounts.add(systemEventCount);
 		}

@@ -23,8 +23,8 @@ public class RollbackCurrentProjectNodeResponseUnmarshaller {
 	public static RollbackCurrentProjectNodeResponse unmarshall(RollbackCurrentProjectNodeResponse rollbackCurrentProjectNodeResponse, UnmarshallerContext _ctx) {
 		
 		rollbackCurrentProjectNodeResponse.setRequestId(_ctx.stringValue("RollbackCurrentProjectNodeResponse.RequestId"));
-		rollbackCurrentProjectNodeResponse.setSuccess(_ctx.booleanValue("RollbackCurrentProjectNodeResponse.Success"));
 		rollbackCurrentProjectNodeResponse.setResult(_ctx.booleanValue("RollbackCurrentProjectNodeResponse.Result"));
+		rollbackCurrentProjectNodeResponse.setSuccess(_ctx.booleanValue("RollbackCurrentProjectNodeResponse.Success"));
 	 
 	 	return rollbackCurrentProjectNodeResponse;
 	}

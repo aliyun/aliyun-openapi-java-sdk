@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPolicyAttachmentsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<PolicyAttachment> policyAttachments;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListPolicyAttachmentsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListPolicyAttachmentsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<PolicyAttachment> getPolicyAttachments() {
@@ -77,19 +77,27 @@ public class ListPolicyAttachmentsResponse extends AcsResponse {
 
 	public static class PolicyAttachment {
 
+		private String description;
+
 		private String resourceGroupId;
 
-		private String policyType;
-
 		private String policyName;
-
-		private String principalType;
 
 		private String principalName;
 
 		private String attachDate;
 
-		private String description;
+		private String policyType;
+
+		private String principalType;
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
@@ -99,28 +107,12 @@ public class ListPolicyAttachmentsResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getPolicyType() {
-			return this.policyType;
-		}
-
-		public void setPolicyType(String policyType) {
-			this.policyType = policyType;
-		}
-
 		public String getPolicyName() {
 			return this.policyName;
 		}
 
 		public void setPolicyName(String policyName) {
 			this.policyName = policyName;
-		}
-
-		public String getPrincipalType() {
-			return this.principalType;
-		}
-
-		public void setPrincipalType(String principalType) {
-			this.principalType = principalType;
 		}
 
 		public String getPrincipalName() {
@@ -139,12 +131,20 @@ public class ListPolicyAttachmentsResponse extends AcsResponse {
 			this.attachDate = attachDate;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getPolicyType() {
+			return this.policyType;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
+		}
+
+		public String getPrincipalType() {
+			return this.principalType;
+		}
+
+		public void setPrincipalType(String principalType) {
+			this.principalType = principalType;
 		}
 	}
 

@@ -26,19 +26,32 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAccountResponse> {
 	   
 
+	private String accountNamePrefix;
+
 	private String parentFolderId;
 
 	private String displayName;
 
 	private String payerAccountId;
 	public CreateResourceAccountRequest() {
-		super("ResourceManager", "2020-03-31", "CreateResourceAccount", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "CreateResourceAccount");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAccountNamePrefix() {
+		return this.accountNamePrefix;
+	}
+
+	public void setAccountNamePrefix(String accountNamePrefix) {
+		this.accountNamePrefix = accountNamePrefix;
+		if(accountNamePrefix != null){
+			putQueryParameter("AccountNamePrefix", accountNamePrefix);
+		}
 	}
 
 	public String getParentFolderId() {

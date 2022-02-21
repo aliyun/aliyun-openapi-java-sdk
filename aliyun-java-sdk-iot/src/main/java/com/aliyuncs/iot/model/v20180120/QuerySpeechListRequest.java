@@ -35,7 +35,7 @@ public class QuerySpeechListRequest extends RpcAcsRequest<QuerySpeechListRespons
 
 	private Integer pageSize;
 	public QuerySpeechListRequest() {
-		super("Iot", "2018-01-20", "QuerySpeechList", "iot");
+		super("Iot", "2018-01-20", "QuerySpeechList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

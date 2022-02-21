@@ -46,29 +46,21 @@ public class CreateServiceLinkedRoleResponse extends AcsResponse {
 
 	public static class Role {
 
-		private String arn;
-
 		private String assumeRolePolicyDocument;
 
 		private String rolePrincipalName;
 
-		private String createDate;
-
 		private String description;
-
-		private String roleId;
 
 		private String roleName;
 
+		private String createDate;
+
+		private String arn;
+
+		private String roleId;
+
 		private Boolean isServiceLinkedRole;
-
-		public String getArn() {
-			return this.arn;
-		}
-
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
 
 		public String getAssumeRolePolicyDocument() {
 			return this.assumeRolePolicyDocument;
@@ -86,14 +78,6 @@ public class CreateServiceLinkedRoleResponse extends AcsResponse {
 			this.rolePrincipalName = rolePrincipalName;
 		}
 
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
@@ -102,20 +86,36 @@ public class CreateServiceLinkedRoleResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getRoleId() {
-			return this.roleId;
-		}
-
-		public void setRoleId(String roleId) {
-			this.roleId = roleId;
-		}
-
 		public String getRoleName() {
 			return this.roleName;
 		}
 
 		public void setRoleName(String roleName) {
 			this.roleName = roleName;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
+
+		public String getRoleId() {
+			return this.roleId;
+		}
+
+		public void setRoleId(String roleId) {
+			this.roleId = roleId;
 		}
 
 		public Boolean getIsServiceLinkedRole() {

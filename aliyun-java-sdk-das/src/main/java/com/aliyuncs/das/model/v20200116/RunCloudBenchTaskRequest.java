@@ -25,27 +25,14 @@ import com.aliyuncs.das.Endpoint;
 public class RunCloudBenchTaskRequest extends RpcAcsRequest<RunCloudBenchTaskResponse> {
 	   
 
-	private String consoleContext;
-
 	private String taskId;
 	public RunCloudBenchTaskRequest() {
-		super("DAS", "2020-01-16", "RunCloudBenchTask", "das");
+		super("DAS", "2020-01-16", "RunCloudBenchTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
-		}
 	}
 
 	public String getTaskId() {

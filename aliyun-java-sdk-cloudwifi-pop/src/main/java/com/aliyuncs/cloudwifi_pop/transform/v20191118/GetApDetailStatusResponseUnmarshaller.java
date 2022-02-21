@@ -24,9 +24,9 @@ public class GetApDetailStatusResponseUnmarshaller {
 	public static GetApDetailStatusResponse unmarshall(GetApDetailStatusResponse getApDetailStatusResponse, UnmarshallerContext _ctx) {
 		
 		getApDetailStatusResponse.setData(_ctx.mapValue("GetApDetailStatusResponse.Data"));
+		getApDetailStatusResponse.setErrorMessage(_ctx.stringValue("GetApDetailStatusResponse.ErrorMessage"));
 		getApDetailStatusResponse.setIsSuccess(_ctx.booleanValue("GetApDetailStatusResponse.IsSuccess"));
 		getApDetailStatusResponse.setErrorCode(_ctx.integerValue("GetApDetailStatusResponse.ErrorCode"));
-		getApDetailStatusResponse.setErrorMessage(_ctx.stringValue("GetApDetailStatusResponse.ErrorMessage"));
 	 
 	 	return getApDetailStatusResponse;
 	}

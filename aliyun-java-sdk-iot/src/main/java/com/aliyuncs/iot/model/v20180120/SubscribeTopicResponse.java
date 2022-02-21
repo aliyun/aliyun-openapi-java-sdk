@@ -14,7 +14,6 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.SubscribeTopicResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,8 +31,6 @@ public class SubscribeTopicResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
-
-	private List<String> failureTopics;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,14 +62,6 @@ public class SubscribeTopicResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
-	}
-
-	public List<String> getFailureTopics() {
-		return this.failureTopics;
-	}
-
-	public void setFailureTopics(List<String> failureTopics) {
-		this.failureTopics = failureTopics;
 	}
 
 	@Override

@@ -26,11 +26,14 @@ public class GetResourceDirectoryResponseUnmarshaller {
 		getResourceDirectoryResponse.setRequestId(_ctx.stringValue("GetResourceDirectoryResponse.RequestId"));
 
 		ResourceDirectory resourceDirectory = new ResourceDirectory();
+		resourceDirectory.setRootFolderId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.RootFolderId"));
 		resourceDirectory.setResourceDirectoryId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ResourceDirectoryId"));
+		resourceDirectory.setCreateTime(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.CreateTime"));
 		resourceDirectory.setMasterAccountId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.MasterAccountId"));
 		resourceDirectory.setMasterAccountName(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.MasterAccountName"));
-		resourceDirectory.setRootFolderId(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.RootFolderId"));
-		resourceDirectory.setCreateTime(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.CreateTime"));
+		resourceDirectory.setScpStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ScpStatus"));
+		resourceDirectory.setControlPolicyStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ControlPolicyStatus"));
+		resourceDirectory.setMemberDeletionStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.MemberDeletionStatus"));
 		getResourceDirectoryResponse.setResourceDirectory(resourceDirectory);
 	 
 	 	return getResourceDirectoryResponse;

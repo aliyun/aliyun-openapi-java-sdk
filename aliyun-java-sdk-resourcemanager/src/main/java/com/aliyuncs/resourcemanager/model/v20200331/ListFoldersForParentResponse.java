@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFoldersForParentResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Folder> folders;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListFoldersForParentResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListFoldersForParentResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Folder> getFolders() {
@@ -79,9 +79,9 @@ public class ListFoldersForParentResponse extends AcsResponse {
 
 		private String folderId;
 
-		private String folderName;
-
 		private String createTime;
+
+		private String folderName;
 
 		public String getFolderId() {
 			return this.folderId;
@@ -91,20 +91,20 @@ public class ListFoldersForParentResponse extends AcsResponse {
 			this.folderId = folderId;
 		}
 
-		public String getFolderName() {
-			return this.folderName;
-		}
-
-		public void setFolderName(String folderName) {
-			this.folderName = folderName;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getFolderName() {
+			return this.folderName;
+		}
+
+		public void setFolderName(String folderName) {
+			this.folderName = folderName;
 		}
 	}
 

@@ -39,9 +39,9 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 
 	private Integer pageSize;
 
-	private List<Tag> tags;
-
 	private String groupFounderTagValue;
+
+	private List<Tag> tags;
 
 	private String keyword;
 
@@ -51,7 +51,7 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 
 	private String instanceId;
 	public DescribeMonitorGroupsRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroups", "cms");
+		super("Cms", "2019-01-01", "DescribeMonitorGroups", "Cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -132,6 +132,17 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		}
 	}
 
+	public String getGroupFounderTagValue() {
+		return this.groupFounderTagValue;
+	}
+
+	public void setGroupFounderTagValue(String groupFounderTagValue) {
+		this.groupFounderTagValue = groupFounderTagValue;
+		if(groupFounderTagValue != null){
+			putQueryParameter("GroupFounderTagValue", groupFounderTagValue);
+		}
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -144,17 +155,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getGroupFounderTagValue() {
-		return this.groupFounderTagValue;
-	}
-
-	public void setGroupFounderTagValue(String groupFounderTagValue) {
-		this.groupFounderTagValue = groupFounderTagValue;
-		if(groupFounderTagValue != null){
-			putQueryParameter("GroupFounderTagValue", groupFounderTagValue);
-		}
 	}
 
 	public String getKeyword() {

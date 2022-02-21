@@ -24,49 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSiteMonitorDataResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
-
-	private String success;
-
-	private String requestId;
-
 	private String nextToken;
 
 	private String data;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String requestId;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String success;
 
-	public String getMessage() {
-		return this.message;
-	}
+	private String code;
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String message;
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -82,6 +50,38 @@ public class DescribeSiteMonitorDataResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

@@ -33,11 +33,13 @@ public class ListDeviceDistributeJobRequest extends RpcAcsRequest<ListDeviceDist
 
 	private Integer currentPage;
 
+	private String productKey;
+
 	private String targetUid;
 
 	private Integer status;
 	public ListDeviceDistributeJobRequest() {
-		super("Iot", "2018-01-20", "ListDeviceDistributeJob", "iot");
+		super("Iot", "2018-01-20", "ListDeviceDistributeJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +88,17 @@ public class ListDeviceDistributeJobRequest extends RpcAcsRequest<ListDeviceDist
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

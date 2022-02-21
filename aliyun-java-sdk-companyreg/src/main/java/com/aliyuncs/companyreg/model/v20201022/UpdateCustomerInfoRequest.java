@@ -57,7 +57,7 @@ public class UpdateCustomerInfoRequest extends RpcAcsRequest<UpdateCustomerInfoR
 
 	private String operatingPeriod;
 	public UpdateCustomerInfoRequest() {
-		super("companyreg", "2020-10-22", "UpdateCustomerInfo", "companyreg");
+		super("companyreg", "2020-10-22", "UpdateCustomerInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

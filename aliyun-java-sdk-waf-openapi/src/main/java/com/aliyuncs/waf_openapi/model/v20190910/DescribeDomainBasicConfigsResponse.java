@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainBasicConfigsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<DomainConfig> domainConfigs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeDomainBasicConfigsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DomainConfig> getDomainConfigs() {
@@ -57,80 +57,32 @@ public class DescribeDomainBasicConfigsResponse extends AcsResponse {
 
 	public static class DomainConfig {
 
-		private String owner;
-
-		private Integer wafStatus;
-
-		private Integer ccStatus;
-
-		private Integer ccMode;
-
-		private Integer aclStatus;
-
-		private Integer wafMode;
-
-		private Long version;
+		private Integer status;
 
 		private String domain;
 
-		private Integer status;
+		private String owner;
+
+		private Integer ccMode;
+
+		private Integer ccStatus;
 
 		private String accessType;
 
-		public String getOwner() {
-			return this.owner;
+		private Long version;
+
+		private Integer aclStatus;
+
+		private Integer wafStatus;
+
+		private Integer wafMode;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public Integer getWafStatus() {
-			return this.wafStatus;
-		}
-
-		public void setWafStatus(Integer wafStatus) {
-			this.wafStatus = wafStatus;
-		}
-
-		public Integer getCcStatus() {
-			return this.ccStatus;
-		}
-
-		public void setCcStatus(Integer ccStatus) {
-			this.ccStatus = ccStatus;
-		}
-
-		public Integer getCcMode() {
-			return this.ccMode;
-		}
-
-		public void setCcMode(Integer ccMode) {
-			this.ccMode = ccMode;
-		}
-
-		public Integer getAclStatus() {
-			return this.aclStatus;
-		}
-
-		public void setAclStatus(Integer aclStatus) {
-			this.aclStatus = aclStatus;
-		}
-
-		public Integer getWafMode() {
-			return this.wafMode;
-		}
-
-		public void setWafMode(Integer wafMode) {
-			this.wafMode = wafMode;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getDomain() {
@@ -141,12 +93,28 @@ public class DescribeDomainBasicConfigsResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setOwner(String owner) {
+			this.owner = owner;
+		}
+
+		public Integer getCcMode() {
+			return this.ccMode;
+		}
+
+		public void setCcMode(Integer ccMode) {
+			this.ccMode = ccMode;
+		}
+
+		public Integer getCcStatus() {
+			return this.ccStatus;
+		}
+
+		public void setCcStatus(Integer ccStatus) {
+			this.ccStatus = ccStatus;
 		}
 
 		public String getAccessType() {
@@ -155,6 +123,38 @@ public class DescribeDomainBasicConfigsResponse extends AcsResponse {
 
 		public void setAccessType(String accessType) {
 			this.accessType = accessType;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
+		public Integer getAclStatus() {
+			return this.aclStatus;
+		}
+
+		public void setAclStatus(Integer aclStatus) {
+			this.aclStatus = aclStatus;
+		}
+
+		public Integer getWafStatus() {
+			return this.wafStatus;
+		}
+
+		public void setWafStatus(Integer wafStatus) {
+			this.wafStatus = wafStatus;
+		}
+
+		public Integer getWafMode() {
+			return this.wafMode;
+		}
+
+		public void setWafMode(Integer wafMode) {
+			this.wafMode = wafMode;
 		}
 	}
 

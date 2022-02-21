@@ -27,7 +27,7 @@ public class ClearTrailDataRequest extends RpcAcsRequest<ClearTrailDataResponse>
 
 	private String bizId;
 	public ClearTrailDataRequest() {
-		super("companyreg", "2020-10-22", "ClearTrailData", "companyreg");
+		super("companyreg", "2020-10-22", "ClearTrailData");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

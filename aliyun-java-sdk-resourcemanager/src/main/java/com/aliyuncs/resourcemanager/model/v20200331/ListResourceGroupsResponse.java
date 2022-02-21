@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListResourceGroupsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<ResourceGroup> resourceGroups;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListResourceGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListResourceGroupsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ResourceGroup> getResourceGroups() {
@@ -77,33 +77,17 @@ public class ListResourceGroupsResponse extends AcsResponse {
 
 	public static class ResourceGroup {
 
-		private String id;
-
-		private String name;
-
 		private String displayName;
 
 		private String status;
 
-		private String createDate;
-
 		private String accountId;
 
-		public String getId() {
-			return this.id;
-		}
+		private String name;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String createDate;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String id;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -121,6 +105,22 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getCreateDate() {
 			return this.createDate;
 		}
@@ -129,12 +129,12 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
-		public String getAccountId() {
-			return this.accountId;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

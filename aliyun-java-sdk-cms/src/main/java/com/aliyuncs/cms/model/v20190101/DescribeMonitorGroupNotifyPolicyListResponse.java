@@ -29,11 +29,11 @@ public class DescribeMonitorGroupNotifyPolicyListResponse extends AcsResponse {
 
 	private String message;
 
-	private String success;
-
 	private String requestId;
 
 	private Integer total;
+
+	private String success;
 
 	private List<NotifyPolicy> notifyPolicyList;
 
@@ -53,14 +53,6 @@ public class DescribeMonitorGroupNotifyPolicyListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -77,6 +69,14 @@ public class DescribeMonitorGroupNotifyPolicyListResponse extends AcsResponse {
 		this.total = total;
 	}
 
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
 	public List<NotifyPolicy> getNotifyPolicyList() {
 		return this.notifyPolicyList;
 	}
@@ -87,15 +87,23 @@ public class DescribeMonitorGroupNotifyPolicyListResponse extends AcsResponse {
 
 	public static class NotifyPolicy {
 
-		private String type;
+		private Long endTime;
 
-		private String id;
+		private String type;
 
 		private Long startTime;
 
-		private Long endTime;
-
 		private String groupId;
+
+		private String id;
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
 
 		public String getType() {
 			return this.type;
@@ -103,14 +111,6 @@ public class DescribeMonitorGroupNotifyPolicyListResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
 		}
 
 		public Long getStartTime() {
@@ -121,20 +121,20 @@ public class DescribeMonitorGroupNotifyPolicyListResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
 		public String getGroupId() {
 			return this.groupId;
 		}
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

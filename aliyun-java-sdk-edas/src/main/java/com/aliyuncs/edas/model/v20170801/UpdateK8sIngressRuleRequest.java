@@ -33,7 +33,7 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 
 	private String clusterId;
 	public UpdateK8sIngressRuleRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sIngressRule", "edas");
+		super("Edas", "2017-08-01", "UpdateK8sIngressRule", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_ingress");
 		setMethod(MethodType.PUT);
 		try {

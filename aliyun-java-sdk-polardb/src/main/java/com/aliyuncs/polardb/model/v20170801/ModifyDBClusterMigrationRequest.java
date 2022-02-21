@@ -43,7 +43,7 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 
 	private Long ownerId;
 	public ModifyDBClusterMigrationRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterMigration");
+		super("polardb", "2017-08-01", "ModifyDBClusterMigration", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

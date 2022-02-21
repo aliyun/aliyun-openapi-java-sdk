@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMetricRuleTemplateListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Long total;
 
+	private Boolean success;
+
 	private List<Template> templates;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -69,12 +53,28 @@ public class DescribeMetricRuleTemplateListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getTotal() {
 		return this.total;
 	}
 
 	public void setTotal(Long total) {
 		this.total = total;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Template> getTemplates() {
@@ -87,27 +87,19 @@ public class DescribeMetricRuleTemplateListResponse extends AcsResponse {
 
 	public static class Template {
 
-		private String name;
-
 		private String description;
-
-		private Long restVersion;
-
-		private Long templateId;
 
 		private Long gmtCreate;
 
+		private String name;
+
+		private Long restVersion;
+
 		private Long gmtModified;
 
+		private Long templateId;
+
 		private List<ApplyHistory> applyHistories;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -115,22 +107,6 @@ public class DescribeMetricRuleTemplateListResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public Long getRestVersion() {
-			return this.restVersion;
-		}
-
-		public void setRestVersion(Long restVersion) {
-			this.restVersion = restVersion;
-		}
-
-		public Long getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(Long templateId) {
-			this.templateId = templateId;
 		}
 
 		public Long getGmtCreate() {
@@ -141,12 +117,36 @@ public class DescribeMetricRuleTemplateListResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getRestVersion() {
+			return this.restVersion;
+		}
+
+		public void setRestVersion(Long restVersion) {
+			this.restVersion = restVersion;
+		}
+
 		public Long getGmtModified() {
 			return this.gmtModified;
 		}
 
 		public void setGmtModified(Long gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public Long getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(Long templateId) {
+			this.templateId = templateId;
 		}
 
 		public List<ApplyHistory> getApplyHistories() {

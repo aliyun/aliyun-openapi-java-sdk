@@ -32,6 +32,8 @@ public class UpdateGatewayOptionResponseUnmarshaller {
 		updateGatewayOptionResponse.setSuccess(_ctx.booleanValue("UpdateGatewayOptionResponse.Success"));
 
 		Data data = new Data();
+		data.setEnableHardwareAcceleration(_ctx.booleanValue("UpdateGatewayOptionResponse.Data.EnableHardwareAcceleration"));
+		data.setDisableHttp2Alpn(_ctx.booleanValue("UpdateGatewayOptionResponse.Data.DisableHttp2Alpn"));
 
 		TraceDetails traceDetails = new TraceDetails();
 		traceDetails.setTraceEnabled(_ctx.booleanValue("UpdateGatewayOptionResponse.Data.TraceDetails.TraceEnabled"));

@@ -29,11 +29,13 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 
 	private String httpRewriteJSON;
 
+	private String acceptLanguage;
+
 	private Long id;
 
 	private Long gatewayId;
 	public UpdateGatewayRouteHTTPRewriteRequest() {
-		super("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite", "mse");
+		super("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 		this.httpRewriteJSON = httpRewriteJSON;
 		if(httpRewriteJSON != null){
 			putQueryParameter("HttpRewriteJSON", httpRewriteJSON);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

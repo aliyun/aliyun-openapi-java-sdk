@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeContactListByContactGroupResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Contact> contacts;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +59,14 @@ public class DescribeContactListByContactGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<Contact> getContacts() {
 		return this.contacts;
 	}
@@ -77,15 +77,23 @@ public class DescribeContactListByContactGroupResponse extends AcsResponse {
 
 	public static class Contact {
 
-		private String name;
+		private Long updateTime;
 
-		private String desc;
+		private String name;
 
 		private Long createTime;
 
-		private Long updateTime;
+		private String desc;
 
 		private Channels channels;
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
 
 		public String getName() {
 			return this.name;
@@ -93,14 +101,6 @@ public class DescribeContactListByContactGroupResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
 		}
 
 		public Long getCreateTime() {
@@ -111,12 +111,12 @@ public class DescribeContactListByContactGroupResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getDesc() {
+			return this.desc;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public Channels getChannels() {
@@ -129,21 +129,13 @@ public class DescribeContactListByContactGroupResponse extends AcsResponse {
 
 		public static class Channels {
 
-			private String sMS;
-
 			private String mail;
 
 			private String aliIM;
 
 			private String dingWebHook;
 
-			public String getSMS() {
-				return this.sMS;
-			}
-
-			public void setSMS(String sMS) {
-				this.sMS = sMS;
-			}
+			private String sMS;
 
 			public String getMail() {
 				return this.mail;
@@ -167,6 +159,14 @@ public class DescribeContactListByContactGroupResponse extends AcsResponse {
 
 			public void setDingWebHook(String dingWebHook) {
 				this.dingWebHook = dingWebHook;
+			}
+
+			public String getSMS() {
+				return this.sMS;
+			}
+
+			public void setSMS(String sMS) {
+				this.sMS = sMS;
 			}
 		}
 	}

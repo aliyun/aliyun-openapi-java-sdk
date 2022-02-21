@@ -28,11 +28,11 @@ public class DescribeSiteMonitorStatisticsResponse extends AcsResponse {
 
 	private String message;
 
-	private String success;
+	private String data;
 
 	private String requestId;
 
-	private String data;
+	private String success;
 
 	public String getCode() {
 		return this.code;
@@ -50,12 +50,12 @@ public class DescribeSiteMonitorStatisticsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -66,12 +66,12 @@ public class DescribeSiteMonitorStatisticsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

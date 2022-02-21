@@ -47,6 +47,10 @@ public class GetLoginDetailsResponseUnmarshaller {
 		data.setUserId(_ctx.stringValue("GetLoginDetailsResponse.Data.UserId"));
 		data.setUserKey(_ctx.stringValue("GetLoginDetailsResponse.Data.UserKey"));
 		data.setWorkMode(_ctx.stringValue("GetLoginDetailsResponse.Data.WorkMode"));
+		data.setUserKey2(_ctx.stringValue("GetLoginDetailsResponse.Data.UserKey2"));
+		data.setSignature2(_ctx.stringValue("GetLoginDetailsResponse.Data.Signature2"));
+		data.setDeviceExt(_ctx.stringValue("GetLoginDetailsResponse.Data.DeviceExt"));
+		data.setDeviceState(_ctx.stringValue("GetLoginDetailsResponse.Data.DeviceState"));
 		getLoginDetailsResponse.setData(data);
 	 
 	 	return getLoginDetailsResponse;

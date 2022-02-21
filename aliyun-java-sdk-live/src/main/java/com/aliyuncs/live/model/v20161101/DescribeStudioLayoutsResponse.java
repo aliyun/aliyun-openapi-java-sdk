@@ -157,6 +157,10 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 			private Integer portraitType;
 
+			private Boolean onlyAudio;
+
+			private AudioConfig audioConfig;
+
 			public String getId() {
 				return this.id;
 			}
@@ -227,6 +231,45 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 			public void setPortraitType(Integer portraitType) {
 				this.portraitType = portraitType;
+			}
+
+			public Boolean getOnlyAudio() {
+				return this.onlyAudio;
+			}
+
+			public void setOnlyAudio(Boolean onlyAudio) {
+				this.onlyAudio = onlyAudio;
+			}
+
+			public AudioConfig getAudioConfig() {
+				return this.audioConfig;
+			}
+
+			public void setAudioConfig(AudioConfig audioConfig) {
+				this.audioConfig = audioConfig;
+			}
+
+			public static class AudioConfig {
+
+				private Float volumeRate;
+
+				private String validChannel;
+
+				public Float getVolumeRate() {
+					return this.volumeRate;
+				}
+
+				public void setVolumeRate(Float volumeRate) {
+					this.volumeRate = volumeRate;
+				}
+
+				public String getValidChannel() {
+					return this.validChannel;
+				}
+
+				public void setValidChannel(String validChannel) {
+					this.validChannel = validChannel;
+				}
 			}
 		}
 

@@ -95,6 +95,8 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String addressIPVersion;
 
+		private String payType;
+
 		public String getLoadBalancerId() {
 			return this.loadBalancerId;
 		}
@@ -165,6 +167,14 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setAddressIPVersion(String addressIPVersion) {
 			this.addressIPVersion = addressIPVersion;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 	}
 

@@ -27,7 +27,7 @@ public class StopCloudBenchTaskRequest extends RpcAcsRequest<StopCloudBenchTaskR
 
 	private String taskId;
 	public StopCloudBenchTaskRequest() {
-		super("DAS", "2020-01-16", "StopCloudBenchTask", "das");
+		super("DAS", "2020-01-16", "StopCloudBenchTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

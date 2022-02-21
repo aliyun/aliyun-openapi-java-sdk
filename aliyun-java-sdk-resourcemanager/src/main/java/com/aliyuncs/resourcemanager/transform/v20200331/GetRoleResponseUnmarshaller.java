@@ -27,20 +27,20 @@ public class GetRoleResponseUnmarshaller {
 		getRoleResponse.setRequestId(_ctx.stringValue("GetRoleResponse.RequestId"));
 
 		Role role = new Role();
-		role.setArn(_ctx.stringValue("GetRoleResponse.Role.Arn"));
 		role.setAssumeRolePolicyDocument(_ctx.stringValue("GetRoleResponse.Role.AssumeRolePolicyDocument"));
 		role.setRolePrincipalName(_ctx.stringValue("GetRoleResponse.Role.RolePrincipalName"));
-		role.setCreateDate(_ctx.stringValue("GetRoleResponse.Role.CreateDate"));
-		role.setDescription(_ctx.stringValue("GetRoleResponse.Role.Description"));
 		role.setUpdateDate(_ctx.stringValue("GetRoleResponse.Role.UpdateDate"));
-		role.setRoleId(_ctx.stringValue("GetRoleResponse.Role.RoleId"));
-		role.setRoleName(_ctx.stringValue("GetRoleResponse.Role.RoleName"));
-		role.setIsServiceLinkedRole(_ctx.booleanValue("GetRoleResponse.Role.IsServiceLinkedRole"));
+		role.setDescription(_ctx.stringValue("GetRoleResponse.Role.Description"));
 		role.setMaxSessionDuration(_ctx.longValue("GetRoleResponse.Role.MaxSessionDuration"));
+		role.setRoleName(_ctx.stringValue("GetRoleResponse.Role.RoleName"));
+		role.setCreateDate(_ctx.stringValue("GetRoleResponse.Role.CreateDate"));
+		role.setRoleId(_ctx.stringValue("GetRoleResponse.Role.RoleId"));
+		role.setArn(_ctx.stringValue("GetRoleResponse.Role.Arn"));
+		role.setIsServiceLinkedRole(_ctx.booleanValue("GetRoleResponse.Role.IsServiceLinkedRole"));
 
 		LatestDeletionTask latestDeletionTask = new LatestDeletionTask();
-		latestDeletionTask.setCreateDate(_ctx.stringValue("GetRoleResponse.Role.LatestDeletionTask.CreateDate"));
 		latestDeletionTask.setDeletionTaskId(_ctx.stringValue("GetRoleResponse.Role.LatestDeletionTask.DeletionTaskId"));
+		latestDeletionTask.setCreateDate(_ctx.stringValue("GetRoleResponse.Role.LatestDeletionTask.CreateDate"));
 		role.setLatestDeletionTask(latestDeletionTask);
 		getRoleResponse.setRole(role);
 	 

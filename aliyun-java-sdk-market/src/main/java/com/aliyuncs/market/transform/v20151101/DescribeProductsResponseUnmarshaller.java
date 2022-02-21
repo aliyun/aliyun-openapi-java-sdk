@@ -34,22 +34,22 @@ public class DescribeProductsResponseUnmarshaller {
 		List<ProductItem> productItems = new ArrayList<ProductItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProductsResponse.ProductItems.Length"); i++) {
 			ProductItem productItem = new ProductItem();
-			productItem.setCode(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Code"));
-			productItem.setName(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Name"));
-			productItem.setCategoryId(_ctx.longValue("DescribeProductsResponse.ProductItems["+ i +"].CategoryId"));
-			productItem.setSupplierId(_ctx.longValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierId"));
-			productItem.setSupplierName(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierName"));
-			productItem.setShortDescription(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].ShortDescription"));
-			productItem.setTags(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Tags"));
-			productItem.setSuggestedPrice(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SuggestedPrice"));
-			productItem.setTargetUrl(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].TargetUrl"));
-			productItem.setImageUrl(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].ImageUrl"));
-			productItem.setScore(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Score"));
-			productItem.setOperationSystem(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].OperationSystem"));
-			productItem.setWarrantyDate(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].WarrantyDate"));
-			productItem.setDeliveryDate(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryDate"));
-			productItem.setDeliveryWay(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryWay"));
 			productItem.setPriceInfo(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].PriceInfo"));
+			productItem.setDeliveryWay(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryWay"));
+			productItem.setImageUrl(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].ImageUrl"));
+			productItem.setWarrantyDate(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].WarrantyDate"));
+			productItem.setTags(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Tags"));
+			productItem.setScore(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Score"));
+			productItem.setSupplierId(_ctx.longValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierId"));
+			productItem.setOperationSystem(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].OperationSystem"));
+			productItem.setShortDescription(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].ShortDescription"));
+			productItem.setDeliveryDate(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryDate"));
+			productItem.setTargetUrl(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].TargetUrl"));
+			productItem.setCode(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Code"));
+			productItem.setCategoryId(_ctx.longValue("DescribeProductsResponse.ProductItems["+ i +"].CategoryId"));
+			productItem.setName(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Name"));
+			productItem.setSuggestedPrice(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SuggestedPrice"));
+			productItem.setSupplierName(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierName"));
 
 			productItems.add(productItem);
 		}

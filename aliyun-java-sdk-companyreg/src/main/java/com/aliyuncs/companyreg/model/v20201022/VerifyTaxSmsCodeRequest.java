@@ -29,7 +29,7 @@ public class VerifyTaxSmsCodeRequest extends RpcAcsRequest<VerifyTaxSmsCodeRespo
 
 	private String bizId;
 	public VerifyTaxSmsCodeRequest() {
-		super("companyreg", "2020-10-22", "VerifyTaxSmsCode", "companyreg");
+		super("companyreg", "2020-10-22", "VerifyTaxSmsCode");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

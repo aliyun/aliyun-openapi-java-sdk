@@ -33,7 +33,7 @@ public class QuerySmsTemplateRequest extends RpcAcsRequest<QuerySmsTemplateRespo
 
 	private String templateCode;
 	public QuerySmsTemplateRequest() {
-		super("Dysmsapi", "2017-05-25", "QuerySmsTemplate", "dysms");
+		super("Dysmsapi", "2017-05-25", "QuerySmsTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

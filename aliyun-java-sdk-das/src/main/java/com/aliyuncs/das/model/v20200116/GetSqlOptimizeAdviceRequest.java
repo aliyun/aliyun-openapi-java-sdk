@@ -35,7 +35,7 @@ public class GetSqlOptimizeAdviceRequest extends RpcAcsRequest<GetSqlOptimizeAdv
 
 	private String startDt;
 	public GetSqlOptimizeAdviceRequest() {
-		super("DAS", "2020-01-16", "GetSqlOptimizeAdvice", "das");
+		super("DAS", "2020-01-16", "GetSqlOptimizeAdvice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteGrayEnvironmentRequest extends RoaAcsRequest<DeleteGrayEnviro
 
 	private String pointcutName;
 	public DeleteGrayEnvironmentRequest() {
-		super("Edas", "2017-08-01", "DeleteGrayEnvironment", "edas");
+		super("Edas", "2017-08-01", "DeleteGrayEnvironment", "Edas");
 		setUriPattern("/pop/v5/gray/env");
 		setMethod(MethodType.DELETE);
 		try {

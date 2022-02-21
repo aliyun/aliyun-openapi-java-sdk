@@ -28,7 +28,7 @@ public class DeleteSiteMonitorsRequest extends RpcAcsRequest<DeleteSiteMonitorsR
 
 	private String taskIds;
 	public DeleteSiteMonitorsRequest() {
-		super("Cms", "2019-01-01", "DeleteSiteMonitors", "cms");
+		super("Cms", "2019-01-01", "DeleteSiteMonitors", "Cms");
 		setMethod(MethodType.POST);
 	}
 

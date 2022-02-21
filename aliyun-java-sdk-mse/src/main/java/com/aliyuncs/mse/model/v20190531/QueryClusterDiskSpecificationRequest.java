@@ -26,8 +26,10 @@ public class QueryClusterDiskSpecificationRequest extends RpcAcsRequest<QueryClu
 	   
 
 	private String clusterType;
+
+	private String acceptLanguage;
 	public QueryClusterDiskSpecificationRequest() {
-		super("mse", "2019-05-31", "QueryClusterDiskSpecification", "mse");
+		super("mse", "2019-05-31", "QueryClusterDiskSpecification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,6 +45,17 @@ public class QueryClusterDiskSpecificationRequest extends RpcAcsRequest<QueryClu
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

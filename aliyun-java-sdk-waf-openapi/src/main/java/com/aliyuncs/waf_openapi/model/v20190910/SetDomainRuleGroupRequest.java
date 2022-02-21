@@ -27,6 +27,8 @@ public class SetDomainRuleGroupRequest extends RpcAcsRequest<SetDomainRuleGroupR
 
 	private Long wafVersion;
 
+	private Integer wafAiStatus;
+
 	private Long ruleGroupId;
 
 	private String resourceGroupId;
@@ -51,6 +53,17 @@ public class SetDomainRuleGroupRequest extends RpcAcsRequest<SetDomainRuleGroupR
 		this.wafVersion = wafVersion;
 		if(wafVersion != null){
 			putQueryParameter("WafVersion", wafVersion.toString());
+		}
+	}
+
+	public Integer getWafAiStatus() {
+		return this.wafAiStatus;
+	}
+
+	public void setWafAiStatus(Integer wafAiStatus) {
+		this.wafAiStatus = wafAiStatus;
+		if(wafAiStatus != null){
+			putQueryParameter("WafAiStatus", wafAiStatus.toString());
 		}
 	}
 

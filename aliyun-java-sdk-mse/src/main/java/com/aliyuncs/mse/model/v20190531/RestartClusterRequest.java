@@ -32,8 +32,10 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 	private String instanceId;
 
 	private String requestPars;
+
+	private String acceptLanguage;
 	public RestartClusterRequest() {
-		super("mse", "2019-05-31", "RestartCluster", "mse");
+		super("mse", "2019-05-31", "RestartCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

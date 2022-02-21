@@ -373,6 +373,10 @@ public class ListJobsResponse extends AcsResponse {
 
 					private String userName;
 
+					private String ding;
+
+					private String userMail;
+
 					public String getUserPhone() {
 						return this.userPhone;
 					}
@@ -388,6 +392,22 @@ public class ListJobsResponse extends AcsResponse {
 					public void setUserName(String userName) {
 						this.userName = userName;
 					}
+
+					public String getDing() {
+						return this.ding;
+					}
+
+					public void setDing(String ding) {
+						this.ding = ding;
+					}
+
+					public String getUserMail() {
+						return this.userMail;
+					}
+
+					public void setUserMail(String userMail) {
+						this.userMail = userMail;
+					}
 				}
 
 				public static class MonitorConfig {
@@ -401,6 +421,8 @@ public class ListJobsResponse extends AcsResponse {
 					private Boolean timeoutEnable;
 
 					private Boolean failEnable;
+
+					private Boolean missWorkerEnable;
 
 					public Long getTimeout() {
 						return this.timeout;
@@ -440,6 +462,14 @@ public class ListJobsResponse extends AcsResponse {
 
 					public void setFailEnable(Boolean failEnable) {
 						this.failEnable = failEnable;
+					}
+
+					public Boolean getMissWorkerEnable() {
+						return this.missWorkerEnable;
+					}
+
+					public void setMissWorkerEnable(Boolean missWorkerEnable) {
+						this.missWorkerEnable = missWorkerEnable;
 					}
 				}
 			}

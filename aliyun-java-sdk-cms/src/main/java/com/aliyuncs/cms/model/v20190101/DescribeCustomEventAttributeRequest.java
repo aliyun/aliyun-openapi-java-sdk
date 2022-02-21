@@ -40,7 +40,7 @@ public class DescribeCustomEventAttributeRequest extends RpcAcsRequest<DescribeC
 
 	private String name;
 	public DescribeCustomEventAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeCustomEventAttribute", "cms");
+		super("Cms", "2019-01-01", "DescribeCustomEventAttribute", "Cms");
 		setMethod(MethodType.POST);
 	}
 

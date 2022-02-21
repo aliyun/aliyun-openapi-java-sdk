@@ -32,8 +32,8 @@ public class DescribeLogServiceStatusResponseUnmarshaller {
 		List<Status> domainStatus = new ArrayList<Status>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogServiceStatusResponse.DomainStatus.Length"); i++) {
 			Status status = new Status();
-			status.setSlsLogActive(_ctx.integerValue("DescribeLogServiceStatusResponse.DomainStatus["+ i +"].SlsLogActive"));
 			status.setDomain(_ctx.stringValue("DescribeLogServiceStatusResponse.DomainStatus["+ i +"].Domain"));
+			status.setSlsLogActive(_ctx.integerValue("DescribeLogServiceStatusResponse.DomainStatus["+ i +"].SlsLogActive"));
 
 			domainStatus.add(status);
 		}

@@ -37,7 +37,7 @@ public class AcceptPartnerNotificationRequest extends RpcAcsRequest<AcceptPartne
 
 	private String bizId;
 	public AcceptPartnerNotificationRequest() {
-		super("companyreg", "2019-05-08", "AcceptPartnerNotification", "companyreg");
+		super("companyreg", "2019-05-08", "AcceptPartnerNotification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

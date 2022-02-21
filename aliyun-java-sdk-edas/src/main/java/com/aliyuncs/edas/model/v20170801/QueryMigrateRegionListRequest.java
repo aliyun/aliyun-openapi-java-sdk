@@ -27,7 +27,7 @@ public class QueryMigrateRegionListRequest extends RoaAcsRequest<QueryMigrateReg
 
 	private String logicalRegionId;
 	public QueryMigrateRegionListRequest() {
-		super("Edas", "2017-08-01", "QueryMigrateRegionList", "edas");
+		super("Edas", "2017-08-01", "QueryMigrateRegionList", "Edas");
 		setUriPattern("/pop/v5/resource/migrate_region_select");
 		setMethod(MethodType.GET);
 		try {

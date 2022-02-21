@@ -33,7 +33,11 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String projectIdentifier;
 
+	private Boolean startImmediately;
+
 	private Long projectId;
+
+	private String advancedSettings;
 
 	private Long startEffectDate;
 
@@ -127,6 +131,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		}
 	}
 
+	public Boolean getStartImmediately() {
+		return this.startImmediately;
+	}
+
+	public void setStartImmediately(Boolean startImmediately) {
+		this.startImmediately = startImmediately;
+		if(startImmediately != null){
+			putBodyParameter("StartImmediately", startImmediately.toString());
+		}
+	}
+
 	public Long getProjectId() {
 		return this.projectId;
 	}
@@ -135,6 +150,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getAdvancedSettings() {
+		return this.advancedSettings;
+	}
+
+	public void setAdvancedSettings(String advancedSettings) {
+		this.advancedSettings = advancedSettings;
+		if(advancedSettings != null){
+			putBodyParameter("AdvancedSettings", advancedSettings);
 		}
 	}
 

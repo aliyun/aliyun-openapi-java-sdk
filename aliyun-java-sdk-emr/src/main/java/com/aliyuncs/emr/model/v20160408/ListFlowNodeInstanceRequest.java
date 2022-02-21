@@ -42,7 +42,7 @@ public class ListFlowNodeInstanceRequest extends RpcAcsRequest<ListFlowNodeInsta
 
 	private String orderType;
 	public ListFlowNodeInstanceRequest() {
-		super("Emr", "2016-04-08", "ListFlowNodeInstance", "emr");
+		super("Emr", "2016-04-08", "ListFlowNodeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

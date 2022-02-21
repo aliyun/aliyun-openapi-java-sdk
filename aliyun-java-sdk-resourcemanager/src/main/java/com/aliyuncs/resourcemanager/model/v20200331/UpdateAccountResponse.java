@@ -46,88 +46,32 @@ public class UpdateAccountResponse extends AcsResponse {
 
 	public static class Account {
 
-		private String resourceDirectoryId;
-
-		private String accountId;
-
-		private String displayName;
-
-		private String accountName;
-
-		private String folderId;
-
-		private String joinMethod;
-
-		private String joinTime;
-
-		private String modifyTime;
+		private String status;
 
 		private String type;
 
-		private String status;
+		private String displayName;
 
-		public String getResourceDirectoryId() {
-			return this.resourceDirectoryId;
+		private String folderId;
+
+		private String resourceDirectoryId;
+
+		private String joinTime;
+
+		private String accountId;
+
+		private String joinMethod;
+
+		private String modifyTime;
+
+		private String accountName;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setResourceDirectoryId(String resourceDirectoryId) {
-			this.resourceDirectoryId = resourceDirectoryId;
-		}
-
-		public String getAccountId() {
-			return this.accountId;
-		}
-
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
-		}
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
-		public String getFolderId() {
-			return this.folderId;
-		}
-
-		public void setFolderId(String folderId) {
-			this.folderId = folderId;
-		}
-
-		public String getJoinMethod() {
-			return this.joinMethod;
-		}
-
-		public void setJoinMethod(String joinMethod) {
-			this.joinMethod = joinMethod;
-		}
-
-		public String getJoinTime() {
-			return this.joinTime;
-		}
-
-		public void setJoinTime(String joinTime) {
-			this.joinTime = joinTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -138,12 +82,68 @@ public class UpdateAccountResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getFolderId() {
+			return this.folderId;
+		}
+
+		public void setFolderId(String folderId) {
+			this.folderId = folderId;
+		}
+
+		public String getResourceDirectoryId() {
+			return this.resourceDirectoryId;
+		}
+
+		public void setResourceDirectoryId(String resourceDirectoryId) {
+			this.resourceDirectoryId = resourceDirectoryId;
+		}
+
+		public String getJoinTime() {
+			return this.joinTime;
+		}
+
+		public void setJoinTime(String joinTime) {
+			this.joinTime = joinTime;
+		}
+
+		public String getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
+		}
+
+		public String getJoinMethod() {
+			return this.joinMethod;
+		}
+
+		public void setJoinMethod(String joinMethod) {
+			this.joinMethod = joinMethod;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

@@ -51,6 +51,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String addressIPVersion;
 
+	private String payType;
+
 	private List<Rs> backendServers;
 
 	private List<Listener> listenerPortsAndProtocols;
@@ -159,6 +161,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setAddressIPVersion(String addressIPVersion) {
 		this.addressIPVersion = addressIPVersion;
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
 	}
 
 	public List<Rs> getBackendServers() {

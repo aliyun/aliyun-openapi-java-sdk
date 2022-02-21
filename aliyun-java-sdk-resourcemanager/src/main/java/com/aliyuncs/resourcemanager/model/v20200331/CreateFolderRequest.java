@@ -30,7 +30,7 @@ public class CreateFolderRequest extends RpcAcsRequest<CreateFolderResponse> {
 
 	private String parentFolderId;
 	public CreateFolderRequest() {
-		super("ResourceManager", "2020-03-31", "CreateFolder", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "CreateFolder");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

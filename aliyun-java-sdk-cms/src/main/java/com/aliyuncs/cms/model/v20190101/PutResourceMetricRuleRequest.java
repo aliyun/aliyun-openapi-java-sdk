@@ -15,6 +15,7 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -30,19 +31,13 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 
 	private String ruleName;
 
-	private String escalationsInfoStatistics;
-
 	private String effectiveInterval;
-
-	private String escalationsInfoComparisonOperator;
 
 	private String noDataPolicy;
 
 	private String noEffectiveInterval;
 
 	private String emailSubject;
-
-	private Integer silenceTime;
 
 	private String metricName;
 
@@ -56,6 +51,20 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 
 	private String escalationsCriticalStatistics;
 
+	private List<Labels> labelss;
+
+	private String interval;
+
+	private String ruleId;
+
+	private String escalationsCriticalThreshold;
+
+	private String escalationsInfoStatistics;
+
+	private String escalationsInfoComparisonOperator;
+
+	private Integer silenceTime;
+
 	private String resources;
 
 	private Integer escalationsInfoTimes;
@@ -68,15 +77,9 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 
 	private String namespace;
 
-	private String interval;
-
-	private String ruleId;
-
 	private String escalationsCriticalComparisonOperator;
-
-	private String escalationsCriticalThreshold;
 	public PutResourceMetricRuleRequest() {
-		super("Cms", "2019-01-01", "PutResourceMetricRule", "cms");
+		super("Cms", "2019-01-01", "PutResourceMetricRule", "Cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -113,17 +116,6 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		}
 	}
 
-	public String getEscalationsInfoStatistics() {
-		return this.escalationsInfoStatistics;
-	}
-
-	public void setEscalationsInfoStatistics(String escalationsInfoStatistics) {
-		this.escalationsInfoStatistics = escalationsInfoStatistics;
-		if(escalationsInfoStatistics != null){
-			putQueryParameter("Escalations.Info.Statistics", escalationsInfoStatistics);
-		}
-	}
-
 	public String getEffectiveInterval() {
 		return this.effectiveInterval;
 	}
@@ -132,17 +124,6 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		this.effectiveInterval = effectiveInterval;
 		if(effectiveInterval != null){
 			putQueryParameter("EffectiveInterval", effectiveInterval);
-		}
-	}
-
-	public String getEscalationsInfoComparisonOperator() {
-		return this.escalationsInfoComparisonOperator;
-	}
-
-	public void setEscalationsInfoComparisonOperator(String escalationsInfoComparisonOperator) {
-		this.escalationsInfoComparisonOperator = escalationsInfoComparisonOperator;
-		if(escalationsInfoComparisonOperator != null){
-			putQueryParameter("Escalations.Info.ComparisonOperator", escalationsInfoComparisonOperator);
 		}
 	}
 
@@ -176,17 +157,6 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		this.emailSubject = emailSubject;
 		if(emailSubject != null){
 			putQueryParameter("EmailSubject", emailSubject);
-		}
-	}
-
-	public Integer getSilenceTime() {
-		return this.silenceTime;
-	}
-
-	public void setSilenceTime(Integer silenceTime) {
-		this.silenceTime = silenceTime;
-		if(silenceTime != null){
-			putQueryParameter("SilenceTime", silenceTime.toString());
 		}
 	}
 
@@ -256,6 +226,86 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		}
 	}
 
+	public List<Labels> getLabelss() {
+		return this.labelss;
+	}
+
+	public void setLabelss(List<Labels> labelss) {
+		this.labelss = labelss;	
+		if (labelss != null) {
+			for (int depth1 = 0; depth1 < labelss.size(); depth1++) {
+				putQueryParameter("Labels." + (depth1 + 1) + ".Value" , labelss.get(depth1).getValue());
+				putQueryParameter("Labels." + (depth1 + 1) + ".Key" , labelss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
+		}
+	}
+
+	public String getEscalationsCriticalThreshold() {
+		return this.escalationsCriticalThreshold;
+	}
+
+	public void setEscalationsCriticalThreshold(String escalationsCriticalThreshold) {
+		this.escalationsCriticalThreshold = escalationsCriticalThreshold;
+		if(escalationsCriticalThreshold != null){
+			putQueryParameter("Escalations.Critical.Threshold", escalationsCriticalThreshold);
+		}
+	}
+
+	public String getEscalationsInfoStatistics() {
+		return this.escalationsInfoStatistics;
+	}
+
+	public void setEscalationsInfoStatistics(String escalationsInfoStatistics) {
+		this.escalationsInfoStatistics = escalationsInfoStatistics;
+		if(escalationsInfoStatistics != null){
+			putQueryParameter("Escalations.Info.Statistics", escalationsInfoStatistics);
+		}
+	}
+
+	public String getEscalationsInfoComparisonOperator() {
+		return this.escalationsInfoComparisonOperator;
+	}
+
+	public void setEscalationsInfoComparisonOperator(String escalationsInfoComparisonOperator) {
+		this.escalationsInfoComparisonOperator = escalationsInfoComparisonOperator;
+		if(escalationsInfoComparisonOperator != null){
+			putQueryParameter("Escalations.Info.ComparisonOperator", escalationsInfoComparisonOperator);
+		}
+	}
+
+	public Integer getSilenceTime() {
+		return this.silenceTime;
+	}
+
+	public void setSilenceTime(Integer silenceTime) {
+		this.silenceTime = silenceTime;
+		if(silenceTime != null){
+			putQueryParameter("SilenceTime", silenceTime.toString());
+		}
+	}
+
 	public String getResources() {
 		return this.resources;
 	}
@@ -322,28 +372,6 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId);
-		}
-	}
-
 	public String getEscalationsCriticalComparisonOperator() {
 		return this.escalationsCriticalComparisonOperator;
 	}
@@ -355,14 +383,26 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		}
 	}
 
-	public String getEscalationsCriticalThreshold() {
-		return this.escalationsCriticalThreshold;
-	}
+	public static class Labels {
 
-	public void setEscalationsCriticalThreshold(String escalationsCriticalThreshold) {
-		this.escalationsCriticalThreshold = escalationsCriticalThreshold;
-		if(escalationsCriticalThreshold != null){
-			putQueryParameter("Escalations.Critical.Threshold", escalationsCriticalThreshold);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

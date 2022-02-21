@@ -27,7 +27,7 @@ public class DeleteServiceLinkedRoleRequest extends RpcAcsRequest<DeleteServiceL
 
 	private String roleName;
 	public DeleteServiceLinkedRoleRequest() {
-		super("ResourceManager", "2020-03-31", "DeleteServiceLinkedRole", "resourcemanager");
+		super("ResourceManager", "2020-03-31", "DeleteServiceLinkedRole");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

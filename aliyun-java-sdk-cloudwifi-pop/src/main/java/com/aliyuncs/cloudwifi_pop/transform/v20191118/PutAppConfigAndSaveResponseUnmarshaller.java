@@ -25,9 +25,9 @@ public class PutAppConfigAndSaveResponseUnmarshaller {
 		
 		putAppConfigAndSaveResponse.setRequestId(_ctx.stringValue("PutAppConfigAndSaveResponse.RequestId"));
 		putAppConfigAndSaveResponse.setData(_ctx.mapValue("PutAppConfigAndSaveResponse.Data"));
+		putAppConfigAndSaveResponse.setErrorMessage(_ctx.stringValue("PutAppConfigAndSaveResponse.ErrorMessage"));
 		putAppConfigAndSaveResponse.setIsSuccess(_ctx.booleanValue("PutAppConfigAndSaveResponse.IsSuccess"));
 		putAppConfigAndSaveResponse.setErrorCode(_ctx.integerValue("PutAppConfigAndSaveResponse.ErrorCode"));
-		putAppConfigAndSaveResponse.setErrorMessage(_ctx.stringValue("PutAppConfigAndSaveResponse.ErrorMessage"));
 	 
 	 	return putAppConfigAndSaveResponse;
 	}

@@ -24,9 +24,9 @@ public class GetApStatusByGroupIdResponseUnmarshaller {
 	public static GetApStatusByGroupIdResponse unmarshall(GetApStatusByGroupIdResponse getApStatusByGroupIdResponse, UnmarshallerContext _ctx) {
 		
 		getApStatusByGroupIdResponse.setData(_ctx.mapValue("GetApStatusByGroupIdResponse.Data"));
+		getApStatusByGroupIdResponse.setErrorMessage(_ctx.stringValue("GetApStatusByGroupIdResponse.ErrorMessage"));
 		getApStatusByGroupIdResponse.setIsSuccess(_ctx.booleanValue("GetApStatusByGroupIdResponse.IsSuccess"));
 		getApStatusByGroupIdResponse.setErrorCode(_ctx.integerValue("GetApStatusByGroupIdResponse.ErrorCode"));
-		getApStatusByGroupIdResponse.setErrorMessage(_ctx.stringValue("GetApStatusByGroupIdResponse.ErrorMessage"));
 	 
 	 	return getApStatusByGroupIdResponse;
 	}

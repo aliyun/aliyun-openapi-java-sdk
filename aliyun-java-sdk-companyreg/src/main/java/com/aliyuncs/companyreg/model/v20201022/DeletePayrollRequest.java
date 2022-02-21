@@ -29,7 +29,7 @@ public class DeletePayrollRequest extends RpcAcsRequest<DeletePayrollResponse> {
 
 	private Long id;
 	public DeletePayrollRequest() {
-		super("companyreg", "2020-10-22", "DeletePayroll", "companyreg");
+		super("companyreg", "2020-10-22", "DeletePayroll");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

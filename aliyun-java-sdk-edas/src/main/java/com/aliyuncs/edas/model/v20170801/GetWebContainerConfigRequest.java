@@ -27,7 +27,7 @@ public class GetWebContainerConfigRequest extends RoaAcsRequest<GetWebContainerC
 
 	private String appId;
 	public GetWebContainerConfigRequest() {
-		super("Edas", "2017-08-01", "GetWebContainerConfig", "edas");
+		super("Edas", "2017-08-01", "GetWebContainerConfig", "Edas");
 		setUriPattern("/pop/v5/oam/web_container_config");
 		setMethod(MethodType.GET);
 		try {

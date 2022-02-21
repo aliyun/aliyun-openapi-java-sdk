@@ -45,7 +45,7 @@ public class ListClusterHostComponentRequest extends RpcAcsRequest<ListClusterHo
 
 	private String hostRole;
 	public ListClusterHostComponentRequest() {
-		super("Emr", "2016-04-08", "ListClusterHostComponent", "emr");
+		super("Emr", "2016-04-08", "ListClusterHostComponent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

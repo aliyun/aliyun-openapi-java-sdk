@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMarketImagesResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private List<ImageProduct> result;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -59,14 +67,6 @@ public class QueryMarketImagesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public List<ImageProduct> getResult() {
 		return this.result;
 	}
@@ -77,41 +77,41 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 	public static class ImageProduct {
 
-		private String imageProductCode;
-
-		private String productName;
-
-		private String categoryName;
-
-		private String supplierName;
+		private String osKind;
 
 		private String baseSystem;
 
-		private String osKind;
-
-		private Integer osBit;
-
-		private String pictureUrl;
-
-		private String smallPicUrl;
-
-		private String shortDescription;
-
-		private String agreementUrl;
-
-		private String detailUrl;
-
-		private String buyUrl;
-
-		private String storeUrl;
-
-		private Float score;
-
-		private Long userCount;
+		private String productName;
 
 		private Boolean supportIO;
 
+		private Float score;
+
+		private Integer osBit;
+
+		private String categoryName;
+
+		private String pictureUrl;
+
+		private String agreementUrl;
+
+		private String imageProductCode;
+
+		private String storeUrl;
+
+		private String buyUrl;
+
+		private String shortDescription;
+
 		private Long createdOn;
+
+		private Long userCount;
+
+		private String smallPicUrl;
+
+		private String detailUrl;
+
+		private String supplierName;
 
 		private List<Image> images;
 
@@ -121,36 +121,12 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 		private PriceInfo priceInfo;
 
-		public String getImageProductCode() {
-			return this.imageProductCode;
+		public String getOsKind() {
+			return this.osKind;
 		}
 
-		public void setImageProductCode(String imageProductCode) {
-			this.imageProductCode = imageProductCode;
-		}
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public String getCategoryName() {
-			return this.categoryName;
-		}
-
-		public void setCategoryName(String categoryName) {
-			this.categoryName = categoryName;
-		}
-
-		public String getSupplierName() {
-			return this.supplierName;
-		}
-
-		public void setSupplierName(String supplierName) {
-			this.supplierName = supplierName;
+		public void setOsKind(String osKind) {
+			this.osKind = osKind;
 		}
 
 		public String getBaseSystem() {
@@ -161,92 +137,12 @@ public class QueryMarketImagesResponse extends AcsResponse {
 			this.baseSystem = baseSystem;
 		}
 
-		public String getOsKind() {
-			return this.osKind;
+		public String getProductName() {
+			return this.productName;
 		}
 
-		public void setOsKind(String osKind) {
-			this.osKind = osKind;
-		}
-
-		public Integer getOsBit() {
-			return this.osBit;
-		}
-
-		public void setOsBit(Integer osBit) {
-			this.osBit = osBit;
-		}
-
-		public String getPictureUrl() {
-			return this.pictureUrl;
-		}
-
-		public void setPictureUrl(String pictureUrl) {
-			this.pictureUrl = pictureUrl;
-		}
-
-		public String getSmallPicUrl() {
-			return this.smallPicUrl;
-		}
-
-		public void setSmallPicUrl(String smallPicUrl) {
-			this.smallPicUrl = smallPicUrl;
-		}
-
-		public String getShortDescription() {
-			return this.shortDescription;
-		}
-
-		public void setShortDescription(String shortDescription) {
-			this.shortDescription = shortDescription;
-		}
-
-		public String getAgreementUrl() {
-			return this.agreementUrl;
-		}
-
-		public void setAgreementUrl(String agreementUrl) {
-			this.agreementUrl = agreementUrl;
-		}
-
-		public String getDetailUrl() {
-			return this.detailUrl;
-		}
-
-		public void setDetailUrl(String detailUrl) {
-			this.detailUrl = detailUrl;
-		}
-
-		public String getBuyUrl() {
-			return this.buyUrl;
-		}
-
-		public void setBuyUrl(String buyUrl) {
-			this.buyUrl = buyUrl;
-		}
-
-		public String getStoreUrl() {
-			return this.storeUrl;
-		}
-
-		public void setStoreUrl(String storeUrl) {
-			this.storeUrl = storeUrl;
-		}
-
-		public Float getScore() {
-			return this.score;
-		}
-
-		public void setScore(Float score) {
-			this.score = score;
-		}
-
-		public Long getUserCount() {
-			return this.userCount;
-		}
-
-		public void setUserCount(Long userCount) {
-			this.userCount = userCount;
+		public void setProductName(String productName) {
+			this.productName = productName;
 		}
 
 		public Boolean getSupportIO() {
@@ -257,12 +153,116 @@ public class QueryMarketImagesResponse extends AcsResponse {
 			this.supportIO = supportIO;
 		}
 
+		public Float getScore() {
+			return this.score;
+		}
+
+		public void setScore(Float score) {
+			this.score = score;
+		}
+
+		public Integer getOsBit() {
+			return this.osBit;
+		}
+
+		public void setOsBit(Integer osBit) {
+			this.osBit = osBit;
+		}
+
+		public String getCategoryName() {
+			return this.categoryName;
+		}
+
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
+		}
+
+		public String getPictureUrl() {
+			return this.pictureUrl;
+		}
+
+		public void setPictureUrl(String pictureUrl) {
+			this.pictureUrl = pictureUrl;
+		}
+
+		public String getAgreementUrl() {
+			return this.agreementUrl;
+		}
+
+		public void setAgreementUrl(String agreementUrl) {
+			this.agreementUrl = agreementUrl;
+		}
+
+		public String getImageProductCode() {
+			return this.imageProductCode;
+		}
+
+		public void setImageProductCode(String imageProductCode) {
+			this.imageProductCode = imageProductCode;
+		}
+
+		public String getStoreUrl() {
+			return this.storeUrl;
+		}
+
+		public void setStoreUrl(String storeUrl) {
+			this.storeUrl = storeUrl;
+		}
+
+		public String getBuyUrl() {
+			return this.buyUrl;
+		}
+
+		public void setBuyUrl(String buyUrl) {
+			this.buyUrl = buyUrl;
+		}
+
+		public String getShortDescription() {
+			return this.shortDescription;
+		}
+
+		public void setShortDescription(String shortDescription) {
+			this.shortDescription = shortDescription;
+		}
+
 		public Long getCreatedOn() {
 			return this.createdOn;
 		}
 
 		public void setCreatedOn(Long createdOn) {
 			this.createdOn = createdOn;
+		}
+
+		public Long getUserCount() {
+			return this.userCount;
+		}
+
+		public void setUserCount(Long userCount) {
+			this.userCount = userCount;
+		}
+
+		public String getSmallPicUrl() {
+			return this.smallPicUrl;
+		}
+
+		public void setSmallPicUrl(String smallPicUrl) {
+			this.smallPicUrl = smallPicUrl;
+		}
+
+		public String getDetailUrl() {
+			return this.detailUrl;
+		}
+
+		public void setDetailUrl(String detailUrl) {
+			this.detailUrl = detailUrl;
+		}
+
+		public String getSupplierName() {
+			return this.supplierName;
+		}
+
+		public void setSupplierName(String supplierName) {
+			this.supplierName = supplierName;
 		}
 
 		public List<Image> getImages() {
@@ -299,45 +299,21 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 		public static class Image {
 
-			private String version;
-
-			private String versionDescription;
-
-			private String imageId;
-
 			private Integer imageSize;
-
-			private String region;
 
 			private Boolean isDefault;
 
 			private Boolean supportIO;
 
+			private String version;
+
+			private String region;
+
+			private String versionDescription;
+
+			private String imageId;
+
 			private List<DiskDeviceMapping> diskDeviceMappings;
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
-			}
-
-			public String getVersionDescription() {
-				return this.versionDescription;
-			}
-
-			public void setVersionDescription(String versionDescription) {
-				this.versionDescription = versionDescription;
-			}
-
-			public String getImageId() {
-				return this.imageId;
-			}
-
-			public void setImageId(String imageId) {
-				this.imageId = imageId;
-			}
 
 			public Integer getImageSize() {
 				return this.imageSize;
@@ -345,14 +321,6 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 			public void setImageSize(Integer imageSize) {
 				this.imageSize = imageSize;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
 			}
 
 			public Boolean getIsDefault() {
@@ -371,6 +339,38 @@ public class QueryMarketImagesResponse extends AcsResponse {
 				this.supportIO = supportIO;
 			}
 
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getVersionDescription() {
+				return this.versionDescription;
+			}
+
+			public void setVersionDescription(String versionDescription) {
+				this.versionDescription = versionDescription;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
+
 			public List<DiskDeviceMapping> getDiskDeviceMappings() {
 				return this.diskDeviceMappings;
 			}
@@ -381,34 +381,26 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 			public static class DiskDeviceMapping {
 
-				private String diskType;
-
-				private String format;
+				private String importOSSBucket;
 
 				private String snapshotId;
+
+				private String importOSSObject;
 
 				private Integer size;
 
 				private String device;
 
-				private String importOSSBucket;
+				private String diskType;
 
-				private String importOSSObject;
+				private String format;
 
-				public String getDiskType() {
-					return this.diskType;
+				public String getImportOSSBucket() {
+					return this.importOSSBucket;
 				}
 
-				public void setDiskType(String diskType) {
-					this.diskType = diskType;
-				}
-
-				public String getFormat() {
-					return this.format;
-				}
-
-				public void setFormat(String format) {
-					this.format = format;
+				public void setImportOSSBucket(String importOSSBucket) {
+					this.importOSSBucket = importOSSBucket;
 				}
 
 				public String getSnapshotId() {
@@ -417,6 +409,14 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 				public void setSnapshotId(String snapshotId) {
 					this.snapshotId = snapshotId;
+				}
+
+				public String getImportOSSObject() {
+					return this.importOSSObject;
+				}
+
+				public void setImportOSSObject(String importOSSObject) {
+					this.importOSSObject = importOSSObject;
 				}
 
 				public Integer getSize() {
@@ -435,39 +435,31 @@ public class QueryMarketImagesResponse extends AcsResponse {
 					this.device = device;
 				}
 
-				public String getImportOSSBucket() {
-					return this.importOSSBucket;
+				public String getDiskType() {
+					return this.diskType;
 				}
 
-				public void setImportOSSBucket(String importOSSBucket) {
-					this.importOSSBucket = importOSSBucket;
+				public void setDiskType(String diskType) {
+					this.diskType = diskType;
 				}
 
-				public String getImportOSSObject() {
-					return this.importOSSObject;
+				public String getFormat() {
+					return this.format;
 				}
 
-				public void setImportOSSObject(String importOSSObject) {
-					this.importOSSObject = importOSSObject;
+				public void setFormat(String format) {
+					this.format = format;
 				}
 			}
 		}
 
 		public static class Quota {
 
-			private Long totalQuota;
-
 			private Long usingQuota;
 
 			private Long unusedQuota;
 
-			public Long getTotalQuota() {
-				return this.totalQuota;
-			}
-
-			public void setTotalQuota(Long totalQuota) {
-				this.totalQuota = totalQuota;
-			}
+			private Long totalQuota;
 
 			public Long getUsingQuota() {
 				return this.usingQuota;
@@ -483,6 +475,14 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 			public void setUnusedQuota(Long unusedQuota) {
 				this.unusedQuota = unusedQuota;
+			}
+
+			public Long getTotalQuota() {
+				return this.totalQuota;
+			}
+
+			public void setTotalQuota(Long totalQuota) {
+				this.totalQuota = totalQuota;
 			}
 		}
 
@@ -510,19 +510,11 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 			public static class Rule {
 
-				private Long ruleId;
-
 				private String title;
 
 				private String name;
 
-				public Long getRuleId() {
-					return this.ruleId;
-				}
-
-				public void setRuleId(Long ruleId) {
-					this.ruleId = ruleId;
-				}
+				private Long ruleId;
 
 				public String getTitle() {
 					return this.title;
@@ -539,31 +531,31 @@ public class QueryMarketImagesResponse extends AcsResponse {
 				public void setName(String name) {
 					this.name = name;
 				}
+
+				public Long getRuleId() {
+					return this.ruleId;
+				}
+
+				public void setRuleId(Long ruleId) {
+					this.ruleId = ruleId;
+				}
 			}
 
 			public static class Order {
-
-				private Float originalPrice;
 
 				private Float discountPrice;
 
 				private Float tradePrice;
 
+				private String priceUnit;
+
+				private Float originalPrice;
+
 				private String currency;
 
 				private Integer period;
 
-				private String priceUnit;
-
 				private List<String> ruleIdSet;
-
-				public Float getOriginalPrice() {
-					return this.originalPrice;
-				}
-
-				public void setOriginalPrice(Float originalPrice) {
-					this.originalPrice = originalPrice;
-				}
 
 				public Float getDiscountPrice() {
 					return this.discountPrice;
@@ -581,6 +573,22 @@ public class QueryMarketImagesResponse extends AcsResponse {
 					this.tradePrice = tradePrice;
 				}
 
+				public String getPriceUnit() {
+					return this.priceUnit;
+				}
+
+				public void setPriceUnit(String priceUnit) {
+					this.priceUnit = priceUnit;
+				}
+
+				public Float getOriginalPrice() {
+					return this.originalPrice;
+				}
+
+				public void setOriginalPrice(Float originalPrice) {
+					this.originalPrice = originalPrice;
+				}
+
 				public String getCurrency() {
 					return this.currency;
 				}
@@ -595,14 +603,6 @@ public class QueryMarketImagesResponse extends AcsResponse {
 
 				public void setPeriod(Integer period) {
 					this.period = period;
-				}
-
-				public String getPriceUnit() {
-					return this.priceUnit;
-				}
-
-				public void setPriceUnit(String priceUnit) {
-					this.priceUnit = priceUnit;
 				}
 
 				public List<String> getRuleIdSet() {

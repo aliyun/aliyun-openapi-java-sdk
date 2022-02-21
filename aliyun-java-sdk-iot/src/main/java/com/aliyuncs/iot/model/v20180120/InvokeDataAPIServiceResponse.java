@@ -84,6 +84,8 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 
 		private String apiSrn;
 
+		private Integer totalSize;
+
 		private List<String> fieldNameList;
 
 		private List<Map<Object,Object>> resultList;
@@ -110,6 +112,14 @@ public class InvokeDataAPIServiceResponse extends AcsResponse {
 
 		public void setApiSrn(String apiSrn) {
 			this.apiSrn = apiSrn;
+		}
+
+		public Integer getTotalSize() {
+			return this.totalSize;
+		}
+
+		public void setTotalSize(Integer totalSize) {
+			this.totalSize = totalSize;
 		}
 
 		public List<String> getFieldNameList() {

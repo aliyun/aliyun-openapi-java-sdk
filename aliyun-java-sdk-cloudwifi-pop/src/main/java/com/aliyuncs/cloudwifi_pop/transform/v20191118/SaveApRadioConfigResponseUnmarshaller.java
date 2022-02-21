@@ -25,9 +25,9 @@ public class SaveApRadioConfigResponseUnmarshaller {
 		
 		saveApRadioConfigResponse.setRequestId(_ctx.stringValue("SaveApRadioConfigResponse.RequestId"));
 		saveApRadioConfigResponse.setData(_ctx.mapValue("SaveApRadioConfigResponse.Data"));
+		saveApRadioConfigResponse.setErrorMessage(_ctx.stringValue("SaveApRadioConfigResponse.ErrorMessage"));
 		saveApRadioConfigResponse.setIsSuccess(_ctx.booleanValue("SaveApRadioConfigResponse.IsSuccess"));
 		saveApRadioConfigResponse.setErrorCode(_ctx.integerValue("SaveApRadioConfigResponse.ErrorCode"));
-		saveApRadioConfigResponse.setErrorMessage(_ctx.stringValue("SaveApRadioConfigResponse.ErrorMessage"));
 	 
 	 	return saveApRadioConfigResponse;
 	}

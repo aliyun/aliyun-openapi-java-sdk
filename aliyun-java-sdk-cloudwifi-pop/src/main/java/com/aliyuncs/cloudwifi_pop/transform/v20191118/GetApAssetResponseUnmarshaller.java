@@ -24,9 +24,9 @@ public class GetApAssetResponseUnmarshaller {
 	public static GetApAssetResponse unmarshall(GetApAssetResponse getApAssetResponse, UnmarshallerContext _ctx) {
 		
 		getApAssetResponse.setData(_ctx.mapValue("GetApAssetResponse.Data"));
+		getApAssetResponse.setErrorMessage(_ctx.stringValue("GetApAssetResponse.ErrorMessage"));
 		getApAssetResponse.setIsSuccess(_ctx.booleanValue("GetApAssetResponse.IsSuccess"));
 		getApAssetResponse.setErrorCode(_ctx.integerValue("GetApAssetResponse.ErrorCode"));
-		getApAssetResponse.setErrorMessage(_ctx.stringValue("GetApAssetResponse.ErrorMessage"));
 	 
 	 	return getApAssetResponse;
 	}

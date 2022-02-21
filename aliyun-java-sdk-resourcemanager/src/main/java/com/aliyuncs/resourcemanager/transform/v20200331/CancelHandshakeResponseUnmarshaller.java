@@ -26,17 +26,17 @@ public class CancelHandshakeResponseUnmarshaller {
 		cancelHandshakeResponse.setRequestId(_ctx.stringValue("CancelHandshakeResponse.RequestId"));
 
 		Handshake handshake = new Handshake();
-		handshake.setHandshakeId(_ctx.stringValue("CancelHandshakeResponse.Handshake.HandshakeId"));
+		handshake.setStatus(_ctx.stringValue("CancelHandshakeResponse.Handshake.Status"));
+		handshake.setExpireTime(_ctx.stringValue("CancelHandshakeResponse.Handshake.ExpireTime"));
 		handshake.setResourceDirectoryId(_ctx.stringValue("CancelHandshakeResponse.Handshake.ResourceDirectoryId"));
+		handshake.setCreateTime(_ctx.stringValue("CancelHandshakeResponse.Handshake.CreateTime"));
+		handshake.setNote(_ctx.stringValue("CancelHandshakeResponse.Handshake.Note"));
+		handshake.setTargetEntity(_ctx.stringValue("CancelHandshakeResponse.Handshake.TargetEntity"));
 		handshake.setMasterAccountId(_ctx.stringValue("CancelHandshakeResponse.Handshake.MasterAccountId"));
 		handshake.setMasterAccountName(_ctx.stringValue("CancelHandshakeResponse.Handshake.MasterAccountName"));
-		handshake.setTargetEntity(_ctx.stringValue("CancelHandshakeResponse.Handshake.TargetEntity"));
-		handshake.setTargetType(_ctx.stringValue("CancelHandshakeResponse.Handshake.TargetType"));
-		handshake.setNote(_ctx.stringValue("CancelHandshakeResponse.Handshake.Note"));
-		handshake.setStatus(_ctx.stringValue("CancelHandshakeResponse.Handshake.Status"));
-		handshake.setCreateTime(_ctx.stringValue("CancelHandshakeResponse.Handshake.CreateTime"));
 		handshake.setModifyTime(_ctx.stringValue("CancelHandshakeResponse.Handshake.ModifyTime"));
-		handshake.setExpireTime(_ctx.stringValue("CancelHandshakeResponse.Handshake.ExpireTime"));
+		handshake.setTargetType(_ctx.stringValue("CancelHandshakeResponse.Handshake.TargetType"));
+		handshake.setHandshakeId(_ctx.stringValue("CancelHandshakeResponse.Handshake.HandshakeId"));
 		cancelHandshakeResponse.setHandshake(handshake);
 	 
 	 	return cancelHandshakeResponse;

@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class ListServiceGroupsRequest extends RoaAcsRequest<ListServiceGroupsResponse> {
 	   
 	public ListServiceGroupsRequest() {
-		super("Edas", "2017-08-01", "ListServiceGroups", "edas");
+		super("Edas", "2017-08-01", "ListServiceGroups", "Edas");
 		setUriPattern("/pop/v5/service/serviceGroups");
 		setMethod(MethodType.GET);
 		try {

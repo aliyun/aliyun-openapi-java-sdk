@@ -46,15 +46,29 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 
 	public static class ResourceDirectory {
 
+		private String rootFolderId;
+
 		private String resourceDirectoryId;
+
+		private String createTime;
 
 		private String masterAccountId;
 
 		private String masterAccountName;
 
-		private String rootFolderId;
+		private String scpStatus;
 
-		private String createTime;
+		private String controlPolicyStatus;
+
+		private String memberDeletionStatus;
+
+		public String getRootFolderId() {
+			return this.rootFolderId;
+		}
+
+		public void setRootFolderId(String rootFolderId) {
+			this.rootFolderId = rootFolderId;
+		}
 
 		public String getResourceDirectoryId() {
 			return this.resourceDirectoryId;
@@ -62,6 +76,14 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 
 		public void setResourceDirectoryId(String resourceDirectoryId) {
 			this.resourceDirectoryId = resourceDirectoryId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getMasterAccountId() {
@@ -80,20 +102,28 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 			this.masterAccountName = masterAccountName;
 		}
 
-		public String getRootFolderId() {
-			return this.rootFolderId;
+		public String getScpStatus() {
+			return this.scpStatus;
 		}
 
-		public void setRootFolderId(String rootFolderId) {
-			this.rootFolderId = rootFolderId;
+		public void setScpStatus(String scpStatus) {
+			this.scpStatus = scpStatus;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getControlPolicyStatus() {
+			return this.controlPolicyStatus;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setControlPolicyStatus(String controlPolicyStatus) {
+			this.controlPolicyStatus = controlPolicyStatus;
+		}
+
+		public String getMemberDeletionStatus() {
+			return this.memberDeletionStatus;
+		}
+
+		public void setMemberDeletionStatus(String memberDeletionStatus) {
+			this.memberDeletionStatus = memberDeletionStatus;
 		}
 	}
 

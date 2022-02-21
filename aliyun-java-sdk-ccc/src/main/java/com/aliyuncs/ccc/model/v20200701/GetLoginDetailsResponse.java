@@ -105,6 +105,14 @@ public class GetLoginDetailsResponse extends AcsResponse {
 
 		private String workMode;
 
+		private String userKey2;
+
+		private String signature2;
+
+		private String deviceExt;
+
+		private String deviceState;
+
 		public String getDisplayName() {
 			return this.displayName;
 		}
@@ -175,6 +183,38 @@ public class GetLoginDetailsResponse extends AcsResponse {
 
 		public void setWorkMode(String workMode) {
 			this.workMode = workMode;
+		}
+
+		public String getUserKey2() {
+			return this.userKey2;
+		}
+
+		public void setUserKey2(String userKey2) {
+			this.userKey2 = userKey2;
+		}
+
+		public String getSignature2() {
+			return this.signature2;
+		}
+
+		public void setSignature2(String signature2) {
+			this.signature2 = signature2;
+		}
+
+		public String getDeviceExt() {
+			return this.deviceExt;
+		}
+
+		public void setDeviceExt(String deviceExt) {
+			this.deviceExt = deviceExt;
+		}
+
+		public String getDeviceState() {
+			return this.deviceState;
+		}
+
+		public void setDeviceState(String deviceState) {
+			this.deviceState = deviceState;
 		}
 	}
 

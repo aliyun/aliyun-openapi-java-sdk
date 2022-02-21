@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEventRuleAttributeResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +59,14 @@ public class DescribeEventRuleAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Result getResult() {
 		return this.result;
 	}
@@ -77,33 +77,17 @@ public class DescribeEventRuleAttributeResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String description;
-
-		private String name;
-
 		private String eventType;
 
 		private String groupId;
 
+		private String name;
+
+		private String description;
+
 		private String state;
 
 		private EventPattern eventPattern;
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getEventType() {
 			return this.eventType;
@@ -119,6 +103,22 @@ public class DescribeEventRuleAttributeResponse extends AcsResponse {
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getState() {
@@ -141,11 +141,11 @@ public class DescribeEventRuleAttributeResponse extends AcsResponse {
 
 			private String product;
 
-			private List<String> nameList;
+			private List<String> levelList;
 
 			private List<String> statusList;
 
-			private List<String> levelList;
+			private List<String> nameList;
 
 			public String getProduct() {
 				return this.product;
@@ -155,12 +155,12 @@ public class DescribeEventRuleAttributeResponse extends AcsResponse {
 				this.product = product;
 			}
 
-			public List<String> getNameList() {
-				return this.nameList;
+			public List<String> getLevelList() {
+				return this.levelList;
 			}
 
-			public void setNameList(List<String> nameList) {
-				this.nameList = nameList;
+			public void setLevelList(List<String> levelList) {
+				this.levelList = levelList;
 			}
 
 			public List<String> getStatusList() {
@@ -171,12 +171,12 @@ public class DescribeEventRuleAttributeResponse extends AcsResponse {
 				this.statusList = statusList;
 			}
 
-			public List<String> getLevelList() {
-				return this.levelList;
+			public List<String> getNameList() {
+				return this.nameList;
 			}
 
-			public void setLevelList(List<String> levelList) {
-				this.levelList = levelList;
+			public void setNameList(List<String> nameList) {
+				this.nameList = nameList;
 			}
 		}
 	}

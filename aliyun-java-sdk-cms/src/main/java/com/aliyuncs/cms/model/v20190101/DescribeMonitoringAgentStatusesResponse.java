@@ -29,9 +29,9 @@ public class DescribeMonitoringAgentStatusesResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	private List<NodeStatus> nodeStatusList;
 
@@ -51,20 +51,20 @@ public class DescribeMonitoringAgentStatusesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<NodeStatus> getNodeStatusList() {
@@ -77,11 +77,19 @@ public class DescribeMonitoringAgentStatusesResponse extends AcsResponse {
 
 	public static class NodeStatus {
 
+		private String status;
+
 		private String instanceId;
 
 		private Boolean autoInstall;
 
-		private String status;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -97,14 +105,6 @@ public class DescribeMonitoringAgentStatusesResponse extends AcsResponse {
 
 		public void setAutoInstall(Boolean autoInstall) {
 			this.autoInstall = autoInstall;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 	}
 

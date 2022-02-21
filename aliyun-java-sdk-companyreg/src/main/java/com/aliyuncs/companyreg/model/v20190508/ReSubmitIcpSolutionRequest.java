@@ -27,7 +27,7 @@ public class ReSubmitIcpSolutionRequest extends RpcAcsRequest<ReSubmitIcpSolutio
 
 	private String bizId;
 	public ReSubmitIcpSolutionRequest() {
-		super("companyreg", "2019-05-08", "ReSubmitIcpSolution", "companyreg");
+		super("companyreg", "2019-05-08", "ReSubmitIcpSolution");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

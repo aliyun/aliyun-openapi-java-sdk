@@ -26,17 +26,17 @@ public class PromoteResourceAccountResponseUnmarshaller {
 		promoteResourceAccountResponse.setRequestId(_ctx.stringValue("PromoteResourceAccountResponse.RequestId"));
 
 		Account account = new Account();
-		account.setResourceDirectoryId(_ctx.stringValue("PromoteResourceAccountResponse.Account.ResourceDirectoryId"));
-		account.setAccountId(_ctx.stringValue("PromoteResourceAccountResponse.Account.AccountId"));
+		account.setStatus(_ctx.stringValue("PromoteResourceAccountResponse.Account.Status"));
+		account.setType(_ctx.stringValue("PromoteResourceAccountResponse.Account.Type"));
 		account.setDisplayName(_ctx.stringValue("PromoteResourceAccountResponse.Account.DisplayName"));
 		account.setFolderId(_ctx.stringValue("PromoteResourceAccountResponse.Account.FolderId"));
-		account.setJoinMethod(_ctx.stringValue("PromoteResourceAccountResponse.Account.JoinMethod"));
-		account.setJoinTime(_ctx.stringValue("PromoteResourceAccountResponse.Account.JoinTime"));
-		account.setType(_ctx.stringValue("PromoteResourceAccountResponse.Account.Type"));
-		account.setStatus(_ctx.stringValue("PromoteResourceAccountResponse.Account.Status"));
+		account.setResourceDirectoryId(_ctx.stringValue("PromoteResourceAccountResponse.Account.ResourceDirectoryId"));
 		account.setRecordId(_ctx.stringValue("PromoteResourceAccountResponse.Account.RecordId"));
-		account.setModifyTime(_ctx.stringValue("PromoteResourceAccountResponse.Account.ModifyTime"));
+		account.setJoinTime(_ctx.stringValue("PromoteResourceAccountResponse.Account.JoinTime"));
+		account.setAccountId(_ctx.stringValue("PromoteResourceAccountResponse.Account.AccountId"));
+		account.setJoinMethod(_ctx.stringValue("PromoteResourceAccountResponse.Account.JoinMethod"));
 		account.setAccountName(_ctx.stringValue("PromoteResourceAccountResponse.Account.AccountName"));
+		account.setModifyTime(_ctx.stringValue("PromoteResourceAccountResponse.Account.ModifyTime"));
 		promoteResourceAccountResponse.setAccount(account);
 	 
 	 	return promoteResourceAccountResponse;

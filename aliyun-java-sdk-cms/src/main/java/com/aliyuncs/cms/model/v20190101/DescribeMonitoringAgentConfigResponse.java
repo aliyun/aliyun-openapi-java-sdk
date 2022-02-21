@@ -24,42 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMonitoringAgentConfigResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
-
-	private Boolean success;
+	private String enableActiveAlert;
 
 	private String requestId;
 
 	private Boolean autoInstall;
 
+	private Boolean success;
+
 	private Boolean enableInstallAgentNewECS;
 
-	private String enableActiveAlert;
+	private String code;
 
-	public String getCode() {
-		return this.code;
+	private String message;
+
+	public String getEnableActiveAlert() {
+		return this.enableActiveAlert;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setEnableActiveAlert(String enableActiveAlert) {
+		this.enableActiveAlert = enableActiveAlert;
 	}
 
 	public String getRequestId() {
@@ -78,6 +62,14 @@ public class DescribeMonitoringAgentConfigResponse extends AcsResponse {
 		this.autoInstall = autoInstall;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Boolean getEnableInstallAgentNewECS() {
 		return this.enableInstallAgentNewECS;
 	}
@@ -86,12 +78,20 @@ public class DescribeMonitoringAgentConfigResponse extends AcsResponse {
 		this.enableInstallAgentNewECS = enableInstallAgentNewECS;
 	}
 
-	public String getEnableActiveAlert() {
-		return this.enableActiveAlert;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setEnableActiveAlert(String enableActiveAlert) {
-		this.enableActiveAlert = enableActiveAlert;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

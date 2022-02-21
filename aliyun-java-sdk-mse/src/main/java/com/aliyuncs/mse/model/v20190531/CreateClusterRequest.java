@@ -39,8 +39,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String clusterVersion;
 
-	private Integer diskCapacity;
-
 	private String diskType;
 
 	private String vSwitchId;
@@ -55,9 +53,11 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String mseVersion;
 
+	private String acceptLanguage;
+
 	private String region;
 	public CreateClusterRequest() {
-		super("mse", "2019-05-31", "CreateCluster", "mse");
+		super("mse", "2019-05-31", "CreateCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -142,17 +142,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public Integer getDiskCapacity() {
-		return this.diskCapacity;
-	}
-
-	public void setDiskCapacity(Integer diskCapacity) {
-		this.diskCapacity = diskCapacity;
-		if(diskCapacity != null){
-			putQueryParameter("DiskCapacity", diskCapacity.toString());
-		}
-	}
-
 	public String getDiskType() {
 		return this.diskType;
 	}
@@ -227,6 +216,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.mseVersion = mseVersion;
 		if(mseVersion != null){
 			putQueryParameter("MseVersion", mseVersion);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

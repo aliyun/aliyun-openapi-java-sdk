@@ -27,7 +27,7 @@ public class DescribeUnhealthyHostAvailabilityRequest extends RpcAcsRequest<Desc
 
 	private List<Long> ids;
 	public DescribeUnhealthyHostAvailabilityRequest() {
-		super("Cms", "2019-01-01", "DescribeUnhealthyHostAvailability", "cms");
+		super("Cms", "2019-01-01", "DescribeUnhealthyHostAvailability", "Cms");
 		setMethod(MethodType.POST);
 	}
 

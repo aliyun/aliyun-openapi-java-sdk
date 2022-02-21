@@ -26,13 +26,13 @@ import com.aliyuncs.schedulerx2.Endpoint;
 public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 	   
 
-	private Long jobId;
-
 	private String namespaceSource;
 
-	private Long instanceId;
-
 	private String groupId;
+
+	private Long jobId;
+
+	private Long instanceId;
 
 	private String namespace;
 	public StopInstanceRequest() {
@@ -43,17 +43,6 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
-		}
 	}
 
 	public String getNamespaceSource() {
@@ -67,17 +56,6 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 		}
 	}
 
-	public Long getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(Long instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId.toString());
-		}
-	}
-
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -86,6 +64,28 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Long getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(Long jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId.toString());
+		}
+	}
+
+	public Long getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(Long instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId.toString());
 		}
 	}
 

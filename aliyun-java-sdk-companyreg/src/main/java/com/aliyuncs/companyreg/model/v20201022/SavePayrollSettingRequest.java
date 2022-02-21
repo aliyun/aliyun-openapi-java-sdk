@@ -31,7 +31,7 @@ public class SavePayrollSettingRequest extends RpcAcsRequest<SavePayrollSettingR
 
 	private String payrollGrantMode;
 	public SavePayrollSettingRequest() {
-		super("companyreg", "2020-10-22", "SavePayrollSetting", "companyreg");
+		super("companyreg", "2020-10-22", "SavePayrollSetting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

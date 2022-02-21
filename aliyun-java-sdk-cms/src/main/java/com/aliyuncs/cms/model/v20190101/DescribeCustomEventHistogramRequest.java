@@ -38,7 +38,7 @@ public class DescribeCustomEventHistogramRequest extends RpcAcsRequest<DescribeC
 
 	private String name;
 	public DescribeCustomEventHistogramRequest() {
-		super("Cms", "2019-01-01", "DescribeCustomEventHistogram", "cms");
+		super("Cms", "2019-01-01", "DescribeCustomEventHistogram", "Cms");
 		setMethod(MethodType.POST);
 	}
 
