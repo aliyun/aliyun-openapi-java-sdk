@@ -39,8 +39,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String clusterVersion;
 
-	private Integer diskCapacity;
-
 	private String diskType;
 
 	private String vSwitchId;
@@ -141,17 +139,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.clusterVersion = clusterVersion;
 		if(clusterVersion != null){
 			putQueryParameter("ClusterVersion", clusterVersion);
-		}
-	}
-
-	public Integer getDiskCapacity() {
-		return this.diskCapacity;
-	}
-
-	public void setDiskCapacity(Integer diskCapacity) {
-		this.diskCapacity = diskCapacity;
-		if(diskCapacity != null){
-			putQueryParameter("DiskCapacity", diskCapacity.toString());
 		}
 	}
 
