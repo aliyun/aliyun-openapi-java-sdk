@@ -16,6 +16,7 @@ package com.aliyuncs.agency.model.v20210609;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.agency.Endpoint;
 
 /**
  * @author auto create
@@ -38,6 +39,10 @@ public class QueryFusionOrderListRequest extends RpcAcsRequest<QueryFusionOrderL
 	public QueryFusionOrderListRequest() {
 		super("Agency", "2021-06-09", "QueryFusionOrderList");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getEndUserId() {

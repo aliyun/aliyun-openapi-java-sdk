@@ -14,7 +14,12 @@
 
 package com.aliyuncs.mse.transform.v20190531;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.mse.model.v20190531.QueryMonitorResponse;
+import com.aliyuncs.mse.model.v20190531.QueryMonitorResponse.DataItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,9 +29,21 @@ public class QueryMonitorResponseUnmarshaller {
 		
 		queryMonitorResponse.setRequestId(_ctx.stringValue("QueryMonitorResponse.RequestId"));
 		queryMonitorResponse.setMessage(_ctx.stringValue("QueryMonitorResponse.Message"));
-		queryMonitorResponse.setData(_ctx.stringValue("QueryMonitorResponse.Data"));
 		queryMonitorResponse.setErrorCode(_ctx.stringValue("QueryMonitorResponse.ErrorCode"));
 		queryMonitorResponse.setSuccess(_ctx.booleanValue("QueryMonitorResponse.Success"));
+
+		List<DataItem> data = new ArrayList<DataItem>();
+		for (int i = 0; i < _ctx.lengthValue("QueryMonitorResponse.Data.Length"); i++) {
+			DataItem dataItem = new DataItem();
+			dataItem.setPodName(_ctx.stringValue("QueryMonitorResponse.Data["+ i +"].podName"));
+			dataItem.setClusterNamePrefix(_ctx.stringValue("QueryMonitorResponse.Data["+ i +"].clusterNamePrefix"));
+
+			List<Map<Object, Object>> values = _ctx.listMapValue("QueryMonitorResponse.Data["+ i +"].values");
+			dataItem.setValues(values);
+
+			data.add(dataItem);
+		}
+		queryMonitorResponse.setData(data);
 	 
 	 	return queryMonitorResponse;
 	}

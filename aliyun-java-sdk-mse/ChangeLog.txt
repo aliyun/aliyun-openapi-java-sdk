@@ -1,3 +1,6 @@
+2022-02-21 Version: 3.0.12
+- Bugfix QueryMoniter.
+
 2022-02-21 Version: 3.0.11
 - Add DleteNacosInstance.
 - Change CreateCluster parameter.
