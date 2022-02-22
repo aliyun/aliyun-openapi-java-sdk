@@ -1,3 +1,6 @@
+2022-02-22 Version: 3.2.0
+- Deprecated the OnsTopicUpdate api, and will be offline soon.
+
 2022-02-17 Version: 3.1.9
 - Adjusted the call frequency limit of some APIs.
 
