@@ -43,7 +43,7 @@ public class CreateParameterGroupRequest extends RpcAcsRequest<CreateParameterGr
 
 	private String parameterGroupDesc;
 	public CreateParameterGroupRequest() {
-		super("polardb", "2017-08-01", "CreateParameterGroup", "polardb");
+		super("polardb", "2017-08-01", "CreateParameterGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

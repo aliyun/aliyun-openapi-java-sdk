@@ -37,7 +37,7 @@ public class CheckDBNameRequest extends RpcAcsRequest<CheckDBNameResponse> {
 
 	private String dBName;
 	public CheckDBNameRequest() {
-		super("polardb", "2017-08-01", "CheckDBName", "polardb");
+		super("polardb", "2017-08-01", "CheckDBName");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

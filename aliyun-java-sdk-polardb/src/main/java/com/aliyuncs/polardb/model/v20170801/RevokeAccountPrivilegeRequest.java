@@ -39,7 +39,7 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 
 	private String dBName;
 	public RevokeAccountPrivilegeRequest() {
-		super("polardb", "2017-08-01", "RevokeAccountPrivilege", "polardb");
+		super("polardb", "2017-08-01", "RevokeAccountPrivilege");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

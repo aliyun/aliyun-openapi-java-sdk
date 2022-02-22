@@ -29,7 +29,7 @@ public class DeleteMaskingRulesRequest extends RpcAcsRequest<DeleteMaskingRulesR
 
 	private String ruleNameList;
 	public DeleteMaskingRulesRequest() {
-		super("polardb", "2017-08-01", "DeleteMaskingRules", "polardb");
+		super("polardb", "2017-08-01", "DeleteMaskingRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

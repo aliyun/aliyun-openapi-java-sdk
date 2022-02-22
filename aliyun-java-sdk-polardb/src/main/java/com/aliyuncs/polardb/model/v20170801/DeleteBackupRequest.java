@@ -37,7 +37,7 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 
 	private Long ownerId;
 	public DeleteBackupRequest() {
-		super("polardb", "2017-08-01", "DeleteBackup", "polardb");
+		super("polardb", "2017-08-01", "DeleteBackup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

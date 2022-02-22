@@ -35,7 +35,7 @@ public class DescribeDBClusterAttributeRequest extends RpcAcsRequest<DescribeDBC
 
 	private Long ownerId;
 	public DescribeDBClusterAttributeRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterAttribute", "polardb");
+		super("polardb", "2017-08-01", "DescribeDBClusterAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

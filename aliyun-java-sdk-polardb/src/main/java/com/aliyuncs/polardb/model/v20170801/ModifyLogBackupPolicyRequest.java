@@ -37,7 +37,7 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 
 	private String logBackupRetentionPeriod;
 	public ModifyLogBackupPolicyRequest() {
-		super("polardb", "2017-08-01", "ModifyLogBackupPolicy", "polardb");
+		super("polardb", "2017-08-01", "ModifyLogBackupPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

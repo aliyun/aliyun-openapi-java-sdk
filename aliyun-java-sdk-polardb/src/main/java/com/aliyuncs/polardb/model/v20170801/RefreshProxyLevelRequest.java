@@ -22,20 +22,16 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeScheduleTasksResponse> {
+public class RefreshProxyLevelRequest extends RpcAcsRequest<RefreshProxyLevelResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String dBClusterDescription;
+	private String plannedEndTime;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String proxyTargetClass;
 
 	private String resourceOwnerAccount;
-
-	private String orderId;
 
 	private String dBClusterId;
 
@@ -43,11 +39,11 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 
 	private Long ownerId;
 
-	private String taskAction;
+	private String plannedStartTime;
 
-	private String status;
-	public DescribeScheduleTasksRequest() {
-		super("polardb", "2017-08-01", "DescribeScheduleTasks");
+	private Boolean fromTimeService;
+	public RefreshProxyLevelRequest() {
+		super("polardb", "2017-08-01", "RefreshProxyLevel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,36 +62,25 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		}
 	}
 
-	public String getDBClusterDescription() {
-		return this.dBClusterDescription;
+	public String getPlannedEndTime() {
+		return this.plannedEndTime;
 	}
 
-	public void setDBClusterDescription(String dBClusterDescription) {
-		this.dBClusterDescription = dBClusterDescription;
-		if(dBClusterDescription != null){
-			putQueryParameter("DBClusterDescription", dBClusterDescription);
+	public void setPlannedEndTime(String plannedEndTime) {
+		this.plannedEndTime = plannedEndTime;
+		if(plannedEndTime != null){
+			putQueryParameter("PlannedEndTime", plannedEndTime);
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getProxyTargetClass() {
+		return this.proxyTargetClass;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setProxyTargetClass(String proxyTargetClass) {
+		this.proxyTargetClass = proxyTargetClass;
+		if(proxyTargetClass != null){
+			putQueryParameter("ProxyTargetClass", proxyTargetClass);
 		}
 	}
 
@@ -107,17 +92,6 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
 		}
 	}
 
@@ -154,31 +128,31 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		}
 	}
 
-	public String getTaskAction() {
-		return this.taskAction;
+	public String getPlannedStartTime() {
+		return this.plannedStartTime;
 	}
 
-	public void setTaskAction(String taskAction) {
-		this.taskAction = taskAction;
-		if(taskAction != null){
-			putQueryParameter("TaskAction", taskAction);
+	public void setPlannedStartTime(String plannedStartTime) {
+		this.plannedStartTime = plannedStartTime;
+		if(plannedStartTime != null){
+			putQueryParameter("PlannedStartTime", plannedStartTime);
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public Boolean getFromTimeService() {
+		return this.fromTimeService;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setFromTimeService(Boolean fromTimeService) {
+		this.fromTimeService = fromTimeService;
+		if(fromTimeService != null){
+			putQueryParameter("FromTimeService", fromTimeService.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeScheduleTasksResponse> getResponseClass() {
-		return DescribeScheduleTasksResponse.class;
+	public Class<RefreshProxyLevelResponse> getResponseClass() {
+		return RefreshProxyLevelResponse.class;
 	}
 
 }

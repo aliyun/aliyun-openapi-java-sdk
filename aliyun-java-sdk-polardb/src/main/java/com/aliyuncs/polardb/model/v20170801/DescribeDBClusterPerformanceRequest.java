@@ -33,7 +33,7 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private String endTime;
 	public DescribeDBClusterPerformanceRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterPerformance", "polardb");
+		super("polardb", "2017-08-01", "DescribeDBClusterPerformance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -55,7 +55,7 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 
 	private String vpcId;
 	public CreateDBLinkRequest() {
-		super("polardb", "2017-08-01", "CreateDBLink", "polardb");
+		super("polardb", "2017-08-01", "CreateDBLink");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

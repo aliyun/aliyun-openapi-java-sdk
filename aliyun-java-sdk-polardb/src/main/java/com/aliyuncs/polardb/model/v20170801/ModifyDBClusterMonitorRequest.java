@@ -37,7 +37,7 @@ public class ModifyDBClusterMonitorRequest extends RpcAcsRequest<ModifyDBCluster
 
 	private Long ownerId;
 	public ModifyDBClusterMonitorRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterMonitor", "polardb");
+		super("polardb", "2017-08-01", "ModifyDBClusterMonitor");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

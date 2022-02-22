@@ -39,7 +39,7 @@ public class ModifyDBNodeHotReplicaModeRequest extends RpcAcsRequest<ModifyDBNod
 
 	private String hotReplicaMode;
 	public ModifyDBNodeHotReplicaModeRequest() {
-		super("polardb", "2017-08-01", "ModifyDBNodeHotReplicaMode", "polardb");
+		super("polardb", "2017-08-01", "ModifyDBNodeHotReplicaMode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

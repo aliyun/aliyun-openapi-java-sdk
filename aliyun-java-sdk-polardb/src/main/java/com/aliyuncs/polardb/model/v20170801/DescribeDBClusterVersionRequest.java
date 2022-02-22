@@ -35,7 +35,7 @@ public class DescribeDBClusterVersionRequest extends RpcAcsRequest<DescribeDBClu
 
 	private Long ownerId;
 	public DescribeDBClusterVersionRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterVersion", "polardb");
+		super("polardb", "2017-08-01", "DescribeDBClusterVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeDBClusterTDERequest extends RpcAcsRequest<DescribeDBCluster
 
 	private Long ownerId;
 	public DescribeDBClusterTDERequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterTDE", "polardb");
+		super("polardb", "2017-08-01", "DescribeDBClusterTDE");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
