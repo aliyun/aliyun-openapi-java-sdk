@@ -24,9 +24,9 @@ public class CompareFacesResponseUnmarshaller {
 	public static CompareFacesResponse unmarshall(CompareFacesResponse compareFacesResponse, UnmarshallerContext _ctx) {
 		
 		compareFacesResponse.setRequestId(_ctx.stringValue("CompareFacesResponse.RequestId"));
-		compareFacesResponse.setSuccess(_ctx.booleanValue("CompareFacesResponse.Success"));
 		compareFacesResponse.setCode(_ctx.stringValue("CompareFacesResponse.Code"));
 		compareFacesResponse.setMessage(_ctx.stringValue("CompareFacesResponse.Message"));
+		compareFacesResponse.setSuccess(_ctx.booleanValue("CompareFacesResponse.Success"));
 
 		Data data = new Data();
 		data.setSimilarityScore(_ctx.floatValue("CompareFacesResponse.Data.SimilarityScore"));

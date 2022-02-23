@@ -25,31 +25,31 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class CompareFaceVerifyRequest extends RpcAcsRequest<CompareFaceVerifyResponse> {
 	   
 
-	private String targetFaceContrastPictureUrl;
-
 	private String productCode;
 
 	private String targetCertifyId;
-
-	private String sourceOssObjectName;
 
 	private String targetFaceContrastPicture;
 
 	private String targetOssBucketName;
 
-	private String sourceOssBucketName;
-
 	private String outerOrderNo;
 
-	private String targetOssObjectName;
-
 	private String sourceFaceContrastPicture;
+
+	private String sourceCertifyId;
+
+	private String targetFaceContrastPictureUrl;
+
+	private String sourceOssObjectName;
+
+	private String sourceOssBucketName;
+
+	private String targetOssObjectName;
 
 	private Long sceneId;
 
 	private String sourceFaceContrastPictureUrl;
-
-	private String sourceCertifyId;
 
 	private String crop;
 	public CompareFaceVerifyRequest() {
@@ -59,17 +59,6 @@ public class CompareFaceVerifyRequest extends RpcAcsRequest<CompareFaceVerifyRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTargetFaceContrastPictureUrl() {
-		return this.targetFaceContrastPictureUrl;
-	}
-
-	public void setTargetFaceContrastPictureUrl(String targetFaceContrastPictureUrl) {
-		this.targetFaceContrastPictureUrl = targetFaceContrastPictureUrl;
-		if(targetFaceContrastPictureUrl != null){
-			putBodyParameter("TargetFaceContrastPictureUrl", targetFaceContrastPictureUrl);
-		}
 	}
 
 	public String getProductCode() {
@@ -91,17 +80,6 @@ public class CompareFaceVerifyRequest extends RpcAcsRequest<CompareFaceVerifyRes
 		this.targetCertifyId = targetCertifyId;
 		if(targetCertifyId != null){
 			putBodyParameter("TargetCertifyId", targetCertifyId);
-		}
-	}
-
-	public String getSourceOssObjectName() {
-		return this.sourceOssObjectName;
-	}
-
-	public void setSourceOssObjectName(String sourceOssObjectName) {
-		this.sourceOssObjectName = sourceOssObjectName;
-		if(sourceOssObjectName != null){
-			putBodyParameter("SourceOssObjectName", sourceOssObjectName);
 		}
 	}
 
@@ -127,17 +105,6 @@ public class CompareFaceVerifyRequest extends RpcAcsRequest<CompareFaceVerifyRes
 		}
 	}
 
-	public String getSourceOssBucketName() {
-		return this.sourceOssBucketName;
-	}
-
-	public void setSourceOssBucketName(String sourceOssBucketName) {
-		this.sourceOssBucketName = sourceOssBucketName;
-		if(sourceOssBucketName != null){
-			putBodyParameter("SourceOssBucketName", sourceOssBucketName);
-		}
-	}
-
 	public String getOuterOrderNo() {
 		return this.outerOrderNo;
 	}
@@ -149,17 +116,6 @@ public class CompareFaceVerifyRequest extends RpcAcsRequest<CompareFaceVerifyRes
 		}
 	}
 
-	public String getTargetOssObjectName() {
-		return this.targetOssObjectName;
-	}
-
-	public void setTargetOssObjectName(String targetOssObjectName) {
-		this.targetOssObjectName = targetOssObjectName;
-		if(targetOssObjectName != null){
-			putBodyParameter("TargetOssObjectName", targetOssObjectName);
-		}
-	}
-
 	public String getSourceFaceContrastPicture() {
 		return this.sourceFaceContrastPicture;
 	}
@@ -168,6 +124,61 @@ public class CompareFaceVerifyRequest extends RpcAcsRequest<CompareFaceVerifyRes
 		this.sourceFaceContrastPicture = sourceFaceContrastPicture;
 		if(sourceFaceContrastPicture != null){
 			putBodyParameter("SourceFaceContrastPicture", sourceFaceContrastPicture);
+		}
+	}
+
+	public String getSourceCertifyId() {
+		return this.sourceCertifyId;
+	}
+
+	public void setSourceCertifyId(String sourceCertifyId) {
+		this.sourceCertifyId = sourceCertifyId;
+		if(sourceCertifyId != null){
+			putBodyParameter("SourceCertifyId", sourceCertifyId);
+		}
+	}
+
+	public String getTargetFaceContrastPictureUrl() {
+		return this.targetFaceContrastPictureUrl;
+	}
+
+	public void setTargetFaceContrastPictureUrl(String targetFaceContrastPictureUrl) {
+		this.targetFaceContrastPictureUrl = targetFaceContrastPictureUrl;
+		if(targetFaceContrastPictureUrl != null){
+			putBodyParameter("TargetFaceContrastPictureUrl", targetFaceContrastPictureUrl);
+		}
+	}
+
+	public String getSourceOssObjectName() {
+		return this.sourceOssObjectName;
+	}
+
+	public void setSourceOssObjectName(String sourceOssObjectName) {
+		this.sourceOssObjectName = sourceOssObjectName;
+		if(sourceOssObjectName != null){
+			putBodyParameter("SourceOssObjectName", sourceOssObjectName);
+		}
+	}
+
+	public String getSourceOssBucketName() {
+		return this.sourceOssBucketName;
+	}
+
+	public void setSourceOssBucketName(String sourceOssBucketName) {
+		this.sourceOssBucketName = sourceOssBucketName;
+		if(sourceOssBucketName != null){
+			putBodyParameter("SourceOssBucketName", sourceOssBucketName);
+		}
+	}
+
+	public String getTargetOssObjectName() {
+		return this.targetOssObjectName;
+	}
+
+	public void setTargetOssObjectName(String targetOssObjectName) {
+		this.targetOssObjectName = targetOssObjectName;
+		if(targetOssObjectName != null){
+			putBodyParameter("TargetOssObjectName", targetOssObjectName);
 		}
 	}
 
@@ -190,17 +201,6 @@ public class CompareFaceVerifyRequest extends RpcAcsRequest<CompareFaceVerifyRes
 		this.sourceFaceContrastPictureUrl = sourceFaceContrastPictureUrl;
 		if(sourceFaceContrastPictureUrl != null){
 			putBodyParameter("SourceFaceContrastPictureUrl", sourceFaceContrastPictureUrl);
-		}
-	}
-
-	public String getSourceCertifyId() {
-		return this.sourceCertifyId;
-	}
-
-	public void setSourceCertifyId(String sourceCertifyId) {
-		this.sourceCertifyId = sourceCertifyId;
-		if(sourceCertifyId != null){
-			putBodyParameter("SourceCertifyId", sourceCertifyId);
 		}
 	}
 

@@ -53,6 +53,8 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 
 	private String mobile;
 
+	private String authId;
+
 	private Long sceneId;
 
 	private String ossBucketName;
@@ -226,6 +228,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.mobile = mobile;
 		if(mobile != null){
 			putQueryParameter("Mobile", mobile);
+		}
+	}
+
+	public String getAuthId() {
+		return this.authId;
+	}
+
+	public void setAuthId(String authId) {
+		this.authId = authId;
+		if(authId != null){
+			putBodyParameter("AuthId", authId);
 		}
 	}
 

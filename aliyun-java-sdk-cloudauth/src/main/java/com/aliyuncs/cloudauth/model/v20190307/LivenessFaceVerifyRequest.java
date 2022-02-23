@@ -27,13 +27,7 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 
 	private String productCode;
 
-	private String ossObjectName;
-
 	private String faceContrastPicture;
-
-	private String ip;
-
-	private String mobile;
 
 	private String deviceToken;
 
@@ -45,11 +39,17 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 
 	private String faceContrastPictureUrl;
 
+	private String model;
+
+	private String ossObjectName;
+
+	private String ip;
+
+	private String mobile;
+
 	private Long sceneId;
 
 	private String ossBucketName;
-
-	private String model;
 
 	private String crop;
 	public LivenessFaceVerifyRequest() {
@@ -72,17 +72,6 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 		}
 	}
 
-	public String getOssObjectName() {
-		return this.ossObjectName;
-	}
-
-	public void setOssObjectName(String ossObjectName) {
-		this.ossObjectName = ossObjectName;
-		if(ossObjectName != null){
-			putBodyParameter("OssObjectName", ossObjectName);
-		}
-	}
-
 	public String getFaceContrastPicture() {
 		return this.faceContrastPicture;
 	}
@@ -91,28 +80,6 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 		this.faceContrastPicture = faceContrastPicture;
 		if(faceContrastPicture != null){
 			putBodyParameter("FaceContrastPicture", faceContrastPicture);
-		}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putBodyParameter("Ip", ip);
-		}
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putBodyParameter("Mobile", mobile);
 		}
 	}
 
@@ -171,6 +138,50 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 		}
 	}
 
+	public String getModel() {
+		return this.model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+		if(model != null){
+			putQueryParameter("Model", model);
+		}
+	}
+
+	public String getOssObjectName() {
+		return this.ossObjectName;
+	}
+
+	public void setOssObjectName(String ossObjectName) {
+		this.ossObjectName = ossObjectName;
+		if(ossObjectName != null){
+			putBodyParameter("OssObjectName", ossObjectName);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putBodyParameter("Ip", ip);
+		}
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putBodyParameter("Mobile", mobile);
+		}
+	}
+
 	public Long getSceneId() {
 		return this.sceneId;
 	}
@@ -190,17 +201,6 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 		this.ossBucketName = ossBucketName;
 		if(ossBucketName != null){
 			putBodyParameter("OssBucketName", ossBucketName);
-		}
-	}
-
-	public String getModel() {
-		return this.model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-		if(model != null){
-			putQueryParameter("Model", model);
 		}
 	}
 
