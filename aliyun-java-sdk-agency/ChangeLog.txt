@@ -1,3 +1,6 @@
+2022-02-23 Version: 1.0.23
+- UidByPartner.
+
 2022-02-23 Version: 1.0.22
 - UidByPartner.
 

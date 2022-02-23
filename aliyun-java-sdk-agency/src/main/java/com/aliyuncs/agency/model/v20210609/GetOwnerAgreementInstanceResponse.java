@@ -14,6 +14,7 @@
 
 package com.aliyuncs.agency.model.v20210609;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.agency.transform.v20210609.GetOwnerAgreementInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,13 +27,13 @@ public class GetOwnerAgreementInstanceResponse extends AcsResponse {
 
 	private String errMsg;
 
-	private String data;
-
 	private Boolean success;
 
 	private String errCode;
 
 	private String requestId;
+
+	private Data data;
 
 	public String getErrMsg() {
 		return this.errMsg;
@@ -40,14 +41,6 @@ public class GetOwnerAgreementInstanceResponse extends AcsResponse {
 
 	public void setErrMsg(String errMsg) {
 		this.errMsg = errMsg;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	public Boolean getSuccess() {
@@ -72,6 +65,70 @@ public class GetOwnerAgreementInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String name;
+
+		private String pid;
+
+		private String uid;
+
+		private List<AgreementPropertyRoleDTOListItem> agreementPropertyRoleDTOList;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public void setPid(String pid) {
+			this.pid = pid;
+		}
+
+		public String getUid() {
+			return this.uid;
+		}
+
+		public void setUid(String uid) {
+			this.uid = uid;
+		}
+
+		public List<AgreementPropertyRoleDTOListItem> getAgreementPropertyRoleDTOList() {
+			return this.agreementPropertyRoleDTOList;
+		}
+
+		public void setAgreementPropertyRoleDTOList(List<AgreementPropertyRoleDTOListItem> agreementPropertyRoleDTOList) {
+			this.agreementPropertyRoleDTOList = agreementPropertyRoleDTOList;
+		}
+
+		public static class AgreementPropertyRoleDTOListItem {
+
+			private String agreementCode;
+
+			public String getAgreementCode() {
+				return this.agreementCode;
+			}
+
+			public void setAgreementCode(String agreementCode) {
+				this.agreementCode = agreementCode;
+			}
+		}
 	}
 
 	@Override
