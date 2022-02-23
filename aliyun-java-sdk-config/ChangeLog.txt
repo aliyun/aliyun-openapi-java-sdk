@@ -1,3 +1,6 @@
+2022-02-23 Version: 2.1.1
+- Support remediation.
+
 2022-01-12 Version: 2.0.9
 - Support folder for rule.
 

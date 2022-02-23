@@ -22,33 +22,35 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsRequest<GetAggregateResourceComplianceByConfigRuleResponse> {
+public class GetAggregateDiscoveredResourceRequest extends RpcAcsRequest<GetAggregateDiscoveredResourceResponse> {
 	   
 
-	private String configRuleId;
+	private String resourceId;
 
 	private Long resourceOwnerId;
 
 	private String aggregatorId;
 
-	private String complianceType;
-	public GetAggregateResourceComplianceByConfigRuleRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceComplianceByConfigRule");
-		setMethod(MethodType.POST);
+	private String resourceType;
+
+	private String region;
+	public GetAggregateDiscoveredResourceRequest() {
+		super("Config", "2020-09-07", "GetAggregateDiscoveredResource");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getConfigRuleId() {
-		return this.configRuleId;
+	public String getResourceId() {
+		return this.resourceId;
 	}
 
-	public void setConfigRuleId(String configRuleId) {
-		this.configRuleId = configRuleId;
-		if(configRuleId != null){
-			putQueryParameter("ConfigRuleId", configRuleId);
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
 		}
 	}
 
@@ -74,20 +76,31 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 		}
 	}
 
-	public String getComplianceType() {
-		return this.complianceType;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setComplianceType(String complianceType) {
-		this.complianceType = complianceType;
-		if(complianceType != null){
-			putQueryParameter("ComplianceType", complianceType);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<GetAggregateResourceComplianceByConfigRuleResponse> getResponseClass() {
-		return GetAggregateResourceComplianceByConfigRuleResponse.class;
+	public Class<GetAggregateDiscoveredResourceResponse> getResponseClass() {
+		return GetAggregateDiscoveredResourceResponse.class;
 	}
 
 }

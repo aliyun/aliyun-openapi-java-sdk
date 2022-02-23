@@ -22,18 +22,14 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsRequest<GetAggregateResourceComplianceByConfigRuleResponse> {
+public class StartAggregateRemediationRequest extends RpcAcsRequest<StartAggregateRemediationResponse> {
 	   
 
 	private String configRuleId;
 
-	private Long resourceOwnerId;
-
 	private String aggregatorId;
-
-	private String complianceType;
-	public GetAggregateResourceComplianceByConfigRuleRequest() {
-		super("Config", "2020-09-07", "GetAggregateResourceComplianceByConfigRule");
+	public StartAggregateRemediationRequest() {
+		super("Config", "2020-09-07", "StartAggregateRemediation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,17 +48,6 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getAggregatorId() {
 		return this.aggregatorId;
 	}
@@ -74,20 +59,9 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 		}
 	}
 
-	public String getComplianceType() {
-		return this.complianceType;
-	}
-
-	public void setComplianceType(String complianceType) {
-		this.complianceType = complianceType;
-		if(complianceType != null){
-			putQueryParameter("ComplianceType", complianceType);
-		}
-	}
-
 	@Override
-	public Class<GetAggregateResourceComplianceByConfigRuleResponse> getResponseClass() {
-		return GetAggregateResourceComplianceByConfigRuleResponse.class;
+	public Class<StartAggregateRemediationResponse> getResponseClass() {
+		return StartAggregateRemediationResponse.class;
 	}
 
 }
