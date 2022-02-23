@@ -29,6 +29,8 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 
 	private Integer pageSize;
 
+	private String brandUserNick;
+
 	private Integer pageIndex;
 
 	private Long proxyUserId;
@@ -62,6 +64,17 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBrandUserNick() {
+		return this.brandUserNick;
+	}
+
+	public void setBrandUserNick(String brandUserNick) {
+		this.brandUserNick = brandUserNick;
+		if(brandUserNick != null){
+			putQueryParameter("BrandUserNick", brandUserNick);
 		}
 	}
 

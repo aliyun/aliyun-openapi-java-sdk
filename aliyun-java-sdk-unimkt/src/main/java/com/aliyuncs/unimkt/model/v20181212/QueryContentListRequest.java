@@ -31,6 +31,8 @@ public class QueryContentListRequest extends RpcAcsRequest<QueryContentListRespo
 
 	private Long brandUserId;
 
+	private String brandUserNick;
+
 	private Long proxyUserId;
 
 	private String channelId;
@@ -73,6 +75,17 @@ public class QueryContentListRequest extends RpcAcsRequest<QueryContentListRespo
 		this.brandUserId = brandUserId;
 		if(brandUserId != null){
 			putQueryParameter("BrandUserId", brandUserId.toString());
+		}
+	}
+
+	public String getBrandUserNick() {
+		return this.brandUserNick;
+	}
+
+	public void setBrandUserNick(String brandUserNick) {
+		this.brandUserNick = brandUserNick;
+		if(brandUserNick != null){
+			putQueryParameter("BrandUserNick", brandUserNick);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class ScanCodeNotificationRequest extends RpcAcsRequest<ScanCodeNotificat
 
 	private String commodityId;
 
+	private String tradeTimeStr;
+
 	private String holderId;
 
 	private String deviceType;
@@ -115,6 +117,17 @@ public class ScanCodeNotificationRequest extends RpcAcsRequest<ScanCodeNotificat
 		this.commodityId = commodityId;
 		if(commodityId != null){
 			putQueryParameter("CommodityId", commodityId);
+		}
+	}
+
+	public String getTradeTimeStr() {
+		return this.tradeTimeStr;
+	}
+
+	public void setTradeTimeStr(String tradeTimeStr) {
+		this.tradeTimeStr = tradeTimeStr;
+		if(tradeTimeStr != null){
+			putQueryParameter("TradeTimeStr", tradeTimeStr);
 		}
 	}
 
