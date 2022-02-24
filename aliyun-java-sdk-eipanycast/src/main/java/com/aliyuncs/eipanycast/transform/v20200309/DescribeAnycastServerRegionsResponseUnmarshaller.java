@@ -32,8 +32,8 @@ public class DescribeAnycastServerRegionsResponseUnmarshaller {
 		List<AnycastServerRegion> anycastServerRegionList = new ArrayList<AnycastServerRegion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAnycastServerRegionsResponse.AnycastServerRegionList.Length"); i++) {
 			AnycastServerRegion anycastServerRegion = new AnycastServerRegion();
-			anycastServerRegion.setRegionId(_ctx.stringValue("DescribeAnycastServerRegionsResponse.AnycastServerRegionList["+ i +"].RegionId"));
 			anycastServerRegion.setRegionName(_ctx.stringValue("DescribeAnycastServerRegionsResponse.AnycastServerRegionList["+ i +"].RegionName"));
+			anycastServerRegion.setRegionId(_ctx.stringValue("DescribeAnycastServerRegionsResponse.AnycastServerRegionList["+ i +"].RegionId"));
 
 			anycastServerRegionList.add(anycastServerRegion);
 		}

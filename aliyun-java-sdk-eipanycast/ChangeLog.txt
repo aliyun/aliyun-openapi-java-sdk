@@ -1,3 +1,6 @@
+2022-02-24 Version: 1.0.2
+- Add UpdateAnycastEipAddressAssociations Interface.
+
 2021-07-07 Version: 1.0.1
 - Supported AAA for BBB.
 

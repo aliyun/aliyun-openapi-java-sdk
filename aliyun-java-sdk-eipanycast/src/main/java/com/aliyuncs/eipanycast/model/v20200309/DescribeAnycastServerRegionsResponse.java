@@ -57,17 +57,9 @@ public class DescribeAnycastServerRegionsResponse extends AcsResponse {
 
 	public static class AnycastServerRegion {
 
-		private String regionId;
-
 		private String regionName;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public String getRegionName() {
 			return this.regionName;
@@ -75,6 +67,14 @@ public class DescribeAnycastServerRegionsResponse extends AcsResponse {
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

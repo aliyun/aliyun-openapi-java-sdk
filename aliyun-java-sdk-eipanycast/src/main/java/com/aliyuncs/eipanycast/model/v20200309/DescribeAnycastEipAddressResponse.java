@@ -25,66 +25,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAnycastEipAddressResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String anycastId;
-
-	private String ipAddress;
-
-	private String name;
+	private String status;
 
 	private String description;
 
-	private Integer bandwidth;
+	private String requestId;
 
 	private String instanceChargeType;
 
-	private String internetChargeType;
-
 	private String createTime;
-
-	private String status;
-
-	private String serviceLocation;
-
-	private Long aliUid;
-
-	private String bid;
 
 	private String businessStatus;
 
+	private String internetChargeType;
+
+	private String name;
+
+	private String anycastId;
+
+	private String serviceLocation;
+
+	private Integer bandwidth;
+
+	private String ipAddress;
+
+	private String bid;
+
+	private Long aliUid;
+
 	private List<AnycastEipBindInfo> anycastEipBindInfoList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getAnycastId() {
-		return this.anycastId;
-	}
-
-	public void setAnycastId(String anycastId) {
-		this.anycastId = anycastId;
-	}
-
-	public String getIpAddress() {
-		return this.ipAddress;
-	}
-
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getDescription() {
@@ -95,12 +71,12 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public Integer getBandwidth() {
-		return this.bandwidth;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getInstanceChargeType() {
@@ -111,14 +87,6 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 		this.instanceChargeType = instanceChargeType;
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
@@ -127,12 +95,36 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getBusinessStatus() {
+		return this.businessStatus;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setBusinessStatus(String businessStatus) {
+		this.businessStatus = businessStatus;
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAnycastId() {
+		return this.anycastId;
+	}
+
+	public void setAnycastId(String anycastId) {
+		this.anycastId = anycastId;
 	}
 
 	public String getServiceLocation() {
@@ -143,12 +135,20 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 		this.serviceLocation = serviceLocation;
 	}
 
-	public Long getAliUid() {
-		return this.aliUid;
+	public Integer getBandwidth() {
+		return this.bandwidth;
 	}
 
-	public void setAliUid(Long aliUid) {
-		this.aliUid = aliUid;
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+	}
+
+	public String getIpAddress() {
+		return this.ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
 	}
 
 	public String getBid() {
@@ -159,12 +159,12 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 		this.bid = bid;
 	}
 
-	public String getBusinessStatus() {
-		return this.businessStatus;
+	public Long getAliUid() {
+		return this.aliUid;
 	}
 
-	public void setBusinessStatus(String businessStatus) {
-		this.businessStatus = businessStatus;
+	public void setAliUid(Long aliUid) {
+		this.aliUid = aliUid;
 	}
 
 	public List<AnycastEipBindInfo> getAnycastEipBindInfoList() {
@@ -177,21 +177,21 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 
 	public static class AnycastEipBindInfo {
 
-		private String bindInstanceId;
-
 		private String bindInstanceType;
 
 		private String bindTime;
 
+		private String status;
+
 		private String bindInstanceRegionId;
 
-		public String getBindInstanceId() {
-			return this.bindInstanceId;
-		}
+		private String bindInstanceId;
 
-		public void setBindInstanceId(String bindInstanceId) {
-			this.bindInstanceId = bindInstanceId;
-		}
+		private String associationMode;
+
+		private String privateIpAddress;
+
+		private List<PopLocation> popLocations;
 
 		public String getBindInstanceType() {
 			return this.bindInstanceType;
@@ -209,12 +209,65 @@ public class DescribeAnycastEipAddressResponse extends AcsResponse {
 			this.bindTime = bindTime;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getBindInstanceRegionId() {
 			return this.bindInstanceRegionId;
 		}
 
 		public void setBindInstanceRegionId(String bindInstanceRegionId) {
 			this.bindInstanceRegionId = bindInstanceRegionId;
+		}
+
+		public String getBindInstanceId() {
+			return this.bindInstanceId;
+		}
+
+		public void setBindInstanceId(String bindInstanceId) {
+			this.bindInstanceId = bindInstanceId;
+		}
+
+		public String getAssociationMode() {
+			return this.associationMode;
+		}
+
+		public void setAssociationMode(String associationMode) {
+			this.associationMode = associationMode;
+		}
+
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
+
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
+		}
+
+		public List<PopLocation> getPopLocations() {
+			return this.popLocations;
+		}
+
+		public void setPopLocations(List<PopLocation> popLocations) {
+			this.popLocations = popLocations;
+		}
+
+		public static class PopLocation {
+
+			private String popLocation;
+
+			public String getPopLocation() {
+				return this.popLocation;
+			}
+
+			public void setPopLocation(String popLocation) {
+				this.popLocation = popLocation;
+			}
 		}
 	}
 

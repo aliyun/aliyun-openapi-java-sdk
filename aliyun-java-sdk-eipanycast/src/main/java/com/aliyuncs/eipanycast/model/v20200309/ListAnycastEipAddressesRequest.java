@@ -26,13 +26,15 @@ import com.aliyuncs.eipanycast.Endpoint;
 public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEipAddressesResponse> {
 	   
 
+	private String nextToken;
+
+	private String instanceChargeType;
+
 	private String businessStatus;
 
 	private String serviceLocation;
 
 	private String anycastEipAddress;
-
-	private String nextToken;
 
 	private String internetChargeType;
 
@@ -44,16 +46,36 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 
 	private Integer maxResults;
 
-	private String instanceChargeType;
-
 	private String status;
 	public ListAnycastEipAddressesRequest() {
-		super("Eipanycast", "2020-03-09", "ListAnycastEipAddresses", "eipanycast");
+		super("Eipanycast", "2020-03-09", "ListAnycastEipAddresses");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
 	}
 
 	public String getBusinessStatus() {
@@ -86,17 +108,6 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 		this.anycastEipAddress = anycastEipAddress;
 		if(anycastEipAddress != null){
 			putQueryParameter("AnycastEipAddress", anycastEipAddress);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -154,17 +165,6 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 

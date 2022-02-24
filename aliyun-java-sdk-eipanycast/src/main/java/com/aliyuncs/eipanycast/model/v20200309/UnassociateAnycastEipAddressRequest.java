@@ -33,11 +33,13 @@ public class UnassociateAnycastEipAddressRequest extends RpcAcsRequest<Unassocia
 
 	private String bindInstanceRegionId;
 
+	private String privateIpAddress;
+
 	private String anycastId;
 
 	private String bindInstanceId;
 	public UnassociateAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "UnassociateAnycastEipAddress", "eipanycast");
+		super("Eipanycast", "2020-03-09", "UnassociateAnycastEipAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +88,17 @@ public class UnassociateAnycastEipAddressRequest extends RpcAcsRequest<Unassocia
 		this.bindInstanceRegionId = bindInstanceRegionId;
 		if(bindInstanceRegionId != null){
 			putQueryParameter("BindInstanceRegionId", bindInstanceRegionId);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
 	}
 

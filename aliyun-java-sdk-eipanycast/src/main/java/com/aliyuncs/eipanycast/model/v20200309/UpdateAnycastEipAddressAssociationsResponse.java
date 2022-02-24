@@ -15,20 +15,16 @@
 package com.aliyuncs.eipanycast.model.v20200309;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eipanycast.transform.v20200309.AllocateAnycastEipAddressResponseUnmarshaller;
+import com.aliyuncs.eipanycast.transform.v20200309.UpdateAnycastEipAddressAssociationsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AllocateAnycastEipAddressResponse extends AcsResponse {
+public class UpdateAnycastEipAddressAssociationsResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String anycastId;
-
-	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +34,9 @@ public class AllocateAnycastEipAddressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getAnycastId() {
-		return this.anycastId;
-	}
-
-	public void setAnycastId(String anycastId) {
-		this.anycastId = anycastId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	@Override
-	public AllocateAnycastEipAddressResponse getInstance(UnmarshallerContext context) {
-		return	AllocateAnycastEipAddressResponseUnmarshaller.unmarshall(this, context);
+	public UpdateAnycastEipAddressAssociationsResponse getInstance(UnmarshallerContext context) {
+		return	UpdateAnycastEipAddressAssociationsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

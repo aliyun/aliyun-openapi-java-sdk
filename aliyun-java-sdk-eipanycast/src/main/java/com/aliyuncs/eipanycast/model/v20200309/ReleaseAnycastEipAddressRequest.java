@@ -29,7 +29,7 @@ public class ReleaseAnycastEipAddressRequest extends RpcAcsRequest<ReleaseAnycas
 
 	private String anycastId;
 	public ReleaseAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "ReleaseAnycastEipAddress", "eipanycast");
+		super("Eipanycast", "2020-03-09", "ReleaseAnycastEipAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,16 +25,29 @@ import com.aliyuncs.eipanycast.Endpoint;
 public class DescribeAnycastEipAddressRequest extends RpcAcsRequest<DescribeAnycastEipAddressResponse> {
 	   
 
+	private String ip;
+
 	private String anycastId;
 
 	private String bindInstanceId;
 	public DescribeAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "DescribeAnycastEipAddress", "eipanycast");
+		super("Eipanycast", "2020-03-09", "DescribeAnycastEipAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
+		}
 	}
 
 	public String getAnycastId() {

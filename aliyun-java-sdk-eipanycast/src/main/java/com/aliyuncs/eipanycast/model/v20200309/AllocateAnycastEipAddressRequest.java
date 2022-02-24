@@ -39,7 +39,7 @@ public class AllocateAnycastEipAddressRequest extends RpcAcsRequest<AllocateAnyc
 
 	private String instanceChargeType;
 	public AllocateAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "AllocateAnycastEipAddress", "eipanycast");
+		super("Eipanycast", "2020-03-09", "AllocateAnycastEipAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,8 +32,8 @@ public class DescribeAnycastPopLocationsResponseUnmarshaller {
 		List<AnycastPopLocation> anycastPopLocationList = new ArrayList<AnycastPopLocation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAnycastPopLocationsResponse.AnycastPopLocationList.Length"); i++) {
 			AnycastPopLocation anycastPopLocation = new AnycastPopLocation();
-			anycastPopLocation.setRegionId(_ctx.stringValue("DescribeAnycastPopLocationsResponse.AnycastPopLocationList["+ i +"].RegionId"));
 			anycastPopLocation.setRegionName(_ctx.stringValue("DescribeAnycastPopLocationsResponse.AnycastPopLocationList["+ i +"].RegionName"));
+			anycastPopLocation.setRegionId(_ctx.stringValue("DescribeAnycastPopLocationsResponse.AnycastPopLocationList["+ i +"].RegionId"));
 
 			anycastPopLocationList.add(anycastPopLocation);
 		}

@@ -23,7 +23,7 @@ import com.aliyuncs.eipanycast.Endpoint;
  * @author auto create
  * @version 
  */
-public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAnycastEipAddressResponse> {
+public class UpdateAnycastEipAddressAssociationsRequest extends RpcAcsRequest<UpdateAnycastEipAddressAssociationsResponse> {
 	   
 
 	private Boolean dryRun;
@@ -32,19 +32,15 @@ public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAn
 
 	private String clientToken;
 
-	private List<PopLocations> popLocations;
-
-	private String bindInstanceType;
-
-	private String bindInstanceRegionId;
-
-	private String privateIpAddress;
+	private List<PopLocationDeleteList> popLocationDeleteList;
 
 	private String anycastId;
 
+	private List<PopLocationAddList> popLocationAddList;
+
 	private String bindInstanceId;
-	public AssociateAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "AssociateAnycastEipAddress");
+	public UpdateAnycastEipAddressAssociationsRequest() {
+		super("Eipanycast", "2020-03-09", "UpdateAnycastEipAddressAssociations");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -85,53 +81,20 @@ public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAn
 		}
 	}
 
-	public List<PopLocations> getPopLocations() {
-		return this.popLocations;
+	public List<PopLocationDeleteList> getPopLocationDeleteList() {
+		return this.popLocationDeleteList;
 	}
 
-	public void setPopLocations(List<PopLocations> popLocations) {
-		this.popLocations = popLocations;	
-		if (popLocations != null) {
-			for (int depth1 = 0; depth1 < popLocations.size(); depth1++) {
-				if (popLocations.get(depth1) != null) {
+	public void setPopLocationDeleteList(List<PopLocationDeleteList> popLocationDeleteList) {
+		this.popLocationDeleteList = popLocationDeleteList;	
+		if (popLocationDeleteList != null) {
+			for (int depth1 = 0; depth1 < popLocationDeleteList.size(); depth1++) {
+				if (popLocationDeleteList.get(depth1) != null) {
 					
-						putQueryParameter("PopLocations." + (depth1 + 1) + ".PopLocation" , popLocations.get(depth1).getPopLocation());
+						putQueryParameter("PopLocationDeleteList." + (depth1 + 1) + ".PopLocation" , popLocationDeleteList.get(depth1).getPopLocation());
 				}
 			}
 		}	
-	}
-
-	public String getBindInstanceType() {
-		return this.bindInstanceType;
-	}
-
-	public void setBindInstanceType(String bindInstanceType) {
-		this.bindInstanceType = bindInstanceType;
-		if(bindInstanceType != null){
-			putQueryParameter("BindInstanceType", bindInstanceType);
-		}
-	}
-
-	public String getBindInstanceRegionId() {
-		return this.bindInstanceRegionId;
-	}
-
-	public void setBindInstanceRegionId(String bindInstanceRegionId) {
-		this.bindInstanceRegionId = bindInstanceRegionId;
-		if(bindInstanceRegionId != null){
-			putQueryParameter("BindInstanceRegionId", bindInstanceRegionId);
-		}
-	}
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		if(privateIpAddress != null){
-			putQueryParameter("PrivateIpAddress", privateIpAddress);
-		}
 	}
 
 	public String getAnycastId() {
@@ -145,6 +108,22 @@ public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAn
 		}
 	}
 
+	public List<PopLocationAddList> getPopLocationAddList() {
+		return this.popLocationAddList;
+	}
+
+	public void setPopLocationAddList(List<PopLocationAddList> popLocationAddList) {
+		this.popLocationAddList = popLocationAddList;	
+		if (popLocationAddList != null) {
+			for (int depth1 = 0; depth1 < popLocationAddList.size(); depth1++) {
+				if (popLocationAddList.get(depth1) != null) {
+					
+						putQueryParameter("PopLocationAddList." + (depth1 + 1) + ".PopLocation" , popLocationAddList.get(depth1).getPopLocation());
+				}
+			}
+		}	
+	}
+
 	public String getBindInstanceId() {
 		return this.bindInstanceId;
 	}
@@ -156,7 +135,20 @@ public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAn
 		}
 	}
 
-	public static class PopLocations {
+	public static class PopLocationDeleteList {
+
+		private String popLocation;
+
+		public String getPopLocation() {
+			return this.popLocation;
+		}
+
+		public void setPopLocation(String popLocation) {
+			this.popLocation = popLocation;
+		}
+	}
+
+	public static class PopLocationAddList {
 
 		private String popLocation;
 
@@ -170,8 +162,8 @@ public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAn
 	}
 
 	@Override
-	public Class<AssociateAnycastEipAddressResponse> getResponseClass() {
-		return AssociateAnycastEipAddressResponse.class;
+	public Class<UpdateAnycastEipAddressAssociationsResponse> getResponseClass() {
+		return UpdateAnycastEipAddressAssociationsResponse.class;
 	}
 
 }

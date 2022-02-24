@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eipanycast.model.v20200309.DescribeAnycastEipAddressResponse;
 import com.aliyuncs.eipanycast.model.v20200309.DescribeAnycastEipAddressResponse.AnycastEipBindInfo;
+import com.aliyuncs.eipanycast.model.v20200309.DescribeAnycastEipAddressResponse.AnycastEipBindInfo.PopLocation;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,27 +28,39 @@ public class DescribeAnycastEipAddressResponseUnmarshaller {
 	public static DescribeAnycastEipAddressResponse unmarshall(DescribeAnycastEipAddressResponse describeAnycastEipAddressResponse, UnmarshallerContext _ctx) {
 		
 		describeAnycastEipAddressResponse.setRequestId(_ctx.stringValue("DescribeAnycastEipAddressResponse.RequestId"));
-		describeAnycastEipAddressResponse.setAnycastId(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastId"));
-		describeAnycastEipAddressResponse.setIpAddress(_ctx.stringValue("DescribeAnycastEipAddressResponse.IpAddress"));
-		describeAnycastEipAddressResponse.setName(_ctx.stringValue("DescribeAnycastEipAddressResponse.Name"));
-		describeAnycastEipAddressResponse.setDescription(_ctx.stringValue("DescribeAnycastEipAddressResponse.Description"));
-		describeAnycastEipAddressResponse.setBandwidth(_ctx.integerValue("DescribeAnycastEipAddressResponse.Bandwidth"));
-		describeAnycastEipAddressResponse.setInstanceChargeType(_ctx.stringValue("DescribeAnycastEipAddressResponse.InstanceChargeType"));
-		describeAnycastEipAddressResponse.setInternetChargeType(_ctx.stringValue("DescribeAnycastEipAddressResponse.InternetChargeType"));
-		describeAnycastEipAddressResponse.setCreateTime(_ctx.stringValue("DescribeAnycastEipAddressResponse.CreateTime"));
 		describeAnycastEipAddressResponse.setStatus(_ctx.stringValue("DescribeAnycastEipAddressResponse.Status"));
-		describeAnycastEipAddressResponse.setServiceLocation(_ctx.stringValue("DescribeAnycastEipAddressResponse.ServiceLocation"));
-		describeAnycastEipAddressResponse.setAliUid(_ctx.longValue("DescribeAnycastEipAddressResponse.AliUid"));
-		describeAnycastEipAddressResponse.setBid(_ctx.stringValue("DescribeAnycastEipAddressResponse.Bid"));
+		describeAnycastEipAddressResponse.setDescription(_ctx.stringValue("DescribeAnycastEipAddressResponse.Description"));
+		describeAnycastEipAddressResponse.setInstanceChargeType(_ctx.stringValue("DescribeAnycastEipAddressResponse.InstanceChargeType"));
+		describeAnycastEipAddressResponse.setCreateTime(_ctx.stringValue("DescribeAnycastEipAddressResponse.CreateTime"));
 		describeAnycastEipAddressResponse.setBusinessStatus(_ctx.stringValue("DescribeAnycastEipAddressResponse.BusinessStatus"));
+		describeAnycastEipAddressResponse.setInternetChargeType(_ctx.stringValue("DescribeAnycastEipAddressResponse.InternetChargeType"));
+		describeAnycastEipAddressResponse.setName(_ctx.stringValue("DescribeAnycastEipAddressResponse.Name"));
+		describeAnycastEipAddressResponse.setAnycastId(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastId"));
+		describeAnycastEipAddressResponse.setServiceLocation(_ctx.stringValue("DescribeAnycastEipAddressResponse.ServiceLocation"));
+		describeAnycastEipAddressResponse.setBandwidth(_ctx.integerValue("DescribeAnycastEipAddressResponse.Bandwidth"));
+		describeAnycastEipAddressResponse.setIpAddress(_ctx.stringValue("DescribeAnycastEipAddressResponse.IpAddress"));
+		describeAnycastEipAddressResponse.setBid(_ctx.stringValue("DescribeAnycastEipAddressResponse.Bid"));
+		describeAnycastEipAddressResponse.setAliUid(_ctx.longValue("DescribeAnycastEipAddressResponse.AliUid"));
 
 		List<AnycastEipBindInfo> anycastEipBindInfoList = new ArrayList<AnycastEipBindInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList.Length"); i++) {
 			AnycastEipBindInfo anycastEipBindInfo = new AnycastEipBindInfo();
-			anycastEipBindInfo.setBindInstanceId(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].BindInstanceId"));
 			anycastEipBindInfo.setBindInstanceType(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].BindInstanceType"));
 			anycastEipBindInfo.setBindTime(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].BindTime"));
+			anycastEipBindInfo.setStatus(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].Status"));
 			anycastEipBindInfo.setBindInstanceRegionId(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].BindInstanceRegionId"));
+			anycastEipBindInfo.setBindInstanceId(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].BindInstanceId"));
+			anycastEipBindInfo.setAssociationMode(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].AssociationMode"));
+			anycastEipBindInfo.setPrivateIpAddress(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].PrivateIpAddress"));
+
+			List<PopLocation> popLocations = new ArrayList<PopLocation>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].PopLocations.Length"); j++) {
+				PopLocation popLocation = new PopLocation();
+				popLocation.setPopLocation(_ctx.stringValue("DescribeAnycastEipAddressResponse.AnycastEipBindInfoList["+ i +"].PopLocations["+ j +"].PopLocation"));
+
+				popLocations.add(popLocation);
+			}
+			anycastEipBindInfo.setPopLocations(popLocations);
 
 			anycastEipBindInfoList.add(anycastEipBindInfo);
 		}
