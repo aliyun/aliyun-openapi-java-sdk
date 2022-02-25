@@ -25,35 +25,37 @@ import com.aliyuncs.vs.Endpoint;
 public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse> {
 	   
 
-	private String hlsTs;
-
 	private String ossEndpoint;
 
-	private String description;
-
-	private String ossFilePrefix;
-
 	private String jpgOverwrite;
-
-	private String startTime;
 
 	private String type;
 
 	private String jpgOnDemand;
 
-	private Long retention;
-
-	private String hlsM3u8;
-
 	private String ossBucket;
 
 	private String transConfigsJSON;
 
-	private String endTime;
+	private Long ownerId;
+
+	private String name;
+
+	private Long interval;
+
+	private String region;
+
+	private String hlsTs;
+
+	private String description;
+
+	private String ossFilePrefix;
+
+	private Long retention;
+
+	private String hlsM3u8;
 
 	private String trigger;
-
-	private Long ownerId;
 
 	private String jpgSequence;
 
@@ -61,15 +63,9 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 
 	private String flv;
 
-	private String name;
-
 	private String callback;
 
-	private Long interval;
-
 	private String fileFormat;
-
-	private String region;
 	public CreateTemplateRequest() {
 		super("vs", "2018-12-12", "CreateTemplate");
 		setMethod(MethodType.POST);
@@ -77,17 +73,6 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getHlsTs() {
-		return this.hlsTs;
-	}
-
-	public void setHlsTs(String hlsTs) {
-		this.hlsTs = hlsTs;
-		if(hlsTs != null){
-			putQueryParameter("HlsTs", hlsTs);
-		}
 	}
 
 	public String getOssEndpoint() {
@@ -101,28 +86,6 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getOssFilePrefix() {
-		return this.ossFilePrefix;
-	}
-
-	public void setOssFilePrefix(String ossFilePrefix) {
-		this.ossFilePrefix = ossFilePrefix;
-		if(ossFilePrefix != null){
-			putQueryParameter("OssFilePrefix", ossFilePrefix);
-		}
-	}
-
 	public String getJpgOverwrite() {
 		return this.jpgOverwrite;
 	}
@@ -131,17 +94,6 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		this.jpgOverwrite = jpgOverwrite;
 		if(jpgOverwrite != null){
 			putQueryParameter("JpgOverwrite", jpgOverwrite);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -167,28 +119,6 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		}
 	}
 
-	public Long getRetention() {
-		return this.retention;
-	}
-
-	public void setRetention(Long retention) {
-		this.retention = retention;
-		if(retention != null){
-			putQueryParameter("Retention", retention.toString());
-		}
-	}
-
-	public String getHlsM3u8() {
-		return this.hlsM3u8;
-	}
-
-	public void setHlsM3u8(String hlsM3u8) {
-		this.hlsM3u8 = hlsM3u8;
-		if(hlsM3u8 != null){
-			putQueryParameter("HlsM3u8", hlsM3u8);
-		}
-	}
-
 	public String getOssBucket() {
 		return this.ossBucket;
 	}
@@ -211,14 +141,102 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Long interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getHlsTs() {
+		return this.hlsTs;
+	}
+
+	public void setHlsTs(String hlsTs) {
+		this.hlsTs = hlsTs;
+		if(hlsTs != null){
+			putQueryParameter("HlsTs", hlsTs);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getOssFilePrefix() {
+		return this.ossFilePrefix;
+	}
+
+	public void setOssFilePrefix(String ossFilePrefix) {
+		this.ossFilePrefix = ossFilePrefix;
+		if(ossFilePrefix != null){
+			putQueryParameter("OssFilePrefix", ossFilePrefix);
+		}
+	}
+
+	public Long getRetention() {
+		return this.retention;
+	}
+
+	public void setRetention(Long retention) {
+		this.retention = retention;
+		if(retention != null){
+			putQueryParameter("Retention", retention.toString());
+		}
+	}
+
+	public String getHlsM3u8() {
+		return this.hlsM3u8;
+	}
+
+	public void setHlsM3u8(String hlsM3u8) {
+		this.hlsM3u8 = hlsM3u8;
+		if(hlsM3u8 != null){
+			putQueryParameter("HlsM3u8", hlsM3u8);
 		}
 	}
 
@@ -230,17 +248,6 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		this.trigger = trigger;
 		if(trigger != null){
 			putQueryParameter("Trigger", trigger);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -277,17 +284,6 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getCallback() {
 		return this.callback;
 	}
@@ -299,17 +295,6 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		}
 	}
 
-	public Long getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Long interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
-		}
-	}
-
 	public String getFileFormat() {
 		return this.fileFormat;
 	}
@@ -318,17 +303,6 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		this.fileFormat = fileFormat;
 		if(fileFormat != null){
 			putQueryParameter("FileFormat", fileFormat);
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
 		}
 	}
 

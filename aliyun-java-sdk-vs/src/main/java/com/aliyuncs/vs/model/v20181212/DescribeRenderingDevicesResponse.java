@@ -350,6 +350,12 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 
 				private String externalPorts;
 
+				private String externalIsp;
+
+				private String outgoingIp;
+
+				private String outgoingIsp;
+
 				public String getExternalIp() {
 					return this.externalIp;
 				}
@@ -372,6 +378,30 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 
 				public void setExternalPorts(String externalPorts) {
 					this.externalPorts = externalPorts;
+				}
+
+				public String getExternalIsp() {
+					return this.externalIsp;
+				}
+
+				public void setExternalIsp(String externalIsp) {
+					this.externalIsp = externalIsp;
+				}
+
+				public String getOutgoingIp() {
+					return this.outgoingIp;
+				}
+
+				public void setOutgoingIp(String outgoingIp) {
+					this.outgoingIp = outgoingIp;
+				}
+
+				public String getOutgoingIsp() {
+					return this.outgoingIsp;
+				}
+
+				public void setOutgoingIsp(String outgoingIsp) {
+					this.outgoingIsp = outgoingIsp;
 				}
 			}
 		}

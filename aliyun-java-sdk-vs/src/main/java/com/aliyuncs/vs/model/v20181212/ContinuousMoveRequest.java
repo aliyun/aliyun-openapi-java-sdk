@@ -27,8 +27,6 @@ public class ContinuousMoveRequest extends RpcAcsRequest<ContinuousMoveResponse>
 
 	private String tilt;
 
-	private String subProtocol;
-
 	private String id;
 
 	private String pan;
@@ -53,17 +51,6 @@ public class ContinuousMoveRequest extends RpcAcsRequest<ContinuousMoveResponse>
 		this.tilt = tilt;
 		if(tilt != null){
 			putQueryParameter("Tilt", tilt);
-		}
-	}
-
-	public String getSubProtocol() {
-		return this.subProtocol;
-	}
-
-	public void setSubProtocol(String subProtocol) {
-		this.subProtocol = subProtocol;
-		if(subProtocol != null){
-			putQueryParameter("SubProtocol", subProtocol);
 		}
 	}
 

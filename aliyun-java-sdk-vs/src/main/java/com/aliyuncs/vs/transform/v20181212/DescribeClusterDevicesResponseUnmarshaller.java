@@ -75,6 +75,9 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 				for (int k = 0; k < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network.Length"); k++) {
 					NetworkItem networkItem = new NetworkItem();
 					networkItem.setExternalIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIp"));
+					networkItem.setExternalIsp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIsp"));
+					networkItem.setOutgoingIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].OutgoingIp"));
+					networkItem.setOutgoingIsp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].OutgoingIsp"));
 					networkItem.setContainerPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ContainerPorts"));
 					networkItem.setExternalPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalPorts"));
 

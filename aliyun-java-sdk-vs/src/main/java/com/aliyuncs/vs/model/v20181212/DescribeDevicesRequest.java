@@ -55,6 +55,8 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 
 	private String sortBy;
 
+	private String dsn;
+
 	private String status;
 	public DescribeDevicesRequest() {
 		super("vs", "2018-12-12", "DescribeDevices");
@@ -227,6 +229,17 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		this.sortBy = sortBy;
 		if(sortBy != null){
 			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getDsn() {
+		return this.dsn;
+	}
+
+	public void setDsn(String dsn) {
+		this.dsn = dsn;
+		if(dsn != null){
+			putQueryParameter("Dsn", dsn);
 		}
 	}
 

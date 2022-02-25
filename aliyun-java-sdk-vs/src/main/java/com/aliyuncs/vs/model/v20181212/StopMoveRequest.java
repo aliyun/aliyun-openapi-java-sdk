@@ -27,8 +27,6 @@ public class StopMoveRequest extends RpcAcsRequest<StopMoveResponse> {
 
 	private Boolean tilt;
 
-	private String subProtocol;
-
 	private String id;
 
 	private Boolean pan;
@@ -53,17 +51,6 @@ public class StopMoveRequest extends RpcAcsRequest<StopMoveResponse> {
 		this.tilt = tilt;
 		if(tilt != null){
 			putQueryParameter("Tilt", tilt.toString());
-		}
-	}
-
-	public String getSubProtocol() {
-		return this.subProtocol;
-	}
-
-	public void setSubProtocol(String subProtocol) {
-		this.subProtocol = subProtocol;
-		if(subProtocol != null){
-			putQueryParameter("SubProtocol", subProtocol);
 		}
 	}
 

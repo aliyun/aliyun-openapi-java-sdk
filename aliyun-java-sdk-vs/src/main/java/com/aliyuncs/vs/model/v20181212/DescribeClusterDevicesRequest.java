@@ -38,6 +38,8 @@ public class DescribeClusterDevicesRequest extends RpcAcsRequest<DescribeCluster
 	private Long ownerId;
 
 	private Long pageNo;
+
+	private String edgeNodeName;
 	public DescribeClusterDevicesRequest() {
 		super("vs", "2018-12-12", "DescribeClusterDevices");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class DescribeClusterDevicesRequest extends RpcAcsRequest<DescribeCluster
 		this.pageNo = pageNo;
 		if(pageNo != null){
 			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getEdgeNodeName() {
+		return this.edgeNodeName;
+	}
+
+	public void setEdgeNodeName(String edgeNodeName) {
+		this.edgeNodeName = edgeNodeName;
+		if(edgeNodeName != null){
+			putQueryParameter("EdgeNodeName", edgeNodeName);
 		}
 	}
 

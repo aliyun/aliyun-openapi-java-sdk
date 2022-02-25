@@ -25,8 +25,6 @@ import com.aliyuncs.vs.Endpoint;
 public class SetPresetRequest extends RpcAcsRequest<SetPresetResponse> {
 	   
 
-	private String subProtocol;
-
 	private String id;
 
 	private String presetId;
@@ -39,17 +37,6 @@ public class SetPresetRequest extends RpcAcsRequest<SetPresetResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSubProtocol() {
-		return this.subProtocol;
-	}
-
-	public void setSubProtocol(String subProtocol) {
-		this.subProtocol = subProtocol;
-		if(subProtocol != null){
-			putQueryParameter("SubProtocol", subProtocol);
-		}
 	}
 
 	public String getId() {

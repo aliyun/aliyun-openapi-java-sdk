@@ -22,18 +22,16 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopAdjustRequest extends RpcAcsRequest<StopAdjustResponse> {
+public class DescribeContainerInstanceIdRequest extends RpcAcsRequest<DescribeContainerInstanceIdResponse> {
 	   
 
-	private Boolean focus;
-
-	private String id;
-
-	private Boolean iris;
+	private Integer podIndex;
 
 	private Long ownerId;
-	public StopAdjustRequest() {
-		super("vs", "2018-12-12", "StopAdjust");
+
+	private String nodeName;
+	public DescribeContainerInstanceIdRequest() {
+		super("vs", "2018-12-12", "DescribeContainerInstanceId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +39,14 @@ public class StopAdjustRequest extends RpcAcsRequest<StopAdjustResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Boolean getFocus() {
-		return this.focus;
+	public Integer getPodIndex() {
+		return this.podIndex;
 	}
 
-	public void setFocus(Boolean focus) {
-		this.focus = focus;
-		if(focus != null){
-			putQueryParameter("Focus", focus.toString());
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
-	}
-
-	public Boolean getIris() {
-		return this.iris;
-	}
-
-	public void setIris(Boolean iris) {
-		this.iris = iris;
-		if(iris != null){
-			putQueryParameter("Iris", iris.toString());
+	public void setPodIndex(Integer podIndex) {
+		this.podIndex = podIndex;
+		if(podIndex != null){
+			putQueryParameter("PodIndex", podIndex.toString());
 		}
 	}
 
@@ -85,9 +61,20 @@ public class StopAdjustRequest extends RpcAcsRequest<StopAdjustResponse> {
 		}
 	}
 
+	public String getNodeName() {
+		return this.nodeName;
+	}
+
+	public void setNodeName(String nodeName) {
+		this.nodeName = nodeName;
+		if(nodeName != null){
+			putQueryParameter("NodeName", nodeName);
+		}
+	}
+
 	@Override
-	public Class<StopAdjustResponse> getResponseClass() {
-		return StopAdjustResponse.class;
+	public Class<DescribeContainerInstanceIdResponse> getResponseClass() {
+		return DescribeContainerInstanceIdResponse.class;
 	}
 
 }

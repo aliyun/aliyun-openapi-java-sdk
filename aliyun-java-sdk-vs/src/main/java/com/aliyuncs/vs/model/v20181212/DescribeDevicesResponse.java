@@ -111,6 +111,8 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		private String gbId;
 
+		private String dsn;
+
 		private String ip;
 
 		private Long port;
@@ -123,7 +125,7 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		private String vendor;
 
-		private String dsn;
+		private String dsn1;
 
 		private String longitude;
 
@@ -131,9 +133,11 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		private Boolean autoPos;
 
-		private String alarmMethod;
-
 		private Long posInterval;
+
+		private Boolean autoDirectory;
+
+		private String alarmMethod;
 
 		private String createdTime;
 
@@ -243,6 +247,14 @@ public class DescribeDevicesResponse extends AcsResponse {
 			this.gbId = gbId;
 		}
 
+		public String getDsn() {
+			return this.dsn;
+		}
+
+		public void setDsn(String dsn) {
+			this.dsn = dsn;
+		}
+
 		public String getIp() {
 			return this.ip;
 		}
@@ -291,12 +303,12 @@ public class DescribeDevicesResponse extends AcsResponse {
 			this.vendor = vendor;
 		}
 
-		public String getDsn() {
-			return this.dsn;
+		public String getDsn1() {
+			return this.dsn1;
 		}
 
-		public void setDsn(String dsn) {
-			this.dsn = dsn;
+		public void setDsn1(String dsn1) {
+			this.dsn1 = dsn1;
 		}
 
 		public String getLongitude() {
@@ -323,20 +335,28 @@ public class DescribeDevicesResponse extends AcsResponse {
 			this.autoPos = autoPos;
 		}
 
-		public String getAlarmMethod() {
-			return this.alarmMethod;
-		}
-
-		public void setAlarmMethod(String alarmMethod) {
-			this.alarmMethod = alarmMethod;
-		}
-
 		public Long getPosInterval() {
 			return this.posInterval;
 		}
 
 		public void setPosInterval(Long posInterval) {
 			this.posInterval = posInterval;
+		}
+
+		public Boolean getAutoDirectory() {
+			return this.autoDirectory;
+		}
+
+		public void setAutoDirectory(Boolean autoDirectory) {
+			this.autoDirectory = autoDirectory;
+		}
+
+		public String getAlarmMethod() {
+			return this.alarmMethod;
+		}
+
+		public void setAlarmMethod(String alarmMethod) {
+			this.alarmMethod = alarmMethod;
 		}
 
 		public String getCreatedTime() {

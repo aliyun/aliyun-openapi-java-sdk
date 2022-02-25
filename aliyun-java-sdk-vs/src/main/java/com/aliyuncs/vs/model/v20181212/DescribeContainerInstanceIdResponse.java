@@ -15,16 +15,18 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vs.transform.v20181212.UpdateRenderingDeviceSpecResponseUnmarshaller;
+import com.aliyuncs.vs.transform.v20181212.DescribeContainerInstanceIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateRenderingDeviceSpecResponse extends AcsResponse {
+public class DescribeContainerInstanceIdResponse extends AcsResponse {
 
 	private String requestId;
+
+	private InstanceDetail instanceDetail;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,34 @@ public class UpdateRenderingDeviceSpecResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public InstanceDetail getInstanceDetail() {
+		return this.instanceDetail;
+	}
+
+	public void setInstanceDetail(InstanceDetail instanceDetail) {
+		this.instanceDetail = instanceDetail;
+	}
+
+	public static class InstanceDetail {
+
+		private String instanceId;
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+	}
+
 	@Override
-	public UpdateRenderingDeviceSpecResponse getInstance(UnmarshallerContext context) {
-		return	UpdateRenderingDeviceSpecResponseUnmarshaller.unmarshall(this, context);
+	public DescribeContainerInstanceIdResponse getInstance(UnmarshallerContext context) {
+		return	DescribeContainerInstanceIdResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

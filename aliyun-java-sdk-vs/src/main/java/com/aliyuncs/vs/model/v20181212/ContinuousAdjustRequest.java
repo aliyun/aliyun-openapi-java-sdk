@@ -27,8 +27,6 @@ public class ContinuousAdjustRequest extends RpcAcsRequest<ContinuousAdjustRespo
 
 	private String focus;
 
-	private String subProtocol;
-
 	private String id;
 
 	private String iris;
@@ -51,17 +49,6 @@ public class ContinuousAdjustRequest extends RpcAcsRequest<ContinuousAdjustRespo
 		this.focus = focus;
 		if(focus != null){
 			putQueryParameter("Focus", focus);
-		}
-	}
-
-	public String getSubProtocol() {
-		return this.subProtocol;
-	}
-
-	public void setSubProtocol(String subProtocol) {
-		this.subProtocol = subProtocol;
-		if(subProtocol != null){
-			putQueryParameter("SubProtocol", subProtocol);
 		}
 	}
 

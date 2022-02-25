@@ -326,6 +326,12 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 				private String externalIp;
 
+				private String externalIsp;
+
+				private String outgoingIp;
+
+				private String outgoingIsp;
+
 				private String containerPorts;
 
 				private String externalPorts;
@@ -336,6 +342,30 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 				public void setExternalIp(String externalIp) {
 					this.externalIp = externalIp;
+				}
+
+				public String getExternalIsp() {
+					return this.externalIsp;
+				}
+
+				public void setExternalIsp(String externalIsp) {
+					this.externalIsp = externalIsp;
+				}
+
+				public String getOutgoingIp() {
+					return this.outgoingIp;
+				}
+
+				public void setOutgoingIp(String outgoingIp) {
+					this.outgoingIp = outgoingIp;
+				}
+
+				public String getOutgoingIsp() {
+					return this.outgoingIsp;
+				}
+
+				public void setOutgoingIsp(String outgoingIsp) {
+					this.outgoingIsp = outgoingIsp;
 				}
 
 				public String getContainerPorts() {

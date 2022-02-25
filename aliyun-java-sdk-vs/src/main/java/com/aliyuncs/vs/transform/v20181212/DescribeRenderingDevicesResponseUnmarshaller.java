@@ -79,6 +79,9 @@ public class DescribeRenderingDevicesResponseUnmarshaller {
 					networkItem.setExternalIp(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIp"));
 					networkItem.setContainerPorts(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ContainerPorts"));
 					networkItem.setExternalPorts(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalPorts"));
+					networkItem.setExternalIsp(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIsp"));
+					networkItem.setOutgoingIp(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].OutgoingIp"));
+					networkItem.setOutgoingIsp(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].OutgoingIsp"));
 
 					network.add(networkItem);
 				}
