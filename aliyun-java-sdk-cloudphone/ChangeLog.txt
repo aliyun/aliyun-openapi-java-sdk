@@ -1,0 +1,3 @@
+2022-02-25 Version: 1.0.4
+- Update ListInstances.
+
