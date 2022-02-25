@@ -22,36 +22,17 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAsyncErrorRequestListByCodeRequest extends RpcAcsRequest<GetAsyncErrorRequestListByCodeResponse> {
+public class DescribeInstanceDasProRequest extends RpcAcsRequest<DescribeInstanceDasProResponse> {
 	   
 
-	private Long start;
-
 	private String instanceId;
-
-	private Long end;
-
-	private String nodeId;
-
-	private String errorCode;
-	public GetAsyncErrorRequestListByCodeRequest() {
-		super("DAS", "2020-01-16", "GetAsyncErrorRequestListByCode");
+	public DescribeInstanceDasProRequest() {
+		super("DAS", "2020-01-16", "DescribeInstanceDasPro");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getStart() {
-		return this.start;
-	}
-
-	public void setStart(Long start) {
-		this.start = start;
-		if(start != null){
-			putQueryParameter("Start", start.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -65,42 +46,9 @@ public class GetAsyncErrorRequestListByCodeRequest extends RpcAcsRequest<GetAsyn
 		}
 	}
 
-	public Long getEnd() {
-		return this.end;
-	}
-
-	public void setEnd(Long end) {
-		this.end = end;
-		if(end != null){
-			putQueryParameter("End", end.toString());
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
-		}
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-		if(errorCode != null){
-			putQueryParameter("ErrorCode", errorCode);
-		}
-	}
-
 	@Override
-	public Class<GetAsyncErrorRequestListByCodeResponse> getResponseClass() {
-		return GetAsyncErrorRequestListByCodeResponse.class;
+	public Class<DescribeInstanceDasProResponse> getResponseClass() {
+		return DescribeInstanceDasProResponse.class;
 	}
 
 }

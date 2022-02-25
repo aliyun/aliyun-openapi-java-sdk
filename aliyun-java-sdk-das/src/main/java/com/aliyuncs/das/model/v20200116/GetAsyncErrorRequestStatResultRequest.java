@@ -27,17 +27,13 @@ public class GetAsyncErrorRequestStatResultRequest extends RpcAcsRequest<GetAsyn
 
 	private String sqlIdList;
 
-	private String role;
-
-	private String start;
-
-	private String consoleContext;
+	private Long start;
 
 	private String instanceId;
 
 	private String dbName;
 
-	private String end;
+	private Long end;
 
 	private String nodeId;
 	public GetAsyncErrorRequestStatResultRequest() {
@@ -60,36 +56,14 @@ public class GetAsyncErrorRequestStatResultRequest extends RpcAcsRequest<GetAsyn
 		}
 	}
 
-	public String getRole() {
-		return this.role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-		if(role != null){
-			putQueryParameter("Role", role);
-		}
-	}
-
-	public String getStart() {
+	public Long getStart() {
 		return this.start;
 	}
 
-	public void setStart(String start) {
+	public void setStart(Long start) {
 		this.start = start;
 		if(start != null){
-			putQueryParameter("Start", start);
-		}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
+			putQueryParameter("Start", start.toString());
 		}
 	}
 
@@ -115,14 +89,14 @@ public class GetAsyncErrorRequestStatResultRequest extends RpcAcsRequest<GetAsyn
 		}
 	}
 
-	public String getEnd() {
+	public Long getEnd() {
 		return this.end;
 	}
 
-	public void setEnd(String end) {
+	public void setEnd(Long end) {
 		this.end = end;
 		if(end != null){
-			putQueryParameter("End", end);
+			putQueryParameter("End", end.toString());
 		}
 	}
 

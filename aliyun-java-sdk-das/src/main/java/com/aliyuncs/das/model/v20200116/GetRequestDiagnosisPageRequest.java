@@ -25,15 +25,15 @@ import com.aliyuncs.das.Endpoint;
 public class GetRequestDiagnosisPageRequest extends RpcAcsRequest<GetRequestDiagnosisPageResponse> {
 	   
 
-	private String endTime;
+	private Long endTime;
 
-	private String startTime;
+	private Long startTime;
 
 	private String instanceId;
 
-	private String pageNo;
+	private Integer pageNo;
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private String nodeId;
 	public GetRequestDiagnosisPageRequest() {
@@ -45,25 +45,25 @@ public class GetRequestDiagnosisPageRequest extends RpcAcsRequest<GetRequestDiag
 		} catch (Exception e) {}
 	}
 
-	public String getEndTime() {
+	public Long getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(String endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
-	public String getStartTime() {
+	public Long getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(String startTime) {
+	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
@@ -78,25 +78,25 @@ public class GetRequestDiagnosisPageRequest extends RpcAcsRequest<GetRequestDiag
 		}
 	}
 
-	public String getPageNo() {
+	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
-	public void setPageNo(String pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo);
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

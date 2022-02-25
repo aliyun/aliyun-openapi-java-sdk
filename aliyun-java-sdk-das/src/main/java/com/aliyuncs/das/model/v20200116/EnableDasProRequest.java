@@ -22,20 +22,16 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAsyncErrorRequestListByCodeRequest extends RpcAcsRequest<GetAsyncErrorRequestListByCodeResponse> {
+public class EnableDasProRequest extends RpcAcsRequest<EnableDasProResponse> {
 	   
 
-	private Long start;
+	private Integer sqlRetention;
+
+	private String userId;
 
 	private String instanceId;
-
-	private Long end;
-
-	private String nodeId;
-
-	private String errorCode;
-	public GetAsyncErrorRequestListByCodeRequest() {
-		super("DAS", "2020-01-16", "GetAsyncErrorRequestListByCode");
+	public EnableDasProRequest() {
+		super("DAS", "2020-01-16", "EnableDasPro");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,14 +39,25 @@ public class GetAsyncErrorRequestListByCodeRequest extends RpcAcsRequest<GetAsyn
 		} catch (Exception e) {}
 	}
 
-	public Long getStart() {
-		return this.start;
+	public Integer getSqlRetention() {
+		return this.sqlRetention;
 	}
 
-	public void setStart(Long start) {
-		this.start = start;
-		if(start != null){
-			putQueryParameter("Start", start.toString());
+	public void setSqlRetention(Integer sqlRetention) {
+		this.sqlRetention = sqlRetention;
+		if(sqlRetention != null){
+			putQueryParameter("SqlRetention", sqlRetention.toString());
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -65,42 +72,9 @@ public class GetAsyncErrorRequestListByCodeRequest extends RpcAcsRequest<GetAsyn
 		}
 	}
 
-	public Long getEnd() {
-		return this.end;
-	}
-
-	public void setEnd(Long end) {
-		this.end = end;
-		if(end != null){
-			putQueryParameter("End", end.toString());
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
-		}
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-		if(errorCode != null){
-			putQueryParameter("ErrorCode", errorCode);
-		}
-	}
-
 	@Override
-	public Class<GetAsyncErrorRequestListByCodeResponse> getResponseClass() {
-		return GetAsyncErrorRequestListByCodeResponse.class;
+	public Class<EnableDasProResponse> getResponseClass() {
+		return EnableDasProResponse.class;
 	}
 
 }

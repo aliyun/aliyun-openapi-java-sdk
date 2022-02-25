@@ -309,4 +309,9 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 	public GetInstanceInspectionsResponse getInstance(UnmarshallerContext context) {
 		return	GetInstanceInspectionsResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }
