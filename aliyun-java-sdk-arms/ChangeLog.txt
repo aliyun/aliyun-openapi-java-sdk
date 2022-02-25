@@ -1,3 +1,7 @@
+2022-02-25 Version: 2.7.45
+- New add GetAuthToken api.
+- New add ManageRecordingRule api.
+
 2022-01-21 Version: 2.7.44
 - New add DeleteIntegration and GetIntegrationState api.
 
