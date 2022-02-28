@@ -69,27 +69,19 @@ public class ListMetaDBResponse extends AcsResponse {
 
 		public static class DbListItem {
 
-			private String name;
-
 			private String type;
+
+			private Long createTimeStamp;
+
+			private String uUID;
+
+			private Long modifiedTimeStamp;
+
+			private String name;
 
 			private String ownerId;
 
 			private String location;
-
-			private Long createTimeStamp;
-
-			private Long modifiedTimeStamp;
-
-			private String uUID;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getType() {
 				return this.type;
@@ -97,6 +89,38 @@ public class ListMetaDBResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public Long getCreateTimeStamp() {
+				return this.createTimeStamp;
+			}
+
+			public void setCreateTimeStamp(Long createTimeStamp) {
+				this.createTimeStamp = createTimeStamp;
+			}
+
+			public String getUUID() {
+				return this.uUID;
+			}
+
+			public void setUUID(String uUID) {
+				this.uUID = uUID;
+			}
+
+			public Long getModifiedTimeStamp() {
+				return this.modifiedTimeStamp;
+			}
+
+			public void setModifiedTimeStamp(Long modifiedTimeStamp) {
+				this.modifiedTimeStamp = modifiedTimeStamp;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getOwnerId() {
@@ -113,30 +137,6 @@ public class ListMetaDBResponse extends AcsResponse {
 
 			public void setLocation(String location) {
 				this.location = location;
-			}
-
-			public Long getCreateTimeStamp() {
-				return this.createTimeStamp;
-			}
-
-			public void setCreateTimeStamp(Long createTimeStamp) {
-				this.createTimeStamp = createTimeStamp;
-			}
-
-			public Long getModifiedTimeStamp() {
-				return this.modifiedTimeStamp;
-			}
-
-			public void setModifiedTimeStamp(Long modifiedTimeStamp) {
-				this.modifiedTimeStamp = modifiedTimeStamp;
-			}
-
-			public String getUUID() {
-				return this.uUID;
-			}
-
-			public void setUUID(String uUID) {
-				this.uUID = uUID;
 			}
 		}
 	}

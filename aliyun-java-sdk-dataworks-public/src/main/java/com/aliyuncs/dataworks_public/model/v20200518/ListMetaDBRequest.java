@@ -29,6 +29,8 @@ public class ListMetaDBRequest extends RpcAcsRequest<ListMetaDBResponse> {
 
 	private Integer pageSize;
 
+	private String clusterId;
+
 	private Integer pageNum;
 
 	private Long projectId;
@@ -60,6 +62,17 @@ public class ListMetaDBRequest extends RpcAcsRequest<ListMetaDBResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
