@@ -27,25 +27,25 @@ public class ListUserIntentionsResponseUnmarshaller {
 	public static ListUserIntentionsResponse unmarshall(ListUserIntentionsResponse listUserIntentionsResponse, UnmarshallerContext _ctx) {
 		
 		listUserIntentionsResponse.setRequestId(_ctx.stringValue("ListUserIntentionsResponse.RequestId"));
-		listUserIntentionsResponse.setTotalItemNum(_ctx.integerValue("ListUserIntentionsResponse.TotalItemNum"));
 		listUserIntentionsResponse.setCurrentPageNum(_ctx.integerValue("ListUserIntentionsResponse.CurrentPageNum"));
-		listUserIntentionsResponse.setPageSize(_ctx.integerValue("ListUserIntentionsResponse.PageSize"));
 		listUserIntentionsResponse.setTotalPageNum(_ctx.integerValue("ListUserIntentionsResponse.TotalPageNum"));
+		listUserIntentionsResponse.setPageSize(_ctx.integerValue("ListUserIntentionsResponse.PageSize"));
+		listUserIntentionsResponse.setTotalItemNum(_ctx.integerValue("ListUserIntentionsResponse.TotalItemNum"));
 
 		List<Intention> data = new ArrayList<Intention>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserIntentionsResponse.Data.Length"); i++) {
 			Intention intention = new Intention();
-			intention.setUserId(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].UserId"));
-			intention.setMobile(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Mobile"));
-			intention.setContactName(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].ContactName"));
-			intention.setBizType(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].BizType"));
-			intention.setBizId(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].BizId"));
-			intention.setDescription(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Description"));
 			intention.setStatus(_ctx.integerValue("ListUserIntentionsResponse.Data["+ i +"].Status"));
 			intention.setUpdateTime(_ctx.longValue("ListUserIntentionsResponse.Data["+ i +"].UpdateTime"));
+			intention.setDescription(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Description"));
+			intention.setMobile(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Mobile"));
 			intention.setCreateTime(_ctx.longValue("ListUserIntentionsResponse.Data["+ i +"].CreateTime"));
+			intention.setUserId(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].UserId"));
+			intention.setContactName(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].ContactName"));
+			intention.setBizId(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].BizId"));
 			intention.setArea(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Area"));
 			intention.setReason(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Reason"));
+			intention.setBizType(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].BizType"));
 
 			data.add(intention);
 		}

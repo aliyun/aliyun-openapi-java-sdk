@@ -23,9 +23,9 @@ public class ReleaseProduceAuthorizationResponseUnmarshaller {
 	public static ReleaseProduceAuthorizationResponse unmarshall(ReleaseProduceAuthorizationResponse releaseProduceAuthorizationResponse, UnmarshallerContext _ctx) {
 		
 		releaseProduceAuthorizationResponse.setRequestId(_ctx.stringValue("ReleaseProduceAuthorizationResponse.RequestId"));
-		releaseProduceAuthorizationResponse.setSuccess(_ctx.booleanValue("ReleaseProduceAuthorizationResponse.Success"));
 		releaseProduceAuthorizationResponse.setErrorMsg(_ctx.stringValue("ReleaseProduceAuthorizationResponse.ErrorMsg"));
 		releaseProduceAuthorizationResponse.setErrorCode(_ctx.stringValue("ReleaseProduceAuthorizationResponse.ErrorCode"));
+		releaseProduceAuthorizationResponse.setSuccess(_ctx.booleanValue("ReleaseProduceAuthorizationResponse.Success"));
 	 
 	 	return releaseProduceAuthorizationResponse;
 	}

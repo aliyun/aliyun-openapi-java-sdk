@@ -15,25 +15,31 @@
 package com.aliyuncs.companyreg.model.v20200306;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.companyreg.transform.v20200306.QueryBagRemainingResponseUnmarshaller;
+import com.aliyuncs.companyreg.transform.v20200306.TransferProduceOwnerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryBagRemainingResponse extends AcsResponse {
+public class TransferProduceOwnerResponse extends AcsResponse {
 
-	private Long data;
+	private String errorMsg;
 
 	private String requestId;
 
-	public Long getData() {
-		return this.data;
+	private String errorCode;
+
+	private Boolean success;
+
+	private Boolean data;
+
+	public String getErrorMsg() {
+		return this.errorMsg;
 	}
 
-	public void setData(Long data) {
-		this.data = data;
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 
 	public String getRequestId() {
@@ -44,9 +50,33 @@ public class QueryBagRemainingResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
+
 	@Override
-	public QueryBagRemainingResponse getInstance(UnmarshallerContext context) {
-		return	QueryBagRemainingResponseUnmarshaller.unmarshall(this, context);
+	public TransferProduceOwnerResponse getInstance(UnmarshallerContext context) {
+		return	TransferProduceOwnerResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

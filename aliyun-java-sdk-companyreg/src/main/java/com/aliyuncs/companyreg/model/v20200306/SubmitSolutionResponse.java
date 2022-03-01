@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SubmitSolutionResponse extends AcsResponse {
 
+	private String solutionBizId;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String errorMsg;
-
 	private String errorCode;
 
-	private String solutionBizId;
+	private String errorMsg;
 
 	private String confirmUrl;
+
+	public String getSolutionBizId() {
+		return this.solutionBizId;
+	}
+
+	public void setSolutionBizId(String solutionBizId) {
+		this.solutionBizId = solutionBizId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,14 +60,6 @@ public class SubmitSolutionResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -68,12 +68,12 @@ public class SubmitSolutionResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getSolutionBizId() {
-		return this.solutionBizId;
+	public String getErrorMsg() {
+		return this.errorMsg;
 	}
 
-	public void setSolutionBizId(String solutionBizId) {
-		this.solutionBizId = solutionBizId;
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 
 	public String getConfirmUrl() {

@@ -1,3 +1,6 @@
+2022-03-01 Version: 2.2.1
+- Supported partner for ESP.
+
 2022-01-17 Version: 2.1.1
 - Supported esp for partner.
 

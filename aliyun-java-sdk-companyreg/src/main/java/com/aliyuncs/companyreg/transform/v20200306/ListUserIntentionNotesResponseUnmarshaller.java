@@ -28,16 +28,16 @@ public class ListUserIntentionNotesResponseUnmarshaller {
 		
 		listUserIntentionNotesResponse.setRequestId(_ctx.stringValue("ListUserIntentionNotesResponse.RequestId"));
 		listUserIntentionNotesResponse.setPageNum(_ctx.integerValue("ListUserIntentionNotesResponse.PageNum"));
-		listUserIntentionNotesResponse.setPageSize(_ctx.integerValue("ListUserIntentionNotesResponse.PageSize"));
 		listUserIntentionNotesResponse.setSuccess(_ctx.booleanValue("ListUserIntentionNotesResponse.Success"));
 		listUserIntentionNotesResponse.setTotalItemNum(_ctx.integerValue("ListUserIntentionNotesResponse.TotalItemNum"));
+		listUserIntentionNotesResponse.setPageSize(_ctx.integerValue("ListUserIntentionNotesResponse.PageSize"));
 		listUserIntentionNotesResponse.setTotalPageNum(_ctx.integerValue("ListUserIntentionNotesResponse.TotalPageNum"));
 
 		List<OpateLogs> data = new ArrayList<OpateLogs>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserIntentionNotesResponse.Data.Length"); i++) {
 			OpateLogs opateLogs = new OpateLogs();
-			opateLogs.setCreateTime(_ctx.stringValue("ListUserIntentionNotesResponse.Data["+ i +"].CreateTime"));
 			opateLogs.setNote(_ctx.stringValue("ListUserIntentionNotesResponse.Data["+ i +"].Note"));
+			opateLogs.setCreateTime(_ctx.stringValue("ListUserIntentionNotesResponse.Data["+ i +"].CreateTime"));
 
 			data.add(opateLogs);
 		}

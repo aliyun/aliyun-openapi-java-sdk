@@ -30,26 +30,26 @@ public class QueryCommodityConfigResponseUnmarshaller {
 		queryCommodityConfigResponse.setRequestId(_ctx.stringValue("QueryCommodityConfigResponse.RequestId"));
 
 		Data data = new Data();
-		data.setProductLine(_ctx.stringValue("QueryCommodityConfigResponse.Data.ProductLine"));
+		data.setType(_ctx.integerValue("QueryCommodityConfigResponse.Data.Type"));
 		data.setCommodityCode(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityCode"));
 		data.setDescription(_ctx.stringValue("QueryCommodityConfigResponse.Data.Description"));
-		data.setStartingPrice(_ctx.stringValue("QueryCommodityConfigResponse.Data.StartingPrice"));
-		data.setType(_ctx.integerValue("QueryCommodityConfigResponse.Data.Type"));
-		data.setIconUrl(_ctx.stringValue("QueryCommodityConfigResponse.Data.IconUrl"));
 		data.setProtocolUrl(_ctx.stringValue("QueryCommodityConfigResponse.Data.ProtocolUrl"));
+		data.setIconUrl(_ctx.stringValue("QueryCommodityConfigResponse.Data.IconUrl"));
+		data.setProductLine(_ctx.stringValue("QueryCommodityConfigResponse.Data.ProductLine"));
+		data.setStartingPrice(_ctx.stringValue("QueryCommodityConfigResponse.Data.StartingPrice"));
 
 		List<CommodityModulesItem> commodityModules = new ArrayList<CommodityModulesItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCommodityConfigResponse.Data.CommodityModules.Length"); i++) {
 			CommodityModulesItem commodityModulesItem = new CommodityModulesItem();
-			commodityModulesItem.setModuleCode(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleCode"));
 			commodityModulesItem.setModuleName(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleName"));
-			commodityModulesItem.setModuleDescription(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleDescription"));
-			commodityModulesItem.setModuleType(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleType"));
-			commodityModulesItem.setModuleTip(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleTip"));
 			commodityModulesItem.setLxModuleCode(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].LxModuleCode"));
-			commodityModulesItem.setModuleValue(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleValue"));
+			commodityModulesItem.setModuleTip(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleTip"));
+			commodityModulesItem.setModuleDescription(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleDescription"));
 			commodityModulesItem.setModuleUrl(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleUrl"));
+			commodityModulesItem.setModuleCode(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleCode"));
+			commodityModulesItem.setModuleType(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleType"));
 			commodityModulesItem.setSortNumber(_ctx.integerValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].SortNumber"));
+			commodityModulesItem.setModuleValue(_ctx.stringValue("QueryCommodityConfigResponse.Data.CommodityModules["+ i +"].ModuleValue"));
 
 			commodityModules.add(commodityModulesItem);
 		}

@@ -27,13 +27,13 @@ public class ListUserIntentionNotesResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalItemNum;
+
+	private Integer pageSize;
 
 	private Integer totalPageNum;
 
@@ -45,14 +45,6 @@ public class ListUserIntentionNotesResponse extends AcsResponse {
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -79,6 +71,14 @@ public class ListUserIntentionNotesResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -97,17 +97,9 @@ public class ListUserIntentionNotesResponse extends AcsResponse {
 
 	public static class OpateLogs {
 
-		private String createTime;
-
 		private String note;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String createTime;
 
 		public String getNote() {
 			return this.note;
@@ -115,6 +107,14 @@ public class ListUserIntentionNotesResponse extends AcsResponse {
 
 		public void setNote(String note) {
 			this.note = note;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

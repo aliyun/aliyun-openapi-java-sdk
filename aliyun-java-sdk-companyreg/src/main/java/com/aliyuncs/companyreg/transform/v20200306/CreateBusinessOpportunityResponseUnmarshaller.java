@@ -23,9 +23,9 @@ public class CreateBusinessOpportunityResponseUnmarshaller {
 	public static CreateBusinessOpportunityResponse unmarshall(CreateBusinessOpportunityResponse createBusinessOpportunityResponse, UnmarshallerContext _ctx) {
 		
 		createBusinessOpportunityResponse.setRequestId(_ctx.stringValue("CreateBusinessOpportunityResponse.RequestId"));
-		createBusinessOpportunityResponse.setSuccess(_ctx.booleanValue("CreateBusinessOpportunityResponse.Success"));
 		createBusinessOpportunityResponse.setErrorMessage(_ctx.stringValue("CreateBusinessOpportunityResponse.ErrorMessage"));
 		createBusinessOpportunityResponse.setErrorCode(_ctx.stringValue("CreateBusinessOpportunityResponse.ErrorCode"));
+		createBusinessOpportunityResponse.setSuccess(_ctx.booleanValue("CreateBusinessOpportunityResponse.Success"));
 	 
 	 	return createBusinessOpportunityResponse;
 	}

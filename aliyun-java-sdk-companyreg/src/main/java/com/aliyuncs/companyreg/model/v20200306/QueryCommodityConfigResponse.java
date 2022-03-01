@@ -47,28 +47,28 @@ public class QueryCommodityConfigResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String productLine;
+		private Integer type;
 
 		private String commodityCode;
 
 		private String description;
 
-		private String startingPrice;
-
-		private Integer type;
+		private String protocolUrl;
 
 		private String iconUrl;
 
-		private String protocolUrl;
+		private String productLine;
+
+		private String startingPrice;
 
 		private List<CommodityModulesItem> commodityModules;
 
-		public String getProductLine() {
-			return this.productLine;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setProductLine(String productLine) {
-			this.productLine = productLine;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
 		public String getCommodityCode() {
@@ -87,20 +87,12 @@ public class QueryCommodityConfigResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getStartingPrice() {
-			return this.startingPrice;
+		public String getProtocolUrl() {
+			return this.protocolUrl;
 		}
 
-		public void setStartingPrice(String startingPrice) {
-			this.startingPrice = startingPrice;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
+		public void setProtocolUrl(String protocolUrl) {
+			this.protocolUrl = protocolUrl;
 		}
 
 		public String getIconUrl() {
@@ -111,12 +103,20 @@ public class QueryCommodityConfigResponse extends AcsResponse {
 			this.iconUrl = iconUrl;
 		}
 
-		public String getProtocolUrl() {
-			return this.protocolUrl;
+		public String getProductLine() {
+			return this.productLine;
 		}
 
-		public void setProtocolUrl(String protocolUrl) {
-			this.protocolUrl = protocolUrl;
+		public void setProductLine(String productLine) {
+			this.productLine = productLine;
+		}
+
+		public String getStartingPrice() {
+			return this.startingPrice;
+		}
+
+		public void setStartingPrice(String startingPrice) {
+			this.startingPrice = startingPrice;
 		}
 
 		public List<CommodityModulesItem> getCommodityModules() {
@@ -129,31 +129,23 @@ public class QueryCommodityConfigResponse extends AcsResponse {
 
 		public static class CommodityModulesItem {
 
-			private String moduleCode;
-
 			private String moduleName;
-
-			private String moduleDescription;
-
-			private String moduleType;
-
-			private String moduleTip;
 
 			private String lxModuleCode;
 
-			private String moduleValue;
+			private String moduleTip;
+
+			private String moduleDescription;
 
 			private String moduleUrl;
 
+			private String moduleCode;
+
+			private String moduleType;
+
 			private Integer sortNumber;
 
-			public String getModuleCode() {
-				return this.moduleCode;
-			}
-
-			public void setModuleCode(String moduleCode) {
-				this.moduleCode = moduleCode;
-			}
+			private String moduleValue;
 
 			public String getModuleName() {
 				return this.moduleName;
@@ -161,30 +153,6 @@ public class QueryCommodityConfigResponse extends AcsResponse {
 
 			public void setModuleName(String moduleName) {
 				this.moduleName = moduleName;
-			}
-
-			public String getModuleDescription() {
-				return this.moduleDescription;
-			}
-
-			public void setModuleDescription(String moduleDescription) {
-				this.moduleDescription = moduleDescription;
-			}
-
-			public String getModuleType() {
-				return this.moduleType;
-			}
-
-			public void setModuleType(String moduleType) {
-				this.moduleType = moduleType;
-			}
-
-			public String getModuleTip() {
-				return this.moduleTip;
-			}
-
-			public void setModuleTip(String moduleTip) {
-				this.moduleTip = moduleTip;
 			}
 
 			public String getLxModuleCode() {
@@ -195,12 +163,20 @@ public class QueryCommodityConfigResponse extends AcsResponse {
 				this.lxModuleCode = lxModuleCode;
 			}
 
-			public String getModuleValue() {
-				return this.moduleValue;
+			public String getModuleTip() {
+				return this.moduleTip;
 			}
 
-			public void setModuleValue(String moduleValue) {
-				this.moduleValue = moduleValue;
+			public void setModuleTip(String moduleTip) {
+				this.moduleTip = moduleTip;
+			}
+
+			public String getModuleDescription() {
+				return this.moduleDescription;
+			}
+
+			public void setModuleDescription(String moduleDescription) {
+				this.moduleDescription = moduleDescription;
 			}
 
 			public String getModuleUrl() {
@@ -211,12 +187,36 @@ public class QueryCommodityConfigResponse extends AcsResponse {
 				this.moduleUrl = moduleUrl;
 			}
 
+			public String getModuleCode() {
+				return this.moduleCode;
+			}
+
+			public void setModuleCode(String moduleCode) {
+				this.moduleCode = moduleCode;
+			}
+
+			public String getModuleType() {
+				return this.moduleType;
+			}
+
+			public void setModuleType(String moduleType) {
+				this.moduleType = moduleType;
+			}
+
 			public Integer getSortNumber() {
 				return this.sortNumber;
 			}
 
 			public void setSortNumber(Integer sortNumber) {
 				this.sortNumber = sortNumber;
+			}
+
+			public String getModuleValue() {
+				return this.moduleValue;
+			}
+
+			public void setModuleValue(String moduleValue) {
+				this.moduleValue = moduleValue;
 			}
 		}
 	}

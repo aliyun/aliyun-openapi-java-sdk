@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListIntentionNoteResponse extends AcsResponse {
 
+	private Integer currentPageNum;
+
+	private Integer totalPageNum;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer totalItemNum;
 
-	private Integer currentPageNum;
-
-	private Integer pageSize;
-
-	private Integer totalPageNum;
-
 	private List<Note> data;
+
+	public Integer getCurrentPageNum() {
+		return this.currentPageNum;
+	}
+
+	public void setCurrentPageNum(Integer currentPageNum) {
+		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class ListIntentionNoteResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
-	public Integer getCurrentPageNum() {
-		return this.currentPageNum;
-	}
-
-	public void setCurrentPageNum(Integer currentPageNum) {
-		this.currentPageNum = currentPageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
-	}
-
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
-	}
-
 	public List<Note> getData() {
 		return this.data;
 	}
@@ -87,7 +87,7 @@ public class ListIntentionNoteResponse extends AcsResponse {
 
 	public static class Note {
 
-		private String intentionBizId;
+		private String type;
 
 		private String note;
 
@@ -95,14 +95,14 @@ public class ListIntentionNoteResponse extends AcsResponse {
 
 		private String createTime;
 
-		private String type;
+		private String intentionBizId;
 
-		public String getIntentionBizId() {
-			return this.intentionBizId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setIntentionBizId(String intentionBizId) {
-			this.intentionBizId = intentionBizId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getNote() {
@@ -129,12 +129,12 @@ public class ListIntentionNoteResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getIntentionBizId() {
+			return this.intentionBizId;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setIntentionBizId(String intentionBizId) {
+			this.intentionBizId = intentionBizId;
 		}
 	}
 

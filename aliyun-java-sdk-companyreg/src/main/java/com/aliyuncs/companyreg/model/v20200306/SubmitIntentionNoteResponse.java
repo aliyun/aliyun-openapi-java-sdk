@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SubmitIntentionNoteResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String errorMsg;
+
+	private String requestId;
 
 	private String errorCode;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -56,12 +40,28 @@ public class SubmitIntentionNoteResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

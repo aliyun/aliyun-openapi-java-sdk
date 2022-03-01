@@ -27,19 +27,19 @@ public class ListIntentionNoteResponseUnmarshaller {
 	public static ListIntentionNoteResponse unmarshall(ListIntentionNoteResponse listIntentionNoteResponse, UnmarshallerContext _ctx) {
 		
 		listIntentionNoteResponse.setRequestId(_ctx.stringValue("ListIntentionNoteResponse.RequestId"));
-		listIntentionNoteResponse.setTotalItemNum(_ctx.integerValue("ListIntentionNoteResponse.TotalItemNum"));
 		listIntentionNoteResponse.setCurrentPageNum(_ctx.integerValue("ListIntentionNoteResponse.CurrentPageNum"));
-		listIntentionNoteResponse.setPageSize(_ctx.integerValue("ListIntentionNoteResponse.PageSize"));
 		listIntentionNoteResponse.setTotalPageNum(_ctx.integerValue("ListIntentionNoteResponse.TotalPageNum"));
+		listIntentionNoteResponse.setPageSize(_ctx.integerValue("ListIntentionNoteResponse.PageSize"));
+		listIntentionNoteResponse.setTotalItemNum(_ctx.integerValue("ListIntentionNoteResponse.TotalItemNum"));
 
 		List<Note> data = new ArrayList<Note>();
 		for (int i = 0; i < _ctx.lengthValue("ListIntentionNoteResponse.Data.Length"); i++) {
 			Note note = new Note();
-			note.setIntentionBizId(_ctx.stringValue("ListIntentionNoteResponse.Data["+ i +"].IntentionBizId"));
+			note.setType(_ctx.stringValue("ListIntentionNoteResponse.Data["+ i +"].Type"));
 			note.setNote(_ctx.stringValue("ListIntentionNoteResponse.Data["+ i +"].Note"));
 			note.setSource(_ctx.integerValue("ListIntentionNoteResponse.Data["+ i +"].Source"));
 			note.setCreateTime(_ctx.stringValue("ListIntentionNoteResponse.Data["+ i +"].CreateTime"));
-			note.setType(_ctx.stringValue("ListIntentionNoteResponse.Data["+ i +"].Type"));
+			note.setIntentionBizId(_ctx.stringValue("ListIntentionNoteResponse.Data["+ i +"].IntentionBizId"));
 
 			data.add(note);
 		}

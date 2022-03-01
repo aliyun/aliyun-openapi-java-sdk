@@ -15,6 +15,9 @@
 package com.aliyuncs.companyreg.model.v20200306;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.companyreg.Endpoint;
 
@@ -26,6 +29,9 @@ public class ListUserSolutionsRequest extends RpcAcsRequest<ListUserSolutionsRes
 	   
 
 	private Integer pageSize;
+
+	@SerializedName("existStatus")
+	private List<Long> existStatus;
 
 	private String intentionBizId;
 
@@ -48,6 +54,17 @@ public class ListUserSolutionsRequest extends RpcAcsRequest<ListUserSolutionsRes
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<Long> getExistStatus() {
+		return this.existStatus;
+	}
+
+	public void setExistStatus(List<Long> existStatus) {
+		this.existStatus = existStatus;	
+		if (existStatus != null) {
+			putQueryParameter("ExistStatus" , new Gson().toJson(existStatus));
+		}	
 	}
 
 	public String getIntentionBizId() {

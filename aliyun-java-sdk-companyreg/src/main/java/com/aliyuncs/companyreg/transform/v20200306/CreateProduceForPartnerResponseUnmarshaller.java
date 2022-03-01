@@ -24,9 +24,9 @@ public class CreateProduceForPartnerResponseUnmarshaller {
 		
 		createProduceForPartnerResponse.setRequestId(_ctx.stringValue("CreateProduceForPartnerResponse.RequestId"));
 		createProduceForPartnerResponse.setBizId(_ctx.stringValue("CreateProduceForPartnerResponse.BizId"));
-		createProduceForPartnerResponse.setSuccess(_ctx.booleanValue("CreateProduceForPartnerResponse.Success"));
 		createProduceForPartnerResponse.setErrorMsg(_ctx.stringValue("CreateProduceForPartnerResponse.ErrorMsg"));
 		createProduceForPartnerResponse.setErrorCode(_ctx.stringValue("CreateProduceForPartnerResponse.ErrorCode"));
+		createProduceForPartnerResponse.setSuccess(_ctx.booleanValue("CreateProduceForPartnerResponse.Success"));
 	 
 	 	return createProduceForPartnerResponse;
 	}

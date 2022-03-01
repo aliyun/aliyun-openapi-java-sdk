@@ -25,19 +25,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListProduceAuthorizationResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
+	private Integer totalItemNum;
+
 	private Integer currentPageNum;
 
 	private Integer pageSize;
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer totalPageNum;
 
-	private Boolean success;
-
 	private List<ProduceAuthorizations> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
+	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -55,36 +79,12 @@ public class ListProduceAuthorizationResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
-
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
 
 	public void setTotalPageNum(Integer totalPageNum) {
 		this.totalPageNum = totalPageNum;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public List<ProduceAuthorizations> getData() {

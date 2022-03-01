@@ -23,9 +23,9 @@ public class CloseIntentionForPartnerResponseUnmarshaller {
 	public static CloseIntentionForPartnerResponse unmarshall(CloseIntentionForPartnerResponse closeIntentionForPartnerResponse, UnmarshallerContext _ctx) {
 		
 		closeIntentionForPartnerResponse.setRequestId(_ctx.stringValue("CloseIntentionForPartnerResponse.RequestId"));
-		closeIntentionForPartnerResponse.setErrorCode(_ctx.stringValue("CloseIntentionForPartnerResponse.ErrorCode"));
 		closeIntentionForPartnerResponse.setErrorMsg(_ctx.stringValue("CloseIntentionForPartnerResponse.ErrorMsg"));
 		closeIntentionForPartnerResponse.setSuccess(_ctx.booleanValue("CloseIntentionForPartnerResponse.Success"));
+		closeIntentionForPartnerResponse.setErrorCode(_ctx.stringValue("CloseIntentionForPartnerResponse.ErrorCode"));
 	 
 	 	return closeIntentionForPartnerResponse;
 	}

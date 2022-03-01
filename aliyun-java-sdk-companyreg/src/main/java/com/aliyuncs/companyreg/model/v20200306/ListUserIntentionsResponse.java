@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUserIntentionsResponse extends AcsResponse {
 
+	private Integer currentPageNum;
+
+	private Integer totalPageNum;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer totalItemNum;
 
-	private Integer currentPageNum;
-
-	private Integer pageSize;
-
-	private Integer totalPageNum;
-
 	private List<Intention> data;
+
+	public Integer getCurrentPageNum() {
+		return this.currentPageNum;
+	}
+
+	public void setCurrentPageNum(Integer currentPageNum) {
+		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class ListUserIntentionsResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
-	public Integer getCurrentPageNum() {
-		return this.currentPageNum;
-	}
-
-	public void setCurrentPageNum(Integer currentPageNum) {
-		this.currentPageNum = currentPageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
-	}
-
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
-	}
-
 	public List<Intention> getData() {
 		return this.data;
 	}
@@ -87,75 +87,27 @@ public class ListUserIntentionsResponse extends AcsResponse {
 
 	public static class Intention {
 
-		private String userId;
-
-		private String mobile;
-
-		private String contactName;
-
-		private String bizType;
-
-		private String bizId;
-
-		private String description;
-
 		private Integer status;
 
 		private Long updateTime;
 
+		private String description;
+
+		private String mobile;
+
 		private Long createTime;
+
+		private String userId;
+
+		private String contactName;
+
+		private String bizId;
 
 		private String area;
 
 		private String reason;
 
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getMobile() {
-			return this.mobile;
-		}
-
-		public void setMobile(String mobile) {
-			this.mobile = mobile;
-		}
-
-		public String getContactName() {
-			return this.contactName;
-		}
-
-		public void setContactName(String contactName) {
-			this.contactName = contactName;
-		}
-
-		public String getBizType() {
-			return this.bizType;
-		}
-
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private String bizType;
 
 		public Integer getStatus() {
 			return this.status;
@@ -173,12 +125,52 @@ public class ListUserIntentionsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getMobile() {
+			return this.mobile;
+		}
+
+		public void setMobile(String mobile) {
+			this.mobile = mobile;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getContactName() {
+			return this.contactName;
+		}
+
+		public void setContactName(String contactName) {
+			this.contactName = contactName;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 
 		public String getArea() {
@@ -195,6 +187,14 @@ public class ListUserIntentionsResponse extends AcsResponse {
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 	}
 

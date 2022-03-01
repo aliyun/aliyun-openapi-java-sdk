@@ -23,9 +23,9 @@ public class RejectSolutionResponseUnmarshaller {
 	public static RejectSolutionResponse unmarshall(RejectSolutionResponse rejectSolutionResponse, UnmarshallerContext _ctx) {
 		
 		rejectSolutionResponse.setRequestId(_ctx.stringValue("RejectSolutionResponse.RequestId"));
-		rejectSolutionResponse.setSuccess(_ctx.booleanValue("RejectSolutionResponse.Success"));
 		rejectSolutionResponse.setErrorMsg(_ctx.stringValue("RejectSolutionResponse.ErrorMsg"));
 		rejectSolutionResponse.setErrorCode(_ctx.stringValue("RejectSolutionResponse.ErrorCode"));
+		rejectSolutionResponse.setSuccess(_ctx.booleanValue("RejectSolutionResponse.Success"));
 	 
 	 	return rejectSolutionResponse;
 	}

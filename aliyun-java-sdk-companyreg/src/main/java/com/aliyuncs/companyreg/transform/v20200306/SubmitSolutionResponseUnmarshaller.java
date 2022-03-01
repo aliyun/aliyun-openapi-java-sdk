@@ -23,10 +23,10 @@ public class SubmitSolutionResponseUnmarshaller {
 	public static SubmitSolutionResponse unmarshall(SubmitSolutionResponse submitSolutionResponse, UnmarshallerContext _ctx) {
 		
 		submitSolutionResponse.setRequestId(_ctx.stringValue("SubmitSolutionResponse.RequestId"));
-		submitSolutionResponse.setSuccess(_ctx.booleanValue("SubmitSolutionResponse.Success"));
-		submitSolutionResponse.setErrorMsg(_ctx.stringValue("SubmitSolutionResponse.ErrorMsg"));
-		submitSolutionResponse.setErrorCode(_ctx.stringValue("SubmitSolutionResponse.ErrorCode"));
 		submitSolutionResponse.setSolutionBizId(_ctx.stringValue("SubmitSolutionResponse.SolutionBizId"));
+		submitSolutionResponse.setSuccess(_ctx.booleanValue("SubmitSolutionResponse.Success"));
+		submitSolutionResponse.setErrorCode(_ctx.stringValue("SubmitSolutionResponse.ErrorCode"));
+		submitSolutionResponse.setErrorMsg(_ctx.stringValue("SubmitSolutionResponse.ErrorMsg"));
 		submitSolutionResponse.setConfirmUrl(_ctx.stringValue("SubmitSolutionResponse.ConfirmUrl"));
 	 
 	 	return submitSolutionResponse;

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BindProduceAuthorizationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String errorMsg;
+
+	private String requestId;
 
 	private String errorCode;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -47,6 +39,14 @@ public class BindProduceAuthorizationResponse extends AcsResponse {
 
 	public void setErrorMsg(String errorMsg) {
 		this.errorMsg = errorMsg;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorCode() {
@@ -67,19 +67,11 @@ public class BindProduceAuthorizationResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean success;
-
 		private String message;
 
+		private Boolean success;
+
 		private List<AuthorizedUserListItem> authorizedUserList;
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
-		}
 
 		public String getMessage() {
 			return this.message;
@@ -87,6 +79,14 @@ public class BindProduceAuthorizationResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 
 		public List<AuthorizedUserListItem> getAuthorizedUserList() {
@@ -99,19 +99,11 @@ public class BindProduceAuthorizationResponse extends AcsResponse {
 
 		public static class AuthorizedUserListItem {
 
-			private String userId;
-
 			private String userName;
 
+			private String userId;
+
 			private Integer accountValidType;
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
 
 			public String getUserName() {
 				return this.userName;
@@ -119,6 +111,14 @@ public class BindProduceAuthorizationResponse extends AcsResponse {
 
 			public void setUserName(String userName) {
 				this.userName = userName;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 
 			public Integer getAccountValidType() {

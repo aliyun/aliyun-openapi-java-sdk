@@ -27,11 +27,11 @@ public class ListProduceAuthorizationResponseUnmarshaller {
 	public static ListProduceAuthorizationResponse unmarshall(ListProduceAuthorizationResponse listProduceAuthorizationResponse, UnmarshallerContext _ctx) {
 		
 		listProduceAuthorizationResponse.setRequestId(_ctx.stringValue("ListProduceAuthorizationResponse.RequestId"));
+		listProduceAuthorizationResponse.setSuccess(_ctx.booleanValue("ListProduceAuthorizationResponse.Success"));
+		listProduceAuthorizationResponse.setTotalItemNum(_ctx.integerValue("ListProduceAuthorizationResponse.TotalItemNum"));
 		listProduceAuthorizationResponse.setCurrentPageNum(_ctx.integerValue("ListProduceAuthorizationResponse.CurrentPageNum"));
 		listProduceAuthorizationResponse.setPageSize(_ctx.integerValue("ListProduceAuthorizationResponse.PageSize"));
-		listProduceAuthorizationResponse.setTotalItemNum(_ctx.integerValue("ListProduceAuthorizationResponse.TotalItemNum"));
 		listProduceAuthorizationResponse.setTotalPageNum(_ctx.integerValue("ListProduceAuthorizationResponse.TotalPageNum"));
-		listProduceAuthorizationResponse.setSuccess(_ctx.booleanValue("ListProduceAuthorizationResponse.Success"));
 
 		List<ProduceAuthorizations> data = new ArrayList<ProduceAuthorizations>();
 		for (int i = 0; i < _ctx.lengthValue("ListProduceAuthorizationResponse.Data.Length"); i++) {

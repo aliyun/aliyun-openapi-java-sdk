@@ -23,9 +23,9 @@ public class SubmitIntentionNoteResponseUnmarshaller {
 	public static SubmitIntentionNoteResponse unmarshall(SubmitIntentionNoteResponse submitIntentionNoteResponse, UnmarshallerContext _ctx) {
 		
 		submitIntentionNoteResponse.setRequestId(_ctx.stringValue("SubmitIntentionNoteResponse.RequestId"));
-		submitIntentionNoteResponse.setSuccess(_ctx.booleanValue("SubmitIntentionNoteResponse.Success"));
 		submitIntentionNoteResponse.setErrorMsg(_ctx.stringValue("SubmitIntentionNoteResponse.ErrorMsg"));
 		submitIntentionNoteResponse.setErrorCode(_ctx.stringValue("SubmitIntentionNoteResponse.ErrorCode"));
+		submitIntentionNoteResponse.setSuccess(_ctx.booleanValue("SubmitIntentionNoteResponse.Success"));
 	 
 	 	return submitIntentionNoteResponse;
 	}

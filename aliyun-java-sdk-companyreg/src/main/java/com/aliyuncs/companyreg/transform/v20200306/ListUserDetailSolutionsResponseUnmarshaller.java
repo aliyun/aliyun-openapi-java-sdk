@@ -28,25 +28,25 @@ public class ListUserDetailSolutionsResponseUnmarshaller {
 		
 		listUserDetailSolutionsResponse.setRequestId(_ctx.stringValue("ListUserDetailSolutionsResponse.RequestId"));
 		listUserDetailSolutionsResponse.setCurrentPageNum(_ctx.integerValue("ListUserDetailSolutionsResponse.CurrentPageNum"));
+		listUserDetailSolutionsResponse.setTotalPageNum(_ctx.integerValue("ListUserDetailSolutionsResponse.TotalPageNum"));
 		listUserDetailSolutionsResponse.setPageSize(_ctx.integerValue("ListUserDetailSolutionsResponse.PageSize"));
 		listUserDetailSolutionsResponse.setTotalItemNum(_ctx.integerValue("ListUserDetailSolutionsResponse.TotalItemNum"));
-		listUserDetailSolutionsResponse.setTotalPageNum(_ctx.integerValue("ListUserDetailSolutionsResponse.TotalPageNum"));
 
 		List<Solution> data = new ArrayList<Solution>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserDetailSolutionsResponse.Data.Length"); i++) {
 			Solution solution = new Solution();
-			solution.setBizId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].BizId"));
-			solution.setBizType(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].BizType"));
-			solution.setCreateTime(_ctx.longValue("ListUserDetailSolutionsResponse.Data["+ i +"].CreateTime"));
-			solution.setDeliveryOrderBizId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].DeliveryOrderBizId"));
-			solution.setExtInfo(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].ExtInfo"));
-			solution.setIntentionAssignBizId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].IntentionAssignBizId"));
-			solution.setIntentionBizId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].IntentionBizId"));
-			solution.setPartnerCode(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].PartnerCode"));
-			solution.setReason(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].Reason"));
 			solution.setStatus(_ctx.integerValue("ListUserDetailSolutionsResponse.Data["+ i +"].Status"));
 			solution.setUpdateTime(_ctx.longValue("ListUserDetailSolutionsResponse.Data["+ i +"].UpdateTime"));
+			solution.setDeliveryOrderBizId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].DeliveryOrderBizId"));
+			solution.setCreateTime(_ctx.longValue("ListUserDetailSolutionsResponse.Data["+ i +"].CreateTime"));
 			solution.setUserId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].UserId"));
+			solution.setBizId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].BizId"));
+			solution.setPartnerCode(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].PartnerCode"));
+			solution.setExtInfo(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].ExtInfo"));
+			solution.setBizType(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].BizType"));
+			solution.setIntentionBizId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].IntentionBizId"));
+			solution.setReason(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].Reason"));
+			solution.setIntentionAssignBizId(_ctx.stringValue("ListUserDetailSolutionsResponse.Data["+ i +"].IntentionAssignBizId"));
 
 			data.add(solution);
 		}

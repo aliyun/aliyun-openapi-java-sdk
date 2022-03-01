@@ -32,14 +32,14 @@ public class BindProduceAuthorizationResponseUnmarshaller {
 		bindProduceAuthorizationResponse.setErrorCode(_ctx.stringValue("BindProduceAuthorizationResponse.ErrorCode"));
 
 		Data data = new Data();
-		data.setSuccess(_ctx.booleanValue("BindProduceAuthorizationResponse.Data.Success"));
 		data.setMessage(_ctx.stringValue("BindProduceAuthorizationResponse.Data.Message"));
+		data.setSuccess(_ctx.booleanValue("BindProduceAuthorizationResponse.Data.Success"));
 
 		List<AuthorizedUserListItem> authorizedUserList = new ArrayList<AuthorizedUserListItem>();
 		for (int i = 0; i < _ctx.lengthValue("BindProduceAuthorizationResponse.Data.AuthorizedUserList.Length"); i++) {
 			AuthorizedUserListItem authorizedUserListItem = new AuthorizedUserListItem();
-			authorizedUserListItem.setUserId(_ctx.stringValue("BindProduceAuthorizationResponse.Data.AuthorizedUserList["+ i +"].UserId"));
 			authorizedUserListItem.setUserName(_ctx.stringValue("BindProduceAuthorizationResponse.Data.AuthorizedUserList["+ i +"].UserName"));
+			authorizedUserListItem.setUserId(_ctx.stringValue("BindProduceAuthorizationResponse.Data.AuthorizedUserList["+ i +"].UserId"));
 			authorizedUserListItem.setAccountValidType(_ctx.integerValue("BindProduceAuthorizationResponse.Data.AuthorizedUserList["+ i +"].AccountValidType"));
 
 			authorizedUserList.add(authorizedUserListItem);

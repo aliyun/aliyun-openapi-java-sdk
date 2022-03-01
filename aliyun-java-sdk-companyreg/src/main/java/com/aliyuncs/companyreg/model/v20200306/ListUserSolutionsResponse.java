@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUserSolutionsResponse extends AcsResponse {
 
+	private Integer currentPageNum;
+
+	private Integer totalPageNum;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer totalItemNum;
 
-	private Integer currentPageNum;
-
-	private Integer pageSize;
-
-	private Integer totalPageNum;
-
 	private List<Solution> data;
+
+	public Integer getCurrentPageNum() {
+		return this.currentPageNum;
+	}
+
+	public void setCurrentPageNum(Integer currentPageNum) {
+		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class ListUserSolutionsResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
-	public Integer getCurrentPageNum() {
-		return this.currentPageNum;
-	}
-
-	public void setCurrentPageNum(Integer currentPageNum) {
-		this.currentPageNum = currentPageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
-	}
-
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
-	}
-
 	public List<Solution> getData() {
 		return this.data;
 	}
@@ -87,67 +87,27 @@ public class ListUserSolutionsResponse extends AcsResponse {
 
 	public static class Solution {
 
-		private String bizType;
-
-		private String bizId;
-
-		private String userId;
-
-		private String intentionBizId;
-
-		private String partnerCode;
-
 		private Integer status;
-
-		private String reason;
 
 		private Long updateTime;
 
+		private String deliveryOrderBizId;
+
 		private Long createTime;
 
-		private String deliveryOrderBizId;
+		private String userId;
+
+		private String bizId;
+
+		private String partnerCode;
+
+		private String reason;
 
 		private String intentionAssignBizId;
 
-		public String getBizType() {
-			return this.bizType;
-		}
+		private String intentionBizId;
 
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getIntentionBizId() {
-			return this.intentionBizId;
-		}
-
-		public void setIntentionBizId(String intentionBizId) {
-			this.intentionBizId = intentionBizId;
-		}
-
-		public String getPartnerCode() {
-			return this.partnerCode;
-		}
-
-		public void setPartnerCode(String partnerCode) {
-			this.partnerCode = partnerCode;
-		}
+		private String bizType;
 
 		public Integer getStatus() {
 			return this.status;
@@ -155,14 +115,6 @@ public class ListUserSolutionsResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
 		}
 
 		public Long getUpdateTime() {
@@ -173,14 +125,6 @@ public class ListUserSolutionsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
 		public String getDeliveryOrderBizId() {
 			return this.deliveryOrderBizId;
 		}
@@ -189,12 +133,68 @@ public class ListUserSolutionsResponse extends AcsResponse {
 			this.deliveryOrderBizId = deliveryOrderBizId;
 		}
 
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public String getPartnerCode() {
+			return this.partnerCode;
+		}
+
+		public void setPartnerCode(String partnerCode) {
+			this.partnerCode = partnerCode;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
 		public String getIntentionAssignBizId() {
 			return this.intentionAssignBizId;
 		}
 
 		public void setIntentionAssignBizId(String intentionAssignBizId) {
 			this.intentionAssignBizId = intentionAssignBizId;
+		}
+
+		public String getIntentionBizId() {
+			return this.intentionBizId;
+		}
+
+		public void setIntentionBizId(String intentionBizId) {
+			this.intentionBizId = intentionBizId;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 	}
 
