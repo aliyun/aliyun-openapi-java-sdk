@@ -67,95 +67,31 @@ public class DescribeFabricOrganizationChaincodesResponse extends AcsResponse {
 
 	public static class OrganizationChaincode {
 
-		private String chaincodeName;
-
-		private String chaincodeVersion;
-
-		private String creator;
-
-		private String channelId;
-
-		private String channelName;
-
-		private String createTime;
-
-		private String deployTime;
-
-		private String chaincodeId;
-
 		private String endorsePolicy;
 
 		private String state;
 
-		private String installed;
+		private String createTime;
+
+		private String chaincodeId;
 
 		private String message;
 
+		private String chaincodeName;
+
+		private String installed;
+
+		private String creator;
+
+		private String deployTime;
+
+		private String chaincodeVersion;
+
 		private String consortiumId;
 
-		public String getChaincodeName() {
-			return this.chaincodeName;
-		}
+		private String channelName;
 
-		public void setChaincodeName(String chaincodeName) {
-			this.chaincodeName = chaincodeName;
-		}
-
-		public String getChaincodeVersion() {
-			return this.chaincodeVersion;
-		}
-
-		public void setChaincodeVersion(String chaincodeVersion) {
-			this.chaincodeVersion = chaincodeVersion;
-		}
-
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
-		}
-
-		public String getChannelId() {
-			return this.channelId;
-		}
-
-		public void setChannelId(String channelId) {
-			this.channelId = channelId;
-		}
-
-		public String getChannelName() {
-			return this.channelName;
-		}
-
-		public void setChannelName(String channelName) {
-			this.channelName = channelName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getDeployTime() {
-			return this.deployTime;
-		}
-
-		public void setDeployTime(String deployTime) {
-			this.deployTime = deployTime;
-		}
-
-		public String getChaincodeId() {
-			return this.chaincodeId;
-		}
-
-		public void setChaincodeId(String chaincodeId) {
-			this.chaincodeId = chaincodeId;
-		}
+		private String channelId;
 
 		public String getEndorsePolicy() {
 			return this.endorsePolicy;
@@ -173,12 +109,20 @@ public class DescribeFabricOrganizationChaincodesResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getInstalled() {
-			return this.installed;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setInstalled(String installed) {
-			this.installed = installed;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getChaincodeId() {
+			return this.chaincodeId;
+		}
+
+		public void setChaincodeId(String chaincodeId) {
+			this.chaincodeId = chaincodeId;
 		}
 
 		public String getMessage() {
@@ -189,12 +133,68 @@ public class DescribeFabricOrganizationChaincodesResponse extends AcsResponse {
 			this.message = message;
 		}
 
+		public String getChaincodeName() {
+			return this.chaincodeName;
+		}
+
+		public void setChaincodeName(String chaincodeName) {
+			this.chaincodeName = chaincodeName;
+		}
+
+		public String getInstalled() {
+			return this.installed;
+		}
+
+		public void setInstalled(String installed) {
+			this.installed = installed;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
+		public String getDeployTime() {
+			return this.deployTime;
+		}
+
+		public void setDeployTime(String deployTime) {
+			this.deployTime = deployTime;
+		}
+
+		public String getChaincodeVersion() {
+			return this.chaincodeVersion;
+		}
+
+		public void setChaincodeVersion(String chaincodeVersion) {
+			this.chaincodeVersion = chaincodeVersion;
+		}
+
 		public String getConsortiumId() {
 			return this.consortiumId;
 		}
 
 		public void setConsortiumId(String consortiumId) {
 			this.consortiumId = consortiumId;
+		}
+
+		public String getChannelName() {
+			return this.channelName;
+		}
+
+		public void setChannelName(String channelName) {
+			this.channelName = channelName;
+		}
+
+		public String getChannelId() {
+			return this.channelId;
+		}
+
+		public void setChannelId(String channelId) {
+			this.channelId = channelId;
 		}
 	}
 

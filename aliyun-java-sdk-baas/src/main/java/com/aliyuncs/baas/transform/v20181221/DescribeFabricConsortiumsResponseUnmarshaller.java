@@ -35,22 +35,22 @@ public class DescribeFabricConsortiumsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricConsortiumsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setChannelCount(_ctx.integerValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ChannelCount"));
-			resultItem.setChannelPolicy(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ChannelPolicy"));
-			resultItem.setCodeName(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].CodeName"));
-			resultItem.setConsortiumId(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ConsortiumId"));
-			resultItem.setConsortiumName(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ConsortiumName"));
-			resultItem.setCreateTime(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].CreateTime"));
 			resultItem.setDomain(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].Domain"));
-			resultItem.setExpiredTime(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ExpiredTime"));
-			resultItem.setOrganizationCount(_ctx.integerValue("DescribeFabricConsortiumsResponse.Result["+ i +"].OrganizationCount"));
-			resultItem.setOwnerBid(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].OwnerBid"));
+			resultItem.setState(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].State"));
+			resultItem.setCreateTime(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].CreateTime"));
+			resultItem.setSpecName(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].SpecName"));
+			resultItem.setSupportChannelConfig(_ctx.booleanValue("DescribeFabricConsortiumsResponse.Result["+ i +"].SupportChannelConfig"));
 			resultItem.setOwnerName(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].OwnerName"));
 			resultItem.setOwnerUid(_ctx.longValue("DescribeFabricConsortiumsResponse.Result["+ i +"].OwnerUid"));
+			resultItem.setOwnerBid(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].OwnerBid"));
+			resultItem.setCodeName(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].CodeName"));
 			resultItem.setRegionId(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].RegionId"));
+			resultItem.setChannelPolicy(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ChannelPolicy"));
 			resultItem.setRequestId(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].RequestId"));
-			resultItem.setSpecName(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].SpecName"));
-			resultItem.setState(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].State"));
-			resultItem.setSupportChannelConfig(_ctx.booleanValue("DescribeFabricConsortiumsResponse.Result["+ i +"].SupportChannelConfig"));
+			resultItem.setConsortiumId(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ConsortiumId"));
+			resultItem.setExpiredTime(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ExpiredTime"));
+			resultItem.setOrganizationCount(_ctx.integerValue("DescribeFabricConsortiumsResponse.Result["+ i +"].OrganizationCount"));
+			resultItem.setConsortiumName(_ctx.stringValue("DescribeFabricConsortiumsResponse.Result["+ i +"].ConsortiumName"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFabricConsortiumsResponse.Result["+ i +"].Tags.Length"); j++) {

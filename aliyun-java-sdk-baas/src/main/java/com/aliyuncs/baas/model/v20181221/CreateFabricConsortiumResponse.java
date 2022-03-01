@@ -66,80 +66,48 @@ public class CreateFabricConsortiumResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String consortiumId;
-
-		private String consortiumName;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String codeName;
+		private Integer channelCount;
 
 		private String domain;
 
-		private String description;
-
-		private String ownerBid;
-
-		private Long ownerUid;
-
-		private String ordererType;
-
-		private String channelPolicy;
-
-		private Integer ordererCount;
-
-		private Integer memberCount;
-
-		private Integer channelCount;
+		private String createTime;
 
 		private String specName;
 
-		private String clusterState;
+		private Integer ordererCount;
 
 		private String serviceState;
 
-		private String createTime;
+		private String clusterState;
 
-		public String getConsortiumId() {
-			return this.consortiumId;
+		private Long ownerUid;
+
+		private String ownerBid;
+
+		private String codeName;
+
+		private String regionId;
+
+		private Integer memberCount;
+
+		private String channelPolicy;
+
+		private String ordererType;
+
+		private String description;
+
+		private String consortiumId;
+
+		private String zoneId;
+
+		private String consortiumName;
+
+		public Integer getChannelCount() {
+			return this.channelCount;
 		}
 
-		public void setConsortiumId(String consortiumId) {
-			this.consortiumId = consortiumId;
-		}
-
-		public String getConsortiumName() {
-			return this.consortiumName;
-		}
-
-		public void setConsortiumName(String consortiumName) {
-			this.consortiumName = consortiumName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getCodeName() {
-			return this.codeName;
-		}
-
-		public void setCodeName(String codeName) {
-			this.codeName = codeName;
+		public void setChannelCount(Integer channelCount) {
+			this.channelCount = channelCount;
 		}
 
 		public String getDomain() {
@@ -150,68 +118,12 @@ public class CreateFabricConsortiumResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getOwnerBid() {
-			return this.ownerBid;
-		}
-
-		public void setOwnerBid(String ownerBid) {
-			this.ownerBid = ownerBid;
-		}
-
-		public Long getOwnerUid() {
-			return this.ownerUid;
-		}
-
-		public void setOwnerUid(Long ownerUid) {
-			this.ownerUid = ownerUid;
-		}
-
-		public String getOrdererType() {
-			return this.ordererType;
-		}
-
-		public void setOrdererType(String ordererType) {
-			this.ordererType = ordererType;
-		}
-
-		public String getChannelPolicy() {
-			return this.channelPolicy;
-		}
-
-		public void setChannelPolicy(String channelPolicy) {
-			this.channelPolicy = channelPolicy;
-		}
-
-		public Integer getOrdererCount() {
-			return this.ordererCount;
-		}
-
-		public void setOrdererCount(Integer ordererCount) {
-			this.ordererCount = ordererCount;
-		}
-
-		public Integer getMemberCount() {
-			return this.memberCount;
-		}
-
-		public void setMemberCount(Integer memberCount) {
-			this.memberCount = memberCount;
-		}
-
-		public Integer getChannelCount() {
-			return this.channelCount;
-		}
-
-		public void setChannelCount(Integer channelCount) {
-			this.channelCount = channelCount;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getSpecName() {
@@ -222,12 +134,12 @@ public class CreateFabricConsortiumResponse extends AcsResponse {
 			this.specName = specName;
 		}
 
-		public String getClusterState() {
-			return this.clusterState;
+		public Integer getOrdererCount() {
+			return this.ordererCount;
 		}
 
-		public void setClusterState(String clusterState) {
-			this.clusterState = clusterState;
+		public void setOrdererCount(Integer ordererCount) {
+			this.ordererCount = ordererCount;
 		}
 
 		public String getServiceState() {
@@ -238,12 +150,100 @@ public class CreateFabricConsortiumResponse extends AcsResponse {
 			this.serviceState = serviceState;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getClusterState() {
+			return this.clusterState;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setClusterState(String clusterState) {
+			this.clusterState = clusterState;
+		}
+
+		public Long getOwnerUid() {
+			return this.ownerUid;
+		}
+
+		public void setOwnerUid(Long ownerUid) {
+			this.ownerUid = ownerUid;
+		}
+
+		public String getOwnerBid() {
+			return this.ownerBid;
+		}
+
+		public void setOwnerBid(String ownerBid) {
+			this.ownerBid = ownerBid;
+		}
+
+		public String getCodeName() {
+			return this.codeName;
+		}
+
+		public void setCodeName(String codeName) {
+			this.codeName = codeName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getMemberCount() {
+			return this.memberCount;
+		}
+
+		public void setMemberCount(Integer memberCount) {
+			this.memberCount = memberCount;
+		}
+
+		public String getChannelPolicy() {
+			return this.channelPolicy;
+		}
+
+		public void setChannelPolicy(String channelPolicy) {
+			this.channelPolicy = channelPolicy;
+		}
+
+		public String getOrdererType() {
+			return this.ordererType;
+		}
+
+		public void setOrdererType(String ordererType) {
+			this.ordererType = ordererType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getConsortiumId() {
+			return this.consortiumId;
+		}
+
+		public void setConsortiumId(String consortiumId) {
+			this.consortiumId = consortiumId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getConsortiumName() {
+			return this.consortiumName;
+		}
+
+		public void setConsortiumName(String consortiumName) {
+			this.consortiumName = consortiumName;
 		}
 	}
 

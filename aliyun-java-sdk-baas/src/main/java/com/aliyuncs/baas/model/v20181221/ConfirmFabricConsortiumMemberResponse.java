@@ -26,11 +26,11 @@ public class ConfirmFabricConsortiumMemberResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean result;
+
 	private Boolean success;
 
 	private Integer errorCode;
-
-	private Boolean result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class ConfirmFabricConsortiumMemberResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getResult() {
+		return this.result;
+	}
+
+	public void setResult(Boolean result) {
+		this.result = result;
 	}
 
 	public Boolean getSuccess() {
@@ -54,14 +62,6 @@ public class ConfirmFabricConsortiumMemberResponse extends AcsResponse {
 
 	public void setErrorCode(Integer errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public Boolean getResult() {
-		return this.result;
-	}
-
-	public void setResult(Boolean result) {
-		this.result = result;
 	}
 
 	@Override

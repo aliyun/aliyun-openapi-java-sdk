@@ -67,17 +67,33 @@ public class DescribeFabricConsortiumOrderersResponse extends AcsResponse {
 
 	public static class Orderer {
 
+		private String domain;
+
+		private String updateTime;
+
 		private String ordererName;
 
-		private String domain;
+		private String createTime;
 
 		private Integer port;
 
 		private String instanceType;
 
-		private String createTime;
+		public String getDomain() {
+			return this.domain;
+		}
 
-		private String updateTime;
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
 
 		public String getOrdererName() {
 			return this.ordererName;
@@ -87,12 +103,12 @@ public class DescribeFabricConsortiumOrderersResponse extends AcsResponse {
 			this.ordererName = ordererName;
 		}
 
-		public String getDomain() {
-			return this.domain;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDomain(String domain) {
-			this.domain = domain;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public Integer getPort() {
@@ -109,22 +125,6 @@ public class DescribeFabricConsortiumOrderersResponse extends AcsResponse {
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
 		}
 	}
 

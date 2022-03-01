@@ -30,10 +30,10 @@ public class ApplyAntChainCertificateWithKeyAutoCreationResponseUnmarshaller {
 		result.setPrivateKey(_ctx.stringValue("ApplyAntChainCertificateWithKeyAutoCreationResponse.Result.PrivateKey"));
 
 		DownloadPath downloadPath = new DownloadPath();
-		downloadPath.setClientCrtUrl(_ctx.stringValue("ApplyAntChainCertificateWithKeyAutoCreationResponse.Result.DownloadPath.ClientCrtUrl"));
-		downloadPath.setTrustCaUrl(_ctx.stringValue("ApplyAntChainCertificateWithKeyAutoCreationResponse.Result.DownloadPath.TrustCaUrl"));
-		downloadPath.setCaCrtUrl(_ctx.stringValue("ApplyAntChainCertificateWithKeyAutoCreationResponse.Result.DownloadPath.CaCrtUrl"));
 		downloadPath.setSdkUrl(_ctx.stringValue("ApplyAntChainCertificateWithKeyAutoCreationResponse.Result.DownloadPath.SdkUrl"));
+		downloadPath.setClientCrtUrl(_ctx.stringValue("ApplyAntChainCertificateWithKeyAutoCreationResponse.Result.DownloadPath.ClientCrtUrl"));
+		downloadPath.setCaCrtUrl(_ctx.stringValue("ApplyAntChainCertificateWithKeyAutoCreationResponse.Result.DownloadPath.CaCrtUrl"));
+		downloadPath.setTrustCaUrl(_ctx.stringValue("ApplyAntChainCertificateWithKeyAutoCreationResponse.Result.DownloadPath.TrustCaUrl"));
 		result.setDownloadPath(downloadPath);
 		applyAntChainCertificateWithKeyAutoCreationResponse.setResult(result);
 	 

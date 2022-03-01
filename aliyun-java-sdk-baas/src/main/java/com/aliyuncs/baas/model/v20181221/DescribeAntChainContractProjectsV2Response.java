@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainContractProjectsV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainContractProjectsV2Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainContractProjectsV2Response extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -95,6 +87,14 @@ public class DescribeAntChainContractProjectsV2Response extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	public Result getResult() {
@@ -129,13 +129,13 @@ public class DescribeAntChainContractProjectsV2Response extends AcsResponse {
 
 		public static class ContractProjectsItem {
 
-			private String projectId;
+			private Long updateTime;
 
 			private String consortiumId;
 
 			private Long createTime;
 
-			private Long updateTime;
+			private String projectId;
 
 			private String projectName;
 
@@ -143,12 +143,12 @@ public class DescribeAntChainContractProjectsV2Response extends AcsResponse {
 
 			private String projectDescription;
 
-			public String getProjectId() {
-				return this.projectId;
+			public Long getUpdateTime() {
+				return this.updateTime;
 			}
 
-			public void setProjectId(String projectId) {
-				this.projectId = projectId;
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public String getConsortiumId() {
@@ -167,12 +167,12 @@ public class DescribeAntChainContractProjectsV2Response extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Long getUpdateTime() {
-				return this.updateTime;
+			public String getProjectId() {
+				return this.projectId;
 			}
 
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
+			public void setProjectId(String projectId) {
+				this.projectId = projectId;
 			}
 
 			public String getProjectName() {

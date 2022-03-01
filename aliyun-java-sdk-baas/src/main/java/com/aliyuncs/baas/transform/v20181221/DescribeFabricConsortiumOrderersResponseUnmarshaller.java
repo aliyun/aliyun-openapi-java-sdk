@@ -33,12 +33,12 @@ public class DescribeFabricConsortiumOrderersResponseUnmarshaller {
 		List<Orderer> result = new ArrayList<Orderer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricConsortiumOrderersResponse.Result.Length"); i++) {
 			Orderer orderer = new Orderer();
-			orderer.setOrdererName(_ctx.stringValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].OrdererName"));
 			orderer.setDomain(_ctx.stringValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].Domain"));
+			orderer.setUpdateTime(_ctx.stringValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].UpdateTime"));
+			orderer.setOrdererName(_ctx.stringValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].OrdererName"));
+			orderer.setCreateTime(_ctx.stringValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].CreateTime"));
 			orderer.setPort(_ctx.integerValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].Port"));
 			orderer.setInstanceType(_ctx.stringValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].InstanceType"));
-			orderer.setCreateTime(_ctx.stringValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].CreateTime"));
-			orderer.setUpdateTime(_ctx.stringValue("DescribeFabricConsortiumOrderersResponse.Result["+ i +"].UpdateTime"));
 
 			result.add(orderer);
 		}

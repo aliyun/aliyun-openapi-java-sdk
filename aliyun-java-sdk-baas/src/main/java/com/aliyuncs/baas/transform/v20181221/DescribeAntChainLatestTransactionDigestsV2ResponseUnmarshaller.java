@@ -26,12 +26,12 @@ public class DescribeAntChainLatestTransactionDigestsV2ResponseUnmarshaller {
 	public static DescribeAntChainLatestTransactionDigestsV2Response unmarshall(DescribeAntChainLatestTransactionDigestsV2Response describeAntChainLatestTransactionDigestsV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainLatestTransactionDigestsV2Response.setRequestId(_ctx.stringValue("DescribeAntChainLatestTransactionDigestsV2Response.RequestId"));
-		describeAntChainLatestTransactionDigestsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainLatestTransactionDigestsV2Response.ResultCode"));
-		describeAntChainLatestTransactionDigestsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainLatestTransactionDigestsV2Response.ResultMessage"));
-		describeAntChainLatestTransactionDigestsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainLatestTransactionDigestsV2Response.Success"));
 		describeAntChainLatestTransactionDigestsV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainLatestTransactionDigestsV2Response.HttpStatusCode"));
+		describeAntChainLatestTransactionDigestsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainLatestTransactionDigestsV2Response.Success"));
+		describeAntChainLatestTransactionDigestsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainLatestTransactionDigestsV2Response.ResultMessage"));
 		describeAntChainLatestTransactionDigestsV2Response.setCode(_ctx.stringValue("DescribeAntChainLatestTransactionDigestsV2Response.Code"));
 		describeAntChainLatestTransactionDigestsV2Response.setMessage(_ctx.stringValue("DescribeAntChainLatestTransactionDigestsV2Response.Message"));
+		describeAntChainLatestTransactionDigestsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainLatestTransactionDigestsV2Response.ResultCode"));
 
 		List<String> result = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainLatestTransactionDigestsV2Response.Result.Length"); i++) {

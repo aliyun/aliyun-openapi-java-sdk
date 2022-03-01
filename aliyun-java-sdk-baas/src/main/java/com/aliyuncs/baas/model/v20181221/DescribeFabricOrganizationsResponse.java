@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFabricOrganizationsResponse extends AcsResponse {
 
-	private Integer errorCode;
-
 	private String requestId;
+
+	private Integer errorCode;
 
 	private Boolean success;
 
 	private List<ResultItem> result;
-
-	public Integer getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Boolean getSuccess() {
@@ -67,56 +67,64 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String codeName;
+		private String domain;
 
-		private Integer consortiumCount;
+		private Integer peerCount;
+
+		private String state;
 
 		private String createTime;
 
-		private String domain;
+		private Integer consortiumCount;
 
-		private String organizationDescription;
-
-		private String organizationId;
-
-		private String organizationName;
-
-		private String ownerBid;
+		private String specName;
 
 		private String ownerName;
 
 		private Long ownerUid;
 
-		private Integer peerCount;
+		private String ownerBid;
+
+		private String codeName;
+
+		private String organizationDescription;
 
 		private String regionId;
 
+		private String organizationId;
+
 		private String requestId;
-
-		private String specName;
-
-		private String state;
-
-		private Integer userCount;
 
 		private String zoneId;
 
+		private Integer userCount;
+
+		private String organizationName;
+
 		private List<TagsItem> tags;
 
-		public String getCodeName() {
-			return this.codeName;
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setCodeName(String codeName) {
-			this.codeName = codeName;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
-		public Integer getConsortiumCount() {
-			return this.consortiumCount;
+		public Integer getPeerCount() {
+			return this.peerCount;
 		}
 
-		public void setConsortiumCount(Integer consortiumCount) {
-			this.consortiumCount = consortiumCount;
+		public void setPeerCount(Integer peerCount) {
+			this.peerCount = peerCount;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public String getCreateTime() {
@@ -127,44 +135,20 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getDomain() {
-			return this.domain;
+		public Integer getConsortiumCount() {
+			return this.consortiumCount;
 		}
 
-		public void setDomain(String domain) {
-			this.domain = domain;
+		public void setConsortiumCount(Integer consortiumCount) {
+			this.consortiumCount = consortiumCount;
 		}
 
-		public String getOrganizationDescription() {
-			return this.organizationDescription;
+		public String getSpecName() {
+			return this.specName;
 		}
 
-		public void setOrganizationDescription(String organizationDescription) {
-			this.organizationDescription = organizationDescription;
-		}
-
-		public String getOrganizationId() {
-			return this.organizationId;
-		}
-
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
-
-		public String getOrganizationName() {
-			return this.organizationName;
-		}
-
-		public void setOrganizationName(String organizationName) {
-			this.organizationName = organizationName;
-		}
-
-		public String getOwnerBid() {
-			return this.ownerBid;
-		}
-
-		public void setOwnerBid(String ownerBid) {
-			this.ownerBid = ownerBid;
+		public void setSpecName(String specName) {
+			this.specName = specName;
 		}
 
 		public String getOwnerName() {
@@ -183,12 +167,28 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 			this.ownerUid = ownerUid;
 		}
 
-		public Integer getPeerCount() {
-			return this.peerCount;
+		public String getOwnerBid() {
+			return this.ownerBid;
 		}
 
-		public void setPeerCount(Integer peerCount) {
-			this.peerCount = peerCount;
+		public void setOwnerBid(String ownerBid) {
+			this.ownerBid = ownerBid;
+		}
+
+		public String getCodeName() {
+			return this.codeName;
+		}
+
+		public void setCodeName(String codeName) {
+			this.codeName = codeName;
+		}
+
+		public String getOrganizationDescription() {
+			return this.organizationDescription;
+		}
+
+		public void setOrganizationDescription(String organizationDescription) {
+			this.organizationDescription = organizationDescription;
 		}
 
 		public String getRegionId() {
@@ -199,6 +199,14 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
+		}
+
 		public String getRequestId() {
 			return this.requestId;
 		}
@@ -207,20 +215,12 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 			this.requestId = requestId;
 		}
 
-		public String getSpecName() {
-			return this.specName;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setSpecName(String specName) {
-			this.specName = specName;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public Integer getUserCount() {
@@ -231,12 +231,12 @@ public class DescribeFabricOrganizationsResponse extends AcsResponse {
 			this.userCount = userCount;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getOrganizationName() {
+			return this.organizationName;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setOrganizationName(String organizationName) {
+			this.organizationName = organizationName;
 		}
 
 		public List<TagsItem> getTags() {

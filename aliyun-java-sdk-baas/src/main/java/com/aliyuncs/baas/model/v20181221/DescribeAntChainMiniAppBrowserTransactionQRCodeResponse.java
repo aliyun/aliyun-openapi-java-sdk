@@ -46,21 +46,13 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeResponse extends Acs
 
 	public static class Result {
 
-		private String antChainId;
-
 		private String base64QRCodePNG;
-
-		private String qRCodeContent;
 
 		private String transactionHash;
 
-		public String getAntChainId() {
-			return this.antChainId;
-		}
+		private String qRCodeContent;
 
-		public void setAntChainId(String antChainId) {
-			this.antChainId = antChainId;
-		}
+		private String antChainId;
 
 		public String getBase64QRCodePNG() {
 			return this.base64QRCodePNG;
@@ -68,6 +60,14 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeResponse extends Acs
 
 		public void setBase64QRCodePNG(String base64QRCodePNG) {
 			this.base64QRCodePNG = base64QRCodePNG;
+		}
+
+		public String getTransactionHash() {
+			return this.transactionHash;
+		}
+
+		public void setTransactionHash(String transactionHash) {
+			this.transactionHash = transactionHash;
 		}
 
 		public String getQRCodeContent() {
@@ -78,12 +78,12 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeResponse extends Acs
 			this.qRCodeContent = qRCodeContent;
 		}
 
-		public String getTransactionHash() {
-			return this.transactionHash;
+		public String getAntChainId() {
+			return this.antChainId;
 		}
 
-		public void setTransactionHash(String transactionHash) {
-			this.transactionHash = transactionHash;
+		public void setAntChainId(String antChainId) {
+			this.antChainId = antChainId;
 		}
 	}
 

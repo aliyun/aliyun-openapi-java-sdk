@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainTransactionV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -97,6 +89,14 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
 	public Result getResult() {
 		return this.result;
 	}
@@ -109,13 +109,13 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 
 		private String hash;
 
-		private Long createTime;
-
-		private Long blockHeight;
-
 		private String blockHash;
 
 		private String blockVersion;
+
+		private Long blockHeight;
+
+		private Long createTime;
 
 		private Transaction transaction;
 
@@ -125,22 +125,6 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 
 		public void setHash(String hash) {
 			this.hash = hash;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getBlockHeight() {
-			return this.blockHeight;
-		}
-
-		public void setBlockHeight(Long blockHeight) {
-			this.blockHeight = blockHeight;
 		}
 
 		public String getBlockHash() {
@@ -159,6 +143,22 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 			this.blockVersion = blockVersion;
 		}
 
+		public Long getBlockHeight() {
+			return this.blockHeight;
+		}
+
+		public void setBlockHeight(Long blockHeight) {
+			this.blockHeight = blockHeight;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
 		public Transaction getTransaction() {
 			return this.transaction;
 		}
@@ -169,36 +169,52 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 
 		public static class Transaction {
 
-			private String txType;
+			private String hash;
+
+			private String value;
+
+			private String from;
 
 			private String data;
 
-			private String hash;
-
-			private String from;
+			private String nonce;
 
 			private String to;
 
 			private Long timestamp;
 
-			private Long period;
-
-			private String nonce;
-
 			private String gas;
 
-			private String value;
+			private String txType;
 
-			private List<String> signatures;
+			private Long period;
 
 			private List<String> extentions;
 
-			public String getTxType() {
-				return this.txType;
+			private List<String> signatures;
+
+			public String getHash() {
+				return this.hash;
 			}
 
-			public void setTxType(String txType) {
-				this.txType = txType;
+			public void setHash(String hash) {
+				this.hash = hash;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getFrom() {
+				return this.from;
+			}
+
+			public void setFrom(String from) {
+				this.from = from;
 			}
 
 			public String getData() {
@@ -209,20 +225,12 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 				this.data = data;
 			}
 
-			public String getHash() {
-				return this.hash;
+			public String getNonce() {
+				return this.nonce;
 			}
 
-			public void setHash(String hash) {
-				this.hash = hash;
-			}
-
-			public String getFrom() {
-				return this.from;
-			}
-
-			public void setFrom(String from) {
-				this.from = from;
+			public void setNonce(String nonce) {
+				this.nonce = nonce;
 			}
 
 			public String getTo() {
@@ -241,22 +249,6 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 				this.timestamp = timestamp;
 			}
 
-			public Long getPeriod() {
-				return this.period;
-			}
-
-			public void setPeriod(Long period) {
-				this.period = period;
-			}
-
-			public String getNonce() {
-				return this.nonce;
-			}
-
-			public void setNonce(String nonce) {
-				this.nonce = nonce;
-			}
-
 			public String getGas() {
 				return this.gas;
 			}
@@ -265,20 +257,20 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 				this.gas = gas;
 			}
 
-			public String getValue() {
-				return this.value;
+			public String getTxType() {
+				return this.txType;
 			}
 
-			public void setValue(String value) {
-				this.value = value;
+			public void setTxType(String txType) {
+				this.txType = txType;
 			}
 
-			public List<String> getSignatures() {
-				return this.signatures;
+			public Long getPeriod() {
+				return this.period;
 			}
 
-			public void setSignatures(List<String> signatures) {
-				this.signatures = signatures;
+			public void setPeriod(Long period) {
+				this.period = period;
 			}
 
 			public List<String> getExtentions() {
@@ -287,6 +279,14 @@ public class DescribeAntChainTransactionV2Response extends AcsResponse {
 
 			public void setExtentions(List<String> extentions) {
 				this.extentions = extentions;
+			}
+
+			public List<String> getSignatures() {
+				return this.signatures;
+			}
+
+			public void setSignatures(List<String> signatures) {
+				this.signatures = signatures;
 			}
 		}
 	}

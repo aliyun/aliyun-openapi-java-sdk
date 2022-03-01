@@ -67,39 +67,23 @@ public class JoinFabricChannelResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String channelId;
-
-		private String organizationId;
-
 		private Boolean withPeer;
-
-		private String state;
-
-		private String inviteTime;
 
 		private String acceptTime;
 
-		private String approveTime;
-
-		private String confirmTime;
+		private String state;
 
 		private String destroyTime;
 
-		public String getChannelId() {
-			return this.channelId;
-		}
+		private String inviteTime;
 
-		public void setChannelId(String channelId) {
-			this.channelId = channelId;
-		}
+		private String channelId;
 
-		public String getOrganizationId() {
-			return this.organizationId;
-		}
+		private String confirmTime;
 
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
+		private String approveTime;
+
+		private String organizationId;
 
 		public Boolean getWithPeer() {
 			return this.withPeer;
@@ -107,22 +91,6 @@ public class JoinFabricChannelResponse extends AcsResponse {
 
 		public void setWithPeer(Boolean withPeer) {
 			this.withPeer = withPeer;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getInviteTime() {
-			return this.inviteTime;
-		}
-
-		public void setInviteTime(String inviteTime) {
-			this.inviteTime = inviteTime;
 		}
 
 		public String getAcceptTime() {
@@ -133,12 +101,36 @@ public class JoinFabricChannelResponse extends AcsResponse {
 			this.acceptTime = acceptTime;
 		}
 
-		public String getApproveTime() {
-			return this.approveTime;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setApproveTime(String approveTime) {
-			this.approveTime = approveTime;
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getDestroyTime() {
+			return this.destroyTime;
+		}
+
+		public void setDestroyTime(String destroyTime) {
+			this.destroyTime = destroyTime;
+		}
+
+		public String getInviteTime() {
+			return this.inviteTime;
+		}
+
+		public void setInviteTime(String inviteTime) {
+			this.inviteTime = inviteTime;
+		}
+
+		public String getChannelId() {
+			return this.channelId;
+		}
+
+		public void setChannelId(String channelId) {
+			this.channelId = channelId;
 		}
 
 		public String getConfirmTime() {
@@ -149,12 +141,20 @@ public class JoinFabricChannelResponse extends AcsResponse {
 			this.confirmTime = confirmTime;
 		}
 
-		public String getDestroyTime() {
-			return this.destroyTime;
+		public String getApproveTime() {
+			return this.approveTime;
 		}
 
-		public void setDestroyTime(String destroyTime) {
-			this.destroyTime = destroyTime;
+		public void setApproveTime(String approveTime) {
+			this.approveTime = approveTime;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
 		}
 	}
 

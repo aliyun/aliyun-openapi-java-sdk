@@ -26,9 +26,9 @@ public class DescribeAntChainQRCodeAuthorizationResponseUnmarshaller {
 		describeAntChainQRCodeAuthorizationResponse.setRequestId(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationResponse.RequestId"));
 
 		Result result = new Result();
-		result.setAntChainId(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationResponse.Result.AntChainId"));
-		result.setAuthorizationType(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationResponse.Result.AuthorizationType"));
 		result.setQRCodeType(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationResponse.Result.QRCodeType"));
+		result.setAuthorizationType(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationResponse.Result.AuthorizationType"));
+		result.setAntChainId(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationResponse.Result.AntChainId"));
 		describeAntChainQRCodeAuthorizationResponse.setResult(result);
 	 
 	 	return describeAntChainQRCodeAuthorizationResponse;

@@ -47,23 +47,15 @@ public class DescribeAntChainTransactionStatisticsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String antChainId;
-
 		private String dt;
-
-		private Long transCount;
-
-		private Long lastSumBlockHeight;
 
 		private Long creatTime;
 
-		public String getAntChainId() {
-			return this.antChainId;
-		}
+		private Long lastSumBlockHeight;
 
-		public void setAntChainId(String antChainId) {
-			this.antChainId = antChainId;
-		}
+		private Long transCount;
+
+		private String antChainId;
 
 		public String getDt() {
 			return this.dt;
@@ -73,12 +65,12 @@ public class DescribeAntChainTransactionStatisticsResponse extends AcsResponse {
 			this.dt = dt;
 		}
 
-		public Long getTransCount() {
-			return this.transCount;
+		public Long getCreatTime() {
+			return this.creatTime;
 		}
 
-		public void setTransCount(Long transCount) {
-			this.transCount = transCount;
+		public void setCreatTime(Long creatTime) {
+			this.creatTime = creatTime;
 		}
 
 		public Long getLastSumBlockHeight() {
@@ -89,12 +81,20 @@ public class DescribeAntChainTransactionStatisticsResponse extends AcsResponse {
 			this.lastSumBlockHeight = lastSumBlockHeight;
 		}
 
-		public Long getCreatTime() {
-			return this.creatTime;
+		public Long getTransCount() {
+			return this.transCount;
 		}
 
-		public void setCreatTime(Long creatTime) {
-			this.creatTime = creatTime;
+		public void setTransCount(Long transCount) {
+			this.transCount = transCount;
+		}
+
+		public String getAntChainId() {
+			return this.antChainId;
+		}
+
+		public void setAntChainId(String antChainId) {
+			this.antChainId = antChainId;
 		}
 	}
 

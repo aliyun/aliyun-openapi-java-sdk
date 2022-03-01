@@ -46,25 +46,17 @@ public class CreateAntChainAccountWithKeyPairAutoCreationResponse extends AcsRes
 
 	public static class Result {
 
-		private String accountPrivateKey;
-
 		private String accountPublicKey;
+
+		private String account;
 
 		private String accountRecoverPrivateKey;
 
 		private String accountRecoverPublicKey;
 
+		private String accountPrivateKey;
+
 		private String antChainId;
-
-		private String account;
-
-		public String getAccountPrivateKey() {
-			return this.accountPrivateKey;
-		}
-
-		public void setAccountPrivateKey(String accountPrivateKey) {
-			this.accountPrivateKey = accountPrivateKey;
-		}
 
 		public String getAccountPublicKey() {
 			return this.accountPublicKey;
@@ -72,6 +64,14 @@ public class CreateAntChainAccountWithKeyPairAutoCreationResponse extends AcsRes
 
 		public void setAccountPublicKey(String accountPublicKey) {
 			this.accountPublicKey = accountPublicKey;
+		}
+
+		public String getAccount() {
+			return this.account;
+		}
+
+		public void setAccount(String account) {
+			this.account = account;
 		}
 
 		public String getAccountRecoverPrivateKey() {
@@ -90,20 +90,20 @@ public class CreateAntChainAccountWithKeyPairAutoCreationResponse extends AcsRes
 			this.accountRecoverPublicKey = accountRecoverPublicKey;
 		}
 
+		public String getAccountPrivateKey() {
+			return this.accountPrivateKey;
+		}
+
+		public void setAccountPrivateKey(String accountPrivateKey) {
+			this.accountPrivateKey = accountPrivateKey;
+		}
+
 		public String getAntChainId() {
 			return this.antChainId;
 		}
 
 		public void setAntChainId(String antChainId) {
 			this.antChainId = antChainId;
-		}
-
-		public String getAccount() {
-			return this.account;
-		}
-
-		public void setAccount(String account) {
-			this.account = account;
 		}
 	}
 

@@ -26,8 +26,8 @@ public class CreateAntChainAccountResponseUnmarshaller {
 		createAntChainAccountResponse.setRequestId(_ctx.stringValue("CreateAntChainAccountResponse.RequestId"));
 
 		Result result = new Result();
-		result.setAntChainId(_ctx.stringValue("CreateAntChainAccountResponse.Result.AntChainId"));
 		result.setAccount(_ctx.stringValue("CreateAntChainAccountResponse.Result.Account"));
+		result.setAntChainId(_ctx.stringValue("CreateAntChainAccountResponse.Result.AntChainId"));
 		createAntChainAccountResponse.setResult(result);
 	 
 	 	return createAntChainAccountResponse;

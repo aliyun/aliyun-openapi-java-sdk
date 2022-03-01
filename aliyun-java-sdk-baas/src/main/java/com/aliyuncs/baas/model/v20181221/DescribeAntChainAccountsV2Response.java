@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainAccountsV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainAccountsV2Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainAccountsV2Response extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -95,6 +87,14 @@ public class DescribeAntChainAccountsV2Response extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	public Result getResult() {
@@ -129,22 +129,22 @@ public class DescribeAntChainAccountsV2Response extends AcsResponse {
 
 		public static class AccountsItem {
 
-			private String antChainId;
+			private String accountPublicKey;
 
 			private String account;
-
-			private String accountPublicKey;
 
 			private String accountRecoveryKey;
 
 			private String accountStatus;
 
-			public String getAntChainId() {
-				return this.antChainId;
+			private String antChainId;
+
+			public String getAccountPublicKey() {
+				return this.accountPublicKey;
 			}
 
-			public void setAntChainId(String antChainId) {
-				this.antChainId = antChainId;
+			public void setAccountPublicKey(String accountPublicKey) {
+				this.accountPublicKey = accountPublicKey;
 			}
 
 			public String getAccount() {
@@ -153,14 +153,6 @@ public class DescribeAntChainAccountsV2Response extends AcsResponse {
 
 			public void setAccount(String account) {
 				this.account = account;
-			}
-
-			public String getAccountPublicKey() {
-				return this.accountPublicKey;
-			}
-
-			public void setAccountPublicKey(String accountPublicKey) {
-				this.accountPublicKey = accountPublicKey;
 			}
 
 			public String getAccountRecoveryKey() {
@@ -177,6 +169,14 @@ public class DescribeAntChainAccountsV2Response extends AcsResponse {
 
 			public void setAccountStatus(String accountStatus) {
 				this.accountStatus = accountStatus;
+			}
+
+			public String getAntChainId() {
+				return this.antChainId;
+			}
+
+			public void setAntChainId(String antChainId) {
+				this.antChainId = antChainId;
 			}
 		}
 

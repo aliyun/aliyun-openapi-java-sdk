@@ -66,15 +66,31 @@ public class DescribeFabricInviterResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Long inviterId;
+
+		private String expireTime;
+
 		private String consortiumId;
 
 		private String consortiumName;
 
 		private String inviterName;
 
-		private Long inviterId;
+		public Long getInviterId() {
+			return this.inviterId;
+		}
 
-		private String expireTime;
+		public void setInviterId(Long inviterId) {
+			this.inviterId = inviterId;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
 
 		public String getConsortiumId() {
 			return this.consortiumId;
@@ -98,22 +114,6 @@ public class DescribeFabricInviterResponse extends AcsResponse {
 
 		public void setInviterName(String inviterName) {
 			this.inviterName = inviterName;
-		}
-
-		public Long getInviterId() {
-			return this.inviterId;
-		}
-
-		public void setInviterId(Long inviterId) {
-			this.inviterId = inviterId;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
 		}
 	}
 

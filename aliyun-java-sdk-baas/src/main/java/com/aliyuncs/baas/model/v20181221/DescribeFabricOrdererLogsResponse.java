@@ -26,11 +26,11 @@ public class DescribeFabricOrdererLogsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String result;
+
 	private Boolean success;
 
 	private Integer errorCode;
-
-	private String result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class DescribeFabricOrdererLogsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResult() {
+		return this.result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	public Boolean getSuccess() {
@@ -54,14 +62,6 @@ public class DescribeFabricOrdererLogsResponse extends AcsResponse {
 
 	public void setErrorCode(Integer errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getResult() {
-		return this.result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
 	}
 
 	@Override

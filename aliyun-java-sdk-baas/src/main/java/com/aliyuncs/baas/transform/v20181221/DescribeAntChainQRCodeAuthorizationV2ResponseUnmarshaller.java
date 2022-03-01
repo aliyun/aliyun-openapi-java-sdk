@@ -24,17 +24,17 @@ public class DescribeAntChainQRCodeAuthorizationV2ResponseUnmarshaller {
 	public static DescribeAntChainQRCodeAuthorizationV2Response unmarshall(DescribeAntChainQRCodeAuthorizationV2Response describeAntChainQRCodeAuthorizationV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainQRCodeAuthorizationV2Response.setRequestId(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.RequestId"));
-		describeAntChainQRCodeAuthorizationV2Response.setResultCode(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.ResultCode"));
-		describeAntChainQRCodeAuthorizationV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.ResultMessage"));
-		describeAntChainQRCodeAuthorizationV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainQRCodeAuthorizationV2Response.Success"));
 		describeAntChainQRCodeAuthorizationV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.HttpStatusCode"));
+		describeAntChainQRCodeAuthorizationV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainQRCodeAuthorizationV2Response.Success"));
+		describeAntChainQRCodeAuthorizationV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.ResultMessage"));
 		describeAntChainQRCodeAuthorizationV2Response.setCode(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.Code"));
 		describeAntChainQRCodeAuthorizationV2Response.setMessage(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.Message"));
+		describeAntChainQRCodeAuthorizationV2Response.setResultCode(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.ResultCode"));
 
 		Result result = new Result();
-		result.setAntChainId(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.Result.AntChainId"));
 		result.setQRCodeType(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.Result.QRCodeType"));
 		result.setAuthorizationType(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.Result.AuthorizationType"));
+		result.setAntChainId(_ctx.stringValue("DescribeAntChainQRCodeAuthorizationV2Response.Result.AntChainId"));
 		describeAntChainQRCodeAuthorizationV2Response.setResult(result);
 	 
 	 	return describeAntChainQRCodeAuthorizationV2Response;

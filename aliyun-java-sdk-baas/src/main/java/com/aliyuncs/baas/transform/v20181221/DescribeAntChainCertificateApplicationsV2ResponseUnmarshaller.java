@@ -29,12 +29,12 @@ public class DescribeAntChainCertificateApplicationsV2ResponseUnmarshaller {
 	public static DescribeAntChainCertificateApplicationsV2Response unmarshall(DescribeAntChainCertificateApplicationsV2Response describeAntChainCertificateApplicationsV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainCertificateApplicationsV2Response.setRequestId(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.RequestId"));
-		describeAntChainCertificateApplicationsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.ResultCode"));
-		describeAntChainCertificateApplicationsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.ResultMessage"));
-		describeAntChainCertificateApplicationsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainCertificateApplicationsV2Response.Success"));
 		describeAntChainCertificateApplicationsV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.HttpStatusCode"));
+		describeAntChainCertificateApplicationsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainCertificateApplicationsV2Response.Success"));
+		describeAntChainCertificateApplicationsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.ResultMessage"));
 		describeAntChainCertificateApplicationsV2Response.setCode(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.Code"));
 		describeAntChainCertificateApplicationsV2Response.setMessage(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.Message"));
+		describeAntChainCertificateApplicationsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.ResultCode"));
 
 		Result result = new Result();
 
@@ -47,12 +47,12 @@ public class DescribeAntChainCertificateApplicationsV2ResponseUnmarshaller {
 		List<CertificateApplicationsItem> certificateApplications = new ArrayList<CertificateApplicationsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications.Length"); i++) {
 			CertificateApplicationsItem certificateApplicationsItem = new CertificateApplicationsItem();
+			certificateApplicationsItem.setStatus(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Status"));
+			certificateApplicationsItem.setUpdatetime(_ctx.longValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Updatetime"));
+			certificateApplicationsItem.setCreatetime(_ctx.longValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Createtime"));
+			certificateApplicationsItem.setBid(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Bid"));
 			certificateApplicationsItem.setAntChainId(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].AntChainId"));
 			certificateApplicationsItem.setUsername(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Username"));
-			certificateApplicationsItem.setCreatetime(_ctx.longValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Createtime"));
-			certificateApplicationsItem.setUpdatetime(_ctx.longValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Updatetime"));
-			certificateApplicationsItem.setBid(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Bid"));
-			certificateApplicationsItem.setStatus(_ctx.stringValue("DescribeAntChainCertificateApplicationsV2Response.Result.CertificateApplications["+ i +"].Status"));
 
 			certificateApplications.add(certificateApplicationsItem);
 		}

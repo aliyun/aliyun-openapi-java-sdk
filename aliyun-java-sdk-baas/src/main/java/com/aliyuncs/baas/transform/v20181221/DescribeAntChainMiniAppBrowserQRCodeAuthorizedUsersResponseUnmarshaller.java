@@ -31,9 +31,9 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponseUnmarsha
 		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponse.setRequestId(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponse.RequestId"));
 
 		Result result = new Result();
-		result.setAntChainId(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponse.Result.AntChainId"));
-		result.setAuthorizationType(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponse.Result.AuthorizationType"));
 		result.setQRCodeType(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponse.Result.QRCodeType"));
+		result.setAuthorizationType(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponse.Result.AuthorizationType"));
+		result.setAntChainId(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponse.Result.AntChainId"));
 
 		Pagination pagination = new Pagination();
 		pagination.setPageNumber(_ctx.integerValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersResponse.Result.Pagination.PageNumber"));

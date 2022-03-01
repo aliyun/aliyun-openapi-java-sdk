@@ -26,15 +26,15 @@ public class DescribeFabricExplorerResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String result;
+
 	private Boolean success;
 
 	private Integer errorCode;
 
-	private String result;
+	private String dynamicMessage;
 
 	private String dynamicCode;
-
-	private String dynamicMessage;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +42,14 @@ public class DescribeFabricExplorerResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResult() {
+		return this.result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	public Boolean getSuccess() {
@@ -60,12 +68,12 @@ public class DescribeFabricExplorerResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getResult() {
-		return this.result;
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
 	}
 
-	public void setResult(String result) {
-		this.result = result;
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
 	}
 
 	public String getDynamicCode() {
@@ -74,14 +82,6 @@ public class DescribeFabricExplorerResponse extends AcsResponse {
 
 	public void setDynamicCode(String dynamicCode) {
 		this.dynamicCode = dynamicCode;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
 	}
 
 	@Override

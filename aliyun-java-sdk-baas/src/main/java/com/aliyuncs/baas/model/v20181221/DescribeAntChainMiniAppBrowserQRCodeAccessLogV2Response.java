@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainMiniAppBrowserQRCodeAccessLogV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,22 +54,6 @@ public class DescribeAntChainMiniAppBrowserQRCodeAccessLogV2Response extends Acs
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -72,12 +64,12 @@ public class DescribeAntChainMiniAppBrowserQRCodeAccessLogV2Response extends Acs
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -96,6 +88,14 @@ public class DescribeAntChainMiniAppBrowserQRCodeAccessLogV2Response extends Acs
 		this.message = message;
 	}
 
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
 	public Result getResult() {
 		return this.result;
 	}
@@ -106,17 +106,9 @@ public class DescribeAntChainMiniAppBrowserQRCodeAccessLogV2Response extends Acs
 
 	public static class Result {
 
-		private Long accessCount;
-
 		private Long accessAlipayAccountCount;
 
-		public Long getAccessCount() {
-			return this.accessCount;
-		}
-
-		public void setAccessCount(Long accessCount) {
-			this.accessCount = accessCount;
-		}
+		private Long accessCount;
 
 		public Long getAccessAlipayAccountCount() {
 			return this.accessAlipayAccountCount;
@@ -124,6 +116,14 @@ public class DescribeAntChainMiniAppBrowserQRCodeAccessLogV2Response extends Acs
 
 		public void setAccessAlipayAccountCount(Long accessAlipayAccountCount) {
 			this.accessAlipayAccountCount = accessAlipayAccountCount;
+		}
+
+		public Long getAccessCount() {
+			return this.accessCount;
+		}
+
+		public void setAccessCount(Long accessCount) {
+			this.accessCount = accessCount;
 		}
 	}
 

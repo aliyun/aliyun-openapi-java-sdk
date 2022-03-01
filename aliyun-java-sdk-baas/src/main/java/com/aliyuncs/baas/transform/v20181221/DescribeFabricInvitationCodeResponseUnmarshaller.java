@@ -24,23 +24,23 @@ public class DescribeFabricInvitationCodeResponseUnmarshaller {
 	public static DescribeFabricInvitationCodeResponse unmarshall(DescribeFabricInvitationCodeResponse describeFabricInvitationCodeResponse, UnmarshallerContext _ctx) {
 		
 		describeFabricInvitationCodeResponse.setRequestId(_ctx.stringValue("DescribeFabricInvitationCodeResponse.RequestId"));
-		describeFabricInvitationCodeResponse.setSuccess(_ctx.booleanValue("DescribeFabricInvitationCodeResponse.Success"));
-		describeFabricInvitationCodeResponse.setErrorCode(_ctx.integerValue("DescribeFabricInvitationCodeResponse.ErrorCode"));
-		describeFabricInvitationCodeResponse.setDynamicCode(_ctx.stringValue("DescribeFabricInvitationCodeResponse.DynamicCode"));
 		describeFabricInvitationCodeResponse.setDynamicMessage(_ctx.stringValue("DescribeFabricInvitationCodeResponse.DynamicMessage"));
+		describeFabricInvitationCodeResponse.setErrorCode(_ctx.integerValue("DescribeFabricInvitationCodeResponse.ErrorCode"));
+		describeFabricInvitationCodeResponse.setSuccess(_ctx.booleanValue("DescribeFabricInvitationCodeResponse.Success"));
+		describeFabricInvitationCodeResponse.setDynamicCode(_ctx.stringValue("DescribeFabricInvitationCodeResponse.DynamicCode"));
 
 		Result result = new Result();
-		result.setInvitationId(_ctx.integerValue("DescribeFabricInvitationCodeResponse.Result.InvitationId"));
-		result.setCode(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.Code"));
-		result.setSendTime(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.SendTime"));
 		result.setSenderId(_ctx.longValue("DescribeFabricInvitationCodeResponse.Result.SenderId"));
-		result.setSenderBid(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.SenderBid"));
-		result.setConsortiumId(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.ConsortiumId"));
-		result.setSenderName(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.SenderName"));
-		result.setAccepted(_ctx.booleanValue("DescribeFabricInvitationCodeResponse.Result.Accepted"));
-		result.setExpireTime(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.ExpireTime"));
 		result.setEmail(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.Email"));
+		result.setSenderBid(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.SenderBid"));
+		result.setExpireTime(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.ExpireTime"));
+		result.setConsortiumId(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.ConsortiumId"));
+		result.setInvitationId(_ctx.integerValue("DescribeFabricInvitationCodeResponse.Result.InvitationId"));
+		result.setSenderName(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.SenderName"));
+		result.setCode(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.Code"));
 		result.setUrl(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.Url"));
+		result.setAccepted(_ctx.booleanValue("DescribeFabricInvitationCodeResponse.Result.Accepted"));
+		result.setSendTime(_ctx.stringValue("DescribeFabricInvitationCodeResponse.Result.SendTime"));
 		describeFabricInvitationCodeResponse.setResult(result);
 	 
 	 	return describeFabricInvitationCodeResponse;

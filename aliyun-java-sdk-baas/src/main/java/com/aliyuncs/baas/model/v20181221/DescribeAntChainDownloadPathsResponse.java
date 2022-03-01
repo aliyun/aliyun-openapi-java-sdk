@@ -46,13 +46,21 @@ public class DescribeAntChainDownloadPathsResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String caCrtUrl;
+		private String sdkUrl;
 
-		private String trustCaUrl;
+		private String caCrtUrl;
 
 		private String clientCrtUrl;
 
-		private String sdkUrl;
+		private String trustCaUrl;
+
+		public String getSdkUrl() {
+			return this.sdkUrl;
+		}
+
+		public void setSdkUrl(String sdkUrl) {
+			this.sdkUrl = sdkUrl;
+		}
 
 		public String getCaCrtUrl() {
 			return this.caCrtUrl;
@@ -60,14 +68,6 @@ public class DescribeAntChainDownloadPathsResponse extends AcsResponse {
 
 		public void setCaCrtUrl(String caCrtUrl) {
 			this.caCrtUrl = caCrtUrl;
-		}
-
-		public String getTrustCaUrl() {
-			return this.trustCaUrl;
-		}
-
-		public void setTrustCaUrl(String trustCaUrl) {
-			this.trustCaUrl = trustCaUrl;
 		}
 
 		public String getClientCrtUrl() {
@@ -78,12 +78,12 @@ public class DescribeAntChainDownloadPathsResponse extends AcsResponse {
 			this.clientCrtUrl = clientCrtUrl;
 		}
 
-		public String getSdkUrl() {
-			return this.sdkUrl;
+		public String getTrustCaUrl() {
+			return this.trustCaUrl;
 		}
 
-		public void setSdkUrl(String sdkUrl) {
-			this.sdkUrl = sdkUrl;
+		public void setTrustCaUrl(String trustCaUrl) {
+			this.trustCaUrl = trustCaUrl;
 		}
 	}
 

@@ -24,18 +24,18 @@ public class DescribeAntChainDownloadPathsV2ResponseUnmarshaller {
 	public static DescribeAntChainDownloadPathsV2Response unmarshall(DescribeAntChainDownloadPathsV2Response describeAntChainDownloadPathsV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainDownloadPathsV2Response.setRequestId(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.RequestId"));
-		describeAntChainDownloadPathsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.ResultCode"));
-		describeAntChainDownloadPathsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.ResultMessage"));
-		describeAntChainDownloadPathsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainDownloadPathsV2Response.Success"));
 		describeAntChainDownloadPathsV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.HttpStatusCode"));
+		describeAntChainDownloadPathsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainDownloadPathsV2Response.Success"));
+		describeAntChainDownloadPathsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.ResultMessage"));
 		describeAntChainDownloadPathsV2Response.setCode(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Code"));
 		describeAntChainDownloadPathsV2Response.setMessage(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Message"));
+		describeAntChainDownloadPathsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.ResultCode"));
 
 		Result result = new Result();
-		result.setCaCrtUrl(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Result.CaCrtUrl"));
-		result.setTrustCaUrl(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Result.TrustCaUrl"));
-		result.setClientCrtUrl(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Result.ClientCrtUrl"));
 		result.setSdkUrl(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Result.SdkUrl"));
+		result.setCaCrtUrl(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Result.CaCrtUrl"));
+		result.setClientCrtUrl(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Result.ClientCrtUrl"));
+		result.setTrustCaUrl(_ctx.stringValue("DescribeAntChainDownloadPathsV2Response.Result.TrustCaUrl"));
 		describeAntChainDownloadPathsV2Response.setResult(result);
 	 
 	 	return describeAntChainDownloadPathsV2Response;

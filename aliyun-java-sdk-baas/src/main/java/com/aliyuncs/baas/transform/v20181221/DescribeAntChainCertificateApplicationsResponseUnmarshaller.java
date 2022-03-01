@@ -41,12 +41,12 @@ public class DescribeAntChainCertificateApplicationsResponseUnmarshaller {
 		List<CertificateApplicationsItem> certificateApplications = new ArrayList<CertificateApplicationsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications.Length"); i++) {
 			CertificateApplicationsItem certificateApplicationsItem = new CertificateApplicationsItem();
+			certificateApplicationsItem.setStatus(_ctx.stringValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Status"));
+			certificateApplicationsItem.setUpdatetime(_ctx.longValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Updatetime"));
+			certificateApplicationsItem.setCreatetime(_ctx.longValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Createtime"));
+			certificateApplicationsItem.setBid(_ctx.stringValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Bid"));
 			certificateApplicationsItem.setAntChainId(_ctx.stringValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].AntChainId"));
 			certificateApplicationsItem.setUsername(_ctx.stringValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Username"));
-			certificateApplicationsItem.setCreatetime(_ctx.longValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Createtime"));
-			certificateApplicationsItem.setUpdatetime(_ctx.longValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Updatetime"));
-			certificateApplicationsItem.setBid(_ctx.stringValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Bid"));
-			certificateApplicationsItem.setStatus(_ctx.stringValue("DescribeAntChainCertificateApplicationsResponse.Result.CertificateApplications["+ i +"].Status"));
 
 			certificateApplications.add(certificateApplicationsItem);
 		}

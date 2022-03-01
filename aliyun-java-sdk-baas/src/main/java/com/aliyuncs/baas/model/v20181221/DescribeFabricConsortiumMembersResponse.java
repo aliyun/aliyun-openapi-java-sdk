@@ -67,25 +67,17 @@ public class DescribeFabricConsortiumMembersResponse extends AcsResponse {
 
 	public static class DescribeConsortiumMember {
 
-		private String organizationName;
-
 		private String domain;
 
 		private String description;
 
-		private String joinedTime;
-
 		private String consortiumId;
 
+		private String organizationName;
+
+		private String joinedTime;
+
 		private String organizationId;
-
-		public String getOrganizationName() {
-			return this.organizationName;
-		}
-
-		public void setOrganizationName(String organizationName) {
-			this.organizationName = organizationName;
-		}
 
 		public String getDomain() {
 			return this.domain;
@@ -103,20 +95,28 @@ public class DescribeFabricConsortiumMembersResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getJoinedTime() {
-			return this.joinedTime;
-		}
-
-		public void setJoinedTime(String joinedTime) {
-			this.joinedTime = joinedTime;
-		}
-
 		public String getConsortiumId() {
 			return this.consortiumId;
 		}
 
 		public void setConsortiumId(String consortiumId) {
 			this.consortiumId = consortiumId;
+		}
+
+		public String getOrganizationName() {
+			return this.organizationName;
+		}
+
+		public void setOrganizationName(String organizationName) {
+			this.organizationName = organizationName;
+		}
+
+		public String getJoinedTime() {
+			return this.joinedTime;
+		}
+
+		public void setJoinedTime(String joinedTime) {
+			this.joinedTime = joinedTime;
 		}
 
 		public String getOrganizationId() {

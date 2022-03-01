@@ -69,22 +69,22 @@ public class DescribeAntChainMembersResponse extends AcsResponse {
 
 		public static class MembersItem {
 
-			private String memberName;
+			private String status;
 
 			private String memberId;
 
-			private Long joinTime;
-
 			private String role;
 
-			private String status;
+			private String memberName;
 
-			public String getMemberName() {
-				return this.memberName;
+			private Long joinTime;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setMemberName(String memberName) {
-				this.memberName = memberName;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getMemberId() {
@@ -95,14 +95,6 @@ public class DescribeAntChainMembersResponse extends AcsResponse {
 				this.memberId = memberId;
 			}
 
-			public Long getJoinTime() {
-				return this.joinTime;
-			}
-
-			public void setJoinTime(Long joinTime) {
-				this.joinTime = joinTime;
-			}
-
 			public String getRole() {
 				return this.role;
 			}
@@ -111,12 +103,20 @@ public class DescribeAntChainMembersResponse extends AcsResponse {
 				this.role = role;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getMemberName() {
+				return this.memberName;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setMemberName(String memberName) {
+				this.memberName = memberName;
+			}
+
+			public Long getJoinTime() {
+				return this.joinTime;
+			}
+
+			public void setJoinTime(Long joinTime) {
+				this.joinTime = joinTime;
 			}
 		}
 

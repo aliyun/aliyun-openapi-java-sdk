@@ -79,35 +79,83 @@ public class DescribeAntChainsResponse extends AcsResponse {
 
 		public static class AntChainsItem {
 
+			private Long expireTime;
+
+			private Long createTime;
+
+			private String chainType;
+
+			private String memberStatus;
+
+			private String merkleTreeSuit;
+
+			private Boolean isAdmin;
+
 			private String antChainName;
 
 			private String regionId;
 
-			private String resourceSize;
-
-			private String chainType;
-
-			private Integer nodeNum;
-
-			private Long createTime;
-
-			private String memberStatus;
+			private String network;
 
 			private String tlsAlgo;
 
+			private String version;
+
 			private String cipherSuit;
 
-			private String merkleTreeSuit;
+			private String resourceSize;
+
+			private Integer nodeNum;
 
 			private String antChainId;
 
-			private Boolean isAdmin;
+			public Long getExpireTime() {
+				return this.expireTime;
+			}
 
-			private String network;
+			public void setExpireTime(Long expireTime) {
+				this.expireTime = expireTime;
+			}
 
-			private Long expireTime;
+			public Long getCreateTime() {
+				return this.createTime;
+			}
 
-			private String version;
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getChainType() {
+				return this.chainType;
+			}
+
+			public void setChainType(String chainType) {
+				this.chainType = chainType;
+			}
+
+			public String getMemberStatus() {
+				return this.memberStatus;
+			}
+
+			public void setMemberStatus(String memberStatus) {
+				this.memberStatus = memberStatus;
+			}
+
+			public String getMerkleTreeSuit() {
+				return this.merkleTreeSuit;
+			}
+
+			public void setMerkleTreeSuit(String merkleTreeSuit) {
+				this.merkleTreeSuit = merkleTreeSuit;
+			}
+
+			public Boolean getIsAdmin() {
+				return this.isAdmin;
+			}
+
+			public void setIsAdmin(Boolean isAdmin) {
+				this.isAdmin = isAdmin;
+			}
 
 			public String getAntChainName() {
 				return this.antChainName;
@@ -125,44 +173,12 @@ public class DescribeAntChainsResponse extends AcsResponse {
 				this.regionId = regionId;
 			}
 
-			public String getResourceSize() {
-				return this.resourceSize;
+			public String getNetwork() {
+				return this.network;
 			}
 
-			public void setResourceSize(String resourceSize) {
-				this.resourceSize = resourceSize;
-			}
-
-			public String getChainType() {
-				return this.chainType;
-			}
-
-			public void setChainType(String chainType) {
-				this.chainType = chainType;
-			}
-
-			public Integer getNodeNum() {
-				return this.nodeNum;
-			}
-
-			public void setNodeNum(Integer nodeNum) {
-				this.nodeNum = nodeNum;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getMemberStatus() {
-				return this.memberStatus;
-			}
-
-			public void setMemberStatus(String memberStatus) {
-				this.memberStatus = memberStatus;
+			public void setNetwork(String network) {
+				this.network = network;
 			}
 
 			public String getTlsAlgo() {
@@ -173,6 +189,14 @@ public class DescribeAntChainsResponse extends AcsResponse {
 				this.tlsAlgo = tlsAlgo;
 			}
 
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
 			public String getCipherSuit() {
 				return this.cipherSuit;
 			}
@@ -181,12 +205,20 @@ public class DescribeAntChainsResponse extends AcsResponse {
 				this.cipherSuit = cipherSuit;
 			}
 
-			public String getMerkleTreeSuit() {
-				return this.merkleTreeSuit;
+			public String getResourceSize() {
+				return this.resourceSize;
 			}
 
-			public void setMerkleTreeSuit(String merkleTreeSuit) {
-				this.merkleTreeSuit = merkleTreeSuit;
+			public void setResourceSize(String resourceSize) {
+				this.resourceSize = resourceSize;
+			}
+
+			public Integer getNodeNum() {
+				return this.nodeNum;
+			}
+
+			public void setNodeNum(Integer nodeNum) {
+				this.nodeNum = nodeNum;
 			}
 
 			public String getAntChainId() {
@@ -195,38 +227,6 @@ public class DescribeAntChainsResponse extends AcsResponse {
 
 			public void setAntChainId(String antChainId) {
 				this.antChainId = antChainId;
-			}
-
-			public Boolean getIsAdmin() {
-				return this.isAdmin;
-			}
-
-			public void setIsAdmin(Boolean isAdmin) {
-				this.isAdmin = isAdmin;
-			}
-
-			public String getNetwork() {
-				return this.network;
-			}
-
-			public void setNetwork(String network) {
-				this.network = network;
-			}
-
-			public Long getExpireTime() {
-				return this.expireTime;
-			}
-
-			public void setExpireTime(Long expireTime) {
-				this.expireTime = expireTime;
-			}
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
 			}
 		}
 

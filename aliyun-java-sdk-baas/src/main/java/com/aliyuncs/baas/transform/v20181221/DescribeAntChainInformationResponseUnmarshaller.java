@@ -30,20 +30,20 @@ public class DescribeAntChainInformationResponseUnmarshaller {
 		describeAntChainInformationResponse.setRequestId(_ctx.stringValue("DescribeAntChainInformationResponse.RequestId"));
 
 		Result result = new Result();
-		result.setNodeNumber(_ctx.integerValue("DescribeAntChainInformationResponse.Result.NodeNumber"));
-		result.setBlockHeight(_ctx.integerValue("DescribeAntChainInformationResponse.Result.BlockHeight"));
 		result.setTransactionSum(_ctx.integerValue("DescribeAntChainInformationResponse.Result.TransactionSum"));
-		result.setCreateTime(_ctx.longValue("DescribeAntChainInformationResponse.Result.CreateTime"));
-		result.setAbnormalNodes(_ctx.integerValue("DescribeAntChainInformationResponse.Result.AbnormalNodes"));
 		result.setVersion(_ctx.stringValue("DescribeAntChainInformationResponse.Result.Version"));
-		result.setNormal(_ctx.booleanValue("DescribeAntChainInformationResponse.Result.Normal"));
+		result.setBlockHeight(_ctx.integerValue("DescribeAntChainInformationResponse.Result.BlockHeight"));
+		result.setCreateTime(_ctx.longValue("DescribeAntChainInformationResponse.Result.CreateTime"));
+		result.setNodeNumber(_ctx.integerValue("DescribeAntChainInformationResponse.Result.NodeNumber"));
+		result.setAbnormalNodes(_ctx.integerValue("DescribeAntChainInformationResponse.Result.AbnormalNodes"));
 		result.setAntChainId(_ctx.stringValue("DescribeAntChainInformationResponse.Result.AntChainId"));
+		result.setNormal(_ctx.booleanValue("DescribeAntChainInformationResponse.Result.Normal"));
 
 		List<NodeInfosItem> nodeInfos = new ArrayList<NodeInfosItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainInformationResponse.Result.NodeInfos.Length"); i++) {
 			NodeInfosItem nodeInfosItem = new NodeInfosItem();
-			nodeInfosItem.setNodeName(_ctx.stringValue("DescribeAntChainInformationResponse.Result.NodeInfos["+ i +"].NodeName"));
 			nodeInfosItem.setStatus(_ctx.booleanValue("DescribeAntChainInformationResponse.Result.NodeInfos["+ i +"].Status"));
+			nodeInfosItem.setNodeName(_ctx.stringValue("DescribeAntChainInformationResponse.Result.NodeInfos["+ i +"].NodeName"));
 			nodeInfosItem.setVersion(_ctx.stringValue("DescribeAntChainInformationResponse.Result.NodeInfos["+ i +"].Version"));
 			nodeInfosItem.setBlockHeight(_ctx.longValue("DescribeAntChainInformationResponse.Result.NodeInfos["+ i +"].BlockHeight"));
 

@@ -67,39 +67,23 @@ public class DescribeFabricChannelMembersResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String channelId;
-
-		private String organizationId;
-
 		private Boolean withPeer;
+
+		private String acceptTime;
+
+		private String organizationDomain;
 
 		private String state;
 
 		private String inviteTime;
 
-		private String acceptTime;
+		private String channelId;
 
 		private String organizationName;
 
-		private String organizationDomain;
-
 		private String organizationDescription;
 
-		public String getChannelId() {
-			return this.channelId;
-		}
-
-		public void setChannelId(String channelId) {
-			this.channelId = channelId;
-		}
-
-		public String getOrganizationId() {
-			return this.organizationId;
-		}
-
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
+		private String organizationId;
 
 		public Boolean getWithPeer() {
 			return this.withPeer;
@@ -107,6 +91,22 @@ public class DescribeFabricChannelMembersResponse extends AcsResponse {
 
 		public void setWithPeer(Boolean withPeer) {
 			this.withPeer = withPeer;
+		}
+
+		public String getAcceptTime() {
+			return this.acceptTime;
+		}
+
+		public void setAcceptTime(String acceptTime) {
+			this.acceptTime = acceptTime;
+		}
+
+		public String getOrganizationDomain() {
+			return this.organizationDomain;
+		}
+
+		public void setOrganizationDomain(String organizationDomain) {
+			this.organizationDomain = organizationDomain;
 		}
 
 		public String getState() {
@@ -125,12 +125,12 @@ public class DescribeFabricChannelMembersResponse extends AcsResponse {
 			this.inviteTime = inviteTime;
 		}
 
-		public String getAcceptTime() {
-			return this.acceptTime;
+		public String getChannelId() {
+			return this.channelId;
 		}
 
-		public void setAcceptTime(String acceptTime) {
-			this.acceptTime = acceptTime;
+		public void setChannelId(String channelId) {
+			this.channelId = channelId;
 		}
 
 		public String getOrganizationName() {
@@ -141,20 +141,20 @@ public class DescribeFabricChannelMembersResponse extends AcsResponse {
 			this.organizationName = organizationName;
 		}
 
-		public String getOrganizationDomain() {
-			return this.organizationDomain;
-		}
-
-		public void setOrganizationDomain(String organizationDomain) {
-			this.organizationDomain = organizationDomain;
-		}
-
 		public String getOrganizationDescription() {
 			return this.organizationDescription;
 		}
 
 		public void setOrganizationDescription(String organizationDescription) {
 			this.organizationDescription = organizationDescription;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
 		}
 	}
 

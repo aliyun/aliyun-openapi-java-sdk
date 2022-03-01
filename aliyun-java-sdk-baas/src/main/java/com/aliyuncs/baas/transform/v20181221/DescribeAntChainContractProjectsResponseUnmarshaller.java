@@ -41,10 +41,10 @@ public class DescribeAntChainContractProjectsResponseUnmarshaller {
 		List<ContractProjectsItem> contractProjects = new ArrayList<ContractProjectsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects.Length"); i++) {
 			ContractProjectsItem contractProjectsItem = new ContractProjectsItem();
-			contractProjectsItem.setProjectId(_ctx.stringValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].ProjectId"));
+			contractProjectsItem.setUpdateTime(_ctx.longValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].UpdateTime"));
 			contractProjectsItem.setConsortiumId(_ctx.stringValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].ConsortiumId"));
 			contractProjectsItem.setCreateTime(_ctx.longValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].CreateTime"));
-			contractProjectsItem.setUpdateTime(_ctx.longValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].UpdateTime"));
+			contractProjectsItem.setProjectId(_ctx.stringValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].ProjectId"));
 			contractProjectsItem.setProjectName(_ctx.stringValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].ProjectName"));
 			contractProjectsItem.setProjectVersion(_ctx.stringValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].ProjectVersion"));
 			contractProjectsItem.setProjectDescription(_ctx.stringValue("DescribeAntChainContractProjectsResponse.Result.ContractProjects["+ i +"].ProjectDescription"));

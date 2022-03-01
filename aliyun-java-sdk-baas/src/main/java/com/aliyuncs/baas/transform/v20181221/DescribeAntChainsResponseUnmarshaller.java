@@ -42,21 +42,21 @@ public class DescribeAntChainsResponseUnmarshaller {
 		List<AntChainsItem> antChains = new ArrayList<AntChainsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainsResponse.Result.AntChains.Length"); i++) {
 			AntChainsItem antChainsItem = new AntChainsItem();
+			antChainsItem.setExpireTime(_ctx.longValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].ExpireTime"));
+			antChainsItem.setCreateTime(_ctx.longValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].CreateTime"));
+			antChainsItem.setChainType(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].ChainType"));
+			antChainsItem.setMemberStatus(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].MemberStatus"));
+			antChainsItem.setMerkleTreeSuit(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].MerkleTreeSuit"));
+			antChainsItem.setIsAdmin(_ctx.booleanValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].IsAdmin"));
 			antChainsItem.setAntChainName(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].AntChainName"));
 			antChainsItem.setRegionId(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].RegionId"));
-			antChainsItem.setResourceSize(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].ResourceSize"));
-			antChainsItem.setChainType(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].ChainType"));
-			antChainsItem.setNodeNum(_ctx.integerValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].NodeNum"));
-			antChainsItem.setCreateTime(_ctx.longValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].CreateTime"));
-			antChainsItem.setMemberStatus(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].MemberStatus"));
-			antChainsItem.setTlsAlgo(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].TlsAlgo"));
-			antChainsItem.setCipherSuit(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].CipherSuit"));
-			antChainsItem.setMerkleTreeSuit(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].MerkleTreeSuit"));
-			antChainsItem.setAntChainId(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].AntChainId"));
-			antChainsItem.setIsAdmin(_ctx.booleanValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].IsAdmin"));
 			antChainsItem.setNetwork(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].Network"));
-			antChainsItem.setExpireTime(_ctx.longValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].ExpireTime"));
+			antChainsItem.setTlsAlgo(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].TlsAlgo"));
 			antChainsItem.setVersion(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].Version"));
+			antChainsItem.setCipherSuit(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].CipherSuit"));
+			antChainsItem.setResourceSize(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].ResourceSize"));
+			antChainsItem.setNodeNum(_ctx.integerValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].NodeNum"));
+			antChainsItem.setAntChainId(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].AntChainId"));
 
 			antChains.add(antChainsItem);
 		}

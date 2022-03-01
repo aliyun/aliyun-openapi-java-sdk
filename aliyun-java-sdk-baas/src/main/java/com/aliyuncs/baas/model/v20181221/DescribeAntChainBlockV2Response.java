@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainBlockV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -97,6 +89,14 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
 	public Result getResult() {
 		return this.result;
 	}
@@ -107,30 +107,38 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 
 	public static class Result {
 
-		private String blockHash;
+		private String previousHash;
+
+		private Long version;
 
 		private String rootTxHash;
-
-		private Integer height;
-
-		private String previousHash;
 
 		private Long createTime;
 
 		private Integer transactionSize;
 
-		private Long version;
+		private Integer height;
+
+		private String blockHash;
 
 		private String antChainId;
 
 		private List<TransSummaryListItem> transSummaryList;
 
-		public String getBlockHash() {
-			return this.blockHash;
+		public String getPreviousHash() {
+			return this.previousHash;
 		}
 
-		public void setBlockHash(String blockHash) {
-			this.blockHash = blockHash;
+		public void setPreviousHash(String previousHash) {
+			this.previousHash = previousHash;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 
 		public String getRootTxHash() {
@@ -139,22 +147,6 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 
 		public void setRootTxHash(String rootTxHash) {
 			this.rootTxHash = rootTxHash;
-		}
-
-		public Integer getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(Integer height) {
-			this.height = height;
-		}
-
-		public String getPreviousHash() {
-			return this.previousHash;
-		}
-
-		public void setPreviousHash(String previousHash) {
-			this.previousHash = previousHash;
 		}
 
 		public Long getCreateTime() {
@@ -173,12 +165,20 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 			this.transactionSize = transactionSize;
 		}
 
-		public Long getVersion() {
-			return this.version;
+		public Integer getHeight() {
+			return this.height;
 		}
 
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setHeight(Integer height) {
+			this.height = height;
+		}
+
+		public String getBlockHash() {
+			return this.blockHash;
+		}
+
+		public void setBlockHash(String blockHash) {
+			this.blockHash = blockHash;
 		}
 
 		public String getAntChainId() {
@@ -199,60 +199,36 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 
 		public static class TransSummaryListItem {
 
-			private String alias;
-
-			private String blockHash;
-
-			private Integer category;
-
-			private Long createTime;
+			private String hash;
 
 			private String from;
 
-			private Long gasUsed;
-
-			private String hash;
-
-			private Long height;
-
-			private Integer referenceCount;
-
-			private String to;
-
 			private String transTypeV10;
+
+			private Long createTime;
 
 			private String transTypeV6;
 
-			public String getAlias() {
-				return this.alias;
+			private Long height;
+
+			private String to;
+
+			private Long gasUsed;
+
+			private String blockHash;
+
+			private Integer referenceCount;
+
+			private Integer category;
+
+			private String alias;
+
+			public String getHash() {
+				return this.hash;
 			}
 
-			public void setAlias(String alias) {
-				this.alias = alias;
-			}
-
-			public String getBlockHash() {
-				return this.blockHash;
-			}
-
-			public void setBlockHash(String blockHash) {
-				this.blockHash = blockHash;
-			}
-
-			public Integer getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(Integer category) {
-				this.category = category;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
+			public void setHash(String hash) {
+				this.hash = hash;
 			}
 
 			public String getFrom() {
@@ -263,20 +239,28 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 				this.from = from;
 			}
 
-			public Long getGasUsed() {
-				return this.gasUsed;
+			public String getTransTypeV10() {
+				return this.transTypeV10;
 			}
 
-			public void setGasUsed(Long gasUsed) {
-				this.gasUsed = gasUsed;
+			public void setTransTypeV10(String transTypeV10) {
+				this.transTypeV10 = transTypeV10;
 			}
 
-			public String getHash() {
-				return this.hash;
+			public Long getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setHash(String hash) {
-				this.hash = hash;
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getTransTypeV6() {
+				return this.transTypeV6;
+			}
+
+			public void setTransTypeV6(String transTypeV6) {
+				this.transTypeV6 = transTypeV6;
 			}
 
 			public Long getHeight() {
@@ -287,14 +271,6 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getReferenceCount() {
-				return this.referenceCount;
-			}
-
-			public void setReferenceCount(Integer referenceCount) {
-				this.referenceCount = referenceCount;
-			}
-
 			public String getTo() {
 				return this.to;
 			}
@@ -303,20 +279,44 @@ public class DescribeAntChainBlockV2Response extends AcsResponse {
 				this.to = to;
 			}
 
-			public String getTransTypeV10() {
-				return this.transTypeV10;
+			public Long getGasUsed() {
+				return this.gasUsed;
 			}
 
-			public void setTransTypeV10(String transTypeV10) {
-				this.transTypeV10 = transTypeV10;
+			public void setGasUsed(Long gasUsed) {
+				this.gasUsed = gasUsed;
 			}
 
-			public String getTransTypeV6() {
-				return this.transTypeV6;
+			public String getBlockHash() {
+				return this.blockHash;
 			}
 
-			public void setTransTypeV6(String transTypeV6) {
-				this.transTypeV6 = transTypeV6;
+			public void setBlockHash(String blockHash) {
+				this.blockHash = blockHash;
+			}
+
+			public Integer getReferenceCount() {
+				return this.referenceCount;
+			}
+
+			public void setReferenceCount(Integer referenceCount) {
+				this.referenceCount = referenceCount;
+			}
+
+			public Integer getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(Integer category) {
+				this.category = category;
+			}
+
+			public String getAlias() {
+				return this.alias;
+			}
+
+			public void setAlias(String alias) {
+				this.alias = alias;
 			}
 		}
 	}

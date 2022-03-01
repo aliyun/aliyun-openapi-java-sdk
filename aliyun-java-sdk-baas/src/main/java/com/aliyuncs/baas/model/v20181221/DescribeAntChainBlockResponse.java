@@ -46,30 +46,54 @@ public class DescribeAntChainBlockResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String blockHash;
+		private String previousHash;
+
+		private Long version;
+
+		private Integer transactionSize;
+
+		private Long createTime;
 
 		private String rootTxHash;
 
 		private Integer height;
 
-		private String previousHash;
-
-		private Long createTime;
-
-		private Integer transactionSize;
-
-		private String transSummaryList;
-
-		private Long version;
+		private String blockHash;
 
 		private String antChainId;
 
-		public String getBlockHash() {
-			return this.blockHash;
+		private String transSummaryList;
+
+		public String getPreviousHash() {
+			return this.previousHash;
 		}
 
-		public void setBlockHash(String blockHash) {
-			this.blockHash = blockHash;
+		public void setPreviousHash(String previousHash) {
+			this.previousHash = previousHash;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
+		public Integer getTransactionSize() {
+			return this.transactionSize;
+		}
+
+		public void setTransactionSize(Integer transactionSize) {
+			this.transactionSize = transactionSize;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getRootTxHash() {
@@ -88,44 +112,12 @@ public class DescribeAntChainBlockResponse extends AcsResponse {
 			this.height = height;
 		}
 
-		public String getPreviousHash() {
-			return this.previousHash;
+		public String getBlockHash() {
+			return this.blockHash;
 		}
 
-		public void setPreviousHash(String previousHash) {
-			this.previousHash = previousHash;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Integer getTransactionSize() {
-			return this.transactionSize;
-		}
-
-		public void setTransactionSize(Integer transactionSize) {
-			this.transactionSize = transactionSize;
-		}
-
-		public String getTransSummaryList() {
-			return this.transSummaryList;
-		}
-
-		public void setTransSummaryList(String transSummaryList) {
-			this.transSummaryList = transSummaryList;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setBlockHash(String blockHash) {
+			this.blockHash = blockHash;
 		}
 
 		public String getAntChainId() {
@@ -134,6 +126,14 @@ public class DescribeAntChainBlockResponse extends AcsResponse {
 
 		public void setAntChainId(String antChainId) {
 			this.antChainId = antChainId;
+		}
+
+		public String getTransSummaryList() {
+			return this.transSummaryList;
+		}
+
+		public void setTransSummaryList(String transSummaryList) {
+			this.transSummaryList = transSummaryList;
 		}
 	}
 

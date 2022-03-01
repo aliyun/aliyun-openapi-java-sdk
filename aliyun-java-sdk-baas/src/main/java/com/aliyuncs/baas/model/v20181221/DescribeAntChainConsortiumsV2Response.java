@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainConsortiumsV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainConsortiumsV2Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainConsortiumsV2Response extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -95,6 +87,14 @@ public class DescribeAntChainConsortiumsV2Response extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	public Result getResult() {
@@ -129,62 +129,30 @@ public class DescribeAntChainConsortiumsV2Response extends AcsResponse {
 
 		public static class AntConsortiumsItem {
 
-			private Long chainNum;
-
-			private Long memberNum;
-
-			private Long createTime;
-
-			private String role;
-
-			private String consortiumId;
+			private String consortiumDescription;
 
 			private String status;
 
-			private String consortiumName;
-
-			private String consortiumDescription;
-
 			private Boolean isEmptyConsortium;
 
-			public Long getChainNum() {
-				return this.chainNum;
+			private String consortiumId;
+
+			private Long createTime;
+
+			private Long memberNum;
+
+			private String role;
+
+			private String consortiumName;
+
+			private Long chainNum;
+
+			public String getConsortiumDescription() {
+				return this.consortiumDescription;
 			}
 
-			public void setChainNum(Long chainNum) {
-				this.chainNum = chainNum;
-			}
-
-			public Long getMemberNum() {
-				return this.memberNum;
-			}
-
-			public void setMemberNum(Long memberNum) {
-				this.memberNum = memberNum;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
-
-			public String getConsortiumId() {
-				return this.consortiumId;
-			}
-
-			public void setConsortiumId(String consortiumId) {
-				this.consortiumId = consortiumId;
+			public void setConsortiumDescription(String consortiumDescription) {
+				this.consortiumDescription = consortiumDescription;
 			}
 
 			public String getStatus() {
@@ -195,6 +163,46 @@ public class DescribeAntChainConsortiumsV2Response extends AcsResponse {
 				this.status = status;
 			}
 
+			public Boolean getIsEmptyConsortium() {
+				return this.isEmptyConsortium;
+			}
+
+			public void setIsEmptyConsortium(Boolean isEmptyConsortium) {
+				this.isEmptyConsortium = isEmptyConsortium;
+			}
+
+			public String getConsortiumId() {
+				return this.consortiumId;
+			}
+
+			public void setConsortiumId(String consortiumId) {
+				this.consortiumId = consortiumId;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getMemberNum() {
+				return this.memberNum;
+			}
+
+			public void setMemberNum(Long memberNum) {
+				this.memberNum = memberNum;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
 			public String getConsortiumName() {
 				return this.consortiumName;
 			}
@@ -203,20 +211,12 @@ public class DescribeAntChainConsortiumsV2Response extends AcsResponse {
 				this.consortiumName = consortiumName;
 			}
 
-			public String getConsortiumDescription() {
-				return this.consortiumDescription;
+			public Long getChainNum() {
+				return this.chainNum;
 			}
 
-			public void setConsortiumDescription(String consortiumDescription) {
-				this.consortiumDescription = consortiumDescription;
-			}
-
-			public Boolean getIsEmptyConsortium() {
-				return this.isEmptyConsortium;
-			}
-
-			public void setIsEmptyConsortium(Boolean isEmptyConsortium) {
-				this.isEmptyConsortium = isEmptyConsortium;
+			public void setChainNum(Long chainNum) {
+				this.chainNum = chainNum;
 			}
 		}
 

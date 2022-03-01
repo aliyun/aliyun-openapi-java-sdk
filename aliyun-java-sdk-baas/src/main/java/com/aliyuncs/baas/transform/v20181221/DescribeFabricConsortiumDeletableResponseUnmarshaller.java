@@ -28,15 +28,15 @@ public class DescribeFabricConsortiumDeletableResponseUnmarshaller {
 		describeFabricConsortiumDeletableResponse.setErrorCode(_ctx.integerValue("DescribeFabricConsortiumDeletableResponse.ErrorCode"));
 
 		Result result = new Result();
-		result.setConsortiumId(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.ConsortiumId"));
-		result.setConsortiumName(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.ConsortiumName"));
-		result.setRegionId(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.RegionId"));
-		result.setZoneId(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.ZoneId"));
-		result.setCodeName(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.CodeName"));
+		result.setDeletable(_ctx.booleanValue("DescribeFabricConsortiumDeletableResponse.Result.Deletable"));
 		result.setDomain(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.Domain"));
 		result.setDescription(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.Description"));
+		result.setConsortiumId(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.ConsortiumId"));
 		result.setState(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.State"));
-		result.setDeletable(_ctx.booleanValue("DescribeFabricConsortiumDeletableResponse.Result.Deletable"));
+		result.setZoneId(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.ZoneId"));
+		result.setCodeName(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.CodeName"));
+		result.setConsortiumName(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.ConsortiumName"));
+		result.setRegionId(_ctx.stringValue("DescribeFabricConsortiumDeletableResponse.Result.RegionId"));
 		describeFabricConsortiumDeletableResponse.setResult(result);
 	 
 	 	return describeFabricConsortiumDeletableResponse;

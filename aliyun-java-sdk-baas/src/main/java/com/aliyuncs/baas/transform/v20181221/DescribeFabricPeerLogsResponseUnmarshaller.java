@@ -23,9 +23,9 @@ public class DescribeFabricPeerLogsResponseUnmarshaller {
 	public static DescribeFabricPeerLogsResponse unmarshall(DescribeFabricPeerLogsResponse describeFabricPeerLogsResponse, UnmarshallerContext _ctx) {
 		
 		describeFabricPeerLogsResponse.setRequestId(_ctx.stringValue("DescribeFabricPeerLogsResponse.RequestId"));
+		describeFabricPeerLogsResponse.setResult(_ctx.stringValue("DescribeFabricPeerLogsResponse.Result"));
 		describeFabricPeerLogsResponse.setSuccess(_ctx.booleanValue("DescribeFabricPeerLogsResponse.Success"));
 		describeFabricPeerLogsResponse.setErrorCode(_ctx.integerValue("DescribeFabricPeerLogsResponse.ErrorCode"));
-		describeFabricPeerLogsResponse.setResult(_ctx.stringValue("DescribeFabricPeerLogsResponse.Result"));
 	 
 	 	return describeFabricPeerLogsResponse;
 	}

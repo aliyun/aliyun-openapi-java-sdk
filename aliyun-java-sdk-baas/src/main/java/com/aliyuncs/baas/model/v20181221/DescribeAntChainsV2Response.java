@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainsV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainsV2Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainsV2Response extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -95,6 +87,14 @@ public class DescribeAntChainsV2Response extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	public Result getResult() {
@@ -139,80 +139,48 @@ public class DescribeAntChainsV2Response extends AcsResponse {
 
 		public static class AntChainsItem {
 
-			private String antChainName;
-
-			private String regionId;
-
-			private String resourceSize;
-
-			private String chainType;
-
-			private Integer nodeNum;
+			private Long expireTime;
 
 			private Long createTime;
 
-			private String memberStatus;
+			private String restStatus;
 
-			private String tlsAlgo;
-
-			private String cipherSuit;
-
-			private String merkleTreeSuit;
-
-			private String antChainId;
+			private String chainType;
 
 			private Boolean isAdmin;
 
-			private String network;
+			private String merkleTreeSuit;
 
-			private Long expireTime;
-
-			private String version;
+			private String memberStatus;
 
 			private String instanceId;
 
-			private String restStatus;
+			private String regionId;
+
+			private String antChainName;
+
+			private String network;
 
 			private Boolean monitorStatus;
 
-			public String getAntChainName() {
-				return this.antChainName;
+			private String tlsAlgo;
+
+			private String version;
+
+			private String cipherSuit;
+
+			private String resourceSize;
+
+			private Integer nodeNum;
+
+			private String antChainId;
+
+			public Long getExpireTime() {
+				return this.expireTime;
 			}
 
-			public void setAntChainName(String antChainName) {
-				this.antChainName = antChainName;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getResourceSize() {
-				return this.resourceSize;
-			}
-
-			public void setResourceSize(String resourceSize) {
-				this.resourceSize = resourceSize;
-			}
-
-			public String getChainType() {
-				return this.chainType;
-			}
-
-			public void setChainType(String chainType) {
-				this.chainType = chainType;
-			}
-
-			public Integer getNodeNum() {
-				return this.nodeNum;
-			}
-
-			public void setNodeNum(Integer nodeNum) {
-				this.nodeNum = nodeNum;
+			public void setExpireTime(Long expireTime) {
+				this.expireTime = expireTime;
 			}
 
 			public Long getCreateTime() {
@@ -223,44 +191,20 @@ public class DescribeAntChainsV2Response extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public String getMemberStatus() {
-				return this.memberStatus;
+			public String getRestStatus() {
+				return this.restStatus;
 			}
 
-			public void setMemberStatus(String memberStatus) {
-				this.memberStatus = memberStatus;
+			public void setRestStatus(String restStatus) {
+				this.restStatus = restStatus;
 			}
 
-			public String getTlsAlgo() {
-				return this.tlsAlgo;
+			public String getChainType() {
+				return this.chainType;
 			}
 
-			public void setTlsAlgo(String tlsAlgo) {
-				this.tlsAlgo = tlsAlgo;
-			}
-
-			public String getCipherSuit() {
-				return this.cipherSuit;
-			}
-
-			public void setCipherSuit(String cipherSuit) {
-				this.cipherSuit = cipherSuit;
-			}
-
-			public String getMerkleTreeSuit() {
-				return this.merkleTreeSuit;
-			}
-
-			public void setMerkleTreeSuit(String merkleTreeSuit) {
-				this.merkleTreeSuit = merkleTreeSuit;
-			}
-
-			public String getAntChainId() {
-				return this.antChainId;
-			}
-
-			public void setAntChainId(String antChainId) {
-				this.antChainId = antChainId;
+			public void setChainType(String chainType) {
+				this.chainType = chainType;
 			}
 
 			public Boolean getIsAdmin() {
@@ -271,28 +215,20 @@ public class DescribeAntChainsV2Response extends AcsResponse {
 				this.isAdmin = isAdmin;
 			}
 
-			public String getNetwork() {
-				return this.network;
+			public String getMerkleTreeSuit() {
+				return this.merkleTreeSuit;
 			}
 
-			public void setNetwork(String network) {
-				this.network = network;
+			public void setMerkleTreeSuit(String merkleTreeSuit) {
+				this.merkleTreeSuit = merkleTreeSuit;
 			}
 
-			public Long getExpireTime() {
-				return this.expireTime;
+			public String getMemberStatus() {
+				return this.memberStatus;
 			}
 
-			public void setExpireTime(Long expireTime) {
-				this.expireTime = expireTime;
-			}
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
+			public void setMemberStatus(String memberStatus) {
+				this.memberStatus = memberStatus;
 			}
 
 			public String getInstanceId() {
@@ -303,12 +239,28 @@ public class DescribeAntChainsV2Response extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getRestStatus() {
-				return this.restStatus;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setRestStatus(String restStatus) {
-				this.restStatus = restStatus;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getAntChainName() {
+				return this.antChainName;
+			}
+
+			public void setAntChainName(String antChainName) {
+				this.antChainName = antChainName;
+			}
+
+			public String getNetwork() {
+				return this.network;
+			}
+
+			public void setNetwork(String network) {
+				this.network = network;
 			}
 
 			public Boolean getMonitorStatus() {
@@ -317,6 +269,54 @@ public class DescribeAntChainsV2Response extends AcsResponse {
 
 			public void setMonitorStatus(Boolean monitorStatus) {
 				this.monitorStatus = monitorStatus;
+			}
+
+			public String getTlsAlgo() {
+				return this.tlsAlgo;
+			}
+
+			public void setTlsAlgo(String tlsAlgo) {
+				this.tlsAlgo = tlsAlgo;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getCipherSuit() {
+				return this.cipherSuit;
+			}
+
+			public void setCipherSuit(String cipherSuit) {
+				this.cipherSuit = cipherSuit;
+			}
+
+			public String getResourceSize() {
+				return this.resourceSize;
+			}
+
+			public void setResourceSize(String resourceSize) {
+				this.resourceSize = resourceSize;
+			}
+
+			public Integer getNodeNum() {
+				return this.nodeNum;
+			}
+
+			public void setNodeNum(Integer nodeNum) {
+				this.nodeNum = nodeNum;
+			}
+
+			public String getAntChainId() {
+				return this.antChainId;
+			}
+
+			public void setAntChainId(String antChainId) {
+				this.antChainId = antChainId;
 			}
 		}
 

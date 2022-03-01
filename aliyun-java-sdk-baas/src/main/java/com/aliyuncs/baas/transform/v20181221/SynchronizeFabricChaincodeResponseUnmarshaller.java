@@ -28,22 +28,22 @@ public class SynchronizeFabricChaincodeResponseUnmarshaller {
 		synchronizeFabricChaincodeResponse.setErrorCode(_ctx.integerValue("SynchronizeFabricChaincodeResponse.ErrorCode"));
 
 		Result result = new Result();
-		result.setChaincodeName(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ChaincodeName"));
-		result.setChaincodeVersion(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ChaincodeVersion"));
-		result.setInput(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.Input"));
 		result.setType(_ctx.integerValue("SynchronizeFabricChaincodeResponse.Result.Type"));
-		result.setState(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.State"));
-		result.setPath(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.Path"));
-		result.setChaincodeId(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ChaincodeId"));
-		result.setInstall(_ctx.booleanValue("SynchronizeFabricChaincodeResponse.Result.Install"));
-		result.setMessage(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.Message"));
-		result.setCreateTime(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.CreateTime"));
-		result.setDeployTime(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.DeployTime"));
-		result.setChannelName(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ChannelName"));
 		result.setEndorsePolicy(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.EndorsePolicy"));
-		result.setConsortiumId(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ConsortiumId"));
-		result.setProviderId(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ProviderId"));
+		result.setState(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.State"));
+		result.setCreateTime(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.CreateTime"));
+		result.setChaincodeId(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ChaincodeId"));
 		result.setProviderName(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ProviderName"));
+		result.setMessage(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.Message"));
+		result.setChaincodeName(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ChaincodeName"));
+		result.setInput(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.Input"));
+		result.setInstall(_ctx.booleanValue("SynchronizeFabricChaincodeResponse.Result.Install"));
+		result.setProviderId(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ProviderId"));
+		result.setDeployTime(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.DeployTime"));
+		result.setChaincodeVersion(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ChaincodeVersion"));
+		result.setConsortiumId(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ConsortiumId"));
+		result.setChannelName(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.ChannelName"));
+		result.setPath(_ctx.stringValue("SynchronizeFabricChaincodeResponse.Result.Path"));
 		synchronizeFabricChaincodeResponse.setResult(result);
 	 
 	 	return synchronizeFabricChaincodeResponse;

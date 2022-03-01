@@ -27,21 +27,21 @@ public class DescribeAntChainTransactionStatisticsV2ResponseUnmarshaller {
 	public static DescribeAntChainTransactionStatisticsV2Response unmarshall(DescribeAntChainTransactionStatisticsV2Response describeAntChainTransactionStatisticsV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainTransactionStatisticsV2Response.setRequestId(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.RequestId"));
-		describeAntChainTransactionStatisticsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.ResultCode"));
-		describeAntChainTransactionStatisticsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.ResultMessage"));
-		describeAntChainTransactionStatisticsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainTransactionStatisticsV2Response.Success"));
 		describeAntChainTransactionStatisticsV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.HttpStatusCode"));
+		describeAntChainTransactionStatisticsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainTransactionStatisticsV2Response.Success"));
+		describeAntChainTransactionStatisticsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.ResultMessage"));
 		describeAntChainTransactionStatisticsV2Response.setCode(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.Code"));
 		describeAntChainTransactionStatisticsV2Response.setMessage(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.Message"));
+		describeAntChainTransactionStatisticsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.ResultCode"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainTransactionStatisticsV2Response.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setAntChainId(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.Result["+ i +"].AntChainId"));
 			resultItem.setDt(_ctx.longValue("DescribeAntChainTransactionStatisticsV2Response.Result["+ i +"].Dt"));
-			resultItem.setTransCount(_ctx.longValue("DescribeAntChainTransactionStatisticsV2Response.Result["+ i +"].TransCount"));
-			resultItem.setLastSumBlockHeight(_ctx.longValue("DescribeAntChainTransactionStatisticsV2Response.Result["+ i +"].LastSumBlockHeight"));
 			resultItem.setCreatTime(_ctx.longValue("DescribeAntChainTransactionStatisticsV2Response.Result["+ i +"].CreatTime"));
+			resultItem.setLastSumBlockHeight(_ctx.longValue("DescribeAntChainTransactionStatisticsV2Response.Result["+ i +"].LastSumBlockHeight"));
+			resultItem.setTransCount(_ctx.longValue("DescribeAntChainTransactionStatisticsV2Response.Result["+ i +"].TransCount"));
+			resultItem.setAntChainId(_ctx.stringValue("DescribeAntChainTransactionStatisticsV2Response.Result["+ i +"].AntChainId"));
 
 			result.add(resultItem);
 		}

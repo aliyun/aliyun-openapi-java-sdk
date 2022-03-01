@@ -23,11 +23,11 @@ public class DescribeFabricExplorerResponseUnmarshaller {
 	public static DescribeFabricExplorerResponse unmarshall(DescribeFabricExplorerResponse describeFabricExplorerResponse, UnmarshallerContext _ctx) {
 		
 		describeFabricExplorerResponse.setRequestId(_ctx.stringValue("DescribeFabricExplorerResponse.RequestId"));
+		describeFabricExplorerResponse.setResult(_ctx.stringValue("DescribeFabricExplorerResponse.Result"));
 		describeFabricExplorerResponse.setSuccess(_ctx.booleanValue("DescribeFabricExplorerResponse.Success"));
 		describeFabricExplorerResponse.setErrorCode(_ctx.integerValue("DescribeFabricExplorerResponse.ErrorCode"));
-		describeFabricExplorerResponse.setResult(_ctx.stringValue("DescribeFabricExplorerResponse.Result"));
-		describeFabricExplorerResponse.setDynamicCode(_ctx.stringValue("DescribeFabricExplorerResponse.DynamicCode"));
 		describeFabricExplorerResponse.setDynamicMessage(_ctx.stringValue("DescribeFabricExplorerResponse.DynamicMessage"));
+		describeFabricExplorerResponse.setDynamicCode(_ctx.stringValue("DescribeFabricExplorerResponse.DynamicCode"));
 	 
 	 	return describeFabricExplorerResponse;
 	}

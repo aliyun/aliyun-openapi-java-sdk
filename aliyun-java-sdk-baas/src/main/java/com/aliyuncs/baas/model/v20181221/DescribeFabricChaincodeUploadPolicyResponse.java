@@ -66,24 +66,32 @@ public class DescribeFabricChaincodeUploadPolicyResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String accessId;
-
-		private String policy;
-
 		private String signature;
-
-		private String dir;
 
 		private String host;
 
+		private String policy;
+
+		private String dir;
+
+		private String accessId;
+
 		private Integer expire;
 
-		public String getAccessId() {
-			return this.accessId;
+		public String getSignature() {
+			return this.signature;
 		}
 
-		public void setAccessId(String accessId) {
-			this.accessId = accessId;
+		public void setSignature(String signature) {
+			this.signature = signature;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
 		}
 
 		public String getPolicy() {
@@ -94,14 +102,6 @@ public class DescribeFabricChaincodeUploadPolicyResponse extends AcsResponse {
 			this.policy = policy;
 		}
 
-		public String getSignature() {
-			return this.signature;
-		}
-
-		public void setSignature(String signature) {
-			this.signature = signature;
-		}
-
 		public String getDir() {
 			return this.dir;
 		}
@@ -110,12 +110,12 @@ public class DescribeFabricChaincodeUploadPolicyResponse extends AcsResponse {
 			this.dir = dir;
 		}
 
-		public String getHost() {
-			return this.host;
+		public String getAccessId() {
+			return this.accessId;
 		}
 
-		public void setHost(String host) {
-			this.host = host;
+		public void setAccessId(String accessId) {
+			this.accessId = accessId;
 		}
 
 		public Integer getExpire() {

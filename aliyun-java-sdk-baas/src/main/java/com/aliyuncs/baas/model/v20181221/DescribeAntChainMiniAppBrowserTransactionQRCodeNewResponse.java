@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainMiniAppBrowserTransactionQRCodeNewResponse extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,22 +54,6 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeNewResponse extends 
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -72,12 +64,12 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeNewResponse extends 
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -96,6 +88,14 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeNewResponse extends 
 		this.message = message;
 	}
 
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
 	public Result getResult() {
 		return this.result;
 	}
@@ -106,29 +106,13 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeNewResponse extends 
 
 	public static class Result {
 
-		private String antChainId;
-
-		private String transactionHash;
-
 		private String base64QRCodePNG;
 
 		private String qRCodeContent;
 
-		public String getAntChainId() {
-			return this.antChainId;
-		}
+		private String transactionHash;
 
-		public void setAntChainId(String antChainId) {
-			this.antChainId = antChainId;
-		}
-
-		public String getTransactionHash() {
-			return this.transactionHash;
-		}
-
-		public void setTransactionHash(String transactionHash) {
-			this.transactionHash = transactionHash;
-		}
+		private String antChainId;
 
 		public String getBase64QRCodePNG() {
 			return this.base64QRCodePNG;
@@ -144,6 +128,22 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeNewResponse extends 
 
 		public void setQRCodeContent(String qRCodeContent) {
 			this.qRCodeContent = qRCodeContent;
+		}
+
+		public String getTransactionHash() {
+			return this.transactionHash;
+		}
+
+		public void setTransactionHash(String transactionHash) {
+			this.transactionHash = transactionHash;
+		}
+
+		public String getAntChainId() {
+			return this.antChainId;
+		}
+
+		public void setAntChainId(String antChainId) {
+			this.antChainId = antChainId;
 		}
 	}
 

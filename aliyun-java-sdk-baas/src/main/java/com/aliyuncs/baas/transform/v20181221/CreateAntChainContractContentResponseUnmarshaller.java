@@ -26,14 +26,14 @@ public class CreateAntChainContractContentResponseUnmarshaller {
 		createAntChainContractContentResponse.setRequestId(_ctx.stringValue("CreateAntChainContractContentResponse.RequestId"));
 
 		Result result = new Result();
-		result.setContentId(_ctx.stringValue("CreateAntChainContractContentResponse.Result.ContentId"));
+		result.setContentName(_ctx.stringValue("CreateAntChainContractContentResponse.Result.ContentName"));
+		result.setParentContentId(_ctx.stringValue("CreateAntChainContractContentResponse.Result.ParentContentId"));
+		result.setUpdateTime(_ctx.stringValue("CreateAntChainContractContentResponse.Result.UpdateTime"));
+		result.setCreateTime(_ctx.stringValue("CreateAntChainContractContentResponse.Result.CreateTime"));
 		result.setProjectId(_ctx.stringValue("CreateAntChainContractContentResponse.Result.ProjectId"));
 		result.setIsDirectory(_ctx.booleanValue("CreateAntChainContractContentResponse.Result.IsDirectory"));
 		result.setContent(_ctx.stringValue("CreateAntChainContractContentResponse.Result.Content"));
-		result.setCreateTime(_ctx.stringValue("CreateAntChainContractContentResponse.Result.CreateTime"));
-		result.setUpdateTime(_ctx.stringValue("CreateAntChainContractContentResponse.Result.UpdateTime"));
-		result.setParentContentId(_ctx.stringValue("CreateAntChainContractContentResponse.Result.ParentContentId"));
-		result.setContentName(_ctx.stringValue("CreateAntChainContractContentResponse.Result.ContentName"));
+		result.setContentId(_ctx.stringValue("CreateAntChainContractContentResponse.Result.ContentId"));
 		createAntChainContractContentResponse.setResult(result);
 	 
 	 	return createAntChainContractContentResponse;

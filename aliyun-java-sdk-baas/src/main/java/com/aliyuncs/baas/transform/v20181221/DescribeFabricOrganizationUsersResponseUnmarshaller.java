@@ -33,15 +33,15 @@ public class DescribeFabricOrganizationUsersResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricOrganizationUsersResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setCallerBid(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].CallerBid"));
-			resultItem.setCallerUid(_ctx.longValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].CallerUid"));
-			resultItem.setRegionId(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].RegionId"));
-			resultItem.setOrganizationId(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].OrganizationId"));
-			resultItem.setUsername(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].Username"));
-			resultItem.setFullName(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].FullName"));
-			resultItem.setCreateTime(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].CreateTime"));
 			resultItem.setExpireTime(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].ExpireTime"));
 			resultItem.setAttrs(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].Attrs"));
+			resultItem.setCallerBid(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].CallerBid"));
+			resultItem.setCreateTime(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].CreateTime"));
+			resultItem.setFullName(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].FullName"));
+			resultItem.setCallerUid(_ctx.longValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].CallerUid"));
+			resultItem.setUsername(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].Username"));
+			resultItem.setOrganizationId(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].OrganizationId"));
+			resultItem.setRegionId(_ctx.stringValue("DescribeFabricOrganizationUsersResponse.Result["+ i +"].RegionId"));
 
 			result.add(resultItem);
 		}

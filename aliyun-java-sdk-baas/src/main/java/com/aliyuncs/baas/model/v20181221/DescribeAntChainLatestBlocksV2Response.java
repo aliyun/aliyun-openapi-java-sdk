@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainLatestBlocksV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private List<ResultItem> result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainLatestBlocksV2Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainLatestBlocksV2Response extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -97,6 +89,14 @@ public class DescribeAntChainLatestBlocksV2Response extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
 	public List<ResultItem> getResult() {
 		return this.result;
 	}
@@ -107,48 +107,64 @@ public class DescribeAntChainLatestBlocksV2Response extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String alias;
+		private String previousHash;
 
-		private String bizData;
+		private Long version;
 
-		private String blockHash;
+		private Long transactionSize;
+
+		private Long size;
+
+		private String rootTxHash;
 
 		private Long createTime;
 
 		private Long height;
 
-		private String previousHash;
+		private String bizData;
 
-		private String rootTxHash;
+		private String blockHash;
 
-		private Long size;
+		private String alias;
 
-		private Long transactionSize;
-
-		private Long version;
-
-		public String getAlias() {
-			return this.alias;
+		public String getPreviousHash() {
+			return this.previousHash;
 		}
 
-		public void setAlias(String alias) {
-			this.alias = alias;
+		public void setPreviousHash(String previousHash) {
+			this.previousHash = previousHash;
 		}
 
-		public String getBizData() {
-			return this.bizData;
+		public Long getVersion() {
+			return this.version;
 		}
 
-		public void setBizData(String bizData) {
-			this.bizData = bizData;
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 
-		public String getBlockHash() {
-			return this.blockHash;
+		public Long getTransactionSize() {
+			return this.transactionSize;
 		}
 
-		public void setBlockHash(String blockHash) {
-			this.blockHash = blockHash;
+		public void setTransactionSize(Long transactionSize) {
+			this.transactionSize = transactionSize;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public String getRootTxHash() {
+			return this.rootTxHash;
+		}
+
+		public void setRootTxHash(String rootTxHash) {
+			this.rootTxHash = rootTxHash;
 		}
 
 		public Long getCreateTime() {
@@ -167,44 +183,28 @@ public class DescribeAntChainLatestBlocksV2Response extends AcsResponse {
 			this.height = height;
 		}
 
-		public String getPreviousHash() {
-			return this.previousHash;
+		public String getBizData() {
+			return this.bizData;
 		}
 
-		public void setPreviousHash(String previousHash) {
-			this.previousHash = previousHash;
+		public void setBizData(String bizData) {
+			this.bizData = bizData;
 		}
 
-		public String getRootTxHash() {
-			return this.rootTxHash;
+		public String getBlockHash() {
+			return this.blockHash;
 		}
 
-		public void setRootTxHash(String rootTxHash) {
-			this.rootTxHash = rootTxHash;
+		public void setBlockHash(String blockHash) {
+			this.blockHash = blockHash;
 		}
 
-		public Long getSize() {
-			return this.size;
+		public String getAlias() {
+			return this.alias;
 		}
 
-		public void setSize(Long size) {
-			this.size = size;
-		}
-
-		public Long getTransactionSize() {
-			return this.transactionSize;
-		}
-
-		public void setTransactionSize(Long transactionSize) {
-			this.transactionSize = transactionSize;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setAlias(String alias) {
+			this.alias = alias;
 		}
 	}
 

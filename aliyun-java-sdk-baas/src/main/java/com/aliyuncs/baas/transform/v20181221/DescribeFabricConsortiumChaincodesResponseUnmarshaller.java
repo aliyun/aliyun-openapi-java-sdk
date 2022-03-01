@@ -33,23 +33,23 @@ public class DescribeFabricConsortiumChaincodesResponseUnmarshaller {
 		List<ChaincodeVO> result = new ArrayList<ChaincodeVO>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricConsortiumChaincodesResponse.Result.Length"); i++) {
 			ChaincodeVO chaincodeVO = new ChaincodeVO();
-			chaincodeVO.setChaincodeName(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChaincodeName"));
-			chaincodeVO.setChaincodeVersion(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChaincodeVersion"));
-			chaincodeVO.setInput(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Input"));
 			chaincodeVO.setType(_ctx.integerValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Type"));
-			chaincodeVO.setState(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].State"));
-			chaincodeVO.setPath(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Path"));
-			chaincodeVO.setChaincodeId(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChaincodeId"));
-			chaincodeVO.setInstall(_ctx.booleanValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Install"));
-			chaincodeVO.setMessage(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Message"));
-			chaincodeVO.setCreateTime(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].CreateTime"));
-			chaincodeVO.setDeployTime(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].DeployTime"));
-			chaincodeVO.setChannelName(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChannelName"));
 			chaincodeVO.setEndorsePolicy(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].EndorsePolicy"));
-			chaincodeVO.setConsortiumId(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ConsortiumId"));
-			chaincodeVO.setProviderId(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ProviderId"));
+			chaincodeVO.setState(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].State"));
+			chaincodeVO.setCreateTime(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].CreateTime"));
+			chaincodeVO.setChaincodeId(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChaincodeId"));
 			chaincodeVO.setProviderName(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ProviderName"));
+			chaincodeVO.setMessage(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Message"));
+			chaincodeVO.setChaincodeName(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChaincodeName"));
+			chaincodeVO.setInstall(_ctx.booleanValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Install"));
+			chaincodeVO.setInput(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Input"));
+			chaincodeVO.setProviderId(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ProviderId"));
+			chaincodeVO.setDeployTime(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].DeployTime"));
+			chaincodeVO.setChaincodeVersion(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChaincodeVersion"));
+			chaincodeVO.setConsortiumId(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ConsortiumId"));
+			chaincodeVO.setChannelName(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChannelName"));
 			chaincodeVO.setChannelId(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].ChannelId"));
+			chaincodeVO.setPath(_ctx.stringValue("DescribeFabricConsortiumChaincodesResponse.Result["+ i +"].Path"));
 
 			result.add(chaincodeVO);
 		}

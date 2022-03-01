@@ -29,12 +29,12 @@ public class DescribeAntChainMembersV2ResponseUnmarshaller {
 	public static DescribeAntChainMembersV2Response unmarshall(DescribeAntChainMembersV2Response describeAntChainMembersV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainMembersV2Response.setRequestId(_ctx.stringValue("DescribeAntChainMembersV2Response.RequestId"));
-		describeAntChainMembersV2Response.setResultCode(_ctx.stringValue("DescribeAntChainMembersV2Response.ResultCode"));
-		describeAntChainMembersV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainMembersV2Response.ResultMessage"));
-		describeAntChainMembersV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainMembersV2Response.Success"));
 		describeAntChainMembersV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainMembersV2Response.HttpStatusCode"));
+		describeAntChainMembersV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainMembersV2Response.Success"));
+		describeAntChainMembersV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainMembersV2Response.ResultMessage"));
 		describeAntChainMembersV2Response.setCode(_ctx.stringValue("DescribeAntChainMembersV2Response.Code"));
 		describeAntChainMembersV2Response.setMessage(_ctx.stringValue("DescribeAntChainMembersV2Response.Message"));
+		describeAntChainMembersV2Response.setResultCode(_ctx.stringValue("DescribeAntChainMembersV2Response.ResultCode"));
 
 		Result result = new Result();
 
@@ -47,11 +47,11 @@ public class DescribeAntChainMembersV2ResponseUnmarshaller {
 		List<MembersItem> members = new ArrayList<MembersItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainMembersV2Response.Result.Members.Length"); i++) {
 			MembersItem membersItem = new MembersItem();
-			membersItem.setMemberName(_ctx.stringValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].MemberName"));
-			membersItem.setMemberId(_ctx.stringValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].MemberId"));
-			membersItem.setJoinTime(_ctx.longValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].JoinTime"));
-			membersItem.setRole(_ctx.stringValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].Role"));
 			membersItem.setStatus(_ctx.stringValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].Status"));
+			membersItem.setMemberId(_ctx.stringValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].MemberId"));
+			membersItem.setRole(_ctx.stringValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].Role"));
+			membersItem.setMemberName(_ctx.stringValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].MemberName"));
+			membersItem.setJoinTime(_ctx.longValue("DescribeAntChainMembersV2Response.Result.Members["+ i +"].JoinTime"));
 
 			members.add(membersItem);
 		}

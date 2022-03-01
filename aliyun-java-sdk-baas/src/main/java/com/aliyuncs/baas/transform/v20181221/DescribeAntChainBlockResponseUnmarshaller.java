@@ -26,15 +26,15 @@ public class DescribeAntChainBlockResponseUnmarshaller {
 		describeAntChainBlockResponse.setRequestId(_ctx.stringValue("DescribeAntChainBlockResponse.RequestId"));
 
 		Result result = new Result();
-		result.setBlockHash(_ctx.stringValue("DescribeAntChainBlockResponse.Result.BlockHash"));
+		result.setPreviousHash(_ctx.stringValue("DescribeAntChainBlockResponse.Result.PreviousHash"));
+		result.setVersion(_ctx.longValue("DescribeAntChainBlockResponse.Result.Version"));
+		result.setTransactionSize(_ctx.integerValue("DescribeAntChainBlockResponse.Result.TransactionSize"));
+		result.setCreateTime(_ctx.longValue("DescribeAntChainBlockResponse.Result.CreateTime"));
 		result.setRootTxHash(_ctx.stringValue("DescribeAntChainBlockResponse.Result.RootTxHash"));
 		result.setHeight(_ctx.integerValue("DescribeAntChainBlockResponse.Result.Height"));
-		result.setPreviousHash(_ctx.stringValue("DescribeAntChainBlockResponse.Result.PreviousHash"));
-		result.setCreateTime(_ctx.longValue("DescribeAntChainBlockResponse.Result.CreateTime"));
-		result.setTransactionSize(_ctx.integerValue("DescribeAntChainBlockResponse.Result.TransactionSize"));
-		result.setTransSummaryList(_ctx.stringValue("DescribeAntChainBlockResponse.Result.TransSummaryList"));
-		result.setVersion(_ctx.longValue("DescribeAntChainBlockResponse.Result.Version"));
+		result.setBlockHash(_ctx.stringValue("DescribeAntChainBlockResponse.Result.BlockHash"));
 		result.setAntChainId(_ctx.stringValue("DescribeAntChainBlockResponse.Result.AntChainId"));
+		result.setTransSummaryList(_ctx.stringValue("DescribeAntChainBlockResponse.Result.TransSummaryList"));
 		describeAntChainBlockResponse.setResult(result);
 	 
 	 	return describeAntChainBlockResponse;

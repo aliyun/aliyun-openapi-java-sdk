@@ -46,17 +46,9 @@ public class CreateAntChainAccountResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String antChainId;
-
 		private String account;
 
-		public String getAntChainId() {
-			return this.antChainId;
-		}
-
-		public void setAntChainId(String antChainId) {
-			this.antChainId = antChainId;
-		}
+		private String antChainId;
 
 		public String getAccount() {
 			return this.account;
@@ -64,6 +56,14 @@ public class CreateAntChainAccountResponse extends AcsResponse {
 
 		public void setAccount(String account) {
 			this.account = account;
+		}
+
+		public String getAntChainId() {
+			return this.antChainId;
+		}
+
+		public void setAntChainId(String antChainId) {
+			this.antChainId = antChainId;
 		}
 	}
 

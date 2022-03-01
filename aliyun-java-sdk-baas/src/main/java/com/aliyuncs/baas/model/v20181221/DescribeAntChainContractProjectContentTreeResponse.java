@@ -48,31 +48,15 @@ public class DescribeAntChainContractProjectContentTreeResponse extends AcsRespo
 
 	public static class Result {
 
-		private String projectId;
-
-		private String projectName;
-
 		private String projectVersion;
 
 		private String projectDescription;
 
+		private String projectId;
+
+		private String projectName;
+
 		private List<Map<Object,Object>> children;
-
-		public String getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(String projectId) {
-			this.projectId = projectId;
-		}
-
-		public String getProjectName() {
-			return this.projectName;
-		}
-
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
-		}
 
 		public String getProjectVersion() {
 			return this.projectVersion;
@@ -88,6 +72,22 @@ public class DescribeAntChainContractProjectContentTreeResponse extends AcsRespo
 
 		public void setProjectDescription(String projectDescription) {
 			this.projectDescription = projectDescription;
+		}
+
+		public String getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
 		}
 
 		public List<Map<Object,Object>> getChildren() {

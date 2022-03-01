@@ -33,14 +33,14 @@ public class DescribeFabricOrganizationMembersResponseUnmarshaller {
 		List<DescribeOrganizationMembers> result = new ArrayList<DescribeOrganizationMembers>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricOrganizationMembersResponse.Result.Length"); i++) {
 			DescribeOrganizationMembers describeOrganizationMembers = new DescribeOrganizationMembers();
-			describeOrganizationMembers.setOrganizationId(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].OrganizationId"));
-			describeOrganizationMembers.setOrganizationName(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].OrganizationName"));
-			describeOrganizationMembers.setConsortiumId(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].ConsortiumId"));
-			describeOrganizationMembers.setConsortiumName(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].ConsortiumName"));
 			describeOrganizationMembers.setDomain(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].Domain"));
+			describeOrganizationMembers.setConsortiumId(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].ConsortiumId"));
 			describeOrganizationMembers.setDescription(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].Description"));
-			describeOrganizationMembers.setJoinedTime(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].JoinedTime"));
 			describeOrganizationMembers.setState(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].State"));
+			describeOrganizationMembers.setOrganizationName(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].OrganizationName"));
+			describeOrganizationMembers.setJoinedTime(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].JoinedTime"));
+			describeOrganizationMembers.setConsortiumName(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].ConsortiumName"));
+			describeOrganizationMembers.setOrganizationId(_ctx.stringValue("DescribeFabricOrganizationMembersResponse.Result["+ i +"].OrganizationId"));
 
 			result.add(describeOrganizationMembers);
 		}

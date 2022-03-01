@@ -33,19 +33,19 @@ public class DescribeFabricOrganizationChaincodesResponseUnmarshaller {
 		List<OrganizationChaincode> result = new ArrayList<OrganizationChaincode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricOrganizationChaincodesResponse.Result.Length"); i++) {
 			OrganizationChaincode organizationChaincode = new OrganizationChaincode();
-			organizationChaincode.setChaincodeName(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChaincodeName"));
-			organizationChaincode.setChaincodeVersion(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChaincodeVersion"));
-			organizationChaincode.setCreator(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].Creator"));
-			organizationChaincode.setChannelId(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChannelId"));
-			organizationChaincode.setChannelName(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChannelName"));
-			organizationChaincode.setCreateTime(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].CreateTime"));
-			organizationChaincode.setDeployTime(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].DeployTime"));
-			organizationChaincode.setChaincodeId(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChaincodeId"));
 			organizationChaincode.setEndorsePolicy(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].EndorsePolicy"));
 			organizationChaincode.setState(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].State"));
-			organizationChaincode.setInstalled(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].Installed"));
+			organizationChaincode.setCreateTime(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].CreateTime"));
+			organizationChaincode.setChaincodeId(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChaincodeId"));
 			organizationChaincode.setMessage(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].Message"));
+			organizationChaincode.setChaincodeName(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChaincodeName"));
+			organizationChaincode.setInstalled(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].Installed"));
+			organizationChaincode.setCreator(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].Creator"));
+			organizationChaincode.setDeployTime(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].DeployTime"));
+			organizationChaincode.setChaincodeVersion(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChaincodeVersion"));
 			organizationChaincode.setConsortiumId(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ConsortiumId"));
+			organizationChaincode.setChannelName(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChannelName"));
+			organizationChaincode.setChannelId(_ctx.stringValue("DescribeFabricOrganizationChaincodesResponse.Result["+ i +"].ChannelId"));
 
 			result.add(organizationChaincode);
 		}

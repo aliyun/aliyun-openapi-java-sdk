@@ -33,15 +33,15 @@ public class JoinFabricChannelResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("JoinFabricChannelResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setChannelId(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].ChannelId"));
-			resultItem.setOrganizationId(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].OrganizationId"));
 			resultItem.setWithPeer(_ctx.booleanValue("JoinFabricChannelResponse.Result["+ i +"].WithPeer"));
-			resultItem.setState(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].State"));
-			resultItem.setInviteTime(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].InviteTime"));
 			resultItem.setAcceptTime(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].AcceptTime"));
-			resultItem.setApproveTime(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].ApproveTime"));
-			resultItem.setConfirmTime(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].ConfirmTime"));
+			resultItem.setState(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].State"));
 			resultItem.setDestroyTime(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].DestroyTime"));
+			resultItem.setInviteTime(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].InviteTime"));
+			resultItem.setChannelId(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].ChannelId"));
+			resultItem.setConfirmTime(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].ConfirmTime"));
+			resultItem.setApproveTime(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].ApproveTime"));
+			resultItem.setOrganizationId(_ctx.stringValue("JoinFabricChannelResponse.Result["+ i +"].OrganizationId"));
 
 			result.add(resultItem);
 		}

@@ -28,15 +28,15 @@ public class DescribeFabricOrganizationDeletableResponseUnmarshaller {
 		describeFabricOrganizationDeletableResponse.setErrorCode(_ctx.integerValue("DescribeFabricOrganizationDeletableResponse.ErrorCode"));
 
 		Result result = new Result();
-		result.setOrganizationId(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.OrganizationId"));
-		result.setOrganizationName(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.OrganizationName"));
-		result.setRegionId(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.RegionId"));
-		result.setZoneId(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.ZoneId"));
-		result.setCodeName(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.CodeName"));
-		result.setDomain(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.Domain"));
-		result.setOrganizationDescription(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.OrganizationDescription"));
-		result.setState(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.State"));
 		result.setDeletable(_ctx.booleanValue("DescribeFabricOrganizationDeletableResponse.Result.Deletable"));
+		result.setDomain(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.Domain"));
+		result.setState(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.State"));
+		result.setZoneId(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.ZoneId"));
+		result.setOrganizationName(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.OrganizationName"));
+		result.setCodeName(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.CodeName"));
+		result.setOrganizationDescription(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.OrganizationDescription"));
+		result.setRegionId(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.RegionId"));
+		result.setOrganizationId(_ctx.stringValue("DescribeFabricOrganizationDeletableResponse.Result.OrganizationId"));
 		describeFabricOrganizationDeletableResponse.setResult(result);
 	 
 	 	return describeFabricOrganizationDeletableResponse;

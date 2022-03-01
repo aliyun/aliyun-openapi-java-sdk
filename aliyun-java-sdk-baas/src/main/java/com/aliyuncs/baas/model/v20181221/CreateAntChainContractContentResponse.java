@@ -46,7 +46,13 @@ public class CreateAntChainContractContentResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String contentId;
+		private String contentName;
+
+		private String parentContentId;
+
+		private String updateTime;
+
+		private String createTime;
 
 		private String projectId;
 
@@ -54,20 +60,38 @@ public class CreateAntChainContractContentResponse extends AcsResponse {
 
 		private String content;
 
-		private String createTime;
+		private String contentId;
 
-		private String updateTime;
-
-		private String parentContentId;
-
-		private String contentName;
-
-		public String getContentId() {
-			return this.contentId;
+		public String getContentName() {
+			return this.contentName;
 		}
 
-		public void setContentId(String contentId) {
-			this.contentId = contentId;
+		public void setContentName(String contentName) {
+			this.contentName = contentName;
+		}
+
+		public String getParentContentId() {
+			return this.parentContentId;
+		}
+
+		public void setParentContentId(String parentContentId) {
+			this.parentContentId = parentContentId;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getProjectId() {
@@ -94,36 +118,12 @@ public class CreateAntChainContractContentResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getContentId() {
+			return this.contentId;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getParentContentId() {
-			return this.parentContentId;
-		}
-
-		public void setParentContentId(String parentContentId) {
-			this.parentContentId = parentContentId;
-		}
-
-		public String getContentName() {
-			return this.contentName;
-		}
-
-		public void setContentName(String contentName) {
-			this.contentName = contentName;
+		public void setContentId(String contentId) {
+			this.contentId = contentId;
 		}
 	}
 

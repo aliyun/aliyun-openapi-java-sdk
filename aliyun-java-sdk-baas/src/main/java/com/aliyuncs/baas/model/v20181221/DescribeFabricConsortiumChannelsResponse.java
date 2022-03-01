@@ -67,154 +67,58 @@ public class DescribeFabricConsortiumChannelsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Integer consortiumChannelId;
-
-		private String channelId;
-
-		private String channelName;
-
-		private String consortiumId;
-
-		private String state;
-
-		private String ownerBid;
-
-		private Long ownerUid;
-
-		private String ownerName;
-
-		private Integer memberCount;
-
-		private Integer chaincodeCount;
-
-		private Integer blockCount;
-
-		private String requestId;
-
-		private String createTime;
+		private Integer batchTimeout;
 
 		private String updateTime;
 
-		private Boolean deleted;
-
-		private String deleteTime;
-
-		private String consortiumName;
-
-		private String memberJoinedCount;
-
-		private Boolean needJoined;
-
-		private Integer batchTimeout;
-
-		private Integer maxMessageCount;
+		private Integer chaincodeCount;
 
 		private Integer preferredMaxBytes;
 
+		private String memberJoinedCount;
+
+		private String state;
+
+		private String createTime;
+
 		private Boolean supportChannelConfig;
 
-		public Integer getConsortiumChannelId() {
-			return this.consortiumChannelId;
+		private String ownerName;
+
+		private Long ownerUid;
+
+		private String ownerBid;
+
+		private Integer maxMessageCount;
+
+		private Integer memberCount;
+
+		private Boolean needJoined;
+
+		private String requestId;
+
+		private String consortiumId;
+
+		private String channelName;
+
+		private String deleteTime;
+
+		private String channelId;
+
+		private Integer consortiumChannelId;
+
+		private Boolean deleted;
+
+		private String consortiumName;
+
+		private Integer blockCount;
+
+		public Integer getBatchTimeout() {
+			return this.batchTimeout;
 		}
 
-		public void setConsortiumChannelId(Integer consortiumChannelId) {
-			this.consortiumChannelId = consortiumChannelId;
-		}
-
-		public String getChannelId() {
-			return this.channelId;
-		}
-
-		public void setChannelId(String channelId) {
-			this.channelId = channelId;
-		}
-
-		public String getChannelName() {
-			return this.channelName;
-		}
-
-		public void setChannelName(String channelName) {
-			this.channelName = channelName;
-		}
-
-		public String getConsortiumId() {
-			return this.consortiumId;
-		}
-
-		public void setConsortiumId(String consortiumId) {
-			this.consortiumId = consortiumId;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getOwnerBid() {
-			return this.ownerBid;
-		}
-
-		public void setOwnerBid(String ownerBid) {
-			this.ownerBid = ownerBid;
-		}
-
-		public Long getOwnerUid() {
-			return this.ownerUid;
-		}
-
-		public void setOwnerUid(Long ownerUid) {
-			this.ownerUid = ownerUid;
-		}
-
-		public String getOwnerName() {
-			return this.ownerName;
-		}
-
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
-		}
-
-		public Integer getMemberCount() {
-			return this.memberCount;
-		}
-
-		public void setMemberCount(Integer memberCount) {
-			this.memberCount = memberCount;
-		}
-
-		public Integer getChaincodeCount() {
-			return this.chaincodeCount;
-		}
-
-		public void setChaincodeCount(Integer chaincodeCount) {
-			this.chaincodeCount = chaincodeCount;
-		}
-
-		public Integer getBlockCount() {
-			return this.blockCount;
-		}
-
-		public void setBlockCount(Integer blockCount) {
-			this.blockCount = blockCount;
-		}
-
-		public String getRequestId() {
-			return this.requestId;
-		}
-
-		public void setRequestId(String requestId) {
-			this.requestId = requestId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setBatchTimeout(Integer batchTimeout) {
+			this.batchTimeout = batchTimeout;
 		}
 
 		public String getUpdateTime() {
@@ -225,60 +129,12 @@ public class DescribeFabricConsortiumChannelsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public Boolean getDeleted() {
-			return this.deleted;
+		public Integer getChaincodeCount() {
+			return this.chaincodeCount;
 		}
 
-		public void setDeleted(Boolean deleted) {
-			this.deleted = deleted;
-		}
-
-		public String getDeleteTime() {
-			return this.deleteTime;
-		}
-
-		public void setDeleteTime(String deleteTime) {
-			this.deleteTime = deleteTime;
-		}
-
-		public String getConsortiumName() {
-			return this.consortiumName;
-		}
-
-		public void setConsortiumName(String consortiumName) {
-			this.consortiumName = consortiumName;
-		}
-
-		public String getMemberJoinedCount() {
-			return this.memberJoinedCount;
-		}
-
-		public void setMemberJoinedCount(String memberJoinedCount) {
-			this.memberJoinedCount = memberJoinedCount;
-		}
-
-		public Boolean getNeedJoined() {
-			return this.needJoined;
-		}
-
-		public void setNeedJoined(Boolean needJoined) {
-			this.needJoined = needJoined;
-		}
-
-		public Integer getBatchTimeout() {
-			return this.batchTimeout;
-		}
-
-		public void setBatchTimeout(Integer batchTimeout) {
-			this.batchTimeout = batchTimeout;
-		}
-
-		public Integer getMaxMessageCount() {
-			return this.maxMessageCount;
-		}
-
-		public void setMaxMessageCount(Integer maxMessageCount) {
-			this.maxMessageCount = maxMessageCount;
+		public void setChaincodeCount(Integer chaincodeCount) {
+			this.chaincodeCount = chaincodeCount;
 		}
 
 		public Integer getPreferredMaxBytes() {
@@ -289,12 +145,156 @@ public class DescribeFabricConsortiumChannelsResponse extends AcsResponse {
 			this.preferredMaxBytes = preferredMaxBytes;
 		}
 
+		public String getMemberJoinedCount() {
+			return this.memberJoinedCount;
+		}
+
+		public void setMemberJoinedCount(String memberJoinedCount) {
+			this.memberJoinedCount = memberJoinedCount;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public Boolean getSupportChannelConfig() {
 			return this.supportChannelConfig;
 		}
 
 		public void setSupportChannelConfig(Boolean supportChannelConfig) {
 			this.supportChannelConfig = supportChannelConfig;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public Long getOwnerUid() {
+			return this.ownerUid;
+		}
+
+		public void setOwnerUid(Long ownerUid) {
+			this.ownerUid = ownerUid;
+		}
+
+		public String getOwnerBid() {
+			return this.ownerBid;
+		}
+
+		public void setOwnerBid(String ownerBid) {
+			this.ownerBid = ownerBid;
+		}
+
+		public Integer getMaxMessageCount() {
+			return this.maxMessageCount;
+		}
+
+		public void setMaxMessageCount(Integer maxMessageCount) {
+			this.maxMessageCount = maxMessageCount;
+		}
+
+		public Integer getMemberCount() {
+			return this.memberCount;
+		}
+
+		public void setMemberCount(Integer memberCount) {
+			this.memberCount = memberCount;
+		}
+
+		public Boolean getNeedJoined() {
+			return this.needJoined;
+		}
+
+		public void setNeedJoined(Boolean needJoined) {
+			this.needJoined = needJoined;
+		}
+
+		public String getRequestId() {
+			return this.requestId;
+		}
+
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
+		}
+
+		public String getConsortiumId() {
+			return this.consortiumId;
+		}
+
+		public void setConsortiumId(String consortiumId) {
+			this.consortiumId = consortiumId;
+		}
+
+		public String getChannelName() {
+			return this.channelName;
+		}
+
+		public void setChannelName(String channelName) {
+			this.channelName = channelName;
+		}
+
+		public String getDeleteTime() {
+			return this.deleteTime;
+		}
+
+		public void setDeleteTime(String deleteTime) {
+			this.deleteTime = deleteTime;
+		}
+
+		public String getChannelId() {
+			return this.channelId;
+		}
+
+		public void setChannelId(String channelId) {
+			this.channelId = channelId;
+		}
+
+		public Integer getConsortiumChannelId() {
+			return this.consortiumChannelId;
+		}
+
+		public void setConsortiumChannelId(Integer consortiumChannelId) {
+			this.consortiumChannelId = consortiumChannelId;
+		}
+
+		public Boolean getDeleted() {
+			return this.deleted;
+		}
+
+		public void setDeleted(Boolean deleted) {
+			this.deleted = deleted;
+		}
+
+		public String getConsortiumName() {
+			return this.consortiumName;
+		}
+
+		public void setConsortiumName(String consortiumName) {
+			this.consortiumName = consortiumName;
+		}
+
+		public Integer getBlockCount() {
+			return this.blockCount;
+		}
+
+		public void setBlockCount(Integer blockCount) {
+			this.blockCount = blockCount;
 		}
 	}
 

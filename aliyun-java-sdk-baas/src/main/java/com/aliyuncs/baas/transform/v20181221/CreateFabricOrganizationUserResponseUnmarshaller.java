@@ -28,12 +28,12 @@ public class CreateFabricOrganizationUserResponseUnmarshaller {
 		createFabricOrganizationUserResponse.setErrorCode(_ctx.integerValue("CreateFabricOrganizationUserResponse.ErrorCode"));
 
 		Result result = new Result();
+		result.setPassword(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.Password"));
+		result.setExpireTime(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.ExpireTime"));
+		result.setCreateTime(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.CreateTime"));
 		result.setOrganizationId(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.OrganizationId"));
 		result.setUsername(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.Username"));
-		result.setPassword(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.Password"));
 		result.setFullname(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.Fullname"));
-		result.setCreateTime(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.CreateTime"));
-		result.setExpireTime(_ctx.stringValue("CreateFabricOrganizationUserResponse.Result.ExpireTime"));
 		createFabricOrganizationUserResponse.setResult(result);
 	 
 	 	return createFabricOrganizationUserResponse;

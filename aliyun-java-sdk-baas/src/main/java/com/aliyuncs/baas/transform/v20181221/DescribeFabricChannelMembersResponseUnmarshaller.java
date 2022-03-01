@@ -33,15 +33,15 @@ public class DescribeFabricChannelMembersResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricChannelMembersResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setChannelId(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].ChannelId"));
-			resultItem.setOrganizationId(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].OrganizationId"));
 			resultItem.setWithPeer(_ctx.booleanValue("DescribeFabricChannelMembersResponse.Result["+ i +"].WithPeer"));
+			resultItem.setAcceptTime(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].AcceptTime"));
+			resultItem.setOrganizationDomain(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].OrganizationDomain"));
 			resultItem.setState(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].State"));
 			resultItem.setInviteTime(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].InviteTime"));
-			resultItem.setAcceptTime(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].AcceptTime"));
+			resultItem.setChannelId(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].ChannelId"));
 			resultItem.setOrganizationName(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].OrganizationName"));
-			resultItem.setOrganizationDomain(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].OrganizationDomain"));
 			resultItem.setOrganizationDescription(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].OrganizationDescription"));
+			resultItem.setOrganizationId(_ctx.stringValue("DescribeFabricChannelMembersResponse.Result["+ i +"].OrganizationId"));
 
 			result.add(resultItem);
 		}

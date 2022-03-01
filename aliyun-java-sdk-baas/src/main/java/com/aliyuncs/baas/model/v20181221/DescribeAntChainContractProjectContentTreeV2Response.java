@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainContractProjectContentTreeV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
 
 	private String result;
 
-	private String resultCode;
-
-	private String resultMessage;
-
 	private Boolean success;
-
-	private String httpStatusCode;
 
 	private String code;
 
+	private String resultMessage;
+
 	private String message;
+
+	private String resultCode;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,36 +64,12 @@ public class DescribeAntChainContractProjectContentTreeV2Response extends AcsRes
 		this.result = result;
 	}
 
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -96,12 +80,28 @@ public class DescribeAntChainContractProjectContentTreeV2Response extends AcsRes
 		this.code = code;
 	}
 
+	public String getResultMessage() {
+		return this.resultMessage;
+	}
+
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	@Override

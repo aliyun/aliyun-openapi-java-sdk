@@ -28,12 +28,12 @@ public class ResetFabricOrganizationUserPasswordResponseUnmarshaller {
 		resetFabricOrganizationUserPasswordResponse.setErrorCode(_ctx.integerValue("ResetFabricOrganizationUserPasswordResponse.ErrorCode"));
 
 		Result result = new Result();
+		result.setPassword(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.Password"));
+		result.setExpireTime(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.ExpireTime"));
+		result.setCreateTime(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.CreateTime"));
 		result.setOrganizationId(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.OrganizationId"));
 		result.setUsername(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.Username"));
-		result.setPassword(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.Password"));
 		result.setFullname(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.Fullname"));
-		result.setCreateTime(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.CreateTime"));
-		result.setExpireTime(_ctx.stringValue("ResetFabricOrganizationUserPasswordResponse.Result.ExpireTime"));
 		resetFabricOrganizationUserPasswordResponse.setResult(result);
 	 
 	 	return resetFabricOrganizationUserPasswordResponse;

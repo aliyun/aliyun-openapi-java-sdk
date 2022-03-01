@@ -31,11 +31,11 @@ public class DescribeAntChainTransactionStatisticsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainTransactionStatisticsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setAntChainId(_ctx.stringValue("DescribeAntChainTransactionStatisticsResponse.Result["+ i +"].AntChainId"));
 			resultItem.setDt(_ctx.stringValue("DescribeAntChainTransactionStatisticsResponse.Result["+ i +"].Dt"));
-			resultItem.setTransCount(_ctx.longValue("DescribeAntChainTransactionStatisticsResponse.Result["+ i +"].TransCount"));
-			resultItem.setLastSumBlockHeight(_ctx.longValue("DescribeAntChainTransactionStatisticsResponse.Result["+ i +"].LastSumBlockHeight"));
 			resultItem.setCreatTime(_ctx.longValue("DescribeAntChainTransactionStatisticsResponse.Result["+ i +"].CreatTime"));
+			resultItem.setLastSumBlockHeight(_ctx.longValue("DescribeAntChainTransactionStatisticsResponse.Result["+ i +"].LastSumBlockHeight"));
+			resultItem.setTransCount(_ctx.longValue("DescribeAntChainTransactionStatisticsResponse.Result["+ i +"].TransCount"));
+			resultItem.setAntChainId(_ctx.stringValue("DescribeAntChainTransactionStatisticsResponse.Result["+ i +"].AntChainId"));
 
 			result.add(resultItem);
 		}

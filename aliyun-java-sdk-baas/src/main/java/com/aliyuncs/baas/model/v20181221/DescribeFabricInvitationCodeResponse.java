@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFabricInvitationCodeResponse extends AcsResponse {
 
-	private String requestId;
+	private String dynamicMessage;
 
-	private Boolean success;
+	private String requestId;
 
 	private Integer errorCode;
 
+	private Boolean success;
+
 	private String dynamicCode;
 
-	private String dynamicMessage;
-
 	private Result result;
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +50,6 @@ public class DescribeFabricInvitationCodeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Integer getErrorCode() {
@@ -60,20 +60,20 @@ public class DescribeFabricInvitationCodeResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public String getDynamicCode() {
 		return this.dynamicCode;
 	}
 
 	public void setDynamicCode(String dynamicCode) {
 		this.dynamicCode = dynamicCode;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
 	}
 
 	public Result getResult() {
@@ -86,51 +86,27 @@ public class DescribeFabricInvitationCodeResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer invitationId;
-
-		private String code;
-
-		private String sendTime;
-
 		private Long senderId;
-
-		private String senderBid;
-
-		private String consortiumId;
-
-		private String senderName;
-
-		private Boolean accepted;
-
-		private String expireTime;
 
 		private String email;
 
+		private String senderBid;
+
+		private String expireTime;
+
+		private String consortiumId;
+
+		private Integer invitationId;
+
+		private String senderName;
+
+		private String code;
+
 		private String url;
 
-		public Integer getInvitationId() {
-			return this.invitationId;
-		}
+		private Boolean accepted;
 
-		public void setInvitationId(Integer invitationId) {
-			this.invitationId = invitationId;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public String getSendTime() {
-			return this.sendTime;
-		}
-
-		public void setSendTime(String sendTime) {
-			this.sendTime = sendTime;
-		}
+		private String sendTime;
 
 		public Long getSenderId() {
 			return this.senderId;
@@ -138,46 +114,6 @@ public class DescribeFabricInvitationCodeResponse extends AcsResponse {
 
 		public void setSenderId(Long senderId) {
 			this.senderId = senderId;
-		}
-
-		public String getSenderBid() {
-			return this.senderBid;
-		}
-
-		public void setSenderBid(String senderBid) {
-			this.senderBid = senderBid;
-		}
-
-		public String getConsortiumId() {
-			return this.consortiumId;
-		}
-
-		public void setConsortiumId(String consortiumId) {
-			this.consortiumId = consortiumId;
-		}
-
-		public String getSenderName() {
-			return this.senderName;
-		}
-
-		public void setSenderName(String senderName) {
-			this.senderName = senderName;
-		}
-
-		public Boolean getAccepted() {
-			return this.accepted;
-		}
-
-		public void setAccepted(Boolean accepted) {
-			this.accepted = accepted;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
 		}
 
 		public String getEmail() {
@@ -188,12 +124,76 @@ public class DescribeFabricInvitationCodeResponse extends AcsResponse {
 			this.email = email;
 		}
 
+		public String getSenderBid() {
+			return this.senderBid;
+		}
+
+		public void setSenderBid(String senderBid) {
+			this.senderBid = senderBid;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getConsortiumId() {
+			return this.consortiumId;
+		}
+
+		public void setConsortiumId(String consortiumId) {
+			this.consortiumId = consortiumId;
+		}
+
+		public Integer getInvitationId() {
+			return this.invitationId;
+		}
+
+		public void setInvitationId(Integer invitationId) {
+			this.invitationId = invitationId;
+		}
+
+		public String getSenderName() {
+			return this.senderName;
+		}
+
+		public void setSenderName(String senderName) {
+			this.senderName = senderName;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
 		public String getUrl() {
 			return this.url;
 		}
 
 		public void setUrl(String url) {
 			this.url = url;
+		}
+
+		public Boolean getAccepted() {
+			return this.accepted;
+		}
+
+		public void setAccepted(Boolean accepted) {
+			this.accepted = accepted;
+		}
+
+		public String getSendTime() {
+			return this.sendTime;
+		}
+
+		public void setSendTime(String sendTime) {
+			this.sendTime = sendTime;
 		}
 	}
 

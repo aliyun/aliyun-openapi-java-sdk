@@ -30,10 +30,10 @@ public class DescribeAntChainContractProjectContentTreeResponseUnmarshaller {
 		describeAntChainContractProjectContentTreeResponse.setRequestId(_ctx.stringValue("DescribeAntChainContractProjectContentTreeResponse.RequestId"));
 
 		Result result = new Result();
-		result.setProjectId(_ctx.stringValue("DescribeAntChainContractProjectContentTreeResponse.Result.ProjectId"));
-		result.setProjectName(_ctx.stringValue("DescribeAntChainContractProjectContentTreeResponse.Result.ProjectName"));
 		result.setProjectVersion(_ctx.stringValue("DescribeAntChainContractProjectContentTreeResponse.Result.ProjectVersion"));
 		result.setProjectDescription(_ctx.stringValue("DescribeAntChainContractProjectContentTreeResponse.Result.ProjectDescription"));
+		result.setProjectId(_ctx.stringValue("DescribeAntChainContractProjectContentTreeResponse.Result.ProjectId"));
+		result.setProjectName(_ctx.stringValue("DescribeAntChainContractProjectContentTreeResponse.Result.ProjectName"));
 
 		List<Map<Object, Object>> children = _ctx.listMapValue("DescribeAntChainContractProjectContentTreeResponse.Result.Children");
 		result.setChildren(children);

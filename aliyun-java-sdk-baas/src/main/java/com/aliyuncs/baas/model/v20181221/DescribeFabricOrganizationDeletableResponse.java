@@ -66,62 +66,30 @@ public class DescribeFabricOrganizationDeletableResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String organizationId;
-
-		private String organizationName;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String codeName;
+		private Boolean deletable;
 
 		private String domain;
 
-		private String organizationDescription;
-
 		private String state;
 
-		private Boolean deletable;
+		private String zoneId;
 
-		public String getOrganizationId() {
-			return this.organizationId;
+		private String organizationName;
+
+		private String codeName;
+
+		private String organizationDescription;
+
+		private String regionId;
+
+		private String organizationId;
+
+		public Boolean getDeletable() {
+			return this.deletable;
 		}
 
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
-
-		public String getOrganizationName() {
-			return this.organizationName;
-		}
-
-		public void setOrganizationName(String organizationName) {
-			this.organizationName = organizationName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getCodeName() {
-			return this.codeName;
-		}
-
-		public void setCodeName(String codeName) {
-			this.codeName = codeName;
+		public void setDeletable(Boolean deletable) {
+			this.deletable = deletable;
 		}
 
 		public String getDomain() {
@@ -132,14 +100,6 @@ public class DescribeFabricOrganizationDeletableResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public String getOrganizationDescription() {
-			return this.organizationDescription;
-		}
-
-		public void setOrganizationDescription(String organizationDescription) {
-			this.organizationDescription = organizationDescription;
-		}
-
 		public String getState() {
 			return this.state;
 		}
@@ -148,12 +108,52 @@ public class DescribeFabricOrganizationDeletableResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public Boolean getDeletable() {
-			return this.deletable;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setDeletable(Boolean deletable) {
-			this.deletable = deletable;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getOrganizationName() {
+			return this.organizationName;
+		}
+
+		public void setOrganizationName(String organizationName) {
+			this.organizationName = organizationName;
+		}
+
+		public String getCodeName() {
+			return this.codeName;
+		}
+
+		public void setCodeName(String codeName) {
+			this.codeName = codeName;
+		}
+
+		public String getOrganizationDescription() {
+			return this.organizationDescription;
+		}
+
+		public void setOrganizationDescription(String organizationDescription) {
+			this.organizationDescription = organizationDescription;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
 		}
 	}
 

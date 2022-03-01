@@ -67,36 +67,28 @@ public class DescribeFabricOrganizationMembersResponse extends AcsResponse {
 
 	public static class DescribeOrganizationMembers {
 
-		private String organizationId;
-
-		private String organizationName;
+		private String domain;
 
 		private String consortiumId;
 
-		private String consortiumName;
-
-		private String domain;
-
 		private String description;
-
-		private String joinedTime;
 
 		private String state;
 
-		public String getOrganizationId() {
-			return this.organizationId;
+		private String organizationName;
+
+		private String joinedTime;
+
+		private String consortiumName;
+
+		private String organizationId;
+
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
-
-		public String getOrganizationName() {
-			return this.organizationName;
-		}
-
-		public void setOrganizationName(String organizationName) {
-			this.organizationName = organizationName;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public String getConsortiumId() {
@@ -107,28 +99,28 @@ public class DescribeFabricOrganizationMembersResponse extends AcsResponse {
 			this.consortiumId = consortiumId;
 		}
 
-		public String getConsortiumName() {
-			return this.consortiumName;
-		}
-
-		public void setConsortiumName(String consortiumName) {
-			this.consortiumName = consortiumName;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getOrganizationName() {
+			return this.organizationName;
+		}
+
+		public void setOrganizationName(String organizationName) {
+			this.organizationName = organizationName;
 		}
 
 		public String getJoinedTime() {
@@ -139,12 +131,20 @@ public class DescribeFabricOrganizationMembersResponse extends AcsResponse {
 			this.joinedTime = joinedTime;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getConsortiumName() {
+			return this.consortiumName;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setConsortiumName(String consortiumName) {
+			this.consortiumName = consortiumName;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
 		}
 	}
 

@@ -67,63 +67,39 @@ public class DescribeFabricConsortiumChaincodesResponse extends AcsResponse {
 
 	public static class ChaincodeVO {
 
-		private String chaincodeName;
-
-		private String chaincodeVersion;
-
-		private String input;
-
 		private Integer type;
-
-		private String state;
-
-		private String path;
-
-		private String chaincodeId;
-
-		private Boolean install;
-
-		private String message;
-
-		private String createTime;
-
-		private String deployTime;
-
-		private String channelName;
 
 		private String endorsePolicy;
 
-		private String consortiumId;
+		private String state;
 
-		private String providerId;
+		private String createTime;
+
+		private String chaincodeId;
 
 		private String providerName;
 
+		private String message;
+
+		private String chaincodeName;
+
+		private Boolean install;
+
+		private String input;
+
+		private String providerId;
+
+		private String deployTime;
+
+		private String chaincodeVersion;
+
+		private String consortiumId;
+
+		private String channelName;
+
 		private String channelId;
 
-		public String getChaincodeName() {
-			return this.chaincodeName;
-		}
-
-		public void setChaincodeName(String chaincodeName) {
-			this.chaincodeName = chaincodeName;
-		}
-
-		public String getChaincodeVersion() {
-			return this.chaincodeVersion;
-		}
-
-		public void setChaincodeVersion(String chaincodeVersion) {
-			this.chaincodeVersion = chaincodeVersion;
-		}
-
-		public String getInput() {
-			return this.input;
-		}
-
-		public void setInput(String input) {
-			this.input = input;
-		}
+		private String path;
 
 		public Integer getType() {
 			return this.type;
@@ -131,70 +107,6 @@ public class DescribeFabricConsortiumChaincodesResponse extends AcsResponse {
 
 		public void setType(Integer type) {
 			this.type = type;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getPath() {
-			return this.path;
-		}
-
-		public void setPath(String path) {
-			this.path = path;
-		}
-
-		public String getChaincodeId() {
-			return this.chaincodeId;
-		}
-
-		public void setChaincodeId(String chaincodeId) {
-			this.chaincodeId = chaincodeId;
-		}
-
-		public Boolean getInstall() {
-			return this.install;
-		}
-
-		public void setInstall(Boolean install) {
-			this.install = install;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getDeployTime() {
-			return this.deployTime;
-		}
-
-		public void setDeployTime(String deployTime) {
-			this.deployTime = deployTime;
-		}
-
-		public String getChannelName() {
-			return this.channelName;
-		}
-
-		public void setChannelName(String channelName) {
-			this.channelName = channelName;
 		}
 
 		public String getEndorsePolicy() {
@@ -205,20 +117,28 @@ public class DescribeFabricConsortiumChaincodesResponse extends AcsResponse {
 			this.endorsePolicy = endorsePolicy;
 		}
 
-		public String getConsortiumId() {
-			return this.consortiumId;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setConsortiumId(String consortiumId) {
-			this.consortiumId = consortiumId;
+		public void setState(String state) {
+			this.state = state;
 		}
 
-		public String getProviderId() {
-			return this.providerId;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setProviderId(String providerId) {
-			this.providerId = providerId;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getChaincodeId() {
+			return this.chaincodeId;
+		}
+
+		public void setChaincodeId(String chaincodeId) {
+			this.chaincodeId = chaincodeId;
 		}
 
 		public String getProviderName() {
@@ -229,12 +149,92 @@ public class DescribeFabricConsortiumChaincodesResponse extends AcsResponse {
 			this.providerName = providerName;
 		}
 
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getChaincodeName() {
+			return this.chaincodeName;
+		}
+
+		public void setChaincodeName(String chaincodeName) {
+			this.chaincodeName = chaincodeName;
+		}
+
+		public Boolean getInstall() {
+			return this.install;
+		}
+
+		public void setInstall(Boolean install) {
+			this.install = install;
+		}
+
+		public String getInput() {
+			return this.input;
+		}
+
+		public void setInput(String input) {
+			this.input = input;
+		}
+
+		public String getProviderId() {
+			return this.providerId;
+		}
+
+		public void setProviderId(String providerId) {
+			this.providerId = providerId;
+		}
+
+		public String getDeployTime() {
+			return this.deployTime;
+		}
+
+		public void setDeployTime(String deployTime) {
+			this.deployTime = deployTime;
+		}
+
+		public String getChaincodeVersion() {
+			return this.chaincodeVersion;
+		}
+
+		public void setChaincodeVersion(String chaincodeVersion) {
+			this.chaincodeVersion = chaincodeVersion;
+		}
+
+		public String getConsortiumId() {
+			return this.consortiumId;
+		}
+
+		public void setConsortiumId(String consortiumId) {
+			this.consortiumId = consortiumId;
+		}
+
+		public String getChannelName() {
+			return this.channelName;
+		}
+
+		public void setChannelName(String channelName) {
+			this.channelName = channelName;
+		}
+
 		public String getChannelId() {
 			return this.channelId;
 		}
 
 		public void setChannelId(String channelId) {
 			this.channelId = channelId;
+		}
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
 		}
 	}
 

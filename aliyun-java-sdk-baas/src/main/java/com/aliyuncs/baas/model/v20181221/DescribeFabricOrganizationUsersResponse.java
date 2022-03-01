@@ -67,79 +67,23 @@ public class DescribeFabricOrganizationUsersResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String callerBid;
-
-		private Long callerUid;
-
-		private String regionId;
-
-		private String organizationId;
-
-		private String username;
-
-		private String fullName;
-
-		private String createTime;
-
 		private String expireTime;
 
 		private String attrs;
 
-		public String getCallerBid() {
-			return this.callerBid;
-		}
+		private String callerBid;
 
-		public void setCallerBid(String callerBid) {
-			this.callerBid = callerBid;
-		}
+		private String createTime;
 
-		public Long getCallerUid() {
-			return this.callerUid;
-		}
+		private String fullName;
 
-		public void setCallerUid(Long callerUid) {
-			this.callerUid = callerUid;
-		}
+		private Long callerUid;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
+		private String username;
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String organizationId;
 
-		public String getOrganizationId() {
-			return this.organizationId;
-		}
-
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
-
-		public String getUsername() {
-			return this.username;
-		}
-
-		public void setUsername(String username) {
-			this.username = username;
-		}
-
-		public String getFullName() {
-			return this.fullName;
-		}
-
-		public void setFullName(String fullName) {
-			this.fullName = fullName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String regionId;
 
 		public String getExpireTime() {
 			return this.expireTime;
@@ -155,6 +99,62 @@ public class DescribeFabricOrganizationUsersResponse extends AcsResponse {
 
 		public void setAttrs(String attrs) {
 			this.attrs = attrs;
+		}
+
+		public String getCallerBid() {
+			return this.callerBid;
+		}
+
+		public void setCallerBid(String callerBid) {
+			this.callerBid = callerBid;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getFullName() {
+			return this.fullName;
+		}
+
+		public void setFullName(String fullName) {
+			this.fullName = fullName;
+		}
+
+		public Long getCallerUid() {
+			return this.callerUid;
+		}
+
+		public void setCallerUid(Long callerUid) {
+			this.callerUid = callerUid;
+		}
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

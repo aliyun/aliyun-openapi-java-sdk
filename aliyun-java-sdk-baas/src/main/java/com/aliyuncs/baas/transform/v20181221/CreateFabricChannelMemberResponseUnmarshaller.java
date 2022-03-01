@@ -23,9 +23,9 @@ public class CreateFabricChannelMemberResponseUnmarshaller {
 	public static CreateFabricChannelMemberResponse unmarshall(CreateFabricChannelMemberResponse createFabricChannelMemberResponse, UnmarshallerContext _ctx) {
 		
 		createFabricChannelMemberResponse.setRequestId(_ctx.stringValue("CreateFabricChannelMemberResponse.RequestId"));
+		createFabricChannelMemberResponse.setResult(_ctx.booleanValue("CreateFabricChannelMemberResponse.Result"));
 		createFabricChannelMemberResponse.setSuccess(_ctx.booleanValue("CreateFabricChannelMemberResponse.Success"));
 		createFabricChannelMemberResponse.setErrorCode(_ctx.integerValue("CreateFabricChannelMemberResponse.ErrorCode"));
-		createFabricChannelMemberResponse.setResult(_ctx.booleanValue("CreateFabricChannelMemberResponse.Result"));
 	 
 	 	return createFabricChannelMemberResponse;
 	}

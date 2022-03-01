@@ -23,9 +23,9 @@ public class CreateFabricConsortiumMemberResponseUnmarshaller {
 	public static CreateFabricConsortiumMemberResponse unmarshall(CreateFabricConsortiumMemberResponse createFabricConsortiumMemberResponse, UnmarshallerContext _ctx) {
 		
 		createFabricConsortiumMemberResponse.setRequestId(_ctx.stringValue("CreateFabricConsortiumMemberResponse.RequestId"));
+		createFabricConsortiumMemberResponse.setResult(_ctx.booleanValue("CreateFabricConsortiumMemberResponse.Result"));
 		createFabricConsortiumMemberResponse.setSuccess(_ctx.booleanValue("CreateFabricConsortiumMemberResponse.Success"));
 		createFabricConsortiumMemberResponse.setErrorCode(_ctx.integerValue("CreateFabricConsortiumMemberResponse.ErrorCode"));
-		createFabricConsortiumMemberResponse.setResult(_ctx.booleanValue("CreateFabricConsortiumMemberResponse.Result"));
 	 
 	 	return createFabricConsortiumMemberResponse;
 	}

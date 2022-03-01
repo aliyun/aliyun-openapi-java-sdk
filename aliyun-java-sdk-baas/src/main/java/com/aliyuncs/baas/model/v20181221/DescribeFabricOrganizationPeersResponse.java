@@ -67,54 +67,30 @@ public class DescribeFabricOrganizationPeersResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String organizationPeerName;
-
-		private Boolean isAnchor;
-
-		private String intranetIp;
-
-		private String internetIp;
+		private String updateTime;
 
 		private String domain;
 
-		private Integer port;
-
-		private String instanceType;
+		private String internetIp;
 
 		private String createTime;
 
-		private String updateTime;
+		private Boolean isAnchor;
 
-		public String getOrganizationPeerName() {
-			return this.organizationPeerName;
+		private String instanceType;
+
+		private Integer port;
+
+		private String organizationPeerName;
+
+		private String intranetIp;
+
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setOrganizationPeerName(String organizationPeerName) {
-			this.organizationPeerName = organizationPeerName;
-		}
-
-		public Boolean getIsAnchor() {
-			return this.isAnchor;
-		}
-
-		public void setIsAnchor(Boolean isAnchor) {
-			this.isAnchor = isAnchor;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getDomain() {
@@ -125,20 +101,12 @@ public class DescribeFabricOrganizationPeersResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public Integer getPort() {
-			return this.port;
+		public String getInternetIp() {
+			return this.internetIp;
 		}
 
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
 		public String getCreateTime() {
@@ -149,12 +117,44 @@ public class DescribeFabricOrganizationPeersResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public Boolean getIsAnchor() {
+			return this.isAnchor;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setIsAnchor(Boolean isAnchor) {
+			this.isAnchor = isAnchor;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getOrganizationPeerName() {
+			return this.organizationPeerName;
+		}
+
+		public void setOrganizationPeerName(String organizationPeerName) {
+			this.organizationPeerName = organizationPeerName;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
 		}
 	}
 

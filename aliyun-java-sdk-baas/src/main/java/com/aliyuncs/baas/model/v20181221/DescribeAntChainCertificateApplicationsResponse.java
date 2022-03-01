@@ -69,17 +69,49 @@ public class DescribeAntChainCertificateApplicationsResponse extends AcsResponse
 
 		public static class CertificateApplicationsItem {
 
+			private String status;
+
+			private Long updatetime;
+
+			private Long createtime;
+
+			private String bid;
+
 			private String antChainId;
 
 			private String username;
 
-			private Long createtime;
+			public String getStatus() {
+				return this.status;
+			}
 
-			private Long updatetime;
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
-			private String bid;
+			public Long getUpdatetime() {
+				return this.updatetime;
+			}
 
-			private String status;
+			public void setUpdatetime(Long updatetime) {
+				this.updatetime = updatetime;
+			}
+
+			public Long getCreatetime() {
+				return this.createtime;
+			}
+
+			public void setCreatetime(Long createtime) {
+				this.createtime = createtime;
+			}
+
+			public String getBid() {
+				return this.bid;
+			}
+
+			public void setBid(String bid) {
+				this.bid = bid;
+			}
 
 			public String getAntChainId() {
 				return this.antChainId;
@@ -95,38 +127,6 @@ public class DescribeAntChainCertificateApplicationsResponse extends AcsResponse
 
 			public void setUsername(String username) {
 				this.username = username;
-			}
-
-			public Long getCreatetime() {
-				return this.createtime;
-			}
-
-			public void setCreatetime(Long createtime) {
-				this.createtime = createtime;
-			}
-
-			public Long getUpdatetime() {
-				return this.updatetime;
-			}
-
-			public void setUpdatetime(Long updatetime) {
-				this.updatetime = updatetime;
-			}
-
-			public String getBid() {
-				return this.bid;
-			}
-
-			public void setBid(String bid) {
-				this.bid = bid;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
 			}
 		}
 

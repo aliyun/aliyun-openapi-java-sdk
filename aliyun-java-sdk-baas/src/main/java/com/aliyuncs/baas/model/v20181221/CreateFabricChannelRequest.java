@@ -32,9 +32,9 @@ public class CreateFabricChannelRequest extends RpcAcsRequest<CreateFabricChanne
 
 	private String channelName;
 
-	private List<Organization> organizations;
-
 	private Integer batchTimeout;
+
+	private List<Organization> organizations;
 
 	private String consortiumId;
 	public CreateFabricChannelRequest() {
@@ -79,6 +79,17 @@ public class CreateFabricChannelRequest extends RpcAcsRequest<CreateFabricChanne
 		}
 	}
 
+	public Integer getBatchTimeout() {
+		return this.batchTimeout;
+	}
+
+	public void setBatchTimeout(Integer batchTimeout) {
+		this.batchTimeout = batchTimeout;
+		if(batchTimeout != null){
+			putBodyParameter("BatchTimeout", batchTimeout.toString());
+		}
+	}
+
 	public List<Organization> getOrganizations() {
 		return this.organizations;
 	}
@@ -90,17 +101,6 @@ public class CreateFabricChannelRequest extends RpcAcsRequest<CreateFabricChanne
 				putQueryParameter("Organization." + (depth1 + 1) + ".Id" , organizations.get(depth1).getId());
 			}
 		}	
-	}
-
-	public Integer getBatchTimeout() {
-		return this.batchTimeout;
-	}
-
-	public void setBatchTimeout(Integer batchTimeout) {
-		this.batchTimeout = batchTimeout;
-		if(batchTimeout != null){
-			putBodyParameter("BatchTimeout", batchTimeout.toString());
-		}
 	}
 
 	public String getConsortiumId() {

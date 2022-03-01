@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response exten
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response exten
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -97,6 +89,14 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response exten
 		this.message = message;
 	}
 
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
 	public Result getResult() {
 		return this.result;
 	}
@@ -107,23 +107,15 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response exten
 
 	public static class Result {
 
-		private String antChainId;
-
 		private String qRCodeType;
 
 		private String authorizationType;
 
+		private String antChainId;
+
 		private List<AuthorizedUserListItem> authorizedUserList;
 
 		private Pagination pagination;
-
-		public String getAntChainId() {
-			return this.antChainId;
-		}
-
-		public void setAntChainId(String antChainId) {
-			this.antChainId = antChainId;
-		}
 
 		public String getQRCodeType() {
 			return this.qRCodeType;
@@ -139,6 +131,14 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response exten
 
 		public void setAuthorizationType(String authorizationType) {
 			this.authorizationType = authorizationType;
+		}
+
+		public String getAntChainId() {
+			return this.antChainId;
+		}
+
+		public void setAntChainId(String antChainId) {
+			this.antChainId = antChainId;
 		}
 
 		public List<AuthorizedUserListItem> getAuthorizedUserList() {
@@ -159,17 +159,9 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response exten
 
 		public static class AuthorizedUserListItem {
 
-			private String phone;
-
 			private String gmtAuthorized;
 
-			public String getPhone() {
-				return this.phone;
-			}
-
-			public void setPhone(String phone) {
-				this.phone = phone;
-			}
+			private String phone;
 
 			public String getGmtAuthorized() {
 				return this.gmtAuthorized;
@@ -177,6 +169,14 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response exten
 
 			public void setGmtAuthorized(String gmtAuthorized) {
 				this.gmtAuthorized = gmtAuthorized;
+			}
+
+			public String getPhone() {
+				return this.phone;
+			}
+
+			public void setPhone(String phone) {
+				this.phone = phone;
 			}
 		}
 

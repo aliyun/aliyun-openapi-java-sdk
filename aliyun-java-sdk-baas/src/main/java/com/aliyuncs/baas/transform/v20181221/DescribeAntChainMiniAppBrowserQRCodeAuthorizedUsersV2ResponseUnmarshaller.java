@@ -29,17 +29,17 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2ResponseUnmars
 	public static DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response unmarshall(DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setRequestId(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.RequestId"));
-		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setResultCode(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.ResultCode"));
-		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.ResultMessage"));
-		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Success"));
 		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.HttpStatusCode"));
+		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Success"));
+		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.ResultMessage"));
 		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setCode(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Code"));
 		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setMessage(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Message"));
+		describeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.setResultCode(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.ResultCode"));
 
 		Result result = new Result();
-		result.setAntChainId(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.AntChainId"));
 		result.setQRCodeType(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.QRCodeType"));
 		result.setAuthorizationType(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.AuthorizationType"));
+		result.setAntChainId(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.AntChainId"));
 
 		Pagination pagination = new Pagination();
 		pagination.setPageSize(_ctx.integerValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.Pagination.PageSize"));
@@ -50,8 +50,8 @@ public class DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2ResponseUnmars
 		List<AuthorizedUserListItem> authorizedUserList = new ArrayList<AuthorizedUserListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.AuthorizedUserList.Length"); i++) {
 			AuthorizedUserListItem authorizedUserListItem = new AuthorizedUserListItem();
-			authorizedUserListItem.setPhone(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.AuthorizedUserList["+ i +"].Phone"));
 			authorizedUserListItem.setGmtAuthorized(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.AuthorizedUserList["+ i +"].GmtAuthorized"));
+			authorizedUserListItem.setPhone(_ctx.stringValue("DescribeAntChainMiniAppBrowserQRCodeAuthorizedUsersV2Response.Result.AuthorizedUserList["+ i +"].Phone"));
 
 			authorizedUserList.add(authorizedUserListItem);
 		}

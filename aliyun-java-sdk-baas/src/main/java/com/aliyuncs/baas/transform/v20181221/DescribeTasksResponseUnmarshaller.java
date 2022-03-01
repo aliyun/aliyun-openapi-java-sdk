@@ -27,23 +27,23 @@ public class DescribeTasksResponseUnmarshaller {
 	public static DescribeTasksResponse unmarshall(DescribeTasksResponse describeTasksResponse, UnmarshallerContext _ctx) {
 		
 		describeTasksResponse.setRequestId(_ctx.stringValue("DescribeTasksResponse.RequestId"));
-		describeTasksResponse.setSuccess(_ctx.booleanValue("DescribeTasksResponse.Success"));
-		describeTasksResponse.setErrorCode(_ctx.integerValue("DescribeTasksResponse.ErrorCode"));
-		describeTasksResponse.setDynamicCode(_ctx.stringValue("DescribeTasksResponse.DynamicCode"));
 		describeTasksResponse.setDynamicMessage(_ctx.stringValue("DescribeTasksResponse.DynamicMessage"));
+		describeTasksResponse.setErrorCode(_ctx.integerValue("DescribeTasksResponse.ErrorCode"));
+		describeTasksResponse.setSuccess(_ctx.booleanValue("DescribeTasksResponse.Success"));
+		describeTasksResponse.setDynamicCode(_ctx.stringValue("DescribeTasksResponse.DynamicCode"));
 
 		List<Task> result = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTasksResponse.Result.Length"); i++) {
 			Task task = new Task();
-			task.setTaskId(_ctx.integerValue("DescribeTasksResponse.Result["+ i +"].TaskId"));
 			task.setAction(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].Action"));
-			task.setTarget(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].Target"));
-			task.setSender(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].Sender"));
-			task.setRequestTime(_ctx.longValue("DescribeTasksResponse.Result["+ i +"].RequestTime"));
-			task.setResponseTime(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].ResponseTime"));
-			task.setHandled(_ctx.booleanValue("DescribeTasksResponse.Result["+ i +"].Handled"));
 			task.setResult(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].Result"));
+			task.setSender(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].Sender"));
 			task.setOperationType(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].OperationType"));
+			task.setHandled(_ctx.booleanValue("DescribeTasksResponse.Result["+ i +"].Handled"));
+			task.setResponseTime(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].ResponseTime"));
+			task.setTarget(_ctx.stringValue("DescribeTasksResponse.Result["+ i +"].Target"));
+			task.setTaskId(_ctx.integerValue("DescribeTasksResponse.Result["+ i +"].TaskId"));
+			task.setRequestTime(_ctx.longValue("DescribeTasksResponse.Result["+ i +"].RequestTime"));
 
 			result.add(task);
 		}

@@ -33,8 +33,8 @@ public class DescribeFabricOrganizationSpecsResponseUnmarshaller {
 		List<ClusterSpec> result = new ArrayList<ClusterSpec>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricOrganizationSpecsResponse.Result.Length"); i++) {
 			ClusterSpec clusterSpec = new ClusterSpec();
-			clusterSpec.setOrganizationSpecsName(_ctx.stringValue("DescribeFabricOrganizationSpecsResponse.Result["+ i +"].OrganizationSpecsName"));
 			clusterSpec.setTitle(_ctx.stringValue("DescribeFabricOrganizationSpecsResponse.Result["+ i +"].Title"));
+			clusterSpec.setOrganizationSpecsName(_ctx.stringValue("DescribeFabricOrganizationSpecsResponse.Result["+ i +"].OrganizationSpecsName"));
 			clusterSpec.setEnable(_ctx.booleanValue("DescribeFabricOrganizationSpecsResponse.Result["+ i +"].Enable"));
 
 			result.add(clusterSpec);

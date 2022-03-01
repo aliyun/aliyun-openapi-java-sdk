@@ -26,13 +26,13 @@ public class CreateAntChainContractProjectResponseUnmarshaller {
 		createAntChainContractProjectResponse.setRequestId(_ctx.stringValue("CreateAntChainContractProjectResponse.RequestId"));
 
 		Result result = new Result();
-		result.setProjectId(_ctx.stringValue("CreateAntChainContractProjectResponse.Result.ProjectId"));
+		result.setUpdateTime(_ctx.longValue("CreateAntChainContractProjectResponse.Result.UpdateTime"));
 		result.setConsortiumId(_ctx.stringValue("CreateAntChainContractProjectResponse.Result.ConsortiumId"));
+		result.setCreateTime(_ctx.longValue("CreateAntChainContractProjectResponse.Result.CreateTime"));
+		result.setProjectId(_ctx.stringValue("CreateAntChainContractProjectResponse.Result.ProjectId"));
 		result.setProjectName(_ctx.stringValue("CreateAntChainContractProjectResponse.Result.ProjectName"));
 		result.setProjectVersion(_ctx.stringValue("CreateAntChainContractProjectResponse.Result.ProjectVersion"));
 		result.setProjectDescription(_ctx.stringValue("CreateAntChainContractProjectResponse.Result.ProjectDescription"));
-		result.setCreateTime(_ctx.longValue("CreateAntChainContractProjectResponse.Result.CreateTime"));
-		result.setUpdateTime(_ctx.longValue("CreateAntChainContractProjectResponse.Result.UpdateTime"));
 		createAntChainContractProjectResponse.setResult(result);
 	 
 	 	return createAntChainContractProjectResponse;

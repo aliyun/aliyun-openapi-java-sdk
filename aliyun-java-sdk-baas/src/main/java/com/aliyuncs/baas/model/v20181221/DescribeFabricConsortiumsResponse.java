@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFabricConsortiumsResponse extends AcsResponse {
 
-	private Integer errorCode;
-
 	private String requestId;
+
+	private Integer errorCode;
 
 	private Boolean success;
 
 	private List<ResultItem> result;
-
-	public Integer getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Boolean getSuccess() {
@@ -69,37 +69,37 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 
 		private Integer channelCount;
 
-		private String channelPolicy;
+		private String domain;
 
-		private String codeName;
-
-		private String consortiumId;
-
-		private String consortiumName;
+		private String state;
 
 		private String createTime;
 
-		private String domain;
+		private String specName;
 
-		private String expiredTime;
-
-		private Integer organizationCount;
-
-		private String ownerBid;
+		private Boolean supportChannelConfig;
 
 		private String ownerName;
 
 		private Long ownerUid;
 
+		private String ownerBid;
+
+		private String codeName;
+
 		private String regionId;
+
+		private String channelPolicy;
 
 		private String requestId;
 
-		private String specName;
+		private String consortiumId;
 
-		private String state;
+		private String expiredTime;
 
-		private Boolean supportChannelConfig;
+		private Integer organizationCount;
+
+		private String consortiumName;
 
 		private List<TagsItem> tags;
 
@@ -111,36 +111,20 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 			this.channelCount = channelCount;
 		}
 
-		public String getChannelPolicy() {
-			return this.channelPolicy;
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setChannelPolicy(String channelPolicy) {
-			this.channelPolicy = channelPolicy;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
-		public String getCodeName() {
-			return this.codeName;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setCodeName(String codeName) {
-			this.codeName = codeName;
-		}
-
-		public String getConsortiumId() {
-			return this.consortiumId;
-		}
-
-		public void setConsortiumId(String consortiumId) {
-			this.consortiumId = consortiumId;
-		}
-
-		public String getConsortiumName() {
-			return this.consortiumName;
-		}
-
-		public void setConsortiumName(String consortiumName) {
-			this.consortiumName = consortiumName;
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public String getCreateTime() {
@@ -151,36 +135,20 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getDomain() {
-			return this.domain;
+		public String getSpecName() {
+			return this.specName;
 		}
 
-		public void setDomain(String domain) {
-			this.domain = domain;
+		public void setSpecName(String specName) {
+			this.specName = specName;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public Boolean getSupportChannelConfig() {
+			return this.supportChannelConfig;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public Integer getOrganizationCount() {
-			return this.organizationCount;
-		}
-
-		public void setOrganizationCount(Integer organizationCount) {
-			this.organizationCount = organizationCount;
-		}
-
-		public String getOwnerBid() {
-			return this.ownerBid;
-		}
-
-		public void setOwnerBid(String ownerBid) {
-			this.ownerBid = ownerBid;
+		public void setSupportChannelConfig(Boolean supportChannelConfig) {
+			this.supportChannelConfig = supportChannelConfig;
 		}
 
 		public String getOwnerName() {
@@ -199,12 +167,36 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 			this.ownerUid = ownerUid;
 		}
 
+		public String getOwnerBid() {
+			return this.ownerBid;
+		}
+
+		public void setOwnerBid(String ownerBid) {
+			this.ownerBid = ownerBid;
+		}
+
+		public String getCodeName() {
+			return this.codeName;
+		}
+
+		public void setCodeName(String codeName) {
+			this.codeName = codeName;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getChannelPolicy() {
+			return this.channelPolicy;
+		}
+
+		public void setChannelPolicy(String channelPolicy) {
+			this.channelPolicy = channelPolicy;
 		}
 
 		public String getRequestId() {
@@ -215,28 +207,36 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 			this.requestId = requestId;
 		}
 
-		public String getSpecName() {
-			return this.specName;
+		public String getConsortiumId() {
+			return this.consortiumId;
 		}
 
-		public void setSpecName(String specName) {
-			this.specName = specName;
+		public void setConsortiumId(String consortiumId) {
+			this.consortiumId = consortiumId;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
-		public Boolean getSupportChannelConfig() {
-			return this.supportChannelConfig;
+		public Integer getOrganizationCount() {
+			return this.organizationCount;
 		}
 
-		public void setSupportChannelConfig(Boolean supportChannelConfig) {
-			this.supportChannelConfig = supportChannelConfig;
+		public void setOrganizationCount(Integer organizationCount) {
+			this.organizationCount = organizationCount;
+		}
+
+		public String getConsortiumName() {
+			return this.consortiumName;
+		}
+
+		public void setConsortiumName(String consortiumName) {
+			this.consortiumName = consortiumName;
 		}
 
 		public List<TagsItem> getTags() {

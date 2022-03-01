@@ -34,13 +34,13 @@ public class DescribeFabricConsortiumMemberApprovalResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricConsortiumMemberApprovalResponse.Result.Length"); i++) {
 			ConsortiumMemberApproval consortiumMemberApproval = new ConsortiumMemberApproval();
 			consortiumMemberApproval.setConsortiumId(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].ConsortiumId"));
-			consortiumMemberApproval.setConsortiumName(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].ConsortiumName"));
-			consortiumMemberApproval.setChannelCreatePolicy(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].ChannelCreatePolicy"));
-			consortiumMemberApproval.setOrganizationId(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].OrganizationId"));
-			consortiumMemberApproval.setOrganizationName(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].OrganizationName"));
-			consortiumMemberApproval.setDomainName(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].DomainName"));
 			consortiumMemberApproval.setState(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].State"));
+			consortiumMemberApproval.setChannelCreatePolicy(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].ChannelCreatePolicy"));
 			consortiumMemberApproval.setConfirmTime(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].ConfirmTime"));
+			consortiumMemberApproval.setOrganizationName(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].OrganizationName"));
+			consortiumMemberApproval.setConsortiumName(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].ConsortiumName"));
+			consortiumMemberApproval.setDomainName(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].DomainName"));
+			consortiumMemberApproval.setOrganizationId(_ctx.stringValue("DescribeFabricConsortiumMemberApprovalResponse.Result["+ i +"].OrganizationId"));
 
 			result.add(consortiumMemberApproval);
 		}

@@ -27,26 +27,26 @@ public class DescribeAntChainLatestBlocksV2ResponseUnmarshaller {
 	public static DescribeAntChainLatestBlocksV2Response unmarshall(DescribeAntChainLatestBlocksV2Response describeAntChainLatestBlocksV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainLatestBlocksV2Response.setRequestId(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.RequestId"));
-		describeAntChainLatestBlocksV2Response.setResultCode(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.ResultCode"));
-		describeAntChainLatestBlocksV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.ResultMessage"));
-		describeAntChainLatestBlocksV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainLatestBlocksV2Response.Success"));
 		describeAntChainLatestBlocksV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.HttpStatusCode"));
+		describeAntChainLatestBlocksV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainLatestBlocksV2Response.Success"));
+		describeAntChainLatestBlocksV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.ResultMessage"));
 		describeAntChainLatestBlocksV2Response.setCode(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Code"));
 		describeAntChainLatestBlocksV2Response.setMessage(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Message"));
+		describeAntChainLatestBlocksV2Response.setResultCode(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.ResultCode"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainLatestBlocksV2Response.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setAlias(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].Alias"));
-			resultItem.setBizData(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].BizData"));
-			resultItem.setBlockHash(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].BlockHash"));
+			resultItem.setPreviousHash(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].PreviousHash"));
+			resultItem.setVersion(_ctx.longValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].Version"));
+			resultItem.setTransactionSize(_ctx.longValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].TransactionSize"));
+			resultItem.setSize(_ctx.longValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].Size"));
+			resultItem.setRootTxHash(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].RootTxHash"));
 			resultItem.setCreateTime(_ctx.longValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].CreateTime"));
 			resultItem.setHeight(_ctx.longValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].Height"));
-			resultItem.setPreviousHash(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].PreviousHash"));
-			resultItem.setRootTxHash(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].RootTxHash"));
-			resultItem.setSize(_ctx.longValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].Size"));
-			resultItem.setTransactionSize(_ctx.longValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].TransactionSize"));
-			resultItem.setVersion(_ctx.longValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].Version"));
+			resultItem.setBizData(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].BizData"));
+			resultItem.setBlockHash(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].BlockHash"));
+			resultItem.setAlias(_ctx.stringValue("DescribeAntChainLatestBlocksV2Response.Result["+ i +"].Alias"));
 
 			result.add(resultItem);
 		}

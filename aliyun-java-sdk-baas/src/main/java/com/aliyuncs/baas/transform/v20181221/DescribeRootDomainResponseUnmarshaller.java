@@ -23,9 +23,9 @@ public class DescribeRootDomainResponseUnmarshaller {
 	public static DescribeRootDomainResponse unmarshall(DescribeRootDomainResponse describeRootDomainResponse, UnmarshallerContext _ctx) {
 		
 		describeRootDomainResponse.setRequestId(_ctx.stringValue("DescribeRootDomainResponse.RequestId"));
+		describeRootDomainResponse.setResult(_ctx.stringValue("DescribeRootDomainResponse.Result"));
 		describeRootDomainResponse.setSuccess(_ctx.booleanValue("DescribeRootDomainResponse.Success"));
 		describeRootDomainResponse.setErrorCode(_ctx.integerValue("DescribeRootDomainResponse.ErrorCode"));
-		describeRootDomainResponse.setResult(_ctx.stringValue("DescribeRootDomainResponse.Result"));
 	 
 	 	return describeRootDomainResponse;
 	}

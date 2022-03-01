@@ -32,26 +32,26 @@ public class DescribeFabricOrganizationResponseUnmarshaller {
 		describeFabricOrganizationResponse.setSuccess(_ctx.booleanValue("DescribeFabricOrganizationResponse.Success"));
 
 		Result result = new Result();
-		result.setCANAME(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.CANAME"));
-		result.setCAUrl(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.CAUrl"));
-		result.setCodeName(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.CodeName"));
-		result.setConsortiumCount(_ctx.integerValue("DescribeFabricOrganizationResponse.Result.ConsortiumCount"));
-		result.setCreateTime(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.CreateTime"));
 		result.setDomain(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.Domain"));
-		result.setMSP(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.MSP"));
-		result.setOrganizationDescription(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OrganizationDescription"));
-		result.setOrganizationId(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OrganizationId"));
-		result.setOrganizationName(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OrganizationName"));
-		result.setOwnerBid(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OwnerBid"));
+		result.setPeerCount(_ctx.integerValue("DescribeFabricOrganizationResponse.Result.PeerCount"));
+		result.setState(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.State"));
+		result.setCreateTime(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.CreateTime"));
+		result.setConsortiumCount(_ctx.integerValue("DescribeFabricOrganizationResponse.Result.ConsortiumCount"));
+		result.setSpecName(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.SpecName"));
 		result.setOwnerName(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OwnerName"));
 		result.setOwnerUid(_ctx.longValue("DescribeFabricOrganizationResponse.Result.OwnerUid"));
-		result.setPeerCount(_ctx.integerValue("DescribeFabricOrganizationResponse.Result.PeerCount"));
+		result.setOwnerBid(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OwnerBid"));
+		result.setCodeName(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.CodeName"));
+		result.setOrganizationDescription(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OrganizationDescription"));
 		result.setRegionId(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.RegionId"));
+		result.setOrganizationId(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OrganizationId"));
+		result.setMSP(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.MSP"));
 		result.setRequestId(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.RequestId"));
-		result.setSpecName(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.SpecName"));
-		result.setState(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.State"));
-		result.setUserCount(_ctx.integerValue("DescribeFabricOrganizationResponse.Result.UserCount"));
+		result.setCAUrl(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.CAUrl"));
+		result.setCANAME(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.CANAME"));
 		result.setZoneId(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.ZoneId"));
+		result.setUserCount(_ctx.integerValue("DescribeFabricOrganizationResponse.Result.UserCount"));
+		result.setOrganizationName(_ctx.stringValue("DescribeFabricOrganizationResponse.Result.OrganizationName"));
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricOrganizationResponse.Result.Tags.Length"); i++) {

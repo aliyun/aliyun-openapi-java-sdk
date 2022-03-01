@@ -28,8 +28,8 @@ public class CheckFabricConsortiumDomainResponseUnmarshaller {
 		checkFabricConsortiumDomainResponse.setErrorCode(_ctx.integerValue("CheckFabricConsortiumDomainResponse.ErrorCode"));
 
 		Result result = new Result();
-		result.setValid(_ctx.booleanValue("CheckFabricConsortiumDomainResponse.Result.Valid"));
 		result.setDomain(_ctx.stringValue("CheckFabricConsortiumDomainResponse.Result.Domain"));
+		result.setValid(_ctx.booleanValue("CheckFabricConsortiumDomainResponse.Result.Valid"));
 		result.setPrompt(_ctx.stringValue("CheckFabricConsortiumDomainResponse.Result.Prompt"));
 		checkFabricConsortiumDomainResponse.setResult(result);
 	 

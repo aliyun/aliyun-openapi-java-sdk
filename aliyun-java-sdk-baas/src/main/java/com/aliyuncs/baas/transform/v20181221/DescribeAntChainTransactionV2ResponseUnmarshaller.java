@@ -28,43 +28,43 @@ public class DescribeAntChainTransactionV2ResponseUnmarshaller {
 	public static DescribeAntChainTransactionV2Response unmarshall(DescribeAntChainTransactionV2Response describeAntChainTransactionV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainTransactionV2Response.setRequestId(_ctx.stringValue("DescribeAntChainTransactionV2Response.RequestId"));
-		describeAntChainTransactionV2Response.setResultCode(_ctx.stringValue("DescribeAntChainTransactionV2Response.ResultCode"));
-		describeAntChainTransactionV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainTransactionV2Response.ResultMessage"));
-		describeAntChainTransactionV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainTransactionV2Response.Success"));
 		describeAntChainTransactionV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainTransactionV2Response.HttpStatusCode"));
+		describeAntChainTransactionV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainTransactionV2Response.Success"));
+		describeAntChainTransactionV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainTransactionV2Response.ResultMessage"));
 		describeAntChainTransactionV2Response.setCode(_ctx.stringValue("DescribeAntChainTransactionV2Response.Code"));
 		describeAntChainTransactionV2Response.setMessage(_ctx.stringValue("DescribeAntChainTransactionV2Response.Message"));
+		describeAntChainTransactionV2Response.setResultCode(_ctx.stringValue("DescribeAntChainTransactionV2Response.ResultCode"));
 
 		Result result = new Result();
 		result.setHash(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Hash"));
-		result.setCreateTime(_ctx.longValue("DescribeAntChainTransactionV2Response.Result.CreateTime"));
-		result.setBlockHeight(_ctx.longValue("DescribeAntChainTransactionV2Response.Result.BlockHeight"));
 		result.setBlockHash(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.BlockHash"));
 		result.setBlockVersion(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.BlockVersion"));
+		result.setBlockHeight(_ctx.longValue("DescribeAntChainTransactionV2Response.Result.BlockHeight"));
+		result.setCreateTime(_ctx.longValue("DescribeAntChainTransactionV2Response.Result.CreateTime"));
 
 		Transaction transaction = new Transaction();
-		transaction.setTxType(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.TxType"));
-		transaction.setData(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Data"));
 		transaction.setHash(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Hash"));
+		transaction.setValue(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Value"));
 		transaction.setFrom(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.From"));
+		transaction.setData(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Data"));
+		transaction.setNonce(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Nonce"));
 		transaction.setTo(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.To"));
 		transaction.setTimestamp(_ctx.longValue("DescribeAntChainTransactionV2Response.Result.Transaction.Timestamp"));
-		transaction.setPeriod(_ctx.longValue("DescribeAntChainTransactionV2Response.Result.Transaction.Period"));
-		transaction.setNonce(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Nonce"));
 		transaction.setGas(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Gas"));
-		transaction.setValue(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Value"));
-
-		List<String> signatures = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainTransactionV2Response.Result.Transaction.Signatures.Length"); i++) {
-			signatures.add(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Signatures["+ i +"]"));
-		}
-		transaction.setSignatures(signatures);
+		transaction.setTxType(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.TxType"));
+		transaction.setPeriod(_ctx.longValue("DescribeAntChainTransactionV2Response.Result.Transaction.Period"));
 
 		List<String> extentions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainTransactionV2Response.Result.Transaction.Extentions.Length"); i++) {
 			extentions.add(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Extentions["+ i +"]"));
 		}
 		transaction.setExtentions(extentions);
+
+		List<String> signatures = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainTransactionV2Response.Result.Transaction.Signatures.Length"); i++) {
+			signatures.add(_ctx.stringValue("DescribeAntChainTransactionV2Response.Result.Transaction.Signatures["+ i +"]"));
+		}
+		transaction.setSignatures(signatures);
 		result.setTransaction(transaction);
 		describeAntChainTransactionV2Response.setResult(result);
 	 

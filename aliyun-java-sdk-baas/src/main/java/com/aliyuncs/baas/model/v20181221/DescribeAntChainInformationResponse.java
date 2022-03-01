@@ -47,39 +47,23 @@ public class DescribeAntChainInformationResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer nodeNumber;
-
-		private Integer blockHeight;
-
 		private Integer transactionSum;
-
-		private Long createTime;
-
-		private Integer abnormalNodes;
 
 		private String version;
 
-		private Boolean normal;
+		private Integer blockHeight;
+
+		private Long createTime;
+
+		private Integer nodeNumber;
+
+		private Integer abnormalNodes;
 
 		private String antChainId;
 
+		private Boolean normal;
+
 		private List<NodeInfosItem> nodeInfos;
-
-		public Integer getNodeNumber() {
-			return this.nodeNumber;
-		}
-
-		public void setNodeNumber(Integer nodeNumber) {
-			this.nodeNumber = nodeNumber;
-		}
-
-		public Integer getBlockHeight() {
-			return this.blockHeight;
-		}
-
-		public void setBlockHeight(Integer blockHeight) {
-			this.blockHeight = blockHeight;
-		}
 
 		public Integer getTransactionSum() {
 			return this.transactionSum;
@@ -87,22 +71,6 @@ public class DescribeAntChainInformationResponse extends AcsResponse {
 
 		public void setTransactionSum(Integer transactionSum) {
 			this.transactionSum = transactionSum;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Integer getAbnormalNodes() {
-			return this.abnormalNodes;
-		}
-
-		public void setAbnormalNodes(Integer abnormalNodes) {
-			this.abnormalNodes = abnormalNodes;
 		}
 
 		public String getVersion() {
@@ -113,12 +81,36 @@ public class DescribeAntChainInformationResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public Boolean getNormal() {
-			return this.normal;
+		public Integer getBlockHeight() {
+			return this.blockHeight;
 		}
 
-		public void setNormal(Boolean normal) {
-			this.normal = normal;
+		public void setBlockHeight(Integer blockHeight) {
+			this.blockHeight = blockHeight;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Integer getNodeNumber() {
+			return this.nodeNumber;
+		}
+
+		public void setNodeNumber(Integer nodeNumber) {
+			this.nodeNumber = nodeNumber;
+		}
+
+		public Integer getAbnormalNodes() {
+			return this.abnormalNodes;
+		}
+
+		public void setAbnormalNodes(Integer abnormalNodes) {
+			this.abnormalNodes = abnormalNodes;
 		}
 
 		public String getAntChainId() {
@@ -127,6 +119,14 @@ public class DescribeAntChainInformationResponse extends AcsResponse {
 
 		public void setAntChainId(String antChainId) {
 			this.antChainId = antChainId;
+		}
+
+		public Boolean getNormal() {
+			return this.normal;
+		}
+
+		public void setNormal(Boolean normal) {
+			this.normal = normal;
 		}
 
 		public List<NodeInfosItem> getNodeInfos() {
@@ -139,21 +139,13 @@ public class DescribeAntChainInformationResponse extends AcsResponse {
 
 		public static class NodeInfosItem {
 
-			private String nodeName;
-
 			private Boolean status;
+
+			private String nodeName;
 
 			private String version;
 
 			private Long blockHeight;
-
-			public String getNodeName() {
-				return this.nodeName;
-			}
-
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
-			}
 
 			public Boolean getStatus() {
 				return this.status;
@@ -161,6 +153,14 @@ public class DescribeAntChainInformationResponse extends AcsResponse {
 
 			public void setStatus(Boolean status) {
 				this.status = status;
+			}
+
+			public String getNodeName() {
+				return this.nodeName;
+			}
+
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
 			}
 
 			public String getVersion() {

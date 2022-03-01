@@ -29,12 +29,12 @@ public class DescribeAntChainAccountsV2ResponseUnmarshaller {
 	public static DescribeAntChainAccountsV2Response unmarshall(DescribeAntChainAccountsV2Response describeAntChainAccountsV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainAccountsV2Response.setRequestId(_ctx.stringValue("DescribeAntChainAccountsV2Response.RequestId"));
-		describeAntChainAccountsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainAccountsV2Response.ResultCode"));
-		describeAntChainAccountsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainAccountsV2Response.ResultMessage"));
-		describeAntChainAccountsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainAccountsV2Response.Success"));
 		describeAntChainAccountsV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainAccountsV2Response.HttpStatusCode"));
+		describeAntChainAccountsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainAccountsV2Response.Success"));
+		describeAntChainAccountsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainAccountsV2Response.ResultMessage"));
 		describeAntChainAccountsV2Response.setCode(_ctx.stringValue("DescribeAntChainAccountsV2Response.Code"));
 		describeAntChainAccountsV2Response.setMessage(_ctx.stringValue("DescribeAntChainAccountsV2Response.Message"));
+		describeAntChainAccountsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainAccountsV2Response.ResultCode"));
 
 		Result result = new Result();
 
@@ -47,11 +47,11 @@ public class DescribeAntChainAccountsV2ResponseUnmarshaller {
 		List<AccountsItem> accounts = new ArrayList<AccountsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainAccountsV2Response.Result.Accounts.Length"); i++) {
 			AccountsItem accountsItem = new AccountsItem();
-			accountsItem.setAntChainId(_ctx.stringValue("DescribeAntChainAccountsV2Response.Result.Accounts["+ i +"].AntChainId"));
-			accountsItem.setAccount(_ctx.stringValue("DescribeAntChainAccountsV2Response.Result.Accounts["+ i +"].Account"));
 			accountsItem.setAccountPublicKey(_ctx.stringValue("DescribeAntChainAccountsV2Response.Result.Accounts["+ i +"].AccountPublicKey"));
+			accountsItem.setAccount(_ctx.stringValue("DescribeAntChainAccountsV2Response.Result.Accounts["+ i +"].Account"));
 			accountsItem.setAccountRecoveryKey(_ctx.stringValue("DescribeAntChainAccountsV2Response.Result.Accounts["+ i +"].AccountRecoveryKey"));
 			accountsItem.setAccountStatus(_ctx.stringValue("DescribeAntChainAccountsV2Response.Result.Accounts["+ i +"].AccountStatus"));
+			accountsItem.setAntChainId(_ctx.stringValue("DescribeAntChainAccountsV2Response.Result.Accounts["+ i +"].AntChainId"));
 
 			accounts.add(accountsItem);
 		}

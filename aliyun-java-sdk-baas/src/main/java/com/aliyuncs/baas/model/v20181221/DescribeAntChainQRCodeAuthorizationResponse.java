@@ -46,18 +46,18 @@ public class DescribeAntChainQRCodeAuthorizationResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String antChainId;
+		private String qRCodeType;
 
 		private String authorizationType;
 
-		private String qRCodeType;
+		private String antChainId;
 
-		public String getAntChainId() {
-			return this.antChainId;
+		public String getQRCodeType() {
+			return this.qRCodeType;
 		}
 
-		public void setAntChainId(String antChainId) {
-			this.antChainId = antChainId;
+		public void setQRCodeType(String qRCodeType) {
+			this.qRCodeType = qRCodeType;
 		}
 
 		public String getAuthorizationType() {
@@ -68,12 +68,12 @@ public class DescribeAntChainQRCodeAuthorizationResponse extends AcsResponse {
 			this.authorizationType = authorizationType;
 		}
 
-		public String getQRCodeType() {
-			return this.qRCodeType;
+		public String getAntChainId() {
+			return this.antChainId;
 		}
 
-		public void setQRCodeType(String qRCodeType) {
-			this.qRCodeType = qRCodeType;
+		public void setAntChainId(String antChainId) {
+			this.antChainId = antChainId;
 		}
 	}
 

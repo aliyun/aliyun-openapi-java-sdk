@@ -69,19 +69,19 @@ public class DescribeFabricConsortiumMemberApprovalResponse extends AcsResponse 
 
 		private String consortiumId;
 
-		private String consortiumName;
+		private String state;
 
 		private String channelCreatePolicy;
 
-		private String organizationId;
+		private String confirmTime;
 
 		private String organizationName;
 
+		private String consortiumName;
+
 		private String domainName;
 
-		private String state;
-
-		private String confirmTime;
+		private String organizationId;
 
 		public String getConsortiumId() {
 			return this.consortiumId;
@@ -89,46 +89,6 @@ public class DescribeFabricConsortiumMemberApprovalResponse extends AcsResponse 
 
 		public void setConsortiumId(String consortiumId) {
 			this.consortiumId = consortiumId;
-		}
-
-		public String getConsortiumName() {
-			return this.consortiumName;
-		}
-
-		public void setConsortiumName(String consortiumName) {
-			this.consortiumName = consortiumName;
-		}
-
-		public String getChannelCreatePolicy() {
-			return this.channelCreatePolicy;
-		}
-
-		public void setChannelCreatePolicy(String channelCreatePolicy) {
-			this.channelCreatePolicy = channelCreatePolicy;
-		}
-
-		public String getOrganizationId() {
-			return this.organizationId;
-		}
-
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
-
-		public String getOrganizationName() {
-			return this.organizationName;
-		}
-
-		public void setOrganizationName(String organizationName) {
-			this.organizationName = organizationName;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
 		}
 
 		public String getState() {
@@ -139,12 +99,52 @@ public class DescribeFabricConsortiumMemberApprovalResponse extends AcsResponse 
 			this.state = state;
 		}
 
+		public String getChannelCreatePolicy() {
+			return this.channelCreatePolicy;
+		}
+
+		public void setChannelCreatePolicy(String channelCreatePolicy) {
+			this.channelCreatePolicy = channelCreatePolicy;
+		}
+
 		public String getConfirmTime() {
 			return this.confirmTime;
 		}
 
 		public void setConfirmTime(String confirmTime) {
 			this.confirmTime = confirmTime;
+		}
+
+		public String getOrganizationName() {
+			return this.organizationName;
+		}
+
+		public void setOrganizationName(String organizationName) {
+			this.organizationName = organizationName;
+		}
+
+		public String getConsortiumName() {
+			return this.consortiumName;
+		}
+
+		public void setConsortiumName(String consortiumName) {
+			this.consortiumName = consortiumName;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
 		}
 	}
 

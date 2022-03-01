@@ -29,12 +29,12 @@ public class DescribeAntChainConsortiumsV2ResponseUnmarshaller {
 	public static DescribeAntChainConsortiumsV2Response unmarshall(DescribeAntChainConsortiumsV2Response describeAntChainConsortiumsV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainConsortiumsV2Response.setRequestId(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.RequestId"));
-		describeAntChainConsortiumsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.ResultCode"));
-		describeAntChainConsortiumsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.ResultMessage"));
-		describeAntChainConsortiumsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainConsortiumsV2Response.Success"));
 		describeAntChainConsortiumsV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.HttpStatusCode"));
+		describeAntChainConsortiumsV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainConsortiumsV2Response.Success"));
+		describeAntChainConsortiumsV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.ResultMessage"));
 		describeAntChainConsortiumsV2Response.setCode(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Code"));
 		describeAntChainConsortiumsV2Response.setMessage(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Message"));
+		describeAntChainConsortiumsV2Response.setResultCode(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.ResultCode"));
 
 		Result result = new Result();
 
@@ -47,15 +47,15 @@ public class DescribeAntChainConsortiumsV2ResponseUnmarshaller {
 		List<AntConsortiumsItem> antConsortiums = new ArrayList<AntConsortiumsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums.Length"); i++) {
 			AntConsortiumsItem antConsortiumsItem = new AntConsortiumsItem();
-			antConsortiumsItem.setChainNum(_ctx.longValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].ChainNum"));
-			antConsortiumsItem.setMemberNum(_ctx.longValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].MemberNum"));
-			antConsortiumsItem.setCreateTime(_ctx.longValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].CreateTime"));
-			antConsortiumsItem.setRole(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].Role"));
-			antConsortiumsItem.setConsortiumId(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].ConsortiumId"));
-			antConsortiumsItem.setStatus(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].Status"));
-			antConsortiumsItem.setConsortiumName(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].ConsortiumName"));
 			antConsortiumsItem.setConsortiumDescription(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].ConsortiumDescription"));
+			antConsortiumsItem.setStatus(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].Status"));
 			antConsortiumsItem.setIsEmptyConsortium(_ctx.booleanValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].IsEmptyConsortium"));
+			antConsortiumsItem.setConsortiumId(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].ConsortiumId"));
+			antConsortiumsItem.setCreateTime(_ctx.longValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].CreateTime"));
+			antConsortiumsItem.setMemberNum(_ctx.longValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].MemberNum"));
+			antConsortiumsItem.setRole(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].Role"));
+			antConsortiumsItem.setConsortiumName(_ctx.stringValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].ConsortiumName"));
+			antConsortiumsItem.setChainNum(_ctx.longValue("DescribeAntChainConsortiumsV2Response.Result.AntConsortiums["+ i +"].ChainNum"));
 
 			antConsortiums.add(antConsortiumsItem);
 		}

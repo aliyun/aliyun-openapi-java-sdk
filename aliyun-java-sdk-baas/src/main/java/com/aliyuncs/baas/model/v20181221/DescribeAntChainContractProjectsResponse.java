@@ -69,13 +69,13 @@ public class DescribeAntChainContractProjectsResponse extends AcsResponse {
 
 		public static class ContractProjectsItem {
 
-			private String projectId;
+			private Long updateTime;
 
 			private String consortiumId;
 
 			private Long createTime;
 
-			private Long updateTime;
+			private String projectId;
 
 			private String projectName;
 
@@ -83,12 +83,12 @@ public class DescribeAntChainContractProjectsResponse extends AcsResponse {
 
 			private String projectDescription;
 
-			public String getProjectId() {
-				return this.projectId;
+			public Long getUpdateTime() {
+				return this.updateTime;
 			}
 
-			public void setProjectId(String projectId) {
-				this.projectId = projectId;
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public String getConsortiumId() {
@@ -107,12 +107,12 @@ public class DescribeAntChainContractProjectsResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Long getUpdateTime() {
-				return this.updateTime;
+			public String getProjectId() {
+				return this.projectId;
 			}
 
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
+			public void setProjectId(String projectId) {
+				this.projectId = projectId;
 			}
 
 			public String getProjectName() {

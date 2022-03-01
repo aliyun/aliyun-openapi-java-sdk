@@ -26,12 +26,12 @@ public class DescribeAntChainNodesV2ResponseUnmarshaller {
 	public static DescribeAntChainNodesV2Response unmarshall(DescribeAntChainNodesV2Response describeAntChainNodesV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainNodesV2Response.setRequestId(_ctx.stringValue("DescribeAntChainNodesV2Response.RequestId"));
-		describeAntChainNodesV2Response.setResultCode(_ctx.stringValue("DescribeAntChainNodesV2Response.ResultCode"));
-		describeAntChainNodesV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainNodesV2Response.ResultMessage"));
-		describeAntChainNodesV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainNodesV2Response.Success"));
 		describeAntChainNodesV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainNodesV2Response.HttpStatusCode"));
+		describeAntChainNodesV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainNodesV2Response.Success"));
+		describeAntChainNodesV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainNodesV2Response.ResultMessage"));
 		describeAntChainNodesV2Response.setCode(_ctx.stringValue("DescribeAntChainNodesV2Response.Code"));
 		describeAntChainNodesV2Response.setMessage(_ctx.stringValue("DescribeAntChainNodesV2Response.Message"));
+		describeAntChainNodesV2Response.setResultCode(_ctx.stringValue("DescribeAntChainNodesV2Response.ResultCode"));
 
 		List<String> result = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainNodesV2Response.Result.Length"); i++) {

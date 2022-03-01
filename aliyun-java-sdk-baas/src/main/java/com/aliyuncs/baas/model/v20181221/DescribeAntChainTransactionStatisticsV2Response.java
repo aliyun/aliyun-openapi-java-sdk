@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainTransactionStatisticsV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private List<ResultItem> result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainTransactionStatisticsV2Response extends AcsResponse
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainTransactionStatisticsV2Response extends AcsResponse
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -97,6 +89,14 @@ public class DescribeAntChainTransactionStatisticsV2Response extends AcsResponse
 		this.message = message;
 	}
 
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
 	public List<ResultItem> getResult() {
 		return this.result;
 	}
@@ -107,23 +107,15 @@ public class DescribeAntChainTransactionStatisticsV2Response extends AcsResponse
 
 	public static class ResultItem {
 
-		private String antChainId;
-
 		private Long dt;
-
-		private Long transCount;
-
-		private Long lastSumBlockHeight;
 
 		private Long creatTime;
 
-		public String getAntChainId() {
-			return this.antChainId;
-		}
+		private Long lastSumBlockHeight;
 
-		public void setAntChainId(String antChainId) {
-			this.antChainId = antChainId;
-		}
+		private Long transCount;
+
+		private String antChainId;
 
 		public Long getDt() {
 			return this.dt;
@@ -133,12 +125,12 @@ public class DescribeAntChainTransactionStatisticsV2Response extends AcsResponse
 			this.dt = dt;
 		}
 
-		public Long getTransCount() {
-			return this.transCount;
+		public Long getCreatTime() {
+			return this.creatTime;
 		}
 
-		public void setTransCount(Long transCount) {
-			this.transCount = transCount;
+		public void setCreatTime(Long creatTime) {
+			this.creatTime = creatTime;
 		}
 
 		public Long getLastSumBlockHeight() {
@@ -149,12 +141,20 @@ public class DescribeAntChainTransactionStatisticsV2Response extends AcsResponse
 			this.lastSumBlockHeight = lastSumBlockHeight;
 		}
 
-		public Long getCreatTime() {
-			return this.creatTime;
+		public Long getTransCount() {
+			return this.transCount;
 		}
 
-		public void setCreatTime(Long creatTime) {
-			this.creatTime = creatTime;
+		public void setTransCount(Long transCount) {
+			this.transCount = transCount;
+		}
+
+		public String getAntChainId() {
+			return this.antChainId;
+		}
+
+		public void setAntChainId(String antChainId) {
+			this.antChainId = antChainId;
 		}
 	}
 

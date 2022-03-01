@@ -26,12 +26,12 @@ public class CreateAntChainAccountWithKeyPairAutoCreationResponseUnmarshaller {
 		createAntChainAccountWithKeyPairAutoCreationResponse.setRequestId(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.RequestId"));
 
 		Result result = new Result();
-		result.setAccountPrivateKey(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.Result.AccountPrivateKey"));
 		result.setAccountPublicKey(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.Result.AccountPublicKey"));
+		result.setAccount(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.Result.Account"));
 		result.setAccountRecoverPrivateKey(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.Result.AccountRecoverPrivateKey"));
 		result.setAccountRecoverPublicKey(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.Result.AccountRecoverPublicKey"));
+		result.setAccountPrivateKey(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.Result.AccountPrivateKey"));
 		result.setAntChainId(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.Result.AntChainId"));
-		result.setAccount(_ctx.stringValue("CreateAntChainAccountWithKeyPairAutoCreationResponse.Result.Account"));
 		createAntChainAccountWithKeyPairAutoCreationResponse.setResult(result);
 	 
 	 	return createAntChainAccountWithKeyPairAutoCreationResponse;

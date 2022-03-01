@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAntChainInformationV2Response extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String requestId;
-
-	private String resultCode;
-
-	private String resultMessage;
 
 	private Boolean success;
 
-	private String httpStatusCode;
+	private String resultMessage;
 
 	private String code;
 
 	private String message;
 
+	private String resultCode;
+
 	private Result result;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,22 +55,6 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
-
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,12 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getCode() {
@@ -97,6 +89,14 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
 	public Result getResult() {
 		return this.result;
 	}
@@ -107,40 +107,32 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 
 	public static class Result {
 
-		private Integer nodeNumber;
-
-		private Integer blockHeight;
+		private Boolean isRole;
 
 		private Integer transactionSum;
 
+		private String version;
+
 		private Long createTime;
+
+		private Integer blockHeight;
+
+		private Integer nodeNumber;
 
 		private Integer abnormalNodes;
 
-		private String version;
-
-		private Boolean isRole;
+		private String antChainId;
 
 		private Boolean normal;
 
-		private String antChainId;
-
 		private List<NodeInfosItem> nodeInfos;
 
-		public Integer getNodeNumber() {
-			return this.nodeNumber;
+		public Boolean getIsRole() {
+			return this.isRole;
 		}
 
-		public void setNodeNumber(Integer nodeNumber) {
-			this.nodeNumber = nodeNumber;
-		}
-
-		public Integer getBlockHeight() {
-			return this.blockHeight;
-		}
-
-		public void setBlockHeight(Integer blockHeight) {
-			this.blockHeight = blockHeight;
+		public void setIsRole(Boolean isRole) {
+			this.isRole = isRole;
 		}
 
 		public Integer getTransactionSum() {
@@ -151,12 +143,36 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 			this.transactionSum = transactionSum;
 		}
 
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public Integer getBlockHeight() {
+			return this.blockHeight;
+		}
+
+		public void setBlockHeight(Integer blockHeight) {
+			this.blockHeight = blockHeight;
+		}
+
+		public Integer getNodeNumber() {
+			return this.nodeNumber;
+		}
+
+		public void setNodeNumber(Integer nodeNumber) {
+			this.nodeNumber = nodeNumber;
 		}
 
 		public Integer getAbnormalNodes() {
@@ -167,20 +183,12 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 			this.abnormalNodes = abnormalNodes;
 		}
 
-		public String getVersion() {
-			return this.version;
+		public String getAntChainId() {
+			return this.antChainId;
 		}
 
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public Boolean getIsRole() {
-			return this.isRole;
-		}
-
-		public void setIsRole(Boolean isRole) {
-			this.isRole = isRole;
+		public void setAntChainId(String antChainId) {
+			this.antChainId = antChainId;
 		}
 
 		public Boolean getNormal() {
@@ -189,14 +197,6 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 
 		public void setNormal(Boolean normal) {
 			this.normal = normal;
-		}
-
-		public String getAntChainId() {
-			return this.antChainId;
-		}
-
-		public void setAntChainId(String antChainId) {
-			this.antChainId = antChainId;
 		}
 
 		public List<NodeInfosItem> getNodeInfos() {
@@ -209,21 +209,13 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 
 		public static class NodeInfosItem {
 
-			private String nodeName;
-
 			private Boolean status;
+
+			private String nodeName;
 
 			private String version;
 
 			private Long blockHeight;
-
-			public String getNodeName() {
-				return this.nodeName;
-			}
-
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
-			}
 
 			public Boolean getStatus() {
 				return this.status;
@@ -231,6 +223,14 @@ public class DescribeAntChainInformationV2Response extends AcsResponse {
 
 			public void setStatus(Boolean status) {
 				this.status = status;
+			}
+
+			public String getNodeName() {
+				return this.nodeName;
+			}
+
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
 			}
 
 			public String getVersion() {

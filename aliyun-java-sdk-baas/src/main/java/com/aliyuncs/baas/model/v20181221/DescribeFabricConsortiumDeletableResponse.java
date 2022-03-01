@@ -66,62 +66,30 @@ public class DescribeFabricConsortiumDeletableResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String consortiumId;
-
-		private String consortiumName;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String codeName;
+		private Boolean deletable;
 
 		private String domain;
 
 		private String description;
 
+		private String consortiumId;
+
 		private String state;
 
-		private Boolean deletable;
+		private String zoneId;
 
-		public String getConsortiumId() {
-			return this.consortiumId;
+		private String codeName;
+
+		private String consortiumName;
+
+		private String regionId;
+
+		public Boolean getDeletable() {
+			return this.deletable;
 		}
 
-		public void setConsortiumId(String consortiumId) {
-			this.consortiumId = consortiumId;
-		}
-
-		public String getConsortiumName() {
-			return this.consortiumName;
-		}
-
-		public void setConsortiumName(String consortiumName) {
-			this.consortiumName = consortiumName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getCodeName() {
-			return this.codeName;
-		}
-
-		public void setCodeName(String codeName) {
-			this.codeName = codeName;
+		public void setDeletable(Boolean deletable) {
+			this.deletable = deletable;
 		}
 
 		public String getDomain() {
@@ -140,6 +108,14 @@ public class DescribeFabricConsortiumDeletableResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getConsortiumId() {
+			return this.consortiumId;
+		}
+
+		public void setConsortiumId(String consortiumId) {
+			this.consortiumId = consortiumId;
+		}
+
 		public String getState() {
 			return this.state;
 		}
@@ -148,12 +124,36 @@ public class DescribeFabricConsortiumDeletableResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public Boolean getDeletable() {
-			return this.deletable;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setDeletable(Boolean deletable) {
-			this.deletable = deletable;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getCodeName() {
+			return this.codeName;
+		}
+
+		public void setCodeName(String codeName) {
+			this.codeName = codeName;
+		}
+
+		public String getConsortiumName() {
+			return this.consortiumName;
+		}
+
+		public void setConsortiumName(String consortiumName) {
+			this.consortiumName = consortiumName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

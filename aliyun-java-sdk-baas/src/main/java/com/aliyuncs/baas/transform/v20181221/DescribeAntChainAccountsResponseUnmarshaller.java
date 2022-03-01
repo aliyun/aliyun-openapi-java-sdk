@@ -41,11 +41,11 @@ public class DescribeAntChainAccountsResponseUnmarshaller {
 		List<AccountsItem> accounts = new ArrayList<AccountsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainAccountsResponse.Result.Accounts.Length"); i++) {
 			AccountsItem accountsItem = new AccountsItem();
-			accountsItem.setAntChainId(_ctx.stringValue("DescribeAntChainAccountsResponse.Result.Accounts["+ i +"].AntChainId"));
-			accountsItem.setAccount(_ctx.stringValue("DescribeAntChainAccountsResponse.Result.Accounts["+ i +"].Account"));
 			accountsItem.setAccountPublicKey(_ctx.stringValue("DescribeAntChainAccountsResponse.Result.Accounts["+ i +"].AccountPublicKey"));
+			accountsItem.setAccount(_ctx.stringValue("DescribeAntChainAccountsResponse.Result.Accounts["+ i +"].Account"));
 			accountsItem.setAccountRecoveryKey(_ctx.stringValue("DescribeAntChainAccountsResponse.Result.Accounts["+ i +"].AccountRecoveryKey"));
 			accountsItem.setAccountStatus(_ctx.stringValue("DescribeAntChainAccountsResponse.Result.Accounts["+ i +"].AccountStatus"));
+			accountsItem.setAntChainId(_ctx.stringValue("DescribeAntChainAccountsResponse.Result.Accounts["+ i +"].AntChainId"));
 
 			accounts.add(accountsItem);
 		}

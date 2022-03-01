@@ -33,15 +33,15 @@ public class DescribeFabricOrganizationPeersResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricOrganizationPeersResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setOrganizationPeerName(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].OrganizationPeerName"));
-			resultItem.setIsAnchor(_ctx.booleanValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].IsAnchor"));
-			resultItem.setIntranetIp(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].IntranetIp"));
-			resultItem.setInternetIp(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].InternetIp"));
-			resultItem.setDomain(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].Domain"));
-			resultItem.setPort(_ctx.integerValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].Port"));
-			resultItem.setInstanceType(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].InstanceType"));
-			resultItem.setCreateTime(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].CreateTime"));
 			resultItem.setUpdateTime(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].UpdateTime"));
+			resultItem.setDomain(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].Domain"));
+			resultItem.setInternetIp(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].InternetIp"));
+			resultItem.setCreateTime(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].CreateTime"));
+			resultItem.setIsAnchor(_ctx.booleanValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].IsAnchor"));
+			resultItem.setInstanceType(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].InstanceType"));
+			resultItem.setPort(_ctx.integerValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].Port"));
+			resultItem.setOrganizationPeerName(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].OrganizationPeerName"));
+			resultItem.setIntranetIp(_ctx.stringValue("DescribeFabricOrganizationPeersResponse.Result["+ i +"].IntranetIp"));
 
 			result.add(resultItem);
 		}

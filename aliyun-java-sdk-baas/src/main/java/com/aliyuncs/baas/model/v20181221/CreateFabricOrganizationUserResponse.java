@@ -66,17 +66,41 @@ public class CreateFabricOrganizationUserResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String password;
+
+		private String expireTime;
+
+		private String createTime;
+
 		private String organizationId;
 
 		private String username;
 
-		private String password;
-
 		private String fullname;
 
-		private String createTime;
+		public String getPassword() {
+			return this.password;
+		}
 
-		private String expireTime;
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
 
 		public String getOrganizationId() {
 			return this.organizationId;
@@ -94,36 +118,12 @@ public class CreateFabricOrganizationUserResponse extends AcsResponse {
 			this.username = username;
 		}
 
-		public String getPassword() {
-			return this.password;
-		}
-
-		public void setPassword(String password) {
-			this.password = password;
-		}
-
 		public String getFullname() {
 			return this.fullname;
 		}
 
 		public void setFullname(String fullname) {
 			this.fullname = fullname;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
 		}
 	}
 

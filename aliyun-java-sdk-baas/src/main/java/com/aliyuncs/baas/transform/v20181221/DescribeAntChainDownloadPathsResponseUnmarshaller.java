@@ -26,10 +26,10 @@ public class DescribeAntChainDownloadPathsResponseUnmarshaller {
 		describeAntChainDownloadPathsResponse.setRequestId(_ctx.stringValue("DescribeAntChainDownloadPathsResponse.RequestId"));
 
 		Result result = new Result();
-		result.setCaCrtUrl(_ctx.stringValue("DescribeAntChainDownloadPathsResponse.Result.CaCrtUrl"));
-		result.setTrustCaUrl(_ctx.stringValue("DescribeAntChainDownloadPathsResponse.Result.TrustCaUrl"));
-		result.setClientCrtUrl(_ctx.stringValue("DescribeAntChainDownloadPathsResponse.Result.ClientCrtUrl"));
 		result.setSdkUrl(_ctx.stringValue("DescribeAntChainDownloadPathsResponse.Result.SdkUrl"));
+		result.setCaCrtUrl(_ctx.stringValue("DescribeAntChainDownloadPathsResponse.Result.CaCrtUrl"));
+		result.setClientCrtUrl(_ctx.stringValue("DescribeAntChainDownloadPathsResponse.Result.ClientCrtUrl"));
+		result.setTrustCaUrl(_ctx.stringValue("DescribeAntChainDownloadPathsResponse.Result.TrustCaUrl"));
 		describeAntChainDownloadPathsResponse.setResult(result);
 	 
 	 	return describeAntChainDownloadPathsResponse;

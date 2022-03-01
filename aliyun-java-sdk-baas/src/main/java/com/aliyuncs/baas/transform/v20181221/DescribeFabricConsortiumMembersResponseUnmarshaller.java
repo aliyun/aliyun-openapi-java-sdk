@@ -33,11 +33,11 @@ public class DescribeFabricConsortiumMembersResponseUnmarshaller {
 		List<DescribeConsortiumMember> result = new ArrayList<DescribeConsortiumMember>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricConsortiumMembersResponse.Result.Length"); i++) {
 			DescribeConsortiumMember describeConsortiumMember = new DescribeConsortiumMember();
-			describeConsortiumMember.setOrganizationName(_ctx.stringValue("DescribeFabricConsortiumMembersResponse.Result["+ i +"].OrganizationName"));
 			describeConsortiumMember.setDomain(_ctx.stringValue("DescribeFabricConsortiumMembersResponse.Result["+ i +"].Domain"));
 			describeConsortiumMember.setDescription(_ctx.stringValue("DescribeFabricConsortiumMembersResponse.Result["+ i +"].Description"));
-			describeConsortiumMember.setJoinedTime(_ctx.stringValue("DescribeFabricConsortiumMembersResponse.Result["+ i +"].JoinedTime"));
 			describeConsortiumMember.setConsortiumId(_ctx.stringValue("DescribeFabricConsortiumMembersResponse.Result["+ i +"].ConsortiumId"));
+			describeConsortiumMember.setOrganizationName(_ctx.stringValue("DescribeFabricConsortiumMembersResponse.Result["+ i +"].OrganizationName"));
+			describeConsortiumMember.setJoinedTime(_ctx.stringValue("DescribeFabricConsortiumMembersResponse.Result["+ i +"].JoinedTime"));
 			describeConsortiumMember.setOrganizationId(_ctx.stringValue("DescribeFabricConsortiumMembersResponse.Result["+ i +"].OrganizationId"));
 
 			result.add(describeConsortiumMember);

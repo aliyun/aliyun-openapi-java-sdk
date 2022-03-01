@@ -41,11 +41,11 @@ public class DescribeAntChainMembersResponseUnmarshaller {
 		List<MembersItem> members = new ArrayList<MembersItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntChainMembersResponse.Result.Members.Length"); i++) {
 			MembersItem membersItem = new MembersItem();
-			membersItem.setMemberName(_ctx.stringValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].MemberName"));
-			membersItem.setMemberId(_ctx.stringValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].MemberId"));
-			membersItem.setJoinTime(_ctx.longValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].JoinTime"));
-			membersItem.setRole(_ctx.stringValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].Role"));
 			membersItem.setStatus(_ctx.stringValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].Status"));
+			membersItem.setMemberId(_ctx.stringValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].MemberId"));
+			membersItem.setRole(_ctx.stringValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].Role"));
+			membersItem.setMemberName(_ctx.stringValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].MemberName"));
+			membersItem.setJoinTime(_ctx.longValue("DescribeAntChainMembersResponse.Result.Members["+ i +"].JoinTime"));
 
 			members.add(membersItem);
 		}

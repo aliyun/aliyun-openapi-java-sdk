@@ -28,11 +28,11 @@ public class DescribeFabricChaincodeUploadPolicyResponseUnmarshaller {
 		describeFabricChaincodeUploadPolicyResponse.setErrorCode(_ctx.integerValue("DescribeFabricChaincodeUploadPolicyResponse.ErrorCode"));
 
 		Result result = new Result();
-		result.setAccessId(_ctx.stringValue("DescribeFabricChaincodeUploadPolicyResponse.Result.AccessId"));
-		result.setPolicy(_ctx.stringValue("DescribeFabricChaincodeUploadPolicyResponse.Result.Policy"));
 		result.setSignature(_ctx.stringValue("DescribeFabricChaincodeUploadPolicyResponse.Result.Signature"));
-		result.setDir(_ctx.stringValue("DescribeFabricChaincodeUploadPolicyResponse.Result.Dir"));
 		result.setHost(_ctx.stringValue("DescribeFabricChaincodeUploadPolicyResponse.Result.Host"));
+		result.setPolicy(_ctx.stringValue("DescribeFabricChaincodeUploadPolicyResponse.Result.Policy"));
+		result.setDir(_ctx.stringValue("DescribeFabricChaincodeUploadPolicyResponse.Result.Dir"));
+		result.setAccessId(_ctx.stringValue("DescribeFabricChaincodeUploadPolicyResponse.Result.AccessId"));
 		result.setExpire(_ctx.integerValue("DescribeFabricChaincodeUploadPolicyResponse.Result.Expire"));
 		describeFabricChaincodeUploadPolicyResponse.setResult(result);
 	 

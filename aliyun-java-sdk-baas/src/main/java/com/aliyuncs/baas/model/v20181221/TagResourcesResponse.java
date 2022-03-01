@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TagResourcesResponse extends AcsResponse {
 
-	private Integer errorCode;
-
 	private String requestId;
 
 	private Boolean result;
 
 	private Boolean success;
 
-	public Integer getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
+	private Integer errorCode;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -62,6 +54,14 @@ public class TagResourcesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

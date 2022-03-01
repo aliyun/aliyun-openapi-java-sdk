@@ -69,60 +69,28 @@ public class DescribeAntChainConsortiumsResponse extends AcsResponse {
 
 		public static class AntConsortiumsItem {
 
-			private Long chainNum;
-
-			private Long memberNum;
-
-			private Long createTime;
-
-			private String role;
-
-			private String consortiumId;
+			private String consortiumDescription;
 
 			private String status;
 
+			private String consortiumId;
+
+			private Long createTime;
+
+			private Long memberNum;
+
+			private String role;
+
 			private String consortiumName;
 
-			private String consortiumDescription;
+			private Long chainNum;
 
-			public Long getChainNum() {
-				return this.chainNum;
+			public String getConsortiumDescription() {
+				return this.consortiumDescription;
 			}
 
-			public void setChainNum(Long chainNum) {
-				this.chainNum = chainNum;
-			}
-
-			public Long getMemberNum() {
-				return this.memberNum;
-			}
-
-			public void setMemberNum(Long memberNum) {
-				this.memberNum = memberNum;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
-
-			public String getConsortiumId() {
-				return this.consortiumId;
-			}
-
-			public void setConsortiumId(String consortiumId) {
-				this.consortiumId = consortiumId;
+			public void setConsortiumDescription(String consortiumDescription) {
+				this.consortiumDescription = consortiumDescription;
 			}
 
 			public String getStatus() {
@@ -133,6 +101,38 @@ public class DescribeAntChainConsortiumsResponse extends AcsResponse {
 				this.status = status;
 			}
 
+			public String getConsortiumId() {
+				return this.consortiumId;
+			}
+
+			public void setConsortiumId(String consortiumId) {
+				this.consortiumId = consortiumId;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getMemberNum() {
+				return this.memberNum;
+			}
+
+			public void setMemberNum(Long memberNum) {
+				this.memberNum = memberNum;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
 			public String getConsortiumName() {
 				return this.consortiumName;
 			}
@@ -141,12 +141,12 @@ public class DescribeAntChainConsortiumsResponse extends AcsResponse {
 				this.consortiumName = consortiumName;
 			}
 
-			public String getConsortiumDescription() {
-				return this.consortiumDescription;
+			public Long getChainNum() {
+				return this.chainNum;
 			}
 
-			public void setConsortiumDescription(String consortiumDescription) {
-				this.consortiumDescription = consortiumDescription;
+			public void setChainNum(Long chainNum) {
+				this.chainNum = chainNum;
 			}
 		}
 

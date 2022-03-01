@@ -68,13 +68,21 @@ public class ApplyAntChainCertificateWithKeyAutoCreationResponse extends AcsResp
 
 		public static class DownloadPath {
 
-			private String clientCrtUrl;
+			private String sdkUrl;
 
-			private String trustCaUrl;
+			private String clientCrtUrl;
 
 			private String caCrtUrl;
 
-			private String sdkUrl;
+			private String trustCaUrl;
+
+			public String getSdkUrl() {
+				return this.sdkUrl;
+			}
+
+			public void setSdkUrl(String sdkUrl) {
+				this.sdkUrl = sdkUrl;
+			}
 
 			public String getClientCrtUrl() {
 				return this.clientCrtUrl;
@@ -82,14 +90,6 @@ public class ApplyAntChainCertificateWithKeyAutoCreationResponse extends AcsResp
 
 			public void setClientCrtUrl(String clientCrtUrl) {
 				this.clientCrtUrl = clientCrtUrl;
-			}
-
-			public String getTrustCaUrl() {
-				return this.trustCaUrl;
-			}
-
-			public void setTrustCaUrl(String trustCaUrl) {
-				this.trustCaUrl = trustCaUrl;
 			}
 
 			public String getCaCrtUrl() {
@@ -100,12 +100,12 @@ public class ApplyAntChainCertificateWithKeyAutoCreationResponse extends AcsResp
 				this.caCrtUrl = caCrtUrl;
 			}
 
-			public String getSdkUrl() {
-				return this.sdkUrl;
+			public String getTrustCaUrl() {
+				return this.trustCaUrl;
 			}
 
-			public void setSdkUrl(String sdkUrl) {
-				this.sdkUrl = sdkUrl;
+			public void setTrustCaUrl(String trustCaUrl) {
+				this.trustCaUrl = trustCaUrl;
 			}
 		}
 	}

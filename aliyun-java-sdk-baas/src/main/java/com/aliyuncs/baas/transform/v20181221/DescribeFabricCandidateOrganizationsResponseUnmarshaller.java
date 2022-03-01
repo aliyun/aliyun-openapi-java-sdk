@@ -33,10 +33,10 @@ public class DescribeFabricCandidateOrganizationsResponseUnmarshaller {
 		List<DescribeCandidateOrganization> result = new ArrayList<DescribeCandidateOrganization>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFabricCandidateOrganizationsResponse.Result.Length"); i++) {
 			DescribeCandidateOrganization describeCandidateOrganization = new DescribeCandidateOrganization();
-			describeCandidateOrganization.setOrganizationId(_ctx.stringValue("DescribeFabricCandidateOrganizationsResponse.Result["+ i +"].OrganizationId"));
+			describeCandidateOrganization.setServiceState(_ctx.stringValue("DescribeFabricCandidateOrganizationsResponse.Result["+ i +"].ServiceState"));
 			describeCandidateOrganization.setOrganizationName(_ctx.stringValue("DescribeFabricCandidateOrganizationsResponse.Result["+ i +"].OrganizationName"));
 			describeCandidateOrganization.setClusterState(_ctx.stringValue("DescribeFabricCandidateOrganizationsResponse.Result["+ i +"].ClusterState"));
-			describeCandidateOrganization.setServiceState(_ctx.stringValue("DescribeFabricCandidateOrganizationsResponse.Result["+ i +"].ServiceState"));
+			describeCandidateOrganization.setOrganizationId(_ctx.stringValue("DescribeFabricCandidateOrganizationsResponse.Result["+ i +"].OrganizationId"));
 
 			result.add(describeCandidateOrganization);
 		}

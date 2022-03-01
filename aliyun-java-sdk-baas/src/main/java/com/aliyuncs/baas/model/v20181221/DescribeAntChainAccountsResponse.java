@@ -69,22 +69,22 @@ public class DescribeAntChainAccountsResponse extends AcsResponse {
 
 		public static class AccountsItem {
 
-			private String antChainId;
+			private String accountPublicKey;
 
 			private String account;
-
-			private String accountPublicKey;
 
 			private String accountRecoveryKey;
 
 			private String accountStatus;
 
-			public String getAntChainId() {
-				return this.antChainId;
+			private String antChainId;
+
+			public String getAccountPublicKey() {
+				return this.accountPublicKey;
 			}
 
-			public void setAntChainId(String antChainId) {
-				this.antChainId = antChainId;
+			public void setAccountPublicKey(String accountPublicKey) {
+				this.accountPublicKey = accountPublicKey;
 			}
 
 			public String getAccount() {
@@ -93,14 +93,6 @@ public class DescribeAntChainAccountsResponse extends AcsResponse {
 
 			public void setAccount(String account) {
 				this.account = account;
-			}
-
-			public String getAccountPublicKey() {
-				return this.accountPublicKey;
-			}
-
-			public void setAccountPublicKey(String accountPublicKey) {
-				this.accountPublicKey = accountPublicKey;
 			}
 
 			public String getAccountRecoveryKey() {
@@ -117,6 +109,14 @@ public class DescribeAntChainAccountsResponse extends AcsResponse {
 
 			public void setAccountStatus(String accountStatus) {
 				this.accountStatus = accountStatus;
+			}
+
+			public String getAntChainId() {
+				return this.antChainId;
+			}
+
+			public void setAntChainId(String antChainId) {
+				this.antChainId = antChainId;
 			}
 		}
 

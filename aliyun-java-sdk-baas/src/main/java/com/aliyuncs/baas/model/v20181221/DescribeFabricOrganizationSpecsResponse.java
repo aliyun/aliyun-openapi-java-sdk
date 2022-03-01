@@ -67,19 +67,11 @@ public class DescribeFabricOrganizationSpecsResponse extends AcsResponse {
 
 	public static class ClusterSpec {
 
-		private String organizationSpecsName;
-
 		private String title;
 
+		private String organizationSpecsName;
+
 		private Boolean enable;
-
-		public String getOrganizationSpecsName() {
-			return this.organizationSpecsName;
-		}
-
-		public void setOrganizationSpecsName(String organizationSpecsName) {
-			this.organizationSpecsName = organizationSpecsName;
-		}
 
 		public String getTitle() {
 			return this.title;
@@ -87,6 +79,14 @@ public class DescribeFabricOrganizationSpecsResponse extends AcsResponse {
 
 		public void setTitle(String title) {
 			this.title = title;
+		}
+
+		public String getOrganizationSpecsName() {
+			return this.organizationSpecsName;
+		}
+
+		public void setOrganizationSpecsName(String organizationSpecsName) {
+			this.organizationSpecsName = organizationSpecsName;
 		}
 
 		public Boolean getEnable() {

@@ -67,20 +67,20 @@ public class DescribeFabricCandidateOrganizationsResponse extends AcsResponse {
 
 	public static class DescribeCandidateOrganization {
 
-		private String organizationId;
+		private String serviceState;
 
 		private String organizationName;
 
 		private String clusterState;
 
-		private String serviceState;
+		private String organizationId;
 
-		public String getOrganizationId() {
-			return this.organizationId;
+		public String getServiceState() {
+			return this.serviceState;
 		}
 
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
+		public void setServiceState(String serviceState) {
+			this.serviceState = serviceState;
 		}
 
 		public String getOrganizationName() {
@@ -99,12 +99,12 @@ public class DescribeFabricCandidateOrganizationsResponse extends AcsResponse {
 			this.clusterState = clusterState;
 		}
 
-		public String getServiceState() {
-			return this.serviceState;
+		public String getOrganizationId() {
+			return this.organizationId;
 		}
 
-		public void setServiceState(String serviceState) {
-			this.serviceState = serviceState;
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
 		}
 	}
 

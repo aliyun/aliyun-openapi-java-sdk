@@ -66,19 +66,11 @@ public class CheckFabricConsortiumDomainResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Boolean valid;
-
 		private String domain;
 
+		private Boolean valid;
+
 		private String prompt;
-
-		public Boolean getValid() {
-			return this.valid;
-		}
-
-		public void setValid(Boolean valid) {
-			this.valid = valid;
-		}
 
 		public String getDomain() {
 			return this.domain;
@@ -86,6 +78,14 @@ public class CheckFabricConsortiumDomainResponse extends AcsResponse {
 
 		public void setDomain(String domain) {
 			this.domain = domain;
+		}
+
+		public Boolean getValid() {
+			return this.valid;
+		}
+
+		public void setValid(Boolean valid) {
+			this.valid = valid;
 		}
 
 		public String getPrompt() {

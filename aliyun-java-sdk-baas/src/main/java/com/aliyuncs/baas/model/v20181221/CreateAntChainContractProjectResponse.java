@@ -46,9 +46,13 @@ public class CreateAntChainContractProjectResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String projectId;
+		private Long updateTime;
 
 		private String consortiumId;
+
+		private Long createTime;
+
+		private String projectId;
 
 		private String projectName;
 
@@ -56,16 +60,12 @@ public class CreateAntChainContractProjectResponse extends AcsResponse {
 
 		private String projectDescription;
 
-		private Long createTime;
-
-		private Long updateTime;
-
-		public String getProjectId() {
-			return this.projectId;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setProjectId(String projectId) {
-			this.projectId = projectId;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getConsortiumId() {
@@ -74,6 +74,22 @@ public class CreateAntChainContractProjectResponse extends AcsResponse {
 
 		public void setConsortiumId(String consortiumId) {
 			this.consortiumId = consortiumId;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
 		}
 
 		public String getProjectName() {
@@ -98,22 +114,6 @@ public class CreateAntChainContractProjectResponse extends AcsResponse {
 
 		public void setProjectDescription(String projectDescription) {
 			this.projectDescription = projectDescription;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
 		}
 	}
 

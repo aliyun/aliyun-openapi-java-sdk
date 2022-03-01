@@ -27,12 +27,12 @@ public class DescribeAntChainTransactionReceiptV2ResponseUnmarshaller {
 	public static DescribeAntChainTransactionReceiptV2Response unmarshall(DescribeAntChainTransactionReceiptV2Response describeAntChainTransactionReceiptV2Response, UnmarshallerContext _ctx) {
 		
 		describeAntChainTransactionReceiptV2Response.setRequestId(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.RequestId"));
-		describeAntChainTransactionReceiptV2Response.setResultCode(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.ResultCode"));
-		describeAntChainTransactionReceiptV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.ResultMessage"));
-		describeAntChainTransactionReceiptV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainTransactionReceiptV2Response.Success"));
 		describeAntChainTransactionReceiptV2Response.setHttpStatusCode(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.HttpStatusCode"));
+		describeAntChainTransactionReceiptV2Response.setSuccess(_ctx.booleanValue("DescribeAntChainTransactionReceiptV2Response.Success"));
+		describeAntChainTransactionReceiptV2Response.setResultMessage(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.ResultMessage"));
 		describeAntChainTransactionReceiptV2Response.setCode(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.Code"));
 		describeAntChainTransactionReceiptV2Response.setMessage(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.Message"));
+		describeAntChainTransactionReceiptV2Response.setResultCode(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.ResultCode"));
 
 		Result result = new Result();
 		result.setData(_ctx.stringValue("DescribeAntChainTransactionReceiptV2Response.Result.Data"));

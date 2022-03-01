@@ -28,11 +28,11 @@ public class DescribeFabricInviterResponseUnmarshaller {
 		describeFabricInviterResponse.setErrorCode(_ctx.integerValue("DescribeFabricInviterResponse.ErrorCode"));
 
 		Result result = new Result();
+		result.setInviterId(_ctx.longValue("DescribeFabricInviterResponse.Result.InviterId"));
+		result.setExpireTime(_ctx.stringValue("DescribeFabricInviterResponse.Result.ExpireTime"));
 		result.setConsortiumId(_ctx.stringValue("DescribeFabricInviterResponse.Result.ConsortiumId"));
 		result.setConsortiumName(_ctx.stringValue("DescribeFabricInviterResponse.Result.ConsortiumName"));
 		result.setInviterName(_ctx.stringValue("DescribeFabricInviterResponse.Result.InviterName"));
-		result.setInviterId(_ctx.longValue("DescribeFabricInviterResponse.Result.InviterId"));
-		result.setExpireTime(_ctx.stringValue("DescribeFabricInviterResponse.Result.ExpireTime"));
 		describeFabricInviterResponse.setResult(result);
 	 
 	 	return describeFabricInviterResponse;

@@ -26,10 +26,10 @@ public class DescribeAntChainMiniAppBrowserTransactionQRCodeResponseUnmarshaller
 		describeAntChainMiniAppBrowserTransactionQRCodeResponse.setRequestId(_ctx.stringValue("DescribeAntChainMiniAppBrowserTransactionQRCodeResponse.RequestId"));
 
 		Result result = new Result();
-		result.setAntChainId(_ctx.stringValue("DescribeAntChainMiniAppBrowserTransactionQRCodeResponse.Result.AntChainId"));
 		result.setBase64QRCodePNG(_ctx.stringValue("DescribeAntChainMiniAppBrowserTransactionQRCodeResponse.Result.Base64QRCodePNG"));
-		result.setQRCodeContent(_ctx.stringValue("DescribeAntChainMiniAppBrowserTransactionQRCodeResponse.Result.QRCodeContent"));
 		result.setTransactionHash(_ctx.stringValue("DescribeAntChainMiniAppBrowserTransactionQRCodeResponse.Result.TransactionHash"));
+		result.setQRCodeContent(_ctx.stringValue("DescribeAntChainMiniAppBrowserTransactionQRCodeResponse.Result.QRCodeContent"));
+		result.setAntChainId(_ctx.stringValue("DescribeAntChainMiniAppBrowserTransactionQRCodeResponse.Result.AntChainId"));
 		describeAntChainMiniAppBrowserTransactionQRCodeResponse.setResult(result);
 	 
 	 	return describeAntChainMiniAppBrowserTransactionQRCodeResponse;

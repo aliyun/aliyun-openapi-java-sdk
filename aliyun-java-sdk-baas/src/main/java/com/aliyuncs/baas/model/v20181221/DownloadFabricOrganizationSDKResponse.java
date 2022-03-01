@@ -67,17 +67,9 @@ public class DownloadFabricOrganizationSDKResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String content;
-
 		private String path;
 
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
+		private String content;
 
 		public String getPath() {
 			return this.path;
@@ -85,6 +77,14 @@ public class DownloadFabricOrganizationSDKResponse extends AcsResponse {
 
 		public void setPath(String path) {
 			this.path = path;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
 		}
 	}
 

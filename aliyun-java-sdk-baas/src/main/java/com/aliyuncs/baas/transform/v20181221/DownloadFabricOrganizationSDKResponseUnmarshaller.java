@@ -33,8 +33,8 @@ public class DownloadFabricOrganizationSDKResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DownloadFabricOrganizationSDKResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setContent(_ctx.stringValue("DownloadFabricOrganizationSDKResponse.Result["+ i +"].Content"));
 			resultItem.setPath(_ctx.stringValue("DownloadFabricOrganizationSDKResponse.Result["+ i +"].Path"));
+			resultItem.setContent(_ctx.stringValue("DownloadFabricOrganizationSDKResponse.Result["+ i +"].Content"));
 
 			result.add(resultItem);
 		}
