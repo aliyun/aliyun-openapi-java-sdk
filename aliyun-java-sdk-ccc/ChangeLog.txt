@@ -1,3 +1,6 @@
+2022-03-02 Version: 2.3.1
+- Support SIP phone management.
+
 2022-03-01 Version: 1.0.31
 - Supported ServiceLevel30s For ListSkillGroupSummaryReportsSinceMidnight.
 
