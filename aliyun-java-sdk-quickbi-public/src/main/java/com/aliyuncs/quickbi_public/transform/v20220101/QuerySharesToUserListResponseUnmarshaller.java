@@ -1,0 +1,64 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.quickbi_public.transform.v20220101;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aliyuncs.quickbi_public.model.v20220101.QuerySharesToUserListResponse;
+import com.aliyuncs.quickbi_public.model.v20220101.QuerySharesToUserListResponse.Data;
+import com.aliyuncs.quickbi_public.model.v20220101.QuerySharesToUserListResponse.Data.Directory;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class QuerySharesToUserListResponseUnmarshaller {
+
+	public static QuerySharesToUserListResponse unmarshall(QuerySharesToUserListResponse querySharesToUserListResponse, UnmarshallerContext _ctx) {
+		
+		querySharesToUserListResponse.setRequestId(_ctx.stringValue("QuerySharesToUserListResponse.RequestId"));
+		querySharesToUserListResponse.setSuccess(_ctx.booleanValue("QuerySharesToUserListResponse.Success"));
+
+		List<Data> result = new ArrayList<Data>();
+		for (int i = 0; i < _ctx.lengthValue("QuerySharesToUserListResponse.Result.Length"); i++) {
+			Data data = new Data();
+			data.setStatus(_ctx.integerValue("QuerySharesToUserListResponse.Result["+ i +"].Status"));
+			data.setThirdPartAuthFlag(_ctx.integerValue("QuerySharesToUserListResponse.Result["+ i +"].ThirdPartAuthFlag"));
+			data.setWorksId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorksId"));
+			data.setCreateTime(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].CreateTime"));
+			data.setWorkType(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkType"));
+			data.setOwnerName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].OwnerName"));
+			data.setWorkspaceName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkspaceName"));
+			data.setOwnerId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].OwnerId"));
+			data.setModifyName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].ModifyName"));
+			data.setWorkspaceId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkspaceId"));
+			data.setSecurityLevel(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].SecurityLevel"));
+			data.setDescription(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Description"));
+			data.setWorkName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].WorkName"));
+			data.setModifyTime(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].ModifyTime"));
+
+			Directory directory = new Directory();
+			directory.setPathId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.PathId"));
+			directory.setPathName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.PathName"));
+			directory.setName(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.Name"));
+			directory.setId(_ctx.stringValue("QuerySharesToUserListResponse.Result["+ i +"].Directory.Id"));
+			data.setDirectory(directory);
+
+			result.add(data);
+		}
+		querySharesToUserListResponse.setResult(result);
+	 
+	 	return querySharesToUserListResponse;
+	}
+}
