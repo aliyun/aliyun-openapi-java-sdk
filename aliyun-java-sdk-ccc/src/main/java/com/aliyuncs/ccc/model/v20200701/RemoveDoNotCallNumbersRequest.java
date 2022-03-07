@@ -29,7 +29,7 @@ public class RemoveDoNotCallNumbersRequest extends RpcAcsRequest<RemoveDoNotCall
 
 	private String instanceId;
 	public RemoveDoNotCallNumbersRequest() {
-		super("CCC", "2020-07-01", "RemoveDoNotCallNumbers");
+		super("CCC", "2020-07-01", "RemoveDoNotCallNumbers", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

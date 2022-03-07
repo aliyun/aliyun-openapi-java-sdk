@@ -37,7 +37,7 @@ public class ListPersonalNumbersOfUserRequest extends RpcAcsRequest<ListPersonal
 
 	private Integer pageSize;
 	public ListPersonalNumbersOfUserRequest() {
-		super("CCC", "2020-07-01", "ListPersonalNumbersOfUser");
+		super("CCC", "2020-07-01", "ListPersonalNumbersOfUser", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

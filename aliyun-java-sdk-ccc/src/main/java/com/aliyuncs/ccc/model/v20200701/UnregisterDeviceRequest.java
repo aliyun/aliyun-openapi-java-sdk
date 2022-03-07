@@ -29,7 +29,7 @@ public class UnregisterDeviceRequest extends RpcAcsRequest<UnregisterDeviceRespo
 
 	private String instanceId;
 	public UnregisterDeviceRequest() {
-		super("CCC", "2020-07-01", "UnregisterDevice");
+		super("CCC", "2020-07-01", "UnregisterDevice", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

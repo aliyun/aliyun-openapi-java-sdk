@@ -31,7 +31,7 @@ public class SignOutGroupRequest extends RpcAcsRequest<SignOutGroupResponse> {
 
 	private String instanceId;
 	public SignOutGroupRequest() {
-		super("CCC", "2020-07-01", "SignOutGroup");
+		super("CCC", "2020-07-01", "SignOutGroup", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

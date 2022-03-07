@@ -33,7 +33,7 @@ public class ImportDoNotCallNumbersRequest extends RpcAcsRequest<ImportDoNotCall
 
 	private String filePath;
 	public ImportDoNotCallNumbersRequest() {
-		super("CCC", "2020-07-01", "ImportDoNotCallNumbers");
+		super("CCC", "2020-07-01", "ImportDoNotCallNumbers", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

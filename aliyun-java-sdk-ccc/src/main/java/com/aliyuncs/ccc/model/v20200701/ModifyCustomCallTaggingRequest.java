@@ -33,7 +33,7 @@ public class ModifyCustomCallTaggingRequest extends RpcAcsRequest<ModifyCustomCa
 
 	private String callTagNameList;
 	public ModifyCustomCallTaggingRequest() {
-		super("CCC", "2020-07-01", "ModifyCustomCallTagging");
+		super("CCC", "2020-07-01", "ModifyCustomCallTagging", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

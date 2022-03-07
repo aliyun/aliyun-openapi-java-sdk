@@ -35,7 +35,7 @@ public class ListCustomCallTaggingRequest extends RpcAcsRequest<ListCustomCallTa
 
 	private String callTagNameList;
 	public ListCustomCallTaggingRequest() {
-		super("CCC", "2020-07-01", "ListCustomCallTagging");
+		super("CCC", "2020-07-01", "ListCustomCallTagging", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

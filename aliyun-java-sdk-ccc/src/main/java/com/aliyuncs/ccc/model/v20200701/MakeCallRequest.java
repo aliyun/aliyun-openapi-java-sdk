@@ -41,7 +41,7 @@ public class MakeCallRequest extends RpcAcsRequest<MakeCallResponse> {
 
 	private String instanceId;
 	public MakeCallRequest() {
-		super("CCC", "2020-07-01", "MakeCall");
+		super("CCC", "2020-07-01", "MakeCall", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

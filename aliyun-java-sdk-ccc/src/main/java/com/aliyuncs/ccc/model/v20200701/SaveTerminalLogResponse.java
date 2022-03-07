@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SaveTerminalLogResponse extends AcsResponse {
 
-	private String code;
-
 	private Long httpStatusCode;
-
-	private String message;
 
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String message;
+
 	private Long timeStamp;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public Long getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -50,14 +42,6 @@ public class SaveTerminalLogResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Long httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -74,6 +58,22 @@ public class SaveTerminalLogResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Long getTimeStamp() {

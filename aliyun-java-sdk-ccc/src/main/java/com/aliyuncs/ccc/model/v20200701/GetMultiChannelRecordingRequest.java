@@ -29,7 +29,7 @@ public class GetMultiChannelRecordingRequest extends RpcAcsRequest<GetMultiChann
 
 	private String instanceId;
 	public GetMultiChannelRecordingRequest() {
-		super("CCC", "2020-07-01", "GetMultiChannelRecording");
+		super("CCC", "2020-07-01", "GetMultiChannelRecording", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

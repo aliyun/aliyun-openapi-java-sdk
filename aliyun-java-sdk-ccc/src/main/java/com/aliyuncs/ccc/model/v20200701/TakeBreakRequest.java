@@ -33,7 +33,7 @@ public class TakeBreakRequest extends RpcAcsRequest<TakeBreakResponse> {
 
 	private String instanceId;
 	public TakeBreakRequest() {
-		super("CCC", "2020-07-01", "TakeBreak");
+		super("CCC", "2020-07-01", "TakeBreak", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

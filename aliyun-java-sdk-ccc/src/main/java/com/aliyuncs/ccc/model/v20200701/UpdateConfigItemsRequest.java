@@ -33,7 +33,7 @@ public class UpdateConfigItemsRequest extends RpcAcsRequest<UpdateConfigItemsRes
 
 	private String objectId;
 	public UpdateConfigItemsRequest() {
-		super("CCC", "2020-07-01", "UpdateConfigItems");
+		super("CCC", "2020-07-01", "UpdateConfigItems", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

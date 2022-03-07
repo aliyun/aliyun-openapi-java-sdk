@@ -31,7 +31,7 @@ public class RemovePhoneNumbersFromSkillGroupRequest extends RpcAcsRequest<Remov
 
 	private String skillGroupId;
 	public RemovePhoneNumbersFromSkillGroupRequest() {
-		super("CCC", "2020-07-01", "RemovePhoneNumbersFromSkillGroup");
+		super("CCC", "2020-07-01", "RemovePhoneNumbersFromSkillGroup", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

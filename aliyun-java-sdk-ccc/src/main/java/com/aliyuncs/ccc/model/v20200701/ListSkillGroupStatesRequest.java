@@ -33,7 +33,7 @@ public class ListSkillGroupStatesRequest extends RpcAcsRequest<ListSkillGroupSta
 
 	private Integer pageSize;
 	public ListSkillGroupStatesRequest() {
-		super("CCC", "2020-07-01", "ListSkillGroupStates");
+		super("CCC", "2020-07-01", "ListSkillGroupStates", "CCC");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

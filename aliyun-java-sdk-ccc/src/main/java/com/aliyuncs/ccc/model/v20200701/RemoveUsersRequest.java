@@ -29,7 +29,7 @@ public class RemoveUsersRequest extends RpcAcsRequest<RemoveUsersResponse> {
 
 	private String instanceId;
 	public RemoveUsersRequest() {
-		super("CCC", "2020-07-01", "RemoveUsers");
+		super("CCC", "2020-07-01", "RemoveUsers", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

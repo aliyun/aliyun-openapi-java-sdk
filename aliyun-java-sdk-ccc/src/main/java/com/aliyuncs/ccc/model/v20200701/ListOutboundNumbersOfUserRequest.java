@@ -35,7 +35,7 @@ public class ListOutboundNumbersOfUserRequest extends RpcAcsRequest<ListOutbound
 
 	private Integer pageSize;
 	public ListOutboundNumbersOfUserRequest() {
-		super("CCC", "2020-07-01", "ListOutboundNumbersOfUser");
+		super("CCC", "2020-07-01", "ListOutboundNumbersOfUser", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

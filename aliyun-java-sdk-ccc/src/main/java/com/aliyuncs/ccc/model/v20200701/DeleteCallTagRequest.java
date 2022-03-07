@@ -29,7 +29,7 @@ public class DeleteCallTagRequest extends RpcAcsRequest<DeleteCallTagResponse> {
 
 	private String instanceId;
 	public DeleteCallTagRequest() {
-		super("CCC", "2020-07-01", "DeleteCallTag");
+		super("CCC", "2020-07-01", "DeleteCallTag", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

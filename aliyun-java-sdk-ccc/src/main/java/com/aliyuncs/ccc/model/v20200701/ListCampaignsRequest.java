@@ -45,7 +45,7 @@ public class ListCampaignsRequest extends RpcAcsRequest<ListCampaignsResponse> {
 
 	private String state;
 	public ListCampaignsRequest() {
-		super("CCC", "2020-07-01", "ListCampaigns");
+		super("CCC", "2020-07-01", "ListCampaigns", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

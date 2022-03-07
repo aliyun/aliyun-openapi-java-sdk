@@ -1,3 +1,6 @@
+2022-03-07 Version: 2.3.2
+- Supported RemovePhoneNumbers.
+
 2022-03-02 Version: 2.3.1
 - Support SIP phone management.
 

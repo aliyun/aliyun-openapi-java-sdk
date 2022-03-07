@@ -55,7 +55,7 @@ public class CreateCampaignRequest extends RpcAcsRequest<CreateCampaignResponse>
 
 	private String callableTime;
 	public CreateCampaignRequest() {
-		super("CCC", "2020-07-01", "CreateCampaign");
+		super("CCC", "2020-07-01", "CreateCampaign", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

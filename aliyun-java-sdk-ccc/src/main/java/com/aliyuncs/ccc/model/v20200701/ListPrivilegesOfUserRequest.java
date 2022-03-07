@@ -27,7 +27,7 @@ public class ListPrivilegesOfUserRequest extends RpcAcsRequest<ListPrivilegesOfU
 
 	private String instanceId;
 	public ListPrivilegesOfUserRequest() {
-		super("CCC", "2020-07-01", "ListPrivilegesOfUser");
+		super("CCC", "2020-07-01", "ListPrivilegesOfUser", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

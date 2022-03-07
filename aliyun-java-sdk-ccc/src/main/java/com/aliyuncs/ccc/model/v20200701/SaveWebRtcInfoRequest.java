@@ -35,7 +35,7 @@ public class SaveWebRtcInfoRequest extends RpcAcsRequest<SaveWebRtcInfoResponse>
 
 	private String instanceId;
 	public SaveWebRtcInfoRequest() {
-		super("CCC", "2020-07-01", "SaveWebRtcInfo");
+		super("CCC", "2020-07-01", "SaveWebRtcInfo", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

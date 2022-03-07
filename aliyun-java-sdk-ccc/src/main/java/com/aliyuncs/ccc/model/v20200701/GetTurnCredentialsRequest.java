@@ -29,7 +29,7 @@ public class GetTurnCredentialsRequest extends RpcAcsRequest<GetTurnCredentialsR
 
 	private String instanceId;
 	public GetTurnCredentialsRequest() {
-		super("CCC", "2020-07-01", "GetTurnCredentials");
+		super("CCC", "2020-07-01", "GetTurnCredentials", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

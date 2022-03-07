@@ -75,6 +75,7 @@ public class GetCallDetailRecordResponseUnmarshaller {
 				EventSequenceItem eventSequenceItem = new EventSequenceItem();
 				eventSequenceItem.setEvent(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].EventSequence["+ j +"].Event"));
 				eventSequenceItem.setEventTime(_ctx.longValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].EventSequence["+ j +"].EventTime"));
+				eventSequenceItem.setDuration(_ctx.longValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].EventSequence["+ j +"].Duration"));
 
 				eventSequence.add(eventSequenceItem);
 			}

@@ -35,7 +35,7 @@ public class ReleaseCallRequest extends RpcAcsRequest<ReleaseCallResponse> {
 
 	private String channelId;
 	public ReleaseCallRequest() {
-		super("CCC", "2020-07-01", "ReleaseCall");
+		super("CCC", "2020-07-01", "ReleaseCall", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

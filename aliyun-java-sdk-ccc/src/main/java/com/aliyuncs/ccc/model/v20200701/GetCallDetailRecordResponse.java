@@ -385,6 +385,8 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 				private Long eventTime;
 
+				private Long duration;
+
 				public String getEvent() {
 					return this.event;
 				}
@@ -399,6 +401,14 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 				public void setEventTime(Long eventTime) {
 					this.eventTime = eventTime;
+				}
+
+				public Long getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(Long duration) {
+					this.duration = duration;
 				}
 			}
 		}

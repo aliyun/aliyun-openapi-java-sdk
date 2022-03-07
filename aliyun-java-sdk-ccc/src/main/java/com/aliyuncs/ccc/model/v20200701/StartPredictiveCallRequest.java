@@ -43,7 +43,7 @@ public class StartPredictiveCallRequest extends RpcAcsRequest<StartPredictiveCal
 
 	private String skillGroupId;
 	public StartPredictiveCallRequest() {
-		super("CCC", "2020-07-01", "StartPredictiveCall");
+		super("CCC", "2020-07-01", "StartPredictiveCall", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

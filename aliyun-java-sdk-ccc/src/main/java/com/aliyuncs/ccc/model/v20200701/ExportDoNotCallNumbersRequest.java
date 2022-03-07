@@ -31,7 +31,7 @@ public class ExportDoNotCallNumbersRequest extends RpcAcsRequest<ExportDoNotCall
 
 	private String scope;
 	public ExportDoNotCallNumbersRequest() {
-		super("CCC", "2020-07-01", "ExportDoNotCallNumbers");
+		super("CCC", "2020-07-01", "ExportDoNotCallNumbers", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
