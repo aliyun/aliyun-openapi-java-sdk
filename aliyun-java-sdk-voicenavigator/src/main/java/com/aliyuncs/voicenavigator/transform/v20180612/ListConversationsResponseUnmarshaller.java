@@ -43,6 +43,7 @@ public class ListConversationsResponseUnmarshaller {
 			conversation.setEndReason(_ctx.integerValue("ListConversationsResponse.Conversations["+ i +"].EndReason"));
 			conversation.setRounds(_ctx.integerValue("ListConversationsResponse.Conversations["+ i +"].Rounds"));
 			conversation.setHasLastPlaybackCompleted(_ctx.booleanValue("ListConversationsResponse.Conversations["+ i +"].HasLastPlaybackCompleted"));
+			conversation.setSandBox(_ctx.booleanValue("ListConversationsResponse.Conversations["+ i +"].SandBox"));
 
 			conversations.add(conversation);
 		}

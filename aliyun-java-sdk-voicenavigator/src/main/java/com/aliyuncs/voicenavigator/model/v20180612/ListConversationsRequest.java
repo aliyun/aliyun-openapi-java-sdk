@@ -39,6 +39,8 @@ public class ListConversationsRequest extends RpcAcsRequest<ListConversationsRes
 
 	private Long beginTimeRightRange;
 
+	private String isSandBox;
+
 	private Integer pageSize;
 	public ListConversationsRequest() {
 		super("VoiceNavigator", "2018-06-12", "ListConversations", "voicebot");
@@ -123,6 +125,17 @@ public class ListConversationsRequest extends RpcAcsRequest<ListConversationsRes
 		this.beginTimeRightRange = beginTimeRightRange;
 		if(beginTimeRightRange != null){
 			putQueryParameter("BeginTimeRightRange", beginTimeRightRange.toString());
+		}
+	}
+
+	public String getIsSandBox() {
+		return this.isSandBox;
+	}
+
+	public void setIsSandBox(String isSandBox) {
+		this.isSandBox = isSandBox;
+		if(isSandBox != null){
+			putQueryParameter("IsSandBox", isSandBox);
 		}
 	}
 

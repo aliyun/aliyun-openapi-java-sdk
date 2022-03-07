@@ -95,6 +95,8 @@ public class ListConversationsResponse extends AcsResponse {
 
 		private Boolean hasLastPlaybackCompleted;
 
+		private Boolean sandBox;
+
 		public Long getEndTime() {
 			return this.endTime;
 		}
@@ -165,6 +167,14 @@ public class ListConversationsResponse extends AcsResponse {
 
 		public void setHasLastPlaybackCompleted(Boolean hasLastPlaybackCompleted) {
 			this.hasLastPlaybackCompleted = hasLastPlaybackCompleted;
+		}
+
+		public Boolean getSandBox() {
+			return this.sandBox;
+		}
+
+		public void setSandBox(Boolean sandBox) {
+			this.sandBox = sandBox;
 		}
 	}
 
