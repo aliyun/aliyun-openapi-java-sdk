@@ -64,6 +64,7 @@ public class SearchTaskResponseUnmarshaller {
 			searchTaskInfo.setTaskId(_ctx.stringValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].TaskId"));
 			searchTaskInfo.setDialExceptionOld(_ctx.stringValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].DialExceptionOld"));
 			searchTaskInfo.setHasLastPlaybackCompleted(_ctx.booleanValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].HasLastPlaybackCompleted"));
+			searchTaskInfo.setScriptName(_ctx.stringValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].ScriptName"));
 
 			List<String> dialExceptionCodes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchTaskResponse.SearchTaskInfoList["+ i +"].DialExceptionCodes.Length"); j++) {

@@ -169,6 +169,8 @@ public class SearchTaskResponse extends AcsResponse {
 
 		private Boolean hasLastPlaybackCompleted;
 
+		private String scriptName;
+
 		private List<String> dialExceptionCodes;
 
 		public String getJobGroupName() {
@@ -377,6 +379,14 @@ public class SearchTaskResponse extends AcsResponse {
 
 		public void setHasLastPlaybackCompleted(Boolean hasLastPlaybackCompleted) {
 			this.hasLastPlaybackCompleted = hasLastPlaybackCompleted;
+		}
+
+		public String getScriptName() {
+			return this.scriptName;
+		}
+
+		public void setScriptName(String scriptName) {
+			this.scriptName = scriptName;
 		}
 
 		public List<String> getDialExceptionCodes() {

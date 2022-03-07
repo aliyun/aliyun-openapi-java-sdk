@@ -24,29 +24,30 @@ public class DescribeScriptResponseUnmarshaller {
 	public static DescribeScriptResponse unmarshall(DescribeScriptResponse describeScriptResponse, UnmarshallerContext _ctx) {
 		
 		describeScriptResponse.setRequestId(_ctx.stringValue("DescribeScriptResponse.RequestId"));
-		describeScriptResponse.setCode(_ctx.stringValue("DescribeScriptResponse.Code"));
 		describeScriptResponse.setHttpStatusCode(_ctx.integerValue("DescribeScriptResponse.HttpStatusCode"));
-		describeScriptResponse.setMessage(_ctx.stringValue("DescribeScriptResponse.Message"));
 		describeScriptResponse.setSuccess(_ctx.booleanValue("DescribeScriptResponse.Success"));
 		describeScriptResponse.setChatbotId(_ctx.stringValue("DescribeScriptResponse.ChatbotId"));
-		describeScriptResponse.setAsrConfig(_ctx.stringValue("DescribeScriptResponse.AsrConfig"));
+		describeScriptResponse.setCode(_ctx.stringValue("DescribeScriptResponse.Code"));
+		describeScriptResponse.setMessage(_ctx.stringValue("DescribeScriptResponse.Message"));
 		describeScriptResponse.setTtsConfig(_ctx.stringValue("DescribeScriptResponse.TtsConfig"));
+		describeScriptResponse.setAsrConfig(_ctx.stringValue("DescribeScriptResponse.AsrConfig"));
+		describeScriptResponse.setNlsConfig(_ctx.stringValue("DescribeScriptResponse.NlsConfig"));
 
 		Script script = new Script();
-		script.setDebugStatus(_ctx.stringValue("DescribeScriptResponse.Script.DebugStatus"));
-		script.setIndustry(_ctx.stringValue("DescribeScriptResponse.Script.Industry"));
-		script.setIsDebugDrafted(_ctx.booleanValue("DescribeScriptResponse.Script.IsDebugDrafted"));
-		script.setIsDrafted(_ctx.booleanValue("DescribeScriptResponse.Script.IsDrafted"));
-		script.setScene(_ctx.stringValue("DescribeScriptResponse.Script.Scene"));
-		script.setScriptDescription(_ctx.stringValue("DescribeScriptResponse.Script.ScriptDescription"));
-		script.setScriptId(_ctx.stringValue("DescribeScriptResponse.Script.ScriptId"));
-		script.setScriptName(_ctx.stringValue("DescribeScriptResponse.Script.ScriptName"));
 		script.setStatus(_ctx.stringValue("DescribeScriptResponse.Script.Status"));
 		script.setUpdateTime(_ctx.longValue("DescribeScriptResponse.Script.UpdateTime"));
 		script.setChatbotId(_ctx.stringValue("DescribeScriptResponse.Script.ChatbotId"));
-		script.setAsrConfig(_ctx.stringValue("DescribeScriptResponse.Script.AsrConfig"));
-		script.setTtsConfig(_ctx.stringValue("DescribeScriptResponse.Script.TtsConfig"));
+		script.setScriptId(_ctx.stringValue("DescribeScriptResponse.Script.ScriptId"));
+		script.setIsDebugDrafted(_ctx.booleanValue("DescribeScriptResponse.Script.IsDebugDrafted"));
+		script.setIndustry(_ctx.stringValue("DescribeScriptResponse.Script.Industry"));
+		script.setScriptDescription(_ctx.stringValue("DescribeScriptResponse.Script.ScriptDescription"));
 		script.setMiniPlaybackConfigEnabled(_ctx.booleanValue("DescribeScriptResponse.Script.MiniPlaybackConfigEnabled"));
+		script.setIsDrafted(_ctx.booleanValue("DescribeScriptResponse.Script.IsDrafted"));
+		script.setTtsConfig(_ctx.stringValue("DescribeScriptResponse.Script.TtsConfig"));
+		script.setDebugStatus(_ctx.stringValue("DescribeScriptResponse.Script.DebugStatus"));
+		script.setAsrConfig(_ctx.stringValue("DescribeScriptResponse.Script.AsrConfig"));
+		script.setScene(_ctx.stringValue("DescribeScriptResponse.Script.Scene"));
+		script.setScriptName(_ctx.stringValue("DescribeScriptResponse.Script.ScriptName"));
 		describeScriptResponse.setScript(script);
 	 
 	 	return describeScriptResponse;

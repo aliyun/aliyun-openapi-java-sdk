@@ -22,8 +22,10 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchTaskRequest extends RpcAcsRequest<SearchTaskResponse> {
+public class CreateTaskExportTaskRequest extends RpcAcsRequest<CreateTaskExportTaskResponse> {
 	   
+
+	private Boolean hasAnswered;
 
 	private Long actualTimeLte;
 
@@ -53,6 +55,10 @@ public class SearchTaskRequest extends RpcAcsRequest<SearchTaskResponse> {
 
 	private String taskId;
 
+	private Boolean hasHangUpByRejection;
+
+	private Boolean hasReachedEndOfFlow;
+
 	private String instanceId;
 
 	private Long recordingDurationGte;
@@ -70,13 +76,24 @@ public class SearchTaskRequest extends RpcAcsRequest<SearchTaskResponse> {
 	private Long callDurationGte;
 
 	private Long recordingDurationLte;
-	public SearchTaskRequest() {
-		super("OutboundBot", "2019-12-26", "SearchTask", "outboundbot");
+	public CreateTaskExportTaskRequest() {
+		super("OutboundBot", "2019-12-26", "CreateTaskExportTask", "outboundbot");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getHasAnswered() {
+		return this.hasAnswered;
+	}
+
+	public void setHasAnswered(Boolean hasAnswered) {
+		this.hasAnswered = hasAnswered;
+		if(hasAnswered != null){
+			putQueryParameter("HasAnswered", hasAnswered.toString());
+		}
 	}
 
 	public Long getActualTimeLte() {
@@ -233,6 +250,28 @@ public class SearchTaskRequest extends RpcAcsRequest<SearchTaskResponse> {
 		}
 	}
 
+	public Boolean getHasHangUpByRejection() {
+		return this.hasHangUpByRejection;
+	}
+
+	public void setHasHangUpByRejection(Boolean hasHangUpByRejection) {
+		this.hasHangUpByRejection = hasHangUpByRejection;
+		if(hasHangUpByRejection != null){
+			putQueryParameter("HasHangUpByRejection", hasHangUpByRejection.toString());
+		}
+	}
+
+	public Boolean getHasReachedEndOfFlow() {
+		return this.hasReachedEndOfFlow;
+	}
+
+	public void setHasReachedEndOfFlow(Boolean hasReachedEndOfFlow) {
+		this.hasReachedEndOfFlow = hasReachedEndOfFlow;
+		if(hasReachedEndOfFlow != null){
+			putQueryParameter("HasReachedEndOfFlow", hasReachedEndOfFlow.toString());
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -333,8 +372,8 @@ public class SearchTaskRequest extends RpcAcsRequest<SearchTaskResponse> {
 	}
 
 	@Override
-	public Class<SearchTaskResponse> getResponseClass() {
-		return SearchTaskResponse.class;
+	public Class<CreateTaskExportTaskResponse> getResponseClass() {
+		return CreateTaskExportTaskResponse.class;
 	}
 
 }

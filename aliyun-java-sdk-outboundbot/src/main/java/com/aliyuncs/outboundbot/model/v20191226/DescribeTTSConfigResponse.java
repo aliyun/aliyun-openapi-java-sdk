@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTTSConfigResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -36,20 +36,20 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 
 	private TTSConfig tTSConfig;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -86,40 +86,24 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 
 	public static class TTSConfig {
 
-		private String id;
-
-		private String instanceId;
-
-		private String scriptId;
+		private String voice;
 
 		private String speechRate;
 
-		private String voice;
-
 		private String volume;
 
-		public String getId() {
-			return this.id;
+		private String instanceId;
+
+		private String nlsServiceType;
+
+		private String appKey;
+
+		public String getVoice() {
+			return this.voice;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getScriptId() {
-			return this.scriptId;
-		}
-
-		public void setScriptId(String scriptId) {
-			this.scriptId = scriptId;
+		public void setVoice(String voice) {
+			this.voice = voice;
 		}
 
 		public String getSpeechRate() {
@@ -130,20 +114,36 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 			this.speechRate = speechRate;
 		}
 
-		public String getVoice() {
-			return this.voice;
-		}
-
-		public void setVoice(String voice) {
-			this.voice = voice;
-		}
-
 		public String getVolume() {
 			return this.volume;
 		}
 
 		public void setVolume(String volume) {
 			this.volume = volume;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getNlsServiceType() {
+			return this.nlsServiceType;
+		}
+
+		public void setNlsServiceType(String nlsServiceType) {
+			this.nlsServiceType = nlsServiceType;
+		}
+
+		public String getAppKey() {
+			return this.appKey;
+		}
+
+		public void setAppKey(String appKey) {
+			this.appKey = appKey;
 		}
 	}
 

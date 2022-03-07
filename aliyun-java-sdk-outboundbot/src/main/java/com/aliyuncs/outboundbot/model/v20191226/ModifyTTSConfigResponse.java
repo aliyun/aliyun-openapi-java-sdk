@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyTTSConfigResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -36,20 +36,20 @@ public class ModifyTTSConfigResponse extends AcsResponse {
 
 	private TTSConfig tTSConfig;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -86,17 +86,49 @@ public class ModifyTTSConfigResponse extends AcsResponse {
 
 	public static class TTSConfig {
 
+		private String voice;
+
+		private String tTSConfigId;
+
+		private String speechRate;
+
+		private String volume;
+
 		private String instanceId;
 
 		private String scriptId;
 
-		private String speechRate;
+		public String getVoice() {
+			return this.voice;
+		}
 
-		private String tTSConfigId;
+		public void setVoice(String voice) {
+			this.voice = voice;
+		}
 
-		private String voice;
+		public String getTTSConfigId() {
+			return this.tTSConfigId;
+		}
 
-		private String volume;
+		public void setTTSConfigId(String tTSConfigId) {
+			this.tTSConfigId = tTSConfigId;
+		}
+
+		public String getSpeechRate() {
+			return this.speechRate;
+		}
+
+		public void setSpeechRate(String speechRate) {
+			this.speechRate = speechRate;
+		}
+
+		public String getVolume() {
+			return this.volume;
+		}
+
+		public void setVolume(String volume) {
+			this.volume = volume;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -112,38 +144,6 @@ public class ModifyTTSConfigResponse extends AcsResponse {
 
 		public void setScriptId(String scriptId) {
 			this.scriptId = scriptId;
-		}
-
-		public String getSpeechRate() {
-			return this.speechRate;
-		}
-
-		public void setSpeechRate(String speechRate) {
-			this.speechRate = speechRate;
-		}
-
-		public String getTTSConfigId() {
-			return this.tTSConfigId;
-		}
-
-		public void setTTSConfigId(String tTSConfigId) {
-			this.tTSConfigId = tTSConfigId;
-		}
-
-		public String getVoice() {
-			return this.voice;
-		}
-
-		public void setVoice(String voice) {
-			this.voice = voice;
-		}
-
-		public String getVolume() {
-			return this.volume;
-		}
-
-		public void setVolume(String volume) {
-			this.volume = volume;
 		}
 	}
 

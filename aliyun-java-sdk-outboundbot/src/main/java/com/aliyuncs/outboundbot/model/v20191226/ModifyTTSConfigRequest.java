@@ -27,11 +27,15 @@ public class ModifyTTSConfigRequest extends RpcAcsRequest<ModifyTTSConfigRespons
 
 	private String voice;
 
+	private String nlsServiceType;
+
 	private String volume;
 
 	private String scriptId;
 
 	private String instanceId;
+
+	private String appKey;
 
 	private String speechRate;
 	public ModifyTTSConfigRequest() {
@@ -51,6 +55,17 @@ public class ModifyTTSConfigRequest extends RpcAcsRequest<ModifyTTSConfigRespons
 		this.voice = voice;
 		if(voice != null){
 			putQueryParameter("Voice", voice);
+		}
+	}
+
+	public String getNlsServiceType() {
+		return this.nlsServiceType;
+	}
+
+	public void setNlsServiceType(String nlsServiceType) {
+		this.nlsServiceType = nlsServiceType;
+		if(nlsServiceType != null){
+			putQueryParameter("NlsServiceType", nlsServiceType);
 		}
 	}
 
@@ -84,6 +99,17 @@ public class ModifyTTSConfigRequest extends RpcAcsRequest<ModifyTTSConfigRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey);
 		}
 	}
 

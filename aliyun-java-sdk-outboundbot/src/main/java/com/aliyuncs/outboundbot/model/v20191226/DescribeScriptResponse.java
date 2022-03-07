@@ -24,11 +24,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScriptResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
-
-	private String message;
 
 	private String requestId;
 
@@ -36,19 +32,17 @@ public class DescribeScriptResponse extends AcsResponse {
 
 	private String chatbotId;
 
-	private String asrConfig;
+	private String code;
+
+	private String message;
 
 	private String ttsConfig;
 
+	private String asrConfig;
+
+	private String nlsConfig;
+
 	private Script script;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -56,14 +50,6 @@ public class DescribeScriptResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -90,12 +76,20 @@ public class DescribeScriptResponse extends AcsResponse {
 		this.chatbotId = chatbotId;
 	}
 
-	public String getAsrConfig() {
-		return this.asrConfig;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setAsrConfig(String asrConfig) {
-		this.asrConfig = asrConfig;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getTtsConfig() {
@@ -104,6 +98,22 @@ public class DescribeScriptResponse extends AcsResponse {
 
 	public void setTtsConfig(String ttsConfig) {
 		this.ttsConfig = ttsConfig;
+	}
+
+	public String getAsrConfig() {
+		return this.asrConfig;
+	}
+
+	public void setAsrConfig(String asrConfig) {
+		this.asrConfig = asrConfig;
+	}
+
+	public String getNlsConfig() {
+		return this.nlsConfig;
+	}
+
+	public void setNlsConfig(String nlsConfig) {
+		this.nlsConfig = nlsConfig;
 	}
 
 	public Script getScript() {
@@ -116,97 +126,33 @@ public class DescribeScriptResponse extends AcsResponse {
 
 	public static class Script {
 
-		private String debugStatus;
-
-		private String industry;
-
-		private Boolean isDebugDrafted;
-
-		private Boolean isDrafted;
-
-		private String scene;
-
-		private String scriptDescription;
-
-		private String scriptId;
-
-		private String scriptName;
-
 		private String status;
 
 		private Long updateTime;
 
 		private String chatbotId;
 
-		private String asrConfig;
+		private String scriptId;
 
-		private String ttsConfig;
+		private Boolean isDebugDrafted;
+
+		private String industry;
+
+		private String scriptDescription;
 
 		private Boolean miniPlaybackConfigEnabled;
 
-		public String getDebugStatus() {
-			return this.debugStatus;
-		}
+		private Boolean isDrafted;
 
-		public void setDebugStatus(String debugStatus) {
-			this.debugStatus = debugStatus;
-		}
+		private String ttsConfig;
 
-		public String getIndustry() {
-			return this.industry;
-		}
+		private String debugStatus;
 
-		public void setIndustry(String industry) {
-			this.industry = industry;
-		}
+		private String asrConfig;
 
-		public Boolean getIsDebugDrafted() {
-			return this.isDebugDrafted;
-		}
+		private String scene;
 
-		public void setIsDebugDrafted(Boolean isDebugDrafted) {
-			this.isDebugDrafted = isDebugDrafted;
-		}
-
-		public Boolean getIsDrafted() {
-			return this.isDrafted;
-		}
-
-		public void setIsDrafted(Boolean isDrafted) {
-			this.isDrafted = isDrafted;
-		}
-
-		public String getScene() {
-			return this.scene;
-		}
-
-		public void setScene(String scene) {
-			this.scene = scene;
-		}
-
-		public String getScriptDescription() {
-			return this.scriptDescription;
-		}
-
-		public void setScriptDescription(String scriptDescription) {
-			this.scriptDescription = scriptDescription;
-		}
-
-		public String getScriptId() {
-			return this.scriptId;
-		}
-
-		public void setScriptId(String scriptId) {
-			this.scriptId = scriptId;
-		}
-
-		public String getScriptName() {
-			return this.scriptName;
-		}
-
-		public void setScriptName(String scriptName) {
-			this.scriptName = scriptName;
-		}
+		private String scriptName;
 
 		public String getStatus() {
 			return this.status;
@@ -232,12 +178,52 @@ public class DescribeScriptResponse extends AcsResponse {
 			this.chatbotId = chatbotId;
 		}
 
-		public String getAsrConfig() {
-			return this.asrConfig;
+		public String getScriptId() {
+			return this.scriptId;
 		}
 
-		public void setAsrConfig(String asrConfig) {
-			this.asrConfig = asrConfig;
+		public void setScriptId(String scriptId) {
+			this.scriptId = scriptId;
+		}
+
+		public Boolean getIsDebugDrafted() {
+			return this.isDebugDrafted;
+		}
+
+		public void setIsDebugDrafted(Boolean isDebugDrafted) {
+			this.isDebugDrafted = isDebugDrafted;
+		}
+
+		public String getIndustry() {
+			return this.industry;
+		}
+
+		public void setIndustry(String industry) {
+			this.industry = industry;
+		}
+
+		public String getScriptDescription() {
+			return this.scriptDescription;
+		}
+
+		public void setScriptDescription(String scriptDescription) {
+			this.scriptDescription = scriptDescription;
+		}
+
+		public Boolean getMiniPlaybackConfigEnabled() {
+			return this.miniPlaybackConfigEnabled;
+		}
+
+		public void setMiniPlaybackConfigEnabled(Boolean miniPlaybackConfigEnabled) {
+			this.miniPlaybackConfigEnabled = miniPlaybackConfigEnabled;
+		}
+
+		public Boolean getIsDrafted() {
+			return this.isDrafted;
+		}
+
+		public void setIsDrafted(Boolean isDrafted) {
+			this.isDrafted = isDrafted;
 		}
 
 		public String getTtsConfig() {
@@ -248,12 +234,36 @@ public class DescribeScriptResponse extends AcsResponse {
 			this.ttsConfig = ttsConfig;
 		}
 
-		public Boolean getMiniPlaybackConfigEnabled() {
-			return this.miniPlaybackConfigEnabled;
+		public String getDebugStatus() {
+			return this.debugStatus;
 		}
 
-		public void setMiniPlaybackConfigEnabled(Boolean miniPlaybackConfigEnabled) {
-			this.miniPlaybackConfigEnabled = miniPlaybackConfigEnabled;
+		public void setDebugStatus(String debugStatus) {
+			this.debugStatus = debugStatus;
+		}
+
+		public String getAsrConfig() {
+			return this.asrConfig;
+		}
+
+		public void setAsrConfig(String asrConfig) {
+			this.asrConfig = asrConfig;
+		}
+
+		public String getScene() {
+			return this.scene;
+		}
+
+		public void setScene(String scene) {
+			this.scene = scene;
+		}
+
+		public String getScriptName() {
+			return this.scriptName;
+		}
+
+		public void setScriptName(String scriptName) {
+			this.scriptName = scriptName;
 		}
 	}
 

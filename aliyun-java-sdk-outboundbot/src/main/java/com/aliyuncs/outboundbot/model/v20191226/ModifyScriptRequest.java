@@ -40,6 +40,8 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 
 	private String asrConfig;
 
+	private String nlsConfig;
+
 	private Boolean miniPlaybackEnabled;
 
 	private String chatbotId;
@@ -134,6 +136,17 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 		this.asrConfig = asrConfig;
 		if(asrConfig != null){
 			putQueryParameter("AsrConfig", asrConfig);
+		}
+	}
+
+	public String getNlsConfig() {
+		return this.nlsConfig;
+	}
+
+	public void setNlsConfig(String nlsConfig) {
+		this.nlsConfig = nlsConfig;
+		if(nlsConfig != null){
+			putQueryParameter("NlsConfig", nlsConfig);
 		}
 	}
 
