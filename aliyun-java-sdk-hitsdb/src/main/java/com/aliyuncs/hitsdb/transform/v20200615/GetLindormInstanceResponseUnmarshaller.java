@@ -57,6 +57,7 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setEnableCompute(_ctx.booleanValue("GetLindormInstanceResponse.EnableCompute"));
 		getLindormInstanceResponse.setEnableSSL(_ctx.booleanValue("GetLindormInstanceResponse.EnableSSL"));
 		getLindormInstanceResponse.setEnableCdc(_ctx.booleanValue("GetLindormInstanceResponse.EnableCdc"));
+		getLindormInstanceResponse.setEnableStream(_ctx.booleanValue("GetLindormInstanceResponse.EnableStream"));
 
 		List<Engine> engineList = new ArrayList<Engine>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceResponse.EngineList.Length"); i++) {

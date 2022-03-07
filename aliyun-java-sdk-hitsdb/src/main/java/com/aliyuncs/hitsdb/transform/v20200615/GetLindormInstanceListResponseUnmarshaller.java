@@ -34,22 +34,23 @@ public class GetLindormInstanceListResponseUnmarshaller {
 		List<LindormInstanceSummary> instanceList = new ArrayList<LindormInstanceSummary>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceListResponse.InstanceList.Length"); i++) {
 			LindormInstanceSummary lindormInstanceSummary = new LindormInstanceSummary();
+			lindormInstanceSummary.setVpcId(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].VpcId"));
+			lindormInstanceSummary.setEngineType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EngineType"));
+			lindormInstanceSummary.setExpireTime(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ExpireTime"));
+			lindormInstanceSummary.setCreateTime(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].CreateTime"));
+			lindormInstanceSummary.setPayType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].PayType"));
+			lindormInstanceSummary.setAliUid(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].AliUid"));
+			lindormInstanceSummary.setInstanceStorage(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].InstanceStorage"));
 			lindormInstanceSummary.setInstanceId(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].InstanceId"));
-			lindormInstanceSummary.setInstanceAlias(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].InstanceAlias"));
+			lindormInstanceSummary.setNetworkType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].NetworkType"));
+			lindormInstanceSummary.setServiceType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ServiceType"));
 			lindormInstanceSummary.setRegionId(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].RegionId"));
+			lindormInstanceSummary.setCreateMilliseconds(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].CreateMilliseconds"));
+			lindormInstanceSummary.setInstanceAlias(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].InstanceAlias"));
 			lindormInstanceSummary.setZoneId(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ZoneId"));
 			lindormInstanceSummary.setInstanceStatus(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].InstanceStatus"));
-			lindormInstanceSummary.setPayType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].PayType"));
-			lindormInstanceSummary.setNetworkType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].NetworkType"));
-			lindormInstanceSummary.setCreateTime(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].CreateTime"));
-			lindormInstanceSummary.setExpireTime(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ExpireTime"));
-			lindormInstanceSummary.setInstanceStorage(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].InstanceStorage"));
-			lindormInstanceSummary.setServiceType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ServiceType"));
-			lindormInstanceSummary.setEngineType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EngineType"));
-			lindormInstanceSummary.setAliUid(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].AliUid"));
-			lindormInstanceSummary.setVpcId(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].VpcId"));
-			lindormInstanceSummary.setCreateMilliseconds(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].CreateMilliseconds"));
 			lindormInstanceSummary.setExpiredMilliseconds(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ExpiredMilliseconds"));
+			lindormInstanceSummary.setEnableStream(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableStream"));
 
 			instanceList.add(lindormInstanceSummary);
 		}

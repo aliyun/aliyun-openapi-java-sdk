@@ -87,6 +87,8 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableCdc;
 
+	private Boolean enableStream;
+
 	private List<Engine> engineList;
 
 	public String getVpcId() {
@@ -335,6 +337,14 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setEnableCdc(Boolean enableCdc) {
 		this.enableCdc = enableCdc;
+	}
+
+	public Boolean getEnableStream() {
+		return this.enableStream;
+	}
+
+	public void setEnableStream(Boolean enableStream) {
+		this.enableStream = enableStream;
 	}
 
 	public List<Engine> getEngineList() {
