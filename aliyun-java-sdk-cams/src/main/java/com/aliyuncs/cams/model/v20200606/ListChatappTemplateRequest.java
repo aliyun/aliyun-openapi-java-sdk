@@ -22,22 +22,24 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
+public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplateResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String channelType;
+	private String language;
 
-	private String from;
+	private String auditStatus;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String contacts;
-	public CheckContactsRequest() {
-		super("cams", "2020-06-06", "CheckContacts");
+	private String name;
+
+	private String page;
+	public ListChatappTemplateRequest() {
+		super("cams", "2020-06-06", "ListChatappTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,25 +58,25 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getChannelType() {
-		return this.channelType;
+	public String getLanguage() {
+		return this.language;
 	}
 
-	public void setChannelType(String channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putBodyParameter("ChannelType", channelType);
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 
-	public String getFrom() {
-		return this.from;
+	public String getAuditStatus() {
+		return this.auditStatus;
 	}
 
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putBodyParameter("From", from);
+	public void setAuditStatus(String auditStatus) {
+		this.auditStatus = auditStatus;
+		if(auditStatus != null){
+			putQueryParameter("AuditStatus", auditStatus);
 		}
 	}
 
@@ -100,20 +102,31 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getContacts() {
-		return this.contacts;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setContacts(String contacts) {
-		this.contacts = contacts;
-		if(contacts != null){
-			putBodyParameter("Contacts", contacts);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getPage() {
+		return this.page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page);
 		}
 	}
 
 	@Override
-	public Class<CheckContactsResponse> getResponseClass() {
-		return CheckContactsResponse.class;
+	public Class<ListChatappTemplateResponse> getResponseClass() {
+		return ListChatappTemplateResponse.class;
 	}
 
 }

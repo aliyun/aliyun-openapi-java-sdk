@@ -22,22 +22,20 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
+public class GetChatappTemplateDetailRequest extends RpcAcsRequest<GetChatappTemplateDetailResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String channelType;
-
-	private String from;
+	private String language;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String contacts;
-	public CheckContactsRequest() {
-		super("cams", "2020-06-06", "CheckContacts");
+	private String templateCode;
+	public GetChatappTemplateDetailRequest() {
+		super("cams", "2020-06-06", "GetChatappTemplateDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,25 +54,14 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getChannelType() {
-		return this.channelType;
+	public String getLanguage() {
+		return this.language;
 	}
 
-	public void setChannelType(String channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putBodyParameter("ChannelType", channelType);
-		}
-	}
-
-	public String getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putBodyParameter("From", from);
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 
@@ -100,20 +87,20 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getContacts() {
-		return this.contacts;
+	public String getTemplateCode() {
+		return this.templateCode;
 	}
 
-	public void setContacts(String contacts) {
-		this.contacts = contacts;
-		if(contacts != null){
-			putBodyParameter("Contacts", contacts);
+	public void setTemplateCode(String templateCode) {
+		this.templateCode = templateCode;
+		if(templateCode != null){
+			putQueryParameter("TemplateCode", templateCode);
 		}
 	}
 
 	@Override
-	public Class<CheckContactsResponse> getResponseClass() {
-		return CheckContactsResponse.class;
+	public Class<GetChatappTemplateDetailResponse> getResponseClass() {
+		return GetChatappTemplateDetailResponse.class;
 	}
 
 }

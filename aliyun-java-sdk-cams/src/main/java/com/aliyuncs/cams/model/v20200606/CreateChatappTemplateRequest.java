@@ -22,22 +22,28 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
+public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTemplateResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String channelType;
+	private String components;
 
-	private String from;
+	private String language;
+
+	private String example;
+
+	private String templateType;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String contacts;
-	public CheckContactsRequest() {
-		super("cams", "2020-06-06", "CheckContacts");
+	private String name;
+
+	private String category;
+	public CreateChatappTemplateRequest() {
+		super("cams", "2020-06-06", "CreateChatappTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,25 +62,47 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getChannelType() {
-		return this.channelType;
+	public String getComponents() {
+		return this.components;
 	}
 
-	public void setChannelType(String channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putBodyParameter("ChannelType", channelType);
+	public void setComponents(String components) {
+		this.components = components;
+		if(components != null){
+			putQueryParameter("Components", components);
 		}
 	}
 
-	public String getFrom() {
-		return this.from;
+	public String getLanguage() {
+		return this.language;
 	}
 
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putBodyParameter("From", from);
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
+		}
+	}
+
+	public String getExample() {
+		return this.example;
+	}
+
+	public void setExample(String example) {
+		this.example = example;
+		if(example != null){
+			putQueryParameter("Example", example);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
 		}
 	}
 
@@ -100,20 +128,31 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getContacts() {
-		return this.contacts;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setContacts(String contacts) {
-		this.contacts = contacts;
-		if(contacts != null){
-			putBodyParameter("Contacts", contacts);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 
 	@Override
-	public Class<CheckContactsResponse> getResponseClass() {
-		return CheckContactsResponse.class;
+	public Class<CreateChatappTemplateResponse> getResponseClass() {
+		return CreateChatappTemplateResponse.class;
 	}
 
 }

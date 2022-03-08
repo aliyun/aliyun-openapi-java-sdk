@@ -26,9 +26,9 @@ public class SendMessageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String resultCode;
-
 	private String resultMessage;
+
+	private String resultCode;
 
 	private Module module;
 
@@ -40,20 +40,20 @@ public class SendMessageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
 	public String getResultMessage() {
 		return this.resultMessage;
 	}
 
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
+	}
+
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	public Module getModule() {

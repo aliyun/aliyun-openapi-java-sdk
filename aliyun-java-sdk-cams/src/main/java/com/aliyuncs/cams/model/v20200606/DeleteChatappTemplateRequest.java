@@ -22,22 +22,18 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
+public class DeleteChatappTemplateRequest extends RpcAcsRequest<DeleteChatappTemplateResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String channelType;
-
-	private String from;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String contacts;
-	public CheckContactsRequest() {
-		super("cams", "2020-06-06", "CheckContacts");
+	private String templateCode;
+	public DeleteChatappTemplateRequest() {
+		super("cams", "2020-06-06", "DeleteChatappTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,28 +49,6 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getChannelType() {
-		return this.channelType;
-	}
-
-	public void setChannelType(String channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putBodyParameter("ChannelType", channelType);
-		}
-	}
-
-	public String getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putBodyParameter("From", from);
 		}
 	}
 
@@ -100,20 +74,20 @@ public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 		}
 	}
 
-	public String getContacts() {
-		return this.contacts;
+	public String getTemplateCode() {
+		return this.templateCode;
 	}
 
-	public void setContacts(String contacts) {
-		this.contacts = contacts;
-		if(contacts != null){
-			putBodyParameter("Contacts", contacts);
+	public void setTemplateCode(String templateCode) {
+		this.templateCode = templateCode;
+		if(templateCode != null){
+			putQueryParameter("TemplateCode", templateCode);
 		}
 	}
 
 	@Override
-	public Class<CheckContactsResponse> getResponseClass() {
-		return CheckContactsResponse.class;
+	public Class<DeleteChatappTemplateResponse> getResponseClass() {
+		return DeleteChatappTemplateResponse.class;
 	}
 
 }

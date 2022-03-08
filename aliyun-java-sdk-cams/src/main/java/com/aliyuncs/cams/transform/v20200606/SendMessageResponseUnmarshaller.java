@@ -24,8 +24,8 @@ public class SendMessageResponseUnmarshaller {
 	public static SendMessageResponse unmarshall(SendMessageResponse sendMessageResponse, UnmarshallerContext _ctx) {
 		
 		sendMessageResponse.setRequestId(_ctx.stringValue("SendMessageResponse.RequestId"));
-		sendMessageResponse.setResultCode(_ctx.stringValue("SendMessageResponse.ResultCode"));
 		sendMessageResponse.setResultMessage(_ctx.stringValue("SendMessageResponse.ResultMessage"));
+		sendMessageResponse.setResultCode(_ctx.stringValue("SendMessageResponse.ResultCode"));
 
 		Module module = new Module();
 		module.setFromId(_ctx.stringValue("SendMessageResponse.Module.FromId"));

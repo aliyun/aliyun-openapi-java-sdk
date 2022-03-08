@@ -37,21 +37,27 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 
 	private String type;
 
+	private String templateButtonParams;
+
 	private String channelType;
 
 	private String from;
 
 	private String text;
 
+	private String templateHeaderParams;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private String fileName;
 
 	private String to;
 
 	private String templateCode;
 	public SendMessageRequest() {
-		super("cams", "2020-06-06", "SendMessage", "cams");
+		super("cams", "2020-06-06", "SendMessage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -125,6 +131,17 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 		}
 	}
 
+	public String getTemplateButtonParams() {
+		return this.templateButtonParams;
+	}
+
+	public void setTemplateButtonParams(String templateButtonParams) {
+		this.templateButtonParams = templateButtonParams;
+		if(templateButtonParams != null){
+			putBodyParameter("TemplateButtonParams", templateButtonParams);
+		}
+	}
+
 	public String getChannelType() {
 		return this.channelType;
 	}
@@ -158,6 +175,17 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 		}
 	}
 
+	public String getTemplateHeaderParams() {
+		return this.templateHeaderParams;
+	}
+
+	public void setTemplateHeaderParams(String templateHeaderParams) {
+		this.templateHeaderParams = templateHeaderParams;
+		if(templateHeaderParams != null){
+			putBodyParameter("TemplateHeaderParams", templateHeaderParams);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -177,6 +205,17 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putBodyParameter("FileName", fileName);
 		}
 	}
 
