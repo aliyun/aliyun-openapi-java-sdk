@@ -50,7 +50,7 @@
     <properties>
         <powermock.version>2.0.9</powermock.version>
         <!-- 由于 powermock 的版本限制，mockito不能升级到 4.0.0 版本 -->
-        <mockito.version>3.12.4</mockito.version>
+        <mockito.version>4.4.0</mockito.version>
     </properties>
     <dependencies>
         <dependency>
