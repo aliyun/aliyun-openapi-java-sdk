@@ -1,3 +1,6 @@
+2022-03-09 Version: 1.0.32
+- Supported filter for ListSkillGroups.
+
 2022-03-07 Version: 2.3.2
 - Supported RemovePhoneNumbers.
 
