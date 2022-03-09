@@ -38,6 +38,7 @@ public class DescribeLivePullStreamConfigResponseUnmarshaller {
 			liveAppRecord.setSourceUsing(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].SourceUsing"));
 			liveAppRecord.setStartTime(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
 			liveAppRecord.setEndTime(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
+			liveAppRecord.setAlways(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].Always"));
 
 			liveAppRecordList.add(liveAppRecord);
 		}

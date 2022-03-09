@@ -14,16 +14,17 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.ForbidLiveCustomStreamResponse;
+import com.aliyuncs.live.model.v20161101.EditShowAndReplaceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ForbidLiveCustomStreamResponseUnmarshaller {
+public class EditShowAndReplaceResponseUnmarshaller {
 
-	public static ForbidLiveCustomStreamResponse unmarshall(ForbidLiveCustomStreamResponse forbidLiveCustomStreamResponse, UnmarshallerContext _ctx) {
+	public static EditShowAndReplaceResponse unmarshall(EditShowAndReplaceResponse editShowAndReplaceResponse, UnmarshallerContext _ctx) {
 		
-		forbidLiveCustomStreamResponse.setRequestId(_ctx.stringValue("ForbidLiveCustomStreamResponse.RequestId"));
+		editShowAndReplaceResponse.setRequestId(_ctx.stringValue("EditShowAndReplaceResponse.RequestId"));
+		editShowAndReplaceResponse.setJobInfo(_ctx.stringValue("EditShowAndReplaceResponse.JobInfo"));
 	 
-	 	return forbidLiveCustomStreamResponse;
+	 	return editShowAndReplaceResponse;
 	}
 }

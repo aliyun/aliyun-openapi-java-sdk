@@ -61,6 +61,8 @@ public class DescribeLivePullStreamConfigResponse extends AcsResponse {
 
 		private String endTime;
 
+		private String always;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -115,6 +117,14 @@ public class DescribeLivePullStreamConfigResponse extends AcsResponse {
 
 		public void setEndTime(String endTime) {
 			this.endTime = endTime;
+		}
+
+		public String getAlways() {
+			return this.always;
+		}
+
+		public void setAlways(String always) {
+			this.always = always;
 		}
 	}
 

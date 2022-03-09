@@ -15,16 +15,18 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.ForbidLiveCustomStreamResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DescribeAutoShowListTasksResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ForbidLiveCustomStreamResponse extends AcsResponse {
+public class DescribeAutoShowListTasksResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String autoShowListTasks;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class ForbidLiveCustomStreamResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getAutoShowListTasks() {
+		return this.autoShowListTasks;
+	}
+
+	public void setAutoShowListTasks(String autoShowListTasks) {
+		this.autoShowListTasks = autoShowListTasks;
+	}
+
 	@Override
-	public ForbidLiveCustomStreamResponse getInstance(UnmarshallerContext context) {
-		return	ForbidLiveCustomStreamResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAutoShowListTasksResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAutoShowListTasksResponseUnmarshaller.unmarshall(this, context);
 	}
 }
