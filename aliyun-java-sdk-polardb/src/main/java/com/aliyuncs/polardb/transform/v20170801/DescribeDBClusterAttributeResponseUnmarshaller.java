@@ -58,6 +58,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setIsProxyLatestVersion(_ctx.booleanValue("DescribeDBClusterAttributeResponse.IsProxyLatestVersion"));
 		describeDBClusterAttributeResponse.setStorageType(_ctx.stringValue("DescribeDBClusterAttributeResponse.StorageType"));
 		describeDBClusterAttributeResponse.setProxyCpuCores(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyCpuCores"));
+		describeDBClusterAttributeResponse.setProxyStandardCpuCores(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyStandardCpuCores"));
 		describeDBClusterAttributeResponse.setProxyType(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyType"));
 		describeDBClusterAttributeResponse.setProxyStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyStatus"));
 

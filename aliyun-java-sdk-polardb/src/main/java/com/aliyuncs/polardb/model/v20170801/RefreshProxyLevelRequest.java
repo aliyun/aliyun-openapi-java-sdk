@@ -43,7 +43,7 @@ public class RefreshProxyLevelRequest extends RpcAcsRequest<RefreshProxyLevelRes
 
 	private Boolean fromTimeService;
 	public RefreshProxyLevelRequest() {
-		super("polardb", "2017-08-01", "RefreshProxyLevel");
+		super("polardb", "2017-08-01", "RefreshProxyLevel", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeDBNodePerformanceRequest extends RpcAcsRequest<DescribeDBNo
 
 	private String endTime;
 	public DescribeDBNodePerformanceRequest() {
-		super("polardb", "2017-08-01", "DescribeDBNodePerformance");
+		super("polardb", "2017-08-01", "DescribeDBNodePerformance", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

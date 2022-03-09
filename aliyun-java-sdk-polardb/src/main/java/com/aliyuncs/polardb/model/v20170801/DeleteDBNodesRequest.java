@@ -40,7 +40,7 @@ public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 
 	private Long ownerId;
 	public DeleteDBNodesRequest() {
-		super("polardb", "2017-08-01", "DeleteDBNodes");
+		super("polardb", "2017-08-01", "DeleteDBNodes", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

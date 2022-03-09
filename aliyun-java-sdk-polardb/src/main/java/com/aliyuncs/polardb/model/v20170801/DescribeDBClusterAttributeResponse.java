@@ -87,6 +87,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String proxyCpuCores;
 
+	private String proxyStandardCpuCores;
+
 	private String proxyType;
 
 	private String proxyStatus;
@@ -341,6 +343,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setProxyCpuCores(String proxyCpuCores) {
 		this.proxyCpuCores = proxyCpuCores;
+	}
+
+	public String getProxyStandardCpuCores() {
+		return this.proxyStandardCpuCores;
+	}
+
+	public void setProxyStandardCpuCores(String proxyStandardCpuCores) {
+		this.proxyStandardCpuCores = proxyStandardCpuCores;
 	}
 
 	public String getProxyType() {

@@ -87,25 +87,21 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 	public static class TemplateRecord {
 
-		private String forceModify;
-
 		private String checkingCode;
-
-		private String parameterValue;
-
-		private String forceRestart;
 
 		private String parameterName;
 
+		private String parameterValue;
+
+		private String forceModify;
+
+		private String forceRestart;
+
 		private String parameterDescription;
 
-		public String getForceModify() {
-			return this.forceModify;
-		}
+		private String isNodeAvailable;
 
-		public void setForceModify(String forceModify) {
-			this.forceModify = forceModify;
-		}
+		private String paramRelyRule;
 
 		public String getCheckingCode() {
 			return this.checkingCode;
@@ -113,22 +109,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		public void setCheckingCode(String checkingCode) {
 			this.checkingCode = checkingCode;
-		}
-
-		public String getParameterValue() {
-			return this.parameterValue;
-		}
-
-		public void setParameterValue(String parameterValue) {
-			this.parameterValue = parameterValue;
-		}
-
-		public String getForceRestart() {
-			return this.forceRestart;
-		}
-
-		public void setForceRestart(String forceRestart) {
-			this.forceRestart = forceRestart;
 		}
 
 		public String getParameterName() {
@@ -139,12 +119,52 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 			this.parameterName = parameterName;
 		}
 
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public String getForceModify() {
+			return this.forceModify;
+		}
+
+		public void setForceModify(String forceModify) {
+			this.forceModify = forceModify;
+		}
+
+		public String getForceRestart() {
+			return this.forceRestart;
+		}
+
+		public void setForceRestart(String forceRestart) {
+			this.forceRestart = forceRestart;
+		}
+
 		public String getParameterDescription() {
 			return this.parameterDescription;
 		}
 
 		public void setParameterDescription(String parameterDescription) {
 			this.parameterDescription = parameterDescription;
+		}
+
+		public String getIsNodeAvailable() {
+			return this.isNodeAvailable;
+		}
+
+		public void setIsNodeAvailable(String isNodeAvailable) {
+			this.isNodeAvailable = isNodeAvailable;
+		}
+
+		public String getParamRelyRule() {
+			return this.paramRelyRule;
+		}
+
+		public void setParamRelyRule(String paramRelyRule) {
+			this.paramRelyRule = paramRelyRule;
 		}
 	}
 

@@ -41,7 +41,7 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private Long ownerId;
 	public DescribeAccountsRequest() {
-		super("polardb", "2017-08-01", "DescribeAccounts");
+		super("polardb", "2017-08-01", "DescribeAccounts", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

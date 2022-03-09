@@ -47,7 +47,7 @@ public class ModifyDBNodeClassRequest extends RpcAcsRequest<ModifyDBNodeClassRes
 
 	private String subCategory;
 	public ModifyDBNodeClassRequest() {
-		super("polardb", "2017-08-01", "ModifyDBNodeClass");
+		super("polardb", "2017-08-01", "ModifyDBNodeClass", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

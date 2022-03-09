@@ -27,22 +27,24 @@ public class DescribeDBClusterParametersResponseUnmarshaller {
 	public static DescribeDBClusterParametersResponse unmarshall(DescribeDBClusterParametersResponse describeDBClusterParametersResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterParametersResponse.setRequestId(_ctx.stringValue("DescribeDBClusterParametersResponse.RequestId"));
-		describeDBClusterParametersResponse.setEngine(_ctx.stringValue("DescribeDBClusterParametersResponse.Engine"));
-		describeDBClusterParametersResponse.setDBType(_ctx.stringValue("DescribeDBClusterParametersResponse.DBType"));
 		describeDBClusterParametersResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterParametersResponse.DBVersion"));
+		describeDBClusterParametersResponse.setDBType(_ctx.stringValue("DescribeDBClusterParametersResponse.DBType"));
+		describeDBClusterParametersResponse.setEngine(_ctx.stringValue("DescribeDBClusterParametersResponse.Engine"));
 
 		List<Parameter> runningParameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterParametersResponse.RunningParameters.Length"); i++) {
 			Parameter parameter = new Parameter();
-			parameter.setParameterName(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParameterName"));
-			parameter.setDataType(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].DataType"));
-			parameter.setDefaultParameterValue(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].DefaultParameterValue"));
-			parameter.setParameterValue(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParameterValue"));
-			parameter.setIsModifiable(_ctx.booleanValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].IsModifiable"));
-			parameter.setForceRestart(_ctx.booleanValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ForceRestart"));
-			parameter.setParameterStatus(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParameterStatus"));
 			parameter.setCheckingCode(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].CheckingCode"));
+			parameter.setDataType(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].DataType"));
+			parameter.setParameterName(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParameterName"));
+			parameter.setParameterValue(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParameterValue"));
+			parameter.setForceRestart(_ctx.booleanValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ForceRestart"));
 			parameter.setParameterDescription(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParameterDescription"));
+			parameter.setParameterStatus(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParameterStatus"));
+			parameter.setDefaultParameterValue(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].DefaultParameterValue"));
+			parameter.setIsModifiable(_ctx.booleanValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].IsModifiable"));
+			parameter.setIsNodeAvailable(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].IsNodeAvailable"));
+			parameter.setParamRelyRule(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParamRelyRule"));
 
 			runningParameters.add(parameter);
 		}

@@ -46,7 +46,7 @@ public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeRespo
 
 	private List<DBNode> dBNodes;
 	public TempModifyDBNodeRequest() {
-		super("polardb", "2017-08-01", "TempModifyDBNode");
+		super("polardb", "2017-08-01", "TempModifyDBNode", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

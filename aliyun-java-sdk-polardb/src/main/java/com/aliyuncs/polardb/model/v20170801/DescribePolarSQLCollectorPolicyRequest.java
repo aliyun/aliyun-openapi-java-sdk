@@ -35,7 +35,7 @@ public class DescribePolarSQLCollectorPolicyRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 	public DescribePolarSQLCollectorPolicyRequest() {
-		super("polardb", "2017-08-01", "DescribePolarSQLCollectorPolicy");
+		super("polardb", "2017-08-01", "DescribePolarSQLCollectorPolicy", "polardb");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

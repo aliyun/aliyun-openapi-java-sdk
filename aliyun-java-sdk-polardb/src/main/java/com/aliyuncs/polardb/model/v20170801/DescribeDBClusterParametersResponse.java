@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterParametersResponse extends AcsResponse {
 
-	private String requestId;
+	private String dBVersion;
 
-	private String engine;
+	private String requestId;
 
 	private String dBType;
 
-	private String dBVersion;
+	private String engine;
 
 	private List<Parameter> runningParameters;
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
 	}
 
 	public String getDBType() {
@@ -59,12 +59,12 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 		this.dBType = dBType;
 	}
 
-	public String getDBVersion() {
-		return this.dBVersion;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setDBVersion(String dBVersion) {
-		this.dBVersion = dBVersion;
+	public void setEngine(String engine) {
+		this.engine = engine;
 	}
 
 	public List<Parameter> getRunningParameters() {
@@ -77,30 +77,34 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 
 	public static class Parameter {
 
-		private String parameterName;
+		private String checkingCode;
 
 		private String dataType;
 
-		private String defaultParameterValue;
+		private String parameterName;
 
 		private String parameterValue;
 
-		private Boolean isModifiable;
-
 		private Boolean forceRestart;
-
-		private String parameterStatus;
-
-		private String checkingCode;
 
 		private String parameterDescription;
 
-		public String getParameterName() {
-			return this.parameterName;
+		private String parameterStatus;
+
+		private String defaultParameterValue;
+
+		private Boolean isModifiable;
+
+		private String isNodeAvailable;
+
+		private String paramRelyRule;
+
+		public String getCheckingCode() {
+			return this.checkingCode;
 		}
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
 		}
 
 		public String getDataType() {
@@ -111,12 +115,12 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 			this.dataType = dataType;
 		}
 
-		public String getDefaultParameterValue() {
-			return this.defaultParameterValue;
+		public String getParameterName() {
+			return this.parameterName;
 		}
 
-		public void setDefaultParameterValue(String defaultParameterValue) {
-			this.defaultParameterValue = defaultParameterValue;
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
 		}
 
 		public String getParameterValue() {
@@ -127,20 +131,20 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 			this.parameterValue = parameterValue;
 		}
 
-		public Boolean getIsModifiable() {
-			return this.isModifiable;
-		}
-
-		public void setIsModifiable(Boolean isModifiable) {
-			this.isModifiable = isModifiable;
-		}
-
 		public Boolean getForceRestart() {
 			return this.forceRestart;
 		}
 
 		public void setForceRestart(Boolean forceRestart) {
 			this.forceRestart = forceRestart;
+		}
+
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
 		}
 
 		public String getParameterStatus() {
@@ -151,20 +155,36 @@ public class DescribeDBClusterParametersResponse extends AcsResponse {
 			this.parameterStatus = parameterStatus;
 		}
 
-		public String getCheckingCode() {
-			return this.checkingCode;
+		public String getDefaultParameterValue() {
+			return this.defaultParameterValue;
 		}
 
-		public void setCheckingCode(String checkingCode) {
-			this.checkingCode = checkingCode;
+		public void setDefaultParameterValue(String defaultParameterValue) {
+			this.defaultParameterValue = defaultParameterValue;
 		}
 
-		public String getParameterDescription() {
-			return this.parameterDescription;
+		public Boolean getIsModifiable() {
+			return this.isModifiable;
 		}
 
-		public void setParameterDescription(String parameterDescription) {
-			this.parameterDescription = parameterDescription;
+		public void setIsModifiable(Boolean isModifiable) {
+			this.isModifiable = isModifiable;
+		}
+
+		public String getIsNodeAvailable() {
+			return this.isNodeAvailable;
+		}
+
+		public void setIsNodeAvailable(String isNodeAvailable) {
+			this.isNodeAvailable = isNodeAvailable;
+		}
+
+		public String getParamRelyRule() {
+			return this.paramRelyRule;
+		}
+
+		public void setParamRelyRule(String paramRelyRule) {
+			this.paramRelyRule = paramRelyRule;
 		}
 	}
 
