@@ -1,3 +1,6 @@
+2022-03-10 Version: 1.0.15
+- Modify the input parameter Action of CreateCen to be required.
+
 2022-01-11 Version: 1.0.14
 - Support  DeleteTransitRouter API.
 
