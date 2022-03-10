@@ -14,15 +14,16 @@
 
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dms_enterprise.transform.v20181101.SubmitSparkJobResponseUnmarshaller;
+import com.aliyuncs.dms_enterprise.transform.v20181101.CreateDataExportOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitSparkJobResponse extends AcsResponse {
+public class CreateDataExportOrderResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -32,7 +33,7 @@ public class SubmitSparkJobResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private Long jobId;
+	private List<Long> createOrderResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,16 +67,21 @@ public class SubmitSparkJobResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getJobId() {
-		return this.jobId;
+	public List<Long> getCreateOrderResult() {
+		return this.createOrderResult;
 	}
 
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
+	public void setCreateOrderResult(List<Long> createOrderResult) {
+		this.createOrderResult = createOrderResult;
 	}
 
 	@Override
-	public SubmitSparkJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitSparkJobResponseUnmarshaller.unmarshall(this, context);
+	public CreateDataExportOrderResponse getInstance(UnmarshallerContext context) {
+		return	CreateDataExportOrderResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

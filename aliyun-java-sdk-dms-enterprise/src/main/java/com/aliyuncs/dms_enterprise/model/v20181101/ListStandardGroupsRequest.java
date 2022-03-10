@@ -22,30 +22,17 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSparkJobExecutorLogsRequest extends RpcAcsRequest<GetSparkJobExecutorLogsResponse> {
+public class ListStandardGroupsRequest extends RpcAcsRequest<ListStandardGroupsResponse> {
 	   
 
-	private Long jobId;
-
 	private Long tid;
-	public GetSparkJobExecutorLogsRequest() {
-		super("dms-enterprise", "2018-11-01", "GetSparkJobExecutorLogs", "dms-enterprise");
+	public ListStandardGroupsRequest() {
+		super("dms-enterprise", "2018-11-01", "ListStandardGroups", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -60,8 +47,8 @@ public class GetSparkJobExecutorLogsRequest extends RpcAcsRequest<GetSparkJobExe
 	}
 
 	@Override
-	public Class<GetSparkJobExecutorLogsResponse> getResponseClass() {
-		return GetSparkJobExecutorLogsResponse.class;
+	public Class<ListStandardGroupsResponse> getResponseClass() {
+		return ListStandardGroupsResponse.class;
 	}
 
 }

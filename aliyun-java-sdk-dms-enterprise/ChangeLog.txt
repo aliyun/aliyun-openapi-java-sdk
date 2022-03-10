@@ -1,3 +1,6 @@
+2022-03-10 Version: 1.29.0
+- Disabled Spark Job API.
+
 2022-01-21 Version: 1.28.0
 - Supported RestartDataCorrectSQLJob,PauseDataCorrectSQLJob API.
 - Supported ListDataCorrectPreCheckSQL to return tableNames information.
