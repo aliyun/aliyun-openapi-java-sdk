@@ -49,6 +49,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String computeResource;
 
+	private String elasticIOResource;
+
 	private String sourceDBInstanceName;
 
 	private String clientToken;
@@ -218,6 +220,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.computeResource = computeResource;
 		if(computeResource != null){
 			putQueryParameter("ComputeResource", computeResource);
+		}
+	}
+
+	public String getElasticIOResource() {
+		return this.elasticIOResource;
+	}
+
+	public void setElasticIOResource(String elasticIOResource) {
+		this.elasticIOResource = elasticIOResource;
+		if(elasticIOResource != null){
+			putQueryParameter("ElasticIOResource", elasticIOResource);
 		}
 	}
 

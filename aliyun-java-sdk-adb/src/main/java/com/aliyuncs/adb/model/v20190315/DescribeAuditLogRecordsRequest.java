@@ -35,15 +35,17 @@ public class DescribeAuditLogRecordsRequest extends RpcAcsRequest<DescribeAuditL
 
 	private Integer pageSize;
 
+	private String order;
+
 	private String sqlType;
 
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
-	private String ownerAccount;
-
 	private String queryKeyword;
+
+	private String ownerAccount;
 
 	private String endTime;
 
@@ -120,6 +122,17 @@ public class DescribeAuditLogRecordsRequest extends RpcAcsRequest<DescribeAuditL
 		}
 	}
 
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
 	public String getSqlType() {
 		return this.sqlType;
 	}
@@ -153,17 +166,6 @@ public class DescribeAuditLogRecordsRequest extends RpcAcsRequest<DescribeAuditL
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getQueryKeyword() {
 		return this.queryKeyword;
 	}
@@ -172,6 +174,17 @@ public class DescribeAuditLogRecordsRequest extends RpcAcsRequest<DescribeAuditL
 		this.queryKeyword = queryKeyword;
 		if(queryKeyword != null){
 			putQueryParameter("QueryKeyword", queryKeyword);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

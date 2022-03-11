@@ -27,11 +27,11 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String endTime;
+
 	private String dBClusterId;
 
 	private String startTime;
-
-	private String endTime;
 
 	private List<PerformanceItem> performances;
 
@@ -41,6 +41,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getDBClusterId() {
@@ -59,14 +67,6 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public List<PerformanceItem> getPerformances() {
 		return this.performances;
 	}
@@ -77,19 +77,11 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public static class PerformanceItem {
 
-		private String key;
-
 		private String unit;
 
+		private String key;
+
 		private List<SeriesItem> series;
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
 
 		public String getUnit() {
 			return this.unit;
@@ -97,6 +89,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 		public void setUnit(String unit) {
 			this.unit = unit;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 
 		public List<SeriesItem> getSeries() {

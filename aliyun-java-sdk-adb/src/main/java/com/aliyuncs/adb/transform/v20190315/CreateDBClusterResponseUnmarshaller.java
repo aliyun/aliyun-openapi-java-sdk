@@ -23,9 +23,9 @@ public class CreateDBClusterResponseUnmarshaller {
 	public static CreateDBClusterResponse unmarshall(CreateDBClusterResponse createDBClusterResponse, UnmarshallerContext _ctx) {
 		
 		createDBClusterResponse.setRequestId(_ctx.stringValue("CreateDBClusterResponse.RequestId"));
+		createDBClusterResponse.setResourceGroupId(_ctx.stringValue("CreateDBClusterResponse.ResourceGroupId"));
 		createDBClusterResponse.setDBClusterId(_ctx.stringValue("CreateDBClusterResponse.DBClusterId"));
 		createDBClusterResponse.setOrderId(_ctx.stringValue("CreateDBClusterResponse.OrderId"));
-		createDBClusterResponse.setResourceGroupId(_ctx.stringValue("CreateDBClusterResponse.ResourceGroupId"));
 	 
 	 	return createDBClusterResponse;
 	}

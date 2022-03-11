@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClustersResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer totalCount;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<DBCluster> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -67,6 +51,22 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<DBCluster> getItems() {
 		return this.items;
 	}
@@ -77,122 +77,90 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 	public static class DBCluster {
 
-		private String dBClusterId;
+		private String dtsJobId;
 
-		private String dBClusterType;
-
-		private String dBClusterDescription;
-
-		private String payType;
-
-		private String regionId;
-
-		private String expireTime;
+		private Long dBNodeCount;
 
 		private String expired;
 
-		private String dBClusterStatus;
+		private String createTime;
 
-		private String dBVersion;
+		private String payType;
+
+		private String diskType;
+
+		private String mode;
+
+		private String port;
 
 		private String lockMode;
 
-		private String lockReason;
+		private String storageResource;
 
-		private String createTime;
+		private String executorCount;
+
+		private String dBClusterId;
+
+		private String connectionString;
+
+		private String rdsInstanceId;
+
+		private String dBClusterType;
+
+		private String commodityCode;
+
+		private String expireTime;
 
 		private Long dBNodeStorage;
 
 		private String dBNodeClass;
 
-		private Long dBNodeCount;
-
-		private String commodityCode;
-
-		private String category;
-
-		private String rdsInstanceId;
-
-		private String dtsJobId;
-
-		private String executorCount;
-
-		private String diskType;
-
-		private String vPCCloudInstanceId;
-
-		private String engine;
-
-		private String dBClusterNetworkType;
+		private String lockReason;
 
 		private String vPCId;
 
-		private String vSwitchId;
-
-		private String zoneId;
-
-		private String connectionString;
-
-		private String port;
+		private String regionId;
 
 		private String computeResource;
 
-		private String storageResource;
+		private Integer elasticIOResource;
 
-		private String mode;
+		private String vSwitchId;
+
+		private String dBVersion;
+
+		private String vPCCloudInstanceId;
+
+		private String dBClusterStatus;
 
 		private String resourceGroupId;
 
-		private Integer elasticIOResource;
+		private String dBClusterNetworkType;
+
+		private String dBClusterDescription;
+
+		private String zoneId;
+
+		private String category;
+
+		private String engine;
 
 		private List<Tag> tags;
 
-		public String getDBClusterId() {
-			return this.dBClusterId;
+		public String getDtsJobId() {
+			return this.dtsJobId;
 		}
 
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
 		}
 
-		public String getDBClusterType() {
-			return this.dBClusterType;
+		public Long getDBNodeCount() {
+			return this.dBNodeCount;
 		}
 
-		public void setDBClusterType(String dBClusterType) {
-			this.dBClusterType = dBClusterType;
-		}
-
-		public String getDBClusterDescription() {
-			return this.dBClusterDescription;
-		}
-
-		public void setDBClusterDescription(String dBClusterDescription) {
-			this.dBClusterDescription = dBClusterDescription;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setDBNodeCount(Long dBNodeCount) {
+			this.dBNodeCount = dBNodeCount;
 		}
 
 		public String getExpired() {
@@ -203,20 +171,44 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.expired = expired;
 		}
 
-		public String getDBClusterStatus() {
-			return this.dBClusterStatus;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDBClusterStatus(String dBClusterStatus) {
-			this.dBClusterStatus = dBClusterStatus;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public String getDBVersion() {
-			return this.dBVersion;
+		public String getPayType() {
+			return this.payType;
 		}
 
-		public void setDBVersion(String dBVersion) {
-			this.dBVersion = dBVersion;
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
 		}
 
 		public String getLockMode() {
@@ -227,20 +219,68 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.lockMode = lockMode;
 		}
 
-		public String getLockReason() {
-			return this.lockReason;
+		public String getStorageResource() {
+			return this.storageResource;
 		}
 
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
+		public void setStorageResource(String storageResource) {
+			this.storageResource = storageResource;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getExecutorCount() {
+			return this.executorCount;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setExecutorCount(String executorCount) {
+			this.executorCount = executorCount;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
+
+		public String getRdsInstanceId() {
+			return this.rdsInstanceId;
+		}
+
+		public void setRdsInstanceId(String rdsInstanceId) {
+			this.rdsInstanceId = rdsInstanceId;
+		}
+
+		public String getDBClusterType() {
+			return this.dBClusterType;
+		}
+
+		public void setDBClusterType(String dBClusterType) {
+			this.dBClusterType = dBClusterType;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public Long getDBNodeStorage() {
@@ -259,84 +299,12 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.dBNodeClass = dBNodeClass;
 		}
 
-		public Long getDBNodeCount() {
-			return this.dBNodeCount;
+		public String getLockReason() {
+			return this.lockReason;
 		}
 
-		public void setDBNodeCount(Long dBNodeCount) {
-			this.dBNodeCount = dBNodeCount;
-		}
-
-		public String getCommodityCode() {
-			return this.commodityCode;
-		}
-
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getRdsInstanceId() {
-			return this.rdsInstanceId;
-		}
-
-		public void setRdsInstanceId(String rdsInstanceId) {
-			this.rdsInstanceId = rdsInstanceId;
-		}
-
-		public String getDtsJobId() {
-			return this.dtsJobId;
-		}
-
-		public void setDtsJobId(String dtsJobId) {
-			this.dtsJobId = dtsJobId;
-		}
-
-		public String getExecutorCount() {
-			return this.executorCount;
-		}
-
-		public void setExecutorCount(String executorCount) {
-			this.executorCount = executorCount;
-		}
-
-		public String getDiskType() {
-			return this.diskType;
-		}
-
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
-		}
-
-		public String getVPCCloudInstanceId() {
-			return this.vPCCloudInstanceId;
-		}
-
-		public void setVPCCloudInstanceId(String vPCCloudInstanceId) {
-			this.vPCCloudInstanceId = vPCCloudInstanceId;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getDBClusterNetworkType() {
-			return this.dBClusterNetworkType;
-		}
-
-		public void setDBClusterNetworkType(String dBClusterNetworkType) {
-			this.dBClusterNetworkType = dBClusterNetworkType;
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
 		}
 
 		public String getVPCId() {
@@ -347,36 +315,12 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.vPCId = vPCId;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getConnectionString() {
-			return this.connectionString;
-		}
-
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getComputeResource() {
@@ -387,20 +331,44 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.computeResource = computeResource;
 		}
 
-		public String getStorageResource() {
-			return this.storageResource;
+		public Integer getElasticIOResource() {
+			return this.elasticIOResource;
 		}
 
-		public void setStorageResource(String storageResource) {
-			this.storageResource = storageResource;
+		public void setElasticIOResource(Integer elasticIOResource) {
+			this.elasticIOResource = elasticIOResource;
 		}
 
-		public String getMode() {
-			return this.mode;
+		public String getVSwitchId() {
+			return this.vSwitchId;
 		}
 
-		public void setMode(String mode) {
-			this.mode = mode;
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getDBVersion() {
+			return this.dBVersion;
+		}
+
+		public void setDBVersion(String dBVersion) {
+			this.dBVersion = dBVersion;
+		}
+
+		public String getVPCCloudInstanceId() {
+			return this.vPCCloudInstanceId;
+		}
+
+		public void setVPCCloudInstanceId(String vPCCloudInstanceId) {
+			this.vPCCloudInstanceId = vPCCloudInstanceId;
+		}
+
+		public String getDBClusterStatus() {
+			return this.dBClusterStatus;
+		}
+
+		public void setDBClusterStatus(String dBClusterStatus) {
+			this.dBClusterStatus = dBClusterStatus;
 		}
 
 		public String getResourceGroupId() {
@@ -411,12 +379,44 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public Integer getElasticIOResource() {
-			return this.elasticIOResource;
+		public String getDBClusterNetworkType() {
+			return this.dBClusterNetworkType;
 		}
 
-		public void setElasticIOResource(Integer elasticIOResource) {
-			this.elasticIOResource = elasticIOResource;
+		public void setDBClusterNetworkType(String dBClusterNetworkType) {
+			this.dBClusterNetworkType = dBClusterNetworkType;
+		}
+
+		public String getDBClusterDescription() {
+			return this.dBClusterDescription;
+		}
+
+		public void setDBClusterDescription(String dBClusterDescription) {
+			this.dBClusterDescription = dBClusterDescription;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
 		public List<Tag> getTags() {

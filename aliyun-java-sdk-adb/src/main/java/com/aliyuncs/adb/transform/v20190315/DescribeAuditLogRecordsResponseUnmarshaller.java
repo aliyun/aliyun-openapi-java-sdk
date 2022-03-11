@@ -28,22 +28,23 @@ public class DescribeAuditLogRecordsResponseUnmarshaller {
 		
 		describeAuditLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeAuditLogRecordsResponse.RequestId"));
 		describeAuditLogRecordsResponse.setTotalCount(_ctx.stringValue("DescribeAuditLogRecordsResponse.TotalCount"));
-		describeAuditLogRecordsResponse.setPageNumber(_ctx.stringValue("DescribeAuditLogRecordsResponse.PageNumber"));
 		describeAuditLogRecordsResponse.setPageSize(_ctx.stringValue("DescribeAuditLogRecordsResponse.PageSize"));
+		describeAuditLogRecordsResponse.setPageNumber(_ctx.stringValue("DescribeAuditLogRecordsResponse.PageNumber"));
 		describeAuditLogRecordsResponse.setDBClusterId(_ctx.stringValue("DescribeAuditLogRecordsResponse.DBClusterId"));
 
 		List<SlowLogRecord> items = new ArrayList<SlowLogRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAuditLogRecordsResponse.Items.Length"); i++) {
 			SlowLogRecord slowLogRecord = new SlowLogRecord();
 			slowLogRecord.setHostAddress(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].HostAddress"));
-			slowLogRecord.setDBName(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].DBName"));
-			slowLogRecord.setSQLText(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].SQLText"));
-			slowLogRecord.setSQLType(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].SQLType"));
-			slowLogRecord.setConnId(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].ConnId"));
-			slowLogRecord.setExecuteTime(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].ExecuteTime"));
 			slowLogRecord.setSucceed(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].Succeed"));
+			slowLogRecord.setSQLText(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].SQLText"));
 			slowLogRecord.setTotalTime(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].TotalTime"));
+			slowLogRecord.setConnId(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].ConnId"));
+			slowLogRecord.setDBName(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].DBName"));
+			slowLogRecord.setSQLType(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].SQLType"));
+			slowLogRecord.setExecuteTime(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].ExecuteTime"));
 			slowLogRecord.setProcessID(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].ProcessID"));
+			slowLogRecord.setUser(_ctx.stringValue("DescribeAuditLogRecordsResponse.Items["+ i +"].User"));
 
 			items.add(slowLogRecord);
 		}

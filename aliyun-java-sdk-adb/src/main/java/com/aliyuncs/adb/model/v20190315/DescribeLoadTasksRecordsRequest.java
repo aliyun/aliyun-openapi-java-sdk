@@ -27,8 +27,6 @@ public class DescribeLoadTasksRecordsRequest extends RpcAcsRequest<DescribeLoadT
 
 	private Long resourceOwnerId;
 
-	private String range;
-
 	private String startTime;
 
 	private Integer pageNumber;
@@ -67,17 +65,6 @@ public class DescribeLoadTasksRecordsRequest extends RpcAcsRequest<DescribeLoadT
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getRange() {
-		return this.range;
-	}
-
-	public void setRange(String range) {
-		this.range = range;
-		if(range != null){
-			putQueryParameter("Range", range);
 		}
 	}
 

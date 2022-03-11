@@ -32,12 +32,13 @@ public class DescribeDBClusterNetInfoResponseUnmarshaller {
 		List<Address> items = new ArrayList<Address>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterNetInfoResponse.Items.Length"); i++) {
 			Address address = new Address();
-			address.setConnectionString(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].ConnectionString"));
-			address.setIPAddress(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].IPAddress"));
-			address.setNetType(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].NetType"));
-			address.setPort(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].Port"));
 			address.setVPCId(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].VPCId"));
+			address.setPort(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].Port"));
 			address.setVSwitchId(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].VSwitchId"));
+			address.setIPAddress(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].IPAddress"));
+			address.setConnectionString(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].ConnectionString"));
+			address.setConnectionStringPrefix(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].ConnectionStringPrefix"));
+			address.setNetType(_ctx.stringValue("DescribeDBClusterNetInfoResponse.Items["+ i +"].NetType"));
 
 			items.add(address);
 		}

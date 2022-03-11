@@ -47,25 +47,17 @@ public class DescribeDBResourcePoolResponse extends AcsResponse {
 
 	public static class PoolInfo {
 
-		private String poolName;
-
 		private String queryType;
-
-		private Integer nodeNum;
-
-		private String poolUsers;
-
-		private String createTime;
 
 		private String updateTime;
 
-		public String getPoolName() {
-			return this.poolName;
-		}
+		private String poolName;
 
-		public void setPoolName(String poolName) {
-			this.poolName = poolName;
-		}
+		private String createTime;
+
+		private String poolUsers;
+
+		private Integer nodeNum;
 
 		public String getQueryType() {
 			return this.queryType;
@@ -75,20 +67,20 @@ public class DescribeDBResourcePoolResponse extends AcsResponse {
 			this.queryType = queryType;
 		}
 
-		public Integer getNodeNum() {
-			return this.nodeNum;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setNodeNum(Integer nodeNum) {
-			this.nodeNum = nodeNum;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public String getPoolUsers() {
-			return this.poolUsers;
+		public String getPoolName() {
+			return this.poolName;
 		}
 
-		public void setPoolUsers(String poolUsers) {
-			this.poolUsers = poolUsers;
+		public void setPoolName(String poolName) {
+			this.poolName = poolName;
 		}
 
 		public String getCreateTime() {
@@ -99,12 +91,20 @@ public class DescribeDBResourcePoolResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getPoolUsers() {
+			return this.poolUsers;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setPoolUsers(String poolUsers) {
+			this.poolUsers = poolUsers;
+		}
+
+		public Integer getNodeNum() {
+			return this.nodeNum;
+		}
+
+		public void setNodeNum(Integer nodeNum) {
+			this.nodeNum = nodeNum;
 		}
 	}
 

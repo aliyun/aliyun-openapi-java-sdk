@@ -31,16 +31,6 @@ public class DescribeConnectionCountRecordsResponseUnmarshaller {
 		describeConnectionCountRecordsResponse.setTotalCount(_ctx.stringValue("DescribeConnectionCountRecordsResponse.TotalCount"));
 		describeConnectionCountRecordsResponse.setDBClusterId(_ctx.stringValue("DescribeConnectionCountRecordsResponse.DBClusterId"));
 
-		List<Users> userRecords = new ArrayList<Users>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeConnectionCountRecordsResponse.UserRecords.Length"); i++) {
-			Users users = new Users();
-			users.setUser(_ctx.stringValue("DescribeConnectionCountRecordsResponse.UserRecords["+ i +"].User"));
-			users.setCount(_ctx.longValue("DescribeConnectionCountRecordsResponse.UserRecords["+ i +"].Count"));
-
-			userRecords.add(users);
-		}
-		describeConnectionCountRecordsResponse.setUserRecords(userRecords);
-
 		List<AccessIps> accessIpRecords = new ArrayList<AccessIps>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeConnectionCountRecordsResponse.AccessIpRecords.Length"); i++) {
 			AccessIps accessIps = new AccessIps();
@@ -50,6 +40,16 @@ public class DescribeConnectionCountRecordsResponseUnmarshaller {
 			accessIpRecords.add(accessIps);
 		}
 		describeConnectionCountRecordsResponse.setAccessIpRecords(accessIpRecords);
+
+		List<Users> userRecords = new ArrayList<Users>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeConnectionCountRecordsResponse.UserRecords.Length"); i++) {
+			Users users = new Users();
+			users.setUser(_ctx.stringValue("DescribeConnectionCountRecordsResponse.UserRecords["+ i +"].User"));
+			users.setCount(_ctx.longValue("DescribeConnectionCountRecordsResponse.UserRecords["+ i +"].Count"));
+
+			userRecords.add(users);
+		}
+		describeConnectionCountRecordsResponse.setUserRecords(userRecords);
 	 
 	 	return describeConnectionCountRecordsResponse;
 	}

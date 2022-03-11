@@ -31,9 +31,9 @@ public class DescribeConnectionCountRecordsResponse extends AcsResponse {
 
 	private String dBClusterId;
 
-	private List<Users> userRecords;
-
 	private List<AccessIps> accessIpRecords;
+
+	private List<Users> userRecords;
 
 	public String getTotalCount() {
 		return this.totalCount;
@@ -59,14 +59,6 @@ public class DescribeConnectionCountRecordsResponse extends AcsResponse {
 		this.dBClusterId = dBClusterId;
 	}
 
-	public List<Users> getUserRecords() {
-		return this.userRecords;
-	}
-
-	public void setUserRecords(List<Users> userRecords) {
-		this.userRecords = userRecords;
-	}
-
 	public List<AccessIps> getAccessIpRecords() {
 		return this.accessIpRecords;
 	}
@@ -75,27 +67,12 @@ public class DescribeConnectionCountRecordsResponse extends AcsResponse {
 		this.accessIpRecords = accessIpRecords;
 	}
 
-	public static class Users {
+	public List<Users> getUserRecords() {
+		return this.userRecords;
+	}
 
-		private String user;
-
-		private Long count;
-
-		public String getUser() {
-			return this.user;
-		}
-
-		public void setUser(String user) {
-			this.user = user;
-		}
-
-		public Long getCount() {
-			return this.count;
-		}
-
-		public void setCount(Long count) {
-			this.count = count;
-		}
+	public void setUserRecords(List<Users> userRecords) {
+		this.userRecords = userRecords;
 	}
 
 	public static class AccessIps {
@@ -110,6 +87,29 @@ public class DescribeConnectionCountRecordsResponse extends AcsResponse {
 
 		public void setAccessIp(String accessIp) {
 			this.accessIp = accessIp;
+		}
+
+		public Long getCount() {
+			return this.count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
+		}
+	}
+
+	public static class Users {
+
+		private String user;
+
+		private Long count;
+
+		public String getUser() {
+			return this.user;
+		}
+
+		public void setUser(String user) {
+			this.user = user;
 		}
 
 		public Long getCount() {

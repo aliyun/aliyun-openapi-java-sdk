@@ -31,12 +31,12 @@ public class DescribeDBResourcePoolResponseUnmarshaller {
 		List<PoolInfo> poolsInfo = new ArrayList<PoolInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBResourcePoolResponse.PoolsInfo.Length"); i++) {
 			PoolInfo poolInfo = new PoolInfo();
-			poolInfo.setPoolName(_ctx.stringValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].PoolName"));
 			poolInfo.setQueryType(_ctx.stringValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].QueryType"));
-			poolInfo.setNodeNum(_ctx.integerValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].NodeNum"));
-			poolInfo.setPoolUsers(_ctx.stringValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].PoolUsers"));
-			poolInfo.setCreateTime(_ctx.stringValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].CreateTime"));
 			poolInfo.setUpdateTime(_ctx.stringValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].UpdateTime"));
+			poolInfo.setPoolName(_ctx.stringValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].PoolName"));
+			poolInfo.setCreateTime(_ctx.stringValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].CreateTime"));
+			poolInfo.setPoolUsers(_ctx.stringValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].PoolUsers"));
+			poolInfo.setNodeNum(_ctx.integerValue("DescribeDBResourcePoolResponse.PoolsInfo["+ i +"].NodeNum"));
 
 			poolsInfo.add(poolInfo);
 		}

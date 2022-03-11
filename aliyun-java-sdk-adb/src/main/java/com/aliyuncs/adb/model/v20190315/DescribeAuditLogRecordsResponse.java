@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAuditLogRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String totalCount;
 
-	private String pageNumber;
-
 	private String pageSize;
+
+	private String requestId;
+
+	private String pageNumber;
 
 	private String dBClusterId;
 
 	private List<SlowLogRecord> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTotalCount() {
 		return this.totalCount;
@@ -53,20 +45,28 @@ public class DescribeAuditLogRecordsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public String getDBClusterId() {
@@ -89,21 +89,23 @@ public class DescribeAuditLogRecordsResponse extends AcsResponse {
 
 		private String hostAddress;
 
-		private String dBName;
+		private String succeed;
 
 		private String sQLText;
 
-		private String sQLType;
+		private String totalTime;
 
 		private String connId;
 
+		private String dBName;
+
+		private String sQLType;
+
 		private String executeTime;
 
-		private String succeed;
-
-		private String totalTime;
-
 		private String processID;
+
+		private String user;
 
 		public String getHostAddress() {
 			return this.hostAddress;
@@ -111,46 +113,6 @@ public class DescribeAuditLogRecordsResponse extends AcsResponse {
 
 		public void setHostAddress(String hostAddress) {
 			this.hostAddress = hostAddress;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public String getSQLType() {
-			return this.sQLType;
-		}
-
-		public void setSQLType(String sQLType) {
-			this.sQLType = sQLType;
-		}
-
-		public String getConnId() {
-			return this.connId;
-		}
-
-		public void setConnId(String connId) {
-			this.connId = connId;
-		}
-
-		public String getExecuteTime() {
-			return this.executeTime;
-		}
-
-		public void setExecuteTime(String executeTime) {
-			this.executeTime = executeTime;
 		}
 
 		public String getSucceed() {
@@ -161,6 +123,14 @@ public class DescribeAuditLogRecordsResponse extends AcsResponse {
 			this.succeed = succeed;
 		}
 
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
+		}
+
 		public String getTotalTime() {
 			return this.totalTime;
 		}
@@ -169,12 +139,52 @@ public class DescribeAuditLogRecordsResponse extends AcsResponse {
 			this.totalTime = totalTime;
 		}
 
+		public String getConnId() {
+			return this.connId;
+		}
+
+		public void setConnId(String connId) {
+			this.connId = connId;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getSQLType() {
+			return this.sQLType;
+		}
+
+		public void setSQLType(String sQLType) {
+			this.sQLType = sQLType;
+		}
+
+		public String getExecuteTime() {
+			return this.executeTime;
+		}
+
+		public void setExecuteTime(String executeTime) {
+			this.executeTime = executeTime;
+		}
+
 		public String getProcessID() {
 			return this.processID;
 		}
 
 		public void setProcessID(String processID) {
 			this.processID = processID;
+		}
+
+		public String getUser() {
+			return this.user;
+		}
+
+		public void setUser(String user) {
+			this.user = user;
 		}
 	}
 

@@ -27,9 +27,9 @@ public class DescribeLoadTasksRecordsResponse extends AcsResponse {
 
 	private String totalCount;
 
-	private String requestId;
-
 	private String pageSize;
+
+	private String requestId;
 
 	private String pageNumber;
 
@@ -45,20 +45,20 @@ public class DescribeLoadTasksRecordsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPageNumber() {
@@ -87,28 +87,28 @@ public class DescribeLoadTasksRecordsResponse extends AcsResponse {
 
 	public static class LoadTaskRecord {
 
-		private Long processRows;
+		private String sql;
 
 		private String state;
 
 		private String createTime;
 
-		private String jobName;
-
-		private String updateTime;
-
 		private String dBName;
 
 		private String processID;
 
-		private String sql;
+		private String updateTime;
 
-		public Long getProcessRows() {
-			return this.processRows;
+		private String jobName;
+
+		private Long processRows;
+
+		public String getSql() {
+			return this.sql;
 		}
 
-		public void setProcessRows(Long processRows) {
-			this.processRows = processRows;
+		public void setSql(String sql) {
+			this.sql = sql;
 		}
 
 		public String getState() {
@@ -127,22 +127,6 @@ public class DescribeLoadTasksRecordsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getJobName() {
-			return this.jobName;
-		}
-
-		public void setJobName(String jobName) {
-			this.jobName = jobName;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
 		public String getDBName() {
 			return this.dBName;
 		}
@@ -159,12 +143,28 @@ public class DescribeLoadTasksRecordsResponse extends AcsResponse {
 			this.processID = processID;
 		}
 
-		public String getSql() {
-			return this.sql;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setSql(String sql) {
-			this.sql = sql;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getJobName() {
+			return this.jobName;
+		}
+
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
+		}
+
+		public Long getProcessRows() {
+			return this.processRows;
+		}
+
+		public void setProcessRows(Long processRows) {
+			this.processRows = processRows;
 		}
 	}
 

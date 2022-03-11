@@ -23,6 +23,7 @@ public class ModifyAuditLogConfigResponseUnmarshaller {
 	public static ModifyAuditLogConfigResponse unmarshall(ModifyAuditLogConfigResponse modifyAuditLogConfigResponse, UnmarshallerContext _ctx) {
 		
 		modifyAuditLogConfigResponse.setRequestId(_ctx.stringValue("ModifyAuditLogConfigResponse.RequestId"));
+		modifyAuditLogConfigResponse.setUpdateSucceed(_ctx.booleanValue("ModifyAuditLogConfigResponse.UpdateSucceed"));
 	 
 	 	return modifyAuditLogConfigResponse;
 	}

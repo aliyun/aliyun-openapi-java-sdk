@@ -28,15 +28,15 @@ public class DescribeDBClusterPerformanceResponseUnmarshaller {
 	public static DescribeDBClusterPerformanceResponse unmarshall(DescribeDBClusterPerformanceResponse describeDBClusterPerformanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterPerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.RequestId"));
+		describeDBClusterPerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.EndTime"));
 		describeDBClusterPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBClusterId"));
 		describeDBClusterPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.StartTime"));
-		describeDBClusterPerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.EndTime"));
 
 		List<PerformanceItem> performances = new ArrayList<PerformanceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.Performances.Length"); i++) {
 			PerformanceItem performanceItem = new PerformanceItem();
-			performanceItem.setKey(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Key"));
 			performanceItem.setUnit(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Unit"));
+			performanceItem.setKey(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Key"));
 
 			List<SeriesItem> series = new ArrayList<SeriesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Series.Length"); j++) {

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String clusterNetworkType;
 
+	private String requestId;
+
 	private List<Address> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getClusterNetworkType() {
 		return this.clusterNetworkType;
@@ -45,6 +37,14 @@ public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 
 	public void setClusterNetworkType(String clusterNetworkType) {
 		this.clusterNetworkType = clusterNetworkType;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Address> getItems() {
@@ -57,40 +57,26 @@ public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 
 	public static class Address {
 
-		private String connectionString;
-
-		private String iPAddress;
-
-		private String netType;
+		private String vPCId;
 
 		private String port;
 
-		private String vPCId;
-
 		private String vSwitchId;
 
-		public String getConnectionString() {
-			return this.connectionString;
+		private String iPAddress;
+
+		private String connectionString;
+
+		private String connectionStringPrefix;
+
+		private String netType;
+
+		public String getVPCId() {
+			return this.vPCId;
 		}
 
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
-
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
-
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
-		}
-
-		public String getNetType() {
-			return this.netType;
-		}
-
-		public void setNetType(String netType) {
-			this.netType = netType;
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
 		}
 
 		public String getPort() {
@@ -101,20 +87,44 @@ public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getVPCId() {
-			return this.vPCId;
-		}
-
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
-		}
-
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
+
+		public String getConnectionStringPrefix() {
+			return this.connectionStringPrefix;
+		}
+
+		public void setConnectionStringPrefix(String connectionStringPrefix) {
+			this.connectionStringPrefix = connectionStringPrefix;
+		}
+
+		public String getNetType() {
+			return this.netType;
+		}
+
+		public void setNetType(String netType) {
+			this.netType = netType;
 		}
 	}
 

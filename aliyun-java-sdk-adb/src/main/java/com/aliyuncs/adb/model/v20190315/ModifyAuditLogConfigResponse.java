@@ -26,12 +26,22 @@ public class ModifyAuditLogConfigResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean updateSucceed;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getUpdateSucceed() {
+		return this.updateSucceed;
+	}
+
+	public void setUpdateSucceed(Boolean updateSucceed) {
+		this.updateSucceed = updateSucceed;
 	}
 
 	@Override

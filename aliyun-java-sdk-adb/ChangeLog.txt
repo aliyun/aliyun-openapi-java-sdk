@@ -1,3 +1,6 @@
+2022-03-11 Version: 1.0.7
+- Support modify PayType.
+
 2021-03-13 Version: 1.0.6
 - Supportd DescribeTableStatisticsRequest.
 

@@ -35,14 +35,14 @@ public class DescribeLoadTasksRecordsResponseUnmarshaller {
 		List<LoadTaskRecord> loadTasksRecords = new ArrayList<LoadTaskRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords.Length"); i++) {
 			LoadTaskRecord loadTaskRecord = new LoadTaskRecord();
-			loadTaskRecord.setProcessRows(_ctx.longValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].ProcessRows"));
+			loadTaskRecord.setSql(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].Sql"));
 			loadTaskRecord.setState(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].State"));
 			loadTaskRecord.setCreateTime(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].CreateTime"));
-			loadTaskRecord.setJobName(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].JobName"));
-			loadTaskRecord.setUpdateTime(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].UpdateTime"));
 			loadTaskRecord.setDBName(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].DBName"));
 			loadTaskRecord.setProcessID(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].ProcessID"));
-			loadTaskRecord.setSql(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].Sql"));
+			loadTaskRecord.setUpdateTime(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].UpdateTime"));
+			loadTaskRecord.setJobName(_ctx.stringValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].JobName"));
+			loadTaskRecord.setProcessRows(_ctx.longValue("DescribeLoadTasksRecordsResponse.LoadTasksRecords["+ i +"].ProcessRows"));
 
 			loadTasksRecords.add(loadTaskRecord);
 		}

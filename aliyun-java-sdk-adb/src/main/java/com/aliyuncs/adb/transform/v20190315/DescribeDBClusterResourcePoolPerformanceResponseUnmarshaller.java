@@ -29,9 +29,9 @@ public class DescribeDBClusterResourcePoolPerformanceResponseUnmarshaller {
 	public static DescribeDBClusterResourcePoolPerformanceResponse unmarshall(DescribeDBClusterResourcePoolPerformanceResponse describeDBClusterResourcePoolPerformanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterResourcePoolPerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBClusterResourcePoolPerformanceResponse.RequestId"));
-		describeDBClusterResourcePoolPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterResourcePoolPerformanceResponse.DBClusterId"));
-		describeDBClusterResourcePoolPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBClusterResourcePoolPerformanceResponse.StartTime"));
 		describeDBClusterResourcePoolPerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBClusterResourcePoolPerformanceResponse.EndTime"));
+		describeDBClusterResourcePoolPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBClusterResourcePoolPerformanceResponse.StartTime"));
+		describeDBClusterResourcePoolPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterResourcePoolPerformanceResponse.DBClusterId"));
 
 		List<PerformanceItem> performances = new ArrayList<PerformanceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterResourcePoolPerformanceResponse.Performances.Length"); i++) {
