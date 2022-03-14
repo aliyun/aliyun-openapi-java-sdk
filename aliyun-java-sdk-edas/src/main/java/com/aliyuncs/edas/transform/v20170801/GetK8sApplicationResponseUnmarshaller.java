@@ -69,6 +69,7 @@ public class GetK8sApplicationResponseUnmarshaller {
 		app.setEdasContainerVersion(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.EdasContainerVersion"));
 		app.setLimitCpuM(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LimitCpuM"));
 		app.setClusterId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.ClusterId"));
+		app.setDevelopType(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.DevelopType"));
 
 		List<String> cmdArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.App.CmdArgs.Length"); i++) {

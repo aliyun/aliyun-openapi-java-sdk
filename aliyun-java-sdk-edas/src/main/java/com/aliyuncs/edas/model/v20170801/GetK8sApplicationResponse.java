@@ -284,6 +284,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String clusterId;
 
+			private String developType;
+
 			private List<Env> envList;
 
 			private List<String> cmdArgs;
@@ -430,6 +432,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setClusterId(String clusterId) {
 				this.clusterId = clusterId;
+			}
+
+			public String getDevelopType() {
+				return this.developType;
+			}
+
+			public void setDevelopType(String developType) {
+				this.developType = developType;
 			}
 
 			public List<Env> getEnvList() {

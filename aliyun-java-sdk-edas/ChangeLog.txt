@@ -1,3 +1,6 @@
+2022-03-14 Version: 3.26.0
+- Add developType in GetK8sApplication.
+
 2022-03-14 Version: 3.25.1
 - Modify API ListConfigTemplates.
 - Modify API CreateConfigTemplate.
