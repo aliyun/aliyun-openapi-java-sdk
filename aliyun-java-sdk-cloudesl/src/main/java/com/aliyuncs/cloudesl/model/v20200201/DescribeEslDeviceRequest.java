@@ -35,7 +35,7 @@ public class DescribeEslDeviceRequest extends RpcAcsRequest<DescribeEslDeviceRes
 
 	private Long pageSize;
 	public DescribeEslDeviceRequest() {
-		super("cloudesl", "2020-02-01", "DescribeEslDevice", "cloudesl");
+		super("cloudesl", "2020-02-01", "DescribeEslDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

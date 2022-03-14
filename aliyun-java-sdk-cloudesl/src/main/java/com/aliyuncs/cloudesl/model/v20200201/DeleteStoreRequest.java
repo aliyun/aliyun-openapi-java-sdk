@@ -29,7 +29,7 @@ public class DeleteStoreRequest extends RpcAcsRequest<DeleteStoreResponse> {
 
 	private String storeId;
 	public DeleteStoreRequest() {
-		super("cloudesl", "2020-02-01", "DeleteStore", "cloudesl");
+		super("cloudesl", "2020-02-01", "DeleteStore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

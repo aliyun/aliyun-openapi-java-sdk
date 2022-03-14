@@ -39,7 +39,7 @@ public class UpdateStoreRequest extends RpcAcsRequest<UpdateStoreResponse> {
 
 	private String phone;
 	public UpdateStoreRequest() {
-		super("cloudesl", "2020-02-01", "UpdateStore", "cloudesl");
+		super("cloudesl", "2020-02-01", "UpdateStore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

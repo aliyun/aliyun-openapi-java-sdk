@@ -39,7 +39,7 @@ public class UpdateEslDeviceLightRequest extends RpcAcsRequest<UpdateEslDeviceLi
 
 	private String itemBarCode;
 	public UpdateEslDeviceLightRequest() {
-		super("cloudesl", "2020-02-01", "UpdateEslDeviceLight", "cloudesl");
+		super("cloudesl", "2020-02-01", "UpdateEslDeviceLight");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

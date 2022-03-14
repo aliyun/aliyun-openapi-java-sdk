@@ -51,7 +51,7 @@ public class DescribeUserLogRequest extends RpcAcsRequest<DescribeUserLogRespons
 
 	private String logId;
 	public DescribeUserLogRequest() {
-		super("cloudesl", "2020-02-01", "DescribeUserLog", "cloudesl");
+		super("cloudesl", "2020-02-01", "DescribeUserLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

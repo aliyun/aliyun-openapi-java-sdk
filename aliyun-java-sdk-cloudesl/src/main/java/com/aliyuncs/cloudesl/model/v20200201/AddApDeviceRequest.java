@@ -37,7 +37,7 @@ public class AddApDeviceRequest extends RpcAcsRequest<AddApDeviceResponse> {
 
 	private String serialNumber;
 	public AddApDeviceRequest() {
-		super("cloudesl", "2020-02-01", "AddApDevice", "cloudesl");
+		super("cloudesl", "2020-02-01", "AddApDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

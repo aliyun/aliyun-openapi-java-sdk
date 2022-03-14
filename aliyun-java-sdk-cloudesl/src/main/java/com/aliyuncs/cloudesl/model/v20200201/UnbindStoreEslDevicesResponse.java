@@ -14,16 +14,15 @@
 
 package com.aliyuncs.cloudesl.model.v20200201;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BatchInsertItemsResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.UnbindStoreEslDevicesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchInsertItemsResponse extends AcsResponse {
+public class UnbindStoreEslDevicesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -38,10 +37,6 @@ public class BatchInsertItemsResponse extends AcsResponse {
 	private String message;
 
 	private String dynamicMessage;
-
-	private String dynamicCode;
-
-	private List<BatchResult> batchResults;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -99,68 +94,9 @@ public class BatchInsertItemsResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
-	public List<BatchResult> getBatchResults() {
-		return this.batchResults;
-	}
-
-	public void setBatchResults(List<BatchResult> batchResults) {
-		this.batchResults = batchResults;
-	}
-
-	public static class BatchResult {
-
-		private Integer index;
-
-		private String message;
-
-		private Boolean success;
-
-		private String errorCode;
-
-		public Integer getIndex() {
-			return this.index;
-		}
-
-		public void setIndex(Integer index) {
-			this.index = index;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
-		}
-	}
-
 	@Override
-	public BatchInsertItemsResponse getInstance(UnmarshallerContext context) {
-		return	BatchInsertItemsResponseUnmarshaller.unmarshall(this, context);
+	public UnbindStoreEslDevicesResponse getInstance(UnmarshallerContext context) {
+		return	UnbindStoreEslDevicesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

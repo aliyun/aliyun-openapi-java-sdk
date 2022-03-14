@@ -31,7 +31,7 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 
 	private String userId;
 	public AddUserRequest() {
-		super("cloudesl", "2020-02-01", "AddUser", "cloudesl");
+		super("cloudesl", "2020-02-01", "AddUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

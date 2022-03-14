@@ -1,3 +1,6 @@
+2022-03-14 Version: 2.0.8
+- Add exstension Properties.
+
 2021-10-15 Version: 2.0.7
 - Generated 2020-02-01 for `cloudesl`.
 

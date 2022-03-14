@@ -34,7 +34,7 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 	private List<ItemInfo> itemInfos;
 	public BatchInsertItemsRequest() {
-		super("cloudesl", "2020-02-01", "BatchInsertItems", "cloudesl");
+		super("cloudesl", "2020-02-01", "BatchInsertItems");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,17 +95,20 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureK" , itemInfos.get(depth1).getCustomizeFeatureK());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureL" , itemInfos.get(depth1).getCustomizeFeatureL());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureM" , itemInfos.get(depth1).getCustomizeFeatureM());
-				putBodyParameter("ItemInfo." + (depth1 + 1) + ".BePromotion" , itemInfos.get(depth1).getBePromotion());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureN" , itemInfos.get(depth1).getCustomizeFeatureN());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".BePromotion" , itemInfos.get(depth1).getBePromotion());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureO" , itemInfos.get(depth1).getCustomizeFeatureO());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureP" , itemInfos.get(depth1).getCustomizeFeatureP());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".PromotionEnd" , itemInfos.get(depth1).getPromotionEnd());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ItemTitle" , itemInfos.get(depth1).getItemTitle());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureQ" , itemInfos.get(depth1).getCustomizeFeatureQ());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureR" , itemInfos.get(depth1).getCustomizeFeatureR());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureC" , itemInfos.get(depth1).getCustomizeFeatureC());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureD" , itemInfos.get(depth1).getCustomizeFeatureD());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ItemQrCode" , itemInfos.get(depth1).getItemQrCode());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureE" , itemInfos.get(depth1).getCustomizeFeatureE());
-				putBodyParameter("ItemInfo." + (depth1 + 1) + ".InventoryStatus" , itemInfos.get(depth1).getInventoryStatus());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".PromotionReason" , itemInfos.get(depth1).getPromotionReason());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".InventoryStatus" , itemInfos.get(depth1).getInventoryStatus());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureF" , itemInfos.get(depth1).getCustomizeFeatureF());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureG" , itemInfos.get(depth1).getCustomizeFeatureG());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureH" , itemInfos.get(depth1).getCustomizeFeatureH());
@@ -116,16 +119,24 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".SuggestPrice" , itemInfos.get(depth1).getSuggestPrice());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ForestFirstId" , itemInfos.get(depth1).getForestFirstId());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ProductionPlace" , itemInfos.get(depth1).getProductionPlace());
-				putBodyParameter("ItemInfo." + (depth1 + 1) + ".Manufacturer" , itemInfos.get(depth1).getManufacturer());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".SourceCode" , itemInfos.get(depth1).getSourceCode());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".Manufacturer" , itemInfos.get(depth1).getManufacturer());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ItemId" , itemInfos.get(depth1).getItemId());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".BeMember" , itemInfos.get(depth1).getBeMember());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureS" , itemInfos.get(depth1).getCustomizeFeatureS());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureT" , itemInfos.get(depth1).getCustomizeFeatureT());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureU" , itemInfos.get(depth1).getCustomizeFeatureU());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".TemplateSceneId" , itemInfos.get(depth1).getTemplateSceneId());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureV" , itemInfos.get(depth1).getCustomizeFeatureV());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureW" , itemInfos.get(depth1).getCustomizeFeatureW());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureX" , itemInfos.get(depth1).getCustomizeFeatureX());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureY" , itemInfos.get(depth1).getCustomizeFeatureY());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".CustomizeFeatureZ" , itemInfos.get(depth1).getCustomizeFeatureZ());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".SalesPrice" , itemInfos.get(depth1).getSalesPrice());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".OriginalPrice" , itemInfos.get(depth1).getOriginalPrice());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ItemShortTitle" , itemInfos.get(depth1).getItemShortTitle());
-				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ForestSecondId" , itemInfos.get(depth1).getForestSecondId());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ItemPicUrl" , itemInfos.get(depth1).getItemPicUrl());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ForestSecondId" , itemInfos.get(depth1).getForestSecondId());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".SupplierName" , itemInfos.get(depth1).getSupplierName());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".Material" , itemInfos.get(depth1).getMaterial());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ModelNumber" , itemInfos.get(depth1).getModelNumber());
@@ -165,15 +176,21 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 		private String customizeFeatureM;
 
-		private Boolean bePromotion;
-
 		private String customizeFeatureN;
 
+		private Boolean bePromotion;
+
 		private String customizeFeatureO;
+
+		private String customizeFeatureP;
 
 		private String promotionEnd;
 
 		private String itemTitle;
+
+		private String customizeFeatureQ;
+
+		private String customizeFeatureR;
 
 		private String customizeFeatureC;
 
@@ -183,9 +200,9 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 		private String customizeFeatureE;
 
-		private String inventoryStatus;
-
 		private String promotionReason;
+
+		private String inventoryStatus;
 
 		private String customizeFeatureF;
 
@@ -207,15 +224,31 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 		private String productionPlace;
 
-		private String manufacturer;
-
 		private String sourceCode;
+
+		private String manufacturer;
 
 		private String itemId;
 
 		private Boolean beMember;
 
+		private String customizeFeatureS;
+
+		private String customizeFeatureT;
+
+		private String customizeFeatureU;
+
 		private String templateSceneId;
+
+		private String customizeFeatureV;
+
+		private String customizeFeatureW;
+
+		private String customizeFeatureX;
+
+		private String customizeFeatureY;
+
+		private String customizeFeatureZ;
 
 		private Integer salesPrice;
 
@@ -223,9 +256,9 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 		private String itemShortTitle;
 
-		private String forestSecondId;
-
 		private String itemPicUrl;
+
+		private String forestSecondId;
 
 		private String supplierName;
 
@@ -341,14 +374,6 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 			this.customizeFeatureM = customizeFeatureM;
 		}
 
-		public Boolean getBePromotion() {
-			return this.bePromotion;
-		}
-
-		public void setBePromotion(Boolean bePromotion) {
-			this.bePromotion = bePromotion;
-		}
-
 		public String getCustomizeFeatureN() {
 			return this.customizeFeatureN;
 		}
@@ -357,12 +382,28 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 			this.customizeFeatureN = customizeFeatureN;
 		}
 
+		public Boolean getBePromotion() {
+			return this.bePromotion;
+		}
+
+		public void setBePromotion(Boolean bePromotion) {
+			this.bePromotion = bePromotion;
+		}
+
 		public String getCustomizeFeatureO() {
 			return this.customizeFeatureO;
 		}
 
 		public void setCustomizeFeatureO(String customizeFeatureO) {
 			this.customizeFeatureO = customizeFeatureO;
+		}
+
+		public String getCustomizeFeatureP() {
+			return this.customizeFeatureP;
+		}
+
+		public void setCustomizeFeatureP(String customizeFeatureP) {
+			this.customizeFeatureP = customizeFeatureP;
 		}
 
 		public String getPromotionEnd() {
@@ -379,6 +420,22 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 		public void setItemTitle(String itemTitle) {
 			this.itemTitle = itemTitle;
+		}
+
+		public String getCustomizeFeatureQ() {
+			return this.customizeFeatureQ;
+		}
+
+		public void setCustomizeFeatureQ(String customizeFeatureQ) {
+			this.customizeFeatureQ = customizeFeatureQ;
+		}
+
+		public String getCustomizeFeatureR() {
+			return this.customizeFeatureR;
+		}
+
+		public void setCustomizeFeatureR(String customizeFeatureR) {
+			this.customizeFeatureR = customizeFeatureR;
 		}
 
 		public String getCustomizeFeatureC() {
@@ -413,20 +470,20 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 			this.customizeFeatureE = customizeFeatureE;
 		}
 
-		public String getInventoryStatus() {
-			return this.inventoryStatus;
-		}
-
-		public void setInventoryStatus(String inventoryStatus) {
-			this.inventoryStatus = inventoryStatus;
-		}
-
 		public String getPromotionReason() {
 			return this.promotionReason;
 		}
 
 		public void setPromotionReason(String promotionReason) {
 			this.promotionReason = promotionReason;
+		}
+
+		public String getInventoryStatus() {
+			return this.inventoryStatus;
+		}
+
+		public void setInventoryStatus(String inventoryStatus) {
+			this.inventoryStatus = inventoryStatus;
 		}
 
 		public String getCustomizeFeatureF() {
@@ -509,20 +566,20 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 			this.productionPlace = productionPlace;
 		}
 
-		public String getManufacturer() {
-			return this.manufacturer;
-		}
-
-		public void setManufacturer(String manufacturer) {
-			this.manufacturer = manufacturer;
-		}
-
 		public String getSourceCode() {
 			return this.sourceCode;
 		}
 
 		public void setSourceCode(String sourceCode) {
 			this.sourceCode = sourceCode;
+		}
+
+		public String getManufacturer() {
+			return this.manufacturer;
+		}
+
+		public void setManufacturer(String manufacturer) {
+			this.manufacturer = manufacturer;
 		}
 
 		public String getItemId() {
@@ -541,12 +598,76 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 			this.beMember = beMember;
 		}
 
+		public String getCustomizeFeatureS() {
+			return this.customizeFeatureS;
+		}
+
+		public void setCustomizeFeatureS(String customizeFeatureS) {
+			this.customizeFeatureS = customizeFeatureS;
+		}
+
+		public String getCustomizeFeatureT() {
+			return this.customizeFeatureT;
+		}
+
+		public void setCustomizeFeatureT(String customizeFeatureT) {
+			this.customizeFeatureT = customizeFeatureT;
+		}
+
+		public String getCustomizeFeatureU() {
+			return this.customizeFeatureU;
+		}
+
+		public void setCustomizeFeatureU(String customizeFeatureU) {
+			this.customizeFeatureU = customizeFeatureU;
+		}
+
 		public String getTemplateSceneId() {
 			return this.templateSceneId;
 		}
 
 		public void setTemplateSceneId(String templateSceneId) {
 			this.templateSceneId = templateSceneId;
+		}
+
+		public String getCustomizeFeatureV() {
+			return this.customizeFeatureV;
+		}
+
+		public void setCustomizeFeatureV(String customizeFeatureV) {
+			this.customizeFeatureV = customizeFeatureV;
+		}
+
+		public String getCustomizeFeatureW() {
+			return this.customizeFeatureW;
+		}
+
+		public void setCustomizeFeatureW(String customizeFeatureW) {
+			this.customizeFeatureW = customizeFeatureW;
+		}
+
+		public String getCustomizeFeatureX() {
+			return this.customizeFeatureX;
+		}
+
+		public void setCustomizeFeatureX(String customizeFeatureX) {
+			this.customizeFeatureX = customizeFeatureX;
+		}
+
+		public String getCustomizeFeatureY() {
+			return this.customizeFeatureY;
+		}
+
+		public void setCustomizeFeatureY(String customizeFeatureY) {
+			this.customizeFeatureY = customizeFeatureY;
+		}
+
+		public String getCustomizeFeatureZ() {
+			return this.customizeFeatureZ;
+		}
+
+		public void setCustomizeFeatureZ(String customizeFeatureZ) {
+			this.customizeFeatureZ = customizeFeatureZ;
 		}
 
 		public Integer getSalesPrice() {
@@ -573,20 +694,20 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 			this.itemShortTitle = itemShortTitle;
 		}
 
-		public String getForestSecondId() {
-			return this.forestSecondId;
-		}
-
-		public void setForestSecondId(String forestSecondId) {
-			this.forestSecondId = forestSecondId;
-		}
-
 		public String getItemPicUrl() {
 			return this.itemPicUrl;
 		}
 
 		public void setItemPicUrl(String itemPicUrl) {
 			this.itemPicUrl = itemPicUrl;
+		}
+
+		public String getForestSecondId() {
+			return this.forestSecondId;
+		}
+
+		public void setForestSecondId(String forestSecondId) {
+			this.forestSecondId = forestSecondId;
 		}
 
 		public String getSupplierName() {

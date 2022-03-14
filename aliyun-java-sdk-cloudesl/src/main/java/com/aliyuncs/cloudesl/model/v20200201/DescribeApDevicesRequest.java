@@ -41,7 +41,7 @@ public class DescribeApDevicesRequest extends RpcAcsRequest<DescribeApDevicesRes
 
 	private Boolean status;
 	public DescribeApDevicesRequest() {
-		super("cloudesl", "2020-02-01", "DescribeApDevices", "cloudesl");
+		super("cloudesl", "2020-02-01", "DescribeApDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 
 	private String shelf;
 	public BindEslDeviceRequest() {
-		super("cloudesl", "2020-02-01", "BindEslDevice", "cloudesl");
+		super("cloudesl", "2020-02-01", "BindEslDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

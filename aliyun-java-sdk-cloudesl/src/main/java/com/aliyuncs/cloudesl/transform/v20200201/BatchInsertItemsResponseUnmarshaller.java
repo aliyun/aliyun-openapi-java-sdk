@@ -28,20 +28,20 @@ public class BatchInsertItemsResponseUnmarshaller {
 		
 		batchInsertItemsResponse.setRequestId(_ctx.stringValue("BatchInsertItemsResponse.RequestId"));
 		batchInsertItemsResponse.setErrorMessage(_ctx.stringValue("BatchInsertItemsResponse.ErrorMessage"));
-		batchInsertItemsResponse.setErrorCode(_ctx.stringValue("BatchInsertItemsResponse.ErrorCode"));
-		batchInsertItemsResponse.setMessage(_ctx.stringValue("BatchInsertItemsResponse.Message"));
-		batchInsertItemsResponse.setDynamicCode(_ctx.stringValue("BatchInsertItemsResponse.DynamicCode"));
-		batchInsertItemsResponse.setCode(_ctx.stringValue("BatchInsertItemsResponse.Code"));
-		batchInsertItemsResponse.setDynamicMessage(_ctx.stringValue("BatchInsertItemsResponse.DynamicMessage"));
 		batchInsertItemsResponse.setSuccess(_ctx.booleanValue("BatchInsertItemsResponse.Success"));
+		batchInsertItemsResponse.setErrorCode(_ctx.stringValue("BatchInsertItemsResponse.ErrorCode"));
+		batchInsertItemsResponse.setCode(_ctx.stringValue("BatchInsertItemsResponse.Code"));
+		batchInsertItemsResponse.setMessage(_ctx.stringValue("BatchInsertItemsResponse.Message"));
+		batchInsertItemsResponse.setDynamicMessage(_ctx.stringValue("BatchInsertItemsResponse.DynamicMessage"));
+		batchInsertItemsResponse.setDynamicCode(_ctx.stringValue("BatchInsertItemsResponse.DynamicCode"));
 
 		List<BatchResult> batchResults = new ArrayList<BatchResult>();
 		for (int i = 0; i < _ctx.lengthValue("BatchInsertItemsResponse.BatchResults.Length"); i++) {
 			BatchResult batchResult = new BatchResult();
-			batchResult.setMessage(_ctx.stringValue("BatchInsertItemsResponse.BatchResults["+ i +"].Message"));
 			batchResult.setIndex(_ctx.integerValue("BatchInsertItemsResponse.BatchResults["+ i +"].Index"));
-			batchResult.setErrorCode(_ctx.stringValue("BatchInsertItemsResponse.BatchResults["+ i +"].ErrorCode"));
+			batchResult.setMessage(_ctx.stringValue("BatchInsertItemsResponse.BatchResults["+ i +"].Message"));
 			batchResult.setSuccess(_ctx.booleanValue("BatchInsertItemsResponse.BatchResults["+ i +"].Success"));
+			batchResult.setErrorCode(_ctx.stringValue("BatchInsertItemsResponse.BatchResults["+ i +"].ErrorCode"));
 
 			batchResults.add(batchResult);
 		}

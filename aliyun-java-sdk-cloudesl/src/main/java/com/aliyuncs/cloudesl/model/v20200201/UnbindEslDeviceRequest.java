@@ -39,7 +39,7 @@ public class UnbindEslDeviceRequest extends RpcAcsRequest<UnbindEslDeviceRespons
 
 	private String shelf;
 	public UnbindEslDeviceRequest() {
-		super("cloudesl", "2020-02-01", "UnbindEslDevice", "cloudesl");
+		super("cloudesl", "2020-02-01", "UnbindEslDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

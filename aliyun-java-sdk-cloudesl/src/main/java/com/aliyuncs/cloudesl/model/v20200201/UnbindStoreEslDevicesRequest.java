@@ -22,43 +22,17 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteApDeviceRequest extends RpcAcsRequest<DeleteApDeviceResponse> {
+public class UnbindStoreEslDevicesRequest extends RpcAcsRequest<UnbindStoreEslDevicesResponse> {
 	   
 
-	private String extraParams;
-
-	private String apMac;
-
 	private String storeId;
-	public DeleteApDeviceRequest() {
-		super("cloudesl", "2020-02-01", "DeleteApDevice");
+	public UnbindStoreEslDevicesRequest() {
+		super("cloudesl", "2020-02-01", "UnbindStoreEslDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getExtraParams() {
-		return this.extraParams;
-	}
-
-	public void setExtraParams(String extraParams) {
-		this.extraParams = extraParams;
-		if(extraParams != null){
-			putBodyParameter("ExtraParams", extraParams);
-		}
-	}
-
-	public String getApMac() {
-		return this.apMac;
-	}
-
-	public void setApMac(String apMac) {
-		this.apMac = apMac;
-		if(apMac != null){
-			putBodyParameter("ApMac", apMac);
-		}
 	}
 
 	public String getStoreId() {
@@ -73,8 +47,8 @@ public class DeleteApDeviceRequest extends RpcAcsRequest<DeleteApDeviceResponse>
 	}
 
 	@Override
-	public Class<DeleteApDeviceResponse> getResponseClass() {
-		return DeleteApDeviceResponse.class;
+	public Class<UnbindStoreEslDevicesResponse> getResponseClass() {
+		return UnbindStoreEslDevicesResponse.class;
 	}
 
 }

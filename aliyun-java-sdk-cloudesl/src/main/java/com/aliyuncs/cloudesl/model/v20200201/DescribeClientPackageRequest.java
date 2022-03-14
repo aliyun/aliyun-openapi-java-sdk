@@ -29,7 +29,7 @@ public class DescribeClientPackageRequest extends RpcAcsRequest<DescribeClientPa
 
 	private String extraParams;
 	public DescribeClientPackageRequest() {
-		super("cloudesl", "2020-02-01", "DescribeClientPackage", "cloudesl");
+		super("cloudesl", "2020-02-01", "DescribeClientPackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

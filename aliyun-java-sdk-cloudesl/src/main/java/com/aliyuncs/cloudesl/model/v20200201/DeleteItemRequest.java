@@ -31,7 +31,7 @@ public class DeleteItemRequest extends RpcAcsRequest<DeleteItemResponse> {
 
 	private Boolean unbindEslDevice;
 	public DeleteItemRequest() {
-		super("cloudesl", "2020-02-01", "DeleteItem", "cloudesl");
+		super("cloudesl", "2020-02-01", "DeleteItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

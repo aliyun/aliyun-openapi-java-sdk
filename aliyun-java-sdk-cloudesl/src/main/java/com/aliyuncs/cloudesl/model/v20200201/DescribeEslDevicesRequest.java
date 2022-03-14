@@ -43,7 +43,7 @@ public class DescribeEslDevicesRequest extends RpcAcsRequest<DescribeEslDevicesR
 
 	private Integer fromBatteryLevel;
 	public DescribeEslDevicesRequest() {
-		super("cloudesl", "2020-02-01", "DescribeEslDevices", "cloudesl");
+		super("cloudesl", "2020-02-01", "DescribeEslDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

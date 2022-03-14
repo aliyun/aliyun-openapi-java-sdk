@@ -31,7 +31,7 @@ public class ActivateApDeviceRequest extends RpcAcsRequest<ActivateApDeviceRespo
 
 	private String storeId;
 	public ActivateApDeviceRequest() {
-		super("cloudesl", "2020-02-01", "ActivateApDevice", "cloudesl");
+		super("cloudesl", "2020-02-01", "ActivateApDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

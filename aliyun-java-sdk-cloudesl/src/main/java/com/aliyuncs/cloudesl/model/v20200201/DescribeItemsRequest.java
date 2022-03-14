@@ -43,7 +43,7 @@ public class DescribeItemsRequest extends RpcAcsRequest<DescribeItemsResponse> {
 
 	private String skuId;
 	public DescribeItemsRequest() {
-		super("cloudesl", "2020-02-01", "DescribeItems", "cloudesl");
+		super("cloudesl", "2020-02-01", "DescribeItems");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

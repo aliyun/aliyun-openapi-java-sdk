@@ -39,7 +39,7 @@ public class CreateStoreRequest extends RpcAcsRequest<CreateStoreResponse> {
 
 	private String phone;
 	public CreateStoreRequest() {
-		super("cloudesl", "2020-02-01", "CreateStore", "cloudesl");
+		super("cloudesl", "2020-02-01", "CreateStore");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

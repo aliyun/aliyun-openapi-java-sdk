@@ -29,7 +29,7 @@ public class DescribeStoreConfigRequest extends RpcAcsRequest<DescribeStoreConfi
 
 	private String storeId;
 	public DescribeStoreConfigRequest() {
-		super("cloudesl", "2020-02-01", "DescribeStoreConfig", "cloudesl");
+		super("cloudesl", "2020-02-01", "DescribeStoreConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

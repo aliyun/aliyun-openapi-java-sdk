@@ -39,7 +39,7 @@ public class DescribeBindersRequest extends RpcAcsRequest<DescribeBindersRespons
 
 	private String itemTitle;
 	public DescribeBindersRequest() {
-		super("cloudesl", "2020-02-01", "DescribeBinders", "cloudesl");
+		super("cloudesl", "2020-02-01", "DescribeBinders");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

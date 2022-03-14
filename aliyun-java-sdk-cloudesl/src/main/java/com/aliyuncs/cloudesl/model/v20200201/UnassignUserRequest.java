@@ -29,7 +29,7 @@ public class UnassignUserRequest extends RpcAcsRequest<UnassignUserResponse> {
 
 	private String userId;
 	public UnassignUserRequest() {
-		super("cloudesl", "2020-02-01", "UnassignUser", "cloudesl");
+		super("cloudesl", "2020-02-01", "UnassignUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

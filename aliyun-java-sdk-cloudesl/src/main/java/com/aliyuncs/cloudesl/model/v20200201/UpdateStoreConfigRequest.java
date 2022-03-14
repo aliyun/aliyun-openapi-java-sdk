@@ -35,7 +35,7 @@ public class UpdateStoreConfigRequest extends RpcAcsRequest<UpdateStoreConfigRes
 
 	private String notificationSilentTimes;
 	public UpdateStoreConfigRequest() {
-		super("cloudesl", "2020-02-01", "UpdateStoreConfig", "cloudesl");
+		super("cloudesl", "2020-02-01", "UpdateStoreConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

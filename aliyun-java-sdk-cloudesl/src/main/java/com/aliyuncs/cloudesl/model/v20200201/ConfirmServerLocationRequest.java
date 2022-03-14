@@ -25,7 +25,7 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class ConfirmServerLocationRequest extends RpcAcsRequest<ConfirmServerLocationResponse> {
 	   
 	public ConfirmServerLocationRequest() {
-		super("cloudesl", "2020-02-01", "ConfirmServerLocation", "cloudesl");
+		super("cloudesl", "2020-02-01", "ConfirmServerLocation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
