@@ -1,3 +1,9 @@
+2022-03-14 Version: 3.25.1
+- Modify API ListConfigTemplates.
+- Modify API CreateConfigTemplate.
+- Modify API UpdateConfigTemplate.
+- Modify API DeleteConfigTemplate.
+
 2022-01-27 Version: 3.25.0
 - Update params for k8s application custom affinity and tolerations.
 
