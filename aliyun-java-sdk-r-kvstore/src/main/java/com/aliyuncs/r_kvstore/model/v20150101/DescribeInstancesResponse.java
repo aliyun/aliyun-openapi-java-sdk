@@ -153,6 +153,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Integer proxyCount;
 
+		private String cloudType;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -457,6 +459,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setProxyCount(Integer proxyCount) {
 			this.proxyCount = proxyCount;
+		}
+
+		public String getCloudType() {
+			return this.cloudType;
+		}
+
+		public void setCloudType(String cloudType) {
+			this.cloudType = cloudType;
 		}
 
 		public List<Tag> getTags() {
