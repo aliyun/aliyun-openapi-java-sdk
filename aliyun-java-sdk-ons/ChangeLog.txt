@@ -1,3 +1,6 @@
+2022-03-15 Version: 3.2.1
+- Add tcpInternetEndpoint field for the api OnsInstanceBaseInfo.
+
 2022-02-22 Version: 3.2.0
 - Deprecated the OnsTopicUpdate api, and will be offline soon.
 

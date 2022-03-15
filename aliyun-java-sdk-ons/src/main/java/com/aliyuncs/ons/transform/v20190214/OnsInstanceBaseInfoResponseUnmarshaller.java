@@ -43,6 +43,7 @@ public class OnsInstanceBaseInfoResponseUnmarshaller {
 		endpoints.setHttpInternetEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternetEndpoint"));
 		endpoints.setHttpInternalEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternalEndpoint"));
 		endpoints.setHttpInternetSecureEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternetSecureEndpoint"));
+		endpoints.setTcpInternetEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.TcpInternetEndpoint"));
 		instanceBaseInfo.setEndpoints(endpoints);
 		onsInstanceBaseInfoResponse.setInstanceBaseInfo(instanceBaseInfo);
 	 
