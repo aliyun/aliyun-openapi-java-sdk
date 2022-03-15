@@ -105,6 +105,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String hDRType;
 
+		private Integer bitDepth;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -295,6 +297,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setHDRType(String hDRType) {
 			this.hDRType = hDRType;
+		}
+
+		public Integer getBitDepth() {
+			return this.bitDepth;
+		}
+
+		public void setBitDepth(Integer bitDepth) {
+			this.bitDepth = bitDepth;
 		}
 	}
 

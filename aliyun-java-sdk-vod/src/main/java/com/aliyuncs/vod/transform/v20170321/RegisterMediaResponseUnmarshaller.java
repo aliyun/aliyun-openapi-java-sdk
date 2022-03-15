@@ -37,9 +37,9 @@ public class RegisterMediaResponseUnmarshaller {
 		List<RegisteredMedia> registeredMediaList = new ArrayList<RegisteredMedia>();
 		for (int i = 0; i < _ctx.lengthValue("RegisterMediaResponse.RegisteredMediaList.Length"); i++) {
 			RegisteredMedia registeredMedia = new RegisteredMedia();
-			registeredMedia.setMediaId(_ctx.stringValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].MediaId"));
-			registeredMedia.setFileURL(_ctx.stringValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].FileURL"));
 			registeredMedia.setNewRegister(_ctx.booleanValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].NewRegister"));
+			registeredMedia.setFileURL(_ctx.stringValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].FileURL"));
+			registeredMedia.setMediaId(_ctx.stringValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].MediaId"));
 
 			registeredMediaList.add(registeredMedia);
 		}

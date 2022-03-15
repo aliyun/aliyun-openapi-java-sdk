@@ -57,7 +57,19 @@ public class GetURLUploadInfosResponse extends AcsResponse {
 
 	public static class UrlUploadJobInfoDTO {
 
+		private String creationTime;
+
+		private String status;
+
+		private String errorMessage;
+
+		private String errorCode;
+
+		private String completeTime;
+
 		private String jobId;
+
+		private String userData;
 
 		private String uploadURL;
 
@@ -65,17 +77,45 @@ public class GetURLUploadInfosResponse extends AcsResponse {
 
 		private String fileSize;
 
-		private String status;
+		public String getCreationTime() {
+			return this.creationTime;
+		}
 
-		private String userData;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
-		private String errorCode;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String errorMessage;
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
-		private String creationTime;
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
 
-		private String completeTime;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getCompleteTime() {
+			return this.completeTime;
+		}
+
+		public void setCompleteTime(String completeTime) {
+			this.completeTime = completeTime;
+		}
 
 		public String getJobId() {
 			return this.jobId;
@@ -83,6 +123,14 @@ public class GetURLUploadInfosResponse extends AcsResponse {
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getUploadURL() {
@@ -107,54 +155,6 @@ public class GetURLUploadInfosResponse extends AcsResponse {
 
 		public void setFileSize(String fileSize) {
 			this.fileSize = fileSize;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getCompleteTime() {
-			return this.completeTime;
-		}
-
-		public void setCompleteTime(String completeTime) {
-			this.completeTime = completeTime;
 		}
 	}
 

@@ -37,16 +37,16 @@ public class GetURLUploadInfosResponseUnmarshaller {
 		List<UrlUploadJobInfoDTO> uRLUploadInfoList = new ArrayList<UrlUploadJobInfoDTO>();
 		for (int i = 0; i < _ctx.lengthValue("GetURLUploadInfosResponse.URLUploadInfoList.Length"); i++) {
 			UrlUploadJobInfoDTO urlUploadJobInfoDTO = new UrlUploadJobInfoDTO();
+			urlUploadJobInfoDTO.setCreationTime(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].CreationTime"));
+			urlUploadJobInfoDTO.setStatus(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].Status"));
+			urlUploadJobInfoDTO.setErrorMessage(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].ErrorMessage"));
+			urlUploadJobInfoDTO.setErrorCode(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].ErrorCode"));
+			urlUploadJobInfoDTO.setCompleteTime(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].CompleteTime"));
 			urlUploadJobInfoDTO.setJobId(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].JobId"));
+			urlUploadJobInfoDTO.setUserData(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].UserData"));
 			urlUploadJobInfoDTO.setUploadURL(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].UploadURL"));
 			urlUploadJobInfoDTO.setMediaId(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].MediaId"));
 			urlUploadJobInfoDTO.setFileSize(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].FileSize"));
-			urlUploadJobInfoDTO.setStatus(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].Status"));
-			urlUploadJobInfoDTO.setUserData(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].UserData"));
-			urlUploadJobInfoDTO.setErrorCode(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].ErrorCode"));
-			urlUploadJobInfoDTO.setErrorMessage(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].ErrorMessage"));
-			urlUploadJobInfoDTO.setCreationTime(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].CreationTime"));
-			urlUploadJobInfoDTO.setCompleteTime(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].CompleteTime"));
 
 			uRLUploadInfoList.add(urlUploadJobInfoDTO);
 		}

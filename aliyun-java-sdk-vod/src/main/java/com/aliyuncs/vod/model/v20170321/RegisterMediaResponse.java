@@ -57,18 +57,18 @@ public class RegisterMediaResponse extends AcsResponse {
 
 	public static class RegisteredMedia {
 
-		private String mediaId;
+		private Boolean newRegister;
 
 		private String fileURL;
 
-		private Boolean newRegister;
+		private String mediaId;
 
-		public String getMediaId() {
-			return this.mediaId;
+		public Boolean getNewRegister() {
+			return this.newRegister;
 		}
 
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
+		public void setNewRegister(Boolean newRegister) {
+			this.newRegister = newRegister;
 		}
 
 		public String getFileURL() {
@@ -79,12 +79,12 @@ public class RegisterMediaResponse extends AcsResponse {
 			this.fileURL = fileURL;
 		}
 
-		public Boolean getNewRegister() {
-			return this.newRegister;
+		public String getMediaId() {
+			return this.mediaId;
 		}
 
-		public void setNewRegister(Boolean newRegister) {
-			this.newRegister = newRegister;
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 	}
 

@@ -1,3 +1,6 @@
+2022-03-15 Version: 2.16.6
+- Set multiple apis to private.
+
 2021-12-22 Version: 2.16.5
 - Add return fields to UploadStreamByURL.
 - Set DescribeVodDomainSrcTrafficData pulic.
