@@ -59,35 +59,19 @@ public class ListDomainsResponse extends AcsResponse {
 
 		public static class DomainItem {
 
-			private Boolean applied;
-
-			private String domain;
-
 			private String appId;
 
-			private String path;
+			private Boolean applied;
 
 			private Boolean deleted;
 
+			private String domain;
+
 			private String envId;
 
+			private String path;
+
 			private String domainType;
-
-			public Boolean getApplied() {
-				return this.applied;
-			}
-
-			public void setApplied(Boolean applied) {
-				this.applied = applied;
-			}
-
-			public String getDomain() {
-				return this.domain;
-			}
-
-			public void setDomain(String domain) {
-				this.domain = domain;
-			}
 
 			public String getAppId() {
 				return this.appId;
@@ -97,12 +81,12 @@ public class ListDomainsResponse extends AcsResponse {
 				this.appId = appId;
 			}
 
-			public String getPath() {
-				return this.path;
+			public Boolean getApplied() {
+				return this.applied;
 			}
 
-			public void setPath(String path) {
-				this.path = path;
+			public void setApplied(Boolean applied) {
+				this.applied = applied;
 			}
 
 			public Boolean getDeleted() {
@@ -113,12 +97,28 @@ public class ListDomainsResponse extends AcsResponse {
 				this.deleted = deleted;
 			}
 
+			public String getDomain() {
+				return this.domain;
+			}
+
+			public void setDomain(String domain) {
+				this.domain = domain;
+			}
+
 			public String getEnvId() {
 				return this.envId;
 			}
 
 			public void setEnvId(String envId) {
 				this.envId = envId;
+			}
+
+			public String getPath() {
+				return this.path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
 			}
 
 			public String getDomainType() {

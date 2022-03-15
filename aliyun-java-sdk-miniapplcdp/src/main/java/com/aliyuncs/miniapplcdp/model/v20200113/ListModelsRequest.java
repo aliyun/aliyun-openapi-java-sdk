@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ListModelsRequest extends RpcAcsRequest<ListModelsResponse> {
 	   
 
+	private String modelId;
+
 	private String modelName;
 
 	private String schemaVersion;
@@ -35,9 +37,22 @@ public class ListModelsRequest extends RpcAcsRequest<ListModelsResponse> {
 	private String modelType;
 
 	private String appId;
+
+	private String moduleId;
 	public ListModelsRequest() {
 		super("miniapplcdp", "2020-01-13", "ListModels");
 		setMethod(MethodType.POST);
+	}
+
+	public String getModelId() {
+		return this.modelId;
+	}
+
+	public void setModelId(String modelId) {
+		this.modelId = modelId;
+		if(modelId != null){
+			putQueryParameter("ModelId", modelId);
+		}
 	}
 
 	public String getModelName() {
@@ -103,6 +118,17 @@ public class ListModelsRequest extends RpcAcsRequest<ListModelsResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

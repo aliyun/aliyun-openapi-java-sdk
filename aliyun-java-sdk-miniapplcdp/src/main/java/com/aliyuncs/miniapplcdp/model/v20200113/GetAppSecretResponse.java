@@ -46,17 +46,9 @@ public class GetAppSecretResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appSecret;
-
 		private String appId;
 
-		public String getAppSecret() {
-			return this.appSecret;
-		}
-
-		public void setAppSecret(String appSecret) {
-			this.appSecret = appSecret;
-		}
+		private String appSecret;
 
 		public String getAppId() {
 			return this.appId;
@@ -64,6 +56,14 @@ public class GetAppSecretResponse extends AcsResponse {
 
 		public void setAppId(String appId) {
 			this.appId = appId;
+		}
+
+		public String getAppSecret() {
+			return this.appSecret;
+		}
+
+		public void setAppSecret(String appSecret) {
+			this.appSecret = appSecret;
 		}
 	}
 

@@ -26,6 +26,8 @@ public class RunLogicModelRequest extends RpcAcsRequest<RunLogicModelResponse> {
 
 	private String encodeType;
 
+	private String commitId;
+
 	private String schemaVersion;
 
 	private String content;
@@ -33,6 +35,8 @@ public class RunLogicModelRequest extends RpcAcsRequest<RunLogicModelResponse> {
 	private String subType;
 
 	private String appId;
+
+	private String moduleId;
 
 	private String parameters;
 	public RunLogicModelRequest() {
@@ -48,6 +52,17 @@ public class RunLogicModelRequest extends RpcAcsRequest<RunLogicModelResponse> {
 		this.encodeType = encodeType;
 		if(encodeType != null){
 			putQueryParameter("EncodeType", encodeType);
+		}
+	}
+
+	public String getCommitId() {
+		return this.commitId;
+	}
+
+	public void setCommitId(String commitId) {
+		this.commitId = commitId;
+		if(commitId != null){
+			putQueryParameter("CommitId", commitId);
 		}
 	}
 
@@ -92,6 +107,17 @@ public class RunLogicModelRequest extends RpcAcsRequest<RunLogicModelResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

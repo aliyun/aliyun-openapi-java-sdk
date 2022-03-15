@@ -26,6 +26,8 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 
 	private String imageProcessParameter;
 
+	private String resourceId;
+
 	private String description;
 
 	private String resourceType;
@@ -33,8 +35,6 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 	private Boolean withContent;
 
 	private String appId;
-
-	private String scope;
 
 	private String resourceName;
 
@@ -52,6 +52,17 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 		this.imageProcessParameter = imageProcessParameter;
 		if(imageProcessParameter != null){
 			putQueryParameter("ImageProcessParameter", imageProcessParameter);
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
 		}
 	}
 
@@ -96,17 +107,6 @@ public class ListResourcesRequest extends RpcAcsRequest<ListResourcesResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getScope() {
-		return this.scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-		if(scope != null){
-			putQueryParameter("Scope", scope);
 		}
 	}
 

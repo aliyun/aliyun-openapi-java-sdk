@@ -90,89 +90,45 @@ public class ListModelsByPageResponse extends AcsResponse {
 
 		public static class ModelItem {
 
-			private String createTime;
-
-			private String modelType;
-
-			private String subType;
-
-			private Integer revision;
-
-			private String modifiedTime;
-
-			private String description;
-
-			private String schemaVersion;
-
 			private String appId;
-
-			private Map<Object,Object> props;
-
-			private String modelStatus;
-
-			private String modelName;
 
 			private Map<Object,Object> content;
 
+			private String createTime;
+
+			private String description;
+
 			private String id;
+
+			private String linkModelId;
+
+			private String linkModuleId;
+
+			private Boolean linked;
 
 			private String modelId;
 
-			public String getCreateTime() {
-				return this.createTime;
-			}
+			private String modifiedTime;
 
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
+			private String moduleId;
 
-			public String getModelType() {
-				return this.modelType;
-			}
+			private String modelName;
 
-			public void setModelType(String modelType) {
-				this.modelType = modelType;
-			}
+			private Map<Object,Object> props;
 
-			public String getSubType() {
-				return this.subType;
-			}
+			private Integer revision;
 
-			public void setSubType(String subType) {
-				this.subType = subType;
-			}
+			private String schemaVersion;
 
-			public Integer getRevision() {
-				return this.revision;
-			}
+			private String modelStatus;
 
-			public void setRevision(Integer revision) {
-				this.revision = revision;
-			}
+			private String subType;
 
-			public String getModifiedTime() {
-				return this.modifiedTime;
-			}
+			private String modelType;
 
-			public void setModifiedTime(String modifiedTime) {
-				this.modifiedTime = modifiedTime;
-			}
+			private String visibility;
 
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getSchemaVersion() {
-				return this.schemaVersion;
-			}
-
-			public void setSchemaVersion(String schemaVersion) {
-				this.schemaVersion = schemaVersion;
-			}
+			private List<Map<Object,Object>> attributes;
 
 			public String getAppId() {
 				return this.appId;
@@ -180,30 +136,6 @@ public class ListModelsByPageResponse extends AcsResponse {
 
 			public void setAppId(String appId) {
 				this.appId = appId;
-			}
-
-			public Map<Object,Object> getProps() {
-				return this.props;
-			}
-
-			public void setProps(Map<Object,Object> props) {
-				this.props = props;
-			}
-
-			public String getModelStatus() {
-				return this.modelStatus;
-			}
-
-			public void setModelStatus(String modelStatus) {
-				this.modelStatus = modelStatus;
-			}
-
-			public String getModelName() {
-				return this.modelName;
-			}
-
-			public void setModelName(String modelName) {
-				this.modelName = modelName;
 			}
 
 			public Map<Object,Object> getContent() {
@@ -214,6 +146,22 @@ public class ListModelsByPageResponse extends AcsResponse {
 				this.content = content;
 			}
 
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
 			public String getId() {
 				return this.id;
 			}
@@ -222,12 +170,124 @@ public class ListModelsByPageResponse extends AcsResponse {
 				this.id = id;
 			}
 
+			public String getLinkModelId() {
+				return this.linkModelId;
+			}
+
+			public void setLinkModelId(String linkModelId) {
+				this.linkModelId = linkModelId;
+			}
+
+			public String getLinkModuleId() {
+				return this.linkModuleId;
+			}
+
+			public void setLinkModuleId(String linkModuleId) {
+				this.linkModuleId = linkModuleId;
+			}
+
+			public Boolean getLinked() {
+				return this.linked;
+			}
+
+			public void setLinked(Boolean linked) {
+				this.linked = linked;
+			}
+
 			public String getModelId() {
 				return this.modelId;
 			}
 
 			public void setModelId(String modelId) {
 				this.modelId = modelId;
+			}
+
+			public String getModifiedTime() {
+				return this.modifiedTime;
+			}
+
+			public void setModifiedTime(String modifiedTime) {
+				this.modifiedTime = modifiedTime;
+			}
+
+			public String getModuleId() {
+				return this.moduleId;
+			}
+
+			public void setModuleId(String moduleId) {
+				this.moduleId = moduleId;
+			}
+
+			public String getModelName() {
+				return this.modelName;
+			}
+
+			public void setModelName(String modelName) {
+				this.modelName = modelName;
+			}
+
+			public Map<Object,Object> getProps() {
+				return this.props;
+			}
+
+			public void setProps(Map<Object,Object> props) {
+				this.props = props;
+			}
+
+			public Integer getRevision() {
+				return this.revision;
+			}
+
+			public void setRevision(Integer revision) {
+				this.revision = revision;
+			}
+
+			public String getSchemaVersion() {
+				return this.schemaVersion;
+			}
+
+			public void setSchemaVersion(String schemaVersion) {
+				this.schemaVersion = schemaVersion;
+			}
+
+			public String getModelStatus() {
+				return this.modelStatus;
+			}
+
+			public void setModelStatus(String modelStatus) {
+				this.modelStatus = modelStatus;
+			}
+
+			public String getSubType() {
+				return this.subType;
+			}
+
+			public void setSubType(String subType) {
+				this.subType = subType;
+			}
+
+			public String getModelType() {
+				return this.modelType;
+			}
+
+			public void setModelType(String modelType) {
+				this.modelType = modelType;
+			}
+
+			public String getVisibility() {
+				return this.visibility;
+			}
+
+			public void setVisibility(String visibility) {
+				this.visibility = visibility;
+			}
+
+			public List<Map<Object,Object>> getAttributes() {
+				return this.attributes;
+			}
+
+			public void setAttributes(List<Map<Object,Object>> attributes) {
+				this.attributes = attributes;
 			}
 		}
 	}

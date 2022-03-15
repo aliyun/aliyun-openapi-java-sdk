@@ -27,10 +27,10 @@ public class GetRealtimeStatsResponseUnmarshaller {
 		getRealtimeStatsResponse.setRequestId(_ctx.stringValue("GetRealtimeStatsResponse.RequestId"));
 
 		Data data = new Data();
-		data.setTotalUvCount(_ctx.mapValue("GetRealtimeStatsResponse.Data.TotalUvCount"));
-		data.setTotalPvCount(_ctx.mapValue("GetRealtimeStatsResponse.Data.TotalPvCount"));
 		data.setTodayPvCount(_ctx.mapValue("GetRealtimeStatsResponse.Data.TodayPvCount"));
 		data.setTodayUvCount(_ctx.mapValue("GetRealtimeStatsResponse.Data.TodayUvCount"));
+		data.setTotalPvCount(_ctx.mapValue("GetRealtimeStatsResponse.Data.TotalPvCount"));
+		data.setTotalUvCount(_ctx.mapValue("GetRealtimeStatsResponse.Data.TotalUvCount"));
 		getRealtimeStatsResponse.setData(data);
 	 
 	 	return getRealtimeStatsResponse;

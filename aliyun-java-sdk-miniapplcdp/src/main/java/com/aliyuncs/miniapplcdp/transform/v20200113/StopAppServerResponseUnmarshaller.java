@@ -26,8 +26,8 @@ public class StopAppServerResponseUnmarshaller {
 		stopAppServerResponse.setRequestId(_ctx.stringValue("StopAppServerResponse.RequestId"));
 
 		Data data = new Data();
-		data.setEnvId(_ctx.stringValue("StopAppServerResponse.Data.EnvId"));
 		data.setAppId(_ctx.stringValue("StopAppServerResponse.Data.AppId"));
+		data.setEnvId(_ctx.stringValue("StopAppServerResponse.Data.EnvId"));
 		data.setAppServerStatus(_ctx.stringValue("StopAppServerResponse.Data.AppServerStatus"));
 		stopAppServerResponse.setData(data);
 	 

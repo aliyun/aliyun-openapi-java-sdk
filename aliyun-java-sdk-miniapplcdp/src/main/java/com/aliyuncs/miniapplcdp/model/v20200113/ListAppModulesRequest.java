@@ -25,6 +25,8 @@ public class ListAppModulesRequest extends RpcAcsRequest<ListAppModulesResponse>
 	   
 
 	private String appId;
+
+	private Boolean recursive;
 	public ListAppModulesRequest() {
 		super("miniapplcdp", "2020-01-13", "ListAppModules");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class ListAppModulesRequest extends RpcAcsRequest<ListAppModulesResponse>
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Boolean getRecursive() {
+		return this.recursive;
+	}
+
+	public void setRecursive(Boolean recursive) {
+		this.recursive = recursive;
+		if(recursive != null){
+			putQueryParameter("Recursive", recursive.toString());
 		}
 	}
 

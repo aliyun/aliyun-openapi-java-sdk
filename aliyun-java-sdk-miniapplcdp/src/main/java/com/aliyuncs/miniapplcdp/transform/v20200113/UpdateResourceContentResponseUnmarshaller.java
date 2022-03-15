@@ -27,18 +27,17 @@ public class UpdateResourceContentResponseUnmarshaller {
 		updateResourceContentResponse.setRequestId(_ctx.stringValue("UpdateResourceContentResponse.RequestId"));
 
 		Data data = new Data();
-		data.setModuleId(_ctx.stringValue("UpdateResourceContentResponse.Data.ModuleId"));
-		data.setCreateTime(_ctx.stringValue("UpdateResourceContentResponse.Data.CreateTime"));
-		data.setRevision(_ctx.integerValue("UpdateResourceContentResponse.Data.Revision"));
-		data.setModifiedTime(_ctx.stringValue("UpdateResourceContentResponse.Data.ModifiedTime"));
-		data.setResourceType(_ctx.stringValue("UpdateResourceContentResponse.Data.ResourceType"));
-		data.setDescription(_ctx.stringValue("UpdateResourceContentResponse.Data.Description"));
-		data.setSchemaVersion(_ctx.stringValue("UpdateResourceContentResponse.Data.SchemaVersion"));
 		data.setAppId(_ctx.stringValue("UpdateResourceContentResponse.Data.AppId"));
-		data.setScope(_ctx.stringValue("UpdateResourceContentResponse.Data.Scope"));
-		data.setResourceId(_ctx.stringValue("UpdateResourceContentResponse.Data.ResourceId"));
 		data.setContent(_ctx.mapValue("UpdateResourceContentResponse.Data.Content"));
+		data.setCreateTime(_ctx.stringValue("UpdateResourceContentResponse.Data.CreateTime"));
+		data.setDescription(_ctx.stringValue("UpdateResourceContentResponse.Data.Description"));
+		data.setModifiedTime(_ctx.stringValue("UpdateResourceContentResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("UpdateResourceContentResponse.Data.ModuleId"));
 		data.setResourceName(_ctx.stringValue("UpdateResourceContentResponse.Data.ResourceName"));
+		data.setResourceId(_ctx.stringValue("UpdateResourceContentResponse.Data.ResourceId"));
+		data.setRevision(_ctx.integerValue("UpdateResourceContentResponse.Data.Revision"));
+		data.setSchemaVersion(_ctx.stringValue("UpdateResourceContentResponse.Data.SchemaVersion"));
+		data.setResourceType(_ctx.stringValue("UpdateResourceContentResponse.Data.ResourceType"));
 		updateResourceContentResponse.setData(data);
 	 
 	 	return updateResourceContentResponse;

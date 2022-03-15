@@ -24,10 +24,27 @@ import com.aliyuncs.http.MethodType;
 public class CloneAppRequest extends RpcAcsRequest<CloneAppResponse> {
 	   
 
+	private String appName;
+
 	private String appId;
+
+	private String icon;
+
+	private String description;
 	public CloneAppRequest() {
 		super("miniapplcdp", "2020-01-13", "CloneApp");
 		setMethod(MethodType.POST);
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getAppId() {
@@ -38,6 +55,28 @@ public class CloneAppRequest extends RpcAcsRequest<CloneAppResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getIcon() {
+		return this.icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+		if(icon != null){
+			putQueryParameter("Icon", icon);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

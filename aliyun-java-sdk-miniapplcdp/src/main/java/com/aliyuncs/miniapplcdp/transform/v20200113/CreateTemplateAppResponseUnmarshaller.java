@@ -26,17 +26,19 @@ public class CreateTemplateAppResponseUnmarshaller {
 		createTemplateAppResponse.setRequestId(_ctx.stringValue("CreateTemplateAppResponse.RequestId"));
 
 		Data data = new Data();
-		data.setAppStatus(_ctx.stringValue("CreateTemplateAppResponse.Data.AppStatus"));
-		data.setAppName(_ctx.stringValue("CreateTemplateAppResponse.Data.AppName"));
-		data.setIsTemplate(_ctx.booleanValue("CreateTemplateAppResponse.Data.IsTemplate"));
-		data.setModifiedTime(_ctx.stringValue("CreateTemplateAppResponse.Data.ModifiedTime"));
+		data.setAppId(_ctx.stringValue("CreateTemplateAppResponse.Data.AppId"));
 		data.setDescription(_ctx.stringValue("CreateTemplateAppResponse.Data.Description"));
 		data.setCreateTime(_ctx.stringValue("CreateTemplateAppResponse.Data.CreateTime"));
-		data.setAppId(_ctx.stringValue("CreateTemplateAppResponse.Data.AppId"));
+		data.setModifiedTime(_ctx.stringValue("CreateTemplateAppResponse.Data.ModifiedTime"));
 		data.setIcon(_ctx.stringValue("CreateTemplateAppResponse.Data.Icon"));
-		data.setAppType(_ctx.stringValue("CreateTemplateAppResponse.Data.AppType"));
-		data.setSource(_ctx.stringValue("CreateTemplateAppResponse.Data.Source"));
+		data.setIsTemplate(_ctx.booleanValue("CreateTemplateAppResponse.Data.IsTemplate"));
 		data.setLastEditTime(_ctx.stringValue("CreateTemplateAppResponse.Data.LastEditTime"));
+		data.setMainModuleId(_ctx.stringValue("CreateTemplateAppResponse.Data.MainModuleId"));
+		data.setAppName(_ctx.stringValue("CreateTemplateAppResponse.Data.AppName"));
+		data.setSchemaVersion(_ctx.stringValue("CreateTemplateAppResponse.Data.SchemaVersion"));
+		data.setSource(_ctx.stringValue("CreateTemplateAppResponse.Data.Source"));
+		data.setAppStatus(_ctx.stringValue("CreateTemplateAppResponse.Data.AppStatus"));
+		data.setAppType(_ctx.stringValue("CreateTemplateAppResponse.Data.AppType"));
 		createTemplateAppResponse.setData(data);
 	 
 	 	return createTemplateAppResponse;

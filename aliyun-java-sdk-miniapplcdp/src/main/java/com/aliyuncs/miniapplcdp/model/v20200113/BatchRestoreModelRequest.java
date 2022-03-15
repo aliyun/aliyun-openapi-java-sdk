@@ -28,6 +28,8 @@ public class BatchRestoreModelRequest extends RpcAcsRequest<BatchRestoreModelRes
 
 	private String modelIdList;
 
+	private String moduleId;
+
 	private String schemaVersion;
 	public BatchRestoreModelRequest() {
 		super("miniapplcdp", "2020-01-13", "BatchRestoreModel");
@@ -53,6 +55,17 @@ public class BatchRestoreModelRequest extends RpcAcsRequest<BatchRestoreModelRes
 		this.modelIdList = modelIdList;
 		if(modelIdList != null){
 			putQueryParameter("ModelIdList", modelIdList);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

@@ -46,19 +46,27 @@ public class SetEnvironmentDefaultDomainResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Boolean configChanged;
+
 		private String defaultMasterDomain;
 
-		private Boolean staticDomainApplied;
-
 		private String defaultStaticDomain;
-
-		private String staticDomain;
-
-		private Boolean configChanged;
 
 		private String masterDomain;
 
 		private Boolean masterDomainApplied;
+
+		private String staticDomain;
+
+		private Boolean staticDomainApplied;
+
+		public Boolean getConfigChanged() {
+			return this.configChanged;
+		}
+
+		public void setConfigChanged(Boolean configChanged) {
+			this.configChanged = configChanged;
+		}
 
 		public String getDefaultMasterDomain() {
 			return this.defaultMasterDomain;
@@ -68,36 +76,12 @@ public class SetEnvironmentDefaultDomainResponse extends AcsResponse {
 			this.defaultMasterDomain = defaultMasterDomain;
 		}
 
-		public Boolean getStaticDomainApplied() {
-			return this.staticDomainApplied;
-		}
-
-		public void setStaticDomainApplied(Boolean staticDomainApplied) {
-			this.staticDomainApplied = staticDomainApplied;
-		}
-
 		public String getDefaultStaticDomain() {
 			return this.defaultStaticDomain;
 		}
 
 		public void setDefaultStaticDomain(String defaultStaticDomain) {
 			this.defaultStaticDomain = defaultStaticDomain;
-		}
-
-		public String getStaticDomain() {
-			return this.staticDomain;
-		}
-
-		public void setStaticDomain(String staticDomain) {
-			this.staticDomain = staticDomain;
-		}
-
-		public Boolean getConfigChanged() {
-			return this.configChanged;
-		}
-
-		public void setConfigChanged(Boolean configChanged) {
-			this.configChanged = configChanged;
 		}
 
 		public String getMasterDomain() {
@@ -114,6 +98,22 @@ public class SetEnvironmentDefaultDomainResponse extends AcsResponse {
 
 		public void setMasterDomainApplied(Boolean masterDomainApplied) {
 			this.masterDomainApplied = masterDomainApplied;
+		}
+
+		public String getStaticDomain() {
+			return this.staticDomain;
+		}
+
+		public void setStaticDomain(String staticDomain) {
+			this.staticDomain = staticDomain;
+		}
+
+		public Boolean getStaticDomainApplied() {
+			return this.staticDomainApplied;
+		}
+
+		public void setStaticDomainApplied(Boolean staticDomainApplied) {
+			this.staticDomainApplied = staticDomainApplied;
 		}
 	}
 

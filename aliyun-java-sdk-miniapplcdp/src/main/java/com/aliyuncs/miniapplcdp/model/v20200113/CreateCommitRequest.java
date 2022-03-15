@@ -24,7 +24,11 @@ import com.aliyuncs.http.MethodType;
 public class CreateCommitRequest extends RpcAcsRequest<CreateCommitResponse> {
 	   
 
+	private String mainModuleCommitId;
+
 	private String clientToken;
+
+	private String rollbackType;
 
 	private String rollbackToCommitId;
 
@@ -35,9 +39,22 @@ public class CreateCommitRequest extends RpcAcsRequest<CreateCommitResponse> {
 	private String commitLog;
 
 	private String appId;
+
+	private String moduleId;
 	public CreateCommitRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateCommit");
 		setMethod(MethodType.POST);
+	}
+
+	public String getMainModuleCommitId() {
+		return this.mainModuleCommitId;
+	}
+
+	public void setMainModuleCommitId(String mainModuleCommitId) {
+		this.mainModuleCommitId = mainModuleCommitId;
+		if(mainModuleCommitId != null){
+			putQueryParameter("MainModuleCommitId", mainModuleCommitId);
+		}
 	}
 
 	public String getClientToken() {
@@ -48,6 +65,17 @@ public class CreateCommitRequest extends RpcAcsRequest<CreateCommitResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getRollbackType() {
+		return this.rollbackType;
+	}
+
+	public void setRollbackType(String rollbackType) {
+		this.rollbackType = rollbackType;
+		if(rollbackType != null){
+			putQueryParameter("RollbackType", rollbackType);
 		}
 	}
 
@@ -103,6 +131,17 @@ public class CreateCommitRequest extends RpcAcsRequest<CreateCommitResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

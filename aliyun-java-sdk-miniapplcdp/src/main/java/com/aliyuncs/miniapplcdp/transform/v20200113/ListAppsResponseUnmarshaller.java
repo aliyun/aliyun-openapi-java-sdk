@@ -37,17 +37,19 @@ public class ListAppsResponseUnmarshaller {
 		List<AppItem> items = new ArrayList<AppItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppsResponse.Data.Items.Length"); i++) {
 			AppItem appItem = new AppItem();
-			appItem.setAppStatus(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppStatus"));
-			appItem.setAppName(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppName"));
-			appItem.setIsTemplate(_ctx.booleanValue("ListAppsResponse.Data.Items["+ i +"].IsTemplate"));
-			appItem.setModifiedTime(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].ModifiedTime"));
+			appItem.setAppId(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppId"));
 			appItem.setDescription(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].Description"));
 			appItem.setCreateTime(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].CreateTime"));
-			appItem.setAppId(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppId"));
+			appItem.setModifiedTime(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].ModifiedTime"));
 			appItem.setIcon(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].Icon"));
-			appItem.setAppType(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppType"));
-			appItem.setSource(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].Source"));
+			appItem.setIsTemplate(_ctx.booleanValue("ListAppsResponse.Data.Items["+ i +"].IsTemplate"));
 			appItem.setLastEditTime(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].LastEditTime"));
+			appItem.setMainModuleId(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].MainModuleId"));
+			appItem.setAppName(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppName"));
+			appItem.setSchemaVersion(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].SchemaVersion"));
+			appItem.setSource(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].Source"));
+			appItem.setAppStatus(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppStatus"));
+			appItem.setAppType(_ctx.stringValue("ListAppsResponse.Data.Items["+ i +"].AppType"));
 
 			items.add(appItem);
 		}

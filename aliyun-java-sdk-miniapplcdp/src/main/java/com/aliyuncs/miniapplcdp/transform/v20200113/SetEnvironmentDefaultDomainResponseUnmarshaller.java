@@ -26,13 +26,13 @@ public class SetEnvironmentDefaultDomainResponseUnmarshaller {
 		setEnvironmentDefaultDomainResponse.setRequestId(_ctx.stringValue("SetEnvironmentDefaultDomainResponse.RequestId"));
 
 		Data data = new Data();
-		data.setDefaultMasterDomain(_ctx.stringValue("SetEnvironmentDefaultDomainResponse.Data.DefaultMasterDomain"));
-		data.setStaticDomainApplied(_ctx.booleanValue("SetEnvironmentDefaultDomainResponse.Data.StaticDomainApplied"));
-		data.setDefaultStaticDomain(_ctx.stringValue("SetEnvironmentDefaultDomainResponse.Data.DefaultStaticDomain"));
-		data.setStaticDomain(_ctx.stringValue("SetEnvironmentDefaultDomainResponse.Data.StaticDomain"));
 		data.setConfigChanged(_ctx.booleanValue("SetEnvironmentDefaultDomainResponse.Data.ConfigChanged"));
+		data.setDefaultMasterDomain(_ctx.stringValue("SetEnvironmentDefaultDomainResponse.Data.DefaultMasterDomain"));
+		data.setDefaultStaticDomain(_ctx.stringValue("SetEnvironmentDefaultDomainResponse.Data.DefaultStaticDomain"));
 		data.setMasterDomain(_ctx.stringValue("SetEnvironmentDefaultDomainResponse.Data.MasterDomain"));
 		data.setMasterDomainApplied(_ctx.booleanValue("SetEnvironmentDefaultDomainResponse.Data.MasterDomainApplied"));
+		data.setStaticDomain(_ctx.stringValue("SetEnvironmentDefaultDomainResponse.Data.StaticDomain"));
+		data.setStaticDomainApplied(_ctx.booleanValue("SetEnvironmentDefaultDomainResponse.Data.StaticDomainApplied"));
 		setEnvironmentDefaultDomainResponse.setData(data);
 	 
 	 	return setEnvironmentDefaultDomainResponse;

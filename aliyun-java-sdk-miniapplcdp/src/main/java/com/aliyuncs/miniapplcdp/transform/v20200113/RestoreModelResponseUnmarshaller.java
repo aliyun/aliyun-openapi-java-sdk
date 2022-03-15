@@ -14,6 +14,9 @@
 
 package com.aliyuncs.miniapplcdp.transform.v20200113;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.miniapplcdp.model.v20200113.RestoreModelResponse;
 import com.aliyuncs.miniapplcdp.model.v20200113.RestoreModelResponse.Data;
 import java.util.Map;
@@ -27,20 +30,28 @@ public class RestoreModelResponseUnmarshaller {
 		restoreModelResponse.setRequestId(_ctx.stringValue("RestoreModelResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCreateTime(_ctx.stringValue("RestoreModelResponse.Data.CreateTime"));
-		data.setModelType(_ctx.stringValue("RestoreModelResponse.Data.ModelType"));
-		data.setSubType(_ctx.stringValue("RestoreModelResponse.Data.SubType"));
-		data.setRevision(_ctx.integerValue("RestoreModelResponse.Data.Revision"));
-		data.setModifiedTime(_ctx.stringValue("RestoreModelResponse.Data.ModifiedTime"));
-		data.setDescription(_ctx.stringValue("RestoreModelResponse.Data.Description"));
-		data.setSchemaVersion(_ctx.stringValue("RestoreModelResponse.Data.SchemaVersion"));
 		data.setAppId(_ctx.stringValue("RestoreModelResponse.Data.AppId"));
-		data.setProps(_ctx.mapValue("RestoreModelResponse.Data.Props"));
-		data.setModelStatus(_ctx.stringValue("RestoreModelResponse.Data.ModelStatus"));
-		data.setModelName(_ctx.stringValue("RestoreModelResponse.Data.ModelName"));
 		data.setContent(_ctx.mapValue("RestoreModelResponse.Data.Content"));
+		data.setCreateTime(_ctx.stringValue("RestoreModelResponse.Data.CreateTime"));
+		data.setDescription(_ctx.stringValue("RestoreModelResponse.Data.Description"));
 		data.setId(_ctx.stringValue("RestoreModelResponse.Data.Id"));
+		data.setLinkModelId(_ctx.stringValue("RestoreModelResponse.Data.LinkModelId"));
+		data.setLinkModuleId(_ctx.stringValue("RestoreModelResponse.Data.LinkModuleId"));
+		data.setLinked(_ctx.booleanValue("RestoreModelResponse.Data.Linked"));
 		data.setModelId(_ctx.stringValue("RestoreModelResponse.Data.ModelId"));
+		data.setModifiedTime(_ctx.stringValue("RestoreModelResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("RestoreModelResponse.Data.ModuleId"));
+		data.setModelName(_ctx.stringValue("RestoreModelResponse.Data.ModelName"));
+		data.setProps(_ctx.mapValue("RestoreModelResponse.Data.Props"));
+		data.setRevision(_ctx.integerValue("RestoreModelResponse.Data.Revision"));
+		data.setSchemaVersion(_ctx.stringValue("RestoreModelResponse.Data.SchemaVersion"));
+		data.setModelStatus(_ctx.stringValue("RestoreModelResponse.Data.ModelStatus"));
+		data.setSubType(_ctx.stringValue("RestoreModelResponse.Data.SubType"));
+		data.setModelType(_ctx.stringValue("RestoreModelResponse.Data.ModelType"));
+		data.setVisibility(_ctx.stringValue("RestoreModelResponse.Data.Visibility"));
+
+		List<Map<Object, Object>> attributes = _ctx.listMapValue("RestoreModelResponse.Data.Attributes");
+		data.setAttributes(attributes);
 		restoreModelResponse.setData(data);
 	 
 	 	return restoreModelResponse;

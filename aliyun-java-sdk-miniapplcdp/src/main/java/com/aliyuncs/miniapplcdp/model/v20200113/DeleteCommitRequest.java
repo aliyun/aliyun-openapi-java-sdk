@@ -27,6 +27,8 @@ public class DeleteCommitRequest extends RpcAcsRequest<DeleteCommitResponse> {
 	private String appId;
 
 	private String commitId;
+
+	private String moduleId;
 	public DeleteCommitRequest() {
 		super("miniapplcdp", "2020-01-13", "DeleteCommit");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class DeleteCommitRequest extends RpcAcsRequest<DeleteCommitResponse> {
 		this.commitId = commitId;
 		if(commitId != null){
 			putQueryParameter("CommitId", commitId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

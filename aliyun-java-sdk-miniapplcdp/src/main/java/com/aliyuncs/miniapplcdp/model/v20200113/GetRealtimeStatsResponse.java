@@ -47,29 +47,13 @@ public class GetRealtimeStatsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Map<Object,Object> totalUvCount;
-
-		private Map<Object,Object> totalPvCount;
-
 		private Map<Object,Object> todayPvCount;
 
 		private Map<Object,Object> todayUvCount;
 
-		public Map<Object,Object> getTotalUvCount() {
-			return this.totalUvCount;
-		}
+		private Map<Object,Object> totalPvCount;
 
-		public void setTotalUvCount(Map<Object,Object> totalUvCount) {
-			this.totalUvCount = totalUvCount;
-		}
-
-		public Map<Object,Object> getTotalPvCount() {
-			return this.totalPvCount;
-		}
-
-		public void setTotalPvCount(Map<Object,Object> totalPvCount) {
-			this.totalPvCount = totalPvCount;
-		}
+		private Map<Object,Object> totalUvCount;
 
 		public Map<Object,Object> getTodayPvCount() {
 			return this.todayPvCount;
@@ -85,6 +69,22 @@ public class GetRealtimeStatsResponse extends AcsResponse {
 
 		public void setTodayUvCount(Map<Object,Object> todayUvCount) {
 			this.todayUvCount = todayUvCount;
+		}
+
+		public Map<Object,Object> getTotalPvCount() {
+			return this.totalPvCount;
+		}
+
+		public void setTotalPvCount(Map<Object,Object> totalPvCount) {
+			this.totalPvCount = totalPvCount;
+		}
+
+		public Map<Object,Object> getTotalUvCount() {
+			return this.totalUvCount;
+		}
+
+		public void setTotalUvCount(Map<Object,Object> totalUvCount) {
+			this.totalUvCount = totalUvCount;
 		}
 	}
 

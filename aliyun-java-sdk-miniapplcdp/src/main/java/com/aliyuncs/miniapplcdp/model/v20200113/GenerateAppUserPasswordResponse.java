@@ -46,17 +46,9 @@ public class GenerateAppUserPasswordResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String userName;
-
 		private String password;
 
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private String userName;
 
 		public String getPassword() {
 			return this.password;
@@ -64,6 +56,14 @@ public class GenerateAppUserPasswordResponse extends AcsResponse {
 
 		public void setPassword(String password) {
 			this.password = password;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	}
 

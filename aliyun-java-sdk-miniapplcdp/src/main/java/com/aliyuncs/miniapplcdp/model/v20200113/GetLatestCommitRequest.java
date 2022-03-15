@@ -25,6 +25,8 @@ public class GetLatestCommitRequest extends RpcAcsRequest<GetLatestCommitRespons
 	   
 
 	private String appId;
+
+	private String moduleId;
 	public GetLatestCommitRequest() {
 		super("miniapplcdp", "2020-01-13", "GetLatestCommit");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class GetLatestCommitRequest extends RpcAcsRequest<GetLatestCommitRespons
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

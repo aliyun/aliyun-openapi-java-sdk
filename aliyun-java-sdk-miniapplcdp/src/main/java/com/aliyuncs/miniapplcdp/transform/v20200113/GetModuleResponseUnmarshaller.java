@@ -26,12 +26,17 @@ public class GetModuleResponseUnmarshaller {
 		getModuleResponse.setRequestId(_ctx.stringValue("GetModuleResponse.RequestId"));
 
 		Data data = new Data();
-		data.setModuleName(_ctx.stringValue("GetModuleResponse.Data.ModuleName"));
-		data.setModifiedTime(_ctx.stringValue("GetModuleResponse.Data.ModifiedTime"));
-		data.setModuleId(_ctx.stringValue("GetModuleResponse.Data.ModuleId"));
 		data.setDescription(_ctx.stringValue("GetModuleResponse.Data.Description"));
 		data.setCreateTime(_ctx.stringValue("GetModuleResponse.Data.CreateTime"));
-		data.setTargetAppSource(_ctx.stringValue("GetModuleResponse.Data.TargetAppSource"));
+		data.setModifiedTime(_ctx.stringValue("GetModuleResponse.Data.ModifiedTime"));
+		data.setIcon(_ctx.stringValue("GetModuleResponse.Data.Icon"));
+		data.setLatestPublishedCommit(_ctx.stringValue("GetModuleResponse.Data.LatestPublishedCommit"));
+		data.setLatestPublishedVersion(_ctx.stringValue("GetModuleResponse.Data.LatestPublishedVersion"));
+		data.setMinimumPlatformVersion(_ctx.stringValue("GetModuleResponse.Data.MinimumPlatformVersion"));
+		data.setModuleId(_ctx.stringValue("GetModuleResponse.Data.ModuleId"));
+		data.setModuleName(_ctx.stringValue("GetModuleResponse.Data.ModuleName"));
+		data.setOwnerUserId(_ctx.stringValue("GetModuleResponse.Data.OwnerUserId"));
+		data.setPlatform(_ctx.stringValue("GetModuleResponse.Data.Platform"));
 		getModuleResponse.setData(data);
 	 
 	 	return getModuleResponse;

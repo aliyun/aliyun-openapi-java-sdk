@@ -27,9 +27,9 @@ public class RunLogicModelResponseUnmarshaller {
 		runLogicModelResponse.setRequestId(_ctx.stringValue("RunLogicModelResponse.RequestId"));
 
 		Data data = new Data();
-		data.setStatus(_ctx.integerValue("RunLogicModelResponse.Data.Status"));
 		data.setBody(_ctx.stringValue("RunLogicModelResponse.Data.Body"));
 		data.setHeaders(_ctx.mapValue("RunLogicModelResponse.Data.Headers"));
+		data.setStatus(_ctx.integerValue("RunLogicModelResponse.Data.Status"));
 		runLogicModelResponse.setData(data);
 	 
 	 	return runLogicModelResponse;

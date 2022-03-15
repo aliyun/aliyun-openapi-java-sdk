@@ -26,12 +26,12 @@ public class DeleteDomainResponseUnmarshaller {
 		deleteDomainResponse.setRequestId(_ctx.stringValue("DeleteDomainResponse.RequestId"));
 
 		Data data = new Data();
-		data.setApplied(_ctx.booleanValue("DeleteDomainResponse.Data.Applied"));
-		data.setDomain(_ctx.stringValue("DeleteDomainResponse.Data.Domain"));
 		data.setAppId(_ctx.stringValue("DeleteDomainResponse.Data.AppId"));
-		data.setPath(_ctx.stringValue("DeleteDomainResponse.Data.Path"));
+		data.setApplied(_ctx.booleanValue("DeleteDomainResponse.Data.Applied"));
 		data.setDeleted(_ctx.booleanValue("DeleteDomainResponse.Data.Deleted"));
+		data.setDomain(_ctx.stringValue("DeleteDomainResponse.Data.Domain"));
 		data.setEnvId(_ctx.stringValue("DeleteDomainResponse.Data.EnvId"));
+		data.setPath(_ctx.stringValue("DeleteDomainResponse.Data.Path"));
 		data.setDomainType(_ctx.stringValue("DeleteDomainResponse.Data.DomainType"));
 		deleteDomainResponse.setData(data);
 	 

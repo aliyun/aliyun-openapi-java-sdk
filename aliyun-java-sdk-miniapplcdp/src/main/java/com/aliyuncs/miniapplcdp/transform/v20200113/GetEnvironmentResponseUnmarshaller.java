@@ -26,14 +26,15 @@ public class GetEnvironmentResponseUnmarshaller {
 		getEnvironmentResponse.setRequestId(_ctx.stringValue("GetEnvironmentResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCurrentPublishId(_ctx.stringValue("GetEnvironmentResponse.Data.CurrentPublishId"));
-		data.setModifiedTime(_ctx.stringValue("GetEnvironmentResponse.Data.ModifiedTime"));
+		data.setAccountOpsEndpoint(_ctx.stringValue("GetEnvironmentResponse.Data.AccountOpsEndpoint"));
 		data.setAppId(_ctx.stringValue("GetEnvironmentResponse.Data.AppId"));
-		data.setCreateTime(_ctx.stringValue("GetEnvironmentResponse.Data.CreateTime"));
+		data.setCurrentPublishId(_ctx.stringValue("GetEnvironmentResponse.Data.CurrentPublishId"));
 		data.setEndpoint(_ctx.stringValue("GetEnvironmentResponse.Data.Endpoint"));
 		data.setEnvId(_ctx.stringValue("GetEnvironmentResponse.Data.EnvId"));
-		data.setEnvType(_ctx.stringValue("GetEnvironmentResponse.Data.EnvType"));
+		data.setCreateTime(_ctx.stringValue("GetEnvironmentResponse.Data.CreateTime"));
+		data.setModifiedTime(_ctx.stringValue("GetEnvironmentResponse.Data.ModifiedTime"));
 		data.setPublishingId(_ctx.stringValue("GetEnvironmentResponse.Data.PublishingId"));
+		data.setEnvType(_ctx.stringValue("GetEnvironmentResponse.Data.EnvType"));
 		getEnvironmentResponse.setData(data);
 	 
 	 	return getEnvironmentResponse;

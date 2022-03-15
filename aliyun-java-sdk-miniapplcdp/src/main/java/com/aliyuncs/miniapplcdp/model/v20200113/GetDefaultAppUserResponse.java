@@ -46,17 +46,9 @@ public class GetDefaultAppUserResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String userName;
-
 		private Boolean hasPassword;
 
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private String userName;
 
 		public Boolean getHasPassword() {
 			return this.hasPassword;
@@ -64,6 +56,14 @@ public class GetDefaultAppUserResponse extends AcsResponse {
 
 		public void setHasPassword(Boolean hasPassword) {
 			this.hasPassword = hasPassword;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	}
 

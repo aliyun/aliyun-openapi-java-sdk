@@ -34,11 +34,15 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String source;
 
-	private String sourceAppId;
+	private String schemaVersion;
+
+	private String templateId;
 
 	private String appName;
 
 	private Boolean templated;
+
+	private Boolean asynchronous;
 	public CreateAppRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateApp");
 		setMethod(MethodType.POST);
@@ -99,14 +103,25 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		}
 	}
 
-	public String getSourceAppId() {
-		return this.sourceAppId;
+	public String getSchemaVersion() {
+		return this.schemaVersion;
 	}
 
-	public void setSourceAppId(String sourceAppId) {
-		this.sourceAppId = sourceAppId;
-		if(sourceAppId != null){
-			putQueryParameter("SourceAppId", sourceAppId);
+	public void setSchemaVersion(String schemaVersion) {
+		this.schemaVersion = schemaVersion;
+		if(schemaVersion != null){
+			putQueryParameter("SchemaVersion", schemaVersion);
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 
@@ -129,6 +144,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.templated = templated;
 		if(templated != null){
 			putQueryParameter("Templated", templated.toString());
+		}
+	}
+
+	public Boolean getAsynchronous() {
+		return this.asynchronous;
+	}
+
+	public void setAsynchronous(Boolean asynchronous) {
+		this.asynchronous = asynchronous;
+		if(asynchronous != null){
+			putQueryParameter("Asynchronous", asynchronous.toString());
 		}
 	}
 

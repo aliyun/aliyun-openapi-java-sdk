@@ -30,16 +30,26 @@ public class GetCommitResponseUnmarshaller {
 		getCommitResponse.setRequestId(_ctx.stringValue("GetCommitResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCommitType(_ctx.stringValue("GetCommitResponse.Data.CommitType"));
-		data.setModifiedTime(_ctx.stringValue("GetCommitResponse.Data.ModifiedTime"));
-		data.setCommitId(_ctx.stringValue("GetCommitResponse.Data.CommitId"));
 		data.setAppId(_ctx.stringValue("GetCommitResponse.Data.AppId"));
+		data.setCommitId(_ctx.stringValue("GetCommitResponse.Data.CommitId"));
 		data.setCreateTime(_ctx.stringValue("GetCommitResponse.Data.CreateTime"));
-		data.setRollbackToCommitId(_ctx.stringValue("GetCommitResponse.Data.RollbackToCommitId"));
 		data.setCommitLog(_ctx.stringValue("GetCommitResponse.Data.CommitLog"));
+		data.setMainModuleCommitId(_ctx.stringValue("GetCommitResponse.Data.MainModuleCommitId"));
+		data.setMainModuleId(_ctx.stringValue("GetCommitResponse.Data.MainModuleId"));
+		data.setModelDataPath(_ctx.stringValue("GetCommitResponse.Data.ModelDataPath"));
+		data.setModifiedTime(_ctx.stringValue("GetCommitResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("GetCommitResponse.Data.ModuleId"));
+		data.setResourceDataPath(_ctx.stringValue("GetCommitResponse.Data.ResourceDataPath"));
+		data.setRollbackToCommitId(_ctx.stringValue("GetCommitResponse.Data.RollbackToCommitId"));
+		data.setRollbackType(_ctx.stringValue("GetCommitResponse.Data.RollbackType"));
+		data.setSchemaVersion(_ctx.stringValue("GetCommitResponse.Data.SchemaVersion"));
+		data.setCommitType(_ctx.stringValue("GetCommitResponse.Data.CommitType"));
 
 		List<Map<Object, Object>> modelPack = _ctx.listMapValue("GetCommitResponse.Data.ModelPack");
 		data.setModelPack(modelPack);
+
+		List<Map<Object, Object>> resourcePack = _ctx.listMapValue("GetCommitResponse.Data.ResourcePack");
+		data.setResourcePack(resourcePack);
 		getCommitResponse.setData(data);
 	 
 	 	return getCommitResponse;

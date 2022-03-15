@@ -30,6 +30,8 @@ public class BatchCreateModelRequest extends RpcAcsRequest<BatchCreateModelRespo
 
 	private String appId;
 
+	private String moduleId;
+
 	private String schemaVersion;
 	public BatchCreateModelRequest() {
 		super("miniapplcdp", "2020-01-13", "BatchCreateModel");
@@ -66,6 +68,17 @@ public class BatchCreateModelRequest extends RpcAcsRequest<BatchCreateModelRespo
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

@@ -27,18 +27,17 @@ public class DeleteResourceResponseUnmarshaller {
 		deleteResourceResponse.setRequestId(_ctx.stringValue("DeleteResourceResponse.RequestId"));
 
 		Data data = new Data();
-		data.setModuleId(_ctx.stringValue("DeleteResourceResponse.Data.ModuleId"));
-		data.setCreateTime(_ctx.stringValue("DeleteResourceResponse.Data.CreateTime"));
-		data.setRevision(_ctx.integerValue("DeleteResourceResponse.Data.Revision"));
-		data.setModifiedTime(_ctx.stringValue("DeleteResourceResponse.Data.ModifiedTime"));
-		data.setResourceType(_ctx.stringValue("DeleteResourceResponse.Data.ResourceType"));
-		data.setDescription(_ctx.stringValue("DeleteResourceResponse.Data.Description"));
-		data.setSchemaVersion(_ctx.stringValue("DeleteResourceResponse.Data.SchemaVersion"));
 		data.setAppId(_ctx.stringValue("DeleteResourceResponse.Data.AppId"));
-		data.setScope(_ctx.stringValue("DeleteResourceResponse.Data.Scope"));
-		data.setResourceId(_ctx.stringValue("DeleteResourceResponse.Data.ResourceId"));
 		data.setContent(_ctx.mapValue("DeleteResourceResponse.Data.Content"));
+		data.setCreateTime(_ctx.stringValue("DeleteResourceResponse.Data.CreateTime"));
+		data.setDescription(_ctx.stringValue("DeleteResourceResponse.Data.Description"));
+		data.setModifiedTime(_ctx.stringValue("DeleteResourceResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("DeleteResourceResponse.Data.ModuleId"));
 		data.setResourceName(_ctx.stringValue("DeleteResourceResponse.Data.ResourceName"));
+		data.setResourceId(_ctx.stringValue("DeleteResourceResponse.Data.ResourceId"));
+		data.setRevision(_ctx.integerValue("DeleteResourceResponse.Data.Revision"));
+		data.setSchemaVersion(_ctx.stringValue("DeleteResourceResponse.Data.SchemaVersion"));
+		data.setResourceType(_ctx.stringValue("DeleteResourceResponse.Data.ResourceType"));
 		deleteResourceResponse.setData(data);
 	 
 	 	return deleteResourceResponse;

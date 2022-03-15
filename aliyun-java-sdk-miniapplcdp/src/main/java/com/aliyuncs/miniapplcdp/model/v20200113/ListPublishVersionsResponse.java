@@ -90,33 +90,41 @@ public class ListPublishVersionsResponse extends AcsResponse {
 
 		public static class PublishItem {
 
+			private String appId;
+
 			private String commitId;
-
-			private String createTime;
-
-			private String publishStatus;
 
 			private String completionTime;
 
-			private String versionNumber;
+			private String description;
 
-			private String startTime;
+			private String envId;
+
+			private String createTime;
 
 			private String modifiedTime;
 
 			private String publishId;
 
-			private String publishType;
-
-			private String description;
-
-			private String appId;
-
-			private String envId;
-
 			private String reason;
 
+			private String startTime;
+
+			private String publishStatus;
+
+			private String publishType;
+
+			private String versionNumber;
+
 			private List<Map<Object,Object>> subTasks;
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
 
 			public String getCommitId() {
 				return this.commitId;
@@ -124,22 +132,6 @@ public class ListPublishVersionsResponse extends AcsResponse {
 
 			public void setCommitId(String commitId) {
 				this.commitId = commitId;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getPublishStatus() {
-				return this.publishStatus;
-			}
-
-			public void setPublishStatus(String publishStatus) {
-				this.publishStatus = publishStatus;
 			}
 
 			public String getCompletionTime() {
@@ -150,20 +142,28 @@ public class ListPublishVersionsResponse extends AcsResponse {
 				this.completionTime = completionTime;
 			}
 
-			public String getVersionNumber() {
-				return this.versionNumber;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setVersionNumber(String versionNumber) {
-				this.versionNumber = versionNumber;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public String getEnvId() {
+				return this.envId;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setEnvId(String envId) {
+				this.envId = envId;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
 			public String getModifiedTime() {
@@ -182,6 +182,30 @@ public class ListPublishVersionsResponse extends AcsResponse {
 				this.publishId = publishId;
 			}
 
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getPublishStatus() {
+				return this.publishStatus;
+			}
+
+			public void setPublishStatus(String publishStatus) {
+				this.publishStatus = publishStatus;
+			}
+
 			public String getPublishType() {
 				return this.publishType;
 			}
@@ -190,36 +214,12 @@ public class ListPublishVersionsResponse extends AcsResponse {
 				this.publishType = publishType;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getVersionNumber() {
+				return this.versionNumber;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-
-			public String getEnvId() {
-				return this.envId;
-			}
-
-			public void setEnvId(String envId) {
-				this.envId = envId;
-			}
-
-			public String getReason() {
-				return this.reason;
-			}
-
-			public void setReason(String reason) {
-				this.reason = reason;
+			public void setVersionNumber(String versionNumber) {
+				this.versionNumber = versionNumber;
 			}
 
 			public List<Map<Object,Object>> getSubTasks() {

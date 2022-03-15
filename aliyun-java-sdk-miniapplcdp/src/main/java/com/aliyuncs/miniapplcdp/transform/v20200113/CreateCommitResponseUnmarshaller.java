@@ -16,6 +16,7 @@ package com.aliyuncs.miniapplcdp.transform.v20200113;
 
 import com.aliyuncs.miniapplcdp.model.v20200113.CreateCommitResponse;
 import com.aliyuncs.miniapplcdp.model.v20200113.CreateCommitResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,13 +27,22 @@ public class CreateCommitResponseUnmarshaller {
 		createCommitResponse.setRequestId(_ctx.stringValue("CreateCommitResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCommitType(_ctx.stringValue("CreateCommitResponse.Data.CommitType"));
-		data.setModifiedTime(_ctx.stringValue("CreateCommitResponse.Data.ModifiedTime"));
-		data.setCommitId(_ctx.stringValue("CreateCommitResponse.Data.CommitId"));
 		data.setAppId(_ctx.stringValue("CreateCommitResponse.Data.AppId"));
+		data.setCommitId(_ctx.stringValue("CreateCommitResponse.Data.CommitId"));
 		data.setCreateTime(_ctx.stringValue("CreateCommitResponse.Data.CreateTime"));
-		data.setRollbackToCommitId(_ctx.stringValue("CreateCommitResponse.Data.RollbackToCommitId"));
 		data.setCommitLog(_ctx.stringValue("CreateCommitResponse.Data.CommitLog"));
+		data.setMainModuleCommitId(_ctx.stringValue("CreateCommitResponse.Data.MainModuleCommitId"));
+		data.setMainModuleId(_ctx.stringValue("CreateCommitResponse.Data.MainModuleId"));
+		data.setModelDataPath(_ctx.stringValue("CreateCommitResponse.Data.ModelDataPath"));
+		data.setModelDigest(_ctx.mapValue("CreateCommitResponse.Data.ModelDigest"));
+		data.setModifiedTime(_ctx.stringValue("CreateCommitResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("CreateCommitResponse.Data.ModuleId"));
+		data.setResourceDataPath(_ctx.stringValue("CreateCommitResponse.Data.ResourceDataPath"));
+		data.setResourceDigest(_ctx.mapValue("CreateCommitResponse.Data.ResourceDigest"));
+		data.setRollbackToCommitId(_ctx.stringValue("CreateCommitResponse.Data.RollbackToCommitId"));
+		data.setRollbackType(_ctx.stringValue("CreateCommitResponse.Data.RollbackType"));
+		data.setSchemaVersion(_ctx.stringValue("CreateCommitResponse.Data.SchemaVersion"));
+		data.setCommitType(_ctx.stringValue("CreateCommitResponse.Data.CommitType"));
 		createCommitResponse.setData(data);
 	 
 	 	return createCommitResponse;

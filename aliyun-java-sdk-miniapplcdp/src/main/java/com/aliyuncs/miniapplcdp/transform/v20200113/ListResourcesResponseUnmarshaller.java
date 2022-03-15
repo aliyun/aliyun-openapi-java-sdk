@@ -35,18 +35,17 @@ public class ListResourcesResponseUnmarshaller {
 		List<ResourceItem> items = new ArrayList<ResourceItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourcesResponse.Data.Items.Length"); i++) {
 			ResourceItem resourceItem = new ResourceItem();
-			resourceItem.setModuleId(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ModuleId"));
-			resourceItem.setCreateTime(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].CreateTime"));
-			resourceItem.setRevision(_ctx.integerValue("ListResourcesResponse.Data.Items["+ i +"].Revision"));
-			resourceItem.setModifiedTime(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ModifiedTime"));
-			resourceItem.setResourceType(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ResourceType"));
-			resourceItem.setDescription(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].Description"));
-			resourceItem.setSchemaVersion(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].SchemaVersion"));
 			resourceItem.setAppId(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].AppId"));
-			resourceItem.setScope(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].Scope"));
-			resourceItem.setResourceId(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ResourceId"));
 			resourceItem.setContent(_ctx.mapValue("ListResourcesResponse.Data.Items["+ i +"].Content"));
+			resourceItem.setCreateTime(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].CreateTime"));
+			resourceItem.setDescription(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].Description"));
+			resourceItem.setModifiedTime(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ModifiedTime"));
+			resourceItem.setModuleId(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ModuleId"));
 			resourceItem.setResourceName(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ResourceName"));
+			resourceItem.setResourceId(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ResourceId"));
+			resourceItem.setRevision(_ctx.integerValue("ListResourcesResponse.Data.Items["+ i +"].Revision"));
+			resourceItem.setSchemaVersion(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].SchemaVersion"));
+			resourceItem.setResourceType(_ctx.stringValue("ListResourcesResponse.Data.Items["+ i +"].ResourceType"));
 
 			items.add(resourceItem);
 		}

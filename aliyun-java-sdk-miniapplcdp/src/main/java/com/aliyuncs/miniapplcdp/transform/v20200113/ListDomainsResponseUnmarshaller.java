@@ -34,12 +34,12 @@ public class ListDomainsResponseUnmarshaller {
 		List<DomainItem> items = new ArrayList<DomainItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDomainsResponse.Data.Items.Length"); i++) {
 			DomainItem domainItem = new DomainItem();
-			domainItem.setApplied(_ctx.booleanValue("ListDomainsResponse.Data.Items["+ i +"].Applied"));
-			domainItem.setDomain(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].Domain"));
 			domainItem.setAppId(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].AppId"));
-			domainItem.setPath(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].Path"));
+			domainItem.setApplied(_ctx.booleanValue("ListDomainsResponse.Data.Items["+ i +"].Applied"));
 			domainItem.setDeleted(_ctx.booleanValue("ListDomainsResponse.Data.Items["+ i +"].Deleted"));
+			domainItem.setDomain(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].Domain"));
 			domainItem.setEnvId(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].EnvId"));
+			domainItem.setPath(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].Path"));
 			domainItem.setDomainType(_ctx.stringValue("ListDomainsResponse.Data.Items["+ i +"].DomainType"));
 
 			items.add(domainItem);

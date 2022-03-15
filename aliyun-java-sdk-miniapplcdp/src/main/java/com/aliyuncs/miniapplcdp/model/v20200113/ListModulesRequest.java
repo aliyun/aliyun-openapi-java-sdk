@@ -28,7 +28,9 @@ public class ListModulesRequest extends RpcAcsRequest<ListModulesResponse> {
 
 	private String moduleName;
 
-	private String targetAppSource;
+	private String moduleId;
+
+	private String platform;
 	public ListModulesRequest() {
 		super("miniapplcdp", "2020-01-13", "ListModules");
 		setMethod(MethodType.POST);
@@ -56,14 +58,25 @@ public class ListModulesRequest extends RpcAcsRequest<ListModulesResponse> {
 		}
 	}
 
-	public String getTargetAppSource() {
-		return this.targetAppSource;
+	public String getModuleId() {
+		return this.moduleId;
 	}
 
-	public void setTargetAppSource(String targetAppSource) {
-		this.targetAppSource = targetAppSource;
-		if(targetAppSource != null){
-			putQueryParameter("TargetAppSource", targetAppSource);
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
 		}
 	}
 

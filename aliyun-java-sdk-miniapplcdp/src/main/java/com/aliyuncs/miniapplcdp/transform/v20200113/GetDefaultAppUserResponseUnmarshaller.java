@@ -26,8 +26,8 @@ public class GetDefaultAppUserResponseUnmarshaller {
 		getDefaultAppUserResponse.setRequestId(_ctx.stringValue("GetDefaultAppUserResponse.RequestId"));
 
 		Data data = new Data();
-		data.setUserName(_ctx.stringValue("GetDefaultAppUserResponse.Data.UserName"));
 		data.setHasPassword(_ctx.booleanValue("GetDefaultAppUserResponse.Data.HasPassword"));
+		data.setUserName(_ctx.stringValue("GetDefaultAppUserResponse.Data.UserName"));
 		getDefaultAppUserResponse.setData(data);
 	 
 	 	return getDefaultAppUserResponse;

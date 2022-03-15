@@ -26,12 +26,17 @@ public class DeleteModuleResponseUnmarshaller {
 		deleteModuleResponse.setRequestId(_ctx.stringValue("DeleteModuleResponse.RequestId"));
 
 		Data data = new Data();
-		data.setModuleName(_ctx.stringValue("DeleteModuleResponse.Data.ModuleName"));
-		data.setModifiedTime(_ctx.stringValue("DeleteModuleResponse.Data.ModifiedTime"));
-		data.setModuleId(_ctx.stringValue("DeleteModuleResponse.Data.ModuleId"));
 		data.setDescription(_ctx.stringValue("DeleteModuleResponse.Data.Description"));
 		data.setCreateTime(_ctx.stringValue("DeleteModuleResponse.Data.CreateTime"));
-		data.setTargetAppSource(_ctx.stringValue("DeleteModuleResponse.Data.TargetAppSource"));
+		data.setModifiedTime(_ctx.stringValue("DeleteModuleResponse.Data.ModifiedTime"));
+		data.setIcon(_ctx.stringValue("DeleteModuleResponse.Data.Icon"));
+		data.setLatestPublishedCommit(_ctx.stringValue("DeleteModuleResponse.Data.LatestPublishedCommit"));
+		data.setLatestPublishedVersion(_ctx.stringValue("DeleteModuleResponse.Data.LatestPublishedVersion"));
+		data.setMinimumPlatformVersion(_ctx.stringValue("DeleteModuleResponse.Data.MinimumPlatformVersion"));
+		data.setModuleId(_ctx.stringValue("DeleteModuleResponse.Data.ModuleId"));
+		data.setModuleName(_ctx.stringValue("DeleteModuleResponse.Data.ModuleName"));
+		data.setOwnerUserId(_ctx.stringValue("DeleteModuleResponse.Data.OwnerUserId"));
+		data.setPlatform(_ctx.stringValue("DeleteModuleResponse.Data.Platform"));
 		deleteModuleResponse.setData(data);
 	 
 	 	return deleteModuleResponse;

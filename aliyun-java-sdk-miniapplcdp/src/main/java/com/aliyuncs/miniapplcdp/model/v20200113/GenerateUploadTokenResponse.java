@@ -48,13 +48,13 @@ public class GenerateUploadTokenResponse extends AcsResponse {
 
 		private String key;
 
-		private String signature;
-
-		private String serverURL;
-
 		private String ossAccessKeyId;
 
 		private String policy;
+
+		private String serverURL;
+
+		private String signature;
 
 		public String getKey() {
 			return this.key;
@@ -62,22 +62,6 @@ public class GenerateUploadTokenResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
-		}
-
-		public String getSignature() {
-			return this.signature;
-		}
-
-		public void setSignature(String signature) {
-			this.signature = signature;
-		}
-
-		public String getServerURL() {
-			return this.serverURL;
-		}
-
-		public void setServerURL(String serverURL) {
-			this.serverURL = serverURL;
 		}
 
 		public String getOssAccessKeyId() {
@@ -94,6 +78,22 @@ public class GenerateUploadTokenResponse extends AcsResponse {
 
 		public void setPolicy(String policy) {
 			this.policy = policy;
+		}
+
+		public String getServerURL() {
+			return this.serverURL;
+		}
+
+		public void setServerURL(String serverURL) {
+			this.serverURL = serverURL;
+		}
+
+		public String getSignature() {
+			return this.signature;
+		}
+
+		public void setSignature(String signature) {
+			this.signature = signature;
 		}
 	}
 

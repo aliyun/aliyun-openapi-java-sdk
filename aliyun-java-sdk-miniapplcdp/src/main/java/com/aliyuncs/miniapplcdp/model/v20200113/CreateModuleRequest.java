@@ -26,11 +26,17 @@ public class CreateModuleRequest extends RpcAcsRequest<CreateModuleResponse> {
 
 	private String clientToken;
 
+	private String icon;
+
 	private String description;
 
-	private String moduleName;
+	private String platform;
 
 	private String targetAppSource;
+
+	private String minimumPlatformVersion;
+
+	private String moduleName;
 	public CreateModuleRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateModule");
 		setMethod(MethodType.POST);
@@ -47,6 +53,17 @@ public class CreateModuleRequest extends RpcAcsRequest<CreateModuleResponse> {
 		}
 	}
 
+	public String getIcon() {
+		return this.icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+		if(icon != null){
+			putQueryParameter("Icon", icon);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -58,14 +75,14 @@ public class CreateModuleRequest extends RpcAcsRequest<CreateModuleResponse> {
 		}
 	}
 
-	public String getModuleName() {
-		return this.moduleName;
+	public String getPlatform() {
+		return this.platform;
 	}
 
-	public void setModuleName(String moduleName) {
-		this.moduleName = moduleName;
-		if(moduleName != null){
-			putQueryParameter("ModuleName", moduleName);
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
 		}
 	}
 
@@ -77,6 +94,28 @@ public class CreateModuleRequest extends RpcAcsRequest<CreateModuleResponse> {
 		this.targetAppSource = targetAppSource;
 		if(targetAppSource != null){
 			putQueryParameter("TargetAppSource", targetAppSource);
+		}
+	}
+
+	public String getMinimumPlatformVersion() {
+		return this.minimumPlatformVersion;
+	}
+
+	public void setMinimumPlatformVersion(String minimumPlatformVersion) {
+		this.minimumPlatformVersion = minimumPlatformVersion;
+		if(minimumPlatformVersion != null){
+			putQueryParameter("MinimumPlatformVersion", minimumPlatformVersion);
+		}
+	}
+
+	public String getModuleName() {
+		return this.moduleName;
+	}
+
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
+		if(moduleName != null){
+			putQueryParameter("ModuleName", moduleName);
 		}
 	}
 

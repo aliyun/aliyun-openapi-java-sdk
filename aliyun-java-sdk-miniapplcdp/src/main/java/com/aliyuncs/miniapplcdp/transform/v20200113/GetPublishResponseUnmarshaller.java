@@ -30,19 +30,19 @@ public class GetPublishResponseUnmarshaller {
 		getPublishResponse.setRequestId(_ctx.stringValue("GetPublishResponse.RequestId"));
 
 		Data data = new Data();
+		data.setAppId(_ctx.stringValue("GetPublishResponse.Data.AppId"));
 		data.setCommitId(_ctx.stringValue("GetPublishResponse.Data.CommitId"));
-		data.setCreateTime(_ctx.stringValue("GetPublishResponse.Data.CreateTime"));
-		data.setPublishStatus(_ctx.stringValue("GetPublishResponse.Data.PublishStatus"));
 		data.setCompletionTime(_ctx.stringValue("GetPublishResponse.Data.CompletionTime"));
-		data.setVersionNumber(_ctx.stringValue("GetPublishResponse.Data.VersionNumber"));
-		data.setStartTime(_ctx.stringValue("GetPublishResponse.Data.StartTime"));
+		data.setDescription(_ctx.stringValue("GetPublishResponse.Data.Description"));
+		data.setEnvId(_ctx.stringValue("GetPublishResponse.Data.EnvId"));
+		data.setCreateTime(_ctx.stringValue("GetPublishResponse.Data.CreateTime"));
 		data.setModifiedTime(_ctx.stringValue("GetPublishResponse.Data.ModifiedTime"));
 		data.setPublishId(_ctx.stringValue("GetPublishResponse.Data.PublishId"));
-		data.setPublishType(_ctx.stringValue("GetPublishResponse.Data.PublishType"));
-		data.setDescription(_ctx.stringValue("GetPublishResponse.Data.Description"));
-		data.setAppId(_ctx.stringValue("GetPublishResponse.Data.AppId"));
-		data.setEnvId(_ctx.stringValue("GetPublishResponse.Data.EnvId"));
 		data.setReason(_ctx.stringValue("GetPublishResponse.Data.Reason"));
+		data.setStartTime(_ctx.stringValue("GetPublishResponse.Data.StartTime"));
+		data.setPublishStatus(_ctx.stringValue("GetPublishResponse.Data.PublishStatus"));
+		data.setPublishType(_ctx.stringValue("GetPublishResponse.Data.PublishType"));
+		data.setVersionNumber(_ctx.stringValue("GetPublishResponse.Data.VersionNumber"));
 
 		List<Map<Object, Object>> subTasks = _ctx.listMapValue("GetPublishResponse.Data.SubTasks");
 		data.setSubTasks(subTasks);

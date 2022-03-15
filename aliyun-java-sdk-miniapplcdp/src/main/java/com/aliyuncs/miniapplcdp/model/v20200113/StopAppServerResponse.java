@@ -46,19 +46,11 @@ public class StopAppServerResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String envId;
-
 		private String appId;
 
+		private String envId;
+
 		private String appServerStatus;
-
-		public String getEnvId() {
-			return this.envId;
-		}
-
-		public void setEnvId(String envId) {
-			this.envId = envId;
-		}
 
 		public String getAppId() {
 			return this.appId;
@@ -66,6 +58,14 @@ public class StopAppServerResponse extends AcsResponse {
 
 		public void setAppId(String appId) {
 			this.appId = appId;
+		}
+
+		public String getEnvId() {
+			return this.envId;
+		}
+
+		public void setEnvId(String envId) {
+			this.envId = envId;
 		}
 
 		public String getAppServerStatus() {

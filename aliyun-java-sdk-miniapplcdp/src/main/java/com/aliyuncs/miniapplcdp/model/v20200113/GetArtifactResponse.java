@@ -46,19 +46,27 @@ public class GetArtifactResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String artifactId;
-
-		private String modifiedTime;
-
 		private String appId;
 
-		private String createTime;
-
-		private String artifactType;
+		private String artifactId;
 
 		private Boolean available;
 
+		private String createTime;
+
+		private String modifiedTime;
+
+		private String artifactType;
+
 		private String url;
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
 
 		public String getArtifactId() {
 			return this.artifactId;
@@ -68,20 +76,12 @@ public class GetArtifactResponse extends AcsResponse {
 			this.artifactId = artifactId;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		public Boolean getAvailable() {
+			return this.available;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setAvailable(Boolean available) {
+			this.available = available;
 		}
 
 		public String getCreateTime() {
@@ -92,20 +92,20 @@ public class GetArtifactResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
 		public String getArtifactType() {
 			return this.artifactType;
 		}
 
 		public void setArtifactType(String artifactType) {
 			this.artifactType = artifactType;
-		}
-
-		public Boolean getAvailable() {
-			return this.available;
-		}
-
-		public void setAvailable(Boolean available) {
-			this.available = available;
 		}
 
 		public String getUrl() {

@@ -46,41 +46,27 @@ public class DeleteModuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String moduleName;
-
-		private String modifiedTime;
-
-		private String moduleId;
-
 		private String description;
 
 		private String createTime;
 
-		private String targetAppSource;
+		private String modifiedTime;
 
-		public String getModuleName() {
-			return this.moduleName;
-		}
+		private String icon;
 
-		public void setModuleName(String moduleName) {
-			this.moduleName = moduleName;
-		}
+		private String latestPublishedCommit;
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
+		private String latestPublishedVersion;
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
+		private String minimumPlatformVersion;
 
-		public String getModuleId() {
-			return this.moduleId;
-		}
+		private String moduleId;
 
-		public void setModuleId(String moduleId) {
-			this.moduleId = moduleId;
-		}
+		private String moduleName;
+
+		private String ownerUserId;
+
+		private String platform;
 
 		public String getDescription() {
 			return this.description;
@@ -98,12 +84,76 @@ public class DeleteModuleResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getTargetAppSource() {
-			return this.targetAppSource;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setTargetAppSource(String targetAppSource) {
-			this.targetAppSource = targetAppSource;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getIcon() {
+			return this.icon;
+		}
+
+		public void setIcon(String icon) {
+			this.icon = icon;
+		}
+
+		public String getLatestPublishedCommit() {
+			return this.latestPublishedCommit;
+		}
+
+		public void setLatestPublishedCommit(String latestPublishedCommit) {
+			this.latestPublishedCommit = latestPublishedCommit;
+		}
+
+		public String getLatestPublishedVersion() {
+			return this.latestPublishedVersion;
+		}
+
+		public void setLatestPublishedVersion(String latestPublishedVersion) {
+			this.latestPublishedVersion = latestPublishedVersion;
+		}
+
+		public String getMinimumPlatformVersion() {
+			return this.minimumPlatformVersion;
+		}
+
+		public void setMinimumPlatformVersion(String minimumPlatformVersion) {
+			this.minimumPlatformVersion = minimumPlatformVersion;
+		}
+
+		public String getModuleId() {
+			return this.moduleId;
+		}
+
+		public void setModuleId(String moduleId) {
+			this.moduleId = moduleId;
+		}
+
+		public String getModuleName() {
+			return this.moduleName;
+		}
+
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
+		}
+
+		public String getOwnerUserId() {
+			return this.ownerUserId;
+		}
+
+		public void setOwnerUserId(String ownerUserId) {
+			this.ownerUserId = ownerUserId;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 	}
 

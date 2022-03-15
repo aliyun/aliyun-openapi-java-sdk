@@ -34,14 +34,15 @@ public class ListEnvironmentsResponseUnmarshaller {
 		List<EnvironmentItem> items = new ArrayList<EnvironmentItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListEnvironmentsResponse.Data.Items.Length"); i++) {
 			EnvironmentItem environmentItem = new EnvironmentItem();
-			environmentItem.setCurrentPublishId(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].CurrentPublishId"));
-			environmentItem.setModifiedTime(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].ModifiedTime"));
+			environmentItem.setAccountOpsEndpoint(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].AccountOpsEndpoint"));
 			environmentItem.setAppId(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].AppId"));
-			environmentItem.setCreateTime(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].CreateTime"));
+			environmentItem.setCurrentPublishId(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].CurrentPublishId"));
 			environmentItem.setEndpoint(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].Endpoint"));
 			environmentItem.setEnvId(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].EnvId"));
-			environmentItem.setEnvType(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].EnvType"));
+			environmentItem.setCreateTime(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].CreateTime"));
+			environmentItem.setModifiedTime(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].ModifiedTime"));
 			environmentItem.setPublishingId(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].PublishingId"));
+			environmentItem.setEnvType(_ctx.stringValue("ListEnvironmentsResponse.Data.Items["+ i +"].EnvType"));
 
 			items.add(environmentItem);
 		}

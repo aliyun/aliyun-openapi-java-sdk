@@ -28,8 +28,6 @@ public class DeleteResourceRequest extends RpcAcsRequest<DeleteResourceResponse>
 
 	private String appId;
 
-	private String scope;
-
 	private String moduleId;
 	public DeleteResourceRequest() {
 		super("miniapplcdp", "2020-01-13", "DeleteResource");
@@ -55,17 +53,6 @@ public class DeleteResourceRequest extends RpcAcsRequest<DeleteResourceResponse>
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getScope() {
-		return this.scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-		if(scope != null){
-			putQueryParameter("Scope", scope);
 		}
 	}
 

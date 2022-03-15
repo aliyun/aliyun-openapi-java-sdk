@@ -24,6 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse> {
 	   
 
+	private String resourceId;
+
+	private String visibility;
+
 	private String clientToken;
 
 	private String description;
@@ -34,16 +38,34 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 
 	private String content;
 
-	private String appId;
-
-	private String scope;
-
 	private String resourceName;
 
 	private String moduleId;
 	public CreateResourceRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateResource");
 		setMethod(MethodType.POST);
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getVisibility() {
+		return this.visibility;
+	}
+
+	public void setVisibility(String visibility) {
+		this.visibility = visibility;
+		if(visibility != null){
+			putQueryParameter("Visibility", visibility);
+		}
 	}
 
 	public String getClientToken() {
@@ -98,28 +120,6 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
-		}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getScope() {
-		return this.scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-		if(scope != null){
-			putQueryParameter("Scope", scope);
 		}
 	}
 

@@ -27,14 +27,14 @@ public class GetDomainOverviewResponseUnmarshaller {
 		getDomainOverviewResponse.setRequestId(_ctx.stringValue("GetDomainOverviewResponse.RequestId"));
 
 		Data data = new Data();
-		data.setDomain(_ctx.stringValue("GetDomainOverviewResponse.Data.Domain"));
+		data.setAppId(_ctx.stringValue("GetDomainOverviewResponse.Data.AppId"));
 		data.setApplied(_ctx.booleanValue("GetDomainOverviewResponse.Data.Applied"));
 		data.setCertificate(_ctx.mapValue("GetDomainOverviewResponse.Data.Certificate"));
-		data.setAppId(_ctx.stringValue("GetDomainOverviewResponse.Data.AppId"));
-		data.setPath(_ctx.stringValue("GetDomainOverviewResponse.Data.Path"));
-		data.setDeleted(_ctx.booleanValue("GetDomainOverviewResponse.Data.Deleted"));
-		data.setEnvId(_ctx.stringValue("GetDomainOverviewResponse.Data.EnvId"));
 		data.setCname(_ctx.stringValue("GetDomainOverviewResponse.Data.Cname"));
+		data.setDeleted(_ctx.booleanValue("GetDomainOverviewResponse.Data.Deleted"));
+		data.setDomain(_ctx.stringValue("GetDomainOverviewResponse.Data.Domain"));
+		data.setEnvId(_ctx.stringValue("GetDomainOverviewResponse.Data.EnvId"));
+		data.setPath(_ctx.stringValue("GetDomainOverviewResponse.Data.Path"));
 		data.setDomainType(_ctx.stringValue("GetDomainOverviewResponse.Data.DomainType"));
 		getDomainOverviewResponse.setData(data);
 	 

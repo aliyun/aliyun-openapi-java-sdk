@@ -59,40 +59,32 @@ public class ListAppModulesResponse extends AcsResponse {
 
 		public static class ModuleItem {
 
-			private String moduleName;
-
-			private String modifiedTime;
-
-			private String moduleId;
+			private String commitId;
 
 			private String description;
 
-			private String createTime;
+			private Boolean directDependency;
 
-			private String targetAppSource;
+			private String icon;
 
-			public String getModuleName() {
-				return this.moduleName;
+			private String minimumPlatformVersion;
+
+			private String moduleId;
+
+			private String moduleName;
+
+			private String ownerUserId;
+
+			private String platform;
+
+			private String version;
+
+			public String getCommitId() {
+				return this.commitId;
 			}
 
-			public void setModuleName(String moduleName) {
-				this.moduleName = moduleName;
-			}
-
-			public String getModifiedTime() {
-				return this.modifiedTime;
-			}
-
-			public void setModifiedTime(String modifiedTime) {
-				this.modifiedTime = modifiedTime;
-			}
-
-			public String getModuleId() {
-				return this.moduleId;
-			}
-
-			public void setModuleId(String moduleId) {
-				this.moduleId = moduleId;
+			public void setCommitId(String commitId) {
+				this.commitId = commitId;
 			}
 
 			public String getDescription() {
@@ -103,20 +95,68 @@ public class ListAppModulesResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getCreateTime() {
-				return this.createTime;
+			public Boolean getDirectDependency() {
+				return this.directDependency;
 			}
 
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
+			public void setDirectDependency(Boolean directDependency) {
+				this.directDependency = directDependency;
 			}
 
-			public String getTargetAppSource() {
-				return this.targetAppSource;
+			public String getIcon() {
+				return this.icon;
 			}
 
-			public void setTargetAppSource(String targetAppSource) {
-				this.targetAppSource = targetAppSource;
+			public void setIcon(String icon) {
+				this.icon = icon;
+			}
+
+			public String getMinimumPlatformVersion() {
+				return this.minimumPlatformVersion;
+			}
+
+			public void setMinimumPlatformVersion(String minimumPlatformVersion) {
+				this.minimumPlatformVersion = minimumPlatformVersion;
+			}
+
+			public String getModuleId() {
+				return this.moduleId;
+			}
+
+			public void setModuleId(String moduleId) {
+				this.moduleId = moduleId;
+			}
+
+			public String getModuleName() {
+				return this.moduleName;
+			}
+
+			public void setModuleName(String moduleName) {
+				this.moduleName = moduleName;
+			}
+
+			public String getOwnerUserId() {
+				return this.ownerUserId;
+			}
+
+			public void setOwnerUserId(String ownerUserId) {
+				this.ownerUserId = ownerUserId;
+			}
+
+			public String getPlatform() {
+				return this.platform;
+			}
+
+			public void setPlatform(String platform) {
+				this.platform = platform;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
 			}
 		}
 	}

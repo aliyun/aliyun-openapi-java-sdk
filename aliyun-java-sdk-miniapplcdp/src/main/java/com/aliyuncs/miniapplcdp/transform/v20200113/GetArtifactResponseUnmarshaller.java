@@ -26,12 +26,12 @@ public class GetArtifactResponseUnmarshaller {
 		getArtifactResponse.setRequestId(_ctx.stringValue("GetArtifactResponse.RequestId"));
 
 		Data data = new Data();
-		data.setArtifactId(_ctx.stringValue("GetArtifactResponse.Data.ArtifactId"));
-		data.setModifiedTime(_ctx.stringValue("GetArtifactResponse.Data.ModifiedTime"));
 		data.setAppId(_ctx.stringValue("GetArtifactResponse.Data.AppId"));
-		data.setCreateTime(_ctx.stringValue("GetArtifactResponse.Data.CreateTime"));
-		data.setArtifactType(_ctx.stringValue("GetArtifactResponse.Data.ArtifactType"));
+		data.setArtifactId(_ctx.stringValue("GetArtifactResponse.Data.ArtifactId"));
 		data.setAvailable(_ctx.booleanValue("GetArtifactResponse.Data.Available"));
+		data.setCreateTime(_ctx.stringValue("GetArtifactResponse.Data.CreateTime"));
+		data.setModifiedTime(_ctx.stringValue("GetArtifactResponse.Data.ModifiedTime"));
+		data.setArtifactType(_ctx.stringValue("GetArtifactResponse.Data.ArtifactType"));
 		data.setUrl(_ctx.stringValue("GetArtifactResponse.Data.Url"));
 		getArtifactResponse.setData(data);
 	 

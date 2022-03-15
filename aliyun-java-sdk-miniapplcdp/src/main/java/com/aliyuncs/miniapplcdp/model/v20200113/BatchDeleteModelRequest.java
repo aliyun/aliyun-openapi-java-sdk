@@ -28,6 +28,8 @@ public class BatchDeleteModelRequest extends RpcAcsRequest<BatchDeleteModelRespo
 
 	private String modelIdList;
 
+	private String moduleId;
+
 	private String schemaVersion;
 	public BatchDeleteModelRequest() {
 		super("miniapplcdp", "2020-01-13", "BatchDeleteModel");
@@ -53,6 +55,17 @@ public class BatchDeleteModelRequest extends RpcAcsRequest<BatchDeleteModelRespo
 		this.modelIdList = modelIdList;
 		if(modelIdList != null){
 			putQueryParameter("ModelIdList", modelIdList);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

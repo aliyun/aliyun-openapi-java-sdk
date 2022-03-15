@@ -46,39 +46,17 @@ public class GetUserResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String userType;
-
-		private String userStatus;
-
-		private String modifiedTime;
-
 		private String description;
 
 		private String createTime;
 
-		public String getUserType() {
-			return this.userType;
-		}
+		private String modifiedTime;
 
-		public void setUserType(String userType) {
-			this.userType = userType;
-		}
+		private String userStatus;
 
-		public String getUserStatus() {
-			return this.userStatus;
-		}
+		private String userType;
 
-		public void setUserStatus(String userStatus) {
-			this.userStatus = userStatus;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
+		private String userSecret;
 
 		public String getDescription() {
 			return this.description;
@@ -94,6 +72,38 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getUserStatus() {
+			return this.userStatus;
+		}
+
+		public void setUserStatus(String userStatus) {
+			this.userStatus = userStatus;
+		}
+
+		public String getUserType() {
+			return this.userType;
+		}
+
+		public void setUserType(String userType) {
+			this.userType = userType;
+		}
+
+		public String getUserSecret() {
+			return this.userSecret;
+		}
+
+		public void setUserSecret(String userSecret) {
+			this.userSecret = userSecret;
 		}
 	}
 

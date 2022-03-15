@@ -47,85 +47,27 @@ public class UpdateResourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String moduleId;
-
-		private String createTime;
-
-		private Integer revision;
-
-		private String modifiedTime;
-
-		private String resourceType;
-
-		private String description;
-
-		private String schemaVersion;
-
 		private String appId;
-
-		private String scope;
-
-		private String resourceId;
 
 		private Map<Object,Object> content;
 
+		private String createTime;
+
+		private String description;
+
+		private String modifiedTime;
+
+		private String moduleId;
+
 		private String resourceName;
 
-		public String getModuleId() {
-			return this.moduleId;
-		}
+		private String resourceId;
 
-		public void setModuleId(String moduleId) {
-			this.moduleId = moduleId;
-		}
+		private Integer revision;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+		private String schemaVersion;
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Integer getRevision() {
-			return this.revision;
-		}
-
-		public void setRevision(Integer revision) {
-			this.revision = revision;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getSchemaVersion() {
-			return this.schemaVersion;
-		}
-
-		public void setSchemaVersion(String schemaVersion) {
-			this.schemaVersion = schemaVersion;
-		}
+		private String resourceType;
 
 		public String getAppId() {
 			return this.appId;
@@ -133,22 +75,6 @@ public class UpdateResourceResponse extends AcsResponse {
 
 		public void setAppId(String appId) {
 			this.appId = appId;
-		}
-
-		public String getScope() {
-			return this.scope;
-		}
-
-		public void setScope(String scope) {
-			this.scope = scope;
-		}
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
 		}
 
 		public Map<Object,Object> getContent() {
@@ -159,12 +85,76 @@ public class UpdateResourceResponse extends AcsResponse {
 			this.content = content;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getModuleId() {
+			return this.moduleId;
+		}
+
+		public void setModuleId(String moduleId) {
+			this.moduleId = moduleId;
+		}
+
 		public String getResourceName() {
 			return this.resourceName;
 		}
 
 		public void setResourceName(String resourceName) {
 			this.resourceName = resourceName;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public Integer getRevision() {
+			return this.revision;
+		}
+
+		public void setRevision(Integer revision) {
+			this.revision = revision;
+		}
+
+		public String getSchemaVersion() {
+			return this.schemaVersion;
+		}
+
+		public void setSchemaVersion(String schemaVersion) {
+			this.schemaVersion = schemaVersion;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 	}
 

@@ -32,9 +32,13 @@ public class ListAppsRequest extends RpcAcsRequest<ListAppsResponse> {
 
 	private String source;
 
+	private String mainModuleId;
+
 	private Integer pageNumber;
 
 	private String appName;
+
+	private String appId;
 
 	private Integer pageSize;
 	public ListAppsRequest() {
@@ -86,6 +90,17 @@ public class ListAppsRequest extends RpcAcsRequest<ListAppsResponse> {
 		}
 	}
 
+	public String getMainModuleId() {
+		return this.mainModuleId;
+	}
+
+	public void setMainModuleId(String mainModuleId) {
+		this.mainModuleId = mainModuleId;
+		if(mainModuleId != null){
+			putQueryParameter("MainModuleId", mainModuleId);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -105,6 +120,17 @@ public class ListAppsRequest extends RpcAcsRequest<ListAppsResponse> {
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

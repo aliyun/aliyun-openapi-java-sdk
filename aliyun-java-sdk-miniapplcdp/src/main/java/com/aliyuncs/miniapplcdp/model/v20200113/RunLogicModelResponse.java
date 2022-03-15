@@ -47,19 +47,11 @@ public class RunLogicModelResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer status;
-
 		private String body;
 
 		private Map<Object,Object> headers;
 
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
+		private Integer status;
 
 		public String getBody() {
 			return this.body;
@@ -75,6 +67,14 @@ public class RunLogicModelResponse extends AcsResponse {
 
 		public void setHeaders(Map<Object,Object> headers) {
 			this.headers = headers;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 	}
 

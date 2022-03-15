@@ -38,19 +38,19 @@ public class ListPublishVersionsResponseUnmarshaller {
 		List<PublishItem> items = new ArrayList<PublishItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPublishVersionsResponse.Data.Items.Length"); i++) {
 			PublishItem publishItem = new PublishItem();
+			publishItem.setAppId(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].AppId"));
 			publishItem.setCommitId(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].CommitId"));
-			publishItem.setCreateTime(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].CreateTime"));
-			publishItem.setPublishStatus(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].PublishStatus"));
 			publishItem.setCompletionTime(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].CompletionTime"));
-			publishItem.setVersionNumber(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].VersionNumber"));
-			publishItem.setStartTime(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].StartTime"));
+			publishItem.setDescription(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].Description"));
+			publishItem.setEnvId(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].EnvId"));
+			publishItem.setCreateTime(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].CreateTime"));
 			publishItem.setModifiedTime(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].ModifiedTime"));
 			publishItem.setPublishId(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].PublishId"));
-			publishItem.setPublishType(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].PublishType"));
-			publishItem.setDescription(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].Description"));
-			publishItem.setAppId(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].AppId"));
-			publishItem.setEnvId(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].EnvId"));
 			publishItem.setReason(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].Reason"));
+			publishItem.setStartTime(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].StartTime"));
+			publishItem.setPublishStatus(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].PublishStatus"));
+			publishItem.setPublishType(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].PublishType"));
+			publishItem.setVersionNumber(_ctx.stringValue("ListPublishVersionsResponse.Data.Items["+ i +"].VersionNumber"));
 
 			List<Map<Object, Object>> subTasks = _ctx.listMapValue("ListPublishVersionsResponse.Data.Items["+ i +"].SubTasks");
 			publishItem.setSubTasks(subTasks);

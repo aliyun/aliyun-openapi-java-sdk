@@ -34,12 +34,17 @@ public class ListModulesResponseUnmarshaller {
 		List<ModuleItem> items = new ArrayList<ModuleItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListModulesResponse.Data.Items.Length"); i++) {
 			ModuleItem moduleItem = new ModuleItem();
-			moduleItem.setModuleName(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].ModuleName"));
-			moduleItem.setModifiedTime(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].ModifiedTime"));
-			moduleItem.setModuleId(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].ModuleId"));
 			moduleItem.setDescription(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].Description"));
 			moduleItem.setCreateTime(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].CreateTime"));
-			moduleItem.setTargetAppSource(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].TargetAppSource"));
+			moduleItem.setModifiedTime(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].ModifiedTime"));
+			moduleItem.setIcon(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].Icon"));
+			moduleItem.setLatestPublishedCommit(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].LatestPublishedCommit"));
+			moduleItem.setLatestPublishedVersion(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].LatestPublishedVersion"));
+			moduleItem.setMinimumPlatformVersion(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].MinimumPlatformVersion"));
+			moduleItem.setModuleId(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].ModuleId"));
+			moduleItem.setModuleName(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].ModuleName"));
+			moduleItem.setOwnerUserId(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].OwnerUserId"));
+			moduleItem.setPlatform(_ctx.stringValue("ListModulesResponse.Data.Items["+ i +"].Platform"));
 
 			items.add(moduleItem);
 		}

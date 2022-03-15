@@ -16,6 +16,7 @@ package com.aliyuncs.miniapplcdp.transform.v20200113;
 
 import com.aliyuncs.miniapplcdp.model.v20200113.DeleteCommitResponse;
 import com.aliyuncs.miniapplcdp.model.v20200113.DeleteCommitResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,13 +27,22 @@ public class DeleteCommitResponseUnmarshaller {
 		deleteCommitResponse.setRequestId(_ctx.stringValue("DeleteCommitResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCommitType(_ctx.stringValue("DeleteCommitResponse.Data.CommitType"));
-		data.setModifiedTime(_ctx.stringValue("DeleteCommitResponse.Data.ModifiedTime"));
-		data.setCommitId(_ctx.stringValue("DeleteCommitResponse.Data.CommitId"));
 		data.setAppId(_ctx.stringValue("DeleteCommitResponse.Data.AppId"));
+		data.setCommitId(_ctx.stringValue("DeleteCommitResponse.Data.CommitId"));
 		data.setCreateTime(_ctx.stringValue("DeleteCommitResponse.Data.CreateTime"));
-		data.setRollbackToCommitId(_ctx.stringValue("DeleteCommitResponse.Data.RollbackToCommitId"));
 		data.setCommitLog(_ctx.stringValue("DeleteCommitResponse.Data.CommitLog"));
+		data.setMainModuleCommitId(_ctx.stringValue("DeleteCommitResponse.Data.MainModuleCommitId"));
+		data.setMainModuleId(_ctx.stringValue("DeleteCommitResponse.Data.MainModuleId"));
+		data.setModelDataPath(_ctx.stringValue("DeleteCommitResponse.Data.ModelDataPath"));
+		data.setModelDigest(_ctx.mapValue("DeleteCommitResponse.Data.ModelDigest"));
+		data.setModifiedTime(_ctx.stringValue("DeleteCommitResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("DeleteCommitResponse.Data.ModuleId"));
+		data.setResourceDataPath(_ctx.stringValue("DeleteCommitResponse.Data.ResourceDataPath"));
+		data.setResourceDigest(_ctx.mapValue("DeleteCommitResponse.Data.ResourceDigest"));
+		data.setRollbackToCommitId(_ctx.stringValue("DeleteCommitResponse.Data.RollbackToCommitId"));
+		data.setRollbackType(_ctx.stringValue("DeleteCommitResponse.Data.RollbackType"));
+		data.setSchemaVersion(_ctx.stringValue("DeleteCommitResponse.Data.SchemaVersion"));
+		data.setCommitType(_ctx.stringValue("DeleteCommitResponse.Data.CommitType"));
 		deleteCommitResponse.setData(data);
 	 
 	 	return deleteCommitResponse;

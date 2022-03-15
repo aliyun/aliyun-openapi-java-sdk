@@ -28,6 +28,8 @@ public class GetCommitRequest extends RpcAcsRequest<GetCommitResponse> {
 
 	private String commitId;
 
+	private String moduleId;
+
 	private String schemaVersion;
 	public GetCommitRequest() {
 		super("miniapplcdp", "2020-01-13", "GetCommit");
@@ -53,6 +55,17 @@ public class GetCommitRequest extends RpcAcsRequest<GetCommitResponse> {
 		this.commitId = commitId;
 		if(commitId != null){
 			putQueryParameter("CommitId", commitId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

@@ -34,12 +34,12 @@ public class ListArtifactsResponseUnmarshaller {
 		List<ArtifactItem> items = new ArrayList<ArtifactItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListArtifactsResponse.Data.Items.Length"); i++) {
 			ArtifactItem artifactItem = new ArtifactItem();
-			artifactItem.setArtifactId(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].ArtifactId"));
-			artifactItem.setModifiedTime(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].ModifiedTime"));
 			artifactItem.setAppId(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].AppId"));
-			artifactItem.setCreateTime(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].CreateTime"));
-			artifactItem.setArtifactType(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].ArtifactType"));
+			artifactItem.setArtifactId(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].ArtifactId"));
 			artifactItem.setAvailable(_ctx.booleanValue("ListArtifactsResponse.Data.Items["+ i +"].Available"));
+			artifactItem.setCreateTime(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].CreateTime"));
+			artifactItem.setModifiedTime(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].ModifiedTime"));
+			artifactItem.setArtifactType(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].ArtifactType"));
 			artifactItem.setUrl(_ctx.stringValue("ListArtifactsResponse.Data.Items["+ i +"].Url"));
 
 			items.add(artifactItem);

@@ -26,17 +26,19 @@ public class DeleteAppResponseUnmarshaller {
 		deleteAppResponse.setRequestId(_ctx.stringValue("DeleteAppResponse.RequestId"));
 
 		Data data = new Data();
-		data.setAppStatus(_ctx.stringValue("DeleteAppResponse.Data.AppStatus"));
-		data.setAppName(_ctx.stringValue("DeleteAppResponse.Data.AppName"));
-		data.setIsTemplate(_ctx.booleanValue("DeleteAppResponse.Data.IsTemplate"));
-		data.setModifiedTime(_ctx.stringValue("DeleteAppResponse.Data.ModifiedTime"));
+		data.setAppId(_ctx.stringValue("DeleteAppResponse.Data.AppId"));
 		data.setDescription(_ctx.stringValue("DeleteAppResponse.Data.Description"));
 		data.setCreateTime(_ctx.stringValue("DeleteAppResponse.Data.CreateTime"));
-		data.setAppId(_ctx.stringValue("DeleteAppResponse.Data.AppId"));
+		data.setModifiedTime(_ctx.stringValue("DeleteAppResponse.Data.ModifiedTime"));
 		data.setIcon(_ctx.stringValue("DeleteAppResponse.Data.Icon"));
-		data.setAppType(_ctx.stringValue("DeleteAppResponse.Data.AppType"));
-		data.setSource(_ctx.stringValue("DeleteAppResponse.Data.Source"));
+		data.setIsTemplate(_ctx.booleanValue("DeleteAppResponse.Data.IsTemplate"));
 		data.setLastEditTime(_ctx.stringValue("DeleteAppResponse.Data.LastEditTime"));
+		data.setMainModuleId(_ctx.stringValue("DeleteAppResponse.Data.MainModuleId"));
+		data.setAppName(_ctx.stringValue("DeleteAppResponse.Data.AppName"));
+		data.setSchemaVersion(_ctx.stringValue("DeleteAppResponse.Data.SchemaVersion"));
+		data.setSource(_ctx.stringValue("DeleteAppResponse.Data.Source"));
+		data.setAppStatus(_ctx.stringValue("DeleteAppResponse.Data.AppStatus"));
+		data.setAppType(_ctx.stringValue("DeleteAppResponse.Data.AppType"));
 		deleteAppResponse.setData(data);
 	 
 	 	return deleteAppResponse;

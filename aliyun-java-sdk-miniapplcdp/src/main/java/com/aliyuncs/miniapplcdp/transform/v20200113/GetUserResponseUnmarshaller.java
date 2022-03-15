@@ -26,11 +26,12 @@ public class GetUserResponseUnmarshaller {
 		getUserResponse.setRequestId(_ctx.stringValue("GetUserResponse.RequestId"));
 
 		Data data = new Data();
-		data.setUserType(_ctx.stringValue("GetUserResponse.Data.UserType"));
-		data.setUserStatus(_ctx.stringValue("GetUserResponse.Data.UserStatus"));
-		data.setModifiedTime(_ctx.stringValue("GetUserResponse.Data.ModifiedTime"));
 		data.setDescription(_ctx.stringValue("GetUserResponse.Data.Description"));
 		data.setCreateTime(_ctx.stringValue("GetUserResponse.Data.CreateTime"));
+		data.setModifiedTime(_ctx.stringValue("GetUserResponse.Data.ModifiedTime"));
+		data.setUserStatus(_ctx.stringValue("GetUserResponse.Data.UserStatus"));
+		data.setUserType(_ctx.stringValue("GetUserResponse.Data.UserType"));
+		data.setUserSecret(_ctx.stringValue("GetUserResponse.Data.UserSecret"));
 		getUserResponse.setData(data);
 	 
 	 	return getUserResponse;

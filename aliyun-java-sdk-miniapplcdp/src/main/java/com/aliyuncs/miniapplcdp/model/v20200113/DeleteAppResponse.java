@@ -46,58 +46,38 @@ public class DeleteAppResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appStatus;
-
-		private String appName;
-
-		private Boolean isTemplate;
-
-		private String modifiedTime;
+		private String appId;
 
 		private String description;
 
 		private String createTime;
 
-		private String appId;
+		private String modifiedTime;
 
 		private String icon;
 
-		private String appType;
-
-		private String source;
+		private Boolean isTemplate;
 
 		private String lastEditTime;
 
-		public String getAppStatus() {
-			return this.appStatus;
+		private String mainModuleId;
+
+		private String appName;
+
+		private String schemaVersion;
+
+		private String source;
+
+		private String appStatus;
+
+		private String appType;
+
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setAppStatus(String appStatus) {
-			this.appStatus = appStatus;
-		}
-
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
-
-		public Boolean getIsTemplate() {
-			return this.isTemplate;
-		}
-
-		public void setIsTemplate(Boolean isTemplate) {
-			this.isTemplate = isTemplate;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public String getDescription() {
@@ -116,12 +96,12 @@ public class DeleteAppResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getAppId() {
-			return this.appId;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getIcon() {
@@ -132,12 +112,44 @@ public class DeleteAppResponse extends AcsResponse {
 			this.icon = icon;
 		}
 
-		public String getAppType() {
-			return this.appType;
+		public Boolean getIsTemplate() {
+			return this.isTemplate;
 		}
 
-		public void setAppType(String appType) {
-			this.appType = appType;
+		public void setIsTemplate(Boolean isTemplate) {
+			this.isTemplate = isTemplate;
+		}
+
+		public String getLastEditTime() {
+			return this.lastEditTime;
+		}
+
+		public void setLastEditTime(String lastEditTime) {
+			this.lastEditTime = lastEditTime;
+		}
+
+		public String getMainModuleId() {
+			return this.mainModuleId;
+		}
+
+		public void setMainModuleId(String mainModuleId) {
+			this.mainModuleId = mainModuleId;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public String getSchemaVersion() {
+			return this.schemaVersion;
+		}
+
+		public void setSchemaVersion(String schemaVersion) {
+			this.schemaVersion = schemaVersion;
 		}
 
 		public String getSource() {
@@ -148,12 +160,20 @@ public class DeleteAppResponse extends AcsResponse {
 			this.source = source;
 		}
 
-		public String getLastEditTime() {
-			return this.lastEditTime;
+		public String getAppStatus() {
+			return this.appStatus;
 		}
 
-		public void setLastEditTime(String lastEditTime) {
-			this.lastEditTime = lastEditTime;
+		public void setAppStatus(String appStatus) {
+			this.appStatus = appStatus;
+		}
+
+		public String getAppType() {
+			return this.appType;
+		}
+
+		public void setAppType(String appType) {
+			this.appType = appType;
 		}
 	}
 

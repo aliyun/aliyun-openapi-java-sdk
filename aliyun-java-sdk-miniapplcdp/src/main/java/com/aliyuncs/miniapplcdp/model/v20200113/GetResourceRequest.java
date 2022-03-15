@@ -30,8 +30,6 @@ public class GetResourceRequest extends RpcAcsRequest<GetResourceResponse> {
 
 	private String appId;
 
-	private String scope;
-
 	private String moduleId;
 	public GetResourceRequest() {
 		super("miniapplcdp", "2020-01-13", "GetResource");
@@ -68,17 +66,6 @@ public class GetResourceRequest extends RpcAcsRequest<GetResourceResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getScope() {
-		return this.scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-		if(scope != null){
-			putQueryParameter("Scope", scope);
 		}
 	}
 

@@ -28,6 +28,8 @@ public class RestoreModelRequest extends RpcAcsRequest<RestoreModelResponse> {
 
 	private String appId;
 
+	private String moduleId;
+
 	private String schemaVersion;
 	public RestoreModelRequest() {
 		super("miniapplcdp", "2020-01-13", "RestoreModel");
@@ -53,6 +55,17 @@ public class RestoreModelRequest extends RpcAcsRequest<RestoreModelResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

@@ -26,17 +26,19 @@ public class CloneAppResponseUnmarshaller {
 		cloneAppResponse.setRequestId(_ctx.stringValue("CloneAppResponse.RequestId"));
 
 		Data data = new Data();
-		data.setAppStatus(_ctx.stringValue("CloneAppResponse.Data.AppStatus"));
-		data.setAppName(_ctx.stringValue("CloneAppResponse.Data.AppName"));
-		data.setIsTemplate(_ctx.booleanValue("CloneAppResponse.Data.IsTemplate"));
-		data.setModifiedTime(_ctx.stringValue("CloneAppResponse.Data.ModifiedTime"));
+		data.setAppId(_ctx.stringValue("CloneAppResponse.Data.AppId"));
 		data.setDescription(_ctx.stringValue("CloneAppResponse.Data.Description"));
 		data.setCreateTime(_ctx.stringValue("CloneAppResponse.Data.CreateTime"));
-		data.setAppId(_ctx.stringValue("CloneAppResponse.Data.AppId"));
+		data.setModifiedTime(_ctx.stringValue("CloneAppResponse.Data.ModifiedTime"));
 		data.setIcon(_ctx.stringValue("CloneAppResponse.Data.Icon"));
-		data.setAppType(_ctx.stringValue("CloneAppResponse.Data.AppType"));
-		data.setSource(_ctx.stringValue("CloneAppResponse.Data.Source"));
+		data.setIsTemplate(_ctx.booleanValue("CloneAppResponse.Data.IsTemplate"));
 		data.setLastEditTime(_ctx.stringValue("CloneAppResponse.Data.LastEditTime"));
+		data.setMainModuleId(_ctx.stringValue("CloneAppResponse.Data.MainModuleId"));
+		data.setAppName(_ctx.stringValue("CloneAppResponse.Data.AppName"));
+		data.setSchemaVersion(_ctx.stringValue("CloneAppResponse.Data.SchemaVersion"));
+		data.setSource(_ctx.stringValue("CloneAppResponse.Data.Source"));
+		data.setAppStatus(_ctx.stringValue("CloneAppResponse.Data.AppStatus"));
+		data.setAppType(_ctx.stringValue("CloneAppResponse.Data.AppType"));
 		cloneAppResponse.setData(data);
 	 
 	 	return cloneAppResponse;

@@ -38,18 +38,17 @@ public class ListResourcesByPageResponseUnmarshaller {
 		List<ResourceItem> items = new ArrayList<ResourceItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourcesByPageResponse.Data.Items.Length"); i++) {
 			ResourceItem resourceItem = new ResourceItem();
-			resourceItem.setModuleId(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ModuleId"));
-			resourceItem.setCreateTime(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].CreateTime"));
-			resourceItem.setRevision(_ctx.integerValue("ListResourcesByPageResponse.Data.Items["+ i +"].Revision"));
-			resourceItem.setModifiedTime(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ModifiedTime"));
-			resourceItem.setResourceType(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ResourceType"));
-			resourceItem.setDescription(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].Description"));
-			resourceItem.setSchemaVersion(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].SchemaVersion"));
 			resourceItem.setAppId(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].AppId"));
-			resourceItem.setScope(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].Scope"));
-			resourceItem.setResourceId(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ResourceId"));
 			resourceItem.setContent(_ctx.mapValue("ListResourcesByPageResponse.Data.Items["+ i +"].Content"));
+			resourceItem.setCreateTime(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].CreateTime"));
+			resourceItem.setDescription(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].Description"));
+			resourceItem.setModifiedTime(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ModifiedTime"));
+			resourceItem.setModuleId(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ModuleId"));
 			resourceItem.setResourceName(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ResourceName"));
+			resourceItem.setResourceId(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ResourceId"));
+			resourceItem.setRevision(_ctx.integerValue("ListResourcesByPageResponse.Data.Items["+ i +"].Revision"));
+			resourceItem.setSchemaVersion(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].SchemaVersion"));
+			resourceItem.setResourceType(_ctx.stringValue("ListResourcesByPageResponse.Data.Items["+ i +"].ResourceType"));
 
 			items.add(resourceItem);
 		}

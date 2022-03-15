@@ -26,12 +26,12 @@ public class CreateDomainResponseUnmarshaller {
 		createDomainResponse.setRequestId(_ctx.stringValue("CreateDomainResponse.RequestId"));
 
 		Data data = new Data();
-		data.setApplied(_ctx.booleanValue("CreateDomainResponse.Data.Applied"));
-		data.setDomain(_ctx.stringValue("CreateDomainResponse.Data.Domain"));
 		data.setAppId(_ctx.stringValue("CreateDomainResponse.Data.AppId"));
-		data.setPath(_ctx.stringValue("CreateDomainResponse.Data.Path"));
+		data.setApplied(_ctx.booleanValue("CreateDomainResponse.Data.Applied"));
 		data.setDeleted(_ctx.booleanValue("CreateDomainResponse.Data.Deleted"));
+		data.setDomain(_ctx.stringValue("CreateDomainResponse.Data.Domain"));
 		data.setEnvId(_ctx.stringValue("CreateDomainResponse.Data.EnvId"));
+		data.setPath(_ctx.stringValue("CreateDomainResponse.Data.Path"));
 		data.setDomainType(_ctx.stringValue("CreateDomainResponse.Data.DomainType"));
 		createDomainResponse.setData(data);
 	 

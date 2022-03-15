@@ -14,6 +14,7 @@
 
 package com.aliyuncs.miniapplcdp.model.v20200113;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.miniapplcdp.transform.v20200113.GetLatestCommitResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -46,34 +47,44 @@ public class GetLatestCommitResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String commitType;
-
-		private String modifiedTime;
+		private String appId;
 
 		private String commitId;
 
-		private String appId;
-
 		private String createTime;
-
-		private String rollbackToCommitId;
 
 		private String commitLog;
 
-		public String getCommitType() {
-			return this.commitType;
+		private String mainModuleCommitId;
+
+		private String mainModuleId;
+
+		private String modelDataPath;
+
+		private Map<Object,Object> modelDigest;
+
+		private String modifiedTime;
+
+		private String moduleId;
+
+		private String resourceDataPath;
+
+		private Map<Object,Object> resourceDigest;
+
+		private String rollbackToCommitId;
+
+		private String rollbackType;
+
+		private String schemaVersion;
+
+		private String commitType;
+
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setCommitType(String commitType) {
-			this.commitType = commitType;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public String getCommitId() {
@@ -84,20 +95,84 @@ public class GetLatestCommitResponse extends AcsResponse {
 			this.commitId = commitId;
 		}
 
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getCommitLog() {
+			return this.commitLog;
+		}
+
+		public void setCommitLog(String commitLog) {
+			this.commitLog = commitLog;
+		}
+
+		public String getMainModuleCommitId() {
+			return this.mainModuleCommitId;
+		}
+
+		public void setMainModuleCommitId(String mainModuleCommitId) {
+			this.mainModuleCommitId = mainModuleCommitId;
+		}
+
+		public String getMainModuleId() {
+			return this.mainModuleId;
+		}
+
+		public void setMainModuleId(String mainModuleId) {
+			this.mainModuleId = mainModuleId;
+		}
+
+		public String getModelDataPath() {
+			return this.modelDataPath;
+		}
+
+		public void setModelDataPath(String modelDataPath) {
+			this.modelDataPath = modelDataPath;
+		}
+
+		public Map<Object,Object> getModelDigest() {
+			return this.modelDigest;
+		}
+
+		public void setModelDigest(Map<Object,Object> modelDigest) {
+			this.modelDigest = modelDigest;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getModuleId() {
+			return this.moduleId;
+		}
+
+		public void setModuleId(String moduleId) {
+			this.moduleId = moduleId;
+		}
+
+		public String getResourceDataPath() {
+			return this.resourceDataPath;
+		}
+
+		public void setResourceDataPath(String resourceDataPath) {
+			this.resourceDataPath = resourceDataPath;
+		}
+
+		public Map<Object,Object> getResourceDigest() {
+			return this.resourceDigest;
+		}
+
+		public void setResourceDigest(Map<Object,Object> resourceDigest) {
+			this.resourceDigest = resourceDigest;
 		}
 
 		public String getRollbackToCommitId() {
@@ -108,12 +183,28 @@ public class GetLatestCommitResponse extends AcsResponse {
 			this.rollbackToCommitId = rollbackToCommitId;
 		}
 
-		public String getCommitLog() {
-			return this.commitLog;
+		public String getRollbackType() {
+			return this.rollbackType;
 		}
 
-		public void setCommitLog(String commitLog) {
-			this.commitLog = commitLog;
+		public void setRollbackType(String rollbackType) {
+			this.rollbackType = rollbackType;
+		}
+
+		public String getSchemaVersion() {
+			return this.schemaVersion;
+		}
+
+		public void setSchemaVersion(String schemaVersion) {
+			this.schemaVersion = schemaVersion;
+		}
+
+		public String getCommitType() {
+			return this.commitType;
+		}
+
+		public void setCommitType(String commitType) {
+			this.commitType = commitType;
 		}
 	}
 

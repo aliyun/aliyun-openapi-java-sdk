@@ -47,30 +47,30 @@ public class GetDomainOverviewResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String domain;
+		private String appId;
 
 		private Boolean applied;
 
 		private Map<Object,Object> certificate;
 
-		private String appId;
-
-		private String path;
+		private String cname;
 
 		private Boolean deleted;
 
+		private String domain;
+
 		private String envId;
 
-		private String cname;
+		private String path;
 
 		private String domainType;
 
-		public String getDomain() {
-			return this.domain;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setDomain(String domain) {
-			this.domain = domain;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public Boolean getApplied() {
@@ -89,20 +89,12 @@ public class GetDomainOverviewResponse extends AcsResponse {
 			this.certificate = certificate;
 		}
 
-		public String getAppId() {
-			return this.appId;
+		public String getCname() {
+			return this.cname;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public String getPath() {
-			return this.path;
-		}
-
-		public void setPath(String path) {
-			this.path = path;
+		public void setCname(String cname) {
+			this.cname = cname;
 		}
 
 		public Boolean getDeleted() {
@@ -113,6 +105,14 @@ public class GetDomainOverviewResponse extends AcsResponse {
 			this.deleted = deleted;
 		}
 
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
 		public String getEnvId() {
 			return this.envId;
 		}
@@ -121,12 +121,12 @@ public class GetDomainOverviewResponse extends AcsResponse {
 			this.envId = envId;
 		}
 
-		public String getCname() {
-			return this.cname;
+		public String getPath() {
+			return this.path;
 		}
 
-		public void setCname(String cname) {
-			this.cname = cname;
+		public void setPath(String path) {
+			this.path = path;
 		}
 
 		public String getDomainType() {

@@ -26,8 +26,8 @@ public class GetAppSecretResponseUnmarshaller {
 		getAppSecretResponse.setRequestId(_ctx.stringValue("GetAppSecretResponse.RequestId"));
 
 		Data data = new Data();
-		data.setAppSecret(_ctx.stringValue("GetAppSecretResponse.Data.AppSecret"));
 		data.setAppId(_ctx.stringValue("GetAppSecretResponse.Data.AppId"));
+		data.setAppSecret(_ctx.stringValue("GetAppSecretResponse.Data.AppSecret"));
 		getAppSecretResponse.setData(data);
 	 
 	 	return getAppSecretResponse;

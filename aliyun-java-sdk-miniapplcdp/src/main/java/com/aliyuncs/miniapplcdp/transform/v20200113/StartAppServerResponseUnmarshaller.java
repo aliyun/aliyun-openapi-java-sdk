@@ -26,8 +26,8 @@ public class StartAppServerResponseUnmarshaller {
 		startAppServerResponse.setRequestId(_ctx.stringValue("StartAppServerResponse.RequestId"));
 
 		Data data = new Data();
-		data.setEnvId(_ctx.stringValue("StartAppServerResponse.Data.EnvId"));
 		data.setAppId(_ctx.stringValue("StartAppServerResponse.Data.AppId"));
+		data.setEnvId(_ctx.stringValue("StartAppServerResponse.Data.EnvId"));
 		data.setAppServerStatus(_ctx.stringValue("StartAppServerResponse.Data.AppServerStatus"));
 		startAppServerResponse.setData(data);
 	 

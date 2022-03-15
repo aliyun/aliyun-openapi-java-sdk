@@ -26,12 +26,17 @@ public class UpdateModuleResponseUnmarshaller {
 		updateModuleResponse.setRequestId(_ctx.stringValue("UpdateModuleResponse.RequestId"));
 
 		Data data = new Data();
-		data.setModuleName(_ctx.stringValue("UpdateModuleResponse.Data.ModuleName"));
-		data.setModifiedTime(_ctx.stringValue("UpdateModuleResponse.Data.ModifiedTime"));
-		data.setModuleId(_ctx.stringValue("UpdateModuleResponse.Data.ModuleId"));
 		data.setDescription(_ctx.stringValue("UpdateModuleResponse.Data.Description"));
 		data.setCreateTime(_ctx.stringValue("UpdateModuleResponse.Data.CreateTime"));
-		data.setTargetAppSource(_ctx.stringValue("UpdateModuleResponse.Data.TargetAppSource"));
+		data.setModifiedTime(_ctx.stringValue("UpdateModuleResponse.Data.ModifiedTime"));
+		data.setIcon(_ctx.stringValue("UpdateModuleResponse.Data.Icon"));
+		data.setLatestPublishedCommit(_ctx.stringValue("UpdateModuleResponse.Data.LatestPublishedCommit"));
+		data.setLatestPublishedVersion(_ctx.stringValue("UpdateModuleResponse.Data.LatestPublishedVersion"));
+		data.setMinimumPlatformVersion(_ctx.stringValue("UpdateModuleResponse.Data.MinimumPlatformVersion"));
+		data.setModuleId(_ctx.stringValue("UpdateModuleResponse.Data.ModuleId"));
+		data.setModuleName(_ctx.stringValue("UpdateModuleResponse.Data.ModuleName"));
+		data.setOwnerUserId(_ctx.stringValue("UpdateModuleResponse.Data.OwnerUserId"));
+		data.setPlatform(_ctx.stringValue("UpdateModuleResponse.Data.Platform"));
 		updateModuleResponse.setData(data);
 	 
 	 	return updateModuleResponse;

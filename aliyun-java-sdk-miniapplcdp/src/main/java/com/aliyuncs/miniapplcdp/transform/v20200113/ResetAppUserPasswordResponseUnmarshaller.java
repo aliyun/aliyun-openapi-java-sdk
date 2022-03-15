@@ -26,8 +26,8 @@ public class ResetAppUserPasswordResponseUnmarshaller {
 		resetAppUserPasswordResponse.setRequestId(_ctx.stringValue("ResetAppUserPasswordResponse.RequestId"));
 
 		Data data = new Data();
-		data.setUserName(_ctx.stringValue("ResetAppUserPasswordResponse.Data.UserName"));
 		data.setPassword(_ctx.stringValue("ResetAppUserPasswordResponse.Data.Password"));
+		data.setUserName(_ctx.stringValue("ResetAppUserPasswordResponse.Data.UserName"));
 		resetAppUserPasswordResponse.setData(data);
 	 
 	 	return resetAppUserPasswordResponse;

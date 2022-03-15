@@ -35,20 +35,28 @@ public class ListModelsResponseUnmarshaller {
 		List<ModelItem> items = new ArrayList<ModelItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListModelsResponse.Data.Items.Length"); i++) {
 			ModelItem modelItem = new ModelItem();
-			modelItem.setCreateTime(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].CreateTime"));
-			modelItem.setModelType(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelType"));
-			modelItem.setSubType(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].SubType"));
-			modelItem.setRevision(_ctx.integerValue("ListModelsResponse.Data.Items["+ i +"].Revision"));
-			modelItem.setModifiedTime(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModifiedTime"));
-			modelItem.setDescription(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].Description"));
-			modelItem.setSchemaVersion(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].SchemaVersion"));
 			modelItem.setAppId(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].AppId"));
-			modelItem.setProps(_ctx.mapValue("ListModelsResponse.Data.Items["+ i +"].Props"));
-			modelItem.setModelStatus(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelStatus"));
-			modelItem.setModelName(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelName"));
 			modelItem.setContent(_ctx.mapValue("ListModelsResponse.Data.Items["+ i +"].Content"));
+			modelItem.setCreateTime(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].CreateTime"));
+			modelItem.setDescription(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].Description"));
 			modelItem.setId(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].Id"));
+			modelItem.setLinkModelId(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].LinkModelId"));
+			modelItem.setLinkModuleId(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].LinkModuleId"));
+			modelItem.setLinked(_ctx.booleanValue("ListModelsResponse.Data.Items["+ i +"].Linked"));
 			modelItem.setModelId(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelId"));
+			modelItem.setModifiedTime(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModifiedTime"));
+			modelItem.setModuleId(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModuleId"));
+			modelItem.setModelName(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelName"));
+			modelItem.setProps(_ctx.mapValue("ListModelsResponse.Data.Items["+ i +"].Props"));
+			modelItem.setRevision(_ctx.integerValue("ListModelsResponse.Data.Items["+ i +"].Revision"));
+			modelItem.setSchemaVersion(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].SchemaVersion"));
+			modelItem.setModelStatus(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelStatus"));
+			modelItem.setSubType(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].SubType"));
+			modelItem.setModelType(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].ModelType"));
+			modelItem.setVisibility(_ctx.stringValue("ListModelsResponse.Data.Items["+ i +"].Visibility"));
+
+			List<Map<Object, Object>> attributes = _ctx.listMapValue("ListModelsResponse.Data.Items["+ i +"].Attributes");
+			modelItem.setAttributes(attributes);
 
 			items.add(modelItem);
 		}

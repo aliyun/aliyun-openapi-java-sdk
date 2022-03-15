@@ -23,22 +23,9 @@ import com.aliyuncs.http.MethodType;
  */
 public class GenerateAuthTokenRequest extends RpcAcsRequest<GenerateAuthTokenResponse> {
 	   
-
-	private String appId;
 	public GenerateAuthTokenRequest() {
 		super("miniapplcdp", "2020-01-13", "GenerateAuthToken");
 		setMethod(MethodType.POST);
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
 	}
 
 	@Override

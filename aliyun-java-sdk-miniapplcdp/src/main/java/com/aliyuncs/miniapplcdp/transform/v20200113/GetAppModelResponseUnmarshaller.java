@@ -14,6 +14,9 @@
 
 package com.aliyuncs.miniapplcdp.transform.v20200113;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.miniapplcdp.model.v20200113.GetAppModelResponse;
 import com.aliyuncs.miniapplcdp.model.v20200113.GetAppModelResponse.Data;
 import java.util.Map;
@@ -27,20 +30,28 @@ public class GetAppModelResponseUnmarshaller {
 		getAppModelResponse.setRequestId(_ctx.stringValue("GetAppModelResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCreateTime(_ctx.stringValue("GetAppModelResponse.Data.CreateTime"));
-		data.setModelType(_ctx.stringValue("GetAppModelResponse.Data.ModelType"));
-		data.setSubType(_ctx.stringValue("GetAppModelResponse.Data.SubType"));
-		data.setRevision(_ctx.integerValue("GetAppModelResponse.Data.Revision"));
-		data.setModifiedTime(_ctx.stringValue("GetAppModelResponse.Data.ModifiedTime"));
-		data.setDescription(_ctx.stringValue("GetAppModelResponse.Data.Description"));
-		data.setSchemaVersion(_ctx.stringValue("GetAppModelResponse.Data.SchemaVersion"));
 		data.setAppId(_ctx.stringValue("GetAppModelResponse.Data.AppId"));
-		data.setProps(_ctx.mapValue("GetAppModelResponse.Data.Props"));
-		data.setModelStatus(_ctx.stringValue("GetAppModelResponse.Data.ModelStatus"));
-		data.setModelName(_ctx.stringValue("GetAppModelResponse.Data.ModelName"));
 		data.setContent(_ctx.mapValue("GetAppModelResponse.Data.Content"));
+		data.setCreateTime(_ctx.stringValue("GetAppModelResponse.Data.CreateTime"));
+		data.setDescription(_ctx.stringValue("GetAppModelResponse.Data.Description"));
 		data.setId(_ctx.stringValue("GetAppModelResponse.Data.Id"));
+		data.setLinkModelId(_ctx.stringValue("GetAppModelResponse.Data.LinkModelId"));
+		data.setLinkModuleId(_ctx.stringValue("GetAppModelResponse.Data.LinkModuleId"));
+		data.setLinked(_ctx.booleanValue("GetAppModelResponse.Data.Linked"));
 		data.setModelId(_ctx.stringValue("GetAppModelResponse.Data.ModelId"));
+		data.setModifiedTime(_ctx.stringValue("GetAppModelResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("GetAppModelResponse.Data.ModuleId"));
+		data.setModelName(_ctx.stringValue("GetAppModelResponse.Data.ModelName"));
+		data.setProps(_ctx.mapValue("GetAppModelResponse.Data.Props"));
+		data.setRevision(_ctx.integerValue("GetAppModelResponse.Data.Revision"));
+		data.setSchemaVersion(_ctx.stringValue("GetAppModelResponse.Data.SchemaVersion"));
+		data.setModelStatus(_ctx.stringValue("GetAppModelResponse.Data.ModelStatus"));
+		data.setSubType(_ctx.stringValue("GetAppModelResponse.Data.SubType"));
+		data.setModelType(_ctx.stringValue("GetAppModelResponse.Data.ModelType"));
+		data.setVisibility(_ctx.stringValue("GetAppModelResponse.Data.Visibility"));
+
+		List<Map<Object, Object>> attributes = _ctx.listMapValue("GetAppModelResponse.Data.Attributes");
+		data.setAttributes(attributes);
 		getAppModelResponse.setData(data);
 	 
 	 	return getAppModelResponse;

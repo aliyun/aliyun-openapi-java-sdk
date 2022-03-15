@@ -27,18 +27,17 @@ public class GetResourceResponseUnmarshaller {
 		getResourceResponse.setRequestId(_ctx.stringValue("GetResourceResponse.RequestId"));
 
 		Data data = new Data();
-		data.setModuleId(_ctx.stringValue("GetResourceResponse.Data.ModuleId"));
-		data.setCreateTime(_ctx.stringValue("GetResourceResponse.Data.CreateTime"));
-		data.setRevision(_ctx.integerValue("GetResourceResponse.Data.Revision"));
-		data.setModifiedTime(_ctx.stringValue("GetResourceResponse.Data.ModifiedTime"));
-		data.setResourceType(_ctx.stringValue("GetResourceResponse.Data.ResourceType"));
-		data.setDescription(_ctx.stringValue("GetResourceResponse.Data.Description"));
-		data.setSchemaVersion(_ctx.stringValue("GetResourceResponse.Data.SchemaVersion"));
 		data.setAppId(_ctx.stringValue("GetResourceResponse.Data.AppId"));
-		data.setScope(_ctx.stringValue("GetResourceResponse.Data.Scope"));
-		data.setResourceId(_ctx.stringValue("GetResourceResponse.Data.ResourceId"));
 		data.setContent(_ctx.mapValue("GetResourceResponse.Data.Content"));
+		data.setCreateTime(_ctx.stringValue("GetResourceResponse.Data.CreateTime"));
+		data.setDescription(_ctx.stringValue("GetResourceResponse.Data.Description"));
+		data.setModifiedTime(_ctx.stringValue("GetResourceResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("GetResourceResponse.Data.ModuleId"));
 		data.setResourceName(_ctx.stringValue("GetResourceResponse.Data.ResourceName"));
+		data.setResourceId(_ctx.stringValue("GetResourceResponse.Data.ResourceId"));
+		data.setRevision(_ctx.integerValue("GetResourceResponse.Data.Revision"));
+		data.setSchemaVersion(_ctx.stringValue("GetResourceResponse.Data.SchemaVersion"));
+		data.setResourceType(_ctx.stringValue("GetResourceResponse.Data.ResourceType"));
 		getResourceResponse.setData(data);
 	 
 	 	return getResourceResponse;

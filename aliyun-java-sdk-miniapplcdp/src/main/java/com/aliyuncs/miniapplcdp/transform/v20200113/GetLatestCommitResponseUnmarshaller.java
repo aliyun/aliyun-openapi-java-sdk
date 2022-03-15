@@ -16,6 +16,7 @@ package com.aliyuncs.miniapplcdp.transform.v20200113;
 
 import com.aliyuncs.miniapplcdp.model.v20200113.GetLatestCommitResponse;
 import com.aliyuncs.miniapplcdp.model.v20200113.GetLatestCommitResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,13 +27,22 @@ public class GetLatestCommitResponseUnmarshaller {
 		getLatestCommitResponse.setRequestId(_ctx.stringValue("GetLatestCommitResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCommitType(_ctx.stringValue("GetLatestCommitResponse.Data.CommitType"));
-		data.setModifiedTime(_ctx.stringValue("GetLatestCommitResponse.Data.ModifiedTime"));
-		data.setCommitId(_ctx.stringValue("GetLatestCommitResponse.Data.CommitId"));
 		data.setAppId(_ctx.stringValue("GetLatestCommitResponse.Data.AppId"));
+		data.setCommitId(_ctx.stringValue("GetLatestCommitResponse.Data.CommitId"));
 		data.setCreateTime(_ctx.stringValue("GetLatestCommitResponse.Data.CreateTime"));
-		data.setRollbackToCommitId(_ctx.stringValue("GetLatestCommitResponse.Data.RollbackToCommitId"));
 		data.setCommitLog(_ctx.stringValue("GetLatestCommitResponse.Data.CommitLog"));
+		data.setMainModuleCommitId(_ctx.stringValue("GetLatestCommitResponse.Data.MainModuleCommitId"));
+		data.setMainModuleId(_ctx.stringValue("GetLatestCommitResponse.Data.MainModuleId"));
+		data.setModelDataPath(_ctx.stringValue("GetLatestCommitResponse.Data.ModelDataPath"));
+		data.setModelDigest(_ctx.mapValue("GetLatestCommitResponse.Data.ModelDigest"));
+		data.setModifiedTime(_ctx.stringValue("GetLatestCommitResponse.Data.ModifiedTime"));
+		data.setModuleId(_ctx.stringValue("GetLatestCommitResponse.Data.ModuleId"));
+		data.setResourceDataPath(_ctx.stringValue("GetLatestCommitResponse.Data.ResourceDataPath"));
+		data.setResourceDigest(_ctx.mapValue("GetLatestCommitResponse.Data.ResourceDigest"));
+		data.setRollbackToCommitId(_ctx.stringValue("GetLatestCommitResponse.Data.RollbackToCommitId"));
+		data.setRollbackType(_ctx.stringValue("GetLatestCommitResponse.Data.RollbackType"));
+		data.setSchemaVersion(_ctx.stringValue("GetLatestCommitResponse.Data.SchemaVersion"));
+		data.setCommitType(_ctx.stringValue("GetLatestCommitResponse.Data.CommitType"));
 		getLatestCommitResponse.setData(data);
 	 
 	 	return getLatestCommitResponse;

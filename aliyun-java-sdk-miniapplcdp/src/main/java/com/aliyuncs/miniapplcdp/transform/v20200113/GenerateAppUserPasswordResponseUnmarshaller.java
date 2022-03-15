@@ -26,8 +26,8 @@ public class GenerateAppUserPasswordResponseUnmarshaller {
 		generateAppUserPasswordResponse.setRequestId(_ctx.stringValue("GenerateAppUserPasswordResponse.RequestId"));
 
 		Data data = new Data();
-		data.setUserName(_ctx.stringValue("GenerateAppUserPasswordResponse.Data.UserName"));
 		data.setPassword(_ctx.stringValue("GenerateAppUserPasswordResponse.Data.Password"));
+		data.setUserName(_ctx.stringValue("GenerateAppUserPasswordResponse.Data.UserName"));
 		generateAppUserPasswordResponse.setData(data);
 	 
 	 	return generateAppUserPasswordResponse;

@@ -24,13 +24,19 @@ import com.aliyuncs.http.MethodType;
 public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 	   
 
+	private String linkModuleId;
+
 	private String encodeType;
+
+	private String visibility;
 
 	private String clientToken;
 
 	private String modelId;
 
 	private String modelName;
+
+	private String linkModelId;
 
 	private String description;
 
@@ -43,9 +49,24 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 	private String modelType;
 
 	private String appId;
+
+	private String moduleId;
+
+	private Boolean linked;
 	public CreateModelRequest() {
 		super("miniapplcdp", "2020-01-13", "CreateModel");
 		setMethod(MethodType.POST);
+	}
+
+	public String getLinkModuleId() {
+		return this.linkModuleId;
+	}
+
+	public void setLinkModuleId(String linkModuleId) {
+		this.linkModuleId = linkModuleId;
+		if(linkModuleId != null){
+			putQueryParameter("LinkModuleId", linkModuleId);
+		}
 	}
 
 	public String getEncodeType() {
@@ -56,6 +77,17 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 		this.encodeType = encodeType;
 		if(encodeType != null){
 			putQueryParameter("EncodeType", encodeType);
+		}
+	}
+
+	public String getVisibility() {
+		return this.visibility;
+	}
+
+	public void setVisibility(String visibility) {
+		this.visibility = visibility;
+		if(visibility != null){
+			putQueryParameter("Visibility", visibility);
 		}
 	}
 
@@ -89,6 +121,17 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 		this.modelName = modelName;
 		if(modelName != null){
 			putQueryParameter("ModelName", modelName);
+		}
+	}
+
+	public String getLinkModelId() {
+		return this.linkModelId;
+	}
+
+	public void setLinkModelId(String linkModelId) {
+		this.linkModelId = linkModelId;
+		if(linkModelId != null){
+			putQueryParameter("LinkModelId", linkModelId);
 		}
 	}
 
@@ -155,6 +198,28 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
+		}
+	}
+
+	public Boolean getLinked() {
+		return this.linked;
+	}
+
+	public void setLinked(Boolean linked) {
+		this.linked = linked;
+		if(linked != null){
+			putQueryParameter("Linked", linked.toString());
 		}
 	}
 

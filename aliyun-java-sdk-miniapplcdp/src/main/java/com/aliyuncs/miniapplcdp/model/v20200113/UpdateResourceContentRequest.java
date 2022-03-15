@@ -28,8 +28,6 @@ public class UpdateResourceContentRequest extends RpcAcsRequest<UpdateResourceCo
 
 	private String appId;
 
-	private String scope;
-
 	private String moduleId;
 
 	private String content;
@@ -57,17 +55,6 @@ public class UpdateResourceContentRequest extends RpcAcsRequest<UpdateResourceCo
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getScope() {
-		return this.scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-		if(scope != null){
-			putQueryParameter("Scope", scope);
 		}
 	}
 

@@ -48,36 +48,44 @@ public class GetCommitResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String commitType;
-
-		private String modifiedTime;
+		private String appId;
 
 		private String commitId;
 
-		private String appId;
-
 		private String createTime;
-
-		private String rollbackToCommitId;
 
 		private String commitLog;
 
+		private String mainModuleCommitId;
+
+		private String mainModuleId;
+
+		private String modelDataPath;
+
+		private String modifiedTime;
+
+		private String moduleId;
+
+		private String resourceDataPath;
+
+		private String rollbackToCommitId;
+
+		private String rollbackType;
+
+		private String schemaVersion;
+
+		private String commitType;
+
 		private List<Map<Object,Object>> modelPack;
 
-		public String getCommitType() {
-			return this.commitType;
+		private List<Map<Object,Object>> resourcePack;
+
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setCommitType(String commitType) {
-			this.commitType = commitType;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public String getCommitId() {
@@ -88,28 +96,12 @@ public class GetCommitResponse extends AcsResponse {
 			this.commitId = commitId;
 		}
 
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getRollbackToCommitId() {
-			return this.rollbackToCommitId;
-		}
-
-		public void setRollbackToCommitId(String rollbackToCommitId) {
-			this.rollbackToCommitId = rollbackToCommitId;
 		}
 
 		public String getCommitLog() {
@@ -120,12 +112,100 @@ public class GetCommitResponse extends AcsResponse {
 			this.commitLog = commitLog;
 		}
 
+		public String getMainModuleCommitId() {
+			return this.mainModuleCommitId;
+		}
+
+		public void setMainModuleCommitId(String mainModuleCommitId) {
+			this.mainModuleCommitId = mainModuleCommitId;
+		}
+
+		public String getMainModuleId() {
+			return this.mainModuleId;
+		}
+
+		public void setMainModuleId(String mainModuleId) {
+			this.mainModuleId = mainModuleId;
+		}
+
+		public String getModelDataPath() {
+			return this.modelDataPath;
+		}
+
+		public void setModelDataPath(String modelDataPath) {
+			this.modelDataPath = modelDataPath;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getModuleId() {
+			return this.moduleId;
+		}
+
+		public void setModuleId(String moduleId) {
+			this.moduleId = moduleId;
+		}
+
+		public String getResourceDataPath() {
+			return this.resourceDataPath;
+		}
+
+		public void setResourceDataPath(String resourceDataPath) {
+			this.resourceDataPath = resourceDataPath;
+		}
+
+		public String getRollbackToCommitId() {
+			return this.rollbackToCommitId;
+		}
+
+		public void setRollbackToCommitId(String rollbackToCommitId) {
+			this.rollbackToCommitId = rollbackToCommitId;
+		}
+
+		public String getRollbackType() {
+			return this.rollbackType;
+		}
+
+		public void setRollbackType(String rollbackType) {
+			this.rollbackType = rollbackType;
+		}
+
+		public String getSchemaVersion() {
+			return this.schemaVersion;
+		}
+
+		public void setSchemaVersion(String schemaVersion) {
+			this.schemaVersion = schemaVersion;
+		}
+
+		public String getCommitType() {
+			return this.commitType;
+		}
+
+		public void setCommitType(String commitType) {
+			this.commitType = commitType;
+		}
+
 		public List<Map<Object,Object>> getModelPack() {
 			return this.modelPack;
 		}
 
 		public void setModelPack(List<Map<Object,Object>> modelPack) {
 			this.modelPack = modelPack;
+		}
+
+		public List<Map<Object,Object>> getResourcePack() {
+			return this.resourcePack;
+		}
+
+		public void setResourcePack(List<Map<Object,Object>> resourcePack) {
+			this.resourcePack = resourcePack;
 		}
 	}
 

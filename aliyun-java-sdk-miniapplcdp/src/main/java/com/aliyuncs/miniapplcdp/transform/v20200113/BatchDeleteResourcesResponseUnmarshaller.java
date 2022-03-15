@@ -35,18 +35,17 @@ public class BatchDeleteResourcesResponseUnmarshaller {
 		List<ResourceItem> items = new ArrayList<ResourceItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchDeleteResourcesResponse.Data.Items.Length"); i++) {
 			ResourceItem resourceItem = new ResourceItem();
-			resourceItem.setModuleId(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ModuleId"));
-			resourceItem.setCreateTime(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].CreateTime"));
-			resourceItem.setRevision(_ctx.integerValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].Revision"));
-			resourceItem.setModifiedTime(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ModifiedTime"));
-			resourceItem.setResourceType(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ResourceType"));
-			resourceItem.setDescription(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].Description"));
-			resourceItem.setSchemaVersion(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].SchemaVersion"));
 			resourceItem.setAppId(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].AppId"));
-			resourceItem.setScope(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].Scope"));
-			resourceItem.setResourceId(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ResourceId"));
 			resourceItem.setContent(_ctx.mapValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].Content"));
+			resourceItem.setCreateTime(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].CreateTime"));
+			resourceItem.setDescription(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].Description"));
+			resourceItem.setModifiedTime(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ModifiedTime"));
+			resourceItem.setModuleId(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ModuleId"));
 			resourceItem.setResourceName(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ResourceName"));
+			resourceItem.setResourceId(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ResourceId"));
+			resourceItem.setRevision(_ctx.integerValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].Revision"));
+			resourceItem.setSchemaVersion(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].SchemaVersion"));
+			resourceItem.setResourceType(_ctx.stringValue("BatchDeleteResourcesResponse.Data.Items["+ i +"].ResourceType"));
 
 			items.add(resourceItem);
 		}

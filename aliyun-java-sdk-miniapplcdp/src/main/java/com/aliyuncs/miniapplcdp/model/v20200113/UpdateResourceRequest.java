@@ -32,8 +32,6 @@ public class UpdateResourceRequest extends RpcAcsRequest<UpdateResourceResponse>
 
 	private String appId;
 
-	private String scope;
-
 	private String resourceName;
 
 	private String moduleId;
@@ -83,17 +81,6 @@ public class UpdateResourceRequest extends RpcAcsRequest<UpdateResourceResponse>
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getScope() {
-		return this.scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-		if(scope != null){
-			putQueryParameter("Scope", scope);
 		}
 	}
 

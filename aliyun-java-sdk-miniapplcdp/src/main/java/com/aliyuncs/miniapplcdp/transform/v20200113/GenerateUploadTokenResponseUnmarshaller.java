@@ -27,10 +27,10 @@ public class GenerateUploadTokenResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setKey(_ctx.stringValue("GenerateUploadTokenResponse.Data.Key"));
-		data.setSignature(_ctx.stringValue("GenerateUploadTokenResponse.Data.Signature"));
-		data.setServerURL(_ctx.stringValue("GenerateUploadTokenResponse.Data.ServerURL"));
 		data.setOssAccessKeyId(_ctx.stringValue("GenerateUploadTokenResponse.Data.OssAccessKeyId"));
 		data.setPolicy(_ctx.stringValue("GenerateUploadTokenResponse.Data.Policy"));
+		data.setServerURL(_ctx.stringValue("GenerateUploadTokenResponse.Data.ServerURL"));
+		data.setSignature(_ctx.stringValue("GenerateUploadTokenResponse.Data.Signature"));
 		generateUploadTokenResponse.setData(data);
 	 
 	 	return generateUploadTokenResponse;

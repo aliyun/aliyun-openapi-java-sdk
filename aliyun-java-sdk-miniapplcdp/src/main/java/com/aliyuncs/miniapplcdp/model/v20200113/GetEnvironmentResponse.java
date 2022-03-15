@@ -46,36 +46,30 @@ public class GetEnvironmentResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String currentPublishId;
-
-		private String modifiedTime;
+		private String accountOpsEndpoint;
 
 		private String appId;
 
-		private String createTime;
+		private String currentPublishId;
 
 		private String endpoint;
 
 		private String envId;
 
-		private String envType;
+		private String createTime;
+
+		private String modifiedTime;
 
 		private String publishingId;
 
-		public String getCurrentPublishId() {
-			return this.currentPublishId;
+		private String envType;
+
+		public String getAccountOpsEndpoint() {
+			return this.accountOpsEndpoint;
 		}
 
-		public void setCurrentPublishId(String currentPublishId) {
-			this.currentPublishId = currentPublishId;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setAccountOpsEndpoint(String accountOpsEndpoint) {
+			this.accountOpsEndpoint = accountOpsEndpoint;
 		}
 
 		public String getAppId() {
@@ -86,12 +80,12 @@ public class GetEnvironmentResponse extends AcsResponse {
 			this.appId = appId;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getCurrentPublishId() {
+			return this.currentPublishId;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setCurrentPublishId(String currentPublishId) {
+			this.currentPublishId = currentPublishId;
 		}
 
 		public String getEndpoint() {
@@ -110,12 +104,20 @@ public class GetEnvironmentResponse extends AcsResponse {
 			this.envId = envId;
 		}
 
-		public String getEnvType() {
-			return this.envType;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setEnvType(String envType) {
-			this.envType = envType;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getPublishingId() {
@@ -124,6 +126,14 @@ public class GetEnvironmentResponse extends AcsResponse {
 
 		public void setPublishingId(String publishingId) {
 			this.publishingId = publishingId;
+		}
+
+		public String getEnvType() {
+			return this.envType;
+		}
+
+		public void setEnvType(String envType) {
+			this.envType = envType;
 		}
 	}
 

@@ -28,6 +28,8 @@ public class ListCommitsRequest extends RpcAcsRequest<ListCommitsResponse> {
 
 	private Integer pageSize;
 
+	private String moduleId;
+
 	private Integer pageNumber;
 	public ListCommitsRequest() {
 		super("miniapplcdp", "2020-01-13", "ListCommits");
@@ -53,6 +55,17 @@ public class ListCommitsRequest extends RpcAcsRequest<ListCommitsResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getModuleId() {
+		return this.moduleId;
+	}
+
+	public void setModuleId(String moduleId) {
+		this.moduleId = moduleId;
+		if(moduleId != null){
+			putQueryParameter("ModuleId", moduleId);
 		}
 	}
 

@@ -60,42 +60,42 @@ public class ListEnvironmentOverviewsResponse extends AcsResponse {
 
 		public static class EnvironmentItem {
 
-			private String modifiedTime;
-
-			private String envStatus;
-
-			private Map<Object,Object> currentPublish;
-
-			private Map<Object,Object> opsRecord;
-
-			private String createTime;
-
 			private String appId;
-
-			private String endpoint;
-
-			private Map<Object,Object> publishing;
-
-			private String envId;
 
 			private Map<Object,Object> config;
 
+			private Map<Object,Object> currentPublish;
+
+			private String endpoint;
+
+			private String envId;
+
+			private String createTime;
+
+			private String modifiedTime;
+
+			private Map<Object,Object> opsRecord;
+
+			private Map<Object,Object> publishing;
+
+			private String envStatus;
+
 			private String envType;
 
-			public String getModifiedTime() {
-				return this.modifiedTime;
+			public String getAppId() {
+				return this.appId;
 			}
 
-			public void setModifiedTime(String modifiedTime) {
-				this.modifiedTime = modifiedTime;
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 
-			public String getEnvStatus() {
-				return this.envStatus;
+			public Map<Object,Object> getConfig() {
+				return this.config;
 			}
 
-			public void setEnvStatus(String envStatus) {
-				this.envStatus = envStatus;
+			public void setConfig(Map<Object,Object> config) {
+				this.config = config;
 			}
 
 			public Map<Object,Object> getCurrentPublish() {
@@ -106,44 +106,12 @@ public class ListEnvironmentOverviewsResponse extends AcsResponse {
 				this.currentPublish = currentPublish;
 			}
 
-			public Map<Object,Object> getOpsRecord() {
-				return this.opsRecord;
-			}
-
-			public void setOpsRecord(Map<Object,Object> opsRecord) {
-				this.opsRecord = opsRecord;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-
 			public String getEndpoint() {
 				return this.endpoint;
 			}
 
 			public void setEndpoint(String endpoint) {
 				this.endpoint = endpoint;
-			}
-
-			public Map<Object,Object> getPublishing() {
-				return this.publishing;
-			}
-
-			public void setPublishing(Map<Object,Object> publishing) {
-				this.publishing = publishing;
 			}
 
 			public String getEnvId() {
@@ -154,12 +122,44 @@ public class ListEnvironmentOverviewsResponse extends AcsResponse {
 				this.envId = envId;
 			}
 
-			public Map<Object,Object> getConfig() {
-				return this.config;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setConfig(Map<Object,Object> config) {
-				this.config = config;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getModifiedTime() {
+				return this.modifiedTime;
+			}
+
+			public void setModifiedTime(String modifiedTime) {
+				this.modifiedTime = modifiedTime;
+			}
+
+			public Map<Object,Object> getOpsRecord() {
+				return this.opsRecord;
+			}
+
+			public void setOpsRecord(Map<Object,Object> opsRecord) {
+				this.opsRecord = opsRecord;
+			}
+
+			public Map<Object,Object> getPublishing() {
+				return this.publishing;
+			}
+
+			public void setPublishing(Map<Object,Object> publishing) {
+				this.publishing = publishing;
+			}
+
+			public String getEnvStatus() {
+				return this.envStatus;
+			}
+
+			public void setEnvStatus(String envStatus) {
+				this.envStatus = envStatus;
 			}
 
 			public String getEnvType() {
