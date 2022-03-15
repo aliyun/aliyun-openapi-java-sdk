@@ -131,6 +131,8 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 
 		private String currentPipelineId;
 
+		private String appId;
+
 		private List<Pipeline> pipelines;
 
 		private List<String> coTargets;
@@ -269,6 +271,14 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 
 		public void setCurrentPipelineId(String currentPipelineId) {
 			this.currentPipelineId = currentPipelineId;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public List<Pipeline> getPipelines() {

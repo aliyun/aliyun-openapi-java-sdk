@@ -27,15 +27,15 @@ public class DescribeNamespacesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
+	private String message;
+
+	private String traceId;
 
 	private String errorCode;
 
-	private String message;
+	private String code;
 
 	private Boolean success;
-
-	private String traceId;
 
 	private Data data;
 
@@ -47,12 +47,20 @@ public class DescribeNamespacesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -63,12 +71,12 @@ public class DescribeNamespacesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,14 +85,6 @@ public class DescribeNamespacesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
 	}
 
 	public Data getData() {
@@ -99,9 +99,9 @@ public class DescribeNamespacesResponse extends AcsResponse {
 
 		private Integer currentPage;
 
-		private Integer pageSize;
-
 		private Integer totalSize;
+
+		private Integer pageSize;
 
 		private List<Namespace> namespaces;
 
@@ -113,20 +113,20 @@ public class DescribeNamespacesResponse extends AcsResponse {
 			this.currentPage = currentPage;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public Integer getTotalSize() {
 			return this.totalSize;
 		}
 
 		public void setTotalSize(Integer totalSize) {
 			this.totalSize = totalSize;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public List<Namespace> getNamespaces() {
@@ -139,21 +139,29 @@ public class DescribeNamespacesResponse extends AcsResponse {
 
 		public static class Namespace {
 
+			private String namespaceDescription;
+
 			private String accessKey;
+
+			private String secretKey;
+
+			private String namespaceId;
 
 			private String addressServerHost;
 
-			private String secretKey;
+			private String namespaceName;
 
 			private String tenantId;
 
 			private String regionId;
 
-			private String namespaceId;
+			public String getNamespaceDescription() {
+				return this.namespaceDescription;
+			}
 
-			private String namespaceName;
-
-			private String namespaceDescription;
+			public void setNamespaceDescription(String namespaceDescription) {
+				this.namespaceDescription = namespaceDescription;
+			}
 
 			public String getAccessKey() {
 				return this.accessKey;
@@ -161,6 +169,22 @@ public class DescribeNamespacesResponse extends AcsResponse {
 
 			public void setAccessKey(String accessKey) {
 				this.accessKey = accessKey;
+			}
+
+			public String getSecretKey() {
+				return this.secretKey;
+			}
+
+			public void setSecretKey(String secretKey) {
+				this.secretKey = secretKey;
+			}
+
+			public String getNamespaceId() {
+				return this.namespaceId;
+			}
+
+			public void setNamespaceId(String namespaceId) {
+				this.namespaceId = namespaceId;
 			}
 
 			public String getAddressServerHost() {
@@ -171,12 +195,12 @@ public class DescribeNamespacesResponse extends AcsResponse {
 				this.addressServerHost = addressServerHost;
 			}
 
-			public String getSecretKey() {
-				return this.secretKey;
+			public String getNamespaceName() {
+				return this.namespaceName;
 			}
 
-			public void setSecretKey(String secretKey) {
-				this.secretKey = secretKey;
+			public void setNamespaceName(String namespaceName) {
+				this.namespaceName = namespaceName;
 			}
 
 			public String getTenantId() {
@@ -193,30 +217,6 @@ public class DescribeNamespacesResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
-			}
-
-			public String getNamespaceId() {
-				return this.namespaceId;
-			}
-
-			public void setNamespaceId(String namespaceId) {
-				this.namespaceId = namespaceId;
-			}
-
-			public String getNamespaceName() {
-				return this.namespaceName;
-			}
-
-			public void setNamespaceName(String namespaceName) {
-				this.namespaceName = namespaceName;
-			}
-
-			public String getNamespaceDescription() {
-				return this.namespaceDescription;
-			}
-
-			public void setNamespaceDescription(String namespaceDescription) {
-				this.namespaceDescription = namespaceDescription;
 			}
 		}
 	}

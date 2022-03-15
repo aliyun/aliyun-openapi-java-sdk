@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGreyTagRouteResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String traceId;
 
@@ -39,20 +39,20 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getTraceId() {
@@ -97,27 +97,21 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String description;
-
 		private Long greyTagRouteId;
+
+		private String name;
+
+		private String description;
 
 		private Long createTime;
 
 		private Long updateTime;
 
-		private String name;
+		private String appId;
 
 		private List<ScRule> scRules;
 
 		private List<DubboRule> dubboRules;
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
 
 		public Long getGreyTagRouteId() {
 			return this.greyTagRouteId;
@@ -125,6 +119,22 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 		public void setGreyTagRouteId(Long greyTagRouteId) {
 			this.greyTagRouteId = greyTagRouteId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Long getCreateTime() {
@@ -143,12 +153,12 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public List<ScRule> getScRules() {
@@ -201,27 +211,19 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 			public static class Item {
 
-				private String name;
-
 				private Integer index;
 
 				private String expr;
 
-				private String type;
-
-				private String cond;
+				private String operator;
 
 				private String value;
 
-				private String operator;
+				private String cond;
 
-				public String getName() {
-					return this.name;
-				}
+				private String type;
 
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public Integer getIndex() {
 					return this.index;
@@ -239,20 +241,12 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 					this.expr = expr;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getOperator() {
+					return this.operator;
 				}
 
-				public void setType(String type) {
-					this.type = type;
-				}
-
-				public String getCond() {
-					return this.cond;
-				}
-
-				public void setCond(String cond) {
-					this.cond = cond;
+				public void setOperator(String operator) {
+					this.operator = operator;
 				}
 
 				public String getValue() {
@@ -263,45 +257,45 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 					this.value = value;
 				}
 
-				public String getOperator() {
-					return this.operator;
+				public String getCond() {
+					return this.cond;
 				}
 
-				public void setOperator(String operator) {
-					this.operator = operator;
+				public void setCond(String cond) {
+					this.cond = cond;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}
 
 		public static class DubboRule {
 
-			private String condition;
-
-			private String methodName;
-
 			private String serviceName;
-
-			private String version;
 
 			private String group;
 
+			private String version;
+
+			private String methodName;
+
+			private String condition;
+
 			private List<Item2> items1;
-
-			public String getCondition() {
-				return this.condition;
-			}
-
-			public void setCondition(String condition) {
-				this.condition = condition;
-			}
-
-			public String getMethodName() {
-				return this.methodName;
-			}
-
-			public void setMethodName(String methodName) {
-				this.methodName = methodName;
-			}
 
 			public String getServiceName() {
 				return this.serviceName;
@@ -309,6 +303,14 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 			public void setServiceName(String serviceName) {
 				this.serviceName = serviceName;
+			}
+
+			public String getGroup() {
+				return this.group;
+			}
+
+			public void setGroup(String group) {
+				this.group = group;
 			}
 
 			public String getVersion() {
@@ -319,12 +321,20 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 				this.version = version;
 			}
 
-			public String getGroup() {
-				return this.group;
+			public String getMethodName() {
+				return this.methodName;
 			}
 
-			public void setGroup(String group) {
-				this.group = group;
+			public void setMethodName(String methodName) {
+				this.methodName = methodName;
+			}
+
+			public String getCondition() {
+				return this.condition;
+			}
+
+			public void setCondition(String condition) {
+				this.condition = condition;
 			}
 
 			public List<Item2> getItems1() {
@@ -337,27 +347,19 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 			public static class Item2 {
 
-				private String name;
-
 				private Integer index;
 
 				private String expr;
 
-				private String type;
-
-				private String cond;
+				private String operator;
 
 				private String value;
 
-				private String operator;
+				private String cond;
 
-				public String getName() {
-					return this.name;
-				}
+				private String type;
 
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public Integer getIndex() {
 					return this.index;
@@ -375,20 +377,12 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 					this.expr = expr;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getOperator() {
+					return this.operator;
 				}
 
-				public void setType(String type) {
-					this.type = type;
-				}
-
-				public String getCond() {
-					return this.cond;
-				}
-
-				public void setCond(String cond) {
-					this.cond = cond;
+				public void setOperator(String operator) {
+					this.operator = operator;
 				}
 
 				public String getValue() {
@@ -399,12 +393,28 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 					this.value = value;
 				}
 
-				public String getOperator() {
-					return this.operator;
+				public String getCond() {
+					return this.cond;
 				}
 
-				public void setOperator(String operator) {
-					this.operator = operator;
+				public void setCond(String cond) {
+					this.cond = cond;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

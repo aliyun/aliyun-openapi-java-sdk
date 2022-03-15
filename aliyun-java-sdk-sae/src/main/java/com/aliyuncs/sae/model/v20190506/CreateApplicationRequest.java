@@ -37,6 +37,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String envs;
 
+	private String kafkaInstanceId;
+
 	private String phpArmsConfigLocation;
 
 	private String customHostAlias;
@@ -52,6 +54,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String configMapMountDesc;
 
 	private String ossMountDescs;
+
+	private String kafkaEndpoint;
 
 	private String preStop;
 
@@ -70,6 +74,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private Integer memory;
 
 	private String slsConfigs;
+
+	private Boolean openCollectToKafka;
 
 	private String commandArgs;
 
@@ -108,6 +114,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String jdk;
 
 	private String appDescription;
+
+	private String kafkaLogfileConfig;
 
 	private String acrInstanceId;
 
@@ -189,6 +197,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.envs = envs;
 		if(envs != null){
 			putQueryParameter("Envs", envs);
+		}
+	}
+
+	public String getKafkaInstanceId() {
+		return this.kafkaInstanceId;
+	}
+
+	public void setKafkaInstanceId(String kafkaInstanceId) {
+		this.kafkaInstanceId = kafkaInstanceId;
+		if(kafkaInstanceId != null){
+			putQueryParameter("KafkaInstanceId", kafkaInstanceId);
 		}
 	}
 
@@ -277,6 +296,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.ossMountDescs = ossMountDescs;
 		if(ossMountDescs != null){
 			putBodyParameter("OssMountDescs", ossMountDescs);
+		}
+	}
+
+	public String getKafkaEndpoint() {
+		return this.kafkaEndpoint;
+	}
+
+	public void setKafkaEndpoint(String kafkaEndpoint) {
+		this.kafkaEndpoint = kafkaEndpoint;
+		if(kafkaEndpoint != null){
+			putQueryParameter("KafkaEndpoint", kafkaEndpoint);
 		}
 	}
 
@@ -376,6 +406,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.slsConfigs = slsConfigs;
 		if(slsConfigs != null){
 			putQueryParameter("SlsConfigs", slsConfigs);
+		}
+	}
+
+	public Boolean getOpenCollectToKafka() {
+		return this.openCollectToKafka;
+	}
+
+	public void setOpenCollectToKafka(Boolean openCollectToKafka) {
+		this.openCollectToKafka = openCollectToKafka;
+		if(openCollectToKafka != null){
+			putQueryParameter("OpenCollectToKafka", openCollectToKafka.toString());
 		}
 	}
 
@@ -585,6 +626,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.appDescription = appDescription;
 		if(appDescription != null){
 			putQueryParameter("AppDescription", appDescription);
+		}
+	}
+
+	public String getKafkaLogfileConfig() {
+		return this.kafkaLogfileConfig;
+	}
+
+	public void setKafkaLogfileConfig(String kafkaLogfileConfig) {
+		this.kafkaLogfileConfig = kafkaLogfileConfig;
+		if(kafkaLogfileConfig != null){
+			putQueryParameter("KafkaLogfileConfig", kafkaLogfileConfig);
 		}
 	}
 

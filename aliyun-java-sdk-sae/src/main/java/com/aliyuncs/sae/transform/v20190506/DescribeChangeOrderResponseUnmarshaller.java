@@ -52,6 +52,7 @@ public class DescribeChangeOrderResponseUnmarshaller {
 		data.setCoType(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoType"));
 		data.setAuto(_ctx.booleanValue("DescribeChangeOrderResponse.Data.Auto"));
 		data.setCurrentPipelineId(_ctx.stringValue("DescribeChangeOrderResponse.Data.CurrentPipelineId"));
+		data.setAppId(_ctx.stringValue("DescribeChangeOrderResponse.Data.AppId"));
 
 		List<String> coTargets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeChangeOrderResponse.Data.CoTargets.Length"); i++) {

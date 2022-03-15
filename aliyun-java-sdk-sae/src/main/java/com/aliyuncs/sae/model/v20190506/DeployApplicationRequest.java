@@ -27,15 +27,51 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String nasId;
 
-	private String webContainer;
-
 	private String jarStartArgs;
+
+	private String ossAkSecret;
+
+	private String mountHost;
+
+	private Integer batchWaitTime;
+
+	private String envs;
+
+	private String kafkaInstanceId;
+
+	private String phpArmsConfigLocation;
+
+	private String customHostAlias;
+
+	private String jarStartOptions;
+
+	private String configMapMountDesc;
+
+	private String ossMountDescs;
+
+	private String kafkaEndpoint;
+
+	private String preStop;
+
+	private String updateStrategy;
+
+	private String changeOrderDesc;
+
+	private Integer minReadyInstanceRatio;
+
+	private Boolean autoEnableApplicationScalingRule;
+
+	private String postStart;
+
+	private Boolean associateEip;
+
+	private String webContainer;
 
 	private String enableAhas;
 
 	private String slsConfigs;
 
-	private String ossAkSecret;
+	private Boolean openCollectToKafka;
 
 	private String commandArgs;
 
@@ -45,27 +81,15 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String timezone;
 
-	private String mountHost;
-
-	private Integer batchWaitTime;
-
 	private String ossAkId;
 
 	private String liveness;
-
-	private String envs;
-
-	private String phpArmsConfigLocation;
 
 	private String packageVersion;
 
 	private String tomcatConfig;
 
-	private String customHostAlias;
-
 	private String warStartOptions;
-
-	private String jarStartOptions;
 
 	private String edasContainerVersion;
 
@@ -73,19 +97,11 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private Integer terminationGracePeriodSeconds;
 
-	private String configMapMountDesc;
-
-	private String ossMountDescs;
-
 	private String phpConfig;
-
-	private String preStop;
 
 	private Boolean enableGreyTagRoute;
 
 	private String command;
-
-	private String updateStrategy;
 
 	private String mountDesc;
 
@@ -93,7 +109,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private Integer minReadyInstances;
 
-	private String changeOrderDesc;
+	private String kafkaLogfileConfig;
 
 	private String acrInstanceId;
 
@@ -101,15 +117,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String imageUrl;
 
-	private Integer minReadyInstanceRatio;
-
-	private Boolean autoEnableApplicationScalingRule;
-
 	private String phpConfigLocation;
-
-	private String postStart;
-
-	private Boolean associateEip;
 	public DeployApplicationRequest() {
 		super("sae", "2019-05-06", "DeployApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/deployApplication");
@@ -131,17 +139,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getWebContainer() {
-		return this.webContainer;
-	}
-
-	public void setWebContainer(String webContainer) {
-		this.webContainer = webContainer;
-		if(webContainer != null){
-			putQueryParameter("WebContainer", webContainer);
-		}
-	}
-
 	public String getJarStartArgs() {
 		return this.jarStartArgs;
 	}
@@ -150,6 +147,215 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.jarStartArgs = jarStartArgs;
 		if(jarStartArgs != null){
 			putQueryParameter("JarStartArgs", jarStartArgs);
+		}
+	}
+
+	public String getOssAkSecret() {
+		return this.ossAkSecret;
+	}
+
+	public void setOssAkSecret(String ossAkSecret) {
+		this.ossAkSecret = ossAkSecret;
+		if(ossAkSecret != null){
+			putBodyParameter("OssAkSecret", ossAkSecret);
+		}
+	}
+
+	public String getMountHost() {
+		return this.mountHost;
+	}
+
+	public void setMountHost(String mountHost) {
+		this.mountHost = mountHost;
+		if(mountHost != null){
+			putQueryParameter("MountHost", mountHost);
+		}
+	}
+
+	public Integer getBatchWaitTime() {
+		return this.batchWaitTime;
+	}
+
+	public void setBatchWaitTime(Integer batchWaitTime) {
+		this.batchWaitTime = batchWaitTime;
+		if(batchWaitTime != null){
+			putQueryParameter("BatchWaitTime", batchWaitTime.toString());
+		}
+	}
+
+	public String getEnvs() {
+		return this.envs;
+	}
+
+	public void setEnvs(String envs) {
+		this.envs = envs;
+		if(envs != null){
+			putQueryParameter("Envs", envs);
+		}
+	}
+
+	public String getKafkaInstanceId() {
+		return this.kafkaInstanceId;
+	}
+
+	public void setKafkaInstanceId(String kafkaInstanceId) {
+		this.kafkaInstanceId = kafkaInstanceId;
+		if(kafkaInstanceId != null){
+			putQueryParameter("KafkaInstanceId", kafkaInstanceId);
+		}
+	}
+
+	public String getPhpArmsConfigLocation() {
+		return this.phpArmsConfigLocation;
+	}
+
+	public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
+		this.phpArmsConfigLocation = phpArmsConfigLocation;
+		if(phpArmsConfigLocation != null){
+			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
+		}
+	}
+
+	public String getCustomHostAlias() {
+		return this.customHostAlias;
+	}
+
+	public void setCustomHostAlias(String customHostAlias) {
+		this.customHostAlias = customHostAlias;
+		if(customHostAlias != null){
+			putQueryParameter("CustomHostAlias", customHostAlias);
+		}
+	}
+
+	public String getJarStartOptions() {
+		return this.jarStartOptions;
+	}
+
+	public void setJarStartOptions(String jarStartOptions) {
+		this.jarStartOptions = jarStartOptions;
+		if(jarStartOptions != null){
+			putQueryParameter("JarStartOptions", jarStartOptions);
+		}
+	}
+
+	public String getConfigMapMountDesc() {
+		return this.configMapMountDesc;
+	}
+
+	public void setConfigMapMountDesc(String configMapMountDesc) {
+		this.configMapMountDesc = configMapMountDesc;
+		if(configMapMountDesc != null){
+			putBodyParameter("ConfigMapMountDesc", configMapMountDesc);
+		}
+	}
+
+	public String getOssMountDescs() {
+		return this.ossMountDescs;
+	}
+
+	public void setOssMountDescs(String ossMountDescs) {
+		this.ossMountDescs = ossMountDescs;
+		if(ossMountDescs != null){
+			putBodyParameter("OssMountDescs", ossMountDescs);
+		}
+	}
+
+	public String getKafkaEndpoint() {
+		return this.kafkaEndpoint;
+	}
+
+	public void setKafkaEndpoint(String kafkaEndpoint) {
+		this.kafkaEndpoint = kafkaEndpoint;
+		if(kafkaEndpoint != null){
+			putQueryParameter("KafkaEndpoint", kafkaEndpoint);
+		}
+	}
+
+	public String getPreStop() {
+		return this.preStop;
+	}
+
+	public void setPreStop(String preStop) {
+		this.preStop = preStop;
+		if(preStop != null){
+			putQueryParameter("PreStop", preStop);
+		}
+	}
+
+	public String getUpdateStrategy() {
+		return this.updateStrategy;
+	}
+
+	public void setUpdateStrategy(String updateStrategy) {
+		this.updateStrategy = updateStrategy;
+		if(updateStrategy != null){
+			putQueryParameter("UpdateStrategy", updateStrategy);
+		}
+	}
+
+	public String getChangeOrderDesc() {
+		return this.changeOrderDesc;
+	}
+
+	public void setChangeOrderDesc(String changeOrderDesc) {
+		this.changeOrderDesc = changeOrderDesc;
+		if(changeOrderDesc != null){
+			putQueryParameter("ChangeOrderDesc", changeOrderDesc);
+		}
+	}
+
+	public Integer getMinReadyInstanceRatio() {
+		return this.minReadyInstanceRatio;
+	}
+
+	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
+		this.minReadyInstanceRatio = minReadyInstanceRatio;
+		if(minReadyInstanceRatio != null){
+			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
+		}
+	}
+
+	public Boolean getAutoEnableApplicationScalingRule() {
+		return this.autoEnableApplicationScalingRule;
+	}
+
+	public void setAutoEnableApplicationScalingRule(Boolean autoEnableApplicationScalingRule) {
+		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
+		if(autoEnableApplicationScalingRule != null){
+			putQueryParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule.toString());
+		}
+	}
+
+	public String getPostStart() {
+		return this.postStart;
+	}
+
+	public void setPostStart(String postStart) {
+		this.postStart = postStart;
+		if(postStart != null){
+			putQueryParameter("PostStart", postStart);
+		}
+	}
+
+	public Boolean getAssociateEip() {
+		return this.associateEip;
+	}
+
+	public void setAssociateEip(Boolean associateEip) {
+		this.associateEip = associateEip;
+		if(associateEip != null){
+			putBodyParameter("AssociateEip", associateEip.toString());
+		}
+	}
+
+	public String getWebContainer() {
+		return this.webContainer;
+	}
+
+	public void setWebContainer(String webContainer) {
+		this.webContainer = webContainer;
+		if(webContainer != null){
+			putQueryParameter("WebContainer", webContainer);
 		}
 	}
 
@@ -175,14 +381,14 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getOssAkSecret() {
-		return this.ossAkSecret;
+	public Boolean getOpenCollectToKafka() {
+		return this.openCollectToKafka;
 	}
 
-	public void setOssAkSecret(String ossAkSecret) {
-		this.ossAkSecret = ossAkSecret;
-		if(ossAkSecret != null){
-			putBodyParameter("OssAkSecret", ossAkSecret);
+	public void setOpenCollectToKafka(Boolean openCollectToKafka) {
+		this.openCollectToKafka = openCollectToKafka;
+		if(openCollectToKafka != null){
+			putQueryParameter("OpenCollectToKafka", openCollectToKafka.toString());
 		}
 	}
 
@@ -230,28 +436,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getMountHost() {
-		return this.mountHost;
-	}
-
-	public void setMountHost(String mountHost) {
-		this.mountHost = mountHost;
-		if(mountHost != null){
-			putQueryParameter("MountHost", mountHost);
-		}
-	}
-
-	public Integer getBatchWaitTime() {
-		return this.batchWaitTime;
-	}
-
-	public void setBatchWaitTime(Integer batchWaitTime) {
-		this.batchWaitTime = batchWaitTime;
-		if(batchWaitTime != null){
-			putQueryParameter("BatchWaitTime", batchWaitTime.toString());
-		}
-	}
-
 	public String getOssAkId() {
 		return this.ossAkId;
 	}
@@ -271,28 +455,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.liveness = liveness;
 		if(liveness != null){
 			putQueryParameter("Liveness", liveness);
-		}
-	}
-
-	public String getEnvs() {
-		return this.envs;
-	}
-
-	public void setEnvs(String envs) {
-		this.envs = envs;
-		if(envs != null){
-			putQueryParameter("Envs", envs);
-		}
-	}
-
-	public String getPhpArmsConfigLocation() {
-		return this.phpArmsConfigLocation;
-	}
-
-	public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
-		this.phpArmsConfigLocation = phpArmsConfigLocation;
-		if(phpArmsConfigLocation != null){
-			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
 		}
 	}
 
@@ -318,17 +480,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getCustomHostAlias() {
-		return this.customHostAlias;
-	}
-
-	public void setCustomHostAlias(String customHostAlias) {
-		this.customHostAlias = customHostAlias;
-		if(customHostAlias != null){
-			putQueryParameter("CustomHostAlias", customHostAlias);
-		}
-	}
-
 	public String getWarStartOptions() {
 		return this.warStartOptions;
 	}
@@ -337,17 +488,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.warStartOptions = warStartOptions;
 		if(warStartOptions != null){
 			putQueryParameter("WarStartOptions", warStartOptions);
-		}
-	}
-
-	public String getJarStartOptions() {
-		return this.jarStartOptions;
-	}
-
-	public void setJarStartOptions(String jarStartOptions) {
-		this.jarStartOptions = jarStartOptions;
-		if(jarStartOptions != null){
-			putQueryParameter("JarStartOptions", jarStartOptions);
 		}
 	}
 
@@ -384,28 +524,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getConfigMapMountDesc() {
-		return this.configMapMountDesc;
-	}
-
-	public void setConfigMapMountDesc(String configMapMountDesc) {
-		this.configMapMountDesc = configMapMountDesc;
-		if(configMapMountDesc != null){
-			putBodyParameter("ConfigMapMountDesc", configMapMountDesc);
-		}
-	}
-
-	public String getOssMountDescs() {
-		return this.ossMountDescs;
-	}
-
-	public void setOssMountDescs(String ossMountDescs) {
-		this.ossMountDescs = ossMountDescs;
-		if(ossMountDescs != null){
-			putBodyParameter("OssMountDescs", ossMountDescs);
-		}
-	}
-
 	public String getPhpConfig() {
 		return this.phpConfig;
 	}
@@ -414,17 +532,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.phpConfig = phpConfig;
 		if(phpConfig != null){
 			putBodyParameter("PhpConfig", phpConfig);
-		}
-	}
-
-	public String getPreStop() {
-		return this.preStop;
-	}
-
-	public void setPreStop(String preStop) {
-		this.preStop = preStop;
-		if(preStop != null){
-			putQueryParameter("PreStop", preStop);
 		}
 	}
 
@@ -447,17 +554,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.command = command;
 		if(command != null){
 			putQueryParameter("Command", command);
-		}
-	}
-
-	public String getUpdateStrategy() {
-		return this.updateStrategy;
-	}
-
-	public void setUpdateStrategy(String updateStrategy) {
-		this.updateStrategy = updateStrategy;
-		if(updateStrategy != null){
-			putQueryParameter("UpdateStrategy", updateStrategy);
 		}
 	}
 
@@ -494,14 +590,14 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getChangeOrderDesc() {
-		return this.changeOrderDesc;
+	public String getKafkaLogfileConfig() {
+		return this.kafkaLogfileConfig;
 	}
 
-	public void setChangeOrderDesc(String changeOrderDesc) {
-		this.changeOrderDesc = changeOrderDesc;
-		if(changeOrderDesc != null){
-			putQueryParameter("ChangeOrderDesc", changeOrderDesc);
+	public void setKafkaLogfileConfig(String kafkaLogfileConfig) {
+		this.kafkaLogfileConfig = kafkaLogfileConfig;
+		if(kafkaLogfileConfig != null){
+			putQueryParameter("KafkaLogfileConfig", kafkaLogfileConfig);
 		}
 	}
 
@@ -538,28 +634,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public Integer getMinReadyInstanceRatio() {
-		return this.minReadyInstanceRatio;
-	}
-
-	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
-		this.minReadyInstanceRatio = minReadyInstanceRatio;
-		if(minReadyInstanceRatio != null){
-			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
-		}
-	}
-
-	public Boolean getAutoEnableApplicationScalingRule() {
-		return this.autoEnableApplicationScalingRule;
-	}
-
-	public void setAutoEnableApplicationScalingRule(Boolean autoEnableApplicationScalingRule) {
-		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
-		if(autoEnableApplicationScalingRule != null){
-			putQueryParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule.toString());
-		}
-	}
-
 	public String getPhpConfigLocation() {
 		return this.phpConfigLocation;
 	}
@@ -568,28 +642,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.phpConfigLocation = phpConfigLocation;
 		if(phpConfigLocation != null){
 			putQueryParameter("PhpConfigLocation", phpConfigLocation);
-		}
-	}
-
-	public String getPostStart() {
-		return this.postStart;
-	}
-
-	public void setPostStart(String postStart) {
-		this.postStart = postStart;
-		if(postStart != null){
-			putQueryParameter("PostStart", postStart);
-		}
-	}
-
-	public Boolean getAssociateEip() {
-		return this.associateEip;
-	}
-
-	public void setAssociateEip(Boolean associateEip) {
-		this.associateEip = associateEip;
-		if(associateEip != null){
-			putBodyParameter("AssociateEip", associateEip.toString());
 		}
 	}
 

@@ -157,13 +157,9 @@ public class ListAppServicesPageResponse extends AcsResponse {
 
 			private String edasAppId;
 
-			private String gmtModifyTime;
-
 			private String serviceName;
 
 			private String group;
-
-			private String clusterName;
 
 			public String getEdasAppName() {
 				return this.edasAppName;
@@ -197,14 +193,6 @@ public class ListAppServicesPageResponse extends AcsResponse {
 				this.edasAppId = edasAppId;
 			}
 
-			public String getGmtModifyTime() {
-				return this.gmtModifyTime;
-			}
-
-			public void setGmtModifyTime(String gmtModifyTime) {
-				this.gmtModifyTime = gmtModifyTime;
-			}
-
 			public String getServiceName() {
 				return this.serviceName;
 			}
@@ -219,14 +207,6 @@ public class ListAppServicesPageResponse extends AcsResponse {
 
 			public void setGroup(String group) {
 				this.group = group;
-			}
-
-			public String getClusterName() {
-				return this.clusterName;
-			}
-
-			public void setClusterName(String clusterName) {
-				this.clusterName = clusterName;
 			}
 		}
 	}

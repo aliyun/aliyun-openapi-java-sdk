@@ -28,28 +28,28 @@ public class DescribeNamespacesResponseUnmarshaller {
 	public static DescribeNamespacesResponse unmarshall(DescribeNamespacesResponse describeNamespacesResponse, UnmarshallerContext _ctx) {
 		
 		describeNamespacesResponse.setRequestId(_ctx.stringValue("DescribeNamespacesResponse.RequestId"));
-		describeNamespacesResponse.setCode(_ctx.stringValue("DescribeNamespacesResponse.Code"));
-		describeNamespacesResponse.setErrorCode(_ctx.stringValue("DescribeNamespacesResponse.ErrorCode"));
 		describeNamespacesResponse.setMessage(_ctx.stringValue("DescribeNamespacesResponse.Message"));
-		describeNamespacesResponse.setSuccess(_ctx.booleanValue("DescribeNamespacesResponse.Success"));
 		describeNamespacesResponse.setTraceId(_ctx.stringValue("DescribeNamespacesResponse.TraceId"));
+		describeNamespacesResponse.setErrorCode(_ctx.stringValue("DescribeNamespacesResponse.ErrorCode"));
+		describeNamespacesResponse.setCode(_ctx.stringValue("DescribeNamespacesResponse.Code"));
+		describeNamespacesResponse.setSuccess(_ctx.booleanValue("DescribeNamespacesResponse.Success"));
 
 		Data data = new Data();
 		data.setCurrentPage(_ctx.integerValue("DescribeNamespacesResponse.Data.CurrentPage"));
-		data.setPageSize(_ctx.integerValue("DescribeNamespacesResponse.Data.PageSize"));
 		data.setTotalSize(_ctx.integerValue("DescribeNamespacesResponse.Data.TotalSize"));
+		data.setPageSize(_ctx.integerValue("DescribeNamespacesResponse.Data.PageSize"));
 
 		List<Namespace> namespaces = new ArrayList<Namespace>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNamespacesResponse.Data.Namespaces.Length"); i++) {
 			Namespace namespace = new Namespace();
+			namespace.setNamespaceDescription(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].NamespaceDescription"));
 			namespace.setAccessKey(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].AccessKey"));
-			namespace.setAddressServerHost(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].AddressServerHost"));
 			namespace.setSecretKey(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].SecretKey"));
+			namespace.setNamespaceId(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].NamespaceId"));
+			namespace.setAddressServerHost(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].AddressServerHost"));
+			namespace.setNamespaceName(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].NamespaceName"));
 			namespace.setTenantId(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].TenantId"));
 			namespace.setRegionId(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].RegionId"));
-			namespace.setNamespaceId(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].NamespaceId"));
-			namespace.setNamespaceName(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].NamespaceName"));
-			namespace.setNamespaceDescription(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].NamespaceDescription"));
 
 			namespaces.add(namespace);
 		}

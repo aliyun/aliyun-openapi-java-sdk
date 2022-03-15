@@ -53,6 +53,7 @@ public class DescribeApplicationInstancesResponseUnmarshaller {
 			instance.setImageUrl(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].ImageUrl"));
 			instance.setPackageVersion(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].PackageVersion"));
 			instance.setEip(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].Eip"));
+			instance.setFinishTimeStamp(_ctx.longValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].FinishTimeStamp"));
 
 			instances.add(instance);
 		}

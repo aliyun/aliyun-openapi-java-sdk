@@ -161,6 +161,8 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 			private String eip;
 
+			private Long finishTimeStamp;
+
 			public Long getCreateTimeStamp() {
 				return this.createTimeStamp;
 			}
@@ -247,6 +249,14 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 			public void setEip(String eip) {
 				this.eip = eip;
+			}
+
+			public Long getFinishTimeStamp() {
+				return this.finishTimeStamp;
+			}
+
+			public void setFinishTimeStamp(Long finishTimeStamp) {
+				this.finishTimeStamp = finishTimeStamp;
 			}
 		}
 	}

@@ -203,6 +203,8 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private Boolean associateEip;
 
+		private String kafkaConfigs;
+
 		private List<ConfigMapMountDescItem> configMapMountDesc;
 
 		private List<Tag> tags;
@@ -633,6 +635,14 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setAssociateEip(Boolean associateEip) {
 			this.associateEip = associateEip;
+		}
+
+		public String getKafkaConfigs() {
+			return this.kafkaConfigs;
+		}
+
+		public void setKafkaConfigs(String kafkaConfigs) {
+			this.kafkaConfigs = kafkaConfigs;
 		}
 
 		public List<ConfigMapMountDescItem> getConfigMapMountDesc() {

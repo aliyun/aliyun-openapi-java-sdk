@@ -91,6 +91,7 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setAcrInstanceId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AcrInstanceId"));
 		data.setAcrAssumeRoleArn(_ctx.stringValue("DescribeApplicationConfigResponse.Data.AcrAssumeRoleArn"));
 		data.setAssociateEip(_ctx.booleanValue("DescribeApplicationConfigResponse.Data.AssociateEip"));
+		data.setKafkaConfigs(_ctx.stringValue("DescribeApplicationConfigResponse.Data.KafkaConfigs"));
 
 		List<ConfigMapMountDescItem> configMapMountDesc = new ArrayList<ConfigMapMountDescItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.ConfigMapMountDesc.Length"); i++) {

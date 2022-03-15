@@ -49,10 +49,8 @@ public class ListAppServicesPageResponseUnmarshaller {
 				mscAgentServiceResponse.setVersion(_ctx.stringValue("ListAppServicesPageResponse.Data["+ i +"].Result["+ j +"].Version"));
 				mscAgentServiceResponse.setInstanceNum(_ctx.longValue("ListAppServicesPageResponse.Data["+ i +"].Result["+ j +"].InstanceNum"));
 				mscAgentServiceResponse.setEdasAppId(_ctx.stringValue("ListAppServicesPageResponse.Data["+ i +"].Result["+ j +"].EdasAppId"));
-				mscAgentServiceResponse.setGmtModifyTime(_ctx.stringValue("ListAppServicesPageResponse.Data["+ i +"].Result["+ j +"].GmtModifyTime"));
 				mscAgentServiceResponse.setServiceName(_ctx.stringValue("ListAppServicesPageResponse.Data["+ i +"].Result["+ j +"].ServiceName"));
 				mscAgentServiceResponse.setGroup(_ctx.stringValue("ListAppServicesPageResponse.Data["+ i +"].Result["+ j +"].Group"));
-				mscAgentServiceResponse.setClusterName(_ctx.stringValue("ListAppServicesPageResponse.Data["+ i +"].Result["+ j +"].ClusterName"));
 
 				result.add(mscAgentServiceResponse);
 			}

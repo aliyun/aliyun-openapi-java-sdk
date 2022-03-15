@@ -1,3 +1,6 @@
+2022-03-15 Version: 1.19.0
+- Support collect logs to kafka.
+
 2022-01-18 Version: 1.18.16
 - Support describe price.
 
