@@ -25,6 +25,7 @@ public class CheckUserFinishAdResponseUnmarshaller {
 
 	public static CheckUserFinishAdResponse unmarshall(CheckUserFinishAdResponse checkUserFinishAdResponse, UnmarshallerContext _ctx) {
 		
+		checkUserFinishAdResponse.setRequestId(_ctx.stringValue("CheckUserFinishAdResponse.RequestId"));
 		checkUserFinishAdResponse.setExt(_ctx.mapValue("CheckUserFinishAdResponse.Ext"));
 		checkUserFinishAdResponse.setErrorMsg(_ctx.stringValue("CheckUserFinishAdResponse.ErrorMsg"));
 		checkUserFinishAdResponse.setErrorCode(_ctx.stringValue("CheckUserFinishAdResponse.ErrorCode"));
@@ -38,7 +39,10 @@ public class CheckUserFinishAdResponseUnmarshaller {
 		checkUserFinishAdResponse.setHeader(header);
 
 		Result result = new Result();
-		result.setSuccess(_ctx.booleanValue("CheckUserFinishAdResponse.Result.success"));
+		result.setSuccess(_ctx.booleanValue("CheckUserFinishAdResponse.Result.Success"));
+		result.setCommission(_ctx.stringValue("CheckUserFinishAdResponse.Result.Commission"));
+		result.setObjective(_ctx.stringValue("CheckUserFinishAdResponse.Result.Objective"));
+		result.setMarketingType(_ctx.stringValue("CheckUserFinishAdResponse.Result.MarketingType"));
 		checkUserFinishAdResponse.setResult(result);
 	 
 	 	return checkUserFinishAdResponse;

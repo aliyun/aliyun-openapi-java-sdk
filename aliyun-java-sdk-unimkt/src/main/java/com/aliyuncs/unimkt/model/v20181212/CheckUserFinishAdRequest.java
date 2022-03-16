@@ -25,13 +25,17 @@ import com.aliyuncs.unimkt.Endpoint;
 public class CheckUserFinishAdRequest extends RpcAcsRequest<CheckUserFinishAdResponse> {
 	   
 
-	private String ext;
+	private String uid;
 
-	private Long buyerOneId;
+	private Long adid;
 
-	private String impressionlink;
+	private String tagid;
+
+	private String clicklink;
 
 	private String id;
+
+	private String mediaid;
 	public CheckUserFinishAdRequest() {
 		super("UniMkt", "2018-12-12", "CheckUserFinishAd");
 		setMethod(MethodType.POST);
@@ -41,36 +45,47 @@ public class CheckUserFinishAdRequest extends RpcAcsRequest<CheckUserFinishAdRes
 		} catch (Exception e) {}
 	}
 
-	public String getExt() {
-		return this.ext;
+	public String getUid() {
+		return this.uid;
 	}
 
-	public void setExt(String ext) {
-		this.ext = ext;
-		if(ext != null){
-			putQueryParameter("Ext", ext);
+	public void setUid(String uid) {
+		this.uid = uid;
+		if(uid != null){
+			putQueryParameter("Uid", uid);
 		}
 	}
 
-	public Long getBuyerOneId() {
-		return this.buyerOneId;
+	public Long getAdid() {
+		return this.adid;
 	}
 
-	public void setBuyerOneId(Long buyerOneId) {
-		this.buyerOneId = buyerOneId;
-		if(buyerOneId != null){
-			putQueryParameter("BuyerOneId", buyerOneId.toString());
+	public void setAdid(Long adid) {
+		this.adid = adid;
+		if(adid != null){
+			putQueryParameter("Adid", adid.toString());
 		}
 	}
 
-	public String getImpressionlink() {
-		return this.impressionlink;
+	public String getTagid() {
+		return this.tagid;
 	}
 
-	public void setImpressionlink(String impressionlink) {
-		this.impressionlink = impressionlink;
-		if(impressionlink != null){
-			putQueryParameter("Impressionlink", impressionlink);
+	public void setTagid(String tagid) {
+		this.tagid = tagid;
+		if(tagid != null){
+			putQueryParameter("Tagid", tagid);
+		}
+	}
+
+	public String getClicklink() {
+		return this.clicklink;
+	}
+
+	public void setClicklink(String clicklink) {
+		this.clicklink = clicklink;
+		if(clicklink != null){
+			putQueryParameter("Clicklink", clicklink);
 		}
 	}
 
@@ -82,6 +97,17 @@ public class CheckUserFinishAdRequest extends RpcAcsRequest<CheckUserFinishAdRes
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
+		}
+	}
+
+	public String getMediaid() {
+		return this.mediaid;
+	}
+
+	public void setMediaid(String mediaid) {
+		this.mediaid = mediaid;
+		if(mediaid != null){
+			putQueryParameter("Mediaid", mediaid);
 		}
 	}
 

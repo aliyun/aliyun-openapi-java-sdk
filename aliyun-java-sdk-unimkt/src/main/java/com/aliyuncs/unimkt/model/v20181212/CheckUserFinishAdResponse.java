@@ -33,6 +33,8 @@ public class CheckUserFinishAdResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String requestId;
+
 	private Header header;
 
 	private Result result;
@@ -67,6 +69,14 @@ public class CheckUserFinishAdResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Header getHeader() {
@@ -132,12 +142,42 @@ public class CheckUserFinishAdResponse extends AcsResponse {
 
 		private Boolean success;
 
+		private String commission;
+
+		private String objective;
+
+		private String marketingType;
+
 		public Boolean getSuccess() {
 			return this.success;
 		}
 
 		public void setSuccess(Boolean success) {
 			this.success = success;
+		}
+
+		public String getCommission() {
+			return this.commission;
+		}
+
+		public void setCommission(String commission) {
+			this.commission = commission;
+		}
+
+		public String getObjective() {
+			return this.objective;
+		}
+
+		public void setObjective(String objective) {
+			this.objective = objective;
+		}
+
+		public String getMarketingType() {
+			return this.marketingType;
+		}
+
+		public void setMarketingType(String marketingType) {
+			this.marketingType = marketingType;
 		}
 	}
 

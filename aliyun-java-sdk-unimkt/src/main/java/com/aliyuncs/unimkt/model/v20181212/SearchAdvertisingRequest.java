@@ -29,8 +29,6 @@ import com.aliyuncs.unimkt.Endpoint;
 public class SearchAdvertisingRequest extends RpcAcsRequest<SearchAdvertisingResponse> {
 	   
 
-	private String ext;
-
 	@SerializedName("app")
 	private App app;
 
@@ -50,17 +48,6 @@ public class SearchAdvertisingRequest extends RpcAcsRequest<SearchAdvertisingRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getExt() {
-		return this.ext;
-	}
-
-	public void setExt(String ext) {
-		this.ext = ext;
-		if(ext != null){
-			putQueryParameter("Ext", ext);
-		}
 	}
 
 	public App getApp() {

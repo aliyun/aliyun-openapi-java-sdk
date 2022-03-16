@@ -1,3 +1,6 @@
+2022-03-16 Version: 2.4.8
+- Union Task API.
+
 2022-02-23 Version: 2.4.7
 - Union Task API.
 

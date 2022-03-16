@@ -15,6 +15,7 @@
 package com.aliyuncs.unimkt.model.v20181212;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.unimkt.transform.v20181212.SearchAdvertisingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,28 +26,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchAdvertisingResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
+	private Map<Object,Object> ext;
 
 	private String errorMsg;
 
+	private String errorCode;
+
+	private Boolean success;
+
+	private String requestId;
+
+	private Header header;
+
 	private Result result;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Map<Object,Object> getExt() {
+		return this.ext;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setExt(Map<Object,Object> ext) {
+		this.ext = ext;
 	}
 
 	public String getErrorMsg() {
@@ -57,12 +56,87 @@ public class SearchAdvertisingResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Header getHeader() {
+		return this.header;
+	}
+
+	public void setHeader(Header header) {
+		this.header = header;
+	}
+
 	public Result getResult() {
 		return this.result;
 	}
 
 	public void setResult(Result result) {
 		this.result = result;
+	}
+
+	public static class Header {
+
+		private Long costTime;
+
+		private String version;
+
+		private String rpcId;
+
+		private String traceId;
+
+		public Long getCostTime() {
+			return this.costTime;
+		}
+
+		public void setCostTime(Long costTime) {
+			this.costTime = costTime;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getRpcId() {
+			return this.rpcId;
+		}
+
+		public void setRpcId(String rpcId) {
+			this.rpcId = rpcId;
+		}
+
+		public String getTraceId() {
+			return this.traceId;
+		}
+
+		public void setTraceId(String traceId) {
+			this.traceId = traceId;
+		}
 	}
 
 	public static class Result {
@@ -151,6 +225,12 @@ public class SearchAdvertisingResponse extends AcsResponse {
 
 					private String crurl;
 
+					private String title;
+
+					private String commission;
+
+					private String labeltype;
+
 					private List<String> landingurls;
 
 					private Trackers trackers;
@@ -225,6 +305,30 @@ public class SearchAdvertisingResponse extends AcsResponse {
 
 					public void setCrurl(String crurl) {
 						this.crurl = crurl;
+					}
+
+					public String getTitle() {
+						return this.title;
+					}
+
+					public void setTitle(String title) {
+						this.title = title;
+					}
+
+					public String getCommission() {
+						return this.commission;
+					}
+
+					public void setCommission(String commission) {
+						this.commission = commission;
+					}
+
+					public String getLabeltype() {
+						return this.labeltype;
+					}
+
+					public void setLabeltype(String labeltype) {
+						this.labeltype = labeltype;
 					}
 
 					public List<String> getLandingurls() {
