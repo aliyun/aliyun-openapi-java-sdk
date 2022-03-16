@@ -173,6 +173,10 @@ public class ListRulesResponse extends AcsResponse {
 
 			private RewriteConfig rewriteConfig;
 
+			private TrafficMirrorConfig trafficMirrorConfig;
+
+			private TrafficLimitConfig trafficLimitConfig;
+
 			public Integer getOrder() {
 				return this.order;
 			}
@@ -227,6 +231,22 @@ public class ListRulesResponse extends AcsResponse {
 
 			public void setRewriteConfig(RewriteConfig rewriteConfig) {
 				this.rewriteConfig = rewriteConfig;
+			}
+
+			public TrafficMirrorConfig getTrafficMirrorConfig() {
+				return this.trafficMirrorConfig;
+			}
+
+			public void setTrafficMirrorConfig(TrafficMirrorConfig trafficMirrorConfig) {
+				this.trafficMirrorConfig = trafficMirrorConfig;
+			}
+
+			public TrafficLimitConfig getTrafficLimitConfig() {
+				return this.trafficLimitConfig;
+			}
+
+			public void setTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
+				this.trafficLimitConfig = trafficLimitConfig;
 			}
 
 			public static class FixedResponseConfig {
@@ -414,6 +434,68 @@ public class ListRulesResponse extends AcsResponse {
 
 				public void setQuery(String query) {
 					this.query = query;
+				}
+			}
+
+			public static class TrafficMirrorConfig {
+
+				private String targetType;
+
+				private MirrorGroupConfig mirrorGroupConfig;
+
+				public String getTargetType() {
+					return this.targetType;
+				}
+
+				public void setTargetType(String targetType) {
+					this.targetType = targetType;
+				}
+
+				public MirrorGroupConfig getMirrorGroupConfig() {
+					return this.mirrorGroupConfig;
+				}
+
+				public void setMirrorGroupConfig(MirrorGroupConfig mirrorGroupConfig) {
+					this.mirrorGroupConfig = mirrorGroupConfig;
+				}
+
+				public static class MirrorGroupConfig {
+
+					private List<ServerGroupTuple2> serverGroupTuples1;
+
+					public List<ServerGroupTuple2> getServerGroupTuples1() {
+						return this.serverGroupTuples1;
+					}
+
+					public void setServerGroupTuples1(List<ServerGroupTuple2> serverGroupTuples1) {
+						this.serverGroupTuples1 = serverGroupTuples1;
+					}
+
+					public static class ServerGroupTuple2 {
+
+						private String serverGroupId;
+
+						public String getServerGroupId() {
+							return this.serverGroupId;
+						}
+
+						public void setServerGroupId(String serverGroupId) {
+							this.serverGroupId = serverGroupId;
+						}
+					}
+				}
+			}
+
+			public static class TrafficLimitConfig {
+
+				private Integer qPS;
+
+				public Integer getQPS() {
+					return this.qPS;
+				}
+
+				public void setQPS(Integer qPS) {
+					this.qPS = qPS;
 				}
 			}
 		}

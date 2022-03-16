@@ -43,6 +43,7 @@ public class ListListenersResponseUnmarshaller {
 			Listener listener = new Listener();
 			listener.setGzipEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].GzipEnabled"));
 			listener.setHttp2Enabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].Http2Enabled"));
+			listener.setCaEnabled(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].CaEnabled"));
 			listener.setIdleTimeout(_ctx.integerValue("ListListenersResponse.Listeners["+ i +"].IdleTimeout"));
 			listener.setListenerDescription(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].ListenerDescription"));
 			listener.setListenerId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].ListenerId"));
