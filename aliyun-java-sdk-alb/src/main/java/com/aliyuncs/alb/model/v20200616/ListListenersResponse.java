@@ -81,8 +81,6 @@ public class ListListenersResponse extends AcsResponse {
 
 		private Boolean http2Enabled;
 
-		private String caEnabled;
-
 		private Integer idleTimeout;
 
 		private String listenerDescription;
@@ -123,14 +121,6 @@ public class ListListenersResponse extends AcsResponse {
 
 		public void setHttp2Enabled(Boolean http2Enabled) {
 			this.http2Enabled = http2Enabled;
-		}
-
-		public String getCaEnabled() {
-			return this.caEnabled;
-		}
-
-		public void setCaEnabled(String caEnabled) {
-			this.caEnabled = caEnabled;
 		}
 
 		public Integer getIdleTimeout() {

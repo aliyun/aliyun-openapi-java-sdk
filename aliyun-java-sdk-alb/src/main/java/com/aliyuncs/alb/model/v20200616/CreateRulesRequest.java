@@ -184,6 +184,7 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 														if (rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().get(depth3) != null) {
 															
 																putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupTuples." + (depth3 + 1) + ".ServerGroupId" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().get(depth3).getServerGroupId());
+																putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".ForwardGroupConfig.ServerGroupTuples." + (depth3 + 1) + ".Weight" , rules.get(depth1).getRuleActions().get(depth2).getForwardGroupConfig().getServerGroupTuples().get(depth3).getWeight());
 														}
 													}
 												}
@@ -784,12 +785,22 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 
 					private String serverGroupId;
 
+					private Integer weight;
+
 					public String getServerGroupId() {
 						return this.serverGroupId;
 					}
 
 					public void setServerGroupId(String serverGroupId) {
 						this.serverGroupId = serverGroupId;
+					}
+
+					public Integer getWeight() {
+						return this.weight;
+					}
+
+					public void setWeight(Integer weight) {
+						this.weight = weight;
 					}
 				}
 			}
