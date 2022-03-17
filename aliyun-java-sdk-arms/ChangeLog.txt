@@ -1,3 +1,6 @@
+2022-03-17 Version: 2.7.46
+- Fixed bugs for SearchTraces and SearchTracesByPage.
+
 2022-02-25 Version: 2.7.45
 - New add GetAuthToken api.
 - New add ManageRecordingRule api.

@@ -31,7 +31,7 @@ public class ListOnCallSchedulesRequest extends RpcAcsRequest<ListOnCallSchedule
 
 	private Long page;
 	public ListOnCallSchedulesRequest() {
-		super("ARMS", "2019-08-08", "ListOnCallSchedules");
+		super("ARMS", "2019-08-08", "ListOnCallSchedules", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

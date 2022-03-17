@@ -37,7 +37,7 @@ public class GetAlertRulesRequest extends RpcAcsRequest<GetAlertRulesResponse> {
 
 	private Long page;
 	public GetAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "GetAlertRules");
+		super("ARMS", "2019-08-08", "GetAlertRules", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

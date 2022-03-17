@@ -125,8 +125,6 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			private List<String> alertWays;
 
-			private List<String> alertWay;
-
 			private AlarmContext alarmContext;
 
 			private AlertRule alertRule;
@@ -277,14 +275,6 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			public void setAlertWays(List<String> alertWays) {
 				this.alertWays = alertWays;
-			}
-
-			public List<String> getAlertWay() {
-				return this.alertWay;
-			}
-
-			public void setAlertWay(List<String> alertWay) {
-				this.alertWay = alertWay;
 			}
 
 			public AlarmContext getAlarmContext() {

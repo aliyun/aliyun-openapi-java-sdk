@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class OpenXtraceDefaultSLRRequest extends RpcAcsRequest<OpenXtraceDefaultSLRResponse> {
 	   
 	public OpenXtraceDefaultSLRRequest() {
-		super("ARMS", "2019-08-08", "OpenXtraceDefaultSLR");
+		super("ARMS", "2019-08-08", "OpenXtraceDefaultSLR", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

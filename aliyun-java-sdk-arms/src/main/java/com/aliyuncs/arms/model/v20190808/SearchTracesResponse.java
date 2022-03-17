@@ -47,11 +47,7 @@ public class SearchTracesResponse extends AcsResponse {
 
 	public static class TraceInfo {
 
-		private String traceID;
-
 		private String operationName;
-
-		private String serviceName;
 
 		private String serviceIp;
 
@@ -59,13 +55,9 @@ public class SearchTracesResponse extends AcsResponse {
 
 		private Long timestamp;
 
-		public String getTraceID() {
-			return this.traceID;
-		}
+		private String serviceName;
 
-		public void setTraceID(String traceID) {
-			this.traceID = traceID;
-		}
+		private String traceID;
 
 		public String getOperationName() {
 			return this.operationName;
@@ -73,14 +65,6 @@ public class SearchTracesResponse extends AcsResponse {
 
 		public void setOperationName(String operationName) {
 			this.operationName = operationName;
-		}
-
-		public String getServiceName() {
-			return this.serviceName;
-		}
-
-		public void setServiceName(String serviceName) {
-			this.serviceName = serviceName;
 		}
 
 		public String getServiceIp() {
@@ -105,6 +89,22 @@ public class SearchTracesResponse extends AcsResponse {
 
 		public void setTimestamp(Long timestamp) {
 			this.timestamp = timestamp;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
+		}
+
+		public String getTraceID() {
+			return this.traceID;
+		}
+
+		public void setTraceID(String traceID) {
+			this.traceID = traceID;
 		}
 	}
 

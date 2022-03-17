@@ -31,7 +31,7 @@ public class TurnOnSecondSwitchRequest extends RpcAcsRequest<TurnOnSecondSwitchR
 
 	private String proxyUserId;
 	public TurnOnSecondSwitchRequest() {
-		super("ARMS", "2019-08-08", "TurnOnSecondSwitch");
+		super("ARMS", "2019-08-08", "TurnOnSecondSwitch", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

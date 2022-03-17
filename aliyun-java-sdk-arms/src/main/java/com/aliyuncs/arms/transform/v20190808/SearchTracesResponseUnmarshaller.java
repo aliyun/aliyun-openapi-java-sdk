@@ -31,12 +31,12 @@ public class SearchTracesResponseUnmarshaller {
 		List<TraceInfo> traceInfos = new ArrayList<TraceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTracesResponse.TraceInfos.Length"); i++) {
 			TraceInfo traceInfo = new TraceInfo();
-			traceInfo.setTraceID(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].TraceID"));
 			traceInfo.setOperationName(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].OperationName"));
-			traceInfo.setServiceName(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].ServiceName"));
 			traceInfo.setServiceIp(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].ServiceIp"));
 			traceInfo.setDuration(_ctx.longValue("SearchTracesResponse.TraceInfos["+ i +"].Duration"));
 			traceInfo.setTimestamp(_ctx.longValue("SearchTracesResponse.TraceInfos["+ i +"].Timestamp"));
+			traceInfo.setServiceName(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].ServiceName"));
+			traceInfo.setTraceID(_ctx.stringValue("SearchTracesResponse.TraceInfos["+ i +"].TraceID"));
 
 			traceInfos.add(traceInfo);
 		}

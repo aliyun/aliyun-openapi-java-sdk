@@ -27,7 +27,7 @@ public class DeleteIMRobotRequest extends RpcAcsRequest<DeleteIMRobotResponse> {
 
 	private Long robotId;
 	public DeleteIMRobotRequest() {
-		super("ARMS", "2019-08-08", "DeleteIMRobot");
+		super("ARMS", "2019-08-08", "DeleteIMRobot", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

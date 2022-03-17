@@ -27,7 +27,7 @@ public class ListRetcodeAppsRequest extends RpcAcsRequest<ListRetcodeAppsRespons
 
 	private String securityToken;
 	public ListRetcodeAppsRequest() {
-		super("ARMS", "2019-08-08", "ListRetcodeApps");
+		super("ARMS", "2019-08-08", "ListRetcodeApps", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

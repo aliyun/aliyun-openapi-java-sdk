@@ -27,7 +27,7 @@ public class GetAuthTokenRequest extends RpcAcsRequest<GetAuthTokenResponse> {
 
 	private String clusterId;
 	public GetAuthTokenRequest() {
-		super("ARMS", "2019-08-08", "GetAuthToken");
+		super("ARMS", "2019-08-08", "GetAuthToken", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

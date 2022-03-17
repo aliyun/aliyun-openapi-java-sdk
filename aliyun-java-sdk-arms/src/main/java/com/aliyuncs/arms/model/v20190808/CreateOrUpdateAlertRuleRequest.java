@@ -65,7 +65,7 @@ public class CreateOrUpdateAlertRuleRequest extends RpcAcsRequest<CreateOrUpdate
 
 	private String pids;
 	public CreateOrUpdateAlertRuleRequest() {
-		super("ARMS", "2019-08-08", "CreateOrUpdateAlertRule");
+		super("ARMS", "2019-08-08", "CreateOrUpdateAlertRule", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

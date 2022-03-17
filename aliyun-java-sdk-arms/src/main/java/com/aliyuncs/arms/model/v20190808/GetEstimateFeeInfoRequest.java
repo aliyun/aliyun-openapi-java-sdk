@@ -31,7 +31,7 @@ public class GetEstimateFeeInfoRequest extends RpcAcsRequest<GetEstimateFeeInfoR
 
 	private String targetUserId;
 	public GetEstimateFeeInfoRequest() {
-		super("ARMS", "2019-08-08", "GetEstimateFeeInfo");
+		super("ARMS", "2019-08-08", "GetEstimateFeeInfo", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

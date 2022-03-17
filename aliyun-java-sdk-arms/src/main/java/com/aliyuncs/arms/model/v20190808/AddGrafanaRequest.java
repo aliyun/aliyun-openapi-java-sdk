@@ -29,7 +29,7 @@ public class AddGrafanaRequest extends RpcAcsRequest<AddGrafanaResponse> {
 
 	private String clusterId;
 	public AddGrafanaRequest() {
-		super("ARMS", "2019-08-08", "AddGrafana");
+		super("ARMS", "2019-08-08", "AddGrafana", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

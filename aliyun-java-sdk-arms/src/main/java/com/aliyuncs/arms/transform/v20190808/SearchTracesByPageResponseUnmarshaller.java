@@ -30,19 +30,19 @@ public class SearchTracesByPageResponseUnmarshaller {
 		searchTracesByPageResponse.setRequestId(_ctx.stringValue("SearchTracesByPageResponse.RequestId"));
 
 		PageBean pageBean = new PageBean();
-		pageBean.setTotal(_ctx.integerValue("SearchTracesByPageResponse.PageBean.Total"));
 		pageBean.setPageNumber(_ctx.integerValue("SearchTracesByPageResponse.PageBean.PageNumber"));
 		pageBean.setPageSize(_ctx.integerValue("SearchTracesByPageResponse.PageBean.PageSize"));
+		pageBean.setTotal(_ctx.integerValue("SearchTracesByPageResponse.PageBean.Total"));
 
 		List<TraceInfo> traceInfos = new ArrayList<TraceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTracesByPageResponse.PageBean.TraceInfos.Length"); i++) {
 			TraceInfo traceInfo = new TraceInfo();
-			traceInfo.setTraceID(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].TraceID"));
 			traceInfo.setOperationName(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].OperationName"));
-			traceInfo.setServiceName(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].ServiceName"));
 			traceInfo.setServiceIp(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].ServiceIp"));
 			traceInfo.setDuration(_ctx.longValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].Duration"));
 			traceInfo.setTimestamp(_ctx.longValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].Timestamp"));
+			traceInfo.setServiceName(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].ServiceName"));
+			traceInfo.setTraceID(_ctx.stringValue("SearchTracesByPageResponse.PageBean.TraceInfos["+ i +"].TraceID"));
 
 			traceInfos.add(traceInfo);
 		}

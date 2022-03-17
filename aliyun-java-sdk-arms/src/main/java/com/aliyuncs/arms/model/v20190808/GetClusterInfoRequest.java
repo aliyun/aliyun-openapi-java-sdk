@@ -29,7 +29,7 @@ public class GetClusterInfoRequest extends RpcAcsRequest<GetClusterInfoResponse>
 
 	private String clusterId;
 	public GetClusterInfoRequest() {
-		super("ARMS", "2019-08-08", "GetClusterInfo");
+		super("ARMS", "2019-08-08", "GetClusterInfo", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

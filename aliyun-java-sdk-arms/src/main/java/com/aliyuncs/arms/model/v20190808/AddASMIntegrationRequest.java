@@ -27,7 +27,7 @@ public class AddASMIntegrationRequest extends RpcAcsRequest<AddASMIntegrationRes
 
 	private String clusterId;
 	public AddASMIntegrationRequest() {
-		super("ARMS", "2019-08-08", "AddASMIntegration");
+		super("ARMS", "2019-08-08", "AddASMIntegration", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

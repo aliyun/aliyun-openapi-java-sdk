@@ -67,12 +67,6 @@ public class SearchAlertRulesResponseUnmarshaller {
 			}
 			alertRuleEntity.setAlertWays(alertWays);
 
-			List<String> alertWay = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWay.Length"); j++) {
-				alertWay.add(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWay["+ j +"]"));
-			}
-			alertRuleEntity.setAlertWay(alertWay);
-
 			AlarmContext alarmContext = new AlarmContext();
 			alarmContext.setAlarmContentTemplate(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlarmContext.AlarmContentTemplate"));
 			alarmContext.setSubTitle(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlarmContext.SubTitle"));

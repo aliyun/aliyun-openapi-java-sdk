@@ -28,6 +28,8 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 
 	private Long endTime;
 
+	private String pid;
+
 	private Long startTime;
 
 	private Boolean reverse;
@@ -35,6 +37,8 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 	private Long minDuration;
 
 	private Integer pageNumber;
+
+	private List<Tags> tagss;
 
 	private String serviceIp;
 
@@ -46,7 +50,7 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 
 	private String serviceName;
 	public SearchTracesByPageRequest() {
-		super("ARMS", "2019-08-08", "SearchTracesByPage");
+		super("ARMS", "2019-08-08", "SearchTracesByPage", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +66,17 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
 		}
 	}
 
@@ -107,6 +122,20 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
 		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getServiceIp() {
@@ -164,6 +193,29 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 		this.serviceName = serviceName;
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

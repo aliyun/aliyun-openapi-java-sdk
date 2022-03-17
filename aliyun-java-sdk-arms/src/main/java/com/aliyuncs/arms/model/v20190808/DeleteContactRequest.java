@@ -27,7 +27,7 @@ public class DeleteContactRequest extends RpcAcsRequest<DeleteContactResponse> {
 
 	private Long contactId;
 	public DeleteContactRequest() {
-		super("ARMS", "2019-08-08", "DeleteContact");
+		super("ARMS", "2019-08-08", "DeleteContact", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

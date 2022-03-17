@@ -28,6 +28,8 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 
 	private Long endTime;
 
+	private String pid;
+
 	private Long startTime;
 
 	private Boolean reverse;
@@ -44,7 +46,7 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 
 	private List<Tag> tags;
 	public SearchTracesRequest() {
-		super("ARMS", "2019-08-08", "SearchTraces");
+		super("ARMS", "2019-08-08", "SearchTraces", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
 		}
 	}
 

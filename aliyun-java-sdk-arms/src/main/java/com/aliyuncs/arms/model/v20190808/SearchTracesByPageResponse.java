@@ -47,21 +47,13 @@ public class SearchTracesByPageResponse extends AcsResponse {
 
 	public static class PageBean {
 
-		private Integer total;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer total;
+
 		private List<TraceInfo> traceInfos;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -79,6 +71,14 @@ public class SearchTracesByPageResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
 		public List<TraceInfo> getTraceInfos() {
 			return this.traceInfos;
 		}
@@ -89,11 +89,7 @@ public class SearchTracesByPageResponse extends AcsResponse {
 
 		public static class TraceInfo {
 
-			private String traceID;
-
 			private String operationName;
-
-			private String serviceName;
 
 			private String serviceIp;
 
@@ -101,13 +97,9 @@ public class SearchTracesByPageResponse extends AcsResponse {
 
 			private Long timestamp;
 
-			public String getTraceID() {
-				return this.traceID;
-			}
+			private String serviceName;
 
-			public void setTraceID(String traceID) {
-				this.traceID = traceID;
-			}
+			private String traceID;
 
 			public String getOperationName() {
 				return this.operationName;
@@ -115,14 +107,6 @@ public class SearchTracesByPageResponse extends AcsResponse {
 
 			public void setOperationName(String operationName) {
 				this.operationName = operationName;
-			}
-
-			public String getServiceName() {
-				return this.serviceName;
-			}
-
-			public void setServiceName(String serviceName) {
-				this.serviceName = serviceName;
 			}
 
 			public String getServiceIp() {
@@ -147,6 +131,22 @@ public class SearchTracesByPageResponse extends AcsResponse {
 
 			public void setTimestamp(Long timestamp) {
 				this.timestamp = timestamp;
+			}
+
+			public String getServiceName() {
+				return this.serviceName;
+			}
+
+			public void setServiceName(String serviceName) {
+				this.serviceName = serviceName;
+			}
+
+			public String getTraceID() {
+				return this.traceID;
+			}
+
+			public void setTraceID(String traceID) {
+				this.traceID = traceID;
 			}
 		}
 	}

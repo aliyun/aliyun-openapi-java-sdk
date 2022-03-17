@@ -41,7 +41,7 @@ public class CreateOrUpdateWebhookContactRequest extends RpcAcsRequest<CreateOrU
 
 	private String recoverBody;
 	public CreateOrUpdateWebhookContactRequest() {
-		super("ARMS", "2019-08-08", "CreateOrUpdateWebhookContact");
+		super("ARMS", "2019-08-08", "CreateOrUpdateWebhookContact", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

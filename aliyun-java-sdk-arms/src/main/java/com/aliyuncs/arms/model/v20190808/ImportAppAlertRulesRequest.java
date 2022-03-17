@@ -35,7 +35,7 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 
 	private String templateAlertId;
 	public ImportAppAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "ImportAppAlertRules");
+		super("ARMS", "2019-08-08", "ImportAppAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
