@@ -22,16 +22,18 @@ import com.aliyuncs.mpaas.Endpoint;
  * @author auto create
  * @version 
  */
-public class RevokeMpsTaskRequest extends RpcAcsRequest<RevokeMpsTaskResponse> {
+public class OpenApiEncodeRequest extends RpcAcsRequest<OpenApiEncodeResponse> {
 	   
 
-	private String taskId;
+	private String tenantId;
+
+	private String mpaasMqcpOpenApiEncodeRequestJsonStr;
 
 	private String appId;
 
 	private String workspaceId;
-	public RevokeMpsTaskRequest() {
-		super("mPaaS", "2020-10-28", "RevokeMpsTask");
+	public OpenApiEncodeRequest() {
+		super("mPaaS", "2020-10-28", "OpenApiEncode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +41,25 @@ public class RevokeMpsTaskRequest extends RpcAcsRequest<RevokeMpsTaskResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getTenantId() {
+		return this.tenantId;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putBodyParameter("TaskId", taskId);
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getMpaasMqcpOpenApiEncodeRequestJsonStr() {
+		return this.mpaasMqcpOpenApiEncodeRequestJsonStr;
+	}
+
+	public void setMpaasMqcpOpenApiEncodeRequestJsonStr(String mpaasMqcpOpenApiEncodeRequestJsonStr) {
+		this.mpaasMqcpOpenApiEncodeRequestJsonStr = mpaasMqcpOpenApiEncodeRequestJsonStr;
+		if(mpaasMqcpOpenApiEncodeRequestJsonStr != null){
+			putBodyParameter("MpaasMqcpOpenApiEncodeRequestJsonStr", mpaasMqcpOpenApiEncodeRequestJsonStr);
 		}
 	}
 
@@ -73,8 +86,8 @@ public class RevokeMpsTaskRequest extends RpcAcsRequest<RevokeMpsTaskResponse> {
 	}
 
 	@Override
-	public Class<RevokeMpsTaskResponse> getResponseClass() {
-		return RevokeMpsTaskResponse.class;
+	public Class<OpenApiEncodeResponse> getResponseClass() {
+		return OpenApiEncodeResponse.class;
 	}
 
 }

@@ -15,29 +15,27 @@
 package com.aliyuncs.mpaas.model.v20201028;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mpaas.transform.v20201028.CancelMpsSchedulerResponseUnmarshaller;
+import com.aliyuncs.mpaas.transform.v20201028.OpenApiEncodeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CancelMpsSchedulerResponse extends AcsResponse {
-
-	private String resultMessage;
-
-	private String resultCode;
+public class OpenApiEncodeResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String resultCode;
+
 	private String resultContent;
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getResultCode() {
@@ -46,14 +44,6 @@ public class CancelMpsSchedulerResponse extends AcsResponse {
 
 	public void setResultCode(String resultCode) {
 		this.resultCode = resultCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getResultContent() {
@@ -65,8 +55,8 @@ public class CancelMpsSchedulerResponse extends AcsResponse {
 	}
 
 	@Override
-	public CancelMpsSchedulerResponse getInstance(UnmarshallerContext context) {
-		return	CancelMpsSchedulerResponseUnmarshaller.unmarshall(this, context);
+	public OpenApiEncodeResponse getInstance(UnmarshallerContext context) {
+		return	OpenApiEncodeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

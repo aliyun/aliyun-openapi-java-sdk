@@ -22,18 +22,18 @@ import com.aliyuncs.mpaas.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelMpsSchedulerRequest extends RpcAcsRequest<CancelMpsSchedulerResponse> {
+public class OpenApiAddActiveCodeRequest extends RpcAcsRequest<OpenApiAddActiveCodeResponse> {
 	   
 
-	private Integer type;
+	private String tenantId;
 
-	private String uniqueIds;
+	private String mpaasMqcpOpenApiAddActiveCodeReqJsonStr;
 
 	private String appId;
 
 	private String workspaceId;
-	public CancelMpsSchedulerRequest() {
-		super("mPaaS", "2020-10-28", "CancelMpsScheduler");
+	public OpenApiAddActiveCodeRequest() {
+		super("mPaaS", "2020-10-28", "OpenApiAddActiveCode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +41,25 @@ public class CancelMpsSchedulerRequest extends RpcAcsRequest<CancelMpsSchedulerR
 		} catch (Exception e) {}
 	}
 
-	public Integer getType() {
-		return this.type;
+	public String getTenantId() {
+		return this.tenantId;
 	}
 
-	public void setType(Integer type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type.toString());
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 
-	public String getUniqueIds() {
-		return this.uniqueIds;
+	public String getMpaasMqcpOpenApiAddActiveCodeReqJsonStr() {
+		return this.mpaasMqcpOpenApiAddActiveCodeReqJsonStr;
 	}
 
-	public void setUniqueIds(String uniqueIds) {
-		this.uniqueIds = uniqueIds;
-		if(uniqueIds != null){
-			putBodyParameter("UniqueIds", uniqueIds);
+	public void setMpaasMqcpOpenApiAddActiveCodeReqJsonStr(String mpaasMqcpOpenApiAddActiveCodeReqJsonStr) {
+		this.mpaasMqcpOpenApiAddActiveCodeReqJsonStr = mpaasMqcpOpenApiAddActiveCodeReqJsonStr;
+		if(mpaasMqcpOpenApiAddActiveCodeReqJsonStr != null){
+			putBodyParameter("MpaasMqcpOpenApiAddActiveCodeReqJsonStr", mpaasMqcpOpenApiAddActiveCodeReqJsonStr);
 		}
 	}
 
@@ -86,8 +86,8 @@ public class CancelMpsSchedulerRequest extends RpcAcsRequest<CancelMpsSchedulerR
 	}
 
 	@Override
-	public Class<CancelMpsSchedulerResponse> getResponseClass() {
-		return CancelMpsSchedulerResponse.class;
+	public Class<OpenApiAddActiveCodeResponse> getResponseClass() {
+		return OpenApiAddActiveCodeResponse.class;
 	}
 
 }

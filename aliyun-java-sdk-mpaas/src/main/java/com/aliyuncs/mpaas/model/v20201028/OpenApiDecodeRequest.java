@@ -22,18 +22,18 @@ import com.aliyuncs.mpaas.Endpoint;
  * @author auto create
  * @version 
  */
-public class RevokeMpsMessageRequest extends RpcAcsRequest<RevokeMpsMessageResponse> {
+public class OpenApiDecodeRequest extends RpcAcsRequest<OpenApiDecodeResponse> {
 	   
 
-	private String targetId;
+	private String tenantId;
 
-	private String messageId;
+	private String mpaasMqcpOpenApiDecodeRequestJsonStr;
 
 	private String appId;
 
 	private String workspaceId;
-	public RevokeMpsMessageRequest() {
-		super("mPaaS", "2020-10-28", "RevokeMpsMessage");
+	public OpenApiDecodeRequest() {
+		super("mPaaS", "2020-10-28", "OpenApiDecode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +41,25 @@ public class RevokeMpsMessageRequest extends RpcAcsRequest<RevokeMpsMessageRespo
 		} catch (Exception e) {}
 	}
 
-	public String getTargetId() {
-		return this.targetId;
+	public String getTenantId() {
+		return this.tenantId;
 	}
 
-	public void setTargetId(String targetId) {
-		this.targetId = targetId;
-		if(targetId != null){
-			putBodyParameter("TargetId", targetId);
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 
-	public String getMessageId() {
-		return this.messageId;
+	public String getMpaasMqcpOpenApiDecodeRequestJsonStr() {
+		return this.mpaasMqcpOpenApiDecodeRequestJsonStr;
 	}
 
-	public void setMessageId(String messageId) {
-		this.messageId = messageId;
-		if(messageId != null){
-			putBodyParameter("MessageId", messageId);
+	public void setMpaasMqcpOpenApiDecodeRequestJsonStr(String mpaasMqcpOpenApiDecodeRequestJsonStr) {
+		this.mpaasMqcpOpenApiDecodeRequestJsonStr = mpaasMqcpOpenApiDecodeRequestJsonStr;
+		if(mpaasMqcpOpenApiDecodeRequestJsonStr != null){
+			putBodyParameter("MpaasMqcpOpenApiDecodeRequestJsonStr", mpaasMqcpOpenApiDecodeRequestJsonStr);
 		}
 	}
 
@@ -86,8 +86,8 @@ public class RevokeMpsMessageRequest extends RpcAcsRequest<RevokeMpsMessageRespo
 	}
 
 	@Override
-	public Class<RevokeMpsMessageResponse> getResponseClass() {
-		return RevokeMpsMessageResponse.class;
+	public Class<OpenApiDecodeResponse> getResponseClass() {
+		return OpenApiDecodeResponse.class;
 	}
 
 }
