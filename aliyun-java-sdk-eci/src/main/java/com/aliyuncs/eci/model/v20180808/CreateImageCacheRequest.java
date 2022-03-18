@@ -61,6 +61,10 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	private List<AcrRegistryInfo> acrRegistryInfos;
 
+	private Integer flashCopyCount;
+
+	private Integer standardCopyCount;
+
 	public CreateImageCacheRequest() {
 		super("Eci", "2018-08-08", "CreateImageCache", "eci");
 		setMethod(MethodType.POST);
@@ -278,6 +282,29 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 				putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceName", acrRegistryInfos.get(depth1).getInstanceName());
 				putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".RegionId", acrRegistryInfos.get(depth1).getRegionId());
 			}
+		}
+	}
+
+	
+	public Integer getFlashCopyCount() {
+		return this.flashCopyCount;
+	}
+
+	public void setFlashCopyCount(Integer flashCopyCount) {
+		this.flashCopyCount = flashCopyCount;
+		if (flashCopyCount != null) {
+			putQueryParameter("FlashCopyCount", flashCopyCount.toString());
+		}
+	}
+
+	public Integer getStandardCopyCount() {
+		return this.standardCopyCount;
+	}
+
+	public void setStandardCopyCount(Integer standardCopyCount) {
+		this.standardCopyCount = standardCopyCount;
+		if (standardCopyCount != null) {
+			putQueryParameter("StandardCopyCount", standardCopyCount.toString());
 		}
 	}
 
