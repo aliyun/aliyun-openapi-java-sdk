@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateScreenResponse extends AcsResponse {
 
+	private String token;
+
 	private String requestId;
 
 	private Integer screenId;
 
 	private String share;
 
-	private String token;
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,14 +62,6 @@ public class CreateScreenResponse extends AcsResponse {
 
 	public void setShare(String share) {
 		this.share = share;
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
 	}
 
 	@Override

@@ -31,9 +31,9 @@ public class GetScreenDatasourceConfigResponseUnmarshaller {
 		List<Datasource> datasources = new ArrayList<Datasource>();
 		for (int i = 0; i < _ctx.lengthValue("GetScreenDatasourceConfigResponse.Datasources.Length"); i++) {
 			Datasource datasource = new Datasource();
-			datasource.setApiName(_ctx.stringValue("GetScreenDatasourceConfigResponse.Datasources["+ i +"].ApiName"));
 			datasource.setType(_ctx.stringValue("GetScreenDatasourceConfigResponse.Datasources["+ i +"].Type"));
 			datasource.setDataConfig(_ctx.stringValue("GetScreenDatasourceConfigResponse.Datasources["+ i +"].DataConfig"));
+			datasource.setApiName(_ctx.stringValue("GetScreenDatasourceConfigResponse.Datasources["+ i +"].ApiName"));
 
 			datasources.add(datasource);
 		}

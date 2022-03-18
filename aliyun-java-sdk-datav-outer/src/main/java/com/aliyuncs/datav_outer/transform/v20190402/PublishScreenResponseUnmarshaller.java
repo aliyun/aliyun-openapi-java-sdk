@@ -23,8 +23,8 @@ public class PublishScreenResponseUnmarshaller {
 	public static PublishScreenResponse unmarshall(PublishScreenResponse publishScreenResponse, UnmarshallerContext _ctx) {
 		
 		publishScreenResponse.setRequestId(_ctx.stringValue("PublishScreenResponse.RequestId"));
-		publishScreenResponse.setSuccess(_ctx.booleanValue("PublishScreenResponse.Success"));
 		publishScreenResponse.setToken(_ctx.stringValue("PublishScreenResponse.Token"));
+		publishScreenResponse.setSuccess(_ctx.booleanValue("PublishScreenResponse.Success"));
 	 
 	 	return publishScreenResponse;
 	}

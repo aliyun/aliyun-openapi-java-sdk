@@ -47,19 +47,11 @@ public class GetScreenDatasourceConfigResponse extends AcsResponse {
 
 	public static class Datasource {
 
-		private String apiName;
-
 		private String type;
 
 		private String dataConfig;
 
-		public String getApiName() {
-			return this.apiName;
-		}
-
-		public void setApiName(String apiName) {
-			this.apiName = apiName;
-		}
+		private String apiName;
 
 		public String getType() {
 			return this.type;
@@ -75,6 +67,14 @@ public class GetScreenDatasourceConfigResponse extends AcsResponse {
 
 		public void setDataConfig(String dataConfig) {
 			this.dataConfig = dataConfig;
+		}
+
+		public String getApiName() {
+			return this.apiName;
+		}
+
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
 		}
 	}
 

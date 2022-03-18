@@ -31,13 +31,13 @@ public class ListScreenByWorkspaceResponseUnmarshaller {
 		List<ScreenInstance> screenInstances = new ArrayList<ScreenInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListScreenByWorkspaceResponse.ScreenInstances.Length"); i++) {
 			ScreenInstance screenInstance = new ScreenInstance();
-			screenInstance.setID(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].ID"));
 			screenInstance.setTemplate(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].Template"));
-			screenInstance.setThumbnail(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].Thumbnail"));
-			screenInstance.setUpdatedAt(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].UpdatedAt"));
 			screenInstance.setCreatedAt(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].CreatedAt"));
-			screenInstance.setName(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].Name"));
 			screenInstance.setShareUrl(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].ShareUrl"));
+			screenInstance.setUpdatedAt(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].UpdatedAt"));
+			screenInstance.setName(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].Name"));
+			screenInstance.setThumbnail(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].Thumbnail"));
+			screenInstance.setID(_ctx.stringValue("ListScreenByWorkspaceResponse.ScreenInstances["+ i +"].ID"));
 
 			screenInstances.add(screenInstance);
 		}

@@ -23,9 +23,9 @@ public class CreateScreenResponseUnmarshaller {
 	public static CreateScreenResponse unmarshall(CreateScreenResponse createScreenResponse, UnmarshallerContext _ctx) {
 		
 		createScreenResponse.setRequestId(_ctx.stringValue("CreateScreenResponse.RequestId"));
+		createScreenResponse.setToken(_ctx.stringValue("CreateScreenResponse.Token"));
 		createScreenResponse.setScreenId(_ctx.integerValue("CreateScreenResponse.ScreenId"));
 		createScreenResponse.setShare(_ctx.stringValue("CreateScreenResponse.Share"));
-		createScreenResponse.setToken(_ctx.stringValue("CreateScreenResponse.Token"));
 	 
 	 	return createScreenResponse;
 	}

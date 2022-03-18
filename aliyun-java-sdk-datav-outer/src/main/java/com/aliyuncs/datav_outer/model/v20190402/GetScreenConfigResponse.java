@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetScreenConfigResponse extends AcsResponse {
 
+	private String shareUrl;
+
 	private String requestId;
 
 	private String screenConfig;
 
-	private String shareUrl;
+	public String getShareUrl() {
+		return this.shareUrl;
+	}
+
+	public void setShareUrl(String shareUrl) {
+		this.shareUrl = shareUrl;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class GetScreenConfigResponse extends AcsResponse {
 
 	public void setScreenConfig(String screenConfig) {
 		this.screenConfig = screenConfig;
-	}
-
-	public String getShareUrl() {
-		return this.shareUrl;
-	}
-
-	public void setShareUrl(String shareUrl) {
-		this.shareUrl = shareUrl;
 	}
 
 	@Override

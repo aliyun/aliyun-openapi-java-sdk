@@ -15,26 +15,18 @@
 package com.aliyuncs.datav_outer.model.v20190402;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.datav_outer.transform.v20190402.DeleteScreenResponseUnmarshaller;
+import com.aliyuncs.datav_outer.transform.v20190402.DeleteWorkspaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteScreenResponse extends AcsResponse {
-
-	private Boolean success;
+public class DeleteWorkspaceResponse extends AcsResponse {
 
 	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +36,21 @@ public class DeleteScreenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	@Override
-	public DeleteScreenResponse getInstance(UnmarshallerContext context) {
-		return	DeleteScreenResponseUnmarshaller.unmarshall(this, context);
+	public DeleteWorkspaceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteWorkspaceResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -47,27 +47,19 @@ public class ListScreenByWorkspaceResponse extends AcsResponse {
 
 	public static class ScreenInstance {
 
-		private String iD;
-
 		private String template;
-
-		private String thumbnail;
-
-		private String updatedAt;
 
 		private String createdAt;
 
-		private String name;
-
 		private String shareUrl;
 
-		public String getID() {
-			return this.iD;
-		}
+		private String updatedAt;
 
-		public void setID(String iD) {
-			this.iD = iD;
-		}
+		private String name;
+
+		private String thumbnail;
+
+		private String iD;
 
 		public String getTemplate() {
 			return this.template;
@@ -75,22 +67,6 @@ public class ListScreenByWorkspaceResponse extends AcsResponse {
 
 		public void setTemplate(String template) {
 			this.template = template;
-		}
-
-		public String getThumbnail() {
-			return this.thumbnail;
-		}
-
-		public void setThumbnail(String thumbnail) {
-			this.thumbnail = thumbnail;
-		}
-
-		public String getUpdatedAt() {
-			return this.updatedAt;
-		}
-
-		public void setUpdatedAt(String updatedAt) {
-			this.updatedAt = updatedAt;
 		}
 
 		public String getCreatedAt() {
@@ -101,6 +77,22 @@ public class ListScreenByWorkspaceResponse extends AcsResponse {
 			this.createdAt = createdAt;
 		}
 
+		public String getShareUrl() {
+			return this.shareUrl;
+		}
+
+		public void setShareUrl(String shareUrl) {
+			this.shareUrl = shareUrl;
+		}
+
+		public String getUpdatedAt() {
+			return this.updatedAt;
+		}
+
+		public void setUpdatedAt(String updatedAt) {
+			this.updatedAt = updatedAt;
+		}
+
 		public String getName() {
 			return this.name;
 		}
@@ -109,12 +101,20 @@ public class ListScreenByWorkspaceResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getShareUrl() {
-			return this.shareUrl;
+		public String getThumbnail() {
+			return this.thumbnail;
 		}
 
-		public void setShareUrl(String shareUrl) {
-			this.shareUrl = shareUrl;
+		public void setThumbnail(String thumbnail) {
+			this.thumbnail = thumbnail;
+		}
+
+		public String getID() {
+			return this.iD;
+		}
+
+		public void setID(String iD) {
+			this.iD = iD;
 		}
 	}
 

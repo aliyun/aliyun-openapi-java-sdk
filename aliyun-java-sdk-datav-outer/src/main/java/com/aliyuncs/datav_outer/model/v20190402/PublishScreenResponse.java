@@ -26,9 +26,9 @@ public class PublishScreenResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private String token;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class PublishScreenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getToken() {
 		return this.token;
 	}
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -14,18 +14,17 @@
 
 package com.aliyuncs.datav_outer.transform.v20190402;
 
-import com.aliyuncs.datav_outer.model.v20190402.GetScreenConfigResponse;
+import com.aliyuncs.datav_outer.model.v20190402.DeleteWorkspaceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetScreenConfigResponseUnmarshaller {
+public class DeleteWorkspaceResponseUnmarshaller {
 
-	public static GetScreenConfigResponse unmarshall(GetScreenConfigResponse getScreenConfigResponse, UnmarshallerContext _ctx) {
+	public static DeleteWorkspaceResponse unmarshall(DeleteWorkspaceResponse deleteWorkspaceResponse, UnmarshallerContext _ctx) {
 		
-		getScreenConfigResponse.setRequestId(_ctx.stringValue("GetScreenConfigResponse.RequestId"));
-		getScreenConfigResponse.setShareUrl(_ctx.stringValue("GetScreenConfigResponse.ShareUrl"));
-		getScreenConfigResponse.setScreenConfig(_ctx.stringValue("GetScreenConfigResponse.ScreenConfig"));
+		deleteWorkspaceResponse.setRequestId(_ctx.stringValue("DeleteWorkspaceResponse.RequestId"));
+		deleteWorkspaceResponse.setSuccess(_ctx.booleanValue("DeleteWorkspaceResponse.Success"));
 	 
-	 	return getScreenConfigResponse;
+	 	return deleteWorkspaceResponse;
 	}
 }
