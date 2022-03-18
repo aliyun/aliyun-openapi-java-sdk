@@ -1,3 +1,6 @@
+2022-03-18 Version: 1.30.0
+- Supported CreateStandardGroup, ListStandardGroups API.
+
 2022-03-10 Version: 1.29.0
 - Disabled Spark Job API.
 
