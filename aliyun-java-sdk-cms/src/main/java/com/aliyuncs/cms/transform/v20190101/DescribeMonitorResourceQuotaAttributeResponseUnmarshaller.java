@@ -107,6 +107,7 @@ public class DescribeMonitorResourceQuotaAttributeResponseUnmarshaller {
 		nAAM.setEffectTime(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.NAAM.EffectTime"));
 		nAAM.setInstanceId(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.NAAM.InstanceId"));
 		nAAM.setSuitInfo(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.NAAM.SuitInfo"));
+		nAAM.setStatus(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.NAAM.Status"));
 		resourceQuota.setNAAM(nAAM);
 		describeMonitorResourceQuotaAttributeResponse.setResourceQuota(resourceQuota);
 	 

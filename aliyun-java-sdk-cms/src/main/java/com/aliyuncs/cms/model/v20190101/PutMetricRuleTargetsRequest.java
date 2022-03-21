@@ -44,6 +44,7 @@ public class PutMetricRuleTargetsRequest extends RpcAcsRequest<PutMetricRuleTarg
 				putQueryParameter("Targets." + (depth1 + 1) + ".Level" , targetss.get(depth1).getLevel());
 				putQueryParameter("Targets." + (depth1 + 1) + ".Id" , targetss.get(depth1).getId());
 				putQueryParameter("Targets." + (depth1 + 1) + ".Arn" , targetss.get(depth1).getArn());
+				putQueryParameter("Targets." + (depth1 + 1) + ".JsonParams" , targetss.get(depth1).getJsonParams());
 			}
 		}	
 	}
@@ -67,6 +68,8 @@ public class PutMetricRuleTargetsRequest extends RpcAcsRequest<PutMetricRuleTarg
 
 		private String arn;
 
+		private String jsonParams;
+
 		public String getLevel() {
 			return this.level;
 		}
@@ -89,6 +92,14 @@ public class PutMetricRuleTargetsRequest extends RpcAcsRequest<PutMetricRuleTarg
 
 		public void setArn(String arn) {
 			this.arn = arn;
+		}
+
+		public String getJsonParams() {
+			return this.jsonParams;
+		}
+
+		public void setJsonParams(String jsonParams) {
+			this.jsonParams = jsonParams;
 		}
 	}
 

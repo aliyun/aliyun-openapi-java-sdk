@@ -544,6 +544,8 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 			private String suitInfo;
 
+			private String status;
+
 			public String getEffectTime() {
 				return this.effectTime;
 			}
@@ -566,6 +568,14 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 			public void setSuitInfo(String suitInfo) {
 				this.suitInfo = suitInfo;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 	}

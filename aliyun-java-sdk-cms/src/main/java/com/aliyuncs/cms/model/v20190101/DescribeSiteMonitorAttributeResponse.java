@@ -441,6 +441,8 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			private String protocol;
 
+			private String isBase64Encode;
+
 			public String getRequest_format() {
 				return this.request_format;
 			}
@@ -663,6 +665,14 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			public void setBizProtocol(String protocol) {
 				this.protocol = protocol;
+			}
+
+			public String getIsBase64Encode() {
+				return this.isBase64Encode;
+			}
+
+			public void setIsBase64Encode(String isBase64Encode) {
+				this.isBase64Encode = isBase64Encode;
 			}
 		}
 	}

@@ -72,6 +72,7 @@ public class DescribeSiteMonitorAttributeResponseUnmarshaller {
 		optionJson.setEnable_operator_dns(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.enable_operator_dns"));
 		optionJson.setAttempts(_ctx.longValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.attempts"));
 		optionJson.setBizProtocol(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.protocol"));
+		optionJson.setIsBase64Encode(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.isBase64Encode"));
 		siteMonitors.setOptionJson(optionJson);
 
 		List<IspCity> ispCities = new ArrayList<IspCity>();

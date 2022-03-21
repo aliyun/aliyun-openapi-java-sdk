@@ -356,6 +356,8 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 		private String version;
 
+		private String jsonParams;
+
 		public String getAction() {
 			return this.action;
 		}
@@ -410,6 +412,14 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getJsonParams() {
+			return this.jsonParams;
+		}
+
+		public void setJsonParams(String jsonParams) {
+			this.jsonParams = jsonParams;
 		}
 	}
 

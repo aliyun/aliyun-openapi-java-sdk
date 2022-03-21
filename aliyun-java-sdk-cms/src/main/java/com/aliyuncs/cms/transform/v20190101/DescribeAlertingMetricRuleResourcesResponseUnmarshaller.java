@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertingMetricRuleResourcesResponse;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertingMetricRuleResourcesResponse.Resource;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertingMetricRuleResourcesResponse.Resource.Resource1;
+import com.aliyuncs.cms.model.v20190101.DescribeAlertingMetricRuleResourcesResponse.Resource.Resource1.ExpressionListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +65,20 @@ public class DescribeAlertingMetricRuleResourcesResponseUnmarshaller {
 				resource1.setTag(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].Tag"));
 				resource1.setThreshold(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].Threshold"));
 				resource1.setLevel(_ctx.integerValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].Level"));
+				resource1.setExpressionListJoin(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].ExpressionListJoin"));
+
+				List<ExpressionListItem> expressionList = new ArrayList<ExpressionListItem>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].ExpressionList.Length"); k++) {
+					ExpressionListItem expressionListItem = new ExpressionListItem();
+					expressionListItem.setComparisonOperator(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].ExpressionList["+ k +"].ComparisonOperator"));
+					expressionListItem.setMetricName(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].ExpressionList["+ k +"].MetricName"));
+					expressionListItem.setPeriod(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].ExpressionList["+ k +"].Period"));
+					expressionListItem.setStatistics(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].ExpressionList["+ k +"].Statistics"));
+					expressionListItem.setThreshold(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].ExpressionList["+ k +"].Threshold"));
+
+					expressionList.add(expressionListItem);
+				}
+				resource1.setExpressionList(expressionList);
 
 				escalation.add(resource1);
 			}

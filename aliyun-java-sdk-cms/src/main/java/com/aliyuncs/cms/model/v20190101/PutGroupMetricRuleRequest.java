@@ -30,19 +30,13 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 
 	private String ruleName;
 
-	private String escalationsInfoStatistics;
-
 	private String effectiveInterval;
-
-	private String escalationsInfoComparisonOperator;
 
 	private String noDataPolicy;
 
 	private String noEffectiveInterval;
 
 	private String emailSubject;
-
-	private Integer silenceTime;
 
 	private String metricName;
 
@@ -58,9 +52,21 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 
 	private String groupId;
 
-	private Integer escalationsInfoTimes;
-
 	private String extraDimensionJson;
+
+	private String interval;
+
+	private String ruleId;
+
+	private String escalationsCriticalThreshold;
+
+	private String escalationsInfoStatistics;
+
+	private String escalationsInfoComparisonOperator;
+
+	private Integer silenceTime;
+
+	private Integer escalationsInfoTimes;
 
 	private Integer escalationsCriticalTimes;
 
@@ -70,15 +76,9 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 
 	private String namespace;
 
-	private String interval;
-
-	private String ruleId;
-
 	private String category;
 
 	private String escalationsCriticalComparisonOperator;
-
-	private String escalationsCriticalThreshold;
 
 	private String dimensions;
 	public PutGroupMetricRuleRequest() {
@@ -119,17 +119,6 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		}
 	}
 
-	public String getEscalationsInfoStatistics() {
-		return this.escalationsInfoStatistics;
-	}
-
-	public void setEscalationsInfoStatistics(String escalationsInfoStatistics) {
-		this.escalationsInfoStatistics = escalationsInfoStatistics;
-		if(escalationsInfoStatistics != null){
-			putQueryParameter("Escalations.Info.Statistics", escalationsInfoStatistics);
-		}
-	}
-
 	public String getEffectiveInterval() {
 		return this.effectiveInterval;
 	}
@@ -138,17 +127,6 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		this.effectiveInterval = effectiveInterval;
 		if(effectiveInterval != null){
 			putQueryParameter("EffectiveInterval", effectiveInterval);
-		}
-	}
-
-	public String getEscalationsInfoComparisonOperator() {
-		return this.escalationsInfoComparisonOperator;
-	}
-
-	public void setEscalationsInfoComparisonOperator(String escalationsInfoComparisonOperator) {
-		this.escalationsInfoComparisonOperator = escalationsInfoComparisonOperator;
-		if(escalationsInfoComparisonOperator != null){
-			putQueryParameter("Escalations.Info.ComparisonOperator", escalationsInfoComparisonOperator);
 		}
 	}
 
@@ -182,17 +160,6 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		this.emailSubject = emailSubject;
 		if(emailSubject != null){
 			putQueryParameter("EmailSubject", emailSubject);
-		}
-	}
-
-	public Integer getSilenceTime() {
-		return this.silenceTime;
-	}
-
-	public void setSilenceTime(Integer silenceTime) {
-		this.silenceTime = silenceTime;
-		if(silenceTime != null){
-			putQueryParameter("SilenceTime", silenceTime.toString());
 		}
 	}
 
@@ -273,17 +240,6 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		}
 	}
 
-	public Integer getEscalationsInfoTimes() {
-		return this.escalationsInfoTimes;
-	}
-
-	public void setEscalationsInfoTimes(Integer escalationsInfoTimes) {
-		this.escalationsInfoTimes = escalationsInfoTimes;
-		if(escalationsInfoTimes != null){
-			putQueryParameter("Escalations.Info.Times", escalationsInfoTimes.toString());
-		}
-	}
-
 	public String getExtraDimensionJson() {
 		return this.extraDimensionJson;
 	}
@@ -292,6 +248,83 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		this.extraDimensionJson = extraDimensionJson;
 		if(extraDimensionJson != null){
 			putQueryParameter("ExtraDimensionJson", extraDimensionJson);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
+		}
+	}
+
+	public String getEscalationsCriticalThreshold() {
+		return this.escalationsCriticalThreshold;
+	}
+
+	public void setEscalationsCriticalThreshold(String escalationsCriticalThreshold) {
+		this.escalationsCriticalThreshold = escalationsCriticalThreshold;
+		if(escalationsCriticalThreshold != null){
+			putQueryParameter("Escalations.Critical.Threshold", escalationsCriticalThreshold);
+		}
+	}
+
+	public String getEscalationsInfoStatistics() {
+		return this.escalationsInfoStatistics;
+	}
+
+	public void setEscalationsInfoStatistics(String escalationsInfoStatistics) {
+		this.escalationsInfoStatistics = escalationsInfoStatistics;
+		if(escalationsInfoStatistics != null){
+			putQueryParameter("Escalations.Info.Statistics", escalationsInfoStatistics);
+		}
+	}
+
+	public String getEscalationsInfoComparisonOperator() {
+		return this.escalationsInfoComparisonOperator;
+	}
+
+	public void setEscalationsInfoComparisonOperator(String escalationsInfoComparisonOperator) {
+		this.escalationsInfoComparisonOperator = escalationsInfoComparisonOperator;
+		if(escalationsInfoComparisonOperator != null){
+			putQueryParameter("Escalations.Info.ComparisonOperator", escalationsInfoComparisonOperator);
+		}
+	}
+
+	public Integer getSilenceTime() {
+		return this.silenceTime;
+	}
+
+	public void setSilenceTime(Integer silenceTime) {
+		this.silenceTime = silenceTime;
+		if(silenceTime != null){
+			putQueryParameter("SilenceTime", silenceTime.toString());
+		}
+	}
+
+	public Integer getEscalationsInfoTimes() {
+		return this.escalationsInfoTimes;
+	}
+
+	public void setEscalationsInfoTimes(Integer escalationsInfoTimes) {
+		this.escalationsInfoTimes = escalationsInfoTimes;
+		if(escalationsInfoTimes != null){
+			putQueryParameter("Escalations.Info.Times", escalationsInfoTimes.toString());
 		}
 	}
 
@@ -339,28 +372,6 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId);
-		}
-	}
-
 	public String getCategory() {
 		return this.category;
 	}
@@ -380,17 +391,6 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		this.escalationsCriticalComparisonOperator = escalationsCriticalComparisonOperator;
 		if(escalationsCriticalComparisonOperator != null){
 			putQueryParameter("Escalations.Critical.ComparisonOperator", escalationsCriticalComparisonOperator);
-		}
-	}
-
-	public String getEscalationsCriticalThreshold() {
-		return this.escalationsCriticalThreshold;
-	}
-
-	public void setEscalationsCriticalThreshold(String escalationsCriticalThreshold) {
-		this.escalationsCriticalThreshold = escalationsCriticalThreshold;
-		if(escalationsCriticalThreshold != null){
-			putQueryParameter("Escalations.Critical.Threshold", escalationsCriticalThreshold);
 		}
 	}
 

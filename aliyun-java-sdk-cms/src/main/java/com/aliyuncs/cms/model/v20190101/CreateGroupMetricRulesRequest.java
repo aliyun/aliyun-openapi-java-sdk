@@ -54,9 +54,11 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 			for (int depth1 = 0; depth1 < groupMetricRuless.size(); depth1++) {
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Webhook" , groupMetricRuless.get(depth1).getWebhook());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Warn.ComparisonOperator" , groupMetricRuless.get(depth1).getEscalationsWarnComparisonOperator());
+				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".DynamicAlertSensitivity" , groupMetricRuless.get(depth1).getDynamicAlertSensitivity());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".RuleName" , groupMetricRuless.get(depth1).getRuleName());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Info.Statistics" , groupMetricRuless.get(depth1).getEscalationsInfoStatistics());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".EffectiveInterval" , groupMetricRuless.get(depth1).getEffectiveInterval());
+				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".DynamicAlertHistoryDataRange" , groupMetricRuless.get(depth1).getDynamicAlertHistoryDataRange());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Info.ComparisonOperator" , groupMetricRuless.get(depth1).getEscalationsInfoComparisonOperator());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".NoDataPolicy" , groupMetricRuless.get(depth1).getNoDataPolicy());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".NoEffectiveInterval" , groupMetricRuless.get(depth1).getNoEffectiveInterval());
@@ -69,7 +71,9 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Period" , groupMetricRuless.get(depth1).getPeriod());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".ContactGroups" , groupMetricRuless.get(depth1).getContactGroups());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Critical.Statistics" , groupMetricRuless.get(depth1).getEscalationsCriticalStatistics());
+				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".RuleType" , groupMetricRuless.get(depth1).getRuleType());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Info.Times" , groupMetricRuless.get(depth1).getEscalationsInfoTimes());
+				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".ExtraDimensionJson" , groupMetricRuless.get(depth1).getExtraDimensionJson());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Critical.Times" , groupMetricRuless.get(depth1).getEscalationsCriticalTimes());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Info.Threshold" , groupMetricRuless.get(depth1).getEscalationsInfoThreshold());
 				putQueryParameter("GroupMetricRules." + (depth1 + 1) + ".Escalations.Warn.Statistics" , groupMetricRuless.get(depth1).getEscalationsWarnStatistics());
@@ -90,11 +94,15 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 
 		private String escalationsWarnComparisonOperator;
 
+		private String dynamicAlertSensitivity;
+
 		private String ruleName;
 
 		private String escalationsInfoStatistics;
 
 		private String effectiveInterval;
+
+		private String dynamicAlertHistoryDataRange;
 
 		private String escalationsInfoComparisonOperator;
 
@@ -120,7 +128,11 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 
 		private String escalationsCriticalStatistics;
 
+		private String ruleType;
+
 		private Integer escalationsInfoTimes;
+
+		private String extraDimensionJson;
 
 		private Integer escalationsCriticalTimes;
 
@@ -158,6 +170,14 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 			this.escalationsWarnComparisonOperator = escalationsWarnComparisonOperator;
 		}
 
+		public String getDynamicAlertSensitivity() {
+			return this.dynamicAlertSensitivity;
+		}
+
+		public void setDynamicAlertSensitivity(String dynamicAlertSensitivity) {
+			this.dynamicAlertSensitivity = dynamicAlertSensitivity;
+		}
+
 		public String getRuleName() {
 			return this.ruleName;
 		}
@@ -180,6 +200,14 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 
 		public void setEffectiveInterval(String effectiveInterval) {
 			this.effectiveInterval = effectiveInterval;
+		}
+
+		public String getDynamicAlertHistoryDataRange() {
+			return this.dynamicAlertHistoryDataRange;
+		}
+
+		public void setDynamicAlertHistoryDataRange(String dynamicAlertHistoryDataRange) {
+			this.dynamicAlertHistoryDataRange = dynamicAlertHistoryDataRange;
 		}
 
 		public String getEscalationsInfoComparisonOperator() {
@@ -278,12 +306,28 @@ public class CreateGroupMetricRulesRequest extends RpcAcsRequest<CreateGroupMetr
 			this.escalationsCriticalStatistics = escalationsCriticalStatistics;
 		}
 
+		public String getRuleType() {
+			return this.ruleType;
+		}
+
+		public void setRuleType(String ruleType) {
+			this.ruleType = ruleType;
+		}
+
 		public Integer getEscalationsInfoTimes() {
 			return this.escalationsInfoTimes;
 		}
 
 		public void setEscalationsInfoTimes(Integer escalationsInfoTimes) {
 			this.escalationsInfoTimes = escalationsInfoTimes;
+		}
+
+		public String getExtraDimensionJson() {
+			return this.extraDimensionJson;
+		}
+
+		public void setExtraDimensionJson(String extraDimensionJson) {
+			this.extraDimensionJson = extraDimensionJson;
 		}
 
 		public Integer getEscalationsCriticalTimes() {

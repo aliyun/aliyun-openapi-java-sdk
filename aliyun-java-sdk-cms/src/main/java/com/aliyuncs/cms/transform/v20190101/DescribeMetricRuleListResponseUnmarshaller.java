@@ -65,6 +65,9 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			alarm.setResources(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Resources"));
 			alarm.setNoDataPolicy(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].NoDataPolicy"));
 			alarm.setOptions(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Options"));
+			alarm.setDynamicAlertSensitivity(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].DynamicAlertSensitivity"));
+			alarm.setDynamicAlertHistoryDataRange(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].DynamicAlertHistoryDataRange"));
+			alarm.setRuleType(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].RuleType"));
 
 			Escalations escalations = new Escalations();
 

@@ -129,6 +129,12 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		private String options;
 
+		private String dynamicAlertSensitivity;
+
+		private String dynamicAlertHistoryDataRange;
+
+		private String ruleType;
+
 		private List<LabelsItem> labels;
 
 		private Escalations escalations;
@@ -303,6 +309,30 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		public void setOptions(String options) {
 			this.options = options;
+		}
+
+		public String getDynamicAlertSensitivity() {
+			return this.dynamicAlertSensitivity;
+		}
+
+		public void setDynamicAlertSensitivity(String dynamicAlertSensitivity) {
+			this.dynamicAlertSensitivity = dynamicAlertSensitivity;
+		}
+
+		public String getDynamicAlertHistoryDataRange() {
+			return this.dynamicAlertHistoryDataRange;
+		}
+
+		public void setDynamicAlertHistoryDataRange(String dynamicAlertHistoryDataRange) {
+			this.dynamicAlertHistoryDataRange = dynamicAlertHistoryDataRange;
+		}
+
+		public String getRuleType() {
+			return this.ruleType;
+		}
+
+		public void setRuleType(String ruleType) {
+			this.ruleType = ruleType;
 		}
 
 		public List<LabelsItem> getLabels() {

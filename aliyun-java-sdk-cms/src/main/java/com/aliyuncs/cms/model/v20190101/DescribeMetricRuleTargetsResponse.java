@@ -83,6 +83,8 @@ public class DescribeMetricRuleTargetsResponse extends AcsResponse {
 
 		private String level;
 
+		private String jsonParams;
+
 		public String getId() {
 			return this.id;
 		}
@@ -105,6 +107,14 @@ public class DescribeMetricRuleTargetsResponse extends AcsResponse {
 
 		public void setLevel(String level) {
 			this.level = level;
+		}
+
+		public String getJsonParams() {
+			return this.jsonParams;
+		}
+
+		public void setJsonParams(String jsonParams) {
+			this.jsonParams = jsonParams;
 		}
 	}
 

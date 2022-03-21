@@ -106,6 +106,7 @@ public class DescribeEventRuleTargetListResponseUnmarshaller {
 			openApiParametersItem.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Region"));
 			openApiParametersItem.setRole(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Role"));
 			openApiParametersItem.setVersion(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].Version"));
+			openApiParametersItem.setJsonParams(_ctx.stringValue("DescribeEventRuleTargetListResponse.OpenApiParameters["+ i +"].JsonParams"));
 
 			openApiParameters.add(openApiParametersItem);
 		}

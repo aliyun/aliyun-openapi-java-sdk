@@ -116,6 +116,7 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Arn" , openApiParameterss.get(depth1).getArn());
 				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Region" , openApiParameterss.get(depth1).getRegion());
 				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".Version" , openApiParameterss.get(depth1).getVersion());
+				putQueryParameter("OpenApiParameters." + (depth1 + 1) + ".JsonParams" , openApiParameterss.get(depth1).getJsonParams());
 			}
 		}	
 	}
@@ -286,6 +287,8 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 
 		private String version;
 
+		private String jsonParams;
+
 		public String getProduct() {
 			return this.product;
 		}
@@ -340,6 +343,14 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getJsonParams() {
+			return this.jsonParams;
+		}
+
+		public void setJsonParams(String jsonParams) {
+			this.jsonParams = jsonParams;
 		}
 	}
 

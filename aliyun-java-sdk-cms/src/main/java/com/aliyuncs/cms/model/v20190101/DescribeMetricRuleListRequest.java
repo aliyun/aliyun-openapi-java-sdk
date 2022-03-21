@@ -34,8 +34,6 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 
 	private String groupId;
 
-	private String groupBy;
-
 	private String ruleIds;
 
 	private String namespace;
@@ -102,17 +100,6 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getGroupBy() {
-		return this.groupBy;
-	}
-
-	public void setGroupBy(String groupBy) {
-		this.groupBy = groupBy;
-		if(groupBy != null){
-			putQueryParameter("GroupBy", groupBy);
 		}
 	}
 

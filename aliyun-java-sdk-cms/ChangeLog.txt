@@ -1,3 +1,6 @@
+2022-03-21 Version: 7.0.38
+- The alarm target callback adds parameter writing.
+
 2022-01-26 Version: 7.0.36
 - CreateContact API Add ContactGroupName.
 

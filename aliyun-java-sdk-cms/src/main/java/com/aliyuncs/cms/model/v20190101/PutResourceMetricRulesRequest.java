@@ -41,14 +41,18 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 			for (int depth1 = 0; depth1 < ruless.size(); depth1++) {
 				putQueryParameter("Rules." + (depth1 + 1) + ".Webhook" , ruless.get(depth1).getWebhook());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Warn.ComparisonOperator" , ruless.get(depth1).getEscalationsWarnComparisonOperator());
+				putQueryParameter("Rules." + (depth1 + 1) + ".DynamicAlertSensitivity" , ruless.get(depth1).getDynamicAlertSensitivity());
 				putQueryParameter("Rules." + (depth1 + 1) + ".RuleName" , ruless.get(depth1).getRuleName());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Info.Statistics" , ruless.get(depth1).getEscalationsInfoStatistics());
 				putQueryParameter("Rules." + (depth1 + 1) + ".EffectiveInterval" , ruless.get(depth1).getEffectiveInterval());
+				putQueryParameter("Rules." + (depth1 + 1) + ".DynamicAlertHistoryDataRange" , ruless.get(depth1).getDynamicAlertHistoryDataRange());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Info.ComparisonOperator" , ruless.get(depth1).getEscalationsInfoComparisonOperator());
 				putQueryParameter("Rules." + (depth1 + 1) + ".NoDataPolicy" , ruless.get(depth1).getNoDataPolicy());
 				putQueryParameter("Rules." + (depth1 + 1) + ".NoEffectiveInterval" , ruless.get(depth1).getNoEffectiveInterval());
 				putQueryParameter("Rules." + (depth1 + 1) + ".EmailSubject" , ruless.get(depth1).getEmailSubject());
+				putQueryParameter("Rules." + (depth1 + 1) + ".Options" , ruless.get(depth1).getOptions());
 				putQueryParameter("Rules." + (depth1 + 1) + ".SilenceTime" , ruless.get(depth1).getSilenceTime());
+				putQueryParameter("Rules." + (depth1 + 1) + ".Prometheus" , ruless.get(depth1).getPrometheus());
 				putQueryParameter("Rules." + (depth1 + 1) + ".MetricName" , ruless.get(depth1).getMetricName());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Warn.Times" , ruless.get(depth1).getEscalationsWarnTimes());
 				putQueryParameter("Rules." + (depth1 + 1) + ".CompositeExpression" , ruless.get(depth1).getCompositeExpression());
@@ -56,6 +60,7 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 				putQueryParameter("Rules." + (depth1 + 1) + ".Period" , ruless.get(depth1).getPeriod());
 				putQueryParameter("Rules." + (depth1 + 1) + ".ContactGroups" , ruless.get(depth1).getContactGroups());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Critical.Statistics" , ruless.get(depth1).getEscalationsCriticalStatistics());
+				putQueryParameter("Rules." + (depth1 + 1) + ".RuleType" , ruless.get(depth1).getRuleType());
 				putQueryParameter("Rules." + (depth1 + 1) + ".GroupId" , ruless.get(depth1).getGroupId());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Info.Times" , ruless.get(depth1).getEscalationsInfoTimes());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Resources" , ruless.get(depth1).getResources());
@@ -77,11 +82,15 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 
 		private String escalationsWarnComparisonOperator;
 
+		private String dynamicAlertSensitivity;
+
 		private String ruleName;
 
 		private String escalationsInfoStatistics;
 
 		private String effectiveInterval;
+
+		private String dynamicAlertHistoryDataRange;
 
 		private String escalationsInfoComparisonOperator;
 
@@ -91,7 +100,11 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 
 		private String emailSubject;
 
+		private String options;
+
 		private Integer silenceTime;
+
+		private String prometheus;
 
 		private String metricName;
 
@@ -106,6 +119,8 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 		private String contactGroups;
 
 		private String escalationsCriticalStatistics;
+
+		private String ruleType;
 
 		private String groupId;
 
@@ -145,6 +160,14 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 			this.escalationsWarnComparisonOperator = escalationsWarnComparisonOperator;
 		}
 
+		public String getDynamicAlertSensitivity() {
+			return this.dynamicAlertSensitivity;
+		}
+
+		public void setDynamicAlertSensitivity(String dynamicAlertSensitivity) {
+			this.dynamicAlertSensitivity = dynamicAlertSensitivity;
+		}
+
 		public String getRuleName() {
 			return this.ruleName;
 		}
@@ -167,6 +190,14 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 
 		public void setEffectiveInterval(String effectiveInterval) {
 			this.effectiveInterval = effectiveInterval;
+		}
+
+		public String getDynamicAlertHistoryDataRange() {
+			return this.dynamicAlertHistoryDataRange;
+		}
+
+		public void setDynamicAlertHistoryDataRange(String dynamicAlertHistoryDataRange) {
+			this.dynamicAlertHistoryDataRange = dynamicAlertHistoryDataRange;
 		}
 
 		public String getEscalationsInfoComparisonOperator() {
@@ -201,12 +232,28 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 			this.emailSubject = emailSubject;
 		}
 
+		public String getOptions() {
+			return this.options;
+		}
+
+		public void setOptions(String options) {
+			this.options = options;
+		}
+
 		public Integer getSilenceTime() {
 			return this.silenceTime;
 		}
 
 		public void setSilenceTime(Integer silenceTime) {
 			this.silenceTime = silenceTime;
+		}
+
+		public String getPrometheus() {
+			return this.prometheus;
+		}
+
+		public void setPrometheus(String prometheus) {
+			this.prometheus = prometheus;
 		}
 
 		public String getMetricName() {
@@ -263,6 +310,14 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 
 		public void setEscalationsCriticalStatistics(String escalationsCriticalStatistics) {
 			this.escalationsCriticalStatistics = escalationsCriticalStatistics;
+		}
+
+		public String getRuleType() {
+			return this.ruleType;
+		}
+
+		public void setRuleType(String ruleType) {
+			this.ruleType = ruleType;
 		}
 
 		public String getGroupId() {

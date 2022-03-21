@@ -283,6 +283,10 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 			private Integer level;
 
+			private String expressionListJoin;
+
+			private List<ExpressionListItem> expressionList;
+
 			public String getComparisonOperator() {
 				return this.comparisonOperator;
 			}
@@ -337,6 +341,75 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 			public void setLevel(Integer level) {
 				this.level = level;
+			}
+
+			public String getExpressionListJoin() {
+				return this.expressionListJoin;
+			}
+
+			public void setExpressionListJoin(String expressionListJoin) {
+				this.expressionListJoin = expressionListJoin;
+			}
+
+			public List<ExpressionListItem> getExpressionList() {
+				return this.expressionList;
+			}
+
+			public void setExpressionList(List<ExpressionListItem> expressionList) {
+				this.expressionList = expressionList;
+			}
+
+			public static class ExpressionListItem {
+
+				private String comparisonOperator;
+
+				private String metricName;
+
+				private String period;
+
+				private String statistics;
+
+				private String threshold;
+
+				public String getComparisonOperator() {
+					return this.comparisonOperator;
+				}
+
+				public void setComparisonOperator(String comparisonOperator) {
+					this.comparisonOperator = comparisonOperator;
+				}
+
+				public String getMetricName() {
+					return this.metricName;
+				}
+
+				public void setMetricName(String metricName) {
+					this.metricName = metricName;
+				}
+
+				public String getPeriod() {
+					return this.period;
+				}
+
+				public void setPeriod(String period) {
+					this.period = period;
+				}
+
+				public String getStatistics() {
+					return this.statistics;
+				}
+
+				public void setStatistics(String statistics) {
+					this.statistics = statistics;
+				}
+
+				public String getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(String threshold) {
+					this.threshold = threshold;
+				}
 			}
 		}
 	}
