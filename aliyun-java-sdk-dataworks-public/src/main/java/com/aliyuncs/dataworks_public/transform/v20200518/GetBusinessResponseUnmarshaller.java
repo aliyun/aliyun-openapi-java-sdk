@@ -24,17 +24,17 @@ public class GetBusinessResponseUnmarshaller {
 	public static GetBusinessResponse unmarshall(GetBusinessResponse getBusinessResponse, UnmarshallerContext _ctx) {
 		
 		getBusinessResponse.setRequestId(_ctx.stringValue("GetBusinessResponse.RequestId"));
-		getBusinessResponse.setSuccess(_ctx.booleanValue("GetBusinessResponse.Success"));
-		getBusinessResponse.setErrorCode(_ctx.stringValue("GetBusinessResponse.ErrorCode"));
-		getBusinessResponse.setErrorMessage(_ctx.stringValue("GetBusinessResponse.ErrorMessage"));
 		getBusinessResponse.setHttpStatusCode(_ctx.integerValue("GetBusinessResponse.HttpStatusCode"));
+		getBusinessResponse.setErrorMessage(_ctx.stringValue("GetBusinessResponse.ErrorMessage"));
+		getBusinessResponse.setErrorCode(_ctx.stringValue("GetBusinessResponse.ErrorCode"));
+		getBusinessResponse.setSuccess(_ctx.booleanValue("GetBusinessResponse.Success"));
 
 		Data data = new Data();
-		data.setBusinessId(_ctx.longValue("GetBusinessResponse.Data.BusinessId"));
-		data.setBusinessName(_ctx.stringValue("GetBusinessResponse.Data.BusinessName"));
-		data.setProjectId(_ctx.stringValue("GetBusinessResponse.Data.ProjectId"));
 		data.setOwner(_ctx.stringValue("GetBusinessResponse.Data.Owner"));
 		data.setDescription(_ctx.stringValue("GetBusinessResponse.Data.Description"));
+		data.setProjectId(_ctx.stringValue("GetBusinessResponse.Data.ProjectId"));
+		data.setBusinessId(_ctx.longValue("GetBusinessResponse.Data.BusinessId"));
+		data.setBusinessName(_ctx.stringValue("GetBusinessResponse.Data.BusinessName"));
 		data.setUseType(_ctx.stringValue("GetBusinessResponse.Data.UseType"));
 		getBusinessResponse.setData(data);
 	 

@@ -27,17 +27,17 @@ public class ListNodesByBaselineResponseUnmarshaller {
 	public static ListNodesByBaselineResponse unmarshall(ListNodesByBaselineResponse listNodesByBaselineResponse, UnmarshallerContext _ctx) {
 		
 		listNodesByBaselineResponse.setRequestId(_ctx.stringValue("ListNodesByBaselineResponse.RequestId"));
-		listNodesByBaselineResponse.setSuccess(_ctx.stringValue("ListNodesByBaselineResponse.Success"));
-		listNodesByBaselineResponse.setErrorCode(_ctx.stringValue("ListNodesByBaselineResponse.ErrorCode"));
-		listNodesByBaselineResponse.setErrorMessage(_ctx.stringValue("ListNodesByBaselineResponse.ErrorMessage"));
 		listNodesByBaselineResponse.setHttpStatusCode(_ctx.integerValue("ListNodesByBaselineResponse.HttpStatusCode"));
+		listNodesByBaselineResponse.setErrorMessage(_ctx.stringValue("ListNodesByBaselineResponse.ErrorMessage"));
+		listNodesByBaselineResponse.setErrorCode(_ctx.stringValue("ListNodesByBaselineResponse.ErrorCode"));
+		listNodesByBaselineResponse.setSuccess(_ctx.stringValue("ListNodesByBaselineResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodesByBaselineResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setNodeId(_ctx.longValue("ListNodesByBaselineResponse.Data["+ i +"].NodeId"));
-			dataItem.setNodeName(_ctx.stringValue("ListNodesByBaselineResponse.Data["+ i +"].NodeName"));
 			dataItem.setOwner(_ctx.stringValue("ListNodesByBaselineResponse.Data["+ i +"].Owner"));
+			dataItem.setNodeName(_ctx.stringValue("ListNodesByBaselineResponse.Data["+ i +"].NodeName"));
+			dataItem.setNodeId(_ctx.longValue("ListNodesByBaselineResponse.Data["+ i +"].NodeId"));
 			dataItem.setProjectId(_ctx.longValue("ListNodesByBaselineResponse.Data["+ i +"].ProjectId"));
 
 			data.add(dataItem);

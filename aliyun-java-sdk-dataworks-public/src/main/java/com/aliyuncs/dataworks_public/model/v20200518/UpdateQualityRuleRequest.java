@@ -59,6 +59,8 @@ public class UpdateQualityRuleRequest extends RpcAcsRequest<UpdateQualityRuleRes
 
 	private String criticalThreshold;
 
+	private Boolean openSwitch;
+
 	private String comment;
 
 	private Integer predictType;
@@ -255,6 +257,17 @@ public class UpdateQualityRuleRequest extends RpcAcsRequest<UpdateQualityRuleRes
 		this.criticalThreshold = criticalThreshold;
 		if(criticalThreshold != null){
 			putBodyParameter("CriticalThreshold", criticalThreshold);
+		}
+	}
+
+	public Boolean getOpenSwitch() {
+		return this.openSwitch;
+	}
+
+	public void setOpenSwitch(Boolean openSwitch) {
+		this.openSwitch = openSwitch;
+		if(openSwitch != null){
+			putBodyParameter("OpenSwitch", openSwitch.toString());
 		}
 	}
 

@@ -25,24 +25,24 @@ public class GetDeploymentResponseUnmarshaller {
 	public static GetDeploymentResponse unmarshall(GetDeploymentResponse getDeploymentResponse, UnmarshallerContext _ctx) {
 		
 		getDeploymentResponse.setRequestId(_ctx.stringValue("GetDeploymentResponse.RequestId"));
-		getDeploymentResponse.setSuccess(_ctx.booleanValue("GetDeploymentResponse.Success"));
-		getDeploymentResponse.setErrorCode(_ctx.stringValue("GetDeploymentResponse.ErrorCode"));
-		getDeploymentResponse.setErrorMessage(_ctx.stringValue("GetDeploymentResponse.ErrorMessage"));
 		getDeploymentResponse.setHttpStatusCode(_ctx.integerValue("GetDeploymentResponse.HttpStatusCode"));
+		getDeploymentResponse.setErrorMessage(_ctx.stringValue("GetDeploymentResponse.ErrorMessage"));
+		getDeploymentResponse.setErrorCode(_ctx.stringValue("GetDeploymentResponse.ErrorCode"));
+		getDeploymentResponse.setSuccess(_ctx.booleanValue("GetDeploymentResponse.Success"));
 
 		Data data = new Data();
 
 		Deployment deployment = new Deployment();
-		deployment.setName(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.Name"));
-		deployment.setCreatorId(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.CreatorId"));
-		deployment.setHandlerId(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.HandlerId"));
-		deployment.setCreateTime(_ctx.longValue("GetDeploymentResponse.Data.Deployment.CreateTime"));
-		deployment.setExecuteTime(_ctx.longValue("GetDeploymentResponse.Data.Deployment.ExecuteTime"));
 		deployment.setStatus(_ctx.integerValue("GetDeploymentResponse.Data.Deployment.Status"));
+		deployment.setErrorMessage(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.ErrorMessage"));
 		deployment.setFromEnvironment(_ctx.integerValue("GetDeploymentResponse.Data.Deployment.FromEnvironment"));
 		deployment.setToEnvironment(_ctx.integerValue("GetDeploymentResponse.Data.Deployment.ToEnvironment"));
-		deployment.setErrorMessage(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.ErrorMessage"));
 		deployment.setCheckingStatus(_ctx.integerValue("GetDeploymentResponse.Data.Deployment.CheckingStatus"));
+		deployment.setCreateTime(_ctx.longValue("GetDeploymentResponse.Data.Deployment.CreateTime"));
+		deployment.setHandlerId(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.HandlerId"));
+		deployment.setCreatorId(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.CreatorId"));
+		deployment.setExecuteTime(_ctx.longValue("GetDeploymentResponse.Data.Deployment.ExecuteTime"));
+		deployment.setName(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.Name"));
 		data.setDeployment(deployment);
 		getDeploymentResponse.setData(data);
 	 

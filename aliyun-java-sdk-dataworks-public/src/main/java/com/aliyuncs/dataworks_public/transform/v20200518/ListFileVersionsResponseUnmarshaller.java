@@ -28,10 +28,10 @@ public class ListFileVersionsResponseUnmarshaller {
 	public static ListFileVersionsResponse unmarshall(ListFileVersionsResponse listFileVersionsResponse, UnmarshallerContext _ctx) {
 		
 		listFileVersionsResponse.setRequestId(_ctx.stringValue("ListFileVersionsResponse.RequestId"));
-		listFileVersionsResponse.setSuccess(_ctx.booleanValue("ListFileVersionsResponse.Success"));
-		listFileVersionsResponse.setErrorCode(_ctx.stringValue("ListFileVersionsResponse.ErrorCode"));
-		listFileVersionsResponse.setErrorMessage(_ctx.stringValue("ListFileVersionsResponse.ErrorMessage"));
 		listFileVersionsResponse.setHttpStatusCode(_ctx.integerValue("ListFileVersionsResponse.HttpStatusCode"));
+		listFileVersionsResponse.setErrorMessage(_ctx.stringValue("ListFileVersionsResponse.ErrorMessage"));
+		listFileVersionsResponse.setErrorCode(_ctx.stringValue("ListFileVersionsResponse.ErrorCode"));
+		listFileVersionsResponse.setSuccess(_ctx.booleanValue("ListFileVersionsResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListFileVersionsResponse.Data.PageNumber"));
@@ -41,19 +41,19 @@ public class ListFileVersionsResponseUnmarshaller {
 		List<FileVersion> fileVersions = new ArrayList<FileVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListFileVersionsResponse.Data.FileVersions.Length"); i++) {
 			FileVersion fileVersion = new FileVersion();
-			fileVersion.setFileVersion(_ctx.integerValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].FileVersion"));
 			fileVersion.setFileContent(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].FileContent"));
-			fileVersion.setCommitTime(_ctx.longValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].CommitTime"));
-			fileVersion.setCommitUser(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].CommitUser"));
-			fileVersion.setFileName(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].FileName"));
 			fileVersion.setStatus(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].Status"));
-			fileVersion.setChangeType(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].ChangeType"));
 			fileVersion.setIsCurrentProd(_ctx.booleanValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].IsCurrentProd"));
-			fileVersion.setNodeId(_ctx.longValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].NodeId"));
-			fileVersion.setComment(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].Comment"));
+			fileVersion.setCommitUser(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].CommitUser"));
 			fileVersion.setNodeContent(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].NodeContent"));
+			fileVersion.setComment(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].Comment"));
 			fileVersion.setFilePropertyContent(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].FilePropertyContent"));
+			fileVersion.setFileName(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].FileName"));
 			fileVersion.setUseType(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].UseType"));
+			fileVersion.setChangeType(_ctx.stringValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].ChangeType"));
+			fileVersion.setFileVersion(_ctx.integerValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].FileVersion"));
+			fileVersion.setCommitTime(_ctx.longValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].CommitTime"));
+			fileVersion.setNodeId(_ctx.longValue("ListFileVersionsResponse.Data.FileVersions["+ i +"].NodeId"));
 
 			fileVersions.add(fileVersion);
 		}

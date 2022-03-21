@@ -27,9 +27,9 @@ public class GetProjectResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	private Data data;
 
@@ -41,20 +41,20 @@ public class GetProjectResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -67,68 +67,68 @@ public class GetProjectResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String gmtModified;
+		private Integer status;
 
 		private Integer maxFlowNode;
 
-		private String defaultDiResourceGroupIdentifier;
-
-		private Integer destination;
+		private Integer projectId;
 
 		private Integer isAllowDownload;
 
-		private String prodStorageQuota;
-
-		private Integer schedulerRetryInterval;
-
-		private String residentArea;
-
-		private Integer tablePrivacyMode;
-
-		private String projectOwnerBaseId;
-
-		private Boolean useProxyOdpsAccount;
-
-		private Boolean disableDevelopment;
-
 		private Integer projectMode;
 
-		private String gmtCreate;
+		private String gmtModified;
 
-		private String devStorageQuota;
-
-		private Integer isDefault;
-
-		private Integer protectedMode;
-
-		private Boolean baseProject;
-
-		private Long tenantId;
+		private String prodStorageQuota;
 
 		private String projectDescription;
 
-		private String appkey;
+		private Integer developmentType;
+
+		private Integer tablePrivacyMode;
+
+		private String defaultDiResourceGroupIdentifier;
 
 		private Integer schedulerMaxRetryTimes;
+
+		private Integer protectedMode;
+
+		private Integer schedulerRetryInterval;
+
+		private String appkey;
+
+		private String devStorageQuota;
+
+		private String residentArea;
+
+		private Integer isDefault;
+
+		private Integer destination;
 
 		private String projectName;
 
 		private String projectIdentifier;
 
-		private Integer projectId;
+		private Boolean disableDevelopment;
 
-		private Integer status;
+		private String projectOwnerBaseId;
 
-		private Integer developmentType;
+		private Boolean baseProject;
+
+		private Boolean useProxyOdpsAccount;
+
+		private String gmtCreate;
+
+		private Long tenantId;
 
 		private List<String> envTypes;
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getMaxFlowNode() {
@@ -139,20 +139,12 @@ public class GetProjectResponse extends AcsResponse {
 			this.maxFlowNode = maxFlowNode;
 		}
 
-		public String getDefaultDiResourceGroupIdentifier() {
-			return this.defaultDiResourceGroupIdentifier;
+		public Integer getProjectId() {
+			return this.projectId;
 		}
 
-		public void setDefaultDiResourceGroupIdentifier(String defaultDiResourceGroupIdentifier) {
-			this.defaultDiResourceGroupIdentifier = defaultDiResourceGroupIdentifier;
-		}
-
-		public Integer getDestination() {
-			return this.destination;
-		}
-
-		public void setDestination(Integer destination) {
-			this.destination = destination;
+		public void setProjectId(Integer projectId) {
+			this.projectId = projectId;
 		}
 
 		public Integer getIsAllowDownload() {
@@ -163,62 +155,6 @@ public class GetProjectResponse extends AcsResponse {
 			this.isAllowDownload = isAllowDownload;
 		}
 
-		public String getProdStorageQuota() {
-			return this.prodStorageQuota;
-		}
-
-		public void setProdStorageQuota(String prodStorageQuota) {
-			this.prodStorageQuota = prodStorageQuota;
-		}
-
-		public Integer getSchedulerRetryInterval() {
-			return this.schedulerRetryInterval;
-		}
-
-		public void setSchedulerRetryInterval(Integer schedulerRetryInterval) {
-			this.schedulerRetryInterval = schedulerRetryInterval;
-		}
-
-		public String getResidentArea() {
-			return this.residentArea;
-		}
-
-		public void setResidentArea(String residentArea) {
-			this.residentArea = residentArea;
-		}
-
-		public Integer getTablePrivacyMode() {
-			return this.tablePrivacyMode;
-		}
-
-		public void setTablePrivacyMode(Integer tablePrivacyMode) {
-			this.tablePrivacyMode = tablePrivacyMode;
-		}
-
-		public String getProjectOwnerBaseId() {
-			return this.projectOwnerBaseId;
-		}
-
-		public void setProjectOwnerBaseId(String projectOwnerBaseId) {
-			this.projectOwnerBaseId = projectOwnerBaseId;
-		}
-
-		public Boolean getUseProxyOdpsAccount() {
-			return this.useProxyOdpsAccount;
-		}
-
-		public void setUseProxyOdpsAccount(Boolean useProxyOdpsAccount) {
-			this.useProxyOdpsAccount = useProxyOdpsAccount;
-		}
-
-		public Boolean getDisableDevelopment() {
-			return this.disableDevelopment;
-		}
-
-		public void setDisableDevelopment(Boolean disableDevelopment) {
-			this.disableDevelopment = disableDevelopment;
-		}
-
 		public Integer getProjectMode() {
 			return this.projectMode;
 		}
@@ -227,52 +163,20 @@ public class GetProjectResponse extends AcsResponse {
 			this.projectMode = projectMode;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
-		public String getDevStorageQuota() {
-			return this.devStorageQuota;
+		public String getProdStorageQuota() {
+			return this.prodStorageQuota;
 		}
 
-		public void setDevStorageQuota(String devStorageQuota) {
-			this.devStorageQuota = devStorageQuota;
-		}
-
-		public Integer getIsDefault() {
-			return this.isDefault;
-		}
-
-		public void setIsDefault(Integer isDefault) {
-			this.isDefault = isDefault;
-		}
-
-		public Integer getProtectedMode() {
-			return this.protectedMode;
-		}
-
-		public void setProtectedMode(Integer protectedMode) {
-			this.protectedMode = protectedMode;
-		}
-
-		public Boolean getBaseProject() {
-			return this.baseProject;
-		}
-
-		public void setBaseProject(Boolean baseProject) {
-			this.baseProject = baseProject;
-		}
-
-		public Long getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
+		public void setProdStorageQuota(String prodStorageQuota) {
+			this.prodStorageQuota = prodStorageQuota;
 		}
 
 		public String getProjectDescription() {
@@ -283,12 +187,28 @@ public class GetProjectResponse extends AcsResponse {
 			this.projectDescription = projectDescription;
 		}
 
-		public String getAppkey() {
-			return this.appkey;
+		public Integer getDevelopmentType() {
+			return this.developmentType;
 		}
 
-		public void setAppkey(String appkey) {
-			this.appkey = appkey;
+		public void setDevelopmentType(Integer developmentType) {
+			this.developmentType = developmentType;
+		}
+
+		public Integer getTablePrivacyMode() {
+			return this.tablePrivacyMode;
+		}
+
+		public void setTablePrivacyMode(Integer tablePrivacyMode) {
+			this.tablePrivacyMode = tablePrivacyMode;
+		}
+
+		public String getDefaultDiResourceGroupIdentifier() {
+			return this.defaultDiResourceGroupIdentifier;
+		}
+
+		public void setDefaultDiResourceGroupIdentifier(String defaultDiResourceGroupIdentifier) {
+			this.defaultDiResourceGroupIdentifier = defaultDiResourceGroupIdentifier;
 		}
 
 		public Integer getSchedulerMaxRetryTimes() {
@@ -297,6 +217,62 @@ public class GetProjectResponse extends AcsResponse {
 
 		public void setSchedulerMaxRetryTimes(Integer schedulerMaxRetryTimes) {
 			this.schedulerMaxRetryTimes = schedulerMaxRetryTimes;
+		}
+
+		public Integer getProtectedMode() {
+			return this.protectedMode;
+		}
+
+		public void setProtectedMode(Integer protectedMode) {
+			this.protectedMode = protectedMode;
+		}
+
+		public Integer getSchedulerRetryInterval() {
+			return this.schedulerRetryInterval;
+		}
+
+		public void setSchedulerRetryInterval(Integer schedulerRetryInterval) {
+			this.schedulerRetryInterval = schedulerRetryInterval;
+		}
+
+		public String getAppkey() {
+			return this.appkey;
+		}
+
+		public void setAppkey(String appkey) {
+			this.appkey = appkey;
+		}
+
+		public String getDevStorageQuota() {
+			return this.devStorageQuota;
+		}
+
+		public void setDevStorageQuota(String devStorageQuota) {
+			this.devStorageQuota = devStorageQuota;
+		}
+
+		public String getResidentArea() {
+			return this.residentArea;
+		}
+
+		public void setResidentArea(String residentArea) {
+			this.residentArea = residentArea;
+		}
+
+		public Integer getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(Integer isDefault) {
+			this.isDefault = isDefault;
+		}
+
+		public Integer getDestination() {
+			return this.destination;
+		}
+
+		public void setDestination(Integer destination) {
+			this.destination = destination;
 		}
 
 		public String getProjectName() {
@@ -315,28 +291,52 @@ public class GetProjectResponse extends AcsResponse {
 			this.projectIdentifier = projectIdentifier;
 		}
 
-		public Integer getProjectId() {
-			return this.projectId;
+		public Boolean getDisableDevelopment() {
+			return this.disableDevelopment;
 		}
 
-		public void setProjectId(Integer projectId) {
-			this.projectId = projectId;
+		public void setDisableDevelopment(Boolean disableDevelopment) {
+			this.disableDevelopment = disableDevelopment;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getProjectOwnerBaseId() {
+			return this.projectOwnerBaseId;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setProjectOwnerBaseId(String projectOwnerBaseId) {
+			this.projectOwnerBaseId = projectOwnerBaseId;
 		}
 
-		public Integer getDevelopmentType() {
-			return this.developmentType;
+		public Boolean getBaseProject() {
+			return this.baseProject;
 		}
 
-		public void setDevelopmentType(Integer developmentType) {
-			this.developmentType = developmentType;
+		public void setBaseProject(Boolean baseProject) {
+			this.baseProject = baseProject;
+		}
+
+		public Boolean getUseProxyOdpsAccount() {
+			return this.useProxyOdpsAccount;
+		}
+
+		public void setUseProxyOdpsAccount(Boolean useProxyOdpsAccount) {
+			this.useProxyOdpsAccount = useProxyOdpsAccount;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Long getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
 		}
 
 		public List<String> getEnvTypes() {
