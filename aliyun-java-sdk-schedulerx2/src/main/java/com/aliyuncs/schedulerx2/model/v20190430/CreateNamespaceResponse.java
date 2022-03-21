@@ -15,24 +15,32 @@
 package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.schedulerx2.transform.v20190430.CreateAppGroupResponseUnmarshaller;
+import com.aliyuncs.schedulerx2.transform.v20190430.CreateNamespaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateAppGroupResponse extends AcsResponse {
+public class CreateNamespaceResponse extends AcsResponse {
+
+	private String requestId;
 
 	private Integer code;
 
 	private String message;
 
-	private String requestId;
-
 	private Boolean success;
 
 	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -48,14 +56,6 @@ public class CreateAppGroupResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -76,30 +76,20 @@ public class CreateAppGroupResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long appGroupId;
+		private String namespaceUid;
 
-		private String appKey;
-
-		public Long getAppGroupId() {
-			return this.appGroupId;
+		public String getNamespaceUid() {
+			return this.namespaceUid;
 		}
 
-		public void setAppGroupId(Long appGroupId) {
-			this.appGroupId = appGroupId;
-		}
-
-		public String getAppKey() {
-			return this.appKey;
-		}
-
-		public void setAppKey(String appKey) {
-			this.appKey = appKey;
+		public void setNamespaceUid(String namespaceUid) {
+			this.namespaceUid = namespaceUid;
 		}
 	}
 
 	@Override
-	public CreateAppGroupResponse getInstance(UnmarshallerContext context) {
-		return	CreateAppGroupResponseUnmarshaller.unmarshall(this, context);
+	public CreateNamespaceResponse getInstance(UnmarshallerContext context) {
+		return	CreateNamespaceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

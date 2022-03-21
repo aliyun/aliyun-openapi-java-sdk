@@ -89,6 +89,8 @@ public class GetJobInfoResponse extends AcsResponse {
 
 		public static class JobConfigInfo {
 
+			private Long jobId;
+
 			private Integer status;
 
 			private String parameters;
@@ -116,6 +118,14 @@ public class GetJobInfoResponse extends AcsResponse {
 			private TimeConfig timeConfig;
 
 			private JobMonitorInfo jobMonitorInfo;
+
+			public Long getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(Long jobId) {
+				this.jobId = jobId;
+			}
 
 			public Integer getStatus() {
 				return this.status;

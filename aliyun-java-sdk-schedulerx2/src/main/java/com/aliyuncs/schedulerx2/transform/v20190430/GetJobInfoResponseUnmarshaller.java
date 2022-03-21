@@ -40,6 +40,7 @@ public class GetJobInfoResponseUnmarshaller {
 		Data data = new Data();
 
 		JobConfigInfo jobConfigInfo = new JobConfigInfo();
+		jobConfigInfo.setJobId(_ctx.longValue("GetJobInfoResponse.Data.JobConfigInfo.JobId"));
 		jobConfigInfo.setStatus(_ctx.integerValue("GetJobInfoResponse.Data.JobConfigInfo.Status"));
 		jobConfigInfo.setParameters(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.Parameters"));
 		jobConfigInfo.setDescription(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.Description"));

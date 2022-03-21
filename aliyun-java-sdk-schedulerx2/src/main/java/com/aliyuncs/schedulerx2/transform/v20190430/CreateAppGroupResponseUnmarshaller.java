@@ -30,6 +30,7 @@ public class CreateAppGroupResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setAppGroupId(_ctx.longValue("CreateAppGroupResponse.Data.AppGroupId"));
+		data.setAppKey(_ctx.stringValue("CreateAppGroupResponse.Data.AppKey"));
 		createAppGroupResponse.setData(data);
 	 
 	 	return createAppGroupResponse;

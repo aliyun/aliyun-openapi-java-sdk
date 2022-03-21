@@ -32,6 +32,8 @@ public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
 	private Long jobId;
 
 	private String namespace;
+
+	private String jobName;
 	public GetJobInfoRequest() {
 		super("schedulerx2", "2019-04-30", "GetJobInfo");
 		setMethod(MethodType.GET);
@@ -82,6 +84,17 @@ public class GetJobInfoRequest extends RpcAcsRequest<GetJobInfoResponse> {
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getJobName() {
+		return this.jobName;
+	}
+
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+		if(jobName != null){
+			putQueryParameter("JobName", jobName);
 		}
 	}
 

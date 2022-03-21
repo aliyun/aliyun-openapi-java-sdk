@@ -36,11 +36,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String description;
 
+	private String monitorConfigJson;
+
 	private String appName;
 
 	private String namespace;
 
 	private String alarmJson;
+
+	private String appKey;
+
+	private String monitorContactsJson;
 	public CreateAppGroupRequest() {
 		super("schedulerx2", "2019-04-30", "CreateAppGroup");
 		setProtocol(ProtocolType.HTTPS);
@@ -106,6 +112,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		}
 	}
 
+	public String getMonitorConfigJson() {
+		return this.monitorConfigJson;
+	}
+
+	public void setMonitorConfigJson(String monitorConfigJson) {
+		this.monitorConfigJson = monitorConfigJson;
+		if(monitorConfigJson != null){
+			putQueryParameter("MonitorConfigJson", monitorConfigJson);
+		}
+	}
+
 	public String getAppName() {
 		return this.appName;
 	}
@@ -136,6 +153,28 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.alarmJson = alarmJson;
 		if(alarmJson != null){
 			putQueryParameter("AlarmJson", alarmJson);
+		}
+	}
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey);
+		}
+	}
+
+	public String getMonitorContactsJson() {
+		return this.monitorContactsJson;
+	}
+
+	public void setMonitorContactsJson(String monitorContactsJson) {
+		this.monitorContactsJson = monitorContactsJson;
+		if(monitorContactsJson != null){
+			putQueryParameter("MonitorContactsJson", monitorContactsJson);
 		}
 	}
 
