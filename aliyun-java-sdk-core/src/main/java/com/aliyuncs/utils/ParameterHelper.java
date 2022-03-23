@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 public class ParameterHelper {
 
     private final static String TIME_ZONE = "GMT";
+    private final static String TIME_ZONE_UTC = "UTC";
     private final static String FORMAT_ISO8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'";
     private final static String FORMAT_RFC2616 = "EEE, dd MMM yyyy HH:mm:ss zzz";
     public final static String PATTERN = "^[a-zA-Z0-9_-]+$";
@@ -42,6 +43,12 @@ public class ParameterHelper {
     public static String getISO8601Time(Date date) {
         SimpleDateFormat df = new SimpleDateFormat(FORMAT_ISO8601);
         df.setTimeZone(new SimpleTimeZone(0, TIME_ZONE));
+        return df.format(date);
+    }
+
+    public static String getISO8601UTCTime(Date date) {
+        SimpleDateFormat df = new SimpleDateFormat(FORMAT_ISO8601);
+        df.setTimeZone(new SimpleTimeZone(0, TIME_ZONE_UTC));
         return df.format(date);
     }
 

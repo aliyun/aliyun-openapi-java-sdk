@@ -45,7 +45,7 @@ public class V3SignatureComposer implements ISignatureComposer {
     public Map<String, String> refreshSignParameters(Map<String, String> parameters, Signer signer, String accessKeyId,
                                                      FormatType format) {
         Map<String, String> immutableMap = new HashMap<String, String>(parameters);
-        immutableMap.put("x-acs-date", ParameterHelper.getISO8601Time(new Date()));
+        immutableMap.put("x-acs-date", ParameterHelper.getISO8601UTCTime(new Date()));
         immutableMap.put("x-acs-signature-nonce", ParameterHelper.getUniqueNonce());
         return immutableMap;
     }
