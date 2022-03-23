@@ -1,3 +1,6 @@
+2022-03-23 Version: 3.1.1
+- Clickhouse add restore.
+
 2021-10-29 Version: 3.0.0
 - Generated 2019-11-11 for `clickhouse`.
 

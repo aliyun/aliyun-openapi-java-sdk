@@ -32,13 +32,13 @@ public class DescribeDBClusterNetInfoItemsResponseUnmarshaller {
 		List<NetInfoItem> netInfoItems = new ArrayList<NetInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems.Length"); i++) {
 			NetInfoItem netInfoItem = new NetInfoItem();
-			netInfoItem.setConnectionString(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].ConnectionString"));
-			netInfoItem.setIPAddress(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].IPAddress"));
-			netInfoItem.setNetType(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].NetType"));
-			netInfoItem.setHttpPort(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].HttpPort"));
 			netInfoItem.setVpcId(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].VpcId"));
 			netInfoItem.setVSwitchId(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].VSwitchId"));
+			netInfoItem.setConnectionString(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].ConnectionString"));
 			netInfoItem.setJdbcPort(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].JdbcPort"));
+			netInfoItem.setNetType(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].NetType"));
+			netInfoItem.setHttpPort(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].HttpPort"));
+			netInfoItem.setIPAddress(_ctx.stringValue("DescribeDBClusterNetInfoItemsResponse.NetInfoItems["+ i +"].IPAddress"));
 
 			netInfoItems.add(netInfoItem);
 		}

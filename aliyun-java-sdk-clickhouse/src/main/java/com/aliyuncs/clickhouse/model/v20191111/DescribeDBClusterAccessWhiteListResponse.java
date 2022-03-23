@@ -47,18 +47,18 @@ public class DescribeDBClusterAccessWhiteListResponse extends AcsResponse {
 
 	public static class IPArray {
 
-		private String dBClusterIPArrayName;
+		private String dBClusterIPArrayAttribute;
 
 		private String securityIPList;
 
-		private String dBClusterIPArrayAttribute;
+		private String dBClusterIPArrayName;
 
-		public String getDBClusterIPArrayName() {
-			return this.dBClusterIPArrayName;
+		public String getDBClusterIPArrayAttribute() {
+			return this.dBClusterIPArrayAttribute;
 		}
 
-		public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
-			this.dBClusterIPArrayName = dBClusterIPArrayName;
+		public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
+			this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
 		}
 
 		public String getSecurityIPList() {
@@ -69,12 +69,12 @@ public class DescribeDBClusterAccessWhiteListResponse extends AcsResponse {
 			this.securityIPList = securityIPList;
 		}
 
-		public String getDBClusterIPArrayAttribute() {
-			return this.dBClusterIPArrayAttribute;
+		public String getDBClusterIPArrayName() {
+			return this.dBClusterIPArrayName;
 		}
 
-		public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
-			this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
+		public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
+			this.dBClusterIPArrayName = dBClusterIPArrayName;
 		}
 	}
 

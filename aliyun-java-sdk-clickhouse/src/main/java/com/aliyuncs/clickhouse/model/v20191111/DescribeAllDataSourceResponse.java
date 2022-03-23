@@ -27,11 +27,11 @@ public class DescribeAllDataSourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Schema> schemas;
-
 	private List<Table> tables;
 
 	private List<Column> columns;
+
+	private List<Schema> schemas;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,14 +39,6 @@ public class DescribeAllDataSourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public List<Schema> getSchemas() {
-		return this.schemas;
-	}
-
-	public void setSchemas(List<Schema> schemas) {
-		this.schemas = schemas;
 	}
 
 	public List<Table> getTables() {
@@ -63,6 +55,120 @@ public class DescribeAllDataSourceResponse extends AcsResponse {
 
 	public void setColumns(List<Column> columns) {
 		this.columns = columns;
+	}
+
+	public List<Schema> getSchemas() {
+		return this.schemas;
+	}
+
+	public void setSchemas(List<Schema> schemas) {
+		this.schemas = schemas;
+	}
+
+	public static class Table {
+
+		private String tableName;
+
+		private String dBClusterId;
+
+		private String schemaName;
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
+	}
+
+	public static class Column {
+
+		private String type;
+
+		private String columnName;
+
+		private String tableName;
+
+		private Boolean autoIncrementColumn;
+
+		private String dBClusterId;
+
+		private Boolean primaryKey;
+
+		private String schemaName;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getColumnName() {
+			return this.columnName;
+		}
+
+		public void setColumnName(String columnName) {
+			this.columnName = columnName;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public Boolean getAutoIncrementColumn() {
+			return this.autoIncrementColumn;
+		}
+
+		public void setAutoIncrementColumn(Boolean autoIncrementColumn) {
+			this.autoIncrementColumn = autoIncrementColumn;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public Boolean getPrimaryKey() {
+			return this.primaryKey;
+		}
+
+		public void setPrimaryKey(Boolean primaryKey) {
+			this.primaryKey = primaryKey;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
 	}
 
 	public static class Schema {
@@ -85,112 +191,6 @@ public class DescribeAllDataSourceResponse extends AcsResponse {
 
 		public void setSchemaName(String schemaName) {
 			this.schemaName = schemaName;
-		}
-	}
-
-	public static class Table {
-
-		private String dBClusterId;
-
-		private String schemaName;
-
-		private String tableName;
-
-		public String getDBClusterId() {
-			return this.dBClusterId;
-		}
-
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-	}
-
-	public static class Column {
-
-		private String dBClusterId;
-
-		private String schemaName;
-
-		private String tableName;
-
-		private String columnName;
-
-		private String type;
-
-		private Boolean primaryKey;
-
-		private Boolean autoIncrementColumn;
-
-		public String getDBClusterId() {
-			return this.dBClusterId;
-		}
-
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-
-		public String getColumnName() {
-			return this.columnName;
-		}
-
-		public void setColumnName(String columnName) {
-			this.columnName = columnName;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Boolean getPrimaryKey() {
-			return this.primaryKey;
-		}
-
-		public void setPrimaryKey(Boolean primaryKey) {
-			this.primaryKey = primaryKey;
-		}
-
-		public Boolean getAutoIncrementColumn() {
-			return this.autoIncrementColumn;
-		}
-
-		public void setAutoIncrementColumn(Boolean autoIncrementColumn) {
-			this.autoIncrementColumn = autoIncrementColumn;
 		}
 	}
 

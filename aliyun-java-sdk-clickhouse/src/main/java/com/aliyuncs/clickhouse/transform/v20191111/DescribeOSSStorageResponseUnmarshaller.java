@@ -23,10 +23,10 @@ public class DescribeOSSStorageResponseUnmarshaller {
 	public static DescribeOSSStorageResponse unmarshall(DescribeOSSStorageResponse describeOSSStorageResponse, UnmarshallerContext _ctx) {
 		
 		describeOSSStorageResponse.setRequestId(_ctx.stringValue("DescribeOSSStorageResponse.RequestId"));
-		describeOSSStorageResponse.setStorageUsage(_ctx.stringValue("DescribeOSSStorageResponse.StorageUsage"));
-		describeOSSStorageResponse.setState(_ctx.stringValue("DescribeOSSStorageResponse.State"));
 		describeOSSStorageResponse.setPolicy(_ctx.stringValue("DescribeOSSStorageResponse.Policy"));
+		describeOSSStorageResponse.setState(_ctx.stringValue("DescribeOSSStorageResponse.State"));
 		describeOSSStorageResponse.setColdStorage(_ctx.booleanValue("DescribeOSSStorageResponse.ColdStorage"));
+		describeOSSStorageResponse.setStorageUsage(_ctx.stringValue("DescribeOSSStorageResponse.StorageUsage"));
 	 
 	 	return describeOSSStorageResponse;
 	}

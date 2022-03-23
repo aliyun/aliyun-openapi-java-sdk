@@ -27,18 +27,18 @@ public class DescribeLorneLogResponseUnmarshaller {
 	public static DescribeLorneLogResponse unmarshall(DescribeLorneLogResponse describeLorneLogResponse, UnmarshallerContext _ctx) {
 		
 		describeLorneLogResponse.setRequestId(_ctx.stringValue("DescribeLorneLogResponse.RequestId"));
-		describeLorneLogResponse.setPageNumber(_ctx.integerValue("DescribeLorneLogResponse.PageNumber"));
 		describeLorneLogResponse.setTotalCount(_ctx.integerValue("DescribeLorneLogResponse.TotalCount"));
 		describeLorneLogResponse.setPageSize(_ctx.integerValue("DescribeLorneLogResponse.PageSize"));
+		describeLorneLogResponse.setPageNumber(_ctx.integerValue("DescribeLorneLogResponse.PageNumber"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLorneLogResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setEndTime(_ctx.stringValue("DescribeLorneLogResponse.Data["+ i +"].EndTime"));
+			dataItem.setStartTime(_ctx.stringValue("DescribeLorneLogResponse.Data["+ i +"].StartTime"));
 			dataItem.setCode(_ctx.stringValue("DescribeLorneLogResponse.Data["+ i +"].Code"));
 			dataItem.setMessage(_ctx.stringValue("DescribeLorneLogResponse.Data["+ i +"].Message"));
 			dataItem.setCount(_ctx.stringValue("DescribeLorneLogResponse.Data["+ i +"].Count"));
-			dataItem.setStartTime(_ctx.stringValue("DescribeLorneLogResponse.Data["+ i +"].StartTime"));
-			dataItem.setEndTime(_ctx.stringValue("DescribeLorneLogResponse.Data["+ i +"].EndTime"));
 
 			data.add(dataItem);
 		}

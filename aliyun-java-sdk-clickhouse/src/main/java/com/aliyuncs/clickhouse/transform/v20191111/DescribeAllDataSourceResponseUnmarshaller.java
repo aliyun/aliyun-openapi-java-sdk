@@ -30,6 +30,32 @@ public class DescribeAllDataSourceResponseUnmarshaller {
 		
 		describeAllDataSourceResponse.setRequestId(_ctx.stringValue("DescribeAllDataSourceResponse.RequestId"));
 
+		List<Table> tables = new ArrayList<Table>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAllDataSourceResponse.Tables.Length"); i++) {
+			Table table = new Table();
+			table.setTableName(_ctx.stringValue("DescribeAllDataSourceResponse.Tables["+ i +"].TableName"));
+			table.setDBClusterId(_ctx.stringValue("DescribeAllDataSourceResponse.Tables["+ i +"].DBClusterId"));
+			table.setSchemaName(_ctx.stringValue("DescribeAllDataSourceResponse.Tables["+ i +"].SchemaName"));
+
+			tables.add(table);
+		}
+		describeAllDataSourceResponse.setTables(tables);
+
+		List<Column> columns = new ArrayList<Column>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAllDataSourceResponse.Columns.Length"); i++) {
+			Column column = new Column();
+			column.setType(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].Type"));
+			column.setColumnName(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].ColumnName"));
+			column.setTableName(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].TableName"));
+			column.setAutoIncrementColumn(_ctx.booleanValue("DescribeAllDataSourceResponse.Columns["+ i +"].AutoIncrementColumn"));
+			column.setDBClusterId(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].DBClusterId"));
+			column.setPrimaryKey(_ctx.booleanValue("DescribeAllDataSourceResponse.Columns["+ i +"].PrimaryKey"));
+			column.setSchemaName(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].SchemaName"));
+
+			columns.add(column);
+		}
+		describeAllDataSourceResponse.setColumns(columns);
+
 		List<Schema> schemas = new ArrayList<Schema>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAllDataSourceResponse.Schemas.Length"); i++) {
 			Schema schema = new Schema();
@@ -39,32 +65,6 @@ public class DescribeAllDataSourceResponseUnmarshaller {
 			schemas.add(schema);
 		}
 		describeAllDataSourceResponse.setSchemas(schemas);
-
-		List<Table> tables = new ArrayList<Table>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeAllDataSourceResponse.Tables.Length"); i++) {
-			Table table = new Table();
-			table.setDBClusterId(_ctx.stringValue("DescribeAllDataSourceResponse.Tables["+ i +"].DBClusterId"));
-			table.setSchemaName(_ctx.stringValue("DescribeAllDataSourceResponse.Tables["+ i +"].SchemaName"));
-			table.setTableName(_ctx.stringValue("DescribeAllDataSourceResponse.Tables["+ i +"].TableName"));
-
-			tables.add(table);
-		}
-		describeAllDataSourceResponse.setTables(tables);
-
-		List<Column> columns = new ArrayList<Column>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeAllDataSourceResponse.Columns.Length"); i++) {
-			Column column = new Column();
-			column.setDBClusterId(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].DBClusterId"));
-			column.setSchemaName(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].SchemaName"));
-			column.setTableName(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].TableName"));
-			column.setColumnName(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].ColumnName"));
-			column.setType(_ctx.stringValue("DescribeAllDataSourceResponse.Columns["+ i +"].Type"));
-			column.setPrimaryKey(_ctx.booleanValue("DescribeAllDataSourceResponse.Columns["+ i +"].PrimaryKey"));
-			column.setAutoIncrementColumn(_ctx.booleanValue("DescribeAllDataSourceResponse.Columns["+ i +"].AutoIncrementColumn"));
-
-			columns.add(column);
-		}
-		describeAllDataSourceResponse.setColumns(columns);
 	 
 	 	return describeAllDataSourceResponse;
 	}

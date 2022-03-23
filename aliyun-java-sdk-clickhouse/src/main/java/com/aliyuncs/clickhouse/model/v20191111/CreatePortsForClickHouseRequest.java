@@ -22,7 +22,7 @@ import com.aliyuncs.clickhouse.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreatePortsForClickhouseRequest extends RpcAcsRequest<CreatePortsForClickhouseResponse> {
+public class CreatePortsForClickHouseRequest extends RpcAcsRequest<CreatePortsForClickHouseResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -36,8 +36,8 @@ public class CreatePortsForClickhouseRequest extends RpcAcsRequest<CreatePortsFo
 	private String ownerAccount;
 
 	private Long ownerId;
-	public CreatePortsForClickhouseRequest() {
-		super("clickhouse", "2019-11-11", "CreatePortsForClickhouse");
+	public CreatePortsForClickHouseRequest() {
+		super("clickhouse", "2019-11-11", "CreatePortsForClickHouse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -112,8 +112,8 @@ public class CreatePortsForClickhouseRequest extends RpcAcsRequest<CreatePortsFo
 	}
 
 	@Override
-	public Class<CreatePortsForClickhouseResponse> getResponseClass() {
-		return CreatePortsForClickhouseResponse.class;
+	public Class<CreatePortsForClickHouseResponse> getResponseClass() {
+		return CreatePortsForClickHouseResponse.class;
 	}
 
 }

@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeOSSStorageResponse extends AcsResponse {
 
-	private String requestId;
+	private String policy;
 
-	private String storageUsage;
+	private String requestId;
 
 	private String state;
 
-	private String policy;
-
 	private Boolean coldStorage;
+
+	private String storageUsage;
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class DescribeOSSStorageResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getStorageUsage() {
-		return this.storageUsage;
-	}
-
-	public void setStorageUsage(String storageUsage) {
-		this.storageUsage = storageUsage;
 	}
 
 	public String getState() {
@@ -58,20 +58,20 @@ public class DescribeOSSStorageResponse extends AcsResponse {
 		this.state = state;
 	}
 
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-	}
-
 	public Boolean getColdStorage() {
 		return this.coldStorage;
 	}
 
 	public void setColdStorage(Boolean coldStorage) {
 		this.coldStorage = coldStorage;
+	}
+
+	public String getStorageUsage() {
+		return this.storageUsage;
+	}
+
+	public void setStorageUsage(String storageUsage) {
+		this.storageUsage = storageUsage;
 	}
 
 	@Override

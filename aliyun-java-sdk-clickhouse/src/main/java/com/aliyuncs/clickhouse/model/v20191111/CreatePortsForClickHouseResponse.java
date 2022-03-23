@@ -15,14 +15,14 @@
 package com.aliyuncs.clickhouse.model.v20191111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.clickhouse.transform.v20191111.CreatePortsForClickhouseResponseUnmarshaller;
+import com.aliyuncs.clickhouse.transform.v20191111.CreatePortsForClickHouseResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreatePortsForClickhouseResponse extends AcsResponse {
+public class CreatePortsForClickHouseResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class CreatePortsForClickhouseResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreatePortsForClickhouseResponse getInstance(UnmarshallerContext context) {
-		return	CreatePortsForClickhouseResponseUnmarshaller.unmarshall(this, context);
+	public CreatePortsForClickHouseResponse getInstance(UnmarshallerContext context) {
+		return	CreatePortsForClickHouseResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

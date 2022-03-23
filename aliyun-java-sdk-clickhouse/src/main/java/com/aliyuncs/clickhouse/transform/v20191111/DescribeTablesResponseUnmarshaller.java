@@ -31,9 +31,9 @@ public class DescribeTablesResponseUnmarshaller {
 		List<Table> items = new ArrayList<Table>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTablesResponse.Items.Length"); i++) {
 			Table table = new Table();
+			table.setTableName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].TableName"));
 			table.setDBClusterId(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].DBClusterId"));
 			table.setSchemaName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].SchemaName"));
-			table.setTableName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].TableName"));
 
 			items.add(table);
 		}

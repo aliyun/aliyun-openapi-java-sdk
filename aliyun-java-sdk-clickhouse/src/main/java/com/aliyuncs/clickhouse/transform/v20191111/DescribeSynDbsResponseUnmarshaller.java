@@ -37,6 +37,7 @@ public class DescribeSynDbsResponseUnmarshaller {
 			synDb.setErrorMsg(_ctx.stringValue("DescribeSynDbsResponse.SynDbs["+ i +"].ErrorMsg"));
 			synDb.setRdsUserName(_ctx.stringValue("DescribeSynDbsResponse.SynDbs["+ i +"].RdsUserName"));
 			synDb.setRdsPassword(_ctx.stringValue("DescribeSynDbsResponse.SynDbs["+ i +"].RdsPassword"));
+			synDb.setRdsVpcUrl(_ctx.stringValue("DescribeSynDbsResponse.SynDbs["+ i +"].RdsVpcUrl"));
 
 			synDbs.add(synDb);
 		}

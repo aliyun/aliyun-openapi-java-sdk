@@ -51,9 +51,9 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private String rowsBeforeLimitAtLeast;
 
-		private List<ResultSet> data;
+		private List<ResultSet> tableSchema;
 
-		private List<ResultSet1> tableSchema;
+		private List<ResultSet1> data;
 
 		private Statistics statistics;
 
@@ -73,20 +73,20 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.rowsBeforeLimitAtLeast = rowsBeforeLimitAtLeast;
 		}
 
-		public List<ResultSet> getData() {
-			return this.data;
-		}
-
-		public void setData(List<ResultSet> data) {
-			this.data = data;
-		}
-
-		public List<ResultSet1> getTableSchema() {
+		public List<ResultSet> getTableSchema() {
 			return this.tableSchema;
 		}
 
-		public void setTableSchema(List<ResultSet1> tableSchema) {
+		public void setTableSchema(List<ResultSet> tableSchema) {
 			this.tableSchema = tableSchema;
+		}
+
+		public List<ResultSet1> getData() {
+			return this.data;
+		}
+
+		public void setData(List<ResultSet1> data) {
+			this.data = data;
 		}
 
 		public Statistics getStatistics() {
@@ -99,13 +99,30 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public static class ResultSet {
 
-			private String initialQueryId;
+			private String type;
 
-			private String initialUser;
+			private String name;
 
-			private String initialAddress;
+			public String getType() {
+				return this.type;
+			}
 
-			private String queryDurationMs;
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
+		public static class ResultSet1 {
+
+			private String type;
 
 			private String queryStartTime;
 
@@ -113,44 +130,26 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 			private String readRows;
 
-			private String readBytes;
-
-			private String resultBytes;
+			private String initialAddress;
 
 			private String memoryUsage;
 
-			private String type;
+			private String initialUser;
 
-			public String getInitialQueryId() {
-				return this.initialQueryId;
+			private String initialQueryId;
+
+			private String readBytes;
+
+			private String queryDurationMs;
+
+			private String resultBytes;
+
+			public String getType() {
+				return this.type;
 			}
 
-			public void setInitialQueryId(String initialQueryId) {
-				this.initialQueryId = initialQueryId;
-			}
-
-			public String getInitialUser() {
-				return this.initialUser;
-			}
-
-			public void setInitialUser(String initialUser) {
-				this.initialUser = initialUser;
-			}
-
-			public String getInitialAddress() {
-				return this.initialAddress;
-			}
-
-			public void setInitialAddress(String initialAddress) {
-				this.initialAddress = initialAddress;
-			}
-
-			public String getQueryDurationMs() {
-				return this.queryDurationMs;
-			}
-
-			public void setQueryDurationMs(String queryDurationMs) {
-				this.queryDurationMs = queryDurationMs;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getQueryStartTime() {
@@ -177,20 +176,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 				this.readRows = readRows;
 			}
 
-			public String getReadBytes() {
-				return this.readBytes;
+			public String getInitialAddress() {
+				return this.initialAddress;
 			}
 
-			public void setReadBytes(String readBytes) {
-				this.readBytes = readBytes;
-			}
-
-			public String getResultBytes() {
-				return this.resultBytes;
-			}
-
-			public void setResultBytes(String resultBytes) {
-				this.resultBytes = resultBytes;
+			public void setInitialAddress(String initialAddress) {
+				this.initialAddress = initialAddress;
 			}
 
 			public String getMemoryUsage() {
@@ -201,52 +192,61 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 				this.memoryUsage = memoryUsage;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getInitialUser() {
+				return this.initialUser;
 			}
 
-			public void setType(String type) {
-				this.type = type;
-			}
-		}
-
-		public static class ResultSet1 {
-
-			private String name;
-
-			private String type;
-
-			public String getName() {
-				return this.name;
+			public void setInitialUser(String initialUser) {
+				this.initialUser = initialUser;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public String getInitialQueryId() {
+				return this.initialQueryId;
 			}
 
-			public String getType() {
-				return this.type;
+			public void setInitialQueryId(String initialQueryId) {
+				this.initialQueryId = initialQueryId;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public String getReadBytes() {
+				return this.readBytes;
+			}
+
+			public void setReadBytes(String readBytes) {
+				this.readBytes = readBytes;
+			}
+
+			public String getQueryDurationMs() {
+				return this.queryDurationMs;
+			}
+
+			public void setQueryDurationMs(String queryDurationMs) {
+				this.queryDurationMs = queryDurationMs;
+			}
+
+			public String getResultBytes() {
+				return this.resultBytes;
+			}
+
+			public void setResultBytes(String resultBytes) {
+				this.resultBytes = resultBytes;
 			}
 		}
 
 		public static class Statistics {
 
-			private Integer bytesRead;
+			private Integer rowsRead;
 
 			private Float elapsedTime;
 
-			private Integer rowsRead;
+			private Integer bytesRead;
 
-			public Integer getBytesRead() {
-				return this.bytesRead;
+			public Integer getRowsRead() {
+				return this.rowsRead;
 			}
 
-			public void setBytesRead(Integer bytesRead) {
-				this.bytesRead = bytesRead;
+			public void setRowsRead(Integer rowsRead) {
+				this.rowsRead = rowsRead;
 			}
 
 			public Float getElapsedTime() {
@@ -257,12 +257,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 				this.elapsedTime = elapsedTime;
 			}
 
-			public Integer getRowsRead() {
-				return this.rowsRead;
+			public Integer getBytesRead() {
+				return this.bytesRead;
 			}
 
-			public void setRowsRead(Integer rowsRead) {
-				this.rowsRead = rowsRead;
+			public void setBytesRead(Integer bytesRead) {
+				this.bytesRead = bytesRead;
 			}
 		}
 	}

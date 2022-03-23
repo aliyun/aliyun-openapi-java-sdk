@@ -36,39 +36,39 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 		slowLogRecords.setRowsBeforeLimitAtLeast(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.RowsBeforeLimitAtLeast"));
 
 		Statistics statistics = new Statistics();
-		statistics.setBytesRead(_ctx.integerValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Statistics.BytesRead"));
-		statistics.setElapsedTime(_ctx.floatValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Statistics.ElapsedTime"));
 		statistics.setRowsRead(_ctx.integerValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Statistics.RowsRead"));
+		statistics.setElapsedTime(_ctx.floatValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Statistics.ElapsedTime"));
+		statistics.setBytesRead(_ctx.integerValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Statistics.BytesRead"));
 		slowLogRecords.setStatistics(statistics);
 
-		List<ResultSet> data = new ArrayList<ResultSet>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data.Length"); i++) {
-			ResultSet resultSet = new ResultSet();
-			resultSet.setInitialQueryId(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].InitialQueryId"));
-			resultSet.setInitialUser(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].InitialUser"));
-			resultSet.setInitialAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].InitialAddress"));
-			resultSet.setQueryDurationMs(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].QueryDurationMs"));
-			resultSet.setQueryStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].QueryStartTime"));
-			resultSet.setQuery(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].Query"));
-			resultSet.setReadRows(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].ReadRows"));
-			resultSet.setReadBytes(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].ReadBytes"));
-			resultSet.setResultBytes(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].ResultBytes"));
-			resultSet.setMemoryUsage(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].MemoryUsage"));
-			resultSet.setType(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].Type"));
-
-			data.add(resultSet);
-		}
-		slowLogRecords.setData(data);
-
-		List<ResultSet1> tableSchema = new ArrayList<ResultSet1>();
+		List<ResultSet> tableSchema = new ArrayList<ResultSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.SlowLogRecords.TableSchema.Length"); i++) {
-			ResultSet1 resultSet1 = new ResultSet1();
-			resultSet1.setName(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.TableSchema["+ i +"].Name"));
-			resultSet1.setType(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.TableSchema["+ i +"].Type"));
+			ResultSet resultSet = new ResultSet();
+			resultSet.setType(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.TableSchema["+ i +"].Type"));
+			resultSet.setName(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.TableSchema["+ i +"].Name"));
 
-			tableSchema.add(resultSet1);
+			tableSchema.add(resultSet);
 		}
 		slowLogRecords.setTableSchema(tableSchema);
+
+		List<ResultSet1> data = new ArrayList<ResultSet1>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data.Length"); i++) {
+			ResultSet1 resultSet1 = new ResultSet1();
+			resultSet1.setType(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].Type"));
+			resultSet1.setQueryStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].QueryStartTime"));
+			resultSet1.setQuery(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].Query"));
+			resultSet1.setReadRows(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].ReadRows"));
+			resultSet1.setInitialAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].InitialAddress"));
+			resultSet1.setMemoryUsage(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].MemoryUsage"));
+			resultSet1.setInitialUser(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].InitialUser"));
+			resultSet1.setInitialQueryId(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].InitialQueryId"));
+			resultSet1.setReadBytes(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].ReadBytes"));
+			resultSet1.setQueryDurationMs(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].QueryDurationMs"));
+			resultSet1.setResultBytes(_ctx.stringValue("DescribeSlowLogRecordsResponse.SlowLogRecords.Data["+ i +"].ResultBytes"));
+
+			data.add(resultSet1);
+		}
+		slowLogRecords.setData(data);
 		describeSlowLogRecordsResponse.setSlowLogRecords(slowLogRecords);
 	 
 	 	return describeSlowLogRecordsResponse;

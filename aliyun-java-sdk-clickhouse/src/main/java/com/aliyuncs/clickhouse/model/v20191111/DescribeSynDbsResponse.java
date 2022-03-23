@@ -59,6 +59,8 @@ public class DescribeSynDbsResponse extends AcsResponse {
 
 		private String rdsPassword;
 
+		private String rdsVpcUrl;
+
 		public String getRdsId() {
 			return this.rdsId;
 		}
@@ -105,6 +107,14 @@ public class DescribeSynDbsResponse extends AcsResponse {
 
 		public void setRdsPassword(String rdsPassword) {
 			this.rdsPassword = rdsPassword;
+		}
+
+		public String getRdsVpcUrl() {
+			return this.rdsVpcUrl;
+		}
+
+		public void setRdsVpcUrl(String rdsVpcUrl) {
+			this.rdsVpcUrl = rdsVpcUrl;
 		}
 	}
 

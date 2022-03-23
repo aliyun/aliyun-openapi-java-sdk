@@ -47,96 +47,48 @@ public class DescribeLoghubDetailResponse extends AcsResponse {
 
 	public static class LoghubInfo {
 
-		private String projectName;
-
-		private String logStoreName;
-
-		private String deliverName;
-
-		private String deliverTime;
-
-		private String domainUrl;
-
-		private String description;
-
-		private String schemaName;
+		private String accessKey;
 
 		private String tableName;
 
-		private String regionId;
-
-		private String zoneId;
-
-		private String userName;
-
-		private String password;
-
-		private Boolean filterDirtyData;
-
-		private String accessKey;
-
 		private String accessSecret;
+
+		private String projectName;
+
+		private String schemaName;
 
 		private String dBType;
 
+		private String deliverName;
+
+		private String regionId;
+
+		private String password;
+
 		private String dBClusterId;
+
+		private String description;
+
+		private Boolean filterDirtyData;
+
+		private String zoneId;
+
+		private String logStoreName;
+
+		private String userName;
+
+		private String domainUrl;
+
+		private String deliverTime;
 
 		private List<LogHubStore> logHubStores;
 
-		public String getProjectName() {
-			return this.projectName;
+		public String getAccessKey() {
+			return this.accessKey;
 		}
 
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
-		}
-
-		public String getLogStoreName() {
-			return this.logStoreName;
-		}
-
-		public void setLogStoreName(String logStoreName) {
-			this.logStoreName = logStoreName;
-		}
-
-		public String getDeliverName() {
-			return this.deliverName;
-		}
-
-		public void setDeliverName(String deliverName) {
-			this.deliverName = deliverName;
-		}
-
-		public String getDeliverTime() {
-			return this.deliverTime;
-		}
-
-		public void setDeliverTime(String deliverTime) {
-			this.deliverTime = deliverTime;
-		}
-
-		public String getDomainUrl() {
-			return this.domainUrl;
-		}
-
-		public void setDomainUrl(String domainUrl) {
-			this.domainUrl = domainUrl;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
+		public void setAccessKey(String accessKey) {
+			this.accessKey = accessKey;
 		}
 
 		public String getTableName() {
@@ -147,60 +99,28 @@ public class DescribeLoghubDetailResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getPassword() {
-			return this.password;
-		}
-
-		public void setPassword(String password) {
-			this.password = password;
-		}
-
-		public Boolean getFilterDirtyData() {
-			return this.filterDirtyData;
-		}
-
-		public void setFilterDirtyData(Boolean filterDirtyData) {
-			this.filterDirtyData = filterDirtyData;
-		}
-
-		public String getAccessKey() {
-			return this.accessKey;
-		}
-
-		public void setAccessKey(String accessKey) {
-			this.accessKey = accessKey;
-		}
-
 		public String getAccessSecret() {
 			return this.accessSecret;
 		}
 
 		public void setAccessSecret(String accessSecret) {
 			this.accessSecret = accessSecret;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 
 		public String getDBType() {
@@ -211,12 +131,92 @@ public class DescribeLoghubDetailResponse extends AcsResponse {
 			this.dBType = dBType;
 		}
 
+		public String getDeliverName() {
+			return this.deliverName;
+		}
+
+		public void setDeliverName(String deliverName) {
+			this.deliverName = deliverName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
 		public String getDBClusterId() {
 			return this.dBClusterId;
 		}
 
 		public void setDBClusterId(String dBClusterId) {
 			this.dBClusterId = dBClusterId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Boolean getFilterDirtyData() {
+			return this.filterDirtyData;
+		}
+
+		public void setFilterDirtyData(Boolean filterDirtyData) {
+			this.filterDirtyData = filterDirtyData;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getLogStoreName() {
+			return this.logStoreName;
+		}
+
+		public void setLogStoreName(String logStoreName) {
+			this.logStoreName = logStoreName;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getDomainUrl() {
+			return this.domainUrl;
+		}
+
+		public void setDomainUrl(String domainUrl) {
+			this.domainUrl = domainUrl;
+		}
+
+		public String getDeliverTime() {
+			return this.deliverTime;
+		}
+
+		public void setDeliverTime(String deliverTime) {
+			this.deliverTime = deliverTime;
 		}
 
 		public List<LogHubStore> getLogHubStores() {
@@ -229,11 +229,19 @@ public class DescribeLoghubDetailResponse extends AcsResponse {
 
 		public static class LogHubStore {
 
+			private String type;
+
 			private String logKey;
 
 			private String fieldKey;
 
-			private String type;
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 
 			public String getLogKey() {
 				return this.logKey;
@@ -249,14 +257,6 @@ public class DescribeLoghubDetailResponse extends AcsResponse {
 
 			public void setFieldKey(String fieldKey) {
 				this.fieldKey = fieldKey;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
 			}
 		}
 	}

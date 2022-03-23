@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String clusterNetworkType;
 
+	private String requestId;
+
 	private List<NetInfoItem> netInfoItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getClusterNetworkType() {
 		return this.clusterNetworkType;
@@ -45,6 +37,14 @@ public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 
 	public void setClusterNetworkType(String clusterNetworkType) {
 		this.clusterNetworkType = clusterNetworkType;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<NetInfoItem> getNetInfoItems() {
@@ -57,19 +57,35 @@ public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 
 	public static class NetInfoItem {
 
+		private String vpcId;
+
+		private String vSwitchId;
+
 		private String connectionString;
 
-		private String iPAddress;
+		private String jdbcPort;
 
 		private String netType;
 
 		private String httpPort;
 
-		private String vpcId;
+		private String iPAddress;
 
-		private String vSwitchId;
+		public String getVpcId() {
+			return this.vpcId;
+		}
 
-		private String jdbcPort;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
 
 		public String getConnectionString() {
 			return this.connectionString;
@@ -79,12 +95,12 @@ public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 			this.connectionString = connectionString;
 		}
 
-		public String getIPAddress() {
-			return this.iPAddress;
+		public String getJdbcPort() {
+			return this.jdbcPort;
 		}
 
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
+		public void setJdbcPort(String jdbcPort) {
+			this.jdbcPort = jdbcPort;
 		}
 
 		public String getNetType() {
@@ -103,28 +119,12 @@ public class DescribeDBClusterNetInfoItemsResponse extends AcsResponse {
 			this.httpPort = httpPort;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getIPAddress() {
+			return this.iPAddress;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getJdbcPort() {
-			return this.jdbcPort;
-		}
-
-		public void setJdbcPort(String jdbcPort) {
-			this.jdbcPort = jdbcPort;
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
 		}
 	}
 

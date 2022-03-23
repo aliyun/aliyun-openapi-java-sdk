@@ -68,6 +68,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		dBCluster.setSupportMysqlPort(_ctx.booleanValue("DescribeDBClusterAttributeResponse.DBCluster.SupportMysqlPort"));
 		dBCluster.setSupportHttpsPort(_ctx.booleanValue("DescribeDBClusterAttributeResponse.DBCluster.SupportHttpsPort"));
 		dBCluster.setControlVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ControlVersion"));
+		dBCluster.setPublicIpAddr(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.PublicIpAddr"));
+		dBCluster.setVpcIpAddr(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.VpcIpAddr"));
 
 		ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
 		scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus.Progress"));

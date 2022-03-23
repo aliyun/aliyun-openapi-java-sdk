@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccountsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer totalCount;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Account> accounts;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -67,6 +51,22 @@ public class DescribeAccountsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<Account> getAccounts() {
 		return this.accounts;
 	}
@@ -77,21 +77,13 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class Account {
 
-		private String accountName;
-
 		private String accountStatus;
 
 		private String accountDescription;
 
 		private String accountType;
 
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
+		private String accountName;
 
 		public String getAccountStatus() {
 			return this.accountStatus;
@@ -115,6 +107,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountType(String accountType) {
 			this.accountType = accountType;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

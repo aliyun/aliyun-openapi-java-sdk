@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
-	private String dBClusterId;
-
 	private String endTime;
 
 	private String requestId;
 
 	private String startTime;
 
+	private String dBClusterId;
+
 	private List<PerformanceItem> performances;
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -65,6 +57,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<PerformanceItem> getPerformances() {

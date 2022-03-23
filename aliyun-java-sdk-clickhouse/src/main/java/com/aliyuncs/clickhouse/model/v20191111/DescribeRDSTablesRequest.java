@@ -43,6 +43,8 @@ public class DescribeRDSTablesRequest extends RpcAcsRequest<DescribeRDSTablesRes
 
 	private Long rdsPort;
 
+	private String rdsVpcUrl;
+
 	private String rdsUserName;
 	public DescribeRDSTablesRequest() {
 		super("clickhouse", "2019-11-11", "DescribeRDSTables");
@@ -149,6 +151,17 @@ public class DescribeRDSTablesRequest extends RpcAcsRequest<DescribeRDSTablesRes
 		this.rdsPort = rdsPort;
 		if(rdsPort != null){
 			putQueryParameter("RdsPort", rdsPort.toString());
+		}
+	}
+
+	public String getRdsVpcUrl() {
+		return this.rdsVpcUrl;
+	}
+
+	public void setRdsVpcUrl(String rdsVpcUrl) {
+		this.rdsVpcUrl = rdsVpcUrl;
+		if(rdsVpcUrl != null){
+			putQueryParameter("RdsVpcUrl", rdsVpcUrl);
 		}
 	}
 

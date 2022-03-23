@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String totalCount;
-
-	private String pageNumber;
 
 	private String pageSize;
 
+	private String requestId;
+
+	private String pageNumber;
+
 	private List<Backup> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeBackupsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Backup> getItems() {
@@ -77,31 +77,23 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public static class Backup {
 
-		private String backupId;
-
 		private String dBClusterId;
-
-		private String backupStartTime;
-
-		private String backupEndTime;
-
-		private Integer backupSize;
-
-		private String backupMethod;
-
-		private String backupType;
 
 		private String backupStatus;
 
+		private String backupType;
+
+		private String backupStartTime;
+
+		private Integer backupSize;
+
+		private String backupEndTime;
+
 		private String backupSetInfo;
 
-		public String getBackupId() {
-			return this.backupId;
-		}
+		private String backupId;
 
-		public void setBackupId(String backupId) {
-			this.backupId = backupId;
-		}
+		private String backupMethod;
 
 		public String getDBClusterId() {
 			return this.dBClusterId;
@@ -109,46 +101,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setDBClusterId(String dBClusterId) {
 			this.dBClusterId = dBClusterId;
-		}
-
-		public String getBackupStartTime() {
-			return this.backupStartTime;
-		}
-
-		public void setBackupStartTime(String backupStartTime) {
-			this.backupStartTime = backupStartTime;
-		}
-
-		public String getBackupEndTime() {
-			return this.backupEndTime;
-		}
-
-		public void setBackupEndTime(String backupEndTime) {
-			this.backupEndTime = backupEndTime;
-		}
-
-		public Integer getBackupSize() {
-			return this.backupSize;
-		}
-
-		public void setBackupSize(Integer backupSize) {
-			this.backupSize = backupSize;
-		}
-
-		public String getBackupMethod() {
-			return this.backupMethod;
-		}
-
-		public void setBackupMethod(String backupMethod) {
-			this.backupMethod = backupMethod;
-		}
-
-		public String getBackupType() {
-			return this.backupType;
-		}
-
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
 		}
 
 		public String getBackupStatus() {
@@ -159,12 +111,60 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupStatus = backupStatus;
 		}
 
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
+		public String getBackupStartTime() {
+			return this.backupStartTime;
+		}
+
+		public void setBackupStartTime(String backupStartTime) {
+			this.backupStartTime = backupStartTime;
+		}
+
+		public Integer getBackupSize() {
+			return this.backupSize;
+		}
+
+		public void setBackupSize(Integer backupSize) {
+			this.backupSize = backupSize;
+		}
+
+		public String getBackupEndTime() {
+			return this.backupEndTime;
+		}
+
+		public void setBackupEndTime(String backupEndTime) {
+			this.backupEndTime = backupEndTime;
+		}
+
 		public String getBackupSetInfo() {
 			return this.backupSetInfo;
 		}
 
 		public void setBackupSetInfo(String backupSetInfo) {
 			this.backupSetInfo = backupSetInfo;
+		}
+
+		public String getBackupId() {
+			return this.backupId;
+		}
+
+		public void setBackupId(String backupId) {
+			this.backupId = backupId;
+		}
+
+		public String getBackupMethod() {
+			return this.backupMethod;
+		}
+
+		public void setBackupMethod(String backupMethod) {
+			this.backupMethod = backupMethod;
 		}
 	}
 

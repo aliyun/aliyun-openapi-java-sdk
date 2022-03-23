@@ -27,9 +27,9 @@ public class CheckScaleOutBalancedResponseUnmarshaller {
 	public static CheckScaleOutBalancedResponse unmarshall(CheckScaleOutBalancedResponse checkScaleOutBalancedResponse, UnmarshallerContext _ctx) {
 		
 		checkScaleOutBalancedResponse.setRequestId(_ctx.stringValue("CheckScaleOutBalancedResponse.RequestId"));
-		checkScaleOutBalancedResponse.setPageNumber(_ctx.integerValue("CheckScaleOutBalancedResponse.PageNumber"));
 		checkScaleOutBalancedResponse.setTotalCount(_ctx.integerValue("CheckScaleOutBalancedResponse.TotalCount"));
 		checkScaleOutBalancedResponse.setPageSize(_ctx.integerValue("CheckScaleOutBalancedResponse.PageSize"));
+		checkScaleOutBalancedResponse.setPageNumber(_ctx.integerValue("CheckScaleOutBalancedResponse.PageNumber"));
 		checkScaleOutBalancedResponse.setCheckCode(_ctx.stringValue("CheckScaleOutBalancedResponse.CheckCode"));
 		checkScaleOutBalancedResponse.setTimeDuration(_ctx.stringValue("CheckScaleOutBalancedResponse.TimeDuration"));
 
@@ -37,8 +37,8 @@ public class CheckScaleOutBalancedResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("CheckScaleOutBalancedResponse.TableDetails.Length"); i++) {
 			TableDetail tableDetail = new TableDetail();
 			tableDetail.setTableName(_ctx.stringValue("CheckScaleOutBalancedResponse.TableDetails["+ i +"].TableName"));
-			tableDetail.setDatabase(_ctx.stringValue("CheckScaleOutBalancedResponse.TableDetails["+ i +"].Database"));
 			tableDetail.setCluster(_ctx.stringValue("CheckScaleOutBalancedResponse.TableDetails["+ i +"].Cluster"));
+			tableDetail.setDatabase(_ctx.stringValue("CheckScaleOutBalancedResponse.TableDetails["+ i +"].Database"));
 			tableDetail.setDetail(_ctx.integerValue("CheckScaleOutBalancedResponse.TableDetails["+ i +"].Detail"));
 
 			tableDetails.add(tableDetail);

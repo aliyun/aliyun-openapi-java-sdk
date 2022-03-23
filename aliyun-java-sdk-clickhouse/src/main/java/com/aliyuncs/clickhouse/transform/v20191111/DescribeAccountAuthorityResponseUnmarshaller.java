@@ -26,15 +26,9 @@ public class DescribeAccountAuthorityResponseUnmarshaller {
 	public static DescribeAccountAuthorityResponse unmarshall(DescribeAccountAuthorityResponse describeAccountAuthorityResponse, UnmarshallerContext _ctx) {
 		
 		describeAccountAuthorityResponse.setRequestId(_ctx.stringValue("DescribeAccountAuthorityResponse.RequestId"));
-		describeAccountAuthorityResponse.setAccountName(_ctx.stringValue("DescribeAccountAuthorityResponse.AccountName"));
-		describeAccountAuthorityResponse.setDmlAuthority(_ctx.stringValue("DescribeAccountAuthorityResponse.DmlAuthority"));
 		describeAccountAuthorityResponse.setDdlAuthority(_ctx.booleanValue("DescribeAccountAuthorityResponse.DdlAuthority"));
-
-		List<String> allowDatabases = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeAccountAuthorityResponse.AllowDatabases.Length"); i++) {
-			allowDatabases.add(_ctx.stringValue("DescribeAccountAuthorityResponse.AllowDatabases["+ i +"]"));
-		}
-		describeAccountAuthorityResponse.setAllowDatabases(allowDatabases);
+		describeAccountAuthorityResponse.setDmlAuthority(_ctx.stringValue("DescribeAccountAuthorityResponse.DmlAuthority"));
+		describeAccountAuthorityResponse.setAccountName(_ctx.stringValue("DescribeAccountAuthorityResponse.AccountName"));
 
 		List<String> totalDatabases = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountAuthorityResponse.TotalDatabases.Length"); i++) {
@@ -42,17 +36,23 @@ public class DescribeAccountAuthorityResponseUnmarshaller {
 		}
 		describeAccountAuthorityResponse.setTotalDatabases(totalDatabases);
 
+		List<String> totalDictionaries = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAccountAuthorityResponse.TotalDictionaries.Length"); i++) {
+			totalDictionaries.add(_ctx.stringValue("DescribeAccountAuthorityResponse.TotalDictionaries["+ i +"]"));
+		}
+		describeAccountAuthorityResponse.setTotalDictionaries(totalDictionaries);
+
 		List<String> allowDictionaries = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountAuthorityResponse.AllowDictionaries.Length"); i++) {
 			allowDictionaries.add(_ctx.stringValue("DescribeAccountAuthorityResponse.AllowDictionaries["+ i +"]"));
 		}
 		describeAccountAuthorityResponse.setAllowDictionaries(allowDictionaries);
 
-		List<String> totalDictionaries = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeAccountAuthorityResponse.TotalDictionaries.Length"); i++) {
-			totalDictionaries.add(_ctx.stringValue("DescribeAccountAuthorityResponse.TotalDictionaries["+ i +"]"));
+		List<String> allowDatabases = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAccountAuthorityResponse.AllowDatabases.Length"); i++) {
+			allowDatabases.add(_ctx.stringValue("DescribeAccountAuthorityResponse.AllowDatabases["+ i +"]"));
 		}
-		describeAccountAuthorityResponse.setTotalDictionaries(totalDictionaries);
+		describeAccountAuthorityResponse.setAllowDatabases(allowDatabases);
 	 
 	 	return describeAccountAuthorityResponse;
 	}

@@ -36,33 +36,33 @@ public class DescribeSlowLogTrendResponseUnmarshaller {
 		slowLogTrend.setRowsBeforeLimitAtLeast(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.RowsBeforeLimitAtLeast"));
 
 		Statistics statistics = new Statistics();
-		statistics.setBytesRead(_ctx.integerValue("DescribeSlowLogTrendResponse.SlowLogTrend.Statistics.BytesRead"));
-		statistics.setElapsedTime(_ctx.floatValue("DescribeSlowLogTrendResponse.SlowLogTrend.Statistics.ElapsedTime"));
 		statistics.setRowsRead(_ctx.integerValue("DescribeSlowLogTrendResponse.SlowLogTrend.Statistics.RowsRead"));
+		statistics.setElapsedTime(_ctx.floatValue("DescribeSlowLogTrendResponse.SlowLogTrend.Statistics.ElapsedTime"));
+		statistics.setBytesRead(_ctx.integerValue("DescribeSlowLogTrendResponse.SlowLogTrend.Statistics.BytesRead"));
 		slowLogTrend.setStatistics(statistics);
 
-		List<ResultSet> data = new ArrayList<ResultSet>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data.Length"); i++) {
-			ResultSet resultSet = new ResultSet();
-			resultSet.setMaxQueryDurationMs(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].MaxQueryDurationMs"));
-			resultSet.setCount(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].Count"));
-			resultSet.setMinQueryDurationMs(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].MinQueryDurationMs"));
-			resultSet.setAvgQueryDurationMs(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].AvgQueryDurationMs"));
-			resultSet.setQueryStartTime(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].QueryStartTime"));
-
-			data.add(resultSet);
-		}
-		slowLogTrend.setData(data);
-
-		List<ResultSet1> tableSchema = new ArrayList<ResultSet1>();
+		List<ResultSet> tableSchema = new ArrayList<ResultSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogTrendResponse.SlowLogTrend.TableSchema.Length"); i++) {
-			ResultSet1 resultSet1 = new ResultSet1();
-			resultSet1.setName(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.TableSchema["+ i +"].Name"));
-			resultSet1.setType(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.TableSchema["+ i +"].Type"));
+			ResultSet resultSet = new ResultSet();
+			resultSet.setType(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.TableSchema["+ i +"].Type"));
+			resultSet.setName(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.TableSchema["+ i +"].Name"));
 
-			tableSchema.add(resultSet1);
+			tableSchema.add(resultSet);
 		}
 		slowLogTrend.setTableSchema(tableSchema);
+
+		List<ResultSet1> data = new ArrayList<ResultSet1>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data.Length"); i++) {
+			ResultSet1 resultSet1 = new ResultSet1();
+			resultSet1.setQueryStartTime(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].QueryStartTime"));
+			resultSet1.setMaxQueryDurationMs(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].MaxQueryDurationMs"));
+			resultSet1.setMinQueryDurationMs(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].MinQueryDurationMs"));
+			resultSet1.setCount(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].Count"));
+			resultSet1.setAvgQueryDurationMs(_ctx.stringValue("DescribeSlowLogTrendResponse.SlowLogTrend.Data["+ i +"].AvgQueryDurationMs"));
+
+			data.add(resultSet1);
+		}
+		slowLogTrend.setData(data);
 		describeSlowLogTrendResponse.setSlowLogTrend(slowLogTrend);
 	 
 	 	return describeSlowLogTrendResponse;

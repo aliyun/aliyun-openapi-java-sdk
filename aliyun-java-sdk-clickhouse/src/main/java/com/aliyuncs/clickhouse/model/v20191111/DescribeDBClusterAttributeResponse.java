@@ -121,6 +121,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String controlVersion;
 
+		private String publicIpAddr;
+
+		private String vpcIpAddr;
+
 		private List<Tag> tags;
 
 		private ScaleOutStatus scaleOutStatus;
@@ -419,6 +423,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setControlVersion(String controlVersion) {
 			this.controlVersion = controlVersion;
+		}
+
+		public String getPublicIpAddr() {
+			return this.publicIpAddr;
+		}
+
+		public void setPublicIpAddr(String publicIpAddr) {
+			this.publicIpAddr = publicIpAddr;
+		}
+
+		public String getVpcIpAddr() {
+			return this.vpcIpAddr;
+		}
+
+		public void setVpcIpAddr(String vpcIpAddr) {
+			this.vpcIpAddr = vpcIpAddr;
 		}
 
 		public List<Tag> getTags() {

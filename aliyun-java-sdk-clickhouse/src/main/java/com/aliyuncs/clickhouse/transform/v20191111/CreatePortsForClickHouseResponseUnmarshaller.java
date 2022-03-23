@@ -14,16 +14,16 @@
 
 package com.aliyuncs.clickhouse.transform.v20191111;
 
-import com.aliyuncs.clickhouse.model.v20191111.CreatePortsForClickhouseResponse;
+import com.aliyuncs.clickhouse.model.v20191111.CreatePortsForClickHouseResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreatePortsForClickhouseResponseUnmarshaller {
+public class CreatePortsForClickHouseResponseUnmarshaller {
 
-	public static CreatePortsForClickhouseResponse unmarshall(CreatePortsForClickhouseResponse createPortsForClickhouseResponse, UnmarshallerContext _ctx) {
+	public static CreatePortsForClickHouseResponse unmarshall(CreatePortsForClickHouseResponse createPortsForClickHouseResponse, UnmarshallerContext _ctx) {
 		
-		createPortsForClickhouseResponse.setRequestId(_ctx.stringValue("CreatePortsForClickhouseResponse.RequestId"));
+		createPortsForClickHouseResponse.setRequestId(_ctx.stringValue("CreatePortsForClickHouseResponse.RequestId"));
 	 
-	 	return createPortsForClickhouseResponse;
+	 	return createPortsForClickHouseResponse;
 	}
 }

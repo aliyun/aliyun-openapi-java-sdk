@@ -49,6 +49,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dBClusterClass;
 
+	private String backupSetID;
+
 	private String encryptionKey;
 
 	private Long ownerId;
@@ -204,6 +206,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBClusterClass = dBClusterClass;
 		if(dBClusterClass != null){
 			putQueryParameter("DBClusterClass", dBClusterClass);
+		}
+	}
+
+	public String getBackupSetID() {
+		return this.backupSetID;
+	}
+
+	public void setBackupSetID(String backupSetID) {
+		this.backupSetID = backupSetID;
+		if(backupSetID != null){
+			putQueryParameter("BackupSetID", backupSetID);
 		}
 	}
 

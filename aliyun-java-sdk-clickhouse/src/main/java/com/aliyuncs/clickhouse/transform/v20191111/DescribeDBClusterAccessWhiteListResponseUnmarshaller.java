@@ -31,9 +31,9 @@ public class DescribeDBClusterAccessWhiteListResponseUnmarshaller {
 		List<IPArray> dBClusterAccessWhiteList = new ArrayList<IPArray>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAccessWhiteListResponse.DBClusterAccessWhiteList.Length"); i++) {
 			IPArray iPArray = new IPArray();
-			iPArray.setDBClusterIPArrayName(_ctx.stringValue("DescribeDBClusterAccessWhiteListResponse.DBClusterAccessWhiteList["+ i +"].DBClusterIPArrayName"));
-			iPArray.setSecurityIPList(_ctx.stringValue("DescribeDBClusterAccessWhiteListResponse.DBClusterAccessWhiteList["+ i +"].SecurityIPList"));
 			iPArray.setDBClusterIPArrayAttribute(_ctx.stringValue("DescribeDBClusterAccessWhiteListResponse.DBClusterAccessWhiteList["+ i +"].DBClusterIPArrayAttribute"));
+			iPArray.setSecurityIPList(_ctx.stringValue("DescribeDBClusterAccessWhiteListResponse.DBClusterAccessWhiteList["+ i +"].SecurityIPList"));
+			iPArray.setDBClusterIPArrayName(_ctx.stringValue("DescribeDBClusterAccessWhiteListResponse.DBClusterAccessWhiteList["+ i +"].DBClusterIPArrayName"));
 
 			dBClusterAccessWhiteList.add(iPArray);
 		}

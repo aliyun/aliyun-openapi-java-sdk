@@ -32,17 +32,17 @@ public class DescribeLorneTasksMetricsResponseUnmarshaller {
 		data.setName(_ctx.stringValue("DescribeLorneTasksMetricsResponse.Data.Name"));
 		data.setTaskId(_ctx.stringValue("DescribeLorneTasksMetricsResponse.Data.TaskId"));
 
-		List<String> columns = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeLorneTasksMetricsResponse.Data.Columns.Length"); i++) {
-			columns.add(_ctx.stringValue("DescribeLorneTasksMetricsResponse.Data.Columns["+ i +"]"));
-		}
-		data.setColumns(columns);
-
 		List<String> values = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLorneTasksMetricsResponse.Data.Values.Length"); i++) {
 			values.add(_ctx.stringValue("DescribeLorneTasksMetricsResponse.Data.Values["+ i +"]"));
 		}
 		data.setValues(values);
+
+		List<String> columns = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLorneTasksMetricsResponse.Data.Columns.Length"); i++) {
+			columns.add(_ctx.stringValue("DescribeLorneTasksMetricsResponse.Data.Columns["+ i +"]"));
+		}
+		data.setColumns(columns);
 		describeLorneTasksMetricsResponse.setData(data);
 	 
 	 	return describeLorneTasksMetricsResponse;

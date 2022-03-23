@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer backupRetentionPeriod;
-
-	private String preferredBackupTime;
-
 	private String preferredBackupPeriod;
 
 	private String _switch;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String preferredBackupTime;
 
-	public Integer getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-	}
-
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
-	}
-
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-	}
+	private Integer backupRetentionPeriod;
 
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
@@ -72,6 +48,30 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void set_Switch(String _switch) {
 		this._switch = _switch;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPreferredBackupTime() {
+		return this.preferredBackupTime;
+	}
+
+	public void setPreferredBackupTime(String preferredBackupTime) {
+		this.preferredBackupTime = preferredBackupTime;
+	}
+
+	public Integer getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
 	@Override

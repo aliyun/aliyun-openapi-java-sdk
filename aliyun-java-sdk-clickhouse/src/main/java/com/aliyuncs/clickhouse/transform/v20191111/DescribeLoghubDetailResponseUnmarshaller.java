@@ -30,30 +30,30 @@ public class DescribeLoghubDetailResponseUnmarshaller {
 		describeLoghubDetailResponse.setRequestId(_ctx.stringValue("DescribeLoghubDetailResponse.RequestId"));
 
 		LoghubInfo loghubInfo = new LoghubInfo();
-		loghubInfo.setProjectName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.ProjectName"));
-		loghubInfo.setLogStoreName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.LogStoreName"));
-		loghubInfo.setDeliverName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.DeliverName"));
-		loghubInfo.setDeliverTime(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.DeliverTime"));
-		loghubInfo.setDomainUrl(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.DomainUrl"));
-		loghubInfo.setDescription(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.Description"));
-		loghubInfo.setSchemaName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.SchemaName"));
-		loghubInfo.setTableName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.TableName"));
-		loghubInfo.setRegionId(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.RegionId"));
-		loghubInfo.setZoneId(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.ZoneId"));
-		loghubInfo.setUserName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.UserName"));
-		loghubInfo.setPassword(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.Password"));
-		loghubInfo.setFilterDirtyData(_ctx.booleanValue("DescribeLoghubDetailResponse.LoghubInfo.FilterDirtyData"));
 		loghubInfo.setAccessKey(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.AccessKey"));
+		loghubInfo.setTableName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.TableName"));
 		loghubInfo.setAccessSecret(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.AccessSecret"));
+		loghubInfo.setProjectName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.ProjectName"));
+		loghubInfo.setSchemaName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.SchemaName"));
 		loghubInfo.setDBType(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.DBType"));
+		loghubInfo.setDeliverName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.DeliverName"));
+		loghubInfo.setRegionId(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.RegionId"));
+		loghubInfo.setPassword(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.Password"));
 		loghubInfo.setDBClusterId(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.DBClusterId"));
+		loghubInfo.setDescription(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.Description"));
+		loghubInfo.setFilterDirtyData(_ctx.booleanValue("DescribeLoghubDetailResponse.LoghubInfo.FilterDirtyData"));
+		loghubInfo.setZoneId(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.ZoneId"));
+		loghubInfo.setLogStoreName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.LogStoreName"));
+		loghubInfo.setUserName(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.UserName"));
+		loghubInfo.setDomainUrl(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.DomainUrl"));
+		loghubInfo.setDeliverTime(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.DeliverTime"));
 
 		List<LogHubStore> logHubStores = new ArrayList<LogHubStore>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoghubDetailResponse.LoghubInfo.LogHubStores.Length"); i++) {
 			LogHubStore logHubStore = new LogHubStore();
+			logHubStore.setType(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.LogHubStores["+ i +"].Type"));
 			logHubStore.setLogKey(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.LogHubStores["+ i +"].LogKey"));
 			logHubStore.setFieldKey(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.LogHubStores["+ i +"].FieldKey"));
-			logHubStore.setType(_ctx.stringValue("DescribeLoghubDetailResponse.LoghubInfo.LogHubStores["+ i +"].Type"));
 
 			logHubStores.add(logHubStore);
 		}

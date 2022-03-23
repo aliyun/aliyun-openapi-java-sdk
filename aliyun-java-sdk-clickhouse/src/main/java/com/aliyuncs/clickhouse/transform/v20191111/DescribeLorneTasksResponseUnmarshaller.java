@@ -27,33 +27,33 @@ public class DescribeLorneTasksResponseUnmarshaller {
 	public static DescribeLorneTasksResponse unmarshall(DescribeLorneTasksResponse describeLorneTasksResponse, UnmarshallerContext _ctx) {
 		
 		describeLorneTasksResponse.setRequestId(_ctx.stringValue("DescribeLorneTasksResponse.RequestId"));
-		describeLorneTasksResponse.setPageNumber(_ctx.integerValue("DescribeLorneTasksResponse.PageNumber"));
 		describeLorneTasksResponse.setTotalCount(_ctx.integerValue("DescribeLorneTasksResponse.TotalCount"));
 		describeLorneTasksResponse.setPageSize(_ctx.integerValue("DescribeLorneTasksResponse.PageSize"));
+		describeLorneTasksResponse.setPageNumber(_ctx.integerValue("DescribeLorneTasksResponse.PageNumber"));
 
 		List<TaskDetail> taskDetails = new ArrayList<TaskDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLorneTasksResponse.TaskDetails.Length"); i++) {
 			TaskDetail taskDetail = new TaskDetail();
-			taskDetail.setId(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Id"));
-			taskDetail.setName(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Name"));
-			taskDetail.setDescription(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Description"));
-			taskDetail.setSourceType(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SourceType"));
-			taskDetail.setSourceProject(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SourceProject"));
-			taskDetail.setSourceTopic(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SourceTopic"));
-			taskDetail.setSourceRegion(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SourceRegion"));
-			taskDetail.setSinkType(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkType"));
-			taskDetail.setSinkInstance(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkInstance"));
-			taskDetail.setSinkSchema(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkSchema"));
-			taskDetail.setSinkTable(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkTable"));
-			taskDetail.setSinkUser(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkUser"));
-			taskDetail.setSinkRegion(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkRegion"));
 			taskDetail.setSinkVpcId(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkVpcId"));
 			taskDetail.setState(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].State"));
-			taskDetail.setStrict(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Strict"));
-			taskDetail.setColumnMapper(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].ColumnMapper"));
-			taskDetail.setCheckpoint(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Checkpoint"));
 			taskDetail.setCreateTime(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].CreateTime"));
+			taskDetail.setSinkType(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkType"));
+			taskDetail.setSourceType(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SourceType"));
+			taskDetail.setSinkUser(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkUser"));
+			taskDetail.setColumnMapper(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].ColumnMapper"));
 			taskDetail.setMessage(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Message"));
+			taskDetail.setSinkInstance(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkInstance"));
+			taskDetail.setStrict(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Strict"));
+			taskDetail.setSourceTopic(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SourceTopic"));
+			taskDetail.setSinkRegion(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkRegion"));
+			taskDetail.setDescription(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Description"));
+			taskDetail.setSinkSchema(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkSchema"));
+			taskDetail.setSourceProject(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SourceProject"));
+			taskDetail.setName(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Name"));
+			taskDetail.setCheckpoint(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Checkpoint"));
+			taskDetail.setSourceRegion(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SourceRegion"));
+			taskDetail.setId(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].Id"));
+			taskDetail.setSinkTable(_ctx.stringValue("DescribeLorneTasksResponse.TaskDetails["+ i +"].SinkTable"));
 
 			taskDetails.add(taskDetail);
 		}

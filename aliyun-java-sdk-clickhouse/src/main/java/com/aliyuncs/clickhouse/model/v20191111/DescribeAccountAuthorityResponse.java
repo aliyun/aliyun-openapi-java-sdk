@@ -25,21 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccountAuthorityResponse extends AcsResponse {
 
+	private Boolean ddlAuthority;
+
+	private String dmlAuthority;
+
 	private String requestId;
 
 	private String accountName;
 
-	private String dmlAuthority;
-
-	private Boolean ddlAuthority;
-
-	private List<String> allowDatabases;
-
 	private List<String> totalDatabases;
+
+	private List<String> totalDictionaries;
 
 	private List<String> allowDictionaries;
 
-	private List<String> totalDictionaries;
+	private List<String> allowDatabases;
+
+	public Boolean getDdlAuthority() {
+		return this.ddlAuthority;
+	}
+
+	public void setDdlAuthority(Boolean ddlAuthority) {
+		this.ddlAuthority = ddlAuthority;
+	}
+
+	public String getDmlAuthority() {
+		return this.dmlAuthority;
+	}
+
+	public void setDmlAuthority(String dmlAuthority) {
+		this.dmlAuthority = dmlAuthority;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,36 +73,20 @@ public class DescribeAccountAuthorityResponse extends AcsResponse {
 		this.accountName = accountName;
 	}
 
-	public String getDmlAuthority() {
-		return this.dmlAuthority;
-	}
-
-	public void setDmlAuthority(String dmlAuthority) {
-		this.dmlAuthority = dmlAuthority;
-	}
-
-	public Boolean getDdlAuthority() {
-		return this.ddlAuthority;
-	}
-
-	public void setDdlAuthority(Boolean ddlAuthority) {
-		this.ddlAuthority = ddlAuthority;
-	}
-
-	public List<String> getAllowDatabases() {
-		return this.allowDatabases;
-	}
-
-	public void setAllowDatabases(List<String> allowDatabases) {
-		this.allowDatabases = allowDatabases;
-	}
-
 	public List<String> getTotalDatabases() {
 		return this.totalDatabases;
 	}
 
 	public void setTotalDatabases(List<String> totalDatabases) {
 		this.totalDatabases = totalDatabases;
+	}
+
+	public List<String> getTotalDictionaries() {
+		return this.totalDictionaries;
+	}
+
+	public void setTotalDictionaries(List<String> totalDictionaries) {
+		this.totalDictionaries = totalDictionaries;
 	}
 
 	public List<String> getAllowDictionaries() {
@@ -97,12 +97,12 @@ public class DescribeAccountAuthorityResponse extends AcsResponse {
 		this.allowDictionaries = allowDictionaries;
 	}
 
-	public List<String> getTotalDictionaries() {
-		return this.totalDictionaries;
+	public List<String> getAllowDatabases() {
+		return this.allowDatabases;
 	}
 
-	public void setTotalDictionaries(List<String> totalDictionaries) {
-		this.totalDictionaries = totalDictionaries;
+	public void setAllowDatabases(List<String> allowDatabases) {
+		this.allowDatabases = allowDatabases;
 	}
 
 	@Override

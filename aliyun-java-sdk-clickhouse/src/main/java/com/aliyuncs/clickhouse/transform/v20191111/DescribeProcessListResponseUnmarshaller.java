@@ -36,34 +36,34 @@ public class DescribeProcessListResponseUnmarshaller {
 		processList.setRowsBeforeLimitAtLeast(_ctx.stringValue("DescribeProcessListResponse.ProcessList.RowsBeforeLimitAtLeast"));
 
 		Statistics statistics = new Statistics();
-		statistics.setBytesRead(_ctx.integerValue("DescribeProcessListResponse.ProcessList.Statistics.BytesRead"));
-		statistics.setElapsedTime(_ctx.floatValue("DescribeProcessListResponse.ProcessList.Statistics.ElapsedTime"));
 		statistics.setRowsRead(_ctx.integerValue("DescribeProcessListResponse.ProcessList.Statistics.RowsRead"));
+		statistics.setElapsedTime(_ctx.floatValue("DescribeProcessListResponse.ProcessList.Statistics.ElapsedTime"));
+		statistics.setBytesRead(_ctx.integerValue("DescribeProcessListResponse.ProcessList.Statistics.BytesRead"));
 		processList.setStatistics(statistics);
 
-		List<ResultSet> data = new ArrayList<ResultSet>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeProcessListResponse.ProcessList.Data.Length"); i++) {
-			ResultSet resultSet = new ResultSet();
-			resultSet.setInitialQueryId(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].InitialQueryId"));
-			resultSet.setInitialUser(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].InitialUser"));
-			resultSet.setInitialAddress(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].InitialAddress"));
-			resultSet.setQueryDurationMs(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].QueryDurationMs"));
-			resultSet.setQueryStartTime(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].QueryStartTime"));
-			resultSet.setQuery(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].Query"));
-
-			data.add(resultSet);
-		}
-		processList.setData(data);
-
-		List<ResultSet1> tableSchema = new ArrayList<ResultSet1>();
+		List<ResultSet> tableSchema = new ArrayList<ResultSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProcessListResponse.ProcessList.TableSchema.Length"); i++) {
-			ResultSet1 resultSet1 = new ResultSet1();
-			resultSet1.setName(_ctx.stringValue("DescribeProcessListResponse.ProcessList.TableSchema["+ i +"].Name"));
-			resultSet1.setType(_ctx.stringValue("DescribeProcessListResponse.ProcessList.TableSchema["+ i +"].Type"));
+			ResultSet resultSet = new ResultSet();
+			resultSet.setType(_ctx.stringValue("DescribeProcessListResponse.ProcessList.TableSchema["+ i +"].Type"));
+			resultSet.setName(_ctx.stringValue("DescribeProcessListResponse.ProcessList.TableSchema["+ i +"].Name"));
 
-			tableSchema.add(resultSet1);
+			tableSchema.add(resultSet);
 		}
 		processList.setTableSchema(tableSchema);
+
+		List<ResultSet1> data = new ArrayList<ResultSet1>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeProcessListResponse.ProcessList.Data.Length"); i++) {
+			ResultSet1 resultSet1 = new ResultSet1();
+			resultSet1.setQueryStartTime(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].QueryStartTime"));
+			resultSet1.setQuery(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].Query"));
+			resultSet1.setInitialAddress(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].InitialAddress"));
+			resultSet1.setInitialQueryId(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].InitialQueryId"));
+			resultSet1.setInitialUser(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].InitialUser"));
+			resultSet1.setQueryDurationMs(_ctx.stringValue("DescribeProcessListResponse.ProcessList.Data["+ i +"].QueryDurationMs"));
+
+			data.add(resultSet1);
+		}
+		processList.setData(data);
 		describeProcessListResponse.setProcessList(processList);
 	 
 	 	return describeProcessListResponse;

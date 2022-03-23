@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLorneTasksResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer totalCount;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<TaskDetail> taskDetails;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -67,6 +51,22 @@ public class DescribeLorneTasksResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<TaskDetail> getTaskDetails() {
 		return this.taskDetails;
 	}
@@ -77,149 +77,45 @@ public class DescribeLorneTasksResponse extends AcsResponse {
 
 	public static class TaskDetail {
 
-		private String id;
-
-		private String name;
-
-		private String description;
-
-		private String sourceType;
-
-		private String sourceProject;
-
-		private String sourceTopic;
-
-		private String sourceRegion;
-
-		private String sinkType;
-
-		private String sinkInstance;
-
-		private String sinkSchema;
-
-		private String sinkTable;
-
-		private String sinkUser;
-
-		private String sinkRegion;
-
 		private String sinkVpcId;
 
 		private String state;
 
-		private String strict;
+		private String createTime;
+
+		private String sinkType;
+
+		private String sourceType;
+
+		private String sinkUser;
 
 		private String columnMapper;
 
-		private String checkpoint;
-
-		private String createTime;
-
 		private String message;
 
-		public String getId() {
-			return this.id;
-		}
+		private String sinkInstance;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String strict;
 
-		public String getName() {
-			return this.name;
-		}
+		private String sourceTopic;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String sinkRegion;
 
-		public String getDescription() {
-			return this.description;
-		}
+		private String description;
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private String sinkSchema;
 
-		public String getSourceType() {
-			return this.sourceType;
-		}
+		private String sourceProject;
 
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
+		private String name;
 
-		public String getSourceProject() {
-			return this.sourceProject;
-		}
+		private String checkpoint;
 
-		public void setSourceProject(String sourceProject) {
-			this.sourceProject = sourceProject;
-		}
+		private String sourceRegion;
 
-		public String getSourceTopic() {
-			return this.sourceTopic;
-		}
+		private String id;
 
-		public void setSourceTopic(String sourceTopic) {
-			this.sourceTopic = sourceTopic;
-		}
-
-		public String getSourceRegion() {
-			return this.sourceRegion;
-		}
-
-		public void setSourceRegion(String sourceRegion) {
-			this.sourceRegion = sourceRegion;
-		}
-
-		public String getSinkType() {
-			return this.sinkType;
-		}
-
-		public void setSinkType(String sinkType) {
-			this.sinkType = sinkType;
-		}
-
-		public String getSinkInstance() {
-			return this.sinkInstance;
-		}
-
-		public void setSinkInstance(String sinkInstance) {
-			this.sinkInstance = sinkInstance;
-		}
-
-		public String getSinkSchema() {
-			return this.sinkSchema;
-		}
-
-		public void setSinkSchema(String sinkSchema) {
-			this.sinkSchema = sinkSchema;
-		}
-
-		public String getSinkTable() {
-			return this.sinkTable;
-		}
-
-		public void setSinkTable(String sinkTable) {
-			this.sinkTable = sinkTable;
-		}
-
-		public String getSinkUser() {
-			return this.sinkUser;
-		}
-
-		public void setSinkUser(String sinkUser) {
-			this.sinkUser = sinkUser;
-		}
-
-		public String getSinkRegion() {
-			return this.sinkRegion;
-		}
-
-		public void setSinkRegion(String sinkRegion) {
-			this.sinkRegion = sinkRegion;
-		}
+		private String sinkTable;
 
 		public String getSinkVpcId() {
 			return this.sinkVpcId;
@@ -237,12 +133,36 @@ public class DescribeLorneTasksResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getStrict() {
-			return this.strict;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStrict(String strict) {
-			this.strict = strict;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getSinkType() {
+			return this.sinkType;
+		}
+
+		public void setSinkType(String sinkType) {
+			this.sinkType = sinkType;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public String getSinkUser() {
+			return this.sinkUser;
+		}
+
+		public void setSinkUser(String sinkUser) {
+			this.sinkUser = sinkUser;
 		}
 
 		public String getColumnMapper() {
@@ -253,6 +173,78 @@ public class DescribeLorneTasksResponse extends AcsResponse {
 			this.columnMapper = columnMapper;
 		}
 
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getSinkInstance() {
+			return this.sinkInstance;
+		}
+
+		public void setSinkInstance(String sinkInstance) {
+			this.sinkInstance = sinkInstance;
+		}
+
+		public String getStrict() {
+			return this.strict;
+		}
+
+		public void setStrict(String strict) {
+			this.strict = strict;
+		}
+
+		public String getSourceTopic() {
+			return this.sourceTopic;
+		}
+
+		public void setSourceTopic(String sourceTopic) {
+			this.sourceTopic = sourceTopic;
+		}
+
+		public String getSinkRegion() {
+			return this.sinkRegion;
+		}
+
+		public void setSinkRegion(String sinkRegion) {
+			this.sinkRegion = sinkRegion;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSinkSchema() {
+			return this.sinkSchema;
+		}
+
+		public void setSinkSchema(String sinkSchema) {
+			this.sinkSchema = sinkSchema;
+		}
+
+		public String getSourceProject() {
+			return this.sourceProject;
+		}
+
+		public void setSourceProject(String sourceProject) {
+			this.sourceProject = sourceProject;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getCheckpoint() {
 			return this.checkpoint;
 		}
@@ -261,20 +253,28 @@ public class DescribeLorneTasksResponse extends AcsResponse {
 			this.checkpoint = checkpoint;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getSourceRegion() {
+			return this.sourceRegion;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setSourceRegion(String sourceRegion) {
+			this.sourceRegion = sourceRegion;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getSinkTable() {
+			return this.sinkTable;
+		}
+
+		public void setSinkTable(String sinkTable) {
+			this.sinkTable = sinkTable;
 		}
 	}
 

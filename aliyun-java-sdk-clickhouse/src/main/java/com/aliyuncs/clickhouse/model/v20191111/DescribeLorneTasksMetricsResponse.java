@@ -51,9 +51,9 @@ public class DescribeLorneTasksMetricsResponse extends AcsResponse {
 
 		private String taskId;
 
-		private List<String> columns;
-
 		private List<String> values;
+
+		private List<String> columns;
 
 		public String getName() {
 			return this.name;
@@ -71,20 +71,20 @@ public class DescribeLorneTasksMetricsResponse extends AcsResponse {
 			this.taskId = taskId;
 		}
 
-		public List<String> getColumns() {
-			return this.columns;
-		}
-
-		public void setColumns(List<String> columns) {
-			this.columns = columns;
-		}
-
 		public List<String> getValues() {
 			return this.values;
 		}
 
 		public void setValues(List<String> values) {
 			this.values = values;
+		}
+
+		public List<String> getColumns() {
+			return this.columns;
+		}
+
+		public void setColumns(List<String> columns) {
+			this.columns = columns;
 		}
 	}
 

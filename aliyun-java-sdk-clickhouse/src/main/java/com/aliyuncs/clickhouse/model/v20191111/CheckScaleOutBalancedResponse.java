@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckScaleOutBalancedResponse extends AcsResponse {
 
-	private Integer pageNumber;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private Integer pageSize;
+
+	private Integer pageNumber;
 
 	private String checkCode;
 
 	private String timeDuration;
 
-	private String requestId;
-
 	private List<TableDetail> tableDetails;
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -55,12 +47,28 @@ public class CheckScaleOutBalancedResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public String getCheckCode() {
@@ -79,14 +87,6 @@ public class CheckScaleOutBalancedResponse extends AcsResponse {
 		this.timeDuration = timeDuration;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public List<TableDetail> getTableDetails() {
 		return this.tableDetails;
 	}
@@ -99,9 +99,9 @@ public class CheckScaleOutBalancedResponse extends AcsResponse {
 
 		private String tableName;
 
-		private String database;
-
 		private String cluster;
+
+		private String database;
 
 		private Integer detail;
 
@@ -113,20 +113,20 @@ public class CheckScaleOutBalancedResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public String getDatabase() {
-			return this.database;
-		}
-
-		public void setDatabase(String database) {
-			this.database = database;
-		}
-
 		public String getCluster() {
 			return this.cluster;
 		}
 
 		public void setCluster(String cluster) {
 			this.cluster = cluster;
+		}
+
+		public String getDatabase() {
+			return this.database;
+		}
+
+		public void setDatabase(String database) {
+			this.database = database;
 		}
 
 		public Integer getDetail() {

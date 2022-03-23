@@ -105,9 +105,9 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				private String tips;
 
-				private List<SupportedNodeCount> supportedNodeCountList;
-
 				private List<SupportedExecutor> supportedExecutorList;
+
+				private List<SupportedNodeCount> supportedNodeCountList;
 
 				public String getInstanceClass() {
 					return this.instanceClass;
@@ -125,14 +125,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 					this.tips = tips;
 				}
 
-				public List<SupportedNodeCount> getSupportedNodeCountList() {
-					return this.supportedNodeCountList;
-				}
-
-				public void setSupportedNodeCountList(List<SupportedNodeCount> supportedNodeCountList) {
-					this.supportedNodeCountList = supportedNodeCountList;
-				}
-
 				public List<SupportedExecutor> getSupportedExecutorList() {
 					return this.supportedExecutorList;
 				}
@@ -141,19 +133,17 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 					this.supportedExecutorList = supportedExecutorList;
 				}
 
-				public static class SupportedNodeCount {
+				public List<SupportedNodeCount> getSupportedNodeCountList() {
+					return this.supportedNodeCountList;
+				}
 
-					private List<String> storageSize;
+				public void setSupportedNodeCountList(List<SupportedNodeCount> supportedNodeCountList) {
+					this.supportedNodeCountList = supportedNodeCountList;
+				}
+
+				public static class SupportedExecutor {
 
 					private NodeCount nodeCount;
-
-					public List<String> getStorageSize() {
-						return this.storageSize;
-					}
-
-					public void setStorageSize(List<String> storageSize) {
-						this.storageSize = storageSize;
-					}
 
 					public NodeCount getNodeCount() {
 						return this.nodeCount;
@@ -165,11 +155,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					public static class NodeCount {
 
+						private String step;
+
 						private String minCount;
 
 						private String maxCount;
 
-						private String step;
+						public String getStep() {
+							return this.step;
+						}
+
+						public void setStep(String step) {
+							this.step = step;
+						}
 
 						public String getMinCount() {
 							return this.minCount;
@@ -186,20 +184,22 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 						public void setMaxCount(String maxCount) {
 							this.maxCount = maxCount;
 						}
-
-						public String getStep() {
-							return this.step;
-						}
-
-						public void setStep(String step) {
-							this.step = step;
-						}
 					}
 				}
 
-				public static class SupportedExecutor {
+				public static class SupportedNodeCount {
+
+					private List<String> storageSize;
 
 					private NodeCount1 nodeCount1;
+
+					public List<String> getStorageSize() {
+						return this.storageSize;
+					}
+
+					public void setStorageSize(List<String> storageSize) {
+						this.storageSize = storageSize;
+					}
 
 					public NodeCount1 getNodeCount1() {
 						return this.nodeCount1;
@@ -211,11 +211,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					public static class NodeCount1 {
 
+						private String step;
+
 						private String minCount;
 
 						private String maxCount;
 
-						private String step;
+						public String getStep() {
+							return this.step;
+						}
+
+						public void setStep(String step) {
+							this.step = step;
+						}
 
 						public String getMinCount() {
 							return this.minCount;
@@ -231,14 +239,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 						public void setMaxCount(String maxCount) {
 							this.maxCount = maxCount;
-						}
-
-						public String getStep() {
-							return this.step;
-						}
-
-						public void setStep(String step) {
-							this.step = step;
 						}
 					}
 				}

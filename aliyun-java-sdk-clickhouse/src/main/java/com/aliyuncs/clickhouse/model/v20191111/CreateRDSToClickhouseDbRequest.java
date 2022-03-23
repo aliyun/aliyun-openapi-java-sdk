@@ -55,6 +55,8 @@ public class CreateRDSToClickhouseDbRequest extends RpcAcsRequest<CreateRDSToCli
 
 	private Boolean skipUnsupported;
 
+	private String rdsVpcUrl;
+
 	private String rdsUserName;
 	public CreateRDSToClickhouseDbRequest() {
 		super("clickhouse", "2019-11-11", "CreateRDSToClickhouseDb");
@@ -227,6 +229,17 @@ public class CreateRDSToClickhouseDbRequest extends RpcAcsRequest<CreateRDSToCli
 		this.skipUnsupported = skipUnsupported;
 		if(skipUnsupported != null){
 			putQueryParameter("SkipUnsupported", skipUnsupported.toString());
+		}
+	}
+
+	public String getRdsVpcUrl() {
+		return this.rdsVpcUrl;
+	}
+
+	public void setRdsVpcUrl(String rdsVpcUrl) {
+		this.rdsVpcUrl = rdsVpcUrl;
+		if(rdsVpcUrl != null){
+			putQueryParameter("RdsVpcUrl", rdsVpcUrl);
 		}
 	}
 

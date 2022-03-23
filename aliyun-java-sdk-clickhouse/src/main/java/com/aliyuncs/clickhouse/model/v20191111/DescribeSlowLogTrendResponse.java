@@ -51,9 +51,9 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 
 		private String rowsBeforeLimitAtLeast;
 
-		private List<ResultSet> data;
+		private List<ResultSet> tableSchema;
 
-		private List<ResultSet1> tableSchema;
+		private List<ResultSet1> data;
 
 		private Statistics statistics;
 
@@ -73,20 +73,20 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 			this.rowsBeforeLimitAtLeast = rowsBeforeLimitAtLeast;
 		}
 
-		public List<ResultSet> getData() {
-			return this.data;
-		}
-
-		public void setData(List<ResultSet> data) {
-			this.data = data;
-		}
-
-		public List<ResultSet1> getTableSchema() {
+		public List<ResultSet> getTableSchema() {
 			return this.tableSchema;
 		}
 
-		public void setTableSchema(List<ResultSet1> tableSchema) {
+		public void setTableSchema(List<ResultSet> tableSchema) {
 			this.tableSchema = tableSchema;
+		}
+
+		public List<ResultSet1> getData() {
+			return this.data;
+		}
+
+		public void setData(List<ResultSet1> data) {
+			this.data = data;
 		}
 
 		public Statistics getStatistics() {
@@ -99,15 +99,46 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 
 		public static class ResultSet {
 
-			private String maxQueryDurationMs;
+			private String type;
 
-			private String count;
+			private String name;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
+		public static class ResultSet1 {
+
+			private String queryStartTime;
+
+			private String maxQueryDurationMs;
 
 			private String minQueryDurationMs;
 
+			private String count;
+
 			private String avgQueryDurationMs;
 
-			private String queryStartTime;
+			public String getQueryStartTime() {
+				return this.queryStartTime;
+			}
+
+			public void setQueryStartTime(String queryStartTime) {
+				this.queryStartTime = queryStartTime;
+			}
 
 			public String getMaxQueryDurationMs() {
 				return this.maxQueryDurationMs;
@@ -115,14 +146,6 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 
 			public void setMaxQueryDurationMs(String maxQueryDurationMs) {
 				this.maxQueryDurationMs = maxQueryDurationMs;
-			}
-
-			public String getCount() {
-				return this.count;
-			}
-
-			public void setCount(String count) {
-				this.count = count;
 			}
 
 			public String getMinQueryDurationMs() {
@@ -133,6 +156,14 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 				this.minQueryDurationMs = minQueryDurationMs;
 			}
 
+			public String getCount() {
+				return this.count;
+			}
+
+			public void setCount(String count) {
+				this.count = count;
+			}
+
 			public String getAvgQueryDurationMs() {
 				return this.avgQueryDurationMs;
 			}
@@ -140,53 +171,22 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 			public void setAvgQueryDurationMs(String avgQueryDurationMs) {
 				this.avgQueryDurationMs = avgQueryDurationMs;
 			}
-
-			public String getQueryStartTime() {
-				return this.queryStartTime;
-			}
-
-			public void setQueryStartTime(String queryStartTime) {
-				this.queryStartTime = queryStartTime;
-			}
-		}
-
-		public static class ResultSet1 {
-
-			private String name;
-
-			private String type;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
 		}
 
 		public static class Statistics {
 
-			private Integer bytesRead;
+			private Integer rowsRead;
 
 			private Float elapsedTime;
 
-			private Integer rowsRead;
+			private Integer bytesRead;
 
-			public Integer getBytesRead() {
-				return this.bytesRead;
+			public Integer getRowsRead() {
+				return this.rowsRead;
 			}
 
-			public void setBytesRead(Integer bytesRead) {
-				this.bytesRead = bytesRead;
+			public void setRowsRead(Integer rowsRead) {
+				this.rowsRead = rowsRead;
 			}
 
 			public Float getElapsedTime() {
@@ -197,12 +197,12 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 				this.elapsedTime = elapsedTime;
 			}
 
-			public Integer getRowsRead() {
-				return this.rowsRead;
+			public Integer getBytesRead() {
+				return this.bytesRead;
 			}
 
-			public void setRowsRead(Integer rowsRead) {
-				this.rowsRead = rowsRead;
+			public void setBytesRead(Integer bytesRead) {
+				this.bytesRead = bytesRead;
 			}
 		}
 	}
