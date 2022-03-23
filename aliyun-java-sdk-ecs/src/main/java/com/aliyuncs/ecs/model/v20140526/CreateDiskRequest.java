@@ -60,6 +60,10 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private Long ownerId;
 
+	private Boolean burstingEnabled;
+
+	private Long provisionedIops;
+
 	private String instanceId;
 
 	private String storageSetId;
@@ -273,6 +277,28 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(Boolean burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
+		}
+	}
+
+	public Long getProvisionedIops() {
+		return this.provisionedIops;
+	}
+
+	public void setProvisionedIops(Long provisionedIops) {
+		this.provisionedIops = provisionedIops;
+		if(provisionedIops != null){
+			putQueryParameter("ProvisionedIops", provisionedIops.toString());
 		}
 	}
 

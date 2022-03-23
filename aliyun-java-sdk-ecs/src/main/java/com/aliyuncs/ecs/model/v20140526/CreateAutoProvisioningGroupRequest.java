@@ -38,6 +38,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private List<String> launchConfigurationHostNamess;
 
+	private List<String> launchConfigurationSecurityGroupIdss;
+
 	private String resourceGroupId;
 
 	private String launchConfigurationImageId;
@@ -217,6 +219,19 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		if (launchConfigurationHostNamess != null) {
 			for (int i = 0; i < launchConfigurationHostNamess.size(); i++) {
 				putQueryParameter("LaunchConfiguration.HostNames." + (i + 1) , launchConfigurationHostNamess.get(i));
+			}
+		}	
+	}
+
+	public List<String> getLaunchConfigurationSecurityGroupIdss() {
+		return this.launchConfigurationSecurityGroupIdss;
+	}
+
+	public void setLaunchConfigurationSecurityGroupIdss(List<String> launchConfigurationSecurityGroupIdss) {
+		this.launchConfigurationSecurityGroupIdss = launchConfigurationSecurityGroupIdss;	
+		if (launchConfigurationSecurityGroupIdss != null) {
+			for (int i = 0; i < launchConfigurationSecurityGroupIdss.size(); i++) {
+				putQueryParameter("LaunchConfiguration.SecurityGroupIds." + (i + 1) , launchConfigurationSecurityGroupIdss.get(i));
 			}
 		}	
 	}

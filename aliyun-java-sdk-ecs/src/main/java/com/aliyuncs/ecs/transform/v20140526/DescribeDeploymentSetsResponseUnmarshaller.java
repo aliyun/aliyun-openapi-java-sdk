@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeDeploymentSetsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDeploymentSetsResponse.DeploymentSet;
+import com.aliyuncs.ecs.model.v20140526.DescribeDeploymentSetsResponse.DeploymentSet.Capacity;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,17 @@ public class DescribeDeploymentSetsResponseUnmarshaller {
 				instanceIds.add(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceIds["+ j +"]"));
 			}
 			deploymentSet.setInstanceIds(instanceIds);
+
+			List<Capacity> capacities = new ArrayList<Capacity>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Capacities.Length"); j++) {
+				Capacity capacity = new Capacity();
+				capacity.setZoneId(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Capacities["+ j +"].ZoneId"));
+				capacity.setUsedAmount(_ctx.integerValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Capacities["+ j +"].UsedAmount"));
+				capacity.setAvailableAmount(_ctx.integerValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Capacities["+ j +"].AvailableAmount"));
+
+				capacities.add(capacity);
+			}
+			deploymentSet.setCapacities(capacities);
 
 			deploymentSets.add(deploymentSet);
 		}

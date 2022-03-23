@@ -165,6 +165,10 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String multiAttach;
 
+		private Long provisionedIops;
+
+		private Boolean burstingEnabled;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -483,6 +487,22 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setMultiAttach(String multiAttach) {
 			this.multiAttach = multiAttach;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 
 		public List<OperationLock> getOperationLocks() {

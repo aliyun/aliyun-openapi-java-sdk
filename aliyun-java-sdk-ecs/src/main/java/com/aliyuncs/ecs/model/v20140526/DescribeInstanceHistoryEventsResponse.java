@@ -243,6 +243,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private String hostId;
 
+			private String onlineRepairPolicy;
+
 			private List<InactiveDisk> inactiveDisks;
 
 			private List<String> migrationOptions;
@@ -277,6 +279,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setHostId(String hostId) {
 				this.hostId = hostId;
+			}
+
+			public String getOnlineRepairPolicy() {
+				return this.onlineRepairPolicy;
+			}
+
+			public void setOnlineRepairPolicy(String onlineRepairPolicy) {
+				this.onlineRepairPolicy = onlineRepairPolicy;
 			}
 
 			public List<InactiveDisk> getInactiveDisks() {

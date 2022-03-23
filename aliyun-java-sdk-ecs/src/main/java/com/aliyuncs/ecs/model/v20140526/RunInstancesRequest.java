@@ -295,6 +295,11 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		if (systemDisk != null) {
 			
 				putQueryParameter("SystemDisk.StorageClusterId" , systemDisk.getStorageClusterId());
+				putQueryParameter("SystemDisk.ProvisionedIops" , systemDisk.getProvisionedIops());
+				putQueryParameter("SystemDisk.BurstingEnabled" , systemDisk.getBurstingEnabled());
+				putQueryParameter("SystemDisk.Encrypted" , systemDisk.getEncrypted());
+				putQueryParameter("SystemDisk.KMSKeyId" , systemDisk.getKMSKeyId());
+				putQueryParameter("SystemDisk.EncryptAlgorithm" , systemDisk.getEncryptAlgorithm());
 		}	
 	}
 
@@ -1112,6 +1117,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".StorageClusterId" , dataDisks.get(depth1).getStorageClusterId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
 			}
 		}	
 	}
@@ -1153,12 +1160,62 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private String storageClusterId;
 
+		private Long provisionedIops;
+
+		private Boolean burstingEnabled;
+
+		private String encrypted;
+
+		private String kMSKeyId;
+
+		private String encryptAlgorithm;
+
 		public String getStorageClusterId() {
 			return this.storageClusterId;
 		}
 
 		public void setStorageClusterId(String storageClusterId) {
 			this.storageClusterId = storageClusterId;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(String encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getEncryptAlgorithm() {
+			return this.encryptAlgorithm;
+		}
+
+		public void setEncryptAlgorithm(String encryptAlgorithm) {
+			this.encryptAlgorithm = encryptAlgorithm;
 		}
 	}
 
@@ -1369,6 +1426,10 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private String storageClusterId;
 
+		private Long provisionedIops;
+
+		private Boolean burstingEnabled;
+
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
 		}
@@ -1471,6 +1532,22 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setStorageClusterId(String storageClusterId) {
 			this.storageClusterId = storageClusterId;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 	}
 

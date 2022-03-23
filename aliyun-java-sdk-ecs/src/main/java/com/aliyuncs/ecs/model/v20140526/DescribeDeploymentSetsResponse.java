@@ -107,6 +107,8 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 		private Integer instanceAmount;
 
+		private List<Capacity> capacities;
+
 		private List<String> instanceIds;
 
 		public String getCreationTime() {
@@ -189,12 +191,53 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 			this.instanceAmount = instanceAmount;
 		}
 
+		public List<Capacity> getCapacities() {
+			return this.capacities;
+		}
+
+		public void setCapacities(List<Capacity> capacities) {
+			this.capacities = capacities;
+		}
+
 		public List<String> getInstanceIds() {
 			return this.instanceIds;
 		}
 
 		public void setInstanceIds(List<String> instanceIds) {
 			this.instanceIds = instanceIds;
+		}
+
+		public static class Capacity {
+
+			private String zoneId;
+
+			private Integer usedAmount;
+
+			private Integer availableAmount;
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public Integer getUsedAmount() {
+				return this.usedAmount;
+			}
+
+			public void setUsedAmount(Integer usedAmount) {
+				this.usedAmount = usedAmount;
+			}
+
+			public Integer getAvailableAmount() {
+				return this.availableAmount;
+			}
+
+			public void setAvailableAmount(Integer availableAmount) {
+				this.availableAmount = availableAmount;
+			}
 		}
 	}
 

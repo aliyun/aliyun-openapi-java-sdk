@@ -55,6 +55,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 	private String instanceId;
 
 	private String instanceName;
+
+	private RemoteConnectionOptions remoteConnectionOptions;
 	public ModifyInstanceAttributeRequest() {
 		super("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs");
 		setMethod(MethodType.POST);
@@ -228,6 +230,42 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public RemoteConnectionOptions getRemoteConnectionOptions() {
+		return this.remoteConnectionOptions;
+	}
+
+	public void setRemoteConnectionOptions(RemoteConnectionOptions remoteConnectionOptions) {
+		this.remoteConnectionOptions = remoteConnectionOptions;	
+		if (remoteConnectionOptions != null) {
+			
+				putQueryParameter("RemoteConnectionOptions.Password" , remoteConnectionOptions.getPassword());
+				putQueryParameter("RemoteConnectionOptions.Type" , remoteConnectionOptions.getType());
+		}	
+	}
+
+	public static class RemoteConnectionOptions {
+
+		private String password;
+
+		private String type;
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

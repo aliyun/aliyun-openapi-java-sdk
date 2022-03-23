@@ -139,6 +139,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private Boolean loginAsNonRootSupported;
 
+		private String supplierName;
+
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private List<Tag> tags;
@@ -349,6 +351,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setLoginAsNonRootSupported(Boolean loginAsNonRootSupported) {
 			this.loginAsNonRootSupported = loginAsNonRootSupported;
+		}
+
+		public String getSupplierName() {
+			return this.supplierName;
+		}
+
+		public void setSupplierName(String supplierName) {
+			this.supplierName = supplierName;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {

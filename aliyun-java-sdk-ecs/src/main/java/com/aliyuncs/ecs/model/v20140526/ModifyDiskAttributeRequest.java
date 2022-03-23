@@ -47,6 +47,8 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean burstingEnabled;
 	public ModifyDiskAttributeRequest() {
 		super("Ecs", "2014-05-26", "ModifyDiskAttribute", "ecs");
 		setMethod(MethodType.POST);
@@ -176,6 +178,17 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(Boolean burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
 		}
 	}
 
