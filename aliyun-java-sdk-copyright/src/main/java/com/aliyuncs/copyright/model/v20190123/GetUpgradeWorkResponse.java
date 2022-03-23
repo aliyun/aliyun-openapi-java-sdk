@@ -24,23 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUpgradeWorkResponse extends AcsResponse {
 
+	private Long modifiedTime;
+
 	private String requestId;
+
+	private String newSku;
 
 	private Boolean success;
 
-	private Long workId;
-
 	private Long createTime;
 
-	private Long modifiedTime;
+	private Long workId;
+
+	private String oldSku;
 
 	private Integer workStatus;
 
 	private String reason;
 
-	private String newSku;
+	public Long getModifiedTime() {
+		return this.modifiedTime;
+	}
 
-	private String oldSku;
+	public void setModifiedTime(Long modifiedTime) {
+		this.modifiedTime = modifiedTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,6 +56,14 @@ public class GetUpgradeWorkResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNewSku() {
+		return this.newSku;
+	}
+
+	public void setNewSku(String newSku) {
+		this.newSku = newSku;
 	}
 
 	public Boolean getSuccess() {
@@ -58,14 +74,6 @@ public class GetUpgradeWorkResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Long getWorkId() {
-		return this.workId;
-	}
-
-	public void setWorkId(Long workId) {
-		this.workId = workId;
-	}
-
 	public Long getCreateTime() {
 		return this.createTime;
 	}
@@ -74,12 +82,20 @@ public class GetUpgradeWorkResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public Long getModifiedTime() {
-		return this.modifiedTime;
+	public Long getWorkId() {
+		return this.workId;
 	}
 
-	public void setModifiedTime(Long modifiedTime) {
-		this.modifiedTime = modifiedTime;
+	public void setWorkId(Long workId) {
+		this.workId = workId;
+	}
+
+	public String getOldSku() {
+		return this.oldSku;
+	}
+
+	public void setOldSku(String oldSku) {
+		this.oldSku = oldSku;
 	}
 
 	public Integer getWorkStatus() {
@@ -96,22 +112,6 @@ public class GetUpgradeWorkResponse extends AcsResponse {
 
 	public void setReason(String reason) {
 		this.reason = reason;
-	}
-
-	public String getNewSku() {
-		return this.newSku;
-	}
-
-	public void setNewSku(String newSku) {
-		this.newSku = newSku;
-	}
-
-	public String getOldSku() {
-		return this.oldSku;
-	}
-
-	public void setOldSku(String oldSku) {
-		this.oldSku = oldSku;
 	}
 
 	@Override

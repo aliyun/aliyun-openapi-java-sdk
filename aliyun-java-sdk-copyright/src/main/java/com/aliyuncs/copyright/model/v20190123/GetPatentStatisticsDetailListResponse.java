@@ -27,13 +27,13 @@ public class GetPatentStatisticsDetailListResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalItemNum;
+
+	private Integer pageSize;
 
 	private Integer totalPageNum;
 
@@ -45,14 +45,6 @@ public class GetPatentStatisticsDetailListResponse extends AcsResponse {
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -79,6 +71,14 @@ public class GetPatentStatisticsDetailListResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -97,76 +97,44 @@ public class GetPatentStatisticsDetailListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String age;
-
-		private String agency;
-
-		private String applyNumber;
-
-		private String discount;
-
-		private Float discountPrice;
-
-		private String name;
-
-		private String owner;
-
-		private String payEndDate;
-
-		private Float salePrice;
-
 		private String type;
-
-		private Integer year;
 
 		private String status;
 
-		public String getAge() {
-			return this.age;
+		private String owner;
+
+		private Float discountPrice;
+
+		private String applyNumber;
+
+		private String age;
+
+		private Float salePrice;
+
+		private String payEndDate;
+
+		private Integer year;
+
+		private String agency;
+
+		private String discount;
+
+		private String name;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAge(String age) {
-			this.age = age;
+		public void setType(String type) {
+			this.type = type;
 		}
 
-		public String getAgency() {
-			return this.agency;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setAgency(String agency) {
-			this.agency = agency;
-		}
-
-		public String getApplyNumber() {
-			return this.applyNumber;
-		}
-
-		public void setApplyNumber(String applyNumber) {
-			this.applyNumber = applyNumber;
-		}
-
-		public String getDiscount() {
-			return this.discount;
-		}
-
-		public void setDiscount(String discount) {
-			this.discount = discount;
-		}
-
-		public Float getDiscountPrice() {
-			return this.discountPrice;
-		}
-
-		public void setDiscountPrice(Float discountPrice) {
-			this.discountPrice = discountPrice;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getOwner() {
@@ -177,12 +145,28 @@ public class GetPatentStatisticsDetailListResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public String getPayEndDate() {
-			return this.payEndDate;
+		public Float getDiscountPrice() {
+			return this.discountPrice;
 		}
 
-		public void setPayEndDate(String payEndDate) {
-			this.payEndDate = payEndDate;
+		public void setDiscountPrice(Float discountPrice) {
+			this.discountPrice = discountPrice;
+		}
+
+		public String getApplyNumber() {
+			return this.applyNumber;
+		}
+
+		public void setApplyNumber(String applyNumber) {
+			this.applyNumber = applyNumber;
+		}
+
+		public String getAge() {
+			return this.age;
+		}
+
+		public void setAge(String age) {
+			this.age = age;
 		}
 
 		public Float getSalePrice() {
@@ -193,12 +177,12 @@ public class GetPatentStatisticsDetailListResponse extends AcsResponse {
 			this.salePrice = salePrice;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getPayEndDate() {
+			return this.payEndDate;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setPayEndDate(String payEndDate) {
+			this.payEndDate = payEndDate;
 		}
 
 		public Integer getYear() {
@@ -209,12 +193,28 @@ public class GetPatentStatisticsDetailListResponse extends AcsResponse {
 			this.year = year;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getAgency() {
+			return this.agency;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setAgency(String agency) {
+			this.agency = agency;
+		}
+
+		public String getDiscount() {
+			return this.discount;
+		}
+
+		public void setDiscount(String discount) {
+			this.discount = discount;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

@@ -27,13 +27,13 @@ public class GetAllPatentListResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalItemNum;
+
+	private Integer pageSize;
 
 	private Integer totalPageNum;
 
@@ -45,14 +45,6 @@ public class GetAllPatentListResponse extends AcsResponse {
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -79,6 +71,14 @@ public class GetAllPatentListResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -97,62 +97,38 @@ public class GetAllPatentListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String agency;
-
-		private String applyNumber;
-
-		private String bizId;
-
-		private String name;
+		private String type;
 
 		private String owner;
 
-		private Integer payStatus;
+		private Float discountPrice;
+
+		private String applyNumber;
 
 		private Integer soldStatus;
 
-		private String type;
-
-		private Integer year;
+		private String bizId;
 
 		private String payEndDate;
 
-		private Float discountPrice;
+		private Integer year;
 
-		private Boolean patentDiscard;
+		private Integer payStatus;
 
 		private String patentStatus;
 
-		public String getAgency() {
-			return this.agency;
+		private String agency;
+
+		private String name;
+
+		private Boolean patentDiscard;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAgency(String agency) {
-			this.agency = agency;
-		}
-
-		public String getApplyNumber() {
-			return this.applyNumber;
-		}
-
-		public void setApplyNumber(String applyNumber) {
-			this.applyNumber = applyNumber;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getOwner() {
@@ -163,12 +139,20 @@ public class GetAllPatentListResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public Integer getPayStatus() {
-			return this.payStatus;
+		public Float getDiscountPrice() {
+			return this.discountPrice;
 		}
 
-		public void setPayStatus(Integer payStatus) {
-			this.payStatus = payStatus;
+		public void setDiscountPrice(Float discountPrice) {
+			this.discountPrice = discountPrice;
+		}
+
+		public String getApplyNumber() {
+			return this.applyNumber;
+		}
+
+		public void setApplyNumber(String applyNumber) {
+			this.applyNumber = applyNumber;
 		}
 
 		public Integer getSoldStatus() {
@@ -179,20 +163,12 @@ public class GetAllPatentListResponse extends AcsResponse {
 			this.soldStatus = soldStatus;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getBizId() {
+			return this.bizId;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Integer getYear() {
-			return this.year;
-		}
-
-		public void setYear(Integer year) {
-			this.year = year;
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 
 		public String getPayEndDate() {
@@ -203,20 +179,20 @@ public class GetAllPatentListResponse extends AcsResponse {
 			this.payEndDate = payEndDate;
 		}
 
-		public Float getDiscountPrice() {
-			return this.discountPrice;
+		public Integer getYear() {
+			return this.year;
 		}
 
-		public void setDiscountPrice(Float discountPrice) {
-			this.discountPrice = discountPrice;
+		public void setYear(Integer year) {
+			this.year = year;
 		}
 
-		public Boolean getPatentDiscard() {
-			return this.patentDiscard;
+		public Integer getPayStatus() {
+			return this.payStatus;
 		}
 
-		public void setPatentDiscard(Boolean patentDiscard) {
-			this.patentDiscard = patentDiscard;
+		public void setPayStatus(Integer payStatus) {
+			this.payStatus = payStatus;
 		}
 
 		public String getPatentStatus() {
@@ -225,6 +201,30 @@ public class GetAllPatentListResponse extends AcsResponse {
 
 		public void setPatentStatus(String patentStatus) {
 			this.patentStatus = patentStatus;
+		}
+
+		public String getAgency() {
+			return this.agency;
+		}
+
+		public void setAgency(String agency) {
+			this.agency = agency;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Boolean getPatentDiscard() {
+			return this.patentDiscard;
+		}
+
+		public void setPatentDiscard(Boolean patentDiscard) {
+			this.patentDiscard = patentDiscard;
 		}
 	}
 

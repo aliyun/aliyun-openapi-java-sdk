@@ -28,18 +28,18 @@ public class GetPatentPlanInfoListResponseUnmarshaller {
 		
 		getPatentPlanInfoListResponse.setRequestId(_ctx.stringValue("GetPatentPlanInfoListResponse.RequestId"));
 		getPatentPlanInfoListResponse.setPageNum(_ctx.integerValue("GetPatentPlanInfoListResponse.PageNum"));
-		getPatentPlanInfoListResponse.setPageSize(_ctx.integerValue("GetPatentPlanInfoListResponse.PageSize"));
 		getPatentPlanInfoListResponse.setSuccess(_ctx.booleanValue("GetPatentPlanInfoListResponse.Success"));
 		getPatentPlanInfoListResponse.setTotalItemNum(_ctx.integerValue("GetPatentPlanInfoListResponse.TotalItemNum"));
+		getPatentPlanInfoListResponse.setPageSize(_ctx.integerValue("GetPatentPlanInfoListResponse.PageSize"));
 		getPatentPlanInfoListResponse.setTotalPageNum(_ctx.integerValue("GetPatentPlanInfoListResponse.TotalPageNum"));
 
 		List<Produces> data = new ArrayList<Produces>();
 		for (int i = 0; i < _ctx.lengthValue("GetPatentPlanInfoListResponse.Data.Length"); i++) {
 			Produces produces = new Produces();
-			produces.setContact(_ctx.stringValue("GetPatentPlanInfoListResponse.Data["+ i +"].Contact"));
-			produces.setName(_ctx.stringValue("GetPatentPlanInfoListResponse.Data["+ i +"].Name"));
 			produces.setOwner(_ctx.stringValue("GetPatentPlanInfoListResponse.Data["+ i +"].Owner"));
 			produces.setPlanId(_ctx.longValue("GetPatentPlanInfoListResponse.Data["+ i +"].PlanId"));
+			produces.setName(_ctx.stringValue("GetPatentPlanInfoListResponse.Data["+ i +"].Name"));
+			produces.setContact(_ctx.stringValue("GetPatentPlanInfoListResponse.Data["+ i +"].Contact"));
 			produces.setWarnDays(_ctx.integerValue("GetPatentPlanInfoListResponse.Data["+ i +"].WarnDays"));
 
 			data.add(produces);

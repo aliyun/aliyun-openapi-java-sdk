@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTicketsInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Tickets> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class GetTicketsInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Tickets> getData() {
@@ -57,23 +57,15 @@ public class GetTicketsInfoResponse extends AcsResponse {
 
 	public static class Tickets {
 
-		private String fee;
-
 		private String invoiceUrl;
-
-		private Integer invoiceYear;
-
-		private Long patentNo;
 
 		private String remark;
 
-		public String getFee() {
-			return this.fee;
-		}
+		private Long patentNo;
 
-		public void setFee(String fee) {
-			this.fee = fee;
-		}
+		private Integer invoiceYear;
+
+		private String fee;
 
 		public String getInvoiceUrl() {
 			return this.invoiceUrl;
@@ -83,12 +75,12 @@ public class GetTicketsInfoResponse extends AcsResponse {
 			this.invoiceUrl = invoiceUrl;
 		}
 
-		public Integer getInvoiceYear() {
-			return this.invoiceYear;
+		public String getRemark() {
+			return this.remark;
 		}
 
-		public void setInvoiceYear(Integer invoiceYear) {
-			this.invoiceYear = invoiceYear;
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public Long getPatentNo() {
@@ -99,12 +91,20 @@ public class GetTicketsInfoResponse extends AcsResponse {
 			this.patentNo = patentNo;
 		}
 
-		public String getRemark() {
-			return this.remark;
+		public Integer getInvoiceYear() {
+			return this.invoiceYear;
 		}
 
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setInvoiceYear(Integer invoiceYear) {
+			this.invoiceYear = invoiceYear;
+		}
+
+		public String getFee() {
+			return this.fee;
+		}
+
+		public void setFee(String fee) {
+			this.fee = fee;
 		}
 	}
 

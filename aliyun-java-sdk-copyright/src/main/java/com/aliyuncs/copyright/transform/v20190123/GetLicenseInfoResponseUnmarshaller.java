@@ -27,14 +27,14 @@ public class GetLicenseInfoResponseUnmarshaller {
 		getLicenseInfoResponse.setSuccess(_ctx.booleanValue("GetLicenseInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setCompanyName(_ctx.stringValue("GetLicenseInfoResponse.Data.CompanyName"));
+		data.setEnterpriseTime(_ctx.stringValue("GetLicenseInfoResponse.Data.EnterpriseTime"));
+		data.setEffectivePeriod(_ctx.stringValue("GetLicenseInfoResponse.Data.EffectivePeriod"));
 		data.setCardNum(_ctx.stringValue("GetLicenseInfoResponse.Data.CardNum"));
 		data.setAddress(_ctx.stringValue("GetLicenseInfoResponse.Data.Address"));
-		data.setEnterpriseTime(_ctx.stringValue("GetLicenseInfoResponse.Data.EnterpriseTime"));
-		data.setName(_ctx.stringValue("GetLicenseInfoResponse.Data.Name"));
-		data.setEffectivePeriod(_ctx.stringValue("GetLicenseInfoResponse.Data.EffectivePeriod"));
-		data.setProvince(_ctx.stringValue("GetLicenseInfoResponse.Data.Province"));
 		data.setCity(_ctx.stringValue("GetLicenseInfoResponse.Data.City"));
+		data.setName(_ctx.stringValue("GetLicenseInfoResponse.Data.Name"));
+		data.setProvince(_ctx.stringValue("GetLicenseInfoResponse.Data.Province"));
+		data.setCompanyName(_ctx.stringValue("GetLicenseInfoResponse.Data.CompanyName"));
 		getLicenseInfoResponse.setData(data);
 	 
 	 	return getLicenseInfoResponse;

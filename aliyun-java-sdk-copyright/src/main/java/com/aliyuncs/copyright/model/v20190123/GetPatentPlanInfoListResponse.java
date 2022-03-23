@@ -27,13 +27,13 @@ public class GetPatentPlanInfoListResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalItemNum;
+
+	private Integer pageSize;
 
 	private Integer totalPageNum;
 
@@ -45,14 +45,6 @@ public class GetPatentPlanInfoListResponse extends AcsResponse {
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -79,6 +71,14 @@ public class GetPatentPlanInfoListResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -97,31 +97,15 @@ public class GetPatentPlanInfoListResponse extends AcsResponse {
 
 	public static class Produces {
 
-		private String contact;
-
-		private String name;
-
 		private String owner;
 
 		private Long planId;
 
+		private String name;
+
+		private String contact;
+
 		private Integer warnDays;
-
-		public String getContact() {
-			return this.contact;
-		}
-
-		public void setContact(String contact) {
-			this.contact = contact;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getOwner() {
 			return this.owner;
@@ -137,6 +121,22 @@ public class GetPatentPlanInfoListResponse extends AcsResponse {
 
 		public void setPlanId(Long planId) {
 			this.planId = planId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getContact() {
+			return this.contact;
+		}
+
+		public void setContact(String contact) {
+			this.contact = contact;
 		}
 
 		public Integer getWarnDays() {

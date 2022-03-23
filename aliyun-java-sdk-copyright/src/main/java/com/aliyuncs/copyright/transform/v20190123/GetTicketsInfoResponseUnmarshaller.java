@@ -32,11 +32,11 @@ public class GetTicketsInfoResponseUnmarshaller {
 		List<Tickets> data = new ArrayList<Tickets>();
 		for (int i = 0; i < _ctx.lengthValue("GetTicketsInfoResponse.Data.Length"); i++) {
 			Tickets tickets = new Tickets();
-			tickets.setFee(_ctx.stringValue("GetTicketsInfoResponse.Data["+ i +"].Fee"));
 			tickets.setInvoiceUrl(_ctx.stringValue("GetTicketsInfoResponse.Data["+ i +"].InvoiceUrl"));
-			tickets.setInvoiceYear(_ctx.integerValue("GetTicketsInfoResponse.Data["+ i +"].InvoiceYear"));
-			tickets.setPatentNo(_ctx.longValue("GetTicketsInfoResponse.Data["+ i +"].PatentNo"));
 			tickets.setRemark(_ctx.stringValue("GetTicketsInfoResponse.Data["+ i +"].Remark"));
+			tickets.setPatentNo(_ctx.longValue("GetTicketsInfoResponse.Data["+ i +"].PatentNo"));
+			tickets.setInvoiceYear(_ctx.integerValue("GetTicketsInfoResponse.Data["+ i +"].InvoiceYear"));
+			tickets.setFee(_ctx.stringValue("GetTicketsInfoResponse.Data["+ i +"].Fee"));
 
 			data.add(tickets);
 		}

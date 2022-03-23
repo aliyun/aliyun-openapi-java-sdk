@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckPatentSellStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class CheckPatentSellStatusResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,42 +57,26 @@ public class CheckPatentSellStatusResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String age;
-
-		private String applyNumber;
-
-		private String discount;
+		private String type;
 
 		private String endDate;
 
 		private String errorMessage;
 
+		private String applyNumber;
+
+		private String discount;
+
+		private String age;
+
 		private Float fee;
 
-		private String type;
-
-		public String getAge() {
-			return this.age;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAge(String age) {
-			this.age = age;
-		}
-
-		public String getApplyNumber() {
-			return this.applyNumber;
-		}
-
-		public void setApplyNumber(String applyNumber) {
-			this.applyNumber = applyNumber;
-		}
-
-		public String getDiscount() {
-			return this.discount;
-		}
-
-		public void setDiscount(String discount) {
-			this.discount = discount;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getEndDate() {
@@ -111,20 +95,36 @@ public class CheckPatentSellStatusResponse extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
+		public String getApplyNumber() {
+			return this.applyNumber;
+		}
+
+		public void setApplyNumber(String applyNumber) {
+			this.applyNumber = applyNumber;
+		}
+
+		public String getDiscount() {
+			return this.discount;
+		}
+
+		public void setDiscount(String discount) {
+			this.discount = discount;
+		}
+
+		public String getAge() {
+			return this.age;
+		}
+
+		public void setAge(String age) {
+			this.age = age;
+		}
+
 		public Float getFee() {
 			return this.fee;
 		}
 
 		public void setFee(Float fee) {
 			this.fee = fee;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
 		}
 	}
 

@@ -27,13 +27,13 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalItemNum;
+
+	private Integer pageSize;
 
 	private Integer totalPageNum;
 
@@ -45,14 +45,6 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -79,6 +71,14 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -97,88 +97,48 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 
 	public static class Produces {
 
-		private String bizId;
+		private String serialNumber;
 
-		private String bizType;
-
-		private String extInfo;
-
-		private String intentionBizId;
-
-		private String modifyTime;
-
-		private Boolean oldOrder;
-
-		private String orderId;
+		private Integer status;
 
 		private String orderPrice;
+
+		private String solutionBizId;
+
+		private String userId;
+
+		private String bizId;
 
 		private String orderTime;
 
 		private String partnerCode;
 
-		private String solutionBizId;
+		private String extInfo;
 
-		private Integer status;
+		private String bizType;
 
-		private String userId;
+		private String intentionBizId;
 
-		private String serialNumber;
+		private Boolean oldOrder;
 
-		public String getBizId() {
-			return this.bizId;
+		private String orderId;
+
+		private String modifyTime;
+
+		public String getSerialNumber() {
+			return this.serialNumber;
 		}
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
 		}
 
-		public String getBizType() {
-			return this.bizType;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
-
-		public String getIntentionBizId() {
-			return this.intentionBizId;
-		}
-
-		public void setIntentionBizId(String intentionBizId) {
-			this.intentionBizId = intentionBizId;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public Boolean getOldOrder() {
-			return this.oldOrder;
-		}
-
-		public void setOldOrder(Boolean oldOrder) {
-			this.oldOrder = oldOrder;
-		}
-
-		public String getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getOrderPrice() {
@@ -187,6 +147,30 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 
 		public void setOrderPrice(String orderPrice) {
 			this.orderPrice = orderPrice;
+		}
+
+		public String getSolutionBizId() {
+			return this.solutionBizId;
+		}
+
+		public void setSolutionBizId(String solutionBizId) {
+			this.solutionBizId = solutionBizId;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 
 		public String getOrderTime() {
@@ -205,36 +189,52 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 			this.partnerCode = partnerCode;
 		}
 
-		public String getSolutionBizId() {
-			return this.solutionBizId;
+		public String getExtInfo() {
+			return this.extInfo;
 		}
 
-		public void setSolutionBizId(String solutionBizId) {
-			this.solutionBizId = solutionBizId;
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getBizType() {
+			return this.bizType;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 
-		public String getUserId() {
-			return this.userId;
+		public String getIntentionBizId() {
+			return this.intentionBizId;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
+		public void setIntentionBizId(String intentionBizId) {
+			this.intentionBizId = intentionBizId;
 		}
 
-		public String getSerialNumber() {
-			return this.serialNumber;
+		public Boolean getOldOrder() {
+			return this.oldOrder;
 		}
 
-		public void setSerialNumber(String serialNumber) {
-			this.serialNumber = serialNumber;
+		public void setOldOrder(Boolean oldOrder) {
+			this.oldOrder = oldOrder;
+		}
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

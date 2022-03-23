@@ -26,9 +26,9 @@ public class GetUpdateSaleInfoResponseUnmarshaller {
 	public static GetUpdateSaleInfoResponse unmarshall(GetUpdateSaleInfoResponse getUpdateSaleInfoResponse, UnmarshallerContext _ctx) {
 		
 		getUpdateSaleInfoResponse.setRequestId(_ctx.stringValue("GetUpdateSaleInfoResponse.RequestId"));
-		getUpdateSaleInfoResponse.setSuccess(_ctx.booleanValue("GetUpdateSaleInfoResponse.Success"));
-		getUpdateSaleInfoResponse.setCommodityCode(_ctx.stringValue("GetUpdateSaleInfoResponse.CommodityCode"));
 		getUpdateSaleInfoResponse.setInstanceId(_ctx.stringValue("GetUpdateSaleInfoResponse.InstanceId"));
+		getUpdateSaleInfoResponse.setCommodityCode(_ctx.stringValue("GetUpdateSaleInfoResponse.CommodityCode"));
+		getUpdateSaleInfoResponse.setSuccess(_ctx.booleanValue("GetUpdateSaleInfoResponse.Success"));
 
 		List<String> skuList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetUpdateSaleInfoResponse.SkuList.Length"); i++) {

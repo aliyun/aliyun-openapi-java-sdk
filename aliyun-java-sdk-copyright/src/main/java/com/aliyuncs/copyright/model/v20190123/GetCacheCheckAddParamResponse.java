@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCacheCheckAddParamResponse extends AcsResponse {
 
-	private String applyNumber;
-
 	private String requestId;
 
 	private Boolean success;
 
-	public String getApplyNumber() {
-		return this.applyNumber;
-	}
-
-	public void setApplyNumber(String applyNumber) {
-		this.applyNumber = applyNumber;
-	}
+	private String applyNumber;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +44,14 @@ public class GetCacheCheckAddParamResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getApplyNumber() {
+		return this.applyNumber;
+	}
+
+	public void setApplyNumber(String applyNumber) {
+		this.applyNumber = applyNumber;
 	}
 
 	@Override

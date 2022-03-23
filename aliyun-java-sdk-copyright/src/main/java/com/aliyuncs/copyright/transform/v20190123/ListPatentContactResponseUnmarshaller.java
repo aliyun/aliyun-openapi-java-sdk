@@ -28,18 +28,18 @@ public class ListPatentContactResponseUnmarshaller {
 		
 		listPatentContactResponse.setRequestId(_ctx.stringValue("ListPatentContactResponse.RequestId"));
 		listPatentContactResponse.setPageNum(_ctx.integerValue("ListPatentContactResponse.PageNum"));
-		listPatentContactResponse.setPageSize(_ctx.integerValue("ListPatentContactResponse.PageSize"));
 		listPatentContactResponse.setSuccess(_ctx.booleanValue("ListPatentContactResponse.Success"));
 		listPatentContactResponse.setTotalItemNum(_ctx.integerValue("ListPatentContactResponse.TotalItemNum"));
+		listPatentContactResponse.setPageSize(_ctx.integerValue("ListPatentContactResponse.PageSize"));
 		listPatentContactResponse.setTotalPageNum(_ctx.integerValue("ListPatentContactResponse.TotalPageNum"));
 
 		List<Produces> data = new ArrayList<Produces>();
 		for (int i = 0; i < _ctx.lengthValue("ListPatentContactResponse.Data.Length"); i++) {
 			Produces produces = new Produces();
-			produces.setId(_ctx.longValue("ListPatentContactResponse.Data["+ i +"].Id"));
-			produces.setName(_ctx.stringValue("ListPatentContactResponse.Data["+ i +"].Name"));
 			produces.setEmail(_ctx.stringValue("ListPatentContactResponse.Data["+ i +"].Email"));
+			produces.setName(_ctx.stringValue("ListPatentContactResponse.Data["+ i +"].Name"));
 			produces.setMobile(_ctx.stringValue("ListPatentContactResponse.Data["+ i +"].Mobile"));
+			produces.setId(_ctx.longValue("ListPatentContactResponse.Data["+ i +"].Id"));
 
 			data.add(produces);
 		}

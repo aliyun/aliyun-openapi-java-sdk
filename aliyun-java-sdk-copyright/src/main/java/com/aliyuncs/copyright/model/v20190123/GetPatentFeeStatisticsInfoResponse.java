@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPatentFeeStatisticsInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class GetPatentFeeStatisticsInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -57,25 +57,33 @@ public class GetPatentFeeStatisticsInfoResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String userType;
+
 		private Float discountPrice;
-
-		private Integer famingCount;
-
-		private Integer freeCount;
-
-		private Integer shiyongCount;
-
-		private Integer total;
-
-		private Float totalPrice;
 
 		private Integer usedCount;
 
-		private String userType;
+		private Integer shiyongCount;
 
 		private Integer waiguanCount;
 
+		private Float totalPrice;
+
+		private Integer total;
+
+		private Integer freeCount;
+
+		private Integer famingCount;
+
 		private List<AgeInfoItem> ageInfo;
+
+		public String getUserType() {
+			return this.userType;
+		}
+
+		public void setUserType(String userType) {
+			this.userType = userType;
+		}
 
 		public Float getDiscountPrice() {
 			return this.discountPrice;
@@ -83,46 +91,6 @@ public class GetPatentFeeStatisticsInfoResponse extends AcsResponse {
 
 		public void setDiscountPrice(Float discountPrice) {
 			this.discountPrice = discountPrice;
-		}
-
-		public Integer getFamingCount() {
-			return this.famingCount;
-		}
-
-		public void setFamingCount(Integer famingCount) {
-			this.famingCount = famingCount;
-		}
-
-		public Integer getFreeCount() {
-			return this.freeCount;
-		}
-
-		public void setFreeCount(Integer freeCount) {
-			this.freeCount = freeCount;
-		}
-
-		public Integer getShiyongCount() {
-			return this.shiyongCount;
-		}
-
-		public void setShiyongCount(Integer shiyongCount) {
-			this.shiyongCount = shiyongCount;
-		}
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
-		public Float getTotalPrice() {
-			return this.totalPrice;
-		}
-
-		public void setTotalPrice(Float totalPrice) {
-			this.totalPrice = totalPrice;
 		}
 
 		public Integer getUsedCount() {
@@ -133,12 +101,12 @@ public class GetPatentFeeStatisticsInfoResponse extends AcsResponse {
 			this.usedCount = usedCount;
 		}
 
-		public String getUserType() {
-			return this.userType;
+		public Integer getShiyongCount() {
+			return this.shiyongCount;
 		}
 
-		public void setUserType(String userType) {
-			this.userType = userType;
+		public void setShiyongCount(Integer shiyongCount) {
+			this.shiyongCount = shiyongCount;
 		}
 
 		public Integer getWaiguanCount() {
@@ -147,6 +115,38 @@ public class GetPatentFeeStatisticsInfoResponse extends AcsResponse {
 
 		public void setWaiguanCount(Integer waiguanCount) {
 			this.waiguanCount = waiguanCount;
+		}
+
+		public Float getTotalPrice() {
+			return this.totalPrice;
+		}
+
+		public void setTotalPrice(Float totalPrice) {
+			this.totalPrice = totalPrice;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public Integer getFreeCount() {
+			return this.freeCount;
+		}
+
+		public void setFreeCount(Integer freeCount) {
+			this.freeCount = freeCount;
+		}
+
+		public Integer getFamingCount() {
+			return this.famingCount;
+		}
+
+		public void setFamingCount(Integer famingCount) {
+			this.famingCount = famingCount;
 		}
 
 		public List<AgeInfoItem> getAgeInfo() {
@@ -159,30 +159,22 @@ public class GetPatentFeeStatisticsInfoResponse extends AcsResponse {
 
 		public static class AgeInfoItem {
 
-			private String age;
-
-			private Integer count;
+			private String type;
 
 			private Float discountPrice;
 
 			private Float salePrice;
 
-			private String type;
+			private String age;
 
-			public String getAge() {
-				return this.age;
+			private Integer count;
+
+			public String getType() {
+				return this.type;
 			}
 
-			public void setAge(String age) {
-				this.age = age;
-			}
-
-			public Integer getCount() {
-				return this.count;
-			}
-
-			public void setCount(Integer count) {
-				this.count = count;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public Float getDiscountPrice() {
@@ -201,12 +193,20 @@ public class GetPatentFeeStatisticsInfoResponse extends AcsResponse {
 				this.salePrice = salePrice;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getAge() {
+				return this.age;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setAge(String age) {
+				this.age = age;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
 			}
 		}
 	}

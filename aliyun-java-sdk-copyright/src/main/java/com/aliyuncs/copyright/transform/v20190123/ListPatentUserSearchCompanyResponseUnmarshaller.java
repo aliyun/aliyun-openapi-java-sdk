@@ -32,9 +32,9 @@ public class ListPatentUserSearchCompanyResponseUnmarshaller {
 		List<Produces> data = new ArrayList<Produces>();
 		for (int i = 0; i < _ctx.lengthValue("ListPatentUserSearchCompanyResponse.Data.Length"); i++) {
 			Produces produces = new Produces();
+			produces.setType(_ctx.integerValue("ListPatentUserSearchCompanyResponse.Data["+ i +"].Type"));
 			produces.setEnterpriseName(_ctx.stringValue("ListPatentUserSearchCompanyResponse.Data["+ i +"].EnterpriseName"));
 			produces.setId(_ctx.longValue("ListPatentUserSearchCompanyResponse.Data["+ i +"].Id"));
-			produces.setType(_ctx.integerValue("ListPatentUserSearchCompanyResponse.Data["+ i +"].Type"));
 
 			data.add(produces);
 		}

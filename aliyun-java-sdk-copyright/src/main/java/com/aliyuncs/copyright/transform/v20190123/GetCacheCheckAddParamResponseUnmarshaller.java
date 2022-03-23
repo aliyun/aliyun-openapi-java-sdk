@@ -23,8 +23,8 @@ public class GetCacheCheckAddParamResponseUnmarshaller {
 	public static GetCacheCheckAddParamResponse unmarshall(GetCacheCheckAddParamResponse getCacheCheckAddParamResponse, UnmarshallerContext _ctx) {
 		
 		getCacheCheckAddParamResponse.setRequestId(_ctx.stringValue("GetCacheCheckAddParamResponse.RequestId"));
-		getCacheCheckAddParamResponse.setApplyNumber(_ctx.stringValue("GetCacheCheckAddParamResponse.ApplyNumber"));
 		getCacheCheckAddParamResponse.setSuccess(_ctx.booleanValue("GetCacheCheckAddParamResponse.Success"));
+		getCacheCheckAddParamResponse.setApplyNumber(_ctx.stringValue("GetCacheCheckAddParamResponse.ApplyNumber"));
 	 
 	 	return getCacheCheckAddParamResponse;
 	}

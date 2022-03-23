@@ -27,13 +27,13 @@ public class SavePatentContactResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalItemNum;
+
+	private Integer pageSize;
 
 	private Integer totalPageNum;
 
@@ -45,14 +45,6 @@ public class SavePatentContactResponse extends AcsResponse {
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -79,6 +71,14 @@ public class SavePatentContactResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -99,11 +99,11 @@ public class SavePatentContactResponse extends AcsResponse {
 
 		private String email;
 
-		private Long id;
+		private String name;
 
 		private String mobile;
 
-		private String name;
+		private Long id;
 
 		public String getEmail() {
 			return this.email;
@@ -113,12 +113,12 @@ public class SavePatentContactResponse extends AcsResponse {
 			this.email = email;
 		}
 
-		public Long getId() {
-			return this.id;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getMobile() {
@@ -129,12 +129,12 @@ public class SavePatentContactResponse extends AcsResponse {
 			this.mobile = mobile;
 		}
 
-		public String getName() {
-			return this.name;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

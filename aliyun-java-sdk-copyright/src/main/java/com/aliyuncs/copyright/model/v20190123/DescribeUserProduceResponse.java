@@ -24,37 +24,77 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserProduceResponse extends AcsResponse {
 
+	private Integer status;
+
+	private String orderPrice;
+
+	private String solutionBizId;
+
+	private Boolean success;
+
+	private String userId;
+
 	private String bizId;
+
+	private String partnerCode;
+
+	private String extInfo;
 
 	private String bizType;
 
+	private String intentionBizId;
+
 	private String endTime;
+
+	private String startTime;
+
+	private String requestId;
 
 	private String errorCode;
 
 	private String errorMsg;
 
-	private String extInfo;
-
-	private String intentionBizId;
-
 	private String orderId;
 
-	private String orderPrice;
+	public Integer getStatus() {
+		return this.status;
+	}
 
-	private String partnerCode;
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 
-	private String requestId;
+	public String getOrderPrice() {
+		return this.orderPrice;
+	}
 
-	private String solutionBizId;
+	public void setOrderPrice(String orderPrice) {
+		this.orderPrice = orderPrice;
+	}
 
-	private String startTime;
+	public String getSolutionBizId() {
+		return this.solutionBizId;
+	}
 
-	private Integer status;
+	public void setSolutionBizId(String solutionBizId) {
+		this.solutionBizId = solutionBizId;
+	}
 
-	private Boolean success;
+	public Boolean getSuccess() {
+		return this.success;
+	}
 
-	private String userId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 	public String getBizId() {
 		return this.bizId;
@@ -62,6 +102,22 @@ public class DescribeUserProduceResponse extends AcsResponse {
 
 	public void setBizId(String bizId) {
 		this.bizId = bizId;
+	}
+
+	public String getPartnerCode() {
+		return this.partnerCode;
+	}
+
+	public void setPartnerCode(String partnerCode) {
+		this.partnerCode = partnerCode;
+	}
+
+	public String getExtInfo() {
+		return this.extInfo;
+	}
+
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
 	}
 
 	public String getBizType() {
@@ -72,12 +128,36 @@ public class DescribeUserProduceResponse extends AcsResponse {
 		this.bizType = bizType;
 	}
 
+	public String getIntentionBizId() {
+		return this.intentionBizId;
+	}
+
+	public void setIntentionBizId(String intentionBizId) {
+		this.intentionBizId = intentionBizId;
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorCode() {
@@ -96,92 +176,12 @@ public class DescribeUserProduceResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public String getExtInfo() {
-		return this.extInfo;
-	}
-
-	public void setExtInfo(String extInfo) {
-		this.extInfo = extInfo;
-	}
-
-	public String getIntentionBizId() {
-		return this.intentionBizId;
-	}
-
-	public void setIntentionBizId(String intentionBizId) {
-		this.intentionBizId = intentionBizId;
-	}
-
 	public String getOrderId() {
 		return this.orderId;
 	}
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
-	}
-
-	public String getOrderPrice() {
-		return this.orderPrice;
-	}
-
-	public void setOrderPrice(String orderPrice) {
-		this.orderPrice = orderPrice;
-	}
-
-	public String getPartnerCode() {
-		return this.partnerCode;
-	}
-
-	public void setPartnerCode(String partnerCode) {
-		this.partnerCode = partnerCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSolutionBizId() {
-		return this.solutionBizId;
-	}
-
-	public void setSolutionBizId(String solutionBizId) {
-		this.solutionBizId = solutionBizId;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
 	}
 
 	@Override

@@ -28,28 +28,28 @@ public class ListUserProducesResponseUnmarshaller {
 		
 		listUserProducesResponse.setRequestId(_ctx.stringValue("ListUserProducesResponse.RequestId"));
 		listUserProducesResponse.setPageNum(_ctx.integerValue("ListUserProducesResponse.PageNum"));
-		listUserProducesResponse.setPageSize(_ctx.integerValue("ListUserProducesResponse.PageSize"));
 		listUserProducesResponse.setSuccess(_ctx.booleanValue("ListUserProducesResponse.Success"));
 		listUserProducesResponse.setTotalItemNum(_ctx.integerValue("ListUserProducesResponse.TotalItemNum"));
+		listUserProducesResponse.setPageSize(_ctx.integerValue("ListUserProducesResponse.PageSize"));
 		listUserProducesResponse.setTotalPageNum(_ctx.integerValue("ListUserProducesResponse.TotalPageNum"));
 
 		List<Produces> data = new ArrayList<Produces>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserProducesResponse.Data.Length"); i++) {
 			Produces produces = new Produces();
-			produces.setBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].BizId"));
-			produces.setBizType(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].BizType"));
-			produces.setEndTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].EndTime"));
-			produces.setExtInfo(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].ExtInfo"));
-			produces.setIntentionBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].IntentionBizId"));
-			produces.setModifyTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].ModifyTime"));
-			produces.setOrderId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderId"));
+			produces.setStatus(_ctx.integerValue("ListUserProducesResponse.Data["+ i +"].Status"));
 			produces.setOrderPrice(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderPrice"));
+			produces.setSolutionBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].SolutionBizId"));
+			produces.setUserId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].UserId"));
+			produces.setBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].BizId"));
 			produces.setOrderTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderTime"));
 			produces.setPartnerCode(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].PartnerCode"));
-			produces.setSolutionBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].SolutionBizId"));
+			produces.setExtInfo(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].ExtInfo"));
+			produces.setBizType(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].BizType"));
+			produces.setIntentionBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].IntentionBizId"));
+			produces.setEndTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].EndTime"));
 			produces.setStartTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].StartTime"));
-			produces.setStatus(_ctx.integerValue("ListUserProducesResponse.Data["+ i +"].Status"));
-			produces.setUserId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].UserId"));
+			produces.setOrderId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderId"));
+			produces.setModifyTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].ModifyTime"));
 
 			data.add(produces);
 		}

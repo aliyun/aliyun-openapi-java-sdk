@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPatentUserSearchCompanyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Produces> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class ListPatentUserSearchCompanyResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Produces> getData() {
@@ -57,11 +57,19 @@ public class ListPatentUserSearchCompanyResponse extends AcsResponse {
 
 	public static class Produces {
 
+		private Integer type;
+
 		private String enterpriseName;
 
 		private Long id;
 
-		private Integer type;
+		public Integer getType() {
+			return this.type;
+		}
+
+		public void setType(Integer type) {
+			this.type = type;
+		}
 
 		public String getEnterpriseName() {
 			return this.enterpriseName;
@@ -77,14 +85,6 @@ public class ListPatentUserSearchCompanyResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
 		}
 	}
 

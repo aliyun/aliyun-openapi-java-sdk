@@ -28,18 +28,18 @@ public class SavePatentContactResponseUnmarshaller {
 		
 		savePatentContactResponse.setRequestId(_ctx.stringValue("SavePatentContactResponse.RequestId"));
 		savePatentContactResponse.setPageNum(_ctx.integerValue("SavePatentContactResponse.PageNum"));
-		savePatentContactResponse.setPageSize(_ctx.integerValue("SavePatentContactResponse.PageSize"));
 		savePatentContactResponse.setSuccess(_ctx.booleanValue("SavePatentContactResponse.Success"));
 		savePatentContactResponse.setTotalItemNum(_ctx.integerValue("SavePatentContactResponse.TotalItemNum"));
+		savePatentContactResponse.setPageSize(_ctx.integerValue("SavePatentContactResponse.PageSize"));
 		savePatentContactResponse.setTotalPageNum(_ctx.integerValue("SavePatentContactResponse.TotalPageNum"));
 
 		List<Produces> data = new ArrayList<Produces>();
 		for (int i = 0; i < _ctx.lengthValue("SavePatentContactResponse.Data.Length"); i++) {
 			Produces produces = new Produces();
 			produces.setEmail(_ctx.stringValue("SavePatentContactResponse.Data["+ i +"].Email"));
-			produces.setId(_ctx.longValue("SavePatentContactResponse.Data["+ i +"].Id"));
-			produces.setMobile(_ctx.stringValue("SavePatentContactResponse.Data["+ i +"].Mobile"));
 			produces.setName(_ctx.stringValue("SavePatentContactResponse.Data["+ i +"].Name"));
+			produces.setMobile(_ctx.stringValue("SavePatentContactResponse.Data["+ i +"].Mobile"));
+			produces.setId(_ctx.longValue("SavePatentContactResponse.Data["+ i +"].Id"));
 
 			data.add(produces);
 		}

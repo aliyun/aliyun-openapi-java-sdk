@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SaveCopyrightPersonResponse extends AcsResponse {
 
-	private Long personId;
-
 	private String requestId;
 
+	private Long personId;
+
 	private Boolean success;
-
-	public Long getPersonId() {
-		return this.personId;
-	}
-
-	public void setPersonId(Long personId) {
-		this.personId = personId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class SaveCopyrightPersonResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getPersonId() {
+		return this.personId;
+	}
+
+	public void setPersonId(Long personId) {
+		this.personId = personId;
 	}
 
 	public Boolean getSuccess() {

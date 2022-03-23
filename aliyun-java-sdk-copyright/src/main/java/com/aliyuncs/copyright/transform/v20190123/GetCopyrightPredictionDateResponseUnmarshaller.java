@@ -23,8 +23,8 @@ public class GetCopyrightPredictionDateResponseUnmarshaller {
 	public static GetCopyrightPredictionDateResponse unmarshall(GetCopyrightPredictionDateResponse getCopyrightPredictionDateResponse, UnmarshallerContext _ctx) {
 		
 		getCopyrightPredictionDateResponse.setRequestId(_ctx.stringValue("GetCopyrightPredictionDateResponse.RequestId"));
-		getCopyrightPredictionDateResponse.setSuccess(_ctx.booleanValue("GetCopyrightPredictionDateResponse.Success"));
 		getCopyrightPredictionDateResponse.setDate(_ctx.stringValue("GetCopyrightPredictionDateResponse.Date"));
+		getCopyrightPredictionDateResponse.setSuccess(_ctx.booleanValue("GetCopyrightPredictionDateResponse.Success"));
 	 
 	 	return getCopyrightPredictionDateResponse;
 	}

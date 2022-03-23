@@ -29,13 +29,13 @@ public class BatchCheckPatentAddResponse extends AcsResponse {
 
 	private Integer canAddCount;
 
-	private Integer existCount;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalCount;
+
+	private Integer existCount;
 
 	private List<ErrorDetailItem> errorDetail;
 
@@ -55,14 +55,6 @@ public class BatchCheckPatentAddResponse extends AcsResponse {
 
 	public void setCanAddCount(Integer canAddCount) {
 		this.canAddCount = canAddCount;
-	}
-
-	public Integer getExistCount() {
-		return this.existCount;
-	}
-
-	public void setExistCount(Integer existCount) {
-		this.existCount = existCount;
 	}
 
 	public String getRequestId() {
@@ -89,6 +81,14 @@ public class BatchCheckPatentAddResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public Integer getExistCount() {
+		return this.existCount;
+	}
+
+	public void setExistCount(Integer existCount) {
+		this.existCount = existCount;
+	}
+
 	public List<ErrorDetailItem> getErrorDetail() {
 		return this.errorDetail;
 	}
@@ -107,19 +107,11 @@ public class BatchCheckPatentAddResponse extends AcsResponse {
 
 	public static class ErrorDetailItem {
 
-		private String applyNumber;
-
 		private String message;
 
 		private Boolean success;
 
-		public String getApplyNumber() {
-			return this.applyNumber;
-		}
-
-		public void setApplyNumber(String applyNumber) {
-			this.applyNumber = applyNumber;
-		}
+		private String applyNumber;
 
 		public String getMessage() {
 			return this.message;
@@ -136,56 +128,40 @@ public class BatchCheckPatentAddResponse extends AcsResponse {
 		public void setSuccess(Boolean success) {
 			this.success = success;
 		}
+
+		public String getApplyNumber() {
+			return this.applyNumber;
+		}
+
+		public void setApplyNumber(String applyNumber) {
+			this.applyNumber = applyNumber;
+		}
 	}
 
 	public static class TradeListItem {
 
-		private String age;
-
-		private String discount;
-
-		private Long existCount;
-
-		private Integer needCount;
+		private String type;
 
 		private Float needFee;
 
-		private Long totalCount;
-
-		private String type;
+		private String discount;
 
 		private String overduePenalty;
 
-		public String getAge() {
-			return this.age;
+		private Integer needCount;
+
+		private Long totalCount;
+
+		private String age;
+
+		private Long existCount;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAge(String age) {
-			this.age = age;
-		}
-
-		public String getDiscount() {
-			return this.discount;
-		}
-
-		public void setDiscount(String discount) {
-			this.discount = discount;
-		}
-
-		public Long getExistCount() {
-			return this.existCount;
-		}
-
-		public void setExistCount(Long existCount) {
-			this.existCount = existCount;
-		}
-
-		public Integer getNeedCount() {
-			return this.needCount;
-		}
-
-		public void setNeedCount(Integer needCount) {
-			this.needCount = needCount;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public Float getNeedFee() {
@@ -196,20 +172,12 @@ public class BatchCheckPatentAddResponse extends AcsResponse {
 			this.needFee = needFee;
 		}
 
-		public Long getTotalCount() {
-			return this.totalCount;
+		public String getDiscount() {
+			return this.discount;
 		}
 
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
+		public void setDiscount(String discount) {
+			this.discount = discount;
 		}
 
 		public String getOverduePenalty() {
@@ -218,6 +186,38 @@ public class BatchCheckPatentAddResponse extends AcsResponse {
 
 		public void setOverduePenalty(String overduePenalty) {
 			this.overduePenalty = overduePenalty;
+		}
+
+		public Integer getNeedCount() {
+			return this.needCount;
+		}
+
+		public void setNeedCount(Integer needCount) {
+			this.needCount = needCount;
+		}
+
+		public Long getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public String getAge() {
+			return this.age;
+		}
+
+		public void setAge(String age) {
+			this.age = age;
+		}
+
+		public Long getExistCount() {
+			return this.existCount;
+		}
+
+		public void setExistCount(Long existCount) {
+			this.existCount = existCount;
 		}
 	}
 

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPatentPlanInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class GetPatentPlanInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,31 +57,15 @@ public class GetPatentPlanInfoResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String contact;
-
-		private String name;
-
 		private String owner;
 
 		private Integer planId;
 
+		private String name;
+
+		private String contact;
+
 		private Integer warnDays;
-
-		public String getContact() {
-			return this.contact;
-		}
-
-		public void setContact(String contact) {
-			this.contact = contact;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getOwner() {
 			return this.owner;
@@ -97,6 +81,22 @@ public class GetPatentPlanInfoResponse extends AcsResponse {
 
 		public void setPlanId(Integer planId) {
 			this.planId = planId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getContact() {
+			return this.contact;
+		}
+
+		public void setContact(String contact) {
+			this.contact = contact;
 		}
 
 		public Integer getWarnDays() {

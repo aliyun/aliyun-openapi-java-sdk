@@ -32,13 +32,13 @@ public class CheckPatentSellStatusResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("CheckPatentSellStatusResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setAge(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].Age"));
-			dataItem.setApplyNumber(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].ApplyNumber"));
-			dataItem.setDiscount(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].Discount"));
+			dataItem.setType(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].Type"));
 			dataItem.setEndDate(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].EndDate"));
 			dataItem.setErrorMessage(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].ErrorMessage"));
+			dataItem.setApplyNumber(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].ApplyNumber"));
+			dataItem.setDiscount(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].Discount"));
+			dataItem.setAge(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].Age"));
 			dataItem.setFee(_ctx.floatValue("CheckPatentSellStatusResponse.Data["+ i +"].Fee"));
-			dataItem.setType(_ctx.stringValue("CheckPatentSellStatusResponse.Data["+ i +"].Type"));
 
 			data.add(dataItem);
 		}

@@ -24,50 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCopyrightNoticeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String applyPeople;
+	private String owner;
 
 	private String modifyInfo;
 
+	private String requestId;
+
 	private String flowNumber;
+
+	private Boolean success;
+
+	private String fileList;
 
 	private String agentPeople;
 
 	private String name;
 
-	private String owner;
-
 	private String createDate;
+
+	private String applyPeople;
 
 	private String admissibleNumber;
 
-	private String fileList;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getOwner() {
+		return this.owner;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getApplyPeople() {
-		return this.applyPeople;
-	}
-
-	public void setApplyPeople(String applyPeople) {
-		this.applyPeople = applyPeople;
+	public void setOwner(String owner) {
+		this.owner = owner;
 	}
 
 	public String getModifyInfo() {
@@ -78,12 +62,36 @@ public class GetCopyrightNoticeResponse extends AcsResponse {
 		this.modifyInfo = modifyInfo;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getFlowNumber() {
 		return this.flowNumber;
 	}
 
 	public void setFlowNumber(String flowNumber) {
 		this.flowNumber = flowNumber;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getFileList() {
+		return this.fileList;
+	}
+
+	public void setFileList(String fileList) {
+		this.fileList = fileList;
 	}
 
 	public String getAgentPeople() {
@@ -102,14 +110,6 @@ public class GetCopyrightNoticeResponse extends AcsResponse {
 		this.name = name;
 	}
 
-	public String getOwner() {
-		return this.owner;
-	}
-
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
-
 	public String getCreateDate() {
 		return this.createDate;
 	}
@@ -118,20 +118,20 @@ public class GetCopyrightNoticeResponse extends AcsResponse {
 		this.createDate = createDate;
 	}
 
+	public String getApplyPeople() {
+		return this.applyPeople;
+	}
+
+	public void setApplyPeople(String applyPeople) {
+		this.applyPeople = applyPeople;
+	}
+
 	public String getAdmissibleNumber() {
 		return this.admissibleNumber;
 	}
 
 	public void setAdmissibleNumber(String admissibleNumber) {
 		this.admissibleNumber = admissibleNumber;
-	}
-
-	public String getFileList() {
-		return this.fileList;
-	}
-
-	public void setFileList(String fileList) {
-		this.fileList = fileList;
 	}
 
 	@Override

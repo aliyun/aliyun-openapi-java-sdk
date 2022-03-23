@@ -32,11 +32,11 @@ public class GetPatentOverviewInfoResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPatentOverviewInfoResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setFamingCount(_ctx.integerValue("GetPatentOverviewInfoResponse.Data["+ i +"].FamingCount"));
-			dataItem.setShiyongCount(_ctx.integerValue("GetPatentOverviewInfoResponse.Data["+ i +"].ShiyongCount"));
-			dataItem.setTotal(_ctx.integerValue("GetPatentOverviewInfoResponse.Data["+ i +"].Total"));
 			dataItem.setUserType(_ctx.stringValue("GetPatentOverviewInfoResponse.Data["+ i +"].UserType"));
 			dataItem.setWaiguanCount(_ctx.integerValue("GetPatentOverviewInfoResponse.Data["+ i +"].WaiguanCount"));
+			dataItem.setTotal(_ctx.integerValue("GetPatentOverviewInfoResponse.Data["+ i +"].Total"));
+			dataItem.setShiyongCount(_ctx.integerValue("GetPatentOverviewInfoResponse.Data["+ i +"].ShiyongCount"));
+			dataItem.setFamingCount(_ctx.integerValue("GetPatentOverviewInfoResponse.Data["+ i +"].FamingCount"));
 
 			data.add(dataItem);
 		}

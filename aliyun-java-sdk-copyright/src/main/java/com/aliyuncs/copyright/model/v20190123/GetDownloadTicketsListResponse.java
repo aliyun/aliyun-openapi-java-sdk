@@ -27,13 +27,13 @@ public class GetDownloadTicketsListResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalItemNum;
+
+	private Integer pageSize;
 
 	private Integer totalPageNum;
 
@@ -45,14 +45,6 @@ public class GetDownloadTicketsListResponse extends AcsResponse {
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -79,6 +71,14 @@ public class GetDownloadTicketsListResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -97,30 +97,22 @@ public class GetDownloadTicketsListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String name;
-
-		private Long downloadId;
+		private String status;
 
 		private Long date;
 
-		private String status;
+		private Long downloadId;
 
 		private String url;
 
-		public String getName() {
-			return this.name;
+		private String name;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getDownloadId() {
-			return this.downloadId;
-		}
-
-		public void setDownloadId(Long downloadId) {
-			this.downloadId = downloadId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Long getDate() {
@@ -131,12 +123,12 @@ public class GetDownloadTicketsListResponse extends AcsResponse {
 			this.date = date;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Long getDownloadId() {
+			return this.downloadId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDownloadId(Long downloadId) {
+			this.downloadId = downloadId;
 		}
 
 		public String getUrl() {
@@ -145,6 +137,14 @@ public class GetDownloadTicketsListResponse extends AcsResponse {
 
 		public void setUrl(String url) {
 			this.url = url;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

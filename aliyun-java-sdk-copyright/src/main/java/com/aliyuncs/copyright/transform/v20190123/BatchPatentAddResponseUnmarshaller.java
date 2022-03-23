@@ -32,9 +32,9 @@ public class BatchPatentAddResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchPatentAddResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setApplyNumber(_ctx.stringValue("BatchPatentAddResponse.Data["+ i +"].ApplyNumber"));
 			dataItem.setMessage(_ctx.stringValue("BatchPatentAddResponse.Data["+ i +"].Message"));
 			dataItem.setSuccess(_ctx.booleanValue("BatchPatentAddResponse.Data["+ i +"].Success"));
+			dataItem.setApplyNumber(_ctx.stringValue("BatchPatentAddResponse.Data["+ i +"].ApplyNumber"));
 
 			data.add(dataItem);
 		}

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPatentOverviewInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class GetPatentOverviewInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,39 +57,15 @@ public class GetPatentOverviewInfoResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Integer famingCount;
-
-		private Integer shiyongCount;
-
-		private Integer total;
-
 		private String userType;
 
 		private Integer waiguanCount;
 
-		public Integer getFamingCount() {
-			return this.famingCount;
-		}
+		private Integer total;
 
-		public void setFamingCount(Integer famingCount) {
-			this.famingCount = famingCount;
-		}
+		private Integer shiyongCount;
 
-		public Integer getShiyongCount() {
-			return this.shiyongCount;
-		}
-
-		public void setShiyongCount(Integer shiyongCount) {
-			this.shiyongCount = shiyongCount;
-		}
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
+		private Integer famingCount;
 
 		public String getUserType() {
 			return this.userType;
@@ -105,6 +81,30 @@ public class GetPatentOverviewInfoResponse extends AcsResponse {
 
 		public void setWaiguanCount(Integer waiguanCount) {
 			this.waiguanCount = waiguanCount;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public Integer getShiyongCount() {
+			return this.shiyongCount;
+		}
+
+		public void setShiyongCount(Integer shiyongCount) {
+			this.shiyongCount = shiyongCount;
+		}
+
+		public Integer getFamingCount() {
+			return this.famingCount;
+		}
+
+		public void setFamingCount(Integer famingCount) {
+			this.famingCount = famingCount;
 		}
 	}
 

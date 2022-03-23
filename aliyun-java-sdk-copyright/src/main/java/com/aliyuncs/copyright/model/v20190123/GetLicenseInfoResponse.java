@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetLicenseInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class GetLicenseInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -56,28 +56,36 @@ public class GetLicenseInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String companyName;
+		private String enterpriseTime;
+
+		private String effectivePeriod;
 
 		private String cardNum;
 
 		private String address;
 
-		private String enterpriseTime;
+		private String city;
 
 		private String name;
 
-		private String effectivePeriod;
-
 		private String province;
 
-		private String city;
+		private String companyName;
 
-		public String getCompanyName() {
-			return this.companyName;
+		public String getEnterpriseTime() {
+			return this.enterpriseTime;
 		}
 
-		public void setCompanyName(String companyName) {
-			this.companyName = companyName;
+		public void setEnterpriseTime(String enterpriseTime) {
+			this.enterpriseTime = enterpriseTime;
+		}
+
+		public String getEffectivePeriod() {
+			return this.effectivePeriod;
+		}
+
+		public void setEffectivePeriod(String effectivePeriod) {
+			this.effectivePeriod = effectivePeriod;
 		}
 
 		public String getCardNum() {
@@ -96,12 +104,12 @@ public class GetLicenseInfoResponse extends AcsResponse {
 			this.address = address;
 		}
 
-		public String getEnterpriseTime() {
-			return this.enterpriseTime;
+		public String getCity() {
+			return this.city;
 		}
 
-		public void setEnterpriseTime(String enterpriseTime) {
-			this.enterpriseTime = enterpriseTime;
+		public void setCity(String city) {
+			this.city = city;
 		}
 
 		public String getName() {
@@ -112,14 +120,6 @@ public class GetLicenseInfoResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getEffectivePeriod() {
-			return this.effectivePeriod;
-		}
-
-		public void setEffectivePeriod(String effectivePeriod) {
-			this.effectivePeriod = effectivePeriod;
-		}
-
 		public String getProvince() {
 			return this.province;
 		}
@@ -128,12 +128,12 @@ public class GetLicenseInfoResponse extends AcsResponse {
 			this.province = province;
 		}
 
-		public String getCity() {
-			return this.city;
+		public String getCompanyName() {
+			return this.companyName;
 		}
 
-		public void setCity(String city) {
-			this.city = city;
+		public void setCompanyName(String companyName) {
+			this.companyName = companyName;
 		}
 	}
 

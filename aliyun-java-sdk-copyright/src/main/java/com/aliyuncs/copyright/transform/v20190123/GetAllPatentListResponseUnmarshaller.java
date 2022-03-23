@@ -28,27 +28,27 @@ public class GetAllPatentListResponseUnmarshaller {
 		
 		getAllPatentListResponse.setRequestId(_ctx.stringValue("GetAllPatentListResponse.RequestId"));
 		getAllPatentListResponse.setPageNum(_ctx.integerValue("GetAllPatentListResponse.PageNum"));
-		getAllPatentListResponse.setPageSize(_ctx.integerValue("GetAllPatentListResponse.PageSize"));
 		getAllPatentListResponse.setSuccess(_ctx.booleanValue("GetAllPatentListResponse.Success"));
 		getAllPatentListResponse.setTotalItemNum(_ctx.integerValue("GetAllPatentListResponse.TotalItemNum"));
+		getAllPatentListResponse.setPageSize(_ctx.integerValue("GetAllPatentListResponse.PageSize"));
 		getAllPatentListResponse.setTotalPageNum(_ctx.integerValue("GetAllPatentListResponse.TotalPageNum"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAllPatentListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setAgency(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].Agency"));
-			dataItem.setApplyNumber(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].ApplyNumber"));
-			dataItem.setBizId(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].BizId"));
-			dataItem.setName(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].Name"));
-			dataItem.setOwner(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].Owner"));
-			dataItem.setPayStatus(_ctx.integerValue("GetAllPatentListResponse.Data["+ i +"].PayStatus"));
-			dataItem.setSoldStatus(_ctx.integerValue("GetAllPatentListResponse.Data["+ i +"].SoldStatus"));
 			dataItem.setType(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].Type"));
-			dataItem.setYear(_ctx.integerValue("GetAllPatentListResponse.Data["+ i +"].Year"));
-			dataItem.setPayEndDate(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].PayEndDate"));
+			dataItem.setOwner(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].Owner"));
 			dataItem.setDiscountPrice(_ctx.floatValue("GetAllPatentListResponse.Data["+ i +"].DiscountPrice"));
-			dataItem.setPatentDiscard(_ctx.booleanValue("GetAllPatentListResponse.Data["+ i +"].PatentDiscard"));
+			dataItem.setApplyNumber(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].ApplyNumber"));
+			dataItem.setSoldStatus(_ctx.integerValue("GetAllPatentListResponse.Data["+ i +"].SoldStatus"));
+			dataItem.setBizId(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].BizId"));
+			dataItem.setPayEndDate(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].PayEndDate"));
+			dataItem.setYear(_ctx.integerValue("GetAllPatentListResponse.Data["+ i +"].Year"));
+			dataItem.setPayStatus(_ctx.integerValue("GetAllPatentListResponse.Data["+ i +"].PayStatus"));
 			dataItem.setPatentStatus(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].PatentStatus"));
+			dataItem.setAgency(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].Agency"));
+			dataItem.setName(_ctx.stringValue("GetAllPatentListResponse.Data["+ i +"].Name"));
+			dataItem.setPatentDiscard(_ctx.booleanValue("GetAllPatentListResponse.Data["+ i +"].PatentDiscard"));
 
 			data.add(dataItem);
 		}

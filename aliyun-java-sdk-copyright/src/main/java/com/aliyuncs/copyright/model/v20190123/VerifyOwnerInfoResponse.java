@@ -26,15 +26,15 @@ public class VerifyOwnerInfoResponse extends AcsResponse {
 
 	private String birthDate;
 
-	private String message;
-
-	private String phone;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String message;
+
 	private Boolean verifyResult;
+
+	private String phone;
 
 	public String getBirthDate() {
 		return this.birthDate;
@@ -42,22 +42,6 @@ public class VerifyOwnerInfoResponse extends AcsResponse {
 
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getPhone() {
-		return this.phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
 	}
 
 	public String getRequestId() {
@@ -76,12 +60,28 @@ public class VerifyOwnerInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Boolean getVerifyResult() {
 		return this.verifyResult;
 	}
 
 	public void setVerifyResult(Boolean verifyResult) {
 		this.verifyResult = verifyResult;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	@Override

@@ -24,10 +24,10 @@ public class VerifyOwnerInfoResponseUnmarshaller {
 		
 		verifyOwnerInfoResponse.setRequestId(_ctx.stringValue("VerifyOwnerInfoResponse.RequestId"));
 		verifyOwnerInfoResponse.setBirthDate(_ctx.stringValue("VerifyOwnerInfoResponse.BirthDate"));
-		verifyOwnerInfoResponse.setMessage(_ctx.stringValue("VerifyOwnerInfoResponse.Message"));
-		verifyOwnerInfoResponse.setPhone(_ctx.stringValue("VerifyOwnerInfoResponse.Phone"));
 		verifyOwnerInfoResponse.setSuccess(_ctx.booleanValue("VerifyOwnerInfoResponse.Success"));
+		verifyOwnerInfoResponse.setMessage(_ctx.stringValue("VerifyOwnerInfoResponse.Message"));
 		verifyOwnerInfoResponse.setVerifyResult(_ctx.booleanValue("VerifyOwnerInfoResponse.VerifyResult"));
+		verifyOwnerInfoResponse.setPhone(_ctx.stringValue("VerifyOwnerInfoResponse.Phone"));
 	 
 	 	return verifyOwnerInfoResponse;
 	}

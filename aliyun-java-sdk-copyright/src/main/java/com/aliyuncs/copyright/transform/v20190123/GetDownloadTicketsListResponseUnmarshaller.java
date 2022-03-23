@@ -28,19 +28,19 @@ public class GetDownloadTicketsListResponseUnmarshaller {
 		
 		getDownloadTicketsListResponse.setRequestId(_ctx.stringValue("GetDownloadTicketsListResponse.RequestId"));
 		getDownloadTicketsListResponse.setPageNum(_ctx.integerValue("GetDownloadTicketsListResponse.PageNum"));
-		getDownloadTicketsListResponse.setPageSize(_ctx.integerValue("GetDownloadTicketsListResponse.PageSize"));
 		getDownloadTicketsListResponse.setSuccess(_ctx.booleanValue("GetDownloadTicketsListResponse.Success"));
 		getDownloadTicketsListResponse.setTotalItemNum(_ctx.integerValue("GetDownloadTicketsListResponse.TotalItemNum"));
+		getDownloadTicketsListResponse.setPageSize(_ctx.integerValue("GetDownloadTicketsListResponse.PageSize"));
 		getDownloadTicketsListResponse.setTotalPageNum(_ctx.integerValue("GetDownloadTicketsListResponse.TotalPageNum"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDownloadTicketsListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setName(_ctx.stringValue("GetDownloadTicketsListResponse.Data["+ i +"].Name"));
-			dataItem.setDownloadId(_ctx.longValue("GetDownloadTicketsListResponse.Data["+ i +"].DownloadId"));
-			dataItem.setDate(_ctx.longValue("GetDownloadTicketsListResponse.Data["+ i +"].Date"));
 			dataItem.setStatus(_ctx.stringValue("GetDownloadTicketsListResponse.Data["+ i +"].Status"));
+			dataItem.setDate(_ctx.longValue("GetDownloadTicketsListResponse.Data["+ i +"].Date"));
+			dataItem.setDownloadId(_ctx.longValue("GetDownloadTicketsListResponse.Data["+ i +"].DownloadId"));
 			dataItem.setUrl(_ctx.stringValue("GetDownloadTicketsListResponse.Data["+ i +"].Url"));
+			dataItem.setName(_ctx.stringValue("GetDownloadTicketsListResponse.Data["+ i +"].Name"));
 
 			data.add(dataItem);
 		}

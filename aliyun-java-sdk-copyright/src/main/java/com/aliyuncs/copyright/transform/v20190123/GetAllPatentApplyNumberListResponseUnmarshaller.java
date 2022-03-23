@@ -23,8 +23,8 @@ public class GetAllPatentApplyNumberListResponseUnmarshaller {
 	public static GetAllPatentApplyNumberListResponse unmarshall(GetAllPatentApplyNumberListResponse getAllPatentApplyNumberListResponse, UnmarshallerContext _ctx) {
 		
 		getAllPatentApplyNumberListResponse.setRequestId(_ctx.stringValue("GetAllPatentApplyNumberListResponse.RequestId"));
-		getAllPatentApplyNumberListResponse.setSuccess(_ctx.booleanValue("GetAllPatentApplyNumberListResponse.Success"));
 		getAllPatentApplyNumberListResponse.setData(_ctx.stringValue("GetAllPatentApplyNumberListResponse.Data"));
+		getAllPatentApplyNumberListResponse.setSuccess(_ctx.booleanValue("GetAllPatentApplyNumberListResponse.Success"));
 	 
 	 	return getAllPatentApplyNumberListResponse;
 	}

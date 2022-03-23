@@ -27,13 +27,13 @@ public class GetPatentPlanDetailListResponse extends AcsResponse {
 
 	private Integer pageNum;
 
-	private Integer pageSize;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer totalItemNum;
+
+	private Integer pageSize;
 
 	private Integer totalPageNum;
 
@@ -45,14 +45,6 @@ public class GetPatentPlanDetailListResponse extends AcsResponse {
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -79,6 +71,14 @@ public class GetPatentPlanDetailListResponse extends AcsResponse {
 		this.totalItemNum = totalItemNum;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -97,92 +97,56 @@ public class GetPatentPlanDetailListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String agency;
-
-		private String applyNumber;
-
-		private String bizId;
-
-		private Integer discount;
-
-		private String gmtExpireDate;
-
-		private String name;
+		private Integer type;
 
 		private String owner;
 
 		private String paidDate;
 
-		private Integer payStatus;
-
-		private Long planDetailId;
-
-		private Long planId;
+		private String endPayDate;
 
 		private String planPayDate;
 
 		private Integer soldStatus;
 
-		private Integer type;
+		private String applyNumber;
 
-		private Boolean uidAgreement;
+		private String gmtExpireDate;
 
-		private Integer year;
-
-		private String patentStatus;
-
-		private Boolean patentDiscard;
+		private String bizId;
 
 		private Integer label;
 
-		private String endPayDate;
+		private Long planId;
 
-		public String getAgency() {
-			return this.agency;
+		private Integer year;
+
+		private Long planDetailId;
+
+		private Integer payStatus;
+
+		private String patentStatus;
+
+		private String agency;
+
+		private Integer discount;
+
+		private Boolean uidAgreement;
+
+		private Boolean patentDiscard;
+
+		private String name;
+
+		private Long updateTime;
+
+		private Integer planFee;
+
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setAgency(String agency) {
-			this.agency = agency;
-		}
-
-		public String getApplyNumber() {
-			return this.applyNumber;
-		}
-
-		public void setApplyNumber(String applyNumber) {
-			this.applyNumber = applyNumber;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public Integer getDiscount() {
-			return this.discount;
-		}
-
-		public void setDiscount(Integer discount) {
-			this.discount = discount;
-		}
-
-		public String getGmtExpireDate() {
-			return this.gmtExpireDate;
-		}
-
-		public void setGmtExpireDate(String gmtExpireDate) {
-			this.gmtExpireDate = gmtExpireDate;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
 		public String getOwner() {
@@ -201,28 +165,12 @@ public class GetPatentPlanDetailListResponse extends AcsResponse {
 			this.paidDate = paidDate;
 		}
 
-		public Integer getPayStatus() {
-			return this.payStatus;
+		public String getEndPayDate() {
+			return this.endPayDate;
 		}
 
-		public void setPayStatus(Integer payStatus) {
-			this.payStatus = payStatus;
-		}
-
-		public Long getPlanDetailId() {
-			return this.planDetailId;
-		}
-
-		public void setPlanDetailId(Long planDetailId) {
-			this.planDetailId = planDetailId;
-		}
-
-		public Long getPlanId() {
-			return this.planId;
-		}
-
-		public void setPlanId(Long planId) {
-			this.planId = planId;
+		public void setEndPayDate(String endPayDate) {
+			this.endPayDate = endPayDate;
 		}
 
 		public String getPlanPayDate() {
@@ -241,44 +189,28 @@ public class GetPatentPlanDetailListResponse extends AcsResponse {
 			this.soldStatus = soldStatus;
 		}
 
-		public Integer getType() {
-			return this.type;
+		public String getApplyNumber() {
+			return this.applyNumber;
 		}
 
-		public void setType(Integer type) {
-			this.type = type;
+		public void setApplyNumber(String applyNumber) {
+			this.applyNumber = applyNumber;
 		}
 
-		public Boolean getUidAgreement() {
-			return this.uidAgreement;
+		public String getGmtExpireDate() {
+			return this.gmtExpireDate;
 		}
 
-		public void setUidAgreement(Boolean uidAgreement) {
-			this.uidAgreement = uidAgreement;
+		public void setGmtExpireDate(String gmtExpireDate) {
+			this.gmtExpireDate = gmtExpireDate;
 		}
 
-		public Integer getYear() {
-			return this.year;
+		public String getBizId() {
+			return this.bizId;
 		}
 
-		public void setYear(Integer year) {
-			this.year = year;
-		}
-
-		public String getPatentStatus() {
-			return this.patentStatus;
-		}
-
-		public void setPatentStatus(String patentStatus) {
-			this.patentStatus = patentStatus;
-		}
-
-		public Boolean getPatentDiscard() {
-			return this.patentDiscard;
-		}
-
-		public void setPatentDiscard(Boolean patentDiscard) {
-			this.patentDiscard = patentDiscard;
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 
 		public Integer getLabel() {
@@ -289,12 +221,100 @@ public class GetPatentPlanDetailListResponse extends AcsResponse {
 			this.label = label;
 		}
 
-		public String getEndPayDate() {
-			return this.endPayDate;
+		public Long getPlanId() {
+			return this.planId;
 		}
 
-		public void setEndPayDate(String endPayDate) {
-			this.endPayDate = endPayDate;
+		public void setPlanId(Long planId) {
+			this.planId = planId;
+		}
+
+		public Integer getYear() {
+			return this.year;
+		}
+
+		public void setYear(Integer year) {
+			this.year = year;
+		}
+
+		public Long getPlanDetailId() {
+			return this.planDetailId;
+		}
+
+		public void setPlanDetailId(Long planDetailId) {
+			this.planDetailId = planDetailId;
+		}
+
+		public Integer getPayStatus() {
+			return this.payStatus;
+		}
+
+		public void setPayStatus(Integer payStatus) {
+			this.payStatus = payStatus;
+		}
+
+		public String getPatentStatus() {
+			return this.patentStatus;
+		}
+
+		public void setPatentStatus(String patentStatus) {
+			this.patentStatus = patentStatus;
+		}
+
+		public String getAgency() {
+			return this.agency;
+		}
+
+		public void setAgency(String agency) {
+			this.agency = agency;
+		}
+
+		public Integer getDiscount() {
+			return this.discount;
+		}
+
+		public void setDiscount(Integer discount) {
+			this.discount = discount;
+		}
+
+		public Boolean getUidAgreement() {
+			return this.uidAgreement;
+		}
+
+		public void setUidAgreement(Boolean uidAgreement) {
+			this.uidAgreement = uidAgreement;
+		}
+
+		public Boolean getPatentDiscard() {
+			return this.patentDiscard;
+		}
+
+		public void setPatentDiscard(Boolean patentDiscard) {
+			this.patentDiscard = patentDiscard;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public Integer getPlanFee() {
+			return this.planFee;
+		}
+
+		public void setPlanFee(Integer planFee) {
+			this.planFee = planFee;
 		}
 	}
 

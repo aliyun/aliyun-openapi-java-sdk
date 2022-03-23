@@ -23,9 +23,22 @@ import com.aliyuncs.http.MethodType;
  */
 public class GetDownloadTicketsListRequest extends RpcAcsRequest<GetDownloadTicketsListResponse> {
 	   
+
+	private String type;
 	public GetDownloadTicketsListRequest() {
 		super("Copyright", "2019-01-23", "GetDownloadTicketsList");
 		setMethod(MethodType.POST);
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	@Override

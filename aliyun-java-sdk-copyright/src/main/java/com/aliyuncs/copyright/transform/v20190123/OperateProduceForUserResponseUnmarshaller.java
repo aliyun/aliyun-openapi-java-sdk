@@ -23,9 +23,9 @@ public class OperateProduceForUserResponseUnmarshaller {
 	public static OperateProduceForUserResponse unmarshall(OperateProduceForUserResponse operateProduceForUserResponse, UnmarshallerContext _ctx) {
 		
 		operateProduceForUserResponse.setRequestId(_ctx.stringValue("OperateProduceForUserResponse.RequestId"));
-		operateProduceForUserResponse.setErrorCode(_ctx.stringValue("OperateProduceForUserResponse.ErrorCode"));
 		operateProduceForUserResponse.setErrorMsg(_ctx.stringValue("OperateProduceForUserResponse.ErrorMsg"));
 		operateProduceForUserResponse.setSuccess(_ctx.booleanValue("OperateProduceForUserResponse.Success"));
+		operateProduceForUserResponse.setErrorCode(_ctx.stringValue("OperateProduceForUserResponse.ErrorCode"));
 	 
 	 	return operateProduceForUserResponse;
 	}

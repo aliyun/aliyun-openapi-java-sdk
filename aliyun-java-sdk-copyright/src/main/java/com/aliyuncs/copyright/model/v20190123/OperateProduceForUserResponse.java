@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OperateProduceForUserResponse extends AcsResponse {
 
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
 	private Boolean success;
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
+	private String errorCode;
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -62,6 +54,14 @@ public class OperateProduceForUserResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

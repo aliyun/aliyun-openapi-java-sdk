@@ -32,10 +32,10 @@ public class GetPatentPlanInfoResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPatentPlanInfoResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setContact(_ctx.stringValue("GetPatentPlanInfoResponse.Data["+ i +"].Contact"));
-			dataItem.setName(_ctx.stringValue("GetPatentPlanInfoResponse.Data["+ i +"].Name"));
 			dataItem.setOwner(_ctx.stringValue("GetPatentPlanInfoResponse.Data["+ i +"].Owner"));
 			dataItem.setPlanId(_ctx.integerValue("GetPatentPlanInfoResponse.Data["+ i +"].PlanId"));
+			dataItem.setName(_ctx.stringValue("GetPatentPlanInfoResponse.Data["+ i +"].Name"));
+			dataItem.setContact(_ctx.stringValue("GetPatentPlanInfoResponse.Data["+ i +"].Contact"));
 			dataItem.setWarnDays(_ctx.integerValue("GetPatentPlanInfoResponse.Data["+ i +"].WarnDays"));
 
 			data.add(dataItem);

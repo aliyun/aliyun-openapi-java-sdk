@@ -23,14 +23,14 @@ public class GetUpgradeWorkResponseUnmarshaller {
 	public static GetUpgradeWorkResponse unmarshall(GetUpgradeWorkResponse getUpgradeWorkResponse, UnmarshallerContext _ctx) {
 		
 		getUpgradeWorkResponse.setRequestId(_ctx.stringValue("GetUpgradeWorkResponse.RequestId"));
-		getUpgradeWorkResponse.setSuccess(_ctx.booleanValue("GetUpgradeWorkResponse.Success"));
-		getUpgradeWorkResponse.setWorkId(_ctx.longValue("GetUpgradeWorkResponse.WorkId"));
-		getUpgradeWorkResponse.setCreateTime(_ctx.longValue("GetUpgradeWorkResponse.CreateTime"));
 		getUpgradeWorkResponse.setModifiedTime(_ctx.longValue("GetUpgradeWorkResponse.ModifiedTime"));
+		getUpgradeWorkResponse.setNewSku(_ctx.stringValue("GetUpgradeWorkResponse.NewSku"));
+		getUpgradeWorkResponse.setSuccess(_ctx.booleanValue("GetUpgradeWorkResponse.Success"));
+		getUpgradeWorkResponse.setCreateTime(_ctx.longValue("GetUpgradeWorkResponse.CreateTime"));
+		getUpgradeWorkResponse.setWorkId(_ctx.longValue("GetUpgradeWorkResponse.WorkId"));
+		getUpgradeWorkResponse.setOldSku(_ctx.stringValue("GetUpgradeWorkResponse.OldSku"));
 		getUpgradeWorkResponse.setWorkStatus(_ctx.integerValue("GetUpgradeWorkResponse.WorkStatus"));
 		getUpgradeWorkResponse.setReason(_ctx.stringValue("GetUpgradeWorkResponse.Reason"));
-		getUpgradeWorkResponse.setNewSku(_ctx.stringValue("GetUpgradeWorkResponse.NewSku"));
-		getUpgradeWorkResponse.setOldSku(_ctx.stringValue("GetUpgradeWorkResponse.OldSku"));
 	 
 	 	return getUpgradeWorkResponse;
 	}

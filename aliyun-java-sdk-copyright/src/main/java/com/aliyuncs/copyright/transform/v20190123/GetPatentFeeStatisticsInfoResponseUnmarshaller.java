@@ -31,24 +31,24 @@ public class GetPatentFeeStatisticsInfoResponseUnmarshaller {
 		getPatentFeeStatisticsInfoResponse.setSuccess(_ctx.booleanValue("GetPatentFeeStatisticsInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setDiscountPrice(_ctx.floatValue("GetPatentFeeStatisticsInfoResponse.Data.DiscountPrice"));
-		data.setFamingCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.FamingCount"));
-		data.setFreeCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.FreeCount"));
-		data.setShiyongCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.ShiyongCount"));
-		data.setTotal(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.Total"));
-		data.setTotalPrice(_ctx.floatValue("GetPatentFeeStatisticsInfoResponse.Data.TotalPrice"));
-		data.setUsedCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.UsedCount"));
 		data.setUserType(_ctx.stringValue("GetPatentFeeStatisticsInfoResponse.Data.UserType"));
+		data.setDiscountPrice(_ctx.floatValue("GetPatentFeeStatisticsInfoResponse.Data.DiscountPrice"));
+		data.setUsedCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.UsedCount"));
+		data.setShiyongCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.ShiyongCount"));
 		data.setWaiguanCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.WaiguanCount"));
+		data.setTotalPrice(_ctx.floatValue("GetPatentFeeStatisticsInfoResponse.Data.TotalPrice"));
+		data.setTotal(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.Total"));
+		data.setFreeCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.FreeCount"));
+		data.setFamingCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.FamingCount"));
 
 		List<AgeInfoItem> ageInfo = new ArrayList<AgeInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo.Length"); i++) {
 			AgeInfoItem ageInfoItem = new AgeInfoItem();
-			ageInfoItem.setAge(_ctx.stringValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo["+ i +"].Age"));
-			ageInfoItem.setCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo["+ i +"].Count"));
+			ageInfoItem.setType(_ctx.stringValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo["+ i +"].Type"));
 			ageInfoItem.setDiscountPrice(_ctx.floatValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo["+ i +"].DiscountPrice"));
 			ageInfoItem.setSalePrice(_ctx.floatValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo["+ i +"].SalePrice"));
-			ageInfoItem.setType(_ctx.stringValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo["+ i +"].Type"));
+			ageInfoItem.setAge(_ctx.stringValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo["+ i +"].Age"));
+			ageInfoItem.setCount(_ctx.integerValue("GetPatentFeeStatisticsInfoResponse.Data.AgeInfo["+ i +"].Count"));
 
 			ageInfo.add(ageInfoItem);
 		}

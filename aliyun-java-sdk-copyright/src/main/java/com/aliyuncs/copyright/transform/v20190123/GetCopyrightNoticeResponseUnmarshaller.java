@@ -23,16 +23,16 @@ public class GetCopyrightNoticeResponseUnmarshaller {
 	public static GetCopyrightNoticeResponse unmarshall(GetCopyrightNoticeResponse getCopyrightNoticeResponse, UnmarshallerContext _ctx) {
 		
 		getCopyrightNoticeResponse.setRequestId(_ctx.stringValue("GetCopyrightNoticeResponse.RequestId"));
-		getCopyrightNoticeResponse.setSuccess(_ctx.booleanValue("GetCopyrightNoticeResponse.Success"));
-		getCopyrightNoticeResponse.setApplyPeople(_ctx.stringValue("GetCopyrightNoticeResponse.ApplyPeople"));
+		getCopyrightNoticeResponse.setOwner(_ctx.stringValue("GetCopyrightNoticeResponse.Owner"));
 		getCopyrightNoticeResponse.setModifyInfo(_ctx.stringValue("GetCopyrightNoticeResponse.ModifyInfo"));
 		getCopyrightNoticeResponse.setFlowNumber(_ctx.stringValue("GetCopyrightNoticeResponse.FlowNumber"));
+		getCopyrightNoticeResponse.setSuccess(_ctx.booleanValue("GetCopyrightNoticeResponse.Success"));
+		getCopyrightNoticeResponse.setFileList(_ctx.stringValue("GetCopyrightNoticeResponse.FileList"));
 		getCopyrightNoticeResponse.setAgentPeople(_ctx.stringValue("GetCopyrightNoticeResponse.AgentPeople"));
 		getCopyrightNoticeResponse.setName(_ctx.stringValue("GetCopyrightNoticeResponse.Name"));
-		getCopyrightNoticeResponse.setOwner(_ctx.stringValue("GetCopyrightNoticeResponse.Owner"));
 		getCopyrightNoticeResponse.setCreateDate(_ctx.stringValue("GetCopyrightNoticeResponse.CreateDate"));
+		getCopyrightNoticeResponse.setApplyPeople(_ctx.stringValue("GetCopyrightNoticeResponse.ApplyPeople"));
 		getCopyrightNoticeResponse.setAdmissibleNumber(_ctx.stringValue("GetCopyrightNoticeResponse.AdmissibleNumber"));
-		getCopyrightNoticeResponse.setFileList(_ctx.stringValue("GetCopyrightNoticeResponse.FileList"));
 	 
 	 	return getCopyrightNoticeResponse;
 	}

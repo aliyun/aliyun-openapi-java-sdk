@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchPatentAddResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class BatchPatentAddResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -57,19 +57,11 @@ public class BatchPatentAddResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String applyNumber;
-
 		private String message;
 
 		private Boolean success;
 
-		public String getApplyNumber() {
-			return this.applyNumber;
-		}
-
-		public void setApplyNumber(String applyNumber) {
-			this.applyNumber = applyNumber;
-		}
+		private String applyNumber;
 
 		public String getMessage() {
 			return this.message;
@@ -85,6 +77,14 @@ public class BatchPatentAddResponse extends AcsResponse {
 
 		public void setSuccess(Boolean success) {
 			this.success = success;
+		}
+
+		public String getApplyNumber() {
+			return this.applyNumber;
+		}
+
+		public void setApplyNumber(String applyNumber) {
+			this.applyNumber = applyNumber;
 		}
 	}
 

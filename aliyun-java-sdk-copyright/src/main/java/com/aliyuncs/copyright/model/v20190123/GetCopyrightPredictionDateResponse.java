@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCopyrightPredictionDateResponse extends AcsResponse {
 
+	private String date;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String date;
+	public String getDate() {
+		return this.date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class GetCopyrightPredictionDateResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getDate() {
-		return this.date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
 	}
 
 	@Override

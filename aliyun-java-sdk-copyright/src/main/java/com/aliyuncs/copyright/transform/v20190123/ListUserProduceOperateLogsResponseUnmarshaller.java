@@ -28,22 +28,22 @@ public class ListUserProduceOperateLogsResponseUnmarshaller {
 		
 		listUserProduceOperateLogsResponse.setRequestId(_ctx.stringValue("ListUserProduceOperateLogsResponse.RequestId"));
 		listUserProduceOperateLogsResponse.setPageNum(_ctx.integerValue("ListUserProduceOperateLogsResponse.PageNum"));
-		listUserProduceOperateLogsResponse.setPageSize(_ctx.integerValue("ListUserProduceOperateLogsResponse.PageSize"));
 		listUserProduceOperateLogsResponse.setSuccess(_ctx.booleanValue("ListUserProduceOperateLogsResponse.Success"));
 		listUserProduceOperateLogsResponse.setTotalItemNum(_ctx.integerValue("ListUserProduceOperateLogsResponse.TotalItemNum"));
+		listUserProduceOperateLogsResponse.setPageSize(_ctx.integerValue("ListUserProduceOperateLogsResponse.PageSize"));
 		listUserProduceOperateLogsResponse.setTotalPageNum(_ctx.integerValue("ListUserProduceOperateLogsResponse.TotalPageNum"));
 
 		List<OpateLogs> data = new ArrayList<OpateLogs>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserProduceOperateLogsResponse.Data.Length"); i++) {
 			OpateLogs opateLogs = new OpateLogs();
-			opateLogs.setBizId(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].BizId"));
-			opateLogs.setBizStatus(_ctx.integerValue("ListUserProduceOperateLogsResponse.Data["+ i +"].BizStatus"));
-			opateLogs.setBizType(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].BizType"));
-			opateLogs.setNote(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].Note"));
-			opateLogs.setOperateName(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].OperateName"));
 			opateLogs.setOperateTime(_ctx.longValue("ListUserProduceOperateLogsResponse.Data["+ i +"].OperateTime"));
 			opateLogs.setOperateUserType(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].OperateUserType"));
+			opateLogs.setBizId(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].BizId"));
+			opateLogs.setNote(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].Note"));
+			opateLogs.setOperateName(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].OperateName"));
+			opateLogs.setBizStatus(_ctx.integerValue("ListUserProduceOperateLogsResponse.Data["+ i +"].BizStatus"));
 			opateLogs.setToBizStatus(_ctx.integerValue("ListUserProduceOperateLogsResponse.Data["+ i +"].ToBizStatus"));
+			opateLogs.setBizType(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].BizType"));
 
 			data.add(opateLogs);
 		}

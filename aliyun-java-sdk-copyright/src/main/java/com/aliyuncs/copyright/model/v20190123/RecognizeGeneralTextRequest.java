@@ -32,6 +32,8 @@ public class RecognizeGeneralTextRequest extends RpcAcsRequest<RecognizeGeneralT
 
 	private String label;
 
+	private String text;
+
 	private String fileProcessType;
 
 	private String type;
@@ -81,6 +83,17 @@ public class RecognizeGeneralTextRequest extends RpcAcsRequest<RecognizeGeneralT
 		this.label = label;
 		if(label != null){
 			putBodyParameter("Label", label);
+		}
+	}
+
+	public String getText() {
+		return this.text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+		if(text != null){
+			putQueryParameter("Text", text);
 		}
 	}
 

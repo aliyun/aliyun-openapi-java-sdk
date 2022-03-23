@@ -28,34 +28,36 @@ public class GetPatentPlanDetailListResponseUnmarshaller {
 		
 		getPatentPlanDetailListResponse.setRequestId(_ctx.stringValue("GetPatentPlanDetailListResponse.RequestId"));
 		getPatentPlanDetailListResponse.setPageNum(_ctx.integerValue("GetPatentPlanDetailListResponse.PageNum"));
-		getPatentPlanDetailListResponse.setPageSize(_ctx.integerValue("GetPatentPlanDetailListResponse.PageSize"));
 		getPatentPlanDetailListResponse.setSuccess(_ctx.booleanValue("GetPatentPlanDetailListResponse.Success"));
 		getPatentPlanDetailListResponse.setTotalItemNum(_ctx.integerValue("GetPatentPlanDetailListResponse.TotalItemNum"));
+		getPatentPlanDetailListResponse.setPageSize(_ctx.integerValue("GetPatentPlanDetailListResponse.PageSize"));
 		getPatentPlanDetailListResponse.setTotalPageNum(_ctx.integerValue("GetPatentPlanDetailListResponse.TotalPageNum"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPatentPlanDetailListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setAgency(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].Agency"));
-			dataItem.setApplyNumber(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].ApplyNumber"));
-			dataItem.setBizId(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].BizId"));
-			dataItem.setDiscount(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].Discount"));
-			dataItem.setGmtExpireDate(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].GmtExpireDate"));
-			dataItem.setName(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].Name"));
+			dataItem.setType(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].Type"));
 			dataItem.setOwner(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].Owner"));
 			dataItem.setPaidDate(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].PaidDate"));
-			dataItem.setPayStatus(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].PayStatus"));
-			dataItem.setPlanDetailId(_ctx.longValue("GetPatentPlanDetailListResponse.Data["+ i +"].PlanDetailId"));
-			dataItem.setPlanId(_ctx.longValue("GetPatentPlanDetailListResponse.Data["+ i +"].PlanId"));
+			dataItem.setEndPayDate(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].EndPayDate"));
 			dataItem.setPlanPayDate(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].PlanPayDate"));
 			dataItem.setSoldStatus(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].SoldStatus"));
-			dataItem.setType(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].Type"));
-			dataItem.setUidAgreement(_ctx.booleanValue("GetPatentPlanDetailListResponse.Data["+ i +"].UidAgreement"));
-			dataItem.setYear(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].Year"));
-			dataItem.setPatentStatus(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].PatentStatus"));
-			dataItem.setPatentDiscard(_ctx.booleanValue("GetPatentPlanDetailListResponse.Data["+ i +"].PatentDiscard"));
+			dataItem.setApplyNumber(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].ApplyNumber"));
+			dataItem.setGmtExpireDate(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].GmtExpireDate"));
+			dataItem.setBizId(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].BizId"));
 			dataItem.setLabel(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].Label"));
-			dataItem.setEndPayDate(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].EndPayDate"));
+			dataItem.setPlanId(_ctx.longValue("GetPatentPlanDetailListResponse.Data["+ i +"].PlanId"));
+			dataItem.setYear(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].Year"));
+			dataItem.setPlanDetailId(_ctx.longValue("GetPatentPlanDetailListResponse.Data["+ i +"].PlanDetailId"));
+			dataItem.setPayStatus(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].PayStatus"));
+			dataItem.setPatentStatus(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].PatentStatus"));
+			dataItem.setAgency(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].Agency"));
+			dataItem.setDiscount(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].Discount"));
+			dataItem.setUidAgreement(_ctx.booleanValue("GetPatentPlanDetailListResponse.Data["+ i +"].UidAgreement"));
+			dataItem.setPatentDiscard(_ctx.booleanValue("GetPatentPlanDetailListResponse.Data["+ i +"].PatentDiscard"));
+			dataItem.setName(_ctx.stringValue("GetPatentPlanDetailListResponse.Data["+ i +"].Name"));
+			dataItem.setUpdateTime(_ctx.longValue("GetPatentPlanDetailListResponse.Data["+ i +"].UpdateTime"));
+			dataItem.setPlanFee(_ctx.integerValue("GetPatentPlanDetailListResponse.Data["+ i +"].PlanFee"));
 
 			data.add(dataItem);
 		}

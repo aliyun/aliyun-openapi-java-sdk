@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUpdateSaleInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private String instanceId;
 
-	private Boolean success;
+	private String requestId;
 
 	private String commodityCode;
 
-	private String instanceId;
+	private Boolean success;
 
 	private List<String> skuList;
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class GetUpdateSaleInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCommodityCode() {
@@ -59,12 +59,12 @@ public class GetUpdateSaleInfoResponse extends AcsResponse {
 		this.commodityCode = commodityCode;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<String> getSkuList() {

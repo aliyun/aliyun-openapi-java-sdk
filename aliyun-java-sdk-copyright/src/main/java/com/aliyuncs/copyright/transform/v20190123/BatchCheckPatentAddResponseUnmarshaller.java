@@ -30,16 +30,16 @@ public class BatchCheckPatentAddResponseUnmarshaller {
 		batchCheckPatentAddResponse.setRequestId(_ctx.stringValue("BatchCheckPatentAddResponse.RequestId"));
 		batchCheckPatentAddResponse.setCacheKey(_ctx.stringValue("BatchCheckPatentAddResponse.CacheKey"));
 		batchCheckPatentAddResponse.setCanAddCount(_ctx.integerValue("BatchCheckPatentAddResponse.CanAddCount"));
-		batchCheckPatentAddResponse.setExistCount(_ctx.integerValue("BatchCheckPatentAddResponse.ExistCount"));
 		batchCheckPatentAddResponse.setSuccess(_ctx.booleanValue("BatchCheckPatentAddResponse.Success"));
 		batchCheckPatentAddResponse.setTotalCount(_ctx.integerValue("BatchCheckPatentAddResponse.TotalCount"));
+		batchCheckPatentAddResponse.setExistCount(_ctx.integerValue("BatchCheckPatentAddResponse.ExistCount"));
 
 		List<ErrorDetailItem> errorDetail = new ArrayList<ErrorDetailItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchCheckPatentAddResponse.ErrorDetail.Length"); i++) {
 			ErrorDetailItem errorDetailItem = new ErrorDetailItem();
-			errorDetailItem.setApplyNumber(_ctx.stringValue("BatchCheckPatentAddResponse.ErrorDetail["+ i +"].ApplyNumber"));
 			errorDetailItem.setMessage(_ctx.stringValue("BatchCheckPatentAddResponse.ErrorDetail["+ i +"].Message"));
 			errorDetailItem.setSuccess(_ctx.booleanValue("BatchCheckPatentAddResponse.ErrorDetail["+ i +"].Success"));
+			errorDetailItem.setApplyNumber(_ctx.stringValue("BatchCheckPatentAddResponse.ErrorDetail["+ i +"].ApplyNumber"));
 
 			errorDetail.add(errorDetailItem);
 		}
@@ -48,14 +48,14 @@ public class BatchCheckPatentAddResponseUnmarshaller {
 		List<TradeListItem> tradeList = new ArrayList<TradeListItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchCheckPatentAddResponse.TradeList.Length"); i++) {
 			TradeListItem tradeListItem = new TradeListItem();
-			tradeListItem.setAge(_ctx.stringValue("BatchCheckPatentAddResponse.TradeList["+ i +"].Age"));
-			tradeListItem.setDiscount(_ctx.stringValue("BatchCheckPatentAddResponse.TradeList["+ i +"].Discount"));
-			tradeListItem.setExistCount(_ctx.longValue("BatchCheckPatentAddResponse.TradeList["+ i +"].ExistCount"));
-			tradeListItem.setNeedCount(_ctx.integerValue("BatchCheckPatentAddResponse.TradeList["+ i +"].NeedCount"));
-			tradeListItem.setNeedFee(_ctx.floatValue("BatchCheckPatentAddResponse.TradeList["+ i +"].NeedFee"));
-			tradeListItem.setTotalCount(_ctx.longValue("BatchCheckPatentAddResponse.TradeList["+ i +"].TotalCount"));
 			tradeListItem.setType(_ctx.stringValue("BatchCheckPatentAddResponse.TradeList["+ i +"].Type"));
+			tradeListItem.setNeedFee(_ctx.floatValue("BatchCheckPatentAddResponse.TradeList["+ i +"].NeedFee"));
+			tradeListItem.setDiscount(_ctx.stringValue("BatchCheckPatentAddResponse.TradeList["+ i +"].Discount"));
 			tradeListItem.setOverduePenalty(_ctx.stringValue("BatchCheckPatentAddResponse.TradeList["+ i +"].OverduePenalty"));
+			tradeListItem.setNeedCount(_ctx.integerValue("BatchCheckPatentAddResponse.TradeList["+ i +"].NeedCount"));
+			tradeListItem.setTotalCount(_ctx.longValue("BatchCheckPatentAddResponse.TradeList["+ i +"].TotalCount"));
+			tradeListItem.setAge(_ctx.stringValue("BatchCheckPatentAddResponse.TradeList["+ i +"].Age"));
+			tradeListItem.setExistCount(_ctx.longValue("BatchCheckPatentAddResponse.TradeList["+ i +"].ExistCount"));
 
 			tradeList.add(tradeListItem);
 		}
