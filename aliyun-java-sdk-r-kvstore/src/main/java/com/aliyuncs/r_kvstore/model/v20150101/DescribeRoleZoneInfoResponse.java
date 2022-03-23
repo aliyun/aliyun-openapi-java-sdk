@@ -77,71 +77,39 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String nodeId;
-
-		private String nodeType;
-
-		private String role;
-
-		private String zoneId;
-
 		private String cPUUsage;
 
-		private Float connection;
-
-		private Float avgRt;
-
-		private Float intranetIn;
-
-		private Float intranetOut;
-
-		private String custinsId;
-
-		private Integer insType;
-
-		private String insName;
-
-		private Integer isLatestVersion;
+		private Long defaultBandWidth;
 
 		private String currentMinorVersion;
 
 		private Long currentBandWidth;
 
-		private Long defaultBandWidth;
+		private Integer insType;
+
+		private Float intranetOut;
+
+		private Integer isLatestVersion;
+
+		private Float connection;
+
+		private String insName;
+
+		private String nodeType;
+
+		private Float intranetIn;
+
+		private Float avgRt;
+
+		private String zoneId;
 
 		private Boolean isOpenBandWidthService;
 
-		public String getNodeId() {
-			return this.nodeId;
-		}
+		private String custinsId;
 
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
+		private String role;
 
-		public String getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
-		}
-
-		public String getRole() {
-			return this.role;
-		}
-
-		public void setRole(String role) {
-			this.role = role;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
+		private String nodeId;
 
 		public String getCPUUsage() {
 			return this.cPUUsage;
@@ -151,68 +119,12 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 			this.cPUUsage = cPUUsage;
 		}
 
-		public Float getConnection() {
-			return this.connection;
+		public Long getDefaultBandWidth() {
+			return this.defaultBandWidth;
 		}
 
-		public void setConnection(Float connection) {
-			this.connection = connection;
-		}
-
-		public Float getAvgRt() {
-			return this.avgRt;
-		}
-
-		public void setAvgRt(Float avgRt) {
-			this.avgRt = avgRt;
-		}
-
-		public Float getIntranetIn() {
-			return this.intranetIn;
-		}
-
-		public void setIntranetIn(Float intranetIn) {
-			this.intranetIn = intranetIn;
-		}
-
-		public Float getIntranetOut() {
-			return this.intranetOut;
-		}
-
-		public void setIntranetOut(Float intranetOut) {
-			this.intranetOut = intranetOut;
-		}
-
-		public String getCustinsId() {
-			return this.custinsId;
-		}
-
-		public void setCustinsId(String custinsId) {
-			this.custinsId = custinsId;
-		}
-
-		public Integer getInsType() {
-			return this.insType;
-		}
-
-		public void setInsType(Integer insType) {
-			this.insType = insType;
-		}
-
-		public String getInsName() {
-			return this.insName;
-		}
-
-		public void setInsName(String insName) {
-			this.insName = insName;
-		}
-
-		public Integer getIsLatestVersion() {
-			return this.isLatestVersion;
-		}
-
-		public void setIsLatestVersion(Integer isLatestVersion) {
-			this.isLatestVersion = isLatestVersion;
+		public void setDefaultBandWidth(Long defaultBandWidth) {
+			this.defaultBandWidth = defaultBandWidth;
 		}
 
 		public String getCurrentMinorVersion() {
@@ -231,12 +143,76 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 			this.currentBandWidth = currentBandWidth;
 		}
 
-		public Long getDefaultBandWidth() {
-			return this.defaultBandWidth;
+		public Integer getInsType() {
+			return this.insType;
 		}
 
-		public void setDefaultBandWidth(Long defaultBandWidth) {
-			this.defaultBandWidth = defaultBandWidth;
+		public void setInsType(Integer insType) {
+			this.insType = insType;
+		}
+
+		public Float getIntranetOut() {
+			return this.intranetOut;
+		}
+
+		public void setIntranetOut(Float intranetOut) {
+			this.intranetOut = intranetOut;
+		}
+
+		public Integer getIsLatestVersion() {
+			return this.isLatestVersion;
+		}
+
+		public void setIsLatestVersion(Integer isLatestVersion) {
+			this.isLatestVersion = isLatestVersion;
+		}
+
+		public Float getConnection() {
+			return this.connection;
+		}
+
+		public void setConnection(Float connection) {
+			this.connection = connection;
+		}
+
+		public String getInsName() {
+			return this.insName;
+		}
+
+		public void setInsName(String insName) {
+			this.insName = insName;
+		}
+
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public Float getIntranetIn() {
+			return this.intranetIn;
+		}
+
+		public void setIntranetIn(Float intranetIn) {
+			this.intranetIn = intranetIn;
+		}
+
+		public Float getAvgRt() {
+			return this.avgRt;
+		}
+
+		public void setAvgRt(Float avgRt) {
+			this.avgRt = avgRt;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public Boolean getIsOpenBandWidthService() {
@@ -245,6 +221,30 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 
 		public void setIsOpenBandWidthService(Boolean isOpenBandWidthService) {
 			this.isOpenBandWidthService = isOpenBandWidthService;
+		}
+
+		public String getCustinsId() {
+			return this.custinsId;
+		}
+
+		public void setCustinsId(String custinsId) {
+			this.custinsId = custinsId;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 

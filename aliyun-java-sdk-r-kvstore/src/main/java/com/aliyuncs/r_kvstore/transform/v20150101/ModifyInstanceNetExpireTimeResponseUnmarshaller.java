@@ -32,10 +32,10 @@ public class ModifyInstanceNetExpireTimeResponseUnmarshaller {
 		List<NetInfoItem> netInfoItems = new ArrayList<NetInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems.Length"); i++) {
 			NetInfoItem netInfoItem = new NetInfoItem();
-			netInfoItem.setDBInstanceNetType(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].DBInstanceNetType"));
 			netInfoItem.setPort(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].Port"));
-			netInfoItem.setExpiredTime(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].ExpiredTime"));
+			netInfoItem.setDBInstanceNetType(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].DBInstanceNetType"));
 			netInfoItem.setConnectionString(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].ConnectionString"));
+			netInfoItem.setExpiredTime(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].ExpiredTime"));
 			netInfoItem.setIPAddress(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].IPAddress"));
 
 			netInfoItems.add(netInfoItem);

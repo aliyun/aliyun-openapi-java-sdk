@@ -77,160 +77,56 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 	public static class Children {
 
-		private Long id;
-
-		private String name;
-
-		private String bizType;
-
-		private Integer replicaSize;
-
-		private Integer modifier;
-
-		private String serviceVersion;
-
-		private Integer diskSizeMB;
-
-		private String nickname;
-
-		private String primaryInsName;
-
-		private String classCode;
-
-		private Integer creator;
-
-		private String resourceGroupName;
-
-		private String health;
-
-		private Integer binlogRetentionDays;
+		private Long capacity;
 
 		private String userId;
 
 		private String lockReason;
 
-		private String service;
-
-		private Long capacity;
+		private Integer diskSizeMB;
 
 		private Long bandWidth;
 
+		private Long currentBandWidth;
+
+		private String classCode;
+
+		private Integer creator;
+
+		private String bizType;
+
+		private String service;
+
+		private Integer binlogRetentionDays;
+
+		private String primaryInsName;
+
+		private Integer modifier;
+
 		private Long connections;
 
-		private Long currentBandWidth;
+		private String health;
+
+		private String resourceGroupName;
+
+		private String nickname;
+
+		private String serviceVersion;
+
+		private Integer replicaSize;
+
+		private String name;
+
+		private Long id;
 
 		private List<Item> items;
 
-		public Long getId() {
-			return this.id;
+		public Long getCapacity() {
+			return this.capacity;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getBizType() {
-			return this.bizType;
-		}
-
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
-		}
-
-		public Integer getReplicaSize() {
-			return this.replicaSize;
-		}
-
-		public void setReplicaSize(Integer replicaSize) {
-			this.replicaSize = replicaSize;
-		}
-
-		public Integer getModifier() {
-			return this.modifier;
-		}
-
-		public void setModifier(Integer modifier) {
-			this.modifier = modifier;
-		}
-
-		public String getServiceVersion() {
-			return this.serviceVersion;
-		}
-
-		public void setServiceVersion(String serviceVersion) {
-			this.serviceVersion = serviceVersion;
-		}
-
-		public Integer getDiskSizeMB() {
-			return this.diskSizeMB;
-		}
-
-		public void setDiskSizeMB(Integer diskSizeMB) {
-			this.diskSizeMB = diskSizeMB;
-		}
-
-		public String getNickname() {
-			return this.nickname;
-		}
-
-		public void setNickname(String nickname) {
-			this.nickname = nickname;
-		}
-
-		public String getPrimaryInsName() {
-			return this.primaryInsName;
-		}
-
-		public void setPrimaryInsName(String primaryInsName) {
-			this.primaryInsName = primaryInsName;
-		}
-
-		public String getClassCode() {
-			return this.classCode;
-		}
-
-		public void setClassCode(String classCode) {
-			this.classCode = classCode;
-		}
-
-		public Integer getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(Integer creator) {
-			this.creator = creator;
-		}
-
-		public String getResourceGroupName() {
-			return this.resourceGroupName;
-		}
-
-		public void setResourceGroupName(String resourceGroupName) {
-			this.resourceGroupName = resourceGroupName;
-		}
-
-		public String getHealth() {
-			return this.health;
-		}
-
-		public void setHealth(String health) {
-			this.health = health;
-		}
-
-		public Integer getBinlogRetentionDays() {
-			return this.binlogRetentionDays;
-		}
-
-		public void setBinlogRetentionDays(Integer binlogRetentionDays) {
-			this.binlogRetentionDays = binlogRetentionDays;
+		public void setCapacity(Long capacity) {
+			this.capacity = capacity;
 		}
 
 		public String getUserId() {
@@ -249,20 +145,12 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 			this.lockReason = lockReason;
 		}
 
-		public String getService() {
-			return this.service;
+		public Integer getDiskSizeMB() {
+			return this.diskSizeMB;
 		}
 
-		public void setService(String service) {
-			this.service = service;
-		}
-
-		public Long getCapacity() {
-			return this.capacity;
-		}
-
-		public void setCapacity(Long capacity) {
-			this.capacity = capacity;
+		public void setDiskSizeMB(Integer diskSizeMB) {
+			this.diskSizeMB = diskSizeMB;
 		}
 
 		public Long getBandWidth() {
@@ -273,6 +161,70 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 			this.bandWidth = bandWidth;
 		}
 
+		public Long getCurrentBandWidth() {
+			return this.currentBandWidth;
+		}
+
+		public void setCurrentBandWidth(Long currentBandWidth) {
+			this.currentBandWidth = currentBandWidth;
+		}
+
+		public String getClassCode() {
+			return this.classCode;
+		}
+
+		public void setClassCode(String classCode) {
+			this.classCode = classCode;
+		}
+
+		public Integer getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(Integer creator) {
+			this.creator = creator;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
+		public String getService() {
+			return this.service;
+		}
+
+		public void setService(String service) {
+			this.service = service;
+		}
+
+		public Integer getBinlogRetentionDays() {
+			return this.binlogRetentionDays;
+		}
+
+		public void setBinlogRetentionDays(Integer binlogRetentionDays) {
+			this.binlogRetentionDays = binlogRetentionDays;
+		}
+
+		public String getPrimaryInsName() {
+			return this.primaryInsName;
+		}
+
+		public void setPrimaryInsName(String primaryInsName) {
+			this.primaryInsName = primaryInsName;
+		}
+
+		public Integer getModifier() {
+			return this.modifier;
+		}
+
+		public void setModifier(Integer modifier) {
+			this.modifier = modifier;
+		}
+
 		public Long getConnections() {
 			return this.connections;
 		}
@@ -281,12 +233,60 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 			this.connections = connections;
 		}
 
-		public Long getCurrentBandWidth() {
-			return this.currentBandWidth;
+		public String getHealth() {
+			return this.health;
 		}
 
-		public void setCurrentBandWidth(Long currentBandWidth) {
-			this.currentBandWidth = currentBandWidth;
+		public void setHealth(String health) {
+			this.health = health;
+		}
+
+		public String getResourceGroupName() {
+			return this.resourceGroupName;
+		}
+
+		public void setResourceGroupName(String resourceGroupName) {
+			this.resourceGroupName = resourceGroupName;
+		}
+
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
+		}
+
+		public String getServiceVersion() {
+			return this.serviceVersion;
+		}
+
+		public void setServiceVersion(String serviceVersion) {
+			this.serviceVersion = serviceVersion;
+		}
+
+		public Integer getReplicaSize() {
+			return this.replicaSize;
+		}
+
+		public void setReplicaSize(Integer replicaSize) {
+			this.replicaSize = replicaSize;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<Item> getItems() {
@@ -299,43 +299,19 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 		public static class Item {
 
-			private Integer id;
-
-			private String hostName;
-
-			private String role;
-
 			private String status;
 
 			private String zoneId;
 
+			private String hostName;
+
 			private String ip;
 
+			private String role;
+
+			private Integer id;
+
 			private List<Integer> ports;
-
-			public Integer getId() {
-				return this.id;
-			}
-
-			public void setId(Integer id) {
-				this.id = id;
-			}
-
-			public String getHostName() {
-				return this.hostName;
-			}
-
-			public void setHostName(String hostName) {
-				this.hostName = hostName;
-			}
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -353,12 +329,36 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 				this.zoneId = zoneId;
 			}
 
+			public String getHostName() {
+				return this.hostName;
+			}
+
+			public void setHostName(String hostName) {
+				this.hostName = hostName;
+			}
+
 			public String getIp() {
 				return this.ip;
 			}
 
 			public void setIp(String ip) {
 				this.ip = ip;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
 			}
 
 			public List<Integer> getPorts() {

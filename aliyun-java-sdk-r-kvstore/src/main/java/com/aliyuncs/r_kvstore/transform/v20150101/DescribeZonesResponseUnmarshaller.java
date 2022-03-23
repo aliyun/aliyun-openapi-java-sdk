@@ -31,12 +31,12 @@ public class DescribeZonesResponseUnmarshaller {
 		List<KVStoreZone> zones = new ArrayList<KVStoreZone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
 			KVStoreZone kVStoreZone = new KVStoreZone();
-			kVStoreZone.setRegionId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].RegionId"));
-			kVStoreZone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
-			kVStoreZone.setZoneName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
-			kVStoreZone.setSwitchNetwork(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].SwitchNetwork"));
 			kVStoreZone.setIsRds(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsRds"));
+			kVStoreZone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
 			kVStoreZone.setDisabled(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].Disabled"));
+			kVStoreZone.setSwitchNetwork(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].SwitchNetwork"));
+			kVStoreZone.setZoneName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
+			kVStoreZone.setRegionId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].RegionId"));
 
 			zones.add(kVStoreZone);
 		}

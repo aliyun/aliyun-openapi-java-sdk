@@ -23,10 +23,10 @@ public class DescribeIntranetAttributeResponseUnmarshaller {
 	public static DescribeIntranetAttributeResponse unmarshall(DescribeIntranetAttributeResponse describeIntranetAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeIntranetAttributeResponse.setRequestId(_ctx.stringValue("DescribeIntranetAttributeResponse.RequestId"));
-		describeIntranetAttributeResponse.setIntranetBandwidth(_ctx.integerValue("DescribeIntranetAttributeResponse.IntranetBandwidth"));
-		describeIntranetAttributeResponse.setExpireTime(_ctx.stringValue("DescribeIntranetAttributeResponse.ExpireTime"));
 		describeIntranetAttributeResponse.setBandwidthExpireTime(_ctx.stringValue("DescribeIntranetAttributeResponse.BandwidthExpireTime"));
 		describeIntranetAttributeResponse.setAutoRenewal(_ctx.booleanValue("DescribeIntranetAttributeResponse.AutoRenewal"));
+		describeIntranetAttributeResponse.setExpireTime(_ctx.stringValue("DescribeIntranetAttributeResponse.ExpireTime"));
+		describeIntranetAttributeResponse.setIntranetBandwidth(_ctx.integerValue("DescribeIntranetAttributeResponse.IntranetBandwidth"));
 	 
 	 	return describeIntranetAttributeResponse;
 	}

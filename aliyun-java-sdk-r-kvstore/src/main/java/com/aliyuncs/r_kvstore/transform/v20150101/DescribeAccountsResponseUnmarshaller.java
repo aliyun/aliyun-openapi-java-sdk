@@ -32,17 +32,17 @@ public class DescribeAccountsResponseUnmarshaller {
 		List<Account> accounts = new ArrayList<Account>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {
 			Account account = new Account();
-			account.setInstanceId(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].InstanceId"));
-			account.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
-			account.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
-			account.setAccountType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
 			account.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
+			account.setInstanceId(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].InstanceId"));
+			account.setAccountType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
+			account.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
+			account.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
 
 			List<DatabasePrivilege> databasePrivileges = new ArrayList<DatabasePrivilege>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
 				DatabasePrivilege databasePrivilege = new DatabasePrivilege();
-				databasePrivilege.setAccountPrivilege(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege"));
 				databasePrivilege.setAccountPrivilegeDetail(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilegeDetail"));
+				databasePrivilege.setAccountPrivilege(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege"));
 
 				databasePrivileges.add(databasePrivilege);
 			}

@@ -77,47 +77,31 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public static class Backup {
 
-		private Integer backupId;
-
-		private String backupDBNames;
-
 		private String backupStatus;
 
 		private String backupStartTime;
 
+		private String backupType;
+
+		private String backupDownloadURL;
+
+		private String nodeInstanceId;
+
 		private String backupEndTime;
 
-		private String backupType;
+		private Integer backupId;
+
+		private String backupDBNames;
+
+		private String engineVersion;
+
+		private String backupIntranetDownloadURL;
+
+		private Long backupSize;
 
 		private String backupMode;
 
 		private String backupMethod;
-
-		private String backupDownloadURL;
-
-		private Long backupSize;
-
-		private String engineVersion;
-
-		private String nodeInstanceId;
-
-		private String backupIntranetDownloadURL;
-
-		public Integer getBackupId() {
-			return this.backupId;
-		}
-
-		public void setBackupId(Integer backupId) {
-			this.backupId = backupId;
-		}
-
-		public String getBackupDBNames() {
-			return this.backupDBNames;
-		}
-
-		public void setBackupDBNames(String backupDBNames) {
-			this.backupDBNames = backupDBNames;
-		}
 
 		public String getBackupStatus() {
 			return this.backupStatus;
@@ -135,6 +119,30 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupStartTime = backupStartTime;
 		}
 
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
+		public String getBackupDownloadURL() {
+			return this.backupDownloadURL;
+		}
+
+		public void setBackupDownloadURL(String backupDownloadURL) {
+			this.backupDownloadURL = backupDownloadURL;
+		}
+
+		public String getNodeInstanceId() {
+			return this.nodeInstanceId;
+		}
+
+		public void setNodeInstanceId(String nodeInstanceId) {
+			this.nodeInstanceId = nodeInstanceId;
+		}
+
 		public String getBackupEndTime() {
 			return this.backupEndTime;
 		}
@@ -143,12 +151,44 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupEndTime = backupEndTime;
 		}
 
-		public String getBackupType() {
-			return this.backupType;
+		public Integer getBackupId() {
+			return this.backupId;
 		}
 
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
+		public void setBackupId(Integer backupId) {
+			this.backupId = backupId;
+		}
+
+		public String getBackupDBNames() {
+			return this.backupDBNames;
+		}
+
+		public void setBackupDBNames(String backupDBNames) {
+			this.backupDBNames = backupDBNames;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getBackupIntranetDownloadURL() {
+			return this.backupIntranetDownloadURL;
+		}
+
+		public void setBackupIntranetDownloadURL(String backupIntranetDownloadURL) {
+			this.backupIntranetDownloadURL = backupIntranetDownloadURL;
+		}
+
+		public Long getBackupSize() {
+			return this.backupSize;
+		}
+
+		public void setBackupSize(Long backupSize) {
+			this.backupSize = backupSize;
 		}
 
 		public String getBackupMode() {
@@ -165,46 +205,6 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupMethod(String backupMethod) {
 			this.backupMethod = backupMethod;
-		}
-
-		public String getBackupDownloadURL() {
-			return this.backupDownloadURL;
-		}
-
-		public void setBackupDownloadURL(String backupDownloadURL) {
-			this.backupDownloadURL = backupDownloadURL;
-		}
-
-		public Long getBackupSize() {
-			return this.backupSize;
-		}
-
-		public void setBackupSize(Long backupSize) {
-			this.backupSize = backupSize;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getNodeInstanceId() {
-			return this.nodeInstanceId;
-		}
-
-		public void setNodeInstanceId(String nodeInstanceId) {
-			this.nodeInstanceId = nodeInstanceId;
-		}
-
-		public String getBackupIntranetDownloadURL() {
-			return this.backupIntranetDownloadURL;
-		}
-
-		public void setBackupIntranetDownloadURL(String backupIntranetDownloadURL) {
-			this.backupIntranetDownloadURL = backupIntranetDownloadURL;
 		}
 	}
 

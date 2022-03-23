@@ -34,16 +34,16 @@ public class DescribeTasksResponseUnmarshaller {
 		List<TaskProgressInfo> items = new ArrayList<TaskProgressInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTasksResponse.Items.Length"); i++) {
 			TaskProgressInfo taskProgressInfo = new TaskProgressInfo();
-			taskProgressInfo.setTaskId(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskId"));
-			taskProgressInfo.setTaskAction(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskAction"));
 			taskProgressInfo.setStatus(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Status"));
-			taskProgressInfo.setProgress(_ctx.floatValue("DescribeTasksResponse.Items["+ i +"].Progress"));
-			taskProgressInfo.setBeginTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].BeginTime"));
 			taskProgressInfo.setFinishTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].FinishTime"));
 			taskProgressInfo.setStepsInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepsInfo"));
+			taskProgressInfo.setProgress(_ctx.floatValue("DescribeTasksResponse.Items["+ i +"].Progress"));
+			taskProgressInfo.setBeginTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].BeginTime"));
 			taskProgressInfo.setRemain(_ctx.integerValue("DescribeTasksResponse.Items["+ i +"].Remain"));
-			taskProgressInfo.setStepProgressInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepProgressInfo"));
 			taskProgressInfo.setCurrentStepName(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].CurrentStepName"));
+			taskProgressInfo.setStepProgressInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].StepProgressInfo"));
+			taskProgressInfo.setTaskId(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskId"));
+			taskProgressInfo.setTaskAction(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskAction"));
 
 			items.add(taskProgressInfo);
 		}

@@ -23,8 +23,8 @@ public class TransformToPrePaidResponseUnmarshaller {
 	public static TransformToPrePaidResponse unmarshall(TransformToPrePaidResponse transformToPrePaidResponse, UnmarshallerContext _ctx) {
 		
 		transformToPrePaidResponse.setRequestId(_ctx.stringValue("TransformToPrePaidResponse.RequestId"));
-		transformToPrePaidResponse.setOrderId(_ctx.stringValue("TransformToPrePaidResponse.OrderId"));
 		transformToPrePaidResponse.setEndTime(_ctx.stringValue("TransformToPrePaidResponse.EndTime"));
+		transformToPrePaidResponse.setOrderId(_ctx.stringValue("TransformToPrePaidResponse.OrderId"));
 	 
 	 	return transformToPrePaidResponse;
 	}

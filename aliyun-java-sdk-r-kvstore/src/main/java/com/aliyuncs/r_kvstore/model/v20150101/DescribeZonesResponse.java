@@ -47,24 +47,24 @@ public class DescribeZonesResponse extends AcsResponse {
 
 	public static class KVStoreZone {
 
-		private String regionId;
+		private Boolean isRds;
 
 		private String zoneId;
 
-		private String zoneName;
+		private Boolean disabled;
 
 		private Boolean switchNetwork;
 
-		private Boolean isRds;
+		private String zoneName;
 
-		private Boolean disabled;
+		private String regionId;
 
-		public String getRegionId() {
-			return this.regionId;
+		public Boolean getIsRds() {
+			return this.isRds;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setIsRds(Boolean isRds) {
+			this.isRds = isRds;
 		}
 
 		public String getZoneId() {
@@ -75,12 +75,12 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public String getZoneName() {
-			return this.zoneName;
+		public Boolean getDisabled() {
+			return this.disabled;
 		}
 
-		public void setZoneName(String zoneName) {
-			this.zoneName = zoneName;
+		public void setDisabled(Boolean disabled) {
+			this.disabled = disabled;
 		}
 
 		public Boolean getSwitchNetwork() {
@@ -91,20 +91,20 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.switchNetwork = switchNetwork;
 		}
 
-		public Boolean getIsRds() {
-			return this.isRds;
+		public String getZoneName() {
+			return this.zoneName;
 		}
 
-		public void setIsRds(Boolean isRds) {
-			this.isRds = isRds;
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
 		}
 
-		public Boolean getDisabled() {
-			return this.disabled;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setDisabled(Boolean disabled) {
-			this.disabled = disabled;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

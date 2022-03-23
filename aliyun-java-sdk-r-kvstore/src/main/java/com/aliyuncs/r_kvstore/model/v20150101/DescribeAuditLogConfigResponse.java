@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAuditLogConfigResponse extends AcsResponse {
 
+	private String retention;
+
 	private String requestId;
 
 	private String dbAudit;
 
-	private String retention;
+	public String getRetention() {
+		return this.retention;
+	}
+
+	public void setRetention(String retention) {
+		this.retention = retention;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeAuditLogConfigResponse extends AcsResponse {
 
 	public void setDbAudit(String dbAudit) {
 		this.dbAudit = dbAudit;
-	}
-
-	public String getRetention() {
-		return this.retention;
-	}
-
-	public void setRetention(String retention) {
-		this.retention = retention;
 	}
 
 	@Override

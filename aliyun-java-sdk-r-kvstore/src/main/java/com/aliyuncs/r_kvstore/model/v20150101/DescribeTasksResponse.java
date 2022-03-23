@@ -77,41 +77,25 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	public static class TaskProgressInfo {
 
-		private String taskId;
-
-		private String taskAction;
-
 		private String status;
-
-		private Float progress;
-
-		private String beginTime;
 
 		private String finishTime;
 
 		private String stepsInfo;
 
-		private Integer remain;
+		private Float progress;
 
-		private String stepProgressInfo;
+		private String beginTime;
+
+		private Integer remain;
 
 		private String currentStepName;
 
-		public String getTaskId() {
-			return this.taskId;
-		}
+		private String stepProgressInfo;
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
+		private String taskId;
 
-		public String getTaskAction() {
-			return this.taskAction;
-		}
-
-		public void setTaskAction(String taskAction) {
-			this.taskAction = taskAction;
-		}
+		private String taskAction;
 
 		public String getStatus() {
 			return this.status;
@@ -119,22 +103,6 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public Float getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Float progress) {
-			this.progress = progress;
-		}
-
-		public String getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(String beginTime) {
-			this.beginTime = beginTime;
 		}
 
 		public String getFinishTime() {
@@ -153,12 +121,36 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.stepsInfo = stepsInfo;
 		}
 
+		public Float getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Float progress) {
+			this.progress = progress;
+		}
+
+		public String getBeginTime() {
+			return this.beginTime;
+		}
+
+		public void setBeginTime(String beginTime) {
+			this.beginTime = beginTime;
+		}
+
 		public Integer getRemain() {
 			return this.remain;
 		}
 
 		public void setRemain(Integer remain) {
 			this.remain = remain;
+		}
+
+		public String getCurrentStepName() {
+			return this.currentStepName;
+		}
+
+		public void setCurrentStepName(String currentStepName) {
+			this.currentStepName = currentStepName;
 		}
 
 		public String getStepProgressInfo() {
@@ -169,12 +161,20 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.stepProgressInfo = stepProgressInfo;
 		}
 
-		public String getCurrentStepName() {
-			return this.currentStepName;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setCurrentStepName(String currentStepName) {
-			this.currentStepName = currentStepName;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getTaskAction() {
+			return this.taskAction;
+		}
+
+		public void setTaskAction(String taskAction) {
+			this.taskAction = taskAction;
 		}
 	}
 

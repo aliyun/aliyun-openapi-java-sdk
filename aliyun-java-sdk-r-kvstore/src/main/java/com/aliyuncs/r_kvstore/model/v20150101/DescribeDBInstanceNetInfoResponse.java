@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String instanceNetworkType;
 
+	private String requestId;
+
 	private List<InstanceNetInfo> netInfoItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getInstanceNetworkType() {
 		return this.instanceNetworkType;
@@ -45,6 +37,14 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 	public void setInstanceNetworkType(String instanceNetworkType) {
 		this.instanceNetworkType = instanceNetworkType;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<InstanceNetInfo> getNetInfoItems() {
@@ -57,58 +57,34 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 	public static class InstanceNetInfo {
 
-		private String connectionString;
-
-		private String iPAddress;
-
-		private String port;
-
-		private String vPCId;
+		private Integer directConnection;
 
 		private String vSwitchId;
 
 		private String dBInstanceNetType;
 
-		private String vPCInstanceId;
-
-		private String iPType;
+		private String upgradeable;
 
 		private String expiredTime;
 
-		private String upgradeable;
+		private String connectionString;
 
-		private Integer directConnection;
+		private String iPType;
 
-		public String getConnectionString() {
-			return this.connectionString;
+		private String vPCInstanceId;
+
+		private String port;
+
+		private String vPCId;
+
+		private String iPAddress;
+
+		public Integer getDirectConnection() {
+			return this.directConnection;
 		}
 
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
-
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
-
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
-		}
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getVPCId() {
-			return this.vPCId;
-		}
-
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
+		public void setDirectConnection(Integer directConnection) {
+			this.directConnection = directConnection;
 		}
 
 		public String getVSwitchId() {
@@ -127,20 +103,12 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.dBInstanceNetType = dBInstanceNetType;
 		}
 
-		public String getVPCInstanceId() {
-			return this.vPCInstanceId;
+		public String getUpgradeable() {
+			return this.upgradeable;
 		}
 
-		public void setVPCInstanceId(String vPCInstanceId) {
-			this.vPCInstanceId = vPCInstanceId;
-		}
-
-		public String getIPType() {
-			return this.iPType;
-		}
-
-		public void setIPType(String iPType) {
-			this.iPType = iPType;
+		public void setUpgradeable(String upgradeable) {
+			this.upgradeable = upgradeable;
 		}
 
 		public String getExpiredTime() {
@@ -151,20 +119,52 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
-		public String getUpgradeable() {
-			return this.upgradeable;
+		public String getConnectionString() {
+			return this.connectionString;
 		}
 
-		public void setUpgradeable(String upgradeable) {
-			this.upgradeable = upgradeable;
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
 		}
 
-		public Integer getDirectConnection() {
-			return this.directConnection;
+		public String getIPType() {
+			return this.iPType;
 		}
 
-		public void setDirectConnection(Integer directConnection) {
-			this.directConnection = directConnection;
+		public void setIPType(String iPType) {
+			this.iPType = iPType;
+		}
+
+		public String getVPCInstanceId() {
+			return this.vPCInstanceId;
+		}
+
+		public void setVPCInstanceId(String vPCInstanceId) {
+			this.vPCInstanceId = vPCInstanceId;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
 		}
 	}
 

@@ -23,14 +23,14 @@ public class DescribeEncryptionKeyResponseUnmarshaller {
 	public static DescribeEncryptionKeyResponse unmarshall(DescribeEncryptionKeyResponse describeEncryptionKeyResponse, UnmarshallerContext _ctx) {
 		
 		describeEncryptionKeyResponse.setRequestId(_ctx.stringValue("DescribeEncryptionKeyResponse.RequestId"));
-		describeEncryptionKeyResponse.setEncryptionKey(_ctx.stringValue("DescribeEncryptionKeyResponse.EncryptionKey"));
-		describeEncryptionKeyResponse.setDescription(_ctx.stringValue("DescribeEncryptionKeyResponse.Description"));
-		describeEncryptionKeyResponse.setKeyUsage(_ctx.stringValue("DescribeEncryptionKeyResponse.KeyUsage"));
 		describeEncryptionKeyResponse.setDeleteDate(_ctx.stringValue("DescribeEncryptionKeyResponse.DeleteDate"));
-		describeEncryptionKeyResponse.setCreator(_ctx.stringValue("DescribeEncryptionKeyResponse.Creator"));
-		describeEncryptionKeyResponse.setEncryptionKeyStatus(_ctx.stringValue("DescribeEncryptionKeyResponse.EncryptionKeyStatus"));
+		describeEncryptionKeyResponse.setDescription(_ctx.stringValue("DescribeEncryptionKeyResponse.Description"));
 		describeEncryptionKeyResponse.setOrigin(_ctx.stringValue("DescribeEncryptionKeyResponse.Origin"));
 		describeEncryptionKeyResponse.setMaterialExpireTime(_ctx.stringValue("DescribeEncryptionKeyResponse.MaterialExpireTime"));
+		describeEncryptionKeyResponse.setEncryptionKeyStatus(_ctx.stringValue("DescribeEncryptionKeyResponse.EncryptionKeyStatus"));
+		describeEncryptionKeyResponse.setKeyUsage(_ctx.stringValue("DescribeEncryptionKeyResponse.KeyUsage"));
+		describeEncryptionKeyResponse.setEncryptionKey(_ctx.stringValue("DescribeEncryptionKeyResponse.EncryptionKey"));
+		describeEncryptionKeyResponse.setCreator(_ctx.stringValue("DescribeEncryptionKeyResponse.Creator"));
 	 
 	 	return describeEncryptionKeyResponse;
 	}

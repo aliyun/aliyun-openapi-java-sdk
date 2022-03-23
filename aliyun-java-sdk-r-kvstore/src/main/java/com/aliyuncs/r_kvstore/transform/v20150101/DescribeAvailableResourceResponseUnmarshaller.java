@@ -39,11 +39,11 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 		List<AvailableZone> availableZones = new ArrayList<AvailableZone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZones.Length"); i++) {
 			AvailableZone availableZone = new AvailableZone();
-			availableZone.setRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].RegionId"));
-			availableZone.setZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].ZoneId"));
 			availableZone.setStatus(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].Status"));
-			availableZone.setNetworkTypes(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].NetworkTypes"));
+			availableZone.setZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].ZoneId"));
 			availableZone.setZoneName(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].ZoneName"));
+			availableZone.setNetworkTypes(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].NetworkTypes"));
+			availableZone.setRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].RegionId"));
 
 			List<SupportedEngine> supportedEngines = new ArrayList<SupportedEngine>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {
@@ -83,9 +83,9 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 										List<AvailableResource> availableResources = new ArrayList<AvailableResource>();
 										for (int q = 0; q < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEditionTypes["+ k +"].SupportedSeriesTypes["+ l +"].SupportedEngineVersions["+ m +"].SupportedArchitectureTypes["+ n +"].SupportedShardNumbers["+ o +"].SupportedNodeTypes["+ p +"].AvailableResources.Length"); q++) {
 											AvailableResource availableResource = new AvailableResource();
-											availableResource.setInstanceClass(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEditionTypes["+ k +"].SupportedSeriesTypes["+ l +"].SupportedEngineVersions["+ m +"].SupportedArchitectureTypes["+ n +"].SupportedShardNumbers["+ o +"].SupportedNodeTypes["+ p +"].AvailableResources["+ q +"].InstanceClass"));
 											availableResource.setInstanceClassRemark(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEditionTypes["+ k +"].SupportedSeriesTypes["+ l +"].SupportedEngineVersions["+ m +"].SupportedArchitectureTypes["+ n +"].SupportedShardNumbers["+ o +"].SupportedNodeTypes["+ p +"].AvailableResources["+ q +"].InstanceClassRemark"));
 											availableResource.setCapacity(_ctx.longValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEditionTypes["+ k +"].SupportedSeriesTypes["+ l +"].SupportedEngineVersions["+ m +"].SupportedArchitectureTypes["+ n +"].SupportedShardNumbers["+ o +"].SupportedNodeTypes["+ p +"].AvailableResources["+ q +"].Capacity"));
+											availableResource.setInstanceClass(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEditionTypes["+ k +"].SupportedSeriesTypes["+ l +"].SupportedEngineVersions["+ m +"].SupportedArchitectureTypes["+ n +"].SupportedShardNumbers["+ o +"].SupportedNodeTypes["+ p +"].AvailableResources["+ q +"].InstanceClass"));
 
 											availableResources.add(availableResource);
 										}

@@ -31,8 +31,8 @@ public class DescribeMonitorItemsResponseUnmarshaller {
 		List<KVStoreMonitorItem> monitorItems = new ArrayList<KVStoreMonitorItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorItemsResponse.MonitorItems.Length"); i++) {
 			KVStoreMonitorItem kVStoreMonitorItem = new KVStoreMonitorItem();
-			kVStoreMonitorItem.setMonitorKey(_ctx.stringValue("DescribeMonitorItemsResponse.MonitorItems["+ i +"].MonitorKey"));
 			kVStoreMonitorItem.setUnit(_ctx.stringValue("DescribeMonitorItemsResponse.MonitorItems["+ i +"].Unit"));
+			kVStoreMonitorItem.setMonitorKey(_ctx.stringValue("DescribeMonitorItemsResponse.MonitorItems["+ i +"].MonitorKey"));
 
 			monitorItems.add(kVStoreMonitorItem);
 		}

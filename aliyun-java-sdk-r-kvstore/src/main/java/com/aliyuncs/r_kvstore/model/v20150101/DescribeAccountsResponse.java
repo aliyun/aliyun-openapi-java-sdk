@@ -47,17 +47,25 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class Account {
 
+		private String accountDescription;
+
 		private String instanceId;
-
-		private String accountName;
-
-		private String accountStatus;
 
 		private String accountType;
 
-		private String accountDescription;
+		private String accountStatus;
+
+		private String accountName;
 
 		private List<DatabasePrivilege> databasePrivileges;
+
+		public String getAccountDescription() {
+			return this.accountDescription;
+		}
+
+		public void setAccountDescription(String accountDescription) {
+			this.accountDescription = accountDescription;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -65,22 +73,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
-		public String getAccountStatus() {
-			return this.accountStatus;
-		}
-
-		public void setAccountStatus(String accountStatus) {
-			this.accountStatus = accountStatus;
 		}
 
 		public String getAccountType() {
@@ -91,12 +83,20 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountType = accountType;
 		}
 
-		public String getAccountDescription() {
-			return this.accountDescription;
+		public String getAccountStatus() {
+			return this.accountStatus;
 		}
 
-		public void setAccountDescription(String accountDescription) {
-			this.accountDescription = accountDescription;
+		public void setAccountStatus(String accountStatus) {
+			this.accountStatus = accountStatus;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {
@@ -109,17 +109,9 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public static class DatabasePrivilege {
 
-			private String accountPrivilege;
-
 			private String accountPrivilegeDetail;
 
-			public String getAccountPrivilege() {
-				return this.accountPrivilege;
-			}
-
-			public void setAccountPrivilege(String accountPrivilege) {
-				this.accountPrivilege = accountPrivilege;
-			}
+			private String accountPrivilege;
 
 			public String getAccountPrivilegeDetail() {
 				return this.accountPrivilegeDetail;
@@ -127,6 +119,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 			public void setAccountPrivilegeDetail(String accountPrivilegeDetail) {
 				this.accountPrivilegeDetail = accountPrivilegeDetail;
+			}
+
+			public String getAccountPrivilege() {
+				return this.accountPrivilege;
+			}
+
+			public void setAccountPrivilege(String accountPrivilege) {
+				this.accountPrivilege = accountPrivilege;
 			}
 		}
 	}

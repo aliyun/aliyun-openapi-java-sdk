@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIntranetAttributeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer intranetBandwidth;
-
-	private String expireTime;
-
 	private String bandwidthExpireTime;
 
 	private Boolean autoRenewal;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String expireTime;
 
-	public Integer getIntranetBandwidth() {
-		return this.intranetBandwidth;
-	}
-
-	public void setIntranetBandwidth(Integer intranetBandwidth) {
-		this.intranetBandwidth = intranetBandwidth;
-	}
-
-	public String getExpireTime() {
-		return this.expireTime;
-	}
-
-	public void setExpireTime(String expireTime) {
-		this.expireTime = expireTime;
-	}
+	private Integer intranetBandwidth;
 
 	public String getBandwidthExpireTime() {
 		return this.bandwidthExpireTime;
@@ -72,6 +48,30 @@ public class DescribeIntranetAttributeResponse extends AcsResponse {
 
 	public void setAutoRenewal(Boolean autoRenewal) {
 		this.autoRenewal = autoRenewal;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
+	}
+
+	public Integer getIntranetBandwidth() {
+		return this.intranetBandwidth;
+	}
+
+	public void setIntranetBandwidth(Integer intranetBandwidth) {
+		this.intranetBandwidth = intranetBandwidth;
 	}
 
 	@Override

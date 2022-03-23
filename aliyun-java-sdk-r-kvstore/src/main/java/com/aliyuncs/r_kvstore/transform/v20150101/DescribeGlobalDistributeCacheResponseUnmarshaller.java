@@ -28,25 +28,25 @@ public class DescribeGlobalDistributeCacheResponseUnmarshaller {
 	public static DescribeGlobalDistributeCacheResponse unmarshall(DescribeGlobalDistributeCacheResponse describeGlobalDistributeCacheResponse, UnmarshallerContext _ctx) {
 		
 		describeGlobalDistributeCacheResponse.setRequestId(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.RequestId"));
-		describeGlobalDistributeCacheResponse.setTotalRecordCount(_ctx.integerValue("DescribeGlobalDistributeCacheResponse.TotalRecordCount"));
-		describeGlobalDistributeCacheResponse.setPageNumber(_ctx.integerValue("DescribeGlobalDistributeCacheResponse.PageNumber"));
 		describeGlobalDistributeCacheResponse.setPageSize(_ctx.integerValue("DescribeGlobalDistributeCacheResponse.PageSize"));
+		describeGlobalDistributeCacheResponse.setPageNumber(_ctx.integerValue("DescribeGlobalDistributeCacheResponse.PageNumber"));
+		describeGlobalDistributeCacheResponse.setTotalRecordCount(_ctx.integerValue("DescribeGlobalDistributeCacheResponse.TotalRecordCount"));
 
 		List<GlobalDistributeCache> globalDistributeCaches = new ArrayList<GlobalDistributeCache>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches.Length"); i++) {
 			GlobalDistributeCache globalDistributeCache = new GlobalDistributeCache();
-			globalDistributeCache.setGlobalInstanceId(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].GlobalInstanceId"));
-			globalDistributeCache.setGlobalInstanceName(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].GlobalInstanceName"));
 			globalDistributeCache.setStatus(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].Status"));
+			globalDistributeCache.setGlobalInstanceName(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].GlobalInstanceName"));
+			globalDistributeCache.setGlobalInstanceId(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].GlobalInstanceId"));
 
 			List<SubInstance> subInstances = new ArrayList<SubInstance>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances.Length"); j++) {
 				SubInstance subInstance = new SubInstance();
-				subInstance.setGlobalInstanceId(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].GlobalInstanceId"));
-				subInstance.setInstanceID(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceID"));
-				subInstance.setRegionId(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].RegionId"));
 				subInstance.setInstanceStatus(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceStatus"));
+				subInstance.setInstanceID(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceID"));
 				subInstance.setInstanceClass(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceClass"));
+				subInstance.setGlobalInstanceId(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].GlobalInstanceId"));
+				subInstance.setRegionId(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].RegionId"));
 
 				subInstances.add(subInstance);
 			}

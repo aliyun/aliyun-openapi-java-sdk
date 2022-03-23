@@ -27,25 +27,25 @@ public class DescribeRunningLogRecordsResponseUnmarshaller {
 	public static DescribeRunningLogRecordsResponse unmarshall(DescribeRunningLogRecordsResponse describeRunningLogRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeRunningLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeRunningLogRecordsResponse.RequestId"));
-		describeRunningLogRecordsResponse.setInstanceId(_ctx.stringValue("DescribeRunningLogRecordsResponse.InstanceId"));
 		describeRunningLogRecordsResponse.setStartTime(_ctx.stringValue("DescribeRunningLogRecordsResponse.StartTime"));
-		describeRunningLogRecordsResponse.setEngine(_ctx.stringValue("DescribeRunningLogRecordsResponse.Engine"));
-		describeRunningLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeRunningLogRecordsResponse.TotalRecordCount"));
-		describeRunningLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeRunningLogRecordsResponse.PageNumber"));
-		describeRunningLogRecordsResponse.setPageSize(_ctx.integerValue("DescribeRunningLogRecordsResponse.PageSize"));
 		describeRunningLogRecordsResponse.setPageRecordCount(_ctx.integerValue("DescribeRunningLogRecordsResponse.PageRecordCount"));
+		describeRunningLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeRunningLogRecordsResponse.TotalRecordCount"));
+		describeRunningLogRecordsResponse.setPageSize(_ctx.integerValue("DescribeRunningLogRecordsResponse.PageSize"));
+		describeRunningLogRecordsResponse.setInstanceId(_ctx.stringValue("DescribeRunningLogRecordsResponse.InstanceId"));
+		describeRunningLogRecordsResponse.setEngine(_ctx.stringValue("DescribeRunningLogRecordsResponse.Engine"));
+		describeRunningLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeRunningLogRecordsResponse.PageNumber"));
 
 		List<LogRecords> items = new ArrayList<LogRecords>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRunningLogRecordsResponse.Items.Length"); i++) {
 			LogRecords logRecords = new LogRecords();
-			logRecords.setLevel(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Level"));
-			logRecords.setId(_ctx.integerValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Id"));
+			logRecords.setConnInfo(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].ConnInfo"));
 			logRecords.setCreateTime(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].CreateTime"));
 			logRecords.setCategory(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Category"));
-			logRecords.setConnInfo(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].ConnInfo"));
-			logRecords.setContent(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Content"));
 			logRecords.setInstanceId(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].InstanceId"));
+			logRecords.setContent(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Content"));
 			logRecords.setNodeId(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].NodeId"));
+			logRecords.setLevel(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Level"));
+			logRecords.setId(_ctx.integerValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Id"));
 
 			items.add(logRecords);
 		}

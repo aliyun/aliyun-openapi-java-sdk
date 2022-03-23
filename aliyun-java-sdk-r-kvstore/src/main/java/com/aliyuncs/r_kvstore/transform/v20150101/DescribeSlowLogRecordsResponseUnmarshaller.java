@@ -27,26 +27,26 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 	public static DescribeSlowLogRecordsResponse unmarshall(DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeSlowLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeSlowLogRecordsResponse.RequestId"));
-		describeSlowLogRecordsResponse.setInstanceId(_ctx.stringValue("DescribeSlowLogRecordsResponse.InstanceId"));
 		describeSlowLogRecordsResponse.setStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.StartTime"));
-		describeSlowLogRecordsResponse.setEngine(_ctx.stringValue("DescribeSlowLogRecordsResponse.Engine"));
-		describeSlowLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
-		describeSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
-		describeSlowLogRecordsResponse.setPageSize(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageSize"));
 		describeSlowLogRecordsResponse.setPageRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageRecordCount"));
+		describeSlowLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
+		describeSlowLogRecordsResponse.setPageSize(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageSize"));
+		describeSlowLogRecordsResponse.setInstanceId(_ctx.stringValue("DescribeSlowLogRecordsResponse.InstanceId"));
+		describeSlowLogRecordsResponse.setEngine(_ctx.stringValue("DescribeSlowLogRecordsResponse.Engine"));
+		describeSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
 
 		List<LogRecords> items = new ArrayList<LogRecords>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
 			LogRecords logRecords = new LogRecords();
-			logRecords.setNodeId(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].NodeId"));
-			logRecords.setIPAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].IPAddress"));
-			logRecords.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
-			logRecords.setDataBaseName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DataBaseName"));
-			logRecords.setCommand(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].Command"));
-			logRecords.setElapsedTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ElapsedTime"));
-			logRecords.setExecuteTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecuteTime"));
 			logRecords.setAccount(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].Account"));
+			logRecords.setElapsedTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ElapsedTime"));
+			logRecords.setCommand(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].Command"));
+			logRecords.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
+			logRecords.setExecuteTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecuteTime"));
+			logRecords.setDataBaseName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DataBaseName"));
+			logRecords.setNodeId(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].NodeId"));
 			logRecords.setAccountName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].AccountName"));
+			logRecords.setIPAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].IPAddress"));
 
 			items.add(logRecords);
 		}

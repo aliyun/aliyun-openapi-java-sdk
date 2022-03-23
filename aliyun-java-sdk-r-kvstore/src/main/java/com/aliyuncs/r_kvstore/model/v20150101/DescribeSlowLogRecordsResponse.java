@@ -25,39 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String instanceId;
-
 	private String startTime;
 
-	private String engine;
-
-	private Integer totalRecordCount;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String requestId;
 
 	private Integer pageRecordCount;
 
+	private Integer totalRecordCount;
+
+	private Integer pageSize;
+
+	private String instanceId;
+
+	private String engine;
+
+	private Integer pageNumber;
+
 	private List<LogRecords> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
 
 	public String getStartTime() {
 		return this.startTime;
@@ -67,12 +51,20 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEngine() {
-		return this.engine;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEngine(String engine) {
-		this.engine = engine;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -83,14 +75,6 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.totalRecordCount = totalRecordCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -99,12 +83,28 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<LogRecords> getItems() {
@@ -117,62 +117,30 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public static class LogRecords {
 
-		private String nodeId;
-
-		private String iPAddress;
-
-		private String dBName;
-
-		private String dataBaseName;
-
-		private String command;
+		private String account;
 
 		private Long elapsedTime;
 
+		private String command;
+
+		private String dBName;
+
 		private String executeTime;
 
-		private String account;
+		private String dataBaseName;
+
+		private String nodeId;
 
 		private String accountName;
 
-		public String getNodeId() {
-			return this.nodeId;
+		private String iPAddress;
+
+		public String getAccount() {
+			return this.account;
 		}
 
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
-
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
-
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getDataBaseName() {
-			return this.dataBaseName;
-		}
-
-		public void setDataBaseName(String dataBaseName) {
-			this.dataBaseName = dataBaseName;
-		}
-
-		public String getCommand() {
-			return this.command;
-		}
-
-		public void setCommand(String command) {
-			this.command = command;
+		public void setAccount(String account) {
+			this.account = account;
 		}
 
 		public Long getElapsedTime() {
@@ -183,6 +151,22 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.elapsedTime = elapsedTime;
 		}
 
+		public String getCommand() {
+			return this.command;
+		}
+
+		public void setCommand(String command) {
+			this.command = command;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
 		public String getExecuteTime() {
 			return this.executeTime;
 		}
@@ -191,12 +175,20 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.executeTime = executeTime;
 		}
 
-		public String getAccount() {
-			return this.account;
+		public String getDataBaseName() {
+			return this.dataBaseName;
 		}
 
-		public void setAccount(String account) {
-			this.account = account;
+		public void setDataBaseName(String dataBaseName) {
+			this.dataBaseName = dataBaseName;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 
 		public String getAccountName() {
@@ -205,6 +197,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
 		}
 	}
 

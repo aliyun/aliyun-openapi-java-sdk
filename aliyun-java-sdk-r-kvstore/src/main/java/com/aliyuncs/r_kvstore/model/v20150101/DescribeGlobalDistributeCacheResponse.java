@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalRecordCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalRecordCount;
 
 	private List<GlobalDistributeCache> globalDistributeCaches;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<GlobalDistributeCache> getGlobalDistributeCaches() {
@@ -77,20 +77,20 @@ public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 
 	public static class GlobalDistributeCache {
 
-		private String globalInstanceId;
+		private String status;
 
 		private String globalInstanceName;
 
-		private String status;
+		private String globalInstanceId;
 
 		private List<SubInstance> subInstances;
 
-		public String getGlobalInstanceId() {
-			return this.globalInstanceId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setGlobalInstanceId(String globalInstanceId) {
-			this.globalInstanceId = globalInstanceId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getGlobalInstanceName() {
@@ -101,12 +101,12 @@ public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 			this.globalInstanceName = globalInstanceName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getGlobalInstanceId() {
+			return this.globalInstanceId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setGlobalInstanceId(String globalInstanceId) {
+			this.globalInstanceId = globalInstanceId;
 		}
 
 		public List<SubInstance> getSubInstances() {
@@ -119,22 +119,22 @@ public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 
 		public static class SubInstance {
 
-			private String globalInstanceId;
+			private String instanceStatus;
 
 			private String instanceID;
 
-			private String regionId;
-
-			private String instanceStatus;
-
 			private String instanceClass;
 
-			public String getGlobalInstanceId() {
-				return this.globalInstanceId;
+			private String globalInstanceId;
+
+			private String regionId;
+
+			public String getInstanceStatus() {
+				return this.instanceStatus;
 			}
 
-			public void setGlobalInstanceId(String globalInstanceId) {
-				this.globalInstanceId = globalInstanceId;
+			public void setInstanceStatus(String instanceStatus) {
+				this.instanceStatus = instanceStatus;
 			}
 
 			public String getInstanceID() {
@@ -145,28 +145,28 @@ public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 				this.instanceID = instanceID;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getInstanceStatus() {
-				return this.instanceStatus;
-			}
-
-			public void setInstanceStatus(String instanceStatus) {
-				this.instanceStatus = instanceStatus;
-			}
-
 			public String getInstanceClass() {
 				return this.instanceClass;
 			}
 
 			public void setInstanceClass(String instanceClass) {
 				this.instanceClass = instanceClass;
+			}
+
+			public String getGlobalInstanceId() {
+				return this.globalInstanceId;
+			}
+
+			public void setGlobalInstanceId(String globalInstanceId) {
+				this.globalInstanceId = globalInstanceId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

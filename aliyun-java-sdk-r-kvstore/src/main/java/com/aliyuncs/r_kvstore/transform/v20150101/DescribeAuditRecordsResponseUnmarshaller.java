@@ -27,25 +27,25 @@ public class DescribeAuditRecordsResponseUnmarshaller {
 	public static DescribeAuditRecordsResponse unmarshall(DescribeAuditRecordsResponse describeAuditRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeAuditRecordsResponse.setRequestId(_ctx.stringValue("DescribeAuditRecordsResponse.RequestId"));
+		describeAuditRecordsResponse.setEndTime(_ctx.stringValue("DescribeAuditRecordsResponse.EndTime"));
+		describeAuditRecordsResponse.setStartTime(_ctx.stringValue("DescribeAuditRecordsResponse.StartTime"));
+		describeAuditRecordsResponse.setInstanceName(_ctx.stringValue("DescribeAuditRecordsResponse.InstanceName"));
+		describeAuditRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeAuditRecordsResponse.TotalRecordCount"));
 		describeAuditRecordsResponse.setPageNumber(_ctx.integerValue("DescribeAuditRecordsResponse.PageNumber"));
 		describeAuditRecordsResponse.setPageSize(_ctx.integerValue("DescribeAuditRecordsResponse.PageSize"));
-		describeAuditRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeAuditRecordsResponse.TotalRecordCount"));
-		describeAuditRecordsResponse.setInstanceName(_ctx.stringValue("DescribeAuditRecordsResponse.InstanceName"));
-		describeAuditRecordsResponse.setStartTime(_ctx.stringValue("DescribeAuditRecordsResponse.StartTime"));
-		describeAuditRecordsResponse.setEndTime(_ctx.stringValue("DescribeAuditRecordsResponse.EndTime"));
 
 		List<SQL> items = new ArrayList<SQL>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAuditRecordsResponse.Items.Length"); i++) {
 			SQL sQL = new SQL();
 			sQL.setHostAddress(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].HostAddress"));
-			sQL.setDatabaseName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].DatabaseName"));
-			sQL.setIPAddress(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].IPAddress"));
 			sQL.setSQLText(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].SQLText"));
+			sQL.setDatabaseName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].DatabaseName"));
 			sQL.setSQLType(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].SQLType"));
-			sQL.setTotalExecutionTimes(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
 			sQL.setExecuteTime(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].ExecuteTime"));
-			sQL.setAccountName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].AccountName"));
+			sQL.setTotalExecutionTimes(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
 			sQL.setNodeId(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].NodeId"));
+			sQL.setAccountName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].AccountName"));
+			sQL.setIPAddress(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].IPAddress"));
 
 			items.add(sQL);
 		}

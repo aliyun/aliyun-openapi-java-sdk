@@ -34,23 +34,23 @@ public class DescribeRoleZoneInfoResponseUnmarshaller {
 		List<NodeInfo> node = new ArrayList<NodeInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRoleZoneInfoResponse.Node.Length"); i++) {
 			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setNodeId(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].NodeId"));
-			nodeInfo.setNodeType(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].NodeType"));
-			nodeInfo.setRole(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].Role"));
-			nodeInfo.setZoneId(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].ZoneId"));
 			nodeInfo.setCPUUsage(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].CPUUsage"));
-			nodeInfo.setConnection(_ctx.floatValue("DescribeRoleZoneInfoResponse.Node["+ i +"].Connection"));
-			nodeInfo.setAvgRt(_ctx.floatValue("DescribeRoleZoneInfoResponse.Node["+ i +"].AvgRt"));
-			nodeInfo.setIntranetIn(_ctx.floatValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IntranetIn"));
-			nodeInfo.setIntranetOut(_ctx.floatValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IntranetOut"));
-			nodeInfo.setCustinsId(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].CustinsId"));
-			nodeInfo.setInsType(_ctx.integerValue("DescribeRoleZoneInfoResponse.Node["+ i +"].InsType"));
-			nodeInfo.setInsName(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].InsName"));
-			nodeInfo.setIsLatestVersion(_ctx.integerValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IsLatestVersion"));
+			nodeInfo.setDefaultBandWidth(_ctx.longValue("DescribeRoleZoneInfoResponse.Node["+ i +"].DefaultBandWidth"));
 			nodeInfo.setCurrentMinorVersion(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].CurrentMinorVersion"));
 			nodeInfo.setCurrentBandWidth(_ctx.longValue("DescribeRoleZoneInfoResponse.Node["+ i +"].CurrentBandWidth"));
-			nodeInfo.setDefaultBandWidth(_ctx.longValue("DescribeRoleZoneInfoResponse.Node["+ i +"].DefaultBandWidth"));
+			nodeInfo.setInsType(_ctx.integerValue("DescribeRoleZoneInfoResponse.Node["+ i +"].InsType"));
+			nodeInfo.setIntranetOut(_ctx.floatValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IntranetOut"));
+			nodeInfo.setIsLatestVersion(_ctx.integerValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IsLatestVersion"));
+			nodeInfo.setConnection(_ctx.floatValue("DescribeRoleZoneInfoResponse.Node["+ i +"].Connection"));
+			nodeInfo.setInsName(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].InsName"));
+			nodeInfo.setNodeType(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].NodeType"));
+			nodeInfo.setIntranetIn(_ctx.floatValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IntranetIn"));
+			nodeInfo.setAvgRt(_ctx.floatValue("DescribeRoleZoneInfoResponse.Node["+ i +"].AvgRt"));
+			nodeInfo.setZoneId(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].ZoneId"));
 			nodeInfo.setIsOpenBandWidthService(_ctx.booleanValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IsOpenBandWidthService"));
+			nodeInfo.setCustinsId(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].CustinsId"));
+			nodeInfo.setRole(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].Role"));
+			nodeInfo.setNodeId(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].NodeId"));
 
 			node.add(nodeInfo);
 		}

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogicInstanceTopologyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String instanceId;
+
+	private String requestId;
 
 	private List<NodeInfo> redisProxyList;
 
 	private List<NodeInfo> redisShardList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -47,6 +39,14 @@ public class DescribeLogicInstanceTopologyResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<NodeInfo> getRedisProxyList() {
@@ -67,22 +67,22 @@ public class DescribeLogicInstanceTopologyResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String nodeId;
+		private String capacity;
 
 		private String connection;
 
-		private String bandwidth;
-
-		private String capacity;
-
 		private String nodeType;
 
-		public String getNodeId() {
-			return this.nodeId;
+		private String bandwidth;
+
+		private String nodeId;
+
+		public String getCapacity() {
+			return this.capacity;
 		}
 
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
+		public void setCapacity(String capacity) {
+			this.capacity = capacity;
 		}
 
 		public String getConnection() {
@@ -93,6 +93,14 @@ public class DescribeLogicInstanceTopologyResponse extends AcsResponse {
 			this.connection = connection;
 		}
 
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
 		public String getBandwidth() {
 			return this.bandwidth;
 		}
@@ -101,20 +109,12 @@ public class DescribeLogicInstanceTopologyResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
-		public String getCapacity() {
-			return this.capacity;
+		public String getNodeId() {
+			return this.nodeId;
 		}
 
-		public void setCapacity(String capacity) {
-			this.capacity = capacity;
-		}
-
-		public String getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 

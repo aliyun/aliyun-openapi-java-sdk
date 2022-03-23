@@ -47,17 +47,9 @@ public class DescribeMonitorItemsResponse extends AcsResponse {
 
 	public static class KVStoreMonitorItem {
 
-		private String monitorKey;
-
 		private String unit;
 
-		public String getMonitorKey() {
-			return this.monitorKey;
-		}
-
-		public void setMonitorKey(String monitorKey) {
-			this.monitorKey = monitorKey;
-		}
+		private String monitorKey;
 
 		public String getUnit() {
 			return this.unit;
@@ -65,6 +57,14 @@ public class DescribeMonitorItemsResponse extends AcsResponse {
 
 		public void setUnit(String unit) {
 			this.unit = unit;
+		}
+
+		public String getMonitorKey() {
+			return this.monitorKey;
+		}
+
+		public void setMonitorKey(String monitorKey) {
+			this.monitorKey = monitorKey;
 		}
 	}
 

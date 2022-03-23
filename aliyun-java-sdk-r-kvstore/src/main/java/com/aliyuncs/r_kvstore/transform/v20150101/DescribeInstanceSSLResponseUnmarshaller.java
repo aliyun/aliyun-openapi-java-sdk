@@ -25,8 +25,8 @@ public class DescribeInstanceSSLResponseUnmarshaller {
 		describeInstanceSSLResponse.setRequestId(_ctx.stringValue("DescribeInstanceSSLResponse.RequestId"));
 		describeInstanceSSLResponse.setInstanceId(_ctx.stringValue("DescribeInstanceSSLResponse.InstanceId"));
 		describeInstanceSSLResponse.setSSLEnabled(_ctx.stringValue("DescribeInstanceSSLResponse.SSLEnabled"));
-		describeInstanceSSLResponse.setCertCommonName(_ctx.stringValue("DescribeInstanceSSLResponse.CertCommonName"));
 		describeInstanceSSLResponse.setSSLExpiredTime(_ctx.stringValue("DescribeInstanceSSLResponse.SSLExpiredTime"));
+		describeInstanceSSLResponse.setCertCommonName(_ctx.stringValue("DescribeInstanceSSLResponse.CertCommonName"));
 	 
 	 	return describeInstanceSSLResponse;
 	}

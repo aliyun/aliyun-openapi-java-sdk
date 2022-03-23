@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeActiveOperationTaskResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalRecordCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalRecordCount;
 
 	private List<ItemsItem> items;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<ItemsItem> getItems() {
@@ -77,25 +77,9 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private Integer id;
-
-		private String insName;
-
-		private String dbType;
-
-		private String startTime;
-
-		private String switchTime;
-
-		private String deadline;
-
 		private Integer status;
 
-		private String createdTime;
-
-		private String modifiedTime;
-
-		private String resultInfo;
+		private String deadline;
 
 		private String prepareInterval;
 
@@ -103,55 +87,23 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 
 		private String taskType;
 
+		private String startTime;
+
+		private String modifiedTime;
+
+		private String insName;
+
+		private String dbType;
+
 		private String region;
 
-		public Integer getId() {
-			return this.id;
-		}
+		private String resultInfo;
 
-		public void setId(Integer id) {
-			this.id = id;
-		}
+		private String createdTime;
 
-		public String getInsName() {
-			return this.insName;
-		}
+		private Integer id;
 
-		public void setInsName(String insName) {
-			this.insName = insName;
-		}
-
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getSwitchTime() {
-			return this.switchTime;
-		}
-
-		public void setSwitchTime(String switchTime) {
-			this.switchTime = switchTime;
-		}
-
-		public String getDeadline() {
-			return this.deadline;
-		}
-
-		public void setDeadline(String deadline) {
-			this.deadline = deadline;
-		}
+		private String switchTime;
 
 		public Integer getStatus() {
 			return this.status;
@@ -161,28 +113,12 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCreatedTime() {
-			return this.createdTime;
+		public String getDeadline() {
+			return this.deadline;
 		}
 
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getResultInfo() {
-			return this.resultInfo;
-		}
-
-		public void setResultInfo(String resultInfo) {
-			this.resultInfo = resultInfo;
+		public void setDeadline(String deadline) {
+			this.deadline = deadline;
 		}
 
 		public String getPrepareInterval() {
@@ -209,12 +145,76 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 			this.taskType = taskType;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getInsName() {
+			return this.insName;
+		}
+
+		public void setInsName(String insName) {
+			this.insName = insName;
+		}
+
+		public String getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
+		}
+
 		public String getRegion() {
 			return this.region;
 		}
 
 		public void setRegion(String region) {
 			this.region = region;
+		}
+
+		public String getResultInfo() {
+			return this.resultInfo;
+		}
+
+		public void setResultInfo(String resultInfo) {
+			this.resultInfo = resultInfo;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getSwitchTime() {
+			return this.switchTime;
+		}
+
+		public void setSwitchTime(String switchTime) {
+			this.switchTime = switchTime;
 		}
 	}
 

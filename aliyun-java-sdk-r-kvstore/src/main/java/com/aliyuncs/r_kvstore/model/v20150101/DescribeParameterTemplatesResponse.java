@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParameterTemplatesResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String engine;
 
 	private String engineVersion;
 
 	private String parameterCount;
 
-	private String requestId;
-
 	private List<TemplateRecord> parameters;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getEngine() {
 		return this.engine;
@@ -59,14 +67,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 		this.parameterCount = parameterCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public List<TemplateRecord> getParameters() {
 		return this.parameters;
 	}
@@ -79,15 +79,15 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		private String checkingCode;
 
+		private String parameterName;
+
+		private String parameterValue;
+
 		private Boolean forceModify;
 
 		private Boolean forceRestart;
 
 		private String parameterDescription;
-
-		private String parameterName;
-
-		private String parameterValue;
 
 		public String getCheckingCode() {
 			return this.checkingCode;
@@ -95,6 +95,22 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		public void setCheckingCode(String checkingCode) {
 			this.checkingCode = checkingCode;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
 		}
 
 		public Boolean getForceModify() {
@@ -119,22 +135,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		public void setParameterDescription(String parameterDescription) {
 			this.parameterDescription = parameterDescription;
-		}
-
-		public String getParameterName() {
-			return this.parameterName;
-		}
-
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
-		}
-
-		public String getParameterValue() {
-			return this.parameterValue;
-		}
-
-		public void setParameterValue(String parameterValue) {
-			this.parameterValue = parameterValue;
 		}
 	}
 

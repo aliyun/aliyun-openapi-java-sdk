@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePriceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String orderParams;
+
+	private String requestId;
 
 	private List<Rule> rules;
 
@@ -35,20 +35,20 @@ public class DescribePriceResponse extends AcsResponse {
 
 	private Order order;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getOrderParams() {
 		return this.orderParams;
 	}
 
 	public void setOrderParams(String orderParams) {
 		this.orderParams = orderParams;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Rule> getRules() {
@@ -79,9 +79,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private Long ruleDescId;
 
-		private String name;
-
 		private String title;
+
+		private String name;
 
 		public Long getRuleDescId() {
 			return this.ruleDescId;
@@ -91,14 +91,6 @@ public class DescribePriceResponse extends AcsResponse {
 			this.ruleDescId = ruleDescId;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getTitle() {
 			return this.title;
 		}
@@ -106,17 +98,25 @@ public class DescribePriceResponse extends AcsResponse {
 		public void setTitle(String title) {
 			this.title = title;
 		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 	}
 
 	public static class SubOrder {
 
 		private String originalAmount;
 
-		private String tradeAmount;
+		private String instanceId;
 
 		private String discountAmount;
 
-		private String instanceId;
+		private String tradeAmount;
 
 		private List<String> ruleIds;
 
@@ -128,12 +128,12 @@ public class DescribePriceResponse extends AcsResponse {
 			this.originalAmount = originalAmount;
 		}
 
-		public String getTradeAmount() {
-			return this.tradeAmount;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setTradeAmount(String tradeAmount) {
-			this.tradeAmount = tradeAmount;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getDiscountAmount() {
@@ -144,12 +144,12 @@ public class DescribePriceResponse extends AcsResponse {
 			this.discountAmount = discountAmount;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getTradeAmount() {
+			return this.tradeAmount;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setTradeAmount(String tradeAmount) {
+			this.tradeAmount = tradeAmount;
 		}
 
 		public List<String> getRuleIds() {
@@ -165,13 +165,13 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private String originalAmount;
 
-		private String tradeAmount;
-
-		private String discountAmount;
+		private String handlingFeeAmount;
 
 		private String currency;
 
-		private String handlingFeeAmount;
+		private String discountAmount;
+
+		private String tradeAmount;
 
 		private List<Coupon> coupons;
 
@@ -185,20 +185,12 @@ public class DescribePriceResponse extends AcsResponse {
 			this.originalAmount = originalAmount;
 		}
 
-		public String getTradeAmount() {
-			return this.tradeAmount;
+		public String getHandlingFeeAmount() {
+			return this.handlingFeeAmount;
 		}
 
-		public void setTradeAmount(String tradeAmount) {
-			this.tradeAmount = tradeAmount;
-		}
-
-		public String getDiscountAmount() {
-			return this.discountAmount;
-		}
-
-		public void setDiscountAmount(String discountAmount) {
-			this.discountAmount = discountAmount;
+		public void setHandlingFeeAmount(String handlingFeeAmount) {
+			this.handlingFeeAmount = handlingFeeAmount;
 		}
 
 		public String getCurrency() {
@@ -209,12 +201,20 @@ public class DescribePriceResponse extends AcsResponse {
 			this.currency = currency;
 		}
 
-		public String getHandlingFeeAmount() {
-			return this.handlingFeeAmount;
+		public String getDiscountAmount() {
+			return this.discountAmount;
 		}
 
-		public void setHandlingFeeAmount(String handlingFeeAmount) {
-			this.handlingFeeAmount = handlingFeeAmount;
+		public void setDiscountAmount(String discountAmount) {
+			this.discountAmount = discountAmount;
+		}
+
+		public String getTradeAmount() {
+			return this.tradeAmount;
+		}
+
+		public void setTradeAmount(String tradeAmount) {
+			this.tradeAmount = tradeAmount;
 		}
 
 		public List<Coupon> getCoupons() {
@@ -235,13 +235,21 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public static class Coupon {
 
+			private String isSelected;
+
 			private String couponNo;
 
 			private String name;
 
 			private String description;
 
-			private String isSelected;
+			public String getIsSelected() {
+				return this.isSelected;
+			}
+
+			public void setIsSelected(String isSelected) {
+				this.isSelected = isSelected;
+			}
 
 			public String getCouponNo() {
 				return this.couponNo;
@@ -265,14 +273,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
-			}
-
-			public String getIsSelected() {
-				return this.isSelected;
-			}
-
-			public void setIsSelected(String isSelected) {
-				this.isSelected = isSelected;
 			}
 		}
 	}

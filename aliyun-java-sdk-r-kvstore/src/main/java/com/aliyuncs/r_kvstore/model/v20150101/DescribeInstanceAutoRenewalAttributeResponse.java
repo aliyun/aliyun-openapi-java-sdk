@@ -29,9 +29,9 @@ public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Integer totalRecordCount;
-
 	private Integer pageRecordCount;
+
+	private Integer totalRecordCount;
 
 	private List<Item> items;
 
@@ -51,20 +51,20 @@ public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<Item> getItems() {
@@ -77,30 +77,22 @@ public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String dBInstanceId;
-
-		private String regionId;
+		private String status;
 
 		private Integer duration;
 
-		private String status;
+		private String dBInstanceId;
 
 		private String autoRenew;
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		private String regionId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Integer getDuration() {
@@ -111,12 +103,12 @@ public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
 		public String getAutoRenew() {
@@ -125,6 +117,14 @@ public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 
 		public void setAutoRenew(String autoRenew) {
 			this.autoRenew = autoRenew;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

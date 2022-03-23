@@ -32,17 +32,17 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 		List<InstanceNetInfo> netInfoItems = new ArrayList<InstanceNetInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceNetInfoResponse.NetInfoItems.Length"); i++) {
 			InstanceNetInfo instanceNetInfo = new InstanceNetInfo();
-			instanceNetInfo.setConnectionString(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].ConnectionString"));
-			instanceNetInfo.setIPAddress(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].IPAddress"));
-			instanceNetInfo.setPort(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].Port"));
-			instanceNetInfo.setVPCId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VPCId"));
+			instanceNetInfo.setDirectConnection(_ctx.integerValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].DirectConnection"));
 			instanceNetInfo.setVSwitchId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VSwitchId"));
 			instanceNetInfo.setDBInstanceNetType(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].DBInstanceNetType"));
-			instanceNetInfo.setVPCInstanceId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VPCInstanceId"));
-			instanceNetInfo.setIPType(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].IPType"));
-			instanceNetInfo.setExpiredTime(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].ExpiredTime"));
 			instanceNetInfo.setUpgradeable(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].Upgradeable"));
-			instanceNetInfo.setDirectConnection(_ctx.integerValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].DirectConnection"));
+			instanceNetInfo.setExpiredTime(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].ExpiredTime"));
+			instanceNetInfo.setConnectionString(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].ConnectionString"));
+			instanceNetInfo.setIPType(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].IPType"));
+			instanceNetInfo.setVPCInstanceId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VPCInstanceId"));
+			instanceNetInfo.setPort(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].Port"));
+			instanceNetInfo.setVPCId(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VPCId"));
+			instanceNetInfo.setIPAddress(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].IPAddress"));
 
 			netInfoItems.add(instanceNetInfo);
 		}

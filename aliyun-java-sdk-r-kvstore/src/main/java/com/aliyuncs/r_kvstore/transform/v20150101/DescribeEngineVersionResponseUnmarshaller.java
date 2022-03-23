@@ -23,15 +23,15 @@ public class DescribeEngineVersionResponseUnmarshaller {
 	public static DescribeEngineVersionResponse unmarshall(DescribeEngineVersionResponse describeEngineVersionResponse, UnmarshallerContext _ctx) {
 		
 		describeEngineVersionResponse.setRequestId(_ctx.stringValue("DescribeEngineVersionResponse.RequestId"));
-		describeEngineVersionResponse.setEngine(_ctx.stringValue("DescribeEngineVersionResponse.Engine"));
 		describeEngineVersionResponse.setIsLatestVersion(_ctx.booleanValue("DescribeEngineVersionResponse.IsLatestVersion"));
-		describeEngineVersionResponse.setMinorVersion(_ctx.stringValue("DescribeEngineVersionResponse.MinorVersion"));
-		describeEngineVersionResponse.setEnableUpgradeMinorVersion(_ctx.booleanValue("DescribeEngineVersionResponse.EnableUpgradeMinorVersion"));
-		describeEngineVersionResponse.setMajorVersion(_ctx.stringValue("DescribeEngineVersionResponse.MajorVersion"));
-		describeEngineVersionResponse.setEnableUpgradeMajorVersion(_ctx.booleanValue("DescribeEngineVersionResponse.EnableUpgradeMajorVersion"));
 		describeEngineVersionResponse.setProxyMinorVersion(_ctx.stringValue("DescribeEngineVersionResponse.ProxyMinorVersion"));
 		describeEngineVersionResponse.setDBVersionRelease(_ctx.stringValue("DescribeEngineVersionResponse.DBVersionRelease"));
 		describeEngineVersionResponse.setProxyVersionRelease(_ctx.stringValue("DescribeEngineVersionResponse.ProxyVersionRelease"));
+		describeEngineVersionResponse.setEnableUpgradeMajorVersion(_ctx.booleanValue("DescribeEngineVersionResponse.EnableUpgradeMajorVersion"));
+		describeEngineVersionResponse.setEnableUpgradeMinorVersion(_ctx.booleanValue("DescribeEngineVersionResponse.EnableUpgradeMinorVersion"));
+		describeEngineVersionResponse.setMajorVersion(_ctx.stringValue("DescribeEngineVersionResponse.MajorVersion"));
+		describeEngineVersionResponse.setEngine(_ctx.stringValue("DescribeEngineVersionResponse.Engine"));
+		describeEngineVersionResponse.setMinorVersion(_ctx.stringValue("DescribeEngineVersionResponse.MinorVersion"));
 	 
 	 	return describeEngineVersionResponse;
 	}

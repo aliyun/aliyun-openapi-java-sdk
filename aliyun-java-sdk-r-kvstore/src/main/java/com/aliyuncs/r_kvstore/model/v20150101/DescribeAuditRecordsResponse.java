@@ -25,21 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAuditRecordsResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
+
+	private String instanceName;
+
+	private Integer totalRecordCount;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer totalRecordCount;
-
-	private String instanceName;
-
-	private String startTime;
-
-	private String endTime;
-
 	private List<SQL> items;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +63,22 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageNumber() {
@@ -65,38 +97,6 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public List<SQL> getItems() {
 		return this.items;
 	}
@@ -109,21 +109,21 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		private String hostAddress;
 
-		private String databaseName;
-
-		private String iPAddress;
-
 		private String sQLText;
+
+		private String databaseName;
 
 		private String sQLType;
 
+		private String executeTime;
+
 		private String totalExecutionTimes;
 
-		private String executeTime;
+		private String nodeId;
 
 		private String accountName;
 
-		private String nodeId;
+		private String iPAddress;
 
 		public String getHostAddress() {
 			return this.hostAddress;
@@ -131,22 +131,6 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		public void setHostAddress(String hostAddress) {
 			this.hostAddress = hostAddress;
-		}
-
-		public String getDatabaseName() {
-			return this.databaseName;
-		}
-
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
-		}
-
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
-
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
 		}
 
 		public String getSQLText() {
@@ -157,20 +141,20 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 			this.sQLText = sQLText;
 		}
 
+		public String getDatabaseName() {
+			return this.databaseName;
+		}
+
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
+		}
+
 		public String getSQLType() {
 			return this.sQLType;
 		}
 
 		public void setSQLType(String sQLType) {
 			this.sQLType = sQLType;
-		}
-
-		public String getTotalExecutionTimes() {
-			return this.totalExecutionTimes;
-		}
-
-		public void setTotalExecutionTimes(String totalExecutionTimes) {
-			this.totalExecutionTimes = totalExecutionTimes;
 		}
 
 		public String getExecuteTime() {
@@ -181,12 +165,12 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 			this.executeTime = executeTime;
 		}
 
-		public String getAccountName() {
-			return this.accountName;
+		public String getTotalExecutionTimes() {
+			return this.totalExecutionTimes;
 		}
 
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
+		public void setTotalExecutionTimes(String totalExecutionTimes) {
+			this.totalExecutionTimes = totalExecutionTimes;
 		}
 
 		public String getNodeId() {
@@ -195,6 +179,22 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		public void setNodeId(String nodeId) {
 			this.nodeId = nodeId;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
+		}
+
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
 		}
 	}
 

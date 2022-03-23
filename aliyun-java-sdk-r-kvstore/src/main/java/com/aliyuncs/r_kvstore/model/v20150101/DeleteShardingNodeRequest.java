@@ -31,7 +31,7 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 
 	private String nodeId;
 
-	private String shardCount;
+	private Integer shardCount;
 
 	private String resourceOwnerAccount;
 
@@ -82,14 +82,14 @@ public class DeleteShardingNodeRequest extends RpcAcsRequest<DeleteShardingNodeR
 		}
 	}
 
-	public String getShardCount() {
+	public Integer getShardCount() {
 		return this.shardCount;
 	}
 
-	public void setShardCount(String shardCount) {
+	public void setShardCount(Integer shardCount) {
 		this.shardCount = shardCount;
 		if(shardCount != null){
-			putQueryParameter("ShardCount", shardCount);
+			putQueryParameter("ShardCount", shardCount.toString());
 		}
 	}
 

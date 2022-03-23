@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCacheAnalysisReportListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String instanceId;
 
-	private Integer totalRecordCount;
-
-	private Integer pageNumbers;
+	private String requestId;
 
 	private Integer pageRecordCount;
 
+	private Integer pageNumbers;
+
+	private Integer totalRecordCount;
+
 	private List<DailyTask> dailyTasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -53,12 +45,20 @@ public class DescribeCacheAnalysisReportListResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
 	}
 
 	public Integer getPageNumbers() {
@@ -69,12 +69,12 @@ public class DescribeCacheAnalysisReportListResponse extends AcsResponse {
 		this.pageNumbers = pageNumbers;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<DailyTask> getDailyTasks() {
@@ -109,13 +109,29 @@ public class DescribeCacheAnalysisReportListResponse extends AcsResponse {
 
 		public static class Task {
 
+			private String status;
+
+			private String startTime;
+
 			private String taskId;
 
 			private String nodeId;
 
-			private String startTime;
+			public String getStatus() {
+				return this.status;
+			}
 
-			private String status;
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
 
 			public String getTaskId() {
 				return this.taskId;
@@ -131,22 +147,6 @@ public class DescribeCacheAnalysisReportListResponse extends AcsResponse {
 
 			public void setNodeId(String nodeId) {
 				this.nodeId = nodeId;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
 			}
 		}
 	}

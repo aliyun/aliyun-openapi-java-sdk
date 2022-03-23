@@ -34,19 +34,19 @@ public class DescribeBackupsResponseUnmarshaller {
 		List<Backup> backups = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupsResponse.Backups.Length"); i++) {
 			Backup backup = new Backup();
-			backup.setBackupId(_ctx.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
-			backup.setBackupDBNames(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDBNames"));
 			backup.setBackupStatus(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupStatus"));
 			backup.setBackupStartTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupStartTime"));
-			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupEndTime"));
 			backup.setBackupType(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupType"));
+			backup.setBackupDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDownloadURL"));
+			backup.setNodeInstanceId(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].NodeInstanceId"));
+			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupEndTime"));
+			backup.setBackupId(_ctx.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
+			backup.setBackupDBNames(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDBNames"));
+			backup.setEngineVersion(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].EngineVersion"));
+			backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupIntranetDownloadURL"));
+			backup.setBackupSize(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupSize"));
 			backup.setBackupMode(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMode"));
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
-			backup.setBackupDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDownloadURL"));
-			backup.setBackupSize(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupSize"));
-			backup.setEngineVersion(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].EngineVersion"));
-			backup.setNodeInstanceId(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].NodeInstanceId"));
-			backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupIntranetDownloadURL"));
 
 			backups.add(backup);
 		}

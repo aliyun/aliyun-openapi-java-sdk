@@ -23,8 +23,8 @@ public class DescribeAuditLogConfigResponseUnmarshaller {
 	public static DescribeAuditLogConfigResponse unmarshall(DescribeAuditLogConfigResponse describeAuditLogConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeAuditLogConfigResponse.setRequestId(_ctx.stringValue("DescribeAuditLogConfigResponse.RequestId"));
-		describeAuditLogConfigResponse.setDbAudit(_ctx.stringValue("DescribeAuditLogConfigResponse.DbAudit"));
 		describeAuditLogConfigResponse.setRetention(_ctx.stringValue("DescribeAuditLogConfigResponse.Retention"));
+		describeAuditLogConfigResponse.setDbAudit(_ctx.stringValue("DescribeAuditLogConfigResponse.DbAudit"));
 	 
 	 	return describeAuditLogConfigResponse;
 	}

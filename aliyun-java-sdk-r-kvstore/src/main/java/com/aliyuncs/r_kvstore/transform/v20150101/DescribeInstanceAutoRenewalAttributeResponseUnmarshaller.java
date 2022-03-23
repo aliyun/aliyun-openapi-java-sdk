@@ -28,17 +28,17 @@ public class DescribeInstanceAutoRenewalAttributeResponseUnmarshaller {
 		
 		describeInstanceAutoRenewalAttributeResponse.setRequestId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.RequestId"));
 		describeInstanceAutoRenewalAttributeResponse.setPageNumber(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.PageNumber"));
-		describeInstanceAutoRenewalAttributeResponse.setTotalRecordCount(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.TotalRecordCount"));
 		describeInstanceAutoRenewalAttributeResponse.setPageRecordCount(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.PageRecordCount"));
+		describeInstanceAutoRenewalAttributeResponse.setTotalRecordCount(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.TotalRecordCount"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAutoRenewalAttributeResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setDBInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].DBInstanceId"));
-			item.setRegionId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].RegionId"));
-			item.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Duration"));
 			item.setStatus(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Status"));
+			item.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Duration"));
+			item.setDBInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].DBInstanceId"));
 			item.setAutoRenew(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].AutoRenew"));
+			item.setRegionId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].RegionId"));
 
 			items.add(item);
 		}

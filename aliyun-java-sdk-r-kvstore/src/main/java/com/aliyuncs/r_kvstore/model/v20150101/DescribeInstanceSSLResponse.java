@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceSSLResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String instanceId;
+
+	private String requestId;
 
 	private String sSLEnabled;
 
-	private String certCommonName;
-
 	private String sSLExpiredTime;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String certCommonName;
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -48,6 +40,14 @@ public class DescribeInstanceSSLResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSSLEnabled() {
@@ -58,20 +58,20 @@ public class DescribeInstanceSSLResponse extends AcsResponse {
 		this.sSLEnabled = sSLEnabled;
 	}
 
-	public String getCertCommonName() {
-		return this.certCommonName;
-	}
-
-	public void setCertCommonName(String certCommonName) {
-		this.certCommonName = certCommonName;
-	}
-
 	public String getSSLExpiredTime() {
 		return this.sSLExpiredTime;
 	}
 
 	public void setSSLExpiredTime(String sSLExpiredTime) {
 		this.sSLExpiredTime = sSLExpiredTime;
+	}
+
+	public String getCertCommonName() {
+		return this.certCommonName;
+	}
+
+	public void setCertCommonName(String certCommonName) {
+		this.certCommonName = certCommonName;
 	}
 
 	@Override

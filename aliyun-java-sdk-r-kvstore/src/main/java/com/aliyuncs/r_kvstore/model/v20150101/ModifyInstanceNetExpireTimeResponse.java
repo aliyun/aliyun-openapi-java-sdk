@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyInstanceNetExpireTimeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String instanceId;
 
+	private String requestId;
+
 	private List<NetInfoItem> netInfoItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -45,6 +37,14 @@ public class ModifyInstanceNetExpireTimeResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<NetInfoItem> getNetInfoItems() {
@@ -57,23 +57,15 @@ public class ModifyInstanceNetExpireTimeResponse extends AcsResponse {
 
 	public static class NetInfoItem {
 
-		private String dBInstanceNetType;
-
 		private String port;
 
-		private String expiredTime;
+		private String dBInstanceNetType;
 
 		private String connectionString;
 
+		private String expiredTime;
+
 		private String iPAddress;
-
-		public String getDBInstanceNetType() {
-			return this.dBInstanceNetType;
-		}
-
-		public void setDBInstanceNetType(String dBInstanceNetType) {
-			this.dBInstanceNetType = dBInstanceNetType;
-		}
 
 		public String getPort() {
 			return this.port;
@@ -83,12 +75,12 @@ public class ModifyInstanceNetExpireTimeResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public String getDBInstanceNetType() {
+			return this.dBInstanceNetType;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setDBInstanceNetType(String dBInstanceNetType) {
+			this.dBInstanceNetType = dBInstanceNetType;
 		}
 
 		public String getConnectionString() {
@@ -97,6 +89,14 @@ public class ModifyInstanceNetExpireTimeResponse extends AcsResponse {
 
 		public void setConnectionString(String connectionString) {
 			this.connectionString = connectionString;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public String getIPAddress() {

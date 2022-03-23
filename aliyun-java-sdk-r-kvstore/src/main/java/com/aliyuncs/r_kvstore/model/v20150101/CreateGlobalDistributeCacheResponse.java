@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateGlobalDistributeCacheResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String globalInstanceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getGlobalInstanceId() {
 		return this.globalInstanceId;
@@ -42,6 +34,14 @@ public class CreateGlobalDistributeCacheResponse extends AcsResponse {
 
 	public void setGlobalInstanceId(String globalInstanceId) {
 		this.globalInstanceId = globalInstanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

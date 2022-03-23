@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHistoryMonitorValuesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String monitorHistory;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getMonitorHistory() {
 		return this.monitorHistory;
@@ -42,6 +34,14 @@ public class DescribeHistoryMonitorValuesResponse extends AcsResponse {
 
 	public void setMonitorHistory(String monitorHistory) {
 		this.monitorHistory = monitorHistory;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

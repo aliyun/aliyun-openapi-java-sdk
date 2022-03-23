@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String backupRetentionPeriod;
 
-	private String preferredBackupTime;
+	private String requestId;
 
 	private String preferredBackupPeriod;
 
 	private String preferredNextBackupTime;
 
+	private String preferredBackupTime;
+
 	private Integer enableBackupLog;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getBackupRetentionPeriod() {
 		return this.backupRetentionPeriod;
@@ -52,12 +44,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPreferredBackupPeriod() {
@@ -74,6 +66,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
 		this.preferredNextBackupTime = preferredNextBackupTime;
+	}
+
+	public String getPreferredBackupTime() {
+		return this.preferredBackupTime;
+	}
+
+	public void setPreferredBackupTime(String preferredBackupTime) {
+		this.preferredBackupTime = preferredBackupTime;
 	}
 
 	public Integer getEnableBackupLog() {

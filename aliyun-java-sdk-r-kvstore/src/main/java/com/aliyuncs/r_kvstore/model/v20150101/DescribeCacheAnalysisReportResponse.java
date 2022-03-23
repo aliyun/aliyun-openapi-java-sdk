@@ -26,34 +26,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCacheAnalysisReportResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalRecordCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageRecordCount;
 
-	private List<Map<Object,Object>> hotKeys;
+	private Integer totalRecordCount;
 
 	private List<Map<Object,Object>> bigKeys;
 
-	public String getRequestId() {
-		return this.requestId;
+	private List<Map<Object,Object>> hotKeys;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -64,12 +56,12 @@ public class DescribeCacheAnalysisReportResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageRecordCount() {
@@ -80,12 +72,12 @@ public class DescribeCacheAnalysisReportResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
-	public List<Map<Object,Object>> getHotKeys() {
-		return this.hotKeys;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setHotKeys(List<Map<Object,Object>> hotKeys) {
-		this.hotKeys = hotKeys;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<Map<Object,Object>> getBigKeys() {
@@ -94,6 +86,14 @@ public class DescribeCacheAnalysisReportResponse extends AcsResponse {
 
 	public void setBigKeys(List<Map<Object,Object>> bigKeys) {
 		this.bigKeys = bigKeys;
+	}
+
+	public List<Map<Object,Object>> getHotKeys() {
+		return this.hotKeys;
+	}
+
+	public void setHotKeys(List<Map<Object,Object>> hotKeys) {
+		this.hotKeys = hotKeys;
 	}
 
 	@Override

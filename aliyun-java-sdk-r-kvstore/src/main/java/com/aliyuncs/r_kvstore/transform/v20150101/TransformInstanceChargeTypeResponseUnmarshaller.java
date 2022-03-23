@@ -23,8 +23,8 @@ public class TransformInstanceChargeTypeResponseUnmarshaller {
 	public static TransformInstanceChargeTypeResponse unmarshall(TransformInstanceChargeTypeResponse transformInstanceChargeTypeResponse, UnmarshallerContext _ctx) {
 		
 		transformInstanceChargeTypeResponse.setRequestId(_ctx.stringValue("TransformInstanceChargeTypeResponse.RequestId"));
-		transformInstanceChargeTypeResponse.setOrderId(_ctx.stringValue("TransformInstanceChargeTypeResponse.OrderId"));
 		transformInstanceChargeTypeResponse.setEndTime(_ctx.stringValue("TransformInstanceChargeTypeResponse.EndTime"));
+		transformInstanceChargeTypeResponse.setOrderId(_ctx.stringValue("TransformInstanceChargeTypeResponse.OrderId"));
 	 
 	 	return transformInstanceChargeTypeResponse;
 	}

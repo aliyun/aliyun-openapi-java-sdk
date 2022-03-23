@@ -31,9 +31,9 @@ public class DescribeSecurityIpsResponseUnmarshaller {
 		List<SecurityIpGroup> securityIpGroups = new ArrayList<SecurityIpGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityIpsResponse.SecurityIpGroups.Length"); i++) {
 			SecurityIpGroup securityIpGroup = new SecurityIpGroup();
-			securityIpGroup.setSecurityIpGroupName(_ctx.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpGroupName"));
 			securityIpGroup.setSecurityIpGroupAttribute(_ctx.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpGroupAttribute"));
 			securityIpGroup.setSecurityIpList(_ctx.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpList"));
+			securityIpGroup.setSecurityIpGroupName(_ctx.stringValue("DescribeSecurityIpsResponse.SecurityIpGroups["+ i +"].SecurityIpGroupName"));
 
 			securityIpGroups.add(securityIpGroup);
 		}

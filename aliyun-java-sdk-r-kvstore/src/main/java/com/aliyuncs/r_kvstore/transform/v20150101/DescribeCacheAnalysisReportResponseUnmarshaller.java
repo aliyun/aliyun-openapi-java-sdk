@@ -27,16 +27,16 @@ public class DescribeCacheAnalysisReportResponseUnmarshaller {
 	public static DescribeCacheAnalysisReportResponse unmarshall(DescribeCacheAnalysisReportResponse describeCacheAnalysisReportResponse, UnmarshallerContext _ctx) {
 		
 		describeCacheAnalysisReportResponse.setRequestId(_ctx.stringValue("DescribeCacheAnalysisReportResponse.RequestId"));
-		describeCacheAnalysisReportResponse.setTotalRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportResponse.TotalRecordCount"));
-		describeCacheAnalysisReportResponse.setPageSize(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageSize"));
 		describeCacheAnalysisReportResponse.setPageNumber(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageNumber"));
+		describeCacheAnalysisReportResponse.setPageSize(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageSize"));
 		describeCacheAnalysisReportResponse.setPageRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageRecordCount"));
-
-		List<Map<Object, Object>> hotKeys = _ctx.listMapValue("DescribeCacheAnalysisReportResponse.HotKeys");
-		describeCacheAnalysisReportResponse.setHotKeys(hotKeys);
+		describeCacheAnalysisReportResponse.setTotalRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportResponse.TotalRecordCount"));
 
 		List<Map<Object, Object>> bigKeys = _ctx.listMapValue("DescribeCacheAnalysisReportResponse.BigKeys");
 		describeCacheAnalysisReportResponse.setBigKeys(bigKeys);
+
+		List<Map<Object, Object>> hotKeys = _ctx.listMapValue("DescribeCacheAnalysisReportResponse.HotKeys");
+		describeCacheAnalysisReportResponse.setHotKeys(hotKeys);
 	 
 	 	return describeCacheAnalysisReportResponse;
 	}

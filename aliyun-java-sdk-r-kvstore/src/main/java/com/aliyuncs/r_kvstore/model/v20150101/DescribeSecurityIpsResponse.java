@@ -47,19 +47,11 @@ public class DescribeSecurityIpsResponse extends AcsResponse {
 
 	public static class SecurityIpGroup {
 
-		private String securityIpGroupName;
-
 		private String securityIpGroupAttribute;
 
 		private String securityIpList;
 
-		public String getSecurityIpGroupName() {
-			return this.securityIpGroupName;
-		}
-
-		public void setSecurityIpGroupName(String securityIpGroupName) {
-			this.securityIpGroupName = securityIpGroupName;
-		}
+		private String securityIpGroupName;
 
 		public String getSecurityIpGroupAttribute() {
 			return this.securityIpGroupAttribute;
@@ -75,6 +67,14 @@ public class DescribeSecurityIpsResponse extends AcsResponse {
 
 		public void setSecurityIpList(String securityIpList) {
 			this.securityIpList = securityIpList;
+		}
+
+		public String getSecurityIpGroupName() {
+			return this.securityIpGroupName;
+		}
+
+		public void setSecurityIpGroupName(String securityIpGroupName) {
+			this.securityIpGroupName = securityIpGroupName;
 		}
 	}
 

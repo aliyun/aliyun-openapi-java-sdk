@@ -29,9 +29,9 @@ public class DescribeCacheAnalysisReportListResponseUnmarshaller {
 		
 		describeCacheAnalysisReportListResponse.setRequestId(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.RequestId"));
 		describeCacheAnalysisReportListResponse.setInstanceId(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.InstanceId"));
-		describeCacheAnalysisReportListResponse.setTotalRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportListResponse.TotalRecordCount"));
-		describeCacheAnalysisReportListResponse.setPageNumbers(_ctx.integerValue("DescribeCacheAnalysisReportListResponse.PageNumbers"));
 		describeCacheAnalysisReportListResponse.setPageRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportListResponse.PageRecordCount"));
+		describeCacheAnalysisReportListResponse.setPageNumbers(_ctx.integerValue("DescribeCacheAnalysisReportListResponse.PageNumbers"));
+		describeCacheAnalysisReportListResponse.setTotalRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportListResponse.TotalRecordCount"));
 
 		List<DailyTask> dailyTasks = new ArrayList<DailyTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCacheAnalysisReportListResponse.DailyTasks.Length"); i++) {
@@ -41,10 +41,10 @@ public class DescribeCacheAnalysisReportListResponseUnmarshaller {
 			List<Task> tasks = new ArrayList<Task>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks.Length"); j++) {
 				Task task = new Task();
+				task.setStatus(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].Status"));
+				task.setStartTime(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].StartTime"));
 				task.setTaskId(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].TaskId"));
 				task.setNodeId(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].NodeId"));
-				task.setStartTime(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].StartTime"));
-				task.setStatus(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].Status"));
 
 				tasks.add(task);
 			}

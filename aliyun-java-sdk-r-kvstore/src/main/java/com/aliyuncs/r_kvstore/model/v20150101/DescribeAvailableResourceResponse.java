@@ -47,24 +47,24 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	public static class AvailableZone {
 
-		private String regionId;
+		private String status;
 
 		private String zoneId;
 
-		private String status;
+		private String zoneName;
 
 		private String networkTypes;
 
-		private String zoneName;
+		private String regionId;
 
 		private List<SupportedEngine> supportedEngines;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getZoneId() {
@@ -75,12 +75,12 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getZoneName() {
+			return this.zoneName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
 		}
 
 		public String getNetworkTypes() {
@@ -91,12 +91,12 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 			this.networkTypes = networkTypes;
 		}
 
-		public String getZoneName() {
-			return this.zoneName;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setZoneName(String zoneName) {
-			this.zoneName = zoneName;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<SupportedEngine> getSupportedEngines() {
@@ -263,19 +263,11 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 									public static class AvailableResource {
 
-										private String instanceClass;
-
 										private String instanceClassRemark;
 
 										private Long capacity;
 
-										public String getInstanceClass() {
-											return this.instanceClass;
-										}
-
-										public void setInstanceClass(String instanceClass) {
-											this.instanceClass = instanceClass;
-										}
+										private String instanceClass;
 
 										public String getInstanceClassRemark() {
 											return this.instanceClassRemark;
@@ -291,6 +283,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 										public void setCapacity(Long capacity) {
 											this.capacity = capacity;
+										}
+
+										public String getInstanceClass() {
+											return this.instanceClass;
+										}
+
+										public void setInstanceClass(String instanceClass) {
+											this.instanceClass = instanceClass;
 										}
 									}
 								}

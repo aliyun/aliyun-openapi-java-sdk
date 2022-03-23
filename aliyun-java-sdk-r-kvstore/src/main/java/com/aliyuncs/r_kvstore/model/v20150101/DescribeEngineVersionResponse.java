@@ -24,19 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEngineVersionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String engine;
-
 	private Boolean isLatestVersion;
 
-	private String minorVersion;
-
-	private Boolean enableUpgradeMinorVersion;
-
-	private String majorVersion;
-
-	private Boolean enableUpgradeMajorVersion;
+	private String requestId;
 
 	private String proxyMinorVersion;
 
@@ -44,21 +34,15 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	private String proxyVersionRelease;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Boolean enableUpgradeMajorVersion;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Boolean enableUpgradeMinorVersion;
 
-	public String getEngine() {
-		return this.engine;
-	}
+	private String majorVersion;
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
+	private String engine;
+
+	private String minorVersion;
 
 	public Boolean getIsLatestVersion() {
 		return this.isLatestVersion;
@@ -68,36 +52,12 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 		this.isLatestVersion = isLatestVersion;
 	}
 
-	public String getMinorVersion() {
-		return this.minorVersion;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMinorVersion(String minorVersion) {
-		this.minorVersion = minorVersion;
-	}
-
-	public Boolean getEnableUpgradeMinorVersion() {
-		return this.enableUpgradeMinorVersion;
-	}
-
-	public void setEnableUpgradeMinorVersion(Boolean enableUpgradeMinorVersion) {
-		this.enableUpgradeMinorVersion = enableUpgradeMinorVersion;
-	}
-
-	public String getMajorVersion() {
-		return this.majorVersion;
-	}
-
-	public void setMajorVersion(String majorVersion) {
-		this.majorVersion = majorVersion;
-	}
-
-	public Boolean getEnableUpgradeMajorVersion() {
-		return this.enableUpgradeMajorVersion;
-	}
-
-	public void setEnableUpgradeMajorVersion(Boolean enableUpgradeMajorVersion) {
-		this.enableUpgradeMajorVersion = enableUpgradeMajorVersion;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getProxyMinorVersion() {
@@ -122,6 +82,46 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	public void setProxyVersionRelease(String proxyVersionRelease) {
 		this.proxyVersionRelease = proxyVersionRelease;
+	}
+
+	public Boolean getEnableUpgradeMajorVersion() {
+		return this.enableUpgradeMajorVersion;
+	}
+
+	public void setEnableUpgradeMajorVersion(Boolean enableUpgradeMajorVersion) {
+		this.enableUpgradeMajorVersion = enableUpgradeMajorVersion;
+	}
+
+	public Boolean getEnableUpgradeMinorVersion() {
+		return this.enableUpgradeMinorVersion;
+	}
+
+	public void setEnableUpgradeMinorVersion(Boolean enableUpgradeMinorVersion) {
+		this.enableUpgradeMinorVersion = enableUpgradeMinorVersion;
+	}
+
+	public String getMajorVersion() {
+		return this.majorVersion;
+	}
+
+	public void setMajorVersion(String majorVersion) {
+		this.majorVersion = majorVersion;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+
+	public String getMinorVersion() {
+		return this.minorVersion;
+	}
+
+	public void setMinorVersion(String minorVersion) {
+		this.minorVersion = minorVersion;
 	}
 
 	@Override
