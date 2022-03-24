@@ -16,38 +16,22 @@ package com.aliyuncs.cams.model.v20200606;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cams.transform.v20200606.CheckContactsResponseUnmarshaller;
+import com.aliyuncs.cams.transform.v20200606.CheckChatappContactsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckContactsResponse extends AcsResponse {
-
-	private String resultMessage;
-
-	private String resultCode;
+public class CheckChatappContactsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ContactStatus> contacts;
+	private String code;
 
-	public String getResultMessage() {
-		return this.resultMessage;
-	}
+	private String message;
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
+	private List<Contacts> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,15 +41,31 @@ public class CheckContactsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ContactStatus> getContacts() {
-		return this.contacts;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setContacts(List<ContactStatus> contacts) {
-		this.contacts = contacts;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public static class ContactStatus {
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public List<Contacts> getData() {
+		return this.data;
+	}
+
+	public void setData(List<Contacts> data) {
+		this.data = data;
+	}
+
+	public static class Contacts {
 
 		private String status;
 
@@ -89,8 +89,8 @@ public class CheckContactsResponse extends AcsResponse {
 	}
 
 	@Override
-	public CheckContactsResponse getInstance(UnmarshallerContext context) {
-		return	CheckContactsResponseUnmarshaller.unmarshall(this, context);
+	public CheckChatappContactsResponse getInstance(UnmarshallerContext context) {
+		return	CheckChatappContactsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
