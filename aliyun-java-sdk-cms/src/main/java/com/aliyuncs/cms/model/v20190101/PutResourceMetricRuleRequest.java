@@ -16,6 +16,8 @@ package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -64,6 +66,9 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 	private String escalationsInfoComparisonOperator;
 
 	private Integer silenceTime;
+
+	@SerializedName("compositeExpression")
+	private CompositeExpression compositeExpression;
 
 	private String resources;
 
@@ -306,6 +311,17 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		}
 	}
 
+	public CompositeExpression getCompositeExpression() {
+		return this.compositeExpression;
+	}
+
+	public void setCompositeExpression(CompositeExpression compositeExpression) {
+		this.compositeExpression = compositeExpression;	
+		if (compositeExpression != null) {
+			putQueryParameter("CompositeExpression" , new Gson().toJson(compositeExpression));
+		}	
+	}
+
 	public String getResources() {
 		return this.resources;
 	}
@@ -403,6 +419,133 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class CompositeExpression {
+
+		@SerializedName("Times")
+		private Integer times;
+
+		@SerializedName("ExpressionList")
+		private List<ExpressionListItem> expressionList;
+
+		@SerializedName("Level")
+		private String level;
+
+		@SerializedName("ExpressionRaw")
+		private String expressionRaw;
+
+		@SerializedName("ExpressionListJoin")
+		private String expressionListJoin;
+
+		public Integer getTimes() {
+			return this.times;
+		}
+
+		public void setTimes(Integer times) {
+			this.times = times;
+		}
+
+		public List<ExpressionListItem> getExpressionList() {
+			return this.expressionList;
+		}
+
+		public void setExpressionList(List<ExpressionListItem> expressionList) {
+			this.expressionList = expressionList;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public String getExpressionRaw() {
+			return this.expressionRaw;
+		}
+
+		public void setExpressionRaw(String expressionRaw) {
+			this.expressionRaw = expressionRaw;
+		}
+
+		public String getExpressionListJoin() {
+			return this.expressionListJoin;
+		}
+
+		public void setExpressionListJoin(String expressionListJoin) {
+			this.expressionListJoin = expressionListJoin;
+		}
+
+		public static class ExpressionListItem {
+
+			@SerializedName("Period")
+			private Long period;
+
+			@SerializedName("Threshold")
+			private String threshold;
+
+			@SerializedName("Id")
+			private String id;
+
+			@SerializedName("MetricName")
+			private String metricName;
+
+			@SerializedName("ComparisonOperator")
+			private String comparisonOperator;
+
+			@SerializedName("Statistics")
+			private String statistics;
+
+			public Long getPeriod() {
+				return this.period;
+			}
+
+			public void setPeriod(Long period) {
+				this.period = period;
+			}
+
+			public String getThreshold() {
+				return this.threshold;
+			}
+
+			public void setThreshold(String threshold) {
+				this.threshold = threshold;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getMetricName() {
+				return this.metricName;
+			}
+
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
+			}
+
+			public String getComparisonOperator() {
+				return this.comparisonOperator;
+			}
+
+			public void setComparisonOperator(String comparisonOperator) {
+				this.comparisonOperator = comparisonOperator;
+			}
+
+			public String getStatistics() {
+				return this.statistics;
+			}
+
+			public void setStatistics(String statistics) {
+				this.statistics = statistics;
+			}
 		}
 	}
 

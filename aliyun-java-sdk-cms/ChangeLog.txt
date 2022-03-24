@@ -1,3 +1,6 @@
+2022-03-24 Version: 7.0.39
+- Add multi indicator monitoring.
+
 2022-03-21 Version: 7.0.38
 - The alarm target callback adds parameter writing.
 

@@ -25,6 +25,8 @@ public class DescribeEventRuleAttributeRequest extends RpcAcsRequest<DescribeEve
 	   
 
 	private String ruleName;
+
+	private String silenceTime;
 	public DescribeEventRuleAttributeRequest() {
 		super("Cms", "2019-01-01", "DescribeEventRuleAttribute", "Cms");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class DescribeEventRuleAttributeRequest extends RpcAcsRequest<DescribeEve
 		this.ruleName = ruleName;
 		if(ruleName != null){
 			putQueryParameter("RuleName", ruleName);
+		}
+	}
+
+	public String getSilenceTime() {
+		return this.silenceTime;
+	}
+
+	public void setSilenceTime(String silenceTime) {
+		this.silenceTime = silenceTime;
+		if(silenceTime != null){
+			putQueryParameter("SilenceTime", silenceTime);
 		}
 	}
 

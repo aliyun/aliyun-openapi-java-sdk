@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class DescribeMetricRuleTemplateListRequest extends RpcAcsRequest<DescribeMetricRuleTemplateListResponse> {
 	   
 
+	private String orderBy;
+
 	private Boolean history;
 
 	private Long templateId;
@@ -35,9 +37,22 @@ public class DescribeMetricRuleTemplateListRequest extends RpcAcsRequest<Describ
 	private Long pageSize;
 
 	private String keyword;
+
+	private Boolean order;
 	public DescribeMetricRuleTemplateListRequest() {
 		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "Cms");
 		setMethod(MethodType.POST);
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
 	}
 
 	public Boolean getHistory() {
@@ -103,6 +118,17 @@ public class DescribeMetricRuleTemplateListRequest extends RpcAcsRequest<Describ
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public Boolean getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(Boolean order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order.toString());
 		}
 	}
 
