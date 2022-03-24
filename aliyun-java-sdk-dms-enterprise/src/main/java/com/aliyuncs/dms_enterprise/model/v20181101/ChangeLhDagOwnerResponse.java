@@ -14,26 +14,23 @@
 
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dms_enterprise.transform.v20181101.CreateDataExportOrderResponseUnmarshaller;
+import com.aliyuncs.dms_enterprise.transform.v20181101.ChangeLhDagOwnerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDataExportOrderResponse extends AcsResponse {
+public class ChangeLhDagOwnerResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
-
-	private List<Long> createOrderResult;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,22 +38,6 @@ public class CreateDataExportOrderResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -67,21 +48,24 @@ public class CreateDataExportOrderResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public List<Long> getCreateOrderResult() {
-		return this.createOrderResult;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setCreateOrderResult(List<Long> createOrderResult) {
-		this.createOrderResult = createOrderResult;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override
-	public CreateDataExportOrderResponse getInstance(UnmarshallerContext context) {
-		return	CreateDataExportOrderResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public ChangeLhDagOwnerResponse getInstance(UnmarshallerContext context) {
+		return	ChangeLhDagOwnerResponseUnmarshaller.unmarshall(this, context);
 	}
 }

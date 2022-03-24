@@ -35,7 +35,7 @@ public class ListLhTaskFlowAndScenarioResponse extends AcsResponse {
 
 	private List<Dag> rawDAGList;
 
-	private ScenarioDAGList scenarioDAGList;
+	private List<ScenarioDAG> scenarioDAGList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,11 +77,11 @@ public class ListLhTaskFlowAndScenarioResponse extends AcsResponse {
 		this.rawDAGList = rawDAGList;
 	}
 
-	public ScenarioDAGList getScenarioDAGList() {
+	public List<ScenarioDAG> getScenarioDAGList() {
 		return this.scenarioDAGList;
 	}
 
-	public void setScenarioDAGList(ScenarioDAGList scenarioDAGList) {
+	public void setScenarioDAGList(List<ScenarioDAG> scenarioDAGList) {
 		this.scenarioDAGList = scenarioDAGList;
 	}
 
@@ -228,7 +228,7 @@ public class ListLhTaskFlowAndScenarioResponse extends AcsResponse {
 		}
 	}
 
-	public static class ScenarioDAGList {
+	public static class ScenarioDAG {
 
 		private List<Dag1> dagList;
 

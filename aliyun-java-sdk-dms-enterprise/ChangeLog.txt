@@ -1,3 +1,6 @@
+2022-03-24 Version: 1.31.0
+- Supported CreateLakeHouseSpace,AddLhMembers,DeleteLhMembers,ListLhTaskFlowAndScenario,ChangeLhDagOwner,ReDeployLhDagVersion API.
+
 2022-03-18 Version: 1.30.0
 - Supported CreateStandardGroup, ListStandardGroups API.
 

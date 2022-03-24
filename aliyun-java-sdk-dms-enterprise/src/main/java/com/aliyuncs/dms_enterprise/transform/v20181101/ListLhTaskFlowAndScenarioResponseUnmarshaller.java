@@ -19,9 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.dms_enterprise.model.v20181101.ListLhTaskFlowAndScenarioResponse;
 import com.aliyuncs.dms_enterprise.model.v20181101.ListLhTaskFlowAndScenarioResponse.Dag;
-import com.aliyuncs.dms_enterprise.model.v20181101.ListLhTaskFlowAndScenarioResponse.ScenarioDAGList;
-import com.aliyuncs.dms_enterprise.model.v20181101.ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.Dag1;
-import com.aliyuncs.dms_enterprise.model.v20181101.ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.Scenario;
+import com.aliyuncs.dms_enterprise.model.v20181101.ListLhTaskFlowAndScenarioResponse.ScenarioDAG;
+import com.aliyuncs.dms_enterprise.model.v20181101.ListLhTaskFlowAndScenarioResponse.ScenarioDAG.Dag1;
+import com.aliyuncs.dms_enterprise.model.v20181101.ListLhTaskFlowAndScenarioResponse.ScenarioDAG.Scenario;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,37 +33,6 @@ public class ListLhTaskFlowAndScenarioResponseUnmarshaller {
 		listLhTaskFlowAndScenarioResponse.setErrorCode(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ErrorCode"));
 		listLhTaskFlowAndScenarioResponse.setErrorMessage(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ErrorMessage"));
 		listLhTaskFlowAndScenarioResponse.setSuccess(_ctx.booleanValue("ListLhTaskFlowAndScenarioResponse.Success"));
-
-		ScenarioDAGList scenarioDAGList = new ScenarioDAGList();
-
-		Scenario scenario = new Scenario();
-		scenario.setScenarioName(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.Scenario.ScenarioName"));
-		scenario.setCreatorId(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.Scenario.CreatorId"));
-		scenario.setDescription(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.Scenario.Description"));
-		scenarioDAGList.setScenario(scenario);
-
-		List<Dag1> dagList = new ArrayList<Dag1>();
-		for (int i = 0; i < _ctx.lengthValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList.Length"); i++) {
-			Dag1 dag1 = new Dag1();
-			dag1.setId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].Id"));
-			dag1.setCreatorId(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].CreatorId"));
-			dag1.setIsDeleted(_ctx.booleanValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].IsDeleted"));
-			dag1.setDemoId(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].DemoId"));
-			dag1.setDeployId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].DeployId"));
-			dag1.setDataFlowId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].DataFlowId"));
-			dag1.setScenarioId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].ScenarioId"));
-			dag1.setSpaceId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].SpaceId"));
-			dag1.setCreatorNickName(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].CreatorNickName"));
-			dag1.setDagOwnerNickName(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].DagOwnerNickName"));
-			dag1.setCanEdit(_ctx.booleanValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].CanEdit"));
-			dag1.setStatus(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].Status"));
-			dag1.setLatestInstanceStatus(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].LatestInstanceStatus"));
-			dag1.setLatestInstanceTime(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.DagList["+ i +"].LatestInstanceTime"));
-
-			dagList.add(dag1);
-		}
-		scenarioDAGList.setDagList(dagList);
-		listLhTaskFlowAndScenarioResponse.setScenarioDAGList(scenarioDAGList);
 
 		List<Dag> rawDAGList = new ArrayList<Dag>();
 		for (int i = 0; i < _ctx.lengthValue("ListLhTaskFlowAndScenarioResponse.RawDAGList.Length"); i++) {
@@ -86,6 +55,42 @@ public class ListLhTaskFlowAndScenarioResponseUnmarshaller {
 			rawDAGList.add(dag);
 		}
 		listLhTaskFlowAndScenarioResponse.setRawDAGList(rawDAGList);
+
+		List<ScenarioDAG> scenarioDAGList = new ArrayList<ScenarioDAG>();
+		for (int i = 0; i < _ctx.lengthValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList.Length"); i++) {
+			ScenarioDAG scenarioDAG = new ScenarioDAG();
+
+			Scenario scenario = new Scenario();
+			scenario.setScenarioName(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].Scenario.ScenarioName"));
+			scenario.setCreatorId(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].Scenario.CreatorId"));
+			scenario.setDescription(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].Scenario.Description"));
+			scenarioDAG.setScenario(scenario);
+
+			List<Dag1> dagList = new ArrayList<Dag1>();
+			for (int j = 0; j < _ctx.lengthValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList.Length"); j++) {
+				Dag1 dag1 = new Dag1();
+				dag1.setId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].Id"));
+				dag1.setCreatorId(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].CreatorId"));
+				dag1.setIsDeleted(_ctx.booleanValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].IsDeleted"));
+				dag1.setDemoId(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].DemoId"));
+				dag1.setDeployId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].DeployId"));
+				dag1.setDataFlowId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].DataFlowId"));
+				dag1.setScenarioId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].ScenarioId"));
+				dag1.setSpaceId(_ctx.longValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].SpaceId"));
+				dag1.setCreatorNickName(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].CreatorNickName"));
+				dag1.setDagOwnerNickName(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].DagOwnerNickName"));
+				dag1.setCanEdit(_ctx.booleanValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].CanEdit"));
+				dag1.setStatus(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].Status"));
+				dag1.setLatestInstanceStatus(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].LatestInstanceStatus"));
+				dag1.setLatestInstanceTime(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].LatestInstanceTime"));
+
+				dagList.add(dag1);
+			}
+			scenarioDAG.setDagList(dagList);
+
+			scenarioDAGList.add(scenarioDAG);
+		}
+		listLhTaskFlowAndScenarioResponse.setScenarioDAGList(scenarioDAGList);
 	 
 	 	return listLhTaskFlowAndScenarioResponse;
 	}
