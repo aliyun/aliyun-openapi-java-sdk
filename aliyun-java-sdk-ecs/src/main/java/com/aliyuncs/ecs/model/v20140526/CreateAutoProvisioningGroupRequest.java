@@ -46,6 +46,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String launchConfigurationResourceGroupId;
 
+	private String launchConfigurationPassword;
+
 	private String payAsYouGoAllocationStrategy;
 
 	private String defaultTargetCapacityType;
@@ -266,6 +268,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.launchConfigurationResourceGroupId = launchConfigurationResourceGroupId;
 		if(launchConfigurationResourceGroupId != null){
 			putQueryParameter("LaunchConfiguration.ResourceGroupId", launchConfigurationResourceGroupId);
+		}
+	}
+
+	public String getLaunchConfigurationPassword() {
+		return this.launchConfigurationPassword;
+	}
+
+	public void setLaunchConfigurationPassword(String launchConfigurationPassword) {
+		this.launchConfigurationPassword = launchConfigurationPassword;
+		if(launchConfigurationPassword != null){
+			putQueryParameter("LaunchConfiguration.Password", launchConfigurationPassword);
 		}
 	}
 

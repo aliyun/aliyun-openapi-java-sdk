@@ -1,3 +1,7 @@
+2022-03-25 Version: 4.24.16
+- Add Request Param LaunchConfigurationPassword For API CreateAutoProvisioningGroup.
+
+
 2022-03-23 Version: 4.24.15
 - Add Request Param ImageOptions For API RunInstances.
 - Add Request Param LoginAsNonRoot For API ReplaceSystemDisk.
