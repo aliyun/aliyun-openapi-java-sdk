@@ -18,7 +18,7 @@ public class HmacSM3SignerTest {
     @Test
     public void getSignerName() {
         HmacSM3Signer signer = new HmacSM3Signer();
-        Assert.assertEquals("HMAC-SM3", signer.getSignerName());
+        Assert.assertEquals("ACS3-HMAC-SM3", signer.getSignerName());
     }
 
     @Test

@@ -203,11 +203,11 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             }
             String strToSign = this.composer.composeStringToSign(this.getSysMethod(), this.getSysUriPattern(), signer,
                     this.getSysQueryParameters(), imutableMap, this.getPathParameters());
-            this.strToSign = strToSign;
             if (this.getSysSignatureVersion() == SignatureVersion.V3) {
                 strToSign += "\n" + hashedRequestPayload;
                 strToSign = signer.getSignerName() + "\n" + hexEncode(signer.hash(strToSign.getBytes("UTF-8")));
             }
+            this.strToSign = strToSign;
             String signature = signer.signString(strToSign, credentials);
             imutableMap.put("Authorization", this.composer.getAuthorization(signer, accessKeyId, signature)
                     + (this.getSysSignatureVersion() == SignatureVersion.V3 ? ",SignedHeaders=" + this.getSysSignedHeaders(imutableMap) : ""));

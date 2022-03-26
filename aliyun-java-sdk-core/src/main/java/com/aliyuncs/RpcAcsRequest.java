@@ -191,20 +191,20 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             if (signer.getContent() != null && hashedRequestPayload != null) {
                 headerMap.put(signer.getContent(), hashedRequestPayload);
             }
-            Map<String, String> paramsToSign = new HashMap<String, String>();
-            paramsToSign.putAll(bodyParams);
             imutableMap.put("AccessKeyId", accessKeyId);
-            paramsToSign.putAll(imutableMap);
             if (this.getSysSignatureVersion() == SignatureVersion.V3) {
                 String strToSign = this.composer.composeStringToSign(this.getSysMethod(), null, signer,
-                        paramsToSign, headerMap, null) + "\n" + hashedRequestPayload;
+                        this.getSysQueryParameters(), headerMap, null) + "\n" + hashedRequestPayload;
                 this.strToSign = strToSign;
                 strToSign = signer.getSignerName() + "\n" + hexEncode(signer.hash(strToSign.getBytes("UTF-8")));
                 String signature = signer.signString(strToSign, accessSecret);
                 headerMap.put("Authorization", this.composer.getAuthorization(signer, accessKeyId, signature)
-                        + ",SignedHeaders=" + this.getSysSignedHeaders(imutableMap));
+                        + ",SignedHeaders=" + this.getSysSignedHeaders(headerMap));
                 imutableMap = this.getSysQueryParameters();
             } else {
+                Map<String, String> paramsToSign = new HashMap<String, String>();
+                paramsToSign.putAll(bodyParams);
+                paramsToSign.putAll(imutableMap);
                 String strToSign = this.composer.composeStringToSign(
                         this.getSysMethod(), null, signer, paramsToSign, null, null);
                 this.strToSign = strToSign;

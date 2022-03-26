@@ -56,7 +56,7 @@ public class HmacSHA256Signer extends Signer {
 
     @Override
     public String getSignerName() {
-        return ALGORITHM_NAME;
+        return "ACS3-HMAC-SHA256";
     }
 
     @Override

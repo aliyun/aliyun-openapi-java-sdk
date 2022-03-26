@@ -27,7 +27,7 @@ public class V3SignatureComposerTest {
     }
 
     @Test
-    public void composeStringToSignTest() throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public void composeStringToSignTest() {
         ISignatureComposer composer = V3SignatureComposer.getComposer();
         MethodType methodType = MethodType.GET;
         String uriPattern = "http://www.aliyun.com/[pathKey1]";
@@ -61,6 +61,11 @@ public class V3SignatureComposerTest {
         };
         String stringToSign = composer.composeStringToSign(methodType, uriPattern, signer, queries, headers, paths);
         String expected = "GET\n" + "http://www.aliyun.com/pathValue1\n" + "queryKey1=queryValue1&queryKey2=queryValue2&queryKey3=&queryKey4=queryValue4\n"
+                + "content-type:Content-Type-Value\n" + "x-acs-content-sha256:null\n" + "x-acs-signature-version:3.0\n\n"
+                + "content-type;x-acs-content-sha256;x-acs-signature-version";
+        Assert.assertEquals(expected, stringToSign);
+        stringToSign = composer.composeStringToSign(methodType, null, signer, queries, headers, null);
+        expected = "GET\n" + "/\n" + "queryKey1=queryValue1&queryKey2=queryValue2&queryKey3=&queryKey4=queryValue4\n"
                 + "content-type:Content-Type-Value\n" + "x-acs-content-sha256:null\n" + "x-acs-signature-version:3.0\n\n"
                 + "content-type;x-acs-content-sha256;x-acs-signature-version";
         Assert.assertEquals(expected, stringToSign);

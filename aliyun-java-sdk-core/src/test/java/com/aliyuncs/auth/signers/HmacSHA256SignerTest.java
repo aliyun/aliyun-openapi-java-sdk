@@ -18,7 +18,7 @@ public class HmacSHA256SignerTest {
     @Test
     public void getSignerName() {
         HmacSHA256Signer signer = new HmacSHA256Signer();
-        Assert.assertEquals("HmacSHA256", signer.getSignerName());
+        Assert.assertEquals("ACS3-HMAC-SHA256", signer.getSignerName());
     }
 
     @Test

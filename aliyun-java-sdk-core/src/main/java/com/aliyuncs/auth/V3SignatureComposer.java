@@ -31,6 +31,9 @@ public class V3SignatureComposer implements ISignatureComposer {
     }
 
     public static String replaceOccupiedParameters(String url, Map<String, String> paths) {
+        if (null == paths || paths.isEmpty()) {
+            return url;
+        }
         String result = url;
         for (Map.Entry<String, String> entry : paths.entrySet()) {
             String key = entry.getKey();
