@@ -84,7 +84,7 @@ public class NewSHA256withRSASigner extends Signer {
 
     @Override
     public String getSignerName() {
-        return ALGORITHM_NAME;
+        return "ACS3-RSA-SHA256";
     }
 
     @Override

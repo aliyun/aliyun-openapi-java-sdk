@@ -18,7 +18,7 @@ public class NewSHA256withRSASignerTest {
     @Test
     public void getSignerName() {
         NewSHA256withRSASigner signer = new NewSHA256withRSASigner();
-        Assert.assertEquals("SHA256withRSA", signer.getSignerName());
+        Assert.assertEquals("ACS3-RSA-SHA256", signer.getSignerName());
     }
 
     @Test

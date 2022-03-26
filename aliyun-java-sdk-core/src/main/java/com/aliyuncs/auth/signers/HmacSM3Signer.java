@@ -63,7 +63,7 @@ public class HmacSM3Signer extends Signer {
 
     @Override
     public String getSignerName() {
-        return ALGORITHM_NAME;
+        return "ACS3-HMAC-SM3";
     }
 
     @Override
