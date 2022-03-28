@@ -57,6 +57,7 @@ public class DescribeInstanceBillResponseUnmarshaller {
 			item.setInstanceSpec(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].InstanceSpec"));
 			item.setDeductedByCoupons(_ctx.floatValue("DescribeInstanceBillResponse.Data.Items["+ i +"].DeductedByCoupons"));
 			item.setBillingItem(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].BillingItem"));
+			item.setBillingItemCode(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].BillingItemCode"));
 			item.setRegion(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].Region"));
 			item.setOutstandingAmount(_ctx.floatValue("DescribeInstanceBillResponse.Data.Items["+ i +"].OutstandingAmount"));
 			item.setCostUnit(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].CostUnit"));
@@ -87,6 +88,7 @@ public class DescribeInstanceBillResponseUnmarshaller {
 			item.setCashAmount(_ctx.floatValue("DescribeInstanceBillResponse.Data.Items["+ i +"].CashAmount"));
 			item.setProductCode(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].ProductCode"));
 			item.setBillingType(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].BillingType"));
+			item.setItemName(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].ItemName"));
 
 			items.add(item);
 		}

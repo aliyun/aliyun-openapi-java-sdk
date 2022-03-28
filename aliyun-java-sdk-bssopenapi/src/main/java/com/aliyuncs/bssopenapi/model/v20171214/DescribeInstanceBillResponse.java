@@ -177,6 +177,8 @@ public class DescribeInstanceBillResponse extends AcsResponse {
 
 			private String billingItem;
 
+			private String billingItemCode;
+
 			private String region;
 
 			private Float outstandingAmount;
@@ -236,6 +238,8 @@ public class DescribeInstanceBillResponse extends AcsResponse {
 			private String productCode;
 
 			private String billingType;
+
+			private String itemName;
 
 			public String getBillingDate() {
 				return this.billingDate;
@@ -347,6 +351,14 @@ public class DescribeInstanceBillResponse extends AcsResponse {
 
 			public void setBillingItem(String billingItem) {
 				this.billingItem = billingItem;
+			}
+
+			public String getBillingItemCode() {
+				return this.billingItemCode;
+			}
+
+			public void setBillingItemCode(String billingItemCode) {
+				this.billingItemCode = billingItemCode;
 			}
 
 			public String getRegion() {
@@ -587,6 +599,14 @@ public class DescribeInstanceBillResponse extends AcsResponse {
 
 			public void setBillingType(String billingType) {
 				this.billingType = billingType;
+			}
+
+			public String getItemName() {
+				return this.itemName;
+			}
+
+			public void setItemName(String itemName) {
+				this.itemName = itemName;
 			}
 		}
 	}

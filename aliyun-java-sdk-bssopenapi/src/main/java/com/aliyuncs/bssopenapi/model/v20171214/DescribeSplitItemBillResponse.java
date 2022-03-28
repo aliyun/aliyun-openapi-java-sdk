@@ -223,6 +223,8 @@ public class DescribeSplitItemBillResponse extends AcsResponse {
 
 			private String billingItem;
 
+			private String billingItemCode;
+
 			private String costUnit;
 
 			private String listPriceUnit;
@@ -252,6 +254,8 @@ public class DescribeSplitItemBillResponse extends AcsResponse {
 			private String billingType;
 
 			private String productCode;
+
+			private String itemName;
 
 			public String getSplitAccountID() {
 				return this.splitAccountID;
@@ -549,6 +553,14 @@ public class DescribeSplitItemBillResponse extends AcsResponse {
 				this.billingItem = billingItem;
 			}
 
+			public String getBillingItemCode() {
+				return this.billingItemCode;
+			}
+
+			public void setBillingItemCode(String billingItemCode) {
+				this.billingItemCode = billingItemCode;
+			}
+
 			public String getCostUnit() {
 				return this.costUnit;
 			}
@@ -667,6 +679,14 @@ public class DescribeSplitItemBillResponse extends AcsResponse {
 
 			public void setProductCode(String productCode) {
 				this.productCode = productCode;
+			}
+
+			public String getItemName() {
+				return this.itemName;
+			}
+
+			public void setItemName(String itemName) {
+				this.itemName = itemName;
 			}
 		}
 	}
