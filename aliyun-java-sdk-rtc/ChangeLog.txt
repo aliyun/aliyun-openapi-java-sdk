@@ -1,3 +1,6 @@
+2022-03-28 Version: 1.3.4
+- Support more params in text, clockWidget.
+
 2021-12-30 Version: 1.3.3
 - Support AUTH for CreateEventSubscribe.
 

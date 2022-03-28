@@ -106,6 +106,12 @@ public class UpdateMPUTaskRequest extends RpcAcsRequest<UpdateMPUTaskResponse> {
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".ZOrder" , userPaness.get(depth1).getTextss().get(depth2).getZOrder());
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".X" , userPaness.get(depth1).getTextss().get(depth2).getX());
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".FontSize" , userPaness.get(depth1).getTextss().get(depth2).getFontSize());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".BorderWidth" , userPaness.get(depth1).getTextss().get(depth2).getBorderWidth());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".BorderColor" , userPaness.get(depth1).getTextss().get(depth2).getBorderColor());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".Box" , userPaness.get(depth1).getTextss().get(depth2).getBox());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".BoxColor" , userPaness.get(depth1).getTextss().get(depth2).getBoxColor());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".BoxBorderWidth" , userPaness.get(depth1).getTextss().get(depth2).getBoxBorderWidth());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".Alpha" , userPaness.get(depth1).getTextss().get(depth2).getAlpha());
 					}
 				}
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".SourceType" , userPaness.get(depth1).getSourceType());
@@ -161,6 +167,12 @@ public class UpdateMPUTaskRequest extends RpcAcsRequest<UpdateMPUTaskResponse> {
 				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".ZOrder" , clockWidgetss.get(depth1).getZOrder());
 				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".X" , clockWidgetss.get(depth1).getX());
 				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontSize" , clockWidgetss.get(depth1).getFontSize());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".BorderWidth" , clockWidgetss.get(depth1).getBorderWidth());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".BorderColor" , clockWidgetss.get(depth1).getBorderColor());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".Box" , clockWidgetss.get(depth1).getBox());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".BoxColor" , clockWidgetss.get(depth1).getBoxColor());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".BoxBorderWidth" , clockWidgetss.get(depth1).getBoxBorderWidth());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".Alpha" , clockWidgetss.get(depth1).getAlpha());
 			}
 		}	
 	}
@@ -525,6 +537,18 @@ public class UpdateMPUTaskRequest extends RpcAcsRequest<UpdateMPUTaskResponse> {
 
 			private Integer fontSize;
 
+			private Integer borderWidth;
+
+			private Long borderColor;
+
+			private Boolean box;
+
+			private Long boxColor;
+
+			private Integer boxBorderWidth;
+
+			private Float alpha;
+
 			public Integer getFontType() {
 				return this.fontType;
 			}
@@ -580,6 +604,54 @@ public class UpdateMPUTaskRequest extends RpcAcsRequest<UpdateMPUTaskResponse> {
 			public void setFontSize(Integer fontSize) {
 				this.fontSize = fontSize;
 			}
+
+			public Integer getBorderWidth() {
+				return this.borderWidth;
+			}
+
+			public void setBorderWidth(Integer borderWidth) {
+				this.borderWidth = borderWidth;
+			}
+
+			public Long getBorderColor() {
+				return this.borderColor;
+			}
+
+			public void setBorderColor(Long borderColor) {
+				this.borderColor = borderColor;
+			}
+
+			public Boolean getBox() {
+				return this.box;
+			}
+
+			public void setBox(Boolean box) {
+				this.box = box;
+			}
+
+			public Long getBoxColor() {
+				return this.boxColor;
+			}
+
+			public void setBoxColor(Long boxColor) {
+				this.boxColor = boxColor;
+			}
+
+			public Integer getBoxBorderWidth() {
+				return this.boxBorderWidth;
+			}
+
+			public void setBoxBorderWidth(Integer boxBorderWidth) {
+				this.boxBorderWidth = boxBorderWidth;
+			}
+
+			public Float getAlpha() {
+				return this.alpha;
+			}
+
+			public void setAlpha(Float alpha) {
+				this.alpha = alpha;
+			}
 		}
 	}
 
@@ -596,6 +668,18 @@ public class UpdateMPUTaskRequest extends RpcAcsRequest<UpdateMPUTaskResponse> {
 		private Float x;
 
 		private Integer fontSize;
+
+		private Integer borderWidth;
+
+		private Long borderColor;
+
+		private Boolean box;
+
+		private Long boxColor;
+
+		private Integer boxBorderWidth;
+
+		private Float alpha;
 
 		public Integer getFontType() {
 			return this.fontType;
@@ -643,6 +727,54 @@ public class UpdateMPUTaskRequest extends RpcAcsRequest<UpdateMPUTaskResponse> {
 
 		public void setFontSize(Integer fontSize) {
 			this.fontSize = fontSize;
+		}
+
+		public Integer getBorderWidth() {
+			return this.borderWidth;
+		}
+
+		public void setBorderWidth(Integer borderWidth) {
+			this.borderWidth = borderWidth;
+		}
+
+		public Long getBorderColor() {
+			return this.borderColor;
+		}
+
+		public void setBorderColor(Long borderColor) {
+			this.borderColor = borderColor;
+		}
+
+		public Boolean getBox() {
+			return this.box;
+		}
+
+		public void setBox(Boolean box) {
+			this.box = box;
+		}
+
+		public Long getBoxColor() {
+			return this.boxColor;
+		}
+
+		public void setBoxColor(Long boxColor) {
+			this.boxColor = boxColor;
+		}
+
+		public Integer getBoxBorderWidth() {
+			return this.boxBorderWidth;
+		}
+
+		public void setBoxBorderWidth(Integer boxBorderWidth) {
+			this.boxBorderWidth = boxBorderWidth;
+		}
+
+		public Float getAlpha() {
+			return this.alpha;
+		}
+
+		public void setAlpha(Float alpha) {
+			this.alpha = alpha;
 		}
 	}
 
