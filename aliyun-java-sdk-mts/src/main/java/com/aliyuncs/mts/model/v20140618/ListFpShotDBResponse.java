@@ -67,6 +67,8 @@ public class ListFpShotDBResponse extends AcsResponse {
 
 		private String fpDBId;
 
+		private String instanceId;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -105,6 +107,14 @@ public class ListFpShotDBResponse extends AcsResponse {
 
 		public void setFpDBId(String fpDBId) {
 			this.fpDBId = fpDBId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

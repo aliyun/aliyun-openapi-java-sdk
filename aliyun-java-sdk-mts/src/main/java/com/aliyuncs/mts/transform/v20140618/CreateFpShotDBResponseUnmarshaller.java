@@ -32,6 +32,7 @@ public class CreateFpShotDBResponseUnmarshaller {
 		fpShotDB.setFpDBId(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.FpDBId"));
 		fpShotDB.setModelId(_ctx.integerValue("CreateFpShotDBResponse.FpShotDB.ModelId"));
 		fpShotDB.setConfig(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.Config"));
+		fpShotDB.setInstanceId(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.InstanceId"));
 		createFpShotDBResponse.setFpShotDB(fpShotDB);
 	 
 	 	return createFpShotDBResponse;
