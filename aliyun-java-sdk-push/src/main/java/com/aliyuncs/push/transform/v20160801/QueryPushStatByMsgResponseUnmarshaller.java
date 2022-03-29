@@ -32,16 +32,16 @@ public class QueryPushStatByMsgResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryPushStatByMsgResponse.PushStats.Length"); i++) {
 			PushStat pushStat = new PushStat();
 			pushStat.setMessageId(_ctx.stringValue("QueryPushStatByMsgResponse.PushStats["+ i +"].MessageId"));
-			pushStat.setAcceptCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].AcceptCount"));
-			pushStat.setSentCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SentCount"));
-			pushStat.setReceivedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].ReceivedCount"));
-			pushStat.setOpenedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].OpenedCount"));
 			pushStat.setDeletedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].DeletedCount"));
-			pushStat.setSmsSentCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSentCount"));
-			pushStat.setSmsSkipCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSkipCount"));
-			pushStat.setSmsFailedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsFailedCount"));
+			pushStat.setOpenedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].OpenedCount"));
 			pushStat.setSmsReceiveSuccessCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsReceiveSuccessCount"));
+			pushStat.setSmsSkipCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSkipCount"));
 			pushStat.setSmsReceiveFailedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsReceiveFailedCount"));
+			pushStat.setSmsFailedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsFailedCount"));
+			pushStat.setReceivedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].ReceivedCount"));
+			pushStat.setSentCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SentCount"));
+			pushStat.setSmsSentCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSentCount"));
+			pushStat.setAcceptCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].AcceptCount"));
 
 			pushStats.add(pushStat);
 		}

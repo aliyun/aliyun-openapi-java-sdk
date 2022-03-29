@@ -43,6 +43,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSRemindBody;
 
+	private Boolean trim;
+
 	private String androidNotifyType;
 
 	private String androidPopupTitle;
@@ -71,6 +73,10 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String smsParams;
 
+	private Double iOSRelevanceScore;
+
+	private Integer androidVivoPushMode;
+
 	private String androidInboxBody;
 
 	private String jobKey;
@@ -94,6 +100,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String androidMessageHuaweiUrgency;
 
 	private String pushType;
+
+	private String iOSInterruptionLevel;
 
 	private String androidExtParameters;
 
@@ -254,6 +262,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public Boolean getTrim() {
+		return this.trim;
+	}
+
+	public void setTrim(Boolean trim) {
+		this.trim = trim;
+		if(trim != null){
+			putQueryParameter("Trim", trim.toString());
+		}
+	}
+
 	public String getAndroidNotifyType() {
 		return this.androidNotifyType;
 	}
@@ -408,6 +427,28 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public Double getIOSRelevanceScore() {
+		return this.iOSRelevanceScore;
+	}
+
+	public void setIOSRelevanceScore(Double iOSRelevanceScore) {
+		this.iOSRelevanceScore = iOSRelevanceScore;
+		if(iOSRelevanceScore != null){
+			putQueryParameter("iOSRelevanceScore", iOSRelevanceScore.toString());
+		}
+	}
+
+	public Integer getAndroidVivoPushMode() {
+		return this.androidVivoPushMode;
+	}
+
+	public void setAndroidVivoPushMode(Integer androidVivoPushMode) {
+		this.androidVivoPushMode = androidVivoPushMode;
+		if(androidVivoPushMode != null){
+			putQueryParameter("AndroidVivoPushMode", androidVivoPushMode.toString());
+		}
+	}
+
 	public String getAndroidInboxBody() {
 		return this.androidInboxBody;
 	}
@@ -537,6 +578,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.pushType = pushType;
 		if(pushType != null){
 			putQueryParameter("PushType", pushType);
+		}
+	}
+
+	public String getIOSInterruptionLevel() {
+		return this.iOSInterruptionLevel;
+	}
+
+	public void setIOSInterruptionLevel(String iOSInterruptionLevel) {
+		this.iOSInterruptionLevel = iOSInterruptionLevel;
+		if(iOSInterruptionLevel != null){
+			putQueryParameter("iOSInterruptionLevel", iOSInterruptionLevel);
 		}
 	}
 

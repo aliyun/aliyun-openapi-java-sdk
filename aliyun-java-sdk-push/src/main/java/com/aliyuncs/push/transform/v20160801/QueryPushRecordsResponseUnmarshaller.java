@@ -29,22 +29,22 @@ public class QueryPushRecordsResponseUnmarshaller {
 		queryPushRecordsResponse.setRequestId(_ctx.stringValue("QueryPushRecordsResponse.RequestId"));
 		queryPushRecordsResponse.setNextToken(_ctx.stringValue("QueryPushRecordsResponse.NextToken"));
 		queryPushRecordsResponse.setPageSize(_ctx.integerValue("QueryPushRecordsResponse.PageSize"));
-		queryPushRecordsResponse.setPage(_ctx.integerValue("QueryPushRecordsResponse.Page"));
 		queryPushRecordsResponse.setTotal(_ctx.integerValue("QueryPushRecordsResponse.Total"));
+		queryPushRecordsResponse.setPage(_ctx.integerValue("QueryPushRecordsResponse.Page"));
 
 		List<PushInfo> pushInfos = new ArrayList<PushInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPushRecordsResponse.PushInfos.Length"); i++) {
 			PushInfo pushInfo = new PushInfo();
-			pushInfo.setAppKey(_ctx.longValue("QueryPushRecordsResponse.PushInfos["+ i +"].AppKey"));
+			pushInfo.setStatus(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Status"));
 			pushInfo.setMessageId(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].MessageId"));
-			pushInfo.setPushType(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].PushType"));
+			pushInfo.setAppKey(_ctx.longValue("QueryPushRecordsResponse.PushInfos["+ i +"].AppKey"));
 			pushInfo.setDeviceType(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].DeviceType"));
-			pushInfo.setTarget(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Target"));
+			pushInfo.setPushType(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].PushType"));
+			pushInfo.setBody(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Body"));
+			pushInfo.setTitle(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Title"));
 			pushInfo.setSource(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Source"));
 			pushInfo.setPushTime(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].PushTime"));
-			pushInfo.setTitle(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Title"));
-			pushInfo.setBody(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Body"));
-			pushInfo.setStatus(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Status"));
+			pushInfo.setTarget(_ctx.stringValue("QueryPushRecordsResponse.PushInfos["+ i +"].Target"));
 
 			pushInfos.add(pushInfo);
 		}

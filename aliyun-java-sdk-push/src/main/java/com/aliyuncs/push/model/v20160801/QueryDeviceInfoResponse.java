@@ -46,41 +46,25 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 	public static class DeviceInfo {
 
-		private String deviceId;
-
-		private String deviceType;
-
 		private String account;
 
-		private String deviceToken;
-
-		private String tags;
-
-		private String alias;
-
 		private String lastOnlineTime;
-
-		private Boolean online;
 
 		private String phoneNumber;
 
 		private Boolean pushEnabled;
 
-		public String getDeviceId() {
-			return this.deviceId;
-		}
+		private String deviceType;
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
+		private String deviceId;
 
-		public String getDeviceType() {
-			return this.deviceType;
-		}
+		private Boolean online;
 
-		public void setDeviceType(String deviceType) {
-			this.deviceType = deviceType;
-		}
+		private String tags;
+
+		private String deviceToken;
+
+		private String alias;
 
 		public String getAccount() {
 			return this.account;
@@ -90,44 +74,12 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 			this.account = account;
 		}
 
-		public String getDeviceToken() {
-			return this.deviceToken;
-		}
-
-		public void setDeviceToken(String deviceToken) {
-			this.deviceToken = deviceToken;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getAlias() {
-			return this.alias;
-		}
-
-		public void setAlias(String alias) {
-			this.alias = alias;
-		}
-
 		public String getLastOnlineTime() {
 			return this.lastOnlineTime;
 		}
 
 		public void setLastOnlineTime(String lastOnlineTime) {
 			this.lastOnlineTime = lastOnlineTime;
-		}
-
-		public Boolean getOnline() {
-			return this.online;
-		}
-
-		public void setOnline(Boolean online) {
-			this.online = online;
 		}
 
 		public String getPhoneNumber() {
@@ -144,6 +96,54 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		public void setPushEnabled(Boolean pushEnabled) {
 			this.pushEnabled = pushEnabled;
+		}
+
+		public String getDeviceType() {
+			return this.deviceType;
+		}
+
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
+		}
+
+		public String getDeviceToken() {
+			return this.deviceToken;
+		}
+
+		public void setDeviceToken(String deviceToken) {
+			this.deviceToken = deviceToken;
+		}
+
+		public String getAlias() {
+			return this.alias;
+		}
+
+		public void setAlias(String alias) {
+			this.alias = alias;
 		}
 	}
 
