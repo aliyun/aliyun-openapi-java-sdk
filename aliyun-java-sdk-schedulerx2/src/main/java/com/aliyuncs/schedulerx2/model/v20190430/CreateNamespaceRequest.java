@@ -25,11 +25,13 @@ import com.aliyuncs.schedulerx2.Endpoint;
 public class CreateNamespaceRequest extends RpcAcsRequest<CreateNamespaceResponse> {
 	   
 
+	private String description;
+
+	private String source;
+
 	private String uid;
 
 	private String name;
-
-	private String description;
 	public CreateNamespaceRequest() {
 		super("schedulerx2", "2019-04-30", "CreateNamespace");
 		setMethod(MethodType.POST);
@@ -37,6 +39,28 @@ public class CreateNamespaceRequest extends RpcAcsRequest<CreateNamespaceRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
 	}
 
 	public String getUid() {
@@ -58,17 +82,6 @@ public class CreateNamespaceRequest extends RpcAcsRequest<CreateNamespaceRespons
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
