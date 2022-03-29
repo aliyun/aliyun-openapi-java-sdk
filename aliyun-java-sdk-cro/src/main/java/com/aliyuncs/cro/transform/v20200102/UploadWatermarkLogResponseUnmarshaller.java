@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.transform.v20210705;
+package com.aliyuncs.cro.transform.v20200102;
 
-import com.aliyuncs.cro.model.v20210705.UploadWatermarkLogResponse;
+import com.aliyuncs.cro.model.v20200102.UploadWatermarkLogResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +23,10 @@ public class UploadWatermarkLogResponseUnmarshaller {
 	public static UploadWatermarkLogResponse unmarshall(UploadWatermarkLogResponse uploadWatermarkLogResponse, UnmarshallerContext _ctx) {
 		
 		uploadWatermarkLogResponse.setRequestId(_ctx.stringValue("UploadWatermarkLogResponse.RequestId"));
-		uploadWatermarkLogResponse.setSuccess(_ctx.booleanValue("UploadWatermarkLogResponse.Success"));
-		uploadWatermarkLogResponse.setErrorCode(_ctx.stringValue("UploadWatermarkLogResponse.ErrorCode"));
-		uploadWatermarkLogResponse.setErrorMsg(_ctx.stringValue("UploadWatermarkLogResponse.ErrorMsg"));
 		uploadWatermarkLogResponse.setDomain(_ctx.stringValue("UploadWatermarkLogResponse.Domain"));
+		uploadWatermarkLogResponse.setErrorMsg(_ctx.stringValue("UploadWatermarkLogResponse.ErrorMsg"));
+		uploadWatermarkLogResponse.setErrorCode(_ctx.stringValue("UploadWatermarkLogResponse.ErrorCode"));
+		uploadWatermarkLogResponse.setSuccess(_ctx.booleanValue("UploadWatermarkLogResponse.Success"));
 	 
 	 	return uploadWatermarkLogResponse;
 	}

@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.transform.v20210705;
+package com.aliyuncs.cro.transform.v20200102;
 
-import com.aliyuncs.cro.model.v20210705.GetWatermarkAppInfoResponse;
+import com.aliyuncs.cro.model.v20200102.GetWatermarkAppInfoResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +23,10 @@ public class GetWatermarkAppInfoResponseUnmarshaller {
 	public static GetWatermarkAppInfoResponse unmarshall(GetWatermarkAppInfoResponse getWatermarkAppInfoResponse, UnmarshallerContext _ctx) {
 		
 		getWatermarkAppInfoResponse.setRequestId(_ctx.stringValue("GetWatermarkAppInfoResponse.RequestId"));
-		getWatermarkAppInfoResponse.setSuccess(_ctx.booleanValue("GetWatermarkAppInfoResponse.Success"));
-		getWatermarkAppInfoResponse.setErrorCode(_ctx.stringValue("GetWatermarkAppInfoResponse.ErrorCode"));
-		getWatermarkAppInfoResponse.setErrorMsg(_ctx.stringValue("GetWatermarkAppInfoResponse.ErrorMsg"));
 		getWatermarkAppInfoResponse.setDomain(_ctx.stringValue("GetWatermarkAppInfoResponse.Domain"));
+		getWatermarkAppInfoResponse.setErrorMsg(_ctx.stringValue("GetWatermarkAppInfoResponse.ErrorMsg"));
+		getWatermarkAppInfoResponse.setErrorCode(_ctx.stringValue("GetWatermarkAppInfoResponse.ErrorCode"));
+		getWatermarkAppInfoResponse.setSuccess(_ctx.booleanValue("GetWatermarkAppInfoResponse.Success"));
 	 
 	 	return getWatermarkAppInfoResponse;
 	}

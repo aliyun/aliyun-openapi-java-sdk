@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.model.v20210705;
+package com.aliyuncs.cro.model.v20200102;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -35,7 +35,7 @@ public class UploadWatermarkLogRequest extends RpcAcsRequest<UploadWatermarkLogR
 
 	private String data;
 	public UploadWatermarkLogRequest() {
-		super("CRO", "2021-07-05", "UploadWatermarkLog", "cro");
+		super("CRO", "2020-01-02", "UploadWatermarkLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

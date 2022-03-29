@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.transform.v20210705;
+package com.aliyuncs.cro.transform.v20200102;
 
-import com.aliyuncs.cro.model.v20210705.ApplyWatermarkLicenseResponse;
+import com.aliyuncs.cro.model.v20200102.ApplyWatermarkLicenseResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +23,10 @@ public class ApplyWatermarkLicenseResponseUnmarshaller {
 	public static ApplyWatermarkLicenseResponse unmarshall(ApplyWatermarkLicenseResponse applyWatermarkLicenseResponse, UnmarshallerContext _ctx) {
 		
 		applyWatermarkLicenseResponse.setRequestId(_ctx.stringValue("ApplyWatermarkLicenseResponse.RequestId"));
-		applyWatermarkLicenseResponse.setSuccess(_ctx.booleanValue("ApplyWatermarkLicenseResponse.Success"));
-		applyWatermarkLicenseResponse.setErrorCode(_ctx.stringValue("ApplyWatermarkLicenseResponse.ErrorCode"));
-		applyWatermarkLicenseResponse.setErrorMsg(_ctx.stringValue("ApplyWatermarkLicenseResponse.ErrorMsg"));
 		applyWatermarkLicenseResponse.setDomain(_ctx.stringValue("ApplyWatermarkLicenseResponse.Domain"));
+		applyWatermarkLicenseResponse.setErrorMsg(_ctx.stringValue("ApplyWatermarkLicenseResponse.ErrorMsg"));
+		applyWatermarkLicenseResponse.setErrorCode(_ctx.stringValue("ApplyWatermarkLicenseResponse.ErrorCode"));
+		applyWatermarkLicenseResponse.setSuccess(_ctx.booleanValue("ApplyWatermarkLicenseResponse.Success"));
 	 
 	 	return applyWatermarkLicenseResponse;
 	}

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.model.v20210705;
+package com.aliyuncs.cro.model.v20200102;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,23 +22,64 @@ import com.aliyuncs.cro.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetWatermarkAppInfoRequest extends RpcAcsRequest<GetWatermarkAppInfoResponse> {
+public class ApplyWatermarkLicenseRequest extends RpcAcsRequest<ApplyWatermarkLicenseResponse> {
 	   
 
+	private String input;
+
+	private String fileType;
+
+	private String secretKey;
+
 	private String sign;
+
+	private String keyId;
 
 	private String time;
 
 	private String body;
 
 	private String nonce;
-	public GetWatermarkAppInfoRequest() {
-		super("CRO", "2021-07-05", "GetWatermarkAppInfo", "cro");
+	public ApplyWatermarkLicenseRequest() {
+		super("CRO", "2020-01-02", "ApplyWatermarkLicense");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
+		}
+	}
+
+	public String getFileType() {
+		return this.fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+		if(fileType != null){
+			putQueryParameter("FileType", fileType);
+		}
+	}
+
+	public String getSecretKey() {
+		return this.secretKey;
+	}
+
+	public void setSecretKey(String secretKey) {
+		this.secretKey = secretKey;
+		if(secretKey != null){
+			putQueryParameter("SecretKey", secretKey);
+		}
 	}
 
 	public String getSign() {
@@ -49,6 +90,17 @@ public class GetWatermarkAppInfoRequest extends RpcAcsRequest<GetWatermarkAppInf
 		this.sign = sign;
 		if(sign != null){
 			putQueryParameter("Sign", sign);
+		}
+	}
+
+	public String getKeyId() {
+		return this.keyId;
+	}
+
+	public void setKeyId(String keyId) {
+		this.keyId = keyId;
+		if(keyId != null){
+			putQueryParameter("KeyId", keyId);
 		}
 	}
 
@@ -86,8 +138,8 @@ public class GetWatermarkAppInfoRequest extends RpcAcsRequest<GetWatermarkAppInf
 	}
 
 	@Override
-	public Class<GetWatermarkAppInfoResponse> getResponseClass() {
-		return GetWatermarkAppInfoResponse.class;
+	public Class<ApplyWatermarkLicenseResponse> getResponseClass() {
+		return ApplyWatermarkLicenseResponse.class;
 	}
 
 }

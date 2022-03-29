@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.model.v20210705;
+package com.aliyuncs.cro.model.v20200102;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,7 +22,7 @@ import com.aliyuncs.cro.Endpoint;
  * @author auto create
  * @version 
  */
-public class ApplyWatermarkLicenseRequest extends RpcAcsRequest<ApplyWatermarkLicenseResponse> {
+public class GetWatermarkAppInfoRequest extends RpcAcsRequest<GetWatermarkAppInfoResponse> {
 	   
 
 	private String sign;
@@ -32,10 +32,8 @@ public class ApplyWatermarkLicenseRequest extends RpcAcsRequest<ApplyWatermarkLi
 	private String body;
 
 	private String nonce;
-
-	private String request;
-	public ApplyWatermarkLicenseRequest() {
-		super("CRO", "2021-07-05", "ApplyWatermarkLicense", "cro");
+	public GetWatermarkAppInfoRequest() {
+		super("CRO", "2020-01-02", "GetWatermarkAppInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -87,20 +85,9 @@ public class ApplyWatermarkLicenseRequest extends RpcAcsRequest<ApplyWatermarkLi
 		}
 	}
 
-	public String getRequest() {
-		return this.request;
-	}
-
-	public void setRequest(String request) {
-		this.request = request;
-		if(request != null){
-			putQueryParameter("Request", request);
-		}
-	}
-
 	@Override
-	public Class<ApplyWatermarkLicenseResponse> getResponseClass() {
-		return ApplyWatermarkLicenseResponse.class;
+	public Class<GetWatermarkAppInfoResponse> getResponseClass() {
+		return GetWatermarkAppInfoResponse.class;
 	}
 
 }

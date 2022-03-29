@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.model.v20210705;
+package com.aliyuncs.cro.model.v20200102;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cro.transform.v20210705.GetWatermarkAppInfoResponseUnmarshaller;
+import com.aliyuncs.cro.transform.v20200102.GetWatermarkAppInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetWatermarkAppInfoResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
+	private String domain;
 
 	private String errorMsg;
 
-	private String domain;
-
 	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
+	private String errorCode;
+
+	private Boolean success;
+
+	public String getDomain() {
+		return this.domain;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setDomain(String domain) {
+		this.domain = domain;
 	}
 
 	public String getErrorMsg() {
@@ -58,20 +50,28 @@ public class GetWatermarkAppInfoResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

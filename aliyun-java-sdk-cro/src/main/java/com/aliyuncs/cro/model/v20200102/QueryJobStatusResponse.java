@@ -12,58 +12,59 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.model.v20210705;
+package com.aliyuncs.cro.model.v20200102;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cro.transform.v20210705.ApplyWatermarkLicenseResponseUnmarshaller;
+import com.aliyuncs.cro.transform.v20200102.QueryJobStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ApplyWatermarkLicenseResponse extends AcsResponse {
+public class QueryJobStatusResponse extends AcsResponse {
 
-	private Boolean success;
+	private Integer status;
 
-	private String errorCode;
+	private Integer code;
 
-	private String errorMsg;
+	private String message;
 
-	private String domain;
+	private Map<Object,Object> data;
 
 	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getStatus() {
+		return this.status;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public String getDomain() {
-		return this.domain;
+	public Map<Object,Object> getData() {
+		return this.data;
 	}
 
-	public void setDomain(String domain) {
-		this.domain = domain;
+	public void setData(Map<Object,Object> data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -75,8 +76,8 @@ public class ApplyWatermarkLicenseResponse extends AcsResponse {
 	}
 
 	@Override
-	public ApplyWatermarkLicenseResponse getInstance(UnmarshallerContext context) {
-		return	ApplyWatermarkLicenseResponseUnmarshaller.unmarshall(this, context);
+	public QueryJobStatusResponse getInstance(UnmarshallerContext context) {
+		return	QueryJobStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

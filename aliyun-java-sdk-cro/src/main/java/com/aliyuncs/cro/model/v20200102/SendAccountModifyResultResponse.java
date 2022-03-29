@@ -12,58 +12,40 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.model.v20210705;
+package com.aliyuncs.cro.model.v20200102;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cro.transform.v20210705.UploadWatermarkLogResponseUnmarshaller;
+import com.aliyuncs.cro.transform.v20200102.SendAccountModifyResultResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadWatermarkLogResponse extends AcsResponse {
+public class SendAccountModifyResultResponse extends AcsResponse {
 
-	private Boolean success;
+	private Integer code;
 
-	private String errorCode;
-
-	private String errorMsg;
-
-	private String domain;
+	private String message;
 
 	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
+	private Boolean success;
+
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -74,9 +56,17 @@ public class UploadWatermarkLogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	@Override
-	public UploadWatermarkLogResponse getInstance(UnmarshallerContext context) {
-		return	UploadWatermarkLogResponseUnmarshaller.unmarshall(this, context);
+	public SendAccountModifyResultResponse getInstance(UnmarshallerContext context) {
+		return	SendAccountModifyResultResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
