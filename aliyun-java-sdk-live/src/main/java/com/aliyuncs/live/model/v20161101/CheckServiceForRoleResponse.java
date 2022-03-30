@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckServiceForRoleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean deletable;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getDeletable() {
 		return this.deletable;
@@ -42,6 +34,14 @@ public class CheckServiceForRoleResponse extends AcsResponse {
 
 	public void setDeletable(Boolean deletable) {
 		this.deletable = deletable;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

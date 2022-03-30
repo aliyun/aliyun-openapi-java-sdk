@@ -31,8 +31,8 @@ public class DescribeLiveStreamHistoryUserNumResponseUnmarshaller {
 		List<LiveStreamUserNumInfo> liveStreamUserNumInfos = new ArrayList<LiveStreamUserNumInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamHistoryUserNumResponse.LiveStreamUserNumInfos.Length"); i++) {
 			LiveStreamUserNumInfo liveStreamUserNumInfo = new LiveStreamUserNumInfo();
-			liveStreamUserNumInfo.setStreamTime(_ctx.stringValue("DescribeLiveStreamHistoryUserNumResponse.LiveStreamUserNumInfos["+ i +"].StreamTime"));
 			liveStreamUserNumInfo.setUserNum(_ctx.stringValue("DescribeLiveStreamHistoryUserNumResponse.LiveStreamUserNumInfos["+ i +"].UserNum"));
+			liveStreamUserNumInfo.setStreamTime(_ctx.stringValue("DescribeLiveStreamHistoryUserNumResponse.LiveStreamUserNumInfos["+ i +"].StreamTime"));
 
 			liveStreamUserNumInfos.add(liveStreamUserNumInfo);
 		}

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StopPlaylistResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String programId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getProgramId() {
 		return this.programId;
@@ -42,6 +34,14 @@ public class StopPlaylistResponse extends AcsResponse {
 
 	public void setProgramId(String programId) {
 		this.programId = programId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

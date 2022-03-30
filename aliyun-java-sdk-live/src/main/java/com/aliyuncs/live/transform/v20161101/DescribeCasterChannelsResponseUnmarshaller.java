@@ -32,13 +32,13 @@ public class DescribeCasterChannelsResponseUnmarshaller {
 		List<Channel> channels = new ArrayList<Channel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterChannelsResponse.Channels.Length"); i++) {
 			Channel channel = new Channel();
+			channel.setInputType(_ctx.integerValue("DescribeCasterChannelsResponse.Channels["+ i +"].InputType"));
+			channel.setRtmpUrl(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].RtmpUrl"));
 			channel.setChannelId(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].ChannelId"));
+			channel.setRtsUrl(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].RtsUrl"));
+			channel.setFaceBeauty(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].FaceBeauty"));
 			channel.setResourceId(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].ResourceId"));
 			channel.setStreamUrl(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].StreamUrl"));
-			channel.setRtmpUrl(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].RtmpUrl"));
-			channel.setRtsUrl(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].RtsUrl"));
-			channel.setInputType(_ctx.integerValue("DescribeCasterChannelsResponse.Channels["+ i +"].InputType"));
-			channel.setFaceBeauty(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].FaceBeauty"));
 
 			channels.add(channel);
 		}

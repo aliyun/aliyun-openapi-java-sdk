@@ -23,8 +23,8 @@ public class DeleteMultiRateConfigResponseUnmarshaller {
 	public static DeleteMultiRateConfigResponse unmarshall(DeleteMultiRateConfigResponse deleteMultiRateConfigResponse, UnmarshallerContext _ctx) {
 		
 		deleteMultiRateConfigResponse.setRequestId(_ctx.stringValue("DeleteMultiRateConfigResponse.RequestId"));
-		deleteMultiRateConfigResponse.setMessage(_ctx.stringValue("DeleteMultiRateConfigResponse.Message"));
 		deleteMultiRateConfigResponse.setCode(_ctx.integerValue("DeleteMultiRateConfigResponse.Code"));
+		deleteMultiRateConfigResponse.setMessage(_ctx.stringValue("DeleteMultiRateConfigResponse.Message"));
 	 
 	 	return deleteMultiRateConfigResponse;
 	}

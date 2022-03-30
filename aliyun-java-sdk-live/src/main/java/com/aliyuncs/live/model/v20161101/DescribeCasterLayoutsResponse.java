@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterLayoutsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<Layout> layouts;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Layout> getLayouts() {
@@ -63,9 +63,9 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 		private List<AudioLayer> audioLayers;
 
-		private List<String> blendList;
-
 		private List<String> mixList;
+
+		private List<String> blendList;
 
 		public String getLayoutId() {
 			return this.layoutId;
@@ -91,14 +91,6 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 			this.audioLayers = audioLayers;
 		}
 
-		public List<String> getBlendList() {
-			return this.blendList;
-		}
-
-		public void setBlendList(List<String> blendList) {
-			this.blendList = blendList;
-		}
-
 		public List<String> getMixList() {
 			return this.mixList;
 		}
@@ -107,26 +99,42 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 			this.mixList = mixList;
 		}
 
+		public List<String> getBlendList() {
+			return this.blendList;
+		}
+
+		public void setBlendList(List<String> blendList) {
+			this.blendList = blendList;
+		}
+
 		public static class VideoLayer {
-
-			private String fillMode;
-
-			private Float heightNormalized;
 
 			private Float widthNormalized;
 
-			private String positionRefer;
-
 			private Integer fixedDelayDuration;
+
+			private Float heightNormalized;
+
+			private String fillMode;
+
+			private String positionRefer;
 
 			private List<Float> positionNormalizeds;
 
-			public String getFillMode() {
-				return this.fillMode;
+			public Float getWidthNormalized() {
+				return this.widthNormalized;
 			}
 
-			public void setFillMode(String fillMode) {
-				this.fillMode = fillMode;
+			public void setWidthNormalized(Float widthNormalized) {
+				this.widthNormalized = widthNormalized;
+			}
+
+			public Integer getFixedDelayDuration() {
+				return this.fixedDelayDuration;
+			}
+
+			public void setFixedDelayDuration(Integer fixedDelayDuration) {
+				this.fixedDelayDuration = fixedDelayDuration;
 			}
 
 			public Float getHeightNormalized() {
@@ -137,12 +145,12 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 				this.heightNormalized = heightNormalized;
 			}
 
-			public Float getWidthNormalized() {
-				return this.widthNormalized;
+			public String getFillMode() {
+				return this.fillMode;
 			}
 
-			public void setWidthNormalized(Float widthNormalized) {
-				this.widthNormalized = widthNormalized;
+			public void setFillMode(String fillMode) {
+				this.fillMode = fillMode;
 			}
 
 			public String getPositionRefer() {
@@ -151,14 +159,6 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 			public void setPositionRefer(String positionRefer) {
 				this.positionRefer = positionRefer;
-			}
-
-			public Integer getFixedDelayDuration() {
-				return this.fixedDelayDuration;
-			}
-
-			public void setFixedDelayDuration(Integer fixedDelayDuration) {
-				this.fixedDelayDuration = fixedDelayDuration;
 			}
 
 			public List<Float> getPositionNormalizeds() {
@@ -174,9 +174,9 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 			private Float volumeRate;
 
-			private String validChannel;
-
 			private Integer fixedDelayDuration;
+
+			private String validChannel;
 
 			public Float getVolumeRate() {
 				return this.volumeRate;
@@ -186,20 +186,20 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 				this.volumeRate = volumeRate;
 			}
 
-			public String getValidChannel() {
-				return this.validChannel;
-			}
-
-			public void setValidChannel(String validChannel) {
-				this.validChannel = validChannel;
-			}
-
 			public Integer getFixedDelayDuration() {
 				return this.fixedDelayDuration;
 			}
 
 			public void setFixedDelayDuration(Integer fixedDelayDuration) {
 				this.fixedDelayDuration = fixedDelayDuration;
+			}
+
+			public String getValidChannel() {
+				return this.validChannel;
+			}
+
+			public void setValidChannel(String validChannel) {
+				this.validChannel = validChannel;
 			}
 		}
 	}

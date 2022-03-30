@@ -57,22 +57,22 @@ public class DescribeLiveDomainStreamWaterLevelResponse extends AcsResponse {
 
 	public static class LiveDomainWaterLevel {
 
-		private String domainName;
+		private Integer domainRawLimit;
 
 		private Integer domainRawCount;
 
 		private Integer domainTranscodeCount;
 
-		private Integer domainRawLimit;
+		private String domainName;
 
 		private Integer domainTranscodeLimit;
 
-		public String getDomainName() {
-			return this.domainName;
+		public Integer getDomainRawLimit() {
+			return this.domainRawLimit;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setDomainRawLimit(Integer domainRawLimit) {
+			this.domainRawLimit = domainRawLimit;
 		}
 
 		public Integer getDomainRawCount() {
@@ -91,12 +91,12 @@ public class DescribeLiveDomainStreamWaterLevelResponse extends AcsResponse {
 			this.domainTranscodeCount = domainTranscodeCount;
 		}
 
-		public Integer getDomainRawLimit() {
-			return this.domainRawLimit;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setDomainRawLimit(Integer domainRawLimit) {
-			this.domainRawLimit = domainRawLimit;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public Integer getDomainTranscodeLimit() {
@@ -110,15 +110,23 @@ public class DescribeLiveDomainStreamWaterLevelResponse extends AcsResponse {
 
 	public static class LiveUidWaterLevel {
 
-		private String aliUid;
+		private Integer uidTranscodeLimit;
 
-		private Integer uidRawCount;
+		private String aliUid;
 
 		private Integer uidTranscodeCount;
 
 		private Integer uidRawLimit;
 
-		private Integer uidTranscodeLimit;
+		private Integer uidRawCount;
+
+		public Integer getUidTranscodeLimit() {
+			return this.uidTranscodeLimit;
+		}
+
+		public void setUidTranscodeLimit(Integer uidTranscodeLimit) {
+			this.uidTranscodeLimit = uidTranscodeLimit;
+		}
 
 		public String getAliUid() {
 			return this.aliUid;
@@ -126,14 +134,6 @@ public class DescribeLiveDomainStreamWaterLevelResponse extends AcsResponse {
 
 		public void setAliUid(String aliUid) {
 			this.aliUid = aliUid;
-		}
-
-		public Integer getUidRawCount() {
-			return this.uidRawCount;
-		}
-
-		public void setUidRawCount(Integer uidRawCount) {
-			this.uidRawCount = uidRawCount;
 		}
 
 		public Integer getUidTranscodeCount() {
@@ -152,12 +152,12 @@ public class DescribeLiveDomainStreamWaterLevelResponse extends AcsResponse {
 			this.uidRawLimit = uidRawLimit;
 		}
 
-		public Integer getUidTranscodeLimit() {
-			return this.uidTranscodeLimit;
+		public Integer getUidRawCount() {
+			return this.uidRawCount;
 		}
 
-		public void setUidTranscodeLimit(Integer uidTranscodeLimit) {
-			this.uidTranscodeLimit = uidTranscodeLimit;
+		public void setUidRawCount(Integer uidRawCount) {
+			this.uidRawCount = uidRawCount;
 		}
 	}
 

@@ -49,9 +49,9 @@ public class DescribeDomainWithIntegrityResponse extends AcsResponse {
 
 		private String name;
 
-		private List<String> columns;
-
 		private List<String> points;
+
+		private List<String> columns;
 
 		public String getName() {
 			return this.name;
@@ -61,20 +61,20 @@ public class DescribeDomainWithIntegrityResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public List<String> getColumns() {
-			return this.columns;
-		}
-
-		public void setColumns(List<String> columns) {
-			this.columns = columns;
-		}
-
 		public List<String> getPoints() {
 			return this.points;
 		}
 
 		public void setPoints(List<String> points) {
 			this.points = points;
+		}
+
+		public List<String> getColumns() {
+			return this.columns;
+		}
+
+		public void setColumns(List<String> columns) {
+			this.columns = columns;
 		}
 	}
 

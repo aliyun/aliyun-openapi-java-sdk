@@ -47,31 +47,15 @@ public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
-		private String domain;
-
 		private String type;
 
 		private Long duration;
 
+		private String domain;
+
+		private String timeStamp;
+
 		private Long count;
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
 
 		public String getType() {
 			return this.type;
@@ -87,6 +71,22 @@ public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
 
 		public void setDuration(Long duration) {
 			this.duration = duration;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public Long getCount() {

@@ -46,41 +46,33 @@ public class CreateLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
 	public static class RecordInfo {
 
-		private String recordId;
-
 		private String recordUrl;
-
-		private String domainName;
-
-		private String appName;
 
 		private String streamName;
 
-		private String ossBucket;
+		private String createTime;
 
-		private String ossEndpoint;
-
-		private String ossObject;
-
-		private String startTime;
-
-		private String endTime;
-
-		private Float duration;
+		private String recordId;
 
 		private Integer height;
 
+		private String ossBucket;
+
+		private String domainName;
+
+		private String ossObject;
+
+		private String endTime;
+
+		private String appName;
+
+		private String startTime;
+
 		private Integer width;
 
-		private String createTime;
+		private Float duration;
 
-		public String getRecordId() {
-			return this.recordId;
-		}
-
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
-		}
+		private String ossEndpoint;
 
 		public String getRecordUrl() {
 			return this.recordUrl;
@@ -88,22 +80,6 @@ public class CreateLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
 		public void setRecordUrl(String recordUrl) {
 			this.recordUrl = recordUrl;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
 		}
 
 		public String getStreamName() {
@@ -114,52 +90,20 @@ public class CreateLiveStreamRecordIndexFilesResponse extends AcsResponse {
 			this.streamName = streamName;
 		}
 
-		public String getOssBucket() {
-			return this.ossBucket;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setOssBucket(String ossBucket) {
-			this.ossBucket = ossBucket;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
+		public String getRecordId() {
+			return this.recordId;
 		}
 
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
-		}
-
-		public String getOssObject() {
-			return this.ossObject;
-		}
-
-		public void setOssObject(String ossObject) {
-			this.ossObject = ossObject;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public Float getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Float duration) {
-			this.duration = duration;
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
 		}
 
 		public Integer getHeight() {
@@ -170,6 +114,54 @@ public class CreateLiveStreamRecordIndexFilesResponse extends AcsResponse {
 			this.height = height;
 		}
 
+		public String getOssBucket() {
+			return this.ossBucket;
+		}
+
+		public void setOssBucket(String ossBucket) {
+			this.ossBucket = ossBucket;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getOssObject() {
+			return this.ossObject;
+		}
+
+		public void setOssObject(String ossObject) {
+			this.ossObject = ossObject;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
 		public Integer getWidth() {
 			return this.width;
 		}
@@ -178,12 +170,20 @@ public class CreateLiveStreamRecordIndexFilesResponse extends AcsResponse {
 			this.width = width;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public Float getDuration() {
+			return this.duration;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setDuration(Float duration) {
+			this.duration = duration;
+		}
+
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
+		}
+
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
 		}
 	}
 

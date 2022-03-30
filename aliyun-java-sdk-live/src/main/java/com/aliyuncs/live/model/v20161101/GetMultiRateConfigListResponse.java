@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMultiRateConfigListResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer code;
 
 	private String message;
 
-	private Integer code;
+	private String requestId;
 
 	private List<Info> groupInfo;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class GetMultiRateConfigListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Info> getGroupInfo() {
@@ -67,29 +67,13 @@ public class GetMultiRateConfigListResponse extends AcsResponse {
 
 	public static class Info {
 
-		private String app;
-
-		private String avFormat;
-
 		private String groupId;
 
 		private Integer count;
 
-		public String getApp() {
-			return this.app;
-		}
+		private String app;
 
-		public void setApp(String app) {
-			this.app = app;
-		}
-
-		public String getAvFormat() {
-			return this.avFormat;
-		}
-
-		public void setAvFormat(String avFormat) {
-			this.avFormat = avFormat;
-		}
+		private String avFormat;
 
 		public String getGroupId() {
 			return this.groupId;
@@ -105,6 +89,22 @@ public class GetMultiRateConfigListResponse extends AcsResponse {
 
 		public void setCount(Integer count) {
 			this.count = count;
+		}
+
+		public String getApp() {
+			return this.app;
+		}
+
+		public void setApp(String app) {
+			this.app = app;
+		}
+
+		public String getAvFormat() {
+			return this.avFormat;
+		}
+
+		public void setAvFormat(String avFormat) {
+			this.avFormat = avFormat;
 		}
 	}
 

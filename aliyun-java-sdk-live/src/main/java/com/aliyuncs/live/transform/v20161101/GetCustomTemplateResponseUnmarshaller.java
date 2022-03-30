@@ -23,8 +23,8 @@ public class GetCustomTemplateResponseUnmarshaller {
 	public static GetCustomTemplateResponse unmarshall(GetCustomTemplateResponse getCustomTemplateResponse, UnmarshallerContext _ctx) {
 		
 		getCustomTemplateResponse.setRequestId(_ctx.stringValue("GetCustomTemplateResponse.RequestId"));
-		getCustomTemplateResponse.setTemplate(_ctx.stringValue("GetCustomTemplateResponse.Template"));
 		getCustomTemplateResponse.setCustomTemplate(_ctx.stringValue("GetCustomTemplateResponse.CustomTemplate"));
+		getCustomTemplateResponse.setTemplate(_ctx.stringValue("GetCustomTemplateResponse.Template"));
 	 
 	 	return getCustomTemplateResponse;
 	}

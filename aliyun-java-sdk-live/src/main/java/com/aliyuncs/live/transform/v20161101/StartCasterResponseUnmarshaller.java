@@ -33,9 +33,9 @@ public class StartCasterResponseUnmarshaller {
 		List<SceneInfo> pvwSceneInfos = new ArrayList<SceneInfo>();
 		for (int i = 0; i < _ctx.lengthValue("StartCasterResponse.PvwSceneInfos.Length"); i++) {
 			SceneInfo sceneInfo = new SceneInfo();
+			sceneInfo.setRtsUrl(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].RtsUrl"));
 			sceneInfo.setSceneId(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].SceneId"));
 			sceneInfo.setStreamUrl(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].StreamUrl"));
-			sceneInfo.setRtsUrl(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].RtsUrl"));
 
 			pvwSceneInfos.add(sceneInfo);
 		}
@@ -44,16 +44,16 @@ public class StartCasterResponseUnmarshaller {
 		List<SceneInfo1> pgmSceneInfos = new ArrayList<SceneInfo1>();
 		for (int i = 0; i < _ctx.lengthValue("StartCasterResponse.PgmSceneInfos.Length"); i++) {
 			SceneInfo1 sceneInfo1 = new SceneInfo1();
+			sceneInfo1.setRtsUrl(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].RtsUrl"));
 			sceneInfo1.setSceneId(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].SceneId"));
 			sceneInfo1.setStreamUrl(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamUrl"));
-			sceneInfo1.setRtsUrl(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].RtsUrl"));
 
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();
 			for (int j = 0; j < _ctx.lengthValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos.Length"); j++) {
 				StreamInfo streamInfo = new StreamInfo();
-				streamInfo.setTranscodeConfig(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
 				streamInfo.setVideoFormat(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].VideoFormat"));
 				streamInfo.setOutputStreamUrl(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
+				streamInfo.setTranscodeConfig(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
 
 				streamInfos.add(streamInfo);
 			}

@@ -32,12 +32,12 @@ public class ListPlaylistItemsResponseUnmarshaller {
 		List<ProgramItem> programItems = new ArrayList<ProgramItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPlaylistItemsResponse.ProgramItems.Length"); i++) {
 			ProgramItem programItem = new ProgramItem();
-			programItem.setProgramId(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ProgramId"));
-			programItem.setProgramItemId(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ProgramItemId"));
-			programItem.setProgramItemName(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ProgramItemName"));
-			programItem.setResourceType(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ResourceType"));
-			programItem.setResourceValue(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ResourceValue"));
 			programItem.setIndex(_ctx.integerValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].Index"));
+			programItem.setResourceType(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ResourceType"));
+			programItem.setProgramItemId(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ProgramItemId"));
+			programItem.setProgramId(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ProgramId"));
+			programItem.setProgramItemName(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ProgramItemName"));
+			programItem.setResourceValue(_ctx.stringValue("ListPlaylistItemsResponse.ProgramItems["+ i +"].ResourceValue"));
 
 			programItems.add(programItem);
 		}

@@ -34,13 +34,13 @@ public class DescribeLiveRecordVodConfigsResponseUnmarshaller {
 		List<LiveRecordVodConfig> liveRecordVodConfigs = new ArrayList<LiveRecordVodConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs.Length"); i++) {
 			LiveRecordVodConfig liveRecordVodConfig = new LiveRecordVodConfig();
-			liveRecordVodConfig.setCreateTime(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CreateTime"));
-			liveRecordVodConfig.setDomainName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].DomainName"));
 			liveRecordVodConfig.setAppName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AppName"));
+			liveRecordVodConfig.setAutoCompose(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AutoCompose"));
 			liveRecordVodConfig.setStreamName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].StreamName"));
+			liveRecordVodConfig.setCreateTime(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CreateTime"));
 			liveRecordVodConfig.setVodTranscodeGroupId(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId"));
 			liveRecordVodConfig.setCycleDuration(_ctx.integerValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CycleDuration"));
-			liveRecordVodConfig.setAutoCompose(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AutoCompose"));
+			liveRecordVodConfig.setDomainName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].DomainName"));
 			liveRecordVodConfig.setComposeVodTranscodeGroupId(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].ComposeVodTranscodeGroupId"));
 
 			liveRecordVodConfigs.add(liveRecordVodConfig);

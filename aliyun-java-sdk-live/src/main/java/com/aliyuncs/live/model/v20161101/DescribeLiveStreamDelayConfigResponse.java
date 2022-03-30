@@ -66,17 +66,9 @@ public class DescribeLiveStreamDelayConfigResponse extends AcsResponse {
 
 	public static class LiveStreamHlsDelayConfig {
 
-		private String level;
-
 		private Integer delay;
 
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
+		private String level;
 
 		public Integer getDelay() {
 			return this.delay;
@@ -84,22 +76,22 @@ public class DescribeLiveStreamDelayConfigResponse extends AcsResponse {
 
 		public void setDelay(Integer delay) {
 			this.delay = delay;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 	}
 
 	public static class LiveStreamFlvDelayConfig {
 
-		private String level;
-
 		private Integer delay;
 
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
+		private String level;
 
 		public Integer getDelay() {
 			return this.delay;
@@ -107,22 +99,22 @@ public class DescribeLiveStreamDelayConfigResponse extends AcsResponse {
 
 		public void setDelay(Integer delay) {
 			this.delay = delay;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 	}
 
 	public static class LiveStreamRtmpDelayConfig {
 
-		private String level;
-
 		private Integer delay;
 
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
+		private String level;
 
 		public Integer getDelay() {
 			return this.delay;
@@ -130,6 +122,14 @@ public class DescribeLiveStreamDelayConfigResponse extends AcsResponse {
 
 		public void setDelay(Integer delay) {
 			this.delay = delay;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 	}
 

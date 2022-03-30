@@ -47,9 +47,9 @@ public class DescribeLiveAudioAuditConfigResponse extends AcsResponse {
 
 	public static class LiveAudioAuditConfig {
 
-		private String domainName;
-
 		private String appName;
+
+		private String domainName;
 
 		private String streamName;
 
@@ -57,20 +57,20 @@ public class DescribeLiveAudioAuditConfigResponse extends AcsResponse {
 
 		private List<String> scenes;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
 		public String getAppName() {
 			return this.appName;
 		}
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getStreamName() {

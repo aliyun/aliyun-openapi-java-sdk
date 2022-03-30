@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterChannelsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<Channel> channels;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Channel> getChannels() {
@@ -57,19 +57,35 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 	public static class Channel {
 
+		private Integer inputType;
+
+		private String rtmpUrl;
+
 		private String channelId;
+
+		private String rtsUrl;
+
+		private String faceBeauty;
 
 		private String resourceId;
 
 		private String streamUrl;
 
-		private String rtmpUrl;
+		public Integer getInputType() {
+			return this.inputType;
+		}
 
-		private String rtsUrl;
+		public void setInputType(Integer inputType) {
+			this.inputType = inputType;
+		}
 
-		private Integer inputType;
+		public String getRtmpUrl() {
+			return this.rtmpUrl;
+		}
 
-		private String faceBeauty;
+		public void setRtmpUrl(String rtmpUrl) {
+			this.rtmpUrl = rtmpUrl;
+		}
 
 		public String getChannelId() {
 			return this.channelId;
@@ -77,6 +93,22 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 		public void setChannelId(String channelId) {
 			this.channelId = channelId;
+		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
+		}
+
+		public String getFaceBeauty() {
+			return this.faceBeauty;
+		}
+
+		public void setFaceBeauty(String faceBeauty) {
+			this.faceBeauty = faceBeauty;
 		}
 
 		public String getResourceId() {
@@ -93,38 +125,6 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
-		}
-
-		public String getRtmpUrl() {
-			return this.rtmpUrl;
-		}
-
-		public void setRtmpUrl(String rtmpUrl) {
-			this.rtmpUrl = rtmpUrl;
-		}
-
-		public String getRtsUrl() {
-			return this.rtsUrl;
-		}
-
-		public void setRtsUrl(String rtsUrl) {
-			this.rtsUrl = rtsUrl;
-		}
-
-		public Integer getInputType() {
-			return this.inputType;
-		}
-
-		public void setInputType(Integer inputType) {
-			this.inputType = inputType;
-		}
-
-		public String getFaceBeauty() {
-			return this.faceBeauty;
-		}
-
-		public void setFaceBeauty(String faceBeauty) {
-			this.faceBeauty = faceBeauty;
 		}
 	}
 

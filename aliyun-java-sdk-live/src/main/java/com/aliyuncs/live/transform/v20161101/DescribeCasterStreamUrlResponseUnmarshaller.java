@@ -34,18 +34,18 @@ public class DescribeCasterStreamUrlResponseUnmarshaller {
 		List<CasterStream> casterStreams = new ArrayList<CasterStream>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterStreamUrlResponse.CasterStreams.Length"); i++) {
 			CasterStream casterStream = new CasterStream();
-			casterStream.setSceneId(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].SceneId"));
-			casterStream.setStreamUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamUrl"));
-			casterStream.setRtmpUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].RtmpUrl"));
 			casterStream.setRtsUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].RtsUrl"));
+			casterStream.setRtmpUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].RtmpUrl"));
+			casterStream.setSceneId(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].SceneId"));
 			casterStream.setOutputType(_ctx.integerValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].OutputType"));
+			casterStream.setStreamUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamUrl"));
 
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos.Length"); j++) {
 				StreamInfo streamInfo = new StreamInfo();
-				streamInfo.setTranscodeConfig(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
 				streamInfo.setVideoFormat(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].VideoFormat"));
 				streamInfo.setOutputStreamUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
+				streamInfo.setTranscodeConfig(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
 
 				streamInfos.add(streamInfo);
 			}

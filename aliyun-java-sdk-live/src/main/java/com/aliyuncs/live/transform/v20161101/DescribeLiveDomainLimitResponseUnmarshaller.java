@@ -31,9 +31,9 @@ public class DescribeLiveDomainLimitResponseUnmarshaller {
 		List<LiveDomainLimit> liveDomainLimitList = new ArrayList<LiveDomainLimit>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList.Length"); i++) {
 			LiveDomainLimit liveDomainLimit = new LiveDomainLimit();
+			liveDomainLimit.setLimitTranscodeNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].LimitTranscodeNum"));
 			liveDomainLimit.setDomainName(_ctx.stringValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].DomainName"));
 			liveDomainLimit.setLimitNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].LimitNum"));
-			liveDomainLimit.setLimitTranscodeNum(_ctx.integerValue("DescribeLiveDomainLimitResponse.LiveDomainLimitList["+ i +"].LimitTranscodeNum"));
 
 			liveDomainLimitList.add(liveDomainLimit);
 		}

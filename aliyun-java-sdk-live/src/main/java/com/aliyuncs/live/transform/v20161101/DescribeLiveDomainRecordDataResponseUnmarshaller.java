@@ -36,9 +36,9 @@ public class DescribeLiveDomainRecordDataResponseUnmarshaller {
 			recordDataInfo.setTotal(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Total"));
 
 			Detail detail = new Detail();
-			detail.setMP4(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.MP4"));
 			detail.setFLV(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.FLV"));
 			detail.setTS(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.TS"));
+			detail.setMP4(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.MP4"));
 			recordDataInfo.setDetail(detail);
 
 			recordDataInfos.add(recordDataInfo);

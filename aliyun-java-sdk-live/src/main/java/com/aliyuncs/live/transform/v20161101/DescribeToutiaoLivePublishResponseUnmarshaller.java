@@ -32,15 +32,15 @@ public class DescribeToutiaoLivePublishResponseUnmarshaller {
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeToutiaoLivePublishResponse.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
+			contentItem.setDomain(_ctx.stringValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Domain"));
+			contentItem.setStreamName(_ctx.stringValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].StreamName"));
 			contentItem.setApp(_ctx.stringValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].App"));
+			contentItem.setFps(_ctx.floatValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Fps"));
+			contentItem.setFlr(_ctx.floatValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Flr"));
+			contentItem.setTimestamp(_ctx.longValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Timestamp"));
 			contentItem.setBitrate(_ctx.floatValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Bitrate"));
 			contentItem.setBwDiff(_ctx.floatValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].BwDiff"));
 			contentItem.setCdnName(_ctx.stringValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].CdnName"));
-			contentItem.setDomain(_ctx.stringValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Domain"));
-			contentItem.setFlr(_ctx.floatValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Flr"));
-			contentItem.setFps(_ctx.floatValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Fps"));
-			contentItem.setStreamName(_ctx.stringValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].StreamName"));
-			contentItem.setTimestamp(_ctx.longValue("DescribeToutiaoLivePublishResponse.Content["+ i +"].Timestamp"));
 
 			content.add(contentItem);
 		}
