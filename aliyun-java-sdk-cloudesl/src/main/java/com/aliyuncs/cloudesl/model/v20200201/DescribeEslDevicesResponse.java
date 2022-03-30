@@ -25,29 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEslDevicesResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String errorMessage;
+
+	private Boolean success;
 
 	private String errorCode;
 
-	private Integer pageSize;
+	private String code;
 
 	private String message;
+
+	private String dynamicMessage;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private Integer totalCount;
 
 	private String dynamicCode;
 
-	private String code;
-
-	private Integer pageNumber;
-
-	private String dynamicMessage;
-
-	private String requestId;
-
-	private Boolean success;
-
 	private List<EslDeviceInfo> eslDevices;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getErrorMessage() {
 		return this.errorMessage;
@@ -55,6 +63,14 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -65,12 +81,12 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -79,6 +95,30 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getTotalCount() {
@@ -97,46 +137,6 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public List<EslDeviceInfo> getEslDevices() {
 		return this.eslDevices;
 	}
@@ -147,50 +147,36 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 
 	public static class EslDeviceInfo {
 
-		private String lastCommunicateTime;
-
-		private String model;
-
-		private String eslStatus;
+		private String type;
 
 		private String storeId;
 
 		private String eslBarCode;
 
-		private String type;
+		private String model;
 
-		private String mac;
-
-		private Integer batteryLevel;
-
-		private Integer screenWidth;
+		private String lastCommunicateTime;
 
 		private Integer screenHeight;
 
+		private Integer screenWidth;
+
 		private Integer eslSignal;
 
-		public String getLastCommunicateTime() {
-			return this.lastCommunicateTime;
+		private Integer batteryLevel;
+
+		private String eslStatus;
+
+		private String mac;
+
+		private String typeEncode;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setLastCommunicateTime(String lastCommunicateTime) {
-			this.lastCommunicateTime = lastCommunicateTime;
-		}
-
-		public String getModel() {
-			return this.model;
-		}
-
-		public void setModel(String model) {
-			this.model = model;
-		}
-
-		public String getEslStatus() {
-			return this.eslStatus;
-		}
-
-		public void setEslStatus(String eslStatus) {
-			this.eslStatus = eslStatus;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getStoreId() {
@@ -209,36 +195,20 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 			this.eslBarCode = eslBarCode;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getModel() {
+			return this.model;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setModel(String model) {
+			this.model = model;
 		}
 
-		public String getMac() {
-			return this.mac;
+		public String getLastCommunicateTime() {
+			return this.lastCommunicateTime;
 		}
 
-		public void setMac(String mac) {
-			this.mac = mac;
-		}
-
-		public Integer getBatteryLevel() {
-			return this.batteryLevel;
-		}
-
-		public void setBatteryLevel(Integer batteryLevel) {
-			this.batteryLevel = batteryLevel;
-		}
-
-		public Integer getScreenWidth() {
-			return this.screenWidth;
-		}
-
-		public void setScreenWidth(Integer screenWidth) {
-			this.screenWidth = screenWidth;
+		public void setLastCommunicateTime(String lastCommunicateTime) {
+			this.lastCommunicateTime = lastCommunicateTime;
 		}
 
 		public Integer getScreenHeight() {
@@ -249,12 +219,52 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 			this.screenHeight = screenHeight;
 		}
 
+		public Integer getScreenWidth() {
+			return this.screenWidth;
+		}
+
+		public void setScreenWidth(Integer screenWidth) {
+			this.screenWidth = screenWidth;
+		}
+
 		public Integer getEslSignal() {
 			return this.eslSignal;
 		}
 
 		public void setEslSignal(Integer eslSignal) {
 			this.eslSignal = eslSignal;
+		}
+
+		public Integer getBatteryLevel() {
+			return this.batteryLevel;
+		}
+
+		public void setBatteryLevel(Integer batteryLevel) {
+			this.batteryLevel = batteryLevel;
+		}
+
+		public String getEslStatus() {
+			return this.eslStatus;
+		}
+
+		public void setEslStatus(String eslStatus) {
+			this.eslStatus = eslStatus;
+		}
+
+		public String getMac() {
+			return this.mac;
+		}
+
+		public void setMac(String mac) {
+			this.mac = mac;
+		}
+
+		public String getTypeEncode() {
+			return this.typeEncode;
+		}
+
+		public void setTypeEncode(String typeEncode) {
+			this.typeEncode = typeEncode;
 		}
 	}
 
