@@ -33,12 +33,12 @@ public class ListPrometheusAlertTemplatesResponseUnmarshaller {
 		List<PrometheusAlertTemplate> prometheusAlertTemplates = new ArrayList<PrometheusAlertTemplate>();
 		for (int i = 0; i < _ctx.lengthValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates.Length"); i++) {
 			PrometheusAlertTemplate prometheusAlertTemplate = new PrometheusAlertTemplate();
-			prometheusAlertTemplate.setAlertName(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].AlertName"));
-			prometheusAlertTemplate.setDescription(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].Description"));
 			prometheusAlertTemplate.setType(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].Type"));
+			prometheusAlertTemplate.setDescription(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].Description"));
 			prometheusAlertTemplate.setExpression(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].Expression"));
-			prometheusAlertTemplate.setDuration(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].Duration"));
 			prometheusAlertTemplate.setVersion(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].Version"));
+			prometheusAlertTemplate.setDuration(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].Duration"));
+			prometheusAlertTemplate.setAlertName(_ctx.stringValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].AlertName"));
 
 			List<Label> labels = new ArrayList<Label>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrometheusAlertTemplatesResponse.PrometheusAlertTemplates["+ i +"].Labels.Length"); j++) {

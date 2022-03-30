@@ -47,21 +47,13 @@ public class SearchAlertContactResponse extends AcsResponse {
 
 	public static class PageBean {
 
-		private Integer totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<Contact> contacts;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -79,6 +71,14 @@ public class SearchAlertContactResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<Contact> getContacts() {
 			return this.contacts;
 		}
@@ -89,66 +89,34 @@ public class SearchAlertContactResponse extends AcsResponse {
 
 		public static class Contact {
 
-			private Long contactId;
-
-			private String contactName;
-
-			private String phone;
-
-			private String email;
-
-			private String userId;
+			private Long updateTime;
 
 			private String dingRobot;
 
+			private String webhook;
+
+			private String email;
+
+			private Long contactId;
+
 			private Long createTime;
 
-			private Long updateTime;
+			private String userId;
+
+			private String contactName;
 
 			private Boolean systemNoc;
 
-			private String webhook;
-
 			private String content;
 
-			public Long getContactId() {
-				return this.contactId;
+			private String phone;
+
+			public Long getUpdateTime() {
+				return this.updateTime;
 			}
 
-			public void setContactId(Long contactId) {
-				this.contactId = contactId;
-			}
-
-			public String getContactName() {
-				return this.contactName;
-			}
-
-			public void setContactName(String contactName) {
-				this.contactName = contactName;
-			}
-
-			public String getPhone() {
-				return this.phone;
-			}
-
-			public void setPhone(String phone) {
-				this.phone = phone;
-			}
-
-			public String getEmail() {
-				return this.email;
-			}
-
-			public void setEmail(String email) {
-				this.email = email;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public String getDingRobot() {
@@ -159,6 +127,30 @@ public class SearchAlertContactResponse extends AcsResponse {
 				this.dingRobot = dingRobot;
 			}
 
+			public String getWebhook() {
+				return this.webhook;
+			}
+
+			public void setWebhook(String webhook) {
+				this.webhook = webhook;
+			}
+
+			public String getEmail() {
+				return this.email;
+			}
+
+			public void setEmail(String email) {
+				this.email = email;
+			}
+
+			public Long getContactId() {
+				return this.contactId;
+			}
+
+			public void setContactId(Long contactId) {
+				this.contactId = contactId;
+			}
+
 			public Long getCreateTime() {
 				return this.createTime;
 			}
@@ -167,12 +159,20 @@ public class SearchAlertContactResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Long getUpdateTime() {
-				return this.updateTime;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getContactName() {
+				return this.contactName;
+			}
+
+			public void setContactName(String contactName) {
+				this.contactName = contactName;
 			}
 
 			public Boolean getSystemNoc() {
@@ -183,20 +183,20 @@ public class SearchAlertContactResponse extends AcsResponse {
 				this.systemNoc = systemNoc;
 			}
 
-			public String getWebhook() {
-				return this.webhook;
-			}
-
-			public void setWebhook(String webhook) {
-				this.webhook = webhook;
-			}
-
 			public String getContent() {
 				return this.content;
 			}
 
 			public void setContent(String content) {
 				this.content = content;
+			}
+
+			public String getPhone() {
+				return this.phone;
+			}
+
+			public void setPhone(String phone) {
+				this.phone = phone;
 			}
 		}
 	}

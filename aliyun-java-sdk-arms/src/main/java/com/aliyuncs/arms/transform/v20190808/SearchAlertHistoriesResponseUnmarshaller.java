@@ -30,24 +30,24 @@ public class SearchAlertHistoriesResponseUnmarshaller {
 		searchAlertHistoriesResponse.setRequestId(_ctx.stringValue("SearchAlertHistoriesResponse.RequestId"));
 
 		PageBean pageBean = new PageBean();
-		pageBean.setTotalCount(_ctx.integerValue("SearchAlertHistoriesResponse.PageBean.TotalCount"));
 		pageBean.setPageNumber(_ctx.integerValue("SearchAlertHistoriesResponse.PageBean.PageNumber"));
 		pageBean.setPageSize(_ctx.integerValue("SearchAlertHistoriesResponse.PageBean.PageSize"));
+		pageBean.setTotalCount(_ctx.integerValue("SearchAlertHistoriesResponse.PageBean.TotalCount"));
 
 		List<AlarmHistory> alarmHistories = new ArrayList<AlarmHistory>();
 		for (int i = 0; i < _ctx.lengthValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories.Length"); i++) {
 			AlarmHistory alarmHistory = new AlarmHistory();
-			alarmHistory.setId(_ctx.longValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].Id"));
-			alarmHistory.setStrategyId(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].StrategyId"));
-			alarmHistory.setUserId(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].UserId"));
-			alarmHistory.setTarget(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].Target"));
-			alarmHistory.setPhones(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].Phones"));
-			alarmHistory.setEmails(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].Emails"));
 			alarmHistory.setAlarmTime(_ctx.longValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].AlarmTime"));
-			alarmHistory.setAlarmType(_ctx.integerValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].AlarmType"));
+			alarmHistory.setStrategyId(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].StrategyId"));
 			alarmHistory.setAlarmResponseCode(_ctx.integerValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].AlarmResponseCode"));
-			alarmHistory.setAlarmContent(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].AlarmContent"));
+			alarmHistory.setEmails(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].Emails"));
+			alarmHistory.setUserId(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].UserId"));
 			alarmHistory.setAlarmSources(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].AlarmSources"));
+			alarmHistory.setAlarmContent(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].AlarmContent"));
+			alarmHistory.setPhones(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].Phones"));
+			alarmHistory.setAlarmType(_ctx.integerValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].AlarmType"));
+			alarmHistory.setTarget(_ctx.stringValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].Target"));
+			alarmHistory.setId(_ctx.longValue("SearchAlertHistoriesResponse.PageBean.AlarmHistories["+ i +"].Id"));
 
 			alarmHistories.add(alarmHistory);
 		}

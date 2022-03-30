@@ -31,21 +31,21 @@ public class SearchEventsResponseUnmarshaller {
 		searchEventsResponse.setIsTrigger(_ctx.integerValue("SearchEventsResponse.IsTrigger"));
 
 		PageBean pageBean = new PageBean();
-		pageBean.setTotalCount(_ctx.integerValue("SearchEventsResponse.PageBean.TotalCount"));
 		pageBean.setPageNumber(_ctx.integerValue("SearchEventsResponse.PageBean.PageNumber"));
 		pageBean.setPageSize(_ctx.integerValue("SearchEventsResponse.PageBean.PageSize"));
+		pageBean.setTotalCount(_ctx.integerValue("SearchEventsResponse.PageBean.TotalCount"));
 
 		List<EventItem> event = new ArrayList<EventItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchEventsResponse.PageBean.Event.Length"); i++) {
 			EventItem eventItem = new EventItem();
-			eventItem.setId(_ctx.longValue("SearchEventsResponse.PageBean.Event["+ i +"].Id"));
 			eventItem.setEventTime(_ctx.longValue("SearchEventsResponse.PageBean.Event["+ i +"].EventTime"));
-			eventItem.setAlertType(_ctx.integerValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertType"));
 			eventItem.setEventLevel(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].EventLevel"));
-			eventItem.setMessage(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].Message"));
-			eventItem.setAlertId(_ctx.longValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertId"));
-			eventItem.setAlertName(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertName"));
 			eventItem.setAlertRule(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertRule"));
+			eventItem.setMessage(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].Message"));
+			eventItem.setAlertType(_ctx.integerValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertType"));
+			eventItem.setAlertName(_ctx.stringValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertName"));
+			eventItem.setId(_ctx.longValue("SearchEventsResponse.PageBean.Event["+ i +"].Id"));
+			eventItem.setAlertId(_ctx.longValue("SearchEventsResponse.PageBean.Event["+ i +"].AlertId"));
 
 			List<String> links = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchEventsResponse.PageBean.Event["+ i +"].Links.Length"); j++) {

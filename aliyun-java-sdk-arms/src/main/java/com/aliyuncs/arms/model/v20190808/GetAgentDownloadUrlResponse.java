@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAgentDownloadUrlResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String armsAgentDownloadUrl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getArmsAgentDownloadUrl() {
 		return this.armsAgentDownloadUrl;
@@ -42,6 +34,14 @@ public class GetAgentDownloadUrlResponse extends AcsResponse {
 
 	public void setArmsAgentDownloadUrl(String armsAgentDownloadUrl) {
 		this.armsAgentDownloadUrl = armsAgentDownloadUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

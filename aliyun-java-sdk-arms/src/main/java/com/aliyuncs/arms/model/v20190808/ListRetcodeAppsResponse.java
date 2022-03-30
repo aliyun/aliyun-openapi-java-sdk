@@ -47,29 +47,13 @@ public class ListRetcodeAppsResponse extends AcsResponse {
 
 	public static class RetcodeApp {
 
-		private Long appId;
-
-		private String pid;
-
 		private String appName;
 
 		private String retcodeAppType;
 
-		public Long getAppId() {
-			return this.appId;
-		}
+		private Long appId;
 
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
-
-		public String getPid() {
-			return this.pid;
-		}
-
-		public void setPid(String pid) {
-			this.pid = pid;
-		}
+		private String pid;
 
 		public String getAppName() {
 			return this.appName;
@@ -85,6 +69,22 @@ public class ListRetcodeAppsResponse extends AcsResponse {
 
 		public void setRetcodeAppType(String retcodeAppType) {
 			this.retcodeAppType = retcodeAppType;
+		}
+
+		public Long getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(Long appId) {
+			this.appId = appId;
+		}
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public void setPid(String pid) {
+			this.pid = pid;
 		}
 	}
 

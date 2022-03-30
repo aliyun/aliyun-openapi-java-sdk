@@ -29,15 +29,15 @@ public class GetTraceAppResponseUnmarshaller {
 		getTraceAppResponse.setRequestId(_ctx.stringValue("GetTraceAppResponse.RequestId"));
 
 		TraceApp traceApp = new TraceApp();
-		traceApp.setAppId(_ctx.longValue("GetTraceAppResponse.TraceApp.AppId"));
-		traceApp.setPid(_ctx.stringValue("GetTraceAppResponse.TraceApp.Pid"));
-		traceApp.setAppName(_ctx.stringValue("GetTraceAppResponse.TraceApp.AppName"));
 		traceApp.setType(_ctx.stringValue("GetTraceAppResponse.TraceApp.Type"));
-		traceApp.setUserId(_ctx.stringValue("GetTraceAppResponse.TraceApp.UserId"));
-		traceApp.setRegionId(_ctx.stringValue("GetTraceAppResponse.TraceApp.RegionId"));
-		traceApp.setCreateTime(_ctx.longValue("GetTraceAppResponse.TraceApp.CreateTime"));
+		traceApp.setAppName(_ctx.stringValue("GetTraceAppResponse.TraceApp.AppName"));
 		traceApp.setUpdateTime(_ctx.longValue("GetTraceAppResponse.TraceApp.UpdateTime"));
 		traceApp.setShow(_ctx.booleanValue("GetTraceAppResponse.TraceApp.Show"));
+		traceApp.setCreateTime(_ctx.longValue("GetTraceAppResponse.TraceApp.CreateTime"));
+		traceApp.setPid(_ctx.stringValue("GetTraceAppResponse.TraceApp.Pid"));
+		traceApp.setAppId(_ctx.longValue("GetTraceAppResponse.TraceApp.AppId"));
+		traceApp.setUserId(_ctx.stringValue("GetTraceAppResponse.TraceApp.UserId"));
+		traceApp.setRegionId(_ctx.stringValue("GetTraceAppResponse.TraceApp.RegionId"));
 
 		List<String> labels = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetTraceAppResponse.TraceApp.Labels.Length"); i++) {

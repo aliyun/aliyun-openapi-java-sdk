@@ -47,41 +47,169 @@ public class ListClusterFromGrafanaResponse extends AcsResponse {
 
 	public static class PromCluster {
 
+		private Long updateTime;
+
+		private Long createTime;
+
+		private String userId;
+
+		private String options;
+
+		private Boolean isControllerInstalled;
+
+		private String agentStatus;
+
+		private String extra;
+
+		private Long installTime;
+
+		private String regionId;
+
+		private String controllerId;
+
+		private String pluginsJsonArray;
+
+		private String clusterType;
+
+		private String clusterName;
+
+		private String stateJson;
+
+		private Long lastHeartBeatTime;
+
+		private Integer nodeNum;
+
 		private Long id;
 
 		private String clusterId;
 
-		private String clusterName;
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
 
-		private String agentStatus;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
 
-		private String clusterType;
+		public Long getCreateTime() {
+			return this.createTime;
+		}
 
-		private String controllerId;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
 
-		private Boolean isControllerInstalled;
+		public String getUserId() {
+			return this.userId;
+		}
 
-		private String userId;
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
 
-		private String regionId;
+		public String getOptions() {
+			return this.options;
+		}
 
-		private String pluginsJsonArray;
+		public void setOptions(String options) {
+			this.options = options;
+		}
 
-		private String stateJson;
+		public Boolean getIsControllerInstalled() {
+			return this.isControllerInstalled;
+		}
 
-		private Integer nodeNum;
+		public void setIsControllerInstalled(Boolean isControllerInstalled) {
+			this.isControllerInstalled = isControllerInstalled;
+		}
 
-		private Long createTime;
+		public String getAgentStatus() {
+			return this.agentStatus;
+		}
 
-		private Long updateTime;
+		public void setAgentStatus(String agentStatus) {
+			this.agentStatus = agentStatus;
+		}
 
-		private Long lastHeartBeatTime;
+		public String getExtra() {
+			return this.extra;
+		}
 
-		private Long installTime;
+		public void setExtra(String extra) {
+			this.extra = extra;
+		}
 
-		private String extra;
+		public Long getInstallTime() {
+			return this.installTime;
+		}
 
-		private String options;
+		public void setInstallTime(Long installTime) {
+			this.installTime = installTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getControllerId() {
+			return this.controllerId;
+		}
+
+		public void setControllerId(String controllerId) {
+			this.controllerId = controllerId;
+		}
+
+		public String getPluginsJsonArray() {
+			return this.pluginsJsonArray;
+		}
+
+		public void setPluginsJsonArray(String pluginsJsonArray) {
+			this.pluginsJsonArray = pluginsJsonArray;
+		}
+
+		public String getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getStateJson() {
+			return this.stateJson;
+		}
+
+		public void setStateJson(String stateJson) {
+			this.stateJson = stateJson;
+		}
+
+		public Long getLastHeartBeatTime() {
+			return this.lastHeartBeatTime;
+		}
+
+		public void setLastHeartBeatTime(Long lastHeartBeatTime) {
+			this.lastHeartBeatTime = lastHeartBeatTime;
+		}
+
+		public Integer getNodeNum() {
+			return this.nodeNum;
+		}
+
+		public void setNodeNum(Integer nodeNum) {
+			this.nodeNum = nodeNum;
+		}
 
 		public Long getId() {
 			return this.id;
@@ -97,134 +225,6 @@ public class ListClusterFromGrafanaResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public String getAgentStatus() {
-			return this.agentStatus;
-		}
-
-		public void setAgentStatus(String agentStatus) {
-			this.agentStatus = agentStatus;
-		}
-
-		public String getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
-		}
-
-		public String getControllerId() {
-			return this.controllerId;
-		}
-
-		public void setControllerId(String controllerId) {
-			this.controllerId = controllerId;
-		}
-
-		public Boolean getIsControllerInstalled() {
-			return this.isControllerInstalled;
-		}
-
-		public void setIsControllerInstalled(Boolean isControllerInstalled) {
-			this.isControllerInstalled = isControllerInstalled;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getPluginsJsonArray() {
-			return this.pluginsJsonArray;
-		}
-
-		public void setPluginsJsonArray(String pluginsJsonArray) {
-			this.pluginsJsonArray = pluginsJsonArray;
-		}
-
-		public String getStateJson() {
-			return this.stateJson;
-		}
-
-		public void setStateJson(String stateJson) {
-			this.stateJson = stateJson;
-		}
-
-		public Integer getNodeNum() {
-			return this.nodeNum;
-		}
-
-		public void setNodeNum(Integer nodeNum) {
-			this.nodeNum = nodeNum;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public Long getLastHeartBeatTime() {
-			return this.lastHeartBeatTime;
-		}
-
-		public void setLastHeartBeatTime(Long lastHeartBeatTime) {
-			this.lastHeartBeatTime = lastHeartBeatTime;
-		}
-
-		public Long getInstallTime() {
-			return this.installTime;
-		}
-
-		public void setInstallTime(Long installTime) {
-			this.installTime = installTime;
-		}
-
-		public String getExtra() {
-			return this.extra;
-		}
-
-		public void setExtra(String extra) {
-			this.extra = extra;
-		}
-
-		public String getOptions() {
-			return this.options;
-		}
-
-		public void setOptions(String options) {
-			this.options = options;
 		}
 	}
 

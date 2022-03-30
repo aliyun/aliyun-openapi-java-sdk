@@ -31,15 +31,15 @@ public class SearchTraceAppByNameResponseUnmarshaller {
 		List<TraceApp> traceApps = new ArrayList<TraceApp>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTraceAppByNameResponse.TraceApps.Length"); i++) {
 			TraceApp traceApp = new TraceApp();
-			traceApp.setAppId(_ctx.longValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].AppId"));
-			traceApp.setPid(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Pid"));
-			traceApp.setAppName(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].AppName"));
 			traceApp.setType(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Type"));
-			traceApp.setUserId(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].UserId"));
-			traceApp.setRegionId(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].RegionId"));
-			traceApp.setCreateTime(_ctx.longValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].CreateTime"));
+			traceApp.setAppName(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].AppName"));
 			traceApp.setUpdateTime(_ctx.longValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].UpdateTime"));
 			traceApp.setShow(_ctx.booleanValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Show"));
+			traceApp.setCreateTime(_ctx.longValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].CreateTime"));
+			traceApp.setPid(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Pid"));
+			traceApp.setAppId(_ctx.longValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].AppId"));
+			traceApp.setUserId(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].UserId"));
+			traceApp.setRegionId(_ctx.stringValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].RegionId"));
 
 			List<String> labels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchTraceAppByNameResponse.TraceApps["+ i +"].Labels.Length"); j++) {

@@ -31,15 +31,15 @@ public class ListScenarioResponseUnmarshaller {
 		List<ArmsScenariosItem> armsScenarios = new ArrayList<ArmsScenariosItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListScenarioResponse.ArmsScenarios.Length"); i++) {
 			ArmsScenariosItem armsScenariosItem = new ArmsScenariosItem();
-			armsScenariosItem.setId(_ctx.longValue("ListScenarioResponse.ArmsScenarios["+ i +"].Id"));
-			armsScenariosItem.setCreateTime(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].CreateTime"));
 			armsScenariosItem.setUpdateTime(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].UpdateTime"));
-			armsScenariosItem.setName(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].Name"));
-			armsScenariosItem.setSign(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].Sign"));
-			armsScenariosItem.setUserId(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].UserId"));
-			armsScenariosItem.setRegionId(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].RegionId"));
 			armsScenariosItem.setAppId(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].AppId"));
+			armsScenariosItem.setSign(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].Sign"));
+			armsScenariosItem.setCreateTime(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].CreateTime"));
+			armsScenariosItem.setUserId(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].UserId"));
 			armsScenariosItem.setExtensions(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].Extensions"));
+			armsScenariosItem.setName(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].Name"));
+			armsScenariosItem.setId(_ctx.longValue("ListScenarioResponse.ArmsScenarios["+ i +"].Id"));
+			armsScenariosItem.setRegionId(_ctx.stringValue("ListScenarioResponse.ArmsScenarios["+ i +"].RegionId"));
 
 			armsScenarios.add(armsScenariosItem);
 		}

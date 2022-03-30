@@ -30,22 +30,22 @@ public class SearchTraceAppByPageResponseUnmarshaller {
 		searchTraceAppByPageResponse.setRequestId(_ctx.stringValue("SearchTraceAppByPageResponse.RequestId"));
 
 		PageBean pageBean = new PageBean();
-		pageBean.setTotalCount(_ctx.integerValue("SearchTraceAppByPageResponse.PageBean.TotalCount"));
 		pageBean.setPageNumber(_ctx.integerValue("SearchTraceAppByPageResponse.PageBean.PageNumber"));
 		pageBean.setPageSize(_ctx.integerValue("SearchTraceAppByPageResponse.PageBean.PageSize"));
+		pageBean.setTotalCount(_ctx.integerValue("SearchTraceAppByPageResponse.PageBean.TotalCount"));
 
 		List<TraceApp> traceApps = new ArrayList<TraceApp>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTraceAppByPageResponse.PageBean.TraceApps.Length"); i++) {
 			TraceApp traceApp = new TraceApp();
-			traceApp.setAppId(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].AppId"));
-			traceApp.setPid(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Pid"));
-			traceApp.setAppName(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].AppName"));
 			traceApp.setType(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Type"));
-			traceApp.setUserId(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].UserId"));
-			traceApp.setRegionId(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].RegionId"));
-			traceApp.setCreateTime(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].CreateTime"));
+			traceApp.setAppName(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].AppName"));
 			traceApp.setUpdateTime(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].UpdateTime"));
 			traceApp.setShow(_ctx.booleanValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Show"));
+			traceApp.setCreateTime(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].CreateTime"));
+			traceApp.setPid(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Pid"));
+			traceApp.setAppId(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].AppId"));
+			traceApp.setUserId(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].UserId"));
+			traceApp.setRegionId(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].RegionId"));
 
 			List<String> labels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Labels.Length"); j++) {

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTraceAppsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<TraceApp> traceApps;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class ListTraceAppsResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<TraceApp> getTraceApps() {
 		return this.traceApps;
 	}
@@ -77,40 +77,32 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 	public static class TraceApp {
 
-		private Long appId;
-
-		private String pid;
+		private String type;
 
 		private String appName;
 
-		private String type;
-
-		private String userId;
-
-		private Long createTime;
-
 		private Long updateTime;
-
-		private String regionId;
 
 		private Boolean show;
 
+		private Long createTime;
+
+		private String pid;
+
+		private Long appId;
+
+		private String userId;
+
+		private String regionId;
+
 		private List<String> labels;
 
-		public Long getAppId() {
-			return this.appId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
-
-		public String getPid() {
-			return this.pid;
-		}
-
-		public void setPid(String pid) {
-			this.pid = pid;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getAppName() {
@@ -121,20 +113,20 @@ public class ListTraceAppsResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getType() {
-			return this.type;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public String getUserId() {
-			return this.userId;
+		public Boolean getShow() {
+			return this.show;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
+		public void setShow(Boolean show) {
+			this.show = show;
 		}
 
 		public Long getCreateTime() {
@@ -145,12 +137,28 @@ public class ListTraceAppsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getPid() {
+			return this.pid;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setPid(String pid) {
+			this.pid = pid;
+		}
+
+		public Long getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(Long appId) {
+			this.appId = appId;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public String getRegionId() {
@@ -159,14 +167,6 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public Boolean getShow() {
-			return this.show;
-		}
-
-		public void setShow(Boolean show) {
-			this.show = show;
 		}
 
 		public List<String> getLabels() {

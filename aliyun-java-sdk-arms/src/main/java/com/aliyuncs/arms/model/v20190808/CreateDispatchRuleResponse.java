@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDispatchRuleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long dispatchRuleId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getDispatchRuleId() {
 		return this.dispatchRuleId;
@@ -42,6 +34,14 @@ public class CreateDispatchRuleResponse extends AcsResponse {
 
 	public void setDispatchRuleId(Long dispatchRuleId) {
 		this.dispatchRuleId = dispatchRuleId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

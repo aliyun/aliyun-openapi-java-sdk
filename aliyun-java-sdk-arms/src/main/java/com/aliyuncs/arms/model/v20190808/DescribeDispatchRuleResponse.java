@@ -47,29 +47,21 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 	public static class DispatchRule {
 
-		private Long ruleId;
-
 		private String name;
 
-		private String state;
+		private Boolean isRecover;
 
 		private String dispatchType;
 
-		private Boolean isRecover;
+		private String state;
+
+		private Long ruleId;
 
 		private List<GroupRule> groupRules;
 
 		private List<NotifyRule> notifyRules;
 
 		private LabelMatchExpressionGrid labelMatchExpressionGrid;
-
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
 
 		public String getName() {
 			return this.name;
@@ -79,12 +71,12 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getState() {
-			return this.state;
+		public Boolean getIsRecover() {
+			return this.isRecover;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setIsRecover(Boolean isRecover) {
+			this.isRecover = isRecover;
 		}
 
 		public String getDispatchType() {
@@ -95,12 +87,20 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 			this.dispatchType = dispatchType;
 		}
 
-		public Boolean getIsRecover() {
-			return this.isRecover;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setIsRecover(Boolean isRecover) {
-			this.isRecover = isRecover;
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public Long getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 
 		public List<GroupRule> getGroupRules() {
@@ -129,15 +129,23 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 		public static class GroupRule {
 
+			private Long repeatInterval;
+
 			private Long groupId;
 
 			private Long groupWaitTime;
 
 			private Long groupInterval;
 
-			private Long repeatInterval;
-
 			private List<String> groupingFields;
+
+			public Long getRepeatInterval() {
+				return this.repeatInterval;
+			}
+
+			public void setRepeatInterval(Long repeatInterval) {
+				this.repeatInterval = repeatInterval;
+			}
 
 			public Long getGroupId() {
 				return this.groupId;
@@ -161,14 +169,6 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 			public void setGroupInterval(Long groupInterval) {
 				this.groupInterval = groupInterval;
-			}
-
-			public Long getRepeatInterval() {
-				return this.repeatInterval;
-			}
-
-			public void setRepeatInterval(Long repeatInterval) {
-				this.repeatInterval = repeatInterval;
 			}
 
 			public List<String> getGroupingFields() {
@@ -204,11 +204,19 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 			public static class NotifyObject {
 
+				private String notifyObjectId;
+
 				private String notifyType;
 
 				private String name;
 
-				private String notifyObjectId;
+				public String getNotifyObjectId() {
+					return this.notifyObjectId;
+				}
+
+				public void setNotifyObjectId(String notifyObjectId) {
+					this.notifyObjectId = notifyObjectId;
+				}
 
 				public String getNotifyType() {
 					return this.notifyType;
@@ -224,14 +232,6 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
-				}
-
-				public String getNotifyObjectId() {
-					return this.notifyObjectId;
-				}
-
-				public void setNotifyObjectId(String notifyObjectId) {
-					this.notifyObjectId = notifyObjectId;
 				}
 			}
 		}

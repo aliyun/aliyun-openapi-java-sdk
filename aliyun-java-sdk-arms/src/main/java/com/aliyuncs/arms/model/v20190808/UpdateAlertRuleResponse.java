@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateAlertRuleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String data;
 
+	private String requestId;
+
 	private Long alertId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getData() {
 		return this.data;
@@ -44,6 +36,14 @@ public class UpdateAlertRuleResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getAlertId() {

@@ -47,21 +47,13 @@ public class SearchAlertHistoriesResponse extends AcsResponse {
 
 	public static class PageBean {
 
-		private Integer totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<AlarmHistory> alarmHistories;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -79,6 +71,14 @@ public class SearchAlertHistoriesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<AlarmHistory> getAlarmHistories() {
 			return this.alarmHistories;
 		}
@@ -89,34 +89,34 @@ public class SearchAlertHistoriesResponse extends AcsResponse {
 
 		public static class AlarmHistory {
 
-			private Long id;
+			private Long alarmTime;
 
 			private String strategyId;
 
-			private String userId;
-
-			private String target;
-
-			private String phones;
+			private Integer alarmResponseCode;
 
 			private String emails;
 
-			private Long alarmTime;
-
-			private Integer alarmType;
-
-			private Integer alarmResponseCode;
-
-			private String alarmContent;
+			private String userId;
 
 			private String alarmSources;
 
-			public Long getId() {
-				return this.id;
+			private String alarmContent;
+
+			private String phones;
+
+			private Integer alarmType;
+
+			private String target;
+
+			private Long id;
+
+			public Long getAlarmTime() {
+				return this.alarmTime;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setAlarmTime(Long alarmTime) {
+				this.alarmTime = alarmTime;
 			}
 
 			public String getStrategyId() {
@@ -127,28 +127,12 @@ public class SearchAlertHistoriesResponse extends AcsResponse {
 				this.strategyId = strategyId;
 			}
 
-			public String getUserId() {
-				return this.userId;
+			public Integer getAlarmResponseCode() {
+				return this.alarmResponseCode;
 			}
 
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getTarget() {
-				return this.target;
-			}
-
-			public void setTarget(String target) {
-				this.target = target;
-			}
-
-			public String getPhones() {
-				return this.phones;
-			}
-
-			public void setPhones(String phones) {
-				this.phones = phones;
+			public void setAlarmResponseCode(Integer alarmResponseCode) {
+				this.alarmResponseCode = alarmResponseCode;
 			}
 
 			public String getEmails() {
@@ -159,28 +143,20 @@ public class SearchAlertHistoriesResponse extends AcsResponse {
 				this.emails = emails;
 			}
 
-			public Long getAlarmTime() {
-				return this.alarmTime;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setAlarmTime(Long alarmTime) {
-				this.alarmTime = alarmTime;
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 
-			public Integer getAlarmType() {
-				return this.alarmType;
+			public String getAlarmSources() {
+				return this.alarmSources;
 			}
 
-			public void setAlarmType(Integer alarmType) {
-				this.alarmType = alarmType;
-			}
-
-			public Integer getAlarmResponseCode() {
-				return this.alarmResponseCode;
-			}
-
-			public void setAlarmResponseCode(Integer alarmResponseCode) {
-				this.alarmResponseCode = alarmResponseCode;
+			public void setAlarmSources(String alarmSources) {
+				this.alarmSources = alarmSources;
 			}
 
 			public String getAlarmContent() {
@@ -191,12 +167,36 @@ public class SearchAlertHistoriesResponse extends AcsResponse {
 				this.alarmContent = alarmContent;
 			}
 
-			public String getAlarmSources() {
-				return this.alarmSources;
+			public String getPhones() {
+				return this.phones;
 			}
 
-			public void setAlarmSources(String alarmSources) {
-				this.alarmSources = alarmSources;
+			public void setPhones(String phones) {
+				this.phones = phones;
+			}
+
+			public Integer getAlarmType() {
+				return this.alarmType;
+			}
+
+			public void setAlarmType(Integer alarmType) {
+				this.alarmType = alarmType;
+			}
+
+			public String getTarget() {
+				return this.target;
+			}
+
+			public void setTarget(String target) {
+				this.target = target;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

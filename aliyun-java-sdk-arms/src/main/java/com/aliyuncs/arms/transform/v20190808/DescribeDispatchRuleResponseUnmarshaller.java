@@ -35,11 +35,11 @@ public class DescribeDispatchRuleResponseUnmarshaller {
 		describeDispatchRuleResponse.setRequestId(_ctx.stringValue("DescribeDispatchRuleResponse.RequestId"));
 
 		DispatchRule dispatchRule = new DispatchRule();
-		dispatchRule.setRuleId(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.RuleId"));
 		dispatchRule.setName(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.Name"));
-		dispatchRule.setState(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.State"));
-		dispatchRule.setDispatchType(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.DispatchType"));
 		dispatchRule.setIsRecover(_ctx.booleanValue("DescribeDispatchRuleResponse.DispatchRule.IsRecover"));
+		dispatchRule.setDispatchType(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.DispatchType"));
+		dispatchRule.setState(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.State"));
+		dispatchRule.setRuleId(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.RuleId"));
 
 		LabelMatchExpressionGrid labelMatchExpressionGrid = new LabelMatchExpressionGrid();
 
@@ -66,10 +66,10 @@ public class DescribeDispatchRuleResponseUnmarshaller {
 		List<GroupRule> groupRules = new ArrayList<GroupRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules.Length"); i++) {
 			GroupRule groupRule = new GroupRule();
+			groupRule.setRepeatInterval(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].RepeatInterval"));
 			groupRule.setGroupId(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupId"));
 			groupRule.setGroupWaitTime(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupWaitTime"));
 			groupRule.setGroupInterval(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupInterval"));
-			groupRule.setRepeatInterval(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].RepeatInterval"));
 
 			List<String> groupingFields = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupingFields.Length"); j++) {
@@ -94,9 +94,9 @@ public class DescribeDispatchRuleResponseUnmarshaller {
 			List<NotifyObject> notifyObjects = new ArrayList<NotifyObject>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDispatchRuleResponse.DispatchRule.NotifyRules["+ i +"].NotifyObjects.Length"); j++) {
 				NotifyObject notifyObject = new NotifyObject();
+				notifyObject.setNotifyObjectId(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.NotifyRules["+ i +"].NotifyObjects["+ j +"].NotifyObjectId"));
 				notifyObject.setNotifyType(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.NotifyRules["+ i +"].NotifyObjects["+ j +"].NotifyType"));
 				notifyObject.setName(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.NotifyRules["+ i +"].NotifyObjects["+ j +"].Name"));
-				notifyObject.setNotifyObjectId(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.NotifyRules["+ i +"].NotifyObjects["+ j +"].NotifyObjectId"));
 
 				notifyObjects.add(notifyObject);
 			}

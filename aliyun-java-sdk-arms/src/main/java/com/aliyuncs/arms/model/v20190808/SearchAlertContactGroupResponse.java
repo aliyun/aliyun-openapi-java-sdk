@@ -47,24 +47,24 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 
 	public static class ContactGroup {
 
-		private Long contactGroupId;
+		private Long updateTime;
 
 		private String contactGroupName;
 
-		private String userId;
+		private Long contactGroupId;
 
 		private Long createTime;
 
-		private Long updateTime;
+		private String userId;
 
 		private List<Contact> contacts;
 
-		public Long getContactGroupId() {
-			return this.contactGroupId;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setContactGroupId(Long contactGroupId) {
-			this.contactGroupId = contactGroupId;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getContactGroupName() {
@@ -75,12 +75,12 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 			this.contactGroupName = contactGroupName;
 		}
 
-		public String getUserId() {
-			return this.userId;
+		public Long getContactGroupId() {
+			return this.contactGroupId;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
+		public void setContactGroupId(Long contactGroupId) {
+			this.contactGroupId = contactGroupId;
 		}
 
 		public Long getCreateTime() {
@@ -91,12 +91,12 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public List<Contact> getContacts() {
@@ -109,62 +109,30 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 
 		public static class Contact {
 
-			private Long contactId;
-
-			private String contactName;
-
-			private String phone;
-
-			private String email;
-
-			private String userId;
+			private Long updateTime;
 
 			private String dingRobot;
 
+			private String email;
+
+			private Long contactId;
+
 			private Long createTime;
 
-			private Long updateTime;
+			private String userId;
+
+			private String contactName;
 
 			private Boolean systemNoc;
 
-			public Long getContactId() {
-				return this.contactId;
+			private String phone;
+
+			public Long getUpdateTime() {
+				return this.updateTime;
 			}
 
-			public void setContactId(Long contactId) {
-				this.contactId = contactId;
-			}
-
-			public String getContactName() {
-				return this.contactName;
-			}
-
-			public void setContactName(String contactName) {
-				this.contactName = contactName;
-			}
-
-			public String getPhone() {
-				return this.phone;
-			}
-
-			public void setPhone(String phone) {
-				this.phone = phone;
-			}
-
-			public String getEmail() {
-				return this.email;
-			}
-
-			public void setEmail(String email) {
-				this.email = email;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public String getDingRobot() {
@@ -175,6 +143,22 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 				this.dingRobot = dingRobot;
 			}
 
+			public String getEmail() {
+				return this.email;
+			}
+
+			public void setEmail(String email) {
+				this.email = email;
+			}
+
+			public Long getContactId() {
+				return this.contactId;
+			}
+
+			public void setContactId(Long contactId) {
+				this.contactId = contactId;
+			}
+
 			public Long getCreateTime() {
 				return this.createTime;
 			}
@@ -183,12 +167,20 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Long getUpdateTime() {
-				return this.updateTime;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getContactName() {
+				return this.contactName;
+			}
+
+			public void setContactName(String contactName) {
+				this.contactName = contactName;
 			}
 
 			public Boolean getSystemNoc() {
@@ -197,6 +189,14 @@ public class SearchAlertContactGroupResponse extends AcsResponse {
 
 			public void setSystemNoc(Boolean systemNoc) {
 				this.systemNoc = systemNoc;
+			}
+
+			public String getPhone() {
+				return this.phone;
+			}
+
+			public void setPhone(String phone) {
+				this.phone = phone;
 			}
 		}
 	}

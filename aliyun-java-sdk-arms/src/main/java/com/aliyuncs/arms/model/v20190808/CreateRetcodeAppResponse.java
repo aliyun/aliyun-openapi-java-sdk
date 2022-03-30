@@ -46,17 +46,9 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 	public static class RetcodeAppDataBean {
 
-		private Long appId;
-
 		private String pid;
 
-		public Long getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
+		private Long appId;
 
 		public String getPid() {
 			return this.pid;
@@ -64,6 +56,14 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 		public void setPid(String pid) {
 			this.pid = pid;
+		}
+
+		public Long getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(Long appId) {
+			this.appId = appId;
 		}
 	}
 

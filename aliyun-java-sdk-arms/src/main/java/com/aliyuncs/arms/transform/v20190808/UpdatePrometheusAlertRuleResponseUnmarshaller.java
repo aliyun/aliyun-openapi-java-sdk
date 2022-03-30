@@ -31,16 +31,16 @@ public class UpdatePrometheusAlertRuleResponseUnmarshaller {
 		updatePrometheusAlertRuleResponse.setRequestId(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.RequestId"));
 
 		PrometheusAlertRule prometheusAlertRule = new PrometheusAlertRule();
-		prometheusAlertRule.setAlertId(_ctx.longValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.AlertId"));
-		prometheusAlertRule.setAlertName(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.AlertName"));
-		prometheusAlertRule.setMessage(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Message"));
-		prometheusAlertRule.setType(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Type"));
-		prometheusAlertRule.setExpression(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Expression"));
-		prometheusAlertRule.setDuration(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Duration"));
-		prometheusAlertRule.setClusterId(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.ClusterId"));
 		prometheusAlertRule.setStatus(_ctx.integerValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Status"));
-		prometheusAlertRule.setDispatchRuleId(_ctx.longValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.DispatchRuleId"));
+		prometheusAlertRule.setType(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Type"));
 		prometheusAlertRule.setNotifyType(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.NotifyType"));
+		prometheusAlertRule.setExpression(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Expression"));
+		prometheusAlertRule.setMessage(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Message"));
+		prometheusAlertRule.setDuration(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Duration"));
+		prometheusAlertRule.setDispatchRuleId(_ctx.longValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.DispatchRuleId"));
+		prometheusAlertRule.setAlertName(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.AlertName"));
+		prometheusAlertRule.setAlertId(_ctx.longValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.AlertId"));
+		prometheusAlertRule.setClusterId(_ctx.stringValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.ClusterId"));
 
 		List<Label> labels = new ArrayList<Label>();
 		for (int i = 0; i < _ctx.lengthValue("UpdatePrometheusAlertRuleResponse.PrometheusAlertRule.Labels.Length"); i++) {
