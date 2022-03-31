@@ -1,3 +1,6 @@
+2022-03-31 Version: 1.32.0
+- Supported ListTaskFlow, ListTaskFlowInstance, GetTaskInstanceRelation, GetLhSpaceByName, DeleteLakeHouseSpace, DeleteTaskFlow API.
+
 2022-03-24 Version: 1.31.0
 - Supported CreateLakeHouseSpace,AddLhMembers,DeleteLhMembers,ListLhTaskFlowAndScenario,ChangeLhDagOwner,ReDeployLhDagVersion API.
 

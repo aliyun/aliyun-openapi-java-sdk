@@ -29,8 +29,6 @@ public class CreateLakeHouseSpaceRequest extends RpcAcsRequest<CreateLakeHouseSp
 
 	private String description;
 
-	private Long userId;
-
 	private Long tid;
 
 	private String mode;
@@ -70,17 +68,6 @@ public class CreateLakeHouseSpaceRequest extends RpcAcsRequest<CreateLakeHouseSp
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
 		}
 	}
 
