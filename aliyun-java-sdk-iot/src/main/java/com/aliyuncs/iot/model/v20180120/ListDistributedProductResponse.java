@@ -109,7 +109,7 @@ public class ListDistributedProductResponse extends AcsResponse {
 
 			private String targetInstanceId;
 
-			private Integer gmtCreate;
+			private Long gmtCreate;
 
 			private String targetAliyunId;
 
@@ -161,11 +161,11 @@ public class ListDistributedProductResponse extends AcsResponse {
 				this.targetInstanceId = targetInstanceId;
 			}
 
-			public Integer getGmtCreate() {
+			public Long getGmtCreate() {
 				return this.gmtCreate;
 			}
 
-			public void setGmtCreate(Integer gmtCreate) {
+			public void setGmtCreate(Long gmtCreate) {
 				this.gmtCreate = gmtCreate;
 			}
 
