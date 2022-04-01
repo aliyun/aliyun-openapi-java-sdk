@@ -14,6 +14,7 @@
 
 package com.aliyuncs.das.model.v20200116;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.das.transform.v20200116.GetAsyncErrorRequestStatResultResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAsyncErrorRequestStatResultResponse extends AcsResponse {
 
-	private String code;
+	private Long code;
 
 	private String message;
 
-	private String data;
-
 	private String requestId;
 
-	private String success;
+	private Boolean success;
 
-	public String getCode() {
+	private Data data;
+
+	public Long getCode() {
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(Long code) {
 		this.code = code;
 	}
 
@@ -50,14 +51,6 @@ public class GetAsyncErrorRequestStatResultResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -66,12 +59,93 @@ public class GetAsyncErrorRequestStatResultResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Boolean fail;
+
+		private Boolean isFinish;
+
+		private String resultId;
+
+		private String state;
+
+		private Long timestamp;
+
+		private Boolean complete;
+
+		private Map<Object,Object> result;
+
+		public Boolean getFail() {
+			return this.fail;
+		}
+
+		public void setFail(Boolean fail) {
+			this.fail = fail;
+		}
+
+		public Boolean getIsFinish() {
+			return this.isFinish;
+		}
+
+		public void setIsFinish(Boolean isFinish) {
+			this.isFinish = isFinish;
+		}
+
+		public String getResultId() {
+			return this.resultId;
+		}
+
+		public void setResultId(String resultId) {
+			this.resultId = resultId;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
+		}
+
+		public Boolean getComplete() {
+			return this.complete;
+		}
+
+		public void setComplete(Boolean complete) {
+			this.complete = complete;
+		}
+
+		public Map<Object,Object> getResult() {
+			return this.result;
+		}
+
+		public void setResult(Map<Object,Object> result) {
+			this.result = result;
+		}
 	}
 
 	@Override

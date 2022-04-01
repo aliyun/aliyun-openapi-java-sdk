@@ -14,7 +14,12 @@
 
 package com.aliyuncs.das.transform.v20200116;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.das.model.v20200116.GetAsyncErrorRequestListByCodeResponse;
+import com.aliyuncs.das.model.v20200116.GetAsyncErrorRequestListByCodeResponse.Data;
+import com.aliyuncs.das.model.v20200116.GetAsyncErrorRequestListByCodeResponse.Data.ResultItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +28,28 @@ public class GetAsyncErrorRequestListByCodeResponseUnmarshaller {
 	public static GetAsyncErrorRequestListByCodeResponse unmarshall(GetAsyncErrorRequestListByCodeResponse getAsyncErrorRequestListByCodeResponse, UnmarshallerContext _ctx) {
 		
 		getAsyncErrorRequestListByCodeResponse.setRequestId(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.RequestId"));
-		getAsyncErrorRequestListByCodeResponse.setCode(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.Code"));
+		getAsyncErrorRequestListByCodeResponse.setCode(_ctx.longValue("GetAsyncErrorRequestListByCodeResponse.Code"));
 		getAsyncErrorRequestListByCodeResponse.setMessage(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.Message"));
-		getAsyncErrorRequestListByCodeResponse.setData(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.Data"));
-		getAsyncErrorRequestListByCodeResponse.setSuccess(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.Success"));
+		getAsyncErrorRequestListByCodeResponse.setSuccess(_ctx.booleanValue("GetAsyncErrorRequestListByCodeResponse.Success"));
+
+		Data data = new Data();
+		data.setFail(_ctx.booleanValue("GetAsyncErrorRequestListByCodeResponse.Data.fail"));
+		data.setResultId(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.Data.resultId"));
+		data.setIsFinish(_ctx.booleanValue("GetAsyncErrorRequestListByCodeResponse.Data.isFinish"));
+		data.setState(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.Data.state"));
+		data.setComplete(_ctx.booleanValue("GetAsyncErrorRequestListByCodeResponse.Data.complete"));
+		data.setTimestamp(_ctx.longValue("GetAsyncErrorRequestListByCodeResponse.Data.timestamp"));
+
+		List<ResultItem> result = new ArrayList<ResultItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAsyncErrorRequestListByCodeResponse.Data.result.Length"); i++) {
+			ResultItem resultItem = new ResultItem();
+			resultItem.setSqlId(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.Data.result["+ i +"].sqlId"));
+			resultItem.setInstanceId(_ctx.stringValue("GetAsyncErrorRequestListByCodeResponse.Data.result["+ i +"].instanceId"));
+
+			result.add(resultItem);
+		}
+		data.setResult(result);
+		getAsyncErrorRequestListByCodeResponse.setData(data);
 	 
 	 	return getAsyncErrorRequestListByCodeResponse;
 	}

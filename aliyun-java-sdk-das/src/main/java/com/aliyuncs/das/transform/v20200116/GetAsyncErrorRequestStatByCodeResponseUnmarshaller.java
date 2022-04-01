@@ -14,7 +14,12 @@
 
 package com.aliyuncs.das.transform.v20200116;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.das.model.v20200116.GetAsyncErrorRequestStatByCodeResponse;
+import com.aliyuncs.das.model.v20200116.GetAsyncErrorRequestStatByCodeResponse.Data;
+import com.aliyuncs.das.model.v20200116.GetAsyncErrorRequestStatByCodeResponse.Data.Stat;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +28,29 @@ public class GetAsyncErrorRequestStatByCodeResponseUnmarshaller {
 	public static GetAsyncErrorRequestStatByCodeResponse unmarshall(GetAsyncErrorRequestStatByCodeResponse getAsyncErrorRequestStatByCodeResponse, UnmarshallerContext _ctx) {
 		
 		getAsyncErrorRequestStatByCodeResponse.setRequestId(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.RequestId"));
-		getAsyncErrorRequestStatByCodeResponse.setCode(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.Code"));
+		getAsyncErrorRequestStatByCodeResponse.setCode(_ctx.longValue("GetAsyncErrorRequestStatByCodeResponse.Code"));
 		getAsyncErrorRequestStatByCodeResponse.setMessage(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.Message"));
-		getAsyncErrorRequestStatByCodeResponse.setData(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.Data"));
-		getAsyncErrorRequestStatByCodeResponse.setSuccess(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.Success"));
+		getAsyncErrorRequestStatByCodeResponse.setSuccess(_ctx.booleanValue("GetAsyncErrorRequestStatByCodeResponse.Success"));
+
+		Data data = new Data();
+		data.setFail(_ctx.booleanValue("GetAsyncErrorRequestStatByCodeResponse.Data.fail"));
+		data.setIsFinish(_ctx.booleanValue("GetAsyncErrorRequestStatByCodeResponse.Data.isFinish"));
+		data.setResultId(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.Data.resultId"));
+		data.setState(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.Data.state"));
+		data.setTimestamp(_ctx.longValue("GetAsyncErrorRequestStatByCodeResponse.Data.timestamp"));
+		data.setComplete(_ctx.booleanValue("GetAsyncErrorRequestStatByCodeResponse.Data.complete"));
+
+		List<Stat> result = new ArrayList<Stat>();
+		for (int i = 0; i < _ctx.lengthValue("GetAsyncErrorRequestStatByCodeResponse.Data.result.Length"); i++) {
+			Stat stat = new Stat();
+			stat.setInstanceId(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.Data.result["+ i +"].instanceId"));
+			stat.setErrorCode(_ctx.stringValue("GetAsyncErrorRequestStatByCodeResponse.Data.result["+ i +"].errorCode"));
+			stat.setCount(_ctx.integerValue("GetAsyncErrorRequestStatByCodeResponse.Data.result["+ i +"].count"));
+
+			result.add(stat);
+		}
+		data.setResult(result);
+		getAsyncErrorRequestStatByCodeResponse.setData(data);
 	 
 	 	return getAsyncErrorRequestStatByCodeResponse;
 	}

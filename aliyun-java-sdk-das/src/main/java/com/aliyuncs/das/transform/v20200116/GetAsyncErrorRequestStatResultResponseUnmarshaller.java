@@ -15,6 +15,8 @@
 package com.aliyuncs.das.transform.v20200116;
 
 import com.aliyuncs.das.model.v20200116.GetAsyncErrorRequestStatResultResponse;
+import com.aliyuncs.das.model.v20200116.GetAsyncErrorRequestStatResultResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +25,19 @@ public class GetAsyncErrorRequestStatResultResponseUnmarshaller {
 	public static GetAsyncErrorRequestStatResultResponse unmarshall(GetAsyncErrorRequestStatResultResponse getAsyncErrorRequestStatResultResponse, UnmarshallerContext _ctx) {
 		
 		getAsyncErrorRequestStatResultResponse.setRequestId(_ctx.stringValue("GetAsyncErrorRequestStatResultResponse.RequestId"));
-		getAsyncErrorRequestStatResultResponse.setCode(_ctx.stringValue("GetAsyncErrorRequestStatResultResponse.Code"));
+		getAsyncErrorRequestStatResultResponse.setCode(_ctx.longValue("GetAsyncErrorRequestStatResultResponse.Code"));
 		getAsyncErrorRequestStatResultResponse.setMessage(_ctx.stringValue("GetAsyncErrorRequestStatResultResponse.Message"));
-		getAsyncErrorRequestStatResultResponse.setData(_ctx.stringValue("GetAsyncErrorRequestStatResultResponse.Data"));
-		getAsyncErrorRequestStatResultResponse.setSuccess(_ctx.stringValue("GetAsyncErrorRequestStatResultResponse.Success"));
+		getAsyncErrorRequestStatResultResponse.setSuccess(_ctx.booleanValue("GetAsyncErrorRequestStatResultResponse.Success"));
+
+		Data data = new Data();
+		data.setFail(_ctx.booleanValue("GetAsyncErrorRequestStatResultResponse.Data.fail"));
+		data.setIsFinish(_ctx.booleanValue("GetAsyncErrorRequestStatResultResponse.Data.isFinish"));
+		data.setResultId(_ctx.stringValue("GetAsyncErrorRequestStatResultResponse.Data.resultId"));
+		data.setState(_ctx.stringValue("GetAsyncErrorRequestStatResultResponse.Data.state"));
+		data.setTimestamp(_ctx.longValue("GetAsyncErrorRequestStatResultResponse.Data.timestamp"));
+		data.setComplete(_ctx.booleanValue("GetAsyncErrorRequestStatResultResponse.Data.complete"));
+		data.setResult(_ctx.mapValue("GetAsyncErrorRequestStatResultResponse.Data.result"));
+		getAsyncErrorRequestStatResultResponse.setData(data);
 	 
 	 	return getAsyncErrorRequestStatResultResponse;
 	}
