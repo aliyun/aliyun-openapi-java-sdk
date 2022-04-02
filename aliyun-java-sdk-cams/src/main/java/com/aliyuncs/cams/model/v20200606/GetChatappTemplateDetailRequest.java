@@ -25,11 +25,7 @@ import com.aliyuncs.cams.Endpoint;
 public class GetChatappTemplateDetailRequest extends RpcAcsRequest<GetChatappTemplateDetailResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String language;
-
-	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
@@ -43,17 +39,6 @@ public class GetChatappTemplateDetailRequest extends RpcAcsRequest<GetChatappTem
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getLanguage() {
 		return this.language;
 	}
@@ -62,17 +47,6 @@ public class GetChatappTemplateDetailRequest extends RpcAcsRequest<GetChatappTem
 		this.language = language;
 		if(language != null){
 			putQueryParameter("Language", language);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

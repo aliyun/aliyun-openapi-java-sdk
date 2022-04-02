@@ -15,6 +15,8 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cams.Endpoint;
 
@@ -25,19 +27,14 @@ import com.aliyuncs.cams.Endpoint;
 public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplateResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String language;
 
 	private String auditStatus;
 
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String name;
 
-	private String page;
+	@SerializedName("page")
+	private Page page;
 	public ListChatappTemplateRequest() {
 		super("cams", "2020-06-06", "ListChatappTemplate");
 		setMethod(MethodType.POST);
@@ -45,17 +42,6 @@ public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getLanguage() {
@@ -80,28 +66,6 @@ public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplat
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -113,14 +77,39 @@ public class ListChatappTemplateRequest extends RpcAcsRequest<ListChatappTemplat
 		}
 	}
 
-	public String getPage() {
+	public Page getPage() {
 		return this.page;
 	}
 
-	public void setPage(String page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page);
+	public void setPage(Page page) {
+		this.page = page;	
+		if (page != null) {
+			putQueryParameter("Page" , new Gson().toJson(page));
+		}	
+	}
+
+	public static class Page {
+
+		@SerializedName("Index")
+		private Integer index;
+
+		@SerializedName("Size")
+		private Integer size;
+
+		public Integer getIndex() {
+			return this.index;
+		}
+
+		public void setIndex(Integer index) {
+			this.index = index;
+		}
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 	}
 

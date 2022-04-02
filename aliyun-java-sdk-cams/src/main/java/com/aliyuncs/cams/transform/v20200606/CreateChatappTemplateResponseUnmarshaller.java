@@ -15,6 +15,7 @@
 package com.aliyuncs.cams.transform.v20200606;
 
 import com.aliyuncs.cams.model.v20200606.CreateChatappTemplateResponse;
+import com.aliyuncs.cams.model.v20200606.CreateChatappTemplateResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,7 +26,11 @@ public class CreateChatappTemplateResponseUnmarshaller {
 		createChatappTemplateResponse.setRequestId(_ctx.stringValue("CreateChatappTemplateResponse.RequestId"));
 		createChatappTemplateResponse.setCode(_ctx.stringValue("CreateChatappTemplateResponse.Code"));
 		createChatappTemplateResponse.setMessage(_ctx.stringValue("CreateChatappTemplateResponse.Message"));
-		createChatappTemplateResponse.setData(_ctx.stringValue("CreateChatappTemplateResponse.Data"));
+
+		Data data = new Data();
+		data.setTemplateCode(_ctx.stringValue("CreateChatappTemplateResponse.Data.TemplateCode"));
+		data.setTemplateName(_ctx.stringValue("CreateChatappTemplateResponse.Data.TemplateName"));
+		createChatappTemplateResponse.setData(data);
 	 
 	 	return createChatappTemplateResponse;
 	}

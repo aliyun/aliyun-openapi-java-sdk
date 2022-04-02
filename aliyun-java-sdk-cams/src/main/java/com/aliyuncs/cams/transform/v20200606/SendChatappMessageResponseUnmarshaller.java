@@ -25,7 +25,7 @@ public class SendChatappMessageResponseUnmarshaller {
 		sendChatappMessageResponse.setRequestId(_ctx.stringValue("SendChatappMessageResponse.RequestId"));
 		sendChatappMessageResponse.setCode(_ctx.stringValue("SendChatappMessageResponse.Code"));
 		sendChatappMessageResponse.setMessage(_ctx.stringValue("SendChatappMessageResponse.Message"));
-		sendChatappMessageResponse.setData(_ctx.stringValue("SendChatappMessageResponse.Data"));
+		sendChatappMessageResponse.setMessageId(_ctx.stringValue("SendChatappMessageResponse.MessageId"));
 	 
 	 	return sendChatappMessageResponse;
 	}

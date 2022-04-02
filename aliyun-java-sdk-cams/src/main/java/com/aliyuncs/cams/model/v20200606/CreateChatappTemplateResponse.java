@@ -30,7 +30,7 @@ public class CreateChatappTemplateResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,12 +56,35 @@ public class CreateChatappTemplateResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class Data {
+
+		private String templateCode;
+
+		private String templateName;
+
+		public String getTemplateCode() {
+			return this.templateCode;
+		}
+
+		public void setTemplateCode(String templateCode) {
+			this.templateCode = templateCode;
+		}
+
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
+		}
 	}
 
 	@Override

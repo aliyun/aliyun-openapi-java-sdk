@@ -31,7 +31,7 @@ public class CheckChatappContactsResponse extends AcsResponse {
 
 	private String message;
 
-	private List<Contacts> data;
+	private List<Contact> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,15 +57,15 @@ public class CheckChatappContactsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<Contacts> getData() {
+	public List<Contact> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Contacts> data) {
+	public void setData(List<Contact> data) {
 		this.data = data;
 	}
 
-	public static class Contacts {
+	public static class Contact {
 
 		private String status;
 
