@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterProgramResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String casterId;
-
 	private String programName;
 
+	private String requestId;
+
 	private Integer programEffect;
+
+	private String casterId;
 
 	private Integer total;
 
 	private List<Episode> episodes;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCasterId() {
-		return this.casterId;
-	}
-
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-	}
 
 	public String getProgramName() {
 		return this.programName;
@@ -61,12 +45,28 @@ public class DescribeCasterProgramResponse extends AcsResponse {
 		this.programName = programName;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getProgramEffect() {
 		return this.programEffect;
 	}
 
 	public void setProgramEffect(Integer programEffect) {
 		this.programEffect = programEffect;
+	}
+
+	public String getCasterId() {
+		return this.casterId;
+	}
+
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
 	}
 
 	public Integer getTotal() {
@@ -87,62 +87,30 @@ public class DescribeCasterProgramResponse extends AcsResponse {
 
 	public static class Episode {
 
-		private String episodeId;
-
-		private String episodeType;
-
-		private String episodeName;
-
-		private String resourceId;
-
-		private String startTime;
+		private Integer status;
 
 		private String endTime;
 
-		private String switchType;
+		private String startTime;
 
-		private Integer status;
+		private String episodeName;
+
+		private String episodeType;
+
+		private String episodeId;
+
+		private String resourceId;
+
+		private String switchType;
 
 		private List<String> componentIds;
 
-		public String getEpisodeId() {
-			return this.episodeId;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setEpisodeId(String episodeId) {
-			this.episodeId = episodeId;
-		}
-
-		public String getEpisodeType() {
-			return this.episodeType;
-		}
-
-		public void setEpisodeType(String episodeType) {
-			this.episodeType = episodeType;
-		}
-
-		public String getEpisodeName() {
-			return this.episodeName;
-		}
-
-		public void setEpisodeName(String episodeName) {
-			this.episodeName = episodeName;
-		}
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getEndTime() {
@@ -153,20 +121,52 @@ public class DescribeCasterProgramResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEpisodeName() {
+			return this.episodeName;
+		}
+
+		public void setEpisodeName(String episodeName) {
+			this.episodeName = episodeName;
+		}
+
+		public String getEpisodeType() {
+			return this.episodeType;
+		}
+
+		public void setEpisodeType(String episodeType) {
+			this.episodeType = episodeType;
+		}
+
+		public String getEpisodeId() {
+			return this.episodeId;
+		}
+
+		public void setEpisodeId(String episodeId) {
+			this.episodeId = episodeId;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
 		public String getSwitchType() {
 			return this.switchType;
 		}
 
 		public void setSwitchType(String switchType) {
 			this.switchType = switchType;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
 		}
 
 		public List<String> getComponentIds() {

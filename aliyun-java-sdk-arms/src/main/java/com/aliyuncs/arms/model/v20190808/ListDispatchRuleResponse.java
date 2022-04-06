@@ -47,19 +47,11 @@ public class ListDispatchRuleResponse extends AcsResponse {
 
 	public static class DispatchRule {
 
-		private Long ruleId;
-
 		private String name;
 
 		private String state;
 
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
+		private Long ruleId;
 
 		public String getName() {
 			return this.name;
@@ -75,6 +67,14 @@ public class ListDispatchRuleResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public Long getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 	}
 

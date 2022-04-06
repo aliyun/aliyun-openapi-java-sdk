@@ -43,7 +43,7 @@ public class ListDistributedProductResponseUnmarshaller {
 			items.setProductKey(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].ProductKey"));
 			items.setSourceInstanceId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceInstanceId"));
 			items.setTargetInstanceId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetInstanceId"));
-			items.setGmtCreate(_ctx.integerValue("ListDistributedProductResponse.Data.Info["+ i +"].GmtCreate"));
+			items.setGmtCreate(_ctx.longValue("ListDistributedProductResponse.Data.Info["+ i +"].GmtCreate"));
 			items.setTargetAliyunId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetAliyunId"));
 			items.setSourceRegion(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceRegion"));
 			items.setTargetRegion(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetRegion"));

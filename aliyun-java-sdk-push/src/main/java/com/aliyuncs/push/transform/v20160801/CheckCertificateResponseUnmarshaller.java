@@ -29,13 +29,13 @@ public class CheckCertificateResponseUnmarshaller {
 		checkCertificateResponse.setIOS(_ctx.booleanValue("CheckCertificateResponse.IOS"));
 
 		ProductionCertInfo productionCertInfo = new ProductionCertInfo();
-		productionCertInfo.setExipreTime(_ctx.longValue("CheckCertificateResponse.ProductionCertInfo.ExipreTime"));
 		productionCertInfo.setStatus(_ctx.stringValue("CheckCertificateResponse.ProductionCertInfo.Status"));
+		productionCertInfo.setExipreTime(_ctx.longValue("CheckCertificateResponse.ProductionCertInfo.ExipreTime"));
 		checkCertificateResponse.setProductionCertInfo(productionCertInfo);
 
 		DevelopmentCertInfo developmentCertInfo = new DevelopmentCertInfo();
-		developmentCertInfo.setExipreTime(_ctx.longValue("CheckCertificateResponse.DevelopmentCertInfo.ExipreTime"));
 		developmentCertInfo.setStatus(_ctx.stringValue("CheckCertificateResponse.DevelopmentCertInfo.Status"));
+		developmentCertInfo.setExipreTime(_ctx.longValue("CheckCertificateResponse.DevelopmentCertInfo.ExipreTime"));
 		checkCertificateResponse.setDevelopmentCertInfo(developmentCertInfo);
 	 
 	 	return checkCertificateResponse;

@@ -32,15 +32,15 @@ public class DescribeLiveStreamCountResponseUnmarshaller {
 		List<StreamCountInfo> streamCountInfos = new ArrayList<StreamCountInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamCountResponse.StreamCountInfos.Length"); i++) {
 			StreamCountInfo streamCountInfo = new StreamCountInfo();
+			streamCountInfo.setType(_ctx.stringValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].Type"));
 			streamCountInfo.setCount(_ctx.longValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].Count"));
 			streamCountInfo.setLimit(_ctx.longValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].Limit"));
-			streamCountInfo.setType(_ctx.stringValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].Type"));
 
 			List<StreamCountDetail> streamCountDetails = new ArrayList<StreamCountDetail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].StreamCountDetails.Length"); j++) {
 				StreamCountDetail streamCountDetail = new StreamCountDetail();
-				streamCountDetail.setFormat(_ctx.stringValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].StreamCountDetails["+ j +"].Format"));
 				streamCountDetail.setVideoDataRate(_ctx.longValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].StreamCountDetails["+ j +"].VideoDataRate"));
+				streamCountDetail.setFormat(_ctx.stringValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].StreamCountDetails["+ j +"].Format"));
 				streamCountDetail.setCount(_ctx.longValue("DescribeLiveStreamCountResponse.StreamCountInfos["+ i +"].StreamCountDetails["+ j +"].Count"));
 
 				streamCountDetails.add(streamCountDetail);

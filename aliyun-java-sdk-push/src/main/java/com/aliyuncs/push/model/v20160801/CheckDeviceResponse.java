@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean available;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getAvailable() {
 		return this.available;
@@ -42,6 +34,14 @@ public class CheckDeviceResponse extends AcsResponse {
 
 	public void setAvailable(Boolean available) {
 		this.available = available;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -26,18 +26,18 @@ public class DescribeLiveDomainDetailResponseUnmarshaller {
 		describeLiveDomainDetailResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainDetailResponse.RequestId"));
 
 		DomainDetail domainDetail = new DomainDetail();
-		domainDetail.setGmtCreated(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtCreated"));
+		domainDetail.setSSLPub(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLPub"));
 		domainDetail.setGmtModified(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtModified"));
+		domainDetail.setDomainName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainName"));
+		domainDetail.setGmtCreated(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtCreated"));
+		domainDetail.setLiveDomainType(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.LiveDomainType"));
+		domainDetail.setDescription(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Description"));
+		domainDetail.setRegion(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Region"));
+		domainDetail.setSSLProtocol(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLProtocol"));
+		domainDetail.setCertName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.CertName"));
 		domainDetail.setDomainStatus(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainStatus"));
 		domainDetail.setCname(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Cname"));
-		domainDetail.setDomainName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainName"));
-		domainDetail.setLiveDomainType(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.LiveDomainType"));
-		domainDetail.setRegion(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Region"));
-		domainDetail.setDescription(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Description"));
-		domainDetail.setSSLProtocol(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLProtocol"));
-		domainDetail.setSSLPub(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLPub"));
 		domainDetail.setScope(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Scope"));
-		domainDetail.setCertName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.CertName"));
 		describeLiveDomainDetailResponse.setDomainDetail(domainDetail);
 	 
 	 	return describeLiveDomainDetailResponse;

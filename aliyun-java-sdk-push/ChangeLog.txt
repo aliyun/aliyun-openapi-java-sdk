@@ -1,3 +1,6 @@
+2022-03-29 Version: 3.13.10
+- Supported Trim, AndroidVivoPushMode, iOSInterruptionLevel, iOSRelevanceScore for Push and MassPush.
+
 2021-09-17 Version: 3.13.9
 - Supported SendChannels, AndroidMessageHuaweiUrgency, AndroidMessageHuaweiCategory for Push and MassPush.
 

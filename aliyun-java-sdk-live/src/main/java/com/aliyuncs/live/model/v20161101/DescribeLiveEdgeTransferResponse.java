@@ -24,19 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveEdgeTransferResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String domainName;
+	private String httpDns;
 
 	private String appName;
+
+	private String requestId;
+
+	private String transferArgs;
 
 	private String streamName;
 
 	private String targetDomainList;
 
-	private String transferArgs;
+	private String domainName;
 
-	private String httpDns;
+	public String getHttpDns() {
+		return this.httpDns;
+	}
+
+	public void setHttpDns(String httpDns) {
+		this.httpDns = httpDns;
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,20 +62,12 @@ public class DescribeLiveEdgeTransferResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getTransferArgs() {
+		return this.transferArgs;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
+	public void setTransferArgs(String transferArgs) {
+		this.transferArgs = transferArgs;
 	}
 
 	public String getStreamName() {
@@ -78,20 +86,12 @@ public class DescribeLiveEdgeTransferResponse extends AcsResponse {
 		this.targetDomainList = targetDomainList;
 	}
 
-	public String getTransferArgs() {
-		return this.transferArgs;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setTransferArgs(String transferArgs) {
-		this.transferArgs = transferArgs;
-	}
-
-	public String getHttpDns() {
-		return this.httpDns;
-	}
-
-	public void setHttpDns(String httpDns) {
-		this.httpDns = httpDns;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
 	@Override

@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamStateResponse extends AcsResponse {
 
+	private String type;
+
 	private String requestId;
 
 	private String streamState;
 
-	private String type;
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeLiveStreamStateResponse extends AcsResponse {
 
 	public void setStreamState(String streamState) {
 		this.streamState = streamState;
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 	@Override

@@ -47,21 +47,13 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 
 	public static class PageBean {
 
-		private Integer totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<TraceApp> traceApps;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -79,6 +71,14 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<TraceApp> getTraceApps() {
 			return this.traceApps;
 		}
@@ -89,49 +89,25 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 
 		public static class TraceApp {
 
-			private Long appId;
-
-			private String pid;
-
-			private String appName;
-
 			private String type;
 
-			private String userId;
-
-			private String regionId;
-
-			private Long createTime;
+			private String appName;
 
 			private Long updateTime;
 
 			private Boolean show;
 
+			private Long createTime;
+
+			private String pid;
+
+			private Long appId;
+
+			private String userId;
+
+			private String regionId;
+
 			private List<String> labels;
-
-			public Long getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(Long appId) {
-				this.appId = appId;
-			}
-
-			public String getPid() {
-				return this.pid;
-			}
-
-			public void setPid(String pid) {
-				this.pid = pid;
-			}
-
-			public String getAppName() {
-				return this.appName;
-			}
-
-			public void setAppName(String appName) {
-				this.appName = appName;
-			}
 
 			public String getType() {
 				return this.type;
@@ -141,28 +117,12 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getUserId() {
-				return this.userId;
+			public String getAppName() {
+				return this.appName;
 			}
 
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
+			public void setAppName(String appName) {
+				this.appName = appName;
 			}
 
 			public Long getUpdateTime() {
@@ -179,6 +139,46 @@ public class SearchTraceAppByPageResponse extends AcsResponse {
 
 			public void setShow(Boolean show) {
 				this.show = show;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getPid() {
+				return this.pid;
+			}
+
+			public void setPid(String pid) {
+				this.pid = pid;
+			}
+
+			public Long getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(Long appId) {
+				this.appId = appId;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public List<String> getLabels() {

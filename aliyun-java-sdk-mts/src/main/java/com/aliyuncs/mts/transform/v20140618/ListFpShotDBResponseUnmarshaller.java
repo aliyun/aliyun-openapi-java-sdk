@@ -42,6 +42,7 @@ public class ListFpShotDBResponseUnmarshaller {
 			fpShotDB.setName(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].Name"));
 			fpShotDB.setModelId(_ctx.integerValue("ListFpShotDBResponse.FpShotDBList["+ i +"].ModelId"));
 			fpShotDB.setFpDBId(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].FpDBId"));
+			fpShotDB.setInstanceId(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].InstanceId"));
 
 			fpShotDBList.add(fpShotDB);
 		}

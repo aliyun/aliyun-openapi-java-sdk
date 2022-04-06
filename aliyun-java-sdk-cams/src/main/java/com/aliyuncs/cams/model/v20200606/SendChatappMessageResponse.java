@@ -30,7 +30,7 @@ public class SendChatappMessageResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
+	private String messageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,12 +56,12 @@ public class SendChatappMessageResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
+	public String getMessageId() {
+		return this.messageId;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
 	}
 
 	@Override

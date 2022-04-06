@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartCasterSceneResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String streamUrl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getStreamUrl() {
 		return this.streamUrl;
@@ -42,6 +34,14 @@ public class StartCasterSceneResponse extends AcsResponse {
 
 	public void setStreamUrl(String streamUrl) {
 		this.streamUrl = streamUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

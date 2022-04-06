@@ -33,12 +33,12 @@ public class GetStackResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.StackInfo.Length"); i++) {
 			StackInfoItem stackInfoItem = new StackInfoItem();
 			stackInfoItem.setStartTime(_ctx.longValue("GetStackResponse.StackInfo["+ i +"].StartTime"));
+			stackInfoItem.setException(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].Exception"));
+			stackInfoItem.setApi(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].Api"));
+			stackInfoItem.setLine(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].Line"));
 			stackInfoItem.setDuration(_ctx.longValue("GetStackResponse.StackInfo["+ i +"].Duration"));
 			stackInfoItem.setRpcId(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].RpcId"));
 			stackInfoItem.setServiceName(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].ServiceName"));
-			stackInfoItem.setApi(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].Api"));
-			stackInfoItem.setException(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].Exception"));
-			stackInfoItem.setLine(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].Line"));
 
 			ExtInfo extInfo = new ExtInfo();
 			extInfo.setType(_ctx.stringValue("GetStackResponse.StackInfo["+ i +"].ExtInfo.Type"));

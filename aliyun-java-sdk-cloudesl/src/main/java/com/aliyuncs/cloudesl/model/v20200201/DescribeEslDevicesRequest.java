@@ -37,6 +37,8 @@ public class DescribeEslDevicesRequest extends RpcAcsRequest<DescribeEslDevicesR
 
 	private Integer pageSize;
 
+	private String typeEncode;
+
 	private String eslStatus;
 
 	private Integer toBatteryLevel;
@@ -114,6 +116,17 @@ public class DescribeEslDevicesRequest extends RpcAcsRequest<DescribeEslDevicesR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTypeEncode() {
+		return this.typeEncode;
+	}
+
+	public void setTypeEncode(String typeEncode) {
+		this.typeEncode = typeEncode;
+		if(typeEncode != null){
+			putBodyParameter("TypeEncode", typeEncode);
 		}
 	}
 

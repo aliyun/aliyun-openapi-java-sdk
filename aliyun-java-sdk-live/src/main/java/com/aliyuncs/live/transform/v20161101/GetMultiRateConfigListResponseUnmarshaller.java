@@ -27,16 +27,16 @@ public class GetMultiRateConfigListResponseUnmarshaller {
 	public static GetMultiRateConfigListResponse unmarshall(GetMultiRateConfigListResponse getMultiRateConfigListResponse, UnmarshallerContext _ctx) {
 		
 		getMultiRateConfigListResponse.setRequestId(_ctx.stringValue("GetMultiRateConfigListResponse.RequestId"));
-		getMultiRateConfigListResponse.setMessage(_ctx.stringValue("GetMultiRateConfigListResponse.Message"));
 		getMultiRateConfigListResponse.setCode(_ctx.integerValue("GetMultiRateConfigListResponse.Code"));
+		getMultiRateConfigListResponse.setMessage(_ctx.stringValue("GetMultiRateConfigListResponse.Message"));
 
 		List<Info> groupInfo = new ArrayList<Info>();
 		for (int i = 0; i < _ctx.lengthValue("GetMultiRateConfigListResponse.GroupInfo.Length"); i++) {
 			Info info = new Info();
-			info.setApp(_ctx.stringValue("GetMultiRateConfigListResponse.GroupInfo["+ i +"].App"));
-			info.setAvFormat(_ctx.stringValue("GetMultiRateConfigListResponse.GroupInfo["+ i +"].AvFormat"));
 			info.setGroupId(_ctx.stringValue("GetMultiRateConfigListResponse.GroupInfo["+ i +"].GroupId"));
 			info.setCount(_ctx.integerValue("GetMultiRateConfigListResponse.GroupInfo["+ i +"].Count"));
+			info.setApp(_ctx.stringValue("GetMultiRateConfigListResponse.GroupInfo["+ i +"].App"));
+			info.setAvFormat(_ctx.stringValue("GetMultiRateConfigListResponse.GroupInfo["+ i +"].AvFormat"));
 
 			groupInfo.add(info);
 		}

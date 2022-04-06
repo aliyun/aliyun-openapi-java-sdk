@@ -30,24 +30,24 @@ public class SearchAlertContactResponseUnmarshaller {
 		searchAlertContactResponse.setRequestId(_ctx.stringValue("SearchAlertContactResponse.RequestId"));
 
 		PageBean pageBean = new PageBean();
-		pageBean.setTotalCount(_ctx.integerValue("SearchAlertContactResponse.PageBean.TotalCount"));
 		pageBean.setPageNumber(_ctx.integerValue("SearchAlertContactResponse.PageBean.PageNumber"));
 		pageBean.setPageSize(_ctx.integerValue("SearchAlertContactResponse.PageBean.PageSize"));
+		pageBean.setTotalCount(_ctx.integerValue("SearchAlertContactResponse.PageBean.TotalCount"));
 
 		List<Contact> contacts = new ArrayList<Contact>();
 		for (int i = 0; i < _ctx.lengthValue("SearchAlertContactResponse.PageBean.Contacts.Length"); i++) {
 			Contact contact = new Contact();
-			contact.setContactId(_ctx.longValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].ContactId"));
-			contact.setContactName(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].ContactName"));
-			contact.setPhone(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Phone"));
-			contact.setEmail(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Email"));
-			contact.setUserId(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].UserId"));
-			contact.setDingRobot(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].DingRobot"));
-			contact.setCreateTime(_ctx.longValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].CreateTime"));
 			contact.setUpdateTime(_ctx.longValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].UpdateTime"));
-			contact.setSystemNoc(_ctx.booleanValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].SystemNoc"));
+			contact.setDingRobot(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].DingRobot"));
 			contact.setWebhook(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Webhook"));
+			contact.setEmail(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Email"));
+			contact.setContactId(_ctx.longValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].ContactId"));
+			contact.setCreateTime(_ctx.longValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].CreateTime"));
+			contact.setUserId(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].UserId"));
+			contact.setContactName(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].ContactName"));
+			contact.setSystemNoc(_ctx.booleanValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].SystemNoc"));
 			contact.setContent(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Content"));
+			contact.setPhone(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Phone"));
 
 			contacts.add(contact);
 		}

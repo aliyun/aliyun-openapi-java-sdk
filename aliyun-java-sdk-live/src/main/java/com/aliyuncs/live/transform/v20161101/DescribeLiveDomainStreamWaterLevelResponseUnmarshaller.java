@@ -30,20 +30,20 @@ public class DescribeLiveDomainStreamWaterLevelResponseUnmarshaller {
 		describeLiveDomainStreamWaterLevelResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainStreamWaterLevelResponse.RequestId"));
 
 		LiveUidWaterLevel liveUidWaterLevel = new LiveUidWaterLevel();
+		liveUidWaterLevel.setUidTranscodeLimit(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveUidWaterLevel.UidTranscodeLimit"));
 		liveUidWaterLevel.setAliUid(_ctx.stringValue("DescribeLiveDomainStreamWaterLevelResponse.LiveUidWaterLevel.AliUid"));
-		liveUidWaterLevel.setUidRawCount(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveUidWaterLevel.UidRawCount"));
 		liveUidWaterLevel.setUidTranscodeCount(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveUidWaterLevel.UidTranscodeCount"));
 		liveUidWaterLevel.setUidRawLimit(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveUidWaterLevel.UidRawLimit"));
-		liveUidWaterLevel.setUidTranscodeLimit(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveUidWaterLevel.UidTranscodeLimit"));
+		liveUidWaterLevel.setUidRawCount(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveUidWaterLevel.UidRawCount"));
 		describeLiveDomainStreamWaterLevelResponse.setLiveUidWaterLevel(liveUidWaterLevel);
 
 		List<LiveDomainWaterLevel> liveDomainWaterLevelList = new ArrayList<LiveDomainWaterLevel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainStreamWaterLevelResponse.LiveDomainWaterLevelList.Length"); i++) {
 			LiveDomainWaterLevel liveDomainWaterLevel = new LiveDomainWaterLevel();
-			liveDomainWaterLevel.setDomainName(_ctx.stringValue("DescribeLiveDomainStreamWaterLevelResponse.LiveDomainWaterLevelList["+ i +"].DomainName"));
+			liveDomainWaterLevel.setDomainRawLimit(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveDomainWaterLevelList["+ i +"].DomainRawLimit"));
 			liveDomainWaterLevel.setDomainRawCount(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveDomainWaterLevelList["+ i +"].DomainRawCount"));
 			liveDomainWaterLevel.setDomainTranscodeCount(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveDomainWaterLevelList["+ i +"].DomainTranscodeCount"));
-			liveDomainWaterLevel.setDomainRawLimit(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveDomainWaterLevelList["+ i +"].DomainRawLimit"));
+			liveDomainWaterLevel.setDomainName(_ctx.stringValue("DescribeLiveDomainStreamWaterLevelResponse.LiveDomainWaterLevelList["+ i +"].DomainName"));
 			liveDomainWaterLevel.setDomainTranscodeLimit(_ctx.integerValue("DescribeLiveDomainStreamWaterLevelResponse.LiveDomainWaterLevelList["+ i +"].DomainTranscodeLimit"));
 
 			liveDomainWaterLevelList.add(liveDomainWaterLevel);

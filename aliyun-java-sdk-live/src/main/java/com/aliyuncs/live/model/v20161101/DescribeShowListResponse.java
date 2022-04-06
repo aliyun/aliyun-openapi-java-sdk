@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeShowListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String showList;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getShowList() {
 		return this.showList;
@@ -42,6 +34,14 @@ public class DescribeShowListResponse extends AcsResponse {
 
 	public void setShowList(String showList) {
 		this.showList = showList;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

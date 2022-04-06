@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRetcodeShareUrlResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String url;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getUrl() {
 		return this.url;
@@ -42,6 +34,14 @@ public class GetRetcodeShareUrlResponse extends AcsResponse {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

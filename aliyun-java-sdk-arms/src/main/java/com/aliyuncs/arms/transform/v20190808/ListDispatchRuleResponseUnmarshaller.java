@@ -31,9 +31,9 @@ public class ListDispatchRuleResponseUnmarshaller {
 		List<DispatchRule> dispatchRules = new ArrayList<DispatchRule>();
 		for (int i = 0; i < _ctx.lengthValue("ListDispatchRuleResponse.DispatchRules.Length"); i++) {
 			DispatchRule dispatchRule = new DispatchRule();
-			dispatchRule.setRuleId(_ctx.longValue("ListDispatchRuleResponse.DispatchRules["+ i +"].RuleId"));
 			dispatchRule.setName(_ctx.stringValue("ListDispatchRuleResponse.DispatchRules["+ i +"].Name"));
 			dispatchRule.setState(_ctx.stringValue("ListDispatchRuleResponse.DispatchRules["+ i +"].State"));
+			dispatchRule.setRuleId(_ctx.longValue("ListDispatchRuleResponse.DispatchRules["+ i +"].RuleId"));
 
 			dispatchRules.add(dispatchRule);
 		}

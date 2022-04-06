@@ -47,52 +47,36 @@ public class CreatePrometheusAlertRuleResponse extends AcsResponse {
 
 	public static class PrometheusAlertRule {
 
-		private Long alertId;
-
-		private String alertName;
-
-		private String message;
+		private Integer status;
 
 		private String type;
 
+		private String notifyType;
+
 		private String expression;
+
+		private String message;
 
 		private String duration;
 
-		private String clusterId;
-
-		private Integer status;
-
 		private Long dispatchRuleId;
 
-		private String notifyType;
+		private String alertName;
+
+		private Long alertId;
+
+		private String clusterId;
 
 		private List<Label> labels;
 
 		private List<Annotation> annotations;
 
-		public Long getAlertId() {
-			return this.alertId;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setAlertId(Long alertId) {
-			this.alertId = alertId;
-		}
-
-		public String getAlertName() {
-			return this.alertName;
-		}
-
-		public void setAlertName(String alertName) {
-			this.alertName = alertName;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -103,12 +87,28 @@ public class CreatePrometheusAlertRuleResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getNotifyType() {
+			return this.notifyType;
+		}
+
+		public void setNotifyType(String notifyType) {
+			this.notifyType = notifyType;
+		}
+
 		public String getExpression() {
 			return this.expression;
 		}
 
 		public void setExpression(String expression) {
 			this.expression = expression;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getDuration() {
@@ -119,22 +119,6 @@ public class CreatePrometheusAlertRuleResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
 		public Long getDispatchRuleId() {
 			return this.dispatchRuleId;
 		}
@@ -143,12 +127,28 @@ public class CreatePrometheusAlertRuleResponse extends AcsResponse {
 			this.dispatchRuleId = dispatchRuleId;
 		}
 
-		public String getNotifyType() {
-			return this.notifyType;
+		public String getAlertName() {
+			return this.alertName;
 		}
 
-		public void setNotifyType(String notifyType) {
-			this.notifyType = notifyType;
+		public void setAlertName(String alertName) {
+			this.alertName = alertName;
+		}
+
+		public Long getAlertId() {
+			return this.alertId;
+		}
+
+		public void setAlertId(Long alertId) {
+			this.alertId = alertId;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public List<Label> getLabels() {

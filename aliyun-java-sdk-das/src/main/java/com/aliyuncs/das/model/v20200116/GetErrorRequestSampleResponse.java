@@ -14,6 +14,7 @@
 
 package com.aliyuncs.das.model.v20200116;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.das.transform.v20200116.GetErrorRequestSampleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetErrorRequestSampleResponse extends AcsResponse {
 
-	private String code;
+	private Long code;
 
 	private String message;
 
-	private String data;
-
 	private String requestId;
 
-	private String success;
+	private Boolean success;
 
-	public String getCode() {
+	private List<Sample> data;
+
+	public Long getCode() {
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(Long code) {
 		this.code = code;
 	}
 
@@ -50,14 +51,6 @@ public class GetErrorRequestSampleResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -66,12 +59,113 @@ public class GetErrorRequestSampleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public List<Sample> getData() {
+		return this.data;
+	}
+
+	public void setData(List<Sample> data) {
+		this.data = data;
+	}
+
+	public static class Sample {
+
+		private String sqlId;
+
+		private String database;
+
+		private String originHost;
+
+		private String instanceId;
+
+		private String errorCode;
+
+		private String user;
+
+		private String sql;
+
+		private Long timestamp;
+
+		private List<String> tables;
+
+		public String getSqlId() {
+			return this.sqlId;
+		}
+
+		public void setSqlId(String sqlId) {
+			this.sqlId = sqlId;
+		}
+
+		public String getDatabase() {
+			return this.database;
+		}
+
+		public void setDatabase(String database) {
+			this.database = database;
+		}
+
+		public String getOriginHost() {
+			return this.originHost;
+		}
+
+		public void setOriginHost(String originHost) {
+			this.originHost = originHost;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getUser() {
+			return this.user;
+		}
+
+		public void setUser(String user) {
+			this.user = user;
+		}
+
+		public String getSql() {
+			return this.sql;
+		}
+
+		public void setSql(String sql) {
+			this.sql = sql;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
+		}
+
+		public List<String> getTables() {
+			return this.tables;
+		}
+
+		public void setTables(List<String> tables) {
+			this.tables = tables;
+		}
 	}
 
 	@Override

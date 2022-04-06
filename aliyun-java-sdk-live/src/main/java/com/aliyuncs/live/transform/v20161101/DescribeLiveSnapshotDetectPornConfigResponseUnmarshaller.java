@@ -28,20 +28,20 @@ public class DescribeLiveSnapshotDetectPornConfigResponseUnmarshaller {
 		
 		describeLiveSnapshotDetectPornConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.RequestId"));
 		describeLiveSnapshotDetectPornConfigResponse.setPageNum(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.PageNum"));
-		describeLiveSnapshotDetectPornConfigResponse.setPageSize(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.PageSize"));
 		describeLiveSnapshotDetectPornConfigResponse.setOrder(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.Order"));
-		describeLiveSnapshotDetectPornConfigResponse.setTotalNum(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.TotalNum"));
 		describeLiveSnapshotDetectPornConfigResponse.setTotalPage(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.TotalPage"));
+		describeLiveSnapshotDetectPornConfigResponse.setPageSize(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.PageSize"));
+		describeLiveSnapshotDetectPornConfigResponse.setTotalNum(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.TotalNum"));
 
 		List<LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList = new ArrayList<LiveSnapshotDetectPornConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList.Length"); i++) {
 			LiveSnapshotDetectPornConfig liveSnapshotDetectPornConfig = new LiveSnapshotDetectPornConfig();
-			liveSnapshotDetectPornConfig.setDomainName(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].DomainName"));
-			liveSnapshotDetectPornConfig.setAppName(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].AppName"));
-			liveSnapshotDetectPornConfig.setOssEndpoint(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssEndpoint"));
-			liveSnapshotDetectPornConfig.setOssBucket(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssBucket"));
 			liveSnapshotDetectPornConfig.setOssObject(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssObject"));
+			liveSnapshotDetectPornConfig.setAppName(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].AppName"));
 			liveSnapshotDetectPornConfig.setInterval(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Interval"));
+			liveSnapshotDetectPornConfig.setOssBucket(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssBucket"));
+			liveSnapshotDetectPornConfig.setDomainName(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].DomainName"));
+			liveSnapshotDetectPornConfig.setOssEndpoint(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssEndpoint"));
 
 			List<String> scenes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Scenes.Length"); j++) {

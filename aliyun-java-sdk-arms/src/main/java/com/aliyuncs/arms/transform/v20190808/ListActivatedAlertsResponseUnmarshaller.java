@@ -32,34 +32,34 @@ public class ListActivatedAlertsResponseUnmarshaller {
 		listActivatedAlertsResponse.setRequestId(_ctx.stringValue("ListActivatedAlertsResponse.RequestId"));
 
 		Page page = new Page();
-		page.setPage(_ctx.integerValue("ListActivatedAlertsResponse.Page.Page"));
 		page.setPageSize(_ctx.integerValue("ListActivatedAlertsResponse.Page.PageSize"));
 		page.setTotal(_ctx.integerValue("ListActivatedAlertsResponse.Page.Total"));
+		page.setPage(_ctx.integerValue("ListActivatedAlertsResponse.Page.Page"));
 
 		List<Alert> alerts = new ArrayList<Alert>();
 		for (int i = 0; i < _ctx.lengthValue("ListActivatedAlertsResponse.Page.Alerts.Length"); i++) {
 			Alert alert = new Alert();
-			alert.setAlertName(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].AlertName"));
-			alert.setAlertType(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].AlertType"));
-			alert.setCount(_ctx.integerValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].Count"));
-			alert.setCreateTime(_ctx.longValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].CreateTime"));
-			alert.setEndsAt(_ctx.longValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].EndsAt"));
-			alert.setExpandFields(_ctx.mapValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].ExpandFields"));
-			alert.setAlertId(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].AlertId"));
-			alert.setIntegrationName(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].IntegrationName"));
-			alert.setIntegrationType(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].IntegrationType"));
-			alert.setInvolvedObjectKind(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].InvolvedObjectKind"));
-			alert.setInvolvedObjectName(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].InvolvedObjectName"));
-			alert.setMessage(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].Message"));
-			alert.setSeverity(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].Severity"));
-			alert.setStartsAt(_ctx.longValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].StartsAt"));
 			alert.setStatus(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].Status"));
+			alert.setSeverity(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].Severity"));
+			alert.setIntegrationName(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].IntegrationName"));
+			alert.setCreateTime(_ctx.longValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].CreateTime"));
+			alert.setMessage(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].Message"));
+			alert.setAlertType(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].AlertType"));
+			alert.setInvolvedObjectName(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].InvolvedObjectName"));
+			alert.setAlertName(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].AlertName"));
+			alert.setCount(_ctx.integerValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].Count"));
+			alert.setExpandFields(_ctx.mapValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].ExpandFields"));
+			alert.setEndsAt(_ctx.longValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].EndsAt"));
+			alert.setInvolvedObjectKind(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].InvolvedObjectKind"));
+			alert.setIntegrationType(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].IntegrationType"));
+			alert.setStartsAt(_ctx.longValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].StartsAt"));
+			alert.setAlertId(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].AlertId"));
 
 			List<DispatchRule> dispatchRules = new ArrayList<DispatchRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].DispatchRules.Length"); j++) {
 				DispatchRule dispatchRule = new DispatchRule();
-				dispatchRule.setRuleName(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].DispatchRules["+ j +"].RuleName"));
 				dispatchRule.setRuleId(_ctx.integerValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].DispatchRules["+ j +"].RuleId"));
+				dispatchRule.setRuleName(_ctx.stringValue("ListActivatedAlertsResponse.Page.Alerts["+ i +"].DispatchRules["+ j +"].RuleName"));
 
 				dispatchRules.add(dispatchRule);
 			}

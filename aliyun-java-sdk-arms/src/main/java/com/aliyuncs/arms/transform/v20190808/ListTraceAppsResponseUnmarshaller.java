@@ -27,22 +27,22 @@ public class ListTraceAppsResponseUnmarshaller {
 	public static ListTraceAppsResponse unmarshall(ListTraceAppsResponse listTraceAppsResponse, UnmarshallerContext _ctx) {
 		
 		listTraceAppsResponse.setRequestId(_ctx.stringValue("ListTraceAppsResponse.RequestId"));
-		listTraceAppsResponse.setSuccess(_ctx.booleanValue("ListTraceAppsResponse.Success"));
 		listTraceAppsResponse.setCode(_ctx.integerValue("ListTraceAppsResponse.Code"));
 		listTraceAppsResponse.setMessage(_ctx.stringValue("ListTraceAppsResponse.Message"));
+		listTraceAppsResponse.setSuccess(_ctx.booleanValue("ListTraceAppsResponse.Success"));
 
 		List<TraceApp> traceApps = new ArrayList<TraceApp>();
 		for (int i = 0; i < _ctx.lengthValue("ListTraceAppsResponse.TraceApps.Length"); i++) {
 			TraceApp traceApp = new TraceApp();
-			traceApp.setAppId(_ctx.longValue("ListTraceAppsResponse.TraceApps["+ i +"].AppId"));
-			traceApp.setPid(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Pid"));
-			traceApp.setAppName(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].AppName"));
 			traceApp.setType(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Type"));
-			traceApp.setUserId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].UserId"));
-			traceApp.setCreateTime(_ctx.longValue("ListTraceAppsResponse.TraceApps["+ i +"].CreateTime"));
+			traceApp.setAppName(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].AppName"));
 			traceApp.setUpdateTime(_ctx.longValue("ListTraceAppsResponse.TraceApps["+ i +"].UpdateTime"));
-			traceApp.setRegionId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].RegionId"));
 			traceApp.setShow(_ctx.booleanValue("ListTraceAppsResponse.TraceApps["+ i +"].Show"));
+			traceApp.setCreateTime(_ctx.longValue("ListTraceAppsResponse.TraceApps["+ i +"].CreateTime"));
+			traceApp.setPid(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Pid"));
+			traceApp.setAppId(_ctx.longValue("ListTraceAppsResponse.TraceApps["+ i +"].AppId"));
+			traceApp.setUserId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].UserId"));
+			traceApp.setRegionId(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].RegionId"));
 
 			List<String> labels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTraceAppsResponse.TraceApps["+ i +"].Labels.Length"); j++) {

@@ -40,18 +40,18 @@ public class GetMultipleTraceResponseUnmarshaller {
 			List<Span> spans = new ArrayList<Span>();
 			for (int j = 0; j < _ctx.lengthValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans.Length"); j++) {
 				Span span = new Span();
-				span.setTraceID(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].TraceID"));
-				span.setOperationName(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].OperationName"));
-				span.setDuration(_ctx.longValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].Duration"));
-				span.setServiceName(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].ServiceName"));
-				span.setServiceIp(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].ServiceIp"));
-				span.setTimestamp(_ctx.longValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].Timestamp"));
-				span.setRpcId(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].RpcId"));
-				span.setResultCode(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].ResultCode"));
-				span.setHaveStack(_ctx.booleanValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].HaveStack"));
-				span.setRpcType(_ctx.integerValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].RpcType"));
 				span.setSpanId(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].SpanId"));
+				span.setOperationName(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].OperationName"));
+				span.setResultCode(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].ResultCode"));
+				span.setTimestamp(_ctx.longValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].Timestamp"));
+				span.setRpcType(_ctx.integerValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].RpcType"));
+				span.setServiceIp(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].ServiceIp"));
+				span.setHaveStack(_ctx.booleanValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].HaveStack"));
 				span.setParentSpanId(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].ParentSpanId"));
+				span.setDuration(_ctx.longValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].Duration"));
+				span.setRpcId(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].RpcId"));
+				span.setServiceName(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].ServiceName"));
+				span.setTraceID(_ctx.stringValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].TraceID"));
 
 				List<TagEntry> tagEntryList = new ArrayList<TagEntry>();
 				for (int k = 0; k < _ctx.lengthValue("GetMultipleTraceResponse.MultiCallChainInfos["+ i +"].Spans["+ j +"].TagEntryList.Length"); k++) {

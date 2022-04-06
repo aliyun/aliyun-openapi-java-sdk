@@ -26,8 +26,8 @@ public class CreateRetcodeAppResponseUnmarshaller {
 		createRetcodeAppResponse.setRequestId(_ctx.stringValue("CreateRetcodeAppResponse.RequestId"));
 
 		RetcodeAppDataBean retcodeAppDataBean = new RetcodeAppDataBean();
-		retcodeAppDataBean.setAppId(_ctx.longValue("CreateRetcodeAppResponse.RetcodeAppDataBean.AppId"));
 		retcodeAppDataBean.setPid(_ctx.stringValue("CreateRetcodeAppResponse.RetcodeAppDataBean.Pid"));
+		retcodeAppDataBean.setAppId(_ctx.longValue("CreateRetcodeAppResponse.RetcodeAppDataBean.AppId"));
 		createRetcodeAppResponse.setRetcodeAppDataBean(retcodeAppDataBean);
 	 
 	 	return createRetcodeAppResponse;

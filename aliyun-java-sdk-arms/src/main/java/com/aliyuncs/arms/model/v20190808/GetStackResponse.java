@@ -49,17 +49,17 @@ public class GetStackResponse extends AcsResponse {
 
 		private Long startTime;
 
+		private String exception;
+
+		private String api;
+
+		private String line;
+
 		private Long duration;
 
 		private String rpcId;
 
 		private String serviceName;
-
-		private String api;
-
-		private String exception;
-
-		private String line;
 
 		private ExtInfo extInfo;
 
@@ -69,6 +69,30 @@ public class GetStackResponse extends AcsResponse {
 
 		public void setStartTime(Long startTime) {
 			this.startTime = startTime;
+		}
+
+		public String getException() {
+			return this.exception;
+		}
+
+		public void setException(String exception) {
+			this.exception = exception;
+		}
+
+		public String getApi() {
+			return this.api;
+		}
+
+		public void setApi(String api) {
+			this.api = api;
+		}
+
+		public String getLine() {
+			return this.line;
+		}
+
+		public void setLine(String line) {
+			this.line = line;
 		}
 
 		public Long getDuration() {
@@ -93,30 +117,6 @@ public class GetStackResponse extends AcsResponse {
 
 		public void setServiceName(String serviceName) {
 			this.serviceName = serviceName;
-		}
-
-		public String getApi() {
-			return this.api;
-		}
-
-		public void setApi(String api) {
-			this.api = api;
-		}
-
-		public String getException() {
-			return this.exception;
-		}
-
-		public void setException(String exception) {
-			this.exception = exception;
-		}
-
-		public String getLine() {
-			return this.line;
-		}
-
-		public void setLine(String line) {
-			this.line = line;
 		}
 
 		public ExtInfo getExtInfo() {

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchEventsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer isTrigger;
 
+	private String requestId;
+
 	private PageBean pageBean;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getIsTrigger() {
 		return this.isTrigger;
@@ -45,6 +37,14 @@ public class SearchEventsResponse extends AcsResponse {
 
 	public void setIsTrigger(Integer isTrigger) {
 		this.isTrigger = isTrigger;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public PageBean getPageBean() {
@@ -57,21 +57,13 @@ public class SearchEventsResponse extends AcsResponse {
 
 	public static class PageBean {
 
-		private Integer totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<EventItem> event;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -89,6 +81,14 @@ public class SearchEventsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<EventItem> getEvent() {
 			return this.event;
 		}
@@ -99,31 +99,23 @@ public class SearchEventsResponse extends AcsResponse {
 
 		public static class EventItem {
 
-			private Long id;
-
 			private Long eventTime;
-
-			private Integer alertType;
 
 			private String eventLevel;
 
+			private String alertRule;
+
 			private String message;
 
-			private Long alertId;
+			private Integer alertType;
 
 			private String alertName;
 
-			private String alertRule;
+			private Long id;
+
+			private Long alertId;
 
 			private List<String> links;
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
 
 			public Long getEventTime() {
 				return this.eventTime;
@@ -131,14 +123,6 @@ public class SearchEventsResponse extends AcsResponse {
 
 			public void setEventTime(Long eventTime) {
 				this.eventTime = eventTime;
-			}
-
-			public Integer getAlertType() {
-				return this.alertType;
-			}
-
-			public void setAlertType(Integer alertType) {
-				this.alertType = alertType;
 			}
 
 			public String getEventLevel() {
@@ -149,6 +133,14 @@ public class SearchEventsResponse extends AcsResponse {
 				this.eventLevel = eventLevel;
 			}
 
+			public String getAlertRule() {
+				return this.alertRule;
+			}
+
+			public void setAlertRule(String alertRule) {
+				this.alertRule = alertRule;
+			}
+
 			public String getMessage() {
 				return this.message;
 			}
@@ -157,12 +149,12 @@ public class SearchEventsResponse extends AcsResponse {
 				this.message = message;
 			}
 
-			public Long getAlertId() {
-				return this.alertId;
+			public Integer getAlertType() {
+				return this.alertType;
 			}
 
-			public void setAlertId(Long alertId) {
-				this.alertId = alertId;
+			public void setAlertType(Integer alertType) {
+				this.alertType = alertType;
 			}
 
 			public String getAlertName() {
@@ -173,12 +165,20 @@ public class SearchEventsResponse extends AcsResponse {
 				this.alertName = alertName;
 			}
 
-			public String getAlertRule() {
-				return this.alertRule;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setAlertRule(String alertRule) {
-				this.alertRule = alertRule;
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public Long getAlertId() {
+				return this.alertId;
+			}
+
+			public void setAlertId(Long alertId) {
+				this.alertId = alertId;
 			}
 
 			public List<String> getLinks() {

@@ -15,6 +15,10 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cams.Endpoint;
 
@@ -25,8 +29,6 @@ import com.aliyuncs.cams.Endpoint;
 public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String messageType;
 
 	private String language;
@@ -35,17 +37,15 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 
 	private String content;
 
-	private String templateParams;
+	@SerializedName("templateParams")
+	private Map<String,String> templateParams;
 
-	private String payload;
+	@SerializedName("payload")
+	private List<String> payload;
 
 	private String channelType;
 
 	private String from;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 
 	private String to;
 
@@ -59,17 +59,6 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getMessageType() {
 		return this.messageType;
 	}
@@ -77,7 +66,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 	public void setMessageType(String messageType) {
 		this.messageType = messageType;
 		if(messageType != null){
-			putQueryParameter("MessageType", messageType);
+			putBodyParameter("MessageType", messageType);
 		}
 	}
 
@@ -88,7 +77,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 	public void setLanguage(String language) {
 		this.language = language;
 		if(language != null){
-			putQueryParameter("Language", language);
+			putBodyParameter("Language", language);
 		}
 	}
 
@@ -99,7 +88,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 	public void setType(String type) {
 		this.type = type;
 		if(type != null){
-			putQueryParameter("Type", type);
+			putBodyParameter("Type", type);
 		}
 	}
 
@@ -114,26 +103,26 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 		}
 	}
 
-	public String getTemplateParams() {
+	public Map<String,String> getTemplateParams() {
 		return this.templateParams;
 	}
 
-	public void setTemplateParams(String templateParams) {
-		this.templateParams = templateParams;
-		if(templateParams != null){
-			putQueryParameter("TemplateParams", templateParams);
-		}
+	public void setTemplateParams(Map<String,String> templateParams) {
+		this.templateParams = templateParams;	
+		if (templateParams != null) {
+			putBodyParameter("TemplateParams" , new Gson().toJson(templateParams));
+		}	
 	}
 
-	public String getPayload() {
+	public List<String> getPayload() {
 		return this.payload;
 	}
 
-	public void setPayload(String payload) {
-		this.payload = payload;
-		if(payload != null){
-			putQueryParameter("Payload", payload);
-		}
+	public void setPayload(List<String> payload) {
+		this.payload = payload;	
+		if (payload != null) {
+			putQueryParameter("Payload" , new Gson().toJson(payload));
+		}	
 	}
 
 	public String getChannelType() {
@@ -143,7 +132,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 	public void setChannelType(String channelType) {
 		this.channelType = channelType;
 		if(channelType != null){
-			putQueryParameter("ChannelType", channelType);
+			putBodyParameter("ChannelType", channelType);
 		}
 	}
 
@@ -154,29 +143,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 	public void setFrom(String from) {
 		this.from = from;
 		if(from != null){
-			putQueryParameter("From", from);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+			putBodyParameter("From", from);
 		}
 	}
 
@@ -187,7 +154,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 	public void setTo(String to) {
 		this.to = to;
 		if(to != null){
-			putQueryParameter("To", to);
+			putBodyParameter("To", to);
 		}
 	}
 
@@ -198,7 +165,7 @@ public class SendChatappMessageRequest extends RpcAcsRequest<SendChatappMessageR
 	public void setTemplateCode(String templateCode) {
 		this.templateCode = templateCode;
 		if(templateCode != null){
-			putQueryParameter("TemplateCode", templateCode);
+			putBodyParameter("TemplateCode", templateCode);
 		}
 	}
 

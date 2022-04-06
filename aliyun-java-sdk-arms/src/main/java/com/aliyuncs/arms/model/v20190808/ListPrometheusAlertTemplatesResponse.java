@@ -47,28 +47,28 @@ public class ListPrometheusAlertTemplatesResponse extends AcsResponse {
 
 	public static class PrometheusAlertTemplate {
 
-		private String alertName;
+		private String type;
 
 		private String description;
 
-		private String type;
-
 		private String expression;
+
+		private String version;
 
 		private String duration;
 
-		private String version;
+		private String alertName;
 
 		private List<Label> labels;
 
 		private List<Annotation> annotations;
 
-		public String getAlertName() {
-			return this.alertName;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setAlertName(String alertName) {
-			this.alertName = alertName;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDescription() {
@@ -79,20 +79,20 @@ public class ListPrometheusAlertTemplatesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
 		public String getExpression() {
 			return this.expression;
 		}
 
 		public void setExpression(String expression) {
 			this.expression = expression;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public String getDuration() {
@@ -103,12 +103,12 @@ public class ListPrometheusAlertTemplatesResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
-		public String getVersion() {
-			return this.version;
+		public String getAlertName() {
+			return this.alertName;
 		}
 
-		public void setVersion(String version) {
-			this.version = version;
+		public void setAlertName(String alertName) {
+			this.alertName = alertName;
 		}
 
 		public List<Label> getLabels() {

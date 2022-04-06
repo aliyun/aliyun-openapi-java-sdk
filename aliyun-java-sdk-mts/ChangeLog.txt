@@ -1,3 +1,6 @@
+2022-03-28 Version: 3.3.45
+- Update ListFpShotDB and CreateFpShotDB.
+
 2022-03-10 Version: 3.3.44
 - Add SubmitSyncFpShotJob.
 

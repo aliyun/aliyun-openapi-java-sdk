@@ -31,10 +31,10 @@ public class ListRetcodeAppsResponseUnmarshaller {
 		List<RetcodeApp> retcodeApps = new ArrayList<RetcodeApp>();
 		for (int i = 0; i < _ctx.lengthValue("ListRetcodeAppsResponse.RetcodeApps.Length"); i++) {
 			RetcodeApp retcodeApp = new RetcodeApp();
-			retcodeApp.setAppId(_ctx.longValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].AppId"));
-			retcodeApp.setPid(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].Pid"));
 			retcodeApp.setAppName(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].AppName"));
 			retcodeApp.setRetcodeAppType(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].RetcodeAppType"));
+			retcodeApp.setAppId(_ctx.longValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].AppId"));
+			retcodeApp.setPid(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].Pid"));
 
 			retcodeApps.add(retcodeApp);
 		}

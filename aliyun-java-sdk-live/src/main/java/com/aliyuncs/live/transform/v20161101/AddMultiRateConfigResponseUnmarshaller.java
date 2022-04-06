@@ -27,26 +27,26 @@ public class AddMultiRateConfigResponseUnmarshaller {
 	public static AddMultiRateConfigResponse unmarshall(AddMultiRateConfigResponse addMultiRateConfigResponse, UnmarshallerContext _ctx) {
 		
 		addMultiRateConfigResponse.setRequestId(_ctx.stringValue("AddMultiRateConfigResponse.RequestId"));
-		addMultiRateConfigResponse.setMessage(_ctx.stringValue("AddMultiRateConfigResponse.Message"));
 		addMultiRateConfigResponse.setCode(_ctx.integerValue("AddMultiRateConfigResponse.Code"));
+		addMultiRateConfigResponse.setMessage(_ctx.stringValue("AddMultiRateConfigResponse.Message"));
 
 		List<FailedTemplates> body = new ArrayList<FailedTemplates>();
 		for (int i = 0; i < _ctx.lengthValue("AddMultiRateConfigResponse.Body.Length"); i++) {
 			FailedTemplates failedTemplates = new FailedTemplates();
-			failedTemplates.setTemplate(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].Template"));
-			failedTemplates.setTemplateType(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].TemplateType"));
-			failedTemplates.setHeight(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].Height"));
-			failedTemplates.setWidth(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].Width"));
-			failedTemplates.setFps(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].Fps"));
-			failedTemplates.setGop(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].Gop"));
-			failedTemplates.setVideoBitrate(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].VideoBitrate"));
-			failedTemplates.setProfile(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].Profile"));
-			failedTemplates.setAudioProfile(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].AudioProfile"));
-			failedTemplates.setAudioCodec(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].AudioCodec"));
-			failedTemplates.setAudioRate(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].AudioRate"));
 			failedTemplates.setAudioBitrate(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].AudioBitrate"));
-			failedTemplates.setAudioChannelNum(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].AudioChannelNum"));
+			failedTemplates.setTemplate(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].Template"));
+			failedTemplates.setHeight(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].Height"));
+			failedTemplates.setTemplateType(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].TemplateType"));
 			failedTemplates.setBandWidth(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].BandWidth"));
+			failedTemplates.setProfile(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].Profile"));
+			failedTemplates.setAudioRate(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].AudioRate"));
+			failedTemplates.setAudioCodec(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].AudioCodec"));
+			failedTemplates.setGop(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].Gop"));
+			failedTemplates.setWidth(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].Width"));
+			failedTemplates.setVideoBitrate(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].VideoBitrate"));
+			failedTemplates.setAudioChannelNum(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].AudioChannelNum"));
+			failedTemplates.setFps(_ctx.integerValue("AddMultiRateConfigResponse.Body["+ i +"].Fps"));
+			failedTemplates.setAudioProfile(_ctx.stringValue("AddMultiRateConfigResponse.Body["+ i +"].AudioProfile"));
 
 			body.add(failedTemplates);
 		}

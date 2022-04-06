@@ -31,24 +31,24 @@ public class ListClusterFromGrafanaResponseUnmarshaller {
 		List<PromCluster> promClusterList = new ArrayList<PromCluster>();
 		for (int i = 0; i < _ctx.lengthValue("ListClusterFromGrafanaResponse.PromClusterList.Length"); i++) {
 			PromCluster promCluster = new PromCluster();
+			promCluster.setUpdateTime(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].UpdateTime"));
+			promCluster.setCreateTime(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].CreateTime"));
+			promCluster.setUserId(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].UserId"));
+			promCluster.setOptions(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].Options"));
+			promCluster.setIsControllerInstalled(_ctx.booleanValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].IsControllerInstalled"));
+			promCluster.setAgentStatus(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].AgentStatus"));
+			promCluster.setExtra(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].Extra"));
+			promCluster.setInstallTime(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].InstallTime"));
+			promCluster.setRegionId(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].RegionId"));
+			promCluster.setControllerId(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].ControllerId"));
+			promCluster.setPluginsJsonArray(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].PluginsJsonArray"));
+			promCluster.setClusterType(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].ClusterType"));
+			promCluster.setClusterName(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].ClusterName"));
+			promCluster.setStateJson(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].StateJson"));
+			promCluster.setLastHeartBeatTime(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].LastHeartBeatTime"));
+			promCluster.setNodeNum(_ctx.integerValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].NodeNum"));
 			promCluster.setId(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].Id"));
 			promCluster.setClusterId(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].ClusterId"));
-			promCluster.setClusterName(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].ClusterName"));
-			promCluster.setAgentStatus(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].AgentStatus"));
-			promCluster.setClusterType(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].ClusterType"));
-			promCluster.setControllerId(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].ControllerId"));
-			promCluster.setIsControllerInstalled(_ctx.booleanValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].IsControllerInstalled"));
-			promCluster.setUserId(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].UserId"));
-			promCluster.setRegionId(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].RegionId"));
-			promCluster.setPluginsJsonArray(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].PluginsJsonArray"));
-			promCluster.setStateJson(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].StateJson"));
-			promCluster.setNodeNum(_ctx.integerValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].NodeNum"));
-			promCluster.setCreateTime(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].CreateTime"));
-			promCluster.setUpdateTime(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].UpdateTime"));
-			promCluster.setLastHeartBeatTime(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].LastHeartBeatTime"));
-			promCluster.setInstallTime(_ctx.longValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].InstallTime"));
-			promCluster.setExtra(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].Extra"));
-			promCluster.setOptions(_ctx.stringValue("ListClusterFromGrafanaResponse.PromClusterList["+ i +"].Options"));
 
 			promClusterList.add(promCluster);
 		}

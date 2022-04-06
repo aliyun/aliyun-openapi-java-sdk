@@ -77,8 +77,8 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 		if (audioLayers != null) {
 			for (int depth1 = 0; depth1 < audioLayers.size(); depth1++) {
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".VolumeRate" , audioLayers.get(depth1).getVolumeRate());
-				putQueryParameter("AudioLayer." + (depth1 + 1) + ".ValidChannel" , audioLayers.get(depth1).getValidChannel());
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".FixedDelayDuration" , audioLayers.get(depth1).getFixedDelayDuration());
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".ValidChannel" , audioLayers.get(depth1).getValidChannel());
 			}
 		}	
 	}
@@ -122,9 +122,9 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 
 		private Float volumeRate;
 
-		private String validChannel;
-
 		private Integer fixedDelayDuration;
+
+		private String validChannel;
 
 		public Float getVolumeRate() {
 			return this.volumeRate;
@@ -134,20 +134,20 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 			this.volumeRate = volumeRate;
 		}
 
-		public String getValidChannel() {
-			return this.validChannel;
-		}
-
-		public void setValidChannel(String validChannel) {
-			this.validChannel = validChannel;
-		}
-
 		public Integer getFixedDelayDuration() {
 			return this.fixedDelayDuration;
 		}
 
 		public void setFixedDelayDuration(Integer fixedDelayDuration) {
 			this.fixedDelayDuration = fixedDelayDuration;
+		}
+
+		public String getValidChannel() {
+			return this.validChannel;
+		}
+
+		public void setValidChannel(String validChannel) {
+			this.validChannel = validChannel;
 		}
 	}
 

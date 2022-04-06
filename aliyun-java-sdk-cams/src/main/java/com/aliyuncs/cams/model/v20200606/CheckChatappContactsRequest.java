@@ -15,6 +15,9 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cams.Endpoint;
 
@@ -25,17 +28,12 @@ import com.aliyuncs.cams.Endpoint;
 public class CheckChatappContactsRequest extends RpcAcsRequest<CheckChatappContactsResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String channelType;
 
 	private String from;
 
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
-	private String contacts;
+	@SerializedName("contacts")
+	private List<String> contacts;
 	public CheckChatappContactsRequest() {
 		super("cams", "2020-06-06", "CheckChatappContacts");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class CheckChatappContactsRequest extends RpcAcsRequest<CheckChatappConta
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getChannelType() {
 		return this.channelType;
 	}
@@ -63,7 +50,7 @@ public class CheckChatappContactsRequest extends RpcAcsRequest<CheckChatappConta
 	public void setChannelType(String channelType) {
 		this.channelType = channelType;
 		if(channelType != null){
-			putQueryParameter("ChannelType", channelType);
+			putBodyParameter("ChannelType", channelType);
 		}
 	}
 
@@ -74,41 +61,19 @@ public class CheckChatappContactsRequest extends RpcAcsRequest<CheckChatappConta
 	public void setFrom(String from) {
 		this.from = from;
 		if(from != null){
-			putQueryParameter("From", from);
+			putBodyParameter("From", from);
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getContacts() {
+	public List<String> getContacts() {
 		return this.contacts;
 	}
 
-	public void setContacts(String contacts) {
-		this.contacts = contacts;
-		if(contacts != null){
-			putQueryParameter("Contacts", contacts);
-		}
+	public void setContacts(List<String> contacts) {
+		this.contacts = contacts;	
+		if (contacts != null) {
+			putBodyParameter("Contacts" , new Gson().toJson(contacts));
+		}	
 	}
 
 	@Override

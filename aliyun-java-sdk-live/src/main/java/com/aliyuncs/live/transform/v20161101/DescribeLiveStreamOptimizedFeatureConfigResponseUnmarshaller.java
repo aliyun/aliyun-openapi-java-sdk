@@ -31,9 +31,9 @@ public class DescribeLiveStreamOptimizedFeatureConfigResponseUnmarshaller {
 		List<LiveStreamOptimizedFeatureConfig> liveStreamOptimizedFeatureConfigList = new ArrayList<LiveStreamOptimizedFeatureConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList.Length"); i++) {
 			LiveStreamOptimizedFeatureConfig liveStreamOptimizedFeatureConfig = new LiveStreamOptimizedFeatureConfig();
-			liveStreamOptimizedFeatureConfig.setDomainName(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].DomainName"));
 			liveStreamOptimizedFeatureConfig.setConfigName(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigName"));
 			liveStreamOptimizedFeatureConfig.setConfigStatus(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigStatus"));
+			liveStreamOptimizedFeatureConfig.setDomainName(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].DomainName"));
 			liveStreamOptimizedFeatureConfig.setConfigValue(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigValue"));
 
 			liveStreamOptimizedFeatureConfigList.add(liveStreamOptimizedFeatureConfig);

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateAlertContactGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean isSuccess;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getIsSuccess() {
 		return this.isSuccess;
@@ -42,6 +34,14 @@ public class UpdateAlertContactGroupResponse extends AcsResponse {
 
 	public void setIsSuccess(Boolean isSuccess) {
 		this.isSuccess = isSuccess;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

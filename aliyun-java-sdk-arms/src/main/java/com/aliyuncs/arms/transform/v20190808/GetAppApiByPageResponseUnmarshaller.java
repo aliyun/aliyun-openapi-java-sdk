@@ -33,9 +33,9 @@ public class GetAppApiByPageResponseUnmarshaller {
 		getAppApiByPageResponse.setSuccess(_ctx.booleanValue("GetAppApiByPageResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("GetAppApiByPageResponse.Data.PageSize"));
 		data.setTotal(_ctx.stringValue("GetAppApiByPageResponse.Data.Total"));
 		data.setPage(_ctx.integerValue("GetAppApiByPageResponse.Data.Page"));
-		data.setPageSize(_ctx.integerValue("GetAppApiByPageResponse.Data.PageSize"));
 
 		List<Map<Object, Object>> items = _ctx.listMapValue("GetAppApiByPageResponse.Data.Items");
 		data.setItems(items);

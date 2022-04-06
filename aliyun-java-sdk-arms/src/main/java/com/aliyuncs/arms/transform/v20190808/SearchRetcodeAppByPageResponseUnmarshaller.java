@@ -30,22 +30,22 @@ public class SearchRetcodeAppByPageResponseUnmarshaller {
 		searchRetcodeAppByPageResponse.setRequestId(_ctx.stringValue("SearchRetcodeAppByPageResponse.RequestId"));
 
 		PageBean pageBean = new PageBean();
-		pageBean.setTotalCount(_ctx.integerValue("SearchRetcodeAppByPageResponse.PageBean.TotalCount"));
 		pageBean.setPageNumber(_ctx.integerValue("SearchRetcodeAppByPageResponse.PageBean.PageNumber"));
 		pageBean.setPageSize(_ctx.integerValue("SearchRetcodeAppByPageResponse.PageBean.PageSize"));
+		pageBean.setTotalCount(_ctx.integerValue("SearchRetcodeAppByPageResponse.PageBean.TotalCount"));
 
 		List<RetcodeApp> retcodeApps = new ArrayList<RetcodeApp>();
 		for (int i = 0; i < _ctx.lengthValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps.Length"); i++) {
 			RetcodeApp retcodeApp = new RetcodeApp();
-			retcodeApp.setAppId(_ctx.longValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].AppId"));
-			retcodeApp.setPid(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].Pid"));
-			retcodeApp.setAppName(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].AppName"));
 			retcodeApp.setType(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].Type"));
+			retcodeApp.setAppName(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].AppName"));
+			retcodeApp.setRetcodeAppType(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].RetcodeAppType"));
+			retcodeApp.setUpdateTime(_ctx.longValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].UpdateTime"));
+			retcodeApp.setCreateTime(_ctx.longValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].CreateTime"));
+			retcodeApp.setPid(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].Pid"));
+			retcodeApp.setAppId(_ctx.longValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].AppId"));
 			retcodeApp.setUserId(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].UserId"));
 			retcodeApp.setRegionId(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].RegionId"));
-			retcodeApp.setCreateTime(_ctx.longValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].CreateTime"));
-			retcodeApp.setUpdateTime(_ctx.longValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].UpdateTime"));
-			retcodeApp.setRetcodeAppType(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].RetcodeAppType"));
 
 			retcodeApps.add(retcodeApp);
 		}

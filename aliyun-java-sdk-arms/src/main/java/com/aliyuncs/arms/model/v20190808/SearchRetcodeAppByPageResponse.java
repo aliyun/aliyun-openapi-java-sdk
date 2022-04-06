@@ -47,21 +47,13 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 
 	public static class PageBean {
 
-		private Integer totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<RetcodeApp> retcodeApps;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -79,6 +71,14 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<RetcodeApp> getRetcodeApps() {
 			return this.retcodeApps;
 		}
@@ -89,38 +89,30 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 
 		public static class RetcodeApp {
 
-			private Long appId;
-
-			private String pid;
+			private String type;
 
 			private String appName;
 
-			private String type;
+			private String retcodeAppType;
+
+			private Long updateTime;
+
+			private Long createTime;
+
+			private String pid;
+
+			private Long appId;
 
 			private String userId;
 
 			private String regionId;
 
-			private Long createTime;
-
-			private Long updateTime;
-
-			private String retcodeAppType;
-
-			public Long getAppId() {
-				return this.appId;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setAppId(Long appId) {
-				this.appId = appId;
-			}
-
-			public String getPid() {
-				return this.pid;
-			}
-
-			public void setPid(String pid) {
-				this.pid = pid;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getAppName() {
@@ -131,12 +123,44 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 				this.appName = appName;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getRetcodeAppType() {
+				return this.retcodeAppType;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setRetcodeAppType(String retcodeAppType) {
+				this.retcodeAppType = retcodeAppType;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getPid() {
+				return this.pid;
+			}
+
+			public void setPid(String pid) {
+				this.pid = pid;
+			}
+
+			public Long getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(Long appId) {
+				this.appId = appId;
 			}
 
 			public String getUserId() {
@@ -153,30 +177,6 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public Long getUpdateTime() {
-				return this.updateTime;
-			}
-
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
-			}
-
-			public String getRetcodeAppType() {
-				return this.retcodeAppType;
-			}
-
-			public void setRetcodeAppType(String retcodeAppType) {
-				this.retcodeAppType = retcodeAppType;
 			}
 		}
 	}

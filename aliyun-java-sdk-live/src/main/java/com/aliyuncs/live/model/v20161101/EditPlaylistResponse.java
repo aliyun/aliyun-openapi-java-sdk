@@ -27,9 +27,9 @@ public class EditPlaylistResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String programId;
-
 	private String casterId;
+
+	private String programId;
 
 	private Items items;
 
@@ -41,20 +41,20 @@ public class EditPlaylistResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getProgramId() {
-		return this.programId;
-	}
-
-	public void setProgramId(String programId) {
-		this.programId = programId;
-	}
-
 	public String getCasterId() {
 		return this.casterId;
 	}
 
 	public void setCasterId(String casterId) {
 		this.casterId = casterId;
+	}
+
+	public String getProgramId() {
+		return this.programId;
+	}
+
+	public void setProgramId(String programId) {
+		this.programId = programId;
 	}
 
 	public Items getItems() {
@@ -89,17 +89,9 @@ public class EditPlaylistResponse extends AcsResponse {
 
 		public static class SuccessItem {
 
-			private String itemId;
-
 			private String itemName;
 
-			public String getItemId() {
-				return this.itemId;
-			}
-
-			public void setItemId(String itemId) {
-				this.itemId = itemId;
-			}
+			private String itemId;
 
 			public String getItemName() {
 				return this.itemName;
@@ -107,22 +99,22 @@ public class EditPlaylistResponse extends AcsResponse {
 
 			public void setItemName(String itemName) {
 				this.itemName = itemName;
+			}
+
+			public String getItemId() {
+				return this.itemId;
+			}
+
+			public void setItemId(String itemId) {
+				this.itemId = itemId;
 			}
 		}
 
 		public static class FailedItem {
 
-			private String itemId;
-
 			private String itemName;
 
-			public String getItemId() {
-				return this.itemId;
-			}
-
-			public void setItemId(String itemId) {
-				this.itemId = itemId;
-			}
+			private String itemId;
 
 			public String getItemName() {
 				return this.itemName;
@@ -130,6 +122,14 @@ public class EditPlaylistResponse extends AcsResponse {
 
 			public void setItemName(String itemName) {
 				this.itemName = itemName;
+			}
+
+			public String getItemId() {
+				return this.itemId;
+			}
+
+			public void setItemId(String itemId) {
+				this.itemId = itemId;
 			}
 		}
 	}

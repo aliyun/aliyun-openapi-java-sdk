@@ -15,6 +15,10 @@
 package com.aliyuncs.cams.model.v20200606;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cams.Endpoint;
 
@@ -25,19 +29,15 @@ import com.aliyuncs.cams.Endpoint;
 public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTemplateResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String components;
+	@SerializedName("components")
+	private List<Components> components;
 
 	private String language;
 
-	private String example;
+	@SerializedName("example")
+	private Map<String,String> example;
 
 	private String templateType;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 
 	private String name;
 
@@ -51,26 +51,15 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getComponents() {
+	public List<Components> getComponents() {
 		return this.components;
 	}
 
-	public void setComponents(String components) {
-		this.components = components;
-		if(components != null){
-			putQueryParameter("Components", components);
-		}
+	public void setComponents(List<Components> components) {
+		this.components = components;	
+		if (components != null) {
+			putBodyParameter("Components" , new Gson().toJson(components));
+		}	
 	}
 
 	public String getLanguage() {
@@ -80,19 +69,19 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 	public void setLanguage(String language) {
 		this.language = language;
 		if(language != null){
-			putQueryParameter("Language", language);
+			putBodyParameter("Language", language);
 		}
 	}
 
-	public String getExample() {
+	public Map<String,String> getExample() {
 		return this.example;
 	}
 
-	public void setExample(String example) {
-		this.example = example;
-		if(example != null){
-			putQueryParameter("Example", example);
-		}
+	public void setExample(Map<String,String> example) {
+		this.example = example;	
+		if (example != null) {
+			putBodyParameter("Example" , new Gson().toJson(example));
+		}	
 	}
 
 	public String getTemplateType() {
@@ -102,29 +91,7 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 	public void setTemplateType(String templateType) {
 		this.templateType = templateType;
 		if(templateType != null){
-			putQueryParameter("TemplateType", templateType);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+			putBodyParameter("TemplateType", templateType);
 		}
 	}
 
@@ -135,7 +102,7 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 	public void setName(String name) {
 		this.name = name;
 		if(name != null){
-			putQueryParameter("Name", name);
+			putBodyParameter("Name", name);
 		}
 	}
 
@@ -146,7 +113,123 @@ public class CreateChatappTemplateRequest extends RpcAcsRequest<CreateChatappTem
 	public void setCategory(String category) {
 		this.category = category;
 		if(category != null){
-			putQueryParameter("Category", category);
+			putBodyParameter("Category", category);
+		}
+	}
+
+	public static class Components {
+
+		@SerializedName("Type")
+		private String type;
+
+		@SerializedName("Text")
+		private String text;
+
+		@SerializedName("Format")
+		private String format;
+
+		@SerializedName("Url")
+		private String url;
+
+		@SerializedName("Buttons")
+		private List<ButtonsItem> buttons;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getText() {
+			return this.text;
+		}
+
+		public void setText(String text) {
+			this.text = text;
+		}
+
+		public String getFormat() {
+			return this.format;
+		}
+
+		public void setFormat(String format) {
+			this.format = format;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public List<ButtonsItem> getButtons() {
+			return this.buttons;
+		}
+
+		public void setButtons(List<ButtonsItem> buttons) {
+			this.buttons = buttons;
+		}
+
+		public static class ButtonsItem {
+
+			@SerializedName("Type")
+			private String type;
+
+			@SerializedName("Text")
+			private String text;
+
+			@SerializedName("PhoneNumber")
+			private String phoneNumber;
+
+			@SerializedName("Url")
+			private String url;
+
+			@SerializedName("UrlType")
+			private String urlType;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
+			}
+
+			public String getPhoneNumber() {
+				return this.phoneNumber;
+			}
+
+			public void setPhoneNumber(String phoneNumber) {
+				this.phoneNumber = phoneNumber;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public String getUrlType() {
+				return this.urlType;
+			}
+
+			public void setUrlType(String urlType) {
+				this.urlType = urlType;
+			}
 		}
 	}
 

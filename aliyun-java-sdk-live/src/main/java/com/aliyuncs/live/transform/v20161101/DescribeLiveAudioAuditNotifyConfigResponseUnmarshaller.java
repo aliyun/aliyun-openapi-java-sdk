@@ -31,9 +31,9 @@ public class DescribeLiveAudioAuditNotifyConfigResponseUnmarshaller {
 		List<LiveAudioAuditNotifyConfig> liveAudioAuditNotifyConfigList = new ArrayList<LiveAudioAuditNotifyConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveAudioAuditNotifyConfigResponse.LiveAudioAuditNotifyConfigList.Length"); i++) {
 			LiveAudioAuditNotifyConfig liveAudioAuditNotifyConfig = new LiveAudioAuditNotifyConfig();
+			liveAudioAuditNotifyConfig.setCallbackTemplate(_ctx.stringValue("DescribeLiveAudioAuditNotifyConfigResponse.LiveAudioAuditNotifyConfigList["+ i +"].CallbackTemplate"));
 			liveAudioAuditNotifyConfig.setDomainName(_ctx.stringValue("DescribeLiveAudioAuditNotifyConfigResponse.LiveAudioAuditNotifyConfigList["+ i +"].DomainName"));
 			liveAudioAuditNotifyConfig.setCallback(_ctx.stringValue("DescribeLiveAudioAuditNotifyConfigResponse.LiveAudioAuditNotifyConfigList["+ i +"].Callback"));
-			liveAudioAuditNotifyConfig.setCallbackTemplate(_ctx.stringValue("DescribeLiveAudioAuditNotifyConfigResponse.LiveAudioAuditNotifyConfigList["+ i +"].CallbackTemplate"));
 
 			liveAudioAuditNotifyConfigList.add(liveAudioAuditNotifyConfig);
 		}

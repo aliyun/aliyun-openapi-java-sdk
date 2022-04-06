@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRoomKickoutUserListResponse extends AcsResponse {
 
+	private Integer totalPage;
+
 	private String requestId;
 
 	private Integer totalNum;
 
-	private Integer totalPage;
-
 	private List<User> userList;
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeRoomKickoutUserListResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
-	}
-
 	public List<User> getUserList() {
 		return this.userList;
 	}
@@ -67,19 +67,11 @@ public class DescribeRoomKickoutUserListResponse extends AcsResponse {
 
 	public static class User {
 
-		private String appUid;
-
 		private String opStartTime;
 
 		private String opEndTime;
 
-		public String getAppUid() {
-			return this.appUid;
-		}
-
-		public void setAppUid(String appUid) {
-			this.appUid = appUid;
-		}
+		private String appUid;
 
 		public String getOpStartTime() {
 			return this.opStartTime;
@@ -95,6 +87,14 @@ public class DescribeRoomKickoutUserListResponse extends AcsResponse {
 
 		public void setOpEndTime(String opEndTime) {
 			this.opEndTime = opEndTime;
+		}
+
+		public String getAppUid() {
+			return this.appUid;
+		}
+
+		public void setAppUid(String appUid) {
+			this.appUid = appUid;
 		}
 	}
 

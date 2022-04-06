@@ -26,23 +26,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAppApiByPageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -58,6 +50,14 @@ public class GetAppApiByPageResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -78,13 +78,21 @@ public class GetAppApiByPageResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageSize;
+
 		private String total;
 
 		private Integer page;
 
-		private Integer pageSize;
-
 		private List<Map<Object,Object>> items;
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
 
 		public String getTotal() {
 			return this.total;
@@ -100,14 +108,6 @@ public class GetAppApiByPageResponse extends AcsResponse {
 
 		public void setPage(Integer page) {
 			this.page = page;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
 		}
 
 		public List<Map<Object,Object>> getItems() {

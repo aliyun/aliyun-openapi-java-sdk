@@ -48,21 +48,13 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 
 	public static class Page {
 
-		private Integer page;
-
 		private Integer pageSize;
 
 		private Integer total;
 
+		private Integer page;
+
 		private List<Alert> alerts;
-
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -80,6 +72,14 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 			this.total = total;
 		}
 
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
+		}
+
 		public List<Alert> getAlerts() {
 			return this.alerts;
 		}
@@ -90,132 +90,44 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 
 		public static class Alert {
 
-			private String alertName;
-
-			private String alertType;
-
-			private Integer count;
-
-			private Long createTime;
-
-			private Long endsAt;
-
-			private Map<Object,Object> expandFields;
-
-			private String alertId;
-
-			private String integrationName;
-
-			private String integrationType;
-
-			private String involvedObjectKind;
-
-			private String involvedObjectName;
-
-			private String message;
+			private String status;
 
 			private String severity;
 
+			private String integrationName;
+
+			private Long createTime;
+
+			private String message;
+
+			private String alertType;
+
+			private String involvedObjectName;
+
+			private String alertName;
+
+			private Integer count;
+
+			private Map<Object,Object> expandFields;
+
+			private Long endsAt;
+
+			private String involvedObjectKind;
+
+			private String integrationType;
+
 			private Long startsAt;
 
-			private String status;
+			private String alertId;
 
 			private List<DispatchRule> dispatchRules;
 
-			public String getAlertName() {
-				return this.alertName;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setAlertName(String alertName) {
-				this.alertName = alertName;
-			}
-
-			public String getAlertType() {
-				return this.alertType;
-			}
-
-			public void setAlertType(String alertType) {
-				this.alertType = alertType;
-			}
-
-			public Integer getCount() {
-				return this.count;
-			}
-
-			public void setCount(Integer count) {
-				this.count = count;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public Long getEndsAt() {
-				return this.endsAt;
-			}
-
-			public void setEndsAt(Long endsAt) {
-				this.endsAt = endsAt;
-			}
-
-			public Map<Object,Object> getExpandFields() {
-				return this.expandFields;
-			}
-
-			public void setExpandFields(Map<Object,Object> expandFields) {
-				this.expandFields = expandFields;
-			}
-
-			public String getAlertId() {
-				return this.alertId;
-			}
-
-			public void setAlertId(String alertId) {
-				this.alertId = alertId;
-			}
-
-			public String getIntegrationName() {
-				return this.integrationName;
-			}
-
-			public void setIntegrationName(String integrationName) {
-				this.integrationName = integrationName;
-			}
-
-			public String getIntegrationType() {
-				return this.integrationType;
-			}
-
-			public void setIntegrationType(String integrationType) {
-				this.integrationType = integrationType;
-			}
-
-			public String getInvolvedObjectKind() {
-				return this.involvedObjectKind;
-			}
-
-			public void setInvolvedObjectKind(String involvedObjectKind) {
-				this.involvedObjectKind = involvedObjectKind;
-			}
-
-			public String getInvolvedObjectName() {
-				return this.involvedObjectName;
-			}
-
-			public void setInvolvedObjectName(String involvedObjectName) {
-				this.involvedObjectName = involvedObjectName;
-			}
-
-			public String getMessage() {
-				return this.message;
-			}
-
-			public void setMessage(String message) {
-				this.message = message;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getSeverity() {
@@ -226,6 +138,94 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 				this.severity = severity;
 			}
 
+			public String getIntegrationName() {
+				return this.integrationName;
+			}
+
+			public void setIntegrationName(String integrationName) {
+				this.integrationName = integrationName;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
+
+			public String getAlertType() {
+				return this.alertType;
+			}
+
+			public void setAlertType(String alertType) {
+				this.alertType = alertType;
+			}
+
+			public String getInvolvedObjectName() {
+				return this.involvedObjectName;
+			}
+
+			public void setInvolvedObjectName(String involvedObjectName) {
+				this.involvedObjectName = involvedObjectName;
+			}
+
+			public String getAlertName() {
+				return this.alertName;
+			}
+
+			public void setAlertName(String alertName) {
+				this.alertName = alertName;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
+			}
+
+			public Map<Object,Object> getExpandFields() {
+				return this.expandFields;
+			}
+
+			public void setExpandFields(Map<Object,Object> expandFields) {
+				this.expandFields = expandFields;
+			}
+
+			public Long getEndsAt() {
+				return this.endsAt;
+			}
+
+			public void setEndsAt(Long endsAt) {
+				this.endsAt = endsAt;
+			}
+
+			public String getInvolvedObjectKind() {
+				return this.involvedObjectKind;
+			}
+
+			public void setInvolvedObjectKind(String involvedObjectKind) {
+				this.involvedObjectKind = involvedObjectKind;
+			}
+
+			public String getIntegrationType() {
+				return this.integrationType;
+			}
+
+			public void setIntegrationType(String integrationType) {
+				this.integrationType = integrationType;
+			}
+
 			public Long getStartsAt() {
 				return this.startsAt;
 			}
@@ -234,12 +234,12 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 				this.startsAt = startsAt;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getAlertId() {
+				return this.alertId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setAlertId(String alertId) {
+				this.alertId = alertId;
 			}
 
 			public List<DispatchRule> getDispatchRules() {
@@ -252,17 +252,9 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 
 			public static class DispatchRule {
 
-				private String ruleName;
-
 				private Integer ruleId;
 
-				public String getRuleName() {
-					return this.ruleName;
-				}
-
-				public void setRuleName(String ruleName) {
-					this.ruleName = ruleName;
-				}
+				private String ruleName;
 
 				public Integer getRuleId() {
 					return this.ruleId;
@@ -270,6 +262,14 @@ public class ListActivatedAlertsResponse extends AcsResponse {
 
 				public void setRuleId(Integer ruleId) {
 					this.ruleId = ruleId;
+				}
+
+				public String getRuleName() {
+					return this.ruleName;
+				}
+
+				public void setRuleName(String ruleName) {
+					this.ruleName = ruleName;
 				}
 			}
 		}

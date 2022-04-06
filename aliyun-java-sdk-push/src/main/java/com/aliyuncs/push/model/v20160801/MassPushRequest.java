@@ -54,6 +54,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationHuaweiChannel" , pushTasks.get(depth1).getAndroidNotificationHuaweiChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupActivity" , pushTasks.get(depth1).getAndroidPopupActivity());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRemindBody" , pushTasks.get(depth1).getIOSRemindBody());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".Trim" , pushTasks.get(depth1).getTrim());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotifyType" , pushTasks.get(depth1).getAndroidNotifyType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupTitle" , pushTasks.get(depth1).getAndroidPopupTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMessageHuaweiCategory" , pushTasks.get(depth1).getAndroidMessageHuaweiCategory());
@@ -67,6 +68,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCategory" , pushTasks.get(depth1).getIOSNotificationCategory());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationXiaomiChannel" , pushTasks.get(depth1).getAndroidNotificationXiaomiChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".StoreOffline" , pushTasks.get(depth1).getStoreOffline());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRelevanceScore" , pushTasks.get(depth1).getIOSRelevanceScore());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidVivoPushMode" , pushTasks.get(depth1).getAndroidVivoPushMode());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidInboxBody" , pushTasks.get(depth1).getAndroidInboxBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".JobKey" , pushTasks.get(depth1).getJobKey());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidOpenUrl" , pushTasks.get(depth1).getAndroidOpenUrl());
@@ -79,6 +82,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCollapseId" , pushTasks.get(depth1).getIOSNotificationCollapseId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMessageHuaweiUrgency" , pushTasks.get(depth1).getAndroidMessageHuaweiUrgency());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".PushType" , pushTasks.get(depth1).getPushType());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSInterruptionLevel" , pushTasks.get(depth1).getIOSInterruptionLevel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidExtParameters" , pushTasks.get(depth1).getAndroidExtParameters());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSBadge" , pushTasks.get(depth1).getIOSBadge());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigBody" , pushTasks.get(depth1).getAndroidBigBody());
@@ -134,6 +138,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String iOSRemindBody;
 
+		private Boolean trim;
+
 		private String androidNotifyType;
 
 		private String androidPopupTitle;
@@ -160,6 +166,10 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private Boolean storeOffline;
 
+		private Double iOSRelevanceScore;
+
+		private Integer androidVivoPushMode;
+
 		private String androidInboxBody;
 
 		private String jobKey;
@@ -183,6 +193,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String androidMessageHuaweiUrgency;
 
 		private String pushType;
+
+		private String iOSInterruptionLevel;
 
 		private String androidExtParameters;
 
@@ -292,6 +304,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.iOSRemindBody = iOSRemindBody;
 		}
 
+		public Boolean getTrim() {
+			return this.trim;
+		}
+
+		public void setTrim(Boolean trim) {
+			this.trim = trim;
+		}
+
 		public String getAndroidNotifyType() {
 			return this.androidNotifyType;
 		}
@@ -396,6 +416,22 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.storeOffline = storeOffline;
 		}
 
+		public Double getIOSRelevanceScore() {
+			return this.iOSRelevanceScore;
+		}
+
+		public void setIOSRelevanceScore(Double iOSRelevanceScore) {
+			this.iOSRelevanceScore = iOSRelevanceScore;
+		}
+
+		public Integer getAndroidVivoPushMode() {
+			return this.androidVivoPushMode;
+		}
+
+		public void setAndroidVivoPushMode(Integer androidVivoPushMode) {
+			this.androidVivoPushMode = androidVivoPushMode;
+		}
+
 		public String getAndroidInboxBody() {
 			return this.androidInboxBody;
 		}
@@ -490,6 +526,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setPushType(String pushType) {
 			this.pushType = pushType;
+		}
+
+		public String getIOSInterruptionLevel() {
+			return this.iOSInterruptionLevel;
+		}
+
+		public void setIOSInterruptionLevel(String iOSInterruptionLevel) {
+			this.iOSInterruptionLevel = iOSInterruptionLevel;
 		}
 
 		public String getAndroidExtParameters() {

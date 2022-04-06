@@ -58,6 +58,8 @@ public class CreateFpShotDBResponse extends AcsResponse {
 
 		private String config;
 
+		private String instanceId;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -104,6 +106,14 @@ public class CreateFpShotDBResponse extends AcsResponse {
 
 		public void setConfig(String config) {
 			this.config = config;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

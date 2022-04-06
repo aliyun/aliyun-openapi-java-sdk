@@ -1,3 +1,6 @@
+2022-03-29 Version: 1.0.10
+- GetVerifyResult add message and subStatus.
+
 2021-07-05 Version: 1.0.9
 - Support watermark.
 

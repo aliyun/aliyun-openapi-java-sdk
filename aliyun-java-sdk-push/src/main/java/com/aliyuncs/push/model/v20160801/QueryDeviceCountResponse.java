@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceCountResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long deviceCount;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getDeviceCount() {
 		return this.deviceCount;
@@ -42,6 +34,14 @@ public class QueryDeviceCountResponse extends AcsResponse {
 
 	public void setDeviceCount(Long deviceCount) {
 		this.deviceCount = deviceCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

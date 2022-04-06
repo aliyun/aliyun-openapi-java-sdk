@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<VideoResource> videoResources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<VideoResource> getVideoResources() {
@@ -57,27 +57,59 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 	public static class VideoResource {
 
+		private Integer endOffset;
+
+		private String flvUrl;
+
+		private Integer beginOffset;
+
+		private Integer ptsCallbackInterval;
+
 		private String materialId;
-
-		private String resourceId;
-
-		private String resourceName;
 
 		private String locationId;
 
 		private String liveStreamUrl;
 
-		private String flvUrl;
+		private String vodUrl;
+
+		private String resourceId;
 
 		private Integer repeatNum;
 
-		private String vodUrl;
+		private String resourceName;
 
-		private Integer beginOffset;
+		public Integer getEndOffset() {
+			return this.endOffset;
+		}
 
-		private Integer endOffset;
+		public void setEndOffset(Integer endOffset) {
+			this.endOffset = endOffset;
+		}
 
-		private Integer ptsCallbackInterval;
+		public String getFlvUrl() {
+			return this.flvUrl;
+		}
+
+		public void setFlvUrl(String flvUrl) {
+			this.flvUrl = flvUrl;
+		}
+
+		public Integer getBeginOffset() {
+			return this.beginOffset;
+		}
+
+		public void setBeginOffset(Integer beginOffset) {
+			this.beginOffset = beginOffset;
+		}
+
+		public Integer getPtsCallbackInterval() {
+			return this.ptsCallbackInterval;
+		}
+
+		public void setPtsCallbackInterval(Integer ptsCallbackInterval) {
+			this.ptsCallbackInterval = ptsCallbackInterval;
+		}
 
 		public String getMaterialId() {
 			return this.materialId;
@@ -85,22 +117,6 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 		public void setMaterialId(String materialId) {
 			this.materialId = materialId;
-		}
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getResourceName() {
-			return this.resourceName;
-		}
-
-		public void setResourceName(String resourceName) {
-			this.resourceName = resourceName;
 		}
 
 		public String getLocationId() {
@@ -119,12 +135,20 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 			this.liveStreamUrl = liveStreamUrl;
 		}
 
-		public String getFlvUrl() {
-			return this.flvUrl;
+		public String getVodUrl() {
+			return this.vodUrl;
 		}
 
-		public void setFlvUrl(String flvUrl) {
-			this.flvUrl = flvUrl;
+		public void setVodUrl(String vodUrl) {
+			this.vodUrl = vodUrl;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public Integer getRepeatNum() {
@@ -135,36 +159,12 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 			this.repeatNum = repeatNum;
 		}
 
-		public String getVodUrl() {
-			return this.vodUrl;
+		public String getResourceName() {
+			return this.resourceName;
 		}
 
-		public void setVodUrl(String vodUrl) {
-			this.vodUrl = vodUrl;
-		}
-
-		public Integer getBeginOffset() {
-			return this.beginOffset;
-		}
-
-		public void setBeginOffset(Integer beginOffset) {
-			this.beginOffset = beginOffset;
-		}
-
-		public Integer getEndOffset() {
-			return this.endOffset;
-		}
-
-		public void setEndOffset(Integer endOffset) {
-			this.endOffset = endOffset;
-		}
-
-		public Integer getPtsCallbackInterval() {
-			return this.ptsCallbackInterval;
-		}
-
-		public void setPtsCallbackInterval(Integer ptsCallbackInterval) {
-			this.ptsCallbackInterval = ptsCallbackInterval;
+		public void setResourceName(String resourceName) {
+			this.resourceName = resourceName;
 		}
 	}
 

@@ -23,10 +23,10 @@ public class DescribeLiveStreamTranscodeStreamNumResponseUnmarshaller {
 	public static DescribeLiveStreamTranscodeStreamNumResponse unmarshall(DescribeLiveStreamTranscodeStreamNumResponse describeLiveStreamTranscodeStreamNumResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamTranscodeStreamNumResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamTranscodeStreamNumResponse.RequestId"));
-		describeLiveStreamTranscodeStreamNumResponse.setTotal(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.Total"));
-		describeLiveStreamTranscodeStreamNumResponse.setTranscodedNumber(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.TranscodedNumber"));
 		describeLiveStreamTranscodeStreamNumResponse.setUntranscodeNumber(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.UntranscodeNumber"));
 		describeLiveStreamTranscodeStreamNumResponse.setLazyTranscodedNumber(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.LazyTranscodedNumber"));
+		describeLiveStreamTranscodeStreamNumResponse.setTranscodedNumber(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.TranscodedNumber"));
+		describeLiveStreamTranscodeStreamNumResponse.setTotal(_ctx.longValue("DescribeLiveStreamTranscodeStreamNumResponse.Total"));
 	 
 	 	return describeLiveStreamTranscodeStreamNumResponse;
 	}

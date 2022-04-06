@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRoomStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer roomStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getRoomStatus() {
 		return this.roomStatus;
@@ -42,6 +34,14 @@ public class DescribeRoomStatusResponse extends AcsResponse {
 
 	public void setRoomStatus(Integer roomStatus) {
 		this.roomStatus = roomStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

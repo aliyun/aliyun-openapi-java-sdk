@@ -47,26 +47,26 @@ public class DescribeLiveDomainStreamTranscodeDataResponse extends AcsResponse {
 
 	public static class TranscodeData {
 
-		private String timeStamp;
+		private String tanscodeType;
 
 		private String domain;
 
 		private String region;
 
-		private String tanscodeType;
+		private Integer duration;
 
-		private String resolution;
+		private String timeStamp;
 
 		private String fps;
 
-		private Integer duration;
+		private String resolution;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		public String getTanscodeType() {
+			return this.tanscodeType;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setTanscodeType(String tanscodeType) {
+			this.tanscodeType = tanscodeType;
 		}
 
 		public String getDomain() {
@@ -85,20 +85,20 @@ public class DescribeLiveDomainStreamTranscodeDataResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public String getTanscodeType() {
-			return this.tanscodeType;
+		public Integer getDuration() {
+			return this.duration;
 		}
 
-		public void setTanscodeType(String tanscodeType) {
-			this.tanscodeType = tanscodeType;
+		public void setDuration(Integer duration) {
+			this.duration = duration;
 		}
 
-		public String getResolution() {
-			return this.resolution;
+		public String getTimeStamp() {
+			return this.timeStamp;
 		}
 
-		public void setResolution(String resolution) {
-			this.resolution = resolution;
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public String getFps() {
@@ -109,12 +109,12 @@ public class DescribeLiveDomainStreamTranscodeDataResponse extends AcsResponse {
 			this.fps = fps;
 		}
 
-		public Integer getDuration() {
-			return this.duration;
+		public String getResolution() {
+			return this.resolution;
 		}
 
-		public void setDuration(Integer duration) {
-			this.duration = duration;
+		public void setResolution(String resolution) {
+			this.resolution = resolution;
 		}
 	}
 

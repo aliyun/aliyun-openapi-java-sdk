@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cams.model.v20200606.CheckChatappContactsResponse;
-import com.aliyuncs.cams.model.v20200606.CheckChatappContactsResponse.Contacts;
+import com.aliyuncs.cams.model.v20200606.CheckChatappContactsResponse.Contact;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,13 +30,13 @@ public class CheckChatappContactsResponseUnmarshaller {
 		checkChatappContactsResponse.setCode(_ctx.stringValue("CheckChatappContactsResponse.Code"));
 		checkChatappContactsResponse.setMessage(_ctx.stringValue("CheckChatappContactsResponse.Message"));
 
-		List<Contacts> data = new ArrayList<Contacts>();
+		List<Contact> data = new ArrayList<Contact>();
 		for (int i = 0; i < _ctx.lengthValue("CheckChatappContactsResponse.Data.Length"); i++) {
-			Contacts contacts = new Contacts();
-			contacts.setStatus(_ctx.stringValue("CheckChatappContactsResponse.Data["+ i +"].Status"));
-			contacts.setPhoneNumber(_ctx.stringValue("CheckChatappContactsResponse.Data["+ i +"].PhoneNumber"));
+			Contact contact = new Contact();
+			contact.setStatus(_ctx.stringValue("CheckChatappContactsResponse.Data["+ i +"].Status"));
+			contact.setPhoneNumber(_ctx.stringValue("CheckChatappContactsResponse.Data["+ i +"].PhoneNumber"));
 
-			data.add(contacts);
+			data.add(contact);
 		}
 		checkChatappContactsResponse.setData(data);
 	 

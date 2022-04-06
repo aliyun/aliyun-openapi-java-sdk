@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCastersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<Caster> casterList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class DescribeCastersResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Caster> getCasterList() {
@@ -59,31 +59,31 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		private Integer status;
 
-		private Integer normType;
-
-		private String casterId;
-
-		private String casterName;
-
-		private String createTime;
-
-		private String startTime;
-
 		private String purchaseTime;
 
 		private String expireTime;
+
+		private String createTime;
+
+		private String casterName;
 
 		private String chargeType;
 
 		private String casterTemplate;
 
+		private Integer roomId;
+
+		private String casterId;
+
 		private Integer channelEnable;
 
 		private String lastModified;
 
-		private String duration;
+		private String startTime;
 
-		private Integer roomId;
+		private Integer normType;
+
+		private String duration;
 
 		public Integer getStatus() {
 			return this.status;
@@ -91,46 +91,6 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public Integer getNormType() {
-			return this.normType;
-		}
-
-		public void setNormType(Integer normType) {
-			this.normType = normType;
-		}
-
-		public String getCasterId() {
-			return this.casterId;
-		}
-
-		public void setCasterId(String casterId) {
-			this.casterId = casterId;
-		}
-
-		public String getCasterName() {
-			return this.casterName;
-		}
-
-		public void setCasterName(String casterName) {
-			this.casterName = casterName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
 		}
 
 		public String getPurchaseTime() {
@@ -149,6 +109,22 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getCasterName() {
+			return this.casterName;
+		}
+
+		public void setCasterName(String casterName) {
+			this.casterName = casterName;
+		}
+
 		public String getChargeType() {
 			return this.chargeType;
 		}
@@ -163,6 +139,22 @@ public class DescribeCastersResponse extends AcsResponse {
 
 		public void setCasterTemplate(String casterTemplate) {
 			this.casterTemplate = casterTemplate;
+		}
+
+		public Integer getRoomId() {
+			return this.roomId;
+		}
+
+		public void setRoomId(Integer roomId) {
+			this.roomId = roomId;
+		}
+
+		public String getCasterId() {
+			return this.casterId;
+		}
+
+		public void setCasterId(String casterId) {
+			this.casterId = casterId;
 		}
 
 		public Integer getChannelEnable() {
@@ -181,20 +173,28 @@ public class DescribeCastersResponse extends AcsResponse {
 			this.lastModified = lastModified;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Integer getNormType() {
+			return this.normType;
+		}
+
+		public void setNormType(Integer normType) {
+			this.normType = normType;
+		}
+
 		public String getDuration() {
 			return this.duration;
 		}
 
 		public void setDuration(String duration) {
 			this.duration = duration;
-		}
-
-		public Integer getRoomId() {
-			return this.roomId;
-		}
-
-		public void setRoomId(Integer roomId) {
-			this.roomId = roomId;
 		}
 	}
 

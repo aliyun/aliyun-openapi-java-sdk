@@ -47,11 +47,19 @@ public class DescribeLiveDomainLimitResponse extends AcsResponse {
 
 	public static class LiveDomainLimit {
 
+		private Integer limitTranscodeNum;
+
 		private String domainName;
 
 		private Integer limitNum;
 
-		private Integer limitTranscodeNum;
+		public Integer getLimitTranscodeNum() {
+			return this.limitTranscodeNum;
+		}
+
+		public void setLimitTranscodeNum(Integer limitTranscodeNum) {
+			this.limitTranscodeNum = limitTranscodeNum;
+		}
 
 		public String getDomainName() {
 			return this.domainName;
@@ -67,14 +75,6 @@ public class DescribeLiveDomainLimitResponse extends AcsResponse {
 
 		public void setLimitNum(Integer limitNum) {
 			this.limitNum = limitNum;
-		}
-
-		public Integer getLimitTranscodeNum() {
-			return this.limitTranscodeNum;
-		}
-
-		public void setLimitTranscodeNum(Integer limitTranscodeNum) {
-			this.limitTranscodeNum = limitTranscodeNum;
 		}
 	}
 

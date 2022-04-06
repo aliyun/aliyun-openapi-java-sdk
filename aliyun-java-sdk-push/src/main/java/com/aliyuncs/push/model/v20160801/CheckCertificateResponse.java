@@ -76,17 +76,9 @@ public class CheckCertificateResponse extends AcsResponse {
 
 	public static class ProductionCertInfo {
 
-		private Long exipreTime;
-
 		private String status;
 
-		public Long getExipreTime() {
-			return this.exipreTime;
-		}
-
-		public void setExipreTime(Long exipreTime) {
-			this.exipreTime = exipreTime;
-		}
+		private Long exipreTime;
 
 		public String getStatus() {
 			return this.status;
@@ -94,22 +86,22 @@ public class CheckCertificateResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Long getExipreTime() {
+			return this.exipreTime;
+		}
+
+		public void setExipreTime(Long exipreTime) {
+			this.exipreTime = exipreTime;
 		}
 	}
 
 	public static class DevelopmentCertInfo {
 
-		private Long exipreTime;
-
 		private String status;
 
-		public Long getExipreTime() {
-			return this.exipreTime;
-		}
-
-		public void setExipreTime(Long exipreTime) {
-			this.exipreTime = exipreTime;
-		}
+		private Long exipreTime;
 
 		public String getStatus() {
 			return this.status;
@@ -117,6 +109,14 @@ public class CheckCertificateResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Long getExipreTime() {
+			return this.exipreTime;
+		}
+
+		public void setExipreTime(Long exipreTime) {
+			this.exipreTime = exipreTime;
 		}
 	}
 

@@ -47,39 +47,23 @@ public class ListScenarioResponse extends AcsResponse {
 
 	public static class ArmsScenariosItem {
 
-		private Long id;
-
-		private String createTime;
-
 		private String updateTime;
-
-		private String name;
-
-		private String sign;
-
-		private String userId;
-
-		private String regionId;
 
 		private String appId;
 
+		private String sign;
+
+		private String createTime;
+
+		private String userId;
+
 		private String extensions;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String name;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long id;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String regionId;
 
 		public String getUpdateTime() {
 			return this.updateTime;
@@ -87,38 +71,6 @@ public class ListScenarioResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getSign() {
-			return this.sign;
-		}
-
-		public void setSign(String sign) {
-			this.sign = sign;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 
 		public String getAppId() {
@@ -129,12 +81,60 @@ public class ListScenarioResponse extends AcsResponse {
 			this.appId = appId;
 		}
 
+		public String getSign() {
+			return this.sign;
+		}
+
+		public void setSign(String sign) {
+			this.sign = sign;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
 		public String getExtensions() {
 			return this.extensions;
 		}
 
 		public void setExtensions(String extensions) {
 			this.extensions = extensions;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

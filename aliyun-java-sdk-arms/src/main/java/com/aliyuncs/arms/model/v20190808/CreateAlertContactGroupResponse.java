@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAlertContactGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String contactGroupId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getContactGroupId() {
 		return this.contactGroupId;
@@ -42,6 +34,14 @@ public class CreateAlertContactGroupResponse extends AcsResponse {
 
 	public void setContactGroupId(String contactGroupId) {
 		this.contactGroupId = contactGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
