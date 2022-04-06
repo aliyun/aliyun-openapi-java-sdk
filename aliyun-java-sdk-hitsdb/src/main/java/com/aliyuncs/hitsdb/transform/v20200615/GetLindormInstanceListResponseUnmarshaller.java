@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.hitsdb.model.v20200615.GetLindormInstanceListResponse;
 import com.aliyuncs.hitsdb.model.v20200615.GetLindormInstanceListResponse.LindormInstanceSummary;
+import com.aliyuncs.hitsdb.model.v20200615.GetLindormInstanceListResponse.LindormInstanceSummary.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,16 @@ public class GetLindormInstanceListResponseUnmarshaller {
 			lindormInstanceSummary.setInstanceStatus(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].InstanceStatus"));
 			lindormInstanceSummary.setExpiredMilliseconds(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ExpiredMilliseconds"));
 			lindormInstanceSummary.setEnableStream(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableStream"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("GetLindormInstanceListResponse.InstanceList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			lindormInstanceSummary.setTags(tags);
 
 			instanceList.add(lindormInstanceSummary);
 		}

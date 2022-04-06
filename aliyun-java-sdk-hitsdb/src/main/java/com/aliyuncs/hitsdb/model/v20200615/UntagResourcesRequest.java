@@ -23,22 +23,16 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInstanceListResponse> {
+public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer supportEngine;
-
-	private Integer pageNumber;
-
 	private String securityToken;
 
-	private Integer pageSize;
+	private Boolean all;
 
-	private List<Tag> tags;
-
-	private String queryStr;
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
@@ -46,9 +40,11 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 
 	private Long ownerId;
 
-	private String serviceType;
-	public GetLindormInstanceListRequest() {
-		super("hitsdb", "2020-06-15", "GetLindormInstanceList", "hitsdb");
+	private String resourceType;
+
+	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("hitsdb", "2020-06-15", "UntagResources", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,28 +63,6 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 		}
 	}
 
-	public Integer getSupportEngine() {
-		return this.supportEngine;
-	}
-
-	public void setSupportEngine(Integer supportEngine) {
-		this.supportEngine = supportEngine;
-		if(supportEngine != null){
-			putQueryParameter("SupportEngine", supportEngine.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -100,40 +74,28 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Boolean getAll() {
+		return this.all;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
 			}
 		}	
-	}
-
-	public String getQueryStr() {
-		return this.queryStr;
-	}
-
-	public void setQueryStr(String queryStr) {
-		this.queryStr = queryStr;
-		if(queryStr != null){
-			putQueryParameter("QueryStr", queryStr);
-		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -169,43 +131,33 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 		}
 	}
 
-	public String getServiceType() {
-		return this.serviceType;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setServiceType(String serviceType) {
-		this.serviceType = serviceType;
-		if(serviceType != null){
-			putQueryParameter("ServiceType", serviceType);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
-	public static class Tag {
+	public List<String> getTagKeys() {
+		return this.tagKeys;
+	}
 
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+	public void setTagKeys(List<String> tagKeys) {
+		this.tagKeys = tagKeys;	
+		if (tagKeys != null) {
+			for (int i = 0; i < tagKeys.size(); i++) {
+				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<GetLindormInstanceListResponse> getResponseClass() {
-		return GetLindormInstanceListResponse.class;
+	public Class<UntagResourcesResponse> getResponseClass() {
+		return UntagResourcesResponse.class;
 	}
 
 }

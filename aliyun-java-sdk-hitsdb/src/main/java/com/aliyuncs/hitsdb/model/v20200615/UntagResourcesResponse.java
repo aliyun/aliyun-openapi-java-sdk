@@ -14,30 +14,17 @@
 
 package com.aliyuncs.hitsdb.model.v20200615;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hitsdb.transform.v20200615.GetInstanceIpWhiteListResponseUnmarshaller;
+import com.aliyuncs.hitsdb.transform.v20200615.UntagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetInstanceIpWhiteListResponse extends AcsResponse {
-
-	private String instanceId;
+public class UntagResourcesResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<String> ipList;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,17 +34,9 @@ public class GetInstanceIpWhiteListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getIpList() {
-		return this.ipList;
-	}
-
-	public void setIpList(List<String> ipList) {
-		this.ipList = ipList;
-	}
-
 	@Override
-	public GetInstanceIpWhiteListResponse getInstance(UnmarshallerContext context) {
-		return	GetInstanceIpWhiteListResponseUnmarshaller.unmarshall(this, context);
+	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

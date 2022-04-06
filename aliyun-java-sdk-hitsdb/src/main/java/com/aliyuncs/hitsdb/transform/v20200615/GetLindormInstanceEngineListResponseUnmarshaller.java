@@ -38,10 +38,10 @@ public class GetLindormInstanceEngineListResponseUnmarshaller {
 			List<NetInfo> netInfoList = new ArrayList<NetInfo>();
 			for (int j = 0; j < _ctx.lengthValue("GetLindormInstanceEngineListResponse.EngineList["+ i +"].NetInfoList.Length"); j++) {
 				NetInfo netInfo = new NetInfo();
-				netInfo.setNetType(_ctx.stringValue("GetLindormInstanceEngineListResponse.EngineList["+ i +"].NetInfoList["+ j +"].NetType"));
-				netInfo.setConnectionString(_ctx.stringValue("GetLindormInstanceEngineListResponse.EngineList["+ i +"].NetInfoList["+ j +"].ConnectionString"));
-				netInfo.setPort(_ctx.integerValue("GetLindormInstanceEngineListResponse.EngineList["+ i +"].NetInfoList["+ j +"].Port"));
 				netInfo.setAccessType(_ctx.integerValue("GetLindormInstanceEngineListResponse.EngineList["+ i +"].NetInfoList["+ j +"].AccessType"));
+				netInfo.setPort(_ctx.integerValue("GetLindormInstanceEngineListResponse.EngineList["+ i +"].NetInfoList["+ j +"].Port"));
+				netInfo.setConnectionString(_ctx.stringValue("GetLindormInstanceEngineListResponse.EngineList["+ i +"].NetInfoList["+ j +"].ConnectionString"));
+				netInfo.setNetType(_ctx.stringValue("GetLindormInstanceEngineListResponse.EngineList["+ i +"].NetInfoList["+ j +"].NetType"));
 
 				netInfoList.add(netInfo);
 			}

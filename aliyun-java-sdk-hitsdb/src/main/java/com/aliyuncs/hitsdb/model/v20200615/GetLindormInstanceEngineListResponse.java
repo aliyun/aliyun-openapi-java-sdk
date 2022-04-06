@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetLindormInstanceEngineListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String instanceId;
 
+	private String requestId;
+
 	private List<EngineInfo> engineList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -45,6 +37,14 @@ public class GetLindormInstanceEngineListResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EngineInfo> getEngineList() {
@@ -79,28 +79,20 @@ public class GetLindormInstanceEngineListResponse extends AcsResponse {
 
 		public static class NetInfo {
 
-			private String netType;
-
-			private String connectionString;
+			private Integer accessType;
 
 			private Integer port;
 
-			private Integer accessType;
+			private String connectionString;
 
-			public String getNetType() {
-				return this.netType;
+			private String netType;
+
+			public Integer getAccessType() {
+				return this.accessType;
 			}
 
-			public void setNetType(String netType) {
-				this.netType = netType;
-			}
-
-			public String getConnectionString() {
-				return this.connectionString;
-			}
-
-			public void setConnectionString(String connectionString) {
-				this.connectionString = connectionString;
+			public void setAccessType(Integer accessType) {
+				this.accessType = accessType;
 			}
 
 			public Integer getPort() {
@@ -111,12 +103,20 @@ public class GetLindormInstanceEngineListResponse extends AcsResponse {
 				this.port = port;
 			}
 
-			public Integer getAccessType() {
-				return this.accessType;
+			public String getConnectionString() {
+				return this.connectionString;
 			}
 
-			public void setAccessType(Integer accessType) {
-				this.accessType = accessType;
+			public void setConnectionString(String connectionString) {
+				this.connectionString = connectionString;
+			}
+
+			public String getNetType() {
+				return this.netType;
+			}
+
+			public void setNetType(String netType) {
+				this.netType = netType;
 			}
 		}
 	}

@@ -23,22 +23,16 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInstanceListResponse> {
+public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer supportEngine;
-
-	private Integer pageNumber;
-
 	private String securityToken;
-
-	private Integer pageSize;
 
 	private List<Tag> tags;
 
-	private String queryStr;
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
@@ -46,9 +40,9 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 
 	private Long ownerId;
 
-	private String serviceType;
-	public GetLindormInstanceListRequest() {
-		super("hitsdb", "2020-06-15", "GetLindormInstanceList", "hitsdb");
+	private String resourceType;
+	public TagResourcesRequest() {
+		super("hitsdb", "2020-06-15", "TagResources", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,28 +61,6 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 		}
 	}
 
-	public Integer getSupportEngine() {
-		return this.supportEngine;
-	}
-
-	public void setSupportEngine(Integer supportEngine) {
-		this.supportEngine = supportEngine;
-		if(supportEngine != null){
-			putQueryParameter("SupportEngine", supportEngine.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -97,17 +69,6 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -125,15 +86,17 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 		}	
 	}
 
-	public String getQueryStr() {
-		return this.queryStr;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setQueryStr(String queryStr) {
-		this.queryStr = queryStr;
-		if(queryStr != null){
-			putQueryParameter("QueryStr", queryStr);
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -169,14 +132,14 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 		}
 	}
 
-	public String getServiceType() {
-		return this.serviceType;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setServiceType(String serviceType) {
-		this.serviceType = serviceType;
-		if(serviceType != null){
-			putQueryParameter("ServiceType", serviceType);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -204,8 +167,8 @@ public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInsta
 	}
 
 	@Override
-	public Class<GetLindormInstanceListResponse> getResponseClass() {
-		return GetLindormInstanceListResponse.class;
+	public Class<TagResourcesResponse> getResponseClass() {
+		return TagResourcesResponse.class;
 	}
 
 }
