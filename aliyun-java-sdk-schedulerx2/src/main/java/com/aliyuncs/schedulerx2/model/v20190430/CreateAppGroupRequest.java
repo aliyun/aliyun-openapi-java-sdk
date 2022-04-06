@@ -32,6 +32,8 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String namespaceSource;
 
+	private Boolean scheduleBusyWorkers;
+
 	private String groupId;
 
 	private String description;
@@ -41,8 +43,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 	private String appName;
 
 	private String namespace;
-
-	private String alarmJson;
 
 	private String appKey;
 
@@ -87,6 +87,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
 			putQueryParameter("NamespaceSource", namespaceSource);
+		}
+	}
+
+	public Boolean getScheduleBusyWorkers() {
+		return this.scheduleBusyWorkers;
+	}
+
+	public void setScheduleBusyWorkers(Boolean scheduleBusyWorkers) {
+		this.scheduleBusyWorkers = scheduleBusyWorkers;
+		if(scheduleBusyWorkers != null){
+			putQueryParameter("ScheduleBusyWorkers", scheduleBusyWorkers.toString());
 		}
 	}
 
@@ -142,17 +153,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
-		}
-	}
-
-	public String getAlarmJson() {
-		return this.alarmJson;
-	}
-
-	public void setAlarmJson(String alarmJson) {
-		this.alarmJson = alarmJson;
-		if(alarmJson != null){
-			putQueryParameter("AlarmJson", alarmJson);
 		}
 	}
 
