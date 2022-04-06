@@ -88,7 +88,7 @@ public class GetLhSpaceByNameResponse extends AcsResponse {
 
 		private Integer mode;
 
-		private String dbType;
+		private String dwDbType;
 
 		private String spaceConfig;
 
@@ -146,12 +146,12 @@ public class GetLhSpaceByNameResponse extends AcsResponse {
 			this.mode = mode;
 		}
 
-		public String getDbType() {
-			return this.dbType;
+		public String getDwDbType() {
+			return this.dwDbType;
 		}
 
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
+		public void setDwDbType(String dwDbType) {
+			this.dwDbType = dwDbType;
 		}
 
 		public String getSpaceConfig() {

@@ -115,6 +115,10 @@ public class ListLhTaskFlowAndScenarioResponse extends AcsResponse {
 
 		private Integer latestInstanceTime;
 
+		private String dagName;
+
+		private String dagOwnerId;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -226,6 +230,22 @@ public class ListLhTaskFlowAndScenarioResponse extends AcsResponse {
 		public void setLatestInstanceTime(Integer latestInstanceTime) {
 			this.latestInstanceTime = latestInstanceTime;
 		}
+
+		public String getDagName() {
+			return this.dagName;
+		}
+
+		public void setDagName(String dagName) {
+			this.dagName = dagName;
+		}
+
+		public String getDagOwnerId() {
+			return this.dagOwnerId;
+		}
+
+		public void setDagOwnerId(String dagOwnerId) {
+			this.dagOwnerId = dagOwnerId;
+		}
 	}
 
 	public static class ScenarioDAG {
@@ -279,6 +299,10 @@ public class ListLhTaskFlowAndScenarioResponse extends AcsResponse {
 			private Integer latestInstanceStatus;
 
 			private Integer latestInstanceTime;
+
+			private String dagName;
+
+			private String dagOwnerId;
 
 			public Long getId() {
 				return this.id;
@@ -390,6 +414,22 @@ public class ListLhTaskFlowAndScenarioResponse extends AcsResponse {
 
 			public void setLatestInstanceTime(Integer latestInstanceTime) {
 				this.latestInstanceTime = latestInstanceTime;
+			}
+
+			public String getDagName() {
+				return this.dagName;
+			}
+
+			public void setDagName(String dagName) {
+				this.dagName = dagName;
+			}
+
+			public String getDagOwnerId() {
+				return this.dagOwnerId;
+			}
+
+			public void setDagOwnerId(String dagOwnerId) {
+				this.dagOwnerId = dagOwnerId;
 			}
 		}
 

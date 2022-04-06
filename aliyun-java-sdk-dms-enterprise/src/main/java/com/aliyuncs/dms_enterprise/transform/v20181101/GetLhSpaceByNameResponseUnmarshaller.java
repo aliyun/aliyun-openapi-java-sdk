@@ -35,7 +35,7 @@ public class GetLhSpaceByNameResponseUnmarshaller {
 		lakehouseSpace.setTenantId(_ctx.stringValue("GetLhSpaceByNameResponse.LakehouseSpace.TenantId"));
 		lakehouseSpace.setDescription(_ctx.stringValue("GetLhSpaceByNameResponse.LakehouseSpace.Description"));
 		lakehouseSpace.setMode(_ctx.integerValue("GetLhSpaceByNameResponse.LakehouseSpace.Mode"));
-		lakehouseSpace.setDbType(_ctx.stringValue("GetLhSpaceByNameResponse.LakehouseSpace.DbType"));
+		lakehouseSpace.setDwDbType(_ctx.stringValue("GetLhSpaceByNameResponse.LakehouseSpace.DwDbType"));
 		lakehouseSpace.setSpaceConfig(_ctx.stringValue("GetLhSpaceByNameResponse.LakehouseSpace.SpaceConfig"));
 		lakehouseSpace.setDevDbId(_ctx.integerValue("GetLhSpaceByNameResponse.LakehouseSpace.DevDbId"));
 		lakehouseSpace.setProdDbId(_ctx.integerValue("GetLhSpaceByNameResponse.LakehouseSpace.ProdDbId"));

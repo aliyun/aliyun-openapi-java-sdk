@@ -1,3 +1,7 @@
+2022-04-06 Version: 1.33.0
+- Support output dagName, dagOwnerId for api listTaskFlowAndScenario.
+- Change output DbType to DwDbType for api GetLhSpaceByName.
+
 2022-03-31 Version: 1.32.0
 - Supported ListTaskFlow, ListTaskFlowInstance, GetTaskInstanceRelation, GetLhSpaceByName, DeleteLakeHouseSpace, DeleteTaskFlow API.
 

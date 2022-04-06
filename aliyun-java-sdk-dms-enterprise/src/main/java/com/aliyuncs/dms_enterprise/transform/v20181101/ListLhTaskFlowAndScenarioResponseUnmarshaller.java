@@ -51,6 +51,8 @@ public class ListLhTaskFlowAndScenarioResponseUnmarshaller {
 			dag.setStatus(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.RawDAGList["+ i +"].Status"));
 			dag.setLatestInstanceStatus(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.RawDAGList["+ i +"].LatestInstanceStatus"));
 			dag.setLatestInstanceTime(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.RawDAGList["+ i +"].LatestInstanceTime"));
+			dag.setDagName(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.RawDAGList["+ i +"].DagName"));
+			dag.setDagOwnerId(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.RawDAGList["+ i +"].DagOwnerId"));
 
 			rawDAGList.add(dag);
 		}
@@ -83,6 +85,8 @@ public class ListLhTaskFlowAndScenarioResponseUnmarshaller {
 				dag1.setStatus(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].Status"));
 				dag1.setLatestInstanceStatus(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].LatestInstanceStatus"));
 				dag1.setLatestInstanceTime(_ctx.integerValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].LatestInstanceTime"));
+				dag1.setDagName(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].DagName"));
+				dag1.setDagOwnerId(_ctx.stringValue("ListLhTaskFlowAndScenarioResponse.ScenarioDAGList["+ i +"].DagList["+ j +"].DagOwnerId"));
 
 				dagList.add(dag1);
 			}
