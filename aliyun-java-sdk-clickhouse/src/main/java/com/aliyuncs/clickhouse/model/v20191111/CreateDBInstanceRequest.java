@@ -31,6 +31,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String clientToken;
 
+	private String sourceDBClusterId;
+
 	private String dbNodeStorageType;
 
 	private String dBClusterCategory;
@@ -107,6 +109,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSourceDBClusterId() {
+		return this.sourceDBClusterId;
+	}
+
+	public void setSourceDBClusterId(String sourceDBClusterId) {
+		this.sourceDBClusterId = sourceDBClusterId;
+		if(sourceDBClusterId != null){
+			putQueryParameter("SourceDBClusterId", sourceDBClusterId);
 		}
 	}
 

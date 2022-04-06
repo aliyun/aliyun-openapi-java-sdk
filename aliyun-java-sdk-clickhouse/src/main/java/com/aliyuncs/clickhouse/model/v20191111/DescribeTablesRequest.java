@@ -27,8 +27,6 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 
 	private Long resourceOwnerId;
 
-	private String tableName;
-
 	private String schemaName;
 
 	private String resourceOwnerAccount;
@@ -55,17 +53,6 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
 		}
 	}
 

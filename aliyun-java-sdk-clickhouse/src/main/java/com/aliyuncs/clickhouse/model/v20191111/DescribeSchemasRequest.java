@@ -27,10 +27,6 @@ public class DescribeSchemasRequest extends RpcAcsRequest<DescribeSchemasRespons
 
 	private Long resourceOwnerId;
 
-	private String tableName;
-
-	private String schemaName;
-
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -55,28 +51,6 @@ public class DescribeSchemasRequest extends RpcAcsRequest<DescribeSchemasRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
-		}
-	}
-
-	public String getSchemaName() {
-		return this.schemaName;
-	}
-
-	public void setSchemaName(String schemaName) {
-		this.schemaName = schemaName;
-		if(schemaName != null){
-			putQueryParameter("SchemaName", schemaName);
 		}
 	}
 

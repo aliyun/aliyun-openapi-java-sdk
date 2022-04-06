@@ -51,6 +51,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private Integer supportBackup;
 
+		private Integer supportOss;
+
 		private String encryptionType;
 
 		private Long dBNodeCount;
@@ -143,6 +145,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setSupportBackup(Integer supportBackup) {
 			this.supportBackup = supportBackup;
+		}
+
+		public Integer getSupportOss() {
+			return this.supportOss;
+		}
+
+		public void setSupportOss(Integer supportOss) {
+			this.supportOss = supportOss;
 		}
 
 		public String getEncryptionType() {

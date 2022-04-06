@@ -33,6 +33,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		DBCluster dBCluster = new DBCluster();
 		dBCluster.setVpcId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.VpcId"));
 		dBCluster.setSupportBackup(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBCluster.SupportBackup"));
+		dBCluster.setSupportOss(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBCluster.SupportOss"));
 		dBCluster.setEncryptionType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.EncryptionType"));
 		dBCluster.setDBNodeCount(_ctx.longValue("DescribeDBClusterAttributeResponse.DBCluster.DBNodeCount"));
 		dBCluster.setMaintainTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.MaintainTime"));
