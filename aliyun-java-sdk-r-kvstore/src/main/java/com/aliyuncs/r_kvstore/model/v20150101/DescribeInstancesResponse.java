@@ -155,6 +155,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String cloudType;
 
+		private String editionType;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -467,6 +469,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setCloudType(String cloudType) {
 			this.cloudType = cloudType;
+		}
+
+		public String getEditionType() {
+			return this.editionType;
+		}
+
+		public void setEditionType(String editionType) {
+			this.editionType = editionType;
 		}
 
 		public List<Tag> getTags() {
