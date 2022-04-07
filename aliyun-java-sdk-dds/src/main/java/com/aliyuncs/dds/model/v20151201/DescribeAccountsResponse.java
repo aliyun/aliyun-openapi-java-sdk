@@ -47,30 +47,22 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class Account {
 
-		private String dBInstanceId;
-
-		private String accountName;
+		private String characterType;
 
 		private String accountStatus;
 
 		private String accountDescription;
 
-		private String characterType;
+		private String dBInstanceId;
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		private String accountName;
+
+		public String getCharacterType() {
+			return this.characterType;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
+		public void setCharacterType(String characterType) {
+			this.characterType = characterType;
 		}
 
 		public String getAccountStatus() {
@@ -89,12 +81,20 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountDescription = accountDescription;
 		}
 
-		public String getCharacterType() {
-			return this.characterType;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setCharacterType(String characterType) {
-			this.characterType = characterType;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

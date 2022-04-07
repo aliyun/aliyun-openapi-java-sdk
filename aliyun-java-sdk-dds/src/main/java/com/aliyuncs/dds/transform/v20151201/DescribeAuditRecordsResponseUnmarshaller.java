@@ -28,21 +28,21 @@ public class DescribeAuditRecordsResponseUnmarshaller {
 		
 		describeAuditRecordsResponse.setRequestId(_ctx.stringValue("DescribeAuditRecordsResponse.RequestId"));
 		describeAuditRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeAuditRecordsResponse.TotalRecordCount"));
-		describeAuditRecordsResponse.setPageNumber(_ctx.integerValue("DescribeAuditRecordsResponse.PageNumber"));
 		describeAuditRecordsResponse.setPageRecordCount(_ctx.integerValue("DescribeAuditRecordsResponse.PageRecordCount"));
+		describeAuditRecordsResponse.setPageNumber(_ctx.integerValue("DescribeAuditRecordsResponse.PageNumber"));
 
 		List<SQLRecord> items = new ArrayList<SQLRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAuditRecordsResponse.Items.Length"); i++) {
 			SQLRecord sQLRecord = new SQLRecord();
-			sQLRecord.setDBName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].DBName"));
-			sQLRecord.setAccountName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].AccountName"));
 			sQLRecord.setHostAddress(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].HostAddress"));
-			sQLRecord.setSyntax(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].Syntax"));
-			sQLRecord.setTotalExecutionTimes(_ctx.longValue("DescribeAuditRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
+			sQLRecord.setTableName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].TableName"));
 			sQLRecord.setReturnRowCounts(_ctx.longValue("DescribeAuditRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			sQLRecord.setDBName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].DBName"));
 			sQLRecord.setExecuteTime(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].ExecuteTime"));
 			sQLRecord.setThreadID(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].ThreadID"));
-			sQLRecord.setTableName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].TableName"));
+			sQLRecord.setTotalExecutionTimes(_ctx.longValue("DescribeAuditRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
+			sQLRecord.setSyntax(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].Syntax"));
+			sQLRecord.setAccountName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].AccountName"));
 
 			items.add(sQLRecord);
 		}

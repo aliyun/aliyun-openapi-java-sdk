@@ -47,6 +47,8 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 
 	public static class ZoneInfo {
 
+		private String insName;
+
 		private String nodeType;
 
 		private String roleType;
@@ -55,7 +57,13 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 
 		private String roleId;
 
-		private String insName;
+		public String getInsName() {
+			return this.insName;
+		}
+
+		public void setInsName(String insName) {
+			this.insName = insName;
+		}
 
 		public String getNodeType() {
 			return this.nodeType;
@@ -87,14 +95,6 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 
 		public void setRoleId(String roleId) {
 			this.roleId = roleId;
-		}
-
-		public String getInsName() {
-			return this.insName;
-		}
-
-		public void setInsName(String insName) {
-			this.insName = insName;
 		}
 	}
 

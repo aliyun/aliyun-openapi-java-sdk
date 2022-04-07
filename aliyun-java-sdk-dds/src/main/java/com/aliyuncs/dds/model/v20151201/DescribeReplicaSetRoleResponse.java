@@ -57,41 +57,17 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 	public static class ReplicaSet {
 
-		private String replicaSetRole;
-
-		private String roleId;
-
-		private String connectionDomain;
-
 		private String connectionPort;
+
+		private String replicaSetRole;
 
 		private String expiredTime;
 
+		private String connectionDomain;
+
 		private String networkType;
 
-		public String getReplicaSetRole() {
-			return this.replicaSetRole;
-		}
-
-		public void setReplicaSetRole(String replicaSetRole) {
-			this.replicaSetRole = replicaSetRole;
-		}
-
-		public String getRoleId() {
-			return this.roleId;
-		}
-
-		public void setRoleId(String roleId) {
-			this.roleId = roleId;
-		}
-
-		public String getConnectionDomain() {
-			return this.connectionDomain;
-		}
-
-		public void setConnectionDomain(String connectionDomain) {
-			this.connectionDomain = connectionDomain;
-		}
+		private String roleId;
 
 		public String getConnectionPort() {
 			return this.connectionPort;
@@ -99,6 +75,14 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 		public void setConnectionPort(String connectionPort) {
 			this.connectionPort = connectionPort;
+		}
+
+		public String getReplicaSetRole() {
+			return this.replicaSetRole;
+		}
+
+		public void setReplicaSetRole(String replicaSetRole) {
+			this.replicaSetRole = replicaSetRole;
 		}
 
 		public String getExpiredTime() {
@@ -109,12 +93,28 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
+		public String getConnectionDomain() {
+			return this.connectionDomain;
+		}
+
+		public void setConnectionDomain(String connectionDomain) {
+			this.connectionDomain = connectionDomain;
+		}
+
 		public String getNetworkType() {
 			return this.networkType;
 		}
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getRoleId() {
+			return this.roleId;
+		}
+
+		public void setRoleId(String roleId) {
+			this.roleId = roleId;
 		}
 	}
 

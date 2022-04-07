@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityIpsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String securityIps;
 
+	private String requestId;
+
 	private List<SecurityIpGroup> securityIpGroups;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getSecurityIps() {
 		return this.securityIps;
@@ -45,6 +37,14 @@ public class DescribeSecurityIpsResponse extends AcsResponse {
 
 	public void setSecurityIps(String securityIps) {
 		this.securityIps = securityIps;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SecurityIpGroup> getSecurityIpGroups() {

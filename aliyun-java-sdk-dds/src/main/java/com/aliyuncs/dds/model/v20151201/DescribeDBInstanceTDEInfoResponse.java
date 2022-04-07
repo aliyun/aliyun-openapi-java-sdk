@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceTDEInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String tDEStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTDEStatus() {
 		return this.tDEStatus;
@@ -42,6 +34,14 @@ public class DescribeDBInstanceTDEInfoResponse extends AcsResponse {
 
 	public void setTDEStatus(String tDEStatus) {
 		this.tDEStatus = tDEStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

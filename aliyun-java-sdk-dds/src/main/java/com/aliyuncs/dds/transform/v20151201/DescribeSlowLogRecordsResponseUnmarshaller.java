@@ -35,16 +35,16 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 		List<LogRecords> items = new ArrayList<LogRecords>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
 			LogRecords logRecords = new LogRecords();
-			logRecords.setTableName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].TableName"));
-			logRecords.setQueryTimes(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
 			logRecords.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
-			logRecords.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
-			logRecords.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
-			logRecords.setKeysExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].KeysExamined"));
-			logRecords.setDocsExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DocsExamined"));
 			logRecords.setHostAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
-			logRecords.setAccountName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].AccountName"));
+			logRecords.setQueryTimes(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
+			logRecords.setTableName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].TableName"));
 			logRecords.setSQLText(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
+			logRecords.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			logRecords.setKeysExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].KeysExamined"));
+			logRecords.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
+			logRecords.setDocsExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DocsExamined"));
+			logRecords.setAccountName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].AccountName"));
 
 			items.add(logRecords);
 		}

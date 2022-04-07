@@ -23,14 +23,14 @@ public class DescribeDBInstanceEncryptionKeyResponseUnmarshaller {
 	public static DescribeDBInstanceEncryptionKeyResponse unmarshall(DescribeDBInstanceEncryptionKeyResponse describeDBInstanceEncryptionKeyResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceEncryptionKeyResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.RequestId"));
-		describeDBInstanceEncryptionKeyResponse.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKey"));
-		describeDBInstanceEncryptionKeyResponse.setDescription(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.Description"));
-		describeDBInstanceEncryptionKeyResponse.setKeyUsage(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.KeyUsage"));
-		describeDBInstanceEncryptionKeyResponse.setDeleteDate(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.DeleteDate"));
-		describeDBInstanceEncryptionKeyResponse.setCreator(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.Creator"));
-		describeDBInstanceEncryptionKeyResponse.setEncryptionKeyStatus(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyStatus"));
 		describeDBInstanceEncryptionKeyResponse.setOrigin(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.Origin"));
+		describeDBInstanceEncryptionKeyResponse.setDescription(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.Description"));
+		describeDBInstanceEncryptionKeyResponse.setEncryptionKeyStatus(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyStatus"));
 		describeDBInstanceEncryptionKeyResponse.setMaterialExpireTime(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.MaterialExpireTime"));
+		describeDBInstanceEncryptionKeyResponse.setKeyUsage(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.KeyUsage"));
+		describeDBInstanceEncryptionKeyResponse.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKey"));
+		describeDBInstanceEncryptionKeyResponse.setCreator(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.Creator"));
+		describeDBInstanceEncryptionKeyResponse.setDeleteDate(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.DeleteDate"));
 	 
 	 	return describeDBInstanceEncryptionKeyResponse;
 	}

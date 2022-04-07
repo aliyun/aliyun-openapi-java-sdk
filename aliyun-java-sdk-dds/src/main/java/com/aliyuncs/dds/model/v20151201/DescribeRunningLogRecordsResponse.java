@@ -89,11 +89,11 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
 		private String connInfo;
 
+		private String createTime;
+
 		private String category;
 
 		private String content;
-
-		private String createTime;
 
 		private Integer id;
 
@@ -103,6 +103,14 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
 		public void setConnInfo(String connInfo) {
 			this.connInfo = connInfo;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getCategory() {
@@ -119,14 +127,6 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public Integer getId() {

@@ -31,11 +31,11 @@ public class DescribeAccountsResponseUnmarshaller {
 		List<Account> accounts = new ArrayList<Account>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {
 			Account account = new Account();
-			account.setDBInstanceId(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBInstanceId"));
-			account.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
+			account.setCharacterType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].CharacterType"));
 			account.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
 			account.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
-			account.setCharacterType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].CharacterType"));
+			account.setDBInstanceId(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBInstanceId"));
+			account.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
 
 			accounts.add(account);
 		}

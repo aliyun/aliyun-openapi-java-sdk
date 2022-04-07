@@ -26,9 +26,9 @@ public class DescribeActiveOperationTaskCountResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer taskCount;
-
 	private Integer needPop;
+
+	private Integer taskCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class DescribeActiveOperationTaskCountResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTaskCount() {
-		return this.taskCount;
-	}
-
-	public void setTaskCount(Integer taskCount) {
-		this.taskCount = taskCount;
-	}
-
 	public Integer getNeedPop() {
 		return this.needPop;
 	}
 
 	public void setNeedPop(Integer needPop) {
 		this.needPop = needPop;
+	}
+
+	public Integer getTaskCount() {
+		return this.taskCount;
+	}
+
+	public void setTaskCount(Integer taskCount) {
+		this.taskCount = taskCount;
 	}
 
 	@Override

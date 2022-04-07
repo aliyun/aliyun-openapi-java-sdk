@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<DbInstance> instances;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<DbInstance> getInstances() {
@@ -77,102 +77,54 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 	public static class DbInstance {
 
-		private String region;
-
-		private String clusterId;
-
-		private String clusterName;
-
-		private String instanceId;
-
-		private String instanceName;
-
-		private String instanceStatus;
-
-		private String engineVersion;
+		private String vpcId;
 
 		private String characterType;
 
-		private String maintainStartTime;
-
-		private String maintainEndTime;
-
-		private String regionId;
-
-		private String vpcId;
-
 		private String vswitchId;
 
-		private String zoneId;
-
-		private String customId;
+		private String maintainStartTime;
 
 		private String instanceClass;
-
-		private String engine;
-
-		private String storageType;
 
 		private String connectionDomain;
 
 		private String createTime;
 
+		private String maintainEndTime;
+
+		private String storageType;
+
+		private String instanceId;
+
+		private String engineVersion;
+
+		private String regionId;
+
+		private String instanceName;
+
+		private String region;
+
+		private String zoneId;
+
+		private String clusterName;
+
+		private String instanceStatus;
+
+		private String engine;
+
+		private String customId;
+
+		private String clusterId;
+
 		private List<InstanceNodes> instanceNodeList;
 
-		public String getRegion() {
-			return this.region;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getInstanceStatus() {
-			return this.instanceStatus;
-		}
-
-		public void setInstanceStatus(String instanceStatus) {
-			this.instanceStatus = instanceStatus;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getCharacterType() {
@@ -183,38 +135,6 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 			this.characterType = characterType;
 		}
 
-		public String getMaintainStartTime() {
-			return this.maintainStartTime;
-		}
-
-		public void setMaintainStartTime(String maintainStartTime) {
-			this.maintainStartTime = maintainStartTime;
-		}
-
-		public String getMaintainEndTime() {
-			return this.maintainEndTime;
-		}
-
-		public void setMaintainEndTime(String maintainEndTime) {
-			this.maintainEndTime = maintainEndTime;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
 		public String getVswitchId() {
 			return this.vswitchId;
 		}
@@ -223,20 +143,12 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 			this.vswitchId = vswitchId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getMaintainStartTime() {
+			return this.maintainStartTime;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getCustomId() {
-			return this.customId;
-		}
-
-		public void setCustomId(String customId) {
-			this.customId = customId;
+		public void setMaintainStartTime(String maintainStartTime) {
+			this.maintainStartTime = maintainStartTime;
 		}
 
 		public String getInstanceClass() {
@@ -245,22 +157,6 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		public void setInstanceClass(String instanceClass) {
 			this.instanceClass = instanceClass;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
 		}
 
 		public String getConnectionDomain() {
@@ -279,6 +175,110 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getMaintainEndTime() {
+			return this.maintainEndTime;
+		}
+
+		public void setMaintainEndTime(String maintainEndTime) {
+			this.maintainEndTime = maintainEndTime;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getInstanceStatus() {
+			return this.instanceStatus;
+		}
+
+		public void setInstanceStatus(String instanceStatus) {
+			this.instanceStatus = instanceStatus;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getCustomId() {
+			return this.customId;
+		}
+
+		public void setCustomId(String customId) {
+			this.customId = customId;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
 		public List<InstanceNodes> getInstanceNodeList() {
 			return this.instanceNodeList;
 		}
@@ -289,21 +289,37 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		public static class InstanceNodes {
 
+			private String nodeIp;
+
+			private String dedicatedHostName;
+
 			private String insName;
-
-			private String role;
-
-			private Integer nodeId;
 
 			private String nodeType;
 
-			private String nodeIp;
+			private String zoneId;
+
+			private String role;
 
 			private Integer port;
 
-			private String zoneId;
+			private Integer nodeId;
 
-			private String dedicatedHostName;
+			public String getNodeIp() {
+				return this.nodeIp;
+			}
+
+			public void setNodeIp(String nodeIp) {
+				this.nodeIp = nodeIp;
+			}
+
+			public String getDedicatedHostName() {
+				return this.dedicatedHostName;
+			}
+
+			public void setDedicatedHostName(String dedicatedHostName) {
+				this.dedicatedHostName = dedicatedHostName;
+			}
 
 			public String getInsName() {
 				return this.insName;
@@ -311,22 +327,6 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 			public void setInsName(String insName) {
 				this.insName = insName;
-			}
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
-
-			public Integer getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(Integer nodeId) {
-				this.nodeId = nodeId;
 			}
 
 			public String getNodeType() {
@@ -337,12 +337,20 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 				this.nodeType = nodeType;
 			}
 
-			public String getNodeIp() {
-				return this.nodeIp;
+			public String getZoneId() {
+				return this.zoneId;
 			}
 
-			public void setNodeIp(String nodeIp) {
-				this.nodeIp = nodeIp;
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
 			}
 
 			public Integer getPort() {
@@ -353,20 +361,12 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 				this.port = port;
 			}
 
-			public String getZoneId() {
-				return this.zoneId;
+			public Integer getNodeId() {
+				return this.nodeId;
 			}
 
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
-
-			public String getDedicatedHostName() {
-				return this.dedicatedHostName;
-			}
-
-			public void setDedicatedHostName(String dedicatedHostName) {
-				this.dedicatedHostName = dedicatedHostName;
+			public void setNodeId(Integer nodeId) {
+				this.nodeId = nodeId;
 			}
 		}
 	}

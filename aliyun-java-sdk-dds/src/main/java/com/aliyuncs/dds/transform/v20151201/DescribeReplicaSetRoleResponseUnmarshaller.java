@@ -32,12 +32,12 @@ public class DescribeReplicaSetRoleResponseUnmarshaller {
 		List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeReplicaSetRoleResponse.ReplicaSets.Length"); i++) {
 			ReplicaSet replicaSet = new ReplicaSet();
-			replicaSet.setReplicaSetRole(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ReplicaSetRole"));
-			replicaSet.setRoleId(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].RoleId"));
-			replicaSet.setConnectionDomain(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionDomain"));
 			replicaSet.setConnectionPort(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionPort"));
+			replicaSet.setReplicaSetRole(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ReplicaSetRole"));
 			replicaSet.setExpiredTime(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ExpiredTime"));
+			replicaSet.setConnectionDomain(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionDomain"));
 			replicaSet.setNetworkType(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].NetworkType"));
+			replicaSet.setRoleId(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].RoleId"));
 
 			replicaSets.add(replicaSet);
 		}

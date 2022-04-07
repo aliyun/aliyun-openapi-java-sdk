@@ -31,9 +31,9 @@ public class DescribeSecurityGroupConfigurationResponseUnmarshaller {
 		List<RdsEcsSecurityGroupRel> items = new ArrayList<RdsEcsSecurityGroupRel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupConfigurationResponse.Items.Length"); i++) {
 			RdsEcsSecurityGroupRel rdsEcsSecurityGroupRel = new RdsEcsSecurityGroupRel();
-			rdsEcsSecurityGroupRel.setRegionId(_ctx.stringValue("DescribeSecurityGroupConfigurationResponse.Items["+ i +"].RegionId"));
 			rdsEcsSecurityGroupRel.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupConfigurationResponse.Items["+ i +"].SecurityGroupId"));
 			rdsEcsSecurityGroupRel.setNetType(_ctx.stringValue("DescribeSecurityGroupConfigurationResponse.Items["+ i +"].NetType"));
+			rdsEcsSecurityGroupRel.setRegionId(_ctx.stringValue("DescribeSecurityGroupConfigurationResponse.Items["+ i +"].RegionId"));
 
 			items.add(rdsEcsSecurityGroupRel);
 		}

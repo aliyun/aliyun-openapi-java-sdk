@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceSSLResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String sSLExpiredTime;
-
-	private String certCommonName;
 
 	private String sSLStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String certCommonName;
 
 	public String getSSLExpiredTime() {
 		return this.sSLExpiredTime;
@@ -48,20 +40,28 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 		this.sSLExpiredTime = sSLExpiredTime;
 	}
 
-	public String getCertCommonName() {
-		return this.certCommonName;
-	}
-
-	public void setCertCommonName(String certCommonName) {
-		this.certCommonName = certCommonName;
-	}
-
 	public String getSSLStatus() {
 		return this.sSLStatus;
 	}
 
 	public void setSSLStatus(String sSLStatus) {
 		this.sSLStatus = sSLStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCertCommonName() {
+		return this.certCommonName;
+	}
+
+	public void setCertCommonName(String certCommonName) {
+		this.certCommonName = certCommonName;
 	}
 
 	@Override

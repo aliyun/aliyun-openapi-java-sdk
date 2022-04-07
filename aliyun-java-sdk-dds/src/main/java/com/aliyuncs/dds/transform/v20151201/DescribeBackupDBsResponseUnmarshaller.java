@@ -27,9 +27,9 @@ public class DescribeBackupDBsResponseUnmarshaller {
 	public static DescribeBackupDBsResponse unmarshall(DescribeBackupDBsResponse describeBackupDBsResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupDBsResponse.setRequestId(_ctx.stringValue("DescribeBackupDBsResponse.RequestId"));
-		describeBackupDBsResponse.setPageNumber(_ctx.integerValue("DescribeBackupDBsResponse.PageNumber"));
-		describeBackupDBsResponse.setPageSize(_ctx.integerValue("DescribeBackupDBsResponse.PageSize"));
 		describeBackupDBsResponse.setTotalCount(_ctx.integerValue("DescribeBackupDBsResponse.TotalCount"));
+		describeBackupDBsResponse.setPageSize(_ctx.integerValue("DescribeBackupDBsResponse.PageSize"));
+		describeBackupDBsResponse.setPageNumber(_ctx.integerValue("DescribeBackupDBsResponse.PageNumber"));
 
 		List<Database> databases = new ArrayList<Database>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupDBsResponse.Databases.Length"); i++) {

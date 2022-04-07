@@ -23,8 +23,8 @@ public class DescribeActiveOperationTaskCountResponseUnmarshaller {
 	public static DescribeActiveOperationTaskCountResponse unmarshall(DescribeActiveOperationTaskCountResponse describeActiveOperationTaskCountResponse, UnmarshallerContext _ctx) {
 		
 		describeActiveOperationTaskCountResponse.setRequestId(_ctx.stringValue("DescribeActiveOperationTaskCountResponse.RequestId"));
-		describeActiveOperationTaskCountResponse.setTaskCount(_ctx.integerValue("DescribeActiveOperationTaskCountResponse.TaskCount"));
 		describeActiveOperationTaskCountResponse.setNeedPop(_ctx.integerValue("DescribeActiveOperationTaskCountResponse.NeedPop"));
+		describeActiveOperationTaskCountResponse.setTaskCount(_ctx.integerValue("DescribeActiveOperationTaskCountResponse.TaskCount"));
 	 
 	 	return describeActiveOperationTaskCountResponse;
 	}

@@ -24,8 +24,8 @@ public class DescribeDBInstanceSSLResponseUnmarshaller {
 		
 		describeDBInstanceSSLResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
 		describeDBInstanceSSLResponse.setSSLExpiredTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLExpiredTime"));
-		describeDBInstanceSSLResponse.setCertCommonName(_ctx.stringValue("DescribeDBInstanceSSLResponse.CertCommonName"));
 		describeDBInstanceSSLResponse.setSSLStatus(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLStatus"));
+		describeDBInstanceSSLResponse.setCertCommonName(_ctx.stringValue("DescribeDBInstanceSSLResponse.CertCommonName"));
 	 
 	 	return describeDBInstanceSSLResponse;
 	}

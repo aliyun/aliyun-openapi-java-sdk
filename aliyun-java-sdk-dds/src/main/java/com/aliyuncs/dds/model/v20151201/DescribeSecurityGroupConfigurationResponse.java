@@ -47,19 +47,11 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 
 	public static class RdsEcsSecurityGroupRel {
 
-		private String regionId;
-
 		private String securityGroupId;
 
 		private String netType;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public String getSecurityGroupId() {
 			return this.securityGroupId;
@@ -75,6 +67,14 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 
 		public void setNetType(String netType) {
 			this.netType = netType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

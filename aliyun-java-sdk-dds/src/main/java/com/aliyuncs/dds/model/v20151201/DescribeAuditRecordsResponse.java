@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAuditRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalRecordCount;
-
-	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<SQLRecord> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -51,20 +43,28 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 		this.totalRecordCount = totalRecordCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SQLRecord> getItems() {
@@ -77,39 +77,23 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 	public static class SQLRecord {
 
-		private String dBName;
-
-		private String accountName;
-
 		private String hostAddress;
 
-		private String syntax;
-
-		private Long totalExecutionTimes;
+		private String tableName;
 
 		private Long returnRowCounts;
+
+		private String dBName;
 
 		private String executeTime;
 
 		private String threadID;
 
-		private String tableName;
+		private Long totalExecutionTimes;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+		private String syntax;
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
+		private String accountName;
 
 		public String getHostAddress() {
 			return this.hostAddress;
@@ -119,20 +103,12 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 			this.hostAddress = hostAddress;
 		}
 
-		public String getSyntax() {
-			return this.syntax;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setSyntax(String syntax) {
-			this.syntax = syntax;
-		}
-
-		public Long getTotalExecutionTimes() {
-			return this.totalExecutionTimes;
-		}
-
-		public void setTotalExecutionTimes(Long totalExecutionTimes) {
-			this.totalExecutionTimes = totalExecutionTimes;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public Long getReturnRowCounts() {
@@ -141,6 +117,14 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		public void setReturnRowCounts(Long returnRowCounts) {
 			this.returnRowCounts = returnRowCounts;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
 		}
 
 		public String getExecuteTime() {
@@ -159,12 +143,28 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 			this.threadID = threadID;
 		}
 
-		public String getTableName() {
-			return this.tableName;
+		public Long getTotalExecutionTimes() {
+			return this.totalExecutionTimes;
 		}
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
+		public void setTotalExecutionTimes(Long totalExecutionTimes) {
+			this.totalExecutionTimes = totalExecutionTimes;
+		}
+
+		public String getSyntax() {
+			return this.syntax;
+		}
+
+		public void setSyntax(String syntax) {
+			this.syntax = syntax;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

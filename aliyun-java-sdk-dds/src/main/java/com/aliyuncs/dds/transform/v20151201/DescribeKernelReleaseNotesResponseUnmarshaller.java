@@ -31,8 +31,8 @@ public class DescribeKernelReleaseNotesResponseUnmarshaller {
 		List<ReleaseNote> releaseNotes = new ArrayList<ReleaseNote>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeKernelReleaseNotesResponse.ReleaseNotes.Length"); i++) {
 			ReleaseNote releaseNote = new ReleaseNote();
-			releaseNote.setKernelVersion(_ctx.stringValue("DescribeKernelReleaseNotesResponse.ReleaseNotes["+ i +"].KernelVersion"));
 			releaseNote.setReleaseNote(_ctx.stringValue("DescribeKernelReleaseNotesResponse.ReleaseNotes["+ i +"].ReleaseNote"));
+			releaseNote.setKernelVersion(_ctx.stringValue("DescribeKernelReleaseNotesResponse.ReleaseNotes["+ i +"].KernelVersion"));
 
 			releaseNotes.add(releaseNote);
 		}

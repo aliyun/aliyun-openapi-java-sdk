@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteNodeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer taskId;
 
+	private String requestId;
+
 	private String orderId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTaskId() {
 		return this.taskId;
@@ -44,6 +36,14 @@ public class DeleteNodeResponse extends AcsResponse {
 
 	public void setTaskId(Integer taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getOrderId() {

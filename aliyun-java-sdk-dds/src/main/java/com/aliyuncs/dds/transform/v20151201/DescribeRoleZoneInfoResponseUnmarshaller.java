@@ -31,11 +31,11 @@ public class DescribeRoleZoneInfoResponseUnmarshaller {
 		List<ZoneInfo> zoneInfos = new ArrayList<ZoneInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRoleZoneInfoResponse.ZoneInfos.Length"); i++) {
 			ZoneInfo zoneInfo = new ZoneInfo();
+			zoneInfo.setInsName(_ctx.stringValue("DescribeRoleZoneInfoResponse.ZoneInfos["+ i +"].InsName"));
 			zoneInfo.setNodeType(_ctx.stringValue("DescribeRoleZoneInfoResponse.ZoneInfos["+ i +"].NodeType"));
 			zoneInfo.setRoleType(_ctx.stringValue("DescribeRoleZoneInfoResponse.ZoneInfos["+ i +"].RoleType"));
 			zoneInfo.setZoneId(_ctx.stringValue("DescribeRoleZoneInfoResponse.ZoneInfos["+ i +"].ZoneId"));
 			zoneInfo.setRoleId(_ctx.stringValue("DescribeRoleZoneInfoResponse.ZoneInfos["+ i +"].RoleId"));
-			zoneInfo.setInsName(_ctx.stringValue("DescribeRoleZoneInfoResponse.ZoneInfos["+ i +"].InsName"));
 
 			zoneInfos.add(zoneInfo);
 		}

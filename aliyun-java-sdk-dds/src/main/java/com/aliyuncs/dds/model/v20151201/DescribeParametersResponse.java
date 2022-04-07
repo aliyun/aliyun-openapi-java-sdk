@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParametersResponse extends AcsResponse {
 
+	private String engineVersion;
+
 	private String requestId;
 
 	private String engine;
 
-	private String engineVersion;
+	private List<Parameter> runningParameters;
 
 	private List<Parameter> configParameters;
 
-	private List<Parameter> runningParameters;
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,12 +59,12 @@ public class DescribeParametersResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
+	public List<Parameter> getRunningParameters() {
+		return this.runningParameters;
 	}
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
+	public void setRunningParameters(List<Parameter> runningParameters) {
+		this.runningParameters = runningParameters;
 	}
 
 	public List<Parameter> getConfigParameters() {
@@ -67,27 +75,27 @@ public class DescribeParametersResponse extends AcsResponse {
 		this.configParameters = configParameters;
 	}
 
-	public List<Parameter> getRunningParameters() {
-		return this.runningParameters;
-	}
-
-	public void setRunningParameters(List<Parameter> runningParameters) {
-		this.runningParameters = runningParameters;
-	}
-
 	public static class Parameter {
+
+		private String checkingCode;
 
 		private String parameterName;
 
 		private String parameterValue;
 
-		private Boolean modifiableStatus;
-
-		private Boolean forceRestart;
-
-		private String checkingCode;
+		private String forceRestart;
 
 		private String parameterDescription;
+
+		private String modifiableStatus;
+
+		public String getCheckingCode() {
+			return this.checkingCode;
+		}
+
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
+		}
 
 		public String getParameterName() {
 			return this.parameterName;
@@ -105,28 +113,12 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.parameterValue = parameterValue;
 		}
 
-		public Boolean getModifiableStatus() {
-			return this.modifiableStatus;
-		}
-
-		public void setModifiableStatus(Boolean modifiableStatus) {
-			this.modifiableStatus = modifiableStatus;
-		}
-
-		public Boolean getForceRestart() {
+		public String getForceRestart() {
 			return this.forceRestart;
 		}
 
-		public void setForceRestart(Boolean forceRestart) {
+		public void setForceRestart(String forceRestart) {
 			this.forceRestart = forceRestart;
-		}
-
-		public String getCheckingCode() {
-			return this.checkingCode;
-		}
-
-		public void setCheckingCode(String checkingCode) {
-			this.checkingCode = checkingCode;
 		}
 
 		public String getParameterDescription() {
@@ -135,6 +127,14 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setParameterDescription(String parameterDescription) {
 			this.parameterDescription = parameterDescription;
+		}
+
+		public String getModifiableStatus() {
+			return this.modifiableStatus;
+		}
+
+		public void setModifiableStatus(String modifiableStatus) {
+			this.modifiableStatus = modifiableStatus;
 		}
 	}
 

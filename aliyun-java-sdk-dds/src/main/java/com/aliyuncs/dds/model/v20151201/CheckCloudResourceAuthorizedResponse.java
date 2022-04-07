@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckCloudResourceAuthorizedResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer authorizationState;
 
+	private String requestId;
+
 	private String roleArn;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getAuthorizationState() {
 		return this.authorizationState;
@@ -44,6 +36,14 @@ public class CheckCloudResourceAuthorizedResponse extends AcsResponse {
 
 	public void setAuthorizationState(Integer authorizationState) {
 		this.authorizationState = authorizationState;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getRoleArn() {
