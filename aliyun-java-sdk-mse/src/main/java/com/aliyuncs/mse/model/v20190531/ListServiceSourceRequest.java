@@ -29,8 +29,8 @@ public class ListServiceSourceRequest extends RpcAcsRequest<ListServiceSourceRes
 
 	private String acceptLanguage;
 	public ListServiceSourceRequest() {
-		super("mse", "2019-05-31", "ListServiceSource");
-		setMethod(MethodType.GET);
+		super("mse", "2019-05-31", "ListServiceSource", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -43,7 +43,7 @@ public class UpdateNacosClusterRequest extends RpcAcsRequest<UpdateNacosClusterR
 
 	private Boolean useInstancePortForCheck;
 	public UpdateNacosClusterRequest() {
-		super("mse", "2019-05-31", "UpdateNacosCluster");
+		super("mse", "2019-05-31", "UpdateNacosCluster", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

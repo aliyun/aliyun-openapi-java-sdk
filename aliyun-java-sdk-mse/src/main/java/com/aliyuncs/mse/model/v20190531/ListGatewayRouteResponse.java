@@ -159,6 +159,10 @@ public class ListGatewayRouteResponse extends AcsResponse {
 
 			private String destinationType;
 
+			private String type;
+
+			private String enableWaf;
+
 			private List<RouteServicesItem> routeServices;
 
 			private List<Long> domainIdList;
@@ -170,6 +174,8 @@ public class ListGatewayRouteResponse extends AcsResponse {
 			private DirectResponse directResponse;
 
 			private Redirect redirect;
+
+			private Comment comment;
 
 			public Long getId() {
 				return this.id;
@@ -291,6 +297,22 @@ public class ListGatewayRouteResponse extends AcsResponse {
 				this.destinationType = destinationType;
 			}
 
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getEnableWaf() {
+				return this.enableWaf;
+			}
+
+			public void setEnableWaf(String enableWaf) {
+				this.enableWaf = enableWaf;
+			}
+
 			public List<RouteServicesItem> getRouteServices() {
 				return this.routeServices;
 			}
@@ -337,6 +359,14 @@ public class ListGatewayRouteResponse extends AcsResponse {
 
 			public void setRedirect(Redirect redirect) {
 				this.redirect = redirect;
+			}
+
+			public Comment getComment() {
+				return this.comment;
+			}
+
+			public void setComment(Comment comment) {
+				this.comment = comment;
 			}
 
 			public static class RouteServicesItem {
@@ -617,6 +647,19 @@ public class ListGatewayRouteResponse extends AcsResponse {
 
 				public void setPath(String path) {
 					this.path = path;
+				}
+			}
+
+			public static class Comment {
+
+				private String status;
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
 				}
 			}
 		}

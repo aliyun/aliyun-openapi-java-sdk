@@ -29,7 +29,7 @@ public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 
 	private String acceptLanguage;
 	public GetMseSourceRequest() {
-		super("mse", "2019-05-31", "GetMseSource");
+		super("mse", "2019-05-31", "GetMseSource", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

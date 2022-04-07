@@ -37,7 +37,7 @@ public class ListListenersByConfigRequest extends RpcAcsRequest<ListListenersByC
 
 	private String group;
 	public ListListenersByConfigRequest() {
-		super("mse", "2019-05-31", "ListListenersByConfig");
+		super("mse", "2019-05-31", "ListListenersByConfig", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

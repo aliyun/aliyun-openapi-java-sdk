@@ -38,7 +38,7 @@ public class UpdateGatewayRouteCORSRequest extends RpcAcsRequest<UpdateGatewayRo
 
 	private Long gatewayId;
 	public UpdateGatewayRouteCORSRequest() {
-		super("mse", "2019-05-31", "UpdateGatewayRouteCORS");
+		super("mse", "2019-05-31", "UpdateGatewayRouteCORS", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

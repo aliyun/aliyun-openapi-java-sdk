@@ -38,6 +38,7 @@ public class PullServicesResponseUnmarshaller {
 			PullServices pullServices = new PullServices();
 			pullServices.setNamespace(_ctx.stringValue("PullServicesResponse.Data["+ i +"].Namespace"));
 			pullServices.setGroupName(_ctx.stringValue("PullServicesResponse.Data["+ i +"].GroupName"));
+			pullServices.setNamespaceShowName(_ctx.stringValue("PullServicesResponse.Data["+ i +"].NamespaceShowName"));
 
 			List<ServicesItem> services = new ArrayList<ServicesItem>();
 			for (int j = 0; j < _ctx.lengthValue("PullServicesResponse.Data["+ i +"].Services.Length"); j++) {

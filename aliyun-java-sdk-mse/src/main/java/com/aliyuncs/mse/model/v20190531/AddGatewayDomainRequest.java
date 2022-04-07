@@ -37,7 +37,7 @@ public class AddGatewayDomainRequest extends RpcAcsRequest<AddGatewayDomainRespo
 
 	private String acceptLanguage;
 	public AddGatewayDomainRequest() {
-		super("mse", "2019-05-31", "AddGatewayDomain");
+		super("mse", "2019-05-31", "AddGatewayDomain", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

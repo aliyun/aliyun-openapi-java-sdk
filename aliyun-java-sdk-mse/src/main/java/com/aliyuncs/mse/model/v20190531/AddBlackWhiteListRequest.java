@@ -39,7 +39,7 @@ public class AddBlackWhiteListRequest extends RpcAcsRequest<AddBlackWhiteListRes
 
 	private String status;
 	public AddBlackWhiteListRequest() {
-		super("mse", "2019-05-31", "AddBlackWhiteList");
+		super("mse", "2019-05-31", "AddBlackWhiteList", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

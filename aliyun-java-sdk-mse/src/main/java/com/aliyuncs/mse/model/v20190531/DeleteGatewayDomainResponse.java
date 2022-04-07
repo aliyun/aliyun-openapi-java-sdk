@@ -98,7 +98,7 @@ public class DeleteGatewayDomainResponse extends AcsResponse {
 
 		private Boolean mustHttps;
 
-		private Integer certIdentifier;
+		private String certIdentifier;
 
 		private String gmtCreate;
 
@@ -152,11 +152,11 @@ public class DeleteGatewayDomainResponse extends AcsResponse {
 			this.mustHttps = mustHttps;
 		}
 
-		public Integer getCertIdentifier() {
+		public String getCertIdentifier() {
 			return this.certIdentifier;
 		}
 
-		public void setCertIdentifier(Integer certIdentifier) {
+		public void setCertIdentifier(String certIdentifier) {
 			this.certIdentifier = certIdentifier;
 		}
 

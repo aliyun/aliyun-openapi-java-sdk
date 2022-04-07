@@ -29,7 +29,7 @@ public class ListClusterVersionsRequest extends RpcAcsRequest<ListClusterVersion
 
 	private String acceptLanguage;
 	public ListClusterVersionsRequest() {
-		super("mse", "2019-05-31", "ListClusterVersions");
+		super("mse", "2019-05-31", "ListClusterVersions", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

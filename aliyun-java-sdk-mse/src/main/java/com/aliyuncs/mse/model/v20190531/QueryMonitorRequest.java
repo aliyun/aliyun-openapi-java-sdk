@@ -39,7 +39,7 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 
 	private Long step;
 	public QueryMonitorRequest() {
-		super("mse", "2019-05-31", "QueryMonitor");
+		super("mse", "2019-05-31", "QueryMonitor", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

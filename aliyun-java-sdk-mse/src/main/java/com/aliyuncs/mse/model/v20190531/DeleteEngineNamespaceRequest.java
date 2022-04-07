@@ -33,7 +33,7 @@ public class DeleteEngineNamespaceRequest extends RpcAcsRequest<DeleteEngineName
 
 	private String id;
 	public DeleteEngineNamespaceRequest() {
-		super("mse", "2019-05-31", "DeleteEngineNamespace");
+		super("mse", "2019-05-31", "DeleteEngineNamespace", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

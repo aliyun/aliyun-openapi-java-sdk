@@ -29,7 +29,7 @@ public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryCluster
 
 	private String acceptLanguage;
 	public QueryClusterSpecificationRequest() {
-		super("mse", "2019-05-31", "QueryClusterSpecification");
+		super("mse", "2019-05-31", "QueryClusterSpecification", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

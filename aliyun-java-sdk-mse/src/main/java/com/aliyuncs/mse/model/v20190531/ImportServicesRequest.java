@@ -39,7 +39,7 @@ public class ImportServicesRequest extends RpcAcsRequest<ImportServicesResponse>
 
 	private String sourceType;
 	public ImportServicesRequest() {
-		super("mse", "2019-05-31", "ImportServices");
+		super("mse", "2019-05-31", "ImportServices", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

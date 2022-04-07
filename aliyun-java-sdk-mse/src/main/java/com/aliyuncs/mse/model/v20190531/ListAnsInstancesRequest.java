@@ -45,7 +45,7 @@ public class ListAnsInstancesRequest extends RpcAcsRequest<ListAnsInstancesRespo
 
 	private String serviceName;
 	public ListAnsInstancesRequest() {
-		super("mse", "2019-05-31", "ListAnsInstances");
+		super("mse", "2019-05-31", "ListAnsInstances", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

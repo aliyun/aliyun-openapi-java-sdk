@@ -15,39 +15,33 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.DeleteAlarmRuleResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.UpdateMessageQueueRouteResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAlarmRuleResponse extends AcsResponse {
+public class UpdateMessageQueueRouteResponse extends AcsResponse {
 
-	private String httpCode;
-
-	private String message;
+	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorCode;
+	private String message;
+
+	private String data;
+
+	private Integer code;
 
 	private Boolean success;
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getRequestId() {
@@ -58,12 +52,28 @@ public class DeleteAlarmRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -75,8 +85,8 @@ public class DeleteAlarmRuleResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteAlarmRuleResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAlarmRuleResponseUnmarshaller.unmarshall(this, context);
+	public UpdateMessageQueueRouteResponse getInstance(UnmarshallerContext context) {
+		return	UpdateMessageQueueRouteResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

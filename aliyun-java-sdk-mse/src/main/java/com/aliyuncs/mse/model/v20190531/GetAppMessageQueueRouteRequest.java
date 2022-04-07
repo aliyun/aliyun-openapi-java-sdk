@@ -22,55 +22,31 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAlarmContactGroupsRequest extends RpcAcsRequest<ListAlarmContactGroupsResponse> {
+public class GetAppMessageQueueRouteRequest extends RpcAcsRequest<GetAppMessageQueueRouteResponse> {
 	   
 
-	private Integer pageNum;
-
-	private String requestPars;
-
-	private Integer pageSize;
+	private String appId;
 
 	private String acceptLanguage;
-	public ListAlarmContactGroupsRequest() {
-		super("mse", "2019-05-31", "ListAlarmContactGroups");
-		setMethod(MethodType.GET);
+
+	private String region;
+	public GetAppMessageQueueRouteRequest() {
+		super("mse", "2019-05-31", "GetAppMessageQueueRoute", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
@@ -85,9 +61,20 @@ public class ListAlarmContactGroupsRequest extends RpcAcsRequest<ListAlarmContac
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<ListAlarmContactGroupsResponse> getResponseClass() {
-		return ListAlarmContactGroupsResponse.class;
+	public Class<GetAppMessageQueueRouteResponse> getResponseClass() {
+		return GetAppMessageQueueRouteResponse.class;
 	}
 
 }

@@ -15,6 +15,8 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -24,6 +26,9 @@ import com.aliyuncs.mse.Endpoint;
  */
 public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceResponse> {
 	   
+
+	@SerializedName("ingressOptionsRequest")
+	private IngressOptionsRequest ingressOptionsRequest;
 
 	private String gatewayUniqueId;
 
@@ -37,12 +42,23 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 
 	private String acceptLanguage;
 	public AddServiceSourceRequest() {
-		super("mse", "2019-05-31", "AddServiceSource");
+		super("mse", "2019-05-31", "AddServiceSource", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public IngressOptionsRequest getIngressOptionsRequest() {
+		return this.ingressOptionsRequest;
+	}
+
+	public void setIngressOptionsRequest(IngressOptionsRequest ingressOptionsRequest) {
+		this.ingressOptionsRequest = ingressOptionsRequest;	
+		if (ingressOptionsRequest != null) {
+			putQueryParameter("IngressOptionsRequest" , new Gson().toJson(ingressOptionsRequest));
+		}	
 	}
 
 	public String getGatewayUniqueId() {
@@ -108,6 +124,42 @@ public class AddServiceSourceRequest extends RpcAcsRequest<AddServiceSourceRespo
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
+	}
+
+	public static class IngressOptionsRequest {
+
+		@SerializedName("EnableIngress")
+		private Boolean enableIngress;
+
+		@SerializedName("WatchNamespace")
+		private String watchNamespace;
+
+		@SerializedName("IngressClass")
+		private String ingressClass;
+
+		public Boolean getEnableIngress() {
+			return this.enableIngress;
+		}
+
+		public void setEnableIngress(Boolean enableIngress) {
+			this.enableIngress = enableIngress;
+		}
+
+		public String getWatchNamespace() {
+			return this.watchNamespace;
+		}
+
+		public void setWatchNamespace(String watchNamespace) {
+			this.watchNamespace = watchNamespace;
+		}
+
+		public String getIngressClass() {
+			return this.ingressClass;
+		}
+
+		public void setIngressClass(String ingressClass) {
+			this.ingressClass = ingressClass;
 		}
 	}
 

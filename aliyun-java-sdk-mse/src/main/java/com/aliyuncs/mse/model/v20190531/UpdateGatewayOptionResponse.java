@@ -90,6 +90,8 @@ public class UpdateGatewayOptionResponse extends AcsResponse {
 
 		private Boolean disableHttp2Alpn;
 
+		private Boolean enableWaf;
+
 		private TraceDetails traceDetails;
 
 		private LogConfigDetails logConfigDetails;
@@ -108,6 +110,14 @@ public class UpdateGatewayOptionResponse extends AcsResponse {
 
 		public void setDisableHttp2Alpn(Boolean disableHttp2Alpn) {
 			this.disableHttp2Alpn = disableHttp2Alpn;
+		}
+
+		public Boolean getEnableWaf() {
+			return this.enableWaf;
+		}
+
+		public void setEnableWaf(Boolean enableWaf) {
+			this.enableWaf = enableWaf;
 		}
 
 		public TraceDetails getTraceDetails() {

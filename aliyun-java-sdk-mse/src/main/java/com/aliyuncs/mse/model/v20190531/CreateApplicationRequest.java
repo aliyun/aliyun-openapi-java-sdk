@@ -33,11 +33,15 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private String appName;
 
+	private String switchEnable;
+
 	private String acceptLanguage;
+
+	private String sentinelEnable;
 
 	private String region;
 	public CreateApplicationRequest() {
-		super("mse", "2019-05-31", "CreateApplication");
+		super("mse", "2019-05-31", "CreateApplication", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -89,6 +93,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getSwitchEnable() {
+		return this.switchEnable;
+	}
+
+	public void setSwitchEnable(String switchEnable) {
+		this.switchEnable = switchEnable;
+		if(switchEnable != null){
+			putQueryParameter("SwitchEnable", switchEnable);
+		}
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -97,6 +112,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
+	}
+
+	public String getSentinelEnable() {
+		return this.sentinelEnable;
+	}
+
+	public void setSentinelEnable(String sentinelEnable) {
+		this.sentinelEnable = sentinelEnable;
+		if(sentinelEnable != null){
+			putQueryParameter("SentinelEnable", sentinelEnable);
 		}
 	}
 

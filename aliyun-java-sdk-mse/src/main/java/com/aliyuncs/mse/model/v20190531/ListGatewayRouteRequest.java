@@ -40,7 +40,7 @@ public class ListGatewayRouteRequest extends RpcAcsRequest<ListGatewayRouteRespo
 
 	private String acceptLanguage;
 	public ListGatewayRouteRequest() {
-		super("mse", "2019-05-31", "ListGatewayRoute");
+		super("mse", "2019-05-31", "ListGatewayRoute", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -128,6 +128,9 @@ public class ListGatewayRouteRequest extends RpcAcsRequest<ListGatewayRouteRespo
 		@SerializedName("Name")
 		private String name;
 
+		@SerializedName("DomainName")
+		private String domainName;
+
 		@SerializedName("GatewayId")
 		private Long gatewayId;
 
@@ -167,6 +170,14 @@ public class ListGatewayRouteRequest extends RpcAcsRequest<ListGatewayRouteRespo
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public Long getGatewayId() {

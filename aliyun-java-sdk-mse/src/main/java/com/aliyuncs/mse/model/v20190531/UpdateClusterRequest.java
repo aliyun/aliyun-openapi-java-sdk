@@ -33,7 +33,7 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 
 	private String acceptLanguage;
 	public UpdateClusterRequest() {
-		super("mse", "2019-05-31", "UpdateCluster");
+		super("mse", "2019-05-31", "UpdateCluster", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

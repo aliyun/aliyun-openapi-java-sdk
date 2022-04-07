@@ -91,6 +91,8 @@ public class PullServicesResponse extends AcsResponse {
 
 		private String groupName;
 
+		private String namespaceShowName;
+
 		private List<ServicesItem> services;
 
 		public String getNamespace() {
@@ -107,6 +109,14 @@ public class PullServicesResponse extends AcsResponse {
 
 		public void setGroupName(String groupName) {
 			this.groupName = groupName;
+		}
+
+		public String getNamespaceShowName() {
+			return this.namespaceShowName;
+		}
+
+		public void setNamespaceShowName(String namespaceShowName) {
+			this.namespaceShowName = namespaceShowName;
 		}
 
 		public List<ServicesItem> getServices() {

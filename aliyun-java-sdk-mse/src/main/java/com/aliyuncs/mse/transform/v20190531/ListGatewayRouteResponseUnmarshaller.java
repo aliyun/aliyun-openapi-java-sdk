@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes;
+import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.Comment;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.DirectResponse;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.Redirect;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RoutePredicates;
@@ -63,6 +64,8 @@ public class ListGatewayRouteResponseUnmarshaller {
 			routes.setDomainId(_ctx.longValue("ListGatewayRouteResponse.Data.Result["+ i +"].DomainId"));
 			routes.setDomainName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].DomainName"));
 			routes.setDestinationType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].DestinationType"));
+			routes.setType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].Type"));
+			routes.setEnableWaf(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].EnableWaf"));
 
 			List<Long> domainIdList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("ListGatewayRouteResponse.Data.Result["+ i +"].DomainIdList.Length"); j++) {
@@ -123,6 +126,10 @@ public class ListGatewayRouteResponseUnmarshaller {
 			redirect.setHost(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].Redirect.Host"));
 			redirect.setPath(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].Redirect.Path"));
 			routes.setRedirect(redirect);
+
+			Comment comment = new Comment();
+			comment.setStatus(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].Comment.Status"));
+			routes.setComment(comment);
 
 			List<RouteServicesItem> routeServices = new ArrayList<RouteServicesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices.Length"); j++) {

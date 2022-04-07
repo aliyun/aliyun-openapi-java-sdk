@@ -31,7 +31,7 @@ public class RetryClusterRequest extends RpcAcsRequest<RetryClusterResponse> {
 
 	private String acceptLanguage;
 	public RetryClusterRequest() {
-		super("mse", "2019-05-31", "RetryCluster");
+		super("mse", "2019-05-31", "RetryCluster", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteSwimmingLaneGroupRequest extends RpcAcsRequest<DeleteSwimming
 
 	private String acceptLanguage;
 	public DeleteSwimmingLaneGroupRequest() {
-		super("mse", "2019-05-31", "DeleteSwimmingLaneGroup");
+		super("mse", "2019-05-31", "DeleteSwimmingLaneGroup", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

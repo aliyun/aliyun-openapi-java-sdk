@@ -179,6 +179,8 @@ public class ListGatewayResponse extends AcsResponse {
 
 			private List<InternetSlbItem> internetSlb;
 
+			private InitConfig initConfig;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -379,6 +381,14 @@ public class ListGatewayResponse extends AcsResponse {
 				this.internetSlb = internetSlb;
 			}
 
+			public InitConfig getInitConfig() {
+				return this.initConfig;
+			}
+
+			public void setInitConfig(InitConfig initConfig) {
+				this.initConfig = initConfig;
+			}
+
 			public static class SlbItem {
 
 				private String slbIp;
@@ -552,6 +562,29 @@ public class ListGatewayResponse extends AcsResponse {
 
 				public void setSlbId(String slbId) {
 					this.slbId = slbId;
+				}
+			}
+
+			public static class InitConfig {
+
+				private Boolean enableWaf;
+
+				private Boolean supportWaf;
+
+				public Boolean getEnableWaf() {
+					return this.enableWaf;
+				}
+
+				public void setEnableWaf(Boolean enableWaf) {
+					this.enableWaf = enableWaf;
+				}
+
+				public Boolean getSupportWaf() {
+					return this.supportWaf;
+				}
+
+				public void setSupportWaf(Boolean supportWaf) {
+					this.supportWaf = supportWaf;
 				}
 			}
 		}

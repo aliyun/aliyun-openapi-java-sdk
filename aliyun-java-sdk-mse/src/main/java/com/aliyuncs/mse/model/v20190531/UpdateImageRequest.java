@@ -31,7 +31,7 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 
 	private String versionCode;
 	public UpdateImageRequest() {
-		super("mse", "2019-05-31", "UpdateImage");
+		super("mse", "2019-05-31", "UpdateImage", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

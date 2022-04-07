@@ -29,7 +29,7 @@ public class QuerySwimmingLaneByIdRequest extends RpcAcsRequest<QuerySwimmingLan
 
 	private String acceptLanguage;
 	public QuerySwimmingLaneByIdRequest() {
-		super("mse", "2019-05-31", "QuerySwimmingLaneById");
+		super("mse", "2019-05-31", "QuerySwimmingLaneById", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

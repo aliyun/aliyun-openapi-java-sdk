@@ -31,8 +31,8 @@ public class UpdateGatewayNameRequest extends RpcAcsRequest<UpdateGatewayNameRes
 
 	private String acceptLanguage;
 	public UpdateGatewayNameRequest() {
-		super("mse", "2019-05-31", "UpdateGatewayName");
-		setMethod(MethodType.GET);
+		super("mse", "2019-05-31", "UpdateGatewayName", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

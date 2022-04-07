@@ -27,7 +27,7 @@ public class ListClusterConnectionTypesRequest extends RpcAcsRequest<ListCluster
 
 	private String acceptLanguage;
 	public ListClusterConnectionTypesRequest() {
-		super("mse", "2019-05-31", "ListClusterConnectionTypes");
+		super("mse", "2019-05-31", "ListClusterConnectionTypes", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

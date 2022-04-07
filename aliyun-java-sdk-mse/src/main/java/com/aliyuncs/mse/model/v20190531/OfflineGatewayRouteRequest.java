@@ -31,8 +31,8 @@ public class OfflineGatewayRouteRequest extends RpcAcsRequest<OfflineGatewayRout
 
 	private String acceptLanguage;
 	public OfflineGatewayRouteRequest() {
-		super("mse", "2019-05-31", "OfflineGatewayRoute");
-		setMethod(MethodType.GET);
+		super("mse", "2019-05-31", "OfflineGatewayRoute", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

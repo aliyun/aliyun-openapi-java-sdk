@@ -36,7 +36,7 @@ public class UpdateGatewayOptionRequest extends RpcAcsRequest<UpdateGatewayOptio
 
 	private String acceptLanguage;
 	public UpdateGatewayOptionRequest() {
-		super("mse", "2019-05-31", "UpdateGatewayOption");
+		super("mse", "2019-05-31", "UpdateGatewayOption", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,6 +90,9 @@ public class UpdateGatewayOptionRequest extends RpcAcsRequest<UpdateGatewayOptio
 
 	public static class GatewayOption {
 
+		@SerializedName("EnableWaf")
+		private Boolean enableWaf;
+
 		@SerializedName("EnableHardwareAcceleration")
 		private Boolean enableHardwareAcceleration;
 
@@ -101,6 +104,14 @@ public class UpdateGatewayOptionRequest extends RpcAcsRequest<UpdateGatewayOptio
 
 		@SerializedName("TraceDetails")
 		private TraceDetails traceDetails;
+
+		public Boolean getEnableWaf() {
+			return this.enableWaf;
+		}
+
+		public void setEnableWaf(Boolean enableWaf) {
+			this.enableWaf = enableWaf;
+		}
 
 		public Boolean getEnableHardwareAcceleration() {
 			return this.enableHardwareAcceleration;

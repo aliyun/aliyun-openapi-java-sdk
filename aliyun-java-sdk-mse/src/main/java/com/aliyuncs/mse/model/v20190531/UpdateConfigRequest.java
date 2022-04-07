@@ -65,7 +65,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String userName;
 	public UpdateConfigRequest() {
-		super("mse", "2019-05-31", "UpdateConfig");
+		super("mse", "2019-05-31", "UpdateConfig", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

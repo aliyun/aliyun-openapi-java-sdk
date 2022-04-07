@@ -22,29 +22,55 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAlarmItemsRequest extends RpcAcsRequest<ListAlarmItemsResponse> {
+public class UpdateGatewayRouteWafStatusRequest extends RpcAcsRequest<UpdateGatewayRouteWafStatusResponse> {
 	   
 
-	private String requestPars;
+	private Boolean enableWaf;
+
+	private String gatewayUniqueId;
+
+	private Long routeId;
 
 	private String acceptLanguage;
-	public ListAlarmItemsRequest() {
-		super("mse", "2019-05-31", "ListAlarmItems");
-		setMethod(MethodType.GET);
+	public UpdateGatewayRouteWafStatusRequest() {
+		super("mse", "2019-05-31", "UpdateGatewayRouteWafStatus", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
+	public Boolean getEnableWaf() {
+		return this.enableWaf;
 	}
 
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
+	public void setEnableWaf(Boolean enableWaf) {
+		this.enableWaf = enableWaf;
+		if(enableWaf != null){
+			putQueryParameter("EnableWaf", enableWaf.toString());
+		}
+	}
+
+	public String getGatewayUniqueId() {
+		return this.gatewayUniqueId;
+	}
+
+	public void setGatewayUniqueId(String gatewayUniqueId) {
+		this.gatewayUniqueId = gatewayUniqueId;
+		if(gatewayUniqueId != null){
+			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public Long getRouteId() {
+		return this.routeId;
+	}
+
+	public void setRouteId(Long routeId) {
+		this.routeId = routeId;
+		if(routeId != null){
+			putQueryParameter("RouteId", routeId.toString());
 		}
 	}
 
@@ -60,8 +86,8 @@ public class ListAlarmItemsRequest extends RpcAcsRequest<ListAlarmItemsResponse>
 	}
 
 	@Override
-	public Class<ListAlarmItemsResponse> getResponseClass() {
-		return ListAlarmItemsResponse.class;
+	public Class<UpdateGatewayRouteWafStatusResponse> getResponseClass() {
+		return UpdateGatewayRouteWafStatusResponse.class;
 	}
 
 }

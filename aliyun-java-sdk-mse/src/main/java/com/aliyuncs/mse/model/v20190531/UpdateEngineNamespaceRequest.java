@@ -39,7 +39,7 @@ public class UpdateEngineNamespaceRequest extends RpcAcsRequest<UpdateEngineName
 
 	private String desc;
 	public UpdateEngineNamespaceRequest() {
-		super("mse", "2019-05-31", "UpdateEngineNamespace");
+		super("mse", "2019-05-31", "UpdateEngineNamespace", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

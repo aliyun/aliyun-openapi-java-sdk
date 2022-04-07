@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mse.model.v20190531.ListGatewayDomainResponse;
 import com.aliyuncs.mse.model.v20190531.ListGatewayDomainResponse.Domains;
+import com.aliyuncs.mse.model.v20190531.ListGatewayDomainResponse.Domains.Comment;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,12 @@ public class ListGatewayDomainResponseUnmarshaller {
 			domains.setGatewayId(_ctx.longValue("ListGatewayDomainResponse.Data["+ i +"].GatewayId"));
 			domains.setGmtCreate(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].GmtCreate"));
 			domains.setGmtModified(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].GmtModified"));
+			domains.setStatus(_ctx.integerValue("ListGatewayDomainResponse.Data["+ i +"].Status"));
+			domains.setType(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].Type"));
+
+			Comment comment = new Comment();
+			comment.setStatus(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].Comment.Status"));
+			domains.setComment(comment);
 
 			data.add(domains);
 		}

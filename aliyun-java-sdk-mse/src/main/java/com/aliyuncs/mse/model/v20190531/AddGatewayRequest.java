@@ -47,7 +47,7 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String region;
 	public AddGatewayRequest() {
-		super("mse", "2019-05-31", "AddGateway");
+		super("mse", "2019-05-31", "AddGateway", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

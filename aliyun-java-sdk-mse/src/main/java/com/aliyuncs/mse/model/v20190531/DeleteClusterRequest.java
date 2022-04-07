@@ -29,7 +29,7 @@ public class DeleteClusterRequest extends RpcAcsRequest<DeleteClusterResponse> {
 
 	private String acceptLanguage;
 	public DeleteClusterRequest() {
-		super("mse", "2019-05-31", "DeleteCluster");
+		super("mse", "2019-05-31", "DeleteCluster", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

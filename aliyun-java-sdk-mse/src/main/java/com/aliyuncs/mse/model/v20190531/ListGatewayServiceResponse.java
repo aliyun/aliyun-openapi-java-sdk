@@ -157,6 +157,8 @@ public class ListGatewayServiceResponse extends AcsResponse {
 
 			private Long servicePort;
 
+			private String healehStatus;
+
 			private List<VersionsItem> versions;
 
 			private List<String> ips;
@@ -271,6 +273,14 @@ public class ListGatewayServiceResponse extends AcsResponse {
 
 			public void setServicePort(Long servicePort) {
 				this.servicePort = servicePort;
+			}
+
+			public String getHealehStatus() {
+				return this.healehStatus;
+			}
+
+			public void setHealehStatus(String healehStatus) {
+				this.healehStatus = healehStatus;
 			}
 
 			public List<VersionsItem> getVersions() {

@@ -41,7 +41,7 @@ public class CreateNacosServiceRequest extends RpcAcsRequest<CreateNacosServiceR
 
 	private String protectThreshold;
 	public CreateNacosServiceRequest() {
-		super("mse", "2019-05-31", "CreateNacosService");
+		super("mse", "2019-05-31", "CreateNacosService", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

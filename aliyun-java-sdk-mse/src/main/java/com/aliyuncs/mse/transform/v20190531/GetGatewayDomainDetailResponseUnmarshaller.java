@@ -36,7 +36,7 @@ public class GetGatewayDomainDetailResponseUnmarshaller {
 		data.setGatewayId(_ctx.longValue("GetGatewayDomainDetailResponse.Data.GatewayId"));
 		data.setBizProtocol(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.Protocol"));
 		data.setMustHttps(_ctx.booleanValue("GetGatewayDomainDetailResponse.Data.MustHttps"));
-		data.setCertIdentifier(_ctx.integerValue("GetGatewayDomainDetailResponse.Data.CertIdentifier"));
+		data.setCertIdentifier(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.CertIdentifier"));
 		data.setGmtCreate(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.GmtCreate"));
 		data.setGmtModified(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.GmtModified"));
 		data.setCertName(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.CertName"));

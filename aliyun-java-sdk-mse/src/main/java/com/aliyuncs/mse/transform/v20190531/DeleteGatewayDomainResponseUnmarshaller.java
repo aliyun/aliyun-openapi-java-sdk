@@ -36,7 +36,7 @@ public class DeleteGatewayDomainResponseUnmarshaller {
 		data.setGatewayId(_ctx.longValue("DeleteGatewayDomainResponse.Data.GatewayId"));
 		data.setBizProtocol(_ctx.stringValue("DeleteGatewayDomainResponse.Data.Protocol"));
 		data.setMustHttps(_ctx.booleanValue("DeleteGatewayDomainResponse.Data.MustHttps"));
-		data.setCertIdentifier(_ctx.integerValue("DeleteGatewayDomainResponse.Data.CertIdentifier"));
+		data.setCertIdentifier(_ctx.stringValue("DeleteGatewayDomainResponse.Data.CertIdentifier"));
 		data.setGmtCreate(_ctx.stringValue("DeleteGatewayDomainResponse.Data.GmtCreate"));
 		data.setGmtModified(_ctx.stringValue("DeleteGatewayDomainResponse.Data.GmtModified"));
 		deleteGatewayDomainResponse.setData(data);

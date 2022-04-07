@@ -37,7 +37,7 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 
 	private String acceptLanguage;
 	public ScalingClusterRequest() {
-		super("mse", "2019-05-31", "ScalingCluster");
+		super("mse", "2019-05-31", "ScalingCluster", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

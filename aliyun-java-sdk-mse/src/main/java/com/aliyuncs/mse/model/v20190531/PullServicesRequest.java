@@ -25,31 +25,18 @@ import com.aliyuncs.mse.Endpoint;
 public class PullServicesRequest extends RpcAcsRequest<PullServicesResponse> {
 	   
 
-	private String sourceId;
-
 	private String gatewayUniqueId;
 
 	private String acceptLanguage;
 
 	private String sourceType;
 	public PullServicesRequest() {
-		super("mse", "2019-05-31", "PullServices");
-		setMethod(MethodType.GET);
+		super("mse", "2019-05-31", "PullServices", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSourceId() {
-		return this.sourceId;
-	}
-
-	public void setSourceId(String sourceId) {
-		this.sourceId = sourceId;
-		if(sourceId != null){
-			putQueryParameter("SourceId", sourceId);
-		}
 	}
 
 	public String getGatewayUniqueId() {

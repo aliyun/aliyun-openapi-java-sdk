@@ -56,6 +56,7 @@ public class ListGatewayServiceResponseUnmarshaller {
 			services.setGmtModified(_ctx.stringValue("ListGatewayServiceResponse.Data.Result["+ i +"].GmtModified"));
 			services.setServiceProtocol(_ctx.stringValue("ListGatewayServiceResponse.Data.Result["+ i +"].ServiceProtocol"));
 			services.setServicePort(_ctx.longValue("ListGatewayServiceResponse.Data.Result["+ i +"].ServicePort"));
+			services.setHealehStatus(_ctx.stringValue("ListGatewayServiceResponse.Data.Result["+ i +"].HealehStatus"));
 
 			List<String> ips = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListGatewayServiceResponse.Data.Result["+ i +"].Ips.Length"); j++) {

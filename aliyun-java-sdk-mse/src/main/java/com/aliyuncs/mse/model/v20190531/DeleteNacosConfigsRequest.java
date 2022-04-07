@@ -33,7 +33,7 @@ public class DeleteNacosConfigsRequest extends RpcAcsRequest<DeleteNacosConfigsR
 
 	private String ids;
 	public DeleteNacosConfigsRequest() {
-		super("mse", "2019-05-31", "DeleteNacosConfigs");
+		super("mse", "2019-05-31", "DeleteNacosConfigs", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

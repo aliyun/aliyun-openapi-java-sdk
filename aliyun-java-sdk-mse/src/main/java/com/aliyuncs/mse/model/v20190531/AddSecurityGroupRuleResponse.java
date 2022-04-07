@@ -15,30 +15,26 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.CreateAlarmRuleResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.AddSecurityGroupRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateAlarmRuleResponse extends AcsResponse {
-
-	private String message;
+public class AddSecurityGroupRuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Integer httpStatusCode;
+
+	private String message;
+
+	private Integer code;
 
 	private Boolean success;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,12 +44,28 @@ public class CreateAlarmRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -64,9 +76,17 @@ public class CreateAlarmRuleResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	@Override
-	public CreateAlarmRuleResponse getInstance(UnmarshallerContext context) {
-		return	CreateAlarmRuleResponseUnmarshaller.unmarshall(this, context);
+	public AddSecurityGroupRuleResponse getInstance(UnmarshallerContext context) {
+		return	AddSecurityGroupRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

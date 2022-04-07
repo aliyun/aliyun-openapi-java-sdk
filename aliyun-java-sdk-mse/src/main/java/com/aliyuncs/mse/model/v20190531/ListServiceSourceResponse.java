@@ -107,6 +107,8 @@ public class ListServiceSourceResponse extends AcsResponse {
 
 		private String sourceUniqueId;
 
+		private IngressOptions ingressOptions;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -185,6 +187,47 @@ public class ListServiceSourceResponse extends AcsResponse {
 
 		public void setSourceUniqueId(String sourceUniqueId) {
 			this.sourceUniqueId = sourceUniqueId;
+		}
+
+		public IngressOptions getIngressOptions() {
+			return this.ingressOptions;
+		}
+
+		public void setIngressOptions(IngressOptions ingressOptions) {
+			this.ingressOptions = ingressOptions;
+		}
+
+		public static class IngressOptions {
+
+			private Boolean enableIngress;
+
+			private String ingressClass;
+
+			private String watchNamespace;
+
+			public Boolean getEnableIngress() {
+				return this.enableIngress;
+			}
+
+			public void setEnableIngress(Boolean enableIngress) {
+				this.enableIngress = enableIngress;
+			}
+
+			public String getIngressClass() {
+				return this.ingressClass;
+			}
+
+			public void setIngressClass(String ingressClass) {
+				this.ingressClass = ingressClass;
+			}
+
+			public String getWatchNamespace() {
+				return this.watchNamespace;
+			}
+
+			public void setWatchNamespace(String watchNamespace) {
+				this.watchNamespace = watchNamespace;
+			}
 		}
 	}
 

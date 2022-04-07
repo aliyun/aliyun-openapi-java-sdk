@@ -33,7 +33,7 @@ public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
 
 	private String acceptLanguage;
 	public CreateZnodeRequest() {
-		super("mse", "2019-05-31", "CreateZnode");
+		super("mse", "2019-05-31", "CreateZnode", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

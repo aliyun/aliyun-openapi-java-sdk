@@ -31,8 +31,8 @@ public class ApplyGatewayRouteRequest extends RpcAcsRequest<ApplyGatewayRouteRes
 
 	private String acceptLanguage;
 	public ApplyGatewayRouteRequest() {
-		super("mse", "2019-05-31", "ApplyGatewayRoute");
-		setMethod(MethodType.GET);
+		super("mse", "2019-05-31", "ApplyGatewayRoute", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

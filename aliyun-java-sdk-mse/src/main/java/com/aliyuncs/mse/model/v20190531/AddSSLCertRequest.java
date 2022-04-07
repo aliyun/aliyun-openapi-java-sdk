@@ -33,8 +33,8 @@ public class AddSSLCertRequest extends RpcAcsRequest<AddSSLCertResponse> {
 
 	private String acceptLanguage;
 	public AddSSLCertRequest() {
-		super("mse", "2019-05-31", "AddSSLCert");
-		setMethod(MethodType.GET);
+		super("mse", "2019-05-31", "AddSSLCert", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

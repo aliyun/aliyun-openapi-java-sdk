@@ -27,7 +27,7 @@ public class QueryBusinessLocationsRequest extends RpcAcsRequest<QueryBusinessLo
 
 	private String acceptLanguage;
 	public QueryBusinessLocationsRequest() {
-		super("mse", "2019-05-31", "QueryBusinessLocations");
+		super("mse", "2019-05-31", "QueryBusinessLocations", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

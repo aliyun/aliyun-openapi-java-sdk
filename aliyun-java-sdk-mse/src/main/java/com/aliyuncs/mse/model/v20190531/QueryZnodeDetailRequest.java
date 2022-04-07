@@ -29,11 +29,13 @@ public class QueryZnodeDetailRequest extends RpcAcsRequest<QueryZnodeDetailRespo
 
 	private String path;
 
+	private String instanceId;
+
 	private String requestPars;
 
 	private String acceptLanguage;
 	public QueryZnodeDetailRequest() {
-		super("mse", "2019-05-31", "QueryZnodeDetail");
+		super("mse", "2019-05-31", "QueryZnodeDetail", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class QueryZnodeDetailRequest extends RpcAcsRequest<QueryZnodeDetailRespo
 		this.path = path;
 		if(path != null){
 			putQueryParameter("Path", path);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

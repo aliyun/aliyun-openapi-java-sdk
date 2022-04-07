@@ -45,7 +45,7 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 
 	private String serviceName;
 	public ListAnsServicesRequest() {
-		super("mse", "2019-05-31", "ListAnsServices");
+		super("mse", "2019-05-31", "ListAnsServices", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

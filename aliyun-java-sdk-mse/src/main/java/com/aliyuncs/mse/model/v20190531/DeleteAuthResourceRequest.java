@@ -31,8 +31,8 @@ public class DeleteAuthResourceRequest extends RpcAcsRequest<DeleteAuthResourceR
 
 	private Long id;
 	public DeleteAuthResourceRequest() {
-		super("mse", "2019-05-31", "DeleteAuthResource");
-		setMethod(MethodType.GET);
+		super("mse", "2019-05-31", "DeleteAuthResource", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -39,7 +39,7 @@ public class ExportNacosConfigRequest extends RpcAcsRequest<ExportNacosConfigRes
 
 	private String group;
 	public ExportNacosConfigRequest() {
-		super("mse", "2019-05-31", "ExportNacosConfig");
+		super("mse", "2019-05-31", "ExportNacosConfig", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

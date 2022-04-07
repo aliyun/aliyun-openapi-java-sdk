@@ -22,16 +22,16 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteAlarmRuleRequest extends RpcAcsRequest<DeleteAlarmRuleResponse> {
+public class DeleteSecurityGroupRuleRequest extends RpcAcsRequest<DeleteSecurityGroupRuleResponse> {
 	   
 
-	private String alarmRuleId;
-
-	private String requestPars;
+	private String gatewayUniqueId;
 
 	private String acceptLanguage;
-	public DeleteAlarmRuleRequest() {
-		super("mse", "2019-05-31", "DeleteAlarmRule");
+
+	private Long id;
+	public DeleteSecurityGroupRuleRequest() {
+		super("mse", "2019-05-31", "DeleteSecurityGroupRule", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +39,14 @@ public class DeleteAlarmRuleRequest extends RpcAcsRequest<DeleteAlarmRuleRespons
 		} catch (Exception e) {}
 	}
 
-	public String getAlarmRuleId() {
-		return this.alarmRuleId;
+	public String getGatewayUniqueId() {
+		return this.gatewayUniqueId;
 	}
 
-	public void setAlarmRuleId(String alarmRuleId) {
-		this.alarmRuleId = alarmRuleId;
-		if(alarmRuleId != null){
-			putQueryParameter("AlarmRuleId", alarmRuleId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
+	public void setGatewayUniqueId(String gatewayUniqueId) {
+		this.gatewayUniqueId = gatewayUniqueId;
+		if(gatewayUniqueId != null){
+			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
 		}
 	}
 
@@ -72,9 +61,20 @@ public class DeleteAlarmRuleRequest extends RpcAcsRequest<DeleteAlarmRuleRespons
 		}
 	}
 
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
+	}
+
 	@Override
-	public Class<DeleteAlarmRuleResponse> getResponseClass() {
-		return DeleteAlarmRuleResponse.class;
+	public Class<DeleteSecurityGroupRuleResponse> getResponseClass() {
+		return DeleteSecurityGroupRuleResponse.class;
 	}
 
 }

@@ -27,7 +27,7 @@ public class QueryAllSwimmingLaneGroupRequest extends RpcAcsRequest<QueryAllSwim
 
 	private String acceptLanguage;
 	public QueryAllSwimmingLaneGroupRequest() {
-		super("mse", "2019-05-31", "QueryAllSwimmingLaneGroup");
+		super("mse", "2019-05-31", "QueryAllSwimmingLaneGroup", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

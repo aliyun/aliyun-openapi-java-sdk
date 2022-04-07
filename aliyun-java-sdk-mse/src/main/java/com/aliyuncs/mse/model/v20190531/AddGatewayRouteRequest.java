@@ -40,6 +40,8 @@ public class AddGatewayRouteRequest extends RpcAcsRequest<AddGatewayRouteRespons
 
 	private Integer routeOrder;
 
+	private Boolean enableWaf;
+
 	@SerializedName("services")
 	private List<Services> services;
 
@@ -56,7 +58,7 @@ public class AddGatewayRouteRequest extends RpcAcsRequest<AddGatewayRouteRespons
 
 	private String acceptLanguage;
 	public AddGatewayRouteRequest() {
-		super("mse", "2019-05-31", "AddGatewayRoute");
+		super("mse", "2019-05-31", "AddGatewayRoute", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -127,6 +129,17 @@ public class AddGatewayRouteRequest extends RpcAcsRequest<AddGatewayRouteRespons
 		this.routeOrder = routeOrder;
 		if(routeOrder != null){
 			putQueryParameter("RouteOrder", routeOrder.toString());
+		}
+	}
+
+	public Boolean getEnableWaf() {
+		return this.enableWaf;
+	}
+
+	public void setEnableWaf(Boolean enableWaf) {
+		this.enableWaf = enableWaf;
+		if(enableWaf != null){
+			putQueryParameter("EnableWaf", enableWaf.toString());
 		}
 	}
 

@@ -29,7 +29,7 @@ public class GetTagsBySwimmingLaneGroupIdRequest extends RpcAcsRequest<GetTagsBy
 
 	private String acceptLanguage;
 	public GetTagsBySwimmingLaneGroupIdRequest() {
-		super("mse", "2019-05-31", "GetTagsBySwimmingLaneGroupId");
+		super("mse", "2019-05-31", "GetTagsBySwimmingLaneGroupId", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

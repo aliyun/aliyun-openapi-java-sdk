@@ -22,68 +22,29 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAlarmRulesRequest extends RpcAcsRequest<ListAlarmRulesResponse> {
+public class ListSecurityGroupRequest extends RpcAcsRequest<ListSecurityGroupResponse> {
 	   
 
-	private String alarmMseType;
-
-	private Integer pageNum;
-
-	private String requestPars;
-
-	private Integer pageSize;
+	private String gatewayUniqueId;
 
 	private String acceptLanguage;
-	public ListAlarmRulesRequest() {
-		super("mse", "2019-05-31", "ListAlarmRules");
-		setMethod(MethodType.GET);
+	public ListSecurityGroupRequest() {
+		super("mse", "2019-05-31", "ListSecurityGroup", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getAlarmMseType() {
-		return this.alarmMseType;
+	public String getGatewayUniqueId() {
+		return this.gatewayUniqueId;
 	}
 
-	public void setAlarmMseType(String alarmMseType) {
-		this.alarmMseType = alarmMseType;
-		if(alarmMseType != null){
-			putQueryParameter("AlarmMseType", alarmMseType);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setGatewayUniqueId(String gatewayUniqueId) {
+		this.gatewayUniqueId = gatewayUniqueId;
+		if(gatewayUniqueId != null){
+			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
 		}
 	}
 
@@ -99,8 +60,8 @@ public class ListAlarmRulesRequest extends RpcAcsRequest<ListAlarmRulesResponse>
 	}
 
 	@Override
-	public Class<ListAlarmRulesResponse> getResponseClass() {
-		return ListAlarmRulesResponse.class;
+	public Class<ListSecurityGroupResponse> getResponseClass() {
+		return ListSecurityGroupResponse.class;
 	}
 
 }

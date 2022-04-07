@@ -27,10 +27,12 @@ public class ListGatewayDomainRequest extends RpcAcsRequest<ListGatewayDomainRes
 
 	private String gatewayUniqueId;
 
+	private String type;
+
 	private String acceptLanguage;
 	public ListGatewayDomainRequest() {
-		super("mse", "2019-05-31", "ListGatewayDomain");
-		setMethod(MethodType.GET);
+		super("mse", "2019-05-31", "ListGatewayDomain", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -45,6 +47,17 @@ public class ListGatewayDomainRequest extends RpcAcsRequest<ListGatewayDomainRes
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

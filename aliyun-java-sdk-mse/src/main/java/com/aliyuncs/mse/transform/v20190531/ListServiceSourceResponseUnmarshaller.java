@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mse.model.v20190531.ListServiceSourceResponse;
 import com.aliyuncs.mse.model.v20190531.ListServiceSourceResponse.Sources;
+import com.aliyuncs.mse.model.v20190531.ListServiceSourceResponse.Sources.IngressOptions;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,12 @@ public class ListServiceSourceResponseUnmarshaller {
 			sources.setGmtCreate(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].GmtCreate"));
 			sources.setGmtModified(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].GmtModified"));
 			sources.setSourceUniqueId(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].SourceUniqueId"));
+
+			IngressOptions ingressOptions = new IngressOptions();
+			ingressOptions.setEnableIngress(_ctx.booleanValue("ListServiceSourceResponse.Data["+ i +"].IngressOptions.EnableIngress"));
+			ingressOptions.setIngressClass(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].IngressOptions.IngressClass"));
+			ingressOptions.setWatchNamespace(_ctx.stringValue("ListServiceSourceResponse.Data["+ i +"].IngressOptions.WatchNamespace"));
+			sources.setIngressOptions(ingressOptions);
 
 			data.add(sources);
 		}

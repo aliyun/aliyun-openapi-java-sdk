@@ -35,7 +35,7 @@ public class ImportNacosConfigRequest extends RpcAcsRequest<ImportNacosConfigRes
 
 	private String policy;
 	public ImportNacosConfigRequest() {
-		super("mse", "2019-05-31", "ImportNacosConfig");
+		super("mse", "2019-05-31", "ImportNacosConfig", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

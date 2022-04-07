@@ -29,7 +29,7 @@ public class GetImageRequest extends RpcAcsRequest<GetImageResponse> {
 
 	private String versionCode;
 	public GetImageRequest() {
-		super("mse", "2019-05-31", "GetImage");
+		super("mse", "2019-05-31", "GetImage", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

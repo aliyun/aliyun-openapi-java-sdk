@@ -31,7 +31,7 @@ public class ListAppBySwimmingLaneGroupTagRequest extends RpcAcsRequest<ListAppB
 
 	private String tag;
 	public ListAppBySwimmingLaneGroupTagRequest() {
-		super("mse", "2019-05-31", "ListAppBySwimmingLaneGroupTag");
+		super("mse", "2019-05-31", "ListAppBySwimmingLaneGroupTag", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

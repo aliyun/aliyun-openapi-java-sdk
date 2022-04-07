@@ -105,6 +105,12 @@ public class ListGatewayDomainResponse extends AcsResponse {
 
 		private String gmtModified;
 
+		private Integer status;
+
+		private String type;
+
+		private Comment comment;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -175,6 +181,43 @@ public class ListGatewayDomainResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public Comment getComment() {
+			return this.comment;
+		}
+
+		public void setComment(Comment comment) {
+			this.comment = comment;
+		}
+
+		public static class Comment {
+
+			private String status;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 	}
 

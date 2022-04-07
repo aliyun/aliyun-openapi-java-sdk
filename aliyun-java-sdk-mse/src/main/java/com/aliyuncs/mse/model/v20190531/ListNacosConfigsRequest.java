@@ -45,7 +45,7 @@ public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsRespo
 
 	private String group;
 	public ListNacosConfigsRequest() {
-		super("mse", "2019-05-31", "ListNacosConfigs");
+		super("mse", "2019-05-31", "ListNacosConfigs", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
