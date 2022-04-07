@@ -28,9 +28,9 @@ public class ListResourceGroupsResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	private List<DataItem> data;
 
@@ -42,20 +42,20 @@ public class ListResourceGroupsResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -68,66 +68,42 @@ public class ListResourceGroupsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String identifier;
-
-		private String cluster;
-
-		private String bizExtKey;
-
-		private Boolean enableKp;
+		private Integer status;
 
 		private String updateTime;
 
-		private String resourceGroupType;
-
-		private String mode;
-
-		private Integer sequence;
-
 		private Boolean isDefault;
+
+		private String cluster;
+
+		private Boolean enableKp;
+
+		private String resourceGroupType;
 
 		private String createTime;
 
-		private String name;
+		private String identifier;
 
-		private Long tenantId;
+		private String mode;
 
-		private Long id;
+		private String bizExtKey;
 
-		private Integer status;
+		private Integer sequence;
 
 		private Map<Object,Object> specs;
 
-		public String getIdentifier() {
-			return this.identifier;
+		private String name;
+
+		private Long id;
+
+		private Long tenantId;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setIdentifier(String identifier) {
-			this.identifier = identifier;
-		}
-
-		public String getCluster() {
-			return this.cluster;
-		}
-
-		public void setCluster(String cluster) {
-			this.cluster = cluster;
-		}
-
-		public String getBizExtKey() {
-			return this.bizExtKey;
-		}
-
-		public void setBizExtKey(String bizExtKey) {
-			this.bizExtKey = bizExtKey;
-		}
-
-		public Boolean getEnableKp() {
-			return this.enableKp;
-		}
-
-		public void setEnableKp(Boolean enableKp) {
-			this.enableKp = enableKp;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getUpdateTime() {
@@ -138,36 +114,36 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public String getResourceGroupType() {
-			return this.resourceGroupType;
-		}
-
-		public void setResourceGroupType(String resourceGroupType) {
-			this.resourceGroupType = resourceGroupType;
-		}
-
-		public String getMode() {
-			return this.mode;
-		}
-
-		public void setMode(String mode) {
-			this.mode = mode;
-		}
-
-		public Integer getSequence() {
-			return this.sequence;
-		}
-
-		public void setSequence(Integer sequence) {
-			this.sequence = sequence;
-		}
-
 		public Boolean getIsDefault() {
 			return this.isDefault;
 		}
 
 		public void setIsDefault(Boolean isDefault) {
 			this.isDefault = isDefault;
+		}
+
+		public String getCluster() {
+			return this.cluster;
+		}
+
+		public void setCluster(String cluster) {
+			this.cluster = cluster;
+		}
+
+		public Boolean getEnableKp() {
+			return this.enableKp;
+		}
+
+		public void setEnableKp(Boolean enableKp) {
+			this.enableKp = enableKp;
+		}
+
+		public String getResourceGroupType() {
+			return this.resourceGroupType;
+		}
+
+		public void setResourceGroupType(String resourceGroupType) {
+			this.resourceGroupType = resourceGroupType;
 		}
 
 		public String getCreateTime() {
@@ -178,20 +154,52 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getIdentifier() {
+			return this.identifier;
+		}
+
+		public void setIdentifier(String identifier) {
+			this.identifier = identifier;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public String getBizExtKey() {
+			return this.bizExtKey;
+		}
+
+		public void setBizExtKey(String bizExtKey) {
+			this.bizExtKey = bizExtKey;
+		}
+
+		public Integer getSequence() {
+			return this.sequence;
+		}
+
+		public void setSequence(Integer sequence) {
+			this.sequence = sequence;
+		}
+
+		public Map<Object,Object> getSpecs() {
+			return this.specs;
+		}
+
+		public void setSpecs(Map<Object,Object> specs) {
+			this.specs = specs;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public Long getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
 		}
 
 		public Long getId() {
@@ -202,20 +210,12 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Long getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public Map<Object,Object> getSpecs() {
-			return this.specs;
-		}
-
-		public void setSpecs(Map<Object,Object> specs) {
-			this.specs = specs;
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

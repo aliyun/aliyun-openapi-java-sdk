@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDISyncTaskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class CreateDISyncTaskResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -56,19 +56,11 @@ public class CreateDISyncTaskResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long fileId;
-
 		private String status;
 
 		private String message;
 
-		public Long getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(Long fileId) {
-			this.fileId = fileId;
-		}
+		private Long fileId;
 
 		public String getStatus() {
 			return this.status;
@@ -84,6 +76,14 @@ public class CreateDISyncTaskResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public Long getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(Long fileId) {
+			this.fileId = fileId;
 		}
 	}
 

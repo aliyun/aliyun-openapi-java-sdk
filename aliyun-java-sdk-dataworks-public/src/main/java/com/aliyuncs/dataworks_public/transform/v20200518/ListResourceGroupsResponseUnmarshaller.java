@@ -34,21 +34,21 @@ public class ListResourceGroupsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourceGroupsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setIdentifier(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Identifier"));
-			dataItem.setCluster(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Cluster"));
-			dataItem.setBizExtKey(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].BizExtKey"));
-			dataItem.setEnableKp(_ctx.booleanValue("ListResourceGroupsResponse.Data["+ i +"].EnableKp"));
-			dataItem.setUpdateTime(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].UpdateTime"));
-			dataItem.setResourceGroupType(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].ResourceGroupType"));
-			dataItem.setMode(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Mode"));
-			dataItem.setSequence(_ctx.integerValue("ListResourceGroupsResponse.Data["+ i +"].Sequence"));
-			dataItem.setIsDefault(_ctx.booleanValue("ListResourceGroupsResponse.Data["+ i +"].IsDefault"));
-			dataItem.setCreateTime(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].CreateTime"));
-			dataItem.setName(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Name"));
-			dataItem.setTenantId(_ctx.longValue("ListResourceGroupsResponse.Data["+ i +"].TenantId"));
-			dataItem.setId(_ctx.longValue("ListResourceGroupsResponse.Data["+ i +"].Id"));
 			dataItem.setStatus(_ctx.integerValue("ListResourceGroupsResponse.Data["+ i +"].Status"));
+			dataItem.setUpdateTime(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].UpdateTime"));
+			dataItem.setIsDefault(_ctx.booleanValue("ListResourceGroupsResponse.Data["+ i +"].IsDefault"));
+			dataItem.setCluster(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Cluster"));
+			dataItem.setEnableKp(_ctx.booleanValue("ListResourceGroupsResponse.Data["+ i +"].EnableKp"));
+			dataItem.setResourceGroupType(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].ResourceGroupType"));
+			dataItem.setCreateTime(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].CreateTime"));
+			dataItem.setIdentifier(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Identifier"));
+			dataItem.setMode(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Mode"));
+			dataItem.setBizExtKey(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].BizExtKey"));
+			dataItem.setSequence(_ctx.integerValue("ListResourceGroupsResponse.Data["+ i +"].Sequence"));
 			dataItem.setSpecs(_ctx.mapValue("ListResourceGroupsResponse.Data["+ i +"].Specs"));
+			dataItem.setName(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Name"));
+			dataItem.setId(_ctx.longValue("ListResourceGroupsResponse.Data["+ i +"].Id"));
+			dataItem.setTenantId(_ctx.longValue("ListResourceGroupsResponse.Data["+ i +"].TenantId"));
 
 			data.add(dataItem);
 		}

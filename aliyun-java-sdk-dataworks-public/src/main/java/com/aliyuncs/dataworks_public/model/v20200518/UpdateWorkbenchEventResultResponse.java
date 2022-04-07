@@ -15,34 +15,18 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataworks_public.transform.v20200518.UpdateTableLevelResponseUnmarshaller;
+import com.aliyuncs.dataworks_public.transform.v20200518.UpdateWorkbenchEventResultResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateTableLevelResponse extends AcsResponse {
-
-	private Integer httpStatusCode;
+public class UpdateWorkbenchEventResultResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorMessage;
-
-	private Boolean updateResult;
-
-	private String errorCode;
-
 	private Boolean success;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,30 +34,6 @@ public class UpdateTableLevelResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Boolean getUpdateResult() {
-		return this.updateResult;
-	}
-
-	public void setUpdateResult(Boolean updateResult) {
-		this.updateResult = updateResult;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Boolean getSuccess() {
@@ -85,8 +45,8 @@ public class UpdateTableLevelResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateTableLevelResponse getInstance(UnmarshallerContext context) {
-		return	UpdateTableLevelResponseUnmarshaller.unmarshall(this, context);
+	public UpdateWorkbenchEventResultResponse getInstance(UnmarshallerContext context) {
+		return	UpdateWorkbenchEventResultResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

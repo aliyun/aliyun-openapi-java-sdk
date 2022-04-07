@@ -28,10 +28,10 @@ public class ListNodesResponseUnmarshaller {
 	public static ListNodesResponse unmarshall(ListNodesResponse listNodesResponse, UnmarshallerContext _ctx) {
 		
 		listNodesResponse.setRequestId(_ctx.stringValue("ListNodesResponse.RequestId"));
-		listNodesResponse.setSuccess(_ctx.booleanValue("ListNodesResponse.Success"));
 		listNodesResponse.setHttpStatusCode(_ctx.integerValue("ListNodesResponse.HttpStatusCode"));
-		listNodesResponse.setErrorCode(_ctx.stringValue("ListNodesResponse.ErrorCode"));
 		listNodesResponse.setErrorMessage(_ctx.stringValue("ListNodesResponse.ErrorMessage"));
+		listNodesResponse.setErrorCode(_ctx.stringValue("ListNodesResponse.ErrorCode"));
+		listNodesResponse.setSuccess(_ctx.booleanValue("ListNodesResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListNodesResponse.Data.PageNumber"));
@@ -41,25 +41,25 @@ public class ListNodesResponseUnmarshaller {
 		List<NodesItem> nodes = new ArrayList<NodesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodesResponse.Data.Nodes.Length"); i++) {
 			NodesItem nodesItem = new NodesItem();
-			nodesItem.setNodeId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].NodeId"));
-			nodesItem.setNodeName(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].NodeName"));
-			nodesItem.setCronExpress(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].CronExpress"));
 			nodesItem.setSchedulerType(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].SchedulerType"));
-			nodesItem.setProgramType(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ProgramType"));
-			nodesItem.setOwnerId(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].OwnerId"));
-			nodesItem.setProjectId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].ProjectId"));
-			nodesItem.setRepeatability(_ctx.booleanValue("ListNodesResponse.Data.Nodes["+ i +"].Repeatability"));
-			nodesItem.setParamValues(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ParamValues"));
-			nodesItem.setDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].Description"));
-			nodesItem.setResGroupName(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ResGroupName"));
-			nodesItem.setPriority(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].Priority"));
-			nodesItem.setBaselineId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].BaselineId"));
 			nodesItem.setRepeatInterval(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].RepeatInterval"));
+			nodesItem.setRepeatability(_ctx.booleanValue("ListNodesResponse.Data.Nodes["+ i +"].Repeatability"));
+			nodesItem.setProjectId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].ProjectId"));
+			nodesItem.setProgramType(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ProgramType"));
+			nodesItem.setPriority(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].Priority"));
+			nodesItem.setOwnerId(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].OwnerId"));
 			nodesItem.setConnection(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].Connection"));
-			nodesItem.setDqcType(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].DqcType"));
-			nodesItem.setDqcDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].DqcDescription"));
+			nodesItem.setParamValues(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ParamValues"));
 			nodesItem.setRelatedFlowId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].RelatedFlowId"));
+			nodesItem.setDqcType(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].DqcType"));
+			nodesItem.setBaselineId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].BaselineId"));
+			nodesItem.setDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].Description"));
+			nodesItem.setNodeName(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].NodeName"));
+			nodesItem.setResGroupName(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ResGroupName"));
 			nodesItem.setBusinessId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].BusinessId"));
+			nodesItem.setDqcDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].DqcDescription"));
+			nodesItem.setCronExpress(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].CronExpress"));
+			nodesItem.setNodeId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].NodeId"));
 
 			nodes.add(nodesItem);
 		}

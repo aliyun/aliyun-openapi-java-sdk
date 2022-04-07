@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTableThemeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private Boolean success;
 
+	private String errorCode;
+
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMessage() {
@@ -61,12 +53,12 @@ public class ListTableThemeResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -75,6 +67,14 @@ public class ListTableThemeResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -109,19 +109,35 @@ public class ListTableThemeResponse extends AcsResponse {
 
 		public static class ThemeListItem {
 
+			private Long createTimeStamp;
+
+			private Long parentId;
+
 			private Long themeId;
+
+			private Long projectId;
 
 			private String name;
 
 			private Integer level;
 
-			private Long parentId;
-
-			private Long projectId;
-
 			private String creator;
 
-			private Long createTimeStamp;
+			public Long getCreateTimeStamp() {
+				return this.createTimeStamp;
+			}
+
+			public void setCreateTimeStamp(Long createTimeStamp) {
+				this.createTimeStamp = createTimeStamp;
+			}
+
+			public Long getParentId() {
+				return this.parentId;
+			}
+
+			public void setParentId(Long parentId) {
+				this.parentId = parentId;
+			}
 
 			public Long getThemeId() {
 				return this.themeId;
@@ -129,6 +145,14 @@ public class ListTableThemeResponse extends AcsResponse {
 
 			public void setThemeId(Long themeId) {
 				this.themeId = themeId;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
 			}
 
 			public String getName() {
@@ -147,36 +171,12 @@ public class ListTableThemeResponse extends AcsResponse {
 				this.level = level;
 			}
 
-			public Long getParentId() {
-				return this.parentId;
-			}
-
-			public void setParentId(Long parentId) {
-				this.parentId = parentId;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
 			public String getCreator() {
 				return this.creator;
 			}
 
 			public void setCreator(String creator) {
 				this.creator = creator;
-			}
-
-			public Long getCreateTimeStamp() {
-				return this.createTimeStamp;
-			}
-
-			public void setCreateTimeStamp(Long createTimeStamp) {
-				this.createTimeStamp = createTimeStamp;
 			}
 		}
 	}

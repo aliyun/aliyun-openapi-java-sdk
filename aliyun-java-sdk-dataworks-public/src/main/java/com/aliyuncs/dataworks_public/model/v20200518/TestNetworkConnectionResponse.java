@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TestNetworkConnectionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private TaskList taskList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class TestNetworkConnectionResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public TaskList getTaskList() {
@@ -56,17 +56,9 @@ public class TestNetworkConnectionResponse extends AcsResponse {
 
 	public static class TaskList {
 
-		private Boolean connectStatus;
-
 		private String connectMessage;
 
-		public Boolean getConnectStatus() {
-			return this.connectStatus;
-		}
-
-		public void setConnectStatus(Boolean connectStatus) {
-			this.connectStatus = connectStatus;
-		}
+		private Boolean connectStatus;
 
 		public String getConnectMessage() {
 			return this.connectMessage;
@@ -74,6 +66,14 @@ public class TestNetworkConnectionResponse extends AcsResponse {
 
 		public void setConnectMessage(String connectMessage) {
 			this.connectMessage = connectMessage;
+		}
+
+		public Boolean getConnectStatus() {
+			return this.connectStatus;
+		}
+
+		public void setConnectStatus(Boolean connectStatus) {
+			this.connectStatus = connectStatus;
 		}
 	}
 

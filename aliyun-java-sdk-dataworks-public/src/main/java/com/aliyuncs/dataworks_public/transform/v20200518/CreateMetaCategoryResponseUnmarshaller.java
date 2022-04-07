@@ -24,10 +24,10 @@ public class CreateMetaCategoryResponseUnmarshaller {
 	public static CreateMetaCategoryResponse unmarshall(CreateMetaCategoryResponse createMetaCategoryResponse, UnmarshallerContext _ctx) {
 		
 		createMetaCategoryResponse.setRequestId(_ctx.stringValue("CreateMetaCategoryResponse.RequestId"));
-		createMetaCategoryResponse.setErrorCode(_ctx.stringValue("CreateMetaCategoryResponse.ErrorCode"));
-		createMetaCategoryResponse.setErrorMessage(_ctx.stringValue("CreateMetaCategoryResponse.ErrorMessage"));
 		createMetaCategoryResponse.setHttpStatusCode(_ctx.integerValue("CreateMetaCategoryResponse.HttpStatusCode"));
+		createMetaCategoryResponse.setErrorMessage(_ctx.stringValue("CreateMetaCategoryResponse.ErrorMessage"));
 		createMetaCategoryResponse.setSuccess(_ctx.booleanValue("CreateMetaCategoryResponse.Success"));
+		createMetaCategoryResponse.setErrorCode(_ctx.stringValue("CreateMetaCategoryResponse.ErrorCode"));
 
 		Data data = new Data();
 		data.setCategoryId(_ctx.longValue("CreateMetaCategoryResponse.Data.CategoryId"));

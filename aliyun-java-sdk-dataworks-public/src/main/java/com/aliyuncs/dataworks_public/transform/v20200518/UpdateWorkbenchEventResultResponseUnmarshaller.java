@@ -14,19 +14,17 @@
 
 package com.aliyuncs.dataworks_public.transform.v20200518;
 
-import com.aliyuncs.dataworks_public.model.v20200518.CreateDataSourceResponse;
+import com.aliyuncs.dataworks_public.model.v20200518.UpdateWorkbenchEventResultResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateDataSourceResponseUnmarshaller {
+public class UpdateWorkbenchEventResultResponseUnmarshaller {
 
-	public static CreateDataSourceResponse unmarshall(CreateDataSourceResponse createDataSourceResponse, UnmarshallerContext _ctx) {
+	public static UpdateWorkbenchEventResultResponse unmarshall(UpdateWorkbenchEventResultResponse updateWorkbenchEventResultResponse, UnmarshallerContext _ctx) {
 		
-		createDataSourceResponse.setRequestId(_ctx.stringValue("CreateDataSourceResponse.RequestId"));
-		createDataSourceResponse.setHttpStatusCode(_ctx.stringValue("CreateDataSourceResponse.HttpStatusCode"));
-		createDataSourceResponse.setData(_ctx.longValue("CreateDataSourceResponse.Data"));
-		createDataSourceResponse.setSuccess(_ctx.booleanValue("CreateDataSourceResponse.Success"));
+		updateWorkbenchEventResultResponse.setRequestId(_ctx.stringValue("UpdateWorkbenchEventResultResponse.RequestId"));
+		updateWorkbenchEventResultResponse.setSuccess(_ctx.booleanValue("UpdateWorkbenchEventResultResponse.Success"));
 	 
-	 	return createDataSourceResponse;
+	 	return updateWorkbenchEventResultResponse;
 	}
 }

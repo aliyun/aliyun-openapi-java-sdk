@@ -27,10 +27,10 @@ public class GetMetaTableListByCategoryResponseUnmarshaller {
 	public static GetMetaTableListByCategoryResponse unmarshall(GetMetaTableListByCategoryResponse getMetaTableListByCategoryResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableListByCategoryResponse.setRequestId(_ctx.stringValue("GetMetaTableListByCategoryResponse.RequestId"));
-		getMetaTableListByCategoryResponse.setErrorCode(_ctx.stringValue("GetMetaTableListByCategoryResponse.ErrorCode"));
-		getMetaTableListByCategoryResponse.setErrorMessage(_ctx.stringValue("GetMetaTableListByCategoryResponse.ErrorMessage"));
 		getMetaTableListByCategoryResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableListByCategoryResponse.HttpStatusCode"));
+		getMetaTableListByCategoryResponse.setErrorMessage(_ctx.stringValue("GetMetaTableListByCategoryResponse.ErrorMessage"));
 		getMetaTableListByCategoryResponse.setSuccess(_ctx.booleanValue("GetMetaTableListByCategoryResponse.Success"));
+		getMetaTableListByCategoryResponse.setErrorCode(_ctx.stringValue("GetMetaTableListByCategoryResponse.ErrorCode"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("GetMetaTableListByCategoryResponse.Data.PageNumber"));

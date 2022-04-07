@@ -24,17 +24,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetNodeCodeResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
+	private String data;
+
+	private String errorMessage;
+
+	private String requestId;
+
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
 
-	private Integer httpStatusCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
-	private String requestId;
+	public String getData() {
+		return this.data;
+	}
 
-	private String data;
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -50,38 +82,6 @@ public class GetNodeCodeResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	@Override

@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDataServiceAuthorizedApisResponse extends AcsResponse {
 
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
+	private String errorCode;
+
 	private Data data;
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -69,12 +53,28 @@ public class ListDataServiceAuthorizedApisResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -131,29 +131,29 @@ public class ListDataServiceAuthorizedApisResponse extends AcsResponse {
 
 			private Long apiId;
 
-			private String apiName;
-
-			private String apiPath;
-
 			private Integer apiStatus;
-
-			private String createdTime;
-
-			private String creatorId;
-
-			private String grantCreatedTime;
-
-			private String grantEndTime;
 
 			private String grantOperatorId;
 
-			private String groupId;
+			private Long projectId;
+
+			private String creatorId;
+
+			private String grantEndTime;
 
 			private String modifiedTime;
 
-			private Long projectId;
+			private String groupId;
+
+			private String grantCreatedTime;
+
+			private String createdTime;
+
+			private String apiName;
 
 			private Long tenantId;
+
+			private String apiPath;
 
 			public Long getApiId() {
 				return this.apiId;
@@ -161,22 +161,6 @@ public class ListDataServiceAuthorizedApisResponse extends AcsResponse {
 
 			public void setApiId(Long apiId) {
 				this.apiId = apiId;
-			}
-
-			public String getApiName() {
-				return this.apiName;
-			}
-
-			public void setApiName(String apiName) {
-				this.apiName = apiName;
-			}
-
-			public String getApiPath() {
-				return this.apiPath;
-			}
-
-			public void setApiPath(String apiPath) {
-				this.apiPath = apiPath;
 			}
 
 			public Integer getApiStatus() {
@@ -187,60 +171,12 @@ public class ListDataServiceAuthorizedApisResponse extends AcsResponse {
 				this.apiStatus = apiStatus;
 			}
 
-			public String getCreatedTime() {
-				return this.createdTime;
-			}
-
-			public void setCreatedTime(String createdTime) {
-				this.createdTime = createdTime;
-			}
-
-			public String getCreatorId() {
-				return this.creatorId;
-			}
-
-			public void setCreatorId(String creatorId) {
-				this.creatorId = creatorId;
-			}
-
-			public String getGrantCreatedTime() {
-				return this.grantCreatedTime;
-			}
-
-			public void setGrantCreatedTime(String grantCreatedTime) {
-				this.grantCreatedTime = grantCreatedTime;
-			}
-
-			public String getGrantEndTime() {
-				return this.grantEndTime;
-			}
-
-			public void setGrantEndTime(String grantEndTime) {
-				this.grantEndTime = grantEndTime;
-			}
-
 			public String getGrantOperatorId() {
 				return this.grantOperatorId;
 			}
 
 			public void setGrantOperatorId(String grantOperatorId) {
 				this.grantOperatorId = grantOperatorId;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
-			}
-
-			public String getModifiedTime() {
-				return this.modifiedTime;
-			}
-
-			public void setModifiedTime(String modifiedTime) {
-				this.modifiedTime = modifiedTime;
 			}
 
 			public Long getProjectId() {
@@ -251,12 +187,76 @@ public class ListDataServiceAuthorizedApisResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
+			public String getCreatorId() {
+				return this.creatorId;
+			}
+
+			public void setCreatorId(String creatorId) {
+				this.creatorId = creatorId;
+			}
+
+			public String getGrantEndTime() {
+				return this.grantEndTime;
+			}
+
+			public void setGrantEndTime(String grantEndTime) {
+				this.grantEndTime = grantEndTime;
+			}
+
+			public String getModifiedTime() {
+				return this.modifiedTime;
+			}
+
+			public void setModifiedTime(String modifiedTime) {
+				this.modifiedTime = modifiedTime;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getGrantCreatedTime() {
+				return this.grantCreatedTime;
+			}
+
+			public void setGrantCreatedTime(String grantCreatedTime) {
+				this.grantCreatedTime = grantCreatedTime;
+			}
+
+			public String getCreatedTime() {
+				return this.createdTime;
+			}
+
+			public void setCreatedTime(String createdTime) {
+				this.createdTime = createdTime;
+			}
+
+			public String getApiName() {
+				return this.apiName;
+			}
+
+			public void setApiName(String apiName) {
+				this.apiName = apiName;
+			}
+
 			public Long getTenantId() {
 				return this.tenantId;
 			}
 
 			public void setTenantId(Long tenantId) {
 				this.tenantId = tenantId;
+			}
+
+			public String getApiPath() {
+				return this.apiPath;
+			}
+
+			public void setApiPath(String apiPath) {
+				this.apiPath = apiPath;
 			}
 		}
 	}

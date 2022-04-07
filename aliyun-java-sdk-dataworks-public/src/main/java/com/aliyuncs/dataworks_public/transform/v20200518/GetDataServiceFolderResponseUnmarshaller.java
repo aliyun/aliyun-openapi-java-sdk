@@ -26,14 +26,14 @@ public class GetDataServiceFolderResponseUnmarshaller {
 		getDataServiceFolderResponse.setRequestId(_ctx.stringValue("GetDataServiceFolderResponse.RequestId"));
 
 		Folder folder = new Folder();
-		folder.setTenantId(_ctx.longValue("GetDataServiceFolderResponse.Folder.TenantId"));
-		folder.setProjectId(_ctx.longValue("GetDataServiceFolderResponse.Folder.ProjectId"));
-		folder.setFolderId(_ctx.longValue("GetDataServiceFolderResponse.Folder.FolderId"));
-		folder.setFolderName(_ctx.stringValue("GetDataServiceFolderResponse.Folder.FolderName"));
-		folder.setCreatedTime(_ctx.stringValue("GetDataServiceFolderResponse.Folder.CreatedTime"));
+		folder.setParentId(_ctx.longValue("GetDataServiceFolderResponse.Folder.ParentId"));
 		folder.setModifiedTime(_ctx.stringValue("GetDataServiceFolderResponse.Folder.ModifiedTime"));
 		folder.setGroupId(_ctx.stringValue("GetDataServiceFolderResponse.Folder.GroupId"));
-		folder.setParentId(_ctx.longValue("GetDataServiceFolderResponse.Folder.ParentId"));
+		folder.setFolderId(_ctx.longValue("GetDataServiceFolderResponse.Folder.FolderId"));
+		folder.setProjectId(_ctx.longValue("GetDataServiceFolderResponse.Folder.ProjectId"));
+		folder.setFolderName(_ctx.stringValue("GetDataServiceFolderResponse.Folder.FolderName"));
+		folder.setCreatedTime(_ctx.stringValue("GetDataServiceFolderResponse.Folder.CreatedTime"));
+		folder.setTenantId(_ctx.longValue("GetDataServiceFolderResponse.Folder.TenantId"));
 		getDataServiceFolderResponse.setFolder(folder);
 	 
 	 	return getDataServiceFolderResponse;

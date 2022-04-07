@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTableThemeResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer httpStatusCode;
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String errorCode;
 
 	private Boolean success;
 
 	private Long themeId;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +50,6 @@ public class CreateTableThemeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -60,12 +60,12 @@ public class CreateTableThemeResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Boolean getSuccess() {

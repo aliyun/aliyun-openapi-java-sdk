@@ -24,18 +24,18 @@ public class GetMetaTableIntroWikiResponseUnmarshaller {
 	public static GetMetaTableIntroWikiResponse unmarshall(GetMetaTableIntroWikiResponse getMetaTableIntroWikiResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableIntroWikiResponse.setRequestId(_ctx.stringValue("GetMetaTableIntroWikiResponse.RequestId"));
-		getMetaTableIntroWikiResponse.setErrorCode(_ctx.stringValue("GetMetaTableIntroWikiResponse.ErrorCode"));
-		getMetaTableIntroWikiResponse.setErrorMessage(_ctx.stringValue("GetMetaTableIntroWikiResponse.ErrorMessage"));
 		getMetaTableIntroWikiResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableIntroWikiResponse.HttpStatusCode"));
+		getMetaTableIntroWikiResponse.setErrorMessage(_ctx.stringValue("GetMetaTableIntroWikiResponse.ErrorMessage"));
 		getMetaTableIntroWikiResponse.setSuccess(_ctx.booleanValue("GetMetaTableIntroWikiResponse.Success"));
+		getMetaTableIntroWikiResponse.setErrorCode(_ctx.stringValue("GetMetaTableIntroWikiResponse.ErrorCode"));
 
 		Data data = new Data();
-		data.setCreateTime(_ctx.longValue("GetMetaTableIntroWikiResponse.Data.CreateTime"));
 		data.setModifiedTime(_ctx.longValue("GetMetaTableIntroWikiResponse.Data.ModifiedTime"));
-		data.setCreator(_ctx.stringValue("GetMetaTableIntroWikiResponse.Data.Creator"));
 		data.setVersion(_ctx.longValue("GetMetaTableIntroWikiResponse.Data.Version"));
+		data.setCreateTime(_ctx.longValue("GetMetaTableIntroWikiResponse.Data.CreateTime"));
 		data.setCreatorName(_ctx.stringValue("GetMetaTableIntroWikiResponse.Data.CreatorName"));
 		data.setContent(_ctx.stringValue("GetMetaTableIntroWikiResponse.Data.Content"));
+		data.setCreator(_ctx.stringValue("GetMetaTableIntroWikiResponse.Data.Creator"));
 		getMetaTableIntroWikiResponse.setData(data);
 	 
 	 	return getMetaTableIntroWikiResponse;

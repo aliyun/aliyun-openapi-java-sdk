@@ -27,9 +27,9 @@ public class ListDataSourcesResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	private Data data;
 
@@ -41,20 +41,20 @@ public class ListDataSourcesResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -109,13 +109,19 @@ public class ListDataSourcesResponse extends AcsResponse {
 
 		public static class DataSourcesItem {
 
-			private Boolean shared;
+			private Integer status;
+
+			private Integer projectId;
+
+			private String subType;
 
 			private String gmtModified;
 
+			private Integer envType;
+
 			private Integer connectStatus;
 
-			private Integer bindingCalcEngineId;
+			private Integer sequence;
 
 			private String description;
 
@@ -125,32 +131,42 @@ public class ListDataSourcesResponse extends AcsResponse {
 
 			private Boolean defaultEngine;
 
+			private Boolean shared;
+
 			private String operator;
-
-			private Integer sequence;
-
-			private Integer envType;
-
-			private Long tenantId;
 
 			private String name;
 
-			private String subType;
+			private String content;
 
 			private Integer id;
 
-			private Integer projectId;
+			private Integer bindingCalcEngineId;
 
-			private Integer status;
+			private Long tenantId;
 
-			private String content;
-
-			public Boolean getShared() {
-				return this.shared;
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setShared(Boolean shared) {
-				this.shared = shared;
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
+
+			public Integer getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Integer projectId) {
+				this.projectId = projectId;
+			}
+
+			public String getSubType() {
+				return this.subType;
+			}
+
+			public void setSubType(String subType) {
+				this.subType = subType;
 			}
 
 			public String getGmtModified() {
@@ -161,6 +177,14 @@ public class ListDataSourcesResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
+			public Integer getEnvType() {
+				return this.envType;
+			}
+
+			public void setEnvType(Integer envType) {
+				this.envType = envType;
+			}
+
 			public Integer getConnectStatus() {
 				return this.connectStatus;
 			}
@@ -169,12 +193,12 @@ public class ListDataSourcesResponse extends AcsResponse {
 				this.connectStatus = connectStatus;
 			}
 
-			public Integer getBindingCalcEngineId() {
-				return this.bindingCalcEngineId;
+			public Integer getSequence() {
+				return this.sequence;
 			}
 
-			public void setBindingCalcEngineId(Integer bindingCalcEngineId) {
-				this.bindingCalcEngineId = bindingCalcEngineId;
+			public void setSequence(Integer sequence) {
+				this.sequence = sequence;
 			}
 
 			public String getDescription() {
@@ -209,36 +233,20 @@ public class ListDataSourcesResponse extends AcsResponse {
 				this.defaultEngine = defaultEngine;
 			}
 
+			public Boolean getShared() {
+				return this.shared;
+			}
+
+			public void setShared(Boolean shared) {
+				this.shared = shared;
+			}
+
 			public String getOperator() {
 				return this.operator;
 			}
 
 			public void setOperator(String operator) {
 				this.operator = operator;
-			}
-
-			public Integer getSequence() {
-				return this.sequence;
-			}
-
-			public void setSequence(Integer sequence) {
-				this.sequence = sequence;
-			}
-
-			public Integer getEnvType() {
-				return this.envType;
-			}
-
-			public void setEnvType(Integer envType) {
-				this.envType = envType;
-			}
-
-			public Long getTenantId() {
-				return this.tenantId;
-			}
-
-			public void setTenantId(Long tenantId) {
-				this.tenantId = tenantId;
 			}
 
 			public String getName() {
@@ -249,12 +257,12 @@ public class ListDataSourcesResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getSubType() {
-				return this.subType;
+			public String getContent() {
+				return this.content;
 			}
 
-			public void setSubType(String subType) {
-				this.subType = subType;
+			public void setContent(String content) {
+				this.content = content;
 			}
 
 			public Integer getId() {
@@ -265,28 +273,20 @@ public class ListDataSourcesResponse extends AcsResponse {
 				this.id = id;
 			}
 
-			public Integer getProjectId() {
-				return this.projectId;
+			public Integer getBindingCalcEngineId() {
+				return this.bindingCalcEngineId;
 			}
 
-			public void setProjectId(Integer projectId) {
-				this.projectId = projectId;
+			public void setBindingCalcEngineId(Integer bindingCalcEngineId) {
+				this.bindingCalcEngineId = bindingCalcEngineId;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public Long getTenantId() {
+				return this.tenantId;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
+			public void setTenantId(Long tenantId) {
+				this.tenantId = tenantId;
 			}
 		}
 	}

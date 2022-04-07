@@ -46,29 +46,13 @@ public class GetDDLJobStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nextTaskId;
-
-		private String content;
-
 		private String status;
+
+		private String nextTaskId;
 
 		private String taskId;
 
-		public String getNextTaskId() {
-			return this.nextTaskId;
-		}
-
-		public void setNextTaskId(String nextTaskId) {
-			this.nextTaskId = nextTaskId;
-		}
-
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
+		private String content;
 
 		public String getStatus() {
 			return this.status;
@@ -78,12 +62,28 @@ public class GetDDLJobStatusResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getNextTaskId() {
+			return this.nextTaskId;
+		}
+
+		public void setNextTaskId(String nextTaskId) {
+			this.nextTaskId = nextTaskId;
+		}
+
 		public String getTaskId() {
 			return this.taskId;
 		}
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
 		}
 	}
 

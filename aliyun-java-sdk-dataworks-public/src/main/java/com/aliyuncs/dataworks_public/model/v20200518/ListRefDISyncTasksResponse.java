@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRefDISyncTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class ListRefDISyncTasksResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -69,30 +69,22 @@ public class ListRefDISyncTasksResponse extends AcsResponse {
 
 		public static class DISyncTasksItem {
 
-			private String nodeName;
-
-			private Long nodeId;
+			private String diSourceDatasource;
 
 			private String taskType;
 
 			private String diDestinationDatasource;
 
-			private String diSourceDatasource;
+			private String nodeName;
 
-			public String getNodeName() {
-				return this.nodeName;
+			private Long nodeId;
+
+			public String getDiSourceDatasource() {
+				return this.diSourceDatasource;
 			}
 
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
-			}
-
-			public Long getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
+			public void setDiSourceDatasource(String diSourceDatasource) {
+				this.diSourceDatasource = diSourceDatasource;
 			}
 
 			public String getTaskType() {
@@ -111,12 +103,20 @@ public class ListRefDISyncTasksResponse extends AcsResponse {
 				this.diDestinationDatasource = diDestinationDatasource;
 			}
 
-			public String getDiSourceDatasource() {
-				return this.diSourceDatasource;
+			public String getNodeName() {
+				return this.nodeName;
 			}
 
-			public void setDiSourceDatasource(String diSourceDatasource) {
-				this.diSourceDatasource = diSourceDatasource;
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
+			}
+
+			public Long getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
 			}
 		}
 	}

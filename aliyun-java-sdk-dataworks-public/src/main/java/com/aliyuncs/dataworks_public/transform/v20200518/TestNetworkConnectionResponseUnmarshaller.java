@@ -27,8 +27,8 @@ public class TestNetworkConnectionResponseUnmarshaller {
 		testNetworkConnectionResponse.setSuccess(_ctx.booleanValue("TestNetworkConnectionResponse.Success"));
 
 		TaskList taskList = new TaskList();
-		taskList.setConnectStatus(_ctx.booleanValue("TestNetworkConnectionResponse.TaskList.ConnectStatus"));
 		taskList.setConnectMessage(_ctx.stringValue("TestNetworkConnectionResponse.TaskList.ConnectMessage"));
+		taskList.setConnectStatus(_ctx.booleanValue("TestNetworkConnectionResponse.TaskList.ConnectStatus"));
 		testNetworkConnectionResponse.setTaskList(taskList);
 	 
 	 	return testNetworkConnectionResponse;

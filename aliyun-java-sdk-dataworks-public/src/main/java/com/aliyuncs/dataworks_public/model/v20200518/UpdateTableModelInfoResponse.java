@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateTableModelInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean updateResult;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getUpdateResult() {
 		return this.updateResult;
@@ -42,6 +34,14 @@ public class UpdateTableModelInfoResponse extends AcsResponse {
 
 	public void setUpdateResult(Boolean updateResult) {
 		this.updateResult = updateResult;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

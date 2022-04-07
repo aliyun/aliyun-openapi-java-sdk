@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RevokeColumnPermissionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean revokeSuccess;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getRevokeSuccess() {
 		return this.revokeSuccess;
@@ -42,6 +34,14 @@ public class RevokeColumnPermissionResponse extends AcsResponse {
 
 	public void setRevokeSuccess(Boolean revokeSuccess) {
 		this.revokeSuccess = revokeSuccess;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
