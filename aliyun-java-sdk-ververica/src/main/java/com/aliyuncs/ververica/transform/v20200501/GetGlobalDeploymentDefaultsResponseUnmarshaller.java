@@ -22,9 +22,9 @@ public class GetGlobalDeploymentDefaultsResponseUnmarshaller {
 
 	public static GetGlobalDeploymentDefaultsResponse unmarshall(GetGlobalDeploymentDefaultsResponse getGlobalDeploymentDefaultsResponse, UnmarshallerContext _ctx) {
 		
+		getGlobalDeploymentDefaultsResponse.setSuccess(_ctx.booleanValue("GetGlobalDeploymentDefaultsResponse.success"));
 		getGlobalDeploymentDefaultsResponse.setRequestId(_ctx.stringValue("GetGlobalDeploymentDefaultsResponse.requestId"));
 		getGlobalDeploymentDefaultsResponse.setData(_ctx.stringValue("GetGlobalDeploymentDefaultsResponse.data"));
-		getGlobalDeploymentDefaultsResponse.setSuccess(_ctx.booleanValue("GetGlobalDeploymentDefaultsResponse.success"));
 	 
 	 	return getGlobalDeploymentDefaultsResponse;
 	}

@@ -22,8 +22,8 @@ public class ListTablesResponseUnmarshaller {
 
 	public static ListTablesResponse unmarshall(ListTablesResponse listTablesResponse, UnmarshallerContext _ctx) {
 		
-		listTablesResponse.setRequestId(_ctx.stringValue("ListTablesResponse.requestId"));
 		listTablesResponse.setData(_ctx.stringValue("ListTablesResponse.data"));
+		listTablesResponse.setRequestId(_ctx.stringValue("ListTablesResponse.requestId"));
 	 
 	 	return listTablesResponse;
 	}

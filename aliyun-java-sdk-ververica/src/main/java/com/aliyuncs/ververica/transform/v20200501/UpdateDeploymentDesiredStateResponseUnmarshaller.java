@@ -22,9 +22,9 @@ public class UpdateDeploymentDesiredStateResponseUnmarshaller {
 
 	public static UpdateDeploymentDesiredStateResponse unmarshall(UpdateDeploymentDesiredStateResponse updateDeploymentDesiredStateResponse, UnmarshallerContext _ctx) {
 		
+		updateDeploymentDesiredStateResponse.setSuccess(_ctx.booleanValue("UpdateDeploymentDesiredStateResponse.success"));
 		updateDeploymentDesiredStateResponse.setRequestId(_ctx.stringValue("UpdateDeploymentDesiredStateResponse.requestId"));
 		updateDeploymentDesiredStateResponse.setData(_ctx.stringValue("UpdateDeploymentDesiredStateResponse.data"));
-		updateDeploymentDesiredStateResponse.setSuccess(_ctx.booleanValue("UpdateDeploymentDesiredStateResponse.success"));
 	 
 	 	return updateDeploymentDesiredStateResponse;
 	}

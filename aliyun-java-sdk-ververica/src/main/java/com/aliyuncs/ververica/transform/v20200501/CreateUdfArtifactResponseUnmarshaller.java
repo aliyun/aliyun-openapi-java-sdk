@@ -22,9 +22,9 @@ public class CreateUdfArtifactResponseUnmarshaller {
 
 	public static CreateUdfArtifactResponse unmarshall(CreateUdfArtifactResponse createUdfArtifactResponse, UnmarshallerContext _ctx) {
 		
+		createUdfArtifactResponse.setSuccess(_ctx.booleanValue("CreateUdfArtifactResponse.success"));
 		createUdfArtifactResponse.setData(_ctx.stringValue("CreateUdfArtifactResponse.data"));
 		createUdfArtifactResponse.setRequestId(_ctx.stringValue("CreateUdfArtifactResponse.requestId"));
-		createUdfArtifactResponse.setSuccess(_ctx.booleanValue("CreateUdfArtifactResponse.success"));
 	 
 	 	return createUdfArtifactResponse;
 	}

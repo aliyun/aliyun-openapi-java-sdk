@@ -22,9 +22,9 @@ public class DatabaseExistsResponseUnmarshaller {
 
 	public static DatabaseExistsResponse unmarshall(DatabaseExistsResponse databaseExistsResponse, UnmarshallerContext _ctx) {
 		
+		databaseExistsResponse.setSuccess(_ctx.booleanValue("DatabaseExistsResponse.success"));
 		databaseExistsResponse.setData(_ctx.stringValue("DatabaseExistsResponse.data"));
 		databaseExistsResponse.setRequestId(_ctx.stringValue("DatabaseExistsResponse.requestId"));
-		databaseExistsResponse.setSuccess(_ctx.booleanValue("DatabaseExistsResponse.success"));
 	 
 	 	return databaseExistsResponse;
 	}

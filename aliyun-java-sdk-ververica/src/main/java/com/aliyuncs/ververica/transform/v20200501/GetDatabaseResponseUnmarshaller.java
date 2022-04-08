@@ -22,9 +22,9 @@ public class GetDatabaseResponseUnmarshaller {
 
 	public static GetDatabaseResponse unmarshall(GetDatabaseResponse getDatabaseResponse, UnmarshallerContext _ctx) {
 		
+		getDatabaseResponse.setSuccess(_ctx.booleanValue("GetDatabaseResponse.success"));
 		getDatabaseResponse.setData(_ctx.stringValue("GetDatabaseResponse.data"));
 		getDatabaseResponse.setRequestId(_ctx.stringValue("GetDatabaseResponse.requestId"));
-		getDatabaseResponse.setSuccess(_ctx.booleanValue("GetDatabaseResponse.success"));
 	 
 	 	return getDatabaseResponse;
 	}

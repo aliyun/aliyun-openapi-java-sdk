@@ -22,9 +22,9 @@ public class DeleteUdfArtifactResponseUnmarshaller {
 
 	public static DeleteUdfArtifactResponse unmarshall(DeleteUdfArtifactResponse deleteUdfArtifactResponse, UnmarshallerContext _ctx) {
 		
+		deleteUdfArtifactResponse.setSuccess(_ctx.booleanValue("DeleteUdfArtifactResponse.success"));
 		deleteUdfArtifactResponse.setData(_ctx.stringValue("DeleteUdfArtifactResponse.data"));
 		deleteUdfArtifactResponse.setRequestId(_ctx.stringValue("DeleteUdfArtifactResponse.requestId"));
-		deleteUdfArtifactResponse.setSuccess(_ctx.booleanValue("DeleteUdfArtifactResponse.success"));
 	 
 	 	return deleteUdfArtifactResponse;
 	}

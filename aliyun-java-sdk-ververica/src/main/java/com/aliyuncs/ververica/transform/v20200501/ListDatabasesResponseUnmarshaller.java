@@ -22,9 +22,9 @@ public class ListDatabasesResponseUnmarshaller {
 
 	public static ListDatabasesResponse unmarshall(ListDatabasesResponse listDatabasesResponse, UnmarshallerContext _ctx) {
 		
+		listDatabasesResponse.setSuccess(_ctx.booleanValue("ListDatabasesResponse.success"));
 		listDatabasesResponse.setData(_ctx.stringValue("ListDatabasesResponse.data"));
 		listDatabasesResponse.setRequestId(_ctx.stringValue("ListDatabasesResponse.requestId"));
-		listDatabasesResponse.setSuccess(_ctx.booleanValue("ListDatabasesResponse.success"));
 	 
 	 	return listDatabasesResponse;
 	}

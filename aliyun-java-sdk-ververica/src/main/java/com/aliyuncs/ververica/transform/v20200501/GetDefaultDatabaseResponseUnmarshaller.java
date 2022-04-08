@@ -22,9 +22,9 @@ public class GetDefaultDatabaseResponseUnmarshaller {
 
 	public static GetDefaultDatabaseResponse unmarshall(GetDefaultDatabaseResponse getDefaultDatabaseResponse, UnmarshallerContext _ctx) {
 		
+		getDefaultDatabaseResponse.setSuccess(_ctx.booleanValue("GetDefaultDatabaseResponse.success"));
 		getDefaultDatabaseResponse.setData(_ctx.stringValue("GetDefaultDatabaseResponse.data"));
 		getDefaultDatabaseResponse.setRequestId(_ctx.stringValue("GetDefaultDatabaseResponse.requestId"));
-		getDefaultDatabaseResponse.setSuccess(_ctx.booleanValue("GetDefaultDatabaseResponse.success"));
 	 
 	 	return getDefaultDatabaseResponse;
 	}

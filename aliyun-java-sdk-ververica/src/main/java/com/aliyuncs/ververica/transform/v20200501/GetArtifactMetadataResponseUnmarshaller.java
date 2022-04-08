@@ -22,9 +22,9 @@ public class GetArtifactMetadataResponseUnmarshaller {
 
 	public static GetArtifactMetadataResponse unmarshall(GetArtifactMetadataResponse getArtifactMetadataResponse, UnmarshallerContext _ctx) {
 		
+		getArtifactMetadataResponse.setSuccess(_ctx.booleanValue("GetArtifactMetadataResponse.success"));
 		getArtifactMetadataResponse.setRequestId(_ctx.stringValue("GetArtifactMetadataResponse.requestId"));
 		getArtifactMetadataResponse.setData(_ctx.stringValue("GetArtifactMetadataResponse.data"));
-		getArtifactMetadataResponse.setSuccess(_ctx.booleanValue("GetArtifactMetadataResponse.success"));
 	 
 	 	return getArtifactMetadataResponse;
 	}

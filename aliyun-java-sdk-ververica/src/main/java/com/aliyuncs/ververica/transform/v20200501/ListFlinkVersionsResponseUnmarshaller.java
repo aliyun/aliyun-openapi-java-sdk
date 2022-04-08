@@ -22,9 +22,9 @@ public class ListFlinkVersionsResponseUnmarshaller {
 
 	public static ListFlinkVersionsResponse unmarshall(ListFlinkVersionsResponse listFlinkVersionsResponse, UnmarshallerContext _ctx) {
 		
+		listFlinkVersionsResponse.setSuccess(_ctx.booleanValue("ListFlinkVersionsResponse.success"));
 		listFlinkVersionsResponse.setData(_ctx.stringValue("ListFlinkVersionsResponse.data"));
 		listFlinkVersionsResponse.setRequestId(_ctx.stringValue("ListFlinkVersionsResponse.requestId"));
-		listFlinkVersionsResponse.setSuccess(_ctx.booleanValue("ListFlinkVersionsResponse.success"));
 	 
 	 	return listFlinkVersionsResponse;
 	}

@@ -22,9 +22,9 @@ public class GetDeploymentResponseUnmarshaller {
 
 	public static GetDeploymentResponse unmarshall(GetDeploymentResponse getDeploymentResponse, UnmarshallerContext _ctx) {
 		
+		getDeploymentResponse.setSuccess(_ctx.booleanValue("GetDeploymentResponse.success"));
 		getDeploymentResponse.setData(_ctx.stringValue("GetDeploymentResponse.data"));
 		getDeploymentResponse.setRequestId(_ctx.stringValue("GetDeploymentResponse.requestId"));
-		getDeploymentResponse.setSuccess(_ctx.booleanValue("GetDeploymentResponse.success"));
 	 
 	 	return getDeploymentResponse;
 	}

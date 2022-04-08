@@ -22,9 +22,9 @@ public class ValidateSqlScriptResponseUnmarshaller {
 
 	public static ValidateSqlScriptResponse unmarshall(ValidateSqlScriptResponse validateSqlScriptResponse, UnmarshallerContext _ctx) {
 		
+		validateSqlScriptResponse.setSuccess(_ctx.booleanValue("ValidateSqlScriptResponse.success"));
 		validateSqlScriptResponse.setRequestId(_ctx.stringValue("ValidateSqlScriptResponse.requestId"));
 		validateSqlScriptResponse.setData(_ctx.stringValue("ValidateSqlScriptResponse.data"));
-		validateSqlScriptResponse.setSuccess(_ctx.booleanValue("ValidateSqlScriptResponse.success"));
 	 
 	 	return validateSqlScriptResponse;
 	}

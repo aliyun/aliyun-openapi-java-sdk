@@ -22,9 +22,9 @@ public class ListJobsResponseUnmarshaller {
 
 	public static ListJobsResponse unmarshall(ListJobsResponse listJobsResponse, UnmarshallerContext _ctx) {
 		
+		listJobsResponse.setSuccess(_ctx.booleanValue("ListJobsResponse.success"));
 		listJobsResponse.setData(_ctx.stringValue("ListJobsResponse.data"));
 		listJobsResponse.setRequestId(_ctx.stringValue("ListJobsResponse.requestId"));
-		listJobsResponse.setSuccess(_ctx.booleanValue("ListJobsResponse.success"));
 	 
 	 	return listJobsResponse;
 	}

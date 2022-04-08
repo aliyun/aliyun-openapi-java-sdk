@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUdfArtifactResponse extends AcsResponse {
 
+	private Boolean success;
+
 	private String data;
 
 	private String requestId;
 
-	private Boolean success;
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getData() {
 		return this.data;
@@ -44,14 +52,6 @@ public class GetUdfArtifactResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	@Override

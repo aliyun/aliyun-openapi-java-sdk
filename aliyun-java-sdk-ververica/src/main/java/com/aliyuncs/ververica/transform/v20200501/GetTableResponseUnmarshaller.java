@@ -22,9 +22,9 @@ public class GetTableResponseUnmarshaller {
 
 	public static GetTableResponse unmarshall(GetTableResponse getTableResponse, UnmarshallerContext _ctx) {
 		
+		getTableResponse.setSuccess(_ctx.booleanValue("GetTableResponse.success"));
 		getTableResponse.setData(_ctx.stringValue("GetTableResponse.data"));
 		getTableResponse.setRequestId(_ctx.stringValue("GetTableResponse.requestId"));
-		getTableResponse.setSuccess(_ctx.booleanValue("GetTableResponse.success"));
 	 
 	 	return getTableResponse;
 	}

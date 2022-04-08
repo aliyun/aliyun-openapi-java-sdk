@@ -22,9 +22,9 @@ public class ListSessionClustersResponseUnmarshaller {
 
 	public static ListSessionClustersResponse unmarshall(ListSessionClustersResponse listSessionClustersResponse, UnmarshallerContext _ctx) {
 		
+		listSessionClustersResponse.setSuccess(_ctx.booleanValue("ListSessionClustersResponse.success"));
 		listSessionClustersResponse.setData(_ctx.stringValue("ListSessionClustersResponse.data"));
 		listSessionClustersResponse.setRequestId(_ctx.stringValue("ListSessionClustersResponse.requestId"));
-		listSessionClustersResponse.setSuccess(_ctx.booleanValue("ListSessionClustersResponse.success"));
 	 
 	 	return listSessionClustersResponse;
 	}

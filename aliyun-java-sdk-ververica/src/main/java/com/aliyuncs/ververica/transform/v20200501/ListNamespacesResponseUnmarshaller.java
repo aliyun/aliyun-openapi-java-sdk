@@ -22,9 +22,9 @@ public class ListNamespacesResponseUnmarshaller {
 
 	public static ListNamespacesResponse unmarshall(ListNamespacesResponse listNamespacesResponse, UnmarshallerContext _ctx) {
 		
+		listNamespacesResponse.setSuccess(_ctx.booleanValue("ListNamespacesResponse.success"));
 		listNamespacesResponse.setRequestId(_ctx.stringValue("ListNamespacesResponse.requestId"));
 		listNamespacesResponse.setData(_ctx.stringValue("ListNamespacesResponse.data"));
-		listNamespacesResponse.setSuccess(_ctx.booleanValue("ListNamespacesResponse.success"));
 	 
 	 	return listNamespacesResponse;
 	}

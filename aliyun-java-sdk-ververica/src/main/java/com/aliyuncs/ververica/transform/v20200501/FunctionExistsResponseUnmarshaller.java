@@ -22,9 +22,9 @@ public class FunctionExistsResponseUnmarshaller {
 
 	public static FunctionExistsResponse unmarshall(FunctionExistsResponse functionExistsResponse, UnmarshallerContext _ctx) {
 		
+		functionExistsResponse.setSuccess(_ctx.booleanValue("FunctionExistsResponse.success"));
 		functionExistsResponse.setData(_ctx.stringValue("FunctionExistsResponse.data"));
 		functionExistsResponse.setRequestId(_ctx.stringValue("FunctionExistsResponse.requestId"));
-		functionExistsResponse.setSuccess(_ctx.booleanValue("FunctionExistsResponse.success"));
 	 
 	 	return functionExistsResponse;
 	}

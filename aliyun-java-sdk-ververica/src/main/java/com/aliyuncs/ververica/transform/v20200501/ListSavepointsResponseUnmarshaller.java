@@ -22,9 +22,9 @@ public class ListSavepointsResponseUnmarshaller {
 
 	public static ListSavepointsResponse unmarshall(ListSavepointsResponse listSavepointsResponse, UnmarshallerContext _ctx) {
 		
+		listSavepointsResponse.setSuccess(_ctx.booleanValue("ListSavepointsResponse.success"));
 		listSavepointsResponse.setData(_ctx.stringValue("ListSavepointsResponse.data"));
 		listSavepointsResponse.setRequestId(_ctx.stringValue("ListSavepointsResponse.requestId"));
-		listSavepointsResponse.setSuccess(_ctx.booleanValue("ListSavepointsResponse.success"));
 	 
 	 	return listSavepointsResponse;
 	}

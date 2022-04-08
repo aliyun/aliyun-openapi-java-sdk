@@ -22,9 +22,9 @@ public class ListDeploymentTargetsResponseUnmarshaller {
 
 	public static ListDeploymentTargetsResponse unmarshall(ListDeploymentTargetsResponse listDeploymentTargetsResponse, UnmarshallerContext _ctx) {
 		
+		listDeploymentTargetsResponse.setSuccess(_ctx.booleanValue("ListDeploymentTargetsResponse.success"));
 		listDeploymentTargetsResponse.setRequestId(_ctx.stringValue("ListDeploymentTargetsResponse.requestId"));
 		listDeploymentTargetsResponse.setData(_ctx.stringValue("ListDeploymentTargetsResponse.data"));
-		listDeploymentTargetsResponse.setSuccess(_ctx.booleanValue("ListDeploymentTargetsResponse.success"));
 	 
 	 	return listDeploymentTargetsResponse;
 	}

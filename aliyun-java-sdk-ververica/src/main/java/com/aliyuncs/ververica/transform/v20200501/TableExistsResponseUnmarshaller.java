@@ -22,9 +22,9 @@ public class TableExistsResponseUnmarshaller {
 
 	public static TableExistsResponse unmarshall(TableExistsResponse tableExistsResponse, UnmarshallerContext _ctx) {
 		
+		tableExistsResponse.setSuccess(_ctx.booleanValue("TableExistsResponse.success"));
 		tableExistsResponse.setData(_ctx.stringValue("TableExistsResponse.data"));
 		tableExistsResponse.setRequestId(_ctx.stringValue("TableExistsResponse.requestId"));
-		tableExistsResponse.setSuccess(_ctx.booleanValue("TableExistsResponse.success"));
 	 
 	 	return tableExistsResponse;
 	}

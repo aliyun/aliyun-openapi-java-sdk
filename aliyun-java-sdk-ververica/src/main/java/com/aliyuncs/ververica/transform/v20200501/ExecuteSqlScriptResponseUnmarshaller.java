@@ -22,9 +22,9 @@ public class ExecuteSqlScriptResponseUnmarshaller {
 
 	public static ExecuteSqlScriptResponse unmarshall(ExecuteSqlScriptResponse executeSqlScriptResponse, UnmarshallerContext _ctx) {
 		
+		executeSqlScriptResponse.setSuccess(_ctx.booleanValue("ExecuteSqlScriptResponse.success"));
 		executeSqlScriptResponse.setRequestId(_ctx.stringValue("ExecuteSqlScriptResponse.requestId"));
 		executeSqlScriptResponse.setData(_ctx.stringValue("ExecuteSqlScriptResponse.data"));
-		executeSqlScriptResponse.setSuccess(_ctx.booleanValue("ExecuteSqlScriptResponse.success"));
 	 
 	 	return executeSqlScriptResponse;
 	}

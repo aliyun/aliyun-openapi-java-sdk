@@ -22,9 +22,9 @@ public class CreateSavepointResponseUnmarshaller {
 
 	public static CreateSavepointResponse unmarshall(CreateSavepointResponse createSavepointResponse, UnmarshallerContext _ctx) {
 		
+		createSavepointResponse.setSuccess(_ctx.booleanValue("CreateSavepointResponse.success"));
 		createSavepointResponse.setData(_ctx.stringValue("CreateSavepointResponse.data"));
 		createSavepointResponse.setRequestId(_ctx.stringValue("CreateSavepointResponse.requestId"));
-		createSavepointResponse.setSuccess(_ctx.booleanValue("CreateSavepointResponse.success"));
 	 
 	 	return createSavepointResponse;
 	}

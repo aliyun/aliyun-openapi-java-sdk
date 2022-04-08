@@ -22,9 +22,9 @@ public class GetCatalogResponseUnmarshaller {
 
 	public static GetCatalogResponse unmarshall(GetCatalogResponse getCatalogResponse, UnmarshallerContext _ctx) {
 		
+		getCatalogResponse.setSuccess(_ctx.booleanValue("GetCatalogResponse.success"));
 		getCatalogResponse.setData(_ctx.stringValue("GetCatalogResponse.data"));
 		getCatalogResponse.setRequestId(_ctx.stringValue("GetCatalogResponse.requestId"));
-		getCatalogResponse.setSuccess(_ctx.booleanValue("GetCatalogResponse.success"));
 	 
 	 	return getCatalogResponse;
 	}

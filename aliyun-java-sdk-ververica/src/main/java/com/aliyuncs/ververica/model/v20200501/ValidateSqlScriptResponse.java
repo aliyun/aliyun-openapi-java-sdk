@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ValidateSqlScriptResponse extends AcsResponse {
 
+	private Boolean success;
+
 	private String requestId;
 
 	private String data;
 
-	private Boolean success;
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class ValidateSqlScriptResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	@Override

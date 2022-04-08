@@ -27,7 +27,31 @@ public class ListDeploymentsRequest extends RoaAcsRequest<ListDeploymentsRespons
 
 	private String workspace;
 
+	private String creator;
+
+	private String modifier;
+
+	private String priority;
+
+	private Boolean batchMode;
+
+	private String sortName;
+
+	private String deploymentId;
+
 	private String namespace;
+
+	private String pageSize;
+
+	private String name;
+
+	private String pageIndex;
+
+	private String sortOrder;
+
+	private String state;
+
+	private String status;
 	public ListDeploymentsRequest() {
 		super("ververica", "2020-05-01", "ListDeployments");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/deployments");
@@ -49,6 +73,72 @@ public class ListDeploymentsRequest extends RoaAcsRequest<ListDeploymentsRespons
 		}
 	}
 
+	public String getCreator() {
+		return this.creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+		if(creator != null){
+			putQueryParameter("creator", creator);
+		}
+	}
+
+	public String getModifier() {
+		return this.modifier;
+	}
+
+	public void setModifier(String modifier) {
+		this.modifier = modifier;
+		if(modifier != null){
+			putQueryParameter("modifier", modifier);
+		}
+	}
+
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("priority", priority);
+		}
+	}
+
+	public Boolean getBatchMode() {
+		return this.batchMode;
+	}
+
+	public void setBatchMode(Boolean batchMode) {
+		this.batchMode = batchMode;
+		if(batchMode != null){
+			putQueryParameter("batchMode", batchMode.toString());
+		}
+	}
+
+	public String getSortName() {
+		return this.sortName;
+	}
+
+	public void setSortName(String sortName) {
+		this.sortName = sortName;
+		if(sortName != null){
+			putQueryParameter("sortName", sortName);
+		}
+	}
+
+	public String getDeploymentId() {
+		return this.deploymentId;
+	}
+
+	public void setDeploymentId(String deploymentId) {
+		this.deploymentId = deploymentId;
+		if(deploymentId != null){
+			putQueryParameter("deploymentId", deploymentId);
+		}
+	}
+
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -57,6 +147,72 @@ public class ListDeploymentsRequest extends RoaAcsRequest<ListDeploymentsRespons
 		this.namespace = namespace;
 		if(namespace != null){
 			putPathParameter("namespace", namespace);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("pageSize", pageSize);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("name", name);
+		}
+	}
+
+	public String getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(String pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("pageIndex", pageIndex);
+		}
+	}
+
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("sortOrder", sortOrder);
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("state", state);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("status", status);
 		}
 	}
 
