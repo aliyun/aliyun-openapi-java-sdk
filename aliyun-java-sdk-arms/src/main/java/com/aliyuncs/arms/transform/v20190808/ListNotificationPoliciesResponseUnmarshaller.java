@@ -49,6 +49,7 @@ public class ListNotificationPoliciesResponseUnmarshaller {
 			policies.setRepeat(_ctx.booleanValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].Repeat"));
 			policies.setRepeatInterval(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].RepeatInterval"));
 			policies.setEscalationPolicyId(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].EscalationPolicyId"));
+			policies.setIntegrationId(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].IntegrationId"));
 
 			GroupRule groupRule = new GroupRule();
 			groupRule.setGroupWait(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].GroupRule.GroupWait"));

@@ -29,6 +29,8 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 
 	private Boolean sendRecoverMessage;
 
+	private Long integrationId;
+
 	private String matchingRules;
 
 	private String groupRule;
@@ -72,6 +74,17 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 		this.sendRecoverMessage = sendRecoverMessage;
 		if(sendRecoverMessage != null){
 			putBodyParameter("SendRecoverMessage", sendRecoverMessage.toString());
+		}
+	}
+
+	public Long getIntegrationId() {
+		return this.integrationId;
+	}
+
+	public void setIntegrationId(Long integrationId) {
+		this.integrationId = integrationId;
+		if(integrationId != null){
+			putBodyParameter("IntegrationId", integrationId.toString());
 		}
 	}
 

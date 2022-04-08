@@ -101,6 +101,8 @@ public class ListNotificationPoliciesResponse extends AcsResponse {
 
 			private Long escalationPolicyId;
 
+			private Long integrationId;
+
 			private List<MatchingRulesItem> matchingRules;
 
 			private GroupRule groupRule;
@@ -155,6 +157,14 @@ public class ListNotificationPoliciesResponse extends AcsResponse {
 
 			public void setEscalationPolicyId(Long escalationPolicyId) {
 				this.escalationPolicyId = escalationPolicyId;
+			}
+
+			public Long getIntegrationId() {
+				return this.integrationId;
+			}
+
+			public void setIntegrationId(Long integrationId) {
+				this.integrationId = integrationId;
 			}
 
 			public List<MatchingRulesItem> getMatchingRules() {

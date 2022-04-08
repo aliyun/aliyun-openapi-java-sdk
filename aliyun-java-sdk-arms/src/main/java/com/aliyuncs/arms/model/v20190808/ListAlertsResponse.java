@@ -101,6 +101,8 @@ public class ListAlertsResponse extends AcsResponse {
 
 			private String createTime;
 
+			private Long alertId;
+
 			private List<ActivitiesItem> activities;
 
 			private List<AlertEventsItem> alertEvents;
@@ -151,6 +153,14 @@ public class ListAlertsResponse extends AcsResponse {
 
 			public void setCreateTime(String createTime) {
 				this.createTime = createTime;
+			}
+
+			public Long getAlertId() {
+				return this.alertId;
+			}
+
+			public void setAlertId(Long alertId) {
+				this.alertId = alertId;
 			}
 
 			public List<ActivitiesItem> getActivities() {

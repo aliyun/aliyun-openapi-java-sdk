@@ -41,6 +41,7 @@ public class CreateOrUpdateNotificationPolicyResponseUnmarshaller {
 		notificationPolicy.setEscalationPolicyId(_ctx.longValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.EscalationPolicyId"));
 		notificationPolicy.setRepeat(_ctx.booleanValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.Repeat"));
 		notificationPolicy.setRepeatInterval(_ctx.longValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.RepeatInterval"));
+		notificationPolicy.setIntegrationId(_ctx.longValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.IntegrationId"));
 
 		GroupRule groupRule = new GroupRule();
 		groupRule.setGroupWait(_ctx.longValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.GroupRule.GroupWait"));

@@ -59,6 +59,8 @@ public class CreateOrUpdateNotificationPolicyResponse extends AcsResponse {
 
 		private Long repeatInterval;
 
+		private Long integrationId;
+
 		private List<MatchingRulesItem> matchingRules;
 
 		private GroupRule groupRule;
@@ -113,6 +115,14 @@ public class CreateOrUpdateNotificationPolicyResponse extends AcsResponse {
 
 		public void setRepeatInterval(Long repeatInterval) {
 			this.repeatInterval = repeatInterval;
+		}
+
+		public Long getIntegrationId() {
+			return this.integrationId;
+		}
+
+		public void setIntegrationId(Long integrationId) {
+			this.integrationId = integrationId;
 		}
 
 		public List<MatchingRulesItem> getMatchingRules() {
