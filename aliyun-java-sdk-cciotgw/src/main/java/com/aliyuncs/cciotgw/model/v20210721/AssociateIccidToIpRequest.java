@@ -82,6 +82,7 @@ public class AssociateIccidToIpRequest extends RpcAcsRequest<AssociateIccidToIpR
 			for (int depth1 = 0; depth1 < iccidIpLists.size(); depth1++) {
 				putQueryParameter("IccidIpList." + (depth1 + 1) + ".Ip" , iccidIpLists.get(depth1).getIp());
 				putQueryParameter("IccidIpList." + (depth1 + 1) + ".Iccid" , iccidIpLists.get(depth1).getIccid());
+				putQueryParameter("IccidIpList." + (depth1 + 1) + ".CardType" , iccidIpLists.get(depth1).getCardType());
 			}
 		}	
 	}
@@ -103,6 +104,8 @@ public class AssociateIccidToIpRequest extends RpcAcsRequest<AssociateIccidToIpR
 
 		private String iccid;
 
+		private String cardType;
+
 		public String getIp() {
 			return this.ip;
 		}
@@ -117,6 +120,14 @@ public class AssociateIccidToIpRequest extends RpcAcsRequest<AssociateIccidToIpR
 
 		public void setIccid(String iccid) {
 			this.iccid = iccid;
+		}
+
+		public String getCardType() {
+			return this.cardType;
+		}
+
+		public void setCardType(String cardType) {
+			this.cardType = cardType;
 		}
 	}
 
