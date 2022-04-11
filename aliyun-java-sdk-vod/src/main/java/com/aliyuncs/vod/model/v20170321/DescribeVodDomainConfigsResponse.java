@@ -47,20 +47,20 @@ public class DescribeVodDomainConfigsResponse extends AcsResponse {
 
 	public static class DomainConfig {
 
-		private String functionName;
+		private String status;
 
 		private String configId;
 
-		private String status;
+		private String functionName;
 
 		private List<FunctionArg> functionArgs;
 
-		public String getFunctionName() {
-			return this.functionName;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setFunctionName(String functionName) {
-			this.functionName = functionName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getConfigId() {
@@ -71,12 +71,12 @@ public class DescribeVodDomainConfigsResponse extends AcsResponse {
 			this.configId = configId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getFunctionName() {
+			return this.functionName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setFunctionName(String functionName) {
+			this.functionName = functionName;
 		}
 
 		public List<FunctionArg> getFunctionArgs() {

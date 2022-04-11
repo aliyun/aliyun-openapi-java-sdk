@@ -50,14 +50,14 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		getAIMediaAuditJobResponse.setRequestId(_ctx.stringValue("GetAIMediaAuditJobResponse.RequestId"));
 
 		MediaAuditJob mediaAuditJob = new MediaAuditJob();
-		mediaAuditJob.setJobId(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.JobId"));
-		mediaAuditJob.setMediaId(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.MediaId"));
+		mediaAuditJob.setCreationTime(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.CreationTime"));
 		mediaAuditJob.setType(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Type"));
 		mediaAuditJob.setStatus(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Status"));
+		mediaAuditJob.setCompleteTime(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.CompleteTime"));
+		mediaAuditJob.setJobId(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.JobId"));
 		mediaAuditJob.setCode(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Code"));
 		mediaAuditJob.setMessage(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Message"));
-		mediaAuditJob.setCreationTime(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.CreationTime"));
-		mediaAuditJob.setCompleteTime(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.CompleteTime"));
+		mediaAuditJob.setMediaId(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.MediaId"));
 
 		Data data = new Data();
 		data.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.Suggestion"));
@@ -65,14 +65,14 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		data.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.Label"));
 
 		VideoResult videoResult = new VideoResult();
-		videoResult.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.Suggestion"));
 		videoResult.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.Label"));
+		videoResult.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.Suggestion"));
 
 		TerrorismResult terrorismResult = new TerrorismResult();
 		terrorismResult.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.Suggestion"));
+		terrorismResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.AverageScore"));
 		terrorismResult.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.Label"));
 		terrorismResult.setMaxScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.MaxScore"));
-		terrorismResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.AverageScore"));
 
 		List<CounterListItem> counterList = new ArrayList<CounterListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.CounterList.Length"); i++) {
@@ -87,10 +87,10 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		List<TopListItem> topList = new ArrayList<TopListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.TopList.Length"); i++) {
 			TopListItem topListItem = new TopListItem();
-			topListItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.TopList["+ i +"].Label"));
+			topListItem.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.TopList["+ i +"].Url"));
 			topListItem.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.TopList["+ i +"].Score"));
 			topListItem.setTimestamp(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.TopList["+ i +"].Timestamp"));
-			topListItem.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.TopList["+ i +"].Url"));
+			topListItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.TerrorismResult.TopList["+ i +"].Label"));
 
 			topList.add(topListItem);
 		}
@@ -99,9 +99,9 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 
 		PornResult pornResult = new PornResult();
 		pornResult.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.Suggestion"));
+		pornResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.AverageScore"));
 		pornResult.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.Label"));
 		pornResult.setMaxScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.MaxScore"));
-		pornResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.AverageScore"));
 
 		List<CounterListItem3> counterList1 = new ArrayList<CounterListItem3>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.CounterList.Length"); i++) {
@@ -116,10 +116,10 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		List<TopListItem4> topList2 = new ArrayList<TopListItem4>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.TopList.Length"); i++) {
 			TopListItem4 topListItem4 = new TopListItem4();
-			topListItem4.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.TopList["+ i +"].Label"));
+			topListItem4.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.TopList["+ i +"].Url"));
 			topListItem4.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.TopList["+ i +"].Score"));
 			topListItem4.setTimestamp(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.TopList["+ i +"].Timestamp"));
-			topListItem4.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.TopList["+ i +"].Url"));
+			topListItem4.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.PornResult.TopList["+ i +"].Label"));
 
 			topList2.add(topListItem4);
 		}
@@ -128,9 +128,9 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 
 		AdResult adResult = new AdResult();
 		adResult.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.Suggestion"));
+		adResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.AverageScore"));
 		adResult.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.Label"));
 		adResult.setMaxScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.MaxScore"));
-		adResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.AverageScore"));
 
 		List<CounterListItem7> counterList5 = new ArrayList<CounterListItem7>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.CounterList.Length"); i++) {
@@ -145,10 +145,10 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		List<TopListItem8> topList6 = new ArrayList<TopListItem8>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.TopList.Length"); i++) {
 			TopListItem8 topListItem8 = new TopListItem8();
-			topListItem8.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Label"));
+			topListItem8.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Url"));
 			topListItem8.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Score"));
 			topListItem8.setTimestamp(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Timestamp"));
-			topListItem8.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Url"));
+			topListItem8.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Label"));
 
 			topList6.add(topListItem8);
 		}
@@ -157,9 +157,9 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 
 		LiveResult liveResult = new LiveResult();
 		liveResult.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.Suggestion"));
+		liveResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.AverageScore"));
 		liveResult.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.Label"));
 		liveResult.setMaxScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.MaxScore"));
-		liveResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.AverageScore"));
 
 		List<CounterListItem11> counterList9 = new ArrayList<CounterListItem11>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.CounterList.Length"); i++) {
@@ -174,10 +174,10 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		List<TopListItem12> topList10 = new ArrayList<TopListItem12>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.TopList.Length"); i++) {
 			TopListItem12 topListItem12 = new TopListItem12();
-			topListItem12.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Label"));
+			topListItem12.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Url"));
 			topListItem12.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Score"));
 			topListItem12.setTimestamp(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Timestamp"));
-			topListItem12.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Url"));
+			topListItem12.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Label"));
 
 			topList10.add(topListItem12);
 		}
@@ -186,9 +186,9 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 
 		LogoResult logoResult = new LogoResult();
 		logoResult.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.Suggestion"));
+		logoResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.AverageScore"));
 		logoResult.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.Label"));
 		logoResult.setMaxScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.MaxScore"));
-		logoResult.setAverageScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.AverageScore"));
 
 		List<CounterListItem15> counterList13 = new ArrayList<CounterListItem15>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.CounterList.Length"); i++) {
@@ -203,10 +203,10 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		List<TopListItem16> topList14 = new ArrayList<TopListItem16>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.TopList.Length"); i++) {
 			TopListItem16 topListItem16 = new TopListItem16();
-			topListItem16.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Label"));
+			topListItem16.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Url"));
 			topListItem16.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Score"));
 			topListItem16.setTimestamp(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Timestamp"));
-			topListItem16.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Url"));
+			topListItem16.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Label"));
 
 			topList14.add(topListItem16);
 		}
@@ -217,17 +217,17 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		List<ImageResultItem> imageResult = new ArrayList<ImageResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult.Length"); i++) {
 			ImageResultItem imageResultItem = new ImageResultItem();
-			imageResultItem.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Suggestion"));
-			imageResultItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Label"));
 			imageResultItem.setType(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Type"));
 			imageResultItem.setUrl(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Url"));
+			imageResultItem.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Suggestion"));
+			imageResultItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Label"));
 
 			List<ResultItem> result = new ArrayList<ResultItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Result.Length"); j++) {
 				ResultItem resultItem = new ResultItem();
+				resultItem.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Result["+ j +"].Score"));
 				resultItem.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Result["+ j +"].Suggestion"));
 				resultItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Result["+ j +"].Label"));
-				resultItem.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Result["+ j +"].Score"));
 				resultItem.setScene(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResult["+ i +"].Result["+ j +"].Scene"));
 
 				result.add(resultItem);
@@ -241,12 +241,12 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		List<TextResultItem> textResult = new ArrayList<TextResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult.Length"); i++) {
 			TextResultItem textResultItem = new TextResultItem();
-			textResultItem.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Suggestion"));
-			textResultItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Label"));
-			textResultItem.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Score"));
-			textResultItem.setScene(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Scene"));
 			textResultItem.setType(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Type"));
+			textResultItem.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Suggestion"));
+			textResultItem.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Score"));
+			textResultItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Label"));
 			textResultItem.setContent(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Content"));
+			textResultItem.setScene(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResult["+ i +"].Scene"));
 
 			textResult.add(textResultItem);
 		}
@@ -255,10 +255,10 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 		List<AudioResultItem> audioResult = new ArrayList<AudioResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult.Length"); i++) {
 			AudioResultItem audioResultItem = new AudioResultItem();
+			audioResultItem.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Score"));
 			audioResultItem.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Suggestion"));
 			audioResultItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Label"));
 			audioResultItem.setScene(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Scene"));
-			audioResultItem.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Score"));
 
 			audioResult.add(audioResultItem);
 		}

@@ -27,9 +27,9 @@ public class UpdateVideoInfosResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> nonExistVideoIds;
-
 	private List<String> forbiddenVideoIds;
+
+	private List<String> nonExistVideoIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,20 +39,20 @@ public class UpdateVideoInfosResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getNonExistVideoIds() {
-		return this.nonExistVideoIds;
-	}
-
-	public void setNonExistVideoIds(List<String> nonExistVideoIds) {
-		this.nonExistVideoIds = nonExistVideoIds;
-	}
-
 	public List<String> getForbiddenVideoIds() {
 		return this.forbiddenVideoIds;
 	}
 
 	public void setForbiddenVideoIds(List<String> forbiddenVideoIds) {
 		this.forbiddenVideoIds = forbiddenVideoIds;
+	}
+
+	public List<String> getNonExistVideoIds() {
+		return this.nonExistVideoIds;
+	}
+
+	public void setNonExistVideoIds(List<String> nonExistVideoIds) {
+		this.nonExistVideoIds = nonExistVideoIds;
 	}
 
 	@Override

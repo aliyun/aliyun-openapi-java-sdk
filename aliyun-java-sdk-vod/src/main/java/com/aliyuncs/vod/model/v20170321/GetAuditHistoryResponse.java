@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAuditHistoryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
+
+	private String requestId;
 
 	private Long total;
 
 	private List<History> histories;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -47,6 +39,14 @@ public class GetAuditHistoryResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotal() {
@@ -67,23 +67,15 @@ public class GetAuditHistoryResponse extends AcsResponse {
 
 	public static class History {
 
-		private String creationTime;
-
 		private String status;
 
-		private String reason;
+		private String creationTime;
 
 		private String comment;
 
+		private String reason;
+
 		private String auditor;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -93,12 +85,12 @@ public class GetAuditHistoryResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getReason() {
-			return this.reason;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setReason(String reason) {
-			this.reason = reason;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getComment() {
@@ -107,6 +99,14 @@ public class GetAuditHistoryResponse extends AcsResponse {
 
 		public void setComment(String comment) {
 			this.comment = comment;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 
 		public String getAuditor() {

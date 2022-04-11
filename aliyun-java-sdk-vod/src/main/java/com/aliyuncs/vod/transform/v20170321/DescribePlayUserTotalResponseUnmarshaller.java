@@ -38,17 +38,17 @@ public class DescribePlayUserTotalResponseUnmarshaller {
 			userPlayStatisTotal.setPlayRange(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].PlayRange"));
 
 			VV vV = new VV();
-			vV.setAndroid(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].VV.Android"));
-			vV.setIOS(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].VV.iOS"));
 			vV.setFlash(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].VV.Flash"));
+			vV.setIOS(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].VV.iOS"));
 			vV.setHTML5(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].VV.HTML5"));
+			vV.setAndroid(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].VV.Android"));
 			userPlayStatisTotal.setVV(vV);
 
 			UV uV = new UV();
-			uV.setAndroid(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].UV.Android"));
-			uV.setIOS(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].UV.iOS"));
 			uV.setFlash(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].UV.Flash"));
+			uV.setIOS(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].UV.iOS"));
 			uV.setHTML5(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].UV.HTML5"));
+			uV.setAndroid(_ctx.stringValue("DescribePlayUserTotalResponse.UserPlayStatisTotals["+ i +"].UV.Android"));
 			userPlayStatisTotal.setUV(uV);
 
 			userPlayStatisTotals.add(userPlayStatisTotal);

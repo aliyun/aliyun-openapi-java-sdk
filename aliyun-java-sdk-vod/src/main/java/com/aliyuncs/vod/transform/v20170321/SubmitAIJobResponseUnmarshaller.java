@@ -31,14 +31,14 @@ public class SubmitAIJobResponseUnmarshaller {
 		List<AIJob> aIJobList = new ArrayList<AIJob>();
 		for (int i = 0; i < _ctx.lengthValue("SubmitAIJobResponse.AIJobList.Length"); i++) {
 			AIJob aIJob = new AIJob();
-			aIJob.setJobId(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].JobId"));
+			aIJob.setCreationTime(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].CreationTime"));
 			aIJob.setType(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Type"));
-			aIJob.setMediaId(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].MediaId"));
 			aIJob.setStatus(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Status"));
+			aIJob.setData(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Data"));
+			aIJob.setJobId(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].JobId"));
 			aIJob.setCode(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Code"));
 			aIJob.setMessage(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Message"));
-			aIJob.setCreationTime(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].CreationTime"));
-			aIJob.setData(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Data"));
+			aIJob.setMediaId(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].MediaId"));
 
 			aIJobList.add(aIJob);
 		}

@@ -26,9 +26,9 @@ public class CreateUploadVideoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String videoId;
-
 	private String uploadAddress;
+
+	private String videoId;
 
 	private String uploadAuth;
 
@@ -40,20 +40,20 @@ public class CreateUploadVideoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getVideoId() {
-		return this.videoId;
-	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-	}
-
 	public String getUploadAddress() {
 		return this.uploadAddress;
 	}
 
 	public void setUploadAddress(String uploadAddress) {
 		this.uploadAddress = uploadAddress;
+	}
+
+	public String getVideoId() {
+		return this.videoId;
+	}
+
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
 	}
 
 	public String getUploadAuth() {

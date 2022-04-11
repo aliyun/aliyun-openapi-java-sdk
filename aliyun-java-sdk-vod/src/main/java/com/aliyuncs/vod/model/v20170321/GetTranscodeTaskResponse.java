@@ -47,45 +47,21 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 
 	public static class TranscodeTask {
 
-		private String transcodeTaskId;
-
-		private String videoId;
-
-		private String taskStatus;
-
 		private String creationTime;
-
-		private String completeTime;
 
 		private String trigger;
 
+		private String taskStatus;
+
+		private String videoId;
+
+		private String completeTime;
+
 		private String transcodeTemplateGroupId;
 
+		private String transcodeTaskId;
+
 		private List<TranscodeJobInfo> transcodeJobInfoList;
-
-		public String getTranscodeTaskId() {
-			return this.transcodeTaskId;
-		}
-
-		public void setTranscodeTaskId(String transcodeTaskId) {
-			this.transcodeTaskId = transcodeTaskId;
-		}
-
-		public String getVideoId() {
-			return this.videoId;
-		}
-
-		public void setVideoId(String videoId) {
-			this.videoId = videoId;
-		}
-
-		public String getTaskStatus() {
-			return this.taskStatus;
-		}
-
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
-		}
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -93,14 +69,6 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getCompleteTime() {
-			return this.completeTime;
-		}
-
-		public void setCompleteTime(String completeTime) {
-			this.completeTime = completeTime;
 		}
 
 		public String getTrigger() {
@@ -111,12 +79,44 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 			this.trigger = trigger;
 		}
 
+		public String getTaskStatus() {
+			return this.taskStatus;
+		}
+
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
+		}
+
+		public String getVideoId() {
+			return this.videoId;
+		}
+
+		public void setVideoId(String videoId) {
+			this.videoId = videoId;
+		}
+
+		public String getCompleteTime() {
+			return this.completeTime;
+		}
+
+		public void setCompleteTime(String completeTime) {
+			this.completeTime = completeTime;
+		}
+
 		public String getTranscodeTemplateGroupId() {
 			return this.transcodeTemplateGroupId;
 		}
 
 		public void setTranscodeTemplateGroupId(String transcodeTemplateGroupId) {
 			this.transcodeTemplateGroupId = transcodeTemplateGroupId;
+		}
+
+		public String getTranscodeTaskId() {
+			return this.transcodeTaskId;
+		}
+
+		public void setTranscodeTaskId(String transcodeTaskId) {
+			this.transcodeTaskId = transcodeTaskId;
 		}
 
 		public List<TranscodeJobInfo> getTranscodeJobInfoList() {
@@ -129,52 +129,36 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 
 		public static class TranscodeJobInfo {
 
-			private String transcodeJobId;
-
-			private String transcodeTemplateId;
-
-			private String transcodeJobStatus;
+			private String definition;
 
 			private String creationTime;
+
+			private String inputFileUrl;
+
+			private String errorMessage;
+
+			private String errorCode;
 
 			private String completeTime;
 
 			private Long transcodeProgress;
 
-			private String inputFileUrl;
-
 			private String priority;
 
-			private String errorCode;
+			private String transcodeJobStatus;
 
-			private String errorMessage;
+			private String transcodeTemplateId;
 
-			private String definition;
+			private String transcodeJobId;
 
 			private OutputFile outputFile;
 
-			public String getTranscodeJobId() {
-				return this.transcodeJobId;
+			public String getDefinition() {
+				return this.definition;
 			}
 
-			public void setTranscodeJobId(String transcodeJobId) {
-				this.transcodeJobId = transcodeJobId;
-			}
-
-			public String getTranscodeTemplateId() {
-				return this.transcodeTemplateId;
-			}
-
-			public void setTranscodeTemplateId(String transcodeTemplateId) {
-				this.transcodeTemplateId = transcodeTemplateId;
-			}
-
-			public String getTranscodeJobStatus() {
-				return this.transcodeJobStatus;
-			}
-
-			public void setTranscodeJobStatus(String transcodeJobStatus) {
-				this.transcodeJobStatus = transcodeJobStatus;
+			public void setDefinition(String definition) {
+				this.definition = definition;
 			}
 
 			public String getCreationTime() {
@@ -183,6 +167,30 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 
 			public void setCreationTime(String creationTime) {
 				this.creationTime = creationTime;
+			}
+
+			public String getInputFileUrl() {
+				return this.inputFileUrl;
+			}
+
+			public void setInputFileUrl(String inputFileUrl) {
+				this.inputFileUrl = inputFileUrl;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
 			}
 
 			public String getCompleteTime() {
@@ -201,14 +209,6 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 				this.transcodeProgress = transcodeProgress;
 			}
 
-			public String getInputFileUrl() {
-				return this.inputFileUrl;
-			}
-
-			public void setInputFileUrl(String inputFileUrl) {
-				this.inputFileUrl = inputFileUrl;
-			}
-
 			public String getPriority() {
 				return this.priority;
 			}
@@ -217,28 +217,28 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public String getErrorCode() {
-				return this.errorCode;
+			public String getTranscodeJobStatus() {
+				return this.transcodeJobStatus;
 			}
 
-			public void setErrorCode(String errorCode) {
-				this.errorCode = errorCode;
+			public void setTranscodeJobStatus(String transcodeJobStatus) {
+				this.transcodeJobStatus = transcodeJobStatus;
 			}
 
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getTranscodeTemplateId() {
+				return this.transcodeTemplateId;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setTranscodeTemplateId(String transcodeTemplateId) {
+				this.transcodeTemplateId = transcodeTemplateId;
 			}
 
-			public String getDefinition() {
-				return this.definition;
+			public String getTranscodeJobId() {
+				return this.transcodeJobId;
 			}
 
-			public void setDefinition(String definition) {
-				this.definition = definition;
+			public void setTranscodeJobId(String transcodeJobId) {
+				this.transcodeJobId = transcodeJobId;
 			}
 
 			public OutputFile getOutputFile() {
@@ -251,86 +251,46 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 
 			public static class OutputFile {
 
-				private String width;
-
-				private String height;
-
-				private String bitrate;
-
-				private String fps;
-
-				private String format;
-
-				private String duration;
-
-				private Long filesize;
-
-				private String encryption;
-
-				private String audioStreamList;
-
 				private String videoStreamList;
-
-				private String subtitleStreamList;
 
 				private String outputFileUrl;
 
+				private String encryption;
+
+				private String height;
+
+				private String subtitleStreamList;
+
+				private String bitrate;
+
+				private String audioStreamList;
+
+				private String width;
+
+				private String fps;
+
+				private String duration;
+
+				private String format;
+
+				private Long filesize;
+
 				private List<String> watermarkIdList;
 
-				public String getWidth() {
-					return this.width;
+				public String getVideoStreamList() {
+					return this.videoStreamList;
 				}
 
-				public void setWidth(String width) {
-					this.width = width;
+				public void setVideoStreamList(String videoStreamList) {
+					this.videoStreamList = videoStreamList;
 				}
 
-				public String getHeight() {
-					return this.height;
+				public String getOutputFileUrl() {
+					return this.outputFileUrl;
 				}
 
-				public void setHeight(String height) {
-					this.height = height;
-				}
-
-				public String getBitrate() {
-					return this.bitrate;
-				}
-
-				public void setBitrate(String bitrate) {
-					this.bitrate = bitrate;
-				}
-
-				public String getFps() {
-					return this.fps;
-				}
-
-				public void setFps(String fps) {
-					this.fps = fps;
-				}
-
-				public String getFormat() {
-					return this.format;
-				}
-
-				public void setFormat(String format) {
-					this.format = format;
-				}
-
-				public String getDuration() {
-					return this.duration;
-				}
-
-				public void setDuration(String duration) {
-					this.duration = duration;
-				}
-
-				public Long getFilesize() {
-					return this.filesize;
-				}
-
-				public void setFilesize(Long filesize) {
-					this.filesize = filesize;
+				public void setOutputFileUrl(String outputFileUrl) {
+					this.outputFileUrl = outputFileUrl;
 				}
 
 				public String getEncryption() {
@@ -341,20 +301,12 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 					this.encryption = encryption;
 				}
 
-				public String getAudioStreamList() {
-					return this.audioStreamList;
+				public String getHeight() {
+					return this.height;
 				}
 
-				public void setAudioStreamList(String audioStreamList) {
-					this.audioStreamList = audioStreamList;
-				}
-
-				public String getVideoStreamList() {
-					return this.videoStreamList;
-				}
-
-				public void setVideoStreamList(String videoStreamList) {
-					this.videoStreamList = videoStreamList;
+				public void setHeight(String height) {
+					this.height = height;
 				}
 
 				public String getSubtitleStreamList() {
@@ -365,12 +317,60 @@ public class GetTranscodeTaskResponse extends AcsResponse {
 					this.subtitleStreamList = subtitleStreamList;
 				}
 
-				public String getOutputFileUrl() {
-					return this.outputFileUrl;
+				public String getBitrate() {
+					return this.bitrate;
 				}
 
-				public void setOutputFileUrl(String outputFileUrl) {
-					this.outputFileUrl = outputFileUrl;
+				public void setBitrate(String bitrate) {
+					this.bitrate = bitrate;
+				}
+
+				public String getAudioStreamList() {
+					return this.audioStreamList;
+				}
+
+				public void setAudioStreamList(String audioStreamList) {
+					this.audioStreamList = audioStreamList;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getFps() {
+					return this.fps;
+				}
+
+				public void setFps(String fps) {
+					this.fps = fps;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+
+				public Long getFilesize() {
+					return this.filesize;
+				}
+
+				public void setFilesize(Long filesize) {
+					this.filesize = filesize;
 				}
 
 				public List<String> getWatermarkIdList() {

@@ -31,16 +31,16 @@ public class GetAIImageJobsResponseUnmarshaller {
 		List<AIImageJob> aIImageJobList = new ArrayList<AIImageJob>();
 		for (int i = 0; i < _ctx.lengthValue("GetAIImageJobsResponse.AIImageJobList.Length"); i++) {
 			AIImageJob aIImageJob = new AIImageJob();
+			aIImageJob.setStatus(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].Status"));
 			aIImageJob.setCreationTime(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].CreationTime"));
-			aIImageJob.setJobId(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].JobId"));
-			aIImageJob.setTemplateId(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].TemplateId"));
-			aIImageJob.setVideoId(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].VideoId"));
 			aIImageJob.setAIImageResult(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].AIImageResult"));
+			aIImageJob.setVideoId(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].VideoId"));
+			aIImageJob.setJobId(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].JobId"));
 			aIImageJob.setUserData(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].UserData"));
 			aIImageJob.setCode(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].Code"));
 			aIImageJob.setMessage(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].Message"));
-			aIImageJob.setStatus(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].Status"));
 			aIImageJob.setTemplateConfig(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].TemplateConfig"));
+			aIImageJob.setTemplateId(_ctx.stringValue("GetAIImageJobsResponse.AIImageJobList["+ i +"].TemplateId"));
 
 			aIImageJobList.add(aIImageJob);
 		}

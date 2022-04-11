@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RefreshVodObjectCachesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String refreshTaskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getRefreshTaskId() {
 		return this.refreshTaskId;
@@ -42,6 +34,14 @@ public class RefreshVodObjectCachesResponse extends AcsResponse {
 
 	public void setRefreshTaskId(String refreshTaskId) {
 		this.refreshTaskId = refreshTaskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

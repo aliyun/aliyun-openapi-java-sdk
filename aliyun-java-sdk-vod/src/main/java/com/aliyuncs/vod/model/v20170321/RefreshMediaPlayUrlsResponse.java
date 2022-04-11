@@ -15,25 +15,45 @@
 package com.aliyuncs.vod.model.v20170321;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vod.transform.v20170321.SubmitAIImageAuditJobResponseUnmarshaller;
+import com.aliyuncs.vod.transform.v20170321.RefreshMediaPlayUrlsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitAIImageAuditJobResponse extends AcsResponse {
+public class RefreshMediaPlayUrlsResponse extends AcsResponse {
 
-	private String jobId;
+	private String mediaRefreshJobId;
+
+	private String nonExistMediaIds;
+
+	private String forbiddenMediaIds;
 
 	private String requestId;
 
-	public String getJobId() {
-		return this.jobId;
+	public String getMediaRefreshJobId() {
+		return this.mediaRefreshJobId;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
+	public void setMediaRefreshJobId(String mediaRefreshJobId) {
+		this.mediaRefreshJobId = mediaRefreshJobId;
+	}
+
+	public String getNonExistMediaIds() {
+		return this.nonExistMediaIds;
+	}
+
+	public void setNonExistMediaIds(String nonExistMediaIds) {
+		this.nonExistMediaIds = nonExistMediaIds;
+	}
+
+	public String getForbiddenMediaIds() {
+		return this.forbiddenMediaIds;
+	}
+
+	public void setForbiddenMediaIds(String forbiddenMediaIds) {
+		this.forbiddenMediaIds = forbiddenMediaIds;
 	}
 
 	public String getRequestId() {
@@ -45,8 +65,8 @@ public class SubmitAIImageAuditJobResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubmitAIImageAuditJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitAIImageAuditJobResponseUnmarshaller.unmarshall(this, context);
+	public RefreshMediaPlayUrlsResponse getInstance(UnmarshallerContext context) {
+		return	RefreshMediaPlayUrlsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

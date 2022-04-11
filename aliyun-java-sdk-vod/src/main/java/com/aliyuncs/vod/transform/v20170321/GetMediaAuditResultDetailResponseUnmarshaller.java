@@ -35,18 +35,18 @@ public class GetMediaAuditResultDetailResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List.Length"); i++) {
 			ListItem listItem = new ListItem();
+			listItem.setTerrorismScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismScore"));
+			listItem.setAdLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].AdLabel"));
 			listItem.setPornLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].PornLabel"));
 			listItem.setPornScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].PornScore"));
-			listItem.setTerrorismLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismLabel"));
-			listItem.setTerrorismScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismScore"));
-			listItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Timestamp"));
-			listItem.setUrl(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Url"));
-			listItem.setAdLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].AdLabel"));
-			listItem.setAdScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].AdScore"));
 			listItem.setLiveLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LiveLabel"));
+			listItem.setUrl(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Url"));
+			listItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Timestamp"));
+			listItem.setAdScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].AdScore"));
 			listItem.setLiveScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LiveScore"));
-			listItem.setLogoLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LogoLabel"));
 			listItem.setLogoScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LogoScore"));
+			listItem.setLogoLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].LogoLabel"));
+			listItem.setTerrorismLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismLabel"));
 
 			list.add(listItem);
 		}

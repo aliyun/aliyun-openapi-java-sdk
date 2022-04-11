@@ -27,9 +27,9 @@ public class DeleteMezzaninesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> nonExistVideoIds;
-
 	private List<String> unRemoveableVideoIds;
+
+	private List<String> nonExistVideoIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,20 +39,20 @@ public class DeleteMezzaninesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getNonExistVideoIds() {
-		return this.nonExistVideoIds;
-	}
-
-	public void setNonExistVideoIds(List<String> nonExistVideoIds) {
-		this.nonExistVideoIds = nonExistVideoIds;
-	}
-
 	public List<String> getUnRemoveableVideoIds() {
 		return this.unRemoveableVideoIds;
 	}
 
 	public void setUnRemoveableVideoIds(List<String> unRemoveableVideoIds) {
 		this.unRemoveableVideoIds = unRemoveableVideoIds;
+	}
+
+	public List<String> getNonExistVideoIds() {
+		return this.nonExistVideoIds;
+	}
+
+	public void setNonExistVideoIds(List<String> nonExistVideoIds) {
+		this.nonExistVideoIds = nonExistVideoIds;
 	}
 
 	@Override

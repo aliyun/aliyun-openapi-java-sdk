@@ -31,10 +31,10 @@ public class ListAuditSecurityIpResponseUnmarshaller {
 		List<SecurityIp> securityIpList = new ArrayList<SecurityIp>();
 		for (int i = 0; i < _ctx.lengthValue("ListAuditSecurityIpResponse.SecurityIpList.Length"); i++) {
 			SecurityIp securityIp = new SecurityIp();
-			securityIp.setSecurityGroupName(_ctx.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].SecurityGroupName"));
-			securityIp.setIps(_ctx.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].Ips"));
 			securityIp.setCreationTime(_ctx.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].CreationTime"));
+			securityIp.setIps(_ctx.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].Ips"));
 			securityIp.setModificationTime(_ctx.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].ModificationTime"));
+			securityIp.setSecurityGroupName(_ctx.stringValue("ListAuditSecurityIpResponse.SecurityIpList["+ i +"].SecurityGroupName"));
 
 			securityIpList.add(securityIp);
 		}

@@ -38,9 +38,9 @@ public class GetMediaAuditResultTimelineResponseUnmarshaller {
 		List<PornItem> porn = new ArrayList<PornItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn.Length"); i++) {
 			PornItem pornItem = new PornItem();
-			pornItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Label"));
 			pornItem.setScore(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Score"));
 			pornItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Timestamp"));
+			pornItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Label"));
 
 			porn.add(pornItem);
 		}
@@ -49,9 +49,9 @@ public class GetMediaAuditResultTimelineResponseUnmarshaller {
 		List<TerrorismItem> terrorism = new ArrayList<TerrorismItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism.Length"); i++) {
 			TerrorismItem terrorismItem = new TerrorismItem();
-			terrorismItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Label"));
 			terrorismItem.setScore(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Score"));
 			terrorismItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Timestamp"));
+			terrorismItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Label"));
 
 			terrorism.add(terrorismItem);
 		}
@@ -60,9 +60,9 @@ public class GetMediaAuditResultTimelineResponseUnmarshaller {
 		List<LogoItem> logo = new ArrayList<LogoItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Logo.Length"); i++) {
 			LogoItem logoItem = new LogoItem();
-			logoItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Logo["+ i +"].Label"));
 			logoItem.setScore(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Logo["+ i +"].Score"));
 			logoItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Logo["+ i +"].Timestamp"));
+			logoItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Logo["+ i +"].Label"));
 
 			logo.add(logoItem);
 		}
@@ -71,9 +71,9 @@ public class GetMediaAuditResultTimelineResponseUnmarshaller {
 		List<LiveItem> live = new ArrayList<LiveItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Live.Length"); i++) {
 			LiveItem liveItem = new LiveItem();
-			liveItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Live["+ i +"].Label"));
 			liveItem.setScore(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Live["+ i +"].Score"));
 			liveItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Live["+ i +"].Timestamp"));
+			liveItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Live["+ i +"].Label"));
 
 			live.add(liveItem);
 		}
@@ -82,9 +82,9 @@ public class GetMediaAuditResultTimelineResponseUnmarshaller {
 		List<AdItem> ad = new ArrayList<AdItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Ad.Length"); i++) {
 			AdItem adItem = new AdItem();
-			adItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Ad["+ i +"].Label"));
 			adItem.setScore(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Ad["+ i +"].Score"));
 			adItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Ad["+ i +"].Timestamp"));
+			adItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Ad["+ i +"].Label"));
 
 			ad.add(adItem);
 		}

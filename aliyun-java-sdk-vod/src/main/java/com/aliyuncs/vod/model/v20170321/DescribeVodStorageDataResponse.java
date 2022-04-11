@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVodStorageDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dataInterval;
 
+	private String requestId;
+
 	private List<StorageDataItem> storageData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDataInterval() {
 		return this.dataInterval;
@@ -45,6 +37,14 @@ public class DescribeVodStorageDataResponse extends AcsResponse {
 
 	public void setDataInterval(String dataInterval) {
 		this.dataInterval = dataInterval;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<StorageDataItem> getStorageData() {

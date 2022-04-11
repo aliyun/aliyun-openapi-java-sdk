@@ -28,34 +28,34 @@ public class GetUploadDetailsResponseUnmarshaller {
 		
 		getUploadDetailsResponse.setRequestId(_ctx.stringValue("GetUploadDetailsResponse.RequestId"));
 
-		List<String> nonExistMediaIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetUploadDetailsResponse.NonExistMediaIds.Length"); i++) {
-			nonExistMediaIds.add(_ctx.stringValue("GetUploadDetailsResponse.NonExistMediaIds["+ i +"]"));
-		}
-		getUploadDetailsResponse.setNonExistMediaIds(nonExistMediaIds);
-
 		List<String> forbiddenMediaIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetUploadDetailsResponse.ForbiddenMediaIds.Length"); i++) {
 			forbiddenMediaIds.add(_ctx.stringValue("GetUploadDetailsResponse.ForbiddenMediaIds["+ i +"]"));
 		}
 		getUploadDetailsResponse.setForbiddenMediaIds(forbiddenMediaIds);
 
+		List<String> nonExistMediaIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetUploadDetailsResponse.NonExistMediaIds.Length"); i++) {
+			nonExistMediaIds.add(_ctx.stringValue("GetUploadDetailsResponse.NonExistMediaIds["+ i +"]"));
+		}
+		getUploadDetailsResponse.setNonExistMediaIds(nonExistMediaIds);
+
 		List<UploadDetail> uploadDetails = new ArrayList<UploadDetail>();
 		for (int i = 0; i < _ctx.lengthValue("GetUploadDetailsResponse.UploadDetails.Length"); i++) {
 			UploadDetail uploadDetail = new UploadDetail();
-			uploadDetail.setMediaId(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].MediaId"));
-			uploadDetail.setTitle(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].Title"));
-			uploadDetail.setFileSize(_ctx.longValue("GetUploadDetailsResponse.UploadDetails["+ i +"].FileSize"));
 			uploadDetail.setStatus(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].Status"));
-			uploadDetail.setUploadStatus(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].UploadStatus"));
 			uploadDetail.setCreationTime(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].CreationTime"));
+			uploadDetail.setUploadSource(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].UploadSource"));
+			uploadDetail.setUploadIP(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].UploadIP"));
+			uploadDetail.setDeviceModel(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].DeviceModel"));
 			uploadDetail.setModificationTime(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].ModificationTime"));
 			uploadDetail.setCompletionTime(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].CompletionTime"));
+			uploadDetail.setMediaId(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].MediaId"));
 			uploadDetail.setUploadSize(_ctx.longValue("GetUploadDetailsResponse.UploadDetails["+ i +"].UploadSize"));
 			uploadDetail.setUploadRatio(_ctx.floatValue("GetUploadDetailsResponse.UploadDetails["+ i +"].UploadRatio"));
-			uploadDetail.setUploadIP(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].UploadIP"));
-			uploadDetail.setUploadSource(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].UploadSource"));
-			uploadDetail.setDeviceModel(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].DeviceModel"));
+			uploadDetail.setUploadStatus(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].UploadStatus"));
+			uploadDetail.setTitle(_ctx.stringValue("GetUploadDetailsResponse.UploadDetails["+ i +"].Title"));
+			uploadDetail.setFileSize(_ctx.longValue("GetUploadDetailsResponse.UploadDetails["+ i +"].FileSize"));
 
 			uploadDetails.add(uploadDetail);
 		}

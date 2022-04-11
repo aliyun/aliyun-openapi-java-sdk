@@ -26,11 +26,11 @@ public class RefreshUploadVideoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String uploadAuth;
-
 	private String uploadAddress;
 
 	private String videoId;
+
+	private String uploadAuth;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +38,6 @@ public class RefreshUploadVideoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getUploadAuth() {
-		return this.uploadAuth;
-	}
-
-	public void setUploadAuth(String uploadAuth) {
-		this.uploadAuth = uploadAuth;
 	}
 
 	public String getUploadAddress() {
@@ -62,6 +54,14 @@ public class RefreshUploadVideoResponse extends AcsResponse {
 
 	public void setVideoId(String videoId) {
 		this.videoId = videoId;
+	}
+
+	public String getUploadAuth() {
+		return this.uploadAuth;
+	}
+
+	public void setUploadAuth(String uploadAuth) {
+		this.uploadAuth = uploadAuth;
 	}
 
 	@Override

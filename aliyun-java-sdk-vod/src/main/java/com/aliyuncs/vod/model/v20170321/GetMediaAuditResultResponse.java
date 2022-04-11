@@ -47,11 +47,11 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 	public static class MediaAuditResult {
 
+		private String suggestion;
+
 		private String abnormalModules;
 
 		private String label;
-
-		private String suggestion;
 
 		private List<AudioResultItem> audioResult;
 
@@ -60,6 +60,14 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 		private List<TextResultItem> textResult;
 
 		private VideoResult videoResult;
+
+		public String getSuggestion() {
+			return this.suggestion;
+		}
+
+		public void setSuggestion(String suggestion) {
+			this.suggestion = suggestion;
+		}
 
 		public String getAbnormalModules() {
 			return this.abnormalModules;
@@ -75,14 +83,6 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 		public void setLabel(String label) {
 			this.label = label;
-		}
-
-		public String getSuggestion() {
-			return this.suggestion;
-		}
-
-		public void setSuggestion(String suggestion) {
-			this.suggestion = suggestion;
 		}
 
 		public List<AudioResultItem> getAudioResult() {
@@ -119,29 +119,13 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 		public static class AudioResultItem {
 
-			private String label;
-
-			private String scene;
-
 			private String score;
 
 			private String suggestion;
 
-			public String getLabel() {
-				return this.label;
-			}
+			private String label;
 
-			public void setLabel(String label) {
-				this.label = label;
-			}
-
-			public String getScene() {
-				return this.scene;
-			}
-
-			public void setScene(String scene) {
-				this.scene = scene;
-			}
+			private String scene;
 
 			public String getScore() {
 				return this.score;
@@ -158,19 +142,6 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 			public void setSuggestion(String suggestion) {
 				this.suggestion = suggestion;
 			}
-		}
-
-		public static class ImageResultItem {
-
-			private String label;
-
-			private String suggestion;
-
-			private String type;
-
-			private String url;
-
-			private List<ResultItem> result;
 
 			public String getLabel() {
 				return this.label;
@@ -180,13 +151,26 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 				this.label = label;
 			}
 
-			public String getSuggestion() {
-				return this.suggestion;
+			public String getScene() {
+				return this.scene;
 			}
 
-			public void setSuggestion(String suggestion) {
-				this.suggestion = suggestion;
+			public void setScene(String scene) {
+				this.scene = scene;
 			}
+		}
+
+		public static class ImageResultItem {
+
+			private String type;
+
+			private String url;
+
+			private String suggestion;
+
+			private String label;
+
+			private List<ResultItem> result;
 
 			public String getType() {
 				return this.type;
@@ -204,6 +188,22 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 				this.url = url;
 			}
 
+			public String getSuggestion() {
+				return this.suggestion;
+			}
+
+			public void setSuggestion(String suggestion) {
+				this.suggestion = suggestion;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
 			public List<ResultItem> getResult() {
 				return this.result;
 			}
@@ -214,29 +214,13 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 			public static class ResultItem {
 
-				private String label;
-
-				private String scene;
-
 				private String score;
 
 				private String suggestion;
 
-				public String getLabel() {
-					return this.label;
-				}
+				private String label;
 
-				public void setLabel(String label) {
-					this.label = label;
-				}
-
-				public String getScene() {
-					return this.scene;
-				}
-
-				public void setScene(String scene) {
-					this.scene = scene;
-				}
+				private String scene;
 
 				public String getScore() {
 					return this.score;
@@ -253,53 +237,45 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 				public void setSuggestion(String suggestion) {
 					this.suggestion = suggestion;
 				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
+				public String getScene() {
+					return this.scene;
+				}
+
+				public void setScene(String scene) {
+					this.scene = scene;
+				}
 			}
 		}
 
 		public static class TextResultItem {
 
-			private String content;
-
-			private String label;
-
-			private String scene;
-
-			private String score;
+			private String type;
 
 			private String suggestion;
 
-			private String type;
+			private String score;
 
-			public String getContent() {
-				return this.content;
+			private String label;
+
+			private String content;
+
+			private String scene;
+
+			public String getType() {
+				return this.type;
 			}
 
-			public void setContent(String content) {
-				this.content = content;
-			}
-
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
-
-			public String getScene() {
-				return this.scene;
-			}
-
-			public void setScene(String scene) {
-				this.scene = scene;
-			}
-
-			public String getScore() {
-				return this.score;
-			}
-
-			public void setScore(String score) {
-				this.score = score;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getSuggestion() {
@@ -310,12 +286,36 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 				this.suggestion = suggestion;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getScore() {
+				return this.score;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setScore(String score) {
+				this.score = score;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+
+			public String getScene() {
+				return this.scene;
+			}
+
+			public void setScene(String scene) {
+				this.scene = scene;
 			}
 		}
 
@@ -393,17 +393,25 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 			public static class PornResult {
 
+				private String suggestion;
+
 				private String averageScore;
 
 				private String label;
 
 				private String maxScore;
 
-				private String suggestion;
-
 				private List<CounterListItem> counterList;
 
 				private List<TopListItem> topList;
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
 
 				public String getAverageScore() {
 					return this.averageScore;
@@ -427,14 +435,6 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public void setMaxScore(String maxScore) {
 					this.maxScore = maxScore;
-				}
-
-				public String getSuggestion() {
-					return this.suggestion;
-				}
-
-				public void setSuggestion(String suggestion) {
-					this.suggestion = suggestion;
 				}
 
 				public List<CounterListItem> getCounterList() {
@@ -455,9 +455,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public static class CounterListItem {
 
+					private String label;
+
 					private Integer count;
 
-					private String label;
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
 
 					public Integer getCount() {
 						return this.count;
@@ -466,32 +474,24 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 					public void setCount(Integer count) {
 						this.count = count;
 					}
-
-					public String getLabel() {
-						return this.label;
-					}
-
-					public void setLabel(String label) {
-						this.label = label;
-					}
 				}
 
 				public static class TopListItem {
 
-					private String label;
+					private String url;
 
 					private String score;
 
 					private String timestamp;
 
-					private String url;
+					private String label;
 
-					public String getLabel() {
-						return this.label;
+					public String getUrl() {
+						return this.url;
 					}
 
-					public void setLabel(String label) {
-						this.label = label;
+					public void setUrl(String url) {
+						this.url = url;
 					}
 
 					public String getScore() {
@@ -510,17 +510,19 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 						this.timestamp = timestamp;
 					}
 
-					public String getUrl() {
-						return this.url;
+					public String getLabel() {
+						return this.label;
 					}
 
-					public void setUrl(String url) {
-						this.url = url;
+					public void setLabel(String label) {
+						this.label = label;
 					}
 				}
 			}
 
 			public static class AdResult {
+
+				private String suggestion;
 
 				private String averageScore;
 
@@ -528,11 +530,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				private String maxScore;
 
-				private String suggestion;
-
 				private List<CounterListItem3> counterList1;
 
 				private List<TopListItem4> topList2;
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
 
 				public String getAverageScore() {
 					return this.averageScore;
@@ -556,14 +564,6 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public void setMaxScore(String maxScore) {
 					this.maxScore = maxScore;
-				}
-
-				public String getSuggestion() {
-					return this.suggestion;
-				}
-
-				public void setSuggestion(String suggestion) {
-					this.suggestion = suggestion;
 				}
 
 				public List<CounterListItem3> getCounterList1() {
@@ -584,9 +584,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public static class CounterListItem3 {
 
+					private String label;
+
 					private Integer count;
 
-					private String label;
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
 
 					public Integer getCount() {
 						return this.count;
@@ -595,32 +603,24 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 					public void setCount(Integer count) {
 						this.count = count;
 					}
-
-					public String getLabel() {
-						return this.label;
-					}
-
-					public void setLabel(String label) {
-						this.label = label;
-					}
 				}
 
 				public static class TopListItem4 {
 
-					private String label;
+					private String url;
 
 					private String score;
 
 					private String timestamp;
 
-					private String url;
+					private String label;
 
-					public String getLabel() {
-						return this.label;
+					public String getUrl() {
+						return this.url;
 					}
 
-					public void setLabel(String label) {
-						this.label = label;
+					public void setUrl(String url) {
+						this.url = url;
 					}
 
 					public String getScore() {
@@ -639,17 +639,19 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 						this.timestamp = timestamp;
 					}
 
-					public String getUrl() {
-						return this.url;
+					public String getLabel() {
+						return this.label;
 					}
 
-					public void setUrl(String url) {
-						this.url = url;
+					public void setLabel(String label) {
+						this.label = label;
 					}
 				}
 			}
 
 			public static class LogoResult {
+
+				private String suggestion;
 
 				private String averageScore;
 
@@ -657,11 +659,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				private String maxScore;
 
-				private String suggestion;
-
 				private List<CounterListItem7> counterList5;
 
 				private List<TopListItem8> topList6;
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
 
 				public String getAverageScore() {
 					return this.averageScore;
@@ -685,14 +693,6 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public void setMaxScore(String maxScore) {
 					this.maxScore = maxScore;
-				}
-
-				public String getSuggestion() {
-					return this.suggestion;
-				}
-
-				public void setSuggestion(String suggestion) {
-					this.suggestion = suggestion;
 				}
 
 				public List<CounterListItem7> getCounterList5() {
@@ -713,9 +713,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public static class CounterListItem7 {
 
+					private String label;
+
 					private Integer count;
 
-					private String label;
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
 
 					public Integer getCount() {
 						return this.count;
@@ -724,32 +732,24 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 					public void setCount(Integer count) {
 						this.count = count;
 					}
-
-					public String getLabel() {
-						return this.label;
-					}
-
-					public void setLabel(String label) {
-						this.label = label;
-					}
 				}
 
 				public static class TopListItem8 {
 
-					private String label;
+					private String url;
 
 					private String score;
 
 					private String timestamp;
 
-					private String url;
+					private String label;
 
-					public String getLabel() {
-						return this.label;
+					public String getUrl() {
+						return this.url;
 					}
 
-					public void setLabel(String label) {
-						this.label = label;
+					public void setUrl(String url) {
+						this.url = url;
 					}
 
 					public String getScore() {
@@ -768,17 +768,19 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 						this.timestamp = timestamp;
 					}
 
-					public String getUrl() {
-						return this.url;
+					public String getLabel() {
+						return this.label;
 					}
 
-					public void setUrl(String url) {
-						this.url = url;
+					public void setLabel(String label) {
+						this.label = label;
 					}
 				}
 			}
 
 			public static class LiveResult {
+
+				private String suggestion;
 
 				private String averageScore;
 
@@ -786,11 +788,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				private String maxScore;
 
-				private String suggestion;
-
 				private List<CounterListItem11> counterList9;
 
 				private List<TopListItem12> topList10;
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
 
 				public String getAverageScore() {
 					return this.averageScore;
@@ -814,14 +822,6 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public void setMaxScore(String maxScore) {
 					this.maxScore = maxScore;
-				}
-
-				public String getSuggestion() {
-					return this.suggestion;
-				}
-
-				public void setSuggestion(String suggestion) {
-					this.suggestion = suggestion;
 				}
 
 				public List<CounterListItem11> getCounterList9() {
@@ -842,9 +842,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public static class CounterListItem11 {
 
+					private String label;
+
 					private Integer count;
 
-					private String label;
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
 
 					public Integer getCount() {
 						return this.count;
@@ -853,32 +861,24 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 					public void setCount(Integer count) {
 						this.count = count;
 					}
-
-					public String getLabel() {
-						return this.label;
-					}
-
-					public void setLabel(String label) {
-						this.label = label;
-					}
 				}
 
 				public static class TopListItem12 {
 
-					private String label;
+					private String url;
 
 					private String score;
 
 					private String timestamp;
 
-					private String url;
+					private String label;
 
-					public String getLabel() {
-						return this.label;
+					public String getUrl() {
+						return this.url;
 					}
 
-					public void setLabel(String label) {
-						this.label = label;
+					public void setUrl(String url) {
+						this.url = url;
 					}
 
 					public String getScore() {
@@ -897,17 +897,19 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 						this.timestamp = timestamp;
 					}
 
-					public String getUrl() {
-						return this.url;
+					public String getLabel() {
+						return this.label;
 					}
 
-					public void setUrl(String url) {
-						this.url = url;
+					public void setLabel(String label) {
+						this.label = label;
 					}
 				}
 			}
 
 			public static class TerrorismResult {
+
+				private String suggestion;
 
 				private String averageScore;
 
@@ -915,11 +917,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				private String maxScore;
 
-				private String suggestion;
-
 				private List<CounterListItem15> counterList13;
 
 				private List<TopListItem16> topList14;
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
 
 				public String getAverageScore() {
 					return this.averageScore;
@@ -945,14 +953,6 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 					this.maxScore = maxScore;
 				}
 
-				public String getSuggestion() {
-					return this.suggestion;
-				}
-
-				public void setSuggestion(String suggestion) {
-					this.suggestion = suggestion;
-				}
-
 				public List<CounterListItem15> getCounterList13() {
 					return this.counterList13;
 				}
@@ -971,9 +971,17 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 
 				public static class CounterListItem15 {
 
+					private String label;
+
 					private Integer count;
 
-					private String label;
+					public String getLabel() {
+						return this.label;
+					}
+
+					public void setLabel(String label) {
+						this.label = label;
+					}
 
 					public Integer getCount() {
 						return this.count;
@@ -982,32 +990,24 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 					public void setCount(Integer count) {
 						this.count = count;
 					}
-
-					public String getLabel() {
-						return this.label;
-					}
-
-					public void setLabel(String label) {
-						this.label = label;
-					}
 				}
 
 				public static class TopListItem16 {
 
-					private String label;
+					private String url;
 
 					private String score;
 
 					private String timestamp;
 
-					private String url;
+					private String label;
 
-					public String getLabel() {
-						return this.label;
+					public String getUrl() {
+						return this.url;
 					}
 
-					public void setLabel(String label) {
-						this.label = label;
+					public void setUrl(String url) {
+						this.url = url;
 					}
 
 					public String getScore() {
@@ -1026,12 +1026,12 @@ public class GetMediaAuditResultResponse extends AcsResponse {
 						this.timestamp = timestamp;
 					}
 
-					public String getUrl() {
-						return this.url;
+					public String getLabel() {
+						return this.label;
 					}
 
-					public void setUrl(String url) {
-						this.url = url;
+					public void setLabel(String label) {
+						this.label = label;
 					}
 				}
 			}

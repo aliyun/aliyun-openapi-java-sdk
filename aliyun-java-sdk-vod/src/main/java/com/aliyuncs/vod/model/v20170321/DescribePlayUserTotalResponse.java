@@ -99,20 +99,20 @@ public class DescribePlayUserTotalResponse extends AcsResponse {
 
 		public static class VV {
 
-			private String android;
+			private String flash;
 
 			private String iOS;
 
-			private String flash;
-
 			private String hTML5;
 
-			public String getAndroid() {
-				return this.android;
+			private String android;
+
+			public String getFlash() {
+				return this.flash;
 			}
 
-			public void setAndroid(String android) {
-				this.android = android;
+			public void setFlash(String flash) {
+				this.flash = flash;
 			}
 
 			public String getIOS() {
@@ -123,39 +123,39 @@ public class DescribePlayUserTotalResponse extends AcsResponse {
 				this.iOS = iOS;
 			}
 
-			public String getFlash() {
-				return this.flash;
-			}
-
-			public void setFlash(String flash) {
-				this.flash = flash;
-			}
-
 			public String getHTML5() {
 				return this.hTML5;
 			}
 
 			public void setHTML5(String hTML5) {
 				this.hTML5 = hTML5;
+			}
+
+			public String getAndroid() {
+				return this.android;
+			}
+
+			public void setAndroid(String android) {
+				this.android = android;
 			}
 		}
 
 		public static class UV {
 
-			private String android;
+			private String flash;
 
 			private String iOS;
 
-			private String flash;
-
 			private String hTML5;
 
-			public String getAndroid() {
-				return this.android;
+			private String android;
+
+			public String getFlash() {
+				return this.flash;
 			}
 
-			public void setAndroid(String android) {
-				this.android = android;
+			public void setFlash(String flash) {
+				this.flash = flash;
 			}
 
 			public String getIOS() {
@@ -166,20 +166,20 @@ public class DescribePlayUserTotalResponse extends AcsResponse {
 				this.iOS = iOS;
 			}
 
-			public String getFlash() {
-				return this.flash;
-			}
-
-			public void setFlash(String flash) {
-				this.flash = flash;
-			}
-
 			public String getHTML5() {
 				return this.hTML5;
 			}
 
 			public void setHTML5(String hTML5) {
 				this.hTML5 = hTML5;
+			}
+
+			public String getAndroid() {
+				return this.android;
+			}
+
+			public void setAndroid(String android) {
+				this.android = android;
 			}
 		}
 	}

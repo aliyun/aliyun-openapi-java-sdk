@@ -34,11 +34,11 @@ public class ListWatermarkResponseUnmarshaller {
 			watermarkInfo.setCreationTime(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].CreationTime"));
 			watermarkInfo.setType(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].Type"));
 			watermarkInfo.setIsDefault(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].IsDefault"));
-			watermarkInfo.setWatermarkId(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkId"));
-			watermarkInfo.setName(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].Name"));
 			watermarkInfo.setFileUrl(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].FileUrl"));
-			watermarkInfo.setWatermarkConfig(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkConfig"));
 			watermarkInfo.setAppId(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].AppId"));
+			watermarkInfo.setWatermarkConfig(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkConfig"));
+			watermarkInfo.setName(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].Name"));
+			watermarkInfo.setWatermarkId(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkId"));
 
 			watermarkInfos.add(watermarkInfo);
 		}

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SubmitTranscodeJobsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String transcodeTaskId;
 
+	private String requestId;
+
 	private List<TranscodeJob> transcodeJobs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTranscodeTaskId() {
 		return this.transcodeTaskId;
@@ -45,6 +37,14 @@ public class SubmitTranscodeJobsResponse extends AcsResponse {
 
 	public void setTranscodeTaskId(String transcodeTaskId) {
 		this.transcodeTaskId = transcodeTaskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<TranscodeJob> getTranscodeJobs() {

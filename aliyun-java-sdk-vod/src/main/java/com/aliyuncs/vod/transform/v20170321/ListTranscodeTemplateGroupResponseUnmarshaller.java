@@ -32,13 +32,13 @@ public class ListTranscodeTemplateGroupResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList.Length"); i++) {
 			TranscodeTemplateGroup transcodeTemplateGroup = new TranscodeTemplateGroup();
 			transcodeTemplateGroup.setCreationTime(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].CreationTime"));
-			transcodeTemplateGroup.setModifyTime(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].ModifyTime"));
-			transcodeTemplateGroup.setName(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].Name"));
-			transcodeTemplateGroup.setIsDefault(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].IsDefault"));
-			transcodeTemplateGroup.setLocked(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].Locked"));
-			transcodeTemplateGroup.setTranscodeTemplateGroupId(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].TranscodeTemplateGroupId"));
 			transcodeTemplateGroup.setTranscodeMode(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].TranscodeMode"));
+			transcodeTemplateGroup.setIsDefault(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].IsDefault"));
 			transcodeTemplateGroup.setAppId(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].AppId"));
+			transcodeTemplateGroup.setTranscodeTemplateGroupId(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].TranscodeTemplateGroupId"));
+			transcodeTemplateGroup.setName(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].Name"));
+			transcodeTemplateGroup.setModifyTime(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].ModifyTime"));
+			transcodeTemplateGroup.setLocked(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].Locked"));
 
 			transcodeTemplateGroupList.add(transcodeTemplateGroup);
 		}

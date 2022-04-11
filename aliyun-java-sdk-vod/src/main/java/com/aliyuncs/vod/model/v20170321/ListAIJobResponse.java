@@ -57,38 +57,38 @@ public class ListAIJobResponse extends AcsResponse {
 
 	public static class AIJob {
 
-		private String jobId;
+		private String creationTime;
 
-		private String mediaId;
+		private String status;
 
 		private String type;
 
-		private String status;
+		private String data;
+
+		private String completeTime;
+
+		private String jobId;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String mediaId;
 
-		private String completeTime;
-
-		private String data;
-
-		public String getJobId() {
-			return this.jobId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
-		public String getMediaId() {
-			return this.mediaId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -99,12 +99,28 @@ public class ListAIJobResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getData() {
+			return this.data;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setData(String data) {
+			this.data = data;
+		}
+
+		public String getCompleteTime() {
+			return this.completeTime;
+		}
+
+		public void setCompleteTime(String completeTime) {
+			this.completeTime = completeTime;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getCode() {
@@ -123,28 +139,12 @@ public class ListAIJobResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getMediaId() {
+			return this.mediaId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getCompleteTime() {
-			return this.completeTime;
-		}
-
-		public void setCompleteTime(String completeTime) {
-			this.completeTime = completeTime;
-		}
-
-		public String getData() {
-			return this.data;
-		}
-
-		public void setData(String data) {
-			this.data = data;
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 	}
 

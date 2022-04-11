@@ -34,13 +34,13 @@ public class DescribeVodRefreshTasksResponseUnmarshaller {
 		List<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVodRefreshTasksResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setTaskId(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].TaskId"));
-			task.setObjectPath(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].ObjectPath"));
-			task.setProcess(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].Process"));
 			task.setStatus(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].Status"));
 			task.setCreationTime(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].CreationTime"));
-			task.setDescription(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].Description"));
 			task.setObjectType(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].ObjectType"));
+			task.setProcess(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].Process"));
+			task.setDescription(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].Description"));
+			task.setObjectPath(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].ObjectPath"));
+			task.setTaskId(_ctx.stringValue("DescribeVodRefreshTasksResponse.Tasks["+ i +"].TaskId"));
 
 			tasks.add(task);
 		}

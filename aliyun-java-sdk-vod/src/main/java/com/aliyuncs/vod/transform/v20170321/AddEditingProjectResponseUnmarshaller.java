@@ -26,11 +26,11 @@ public class AddEditingProjectResponseUnmarshaller {
 		addEditingProjectResponse.setRequestId(_ctx.stringValue("AddEditingProjectResponse.RequestId"));
 
 		Project project = new Project();
-		project.setProjectId(_ctx.stringValue("AddEditingProjectResponse.Project.ProjectId"));
 		project.setCreationTime(_ctx.stringValue("AddEditingProjectResponse.Project.CreationTime"));
-		project.setModifiedTime(_ctx.stringValue("AddEditingProjectResponse.Project.ModifiedTime"));
 		project.setStatus(_ctx.stringValue("AddEditingProjectResponse.Project.Status"));
+		project.setModifiedTime(_ctx.stringValue("AddEditingProjectResponse.Project.ModifiedTime"));
 		project.setDescription(_ctx.stringValue("AddEditingProjectResponse.Project.Description"));
+		project.setProjectId(_ctx.stringValue("AddEditingProjectResponse.Project.ProjectId"));
 		project.setTitle(_ctx.stringValue("AddEditingProjectResponse.Project.Title"));
 		addEditingProjectResponse.setProject(project);
 	 

@@ -27,27 +27,27 @@ public class GetImageInfoResponseUnmarshaller {
 		getImageInfoResponse.setRequestId(_ctx.stringValue("GetImageInfoResponse.RequestId"));
 
 		ImageInfo imageInfo = new ImageInfo();
-		imageInfo.setImageId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.ImageId"));
-		imageInfo.setTitle(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Title"));
 		imageInfo.setCreationTime(_ctx.stringValue("GetImageInfoResponse.ImageInfo.CreationTime"));
-		imageInfo.setImageType(_ctx.stringValue("GetImageInfoResponse.ImageInfo.ImageType"));
-		imageInfo.setTags(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Tags"));
-		imageInfo.setURL(_ctx.stringValue("GetImageInfoResponse.ImageInfo.URL"));
-		imageInfo.setCateId(_ctx.longValue("GetImageInfoResponse.ImageInfo.CateId"));
-		imageInfo.setCateName(_ctx.stringValue("GetImageInfoResponse.ImageInfo.CateName"));
-		imageInfo.setDescription(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Description"));
 		imageInfo.setStorageLocation(_ctx.stringValue("GetImageInfoResponse.ImageInfo.StorageLocation"));
 		imageInfo.setStatus(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Status"));
-		imageInfo.setAppId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.AppId"));
+		imageInfo.setCateId(_ctx.longValue("GetImageInfoResponse.ImageInfo.CateId"));
+		imageInfo.setTags(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Tags"));
 		imageInfo.setRegionId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.RegionId"));
+		imageInfo.setImageType(_ctx.stringValue("GetImageInfoResponse.ImageInfo.ImageType"));
+		imageInfo.setCateName(_ctx.stringValue("GetImageInfoResponse.ImageInfo.CateName"));
+		imageInfo.setDescription(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Description"));
+		imageInfo.setAppId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.AppId"));
+		imageInfo.setURL(_ctx.stringValue("GetImageInfoResponse.ImageInfo.URL"));
+		imageInfo.setTitle(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Title"));
+		imageInfo.setImageId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.ImageId"));
 		imageInfo.setAuditStatus(_ctx.stringValue("GetImageInfoResponse.ImageInfo.AuditStatus"));
 
 		Mezzanine mezzanine = new Mezzanine();
+		mezzanine.setFileURL(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileURL"));
 		mezzanine.setOriginalFileName(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.OriginalFileName"));
-		mezzanine.setFileSize(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileSize"));
 		mezzanine.setWidth(_ctx.integerValue("GetImageInfoResponse.ImageInfo.Mezzanine.Width"));
 		mezzanine.setHeight(_ctx.integerValue("GetImageInfoResponse.ImageInfo.Mezzanine.Height"));
-		mezzanine.setFileURL(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileURL"));
+		mezzanine.setFileSize(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileSize"));
 		imageInfo.setMezzanine(mezzanine);
 		getImageInfoResponse.setImageInfo(imageInfo);
 	 

@@ -32,22 +32,22 @@ public class GetVideoListResponseUnmarshaller {
 		List<Video> videoList = new ArrayList<Video>();
 		for (int i = 0; i < _ctx.lengthValue("GetVideoListResponse.VideoList.Length"); i++) {
 			Video video = new Video();
-			video.setVideoId(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].VideoId"));
-			video.setTitle(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Title"));
-			video.setTags(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Tags"));
-			video.setStatus(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Status"));
-			video.setSize(_ctx.longValue("GetVideoListResponse.VideoList["+ i +"].Size"));
-			video.setDuration(_ctx.floatValue("GetVideoListResponse.VideoList["+ i +"].Duration"));
-			video.setDescription(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Description"));
-			video.setCreateTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CreateTime"));
-			video.setModifyTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].ModifyTime"));
-			video.setModificationTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].ModificationTime"));
-			video.setCreationTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CreationTime"));
-			video.setCoverURL(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CoverURL"));
-			video.setCateId(_ctx.longValue("GetVideoListResponse.VideoList["+ i +"].CateId"));
-			video.setCateName(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CateName"));
 			video.setStorageLocation(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].StorageLocation"));
+			video.setStatus(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Status"));
+			video.setCreationTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CreationTime"));
+			video.setCateId(_ctx.longValue("GetVideoListResponse.VideoList["+ i +"].CateId"));
+			video.setVideoId(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].VideoId"));
+			video.setCreateTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CreateTime"));
+			video.setTags(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Tags"));
+			video.setModificationTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].ModificationTime"));
+			video.setCateName(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CateName"));
+			video.setDescription(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Description"));
 			video.setAppId(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].AppId"));
+			video.setSize(_ctx.longValue("GetVideoListResponse.VideoList["+ i +"].Size"));
+			video.setCoverURL(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CoverURL"));
+			video.setDuration(_ctx.floatValue("GetVideoListResponse.VideoList["+ i +"].Duration"));
+			video.setTitle(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Title"));
+			video.setModifyTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].ModifyTime"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetVideoListResponse.VideoList["+ i +"].Snapshots.Length"); j++) {

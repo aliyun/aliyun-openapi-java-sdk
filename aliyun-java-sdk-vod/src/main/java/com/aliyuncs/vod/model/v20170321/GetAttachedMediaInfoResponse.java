@@ -57,53 +57,37 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 
 	public static class AttachedMedia {
 
-		private String mediaId;
-
-		private String title;
-
 		private String type;
-
-		private String tags;
-
-		private String uRL;
-
-		private String description;
-
-		private Long fileSize;
 
 		private String storageLocation;
 
 		private String creationTime;
 
-		private String modificationTime;
-
-		private String appId;
-
 		private String status;
-
-		private String onlineStatus;
 
 		private String icon;
 
+		private String tags;
+
+		private String modificationTime;
+
+		private String mediaId;
+
 		private String regionId;
 
+		private String description;
+
+		private String appId;
+
+		private String uRL;
+
+		private String title;
+
+		private String onlineStatus;
+
+		private Long fileSize;
+
 		private List<Category> categories;
-
-		public String getMediaId() {
-			return this.mediaId;
-		}
-
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
 
 		public String getType() {
 			return this.type;
@@ -111,38 +95,6 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getURL() {
-			return this.uRL;
-		}
-
-		public void setURL(String uRL) {
-			this.uRL = uRL;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Long getFileSize() {
-			return this.fileSize;
-		}
-
-		public void setFileSize(Long fileSize) {
-			this.fileSize = fileSize;
 		}
 
 		public String getStorageLocation() {
@@ -161,36 +113,12 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getModificationTime() {
-			return this.modificationTime;
-		}
-
-		public void setModificationTime(String modificationTime) {
-			this.modificationTime = modificationTime;
-		}
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getOnlineStatus() {
-			return this.onlineStatus;
-		}
-
-		public void setOnlineStatus(String onlineStatus) {
-			this.onlineStatus = onlineStatus;
 		}
 
 		public String getIcon() {
@@ -201,12 +129,84 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 			this.icon = icon;
 		}
 
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
+		}
+
+		public String getModificationTime() {
+			return this.modificationTime;
+		}
+
+		public void setModificationTime(String modificationTime) {
+			this.modificationTime = modificationTime;
+		}
+
+		public String getMediaId() {
+			return this.mediaId;
+		}
+
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public String getURL() {
+			return this.uRL;
+		}
+
+		public void setURL(String uRL) {
+			this.uRL = uRL;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getOnlineStatus() {
+			return this.onlineStatus;
+		}
+
+		public void setOnlineStatus(String onlineStatus) {
+			this.onlineStatus = onlineStatus;
+		}
+
+		public Long getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
 		}
 
 		public List<Category> getCategories() {
@@ -219,20 +219,20 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 
 		public static class Category {
 
-			private Long cateId;
+			private Long parentId;
 
 			private String cateName;
 
+			private Long cateId;
+
 			private Long level;
 
-			private Long parentId;
-
-			public Long getCateId() {
-				return this.cateId;
+			public Long getParentId() {
+				return this.parentId;
 			}
 
-			public void setCateId(Long cateId) {
-				this.cateId = cateId;
+			public void setParentId(Long parentId) {
+				this.parentId = parentId;
 			}
 
 			public String getCateName() {
@@ -243,20 +243,20 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 				this.cateName = cateName;
 			}
 
+			public Long getCateId() {
+				return this.cateId;
+			}
+
+			public void setCateId(Long cateId) {
+				this.cateId = cateId;
+			}
+
 			public Long getLevel() {
 				return this.level;
 			}
 
 			public void setLevel(Long level) {
 				this.level = level;
-			}
-
-			public Long getParentId() {
-				return this.parentId;
-			}
-
-			public void setParentId(Long parentId) {
-				this.parentId = parentId;
 			}
 		}
 	}

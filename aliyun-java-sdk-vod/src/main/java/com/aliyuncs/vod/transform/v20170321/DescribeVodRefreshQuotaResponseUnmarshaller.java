@@ -23,14 +23,14 @@ public class DescribeVodRefreshQuotaResponseUnmarshaller {
 	public static DescribeVodRefreshQuotaResponse unmarshall(DescribeVodRefreshQuotaResponse describeVodRefreshQuotaResponse, UnmarshallerContext _ctx) {
 		
 		describeVodRefreshQuotaResponse.setRequestId(_ctx.stringValue("DescribeVodRefreshQuotaResponse.RequestId"));
-		describeVodRefreshQuotaResponse.setUrlQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.UrlQuota"));
-		describeVodRefreshQuotaResponse.setDirQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.DirQuota"));
-		describeVodRefreshQuotaResponse.setUrlRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.UrlRemain"));
-		describeVodRefreshQuotaResponse.setDirRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.DirRemain"));
-		describeVodRefreshQuotaResponse.setPreloadQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.PreloadQuota"));
 		describeVodRefreshQuotaResponse.setBlockQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.BlockQuota"));
 		describeVodRefreshQuotaResponse.setPreloadRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.PreloadRemain"));
 		describeVodRefreshQuotaResponse.setBlockRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.blockRemain"));
+		describeVodRefreshQuotaResponse.setDirRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.DirRemain"));
+		describeVodRefreshQuotaResponse.setUrlRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.UrlRemain"));
+		describeVodRefreshQuotaResponse.setDirQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.DirQuota"));
+		describeVodRefreshQuotaResponse.setUrlQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.UrlQuota"));
+		describeVodRefreshQuotaResponse.setPreloadQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.PreloadQuota"));
 	 
 	 	return describeVodRefreshQuotaResponse;
 	}

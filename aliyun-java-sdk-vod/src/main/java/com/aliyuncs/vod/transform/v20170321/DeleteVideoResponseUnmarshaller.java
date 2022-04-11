@@ -27,17 +27,17 @@ public class DeleteVideoResponseUnmarshaller {
 		
 		deleteVideoResponse.setRequestId(_ctx.stringValue("DeleteVideoResponse.RequestId"));
 
-		List<String> nonExistVideoIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DeleteVideoResponse.NonExistVideoIds.Length"); i++) {
-			nonExistVideoIds.add(_ctx.stringValue("DeleteVideoResponse.NonExistVideoIds["+ i +"]"));
-		}
-		deleteVideoResponse.setNonExistVideoIds(nonExistVideoIds);
-
 		List<String> forbiddenVideoIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteVideoResponse.ForbiddenVideoIds.Length"); i++) {
 			forbiddenVideoIds.add(_ctx.stringValue("DeleteVideoResponse.ForbiddenVideoIds["+ i +"]"));
 		}
 		deleteVideoResponse.setForbiddenVideoIds(forbiddenVideoIds);
+
+		List<String> nonExistVideoIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DeleteVideoResponse.NonExistVideoIds.Length"); i++) {
+			nonExistVideoIds.add(_ctx.stringValue("DeleteVideoResponse.NonExistVideoIds["+ i +"]"));
+		}
+		deleteVideoResponse.setNonExistVideoIds(nonExistVideoIds);
 	 
 	 	return deleteVideoResponse;
 	}

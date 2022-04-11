@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateUploadImageResponse extends AcsResponse {
 
+	private String fileURL;
+
 	private String requestId;
-
-	private String imageId;
-
-	private String imageURL;
 
 	private String uploadAddress;
 
+	private String imageURL;
+
+	private String imageId;
+
 	private String uploadAuth;
 
-	private String fileURL;
+	public String getFileURL() {
+		return this.fileURL;
+	}
+
+	public void setFileURL(String fileURL) {
+		this.fileURL = fileURL;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +50,6 @@ public class CreateUploadImageResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-	}
-
-	public String getImageURL() {
-		return this.imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
 	}
 
 	public String getUploadAddress() {
@@ -68,20 +60,28 @@ public class CreateUploadImageResponse extends AcsResponse {
 		this.uploadAddress = uploadAddress;
 	}
 
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+	}
+
 	public String getUploadAuth() {
 		return this.uploadAuth;
 	}
 
 	public void setUploadAuth(String uploadAuth) {
 		this.uploadAuth = uploadAuth;
-	}
-
-	public String getFileURL() {
-		return this.fileURL;
-	}
-
-	public void setFileURL(String fileURL) {
-		this.fileURL = fileURL;
 	}
 
 	@Override

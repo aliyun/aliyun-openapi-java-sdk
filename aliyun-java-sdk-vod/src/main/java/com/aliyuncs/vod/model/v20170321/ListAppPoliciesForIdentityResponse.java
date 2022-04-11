@@ -47,27 +47,19 @@ public class ListAppPoliciesForIdentityResponse extends AcsResponse {
 
 	public static class AppPolicy {
 
-		private String appId;
-
 		private String creationTime;
-
-		private String policyName;
-
-		private String policyType;
-
-		private String policyValue;
 
 		private String description;
 
+		private String appId;
+
+		private String policyValue;
+
+		private String policyName;
+
 		private String modificationTime;
 
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
+		private String policyType;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -75,30 +67,6 @@ public class ListAppPoliciesForIdentityResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getPolicyName() {
-			return this.policyName;
-		}
-
-		public void setPolicyName(String policyName) {
-			this.policyName = policyName;
-		}
-
-		public String getPolicyType() {
-			return this.policyType;
-		}
-
-		public void setPolicyType(String policyType) {
-			this.policyType = policyType;
-		}
-
-		public String getPolicyValue() {
-			return this.policyValue;
-		}
-
-		public void setPolicyValue(String policyValue) {
-			this.policyValue = policyValue;
 		}
 
 		public String getDescription() {
@@ -109,12 +77,44 @@ public class ListAppPoliciesForIdentityResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public String getPolicyValue() {
+			return this.policyValue;
+		}
+
+		public void setPolicyValue(String policyValue) {
+			this.policyValue = policyValue;
+		}
+
+		public String getPolicyName() {
+			return this.policyName;
+		}
+
+		public void setPolicyName(String policyName) {
+			this.policyName = policyName;
+		}
+
 		public String getModificationTime() {
 			return this.modificationTime;
 		}
 
 		public void setModificationTime(String modificationTime) {
 			this.modificationTime = modificationTime;
+		}
+
+		public String getPolicyType() {
+			return this.policyType;
+		}
+
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
 		}
 	}
 

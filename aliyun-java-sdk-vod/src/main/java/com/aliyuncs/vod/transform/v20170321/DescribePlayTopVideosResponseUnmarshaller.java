@@ -34,11 +34,11 @@ public class DescribePlayTopVideosResponseUnmarshaller {
 		List<TopPlayVideoStatis> topPlayVideos = new ArrayList<TopPlayVideoStatis>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePlayTopVideosResponse.TopPlayVideos.Length"); i++) {
 			TopPlayVideoStatis topPlayVideoStatis = new TopPlayVideoStatis();
-			topPlayVideoStatis.setPlayDuration(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].PlayDuration"));
-			topPlayVideoStatis.setVV(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].VV"));
-			topPlayVideoStatis.setUV(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].UV"));
-			topPlayVideoStatis.setVideoId(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].VideoId"));
 			topPlayVideoStatis.setTitle(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].Title"));
+			topPlayVideoStatis.setVV(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].VV"));
+			topPlayVideoStatis.setPlayDuration(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].PlayDuration"));
+			topPlayVideoStatis.setVideoId(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].VideoId"));
+			topPlayVideoStatis.setUV(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].UV"));
 
 			topPlayVideos.add(topPlayVideoStatis);
 		}

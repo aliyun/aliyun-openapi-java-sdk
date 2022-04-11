@@ -47,25 +47,17 @@ public class DescribePlayVideoStatisResponse extends AcsResponse {
 
 	public static class VideoPlayStatisDetail {
 
-		private String date;
-
 		private String playDuration;
 
+		private String date;
+
 		private String vV;
+
+		private String title;
 
 		private String uV;
 
 		private String playRange;
-
-		private String title;
-
-		public String getDate() {
-			return this.date;
-		}
-
-		public void setDate(String date) {
-			this.date = date;
-		}
 
 		public String getPlayDuration() {
 			return this.playDuration;
@@ -75,12 +67,28 @@ public class DescribePlayVideoStatisResponse extends AcsResponse {
 			this.playDuration = playDuration;
 		}
 
+		public String getDate() {
+			return this.date;
+		}
+
+		public void setDate(String date) {
+			this.date = date;
+		}
+
 		public String getVV() {
 			return this.vV;
 		}
 
 		public void setVV(String vV) {
 			this.vV = vV;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
 		}
 
 		public String getUV() {
@@ -97,14 +105,6 @@ public class DescribePlayVideoStatisResponse extends AcsResponse {
 
 		public void setPlayRange(String playRange) {
 			this.playRange = playRange;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
 		}
 	}
 

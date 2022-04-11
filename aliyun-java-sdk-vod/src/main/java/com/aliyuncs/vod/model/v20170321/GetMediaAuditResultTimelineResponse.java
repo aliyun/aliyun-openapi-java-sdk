@@ -99,19 +99,11 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 
 		public static class PornItem {
 
-			private String label;
-
 			private String score;
 
 			private String timestamp;
 
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
+			private String label;
 
 			public String getScore() {
 				return this.score;
@@ -127,24 +119,24 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 
 			public void setTimestamp(String timestamp) {
 				this.timestamp = timestamp;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 
 		public static class TerrorismItem {
 
-			private String label;
-
 			private String score;
 
 			private String timestamp;
 
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
+			private String label;
 
 			public String getScore() {
 				return this.score;
@@ -160,24 +152,24 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 
 			public void setTimestamp(String timestamp) {
 				this.timestamp = timestamp;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 
 		public static class LogoItem {
 
-			private String label;
-
 			private String score;
 
 			private String timestamp;
 
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
+			private String label;
 
 			public String getScore() {
 				return this.score;
@@ -193,24 +185,24 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 
 			public void setTimestamp(String timestamp) {
 				this.timestamp = timestamp;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 
 		public static class LiveItem {
 
-			private String label;
-
 			private String score;
 
 			private String timestamp;
 
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
+			private String label;
 
 			public String getScore() {
 				return this.score;
@@ -226,24 +218,24 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 
 			public void setTimestamp(String timestamp) {
 				this.timestamp = timestamp;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 
 		public static class AdItem {
 
-			private String label;
-
 			private String score;
 
 			private String timestamp;
 
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
+			private String label;
 
 			public String getScore() {
 				return this.score;
@@ -259,6 +251,14 @@ public class GetMediaAuditResultTimelineResponse extends AcsResponse {
 
 			public void setTimestamp(String timestamp) {
 				this.timestamp = timestamp;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 	}

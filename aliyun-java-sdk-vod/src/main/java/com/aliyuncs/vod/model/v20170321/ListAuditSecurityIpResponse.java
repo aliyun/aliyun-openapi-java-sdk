@@ -47,20 +47,20 @@ public class ListAuditSecurityIpResponse extends AcsResponse {
 
 	public static class SecurityIp {
 
-		private String securityGroupName;
+		private String creationTime;
 
 		private String ips;
 
-		private String creationTime;
-
 		private String modificationTime;
 
-		public String getSecurityGroupName() {
-			return this.securityGroupName;
+		private String securityGroupName;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setSecurityGroupName(String securityGroupName) {
-			this.securityGroupName = securityGroupName;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getIps() {
@@ -71,20 +71,20 @@ public class ListAuditSecurityIpResponse extends AcsResponse {
 			this.ips = ips;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
 		public String getModificationTime() {
 			return this.modificationTime;
 		}
 
 		public void setModificationTime(String modificationTime) {
 			this.modificationTime = modificationTime;
+		}
+
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
+		}
+
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
 		}
 	}
 

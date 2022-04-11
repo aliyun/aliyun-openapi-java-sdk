@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchEditingProjectResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<Project> projectList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class SearchEditingProjectResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Project> getProjectList() {
@@ -57,32 +57,40 @@ public class SearchEditingProjectResponse extends AcsResponse {
 
 	public static class Project {
 
-		private String projectId;
+		private String storageLocation;
+
+		private String status;
 
 		private String creationTime;
 
 		private String modifiedTime;
 
-		private String status;
-
 		private String description;
-
-		private String title;
 
 		private String coverURL;
 
-		private String storageLocation;
-
-		private String regionId;
+		private String projectId;
 
 		private Float duration;
 
-		public String getProjectId() {
-			return this.projectId;
+		private String title;
+
+		private String regionId;
+
+		public String getStorageLocation() {
+			return this.storageLocation;
 		}
 
-		public void setProjectId(String projectId) {
-			this.projectId = projectId;
+		public void setStorageLocation(String storageLocation) {
+			this.storageLocation = storageLocation;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreationTime() {
@@ -101,28 +109,12 @@ public class SearchEditingProjectResponse extends AcsResponse {
 			this.modifiedTime = modifiedTime;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
 		}
 
 		public String getCoverURL() {
@@ -133,20 +125,12 @@ public class SearchEditingProjectResponse extends AcsResponse {
 			this.coverURL = coverURL;
 		}
 
-		public String getStorageLocation() {
-			return this.storageLocation;
+		public String getProjectId() {
+			return this.projectId;
 		}
 
-		public void setStorageLocation(String storageLocation) {
-			this.storageLocation = storageLocation;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
 		}
 
 		public Float getDuration() {
@@ -155,6 +139,22 @@ public class SearchEditingProjectResponse extends AcsResponse {
 
 		public void setDuration(Float duration) {
 			this.duration = duration;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -47,34 +47,34 @@ public class ListTranscodeTaskResponse extends AcsResponse {
 
 	public static class TranscodeTask {
 
-		private String transcodeTaskId;
-
-		private String videoId;
-
-		private String taskStatus;
-
-		private String transcodeTemplateGroupId;
-
 		private String creationTime;
-
-		private String completeTime;
 
 		private String trigger;
 
-		public String getTranscodeTaskId() {
-			return this.transcodeTaskId;
+		private String taskStatus;
+
+		private String videoId;
+
+		private String completeTime;
+
+		private String transcodeTemplateGroupId;
+
+		private String transcodeTaskId;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setTranscodeTaskId(String transcodeTaskId) {
-			this.transcodeTaskId = transcodeTaskId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
-		public String getVideoId() {
-			return this.videoId;
+		public String getTrigger() {
+			return this.trigger;
 		}
 
-		public void setVideoId(String videoId) {
-			this.videoId = videoId;
+		public void setTrigger(String trigger) {
+			this.trigger = trigger;
 		}
 
 		public String getTaskStatus() {
@@ -85,20 +85,12 @@ public class ListTranscodeTaskResponse extends AcsResponse {
 			this.taskStatus = taskStatus;
 		}
 
-		public String getTranscodeTemplateGroupId() {
-			return this.transcodeTemplateGroupId;
+		public String getVideoId() {
+			return this.videoId;
 		}
 
-		public void setTranscodeTemplateGroupId(String transcodeTemplateGroupId) {
-			this.transcodeTemplateGroupId = transcodeTemplateGroupId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setVideoId(String videoId) {
+			this.videoId = videoId;
 		}
 
 		public String getCompleteTime() {
@@ -109,12 +101,20 @@ public class ListTranscodeTaskResponse extends AcsResponse {
 			this.completeTime = completeTime;
 		}
 
-		public String getTrigger() {
-			return this.trigger;
+		public String getTranscodeTemplateGroupId() {
+			return this.transcodeTemplateGroupId;
 		}
 
-		public void setTrigger(String trigger) {
-			this.trigger = trigger;
+		public void setTranscodeTemplateGroupId(String transcodeTemplateGroupId) {
+			this.transcodeTemplateGroupId = transcodeTemplateGroupId;
+		}
+
+		public String getTranscodeTaskId() {
+			return this.transcodeTaskId;
+		}
+
+		public void setTranscodeTaskId(String transcodeTaskId) {
+			this.transcodeTaskId = transcodeTaskId;
 		}
 	}
 

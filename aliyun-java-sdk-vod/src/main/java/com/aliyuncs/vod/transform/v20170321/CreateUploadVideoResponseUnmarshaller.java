@@ -23,8 +23,8 @@ public class CreateUploadVideoResponseUnmarshaller {
 	public static CreateUploadVideoResponse unmarshall(CreateUploadVideoResponse createUploadVideoResponse, UnmarshallerContext _ctx) {
 		
 		createUploadVideoResponse.setRequestId(_ctx.stringValue("CreateUploadVideoResponse.RequestId"));
-		createUploadVideoResponse.setVideoId(_ctx.stringValue("CreateUploadVideoResponse.VideoId"));
 		createUploadVideoResponse.setUploadAddress(_ctx.stringValue("CreateUploadVideoResponse.UploadAddress"));
+		createUploadVideoResponse.setVideoId(_ctx.stringValue("CreateUploadVideoResponse.VideoId"));
 		createUploadVideoResponse.setUploadAuth(_ctx.stringValue("CreateUploadVideoResponse.UploadAuth"));
 	 
 	 	return createUploadVideoResponse;

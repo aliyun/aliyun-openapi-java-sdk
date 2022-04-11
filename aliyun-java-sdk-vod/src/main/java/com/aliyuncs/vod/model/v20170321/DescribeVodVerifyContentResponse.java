@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVodVerifyContentResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String content;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getContent() {
 		return this.content;
@@ -42,6 +34,14 @@ public class DescribeVodVerifyContentResponse extends AcsResponse {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

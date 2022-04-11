@@ -46,51 +46,35 @@ public class GetImageInfoResponse extends AcsResponse {
 
 	public static class ImageInfo {
 
-		private String imageId;
-
-		private String title;
-
 		private String creationTime;
-
-		private String imageType;
-
-		private String tags;
-
-		private String uRL;
-
-		private Long cateId;
-
-		private String cateName;
-
-		private String description;
 
 		private String storageLocation;
 
 		private String status;
 
-		private String appId;
+		private Long cateId;
+
+		private String tags;
 
 		private String regionId;
+
+		private String imageType;
+
+		private String cateName;
+
+		private String description;
+
+		private String appId;
+
+		private String uRL;
+
+		private String title;
+
+		private String imageId;
 
 		private String auditStatus;
 
 		private Mezzanine mezzanine;
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -98,54 +82,6 @@ public class GetImageInfoResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getImageType() {
-			return this.imageType;
-		}
-
-		public void setImageType(String imageType) {
-			this.imageType = imageType;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getURL() {
-			return this.uRL;
-		}
-
-		public void setURL(String uRL) {
-			this.uRL = uRL;
-		}
-
-		public Long getCateId() {
-			return this.cateId;
-		}
-
-		public void setCateId(Long cateId) {
-			this.cateId = cateId;
-		}
-
-		public String getCateName() {
-			return this.cateName;
-		}
-
-		public void setCateName(String cateName) {
-			this.cateName = cateName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getStorageLocation() {
@@ -164,12 +100,20 @@ public class GetImageInfoResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getAppId() {
-			return this.appId;
+		public Long getCateId() {
+			return this.cateId;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setCateId(Long cateId) {
+			this.cateId = cateId;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
 		}
 
 		public String getRegionId() {
@@ -178,6 +122,62 @@ public class GetImageInfoResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getImageType() {
+			return this.imageType;
+		}
+
+		public void setImageType(String imageType) {
+			this.imageType = imageType;
+		}
+
+		public String getCateName() {
+			return this.cateName;
+		}
+
+		public void setCateName(String cateName) {
+			this.cateName = cateName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public String getURL() {
+			return this.uRL;
+		}
+
+		public void setURL(String uRL) {
+			this.uRL = uRL;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 
 		public String getAuditStatus() {
@@ -198,15 +198,23 @@ public class GetImageInfoResponse extends AcsResponse {
 
 		public static class Mezzanine {
 
-			private String originalFileName;
+			private String fileURL;
 
-			private String fileSize;
+			private String originalFileName;
 
 			private Integer width;
 
 			private Integer height;
 
-			private String fileURL;
+			private String fileSize;
+
+			public String getFileURL() {
+				return this.fileURL;
+			}
+
+			public void setFileURL(String fileURL) {
+				this.fileURL = fileURL;
+			}
 
 			public String getOriginalFileName() {
 				return this.originalFileName;
@@ -214,14 +222,6 @@ public class GetImageInfoResponse extends AcsResponse {
 
 			public void setOriginalFileName(String originalFileName) {
 				this.originalFileName = originalFileName;
-			}
-
-			public String getFileSize() {
-				return this.fileSize;
-			}
-
-			public void setFileSize(String fileSize) {
-				this.fileSize = fileSize;
 			}
 
 			public Integer getWidth() {
@@ -240,12 +240,12 @@ public class GetImageInfoResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public String getFileURL() {
-				return this.fileURL;
+			public String getFileSize() {
+				return this.fileSize;
 			}
 
-			public void setFileURL(String fileURL) {
-				this.fileURL = fileURL;
+			public void setFileSize(String fileSize) {
+				this.fileSize = fileSize;
 			}
 		}
 	}

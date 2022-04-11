@@ -1,3 +1,6 @@
+2022-04-11 Version: 2.16.7
+- Set multiple apis to public.
+
 2022-03-15 Version: 2.16.6
 - Set multiple apis to private.
 

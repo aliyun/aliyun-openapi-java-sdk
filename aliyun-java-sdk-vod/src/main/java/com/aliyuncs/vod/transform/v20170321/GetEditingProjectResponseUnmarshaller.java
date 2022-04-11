@@ -26,17 +26,17 @@ public class GetEditingProjectResponseUnmarshaller {
 		getEditingProjectResponse.setRequestId(_ctx.stringValue("GetEditingProjectResponse.RequestId"));
 
 		Project project = new Project();
-		project.setProjectId(_ctx.stringValue("GetEditingProjectResponse.Project.ProjectId"));
+		project.setStorageLocation(_ctx.stringValue("GetEditingProjectResponse.Project.StorageLocation"));
+		project.setStatus(_ctx.stringValue("GetEditingProjectResponse.Project.Status"));
 		project.setCreationTime(_ctx.stringValue("GetEditingProjectResponse.Project.CreationTime"));
 		project.setModifiedTime(_ctx.stringValue("GetEditingProjectResponse.Project.ModifiedTime"));
-		project.setStatus(_ctx.stringValue("GetEditingProjectResponse.Project.Status"));
-		project.setDescription(_ctx.stringValue("GetEditingProjectResponse.Project.Description"));
-		project.setTitle(_ctx.stringValue("GetEditingProjectResponse.Project.Title"));
-		project.setTimeline(_ctx.stringValue("GetEditingProjectResponse.Project.Timeline"));
-		project.setCoverURL(_ctx.stringValue("GetEditingProjectResponse.Project.CoverURL"));
-		project.setStorageLocation(_ctx.stringValue("GetEditingProjectResponse.Project.StorageLocation"));
-		project.setRegionId(_ctx.stringValue("GetEditingProjectResponse.Project.RegionId"));
 		project.setFEExtend(_ctx.stringValue("GetEditingProjectResponse.Project.FEExtend"));
+		project.setDescription(_ctx.stringValue("GetEditingProjectResponse.Project.Description"));
+		project.setCoverURL(_ctx.stringValue("GetEditingProjectResponse.Project.CoverURL"));
+		project.setProjectId(_ctx.stringValue("GetEditingProjectResponse.Project.ProjectId"));
+		project.setTimeline(_ctx.stringValue("GetEditingProjectResponse.Project.Timeline"));
+		project.setTitle(_ctx.stringValue("GetEditingProjectResponse.Project.Title"));
+		project.setRegionId(_ctx.stringValue("GetEditingProjectResponse.Project.RegionId"));
 		getEditingProjectResponse.setProject(project);
 	 
 	 	return getEditingProjectResponse;

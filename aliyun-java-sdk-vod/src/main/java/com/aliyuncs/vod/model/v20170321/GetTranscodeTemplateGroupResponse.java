@@ -49,19 +49,19 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String modifyTime;
-
-		private String name;
+		private String transcodeMode;
 
 		private String isDefault;
-
-		private String locked;
-
-		private String transcodeMode;
 
 		private String appId;
 
 		private String transcodeTemplateGroupId;
+
+		private String name;
+
+		private String modifyTime;
+
+		private String locked;
 
 		private List<TranscodeTemplate> transcodeTemplateList;
 
@@ -73,20 +73,12 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getTranscodeMode() {
+			return this.transcodeMode;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setTranscodeMode(String transcodeMode) {
+			this.transcodeMode = transcodeMode;
 		}
 
 		public String getIsDefault() {
@@ -95,22 +87,6 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 		public void setIsDefault(String isDefault) {
 			this.isDefault = isDefault;
-		}
-
-		public String getLocked() {
-			return this.locked;
-		}
-
-		public void setLocked(String locked) {
-			this.locked = locked;
-		}
-
-		public String getTranscodeMode() {
-			return this.transcodeMode;
-		}
-
-		public void setTranscodeMode(String transcodeMode) {
-			this.transcodeMode = transcodeMode;
 		}
 
 		public String getAppId() {
@@ -129,6 +105,30 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 			this.transcodeTemplateGroupId = transcodeTemplateGroupId;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getLocked() {
+			return this.locked;
+		}
+
+		public void setLocked(String locked) {
+			this.locked = locked;
+		}
+
 		public List<TranscodeTemplate> getTranscodeTemplateList() {
 			return this.transcodeTemplateList;
 		}
@@ -139,50 +139,50 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 		public static class TranscodeTemplate {
 
-			private String transcodeTemplateId;
+			private String type;
 
 			private String video;
 
-			private String audio;
-
-			private String container;
-
-			private String muxConfig;
-
 			private String transConfig;
-
-			private String definition;
-
-			private String encryptSetting;
-
-			private String packageSetting;
-
-			private String subtitleList;
-
-			private String openingList;
-
-			private String tailSlateList;
-
-			private String templateName;
-
-			private String transcodeFileRegular;
-
-			private String clip;
 
 			private String rotate;
 
-			private String type;
+			private String transcodeTemplateId;
+
+			private String templateName;
+
+			private String encryptSetting;
+
+			private String audio;
+
+			private String transcodeFileRegular;
+
+			private String container;
+
+			private String clip;
+
+			private String definition;
+
+			private String packageSetting;
+
+			private String openingList;
 
 			private String userData;
 
+			private String subtitleList;
+
+			private String muxConfig;
+
+			private String tailSlateList;
+
 			private List<String> watermarkIds;
 
-			public String getTranscodeTemplateId() {
-				return this.transcodeTemplateId;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setTranscodeTemplateId(String transcodeTemplateId) {
-				this.transcodeTemplateId = transcodeTemplateId;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getVideo() {
@@ -193,108 +193,12 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 				this.video = video;
 			}
 
-			public String getAudio() {
-				return this.audio;
-			}
-
-			public void setAudio(String audio) {
-				this.audio = audio;
-			}
-
-			public String getContainer() {
-				return this.container;
-			}
-
-			public void setContainer(String container) {
-				this.container = container;
-			}
-
-			public String getMuxConfig() {
-				return this.muxConfig;
-			}
-
-			public void setMuxConfig(String muxConfig) {
-				this.muxConfig = muxConfig;
-			}
-
 			public String getTransConfig() {
 				return this.transConfig;
 			}
 
 			public void setTransConfig(String transConfig) {
 				this.transConfig = transConfig;
-			}
-
-			public String getDefinition() {
-				return this.definition;
-			}
-
-			public void setDefinition(String definition) {
-				this.definition = definition;
-			}
-
-			public String getEncryptSetting() {
-				return this.encryptSetting;
-			}
-
-			public void setEncryptSetting(String encryptSetting) {
-				this.encryptSetting = encryptSetting;
-			}
-
-			public String getPackageSetting() {
-				return this.packageSetting;
-			}
-
-			public void setPackageSetting(String packageSetting) {
-				this.packageSetting = packageSetting;
-			}
-
-			public String getSubtitleList() {
-				return this.subtitleList;
-			}
-
-			public void setSubtitleList(String subtitleList) {
-				this.subtitleList = subtitleList;
-			}
-
-			public String getOpeningList() {
-				return this.openingList;
-			}
-
-			public void setOpeningList(String openingList) {
-				this.openingList = openingList;
-			}
-
-			public String getTailSlateList() {
-				return this.tailSlateList;
-			}
-
-			public void setTailSlateList(String tailSlateList) {
-				this.tailSlateList = tailSlateList;
-			}
-
-			public String getTemplateName() {
-				return this.templateName;
-			}
-
-			public void setTemplateName(String templateName) {
-				this.templateName = templateName;
-			}
-
-			public String getTranscodeFileRegular() {
-				return this.transcodeFileRegular;
-			}
-
-			public void setTranscodeFileRegular(String transcodeFileRegular) {
-				this.transcodeFileRegular = transcodeFileRegular;
-			}
-
-			public String getClip() {
-				return this.clip;
-			}
-
-			public void setClip(String clip) {
-				this.clip = clip;
 			}
 
 			public String getRotate() {
@@ -305,12 +209,84 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 				this.rotate = rotate;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getTranscodeTemplateId() {
+				return this.transcodeTemplateId;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setTranscodeTemplateId(String transcodeTemplateId) {
+				this.transcodeTemplateId = transcodeTemplateId;
+			}
+
+			public String getTemplateName() {
+				return this.templateName;
+			}
+
+			public void setTemplateName(String templateName) {
+				this.templateName = templateName;
+			}
+
+			public String getEncryptSetting() {
+				return this.encryptSetting;
+			}
+
+			public void setEncryptSetting(String encryptSetting) {
+				this.encryptSetting = encryptSetting;
+			}
+
+			public String getAudio() {
+				return this.audio;
+			}
+
+			public void setAudio(String audio) {
+				this.audio = audio;
+			}
+
+			public String getTranscodeFileRegular() {
+				return this.transcodeFileRegular;
+			}
+
+			public void setTranscodeFileRegular(String transcodeFileRegular) {
+				this.transcodeFileRegular = transcodeFileRegular;
+			}
+
+			public String getContainer() {
+				return this.container;
+			}
+
+			public void setContainer(String container) {
+				this.container = container;
+			}
+
+			public String getClip() {
+				return this.clip;
+			}
+
+			public void setClip(String clip) {
+				this.clip = clip;
+			}
+
+			public String getDefinition() {
+				return this.definition;
+			}
+
+			public void setDefinition(String definition) {
+				this.definition = definition;
+			}
+
+			public String getPackageSetting() {
+				return this.packageSetting;
+			}
+
+			public void setPackageSetting(String packageSetting) {
+				this.packageSetting = packageSetting;
+			}
+
+			public String getOpeningList() {
+				return this.openingList;
+			}
+
+			public void setOpeningList(String openingList) {
+				this.openingList = openingList;
 			}
 
 			public String getUserData() {
@@ -319,6 +295,30 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 			public void setUserData(String userData) {
 				this.userData = userData;
+			}
+
+			public String getSubtitleList() {
+				return this.subtitleList;
+			}
+
+			public void setSubtitleList(String subtitleList) {
+				this.subtitleList = subtitleList;
+			}
+
+			public String getMuxConfig() {
+				return this.muxConfig;
+			}
+
+			public void setMuxConfig(String muxConfig) {
+				this.muxConfig = muxConfig;
+			}
+
+			public String getTailSlateList() {
+				return this.tailSlateList;
+			}
+
+			public void setTailSlateList(String tailSlateList) {
+				this.tailSlateList = tailSlateList;
 			}
 
 			public List<String> getWatermarkIds() {

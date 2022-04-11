@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SubmitAIImageJobResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String jobId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getJobId() {
 		return this.jobId;
@@ -42,6 +34,14 @@ public class SubmitAIImageJobResponse extends AcsResponse {
 
 	public void setJobId(String jobId) {
 		this.jobId = jobId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

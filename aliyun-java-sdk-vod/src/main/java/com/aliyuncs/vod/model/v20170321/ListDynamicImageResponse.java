@@ -47,50 +47,34 @@ public class ListDynamicImageResponse extends AcsResponse {
 
 	public static class DynamicImage {
 
-		private String videoId;
-
-		private String dynamicImageId;
-
-		private String jobId;
+		private String creationTime;
 
 		private String fileURL;
 
+		private String videoId;
+
 		private String width;
 
+		private String jobId;
+
 		private String height;
+
+		private String fps;
 
 		private String duration;
 
 		private String format;
 
+		private String dynamicImageId;
+
 		private String fileSize;
 
-		private String fps;
-
-		private String creationTime;
-
-		public String getVideoId() {
-			return this.videoId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setVideoId(String videoId) {
-			this.videoId = videoId;
-		}
-
-		public String getDynamicImageId() {
-			return this.dynamicImageId;
-		}
-
-		public void setDynamicImageId(String dynamicImageId) {
-			this.dynamicImageId = dynamicImageId;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getFileURL() {
@@ -101,6 +85,14 @@ public class ListDynamicImageResponse extends AcsResponse {
 			this.fileURL = fileURL;
 		}
 
+		public String getVideoId() {
+			return this.videoId;
+		}
+
+		public void setVideoId(String videoId) {
+			this.videoId = videoId;
+		}
+
 		public String getWidth() {
 			return this.width;
 		}
@@ -109,12 +101,28 @@ public class ListDynamicImageResponse extends AcsResponse {
 			this.width = width;
 		}
 
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
 		public String getHeight() {
 			return this.height;
 		}
 
 		public void setHeight(String height) {
 			this.height = height;
+		}
+
+		public String getFps() {
+			return this.fps;
+		}
+
+		public void setFps(String fps) {
+			this.fps = fps;
 		}
 
 		public String getDuration() {
@@ -133,28 +141,20 @@ public class ListDynamicImageResponse extends AcsResponse {
 			this.format = format;
 		}
 
+		public String getDynamicImageId() {
+			return this.dynamicImageId;
+		}
+
+		public void setDynamicImageId(String dynamicImageId) {
+			this.dynamicImageId = dynamicImageId;
+		}
+
 		public String getFileSize() {
 			return this.fileSize;
 		}
 
 		public void setFileSize(String fileSize) {
 			this.fileSize = fileSize;
-		}
-
-		public String getFps() {
-			return this.fps;
-		}
-
-		public void setFps(String fps) {
-			this.fps = fps;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 	}
 

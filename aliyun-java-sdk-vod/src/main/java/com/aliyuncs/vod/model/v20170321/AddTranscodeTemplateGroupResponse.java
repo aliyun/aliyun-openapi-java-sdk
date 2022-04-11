@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddTranscodeTemplateGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String transcodeTemplateGroupId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTranscodeTemplateGroupId() {
 		return this.transcodeTemplateGroupId;
@@ -42,6 +34,14 @@ public class AddTranscodeTemplateGroupResponse extends AcsResponse {
 
 	public void setTranscodeTemplateGroupId(String transcodeTemplateGroupId) {
 		this.transcodeTemplateGroupId = transcodeTemplateGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

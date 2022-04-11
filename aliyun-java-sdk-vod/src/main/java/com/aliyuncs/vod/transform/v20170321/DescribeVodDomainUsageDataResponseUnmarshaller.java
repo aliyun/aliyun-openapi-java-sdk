@@ -27,18 +27,18 @@ public class DescribeVodDomainUsageDataResponseUnmarshaller {
 	public static DescribeVodDomainUsageDataResponse unmarshall(DescribeVodDomainUsageDataResponse describeVodDomainUsageDataResponse, UnmarshallerContext _ctx) {
 		
 		describeVodDomainUsageDataResponse.setRequestId(_ctx.stringValue("DescribeVodDomainUsageDataResponse.RequestId"));
-		describeVodDomainUsageDataResponse.setDomainName(_ctx.stringValue("DescribeVodDomainUsageDataResponse.DomainName"));
-		describeVodDomainUsageDataResponse.setStartTime(_ctx.stringValue("DescribeVodDomainUsageDataResponse.StartTime"));
 		describeVodDomainUsageDataResponse.setEndTime(_ctx.stringValue("DescribeVodDomainUsageDataResponse.EndTime"));
 		describeVodDomainUsageDataResponse.setType(_ctx.stringValue("DescribeVodDomainUsageDataResponse.Type"));
+		describeVodDomainUsageDataResponse.setStartTime(_ctx.stringValue("DescribeVodDomainUsageDataResponse.StartTime"));
 		describeVodDomainUsageDataResponse.setArea(_ctx.stringValue("DescribeVodDomainUsageDataResponse.Area"));
+		describeVodDomainUsageDataResponse.setDomainName(_ctx.stringValue("DescribeVodDomainUsageDataResponse.DomainName"));
 		describeVodDomainUsageDataResponse.setDataInterval(_ctx.stringValue("DescribeVodDomainUsageDataResponse.DataInterval"));
 
 		List<DataModule> usageDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVodDomainUsageDataResponse.UsageDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeVodDomainUsageDataResponse.UsageDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeVodDomainUsageDataResponse.UsageDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeVodDomainUsageDataResponse.UsageDataPerInterval["+ i +"].TimeStamp"));
 
 			usageDataPerInterval.add(dataModule);
 		}

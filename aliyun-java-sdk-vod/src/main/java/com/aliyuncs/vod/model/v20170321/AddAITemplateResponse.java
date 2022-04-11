@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddAITemplateResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String templateId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTemplateId() {
 		return this.templateId;
@@ -42,6 +34,14 @@ public class AddAITemplateResponse extends AcsResponse {
 
 	public void setTemplateId(String templateId) {
 		this.templateId = templateId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -47,22 +47,22 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 	public static class MediaSnapshot {
 
-		private Long total;
+		private String creationTime;
 
 		private String regular;
 
-		private String creationTime;
+		private Long total;
 
 		private String jobId;
 
 		private List<Snapshot> snapshots;
 
-		public Long getTotal() {
-			return this.total;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setTotal(Long total) {
-			this.total = total;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getRegular() {
@@ -73,12 +73,12 @@ public class ListSnapshotsResponse extends AcsResponse {
 			this.regular = regular;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public Long getTotal() {
+			return this.total;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setTotal(Long total) {
+			this.total = total;
 		}
 
 		public String getJobId() {

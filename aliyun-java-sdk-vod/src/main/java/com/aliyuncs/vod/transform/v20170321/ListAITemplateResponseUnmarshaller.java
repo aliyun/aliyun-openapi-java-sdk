@@ -31,13 +31,13 @@ public class ListAITemplateResponseUnmarshaller {
 		List<TemplateInfoListItem> templateInfoList = new ArrayList<TemplateInfoListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAITemplateResponse.TemplateInfoList.Length"); i++) {
 			TemplateInfoListItem templateInfoListItem = new TemplateInfoListItem();
-			templateInfoListItem.setTemplateId(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateId"));
-			templateInfoListItem.setTemplateType(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateType"));
-			templateInfoListItem.setTemplateName(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateName"));
-			templateInfoListItem.setTemplateConfig(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateConfig"));
-			templateInfoListItem.setSource(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].Source"));
-			templateInfoListItem.setIsDefault(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].IsDefault"));
 			templateInfoListItem.setCreationTime(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].CreationTime"));
+			templateInfoListItem.setIsDefault(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].IsDefault"));
+			templateInfoListItem.setTemplateType(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateType"));
+			templateInfoListItem.setTemplateConfig(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateConfig"));
+			templateInfoListItem.setTemplateName(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateName"));
+			templateInfoListItem.setSource(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].Source"));
+			templateInfoListItem.setTemplateId(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateId"));
 			templateInfoListItem.setModifyTime(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].ModifyTime"));
 
 			templateInfoList.add(templateInfoListItem);

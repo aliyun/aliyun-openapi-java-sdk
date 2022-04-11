@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePlayTopVideosResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long pageNo;
+
+	private String requestId;
 
 	private Long pageSize;
 
@@ -35,20 +35,20 @@ public class DescribePlayTopVideosResponse extends AcsResponse {
 
 	private List<TopPlayVideoStatis> topPlayVideos;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Long pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageSize() {
@@ -77,22 +77,22 @@ public class DescribePlayTopVideosResponse extends AcsResponse {
 
 	public static class TopPlayVideoStatis {
 
-		private String playDuration;
+		private String title;
 
 		private String vV;
 
-		private String uV;
+		private String playDuration;
 
 		private String videoId;
 
-		private String title;
+		private String uV;
 
-		public String getPlayDuration() {
-			return this.playDuration;
+		public String getTitle() {
+			return this.title;
 		}
 
-		public void setPlayDuration(String playDuration) {
-			this.playDuration = playDuration;
+		public void setTitle(String title) {
+			this.title = title;
 		}
 
 		public String getVV() {
@@ -103,12 +103,12 @@ public class DescribePlayTopVideosResponse extends AcsResponse {
 			this.vV = vV;
 		}
 
-		public String getUV() {
-			return this.uV;
+		public String getPlayDuration() {
+			return this.playDuration;
 		}
 
-		public void setUV(String uV) {
-			this.uV = uV;
+		public void setPlayDuration(String playDuration) {
+			this.playDuration = playDuration;
 		}
 
 		public String getVideoId() {
@@ -119,12 +119,12 @@ public class DescribePlayTopVideosResponse extends AcsResponse {
 			this.videoId = videoId;
 		}
 
-		public String getTitle() {
-			return this.title;
+		public String getUV() {
+			return this.uV;
 		}
 
-		public void setTitle(String title) {
-			this.title = title;
+		public void setUV(String uV) {
+			this.uV = uV;
 		}
 	}
 

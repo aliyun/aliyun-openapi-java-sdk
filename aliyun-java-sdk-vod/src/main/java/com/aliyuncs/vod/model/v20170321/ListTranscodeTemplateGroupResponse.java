@@ -49,19 +49,19 @@ public class ListTranscodeTemplateGroupResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String modifyTime;
-
-		private String name;
+		private String transcodeMode;
 
 		private String isDefault;
 
-		private String locked;
+		private String appId;
 
 		private String transcodeTemplateGroupId;
 
-		private String transcodeMode;
+		private String name;
 
-		private String appId;
+		private String modifyTime;
+
+		private String locked;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -69,46 +69,6 @@ public class ListTranscodeTemplateGroupResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getIsDefault() {
-			return this.isDefault;
-		}
-
-		public void setIsDefault(String isDefault) {
-			this.isDefault = isDefault;
-		}
-
-		public String getLocked() {
-			return this.locked;
-		}
-
-		public void setLocked(String locked) {
-			this.locked = locked;
-		}
-
-		public String getTranscodeTemplateGroupId() {
-			return this.transcodeTemplateGroupId;
-		}
-
-		public void setTranscodeTemplateGroupId(String transcodeTemplateGroupId) {
-			this.transcodeTemplateGroupId = transcodeTemplateGroupId;
 		}
 
 		public String getTranscodeMode() {
@@ -119,12 +79,52 @@ public class ListTranscodeTemplateGroupResponse extends AcsResponse {
 			this.transcodeMode = transcodeMode;
 		}
 
+		public String getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(String isDefault) {
+			this.isDefault = isDefault;
+		}
+
 		public String getAppId() {
 			return this.appId;
 		}
 
 		public void setAppId(String appId) {
 			this.appId = appId;
+		}
+
+		public String getTranscodeTemplateGroupId() {
+			return this.transcodeTemplateGroupId;
+		}
+
+		public void setTranscodeTemplateGroupId(String transcodeTemplateGroupId) {
+			this.transcodeTemplateGroupId = transcodeTemplateGroupId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getLocked() {
+			return this.locked;
+		}
+
+		public void setLocked(String locked) {
+			this.locked = locked;
 		}
 	}
 

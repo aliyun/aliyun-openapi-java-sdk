@@ -52,15 +52,15 @@ public class GetMessageCallbackResponse extends AcsResponse {
 
 		private String eventTypeList;
 
-		private String authSwitch;
-
-		private String authKey;
-
-		private String mnsEndpoint;
+		private String appId;
 
 		private String mnsQueueName;
 
-		private String appId;
+		private String authKey;
+
+		private String authSwitch;
+
+		private String mnsEndpoint;
 
 		public String getCallbackType() {
 			return this.callbackType;
@@ -86,28 +86,12 @@ public class GetMessageCallbackResponse extends AcsResponse {
 			this.eventTypeList = eventTypeList;
 		}
 
-		public String getAuthSwitch() {
-			return this.authSwitch;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setAuthSwitch(String authSwitch) {
-			this.authSwitch = authSwitch;
-		}
-
-		public String getAuthKey() {
-			return this.authKey;
-		}
-
-		public void setAuthKey(String authKey) {
-			this.authKey = authKey;
-		}
-
-		public String getMnsEndpoint() {
-			return this.mnsEndpoint;
-		}
-
-		public void setMnsEndpoint(String mnsEndpoint) {
-			this.mnsEndpoint = mnsEndpoint;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public String getMnsQueueName() {
@@ -118,12 +102,28 @@ public class GetMessageCallbackResponse extends AcsResponse {
 			this.mnsQueueName = mnsQueueName;
 		}
 
-		public String getAppId() {
-			return this.appId;
+		public String getAuthKey() {
+			return this.authKey;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setAuthKey(String authKey) {
+			this.authKey = authKey;
+		}
+
+		public String getAuthSwitch() {
+			return this.authSwitch;
+		}
+
+		public void setAuthSwitch(String authSwitch) {
+			this.authSwitch = authSwitch;
+		}
+
+		public String getMnsEndpoint() {
+			return this.mnsEndpoint;
+		}
+
+		public void setMnsEndpoint(String mnsEndpoint) {
+			this.mnsEndpoint = mnsEndpoint;
 		}
 	}
 

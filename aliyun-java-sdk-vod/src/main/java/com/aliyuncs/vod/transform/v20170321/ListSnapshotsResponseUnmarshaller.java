@@ -30,9 +30,9 @@ public class ListSnapshotsResponseUnmarshaller {
 		listSnapshotsResponse.setRequestId(_ctx.stringValue("ListSnapshotsResponse.RequestId"));
 
 		MediaSnapshot mediaSnapshot = new MediaSnapshot();
-		mediaSnapshot.setTotal(_ctx.longValue("ListSnapshotsResponse.MediaSnapshot.Total"));
-		mediaSnapshot.setRegular(_ctx.stringValue("ListSnapshotsResponse.MediaSnapshot.Regular"));
 		mediaSnapshot.setCreationTime(_ctx.stringValue("ListSnapshotsResponse.MediaSnapshot.CreationTime"));
+		mediaSnapshot.setRegular(_ctx.stringValue("ListSnapshotsResponse.MediaSnapshot.Regular"));
+		mediaSnapshot.setTotal(_ctx.longValue("ListSnapshotsResponse.MediaSnapshot.Total"));
 		mediaSnapshot.setJobId(_ctx.stringValue("ListSnapshotsResponse.MediaSnapshot.JobId"));
 
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();

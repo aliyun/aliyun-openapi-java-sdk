@@ -31,17 +31,17 @@ public class ListDynamicImageResponseUnmarshaller {
 		List<DynamicImage> dynamicImageList = new ArrayList<DynamicImage>();
 		for (int i = 0; i < _ctx.lengthValue("ListDynamicImageResponse.DynamicImageList.Length"); i++) {
 			DynamicImage dynamicImage = new DynamicImage();
-			dynamicImage.setVideoId(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].VideoId"));
-			dynamicImage.setDynamicImageId(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].DynamicImageId"));
-			dynamicImage.setJobId(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].JobId"));
+			dynamicImage.setCreationTime(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].CreationTime"));
 			dynamicImage.setFileURL(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].FileURL"));
+			dynamicImage.setVideoId(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].VideoId"));
 			dynamicImage.setWidth(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].Width"));
+			dynamicImage.setJobId(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].JobId"));
 			dynamicImage.setHeight(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].Height"));
+			dynamicImage.setFps(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].Fps"));
 			dynamicImage.setDuration(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].Duration"));
 			dynamicImage.setFormat(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].Format"));
+			dynamicImage.setDynamicImageId(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].DynamicImageId"));
 			dynamicImage.setFileSize(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].FileSize"));
-			dynamicImage.setFps(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].Fps"));
-			dynamicImage.setCreationTime(_ctx.stringValue("ListDynamicImageResponse.DynamicImageList["+ i +"].CreationTime"));
 
 			dynamicImageList.add(dynamicImage);
 		}

@@ -52,15 +52,15 @@ public class GetWatermarkResponse extends AcsResponse {
 
 		private String isDefault;
 
-		private String watermarkId;
-
-		private String name;
-
 		private String fileUrl;
+
+		private String appId;
 
 		private String watermarkConfig;
 
-		private String appId;
+		private String name;
+
+		private String watermarkId;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -86,28 +86,20 @@ public class GetWatermarkResponse extends AcsResponse {
 			this.isDefault = isDefault;
 		}
 
-		public String getWatermarkId() {
-			return this.watermarkId;
-		}
-
-		public void setWatermarkId(String watermarkId) {
-			this.watermarkId = watermarkId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getFileUrl() {
 			return this.fileUrl;
 		}
 
 		public void setFileUrl(String fileUrl) {
 			this.fileUrl = fileUrl;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public String getWatermarkConfig() {
@@ -118,12 +110,20 @@ public class GetWatermarkResponse extends AcsResponse {
 			this.watermarkConfig = watermarkConfig;
 		}
 
-		public String getAppId() {
-			return this.appId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getWatermarkId() {
+			return this.watermarkId;
+		}
+
+		public void setWatermarkId(String watermarkId) {
+			this.watermarkId = watermarkId;
 		}
 	}
 

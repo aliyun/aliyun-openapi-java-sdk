@@ -26,15 +26,15 @@ public class GetVodTemplateResponseUnmarshaller {
 		getVodTemplateResponse.setRequestId(_ctx.stringValue("GetVodTemplateResponse.RequestId"));
 
 		VodTemplateInfo vodTemplateInfo = new VodTemplateInfo();
-		vodTemplateInfo.setName(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.Name"));
-		vodTemplateInfo.setVodTemplateId(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.VodTemplateId"));
-		vodTemplateInfo.setTemplateType(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.TemplateType"));
-		vodTemplateInfo.setSubTemplateType(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.SubTemplateType"));
-		vodTemplateInfo.setSource(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.Source"));
-		vodTemplateInfo.setIsDefault(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.IsDefault"));
-		vodTemplateInfo.setTemplateConfig(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.TemplateConfig"));
 		vodTemplateInfo.setCreationTime(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.CreationTime"));
+		vodTemplateInfo.setIsDefault(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.IsDefault"));
+		vodTemplateInfo.setTemplateType(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.TemplateType"));
+		vodTemplateInfo.setVodTemplateId(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.VodTemplateId"));
+		vodTemplateInfo.setTemplateConfig(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.TemplateConfig"));
+		vodTemplateInfo.setSource(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.Source"));
+		vodTemplateInfo.setName(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.Name"));
 		vodTemplateInfo.setModifyTime(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.ModifyTime"));
+		vodTemplateInfo.setSubTemplateType(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.SubTemplateType"));
 		getVodTemplateResponse.setVodTemplateInfo(vodTemplateInfo);
 	 
 	 	return getVodTemplateResponse;

@@ -46,62 +46,30 @@ public class GetVodTemplateResponse extends AcsResponse {
 
 	public static class VodTemplateInfo {
 
-		private String name;
-
-		private String vodTemplateId;
-
-		private String templateType;
-
-		private String subTemplateType;
-
-		private String source;
+		private String creationTime;
 
 		private String isDefault;
 
+		private String templateType;
+
+		private String vodTemplateId;
+
 		private String templateConfig;
 
-		private String creationTime;
+		private String source;
+
+		private String name;
 
 		private String modifyTime;
 
-		public String getName() {
-			return this.name;
+		private String subTemplateType;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getVodTemplateId() {
-			return this.vodTemplateId;
-		}
-
-		public void setVodTemplateId(String vodTemplateId) {
-			this.vodTemplateId = vodTemplateId;
-		}
-
-		public String getTemplateType() {
-			return this.templateType;
-		}
-
-		public void setTemplateType(String templateType) {
-			this.templateType = templateType;
-		}
-
-		public String getSubTemplateType() {
-			return this.subTemplateType;
-		}
-
-		public void setSubTemplateType(String subTemplateType) {
-			this.subTemplateType = subTemplateType;
-		}
-
-		public String getSource() {
-			return this.source;
-		}
-
-		public void setSource(String source) {
-			this.source = source;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getIsDefault() {
@@ -112,6 +80,22 @@ public class GetVodTemplateResponse extends AcsResponse {
 			this.isDefault = isDefault;
 		}
 
+		public String getTemplateType() {
+			return this.templateType;
+		}
+
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
+		}
+
+		public String getVodTemplateId() {
+			return this.vodTemplateId;
+		}
+
+		public void setVodTemplateId(String vodTemplateId) {
+			this.vodTemplateId = vodTemplateId;
+		}
+
 		public String getTemplateConfig() {
 			return this.templateConfig;
 		}
@@ -120,12 +104,20 @@ public class GetVodTemplateResponse extends AcsResponse {
 			this.templateConfig = templateConfig;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getSource() {
+			return this.source;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getModifyTime() {
@@ -134,6 +126,14 @@ public class GetVodTemplateResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getSubTemplateType() {
+			return this.subTemplateType;
+		}
+
+		public void setSubTemplateType(String subTemplateType) {
+			this.subTemplateType = subTemplateType;
 		}
 	}
 

@@ -29,10 +29,10 @@ public class AddWatermarkResponseUnmarshaller {
 		watermarkInfo.setCreationTime(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.CreationTime"));
 		watermarkInfo.setType(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.Type"));
 		watermarkInfo.setIsDefault(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.IsDefault"));
-		watermarkInfo.setWatermarkId(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.WatermarkId"));
-		watermarkInfo.setName(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.Name"));
 		watermarkInfo.setFileUrl(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.FileUrl"));
 		watermarkInfo.setWatermarkConfig(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.WatermarkConfig"));
+		watermarkInfo.setName(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.Name"));
+		watermarkInfo.setWatermarkId(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.WatermarkId"));
 		addWatermarkResponse.setWatermarkInfo(watermarkInfo);
 	 
 	 	return addWatermarkResponse;

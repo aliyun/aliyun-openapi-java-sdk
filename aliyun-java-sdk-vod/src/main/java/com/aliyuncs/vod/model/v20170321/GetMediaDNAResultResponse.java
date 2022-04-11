@@ -113,17 +113,9 @@ public class GetMediaDNAResultResponse extends AcsResponse {
 
 				public static class Input {
 
-					private String start;
-
 					private String duration;
 
-					public String getStart() {
-						return this.start;
-					}
-
-					public void setStart(String start) {
-						this.start = start;
-					}
+					private String start;
 
 					public String getDuration() {
 						return this.duration;
@@ -131,22 +123,22 @@ public class GetMediaDNAResultResponse extends AcsResponse {
 
 					public void setDuration(String duration) {
 						this.duration = duration;
+					}
+
+					public String getStart() {
+						return this.start;
+					}
+
+					public void setStart(String start) {
+						this.start = start;
 					}
 				}
 
 				public static class Duplication {
 
-					private String start;
-
 					private String duration;
 
-					public String getStart() {
-						return this.start;
-					}
-
-					public void setStart(String start) {
-						this.start = start;
-					}
+					private String start;
 
 					public String getDuration() {
 						return this.duration;
@@ -154,6 +146,14 @@ public class GetMediaDNAResultResponse extends AcsResponse {
 
 					public void setDuration(String duration) {
 						this.duration = duration;
+					}
+
+					public String getStart() {
+						return this.start;
+					}
+
+					public void setStart(String start) {
+						this.start = start;
 					}
 				}
 			}

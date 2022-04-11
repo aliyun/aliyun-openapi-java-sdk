@@ -46,30 +46,22 @@ public class AddCategoryResponse extends AcsResponse {
 
 	public static class Category {
 
-		private Long cateId;
-
-		private String cateName;
+		private String type;
 
 		private Long parentId;
 
+		private String cateName;
+
+		private Long cateId;
+
 		private Long level;
 
-		private String type;
-
-		public Long getCateId() {
-			return this.cateId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setCateId(Long cateId) {
-			this.cateId = cateId;
-		}
-
-		public String getCateName() {
-			return this.cateName;
-		}
-
-		public void setCateName(String cateName) {
-			this.cateName = cateName;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public Long getParentId() {
@@ -80,20 +72,28 @@ public class AddCategoryResponse extends AcsResponse {
 			this.parentId = parentId;
 		}
 
+		public String getCateName() {
+			return this.cateName;
+		}
+
+		public void setCateName(String cateName) {
+			this.cateName = cateName;
+		}
+
+		public Long getCateId() {
+			return this.cateId;
+		}
+
+		public void setCateId(Long cateId) {
+			this.cateId = cateId;
+		}
+
 		public Long getLevel() {
 			return this.level;
 		}
 
 		public void setLevel(Long level) {
 			this.level = level;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
 		}
 	}
 

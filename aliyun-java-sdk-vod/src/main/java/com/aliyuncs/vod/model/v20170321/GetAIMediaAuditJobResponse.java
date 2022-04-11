@@ -47,38 +47,30 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 	public static class MediaAuditJob {
 
-		private String jobId;
-
-		private String mediaId;
+		private String creationTime;
 
 		private String type;
 
 		private String status;
 
+		private String completeTime;
+
+		private String jobId;
+
 		private String code;
 
 		private String message;
 
-		private String creationTime;
-
-		private String completeTime;
+		private String mediaId;
 
 		private Data data;
 
-		public String getJobId() {
-			return this.jobId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getMediaId() {
-			return this.mediaId;
-		}
-
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getType() {
@@ -97,6 +89,22 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getCompleteTime() {
+			return this.completeTime;
+		}
+
+		public void setCompleteTime(String completeTime) {
+			this.completeTime = completeTime;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
 		public String getCode() {
 			return this.code;
 		}
@@ -113,20 +121,12 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getMediaId() {
+			return this.mediaId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getCompleteTime() {
-			return this.completeTime;
-		}
-
-		public void setCompleteTime(String completeTime) {
-			this.completeTime = completeTime;
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 
 		public Data getData() {
@@ -211,31 +211,15 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 			public static class ImageResultItem {
 
-				private String suggestion;
-
-				private String label;
-
 				private String type;
 
 				private String url;
 
+				private String suggestion;
+
+				private String label;
+
 				private List<ResultItem> result;
-
-				public String getSuggestion() {
-					return this.suggestion;
-				}
-
-				public void setSuggestion(String suggestion) {
-					this.suggestion = suggestion;
-				}
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
 
 				public String getType() {
 					return this.type;
@@ -253,6 +237,22 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 					this.url = url;
 				}
 
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
 				public List<ResultItem> getResult() {
 					return this.result;
 				}
@@ -263,13 +263,21 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 				public static class ResultItem {
 
+					private String score;
+
 					private String suggestion;
 
 					private String label;
 
-					private String score;
-
 					private String scene;
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
 
 					public String getSuggestion() {
 						return this.suggestion;
@@ -287,14 +295,6 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 						this.label = label;
 					}
 
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
 					public String getScene() {
 						return this.scene;
 					}
@@ -307,49 +307,17 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 			public static class TextResultItem {
 
-				private String suggestion;
+				private String type;
 
-				private String label;
+				private String suggestion;
 
 				private String score;
 
-				private String scene;
-
-				private String type;
+				private String label;
 
 				private String content;
 
-				public String getSuggestion() {
-					return this.suggestion;
-				}
-
-				public void setSuggestion(String suggestion) {
-					this.suggestion = suggestion;
-				}
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
-
-				public String getScore() {
-					return this.score;
-				}
-
-				public void setScore(String score) {
-					this.score = score;
-				}
-
-				public String getScene() {
-					return this.scene;
-				}
-
-				public void setScene(String scene) {
-					this.scene = scene;
-				}
+				private String scene;
 
 				public String getType() {
 					return this.type;
@@ -359,6 +327,30 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 					this.type = type;
 				}
 
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
+
+				public String getScore() {
+					return this.score;
+				}
+
+				public void setScore(String score) {
+					this.score = score;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
 				public String getContent() {
 					return this.content;
 				}
@@ -366,9 +358,19 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 				public void setContent(String content) {
 					this.content = content;
 				}
+
+				public String getScene() {
+					return this.scene;
+				}
+
+				public void setScene(String scene) {
+					this.scene = scene;
+				}
 			}
 
 			public static class AudioResultItem {
+
+				private String score;
 
 				private String suggestion;
 
@@ -376,7 +378,13 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 				private String scene;
 
-				private String score;
+				public String getScore() {
+					return this.score;
+				}
+
+				public void setScore(String score) {
+					this.score = score;
+				}
 
 				public String getSuggestion() {
 					return this.suggestion;
@@ -401,21 +409,13 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 				public void setScene(String scene) {
 					this.scene = scene;
 				}
-
-				public String getScore() {
-					return this.score;
-				}
-
-				public void setScore(String score) {
-					this.score = score;
-				}
 			}
 
 			public static class VideoResult {
 
-				private String suggestion;
-
 				private String label;
+
+				private String suggestion;
 
 				private TerrorismResult terrorismResult;
 
@@ -427,20 +427,20 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 				private LogoResult logoResult;
 
-				public String getSuggestion() {
-					return this.suggestion;
-				}
-
-				public void setSuggestion(String suggestion) {
-					this.suggestion = suggestion;
-				}
-
 				public String getLabel() {
 					return this.label;
 				}
 
 				public void setLabel(String label) {
 					this.label = label;
+				}
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
 				}
 
 				public TerrorismResult getTerrorismResult() {
@@ -487,11 +487,11 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					private String suggestion;
 
+					private String averageScore;
+
 					private String label;
 
 					private String maxScore;
-
-					private String averageScore;
 
 					private List<CounterListItem> counterList;
 
@@ -503,6 +503,14 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setSuggestion(String suggestion) {
 						this.suggestion = suggestion;
+					}
+
+					public String getAverageScore() {
+						return this.averageScore;
+					}
+
+					public void setAverageScore(String averageScore) {
+						this.averageScore = averageScore;
 					}
 
 					public String getLabel() {
@@ -519,14 +527,6 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setMaxScore(String maxScore) {
 						this.maxScore = maxScore;
-					}
-
-					public String getAverageScore() {
-						return this.averageScore;
-					}
-
-					public void setAverageScore(String averageScore) {
-						this.averageScore = averageScore;
 					}
 
 					public List<CounterListItem> getCounterList() {
@@ -570,20 +570,20 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public static class TopListItem {
 
-						private String label;
+						private String url;
 
 						private String score;
 
 						private String timestamp;
 
-						private String url;
+						private String label;
 
-						public String getLabel() {
-							return this.label;
+						public String getUrl() {
+							return this.url;
 						}
 
-						public void setLabel(String label) {
-							this.label = label;
+						public void setUrl(String url) {
+							this.url = url;
 						}
 
 						public String getScore() {
@@ -602,12 +602,12 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 							this.timestamp = timestamp;
 						}
 
-						public String getUrl() {
-							return this.url;
+						public String getLabel() {
+							return this.label;
 						}
 
-						public void setUrl(String url) {
-							this.url = url;
+						public void setLabel(String label) {
+							this.label = label;
 						}
 					}
 				}
@@ -616,11 +616,11 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					private String suggestion;
 
+					private String averageScore;
+
 					private String label;
 
 					private String maxScore;
-
-					private String averageScore;
 
 					private List<CounterListItem3> counterList1;
 
@@ -632,6 +632,14 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setSuggestion(String suggestion) {
 						this.suggestion = suggestion;
+					}
+
+					public String getAverageScore() {
+						return this.averageScore;
+					}
+
+					public void setAverageScore(String averageScore) {
+						this.averageScore = averageScore;
 					}
 
 					public String getLabel() {
@@ -648,14 +656,6 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setMaxScore(String maxScore) {
 						this.maxScore = maxScore;
-					}
-
-					public String getAverageScore() {
-						return this.averageScore;
-					}
-
-					public void setAverageScore(String averageScore) {
-						this.averageScore = averageScore;
 					}
 
 					public List<CounterListItem3> getCounterList1() {
@@ -699,20 +699,20 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public static class TopListItem4 {
 
-						private String label;
+						private String url;
 
 						private String score;
 
 						private String timestamp;
 
-						private String url;
+						private String label;
 
-						public String getLabel() {
-							return this.label;
+						public String getUrl() {
+							return this.url;
 						}
 
-						public void setLabel(String label) {
-							this.label = label;
+						public void setUrl(String url) {
+							this.url = url;
 						}
 
 						public String getScore() {
@@ -731,12 +731,12 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 							this.timestamp = timestamp;
 						}
 
-						public String getUrl() {
-							return this.url;
+						public String getLabel() {
+							return this.label;
 						}
 
-						public void setUrl(String url) {
-							this.url = url;
+						public void setLabel(String label) {
+							this.label = label;
 						}
 					}
 				}
@@ -745,11 +745,11 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					private String suggestion;
 
+					private String averageScore;
+
 					private String label;
 
 					private String maxScore;
-
-					private String averageScore;
 
 					private List<CounterListItem7> counterList5;
 
@@ -761,6 +761,14 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setSuggestion(String suggestion) {
 						this.suggestion = suggestion;
+					}
+
+					public String getAverageScore() {
+						return this.averageScore;
+					}
+
+					public void setAverageScore(String averageScore) {
+						this.averageScore = averageScore;
 					}
 
 					public String getLabel() {
@@ -777,14 +785,6 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setMaxScore(String maxScore) {
 						this.maxScore = maxScore;
-					}
-
-					public String getAverageScore() {
-						return this.averageScore;
-					}
-
-					public void setAverageScore(String averageScore) {
-						this.averageScore = averageScore;
 					}
 
 					public List<CounterListItem7> getCounterList5() {
@@ -828,20 +828,20 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public static class TopListItem8 {
 
-						private String label;
+						private String url;
 
 						private String score;
 
 						private String timestamp;
 
-						private String url;
+						private String label;
 
-						public String getLabel() {
-							return this.label;
+						public String getUrl() {
+							return this.url;
 						}
 
-						public void setLabel(String label) {
-							this.label = label;
+						public void setUrl(String url) {
+							this.url = url;
 						}
 
 						public String getScore() {
@@ -860,12 +860,12 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 							this.timestamp = timestamp;
 						}
 
-						public String getUrl() {
-							return this.url;
+						public String getLabel() {
+							return this.label;
 						}
 
-						public void setUrl(String url) {
-							this.url = url;
+						public void setLabel(String label) {
+							this.label = label;
 						}
 					}
 				}
@@ -874,11 +874,11 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					private String suggestion;
 
+					private String averageScore;
+
 					private String label;
 
 					private String maxScore;
-
-					private String averageScore;
 
 					private List<CounterListItem11> counterList9;
 
@@ -890,6 +890,14 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setSuggestion(String suggestion) {
 						this.suggestion = suggestion;
+					}
+
+					public String getAverageScore() {
+						return this.averageScore;
+					}
+
+					public void setAverageScore(String averageScore) {
+						this.averageScore = averageScore;
 					}
 
 					public String getLabel() {
@@ -906,14 +914,6 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setMaxScore(String maxScore) {
 						this.maxScore = maxScore;
-					}
-
-					public String getAverageScore() {
-						return this.averageScore;
-					}
-
-					public void setAverageScore(String averageScore) {
-						this.averageScore = averageScore;
 					}
 
 					public List<CounterListItem11> getCounterList9() {
@@ -957,20 +957,20 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public static class TopListItem12 {
 
-						private String label;
+						private String url;
 
 						private String score;
 
 						private String timestamp;
 
-						private String url;
+						private String label;
 
-						public String getLabel() {
-							return this.label;
+						public String getUrl() {
+							return this.url;
 						}
 
-						public void setLabel(String label) {
-							this.label = label;
+						public void setUrl(String url) {
+							this.url = url;
 						}
 
 						public String getScore() {
@@ -989,12 +989,12 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 							this.timestamp = timestamp;
 						}
 
-						public String getUrl() {
-							return this.url;
+						public String getLabel() {
+							return this.label;
 						}
 
-						public void setUrl(String url) {
-							this.url = url;
+						public void setLabel(String label) {
+							this.label = label;
 						}
 					}
 				}
@@ -1003,11 +1003,11 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					private String suggestion;
 
+					private String averageScore;
+
 					private String label;
 
 					private String maxScore;
-
-					private String averageScore;
 
 					private List<CounterListItem15> counterList13;
 
@@ -1019,6 +1019,14 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setSuggestion(String suggestion) {
 						this.suggestion = suggestion;
+					}
+
+					public String getAverageScore() {
+						return this.averageScore;
+					}
+
+					public void setAverageScore(String averageScore) {
+						this.averageScore = averageScore;
 					}
 
 					public String getLabel() {
@@ -1035,14 +1043,6 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public void setMaxScore(String maxScore) {
 						this.maxScore = maxScore;
-					}
-
-					public String getAverageScore() {
-						return this.averageScore;
-					}
-
-					public void setAverageScore(String averageScore) {
-						this.averageScore = averageScore;
 					}
 
 					public List<CounterListItem15> getCounterList13() {
@@ -1086,20 +1086,20 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 					public static class TopListItem16 {
 
-						private String label;
+						private String url;
 
 						private String score;
 
 						private String timestamp;
 
-						private String url;
+						private String label;
 
-						public String getLabel() {
-							return this.label;
+						public String getUrl() {
+							return this.url;
 						}
 
-						public void setLabel(String label) {
-							this.label = label;
+						public void setUrl(String url) {
+							this.url = url;
 						}
 
 						public String getScore() {
@@ -1118,12 +1118,12 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 							this.timestamp = timestamp;
 						}
 
-						public String getUrl() {
-							return this.url;
+						public String getLabel() {
+							return this.label;
 						}
 
-						public void setUrl(String url) {
-							this.url = url;
+						public void setLabel(String label) {
+							this.label = label;
 						}
 					}
 				}

@@ -33,8 +33,8 @@ public class DescribeVodDomainLogResponseUnmarshaller {
 		List<DomainLogDetail> domainLogDetails = new ArrayList<DomainLogDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVodDomainLogResponse.DomainLogDetails.Length"); i++) {
 			DomainLogDetail domainLogDetail = new DomainLogDetail();
-			domainLogDetail.setDomainName(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].DomainName"));
 			domainLogDetail.setLogCount(_ctx.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogCount"));
+			domainLogDetail.setDomainName(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].DomainName"));
 
 			PageInfos pageInfos = new PageInfos();
 			pageInfos.setPageNumber(_ctx.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageNumber"));
@@ -45,11 +45,11 @@ public class DescribeVodDomainLogResponseUnmarshaller {
 			List<LogInfoDetail> logInfos = new ArrayList<LogInfoDetail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 				LogInfoDetail logInfoDetail = new LogInfoDetail();
-				logInfoDetail.setLogName(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName"));
-				logInfoDetail.setLogPath(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath"));
+				logInfoDetail.setEndTime(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime"));
 				logInfoDetail.setLogSize(_ctx.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
 				logInfoDetail.setStartTime(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
-				logInfoDetail.setEndTime(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime"));
+				logInfoDetail.setLogName(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName"));
+				logInfoDetail.setLogPath(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath"));
 
 				logInfos.add(logInfoDetail);
 			}

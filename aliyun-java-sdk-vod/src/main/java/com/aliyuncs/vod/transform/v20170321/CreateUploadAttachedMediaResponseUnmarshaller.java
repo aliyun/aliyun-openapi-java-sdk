@@ -23,11 +23,11 @@ public class CreateUploadAttachedMediaResponseUnmarshaller {
 	public static CreateUploadAttachedMediaResponse unmarshall(CreateUploadAttachedMediaResponse createUploadAttachedMediaResponse, UnmarshallerContext _ctx) {
 		
 		createUploadAttachedMediaResponse.setRequestId(_ctx.stringValue("CreateUploadAttachedMediaResponse.RequestId"));
+		createUploadAttachedMediaResponse.setFileURL(_ctx.stringValue("CreateUploadAttachedMediaResponse.FileURL"));
+		createUploadAttachedMediaResponse.setUploadAddress(_ctx.stringValue("CreateUploadAttachedMediaResponse.UploadAddress"));
 		createUploadAttachedMediaResponse.setMediaId(_ctx.stringValue("CreateUploadAttachedMediaResponse.MediaId"));
 		createUploadAttachedMediaResponse.setMediaURL(_ctx.stringValue("CreateUploadAttachedMediaResponse.MediaURL"));
-		createUploadAttachedMediaResponse.setUploadAddress(_ctx.stringValue("CreateUploadAttachedMediaResponse.UploadAddress"));
 		createUploadAttachedMediaResponse.setUploadAuth(_ctx.stringValue("CreateUploadAttachedMediaResponse.UploadAuth"));
-		createUploadAttachedMediaResponse.setFileURL(_ctx.stringValue("CreateUploadAttachedMediaResponse.FileURL"));
 	 
 	 	return createUploadAttachedMediaResponse;
 	}

@@ -31,22 +31,22 @@ public class GetCategoriesResponseUnmarshaller {
 		getCategoriesResponse.setSubTotal(_ctx.longValue("GetCategoriesResponse.SubTotal"));
 
 		Category1 category1 = new Category1();
-		category1.setCateId(_ctx.longValue("GetCategoriesResponse.Category.CateId"));
-		category1.setCateName(_ctx.stringValue("GetCategoriesResponse.Category.CateName"));
-		category1.setLevel(_ctx.longValue("GetCategoriesResponse.Category.Level"));
-		category1.setParentId(_ctx.longValue("GetCategoriesResponse.Category.ParentId"));
 		category1.setType(_ctx.stringValue("GetCategoriesResponse.Category.Type"));
+		category1.setParentId(_ctx.longValue("GetCategoriesResponse.Category.ParentId"));
+		category1.setCateName(_ctx.stringValue("GetCategoriesResponse.Category.CateName"));
+		category1.setCateId(_ctx.longValue("GetCategoriesResponse.Category.CateId"));
+		category1.setLevel(_ctx.longValue("GetCategoriesResponse.Category.Level"));
 		getCategoriesResponse.setCategory1(category1);
 
 		List<Category> subCategories = new ArrayList<Category>();
 		for (int i = 0; i < _ctx.lengthValue("GetCategoriesResponse.SubCategories.Length"); i++) {
 			Category category = new Category();
-			category.setCateId(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].CateId"));
-			category.setCateName(_ctx.stringValue("GetCategoriesResponse.SubCategories["+ i +"].CateName"));
-			category.setLevel(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].Level"));
-			category.setParentId(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].ParentId"));
-			category.setSubTotal(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].SubTotal"));
 			category.setType(_ctx.stringValue("GetCategoriesResponse.SubCategories["+ i +"].Type"));
+			category.setCateName(_ctx.stringValue("GetCategoriesResponse.SubCategories["+ i +"].CateName"));
+			category.setParentId(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].ParentId"));
+			category.setCateId(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].CateId"));
+			category.setSubTotal(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].SubTotal"));
+			category.setLevel(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].Level"));
 
 			subCategories.add(category);
 		}

@@ -47,28 +47,28 @@ public class SubmitAIJobResponse extends AcsResponse {
 
 	public static class AIJob {
 
-		private String jobId;
+		private String creationTime;
 
 		private String type;
 
-		private String mediaId;
-
 		private String status;
+
+		private String data;
+
+		private String jobId;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String mediaId;
 
-		private String data;
-
-		public String getJobId() {
-			return this.jobId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getType() {
@@ -79,20 +79,28 @@ public class SubmitAIJobResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getMediaId() {
-			return this.mediaId;
-		}
-
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getData() {
+			return this.data;
+		}
+
+		public void setData(String data) {
+			this.data = data;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getCode() {
@@ -111,20 +119,12 @@ public class SubmitAIJobResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getMediaId() {
+			return this.mediaId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getData() {
-			return this.data;
-		}
-
-		public void setData(String data) {
-			this.data = data;
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 	}
 

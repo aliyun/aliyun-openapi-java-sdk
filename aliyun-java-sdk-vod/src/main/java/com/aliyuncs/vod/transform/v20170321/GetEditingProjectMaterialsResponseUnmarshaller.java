@@ -31,33 +31,33 @@ public class GetEditingProjectMaterialsResponseUnmarshaller {
 		List<Material> materialList = new ArrayList<Material>();
 		for (int i = 0; i < _ctx.lengthValue("GetEditingProjectMaterialsResponse.MaterialList.Length"); i++) {
 			Material material = new Material();
-			material.setMaterialId(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].MaterialId"));
-			material.setTitle(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Title"));
-			material.setTags(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Tags"));
 			material.setStatus(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Status"));
-			material.setSize(_ctx.longValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Size"));
-			material.setDuration(_ctx.floatValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Duration"));
-			material.setDescription(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Description"));
 			material.setCreationTime(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CreationTime"));
-			material.setModifiedTime(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].ModifiedTime"));
-			material.setCoverURL(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CoverURL"));
 			material.setCateId(_ctx.integerValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateId"));
-			material.setCateName(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateName"));
-			material.setSource(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Source"));
-			material.setSpriteConfig(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].SpriteConfig"));
 			material.setMaterialType(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].MaterialType"));
-
-			List<String> snapshots = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots.Length"); j++) {
-				snapshots.add(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots["+ j +"]"));
-			}
-			material.setSnapshots(snapshots);
+			material.setTags(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Tags"));
+			material.setSpriteConfig(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].SpriteConfig"));
+			material.setSource(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Source"));
+			material.setCateName(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateName"));
+			material.setModifiedTime(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].ModifiedTime"));
+			material.setDescription(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Description"));
+			material.setMaterialId(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].MaterialId"));
+			material.setSize(_ctx.longValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Size"));
+			material.setCoverURL(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CoverURL"));
+			material.setDuration(_ctx.floatValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Duration"));
+			material.setTitle(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Title"));
 
 			List<String> sprites = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Sprites.Length"); j++) {
 				sprites.add(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Sprites["+ j +"]"));
 			}
 			material.setSprites(sprites);
+
+			List<String> snapshots = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots.Length"); j++) {
+				snapshots.add(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots["+ j +"]"));
+			}
+			material.setSnapshots(snapshots);
 
 			materialList.add(material);
 		}

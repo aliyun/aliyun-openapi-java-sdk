@@ -31,13 +31,13 @@ public class ListAppPoliciesForIdentityResponseUnmarshaller {
 		List<AppPolicy> appPolicyList = new ArrayList<AppPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppPoliciesForIdentityResponse.AppPolicyList.Length"); i++) {
 			AppPolicy appPolicy = new AppPolicy();
-			appPolicy.setAppId(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].AppId"));
 			appPolicy.setCreationTime(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].CreationTime"));
-			appPolicy.setPolicyName(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyName"));
-			appPolicy.setPolicyType(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyType"));
-			appPolicy.setPolicyValue(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyValue"));
 			appPolicy.setDescription(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].Description"));
+			appPolicy.setAppId(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].AppId"));
+			appPolicy.setPolicyValue(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyValue"));
+			appPolicy.setPolicyName(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyName"));
 			appPolicy.setModificationTime(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].ModificationTime"));
+			appPolicy.setPolicyType(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyType"));
 
 			appPolicyList.add(appPolicy);
 		}

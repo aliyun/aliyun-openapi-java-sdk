@@ -47,15 +47,15 @@ public class GetAIImageJobsResponse extends AcsResponse {
 
 	public static class AIImageJob {
 
+		private String status;
+
 		private String creationTime;
 
-		private String jobId;
-
-		private String templateId;
+		private String aIImageResult;
 
 		private String videoId;
 
-		private String aIImageResult;
+		private String jobId;
 
 		private String userData;
 
@@ -63,9 +63,17 @@ public class GetAIImageJobsResponse extends AcsResponse {
 
 		private String message;
 
-		private String status;
-
 		private String templateConfig;
+
+		private String templateId;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -75,20 +83,12 @@ public class GetAIImageJobsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getJobId() {
-			return this.jobId;
+		public String getAIImageResult() {
+			return this.aIImageResult;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setAIImageResult(String aIImageResult) {
+			this.aIImageResult = aIImageResult;
 		}
 
 		public String getVideoId() {
@@ -99,12 +99,12 @@ public class GetAIImageJobsResponse extends AcsResponse {
 			this.videoId = videoId;
 		}
 
-		public String getAIImageResult() {
-			return this.aIImageResult;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setAIImageResult(String aIImageResult) {
-			this.aIImageResult = aIImageResult;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getUserData() {
@@ -131,20 +131,20 @@ public class GetAIImageJobsResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getTemplateConfig() {
 			return this.templateConfig;
 		}
 
 		public void setTemplateConfig(String templateConfig) {
 			this.templateConfig = templateConfig;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 	}
 

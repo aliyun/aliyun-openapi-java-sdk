@@ -47,30 +47,30 @@ public class ListAIImageInfoResponse extends AcsResponse {
 
 	public static class AIImageInfo {
 
-		private String videoId;
+		private String creationTime;
 
 		private String aIImageInfoId;
 
-		private String jobId;
+		private String time;
 
 		private String fileURL;
 
-		private String score;
+		private String version;
 
-		private String time;
+		private String videoId;
+
+		private String jobId;
+
+		private String score;
 
 		private String format;
 
-		private String creationTime;
-
-		private String version;
-
-		public String getVideoId() {
-			return this.videoId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setVideoId(String videoId) {
-			this.videoId = videoId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getAIImageInfoId() {
@@ -81,12 +81,12 @@ public class ListAIImageInfoResponse extends AcsResponse {
 			this.aIImageInfoId = aIImageInfoId;
 		}
 
-		public String getJobId() {
-			return this.jobId;
+		public String getTime() {
+			return this.time;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setTime(String time) {
+			this.time = time;
 		}
 
 		public String getFileURL() {
@@ -97,6 +97,30 @@ public class ListAIImageInfoResponse extends AcsResponse {
 			this.fileURL = fileURL;
 		}
 
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getVideoId() {
+			return this.videoId;
+		}
+
+		public void setVideoId(String videoId) {
+			this.videoId = videoId;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
 		public String getScore() {
 			return this.score;
 		}
@@ -105,36 +129,12 @@ public class ListAIImageInfoResponse extends AcsResponse {
 			this.score = score;
 		}
 
-		public String getTime() {
-			return this.time;
-		}
-
-		public void setTime(String time) {
-			this.time = time;
-		}
-
 		public String getFormat() {
 			return this.format;
 		}
 
 		public void setFormat(String format) {
 			this.format = format;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
 		}
 	}
 

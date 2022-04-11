@@ -31,13 +31,13 @@ public class ListTranscodeTaskResponseUnmarshaller {
 		List<TranscodeTask> transcodeTaskList = new ArrayList<TranscodeTask>();
 		for (int i = 0; i < _ctx.lengthValue("ListTranscodeTaskResponse.TranscodeTaskList.Length"); i++) {
 			TranscodeTask transcodeTask = new TranscodeTask();
-			transcodeTask.setTranscodeTaskId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TranscodeTaskId"));
-			transcodeTask.setVideoId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].VideoId"));
-			transcodeTask.setTaskStatus(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TaskStatus"));
-			transcodeTask.setTranscodeTemplateGroupId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TranscodeTemplateGroupId"));
 			transcodeTask.setCreationTime(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].CreationTime"));
-			transcodeTask.setCompleteTime(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].CompleteTime"));
 			transcodeTask.setTrigger(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].Trigger"));
+			transcodeTask.setTaskStatus(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TaskStatus"));
+			transcodeTask.setVideoId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].VideoId"));
+			transcodeTask.setCompleteTime(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].CompleteTime"));
+			transcodeTask.setTranscodeTemplateGroupId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TranscodeTemplateGroupId"));
+			transcodeTask.setTranscodeTaskId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TranscodeTaskId"));
 
 			transcodeTaskList.add(transcodeTask);
 		}

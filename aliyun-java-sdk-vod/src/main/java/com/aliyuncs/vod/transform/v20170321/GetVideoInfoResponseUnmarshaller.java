@@ -31,28 +31,28 @@ public class GetVideoInfoResponseUnmarshaller {
 		getVideoInfoResponse.setAI(_ctx.stringValue("GetVideoInfoResponse.AI"));
 
 		Video video = new Video();
-		video.setVideoId(_ctx.stringValue("GetVideoInfoResponse.Video.VideoId"));
-		video.setTitle(_ctx.stringValue("GetVideoInfoResponse.Video.Title"));
-		video.setTags(_ctx.stringValue("GetVideoInfoResponse.Video.Tags"));
-		video.setStatus(_ctx.stringValue("GetVideoInfoResponse.Video.Status"));
-		video.setSize(_ctx.longValue("GetVideoInfoResponse.Video.Size"));
-		video.setDuration(_ctx.floatValue("GetVideoInfoResponse.Video.Duration"));
-		video.setDescription(_ctx.stringValue("GetVideoInfoResponse.Video.Description"));
-		video.setCreateTime(_ctx.stringValue("GetVideoInfoResponse.Video.CreateTime"));
-		video.setModifyTime(_ctx.stringValue("GetVideoInfoResponse.Video.ModifyTime"));
-		video.setModificationTime(_ctx.stringValue("GetVideoInfoResponse.Video.ModificationTime"));
-		video.setCreationTime(_ctx.stringValue("GetVideoInfoResponse.Video.CreationTime"));
-		video.setCoverURL(_ctx.stringValue("GetVideoInfoResponse.Video.CoverURL"));
-		video.setCateId(_ctx.longValue("GetVideoInfoResponse.Video.CateId"));
-		video.setCateName(_ctx.stringValue("GetVideoInfoResponse.Video.CateName"));
-		video.setDownloadSwitch(_ctx.stringValue("GetVideoInfoResponse.Video.DownloadSwitch"));
-		video.setTemplateGroupId(_ctx.stringValue("GetVideoInfoResponse.Video.TemplateGroupId"));
-		video.setPreprocessStatus(_ctx.stringValue("GetVideoInfoResponse.Video.PreprocessStatus"));
 		video.setStorageLocation(_ctx.stringValue("GetVideoInfoResponse.Video.StorageLocation"));
+		video.setCreationTime(_ctx.stringValue("GetVideoInfoResponse.Video.CreationTime"));
+		video.setStatus(_ctx.stringValue("GetVideoInfoResponse.Video.Status"));
+		video.setCateId(_ctx.longValue("GetVideoInfoResponse.Video.CateId"));
+		video.setVideoId(_ctx.stringValue("GetVideoInfoResponse.Video.VideoId"));
+		video.setCreateTime(_ctx.stringValue("GetVideoInfoResponse.Video.CreateTime"));
+		video.setDownloadSwitch(_ctx.stringValue("GetVideoInfoResponse.Video.DownloadSwitch"));
+		video.setTags(_ctx.stringValue("GetVideoInfoResponse.Video.Tags"));
+		video.setModificationTime(_ctx.stringValue("GetVideoInfoResponse.Video.ModificationTime"));
 		video.setRegionId(_ctx.stringValue("GetVideoInfoResponse.Video.RegionId"));
 		video.setCustomMediaInfo(_ctx.stringValue("GetVideoInfoResponse.Video.CustomMediaInfo"));
-		video.setAuditStatus(_ctx.stringValue("GetVideoInfoResponse.Video.AuditStatus"));
+		video.setCateName(_ctx.stringValue("GetVideoInfoResponse.Video.CateName"));
+		video.setDescription(_ctx.stringValue("GetVideoInfoResponse.Video.Description"));
+		video.setPreprocessStatus(_ctx.stringValue("GetVideoInfoResponse.Video.PreprocessStatus"));
 		video.setAppId(_ctx.stringValue("GetVideoInfoResponse.Video.AppId"));
+		video.setSize(_ctx.longValue("GetVideoInfoResponse.Video.Size"));
+		video.setCoverURL(_ctx.stringValue("GetVideoInfoResponse.Video.CoverURL"));
+		video.setTemplateGroupId(_ctx.stringValue("GetVideoInfoResponse.Video.TemplateGroupId"));
+		video.setDuration(_ctx.floatValue("GetVideoInfoResponse.Video.Duration"));
+		video.setTitle(_ctx.stringValue("GetVideoInfoResponse.Video.Title"));
+		video.setAuditStatus(_ctx.stringValue("GetVideoInfoResponse.Video.AuditStatus"));
+		video.setModifyTime(_ctx.stringValue("GetVideoInfoResponse.Video.ModifyTime"));
 
 		List<String> snapshots = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetVideoInfoResponse.Video.Snapshots.Length"); i++) {

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCategoriesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long subTotal;
+
+	private String requestId;
 
 	private List<Category> subCategories;
 
 	private Category1 category1;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getSubTotal() {
 		return this.subTotal;
@@ -47,6 +39,14 @@ public class GetCategoriesResponse extends AcsResponse {
 
 	public void setSubTotal(Long subTotal) {
 		this.subTotal = subTotal;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Category> getSubCategories() {
@@ -67,24 +67,24 @@ public class GetCategoriesResponse extends AcsResponse {
 
 	public static class Category {
 
-		private Long cateId;
+		private String type;
 
 		private String cateName;
 
-		private Long level;
-
 		private Long parentId;
+
+		private Long cateId;
 
 		private Long subTotal;
 
-		private String type;
+		private Long level;
 
-		public Long getCateId() {
-			return this.cateId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setCateId(Long cateId) {
-			this.cateId = cateId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getCateName() {
@@ -95,20 +95,20 @@ public class GetCategoriesResponse extends AcsResponse {
 			this.cateName = cateName;
 		}
 
-		public Long getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(Long level) {
-			this.level = level;
-		}
-
 		public Long getParentId() {
 			return this.parentId;
 		}
 
 		public void setParentId(Long parentId) {
 			this.parentId = parentId;
+		}
+
+		public Long getCateId() {
+			return this.cateId;
+		}
+
+		public void setCateId(Long cateId) {
+			this.cateId = cateId;
 		}
 
 		public Long getSubTotal() {
@@ -119,49 +119,33 @@ public class GetCategoriesResponse extends AcsResponse {
 			this.subTotal = subTotal;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-	}
-
-	public static class Category1 {
-
-		private Long cateId;
-
-		private String cateName;
-
-		private Long level;
-
-		private Long parentId;
-
-		private String type;
-
-		public Long getCateId() {
-			return this.cateId;
-		}
-
-		public void setCateId(Long cateId) {
-			this.cateId = cateId;
-		}
-
-		public String getCateName() {
-			return this.cateName;
-		}
-
-		public void setCateName(String cateName) {
-			this.cateName = cateName;
-		}
-
 		public Long getLevel() {
 			return this.level;
 		}
 
 		public void setLevel(Long level) {
 			this.level = level;
+		}
+	}
+
+	public static class Category1 {
+
+		private String type;
+
+		private Long parentId;
+
+		private String cateName;
+
+		private Long cateId;
+
+		private Long level;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public Long getParentId() {
@@ -172,12 +156,28 @@ public class GetCategoriesResponse extends AcsResponse {
 			this.parentId = parentId;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getCateName() {
+			return this.cateName;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setCateName(String cateName) {
+			this.cateName = cateName;
+		}
+
+		public Long getCateId() {
+			return this.cateId;
+		}
+
+		public void setCateId(Long cateId) {
+			this.cateId = cateId;
+		}
+
+		public Long getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(Long level) {
+			this.level = level;
 		}
 	}
 

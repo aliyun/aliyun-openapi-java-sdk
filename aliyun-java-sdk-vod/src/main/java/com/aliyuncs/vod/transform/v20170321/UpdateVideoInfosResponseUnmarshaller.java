@@ -27,17 +27,17 @@ public class UpdateVideoInfosResponseUnmarshaller {
 		
 		updateVideoInfosResponse.setRequestId(_ctx.stringValue("UpdateVideoInfosResponse.RequestId"));
 
-		List<String> nonExistVideoIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("UpdateVideoInfosResponse.NonExistVideoIds.Length"); i++) {
-			nonExistVideoIds.add(_ctx.stringValue("UpdateVideoInfosResponse.NonExistVideoIds["+ i +"]"));
-		}
-		updateVideoInfosResponse.setNonExistVideoIds(nonExistVideoIds);
-
 		List<String> forbiddenVideoIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateVideoInfosResponse.ForbiddenVideoIds.Length"); i++) {
 			forbiddenVideoIds.add(_ctx.stringValue("UpdateVideoInfosResponse.ForbiddenVideoIds["+ i +"]"));
 		}
 		updateVideoInfosResponse.setForbiddenVideoIds(forbiddenVideoIds);
+
+		List<String> nonExistVideoIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateVideoInfosResponse.NonExistVideoIds.Length"); i++) {
+			nonExistVideoIds.add(_ctx.stringValue("UpdateVideoInfosResponse.NonExistVideoIds["+ i +"]"));
+		}
+		updateVideoInfosResponse.setNonExistVideoIds(nonExistVideoIds);
 	 
 	 	return updateVideoInfosResponse;
 	}

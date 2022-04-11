@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateUploadAttachedMediaResponse extends AcsResponse {
 
+	private String fileURL;
+
 	private String requestId;
+
+	private String uploadAddress;
 
 	private String mediaId;
 
 	private String mediaURL;
 
-	private String uploadAddress;
-
 	private String uploadAuth;
 
-	private String fileURL;
+	public String getFileURL() {
+		return this.fileURL;
+	}
+
+	public void setFileURL(String fileURL) {
+		this.fileURL = fileURL;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +50,14 @@ public class CreateUploadAttachedMediaResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getUploadAddress() {
+		return this.uploadAddress;
+	}
+
+	public void setUploadAddress(String uploadAddress) {
+		this.uploadAddress = uploadAddress;
 	}
 
 	public String getMediaId() {
@@ -60,28 +76,12 @@ public class CreateUploadAttachedMediaResponse extends AcsResponse {
 		this.mediaURL = mediaURL;
 	}
 
-	public String getUploadAddress() {
-		return this.uploadAddress;
-	}
-
-	public void setUploadAddress(String uploadAddress) {
-		this.uploadAddress = uploadAddress;
-	}
-
 	public String getUploadAuth() {
 		return this.uploadAuth;
 	}
 
 	public void setUploadAuth(String uploadAuth) {
 		this.uploadAuth = uploadAuth;
-	}
-
-	public String getFileURL() {
-		return this.fileURL;
-	}
-
-	public void setFileURL(String fileURL) {
-		this.fileURL = fileURL;
 	}
 
 	@Override

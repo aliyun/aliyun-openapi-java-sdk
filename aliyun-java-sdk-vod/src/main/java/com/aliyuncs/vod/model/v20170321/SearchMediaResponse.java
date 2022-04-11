@@ -27,9 +27,9 @@ public class SearchMediaResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String scrollToken;
-
 	private Long total;
+
+	private String scrollToken;
 
 	private List<Media> mediaList;
 
@@ -41,20 +41,20 @@ public class SearchMediaResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getScrollToken() {
-		return this.scrollToken;
-	}
-
-	public void setScrollToken(String scrollToken) {
-		this.scrollToken = scrollToken;
-	}
-
 	public Long getTotal() {
 		return this.total;
 	}
 
 	public void setTotal(Long total) {
 		this.total = total;
+	}
+
+	public String getScrollToken() {
+		return this.scrollToken;
+	}
+
+	public void setScrollToken(String scrollToken) {
+		this.scrollToken = scrollToken;
 	}
 
 	public List<Media> getMediaList() {
@@ -67,9 +67,9 @@ public class SearchMediaResponse extends AcsResponse {
 
 	public static class Media {
 
-		private String mediaType;
-
 		private String creationTime;
+
+		private String mediaType;
 
 		private String mediaId;
 
@@ -81,20 +81,20 @@ public class SearchMediaResponse extends AcsResponse {
 
 		private AttachedMedia attachedMedia;
 
-		public String getMediaType() {
-			return this.mediaType;
-		}
-
-		public void setMediaType(String mediaType) {
-			this.mediaType = mediaType;
-		}
-
 		public String getCreationTime() {
 			return this.creationTime;
 		}
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getMediaType() {
+			return this.mediaType;
+		}
+
+		public void setMediaType(String mediaType) {
+			this.mediaType = mediaType;
 		}
 
 		public String getMediaId() {
@@ -139,82 +139,130 @@ public class SearchMediaResponse extends AcsResponse {
 
 		public static class Video {
 
-			private String videoId;
-
-			private String mediaSource;
-
-			private String mediaType;
-
-			private String title;
-
-			private String tags;
-
 			private String status;
-
-			private Long size;
-
-			private Float duration;
-
-			private String description;
-
-			private String modificationTime;
 
 			private String creationTime;
 
-			private String coverURL;
+			private String storageLocation;
 
 			private Long cateId;
 
-			private String cateName;
+			private String auditTemplateId;
 
-			private String downloadSwitch;
+			private String tags;
 
-			private String preprocessStatus;
+			private String modificationTime;
 
-			private String storageLocation;
+			private String auditManualStatus;
 
-			private String regionId;
+			private String mediaType;
 
-			private String transcodeMode;
+			private String mediaSource;
+
+			private String description;
+
+			private String appId;
+
+			private String coverURL;
 
 			private String auditStatus;
 
 			private String auditAIStatus;
 
-			private String auditManualStatus;
-
-			private String auditAIResult;
-
-			private String auditTemplateId;
-
-			private String customMediaInfo;
-
-			private String appId;
-
-			private String auditAbnormalModules;
+			private String videoId;
 
 			private String auditLabel;
 
-			private List<PlayInfo> playInfoList;
+			private String downloadSwitch;
 
-			private List<String> snapshots;
+			private String regionId;
+
+			private String auditAbnormalModules;
+
+			private String customMediaInfo;
+
+			private String cateName;
+
+			private String transcodeMode;
+
+			private String auditAIResult;
+
+			private String preprocessStatus;
+
+			private Long size;
+
+			private Float duration;
+
+			private String title;
+
+			private List<PlayInfo> playInfoList;
 
 			private List<String> spriteSnapshots;
 
-			public String getVideoId() {
-				return this.videoId;
+			private List<String> snapshots;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setVideoId(String videoId) {
-				this.videoId = videoId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
-			public String getMediaSource() {
-				return this.mediaSource;
+			public String getCreationTime() {
+				return this.creationTime;
 			}
 
-			public void setMediaSource(String mediaSource) {
-				this.mediaSource = mediaSource;
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getStorageLocation() {
+				return this.storageLocation;
+			}
+
+			public void setStorageLocation(String storageLocation) {
+				this.storageLocation = storageLocation;
+			}
+
+			public Long getCateId() {
+				return this.cateId;
+			}
+
+			public void setCateId(Long cateId) {
+				this.cateId = cateId;
+			}
+
+			public String getAuditTemplateId() {
+				return this.auditTemplateId;
+			}
+
+			public void setAuditTemplateId(String auditTemplateId) {
+				this.auditTemplateId = auditTemplateId;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public String getModificationTime() {
+				return this.modificationTime;
+			}
+
+			public void setModificationTime(String modificationTime) {
+				this.modificationTime = modificationTime;
+			}
+
+			public String getAuditManualStatus() {
+				return this.auditManualStatus;
+			}
+
+			public void setAuditManualStatus(String auditManualStatus) {
+				this.auditManualStatus = auditManualStatus;
 			}
 
 			public String getMediaType() {
@@ -225,44 +273,12 @@ public class SearchMediaResponse extends AcsResponse {
 				this.mediaType = mediaType;
 			}
 
-			public String getTitle() {
-				return this.title;
+			public String getMediaSource() {
+				return this.mediaSource;
 			}
 
-			public void setTitle(String title) {
-				this.title = title;
-			}
-
-			public String getTags() {
-				return this.tags;
-			}
-
-			public void setTags(String tags) {
-				this.tags = tags;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Long getSize() {
-				return this.size;
-			}
-
-			public void setSize(Long size) {
-				this.size = size;
-			}
-
-			public Float getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(Float duration) {
-				this.duration = duration;
+			public void setMediaSource(String mediaSource) {
+				this.mediaSource = mediaSource;
 			}
 
 			public String getDescription() {
@@ -273,20 +289,12 @@ public class SearchMediaResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getModificationTime() {
-				return this.modificationTime;
+			public String getAppId() {
+				return this.appId;
 			}
 
-			public void setModificationTime(String modificationTime) {
-				this.modificationTime = modificationTime;
-			}
-
-			public String getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 
 			public String getCoverURL() {
@@ -295,62 +303,6 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setCoverURL(String coverURL) {
 				this.coverURL = coverURL;
-			}
-
-			public Long getCateId() {
-				return this.cateId;
-			}
-
-			public void setCateId(Long cateId) {
-				this.cateId = cateId;
-			}
-
-			public String getCateName() {
-				return this.cateName;
-			}
-
-			public void setCateName(String cateName) {
-				this.cateName = cateName;
-			}
-
-			public String getDownloadSwitch() {
-				return this.downloadSwitch;
-			}
-
-			public void setDownloadSwitch(String downloadSwitch) {
-				this.downloadSwitch = downloadSwitch;
-			}
-
-			public String getPreprocessStatus() {
-				return this.preprocessStatus;
-			}
-
-			public void setPreprocessStatus(String preprocessStatus) {
-				this.preprocessStatus = preprocessStatus;
-			}
-
-			public String getStorageLocation() {
-				return this.storageLocation;
-			}
-
-			public void setStorageLocation(String storageLocation) {
-				this.storageLocation = storageLocation;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getTranscodeMode() {
-				return this.transcodeMode;
-			}
-
-			public void setTranscodeMode(String transcodeMode) {
-				this.transcodeMode = transcodeMode;
 			}
 
 			public String getAuditStatus() {
@@ -369,52 +321,12 @@ public class SearchMediaResponse extends AcsResponse {
 				this.auditAIStatus = auditAIStatus;
 			}
 
-			public String getAuditManualStatus() {
-				return this.auditManualStatus;
+			public String getVideoId() {
+				return this.videoId;
 			}
 
-			public void setAuditManualStatus(String auditManualStatus) {
-				this.auditManualStatus = auditManualStatus;
-			}
-
-			public String getAuditAIResult() {
-				return this.auditAIResult;
-			}
-
-			public void setAuditAIResult(String auditAIResult) {
-				this.auditAIResult = auditAIResult;
-			}
-
-			public String getAuditTemplateId() {
-				return this.auditTemplateId;
-			}
-
-			public void setAuditTemplateId(String auditTemplateId) {
-				this.auditTemplateId = auditTemplateId;
-			}
-
-			public String getCustomMediaInfo() {
-				return this.customMediaInfo;
-			}
-
-			public void setCustomMediaInfo(String customMediaInfo) {
-				this.customMediaInfo = customMediaInfo;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-
-			public String getAuditAbnormalModules() {
-				return this.auditAbnormalModules;
-			}
-
-			public void setAuditAbnormalModules(String auditAbnormalModules) {
-				this.auditAbnormalModules = auditAbnormalModules;
+			public void setVideoId(String videoId) {
+				this.videoId = videoId;
 			}
 
 			public String getAuditLabel() {
@@ -425,280 +337,68 @@ public class SearchMediaResponse extends AcsResponse {
 				this.auditLabel = auditLabel;
 			}
 
-			public List<PlayInfo> getPlayInfoList() {
-				return this.playInfoList;
+			public String getDownloadSwitch() {
+				return this.downloadSwitch;
 			}
 
-			public void setPlayInfoList(List<PlayInfo> playInfoList) {
-				this.playInfoList = playInfoList;
+			public void setDownloadSwitch(String downloadSwitch) {
+				this.downloadSwitch = downloadSwitch;
 			}
 
-			public List<String> getSnapshots() {
-				return this.snapshots;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setSnapshots(List<String> snapshots) {
-				this.snapshots = snapshots;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
-			public List<String> getSpriteSnapshots() {
-				return this.spriteSnapshots;
+			public String getAuditAbnormalModules() {
+				return this.auditAbnormalModules;
 			}
 
-			public void setSpriteSnapshots(List<String> spriteSnapshots) {
-				this.spriteSnapshots = spriteSnapshots;
+			public void setAuditAbnormalModules(String auditAbnormalModules) {
+				this.auditAbnormalModules = auditAbnormalModules;
 			}
 
-			public static class PlayInfo {
-
-				private String width;
-
-				private String height;
-
-				private String size;
-
-				private String playURL;
-
-				private String bitrate;
-
-				private String definition;
-
-				private String duration;
-
-				private String format;
-
-				private String fps;
-
-				private Long encrypt;
-
-				private String plaintext;
-
-				private String complexity;
-
-				private String streamType;
-
-				private String rand;
-
-				private String jobId;
-
-				public String getWidth() {
-					return this.width;
-				}
-
-				public void setWidth(String width) {
-					this.width = width;
-				}
-
-				public String getHeight() {
-					return this.height;
-				}
-
-				public void setHeight(String height) {
-					this.height = height;
-				}
-
-				public String getSize() {
-					return this.size;
-				}
-
-				public void setSize(String size) {
-					this.size = size;
-				}
-
-				public String getPlayURL() {
-					return this.playURL;
-				}
-
-				public void setPlayURL(String playURL) {
-					this.playURL = playURL;
-				}
-
-				public String getBitrate() {
-					return this.bitrate;
-				}
-
-				public void setBitrate(String bitrate) {
-					this.bitrate = bitrate;
-				}
-
-				public String getDefinition() {
-					return this.definition;
-				}
-
-				public void setDefinition(String definition) {
-					this.definition = definition;
-				}
-
-				public String getDuration() {
-					return this.duration;
-				}
-
-				public void setDuration(String duration) {
-					this.duration = duration;
-				}
-
-				public String getFormat() {
-					return this.format;
-				}
-
-				public void setFormat(String format) {
-					this.format = format;
-				}
-
-				public String getFps() {
-					return this.fps;
-				}
-
-				public void setFps(String fps) {
-					this.fps = fps;
-				}
-
-				public Long getEncrypt() {
-					return this.encrypt;
-				}
-
-				public void setEncrypt(Long encrypt) {
-					this.encrypt = encrypt;
-				}
-
-				public String getPlaintext() {
-					return this.plaintext;
-				}
-
-				public void setPlaintext(String plaintext) {
-					this.plaintext = plaintext;
-				}
-
-				public String getComplexity() {
-					return this.complexity;
-				}
-
-				public void setComplexity(String complexity) {
-					this.complexity = complexity;
-				}
-
-				public String getStreamType() {
-					return this.streamType;
-				}
-
-				public void setStreamType(String streamType) {
-					this.streamType = streamType;
-				}
-
-				public String getRand() {
-					return this.rand;
-				}
-
-				public void setRand(String rand) {
-					this.rand = rand;
-				}
-
-				public String getJobId() {
-					return this.jobId;
-				}
-
-				public void setJobId(String jobId) {
-					this.jobId = jobId;
-				}
-			}
-		}
-
-		public static class Audio {
-
-			private String audioId;
-
-			private String mediaSource;
-
-			private String title;
-
-			private String tags;
-
-			private String status;
-
-			private Long size;
-
-			private Float duration;
-
-			private String description;
-
-			private String modificationTime;
-
-			private String creationTime;
-
-			private String coverURL;
-
-			private Long cateId;
-
-			private String cateName;
-
-			private String downloadSwitch;
-
-			private String preprocessStatus;
-
-			private String storageLocation;
-
-			private String regionId;
-
-			private String transcodeMode;
-
-			private String auditStatus;
-
-			private String auditAIStatus;
-
-			private String auditManualStatus;
-
-			private String auditAIResult;
-
-			private String auditTemplateId;
-
-			private String customMediaInfo;
-
-			private String appId;
-
-			private List<PlayInfo4> playInfoList3;
-
-			private List<String> snapshots1;
-
-			private List<String> spriteSnapshots2;
-
-			public String getAudioId() {
-				return this.audioId;
+			public String getCustomMediaInfo() {
+				return this.customMediaInfo;
 			}
 
-			public void setAudioId(String audioId) {
-				this.audioId = audioId;
+			public void setCustomMediaInfo(String customMediaInfo) {
+				this.customMediaInfo = customMediaInfo;
 			}
 
-			public String getMediaSource() {
-				return this.mediaSource;
+			public String getCateName() {
+				return this.cateName;
 			}
 
-			public void setMediaSource(String mediaSource) {
-				this.mediaSource = mediaSource;
+			public void setCateName(String cateName) {
+				this.cateName = cateName;
 			}
 
-			public String getTitle() {
-				return this.title;
+			public String getTranscodeMode() {
+				return this.transcodeMode;
 			}
 
-			public void setTitle(String title) {
-				this.title = title;
+			public void setTranscodeMode(String transcodeMode) {
+				this.transcodeMode = transcodeMode;
 			}
 
-			public String getTags() {
-				return this.tags;
+			public String getAuditAIResult() {
+				return this.auditAIResult;
 			}
 
-			public void setTags(String tags) {
-				this.tags = tags;
+			public void setAuditAIResult(String auditAIResult) {
+				this.auditAIResult = auditAIResult;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getPreprocessStatus() {
+				return this.preprocessStatus;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setPreprocessStatus(String preprocessStatus) {
+				this.preprocessStatus = preprocessStatus;
 			}
 
 			public Long getSize() {
@@ -717,20 +417,256 @@ public class SearchMediaResponse extends AcsResponse {
 				this.duration = duration;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getTitle() {
+				return this.title;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
+			public void setTitle(String title) {
+				this.title = title;
 			}
 
-			public String getModificationTime() {
-				return this.modificationTime;
+			public List<PlayInfo> getPlayInfoList() {
+				return this.playInfoList;
 			}
 
-			public void setModificationTime(String modificationTime) {
-				this.modificationTime = modificationTime;
+			public void setPlayInfoList(List<PlayInfo> playInfoList) {
+				this.playInfoList = playInfoList;
+			}
+
+			public List<String> getSpriteSnapshots() {
+				return this.spriteSnapshots;
+			}
+
+			public void setSpriteSnapshots(List<String> spriteSnapshots) {
+				this.spriteSnapshots = spriteSnapshots;
+			}
+
+			public List<String> getSnapshots() {
+				return this.snapshots;
+			}
+
+			public void setSnapshots(List<String> snapshots) {
+				this.snapshots = snapshots;
+			}
+
+			public static class PlayInfo {
+
+				private String complexity;
+
+				private String height;
+
+				private String bitrate;
+
+				private Long encrypt;
+
+				private String definition;
+
+				private String rand;
+
+				private String streamType;
+
+				private String jobId;
+
+				private String width;
+
+				private String size;
+
+				private String plaintext;
+
+				private String playURL;
+
+				private String duration;
+
+				private String fps;
+
+				private String format;
+
+				public String getComplexity() {
+					return this.complexity;
+				}
+
+				public void setComplexity(String complexity) {
+					this.complexity = complexity;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+
+				public String getBitrate() {
+					return this.bitrate;
+				}
+
+				public void setBitrate(String bitrate) {
+					this.bitrate = bitrate;
+				}
+
+				public Long getEncrypt() {
+					return this.encrypt;
+				}
+
+				public void setEncrypt(Long encrypt) {
+					this.encrypt = encrypt;
+				}
+
+				public String getDefinition() {
+					return this.definition;
+				}
+
+				public void setDefinition(String definition) {
+					this.definition = definition;
+				}
+
+				public String getRand() {
+					return this.rand;
+				}
+
+				public void setRand(String rand) {
+					this.rand = rand;
+				}
+
+				public String getStreamType() {
+					return this.streamType;
+				}
+
+				public void setStreamType(String streamType) {
+					this.streamType = streamType;
+				}
+
+				public String getJobId() {
+					return this.jobId;
+				}
+
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getSize() {
+					return this.size;
+				}
+
+				public void setSize(String size) {
+					this.size = size;
+				}
+
+				public String getPlaintext() {
+					return this.plaintext;
+				}
+
+				public void setPlaintext(String plaintext) {
+					this.plaintext = plaintext;
+				}
+
+				public String getPlayURL() {
+					return this.playURL;
+				}
+
+				public void setPlayURL(String playURL) {
+					this.playURL = playURL;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
+				public String getFps() {
+					return this.fps;
+				}
+
+				public void setFps(String fps) {
+					this.fps = fps;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+			}
+		}
+
+		public static class Audio {
+
+			private String status;
+
+			private String creationTime;
+
+			private String storageLocation;
+
+			private Long cateId;
+
+			private String auditTemplateId;
+
+			private String tags;
+
+			private String modificationTime;
+
+			private String auditManualStatus;
+
+			private String mediaSource;
+
+			private String description;
+
+			private String appId;
+
+			private String coverURL;
+
+			private String audioId;
+
+			private String auditStatus;
+
+			private String auditAIStatus;
+
+			private String downloadSwitch;
+
+			private String regionId;
+
+			private String cateName;
+
+			private String transcodeMode;
+
+			private String customMediaInfo;
+
+			private String auditAIResult;
+
+			private String preprocessStatus;
+
+			private Long size;
+
+			private Float duration;
+
+			private String title;
+
+			private List<PlayInfo4> playInfoList3;
+
+			private List<String> spriteSnapshots1;
+
+			private List<String> snapshots2;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getCreationTime() {
@@ -741,12 +677,12 @@ public class SearchMediaResponse extends AcsResponse {
 				this.creationTime = creationTime;
 			}
 
-			public String getCoverURL() {
-				return this.coverURL;
+			public String getStorageLocation() {
+				return this.storageLocation;
 			}
 
-			public void setCoverURL(String coverURL) {
-				this.coverURL = coverURL;
+			public void setStorageLocation(String storageLocation) {
+				this.storageLocation = storageLocation;
 			}
 
 			public Long getCateId() {
@@ -757,52 +693,76 @@ public class SearchMediaResponse extends AcsResponse {
 				this.cateId = cateId;
 			}
 
-			public String getCateName() {
-				return this.cateName;
+			public String getAuditTemplateId() {
+				return this.auditTemplateId;
 			}
 
-			public void setCateName(String cateName) {
-				this.cateName = cateName;
+			public void setAuditTemplateId(String auditTemplateId) {
+				this.auditTemplateId = auditTemplateId;
 			}
 
-			public String getDownloadSwitch() {
-				return this.downloadSwitch;
+			public String getTags() {
+				return this.tags;
 			}
 
-			public void setDownloadSwitch(String downloadSwitch) {
-				this.downloadSwitch = downloadSwitch;
+			public void setTags(String tags) {
+				this.tags = tags;
 			}
 
-			public String getPreprocessStatus() {
-				return this.preprocessStatus;
+			public String getModificationTime() {
+				return this.modificationTime;
 			}
 
-			public void setPreprocessStatus(String preprocessStatus) {
-				this.preprocessStatus = preprocessStatus;
+			public void setModificationTime(String modificationTime) {
+				this.modificationTime = modificationTime;
 			}
 
-			public String getStorageLocation() {
-				return this.storageLocation;
+			public String getAuditManualStatus() {
+				return this.auditManualStatus;
 			}
 
-			public void setStorageLocation(String storageLocation) {
-				this.storageLocation = storageLocation;
+			public void setAuditManualStatus(String auditManualStatus) {
+				this.auditManualStatus = auditManualStatus;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
+			public String getMediaSource() {
+				return this.mediaSource;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setMediaSource(String mediaSource) {
+				this.mediaSource = mediaSource;
 			}
 
-			public String getTranscodeMode() {
-				return this.transcodeMode;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setTranscodeMode(String transcodeMode) {
-				this.transcodeMode = transcodeMode;
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public String getCoverURL() {
+				return this.coverURL;
+			}
+
+			public void setCoverURL(String coverURL) {
+				this.coverURL = coverURL;
+			}
+
+			public String getAudioId() {
+				return this.audioId;
+			}
+
+			public void setAudioId(String audioId) {
+				this.audioId = audioId;
 			}
 
 			public String getAuditStatus() {
@@ -821,278 +781,20 @@ public class SearchMediaResponse extends AcsResponse {
 				this.auditAIStatus = auditAIStatus;
 			}
 
-			public String getAuditManualStatus() {
-				return this.auditManualStatus;
+			public String getDownloadSwitch() {
+				return this.downloadSwitch;
 			}
 
-			public void setAuditManualStatus(String auditManualStatus) {
-				this.auditManualStatus = auditManualStatus;
+			public void setDownloadSwitch(String downloadSwitch) {
+				this.downloadSwitch = downloadSwitch;
 			}
 
-			public String getAuditAIResult() {
-				return this.auditAIResult;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setAuditAIResult(String auditAIResult) {
-				this.auditAIResult = auditAIResult;
-			}
-
-			public String getAuditTemplateId() {
-				return this.auditTemplateId;
-			}
-
-			public void setAuditTemplateId(String auditTemplateId) {
-				this.auditTemplateId = auditTemplateId;
-			}
-
-			public String getCustomMediaInfo() {
-				return this.customMediaInfo;
-			}
-
-			public void setCustomMediaInfo(String customMediaInfo) {
-				this.customMediaInfo = customMediaInfo;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-
-			public List<PlayInfo4> getPlayInfoList3() {
-				return this.playInfoList3;
-			}
-
-			public void setPlayInfoList3(List<PlayInfo4> playInfoList3) {
-				this.playInfoList3 = playInfoList3;
-			}
-
-			public List<String> getSnapshots1() {
-				return this.snapshots1;
-			}
-
-			public void setSnapshots1(List<String> snapshots1) {
-				this.snapshots1 = snapshots1;
-			}
-
-			public List<String> getSpriteSnapshots2() {
-				return this.spriteSnapshots2;
-			}
-
-			public void setSpriteSnapshots2(List<String> spriteSnapshots2) {
-				this.spriteSnapshots2 = spriteSnapshots2;
-			}
-
-			public static class PlayInfo4 {
-
-				private String width;
-
-				private String height;
-
-				private String size;
-
-				private String playURL;
-
-				private String bitrate;
-
-				private String definition;
-
-				private String duration;
-
-				private String format;
-
-				private String fps;
-
-				private Long encrypt;
-
-				private String plaintext;
-
-				private String complexity;
-
-				private String streamType;
-
-				private String rand;
-
-				private String jobId;
-
-				public String getWidth() {
-					return this.width;
-				}
-
-				public void setWidth(String width) {
-					this.width = width;
-				}
-
-				public String getHeight() {
-					return this.height;
-				}
-
-				public void setHeight(String height) {
-					this.height = height;
-				}
-
-				public String getSize() {
-					return this.size;
-				}
-
-				public void setSize(String size) {
-					this.size = size;
-				}
-
-				public String getPlayURL() {
-					return this.playURL;
-				}
-
-				public void setPlayURL(String playURL) {
-					this.playURL = playURL;
-				}
-
-				public String getBitrate() {
-					return this.bitrate;
-				}
-
-				public void setBitrate(String bitrate) {
-					this.bitrate = bitrate;
-				}
-
-				public String getDefinition() {
-					return this.definition;
-				}
-
-				public void setDefinition(String definition) {
-					this.definition = definition;
-				}
-
-				public String getDuration() {
-					return this.duration;
-				}
-
-				public void setDuration(String duration) {
-					this.duration = duration;
-				}
-
-				public String getFormat() {
-					return this.format;
-				}
-
-				public void setFormat(String format) {
-					this.format = format;
-				}
-
-				public String getFps() {
-					return this.fps;
-				}
-
-				public void setFps(String fps) {
-					this.fps = fps;
-				}
-
-				public Long getEncrypt() {
-					return this.encrypt;
-				}
-
-				public void setEncrypt(Long encrypt) {
-					this.encrypt = encrypt;
-				}
-
-				public String getPlaintext() {
-					return this.plaintext;
-				}
-
-				public void setPlaintext(String plaintext) {
-					this.plaintext = plaintext;
-				}
-
-				public String getComplexity() {
-					return this.complexity;
-				}
-
-				public void setComplexity(String complexity) {
-					this.complexity = complexity;
-				}
-
-				public String getStreamType() {
-					return this.streamType;
-				}
-
-				public void setStreamType(String streamType) {
-					this.streamType = streamType;
-				}
-
-				public String getRand() {
-					return this.rand;
-				}
-
-				public void setRand(String rand) {
-					this.rand = rand;
-				}
-
-				public String getJobId() {
-					return this.jobId;
-				}
-
-				public void setJobId(String jobId) {
-					this.jobId = jobId;
-				}
-			}
-		}
-
-		public static class Image {
-
-			private String title;
-
-			private String imageId;
-
-			private Long cateId;
-
-			private String cateName;
-
-			private String ext;
-
-			private String creationTime;
-
-			private String modificationTime;
-
-			private String tags;
-
-			private String type;
-
-			private String uRL;
-
-			private String status;
-
-			private String description;
-
-			private String storageLocation;
-
-			private String regionId;
-
-			private String appId;
-
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
-			}
-
-			public String getImageId() {
-				return this.imageId;
-			}
-
-			public void setImageId(String imageId) {
-				this.imageId = imageId;
-			}
-
-			public Long getCateId() {
-				return this.cateId;
-			}
-
-			public void setCateId(Long cateId) {
-				this.cateId = cateId;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public String getCateName() {
@@ -1103,12 +805,278 @@ public class SearchMediaResponse extends AcsResponse {
 				this.cateName = cateName;
 			}
 
-			public String getExt() {
-				return this.ext;
+			public String getTranscodeMode() {
+				return this.transcodeMode;
 			}
 
-			public void setExt(String ext) {
-				this.ext = ext;
+			public void setTranscodeMode(String transcodeMode) {
+				this.transcodeMode = transcodeMode;
+			}
+
+			public String getCustomMediaInfo() {
+				return this.customMediaInfo;
+			}
+
+			public void setCustomMediaInfo(String customMediaInfo) {
+				this.customMediaInfo = customMediaInfo;
+			}
+
+			public String getAuditAIResult() {
+				return this.auditAIResult;
+			}
+
+			public void setAuditAIResult(String auditAIResult) {
+				this.auditAIResult = auditAIResult;
+			}
+
+			public String getPreprocessStatus() {
+				return this.preprocessStatus;
+			}
+
+			public void setPreprocessStatus(String preprocessStatus) {
+				this.preprocessStatus = preprocessStatus;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public Float getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Float duration) {
+				this.duration = duration;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public List<PlayInfo4> getPlayInfoList3() {
+				return this.playInfoList3;
+			}
+
+			public void setPlayInfoList3(List<PlayInfo4> playInfoList3) {
+				this.playInfoList3 = playInfoList3;
+			}
+
+			public List<String> getSpriteSnapshots1() {
+				return this.spriteSnapshots1;
+			}
+
+			public void setSpriteSnapshots1(List<String> spriteSnapshots1) {
+				this.spriteSnapshots1 = spriteSnapshots1;
+			}
+
+			public List<String> getSnapshots2() {
+				return this.snapshots2;
+			}
+
+			public void setSnapshots2(List<String> snapshots2) {
+				this.snapshots2 = snapshots2;
+			}
+
+			public static class PlayInfo4 {
+
+				private String complexity;
+
+				private String height;
+
+				private String bitrate;
+
+				private Long encrypt;
+
+				private String definition;
+
+				private String rand;
+
+				private String streamType;
+
+				private String jobId;
+
+				private String width;
+
+				private String size;
+
+				private String plaintext;
+
+				private String playURL;
+
+				private String duration;
+
+				private String fps;
+
+				private String format;
+
+				public String getComplexity() {
+					return this.complexity;
+				}
+
+				public void setComplexity(String complexity) {
+					this.complexity = complexity;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+
+				public String getBitrate() {
+					return this.bitrate;
+				}
+
+				public void setBitrate(String bitrate) {
+					this.bitrate = bitrate;
+				}
+
+				public Long getEncrypt() {
+					return this.encrypt;
+				}
+
+				public void setEncrypt(Long encrypt) {
+					this.encrypt = encrypt;
+				}
+
+				public String getDefinition() {
+					return this.definition;
+				}
+
+				public void setDefinition(String definition) {
+					this.definition = definition;
+				}
+
+				public String getRand() {
+					return this.rand;
+				}
+
+				public void setRand(String rand) {
+					this.rand = rand;
+				}
+
+				public String getStreamType() {
+					return this.streamType;
+				}
+
+				public void setStreamType(String streamType) {
+					this.streamType = streamType;
+				}
+
+				public String getJobId() {
+					return this.jobId;
+				}
+
+				public void setJobId(String jobId) {
+					this.jobId = jobId;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getSize() {
+					return this.size;
+				}
+
+				public void setSize(String size) {
+					this.size = size;
+				}
+
+				public String getPlaintext() {
+					return this.plaintext;
+				}
+
+				public void setPlaintext(String plaintext) {
+					this.plaintext = plaintext;
+				}
+
+				public String getPlayURL() {
+					return this.playURL;
+				}
+
+				public void setPlayURL(String playURL) {
+					this.playURL = playURL;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
+				public String getFps() {
+					return this.fps;
+				}
+
+				public void setFps(String fps) {
+					this.fps = fps;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+			}
+		}
+
+		public static class Image {
+
+			private String storageLocation;
+
+			private String creationTime;
+
+			private String type;
+
+			private String status;
+
+			private Long cateId;
+
+			private String tags;
+
+			private String modificationTime;
+
+			private String regionId;
+
+			private String cateName;
+
+			private String description;
+
+			private String appId;
+
+			private String uRL;
+
+			private String title;
+
+			private String ext;
+
+			private String imageId;
+
+			public String getStorageLocation() {
+				return this.storageLocation;
+			}
+
+			public void setStorageLocation(String storageLocation) {
+				this.storageLocation = storageLocation;
 			}
 
 			public String getCreationTime() {
@@ -1117,22 +1085,6 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setCreationTime(String creationTime) {
 				this.creationTime = creationTime;
-			}
-
-			public String getModificationTime() {
-				return this.modificationTime;
-			}
-
-			public void setModificationTime(String modificationTime) {
-				this.modificationTime = modificationTime;
-			}
-
-			public String getTags() {
-				return this.tags;
-			}
-
-			public void setTags(String tags) {
-				this.tags = tags;
 			}
 
 			public String getType() {
@@ -1143,14 +1095,6 @@ public class SearchMediaResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getURL() {
-				return this.uRL;
-			}
-
-			public void setURL(String uRL) {
-				this.uRL = uRL;
-			}
-
 			public String getStatus() {
 				return this.status;
 			}
@@ -1159,111 +1103,12 @@ public class SearchMediaResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public Long getCateId() {
+				return this.cateId;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getStorageLocation() {
-				return this.storageLocation;
-			}
-
-			public void setStorageLocation(String storageLocation) {
-				this.storageLocation = storageLocation;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-		}
-
-		public static class AttachedMedia {
-
-			private String title;
-
-			private String mediaId;
-
-			private String ext;
-
-			private String creationTime;
-
-			private String modificationTime;
-
-			private String tags;
-
-			private String businessType;
-
-			private String uRL;
-
-			private String status;
-
-			private String description;
-
-			private String storageLocation;
-
-			private String regionId;
-
-			private String appId;
-
-			private String icon;
-
-			private String onlineStatus;
-
-			private List<Category> categories;
-
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
-			}
-
-			public String getMediaId() {
-				return this.mediaId;
-			}
-
-			public void setMediaId(String mediaId) {
-				this.mediaId = mediaId;
-			}
-
-			public String getExt() {
-				return this.ext;
-			}
-
-			public void setExt(String ext) {
-				this.ext = ext;
-			}
-
-			public String getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
-			}
-
-			public String getModificationTime() {
-				return this.modificationTime;
-			}
-
-			public void setModificationTime(String modificationTime) {
-				this.modificationTime = modificationTime;
+			public void setCateId(Long cateId) {
+				this.cateId = cateId;
 			}
 
 			public String getTags() {
@@ -1274,44 +1119,12 @@ public class SearchMediaResponse extends AcsResponse {
 				this.tags = tags;
 			}
 
-			public String getBusinessType() {
-				return this.businessType;
+			public String getModificationTime() {
+				return this.modificationTime;
 			}
 
-			public void setBusinessType(String businessType) {
-				this.businessType = businessType;
-			}
-
-			public String getURL() {
-				return this.uRL;
-			}
-
-			public void setURL(String uRL) {
-				this.uRL = uRL;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getStorageLocation() {
-				return this.storageLocation;
-			}
-
-			public void setStorageLocation(String storageLocation) {
-				this.storageLocation = storageLocation;
+			public void setModificationTime(String modificationTime) {
+				this.modificationTime = modificationTime;
 			}
 
 			public String getRegionId() {
@@ -1322,6 +1135,22 @@ public class SearchMediaResponse extends AcsResponse {
 				this.regionId = regionId;
 			}
 
+			public String getCateName() {
+				return this.cateName;
+			}
+
+			public void setCateName(String cateName) {
+				this.cateName = cateName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
 			public String getAppId() {
 				return this.appId;
 			}
@@ -1330,12 +1159,183 @@ public class SearchMediaResponse extends AcsResponse {
 				this.appId = appId;
 			}
 
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getExt() {
+				return this.ext;
+			}
+
+			public void setExt(String ext) {
+				this.ext = ext;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
+		}
+
+		public static class AttachedMedia {
+
+			private String creationTime;
+
+			private String status;
+
+			private String storageLocation;
+
+			private String icon;
+
+			private String tags;
+
+			private String modificationTime;
+
+			private String mediaId;
+
+			private String businessType;
+
+			private String regionId;
+
+			private String description;
+
+			private String appId;
+
+			private String uRL;
+
+			private String title;
+
+			private String ext;
+
+			private String onlineStatus;
+
+			private List<Category> categories;
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getStorageLocation() {
+				return this.storageLocation;
+			}
+
+			public void setStorageLocation(String storageLocation) {
+				this.storageLocation = storageLocation;
+			}
+
 			public String getIcon() {
 				return this.icon;
 			}
 
 			public void setIcon(String icon) {
 				this.icon = icon;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public String getModificationTime() {
+				return this.modificationTime;
+			}
+
+			public void setModificationTime(String modificationTime) {
+				this.modificationTime = modificationTime;
+			}
+
+			public String getMediaId() {
+				return this.mediaId;
+			}
+
+			public void setMediaId(String mediaId) {
+				this.mediaId = mediaId;
+			}
+
+			public String getBusinessType() {
+				return this.businessType;
+			}
+
+			public void setBusinessType(String businessType) {
+				this.businessType = businessType;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getExt() {
+				return this.ext;
+			}
+
+			public void setExt(String ext) {
+				this.ext = ext;
 			}
 
 			public String getOnlineStatus() {
@@ -1356,20 +1356,20 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public static class Category {
 
-				private Long cateId;
+				private Long parentId;
 
 				private String cateName;
 
+				private Long cateId;
+
 				private Long level;
 
-				private Long parentId;
-
-				public Long getCateId() {
-					return this.cateId;
+				public Long getParentId() {
+					return this.parentId;
 				}
 
-				public void setCateId(Long cateId) {
-					this.cateId = cateId;
+				public void setParentId(Long parentId) {
+					this.parentId = parentId;
 				}
 
 				public String getCateName() {
@@ -1380,20 +1380,20 @@ public class SearchMediaResponse extends AcsResponse {
 					this.cateName = cateName;
 				}
 
+				public Long getCateId() {
+					return this.cateId;
+				}
+
+				public void setCateId(Long cateId) {
+					this.cateId = cateId;
+				}
+
 				public Long getLevel() {
 					return this.level;
 				}
 
 				public void setLevel(Long level) {
 					this.level = level;
-				}
-
-				public Long getParentId() {
-					return this.parentId;
-				}
-
-				public void setParentId(Long parentId) {
-					this.parentId = parentId;
 				}
 			}
 		}

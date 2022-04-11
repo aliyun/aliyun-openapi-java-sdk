@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<AppInfo> appInfoList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class ListAppInfoResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AppInfo> getAppInfoList() {
@@ -57,35 +57,19 @@ public class ListAppInfoResponse extends AcsResponse {
 
 	public static class AppInfo {
 
-		private String appId;
-
-		private String appName;
-
 		private String type;
-
-		private String description;
 
 		private String status;
 
 		private String creationTime;
 
+		private String appName;
+
+		private String description;
+
+		private String appId;
+
 		private String modificationTime;
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
 
 		public String getType() {
 			return this.type;
@@ -93,14 +77,6 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getStatus() {
@@ -117,6 +93,30 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public String getModificationTime() {

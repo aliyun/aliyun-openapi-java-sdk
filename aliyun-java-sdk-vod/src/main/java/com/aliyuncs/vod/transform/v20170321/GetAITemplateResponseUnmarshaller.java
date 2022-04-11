@@ -26,13 +26,13 @@ public class GetAITemplateResponseUnmarshaller {
 		getAITemplateResponse.setRequestId(_ctx.stringValue("GetAITemplateResponse.RequestId"));
 
 		TemplateInfo templateInfo = new TemplateInfo();
-		templateInfo.setTemplateId(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateId"));
-		templateInfo.setTemplateType(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateType"));
-		templateInfo.setTemplateName(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateName"));
-		templateInfo.setTemplateConfig(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateConfig"));
-		templateInfo.setSource(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.Source"));
-		templateInfo.setIsDefault(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.IsDefault"));
 		templateInfo.setCreationTime(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.CreationTime"));
+		templateInfo.setIsDefault(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.IsDefault"));
+		templateInfo.setTemplateType(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateType"));
+		templateInfo.setTemplateConfig(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateConfig"));
+		templateInfo.setTemplateName(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateName"));
+		templateInfo.setSource(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.Source"));
+		templateInfo.setTemplateId(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateId"));
 		templateInfo.setModifyTime(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.ModifyTime"));
 		getAITemplateResponse.setTemplateInfo(templateInfo);
 	 

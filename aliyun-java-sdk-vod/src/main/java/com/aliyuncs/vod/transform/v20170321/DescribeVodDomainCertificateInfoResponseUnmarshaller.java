@@ -31,15 +31,15 @@ public class DescribeVodDomainCertificateInfoResponseUnmarshaller {
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVodDomainCertificateInfoResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setDomainName(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].DomainName"));
-			certInfo.setCertName(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertName"));
-			certInfo.setCertDomainName(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertDomainName"));
-			certInfo.setCertExpireTime(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertExpireTime"));
+			certInfo.setStatus(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].Status"));
 			certInfo.setCertLife(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertLife"));
-			certInfo.setCertOrg(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertOrg"));
+			certInfo.setCertExpireTime(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertExpireTime"));
 			certInfo.setCertType(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertType"));
 			certInfo.setServerCertificateStatus(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificateStatus"));
-			certInfo.setStatus(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].Status"));
+			certInfo.setCertDomainName(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertDomainName"));
+			certInfo.setCertName(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertName"));
+			certInfo.setCertOrg(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].CertOrg"));
+			certInfo.setDomainName(_ctx.stringValue("DescribeVodDomainCertificateInfoResponse.CertInfos["+ i +"].DomainName"));
 
 			certInfos.add(certInfo);
 		}

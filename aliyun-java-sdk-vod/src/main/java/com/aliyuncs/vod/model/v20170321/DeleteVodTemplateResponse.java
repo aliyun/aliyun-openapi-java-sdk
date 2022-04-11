@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteVodTemplateResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String vodTemplateId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getVodTemplateId() {
 		return this.vodTemplateId;
@@ -42,6 +34,14 @@ public class DeleteVodTemplateResponse extends AcsResponse {
 
 	public void setVodTemplateId(String vodTemplateId) {
 		this.vodTemplateId = vodTemplateId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

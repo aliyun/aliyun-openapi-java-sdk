@@ -38,32 +38,32 @@ public class GetTranscodeSummaryResponseUnmarshaller {
 		List<TranscodeSummary> transcodeSummaryList = new ArrayList<TranscodeSummary>();
 		for (int i = 0; i < _ctx.lengthValue("GetTranscodeSummaryResponse.TranscodeSummaryList.Length"); i++) {
 			TranscodeSummary transcodeSummary = new TranscodeSummary();
-			transcodeSummary.setVideoId(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].VideoId"));
-			transcodeSummary.setTranscodeStatus(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeStatus"));
 			transcodeSummary.setCreationTime(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].CreationTime"));
-			transcodeSummary.setCompleteTime(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].CompleteTime"));
 			transcodeSummary.setTrigger(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].Trigger"));
+			transcodeSummary.setVideoId(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].VideoId"));
+			transcodeSummary.setCompleteTime(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].CompleteTime"));
+			transcodeSummary.setTranscodeStatus(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeStatus"));
 			transcodeSummary.setTranscodeTemplateGroupId(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeTemplateGroupId"));
 
 			List<TranscodeJobInfoSummary> transcodeJobInfoSummaryList = new ArrayList<TranscodeJobInfoSummary>();
 			for (int j = 0; j < _ctx.lengthValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList.Length"); j++) {
 				TranscodeJobInfoSummary transcodeJobInfoSummary = new TranscodeJobInfoSummary();
-				transcodeJobInfoSummary.setTranscodeTemplateId(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].TranscodeTemplateId"));
-				transcodeJobInfoSummary.setTranscodeJobStatus(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].TranscodeJobStatus"));
 				transcodeJobInfoSummary.setCreationTime(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].CreationTime"));
-				transcodeJobInfoSummary.setCompleteTime(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].CompleteTime"));
-				transcodeJobInfoSummary.setTranscodeProgress(_ctx.longValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].TranscodeProgress"));
-				transcodeJobInfoSummary.setErrorCode(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].ErrorCode"));
 				transcodeJobInfoSummary.setErrorMessage(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].ErrorMessage"));
-				transcodeJobInfoSummary.setDefinition(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Definition"));
 				transcodeJobInfoSummary.setEncryption(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Encryption"));
-				transcodeJobInfoSummary.setWidth(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Width"));
 				transcodeJobInfoSummary.setHeight(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Height"));
+				transcodeJobInfoSummary.setTranscodeProgress(_ctx.longValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].TranscodeProgress"));
+				transcodeJobInfoSummary.setTranscodeTemplateId(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].TranscodeTemplateId"));
 				transcodeJobInfoSummary.setBitrate(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Bitrate"));
-				transcodeJobInfoSummary.setFps(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Fps"));
-				transcodeJobInfoSummary.setFormat(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Format"));
+				transcodeJobInfoSummary.setDefinition(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Definition"));
+				transcodeJobInfoSummary.setErrorCode(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].ErrorCode"));
+				transcodeJobInfoSummary.setCompleteTime(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].CompleteTime"));
+				transcodeJobInfoSummary.setWidth(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Width"));
 				transcodeJobInfoSummary.setDuration(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Duration"));
+				transcodeJobInfoSummary.setFps(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Fps"));
+				transcodeJobInfoSummary.setTranscodeJobStatus(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].TranscodeJobStatus"));
 				transcodeJobInfoSummary.setFilesize(_ctx.longValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Filesize"));
+				transcodeJobInfoSummary.setFormat(_ctx.stringValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].Format"));
 
 				List<String> watermarkIdList = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("GetTranscodeSummaryResponse.TranscodeSummaryList["+ i +"].TranscodeJobInfoSummaryList["+ j +"].WatermarkIdList.Length"); k++) {

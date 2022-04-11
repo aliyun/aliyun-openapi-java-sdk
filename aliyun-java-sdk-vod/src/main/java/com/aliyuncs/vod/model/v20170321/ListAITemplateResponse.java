@@ -47,60 +47,28 @@ public class ListAITemplateResponse extends AcsResponse {
 
 	public static class TemplateInfoListItem {
 
-		private String templateId;
-
-		private String templateType;
-
-		private String templateName;
-
-		private String templateConfig;
-
-		private String source;
+		private String creationTime;
 
 		private String isDefault;
 
-		private String creationTime;
+		private String templateType;
+
+		private String templateConfig;
+
+		private String templateName;
+
+		private String source;
+
+		private String templateId;
 
 		private String modifyTime;
 
-		public String getTemplateId() {
-			return this.templateId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
-		}
-
-		public String getTemplateType() {
-			return this.templateType;
-		}
-
-		public void setTemplateType(String templateType) {
-			this.templateType = templateType;
-		}
-
-		public String getTemplateName() {
-			return this.templateName;
-		}
-
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
-		}
-
-		public String getTemplateConfig() {
-			return this.templateConfig;
-		}
-
-		public void setTemplateConfig(String templateConfig) {
-			this.templateConfig = templateConfig;
-		}
-
-		public String getSource() {
-			return this.source;
-		}
-
-		public void setSource(String source) {
-			this.source = source;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getIsDefault() {
@@ -111,12 +79,44 @@ public class ListAITemplateResponse extends AcsResponse {
 			this.isDefault = isDefault;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getTemplateType() {
+			return this.templateType;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
+		}
+
+		public String getTemplateConfig() {
+			return this.templateConfig;
+		}
+
+		public void setTemplateConfig(String templateConfig) {
+			this.templateConfig = templateConfig;
+		}
+
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 
 		public String getModifyTime() {

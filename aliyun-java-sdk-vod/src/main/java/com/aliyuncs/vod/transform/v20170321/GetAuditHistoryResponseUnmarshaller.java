@@ -33,10 +33,10 @@ public class GetAuditHistoryResponseUnmarshaller {
 		List<History> histories = new ArrayList<History>();
 		for (int i = 0; i < _ctx.lengthValue("GetAuditHistoryResponse.Histories.Length"); i++) {
 			History history = new History();
-			history.setCreationTime(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].CreationTime"));
 			history.setStatus(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Status"));
-			history.setReason(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Reason"));
+			history.setCreationTime(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].CreationTime"));
 			history.setComment(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Comment"));
+			history.setReason(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Reason"));
 			history.setAuditor(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Auditor"));
 
 			histories.add(history);

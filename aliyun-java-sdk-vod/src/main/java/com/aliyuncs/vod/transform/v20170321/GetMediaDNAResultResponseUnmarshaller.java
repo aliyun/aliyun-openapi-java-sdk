@@ -45,13 +45,13 @@ public class GetMediaDNAResultResponseUnmarshaller {
 				DetailItem detailItem = new DetailItem();
 
 				Input input = new Input();
-				input.setStart(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Start"));
 				input.setDuration(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Duration"));
+				input.setStart(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Start"));
 				detailItem.setInput(input);
 
 				Duplication duplication = new Duplication();
-				duplication.setStart(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Start"));
 				duplication.setDuration(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Duration"));
+				duplication.setStart(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Start"));
 				detailItem.setDuplication(duplication);
 
 				detail.add(detailItem);

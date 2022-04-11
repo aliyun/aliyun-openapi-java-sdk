@@ -32,12 +32,12 @@ public class ListAppInfoResponseUnmarshaller {
 		List<AppInfo> appInfoList = new ArrayList<AppInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppInfoResponse.AppInfoList.Length"); i++) {
 			AppInfo appInfo = new AppInfo();
-			appInfo.setAppId(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppId"));
-			appInfo.setAppName(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppName"));
 			appInfo.setType(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Type"));
-			appInfo.setDescription(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Description"));
 			appInfo.setStatus(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Status"));
 			appInfo.setCreationTime(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].CreationTime"));
+			appInfo.setAppName(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppName"));
+			appInfo.setDescription(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Description"));
+			appInfo.setAppId(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppId"));
 			appInfo.setModificationTime(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].ModificationTime"));
 
 			appInfoList.add(appInfo);

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListLiveRecordVideoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer total;
 
+	private String requestId;
+
 	private List<LiveRecordVideo> liveRecordVideoList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<LiveRecordVideo> getLiveRecordVideoList() {
@@ -57,37 +57,21 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 
 	public static class LiveRecordVideo {
 
-		private String streamName;
-
-		private String domainName;
-
 		private String appName;
 
 		private String playlistId;
 
-		private String recordStartTime;
+		private String streamName;
 
 		private String recordEndTime;
+
+		private String recordStartTime;
+
+		private String domainName;
 
 		private List<PlayInfo> playInfoList;
 
 		private Video video;
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
 
 		public String getAppName() {
 			return this.appName;
@@ -105,12 +89,12 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 			this.playlistId = playlistId;
 		}
 
-		public String getRecordStartTime() {
-			return this.recordStartTime;
+		public String getStreamName() {
+			return this.streamName;
 		}
 
-		public void setRecordStartTime(String recordStartTime) {
-			this.recordStartTime = recordStartTime;
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
 		}
 
 		public String getRecordEndTime() {
@@ -119,6 +103,22 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 
 		public void setRecordEndTime(String recordEndTime) {
 			this.recordEndTime = recordEndTime;
+		}
+
+		public String getRecordStartTime() {
+			return this.recordStartTime;
+		}
+
+		public void setRecordStartTime(String recordStartTime) {
+			this.recordStartTime = recordStartTime;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public List<PlayInfo> getPlayInfoList() {
@@ -139,42 +139,42 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 
 		public static class PlayInfo {
 
-			private Long width;
+			private String complexity;
 
 			private Long height;
 
-			private Long size;
-
-			private String playURL;
-
 			private String bitrate;
-
-			private String definition;
-
-			private String duration;
-
-			private String format;
-
-			private String fps;
 
 			private Long encrypt;
 
-			private String plaintext;
-
-			private String complexity;
-
-			private String streamType;
+			private String definition;
 
 			private String rand;
 
+			private String streamType;
+
 			private String jobId;
 
-			public Long getWidth() {
-				return this.width;
+			private Long width;
+
+			private Long size;
+
+			private String plaintext;
+
+			private String playURL;
+
+			private String duration;
+
+			private String fps;
+
+			private String format;
+
+			public String getComplexity() {
+				return this.complexity;
 			}
 
-			public void setWidth(Long width) {
-				this.width = width;
+			public void setComplexity(String complexity) {
+				this.complexity = complexity;
 			}
 
 			public Long getHeight() {
@@ -185,60 +185,12 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Long getSize() {
-				return this.size;
-			}
-
-			public void setSize(Long size) {
-				this.size = size;
-			}
-
-			public String getPlayURL() {
-				return this.playURL;
-			}
-
-			public void setPlayURL(String playURL) {
-				this.playURL = playURL;
-			}
-
 			public String getBitrate() {
 				return this.bitrate;
 			}
 
 			public void setBitrate(String bitrate) {
 				this.bitrate = bitrate;
-			}
-
-			public String getDefinition() {
-				return this.definition;
-			}
-
-			public void setDefinition(String definition) {
-				this.definition = definition;
-			}
-
-			public String getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(String duration) {
-				this.duration = duration;
-			}
-
-			public String getFormat() {
-				return this.format;
-			}
-
-			public void setFormat(String format) {
-				this.format = format;
-			}
-
-			public String getFps() {
-				return this.fps;
-			}
-
-			public void setFps(String fps) {
-				this.fps = fps;
 			}
 
 			public Long getEncrypt() {
@@ -249,28 +201,12 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 				this.encrypt = encrypt;
 			}
 
-			public String getPlaintext() {
-				return this.plaintext;
+			public String getDefinition() {
+				return this.definition;
 			}
 
-			public void setPlaintext(String plaintext) {
-				this.plaintext = plaintext;
-			}
-
-			public String getComplexity() {
-				return this.complexity;
-			}
-
-			public void setComplexity(String complexity) {
-				this.complexity = complexity;
-			}
-
-			public String getStreamType() {
-				return this.streamType;
-			}
-
-			public void setStreamType(String streamType) {
-				this.streamType = streamType;
+			public void setDefinition(String definition) {
+				this.definition = definition;
 			}
 
 			public String getRand() {
@@ -281,6 +217,14 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 				this.rand = rand;
 			}
 
+			public String getStreamType() {
+				return this.streamType;
+			}
+
+			public void setStreamType(String streamType) {
+				this.streamType = streamType;
+			}
+
 			public String getJobId() {
 				return this.jobId;
 			}
@@ -288,76 +232,13 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 			public void setJobId(String jobId) {
 				this.jobId = jobId;
 			}
-		}
 
-		public static class Video {
-
-			private String videoId;
-
-			private String title;
-
-			private String tags;
-
-			private String status;
-
-			private Long size;
-
-			private Integer privilege;
-
-			private Float duration;
-
-			private String description;
-
-			private Long customerId;
-
-			private String createTime;
-
-			private String creationTime;
-
-			private String modifyTime;
-
-			private String coverURL;
-
-			private Integer cateId;
-
-			private String cateName;
-
-			private String downloadSwitch;
-
-			private String templateGroupId;
-
-			private List<String> snapshots;
-
-			public String getVideoId() {
-				return this.videoId;
+			public Long getWidth() {
+				return this.width;
 			}
 
-			public void setVideoId(String videoId) {
-				this.videoId = videoId;
-			}
-
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
-			}
-
-			public String getTags() {
-				return this.tags;
-			}
-
-			public void setTags(String tags) {
-				this.tags = tags;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
+			public void setWidth(Long width) {
+				this.width = width;
 			}
 
 			public Long getSize() {
@@ -368,45 +249,84 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 				this.size = size;
 			}
 
-			public Integer getPrivilege() {
-				return this.privilege;
+			public String getPlaintext() {
+				return this.plaintext;
 			}
 
-			public void setPrivilege(Integer privilege) {
-				this.privilege = privilege;
+			public void setPlaintext(String plaintext) {
+				this.plaintext = plaintext;
 			}
 
-			public Float getDuration() {
+			public String getPlayURL() {
+				return this.playURL;
+			}
+
+			public void setPlayURL(String playURL) {
+				this.playURL = playURL;
+			}
+
+			public String getDuration() {
 				return this.duration;
 			}
 
-			public void setDuration(Float duration) {
+			public void setDuration(String duration) {
 				this.duration = duration;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getFps() {
+				return this.fps;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
+			public void setFps(String fps) {
+				this.fps = fps;
 			}
 
-			public Long getCustomerId() {
-				return this.customerId;
+			public String getFormat() {
+				return this.format;
 			}
 
-			public void setCustomerId(Long customerId) {
-				this.customerId = customerId;
+			public void setFormat(String format) {
+				this.format = format;
 			}
+		}
 
-			public String getCreateTime() {
-				return this.createTime;
-			}
+		public static class Video {
 
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
+			private String creationTime;
+
+			private String status;
+
+			private Integer cateId;
+
+			private Integer privilege;
+
+			private String videoId;
+
+			private String createTime;
+
+			private String downloadSwitch;
+
+			private String tags;
+
+			private String cateName;
+
+			private String description;
+
+			private Long size;
+
+			private String coverURL;
+
+			private String templateGroupId;
+
+			private Long customerId;
+
+			private Float duration;
+
+			private String title;
+
+			private String modifyTime;
+
+			private List<String> snapshots;
 
 			public String getCreationTime() {
 				return this.creationTime;
@@ -416,20 +336,12 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 				this.creationTime = creationTime;
 			}
 
-			public String getModifyTime() {
-				return this.modifyTime;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setModifyTime(String modifyTime) {
-				this.modifyTime = modifyTime;
-			}
-
-			public String getCoverURL() {
-				return this.coverURL;
-			}
-
-			public void setCoverURL(String coverURL) {
-				this.coverURL = coverURL;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Integer getCateId() {
@@ -440,12 +352,28 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 				this.cateId = cateId;
 			}
 
-			public String getCateName() {
-				return this.cateName;
+			public Integer getPrivilege() {
+				return this.privilege;
 			}
 
-			public void setCateName(String cateName) {
-				this.cateName = cateName;
+			public void setPrivilege(Integer privilege) {
+				this.privilege = privilege;
+			}
+
+			public String getVideoId() {
+				return this.videoId;
+			}
+
+			public void setVideoId(String videoId) {
+				this.videoId = videoId;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
 			public String getDownloadSwitch() {
@@ -456,12 +384,84 @@ public class ListLiveRecordVideoResponse extends AcsResponse {
 				this.downloadSwitch = downloadSwitch;
 			}
 
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public String getCateName() {
+				return this.cateName;
+			}
+
+			public void setCateName(String cateName) {
+				this.cateName = cateName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public String getCoverURL() {
+				return this.coverURL;
+			}
+
+			public void setCoverURL(String coverURL) {
+				this.coverURL = coverURL;
+			}
+
 			public String getTemplateGroupId() {
 				return this.templateGroupId;
 			}
 
 			public void setTemplateGroupId(String templateGroupId) {
 				this.templateGroupId = templateGroupId;
+			}
+
+			public Long getCustomerId() {
+				return this.customerId;
+			}
+
+			public void setCustomerId(Long customerId) {
+				this.customerId = customerId;
+			}
+
+			public Float getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Float duration) {
+				this.duration = duration;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getModifyTime() {
+				return this.modifyTime;
+			}
+
+			public void setModifyTime(String modifyTime) {
+				this.modifyTime = modifyTime;
 			}
 
 			public List<String> getSnapshots() {

@@ -31,15 +31,15 @@ public class ListAIImageInfoResponseUnmarshaller {
 		List<AIImageInfo> aIImageInfoList = new ArrayList<AIImageInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListAIImageInfoResponse.AIImageInfoList.Length"); i++) {
 			AIImageInfo aIImageInfo = new AIImageInfo();
-			aIImageInfo.setVideoId(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].VideoId"));
-			aIImageInfo.setAIImageInfoId(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].AIImageInfoId"));
-			aIImageInfo.setJobId(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].JobId"));
-			aIImageInfo.setFileURL(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].FileURL"));
-			aIImageInfo.setScore(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].Score"));
-			aIImageInfo.setTime(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].Time"));
-			aIImageInfo.setFormat(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].Format"));
 			aIImageInfo.setCreationTime(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].CreationTime"));
+			aIImageInfo.setAIImageInfoId(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].AIImageInfoId"));
+			aIImageInfo.setTime(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].Time"));
+			aIImageInfo.setFileURL(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].FileURL"));
 			aIImageInfo.setVersion(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].Version"));
+			aIImageInfo.setVideoId(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].VideoId"));
+			aIImageInfo.setJobId(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].JobId"));
+			aIImageInfo.setScore(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].Score"));
+			aIImageInfo.setFormat(_ctx.stringValue("ListAIImageInfoResponse.AIImageInfoList["+ i +"].Format"));
 
 			aIImageInfoList.add(aIImageInfo);
 		}

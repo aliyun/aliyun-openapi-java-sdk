@@ -25,17 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVodDomainTrafficDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
+	private String totalTraffic;
 
 	private String dataInterval;
 
 	private List<DataModule> trafficDataPerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,20 +71,12 @@ public class DescribeVodDomainTrafficDataResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getTotalTraffic() {
+		return this.totalTraffic;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setTotalTraffic(String totalTraffic) {
+		this.totalTraffic = totalTraffic;
 	}
 
 	public String getDataInterval() {
@@ -87,26 +97,26 @@ public class DescribeVodDomainTrafficDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
+		private String httpsDomesticValue;
 
 		private String value;
-
-		private String domesticValue;
 
 		private String overseasValue;
 
 		private String httpsValue;
 
-		private String httpsDomesticValue;
-
 		private String httpsOverseasValue;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		private String timeStamp;
+
+		private String domesticValue;
+
+		public String getHttpsDomesticValue() {
+			return this.httpsDomesticValue;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setHttpsDomesticValue(String httpsDomesticValue) {
+			this.httpsDomesticValue = httpsDomesticValue;
 		}
 
 		public String getValue() {
@@ -115,14 +125,6 @@ public class DescribeVodDomainTrafficDataResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
-		}
-
-		public String getDomesticValue() {
-			return this.domesticValue;
-		}
-
-		public void setDomesticValue(String domesticValue) {
-			this.domesticValue = domesticValue;
 		}
 
 		public String getOverseasValue() {
@@ -141,20 +143,28 @@ public class DescribeVodDomainTrafficDataResponse extends AcsResponse {
 			this.httpsValue = httpsValue;
 		}
 
-		public String getHttpsDomesticValue() {
-			return this.httpsDomesticValue;
-		}
-
-		public void setHttpsDomesticValue(String httpsDomesticValue) {
-			this.httpsDomesticValue = httpsDomesticValue;
-		}
-
 		public String getHttpsOverseasValue() {
 			return this.httpsOverseasValue;
 		}
 
 		public void setHttpsOverseasValue(String httpsOverseasValue) {
 			this.httpsOverseasValue = httpsOverseasValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public String getDomesticValue() {
+			return this.domesticValue;
+		}
+
+		public void setDomesticValue(String domesticValue) {
+			this.domesticValue = domesticValue;
 		}
 	}
 

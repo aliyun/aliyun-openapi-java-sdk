@@ -31,42 +31,42 @@ public class GetTranscodeTaskResponseUnmarshaller {
 		getTranscodeTaskResponse.setRequestId(_ctx.stringValue("GetTranscodeTaskResponse.RequestId"));
 
 		TranscodeTask transcodeTask = new TranscodeTask();
-		transcodeTask.setTranscodeTaskId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeTaskId"));
-		transcodeTask.setVideoId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.VideoId"));
-		transcodeTask.setTaskStatus(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TaskStatus"));
 		transcodeTask.setCreationTime(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.CreationTime"));
-		transcodeTask.setCompleteTime(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.CompleteTime"));
 		transcodeTask.setTrigger(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.Trigger"));
+		transcodeTask.setTaskStatus(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TaskStatus"));
+		transcodeTask.setVideoId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.VideoId"));
+		transcodeTask.setCompleteTime(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.CompleteTime"));
 		transcodeTask.setTranscodeTemplateGroupId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeTemplateGroupId"));
+		transcodeTask.setTranscodeTaskId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeTaskId"));
 
 		List<TranscodeJobInfo> transcodeJobInfoList = new ArrayList<TranscodeJobInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList.Length"); i++) {
 			TranscodeJobInfo transcodeJobInfo = new TranscodeJobInfo();
-			transcodeJobInfo.setTranscodeJobId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].TranscodeJobId"));
-			transcodeJobInfo.setTranscodeTemplateId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].TranscodeTemplateId"));
-			transcodeJobInfo.setTranscodeJobStatus(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].TranscodeJobStatus"));
+			transcodeJobInfo.setDefinition(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].Definition"));
 			transcodeJobInfo.setCreationTime(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].CreationTime"));
+			transcodeJobInfo.setInputFileUrl(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].InputFileUrl"));
+			transcodeJobInfo.setErrorMessage(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].ErrorMessage"));
+			transcodeJobInfo.setErrorCode(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].ErrorCode"));
 			transcodeJobInfo.setCompleteTime(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].CompleteTime"));
 			transcodeJobInfo.setTranscodeProgress(_ctx.longValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].TranscodeProgress"));
-			transcodeJobInfo.setInputFileUrl(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].InputFileUrl"));
 			transcodeJobInfo.setPriority(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].Priority"));
-			transcodeJobInfo.setErrorCode(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].ErrorCode"));
-			transcodeJobInfo.setErrorMessage(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].ErrorMessage"));
-			transcodeJobInfo.setDefinition(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].Definition"));
+			transcodeJobInfo.setTranscodeJobStatus(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].TranscodeJobStatus"));
+			transcodeJobInfo.setTranscodeTemplateId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].TranscodeTemplateId"));
+			transcodeJobInfo.setTranscodeJobId(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].TranscodeJobId"));
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setWidth(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Width"));
-			outputFile.setHeight(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Height"));
-			outputFile.setBitrate(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Bitrate"));
-			outputFile.setFps(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Fps"));
-			outputFile.setFormat(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Format"));
-			outputFile.setDuration(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Duration"));
-			outputFile.setFilesize(_ctx.longValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Filesize"));
-			outputFile.setEncryption(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Encryption"));
-			outputFile.setAudioStreamList(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.AudioStreamList"));
 			outputFile.setVideoStreamList(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.VideoStreamList"));
-			outputFile.setSubtitleStreamList(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.SubtitleStreamList"));
 			outputFile.setOutputFileUrl(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.OutputFileUrl"));
+			outputFile.setEncryption(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Encryption"));
+			outputFile.setHeight(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Height"));
+			outputFile.setSubtitleStreamList(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.SubtitleStreamList"));
+			outputFile.setBitrate(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Bitrate"));
+			outputFile.setAudioStreamList(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.AudioStreamList"));
+			outputFile.setWidth(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Width"));
+			outputFile.setFps(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Fps"));
+			outputFile.setDuration(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Duration"));
+			outputFile.setFormat(_ctx.stringValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Format"));
+			outputFile.setFilesize(_ctx.longValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.Filesize"));
 
 			List<String> watermarkIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetTranscodeTaskResponse.TranscodeTask.TranscodeJobInfoList["+ i +"].OutputFile.WatermarkIdList.Length"); j++) {

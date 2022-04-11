@@ -25,36 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVodDomainBpsDataResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String domainName;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
+	private String requestId;
+
+	private String ispNameEn;
 
 	private String locationNameEn;
 
-	private String ispNameEn;
+	private String domainName;
 
 	private String dataInterval;
 
 	private List<DataModule> bpsDataPerInterval;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getStartTime() {
@@ -65,12 +57,20 @@ public class DescribeVodDomainBpsDataResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
 	}
 
 	public String getLocationNameEn() {
@@ -81,12 +81,12 @@ public class DescribeVodDomainBpsDataResponse extends AcsResponse {
 		this.locationNameEn = locationNameEn;
 	}
 
-	public String getIspNameEn() {
-		return this.ispNameEn;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
 	public String getDataInterval() {
@@ -107,26 +107,26 @@ public class DescribeVodDomainBpsDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
+		private String httpsDomesticValue;
 
 		private String value;
-
-		private String domesticValue;
 
 		private String overseasValue;
 
 		private String httpsValue;
 
-		private String httpsDomesticValue;
-
 		private String httpsOverseasValue;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		private String timeStamp;
+
+		private String domesticValue;
+
+		public String getHttpsDomesticValue() {
+			return this.httpsDomesticValue;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setHttpsDomesticValue(String httpsDomesticValue) {
+			this.httpsDomesticValue = httpsDomesticValue;
 		}
 
 		public String getValue() {
@@ -135,14 +135,6 @@ public class DescribeVodDomainBpsDataResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
-		}
-
-		public String getDomesticValue() {
-			return this.domesticValue;
-		}
-
-		public void setDomesticValue(String domesticValue) {
-			this.domesticValue = domesticValue;
 		}
 
 		public String getOverseasValue() {
@@ -161,20 +153,28 @@ public class DescribeVodDomainBpsDataResponse extends AcsResponse {
 			this.httpsValue = httpsValue;
 		}
 
-		public String getHttpsDomesticValue() {
-			return this.httpsDomesticValue;
-		}
-
-		public void setHttpsDomesticValue(String httpsDomesticValue) {
-			this.httpsDomesticValue = httpsDomesticValue;
-		}
-
 		public String getHttpsOverseasValue() {
 			return this.httpsOverseasValue;
 		}
 
 		public void setHttpsOverseasValue(String httpsOverseasValue) {
 			this.httpsOverseasValue = httpsOverseasValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public String getDomesticValue() {
+			return this.domesticValue;
+		}
+
+		public void setDomesticValue(String domesticValue) {
+			this.domesticValue = domesticValue;
 		}
 	}
 

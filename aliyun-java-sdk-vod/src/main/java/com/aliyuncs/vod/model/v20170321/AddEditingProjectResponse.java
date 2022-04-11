@@ -46,25 +46,17 @@ public class AddEditingProjectResponse extends AcsResponse {
 
 	public static class Project {
 
-		private String projectId;
-
 		private String creationTime;
-
-		private String modifiedTime;
 
 		private String status;
 
+		private String modifiedTime;
+
 		private String description;
 
+		private String projectId;
+
 		private String title;
-
-		public String getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(String projectId) {
-			this.projectId = projectId;
-		}
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -72,14 +64,6 @@ public class AddEditingProjectResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
 		}
 
 		public String getStatus() {
@@ -90,12 +74,28 @@ public class AddEditingProjectResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
 		}
 
 		public String getTitle() {

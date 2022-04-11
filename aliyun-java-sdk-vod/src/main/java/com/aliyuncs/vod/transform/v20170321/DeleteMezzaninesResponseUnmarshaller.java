@@ -27,17 +27,17 @@ public class DeleteMezzaninesResponseUnmarshaller {
 		
 		deleteMezzaninesResponse.setRequestId(_ctx.stringValue("DeleteMezzaninesResponse.RequestId"));
 
-		List<String> nonExistVideoIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DeleteMezzaninesResponse.NonExistVideoIds.Length"); i++) {
-			nonExistVideoIds.add(_ctx.stringValue("DeleteMezzaninesResponse.NonExistVideoIds["+ i +"]"));
-		}
-		deleteMezzaninesResponse.setNonExistVideoIds(nonExistVideoIds);
-
 		List<String> unRemoveableVideoIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteMezzaninesResponse.UnRemoveableVideoIds.Length"); i++) {
 			unRemoveableVideoIds.add(_ctx.stringValue("DeleteMezzaninesResponse.UnRemoveableVideoIds["+ i +"]"));
 		}
 		deleteMezzaninesResponse.setUnRemoveableVideoIds(unRemoveableVideoIds);
+
+		List<String> nonExistVideoIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DeleteMezzaninesResponse.NonExistVideoIds.Length"); i++) {
+			nonExistVideoIds.add(_ctx.stringValue("DeleteMezzaninesResponse.NonExistVideoIds["+ i +"]"));
+		}
+		deleteMezzaninesResponse.setNonExistVideoIds(nonExistVideoIds);
 	 
 	 	return deleteMezzaninesResponse;
 	}

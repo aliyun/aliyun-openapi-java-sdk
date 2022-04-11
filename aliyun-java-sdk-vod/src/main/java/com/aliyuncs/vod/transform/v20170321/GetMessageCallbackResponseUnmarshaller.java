@@ -29,11 +29,11 @@ public class GetMessageCallbackResponseUnmarshaller {
 		messageCallback.setCallbackType(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.CallbackType"));
 		messageCallback.setCallbackURL(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.CallbackURL"));
 		messageCallback.setEventTypeList(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.EventTypeList"));
-		messageCallback.setAuthSwitch(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.AuthSwitch"));
-		messageCallback.setAuthKey(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.AuthKey"));
-		messageCallback.setMnsEndpoint(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.MnsEndpoint"));
-		messageCallback.setMnsQueueName(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.MnsQueueName"));
 		messageCallback.setAppId(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.AppId"));
+		messageCallback.setMnsQueueName(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.MnsQueueName"));
+		messageCallback.setAuthKey(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.AuthKey"));
+		messageCallback.setAuthSwitch(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.AuthSwitch"));
+		messageCallback.setMnsEndpoint(_ctx.stringValue("GetMessageCallbackResponse.MessageCallback.MnsEndpoint"));
 		getMessageCallbackResponse.setMessageCallback(messageCallback);
 	 
 	 	return getMessageCallbackResponse;

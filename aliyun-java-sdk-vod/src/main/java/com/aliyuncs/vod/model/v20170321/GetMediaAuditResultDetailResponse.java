@@ -69,29 +69,45 @@ public class GetMediaAuditResultDetailResponse extends AcsResponse {
 
 		public static class ListItem {
 
+			private String terrorismScore;
+
+			private String adLabel;
+
 			private String pornLabel;
 
 			private String pornScore;
 
-			private String terrorismLabel;
-
-			private String terrorismScore;
-
-			private String timestamp;
+			private String liveLabel;
 
 			private String url;
 
-			private String adLabel;
+			private String timestamp;
 
 			private String adScore;
 
-			private String liveLabel;
-
 			private String liveScore;
+
+			private String logoScore;
 
 			private String logoLabel;
 
-			private String logoScore;
+			private String terrorismLabel;
+
+			public String getTerrorismScore() {
+				return this.terrorismScore;
+			}
+
+			public void setTerrorismScore(String terrorismScore) {
+				this.terrorismScore = terrorismScore;
+			}
+
+			public String getAdLabel() {
+				return this.adLabel;
+			}
+
+			public void setAdLabel(String adLabel) {
+				this.adLabel = adLabel;
+			}
 
 			public String getPornLabel() {
 				return this.pornLabel;
@@ -109,28 +125,12 @@ public class GetMediaAuditResultDetailResponse extends AcsResponse {
 				this.pornScore = pornScore;
 			}
 
-			public String getTerrorismLabel() {
-				return this.terrorismLabel;
+			public String getLiveLabel() {
+				return this.liveLabel;
 			}
 
-			public void setTerrorismLabel(String terrorismLabel) {
-				this.terrorismLabel = terrorismLabel;
-			}
-
-			public String getTerrorismScore() {
-				return this.terrorismScore;
-			}
-
-			public void setTerrorismScore(String terrorismScore) {
-				this.terrorismScore = terrorismScore;
-			}
-
-			public String getTimestamp() {
-				return this.timestamp;
-			}
-
-			public void setTimestamp(String timestamp) {
-				this.timestamp = timestamp;
+			public void setLiveLabel(String liveLabel) {
+				this.liveLabel = liveLabel;
 			}
 
 			public String getUrl() {
@@ -141,12 +141,12 @@ public class GetMediaAuditResultDetailResponse extends AcsResponse {
 				this.url = url;
 			}
 
-			public String getAdLabel() {
-				return this.adLabel;
+			public String getTimestamp() {
+				return this.timestamp;
 			}
 
-			public void setAdLabel(String adLabel) {
-				this.adLabel = adLabel;
+			public void setTimestamp(String timestamp) {
+				this.timestamp = timestamp;
 			}
 
 			public String getAdScore() {
@@ -157,20 +157,20 @@ public class GetMediaAuditResultDetailResponse extends AcsResponse {
 				this.adScore = adScore;
 			}
 
-			public String getLiveLabel() {
-				return this.liveLabel;
-			}
-
-			public void setLiveLabel(String liveLabel) {
-				this.liveLabel = liveLabel;
-			}
-
 			public String getLiveScore() {
 				return this.liveScore;
 			}
 
 			public void setLiveScore(String liveScore) {
 				this.liveScore = liveScore;
+			}
+
+			public String getLogoScore() {
+				return this.logoScore;
+			}
+
+			public void setLogoScore(String logoScore) {
+				this.logoScore = logoScore;
 			}
 
 			public String getLogoLabel() {
@@ -181,12 +181,12 @@ public class GetMediaAuditResultDetailResponse extends AcsResponse {
 				this.logoLabel = logoLabel;
 			}
 
-			public String getLogoScore() {
-				return this.logoScore;
+			public String getTerrorismLabel() {
+				return this.terrorismLabel;
 			}
 
-			public void setLogoScore(String logoScore) {
-				this.logoScore = logoScore;
+			public void setTerrorismLabel(String terrorismLabel) {
+				this.terrorismLabel = terrorismLabel;
 			}
 		}
 	}
