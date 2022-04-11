@@ -1,3 +1,6 @@
+2022-04-11 Version: 1.0.34
+- Add user info for AssignUsersResponse.
+
 2022-03-28 Version: 2.3.6
 - Supported CallsServiceLevel30.
 
