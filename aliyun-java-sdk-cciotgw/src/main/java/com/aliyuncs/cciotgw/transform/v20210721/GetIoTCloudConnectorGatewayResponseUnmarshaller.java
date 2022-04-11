@@ -30,6 +30,7 @@ public class GetIoTCloudConnectorGatewayResponseUnmarshaller {
 		getIoTCloudConnectorGatewayResponse.setSpec(_ctx.stringValue("GetIoTCloudConnectorGatewayResponse.Spec"));
 		getIoTCloudConnectorGatewayResponse.setResourceUid(_ctx.longValue("GetIoTCloudConnectorGatewayResponse.ResourceUid"));
 		getIoTCloudConnectorGatewayResponse.setDescription(_ctx.stringValue("GetIoTCloudConnectorGatewayResponse.Description"));
+		getIoTCloudConnectorGatewayResponse.setHaMode(_ctx.stringValue("GetIoTCloudConnectorGatewayResponse.HaMode"));
 		getIoTCloudConnectorGatewayResponse.setState(_ctx.stringValue("GetIoTCloudConnectorGatewayResponse.State"));
 		getIoTCloudConnectorGatewayResponse.setScheduleFactor(_ctx.mapValue("GetIoTCloudConnectorGatewayResponse.ScheduleFactor"));
 		getIoTCloudConnectorGatewayResponse.setApn(_ctx.stringValue("GetIoTCloudConnectorGatewayResponse.Apn"));

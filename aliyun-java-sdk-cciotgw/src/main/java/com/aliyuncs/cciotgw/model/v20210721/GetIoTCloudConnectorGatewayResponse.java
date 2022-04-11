@@ -34,6 +34,8 @@ public class GetIoTCloudConnectorGatewayResponse extends AcsResponse {
 
 	private String description;
 
+	private String haMode;
+
 	private String state;
 
 	private Map<Object,Object> scheduleFactor;
@@ -84,6 +86,14 @@ public class GetIoTCloudConnectorGatewayResponse extends AcsResponse {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getHaMode() {
+		return this.haMode;
+	}
+
+	public void setHaMode(String haMode) {
+		this.haMode = haMode;
 	}
 
 	public String getState() {
