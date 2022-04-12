@@ -1,3 +1,6 @@
+2022-04-12 Version: 1.34.0
+- Remove redundant input for API ListTaskFlow.
+
 2022-04-06 Version: 1.33.0
 - Support output dagName, dagOwnerId for api listTaskFlowAndScenario.
 - Change output DbType to DwDbType for api GetLhSpaceByName.

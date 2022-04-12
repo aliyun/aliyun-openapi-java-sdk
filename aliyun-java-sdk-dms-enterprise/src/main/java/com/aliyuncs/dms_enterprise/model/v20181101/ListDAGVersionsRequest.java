@@ -22,17 +22,34 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTaskFlowRequest extends RpcAcsRequest<ListTaskFlowResponse> {
+public class ListDAGVersionsRequest extends RpcAcsRequest<ListDAGVersionsResponse> {
 	   
 
+	private Long dagId;
+
 	private Long tid;
-	public ListTaskFlowRequest() {
-		super("dms-enterprise", "2018-11-01", "ListTaskFlow", "dms-enterprise");
+
+	private Integer pageSize;
+
+	private Integer pageIndex;
+	public ListDAGVersionsRequest() {
+		super("dms-enterprise", "2018-11-01", "ListDAGVersions", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getDagId() {
+		return this.dagId;
+	}
+
+	public void setDagId(Long dagId) {
+		this.dagId = dagId;
+		if(dagId != null){
+			putQueryParameter("DagId", dagId.toString());
+		}
 	}
 
 	public Long getTid() {
@@ -46,9 +63,31 @@ public class ListTaskFlowRequest extends RpcAcsRequest<ListTaskFlowResponse> {
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("PageIndex", pageIndex.toString());
+		}
+	}
+
 	@Override
-	public Class<ListTaskFlowResponse> getResponseClass() {
-		return ListTaskFlowResponse.class;
+	public Class<ListDAGVersionsResponse> getResponseClass() {
+		return ListDAGVersionsResponse.class;
 	}
 
 }
