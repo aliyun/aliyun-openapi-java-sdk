@@ -34,6 +34,8 @@ public class ServiceInvokeResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String idToken;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +74,14 @@ public class ServiceInvokeResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getIdToken() {
+		return this.idToken;
+	}
+
+	public void setIdToken(String idToken) {
+		this.idToken = idToken;
 	}
 
 	@Override

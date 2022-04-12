@@ -1,3 +1,6 @@
+2022-04-12 Version: 1.2.5
+- Support verify id Token Send.
+
 2021-11-25 Version: 1.2.4
 - Support Check weak Password.
 
