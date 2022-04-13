@@ -80,6 +80,7 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setMultiAttach(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].MultiAttach"));
 			disk.setProvisionedIops(_ctx.longValue("DescribeDisksResponse.Disks["+ i +"].ProvisionedIops"));
 			disk.setBurstingEnabled(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].BurstingEnabled"));
+			disk.setThroughput(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].Throughput"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {

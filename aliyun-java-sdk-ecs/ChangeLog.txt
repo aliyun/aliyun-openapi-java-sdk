@@ -1,3 +1,7 @@
+2022-04-13 Version: 4.24.17
+- Support throughput for API DescribeDisks.
+
+
 2022-03-25 Version: 4.24.16
 - Add Request Param LaunchConfigurationPassword For API CreateAutoProvisioningGroup.
 

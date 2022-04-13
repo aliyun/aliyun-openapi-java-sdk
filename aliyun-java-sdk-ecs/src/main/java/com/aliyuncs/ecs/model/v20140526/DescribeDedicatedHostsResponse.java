@@ -79,6 +79,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String schedulerOptionsManagedPrivateSpaceId;
+
 		private String status;
 
 		private Integer cores;
@@ -145,6 +147,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getSchedulerOptionsManagedPrivateSpaceId() {
+			return this.schedulerOptionsManagedPrivateSpaceId;
+		}
+
+		public void setSchedulerOptionsManagedPrivateSpaceId(String schedulerOptionsManagedPrivateSpaceId) {
+			this.schedulerOptionsManagedPrivateSpaceId = schedulerOptionsManagedPrivateSpaceId;
 		}
 
 		public String getStatus() {

@@ -169,6 +169,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Boolean burstingEnabled;
 
+		private Integer throughput;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -503,6 +505,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setBurstingEnabled(Boolean burstingEnabled) {
 			this.burstingEnabled = burstingEnabled;
+		}
+
+		public Integer getThroughput() {
+			return this.throughput;
+		}
+
+		public void setThroughput(Integer throughput) {
+			this.throughput = throughput;
 		}
 
 		public List<OperationLock> getOperationLocks() {

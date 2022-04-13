@@ -41,6 +41,7 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts.Length"); i++) {
 			DedicatedHost dedicatedHost = new DedicatedHost();
 			dedicatedHost.setCreationTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].CreationTime"));
+			dedicatedHost.setSchedulerOptionsManagedPrivateSpaceId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SchedulerOptions.ManagedPrivateSpaceId"));
 			dedicatedHost.setStatus(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Status"));
 			dedicatedHost.setCores(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Cores"));
 			dedicatedHost.setAutoPlacement(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].AutoPlacement"));
