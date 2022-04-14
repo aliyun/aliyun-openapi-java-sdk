@@ -35,10 +35,10 @@ public class ListVpcResponseUnmarshaller {
 			VpcEntity vpcEntity = new VpcEntity();
 			vpcEntity.setVpcId(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].VpcId"));
 			vpcEntity.setVpcName(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].VpcName"));
-			vpcEntity.setRegionId(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].RegionId"));
-			vpcEntity.setUserId(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].UserId"));
 			vpcEntity.setExpired(_ctx.booleanValue("ListVpcResponse.VpcList["+ i +"].Expired"));
+			vpcEntity.setUserId(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].UserId"));
 			vpcEntity.setEcsNum(_ctx.integerValue("ListVpcResponse.VpcList["+ i +"].EcsNum"));
+			vpcEntity.setRegionId(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].RegionId"));
 
 			vpcList.add(vpcEntity);
 		}

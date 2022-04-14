@@ -28,11 +28,11 @@ public class UpdateContainerConfigurationResponseUnmarshaller {
 		updateContainerConfigurationResponse.setMessage(_ctx.stringValue("UpdateContainerConfigurationResponse.Message"));
 
 		ContainerConfiguration containerConfiguration = new ContainerConfiguration();
-		containerConfiguration.setContextPath(_ctx.stringValue("UpdateContainerConfigurationResponse.ContainerConfiguration.ContextPath"));
 		containerConfiguration.setHttpPort(_ctx.integerValue("UpdateContainerConfigurationResponse.ContainerConfiguration.HttpPort"));
+		containerConfiguration.setContextPath(_ctx.stringValue("UpdateContainerConfigurationResponse.ContainerConfiguration.ContextPath"));
+		containerConfiguration.setUseBodyEncoding(_ctx.booleanValue("UpdateContainerConfigurationResponse.ContainerConfiguration.UseBodyEncoding"));
 		containerConfiguration.setMaxThreads(_ctx.integerValue("UpdateContainerConfigurationResponse.ContainerConfiguration.MaxThreads"));
 		containerConfiguration.setURIEncoding(_ctx.stringValue("UpdateContainerConfigurationResponse.ContainerConfiguration.URIEncoding"));
-		containerConfiguration.setUseBodyEncoding(_ctx.booleanValue("UpdateContainerConfigurationResponse.ContainerConfiguration.UseBodyEncoding"));
 		updateContainerConfigurationResponse.setContainerConfiguration(containerConfiguration);
 	 
 	 	return updateContainerConfigurationResponse;

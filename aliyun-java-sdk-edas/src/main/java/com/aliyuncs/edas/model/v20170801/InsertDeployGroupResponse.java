@@ -66,30 +66,30 @@ public class InsertDeployGroupResponse extends AcsResponse {
 
 	public static class DeployGroupEntity {
 
-		private String id;
+		private Long updateTime;
 
 		private String groupName;
 
-		private Integer groupType;
-
-		private String appId;
-
-		private String clusterId;
-
-		private String packageVersionId;
+		private Long createTime;
 
 		private String appVersionId;
 
-		private Long createTime;
+		private String appId;
 
-		private Long updateTime;
+		private String packageVersionId;
 
-		public String getId() {
-			return this.id;
+		private Integer groupType;
+
+		private String id;
+
+		private String clusterId;
+
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getGroupName() {
@@ -100,36 +100,12 @@ public class InsertDeployGroupResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public Integer getGroupType() {
-			return this.groupType;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setGroupType(Integer groupType) {
-			this.groupType = groupType;
-		}
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getPackageVersionId() {
-			return this.packageVersionId;
-		}
-
-		public void setPackageVersionId(String packageVersionId) {
-			this.packageVersionId = packageVersionId;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getAppVersionId() {
@@ -140,20 +116,44 @@ public class InsertDeployGroupResponse extends AcsResponse {
 			this.appVersionId = appVersionId;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getPackageVersionId() {
+			return this.packageVersionId;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setPackageVersionId(String packageVersionId) {
+			this.packageVersionId = packageVersionId;
+		}
+
+		public Integer getGroupType() {
+			return this.groupType;
+		}
+
+		public void setGroupType(Integer groupType) {
+			this.groupType = groupType;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

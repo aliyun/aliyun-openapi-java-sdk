@@ -67,23 +67,31 @@ public class ListApplicationResponse extends AcsResponse {
 
 	public static class Application {
 
+		private Integer clusterType;
+
 		private String appId;
 
-		private String name;
-
-		private String regionId;
+		private String resourceGroupId;
 
 		private String applicationType;
 
-		private Integer clusterType;
-
-		private String clusterId;
-
-		private Long buildPackageId;
+		private String name;
 
 		private Integer runningInstanceCount;
 
-		private String resourceGroupId;
+		private Long buildPackageId;
+
+		private String clusterId;
+
+		private String regionId;
+
+		public Integer getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(Integer clusterType) {
+			this.clusterType = clusterType;
+		}
 
 		public String getAppId() {
 			return this.appId;
@@ -93,20 +101,12 @@ public class ListApplicationResponse extends AcsResponse {
 			this.appId = appId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getApplicationType() {
@@ -117,28 +117,12 @@ public class ListApplicationResponse extends AcsResponse {
 			this.applicationType = applicationType;
 		}
 
-		public Integer getClusterType() {
-			return this.clusterType;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setClusterType(Integer clusterType) {
-			this.clusterType = clusterType;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public Long getBuildPackageId() {
-			return this.buildPackageId;
-		}
-
-		public void setBuildPackageId(Long buildPackageId) {
-			this.buildPackageId = buildPackageId;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getRunningInstanceCount() {
@@ -149,12 +133,28 @@ public class ListApplicationResponse extends AcsResponse {
 			this.runningInstanceCount = runningInstanceCount;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public Long getBuildPackageId() {
+			return this.buildPackageId;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setBuildPackageId(Long buildPackageId) {
+			this.buildPackageId = buildPackageId;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

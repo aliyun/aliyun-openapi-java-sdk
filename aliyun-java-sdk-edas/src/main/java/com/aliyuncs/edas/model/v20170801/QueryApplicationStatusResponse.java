@@ -119,70 +119,44 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 
 		public static class Ecu {
 
-			private String ecuId;
-
-			private Boolean online;
-
-			private Boolean dockerEnv;
-
-			private Long createTime;
+			private String vpcId;
 
 			private Long updateTime;
 
 			private String ipAddr;
 
-			private Long heartbeatTime;
+			private Integer availableCpu;
+
+			private Long createTime;
 
 			private String userId;
 
-			private String groupId;
-
-			private String name;
-
-			private String zoneId;
+			private String instanceId;
 
 			private String regionId;
 
-			private String instanceId;
+			private String ecuId;
 
-			private String vpcId;
+			private String groupId;
 
-			private String regionId1;
+			private Boolean dockerEnv;
 
-			private Integer availableCpu;
+			private Boolean online;
 
 			private Integer availableMem;
 
-			public String getEcuId() {
-				return this.ecuId;
+			private String zoneId;
+
+			private String name;
+
+			private Long heartbeatTime;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setEcuId(String ecuId) {
-				this.ecuId = ecuId;
-			}
-
-			public Boolean getOnline() {
-				return this.online;
-			}
-
-			public void setOnline(Boolean online) {
-				this.online = online;
-			}
-
-			public Boolean getDockerEnv() {
-				return this.dockerEnv;
-			}
-
-			public void setDockerEnv(Boolean dockerEnv) {
-				this.dockerEnv = dockerEnv;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public Long getUpdateTime() {
@@ -201,12 +175,20 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.ipAddr = ipAddr;
 			}
 
-			public Long getHeartbeatTime() {
-				return this.heartbeatTime;
+			public Integer getAvailableCpu() {
+				return this.availableCpu;
 			}
 
-			public void setHeartbeatTime(Long heartbeatTime) {
-				this.heartbeatTime = heartbeatTime;
+			public void setAvailableCpu(Integer availableCpu) {
+				this.availableCpu = availableCpu;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
 			}
 
 			public String getUserId() {
@@ -217,28 +199,12 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getGroupId() {
-				return this.groupId;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getRegionId() {
@@ -249,36 +215,36 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.regionId = regionId;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getEcuId() {
+				return this.ecuId;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setEcuId(String ecuId) {
+				this.ecuId = ecuId;
 			}
 
-			public String getVpcId() {
-				return this.vpcId;
+			public String getGroupId() {
+				return this.groupId;
 			}
 
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 
-			public String getRegionId1() {
-				return this.regionId1;
+			public Boolean getDockerEnv() {
+				return this.dockerEnv;
 			}
 
-			public void setRegionId1(String regionId1) {
-				this.regionId1 = regionId1;
+			public void setDockerEnv(Boolean dockerEnv) {
+				this.dockerEnv = dockerEnv;
 			}
 
-			public Integer getAvailableCpu() {
-				return this.availableCpu;
+			public Boolean getOnline() {
+				return this.online;
 			}
 
-			public void setAvailableCpu(Integer availableCpu) {
-				this.availableCpu = availableCpu;
+			public void setOnline(Boolean online) {
+				this.online = online;
 			}
 
 			public Integer getAvailableMem() {
@@ -288,15 +254,43 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 			public void setAvailableMem(Integer availableMem) {
 				this.availableMem = availableMem;
 			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Long getHeartbeatTime() {
+				return this.heartbeatTime;
+			}
+
+			public void setHeartbeatTime(Long heartbeatTime) {
+				this.heartbeatTime = heartbeatTime;
+			}
 		}
 
 		public static class Ecc {
 
-			private String eccId;
+			private String vpcId;
+
+			private Long updateTime;
 
 			private String ecuId;
 
-			private String appId;
+			private String eccId;
+
+			private String groupId;
 
 			private Integer appState;
 
@@ -304,22 +298,26 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 
 			private Long createTime;
 
-			private Long updateTime;
-
-			private String ip;
-
-			private String vpcId;
-
-			private String groupId;
+			private String appId;
 
 			private String containerStatus;
 
-			public String getEccId() {
-				return this.eccId;
+			private String ip;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setEccId(String eccId) {
-				this.eccId = eccId;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public String getEcuId() {
@@ -330,12 +328,20 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.ecuId = ecuId;
 			}
 
-			public String getAppId() {
-				return this.appId;
+			public String getEccId() {
+				return this.eccId;
 			}
 
-			public void setAppId(String appId) {
-				this.appId = appId;
+			public void setEccId(String eccId) {
+				this.eccId = eccId;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 
 			public Integer getAppState() {
@@ -362,36 +368,12 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Long getUpdateTime() {
-				return this.updateTime;
+			public String getAppId() {
+				return this.appId;
 			}
 
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
-			}
-
-			public String getIp() {
-				return this.ip;
-			}
-
-			public void setIp(String ip) {
-				this.ip = ip;
-			}
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 
 			public String getContainerStatus() {
@@ -401,27 +383,51 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 			public void setContainerStatus(String containerStatus) {
 				this.containerStatus = containerStatus;
 			}
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
 		}
 
 		public static class Group {
 
-			private String groupId;
+			private Long updateTime;
 
 			private String groupName;
+
+			private String groupId;
+
+			private Long createTime;
+
+			private String appVersionId;
 
 			private String appId;
 
 			private String packageVersionId;
 
-			private String appVersionId;
-
 			private Integer groupType;
 
 			private String clusterId;
 
-			private Long createTime;
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
 
-			private Long updateTime;
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
 
 			public String getGroupId() {
 				return this.groupId;
@@ -431,12 +437,20 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.groupId = groupId;
 			}
 
-			public String getGroupName() {
-				return this.groupName;
+			public Long getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setGroupName(String groupName) {
-				this.groupName = groupName;
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getAppVersionId() {
+				return this.appVersionId;
+			}
+
+			public void setAppVersionId(String appVersionId) {
+				this.appVersionId = appVersionId;
 			}
 
 			public String getAppId() {
@@ -455,14 +469,6 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.packageVersionId = packageVersionId;
 			}
 
-			public String getAppVersionId() {
-				return this.appVersionId;
-			}
-
-			public void setAppVersionId(String appVersionId) {
-				this.appVersionId = appVersionId;
-			}
-
 			public Integer getGroupType() {
 				return this.groupType;
 			}
@@ -478,45 +484,21 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 			public void setClusterId(String clusterId) {
 				this.clusterId = clusterId;
 			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public Long getUpdateTime() {
-				return this.updateTime;
-			}
-
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
-			}
 		}
 
 		public static class DeployRecord {
-
-			private String deployRecordId;
 
 			private String eccId;
 
 			private String ecuId;
 
-			private String packageVersionId;
-
 			private String packageMd5;
 
 			private Long createTime;
 
-			public String getDeployRecordId() {
-				return this.deployRecordId;
-			}
+			private String packageVersionId;
 
-			public void setDeployRecordId(String deployRecordId) {
-				this.deployRecordId = deployRecordId;
-			}
+			private String deployRecordId;
 
 			public String getEccId() {
 				return this.eccId;
@@ -534,14 +516,6 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.ecuId = ecuId;
 			}
 
-			public String getPackageVersionId() {
-				return this.packageVersionId;
-			}
-
-			public void setPackageVersionId(String packageVersionId) {
-				this.packageVersionId = packageVersionId;
-			}
-
 			public String getPackageMd5() {
 				return this.packageMd5;
 			}
@@ -557,25 +531,49 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 			public void setCreateTime(Long createTime) {
 				this.createTime = createTime;
 			}
+
+			public String getPackageVersionId() {
+				return this.packageVersionId;
+			}
+
+			public void setPackageVersionId(String packageVersionId) {
+				this.packageVersionId = packageVersionId;
+			}
+
+			public String getDeployRecordId() {
+				return this.deployRecordId;
+			}
+
+			public void setDeployRecordId(String deployRecordId) {
+				this.deployRecordId = deployRecordId;
+			}
 		}
 
 		public static class Application {
 
-			private String applicationId;
+			private String healthCheckUrl;
 
-			private Integer buildPackageId;
-
-			private String clusterId;
-
-			private Integer cpu;
+			private String owner;
 
 			private Long createTime;
+
+			private String userId;
+
+			private Integer port;
+
+			private Integer runningInstanceCount;
+
+			private String phone;
+
+			private String regionId;
+
+			private Integer buildPackageId;
 
 			private Boolean dockerize;
 
 			private String email;
 
-			private String healthCheckUrl;
+			private Integer cpu;
 
 			private Integer instanceCount;
 
@@ -585,48 +583,24 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 
 			private String name;
 
-			private String owner;
+			private String applicationId;
 
-			private String phone;
+			private String clusterId;
 
-			private Integer port;
-
-			private String regionId;
-
-			private Integer runningInstanceCount;
-
-			private String userId;
-
-			public String getApplicationId() {
-				return this.applicationId;
+			public String getHealthCheckUrl() {
+				return this.healthCheckUrl;
 			}
 
-			public void setApplicationId(String applicationId) {
-				this.applicationId = applicationId;
+			public void setHealthCheckUrl(String healthCheckUrl) {
+				this.healthCheckUrl = healthCheckUrl;
 			}
 
-			public Integer getBuildPackageId() {
-				return this.buildPackageId;
+			public String getOwner() {
+				return this.owner;
 			}
 
-			public void setBuildPackageId(Integer buildPackageId) {
-				this.buildPackageId = buildPackageId;
-			}
-
-			public String getClusterId() {
-				return this.clusterId;
-			}
-
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
-			}
-
-			public Integer getCpu() {
-				return this.cpu;
-			}
-
-			public void setCpu(Integer cpu) {
-				this.cpu = cpu;
+			public void setOwner(String owner) {
+				this.owner = owner;
 			}
 
 			public Long getCreateTime() {
@@ -635,6 +609,54 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 
 			public void setCreateTime(Long createTime) {
 				this.createTime = createTime;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public Integer getRunningInstanceCount() {
+				return this.runningInstanceCount;
+			}
+
+			public void setRunningInstanceCount(Integer runningInstanceCount) {
+				this.runningInstanceCount = runningInstanceCount;
+			}
+
+			public String getPhone() {
+				return this.phone;
+			}
+
+			public void setPhone(String phone) {
+				this.phone = phone;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public Integer getBuildPackageId() {
+				return this.buildPackageId;
+			}
+
+			public void setBuildPackageId(Integer buildPackageId) {
+				this.buildPackageId = buildPackageId;
 			}
 
 			public Boolean getDockerize() {
@@ -653,12 +675,12 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.email = email;
 			}
 
-			public String getHealthCheckUrl() {
-				return this.healthCheckUrl;
+			public Integer getCpu() {
+				return this.cpu;
 			}
 
-			public void setHealthCheckUrl(String healthCheckUrl) {
-				this.healthCheckUrl = healthCheckUrl;
+			public void setCpu(Integer cpu) {
+				this.cpu = cpu;
 			}
 
 			public Integer getInstanceCount() {
@@ -693,52 +715,20 @@ public class QueryApplicationStatusResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getOwner() {
-				return this.owner;
+			public String getApplicationId() {
+				return this.applicationId;
 			}
 
-			public void setOwner(String owner) {
-				this.owner = owner;
+			public void setApplicationId(String applicationId) {
+				this.applicationId = applicationId;
 			}
 
-			public String getPhone() {
-				return this.phone;
+			public String getClusterId() {
+				return this.clusterId;
 			}
 
-			public void setPhone(String phone) {
-				this.phone = phone;
-			}
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public Integer getRunningInstanceCount() {
-				return this.runningInstanceCount;
-			}
-
-			public void setRunningInstanceCount(Integer runningInstanceCount) {
-				this.runningInstanceCount = runningInstanceCount;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
 			}
 		}
 	}

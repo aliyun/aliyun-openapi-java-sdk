@@ -32,17 +32,17 @@ public class GetServiceProvidersPageResponseUnmarshaller {
 		getServiceProvidersPageResponse.setSuccess(_ctx.booleanValue("GetServiceProvidersPageResponse.Success"));
 
 		Data data = new Data();
-		data.setSize(_ctx.integerValue("GetServiceProvidersPageResponse.Data.Size"));
-		data.setTotalElements(_ctx.integerValue("GetServiceProvidersPageResponse.Data.TotalElements"));
 		data.setTotalPages(_ctx.integerValue("GetServiceProvidersPageResponse.Data.TotalPages"));
+		data.setTotalElements(_ctx.integerValue("GetServiceProvidersPageResponse.Data.TotalElements"));
+		data.setSize(_ctx.integerValue("GetServiceProvidersPageResponse.Data.Size"));
 
 		List<Provider> content = new ArrayList<Provider>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceProvidersPageResponse.Data.Content.Length"); i++) {
 			Provider provider = new Provider();
+			provider.setTimeout(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].Timeout"));
 			provider.setIp(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].Ip"));
 			provider.setPort(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].Port"));
 			provider.setSerializeType(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].SerializeType"));
-			provider.setTimeout(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].Timeout"));
 
 			content.add(provider);
 		}

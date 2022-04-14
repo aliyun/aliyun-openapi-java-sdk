@@ -24,8 +24,8 @@ public class StartApplicationResponseUnmarshaller {
 		
 		startApplicationResponse.setRequestId(_ctx.stringValue("StartApplicationResponse.RequestId"));
 		startApplicationResponse.setCode(_ctx.integerValue("StartApplicationResponse.Code"));
-		startApplicationResponse.setMessage(_ctx.stringValue("StartApplicationResponse.Message"));
 		startApplicationResponse.setChangeOrderId(_ctx.stringValue("StartApplicationResponse.ChangeOrderId"));
+		startApplicationResponse.setMessage(_ctx.stringValue("StartApplicationResponse.Message"));
 	 
 	 	return startApplicationResponse;
 	}

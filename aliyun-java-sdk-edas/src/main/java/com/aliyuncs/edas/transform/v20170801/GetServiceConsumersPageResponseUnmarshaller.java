@@ -32,9 +32,9 @@ public class GetServiceConsumersPageResponseUnmarshaller {
 		getServiceConsumersPageResponse.setSuccess(_ctx.booleanValue("GetServiceConsumersPageResponse.Success"));
 
 		Data data = new Data();
-		data.setSize(_ctx.integerValue("GetServiceConsumersPageResponse.Data.Size"));
-		data.setTotalElements(_ctx.integerValue("GetServiceConsumersPageResponse.Data.TotalElements"));
 		data.setTotalPages(_ctx.integerValue("GetServiceConsumersPageResponse.Data.TotalPages"));
+		data.setTotalElements(_ctx.integerValue("GetServiceConsumersPageResponse.Data.TotalElements"));
+		data.setSize(_ctx.integerValue("GetServiceConsumersPageResponse.Data.Size"));
 
 		List<Provider> content = new ArrayList<Provider>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceConsumersPageResponse.Data.Content.Length"); i++) {

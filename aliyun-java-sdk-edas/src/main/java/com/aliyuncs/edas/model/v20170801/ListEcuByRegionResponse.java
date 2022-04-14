@@ -67,70 +67,46 @@ public class ListEcuByRegionResponse extends AcsResponse {
 
 	public static class EcuEntity {
 
-		private String ecuId;
-
-		private Boolean online;
-
-		private Boolean dockerEnv;
-
-		private Long createTime;
+		private String vpcId;
 
 		private Long updateTime;
 
 		private String ipAddr;
 
-		private Long heartbeatTime;
+		private Integer availableCpu;
+
+		private Long createTime;
 
 		private String userId;
 
-		private String name;
-
-		private String zoneId;
-
-		private String regionId;
-
 		private String instanceId;
-
-		private String vpcId;
-
-		private Integer availableCpu;
-
-		private Integer availableMem;
-
-		private Integer cpu;
 
 		private Integer mem;
 
-		public String getEcuId() {
-			return this.ecuId;
+		private String regionId;
+
+		private String ecuId;
+
+		private Integer cpu;
+
+		private Boolean dockerEnv;
+
+		private Boolean online;
+
+		private Integer availableMem;
+
+		private String zoneId;
+
+		private String name;
+
+		private Long heartbeatTime;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setEcuId(String ecuId) {
-			this.ecuId = ecuId;
-		}
-
-		public Boolean getOnline() {
-			return this.online;
-		}
-
-		public void setOnline(Boolean online) {
-			this.online = online;
-		}
-
-		public Boolean getDockerEnv() {
-			return this.dockerEnv;
-		}
-
-		public void setDockerEnv(Boolean dockerEnv) {
-			this.dockerEnv = dockerEnv;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public Long getUpdateTime() {
@@ -149,12 +125,20 @@ public class ListEcuByRegionResponse extends AcsResponse {
 			this.ipAddr = ipAddr;
 		}
 
-		public Long getHeartbeatTime() {
-			return this.heartbeatTime;
+		public Integer getAvailableCpu() {
+			return this.availableCpu;
 		}
 
-		public void setHeartbeatTime(Long heartbeatTime) {
-			this.heartbeatTime = heartbeatTime;
+		public void setAvailableCpu(Integer availableCpu) {
+			this.availableCpu = availableCpu;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getUserId() {
@@ -165,20 +149,20 @@ public class ListEcuByRegionResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public Integer getMem() {
+			return this.mem;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setMem(Integer mem) {
+			this.mem = mem;
 		}
 
 		public String getRegionId() {
@@ -189,36 +173,12 @@ public class ListEcuByRegionResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getEcuId() {
+			return this.ecuId;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public Integer getAvailableCpu() {
-			return this.availableCpu;
-		}
-
-		public void setAvailableCpu(Integer availableCpu) {
-			this.availableCpu = availableCpu;
-		}
-
-		public Integer getAvailableMem() {
-			return this.availableMem;
-		}
-
-		public void setAvailableMem(Integer availableMem) {
-			this.availableMem = availableMem;
+		public void setEcuId(String ecuId) {
+			this.ecuId = ecuId;
 		}
 
 		public Integer getCpu() {
@@ -229,12 +189,52 @@ public class ListEcuByRegionResponse extends AcsResponse {
 			this.cpu = cpu;
 		}
 
-		public Integer getMem() {
-			return this.mem;
+		public Boolean getDockerEnv() {
+			return this.dockerEnv;
 		}
 
-		public void setMem(Integer mem) {
-			this.mem = mem;
+		public void setDockerEnv(Boolean dockerEnv) {
+			this.dockerEnv = dockerEnv;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
+		}
+
+		public Integer getAvailableMem() {
+			return this.availableMem;
+		}
+
+		public void setAvailableMem(Integer availableMem) {
+			this.availableMem = availableMem;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getHeartbeatTime() {
+			return this.heartbeatTime;
+		}
+
+		public void setHeartbeatTime(Long heartbeatTime) {
+			this.heartbeatTime = heartbeatTime;
 		}
 	}
 

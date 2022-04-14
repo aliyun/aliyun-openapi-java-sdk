@@ -28,12 +28,12 @@ public class DeleteUserDefineRegionResponseUnmarshaller {
 		deleteUserDefineRegionResponse.setMessage(_ctx.stringValue("DeleteUserDefineRegionResponse.Message"));
 
 		RegionDefine regionDefine = new RegionDefine();
-		regionDefine.setId(_ctx.longValue("DeleteUserDefineRegionResponse.RegionDefine.Id"));
-		regionDefine.setUserId(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.UserId"));
-		regionDefine.setRegionId(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.RegionId"));
+		regionDefine.setBelongRegion(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.BelongRegion"));
 		regionDefine.setRegionName(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.RegionName"));
 		regionDefine.setDescription(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.Description"));
-		regionDefine.setBelongRegion(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.BelongRegion"));
+		regionDefine.setUserId(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.UserId"));
+		regionDefine.setId(_ctx.longValue("DeleteUserDefineRegionResponse.RegionDefine.Id"));
+		regionDefine.setRegionId(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.RegionId"));
 		deleteUserDefineRegionResponse.setRegionDefine(regionDefine);
 	 
 	 	return deleteUserDefineRegionResponse;

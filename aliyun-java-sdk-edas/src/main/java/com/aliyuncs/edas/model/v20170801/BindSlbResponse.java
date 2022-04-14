@@ -66,54 +66,30 @@ public class BindSlbResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String extSlbId;
-
-		private String extSlbIp;
-
-		private String extSlbName;
-
-		private String extVServerGroupId;
+		private String vServerGroupId;
 
 		private String slbId;
 
-		private String slbIp;
-
-		private String slbName;
+		private String extSlbIp;
 
 		private Integer slbPort;
 
-		private String vServerGroupId;
+		private String extSlbName;
 
-		public String getExtSlbId() {
-			return this.extSlbId;
+		private String extSlbId;
+
+		private String extVServerGroupId;
+
+		private String slbName;
+
+		private String slbIp;
+
+		public String getVServerGroupId() {
+			return this.vServerGroupId;
 		}
 
-		public void setExtSlbId(String extSlbId) {
-			this.extSlbId = extSlbId;
-		}
-
-		public String getExtSlbIp() {
-			return this.extSlbIp;
-		}
-
-		public void setExtSlbIp(String extSlbIp) {
-			this.extSlbIp = extSlbIp;
-		}
-
-		public String getExtSlbName() {
-			return this.extSlbName;
-		}
-
-		public void setExtSlbName(String extSlbName) {
-			this.extSlbName = extSlbName;
-		}
-
-		public String getExtVServerGroupId() {
-			return this.extVServerGroupId;
-		}
-
-		public void setExtVServerGroupId(String extVServerGroupId) {
-			this.extVServerGroupId = extVServerGroupId;
+		public void setVServerGroupId(String vServerGroupId) {
+			this.vServerGroupId = vServerGroupId;
 		}
 
 		public String getSlbId() {
@@ -124,20 +100,12 @@ public class BindSlbResponse extends AcsResponse {
 			this.slbId = slbId;
 		}
 
-		public String getSlbIp() {
-			return this.slbIp;
+		public String getExtSlbIp() {
+			return this.extSlbIp;
 		}
 
-		public void setSlbIp(String slbIp) {
-			this.slbIp = slbIp;
-		}
-
-		public String getSlbName() {
-			return this.slbName;
-		}
-
-		public void setSlbName(String slbName) {
-			this.slbName = slbName;
+		public void setExtSlbIp(String extSlbIp) {
+			this.extSlbIp = extSlbIp;
 		}
 
 		public Integer getSlbPort() {
@@ -148,12 +116,44 @@ public class BindSlbResponse extends AcsResponse {
 			this.slbPort = slbPort;
 		}
 
-		public String getVServerGroupId() {
-			return this.vServerGroupId;
+		public String getExtSlbName() {
+			return this.extSlbName;
 		}
 
-		public void setVServerGroupId(String vServerGroupId) {
-			this.vServerGroupId = vServerGroupId;
+		public void setExtSlbName(String extSlbName) {
+			this.extSlbName = extSlbName;
+		}
+
+		public String getExtSlbId() {
+			return this.extSlbId;
+		}
+
+		public void setExtSlbId(String extSlbId) {
+			this.extSlbId = extSlbId;
+		}
+
+		public String getExtVServerGroupId() {
+			return this.extVServerGroupId;
+		}
+
+		public void setExtVServerGroupId(String extVServerGroupId) {
+			this.extVServerGroupId = extVServerGroupId;
+		}
+
+		public String getSlbName() {
+			return this.slbName;
+		}
+
+		public void setSlbName(String slbName) {
+			this.slbName = slbName;
+		}
+
+		public String getSlbIp() {
+			return this.slbIp;
+		}
+
+		public void setSlbIp(String slbIp) {
+			this.slbIp = slbIp;
 		}
 	}
 

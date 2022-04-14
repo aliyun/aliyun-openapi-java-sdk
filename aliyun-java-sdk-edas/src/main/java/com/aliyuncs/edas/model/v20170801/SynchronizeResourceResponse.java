@@ -28,11 +28,11 @@ public class SynchronizeResourceResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
-
 	private String data;
 
 	private String requestId;
+
+	private Boolean success;
 
 	public Integer getCode() {
 		return this.code;
@@ -50,14 +50,6 @@ public class SynchronizeResourceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getData() {
 		return this.data;
 	}
@@ -72,6 +64,14 @@ public class SynchronizeResourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

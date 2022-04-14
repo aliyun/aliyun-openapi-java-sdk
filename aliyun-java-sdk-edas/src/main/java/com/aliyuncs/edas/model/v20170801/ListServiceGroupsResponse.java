@@ -67,19 +67,11 @@ public class ListServiceGroupsResponse extends AcsResponse {
 
 	public static class ListServiceGroups {
 
-		private String createTime;
-
 		private String groupId;
 
 		private String groupName;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String createTime;
 
 		public String getGroupId() {
 			return this.groupId;
@@ -95,6 +87,14 @@ public class ListServiceGroupsResponse extends AcsResponse {
 
 		public void setGroupName(String groupName) {
 			this.groupName = groupName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

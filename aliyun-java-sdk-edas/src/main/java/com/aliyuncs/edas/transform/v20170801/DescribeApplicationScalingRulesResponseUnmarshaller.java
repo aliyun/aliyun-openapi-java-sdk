@@ -43,25 +43,25 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 		List<Rule> result = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setAppId(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].AppId"));
-			rule.setScaleRuleName(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].ScaleRuleName"));
-			rule.setScaleRuleType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].ScaleRuleType"));
-			rule.setScaleRuleEnabled(_ctx.booleanValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].ScaleRuleEnabled"));
-			rule.setMinReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].MinReplicas"));
-			rule.setMaxReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].MaxReplicas"));
-			rule.setCreateTime(_ctx.longValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].CreateTime"));
 			rule.setUpdateTime(_ctx.longValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].UpdateTime"));
+			rule.setCreateTime(_ctx.longValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].CreateTime"));
+			rule.setAppId(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].AppId"));
 			rule.setLastDisableTime(_ctx.longValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].LastDisableTime"));
+			rule.setMaxReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].MaxReplicas"));
+			rule.setScaleRuleEnabled(_ctx.booleanValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].ScaleRuleEnabled"));
+			rule.setScaleRuleType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].ScaleRuleType"));
+			rule.setMinReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].MinReplicas"));
+			rule.setScaleRuleName(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].ScaleRuleName"));
 
 			Metric metric = new Metric();
-			metric.setMaxReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Metric.MaxReplicas"));
 			metric.setMinReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Metric.MinReplicas"));
+			metric.setMaxReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Metric.MaxReplicas"));
 
 			List<Metric1> metrics = new ArrayList<Metric1>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Metric.Metrics.Length"); j++) {
 				Metric1 metric1 = new Metric1();
-				metric1.setMetricType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Metric.Metrics["+ j +"].MetricType"));
 				metric1.setMetricTargetAverageUtilization(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Metric.Metrics["+ j +"].MetricTargetAverageUtilization"));
+				metric1.setMetricType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Metric.Metrics["+ j +"].MetricType"));
 
 				metrics.add(metric1);
 			}
@@ -69,15 +69,15 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 			rule.setMetric(metric);
 
 			Trigger trigger = new Trigger();
-			trigger.setMaxReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Trigger.MaxReplicas"));
 			trigger.setMinReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Trigger.MinReplicas"));
+			trigger.setMaxReplicas(_ctx.integerValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Trigger.MaxReplicas"));
 
 			List<Trigger2> triggers = new ArrayList<Trigger2>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Trigger.Triggers.Length"); j++) {
 				Trigger2 trigger2 = new Trigger2();
 				trigger2.setType(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Trigger.Triggers["+ j +"].Type"));
-				trigger2.setName(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Trigger.Triggers["+ j +"].Name"));
 				trigger2.setMetaData(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Trigger.Triggers["+ j +"].MetaData"));
+				trigger2.setName(_ctx.stringValue("DescribeApplicationScalingRulesResponse.AppScalingRules.Result["+ i +"].Trigger.Triggers["+ j +"].Name"));
 
 				triggers.add(trigger2);
 			}

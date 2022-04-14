@@ -33,22 +33,22 @@ public class ListMethodsResponseUnmarshaller {
 		List<ServiceMethod> serviceMethodList = new ArrayList<ServiceMethod>();
 		for (int i = 0; i < _ctx.lengthValue("ListMethodsResponse.ServiceMethodList.Length"); i++) {
 			ServiceMethod serviceMethod = new ServiceMethod();
-			serviceMethod.setAppName(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].AppName"));
-			serviceMethod.setServiceName(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].ServiceName"));
 			serviceMethod.setMethodName(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].MethodName"));
+			serviceMethod.setAppName(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].AppName"));
 			serviceMethod.setOutput(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].Output"));
-
-			List<String> inputParams = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListMethodsResponse.ServiceMethodList["+ i +"].InputParams.Length"); j++) {
-				inputParams.add(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].InputParams["+ j +"]"));
-			}
-			serviceMethod.setInputParams(inputParams);
+			serviceMethod.setServiceName(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].ServiceName"));
 
 			List<String> paramTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListMethodsResponse.ServiceMethodList["+ i +"].ParamTypes.Length"); j++) {
 				paramTypes.add(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].ParamTypes["+ j +"]"));
 			}
 			serviceMethod.setParamTypes(paramTypes);
+
+			List<String> inputParams = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListMethodsResponse.ServiceMethodList["+ i +"].InputParams.Length"); j++) {
+				inputParams.add(_ctx.stringValue("ListMethodsResponse.ServiceMethodList["+ i +"].InputParams["+ j +"]"));
+			}
+			serviceMethod.setInputParams(inputParams);
 
 			serviceMethodList.add(serviceMethod);
 		}

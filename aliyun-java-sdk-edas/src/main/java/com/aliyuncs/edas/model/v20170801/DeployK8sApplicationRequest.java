@@ -53,6 +53,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String preStop;
 
+	private String buildPackId;
+
 	private String localVolume;
 
 	private String updateStrategy;
@@ -281,6 +283,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.preStop = preStop;
 		if(preStop != null){
 			putQueryParameter("PreStop", preStop);
+		}
+	}
+
+	public String getBuildPackId() {
+		return this.buildPackId;
+	}
+
+	public void setBuildPackId(String buildPackId) {
+		this.buildPackId = buildPackId;
+		if(buildPackId != null){
+			putQueryParameter("BuildPackId", buildPackId);
 		}
 	}
 

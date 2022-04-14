@@ -33,8 +33,8 @@ public class ListAliyunRegionResponseUnmarshaller {
 		List<RegionEntity> regionEntityList = new ArrayList<RegionEntity>();
 		for (int i = 0; i < _ctx.lengthValue("ListAliyunRegionResponse.RegionEntityList.Length"); i++) {
 			RegionEntity regionEntity = new RegionEntity();
-			regionEntity.setId(_ctx.stringValue("ListAliyunRegionResponse.RegionEntityList["+ i +"].Id"));
 			regionEntity.setName(_ctx.stringValue("ListAliyunRegionResponse.RegionEntityList["+ i +"].Name"));
+			regionEntity.setId(_ctx.stringValue("ListAliyunRegionResponse.RegionEntityList["+ i +"].Id"));
 
 			regionEntityList.add(regionEntity);
 		}

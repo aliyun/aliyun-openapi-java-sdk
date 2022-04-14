@@ -34,17 +34,17 @@ public class ListSlbResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListSlbResponse.SlbList.Length"); i++) {
 			SlbEntity slbEntity = new SlbEntity();
 			slbEntity.setSlbId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbId"));
-			slbEntity.setSlbName(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbName"));
-			slbEntity.setRegionId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].RegionId"));
-			slbEntity.setUserId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].UserId"));
-			slbEntity.setAddress(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].Address"));
-			slbEntity.setSlbStatus(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbStatus"));
-			slbEntity.setAddressType(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].AddressType"));
-			slbEntity.setVswitchId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].VswitchId"));
 			slbEntity.setVpcId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].VpcId"));
-			slbEntity.setNetworkType(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].NetworkType"));
-			slbEntity.setGroupId(_ctx.integerValue("ListSlbResponse.SlbList["+ i +"].GroupId"));
+			slbEntity.setVswitchId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].VswitchId"));
 			slbEntity.setExpired(_ctx.booleanValue("ListSlbResponse.SlbList["+ i +"].Expired"));
+			slbEntity.setUserId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].UserId"));
+			slbEntity.setAddressType(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].AddressType"));
+			slbEntity.setNetworkType(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].NetworkType"));
+			slbEntity.setRegionId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].RegionId"));
+			slbEntity.setGroupId(_ctx.integerValue("ListSlbResponse.SlbList["+ i +"].GroupId"));
+			slbEntity.setAddress(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].Address"));
+			slbEntity.setSlbName(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbName"));
+			slbEntity.setSlbStatus(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbStatus"));
 
 			slbList.add(slbEntity);
 		}

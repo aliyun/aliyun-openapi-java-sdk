@@ -67,20 +67,20 @@ public class GetServiceProvidersPageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer size;
+		private Integer totalPages;
 
 		private Integer totalElements;
 
-		private Integer totalPages;
+		private Integer size;
 
 		private List<Provider> content;
 
-		public Integer getSize() {
-			return this.size;
+		public Integer getTotalPages() {
+			return this.totalPages;
 		}
 
-		public void setSize(Integer size) {
-			this.size = size;
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
 		}
 
 		public Integer getTotalElements() {
@@ -91,12 +91,12 @@ public class GetServiceProvidersPageResponse extends AcsResponse {
 			this.totalElements = totalElements;
 		}
 
-		public Integer getTotalPages() {
-			return this.totalPages;
+		public Integer getSize() {
+			return this.size;
 		}
 
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
 		public List<Provider> getContent() {
@@ -109,13 +109,21 @@ public class GetServiceProvidersPageResponse extends AcsResponse {
 
 		public static class Provider {
 
+			private String timeout;
+
 			private String ip;
 
 			private String port;
 
 			private String serializeType;
 
-			private String timeout;
+			public String getTimeout() {
+				return this.timeout;
+			}
+
+			public void setTimeout(String timeout) {
+				this.timeout = timeout;
+			}
 
 			public String getIp() {
 				return this.ip;
@@ -139,14 +147,6 @@ public class GetServiceProvidersPageResponse extends AcsResponse {
 
 			public void setSerializeType(String serializeType) {
 				this.serializeType = serializeType;
-			}
-
-			public String getTimeout() {
-				return this.timeout;
-			}
-
-			public void setTimeout(String timeout) {
-				this.timeout = timeout;
 			}
 		}
 	}

@@ -28,14 +28,14 @@ public class InsertApplicationResponseUnmarshaller {
 		insertApplicationResponse.setMessage(_ctx.stringValue("InsertApplicationResponse.Message"));
 
 		ApplicationInfo applicationInfo = new ApplicationInfo();
+		applicationInfo.setChangeOrderId(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.ChangeOrderId"));
 		applicationInfo.setAppName(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.AppName"));
-		applicationInfo.setAppId(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.AppId"));
-		applicationInfo.setUserId(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.UserId"));
 		applicationInfo.setOwner(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.Owner"));
 		applicationInfo.setDockerize(_ctx.booleanValue("InsertApplicationResponse.ApplicationInfo.Dockerize"));
-		applicationInfo.setPort(_ctx.integerValue("InsertApplicationResponse.ApplicationInfo.Port"));
 		applicationInfo.setRegionName(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.RegionName"));
-		applicationInfo.setChangeOrderId(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.ChangeOrderId"));
+		applicationInfo.setAppId(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.AppId"));
+		applicationInfo.setUserId(_ctx.stringValue("InsertApplicationResponse.ApplicationInfo.UserId"));
+		applicationInfo.setPort(_ctx.integerValue("InsertApplicationResponse.ApplicationInfo.Port"));
 		insertApplicationResponse.setApplicationInfo(applicationInfo);
 	 
 	 	return insertApplicationResponse;

@@ -34,17 +34,17 @@ public class GetK8sServicesResponseUnmarshaller {
 		List<ServicesItem> services = new ArrayList<ServicesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sServicesResponse.Services.Length"); i++) {
 			ServicesItem servicesItem = new ServicesItem();
-			servicesItem.setName(_ctx.stringValue("GetK8sServicesResponse.Services["+ i +"].Name"));
 			servicesItem.setType(_ctx.stringValue("GetK8sServicesResponse.Services["+ i +"].Type"));
+			servicesItem.setName(_ctx.stringValue("GetK8sServicesResponse.Services["+ i +"].Name"));
 			servicesItem.setClusterIP(_ctx.stringValue("GetK8sServicesResponse.Services["+ i +"].ClusterIP"));
 
 			List<ServicePortsItem> servicePorts = new ArrayList<ServicePortsItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetK8sServicesResponse.Services["+ i +"].ServicePorts.Length"); j++) {
 				ServicePortsItem servicePortsItem = new ServicePortsItem();
-				servicePortsItem.setBizProtocol(_ctx.stringValue("GetK8sServicesResponse.Services["+ i +"].ServicePorts["+ j +"].Protocol"));
-				servicePortsItem.setPort(_ctx.integerValue("GetK8sServicesResponse.Services["+ i +"].ServicePorts["+ j +"].Port"));
 				servicePortsItem.setTargetPort(_ctx.stringValue("GetK8sServicesResponse.Services["+ i +"].ServicePorts["+ j +"].TargetPort"));
 				servicePortsItem.setNodePort(_ctx.integerValue("GetK8sServicesResponse.Services["+ i +"].ServicePorts["+ j +"].NodePort"));
+				servicePortsItem.setPort(_ctx.integerValue("GetK8sServicesResponse.Services["+ i +"].ServicePorts["+ j +"].Port"));
+				servicePortsItem.setBizProtocol(_ctx.stringValue("GetK8sServicesResponse.Services["+ i +"].ServicePorts["+ j +"].Protocol"));
 
 				servicePorts.add(servicePortsItem);
 			}

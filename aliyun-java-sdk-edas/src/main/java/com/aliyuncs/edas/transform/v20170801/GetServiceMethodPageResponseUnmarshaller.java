@@ -31,32 +31,32 @@ public class GetServiceMethodPageResponseUnmarshaller {
 		getServiceMethodPageResponse.setRequestId(_ctx.stringValue("GetServiceMethodPageResponse.RequestId"));
 		getServiceMethodPageResponse.setCode(_ctx.stringValue("GetServiceMethodPageResponse.Code"));
 		getServiceMethodPageResponse.setMessage(_ctx.stringValue("GetServiceMethodPageResponse.Message"));
-		getServiceMethodPageResponse.setSuccess(_ctx.booleanValue("GetServiceMethodPageResponse.Success"));
 		getServiceMethodPageResponse.setHttpCode(_ctx.stringValue("GetServiceMethodPageResponse.HttpCode"));
+		getServiceMethodPageResponse.setSuccess(_ctx.booleanValue("GetServiceMethodPageResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("GetServiceMethodPageResponse.Data.PageNumber"));
-		data.setTotalSize(_ctx.integerValue("GetServiceMethodPageResponse.Data.TotalSize"));
 		data.setPageSize(_ctx.integerValue("GetServiceMethodPageResponse.Data.PageSize"));
+		data.setTotalSize(_ctx.integerValue("GetServiceMethodPageResponse.Data.TotalSize"));
 
 		List<Method> result = new ArrayList<Method>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceMethodPageResponse.Data.Result.Length"); i++) {
 			Method method = new Method();
-			method.setName(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].Name"));
-			method.setReturnType(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ReturnType"));
-			method.setMethodController(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].MethodController"));
-			method.setNameDetail(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].NameDetail"));
-			method.setReturnDetails(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ReturnDetails"));
-			method.setParameterTypes(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ParameterTypes"));
-			method.setParameterNames(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ParameterNames"));
 			method.setParameterDetails(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ParameterDetails"));
-			method.setRequestMethods(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].RequestMethods"));
-			method.setPaths(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].Paths"));
+			method.setNameDetail(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].NameDetail"));
+			method.setParameterNames(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ParameterNames"));
 			method.setParameterDefinitions(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ParameterDefinitions"));
+			method.setPaths(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].Paths"));
+			method.setParameterTypes(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ParameterTypes"));
+			method.setRequestMethods(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].RequestMethods"));
+			method.setReturnDetails(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ReturnDetails"));
+			method.setName(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].Name"));
+			method.setMethodController(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].MethodController"));
+			method.setReturnType(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ReturnType"));
 
 			ReturnDefinition returnDefinition = new ReturnDefinition();
-			returnDefinition.setId(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ReturnDefinition.Id"));
 			returnDefinition.setType(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ReturnDefinition.Type"));
+			returnDefinition.setId(_ctx.stringValue("GetServiceMethodPageResponse.Data.Result["+ i +"].ReturnDefinition.Id"));
 			method.setReturnDefinition(returnDefinition);
 
 			result.add(method);

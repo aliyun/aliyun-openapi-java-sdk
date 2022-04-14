@@ -33,20 +33,20 @@ public class ListRecentChangeOrderResponseUnmarshaller {
 		List<ChangeOrder> changeOrderList = new ArrayList<ChangeOrder>();
 		for (int i = 0; i < _ctx.lengthValue("ListRecentChangeOrderResponse.ChangeOrderList.Length"); i++) {
 			ChangeOrder changeOrder = new ChangeOrder();
-			changeOrder.setChangeOrderId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].ChangeOrderId"));
-			changeOrder.setUserId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].UserId"));
-			changeOrder.setBatchType(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].BatchType"));
-			changeOrder.setBatchCount(_ctx.integerValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].BatchCount"));
-			changeOrder.setAppId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].AppId"));
-			changeOrder.setGroupId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].GroupId"));
 			changeOrder.setStatus(_ctx.integerValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].Status"));
-			changeOrder.setCreateTime(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CreateTime"));
 			changeOrder.setFinishTime(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].FinishTime"));
-			changeOrder.setCoType(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CoType"));
+			changeOrder.setCreateTime(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CreateTime"));
+			changeOrder.setUserId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].UserId"));
+			changeOrder.setChangeOrderDescription(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].ChangeOrderDescription"));
+			changeOrder.setSource(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].Source"));
+			changeOrder.setBatchCount(_ctx.integerValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].BatchCount"));
 			changeOrder.setCreateUserId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CreateUserId"));
 			changeOrder.setCoTypeCode(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CoTypeCode"));
-			changeOrder.setSource(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].Source"));
-			changeOrder.setChangeOrderDescription(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].ChangeOrderDescription"));
+			changeOrder.setChangeOrderId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].ChangeOrderId"));
+			changeOrder.setBatchType(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].BatchType"));
+			changeOrder.setGroupId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].GroupId"));
+			changeOrder.setCoType(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].CoType"));
+			changeOrder.setAppId(_ctx.stringValue("ListRecentChangeOrderResponse.ChangeOrderList["+ i +"].AppId"));
 
 			changeOrderList.add(changeOrder);
 		}

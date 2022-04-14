@@ -50,12 +50,15 @@ public class ListK8sIngressRulesResponseUnmarshaller {
 				ingressConfsItem.setNamespace(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Namespace"));
 				ingressConfsItem.setName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Name"));
 				ingressConfsItem.setDashboardUrl(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].DashboardUrl"));
+				ingressConfsItem.setAlbId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].AlbId"));
+				ingressConfsItem.setIngressType(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].IngressType"));
 
 				List<RulesItem> rules = new ArrayList<RulesItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules.Length"); k++) {
 					RulesItem rulesItem = new RulesItem();
 					rulesItem.setSecretName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].SecretName"));
 					rulesItem.setHost(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Host"));
+					rulesItem.setEnableTls(_ctx.booleanValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].EnableTls"));
 
 					List<PathsItem> paths = new ArrayList<PathsItem>();
 					for (int l = 0; l < _ctx.lengthValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths.Length"); l++) {

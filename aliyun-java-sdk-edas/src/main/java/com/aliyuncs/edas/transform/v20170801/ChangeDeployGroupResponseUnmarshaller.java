@@ -24,8 +24,8 @@ public class ChangeDeployGroupResponseUnmarshaller {
 		
 		changeDeployGroupResponse.setRequestId(_ctx.stringValue("ChangeDeployGroupResponse.RequestId"));
 		changeDeployGroupResponse.setCode(_ctx.integerValue("ChangeDeployGroupResponse.Code"));
-		changeDeployGroupResponse.setMessage(_ctx.stringValue("ChangeDeployGroupResponse.Message"));
 		changeDeployGroupResponse.setChangeOrderId(_ctx.stringValue("ChangeDeployGroupResponse.ChangeOrderId"));
+		changeDeployGroupResponse.setMessage(_ctx.stringValue("ChangeDeployGroupResponse.Message"));
 	 
 	 	return changeDeployGroupResponse;
 	}

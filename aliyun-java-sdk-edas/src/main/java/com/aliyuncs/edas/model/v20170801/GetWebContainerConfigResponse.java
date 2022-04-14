@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetWebContainerConfigResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer code;
 
 	private String message;
 
-	private Integer code;
+	private String requestId;
 
 	private WebContainerConfig webContainerConfig;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class GetWebContainerConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public WebContainerConfig getWebContainerConfig() {
@@ -66,31 +66,23 @@ public class GetWebContainerConfigResponse extends AcsResponse {
 
 	public static class WebContainerConfig {
 
-		private String contextInputType;
-
 		private String contextPath;
 
+		private Boolean useAdvancedServerXml;
+
+		private Boolean useDefaultConfig;
+
 		private Integer httpPort;
+
+		private String contextInputType;
+
+		private Boolean useBodyEncoding;
+
+		private String uriEncoding;
 
 		private Integer maxThreads;
 
 		private String serverXml;
-
-		private String uriEncoding;
-
-		private Boolean useAdvancedServerXml;
-
-		private Boolean useBodyEncoding;
-
-		private Boolean useDefaultConfig;
-
-		public String getContextInputType() {
-			return this.contextInputType;
-		}
-
-		public void setContextInputType(String contextInputType) {
-			this.contextInputType = contextInputType;
-		}
 
 		public String getContextPath() {
 			return this.contextPath;
@@ -100,12 +92,52 @@ public class GetWebContainerConfigResponse extends AcsResponse {
 			this.contextPath = contextPath;
 		}
 
+		public Boolean getUseAdvancedServerXml() {
+			return this.useAdvancedServerXml;
+		}
+
+		public void setUseAdvancedServerXml(Boolean useAdvancedServerXml) {
+			this.useAdvancedServerXml = useAdvancedServerXml;
+		}
+
+		public Boolean getUseDefaultConfig() {
+			return this.useDefaultConfig;
+		}
+
+		public void setUseDefaultConfig(Boolean useDefaultConfig) {
+			this.useDefaultConfig = useDefaultConfig;
+		}
+
 		public Integer getHttpPort() {
 			return this.httpPort;
 		}
 
 		public void setHttpPort(Integer httpPort) {
 			this.httpPort = httpPort;
+		}
+
+		public String getContextInputType() {
+			return this.contextInputType;
+		}
+
+		public void setContextInputType(String contextInputType) {
+			this.contextInputType = contextInputType;
+		}
+
+		public Boolean getUseBodyEncoding() {
+			return this.useBodyEncoding;
+		}
+
+		public void setUseBodyEncoding(Boolean useBodyEncoding) {
+			this.useBodyEncoding = useBodyEncoding;
+		}
+
+		public String getUriEncoding() {
+			return this.uriEncoding;
+		}
+
+		public void setUriEncoding(String uriEncoding) {
+			this.uriEncoding = uriEncoding;
 		}
 
 		public Integer getMaxThreads() {
@@ -122,38 +154,6 @@ public class GetWebContainerConfigResponse extends AcsResponse {
 
 		public void setServerXml(String serverXml) {
 			this.serverXml = serverXml;
-		}
-
-		public String getUriEncoding() {
-			return this.uriEncoding;
-		}
-
-		public void setUriEncoding(String uriEncoding) {
-			this.uriEncoding = uriEncoding;
-		}
-
-		public Boolean getUseAdvancedServerXml() {
-			return this.useAdvancedServerXml;
-		}
-
-		public void setUseAdvancedServerXml(Boolean useAdvancedServerXml) {
-			this.useAdvancedServerXml = useAdvancedServerXml;
-		}
-
-		public Boolean getUseBodyEncoding() {
-			return this.useBodyEncoding;
-		}
-
-		public void setUseBodyEncoding(Boolean useBodyEncoding) {
-			this.useBodyEncoding = useBodyEncoding;
-		}
-
-		public Boolean getUseDefaultConfig() {
-			return this.useDefaultConfig;
-		}
-
-		public void setUseDefaultConfig(Boolean useDefaultConfig) {
-			this.useDefaultConfig = useDefaultConfig;
 		}
 	}
 

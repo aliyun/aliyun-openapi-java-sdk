@@ -25,9 +25,9 @@ public class RollbackChangeOrderResponseUnmarshaller {
 		
 		rollbackChangeOrderResponse.setRequestId(_ctx.stringValue("RollbackChangeOrderResponse.RequestId"));
 		rollbackChangeOrderResponse.setCode(_ctx.integerValue("RollbackChangeOrderResponse.Code"));
-		rollbackChangeOrderResponse.setErrorCode(_ctx.stringValue("RollbackChangeOrderResponse.ErrorCode"));
 		rollbackChangeOrderResponse.setMessage(_ctx.stringValue("RollbackChangeOrderResponse.Message"));
 		rollbackChangeOrderResponse.setTraceId(_ctx.stringValue("RollbackChangeOrderResponse.TraceId"));
+		rollbackChangeOrderResponse.setErrorCode(_ctx.stringValue("RollbackChangeOrderResponse.ErrorCode"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("RollbackChangeOrderResponse.Data.ChangeOrderId"));

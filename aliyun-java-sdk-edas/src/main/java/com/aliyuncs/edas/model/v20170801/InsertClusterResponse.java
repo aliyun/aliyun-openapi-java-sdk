@@ -66,52 +66,28 @@ public class InsertClusterResponse extends AcsResponse {
 
 	public static class Cluster {
 
-		private String clusterId;
-
-		private String regionId;
-
-		private String clusterName;
-
-		private Integer clusterType;
+		private String vpcId;
 
 		private Integer oversoldFactor;
 
 		private Integer networkMode;
 
-		private String vpcId;
-
 		private String iaasProvider;
 
-		public String getClusterId() {
-			return this.clusterId;
+		private Integer clusterType;
+
+		private String clusterName;
+
+		private String clusterId;
+
+		private String regionId;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public Integer getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(Integer clusterType) {
-			this.clusterType = clusterType;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public Integer getOversoldFactor() {
@@ -130,20 +106,44 @@ public class InsertClusterResponse extends AcsResponse {
 			this.networkMode = networkMode;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
 		public String getIaasProvider() {
 			return this.iaasProvider;
 		}
 
 		public void setIaasProvider(String iaasProvider) {
 			this.iaasProvider = iaasProvider;
+		}
+
+		public Integer getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(Integer clusterType) {
+			this.clusterType = clusterType;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

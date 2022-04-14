@@ -67,35 +67,99 @@ public class ListScaleOutEcuResponse extends AcsResponse {
 
 	public static class EcuInfo {
 
+		private String vpcId;
+
+		private Long updateTime;
+
+		private String ipAddr;
+
+		private Integer availableCpu;
+
+		private Long createTime;
+
+		private String userId;
+
+		private String instanceId;
+
+		private String regionId;
+
 		private String ecuId;
 
 		private Boolean online;
 
 		private Boolean dockerEnv;
 
-		private Long createTime;
-
-		private Long updateTime;
-
-		private String ipAddr;
-
-		private Long heartbeatTime;
-
-		private String userId;
-
-		private String name;
+		private Integer availableMem;
 
 		private String zoneId;
 
-		private String regionId;
+		private String name;
 
-		private String instanceId;
+		private Long heartbeatTime;
 
-		private String vpcId;
+		public String getVpcId() {
+			return this.vpcId;
+		}
 
-		private Integer availableCpu;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
 
-		private Integer availableMem;
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getIpAddr() {
+			return this.ipAddr;
+		}
+
+		public void setIpAddr(String ipAddr) {
+			this.ipAddr = ipAddr;
+		}
+
+		public Integer getAvailableCpu() {
+			return this.availableCpu;
+		}
+
+		public void setAvailableCpu(Integer availableCpu) {
+			this.availableCpu = availableCpu;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
 
 		public String getEcuId() {
 			return this.ecuId;
@@ -121,52 +185,12 @@ public class ListScaleOutEcuResponse extends AcsResponse {
 			this.dockerEnv = dockerEnv;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public Integer getAvailableMem() {
+			return this.availableMem;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getIpAddr() {
-			return this.ipAddr;
-		}
-
-		public void setIpAddr(String ipAddr) {
-			this.ipAddr = ipAddr;
-		}
-
-		public Long getHeartbeatTime() {
-			return this.heartbeatTime;
-		}
-
-		public void setHeartbeatTime(Long heartbeatTime) {
-			this.heartbeatTime = heartbeatTime;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setAvailableMem(Integer availableMem) {
+			this.availableMem = availableMem;
 		}
 
 		public String getZoneId() {
@@ -177,44 +201,20 @@ public class ListScaleOutEcuResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Long getHeartbeatTime() {
+			return this.heartbeatTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public Integer getAvailableCpu() {
-			return this.availableCpu;
-		}
-
-		public void setAvailableCpu(Integer availableCpu) {
-			this.availableCpu = availableCpu;
-		}
-
-		public Integer getAvailableMem() {
-			return this.availableMem;
-		}
-
-		public void setAvailableMem(Integer availableMem) {
-			this.availableMem = availableMem;
+		public void setHeartbeatTime(Long heartbeatTime) {
+			this.heartbeatTime = heartbeatTime;
 		}
 	}
 

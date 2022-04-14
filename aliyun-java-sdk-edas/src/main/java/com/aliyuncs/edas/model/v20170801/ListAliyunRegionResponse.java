@@ -67,17 +67,9 @@ public class ListAliyunRegionResponse extends AcsResponse {
 
 	public static class RegionEntity {
 
-		private String id;
-
 		private String name;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String id;
 
 		public String getName() {
 			return this.name;
@@ -85,6 +77,14 @@ public class ListAliyunRegionResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

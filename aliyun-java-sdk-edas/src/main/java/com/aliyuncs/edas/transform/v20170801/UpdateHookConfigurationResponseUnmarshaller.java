@@ -33,9 +33,9 @@ public class UpdateHookConfigurationResponseUnmarshaller {
 		List<Configuration> hooksConfiguration = new ArrayList<Configuration>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateHookConfigurationResponse.HooksConfiguration.Length"); i++) {
 			Configuration configuration = new Configuration();
+			configuration.setIgnoreFail(_ctx.booleanValue("UpdateHookConfigurationResponse.HooksConfiguration["+ i +"].IgnoreFail"));
 			configuration.setName(_ctx.stringValue("UpdateHookConfigurationResponse.HooksConfiguration["+ i +"].Name"));
 			configuration.setScript(_ctx.stringValue("UpdateHookConfigurationResponse.HooksConfiguration["+ i +"].Script"));
-			configuration.setIgnoreFail(_ctx.booleanValue("UpdateHookConfigurationResponse.HooksConfiguration["+ i +"].IgnoreFail"));
 
 			hooksConfiguration.add(configuration);
 		}

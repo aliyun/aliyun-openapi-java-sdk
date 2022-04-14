@@ -66,40 +66,24 @@ public class DeleteUserDefineRegionResponse extends AcsResponse {
 
 	public static class RegionDefine {
 
-		private Long id;
-
-		private String userId;
-
-		private String regionId;
+		private String belongRegion;
 
 		private String regionName;
 
 		private String description;
 
-		private String belongRegion;
+		private String userId;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		private String regionId;
+
+		public String getBelongRegion() {
+			return this.belongRegion;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setBelongRegion(String belongRegion) {
+			this.belongRegion = belongRegion;
 		}
 
 		public String getRegionName() {
@@ -118,12 +102,28 @@ public class DeleteUserDefineRegionResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getBelongRegion() {
-			return this.belongRegion;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setBelongRegion(String belongRegion) {
-			this.belongRegion = belongRegion;
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

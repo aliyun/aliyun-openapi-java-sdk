@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class InstallAgentResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private List<ExecutionResult> executionResultList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class InstallAgentResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<ExecutionResult> getExecutionResultList() {
 		return this.executionResultList;
 	}
@@ -67,23 +67,15 @@ public class InstallAgentResponse extends AcsResponse {
 
 	public static class ExecutionResult {
 
-		private String instanceId;
-
 		private String status;
 
 		private String finishedTime;
 
+		private String instanceId;
+
 		private String invokeRecordStatus;
 
 		private Boolean success;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -99,6 +91,14 @@ public class InstallAgentResponse extends AcsResponse {
 
 		public void setFinishedTime(String finishedTime) {
 			this.finishedTime = finishedTime;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getInvokeRecordStatus() {

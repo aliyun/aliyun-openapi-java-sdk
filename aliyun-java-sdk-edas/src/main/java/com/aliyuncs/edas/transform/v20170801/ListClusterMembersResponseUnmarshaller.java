@@ -39,13 +39,13 @@ public class ListClusterMembersResponseUnmarshaller {
 		List<ClusterMember> clusterMemberList = new ArrayList<ClusterMember>();
 		for (int i = 0; i < _ctx.lengthValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList.Length"); i++) {
 			ClusterMember clusterMember = new ClusterMember();
-			clusterMember.setClusterMemberId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterMemberId"));
-			clusterMember.setClusterId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterId"));
+			clusterMember.setStatus(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].Status"));
+			clusterMember.setUpdateTime(_ctx.longValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].UpdateTime"));
 			clusterMember.setEcuId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].EcuId"));
 			clusterMember.setEcsId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].EcsId"));
-			clusterMember.setStatus(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].Status"));
 			clusterMember.setCreateTime(_ctx.longValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].CreateTime"));
-			clusterMember.setUpdateTime(_ctx.longValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].UpdateTime"));
+			clusterMember.setClusterMemberId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterMemberId"));
+			clusterMember.setClusterId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterId"));
 
 			clusterMemberList.add(clusterMember);
 		}

@@ -121,6 +121,10 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 			private String dashboardUrl;
 
+			private String albId;
+
+			private String ingressType;
+
 			private List<RulesItem> rules;
 
 			public String getCreationTime() {
@@ -171,6 +175,22 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 				this.dashboardUrl = dashboardUrl;
 			}
 
+			public String getAlbId() {
+				return this.albId;
+			}
+
+			public void setAlbId(String albId) {
+				this.albId = albId;
+			}
+
+			public String getIngressType() {
+				return this.ingressType;
+			}
+
+			public void setIngressType(String ingressType) {
+				this.ingressType = ingressType;
+			}
+
 			public List<RulesItem> getRules() {
 				return this.rules;
 			}
@@ -184,6 +204,8 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 				private String secretName;
 
 				private String host;
+
+				private Boolean enableTls;
 
 				private List<PathsItem> paths;
 
@@ -201,6 +223,14 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 				public void setHost(String host) {
 					this.host = host;
+				}
+
+				public Boolean getEnableTls() {
+					return this.enableTls;
+				}
+
+				public void setEnableTls(Boolean enableTls) {
+					this.enableTls = enableTls;
 				}
 
 				public List<PathsItem> getPaths() {

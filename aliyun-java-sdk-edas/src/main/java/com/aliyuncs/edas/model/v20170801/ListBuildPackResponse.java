@@ -67,85 +67,45 @@ public class ListBuildPackResponse extends AcsResponse {
 
 	public static class BuildPack {
 
-		private Long configId;
-
-		private String packVersion;
-
-		private String tomcatDesc;
-
-		private String tomcatVersion;
-
-		private String tomcatDownloadUrl;
-
 		private String pandoraVersion;
 
-		private String pandoraDownloadUrl;
+		private Long configId;
+
+		private String feature;
 
 		private String pandoraDesc;
 
 		private String pluginInfo;
 
+		private Boolean disabled;
+
+		private String tengineDownloadUrl;
+
 		private String tomcatPath;
 
-		private String imageId;
+		private String tomcatDesc;
 
-		private String tengineImageId;
+		private String supportFeatures;
+
+		private String tomcatDownloadUrl;
+
+		private String tomcatVersion;
+
+		private String pandoraDownloadUrl;
+
+		private String packVersion;
 
 		private Boolean multipleTenant;
 
+		private String tengineImageId;
+
 		private Boolean withTengine;
 
-		private String tengineDownloadUrl;
+		private String imageId;
 
 		private String scriptName;
 
 		private String scriptVersion;
-
-		private String feature;
-
-		private String supportFeatures;
-
-		private Boolean disabled;
-
-		public Long getConfigId() {
-			return this.configId;
-		}
-
-		public void setConfigId(Long configId) {
-			this.configId = configId;
-		}
-
-		public String getPackVersion() {
-			return this.packVersion;
-		}
-
-		public void setPackVersion(String packVersion) {
-			this.packVersion = packVersion;
-		}
-
-		public String getTomcatDesc() {
-			return this.tomcatDesc;
-		}
-
-		public void setTomcatDesc(String tomcatDesc) {
-			this.tomcatDesc = tomcatDesc;
-		}
-
-		public String getTomcatVersion() {
-			return this.tomcatVersion;
-		}
-
-		public void setTomcatVersion(String tomcatVersion) {
-			this.tomcatVersion = tomcatVersion;
-		}
-
-		public String getTomcatDownloadUrl() {
-			return this.tomcatDownloadUrl;
-		}
-
-		public void setTomcatDownloadUrl(String tomcatDownloadUrl) {
-			this.tomcatDownloadUrl = tomcatDownloadUrl;
-		}
 
 		public String getPandoraVersion() {
 			return this.pandoraVersion;
@@ -155,12 +115,20 @@ public class ListBuildPackResponse extends AcsResponse {
 			this.pandoraVersion = pandoraVersion;
 		}
 
-		public String getPandoraDownloadUrl() {
-			return this.pandoraDownloadUrl;
+		public Long getConfigId() {
+			return this.configId;
 		}
 
-		public void setPandoraDownloadUrl(String pandoraDownloadUrl) {
-			this.pandoraDownloadUrl = pandoraDownloadUrl;
+		public void setConfigId(Long configId) {
+			this.configId = configId;
+		}
+
+		public String getFeature() {
+			return this.feature;
+		}
+
+		public void setFeature(String feature) {
+			this.feature = feature;
 		}
 
 		public String getPandoraDesc() {
@@ -179,6 +147,22 @@ public class ListBuildPackResponse extends AcsResponse {
 			this.pluginInfo = pluginInfo;
 		}
 
+		public Boolean getDisabled() {
+			return this.disabled;
+		}
+
+		public void setDisabled(Boolean disabled) {
+			this.disabled = disabled;
+		}
+
+		public String getTengineDownloadUrl() {
+			return this.tengineDownloadUrl;
+		}
+
+		public void setTengineDownloadUrl(String tengineDownloadUrl) {
+			this.tengineDownloadUrl = tengineDownloadUrl;
+		}
+
 		public String getTomcatPath() {
 			return this.tomcatPath;
 		}
@@ -187,20 +171,52 @@ public class ListBuildPackResponse extends AcsResponse {
 			this.tomcatPath = tomcatPath;
 		}
 
-		public String getImageId() {
-			return this.imageId;
+		public String getTomcatDesc() {
+			return this.tomcatDesc;
 		}
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
+		public void setTomcatDesc(String tomcatDesc) {
+			this.tomcatDesc = tomcatDesc;
 		}
 
-		public String getTengineImageId() {
-			return this.tengineImageId;
+		public String getSupportFeatures() {
+			return this.supportFeatures;
 		}
 
-		public void setTengineImageId(String tengineImageId) {
-			this.tengineImageId = tengineImageId;
+		public void setSupportFeatures(String supportFeatures) {
+			this.supportFeatures = supportFeatures;
+		}
+
+		public String getTomcatDownloadUrl() {
+			return this.tomcatDownloadUrl;
+		}
+
+		public void setTomcatDownloadUrl(String tomcatDownloadUrl) {
+			this.tomcatDownloadUrl = tomcatDownloadUrl;
+		}
+
+		public String getTomcatVersion() {
+			return this.tomcatVersion;
+		}
+
+		public void setTomcatVersion(String tomcatVersion) {
+			this.tomcatVersion = tomcatVersion;
+		}
+
+		public String getPandoraDownloadUrl() {
+			return this.pandoraDownloadUrl;
+		}
+
+		public void setPandoraDownloadUrl(String pandoraDownloadUrl) {
+			this.pandoraDownloadUrl = pandoraDownloadUrl;
+		}
+
+		public String getPackVersion() {
+			return this.packVersion;
+		}
+
+		public void setPackVersion(String packVersion) {
+			this.packVersion = packVersion;
 		}
 
 		public Boolean getMultipleTenant() {
@@ -211,6 +227,14 @@ public class ListBuildPackResponse extends AcsResponse {
 			this.multipleTenant = multipleTenant;
 		}
 
+		public String getTengineImageId() {
+			return this.tengineImageId;
+		}
+
+		public void setTengineImageId(String tengineImageId) {
+			this.tengineImageId = tengineImageId;
+		}
+
 		public Boolean getWithTengine() {
 			return this.withTengine;
 		}
@@ -219,12 +243,12 @@ public class ListBuildPackResponse extends AcsResponse {
 			this.withTengine = withTengine;
 		}
 
-		public String getTengineDownloadUrl() {
-			return this.tengineDownloadUrl;
+		public String getImageId() {
+			return this.imageId;
 		}
 
-		public void setTengineDownloadUrl(String tengineDownloadUrl) {
-			this.tengineDownloadUrl = tengineDownloadUrl;
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 
 		public String getScriptName() {
@@ -241,30 +265,6 @@ public class ListBuildPackResponse extends AcsResponse {
 
 		public void setScriptVersion(String scriptVersion) {
 			this.scriptVersion = scriptVersion;
-		}
-
-		public String getFeature() {
-			return this.feature;
-		}
-
-		public void setFeature(String feature) {
-			this.feature = feature;
-		}
-
-		public String getSupportFeatures() {
-			return this.supportFeatures;
-		}
-
-		public void setSupportFeatures(String supportFeatures) {
-			this.supportFeatures = supportFeatures;
-		}
-
-		public Boolean getDisabled() {
-			return this.disabled;
-		}
-
-		public void setDisabled(Boolean disabled) {
-			this.disabled = disabled;
 		}
 	}
 

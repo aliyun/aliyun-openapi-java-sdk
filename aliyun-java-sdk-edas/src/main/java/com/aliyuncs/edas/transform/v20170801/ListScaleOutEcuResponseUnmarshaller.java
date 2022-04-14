@@ -33,21 +33,21 @@ public class ListScaleOutEcuResponseUnmarshaller {
 		List<EcuInfo> ecuInfoList = new ArrayList<EcuInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListScaleOutEcuResponse.EcuInfoList.Length"); i++) {
 			EcuInfo ecuInfo = new EcuInfo();
+			ecuInfo.setVpcId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].VpcId"));
+			ecuInfo.setUpdateTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].UpdateTime"));
+			ecuInfo.setIpAddr(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].IpAddr"));
+			ecuInfo.setAvailableCpu(_ctx.integerValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].AvailableCpu"));
+			ecuInfo.setCreateTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].CreateTime"));
+			ecuInfo.setUserId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].UserId"));
+			ecuInfo.setInstanceId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].InstanceId"));
+			ecuInfo.setRegionId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].RegionId"));
 			ecuInfo.setEcuId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].EcuId"));
 			ecuInfo.setOnline(_ctx.booleanValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].Online"));
 			ecuInfo.setDockerEnv(_ctx.booleanValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].DockerEnv"));
-			ecuInfo.setCreateTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].CreateTime"));
-			ecuInfo.setUpdateTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].UpdateTime"));
-			ecuInfo.setIpAddr(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].IpAddr"));
-			ecuInfo.setHeartbeatTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].HeartbeatTime"));
-			ecuInfo.setUserId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].UserId"));
-			ecuInfo.setName(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].Name"));
-			ecuInfo.setZoneId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].ZoneId"));
-			ecuInfo.setRegionId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].RegionId"));
-			ecuInfo.setInstanceId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].InstanceId"));
-			ecuInfo.setVpcId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].VpcId"));
-			ecuInfo.setAvailableCpu(_ctx.integerValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].AvailableCpu"));
 			ecuInfo.setAvailableMem(_ctx.integerValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].AvailableMem"));
+			ecuInfo.setZoneId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].ZoneId"));
+			ecuInfo.setName(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].Name"));
+			ecuInfo.setHeartbeatTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].HeartbeatTime"));
 
 			ecuInfoList.add(ecuInfo);
 		}

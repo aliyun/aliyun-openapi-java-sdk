@@ -66,7 +66,7 @@ public class QueryEccInfoResponse extends AcsResponse {
 
 	public static class EccInfo {
 
-		private String appId;
+		private String vpcId;
 
 		private String eccId;
 
@@ -78,16 +78,16 @@ public class QueryEccInfoResponse extends AcsResponse {
 
 		private String packageMd5;
 
+		private String appId;
+
 		private String packageVersion;
 
-		private String vpcId;
-
-		public String getAppId() {
-			return this.appId;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getEccId() {
@@ -130,20 +130,20 @@ public class QueryEccInfoResponse extends AcsResponse {
 			this.packageMd5 = packageMd5;
 		}
 
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
 		public String getPackageVersion() {
 			return this.packageVersion;
 		}
 
 		public void setPackageVersion(String packageVersion) {
 			this.packageVersion = packageVersion;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
 		}
 	}
 

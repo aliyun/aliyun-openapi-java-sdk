@@ -25,25 +25,25 @@ public class UpdateMockRuleResponseUnmarshaller {
 		
 		updateMockRuleResponse.setRequestId(_ctx.stringValue("UpdateMockRuleResponse.RequestId"));
 		updateMockRuleResponse.setCode(_ctx.stringValue("UpdateMockRuleResponse.Code"));
-		updateMockRuleResponse.setHttpCode(_ctx.stringValue("UpdateMockRuleResponse.HttpCode"));
 		updateMockRuleResponse.setMessage(_ctx.stringValue("UpdateMockRuleResponse.Message"));
+		updateMockRuleResponse.setHttpCode(_ctx.stringValue("UpdateMockRuleResponse.HttpCode"));
 		updateMockRuleResponse.setSuccess(_ctx.booleanValue("UpdateMockRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAccountId(_ctx.stringValue("UpdateMockRuleResponse.Data.AccountId"));
-		data.setName(_ctx.stringValue("UpdateMockRuleResponse.Data.Name"));
-		data.setConsumerAppId(_ctx.stringValue("UpdateMockRuleResponse.Data.ConsumerAppId"));
-		data.setConsumerAppName(_ctx.stringValue("UpdateMockRuleResponse.Data.ConsumerAppName"));
-		data.setEnable(_ctx.booleanValue("UpdateMockRuleResponse.Data.Enable"));
-		data.setExtraJson(_ctx.stringValue("UpdateMockRuleResponse.Data.ExtraJson"));
-		data.setId(_ctx.longValue("UpdateMockRuleResponse.Data.Id"));
 		data.setNamespaceId(_ctx.stringValue("UpdateMockRuleResponse.Data.NamespaceId"));
-		data.setProviderAppId(_ctx.stringValue("UpdateMockRuleResponse.Data.ProviderAppId"));
-		data.setProviderAppName(_ctx.stringValue("UpdateMockRuleResponse.Data.ProviderAppName"));
-		data.setRegion(_ctx.stringValue("UpdateMockRuleResponse.Data.Region"));
 		data.setScMockItemJson(_ctx.stringValue("UpdateMockRuleResponse.Data.ScMockItemJson"));
+		data.setConsumerAppName(_ctx.stringValue("UpdateMockRuleResponse.Data.ConsumerAppName"));
+		data.setAccountId(_ctx.stringValue("UpdateMockRuleResponse.Data.AccountId"));
+		data.setConsumerAppId(_ctx.stringValue("UpdateMockRuleResponse.Data.ConsumerAppId"));
+		data.setExtraJson(_ctx.stringValue("UpdateMockRuleResponse.Data.ExtraJson"));
 		data.setSource(_ctx.stringValue("UpdateMockRuleResponse.Data.Source"));
+		data.setRegion(_ctx.stringValue("UpdateMockRuleResponse.Data.Region"));
 		data.setDubboMockItemJson(_ctx.stringValue("UpdateMockRuleResponse.Data.DubboMockItemJson"));
+		data.setProviderAppId(_ctx.stringValue("UpdateMockRuleResponse.Data.ProviderAppId"));
+		data.setName(_ctx.stringValue("UpdateMockRuleResponse.Data.Name"));
+		data.setProviderAppName(_ctx.stringValue("UpdateMockRuleResponse.Data.ProviderAppName"));
+		data.setId(_ctx.longValue("UpdateMockRuleResponse.Data.Id"));
+		data.setEnable(_ctx.booleanValue("UpdateMockRuleResponse.Data.Enable"));
 		updateMockRuleResponse.setData(data);
 	 
 	 	return updateMockRuleResponse;

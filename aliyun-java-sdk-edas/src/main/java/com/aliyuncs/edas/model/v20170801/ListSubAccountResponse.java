@@ -67,28 +67,28 @@ public class ListSubAccountResponse extends AcsResponse {
 
 	public static class SubAccount {
 
-		private String adminUserId;
+		private String subEdasId;
 
 		private String subUserId;
 
 		private String email;
 
-		private String phone;
+		private String adminUserId;
 
 		private String adminUserKp;
 
-		private String subUserKp;
-
 		private String adminEdasId;
 
-		private String subEdasId;
+		private String subUserKp;
 
-		public String getAdminUserId() {
-			return this.adminUserId;
+		private String phone;
+
+		public String getSubEdasId() {
+			return this.subEdasId;
 		}
 
-		public void setAdminUserId(String adminUserId) {
-			this.adminUserId = adminUserId;
+		public void setSubEdasId(String subEdasId) {
+			this.subEdasId = subEdasId;
 		}
 
 		public String getSubUserId() {
@@ -107,12 +107,12 @@ public class ListSubAccountResponse extends AcsResponse {
 			this.email = email;
 		}
 
-		public String getPhone() {
-			return this.phone;
+		public String getAdminUserId() {
+			return this.adminUserId;
 		}
 
-		public void setPhone(String phone) {
-			this.phone = phone;
+		public void setAdminUserId(String adminUserId) {
+			this.adminUserId = adminUserId;
 		}
 
 		public String getAdminUserKp() {
@@ -123,14 +123,6 @@ public class ListSubAccountResponse extends AcsResponse {
 			this.adminUserKp = adminUserKp;
 		}
 
-		public String getSubUserKp() {
-			return this.subUserKp;
-		}
-
-		public void setSubUserKp(String subUserKp) {
-			this.subUserKp = subUserKp;
-		}
-
 		public String getAdminEdasId() {
 			return this.adminEdasId;
 		}
@@ -139,12 +131,20 @@ public class ListSubAccountResponse extends AcsResponse {
 			this.adminEdasId = adminEdasId;
 		}
 
-		public String getSubEdasId() {
-			return this.subEdasId;
+		public String getSubUserKp() {
+			return this.subUserKp;
 		}
 
-		public void setSubEdasId(String subEdasId) {
-			this.subEdasId = subEdasId;
+		public void setSubUserKp(String subUserKp) {
+			this.subUserKp = subUserKp;
+		}
+
+		public String getPhone() {
+			return this.phone;
+		}
+
+		public void setPhone(String phone) {
+			this.phone = phone;
 		}
 	}
 

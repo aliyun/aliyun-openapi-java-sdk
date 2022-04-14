@@ -33,15 +33,15 @@ public class ListHistoryDeployVersionResponseUnmarshaller {
 		List<PackageVersion> packageVersionList = new ArrayList<PackageVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListHistoryDeployVersionResponse.PackageVersionList.Length"); i++) {
 			PackageVersion packageVersion = new PackageVersion();
-			packageVersion.setId(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Id"));
-			packageVersion.setPackageVersion(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].PackageVersion"));
-			packageVersion.setAppId(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].AppId"));
-			packageVersion.setDescription(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Description"));
-			packageVersion.setWarUrl(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].WarUrl"));
-			packageVersion.setCreateTime(_ctx.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].CreateTime"));
-			packageVersion.setUpdateTime(_ctx.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].UpdateTime"));
 			packageVersion.setType(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Type"));
 			packageVersion.setPublicUrl(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].PublicUrl"));
+			packageVersion.setUpdateTime(_ctx.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].UpdateTime"));
+			packageVersion.setDescription(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Description"));
+			packageVersion.setCreateTime(_ctx.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].CreateTime"));
+			packageVersion.setAppId(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].AppId"));
+			packageVersion.setWarUrl(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].WarUrl"));
+			packageVersion.setId(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Id"));
+			packageVersion.setPackageVersion(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].PackageVersion"));
 
 			packageVersionList.add(packageVersion);
 		}

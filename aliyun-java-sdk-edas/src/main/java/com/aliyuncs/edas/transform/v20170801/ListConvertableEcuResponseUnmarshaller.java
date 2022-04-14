@@ -33,20 +33,20 @@ public class ListConvertableEcuResponseUnmarshaller {
 		List<Instance> instanceList = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListConvertableEcuResponse.InstanceList.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceId(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].InstanceId"));
-			instance.setInstanceName(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].InstanceName"));
-			instance.setEcuId(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].EcuId"));
 			instance.setVpcId(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].VpcId"));
-			instance.setVpcName(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].VpcName"));
-			instance.setExpired(_ctx.booleanValue("ListConvertableEcuResponse.InstanceList["+ i +"].Expired"));
 			instance.setStatus(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].Status"));
-			instance.setRegionId(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].RegionId"));
-			instance.setCpu(_ctx.integerValue("ListConvertableEcuResponse.InstanceList["+ i +"].Cpu"));
-			instance.setMem(_ctx.integerValue("ListConvertableEcuResponse.InstanceList["+ i +"].Mem"));
-			instance.setPublicIp(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].PublicIp"));
-			instance.setInnerIp(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].InnerIp"));
 			instance.setPrivateIp(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].PrivateIp"));
+			instance.setExpired(_ctx.booleanValue("ListConvertableEcuResponse.InstanceList["+ i +"].Expired"));
+			instance.setInstanceId(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].InstanceId"));
+			instance.setMem(_ctx.integerValue("ListConvertableEcuResponse.InstanceList["+ i +"].Mem"));
+			instance.setRegionId(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].RegionId"));
+			instance.setVpcName(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].VpcName"));
+			instance.setEcuId(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].EcuId"));
+			instance.setCpu(_ctx.integerValue("ListConvertableEcuResponse.InstanceList["+ i +"].Cpu"));
+			instance.setInnerIp(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].InnerIp"));
 			instance.setEip(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].Eip"));
+			instance.setInstanceName(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].InstanceName"));
+			instance.setPublicIp(_ctx.stringValue("ListConvertableEcuResponse.InstanceList["+ i +"].PublicIp"));
 
 			instanceList.add(instance);
 		}

@@ -24,8 +24,8 @@ public class UpdateContainerResponseUnmarshaller {
 		
 		updateContainerResponse.setRequestId(_ctx.stringValue("UpdateContainerResponse.RequestId"));
 		updateContainerResponse.setCode(_ctx.integerValue("UpdateContainerResponse.Code"));
-		updateContainerResponse.setMessage(_ctx.stringValue("UpdateContainerResponse.Message"));
 		updateContainerResponse.setChangeOrderId(_ctx.stringValue("UpdateContainerResponse.ChangeOrderId"));
+		updateContainerResponse.setMessage(_ctx.stringValue("UpdateContainerResponse.Message"));
 	 
 	 	return updateContainerResponse;
 	}

@@ -109,34 +109,34 @@ public class ListClusterMembersResponse extends AcsResponse {
 
 		public static class ClusterMember {
 
-			private String clusterMemberId;
+			private Integer status;
 
-			private String clusterId;
+			private Long updateTime;
 
 			private String ecuId;
 
 			private String ecsId;
 
-			private Integer status;
-
 			private Long createTime;
 
-			private Long updateTime;
+			private String clusterMemberId;
 
-			public String getClusterMemberId() {
-				return this.clusterMemberId;
+			private String clusterId;
+
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setClusterMemberId(String clusterMemberId) {
-				this.clusterMemberId = clusterMemberId;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
-			public String getClusterId() {
-				return this.clusterId;
+			public Long getUpdateTime() {
+				return this.updateTime;
 			}
 
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
 			public String getEcuId() {
@@ -155,14 +155,6 @@ public class ListClusterMembersResponse extends AcsResponse {
 				this.ecsId = ecsId;
 			}
 
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
 			public Long getCreateTime() {
 				return this.createTime;
 			}
@@ -171,12 +163,20 @@ public class ListClusterMembersResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public Long getUpdateTime() {
-				return this.updateTime;
+			public String getClusterMemberId() {
+				return this.clusterMemberId;
 			}
 
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
+			public void setClusterMemberId(String clusterMemberId) {
+				this.clusterMemberId = clusterMemberId;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
 			}
 		}
 	}

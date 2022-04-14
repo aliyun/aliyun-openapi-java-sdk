@@ -25,8 +25,8 @@ public class SynchronizeResourceResponseUnmarshaller {
 		synchronizeResourceResponse.setRequestId(_ctx.stringValue("SynchronizeResourceResponse.RequestId"));
 		synchronizeResourceResponse.setCode(_ctx.integerValue("SynchronizeResourceResponse.Code"));
 		synchronizeResourceResponse.setMessage(_ctx.stringValue("SynchronizeResourceResponse.Message"));
-		synchronizeResourceResponse.setSuccess(_ctx.booleanValue("SynchronizeResourceResponse.Success"));
 		synchronizeResourceResponse.setData(_ctx.stringValue("SynchronizeResourceResponse.Data"));
+		synchronizeResourceResponse.setSuccess(_ctx.booleanValue("SynchronizeResourceResponse.Success"));
 	 
 	 	return synchronizeResourceResponse;
 	}

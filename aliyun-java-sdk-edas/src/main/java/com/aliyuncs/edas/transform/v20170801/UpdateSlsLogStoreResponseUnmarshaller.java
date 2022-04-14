@@ -23,8 +23,8 @@ public class UpdateSlsLogStoreResponseUnmarshaller {
 	public static UpdateSlsLogStoreResponse unmarshall(UpdateSlsLogStoreResponse updateSlsLogStoreResponse, UnmarshallerContext _ctx) {
 		
 		updateSlsLogStoreResponse.setRequestId(_ctx.stringValue("UpdateSlsLogStoreResponse.RequestId"));
-		updateSlsLogStoreResponse.setMessage(_ctx.stringValue("UpdateSlsLogStoreResponse.Message"));
 		updateSlsLogStoreResponse.setCode(_ctx.integerValue("UpdateSlsLogStoreResponse.Code"));
+		updateSlsLogStoreResponse.setMessage(_ctx.stringValue("UpdateSlsLogStoreResponse.Message"));
 	 
 	 	return updateSlsLogStoreResponse;
 	}

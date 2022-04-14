@@ -28,17 +28,17 @@ public class GetSecureTokenResponseUnmarshaller {
 		getSecureTokenResponse.setMessage(_ctx.stringValue("GetSecureTokenResponse.Message"));
 
 		SecureToken secureToken = new SecureToken();
-		secureToken.setId(_ctx.longValue("GetSecureTokenResponse.SecureToken.Id"));
-		secureToken.setUserId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.UserId"));
-		secureToken.setEdasId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.EdasId"));
-		secureToken.setRegionId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.RegionId"));
-		secureToken.setRegionName(_ctx.stringValue("GetSecureTokenResponse.SecureToken.RegionName"));
-		secureToken.setDescription(_ctx.stringValue("GetSecureTokenResponse.SecureToken.Description"));
-		secureToken.setBelongRegion(_ctx.stringValue("GetSecureTokenResponse.SecureToken.BelongRegion"));
-		secureToken.setAccessKey(_ctx.stringValue("GetSecureTokenResponse.SecureToken.AccessKey"));
 		secureToken.setSecretKey(_ctx.stringValue("GetSecureTokenResponse.SecureToken.SecretKey"));
-		secureToken.setTenantId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.TenantId"));
+		secureToken.setAccessKey(_ctx.stringValue("GetSecureTokenResponse.SecureToken.AccessKey"));
+		secureToken.setBelongRegion(_ctx.stringValue("GetSecureTokenResponse.SecureToken.BelongRegion"));
+		secureToken.setDescription(_ctx.stringValue("GetSecureTokenResponse.SecureToken.Description"));
+		secureToken.setRegionName(_ctx.stringValue("GetSecureTokenResponse.SecureToken.RegionName"));
+		secureToken.setEdasId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.EdasId"));
 		secureToken.setAddressServerHost(_ctx.stringValue("GetSecureTokenResponse.SecureToken.AddressServerHost"));
+		secureToken.setUserId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.UserId"));
+		secureToken.setId(_ctx.longValue("GetSecureTokenResponse.SecureToken.Id"));
+		secureToken.setTenantId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.TenantId"));
+		secureToken.setRegionId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.RegionId"));
 		getSecureTokenResponse.setSecureToken(secureToken);
 	 
 	 	return getSecureTokenResponse;

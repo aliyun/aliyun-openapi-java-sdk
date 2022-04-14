@@ -66,21 +66,13 @@ public class UpdateJvmConfigurationResponse extends AcsResponse {
 
 	public static class JvmConfiguration {
 
-		private Integer maxHeapSize;
-
 		private Integer maxPermSize;
-
-		private Integer minHeapSize;
 
 		private String options;
 
-		public Integer getMaxHeapSize() {
-			return this.maxHeapSize;
-		}
+		private Integer maxHeapSize;
 
-		public void setMaxHeapSize(Integer maxHeapSize) {
-			this.maxHeapSize = maxHeapSize;
-		}
+		private Integer minHeapSize;
 
 		public Integer getMaxPermSize() {
 			return this.maxPermSize;
@@ -90,20 +82,28 @@ public class UpdateJvmConfigurationResponse extends AcsResponse {
 			this.maxPermSize = maxPermSize;
 		}
 
-		public Integer getMinHeapSize() {
-			return this.minHeapSize;
-		}
-
-		public void setMinHeapSize(Integer minHeapSize) {
-			this.minHeapSize = minHeapSize;
-		}
-
 		public String getOptions() {
 			return this.options;
 		}
 
 		public void setOptions(String options) {
 			this.options = options;
+		}
+
+		public Integer getMaxHeapSize() {
+			return this.maxHeapSize;
+		}
+
+		public void setMaxHeapSize(Integer maxHeapSize) {
+			this.maxHeapSize = maxHeapSize;
+		}
+
+		public Integer getMinHeapSize() {
+			return this.minHeapSize;
+		}
+
+		public void setMinHeapSize(Integer minHeapSize) {
+			this.minHeapSize = minHeapSize;
 		}
 	}
 

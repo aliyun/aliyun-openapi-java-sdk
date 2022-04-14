@@ -66,82 +66,34 @@ public class GetSecureTokenResponse extends AcsResponse {
 
 	public static class SecureToken {
 
-		private Long id;
-
-		private String userId;
-
-		private String edasId;
-
-		private String regionId;
-
-		private String regionName;
-
-		private String description;
-
-		private String belongRegion;
+		private String secretKey;
 
 		private String accessKey;
 
-		private String secretKey;
+		private String belongRegion;
 
-		private String tenantId;
+		private String description;
+
+		private String regionName;
+
+		private String edasId;
 
 		private String addressServerHost;
 
-		public Long getId() {
-			return this.id;
+		private String userId;
+
+		private Long id;
+
+		private String tenantId;
+
+		private String regionId;
+
+		public String getSecretKey() {
+			return this.secretKey;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getEdasId() {
-			return this.edasId;
-		}
-
-		public void setEdasId(String edasId) {
-			this.edasId = edasId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getRegionName() {
-			return this.regionName;
-		}
-
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getBelongRegion() {
-			return this.belongRegion;
-		}
-
-		public void setBelongRegion(String belongRegion) {
-			this.belongRegion = belongRegion;
+		public void setSecretKey(String secretKey) {
+			this.secretKey = secretKey;
 		}
 
 		public String getAccessKey() {
@@ -152,12 +104,60 @@ public class GetSecureTokenResponse extends AcsResponse {
 			this.accessKey = accessKey;
 		}
 
-		public String getSecretKey() {
-			return this.secretKey;
+		public String getBelongRegion() {
+			return this.belongRegion;
 		}
 
-		public void setSecretKey(String secretKey) {
-			this.secretKey = secretKey;
+		public void setBelongRegion(String belongRegion) {
+			this.belongRegion = belongRegion;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getEdasId() {
+			return this.edasId;
+		}
+
+		public void setEdasId(String edasId) {
+			this.edasId = edasId;
+		}
+
+		public String getAddressServerHost() {
+			return this.addressServerHost;
+		}
+
+		public void setAddressServerHost(String addressServerHost) {
+			this.addressServerHost = addressServerHost;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getTenantId() {
@@ -168,12 +168,12 @@ public class GetSecureTokenResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
-		public String getAddressServerHost() {
-			return this.addressServerHost;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setAddressServerHost(String addressServerHost) {
-			this.addressServerHost = addressServerHost;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

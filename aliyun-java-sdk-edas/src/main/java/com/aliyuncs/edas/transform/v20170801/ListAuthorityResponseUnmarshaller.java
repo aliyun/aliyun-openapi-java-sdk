@@ -41,10 +41,10 @@ public class ListAuthorityResponseUnmarshaller {
 			List<Action> actionList = new ArrayList<Action>();
 			for (int j = 0; j < _ctx.lengthValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList.Length"); j++) {
 				Action action = new Action();
-				action.setGroupId(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].GroupId"));
 				action.setCode(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Code"));
-				action.setName(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Name"));
 				action.setDescription(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Description"));
+				action.setGroupId(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].GroupId"));
+				action.setName(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Name"));
 
 				actionList.add(action);
 			}

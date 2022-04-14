@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAppInstanceListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private List<Instance> instanceList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class DescribeAppInstanceListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<Instance> getInstanceList() {
 		return this.instanceList;
 	}
@@ -67,28 +67,28 @@ public class DescribeAppInstanceListResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String appId;
+		private String nodeLabels;
 
 		private String groupId;
-
-		private String podRaw;
 
 		private String groupName;
 
 		private Boolean canary;
 
-		private String version;
-
 		private String nodeName;
 
-		private String nodeLabels;
+		private String podRaw;
 
-		public String getAppId() {
-			return this.appId;
+		private String version;
+
+		private String appId;
+
+		public String getNodeLabels() {
+			return this.nodeLabels;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setNodeLabels(String nodeLabels) {
+			this.nodeLabels = nodeLabels;
 		}
 
 		public String getGroupId() {
@@ -97,14 +97,6 @@ public class DescribeAppInstanceListResponse extends AcsResponse {
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
-		}
-
-		public String getPodRaw() {
-			return this.podRaw;
-		}
-
-		public void setPodRaw(String podRaw) {
-			this.podRaw = podRaw;
 		}
 
 		public String getGroupName() {
@@ -123,14 +115,6 @@ public class DescribeAppInstanceListResponse extends AcsResponse {
 			this.canary = canary;
 		}
 
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
 		public String getNodeName() {
 			return this.nodeName;
 		}
@@ -139,12 +123,28 @@ public class DescribeAppInstanceListResponse extends AcsResponse {
 			this.nodeName = nodeName;
 		}
 
-		public String getNodeLabels() {
-			return this.nodeLabels;
+		public String getPodRaw() {
+			return this.podRaw;
 		}
 
-		public void setNodeLabels(String nodeLabels) {
-			this.nodeLabels = nodeLabels;
+		public void setPodRaw(String podRaw) {
+			this.podRaw = podRaw;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 	}
 

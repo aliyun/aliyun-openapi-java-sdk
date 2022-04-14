@@ -67,42 +67,26 @@ public class ListUserDefineRegionResponse extends AcsResponse {
 
 	public static class UserDefineRegionEntity {
 
-		private Long id;
-
-		private String userId;
-
-		private String regionId;
+		private String belongRegion;
 
 		private String regionName;
 
 		private String description;
 
-		private String belongRegion;
-
 		private Boolean debugEnable;
 
-		public Long getId() {
-			return this.id;
+		private String userId;
+
+		private Long id;
+
+		private String regionId;
+
+		public String getBelongRegion() {
+			return this.belongRegion;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setBelongRegion(String belongRegion) {
+			this.belongRegion = belongRegion;
 		}
 
 		public String getRegionName() {
@@ -121,20 +105,36 @@ public class ListUserDefineRegionResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getBelongRegion() {
-			return this.belongRegion;
-		}
-
-		public void setBelongRegion(String belongRegion) {
-			this.belongRegion = belongRegion;
-		}
-
 		public Boolean getDebugEnable() {
 			return this.debugEnable;
 		}
 
 		public void setDebugEnable(Boolean debugEnable) {
 			this.debugEnable = debugEnable;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -33,24 +33,24 @@ public class ListClusterResponseUnmarshaller {
 		List<Cluster> clusterList = new ArrayList<Cluster>();
 		for (int i = 0; i < _ctx.lengthValue("ListClusterResponse.ClusterList.Length"); i++) {
 			Cluster cluster = new Cluster();
-			cluster.setClusterId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].ClusterId"));
-			cluster.setRegionId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].RegionId"));
-			cluster.setDescription(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].Description"));
-			cluster.setClusterName(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].ClusterName"));
-			cluster.setClusterType(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].ClusterType"));
-			cluster.setOversoldFactor(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].OversoldFactor"));
-			cluster.setNetworkMode(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].NetworkMode"));
 			cluster.setVpcId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].VpcId"));
-			cluster.setNodeNum(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].NodeNum"));
-			cluster.setCpu(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].Cpu"));
-			cluster.setMem(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].Mem"));
-			cluster.setCpuUsed(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].CpuUsed"));
-			cluster.setMemUsed(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].MemUsed"));
-			cluster.setCreateTime(_ctx.longValue("ListClusterResponse.ClusterList["+ i +"].CreateTime"));
+			cluster.setOversoldFactor(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].OversoldFactor"));
 			cluster.setUpdateTime(_ctx.longValue("ListClusterResponse.ClusterList["+ i +"].UpdateTime"));
+			cluster.setMemUsed(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].MemUsed"));
 			cluster.setIaasProvider(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].IaasProvider"));
+			cluster.setCreateTime(_ctx.longValue("ListClusterResponse.ClusterList["+ i +"].CreateTime"));
+			cluster.setCpuUsed(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].CpuUsed"));
+			cluster.setMem(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].Mem"));
+			cluster.setRegionId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].RegionId"));
+			cluster.setCpu(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].Cpu"));
 			cluster.setCsClusterId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].CsClusterId"));
+			cluster.setNetworkMode(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].NetworkMode"));
+			cluster.setDescription(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].Description"));
+			cluster.setClusterType(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].ClusterType"));
 			cluster.setResourceGroupId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].ResourceGroupId"));
+			cluster.setClusterName(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].ClusterName"));
+			cluster.setNodeNum(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].NodeNum"));
+			cluster.setClusterId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].ClusterId"));
 
 			clusterList.add(cluster);
 		}

@@ -67,9 +67,7 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 	public static class ResGroupEntity {
 
-		private Long id;
-
-		private String name;
+		private Long updateTime;
 
 		private String description;
 
@@ -77,7 +75,9 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 		private Long createTime;
 
-		private Long updateTime;
+		private String name;
+
+		private Long id;
 
 		private String regionId;
 
@@ -85,20 +85,12 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 		private List<SlbEntity> slbList;
 
-		public Long getId() {
-			return this.id;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getDescription() {
@@ -125,12 +117,20 @@ public class ListResourceGroupResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getRegionId() {
@@ -159,168 +159,54 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 		public static class EcsEntity {
 
-			private String instanceId;
-
-			private String instanceName;
-
-			private String hostName;
-
-			private String description;
-
-			private String status;
-
-			private String publicIp;
-
-			private String innerIp;
-
-			private String privateIp;
-
-			private String eip;
-
-			private String serialNum;
-
-			private String userId;
-
-			private String zoneId;
-
-			private String regionId;
-
-			private String instanceId1;
-
-			private Boolean expired;
+			private String vpcId;
 
 			private String sgId;
 
-			private String vpcId;
+			private String status;
 
-			private String groupId;
+			private String privateIp;
+
+			private Boolean expired;
+
+			private String userId;
+
+			private String hostName;
+
+			private String instanceId;
+
+			private Integer mem;
+
+			private String regionId;
 
 			private Integer cpu;
 
-			private Integer mem;
+			private String innerIp;
+
+			private String groupId;
+
+			private String eip;
+
+			private String description;
+
+			private String instanceName;
+
+			private String zoneId;
+
+			private String serialNum;
+
+			private String publicIp;
 
 			private EcuEntity ecuEntity;
 
 			private VpcEntity vpcEntity;
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getInstanceName() {
-				return this.instanceName;
-			}
-
-			public void setInstanceName(String instanceName) {
-				this.instanceName = instanceName;
-			}
-
-			public String getHostName() {
-				return this.hostName;
-			}
-
-			public void setHostName(String hostName) {
-				this.hostName = hostName;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getPublicIp() {
-				return this.publicIp;
-			}
-
-			public void setPublicIp(String publicIp) {
-				this.publicIp = publicIp;
-			}
-
-			public String getInnerIp() {
-				return this.innerIp;
-			}
-
-			public void setInnerIp(String innerIp) {
-				this.innerIp = innerIp;
-			}
-
-			public String getPrivateIp() {
-				return this.privateIp;
-			}
-
-			public void setPrivateIp(String privateIp) {
-				this.privateIp = privateIp;
-			}
-
-			public String getEip() {
-				return this.eip;
-			}
-
-			public void setEip(String eip) {
-				this.eip = eip;
-			}
-
-			public String getSerialNum() {
-				return this.serialNum;
-			}
-
-			public void setSerialNum(String serialNum) {
-				this.serialNum = serialNum;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getInstanceId1() {
-				return this.instanceId1;
-			}
-
-			public void setInstanceId1(String instanceId1) {
-				this.instanceId1 = instanceId1;
-			}
-
-			public Boolean getExpired() {
-				return this.expired;
-			}
-
-			public void setExpired(Boolean expired) {
-				this.expired = expired;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public String getSgId() {
@@ -331,20 +217,68 @@ public class ListResourceGroupResponse extends AcsResponse {
 				this.sgId = sgId;
 			}
 
-			public String getVpcId() {
-				return this.vpcId;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
-			public String getGroupId() {
-				return this.groupId;
+			public String getPrivateIp() {
+				return this.privateIp;
 			}
 
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setPrivateIp(String privateIp) {
+				this.privateIp = privateIp;
+			}
+
+			public Boolean getExpired() {
+				return this.expired;
+			}
+
+			public void setExpired(Boolean expired) {
+				this.expired = expired;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getHostName() {
+				return this.hostName;
+			}
+
+			public void setHostName(String hostName) {
+				this.hostName = hostName;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Integer getMem() {
+				return this.mem;
+			}
+
+			public void setMem(Integer mem) {
+				this.mem = mem;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public Integer getCpu() {
@@ -355,12 +289,68 @@ public class ListResourceGroupResponse extends AcsResponse {
 				this.cpu = cpu;
 			}
 
-			public Integer getMem() {
-				return this.mem;
+			public String getInnerIp() {
+				return this.innerIp;
 			}
 
-			public void setMem(Integer mem) {
-				this.mem = mem;
+			public void setInnerIp(String innerIp) {
+				this.innerIp = innerIp;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getEip() {
+				return this.eip;
+			}
+
+			public void setEip(String eip) {
+				this.eip = eip;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getInstanceName() {
+				return this.instanceName;
+			}
+
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getSerialNum() {
+				return this.serialNum;
+			}
+
+			public void setSerialNum(String serialNum) {
+				this.serialNum = serialNum;
+			}
+
+			public String getPublicIp() {
+				return this.publicIp;
+			}
+
+			public void setPublicIp(String publicIp) {
+				this.publicIp = publicIp;
 			}
 
 			public EcuEntity getEcuEntity() {
@@ -381,70 +371,46 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 			public static class EcuEntity {
 
-				private String ecuId;
-
-				private Boolean online;
-
-				private Boolean dockerEnv;
-
-				private Long createTime;
+				private String vpcId;
 
 				private Long updateTime;
 
 				private String ipAddr;
 
-				private Long heartbeatTime;
+				private Integer availableCpu;
+
+				private Long createTime;
 
 				private String userId;
 
-				private String name;
-
-				private String zoneId;
-
-				private String regionId;
-
 				private String instanceId;
-
-				private String vpcId;
-
-				private Integer availableCpu;
-
-				private Integer availableMem;
-
-				private Integer cpu;
 
 				private Integer mem;
 
-				public String getEcuId() {
-					return this.ecuId;
+				private String regionId;
+
+				private String ecuId;
+
+				private Integer cpu;
+
+				private Boolean dockerEnv;
+
+				private Boolean online;
+
+				private Integer availableMem;
+
+				private String zoneId;
+
+				private String name;
+
+				private Long heartbeatTime;
+
+				public String getVpcId() {
+					return this.vpcId;
 				}
 
-				public void setEcuId(String ecuId) {
-					this.ecuId = ecuId;
-				}
-
-				public Boolean getOnline() {
-					return this.online;
-				}
-
-				public void setOnline(Boolean online) {
-					this.online = online;
-				}
-
-				public Boolean getDockerEnv() {
-					return this.dockerEnv;
-				}
-
-				public void setDockerEnv(Boolean dockerEnv) {
-					this.dockerEnv = dockerEnv;
-				}
-
-				public Long getCreateTime() {
-					return this.createTime;
-				}
-
-				public void setCreateTime(Long createTime) {
-					this.createTime = createTime;
+				public void setVpcId(String vpcId) {
+					this.vpcId = vpcId;
 				}
 
 				public Long getUpdateTime() {
@@ -463,12 +429,20 @@ public class ListResourceGroupResponse extends AcsResponse {
 					this.ipAddr = ipAddr;
 				}
 
-				public Long getHeartbeatTime() {
-					return this.heartbeatTime;
+				public Integer getAvailableCpu() {
+					return this.availableCpu;
 				}
 
-				public void setHeartbeatTime(Long heartbeatTime) {
-					this.heartbeatTime = heartbeatTime;
+				public void setAvailableCpu(Integer availableCpu) {
+					this.availableCpu = availableCpu;
+				}
+
+				public Long getCreateTime() {
+					return this.createTime;
+				}
+
+				public void setCreateTime(Long createTime) {
+					this.createTime = createTime;
 				}
 
 				public String getUserId() {
@@ -477,30 +451,6 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 				public void setUserId(String userId) {
 					this.userId = userId;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getZoneId() {
-					return this.zoneId;
-				}
-
-				public void setZoneId(String zoneId) {
-					this.zoneId = zoneId;
-				}
-
-				public String getRegionId() {
-					return this.regionId;
-				}
-
-				public void setRegionId(String regionId) {
-					this.regionId = regionId;
 				}
 
 				public String getInstanceId() {
@@ -511,81 +461,12 @@ public class ListResourceGroupResponse extends AcsResponse {
 					this.instanceId = instanceId;
 				}
 
-				public String getVpcId() {
-					return this.vpcId;
-				}
-
-				public void setVpcId(String vpcId) {
-					this.vpcId = vpcId;
-				}
-
-				public Integer getAvailableCpu() {
-					return this.availableCpu;
-				}
-
-				public void setAvailableCpu(Integer availableCpu) {
-					this.availableCpu = availableCpu;
-				}
-
-				public Integer getAvailableMem() {
-					return this.availableMem;
-				}
-
-				public void setAvailableMem(Integer availableMem) {
-					this.availableMem = availableMem;
-				}
-
-				public Integer getCpu() {
-					return this.cpu;
-				}
-
-				public void setCpu(Integer cpu) {
-					this.cpu = cpu;
-				}
-
 				public Integer getMem() {
 					return this.mem;
 				}
 
 				public void setMem(Integer mem) {
 					this.mem = mem;
-				}
-			}
-
-			public static class VpcEntity {
-
-				private String vpcId;
-
-				private String vpcName;
-
-				private String regionId;
-
-				private String userId;
-
-				private String cidrblock;
-
-				private String status;
-
-				private String description;
-
-				private Boolean expired;
-
-				private Integer ecsNum;
-
-				public String getVpcId() {
-					return this.vpcId;
-				}
-
-				public void setVpcId(String vpcId) {
-					this.vpcId = vpcId;
-				}
-
-				public String getVpcName() {
-					return this.vpcName;
-				}
-
-				public void setVpcName(String vpcName) {
-					this.vpcName = vpcName;
 				}
 
 				public String getRegionId() {
@@ -596,21 +477,90 @@ public class ListResourceGroupResponse extends AcsResponse {
 					this.regionId = regionId;
 				}
 
-				public String getUserId() {
-					return this.userId;
+				public String getEcuId() {
+					return this.ecuId;
 				}
 
-				public void setUserId(String userId) {
-					this.userId = userId;
+				public void setEcuId(String ecuId) {
+					this.ecuId = ecuId;
 				}
 
-				public String getCidrblock() {
-					return this.cidrblock;
+				public Integer getCpu() {
+					return this.cpu;
 				}
 
-				public void setCidrblock(String cidrblock) {
-					this.cidrblock = cidrblock;
+				public void setCpu(Integer cpu) {
+					this.cpu = cpu;
 				}
+
+				public Boolean getDockerEnv() {
+					return this.dockerEnv;
+				}
+
+				public void setDockerEnv(Boolean dockerEnv) {
+					this.dockerEnv = dockerEnv;
+				}
+
+				public Boolean getOnline() {
+					return this.online;
+				}
+
+				public void setOnline(Boolean online) {
+					this.online = online;
+				}
+
+				public Integer getAvailableMem() {
+					return this.availableMem;
+				}
+
+				public void setAvailableMem(Integer availableMem) {
+					this.availableMem = availableMem;
+				}
+
+				public String getZoneId() {
+					return this.zoneId;
+				}
+
+				public void setZoneId(String zoneId) {
+					this.zoneId = zoneId;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public Long getHeartbeatTime() {
+					return this.heartbeatTime;
+				}
+
+				public void setHeartbeatTime(Long heartbeatTime) {
+					this.heartbeatTime = heartbeatTime;
+				}
+			}
+
+			public static class VpcEntity {
+
+				private String status;
+
+				private String vpcName;
+
+				private String vpcId;
+
+				private String description;
+
+				private Boolean expired;
+
+				private String cidrblock;
+
+				private String userId;
+
+				private Integer ecsNum;
+
+				private String regionId;
 
 				public String getStatus() {
 					return this.status;
@@ -618,6 +568,22 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 				public void setStatus(String status) {
 					this.status = status;
+				}
+
+				public String getVpcName() {
+					return this.vpcName;
+				}
+
+				public void setVpcName(String vpcName) {
+					this.vpcName = vpcName;
+				}
+
+				public String getVpcId() {
+					return this.vpcId;
+				}
+
+				public void setVpcId(String vpcId) {
+					this.vpcId = vpcId;
 				}
 
 				public String getDescription() {
@@ -636,12 +602,36 @@ public class ListResourceGroupResponse extends AcsResponse {
 					this.expired = expired;
 				}
 
+				public String getCidrblock() {
+					return this.cidrblock;
+				}
+
+				public void setCidrblock(String cidrblock) {
+					this.cidrblock = cidrblock;
+				}
+
+				public String getUserId() {
+					return this.userId;
+				}
+
+				public void setUserId(String userId) {
+					this.userId = userId;
+				}
+
 				public Integer getEcsNum() {
 					return this.ecsNum;
 				}
 
 				public void setEcsNum(Integer ecsNum) {
 					this.ecsNum = ecsNum;
+				}
+
+				public String getRegionId() {
+					return this.regionId;
+				}
+
+				public void setRegionId(String regionId) {
+					this.regionId = regionId;
 				}
 			}
 		}
@@ -650,27 +640,27 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 			private String slbId;
 
-			private String slbName;
-
-			private String regionId;
-
-			private String userId;
-
-			private String address;
-
-			private String slbStatus;
-
-			private String addressType;
+			private String vpcId;
 
 			private String vswitchId;
 
-			private String vpcId;
+			private Boolean expired;
+
+			private String userId;
+
+			private String addressType;
 
 			private String networkType;
 
+			private String regionId;
+
 			private Integer groupId;
 
-			private Boolean expired;
+			private String address;
+
+			private String slbName;
+
+			private String slbStatus;
 
 			public String getSlbId() {
 				return this.slbId;
@@ -678,62 +668,6 @@ public class ListResourceGroupResponse extends AcsResponse {
 
 			public void setSlbId(String slbId) {
 				this.slbId = slbId;
-			}
-
-			public String getSlbName() {
-				return this.slbName;
-			}
-
-			public void setSlbName(String slbName) {
-				this.slbName = slbName;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getAddress() {
-				return this.address;
-			}
-
-			public void setAddress(String address) {
-				this.address = address;
-			}
-
-			public String getSlbStatus() {
-				return this.slbStatus;
-			}
-
-			public void setSlbStatus(String slbStatus) {
-				this.slbStatus = slbStatus;
-			}
-
-			public String getAddressType() {
-				return this.addressType;
-			}
-
-			public void setAddressType(String addressType) {
-				this.addressType = addressType;
-			}
-
-			public String getVswitchId() {
-				return this.vswitchId;
-			}
-
-			public void setVswitchId(String vswitchId) {
-				this.vswitchId = vswitchId;
 			}
 
 			public String getVpcId() {
@@ -744,12 +678,52 @@ public class ListResourceGroupResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
+			}
+
+			public Boolean getExpired() {
+				return this.expired;
+			}
+
+			public void setExpired(Boolean expired) {
+				this.expired = expired;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getAddressType() {
+				return this.addressType;
+			}
+
+			public void setAddressType(String addressType) {
+				this.addressType = addressType;
+			}
+
 			public String getNetworkType() {
 				return this.networkType;
 			}
 
 			public void setNetworkType(String networkType) {
 				this.networkType = networkType;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public Integer getGroupId() {
@@ -760,12 +734,28 @@ public class ListResourceGroupResponse extends AcsResponse {
 				this.groupId = groupId;
 			}
 
-			public Boolean getExpired() {
-				return this.expired;
+			public String getAddress() {
+				return this.address;
 			}
 
-			public void setExpired(Boolean expired) {
-				this.expired = expired;
+			public void setAddress(String address) {
+				this.address = address;
+			}
+
+			public String getSlbName() {
+				return this.slbName;
+			}
+
+			public void setSlbName(String slbName) {
+				this.slbName = slbName;
+			}
+
+			public String getSlbStatus() {
+				return this.slbStatus;
+			}
+
+			public void setSlbStatus(String slbStatus) {
+				this.slbStatus = slbStatus;
 			}
 		}
 	}

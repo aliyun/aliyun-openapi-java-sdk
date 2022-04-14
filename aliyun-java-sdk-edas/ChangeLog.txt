@@ -1,3 +1,6 @@
+2022-04-14 Version: 3.26.1
+- Supported BuildPackId configurations for K8s Applications.
+
 2022-03-14 Version: 3.26.0
 - Add developType in GetK8sApplication.
 

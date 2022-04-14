@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTagResourcesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private List<TagResource> tagResources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class ListTagResourcesResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<TagResource> getTagResources() {
 		return this.tagResources;
 	}
@@ -67,20 +67,20 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	public static class TagResource {
 
-		private String resourceId;
+		private String tagValue;
 
 		private String resourceType;
 
+		private String resourceId;
+
 		private String tagKey;
 
-		private String tagValue;
-
-		public String getResourceId() {
-			return this.resourceId;
+		public String getTagValue() {
+			return this.tagValue;
 		}
 
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 
 		public String getResourceType() {
@@ -91,20 +91,20 @@ public class ListTagResourcesResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
 		public String getTagKey() {
 			return this.tagKey;
 		}
 
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
-		}
-
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
 		}
 	}
 

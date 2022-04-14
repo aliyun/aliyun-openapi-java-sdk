@@ -33,34 +33,34 @@ public class GetServiceDetailResponseUnmarshaller {
 		getServiceDetailResponse.setSuccess(_ctx.booleanValue("GetServiceDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setServiceName(_ctx.stringValue("GetServiceDetailResponse.Data.ServiceName"));
 		data.setEdasAppName(_ctx.stringValue("GetServiceDetailResponse.Data.EdasAppName"));
 		data.setDubboApplicationName(_ctx.stringValue("GetServiceDetailResponse.Data.DubboApplicationName"));
+		data.setVersion(_ctx.stringValue("GetServiceDetailResponse.Data.Version"));
+		data.setRegistryType(_ctx.stringValue("GetServiceDetailResponse.Data.RegistryType"));
 		data.setSpringApplicationName(_ctx.stringValue("GetServiceDetailResponse.Data.SpringApplicationName"));
 		data.setServiceType(_ctx.stringValue("GetServiceDetailResponse.Data.ServiceType"));
-		data.setRegistryType(_ctx.stringValue("GetServiceDetailResponse.Data.RegistryType"));
-		data.setVersion(_ctx.stringValue("GetServiceDetailResponse.Data.Version"));
-		data.setGroup(_ctx.stringValue("GetServiceDetailResponse.Data.Group"));
+		data.setServiceName(_ctx.stringValue("GetServiceDetailResponse.Data.ServiceName"));
 		data.setMetadata(_ctx.stringValue("GetServiceDetailResponse.Data.Metadata"));
+		data.setGroup(_ctx.stringValue("GetServiceDetailResponse.Data.Group"));
 
 		List<Method> methods = new ArrayList<Method>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceDetailResponse.Data.Methods.Length"); i++) {
 			Method method = new Method();
-			method.setName(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].Name"));
-			method.setReturnType(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ReturnType"));
-			method.setMethodController(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].MethodController"));
-			method.setParameterNames(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ParameterNames"));
-			method.setNameDetail(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].NameDetail"));
-			method.setReturnDetails(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ReturnDetails"));
-			method.setParameterTypes(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ParameterTypes"));
 			method.setParameterDetails(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ParameterDetails"));
-			method.setRequestMethods(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].RequestMethods"));
-			method.setPaths(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].Paths"));
+			method.setNameDetail(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].NameDetail"));
+			method.setParameterNames(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ParameterNames"));
 			method.setParameterDefinitions(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ParameterDefinitions"));
+			method.setPaths(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].Paths"));
+			method.setParameterTypes(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ParameterTypes"));
+			method.setRequestMethods(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].RequestMethods"));
+			method.setReturnDetails(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ReturnDetails"));
+			method.setName(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].Name"));
+			method.setMethodController(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].MethodController"));
+			method.setReturnType(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ReturnType"));
 
 			ReturnDefinition returnDefinition = new ReturnDefinition();
-			returnDefinition.setId(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ReturnDefinition.Id"));
 			returnDefinition.setType(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ReturnDefinition.Type"));
+			returnDefinition.setId(_ctx.stringValue("GetServiceDetailResponse.Data.Methods["+ i +"].ReturnDefinition.Id"));
 			method.setReturnDefinition(returnDefinition);
 
 			methods.add(method);

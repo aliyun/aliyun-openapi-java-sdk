@@ -23,8 +23,8 @@ public class ConvertK8sResourceResponseUnmarshaller {
 	public static ConvertK8sResourceResponse unmarshall(ConvertK8sResourceResponse convertK8sResourceResponse, UnmarshallerContext _ctx) {
 		
 		convertK8sResourceResponse.setRequestId(_ctx.stringValue("ConvertK8sResourceResponse.RequestId"));
-		convertK8sResourceResponse.setMessage(_ctx.stringValue("ConvertK8sResourceResponse.Message"));
 		convertK8sResourceResponse.setCode(_ctx.integerValue("ConvertK8sResourceResponse.Code"));
+		convertK8sResourceResponse.setMessage(_ctx.stringValue("ConvertK8sResourceResponse.Message"));
 	 
 	 	return convertK8sResourceResponse;
 	}

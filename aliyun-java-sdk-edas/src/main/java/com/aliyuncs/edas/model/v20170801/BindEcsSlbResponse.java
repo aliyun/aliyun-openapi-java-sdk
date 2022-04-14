@@ -24,28 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BindEcsSlbResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
+	private String changeOrderId;
 
 	private Integer code;
 
-	private String changeOrderId;
+	private String message;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	public String getChangeOrderId() {
+		return this.changeOrderId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setChangeOrderId(String changeOrderId) {
+		this.changeOrderId = changeOrderId;
 	}
 
 	public Integer getCode() {
@@ -56,12 +48,20 @@ public class BindEcsSlbResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getChangeOrderId() {
-		return this.changeOrderId;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setChangeOrderId(String changeOrderId) {
-		this.changeOrderId = changeOrderId;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

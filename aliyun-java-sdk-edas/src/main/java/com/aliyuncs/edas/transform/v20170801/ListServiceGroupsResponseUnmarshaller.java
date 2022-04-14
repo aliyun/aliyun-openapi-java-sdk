@@ -33,9 +33,9 @@ public class ListServiceGroupsResponseUnmarshaller {
 		List<ListServiceGroups> serviceGroupsList = new ArrayList<ListServiceGroups>();
 		for (int i = 0; i < _ctx.lengthValue("ListServiceGroupsResponse.ServiceGroupsList.Length"); i++) {
 			ListServiceGroups listServiceGroups = new ListServiceGroups();
-			listServiceGroups.setCreateTime(_ctx.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].CreateTime"));
 			listServiceGroups.setGroupId(_ctx.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].GroupId"));
 			listServiceGroups.setGroupName(_ctx.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].GroupName"));
+			listServiceGroups.setCreateTime(_ctx.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].CreateTime"));
 
 			serviceGroupsList.add(listServiceGroups);
 		}

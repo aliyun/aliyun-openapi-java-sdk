@@ -37,21 +37,21 @@ public class ListRoleResponseUnmarshaller {
 			RoleItem roleItem = new RoleItem();
 
 			Role role = new Role();
-			role.setId(_ctx.integerValue("ListRoleResponse.RoleList["+ i +"].Role.Id"));
-			role.setAdminUserId(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].Role.AdminUserId"));
-			role.setName(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].Role.Name"));
-			role.setCreateTime(_ctx.longValue("ListRoleResponse.RoleList["+ i +"].Role.CreateTime"));
 			role.setUpdateTime(_ctx.longValue("ListRoleResponse.RoleList["+ i +"].Role.UpdateTime"));
 			role.setIsDefault(_ctx.booleanValue("ListRoleResponse.RoleList["+ i +"].Role.IsDefault"));
+			role.setAdminUserId(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].Role.AdminUserId"));
+			role.setCreateTime(_ctx.longValue("ListRoleResponse.RoleList["+ i +"].Role.CreateTime"));
+			role.setName(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].Role.Name"));
+			role.setId(_ctx.integerValue("ListRoleResponse.RoleList["+ i +"].Role.Id"));
 			roleItem.setRole(role);
 
 			List<Action> actionList = new ArrayList<Action>();
 			for (int j = 0; j < _ctx.lengthValue("ListRoleResponse.RoleList["+ i +"].ActionList.Length"); j++) {
 				Action action = new Action();
-				action.setGroupId(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].GroupId"));
 				action.setCode(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Code"));
-				action.setName(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Name"));
 				action.setDescription(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Description"));
+				action.setGroupId(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].GroupId"));
+				action.setName(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Name"));
 
 				actionList.add(action);
 			}

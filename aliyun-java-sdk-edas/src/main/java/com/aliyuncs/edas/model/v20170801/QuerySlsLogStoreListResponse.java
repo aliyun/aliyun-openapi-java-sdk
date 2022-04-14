@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySlsLogStoreListResponse extends AcsResponse {
 
-	private Integer totalSize;
-
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Integer totalSize;
+
 	private List<SlsLog> result;
-
-	public Integer getTotalSize() {
-		return this.totalSize;
-	}
-
-	public void setTotalSize(Integer totalSize) {
-		this.totalSize = totalSize;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QuerySlsLogStoreListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalSize() {
+		return this.totalSize;
+	}
+
+	public void setTotalSize(Integer totalSize) {
+		this.totalSize = totalSize;
+	}
+
 	public List<SlsLog> getResult() {
 		return this.result;
 	}
@@ -77,33 +77,17 @@ public class QuerySlsLogStoreListResponse extends AcsResponse {
 
 	public static class SlsLog {
 
-		private String logstore;
-
-		private String project;
-
 		private String link;
-
-		private String consumerSide;
 
 		private String createTime;
 
+		private String logstore;
+
+		private String consumerSide;
+
+		private String project;
+
 		private String source;
-
-		public String getLogstore() {
-			return this.logstore;
-		}
-
-		public void setLogstore(String logstore) {
-			this.logstore = logstore;
-		}
-
-		public String getProject() {
-			return this.project;
-		}
-
-		public void setProject(String project) {
-			this.project = project;
-		}
 
 		public String getLink() {
 			return this.link;
@@ -111,6 +95,22 @@ public class QuerySlsLogStoreListResponse extends AcsResponse {
 
 		public void setLink(String link) {
 			this.link = link;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getLogstore() {
+			return this.logstore;
+		}
+
+		public void setLogstore(String logstore) {
+			this.logstore = logstore;
 		}
 
 		public String getConsumerSide() {
@@ -121,12 +121,12 @@ public class QuerySlsLogStoreListResponse extends AcsResponse {
 			this.consumerSide = consumerSide;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getProject() {
+			return this.project;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setProject(String project) {
+			this.project = project;
 		}
 
 		public String getSource() {

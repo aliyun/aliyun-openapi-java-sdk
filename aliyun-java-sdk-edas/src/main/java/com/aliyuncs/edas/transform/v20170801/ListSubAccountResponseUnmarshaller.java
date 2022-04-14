@@ -33,14 +33,14 @@ public class ListSubAccountResponseUnmarshaller {
 		List<SubAccount> subAccountList = new ArrayList<SubAccount>();
 		for (int i = 0; i < _ctx.lengthValue("ListSubAccountResponse.SubAccountList.Length"); i++) {
 			SubAccount subAccount = new SubAccount();
-			subAccount.setAdminUserId(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].AdminUserId"));
+			subAccount.setSubEdasId(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].SubEdasId"));
 			subAccount.setSubUserId(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].SubUserId"));
 			subAccount.setEmail(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].Email"));
-			subAccount.setPhone(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].Phone"));
+			subAccount.setAdminUserId(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].AdminUserId"));
 			subAccount.setAdminUserKp(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].AdminUserKp"));
-			subAccount.setSubUserKp(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].SubUserKp"));
 			subAccount.setAdminEdasId(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].AdminEdasId"));
-			subAccount.setSubEdasId(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].SubEdasId"));
+			subAccount.setSubUserKp(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].SubUserKp"));
+			subAccount.setPhone(_ctx.stringValue("ListSubAccountResponse.SubAccountList["+ i +"].Phone"));
 
 			subAccountList.add(subAccount);
 		}

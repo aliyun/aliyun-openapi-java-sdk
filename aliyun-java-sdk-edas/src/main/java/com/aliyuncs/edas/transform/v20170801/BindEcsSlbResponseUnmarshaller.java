@@ -23,9 +23,9 @@ public class BindEcsSlbResponseUnmarshaller {
 	public static BindEcsSlbResponse unmarshall(BindEcsSlbResponse bindEcsSlbResponse, UnmarshallerContext _ctx) {
 		
 		bindEcsSlbResponse.setRequestId(_ctx.stringValue("BindEcsSlbResponse.RequestId"));
-		bindEcsSlbResponse.setMessage(_ctx.stringValue("BindEcsSlbResponse.Message"));
-		bindEcsSlbResponse.setCode(_ctx.integerValue("BindEcsSlbResponse.Code"));
 		bindEcsSlbResponse.setChangeOrderId(_ctx.stringValue("BindEcsSlbResponse.ChangeOrderId"));
+		bindEcsSlbResponse.setCode(_ctx.integerValue("BindEcsSlbResponse.Code"));
+		bindEcsSlbResponse.setMessage(_ctx.stringValue("BindEcsSlbResponse.Message"));
 	 
 	 	return bindEcsSlbResponse;
 	}

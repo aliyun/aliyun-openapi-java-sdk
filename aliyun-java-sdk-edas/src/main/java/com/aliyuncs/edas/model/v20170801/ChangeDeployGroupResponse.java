@@ -26,9 +26,9 @@ public class ChangeDeployGroupResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String message;
-
 	private String changeOrderId;
+
+	private String message;
 
 	private String requestId;
 
@@ -40,20 +40,20 @@ public class ChangeDeployGroupResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getChangeOrderId() {
 		return this.changeOrderId;
 	}
 
 	public void setChangeOrderId(String changeOrderId) {
 		this.changeOrderId = changeOrderId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {

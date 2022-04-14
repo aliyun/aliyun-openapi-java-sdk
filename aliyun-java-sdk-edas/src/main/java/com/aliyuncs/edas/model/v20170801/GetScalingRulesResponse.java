@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetScalingRulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
 	private Long updateTime;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +59,14 @@ public class GetScalingRulesResponse extends AcsResponse {
 		this.updateTime = updateTime;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,23 +77,15 @@ public class GetScalingRulesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer clusterType;
-
 		private Integer oversoldFactor;
 
 		private String vpcId;
 
 		private Long updateTime;
 
+		private Integer clusterType;
+
 		private List<Rule> ruleList;
-
-		public Integer getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(Integer clusterType) {
-			this.clusterType = clusterType;
-		}
 
 		public Integer getOversoldFactor() {
 			return this.oversoldFactor;
@@ -119,6 +111,14 @@ public class GetScalingRulesResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
+		public Integer getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(Integer clusterType) {
+			this.clusterType = clusterType;
+		}
+
 		public List<Rule> getRuleList() {
 			return this.ruleList;
 		}
@@ -129,70 +129,102 @@ public class GetScalingRulesResponse extends AcsResponse {
 
 		public static class Rule {
 
-			private String appId;
+			private String vpcId;
 
-			private String groupId;
+			private Long updateTime;
 
-			private Boolean enable;
+			private Long createTime;
+
+			private Integer rt;
+
+			private String specId;
+
+			private String multiAzPolicy;
+
+			private String resourceFrom;
 
 			private String mode;
+
+			private Integer loadNum;
+
+			private Integer templateVersion;
+
+			private Integer step;
 
 			private String cond;
 
 			private Integer cpu;
 
-			private Integer rt;
-
-			private String resourceFrom;
-
-			private Integer step;
+			private String groupId;
 
 			private Integer instNum;
 
-			private Integer loadNum;
-
-			private String templateId;
-
-			private Integer templateVersion;
-
-			private String vpcId;
-
-			private String metricType;
-
-			private String vSwitchIds;
-
-			private String multiAzPolicy;
-
-			private String specId;
+			private String appId;
 
 			private Integer duration;
 
-			private Long createTime;
+			private String vSwitchIds;
 
-			private Long updateTime;
+			private String metricType;
 
-			public String getAppId() {
-				return this.appId;
+			private String templateId;
+
+			private Boolean enable;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setAppId(String appId) {
-				this.appId = appId;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
-			public String getGroupId() {
-				return this.groupId;
+			public Long getUpdateTime() {
+				return this.updateTime;
 			}
 
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
 			}
 
-			public Boolean getEnable() {
-				return this.enable;
+			public Long getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setEnable(Boolean enable) {
-				this.enable = enable;
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Integer getRt() {
+				return this.rt;
+			}
+
+			public void setRt(Integer rt) {
+				this.rt = rt;
+			}
+
+			public String getSpecId() {
+				return this.specId;
+			}
+
+			public void setSpecId(String specId) {
+				this.specId = specId;
+			}
+
+			public String getMultiAzPolicy() {
+				return this.multiAzPolicy;
+			}
+
+			public void setMultiAzPolicy(String multiAzPolicy) {
+				this.multiAzPolicy = multiAzPolicy;
+			}
+
+			public String getResourceFrom() {
+				return this.resourceFrom;
+			}
+
+			public void setResourceFrom(String resourceFrom) {
+				this.resourceFrom = resourceFrom;
 			}
 
 			public String getMode() {
@@ -201,6 +233,30 @@ public class GetScalingRulesResponse extends AcsResponse {
 
 			public void setMode(String mode) {
 				this.mode = mode;
+			}
+
+			public Integer getLoadNum() {
+				return this.loadNum;
+			}
+
+			public void setLoadNum(Integer loadNum) {
+				this.loadNum = loadNum;
+			}
+
+			public Integer getTemplateVersion() {
+				return this.templateVersion;
+			}
+
+			public void setTemplateVersion(Integer templateVersion) {
+				this.templateVersion = templateVersion;
+			}
+
+			public Integer getStep() {
+				return this.step;
+			}
+
+			public void setStep(Integer step) {
+				this.step = step;
 			}
 
 			public String getCond() {
@@ -219,28 +275,12 @@ public class GetScalingRulesResponse extends AcsResponse {
 				this.cpu = cpu;
 			}
 
-			public Integer getRt() {
-				return this.rt;
+			public String getGroupId() {
+				return this.groupId;
 			}
 
-			public void setRt(Integer rt) {
-				this.rt = rt;
-			}
-
-			public String getResourceFrom() {
-				return this.resourceFrom;
-			}
-
-			public void setResourceFrom(String resourceFrom) {
-				this.resourceFrom = resourceFrom;
-			}
-
-			public Integer getStep() {
-				return this.step;
-			}
-
-			public void setStep(Integer step) {
-				this.step = step;
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 
 			public Integer getInstNum() {
@@ -251,68 +291,12 @@ public class GetScalingRulesResponse extends AcsResponse {
 				this.instNum = instNum;
 			}
 
-			public Integer getLoadNum() {
-				return this.loadNum;
+			public String getAppId() {
+				return this.appId;
 			}
 
-			public void setLoadNum(Integer loadNum) {
-				this.loadNum = loadNum;
-			}
-
-			public String getTemplateId() {
-				return this.templateId;
-			}
-
-			public void setTemplateId(String templateId) {
-				this.templateId = templateId;
-			}
-
-			public Integer getTemplateVersion() {
-				return this.templateVersion;
-			}
-
-			public void setTemplateVersion(Integer templateVersion) {
-				this.templateVersion = templateVersion;
-			}
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
-
-			public String getMetricType() {
-				return this.metricType;
-			}
-
-			public void setMetricType(String metricType) {
-				this.metricType = metricType;
-			}
-
-			public String getVSwitchIds() {
-				return this.vSwitchIds;
-			}
-
-			public void setVSwitchIds(String vSwitchIds) {
-				this.vSwitchIds = vSwitchIds;
-			}
-
-			public String getMultiAzPolicy() {
-				return this.multiAzPolicy;
-			}
-
-			public void setMultiAzPolicy(String multiAzPolicy) {
-				this.multiAzPolicy = multiAzPolicy;
-			}
-
-			public String getSpecId() {
-				return this.specId;
-			}
-
-			public void setSpecId(String specId) {
-				this.specId = specId;
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 
 			public Integer getDuration() {
@@ -323,20 +307,36 @@ public class GetScalingRulesResponse extends AcsResponse {
 				this.duration = duration;
 			}
 
-			public Long getCreateTime() {
-				return this.createTime;
+			public String getVSwitchIds() {
+				return this.vSwitchIds;
 			}
 
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
+			public void setVSwitchIds(String vSwitchIds) {
+				this.vSwitchIds = vSwitchIds;
 			}
 
-			public Long getUpdateTime() {
-				return this.updateTime;
+			public String getMetricType() {
+				return this.metricType;
 			}
 
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
+			public void setMetricType(String metricType) {
+				this.metricType = metricType;
+			}
+
+			public String getTemplateId() {
+				return this.templateId;
+			}
+
+			public void setTemplateId(String templateId) {
+				this.templateId = templateId;
+			}
+
+			public Boolean getEnable() {
+				return this.enable;
+			}
+
+			public void setEnable(Boolean enable) {
+				this.enable = enable;
 			}
 		}
 	}

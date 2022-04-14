@@ -67,84 +67,180 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 	public static class DeployGroup {
 
-		private String groupId;
+		private String vServerGroupId;
 
-		private String groupName;
+		private String status;
+
+		private String cpuRequest;
+
+		private Long updateTime;
+
+		private String memoryRequest;
+
+		private String nameSpace;
+
+		private String appVersionId;
+
+		private Long createTime;
+
+		private String deploymentName;
+
+		private String preStop;
+
+		private String packageUrl;
+
+		private String packageVersion;
+
+		private String baseComponentMetaName;
+
+		private String csClusterId;
 
 		private String appId;
 
-		private String packageVersionId;
+		private Long lastUpdateTime;
 
-		private String appVersionId;
+		private String env;
+
+		private String cpuLimit;
 
 		private Integer groupType;
 
 		private String clusterId;
 
-		private Long createTime;
-
-		private Long updateTime;
-
-		private String nameSpace;
-
-		private String clusterName;
-
-		private Long lastUpdateTime;
-
-		private String preStop;
-
 		private String postStart;
-
-		private String packageUrl;
-
-		private String env;
 
 		private String labels;
 
-		private String selector;
+		private String memoryLimit;
 
 		private String strategy;
 
-		private String status;
+		private String selector;
+
+		private String groupId;
+
+		private String groupName;
+
+		private String clusterName;
+
+		private String packageVersionId;
 
 		private String reversion;
 
-		private String csClusterId;
-
-		private String baseComponentMetaName;
-
-		private String deploymentName;
-
-		private String cpuLimit;
-
-		private String memoryLimit;
+		private String vExtServerGroupId;
 
 		private String packagePublicUrl;
 
-		private String packageVersion;
-
-		private String cpuRequest;
-
-		private String memoryRequest;
-
-		private String vServerGroupId;
-
-		private String vExtServerGroupId;
-
-		public String getGroupId() {
-			return this.groupId;
+		public String getVServerGroupId() {
+			return this.vServerGroupId;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setVServerGroupId(String vServerGroupId) {
+			this.vServerGroupId = vServerGroupId;
 		}
 
-		public String getGroupName() {
-			return this.groupName;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getCpuRequest() {
+			return this.cpuRequest;
+		}
+
+		public void setCpuRequest(String cpuRequest) {
+			this.cpuRequest = cpuRequest;
+		}
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getMemoryRequest() {
+			return this.memoryRequest;
+		}
+
+		public void setMemoryRequest(String memoryRequest) {
+			this.memoryRequest = memoryRequest;
+		}
+
+		public String getNameSpace() {
+			return this.nameSpace;
+		}
+
+		public void setNameSpace(String nameSpace) {
+			this.nameSpace = nameSpace;
+		}
+
+		public String getAppVersionId() {
+			return this.appVersionId;
+		}
+
+		public void setAppVersionId(String appVersionId) {
+			this.appVersionId = appVersionId;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getDeploymentName() {
+			return this.deploymentName;
+		}
+
+		public void setDeploymentName(String deploymentName) {
+			this.deploymentName = deploymentName;
+		}
+
+		public String getPreStop() {
+			return this.preStop;
+		}
+
+		public void setPreStop(String preStop) {
+			this.preStop = preStop;
+		}
+
+		public String getPackageUrl() {
+			return this.packageUrl;
+		}
+
+		public void setPackageUrl(String packageUrl) {
+			this.packageUrl = packageUrl;
+		}
+
+		public String getPackageVersion() {
+			return this.packageVersion;
+		}
+
+		public void setPackageVersion(String packageVersion) {
+			this.packageVersion = packageVersion;
+		}
+
+		public String getBaseComponentMetaName() {
+			return this.baseComponentMetaName;
+		}
+
+		public void setBaseComponentMetaName(String baseComponentMetaName) {
+			this.baseComponentMetaName = baseComponentMetaName;
+		}
+
+		public String getCsClusterId() {
+			return this.csClusterId;
+		}
+
+		public void setCsClusterId(String csClusterId) {
+			this.csClusterId = csClusterId;
 		}
 
 		public String getAppId() {
@@ -155,20 +251,28 @@ public class ListDeployGroupResponse extends AcsResponse {
 			this.appId = appId;
 		}
 
-		public String getPackageVersionId() {
-			return this.packageVersionId;
+		public Long getLastUpdateTime() {
+			return this.lastUpdateTime;
 		}
 
-		public void setPackageVersionId(String packageVersionId) {
-			this.packageVersionId = packageVersionId;
+		public void setLastUpdateTime(Long lastUpdateTime) {
+			this.lastUpdateTime = lastUpdateTime;
 		}
 
-		public String getAppVersionId() {
-			return this.appVersionId;
+		public String getEnv() {
+			return this.env;
 		}
 
-		public void setAppVersionId(String appVersionId) {
-			this.appVersionId = appVersionId;
+		public void setEnv(String env) {
+			this.env = env;
+		}
+
+		public String getCpuLimit() {
+			return this.cpuLimit;
+		}
+
+		public void setCpuLimit(String cpuLimit) {
+			this.cpuLimit = cpuLimit;
 		}
 
 		public Integer getGroupType() {
@@ -187,76 +291,12 @@ public class ListDeployGroupResponse extends AcsResponse {
 			this.clusterId = clusterId;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getNameSpace() {
-			return this.nameSpace;
-		}
-
-		public void setNameSpace(String nameSpace) {
-			this.nameSpace = nameSpace;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public Long getLastUpdateTime() {
-			return this.lastUpdateTime;
-		}
-
-		public void setLastUpdateTime(Long lastUpdateTime) {
-			this.lastUpdateTime = lastUpdateTime;
-		}
-
-		public String getPreStop() {
-			return this.preStop;
-		}
-
-		public void setPreStop(String preStop) {
-			this.preStop = preStop;
-		}
-
 		public String getPostStart() {
 			return this.postStart;
 		}
 
 		public void setPostStart(String postStart) {
 			this.postStart = postStart;
-		}
-
-		public String getPackageUrl() {
-			return this.packageUrl;
-		}
-
-		public void setPackageUrl(String packageUrl) {
-			this.packageUrl = packageUrl;
-		}
-
-		public String getEnv() {
-			return this.env;
-		}
-
-		public void setEnv(String env) {
-			this.env = env;
 		}
 
 		public String getLabels() {
@@ -267,12 +307,12 @@ public class ListDeployGroupResponse extends AcsResponse {
 			this.labels = labels;
 		}
 
-		public String getSelector() {
-			return this.selector;
+		public String getMemoryLimit() {
+			return this.memoryLimit;
 		}
 
-		public void setSelector(String selector) {
-			this.selector = selector;
+		public void setMemoryLimit(String memoryLimit) {
+			this.memoryLimit = memoryLimit;
 		}
 
 		public String getStrategy() {
@@ -283,12 +323,44 @@ public class ListDeployGroupResponse extends AcsResponse {
 			this.strategy = strategy;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getSelector() {
+			return this.selector;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setSelector(String selector) {
+			this.selector = selector;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getPackageVersionId() {
+			return this.packageVersionId;
+		}
+
+		public void setPackageVersionId(String packageVersionId) {
+			this.packageVersionId = packageVersionId;
 		}
 
 		public String getReversion() {
@@ -299,44 +371,12 @@ public class ListDeployGroupResponse extends AcsResponse {
 			this.reversion = reversion;
 		}
 
-		public String getCsClusterId() {
-			return this.csClusterId;
+		public String getVExtServerGroupId() {
+			return this.vExtServerGroupId;
 		}
 
-		public void setCsClusterId(String csClusterId) {
-			this.csClusterId = csClusterId;
-		}
-
-		public String getBaseComponentMetaName() {
-			return this.baseComponentMetaName;
-		}
-
-		public void setBaseComponentMetaName(String baseComponentMetaName) {
-			this.baseComponentMetaName = baseComponentMetaName;
-		}
-
-		public String getDeploymentName() {
-			return this.deploymentName;
-		}
-
-		public void setDeploymentName(String deploymentName) {
-			this.deploymentName = deploymentName;
-		}
-
-		public String getCpuLimit() {
-			return this.cpuLimit;
-		}
-
-		public void setCpuLimit(String cpuLimit) {
-			this.cpuLimit = cpuLimit;
-		}
-
-		public String getMemoryLimit() {
-			return this.memoryLimit;
-		}
-
-		public void setMemoryLimit(String memoryLimit) {
-			this.memoryLimit = memoryLimit;
+		public void setVExtServerGroupId(String vExtServerGroupId) {
+			this.vExtServerGroupId = vExtServerGroupId;
 		}
 
 		public String getPackagePublicUrl() {
@@ -345,46 +385,6 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		public void setPackagePublicUrl(String packagePublicUrl) {
 			this.packagePublicUrl = packagePublicUrl;
-		}
-
-		public String getPackageVersion() {
-			return this.packageVersion;
-		}
-
-		public void setPackageVersion(String packageVersion) {
-			this.packageVersion = packageVersion;
-		}
-
-		public String getCpuRequest() {
-			return this.cpuRequest;
-		}
-
-		public void setCpuRequest(String cpuRequest) {
-			this.cpuRequest = cpuRequest;
-		}
-
-		public String getMemoryRequest() {
-			return this.memoryRequest;
-		}
-
-		public void setMemoryRequest(String memoryRequest) {
-			this.memoryRequest = memoryRequest;
-		}
-
-		public String getVServerGroupId() {
-			return this.vServerGroupId;
-		}
-
-		public void setVServerGroupId(String vServerGroupId) {
-			this.vServerGroupId = vServerGroupId;
-		}
-
-		public String getVExtServerGroupId() {
-			return this.vExtServerGroupId;
-		}
-
-		public void setVExtServerGroupId(String vExtServerGroupId) {
-			this.vExtServerGroupId = vExtServerGroupId;
 		}
 	}
 

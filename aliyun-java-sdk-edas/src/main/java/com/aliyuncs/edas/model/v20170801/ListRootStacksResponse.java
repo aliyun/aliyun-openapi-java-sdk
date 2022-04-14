@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRootStacksResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer code;
 
 	private String message;
 
-	private Integer code;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListRootStacksResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -131,29 +131,13 @@ public class ListRootStacksResponse extends AcsResponse {
 
 			public static class ChildStack {
 
-				private Long id;
-
-				private String name;
-
 				private String icon;
 
 				private String comment;
 
-				public Long getId() {
-					return this.id;
-				}
+				private String name;
 
-				public void setId(Long id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private Long id;
 
 				public String getIcon() {
 					return this.icon;
@@ -170,13 +154,14 @@ public class ListRootStacksResponse extends AcsResponse {
 				public void setComment(String comment) {
 					this.comment = comment;
 				}
-			}
 
-			public static class Root {
+				public String getName() {
+					return this.name;
+				}
 
-				private Long id;
-
-				private String name;
+				public void setName(String name) {
+					this.name = name;
+				}
 
 				public Long getId() {
 					return this.id;
@@ -185,6 +170,13 @@ public class ListRootStacksResponse extends AcsResponse {
 				public void setId(Long id) {
 					this.id = id;
 				}
+			}
+
+			public static class Root {
+
+				private String name;
+
+				private Long id;
 
 				public String getName() {
 					return this.name;
@@ -192,6 +184,14 @@ public class ListRootStacksResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
+				}
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
 				}
 			}
 		}

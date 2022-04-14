@@ -67,29 +67,21 @@ public class ListPublishedServicesResponse extends AcsResponse {
 
 	public static class ListPublishedServices {
 
-		private String appId;
-
 		private Boolean dockerApplication;
-
-		private String group2Ip;
-
-		private String name;
 
 		private String type;
 
 		private String version;
 
-		private List<String> groups;
+		private String appId;
+
+		private String group2Ip;
+
+		private String name;
 
 		private List<String> ips;
 
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
+		private List<String> groups;
 
 		public Boolean getDockerApplication() {
 			return this.dockerApplication;
@@ -97,22 +89,6 @@ public class ListPublishedServicesResponse extends AcsResponse {
 
 		public void setDockerApplication(Boolean dockerApplication) {
 			this.dockerApplication = dockerApplication;
-		}
-
-		public String getGroup2Ip() {
-			return this.group2Ip;
-		}
-
-		public void setGroup2Ip(String group2Ip) {
-			this.group2Ip = group2Ip;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getType() {
@@ -131,12 +107,28 @@ public class ListPublishedServicesResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public List<String> getGroups() {
-			return this.groups;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setGroups(List<String> groups) {
-			this.groups = groups;
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public String getGroup2Ip() {
+			return this.group2Ip;
+		}
+
+		public void setGroup2Ip(String group2Ip) {
+			this.group2Ip = group2Ip;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getIps() {
@@ -145,6 +137,14 @@ public class ListPublishedServicesResponse extends AcsResponse {
 
 		public void setIps(List<String> ips) {
 			this.ips = ips;
+		}
+
+		public List<String> getGroups() {
+			return this.groups;
+		}
+
+		public void setGroups(List<String> groups) {
+			this.groups = groups;
 		}
 	}
 

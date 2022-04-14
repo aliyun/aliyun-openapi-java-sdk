@@ -33,26 +33,26 @@ public class ListBuildPackResponseUnmarshaller {
 		List<BuildPack> buildPackList = new ArrayList<BuildPack>();
 		for (int i = 0; i < _ctx.lengthValue("ListBuildPackResponse.BuildPackList.Length"); i++) {
 			BuildPack buildPack = new BuildPack();
-			buildPack.setConfigId(_ctx.longValue("ListBuildPackResponse.BuildPackList["+ i +"].ConfigId"));
-			buildPack.setPackVersion(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].PackVersion"));
-			buildPack.setTomcatDesc(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TomcatDesc"));
-			buildPack.setTomcatVersion(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TomcatVersion"));
-			buildPack.setTomcatDownloadUrl(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TomcatDownloadUrl"));
 			buildPack.setPandoraVersion(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].PandoraVersion"));
-			buildPack.setPandoraDownloadUrl(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].PandoraDownloadUrl"));
+			buildPack.setConfigId(_ctx.longValue("ListBuildPackResponse.BuildPackList["+ i +"].ConfigId"));
+			buildPack.setFeature(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].Feature"));
 			buildPack.setPandoraDesc(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].PandoraDesc"));
 			buildPack.setPluginInfo(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].PluginInfo"));
-			buildPack.setTomcatPath(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TomcatPath"));
-			buildPack.setImageId(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].ImageId"));
-			buildPack.setTengineImageId(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TengineImageId"));
-			buildPack.setMultipleTenant(_ctx.booleanValue("ListBuildPackResponse.BuildPackList["+ i +"].MultipleTenant"));
-			buildPack.setWithTengine(_ctx.booleanValue("ListBuildPackResponse.BuildPackList["+ i +"].WithTengine"));
+			buildPack.setDisabled(_ctx.booleanValue("ListBuildPackResponse.BuildPackList["+ i +"].Disabled"));
 			buildPack.setTengineDownloadUrl(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TengineDownloadUrl"));
+			buildPack.setTomcatPath(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TomcatPath"));
+			buildPack.setTomcatDesc(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TomcatDesc"));
+			buildPack.setSupportFeatures(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].SupportFeatures"));
+			buildPack.setTomcatDownloadUrl(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TomcatDownloadUrl"));
+			buildPack.setTomcatVersion(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TomcatVersion"));
+			buildPack.setPandoraDownloadUrl(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].PandoraDownloadUrl"));
+			buildPack.setPackVersion(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].PackVersion"));
+			buildPack.setMultipleTenant(_ctx.booleanValue("ListBuildPackResponse.BuildPackList["+ i +"].MultipleTenant"));
+			buildPack.setTengineImageId(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].TengineImageId"));
+			buildPack.setWithTengine(_ctx.booleanValue("ListBuildPackResponse.BuildPackList["+ i +"].WithTengine"));
+			buildPack.setImageId(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].ImageId"));
 			buildPack.setScriptName(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].ScriptName"));
 			buildPack.setScriptVersion(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].ScriptVersion"));
-			buildPack.setFeature(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].Feature"));
-			buildPack.setSupportFeatures(_ctx.stringValue("ListBuildPackResponse.BuildPackList["+ i +"].SupportFeatures"));
-			buildPack.setDisabled(_ctx.booleanValue("ListBuildPackResponse.BuildPackList["+ i +"].Disabled"));
 
 			buildPackList.add(buildPack);
 		}

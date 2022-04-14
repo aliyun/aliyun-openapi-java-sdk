@@ -23,9 +23,9 @@ public class RestartApplicationResponseUnmarshaller {
 	public static RestartApplicationResponse unmarshall(RestartApplicationResponse restartApplicationResponse, UnmarshallerContext _ctx) {
 		
 		restartApplicationResponse.setRequestId(_ctx.stringValue("RestartApplicationResponse.RequestId"));
+		restartApplicationResponse.setChangeOrderId(_ctx.stringValue("RestartApplicationResponse.ChangeOrderId"));
 		restartApplicationResponse.setCode(_ctx.integerValue("RestartApplicationResponse.Code"));
 		restartApplicationResponse.setMessage(_ctx.stringValue("RestartApplicationResponse.Message"));
-		restartApplicationResponse.setChangeOrderId(_ctx.stringValue("RestartApplicationResponse.ChangeOrderId"));
 	 
 	 	return restartApplicationResponse;
 	}

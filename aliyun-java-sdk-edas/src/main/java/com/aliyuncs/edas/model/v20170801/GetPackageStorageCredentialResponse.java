@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPackageStorageCredentialResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Credential credential;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class GetPackageStorageCredentialResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Credential getCredential() {
 		return this.credential;
 	}
@@ -66,26 +66,34 @@ public class GetPackageStorageCredentialResponse extends AcsResponse {
 
 	public static class Credential {
 
-		private String accessKeyId;
-
-		private String accessKeySecret;
-
-		private String bucket;
-
-		private String expiration;
-
 		private String keyPrefix;
-
-		private String regionId;
 
 		private String securityToken;
 
-		public String getAccessKeyId() {
-			return this.accessKeyId;
+		private String accessKeySecret;
+
+		private String expiration;
+
+		private String accessKeyId;
+
+		private String bucket;
+
+		private String regionId;
+
+		public String getKeyPrefix() {
+			return this.keyPrefix;
 		}
 
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
+		public void setKeyPrefix(String keyPrefix) {
+			this.keyPrefix = keyPrefix;
+		}
+
+		public String getSecurityToken() {
+			return this.securityToken;
+		}
+
+		public void setSecurityToken(String securityToken) {
+			this.securityToken = securityToken;
 		}
 
 		public String getAccessKeySecret() {
@@ -96,14 +104,6 @@ public class GetPackageStorageCredentialResponse extends AcsResponse {
 			this.accessKeySecret = accessKeySecret;
 		}
 
-		public String getBucket() {
-			return this.bucket;
-		}
-
-		public void setBucket(String bucket) {
-			this.bucket = bucket;
-		}
-
 		public String getExpiration() {
 			return this.expiration;
 		}
@@ -112,12 +112,20 @@ public class GetPackageStorageCredentialResponse extends AcsResponse {
 			this.expiration = expiration;
 		}
 
-		public String getKeyPrefix() {
-			return this.keyPrefix;
+		public String getAccessKeyId() {
+			return this.accessKeyId;
 		}
 
-		public void setKeyPrefix(String keyPrefix) {
-			this.keyPrefix = keyPrefix;
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
+		}
+
+		public String getBucket() {
+			return this.bucket;
+		}
+
+		public void setBucket(String bucket) {
+			this.bucket = bucket;
 		}
 
 		public String getRegionId() {
@@ -126,14 +134,6 @@ public class GetPackageStorageCredentialResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getSecurityToken() {
-			return this.securityToken;
-		}
-
-		public void setSecurityToken(String securityToken) {
-			this.securityToken = securityToken;
 		}
 	}
 

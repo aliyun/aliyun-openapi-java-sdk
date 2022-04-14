@@ -33,24 +33,24 @@ public class ListPublishedServicesResponseUnmarshaller {
 		List<ListPublishedServices> publishedServicesList = new ArrayList<ListPublishedServices>();
 		for (int i = 0; i < _ctx.lengthValue("ListPublishedServicesResponse.PublishedServicesList.Length"); i++) {
 			ListPublishedServices listPublishedServices = new ListPublishedServices();
-			listPublishedServices.setAppId(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].AppId"));
 			listPublishedServices.setDockerApplication(_ctx.booleanValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].DockerApplication"));
-			listPublishedServices.setGroup2Ip(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Group2Ip"));
-			listPublishedServices.setName(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Name"));
 			listPublishedServices.setType(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Type"));
 			listPublishedServices.setVersion(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Version"));
-
-			List<String> groups = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Groups.Length"); j++) {
-				groups.add(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Groups["+ j +"]"));
-			}
-			listPublishedServices.setGroups(groups);
+			listPublishedServices.setAppId(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].AppId"));
+			listPublishedServices.setGroup2Ip(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Group2Ip"));
+			listPublishedServices.setName(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Name"));
 
 			List<String> ips = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Ips.Length"); j++) {
 				ips.add(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Ips["+ j +"]"));
 			}
 			listPublishedServices.setIps(ips);
+
+			List<String> groups = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Groups.Length"); j++) {
+				groups.add(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Groups["+ j +"]"));
+			}
+			listPublishedServices.setGroups(groups);
 
 			publishedServicesList.add(listPublishedServices);
 		}

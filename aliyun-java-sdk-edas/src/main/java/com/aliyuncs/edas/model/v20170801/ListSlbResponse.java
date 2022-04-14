@@ -69,27 +69,27 @@ public class ListSlbResponse extends AcsResponse {
 
 		private String slbId;
 
-		private String slbName;
-
-		private String regionId;
-
-		private String userId;
-
-		private String address;
-
-		private String slbStatus;
-
-		private String addressType;
+		private String vpcId;
 
 		private String vswitchId;
 
-		private String vpcId;
+		private Boolean expired;
+
+		private String userId;
+
+		private String addressType;
 
 		private String networkType;
 
+		private String regionId;
+
 		private Integer groupId;
 
-		private Boolean expired;
+		private String address;
+
+		private String slbName;
+
+		private String slbStatus;
 
 		public String getSlbId() {
 			return this.slbId;
@@ -97,62 +97,6 @@ public class ListSlbResponse extends AcsResponse {
 
 		public void setSlbId(String slbId) {
 			this.slbId = slbId;
-		}
-
-		public String getSlbName() {
-			return this.slbName;
-		}
-
-		public void setSlbName(String slbName) {
-			this.slbName = slbName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getAddress() {
-			return this.address;
-		}
-
-		public void setAddress(String address) {
-			this.address = address;
-		}
-
-		public String getSlbStatus() {
-			return this.slbStatus;
-		}
-
-		public void setSlbStatus(String slbStatus) {
-			this.slbStatus = slbStatus;
-		}
-
-		public String getAddressType() {
-			return this.addressType;
-		}
-
-		public void setAddressType(String addressType) {
-			this.addressType = addressType;
-		}
-
-		public String getVswitchId() {
-			return this.vswitchId;
-		}
-
-		public void setVswitchId(String vswitchId) {
-			this.vswitchId = vswitchId;
 		}
 
 		public String getVpcId() {
@@ -163,12 +107,52 @@ public class ListSlbResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public String getVswitchId() {
+			return this.vswitchId;
+		}
+
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
+		}
+
+		public Boolean getExpired() {
+			return this.expired;
+		}
+
+		public void setExpired(Boolean expired) {
+			this.expired = expired;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getAddressType() {
+			return this.addressType;
+		}
+
+		public void setAddressType(String addressType) {
+			this.addressType = addressType;
+		}
+
 		public String getNetworkType() {
 			return this.networkType;
 		}
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public Integer getGroupId() {
@@ -179,12 +163,28 @@ public class ListSlbResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public Boolean getExpired() {
-			return this.expired;
+		public String getAddress() {
+			return this.address;
 		}
 
-		public void setExpired(Boolean expired) {
-			this.expired = expired;
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public String getSlbName() {
+			return this.slbName;
+		}
+
+		public void setSlbName(String slbName) {
+			this.slbName = slbName;
+		}
+
+		public String getSlbStatus() {
+			return this.slbStatus;
+		}
+
+		public void setSlbStatus(String slbStatus) {
+			this.slbStatus = slbStatus;
 		}
 	}
 

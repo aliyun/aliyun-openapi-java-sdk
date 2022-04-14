@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateHookConfigurationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private List<Configuration> hooksConfiguration;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class UpdateHookConfigurationResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<Configuration> getHooksConfiguration() {
 		return this.hooksConfiguration;
 	}
@@ -67,11 +67,19 @@ public class UpdateHookConfigurationResponse extends AcsResponse {
 
 	public static class Configuration {
 
+		private Boolean ignoreFail;
+
 		private String name;
 
 		private String script;
 
-		private Boolean ignoreFail;
+		public Boolean getIgnoreFail() {
+			return this.ignoreFail;
+		}
+
+		public void setIgnoreFail(Boolean ignoreFail) {
+			this.ignoreFail = ignoreFail;
+		}
 
 		public String getName() {
 			return this.name;
@@ -87,14 +95,6 @@ public class UpdateHookConfigurationResponse extends AcsResponse {
 
 		public void setScript(String script) {
 			this.script = script;
-		}
-
-		public Boolean getIgnoreFail() {
-			return this.ignoreFail;
-		}
-
-		public void setIgnoreFail(Boolean ignoreFail) {
-			this.ignoreFail = ignoreFail;
 		}
 	}
 

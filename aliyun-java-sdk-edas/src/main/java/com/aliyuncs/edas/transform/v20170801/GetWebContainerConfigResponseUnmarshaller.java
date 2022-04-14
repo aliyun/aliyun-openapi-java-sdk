@@ -24,19 +24,19 @@ public class GetWebContainerConfigResponseUnmarshaller {
 	public static GetWebContainerConfigResponse unmarshall(GetWebContainerConfigResponse getWebContainerConfigResponse, UnmarshallerContext _ctx) {
 		
 		getWebContainerConfigResponse.setRequestId(_ctx.stringValue("GetWebContainerConfigResponse.RequestId"));
-		getWebContainerConfigResponse.setMessage(_ctx.stringValue("GetWebContainerConfigResponse.Message"));
 		getWebContainerConfigResponse.setCode(_ctx.integerValue("GetWebContainerConfigResponse.Code"));
+		getWebContainerConfigResponse.setMessage(_ctx.stringValue("GetWebContainerConfigResponse.Message"));
 
 		WebContainerConfig webContainerConfig = new WebContainerConfig();
-		webContainerConfig.setContextInputType(_ctx.stringValue("GetWebContainerConfigResponse.WebContainerConfig.ContextInputType"));
 		webContainerConfig.setContextPath(_ctx.stringValue("GetWebContainerConfigResponse.WebContainerConfig.ContextPath"));
+		webContainerConfig.setUseAdvancedServerXml(_ctx.booleanValue("GetWebContainerConfigResponse.WebContainerConfig.UseAdvancedServerXml"));
+		webContainerConfig.setUseDefaultConfig(_ctx.booleanValue("GetWebContainerConfigResponse.WebContainerConfig.UseDefaultConfig"));
 		webContainerConfig.setHttpPort(_ctx.integerValue("GetWebContainerConfigResponse.WebContainerConfig.HttpPort"));
+		webContainerConfig.setContextInputType(_ctx.stringValue("GetWebContainerConfigResponse.WebContainerConfig.ContextInputType"));
+		webContainerConfig.setUseBodyEncoding(_ctx.booleanValue("GetWebContainerConfigResponse.WebContainerConfig.UseBodyEncoding"));
+		webContainerConfig.setUriEncoding(_ctx.stringValue("GetWebContainerConfigResponse.WebContainerConfig.UriEncoding"));
 		webContainerConfig.setMaxThreads(_ctx.integerValue("GetWebContainerConfigResponse.WebContainerConfig.MaxThreads"));
 		webContainerConfig.setServerXml(_ctx.stringValue("GetWebContainerConfigResponse.WebContainerConfig.ServerXml"));
-		webContainerConfig.setUriEncoding(_ctx.stringValue("GetWebContainerConfigResponse.WebContainerConfig.UriEncoding"));
-		webContainerConfig.setUseAdvancedServerXml(_ctx.booleanValue("GetWebContainerConfigResponse.WebContainerConfig.UseAdvancedServerXml"));
-		webContainerConfig.setUseBodyEncoding(_ctx.booleanValue("GetWebContainerConfigResponse.WebContainerConfig.UseBodyEncoding"));
-		webContainerConfig.setUseDefaultConfig(_ctx.booleanValue("GetWebContainerConfigResponse.WebContainerConfig.UseDefaultConfig"));
 		getWebContainerConfigResponse.setWebContainerConfig(webContainerConfig);
 	 
 	 	return getWebContainerConfigResponse;

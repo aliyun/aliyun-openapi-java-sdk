@@ -24,8 +24,8 @@ public class UnbindK8sSlbResponseUnmarshaller {
 		
 		unbindK8sSlbResponse.setRequestId(_ctx.stringValue("UnbindK8sSlbResponse.RequestId"));
 		unbindK8sSlbResponse.setCode(_ctx.integerValue("UnbindK8sSlbResponse.Code"));
-		unbindK8sSlbResponse.setMessage(_ctx.stringValue("UnbindK8sSlbResponse.Message"));
 		unbindK8sSlbResponse.setChangeOrderId(_ctx.stringValue("UnbindK8sSlbResponse.ChangeOrderId"));
+		unbindK8sSlbResponse.setMessage(_ctx.stringValue("UnbindK8sSlbResponse.Message"));
 	 
 	 	return unbindK8sSlbResponse;
 	}

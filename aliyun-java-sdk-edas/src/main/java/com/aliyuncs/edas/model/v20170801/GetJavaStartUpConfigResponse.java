@@ -66,17 +66,9 @@ public class GetJavaStartUpConfigResponse extends AcsResponse {
 
 	public static class JavaStartUpConfig {
 
-		private String originalConfigs;
-
 		private String startUpArgs;
 
-		public String getOriginalConfigs() {
-			return this.originalConfigs;
-		}
-
-		public void setOriginalConfigs(String originalConfigs) {
-			this.originalConfigs = originalConfigs;
-		}
+		private String originalConfigs;
 
 		public String getStartUpArgs() {
 			return this.startUpArgs;
@@ -84,6 +76,14 @@ public class GetJavaStartUpConfigResponse extends AcsResponse {
 
 		public void setStartUpArgs(String startUpArgs) {
 			this.startUpArgs = startUpArgs;
+		}
+
+		public String getOriginalConfigs() {
+			return this.originalConfigs;
+		}
+
+		public void setOriginalConfigs(String originalConfigs) {
+			this.originalConfigs = originalConfigs;
 		}
 	}
 

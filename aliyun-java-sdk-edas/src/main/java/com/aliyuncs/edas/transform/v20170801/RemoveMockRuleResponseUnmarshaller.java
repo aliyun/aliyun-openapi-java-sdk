@@ -25,24 +25,24 @@ public class RemoveMockRuleResponseUnmarshaller {
 		
 		removeMockRuleResponse.setRequestId(_ctx.stringValue("RemoveMockRuleResponse.RequestId"));
 		removeMockRuleResponse.setCode(_ctx.stringValue("RemoveMockRuleResponse.Code"));
-		removeMockRuleResponse.setHttpCode(_ctx.stringValue("RemoveMockRuleResponse.HttpCode"));
 		removeMockRuleResponse.setMessage(_ctx.stringValue("RemoveMockRuleResponse.Message"));
+		removeMockRuleResponse.setHttpCode(_ctx.stringValue("RemoveMockRuleResponse.HttpCode"));
 		removeMockRuleResponse.setSuccess(_ctx.booleanValue("RemoveMockRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAccountId(_ctx.stringValue("RemoveMockRuleResponse.Data.AccountId"));
-		data.setName(_ctx.stringValue("RemoveMockRuleResponse.Data.Name"));
-		data.setConsumerAppId(_ctx.stringValue("RemoveMockRuleResponse.Data.ConsumerAppId"));
-		data.setConsumerAppName(_ctx.stringValue("RemoveMockRuleResponse.Data.ConsumerAppName"));
-		data.setEnable(_ctx.booleanValue("RemoveMockRuleResponse.Data.Enable"));
-		data.setExtraJson(_ctx.stringValue("RemoveMockRuleResponse.Data.ExtraJson"));
-		data.setId(_ctx.longValue("RemoveMockRuleResponse.Data.Id"));
 		data.setNamespaceId(_ctx.stringValue("RemoveMockRuleResponse.Data.NamespaceId"));
-		data.setProviderAppId(_ctx.stringValue("RemoveMockRuleResponse.Data.ProviderAppId"));
-		data.setProviderAppName(_ctx.stringValue("RemoveMockRuleResponse.Data.ProviderAppName"));
-		data.setRegion(_ctx.stringValue("RemoveMockRuleResponse.Data.Region"));
 		data.setScMockItemJson(_ctx.stringValue("RemoveMockRuleResponse.Data.ScMockItemJson"));
+		data.setConsumerAppName(_ctx.stringValue("RemoveMockRuleResponse.Data.ConsumerAppName"));
+		data.setAccountId(_ctx.stringValue("RemoveMockRuleResponse.Data.AccountId"));
+		data.setConsumerAppId(_ctx.stringValue("RemoveMockRuleResponse.Data.ConsumerAppId"));
+		data.setExtraJson(_ctx.stringValue("RemoveMockRuleResponse.Data.ExtraJson"));
 		data.setSource(_ctx.stringValue("RemoveMockRuleResponse.Data.Source"));
+		data.setRegion(_ctx.stringValue("RemoveMockRuleResponse.Data.Region"));
+		data.setProviderAppId(_ctx.stringValue("RemoveMockRuleResponse.Data.ProviderAppId"));
+		data.setName(_ctx.stringValue("RemoveMockRuleResponse.Data.Name"));
+		data.setProviderAppName(_ctx.stringValue("RemoveMockRuleResponse.Data.ProviderAppName"));
+		data.setId(_ctx.longValue("RemoveMockRuleResponse.Data.Id"));
+		data.setEnable(_ctx.booleanValue("RemoveMockRuleResponse.Data.Enable"));
 		removeMockRuleResponse.setData(data);
 	 
 	 	return removeMockRuleResponse;

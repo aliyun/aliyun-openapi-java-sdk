@@ -28,9 +28,9 @@ public class InsertRoleResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer roleId;
-
 	private String requestId;
+
+	private Integer roleId;
 
 	public Integer getCode() {
 		return this.code;
@@ -48,20 +48,20 @@ public class InsertRoleResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getRoleId() {
-		return this.roleId;
-	}
-
-	public void setRoleId(Integer roleId) {
-		this.roleId = roleId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getRoleId() {
+		return this.roleId;
+	}
+
+	public void setRoleId(Integer roleId) {
+		this.roleId = roleId;
 	}
 
 	@Override

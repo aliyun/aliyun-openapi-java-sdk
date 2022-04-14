@@ -66,15 +66,23 @@ public class GetContainerConfigurationResponse extends AcsResponse {
 
 	public static class ContainerConfiguration {
 
+		private Integer httpPort;
+
 		private String contextPath;
 
-		private Integer httpPort;
+		private Boolean useBodyEncoding;
 
 		private Integer maxThreads;
 
 		private String uRIEncoding;
 
-		private Boolean useBodyEncoding;
+		public Integer getHttpPort() {
+			return this.httpPort;
+		}
+
+		public void setHttpPort(Integer httpPort) {
+			this.httpPort = httpPort;
+		}
 
 		public String getContextPath() {
 			return this.contextPath;
@@ -84,12 +92,12 @@ public class GetContainerConfigurationResponse extends AcsResponse {
 			this.contextPath = contextPath;
 		}
 
-		public Integer getHttpPort() {
-			return this.httpPort;
+		public Boolean getUseBodyEncoding() {
+			return this.useBodyEncoding;
 		}
 
-		public void setHttpPort(Integer httpPort) {
-			this.httpPort = httpPort;
+		public void setUseBodyEncoding(Boolean useBodyEncoding) {
+			this.useBodyEncoding = useBodyEncoding;
 		}
 
 		public Integer getMaxThreads() {
@@ -106,14 +114,6 @@ public class GetContainerConfigurationResponse extends AcsResponse {
 
 		public void setURIEncoding(String uRIEncoding) {
 			this.uRIEncoding = uRIEncoding;
-		}
-
-		public Boolean getUseBodyEncoding() {
-			return this.useBodyEncoding;
-		}
-
-		public void setUseBodyEncoding(Boolean useBodyEncoding) {
-			this.useBodyEncoding = useBodyEncoding;
 		}
 	}
 

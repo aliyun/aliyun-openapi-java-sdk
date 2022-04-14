@@ -66,21 +66,29 @@ public class InsertApplicationResponse extends AcsResponse {
 
 	public static class ApplicationInfo {
 
+		private String changeOrderId;
+
 		private String appName;
-
-		private String appId;
-
-		private String userId;
 
 		private String owner;
 
 		private Boolean dockerize;
 
-		private Integer port;
-
 		private String regionName;
 
-		private String changeOrderId;
+		private String appId;
+
+		private String userId;
+
+		private Integer port;
+
+		public String getChangeOrderId() {
+			return this.changeOrderId;
+		}
+
+		public void setChangeOrderId(String changeOrderId) {
+			this.changeOrderId = changeOrderId;
+		}
 
 		public String getAppName() {
 			return this.appName;
@@ -88,22 +96,6 @@ public class InsertApplicationResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
-		}
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
 		}
 
 		public String getOwner() {
@@ -122,14 +114,6 @@ public class InsertApplicationResponse extends AcsResponse {
 			this.dockerize = dockerize;
 		}
 
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
 		public String getRegionName() {
 			return this.regionName;
 		}
@@ -138,12 +122,28 @@ public class InsertApplicationResponse extends AcsResponse {
 			this.regionName = regionName;
 		}
 
-		public String getChangeOrderId() {
-			return this.changeOrderId;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setChangeOrderId(String changeOrderId) {
-			this.changeOrderId = changeOrderId;
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
 		}
 	}
 

@@ -71,13 +71,13 @@ public class ListVpcResponse extends AcsResponse {
 
 		private String vpcName;
 
-		private String regionId;
+		private Boolean expired;
 
 		private String userId;
 
-		private Boolean expired;
-
 		private Integer ecsNum;
+
+		private String regionId;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -95,12 +95,12 @@ public class ListVpcResponse extends AcsResponse {
 			this.vpcName = vpcName;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public Boolean getExpired() {
+			return this.expired;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setExpired(Boolean expired) {
+			this.expired = expired;
 		}
 
 		public String getUserId() {
@@ -111,20 +111,20 @@ public class ListVpcResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public Boolean getExpired() {
-			return this.expired;
-		}
-
-		public void setExpired(Boolean expired) {
-			this.expired = expired;
-		}
-
 		public Integer getEcsNum() {
 			return this.ecsNum;
 		}
 
 		public void setEcsNum(Integer ecsNum) {
 			this.ecsNum = ecsNum;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

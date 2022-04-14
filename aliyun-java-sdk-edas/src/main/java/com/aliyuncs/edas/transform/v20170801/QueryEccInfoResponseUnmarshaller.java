@@ -28,14 +28,14 @@ public class QueryEccInfoResponseUnmarshaller {
 		queryEccInfoResponse.setMessage(_ctx.stringValue("QueryEccInfoResponse.Message"));
 
 		EccInfo eccInfo = new EccInfo();
-		eccInfo.setAppId(_ctx.stringValue("QueryEccInfoResponse.EccInfo.AppId"));
+		eccInfo.setVpcId(_ctx.stringValue("QueryEccInfoResponse.EccInfo.VpcId"));
 		eccInfo.setEccId(_ctx.stringValue("QueryEccInfoResponse.EccInfo.EccId"));
 		eccInfo.setEcuId(_ctx.stringValue("QueryEccInfoResponse.EccInfo.EcuId"));
 		eccInfo.setGroupId(_ctx.stringValue("QueryEccInfoResponse.EccInfo.GroupId"));
 		eccInfo.setGroupName(_ctx.stringValue("QueryEccInfoResponse.EccInfo.GroupName"));
 		eccInfo.setPackageMd5(_ctx.stringValue("QueryEccInfoResponse.EccInfo.PackageMd5"));
+		eccInfo.setAppId(_ctx.stringValue("QueryEccInfoResponse.EccInfo.AppId"));
 		eccInfo.setPackageVersion(_ctx.stringValue("QueryEccInfoResponse.EccInfo.PackageVersion"));
-		eccInfo.setVpcId(_ctx.stringValue("QueryEccInfoResponse.EccInfo.VpcId"));
 		queryEccInfoResponse.setEccInfo(eccInfo);
 	 
 	 	return queryEccInfoResponse;

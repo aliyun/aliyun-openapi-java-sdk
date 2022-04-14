@@ -30,8 +30,8 @@ public class ListRootStacksResponseUnmarshaller {
 	public static ListRootStacksResponse unmarshall(ListRootStacksResponse listRootStacksResponse, UnmarshallerContext _ctx) {
 		
 		listRootStacksResponse.setRequestId(_ctx.stringValue("ListRootStacksResponse.RequestId"));
-		listRootStacksResponse.setMessage(_ctx.stringValue("ListRootStacksResponse.Message"));
 		listRootStacksResponse.setCode(_ctx.integerValue("ListRootStacksResponse.Code"));
+		listRootStacksResponse.setMessage(_ctx.stringValue("ListRootStacksResponse.Message"));
 
 		Data data = new Data();
 		data.setCurrentPage(_ctx.integerValue("ListRootStacksResponse.Data.CurrentPage"));
@@ -43,17 +43,17 @@ public class ListRootStacksResponseUnmarshaller {
 			RootStack rootStack = new RootStack();
 
 			Root root = new Root();
-			root.setId(_ctx.longValue("ListRootStacksResponse.Data.Result["+ i +"].Root.Id"));
 			root.setName(_ctx.stringValue("ListRootStacksResponse.Data.Result["+ i +"].Root.Name"));
+			root.setId(_ctx.longValue("ListRootStacksResponse.Data.Result["+ i +"].Root.Id"));
 			rootStack.setRoot(root);
 
 			List<ChildStack> children = new ArrayList<ChildStack>();
 			for (int j = 0; j < _ctx.lengthValue("ListRootStacksResponse.Data.Result["+ i +"].Children.Length"); j++) {
 				ChildStack childStack = new ChildStack();
-				childStack.setId(_ctx.longValue("ListRootStacksResponse.Data.Result["+ i +"].Children["+ j +"].Id"));
-				childStack.setName(_ctx.stringValue("ListRootStacksResponse.Data.Result["+ i +"].Children["+ j +"].Name"));
 				childStack.setIcon(_ctx.stringValue("ListRootStacksResponse.Data.Result["+ i +"].Children["+ j +"].Icon"));
 				childStack.setComment(_ctx.stringValue("ListRootStacksResponse.Data.Result["+ i +"].Children["+ j +"].Comment"));
+				childStack.setName(_ctx.stringValue("ListRootStacksResponse.Data.Result["+ i +"].Children["+ j +"].Name"));
+				childStack.setId(_ctx.longValue("ListRootStacksResponse.Data.Result["+ i +"].Children["+ j +"].Id"));
 
 				children.add(childStack);
 			}

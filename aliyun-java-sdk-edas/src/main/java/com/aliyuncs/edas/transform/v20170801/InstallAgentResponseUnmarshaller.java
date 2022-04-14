@@ -33,9 +33,9 @@ public class InstallAgentResponseUnmarshaller {
 		List<ExecutionResult> executionResultList = new ArrayList<ExecutionResult>();
 		for (int i = 0; i < _ctx.lengthValue("InstallAgentResponse.ExecutionResultList.Length"); i++) {
 			ExecutionResult executionResult = new ExecutionResult();
-			executionResult.setInstanceId(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].InstanceId"));
 			executionResult.setStatus(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].Status"));
 			executionResult.setFinishedTime(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].FinishedTime"));
+			executionResult.setInstanceId(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].InstanceId"));
 			executionResult.setInvokeRecordStatus(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].InvokeRecordStatus"));
 			executionResult.setSuccess(_ctx.booleanValue("InstallAgentResponse.ExecutionResultList["+ i +"].Success"));
 

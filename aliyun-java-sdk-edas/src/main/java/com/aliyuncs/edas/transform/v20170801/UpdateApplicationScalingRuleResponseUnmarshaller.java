@@ -35,25 +35,25 @@ public class UpdateApplicationScalingRuleResponseUnmarshaller {
 		updateApplicationScalingRuleResponse.setMessage(_ctx.stringValue("UpdateApplicationScalingRuleResponse.Message"));
 
 		AppScalingRule appScalingRule = new AppScalingRule();
-		appScalingRule.setAppId(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.AppId"));
-		appScalingRule.setScaleRuleName(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.ScaleRuleName"));
-		appScalingRule.setScaleRuleType(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.ScaleRuleType"));
-		appScalingRule.setScaleRuleEnabled(_ctx.booleanValue("UpdateApplicationScalingRuleResponse.AppScalingRule.ScaleRuleEnabled"));
-		appScalingRule.setMinReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.MinReplicas"));
-		appScalingRule.setMaxReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.MaxReplicas"));
-		appScalingRule.setCreateTime(_ctx.longValue("UpdateApplicationScalingRuleResponse.AppScalingRule.CreateTime"));
 		appScalingRule.setUpdateTime(_ctx.longValue("UpdateApplicationScalingRuleResponse.AppScalingRule.UpdateTime"));
+		appScalingRule.setCreateTime(_ctx.longValue("UpdateApplicationScalingRuleResponse.AppScalingRule.CreateTime"));
+		appScalingRule.setAppId(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.AppId"));
 		appScalingRule.setLastDisableTime(_ctx.longValue("UpdateApplicationScalingRuleResponse.AppScalingRule.LastDisableTime"));
+		appScalingRule.setMaxReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.MaxReplicas"));
+		appScalingRule.setScaleRuleEnabled(_ctx.booleanValue("UpdateApplicationScalingRuleResponse.AppScalingRule.ScaleRuleEnabled"));
+		appScalingRule.setScaleRuleType(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.ScaleRuleType"));
+		appScalingRule.setMinReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.MinReplicas"));
+		appScalingRule.setScaleRuleName(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.ScaleRuleName"));
 
 		Metric metric = new Metric();
-		metric.setMaxReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Metric.MaxReplicas"));
 		metric.setMinReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Metric.MinReplicas"));
+		metric.setMaxReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Metric.MaxReplicas"));
 
 		List<Metric1> metrics = new ArrayList<Metric1>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Metric.Metrics.Length"); i++) {
 			Metric1 metric1 = new Metric1();
-			metric1.setMetricType(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Metric.Metrics["+ i +"].MetricType"));
 			metric1.setMetricTargetAverageUtilization(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Metric.Metrics["+ i +"].MetricTargetAverageUtilization"));
+			metric1.setMetricType(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Metric.Metrics["+ i +"].MetricType"));
 
 			metrics.add(metric1);
 		}
@@ -61,15 +61,15 @@ public class UpdateApplicationScalingRuleResponseUnmarshaller {
 		appScalingRule.setMetric(metric);
 
 		Trigger trigger = new Trigger();
-		trigger.setMaxReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Trigger.MaxReplicas"));
 		trigger.setMinReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Trigger.MinReplicas"));
+		trigger.setMaxReplicas(_ctx.integerValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Trigger.MaxReplicas"));
 
 		List<Trigger2> triggers = new ArrayList<Trigger2>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Trigger.Triggers.Length"); i++) {
 			Trigger2 trigger2 = new Trigger2();
 			trigger2.setType(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Trigger.Triggers["+ i +"].Type"));
-			trigger2.setName(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Trigger.Triggers["+ i +"].Name"));
 			trigger2.setMetaData(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Trigger.Triggers["+ i +"].MetaData"));
+			trigger2.setName(_ctx.stringValue("UpdateApplicationScalingRuleResponse.AppScalingRule.Trigger.Triggers["+ i +"].Name"));
 
 			triggers.add(trigger2);
 		}

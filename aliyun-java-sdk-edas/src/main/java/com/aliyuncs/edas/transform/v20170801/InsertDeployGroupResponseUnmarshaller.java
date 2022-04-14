@@ -28,15 +28,15 @@ public class InsertDeployGroupResponseUnmarshaller {
 		insertDeployGroupResponse.setMessage(_ctx.stringValue("InsertDeployGroupResponse.Message"));
 
 		DeployGroupEntity deployGroupEntity = new DeployGroupEntity();
-		deployGroupEntity.setId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.Id"));
-		deployGroupEntity.setGroupName(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.GroupName"));
-		deployGroupEntity.setGroupType(_ctx.integerValue("InsertDeployGroupResponse.DeployGroupEntity.GroupType"));
-		deployGroupEntity.setAppId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.AppId"));
-		deployGroupEntity.setClusterId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.ClusterId"));
-		deployGroupEntity.setPackageVersionId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.PackageVersionId"));
-		deployGroupEntity.setAppVersionId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.AppVersionId"));
-		deployGroupEntity.setCreateTime(_ctx.longValue("InsertDeployGroupResponse.DeployGroupEntity.CreateTime"));
 		deployGroupEntity.setUpdateTime(_ctx.longValue("InsertDeployGroupResponse.DeployGroupEntity.UpdateTime"));
+		deployGroupEntity.setGroupName(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.GroupName"));
+		deployGroupEntity.setCreateTime(_ctx.longValue("InsertDeployGroupResponse.DeployGroupEntity.CreateTime"));
+		deployGroupEntity.setAppVersionId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.AppVersionId"));
+		deployGroupEntity.setAppId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.AppId"));
+		deployGroupEntity.setPackageVersionId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.PackageVersionId"));
+		deployGroupEntity.setGroupType(_ctx.integerValue("InsertDeployGroupResponse.DeployGroupEntity.GroupType"));
+		deployGroupEntity.setId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.Id"));
+		deployGroupEntity.setClusterId(_ctx.stringValue("InsertDeployGroupResponse.DeployGroupEntity.ClusterId"));
 		insertDeployGroupResponse.setDeployGroupEntity(deployGroupEntity);
 	 
 	 	return insertDeployGroupResponse;

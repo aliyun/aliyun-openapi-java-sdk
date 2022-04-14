@@ -33,14 +33,14 @@ public class DescribeAppInstanceListResponseUnmarshaller {
 		List<Instance> instanceList = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAppInstanceListResponse.InstanceList.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setAppId(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].AppId"));
+			instance.setNodeLabels(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].NodeLabels"));
 			instance.setGroupId(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].GroupId"));
-			instance.setPodRaw(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].PodRaw"));
 			instance.setGroupName(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].GroupName"));
 			instance.setCanary(_ctx.booleanValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].Canary"));
-			instance.setVersion(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].Version"));
 			instance.setNodeName(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].NodeName"));
-			instance.setNodeLabels(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].NodeLabels"));
+			instance.setPodRaw(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].PodRaw"));
+			instance.setVersion(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].Version"));
+			instance.setAppId(_ctx.stringValue("DescribeAppInstanceListResponse.InstanceList["+ i +"].AppId"));
 
 			instanceList.add(instance);
 		}

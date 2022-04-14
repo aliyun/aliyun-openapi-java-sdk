@@ -89,21 +89,13 @@ public class ListRoleResponse extends AcsResponse {
 
 		public static class Action {
 
-			private String groupId;
-
 			private String code;
-
-			private String name;
 
 			private String description;
 
-			public String getGroupId() {
-				return this.groupId;
-			}
+			private String groupId;
 
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
-			}
+			private String name;
 
 			public String getCode() {
 				return this.code;
@@ -113,14 +105,6 @@ public class ListRoleResponse extends AcsResponse {
 				this.code = code;
 			}
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
 			public String getDescription() {
 				return this.description;
 			}
@@ -128,36 +112,13 @@ public class ListRoleResponse extends AcsResponse {
 			public void setDescription(String description) {
 				this.description = description;
 			}
-		}
 
-		public static class Role {
-
-			private Integer id;
-
-			private String adminUserId;
-
-			private String name;
-
-			private Long createTime;
-
-			private Long updateTime;
-
-			private Boolean isDefault;
-
-			public Integer getId() {
-				return this.id;
+			public String getGroupId() {
+				return this.groupId;
 			}
 
-			public void setId(Integer id) {
-				this.id = id;
-			}
-
-			public String getAdminUserId() {
-				return this.adminUserId;
-			}
-
-			public void setAdminUserId(String adminUserId) {
-				this.adminUserId = adminUserId;
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 
 			public String getName() {
@@ -167,14 +128,21 @@ public class ListRoleResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
+		}
 
-			public Long getCreateTime() {
-				return this.createTime;
-			}
+		public static class Role {
 
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
+			private Long updateTime;
+
+			private Boolean isDefault;
+
+			private String adminUserId;
+
+			private Long createTime;
+
+			private String name;
+
+			private Integer id;
 
 			public Long getUpdateTime() {
 				return this.updateTime;
@@ -190,6 +158,38 @@ public class ListRoleResponse extends AcsResponse {
 
 			public void setIsDefault(Boolean isDefault) {
 				this.isDefault = isDefault;
+			}
+
+			public String getAdminUserId() {
+				return this.adminUserId;
+			}
+
+			public void setAdminUserId(String adminUserId) {
+				this.adminUserId = adminUserId;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
 			}
 		}
 	}

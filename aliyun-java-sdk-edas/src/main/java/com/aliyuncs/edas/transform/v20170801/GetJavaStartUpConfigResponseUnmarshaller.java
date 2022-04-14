@@ -28,8 +28,8 @@ public class GetJavaStartUpConfigResponseUnmarshaller {
 		getJavaStartUpConfigResponse.setMessage(_ctx.stringValue("GetJavaStartUpConfigResponse.Message"));
 
 		JavaStartUpConfig javaStartUpConfig = new JavaStartUpConfig();
-		javaStartUpConfig.setOriginalConfigs(_ctx.stringValue("GetJavaStartUpConfigResponse.JavaStartUpConfig.OriginalConfigs"));
 		javaStartUpConfig.setStartUpArgs(_ctx.stringValue("GetJavaStartUpConfigResponse.JavaStartUpConfig.StartUpArgs"));
+		javaStartUpConfig.setOriginalConfigs(_ctx.stringValue("GetJavaStartUpConfigResponse.JavaStartUpConfig.OriginalConfigs"));
 		getJavaStartUpConfigResponse.setJavaStartUpConfig(javaStartUpConfig);
 	 
 	 	return getJavaStartUpConfigResponse;

@@ -29,11 +29,11 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
+	private String httpCode;
 
 	private String requestId;
 
-	private String httpCode;
+	private Boolean success;
 
 	private Data data;
 
@@ -53,12 +53,12 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public String getRequestId() {
@@ -69,12 +69,12 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -89,9 +89,9 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 
 		private Integer pageNumber;
 
-		private Integer totalSize;
-
 		private Integer pageSize;
+
+		private Integer totalSize;
 
 		private List<Method> result;
 
@@ -103,20 +103,20 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
-		public Integer getTotalSize() {
-			return this.totalSize;
-		}
-
-		public void setTotalSize(Integer totalSize) {
-			this.totalSize = totalSize;
-		}
-
 		public Integer getPageSize() {
 			return this.pageSize;
 		}
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public Integer getTotalSize() {
+			return this.totalSize;
+		}
+
+		public void setTotalSize(Integer totalSize) {
+			this.totalSize = totalSize;
 		}
 
 		public List<Method> getResult() {
@@ -129,52 +129,36 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 
 		public static class Method {
 
-			private String name;
-
-			private String returnType;
-
-			private String methodController;
+			private String parameterDetails;
 
 			private String nameDetail;
 
-			private String returnDetails;
-
-			private String parameterTypes;
-
 			private String parameterNames;
-
-			private String parameterDetails;
-
-			private String requestMethods;
-
-			private String paths;
 
 			private String parameterDefinitions;
 
+			private String paths;
+
+			private String parameterTypes;
+
+			private String requestMethods;
+
+			private String returnDetails;
+
+			private String name;
+
+			private String methodController;
+
+			private String returnType;
+
 			private ReturnDefinition returnDefinition;
 
-			public String getName() {
-				return this.name;
+			public String getParameterDetails() {
+				return this.parameterDetails;
 			}
 
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getReturnType() {
-				return this.returnType;
-			}
-
-			public void setReturnType(String returnType) {
-				this.returnType = returnType;
-			}
-
-			public String getMethodController() {
-				return this.methodController;
-			}
-
-			public void setMethodController(String methodController) {
-				this.methodController = methodController;
+			public void setParameterDetails(String parameterDetails) {
+				this.parameterDetails = parameterDetails;
 			}
 
 			public String getNameDetail() {
@@ -185,22 +169,6 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 				this.nameDetail = nameDetail;
 			}
 
-			public String getReturnDetails() {
-				return this.returnDetails;
-			}
-
-			public void setReturnDetails(String returnDetails) {
-				this.returnDetails = returnDetails;
-			}
-
-			public String getParameterTypes() {
-				return this.parameterTypes;
-			}
-
-			public void setParameterTypes(String parameterTypes) {
-				this.parameterTypes = parameterTypes;
-			}
-
 			public String getParameterNames() {
 				return this.parameterNames;
 			}
@@ -209,20 +177,12 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 				this.parameterNames = parameterNames;
 			}
 
-			public String getParameterDetails() {
-				return this.parameterDetails;
+			public String getParameterDefinitions() {
+				return this.parameterDefinitions;
 			}
 
-			public void setParameterDetails(String parameterDetails) {
-				this.parameterDetails = parameterDetails;
-			}
-
-			public String getRequestMethods() {
-				return this.requestMethods;
-			}
-
-			public void setRequestMethods(String requestMethods) {
-				this.requestMethods = requestMethods;
+			public void setParameterDefinitions(String parameterDefinitions) {
+				this.parameterDefinitions = parameterDefinitions;
 			}
 
 			public String getPaths() {
@@ -233,12 +193,52 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 				this.paths = paths;
 			}
 
-			public String getParameterDefinitions() {
-				return this.parameterDefinitions;
+			public String getParameterTypes() {
+				return this.parameterTypes;
 			}
 
-			public void setParameterDefinitions(String parameterDefinitions) {
-				this.parameterDefinitions = parameterDefinitions;
+			public void setParameterTypes(String parameterTypes) {
+				this.parameterTypes = parameterTypes;
+			}
+
+			public String getRequestMethods() {
+				return this.requestMethods;
+			}
+
+			public void setRequestMethods(String requestMethods) {
+				this.requestMethods = requestMethods;
+			}
+
+			public String getReturnDetails() {
+				return this.returnDetails;
+			}
+
+			public void setReturnDetails(String returnDetails) {
+				this.returnDetails = returnDetails;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getMethodController() {
+				return this.methodController;
+			}
+
+			public void setMethodController(String methodController) {
+				this.methodController = methodController;
+			}
+
+			public String getReturnType() {
+				return this.returnType;
+			}
+
+			public void setReturnType(String returnType) {
+				this.returnType = returnType;
 			}
 
 			public ReturnDefinition getReturnDefinition() {
@@ -251,17 +251,9 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 
 			public static class ReturnDefinition {
 
-				private String id;
-
 				private String type;
 
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
+				private String id;
 
 				public String getType() {
 					return this.type;
@@ -269,6 +261,14 @@ public class GetServiceMethodPageResponse extends AcsResponse {
 
 				public void setType(String type) {
 					this.type = type;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
 				}
 			}
 		}

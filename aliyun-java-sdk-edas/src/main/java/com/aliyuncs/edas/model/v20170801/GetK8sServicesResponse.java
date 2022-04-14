@@ -67,21 +67,13 @@ public class GetK8sServicesResponse extends AcsResponse {
 
 	public static class ServicesItem {
 
-		private String name;
-
 		private String type;
+
+		private String name;
 
 		private String clusterIP;
 
 		private List<ServicePortsItem> servicePorts;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getType() {
 			return this.type;
@@ -89,6 +81,14 @@ public class GetK8sServicesResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getClusterIP() {
@@ -109,29 +109,13 @@ public class GetK8sServicesResponse extends AcsResponse {
 
 		public static class ServicePortsItem {
 
-			private String protocol;
-
-			private Integer port;
-
 			private String targetPort;
 
 			private Integer nodePort;
 
-			public String getBizProtocol() {
-				return this.protocol;
-			}
+			private Integer port;
 
-			public void setBizProtocol(String protocol) {
-				this.protocol = protocol;
-			}
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
-			}
+			private String protocol;
 
 			public String getTargetPort() {
 				return this.targetPort;
@@ -147,6 +131,22 @@ public class GetK8sServicesResponse extends AcsResponse {
 
 			public void setNodePort(Integer nodePort) {
 				this.nodePort = nodePort;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
 			}
 		}
 	}

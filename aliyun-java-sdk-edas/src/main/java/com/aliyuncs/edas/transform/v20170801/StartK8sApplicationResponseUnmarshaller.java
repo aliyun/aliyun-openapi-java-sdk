@@ -23,9 +23,9 @@ public class StartK8sApplicationResponseUnmarshaller {
 	public static StartK8sApplicationResponse unmarshall(StartK8sApplicationResponse startK8sApplicationResponse, UnmarshallerContext _ctx) {
 		
 		startK8sApplicationResponse.setRequestId(_ctx.stringValue("StartK8sApplicationResponse.RequestId"));
+		startK8sApplicationResponse.setChangeOrderId(_ctx.stringValue("StartK8sApplicationResponse.ChangeOrderId"));
 		startK8sApplicationResponse.setCode(_ctx.integerValue("StartK8sApplicationResponse.Code"));
 		startK8sApplicationResponse.setMessage(_ctx.stringValue("StartK8sApplicationResponse.Message"));
-		startK8sApplicationResponse.setChangeOrderId(_ctx.stringValue("StartK8sApplicationResponse.ChangeOrderId"));
 	 
 	 	return startK8sApplicationResponse;
 	}

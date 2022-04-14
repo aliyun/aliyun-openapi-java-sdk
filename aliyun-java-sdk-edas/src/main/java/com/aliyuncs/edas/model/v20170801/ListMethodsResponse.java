@@ -67,33 +67,17 @@ public class ListMethodsResponse extends AcsResponse {
 
 	public static class ServiceMethod {
 
-		private String appName;
-
-		private String serviceName;
-
 		private String methodName;
+
+		private String appName;
 
 		private String output;
 
-		private List<String> inputParams;
+		private String serviceName;
 
 		private List<String> paramTypes;
 
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
-
-		public String getServiceName() {
-			return this.serviceName;
-		}
-
-		public void setServiceName(String serviceName) {
-			this.serviceName = serviceName;
-		}
+		private List<String> inputParams;
 
 		public String getMethodName() {
 			return this.methodName;
@@ -101,6 +85,14 @@ public class ListMethodsResponse extends AcsResponse {
 
 		public void setMethodName(String methodName) {
 			this.methodName = methodName;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
 		public String getOutput() {
@@ -111,12 +103,12 @@ public class ListMethodsResponse extends AcsResponse {
 			this.output = output;
 		}
 
-		public List<String> getInputParams() {
-			return this.inputParams;
+		public String getServiceName() {
+			return this.serviceName;
 		}
 
-		public void setInputParams(List<String> inputParams) {
-			this.inputParams = inputParams;
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 
 		public List<String> getParamTypes() {
@@ -125,6 +117,14 @@ public class ListMethodsResponse extends AcsResponse {
 
 		public void setParamTypes(List<String> paramTypes) {
 			this.paramTypes = paramTypes;
+		}
+
+		public List<String> getInputParams() {
+			return this.inputParams;
+		}
+
+		public void setInputParams(List<String> inputParams) {
+			this.inputParams = inputParams;
 		}
 	}
 

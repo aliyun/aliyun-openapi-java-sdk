@@ -67,20 +67,20 @@ public class GetServiceConsumersPageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer size;
+		private Integer totalPages;
 
 		private Integer totalElements;
 
-		private Integer totalPages;
+		private Integer size;
 
 		private List<Provider> content;
 
-		public Integer getSize() {
-			return this.size;
+		public Integer getTotalPages() {
+			return this.totalPages;
 		}
 
-		public void setSize(Integer size) {
-			this.size = size;
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
 		}
 
 		public Integer getTotalElements() {
@@ -91,12 +91,12 @@ public class GetServiceConsumersPageResponse extends AcsResponse {
 			this.totalElements = totalElements;
 		}
 
-		public Integer getTotalPages() {
-			return this.totalPages;
+		public Integer getSize() {
+			return this.size;
 		}
 
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
 		public List<Provider> getContent() {

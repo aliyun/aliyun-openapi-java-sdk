@@ -33,8 +33,8 @@ public class QueryMigrateRegionListResponseUnmarshaller {
 		List<RegionEntity> regionEntityList = new ArrayList<RegionEntity>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMigrateRegionListResponse.RegionEntityList.Length"); i++) {
 			RegionEntity regionEntity = new RegionEntity();
-			regionEntity.setRegionNo(_ctx.stringValue("QueryMigrateRegionListResponse.RegionEntityList["+ i +"].RegionNo"));
 			regionEntity.setRegionName(_ctx.stringValue("QueryMigrateRegionListResponse.RegionEntityList["+ i +"].RegionName"));
+			regionEntity.setRegionNo(_ctx.stringValue("QueryMigrateRegionListResponse.RegionEntityList["+ i +"].RegionNo"));
 
 			regionEntityList.add(regionEntity);
 		}

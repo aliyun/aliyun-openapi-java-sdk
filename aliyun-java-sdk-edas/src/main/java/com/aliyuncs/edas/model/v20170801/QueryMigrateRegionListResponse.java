@@ -67,17 +67,9 @@ public class QueryMigrateRegionListResponse extends AcsResponse {
 
 	public static class RegionEntity {
 
-		private String regionNo;
-
 		private String regionName;
 
-		public String getRegionNo() {
-			return this.regionNo;
-		}
-
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
-		}
+		private String regionNo;
 
 		public String getRegionName() {
 			return this.regionName;
@@ -85,6 +77,14 @@ public class QueryMigrateRegionListResponse extends AcsResponse {
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
+		}
+
+		public String getRegionNo() {
+			return this.regionNo;
+		}
+
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
 		}
 	}
 

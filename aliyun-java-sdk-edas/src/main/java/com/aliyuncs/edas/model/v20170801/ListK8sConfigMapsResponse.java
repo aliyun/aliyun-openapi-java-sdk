@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListK8sConfigMapsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
-	private List<ResultItem> result;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Result result;
 
 	public Integer getCode() {
 		return this.code;
@@ -57,15 +49,23 @@ public class ListK8sConfigMapsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<ResultItem> getResult() {
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Result getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ResultItem> result) {
+	public void setResult(Result result) {
 		this.result = result;
 	}
 
-	public static class ResultItem {
+	public static class Result {
 
 		private Integer total;
 
@@ -89,42 +89,26 @@ public class ListK8sConfigMapsResponse extends AcsResponse {
 
 		public static class ConfigMapsItem {
 
-			private String name;
-
-			private String namespace;
-
-			private String clusterId;
+			private String creationTime;
 
 			private String clusterName;
 
-			private String creationTime;
+			private String namespace;
+
+			private String name;
+
+			private String clusterId;
 
 			private List<DataItem> data;
 
 			private List<RelatedAppsItem> relatedApps;
 
-			public String getName() {
-				return this.name;
+			public String getCreationTime() {
+				return this.creationTime;
 			}
 
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getNamespace() {
-				return this.namespace;
-			}
-
-			public void setNamespace(String namespace) {
-				this.namespace = namespace;
-			}
-
-			public String getClusterId() {
-				return this.clusterId;
-			}
-
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
 			}
 
 			public String getClusterName() {
@@ -135,12 +119,28 @@ public class ListK8sConfigMapsResponse extends AcsResponse {
 				this.clusterName = clusterName;
 			}
 
-			public String getCreationTime() {
-				return this.creationTime;
+			public String getNamespace() {
+				return this.namespace;
 			}
 
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
 			}
 
 			public List<DataItem> getData() {

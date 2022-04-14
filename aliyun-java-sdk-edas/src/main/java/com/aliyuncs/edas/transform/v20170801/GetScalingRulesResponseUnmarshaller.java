@@ -33,35 +33,35 @@ public class GetScalingRulesResponseUnmarshaller {
 		getScalingRulesResponse.setUpdateTime(_ctx.longValue("GetScalingRulesResponse.UpdateTime"));
 
 		Data data = new Data();
-		data.setClusterType(_ctx.integerValue("GetScalingRulesResponse.Data.ClusterType"));
 		data.setOversoldFactor(_ctx.integerValue("GetScalingRulesResponse.Data.OversoldFactor"));
 		data.setVpcId(_ctx.stringValue("GetScalingRulesResponse.Data.VpcId"));
 		data.setUpdateTime(_ctx.longValue("GetScalingRulesResponse.Data.UpdateTime"));
+		data.setClusterType(_ctx.integerValue("GetScalingRulesResponse.Data.ClusterType"));
 
 		List<Rule> ruleList = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("GetScalingRulesResponse.Data.RuleList.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setAppId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].AppId"));
-			rule.setGroupId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].GroupId"));
-			rule.setEnable(_ctx.booleanValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Enable"));
+			rule.setVpcId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].VpcId"));
+			rule.setUpdateTime(_ctx.longValue("GetScalingRulesResponse.Data.RuleList["+ i +"].UpdateTime"));
+			rule.setCreateTime(_ctx.longValue("GetScalingRulesResponse.Data.RuleList["+ i +"].CreateTime"));
+			rule.setRt(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Rt"));
+			rule.setSpecId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].SpecId"));
+			rule.setMultiAzPolicy(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].MultiAzPolicy"));
+			rule.setResourceFrom(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].ResourceFrom"));
 			rule.setMode(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Mode"));
+			rule.setLoadNum(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].LoadNum"));
+			rule.setTemplateVersion(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].TemplateVersion"));
+			rule.setStep(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Step"));
 			rule.setCond(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Cond"));
 			rule.setCpu(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Cpu"));
-			rule.setRt(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Rt"));
-			rule.setResourceFrom(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].ResourceFrom"));
-			rule.setStep(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Step"));
+			rule.setGroupId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].GroupId"));
 			rule.setInstNum(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].InstNum"));
-			rule.setLoadNum(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].LoadNum"));
-			rule.setTemplateId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].TemplateId"));
-			rule.setTemplateVersion(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].TemplateVersion"));
-			rule.setVpcId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].VpcId"));
-			rule.setMetricType(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].MetricType"));
-			rule.setVSwitchIds(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].VSwitchIds"));
-			rule.setMultiAzPolicy(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].MultiAzPolicy"));
-			rule.setSpecId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].SpecId"));
+			rule.setAppId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].AppId"));
 			rule.setDuration(_ctx.integerValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Duration"));
-			rule.setCreateTime(_ctx.longValue("GetScalingRulesResponse.Data.RuleList["+ i +"].CreateTime"));
-			rule.setUpdateTime(_ctx.longValue("GetScalingRulesResponse.Data.RuleList["+ i +"].UpdateTime"));
+			rule.setVSwitchIds(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].VSwitchIds"));
+			rule.setMetricType(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].MetricType"));
+			rule.setTemplateId(_ctx.stringValue("GetScalingRulesResponse.Data.RuleList["+ i +"].TemplateId"));
+			rule.setEnable(_ctx.booleanValue("GetScalingRulesResponse.Data.RuleList["+ i +"].Enable"));
 
 			ruleList.add(rule);
 		}

@@ -25,9 +25,9 @@ public class AbortAndRollbackChangeOrderResponseUnmarshaller {
 		
 		abortAndRollbackChangeOrderResponse.setRequestId(_ctx.stringValue("AbortAndRollbackChangeOrderResponse.RequestId"));
 		abortAndRollbackChangeOrderResponse.setCode(_ctx.integerValue("AbortAndRollbackChangeOrderResponse.Code"));
-		abortAndRollbackChangeOrderResponse.setErrorCode(_ctx.stringValue("AbortAndRollbackChangeOrderResponse.ErrorCode"));
 		abortAndRollbackChangeOrderResponse.setMessage(_ctx.stringValue("AbortAndRollbackChangeOrderResponse.Message"));
 		abortAndRollbackChangeOrderResponse.setTraceId(_ctx.stringValue("AbortAndRollbackChangeOrderResponse.TraceId"));
+		abortAndRollbackChangeOrderResponse.setErrorCode(_ctx.stringValue("AbortAndRollbackChangeOrderResponse.ErrorCode"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("AbortAndRollbackChangeOrderResponse.Data.ChangeOrderId"));

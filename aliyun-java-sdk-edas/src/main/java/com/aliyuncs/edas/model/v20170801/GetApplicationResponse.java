@@ -76,92 +76,68 @@ public class GetApplicationResponse extends AcsResponse {
 
 	public static class Applcation {
 
-		private String appId;
-
-		private String name;
-
-		private String regionId;
-
-		private String description;
+		private String extSlbIp;
 
 		private String owner;
 
-		private Integer instanceCount;
-
-		private Integer runningInstanceCount;
-
-		private Integer port;
-
-		private String userId;
-
-		private String slbId;
-
-		private String slbIp;
-
 		private Integer slbPort;
-
-		private String extSlbId;
-
-		private String extSlbIp;
-
-		private String slbName;
-
-		private String extSlbName;
-
-		private String applicationType;
-
-		private Integer clusterType;
-
-		private String clusterId;
-
-		private Boolean dockerize;
-
-		private Integer cpu;
-
-		private Integer memory;
-
-		private String healthCheckUrl;
-
-		private Long buildPackageId;
-
-		private Long createTime;
 
 		private String nameSpace;
 
+		private String extSlbName;
+
+		private Long createTime;
+
+		private String userId;
+
+		private Integer port;
+
+		private Integer runningInstanceCount;
+
+		private String slbIp;
+
+		private Boolean dockerize;
+
+		private String description;
+
+		private Integer instanceCount;
+
+		private String appId;
+
 		private String slbInfo;
+
+		private Integer memory;
+
+		private String name;
+
+		private String clusterId;
+
+		private String slbId;
+
+		private String healthCheckUrl;
+
+		private String applicationType;
+
+		private String extSlbId;
+
+		private String regionId;
+
+		private Long buildPackageId;
 
 		private String email;
 
-		public String getAppId() {
-			return this.appId;
+		private Integer cpu;
+
+		private Integer clusterType;
+
+		private String slbName;
+
+		public String getExtSlbIp() {
+			return this.extSlbIp;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setExtSlbIp(String extSlbIp) {
+			this.extSlbIp = extSlbIp;
 		}
 
 		public String getOwner() {
@@ -172,54 +148,6 @@ public class GetApplicationResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public Integer getInstanceCount() {
-			return this.instanceCount;
-		}
-
-		public void setInstanceCount(Integer instanceCount) {
-			this.instanceCount = instanceCount;
-		}
-
-		public Integer getRunningInstanceCount() {
-			return this.runningInstanceCount;
-		}
-
-		public void setRunningInstanceCount(Integer runningInstanceCount) {
-			this.runningInstanceCount = runningInstanceCount;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getSlbId() {
-			return this.slbId;
-		}
-
-		public void setSlbId(String slbId) {
-			this.slbId = slbId;
-		}
-
-		public String getSlbIp() {
-			return this.slbIp;
-		}
-
-		public void setSlbIp(String slbIp) {
-			this.slbIp = slbIp;
-		}
-
 		public Integer getSlbPort() {
 			return this.slbPort;
 		}
@@ -228,28 +156,12 @@ public class GetApplicationResponse extends AcsResponse {
 			this.slbPort = slbPort;
 		}
 
-		public String getExtSlbId() {
-			return this.extSlbId;
+		public String getNameSpace() {
+			return this.nameSpace;
 		}
 
-		public void setExtSlbId(String extSlbId) {
-			this.extSlbId = extSlbId;
-		}
-
-		public String getExtSlbIp() {
-			return this.extSlbIp;
-		}
-
-		public void setExtSlbIp(String extSlbIp) {
-			this.extSlbIp = extSlbIp;
-		}
-
-		public String getSlbName() {
-			return this.slbName;
-		}
-
-		public void setSlbName(String slbName) {
-			this.slbName = slbName;
+		public void setNameSpace(String nameSpace) {
+			this.nameSpace = nameSpace;
 		}
 
 		public String getExtSlbName() {
@@ -260,12 +172,172 @@ public class GetApplicationResponse extends AcsResponse {
 			this.extSlbName = extSlbName;
 		}
 
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public Integer getRunningInstanceCount() {
+			return this.runningInstanceCount;
+		}
+
+		public void setRunningInstanceCount(Integer runningInstanceCount) {
+			this.runningInstanceCount = runningInstanceCount;
+		}
+
+		public String getSlbIp() {
+			return this.slbIp;
+		}
+
+		public void setSlbIp(String slbIp) {
+			this.slbIp = slbIp;
+		}
+
+		public Boolean getDockerize() {
+			return this.dockerize;
+		}
+
+		public void setDockerize(Boolean dockerize) {
+			this.dockerize = dockerize;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getInstanceCount() {
+			return this.instanceCount;
+		}
+
+		public void setInstanceCount(Integer instanceCount) {
+			this.instanceCount = instanceCount;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public String getSlbInfo() {
+			return this.slbInfo;
+		}
+
+		public void setSlbInfo(String slbInfo) {
+			this.slbInfo = slbInfo;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getSlbId() {
+			return this.slbId;
+		}
+
+		public void setSlbId(String slbId) {
+			this.slbId = slbId;
+		}
+
+		public String getHealthCheckUrl() {
+			return this.healthCheckUrl;
+		}
+
+		public void setHealthCheckUrl(String healthCheckUrl) {
+			this.healthCheckUrl = healthCheckUrl;
+		}
+
 		public String getApplicationType() {
 			return this.applicationType;
 		}
 
 		public void setApplicationType(String applicationType) {
 			this.applicationType = applicationType;
+		}
+
+		public String getExtSlbId() {
+			return this.extSlbId;
+		}
+
+		public void setExtSlbId(String extSlbId) {
+			this.extSlbId = extSlbId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Long getBuildPackageId() {
+			return this.buildPackageId;
+		}
+
+		public void setBuildPackageId(Long buildPackageId) {
+			this.buildPackageId = buildPackageId;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
 		}
 
 		public Integer getClusterType() {
@@ -276,175 +348,79 @@ public class GetApplicationResponse extends AcsResponse {
 			this.clusterType = clusterType;
 		}
 
-		public String getClusterId() {
-			return this.clusterId;
+		public String getSlbName() {
+			return this.slbName;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public Boolean getDockerize() {
-			return this.dockerize;
-		}
-
-		public void setDockerize(Boolean dockerize) {
-			this.dockerize = dockerize;
-		}
-
-		public Integer getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
-		public String getHealthCheckUrl() {
-			return this.healthCheckUrl;
-		}
-
-		public void setHealthCheckUrl(String healthCheckUrl) {
-			this.healthCheckUrl = healthCheckUrl;
-		}
-
-		public Long getBuildPackageId() {
-			return this.buildPackageId;
-		}
-
-		public void setBuildPackageId(Long buildPackageId) {
-			this.buildPackageId = buildPackageId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getNameSpace() {
-			return this.nameSpace;
-		}
-
-		public void setNameSpace(String nameSpace) {
-			this.nameSpace = nameSpace;
-		}
-
-		public String getSlbInfo() {
-			return this.slbInfo;
-		}
-
-		public void setSlbInfo(String slbInfo) {
-			this.slbInfo = slbInfo;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
+		public void setSlbName(String slbName) {
+			this.slbName = slbName;
 		}
 	}
 
 	public static class Application {
 
-		private String appId;
-
-		private String name;
-
-		private String regionId;
-
-		private String description;
+		private String extSlbIp;
 
 		private String owner;
 
-		private Integer instanceCount;
-
-		private Integer runningInstanceCount;
-
-		private Integer port;
-
-		private String userId;
-
-		private String slbId;
-
-		private String slbIp;
-
 		private Integer slbPort;
-
-		private String extSlbId;
-
-		private String extSlbIp;
-
-		private String slbName;
-
-		private String extSlbName;
-
-		private String applicationType;
-
-		private String clusterType;
-
-		private String clusterId;
-
-		private Boolean dockerize;
-
-		private Integer cpu;
-
-		private Integer memory;
-
-		private String healthCheckUrl;
-
-		private Long buildPackageId;
-
-		private Long createTime;
 
 		private String nameSpace;
 
+		private String extSlbName;
+
+		private Long createTime;
+
+		private String userId;
+
+		private Integer port;
+
+		private Integer runningInstanceCount;
+
+		private String slbIp;
+
+		private Boolean dockerize;
+
+		private String description;
+
+		private Integer instanceCount;
+
+		private String appId;
+
 		private String slbInfo;
+
+		private Integer memory;
+
+		private String name;
+
+		private String clusterId;
+
+		private String slbId;
+
+		private String healthCheckUrl;
+
+		private String applicationType;
+
+		private String extSlbId;
+
+		private String regionId;
+
+		private Long buildPackageId;
 
 		private String email;
 
-		public String getAppId() {
-			return this.appId;
+		private Integer cpu;
+
+		private String clusterType;
+
+		private String slbName;
+
+		public String getExtSlbIp() {
+			return this.extSlbIp;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setExtSlbIp(String extSlbIp) {
+			this.extSlbIp = extSlbIp;
 		}
 
 		public String getOwner() {
@@ -455,164 +431,12 @@ public class GetApplicationResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public Integer getInstanceCount() {
-			return this.instanceCount;
-		}
-
-		public void setInstanceCount(Integer instanceCount) {
-			this.instanceCount = instanceCount;
-		}
-
-		public Integer getRunningInstanceCount() {
-			return this.runningInstanceCount;
-		}
-
-		public void setRunningInstanceCount(Integer runningInstanceCount) {
-			this.runningInstanceCount = runningInstanceCount;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getSlbId() {
-			return this.slbId;
-		}
-
-		public void setSlbId(String slbId) {
-			this.slbId = slbId;
-		}
-
-		public String getSlbIp() {
-			return this.slbIp;
-		}
-
-		public void setSlbIp(String slbIp) {
-			this.slbIp = slbIp;
-		}
-
 		public Integer getSlbPort() {
 			return this.slbPort;
 		}
 
 		public void setSlbPort(Integer slbPort) {
 			this.slbPort = slbPort;
-		}
-
-		public String getExtSlbId() {
-			return this.extSlbId;
-		}
-
-		public void setExtSlbId(String extSlbId) {
-			this.extSlbId = extSlbId;
-		}
-
-		public String getExtSlbIp() {
-			return this.extSlbIp;
-		}
-
-		public void setExtSlbIp(String extSlbIp) {
-			this.extSlbIp = extSlbIp;
-		}
-
-		public String getSlbName() {
-			return this.slbName;
-		}
-
-		public void setSlbName(String slbName) {
-			this.slbName = slbName;
-		}
-
-		public String getExtSlbName() {
-			return this.extSlbName;
-		}
-
-		public void setExtSlbName(String extSlbName) {
-			this.extSlbName = extSlbName;
-		}
-
-		public String getApplicationType() {
-			return this.applicationType;
-		}
-
-		public void setApplicationType(String applicationType) {
-			this.applicationType = applicationType;
-		}
-
-		public String getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public Boolean getDockerize() {
-			return this.dockerize;
-		}
-
-		public void setDockerize(Boolean dockerize) {
-			this.dockerize = dockerize;
-		}
-
-		public Integer getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
-		public String getHealthCheckUrl() {
-			return this.healthCheckUrl;
-		}
-
-		public void setHealthCheckUrl(String healthCheckUrl) {
-			this.healthCheckUrl = healthCheckUrl;
-		}
-
-		public Long getBuildPackageId() {
-			return this.buildPackageId;
-		}
-
-		public void setBuildPackageId(Long buildPackageId) {
-			this.buildPackageId = buildPackageId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getNameSpace() {
@@ -623,6 +447,86 @@ public class GetApplicationResponse extends AcsResponse {
 			this.nameSpace = nameSpace;
 		}
 
+		public String getExtSlbName() {
+			return this.extSlbName;
+		}
+
+		public void setExtSlbName(String extSlbName) {
+			this.extSlbName = extSlbName;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public Integer getRunningInstanceCount() {
+			return this.runningInstanceCount;
+		}
+
+		public void setRunningInstanceCount(Integer runningInstanceCount) {
+			this.runningInstanceCount = runningInstanceCount;
+		}
+
+		public String getSlbIp() {
+			return this.slbIp;
+		}
+
+		public void setSlbIp(String slbIp) {
+			this.slbIp = slbIp;
+		}
+
+		public Boolean getDockerize() {
+			return this.dockerize;
+		}
+
+		public void setDockerize(Boolean dockerize) {
+			this.dockerize = dockerize;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getInstanceCount() {
+			return this.instanceCount;
+		}
+
+		public void setInstanceCount(Integer instanceCount) {
+			this.instanceCount = instanceCount;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
 		public String getSlbInfo() {
 			return this.slbInfo;
 		}
@@ -631,12 +535,108 @@ public class GetApplicationResponse extends AcsResponse {
 			this.slbInfo = slbInfo;
 		}
 
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getSlbId() {
+			return this.slbId;
+		}
+
+		public void setSlbId(String slbId) {
+			this.slbId = slbId;
+		}
+
+		public String getHealthCheckUrl() {
+			return this.healthCheckUrl;
+		}
+
+		public void setHealthCheckUrl(String healthCheckUrl) {
+			this.healthCheckUrl = healthCheckUrl;
+		}
+
+		public String getApplicationType() {
+			return this.applicationType;
+		}
+
+		public void setApplicationType(String applicationType) {
+			this.applicationType = applicationType;
+		}
+
+		public String getExtSlbId() {
+			return this.extSlbId;
+		}
+
+		public void setExtSlbId(String extSlbId) {
+			this.extSlbId = extSlbId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Long getBuildPackageId() {
+			return this.buildPackageId;
+		}
+
+		public void setBuildPackageId(Long buildPackageId) {
+			this.buildPackageId = buildPackageId;
+		}
+
 		public String getEmail() {
 			return this.email;
 		}
 
 		public void setEmail(String email) {
 			this.email = email;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
+		}
+
+		public String getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
+		}
+
+		public String getSlbName() {
+			return this.slbName;
+		}
+
+		public void setSlbName(String slbName) {
+			this.slbName = slbName;
 		}
 	}
 

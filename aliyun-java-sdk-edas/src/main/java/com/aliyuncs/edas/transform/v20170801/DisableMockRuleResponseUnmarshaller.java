@@ -29,19 +29,19 @@ public class DisableMockRuleResponseUnmarshaller {
 		disableMockRuleResponse.setSuccess(_ctx.booleanValue("DisableMockRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAccountId(_ctx.stringValue("DisableMockRuleResponse.Data.AccountId"));
-		data.setName(_ctx.stringValue("DisableMockRuleResponse.Data.Name"));
-		data.setConsumerAppId(_ctx.stringValue("DisableMockRuleResponse.Data.ConsumerAppId"));
-		data.setConsumerAppName(_ctx.stringValue("DisableMockRuleResponse.Data.ConsumerAppName"));
-		data.setEnable(_ctx.booleanValue("DisableMockRuleResponse.Data.Enable"));
-		data.setExtraJson(_ctx.stringValue("DisableMockRuleResponse.Data.ExtraJson"));
-		data.setId(_ctx.longValue("DisableMockRuleResponse.Data.Id"));
 		data.setNamespaceId(_ctx.stringValue("DisableMockRuleResponse.Data.NamespaceId"));
-		data.setProviderAppId(_ctx.stringValue("DisableMockRuleResponse.Data.ProviderAppId"));
-		data.setProviderAppName(_ctx.stringValue("DisableMockRuleResponse.Data.ProviderAppName"));
-		data.setRegion(_ctx.stringValue("DisableMockRuleResponse.Data.Region"));
 		data.setScMockItemJson(_ctx.stringValue("DisableMockRuleResponse.Data.ScMockItemJson"));
+		data.setConsumerAppName(_ctx.stringValue("DisableMockRuleResponse.Data.ConsumerAppName"));
+		data.setAccountId(_ctx.stringValue("DisableMockRuleResponse.Data.AccountId"));
+		data.setConsumerAppId(_ctx.stringValue("DisableMockRuleResponse.Data.ConsumerAppId"));
+		data.setExtraJson(_ctx.stringValue("DisableMockRuleResponse.Data.ExtraJson"));
 		data.setSource(_ctx.stringValue("DisableMockRuleResponse.Data.Source"));
+		data.setRegion(_ctx.stringValue("DisableMockRuleResponse.Data.Region"));
+		data.setProviderAppId(_ctx.stringValue("DisableMockRuleResponse.Data.ProviderAppId"));
+		data.setName(_ctx.stringValue("DisableMockRuleResponse.Data.Name"));
+		data.setProviderAppName(_ctx.stringValue("DisableMockRuleResponse.Data.ProviderAppName"));
+		data.setId(_ctx.longValue("DisableMockRuleResponse.Data.Id"));
+		data.setEnable(_ctx.booleanValue("DisableMockRuleResponse.Data.Enable"));
 		disableMockRuleResponse.setData(data);
 	 
 	 	return disableMockRuleResponse;

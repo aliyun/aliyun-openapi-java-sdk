@@ -28,14 +28,14 @@ public class InsertClusterResponseUnmarshaller {
 		insertClusterResponse.setMessage(_ctx.stringValue("InsertClusterResponse.Message"));
 
 		Cluster cluster = new Cluster();
-		cluster.setClusterId(_ctx.stringValue("InsertClusterResponse.Cluster.ClusterId"));
-		cluster.setRegionId(_ctx.stringValue("InsertClusterResponse.Cluster.RegionId"));
-		cluster.setClusterName(_ctx.stringValue("InsertClusterResponse.Cluster.ClusterName"));
-		cluster.setClusterType(_ctx.integerValue("InsertClusterResponse.Cluster.ClusterType"));
+		cluster.setVpcId(_ctx.stringValue("InsertClusterResponse.Cluster.VpcId"));
 		cluster.setOversoldFactor(_ctx.integerValue("InsertClusterResponse.Cluster.OversoldFactor"));
 		cluster.setNetworkMode(_ctx.integerValue("InsertClusterResponse.Cluster.NetworkMode"));
-		cluster.setVpcId(_ctx.stringValue("InsertClusterResponse.Cluster.VpcId"));
 		cluster.setIaasProvider(_ctx.stringValue("InsertClusterResponse.Cluster.IaasProvider"));
+		cluster.setClusterType(_ctx.integerValue("InsertClusterResponse.Cluster.ClusterType"));
+		cluster.setClusterName(_ctx.stringValue("InsertClusterResponse.Cluster.ClusterName"));
+		cluster.setClusterId(_ctx.stringValue("InsertClusterResponse.Cluster.ClusterId"));
+		cluster.setRegionId(_ctx.stringValue("InsertClusterResponse.Cluster.RegionId"));
 		insertClusterResponse.setCluster(cluster);
 	 
 	 	return insertClusterResponse;

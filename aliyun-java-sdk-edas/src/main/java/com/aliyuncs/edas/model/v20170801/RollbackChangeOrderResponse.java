@@ -26,13 +26,13 @@ public class RollbackChangeOrderResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String errorCode;
-
 	private String message;
 
 	private String requestId;
 
 	private String traceId;
+
+	private String errorCode;
 
 	private Data data;
 
@@ -42,14 +42,6 @@ public class RollbackChangeOrderResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getMessage() {
@@ -74,6 +66,14 @@ public class RollbackChangeOrderResponse extends AcsResponse {
 
 	public void setTraceId(String traceId) {
 		this.traceId = traceId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {

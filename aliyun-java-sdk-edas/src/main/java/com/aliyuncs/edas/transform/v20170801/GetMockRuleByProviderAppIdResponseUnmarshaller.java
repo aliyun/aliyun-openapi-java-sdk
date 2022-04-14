@@ -28,26 +28,26 @@ public class GetMockRuleByProviderAppIdResponseUnmarshaller {
 		
 		getMockRuleByProviderAppIdResponse.setRequestId(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.RequestId"));
 		getMockRuleByProviderAppIdResponse.setCode(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Code"));
-		getMockRuleByProviderAppIdResponse.setHttpCode(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.HttpCode"));
 		getMockRuleByProviderAppIdResponse.setMessage(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Message"));
+		getMockRuleByProviderAppIdResponse.setHttpCode(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.HttpCode"));
 		getMockRuleByProviderAppIdResponse.setSuccess(_ctx.booleanValue("GetMockRuleByProviderAppIdResponse.Success"));
 
 		List<RuleItemList> data = new ArrayList<RuleItemList>();
 		for (int i = 0; i < _ctx.lengthValue("GetMockRuleByProviderAppIdResponse.Data.Length"); i++) {
 			RuleItemList ruleItemList = new RuleItemList();
-			ruleItemList.setAccountId(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].AccountId"));
-			ruleItemList.setName(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Name"));
-			ruleItemList.setConsumerAppId(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ConsumerAppId"));
-			ruleItemList.setConsumerAppName(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ConsumerAppName"));
-			ruleItemList.setEnable(_ctx.booleanValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Enable"));
-			ruleItemList.setExtraJson(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ExtraJson"));
-			ruleItemList.setId(_ctx.longValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Id"));
 			ruleItemList.setNamespaceId(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].NamespaceId"));
-			ruleItemList.setProviderAppId(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ProviderAppId"));
-			ruleItemList.setProviderAppName(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ProviderAppName"));
-			ruleItemList.setRegion(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Region"));
 			ruleItemList.setScMockItemJson(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ScMockItemJson"));
+			ruleItemList.setConsumerAppName(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ConsumerAppName"));
+			ruleItemList.setAccountId(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].AccountId"));
+			ruleItemList.setConsumerAppId(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ConsumerAppId"));
+			ruleItemList.setExtraJson(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ExtraJson"));
 			ruleItemList.setSource(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Source"));
+			ruleItemList.setRegion(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Region"));
+			ruleItemList.setProviderAppId(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ProviderAppId"));
+			ruleItemList.setName(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Name"));
+			ruleItemList.setProviderAppName(_ctx.stringValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].ProviderAppName"));
+			ruleItemList.setId(_ctx.longValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Id"));
+			ruleItemList.setEnable(_ctx.booleanValue("GetMockRuleByProviderAppIdResponse.Data["+ i +"].Enable"));
 
 			data.add(ruleItemList);
 		}

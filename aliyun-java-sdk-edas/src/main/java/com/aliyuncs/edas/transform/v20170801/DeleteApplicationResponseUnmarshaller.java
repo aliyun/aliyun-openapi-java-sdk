@@ -24,8 +24,8 @@ public class DeleteApplicationResponseUnmarshaller {
 		
 		deleteApplicationResponse.setRequestId(_ctx.stringValue("DeleteApplicationResponse.RequestId"));
 		deleteApplicationResponse.setCode(_ctx.integerValue("DeleteApplicationResponse.Code"));
-		deleteApplicationResponse.setMessage(_ctx.stringValue("DeleteApplicationResponse.Message"));
 		deleteApplicationResponse.setChangeOrderId(_ctx.stringValue("DeleteApplicationResponse.ChangeOrderId"));
+		deleteApplicationResponse.setMessage(_ctx.stringValue("DeleteApplicationResponse.Message"));
 	 
 	 	return deleteApplicationResponse;
 	}

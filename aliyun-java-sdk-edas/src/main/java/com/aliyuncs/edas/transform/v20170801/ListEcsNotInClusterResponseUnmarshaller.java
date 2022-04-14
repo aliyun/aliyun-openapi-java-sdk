@@ -33,19 +33,19 @@ public class ListEcsNotInClusterResponseUnmarshaller {
 		List<EcsEntity> ecsEntityList = new ArrayList<EcsEntity>();
 		for (int i = 0; i < _ctx.lengthValue("ListEcsNotInClusterResponse.EcsEntityList.Length"); i++) {
 			EcsEntity ecsEntity = new EcsEntity();
-			ecsEntity.setInstanceId(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].InstanceId"));
-			ecsEntity.setInstanceName(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].InstanceName"));
 			ecsEntity.setVpcId(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].VpcId"));
-			ecsEntity.setVpcName(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].VpcName"));
-			ecsEntity.setExpired(_ctx.booleanValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].Expired"));
 			ecsEntity.setStatus(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].Status"));
-			ecsEntity.setRegionId(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].RegionId"));
-			ecsEntity.setCpu(_ctx.integerValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].Cpu"));
-			ecsEntity.setMem(_ctx.integerValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].Mem"));
-			ecsEntity.setPublicIp(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].PublicIp"));
-			ecsEntity.setInnerIp(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].InnerIp"));
 			ecsEntity.setPrivateIp(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].PrivateIp"));
+			ecsEntity.setExpired(_ctx.booleanValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].Expired"));
+			ecsEntity.setInstanceId(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].InstanceId"));
+			ecsEntity.setMem(_ctx.integerValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].Mem"));
+			ecsEntity.setRegionId(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].RegionId"));
+			ecsEntity.setVpcName(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].VpcName"));
+			ecsEntity.setCpu(_ctx.integerValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].Cpu"));
+			ecsEntity.setInnerIp(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].InnerIp"));
 			ecsEntity.setEip(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].Eip"));
+			ecsEntity.setInstanceName(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].InstanceName"));
+			ecsEntity.setPublicIp(_ctx.stringValue("ListEcsNotInClusterResponse.EcsEntityList["+ i +"].PublicIp"));
 
 			ecsEntityList.add(ecsEntity);
 		}

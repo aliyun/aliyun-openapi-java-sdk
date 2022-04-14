@@ -29,19 +29,19 @@ public class EnableMockRuleResponseUnmarshaller {
 		enableMockRuleResponse.setSuccess(_ctx.booleanValue("EnableMockRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAccountId(_ctx.stringValue("EnableMockRuleResponse.Data.AccountId"));
-		data.setName(_ctx.stringValue("EnableMockRuleResponse.Data.Name"));
-		data.setConsumerAppId(_ctx.stringValue("EnableMockRuleResponse.Data.ConsumerAppId"));
-		data.setConsumerAppName(_ctx.stringValue("EnableMockRuleResponse.Data.ConsumerAppName"));
-		data.setEnable(_ctx.booleanValue("EnableMockRuleResponse.Data.Enable"));
-		data.setExtraJson(_ctx.stringValue("EnableMockRuleResponse.Data.ExtraJson"));
-		data.setId(_ctx.longValue("EnableMockRuleResponse.Data.Id"));
 		data.setNamespaceId(_ctx.stringValue("EnableMockRuleResponse.Data.NamespaceId"));
-		data.setProviderAppId(_ctx.stringValue("EnableMockRuleResponse.Data.ProviderAppId"));
-		data.setProviderAppName(_ctx.stringValue("EnableMockRuleResponse.Data.ProviderAppName"));
-		data.setRegion(_ctx.stringValue("EnableMockRuleResponse.Data.Region"));
 		data.setScMockItemJson(_ctx.stringValue("EnableMockRuleResponse.Data.ScMockItemJson"));
+		data.setConsumerAppName(_ctx.stringValue("EnableMockRuleResponse.Data.ConsumerAppName"));
+		data.setAccountId(_ctx.stringValue("EnableMockRuleResponse.Data.AccountId"));
+		data.setConsumerAppId(_ctx.stringValue("EnableMockRuleResponse.Data.ConsumerAppId"));
+		data.setExtraJson(_ctx.stringValue("EnableMockRuleResponse.Data.ExtraJson"));
 		data.setSource(_ctx.stringValue("EnableMockRuleResponse.Data.Source"));
+		data.setRegion(_ctx.stringValue("EnableMockRuleResponse.Data.Region"));
+		data.setProviderAppId(_ctx.stringValue("EnableMockRuleResponse.Data.ProviderAppId"));
+		data.setName(_ctx.stringValue("EnableMockRuleResponse.Data.Name"));
+		data.setProviderAppName(_ctx.stringValue("EnableMockRuleResponse.Data.ProviderAppName"));
+		data.setId(_ctx.longValue("EnableMockRuleResponse.Data.Id"));
+		data.setEnable(_ctx.booleanValue("EnableMockRuleResponse.Data.Enable"));
 		enableMockRuleResponse.setData(data);
 	 
 	 	return enableMockRuleResponse;

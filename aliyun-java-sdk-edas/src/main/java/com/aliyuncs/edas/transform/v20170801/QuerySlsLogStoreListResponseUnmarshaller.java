@@ -27,18 +27,18 @@ public class QuerySlsLogStoreListResponseUnmarshaller {
 	public static QuerySlsLogStoreListResponse unmarshall(QuerySlsLogStoreListResponse querySlsLogStoreListResponse, UnmarshallerContext _ctx) {
 		
 		querySlsLogStoreListResponse.setRequestId(_ctx.stringValue("QuerySlsLogStoreListResponse.RequestId"));
-		querySlsLogStoreListResponse.setTotalSize(_ctx.integerValue("QuerySlsLogStoreListResponse.TotalSize"));
 		querySlsLogStoreListResponse.setCode(_ctx.integerValue("QuerySlsLogStoreListResponse.Code"));
 		querySlsLogStoreListResponse.setMessage(_ctx.stringValue("QuerySlsLogStoreListResponse.Message"));
+		querySlsLogStoreListResponse.setTotalSize(_ctx.integerValue("QuerySlsLogStoreListResponse.TotalSize"));
 
 		List<SlsLog> result = new ArrayList<SlsLog>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySlsLogStoreListResponse.Result.Length"); i++) {
 			SlsLog slsLog = new SlsLog();
-			slsLog.setLogstore(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].Logstore"));
-			slsLog.setProject(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].Project"));
 			slsLog.setLink(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].Link"));
-			slsLog.setConsumerSide(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].ConsumerSide"));
 			slsLog.setCreateTime(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].CreateTime"));
+			slsLog.setLogstore(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].Logstore"));
+			slsLog.setConsumerSide(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].ConsumerSide"));
+			slsLog.setProject(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].Project"));
 			slsLog.setSource(_ctx.stringValue("QuerySlsLogStoreListResponse.Result["+ i +"].Source"));
 
 			result.add(slsLog);

@@ -24,8 +24,8 @@ public class RetryChangeOrderTaskResponseUnmarshaller {
 		
 		retryChangeOrderTaskResponse.setRequestId(_ctx.stringValue("RetryChangeOrderTaskResponse.RequestId"));
 		retryChangeOrderTaskResponse.setCode(_ctx.integerValue("RetryChangeOrderTaskResponse.Code"));
-		retryChangeOrderTaskResponse.setData(_ctx.stringValue("RetryChangeOrderTaskResponse.Data"));
 		retryChangeOrderTaskResponse.setMessage(_ctx.stringValue("RetryChangeOrderTaskResponse.Message"));
+		retryChangeOrderTaskResponse.setData(_ctx.stringValue("RetryChangeOrderTaskResponse.Data"));
 	 
 	 	return retryChangeOrderTaskResponse;
 	}

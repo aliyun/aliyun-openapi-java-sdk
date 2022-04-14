@@ -57,25 +57,17 @@ public class ListComponentsResponse extends AcsResponse {
 
 	public static class Component {
 
-		private String componentId;
-
 		private String type;
+
+		private String componentKey;
 
 		private String version;
 
 		private Boolean expired;
 
-		private String componentKey;
+		private String componentId;
 
 		private String desc;
-
-		public String getComponentId() {
-			return this.componentId;
-		}
-
-		public void setComponentId(String componentId) {
-			this.componentId = componentId;
-		}
 
 		public String getType() {
 			return this.type;
@@ -83,6 +75,14 @@ public class ListComponentsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getComponentKey() {
+			return this.componentKey;
+		}
+
+		public void setComponentKey(String componentKey) {
+			this.componentKey = componentKey;
 		}
 
 		public String getVersion() {
@@ -101,12 +101,12 @@ public class ListComponentsResponse extends AcsResponse {
 			this.expired = expired;
 		}
 
-		public String getComponentKey() {
-			return this.componentKey;
+		public String getComponentId() {
+			return this.componentId;
 		}
 
-		public void setComponentKey(String componentKey) {
-			this.componentKey = componentKey;
+		public void setComponentId(String componentId) {
+			this.componentId = componentId;
 		}
 
 		public String getDesc() {

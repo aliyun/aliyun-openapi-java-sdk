@@ -67,79 +67,23 @@ public class ListHistoryDeployVersionResponse extends AcsResponse {
 
 	public static class PackageVersion {
 
-		private String id;
-
-		private String packageVersion;
-
-		private String appId;
-
-		private String description;
-
-		private String warUrl;
-
-		private Long createTime;
-
-		private Long updateTime;
-
 		private String type;
 
 		private String publicUrl;
 
-		public String getId() {
-			return this.id;
-		}
+		private Long updateTime;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String description;
 
-		public String getPackageVersion() {
-			return this.packageVersion;
-		}
+		private Long createTime;
 
-		public void setPackageVersion(String packageVersion) {
-			this.packageVersion = packageVersion;
-		}
+		private String appId;
 
-		public String getAppId() {
-			return this.appId;
-		}
+		private String warUrl;
 
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
+		private String id;
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getWarUrl() {
-			return this.warUrl;
-		}
-
-		public void setWarUrl(String warUrl) {
-			this.warUrl = warUrl;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
-		}
+		private String packageVersion;
 
 		public String getType() {
 			return this.type;
@@ -155,6 +99,62 @@ public class ListHistoryDeployVersionResponse extends AcsResponse {
 
 		public void setPublicUrl(String publicUrl) {
 			this.publicUrl = publicUrl;
+		}
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public String getWarUrl() {
+			return this.warUrl;
+		}
+
+		public void setWarUrl(String warUrl) {
+			this.warUrl = warUrl;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getPackageVersion() {
+			return this.packageVersion;
+		}
+
+		public void setPackageVersion(String packageVersion) {
+			this.packageVersion = packageVersion;
 		}
 	}
 

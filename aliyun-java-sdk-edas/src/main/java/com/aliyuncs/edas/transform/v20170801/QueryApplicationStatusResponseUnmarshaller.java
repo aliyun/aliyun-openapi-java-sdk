@@ -38,46 +38,45 @@ public class QueryApplicationStatusResponseUnmarshaller {
 		AppInfo appInfo = new AppInfo();
 
 		Application application = new Application();
-		application.setApplicationId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.ApplicationId"));
-		application.setBuildPackageId(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.BuildPackageId"));
-		application.setClusterId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.ClusterId"));
-		application.setCpu(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.Cpu"));
+		application.setHealthCheckUrl(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.HealthCheckUrl"));
+		application.setOwner(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.Owner"));
 		application.setCreateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.Application.CreateTime"));
+		application.setUserId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.UserId"));
+		application.setPort(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.Port"));
+		application.setRunningInstanceCount(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.RunningInstanceCount"));
+		application.setPhone(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.Phone"));
+		application.setRegionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.RegionId"));
+		application.setBuildPackageId(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.BuildPackageId"));
 		application.setDockerize(_ctx.booleanValue("QueryApplicationStatusResponse.AppInfo.Application.Dockerize"));
 		application.setEmail(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.Email"));
-		application.setHealthCheckUrl(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.HealthCheckUrl"));
+		application.setCpu(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.Cpu"));
 		application.setInstanceCount(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.InstanceCount"));
 		application.setLaunchTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.Application.LaunchTime"));
 		application.setMemory(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.Memory"));
 		application.setName(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.Name"));
-		application.setOwner(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.Owner"));
-		application.setPhone(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.Phone"));
-		application.setPort(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.Port"));
-		application.setRegionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.RegionId"));
-		application.setRunningInstanceCount(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.Application.RunningInstanceCount"));
-		application.setUserId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.UserId"));
+		application.setApplicationId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.ApplicationId"));
+		application.setClusterId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.Application.ClusterId"));
 		appInfo.setApplication(application);
 
 		List<Ecu> ecuList = new ArrayList<Ecu>();
 		for (int i = 0; i < _ctx.lengthValue("QueryApplicationStatusResponse.AppInfo.EcuList.Length"); i++) {
 			Ecu ecu = new Ecu();
-			ecu.setEcuId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].EcuId"));
-			ecu.setOnline(_ctx.booleanValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].Online"));
-			ecu.setDockerEnv(_ctx.booleanValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].DockerEnv"));
-			ecu.setCreateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].CreateTime"));
+			ecu.setVpcId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].VpcId"));
 			ecu.setUpdateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].UpdateTime"));
 			ecu.setIpAddr(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].IpAddr"));
-			ecu.setHeartbeatTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].HeartbeatTime"));
-			ecu.setUserId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].UserId"));
-			ecu.setGroupId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].GroupId"));
-			ecu.setName(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].Name"));
-			ecu.setZoneId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].ZoneId"));
-			ecu.setRegionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].RegionId"));
-			ecu.setInstanceId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].InstanceId"));
-			ecu.setVpcId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].VpcId"));
-			ecu.setRegionId1(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].RegionId"));
 			ecu.setAvailableCpu(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].AvailableCpu"));
+			ecu.setCreateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].CreateTime"));
+			ecu.setUserId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].UserId"));
+			ecu.setInstanceId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].InstanceId"));
+			ecu.setRegionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].RegionId"));
+			ecu.setEcuId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].EcuId"));
+			ecu.setGroupId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].GroupId"));
+			ecu.setDockerEnv(_ctx.booleanValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].DockerEnv"));
+			ecu.setOnline(_ctx.booleanValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].Online"));
 			ecu.setAvailableMem(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].AvailableMem"));
+			ecu.setZoneId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].ZoneId"));
+			ecu.setName(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].Name"));
+			ecu.setHeartbeatTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.EcuList["+ i +"].HeartbeatTime"));
 
 			ecuList.add(ecu);
 		}
@@ -86,17 +85,17 @@ public class QueryApplicationStatusResponseUnmarshaller {
 		List<Ecc> eccList = new ArrayList<Ecc>();
 		for (int i = 0; i < _ctx.lengthValue("QueryApplicationStatusResponse.AppInfo.EccList.Length"); i++) {
 			Ecc ecc = new Ecc();
-			ecc.setEccId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].EccId"));
+			ecc.setVpcId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].VpcId"));
+			ecc.setUpdateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].UpdateTime"));
 			ecc.setEcuId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].EcuId"));
-			ecc.setAppId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].AppId"));
+			ecc.setEccId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].EccId"));
+			ecc.setGroupId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].GroupId"));
 			ecc.setAppState(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].AppState"));
 			ecc.setTaskState(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].TaskState"));
 			ecc.setCreateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].CreateTime"));
-			ecc.setUpdateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].UpdateTime"));
-			ecc.setIp(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].Ip"));
-			ecc.setVpcId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].VpcId"));
-			ecc.setGroupId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].GroupId"));
+			ecc.setAppId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].AppId"));
 			ecc.setContainerStatus(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].ContainerStatus"));
+			ecc.setIp(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.EccList["+ i +"].Ip"));
 
 			eccList.add(ecc);
 		}
@@ -105,15 +104,15 @@ public class QueryApplicationStatusResponseUnmarshaller {
 		List<Group> groupList = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("QueryApplicationStatusResponse.AppInfo.GroupList.Length"); i++) {
 			Group group = new Group();
-			group.setGroupId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].GroupId"));
+			group.setUpdateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].UpdateTime"));
 			group.setGroupName(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].GroupName"));
+			group.setGroupId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].GroupId"));
+			group.setCreateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].CreateTime"));
+			group.setAppVersionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].AppVersionId"));
 			group.setAppId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].AppId"));
 			group.setPackageVersionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].PackageVersionId"));
-			group.setAppVersionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].AppVersionId"));
 			group.setGroupType(_ctx.integerValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].GroupType"));
 			group.setClusterId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].ClusterId"));
-			group.setCreateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].CreateTime"));
-			group.setUpdateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.GroupList["+ i +"].UpdateTime"));
 
 			groupList.add(group);
 		}
@@ -122,12 +121,12 @@ public class QueryApplicationStatusResponseUnmarshaller {
 		List<DeployRecord> deployRecordList = new ArrayList<DeployRecord>();
 		for (int i = 0; i < _ctx.lengthValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList.Length"); i++) {
 			DeployRecord deployRecord = new DeployRecord();
-			deployRecord.setDeployRecordId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList["+ i +"].DeployRecordId"));
 			deployRecord.setEccId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList["+ i +"].EccId"));
 			deployRecord.setEcuId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList["+ i +"].EcuId"));
-			deployRecord.setPackageVersionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList["+ i +"].PackageVersionId"));
 			deployRecord.setPackageMd5(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList["+ i +"].PackageMd5"));
 			deployRecord.setCreateTime(_ctx.longValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList["+ i +"].CreateTime"));
+			deployRecord.setPackageVersionId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList["+ i +"].PackageVersionId"));
+			deployRecord.setDeployRecordId(_ctx.stringValue("QueryApplicationStatusResponse.AppInfo.DeployRecordList["+ i +"].DeployRecordId"));
 
 			deployRecordList.add(deployRecord);
 		}

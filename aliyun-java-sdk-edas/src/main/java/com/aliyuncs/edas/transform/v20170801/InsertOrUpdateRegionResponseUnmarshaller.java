@@ -28,13 +28,13 @@ public class InsertOrUpdateRegionResponseUnmarshaller {
 		insertOrUpdateRegionResponse.setMessage(_ctx.stringValue("InsertOrUpdateRegionResponse.Message"));
 
 		UserDefineRegionEntity userDefineRegionEntity = new UserDefineRegionEntity();
-		userDefineRegionEntity.setId(_ctx.longValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.Id"));
-		userDefineRegionEntity.setUserId(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.UserId"));
-		userDefineRegionEntity.setRegionId(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.RegionId"));
+		userDefineRegionEntity.setBelongRegion(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.BelongRegion"));
 		userDefineRegionEntity.setRegionName(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.RegionName"));
 		userDefineRegionEntity.setDescription(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.Description"));
-		userDefineRegionEntity.setBelongRegion(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.BelongRegion"));
 		userDefineRegionEntity.setDebugEnable(_ctx.booleanValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.DebugEnable"));
+		userDefineRegionEntity.setUserId(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.UserId"));
+		userDefineRegionEntity.setId(_ctx.longValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.Id"));
+		userDefineRegionEntity.setRegionId(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.RegionId"));
 		insertOrUpdateRegionResponse.setUserDefineRegionEntity(userDefineRegionEntity);
 	 
 	 	return insertOrUpdateRegionResponse;

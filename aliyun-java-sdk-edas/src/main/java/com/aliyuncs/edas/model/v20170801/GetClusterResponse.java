@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetClusterResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Cluster cluster;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class GetClusterResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Cluster getCluster() {
 		return this.cluster;
 	}
@@ -66,80 +66,48 @@ public class GetClusterResponse extends AcsResponse {
 
 	public static class Cluster {
 
-		private String clusterId;
-
-		private String regionId;
-
-		private String description;
-
-		private String clusterName;
-
-		private Integer clusterType;
+		private String vpcId;
 
 		private Integer oversoldFactor;
 
-		private Integer networkMode;
-
-		private String vpcId;
-
-		private Integer nodeNum;
-
-		private Integer cpu;
-
-		private Integer mem;
-
-		private Integer cpuUsed;
+		private Long updateTime;
 
 		private Integer memUsed;
 
+		private String iaasProvider;
+
 		private Long createTime;
 
-		private Long updateTime;
+		private Integer cpuUsed;
 
-		private String iaasProvider;
+		private Integer mem;
+
+		private String regionId;
+
+		private Integer cpu;
 
 		private String csClusterId;
 
+		private Integer networkMode;
+
+		private String description;
+
+		private Integer clusterType;
+
+		private String clusterName;
+
+		private Integer nodeNum;
+
 		private Integer clusterImportStatus;
 
-		public String getClusterId() {
-			return this.clusterId;
+		private String clusterId;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public Integer getClusterType() {
-			return this.clusterType;
-		}
-
-		public void setClusterType(Integer clusterType) {
-			this.clusterType = clusterType;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public Integer getOversoldFactor() {
@@ -150,52 +118,12 @@ public class GetClusterResponse extends AcsResponse {
 			this.oversoldFactor = oversoldFactor;
 		}
 
-		public Integer getNetworkMode() {
-			return this.networkMode;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setNetworkMode(Integer networkMode) {
-			this.networkMode = networkMode;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public Integer getNodeNum() {
-			return this.nodeNum;
-		}
-
-		public void setNodeNum(Integer nodeNum) {
-			this.nodeNum = nodeNum;
-		}
-
-		public Integer getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
-		}
-
-		public Integer getMem() {
-			return this.mem;
-		}
-
-		public void setMem(Integer mem) {
-			this.mem = mem;
-		}
-
-		public Integer getCpuUsed() {
-			return this.cpuUsed;
-		}
-
-		public void setCpuUsed(Integer cpuUsed) {
-			this.cpuUsed = cpuUsed;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public Integer getMemUsed() {
@@ -206,6 +134,14 @@ public class GetClusterResponse extends AcsResponse {
 			this.memUsed = memUsed;
 		}
 
+		public String getIaasProvider() {
+			return this.iaasProvider;
+		}
+
+		public void setIaasProvider(String iaasProvider) {
+			this.iaasProvider = iaasProvider;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -214,20 +150,36 @@ public class GetClusterResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public Integer getCpuUsed() {
+			return this.cpuUsed;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setCpuUsed(Integer cpuUsed) {
+			this.cpuUsed = cpuUsed;
 		}
 
-		public String getIaasProvider() {
-			return this.iaasProvider;
+		public Integer getMem() {
+			return this.mem;
 		}
 
-		public void setIaasProvider(String iaasProvider) {
-			this.iaasProvider = iaasProvider;
+		public void setMem(Integer mem) {
+			this.mem = mem;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
 		}
 
 		public String getCsClusterId() {
@@ -238,12 +190,60 @@ public class GetClusterResponse extends AcsResponse {
 			this.csClusterId = csClusterId;
 		}
 
+		public Integer getNetworkMode() {
+			return this.networkMode;
+		}
+
+		public void setNetworkMode(Integer networkMode) {
+			this.networkMode = networkMode;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(Integer clusterType) {
+			this.clusterType = clusterType;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public Integer getNodeNum() {
+			return this.nodeNum;
+		}
+
+		public void setNodeNum(Integer nodeNum) {
+			this.nodeNum = nodeNum;
+		}
+
 		public Integer getClusterImportStatus() {
 			return this.clusterImportStatus;
 		}
 
 		public void setClusterImportStatus(Integer clusterImportStatus) {
 			this.clusterImportStatus = clusterImportStatus;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

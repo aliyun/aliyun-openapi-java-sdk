@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRegionConfigResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private RegionConfig regionConfig;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class QueryRegionConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public RegionConfig getRegionConfig() {
 		return this.regionConfig;
 	}
@@ -66,23 +66,31 @@ public class QueryRegionConfigResponse extends AcsResponse {
 
 	public static class RegionConfig {
 
+		private Integer no;
+
 		private String addressServerHost;
+
+		private String tag;
 
 		private String agentInstallScript;
 
 		private String fileServerType;
 
-		private String id;
+		private String name;
 
 		private String imageId;
 
-		private String name;
-
-		private Integer no;
-
-		private String tag;
+		private String id;
 
 		private FileServerConfig fileServerConfig;
+
+		public Integer getNo() {
+			return this.no;
+		}
+
+		public void setNo(Integer no) {
+			this.no = no;
+		}
 
 		public String getAddressServerHost() {
 			return this.addressServerHost;
@@ -90,6 +98,14 @@ public class QueryRegionConfigResponse extends AcsResponse {
 
 		public void setAddressServerHost(String addressServerHost) {
 			this.addressServerHost = addressServerHost;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 
 		public String getAgentInstallScript() {
@@ -108,12 +124,12 @@ public class QueryRegionConfigResponse extends AcsResponse {
 			this.fileServerType = fileServerType;
 		}
 
-		public String getId() {
-			return this.id;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getImageId() {
@@ -124,28 +140,12 @@ public class QueryRegionConfigResponse extends AcsResponse {
 			this.imageId = imageId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getNo() {
-			return this.no;
-		}
-
-		public void setNo(Integer no) {
-			this.no = no;
-		}
-
-		public String getTag() {
-			return this.tag;
-		}
-
-		public void setTag(String tag) {
-			this.tag = tag;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public FileServerConfig getFileServerConfig() {
@@ -158,21 +158,13 @@ public class QueryRegionConfigResponse extends AcsResponse {
 
 		public static class FileServerConfig {
 
-			private String bucket;
-
 			private String internalUrl;
 
 			private String publicUrl;
 
 			private String vpcUrl;
 
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
+			private String bucket;
 
 			public String getInternalUrl() {
 				return this.internalUrl;
@@ -196,6 +188,14 @@ public class QueryRegionConfigResponse extends AcsResponse {
 
 			public void setVpcUrl(String vpcUrl) {
 				this.vpcUrl = vpcUrl;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

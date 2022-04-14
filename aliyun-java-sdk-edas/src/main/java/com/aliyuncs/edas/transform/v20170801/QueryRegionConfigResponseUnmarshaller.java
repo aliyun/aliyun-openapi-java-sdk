@@ -29,20 +29,20 @@ public class QueryRegionConfigResponseUnmarshaller {
 		queryRegionConfigResponse.setMessage(_ctx.stringValue("QueryRegionConfigResponse.Message"));
 
 		RegionConfig regionConfig = new RegionConfig();
+		regionConfig.setNo(_ctx.integerValue("QueryRegionConfigResponse.RegionConfig.No"));
 		regionConfig.setAddressServerHost(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.AddressServerHost"));
+		regionConfig.setTag(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.Tag"));
 		regionConfig.setAgentInstallScript(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.AgentInstallScript"));
 		regionConfig.setFileServerType(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerType"));
-		regionConfig.setId(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.Id"));
-		regionConfig.setImageId(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.ImageId"));
 		regionConfig.setName(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.Name"));
-		regionConfig.setNo(_ctx.integerValue("QueryRegionConfigResponse.RegionConfig.No"));
-		regionConfig.setTag(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.Tag"));
+		regionConfig.setImageId(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.ImageId"));
+		regionConfig.setId(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.Id"));
 
 		FileServerConfig fileServerConfig = new FileServerConfig();
-		fileServerConfig.setBucket(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.Bucket"));
 		fileServerConfig.setInternalUrl(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.InternalUrl"));
 		fileServerConfig.setPublicUrl(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.PublicUrl"));
 		fileServerConfig.setVpcUrl(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.VpcUrl"));
+		fileServerConfig.setBucket(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.Bucket"));
 		regionConfig.setFileServerConfig(fileServerConfig);
 		queryRegionConfigResponse.setRegionConfig(regionConfig);
 	 

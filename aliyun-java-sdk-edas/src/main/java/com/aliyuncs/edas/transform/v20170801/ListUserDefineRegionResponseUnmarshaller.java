@@ -33,13 +33,13 @@ public class ListUserDefineRegionResponseUnmarshaller {
 		List<UserDefineRegionEntity> userDefineRegionList = new ArrayList<UserDefineRegionEntity>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserDefineRegionResponse.UserDefineRegionList.Length"); i++) {
 			UserDefineRegionEntity userDefineRegionEntity = new UserDefineRegionEntity();
-			userDefineRegionEntity.setId(_ctx.longValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].Id"));
-			userDefineRegionEntity.setUserId(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].UserId"));
-			userDefineRegionEntity.setRegionId(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].RegionId"));
+			userDefineRegionEntity.setBelongRegion(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].BelongRegion"));
 			userDefineRegionEntity.setRegionName(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].RegionName"));
 			userDefineRegionEntity.setDescription(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].Description"));
-			userDefineRegionEntity.setBelongRegion(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].BelongRegion"));
 			userDefineRegionEntity.setDebugEnable(_ctx.booleanValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].DebugEnable"));
+			userDefineRegionEntity.setUserId(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].UserId"));
+			userDefineRegionEntity.setId(_ctx.longValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].Id"));
+			userDefineRegionEntity.setRegionId(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].RegionId"));
 
 			userDefineRegionList.add(userDefineRegionEntity);
 		}

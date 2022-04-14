@@ -33,24 +33,24 @@ public class ListConsumedServicesResponseUnmarshaller {
 		List<ListConsumedServices> consumedServicesList = new ArrayList<ListConsumedServices>();
 		for (int i = 0; i < _ctx.lengthValue("ListConsumedServicesResponse.ConsumedServicesList.Length"); i++) {
 			ListConsumedServices listConsumedServices = new ListConsumedServices();
-			listConsumedServices.setAppId(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].AppId"));
 			listConsumedServices.setDockerApplication(_ctx.booleanValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].DockerApplication"));
-			listConsumedServices.setGroup2Ip(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Group2Ip"));
-			listConsumedServices.setName(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Name"));
 			listConsumedServices.setType(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Type"));
 			listConsumedServices.setVersion(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Version"));
-
-			List<String> groups = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Groups.Length"); j++) {
-				groups.add(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Groups["+ j +"]"));
-			}
-			listConsumedServices.setGroups(groups);
+			listConsumedServices.setAppId(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].AppId"));
+			listConsumedServices.setGroup2Ip(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Group2Ip"));
+			listConsumedServices.setName(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Name"));
 
 			List<String> ips = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Ips.Length"); j++) {
 				ips.add(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Ips["+ j +"]"));
 			}
 			listConsumedServices.setIps(ips);
+
+			List<String> groups = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Groups.Length"); j++) {
+				groups.add(_ctx.stringValue("ListConsumedServicesResponse.ConsumedServicesList["+ i +"].Groups["+ j +"]"));
+			}
+			listConsumedServices.setGroups(groups);
 
 			consumedServicesList.add(listConsumedServices);
 		}

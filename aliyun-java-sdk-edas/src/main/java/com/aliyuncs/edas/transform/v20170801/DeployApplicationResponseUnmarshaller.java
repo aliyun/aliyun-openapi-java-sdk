@@ -24,8 +24,8 @@ public class DeployApplicationResponseUnmarshaller {
 		
 		deployApplicationResponse.setRequestId(_ctx.stringValue("DeployApplicationResponse.RequestId"));
 		deployApplicationResponse.setCode(_ctx.integerValue("DeployApplicationResponse.Code"));
-		deployApplicationResponse.setMessage(_ctx.stringValue("DeployApplicationResponse.Message"));
 		deployApplicationResponse.setChangeOrderId(_ctx.stringValue("DeployApplicationResponse.ChangeOrderId"));
+		deployApplicationResponse.setMessage(_ctx.stringValue("DeployApplicationResponse.Message"));
 	 
 	 	return deployApplicationResponse;
 	}

@@ -67,57 +67,33 @@ public class ListConvertableEcuResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
-		private String instanceName;
-
-		private String ecuId;
-
 		private String vpcId;
-
-		private String vpcName;
-
-		private Boolean expired;
 
 		private String status;
 
-		private String regionId;
+		private String privateIp;
 
-		private Integer cpu;
+		private Boolean expired;
+
+		private String instanceId;
 
 		private Integer mem;
 
-		private String publicIp;
+		private String regionId;
+
+		private String vpcName;
+
+		private String ecuId;
+
+		private Integer cpu;
 
 		private String innerIp;
 
-		private String privateIp;
-
 		private String eip;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String instanceName;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getEcuId() {
-			return this.ecuId;
-		}
-
-		public void setEcuId(String ecuId) {
-			this.ecuId = ecuId;
-		}
+		private String publicIp;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -125,22 +101,6 @@ public class ListConvertableEcuResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getVpcName() {
-			return this.vpcName;
-		}
-
-		public void setVpcName(String vpcName) {
-			this.vpcName = vpcName;
-		}
-
-		public Boolean getExpired() {
-			return this.expired;
-		}
-
-		public void setExpired(Boolean expired) {
-			this.expired = expired;
 		}
 
 		public String getStatus() {
@@ -151,20 +111,28 @@ public class ListConvertableEcuResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getPrivateIp() {
+			return this.privateIp;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setPrivateIp(String privateIp) {
+			this.privateIp = privateIp;
 		}
 
-		public Integer getCpu() {
-			return this.cpu;
+		public Boolean getExpired() {
+			return this.expired;
 		}
 
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
+		public void setExpired(Boolean expired) {
+			this.expired = expired;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Integer getMem() {
@@ -175,12 +143,36 @@ public class ListConvertableEcuResponse extends AcsResponse {
 			this.mem = mem;
 		}
 
-		public String getPublicIp() {
-			return this.publicIp;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setPublicIp(String publicIp) {
-			this.publicIp = publicIp;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getVpcName() {
+			return this.vpcName;
+		}
+
+		public void setVpcName(String vpcName) {
+			this.vpcName = vpcName;
+		}
+
+		public String getEcuId() {
+			return this.ecuId;
+		}
+
+		public void setEcuId(String ecuId) {
+			this.ecuId = ecuId;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
 		}
 
 		public String getInnerIp() {
@@ -191,20 +183,28 @@ public class ListConvertableEcuResponse extends AcsResponse {
 			this.innerIp = innerIp;
 		}
 
-		public String getPrivateIp() {
-			return this.privateIp;
-		}
-
-		public void setPrivateIp(String privateIp) {
-			this.privateIp = privateIp;
-		}
-
 		public String getEip() {
 			return this.eip;
 		}
 
 		public void setEip(String eip) {
 			this.eip = eip;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getPublicIp() {
+			return this.publicIp;
+		}
+
+		public void setPublicIp(String publicIp) {
+			this.publicIp = publicIp;
 		}
 	}
 
