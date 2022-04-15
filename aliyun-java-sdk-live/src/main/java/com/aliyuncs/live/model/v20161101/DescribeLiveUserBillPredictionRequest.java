@@ -22,20 +22,20 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopLiveIndexRequest extends RpcAcsRequest<StopLiveIndexResponse> {
+public class DescribeLiveUserBillPredictionRequest extends RpcAcsRequest<DescribeLiveUserBillPredictionResponse> {
 	   
 
-	private String appName;
+	private String startTime;
 
-	private String streamName;
+	private String dimension;
 
-	private String taskId;
+	private String area;
 
-	private String domainName;
+	private String endTime;
 
 	private Long ownerId;
-	public StopLiveIndexRequest() {
-		super("live", "2016-11-01", "StopLiveIndex", "live");
+	public DescribeLiveUserBillPredictionRequest() {
+		super("live", "2016-11-01", "DescribeLiveUserBillPrediction", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,47 +43,47 @@ public class StopLiveIndexRequest extends RpcAcsRequest<StopLiveIndexResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
-	public String getStreamName() {
-		return this.streamName;
+	public String getDimension() {
+		return this.dimension;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
+	public void setDimension(String dimension) {
+		this.dimension = dimension;
+		if(dimension != null){
+			putQueryParameter("Dimension", dimension);
 		}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getArea() {
+		return this.area;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -99,8 +99,8 @@ public class StopLiveIndexRequest extends RpcAcsRequest<StopLiveIndexResponse> {
 	}
 
 	@Override
-	public Class<StopLiveIndexResponse> getResponseClass() {
-		return StopLiveIndexResponse.class;
+	public Class<DescribeLiveUserBillPredictionResponse> getResponseClass() {
+		return DescribeLiveUserBillPredictionResponse.class;
 	}
 
 }

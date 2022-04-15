@@ -14,17 +14,16 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.CheckServiceForRoleResponse;
+import com.aliyuncs.live.model.v20161101.DynamicUpdateWaterMarkStreamRuleResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CheckServiceForRoleResponseUnmarshaller {
+public class DynamicUpdateWaterMarkStreamRuleResponseUnmarshaller {
 
-	public static CheckServiceForRoleResponse unmarshall(CheckServiceForRoleResponse checkServiceForRoleResponse, UnmarshallerContext _ctx) {
+	public static DynamicUpdateWaterMarkStreamRuleResponse unmarshall(DynamicUpdateWaterMarkStreamRuleResponse dynamicUpdateWaterMarkStreamRuleResponse, UnmarshallerContext _ctx) {
 		
-		checkServiceForRoleResponse.setRequestId(_ctx.stringValue("CheckServiceForRoleResponse.RequestId"));
-		checkServiceForRoleResponse.setDeletable(_ctx.booleanValue("CheckServiceForRoleResponse.Deletable"));
+		dynamicUpdateWaterMarkStreamRuleResponse.setRequestId(_ctx.stringValue("DynamicUpdateWaterMarkStreamRuleResponse.RequestId"));
 	 
-	 	return checkServiceForRoleResponse;
+	 	return dynamicUpdateWaterMarkStreamRuleResponse;
 	}
 }

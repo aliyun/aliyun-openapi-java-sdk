@@ -15,26 +15,16 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.CheckServiceForRoleResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DynamicUpdateWaterMarkStreamRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckServiceForRoleResponse extends AcsResponse {
-
-	private Boolean deletable;
+public class DynamicUpdateWaterMarkStreamRuleResponse extends AcsResponse {
 
 	private String requestId;
-
-	public Boolean getDeletable() {
-		return this.deletable;
-	}
-
-	public void setDeletable(Boolean deletable) {
-		this.deletable = deletable;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,7 +35,7 @@ public class CheckServiceForRoleResponse extends AcsResponse {
 	}
 
 	@Override
-	public CheckServiceForRoleResponse getInstance(UnmarshallerContext context) {
-		return	CheckServiceForRoleResponseUnmarshaller.unmarshall(this, context);
+	public DynamicUpdateWaterMarkStreamRuleResponse getInstance(UnmarshallerContext context) {
+		return	DynamicUpdateWaterMarkStreamRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 }
