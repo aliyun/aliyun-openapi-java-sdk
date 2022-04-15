@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dms_enterprise.model.v20181101.ListTaskFlowResponse;
-import com.aliyuncs.dms_enterprise.model.v20181101.ListTaskFlowResponse.DAGInstance;
+import com.aliyuncs.dms_enterprise.model.v20181101.ListTaskFlowResponse.TaskFlow;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,19 +31,19 @@ public class ListTaskFlowResponseUnmarshaller {
 		listTaskFlowResponse.setErrorMessage(_ctx.stringValue("ListTaskFlowResponse.ErrorMessage"));
 		listTaskFlowResponse.setSuccess(_ctx.booleanValue("ListTaskFlowResponse.Success"));
 
-		List<DAGInstance> taskFlowList = new ArrayList<DAGInstance>();
+		List<TaskFlow> taskFlowList = new ArrayList<TaskFlow>();
 		for (int i = 0; i < _ctx.lengthValue("ListTaskFlowResponse.TaskFlowList.Length"); i++) {
-			DAGInstance dAGInstance = new DAGInstance();
-			dAGInstance.setId(_ctx.longValue("ListTaskFlowResponse.TaskFlowList["+ i +"].Id"));
-			dAGInstance.setCreatorId(_ctx.stringValue("ListTaskFlowResponse.TaskFlowList["+ i +"].CreatorId"));
-			dAGInstance.setCreatorNickName(_ctx.stringValue("ListTaskFlowResponse.TaskFlowList["+ i +"].CreatorNickName"));
-			dAGInstance.setDagOwnerNickName(_ctx.stringValue("ListTaskFlowResponse.TaskFlowList["+ i +"].DagOwnerNickName"));
-			dAGInstance.setDeployId(_ctx.longValue("ListTaskFlowResponse.TaskFlowList["+ i +"].DeployId"));
-			dAGInstance.setStatus(_ctx.integerValue("ListTaskFlowResponse.TaskFlowList["+ i +"].Status"));
-			dAGInstance.setLatestInstanceStatus(_ctx.integerValue("ListTaskFlowResponse.TaskFlowList["+ i +"].LatestInstanceStatus"));
-			dAGInstance.setLatestInstanceTime(_ctx.stringValue("ListTaskFlowResponse.TaskFlowList["+ i +"].LatestInstanceTime"));
+			TaskFlow taskFlow = new TaskFlow();
+			taskFlow.setId(_ctx.longValue("ListTaskFlowResponse.TaskFlowList["+ i +"].Id"));
+			taskFlow.setCreatorId(_ctx.stringValue("ListTaskFlowResponse.TaskFlowList["+ i +"].CreatorId"));
+			taskFlow.setCreatorNickName(_ctx.stringValue("ListTaskFlowResponse.TaskFlowList["+ i +"].CreatorNickName"));
+			taskFlow.setDagOwnerNickName(_ctx.stringValue("ListTaskFlowResponse.TaskFlowList["+ i +"].DagOwnerNickName"));
+			taskFlow.setDeployId(_ctx.longValue("ListTaskFlowResponse.TaskFlowList["+ i +"].DeployId"));
+			taskFlow.setStatus(_ctx.integerValue("ListTaskFlowResponse.TaskFlowList["+ i +"].Status"));
+			taskFlow.setLatestInstanceStatus(_ctx.integerValue("ListTaskFlowResponse.TaskFlowList["+ i +"].LatestInstanceStatus"));
+			taskFlow.setLatestInstanceTime(_ctx.stringValue("ListTaskFlowResponse.TaskFlowList["+ i +"].LatestInstanceTime"));
 
-			taskFlowList.add(dAGInstance);
+			taskFlowList.add(taskFlow);
 		}
 		listTaskFlowResponse.setTaskFlowList(taskFlowList);
 	 

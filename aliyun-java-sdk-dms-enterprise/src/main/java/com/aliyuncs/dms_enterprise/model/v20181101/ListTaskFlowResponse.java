@@ -33,7 +33,7 @@ public class ListTaskFlowResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<DAGInstance> taskFlowList;
+	private List<TaskFlow> taskFlowList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListTaskFlowResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<DAGInstance> getTaskFlowList() {
+	public List<TaskFlow> getTaskFlowList() {
 		return this.taskFlowList;
 	}
 
-	public void setTaskFlowList(List<DAGInstance> taskFlowList) {
+	public void setTaskFlowList(List<TaskFlow> taskFlowList) {
 		this.taskFlowList = taskFlowList;
 	}
 
-	public static class DAGInstance {
+	public static class TaskFlow {
 
 		private Long id;
 
