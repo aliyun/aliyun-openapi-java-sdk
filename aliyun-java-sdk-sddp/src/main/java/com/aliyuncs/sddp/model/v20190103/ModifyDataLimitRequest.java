@@ -49,7 +49,7 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 
 	private String userName;
 	public ModifyDataLimitRequest() {
-		super("Sddp", "2019-01-03", "ModifyDataLimit");
+		super("Sddp", "2019-01-03", "ModifyDataLimit", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

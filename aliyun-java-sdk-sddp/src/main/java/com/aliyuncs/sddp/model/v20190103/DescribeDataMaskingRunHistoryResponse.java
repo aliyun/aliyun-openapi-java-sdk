@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<Task> items;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,66 +77,130 @@ public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 
 	public static class Task {
 
-		private Long id;
+		private Integer status;
 
-		private String taskId;
+		private Integer type;
 
-		private Long startTime;
+		private Integer srcType;
+
+		private String srcTableName;
+
+		private Long maskingCount;
+
+		private Integer percentage;
+
+		private Integer dstType;
+
+		private String failMsg;
+
+		private String failCode;
+
+		private Long conflictCount;
+
+		private String dstTypeCode;
 
 		private Long endTime;
 
 		private Integer runIndex;
 
-		private Integer type;
-
-		private Integer dstType;
-
-		private Integer percentage;
-
-		private Integer srcType;
-
-		private Long maskingCount;
-
-		private Long conflictCount;
-
-		private Integer status;
-
-		private String failCode;
-
-		private String dstTypeCode;
-
-		private String srcTypeCode;
+		private Long startTime;
 
 		private Integer hasSubProcess;
 
 		private Integer hasDownloadFile;
 
-		private String srcTableName;
+		private String taskId;
 
-		private String failMsg;
+		private String srcTypeCode;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
-		public String getTaskId() {
-			return this.taskId;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
+		public Integer getSrcType() {
+			return this.srcType;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
+		public void setSrcType(Integer srcType) {
+			this.srcType = srcType;
+		}
+
+		public String getSrcTableName() {
+			return this.srcTableName;
+		}
+
+		public void setSrcTableName(String srcTableName) {
+			this.srcTableName = srcTableName;
+		}
+
+		public Long getMaskingCount() {
+			return this.maskingCount;
+		}
+
+		public void setMaskingCount(Long maskingCount) {
+			this.maskingCount = maskingCount;
+		}
+
+		public Integer getPercentage() {
+			return this.percentage;
+		}
+
+		public void setPercentage(Integer percentage) {
+			this.percentage = percentage;
+		}
+
+		public Integer getDstType() {
+			return this.dstType;
+		}
+
+		public void setDstType(Integer dstType) {
+			this.dstType = dstType;
+		}
+
+		public String getFailMsg() {
+			return this.failMsg;
+		}
+
+		public void setFailMsg(String failMsg) {
+			this.failMsg = failMsg;
+		}
+
+		public String getFailCode() {
+			return this.failCode;
+		}
+
+		public void setFailCode(String failCode) {
+			this.failCode = failCode;
+		}
+
+		public Long getConflictCount() {
+			return this.conflictCount;
+		}
+
+		public void setConflictCount(Long conflictCount) {
+			this.conflictCount = conflictCount;
+		}
+
+		public String getDstTypeCode() {
+			return this.dstTypeCode;
+		}
+
+		public void setDstTypeCode(String dstTypeCode) {
+			this.dstTypeCode = dstTypeCode;
 		}
 
 		public Long getEndTime() {
@@ -155,84 +219,12 @@ public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 			this.runIndex = runIndex;
 		}
 
-		public Integer getType() {
-			return this.type;
+		public Long getStartTime() {
+			return this.startTime;
 		}
 
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public Integer getDstType() {
-			return this.dstType;
-		}
-
-		public void setDstType(Integer dstType) {
-			this.dstType = dstType;
-		}
-
-		public Integer getPercentage() {
-			return this.percentage;
-		}
-
-		public void setPercentage(Integer percentage) {
-			this.percentage = percentage;
-		}
-
-		public Integer getSrcType() {
-			return this.srcType;
-		}
-
-		public void setSrcType(Integer srcType) {
-			this.srcType = srcType;
-		}
-
-		public Long getMaskingCount() {
-			return this.maskingCount;
-		}
-
-		public void setMaskingCount(Long maskingCount) {
-			this.maskingCount = maskingCount;
-		}
-
-		public Long getConflictCount() {
-			return this.conflictCount;
-		}
-
-		public void setConflictCount(Long conflictCount) {
-			this.conflictCount = conflictCount;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getFailCode() {
-			return this.failCode;
-		}
-
-		public void setFailCode(String failCode) {
-			this.failCode = failCode;
-		}
-
-		public String getDstTypeCode() {
-			return this.dstTypeCode;
-		}
-
-		public void setDstTypeCode(String dstTypeCode) {
-			this.dstTypeCode = dstTypeCode;
-		}
-
-		public String getSrcTypeCode() {
-			return this.srcTypeCode;
-		}
-
-		public void setSrcTypeCode(String srcTypeCode) {
-			this.srcTypeCode = srcTypeCode;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getHasSubProcess() {
@@ -251,20 +243,28 @@ public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 			this.hasDownloadFile = hasDownloadFile;
 		}
 
-		public String getSrcTableName() {
-			return this.srcTableName;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setSrcTableName(String srcTableName) {
-			this.srcTableName = srcTableName;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
-		public String getFailMsg() {
-			return this.failMsg;
+		public String getSrcTypeCode() {
+			return this.srcTypeCode;
 		}
 
-		public void setFailMsg(String failMsg) {
-			this.failMsg = failMsg;
+		public void setSrcTypeCode(String srcTypeCode) {
+			this.srcTypeCode = srcTypeCode;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

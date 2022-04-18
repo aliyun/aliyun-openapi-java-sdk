@@ -27,32 +27,32 @@ public class DescribeDataMaskingRunHistoryResponseUnmarshaller {
 	public static DescribeDataMaskingRunHistoryResponse unmarshall(DescribeDataMaskingRunHistoryResponse describeDataMaskingRunHistoryResponse, UnmarshallerContext _ctx) {
 		
 		describeDataMaskingRunHistoryResponse.setRequestId(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.RequestId"));
-		describeDataMaskingRunHistoryResponse.setPageSize(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.PageSize"));
 		describeDataMaskingRunHistoryResponse.setCurrentPage(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.CurrentPage"));
+		describeDataMaskingRunHistoryResponse.setPageSize(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.PageSize"));
 		describeDataMaskingRunHistoryResponse.setTotalCount(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.TotalCount"));
 
 		List<Task> items = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataMaskingRunHistoryResponse.Items.Length"); i++) {
 			Task task = new Task();
-			task.setId(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Id"));
-			task.setTaskId(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].TaskId"));
-			task.setStartTime(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].StartTime"));
+			task.setStatus(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Status"));
+			task.setType(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Type"));
+			task.setSrcType(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].SrcType"));
+			task.setSrcTableName(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].SrcTableName"));
+			task.setMaskingCount(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].MaskingCount"));
+			task.setPercentage(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Percentage"));
+			task.setDstType(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].DstType"));
+			task.setFailMsg(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].FailMsg"));
+			task.setFailCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].FailCode"));
+			task.setConflictCount(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].ConflictCount"));
+			task.setDstTypeCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].DstTypeCode"));
 			task.setEndTime(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].EndTime"));
 			task.setRunIndex(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].RunIndex"));
-			task.setType(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Type"));
-			task.setDstType(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].DstType"));
-			task.setPercentage(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Percentage"));
-			task.setSrcType(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].SrcType"));
-			task.setMaskingCount(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].MaskingCount"));
-			task.setConflictCount(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].ConflictCount"));
-			task.setStatus(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Status"));
-			task.setFailCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].FailCode"));
-			task.setDstTypeCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].DstTypeCode"));
-			task.setSrcTypeCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].SrcTypeCode"));
+			task.setStartTime(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].StartTime"));
 			task.setHasSubProcess(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].HasSubProcess"));
 			task.setHasDownloadFile(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].HasDownloadFile"));
-			task.setSrcTableName(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].SrcTableName"));
-			task.setFailMsg(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].FailMsg"));
+			task.setTaskId(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].TaskId"));
+			task.setSrcTypeCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].SrcTypeCode"));
+			task.setId(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Id"));
 
 			items.add(task);
 		}

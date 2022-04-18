@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDataAssetsResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<Asset> items;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,68 +77,52 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 
 	public static class Asset {
 
-		private String id;
-
-		private String name;
-
-		private String owner;
+		private String acl;
 
 		private Long creationTime;
 
-		private String productId;
+		private String dataType;
 
-		private String productCode;
-
-		private Boolean protection;
-
-		private Boolean labelsec;
-
-		private String odpsRiskLevelName;
-
-		private Boolean sensitive;
-
-		private Long riskLevelId;
-
-		private String riskLevelName;
-
-		private String ruleName;
-
-		private String departName;
-
-		private Integer totalCount;
-
-		private Integer sensitiveCount;
-
-		private String acl;
+		private String owner;
 
 		private String sensitiveRatio;
 
-		private String dataType;
+		private Boolean protection;
+
+		private String departName;
+
+		private Boolean labelsec;
+
+		private Integer totalCount;
+
+		private Long riskLevelId;
+
+		private String ruleName;
+
+		private Boolean sensitive;
 
 		private String objectKey;
 
-		public String getId() {
-			return this.id;
+		private String riskLevelName;
+
+		private String odpsRiskLevelName;
+
+		private String productId;
+
+		private String name;
+
+		private Integer sensitiveCount;
+
+		private String id;
+
+		private String productCode;
+
+		public String getAcl() {
+			return this.acl;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
+		public void setAcl(String acl) {
+			this.acl = acl;
 		}
 
 		public Long getCreationTime() {
@@ -149,108 +133,20 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getProductId() {
-			return this.productId;
+		public String getDataType() {
+			return this.dataType;
 		}
 
-		public void setProductId(String productId) {
-			this.productId = productId;
+		public void setDataType(String dataType) {
+			this.dataType = dataType;
 		}
 
-		public String getProductCode() {
-			return this.productCode;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public Boolean getProtection() {
-			return this.protection;
-		}
-
-		public void setProtection(Boolean protection) {
-			this.protection = protection;
-		}
-
-		public Boolean getLabelsec() {
-			return this.labelsec;
-		}
-
-		public void setLabelsec(Boolean labelsec) {
-			this.labelsec = labelsec;
-		}
-
-		public String getOdpsRiskLevelName() {
-			return this.odpsRiskLevelName;
-		}
-
-		public void setOdpsRiskLevelName(String odpsRiskLevelName) {
-			this.odpsRiskLevelName = odpsRiskLevelName;
-		}
-
-		public Boolean getSensitive() {
-			return this.sensitive;
-		}
-
-		public void setSensitive(Boolean sensitive) {
-			this.sensitive = sensitive;
-		}
-
-		public Long getRiskLevelId() {
-			return this.riskLevelId;
-		}
-
-		public void setRiskLevelId(Long riskLevelId) {
-			this.riskLevelId = riskLevelId;
-		}
-
-		public String getRiskLevelName() {
-			return this.riskLevelName;
-		}
-
-		public void setRiskLevelName(String riskLevelName) {
-			this.riskLevelName = riskLevelName;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getDepartName() {
-			return this.departName;
-		}
-
-		public void setDepartName(String departName) {
-			this.departName = departName;
-		}
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Integer getSensitiveCount() {
-			return this.sensitiveCount;
-		}
-
-		public void setSensitiveCount(Integer sensitiveCount) {
-			this.sensitiveCount = sensitiveCount;
-		}
-
-		public String getAcl() {
-			return this.acl;
-		}
-
-		public void setAcl(String acl) {
-			this.acl = acl;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public String getSensitiveRatio() {
@@ -261,12 +157,60 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 			this.sensitiveRatio = sensitiveRatio;
 		}
 
-		public String getDataType() {
-			return this.dataType;
+		public Boolean getProtection() {
+			return this.protection;
 		}
 
-		public void setDataType(String dataType) {
-			this.dataType = dataType;
+		public void setProtection(Boolean protection) {
+			this.protection = protection;
+		}
+
+		public String getDepartName() {
+			return this.departName;
+		}
+
+		public void setDepartName(String departName) {
+			this.departName = departName;
+		}
+
+		public Boolean getLabelsec() {
+			return this.labelsec;
+		}
+
+		public void setLabelsec(Boolean labelsec) {
+			this.labelsec = labelsec;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public Long getRiskLevelId() {
+			return this.riskLevelId;
+		}
+
+		public void setRiskLevelId(Long riskLevelId) {
+			this.riskLevelId = riskLevelId;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public Boolean getSensitive() {
+			return this.sensitive;
+		}
+
+		public void setSensitive(Boolean sensitive) {
+			this.sensitive = sensitive;
 		}
 
 		public String getObjectKey() {
@@ -275,6 +219,62 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 
 		public void setObjectKey(String objectKey) {
 			this.objectKey = objectKey;
+		}
+
+		public String getRiskLevelName() {
+			return this.riskLevelName;
+		}
+
+		public void setRiskLevelName(String riskLevelName) {
+			this.riskLevelName = riskLevelName;
+		}
+
+		public String getOdpsRiskLevelName() {
+			return this.odpsRiskLevelName;
+		}
+
+		public void setOdpsRiskLevelName(String odpsRiskLevelName) {
+			this.odpsRiskLevelName = odpsRiskLevelName;
+		}
+
+		public String getProductId() {
+			return this.productId;
+		}
+
+		public void setProductId(String productId) {
+			this.productId = productId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getSensitiveCount() {
+			return this.sensitiveCount;
+		}
+
+		public void setSensitiveCount(Integer sensitiveCount) {
+			this.sensitiveCount = sensitiveCount;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 	}
 

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceSourcesResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<InstanceSource> items;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeInstanceSourcesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,170 +77,64 @@ public class DescribeInstanceSourcesResponse extends AcsResponse {
 
 	public static class InstanceSource {
 
-		private String regionId;
-
-		private String regionName;
-
-		private String instanceId;
-
-		private Long id;
-
-		private String userName;
-
-		private String dbName;
-
-		private Long dataLimitId;
-
-		private Long gmtCreate;
-
-		private Long productId;
-
-		private Integer auditStatus;
-
-		private Integer logStoreDay;
-
-		private Integer enable;
-
-		private Integer autoScan;
-
-		private String engineType;
-
-		private Long instanceSize;
+		private String lastModifyUserId;
 
 		private Integer passwordStatus;
 
-		private String lastModifyUserId;
-
-		private Long lastModifyTime;
-
-		private String tenantId;
+		private String engineType;
 
 		private String tenantName;
 
+		private String instanceId;
+
 		private String instanceDescription;
+
+		private Long dataLimitId;
+
+		private String regionId;
+
+		private String dbName;
+
+		private Long lastModifyTime;
+
+		private String regionName;
 
 		private Boolean canModifyUserName;
 
-		private String instanceDescription1;
+		private Integer logStoreDay;
 
-		public String getRegionId() {
-			return this.regionId;
+		private Long gmtCreate;
+
+		private Integer autoScan;
+
+		private Long productId;
+
+		private Long instanceSize;
+
+		private String userName;
+
+		private Integer auditStatus;
+
+		private Long id;
+
+		private String tenantId;
+
+		private Integer enable;
+
+		private Integer checkStatus;
+
+		private Integer datamaskStatus;
+
+		private String errorMessage;
+
+		private Integer samplingSize;
+
+		public String getLastModifyUserId() {
+			return this.lastModifyUserId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getRegionName() {
-			return this.regionName;
-		}
-
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getDbName() {
-			return this.dbName;
-		}
-
-		public void setDbName(String dbName) {
-			this.dbName = dbName;
-		}
-
-		public Long getDataLimitId() {
-			return this.dataLimitId;
-		}
-
-		public void setDataLimitId(Long dataLimitId) {
-			this.dataLimitId = dataLimitId;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Long getProductId() {
-			return this.productId;
-		}
-
-		public void setProductId(Long productId) {
-			this.productId = productId;
-		}
-
-		public Integer getAuditStatus() {
-			return this.auditStatus;
-		}
-
-		public void setAuditStatus(Integer auditStatus) {
-			this.auditStatus = auditStatus;
-		}
-
-		public Integer getLogStoreDay() {
-			return this.logStoreDay;
-		}
-
-		public void setLogStoreDay(Integer logStoreDay) {
-			this.logStoreDay = logStoreDay;
-		}
-
-		public Integer getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Integer enable) {
-			this.enable = enable;
-		}
-
-		public Integer getAutoScan() {
-			return this.autoScan;
-		}
-
-		public void setAutoScan(Integer autoScan) {
-			this.autoScan = autoScan;
-		}
-
-		public String getEngineType() {
-			return this.engineType;
-		}
-
-		public void setEngineType(String engineType) {
-			this.engineType = engineType;
-		}
-
-		public Long getInstanceSize() {
-			return this.instanceSize;
-		}
-
-		public void setInstanceSize(Long instanceSize) {
-			this.instanceSize = instanceSize;
+		public void setLastModifyUserId(String lastModifyUserId) {
+			this.lastModifyUserId = lastModifyUserId;
 		}
 
 		public Integer getPasswordStatus() {
@@ -251,28 +145,12 @@ public class DescribeInstanceSourcesResponse extends AcsResponse {
 			this.passwordStatus = passwordStatus;
 		}
 
-		public String getLastModifyUserId() {
-			return this.lastModifyUserId;
+		public String getEngineType() {
+			return this.engineType;
 		}
 
-		public void setLastModifyUserId(String lastModifyUserId) {
-			this.lastModifyUserId = lastModifyUserId;
-		}
-
-		public Long getLastModifyTime() {
-			return this.lastModifyTime;
-		}
-
-		public void setLastModifyTime(Long lastModifyTime) {
-			this.lastModifyTime = lastModifyTime;
-		}
-
-		public String getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
+		public void setEngineType(String engineType) {
+			this.engineType = engineType;
 		}
 
 		public String getTenantName() {
@@ -283,12 +161,60 @@ public class DescribeInstanceSourcesResponse extends AcsResponse {
 			this.tenantName = tenantName;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getInstanceDescription() {
 			return this.instanceDescription;
 		}
 
 		public void setInstanceDescription(String instanceDescription) {
 			this.instanceDescription = instanceDescription;
+		}
+
+		public Long getDataLimitId() {
+			return this.dataLimitId;
+		}
+
+		public void setDataLimitId(Long dataLimitId) {
+			this.dataLimitId = dataLimitId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getDbName() {
+			return this.dbName;
+		}
+
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
+		}
+
+		public Long getLastModifyTime() {
+			return this.lastModifyTime;
+		}
+
+		public void setLastModifyTime(Long lastModifyTime) {
+			this.lastModifyTime = lastModifyTime;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
 		}
 
 		public Boolean getCanModifyUserName() {
@@ -299,12 +225,116 @@ public class DescribeInstanceSourcesResponse extends AcsResponse {
 			this.canModifyUserName = canModifyUserName;
 		}
 
-		public String getInstanceDescription1() {
-			return this.instanceDescription1;
+		public Integer getLogStoreDay() {
+			return this.logStoreDay;
 		}
 
-		public void setInstanceDescription1(String instanceDescription1) {
-			this.instanceDescription1 = instanceDescription1;
+		public void setLogStoreDay(Integer logStoreDay) {
+			this.logStoreDay = logStoreDay;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Integer getAutoScan() {
+			return this.autoScan;
+		}
+
+		public void setAutoScan(Integer autoScan) {
+			this.autoScan = autoScan;
+		}
+
+		public Long getProductId() {
+			return this.productId;
+		}
+
+		public void setProductId(Long productId) {
+			this.productId = productId;
+		}
+
+		public Long getInstanceSize() {
+			return this.instanceSize;
+		}
+
+		public void setInstanceSize(Long instanceSize) {
+			this.instanceSize = instanceSize;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public Integer getAuditStatus() {
+			return this.auditStatus;
+		}
+
+		public void setAuditStatus(Integer auditStatus) {
+			this.auditStatus = auditStatus;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public Integer getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Integer enable) {
+			this.enable = enable;
+		}
+
+		public Integer getCheckStatus() {
+			return this.checkStatus;
+		}
+
+		public void setCheckStatus(Integer checkStatus) {
+			this.checkStatus = checkStatus;
+		}
+
+		public Integer getDatamaskStatus() {
+			return this.datamaskStatus;
+		}
+
+		public void setDatamaskStatus(Integer datamaskStatus) {
+			this.datamaskStatus = datamaskStatus;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public Integer getSamplingSize() {
+			return this.samplingSize;
+		}
+
+		public void setSamplingSize(Integer samplingSize) {
+			this.samplingSize = samplingSize;
 		}
 	}
 

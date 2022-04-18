@@ -28,8 +28,10 @@ public class ExecDatamaskRequest extends RpcAcsRequest<ExecDatamaskResponse> {
 	private String data;
 
 	private Long templateId;
+
+	private String lang;
 	public ExecDatamaskRequest() {
-		super("Sddp", "2019-01-03", "ExecDatamask");
+		super("Sddp", "2019-01-03", "ExecDatamask", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +58,17 @@ public class ExecDatamaskRequest extends RpcAcsRequest<ExecDatamaskResponse> {
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

@@ -28,10 +28,8 @@ public class StopMaskingProcessRequest extends RpcAcsRequest<StopMaskingProcessR
 	private Long id;
 
 	private String lang;
-
-	private Integer featureType;
 	public StopMaskingProcessRequest() {
-		super("Sddp", "2019-01-03", "StopMaskingProcess");
+		super("Sddp", "2019-01-03", "StopMaskingProcess", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,17 +56,6 @@ public class StopMaskingProcessRequest extends RpcAcsRequest<StopMaskingProcessR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
 		}
 	}
 

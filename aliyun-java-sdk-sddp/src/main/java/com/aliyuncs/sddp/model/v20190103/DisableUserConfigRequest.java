@@ -29,7 +29,7 @@ public class DisableUserConfigRequest extends RpcAcsRequest<DisableUserConfigRes
 
 	private String lang;
 	public DisableUserConfigRequest() {
-		super("Sddp", "2019-01-03", "DisableUserConfig");
+		super("Sddp", "2019-01-03", "DisableUserConfig", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

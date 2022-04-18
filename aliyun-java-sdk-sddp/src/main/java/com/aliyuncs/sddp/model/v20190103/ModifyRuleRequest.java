@@ -31,8 +31,6 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 
 	private Long productId;
 
-	private String description;
-
 	private Long riskLevelId;
 
 	private String content;
@@ -43,19 +41,11 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 
 	private Integer ruleType;
 
-	private String statExpress;
-
-	private Integer contentCategory;
-
-	private Integer customType;
-
-	private String target;
-
 	private String name;
 
 	private Integer category;
 	public ModifyRuleRequest() {
-		super("Sddp", "2019-01-03", "ModifyRule");
+		super("Sddp", "2019-01-03", "ModifyRule", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -93,17 +83,6 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 		this.productId = productId;
 		if(productId != null){
 			putQueryParameter("ProductId", productId.toString());
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -159,50 +138,6 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 		this.ruleType = ruleType;
 		if(ruleType != null){
 			putQueryParameter("RuleType", ruleType.toString());
-		}
-	}
-
-	public String getStatExpress() {
-		return this.statExpress;
-	}
-
-	public void setStatExpress(String statExpress) {
-		this.statExpress = statExpress;
-		if(statExpress != null){
-			putQueryParameter("StatExpress", statExpress);
-		}
-	}
-
-	public Integer getContentCategory() {
-		return this.contentCategory;
-	}
-
-	public void setContentCategory(Integer contentCategory) {
-		this.contentCategory = contentCategory;
-		if(contentCategory != null){
-			putQueryParameter("ContentCategory", contentCategory.toString());
-		}
-	}
-
-	public Integer getCustomType() {
-		return this.customType;
-	}
-
-	public void setCustomType(Integer customType) {
-		this.customType = customType;
-		if(customType != null){
-			putQueryParameter("CustomType", customType.toString());
-		}
-	}
-
-	public String getTarget() {
-		return this.target;
-	}
-
-	public void setTarget(String target) {
-		this.target = target;
-		if(target != null){
-			putQueryParameter("Target", target);
 		}
 	}
 

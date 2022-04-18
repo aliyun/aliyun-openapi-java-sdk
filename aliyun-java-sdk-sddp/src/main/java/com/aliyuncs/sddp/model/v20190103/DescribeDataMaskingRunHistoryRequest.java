@@ -47,7 +47,7 @@ public class DescribeDataMaskingRunHistoryRequest extends RpcAcsRequest<Describe
 
 	private Integer status;
 	public DescribeDataMaskingRunHistoryRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataMaskingRunHistory");
+		super("Sddp", "2019-01-03", "DescribeDataMaskingRunHistory", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

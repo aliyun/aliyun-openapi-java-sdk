@@ -22,18 +22,14 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyRuleStatusRequest extends RpcAcsRequest<ModifyRuleStatusResponse> {
+public class ModifyReportTaskStatusRequest extends RpcAcsRequest<ModifyReportTaskStatusResponse> {
 	   
 
-	private String ids;
-
-	private Long id;
+	private Integer reportTaskStatus;
 
 	private String lang;
-
-	private Integer status;
-	public ModifyRuleStatusRequest() {
-		super("Sddp", "2019-01-03", "ModifyRuleStatus", "sddp");
+	public ModifyReportTaskStatusRequest() {
+		super("Sddp", "2019-01-03", "ModifyReportTaskStatus", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +37,14 @@ public class ModifyRuleStatusRequest extends RpcAcsRequest<ModifyRuleStatusRespo
 		} catch (Exception e) {}
 	}
 
-	public String getIds() {
-		return this.ids;
+	public Integer getReportTaskStatus() {
+		return this.reportTaskStatus;
 	}
 
-	public void setIds(String ids) {
-		this.ids = ids;
-		if(ids != null){
-			putQueryParameter("Ids", ids);
-		}
-	}
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id.toString());
+	public void setReportTaskStatus(Integer reportTaskStatus) {
+		this.reportTaskStatus = reportTaskStatus;
+		if(reportTaskStatus != null){
+			putQueryParameter("ReportTaskStatus", reportTaskStatus.toString());
 		}
 	}
 
@@ -74,20 +59,9 @@ public class ModifyRuleStatusRequest extends RpcAcsRequest<ModifyRuleStatusRespo
 		}
 	}
 
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
-		}
-	}
-
 	@Override
-	public Class<ModifyRuleStatusResponse> getResponseClass() {
-		return ModifyRuleStatusResponse.class;
+	public Class<ModifyReportTaskStatusResponse> getResponseClass() {
+		return ModifyReportTaskStatusResponse.class;
 	}
 
 }

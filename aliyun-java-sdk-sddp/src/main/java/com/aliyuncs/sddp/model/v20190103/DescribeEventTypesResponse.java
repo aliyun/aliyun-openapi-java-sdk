@@ -47,31 +47,15 @@ public class DescribeEventTypesResponse extends AcsResponse {
 
 	public static class EventType {
 
-		private Long id;
-
-		private String name;
-
 		private String code;
 
 		private String description;
 
+		private String name;
+
+		private Long id;
+
 		private List<SubType> subTypeList;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getCode() {
 			return this.code;
@@ -89,6 +73,22 @@ public class DescribeEventTypesResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public List<SubType> getSubTypeList() {
 			return this.subTypeList;
 		}
@@ -99,50 +99,34 @@ public class DescribeEventTypesResponse extends AcsResponse {
 
 		public static class SubType {
 
-			private Long id;
-
-			private String name;
-
-			private String code;
+			private Integer status;
 
 			private String description;
 
-			private Integer status;
+			private Integer configContentType;
 
 			private Integer eventHitCount;
 
-			private String adaptedProduct;
+			private String configValue;
 
 			private String configCode;
 
-			private Integer configContentType;
+			private String code;
 
 			private String configDescription;
 
-			private String configValue;
+			private String name;
 
-			public Long getId() {
-				return this.id;
+			private String adaptedProduct;
+
+			private Long id;
+
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getCode() {
-				return this.code;
-			}
-
-			public void setCode(String code) {
-				this.code = code;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public String getDescription() {
@@ -153,12 +137,12 @@ public class DescribeEventTypesResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public Integer getConfigContentType() {
+				return this.configContentType;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
+			public void setConfigContentType(Integer configContentType) {
+				this.configContentType = configContentType;
 			}
 
 			public Integer getEventHitCount() {
@@ -169,12 +153,12 @@ public class DescribeEventTypesResponse extends AcsResponse {
 				this.eventHitCount = eventHitCount;
 			}
 
-			public String getAdaptedProduct() {
-				return this.adaptedProduct;
+			public String getConfigValue() {
+				return this.configValue;
 			}
 
-			public void setAdaptedProduct(String adaptedProduct) {
-				this.adaptedProduct = adaptedProduct;
+			public void setConfigValue(String configValue) {
+				this.configValue = configValue;
 			}
 
 			public String getConfigCode() {
@@ -185,12 +169,12 @@ public class DescribeEventTypesResponse extends AcsResponse {
 				this.configCode = configCode;
 			}
 
-			public Integer getConfigContentType() {
-				return this.configContentType;
+			public String getCode() {
+				return this.code;
 			}
 
-			public void setConfigContentType(Integer configContentType) {
-				this.configContentType = configContentType;
+			public void setCode(String code) {
+				this.code = code;
 			}
 
 			public String getConfigDescription() {
@@ -201,12 +185,28 @@ public class DescribeEventTypesResponse extends AcsResponse {
 				this.configDescription = configDescription;
 			}
 
-			public String getConfigValue() {
-				return this.configValue;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setConfigValue(String configValue) {
-				this.configValue = configValue;
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getAdaptedProduct() {
+				return this.adaptedProduct;
+			}
+
+			public void setAdaptedProduct(String adaptedProduct) {
+				this.adaptedProduct = adaptedProduct;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePackagesResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<_Package> items;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribePackagesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,51 +77,27 @@ public class DescribePackagesResponse extends AcsResponse {
 
 	public static class _Package {
 
-		private Long id;
-
-		private String name;
-
-		private String owner;
-
 		private Long creationTime;
 
 		private Boolean sensitive;
 
-		private Long riskLevelId;
+		private String owner;
 
 		private String riskLevelName;
 
 		private String departName;
 
+		private Long instanceId;
+
 		private Integer totalCount;
+
+		private String name;
 
 		private Integer sensitiveCount;
 
-		private Long instanceId;
+		private Long riskLevelId;
 
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
+		private Long id;
 
 		public Long getCreationTime() {
 			return this.creationTime;
@@ -139,12 +115,12 @@ public class DescribePackagesResponse extends AcsResponse {
 			this.sensitive = sensitive;
 		}
 
-		public Long getRiskLevelId() {
-			return this.riskLevelId;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setRiskLevelId(Long riskLevelId) {
-			this.riskLevelId = riskLevelId;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public String getRiskLevelName() {
@@ -163,12 +139,28 @@ public class DescribePackagesResponse extends AcsResponse {
 			this.departName = departName;
 		}
 
+		public Long getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public Integer getTotalCount() {
 			return this.totalCount;
 		}
 
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getSensitiveCount() {
@@ -179,12 +171,20 @@ public class DescribePackagesResponse extends AcsResponse {
 			this.sensitiveCount = sensitiveCount;
 		}
 
-		public Long getInstanceId() {
-			return this.instanceId;
+		public Long getRiskLevelId() {
+			return this.riskLevelId;
 		}
 
-		public void setInstanceId(Long instanceId) {
-			this.instanceId = instanceId;
+		public void setRiskLevelId(Long riskLevelId) {
+			this.riskLevelId = riskLevelId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

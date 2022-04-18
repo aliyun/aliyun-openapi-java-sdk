@@ -35,7 +35,7 @@ public class ModifyEventStatusRequest extends RpcAcsRequest<ModifyEventStatusRes
 
 	private Integer status;
 	public ModifyEventStatusRequest() {
-		super("Sddp", "2019-01-03", "ModifyEventStatus");
+		super("Sddp", "2019-01-03", "ModifyEventStatus", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

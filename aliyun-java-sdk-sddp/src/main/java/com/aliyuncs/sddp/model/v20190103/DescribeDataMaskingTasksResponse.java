@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDataMaskingTasksResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<Task> items;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeDataMaskingTasksResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,60 +77,44 @@ public class DescribeDataMaskingTasksResponse extends AcsResponse {
 
 	public static class Task {
 
-		private Long id;
-
-		private String taskId;
-
-		private String taskName;
+		private Integer status;
 
 		private String owner;
 
-		private Long gmtCreate;
-
-		private Integer dstType;
-
-		private String dstPath;
+		private String taskName;
 
 		private Integer srcType;
 
-		private String srcPath;
-
-		private Integer runCount;
-
-		private Integer status;
+		private Integer dstType;
 
 		private Boolean hasUnfinishProcess;
 
-		private String dstTypeCode;
-
-		private String srcTypeCode;
+		private Boolean originalTable;
 
 		private Integer triggerType;
 
-		private Boolean originalTable;
+		private String dstTypeCode;
 
-		public Long getId() {
-			return this.id;
+		private Integer runCount;
+
+		private Long gmtCreate;
+
+		private String taskId;
+
+		private String dstPath;
+
+		private String srcTypeCode;
+
+		private Long id;
+
+		private String srcPath;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getTaskName() {
-			return this.taskName;
-		}
-
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getOwner() {
@@ -141,28 +125,12 @@ public class DescribeDataMaskingTasksResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public String getTaskName() {
+			return this.taskName;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Integer getDstType() {
-			return this.dstType;
-		}
-
-		public void setDstType(Integer dstType) {
-			this.dstType = dstType;
-		}
-
-		public String getDstPath() {
-			return this.dstPath;
-		}
-
-		public void setDstPath(String dstPath) {
-			this.dstPath = dstPath;
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
 		}
 
 		public Integer getSrcType() {
@@ -173,28 +141,12 @@ public class DescribeDataMaskingTasksResponse extends AcsResponse {
 			this.srcType = srcType;
 		}
 
-		public String getSrcPath() {
-			return this.srcPath;
+		public Integer getDstType() {
+			return this.dstType;
 		}
 
-		public void setSrcPath(String srcPath) {
-			this.srcPath = srcPath;
-		}
-
-		public Integer getRunCount() {
-			return this.runCount;
-		}
-
-		public void setRunCount(Integer runCount) {
-			this.runCount = runCount;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setDstType(Integer dstType) {
+			this.dstType = dstType;
 		}
 
 		public Boolean getHasUnfinishProcess() {
@@ -205,20 +157,12 @@ public class DescribeDataMaskingTasksResponse extends AcsResponse {
 			this.hasUnfinishProcess = hasUnfinishProcess;
 		}
 
-		public String getDstTypeCode() {
-			return this.dstTypeCode;
+		public Boolean getOriginalTable() {
+			return this.originalTable;
 		}
 
-		public void setDstTypeCode(String dstTypeCode) {
-			this.dstTypeCode = dstTypeCode;
-		}
-
-		public String getSrcTypeCode() {
-			return this.srcTypeCode;
-		}
-
-		public void setSrcTypeCode(String srcTypeCode) {
-			this.srcTypeCode = srcTypeCode;
+		public void setOriginalTable(Boolean originalTable) {
+			this.originalTable = originalTable;
 		}
 
 		public Integer getTriggerType() {
@@ -229,12 +173,68 @@ public class DescribeDataMaskingTasksResponse extends AcsResponse {
 			this.triggerType = triggerType;
 		}
 
-		public Boolean getOriginalTable() {
-			return this.originalTable;
+		public String getDstTypeCode() {
+			return this.dstTypeCode;
 		}
 
-		public void setOriginalTable(Boolean originalTable) {
-			this.originalTable = originalTable;
+		public void setDstTypeCode(String dstTypeCode) {
+			this.dstTypeCode = dstTypeCode;
+		}
+
+		public Integer getRunCount() {
+			return this.runCount;
+		}
+
+		public void setRunCount(Integer runCount) {
+			this.runCount = runCount;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getDstPath() {
+			return this.dstPath;
+		}
+
+		public void setDstPath(String dstPath) {
+			this.dstPath = dstPath;
+		}
+
+		public String getSrcTypeCode() {
+			return this.srcTypeCode;
+		}
+
+		public void setSrcTypeCode(String srcTypeCode) {
+			this.srcTypeCode = srcTypeCode;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getSrcPath() {
+			return this.srcPath;
+		}
+
+		public void setSrcPath(String srcPath) {
+			this.srcPath = srcPath;
 		}
 	}
 

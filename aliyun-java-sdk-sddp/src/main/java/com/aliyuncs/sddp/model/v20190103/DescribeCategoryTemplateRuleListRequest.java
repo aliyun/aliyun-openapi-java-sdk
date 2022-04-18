@@ -22,24 +22,20 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDataMaskingTasksRequest extends RpcAcsRequest<DescribeDataMaskingTasksResponse> {
+public class DescribeCategoryTemplateRuleListRequest extends RpcAcsRequest<DescribeCategoryTemplateRuleListResponse> {
 	   
 
-	private String searchKey;
-
-	private Long startTime;
+	private Long riskLevelId;
 
 	private Integer pageSize;
 
 	private String lang;
 
-	private Long endTime;
-
 	private Integer currentPage;
 
-	private Integer dstType;
-	public DescribeDataMaskingTasksRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataMaskingTasks", "sddp");
+	private Integer status;
+	public DescribeCategoryTemplateRuleListRequest() {
+		super("Sddp", "2019-01-03", "DescribeCategoryTemplateRuleList", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,25 +43,14 @@ public class DescribeDataMaskingTasksRequest extends RpcAcsRequest<DescribeDataM
 		} catch (Exception e) {}
 	}
 
-	public String getSearchKey() {
-		return this.searchKey;
+	public Long getRiskLevelId() {
+		return this.riskLevelId;
 	}
 
-	public void setSearchKey(String searchKey) {
-		this.searchKey = searchKey;
-		if(searchKey != null){
-			putQueryParameter("SearchKey", searchKey);
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
+	public void setRiskLevelId(Long riskLevelId) {
+		this.riskLevelId = riskLevelId;
+		if(riskLevelId != null){
+			putQueryParameter("RiskLevelId", riskLevelId.toString());
 		}
 	}
 
@@ -91,17 +76,6 @@ public class DescribeDataMaskingTasksRequest extends RpcAcsRequest<DescribeDataM
 		}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -113,20 +87,20 @@ public class DescribeDataMaskingTasksRequest extends RpcAcsRequest<DescribeDataM
 		}
 	}
 
-	public Integer getDstType() {
-		return this.dstType;
+	public Integer getStatus() {
+		return this.status;
 	}
 
-	public void setDstType(Integer dstType) {
-		this.dstType = dstType;
-		if(dstType != null){
-			putQueryParameter("DstType", dstType.toString());
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeDataMaskingTasksResponse> getResponseClass() {
-		return DescribeDataMaskingTasksResponse.class;
+	public Class<DescribeCategoryTemplateRuleListResponse> getResponseClass() {
+		return DescribeCategoryTemplateRuleListResponse.class;
 	}
 
 }

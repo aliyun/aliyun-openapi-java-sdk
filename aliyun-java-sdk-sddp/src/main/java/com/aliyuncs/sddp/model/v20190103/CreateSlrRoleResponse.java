@@ -15,25 +15,25 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sddp.transform.v20190103.ModifyRuleStatusResponseUnmarshaller;
+import com.aliyuncs.sddp.transform.v20190103.CreateSlrRoleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyRuleStatusResponse extends AcsResponse {
+public class CreateSlrRoleResponse extends AcsResponse {
 
-	private String failedIds;
+	private Boolean hasPermission;
 
 	private String requestId;
 
-	public String getFailedIds() {
-		return this.failedIds;
+	public Boolean getHasPermission() {
+		return this.hasPermission;
 	}
 
-	public void setFailedIds(String failedIds) {
-		this.failedIds = failedIds;
+	public void setHasPermission(Boolean hasPermission) {
+		this.hasPermission = hasPermission;
 	}
 
 	public String getRequestId() {
@@ -45,8 +45,8 @@ public class ModifyRuleStatusResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyRuleStatusResponse getInstance(UnmarshallerContext context) {
-		return	ModifyRuleStatusResponseUnmarshaller.unmarshall(this, context);
+	public CreateSlrRoleResponse getInstance(UnmarshallerContext context) {
+		return	CreateSlrRoleResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

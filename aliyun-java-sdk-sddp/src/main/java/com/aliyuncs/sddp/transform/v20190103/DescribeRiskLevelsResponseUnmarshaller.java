@@ -31,10 +31,10 @@ public class DescribeRiskLevelsResponseUnmarshaller {
 		List<RiskLevel> riskLevelList = new ArrayList<RiskLevel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRiskLevelsResponse.RiskLevelList.Length"); i++) {
 			RiskLevel riskLevel = new RiskLevel();
-			riskLevel.setId(_ctx.longValue("DescribeRiskLevelsResponse.RiskLevelList["+ i +"].Id"));
-			riskLevel.setDescription(_ctx.stringValue("DescribeRiskLevelsResponse.RiskLevelList["+ i +"].Description"));
 			riskLevel.setName(_ctx.stringValue("DescribeRiskLevelsResponse.RiskLevelList["+ i +"].Name"));
+			riskLevel.setDescription(_ctx.stringValue("DescribeRiskLevelsResponse.RiskLevelList["+ i +"].Description"));
 			riskLevel.setAlias(_ctx.stringValue("DescribeRiskLevelsResponse.RiskLevelList["+ i +"].Alias"));
+			riskLevel.setId(_ctx.longValue("DescribeRiskLevelsResponse.RiskLevelList["+ i +"].Id"));
 			riskLevel.setReferenceNum(_ctx.integerValue("DescribeRiskLevelsResponse.RiskLevelList["+ i +"].ReferenceNum"));
 
 			riskLevelList.add(riskLevel);

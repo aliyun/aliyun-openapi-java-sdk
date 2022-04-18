@@ -27,7 +27,7 @@ public class DescribeUserStatusRequest extends RpcAcsRequest<DescribeUserStatusR
 
 	private String lang;
 	public DescribeUserStatusRequest() {
-		super("Sddp", "2019-01-03", "DescribeUserStatus");
+		super("Sddp", "2019-01-03", "DescribeUserStatus", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

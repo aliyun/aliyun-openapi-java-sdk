@@ -31,7 +31,7 @@ public class DescribeDataLimitSetRequest extends RpcAcsRequest<DescribeDataLimit
 
 	private Integer resourceType;
 	public DescribeDataLimitSetRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataLimitSet");
+		super("Sddp", "2019-01-03", "DescribeDataLimitSet", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

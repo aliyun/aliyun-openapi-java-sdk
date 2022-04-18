@@ -47,9 +47,9 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 
 	public static class DataLimitSet {
 
-		private Long resourceType;
-
 		private String resourceTypeCode;
+
+		private Long resourceType;
 
 		private Integer totalCount;
 
@@ -59,20 +59,20 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 
 		private List<Region> regionList;
 
-		public Long getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(Long resourceType) {
-			this.resourceType = resourceType;
-		}
-
 		public String getResourceTypeCode() {
 			return this.resourceTypeCode;
 		}
 
 		public void setResourceTypeCode(String resourceTypeCode) {
 			this.resourceTypeCode = resourceTypeCode;
+		}
+
+		public Long getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(Long resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public Integer getTotalCount() {
@@ -109,44 +109,44 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 
 		public static class DataLimit {
 
-			private String regionId;
+			private Boolean supportEvent;
 
 			private String localName;
 
-			private String parentId;
-
-			private Long id;
-
-			private String userName;
-
-			private Long gmtCreate;
+			private Integer checkStatus;
 
 			private String connector;
 
-			private Integer checkStatus;
+			private Integer port;
 
 			private String checkStatusName;
 
+			private String regionId;
+
+			private String parentId;
+
 			private Long resourceType;
-
-			private String resourceTypeCode;
-
-			private Integer auditStatus;
 
 			private Integer logStoreDay;
 
-			private Integer port;
-
 			private Integer eventStatus;
 
-			private Boolean supportEvent;
+			private Long gmtCreate;
 
-			public String getRegionId() {
-				return this.regionId;
+			private String resourceTypeCode;
+
+			private String userName;
+
+			private Long id;
+
+			private Integer auditStatus;
+
+			public Boolean getSupportEvent() {
+				return this.supportEvent;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setSupportEvent(Boolean supportEvent) {
+				this.supportEvent = supportEvent;
 			}
 
 			public String getLocalName() {
@@ -155,46 +155,6 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 
 			public void setLocalName(String localName) {
 				this.localName = localName;
-			}
-
-			public String getParentId() {
-				return this.parentId;
-			}
-
-			public void setParentId(String parentId) {
-				this.parentId = parentId;
-			}
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getUserName() {
-				return this.userName;
-			}
-
-			public void setUserName(String userName) {
-				this.userName = userName;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getConnector() {
-				return this.connector;
-			}
-
-			public void setConnector(String connector) {
-				this.connector = connector;
 			}
 
 			public Integer getCheckStatus() {
@@ -205,44 +165,12 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 				this.checkStatus = checkStatus;
 			}
 
-			public String getCheckStatusName() {
-				return this.checkStatusName;
+			public String getConnector() {
+				return this.connector;
 			}
 
-			public void setCheckStatusName(String checkStatusName) {
-				this.checkStatusName = checkStatusName;
-			}
-
-			public Long getResourceType() {
-				return this.resourceType;
-			}
-
-			public void setResourceType(Long resourceType) {
-				this.resourceType = resourceType;
-			}
-
-			public String getResourceTypeCode() {
-				return this.resourceTypeCode;
-			}
-
-			public void setResourceTypeCode(String resourceTypeCode) {
-				this.resourceTypeCode = resourceTypeCode;
-			}
-
-			public Integer getAuditStatus() {
-				return this.auditStatus;
-			}
-
-			public void setAuditStatus(Integer auditStatus) {
-				this.auditStatus = auditStatus;
-			}
-
-			public Integer getLogStoreDay() {
-				return this.logStoreDay;
-			}
-
-			public void setLogStoreDay(Integer logStoreDay) {
-				this.logStoreDay = logStoreDay;
+			public void setConnector(String connector) {
+				this.connector = connector;
 			}
 
 			public Integer getPort() {
@@ -253,6 +181,46 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 				this.port = port;
 			}
 
+			public String getCheckStatusName() {
+				return this.checkStatusName;
+			}
+
+			public void setCheckStatusName(String checkStatusName) {
+				this.checkStatusName = checkStatusName;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getParentId() {
+				return this.parentId;
+			}
+
+			public void setParentId(String parentId) {
+				this.parentId = parentId;
+			}
+
+			public Long getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(Long resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public Integer getLogStoreDay() {
+				return this.logStoreDay;
+			}
+
+			public void setLogStoreDay(Integer logStoreDay) {
+				this.logStoreDay = logStoreDay;
+			}
+
 			public Integer getEventStatus() {
 				return this.eventStatus;
 			}
@@ -261,20 +229,60 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 				this.eventStatus = eventStatus;
 			}
 
-			public Boolean getSupportEvent() {
-				return this.supportEvent;
+			public Long getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setSupportEvent(Boolean supportEvent) {
-				this.supportEvent = supportEvent;
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getResourceTypeCode() {
+				return this.resourceTypeCode;
+			}
+
+			public void setResourceTypeCode(String resourceTypeCode) {
+				this.resourceTypeCode = resourceTypeCode;
+			}
+
+			public String getUserName() {
+				return this.userName;
+			}
+
+			public void setUserName(String userName) {
+				this.userName = userName;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public Integer getAuditStatus() {
+				return this.auditStatus;
+			}
+
+			public void setAuditStatus(Integer auditStatus) {
+				this.auditStatus = auditStatus;
 			}
 		}
 
 		public static class OssBucket {
 
+			private String regionId;
+
 			private String bucketName;
 
-			private String regionId;
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
 
 			public String getBucketName() {
 				return this.bucketName;
@@ -283,6 +291,13 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 			public void setBucketName(String bucketName) {
 				this.bucketName = bucketName;
 			}
+		}
+
+		public static class Region {
+
+			private String regionId;
+
+			private String localName;
 
 			public String getRegionId() {
 				return this.regionId;
@@ -291,13 +306,6 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
 			}
-		}
-
-		public static class Region {
-
-			private String localName;
-
-			private String regionId;
 
 			public String getLocalName() {
 				return this.localName;
@@ -305,14 +313,6 @@ public class DescribeDataLimitSetResponse extends AcsResponse {
 
 			public void setLocalName(String localName) {
 				this.localName = localName;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
 			}
 		}
 	}

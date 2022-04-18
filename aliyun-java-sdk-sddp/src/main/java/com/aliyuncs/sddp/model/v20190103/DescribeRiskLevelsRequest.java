@@ -27,7 +27,7 @@ public class DescribeRiskLevelsRequest extends RpcAcsRequest<DescribeRiskLevelsR
 
 	private String lang;
 	public DescribeRiskLevelsRequest() {
-		super("Sddp", "2019-01-03", "DescribeRiskLevels");
+		super("Sddp", "2019-01-03", "DescribeRiskLevels", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

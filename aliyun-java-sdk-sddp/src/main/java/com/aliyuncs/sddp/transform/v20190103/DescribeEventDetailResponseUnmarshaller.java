@@ -35,30 +35,30 @@ public class DescribeEventDetailResponseUnmarshaller {
 		describeEventDetailResponse.setRequestId(_ctx.stringValue("DescribeEventDetailResponse.RequestId"));
 
 		Event event = new Event();
-		event.setId(_ctx.longValue("DescribeEventDetailResponse.Event.Id"));
-		event.setUserId(_ctx.longValue("DescribeEventDetailResponse.Event.UserId"));
-		event.setLoginName(_ctx.stringValue("DescribeEventDetailResponse.Event.LoginName"));
 		event.setDisplayName(_ctx.stringValue("DescribeEventDetailResponse.Event.DisplayName"));
-		event.setProductCode(_ctx.stringValue("DescribeEventDetailResponse.Event.ProductCode"));
-		event.setTypeCode(_ctx.stringValue("DescribeEventDetailResponse.Event.TypeCode"));
-		event.setTypeName(_ctx.stringValue("DescribeEventDetailResponse.Event.TypeName"));
-		event.setSubTypeCode(_ctx.stringValue("DescribeEventDetailResponse.Event.SubTypeCode"));
+		event.setStatus(_ctx.integerValue("DescribeEventDetailResponse.Event.Status"));
+		event.setDealReason(_ctx.stringValue("DescribeEventDetailResponse.Event.DealReason"));
+		event.setUserId(_ctx.longValue("DescribeEventDetailResponse.Event.UserId"));
+		event.setStatusName(_ctx.stringValue("DescribeEventDetailResponse.Event.StatusName"));
+		event.setDepartName(_ctx.stringValue("DescribeEventDetailResponse.Event.DepartName"));
+		event.setDealTime(_ctx.longValue("DescribeEventDetailResponse.Event.DealTime"));
+		event.setDealLoginName(_ctx.stringValue("DescribeEventDetailResponse.Event.DealLoginName"));
 		event.setSubTypeName(_ctx.stringValue("DescribeEventDetailResponse.Event.SubTypeName"));
-		event.setAlertTime(_ctx.longValue("DescribeEventDetailResponse.Event.AlertTime"));
+		event.setBacked(_ctx.booleanValue("DescribeEventDetailResponse.Event.Backed"));
 		event.setDataInstance(_ctx.stringValue("DescribeEventDetailResponse.Event.DataInstance"));
 		event.setEventTime(_ctx.longValue("DescribeEventDetailResponse.Event.EventTime"));
-		event.setStatus(_ctx.integerValue("DescribeEventDetailResponse.Event.Status"));
-		event.setStatusName(_ctx.stringValue("DescribeEventDetailResponse.Event.StatusName"));
-		event.setDealUserId(_ctx.longValue("DescribeEventDetailResponse.Event.DealUserId"));
-		event.setDealLoginName(_ctx.stringValue("DescribeEventDetailResponse.Event.DealLoginName"));
-		event.setDealDisplayName(_ctx.stringValue("DescribeEventDetailResponse.Event.DealDisplayName"));
-		event.setDealTime(_ctx.longValue("DescribeEventDetailResponse.Event.DealTime"));
-		event.setDepartName(_ctx.stringValue("DescribeEventDetailResponse.Event.DepartName"));
-		event.setBacked(_ctx.booleanValue("DescribeEventDetailResponse.Event.Backed"));
-		event.setDealReason(_ctx.stringValue("DescribeEventDetailResponse.Event.DealReason"));
+		event.setLoginName(_ctx.stringValue("DescribeEventDetailResponse.Event.LoginName"));
 		event.setUserIdValue(_ctx.stringValue("DescribeEventDetailResponse.Event.UserIdValue"));
-		event.setDealUserIdValue(_ctx.stringValue("DescribeEventDetailResponse.Event.dealUserIdValue"));
+		event.setSubTypeCode(_ctx.stringValue("DescribeEventDetailResponse.Event.SubTypeCode"));
 		event.setLogDetail(_ctx.stringValue("DescribeEventDetailResponse.Event.LogDetail"));
+		event.setTypeCode(_ctx.stringValue("DescribeEventDetailResponse.Event.TypeCode"));
+		event.setDealUserIdValue(_ctx.stringValue("DescribeEventDetailResponse.Event.dealUserIdValue"));
+		event.setAlertTime(_ctx.longValue("DescribeEventDetailResponse.Event.AlertTime"));
+		event.setDealUserId(_ctx.longValue("DescribeEventDetailResponse.Event.DealUserId"));
+		event.setTypeName(_ctx.stringValue("DescribeEventDetailResponse.Event.TypeName"));
+		event.setDealDisplayName(_ctx.stringValue("DescribeEventDetailResponse.Event.DealDisplayName"));
+		event.setId(_ctx.longValue("DescribeEventDetailResponse.Event.Id"));
+		event.setProductCode(_ctx.stringValue("DescribeEventDetailResponse.Event.ProductCode"));
 
 		Detail detail = new Detail();
 
@@ -75,14 +75,24 @@ public class DescribeEventDetailResponseUnmarshaller {
 		List<ChartItem> chart = new ArrayList<ChartItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventDetailResponse.Event.Detail.Chart.Length"); i++) {
 			ChartItem chartItem = new ChartItem();
+			chartItem.setType(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Type"));
 			chartItem.setLabel(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Label"));
 			chartItem.setXLabel(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].XLabel"));
 			chartItem.setYLabel(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].YLabel"));
-			chartItem.setType(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Type"));
 
 			Data data = new Data();
-			data.setX(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Data.X"));
-			data.setY(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Data.Y"));
+
+			List<String> y = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Data.Y.Length"); j++) {
+				y.add(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Data.Y["+ j +"]"));
+			}
+			data.setY(y);
+
+			List<String> x = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Data.X.Length"); j++) {
+				x.add(_ctx.stringValue("DescribeEventDetailResponse.Event.Detail.Chart["+ i +"].Data.X["+ j +"]"));
+			}
+			data.setX(x);
 			chartItem.setData(data);
 
 			chart.add(chartItem);
@@ -103,13 +113,13 @@ public class DescribeEventDetailResponseUnmarshaller {
 		List<HandleInfo> handleInfoList = new ArrayList<HandleInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventDetailResponse.Event.HandleInfoList.Length"); i++) {
 			HandleInfo handleInfo = new HandleInfo();
-			handleInfo.setHandlerType(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerType"));
-			handleInfo.setHandlerName(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerName"));
-			handleInfo.setHandlerValue(_ctx.integerValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerValue"));
-			handleInfo.setCurrentValue(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].CurrentValue"));
-			handleInfo.setDisableTime(_ctx.longValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].DisableTime"));
-			handleInfo.setEnableTime(_ctx.longValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].EnableTime"));
 			handleInfo.setStatus(_ctx.integerValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].Status"));
+			handleInfo.setEnableTime(_ctx.longValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].EnableTime"));
+			handleInfo.setHandlerValue(_ctx.integerValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerValue"));
+			handleInfo.setDisableTime(_ctx.longValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].DisableTime"));
+			handleInfo.setHandlerName(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerName"));
+			handleInfo.setHandlerType(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerType"));
+			handleInfo.setCurrentValue(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].CurrentValue"));
 			handleInfo.setId(_ctx.longValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].Id"));
 
 			handleInfoList.add(handleInfo);

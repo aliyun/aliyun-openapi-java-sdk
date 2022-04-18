@@ -30,21 +30,21 @@ public class DescribeOssObjectDetailResponseUnmarshaller {
 		describeOssObjectDetailResponse.setRequestId(_ctx.stringValue("DescribeOssObjectDetailResponse.RequestId"));
 
 		OssObjectDetail ossObjectDetail = new OssObjectDetail();
-		ossObjectDetail.setName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.Name"));
-		ossObjectDetail.setRegionId(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RegionId"));
-		ossObjectDetail.setRiskLevelName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RiskLevelName"));
-		ossObjectDetail.setBucketName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.BucketName"));
 		ossObjectDetail.setCategoryName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.CategoryName"));
+		ossObjectDetail.setName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.Name"));
+		ossObjectDetail.setBucketName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.BucketName"));
+		ossObjectDetail.setRiskLevelName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RiskLevelName"));
+		ossObjectDetail.setRegionId(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RegionId"));
 
 		List<Rule> ruleList = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RuleName"));
-			rule.setCount(_ctx.longValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].Count"));
+			rule.setRiskLevelName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RiskLevelName"));
 			rule.setCategory(_ctx.integerValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].Category"));
 			rule.setCategoryName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].CategoryName"));
-			rule.setRiskLevelName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RiskLevelName"));
 			rule.setRiskLevelId(_ctx.longValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RiskLevelId"));
+			rule.setCount(_ctx.longValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].Count"));
+			rule.setRuleName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RuleName"));
 
 			List<String> sampleList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].SampleList.Length"); j++) {

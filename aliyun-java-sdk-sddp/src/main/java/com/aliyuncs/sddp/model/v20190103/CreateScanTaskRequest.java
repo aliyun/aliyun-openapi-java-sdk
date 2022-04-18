@@ -39,13 +39,15 @@ public class CreateScanTaskRequest extends RpcAcsRequest<CreateScanTaskResponse>
 
 	private Integer scanRange;
 
+	private String lang;
+
 	private String ossScanPath;
 
 	private Long resourceType;
 
 	private String taskUserName;
 	public CreateScanTaskRequest() {
-		super("Sddp", "2019-01-03", "CreateScanTask");
+		super("Sddp", "2019-01-03", "CreateScanTask", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -127,6 +129,17 @@ public class CreateScanTaskRequest extends RpcAcsRequest<CreateScanTaskResponse>
 		this.scanRange = scanRange;
 		if(scanRange != null){
 			putQueryParameter("ScanRange", scanRange.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

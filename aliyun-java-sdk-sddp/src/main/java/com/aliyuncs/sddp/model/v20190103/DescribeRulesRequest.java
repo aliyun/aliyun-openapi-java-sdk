@@ -55,7 +55,7 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 
 	private Integer status;
 	public DescribeRulesRequest() {
-		super("Sddp", "2019-01-03", "DescribeRules");
+		super("Sddp", "2019-01-03", "DescribeRules", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

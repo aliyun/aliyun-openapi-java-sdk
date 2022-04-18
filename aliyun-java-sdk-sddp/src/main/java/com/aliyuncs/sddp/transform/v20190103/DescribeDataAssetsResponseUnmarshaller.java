@@ -27,33 +27,33 @@ public class DescribeDataAssetsResponseUnmarshaller {
 	public static DescribeDataAssetsResponse unmarshall(DescribeDataAssetsResponse describeDataAssetsResponse, UnmarshallerContext _ctx) {
 		
 		describeDataAssetsResponse.setRequestId(_ctx.stringValue("DescribeDataAssetsResponse.RequestId"));
-		describeDataAssetsResponse.setPageSize(_ctx.integerValue("DescribeDataAssetsResponse.PageSize"));
 		describeDataAssetsResponse.setCurrentPage(_ctx.integerValue("DescribeDataAssetsResponse.CurrentPage"));
+		describeDataAssetsResponse.setPageSize(_ctx.integerValue("DescribeDataAssetsResponse.PageSize"));
 		describeDataAssetsResponse.setTotalCount(_ctx.integerValue("DescribeDataAssetsResponse.TotalCount"));
 
 		List<Asset> items = new ArrayList<Asset>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataAssetsResponse.Items.Length"); i++) {
 			Asset asset = new Asset();
-			asset.setId(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Id"));
-			asset.setName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Name"));
-			asset.setOwner(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Owner"));
-			asset.setCreationTime(_ctx.longValue("DescribeDataAssetsResponse.Items["+ i +"].CreationTime"));
-			asset.setProductId(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductId"));
-			asset.setProductCode(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductCode"));
-			asset.setProtection(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Protection"));
-			asset.setLabelsec(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Labelsec"));
-			asset.setOdpsRiskLevelName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].OdpsRiskLevelName"));
-			asset.setSensitive(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Sensitive"));
-			asset.setRiskLevelId(_ctx.longValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelId"));
-			asset.setRiskLevelName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelName"));
-			asset.setRuleName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].RuleName"));
-			asset.setDepartName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].DepartName"));
-			asset.setTotalCount(_ctx.integerValue("DescribeDataAssetsResponse.Items["+ i +"].TotalCount"));
-			asset.setSensitiveCount(_ctx.integerValue("DescribeDataAssetsResponse.Items["+ i +"].SensitiveCount"));
 			asset.setAcl(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Acl"));
-			asset.setSensitiveRatio(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].SensitiveRatio"));
+			asset.setCreationTime(_ctx.longValue("DescribeDataAssetsResponse.Items["+ i +"].CreationTime"));
 			asset.setDataType(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].DataType"));
+			asset.setOwner(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Owner"));
+			asset.setSensitiveRatio(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].SensitiveRatio"));
+			asset.setProtection(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Protection"));
+			asset.setDepartName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].DepartName"));
+			asset.setLabelsec(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Labelsec"));
+			asset.setTotalCount(_ctx.integerValue("DescribeDataAssetsResponse.Items["+ i +"].TotalCount"));
+			asset.setRiskLevelId(_ctx.longValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelId"));
+			asset.setRuleName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].RuleName"));
+			asset.setSensitive(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Sensitive"));
 			asset.setObjectKey(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ObjectKey"));
+			asset.setRiskLevelName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelName"));
+			asset.setOdpsRiskLevelName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].OdpsRiskLevelName"));
+			asset.setProductId(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductId"));
+			asset.setName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Name"));
+			asset.setSensitiveCount(_ctx.integerValue("DescribeDataAssetsResponse.Items["+ i +"].SensitiveCount"));
+			asset.setId(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].Id"));
+			asset.setProductCode(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductCode"));
 
 			items.add(asset);
 		}

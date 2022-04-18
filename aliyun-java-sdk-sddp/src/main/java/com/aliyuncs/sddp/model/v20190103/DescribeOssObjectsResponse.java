@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeOssObjectsResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<Column> items;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,77 +77,37 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 	public static class Column {
 
-		private String id;
-
-		private String name;
-
-		private String regionId;
-
-		private Long riskLevelId;
-
-		private Long category;
-
 		private Long instanceId;
-
-		private String fileId;
-
-		private String riskLevelName;
-
-		private Long size;
-
-		private Integer sensitiveCount;
-
-		private Integer ruleCount;
 
 		private String categoryName;
 
-		private String bucketName;
+		private Long riskLevelId;
 
-		private String regionName;
+		private String regionId;
+
+		private String fileId;
 
 		private Long lastScanTime;
 
+		private String regionName;
+
+		private Long size;
+
+		private String bucketName;
+
+		private String riskLevelName;
+
+		private Long category;
+
+		private String name;
+
+		private Integer ruleCount;
+
+		private Integer sensitiveCount;
+
+		private String id;
+
 		private List<Rule> ruleList;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Long getRiskLevelId() {
-			return this.riskLevelId;
-		}
-
-		public void setRiskLevelId(Long riskLevelId) {
-			this.riskLevelId = riskLevelId;
-		}
-
-		public Long getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(Long category) {
-			this.category = category;
-		}
 
 		public Long getInstanceId() {
 			return this.instanceId;
@@ -155,46 +115,6 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 		public void setInstanceId(Long instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
-
-		public String getRiskLevelName() {
-			return this.riskLevelName;
-		}
-
-		public void setRiskLevelName(String riskLevelName) {
-			this.riskLevelName = riskLevelName;
-		}
-
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
-		}
-
-		public Integer getSensitiveCount() {
-			return this.sensitiveCount;
-		}
-
-		public void setSensitiveCount(Integer sensitiveCount) {
-			this.sensitiveCount = sensitiveCount;
-		}
-
-		public Integer getRuleCount() {
-			return this.ruleCount;
-		}
-
-		public void setRuleCount(Integer ruleCount) {
-			this.ruleCount = ruleCount;
 		}
 
 		public String getCategoryName() {
@@ -205,12 +125,36 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 			this.categoryName = categoryName;
 		}
 
-		public String getBucketName() {
-			return this.bucketName;
+		public Long getRiskLevelId() {
+			return this.riskLevelId;
 		}
 
-		public void setBucketName(String bucketName) {
-			this.bucketName = bucketName;
+		public void setRiskLevelId(Long riskLevelId) {
+			this.riskLevelId = riskLevelId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
+		}
+
+		public Long getLastScanTime() {
+			return this.lastScanTime;
+		}
+
+		public void setLastScanTime(Long lastScanTime) {
+			this.lastScanTime = lastScanTime;
 		}
 
 		public String getRegionName() {
@@ -221,12 +165,68 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 			this.regionName = regionName;
 		}
 
-		public Long getLastScanTime() {
-			return this.lastScanTime;
+		public Long getSize() {
+			return this.size;
 		}
 
-		public void setLastScanTime(Long lastScanTime) {
-			this.lastScanTime = lastScanTime;
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public String getBucketName() {
+			return this.bucketName;
+		}
+
+		public void setBucketName(String bucketName) {
+			this.bucketName = bucketName;
+		}
+
+		public String getRiskLevelName() {
+			return this.riskLevelName;
+		}
+
+		public void setRiskLevelName(String riskLevelName) {
+			this.riskLevelName = riskLevelName;
+		}
+
+		public Long getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(Long category) {
+			this.category = category;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getRuleCount() {
+			return this.ruleCount;
+		}
+
+		public void setRuleCount(Integer ruleCount) {
+			this.ruleCount = ruleCount;
+		}
+
+		public Integer getSensitiveCount() {
+			return this.sensitiveCount;
+		}
+
+		public void setSensitiveCount(Integer sensitiveCount) {
+			this.sensitiveCount = sensitiveCount;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public List<Rule> getRuleList() {
@@ -241,9 +241,9 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 			private String name;
 
-			private Long count;
-
 			private Long riskLevelId;
+
+			private Long count;
 
 			public String getName() {
 				return this.name;
@@ -253,20 +253,20 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public Long getCount() {
-				return this.count;
-			}
-
-			public void setCount(Long count) {
-				this.count = count;
-			}
-
 			public Long getRiskLevelId() {
 				return this.riskLevelId;
 			}
 
 			public void setRiskLevelId(Long riskLevelId) {
 				this.riskLevelId = riskLevelId;
+			}
+
+			public Long getCount() {
+				return this.count;
+			}
+
+			public void setCount(Long count) {
+				this.count = count;
 			}
 		}
 	}

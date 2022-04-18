@@ -27,29 +27,29 @@ public class DescribeDataMaskingTasksResponseUnmarshaller {
 	public static DescribeDataMaskingTasksResponse unmarshall(DescribeDataMaskingTasksResponse describeDataMaskingTasksResponse, UnmarshallerContext _ctx) {
 		
 		describeDataMaskingTasksResponse.setRequestId(_ctx.stringValue("DescribeDataMaskingTasksResponse.RequestId"));
-		describeDataMaskingTasksResponse.setPageSize(_ctx.integerValue("DescribeDataMaskingTasksResponse.PageSize"));
 		describeDataMaskingTasksResponse.setCurrentPage(_ctx.integerValue("DescribeDataMaskingTasksResponse.CurrentPage"));
+		describeDataMaskingTasksResponse.setPageSize(_ctx.integerValue("DescribeDataMaskingTasksResponse.PageSize"));
 		describeDataMaskingTasksResponse.setTotalCount(_ctx.integerValue("DescribeDataMaskingTasksResponse.TotalCount"));
 
 		List<Task> items = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataMaskingTasksResponse.Items.Length"); i++) {
 			Task task = new Task();
-			task.setId(_ctx.longValue("DescribeDataMaskingTasksResponse.Items["+ i +"].Id"));
-			task.setTaskId(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].TaskId"));
-			task.setTaskName(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].TaskName"));
-			task.setOwner(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].Owner"));
-			task.setGmtCreate(_ctx.longValue("DescribeDataMaskingTasksResponse.Items["+ i +"].GmtCreate"));
-			task.setDstType(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].DstType"));
-			task.setDstPath(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].DstPath"));
-			task.setSrcType(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].SrcType"));
-			task.setSrcPath(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].SrcPath"));
-			task.setRunCount(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].RunCount"));
 			task.setStatus(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].Status"));
+			task.setOwner(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].Owner"));
+			task.setTaskName(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].TaskName"));
+			task.setSrcType(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].SrcType"));
+			task.setDstType(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].DstType"));
 			task.setHasUnfinishProcess(_ctx.booleanValue("DescribeDataMaskingTasksResponse.Items["+ i +"].HasUnfinishProcess"));
-			task.setDstTypeCode(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].DstTypeCode"));
-			task.setSrcTypeCode(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].SrcTypeCode"));
-			task.setTriggerType(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].TriggerType"));
 			task.setOriginalTable(_ctx.booleanValue("DescribeDataMaskingTasksResponse.Items["+ i +"].OriginalTable"));
+			task.setTriggerType(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].TriggerType"));
+			task.setDstTypeCode(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].DstTypeCode"));
+			task.setRunCount(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].RunCount"));
+			task.setGmtCreate(_ctx.longValue("DescribeDataMaskingTasksResponse.Items["+ i +"].GmtCreate"));
+			task.setTaskId(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].TaskId"));
+			task.setDstPath(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].DstPath"));
+			task.setSrcTypeCode(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].SrcTypeCode"));
+			task.setId(_ctx.longValue("DescribeDataMaskingTasksResponse.Items["+ i +"].Id"));
+			task.setSrcPath(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].SrcPath"));
 
 			items.add(task);
 		}

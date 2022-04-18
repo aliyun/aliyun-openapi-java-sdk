@@ -47,22 +47,22 @@ public class DescribeRiskLevelsResponse extends AcsResponse {
 
 	public static class RiskLevel {
 
-		private Long id;
+		private String name;
 
 		private String description;
 
-		private String name;
-
 		private String alias;
+
+		private Long id;
 
 		private Integer referenceNum;
 
-		public Long getId() {
-			return this.id;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getDescription() {
@@ -73,20 +73,20 @@ public class DescribeRiskLevelsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getAlias() {
 			return this.alias;
 		}
 
 		public void setAlias(String alias) {
 			this.alias = alias;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public Integer getReferenceNum() {

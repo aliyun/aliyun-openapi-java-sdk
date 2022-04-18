@@ -25,7 +25,13 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstanceSourcesResponse> {
 	   
 
+	private String productCode;
+
 	private Long productId;
+
+	private String searchKey;
+
+	private String searchType;
 
 	private Integer pageSize;
 
@@ -35,20 +41,31 @@ public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstan
 
 	private String engineType;
 
+	private Integer auditStatus;
+
+	private Integer authStatus;
+
 	private Integer currentPage;
 
-	private Boolean authed;
-
 	private String instanceId;
-
-	private String dbName;
 	public DescribeInstanceSourcesRequest() {
-		super("Sddp", "2019-01-03", "DescribeInstanceSources");
+		super("Sddp", "2019-01-03", "DescribeInstanceSources", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
 	}
 
 	public Long getProductId() {
@@ -59,6 +76,28 @@ public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstan
 		this.productId = productId;
 		if(productId != null){
 			putQueryParameter("ProductId", productId.toString());
+		}
+	}
+
+	public String getSearchKey() {
+		return this.searchKey;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+		if(searchKey != null){
+			putQueryParameter("SearchKey", searchKey);
+		}
+	}
+
+	public String getSearchType() {
+		return this.searchType;
+	}
+
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+		if(searchType != null){
+			putQueryParameter("SearchType", searchType);
 		}
 	}
 
@@ -106,6 +145,28 @@ public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstan
 		}
 	}
 
+	public Integer getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(Integer auditStatus) {
+		this.auditStatus = auditStatus;
+		if(auditStatus != null){
+			putQueryParameter("AuditStatus", auditStatus.toString());
+		}
+	}
+
+	public Integer getAuthStatus() {
+		return this.authStatus;
+	}
+
+	public void setAuthStatus(Integer authStatus) {
+		this.authStatus = authStatus;
+		if(authStatus != null){
+			putQueryParameter("AuthStatus", authStatus.toString());
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -117,17 +178,6 @@ public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstan
 		}
 	}
 
-	public Boolean getAuthed() {
-		return this.authed;
-	}
-
-	public void setAuthed(Boolean authed) {
-		this.authed = authed;
-		if(authed != null){
-			putQueryParameter("Authed", authed.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -136,17 +186,6 @@ public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstan
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
 		}
 	}
 

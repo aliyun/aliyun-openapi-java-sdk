@@ -33,7 +33,7 @@ public class CreateConfigRequest extends RpcAcsRequest<CreateConfigResponse> {
 
 	private String value;
 	public CreateConfigRequest() {
-		super("Sddp", "2019-01-03", "CreateConfig");
+		super("Sddp", "2019-01-03", "CreateConfig", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

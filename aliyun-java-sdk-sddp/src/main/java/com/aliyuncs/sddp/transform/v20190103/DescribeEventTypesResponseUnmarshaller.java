@@ -32,25 +32,25 @@ public class DescribeEventTypesResponseUnmarshaller {
 		List<EventType> eventTypeList = new ArrayList<EventType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventTypesResponse.EventTypeList.Length"); i++) {
 			EventType eventType = new EventType();
-			eventType.setId(_ctx.longValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Id"));
-			eventType.setName(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Name"));
 			eventType.setCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Code"));
 			eventType.setDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Description"));
+			eventType.setName(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Name"));
+			eventType.setId(_ctx.longValue("DescribeEventTypesResponse.EventTypeList["+ i +"].Id"));
 
 			List<SubType> subTypeList = new ArrayList<SubType>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList.Length"); j++) {
 				SubType subType = new SubType();
-				subType.setId(_ctx.longValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Id"));
-				subType.setName(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Name"));
-				subType.setCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Code"));
-				subType.setDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Description"));
 				subType.setStatus(_ctx.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Status"));
-				subType.setEventHitCount(_ctx.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].EventHitCount"));
-				subType.setAdaptedProduct(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].AdaptedProduct"));
-				subType.setConfigCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigCode"));
+				subType.setDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Description"));
 				subType.setConfigContentType(_ctx.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigContentType"));
-				subType.setConfigDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigDescription"));
+				subType.setEventHitCount(_ctx.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].EventHitCount"));
 				subType.setConfigValue(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigValue"));
+				subType.setConfigCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigCode"));
+				subType.setCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Code"));
+				subType.setConfigDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigDescription"));
+				subType.setName(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Name"));
+				subType.setAdaptedProduct(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].AdaptedProduct"));
+				subType.setId(_ctx.longValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Id"));
 
 				subTypeList.add(subType);
 			}

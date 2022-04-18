@@ -51,7 +51,7 @@ public class DescribeColumnsRequest extends RpcAcsRequest<DescribeColumnsRespons
 
 	private Long ruleId;
 	public DescribeColumnsRequest() {
-		super("Sddp", "2019-01-03", "DescribeColumns");
+		super("Sddp", "2019-01-03", "DescribeColumns", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

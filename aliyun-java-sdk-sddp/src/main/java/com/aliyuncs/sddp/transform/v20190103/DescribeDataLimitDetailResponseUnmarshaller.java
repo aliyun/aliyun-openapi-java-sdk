@@ -26,20 +26,20 @@ public class DescribeDataLimitDetailResponseUnmarshaller {
 		describeDataLimitDetailResponse.setRequestId(_ctx.stringValue("DescribeDataLimitDetailResponse.RequestId"));
 
 		DataLimit dataLimit = new DataLimit();
-		dataLimit.setRegionId(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.RegionId"));
 		dataLimit.setLocalName(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.LocalName"));
-		dataLimit.setParentId(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.ParentId"));
-		dataLimit.setId(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.Id"));
-		dataLimit.setUserName(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.UserName"));
-		dataLimit.setGmtCreate(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.GmtCreate"));
-		dataLimit.setConnector(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.Connector"));
 		dataLimit.setCheckStatus(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.CheckStatus"));
-		dataLimit.setCheckStatusName(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.CheckStatusName"));
-		dataLimit.setResourceType(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.ResourceType"));
-		dataLimit.setResourceTypeCode(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.ResourceTypeCode"));
-		dataLimit.setAuditStatus(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.AuditStatus"));
-		dataLimit.setLogStoreDay(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.LogStoreDay"));
+		dataLimit.setConnector(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.Connector"));
 		dataLimit.setPort(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.Port"));
+		dataLimit.setCheckStatusName(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.CheckStatusName"));
+		dataLimit.setRegionId(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.RegionId"));
+		dataLimit.setParentId(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.ParentId"));
+		dataLimit.setResourceType(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.ResourceType"));
+		dataLimit.setLogStoreDay(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.LogStoreDay"));
+		dataLimit.setGmtCreate(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.GmtCreate"));
+		dataLimit.setResourceTypeCode(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.ResourceTypeCode"));
+		dataLimit.setUserName(_ctx.stringValue("DescribeDataLimitDetailResponse.DataLimit.UserName"));
+		dataLimit.setId(_ctx.longValue("DescribeDataLimitDetailResponse.DataLimit.Id"));
+		dataLimit.setAuditStatus(_ctx.integerValue("DescribeDataLimitDetailResponse.DataLimit.AuditStatus"));
 		describeDataLimitDetailResponse.setDataLimit(dataLimit);
 	 
 	 	return describeDataLimitDetailResponse;

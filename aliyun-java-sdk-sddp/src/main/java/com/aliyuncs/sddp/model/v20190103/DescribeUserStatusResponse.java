@@ -46,186 +46,92 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 	public static class UserStatus {
 
-		private Boolean authed;
-
-		private Boolean buyed;
-
-		private Boolean ossBucketSet;
-
-		private Boolean odpsSet;
-
-		private Boolean rdsSet;
-
-		private String authProductList;
-
-		private String accessKeyId;
-
-		private Boolean trail;
-
-		private Integer instanceStatus;
-
-		private String instanceId;
-
-		private Integer remainDays;
-
-		private Boolean renewStatus;
-
-		private Integer instanceNum;
+		private Long useOssSize;
 
 		private Integer useInstanceNum;
 
-		private Long ossSize;
-
-		private Long useOssSize;
+		private Integer instanceNum;
 
 		private String chargeType;
+
+		private Long incSensitiveTables;
+
+		private Boolean auditUpgradeStatus;
+
+		private Long dataMaskTasks;
+
+		private Boolean authed;
 
 		private Integer labStatus;
 
 		private String version;
 
-		private Integer dbAuditStatus;
+		private Boolean odpsSet;
 
-		private Boolean assetScanned;
-
-		private Boolean auditUpgradeStatus;
+		private Boolean ossBucketSet;
 
 		private Long sensitiveTable;
 
-		private Long sensitiveObject;
-
-		private Long datamaskColumns;
-
-		private Long alarmCount;
-
-		private Long divulgeCount;
-
-		private String displayTime;
+		private Integer remainDays;
 
 		private Long totalDataMaskColumns;
 
-		private Long dataMaskTasks;
+		private Long datamaskColumns;
 
-		private Long dataMaskColumns;
+		private String authProductList;
 
-		private Long sensitiveTables;
+		private Boolean trail;
+
+		private Long divulgeCount;
+
+		private Boolean rdsSet;
+
+		private Integer dbAuditStatus;
+
+		private Boolean renewStatus;
 
 		private Long sensitiveObjects;
 
-		private Long incSensitiveTables;
-
-		private Long incSensitiveObjects;
-
-		private String sensitiveTop;
+		private Long dataMaskColumns;
 
 		private Long dlpTotalCount;
 
+		private Long sensitiveObject;
+
 		private Long dlpCount;
+
+		private String instanceId;
+
+		private String accessKeyId;
+
+		private Long ossSize;
 
 		private String sensitiveTotalTop;
 
-		public Boolean getAuthed() {
-			return this.authed;
+		private Long sensitiveTables;
+
+		private String sensitiveTop;
+
+		private Boolean purchased;
+
+		private Boolean buyed;
+
+		private Long incSensitiveObjects;
+
+		private Integer instanceStatus;
+
+		private Boolean assetScanned;
+
+		private Long alarmCount;
+
+		private String displayTime;
+
+		public Long getUseOssSize() {
+			return this.useOssSize;
 		}
 
-		public void setAuthed(Boolean authed) {
-			this.authed = authed;
-		}
-
-		public Boolean getBuyed() {
-			return this.buyed;
-		}
-
-		public void setBuyed(Boolean buyed) {
-			this.buyed = buyed;
-		}
-
-		public Boolean getOssBucketSet() {
-			return this.ossBucketSet;
-		}
-
-		public void setOssBucketSet(Boolean ossBucketSet) {
-			this.ossBucketSet = ossBucketSet;
-		}
-
-		public Boolean getOdpsSet() {
-			return this.odpsSet;
-		}
-
-		public void setOdpsSet(Boolean odpsSet) {
-			this.odpsSet = odpsSet;
-		}
-
-		public Boolean getRdsSet() {
-			return this.rdsSet;
-		}
-
-		public void setRdsSet(Boolean rdsSet) {
-			this.rdsSet = rdsSet;
-		}
-
-		public String getAuthProductList() {
-			return this.authProductList;
-		}
-
-		public void setAuthProductList(String authProductList) {
-			this.authProductList = authProductList;
-		}
-
-		public String getAccessKeyId() {
-			return this.accessKeyId;
-		}
-
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
-		}
-
-		public Boolean getTrail() {
-			return this.trail;
-		}
-
-		public void setTrail(Boolean trail) {
-			this.trail = trail;
-		}
-
-		public Integer getInstanceStatus() {
-			return this.instanceStatus;
-		}
-
-		public void setInstanceStatus(Integer instanceStatus) {
-			this.instanceStatus = instanceStatus;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Integer getRemainDays() {
-			return this.remainDays;
-		}
-
-		public void setRemainDays(Integer remainDays) {
-			this.remainDays = remainDays;
-		}
-
-		public Boolean getRenewStatus() {
-			return this.renewStatus;
-		}
-
-		public void setRenewStatus(Boolean renewStatus) {
-			this.renewStatus = renewStatus;
-		}
-
-		public Integer getInstanceNum() {
-			return this.instanceNum;
-		}
-
-		public void setInstanceNum(Integer instanceNum) {
-			this.instanceNum = instanceNum;
+		public void setUseOssSize(Long useOssSize) {
+			this.useOssSize = useOssSize;
 		}
 
 		public Integer getUseInstanceNum() {
@@ -236,20 +142,12 @@ public class DescribeUserStatusResponse extends AcsResponse {
 			this.useInstanceNum = useInstanceNum;
 		}
 
-		public Long getOssSize() {
-			return this.ossSize;
+		public Integer getInstanceNum() {
+			return this.instanceNum;
 		}
 
-		public void setOssSize(Long ossSize) {
-			this.ossSize = ossSize;
-		}
-
-		public Long getUseOssSize() {
-			return this.useOssSize;
-		}
-
-		public void setUseOssSize(Long useOssSize) {
-			this.useOssSize = useOssSize;
+		public void setInstanceNum(Integer instanceNum) {
+			this.instanceNum = instanceNum;
 		}
 
 		public String getChargeType() {
@@ -258,6 +156,38 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
+		}
+
+		public Long getIncSensitiveTables() {
+			return this.incSensitiveTables;
+		}
+
+		public void setIncSensitiveTables(Long incSensitiveTables) {
+			this.incSensitiveTables = incSensitiveTables;
+		}
+
+		public Boolean getAuditUpgradeStatus() {
+			return this.auditUpgradeStatus;
+		}
+
+		public void setAuditUpgradeStatus(Boolean auditUpgradeStatus) {
+			this.auditUpgradeStatus = auditUpgradeStatus;
+		}
+
+		public Long getDataMaskTasks() {
+			return this.dataMaskTasks;
+		}
+
+		public void setDataMaskTasks(Long dataMaskTasks) {
+			this.dataMaskTasks = dataMaskTasks;
+		}
+
+		public Boolean getAuthed() {
+			return this.authed;
+		}
+
+		public void setAuthed(Boolean authed) {
+			this.authed = authed;
 		}
 
 		public Integer getLabStatus() {
@@ -276,28 +206,20 @@ public class DescribeUserStatusResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public Integer getDbAuditStatus() {
-			return this.dbAuditStatus;
+		public Boolean getOdpsSet() {
+			return this.odpsSet;
 		}
 
-		public void setDbAuditStatus(Integer dbAuditStatus) {
-			this.dbAuditStatus = dbAuditStatus;
+		public void setOdpsSet(Boolean odpsSet) {
+			this.odpsSet = odpsSet;
 		}
 
-		public Boolean getAssetScanned() {
-			return this.assetScanned;
+		public Boolean getOssBucketSet() {
+			return this.ossBucketSet;
 		}
 
-		public void setAssetScanned(Boolean assetScanned) {
-			this.assetScanned = assetScanned;
-		}
-
-		public Boolean getAuditUpgradeStatus() {
-			return this.auditUpgradeStatus;
-		}
-
-		public void setAuditUpgradeStatus(Boolean auditUpgradeStatus) {
-			this.auditUpgradeStatus = auditUpgradeStatus;
+		public void setOssBucketSet(Boolean ossBucketSet) {
+			this.ossBucketSet = ossBucketSet;
 		}
 
 		public Long getSensitiveTable() {
@@ -308,44 +230,12 @@ public class DescribeUserStatusResponse extends AcsResponse {
 			this.sensitiveTable = sensitiveTable;
 		}
 
-		public Long getSensitiveObject() {
-			return this.sensitiveObject;
+		public Integer getRemainDays() {
+			return this.remainDays;
 		}
 
-		public void setSensitiveObject(Long sensitiveObject) {
-			this.sensitiveObject = sensitiveObject;
-		}
-
-		public Long getDatamaskColumns() {
-			return this.datamaskColumns;
-		}
-
-		public void setDatamaskColumns(Long datamaskColumns) {
-			this.datamaskColumns = datamaskColumns;
-		}
-
-		public Long getAlarmCount() {
-			return this.alarmCount;
-		}
-
-		public void setAlarmCount(Long alarmCount) {
-			this.alarmCount = alarmCount;
-		}
-
-		public Long getDivulgeCount() {
-			return this.divulgeCount;
-		}
-
-		public void setDivulgeCount(Long divulgeCount) {
-			this.divulgeCount = divulgeCount;
-		}
-
-		public String getDisplayTime() {
-			return this.displayTime;
-		}
-
-		public void setDisplayTime(String displayTime) {
-			this.displayTime = displayTime;
+		public void setRemainDays(Integer remainDays) {
+			this.remainDays = remainDays;
 		}
 
 		public Long getTotalDataMaskColumns() {
@@ -356,28 +246,60 @@ public class DescribeUserStatusResponse extends AcsResponse {
 			this.totalDataMaskColumns = totalDataMaskColumns;
 		}
 
-		public Long getDataMaskTasks() {
-			return this.dataMaskTasks;
+		public Long getDatamaskColumns() {
+			return this.datamaskColumns;
 		}
 
-		public void setDataMaskTasks(Long dataMaskTasks) {
-			this.dataMaskTasks = dataMaskTasks;
+		public void setDatamaskColumns(Long datamaskColumns) {
+			this.datamaskColumns = datamaskColumns;
 		}
 
-		public Long getDataMaskColumns() {
-			return this.dataMaskColumns;
+		public String getAuthProductList() {
+			return this.authProductList;
 		}
 
-		public void setDataMaskColumns(Long dataMaskColumns) {
-			this.dataMaskColumns = dataMaskColumns;
+		public void setAuthProductList(String authProductList) {
+			this.authProductList = authProductList;
 		}
 
-		public Long getSensitiveTables() {
-			return this.sensitiveTables;
+		public Boolean getTrail() {
+			return this.trail;
 		}
 
-		public void setSensitiveTables(Long sensitiveTables) {
-			this.sensitiveTables = sensitiveTables;
+		public void setTrail(Boolean trail) {
+			this.trail = trail;
+		}
+
+		public Long getDivulgeCount() {
+			return this.divulgeCount;
+		}
+
+		public void setDivulgeCount(Long divulgeCount) {
+			this.divulgeCount = divulgeCount;
+		}
+
+		public Boolean getRdsSet() {
+			return this.rdsSet;
+		}
+
+		public void setRdsSet(Boolean rdsSet) {
+			this.rdsSet = rdsSet;
+		}
+
+		public Integer getDbAuditStatus() {
+			return this.dbAuditStatus;
+		}
+
+		public void setDbAuditStatus(Integer dbAuditStatus) {
+			this.dbAuditStatus = dbAuditStatus;
+		}
+
+		public Boolean getRenewStatus() {
+			return this.renewStatus;
+		}
+
+		public void setRenewStatus(Boolean renewStatus) {
+			this.renewStatus = renewStatus;
 		}
 
 		public Long getSensitiveObjects() {
@@ -388,28 +310,12 @@ public class DescribeUserStatusResponse extends AcsResponse {
 			this.sensitiveObjects = sensitiveObjects;
 		}
 
-		public Long getIncSensitiveTables() {
-			return this.incSensitiveTables;
+		public Long getDataMaskColumns() {
+			return this.dataMaskColumns;
 		}
 
-		public void setIncSensitiveTables(Long incSensitiveTables) {
-			this.incSensitiveTables = incSensitiveTables;
-		}
-
-		public Long getIncSensitiveObjects() {
-			return this.incSensitiveObjects;
-		}
-
-		public void setIncSensitiveObjects(Long incSensitiveObjects) {
-			this.incSensitiveObjects = incSensitiveObjects;
-		}
-
-		public String getSensitiveTop() {
-			return this.sensitiveTop;
-		}
-
-		public void setSensitiveTop(String sensitiveTop) {
-			this.sensitiveTop = sensitiveTop;
+		public void setDataMaskColumns(Long dataMaskColumns) {
+			this.dataMaskColumns = dataMaskColumns;
 		}
 
 		public Long getDlpTotalCount() {
@@ -420,6 +326,14 @@ public class DescribeUserStatusResponse extends AcsResponse {
 			this.dlpTotalCount = dlpTotalCount;
 		}
 
+		public Long getSensitiveObject() {
+			return this.sensitiveObject;
+		}
+
+		public void setSensitiveObject(Long sensitiveObject) {
+			this.sensitiveObject = sensitiveObject;
+		}
+
 		public Long getDlpCount() {
 			return this.dlpCount;
 		}
@@ -428,12 +342,108 @@ public class DescribeUserStatusResponse extends AcsResponse {
 			this.dlpCount = dlpCount;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getAccessKeyId() {
+			return this.accessKeyId;
+		}
+
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
+		}
+
+		public Long getOssSize() {
+			return this.ossSize;
+		}
+
+		public void setOssSize(Long ossSize) {
+			this.ossSize = ossSize;
+		}
+
 		public String getSensitiveTotalTop() {
 			return this.sensitiveTotalTop;
 		}
 
 		public void setSensitiveTotalTop(String sensitiveTotalTop) {
 			this.sensitiveTotalTop = sensitiveTotalTop;
+		}
+
+		public Long getSensitiveTables() {
+			return this.sensitiveTables;
+		}
+
+		public void setSensitiveTables(Long sensitiveTables) {
+			this.sensitiveTables = sensitiveTables;
+		}
+
+		public String getSensitiveTop() {
+			return this.sensitiveTop;
+		}
+
+		public void setSensitiveTop(String sensitiveTop) {
+			this.sensitiveTop = sensitiveTop;
+		}
+
+		public Boolean getPurchased() {
+			return this.purchased;
+		}
+
+		public void setPurchased(Boolean purchased) {
+			this.purchased = purchased;
+		}
+
+		public Boolean getBuyed() {
+			return this.buyed;
+		}
+
+		public void setBuyed(Boolean buyed) {
+			this.buyed = buyed;
+		}
+
+		public Long getIncSensitiveObjects() {
+			return this.incSensitiveObjects;
+		}
+
+		public void setIncSensitiveObjects(Long incSensitiveObjects) {
+			this.incSensitiveObjects = incSensitiveObjects;
+		}
+
+		public Integer getInstanceStatus() {
+			return this.instanceStatus;
+		}
+
+		public void setInstanceStatus(Integer instanceStatus) {
+			this.instanceStatus = instanceStatus;
+		}
+
+		public Boolean getAssetScanned() {
+			return this.assetScanned;
+		}
+
+		public void setAssetScanned(Boolean assetScanned) {
+			this.assetScanned = assetScanned;
+		}
+
+		public Long getAlarmCount() {
+			return this.alarmCount;
+		}
+
+		public void setAlarmCount(Long alarmCount) {
+			this.alarmCount = alarmCount;
+		}
+
+		public String getDisplayTime() {
+			return this.displayTime;
+		}
+
+		public void setDisplayTime(String displayTime) {
+			this.displayTime = displayTime;
 		}
 	}
 

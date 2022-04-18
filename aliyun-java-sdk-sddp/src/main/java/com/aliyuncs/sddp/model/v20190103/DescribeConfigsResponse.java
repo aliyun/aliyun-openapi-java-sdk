@@ -47,30 +47,38 @@ public class DescribeConfigsResponse extends AcsResponse {
 
 	public static class Config {
 
-		private Long id;
+		private String code;
 
-		private Integer code;
-
-		private String description;
-
-		private Long value;
+		private String value;
 
 		private String defaultValue;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String description;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long id;
 
-		public Integer getCode() {
+		public String getCode() {
 			return this.code;
 		}
 
-		public void setCode(Integer code) {
+		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getDefaultValue() {
+			return this.defaultValue;
+		}
+
+		public void setDefaultValue(String defaultValue) {
+			this.defaultValue = defaultValue;
 		}
 
 		public String getDescription() {
@@ -81,20 +89,12 @@ public class DescribeConfigsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Long getValue() {
-			return this.value;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setValue(Long value) {
-			this.value = value;
-		}
-
-		public String getDefaultValue() {
-			return this.defaultValue;
-		}
-
-		public void setDefaultValue(String defaultValue) {
-			this.defaultValue = defaultValue;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

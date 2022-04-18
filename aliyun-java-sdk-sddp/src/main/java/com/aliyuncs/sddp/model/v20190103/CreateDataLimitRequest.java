@@ -51,7 +51,7 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 
 	private String userName;
 	public CreateDataLimitRequest() {
-		super("Sddp", "2019-01-03", "CreateDataLimit");
+		super("Sddp", "2019-01-03", "CreateDataLimit", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

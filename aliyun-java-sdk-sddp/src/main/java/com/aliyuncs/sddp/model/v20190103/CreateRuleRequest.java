@@ -53,7 +53,7 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private Integer status;
 	public CreateRuleRequest() {
-		super("Sddp", "2019-01-03", "CreateRule");
+		super("Sddp", "2019-01-03", "CreateRule", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

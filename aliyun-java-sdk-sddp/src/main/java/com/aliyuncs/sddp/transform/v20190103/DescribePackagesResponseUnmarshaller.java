@@ -27,24 +27,24 @@ public class DescribePackagesResponseUnmarshaller {
 	public static DescribePackagesResponse unmarshall(DescribePackagesResponse describePackagesResponse, UnmarshallerContext _ctx) {
 		
 		describePackagesResponse.setRequestId(_ctx.stringValue("DescribePackagesResponse.RequestId"));
-		describePackagesResponse.setPageSize(_ctx.integerValue("DescribePackagesResponse.PageSize"));
 		describePackagesResponse.setCurrentPage(_ctx.integerValue("DescribePackagesResponse.CurrentPage"));
+		describePackagesResponse.setPageSize(_ctx.integerValue("DescribePackagesResponse.PageSize"));
 		describePackagesResponse.setTotalCount(_ctx.integerValue("DescribePackagesResponse.TotalCount"));
 
 		List<_Package> items = new ArrayList<_Package>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePackagesResponse.Items.Length"); i++) {
 			_Package _package = new _Package();
-			_package.setId(_ctx.longValue("DescribePackagesResponse.Items["+ i +"].Id"));
-			_package.setName(_ctx.stringValue("DescribePackagesResponse.Items["+ i +"].Name"));
-			_package.setOwner(_ctx.stringValue("DescribePackagesResponse.Items["+ i +"].Owner"));
 			_package.setCreationTime(_ctx.longValue("DescribePackagesResponse.Items["+ i +"].CreationTime"));
 			_package.setSensitive(_ctx.booleanValue("DescribePackagesResponse.Items["+ i +"].Sensitive"));
-			_package.setRiskLevelId(_ctx.longValue("DescribePackagesResponse.Items["+ i +"].RiskLevelId"));
+			_package.setOwner(_ctx.stringValue("DescribePackagesResponse.Items["+ i +"].Owner"));
 			_package.setRiskLevelName(_ctx.stringValue("DescribePackagesResponse.Items["+ i +"].RiskLevelName"));
 			_package.setDepartName(_ctx.stringValue("DescribePackagesResponse.Items["+ i +"].DepartName"));
-			_package.setTotalCount(_ctx.integerValue("DescribePackagesResponse.Items["+ i +"].TotalCount"));
-			_package.setSensitiveCount(_ctx.integerValue("DescribePackagesResponse.Items["+ i +"].SensitiveCount"));
 			_package.setInstanceId(_ctx.longValue("DescribePackagesResponse.Items["+ i +"].InstanceId"));
+			_package.setTotalCount(_ctx.integerValue("DescribePackagesResponse.Items["+ i +"].TotalCount"));
+			_package.setName(_ctx.stringValue("DescribePackagesResponse.Items["+ i +"].Name"));
+			_package.setSensitiveCount(_ctx.integerValue("DescribePackagesResponse.Items["+ i +"].SensitiveCount"));
+			_package.setRiskLevelId(_ctx.longValue("DescribePackagesResponse.Items["+ i +"].RiskLevelId"));
+			_package.setId(_ctx.longValue("DescribePackagesResponse.Items["+ i +"].Id"));
 
 			items.add(_package);
 		}

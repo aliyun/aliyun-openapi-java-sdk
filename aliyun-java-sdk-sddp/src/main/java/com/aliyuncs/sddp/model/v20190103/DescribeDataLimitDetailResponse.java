@@ -46,41 +46,33 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 
 	public static class DataLimit {
 
-		private String regionId;
-
 		private String localName;
-
-		private String parentId;
-
-		private Long id;
-
-		private String userName;
-
-		private Long gmtCreate;
-
-		private String connector;
 
 		private Integer checkStatus;
 
-		private String checkStatusName;
-
-		private Long resourceType;
-
-		private String resourceTypeCode;
-
-		private Integer auditStatus;
-
-		private Integer logStoreDay;
+		private String connector;
 
 		private Integer port;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
+		private String checkStatusName;
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
+
+		private String parentId;
+
+		private Long resourceType;
+
+		private Integer logStoreDay;
+
+		private Long gmtCreate;
+
+		private String resourceTypeCode;
+
+		private String userName;
+
+		private Long id;
+
+		private Integer auditStatus;
 
 		public String getLocalName() {
 			return this.localName;
@@ -88,46 +80,6 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 
 		public void setLocalName(String localName) {
 			this.localName = localName;
-		}
-
-		public String getParentId() {
-			return this.parentId;
-		}
-
-		public void setParentId(String parentId) {
-			this.parentId = parentId;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getConnector() {
-			return this.connector;
-		}
-
-		public void setConnector(String connector) {
-			this.connector = connector;
 		}
 
 		public Integer getCheckStatus() {
@@ -138,12 +90,44 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 			this.checkStatus = checkStatus;
 		}
 
+		public String getConnector() {
+			return this.connector;
+		}
+
+		public void setConnector(String connector) {
+			this.connector = connector;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
 		public String getCheckStatusName() {
 			return this.checkStatusName;
 		}
 
 		public void setCheckStatusName(String checkStatusName) {
 			this.checkStatusName = checkStatusName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
 		}
 
 		public Long getResourceType() {
@@ -154,22 +138,6 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
-		public String getResourceTypeCode() {
-			return this.resourceTypeCode;
-		}
-
-		public void setResourceTypeCode(String resourceTypeCode) {
-			this.resourceTypeCode = resourceTypeCode;
-		}
-
-		public Integer getAuditStatus() {
-			return this.auditStatus;
-		}
-
-		public void setAuditStatus(Integer auditStatus) {
-			this.auditStatus = auditStatus;
-		}
-
 		public Integer getLogStoreDay() {
 			return this.logStoreDay;
 		}
@@ -178,12 +146,44 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 			this.logStoreDay = logStoreDay;
 		}
 
-		public Integer getPort() {
-			return this.port;
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setPort(Integer port) {
-			this.port = port;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getResourceTypeCode() {
+			return this.resourceTypeCode;
+		}
+
+		public void setResourceTypeCode(String resourceTypeCode) {
+			this.resourceTypeCode = resourceTypeCode;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Integer getAuditStatus() {
+			return this.auditStatus;
+		}
+
+		public void setAuditStatus(Integer auditStatus) {
+			this.auditStatus = auditStatus;
 		}
 	}
 

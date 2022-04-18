@@ -55,7 +55,7 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 
 	private String userName;
 	public DescribeEventsRequest() {
-		super("Sddp", "2019-01-03", "DescribeEvents");
+		super("Sddp", "2019-01-03", "DescribeEvents", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

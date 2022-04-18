@@ -47,64 +47,80 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 	public static class Event {
 
-		private Long id;
+		private String displayName;
+
+		private Integer status;
+
+		private String dealReason;
 
 		private Long userId;
 
-		private String loginName;
+		private String statusName;
 
-		private String displayName;
+		private String departName;
 
-		private String productCode;
+		private Long dealTime;
 
-		private String typeCode;
-
-		private String typeName;
-
-		private String subTypeCode;
+		private String dealLoginName;
 
 		private String subTypeName;
 
-		private Long alertTime;
+		private Boolean backed;
 
 		private String dataInstance;
 
 		private Long eventTime;
 
-		private Integer status;
-
-		private String statusName;
-
-		private Long dealUserId;
-
-		private String dealLoginName;
-
-		private String dealDisplayName;
-
-		private Long dealTime;
-
-		private String departName;
-
-		private Boolean backed;
-
-		private String dealReason;
+		private String loginName;
 
 		private String userIdValue;
 
-		private String dealUserIdValue;
+		private String subTypeCode;
 
 		private String logDetail;
+
+		private String typeCode;
+
+		private String dealUserIdValue;
+
+		private Long alertTime;
+
+		private Long dealUserId;
+
+		private String typeName;
+
+		private String dealDisplayName;
+
+		private Long id;
+
+		private String productCode;
 
 		private List<HandleInfo> handleInfoList;
 
 		private Detail detail;
 
-		public Long getId() {
-			return this.id;
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getDealReason() {
+			return this.dealReason;
+		}
+
+		public void setDealReason(String dealReason) {
+			this.dealReason = dealReason;
 		}
 
 		public Long getUserId() {
@@ -115,52 +131,36 @@ public class DescribeEventDetailResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public String getLoginName() {
-			return this.loginName;
+		public String getStatusName() {
+			return this.statusName;
 		}
 
-		public void setLoginName(String loginName) {
-			this.loginName = loginName;
+		public void setStatusName(String statusName) {
+			this.statusName = statusName;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
+		public String getDepartName() {
+			return this.departName;
 		}
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
+		public void setDepartName(String departName) {
+			this.departName = departName;
 		}
 
-		public String getProductCode() {
-			return this.productCode;
+		public Long getDealTime() {
+			return this.dealTime;
 		}
 
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
+		public void setDealTime(Long dealTime) {
+			this.dealTime = dealTime;
 		}
 
-		public String getTypeCode() {
-			return this.typeCode;
+		public String getDealLoginName() {
+			return this.dealLoginName;
 		}
 
-		public void setTypeCode(String typeCode) {
-			this.typeCode = typeCode;
-		}
-
-		public String getTypeName() {
-			return this.typeName;
-		}
-
-		public void setTypeName(String typeName) {
-			this.typeName = typeName;
-		}
-
-		public String getSubTypeCode() {
-			return this.subTypeCode;
-		}
-
-		public void setSubTypeCode(String subTypeCode) {
-			this.subTypeCode = subTypeCode;
+		public void setDealLoginName(String dealLoginName) {
+			this.dealLoginName = dealLoginName;
 		}
 
 		public String getSubTypeName() {
@@ -171,12 +171,12 @@ public class DescribeEventDetailResponse extends AcsResponse {
 			this.subTypeName = subTypeName;
 		}
 
-		public Long getAlertTime() {
-			return this.alertTime;
+		public Boolean getBacked() {
+			return this.backed;
 		}
 
-		public void setAlertTime(Long alertTime) {
-			this.alertTime = alertTime;
+		public void setBacked(Boolean backed) {
+			this.backed = backed;
 		}
 
 		public String getDataInstance() {
@@ -195,76 +195,12 @@ public class DescribeEventDetailResponse extends AcsResponse {
 			this.eventTime = eventTime;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getLoginName() {
+			return this.loginName;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getStatusName() {
-			return this.statusName;
-		}
-
-		public void setStatusName(String statusName) {
-			this.statusName = statusName;
-		}
-
-		public Long getDealUserId() {
-			return this.dealUserId;
-		}
-
-		public void setDealUserId(Long dealUserId) {
-			this.dealUserId = dealUserId;
-		}
-
-		public String getDealLoginName() {
-			return this.dealLoginName;
-		}
-
-		public void setDealLoginName(String dealLoginName) {
-			this.dealLoginName = dealLoginName;
-		}
-
-		public String getDealDisplayName() {
-			return this.dealDisplayName;
-		}
-
-		public void setDealDisplayName(String dealDisplayName) {
-			this.dealDisplayName = dealDisplayName;
-		}
-
-		public Long getDealTime() {
-			return this.dealTime;
-		}
-
-		public void setDealTime(Long dealTime) {
-			this.dealTime = dealTime;
-		}
-
-		public String getDepartName() {
-			return this.departName;
-		}
-
-		public void setDepartName(String departName) {
-			this.departName = departName;
-		}
-
-		public Boolean getBacked() {
-			return this.backed;
-		}
-
-		public void setBacked(Boolean backed) {
-			this.backed = backed;
-		}
-
-		public String getDealReason() {
-			return this.dealReason;
-		}
-
-		public void setDealReason(String dealReason) {
-			this.dealReason = dealReason;
+		public void setLoginName(String loginName) {
+			this.loginName = loginName;
 		}
 
 		public String getUserIdValue() {
@@ -275,12 +211,12 @@ public class DescribeEventDetailResponse extends AcsResponse {
 			this.userIdValue = userIdValue;
 		}
 
-		public String getDealUserIdValue() {
-			return this.dealUserIdValue;
+		public String getSubTypeCode() {
+			return this.subTypeCode;
 		}
 
-		public void setDealUserIdValue(String dealUserIdValue) {
-			this.dealUserIdValue = dealUserIdValue;
+		public void setSubTypeCode(String subTypeCode) {
+			this.subTypeCode = subTypeCode;
 		}
 
 		public String getLogDetail() {
@@ -289,6 +225,70 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 		public void setLogDetail(String logDetail) {
 			this.logDetail = logDetail;
+		}
+
+		public String getTypeCode() {
+			return this.typeCode;
+		}
+
+		public void setTypeCode(String typeCode) {
+			this.typeCode = typeCode;
+		}
+
+		public String getDealUserIdValue() {
+			return this.dealUserIdValue;
+		}
+
+		public void setDealUserIdValue(String dealUserIdValue) {
+			this.dealUserIdValue = dealUserIdValue;
+		}
+
+		public Long getAlertTime() {
+			return this.alertTime;
+		}
+
+		public void setAlertTime(Long alertTime) {
+			this.alertTime = alertTime;
+		}
+
+		public Long getDealUserId() {
+			return this.dealUserId;
+		}
+
+		public void setDealUserId(Long dealUserId) {
+			this.dealUserId = dealUserId;
+		}
+
+		public String getTypeName() {
+			return this.typeName;
+		}
+
+		public void setTypeName(String typeName) {
+			this.typeName = typeName;
+		}
+
+		public String getDealDisplayName() {
+			return this.dealDisplayName;
+		}
+
+		public void setDealDisplayName(String dealDisplayName) {
+			this.dealDisplayName = dealDisplayName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
 		public List<HandleInfo> getHandleInfoList() {
@@ -309,60 +309,28 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 		public static class HandleInfo {
 
-			private String handlerType;
-
-			private String handlerName;
-
-			private Integer handlerValue;
-
-			private String currentValue;
-
-			private Long disableTime;
+			private Integer status;
 
 			private Long enableTime;
 
-			private Integer status;
+			private Integer handlerValue;
+
+			private Long disableTime;
+
+			private String handlerName;
+
+			private String handlerType;
+
+			private String currentValue;
 
 			private Long id;
 
-			public String getHandlerType() {
-				return this.handlerType;
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setHandlerType(String handlerType) {
-				this.handlerType = handlerType;
-			}
-
-			public String getHandlerName() {
-				return this.handlerName;
-			}
-
-			public void setHandlerName(String handlerName) {
-				this.handlerName = handlerName;
-			}
-
-			public Integer getHandlerValue() {
-				return this.handlerValue;
-			}
-
-			public void setHandlerValue(Integer handlerValue) {
-				this.handlerValue = handlerValue;
-			}
-
-			public String getCurrentValue() {
-				return this.currentValue;
-			}
-
-			public void setCurrentValue(String currentValue) {
-				this.currentValue = currentValue;
-			}
-
-			public Long getDisableTime() {
-				return this.disableTime;
-			}
-
-			public void setDisableTime(Long disableTime) {
-				this.disableTime = disableTime;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public Long getEnableTime() {
@@ -373,12 +341,44 @@ public class DescribeEventDetailResponse extends AcsResponse {
 				this.enableTime = enableTime;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public Integer getHandlerValue() {
+				return this.handlerValue;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
+			public void setHandlerValue(Integer handlerValue) {
+				this.handlerValue = handlerValue;
+			}
+
+			public Long getDisableTime() {
+				return this.disableTime;
+			}
+
+			public void setDisableTime(Long disableTime) {
+				this.disableTime = disableTime;
+			}
+
+			public String getHandlerName() {
+				return this.handlerName;
+			}
+
+			public void setHandlerName(String handlerName) {
+				this.handlerName = handlerName;
+			}
+
+			public String getHandlerType() {
+				return this.handlerType;
+			}
+
+			public void setHandlerType(String handlerType) {
+				this.handlerType = handlerType;
+			}
+
+			public String getCurrentValue() {
+				return this.currentValue;
+			}
+
+			public void setCurrentValue(String currentValue) {
+				this.currentValue = currentValue;
 			}
 
 			public Long getId() {
@@ -447,15 +447,23 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 			public static class ChartItem {
 
+				private String type;
+
 				private String label;
 
 				private String xLabel;
 
 				private String yLabel;
 
-				private String type;
-
 				private Data data;
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
 
 				public String getLabel() {
 					return this.label;
@@ -481,14 +489,6 @@ public class DescribeEventDetailResponse extends AcsResponse {
 					this.yLabel = yLabel;
 				}
 
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
-				}
-
 				public Data getData() {
 					return this.data;
 				}
@@ -499,24 +499,24 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 				public static class Data {
 
-					private String x;
+					private List<String> y;
 
-					private String y;
+					private List<String> x;
 
-					public String getX() {
-						return this.x;
-					}
-
-					public void setX(String x) {
-						this.x = x;
-					}
-
-					public String getY() {
+					public List<String> getY() {
 						return this.y;
 					}
 
-					public void setY(String y) {
+					public void setY(List<String> y) {
 						this.y = y;
+					}
+
+					public List<String> getX() {
+						return this.x;
+					}
+
+					public void setX(List<String> x) {
+						this.x = x;
 					}
 				}
 			}

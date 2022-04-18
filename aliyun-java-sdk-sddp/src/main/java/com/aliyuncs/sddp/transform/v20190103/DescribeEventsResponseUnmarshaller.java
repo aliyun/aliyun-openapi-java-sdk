@@ -27,37 +27,37 @@ public class DescribeEventsResponseUnmarshaller {
 	public static DescribeEventsResponse unmarshall(DescribeEventsResponse describeEventsResponse, UnmarshallerContext _ctx) {
 		
 		describeEventsResponse.setRequestId(_ctx.stringValue("DescribeEventsResponse.RequestId"));
-		describeEventsResponse.setPageSize(_ctx.integerValue("DescribeEventsResponse.PageSize"));
 		describeEventsResponse.setCurrentPage(_ctx.integerValue("DescribeEventsResponse.CurrentPage"));
+		describeEventsResponse.setPageSize(_ctx.integerValue("DescribeEventsResponse.PageSize"));
 		describeEventsResponse.setTotalCount(_ctx.integerValue("DescribeEventsResponse.TotalCount"));
 
 		List<Event> items = new ArrayList<Event>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventsResponse.Items.Length"); i++) {
 			Event event = new Event();
-			event.setId(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].Id"));
-			event.setUserId(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].UserId"));
-			event.setLoginName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].LoginName"));
 			event.setDisplayName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DisplayName"));
-			event.setProductCode(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].ProductCode"));
-			event.setTargetProductCode(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].TargetProductCode"));
-			event.setTypeCode(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].TypeCode"));
-			event.setTypeName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].TypeName"));
-			event.setSubTypeCode(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].SubTypeCode"));
-			event.setSubTypeName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].SubTypeName"));
-			event.setAlertTime(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].AlertTime"));
-			event.setEventTime(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].EventTime"));
 			event.setStatus(_ctx.integerValue("DescribeEventsResponse.Items["+ i +"].Status"));
+			event.setWarnLevel(_ctx.integerValue("DescribeEventsResponse.Items["+ i +"].WarnLevel"));
+			event.setUserId(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].UserId"));
 			event.setStatusName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].StatusName"));
-			event.setDealUserId(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].DealUserId"));
-			event.setDealLoginName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DealLoginName"));
-			event.setDealDisplayName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DealDisplayName"));
-			event.setDealTime(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].DealTime"));
 			event.setDepartName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DepartName"));
+			event.setDealUserIdValue(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DealUserIdValue"));
+			event.setDealTime(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].DealTime"));
+			event.setDealLoginName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DealLoginName"));
+			event.setSubTypeName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].SubTypeName"));
 			event.setBacked(_ctx.booleanValue("DescribeEventsResponse.Items["+ i +"].Backed"));
 			event.setInstanceName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].InstanceName"));
+			event.setEventTime(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].EventTime"));
+			event.setLoginName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].LoginName"));
 			event.setUserIdValue(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].UserIdValue"));
-			event.setDealUserIdValue(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DealUserIdValue"));
-			event.setWarnLevel(_ctx.integerValue("DescribeEventsResponse.Items["+ i +"].WarnLevel"));
+			event.setSubTypeCode(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].SubTypeCode"));
+			event.setTargetProductCode(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].TargetProductCode"));
+			event.setTypeCode(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].TypeCode"));
+			event.setAlertTime(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].AlertTime"));
+			event.setDealUserId(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].DealUserId"));
+			event.setTypeName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].TypeName"));
+			event.setDealDisplayName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DealDisplayName"));
+			event.setId(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].Id"));
+			event.setProductCode(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].ProductCode"));
 
 			items.add(event);
 		}

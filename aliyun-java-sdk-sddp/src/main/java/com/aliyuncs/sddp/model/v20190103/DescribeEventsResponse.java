@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEventsResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<Event> items;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeEventsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,77 +77,53 @@ public class DescribeEventsResponse extends AcsResponse {
 
 	public static class Event {
 
-		private Long id;
-
-		private Long userId;
-
-		private String loginName;
-
 		private String displayName;
-
-		private String productCode;
-
-		private String targetProductCode;
-
-		private String typeCode;
-
-		private String typeName;
-
-		private String subTypeCode;
-
-		private String subTypeName;
-
-		private Long alertTime;
-
-		private Long eventTime;
 
 		private Integer status;
 
+		private Integer warnLevel;
+
+		private Long userId;
+
 		private String statusName;
 
-		private Long dealUserId;
+		private String departName;
 
-		private String dealLoginName;
-
-		private String dealDisplayName;
+		private String dealUserIdValue;
 
 		private Long dealTime;
 
-		private String departName;
+		private String dealLoginName;
+
+		private String subTypeName;
 
 		private Boolean backed;
 
 		private String instanceName;
 
+		private Long eventTime;
+
+		private String loginName;
+
 		private String userIdValue;
 
-		private String dealUserIdValue;
+		private String subTypeCode;
 
-		private Integer warnLevel;
+		private String targetProductCode;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String typeCode;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long alertTime;
 
-		public Long getUserId() {
-			return this.userId;
-		}
+		private Long dealUserId;
 
-		public void setUserId(Long userId) {
-			this.userId = userId;
-		}
+		private String typeName;
 
-		public String getLoginName() {
-			return this.loginName;
-		}
+		private String dealDisplayName;
 
-		public void setLoginName(String loginName) {
-			this.loginName = loginName;
-		}
+		private Long id;
+
+		private String productCode;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -155,70 +131,6 @@ public class DescribeEventsResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public String getTargetProductCode() {
-			return this.targetProductCode;
-		}
-
-		public void setTargetProductCode(String targetProductCode) {
-			this.targetProductCode = targetProductCode;
-		}
-
-		public String getTypeCode() {
-			return this.typeCode;
-		}
-
-		public void setTypeCode(String typeCode) {
-			this.typeCode = typeCode;
-		}
-
-		public String getTypeName() {
-			return this.typeName;
-		}
-
-		public void setTypeName(String typeName) {
-			this.typeName = typeName;
-		}
-
-		public String getSubTypeCode() {
-			return this.subTypeCode;
-		}
-
-		public void setSubTypeCode(String subTypeCode) {
-			this.subTypeCode = subTypeCode;
-		}
-
-		public String getSubTypeName() {
-			return this.subTypeName;
-		}
-
-		public void setSubTypeName(String subTypeName) {
-			this.subTypeName = subTypeName;
-		}
-
-		public Long getAlertTime() {
-			return this.alertTime;
-		}
-
-		public void setAlertTime(Long alertTime) {
-			this.alertTime = alertTime;
-		}
-
-		public Long getEventTime() {
-			return this.eventTime;
-		}
-
-		public void setEventTime(Long eventTime) {
-			this.eventTime = eventTime;
 		}
 
 		public Integer getStatus() {
@@ -229,6 +141,22 @@ public class DescribeEventsResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public Integer getWarnLevel() {
+			return this.warnLevel;
+		}
+
+		public void setWarnLevel(Integer warnLevel) {
+			this.warnLevel = warnLevel;
+		}
+
+		public Long getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
+		}
+
 		public String getStatusName() {
 			return this.statusName;
 		}
@@ -237,28 +165,20 @@ public class DescribeEventsResponse extends AcsResponse {
 			this.statusName = statusName;
 		}
 
-		public Long getDealUserId() {
-			return this.dealUserId;
+		public String getDepartName() {
+			return this.departName;
 		}
 
-		public void setDealUserId(Long dealUserId) {
-			this.dealUserId = dealUserId;
+		public void setDepartName(String departName) {
+			this.departName = departName;
 		}
 
-		public String getDealLoginName() {
-			return this.dealLoginName;
+		public String getDealUserIdValue() {
+			return this.dealUserIdValue;
 		}
 
-		public void setDealLoginName(String dealLoginName) {
-			this.dealLoginName = dealLoginName;
-		}
-
-		public String getDealDisplayName() {
-			return this.dealDisplayName;
-		}
-
-		public void setDealDisplayName(String dealDisplayName) {
-			this.dealDisplayName = dealDisplayName;
+		public void setDealUserIdValue(String dealUserIdValue) {
+			this.dealUserIdValue = dealUserIdValue;
 		}
 
 		public Long getDealTime() {
@@ -269,12 +189,20 @@ public class DescribeEventsResponse extends AcsResponse {
 			this.dealTime = dealTime;
 		}
 
-		public String getDepartName() {
-			return this.departName;
+		public String getDealLoginName() {
+			return this.dealLoginName;
 		}
 
-		public void setDepartName(String departName) {
-			this.departName = departName;
+		public void setDealLoginName(String dealLoginName) {
+			this.dealLoginName = dealLoginName;
+		}
+
+		public String getSubTypeName() {
+			return this.subTypeName;
+		}
+
+		public void setSubTypeName(String subTypeName) {
+			this.subTypeName = subTypeName;
 		}
 
 		public Boolean getBacked() {
@@ -293,6 +221,22 @@ public class DescribeEventsResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
+		public Long getEventTime() {
+			return this.eventTime;
+		}
+
+		public void setEventTime(Long eventTime) {
+			this.eventTime = eventTime;
+		}
+
+		public String getLoginName() {
+			return this.loginName;
+		}
+
+		public void setLoginName(String loginName) {
+			this.loginName = loginName;
+		}
+
 		public String getUserIdValue() {
 			return this.userIdValue;
 		}
@@ -301,20 +245,76 @@ public class DescribeEventsResponse extends AcsResponse {
 			this.userIdValue = userIdValue;
 		}
 
-		public String getDealUserIdValue() {
-			return this.dealUserIdValue;
+		public String getSubTypeCode() {
+			return this.subTypeCode;
 		}
 
-		public void setDealUserIdValue(String dealUserIdValue) {
-			this.dealUserIdValue = dealUserIdValue;
+		public void setSubTypeCode(String subTypeCode) {
+			this.subTypeCode = subTypeCode;
 		}
 
-		public Integer getWarnLevel() {
-			return this.warnLevel;
+		public String getTargetProductCode() {
+			return this.targetProductCode;
 		}
 
-		public void setWarnLevel(Integer warnLevel) {
-			this.warnLevel = warnLevel;
+		public void setTargetProductCode(String targetProductCode) {
+			this.targetProductCode = targetProductCode;
+		}
+
+		public String getTypeCode() {
+			return this.typeCode;
+		}
+
+		public void setTypeCode(String typeCode) {
+			this.typeCode = typeCode;
+		}
+
+		public Long getAlertTime() {
+			return this.alertTime;
+		}
+
+		public void setAlertTime(Long alertTime) {
+			this.alertTime = alertTime;
+		}
+
+		public Long getDealUserId() {
+			return this.dealUserId;
+		}
+
+		public void setDealUserId(Long dealUserId) {
+			this.dealUserId = dealUserId;
+		}
+
+		public String getTypeName() {
+			return this.typeName;
+		}
+
+		public void setTypeName(String typeName) {
+			this.typeName = typeName;
+		}
+
+		public String getDealDisplayName() {
+			return this.dealDisplayName;
+		}
+
+		public void setDealDisplayName(String dealDisplayName) {
+			this.dealDisplayName = dealDisplayName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 	}
 

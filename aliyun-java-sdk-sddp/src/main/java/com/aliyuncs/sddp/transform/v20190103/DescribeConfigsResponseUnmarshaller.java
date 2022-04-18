@@ -31,11 +31,11 @@ public class DescribeConfigsResponseUnmarshaller {
 		List<Config> configList = new ArrayList<Config>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeConfigsResponse.ConfigList.Length"); i++) {
 			Config config = new Config();
-			config.setId(_ctx.longValue("DescribeConfigsResponse.ConfigList["+ i +"].Id"));
-			config.setCode(_ctx.integerValue("DescribeConfigsResponse.ConfigList["+ i +"].Code"));
-			config.setDescription(_ctx.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].Description"));
-			config.setValue(_ctx.longValue("DescribeConfigsResponse.ConfigList["+ i +"].Value"));
+			config.setCode(_ctx.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].Code"));
+			config.setValue(_ctx.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].Value"));
 			config.setDefaultValue(_ctx.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].DefaultValue"));
+			config.setDescription(_ctx.stringValue("DescribeConfigsResponse.ConfigList["+ i +"].Description"));
+			config.setId(_ctx.longValue("DescribeConfigsResponse.ConfigList["+ i +"].Id"));
 
 			configList.add(config);
 		}

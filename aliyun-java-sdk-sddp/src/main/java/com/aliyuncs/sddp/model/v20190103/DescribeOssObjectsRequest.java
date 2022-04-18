@@ -45,7 +45,7 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 
 	private Long ruleId;
 	public DescribeOssObjectsRequest() {
-		super("Sddp", "2019-01-03", "DescribeOssObjects");
+		super("Sddp", "2019-01-03", "DescribeOssObjects", "sddp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
