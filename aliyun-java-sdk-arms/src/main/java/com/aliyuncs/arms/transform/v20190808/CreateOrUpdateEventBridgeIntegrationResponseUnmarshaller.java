@@ -31,7 +31,7 @@ public class CreateOrUpdateEventBridgeIntegrationResponseUnmarshaller {
 		eventBridgeIntegration.setDescription(_ctx.stringValue("CreateOrUpdateEventBridgeIntegrationResponse.EventBridgeIntegration.Description"));
 		eventBridgeIntegration.setEndpoint(_ctx.stringValue("CreateOrUpdateEventBridgeIntegrationResponse.EventBridgeIntegration.Endpoint"));
 		eventBridgeIntegration.setAccessKey(_ctx.stringValue("CreateOrUpdateEventBridgeIntegrationResponse.EventBridgeIntegration.AccessKey"));
-		eventBridgeIntegration.setAccessKeySecret(_ctx.stringValue("CreateOrUpdateEventBridgeIntegrationResponse.EventBridgeIntegration.AccessKeySecret"));
+		eventBridgeIntegration.setAccessSecret(_ctx.stringValue("CreateOrUpdateEventBridgeIntegrationResponse.EventBridgeIntegration.AccessSecret"));
 		eventBridgeIntegration.setEventBusName(_ctx.stringValue("CreateOrUpdateEventBridgeIntegrationResponse.EventBridgeIntegration.EventBusName"));
 		eventBridgeIntegration.setSource(_ctx.stringValue("CreateOrUpdateEventBridgeIntegrationResponse.EventBridgeIntegration.Source"));
 		eventBridgeIntegration.setEventBusRegionId(_ctx.stringValue("CreateOrUpdateEventBridgeIntegrationResponse.EventBridgeIntegration.EventBusRegionId"));

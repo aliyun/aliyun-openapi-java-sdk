@@ -56,7 +56,7 @@ public class CreateOrUpdateEventBridgeIntegrationResponse extends AcsResponse {
 
 		private String accessKey;
 
-		private String accessKeySecret;
+		private String accessSecret;
 
 		private String eventBusName;
 
@@ -104,12 +104,12 @@ public class CreateOrUpdateEventBridgeIntegrationResponse extends AcsResponse {
 			this.accessKey = accessKey;
 		}
 
-		public String getAccessKeySecret() {
-			return this.accessKeySecret;
+		public String getAccessSecret() {
+			return this.accessSecret;
 		}
 
-		public void setAccessKeySecret(String accessKeySecret) {
-			this.accessKeySecret = accessKeySecret;
+		public void setAccessSecret(String accessSecret) {
+			this.accessSecret = accessSecret;
 		}
 
 		public String getEventBusName() {

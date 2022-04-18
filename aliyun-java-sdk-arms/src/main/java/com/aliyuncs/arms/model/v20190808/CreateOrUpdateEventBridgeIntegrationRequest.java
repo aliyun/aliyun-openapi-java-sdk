@@ -25,11 +25,11 @@ import com.aliyuncs.arms.Endpoint;
 public class CreateOrUpdateEventBridgeIntegrationRequest extends RpcAcsRequest<CreateOrUpdateEventBridgeIntegrationResponse> {
 	   
 
+	private String accessSecret;
+
 	private String eventBusRegionId;
 
 	private String description;
-
-	private String accessKeySecret;
 
 	private String source;
 
@@ -51,6 +51,17 @@ public class CreateOrUpdateEventBridgeIntegrationRequest extends RpcAcsRequest<C
 		} catch (Exception e) {}
 	}
 
+	public String getAccessSecret() {
+		return this.accessSecret;
+	}
+
+	public void setAccessSecret(String accessSecret) {
+		this.accessSecret = accessSecret;
+		if(accessSecret != null){
+			putBodyParameter("AccessSecret", accessSecret);
+		}
+	}
+
 	public String getEventBusRegionId() {
 		return this.eventBusRegionId;
 	}
@@ -70,17 +81,6 @@ public class CreateOrUpdateEventBridgeIntegrationRequest extends RpcAcsRequest<C
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
-		}
-	}
-
-	public String getAccessKeySecret() {
-		return this.accessKeySecret;
-	}
-
-	public void setAccessKeySecret(String accessKeySecret) {
-		this.accessKeySecret = accessKeySecret;
-		if(accessKeySecret != null){
-			putBodyParameter("AccessKeySecret", accessKeySecret);
 		}
 	}
 
