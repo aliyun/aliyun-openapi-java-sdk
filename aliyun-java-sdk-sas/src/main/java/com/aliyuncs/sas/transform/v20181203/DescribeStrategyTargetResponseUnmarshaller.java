@@ -31,10 +31,10 @@ public class DescribeStrategyTargetResponseUnmarshaller {
 		List<StrategyTarget> strategyTargets = new ArrayList<StrategyTarget>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStrategyTargetResponse.StrategyTargets.Length"); i++) {
 			StrategyTarget strategyTarget = new StrategyTarget();
+			strategyTarget.setBindUuidCount(_ctx.integerValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].BindUuidCount"));
 			strategyTarget.setFlag(_ctx.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].Flag"));
 			strategyTarget.setTarget(_ctx.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].Target"));
 			strategyTarget.setTargetType(_ctx.stringValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].TargetType"));
-			strategyTarget.setBindUuidCount(_ctx.integerValue("DescribeStrategyTargetResponse.StrategyTargets["+ i +"].BindUuidCount"));
 
 			strategyTargets.add(strategyTarget);
 		}

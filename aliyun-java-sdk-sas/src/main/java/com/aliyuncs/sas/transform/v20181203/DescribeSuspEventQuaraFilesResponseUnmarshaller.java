@@ -27,28 +27,28 @@ public class DescribeSuspEventQuaraFilesResponseUnmarshaller {
 	public static DescribeSuspEventQuaraFilesResponse unmarshall(DescribeSuspEventQuaraFilesResponse describeSuspEventQuaraFilesResponse, UnmarshallerContext _ctx) {
 		
 		describeSuspEventQuaraFilesResponse.setRequestId(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.RequestId"));
-		describeSuspEventQuaraFilesResponse.setCount(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.Count"));
+		describeSuspEventQuaraFilesResponse.setCurrentPage(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.CurrentPage"));
 		describeSuspEventQuaraFilesResponse.setPageSize(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.PageSize"));
 		describeSuspEventQuaraFilesResponse.setTotalCount(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.TotalCount"));
-		describeSuspEventQuaraFilesResponse.setCurrentPage(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.CurrentPage"));
+		describeSuspEventQuaraFilesResponse.setCount(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.Count"));
 
 		List<QuaraFile> quaraFiles = new ArrayList<QuaraFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles.Length"); i++) {
 			QuaraFile quaraFile = new QuaraFile();
-			quaraFile.setPath(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Path"));
+			quaraFile.setLink(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Link"));
+			quaraFile.setStatus(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Status"));
 			quaraFile.setEventName(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].EventName"));
-			quaraFile.setId(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Id"));
-			quaraFile.setEventType(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].EventType"));
-			quaraFile.setTag(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Tag"));
-			quaraFile.setUuid(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Uuid"));
-			quaraFile.setInstanceId(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].InstanceId"));
-			quaraFile.setInstanceName(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].InstanceName"));
 			quaraFile.setInternetIp(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].InternetIp"));
 			quaraFile.setIp(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Ip"));
-			quaraFile.setStatus(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Status"));
+			quaraFile.setTag(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Tag"));
+			quaraFile.setInstanceId(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].InstanceId"));
+			quaraFile.setUuid(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Uuid"));
+			quaraFile.setEventType(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].EventType"));
+			quaraFile.setInstanceName(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].InstanceName"));
+			quaraFile.setPath(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Path"));
 			quaraFile.setMd5(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Md5"));
+			quaraFile.setId(_ctx.integerValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Id"));
 			quaraFile.setModifyTime(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].ModifyTime"));
-			quaraFile.setLink(_ctx.stringValue("DescribeSuspEventQuaraFilesResponse.QuaraFiles["+ i +"].Link"));
 
 			quaraFiles.add(quaraFile);
 		}

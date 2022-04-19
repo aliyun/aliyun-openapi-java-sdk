@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSuspEventsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer count;
+	private Integer currentPage;
 
 	private Integer pageSize;
 
+	private String requestId;
+
 	private Integer totalCount;
 
-	private Integer currentPage;
+	private Integer count;
 
 	private List<WarningSummary> suspEvents;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public Integer getPageSize() {
@@ -61,6 +53,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -69,12 +69,12 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<WarningSummary> getSuspEvents() {
@@ -87,106 +87,134 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 	public static class WarningSummary {
 
-		private String lastTime;
+		private String stages;
+
+		private String internetIp;
+
+		private String k8sClusterName;
+
+		private String containerImageId;
 
 		private Long lastTimeStamp;
 
 		private String occurrenceTime;
 
-		private Long occurrenceTimeStamp;
-
-		private Long id;
-
-		private String securityEventIds;
-
-		private String uniqueInfo;
-
-		private String instanceName;
-
-		private String instanceId;
-
-		private String internetIp;
-
-		private String intranetIp;
-
-		private String uuid;
-
-		private String name;
-
-		private String eventSubType;
-
-		private String level;
-
-		private Integer eventStatus;
+		private String alarmUniqueInfo;
 
 		private String desc;
 
-		private String operateMsg;
-
-		private String operateErrorCode;
-
-		private Long operateTime;
-
-		private String dataSource;
-
-		private Boolean canBeDealOnLine;
-
-		private String saleVersion;
-
-		private String alarmEventType;
-
-		private String alarmEventName;
-
-		private String alarmUniqueInfo;
-
-		private Boolean advanced;
-
-		private String markMisRules;
-
-		private String stages;
-
-		private String alarmEventTypeDisplay;
+		private Boolean canCancelFault;
 
 		private String alarmEventNameDisplay;
 
-		private Boolean canCancelFault;
+		private String appName;
 
-		private Boolean hasTraceInfo;
-
-		private Boolean autoBreaking;
-
-		private Boolean containHwMode;
-
-		private String containerImageId;
-
-		private String containerImageName;
-
-		private String containerId;
-
-		private String k8sNamespace;
+		private String securityEventIds;
 
 		private String k8sClusterId;
 
-		private String k8sClusterName;
+		private String containerImageName;
+
+		private String markMisRules;
+
+		private Boolean canBeDealOnLine;
+
+		private Boolean containHwMode;
 
 		private String k8sNodeId;
 
+		private String instanceName;
+
+		private Integer eventStatus;
+
+		private String saleVersion;
+
+		private String operateErrorCode;
+
+		private String name;
+
+		private Boolean hasTraceInfo;
+
+		private String dataSource;
+
+		private Long operateTime;
+
+		private String eventSubType;
+
+		private Boolean advanced;
+
+		private Long occurrenceTimeStamp;
+
+		private String instanceId;
+
+		private String alarmEventTypeDisplay;
+
+		private String intranetIp;
+
+		private String lastTime;
+
+		private String operateMsg;
+
+		private String uuid;
+
 		private String k8sPodName;
+
+		private String containerId;
+
+		private String alarmEventType;
+
+		private String k8sNamespace;
+
+		private Boolean autoBreaking;
 
 		private String k8sNodeName;
 
-		private String appName;
+		private String alarmEventName;
+
+		private String uniqueInfo;
+
+		private String maliciousRuleStatus;
+
+		private String level;
+
+		private Long id;
+
+		private List<TacticItem> tacticItems;
 
 		private List<QuaraFile> details;
 
 		private List<EventNote> eventNotes;
 
-		public String getLastTime() {
-			return this.lastTime;
+		public String getStages() {
+			return this.stages;
 		}
 
-		public void setLastTime(String lastTime) {
-			this.lastTime = lastTime;
+		public void setStages(String stages) {
+			this.stages = stages;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getK8sClusterName() {
+			return this.k8sClusterName;
+		}
+
+		public void setK8sClusterName(String k8sClusterName) {
+			this.k8sClusterName = k8sClusterName;
+		}
+
+		public String getContainerImageId() {
+			return this.containerImageId;
+		}
+
+		public void setContainerImageId(String containerImageId) {
+			this.containerImageId = containerImageId;
 		}
 
 		public Long getLastTimeStamp() {
@@ -205,108 +233,12 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.occurrenceTime = occurrenceTime;
 		}
 
-		public Long getOccurrenceTimeStamp() {
-			return this.occurrenceTimeStamp;
+		public String getAlarmUniqueInfo() {
+			return this.alarmUniqueInfo;
 		}
 
-		public void setOccurrenceTimeStamp(Long occurrenceTimeStamp) {
-			this.occurrenceTimeStamp = occurrenceTimeStamp;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getSecurityEventIds() {
-			return this.securityEventIds;
-		}
-
-		public void setSecurityEventIds(String securityEventIds) {
-			this.securityEventIds = securityEventIds;
-		}
-
-		public String getUniqueInfo() {
-			return this.uniqueInfo;
-		}
-
-		public void setUniqueInfo(String uniqueInfo) {
-			this.uniqueInfo = uniqueInfo;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getEventSubType() {
-			return this.eventSubType;
-		}
-
-		public void setEventSubType(String eventSubType) {
-			this.eventSubType = eventSubType;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
-		public Integer getEventStatus() {
-			return this.eventStatus;
-		}
-
-		public void setEventStatus(Integer eventStatus) {
-			this.eventStatus = eventStatus;
+		public void setAlarmUniqueInfo(String alarmUniqueInfo) {
+			this.alarmUniqueInfo = alarmUniqueInfo;
 		}
 
 		public String getDesc() {
@@ -317,108 +249,12 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.desc = desc;
 		}
 
-		public String getOperateMsg() {
-			return this.operateMsg;
+		public Boolean getCanCancelFault() {
+			return this.canCancelFault;
 		}
 
-		public void setOperateMsg(String operateMsg) {
-			this.operateMsg = operateMsg;
-		}
-
-		public String getOperateErrorCode() {
-			return this.operateErrorCode;
-		}
-
-		public void setOperateErrorCode(String operateErrorCode) {
-			this.operateErrorCode = operateErrorCode;
-		}
-
-		public Long getOperateTime() {
-			return this.operateTime;
-		}
-
-		public void setOperateTime(Long operateTime) {
-			this.operateTime = operateTime;
-		}
-
-		public String getDataSource() {
-			return this.dataSource;
-		}
-
-		public void setDataSource(String dataSource) {
-			this.dataSource = dataSource;
-		}
-
-		public Boolean getCanBeDealOnLine() {
-			return this.canBeDealOnLine;
-		}
-
-		public void setCanBeDealOnLine(Boolean canBeDealOnLine) {
-			this.canBeDealOnLine = canBeDealOnLine;
-		}
-
-		public String getSaleVersion() {
-			return this.saleVersion;
-		}
-
-		public void setSaleVersion(String saleVersion) {
-			this.saleVersion = saleVersion;
-		}
-
-		public String getAlarmEventType() {
-			return this.alarmEventType;
-		}
-
-		public void setAlarmEventType(String alarmEventType) {
-			this.alarmEventType = alarmEventType;
-		}
-
-		public String getAlarmEventName() {
-			return this.alarmEventName;
-		}
-
-		public void setAlarmEventName(String alarmEventName) {
-			this.alarmEventName = alarmEventName;
-		}
-
-		public String getAlarmUniqueInfo() {
-			return this.alarmUniqueInfo;
-		}
-
-		public void setAlarmUniqueInfo(String alarmUniqueInfo) {
-			this.alarmUniqueInfo = alarmUniqueInfo;
-		}
-
-		public Boolean getAdvanced() {
-			return this.advanced;
-		}
-
-		public void setAdvanced(Boolean advanced) {
-			this.advanced = advanced;
-		}
-
-		public String getMarkMisRules() {
-			return this.markMisRules;
-		}
-
-		public void setMarkMisRules(String markMisRules) {
-			this.markMisRules = markMisRules;
-		}
-
-		public String getStages() {
-			return this.stages;
-		}
-
-		public void setStages(String stages) {
-			this.stages = stages;
-		}
-
-		public String getAlarmEventTypeDisplay() {
-			return this.alarmEventTypeDisplay;
-		}
-
-		public void setAlarmEventTypeDisplay(String alarmEventTypeDisplay) {
-			this.alarmEventTypeDisplay = alarmEventTypeDisplay;
+		public void setCanCancelFault(Boolean canCancelFault) {
+			this.canCancelFault = canCancelFault;
 		}
 
 		public String getAlarmEventNameDisplay() {
@@ -429,68 +265,20 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.alarmEventNameDisplay = alarmEventNameDisplay;
 		}
 
-		public Boolean getCanCancelFault() {
-			return this.canCancelFault;
+		public String getAppName() {
+			return this.appName;
 		}
 
-		public void setCanCancelFault(Boolean canCancelFault) {
-			this.canCancelFault = canCancelFault;
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
-		public Boolean getHasTraceInfo() {
-			return this.hasTraceInfo;
+		public String getSecurityEventIds() {
+			return this.securityEventIds;
 		}
 
-		public void setHasTraceInfo(Boolean hasTraceInfo) {
-			this.hasTraceInfo = hasTraceInfo;
-		}
-
-		public Boolean getAutoBreaking() {
-			return this.autoBreaking;
-		}
-
-		public void setAutoBreaking(Boolean autoBreaking) {
-			this.autoBreaking = autoBreaking;
-		}
-
-		public Boolean getContainHwMode() {
-			return this.containHwMode;
-		}
-
-		public void setContainHwMode(Boolean containHwMode) {
-			this.containHwMode = containHwMode;
-		}
-
-		public String getContainerImageId() {
-			return this.containerImageId;
-		}
-
-		public void setContainerImageId(String containerImageId) {
-			this.containerImageId = containerImageId;
-		}
-
-		public String getContainerImageName() {
-			return this.containerImageName;
-		}
-
-		public void setContainerImageName(String containerImageName) {
-			this.containerImageName = containerImageName;
-		}
-
-		public String getContainerId() {
-			return this.containerId;
-		}
-
-		public void setContainerId(String containerId) {
-			this.containerId = containerId;
-		}
-
-		public String getK8sNamespace() {
-			return this.k8sNamespace;
-		}
-
-		public void setK8sNamespace(String k8sNamespace) {
-			this.k8sNamespace = k8sNamespace;
+		public void setSecurityEventIds(String securityEventIds) {
+			this.securityEventIds = securityEventIds;
 		}
 
 		public String getK8sClusterId() {
@@ -501,12 +289,36 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.k8sClusterId = k8sClusterId;
 		}
 
-		public String getK8sClusterName() {
-			return this.k8sClusterName;
+		public String getContainerImageName() {
+			return this.containerImageName;
 		}
 
-		public void setK8sClusterName(String k8sClusterName) {
-			this.k8sClusterName = k8sClusterName;
+		public void setContainerImageName(String containerImageName) {
+			this.containerImageName = containerImageName;
+		}
+
+		public String getMarkMisRules() {
+			return this.markMisRules;
+		}
+
+		public void setMarkMisRules(String markMisRules) {
+			this.markMisRules = markMisRules;
+		}
+
+		public Boolean getCanBeDealOnLine() {
+			return this.canBeDealOnLine;
+		}
+
+		public void setCanBeDealOnLine(Boolean canBeDealOnLine) {
+			this.canBeDealOnLine = canBeDealOnLine;
+		}
+
+		public Boolean getContainHwMode() {
+			return this.containHwMode;
+		}
+
+		public void setContainHwMode(Boolean containHwMode) {
+			this.containHwMode = containHwMode;
 		}
 
 		public String getK8sNodeId() {
@@ -517,12 +329,180 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.k8sNodeId = k8sNodeId;
 		}
 
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public Integer getEventStatus() {
+			return this.eventStatus;
+		}
+
+		public void setEventStatus(Integer eventStatus) {
+			this.eventStatus = eventStatus;
+		}
+
+		public String getSaleVersion() {
+			return this.saleVersion;
+		}
+
+		public void setSaleVersion(String saleVersion) {
+			this.saleVersion = saleVersion;
+		}
+
+		public String getOperateErrorCode() {
+			return this.operateErrorCode;
+		}
+
+		public void setOperateErrorCode(String operateErrorCode) {
+			this.operateErrorCode = operateErrorCode;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Boolean getHasTraceInfo() {
+			return this.hasTraceInfo;
+		}
+
+		public void setHasTraceInfo(Boolean hasTraceInfo) {
+			this.hasTraceInfo = hasTraceInfo;
+		}
+
+		public String getDataSource() {
+			return this.dataSource;
+		}
+
+		public void setDataSource(String dataSource) {
+			this.dataSource = dataSource;
+		}
+
+		public Long getOperateTime() {
+			return this.operateTime;
+		}
+
+		public void setOperateTime(Long operateTime) {
+			this.operateTime = operateTime;
+		}
+
+		public String getEventSubType() {
+			return this.eventSubType;
+		}
+
+		public void setEventSubType(String eventSubType) {
+			this.eventSubType = eventSubType;
+		}
+
+		public Boolean getAdvanced() {
+			return this.advanced;
+		}
+
+		public void setAdvanced(Boolean advanced) {
+			this.advanced = advanced;
+		}
+
+		public Long getOccurrenceTimeStamp() {
+			return this.occurrenceTimeStamp;
+		}
+
+		public void setOccurrenceTimeStamp(Long occurrenceTimeStamp) {
+			this.occurrenceTimeStamp = occurrenceTimeStamp;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getAlarmEventTypeDisplay() {
+			return this.alarmEventTypeDisplay;
+		}
+
+		public void setAlarmEventTypeDisplay(String alarmEventTypeDisplay) {
+			this.alarmEventTypeDisplay = alarmEventTypeDisplay;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getLastTime() {
+			return this.lastTime;
+		}
+
+		public void setLastTime(String lastTime) {
+			this.lastTime = lastTime;
+		}
+
+		public String getOperateMsg() {
+			return this.operateMsg;
+		}
+
+		public void setOperateMsg(String operateMsg) {
+			this.operateMsg = operateMsg;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
 		public String getK8sPodName() {
 			return this.k8sPodName;
 		}
 
 		public void setK8sPodName(String k8sPodName) {
 			this.k8sPodName = k8sPodName;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getAlarmEventType() {
+			return this.alarmEventType;
+		}
+
+		public void setAlarmEventType(String alarmEventType) {
+			this.alarmEventType = alarmEventType;
+		}
+
+		public String getK8sNamespace() {
+			return this.k8sNamespace;
+		}
+
+		public void setK8sNamespace(String k8sNamespace) {
+			this.k8sNamespace = k8sNamespace;
+		}
+
+		public Boolean getAutoBreaking() {
+			return this.autoBreaking;
+		}
+
+		public void setAutoBreaking(Boolean autoBreaking) {
+			this.autoBreaking = autoBreaking;
 		}
 
 		public String getK8sNodeName() {
@@ -533,12 +513,52 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.k8sNodeName = k8sNodeName;
 		}
 
-		public String getAppName() {
-			return this.appName;
+		public String getAlarmEventName() {
+			return this.alarmEventName;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
+		public void setAlarmEventName(String alarmEventName) {
+			this.alarmEventName = alarmEventName;
+		}
+
+		public String getUniqueInfo() {
+			return this.uniqueInfo;
+		}
+
+		public void setUniqueInfo(String uniqueInfo) {
+			this.uniqueInfo = uniqueInfo;
+		}
+
+		public String getMaliciousRuleStatus() {
+			return this.maliciousRuleStatus;
+		}
+
+		public void setMaliciousRuleStatus(String maliciousRuleStatus) {
+			this.maliciousRuleStatus = maliciousRuleStatus;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public List<TacticItem> getTacticItems() {
+			return this.tacticItems;
+		}
+
+		public void setTacticItems(List<TacticItem> tacticItems) {
+			this.tacticItems = tacticItems;
 		}
 
 		public List<QuaraFile> getDetails() {
@@ -557,19 +577,58 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.eventNotes = eventNotes;
 		}
 
+		public static class TacticItem {
+
+			private String tacticId;
+
+			private String tacticDisplayName;
+
+			public String getTacticId() {
+				return this.tacticId;
+			}
+
+			public void setTacticId(String tacticId) {
+				this.tacticId = tacticId;
+			}
+
+			public String getTacticDisplayName() {
+				return this.tacticDisplayName;
+			}
+
+			public void setTacticDisplayName(String tacticDisplayName) {
+				this.tacticDisplayName = tacticDisplayName;
+			}
+		}
+
 		public static class QuaraFile {
+
+			private String type;
+
+			private String value;
 
 			private String name;
 
 			private String nameDisplay;
 
-			private String type;
-
 			private String infoType;
 
-			private String value;
-
 			private String valueDisplay;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 
 			public String getName() {
 				return this.name;
@@ -587,28 +646,12 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 				this.nameDisplay = nameDisplay;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getInfoType() {
 				return this.infoType;
 			}
 
 			public void setInfoType(String infoType) {
 				this.infoType = infoType;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
 			}
 
 			public String getValueDisplay() {
@@ -622,19 +665,11 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public static class EventNote {
 
-			private String noteTime;
-
 			private String note;
 
 			private Long noteId;
 
-			public String getNoteTime() {
-				return this.noteTime;
-			}
-
-			public void setNoteTime(String noteTime) {
-				this.noteTime = noteTime;
-			}
+			private String noteTime;
 
 			public String getNote() {
 				return this.note;
@@ -650,6 +685,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 			public void setNoteId(Long noteId) {
 				this.noteId = noteId;
+			}
+
+			public String getNoteTime() {
+				return this.noteTime;
+			}
+
+			public void setNoteTime(String noteTime) {
+				this.noteTime = noteTime;
 			}
 		}
 	}

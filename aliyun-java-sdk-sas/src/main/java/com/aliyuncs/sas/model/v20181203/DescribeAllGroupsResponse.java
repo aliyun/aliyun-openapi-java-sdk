@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAllGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer count;
 
+	private String requestId;
+
 	private List<Group> groups;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCount() {
 		return this.count;
@@ -45,6 +37,14 @@ public class DescribeAllGroupsResponse extends AcsResponse {
 
 	public void setCount(Integer count) {
 		this.count = count;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Group> getGroups() {

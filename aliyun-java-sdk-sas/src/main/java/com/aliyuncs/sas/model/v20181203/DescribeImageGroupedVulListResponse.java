@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImageGroupedVulListResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<GroupedVulItem> groupedVulItems;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeImageGroupedVulListResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,40 +77,32 @@ public class DescribeImageGroupedVulListResponse extends AcsResponse {
 
 	public static class GroupedVulItem {
 
-		private String name;
-
-		private String aliasName;
+		private Integer status;
 
 		private String type;
 
-		private Integer status;
-
-		private Long lastScanTime;
+		private Integer nntfCount;
 
 		private Long gmtLast;
 
-		private Integer asapCount;
-
-		private Integer laterCount;
-
-		private Integer nntfCount;
+		private Long lastScanTime;
 
 		private String tags;
 
-		public String getName() {
-			return this.name;
+		private Integer laterCount;
+
+		private String aliasName;
+
+		private String name;
+
+		private Integer asapCount;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getAliasName() {
-			return this.aliasName;
-		}
-
-		public void setAliasName(String aliasName) {
-			this.aliasName = aliasName;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -121,20 +113,12 @@ public class DescribeImageGroupedVulListResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Integer getNntfCount() {
+			return this.nntfCount;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public Long getLastScanTime() {
-			return this.lastScanTime;
-		}
-
-		public void setLastScanTime(Long lastScanTime) {
-			this.lastScanTime = lastScanTime;
+		public void setNntfCount(Integer nntfCount) {
+			this.nntfCount = nntfCount;
 		}
 
 		public Long getGmtLast() {
@@ -145,12 +129,20 @@ public class DescribeImageGroupedVulListResponse extends AcsResponse {
 			this.gmtLast = gmtLast;
 		}
 
-		public Integer getAsapCount() {
-			return this.asapCount;
+		public Long getLastScanTime() {
+			return this.lastScanTime;
 		}
 
-		public void setAsapCount(Integer asapCount) {
-			this.asapCount = asapCount;
+		public void setLastScanTime(Long lastScanTime) {
+			this.lastScanTime = lastScanTime;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
 		}
 
 		public Integer getLaterCount() {
@@ -161,20 +153,28 @@ public class DescribeImageGroupedVulListResponse extends AcsResponse {
 			this.laterCount = laterCount;
 		}
 
-		public Integer getNntfCount() {
-			return this.nntfCount;
+		public String getAliasName() {
+			return this.aliasName;
 		}
 
-		public void setNntfCount(Integer nntfCount) {
-			this.nntfCount = nntfCount;
+		public void setAliasName(String aliasName) {
+			this.aliasName = aliasName;
 		}
 
-		public String getTags() {
-			return this.tags;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setTags(String tags) {
-			this.tags = tags;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getAsapCount() {
+			return this.asapCount;
+		}
+
+		public void setAsapCount(Integer asapCount) {
+			this.asapCount = asapCount;
 		}
 	}
 

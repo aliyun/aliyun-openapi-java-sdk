@@ -26,9 +26,9 @@ public class DescribeImageScanAuthCountResponseUnmarshaller {
 		describeImageScanAuthCountResponse.setRequestId(_ctx.stringValue("DescribeImageScanAuthCountResponse.RequestId"));
 
 		ImageScan imageScan = new ImageScan();
-		imageScan.setInstanceId(_ctx.stringValue("DescribeImageScanAuthCountResponse.ImageScan.InstanceId"));
-		imageScan.setImageScanCapacity(_ctx.longValue("DescribeImageScanAuthCountResponse.ImageScan.ImageScanCapacity"));
 		imageScan.setScanCount(_ctx.longValue("DescribeImageScanAuthCountResponse.ImageScan.ScanCount"));
+		imageScan.setImageScanCapacity(_ctx.longValue("DescribeImageScanAuthCountResponse.ImageScan.ImageScanCapacity"));
+		imageScan.setInstanceId(_ctx.stringValue("DescribeImageScanAuthCountResponse.ImageScan.InstanceId"));
 		describeImageScanAuthCountResponse.setImageScan(imageScan);
 	 
 	 	return describeImageScanAuthCountResponse;

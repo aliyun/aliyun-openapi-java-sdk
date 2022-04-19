@@ -49,7 +49,7 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 
 	private Integer currentPage;
 	public DescribeVulListRequest() {
-		super("Sas", "2018-12-03", "DescribeVulList", "sas");
+		super("Sas", "2018-12-03", "DescribeVulList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

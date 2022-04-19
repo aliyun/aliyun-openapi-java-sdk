@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeWebLockBindListResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<Bind> bindList;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeWebLockBindListResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,103 +77,31 @@ public class DescribeWebLockBindListResponse extends AcsResponse {
 
 	public static class Bind {
 
-		private String uuid;
-
-		private String instanceName;
-
-		private String internetIp;
-
-		private String intranetIp;
-
-		private String os;
-
-		private String dirCount;
-
-		private String serviceStatus;
-
-		private String serviceCode;
-
-		private String serviceDetail;
-
 		private String status;
 
 		private Integer percent;
 
+		private String internetIp;
+
+		private String serviceDetail;
+
+		private String os;
+
+		private String serviceStatus;
+
+		private String intranetIp;
+
 		private String auditCount;
 
+		private String uuid;
+
+		private String serviceCode;
+
+		private String instanceName;
+
+		private String dirCount;
+
 		private String blockCount;
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getOs() {
-			return this.os;
-		}
-
-		public void setOs(String os) {
-			this.os = os;
-		}
-
-		public String getDirCount() {
-			return this.dirCount;
-		}
-
-		public void setDirCount(String dirCount) {
-			this.dirCount = dirCount;
-		}
-
-		public String getServiceStatus() {
-			return this.serviceStatus;
-		}
-
-		public void setServiceStatus(String serviceStatus) {
-			this.serviceStatus = serviceStatus;
-		}
-
-		public String getServiceCode() {
-			return this.serviceCode;
-		}
-
-		public void setServiceCode(String serviceCode) {
-			this.serviceCode = serviceCode;
-		}
-
-		public String getServiceDetail() {
-			return this.serviceDetail;
-		}
-
-		public void setServiceDetail(String serviceDetail) {
-			this.serviceDetail = serviceDetail;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -191,12 +119,84 @@ public class DescribeWebLockBindListResponse extends AcsResponse {
 			this.percent = percent;
 		}
 
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getServiceDetail() {
+			return this.serviceDetail;
+		}
+
+		public void setServiceDetail(String serviceDetail) {
+			this.serviceDetail = serviceDetail;
+		}
+
+		public String getOs() {
+			return this.os;
+		}
+
+		public void setOs(String os) {
+			this.os = os;
+		}
+
+		public String getServiceStatus() {
+			return this.serviceStatus;
+		}
+
+		public void setServiceStatus(String serviceStatus) {
+			this.serviceStatus = serviceStatus;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
 		public String getAuditCount() {
 			return this.auditCount;
 		}
 
 		public void setAuditCount(String auditCount) {
 			this.auditCount = auditCount;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public String getServiceCode() {
+			return this.serviceCode;
+		}
+
+		public void setServiceCode(String serviceCode) {
+			this.serviceCode = serviceCode;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getDirCount() {
+			return this.dirCount;
+		}
+
+		public void setDirCount(String dirCount) {
+			this.dirCount = dirCount;
 		}
 
 		public String getBlockCount() {

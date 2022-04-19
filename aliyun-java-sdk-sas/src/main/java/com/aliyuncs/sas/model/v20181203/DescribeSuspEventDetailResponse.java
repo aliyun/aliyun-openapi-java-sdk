@@ -25,76 +25,68 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSuspEventDetailResponse extends AcsResponse {
 
-	private String requestId;
+	private String type;
 
-	private String lastTime;
+	private String dataSource;
 
-	private Integer id;
-
-	private String instanceName;
+	private String eventName;
 
 	private String internetIp;
 
 	private String intranetIp;
 
+	private String lastTime;
+
+	private String operateMsg;
+
 	private String uuid;
 
-	private String eventDesc;
+	private Boolean canBeDealOnLine;
+
+	private String requestId;
 
 	private String eventTypeDesc;
 
-	private String level;
+	private String eventDesc;
+
+	private String instanceName;
 
 	private String eventStatus;
 
 	private String saleVersion;
 
-	private String dataSource;
-
-	private String type;
-
-	private String operateMsg;
+	private String operateErrorCode;
 
 	private String sasId;
 
-	private String eventName;
+	private String level;
 
-	private Boolean canBeDealOnLine;
-
-	private String operateErrorCode;
+	private Integer id;
 
 	private List<QuaraFile> details;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public String getLastTime() {
-		return this.lastTime;
+	public String getDataSource() {
+		return this.dataSource;
 	}
 
-	public void setLastTime(String lastTime) {
-		this.lastTime = lastTime;
+	public void setDataSource(String dataSource) {
+		this.dataSource = dataSource;
 	}
 
-	public Integer getId() {
-		return this.id;
+	public String getEventName() {
+		return this.eventName;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
 	}
 
 	public String getInternetIp() {
@@ -113,6 +105,22 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 		this.intranetIp = intranetIp;
 	}
 
+	public String getLastTime() {
+		return this.lastTime;
+	}
+
+	public void setLastTime(String lastTime) {
+		this.lastTime = lastTime;
+	}
+
+	public String getOperateMsg() {
+		return this.operateMsg;
+	}
+
+	public void setOperateMsg(String operateMsg) {
+		this.operateMsg = operateMsg;
+	}
+
 	public String getUuid() {
 		return this.uuid;
 	}
@@ -121,12 +129,20 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 		this.uuid = uuid;
 	}
 
-	public String getEventDesc() {
-		return this.eventDesc;
+	public Boolean getCanBeDealOnLine() {
+		return this.canBeDealOnLine;
 	}
 
-	public void setEventDesc(String eventDesc) {
-		this.eventDesc = eventDesc;
+	public void setCanBeDealOnLine(Boolean canBeDealOnLine) {
+		this.canBeDealOnLine = canBeDealOnLine;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getEventTypeDesc() {
@@ -137,12 +153,20 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 		this.eventTypeDesc = eventTypeDesc;
 	}
 
-	public String getLevel() {
-		return this.level;
+	public String getEventDesc() {
+		return this.eventDesc;
 	}
 
-	public void setLevel(String level) {
-		this.level = level;
+	public void setEventDesc(String eventDesc) {
+		this.eventDesc = eventDesc;
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
 	}
 
 	public String getEventStatus() {
@@ -161,28 +185,12 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 		this.saleVersion = saleVersion;
 	}
 
-	public String getDataSource() {
-		return this.dataSource;
+	public String getOperateErrorCode() {
+		return this.operateErrorCode;
 	}
 
-	public void setDataSource(String dataSource) {
-		this.dataSource = dataSource;
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getOperateMsg() {
-		return this.operateMsg;
-	}
-
-	public void setOperateMsg(String operateMsg) {
-		this.operateMsg = operateMsg;
+	public void setOperateErrorCode(String operateErrorCode) {
+		this.operateErrorCode = operateErrorCode;
 	}
 
 	public String getSasId() {
@@ -193,28 +201,20 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 		this.sasId = sasId;
 	}
 
-	public String getEventName() {
-		return this.eventName;
+	public String getLevel() {
+		return this.level;
 	}
 
-	public void setEventName(String eventName) {
-		this.eventName = eventName;
+	public void setLevel(String level) {
+		this.level = level;
 	}
 
-	public Boolean getCanBeDealOnLine() {
-		return this.canBeDealOnLine;
+	public Integer getId() {
+		return this.id;
 	}
 
-	public void setCanBeDealOnLine(Boolean canBeDealOnLine) {
-		this.canBeDealOnLine = canBeDealOnLine;
-	}
-
-	public String getOperateErrorCode() {
-		return this.operateErrorCode;
-	}
-
-	public void setOperateErrorCode(String operateErrorCode) {
-		this.operateErrorCode = operateErrorCode;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public List<QuaraFile> getDetails() {
@@ -227,21 +227,15 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	public static class QuaraFile {
 
-		private String name;
-
 		private String type;
-
-		private String infoType;
 
 		private String value;
 
-		public String getName() {
-			return this.name;
-		}
+		private String infoType;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String nameDisplay;
+
+		private String name;
 
 		public String getType() {
 			return this.type;
@@ -249,6 +243,14 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 
 		public String getInfoType() {
@@ -259,12 +261,20 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 			this.infoType = infoType;
 		}
 
-		public String getValue() {
-			return this.value;
+		public String getNameDisplay() {
+			return this.nameDisplay;
 		}
 
-		public void setValue(String value) {
-			this.value = value;
+		public void setNameDisplay(String nameDisplay) {
+			this.nameDisplay = nameDisplay;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

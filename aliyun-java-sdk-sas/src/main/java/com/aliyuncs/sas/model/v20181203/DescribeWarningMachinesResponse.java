@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeWarningMachinesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer count;
+	private Integer currentPage;
 
 	private Integer pageSize;
 
+	private String requestId;
+
 	private Integer totalCount;
 
-	private Integer currentPage;
+	private Integer count;
 
 	private List<WarningMachine> warningMachines;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public Integer getPageSize() {
@@ -61,6 +53,14 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -69,12 +69,12 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<WarningMachine> getWarningMachines() {
@@ -87,58 +87,36 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 
 	public static class WarningMachine {
 
-		private String uuid;
-
-		private String instanceName;
-
-		private String instanceId;
-
-		private String regionId;
+		private Integer status;
 
 		private String internetIp;
 
-		private String intranetIp;
-
-		private Integer passCount;
+		private String instanceId;
 
 		private Integer highWarningCount;
 
-		private Integer mediumWarningCount;
+		private String intranetIp;
+
+		private String regionId;
 
 		private Integer lowWarningCount;
 
-		private Integer status;
+		private Boolean portOpen;
 
-		public String getUuid() {
-			return this.uuid;
+		private String uuid;
+
+		private Integer mediumWarningCount;
+
+		private Integer passCount;
+
+		private String instanceName;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getInternetIp() {
@@ -149,20 +127,12 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 			this.internetIp = internetIp;
 		}
 
-		public String getIntranetIp() {
-			return this.intranetIp;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public Integer getPassCount() {
-			return this.passCount;
-		}
-
-		public void setPassCount(Integer passCount) {
-			this.passCount = passCount;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Integer getHighWarningCount() {
@@ -173,12 +143,20 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 			this.highWarningCount = highWarningCount;
 		}
 
-		public Integer getMediumWarningCount() {
-			return this.mediumWarningCount;
+		public String getIntranetIp() {
+			return this.intranetIp;
 		}
 
-		public void setMediumWarningCount(Integer mediumWarningCount) {
-			this.mediumWarningCount = mediumWarningCount;
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public Integer getLowWarningCount() {
@@ -189,12 +167,44 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 			this.lowWarningCount = lowWarningCount;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Boolean getPortOpen() {
+			return this.portOpen;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setPortOpen(Boolean portOpen) {
+			this.portOpen = portOpen;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public Integer getMediumWarningCount() {
+			return this.mediumWarningCount;
+		}
+
+		public void setMediumWarningCount(Integer mediumWarningCount) {
+			this.mediumWarningCount = mediumWarningCount;
+		}
+
+		public Integer getPassCount() {
+			return this.passCount;
+		}
+
+		public void setPassCount(Integer passCount) {
+			this.passCount = passCount;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 	}
 

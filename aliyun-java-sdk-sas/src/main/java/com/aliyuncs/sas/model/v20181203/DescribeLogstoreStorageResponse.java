@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogstoreStorageResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String logstore;
+	private Long used;
 
 	private Integer ttl;
 
+	private String logstore;
+
+	private String requestId;
+
 	private Long preserve;
 
-	private Long used;
-
-	public String getRequestId() {
-		return this.requestId;
+	public Long getUsed() {
+		return this.used;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getLogstore() {
-		return this.logstore;
-	}
-
-	public void setLogstore(String logstore) {
-		this.logstore = logstore;
+	public void setUsed(Long used) {
+		this.used = used;
 	}
 
 	public Integer getTtl() {
@@ -58,20 +50,28 @@ public class DescribeLogstoreStorageResponse extends AcsResponse {
 		this.ttl = ttl;
 	}
 
+	public String getLogstore() {
+		return this.logstore;
+	}
+
+	public void setLogstore(String logstore) {
+		this.logstore = logstore;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getPreserve() {
 		return this.preserve;
 	}
 
 	public void setPreserve(Long preserve) {
 		this.preserve = preserve;
-	}
-
-	public Long getUsed() {
-		return this.used;
-	}
-
-	public void setUsed(Long used) {
-		this.used = used;
 	}
 
 	@Override

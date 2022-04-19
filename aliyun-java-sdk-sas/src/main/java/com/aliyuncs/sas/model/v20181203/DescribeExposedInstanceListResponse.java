@@ -57,88 +57,48 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 
 	public static class ExposedInstance {
 
-		private String uuid;
-
-		private String intranetIp;
-
-		private String internetIp;
-
-		private Integer asapVulCount;
-
-		private Integer laterVulCount;
-
-		private Integer nntfVulCount;
+		private String exposureIp;
 
 		private Integer totalVulCount;
 
-		private Integer exploitHealthCount;
+		private String internetIp;
 
-		private String exposureComponent;
-
-		private String exposureType;
-
-		private String exposureTypeId;
-
-		private String exposurePort;
-
-		private String exposureIp;
+		private Integer nntfVulCount;
 
 		private String instanceId;
 
-		private String instanceName;
+		private String exposureType;
+
+		private String intranetIp;
 
 		private String regionId;
 
-		private Long groupId;
+		private String exposureTypeId;
+
+		private Integer asapVulCount;
+
+		private String exposurePort;
+
+		private String uuid;
 
 		private String groupName;
 
-		public String getUuid() {
-			return this.uuid;
+		private Long groupId;
+
+		private Integer exploitHealthCount;
+
+		private String instanceName;
+
+		private String exposureComponent;
+
+		private Integer laterVulCount;
+
+		public String getExposureIp() {
+			return this.exposureIp;
 		}
 
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public Integer getAsapVulCount() {
-			return this.asapVulCount;
-		}
-
-		public void setAsapVulCount(Integer asapVulCount) {
-			this.asapVulCount = asapVulCount;
-		}
-
-		public Integer getLaterVulCount() {
-			return this.laterVulCount;
-		}
-
-		public void setLaterVulCount(Integer laterVulCount) {
-			this.laterVulCount = laterVulCount;
-		}
-
-		public Integer getNntfVulCount() {
-			return this.nntfVulCount;
-		}
-
-		public void setNntfVulCount(Integer nntfVulCount) {
-			this.nntfVulCount = nntfVulCount;
+		public void setExposureIp(String exposureIp) {
+			this.exposureIp = exposureIp;
 		}
 
 		public Integer getTotalVulCount() {
@@ -149,52 +109,20 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 			this.totalVulCount = totalVulCount;
 		}
 
-		public Integer getExploitHealthCount() {
-			return this.exploitHealthCount;
+		public String getInternetIp() {
+			return this.internetIp;
 		}
 
-		public void setExploitHealthCount(Integer exploitHealthCount) {
-			this.exploitHealthCount = exploitHealthCount;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
-		public String getExposureComponent() {
-			return this.exposureComponent;
+		public Integer getNntfVulCount() {
+			return this.nntfVulCount;
 		}
 
-		public void setExposureComponent(String exposureComponent) {
-			this.exposureComponent = exposureComponent;
-		}
-
-		public String getExposureType() {
-			return this.exposureType;
-		}
-
-		public void setExposureType(String exposureType) {
-			this.exposureType = exposureType;
-		}
-
-		public String getExposureTypeId() {
-			return this.exposureTypeId;
-		}
-
-		public void setExposureTypeId(String exposureTypeId) {
-			this.exposureTypeId = exposureTypeId;
-		}
-
-		public String getExposurePort() {
-			return this.exposurePort;
-		}
-
-		public void setExposurePort(String exposurePort) {
-			this.exposurePort = exposurePort;
-		}
-
-		public String getExposureIp() {
-			return this.exposureIp;
-		}
-
-		public void setExposureIp(String exposureIp) {
-			this.exposureIp = exposureIp;
+		public void setNntfVulCount(Integer nntfVulCount) {
+			this.nntfVulCount = nntfVulCount;
 		}
 
 		public String getInstanceId() {
@@ -205,12 +133,20 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getInstanceName() {
-			return this.instanceName;
+		public String getExposureType() {
+			return this.exposureType;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setExposureType(String exposureType) {
+			this.exposureType = exposureType;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
 		}
 
 		public String getRegionId() {
@@ -221,12 +157,36 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public Long getGroupId() {
-			return this.groupId;
+		public String getExposureTypeId() {
+			return this.exposureTypeId;
 		}
 
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
+		public void setExposureTypeId(String exposureTypeId) {
+			this.exposureTypeId = exposureTypeId;
+		}
+
+		public Integer getAsapVulCount() {
+			return this.asapVulCount;
+		}
+
+		public void setAsapVulCount(Integer asapVulCount) {
+			this.asapVulCount = asapVulCount;
+		}
+
+		public String getExposurePort() {
+			return this.exposurePort;
+		}
+
+		public void setExposurePort(String exposurePort) {
+			this.exposurePort = exposurePort;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
 		}
 
 		public String getGroupName() {
@@ -236,24 +196,64 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 		public void setGroupName(String groupName) {
 			this.groupName = groupName;
 		}
+
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
+		}
+
+		public Integer getExploitHealthCount() {
+			return this.exploitHealthCount;
+		}
+
+		public void setExploitHealthCount(Integer exploitHealthCount) {
+			this.exploitHealthCount = exploitHealthCount;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getExposureComponent() {
+			return this.exposureComponent;
+		}
+
+		public void setExposureComponent(String exposureComponent) {
+			this.exposureComponent = exposureComponent;
+		}
+
+		public Integer getLaterVulCount() {
+			return this.laterVulCount;
+		}
+
+		public void setLaterVulCount(Integer laterVulCount) {
+			this.laterVulCount = laterVulCount;
+		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -272,12 +272,12 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainCountResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalDomainsCount;
-
 	private Integer rootDomainsCount;
+
+	private String requestId;
 
 	private Integer subDomainsCount;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalDomainsCount() {
-		return this.totalDomainsCount;
-	}
-
-	public void setTotalDomainsCount(Integer totalDomainsCount) {
-		this.totalDomainsCount = totalDomainsCount;
-	}
+	private Integer totalDomainsCount;
 
 	public Integer getRootDomainsCount() {
 		return this.rootDomainsCount;
@@ -56,12 +40,28 @@ public class DescribeDomainCountResponse extends AcsResponse {
 		this.rootDomainsCount = rootDomainsCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getSubDomainsCount() {
 		return this.subDomainsCount;
 	}
 
 	public void setSubDomainsCount(Integer subDomainsCount) {
 		this.subDomainsCount = subDomainsCount;
+	}
+
+	public Integer getTotalDomainsCount() {
+		return this.totalDomainsCount;
+	}
+
+	public void setTotalDomainsCount(Integer totalDomainsCount) {
+		this.totalDomainsCount = totalDomainsCount;
 	}
 
 	@Override

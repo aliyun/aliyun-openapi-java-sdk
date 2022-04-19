@@ -47,13 +47,29 @@ public class DescribeSearchConditionResponse extends AcsResponse {
 
 	public static class Condition {
 
+		private String conditionType;
+
+		private String nameKey;
+
 		private String name;
 
 		private String filterConditions;
 
-		private String nameKey;
+		public String getConditionType() {
+			return this.conditionType;
+		}
 
-		private String conditionType;
+		public void setConditionType(String conditionType) {
+			this.conditionType = conditionType;
+		}
+
+		public String getNameKey() {
+			return this.nameKey;
+		}
+
+		public void setNameKey(String nameKey) {
+			this.nameKey = nameKey;
+		}
 
 		public String getName() {
 			return this.name;
@@ -69,22 +85,6 @@ public class DescribeSearchConditionResponse extends AcsResponse {
 
 		public void setFilterConditions(String filterConditions) {
 			this.filterConditions = filterConditions;
-		}
-
-		public String getNameKey() {
-			return this.nameKey;
-		}
-
-		public void setNameKey(String nameKey) {
-			this.nameKey = nameKey;
-		}
-
-		public String getConditionType() {
-			return this.conditionType;
-		}
-
-		public void setConditionType(String conditionType) {
-			this.conditionType = conditionType;
 		}
 	}
 

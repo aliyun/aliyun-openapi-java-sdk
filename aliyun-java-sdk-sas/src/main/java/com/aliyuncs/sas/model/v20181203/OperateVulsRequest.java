@@ -26,35 +26,20 @@ import com.aliyuncs.sas.Endpoint;
 public class OperateVulsRequest extends RpcAcsRequest<OperateVulsResponse> {
 	   
 
-	private String reason;
-
 	private String type;
 
 	private List<String> vulNamess;
-
-	private Integer precondition;
 
 	private String operateType;
 
 	private List<String> uuidss;
 	public OperateVulsRequest() {
-		super("Sas", "2018-12-03", "OperateVuls", "sas");
+		super("Sas", "2018-12-03", "OperateVuls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-		if(reason != null){
-			putQueryParameter("Reason", reason);
-		}
 	}
 
 	public String getType() {
@@ -79,17 +64,6 @@ public class OperateVulsRequest extends RpcAcsRequest<OperateVulsResponse> {
 				putQueryParameter("VulNames." + (i + 1) , vulNamess.get(i));
 			}
 		}	
-	}
-
-	public Integer getPrecondition() {
-		return this.precondition;
-	}
-
-	public void setPrecondition(Integer precondition) {
-		this.precondition = precondition;
-		if(precondition != null){
-			putQueryParameter("Precondition", precondition.toString());
-		}
 	}
 
 	public String getOperateType() {

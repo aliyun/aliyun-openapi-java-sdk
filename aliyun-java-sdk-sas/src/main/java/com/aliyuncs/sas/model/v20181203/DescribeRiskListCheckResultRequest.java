@@ -38,7 +38,7 @@ public class DescribeRiskListCheckResultRequest extends RpcAcsRequest<DescribeRi
 
 	private String lang;
 	public DescribeRiskListCheckResultRequest() {
-		super("Sas", "2018-12-03", "DescribeRiskListCheckResult", "sas");
+		super("Sas", "2018-12-03", "DescribeRiskListCheckResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

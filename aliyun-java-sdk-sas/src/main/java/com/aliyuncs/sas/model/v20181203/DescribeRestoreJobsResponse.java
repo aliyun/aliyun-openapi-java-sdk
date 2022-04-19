@@ -57,8 +57,6 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 
 	public static class RestoreJob {
 
-		private Long id;
-
 		private Long createdTime;
 
 		private Long updatedTime;
@@ -117,8 +115,6 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 
 		private String intranetIp;
 
-		private String errorFile;
-
 		private String errorFileUrl;
 
 		private String requestId;
@@ -127,29 +123,19 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private String extra;
-
 		private Long duration;
 
 		private String exitCode;
 
-		private String errorFile1;
+		private String errorFile;
 
 		private String gmtCreate;
 
-		private Long gmtModified;
+		private String gmtModified;
 
 		private String excludes;
 
 		private String includes;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
 
 		public Long getCreatedTime() {
 			return this.createdTime;
@@ -383,14 +369,6 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.intranetIp = intranetIp;
 		}
 
-		public String getErrorFile() {
-			return this.errorFile;
-		}
-
-		public void setErrorFile(String errorFile) {
-			this.errorFile = errorFile;
-		}
-
 		public String getErrorFileUrl() {
 			return this.errorFileUrl;
 		}
@@ -423,14 +401,6 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getExtra() {
-			return this.extra;
-		}
-
-		public void setExtra(String extra) {
-			this.extra = extra;
-		}
-
 		public Long getDuration() {
 			return this.duration;
 		}
@@ -447,12 +417,12 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.exitCode = exitCode;
 		}
 
-		public String getErrorFile1() {
-			return this.errorFile1;
+		public String getErrorFile() {
+			return this.errorFile;
 		}
 
-		public void setErrorFile1(String errorFile1) {
-			this.errorFile1 = errorFile1;
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
 		}
 
 		public String getGmtCreate() {
@@ -463,11 +433,11 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public Long getGmtModified() {
+		public String getGmtModified() {
 			return this.gmtModified;
 		}
 
-		public void setGmtModified(Long gmtModified) {
+		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
 		}
 

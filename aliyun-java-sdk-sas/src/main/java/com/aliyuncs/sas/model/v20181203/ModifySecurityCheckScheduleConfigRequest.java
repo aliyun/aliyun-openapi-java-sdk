@@ -37,7 +37,7 @@ public class ModifySecurityCheckScheduleConfigRequest extends RpcAcsRequest<Modi
 
 	private String lang;
 	public ModifySecurityCheckScheduleConfigRequest() {
-		super("Sas", "2018-12-03", "ModifySecurityCheckScheduleConfig", "sas");
+		super("Sas", "2018-12-03", "ModifySecurityCheckScheduleConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -26,11 +26,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DeleteBackupPolicyMachineRequest extends RpcAcsRequest<DeleteBackupPolicyMachineResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String uuid;
-
-	private String sourceIp;
 
 	private Long policyId;
 
@@ -38,23 +34,12 @@ public class DeleteBackupPolicyMachineRequest extends RpcAcsRequest<DeleteBackup
 
 	private String policyVersion;
 	public DeleteBackupPolicyMachineRequest() {
-		super("Sas", "2018-12-03", "DeleteBackupPolicyMachine", "sas");
+		super("Sas", "2018-12-03", "DeleteBackupPolicyMachine");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getUuid() {
@@ -65,17 +50,6 @@ public class DeleteBackupPolicyMachineRequest extends RpcAcsRequest<DeleteBackup
 		this.uuid = uuid;
 		if(uuid != null){
 			putQueryParameter("Uuid", uuid);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

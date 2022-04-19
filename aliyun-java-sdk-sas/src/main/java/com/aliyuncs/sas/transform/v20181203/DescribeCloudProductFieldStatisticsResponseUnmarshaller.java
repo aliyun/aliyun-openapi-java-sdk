@@ -26,9 +26,9 @@ public class DescribeCloudProductFieldStatisticsResponseUnmarshaller {
 		describeCloudProductFieldStatisticsResponse.setRequestId(_ctx.stringValue("DescribeCloudProductFieldStatisticsResponse.RequestId"));
 
 		GroupedFields groupedFields = new GroupedFields();
-		groupedFields.setRiskInstanceCount(_ctx.integerValue("DescribeCloudProductFieldStatisticsResponse.GroupedFields.RiskInstanceCount"));
-		groupedFields.setInstanceCount(_ctx.integerValue("DescribeCloudProductFieldStatisticsResponse.GroupedFields.InstanceCount"));
 		groupedFields.setCategoryCount(_ctx.stringValue("DescribeCloudProductFieldStatisticsResponse.GroupedFields.CategoryCount"));
+		groupedFields.setInstanceCount(_ctx.integerValue("DescribeCloudProductFieldStatisticsResponse.GroupedFields.InstanceCount"));
+		groupedFields.setRiskInstanceCount(_ctx.integerValue("DescribeCloudProductFieldStatisticsResponse.GroupedFields.RiskInstanceCount"));
 		describeCloudProductFieldStatisticsResponse.setGroupedFields(groupedFields);
 	 
 	 	return describeCloudProductFieldStatisticsResponse;

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImageVulListResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<VulRecord> vulRecords;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,80 +77,52 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 	public static class VulRecord {
 
-		private Long primaryId;
-
-		private String uuid;
-
-		private String name;
-
-		private String tag;
-
-		private String aliasName;
+		private Boolean canUpdate;
 
 		private String type;
 
-		private String level;
+		private Integer status;
+
+		private Long modifyTs;
+
+		private Integer progress;
+
+		private String imageDigest;
+
+		private Long primaryId;
+
+		private String tag;
+
+		private String repoNamespace;
+
+		private String repoName;
+
+		private String related;
 
 		private Long firstTs;
 
 		private Long lastTs;
 
-		private Integer status;
-
-		private Integer progress;
-
 		private String necessity;
 
-		private String related;
+		private String uuid;
 
-		private Long modifyTs;
+		private String aliasName;
 
-		private String imageDigest;
+		private String name;
 
-		private Boolean canUpdate;
+		private String level;
 
 		private List<String> layers;
 
 		private ExtendContentJson extendContentJson;
 
-		public Long getPrimaryId() {
-			return this.primaryId;
+		public Boolean getCanUpdate() {
+			return this.canUpdate;
 		}
 
-		public void setPrimaryId(Long primaryId) {
-			this.primaryId = primaryId;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getTag() {
-			return this.tag;
-		}
-
-		public void setTag(String tag) {
-			this.tag = tag;
-		}
-
-		public String getAliasName() {
-			return this.aliasName;
-		}
-
-		public void setAliasName(String aliasName) {
-			this.aliasName = aliasName;
+		public void setCanUpdate(Boolean canUpdate) {
+			this.canUpdate = canUpdate;
 		}
 
 		public String getType() {
@@ -161,12 +133,76 @@ public class DescribeImageVulListResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getLevel() {
-			return this.level;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setLevel(String level) {
-			this.level = level;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public Long getModifyTs() {
+			return this.modifyTs;
+		}
+
+		public void setModifyTs(Long modifyTs) {
+			this.modifyTs = modifyTs;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public String getImageDigest() {
+			return this.imageDigest;
+		}
+
+		public void setImageDigest(String imageDigest) {
+			this.imageDigest = imageDigest;
+		}
+
+		public Long getPrimaryId() {
+			return this.primaryId;
+		}
+
+		public void setPrimaryId(Long primaryId) {
+			this.primaryId = primaryId;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
+		}
+
+		public String getRepoNamespace() {
+			return this.repoNamespace;
+		}
+
+		public void setRepoNamespace(String repoNamespace) {
+			this.repoNamespace = repoNamespace;
+		}
+
+		public String getRepoName() {
+			return this.repoName;
+		}
+
+		public void setRepoName(String repoName) {
+			this.repoName = repoName;
+		}
+
+		public String getRelated() {
+			return this.related;
+		}
+
+		public void setRelated(String related) {
+			this.related = related;
 		}
 
 		public Long getFirstTs() {
@@ -185,22 +221,6 @@ public class DescribeImageVulListResponse extends AcsResponse {
 			this.lastTs = lastTs;
 		}
 
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
-		}
-
 		public String getNecessity() {
 			return this.necessity;
 		}
@@ -209,36 +229,36 @@ public class DescribeImageVulListResponse extends AcsResponse {
 			this.necessity = necessity;
 		}
 
-		public String getRelated() {
-			return this.related;
+		public String getUuid() {
+			return this.uuid;
 		}
 
-		public void setRelated(String related) {
-			this.related = related;
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
 		}
 
-		public Long getModifyTs() {
-			return this.modifyTs;
+		public String getAliasName() {
+			return this.aliasName;
 		}
 
-		public void setModifyTs(Long modifyTs) {
-			this.modifyTs = modifyTs;
+		public void setAliasName(String aliasName) {
+			this.aliasName = aliasName;
 		}
 
-		public String getImageDigest() {
-			return this.imageDigest;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setImageDigest(String imageDigest) {
-			this.imageDigest = imageDigest;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public Boolean getCanUpdate() {
-			return this.canUpdate;
+		public String getLevel() {
+			return this.level;
 		}
 
-		public void setCanUpdate(Boolean canUpdate) {
-			this.canUpdate = canUpdate;
+		public void setLevel(String level) {
+			this.level = level;
 		}
 
 		public List<String> getLayers() {
@@ -259,19 +279,11 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 		public static class ExtendContentJson {
 
-			private String os;
-
 			private String osRelease;
 
+			private String os;
+
 			private List<RpmEntity> rpmEntityList;
-
-			public String getOs() {
-				return this.os;
-			}
-
-			public void setOs(String os) {
-				this.os = os;
-			}
 
 			public String getOsRelease() {
 				return this.osRelease;
@@ -279,6 +291,14 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 			public void setOsRelease(String osRelease) {
 				this.osRelease = osRelease;
+			}
+
+			public String getOs() {
+				return this.os;
+			}
+
+			public void setOs(String os) {
+				this.os = os;
 			}
 
 			public List<RpmEntity> getRpmEntityList() {
@@ -291,21 +311,29 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 			public static class RpmEntity {
 
+				private String layer;
+
 				private String fullVersion;
-
-				private String matchDetail;
-
-				private String name;
-
-				private String path;
-
-				private String updateCmd;
 
 				private String version;
 
-				private String layer;
+				private String matchDetail;
 
-				private String matchList;
+				private String path;
+
+				private String name;
+
+				private String updateCmd;
+
+				private List<String> matchList;
+
+				public String getLayer() {
+					return this.layer;
+				}
+
+				public void setLayer(String layer) {
+					this.layer = layer;
+				}
 
 				public String getFullVersion() {
 					return this.fullVersion;
@@ -313,38 +341,6 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 				public void setFullVersion(String fullVersion) {
 					this.fullVersion = fullVersion;
-				}
-
-				public String getMatchDetail() {
-					return this.matchDetail;
-				}
-
-				public void setMatchDetail(String matchDetail) {
-					this.matchDetail = matchDetail;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getPath() {
-					return this.path;
-				}
-
-				public void setPath(String path) {
-					this.path = path;
-				}
-
-				public String getUpdateCmd() {
-					return this.updateCmd;
-				}
-
-				public void setUpdateCmd(String updateCmd) {
-					this.updateCmd = updateCmd;
 				}
 
 				public String getVersion() {
@@ -355,19 +351,43 @@ public class DescribeImageVulListResponse extends AcsResponse {
 					this.version = version;
 				}
 
-				public String getLayer() {
-					return this.layer;
+				public String getMatchDetail() {
+					return this.matchDetail;
 				}
 
-				public void setLayer(String layer) {
-					this.layer = layer;
+				public void setMatchDetail(String matchDetail) {
+					this.matchDetail = matchDetail;
 				}
 
-				public String getMatchList() {
+				public String getPath() {
+					return this.path;
+				}
+
+				public void setPath(String path) {
+					this.path = path;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getUpdateCmd() {
+					return this.updateCmd;
+				}
+
+				public void setUpdateCmd(String updateCmd) {
+					this.updateCmd = updateCmd;
+				}
+
+				public List<String> getMatchList() {
 					return this.matchList;
 				}
 
-				public void setMatchList(String matchList) {
+				public void setMatchList(List<String> matchList) {
 					this.matchList = matchList;
 				}
 			}

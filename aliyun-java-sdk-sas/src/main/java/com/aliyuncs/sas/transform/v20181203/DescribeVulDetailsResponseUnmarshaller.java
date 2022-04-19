@@ -32,30 +32,30 @@ public class DescribeVulDetailsResponseUnmarshaller {
 		List<Cve> cves = new ArrayList<Cve>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVulDetailsResponse.Cves.Length"); i++) {
 			Cve cve = new Cve();
+			cve.setSummary(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Summary"));
+			cve.setComplexity(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Complexity"));
+			cve.setProduct(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Product"));
+			cve.setPocCreateTime(_ctx.longValue("DescribeVulDetailsResponse.Cves["+ i +"].PocCreateTime"));
 			cve.setCveId(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].CveId"));
 			cve.setCnvdId(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].CnvdId"));
-			cve.setTitle(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Title"));
+			cve.setReference(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Reference"));
 			cve.setCvssScore(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].CvssScore"));
-			cve.setCvssVector(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].CvssVector"));
-			cve.setReleaseTime(_ctx.longValue("DescribeVulDetailsResponse.Cves["+ i +"].ReleaseTime"));
-			cve.setComplexity(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Complexity"));
-			cve.setPoc(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Poc"));
-			cve.setPocCreateTime(_ctx.longValue("DescribeVulDetailsResponse.Cves["+ i +"].PocCreateTime"));
+			cve.setVendor(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Vendor"));
 			cve.setPocDisclosureTime(_ctx.longValue("DescribeVulDetailsResponse.Cves["+ i +"].PocDisclosureTime"));
-			cve.setSummary(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Summary"));
+			cve.setClassify(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Classify"));
+			cve.setCvssVector(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].CvssVector"));
+			cve.setVulLevel(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].VulLevel"));
+			cve.setReleaseTime(_ctx.longValue("DescribeVulDetailsResponse.Cves["+ i +"].ReleaseTime"));
+			cve.setTitle(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Title"));
 			cve.setSolution(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Solution"));
 			cve.setContent(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Content"));
-			cve.setVendor(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Vendor"));
-			cve.setProduct(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Product"));
-			cve.setVulLevel(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].VulLevel"));
-			cve.setReference(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Reference"));
-			cve.setClassify(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Classify"));
+			cve.setPoc(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Poc"));
 
 			List<Classify> classifys = new ArrayList<Classify>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVulDetailsResponse.Cves["+ i +"].Classifys.Length"); j++) {
 				Classify classify = new Classify();
-				classify.setClassify(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Classifys["+ j +"].Classify"));
 				classify.setDescription(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Classifys["+ j +"].Description"));
+				classify.setClassify(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Classifys["+ j +"].Classify"));
 				classify.setDemoVideoUrl(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Classifys["+ j +"].DemoVideoUrl"));
 
 				classifys.add(classify);

@@ -25,7 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeVpcHoneyPotCriteriaRequest extends RpcAcsRequest<DescribeVpcHoneyPotCriteriaResponse> {
 	   
 	public DescribeVpcHoneyPotCriteriaRequest() {
-		super("Sas", "2018-12-03", "DescribeVpcHoneyPotCriteria", "sas");
+		super("Sas", "2018-12-03", "DescribeVpcHoneyPotCriteria");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

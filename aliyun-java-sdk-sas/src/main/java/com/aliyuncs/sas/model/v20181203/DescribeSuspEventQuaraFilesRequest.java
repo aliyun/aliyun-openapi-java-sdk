@@ -31,6 +31,8 @@ public class DescribeSuspEventQuaraFilesRequest extends RpcAcsRequest<DescribeSu
 
 	private String from;
 
+	private Long groupingId;
+
 	private String groupId;
 
 	private String currentPage;
@@ -39,7 +41,7 @@ public class DescribeSuspEventQuaraFilesRequest extends RpcAcsRequest<DescribeSu
 
 	private String status;
 	public DescribeSuspEventQuaraFilesRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEventQuaraFiles", "sas");
+		super("Sas", "2018-12-03", "DescribeSuspEventQuaraFiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -77,6 +79,17 @@ public class DescribeSuspEventQuaraFilesRequest extends RpcAcsRequest<DescribeSu
 		this.from = from;
 		if(from != null){
 			putQueryParameter("From", from);
+		}
+	}
+
+	public Long getGroupingId() {
+		return this.groupingId;
+	}
+
+	public void setGroupingId(Long groupingId) {
+		this.groupingId = groupingId;
+		if(groupingId != null){
+			putQueryParameter("GroupingId", groupingId.toString());
 		}
 	}
 

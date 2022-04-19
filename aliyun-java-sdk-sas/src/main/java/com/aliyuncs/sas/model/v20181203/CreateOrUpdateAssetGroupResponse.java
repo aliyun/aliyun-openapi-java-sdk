@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateOrUpdateAssetGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long groupId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getGroupId() {
 		return this.groupId;
@@ -42,6 +34,14 @@ public class CreateOrUpdateAssetGroupResponse extends AcsResponse {
 
 	public void setGroupId(Long groupId) {
 		this.groupId = groupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -27,25 +27,26 @@ public class DescribeWarningMachinesResponseUnmarshaller {
 	public static DescribeWarningMachinesResponse unmarshall(DescribeWarningMachinesResponse describeWarningMachinesResponse, UnmarshallerContext _ctx) {
 		
 		describeWarningMachinesResponse.setRequestId(_ctx.stringValue("DescribeWarningMachinesResponse.RequestId"));
-		describeWarningMachinesResponse.setCount(_ctx.integerValue("DescribeWarningMachinesResponse.Count"));
+		describeWarningMachinesResponse.setCurrentPage(_ctx.integerValue("DescribeWarningMachinesResponse.CurrentPage"));
 		describeWarningMachinesResponse.setPageSize(_ctx.integerValue("DescribeWarningMachinesResponse.PageSize"));
 		describeWarningMachinesResponse.setTotalCount(_ctx.integerValue("DescribeWarningMachinesResponse.TotalCount"));
-		describeWarningMachinesResponse.setCurrentPage(_ctx.integerValue("DescribeWarningMachinesResponse.CurrentPage"));
+		describeWarningMachinesResponse.setCount(_ctx.integerValue("DescribeWarningMachinesResponse.Count"));
 
 		List<WarningMachine> warningMachines = new ArrayList<WarningMachine>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWarningMachinesResponse.WarningMachines.Length"); i++) {
 			WarningMachine warningMachine = new WarningMachine();
-			warningMachine.setUuid(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Uuid"));
-			warningMachine.setInstanceName(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InstanceName"));
-			warningMachine.setInstanceId(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InstanceId"));
-			warningMachine.setRegionId(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].RegionId"));
-			warningMachine.setInternetIp(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InternetIp"));
-			warningMachine.setIntranetIp(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].IntranetIp"));
-			warningMachine.setPassCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].PassCount"));
-			warningMachine.setHighWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].HighWarningCount"));
-			warningMachine.setMediumWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].MediumWarningCount"));
-			warningMachine.setLowWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].LowWarningCount"));
 			warningMachine.setStatus(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Status"));
+			warningMachine.setInternetIp(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InternetIp"));
+			warningMachine.setInstanceId(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InstanceId"));
+			warningMachine.setHighWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].HighWarningCount"));
+			warningMachine.setIntranetIp(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].IntranetIp"));
+			warningMachine.setRegionId(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].RegionId"));
+			warningMachine.setLowWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].LowWarningCount"));
+			warningMachine.setPortOpen(_ctx.booleanValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].PortOpen"));
+			warningMachine.setUuid(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Uuid"));
+			warningMachine.setMediumWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].MediumWarningCount"));
+			warningMachine.setPassCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].PassCount"));
+			warningMachine.setInstanceName(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InstanceName"));
 
 			warningMachines.add(warningMachine);
 		}

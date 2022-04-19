@@ -57,19 +57,43 @@ public class DescribeGroupedMaliciousFilesResponse extends AcsResponse {
 
 	public static class GroupedMaliciousFile {
 
+		private Integer status;
+
+		private Long imageCount;
+
+		private Long latestScanTimestamp;
+
 		private String maliciousName;
 
 		private String maliciousMd5;
 
 		private Long firstScanTimestamp;
 
-		private Long latestScanTimestamp;
-
-		private Integer status;
-
 		private String level;
 
-		private Long imageCount;
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public Long getImageCount() {
+			return this.imageCount;
+		}
+
+		public void setImageCount(Long imageCount) {
+			this.imageCount = imageCount;
+		}
+
+		public Long getLatestScanTimestamp() {
+			return this.latestScanTimestamp;
+		}
+
+		public void setLatestScanTimestamp(Long latestScanTimestamp) {
+			this.latestScanTimestamp = latestScanTimestamp;
+		}
 
 		public String getMaliciousName() {
 			return this.maliciousName;
@@ -95,22 +119,6 @@ public class DescribeGroupedMaliciousFilesResponse extends AcsResponse {
 			this.firstScanTimestamp = firstScanTimestamp;
 		}
 
-		public Long getLatestScanTimestamp() {
-			return this.latestScanTimestamp;
-		}
-
-		public void setLatestScanTimestamp(Long latestScanTimestamp) {
-			this.latestScanTimestamp = latestScanTimestamp;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
 		public String getLevel() {
 			return this.level;
 		}
@@ -118,32 +126,24 @@ public class DescribeGroupedMaliciousFilesResponse extends AcsResponse {
 		public void setLevel(String level) {
 			this.level = level;
 		}
-
-		public Long getImageCount() {
-			return this.imageCount;
-		}
-
-		public void setImageCount(Long imageCount) {
-			this.imageCount = imageCount;
-		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -162,12 +162,12 @@ public class DescribeGroupedMaliciousFilesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

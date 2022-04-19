@@ -23,10 +23,10 @@ public class DescribeLogstoreStorageResponseUnmarshaller {
 	public static DescribeLogstoreStorageResponse unmarshall(DescribeLogstoreStorageResponse describeLogstoreStorageResponse, UnmarshallerContext _ctx) {
 		
 		describeLogstoreStorageResponse.setRequestId(_ctx.stringValue("DescribeLogstoreStorageResponse.RequestId"));
-		describeLogstoreStorageResponse.setLogstore(_ctx.stringValue("DescribeLogstoreStorageResponse.Logstore"));
-		describeLogstoreStorageResponse.setTtl(_ctx.integerValue("DescribeLogstoreStorageResponse.Ttl"));
-		describeLogstoreStorageResponse.setPreserve(_ctx.longValue("DescribeLogstoreStorageResponse.Preserve"));
 		describeLogstoreStorageResponse.setUsed(_ctx.longValue("DescribeLogstoreStorageResponse.Used"));
+		describeLogstoreStorageResponse.setTtl(_ctx.integerValue("DescribeLogstoreStorageResponse.Ttl"));
+		describeLogstoreStorageResponse.setLogstore(_ctx.stringValue("DescribeLogstoreStorageResponse.Logstore"));
+		describeLogstoreStorageResponse.setPreserve(_ctx.longValue("DescribeLogstoreStorageResponse.Preserve"));
 	 
 	 	return describeLogstoreStorageResponse;
 	}

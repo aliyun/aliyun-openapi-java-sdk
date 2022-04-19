@@ -49,7 +49,7 @@ public class ModifyWebLockCreateConfigRequest extends RpcAcsRequest<ModifyWebLoc
 
 	private String defenceMode;
 	public ModifyWebLockCreateConfigRequest() {
-		super("Sas", "2018-12-03", "ModifyWebLockCreateConfig", "sas");
+		super("Sas", "2018-12-03", "ModifyWebLockCreateConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer count;
+	private Integer currentPage;
 
 	private Integer pageSize;
 
+	private String requestId;
+
 	private Integer totalCount;
 
-	private Integer currentPage;
+	private Integer count;
 
 	private List<WarningSummary> warningSummarys;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public Integer getPageSize() {
@@ -61,6 +53,14 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -69,12 +69,12 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<WarningSummary> getWarningSummarys() {
@@ -87,74 +87,34 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 
 	public static class WarningSummary {
 
-		private Long riskId;
-
-		private String riskName;
-
-		private String typeAlias;
-
-		private String subTypeAlias;
-
-		private String lastFoundTime;
-
-		private String level;
+		private Integer lowWarningCount;
 
 		private Integer checkCount;
 
-		private Integer highWarningCount;
-
 		private Integer mediumWarningCount;
 
-		private Integer lowWarningCount;
+		private String lastFoundTime;
+
+		private Long riskId;
+
+		private String subTypeAlias;
 
 		private Integer warningMachineCount;
 
-		public Long getRiskId() {
-			return this.riskId;
+		private Integer highWarningCount;
+
+		private String typeAlias;
+
+		private String riskName;
+
+		private String level;
+
+		public Integer getLowWarningCount() {
+			return this.lowWarningCount;
 		}
 
-		public void setRiskId(Long riskId) {
-			this.riskId = riskId;
-		}
-
-		public String getRiskName() {
-			return this.riskName;
-		}
-
-		public void setRiskName(String riskName) {
-			this.riskName = riskName;
-		}
-
-		public String getTypeAlias() {
-			return this.typeAlias;
-		}
-
-		public void setTypeAlias(String typeAlias) {
-			this.typeAlias = typeAlias;
-		}
-
-		public String getSubTypeAlias() {
-			return this.subTypeAlias;
-		}
-
-		public void setSubTypeAlias(String subTypeAlias) {
-			this.subTypeAlias = subTypeAlias;
-		}
-
-		public String getLastFoundTime() {
-			return this.lastFoundTime;
-		}
-
-		public void setLastFoundTime(String lastFoundTime) {
-			this.lastFoundTime = lastFoundTime;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
+		public void setLowWarningCount(Integer lowWarningCount) {
+			this.lowWarningCount = lowWarningCount;
 		}
 
 		public Integer getCheckCount() {
@@ -165,14 +125,6 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 			this.checkCount = checkCount;
 		}
 
-		public Integer getHighWarningCount() {
-			return this.highWarningCount;
-		}
-
-		public void setHighWarningCount(Integer highWarningCount) {
-			this.highWarningCount = highWarningCount;
-		}
-
 		public Integer getMediumWarningCount() {
 			return this.mediumWarningCount;
 		}
@@ -181,12 +133,28 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 			this.mediumWarningCount = mediumWarningCount;
 		}
 
-		public Integer getLowWarningCount() {
-			return this.lowWarningCount;
+		public String getLastFoundTime() {
+			return this.lastFoundTime;
 		}
 
-		public void setLowWarningCount(Integer lowWarningCount) {
-			this.lowWarningCount = lowWarningCount;
+		public void setLastFoundTime(String lastFoundTime) {
+			this.lastFoundTime = lastFoundTime;
+		}
+
+		public Long getRiskId() {
+			return this.riskId;
+		}
+
+		public void setRiskId(Long riskId) {
+			this.riskId = riskId;
+		}
+
+		public String getSubTypeAlias() {
+			return this.subTypeAlias;
+		}
+
+		public void setSubTypeAlias(String subTypeAlias) {
+			this.subTypeAlias = subTypeAlias;
 		}
 
 		public Integer getWarningMachineCount() {
@@ -195,6 +163,38 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 
 		public void setWarningMachineCount(Integer warningMachineCount) {
 			this.warningMachineCount = warningMachineCount;
+		}
+
+		public Integer getHighWarningCount() {
+			return this.highWarningCount;
+		}
+
+		public void setHighWarningCount(Integer highWarningCount) {
+			this.highWarningCount = highWarningCount;
+		}
+
+		public String getTypeAlias() {
+			return this.typeAlias;
+		}
+
+		public void setTypeAlias(String typeAlias) {
+			this.typeAlias = typeAlias;
+		}
+
+		public String getRiskName() {
+			return this.riskName;
+		}
+
+		public void setRiskName(String riskName) {
+			this.riskName = riskName;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 	}
 

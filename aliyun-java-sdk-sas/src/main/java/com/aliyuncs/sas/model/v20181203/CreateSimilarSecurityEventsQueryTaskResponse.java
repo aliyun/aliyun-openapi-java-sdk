@@ -46,17 +46,9 @@ public class CreateSimilarSecurityEventsQueryTaskResponse extends AcsResponse {
 
 	public static class CreateSimilarSecurityEventsQueryTaskResponse1 {
 
-		private Long taskId;
-
 		private String status;
 
-		public Long getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(Long taskId) {
-			this.taskId = taskId;
-		}
+		private Long taskId;
 
 		public String getStatus() {
 			return this.status;
@@ -64,6 +56,14 @@ public class CreateSimilarSecurityEventsQueryTaskResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Long getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(Long taskId) {
+			this.taskId = taskId;
 		}
 	}
 

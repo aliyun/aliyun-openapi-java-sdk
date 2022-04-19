@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String domain;
 
-	private String rootDomain;
+	private String requestId;
 
 	private Integer vulCount;
 
 	private Integer alarmCount;
 
+	private String rootDomain;
+
 	private List<DomainDetailItem> domainDetailItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDomain() {
 		return this.domain;
@@ -53,12 +45,12 @@ public class DescribeDomainDetailResponse extends AcsResponse {
 		this.domain = domain;
 	}
 
-	public String getRootDomain() {
-		return this.rootDomain;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setRootDomain(String rootDomain) {
-		this.rootDomain = rootDomain;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getVulCount() {
@@ -77,6 +69,14 @@ public class DescribeDomainDetailResponse extends AcsResponse {
 		this.alarmCount = alarmCount;
 	}
 
+	public String getRootDomain() {
+		return this.rootDomain;
+	}
+
+	public void setRootDomain(String rootDomain) {
+		this.rootDomain = rootDomain;
+	}
+
 	public List<DomainDetailItem> getDomainDetailItems() {
 		return this.domainDetailItems;
 	}
@@ -87,35 +87,19 @@ public class DescribeDomainDetailResponse extends AcsResponse {
 
 	public static class DomainDetailItem {
 
-		private String internetIp;
-
-		private String instanceId;
-
 		private String uuid;
 
-		private String assetType;
-
-		private String instanceName;
+		private String internetIp;
 
 		private String machineIp;
 
+		private String instanceName;
+
+		private String instanceId;
+
 		private String intranetIp;
 
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String assetType;
 
 		public String getUuid() {
 			return this.uuid;
@@ -125,20 +109,12 @@ public class DescribeDomainDetailResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
-		public String getAssetType() {
-			return this.assetType;
+		public String getInternetIp() {
+			return this.internetIp;
 		}
 
-		public void setAssetType(String assetType) {
-			this.assetType = assetType;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
 		public String getMachineIp() {
@@ -149,12 +125,36 @@ public class DescribeDomainDetailResponse extends AcsResponse {
 			this.machineIp = machineIp;
 		}
 
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getIntranetIp() {
 			return this.intranetIp;
 		}
 
 		public void setIntranetIp(String intranetIp) {
 			this.intranetIp = intranetIp;
+		}
+
+		public String getAssetType() {
+			return this.assetType;
+		}
+
+		public void setAssetType(String assetType) {
+			this.assetType = assetType;
 		}
 	}
 

@@ -47,53 +47,31 @@ public class DescribeStrategyResponse extends AcsResponse {
 
 	public static class Strategy {
 
-		private Integer cycleDays;
-
-		private Integer id;
-
-		private Integer cycleStartTime;
-
 		private Integer type;
 
-		private String name;
-
-		private Integer riskCount;
-
-		private Integer ecsCount;
-
 		private Integer execStatus;
-
-		private Integer processRate;
 
 		private Integer passRate;
 
 		private String authVersionList;
 
+		private Integer cycleStartTime;
+
+		private String customType;
+
+		private Integer ecsCount;
+
+		private Integer processRate;
+
+		private Integer cycleDays;
+
+		private Integer riskCount;
+
+		private String name;
+
+		private Integer id;
+
 		private List<ConfigTarget> configTargets;
-
-		public Integer getCycleDays() {
-			return this.cycleDays;
-		}
-
-		public void setCycleDays(Integer cycleDays) {
-			this.cycleDays = cycleDays;
-		}
-
-		public Integer getId() {
-			return this.id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public Integer getCycleStartTime() {
-			return this.cycleStartTime;
-		}
-
-		public void setCycleStartTime(Integer cycleStartTime) {
-			this.cycleStartTime = cycleStartTime;
-		}
 
 		public Integer getType() {
 			return this.type;
@@ -103,44 +81,12 @@ public class DescribeStrategyResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getRiskCount() {
-			return this.riskCount;
-		}
-
-		public void setRiskCount(Integer riskCount) {
-			this.riskCount = riskCount;
-		}
-
-		public Integer getEcsCount() {
-			return this.ecsCount;
-		}
-
-		public void setEcsCount(Integer ecsCount) {
-			this.ecsCount = ecsCount;
-		}
-
 		public Integer getExecStatus() {
 			return this.execStatus;
 		}
 
 		public void setExecStatus(Integer execStatus) {
 			this.execStatus = execStatus;
-		}
-
-		public Integer getProcessRate() {
-			return this.processRate;
-		}
-
-		public void setProcessRate(Integer processRate) {
-			this.processRate = processRate;
 		}
 
 		public Integer getPassRate() {
@@ -159,6 +105,70 @@ public class DescribeStrategyResponse extends AcsResponse {
 			this.authVersionList = authVersionList;
 		}
 
+		public Integer getCycleStartTime() {
+			return this.cycleStartTime;
+		}
+
+		public void setCycleStartTime(Integer cycleStartTime) {
+			this.cycleStartTime = cycleStartTime;
+		}
+
+		public String getCustomType() {
+			return this.customType;
+		}
+
+		public void setCustomType(String customType) {
+			this.customType = customType;
+		}
+
+		public Integer getEcsCount() {
+			return this.ecsCount;
+		}
+
+		public void setEcsCount(Integer ecsCount) {
+			this.ecsCount = ecsCount;
+		}
+
+		public Integer getProcessRate() {
+			return this.processRate;
+		}
+
+		public void setProcessRate(Integer processRate) {
+			this.processRate = processRate;
+		}
+
+		public Integer getCycleDays() {
+			return this.cycleDays;
+		}
+
+		public void setCycleDays(Integer cycleDays) {
+			this.cycleDays = cycleDays;
+		}
+
+		public Integer getRiskCount() {
+			return this.riskCount;
+		}
+
+		public void setRiskCount(Integer riskCount) {
+			this.riskCount = riskCount;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
 		public List<ConfigTarget> getConfigTargets() {
 			return this.configTargets;
 		}
@@ -171,9 +181,9 @@ public class DescribeStrategyResponse extends AcsResponse {
 
 			private String flag;
 
-			private String targetType;
-
 			private String target;
+
+			private String targetType;
 
 			public String getFlag() {
 				return this.flag;
@@ -183,20 +193,20 @@ public class DescribeStrategyResponse extends AcsResponse {
 				this.flag = flag;
 			}
 
-			public String getTargetType() {
-				return this.targetType;
-			}
-
-			public void setTargetType(String targetType) {
-				this.targetType = targetType;
-			}
-
 			public String getTarget() {
 				return this.target;
 			}
 
 			public void setTarget(String target) {
 				this.target = target;
+			}
+
+			public String getTargetType() {
+				return this.targetType;
+			}
+
+			public void setTargetType(String targetType) {
+				this.targetType = targetType;
 			}
 		}
 	}

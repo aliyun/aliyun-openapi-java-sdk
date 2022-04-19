@@ -59,56 +59,32 @@ public class ModifyPushAllTaskResponse extends AcsResponse {
 
 		public static class PushTaskResult {
 
-			private String instanceId;
-
-			private String osVersion;
-
-			private String instanceName;
-
-			private Boolean success;
+			private String uuid;
 
 			private Long groupId;
 
-			private String ip;
+			private Boolean success;
+
+			private String region;
+
+			private String instanceName;
 
 			private Boolean online;
 
 			private String message;
 
-			private String region;
+			private String ip;
 
-			private String uuid;
+			private String osVersion;
 
-			public String getInstanceId() {
-				return this.instanceId;
+			private String instanceId;
+
+			public String getUuid() {
+				return this.uuid;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getOsVersion() {
-				return this.osVersion;
-			}
-
-			public void setOsVersion(String osVersion) {
-				this.osVersion = osVersion;
-			}
-
-			public String getInstanceName() {
-				return this.instanceName;
-			}
-
-			public void setInstanceName(String instanceName) {
-				this.instanceName = instanceName;
-			}
-
-			public Boolean getSuccess() {
-				return this.success;
-			}
-
-			public void setSuccess(Boolean success) {
-				this.success = success;
+			public void setUuid(String uuid) {
+				this.uuid = uuid;
 			}
 
 			public Long getGroupId() {
@@ -119,12 +95,28 @@ public class ModifyPushAllTaskResponse extends AcsResponse {
 				this.groupId = groupId;
 			}
 
-			public String getIp() {
-				return this.ip;
+			public Boolean getSuccess() {
+				return this.success;
 			}
 
-			public void setIp(String ip) {
-				this.ip = ip;
+			public void setSuccess(Boolean success) {
+				this.success = success;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getInstanceName() {
+				return this.instanceName;
+			}
+
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
 			}
 
 			public Boolean getOnline() {
@@ -143,20 +135,28 @@ public class ModifyPushAllTaskResponse extends AcsResponse {
 				this.message = message;
 			}
 
-			public String getRegion() {
-				return this.region;
+			public String getIp() {
+				return this.ip;
 			}
 
-			public void setRegion(String region) {
-				this.region = region;
+			public void setIp(String ip) {
+				this.ip = ip;
 			}
 
-			public String getUuid() {
-				return this.uuid;
+			public String getOsVersion() {
+				return this.osVersion;
 			}
 
-			public void setUuid(String uuid) {
-				this.uuid = uuid;
+			public void setOsVersion(String osVersion) {
+				this.osVersion = osVersion;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 		}
 	}

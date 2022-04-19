@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartVirusScanTaskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long scanTaskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getScanTaskId() {
 		return this.scanTaskId;
@@ -42,6 +34,14 @@ public class StartVirusScanTaskResponse extends AcsResponse {
 
 	public void setScanTaskId(Long scanTaskId) {
 		this.scanTaskId = scanTaskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

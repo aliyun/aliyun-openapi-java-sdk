@@ -47,19 +47,27 @@ public class DescribeAllEntityResponse extends AcsResponse {
 
 	public static class Entity {
 
+		private String uuid;
+
 		private Integer groupId;
+
+		private String internetIp;
 
 		private String instanceName;
 
 		private String ip;
 
-		private String uuid;
-
 		private String os;
 
-		private String internetIp;
-
 		private String intranetIp;
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
 
 		public Integer getGroupId() {
 			return this.groupId;
@@ -67,6 +75,14 @@ public class DescribeAllEntityResponse extends AcsResponse {
 
 		public void setGroupId(Integer groupId) {
 			this.groupId = groupId;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
 		public String getInstanceName() {
@@ -85,28 +101,12 @@ public class DescribeAllEntityResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
 		public String getOs() {
 			return this.os;
 		}
 
 		public void setOs(String os) {
 			this.os = os;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
 		}
 
 		public String getIntranetIp() {

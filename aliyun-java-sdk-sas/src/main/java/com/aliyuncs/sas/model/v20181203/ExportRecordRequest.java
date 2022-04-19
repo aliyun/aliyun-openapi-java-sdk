@@ -31,7 +31,7 @@ public class ExportRecordRequest extends RpcAcsRequest<ExportRecordResponse> {
 
 	private String lang;
 	public ExportRecordRequest() {
-		super("Sas", "2018-12-03", "ExportRecord", "sas");
+		super("Sas", "2018-12-03", "ExportRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

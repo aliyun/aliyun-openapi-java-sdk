@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCheckEcsWarningsResponse extends AcsResponse {
 
-	private String requestId;
+	private String sasVersion;
 
 	private String canTry;
 
-	private String sasVersion;
-
 	private String weakPasswordCount;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	public String getSasVersion() {
+		return this.sasVersion;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSasVersion(String sasVersion) {
+		this.sasVersion = sasVersion;
 	}
 
 	public String getCanTry() {
@@ -48,20 +48,20 @@ public class DescribeCheckEcsWarningsResponse extends AcsResponse {
 		this.canTry = canTry;
 	}
 
-	public String getSasVersion() {
-		return this.sasVersion;
-	}
-
-	public void setSasVersion(String sasVersion) {
-		this.sasVersion = sasVersion;
-	}
-
 	public String getWeakPasswordCount() {
 		return this.weakPasswordCount;
 	}
 
 	public void setWeakPasswordCount(String weakPasswordCount) {
 		this.weakPasswordCount = weakPasswordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

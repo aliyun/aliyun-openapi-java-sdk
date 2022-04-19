@@ -39,7 +39,6 @@ public class DescribeRestoreJobsResponseUnmarshaller {
 		List<RestoreJob> restoreJobs = new ArrayList<RestoreJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRestoreJobsResponse.RestoreJobs.Length"); i++) {
 			RestoreJob restoreJob = new RestoreJob();
-			restoreJob.setId(_ctx.longValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].Id"));
 			restoreJob.setCreatedTime(_ctx.longValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].CreatedTime"));
 			restoreJob.setUpdatedTime(_ctx.longValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].UpdatedTime"));
 			restoreJob.setUuid(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].Uuid"));
@@ -69,17 +68,15 @@ public class DescribeRestoreJobsResponseUnmarshaller {
 			restoreJob.setInstanceName(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].InstanceName"));
 			restoreJob.setInternetIp(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].InternetIp"));
 			restoreJob.setIntranetIp(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].IntranetIp"));
-			restoreJob.setErrorFile(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].ErrorFile"));
 			restoreJob.setErrorFileUrl(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].ErrorFileUrl"));
 			restoreJob.setRequestId(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].RequestId"));
 			restoreJob.setRestoreName(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].RestoreName"));
 			restoreJob.setInstanceId(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].InstanceId"));
-			restoreJob.setExtra(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].Extra"));
 			restoreJob.setDuration(_ctx.longValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].Duration"));
 			restoreJob.setExitCode(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].ExitCode"));
-			restoreJob.setErrorFile1(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].ErrorFile"));
+			restoreJob.setErrorFile(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].ErrorFile"));
 			restoreJob.setGmtCreate(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].GmtCreate"));
-			restoreJob.setGmtModified(_ctx.longValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].GmtModified"));
+			restoreJob.setGmtModified(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].GmtModified"));
 			restoreJob.setExcludes(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].Excludes"));
 			restoreJob.setIncludes(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].Includes"));
 

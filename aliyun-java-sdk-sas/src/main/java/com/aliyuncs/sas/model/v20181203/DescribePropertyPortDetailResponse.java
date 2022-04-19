@@ -57,29 +57,45 @@ public class DescribePropertyPortDetailResponse extends AcsResponse {
 
 	public static class PropertyPort {
 
+		private String internetIp;
+
+		private String pid;
+
 		private String bindIp;
 
+		private String ip;
+
+		private String procName;
+
+		private String instanceId;
+
 		private String port;
+
+		private String intranetIp;
+
+		private String uuid;
 
 		private String instanceName;
 
 		private String proto;
 
-		private String ip;
-
-		private String create;
-
 		private Long createTimestamp;
 
-		private String procName;
+		public String getInternetIp() {
+			return this.internetIp;
+		}
 
-		private String uuid;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
 
-		private String instanceId;
+		public String getPid() {
+			return this.pid;
+		}
 
-		private String intranetIp;
-
-		private String internetIp;
+		public void setPid(String pid) {
+			this.pid = pid;
+		}
 
 		public String getBindIp() {
 			return this.bindIp;
@@ -89,12 +105,52 @@ public class DescribePropertyPortDetailResponse extends AcsResponse {
 			this.bindIp = bindIp;
 		}
 
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getProcName() {
+			return this.procName;
+		}
+
+		public void setProcName(String procName) {
+			this.procName = procName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getPort() {
 			return this.port;
 		}
 
 		public void setPort(String port) {
 			this.port = port;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
 		}
 
 		public String getInstanceName() {
@@ -113,22 +169,6 @@ public class DescribePropertyPortDetailResponse extends AcsResponse {
 			this.proto = proto;
 		}
 
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
-
-		public String getCreate() {
-			return this.create;
-		}
-
-		public void setCreate(String create) {
-			this.create = create;
-		}
-
 		public Long getCreateTimestamp() {
 			return this.createTimestamp;
 		}
@@ -136,64 +176,24 @@ public class DescribePropertyPortDetailResponse extends AcsResponse {
 		public void setCreateTimestamp(Long createTimestamp) {
 			this.createTimestamp = createTimestamp;
 		}
-
-		public String getProcName() {
-			return this.procName;
-		}
-
-		public void setProcName(String procName) {
-			this.procName = procName;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -212,12 +212,12 @@ public class DescribePropertyPortDetailResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

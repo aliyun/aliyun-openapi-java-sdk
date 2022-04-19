@@ -31,7 +31,7 @@ public class DeleteLoginBaseConfigRequest extends RpcAcsRequest<DeleteLoginBaseC
 
 	private String config;
 	public DeleteLoginBaseConfigRequest() {
-		super("Sas", "2018-12-03", "DeleteLoginBaseConfig", "sas");
+		super("Sas", "2018-12-03", "DeleteLoginBaseConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

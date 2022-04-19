@@ -28,25 +28,25 @@ public class DescribeModuleConfigResponseUnmarshaller {
 	public static DescribeModuleConfigResponse unmarshall(DescribeModuleConfigResponse describeModuleConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeModuleConfigResponse.setRequestId(_ctx.stringValue("DescribeModuleConfigResponse.RequestId"));
+		describeModuleConfigResponse.setHttpStatusCode(_ctx.integerValue("DescribeModuleConfigResponse.HttpStatusCode"));
 		describeModuleConfigResponse.setSuccess(_ctx.booleanValue("DescribeModuleConfigResponse.Success"));
 		describeModuleConfigResponse.setCount(_ctx.integerValue("DescribeModuleConfigResponse.Count"));
-		describeModuleConfigResponse.setHttpStatusCode(_ctx.integerValue("DescribeModuleConfigResponse.HttpStatusCode"));
 
 		List<ModuleConfig> moduleConfigList = new ArrayList<ModuleConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeModuleConfigResponse.ModuleConfigList.Length"); i++) {
 			ModuleConfig moduleConfig = new ModuleConfig();
-			moduleConfig.setConfigName(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].ConfigName"));
 			moduleConfig.setModuleName(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].ModuleName"));
+			moduleConfig.setConfigName(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].ConfigName"));
 
 			List<Item> items = new ArrayList<Item>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items.Length"); j++) {
 				Item item = new Item();
-				item.setInstanceId(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].InstanceId"));
-				item.setInstanceName(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].InstanceName"));
-				item.setGroupId(_ctx.integerValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].GroupId"));
-				item.setIp(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].Ip"));
-				item.setRegion(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].Region"));
 				item.setUuid(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].Uuid"));
+				item.setGroupId(_ctx.integerValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].GroupId"));
+				item.setInstanceName(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].InstanceName"));
+				item.setRegion(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].Region"));
+				item.setIp(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].Ip"));
+				item.setInstanceId(_ctx.stringValue("DescribeModuleConfigResponse.ModuleConfigList["+ i +"].Items["+ j +"].InstanceId"));
 
 				items.add(item);
 			}

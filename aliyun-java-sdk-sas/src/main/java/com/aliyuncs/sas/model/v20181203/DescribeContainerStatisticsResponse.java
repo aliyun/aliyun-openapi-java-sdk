@@ -46,24 +46,24 @@ public class DescribeContainerStatisticsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalAlarmCount;
+		private Integer totalNode;
 
 		private Integer remindAlarmCount;
+
+		private Integer totalAlarmCount;
 
 		private Integer suspiciousAlarmCount;
 
 		private Integer seriousAlarmCount;
 
-		private Integer totalNode;
-
 		private Integer hasRiskNode;
 
-		public Integer getTotalAlarmCount() {
-			return this.totalAlarmCount;
+		public Integer getTotalNode() {
+			return this.totalNode;
 		}
 
-		public void setTotalAlarmCount(Integer totalAlarmCount) {
-			this.totalAlarmCount = totalAlarmCount;
+		public void setTotalNode(Integer totalNode) {
+			this.totalNode = totalNode;
 		}
 
 		public Integer getRemindAlarmCount() {
@@ -72,6 +72,14 @@ public class DescribeContainerStatisticsResponse extends AcsResponse {
 
 		public void setRemindAlarmCount(Integer remindAlarmCount) {
 			this.remindAlarmCount = remindAlarmCount;
+		}
+
+		public Integer getTotalAlarmCount() {
+			return this.totalAlarmCount;
+		}
+
+		public void setTotalAlarmCount(Integer totalAlarmCount) {
+			this.totalAlarmCount = totalAlarmCount;
 		}
 
 		public Integer getSuspiciousAlarmCount() {
@@ -88,14 +96,6 @@ public class DescribeContainerStatisticsResponse extends AcsResponse {
 
 		public void setSeriousAlarmCount(Integer seriousAlarmCount) {
 			this.seriousAlarmCount = seriousAlarmCount;
-		}
-
-		public Integer getTotalNode() {
-			return this.totalNode;
-		}
-
-		public void setTotalNode(Integer totalNode) {
-			this.totalNode = totalNode;
 		}
 
 		public Integer getHasRiskNode() {

@@ -23,15 +23,15 @@ public class DescribeExposedStatisticsResponseUnmarshaller {
 	public static DescribeExposedStatisticsResponse unmarshall(DescribeExposedStatisticsResponse describeExposedStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		describeExposedStatisticsResponse.setRequestId(_ctx.stringValue("DescribeExposedStatisticsResponse.RequestId"));
+		describeExposedStatisticsResponse.setExposedLaterVulCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedLaterVulCount"));
+		describeExposedStatisticsResponse.setExposedComponentCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedComponentCount"));
+		describeExposedStatisticsResponse.setExposedPortCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedPortCount"));
 		describeExposedStatisticsResponse.setExposedInstanceCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedInstanceCount"));
+		describeExposedStatisticsResponse.setExposedWeekPasswordMachineCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedWeekPasswordMachineCount"));
+		describeExposedStatisticsResponse.setExposedNntfVulCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedNntfVulCount"));
 		describeExposedStatisticsResponse.setGatewayAssetCount(_ctx.integerValue("DescribeExposedStatisticsResponse.GatewayAssetCount"));
 		describeExposedStatisticsResponse.setExposedIpCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedIpCount"));
-		describeExposedStatisticsResponse.setExposedPortCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedPortCount"));
-		describeExposedStatisticsResponse.setExposedComponentCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedComponentCount"));
 		describeExposedStatisticsResponse.setExposedAsapVulCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedAsapVulCount"));
-		describeExposedStatisticsResponse.setExposedLaterVulCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedLaterVulCount"));
-		describeExposedStatisticsResponse.setExposedNntfVulCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedNntfVulCount"));
-		describeExposedStatisticsResponse.setExposedWeekPasswordMachineCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedWeekPasswordMachineCount"));
 	 
 	 	return describeExposedStatisticsResponse;
 	}

@@ -25,27 +25,14 @@ import com.aliyuncs.sas.Endpoint;
 public class AddVpcHoneyPotRequest extends RpcAcsRequest<AddVpcHoneyPotResponse> {
 	   
 
-	private String vpcSwitchId;
-
 	private String vpcId;
 	public AddVpcHoneyPotRequest() {
-		super("Sas", "2018-12-03", "AddVpcHoneyPot", "sas");
+		super("Sas", "2018-12-03", "AddVpcHoneyPot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getVpcSwitchId() {
-		return this.vpcSwitchId;
-	}
-
-	public void setVpcSwitchId(String vpcSwitchId) {
-		this.vpcSwitchId = vpcSwitchId;
-		if(vpcSwitchId != null){
-			putQueryParameter("VpcSwitchId", vpcSwitchId);
-		}
 	}
 
 	public String getVpcId() {

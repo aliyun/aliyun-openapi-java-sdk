@@ -28,20 +28,20 @@ public class DescribeDomainDetailResponseUnmarshaller {
 		
 		describeDomainDetailResponse.setRequestId(_ctx.stringValue("DescribeDomainDetailResponse.RequestId"));
 		describeDomainDetailResponse.setDomain(_ctx.stringValue("DescribeDomainDetailResponse.Domain"));
-		describeDomainDetailResponse.setRootDomain(_ctx.stringValue("DescribeDomainDetailResponse.RootDomain"));
 		describeDomainDetailResponse.setVulCount(_ctx.integerValue("DescribeDomainDetailResponse.VulCount"));
 		describeDomainDetailResponse.setAlarmCount(_ctx.integerValue("DescribeDomainDetailResponse.AlarmCount"));
+		describeDomainDetailResponse.setRootDomain(_ctx.stringValue("DescribeDomainDetailResponse.RootDomain"));
 
 		List<DomainDetailItem> domainDetailItems = new ArrayList<DomainDetailItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainDetailResponse.DomainDetailItems.Length"); i++) {
 			DomainDetailItem domainDetailItem = new DomainDetailItem();
-			domainDetailItem.setInternetIp(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].InternetIp"));
-			domainDetailItem.setInstanceId(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].InstanceId"));
 			domainDetailItem.setUuid(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].Uuid"));
-			domainDetailItem.setAssetType(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].AssetType"));
-			domainDetailItem.setInstanceName(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].InstanceName"));
+			domainDetailItem.setInternetIp(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].InternetIp"));
 			domainDetailItem.setMachineIp(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].MachineIp"));
+			domainDetailItem.setInstanceName(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].InstanceName"));
+			domainDetailItem.setInstanceId(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].InstanceId"));
 			domainDetailItem.setIntranetIp(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].IntranetIp"));
+			domainDetailItem.setAssetType(_ctx.stringValue("DescribeDomainDetailResponse.DomainDetailItems["+ i +"].AssetType"));
 
 			domainDetailItems.add(domainDetailItem);
 		}

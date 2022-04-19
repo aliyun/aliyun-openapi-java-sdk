@@ -30,7 +30,7 @@ public class CheckSecurityEventIdRequest extends RpcAcsRequest<CheckSecurityEven
 
 	private String uuid;
 	public CheckSecurityEventIdRequest() {
-		super("Sas", "2018-12-03", "CheckSecurityEventId", "sas");
+		super("Sas", "2018-12-03", "CheckSecurityEventId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

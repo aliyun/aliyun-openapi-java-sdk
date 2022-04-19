@@ -31,10 +31,10 @@ public class DescribeSearchConditionResponseUnmarshaller {
 		List<Condition> conditionList = new ArrayList<Condition>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSearchConditionResponse.ConditionList.Length"); i++) {
 			Condition condition = new Condition();
+			condition.setConditionType(_ctx.stringValue("DescribeSearchConditionResponse.ConditionList["+ i +"].ConditionType"));
+			condition.setNameKey(_ctx.stringValue("DescribeSearchConditionResponse.ConditionList["+ i +"].NameKey"));
 			condition.setName(_ctx.stringValue("DescribeSearchConditionResponse.ConditionList["+ i +"].Name"));
 			condition.setFilterConditions(_ctx.stringValue("DescribeSearchConditionResponse.ConditionList["+ i +"].FilterConditions"));
-			condition.setNameKey(_ctx.stringValue("DescribeSearchConditionResponse.ConditionList["+ i +"].NameKey"));
-			condition.setConditionType(_ctx.stringValue("DescribeSearchConditionResponse.ConditionList["+ i +"].ConditionType"));
 
 			conditionList.add(condition);
 		}

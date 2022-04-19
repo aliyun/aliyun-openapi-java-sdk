@@ -41,7 +41,7 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 
 	private String uuids;
 	public DescribeWarningMachinesRequest() {
-		super("Sas", "2018-12-03", "DescribeWarningMachines", "sas");
+		super("Sas", "2018-12-03", "DescribeWarningMachines");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

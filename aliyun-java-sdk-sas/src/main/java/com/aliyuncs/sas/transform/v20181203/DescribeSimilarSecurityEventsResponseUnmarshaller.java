@@ -30,21 +30,21 @@ public class DescribeSimilarSecurityEventsResponseUnmarshaller {
 		describeSimilarSecurityEventsResponse.setRequestId(_ctx.stringValue("DescribeSimilarSecurityEventsResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeSimilarSecurityEventsResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeSimilarSecurityEventsResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeSimilarSecurityEventsResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeSimilarSecurityEventsResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeSimilarSecurityEventsResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeSimilarSecurityEventsResponse.PageInfo.Count"));
 		describeSimilarSecurityEventsResponse.setPageInfo(pageInfo);
 
 		List<SimpleSecurityEvent> securityEventsResponse = new ArrayList<SimpleSecurityEvent>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse.Length"); i++) {
 			SimpleSecurityEvent simpleSecurityEvent = new SimpleSecurityEvent();
-			simpleSecurityEvent.setSecurityEventId(_ctx.longValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].SecurityEventId"));
-			simpleSecurityEvent.setUuid(_ctx.stringValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].Uuid"));
-			simpleSecurityEvent.setEventType(_ctx.stringValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].EventType"));
-			simpleSecurityEvent.setEventName(_ctx.stringValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].EventName"));
-			simpleSecurityEvent.setOccurrenceTime(_ctx.longValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].OccurrenceTime"));
 			simpleSecurityEvent.setLastTime(_ctx.longValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].LastTime"));
+			simpleSecurityEvent.setUuid(_ctx.stringValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].Uuid"));
+			simpleSecurityEvent.setEventName(_ctx.stringValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].EventName"));
+			simpleSecurityEvent.setEventType(_ctx.stringValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].EventType"));
+			simpleSecurityEvent.setSecurityEventId(_ctx.longValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].SecurityEventId"));
+			simpleSecurityEvent.setOccurrenceTime(_ctx.longValue("DescribeSimilarSecurityEventsResponse.SecurityEventsResponse["+ i +"].OccurrenceTime"));
 
 			securityEventsResponse.add(simpleSecurityEvent);
 		}

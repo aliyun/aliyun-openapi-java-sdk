@@ -33,7 +33,7 @@ public class DescribeAlarmEventDetailRequest extends RpcAcsRequest<DescribeAlarm
 
 	private String lang;
 	public DescribeAlarmEventDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeAlarmEventDetail", "sas");
+		super("Sas", "2018-12-03", "DescribeAlarmEventDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

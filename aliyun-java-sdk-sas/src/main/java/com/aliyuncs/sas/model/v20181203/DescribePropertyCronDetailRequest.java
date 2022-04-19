@@ -35,9 +35,11 @@ public class DescribePropertyCronDetailRequest extends RpcAcsRequest<DescribePro
 
 	private Integer currentPage;
 
+	private String extend;
+
 	private String user;
 	public DescribePropertyCronDetailRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyCronDetail", "sas");
+		super("Sas", "2018-12-03", "DescribePropertyCronDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -97,6 +99,17 @@ public class DescribePropertyCronDetailRequest extends RpcAcsRequest<DescribePro
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getExtend() {
+		return this.extend;
+	}
+
+	public void setExtend(String extend) {
+		this.extend = extend;
+		if(extend != null){
+			putQueryParameter("Extend", extend);
 		}
 	}
 

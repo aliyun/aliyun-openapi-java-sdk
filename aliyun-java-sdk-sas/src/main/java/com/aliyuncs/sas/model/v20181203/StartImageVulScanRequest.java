@@ -46,7 +46,7 @@ public class StartImageVulScanRequest extends RpcAcsRequest<StartImageVulScanRes
 
 	private String repoRegionId;
 	public StartImageVulScanRequest() {
-		super("Sas", "2018-12-03", "StartImageVulScan", "sas");
+		super("Sas", "2018-12-03", "StartImageVulScan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

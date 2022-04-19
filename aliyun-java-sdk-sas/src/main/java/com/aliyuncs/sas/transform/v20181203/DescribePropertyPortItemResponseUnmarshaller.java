@@ -30,18 +30,18 @@ public class DescribePropertyPortItemResponseUnmarshaller {
 		describePropertyPortItemResponse.setRequestId(_ctx.stringValue("DescribePropertyPortItemResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribePropertyPortItemResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertyPortItemResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribePropertyPortItemResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribePropertyPortItemResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertyPortItemResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribePropertyPortItemResponse.PageInfo.Count"));
 		describePropertyPortItemResponse.setPageInfo(pageInfo);
 
 		List<PropertyItem> propertyItems = new ArrayList<PropertyItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePropertyPortItemResponse.PropertyItems.Length"); i++) {
 			PropertyItem propertyItem = new PropertyItem();
 			propertyItem.setPort(_ctx.stringValue("DescribePropertyPortItemResponse.PropertyItems["+ i +"].Port"));
-			propertyItem.setProto(_ctx.stringValue("DescribePropertyPortItemResponse.PropertyItems["+ i +"].Proto"));
 			propertyItem.setCount(_ctx.integerValue("DescribePropertyPortItemResponse.PropertyItems["+ i +"].Count"));
+			propertyItem.setProto(_ctx.stringValue("DescribePropertyPortItemResponse.PropertyItems["+ i +"].Proto"));
 
 			propertyItems.add(propertyItem);
 		}

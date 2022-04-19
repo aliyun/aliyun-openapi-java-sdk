@@ -31,13 +31,19 @@ public class DescribePropertyUserDetailRequest extends RpcAcsRequest<DescribePro
 
 	private Integer pageSize;
 
+	private Long lastLoginTimeStart;
+
 	private Integer currentPage;
+
+	private Long lastLoginTimeEnd;
+
+	private String extend;
 
 	private String isRoot;
 
 	private String user;
 	public DescribePropertyUserDetailRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyUserDetail", "sas");
+		super("Sas", "2018-12-03", "DescribePropertyUserDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,6 +84,17 @@ public class DescribePropertyUserDetailRequest extends RpcAcsRequest<DescribePro
 		}
 	}
 
+	public Long getLastLoginTimeStart() {
+		return this.lastLoginTimeStart;
+	}
+
+	public void setLastLoginTimeStart(Long lastLoginTimeStart) {
+		this.lastLoginTimeStart = lastLoginTimeStart;
+		if(lastLoginTimeStart != null){
+			putQueryParameter("LastLoginTimeStart", lastLoginTimeStart.toString());
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -86,6 +103,28 @@ public class DescribePropertyUserDetailRequest extends RpcAcsRequest<DescribePro
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Long getLastLoginTimeEnd() {
+		return this.lastLoginTimeEnd;
+	}
+
+	public void setLastLoginTimeEnd(Long lastLoginTimeEnd) {
+		this.lastLoginTimeEnd = lastLoginTimeEnd;
+		if(lastLoginTimeEnd != null){
+			putQueryParameter("LastLoginTimeEnd", lastLoginTimeEnd.toString());
+		}
+	}
+
+	public String getExtend() {
+		return this.extend;
+	}
+
+	public void setExtend(String extend) {
+		this.extend = extend;
+		if(extend != null){
+			putQueryParameter("Extend", extend);
 		}
 	}
 

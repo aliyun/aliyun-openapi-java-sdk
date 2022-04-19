@@ -45,7 +45,7 @@ public class DescribeExposedInstanceListRequest extends RpcAcsRequest<DescribeEx
 
 	private Boolean healthStatus;
 	public DescribeExposedInstanceListRequest() {
-		super("Sas", "2018-12-03", "DescribeExposedInstanceList", "sas");
+		super("Sas", "2018-12-03", "DescribeExposedInstanceList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

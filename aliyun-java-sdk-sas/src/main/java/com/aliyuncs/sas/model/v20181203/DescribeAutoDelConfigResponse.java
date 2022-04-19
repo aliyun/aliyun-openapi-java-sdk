@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoDelConfigResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer days;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getDays() {
 		return this.days;
@@ -42,6 +34,14 @@ public class DescribeAutoDelConfigResponse extends AcsResponse {
 
 	public void setDays(Integer days) {
 		this.days = days;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

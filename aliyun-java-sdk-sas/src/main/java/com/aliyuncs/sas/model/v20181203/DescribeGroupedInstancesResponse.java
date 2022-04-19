@@ -57,21 +57,29 @@ public class DescribeGroupedInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
+		private Long asapVulInstanceCount;
+
 		private String unProtectedInstanceCount;
 
 		private String fieldAliasName;
 
-		private Integer groupFlag;
+		private String instanceCount;
 
 		private Long fieldId;
 
 		private String riskInstanceCount;
 
-		private String instanceCount;
-
-		private Long asapVulInstanceCount;
+		private Integer groupFlag;
 
 		private List<String> groupPath;
+
+		public Long getAsapVulInstanceCount() {
+			return this.asapVulInstanceCount;
+		}
+
+		public void setAsapVulInstanceCount(Long asapVulInstanceCount) {
+			this.asapVulInstanceCount = asapVulInstanceCount;
+		}
 
 		public String getUnProtectedInstanceCount() {
 			return this.unProtectedInstanceCount;
@@ -89,12 +97,12 @@ public class DescribeGroupedInstancesResponse extends AcsResponse {
 			this.fieldAliasName = fieldAliasName;
 		}
 
-		public Integer getGroupFlag() {
-			return this.groupFlag;
+		public String getInstanceCount() {
+			return this.instanceCount;
 		}
 
-		public void setGroupFlag(Integer groupFlag) {
-			this.groupFlag = groupFlag;
+		public void setInstanceCount(String instanceCount) {
+			this.instanceCount = instanceCount;
 		}
 
 		public Long getFieldId() {
@@ -113,20 +121,12 @@ public class DescribeGroupedInstancesResponse extends AcsResponse {
 			this.riskInstanceCount = riskInstanceCount;
 		}
 
-		public String getInstanceCount() {
-			return this.instanceCount;
+		public Integer getGroupFlag() {
+			return this.groupFlag;
 		}
 
-		public void setInstanceCount(String instanceCount) {
-			this.instanceCount = instanceCount;
-		}
-
-		public Long getAsapVulInstanceCount() {
-			return this.asapVulInstanceCount;
-		}
-
-		public void setAsapVulInstanceCount(Long asapVulInstanceCount) {
-			this.asapVulInstanceCount = asapVulInstanceCount;
+		public void setGroupFlag(Integer groupFlag) {
+			this.groupFlag = groupFlag;
 		}
 
 		public List<String> getGroupPath() {
@@ -140,20 +140,20 @@ public class DescribeGroupedInstancesResponse extends AcsResponse {
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -172,12 +172,12 @@ public class DescribeGroupedInstancesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

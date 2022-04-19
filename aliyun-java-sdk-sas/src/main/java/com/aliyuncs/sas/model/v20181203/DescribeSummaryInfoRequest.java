@@ -31,7 +31,7 @@ public class DescribeSummaryInfoRequest extends RpcAcsRequest<DescribeSummaryInf
 
 	private String resourceDirectoryAccountId;
 	public DescribeSummaryInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeSummaryInfo", "sas");
+		super("Sas", "2018-12-03", "DescribeSummaryInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

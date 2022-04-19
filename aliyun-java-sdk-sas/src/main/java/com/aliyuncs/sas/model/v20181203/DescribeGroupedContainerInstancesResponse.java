@@ -57,41 +57,135 @@ public class DescribeGroupedContainerInstancesResponse extends AcsResponse {
 
 	public static class GroupedContainerInstance {
 
-		private Integer instanceCount;
+		private String riskLevel;
 
-		private Integer riskInstanceCount;
+		private String hostIp;
 
-		private String clusterId;
+		private String pod;
 
 		private String riskStatus;
+
+		private Long createTime;
+
+		private String namespace;
+
+		private String custerState;
+
+		private String instanceId;
+
+		private String regionId;
+
+		private String appName;
+
+		private Integer instanceCount;
+
+		private String clusterType;
+
+		private String clusterName;
+
+		private String podIp;
 
 		private Integer vulCount;
 
 		private Integer alarmCount;
 
-		private String pod;
+		private Integer riskInstanceCount;
 
-		private String podIp;
+		private String clusterId;
 
-		private String instanceId;
+		private String image;
 
-		private String hostIp;
+		private String imageRepoNamespace;
 
-		private String clusterName;
+		private String imageRepoName;
 
-		private Long createTime;
+		private String imageRepoTag;
 
-		private String appName;
+		private String imageDigest;
 
-		private String clusterType;
+		private String imageUuid;
 
-		private String custerState;
+		private Integer hcCount;
 
-		private String regionId;
+		public String getRiskLevel() {
+			return this.riskLevel;
+		}
 
-		private String namespace;
+		public void setRiskLevel(String riskLevel) {
+			this.riskLevel = riskLevel;
+		}
 
-		private String riskLevel;
+		public String getHostIp() {
+			return this.hostIp;
+		}
+
+		public void setHostIp(String hostIp) {
+			this.hostIp = hostIp;
+		}
+
+		public String getPod() {
+			return this.pod;
+		}
+
+		public void setPod(String pod) {
+			this.pod = pod;
+		}
+
+		public String getRiskStatus() {
+			return this.riskStatus;
+		}
+
+		public void setRiskStatus(String riskStatus) {
+			this.riskStatus = riskStatus;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getCusterState() {
+			return this.custerState;
+		}
+
+		public void setCusterState(String custerState) {
+			this.custerState = custerState;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
 
 		public Integer getInstanceCount() {
 			return this.instanceCount;
@@ -101,28 +195,28 @@ public class DescribeGroupedContainerInstancesResponse extends AcsResponse {
 			this.instanceCount = instanceCount;
 		}
 
-		public Integer getRiskInstanceCount() {
-			return this.riskInstanceCount;
+		public String getClusterType() {
+			return this.clusterType;
 		}
 
-		public void setRiskInstanceCount(Integer riskInstanceCount) {
-			this.riskInstanceCount = riskInstanceCount;
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
 		}
 
-		public String getClusterId() {
-			return this.clusterId;
+		public String getClusterName() {
+			return this.clusterName;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
 		}
 
-		public String getRiskStatus() {
-			return this.riskStatus;
+		public String getPodIp() {
+			return this.podIp;
 		}
 
-		public void setRiskStatus(String riskStatus) {
-			this.riskStatus = riskStatus;
+		public void setPodIp(String podIp) {
+			this.podIp = podIp;
 		}
 
 		public Integer getVulCount() {
@@ -141,119 +235,95 @@ public class DescribeGroupedContainerInstancesResponse extends AcsResponse {
 			this.alarmCount = alarmCount;
 		}
 
-		public String getPod() {
-			return this.pod;
+		public Integer getRiskInstanceCount() {
+			return this.riskInstanceCount;
 		}
 
-		public void setPod(String pod) {
-			this.pod = pod;
+		public void setRiskInstanceCount(Integer riskInstanceCount) {
+			this.riskInstanceCount = riskInstanceCount;
 		}
 
-		public String getPodIp() {
-			return this.podIp;
+		public String getClusterId() {
+			return this.clusterId;
 		}
 
-		public void setPodIp(String podIp) {
-			this.podIp = podIp;
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getImage() {
+			return this.image;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setImage(String image) {
+			this.image = image;
 		}
 
-		public String getHostIp() {
-			return this.hostIp;
+		public String getImageRepoNamespace() {
+			return this.imageRepoNamespace;
 		}
 
-		public void setHostIp(String hostIp) {
-			this.hostIp = hostIp;
+		public void setImageRepoNamespace(String imageRepoNamespace) {
+			this.imageRepoNamespace = imageRepoNamespace;
 		}
 
-		public String getClusterName() {
-			return this.clusterName;
+		public String getImageRepoName() {
+			return this.imageRepoName;
 		}
 
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
+		public void setImageRepoName(String imageRepoName) {
+			this.imageRepoName = imageRepoName;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getImageRepoTag() {
+			return this.imageRepoTag;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setImageRepoTag(String imageRepoTag) {
+			this.imageRepoTag = imageRepoTag;
 		}
 
-		public String getAppName() {
-			return this.appName;
+		public String getImageDigest() {
+			return this.imageDigest;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
+		public void setImageDigest(String imageDigest) {
+			this.imageDigest = imageDigest;
 		}
 
-		public String getClusterType() {
-			return this.clusterType;
+		public String getImageUuid() {
+			return this.imageUuid;
 		}
 
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
+		public void setImageUuid(String imageUuid) {
+			this.imageUuid = imageUuid;
 		}
 
-		public String getCusterState() {
-			return this.custerState;
+		public Integer getHcCount() {
+			return this.hcCount;
 		}
 
-		public void setCusterState(String custerState) {
-			this.custerState = custerState;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getRiskLevel() {
-			return this.riskLevel;
-		}
-
-		public void setRiskLevel(String riskLevel) {
-			this.riskLevel = riskLevel;
+		public void setHcCount(Integer hcCount) {
+			this.hcCount = hcCount;
 		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -272,12 +342,12 @@ public class DescribeGroupedContainerInstancesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

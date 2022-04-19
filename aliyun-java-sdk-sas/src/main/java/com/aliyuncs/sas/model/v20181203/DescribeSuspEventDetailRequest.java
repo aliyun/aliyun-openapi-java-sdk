@@ -25,31 +25,20 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeSuspEventDetailRequest extends RpcAcsRequest<DescribeSuspEventDetailResponse> {
 	   
 
-	private Integer suspiciousEventId;
-
 	private String sourceIp;
 
 	private String from;
 
 	private String lang;
+
+	private Integer suspiciousEventId;
 	public DescribeSuspEventDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEventDetail", "sas");
+		super("Sas", "2018-12-03", "DescribeSuspEventDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getSuspiciousEventId() {
-		return this.suspiciousEventId;
-	}
-
-	public void setSuspiciousEventId(Integer suspiciousEventId) {
-		this.suspiciousEventId = suspiciousEventId;
-		if(suspiciousEventId != null){
-			putQueryParameter("SuspiciousEventId", suspiciousEventId.toString());
-		}
 	}
 
 	public String getSourceIp() {
@@ -82,6 +71,17 @@ public class DescribeSuspEventDetailRequest extends RpcAcsRequest<DescribeSuspEv
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getSuspiciousEventId() {
+		return this.suspiciousEventId;
+	}
+
+	public void setSuspiciousEventId(Integer suspiciousEventId) {
+		this.suspiciousEventId = suspiciousEventId;
+		if(suspiciousEventId != null){
+			putQueryParameter("SuspiciousEventId", suspiciousEventId.toString());
 		}
 	}
 

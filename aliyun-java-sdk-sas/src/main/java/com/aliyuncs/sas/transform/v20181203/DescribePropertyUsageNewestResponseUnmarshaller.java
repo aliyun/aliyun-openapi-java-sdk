@@ -27,8 +27,8 @@ public class DescribePropertyUsageNewestResponseUnmarshaller {
 	public static DescribePropertyUsageNewestResponse unmarshall(DescribePropertyUsageNewestResponse describePropertyUsageNewestResponse, UnmarshallerContext _ctx) {
 		
 		describePropertyUsageNewestResponse.setRequestId(_ctx.stringValue("DescribePropertyUsageNewestResponse.RequestId"));
-		describePropertyUsageNewestResponse.setItemCount(_ctx.integerValue("DescribePropertyUsageNewestResponse.ItemCount"));
 		describePropertyUsageNewestResponse.setType(_ctx.stringValue("DescribePropertyUsageNewestResponse.Type"));
+		describePropertyUsageNewestResponse.setItemCount(_ctx.integerValue("DescribePropertyUsageNewestResponse.ItemCount"));
 
 		List<NewestStatisticItem> newestStatisticItems = new ArrayList<NewestStatisticItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePropertyUsageNewestResponse.NewestStatisticItems.Length"); i++) {

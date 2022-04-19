@@ -57,24 +57,24 @@ public class DescribeSimilarSecurityEventsResponse extends AcsResponse {
 
 	public static class SimpleSecurityEvent {
 
-		private Long securityEventId;
+		private Long lastTime;
 
 		private String uuid;
 
+		private String eventName;
+
 		private String eventType;
 
-		private String eventName;
+		private Long securityEventId;
 
 		private Long occurrenceTime;
 
-		private Long lastTime;
-
-		public Long getSecurityEventId() {
-			return this.securityEventId;
+		public Long getLastTime() {
+			return this.lastTime;
 		}
 
-		public void setSecurityEventId(Long securityEventId) {
-			this.securityEventId = securityEventId;
+		public void setLastTime(Long lastTime) {
+			this.lastTime = lastTime;
 		}
 
 		public String getUuid() {
@@ -85,6 +85,14 @@ public class DescribeSimilarSecurityEventsResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
+		public String getEventName() {
+			return this.eventName;
+		}
+
+		public void setEventName(String eventName) {
+			this.eventName = eventName;
+		}
+
 		public String getEventType() {
 			return this.eventType;
 		}
@@ -93,12 +101,12 @@ public class DescribeSimilarSecurityEventsResponse extends AcsResponse {
 			this.eventType = eventType;
 		}
 
-		public String getEventName() {
-			return this.eventName;
+		public Long getSecurityEventId() {
+			return this.securityEventId;
 		}
 
-		public void setEventName(String eventName) {
-			this.eventName = eventName;
+		public void setSecurityEventId(Long securityEventId) {
+			this.securityEventId = securityEventId;
 		}
 
 		public Long getOccurrenceTime() {
@@ -108,32 +116,24 @@ public class DescribeSimilarSecurityEventsResponse extends AcsResponse {
 		public void setOccurrenceTime(Long occurrenceTime) {
 			this.occurrenceTime = occurrenceTime;
 		}
-
-		public Long getLastTime() {
-			return this.lastTime;
-		}
-
-		public void setLastTime(Long lastTime) {
-			this.lastTime = lastTime;
-		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -152,12 +152,12 @@ public class DescribeSimilarSecurityEventsResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

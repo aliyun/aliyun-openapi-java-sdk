@@ -25,15 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulResponse> {
 	   
 
-	private String targetType;
-
-	private Integer minScore;
+	private String attachTypes;
 
 	private String type;
-
-	private String containerFieldName;
-
-	private String containerFieldValue;
 
 	private Integer pageSize;
 
@@ -45,15 +39,15 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 
 	private Integer currentPage;
 
-	private String clusterId;
-
 	private String aliasName;
+
+	private String searchTags;
 
 	private String necessity;
 
 	private String uuids;
 	public DescribeGroupedVulRequest() {
-		super("Sas", "2018-12-03", "DescribeGroupedVul", "sas");
+		super("Sas", "2018-12-03", "DescribeGroupedVul");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,25 +55,14 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		} catch (Exception e) {}
 	}
 
-	public String getTargetType() {
-		return this.targetType;
+	public String getAttachTypes() {
+		return this.attachTypes;
 	}
 
-	public void setTargetType(String targetType) {
-		this.targetType = targetType;
-		if(targetType != null){
-			putQueryParameter("TargetType", targetType);
-		}
-	}
-
-	public Integer getMinScore() {
-		return this.minScore;
-	}
-
-	public void setMinScore(Integer minScore) {
-		this.minScore = minScore;
-		if(minScore != null){
-			putQueryParameter("MinScore", minScore.toString());
+	public void setAttachTypes(String attachTypes) {
+		this.attachTypes = attachTypes;
+		if(attachTypes != null){
+			putQueryParameter("AttachTypes", attachTypes);
 		}
 	}
 
@@ -91,28 +74,6 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getContainerFieldName() {
-		return this.containerFieldName;
-	}
-
-	public void setContainerFieldName(String containerFieldName) {
-		this.containerFieldName = containerFieldName;
-		if(containerFieldName != null){
-			putQueryParameter("ContainerFieldName", containerFieldName);
-		}
-	}
-
-	public String getContainerFieldValue() {
-		return this.containerFieldValue;
-	}
-
-	public void setContainerFieldValue(String containerFieldValue) {
-		this.containerFieldValue = containerFieldValue;
-		if(containerFieldValue != null){
-			putQueryParameter("ContainerFieldValue", containerFieldValue);
 		}
 	}
 
@@ -171,17 +132,6 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getAliasName() {
 		return this.aliasName;
 	}
@@ -190,6 +140,17 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		this.aliasName = aliasName;
 		if(aliasName != null){
 			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public String getSearchTags() {
+		return this.searchTags;
+	}
+
+	public void setSearchTags(String searchTags) {
+		this.searchTags = searchTags;
+		if(searchTags != null){
+			putQueryParameter("SearchTags", searchTags);
 		}
 	}
 

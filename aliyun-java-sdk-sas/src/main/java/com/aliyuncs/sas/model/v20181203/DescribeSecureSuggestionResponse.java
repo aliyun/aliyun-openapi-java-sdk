@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecureSuggestionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<Suggestion> suggestions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeSecureSuggestionResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Suggestion> getSuggestions() {
@@ -57,19 +57,11 @@ public class DescribeSecureSuggestionResponse extends AcsResponse {
 
 	public static class Suggestion {
 
-		private String suggestType;
-
 		private Integer points;
 
+		private String suggestType;
+
 		private List<DetailItem> detail;
-
-		public String getSuggestType() {
-			return this.suggestType;
-		}
-
-		public void setSuggestType(String suggestType) {
-			this.suggestType = suggestType;
-		}
 
 		public Integer getPoints() {
 			return this.points;
@@ -77,6 +69,14 @@ public class DescribeSecureSuggestionResponse extends AcsResponse {
 
 		public void setPoints(Integer points) {
 			this.points = points;
+		}
+
+		public String getSuggestType() {
+			return this.suggestType;
+		}
+
+		public void setSuggestType(String suggestType) {
+			this.suggestType = suggestType;
 		}
 
 		public List<DetailItem> getDetail() {
@@ -89,11 +89,19 @@ public class DescribeSecureSuggestionResponse extends AcsResponse {
 
 		public static class DetailItem {
 
+			private String title;
+
 			private String description;
 
 			private String subType;
 
-			private String title;
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
 
 			public String getDescription() {
 				return this.description;
@@ -109,14 +117,6 @@ public class DescribeSecureSuggestionResponse extends AcsResponse {
 
 			public void setSubType(String subType) {
 				this.subType = subType;
-			}
-
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
 			}
 		}
 	}

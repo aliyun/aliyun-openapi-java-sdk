@@ -33,7 +33,7 @@ public class DescribePropertyPortItemRequest extends RpcAcsRequest<DescribePrope
 
 	private Boolean forceFlush;
 	public DescribePropertyPortItemRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyPortItem", "sas");
+		super("Sas", "2018-12-03", "DescribePropertyPortItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

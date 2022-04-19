@@ -25,38 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStrategyExecDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String startTime;
+	private Integer inProcessCount;
 
 	private String endTime;
 
-	private String source;
+	private String startTime;
 
 	private String percent;
 
-	private Integer successCount;
+	private String requestId;
 
 	private Integer failCount;
 
-	private Integer inProcessCount;
+	private String source;
+
+	private Integer successCount;
 
 	private List<FailedEcs> failedEcsList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getInProcessCount() {
+		return this.inProcessCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
+	public void setInProcessCount(Integer inProcessCount) {
+		this.inProcessCount = inProcessCount;
 	}
 
 	public String getEndTime() {
@@ -67,12 +59,12 @@ public class DescribeStrategyExecDetailResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getSource() {
-		return this.source;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setSource(String source) {
-		this.source = source;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public String getPercent() {
@@ -83,12 +75,12 @@ public class DescribeStrategyExecDetailResponse extends AcsResponse {
 		this.percent = percent;
 	}
 
-	public Integer getSuccessCount() {
-		return this.successCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuccessCount(Integer successCount) {
-		this.successCount = successCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getFailCount() {
@@ -99,12 +91,20 @@ public class DescribeStrategyExecDetailResponse extends AcsResponse {
 		this.failCount = failCount;
 	}
 
-	public Integer getInProcessCount() {
-		return this.inProcessCount;
+	public String getSource() {
+		return this.source;
 	}
 
-	public void setInProcessCount(Integer inProcessCount) {
-		this.inProcessCount = inProcessCount;
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public Integer getSuccessCount() {
+		return this.successCount;
+	}
+
+	public void setSuccessCount(Integer successCount) {
+		this.successCount = successCount;
 	}
 
 	public List<FailedEcs> getFailedEcsList() {
@@ -117,13 +117,39 @@ public class DescribeStrategyExecDetailResponse extends AcsResponse {
 
 	public static class FailedEcs {
 
+		private String iP;
+
+		private String internetIp;
+
+		private String intranetIp;
+
 		private String reason;
 
 		private String instanceName;
 
-		private String iP;
+		public String getIP() {
+			return this.iP;
+		}
 
-		private String intranetIp;
+		public void setIP(String iP) {
+			this.iP = iP;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
 
 		public String getReason() {
 			return this.reason;
@@ -139,22 +165,6 @@ public class DescribeStrategyExecDetailResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
-		}
-
-		public String getIP() {
-			return this.iP;
-		}
-
-		public void setIP(String iP) {
-			this.iP = iP;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
 		}
 	}
 

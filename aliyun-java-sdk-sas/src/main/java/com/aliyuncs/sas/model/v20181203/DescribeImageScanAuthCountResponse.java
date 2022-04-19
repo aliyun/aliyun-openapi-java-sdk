@@ -46,18 +46,18 @@ public class DescribeImageScanAuthCountResponse extends AcsResponse {
 
 	public static class ImageScan {
 
-		private String instanceId;
+		private Long scanCount;
 
 		private Long imageScanCapacity;
 
-		private Long scanCount;
+		private String instanceId;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Long getScanCount() {
+			return this.scanCount;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setScanCount(Long scanCount) {
+			this.scanCount = scanCount;
 		}
 
 		public Long getImageScanCapacity() {
@@ -68,12 +68,12 @@ public class DescribeImageScanAuthCountResponse extends AcsResponse {
 			this.imageScanCapacity = imageScanCapacity;
 		}
 
-		public Long getScanCount() {
-			return this.scanCount;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setScanCount(Long scanCount) {
-			this.scanCount = scanCount;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

@@ -26,33 +26,18 @@ import com.aliyuncs.sas.Endpoint;
 public class UninstallBackupClientRequest extends RpcAcsRequest<UninstallBackupClientResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String uuid;
-
-	private String sourceIp;
 
 	private List<String> uuidLists;
 
 	private String policyVersion;
 	public UninstallBackupClientRequest() {
-		super("Sas", "2018-12-03", "UninstallBackupClient", "sas");
+		super("Sas", "2018-12-03", "UninstallBackupClient");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getUuid() {
@@ -63,17 +48,6 @@ public class UninstallBackupClientRequest extends RpcAcsRequest<UninstallBackupC
 		this.uuid = uuid;
 		if(uuid != null){
 			putQueryParameter("Uuid", uuid);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

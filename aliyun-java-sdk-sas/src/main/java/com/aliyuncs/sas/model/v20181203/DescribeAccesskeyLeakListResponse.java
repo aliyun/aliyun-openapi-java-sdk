@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccesskeyLeakListResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Long gmtLast;
@@ -33,11 +35,17 @@ public class DescribeAccesskeyLeakListResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<AccessKeyLeak> accessKeyLeakList;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,14 +79,6 @@ public class DescribeAccesskeyLeakListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -97,50 +97,42 @@ public class DescribeAccesskeyLeakListResponse extends AcsResponse {
 
 	public static class AccessKeyLeak {
 
-		private Long id;
+		private String dealTime;
 
-		private Long gmtModified;
-
-		private String asset;
+		private String status;
 
 		private String type;
 
-		private String accesskeyId;
+		private String userType;
 
-		private String status;
+		private String accesskeyId;
 
 		private String aliUserName;
 
 		private String dealType;
 
-		private String dealTime;
-
-		private String userType;
-
 		private String url;
 
-		public Long getId() {
-			return this.id;
+		private Long gmtModified;
+
+		private String asset;
+
+		private Long id;
+
+		public String getDealTime() {
+			return this.dealTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setDealTime(String dealTime) {
+			this.dealTime = dealTime;
 		}
 
-		public Long getGmtModified() {
-			return this.gmtModified;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getAsset() {
-			return this.asset;
-		}
-
-		public void setAsset(String asset) {
-			this.asset = asset;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -151,20 +143,20 @@ public class DescribeAccesskeyLeakListResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getUserType() {
+			return this.userType;
+		}
+
+		public void setUserType(String userType) {
+			this.userType = userType;
+		}
+
 		public String getAccesskeyId() {
 			return this.accesskeyId;
 		}
 
 		public void setAccesskeyId(String accesskeyId) {
 			this.accesskeyId = accesskeyId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 
 		public String getAliUserName() {
@@ -183,28 +175,36 @@ public class DescribeAccesskeyLeakListResponse extends AcsResponse {
 			this.dealType = dealType;
 		}
 
-		public String getDealTime() {
-			return this.dealTime;
-		}
-
-		public void setDealTime(String dealTime) {
-			this.dealTime = dealTime;
-		}
-
-		public String getUserType() {
-			return this.userType;
-		}
-
-		public void setUserType(String userType) {
-			this.userType = userType;
-		}
-
 		public String getUrl() {
 			return this.url;
 		}
 
 		public void setUrl(String url) {
 			this.url = url;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getAsset() {
+			return this.asset;
+		}
+
+		public void setAsset(String asset) {
+			this.asset = asset;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

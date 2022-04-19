@@ -60,14 +60,14 @@ public class DescribeExposedInstanceDetailResponseUnmarshaller {
 
 			List<ScaVulRecord> allVulList = new ArrayList<ScaVulRecord>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList.Length"); j++) {
-				ScaVulRecord scaVulRecord_ = new ScaVulRecord();
-				scaVulRecord_.setAliasName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].AliasName"));
-				scaVulRecord_.setNecessity(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Necessity"));
-				scaVulRecord_.setName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Name"));
-				scaVulRecord_.setType(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Type"));
-				scaVulRecord_.setUuid(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Uuid"));
+				ScaVulRecord scaVulRecord1 = new ScaVulRecord();
+				scaVulRecord1.setAliasName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].AliasName"));
+				scaVulRecord1.setNecessity(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Necessity"));
+				scaVulRecord1.setName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Name"));
+				scaVulRecord1.setType(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Type"));
+				scaVulRecord1.setUuid(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Uuid"));
 
-				allVulList.add(scaVulRecord_);
+				allVulList.add(scaVulRecord1);
 			}
 			exposedChain.setAllVulList(allVulList);
 

@@ -29,8 +29,6 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 
 	private Integer importance;
 
-	private Boolean noPage;
-
 	private Integer pageSize;
 
 	private String logicalExp;
@@ -38,8 +36,10 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 	private Integer currentPage;
 
 	private String machineTypes;
+
+	private Boolean noGroupTrace;
 	public DescribeCloudCenterInstancesRequest() {
-		super("Sas", "2018-12-03", "DescribeCloudCenterInstances", "sas");
+		super("Sas", "2018-12-03", "DescribeCloudCenterInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,17 +66,6 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 		this.importance = importance;
 		if(importance != null){
 			putQueryParameter("Importance", importance.toString());
-		}
-	}
-
-	public Boolean getNoPage() {
-		return this.noPage;
-	}
-
-	public void setNoPage(Boolean noPage) {
-		this.noPage = noPage;
-		if(noPage != null){
-			putQueryParameter("NoPage", noPage.toString());
 		}
 	}
 
@@ -121,6 +110,17 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 		this.machineTypes = machineTypes;
 		if(machineTypes != null){
 			putQueryParameter("MachineTypes", machineTypes);
+		}
+	}
+
+	public Boolean getNoGroupTrace() {
+		return this.noGroupTrace;
+	}
+
+	public void setNoGroupTrace(Boolean noGroupTrace) {
+		this.noGroupTrace = noGroupTrace;
+		if(noGroupTrace != null){
+			putQueryParameter("NoGroupTrace", noGroupTrace.toString());
 		}
 	}
 

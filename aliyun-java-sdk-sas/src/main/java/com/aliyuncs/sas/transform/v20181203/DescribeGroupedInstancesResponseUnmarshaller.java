@@ -30,22 +30,22 @@ public class DescribeGroupedInstancesResponseUnmarshaller {
 		describeGroupedInstancesResponse.setRequestId(_ctx.stringValue("DescribeGroupedInstancesResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeGroupedInstancesResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeGroupedInstancesResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeGroupedInstancesResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeGroupedInstancesResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeGroupedInstancesResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeGroupedInstancesResponse.PageInfo.Count"));
 		describeGroupedInstancesResponse.setPageInfo(pageInfo);
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGroupedInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
+			instance.setAsapVulInstanceCount(_ctx.longValue("DescribeGroupedInstancesResponse.Instances["+ i +"].AsapVulInstanceCount"));
 			instance.setUnProtectedInstanceCount(_ctx.stringValue("DescribeGroupedInstancesResponse.Instances["+ i +"].UnProtectedInstanceCount"));
 			instance.setFieldAliasName(_ctx.stringValue("DescribeGroupedInstancesResponse.Instances["+ i +"].FieldAliasName"));
-			instance.setGroupFlag(_ctx.integerValue("DescribeGroupedInstancesResponse.Instances["+ i +"].GroupFlag"));
+			instance.setInstanceCount(_ctx.stringValue("DescribeGroupedInstancesResponse.Instances["+ i +"].InstanceCount"));
 			instance.setFieldId(_ctx.longValue("DescribeGroupedInstancesResponse.Instances["+ i +"].FieldId"));
 			instance.setRiskInstanceCount(_ctx.stringValue("DescribeGroupedInstancesResponse.Instances["+ i +"].RiskInstanceCount"));
-			instance.setInstanceCount(_ctx.stringValue("DescribeGroupedInstancesResponse.Instances["+ i +"].InstanceCount"));
-			instance.setAsapVulInstanceCount(_ctx.longValue("DescribeGroupedInstancesResponse.Instances["+ i +"].AsapVulInstanceCount"));
+			instance.setGroupFlag(_ctx.integerValue("DescribeGroupedInstancesResponse.Instances["+ i +"].GroupFlag"));
 
 			List<String> groupPath = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGroupedInstancesResponse.Instances["+ i +"].GroupPath.Length"); j++) {

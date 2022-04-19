@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
+
+	private String requestId;
 
 	private List<Instance> instances;
 
 	private PageInfo pageInfo;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -47,6 +39,14 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Instance> getInstances() {
@@ -67,175 +67,99 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String internetIp;
-
-		private String os;
-
-		private String instanceId;
-
-		private String instanceName;
-
-		private String regionName;
-
-		private String ip;
-
-		private String clientStatus;
-
-		private String region;
-
-		private String uuid;
-
-		private String intranetIp;
-
-		private String assetType;
-
 		private String status;
 
-		private String tag;
+		private String cpuInfo;
 
-		private String vpcInstanceId;
+		private String internetIp;
+
+		private String kernel;
+
+		private Boolean bind;
 
 		private String osName;
 
+		private String tag;
+
+		private String clientStatus;
+
+		private Integer mem;
+
+		private String vpcInstanceId;
+
+		private String tagId;
+
 		private Integer flag;
 
+		private Long lastLoginTimestamp;
+
+		private Integer authVersion;
+
+		private String region;
+
+		private String instanceName;
+
+		private Integer podCount;
+
+		private Integer vulCount;
+
 		private String hcStatus;
+
+		private Long createdTime;
+
+		private String groupTrace;
+
+		private String clusterId;
+
+		private String riskStatus;
+
+		private Integer cores;
 
 		private String vulStatus;
 
 		private String alarmStatus;
 
-		private String riskStatus;
-
-		private Integer healthCheckCount;
-
-		private Integer vulCount;
-
-		private Integer safeEventCount;
-
-		private String regionId;
-
-		private String groupId;
+		private String macListString;
 
 		private Integer importance;
 
-		private String clientVersion;
+		private Integer healthCheckCount;
 
-		private String riskCount;
+		private String ip;
 
-		private String clusterId;
-
-		private String clusterName;
-
-		private Long createdTime;
-
-		private Integer podCount;
-
-		private Integer exposedStatus;
-
-		private Integer autoSnapshotsLevel;
-
-		private Integer exposedCount;
-
-		private Integer vendor;
-
-		private String vendorName;
-
-		private Integer cores;
-
-		private Integer authVersion;
-
-		private Boolean bind;
+		private String os;
 
 		private Long authModifyTime;
 
-		public String getInternetIp() {
-			return this.internetIp;
-		}
+		private Integer safeEventCount;
 
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
+		private String instanceId;
 
-		public String getOs() {
-			return this.os;
-		}
+		private String assetType;
 
-		public void setOs(String os) {
-			this.os = os;
-		}
+		private String intranetIp;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private Integer vendor;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String regionId;
 
-		public String getInstanceName() {
-			return this.instanceName;
-		}
+		private String uuid;
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
+		private Long groupId;
 
-		public String getRegionName() {
-			return this.regionName;
-		}
+		private String regionName;
 
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
-		}
+		private String vendorName;
 
-		public String getIp() {
-			return this.ip;
-		}
+		private String authVersionName;
 
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
+		private String clusterName;
 
-		public String getClientStatus() {
-			return this.clientStatus;
-		}
+		private Integer exposedStatus;
 
-		public void setClientStatus(String clientStatus) {
-			this.clientStatus = clientStatus;
-		}
+		private String riskCount;
 
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getAssetType() {
-			return this.assetType;
-		}
-
-		public void setAssetType(String assetType) {
-			this.assetType = assetType;
-		}
+		private String ipListString;
 
 		public String getStatus() {
 			return this.status;
@@ -245,20 +169,36 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTag() {
-			return this.tag;
+		public String getCpuInfo() {
+			return this.cpuInfo;
 		}
 
-		public void setTag(String tag) {
-			this.tag = tag;
+		public void setCpuInfo(String cpuInfo) {
+			this.cpuInfo = cpuInfo;
 		}
 
-		public String getVpcInstanceId() {
-			return this.vpcInstanceId;
+		public String getInternetIp() {
+			return this.internetIp;
 		}
 
-		public void setVpcInstanceId(String vpcInstanceId) {
-			this.vpcInstanceId = vpcInstanceId;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getKernel() {
+			return this.kernel;
+		}
+
+		public void setKernel(String kernel) {
+			this.kernel = kernel;
+		}
+
+		public Boolean getBind() {
+			return this.bind;
+		}
+
+		public void setBind(Boolean bind) {
+			this.bind = bind;
 		}
 
 		public String getOsName() {
@@ -269,6 +209,46 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 			this.osName = osName;
 		}
 
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
+		}
+
+		public String getClientStatus() {
+			return this.clientStatus;
+		}
+
+		public void setClientStatus(String clientStatus) {
+			this.clientStatus = clientStatus;
+		}
+
+		public Integer getMem() {
+			return this.mem;
+		}
+
+		public void setMem(Integer mem) {
+			this.mem = mem;
+		}
+
+		public String getVpcInstanceId() {
+			return this.vpcInstanceId;
+		}
+
+		public void setVpcInstanceId(String vpcInstanceId) {
+			this.vpcInstanceId = vpcInstanceId;
+		}
+
+		public String getTagId() {
+			return this.tagId;
+		}
+
+		public void setTagId(String tagId) {
+			this.tagId = tagId;
+		}
+
 		public Integer getFlag() {
 			return this.flag;
 		}
@@ -277,12 +257,100 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 			this.flag = flag;
 		}
 
+		public Long getLastLoginTimestamp() {
+			return this.lastLoginTimestamp;
+		}
+
+		public void setLastLoginTimestamp(Long lastLoginTimestamp) {
+			this.lastLoginTimestamp = lastLoginTimestamp;
+		}
+
+		public Integer getAuthVersion() {
+			return this.authVersion;
+		}
+
+		public void setAuthVersion(Integer authVersion) {
+			this.authVersion = authVersion;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public Integer getPodCount() {
+			return this.podCount;
+		}
+
+		public void setPodCount(Integer podCount) {
+			this.podCount = podCount;
+		}
+
+		public Integer getVulCount() {
+			return this.vulCount;
+		}
+
+		public void setVulCount(Integer vulCount) {
+			this.vulCount = vulCount;
+		}
+
 		public String getHcStatus() {
 			return this.hcStatus;
 		}
 
 		public void setHcStatus(String hcStatus) {
 			this.hcStatus = hcStatus;
+		}
+
+		public Long getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getGroupTrace() {
+			return this.groupTrace;
+		}
+
+		public void setGroupTrace(String groupTrace) {
+			this.groupTrace = groupTrace;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getRiskStatus() {
+			return this.riskStatus;
+		}
+
+		public void setRiskStatus(String riskStatus) {
+			this.riskStatus = riskStatus;
+		}
+
+		public Integer getCores() {
+			return this.cores;
+		}
+
+		public void setCores(Integer cores) {
+			this.cores = cores;
 		}
 
 		public String getVulStatus() {
@@ -301,52 +369,12 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 			this.alarmStatus = alarmStatus;
 		}
 
-		public String getRiskStatus() {
-			return this.riskStatus;
+		public String getMacListString() {
+			return this.macListString;
 		}
 
-		public void setRiskStatus(String riskStatus) {
-			this.riskStatus = riskStatus;
-		}
-
-		public Integer getHealthCheckCount() {
-			return this.healthCheckCount;
-		}
-
-		public void setHealthCheckCount(Integer healthCheckCount) {
-			this.healthCheckCount = healthCheckCount;
-		}
-
-		public Integer getVulCount() {
-			return this.vulCount;
-		}
-
-		public void setVulCount(Integer vulCount) {
-			this.vulCount = vulCount;
-		}
-
-		public Integer getSafeEventCount() {
-			return this.safeEventCount;
-		}
-
-		public void setSafeEventCount(Integer safeEventCount) {
-			this.safeEventCount = safeEventCount;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setMacListString(String macListString) {
+			this.macListString = macListString;
 		}
 
 		public Integer getImportance() {
@@ -357,76 +385,68 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 			this.importance = importance;
 		}
 
-		public String getClientVersion() {
-			return this.clientVersion;
+		public Integer getHealthCheckCount() {
+			return this.healthCheckCount;
 		}
 
-		public void setClientVersion(String clientVersion) {
-			this.clientVersion = clientVersion;
+		public void setHealthCheckCount(Integer healthCheckCount) {
+			this.healthCheckCount = healthCheckCount;
 		}
 
-		public String getRiskCount() {
-			return this.riskCount;
+		public String getIp() {
+			return this.ip;
 		}
 
-		public void setRiskCount(String riskCount) {
-			this.riskCount = riskCount;
+		public void setIp(String ip) {
+			this.ip = ip;
 		}
 
-		public String getClusterId() {
-			return this.clusterId;
+		public String getOs() {
+			return this.os;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setOs(String os) {
+			this.os = os;
 		}
 
-		public String getClusterName() {
-			return this.clusterName;
+		public Long getAuthModifyTime() {
+			return this.authModifyTime;
 		}
 
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
+		public void setAuthModifyTime(Long authModifyTime) {
+			this.authModifyTime = authModifyTime;
 		}
 
-		public Long getCreatedTime() {
-			return this.createdTime;
+		public Integer getSafeEventCount() {
+			return this.safeEventCount;
 		}
 
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
+		public void setSafeEventCount(Integer safeEventCount) {
+			this.safeEventCount = safeEventCount;
 		}
 
-		public Integer getPodCount() {
-			return this.podCount;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setPodCount(Integer podCount) {
-			this.podCount = podCount;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public Integer getExposedStatus() {
-			return this.exposedStatus;
+		public String getAssetType() {
+			return this.assetType;
 		}
 
-		public void setExposedStatus(Integer exposedStatus) {
-			this.exposedStatus = exposedStatus;
+		public void setAssetType(String assetType) {
+			this.assetType = assetType;
 		}
 
-		public Integer getAutoSnapshotsLevel() {
-			return this.autoSnapshotsLevel;
+		public String getIntranetIp() {
+			return this.intranetIp;
 		}
 
-		public void setAutoSnapshotsLevel(Integer autoSnapshotsLevel) {
-			this.autoSnapshotsLevel = autoSnapshotsLevel;
-		}
-
-		public Integer getExposedCount() {
-			return this.exposedCount;
-		}
-
-		public void setExposedCount(Integer exposedCount) {
-			this.exposedCount = exposedCount;
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
 		}
 
 		public Integer getVendor() {
@@ -437,6 +457,38 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 			this.vendor = vendor;
 		}
 
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
 		public String getVendorName() {
 			return this.vendorName;
 		}
@@ -445,55 +497,63 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 			this.vendorName = vendorName;
 		}
 
-		public Integer getCores() {
-			return this.cores;
+		public String getAuthVersionName() {
+			return this.authVersionName;
 		}
 
-		public void setCores(Integer cores) {
-			this.cores = cores;
+		public void setAuthVersionName(String authVersionName) {
+			this.authVersionName = authVersionName;
 		}
 
-		public Integer getAuthVersion() {
-			return this.authVersion;
+		public String getClusterName() {
+			return this.clusterName;
 		}
 
-		public void setAuthVersion(Integer authVersion) {
-			this.authVersion = authVersion;
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
 		}
 
-		public Boolean getBind() {
-			return this.bind;
+		public Integer getExposedStatus() {
+			return this.exposedStatus;
 		}
 
-		public void setBind(Boolean bind) {
-			this.bind = bind;
+		public void setExposedStatus(Integer exposedStatus) {
+			this.exposedStatus = exposedStatus;
 		}
 
-		public Long getAuthModifyTime() {
-			return this.authModifyTime;
+		public String getRiskCount() {
+			return this.riskCount;
 		}
 
-		public void setAuthModifyTime(Long authModifyTime) {
-			this.authModifyTime = authModifyTime;
+		public void setRiskCount(String riskCount) {
+			this.riskCount = riskCount;
+		}
+
+		public String getIpListString() {
+			return this.ipListString;
+		}
+
+		public void setIpListString(String ipListString) {
+			this.ipListString = ipListString;
 		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -512,12 +572,12 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

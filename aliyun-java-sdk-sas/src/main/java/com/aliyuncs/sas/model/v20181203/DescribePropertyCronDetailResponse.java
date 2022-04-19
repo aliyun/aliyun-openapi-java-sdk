@@ -57,38 +57,36 @@ public class DescribePropertyCronDetailResponse extends AcsResponse {
 
 	public static class PropertyCron {
 
-		private String instanceName;
+		private String internetIp;
 
 		private String ip;
 
-		private String create;
-
-		private Long createTimestamp;
-
-		private String uuid;
+		private String user;
 
 		private String instanceId;
 
-		private String intranetIp;
-
-		private String internetIp;
-
-		private String period;
-
 		private String source;
+
+		private String intranetIp;
 
 		private String cmd;
 
-		private String user;
+		private String period;
+
+		private String uuid;
+
+		private String instanceName;
 
 		private String md5;
 
-		public String getInstanceName() {
-			return this.instanceName;
+		private Long createTimestamp;
+
+		public String getInternetIp() {
+			return this.internetIp;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
 		public String getIp() {
@@ -99,28 +97,12 @@ public class DescribePropertyCronDetailResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
-		public String getCreate() {
-			return this.create;
+		public String getUser() {
+			return this.user;
 		}
 
-		public void setCreate(String create) {
-			this.create = create;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
+		public void setUser(String user) {
+			this.user = user;
 		}
 
 		public String getInstanceId() {
@@ -131,36 +113,20 @@ public class DescribePropertyCronDetailResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public String getPeriod() {
-			return this.period;
-		}
-
-		public void setPeriod(String period) {
-			this.period = period;
-		}
-
 		public String getSource() {
 			return this.source;
 		}
 
 		public void setSource(String source) {
 			this.source = source;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
 		}
 
 		public String getCmd() {
@@ -171,12 +137,28 @@ public class DescribePropertyCronDetailResponse extends AcsResponse {
 			this.cmd = cmd;
 		}
 
-		public String getUser() {
-			return this.user;
+		public String getPeriod() {
+			return this.period;
 		}
 
-		public void setUser(String user) {
-			this.user = user;
+		public void setPeriod(String period) {
+			this.period = period;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getMd5() {
@@ -186,24 +168,32 @@ public class DescribePropertyCronDetailResponse extends AcsResponse {
 		public void setMd5(String md5) {
 			this.md5 = md5;
 		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
+		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -222,12 +212,12 @@ public class DescribePropertyCronDetailResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

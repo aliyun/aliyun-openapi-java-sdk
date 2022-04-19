@@ -37,7 +37,7 @@ public class DescribeRiskCheckItemResultRequest extends RpcAcsRequest<DescribeRi
 
 	private Integer currentPage;
 	public DescribeRiskCheckItemResultRequest() {
-		super("Sas", "2018-12-03", "DescribeRiskCheckItemResult", "sas");
+		super("Sas", "2018-12-03", "DescribeRiskCheckItemResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,13 +29,23 @@ public class DescribePropertyScaDetailRequest extends RpcAcsRequest<DescribeProp
 
 	private String remark;
 
+	private String pid;
+
 	private String searchItem;
 
 	private String uuid;
 
+	private String biz;
+
 	private Integer pageSize;
 
+	private Long processStartedStart;
+
+	private Long processStartedEnd;
+
 	private String lang;
+
+	private String scaVersion;
 
 	private String searchInfoSub;
 
@@ -45,11 +55,17 @@ public class DescribePropertyScaDetailRequest extends RpcAcsRequest<DescribeProp
 
 	private String bizType;
 
+	private String port;
+
 	private Long name;
 
 	private String scaName;
+
+	private String scaNamePattern;
+
+	private String user;
 	public DescribePropertyScaDetailRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyScaDetail", "sas");
+		super("Sas", "2018-12-03", "DescribePropertyScaDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,6 +95,17 @@ public class DescribePropertyScaDetailRequest extends RpcAcsRequest<DescribeProp
 		}
 	}
 
+	public String getPid() {
+		return this.pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+		if(pid != null){
+			putQueryParameter("Pid", pid);
+		}
+	}
+
 	public String getSearchItem() {
 		return this.searchItem;
 	}
@@ -101,6 +128,17 @@ public class DescribePropertyScaDetailRequest extends RpcAcsRequest<DescribeProp
 		}
 	}
 
+	public String getBiz() {
+		return this.biz;
+	}
+
+	public void setBiz(String biz) {
+		this.biz = biz;
+		if(biz != null){
+			putQueryParameter("Biz", biz);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -112,6 +150,28 @@ public class DescribePropertyScaDetailRequest extends RpcAcsRequest<DescribeProp
 		}
 	}
 
+	public Long getProcessStartedStart() {
+		return this.processStartedStart;
+	}
+
+	public void setProcessStartedStart(Long processStartedStart) {
+		this.processStartedStart = processStartedStart;
+		if(processStartedStart != null){
+			putQueryParameter("ProcessStartedStart", processStartedStart.toString());
+		}
+	}
+
+	public Long getProcessStartedEnd() {
+		return this.processStartedEnd;
+	}
+
+	public void setProcessStartedEnd(Long processStartedEnd) {
+		this.processStartedEnd = processStartedEnd;
+		if(processStartedEnd != null){
+			putQueryParameter("ProcessStartedEnd", processStartedEnd.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -120,6 +180,17 @@ public class DescribePropertyScaDetailRequest extends RpcAcsRequest<DescribeProp
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getScaVersion() {
+		return this.scaVersion;
+	}
+
+	public void setScaVersion(String scaVersion) {
+		this.scaVersion = scaVersion;
+		if(scaVersion != null){
+			putQueryParameter("ScaVersion", scaVersion);
 		}
 	}
 
@@ -167,6 +238,17 @@ public class DescribePropertyScaDetailRequest extends RpcAcsRequest<DescribeProp
 		}
 	}
 
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
 	public Long getName() {
 		return this.name;
 	}
@@ -186,6 +268,28 @@ public class DescribePropertyScaDetailRequest extends RpcAcsRequest<DescribeProp
 		this.scaName = scaName;
 		if(scaName != null){
 			putQueryParameter("ScaName", scaName);
+		}
+	}
+
+	public String getScaNamePattern() {
+		return this.scaNamePattern;
+	}
+
+	public void setScaNamePattern(String scaNamePattern) {
+		this.scaNamePattern = scaNamePattern;
+		if(scaNamePattern != null){
+			putQueryParameter("ScaNamePattern", scaNamePattern);
+		}
+	}
+
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+		if(user != null){
+			putQueryParameter("User", user);
 		}
 	}
 

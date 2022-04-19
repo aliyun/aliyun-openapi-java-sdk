@@ -25,11 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeCriteriaRequest extends RpcAcsRequest<DescribeCriteriaResponse> {
 	   
 
-	private String machineTypes;
+	private Boolean supportAutoTag;
 
 	private String value;
+
+	private String machineTypes;
 	public DescribeCriteriaRequest() {
-		super("Sas", "2018-12-03", "DescribeCriteria", "sas");
+		super("Sas", "2018-12-03", "DescribeCriteria");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +39,14 @@ public class DescribeCriteriaRequest extends RpcAcsRequest<DescribeCriteriaRespo
 		} catch (Exception e) {}
 	}
 
-	public String getMachineTypes() {
-		return this.machineTypes;
+	public Boolean getSupportAutoTag() {
+		return this.supportAutoTag;
 	}
 
-	public void setMachineTypes(String machineTypes) {
-		this.machineTypes = machineTypes;
-		if(machineTypes != null){
-			putQueryParameter("MachineTypes", machineTypes);
+	public void setSupportAutoTag(Boolean supportAutoTag) {
+		this.supportAutoTag = supportAutoTag;
+		if(supportAutoTag != null){
+			putQueryParameter("SupportAutoTag", supportAutoTag.toString());
 		}
 	}
 
@@ -56,6 +58,17 @@ public class DescribeCriteriaRequest extends RpcAcsRequest<DescribeCriteriaRespo
 		this.value = value;
 		if(value != null){
 			putQueryParameter("Value", value);
+		}
+	}
+
+	public String getMachineTypes() {
+		return this.machineTypes;
+	}
+
+	public void setMachineTypes(String machineTypes) {
+		this.machineTypes = machineTypes;
+		if(machineTypes != null){
+			putQueryParameter("MachineTypes", machineTypes);
 		}
 	}
 

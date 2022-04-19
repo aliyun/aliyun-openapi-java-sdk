@@ -27,7 +27,7 @@ public class ModifyOpenLogShipperRequest extends RpcAcsRequest<ModifyOpenLogShip
 
 	private String from;
 	public ModifyOpenLogShipperRequest() {
-		super("Sas", "2018-12-03", "ModifyOpenLogShipper", "sas");
+		super("Sas", "2018-12-03", "ModifyOpenLogShipper");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

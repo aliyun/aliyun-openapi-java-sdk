@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGroupedTagsResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer count;
 
-	private Integer httpStatusCode;
-
 	private List<GroupedFiled> groupedFileds;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeGroupedTagsResponse extends AcsResponse {
 		this.count = count;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public List<GroupedFiled> getGroupedFileds() {
 		return this.groupedFileds;
 	}
@@ -79,9 +79,9 @@ public class DescribeGroupedTagsResponse extends AcsResponse {
 
 		private String name;
 
-		private Integer tagId;
-
 		private String count;
+
+		private Integer tagId;
 
 		public String getName() {
 			return this.name;
@@ -91,20 +91,20 @@ public class DescribeGroupedTagsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public Integer getTagId() {
-			return this.tagId;
-		}
-
-		public void setTagId(Integer tagId) {
-			this.tagId = tagId;
-		}
-
 		public String getCount() {
 			return this.count;
 		}
 
 		public void setCount(String count) {
 			this.count = count;
+		}
+
+		public Integer getTagId() {
+			return this.tagId;
+		}
+
+		public void setTagId(Integer tagId) {
+			this.tagId = tagId;
 		}
 	}
 

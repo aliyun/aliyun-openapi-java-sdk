@@ -30,31 +30,33 @@ public class DescribeAffectedMaliciousFileImagesResponseUnmarshaller {
 		describeAffectedMaliciousFileImagesResponse.setRequestId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeAffectedMaliciousFileImagesResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeAffectedMaliciousFileImagesResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeAffectedMaliciousFileImagesResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeAffectedMaliciousFileImagesResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeAffectedMaliciousFileImagesResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeAffectedMaliciousFileImagesResponse.PageInfo.Count"));
 		describeAffectedMaliciousFileImagesResponse.setPageInfo(pageInfo);
 
 		List<AffectedMaliciousFileImage> affectedMaliciousFileImagesResponse = new ArrayList<AffectedMaliciousFileImage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse.Length"); i++) {
 			AffectedMaliciousFileImage affectedMaliciousFileImage = new AffectedMaliciousFileImage();
-			affectedMaliciousFileImage.setLayer(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Layer"));
-			affectedMaliciousFileImage.setFirstScanTimestamp(_ctx.longValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].FirstScanTimestamp"));
-			affectedMaliciousFileImage.setLatestScanTimestamp(_ctx.longValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].LatestScanTimestamp"));
-			affectedMaliciousFileImage.setLatestVerifyTimestamp(_ctx.longValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].LatestVerifyTimestamp"));
-			affectedMaliciousFileImage.setMaliciousMd5(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].MaliciousMd5"));
 			affectedMaliciousFileImage.setStatus(_ctx.integerValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Status"));
-			affectedMaliciousFileImage.setLevel(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Level"));
-			affectedMaliciousFileImage.setImageUuid(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].ImageUuid"));
-			affectedMaliciousFileImage.setFilePath(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].FilePath"));
 			affectedMaliciousFileImage.setDigest(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Digest"));
-			affectedMaliciousFileImage.setRepoRegionId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].RepoRegionId"));
+			affectedMaliciousFileImage.setLatestVerifyTimestamp(_ctx.longValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].LatestVerifyTimestamp"));
 			affectedMaliciousFileImage.setRepoInstanceId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].RepoInstanceId"));
-			affectedMaliciousFileImage.setRepoId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].RepoId"));
-			affectedMaliciousFileImage.setRepoName(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].RepoName"));
 			affectedMaliciousFileImage.setNamespace(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Namespace"));
 			affectedMaliciousFileImage.setTag(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Tag"));
+			affectedMaliciousFileImage.setRepoRegionId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].RepoRegionId"));
+			affectedMaliciousFileImage.setImageUuid(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].ImageUuid"));
+			affectedMaliciousFileImage.setFirstScanTimestamp(_ctx.longValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].FirstScanTimestamp"));
+			affectedMaliciousFileImage.setMaliciousMd5(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].MaliciousMd5"));
+			affectedMaliciousFileImage.setFilePath(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].FilePath"));
+			affectedMaliciousFileImage.setRepoId(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].RepoId"));
+			affectedMaliciousFileImage.setLayer(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Layer"));
+			affectedMaliciousFileImage.setLatestScanTimestamp(_ctx.longValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].LatestScanTimestamp"));
+			affectedMaliciousFileImage.setRepoName(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].RepoName"));
+			affectedMaliciousFileImage.setLevel(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].Level"));
+			affectedMaliciousFileImage.setDownloadUrl(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].DownloadUrl"));
+			affectedMaliciousFileImage.setHighLight(_ctx.stringValue("DescribeAffectedMaliciousFileImagesResponse.AffectedMaliciousFileImagesResponse["+ i +"].HighLight"));
 
 			affectedMaliciousFileImagesResponse.add(affectedMaliciousFileImage);
 		}

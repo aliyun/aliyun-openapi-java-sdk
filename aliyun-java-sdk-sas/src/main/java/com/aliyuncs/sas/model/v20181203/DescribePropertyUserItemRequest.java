@@ -33,7 +33,7 @@ public class DescribePropertyUserItemRequest extends RpcAcsRequest<DescribePrope
 
 	private Boolean forceFlush;
 	public DescribePropertyUserItemRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyUserItem", "sas");
+		super("Sas", "2018-12-03", "DescribePropertyUserItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

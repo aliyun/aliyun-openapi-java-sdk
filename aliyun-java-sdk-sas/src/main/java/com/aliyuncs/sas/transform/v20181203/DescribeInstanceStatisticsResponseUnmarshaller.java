@@ -31,18 +31,18 @@ public class DescribeInstanceStatisticsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceStatisticsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setUuid(_ctx.stringValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Uuid"));
 			dataItem.setAccount(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Account"));
-			dataItem.setHealth(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Health"));
-			dataItem.setTrojan(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Trojan"));
-			dataItem.setSuspicious(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Suspicious"));
-			dataItem.setVul(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Vul"));
-			dataItem.setCveNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].CveNum"));
-			dataItem.setEmgNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].EmgNum"));
-			dataItem.setSysNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].SysNum"));
-			dataItem.setCmsNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].CmsNum"));
 			dataItem.setAppNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].AppNum"));
 			dataItem.setScaNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].ScaNum"));
+			dataItem.setTrojan(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Trojan"));
+			dataItem.setCveNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].CveNum"));
+			dataItem.setEmgNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].EmgNum"));
+			dataItem.setSuspicious(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Suspicious"));
+			dataItem.setCmsNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].CmsNum"));
+			dataItem.setUuid(_ctx.stringValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Uuid"));
+			dataItem.setVul(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Vul"));
+			dataItem.setHealth(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Health"));
+			dataItem.setSysNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].SysNum"));
 
 			data.add(dataItem);
 		}

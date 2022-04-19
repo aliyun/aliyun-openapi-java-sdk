@@ -30,33 +30,33 @@ public class DescribeExposedInstanceListResponseUnmarshaller {
 		describeExposedInstanceListResponse.setRequestId(_ctx.stringValue("DescribeExposedInstanceListResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeExposedInstanceListResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeExposedInstanceListResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeExposedInstanceListResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeExposedInstanceListResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeExposedInstanceListResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeExposedInstanceListResponse.PageInfo.Count"));
 		describeExposedInstanceListResponse.setPageInfo(pageInfo);
 
 		List<ExposedInstance> exposedInstances = new ArrayList<ExposedInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeExposedInstanceListResponse.ExposedInstances.Length"); i++) {
 			ExposedInstance exposedInstance = new ExposedInstance();
-			exposedInstance.setUuid(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].Uuid"));
-			exposedInstance.setIntranetIp(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].IntranetIp"));
-			exposedInstance.setInternetIp(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].InternetIp"));
-			exposedInstance.setAsapVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].AsapVulCount"));
-			exposedInstance.setLaterVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].LaterVulCount"));
-			exposedInstance.setNntfVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].NntfVulCount"));
-			exposedInstance.setTotalVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].TotalVulCount"));
-			exposedInstance.setExploitHealthCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExploitHealthCount"));
-			exposedInstance.setExposureComponent(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureComponent"));
-			exposedInstance.setExposureType(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureType"));
-			exposedInstance.setExposureTypeId(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureTypeId"));
-			exposedInstance.setExposurePort(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposurePort"));
 			exposedInstance.setExposureIp(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureIp"));
+			exposedInstance.setTotalVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].TotalVulCount"));
+			exposedInstance.setInternetIp(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].InternetIp"));
+			exposedInstance.setNntfVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].NntfVulCount"));
 			exposedInstance.setInstanceId(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].InstanceId"));
-			exposedInstance.setInstanceName(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].InstanceName"));
+			exposedInstance.setExposureType(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureType"));
+			exposedInstance.setIntranetIp(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].IntranetIp"));
 			exposedInstance.setRegionId(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].RegionId"));
-			exposedInstance.setGroupId(_ctx.longValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].GroupId"));
+			exposedInstance.setExposureTypeId(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureTypeId"));
+			exposedInstance.setAsapVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].AsapVulCount"));
+			exposedInstance.setExposurePort(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposurePort"));
+			exposedInstance.setUuid(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].Uuid"));
 			exposedInstance.setGroupName(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].GroupName"));
+			exposedInstance.setGroupId(_ctx.longValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].GroupId"));
+			exposedInstance.setExploitHealthCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExploitHealthCount"));
+			exposedInstance.setInstanceName(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].InstanceName"));
+			exposedInstance.setExposureComponent(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureComponent"));
+			exposedInstance.setLaterVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].LaterVulCount"));
 
 			exposedInstances.add(exposedInstance);
 		}

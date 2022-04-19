@@ -31,12 +31,12 @@ public class DescribeAllEntityResponseUnmarshaller {
 		List<Entity> entityList = new ArrayList<Entity>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAllEntityResponse.EntityList.Length"); i++) {
 			Entity entity = new Entity();
+			entity.setUuid(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].Uuid"));
 			entity.setGroupId(_ctx.integerValue("DescribeAllEntityResponse.EntityList["+ i +"].GroupId"));
+			entity.setInternetIp(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].InternetIp"));
 			entity.setInstanceName(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].InstanceName"));
 			entity.setIp(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].Ip"));
-			entity.setUuid(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].Uuid"));
 			entity.setOs(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].Os"));
-			entity.setInternetIp(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].InternetIp"));
 			entity.setIntranetIp(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].IntranetIp"));
 
 			entityList.add(entity);

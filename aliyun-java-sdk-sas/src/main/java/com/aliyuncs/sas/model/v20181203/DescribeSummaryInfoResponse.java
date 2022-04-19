@@ -26,13 +26,13 @@ public class DescribeSummaryInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer aegisClientOfflineCount;
+	private Boolean success;
 
-	private Integer securityScore;
+	private Integer aegisClientOfflineCount;
 
 	private Integer aegisClientOnlineCount;
 
-	private Boolean success;
+	private Integer securityScore;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,6 +40,14 @@ public class DescribeSummaryInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Integer getAegisClientOfflineCount() {
@@ -50,14 +58,6 @@ public class DescribeSummaryInfoResponse extends AcsResponse {
 		this.aegisClientOfflineCount = aegisClientOfflineCount;
 	}
 
-	public Integer getSecurityScore() {
-		return this.securityScore;
-	}
-
-	public void setSecurityScore(Integer securityScore) {
-		this.securityScore = securityScore;
-	}
-
 	public Integer getAegisClientOnlineCount() {
 		return this.aegisClientOnlineCount;
 	}
@@ -66,12 +66,12 @@ public class DescribeSummaryInfoResponse extends AcsResponse {
 		this.aegisClientOnlineCount = aegisClientOnlineCount;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getSecurityScore() {
+		return this.securityScore;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setSecurityScore(Integer securityScore) {
+		this.securityScore = securityScore;
 	}
 
 	@Override

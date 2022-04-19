@@ -30,22 +30,22 @@ public class DescribeGroupedMaliciousFilesResponseUnmarshaller {
 		describeGroupedMaliciousFilesResponse.setRequestId(_ctx.stringValue("DescribeGroupedMaliciousFilesResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeGroupedMaliciousFilesResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeGroupedMaliciousFilesResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeGroupedMaliciousFilesResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeGroupedMaliciousFilesResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeGroupedMaliciousFilesResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeGroupedMaliciousFilesResponse.PageInfo.Count"));
 		describeGroupedMaliciousFilesResponse.setPageInfo(pageInfo);
 
 		List<GroupedMaliciousFile> groupedMaliciousFileResponse = new ArrayList<GroupedMaliciousFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse.Length"); i++) {
 			GroupedMaliciousFile groupedMaliciousFile = new GroupedMaliciousFile();
+			groupedMaliciousFile.setStatus(_ctx.integerValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].Status"));
+			groupedMaliciousFile.setImageCount(_ctx.longValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].ImageCount"));
+			groupedMaliciousFile.setLatestScanTimestamp(_ctx.longValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].LatestScanTimestamp"));
 			groupedMaliciousFile.setMaliciousName(_ctx.stringValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].MaliciousName"));
 			groupedMaliciousFile.setMaliciousMd5(_ctx.stringValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].MaliciousMd5"));
 			groupedMaliciousFile.setFirstScanTimestamp(_ctx.longValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].FirstScanTimestamp"));
-			groupedMaliciousFile.setLatestScanTimestamp(_ctx.longValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].LatestScanTimestamp"));
-			groupedMaliciousFile.setStatus(_ctx.integerValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].Status"));
 			groupedMaliciousFile.setLevel(_ctx.stringValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].Level"));
-			groupedMaliciousFile.setImageCount(_ctx.longValue("DescribeGroupedMaliciousFilesResponse.GroupedMaliciousFileResponse["+ i +"].ImageCount"));
 
 			groupedMaliciousFileResponse.add(groupedMaliciousFile);
 		}

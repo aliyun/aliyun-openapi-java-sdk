@@ -47,9 +47,9 @@ public class DescribeSecurityEventOperationsResponse extends AcsResponse {
 
 	public static class SecurityEventOperation {
 
-		private String operationCode;
-
 		private String operationParams;
+
+		private String operationCode;
 
 		private Boolean userCanOperate;
 
@@ -57,20 +57,20 @@ public class DescribeSecurityEventOperationsResponse extends AcsResponse {
 
 		private List<SecurityEventOperation1> markFieldsSource;
 
-		public String getOperationCode() {
-			return this.operationCode;
-		}
-
-		public void setOperationCode(String operationCode) {
-			this.operationCode = operationCode;
-		}
-
 		public String getOperationParams() {
 			return this.operationParams;
 		}
 
 		public void setOperationParams(String operationParams) {
 			this.operationParams = operationParams;
+		}
+
+		public String getOperationCode() {
+			return this.operationCode;
+		}
+
+		public void setOperationCode(String operationCode) {
+			this.operationCode = operationCode;
 		}
 
 		public Boolean getUserCanOperate() {
@@ -99,15 +99,25 @@ public class DescribeSecurityEventOperationsResponse extends AcsResponse {
 
 		public static class MarkFieldItem {
 
+			private String markMisType;
+
 			private String filedName;
 
 			private String filedAliasName;
 
-			private String markMisType;
-
 			private String markMisValue;
 
+			private String uuid;
+
 			private List<String> supportedMisType;
+
+			public String getMarkMisType() {
+				return this.markMisType;
+			}
+
+			public void setMarkMisType(String markMisType) {
+				this.markMisType = markMisType;
+			}
 
 			public String getFiledName() {
 				return this.filedName;
@@ -125,20 +135,20 @@ public class DescribeSecurityEventOperationsResponse extends AcsResponse {
 				this.filedAliasName = filedAliasName;
 			}
 
-			public String getMarkMisType() {
-				return this.markMisType;
-			}
-
-			public void setMarkMisType(String markMisType) {
-				this.markMisType = markMisType;
-			}
-
 			public String getMarkMisValue() {
 				return this.markMisValue;
 			}
 
 			public void setMarkMisValue(String markMisValue) {
 				this.markMisValue = markMisValue;
+			}
+
+			public String getUuid() {
+				return this.uuid;
+			}
+
+			public void setUuid(String uuid) {
+				this.uuid = uuid;
 			}
 
 			public List<String> getSupportedMisType() {

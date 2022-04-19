@@ -28,8 +28,6 @@ public class HandleSecurityEventsRequest extends RpcAcsRequest<HandleSecurityEve
 
 	private String markMissParam;
 
-	private Long resourceOwnerId;
-
 	private List<String> securityEventIdss;
 
 	private String sourceIp;
@@ -40,7 +38,7 @@ public class HandleSecurityEventsRequest extends RpcAcsRequest<HandleSecurityEve
 
 	private String markBatch;
 	public HandleSecurityEventsRequest() {
-		super("Sas", "2018-12-03", "HandleSecurityEvents", "sas");
+		super("Sas", "2018-12-03", "HandleSecurityEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +54,6 @@ public class HandleSecurityEventsRequest extends RpcAcsRequest<HandleSecurityEve
 		this.markMissParam = markMissParam;
 		if(markMissParam != null){
 			putQueryParameter("MarkMissParam", markMissParam);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

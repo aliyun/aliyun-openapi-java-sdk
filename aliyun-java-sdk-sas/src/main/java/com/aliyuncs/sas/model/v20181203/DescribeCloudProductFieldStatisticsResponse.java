@@ -46,18 +46,18 @@ public class DescribeCloudProductFieldStatisticsResponse extends AcsResponse {
 
 	public static class GroupedFields {
 
-		private Integer riskInstanceCount;
+		private String categoryCount;
 
 		private Integer instanceCount;
 
-		private String categoryCount;
+		private Integer riskInstanceCount;
 
-		public Integer getRiskInstanceCount() {
-			return this.riskInstanceCount;
+		public String getCategoryCount() {
+			return this.categoryCount;
 		}
 
-		public void setRiskInstanceCount(Integer riskInstanceCount) {
-			this.riskInstanceCount = riskInstanceCount;
+		public void setCategoryCount(String categoryCount) {
+			this.categoryCount = categoryCount;
 		}
 
 		public Integer getInstanceCount() {
@@ -68,12 +68,12 @@ public class DescribeCloudProductFieldStatisticsResponse extends AcsResponse {
 			this.instanceCount = instanceCount;
 		}
 
-		public String getCategoryCount() {
-			return this.categoryCount;
+		public Integer getRiskInstanceCount() {
+			return this.riskInstanceCount;
 		}
 
-		public void setCategoryCount(String categoryCount) {
-			this.categoryCount = categoryCount;
+		public void setRiskInstanceCount(Integer riskInstanceCount) {
+			this.riskInstanceCount = riskInstanceCount;
 		}
 	}
 

@@ -31,12 +31,12 @@ public class DescribeHoneyPotSuspStatisticsResponseUnmarshaller {
 		List<SuspHoneyPotStatisticsResponseItem> suspHoneyPotStatisticsResponse = new ArrayList<SuspHoneyPotStatisticsResponseItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse.Length"); i++) {
 			SuspHoneyPotStatisticsResponseItem suspHoneyPotStatisticsResponseItem = new SuspHoneyPotStatisticsResponseItem();
-			suspHoneyPotStatisticsResponseItem.setCount(_ctx.integerValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].Count"));
 			suspHoneyPotStatisticsResponseItem.setType(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].Type"));
-			suspHoneyPotStatisticsResponseItem.setInstanceId(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].InstanceId"));
-			suspHoneyPotStatisticsResponseItem.setInstanceName(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].InstanceName"));
 			suspHoneyPotStatisticsResponseItem.setVpcId(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].VpcId"));
 			suspHoneyPotStatisticsResponseItem.setVpcName(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].VpcName"));
+			suspHoneyPotStatisticsResponseItem.setInstanceName(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].InstanceName"));
+			suspHoneyPotStatisticsResponseItem.setInstanceId(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].InstanceId"));
+			suspHoneyPotStatisticsResponseItem.setCount(_ctx.integerValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].Count"));
 
 			suspHoneyPotStatisticsResponse.add(suspHoneyPotStatisticsResponseItem);
 		}

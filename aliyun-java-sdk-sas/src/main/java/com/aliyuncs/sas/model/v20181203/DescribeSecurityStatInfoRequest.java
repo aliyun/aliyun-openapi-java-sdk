@@ -31,7 +31,7 @@ public class DescribeSecurityStatInfoRequest extends RpcAcsRequest<DescribeSecur
 
 	private String resourceDirectoryAccountId;
 	public DescribeSecurityStatInfoRequest() {
-		super("Sas", "2018-12-03", "DescribeSecurityStatInfo", "sas");
+		super("Sas", "2018-12-03", "DescribeSecurityStatInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetSuspiciousStatisticsRequest extends RpcAcsRequest<GetSuspiciousS
 
 	private String sourceIp;
 	public GetSuspiciousStatisticsRequest() {
-		super("Sas", "2018-12-03", "GetSuspiciousStatistics", "sas");
+		super("Sas", "2018-12-03", "GetSuspiciousStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

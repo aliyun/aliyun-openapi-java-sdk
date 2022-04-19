@@ -41,6 +41,8 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 
 	private Integer currentPage;
 
+	private String clusterId;
+
 	private String repoName;
 
 	private String repoInstanceId;
@@ -49,7 +51,7 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 
 	private String repoRegionId;
 	public DescribeAffectedMaliciousFileImagesRequest() {
-		super("Sas", "2018-12-03", "DescribeAffectedMaliciousFileImages", "sas");
+		super("Sas", "2018-12-03", "DescribeAffectedMaliciousFileImages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -142,6 +144,17 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

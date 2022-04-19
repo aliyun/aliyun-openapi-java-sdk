@@ -25,42 +25,16 @@ import com.aliyuncs.sas.Endpoint;
 public class DeleteBackupPolicyRequest extends RpcAcsRequest<DeleteBackupPolicyResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String sourceIp;
-
 	private Long id;
 
 	private String policyVersion;
 	public DeleteBackupPolicyRequest() {
-		super("Sas", "2018-12-03", "DeleteBackupPolicy", "sas");
+		super("Sas", "2018-12-03", "DeleteBackupPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
 	}
 
 	public Long getId() {

@@ -27,7 +27,7 @@ public class DescribeDomainCountRequest extends RpcAcsRequest<DescribeDomainCoun
 
 	private String sourceIp;
 	public DescribeDomainCountRequest() {
-		super("Sas", "2018-12-03", "DescribeDomainCount", "sas");
+		super("Sas", "2018-12-03", "DescribeDomainCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

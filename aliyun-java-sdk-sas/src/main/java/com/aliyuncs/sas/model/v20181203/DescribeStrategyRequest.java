@@ -27,11 +27,13 @@ public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyRespo
 
 	private String sourceIp;
 
-	private String strategyIds;
-
 	private String lang;
+
+	private String customType;
+
+	private String strategyIds;
 	public DescribeStrategyRequest() {
-		super("Sas", "2018-12-03", "DescribeStrategy", "sas");
+		super("Sas", "2018-12-03", "DescribeStrategy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,17 +52,6 @@ public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyRespo
 		}
 	}
 
-	public String getStrategyIds() {
-		return this.strategyIds;
-	}
-
-	public void setStrategyIds(String strategyIds) {
-		this.strategyIds = strategyIds;
-		if(strategyIds != null){
-			putQueryParameter("StrategyIds", strategyIds);
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -69,6 +60,28 @@ public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyRespo
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getCustomType() {
+		return this.customType;
+	}
+
+	public void setCustomType(String customType) {
+		this.customType = customType;
+		if(customType != null){
+			putQueryParameter("CustomType", customType);
+		}
+	}
+
+	public String getStrategyIds() {
+		return this.strategyIds;
+	}
+
+	public void setStrategyIds(String strategyIds) {
+		this.strategyIds = strategyIds;
+		if(strategyIds != null){
+			putQueryParameter("StrategyIds", strategyIds);
 		}
 	}
 

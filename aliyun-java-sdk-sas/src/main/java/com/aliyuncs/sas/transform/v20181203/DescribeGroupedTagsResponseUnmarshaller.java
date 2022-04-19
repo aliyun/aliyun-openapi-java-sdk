@@ -27,16 +27,16 @@ public class DescribeGroupedTagsResponseUnmarshaller {
 	public static DescribeGroupedTagsResponse unmarshall(DescribeGroupedTagsResponse describeGroupedTagsResponse, UnmarshallerContext _ctx) {
 		
 		describeGroupedTagsResponse.setRequestId(_ctx.stringValue("DescribeGroupedTagsResponse.RequestId"));
+		describeGroupedTagsResponse.setHttpStatusCode(_ctx.integerValue("DescribeGroupedTagsResponse.HttpStatusCode"));
 		describeGroupedTagsResponse.setSuccess(_ctx.booleanValue("DescribeGroupedTagsResponse.Success"));
 		describeGroupedTagsResponse.setCount(_ctx.integerValue("DescribeGroupedTagsResponse.Count"));
-		describeGroupedTagsResponse.setHttpStatusCode(_ctx.integerValue("DescribeGroupedTagsResponse.HttpStatusCode"));
 
 		List<GroupedFiled> groupedFileds = new ArrayList<GroupedFiled>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGroupedTagsResponse.GroupedFileds.Length"); i++) {
 			GroupedFiled groupedFiled = new GroupedFiled();
 			groupedFiled.setName(_ctx.stringValue("DescribeGroupedTagsResponse.GroupedFileds["+ i +"].Name"));
-			groupedFiled.setTagId(_ctx.integerValue("DescribeGroupedTagsResponse.GroupedFileds["+ i +"].TagId"));
 			groupedFiled.setCount(_ctx.stringValue("DescribeGroupedTagsResponse.GroupedFileds["+ i +"].Count"));
+			groupedFiled.setTagId(_ctx.integerValue("DescribeGroupedTagsResponse.GroupedFileds["+ i +"].TagId"));
 
 			groupedFileds.add(groupedFiled);
 		}

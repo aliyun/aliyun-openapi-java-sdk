@@ -27,7 +27,7 @@ public class DescribeAllGroupsRequest extends RpcAcsRequest<DescribeAllGroupsRes
 
 	private String lang;
 	public DescribeAllGroupsRequest() {
-		super("Sas", "2018-12-03", "DescribeAllGroups", "sas");
+		super("Sas", "2018-12-03", "DescribeAllGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

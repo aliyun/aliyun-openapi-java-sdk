@@ -31,7 +31,7 @@ public class DescribeDingTalkRequest extends RpcAcsRequest<DescribeDingTalkRespo
 
 	private Integer pageSize;
 	public DescribeDingTalkRequest() {
-		super("Sas", "2018-12-03", "DescribeDingTalk", "sas");
+		super("Sas", "2018-12-03", "DescribeDingTalk");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

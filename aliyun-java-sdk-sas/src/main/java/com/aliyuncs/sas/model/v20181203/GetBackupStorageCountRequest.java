@@ -24,39 +24,13 @@ import com.aliyuncs.sas.Endpoint;
  */
 public class GetBackupStorageCountRequest extends RpcAcsRequest<GetBackupStorageCountResponse> {
 	   
-
-	private Long resourceOwnerId;
-
-	private String sourceIp;
 	public GetBackupStorageCountRequest() {
-		super("Sas", "2018-12-03", "GetBackupStorageCount", "sas");
+		super("Sas", "2018-12-03", "GetBackupStorageCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
 	}
 
 	@Override

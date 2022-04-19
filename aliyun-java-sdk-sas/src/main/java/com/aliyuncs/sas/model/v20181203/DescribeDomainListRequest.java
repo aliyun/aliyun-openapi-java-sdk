@@ -35,7 +35,7 @@ public class DescribeDomainListRequest extends RpcAcsRequest<DescribeDomainListR
 
 	private Integer pageSize;
 	public DescribeDomainListRequest() {
-		super("Sas", "2018-12-03", "DescribeDomainList", "sas");
+		super("Sas", "2018-12-03", "DescribeDomainList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,20 +32,20 @@ public class DescribeAssetDetailByUuidsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeAssetDetailByUuidsResponse.AssetList.Length"); i++) {
 			Asset asset = new Asset();
 			asset.setInternetIp(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InternetIp"));
-			asset.setIntranetIp(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].IntranetIp"));
-			asset.setInstanceName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InstanceName"));
-			asset.setInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InstanceId"));
-			asset.setIp(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Ip"));
-			asset.setUuid(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Uuid"));
-			asset.setAssetType(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].AssetType"));
-			asset.setOs(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Os"));
-			asset.setClientStatus(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].ClientStatus"));
-			asset.setRegionId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].RegionId"));
-			asset.setRegion(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Region"));
-			asset.setRegionName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].RegionName"));
-			asset.setVpcInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].VpcInstanceId"));
 			asset.setOsName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].OsName"));
+			asset.setIp(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Ip"));
+			asset.setOs(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Os"));
+			asset.setInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InstanceId"));
+			asset.setClientStatus(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].ClientStatus"));
+			asset.setVpcInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].VpcInstanceId"));
+			asset.setIntranetIp(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].IntranetIp"));
+			asset.setAssetType(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].AssetType"));
+			asset.setRegionId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].RegionId"));
+			asset.setUuid(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Uuid"));
 			asset.setFlag(_ctx.integerValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Flag"));
+			asset.setRegionName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].RegionName"));
+			asset.setInstanceName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InstanceName"));
+			asset.setRegion(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Region"));
 
 			assetList.add(asset);
 		}

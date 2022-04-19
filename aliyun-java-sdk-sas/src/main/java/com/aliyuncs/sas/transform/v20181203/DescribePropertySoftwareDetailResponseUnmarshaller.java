@@ -30,27 +30,27 @@ public class DescribePropertySoftwareDetailResponseUnmarshaller {
 		describePropertySoftwareDetailResponse.setRequestId(_ctx.stringValue("DescribePropertySoftwareDetailResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribePropertySoftwareDetailResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertySoftwareDetailResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribePropertySoftwareDetailResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribePropertySoftwareDetailResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertySoftwareDetailResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribePropertySoftwareDetailResponse.PageInfo.Count"));
 		describePropertySoftwareDetailResponse.setPageInfo(pageInfo);
 
 		List<PropertySoftware> propertys = new ArrayList<PropertySoftware>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePropertySoftwareDetailResponse.Propertys.Length"); i++) {
 			PropertySoftware propertySoftware = new PropertySoftware();
-			propertySoftware.setName(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Name"));
-			propertySoftware.setPath(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Path"));
-			propertySoftware.setInstanceName(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].InstanceName"));
+			propertySoftware.setInternetIp(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].InternetIp"));
 			propertySoftware.setIp(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Ip"));
-			propertySoftware.setCreate(_ctx.longValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Create"));
-			propertySoftware.setCreateTimestamp(_ctx.longValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].CreateTimestamp"));
-			propertySoftware.setInstallTime(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].InstallTime"));
-			propertySoftware.setVersion(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Version"));
-			propertySoftware.setUuid(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Uuid"));
 			propertySoftware.setInstanceId(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].InstanceId"));
 			propertySoftware.setIntranetIp(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].IntranetIp"));
-			propertySoftware.setInternetIp(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].InternetIp"));
+			propertySoftware.setInstallTime(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].InstallTime"));
+			propertySoftware.setUuid(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Uuid"));
+			propertySoftware.setVersion(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Version"));
+			propertySoftware.setInstanceName(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].InstanceName"));
+			propertySoftware.setPath(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Path"));
+			propertySoftware.setName(_ctx.stringValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].Name"));
+			propertySoftware.setCreateTimestamp(_ctx.longValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].CreateTimestamp"));
+			propertySoftware.setInstallTimeDt(_ctx.longValue("DescribePropertySoftwareDetailResponse.Propertys["+ i +"].InstallTimeDt"));
 
 			propertys.add(propertySoftware);
 		}

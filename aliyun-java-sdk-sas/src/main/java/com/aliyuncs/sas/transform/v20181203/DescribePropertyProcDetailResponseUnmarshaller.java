@@ -30,31 +30,33 @@ public class DescribePropertyProcDetailResponseUnmarshaller {
 		describePropertyProcDetailResponse.setRequestId(_ctx.stringValue("DescribePropertyProcDetailResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribePropertyProcDetailResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertyProcDetailResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribePropertyProcDetailResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribePropertyProcDetailResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertyProcDetailResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribePropertyProcDetailResponse.PageInfo.Count"));
 		describePropertyProcDetailResponse.setPageInfo(pageInfo);
 
 		List<PropertyProc> propertys = new ArrayList<PropertyProc>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePropertyProcDetailResponse.Propertys.Length"); i++) {
 			PropertyProc propertyProc = new PropertyProc();
-			propertyProc.setPname(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Pname"));
-			propertyProc.setEuidName(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].EuidName"));
-			propertyProc.setInstanceName(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].InstanceName"));
-			propertyProc.setPid(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Pid"));
-			propertyProc.setPath(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Path"));
-			propertyProc.setCmdline(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Cmdline"));
-			propertyProc.setName(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Name"));
-			propertyProc.setUser(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].User"));
-			propertyProc.setMd5(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Md5"));
-			propertyProc.setCreate(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Create"));
-			propertyProc.setCreateTimestamp(_ctx.longValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].CreateTimestamp"));
-			propertyProc.setStartTime(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].StartTime"));
-			propertyProc.setUuid(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Uuid"));
-			propertyProc.setInstanceId(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].InstanceId"));
-			propertyProc.setIntranetIp(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].IntranetIp"));
 			propertyProc.setInternetIp(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].InternetIp"));
+			propertyProc.setPid(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Pid"));
+			propertyProc.setUser(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].User"));
+			propertyProc.setInstanceId(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].InstanceId"));
+			propertyProc.setCmdline(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Cmdline"));
+			propertyProc.setIntranetIp(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].IntranetIp"));
+			propertyProc.setEuidName(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].EuidName"));
+			propertyProc.setUuid(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Uuid"));
+			propertyProc.setStartTime(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].StartTime"));
+			propertyProc.setPname(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Pname"));
+			propertyProc.setInstanceName(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].InstanceName"));
+			propertyProc.setPath(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Path"));
+			propertyProc.setMd5(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Md5"));
+			propertyProc.setName(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].Name"));
+			propertyProc.setCreateTimestamp(_ctx.longValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].CreateTimestamp"));
+			propertyProc.setStartTimeDt(_ctx.longValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].StartTimeDt"));
+			propertyProc.setIsPackage(_ctx.integerValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].IsPackage"));
+			propertyProc.setState(_ctx.stringValue("DescribePropertyProcDetailResponse.Propertys["+ i +"].State"));
 
 			propertys.add(propertyProc);
 		}

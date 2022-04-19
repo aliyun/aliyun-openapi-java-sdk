@@ -27,21 +27,22 @@ public class DescribeStrategyExecDetailResponseUnmarshaller {
 	public static DescribeStrategyExecDetailResponse unmarshall(DescribeStrategyExecDetailResponse describeStrategyExecDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeStrategyExecDetailResponse.setRequestId(_ctx.stringValue("DescribeStrategyExecDetailResponse.RequestId"));
-		describeStrategyExecDetailResponse.setStartTime(_ctx.stringValue("DescribeStrategyExecDetailResponse.StartTime"));
-		describeStrategyExecDetailResponse.setEndTime(_ctx.stringValue("DescribeStrategyExecDetailResponse.EndTime"));
-		describeStrategyExecDetailResponse.setSource(_ctx.stringValue("DescribeStrategyExecDetailResponse.Source"));
-		describeStrategyExecDetailResponse.setPercent(_ctx.stringValue("DescribeStrategyExecDetailResponse.Percent"));
-		describeStrategyExecDetailResponse.setSuccessCount(_ctx.integerValue("DescribeStrategyExecDetailResponse.SuccessCount"));
-		describeStrategyExecDetailResponse.setFailCount(_ctx.integerValue("DescribeStrategyExecDetailResponse.FailCount"));
 		describeStrategyExecDetailResponse.setInProcessCount(_ctx.integerValue("DescribeStrategyExecDetailResponse.InProcessCount"));
+		describeStrategyExecDetailResponse.setEndTime(_ctx.stringValue("DescribeStrategyExecDetailResponse.EndTime"));
+		describeStrategyExecDetailResponse.setStartTime(_ctx.stringValue("DescribeStrategyExecDetailResponse.StartTime"));
+		describeStrategyExecDetailResponse.setPercent(_ctx.stringValue("DescribeStrategyExecDetailResponse.Percent"));
+		describeStrategyExecDetailResponse.setFailCount(_ctx.integerValue("DescribeStrategyExecDetailResponse.FailCount"));
+		describeStrategyExecDetailResponse.setSource(_ctx.stringValue("DescribeStrategyExecDetailResponse.Source"));
+		describeStrategyExecDetailResponse.setSuccessCount(_ctx.integerValue("DescribeStrategyExecDetailResponse.SuccessCount"));
 
 		List<FailedEcs> failedEcsList = new ArrayList<FailedEcs>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStrategyExecDetailResponse.FailedEcsList.Length"); i++) {
 			FailedEcs failedEcs = new FailedEcs();
+			failedEcs.setIP(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].IP"));
+			failedEcs.setInternetIp(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].InternetIp"));
+			failedEcs.setIntranetIp(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].IntranetIp"));
 			failedEcs.setReason(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].Reason"));
 			failedEcs.setInstanceName(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].InstanceName"));
-			failedEcs.setIP(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].IP"));
-			failedEcs.setIntranetIp(_ctx.stringValue("DescribeStrategyExecDetailResponse.FailedEcsList["+ i +"].IntranetIp"));
 
 			failedEcsList.add(failedEcs);
 		}

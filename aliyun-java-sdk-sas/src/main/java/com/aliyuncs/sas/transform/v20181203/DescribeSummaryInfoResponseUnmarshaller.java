@@ -23,10 +23,10 @@ public class DescribeSummaryInfoResponseUnmarshaller {
 	public static DescribeSummaryInfoResponse unmarshall(DescribeSummaryInfoResponse describeSummaryInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeSummaryInfoResponse.setRequestId(_ctx.stringValue("DescribeSummaryInfoResponse.RequestId"));
-		describeSummaryInfoResponse.setAegisClientOfflineCount(_ctx.integerValue("DescribeSummaryInfoResponse.AegisClientOfflineCount"));
-		describeSummaryInfoResponse.setSecurityScore(_ctx.integerValue("DescribeSummaryInfoResponse.SecurityScore"));
-		describeSummaryInfoResponse.setAegisClientOnlineCount(_ctx.integerValue("DescribeSummaryInfoResponse.AegisClientOnlineCount"));
 		describeSummaryInfoResponse.setSuccess(_ctx.booleanValue("DescribeSummaryInfoResponse.Success"));
+		describeSummaryInfoResponse.setAegisClientOfflineCount(_ctx.integerValue("DescribeSummaryInfoResponse.AegisClientOfflineCount"));
+		describeSummaryInfoResponse.setAegisClientOnlineCount(_ctx.integerValue("DescribeSummaryInfoResponse.AegisClientOnlineCount"));
+		describeSummaryInfoResponse.setSecurityScore(_ctx.integerValue("DescribeSummaryInfoResponse.SecurityScore"));
 	 
 	 	return describeSummaryInfoResponse;
 	}

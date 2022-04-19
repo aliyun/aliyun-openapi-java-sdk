@@ -33,7 +33,7 @@ public class ModifyInstanceAntiBruteForceRuleRequest extends RpcAcsRequest<Modif
 
 	private Long newRuleId;
 	public ModifyInstanceAntiBruteForceRuleRequest() {
-		super("Sas", "2018-12-03", "ModifyInstanceAntiBruteForceRule", "sas");
+		super("Sas", "2018-12-03", "ModifyInstanceAntiBruteForceRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DescribeSimilarEventScenariosRequest extends RpcAcsRequest<Describe
 
 	private Long securityEventId;
 	public DescribeSimilarEventScenariosRequest() {
-		super("Sas", "2018-12-03", "DescribeSimilarEventScenarios", "sas");
+		super("Sas", "2018-12-03", "DescribeSimilarEventScenarios");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class HandleSimilarSecurityEventsRequest extends RpcAcsRequest<HandleSimi
 
 	private String operationParams;
 	public HandleSimilarSecurityEventsRequest() {
-		super("Sas", "2018-12-03", "HandleSimilarSecurityEvents", "sas");
+		super("Sas", "2018-12-03", "HandleSimilarSecurityEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

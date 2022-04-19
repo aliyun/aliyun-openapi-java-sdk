@@ -47,41 +47,25 @@ public class DescribeRiskCheckSummaryResponse extends AcsResponse {
 
 	public static class RiskCheckSummary {
 
-		private Integer riskCount;
-
-		private Integer previousCount;
-
 		private Integer itemCount;
+
+		private Integer affectedAssetCount;
+
+		private Integer disabledRiskCount;
+
+		private Integer riskCount;
 
 		private Float riskRate;
 
-		private Integer affectedAssetCount;
+		private Integer previousCount;
 
 		private Long previousTime;
 
 		private Integer enabledRiskCount;
 
-		private Integer disabledRiskCount;
-
 		private List<LevelCount> riskLevelCount;
 
 		private List<Group> groups;
-
-		public Integer getRiskCount() {
-			return this.riskCount;
-		}
-
-		public void setRiskCount(Integer riskCount) {
-			this.riskCount = riskCount;
-		}
-
-		public Integer getPreviousCount() {
-			return this.previousCount;
-		}
-
-		public void setPreviousCount(Integer previousCount) {
-			this.previousCount = previousCount;
-		}
 
 		public Integer getItemCount() {
 			return this.itemCount;
@@ -89,6 +73,30 @@ public class DescribeRiskCheckSummaryResponse extends AcsResponse {
 
 		public void setItemCount(Integer itemCount) {
 			this.itemCount = itemCount;
+		}
+
+		public Integer getAffectedAssetCount() {
+			return this.affectedAssetCount;
+		}
+
+		public void setAffectedAssetCount(Integer affectedAssetCount) {
+			this.affectedAssetCount = affectedAssetCount;
+		}
+
+		public Integer getDisabledRiskCount() {
+			return this.disabledRiskCount;
+		}
+
+		public void setDisabledRiskCount(Integer disabledRiskCount) {
+			this.disabledRiskCount = disabledRiskCount;
+		}
+
+		public Integer getRiskCount() {
+			return this.riskCount;
+		}
+
+		public void setRiskCount(Integer riskCount) {
+			this.riskCount = riskCount;
 		}
 
 		public Float getRiskRate() {
@@ -99,12 +107,12 @@ public class DescribeRiskCheckSummaryResponse extends AcsResponse {
 			this.riskRate = riskRate;
 		}
 
-		public Integer getAffectedAssetCount() {
-			return this.affectedAssetCount;
+		public Integer getPreviousCount() {
+			return this.previousCount;
 		}
 
-		public void setAffectedAssetCount(Integer affectedAssetCount) {
-			this.affectedAssetCount = affectedAssetCount;
+		public void setPreviousCount(Integer previousCount) {
+			this.previousCount = previousCount;
 		}
 
 		public Long getPreviousTime() {
@@ -121,14 +129,6 @@ public class DescribeRiskCheckSummaryResponse extends AcsResponse {
 
 		public void setEnabledRiskCount(Integer enabledRiskCount) {
 			this.enabledRiskCount = enabledRiskCount;
-		}
-
-		public Integer getDisabledRiskCount() {
-			return this.disabledRiskCount;
-		}
-
-		public void setDisabledRiskCount(Integer disabledRiskCount) {
-			this.disabledRiskCount = disabledRiskCount;
 		}
 
 		public List<LevelCount> getRiskLevelCount() {
@@ -172,32 +172,24 @@ public class DescribeRiskCheckSummaryResponse extends AcsResponse {
 
 		public static class Group {
 
-			private Long id;
-
-			private String title;
+			private Integer remainingTime;
 
 			private String status;
 
-			private Integer remainingTime;
-
 			private Integer sort;
+
+			private String title;
+
+			private Long id;
 
 			private List<StatusCount> countByStatus;
 
-			public Long getId() {
-				return this.id;
+			public Integer getRemainingTime() {
+				return this.remainingTime;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
+			public void setRemainingTime(Integer remainingTime) {
+				this.remainingTime = remainingTime;
 			}
 
 			public String getStatus() {
@@ -208,20 +200,28 @@ public class DescribeRiskCheckSummaryResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public Integer getRemainingTime() {
-				return this.remainingTime;
-			}
-
-			public void setRemainingTime(Integer remainingTime) {
-				this.remainingTime = remainingTime;
-			}
-
 			public Integer getSort() {
 				return this.sort;
 			}
 
 			public void setSort(Integer sort) {
 				this.sort = sort;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public List<StatusCount> getCountByStatus() {

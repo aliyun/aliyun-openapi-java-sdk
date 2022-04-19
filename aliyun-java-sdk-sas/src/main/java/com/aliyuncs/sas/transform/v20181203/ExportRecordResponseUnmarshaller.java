@@ -23,8 +23,8 @@ public class ExportRecordResponseUnmarshaller {
 	public static ExportRecordResponse unmarshall(ExportRecordResponse exportRecordResponse, UnmarshallerContext _ctx) {
 		
 		exportRecordResponse.setRequestId(_ctx.stringValue("ExportRecordResponse.RequestId"));
-		exportRecordResponse.setId(_ctx.longValue("ExportRecordResponse.Id"));
 		exportRecordResponse.setFileName(_ctx.stringValue("ExportRecordResponse.FileName"));
+		exportRecordResponse.setId(_ctx.longValue("ExportRecordResponse.Id"));
 	 
 	 	return exportRecordResponse;
 	}

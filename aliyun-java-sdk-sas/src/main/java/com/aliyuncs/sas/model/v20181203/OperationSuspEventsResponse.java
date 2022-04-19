@@ -26,9 +26,9 @@ public class OperationSuspEventsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private String accessCode;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class OperationSuspEventsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getAccessCode() {
 		return this.accessCode;
 	}
 
 	public void setAccessCode(String accessCode) {
 		this.accessCode = accessCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -26,23 +26,23 @@ public class DescribeExposedStatisticsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer exposedLaterVulCount;
+
+	private Integer exposedComponentCount;
+
+	private Integer exposedPortCount;
+
 	private Integer exposedInstanceCount;
+
+	private Integer exposedWeekPasswordMachineCount;
+
+	private Integer exposedNntfVulCount;
 
 	private Integer gatewayAssetCount;
 
 	private Integer exposedIpCount;
 
-	private Integer exposedPortCount;
-
-	private Integer exposedComponentCount;
-
 	private Integer exposedAsapVulCount;
-
-	private Integer exposedLaterVulCount;
-
-	private Integer exposedNntfVulCount;
-
-	private Integer exposedWeekPasswordMachineCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,12 +52,52 @@ public class DescribeExposedStatisticsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getExposedLaterVulCount() {
+		return this.exposedLaterVulCount;
+	}
+
+	public void setExposedLaterVulCount(Integer exposedLaterVulCount) {
+		this.exposedLaterVulCount = exposedLaterVulCount;
+	}
+
+	public Integer getExposedComponentCount() {
+		return this.exposedComponentCount;
+	}
+
+	public void setExposedComponentCount(Integer exposedComponentCount) {
+		this.exposedComponentCount = exposedComponentCount;
+	}
+
+	public Integer getExposedPortCount() {
+		return this.exposedPortCount;
+	}
+
+	public void setExposedPortCount(Integer exposedPortCount) {
+		this.exposedPortCount = exposedPortCount;
+	}
+
 	public Integer getExposedInstanceCount() {
 		return this.exposedInstanceCount;
 	}
 
 	public void setExposedInstanceCount(Integer exposedInstanceCount) {
 		this.exposedInstanceCount = exposedInstanceCount;
+	}
+
+	public Integer getExposedWeekPasswordMachineCount() {
+		return this.exposedWeekPasswordMachineCount;
+	}
+
+	public void setExposedWeekPasswordMachineCount(Integer exposedWeekPasswordMachineCount) {
+		this.exposedWeekPasswordMachineCount = exposedWeekPasswordMachineCount;
+	}
+
+	public Integer getExposedNntfVulCount() {
+		return this.exposedNntfVulCount;
+	}
+
+	public void setExposedNntfVulCount(Integer exposedNntfVulCount) {
+		this.exposedNntfVulCount = exposedNntfVulCount;
 	}
 
 	public Integer getGatewayAssetCount() {
@@ -76,52 +116,12 @@ public class DescribeExposedStatisticsResponse extends AcsResponse {
 		this.exposedIpCount = exposedIpCount;
 	}
 
-	public Integer getExposedPortCount() {
-		return this.exposedPortCount;
-	}
-
-	public void setExposedPortCount(Integer exposedPortCount) {
-		this.exposedPortCount = exposedPortCount;
-	}
-
-	public Integer getExposedComponentCount() {
-		return this.exposedComponentCount;
-	}
-
-	public void setExposedComponentCount(Integer exposedComponentCount) {
-		this.exposedComponentCount = exposedComponentCount;
-	}
-
 	public Integer getExposedAsapVulCount() {
 		return this.exposedAsapVulCount;
 	}
 
 	public void setExposedAsapVulCount(Integer exposedAsapVulCount) {
 		this.exposedAsapVulCount = exposedAsapVulCount;
-	}
-
-	public Integer getExposedLaterVulCount() {
-		return this.exposedLaterVulCount;
-	}
-
-	public void setExposedLaterVulCount(Integer exposedLaterVulCount) {
-		this.exposedLaterVulCount = exposedLaterVulCount;
-	}
-
-	public Integer getExposedNntfVulCount() {
-		return this.exposedNntfVulCount;
-	}
-
-	public void setExposedNntfVulCount(Integer exposedNntfVulCount) {
-		this.exposedNntfVulCount = exposedNntfVulCount;
-	}
-
-	public Integer getExposedWeekPasswordMachineCount() {
-		return this.exposedWeekPasswordMachineCount;
-	}
-
-	public void setExposedWeekPasswordMachineCount(Integer exposedWeekPasswordMachineCount) {
-		this.exposedWeekPasswordMachineCount = exposedWeekPasswordMachineCount;
 	}
 
 	@Override

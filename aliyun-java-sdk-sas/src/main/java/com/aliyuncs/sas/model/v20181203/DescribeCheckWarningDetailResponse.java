@@ -24,21 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCheckWarningDetailResponse extends AcsResponse {
 
+	private String advice;
+
+	private String type;
+
 	private String requestId;
+
+	private String description;
+
+	private String item;
 
 	private Long checkId;
 
 	private String level;
 
-	private String item;
-
 	private String prompt;
 
-	private String type;
+	public String getAdvice() {
+		return this.advice;
+	}
 
-	private String advice;
+	public void setAdvice(String advice) {
+		this.advice = advice;
+	}
 
-	private String description;
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +62,22 @@ public class DescribeCheckWarningDetailResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getItem() {
+		return this.item;
+	}
+
+	public void setItem(String item) {
+		this.item = item;
 	}
 
 	public Long getCheckId() {
@@ -64,44 +96,12 @@ public class DescribeCheckWarningDetailResponse extends AcsResponse {
 		this.level = level;
 	}
 
-	public String getItem() {
-		return this.item;
-	}
-
-	public void setItem(String item) {
-		this.item = item;
-	}
-
 	public String getPrompt() {
 		return this.prompt;
 	}
 
 	public void setPrompt(String prompt) {
 		this.prompt = prompt;
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getAdvice() {
-		return this.advice;
-	}
-
-	public void setAdvice(String advice) {
-		this.advice = advice;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	@Override

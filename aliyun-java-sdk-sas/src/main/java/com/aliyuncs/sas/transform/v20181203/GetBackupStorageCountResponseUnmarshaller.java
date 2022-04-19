@@ -28,6 +28,8 @@ public class GetBackupStorageCountResponseUnmarshaller {
 		BackupStorageCount backupStorageCount = new BackupStorageCount();
 		backupStorageCount.setBuyStorageByte(_ctx.longValue("GetBackupStorageCountResponse.BackupStorageCount.BuyStorageByte"));
 		backupStorageCount.setUsageStorageByte(_ctx.longValue("GetBackupStorageCountResponse.BackupStorageCount.UsageStorageByte"));
+		backupStorageCount.setEcsUsageStorageByte(_ctx.longValue("GetBackupStorageCountResponse.BackupStorageCount.EcsUsageStorageByte"));
+		backupStorageCount.setUniUsageStorageByte(_ctx.longValue("GetBackupStorageCountResponse.BackupStorageCount.UniUsageStorageByte"));
 		backupStorageCount.setOverflow(_ctx.integerValue("GetBackupStorageCountResponse.BackupStorageCount.Overflow"));
 		getBackupStorageCountResponse.setBackupStorageCount(backupStorageCount);
 	 

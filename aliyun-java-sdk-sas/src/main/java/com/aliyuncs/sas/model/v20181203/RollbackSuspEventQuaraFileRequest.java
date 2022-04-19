@@ -31,7 +31,7 @@ public class RollbackSuspEventQuaraFileRequest extends RpcAcsRequest<RollbackSus
 
 	private Integer quaraFileId;
 	public RollbackSuspEventQuaraFileRequest() {
-		super("Sas", "2018-12-03", "RollbackSuspEventQuaraFile", "sas");
+		super("Sas", "2018-12-03", "RollbackSuspEventQuaraFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

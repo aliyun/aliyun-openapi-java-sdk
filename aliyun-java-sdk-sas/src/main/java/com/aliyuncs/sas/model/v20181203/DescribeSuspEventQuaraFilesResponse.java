@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer count;
+	private Integer currentPage;
 
 	private Integer pageSize;
 
+	private String requestId;
+
 	private Integer totalCount;
 
-	private Integer currentPage;
+	private Integer count;
 
 	private List<QuaraFile> quaraFiles;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public Integer getPageSize() {
@@ -61,6 +53,14 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -69,12 +69,12 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<QuaraFile> getQuaraFiles() {
@@ -87,40 +87,48 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
 	public static class QuaraFile {
 
-		private String path;
+		private String link;
+
+		private String status;
 
 		private String eventName;
-
-		private Integer id;
-
-		private String eventType;
-
-		private String tag;
-
-		private String uuid;
-
-		private String instanceId;
-
-		private String instanceName;
 
 		private String internetIp;
 
 		private String ip;
 
-		private String status;
+		private String tag;
+
+		private String instanceId;
+
+		private String uuid;
+
+		private String eventType;
+
+		private String instanceName;
+
+		private String path;
 
 		private String md5;
 
+		private Integer id;
+
 		private String modifyTime;
 
-		private String link;
-
-		public String getPath() {
-			return this.path;
+		public String getLink() {
+			return this.link;
 		}
 
-		public void setPath(String path) {
-			this.path = path;
+		public void setLink(String link) {
+			this.link = link;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getEventName() {
@@ -129,54 +137,6 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
 		public void setEventName(String eventName) {
 			this.eventName = eventName;
-		}
-
-		public Integer getId() {
-			return this.id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public String getEventType() {
-			return this.eventType;
-		}
-
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
-		}
-
-		public String getTag() {
-			return this.tag;
-		}
-
-		public void setTag(String tag) {
-			this.tag = tag;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
 		}
 
 		public String getInternetIp() {
@@ -195,12 +155,52 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getTag() {
+			return this.tag;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setTag(String tag) {
+			this.tag = tag;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public String getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
 		}
 
 		public String getMd5() {
@@ -211,20 +211,20 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 			this.md5 = md5;
 		}
 
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
-		}
-
-		public String getLink() {
-			return this.link;
-		}
-
-		public void setLink(String link) {
-			this.link = link;
 		}
 	}
 

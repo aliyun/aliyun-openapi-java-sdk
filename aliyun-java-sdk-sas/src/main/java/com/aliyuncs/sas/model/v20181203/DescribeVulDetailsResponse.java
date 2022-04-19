@@ -47,43 +47,75 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 
 	public static class Cve {
 
+		private String summary;
+
+		private String complexity;
+
+		private String product;
+
+		private Long pocCreateTime;
+
 		private String cveId;
 
 		private String cnvdId;
 
-		private String title;
+		private String reference;
 
 		private String cvssScore;
 
-		private String cvssVector;
-
-		private Long releaseTime;
-
-		private String complexity;
-
-		private String poc;
-
-		private Long pocCreateTime;
+		private String vendor;
 
 		private Long pocDisclosureTime;
 
-		private String summary;
+		private String classify;
+
+		private String cvssVector;
+
+		private String vulLevel;
+
+		private Long releaseTime;
+
+		private String title;
 
 		private String solution;
 
 		private String content;
 
-		private String vendor;
-
-		private String product;
-
-		private String vulLevel;
-
-		private String reference;
-
-		private String classify;
+		private String poc;
 
 		private List<Classify> classifys;
+
+		public String getSummary() {
+			return this.summary;
+		}
+
+		public void setSummary(String summary) {
+			this.summary = summary;
+		}
+
+		public String getComplexity() {
+			return this.complexity;
+		}
+
+		public void setComplexity(String complexity) {
+			this.complexity = complexity;
+		}
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
+		}
+
+		public Long getPocCreateTime() {
+			return this.pocCreateTime;
+		}
+
+		public void setPocCreateTime(Long pocCreateTime) {
+			this.pocCreateTime = pocCreateTime;
+		}
 
 		public String getCveId() {
 			return this.cveId;
@@ -101,12 +133,12 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 			this.cnvdId = cnvdId;
 		}
 
-		public String getTitle() {
-			return this.title;
+		public String getReference() {
+			return this.reference;
 		}
 
-		public void setTitle(String title) {
-			this.title = title;
+		public void setReference(String reference) {
+			this.reference = reference;
 		}
 
 		public String getCvssScore() {
@@ -117,44 +149,12 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 			this.cvssScore = cvssScore;
 		}
 
-		public String getCvssVector() {
-			return this.cvssVector;
+		public String getVendor() {
+			return this.vendor;
 		}
 
-		public void setCvssVector(String cvssVector) {
-			this.cvssVector = cvssVector;
-		}
-
-		public Long getReleaseTime() {
-			return this.releaseTime;
-		}
-
-		public void setReleaseTime(Long releaseTime) {
-			this.releaseTime = releaseTime;
-		}
-
-		public String getComplexity() {
-			return this.complexity;
-		}
-
-		public void setComplexity(String complexity) {
-			this.complexity = complexity;
-		}
-
-		public String getPoc() {
-			return this.poc;
-		}
-
-		public void setPoc(String poc) {
-			this.poc = poc;
-		}
-
-		public Long getPocCreateTime() {
-			return this.pocCreateTime;
-		}
-
-		public void setPocCreateTime(Long pocCreateTime) {
-			this.pocCreateTime = pocCreateTime;
+		public void setVendor(String vendor) {
+			this.vendor = vendor;
 		}
 
 		public Long getPocDisclosureTime() {
@@ -165,12 +165,44 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 			this.pocDisclosureTime = pocDisclosureTime;
 		}
 
-		public String getSummary() {
-			return this.summary;
+		public String getClassify() {
+			return this.classify;
 		}
 
-		public void setSummary(String summary) {
-			this.summary = summary;
+		public void setClassify(String classify) {
+			this.classify = classify;
+		}
+
+		public String getCvssVector() {
+			return this.cvssVector;
+		}
+
+		public void setCvssVector(String cvssVector) {
+			this.cvssVector = cvssVector;
+		}
+
+		public String getVulLevel() {
+			return this.vulLevel;
+		}
+
+		public void setVulLevel(String vulLevel) {
+			this.vulLevel = vulLevel;
+		}
+
+		public Long getReleaseTime() {
+			return this.releaseTime;
+		}
+
+		public void setReleaseTime(Long releaseTime) {
+			this.releaseTime = releaseTime;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
 		}
 
 		public String getSolution() {
@@ -189,44 +221,12 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public String getVendor() {
-			return this.vendor;
+		public String getPoc() {
+			return this.poc;
 		}
 
-		public void setVendor(String vendor) {
-			this.vendor = vendor;
-		}
-
-		public String getProduct() {
-			return this.product;
-		}
-
-		public void setProduct(String product) {
-			this.product = product;
-		}
-
-		public String getVulLevel() {
-			return this.vulLevel;
-		}
-
-		public void setVulLevel(String vulLevel) {
-			this.vulLevel = vulLevel;
-		}
-
-		public String getReference() {
-			return this.reference;
-		}
-
-		public void setReference(String reference) {
-			this.reference = reference;
-		}
-
-		public String getClassify() {
-			return this.classify;
-		}
-
-		public void setClassify(String classify) {
-			this.classify = classify;
+		public void setPoc(String poc) {
+			this.poc = poc;
 		}
 
 		public List<Classify> getClassifys() {
@@ -239,19 +239,11 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 
 		public static class Classify {
 
-			private String classify;
-
 			private String description;
 
+			private String classify;
+
 			private String demoVideoUrl;
-
-			public String getClassify() {
-				return this.classify;
-			}
-
-			public void setClassify(String classify) {
-				this.classify = classify;
-			}
 
 			public String getDescription() {
 				return this.description;
@@ -259,6 +251,14 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getClassify() {
+				return this.classify;
+			}
+
+			public void setClassify(String classify) {
+				this.classify = classify;
 			}
 
 			public String getDemoVideoUrl() {

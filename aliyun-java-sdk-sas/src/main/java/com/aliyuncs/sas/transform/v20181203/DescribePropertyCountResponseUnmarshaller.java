@@ -23,13 +23,17 @@ public class DescribePropertyCountResponseUnmarshaller {
 	public static DescribePropertyCountResponse unmarshall(DescribePropertyCountResponse describePropertyCountResponse, UnmarshallerContext _ctx) {
 		
 		describePropertyCountResponse.setRequestId(_ctx.stringValue("DescribePropertyCountResponse.RequestId"));
-		describePropertyCountResponse.setPort(_ctx.integerValue("DescribePropertyCountResponse.Port"));
 		describePropertyCountResponse.setProcess(_ctx.integerValue("DescribePropertyCountResponse.Process"));
-		describePropertyCountResponse.setSoftware(_ctx.integerValue("DescribePropertyCountResponse.Software"));
 		describePropertyCountResponse.setUser(_ctx.integerValue("DescribePropertyCountResponse.User"));
+		describePropertyCountResponse.setSoftware(_ctx.integerValue("DescribePropertyCountResponse.Software"));
 		describePropertyCountResponse.setCron(_ctx.integerValue("DescribePropertyCountResponse.Cron"));
+		describePropertyCountResponse.setPort(_ctx.integerValue("DescribePropertyCountResponse.Port"));
 		describePropertyCountResponse.setSca(_ctx.integerValue("DescribePropertyCountResponse.Sca"));
-		describePropertyCountResponse.setAutoRun(_ctx.integerValue("DescribePropertyCountResponse.AutoRun"));
+		describePropertyCountResponse.setWeb(_ctx.integerValue("DescribePropertyCountResponse.Web"));
+		describePropertyCountResponse.setDatabase(_ctx.integerValue("DescribePropertyCountResponse.Database"));
+		describePropertyCountResponse.setLkm(_ctx.integerValue("DescribePropertyCountResponse.Lkm"));
+		describePropertyCountResponse.setAutorun(_ctx.integerValue("DescribePropertyCountResponse.Autorun"));
+		describePropertyCountResponse.setWebserver(_ctx.integerValue("DescribePropertyCountResponse.Webserver"));
 	 
 	 	return describePropertyCountResponse;
 	}

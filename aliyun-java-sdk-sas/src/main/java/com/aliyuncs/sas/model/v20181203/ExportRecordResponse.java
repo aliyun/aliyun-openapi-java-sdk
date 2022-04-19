@@ -26,9 +26,9 @@ public class ExportRecordResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long id;
-
 	private String fileName;
+
+	private Long id;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class ExportRecordResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public String getFileName() {
 		return this.fileName;
 	}
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@Override

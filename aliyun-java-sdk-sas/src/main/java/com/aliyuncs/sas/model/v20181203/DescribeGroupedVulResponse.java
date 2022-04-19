@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGroupedVulResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<GroupedVulItem> groupedVulItems;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,41 +77,25 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 	public static class GroupedVulItem {
 
-		private String name;
-
-		private String aliasName;
-
 		private String type;
-
-		private Long gmtLast;
-
-		private Integer asapCount;
-
-		private Integer laterCount;
 
 		private Integer nntfCount;
 
 		private Integer handledCount;
 
+		private Long gmtLast;
+
 		private String tags;
+
+		private Integer laterCount;
+
+		private String aliasName;
+
+		private String name;
 
 		private Long totalFixCount;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getAliasName() {
-			return this.aliasName;
-		}
-
-		public void setAliasName(String aliasName) {
-			this.aliasName = aliasName;
-		}
+		private Integer asapCount;
 
 		public String getType() {
 			return this.type;
@@ -119,30 +103,6 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public Long getGmtLast() {
-			return this.gmtLast;
-		}
-
-		public void setGmtLast(Long gmtLast) {
-			this.gmtLast = gmtLast;
-		}
-
-		public Integer getAsapCount() {
-			return this.asapCount;
-		}
-
-		public void setAsapCount(Integer asapCount) {
-			this.asapCount = asapCount;
-		}
-
-		public Integer getLaterCount() {
-			return this.laterCount;
-		}
-
-		public void setLaterCount(Integer laterCount) {
-			this.laterCount = laterCount;
 		}
 
 		public Integer getNntfCount() {
@@ -161,6 +121,14 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 			this.handledCount = handledCount;
 		}
 
+		public Long getGmtLast() {
+			return this.gmtLast;
+		}
+
+		public void setGmtLast(Long gmtLast) {
+			this.gmtLast = gmtLast;
+		}
+
 		public String getTags() {
 			return this.tags;
 		}
@@ -169,12 +137,44 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public Integer getLaterCount() {
+			return this.laterCount;
+		}
+
+		public void setLaterCount(Integer laterCount) {
+			this.laterCount = laterCount;
+		}
+
+		public String getAliasName() {
+			return this.aliasName;
+		}
+
+		public void setAliasName(String aliasName) {
+			this.aliasName = aliasName;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public Long getTotalFixCount() {
 			return this.totalFixCount;
 		}
 
 		public void setTotalFixCount(Long totalFixCount) {
 			this.totalFixCount = totalFixCount;
+		}
+
+		public Integer getAsapCount() {
+			return this.asapCount;
+		}
+
+		public void setAsapCount(Integer asapCount) {
+			this.asapCount = asapCount;
 		}
 	}
 

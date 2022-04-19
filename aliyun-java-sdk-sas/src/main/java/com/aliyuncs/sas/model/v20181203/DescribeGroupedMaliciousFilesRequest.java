@@ -41,6 +41,8 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 
 	private Integer currentPage;
 
+	private String clusterId;
+
 	private String repoName;
 
 	private String repoInstanceId;
@@ -51,7 +53,7 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 
 	private String repoRegionId;
 	public DescribeGroupedMaliciousFilesRequest() {
-		super("Sas", "2018-12-03", "DescribeGroupedMaliciousFiles", "sas");
+		super("Sas", "2018-12-03", "DescribeGroupedMaliciousFiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -144,6 +146,17 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

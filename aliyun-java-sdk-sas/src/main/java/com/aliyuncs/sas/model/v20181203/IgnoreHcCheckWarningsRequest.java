@@ -37,7 +37,7 @@ public class IgnoreHcCheckWarningsRequest extends RpcAcsRequest<IgnoreHcCheckWar
 
 	private String checkWarningIds;
 	public IgnoreHcCheckWarningsRequest() {
-		super("Sas", "2018-12-03", "IgnoreHcCheckWarnings", "sas");
+		super("Sas", "2018-12-03", "IgnoreHcCheckWarnings");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

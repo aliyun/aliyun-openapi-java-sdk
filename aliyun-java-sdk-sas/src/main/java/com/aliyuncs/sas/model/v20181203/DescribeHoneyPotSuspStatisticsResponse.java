@@ -47,25 +47,17 @@ public class DescribeHoneyPotSuspStatisticsResponse extends AcsResponse {
 
 	public static class SuspHoneyPotStatisticsResponseItem {
 
-		private Integer count;
-
 		private String type;
-
-		private String instanceId;
-
-		private String instanceName;
 
 		private String vpcId;
 
 		private String vpcName;
 
-		public Integer getCount() {
-			return this.count;
-		}
+		private String instanceName;
 
-		public void setCount(Integer count) {
-			this.count = count;
-		}
+		private String instanceId;
+
+		private Integer count;
 
 		public String getType() {
 			return this.type;
@@ -73,22 +65,6 @@ public class DescribeHoneyPotSuspStatisticsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
 		}
 
 		public String getVpcId() {
@@ -105,6 +81,30 @@ public class DescribeHoneyPotSuspStatisticsResponse extends AcsResponse {
 
 		public void setVpcName(String vpcName) {
 			this.vpcName = vpcName;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

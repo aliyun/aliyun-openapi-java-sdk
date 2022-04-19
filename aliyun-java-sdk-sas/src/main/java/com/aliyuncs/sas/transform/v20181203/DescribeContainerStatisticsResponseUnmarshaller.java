@@ -26,11 +26,11 @@ public class DescribeContainerStatisticsResponseUnmarshaller {
 		describeContainerStatisticsResponse.setRequestId(_ctx.stringValue("DescribeContainerStatisticsResponse.RequestId"));
 
 		Data data = new Data();
-		data.setTotalAlarmCount(_ctx.integerValue("DescribeContainerStatisticsResponse.Data.TotalAlarmCount"));
+		data.setTotalNode(_ctx.integerValue("DescribeContainerStatisticsResponse.Data.TotalNode"));
 		data.setRemindAlarmCount(_ctx.integerValue("DescribeContainerStatisticsResponse.Data.RemindAlarmCount"));
+		data.setTotalAlarmCount(_ctx.integerValue("DescribeContainerStatisticsResponse.Data.TotalAlarmCount"));
 		data.setSuspiciousAlarmCount(_ctx.integerValue("DescribeContainerStatisticsResponse.Data.SuspiciousAlarmCount"));
 		data.setSeriousAlarmCount(_ctx.integerValue("DescribeContainerStatisticsResponse.Data.SeriousAlarmCount"));
-		data.setTotalNode(_ctx.integerValue("DescribeContainerStatisticsResponse.Data.TotalNode"));
 		data.setHasRiskNode(_ctx.integerValue("DescribeContainerStatisticsResponse.Data.hasRiskNode"));
 		describeContainerStatisticsResponse.setData(data);
 	 

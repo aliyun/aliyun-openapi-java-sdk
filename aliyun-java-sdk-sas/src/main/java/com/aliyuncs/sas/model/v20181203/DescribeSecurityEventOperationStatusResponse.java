@@ -69,19 +69,11 @@ public class DescribeSecurityEventOperationStatusResponse extends AcsResponse {
 
 		public static class SecurityEventOperationStatus {
 
-			private String securityEventId;
-
 			private String status;
 
+			private String securityEventId;
+
 			private String errorCode;
-
-			public String getSecurityEventId() {
-				return this.securityEventId;
-			}
-
-			public void setSecurityEventId(String securityEventId) {
-				this.securityEventId = securityEventId;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -89,6 +81,14 @@ public class DescribeSecurityEventOperationStatusResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getSecurityEventId() {
+				return this.securityEventId;
+			}
+
+			public void setSecurityEventId(String securityEventId) {
+				this.securityEventId = securityEventId;
 			}
 
 			public String getErrorCode() {

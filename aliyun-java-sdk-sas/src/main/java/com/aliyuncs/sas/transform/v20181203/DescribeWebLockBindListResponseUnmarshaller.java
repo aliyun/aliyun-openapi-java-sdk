@@ -27,25 +27,25 @@ public class DescribeWebLockBindListResponseUnmarshaller {
 	public static DescribeWebLockBindListResponse unmarshall(DescribeWebLockBindListResponse describeWebLockBindListResponse, UnmarshallerContext _ctx) {
 		
 		describeWebLockBindListResponse.setRequestId(_ctx.stringValue("DescribeWebLockBindListResponse.RequestId"));
-		describeWebLockBindListResponse.setPageSize(_ctx.integerValue("DescribeWebLockBindListResponse.PageSize"));
 		describeWebLockBindListResponse.setCurrentPage(_ctx.integerValue("DescribeWebLockBindListResponse.CurrentPage"));
+		describeWebLockBindListResponse.setPageSize(_ctx.integerValue("DescribeWebLockBindListResponse.PageSize"));
 		describeWebLockBindListResponse.setTotalCount(_ctx.integerValue("DescribeWebLockBindListResponse.TotalCount"));
 
 		List<Bind> bindList = new ArrayList<Bind>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebLockBindListResponse.BindList.Length"); i++) {
 			Bind bind = new Bind();
-			bind.setUuid(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].Uuid"));
-			bind.setInstanceName(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].InstanceName"));
-			bind.setInternetIp(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].InternetIp"));
-			bind.setIntranetIp(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].IntranetIp"));
-			bind.setOs(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].Os"));
-			bind.setDirCount(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].DirCount"));
-			bind.setServiceStatus(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].ServiceStatus"));
-			bind.setServiceCode(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].ServiceCode"));
-			bind.setServiceDetail(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].ServiceDetail"));
 			bind.setStatus(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].Status"));
 			bind.setPercent(_ctx.integerValue("DescribeWebLockBindListResponse.BindList["+ i +"].Percent"));
+			bind.setInternetIp(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].InternetIp"));
+			bind.setServiceDetail(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].ServiceDetail"));
+			bind.setOs(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].Os"));
+			bind.setServiceStatus(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].ServiceStatus"));
+			bind.setIntranetIp(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].IntranetIp"));
 			bind.setAuditCount(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].AuditCount"));
+			bind.setUuid(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].Uuid"));
+			bind.setServiceCode(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].ServiceCode"));
+			bind.setInstanceName(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].InstanceName"));
+			bind.setDirCount(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].DirCount"));
 			bind.setBlockCount(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].BlockCount"));
 
 			bindList.add(bind);

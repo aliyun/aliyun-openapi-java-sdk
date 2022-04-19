@@ -31,7 +31,7 @@ public class DescribeWebLockConfigListRequest extends RpcAcsRequest<DescribeWebL
 
 	private String lang;
 	public DescribeWebLockConfigListRequest() {
-		super("Sas", "2018-12-03", "DescribeWebLockConfigList", "sas");
+		super("Sas", "2018-12-03", "DescribeWebLockConfigList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

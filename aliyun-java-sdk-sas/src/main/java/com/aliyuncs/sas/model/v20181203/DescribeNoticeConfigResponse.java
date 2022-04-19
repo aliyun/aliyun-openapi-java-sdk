@@ -49,13 +49,13 @@ public class DescribeNoticeConfigResponse extends AcsResponse {
 
 		private Integer timeLimit;
 
-		private Integer route;
-
-		private String project;
-
 		private Long aliUid;
 
 		private Integer currentPage;
+
+		private String project;
+
+		private Integer route;
 
 		public Integer getTimeLimit() {
 			return this.timeLimit;
@@ -63,22 +63,6 @@ public class DescribeNoticeConfigResponse extends AcsResponse {
 
 		public void setTimeLimit(Integer timeLimit) {
 			this.timeLimit = timeLimit;
-		}
-
-		public Integer getRoute() {
-			return this.route;
-		}
-
-		public void setRoute(Integer route) {
-			this.route = route;
-		}
-
-		public String getProject() {
-			return this.project;
-		}
-
-		public void setProject(String project) {
-			this.project = project;
 		}
 
 		public Long getAliUid() {
@@ -95,6 +79,22 @@ public class DescribeNoticeConfigResponse extends AcsResponse {
 
 		public void setCurrentPage(Integer currentPage) {
 			this.currentPage = currentPage;
+		}
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public void setProject(String project) {
+			this.project = project;
+		}
+
+		public Integer getRoute() {
+			return this.route;
+		}
+
+		public void setRoute(Integer route) {
+			this.route = route;
 		}
 	}
 

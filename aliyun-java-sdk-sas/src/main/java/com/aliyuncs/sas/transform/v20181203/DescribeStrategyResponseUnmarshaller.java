@@ -32,24 +32,25 @@ public class DescribeStrategyResponseUnmarshaller {
 		List<Strategy> strategies = new ArrayList<Strategy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStrategyResponse.Strategies.Length"); i++) {
 			Strategy strategy = new Strategy();
-			strategy.setCycleDays(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].CycleDays"));
-			strategy.setId(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].Id"));
-			strategy.setCycleStartTime(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].CycleStartTime"));
 			strategy.setType(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].Type"));
-			strategy.setName(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].Name"));
-			strategy.setRiskCount(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].RiskCount"));
-			strategy.setEcsCount(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].EcsCount"));
 			strategy.setExecStatus(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].ExecStatus"));
-			strategy.setProcessRate(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].ProcessRate"));
 			strategy.setPassRate(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].PassRate"));
 			strategy.setAuthVersionList(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].AuthVersionList"));
+			strategy.setCycleStartTime(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].CycleStartTime"));
+			strategy.setCustomType(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].CustomType"));
+			strategy.setEcsCount(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].EcsCount"));
+			strategy.setProcessRate(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].ProcessRate"));
+			strategy.setCycleDays(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].CycleDays"));
+			strategy.setRiskCount(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].RiskCount"));
+			strategy.setName(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].Name"));
+			strategy.setId(_ctx.integerValue("DescribeStrategyResponse.Strategies["+ i +"].Id"));
 
 			List<ConfigTarget> configTargets = new ArrayList<ConfigTarget>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeStrategyResponse.Strategies["+ i +"].ConfigTargets.Length"); j++) {
 				ConfigTarget configTarget = new ConfigTarget();
 				configTarget.setFlag(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].Flag"));
-				configTarget.setTargetType(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].TargetType"));
 				configTarget.setTarget(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].Target"));
+				configTarget.setTargetType(_ctx.stringValue("DescribeStrategyResponse.Strategies["+ i +"].ConfigTargets["+ j +"].TargetType"));
 
 				configTargets.add(configTarget);
 			}

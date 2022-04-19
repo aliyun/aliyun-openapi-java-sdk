@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class FixCheckWarningsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long batchId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getBatchId() {
 		return this.batchId;
@@ -42,6 +34,14 @@ public class FixCheckWarningsResponse extends AcsResponse {
 
 	public void setBatchId(Long batchId) {
 		this.batchId = batchId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

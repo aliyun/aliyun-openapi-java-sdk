@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeModuleConfigResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private Integer count;
 
-	private Integer httpStatusCode;
-
 	private List<ModuleConfig> moduleConfigList;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeModuleConfigResponse extends AcsResponse {
 		this.count = count;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public List<ModuleConfig> getModuleConfigList() {
 		return this.moduleConfigList;
 	}
@@ -77,19 +77,11 @@ public class DescribeModuleConfigResponse extends AcsResponse {
 
 	public static class ModuleConfig {
 
-		private String configName;
-
 		private String moduleName;
 
+		private String configName;
+
 		private List<Item> items;
-
-		public String getConfigName() {
-			return this.configName;
-		}
-
-		public void setConfigName(String configName) {
-			this.configName = configName;
-		}
 
 		public String getModuleName() {
 			return this.moduleName;
@@ -97,6 +89,14 @@ public class DescribeModuleConfigResponse extends AcsResponse {
 
 		public void setModuleName(String moduleName) {
 			this.moduleName = moduleName;
+		}
+
+		public String getConfigName() {
+			return this.configName;
+		}
+
+		public void setConfigName(String configName) {
+			this.configName = configName;
 		}
 
 		public List<Item> getItems() {
@@ -109,32 +109,24 @@ public class DescribeModuleConfigResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String instanceId;
-
-			private String instanceName;
+			private String uuid;
 
 			private Integer groupId;
 
-			private String ip;
+			private String instanceName;
 
 			private String region;
 
-			private String uuid;
+			private String ip;
 
-			public String getInstanceId() {
-				return this.instanceId;
+			private String instanceId;
+
+			public String getUuid() {
+				return this.uuid;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getInstanceName() {
-				return this.instanceName;
-			}
-
-			public void setInstanceName(String instanceName) {
-				this.instanceName = instanceName;
+			public void setUuid(String uuid) {
+				this.uuid = uuid;
 			}
 
 			public Integer getGroupId() {
@@ -145,12 +137,12 @@ public class DescribeModuleConfigResponse extends AcsResponse {
 				this.groupId = groupId;
 			}
 
-			public String getIp() {
-				return this.ip;
+			public String getInstanceName() {
+				return this.instanceName;
 			}
 
-			public void setIp(String ip) {
-				this.ip = ip;
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
 			}
 
 			public String getRegion() {
@@ -161,12 +153,20 @@ public class DescribeModuleConfigResponse extends AcsResponse {
 				this.region = region;
 			}
 
-			public String getUuid() {
-				return this.uuid;
+			public String getIp() {
+				return this.ip;
 			}
 
-			public void setUuid(String uuid) {
-				this.uuid = uuid;
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 		}
 	}

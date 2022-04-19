@@ -23,13 +23,13 @@ public class DescribeCheckWarningDetailResponseUnmarshaller {
 	public static DescribeCheckWarningDetailResponse unmarshall(DescribeCheckWarningDetailResponse describeCheckWarningDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeCheckWarningDetailResponse.setRequestId(_ctx.stringValue("DescribeCheckWarningDetailResponse.RequestId"));
+		describeCheckWarningDetailResponse.setAdvice(_ctx.stringValue("DescribeCheckWarningDetailResponse.Advice"));
+		describeCheckWarningDetailResponse.setType(_ctx.stringValue("DescribeCheckWarningDetailResponse.Type"));
+		describeCheckWarningDetailResponse.setDescription(_ctx.stringValue("DescribeCheckWarningDetailResponse.Description"));
+		describeCheckWarningDetailResponse.setItem(_ctx.stringValue("DescribeCheckWarningDetailResponse.Item"));
 		describeCheckWarningDetailResponse.setCheckId(_ctx.longValue("DescribeCheckWarningDetailResponse.CheckId"));
 		describeCheckWarningDetailResponse.setLevel(_ctx.stringValue("DescribeCheckWarningDetailResponse.Level"));
-		describeCheckWarningDetailResponse.setItem(_ctx.stringValue("DescribeCheckWarningDetailResponse.Item"));
 		describeCheckWarningDetailResponse.setPrompt(_ctx.stringValue("DescribeCheckWarningDetailResponse.Prompt"));
-		describeCheckWarningDetailResponse.setType(_ctx.stringValue("DescribeCheckWarningDetailResponse.Type"));
-		describeCheckWarningDetailResponse.setAdvice(_ctx.stringValue("DescribeCheckWarningDetailResponse.Advice"));
-		describeCheckWarningDetailResponse.setDescription(_ctx.stringValue("DescribeCheckWarningDetailResponse.Description"));
 	 
 	 	return describeCheckWarningDetailResponse;
 	}

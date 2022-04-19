@@ -25,8 +25,6 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroupedInstancesResponse> {
 	   
 
-	private String criteria;
-
 	private String groupField;
 
 	private Boolean noPage;
@@ -41,23 +39,12 @@ public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroup
 
 	private String machineTypes;
 	public DescribeGroupedInstancesRequest() {
-		super("Sas", "2018-12-03", "DescribeGroupedInstances", "sas");
+		super("Sas", "2018-12-03", "DescribeGroupedInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getCriteria() {
-		return this.criteria;
-	}
-
-	public void setCriteria(String criteria) {
-		this.criteria = criteria;
-		if(criteria != null){
-			putQueryParameter("Criteria", criteria);
-		}
 	}
 
 	public String getGroupField() {

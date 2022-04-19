@@ -35,7 +35,7 @@ public class DescribeAccesskeyLeakListRequest extends RpcAcsRequest<DescribeAcce
 
 	private String status;
 	public DescribeAccesskeyLeakListRequest() {
-		super("Sas", "2018-12-03", "DescribeAccesskeyLeakList", "sas");
+		super("Sas", "2018-12-03", "DescribeAccesskeyLeakList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

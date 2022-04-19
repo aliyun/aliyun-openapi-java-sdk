@@ -30,31 +30,36 @@ public class DescribePropertyUserDetailResponseUnmarshaller {
 		describePropertyUserDetailResponse.setRequestId(_ctx.stringValue("DescribePropertyUserDetailResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribePropertyUserDetailResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertyUserDetailResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribePropertyUserDetailResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribePropertyUserDetailResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertyUserDetailResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribePropertyUserDetailResponse.PageInfo.Count"));
 		describePropertyUserDetailResponse.setPageInfo(pageInfo);
 
 		List<PropertyUser> propertys = new ArrayList<PropertyUser>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePropertyUserDetailResponse.Propertys.Length"); i++) {
 			PropertyUser propertyUser = new PropertyUser();
-			propertyUser.setLastLoginTime(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].LastLoginTime"));
-			propertyUser.setLastLoginTimestamp(_ctx.longValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].LastLoginTimestamp"));
-			propertyUser.setIsRoot(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IsRoot"));
-			propertyUser.setInstanceName(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].InstanceName"));
-			propertyUser.setAccountsExpirationDate(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].AccountsExpirationDate"));
-			propertyUser.setPasswordExpirationDate(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].PasswordExpirationDate"));
-			propertyUser.setIp(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].Ip"));
-			propertyUser.setCreate(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].Create"));
-			propertyUser.setCreateTimestamp(_ctx.longValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].CreateTimestamp"));
-			propertyUser.setUser(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].User"));
-			propertyUser.setUuid(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].Uuid"));
+			propertyUser.setStatus(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].Status"));
 			propertyUser.setLastLoginIp(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].LastLoginIp"));
+			propertyUser.setInternetIp(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].InternetIp"));
+			propertyUser.setLastLoginTime(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].LastLoginTime"));
+			propertyUser.setIsRoot(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IsRoot"));
+			propertyUser.setIp(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].Ip"));
+			propertyUser.setUser(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].User"));
 			propertyUser.setInstanceId(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].InstanceId"));
 			propertyUser.setIntranetIp(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IntranetIp"));
-			propertyUser.setInternetIp(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].InternetIp"));
-			propertyUser.setStatus(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].Status"));
+			propertyUser.setPasswordExpirationDate(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].PasswordExpirationDate"));
+			propertyUser.setUuid(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].Uuid"));
+			propertyUser.setLastLoginTimestamp(_ctx.longValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].LastLoginTimestamp"));
+			propertyUser.setInstanceName(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].InstanceName"));
+			propertyUser.setAccountsExpirationDate(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].AccountsExpirationDate"));
+			propertyUser.setCreateTimestamp(_ctx.longValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].CreateTimestamp"));
+			propertyUser.setLastLoginTimeDt(_ctx.longValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].LastLoginTimeDt"));
+			propertyUser.setIsPasswdExpired(_ctx.integerValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IsPasswdExpired"));
+			propertyUser.setIsPasswdLocked(_ctx.integerValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IsPasswdLocked"));
+			propertyUser.setIsUserExpired(_ctx.integerValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IsUserExpired"));
+			propertyUser.setIsCouldLogin(_ctx.integerValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IsCouldLogin"));
+			propertyUser.setIsSudoer(_ctx.integerValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IsSudoer"));
 
 			List<String> groupNames = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].GroupNames.Length"); j++) {

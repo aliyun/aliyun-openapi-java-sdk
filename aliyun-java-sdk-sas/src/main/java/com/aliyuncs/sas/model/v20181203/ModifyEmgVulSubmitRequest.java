@@ -31,7 +31,7 @@ public class ModifyEmgVulSubmitRequest extends RpcAcsRequest<ModifyEmgVulSubmitR
 
 	private String lang;
 	public ModifyEmgVulSubmitRequest() {
-		super("Sas", "2018-12-03", "ModifyEmgVulSubmit", "sas");
+		super("Sas", "2018-12-03", "ModifyEmgVulSubmit");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

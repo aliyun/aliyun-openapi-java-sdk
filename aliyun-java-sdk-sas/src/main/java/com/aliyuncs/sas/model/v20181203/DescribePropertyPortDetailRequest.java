@@ -29,15 +29,19 @@ public class DescribePropertyPortDetailRequest extends RpcAcsRequest<DescribePro
 
 	private String uuid;
 
+	private String bindIp;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
+
+	private String extend;
 
 	private String port;
 
 	private String procName;
 	public DescribePropertyPortDetailRequest() {
-		super("Sas", "2018-12-03", "DescribePropertyPortDetail", "sas");
+		super("Sas", "2018-12-03", "DescribePropertyPortDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,6 +71,17 @@ public class DescribePropertyPortDetailRequest extends RpcAcsRequest<DescribePro
 		}
 	}
 
+	public String getBindIp() {
+		return this.bindIp;
+	}
+
+	public void setBindIp(String bindIp) {
+		this.bindIp = bindIp;
+		if(bindIp != null){
+			putQueryParameter("BindIp", bindIp);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -86,6 +101,17 @@ public class DescribePropertyPortDetailRequest extends RpcAcsRequest<DescribePro
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getExtend() {
+		return this.extend;
+	}
+
+	public void setExtend(String extend) {
+		this.extend = extend;
+		if(extend != null){
+			putQueryParameter("Extend", extend);
 		}
 	}
 

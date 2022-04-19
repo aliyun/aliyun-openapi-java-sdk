@@ -59,9 +59,9 @@ public class DescribePropertyPortItemResponse extends AcsResponse {
 
 		private String port;
 
-		private String proto;
-
 		private Integer count;
+
+		private String proto;
 
 		public String getPort() {
 			return this.port;
@@ -71,6 +71,14 @@ public class DescribePropertyPortItemResponse extends AcsResponse {
 			this.port = port;
 		}
 
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
+		}
+
 		public String getProto() {
 			return this.proto;
 		}
@@ -78,32 +86,24 @@ public class DescribePropertyPortItemResponse extends AcsResponse {
 		public void setProto(String proto) {
 			this.proto = proto;
 		}
-
-		public Integer getCount() {
-			return this.count;
-		}
-
-		public void setCount(Integer count) {
-			this.count = count;
-		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -122,12 +122,12 @@ public class DescribePropertyPortItemResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

@@ -35,7 +35,7 @@ public class DescribeExposedStatisticsDetailRequest extends RpcAcsRequest<Descri
 
 	private Integer pageSize;
 	public DescribeExposedStatisticsDetailRequest() {
-		super("Sas", "2018-12-03", "DescribeExposedStatisticsDetail", "sas");
+		super("Sas", "2018-12-03", "DescribeExposedStatisticsDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

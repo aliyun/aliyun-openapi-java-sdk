@@ -50,6 +50,10 @@ public class GetBackupStorageCountResponse extends AcsResponse {
 
 		private Long usageStorageByte;
 
+		private Long ecsUsageStorageByte;
+
+		private Long uniUsageStorageByte;
+
 		private Integer overflow;
 
 		public Long getBuyStorageByte() {
@@ -66,6 +70,22 @@ public class GetBackupStorageCountResponse extends AcsResponse {
 
 		public void setUsageStorageByte(Long usageStorageByte) {
 			this.usageStorageByte = usageStorageByte;
+		}
+
+		public Long getEcsUsageStorageByte() {
+			return this.ecsUsageStorageByte;
+		}
+
+		public void setEcsUsageStorageByte(Long ecsUsageStorageByte) {
+			this.ecsUsageStorageByte = ecsUsageStorageByte;
+		}
+
+		public Long getUniUsageStorageByte() {
+			return this.uniUsageStorageByte;
+		}
+
+		public void setUniUsageStorageByte(Long uniUsageStorageByte) {
+			this.uniUsageStorageByte = uniUsageStorageByte;
 		}
 
 		public Integer getOverflow() {

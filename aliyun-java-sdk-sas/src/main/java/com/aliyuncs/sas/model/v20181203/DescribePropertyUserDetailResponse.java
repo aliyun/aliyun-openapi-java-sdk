@@ -57,39 +57,73 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 
 	public static class PropertyUser {
 
-		private String lastLoginTime;
+		private String status;
 
-		private Long lastLoginTimestamp;
+		private String lastLoginIp;
+
+		private String internetIp;
+
+		private String lastLoginTime;
 
 		private String isRoot;
 
-		private String instanceName;
-
-		private String accountsExpirationDate;
-
-		private String passwordExpirationDate;
-
 		private String ip;
 
-		private String create;
-
-		private Long createTimestamp;
-
 		private String user;
-
-		private String uuid;
-
-		private String lastLoginIp;
 
 		private String instanceId;
 
 		private String intranetIp;
 
-		private String internetIp;
+		private String passwordExpirationDate;
 
-		private String status;
+		private String uuid;
+
+		private Long lastLoginTimestamp;
+
+		private String instanceName;
+
+		private String accountsExpirationDate;
+
+		private Long createTimestamp;
+
+		private Long lastLoginTimeDt;
+
+		private Integer isPasswdExpired;
+
+		private Integer isPasswdLocked;
+
+		private Integer isUserExpired;
+
+		private Integer isCouldLogin;
+
+		private Integer isSudoer;
 
 		private List<String> groupNames;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getLastLoginIp() {
+			return this.lastLoginIp;
+		}
+
+		public void setLastLoginIp(String lastLoginIp) {
+			this.lastLoginIp = lastLoginIp;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
 
 		public String getLastLoginTime() {
 			return this.lastLoginTime;
@@ -97,14 +131,6 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 
 		public void setLastLoginTime(String lastLoginTime) {
 			this.lastLoginTime = lastLoginTime;
-		}
-
-		public Long getLastLoginTimestamp() {
-			return this.lastLoginTimestamp;
-		}
-
-		public void setLastLoginTimestamp(Long lastLoginTimestamp) {
-			this.lastLoginTimestamp = lastLoginTimestamp;
 		}
 
 		public String getIsRoot() {
@@ -115,30 +141,6 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 			this.isRoot = isRoot;
 		}
 
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getAccountsExpirationDate() {
-			return this.accountsExpirationDate;
-		}
-
-		public void setAccountsExpirationDate(String accountsExpirationDate) {
-			this.accountsExpirationDate = accountsExpirationDate;
-		}
-
-		public String getPasswordExpirationDate() {
-			return this.passwordExpirationDate;
-		}
-
-		public void setPasswordExpirationDate(String passwordExpirationDate) {
-			this.passwordExpirationDate = passwordExpirationDate;
-		}
-
 		public String getIp() {
 			return this.ip;
 		}
@@ -147,44 +149,12 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
-		public String getCreate() {
-			return this.create;
-		}
-
-		public void setCreate(String create) {
-			this.create = create;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
 		public String getUser() {
 			return this.user;
 		}
 
 		public void setUser(String user) {
 			this.user = user;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getLastLoginIp() {
-			return this.lastLoginIp;
-		}
-
-		public void setLastLoginIp(String lastLoginIp) {
-			this.lastLoginIp = lastLoginIp;
 		}
 
 		public String getInstanceId() {
@@ -203,20 +173,100 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 			this.intranetIp = intranetIp;
 		}
 
-		public String getInternetIp() {
-			return this.internetIp;
+		public String getPasswordExpirationDate() {
+			return this.passwordExpirationDate;
 		}
 
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
+		public void setPasswordExpirationDate(String passwordExpirationDate) {
+			this.passwordExpirationDate = passwordExpirationDate;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getUuid() {
+			return this.uuid;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public Long getLastLoginTimestamp() {
+			return this.lastLoginTimestamp;
+		}
+
+		public void setLastLoginTimestamp(Long lastLoginTimestamp) {
+			this.lastLoginTimestamp = lastLoginTimestamp;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getAccountsExpirationDate() {
+			return this.accountsExpirationDate;
+		}
+
+		public void setAccountsExpirationDate(String accountsExpirationDate) {
+			this.accountsExpirationDate = accountsExpirationDate;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
+		}
+
+		public Long getLastLoginTimeDt() {
+			return this.lastLoginTimeDt;
+		}
+
+		public void setLastLoginTimeDt(Long lastLoginTimeDt) {
+			this.lastLoginTimeDt = lastLoginTimeDt;
+		}
+
+		public Integer getIsPasswdExpired() {
+			return this.isPasswdExpired;
+		}
+
+		public void setIsPasswdExpired(Integer isPasswdExpired) {
+			this.isPasswdExpired = isPasswdExpired;
+		}
+
+		public Integer getIsPasswdLocked() {
+			return this.isPasswdLocked;
+		}
+
+		public void setIsPasswdLocked(Integer isPasswdLocked) {
+			this.isPasswdLocked = isPasswdLocked;
+		}
+
+		public Integer getIsUserExpired() {
+			return this.isUserExpired;
+		}
+
+		public void setIsUserExpired(Integer isUserExpired) {
+			this.isUserExpired = isUserExpired;
+		}
+
+		public Integer getIsCouldLogin() {
+			return this.isCouldLogin;
+		}
+
+		public void setIsCouldLogin(Integer isCouldLogin) {
+			this.isCouldLogin = isCouldLogin;
+		}
+
+		public Integer getIsSudoer() {
+			return this.isSudoer;
+		}
+
+		public void setIsSudoer(Integer isSudoer) {
+			this.isSudoer = isSudoer;
 		}
 
 		public List<String> getGroupNames() {
@@ -230,20 +280,20 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -262,12 +312,12 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

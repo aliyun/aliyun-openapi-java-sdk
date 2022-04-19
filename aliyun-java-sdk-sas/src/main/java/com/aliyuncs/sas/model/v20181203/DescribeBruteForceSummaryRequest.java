@@ -29,7 +29,7 @@ public class DescribeBruteForceSummaryRequest extends RpcAcsRequest<DescribeBrut
 
 	private String sourceIp;
 	public DescribeBruteForceSummaryRequest() {
-		super("Sas", "2018-12-03", "DescribeBruteForceSummary", "sas");
+		super("Sas", "2018-12-03", "DescribeBruteForceSummary");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

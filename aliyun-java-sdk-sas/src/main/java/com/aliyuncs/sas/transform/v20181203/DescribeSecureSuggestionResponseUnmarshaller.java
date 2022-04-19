@@ -33,15 +33,15 @@ public class DescribeSecureSuggestionResponseUnmarshaller {
 		List<Suggestion> suggestions = new ArrayList<Suggestion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecureSuggestionResponse.Suggestions.Length"); i++) {
 			Suggestion suggestion = new Suggestion();
-			suggestion.setSuggestType(_ctx.stringValue("DescribeSecureSuggestionResponse.Suggestions["+ i +"].SuggestType"));
 			suggestion.setPoints(_ctx.integerValue("DescribeSecureSuggestionResponse.Suggestions["+ i +"].Points"));
+			suggestion.setSuggestType(_ctx.stringValue("DescribeSecureSuggestionResponse.Suggestions["+ i +"].SuggestType"));
 
 			List<DetailItem> detail = new ArrayList<DetailItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSecureSuggestionResponse.Suggestions["+ i +"].Detail.Length"); j++) {
 				DetailItem detailItem = new DetailItem();
+				detailItem.setTitle(_ctx.stringValue("DescribeSecureSuggestionResponse.Suggestions["+ i +"].Detail["+ j +"].Title"));
 				detailItem.setDescription(_ctx.stringValue("DescribeSecureSuggestionResponse.Suggestions["+ i +"].Detail["+ j +"].Description"));
 				detailItem.setSubType(_ctx.stringValue("DescribeSecureSuggestionResponse.Suggestions["+ i +"].Detail["+ j +"].SubType"));
-				detailItem.setTitle(_ctx.stringValue("DescribeSecureSuggestionResponse.Suggestions["+ i +"].Detail["+ j +"].Title"));
 
 				detail.add(detailItem);
 			}

@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCheckWarningsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer count;
+	private Integer currentPage;
 
 	private Integer pageSize;
 
+	private String requestId;
+
 	private Integer totalCount;
 
-	private Integer currentPage;
+	private Integer count;
 
 	private List<CheckWarning> checkWarnings;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public Integer getPageSize() {
@@ -61,6 +53,14 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -69,12 +69,12 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<CheckWarning> getCheckWarnings() {
@@ -87,34 +87,26 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 
 	public static class CheckWarning {
 
-		private String uuid;
-
-		private Long checkId;
+		private Integer status;
 
 		private Long checkWarningId;
 
-		private String level;
+		private String type;
+
+		private String uuid;
 
 		private String item;
 
-		private String type;
+		private Long checkId;
 
-		private Integer status;
+		private String level;
 
-		public String getUuid() {
-			return this.uuid;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public Long getCheckId() {
-			return this.checkId;
-		}
-
-		public void setCheckId(Long checkId) {
-			this.checkId = checkId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Long getCheckWarningId() {
@@ -125,12 +117,20 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 			this.checkWarningId = checkWarningId;
 		}
 
-		public String getLevel() {
-			return this.level;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setLevel(String level) {
-			this.level = level;
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
 		}
 
 		public String getItem() {
@@ -141,20 +141,20 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 			this.item = item;
 		}
 
-		public String getType() {
-			return this.type;
+		public Long getCheckId() {
+			return this.checkId;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setCheckId(Long checkId) {
+			this.checkId = checkId;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getLevel() {
+			return this.level;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setLevel(String level) {
+			this.level = level;
 		}
 	}
 

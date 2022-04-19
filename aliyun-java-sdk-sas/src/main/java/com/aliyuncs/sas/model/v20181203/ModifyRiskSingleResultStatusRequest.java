@@ -38,7 +38,7 @@ public class ModifyRiskSingleResultStatusRequest extends RpcAcsRequest<ModifyRis
 
 	private String status;
 	public ModifyRiskSingleResultStatusRequest() {
-		super("Sas", "2018-12-03", "ModifyRiskSingleResultStatus", "sas");
+		super("Sas", "2018-12-03", "ModifyRiskSingleResultStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

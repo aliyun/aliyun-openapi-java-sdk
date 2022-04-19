@@ -38,6 +38,8 @@ public class DescribeVulWhitelistResponseUnmarshaller {
 			vulWhitelist.setType(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Type"));
 			vulWhitelist.setAliasName(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].AliasName"));
 			vulWhitelist.setReason(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Reason"));
+			vulWhitelist.setTargetInfo(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].TargetInfo"));
+			vulWhitelist.setId(_ctx.stringValue("DescribeVulWhitelistResponse.VulWhitelists["+ i +"].Id"));
 
 			vulWhitelists.add(vulWhitelist);
 		}

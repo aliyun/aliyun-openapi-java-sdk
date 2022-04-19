@@ -31,7 +31,7 @@ public class ModifyAssetGroupRequest extends RpcAcsRequest<ModifyAssetGroupRespo
 
 	private String uuids;
 	public ModifyAssetGroupRequest() {
-		super("Sas", "2018-12-03", "ModifyAssetGroup", "sas");
+		super("Sas", "2018-12-03", "ModifyAssetGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

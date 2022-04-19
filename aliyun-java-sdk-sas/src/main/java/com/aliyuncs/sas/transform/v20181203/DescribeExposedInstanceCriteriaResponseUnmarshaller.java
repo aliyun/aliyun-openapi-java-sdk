@@ -31,9 +31,9 @@ public class DescribeExposedInstanceCriteriaResponseUnmarshaller {
 		List<Criteria> criteriaList = new ArrayList<Criteria>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeExposedInstanceCriteriaResponse.CriteriaList.Length"); i++) {
 			Criteria criteria = new Criteria();
-			criteria.setValues(_ctx.stringValue("DescribeExposedInstanceCriteriaResponse.CriteriaList["+ i +"].Values"));
-			criteria.setName(_ctx.stringValue("DescribeExposedInstanceCriteriaResponse.CriteriaList["+ i +"].Name"));
 			criteria.setType(_ctx.stringValue("DescribeExposedInstanceCriteriaResponse.CriteriaList["+ i +"].Type"));
+			criteria.setName(_ctx.stringValue("DescribeExposedInstanceCriteriaResponse.CriteriaList["+ i +"].Name"));
+			criteria.setValues(_ctx.stringValue("DescribeExposedInstanceCriteriaResponse.CriteriaList["+ i +"].Values"));
 
 			criteriaList.add(criteria);
 		}

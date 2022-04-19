@@ -57,83 +57,27 @@ public class DescribeDingTalkResponse extends AcsResponse {
 
 	public static class ActionListArr {
 
-		private Long gmtModified;
-
-		private Integer id;
-
-		private Long aliUid;
-
-		private Long gmtCreate;
-
-		private String url;
-
-		private Integer intervalTime;
-
-		private String actionName;
-
 		private Integer status;
 
 		private String configList;
 
-		private String groupIdList;
+		private Long gmtCreate;
+
+		private String actionName;
+
+		private String url;
+
+		private Long aliUid;
 
 		private String dingTalkLang;
 
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
+		private Integer intervalTime;
 
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
+		private Long gmtModified;
 
-		public Integer getId() {
-			return this.id;
-		}
+		private String groupIdList;
 
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-
-		public Integer getIntervalTime() {
-			return this.intervalTime;
-		}
-
-		public void setIntervalTime(Integer intervalTime) {
-			this.intervalTime = intervalTime;
-		}
-
-		public String getActionName() {
-			return this.actionName;
-		}
-
-		public void setActionName(String actionName) {
-			this.actionName = actionName;
-		}
+		private Integer id;
 
 		public Integer getStatus() {
 			return this.status;
@@ -151,12 +95,36 @@ public class DescribeDingTalkResponse extends AcsResponse {
 			this.configList = configList;
 		}
 
-		public String getGroupIdList() {
-			return this.groupIdList;
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setGroupIdList(String groupIdList) {
-			this.groupIdList = groupIdList;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getActionName() {
+			return this.actionName;
+		}
+
+		public void setActionName(String actionName) {
+			this.actionName = actionName;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
 		}
 
 		public String getDingTalkLang() {
@@ -166,15 +134,55 @@ public class DescribeDingTalkResponse extends AcsResponse {
 		public void setDingTalkLang(String dingTalkLang) {
 			this.dingTalkLang = dingTalkLang;
 		}
+
+		public Integer getIntervalTime() {
+			return this.intervalTime;
+		}
+
+		public void setIntervalTime(Integer intervalTime) {
+			this.intervalTime = intervalTime;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getGroupIdList() {
+			return this.groupIdList;
+		}
+
+		public void setGroupIdList(String groupIdList) {
+			this.groupIdList = groupIdList;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
 	}
 
 	public static class PageInfo {
+
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		public Integer getCurrentPage() {
+			return this.currentPage;
+		}
+
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
+		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -190,14 +198,6 @@ public class DescribeDingTalkResponse extends AcsResponse {
 
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
-		}
-
-		public Integer getCurrentPage() {
-			return this.currentPage;
-		}
-
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
 		}
 	}
 

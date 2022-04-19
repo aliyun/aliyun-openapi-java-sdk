@@ -47,13 +47,21 @@ public class DescribeStrategyTargetResponse extends AcsResponse {
 
 	public static class StrategyTarget {
 
+		private Integer bindUuidCount;
+
 		private String flag;
 
 		private String target;
 
 		private String targetType;
 
-		private Integer bindUuidCount;
+		public Integer getBindUuidCount() {
+			return this.bindUuidCount;
+		}
+
+		public void setBindUuidCount(Integer bindUuidCount) {
+			this.bindUuidCount = bindUuidCount;
+		}
 
 		public String getFlag() {
 			return this.flag;
@@ -77,14 +85,6 @@ public class DescribeStrategyTargetResponse extends AcsResponse {
 
 		public void setTargetType(String targetType) {
 			this.targetType = targetType;
-		}
-
-		public Integer getBindUuidCount() {
-			return this.bindUuidCount;
-		}
-
-		public void setBindUuidCount(Integer bindUuidCount) {
-			this.bindUuidCount = bindUuidCount;
 		}
 	}
 

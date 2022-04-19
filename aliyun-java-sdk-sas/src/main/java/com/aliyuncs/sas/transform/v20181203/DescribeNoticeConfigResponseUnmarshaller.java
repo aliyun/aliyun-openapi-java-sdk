@@ -32,10 +32,10 @@ public class DescribeNoticeConfigResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeNoticeConfigResponse.NoticeConfigList.Length"); i++) {
 			NoticeConfig noticeConfig = new NoticeConfig();
 			noticeConfig.setTimeLimit(_ctx.integerValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].TimeLimit"));
-			noticeConfig.setRoute(_ctx.integerValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].Route"));
-			noticeConfig.setProject(_ctx.stringValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].Project"));
 			noticeConfig.setAliUid(_ctx.longValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].AliUid"));
 			noticeConfig.setCurrentPage(_ctx.integerValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].CurrentPage"));
+			noticeConfig.setProject(_ctx.stringValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].Project"));
+			noticeConfig.setRoute(_ctx.integerValue("DescribeNoticeConfigResponse.NoticeConfigList["+ i +"].Route"));
 
 			noticeConfigList.add(noticeConfig);
 		}

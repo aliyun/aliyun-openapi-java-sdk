@@ -27,25 +27,25 @@ public class DescribeCheckWarningSummaryResponseUnmarshaller {
 	public static DescribeCheckWarningSummaryResponse unmarshall(DescribeCheckWarningSummaryResponse describeCheckWarningSummaryResponse, UnmarshallerContext _ctx) {
 		
 		describeCheckWarningSummaryResponse.setRequestId(_ctx.stringValue("DescribeCheckWarningSummaryResponse.RequestId"));
-		describeCheckWarningSummaryResponse.setCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.Count"));
+		describeCheckWarningSummaryResponse.setCurrentPage(_ctx.integerValue("DescribeCheckWarningSummaryResponse.CurrentPage"));
 		describeCheckWarningSummaryResponse.setPageSize(_ctx.integerValue("DescribeCheckWarningSummaryResponse.PageSize"));
 		describeCheckWarningSummaryResponse.setTotalCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.TotalCount"));
-		describeCheckWarningSummaryResponse.setCurrentPage(_ctx.integerValue("DescribeCheckWarningSummaryResponse.CurrentPage"));
+		describeCheckWarningSummaryResponse.setCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.Count"));
 
 		List<WarningSummary> warningSummarys = new ArrayList<WarningSummary>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCheckWarningSummaryResponse.WarningSummarys.Length"); i++) {
 			WarningSummary warningSummary = new WarningSummary();
-			warningSummary.setRiskId(_ctx.longValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskId"));
-			warningSummary.setRiskName(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskName"));
-			warningSummary.setTypeAlias(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].TypeAlias"));
-			warningSummary.setSubTypeAlias(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].SubTypeAlias"));
-			warningSummary.setLastFoundTime(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].LastFoundTime"));
-			warningSummary.setLevel(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].Level"));
-			warningSummary.setCheckCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].CheckCount"));
-			warningSummary.setHighWarningCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].HighWarningCount"));
-			warningSummary.setMediumWarningCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].MediumWarningCount"));
 			warningSummary.setLowWarningCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].LowWarningCount"));
+			warningSummary.setCheckCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].CheckCount"));
+			warningSummary.setMediumWarningCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].MediumWarningCount"));
+			warningSummary.setLastFoundTime(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].LastFoundTime"));
+			warningSummary.setRiskId(_ctx.longValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskId"));
+			warningSummary.setSubTypeAlias(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].SubTypeAlias"));
 			warningSummary.setWarningMachineCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].WarningMachineCount"));
+			warningSummary.setHighWarningCount(_ctx.integerValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].HighWarningCount"));
+			warningSummary.setTypeAlias(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].TypeAlias"));
+			warningSummary.setRiskName(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskName"));
+			warningSummary.setLevel(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].Level"));
 
 			warningSummarys.add(warningSummary);
 		}

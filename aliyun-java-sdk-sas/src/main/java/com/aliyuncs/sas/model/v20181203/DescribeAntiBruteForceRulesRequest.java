@@ -29,7 +29,7 @@ public class DescribeAntiBruteForceRulesRequest extends RpcAcsRequest<DescribeAn
 
 	private String sourceIp;
 	public DescribeAntiBruteForceRulesRequest() {
-		super("Sas", "2018-12-03", "DescribeAntiBruteForceRules", "sas");
+		super("Sas", "2018-12-03", "DescribeAntiBruteForceRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

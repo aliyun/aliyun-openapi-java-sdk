@@ -57,77 +57,41 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 	public static class AffectedMaliciousFileImage {
 
-		private String layer;
-
-		private Long firstScanTimestamp;
-
-		private Long latestScanTimestamp;
-
-		private Long latestVerifyTimestamp;
-
-		private String maliciousMd5;
-
 		private Integer status;
-
-		private String level;
-
-		private String imageUuid;
-
-		private String filePath;
 
 		private String digest;
 
-		private String repoRegionId;
+		private Long latestVerifyTimestamp;
 
 		private String repoInstanceId;
-
-		private String repoId;
-
-		private String repoName;
 
 		private String namespace;
 
 		private String tag;
 
-		public String getLayer() {
-			return this.layer;
-		}
+		private String repoRegionId;
 
-		public void setLayer(String layer) {
-			this.layer = layer;
-		}
+		private String imageUuid;
 
-		public Long getFirstScanTimestamp() {
-			return this.firstScanTimestamp;
-		}
+		private Long firstScanTimestamp;
 
-		public void setFirstScanTimestamp(Long firstScanTimestamp) {
-			this.firstScanTimestamp = firstScanTimestamp;
-		}
+		private String maliciousMd5;
 
-		public Long getLatestScanTimestamp() {
-			return this.latestScanTimestamp;
-		}
+		private String filePath;
 
-		public void setLatestScanTimestamp(Long latestScanTimestamp) {
-			this.latestScanTimestamp = latestScanTimestamp;
-		}
+		private String repoId;
 
-		public Long getLatestVerifyTimestamp() {
-			return this.latestVerifyTimestamp;
-		}
+		private String layer;
 
-		public void setLatestVerifyTimestamp(Long latestVerifyTimestamp) {
-			this.latestVerifyTimestamp = latestVerifyTimestamp;
-		}
+		private Long latestScanTimestamp;
 
-		public String getMaliciousMd5() {
-			return this.maliciousMd5;
-		}
+		private String repoName;
 
-		public void setMaliciousMd5(String maliciousMd5) {
-			this.maliciousMd5 = maliciousMd5;
-		}
+		private String level;
+
+		private String downloadUrl;
+
+		private String highLight;
 
 		public Integer getStatus() {
 			return this.status;
@@ -135,30 +99,6 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
-		public String getImageUuid() {
-			return this.imageUuid;
-		}
-
-		public void setImageUuid(String imageUuid) {
-			this.imageUuid = imageUuid;
-		}
-
-		public String getFilePath() {
-			return this.filePath;
-		}
-
-		public void setFilePath(String filePath) {
-			this.filePath = filePath;
 		}
 
 		public String getDigest() {
@@ -169,12 +109,12 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 			this.digest = digest;
 		}
 
-		public String getRepoRegionId() {
-			return this.repoRegionId;
+		public Long getLatestVerifyTimestamp() {
+			return this.latestVerifyTimestamp;
 		}
 
-		public void setRepoRegionId(String repoRegionId) {
-			this.repoRegionId = repoRegionId;
+		public void setLatestVerifyTimestamp(Long latestVerifyTimestamp) {
+			this.latestVerifyTimestamp = latestVerifyTimestamp;
 		}
 
 		public String getRepoInstanceId() {
@@ -183,22 +123,6 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 		public void setRepoInstanceId(String repoInstanceId) {
 			this.repoInstanceId = repoInstanceId;
-		}
-
-		public String getRepoId() {
-			return this.repoId;
-		}
-
-		public void setRepoId(String repoId) {
-			this.repoId = repoId;
-		}
-
-		public String getRepoName() {
-			return this.repoName;
-		}
-
-		public void setRepoName(String repoName) {
-			this.repoName = repoName;
 		}
 
 		public String getNamespace() {
@@ -216,24 +140,120 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 		public void setTag(String tag) {
 			this.tag = tag;
 		}
+
+		public String getRepoRegionId() {
+			return this.repoRegionId;
+		}
+
+		public void setRepoRegionId(String repoRegionId) {
+			this.repoRegionId = repoRegionId;
+		}
+
+		public String getImageUuid() {
+			return this.imageUuid;
+		}
+
+		public void setImageUuid(String imageUuid) {
+			this.imageUuid = imageUuid;
+		}
+
+		public Long getFirstScanTimestamp() {
+			return this.firstScanTimestamp;
+		}
+
+		public void setFirstScanTimestamp(Long firstScanTimestamp) {
+			this.firstScanTimestamp = firstScanTimestamp;
+		}
+
+		public String getMaliciousMd5() {
+			return this.maliciousMd5;
+		}
+
+		public void setMaliciousMd5(String maliciousMd5) {
+			this.maliciousMd5 = maliciousMd5;
+		}
+
+		public String getFilePath() {
+			return this.filePath;
+		}
+
+		public void setFilePath(String filePath) {
+			this.filePath = filePath;
+		}
+
+		public String getRepoId() {
+			return this.repoId;
+		}
+
+		public void setRepoId(String repoId) {
+			this.repoId = repoId;
+		}
+
+		public String getLayer() {
+			return this.layer;
+		}
+
+		public void setLayer(String layer) {
+			this.layer = layer;
+		}
+
+		public Long getLatestScanTimestamp() {
+			return this.latestScanTimestamp;
+		}
+
+		public void setLatestScanTimestamp(Long latestScanTimestamp) {
+			this.latestScanTimestamp = latestScanTimestamp;
+		}
+
+		public String getRepoName() {
+			return this.repoName;
+		}
+
+		public void setRepoName(String repoName) {
+			this.repoName = repoName;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public String getDownloadUrl() {
+			return this.downloadUrl;
+		}
+
+		public void setDownloadUrl(String downloadUrl) {
+			this.downloadUrl = downloadUrl;
+		}
+
+		public String getHighLight() {
+			return this.highLight;
+		}
+
+		public void setHighLight(String highLight) {
+			this.highLight = highLight;
+		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -252,12 +272,12 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

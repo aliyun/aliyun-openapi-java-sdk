@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePropertyUsageNewestResponse extends AcsResponse {
 
-	private String requestId;
+	private String type;
 
 	private Integer itemCount;
 
-	private String type;
+	private String requestId;
 
 	private List<NewestStatisticItem> newestStatisticItems;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public Integer getItemCount() {
@@ -49,12 +49,12 @@ public class DescribePropertyUsageNewestResponse extends AcsResponse {
 		this.itemCount = itemCount;
 	}
 
-	public String getType() {
-		return this.type;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<NewestStatisticItem> getNewestStatisticItems() {

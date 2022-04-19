@@ -57,52 +57,36 @@ public class DescribePropertySoftwareDetailResponse extends AcsResponse {
 
 	public static class PropertySoftware {
 
-		private String name;
-
-		private String path;
-
-		private String instanceName;
+		private String internetIp;
 
 		private String ip;
-
-		private Long create;
-
-		private Long createTimestamp;
-
-		private String installTime;
-
-		private String version;
-
-		private String uuid;
 
 		private String instanceId;
 
 		private String intranetIp;
 
-		private String internetIp;
+		private String installTime;
 
-		public String getName() {
-			return this.name;
+		private String uuid;
+
+		private String version;
+
+		private String instanceName;
+
+		private String path;
+
+		private String name;
+
+		private Long createTimestamp;
+
+		private Long installTimeDt;
+
+		public String getInternetIp() {
+			return this.internetIp;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getPath() {
-			return this.path;
-		}
-
-		public void setPath(String path) {
-			this.path = path;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
 		public String getIp() {
@@ -111,46 +95,6 @@ public class DescribePropertySoftwareDetailResponse extends AcsResponse {
 
 		public void setIp(String ip) {
 			this.ip = ip;
-		}
-
-		public Long getCreate() {
-			return this.create;
-		}
-
-		public void setCreate(Long create) {
-			this.create = create;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getInstallTime() {
-			return this.installTime;
-		}
-
-		public void setInstallTime(String installTime) {
-			this.installTime = installTime;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
 		}
 
 		public String getInstanceId() {
@@ -169,31 +113,87 @@ public class DescribePropertySoftwareDetailResponse extends AcsResponse {
 			this.intranetIp = intranetIp;
 		}
 
-		public String getInternetIp() {
-			return this.internetIp;
+		public String getInstallTime() {
+			return this.installTime;
 		}
 
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
+		public void setInstallTime(String installTime) {
+			this.installTime = installTime;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
+		}
+
+		public Long getInstallTimeDt() {
+			return this.installTimeDt;
+		}
+
+		public void setInstallTimeDt(Long installTimeDt) {
+			this.installTimeDt = installTimeDt;
 		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -212,12 +212,12 @@ public class DescribePropertySoftwareDetailResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

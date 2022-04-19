@@ -33,17 +33,18 @@ public class DescribeSecurityEventOperationsResponseUnmarshaller {
 		List<SecurityEventOperation> securityEventOperationsResponse = new ArrayList<SecurityEventOperation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse.Length"); i++) {
 			SecurityEventOperation securityEventOperation = new SecurityEventOperation();
-			securityEventOperation.setOperationCode(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].OperationCode"));
 			securityEventOperation.setOperationParams(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].OperationParams"));
+			securityEventOperation.setOperationCode(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].OperationCode"));
 			securityEventOperation.setUserCanOperate(_ctx.booleanValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].UserCanOperate"));
 
 			List<MarkFieldItem> markField = new ArrayList<MarkFieldItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField.Length"); j++) {
 				MarkFieldItem markFieldItem = new MarkFieldItem();
+				markFieldItem.setMarkMisType(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].MarkMisType"));
 				markFieldItem.setFiledName(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].FiledName"));
 				markFieldItem.setFiledAliasName(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].FiledAliasName"));
-				markFieldItem.setMarkMisType(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].MarkMisType"));
 				markFieldItem.setMarkMisValue(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].MarkMisValue"));
+				markFieldItem.setUuid(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].Uuid"));
 
 				List<String> supportedMisType = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].SupportedMisType.Length"); k++) {

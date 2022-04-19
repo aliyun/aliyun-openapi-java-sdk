@@ -27,17 +27,11 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 
 	private String type;
 
-	private Long lastTsEnd;
-
-	private Long createTsStart;
+	private Integer isLatest;
 
 	private String imageTag;
 
-	private String level;
-
 	private String groupId;
-
-	private String orderBy;
 
 	private String aliasName;
 
@@ -45,19 +39,13 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 
 	private String name;
 
-	private Long createTsEnd;
-
 	private String necessity;
 
 	private String uuids;
 
 	private String repoId;
 
-	private String statusList;
-
 	private String cveId;
-
-	private String remark;
 
 	private String repoNamespace;
 
@@ -67,15 +55,9 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 
 	private String lang;
 
-	private Long lastTsStart;
-
-	private String direction;
-
-	private String dealed;
-
 	private Integer currentPage;
 
-	private String searchTags;
+	private String clusterId;
 
 	private String repoName;
 
@@ -85,7 +67,7 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 
 	private String repoRegionId;
 	public DescribeImageGroupedVulListRequest() {
-		super("Sas", "2018-12-03", "DescribeImageGroupedVulList", "sas");
+		super("Sas", "2018-12-03", "DescribeImageGroupedVulList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -104,25 +86,14 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public Long getLastTsEnd() {
-		return this.lastTsEnd;
+	public Integer getIsLatest() {
+		return this.isLatest;
 	}
 
-	public void setLastTsEnd(Long lastTsEnd) {
-		this.lastTsEnd = lastTsEnd;
-		if(lastTsEnd != null){
-			putQueryParameter("LastTsEnd", lastTsEnd.toString());
-		}
-	}
-
-	public Long getCreateTsStart() {
-		return this.createTsStart;
-	}
-
-	public void setCreateTsStart(Long createTsStart) {
-		this.createTsStart = createTsStart;
-		if(createTsStart != null){
-			putQueryParameter("CreateTsStart", createTsStart.toString());
+	public void setIsLatest(Integer isLatest) {
+		this.isLatest = isLatest;
+		if(isLatest != null){
+			putQueryParameter("IsLatest", isLatest.toString());
 		}
 	}
 
@@ -137,17 +108,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
-		}
-	}
-
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -156,17 +116,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getOrderBy() {
-		return this.orderBy;
-	}
-
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-		if(orderBy != null){
-			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 
@@ -203,17 +152,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public Long getCreateTsEnd() {
-		return this.createTsEnd;
-	}
-
-	public void setCreateTsEnd(Long createTsEnd) {
-		this.createTsEnd = createTsEnd;
-		if(createTsEnd != null){
-			putQueryParameter("CreateTsEnd", createTsEnd.toString());
-		}
-	}
-
 	public String getNecessity() {
 		return this.necessity;
 	}
@@ -247,17 +185,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public String getStatusList() {
-		return this.statusList;
-	}
-
-	public void setStatusList(String statusList) {
-		this.statusList = statusList;
-		if(statusList != null){
-			putQueryParameter("StatusList", statusList);
-		}
-	}
-
 	public String getCveId() {
 		return this.cveId;
 	}
@@ -266,17 +193,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		this.cveId = cveId;
 		if(cveId != null){
 			putQueryParameter("CveId", cveId);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
 		}
 	}
 
@@ -324,39 +240,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public Long getLastTsStart() {
-		return this.lastTsStart;
-	}
-
-	public void setLastTsStart(Long lastTsStart) {
-		this.lastTsStart = lastTsStart;
-		if(lastTsStart != null){
-			putQueryParameter("LastTsStart", lastTsStart.toString());
-		}
-	}
-
-	public String getDirection() {
-		return this.direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
-		}
-	}
-
-	public String getDealed() {
-		return this.dealed;
-	}
-
-	public void setDealed(String dealed) {
-		this.dealed = dealed;
-		if(dealed != null){
-			putQueryParameter("Dealed", dealed);
-		}
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -368,14 +251,14 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public String getSearchTags() {
-		return this.searchTags;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setSearchTags(String searchTags) {
-		this.searchTags = searchTags;
-		if(searchTags != null){
-			putQueryParameter("SearchTags", searchTags);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

@@ -49,33 +49,33 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 
 		private String internetIp;
 
-		private String intranetIp;
-
-		private String instanceName;
-
-		private String instanceId;
+		private String osName;
 
 		private String ip;
 
-		private String uuid;
-
-		private String assetType;
-
 		private String os;
+
+		private String instanceId;
 
 		private String clientStatus;
 
+		private String vpcInstanceId;
+
+		private String intranetIp;
+
+		private String assetType;
+
 		private String regionId;
 
-		private String region;
+		private String uuid;
+
+		private Integer flag;
 
 		private String regionName;
 
-		private String vpcInstanceId;
+		private String instanceName;
 
-		private String osName;
-
-		private Integer flag;
+		private String region;
 
 		public String getInternetIp() {
 			return this.internetIp;
@@ -83,102 +83,6 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 
 		public void setInternetIp(String internetIp) {
 			this.internetIp = internetIp;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getAssetType() {
-			return this.assetType;
-		}
-
-		public void setAssetType(String assetType) {
-			this.assetType = assetType;
-		}
-
-		public String getOs() {
-			return this.os;
-		}
-
-		public void setOs(String os) {
-			this.os = os;
-		}
-
-		public String getClientStatus() {
-			return this.clientStatus;
-		}
-
-		public void setClientStatus(String clientStatus) {
-			this.clientStatus = clientStatus;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getRegionName() {
-			return this.regionName;
-		}
-
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
-		}
-
-		public String getVpcInstanceId() {
-			return this.vpcInstanceId;
-		}
-
-		public void setVpcInstanceId(String vpcInstanceId) {
-			this.vpcInstanceId = vpcInstanceId;
 		}
 
 		public String getOsName() {
@@ -189,12 +93,108 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 			this.osName = osName;
 		}
 
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getOs() {
+			return this.os;
+		}
+
+		public void setOs(String os) {
+			this.os = os;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getClientStatus() {
+			return this.clientStatus;
+		}
+
+		public void setClientStatus(String clientStatus) {
+			this.clientStatus = clientStatus;
+		}
+
+		public String getVpcInstanceId() {
+			return this.vpcInstanceId;
+		}
+
+		public void setVpcInstanceId(String vpcInstanceId) {
+			this.vpcInstanceId = vpcInstanceId;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getAssetType() {
+			return this.assetType;
+		}
+
+		public void setAssetType(String assetType) {
+			this.assetType = assetType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
 		public Integer getFlag() {
 			return this.flag;
 		}
 
 		public void setFlag(Integer flag) {
 			this.flag = flag;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 	}
 

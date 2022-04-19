@@ -77,6 +77,8 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 
 		private Integer healthClientCount;
 
+		private String upgradeStatus;
+
 		private List<String> uuidList;
 
 		private List<String> remarkedUuidList;
@@ -165,6 +167,14 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 
 		public void setHealthClientCount(Integer healthClientCount) {
 			this.healthClientCount = healthClientCount;
+		}
+
+		public String getUpgradeStatus() {
+			return this.upgradeStatus;
+		}
+
+		public void setUpgradeStatus(String upgradeStatus) {
+			this.upgradeStatus = upgradeStatus;
 		}
 
 		public List<String> getUuidList() {

@@ -38,9 +38,13 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 
 	private String containerFieldValue;
 
+	private String eventNames;
+
 	private String pageSize;
 
 	private String from;
+
+	private String tacticId;
 
 	private String lang;
 
@@ -68,7 +72,7 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 
 	private String uuids;
 	public DescribeSuspEventsRequest() {
-		super("Sas", "2018-12-03", "DescribeSuspEvents", "sas");
+		super("Sas", "2018-12-03", "DescribeSuspEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -142,6 +146,17 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		}
 	}
 
+	public String getEventNames() {
+		return this.eventNames;
+	}
+
+	public void setEventNames(String eventNames) {
+		this.eventNames = eventNames;
+		if(eventNames != null){
+			putQueryParameter("EventNames", eventNames);
+		}
+	}
+
 	public String getPageSize() {
 		return this.pageSize;
 	}
@@ -161,6 +176,17 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		this.from = from;
 		if(from != null){
 			putQueryParameter("From", from);
+		}
+	}
+
+	public String getTacticId() {
+		return this.tacticId;
+	}
+
+	public void setTacticId(String tacticId) {
+		this.tacticId = tacticId;
+		if(tacticId != null){
+			putBodyParameter("TacticId", tacticId);
 		}
 	}
 

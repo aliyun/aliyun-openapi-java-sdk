@@ -29,7 +29,7 @@ public class DescribeLogstoreStorageRequest extends RpcAcsRequest<DescribeLogsto
 
 	private String lang;
 	public DescribeLogstoreStorageRequest() {
-		super("Sas", "2018-12-03", "DescribeLogstoreStorage", "sas");
+		super("Sas", "2018-12-03", "DescribeLogstoreStorage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

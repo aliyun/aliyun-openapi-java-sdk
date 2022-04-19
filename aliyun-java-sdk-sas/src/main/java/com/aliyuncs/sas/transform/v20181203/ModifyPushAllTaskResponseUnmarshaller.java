@@ -34,16 +34,16 @@ public class ModifyPushAllTaskResponseUnmarshaller {
 		List<PushTaskResult> pushTaskResultList = new ArrayList<PushTaskResult>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList.Length"); i++) {
 			PushTaskResult pushTaskResult = new PushTaskResult();
-			pushTaskResult.setInstanceId(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].InstanceId"));
-			pushTaskResult.setOsVersion(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].OsVersion"));
-			pushTaskResult.setInstanceName(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].InstanceName"));
-			pushTaskResult.setSuccess(_ctx.booleanValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Success"));
+			pushTaskResult.setUuid(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Uuid"));
 			pushTaskResult.setGroupId(_ctx.longValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].GroupId"));
-			pushTaskResult.setIp(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Ip"));
+			pushTaskResult.setSuccess(_ctx.booleanValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Success"));
+			pushTaskResult.setRegion(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Region"));
+			pushTaskResult.setInstanceName(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].InstanceName"));
 			pushTaskResult.setOnline(_ctx.booleanValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Online"));
 			pushTaskResult.setMessage(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Message"));
-			pushTaskResult.setRegion(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Region"));
-			pushTaskResult.setUuid(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Uuid"));
+			pushTaskResult.setIp(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].Ip"));
+			pushTaskResult.setOsVersion(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].OsVersion"));
+			pushTaskResult.setInstanceId(_ctx.stringValue("ModifyPushAllTaskResponse.PushTaskRsp.PushTaskResultList["+ i +"].InstanceId"));
 
 			pushTaskResultList.add(pushTaskResult);
 		}
