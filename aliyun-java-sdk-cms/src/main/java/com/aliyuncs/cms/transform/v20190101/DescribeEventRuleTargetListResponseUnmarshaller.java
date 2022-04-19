@@ -66,6 +66,7 @@ public class DescribeEventRuleTargetListResponseUnmarshaller {
 			mnsParameter.setArn(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Arn"));
 			mnsParameter.setRegion(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Region"));
 			mnsParameter.setId(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Id"));
+			mnsParameter.setTopic(_ctx.stringValue("DescribeEventRuleTargetListResponse.MnsParameters["+ i +"].Topic"));
 
 			mnsParameters.add(mnsParameter);
 		}

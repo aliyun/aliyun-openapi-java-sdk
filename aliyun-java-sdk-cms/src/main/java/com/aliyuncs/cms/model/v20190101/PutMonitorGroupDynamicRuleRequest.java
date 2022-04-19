@@ -28,6 +28,8 @@ public class PutMonitorGroupDynamicRuleRequest extends RpcAcsRequest<PutMonitorG
 	private List<GroupRules> groupRuless;
 
 	private Long groupId;
+
+	private Boolean isAsync;
 	public PutMonitorGroupDynamicRuleRequest() {
 		super("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "Cms");
 		setMethod(MethodType.POST);
@@ -62,6 +64,17 @@ public class PutMonitorGroupDynamicRuleRequest extends RpcAcsRequest<PutMonitorG
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public Boolean getIsAsync() {
+		return this.isAsync;
+	}
+
+	public void setIsAsync(Boolean isAsync) {
+		this.isAsync = isAsync;
+		if(isAsync != null){
+			putQueryParameter("IsAsync", isAsync.toString());
 		}
 	}
 

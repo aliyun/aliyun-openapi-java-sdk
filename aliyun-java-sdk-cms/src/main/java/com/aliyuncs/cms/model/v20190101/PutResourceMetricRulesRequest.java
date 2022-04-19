@@ -46,6 +46,7 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Info.Statistics" , ruless.get(depth1).getEscalationsInfoStatistics());
 				putQueryParameter("Rules." + (depth1 + 1) + ".EffectiveInterval" , ruless.get(depth1).getEffectiveInterval());
 				putQueryParameter("Rules." + (depth1 + 1) + ".DynamicAlertHistoryDataRange" , ruless.get(depth1).getDynamicAlertHistoryDataRange());
+				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Warn.PreCondition" , ruless.get(depth1).getEscalationsWarnPreCondition());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Info.ComparisonOperator" , ruless.get(depth1).getEscalationsInfoComparisonOperator());
 				putQueryParameter("Rules." + (depth1 + 1) + ".NoDataPolicy" , ruless.get(depth1).getNoDataPolicy());
 				putQueryParameter("Rules." + (depth1 + 1) + ".NoEffectiveInterval" , ruless.get(depth1).getNoEffectiveInterval());
@@ -53,6 +54,7 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 				putQueryParameter("Rules." + (depth1 + 1) + ".Options" , ruless.get(depth1).getOptions());
 				putQueryParameter("Rules." + (depth1 + 1) + ".SilenceTime" , ruless.get(depth1).getSilenceTime());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Prometheus" , ruless.get(depth1).getPrometheus());
+				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Info.PreCondition" , ruless.get(depth1).getEscalationsInfoPreCondition());
 				putQueryParameter("Rules." + (depth1 + 1) + ".MetricName" , ruless.get(depth1).getMetricName());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Warn.Times" , ruless.get(depth1).getEscalationsWarnTimes());
 				putQueryParameter("Rules." + (depth1 + 1) + ".CompositeExpression" , ruless.get(depth1).getCompositeExpression());
@@ -64,6 +66,12 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 				putQueryParameter("Rules." + (depth1 + 1) + ".GroupId" , ruless.get(depth1).getGroupId());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Info.Times" , ruless.get(depth1).getEscalationsInfoTimes());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Resources" , ruless.get(depth1).getResources());
+				if (ruless.get(depth1).getLabelss() != null) {
+					for (int depth2 = 0; depth2 < ruless.get(depth1).getLabelss().size(); depth2++) {
+						putQueryParameter("Rules." + (depth1 + 1) + ".Labels." + (depth2 + 1) + ".Value" , ruless.get(depth1).getLabelss().get(depth2).getValue());
+						putQueryParameter("Rules." + (depth1 + 1) + ".Labels." + (depth2 + 1) + ".Key" , ruless.get(depth1).getLabelss().get(depth2).getKey());
+					}
+				}
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Critical.Times" , ruless.get(depth1).getEscalationsCriticalTimes());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Info.Threshold" , ruless.get(depth1).getEscalationsInfoThreshold());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Warn.Statistics" , ruless.get(depth1).getEscalationsWarnStatistics());
@@ -71,6 +79,7 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 				putQueryParameter("Rules." + (depth1 + 1) + ".Interval" , ruless.get(depth1).getInterval());
 				putQueryParameter("Rules." + (depth1 + 1) + ".RuleId" , ruless.get(depth1).getRuleId());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Critical.ComparisonOperator" , ruless.get(depth1).getEscalationsCriticalComparisonOperator());
+				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Critical.PreCondition" , ruless.get(depth1).getEscalationsCriticalPreCondition());
 				putQueryParameter("Rules." + (depth1 + 1) + ".Escalations.Critical.Threshold" , ruless.get(depth1).getEscalationsCriticalThreshold());
 			}
 		}	
@@ -92,6 +101,8 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 
 		private String dynamicAlertHistoryDataRange;
 
+		private String escalationsWarnPreCondition;
+
 		private String escalationsInfoComparisonOperator;
 
 		private String noDataPolicy;
@@ -105,6 +116,8 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 		private Integer silenceTime;
 
 		private String prometheus;
+
+		private String escalationsInfoPreCondition;
 
 		private String metricName;
 
@@ -128,6 +141,8 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 
 		private String resources;
 
+		private List<Labels> labelss;
+
 		private Integer escalationsCriticalTimes;
 
 		private String escalationsInfoThreshold;
@@ -141,6 +156,8 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 		private String ruleId;
 
 		private String escalationsCriticalComparisonOperator;
+
+		private String escalationsCriticalPreCondition;
 
 		private String escalationsCriticalThreshold;
 
@@ -200,6 +217,14 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 			this.dynamicAlertHistoryDataRange = dynamicAlertHistoryDataRange;
 		}
 
+		public String getEscalationsWarnPreCondition() {
+			return this.escalationsWarnPreCondition;
+		}
+
+		public void setEscalationsWarnPreCondition(String escalationsWarnPreCondition) {
+			this.escalationsWarnPreCondition = escalationsWarnPreCondition;
+		}
+
 		public String getEscalationsInfoComparisonOperator() {
 			return this.escalationsInfoComparisonOperator;
 		}
@@ -254,6 +279,14 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 
 		public void setPrometheus(String prometheus) {
 			this.prometheus = prometheus;
+		}
+
+		public String getEscalationsInfoPreCondition() {
+			return this.escalationsInfoPreCondition;
+		}
+
+		public void setEscalationsInfoPreCondition(String escalationsInfoPreCondition) {
+			this.escalationsInfoPreCondition = escalationsInfoPreCondition;
 		}
 
 		public String getMetricName() {
@@ -344,6 +377,14 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 			this.resources = resources;
 		}
 
+		public List<Labels> getLabelss() {
+			return this.labelss;
+		}
+
+		public void setLabelss(List<Labels> labelss) {
+			this.labelss = labelss;
+		}
+
 		public Integer getEscalationsCriticalTimes() {
 			return this.escalationsCriticalTimes;
 		}
@@ -400,12 +441,43 @@ public class PutResourceMetricRulesRequest extends RpcAcsRequest<PutResourceMetr
 			this.escalationsCriticalComparisonOperator = escalationsCriticalComparisonOperator;
 		}
 
+		public String getEscalationsCriticalPreCondition() {
+			return this.escalationsCriticalPreCondition;
+		}
+
+		public void setEscalationsCriticalPreCondition(String escalationsCriticalPreCondition) {
+			this.escalationsCriticalPreCondition = escalationsCriticalPreCondition;
+		}
+
 		public String getEscalationsCriticalThreshold() {
 			return this.escalationsCriticalThreshold;
 		}
 
 		public void setEscalationsCriticalThreshold(String escalationsCriticalThreshold) {
 			this.escalationsCriticalThreshold = escalationsCriticalThreshold;
+		}
+
+		public static class Labels {
+
+			private String value;
+
+			private String key;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 		}
 	}
 

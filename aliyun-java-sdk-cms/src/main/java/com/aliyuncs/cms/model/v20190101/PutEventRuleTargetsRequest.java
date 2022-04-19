@@ -129,6 +129,7 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 		this.mnsParameterss = mnsParameterss;	
 		if (mnsParameterss != null) {
 			for (int depth1 = 0; depth1 < mnsParameterss.size(); depth1++) {
+				putQueryParameter("MnsParameters." + (depth1 + 1) + ".Topic" , mnsParameterss.get(depth1).getTopic());
 				putQueryParameter("MnsParameters." + (depth1 + 1) + ".Id" , mnsParameterss.get(depth1).getId());
 				putQueryParameter("MnsParameters." + (depth1 + 1) + ".Region" , mnsParameterss.get(depth1).getRegion());
 				putQueryParameter("MnsParameters." + (depth1 + 1) + ".Queue" , mnsParameterss.get(depth1).getQueue());
@@ -356,11 +357,21 @@ public class PutEventRuleTargetsRequest extends RpcAcsRequest<PutEventRuleTarget
 
 	public static class MnsParameters {
 
+		private String topic;
+
 		private String id;
 
 		private String region;
 
 		private String queue;
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
 
 		public String getId() {
 			return this.id;

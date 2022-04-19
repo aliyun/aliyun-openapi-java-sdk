@@ -15,6 +15,7 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -53,6 +54,8 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 	private String groupId;
 
 	private String extraDimensionJson;
+
+	private List<Labels> labelss;
 
 	private String interval;
 
@@ -251,6 +254,20 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		}
 	}
 
+	public List<Labels> getLabelss() {
+		return this.labelss;
+	}
+
+	public void setLabelss(List<Labels> labelss) {
+		this.labelss = labelss;	
+		if (labelss != null) {
+			for (int depth1 = 0; depth1 < labelss.size(); depth1++) {
+				putQueryParameter("Labels." + (depth1 + 1) + ".Value" , labelss.get(depth1).getValue());
+				putQueryParameter("Labels." + (depth1 + 1) + ".Key" , labelss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getInterval() {
 		return this.interval;
 	}
@@ -402,6 +419,29 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		this.dimensions = dimensions;
 		if(dimensions != null){
 			putQueryParameter("Dimensions", dimensions);
+		}
+	}
+
+	public static class Labels {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

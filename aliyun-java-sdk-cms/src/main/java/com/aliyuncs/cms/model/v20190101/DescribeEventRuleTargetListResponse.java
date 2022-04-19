@@ -211,6 +211,8 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 		private String id;
 
+		private String topic;
+
 		public String getQueue() {
 			return this.queue;
 		}
@@ -241,6 +243,14 @@ public class DescribeEventRuleTargetListResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
 		}
 	}
 

@@ -1,3 +1,6 @@
+2022-04-19 Version: 7.0.40
+- Add multi indicator monitoring.
+
 2022-03-24 Version: 7.0.39
 - Add multi indicator monitoring.
 
