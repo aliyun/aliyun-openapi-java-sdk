@@ -25,24 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaCategoryResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private Boolean success;
 
 	private String errorCode;
 
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
+	private Boolean success;
+
 	private Data data;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -53,12 +61,12 @@ public class GetMetaCategoryResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -67,14 +75,6 @@ public class GetMetaCategoryResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -129,55 +129,23 @@ public class GetMetaCategoryResponse extends AcsResponse {
 
 		public static class DataEntityListItem {
 
-			private Integer depth;
-
-			private String comment;
-
-			private Long modifiedTime;
-
-			private Long createTime;
-
 			private Long categoryId;
-
-			private String lastOperatorId;
 
 			private String name;
 
-			private Long parentCategoryId;
+			private Long createTime;
+
+			private Long modifiedTime;
+
+			private String comment;
 
 			private String ownerId;
 
-			public Integer getDepth() {
-				return this.depth;
-			}
+			private String lastOperatorId;
 
-			public void setDepth(Integer depth) {
-				this.depth = depth;
-			}
+			private Long parentCategoryId;
 
-			public String getComment() {
-				return this.comment;
-			}
-
-			public void setComment(String comment) {
-				this.comment = comment;
-			}
-
-			public Long getModifiedTime() {
-				return this.modifiedTime;
-			}
-
-			public void setModifiedTime(Long modifiedTime) {
-				this.modifiedTime = modifiedTime;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
+			private Integer depth;
 
 			public Long getCategoryId() {
 				return this.categoryId;
@@ -185,14 +153,6 @@ public class GetMetaCategoryResponse extends AcsResponse {
 
 			public void setCategoryId(Long categoryId) {
 				this.categoryId = categoryId;
-			}
-
-			public String getLastOperatorId() {
-				return this.lastOperatorId;
-			}
-
-			public void setLastOperatorId(String lastOperatorId) {
-				this.lastOperatorId = lastOperatorId;
 			}
 
 			public String getName() {
@@ -203,12 +163,28 @@ public class GetMetaCategoryResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public Long getParentCategoryId() {
-				return this.parentCategoryId;
+			public Long getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setParentCategoryId(Long parentCategoryId) {
-				this.parentCategoryId = parentCategoryId;
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getModifiedTime() {
+				return this.modifiedTime;
+			}
+
+			public void setModifiedTime(Long modifiedTime) {
+				this.modifiedTime = modifiedTime;
+			}
+
+			public String getComment() {
+				return this.comment;
+			}
+
+			public void setComment(String comment) {
+				this.comment = comment;
 			}
 
 			public String getOwnerId() {
@@ -217,6 +193,30 @@ public class GetMetaCategoryResponse extends AcsResponse {
 
 			public void setOwnerId(String ownerId) {
 				this.ownerId = ownerId;
+			}
+
+			public String getLastOperatorId() {
+				return this.lastOperatorId;
+			}
+
+			public void setLastOperatorId(String lastOperatorId) {
+				this.lastOperatorId = lastOperatorId;
+			}
+
+			public Long getParentCategoryId() {
+				return this.parentCategoryId;
+			}
+
+			public void setParentCategoryId(Long parentCategoryId) {
+				this.parentCategoryId = parentCategoryId;
+			}
+
+			public Integer getDepth() {
+				return this.depth;
+			}
+
+			public void setDepth(Integer depth) {
+				this.depth = depth;
 			}
 		}
 	}

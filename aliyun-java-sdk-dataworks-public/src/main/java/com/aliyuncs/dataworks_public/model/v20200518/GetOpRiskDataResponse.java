@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOpRiskDataResponse extends AcsResponse {
 
-	private String riskData;
-
 	private String requestId;
 
-	public String getRiskData() {
-		return this.riskData;
-	}
-
-	public void setRiskData(String riskData) {
-		this.riskData = riskData;
-	}
+	private String riskData;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class GetOpRiskDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getRiskData() {
+		return this.riskData;
+	}
+
+	public void setRiskData(String riskData) {
+		this.riskData = riskData;
 	}
 
 	@Override

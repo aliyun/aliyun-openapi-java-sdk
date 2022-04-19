@@ -24,31 +24,31 @@ public class GetNodeResponseUnmarshaller {
 	public static GetNodeResponse unmarshall(GetNodeResponse getNodeResponse, UnmarshallerContext _ctx) {
 		
 		getNodeResponse.setRequestId(_ctx.stringValue("GetNodeResponse.RequestId"));
-		getNodeResponse.setHttpStatusCode(_ctx.integerValue("GetNodeResponse.HttpStatusCode"));
-		getNodeResponse.setErrorMessage(_ctx.stringValue("GetNodeResponse.ErrorMessage"));
-		getNodeResponse.setErrorCode(_ctx.stringValue("GetNodeResponse.ErrorCode"));
 		getNodeResponse.setSuccess(_ctx.booleanValue("GetNodeResponse.Success"));
+		getNodeResponse.setErrorCode(_ctx.stringValue("GetNodeResponse.ErrorCode"));
+		getNodeResponse.setErrorMessage(_ctx.stringValue("GetNodeResponse.ErrorMessage"));
+		getNodeResponse.setHttpStatusCode(_ctx.integerValue("GetNodeResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setSchedulerType(_ctx.stringValue("GetNodeResponse.Data.SchedulerType"));
-		data.setRepeatInterval(_ctx.longValue("GetNodeResponse.Data.RepeatInterval"));
-		data.setRepeatability(_ctx.stringValue("GetNodeResponse.Data.Repeatability"));
-		data.setProjectId(_ctx.longValue("GetNodeResponse.Data.ProjectId"));
-		data.setProgramType(_ctx.stringValue("GetNodeResponse.Data.ProgramType"));
-		data.setPriority(_ctx.integerValue("GetNodeResponse.Data.Priority"));
-		data.setOwnerId(_ctx.stringValue("GetNodeResponse.Data.OwnerId"));
-		data.setConnection(_ctx.stringValue("GetNodeResponse.Data.Connection"));
-		data.setParamValues(_ctx.stringValue("GetNodeResponse.Data.ParamValues"));
-		data.setRelatedFlowId(_ctx.longValue("GetNodeResponse.Data.RelatedFlowId"));
-		data.setDqcType(_ctx.integerValue("GetNodeResponse.Data.DqcType"));
-		data.setBaselineId(_ctx.longValue("GetNodeResponse.Data.BaselineId"));
-		data.setDescription(_ctx.stringValue("GetNodeResponse.Data.Description"));
-		data.setNodeName(_ctx.stringValue("GetNodeResponse.Data.NodeName"));
-		data.setResGroupName(_ctx.stringValue("GetNodeResponse.Data.ResGroupName"));
-		data.setBusinessId(_ctx.longValue("GetNodeResponse.Data.BusinessId"));
-		data.setDqcDescription(_ctx.stringValue("GetNodeResponse.Data.DqcDescription"));
-		data.setCronExpress(_ctx.stringValue("GetNodeResponse.Data.CronExpress"));
 		data.setNodeId(_ctx.longValue("GetNodeResponse.Data.NodeId"));
+		data.setOwnerId(_ctx.stringValue("GetNodeResponse.Data.OwnerId"));
+		data.setDescription(_ctx.stringValue("GetNodeResponse.Data.Description"));
+		data.setResGroupName(_ctx.stringValue("GetNodeResponse.Data.ResGroupName"));
+		data.setNodeName(_ctx.stringValue("GetNodeResponse.Data.NodeName"));
+		data.setCronExpress(_ctx.stringValue("GetNodeResponse.Data.CronExpress"));
+		data.setRepeatability(_ctx.stringValue("GetNodeResponse.Data.Repeatability"));
+		data.setProgramType(_ctx.stringValue("GetNodeResponse.Data.ProgramType"));
+		data.setProjectId(_ctx.longValue("GetNodeResponse.Data.ProjectId"));
+		data.setSchedulerType(_ctx.stringValue("GetNodeResponse.Data.SchedulerType"));
+		data.setParamValues(_ctx.stringValue("GetNodeResponse.Data.ParamValues"));
+		data.setPriority(_ctx.integerValue("GetNodeResponse.Data.Priority"));
+		data.setBaselineId(_ctx.longValue("GetNodeResponse.Data.BaselineId"));
+		data.setRepeatInterval(_ctx.longValue("GetNodeResponse.Data.RepeatInterval"));
+		data.setConnection(_ctx.stringValue("GetNodeResponse.Data.Connection"));
+		data.setDqcType(_ctx.integerValue("GetNodeResponse.Data.DqcType"));
+		data.setDqcDescription(_ctx.stringValue("GetNodeResponse.Data.DqcDescription"));
+		data.setRelatedFlowId(_ctx.longValue("GetNodeResponse.Data.RelatedFlowId"));
+		data.setBusinessId(_ctx.longValue("GetNodeResponse.Data.BusinessId"));
 		getNodeResponse.setData(data);
 	 
 	 	return getNodeResponse;

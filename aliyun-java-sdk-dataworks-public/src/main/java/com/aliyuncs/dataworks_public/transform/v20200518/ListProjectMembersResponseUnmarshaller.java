@@ -38,19 +38,19 @@ public class ListProjectMembersResponseUnmarshaller {
 		List<ProjectMember> projectMemberList = new ArrayList<ProjectMember>();
 		for (int i = 0; i < _ctx.lengthValue("ListProjectMembersResponse.Data.ProjectMemberList.Length"); i++) {
 			ProjectMember projectMember = new ProjectMember();
-			projectMember.setStatus(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].Status"));
-			projectMember.setProjectMemberId(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectMemberId"));
 			projectMember.setNick(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].Nick"));
+			projectMember.setProjectMemberId(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectMemberId"));
 			projectMember.setProjectMemberName(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectMemberName"));
 			projectMember.setProjectMemberType(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectMemberType"));
+			projectMember.setStatus(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].Status"));
 
 			List<Role> projectRoleList = new ArrayList<Role>();
 			for (int j = 0; j < _ctx.lengthValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList.Length"); j++) {
 				Role role = new Role();
-				role.setProjectRoleId(_ctx.integerValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleId"));
-				role.setProjectRoleType(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleType"));
-				role.setProjectRoleName(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleName"));
 				role.setProjectRoleCode(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleCode"));
+				role.setProjectRoleId(_ctx.integerValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleId"));
+				role.setProjectRoleName(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleName"));
+				role.setProjectRoleType(_ctx.stringValue("ListProjectMembersResponse.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleType"));
 
 				projectRoleList.add(role);
 			}

@@ -23,11 +23,11 @@ public class RestartInstanceResponseUnmarshaller {
 	public static RestartInstanceResponse unmarshall(RestartInstanceResponse restartInstanceResponse, UnmarshallerContext _ctx) {
 		
 		restartInstanceResponse.setRequestId(_ctx.stringValue("RestartInstanceResponse.RequestId"));
-		restartInstanceResponse.setHttpStatusCode(_ctx.integerValue("RestartInstanceResponse.HttpStatusCode"));
-		restartInstanceResponse.setData(_ctx.booleanValue("RestartInstanceResponse.Data"));
-		restartInstanceResponse.setErrorMessage(_ctx.stringValue("RestartInstanceResponse.ErrorMessage"));
 		restartInstanceResponse.setErrorCode(_ctx.stringValue("RestartInstanceResponse.ErrorCode"));
+		restartInstanceResponse.setErrorMessage(_ctx.stringValue("RestartInstanceResponse.ErrorMessage"));
+		restartInstanceResponse.setHttpStatusCode(_ctx.integerValue("RestartInstanceResponse.HttpStatusCode"));
 		restartInstanceResponse.setSuccess(_ctx.booleanValue("RestartInstanceResponse.Success"));
+		restartInstanceResponse.setData(_ctx.booleanValue("RestartInstanceResponse.Data"));
 	 
 	 	return restartInstanceResponse;
 	}

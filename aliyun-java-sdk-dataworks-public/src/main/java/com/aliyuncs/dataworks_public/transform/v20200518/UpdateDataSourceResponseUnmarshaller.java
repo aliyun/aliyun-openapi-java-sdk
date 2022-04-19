@@ -23,9 +23,9 @@ public class UpdateDataSourceResponseUnmarshaller {
 	public static UpdateDataSourceResponse unmarshall(UpdateDataSourceResponse updateDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		updateDataSourceResponse.setRequestId(_ctx.stringValue("UpdateDataSourceResponse.RequestId"));
+		updateDataSourceResponse.setSuccess(_ctx.booleanValue("UpdateDataSourceResponse.Success"));
 		updateDataSourceResponse.setHttpStatusCode(_ctx.stringValue("UpdateDataSourceResponse.HttpStatusCode"));
 		updateDataSourceResponse.setData(_ctx.booleanValue("UpdateDataSourceResponse.Data"));
-		updateDataSourceResponse.setSuccess(_ctx.booleanValue("UpdateDataSourceResponse.Success"));
 	 
 	 	return updateDataSourceResponse;
 	}

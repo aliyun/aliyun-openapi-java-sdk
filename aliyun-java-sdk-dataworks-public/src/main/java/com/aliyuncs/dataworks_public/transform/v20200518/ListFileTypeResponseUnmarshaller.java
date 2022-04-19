@@ -37,8 +37,8 @@ public class ListFileTypeResponseUnmarshaller {
 		List<NodeTypeInfoItem> nodeTypeInfo = new ArrayList<NodeTypeInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListFileTypeResponse.NodeTypeInfoList.NodeTypeInfo.Length"); i++) {
 			NodeTypeInfoItem nodeTypeInfoItem = new NodeTypeInfoItem();
-			nodeTypeInfoItem.setNodeTypeName(_ctx.stringValue("ListFileTypeResponse.NodeTypeInfoList.NodeTypeInfo["+ i +"].NodeTypeName"));
 			nodeTypeInfoItem.setNodeType(_ctx.integerValue("ListFileTypeResponse.NodeTypeInfoList.NodeTypeInfo["+ i +"].NodeType"));
+			nodeTypeInfoItem.setNodeTypeName(_ctx.stringValue("ListFileTypeResponse.NodeTypeInfoList.NodeTypeInfo["+ i +"].NodeTypeName"));
 
 			nodeTypeInfo.add(nodeTypeInfoItem);
 		}

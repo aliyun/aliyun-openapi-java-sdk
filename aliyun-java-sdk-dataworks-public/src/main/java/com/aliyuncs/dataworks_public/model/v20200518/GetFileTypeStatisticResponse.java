@@ -47,17 +47,9 @@ public class GetFileTypeStatisticResponse extends AcsResponse {
 
 	public static class ProgramTypeAndCount {
 
-		private Integer count;
-
 		private String programType;
 
-		public Integer getCount() {
-			return this.count;
-		}
-
-		public void setCount(Integer count) {
-			this.count = count;
-		}
+		private Integer count;
 
 		public String getProgramType() {
 			return this.programType;
@@ -65,6 +57,14 @@ public class GetFileTypeStatisticResponse extends AcsResponse {
 
 		public void setProgramType(String programType) {
 			this.programType = programType;
+		}
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

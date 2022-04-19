@@ -24,32 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SuspendInstanceResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private Boolean data;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String requestId;
+	private Integer httpStatusCode;
 
-	private String errorCode;
+	private String requestId;
 
 	private Boolean success;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	private Boolean data;
+
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -60,6 +52,14 @@ public class SuspendInstanceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -68,20 +68,20 @@ public class SuspendInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	@Override
