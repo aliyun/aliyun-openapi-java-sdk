@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class ListClusterFromGrafanaRequest extends RpcAcsRequest<ListClusterFromGrafanaResponse> {
 	   
 	public ListClusterFromGrafanaRequest() {
-		super("ARMS", "2019-08-08", "ListClusterFromGrafana", "arms");
+		super("ARMS", "2019-08-08", "ListClusterFromGrafana");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

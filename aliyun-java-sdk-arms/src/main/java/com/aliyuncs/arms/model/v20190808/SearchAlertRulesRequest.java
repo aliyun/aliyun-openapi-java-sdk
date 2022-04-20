@@ -39,7 +39,7 @@ public class SearchAlertRulesRequest extends RpcAcsRequest<SearchAlertRulesRespo
 
 	private Integer pageSize;
 	public SearchAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "SearchAlertRules", "arms");
+		super("ARMS", "2019-08-08", "SearchAlertRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

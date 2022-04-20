@@ -27,7 +27,7 @@ public class DeleteSilencePolicyRequest extends RpcAcsRequest<DeleteSilencePolic
 
 	private Long id;
 	public DeleteSilencePolicyRequest() {
-		super("ARMS", "2019-08-08", "DeleteSilencePolicy", "arms");
+		super("ARMS", "2019-08-08", "DeleteSilencePolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

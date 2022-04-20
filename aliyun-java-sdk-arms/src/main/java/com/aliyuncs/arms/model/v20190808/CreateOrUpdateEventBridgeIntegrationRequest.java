@@ -43,7 +43,7 @@ public class CreateOrUpdateEventBridgeIntegrationRequest extends RpcAcsRequest<C
 
 	private Long id;
 	public CreateOrUpdateEventBridgeIntegrationRequest() {
-		super("ARMS", "2019-08-08", "CreateOrUpdateEventBridgeIntegration", "arms");
+		super("ARMS", "2019-08-08", "CreateOrUpdateEventBridgeIntegration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

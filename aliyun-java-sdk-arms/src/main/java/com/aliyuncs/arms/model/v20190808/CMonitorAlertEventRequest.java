@@ -39,7 +39,7 @@ public class CMonitorAlertEventRequest extends RpcAcsRequest<CMonitorAlertEventR
 
 	private String page;
 	public CMonitorAlertEventRequest() {
-		super("ARMS", "2019-08-08", "CMonitorAlertEvent", "arms");
+		super("ARMS", "2019-08-08", "CMonitorAlertEvent");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

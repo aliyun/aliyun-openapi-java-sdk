@@ -31,7 +31,7 @@ public class CreateOrUpdateSilencePolicyRequest extends RpcAcsRequest<CreateOrUp
 
 	private String matchingRules;
 	public CreateOrUpdateSilencePolicyRequest() {
-		super("ARMS", "2019-08-08", "CreateOrUpdateSilencePolicy", "arms");
+		super("ARMS", "2019-08-08", "CreateOrUpdateSilencePolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

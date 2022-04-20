@@ -31,7 +31,7 @@ public class CreateOrUpdateContactGroupRequest extends RpcAcsRequest<CreateOrUpd
 
 	private String contactIds;
 	public CreateOrUpdateContactGroupRequest() {
-		super("ARMS", "2019-08-08", "CreateOrUpdateContactGroup", "arms");
+		super("ARMS", "2019-08-08", "CreateOrUpdateContactGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

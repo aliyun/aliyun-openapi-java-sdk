@@ -31,7 +31,7 @@ public class DescribeIMRobotsRequest extends RpcAcsRequest<DescribeIMRobotsRespo
 
 	private Long page;
 	public DescribeIMRobotsRequest() {
-		super("ARMS", "2019-08-08", "DescribeIMRobots", "arms");
+		super("ARMS", "2019-08-08", "DescribeIMRobots");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

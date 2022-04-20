@@ -37,7 +37,7 @@ public class CreateOrUpdateIMRobotRequest extends RpcAcsRequest<CreateOrUpdateIM
 
 	private String dailyNocTime;
 	public CreateOrUpdateIMRobotRequest() {
-		super("ARMS", "2019-08-08", "CreateOrUpdateIMRobot", "arms");
+		super("ARMS", "2019-08-08", "CreateOrUpdateIMRobot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeContactsRequest extends RpcAcsRequest<DescribeContactsRespo
 
 	private String email;
 	public DescribeContactsRequest() {
-		super("ARMS", "2019-08-08", "DescribeContacts", "arms");
+		super("ARMS", "2019-08-08", "DescribeContacts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

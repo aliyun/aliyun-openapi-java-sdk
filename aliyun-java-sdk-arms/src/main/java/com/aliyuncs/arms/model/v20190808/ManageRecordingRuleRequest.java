@@ -31,7 +31,7 @@ public class ManageRecordingRuleRequest extends RpcAcsRequest<ManageRecordingRul
 
 	private String clusterId;
 	public ManageRecordingRuleRequest() {
-		super("ARMS", "2019-08-08", "ManageRecordingRule", "arms");
+		super("ARMS", "2019-08-08", "ManageRecordingRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

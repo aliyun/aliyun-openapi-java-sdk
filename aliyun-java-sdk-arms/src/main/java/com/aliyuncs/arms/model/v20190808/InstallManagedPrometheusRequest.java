@@ -37,7 +37,7 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 
 	private String vpcId;
 	public InstallManagedPrometheusRequest() {
-		super("ARMS", "2019-08-08", "InstallManagedPrometheus", "arms");
+		super("ARMS", "2019-08-08", "InstallManagedPrometheus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class CreateOrUpdateNotificationPolicyRequest extends RpcAcsRequest<Creat
 
 	private Long repeatInterval;
 	public CreateOrUpdateNotificationPolicyRequest() {
-		super("ARMS", "2019-08-08", "CreateOrUpdateNotificationPolicy", "arms");
+		super("ARMS", "2019-08-08", "CreateOrUpdateNotificationPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

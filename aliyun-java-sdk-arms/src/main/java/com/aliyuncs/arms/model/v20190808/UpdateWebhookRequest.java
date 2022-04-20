@@ -41,7 +41,7 @@ public class UpdateWebhookRequest extends RpcAcsRequest<UpdateWebhookResponse> {
 
 	private String recoverBody;
 	public UpdateWebhookRequest() {
-		super("ARMS", "2019-08-08", "UpdateWebhook", "arms");
+		super("ARMS", "2019-08-08", "UpdateWebhook");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

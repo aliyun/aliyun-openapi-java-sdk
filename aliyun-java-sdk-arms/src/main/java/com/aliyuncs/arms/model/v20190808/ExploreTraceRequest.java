@@ -54,7 +54,7 @@ public class ExploreTraceRequest extends RpcAcsRequest<ExploreTraceResponse> {
 
 	private String spanName;
 	public ExploreTraceRequest() {
-		super("ARMS", "2019-08-08", "ExploreTrace", "arms");
+		super("ARMS", "2019-08-08", "ExploreTrace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

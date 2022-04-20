@@ -31,7 +31,7 @@ public class SearchTagValuesRequest extends RpcAcsRequest<SearchTagValuesRespons
 
 	private Long startTime;
 	public SearchTagValuesRequest() {
-		super("ARMS", "2019-08-08", "SearchTagValues", "arms");
+		super("ARMS", "2019-08-08", "SearchTagValues");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

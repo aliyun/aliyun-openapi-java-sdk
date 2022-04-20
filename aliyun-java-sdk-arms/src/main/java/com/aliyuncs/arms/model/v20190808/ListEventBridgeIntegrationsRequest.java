@@ -31,7 +31,7 @@ public class ListEventBridgeIntegrationsRequest extends RpcAcsRequest<ListEventB
 
 	private Long page;
 	public ListEventBridgeIntegrationsRequest() {
-		super("ARMS", "2019-08-08", "ListEventBridgeIntegrations", "arms");
+		super("ARMS", "2019-08-08", "ListEventBridgeIntegrations");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

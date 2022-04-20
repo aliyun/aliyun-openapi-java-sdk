@@ -27,7 +27,7 @@ public class DescribePrometheusAlertRuleRequest extends RpcAcsRequest<DescribePr
 
 	private Long alertId;
 	public DescribePrometheusAlertRuleRequest() {
-		super("ARMS", "2019-08-08", "DescribePrometheusAlertRule", "arms");
+		super("ARMS", "2019-08-08", "DescribePrometheusAlertRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

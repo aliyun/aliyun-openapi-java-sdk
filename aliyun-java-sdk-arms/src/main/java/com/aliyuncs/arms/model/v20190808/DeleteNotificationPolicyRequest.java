@@ -27,7 +27,7 @@ public class DeleteNotificationPolicyRequest extends RpcAcsRequest<DeleteNotific
 
 	private Long id;
 	public DeleteNotificationPolicyRequest() {
-		super("ARMS", "2019-08-08", "DeleteNotificationPolicy", "arms");
+		super("ARMS", "2019-08-08", "DeleteNotificationPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

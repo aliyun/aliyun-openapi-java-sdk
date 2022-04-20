@@ -33,7 +33,7 @@ public class ListNotificationPoliciesRequest extends RpcAcsRequest<ListNotificat
 
 	private Long page;
 	public ListNotificationPoliciesRequest() {
-		super("ARMS", "2019-08-08", "ListNotificationPolicies", "arms");
+		super("ARMS", "2019-08-08", "ListNotificationPolicies");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

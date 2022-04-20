@@ -27,7 +27,7 @@ public class CreateDispatchRuleRequest extends RpcAcsRequest<CreateDispatchRuleR
 
 	private String dispatchRule;
 	public CreateDispatchRuleRequest() {
-		super("ARMS", "2019-08-08", "CreateDispatchRule", "arms");
+		super("ARMS", "2019-08-08", "CreateDispatchRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

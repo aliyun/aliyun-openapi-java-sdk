@@ -29,7 +29,7 @@ public class DeleteIntegrationRequest extends RpcAcsRequest<DeleteIntegrationRes
 
 	private String clusterId;
 	public DeleteIntegrationRequest() {
-		super("ARMS", "2019-08-08", "DeleteIntegration", "arms");
+		super("ARMS", "2019-08-08", "DeleteIntegration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
