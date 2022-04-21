@@ -37,7 +37,7 @@ public class StopInstancesRequest extends RpcAcsRequest<StopInstancesResponse> {
 
 	private Boolean force;
 	public StopInstancesRequest() {
-		super("cloudphone", "2020-12-30", "StopInstances");
+		super("cloudphone", "2020-12-30", "StopInstances", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

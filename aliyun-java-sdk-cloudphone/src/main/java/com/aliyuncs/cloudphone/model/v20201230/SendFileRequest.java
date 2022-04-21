@@ -41,7 +41,7 @@ public class SendFileRequest extends RpcAcsRequest<SendFileResponse> {
 
 	private List<String> instanceIds;
 	public SendFileRequest() {
-		super("cloudphone", "2020-12-30", "SendFile");
+		super("cloudphone", "2020-12-30", "SendFile", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

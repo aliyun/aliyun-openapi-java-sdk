@@ -15,16 +15,19 @@
 package com.aliyuncs.cloudphone.model.v20201230;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListInstanceVncUrlRequest extends RpcAcsRequest<ListInstanceVncUrlResponse> {
+public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private Boolean all;
+
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
@@ -32,21 +35,36 @@ public class ListInstanceVncUrlRequest extends RpcAcsRequest<ListInstanceVncUrlR
 
 	private Long ownerId;
 
-	private String instanceId;
-	public ListInstanceVncUrlRequest() {
-		super("cloudphone", "2020-12-30", "ListInstanceVncUrl", "cloudphone");
+	private String resourceType;
+
+	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("cloudphone", "2020-12-30", "UntagResources", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Boolean getAll() {
+		return this.all;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -82,20 +100,33 @@ public class ListInstanceVncUrlRequest extends RpcAcsRequest<ListInstanceVncUrlR
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
+	public List<String> getTagKeys() {
+		return this.tagKeys;
+	}
+
+	public void setTagKeys(List<String> tagKeys) {
+		this.tagKeys = tagKeys;	
+		if (tagKeys != null) {
+			for (int i = 0; i < tagKeys.size(); i++) {
+				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<ListInstanceVncUrlResponse> getResponseClass() {
-		return ListInstanceVncUrlResponse.class;
+	public Class<UntagResourcesResponse> getResponseClass() {
+		return UntagResourcesResponse.class;
 	}
 
 }

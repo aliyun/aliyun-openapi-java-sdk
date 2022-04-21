@@ -34,7 +34,7 @@ public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 
 	private Long ownerId;
 	public CancelTaskRequest() {
-		super("cloudphone", "2020-12-30", "CancelTask");
+		super("cloudphone", "2020-12-30", "CancelTask", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

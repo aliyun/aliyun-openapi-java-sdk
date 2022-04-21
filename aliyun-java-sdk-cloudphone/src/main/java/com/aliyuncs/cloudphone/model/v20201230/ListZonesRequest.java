@@ -32,7 +32,7 @@ public class ListZonesRequest extends RpcAcsRequest<ListZonesResponse> {
 
 	private Long ownerId;
 	public ListZonesRequest() {
-		super("cloudphone", "2020-12-30", "ListZones");
+		super("cloudphone", "2020-12-30", "ListZones", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

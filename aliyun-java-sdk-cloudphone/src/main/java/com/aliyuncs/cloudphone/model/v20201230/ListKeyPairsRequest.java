@@ -40,7 +40,7 @@ public class ListKeyPairsRequest extends RpcAcsRequest<ListKeyPairsResponse> {
 
 	private Integer maxResults;
 	public ListKeyPairsRequest() {
-		super("cloudphone", "2020-12-30", "ListKeyPairs");
+		super("cloudphone", "2020-12-30", "ListKeyPairs", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

@@ -36,7 +36,7 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 
 	private Long ownerId;
 	public ImportKeyPairRequest() {
-		super("cloudphone", "2020-12-30", "ImportKeyPair");
+		super("cloudphone", "2020-12-30", "ImportKeyPair", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

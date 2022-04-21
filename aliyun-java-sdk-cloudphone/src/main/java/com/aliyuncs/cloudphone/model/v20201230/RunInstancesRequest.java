@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudphone.model.v20201230;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -23,8 +24,6 @@ import com.aliyuncs.http.MethodType;
  */
 public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	   
-
-	private Long resourceOwnerId;
 
 	private String imageId;
 
@@ -39,6 +38,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String resolution;
 
 	private String instanceType;
+
+	private List<Tag> tags;
 
 	private Integer amount;
 
@@ -64,19 +65,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Integer eipBandwidth;
 	public RunInstancesRequest() {
-		super("cloudphone", "2020-12-30", "RunInstances");
+		super("cloudphone", "2020-12-30", "RunInstances", "cloudphone");
 		setMethod(MethodType.POST);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getImageId() {
@@ -154,6 +144,20 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public Integer getAmount() {
@@ -285,6 +289,29 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.eipBandwidth = eipBandwidth;
 		if(eipBandwidth != null){
 			putQueryParameter("EipBandwidth", eipBandwidth.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

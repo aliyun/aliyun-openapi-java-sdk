@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cloudphone.model.v20201230.ListInstancesResponse;
 import com.aliyuncs.cloudphone.model.v20201230.ListInstancesResponse.Instance;
 import com.aliyuncs.cloudphone.model.v20201230.ListInstancesResponse.Instance.EipAddress;
+import com.aliyuncs.cloudphone.model.v20201230.ListInstancesResponse.Instance.Tag;
 import com.aliyuncs.cloudphone.model.v20201230.ListInstancesResponse.Instance.VpcAttributes;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -66,6 +67,16 @@ public class ListInstancesResponseUnmarshaller {
 			eipAddress.setBandwidth(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].EipAddress.Bandwidth"));
 			eipAddress.setAllocationId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].EipAddress.AllocationId"));
 			instance.setEipAddress(eipAddress);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			instance.setTags(tags);
 
 			instances.add(instance);
 		}

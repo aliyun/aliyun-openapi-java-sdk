@@ -21,10 +21,10 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListInstanceVncUrlRequest extends RpcAcsRequest<ListInstanceVncUrlResponse> {
+public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String nextToken;
 
 	private String resourceOwnerAccount;
 
@@ -32,20 +32,20 @@ public class ListInstanceVncUrlRequest extends RpcAcsRequest<ListInstanceVncUrlR
 
 	private Long ownerId;
 
-	private String instanceId;
-	public ListInstanceVncUrlRequest() {
-		super("cloudphone", "2020-12-30", "ListInstanceVncUrl", "cloudphone");
+	private String resourceType;
+	public ListTagKeysRequest() {
+		super("cloudphone", "2020-12-30", "ListTagKeys", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -82,20 +82,20 @@ public class ListInstanceVncUrlRequest extends RpcAcsRequest<ListInstanceVncUrlR
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceVncUrlResponse> getResponseClass() {
-		return ListInstanceVncUrlResponse.class;
+	public Class<ListTagKeysResponse> getResponseClass() {
+		return ListTagKeysResponse.class;
 	}
 
 }

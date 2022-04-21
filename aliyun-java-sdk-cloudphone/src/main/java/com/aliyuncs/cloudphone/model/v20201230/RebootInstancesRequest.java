@@ -37,7 +37,7 @@ public class RebootInstancesRequest extends RpcAcsRequest<RebootInstancesRespons
 
 	private Boolean force;
 	public RebootInstancesRequest() {
-		super("cloudphone", "2020-12-30", "RebootInstances");
+		super("cloudphone", "2020-12-30", "RebootInstances", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

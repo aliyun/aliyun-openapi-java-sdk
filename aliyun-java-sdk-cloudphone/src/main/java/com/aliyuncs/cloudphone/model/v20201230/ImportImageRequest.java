@@ -46,7 +46,7 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private Long ownerId;
 	public ImportImageRequest() {
-		super("cloudphone", "2020-12-30", "ImportImage");
+		super("cloudphone", "2020-12-30", "ImportImage", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

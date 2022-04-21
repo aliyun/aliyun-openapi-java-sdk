@@ -40,7 +40,7 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String instanceId;
 	public CreateImageRequest() {
-		super("cloudphone", "2020-12-30", "CreateImage");
+		super("cloudphone", "2020-12-30", "CreateImage", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

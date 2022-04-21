@@ -43,7 +43,7 @@ public class UpdateImageAttributeRequest extends RpcAcsRequest<UpdateImageAttrib
 
 	private List<String> removeAccounts;
 	public UpdateImageAttributeRequest() {
-		super("cloudphone", "2020-12-30", "UpdateImageAttribute");
+		super("cloudphone", "2020-12-30", "UpdateImageAttribute", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

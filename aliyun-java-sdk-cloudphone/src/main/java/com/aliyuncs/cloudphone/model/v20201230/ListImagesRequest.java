@@ -45,7 +45,7 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String status;
 	public ListImagesRequest() {
-		super("cloudphone", "2020-12-30", "ListImages");
+		super("cloudphone", "2020-12-30", "ListImages", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

@@ -35,7 +35,7 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 
 	private Long ownerId;
 	public DeleteKeyPairsRequest() {
-		super("cloudphone", "2020-12-30", "DeleteKeyPairs");
+		super("cloudphone", "2020-12-30", "DeleteKeyPairs", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 

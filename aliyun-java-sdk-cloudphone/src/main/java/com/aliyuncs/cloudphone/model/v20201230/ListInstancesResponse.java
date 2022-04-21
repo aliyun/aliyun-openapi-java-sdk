@@ -113,6 +113,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private String webRtcToken;
 
+		private List<Tag> tags;
+
 		private VpcAttributes vpcAttributes;
 
 		private EipAddress eipAddress;
@@ -261,6 +263,14 @@ public class ListInstancesResponse extends AcsResponse {
 			this.webRtcToken = webRtcToken;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public VpcAttributes getVpcAttributes() {
 			return this.vpcAttributes;
 		}
@@ -275,6 +285,29 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setEipAddress(EipAddress eipAddress) {
 			this.eipAddress = eipAddress;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class VpcAttributes {

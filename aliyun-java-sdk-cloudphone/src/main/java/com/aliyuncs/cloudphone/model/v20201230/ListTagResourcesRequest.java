@@ -22,16 +22,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateInstanceAttributeRequest extends RpcAcsRequest<UpdateInstanceAttributeResponse> {
+public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	   
 
-	private String description;
-
-	private String keyPairName;
-
-	private String resolution;
+	private String nextToken;
 
 	private List<Tag> tags;
+
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
@@ -39,46 +37,20 @@ public class UpdateInstanceAttributeRequest extends RpcAcsRequest<UpdateInstance
 
 	private Long ownerId;
 
-	private String instanceId;
-
-	private String instanceName;
-
-	private String vncPassword;
-	public UpdateInstanceAttributeRequest() {
-		super("cloudphone", "2020-12-30", "UpdateInstanceAttribute", "cloudphone");
+	private String resourceType;
+	public ListTagResourcesRequest() {
+		super("cloudphone", "2020-12-30", "ListTagResources", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getKeyPairName() {
-		return this.keyPairName;
-	}
-
-	public void setKeyPairName(String keyPairName) {
-		this.keyPairName = keyPairName;
-		if(keyPairName != null){
-			putQueryParameter("KeyPairName", keyPairName);
-		}
-	}
-
-	public String getResolution() {
-		return this.resolution;
-	}
-
-	public void setResolution(String resolution) {
-		this.resolution = resolution;
-		if(resolution != null){
-			putQueryParameter("Resolution", resolution);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -92,6 +64,19 @@ public class UpdateInstanceAttributeRequest extends RpcAcsRequest<UpdateInstance
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
 			}
 		}	
 	}
@@ -129,36 +114,14 @@ public class UpdateInstanceAttributeRequest extends RpcAcsRequest<UpdateInstance
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getVncPassword() {
-		return this.vncPassword;
-	}
-
-	public void setVncPassword(String vncPassword) {
-		this.vncPassword = vncPassword;
-		if(vncPassword != null){
-			putQueryParameter("VncPassword", vncPassword);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -186,8 +149,8 @@ public class UpdateInstanceAttributeRequest extends RpcAcsRequest<UpdateInstance
 	}
 
 	@Override
-	public Class<UpdateInstanceAttributeResponse> getResponseClass() {
-		return UpdateInstanceAttributeResponse.class;
+	public Class<ListTagResourcesResponse> getResponseClass() {
+		return ListTagResourcesResponse.class;
 	}
 
 }

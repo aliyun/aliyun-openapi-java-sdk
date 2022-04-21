@@ -34,7 +34,7 @@ public class ListImageSharePermissionRequest extends RpcAcsRequest<ListImageShar
 
 	private Long ownerId;
 	public ListImageSharePermissionRequest() {
-		super("cloudphone", "2020-12-30", "ListImageSharePermission");
+		super("cloudphone", "2020-12-30", "ListImageSharePermission", "cloudphone");
 		setMethod(MethodType.POST);
 	}
 
