@@ -48,23 +48,23 @@ public class DescribeVsDomainDetailResponse extends AcsResponse {
 
 		private String gmtCreated;
 
-		private String gmtModified;
-
-		private String domainStatus;
-
-		private String cname;
-
-		private String domainName;
-
-		private String domainType;
-
-		private String region;
-
 		private String description;
 
 		private String sSLProtocol;
 
+		private String region;
+
 		private String scope;
+
+		private String cname;
+
+		private String domainStatus;
+
+		private String gmtModified;
+
+		private String domainName;
+
+		private String domainType;
 
 		public String getGmtCreated() {
 			return this.gmtCreated;
@@ -72,54 +72,6 @@ public class DescribeVsDomainDetailResponse extends AcsResponse {
 
 		public void setGmtCreated(String gmtCreated) {
 			this.gmtCreated = gmtCreated;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getDomainType() {
-			return this.domainType;
-		}
-
-		public void setDomainType(String domainType) {
-			this.domainType = domainType;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
 		}
 
 		public String getDescription() {
@@ -138,12 +90,60 @@ public class DescribeVsDomainDetailResponse extends AcsResponse {
 			this.sSLProtocol = sSLProtocol;
 		}
 
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
 		public String getScope() {
 			return this.scope;
 		}
 
 		public void setScope(String scope) {
 			this.scope = scope;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getDomainStatus() {
+			return this.domainStatus;
+		}
+
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getDomainType() {
+			return this.domainType;
+		}
+
+		public void setDomainType(String domainType) {
+			this.domainType = domainType;
 		}
 	}
 

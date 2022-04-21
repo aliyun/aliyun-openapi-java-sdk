@@ -31,8 +31,8 @@ public class BatchDeleteDevicesResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("BatchDeleteDevicesResponse.Results.Length"); i++) {
 			Result result = new Result();
-			result.setId(_ctx.stringValue("BatchDeleteDevicesResponse.Results["+ i +"].Id"));
 			result.setError(_ctx.stringValue("BatchDeleteDevicesResponse.Results["+ i +"].Error"));
+			result.setId(_ctx.stringValue("BatchDeleteDevicesResponse.Results["+ i +"].Id"));
 
 			results.add(result);
 		}

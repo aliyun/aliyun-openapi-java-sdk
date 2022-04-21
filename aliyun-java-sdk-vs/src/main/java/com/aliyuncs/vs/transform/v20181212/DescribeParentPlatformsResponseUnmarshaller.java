@@ -27,30 +27,30 @@ public class DescribeParentPlatformsResponseUnmarshaller {
 	public static DescribeParentPlatformsResponse unmarshall(DescribeParentPlatformsResponse describeParentPlatformsResponse, UnmarshallerContext _ctx) {
 		
 		describeParentPlatformsResponse.setRequestId(_ctx.stringValue("DescribeParentPlatformsResponse.RequestId"));
-		describeParentPlatformsResponse.setPageSize(_ctx.longValue("DescribeParentPlatformsResponse.PageSize"));
 		describeParentPlatformsResponse.setPageNum(_ctx.longValue("DescribeParentPlatformsResponse.PageNum"));
-		describeParentPlatformsResponse.setPageCount(_ctx.longValue("DescribeParentPlatformsResponse.PageCount"));
+		describeParentPlatformsResponse.setPageSize(_ctx.longValue("DescribeParentPlatformsResponse.PageSize"));
 		describeParentPlatformsResponse.setTotalCount(_ctx.longValue("DescribeParentPlatformsResponse.TotalCount"));
+		describeParentPlatformsResponse.setPageCount(_ctx.longValue("DescribeParentPlatformsResponse.PageCount"));
 
 		List<Platform> platforms = new ArrayList<Platform>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParentPlatformsResponse.Platforms.Length"); i++) {
 			Platform platform = new Platform();
-			platform.setId(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Id"));
-			platform.setName(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Name"));
-			platform.setDescription(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Description"));
-			platform.setBizProtocol(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Protocol"));
 			platform.setStatus(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Status"));
-			platform.setGbId(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].GbId"));
+			platform.setClientPort(_ctx.longValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientPort"));
+			platform.setBizProtocol(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Protocol"));
+			platform.setClientGbId(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientGbId"));
 			platform.setIp(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Ip"));
 			platform.setPort(_ctx.longValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Port"));
-			platform.setClientGbId(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientGbId"));
-			platform.setClientAuth(_ctx.booleanValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientAuth"));
 			platform.setClientUsername(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientUsername"));
 			platform.setClientPassword(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientPassword"));
-			platform.setClientIp(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientIp"));
-			platform.setClientPort(_ctx.longValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientPort"));
 			platform.setAutoStart(_ctx.booleanValue("DescribeParentPlatformsResponse.Platforms["+ i +"].AutoStart"));
+			platform.setClientAuth(_ctx.booleanValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientAuth"));
+			platform.setGbId(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].GbId"));
+			platform.setDescription(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Description"));
+			platform.setClientIp(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].ClientIp"));
+			platform.setName(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Name"));
 			platform.setCreatedTime(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].CreatedTime"));
+			platform.setId(_ctx.stringValue("DescribeParentPlatformsResponse.Platforms["+ i +"].Id"));
 
 			platforms.add(platform);
 		}

@@ -27,16 +27,16 @@ public class DescribeVsDomainBpsDataResponseUnmarshaller {
 	public static DescribeVsDomainBpsDataResponse unmarshall(DescribeVsDomainBpsDataResponse describeVsDomainBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeVsDomainBpsDataResponse.setRequestId(_ctx.stringValue("DescribeVsDomainBpsDataResponse.RequestId"));
-		describeVsDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeVsDomainBpsDataResponse.DomainName"));
-		describeVsDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeVsDomainBpsDataResponse.StartTime"));
 		describeVsDomainBpsDataResponse.setEndTime(_ctx.stringValue("DescribeVsDomainBpsDataResponse.EndTime"));
+		describeVsDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeVsDomainBpsDataResponse.StartTime"));
+		describeVsDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeVsDomainBpsDataResponse.DomainName"));
 		describeVsDomainBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeVsDomainBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeVsDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setBpsValue(_ctx.stringValue("DescribeVsDomainBpsDataResponse.BpsDataPerInterval["+ i +"].BpsValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeVsDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

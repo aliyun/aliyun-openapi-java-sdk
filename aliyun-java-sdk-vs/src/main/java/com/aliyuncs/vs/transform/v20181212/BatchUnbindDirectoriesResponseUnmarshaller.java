@@ -31,9 +31,9 @@ public class BatchUnbindDirectoriesResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("BatchUnbindDirectoriesResponse.Results.Length"); i++) {
 			Result result = new Result();
+			result.setError(_ctx.stringValue("BatchUnbindDirectoriesResponse.Results["+ i +"].Error"));
 			result.setDirectoryId(_ctx.stringValue("BatchUnbindDirectoriesResponse.Results["+ i +"].DirectoryId"));
 			result.setDeviceId(_ctx.stringValue("BatchUnbindDirectoriesResponse.Results["+ i +"].DeviceId"));
-			result.setError(_ctx.stringValue("BatchUnbindDirectoriesResponse.Results["+ i +"].Error"));
 
 			results.add(result);
 		}

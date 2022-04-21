@@ -23,11 +23,11 @@ public class DescribeAccountStatResponseUnmarshaller {
 	public static DescribeAccountStatResponse unmarshall(DescribeAccountStatResponse describeAccountStatResponse, UnmarshallerContext _ctx) {
 		
 		describeAccountStatResponse.setRequestId(_ctx.stringValue("DescribeAccountStatResponse.RequestId"));
-		describeAccountStatResponse.setId(_ctx.stringValue("DescribeAccountStatResponse.Id"));
-		describeAccountStatResponse.setGroupNum(_ctx.longValue("DescribeAccountStatResponse.GroupNum"));
-		describeAccountStatResponse.setGroupLimit(_ctx.longValue("DescribeAccountStatResponse.GroupLimit"));
 		describeAccountStatResponse.setTemplateNum(_ctx.longValue("DescribeAccountStatResponse.TemplateNum"));
+		describeAccountStatResponse.setGroupLimit(_ctx.longValue("DescribeAccountStatResponse.GroupLimit"));
 		describeAccountStatResponse.setTemplateLimit(_ctx.longValue("DescribeAccountStatResponse.TemplateLimit"));
+		describeAccountStatResponse.setGroupNum(_ctx.longValue("DescribeAccountStatResponse.GroupNum"));
+		describeAccountStatResponse.setId(_ctx.stringValue("DescribeAccountStatResponse.Id"));
 	 
 	 	return describeAccountStatResponse;
 	}

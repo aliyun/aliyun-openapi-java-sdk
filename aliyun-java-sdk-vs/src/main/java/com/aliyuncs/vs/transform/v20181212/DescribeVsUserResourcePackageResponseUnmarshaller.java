@@ -31,12 +31,12 @@ public class DescribeVsUserResourcePackageResponseUnmarshaller {
 		List<ResourcePackageInfo> resourcePackageInfos = new ArrayList<ResourcePackageInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos.Length"); i++) {
 			ResourcePackageInfo resourcePackageInfo = new ResourcePackageInfo();
+			resourcePackageInfo.setDisplayName(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
+			resourcePackageInfo.setStatus(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
+			resourcePackageInfo.setCommodityCode(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CommodityCode"));
 			resourcePackageInfo.setCurrCapacity(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CurrCapacity"));
 			resourcePackageInfo.setInitCapacity(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InitCapacity"));
-			resourcePackageInfo.setCommodityCode(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].CommodityCode"));
-			resourcePackageInfo.setDisplayName(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].DisplayName"));
 			resourcePackageInfo.setInstanceId(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].InstanceId"));
-			resourcePackageInfo.setStatus(_ctx.stringValue("DescribeVsUserResourcePackageResponse.ResourcePackageInfos["+ i +"].Status"));
 
 			resourcePackageInfos.add(resourcePackageInfo);
 		}

@@ -31,9 +31,9 @@ public class BatchUnbindParentPlatformDevicesResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("BatchUnbindParentPlatformDevicesResponse.Results.Length"); i++) {
 			Result result = new Result();
+			result.setError(_ctx.stringValue("BatchUnbindParentPlatformDevicesResponse.Results["+ i +"].Error"));
 			result.setParentPlatformId(_ctx.stringValue("BatchUnbindParentPlatformDevicesResponse.Results["+ i +"].ParentPlatformId"));
 			result.setDeviceId(_ctx.stringValue("BatchUnbindParentPlatformDevicesResponse.Results["+ i +"].DeviceId"));
-			result.setError(_ctx.stringValue("BatchUnbindParentPlatformDevicesResponse.Results["+ i +"].Error"));
 
 			results.add(result);
 		}

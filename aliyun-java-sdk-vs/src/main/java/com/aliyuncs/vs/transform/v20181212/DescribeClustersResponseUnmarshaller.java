@@ -33,11 +33,11 @@ public class DescribeClustersResponseUnmarshaller {
 		List<Cluster> clusters = new ArrayList<Cluster>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClustersResponse.Clusters.Length"); i++) {
 			Cluster cluster = new Cluster();
-			cluster.setClusterId(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].ClusterId"));
-			cluster.setName(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].Name"));
-			cluster.setDescription(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].Description"));
-			cluster.setMaintainTime(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].MaintainTime"));
 			cluster.setStatus(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].Status"));
+			cluster.setDescription(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].Description"));
+			cluster.setName(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].Name"));
+			cluster.setMaintainTime(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].MaintainTime"));
+			cluster.setClusterId(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].ClusterId"));
 
 			List<InternalPort> internalPorts = new ArrayList<InternalPort>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts.Length"); j++) {

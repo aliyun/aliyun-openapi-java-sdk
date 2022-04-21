@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeviceChannelsResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageNum;
 
 	private Long pageSize;
 
-	private Long pageNum;
-
-	private Long pageCount;
+	private String requestId;
 
 	private Long totalCount;
 
+	private Long pageCount;
+
 	private List<Channel> channels;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Long getPageSize() {
@@ -53,20 +53,12 @@ public class DescribeDeviceChannelsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getPageNum() {
-		return this.pageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public Long getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Long pageCount) {
-		this.pageCount = pageCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotalCount() {
@@ -75,6 +67,14 @@ public class DescribeDeviceChannelsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Long getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Long pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	public List<Channel> getChannels() {
@@ -87,28 +87,28 @@ public class DescribeDeviceChannelsResponse extends AcsResponse {
 
 	public static class Channel {
 
-		private String name;
+		private String streamStatus;
 
 		private String gbId;
 
-		private String streamId;
-
-		private String streamStatus;
+		private String params;
 
 		private String deviceId;
 
-		private String deviceStatus;
-
 		private Long channelId;
 
-		private String params;
+		private String deviceStatus;
 
-		public String getName() {
-			return this.name;
+		private String name;
+
+		private String streamId;
+
+		public String getStreamStatus() {
+			return this.streamStatus;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setStreamStatus(String streamStatus) {
+			this.streamStatus = streamStatus;
 		}
 
 		public String getGbId() {
@@ -119,20 +119,12 @@ public class DescribeDeviceChannelsResponse extends AcsResponse {
 			this.gbId = gbId;
 		}
 
-		public String getStreamId() {
-			return this.streamId;
+		public String getParams() {
+			return this.params;
 		}
 
-		public void setStreamId(String streamId) {
-			this.streamId = streamId;
-		}
-
-		public String getStreamStatus() {
-			return this.streamStatus;
-		}
-
-		public void setStreamStatus(String streamStatus) {
-			this.streamStatus = streamStatus;
+		public void setParams(String params) {
+			this.params = params;
 		}
 
 		public String getDeviceId() {
@@ -143,14 +135,6 @@ public class DescribeDeviceChannelsResponse extends AcsResponse {
 			this.deviceId = deviceId;
 		}
 
-		public String getDeviceStatus() {
-			return this.deviceStatus;
-		}
-
-		public void setDeviceStatus(String deviceStatus) {
-			this.deviceStatus = deviceStatus;
-		}
-
 		public Long getChannelId() {
 			return this.channelId;
 		}
@@ -159,12 +143,28 @@ public class DescribeDeviceChannelsResponse extends AcsResponse {
 			this.channelId = channelId;
 		}
 
-		public String getParams() {
-			return this.params;
+		public String getDeviceStatus() {
+			return this.deviceStatus;
 		}
 
-		public void setParams(String params) {
-			this.params = params;
+		public void setDeviceStatus(String deviceStatus) {
+			this.deviceStatus = deviceStatus;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getStreamId() {
+			return this.streamId;
+		}
+
+		public void setStreamId(String streamId) {
+			this.streamId = streamId;
 		}
 	}
 

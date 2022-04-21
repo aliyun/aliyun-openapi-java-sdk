@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClustersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long total;
 
+	private String requestId;
+
 	private List<Cluster> clusters;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class DescribeClustersResponse extends AcsResponse {
 
 	public void setTotal(Long total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Cluster> getClusters() {
@@ -57,32 +57,24 @@ public class DescribeClustersResponse extends AcsResponse {
 
 	public static class Cluster {
 
-		private String clusterId;
-
-		private String name;
+		private String status;
 
 		private String description;
 
+		private String name;
+
 		private String maintainTime;
 
-		private String status;
+		private String clusterId;
 
 		private List<InternalPort> internalPorts;
 
-		public String getClusterId() {
-			return this.clusterId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getDescription() {
@@ -93,6 +85,14 @@ public class DescribeClustersResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getMaintainTime() {
 			return this.maintainTime;
 		}
@@ -101,12 +101,12 @@ public class DescribeClustersResponse extends AcsResponse {
 			this.maintainTime = maintainTime;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getClusterId() {
+			return this.clusterId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public List<InternalPort> getInternalPorts() {

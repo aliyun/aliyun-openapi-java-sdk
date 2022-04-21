@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateGroupResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String id;
-
 	private String gbId;
 
 	private String gbIp;
 
+	private String requestId;
+
 	private Long gbPort;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+	private String id;
 
 	public String getGbId() {
 		return this.gbId;
@@ -66,12 +50,28 @@ public class CreateGroupResponse extends AcsResponse {
 		this.gbIp = gbIp;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getGbPort() {
 		return this.gbPort;
 	}
 
 	public void setGbPort(Long gbPort) {
 		this.gbPort = gbPort;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParentPlatformDevicesResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageNum;
 
 	private Long pageSize;
 
-	private Long pageNum;
-
-	private Long pageCount;
+	private String requestId;
 
 	private Long totalCount;
 
+	private Long pageCount;
+
 	private List<Device> devices;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Long getPageSize() {
@@ -53,20 +53,12 @@ public class DescribeParentPlatformDevicesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getPageNum() {
-		return this.pageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public Long getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Long pageCount) {
-		this.pageCount = pageCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotalCount() {
@@ -75,6 +67,14 @@ public class DescribeParentPlatformDevicesResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Long getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Long pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	public List<Device> getDevices() {
@@ -87,30 +87,22 @@ public class DescribeParentPlatformDevicesResponse extends AcsResponse {
 
 	public static class Device {
 
-		private String id;
-
-		private String name;
+		private String parentId;
 
 		private String gbId;
 
 		private String groupId;
 
-		private String parentId;
+		private String name;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		public String getParentId() {
+			return this.parentId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
 		}
 
 		public String getGbId() {
@@ -129,12 +121,20 @@ public class DescribeParentPlatformDevicesResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getParentId() {
-			return this.parentId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setParentId(String parentId) {
-			this.parentId = parentId;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

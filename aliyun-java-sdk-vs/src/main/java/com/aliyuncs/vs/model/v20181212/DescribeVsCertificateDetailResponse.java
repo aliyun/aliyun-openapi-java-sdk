@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVsCertificateDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String cert;
+	private String certName;
 
 	private String key;
 
+	private String cert;
+
 	private Long certId;
 
-	private String certName;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCertName() {
+		return this.certName;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCert() {
-		return this.cert;
-	}
-
-	public void setCert(String cert) {
-		this.cert = cert;
+	public void setCertName(String certName) {
+		this.certName = certName;
 	}
 
 	public String getKey() {
@@ -58,6 +50,14 @@ public class DescribeVsCertificateDetailResponse extends AcsResponse {
 		this.key = key;
 	}
 
+	public String getCert() {
+		return this.cert;
+	}
+
+	public void setCert(String cert) {
+		this.cert = cert;
+	}
+
 	public Long getCertId() {
 		return this.certId;
 	}
@@ -66,12 +66,12 @@ public class DescribeVsCertificateDetailResponse extends AcsResponse {
 		this.certId = certId;
 	}
 
-	public String getCertName() {
-		return this.certName;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCertName(String certName) {
-		this.certName = certName;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

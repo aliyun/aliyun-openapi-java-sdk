@@ -27,22 +27,22 @@ public class DescribeDeviceChannelsResponseUnmarshaller {
 	public static DescribeDeviceChannelsResponse unmarshall(DescribeDeviceChannelsResponse describeDeviceChannelsResponse, UnmarshallerContext _ctx) {
 		
 		describeDeviceChannelsResponse.setRequestId(_ctx.stringValue("DescribeDeviceChannelsResponse.RequestId"));
-		describeDeviceChannelsResponse.setPageSize(_ctx.longValue("DescribeDeviceChannelsResponse.PageSize"));
 		describeDeviceChannelsResponse.setPageNum(_ctx.longValue("DescribeDeviceChannelsResponse.PageNum"));
-		describeDeviceChannelsResponse.setPageCount(_ctx.longValue("DescribeDeviceChannelsResponse.PageCount"));
+		describeDeviceChannelsResponse.setPageSize(_ctx.longValue("DescribeDeviceChannelsResponse.PageSize"));
 		describeDeviceChannelsResponse.setTotalCount(_ctx.longValue("DescribeDeviceChannelsResponse.TotalCount"));
+		describeDeviceChannelsResponse.setPageCount(_ctx.longValue("DescribeDeviceChannelsResponse.PageCount"));
 
 		List<Channel> channels = new ArrayList<Channel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDeviceChannelsResponse.Channels.Length"); i++) {
 			Channel channel = new Channel();
-			channel.setName(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].Name"));
-			channel.setGbId(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].GbId"));
-			channel.setStreamId(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].StreamId"));
 			channel.setStreamStatus(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].StreamStatus"));
-			channel.setDeviceId(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].DeviceId"));
-			channel.setDeviceStatus(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].DeviceStatus"));
-			channel.setChannelId(_ctx.longValue("DescribeDeviceChannelsResponse.Channels["+ i +"].ChannelId"));
+			channel.setGbId(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].GbId"));
 			channel.setParams(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].Params"));
+			channel.setDeviceId(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].DeviceId"));
+			channel.setChannelId(_ctx.longValue("DescribeDeviceChannelsResponse.Channels["+ i +"].ChannelId"));
+			channel.setDeviceStatus(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].DeviceStatus"));
+			channel.setName(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].Name"));
+			channel.setStreamId(_ctx.stringValue("DescribeDeviceChannelsResponse.Channels["+ i +"].StreamId"));
 
 			channels.add(channel);
 		}

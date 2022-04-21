@@ -31,8 +31,8 @@ public class DescribeVsDomainSnapshotDataResponseUnmarshaller {
 		List<DataModule> snapshotDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsDomainSnapshotDataResponse.SnapshotDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeVsDomainSnapshotDataResponse.SnapshotDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setSnapshotValue(_ctx.stringValue("DescribeVsDomainSnapshotDataResponse.SnapshotDataPerInterval["+ i +"].SnapshotValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeVsDomainSnapshotDataResponse.SnapshotDataPerInterval["+ i +"].TimeStamp"));
 
 			snapshotDataPerInterval.add(dataModule);
 		}

@@ -23,15 +23,15 @@ public class CreateStreamSnapshotResponseUnmarshaller {
 	public static CreateStreamSnapshotResponse unmarshall(CreateStreamSnapshotResponse createStreamSnapshotResponse, UnmarshallerContext _ctx) {
 		
 		createStreamSnapshotResponse.setRequestId(_ctx.stringValue("CreateStreamSnapshotResponse.RequestId"));
-		createStreamSnapshotResponse.setId(_ctx.stringValue("CreateStreamSnapshotResponse.Id"));
-		createStreamSnapshotResponse.setUrl(_ctx.stringValue("CreateStreamSnapshotResponse.Url"));
-		createStreamSnapshotResponse.setOssBucket(_ctx.stringValue("CreateStreamSnapshotResponse.OssBucket"));
 		createStreamSnapshotResponse.setOssObject(_ctx.stringValue("CreateStreamSnapshotResponse.OssObject"));
-		createStreamSnapshotResponse.setOssEndpoint(_ctx.stringValue("CreateStreamSnapshotResponse.OssEndpoint"));
-		createStreamSnapshotResponse.setHeight(_ctx.longValue("CreateStreamSnapshotResponse.Height"));
 		createStreamSnapshotResponse.setWidth(_ctx.longValue("CreateStreamSnapshotResponse.Width"));
-		createStreamSnapshotResponse.setFormat(_ctx.stringValue("CreateStreamSnapshotResponse.Format"));
+		createStreamSnapshotResponse.setHeight(_ctx.longValue("CreateStreamSnapshotResponse.Height"));
+		createStreamSnapshotResponse.setUrl(_ctx.stringValue("CreateStreamSnapshotResponse.Url"));
 		createStreamSnapshotResponse.setTimestamp(_ctx.longValue("CreateStreamSnapshotResponse.Timestamp"));
+		createStreamSnapshotResponse.setOssBucket(_ctx.stringValue("CreateStreamSnapshotResponse.OssBucket"));
+		createStreamSnapshotResponse.setFormat(_ctx.stringValue("CreateStreamSnapshotResponse.Format"));
+		createStreamSnapshotResponse.setOssEndpoint(_ctx.stringValue("CreateStreamSnapshotResponse.OssEndpoint"));
+		createStreamSnapshotResponse.setId(_ctx.stringValue("CreateStreamSnapshotResponse.Id"));
 	 
 	 	return createStreamSnapshotResponse;
 	}

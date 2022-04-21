@@ -31,8 +31,8 @@ public class DescribeStreamVodListResponseUnmarshaller {
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStreamVodListResponse.Records.Length"); i++) {
 			Record record = new Record();
-			record.setStartTime(_ctx.longValue("DescribeStreamVodListResponse.Records["+ i +"].StartTime"));
 			record.setEndTime(_ctx.longValue("DescribeStreamVodListResponse.Records["+ i +"].EndTime"));
+			record.setStartTime(_ctx.longValue("DescribeStreamVodListResponse.Records["+ i +"].StartTime"));
 
 			records.add(record);
 		}

@@ -27,19 +27,19 @@ public class DescribeParentPlatformDevicesResponseUnmarshaller {
 	public static DescribeParentPlatformDevicesResponse unmarshall(DescribeParentPlatformDevicesResponse describeParentPlatformDevicesResponse, UnmarshallerContext _ctx) {
 		
 		describeParentPlatformDevicesResponse.setRequestId(_ctx.stringValue("DescribeParentPlatformDevicesResponse.RequestId"));
-		describeParentPlatformDevicesResponse.setPageSize(_ctx.longValue("DescribeParentPlatformDevicesResponse.PageSize"));
 		describeParentPlatformDevicesResponse.setPageNum(_ctx.longValue("DescribeParentPlatformDevicesResponse.PageNum"));
-		describeParentPlatformDevicesResponse.setPageCount(_ctx.longValue("DescribeParentPlatformDevicesResponse.PageCount"));
+		describeParentPlatformDevicesResponse.setPageSize(_ctx.longValue("DescribeParentPlatformDevicesResponse.PageSize"));
 		describeParentPlatformDevicesResponse.setTotalCount(_ctx.longValue("DescribeParentPlatformDevicesResponse.TotalCount"));
+		describeParentPlatformDevicesResponse.setPageCount(_ctx.longValue("DescribeParentPlatformDevicesResponse.PageCount"));
 
 		List<Device> devices = new ArrayList<Device>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParentPlatformDevicesResponse.Devices.Length"); i++) {
 			Device device = new Device();
-			device.setId(_ctx.stringValue("DescribeParentPlatformDevicesResponse.Devices["+ i +"].Id"));
-			device.setName(_ctx.stringValue("DescribeParentPlatformDevicesResponse.Devices["+ i +"].Name"));
+			device.setParentId(_ctx.stringValue("DescribeParentPlatformDevicesResponse.Devices["+ i +"].ParentId"));
 			device.setGbId(_ctx.stringValue("DescribeParentPlatformDevicesResponse.Devices["+ i +"].GbId"));
 			device.setGroupId(_ctx.stringValue("DescribeParentPlatformDevicesResponse.Devices["+ i +"].GroupId"));
-			device.setParentId(_ctx.stringValue("DescribeParentPlatformDevicesResponse.Devices["+ i +"].ParentId"));
+			device.setName(_ctx.stringValue("DescribeParentPlatformDevicesResponse.Devices["+ i +"].Name"));
+			device.setId(_ctx.stringValue("DescribeParentPlatformDevicesResponse.Devices["+ i +"].Id"));
 
 			devices.add(device);
 		}

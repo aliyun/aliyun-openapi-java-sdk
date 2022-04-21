@@ -47,17 +47,9 @@ public class BatchDeleteDevicesResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String id;
-
 		private String error;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String id;
 
 		public String getError() {
 			return this.error;
@@ -65,6 +57,14 @@ public class BatchDeleteDevicesResponse extends AcsResponse {
 
 		public void setError(String error) {
 			this.error = error;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

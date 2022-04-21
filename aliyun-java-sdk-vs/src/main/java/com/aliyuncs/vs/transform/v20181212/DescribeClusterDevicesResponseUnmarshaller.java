@@ -35,30 +35,30 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 		List<Device> devices = new ArrayList<Device>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices.Length"); i++) {
 			Device device = new Device();
-			device.setInstanceId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceId"));
-			device.setDescription(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Description"));
-			device.setEdgeNodeName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].EdgeNodeName"));
-			device.setPlatformType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PlatformType"));
 			device.setStatus(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Status"));
-			device.setImageId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].ImageId"));
-			device.setInstanceName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceName"));
 			device.setMacAddress(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].MacAddress"));
-			device.setServer(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Server"));
-			device.setInstanceChargeType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceChargeType"));
 			device.setAutoRenew(_ctx.booleanValue("DescribeClusterDevicesResponse.Devices["+ i +"].AutoRenew"));
+			device.setInstanceId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceId"));
 			device.setAutoRenewPeriod(_ctx.integerValue("DescribeClusterDevicesResponse.Devices["+ i +"].AutoRenewPeriod"));
 			device.setPeriod(_ctx.integerValue("DescribeClusterDevicesResponse.Devices["+ i +"].Period"));
+			device.setInstanceChargeType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceChargeType"));
+			device.setDescription(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Description"));
+			device.setPlatformType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PlatformType"));
+			device.setInstanceName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceName"));
 			device.setPeriodUnit(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PeriodUnit"));
+			device.setEdgeNodeName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].EdgeNodeName"));
+			device.setServer(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Server"));
+			device.setImageId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].ImageId"));
 
 			List<IpInfo> ipInfos = new ArrayList<IpInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos.Length"); j++) {
 				IpInfo ipInfo = new IpInfo();
 				ipInfo.setNatType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].NatType"));
-				ipInfo.setExternalIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].ExternalIp"));
-				ipInfo.setExternalPort(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].ExternalPort"));
 				ipInfo.setInternalIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].InternalIp"));
 				ipInfo.setInternalPort(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].InternalPort"));
+				ipInfo.setExternalPort(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].ExternalPort"));
 				ipInfo.setIpProtocol(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].IpProtocol"));
+				ipInfo.setExternalIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].ExternalIp"));
 				ipInfo.setISP(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].IpInfos["+ j +"].ISP"));
 
 				ipInfos.add(ipInfo);
@@ -68,18 +68,18 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 			List<PodInfo> podInfos = new ArrayList<PodInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos.Length"); j++) {
 				PodInfo podInfo = new PodInfo();
-				podInfo.setPodId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].PodId"));
 				podInfo.setStatus(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Status"));
+				podInfo.setPodId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].PodId"));
 
 				List<NetworkItem> network = new ArrayList<NetworkItem>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network.Length"); k++) {
 					NetworkItem networkItem = new NetworkItem();
+					networkItem.setContainerPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ContainerPorts"));
+					networkItem.setOutgoingIsp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].OutgoingIsp"));
+					networkItem.setExternalPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalPorts"));
 					networkItem.setExternalIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIp"));
 					networkItem.setExternalIsp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIsp"));
 					networkItem.setOutgoingIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].OutgoingIp"));
-					networkItem.setOutgoingIsp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].OutgoingIsp"));
-					networkItem.setContainerPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ContainerPorts"));
-					networkItem.setExternalPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalPorts"));
 
 					network.add(networkItem);
 				}

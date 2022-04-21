@@ -26,16 +26,16 @@ public class GetBucketInfoResponseUnmarshaller {
 		getBucketInfoResponse.setRequestId(_ctx.stringValue("GetBucketInfoResponse.RequestId"));
 
 		BucketInfo bucketInfo = new BucketInfo();
-		bucketInfo.setBucketName(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.BucketName"));
-		bucketInfo.setComment(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.Comment"));
-		bucketInfo.setBucketAcl(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.BucketAcl"));
-		bucketInfo.setDataRedundancyType(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.DataRedundancyType"));
 		bucketInfo.setStorageClass(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.StorageClass"));
-		bucketInfo.setDispatcherType(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.DispatcherType"));
+		bucketInfo.setDataRedundancyType(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.DataRedundancyType"));
 		bucketInfo.setResourceType(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.ResourceType"));
+		bucketInfo.setComment(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.Comment"));
+		bucketInfo.setDispatcherType(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.DispatcherType"));
 		bucketInfo.setCreateTime(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.CreateTime"));
-		bucketInfo.setModifyTime(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.ModifyTime"));
 		bucketInfo.setEndpoint(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.Endpoint"));
+		bucketInfo.setBucketAcl(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.BucketAcl"));
+		bucketInfo.setBucketName(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.BucketName"));
+		bucketInfo.setModifyTime(_ctx.stringValue("GetBucketInfoResponse.BucketInfo.ModifyTime"));
 		getBucketInfoResponse.setBucketInfo(bucketInfo);
 	 
 	 	return getBucketInfoResponse;

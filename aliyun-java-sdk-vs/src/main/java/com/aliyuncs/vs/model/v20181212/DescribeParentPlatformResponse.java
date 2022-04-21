@@ -24,79 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParentPlatformResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String id;
-
-	private String name;
-
-	private String description;
-
-	private String protocol;
-
 	private String status;
 
-	private String gbId;
+	private Long clientPort;
+
+	private String clientGbId;
+
+	private String protocol;
 
 	private String ip;
 
 	private Long port;
 
-	private String clientGbId;
-
-	private Boolean clientAuth;
+	private String clientPassword;
 
 	private String clientUsername;
 
-	private String clientPassword;
+	private Boolean autoStart;
+
+	private Boolean clientAuth;
+
+	private String gbId;
+
+	private String requestId;
+
+	private String description;
 
 	private String clientIp;
 
-	private Long clientPort;
-
-	private Boolean autoStart;
+	private String name;
 
 	private String createdTime;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getBizProtocol() {
-		return this.protocol;
-	}
-
-	public void setBizProtocol(String protocol) {
-		this.protocol = protocol;
-	}
+	private String id;
 
 	public String getStatus() {
 		return this.status;
@@ -106,12 +66,28 @@ public class DescribeParentPlatformResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getGbId() {
-		return this.gbId;
+	public Long getClientPort() {
+		return this.clientPort;
 	}
 
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
+	public void setClientPort(Long clientPort) {
+		this.clientPort = clientPort;
+	}
+
+	public String getClientGbId() {
+		return this.clientGbId;
+	}
+
+	public void setClientGbId(String clientGbId) {
+		this.clientGbId = clientGbId;
+	}
+
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
 	}
 
 	public String getIp() {
@@ -130,20 +106,12 @@ public class DescribeParentPlatformResponse extends AcsResponse {
 		this.port = port;
 	}
 
-	public String getClientGbId() {
-		return this.clientGbId;
+	public String getClientPassword() {
+		return this.clientPassword;
 	}
 
-	public void setClientGbId(String clientGbId) {
-		this.clientGbId = clientGbId;
-	}
-
-	public Boolean getClientAuth() {
-		return this.clientAuth;
-	}
-
-	public void setClientAuth(Boolean clientAuth) {
-		this.clientAuth = clientAuth;
+	public void setClientPassword(String clientPassword) {
+		this.clientPassword = clientPassword;
 	}
 
 	public String getClientUsername() {
@@ -154,12 +122,44 @@ public class DescribeParentPlatformResponse extends AcsResponse {
 		this.clientUsername = clientUsername;
 	}
 
-	public String getClientPassword() {
-		return this.clientPassword;
+	public Boolean getAutoStart() {
+		return this.autoStart;
 	}
 
-	public void setClientPassword(String clientPassword) {
-		this.clientPassword = clientPassword;
+	public void setAutoStart(Boolean autoStart) {
+		this.autoStart = autoStart;
+	}
+
+	public Boolean getClientAuth() {
+		return this.clientAuth;
+	}
+
+	public void setClientAuth(Boolean clientAuth) {
+		this.clientAuth = clientAuth;
+	}
+
+	public String getGbId() {
+		return this.gbId;
+	}
+
+	public void setGbId(String gbId) {
+		this.gbId = gbId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getClientIp() {
@@ -170,20 +170,12 @@ public class DescribeParentPlatformResponse extends AcsResponse {
 		this.clientIp = clientIp;
 	}
 
-	public Long getClientPort() {
-		return this.clientPort;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setClientPort(Long clientPort) {
-		this.clientPort = clientPort;
-	}
-
-	public Boolean getAutoStart() {
-		return this.autoStart;
-	}
-
-	public void setAutoStart(Boolean autoStart) {
-		this.autoStart = autoStart;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCreatedTime() {
@@ -192,6 +184,14 @@ public class DescribeParentPlatformResponse extends AcsResponse {
 
 	public void setCreatedTime(String createdTime) {
 		this.createdTime = createdTime;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

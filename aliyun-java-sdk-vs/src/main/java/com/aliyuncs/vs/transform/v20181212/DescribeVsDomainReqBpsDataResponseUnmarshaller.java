@@ -27,9 +27,9 @@ public class DescribeVsDomainReqBpsDataResponseUnmarshaller {
 	public static DescribeVsDomainReqBpsDataResponse unmarshall(DescribeVsDomainReqBpsDataResponse describeVsDomainReqBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeVsDomainReqBpsDataResponse.setRequestId(_ctx.stringValue("DescribeVsDomainReqBpsDataResponse.RequestId"));
-		describeVsDomainReqBpsDataResponse.setDomainName(_ctx.stringValue("DescribeVsDomainReqBpsDataResponse.DomainName"));
-		describeVsDomainReqBpsDataResponse.setStartTime(_ctx.stringValue("DescribeVsDomainReqBpsDataResponse.StartTime"));
 		describeVsDomainReqBpsDataResponse.setEndTime(_ctx.stringValue("DescribeVsDomainReqBpsDataResponse.EndTime"));
+		describeVsDomainReqBpsDataResponse.setStartTime(_ctx.stringValue("DescribeVsDomainReqBpsDataResponse.StartTime"));
+		describeVsDomainReqBpsDataResponse.setDomainName(_ctx.stringValue("DescribeVsDomainReqBpsDataResponse.DomainName"));
 		describeVsDomainReqBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeVsDomainReqBpsDataResponse.DataInterval"));
 
 		List<DataModule> reqBpsDataPerInterval = new ArrayList<DataModule>();

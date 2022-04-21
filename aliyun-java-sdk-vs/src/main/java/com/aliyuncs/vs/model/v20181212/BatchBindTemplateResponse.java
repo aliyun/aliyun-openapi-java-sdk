@@ -47,20 +47,20 @@ public class BatchBindTemplateResponse extends AcsResponse {
 
 	public static class Binding {
 
-		private String templateId;
+		private String error;
 
 		private String instanceId;
 
 		private String instanceType;
 
-		private String error;
+		private String templateId;
 
-		public String getTemplateId() {
-			return this.templateId;
+		public String getError() {
+			return this.error;
 		}
 
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setError(String error) {
+			this.error = error;
 		}
 
 		public String getInstanceId() {
@@ -79,12 +79,12 @@ public class BatchBindTemplateResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public String getError() {
-			return this.error;
+		public String getTemplateId() {
+			return this.templateId;
 		}
 
-		public void setError(String error) {
-			this.error = error;
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 	}
 

@@ -49,9 +49,9 @@ public class BatchResumeVsStreamResponse extends AcsResponse {
 
 		private String result;
 
-		private String detail;
-
 		private Integer count;
+
+		private String detail;
 
 		private List<String> channels;
 
@@ -63,20 +63,20 @@ public class BatchResumeVsStreamResponse extends AcsResponse {
 			this.result = result;
 		}
 
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
-		}
-
 		public Integer getCount() {
 			return this.count;
 		}
 
 		public void setCount(Integer count) {
 			this.count = count;
+		}
+
+		public String getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(String detail) {
+			this.detail = detail;
 		}
 
 		public List<String> getChannels() {

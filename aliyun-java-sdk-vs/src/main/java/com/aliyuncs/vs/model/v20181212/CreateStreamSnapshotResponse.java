@@ -24,57 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateStreamSnapshotResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String id;
-
-	private String url;
-
-	private String ossBucket;
-
 	private String ossObject;
 
-	private String ossEndpoint;
-
-	private Long height;
+	private String requestId;
 
 	private Long width;
 
-	private String format;
+	private Long height;
+
+	private String url;
 
 	private Long timestamp;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String ossBucket;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String format;
 
-	public String getId() {
-		return this.id;
-	}
+	private String ossEndpoint;
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String getOssBucket() {
-		return this.ossBucket;
-	}
-
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-	}
+	private String id;
 
 	public String getOssObject() {
 		return this.ossObject;
@@ -84,20 +52,12 @@ public class CreateStreamSnapshotResponse extends AcsResponse {
 		this.ossObject = ossObject;
 	}
 
-	public String getOssEndpoint() {
-		return this.ossEndpoint;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setOssEndpoint(String ossEndpoint) {
-		this.ossEndpoint = ossEndpoint;
-	}
-
-	public Long getHeight() {
-		return this.height;
-	}
-
-	public void setHeight(Long height) {
-		this.height = height;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getWidth() {
@@ -108,12 +68,20 @@ public class CreateStreamSnapshotResponse extends AcsResponse {
 		this.width = width;
 	}
 
-	public String getFormat() {
-		return this.format;
+	public Long getHeight() {
+		return this.height;
 	}
 
-	public void setFormat(String format) {
-		this.format = format;
+	public void setHeight(Long height) {
+		this.height = height;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public Long getTimestamp() {
@@ -122,6 +90,38 @@ public class CreateStreamSnapshotResponse extends AcsResponse {
 
 	public void setTimestamp(Long timestamp) {
 		this.timestamp = timestamp;
+	}
+
+	public String getOssBucket() {
+		return this.ossBucket;
+	}
+
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+	}
+
+	public String getFormat() {
+		return this.format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
+	}
+
+	public String getOssEndpoint() {
+		return this.ossEndpoint;
+	}
+
+	public void setOssEndpoint(String ossEndpoint) {
+		this.ossEndpoint = ossEndpoint;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

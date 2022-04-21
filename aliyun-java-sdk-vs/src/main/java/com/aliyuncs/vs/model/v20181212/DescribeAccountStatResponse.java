@@ -24,40 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccountStatResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String id;
-
-	private Long groupNum;
+	private Long templateNum;
 
 	private Long groupLimit;
 
-	private Long templateNum;
+	private String requestId;
 
 	private Long templateLimit;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Long groupNum;
+
+	private String id;
+
+	public Long getTemplateNum() {
+		return this.templateNum;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public Long getGroupNum() {
-		return this.groupNum;
-	}
-
-	public void setGroupNum(Long groupNum) {
-		this.groupNum = groupNum;
+	public void setTemplateNum(Long templateNum) {
+		this.templateNum = templateNum;
 	}
 
 	public Long getGroupLimit() {
@@ -68,12 +52,12 @@ public class DescribeAccountStatResponse extends AcsResponse {
 		this.groupLimit = groupLimit;
 	}
 
-	public Long getTemplateNum() {
-		return this.templateNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTemplateNum(Long templateNum) {
-		this.templateNum = templateNum;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTemplateLimit() {
@@ -82,6 +66,22 @@ public class DescribeAccountStatResponse extends AcsResponse {
 
 	public void setTemplateLimit(Long templateLimit) {
 		this.templateLimit = templateLimit;
+	}
+
+	public Long getGroupNum() {
+		return this.groupNum;
+	}
+
+	public void setGroupNum(Long groupNum) {
+		this.groupNum = groupNum;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

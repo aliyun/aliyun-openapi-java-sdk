@@ -49,9 +49,9 @@ public class DescribeVsDomainRecordDataResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private String recordValue;
-
 		private String streamCountValue;
+
+		private String recordValue;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -61,20 +61,20 @@ public class DescribeVsDomainRecordDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public String getRecordValue() {
-			return this.recordValue;
-		}
-
-		public void setRecordValue(String recordValue) {
-			this.recordValue = recordValue;
-		}
-
 		public String getStreamCountValue() {
 			return this.streamCountValue;
 		}
 
 		public void setStreamCountValue(String streamCountValue) {
 			this.streamCountValue = streamCountValue;
+		}
+
+		public String getRecordValue() {
+			return this.recordValue;
+		}
+
+		public void setRecordValue(String recordValue) {
+			this.recordValue = recordValue;
 		}
 	}
 

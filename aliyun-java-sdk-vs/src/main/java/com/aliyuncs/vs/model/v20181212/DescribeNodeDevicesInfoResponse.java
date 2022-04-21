@@ -69,13 +69,21 @@ public class DescribeNodeDevicesInfoResponse extends AcsResponse {
 
 		public static class DeviceInfo {
 
+			private String server;
+
 			private String instanceId;
 
 			private String name;
 
 			private String iP;
 
-			private String server;
+			public String getServer() {
+				return this.server;
+			}
+
+			public void setServer(String server) {
+				this.server = server;
+			}
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -99,14 +107,6 @@ public class DescribeNodeDevicesInfoResponse extends AcsResponse {
 
 			public void setIP(String iP) {
 				this.iP = iP;
-			}
-
-			public String getServer() {
-				return this.server;
-			}
-
-			public void setServer(String server) {
-				this.server = server;
 			}
 		}
 	}

@@ -27,17 +27,17 @@ public class ListObjectsResponseUnmarshaller {
 	public static ListObjectsResponse unmarshall(ListObjectsResponse listObjectsResponse, UnmarshallerContext _ctx) {
 		
 		listObjectsResponse.setRequestId(_ctx.stringValue("ListObjectsResponse.RequestId"));
-		listObjectsResponse.setBucketName(_ctx.stringValue("ListObjectsResponse.BucketName"));
-		listObjectsResponse.setPrefix(_ctx.stringValue("ListObjectsResponse.Prefix"));
+		listObjectsResponse.setMarker(_ctx.stringValue("ListObjectsResponse.Marker"));
 		listObjectsResponse.setMaxKeys(_ctx.integerValue("ListObjectsResponse.MaxKeys"));
-		listObjectsResponse.setKeyCount(_ctx.integerValue("ListObjectsResponse.KeyCount"));
-		listObjectsResponse.setDelimiter(_ctx.stringValue("ListObjectsResponse.Delimiter"));
-		listObjectsResponse.setEncodingType(_ctx.stringValue("ListObjectsResponse.EncodingType"));
-		listObjectsResponse.setIsTruncated(_ctx.booleanValue("ListObjectsResponse.IsTruncated"));
+		listObjectsResponse.setPrefix(_ctx.stringValue("ListObjectsResponse.Prefix"));
 		listObjectsResponse.setContinuationToken(_ctx.stringValue("ListObjectsResponse.ContinuationToken"));
 		listObjectsResponse.setNextContinuationToken(_ctx.stringValue("ListObjectsResponse.NextContinuationToken"));
-		listObjectsResponse.setMarker(_ctx.stringValue("ListObjectsResponse.Marker"));
+		listObjectsResponse.setEncodingType(_ctx.stringValue("ListObjectsResponse.EncodingType"));
 		listObjectsResponse.setNextMarker(_ctx.stringValue("ListObjectsResponse.NextMarker"));
+		listObjectsResponse.setDelimiter(_ctx.stringValue("ListObjectsResponse.Delimiter"));
+		listObjectsResponse.setBucketName(_ctx.stringValue("ListObjectsResponse.BucketName"));
+		listObjectsResponse.setIsTruncated(_ctx.booleanValue("ListObjectsResponse.IsTruncated"));
+		listObjectsResponse.setKeyCount(_ctx.integerValue("ListObjectsResponse.KeyCount"));
 
 		List<String> commonPrefixes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListObjectsResponse.CommonPrefixes.Length"); i++) {
@@ -48,11 +48,11 @@ public class ListObjectsResponseUnmarshaller {
 		List<Content> contents = new ArrayList<Content>();
 		for (int i = 0; i < _ctx.lengthValue("ListObjectsResponse.Contents.Length"); i++) {
 			Content content = new Content();
-			content.setKey(_ctx.stringValue("ListObjectsResponse.Contents["+ i +"].Key"));
+			content.setStorageClass(_ctx.stringValue("ListObjectsResponse.Contents["+ i +"].StorageClass"));
 			content.setLastModified(_ctx.stringValue("ListObjectsResponse.Contents["+ i +"].LastModified"));
+			content.setKey(_ctx.stringValue("ListObjectsResponse.Contents["+ i +"].Key"));
 			content.setETag(_ctx.stringValue("ListObjectsResponse.Contents["+ i +"].ETag"));
 			content.setSize(_ctx.longValue("ListObjectsResponse.Contents["+ i +"].Size"));
-			content.setStorageClass(_ctx.stringValue("ListObjectsResponse.Contents["+ i +"].StorageClass"));
 
 			contents.add(content);
 		}

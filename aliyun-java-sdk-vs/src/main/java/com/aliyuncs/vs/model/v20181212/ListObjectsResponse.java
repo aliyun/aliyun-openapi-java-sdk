@@ -25,56 +25,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListObjectsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String bucketName;
-
-	private String prefix;
+	private String marker;
 
 	private Integer maxKeys;
 
-	private Integer keyCount;
-
-	private String delimiter;
-
-	private String encodingType;
-
-	private Boolean isTruncated;
+	private String prefix;
 
 	private String continuationToken;
 
 	private String nextContinuationToken;
 
-	private String marker;
+	private String encodingType;
 
 	private String nextMarker;
+
+	private String delimiter;
+
+	private String requestId;
+
+	private String bucketName;
+
+	private Boolean isTruncated;
+
+	private Integer keyCount;
 
 	private List<Content> contents;
 
 	private List<String> commonPrefixes;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getMarker() {
+		return this.marker;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getBucketName() {
-		return this.bucketName;
-	}
-
-	public void setBucketName(String bucketName) {
-		this.bucketName = bucketName;
-	}
-
-	public String getPrefix() {
-		return this.prefix;
-	}
-
-	public void setPrefix(String prefix) {
-		this.prefix = prefix;
+	public void setMarker(String marker) {
+		this.marker = marker;
 	}
 
 	public Integer getMaxKeys() {
@@ -85,36 +69,12 @@ public class ListObjectsResponse extends AcsResponse {
 		this.maxKeys = maxKeys;
 	}
 
-	public Integer getKeyCount() {
-		return this.keyCount;
+	public String getPrefix() {
+		return this.prefix;
 	}
 
-	public void setKeyCount(Integer keyCount) {
-		this.keyCount = keyCount;
-	}
-
-	public String getDelimiter() {
-		return this.delimiter;
-	}
-
-	public void setDelimiter(String delimiter) {
-		this.delimiter = delimiter;
-	}
-
-	public String getEncodingType() {
-		return this.encodingType;
-	}
-
-	public void setEncodingType(String encodingType) {
-		this.encodingType = encodingType;
-	}
-
-	public Boolean getIsTruncated() {
-		return this.isTruncated;
-	}
-
-	public void setIsTruncated(Boolean isTruncated) {
-		this.isTruncated = isTruncated;
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
 	}
 
 	public String getContinuationToken() {
@@ -133,12 +93,12 @@ public class ListObjectsResponse extends AcsResponse {
 		this.nextContinuationToken = nextContinuationToken;
 	}
 
-	public String getMarker() {
-		return this.marker;
+	public String getEncodingType() {
+		return this.encodingType;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
+	public void setEncodingType(String encodingType) {
+		this.encodingType = encodingType;
 	}
 
 	public String getNextMarker() {
@@ -147,6 +107,46 @@ public class ListObjectsResponse extends AcsResponse {
 
 	public void setNextMarker(String nextMarker) {
 		this.nextMarker = nextMarker;
+	}
+
+	public String getDelimiter() {
+		return this.delimiter;
+	}
+
+	public void setDelimiter(String delimiter) {
+		this.delimiter = delimiter;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getBucketName() {
+		return this.bucketName;
+	}
+
+	public void setBucketName(String bucketName) {
+		this.bucketName = bucketName;
+	}
+
+	public Boolean getIsTruncated() {
+		return this.isTruncated;
+	}
+
+	public void setIsTruncated(Boolean isTruncated) {
+		this.isTruncated = isTruncated;
+	}
+
+	public Integer getKeyCount() {
+		return this.keyCount;
+	}
+
+	public void setKeyCount(Integer keyCount) {
+		this.keyCount = keyCount;
 	}
 
 	public List<Content> getContents() {
@@ -167,22 +167,22 @@ public class ListObjectsResponse extends AcsResponse {
 
 	public static class Content {
 
-		private String key;
+		private String storageClass;
 
 		private String lastModified;
+
+		private String key;
 
 		private String eTag;
 
 		private Long size;
 
-		private String storageClass;
-
-		public String getKey() {
-			return this.key;
+		public String getStorageClass() {
+			return this.storageClass;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
 		}
 
 		public String getLastModified() {
@@ -191,6 +191,14 @@ public class ListObjectsResponse extends AcsResponse {
 
 		public void setLastModified(String lastModified) {
 			this.lastModified = lastModified;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 
 		public String getETag() {
@@ -207,14 +215,6 @@ public class ListObjectsResponse extends AcsResponse {
 
 		public void setSize(Long size) {
 			this.size = size;
-		}
-
-		public String getStorageClass() {
-			return this.storageClass;
-		}
-
-		public void setStorageClass(String storageClass) {
-			this.storageClass = storageClass;
 		}
 	}
 

@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParentPlatformsResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageNum;
 
 	private Long pageSize;
 
-	private Long pageNum;
-
-	private Long pageCount;
+	private String requestId;
 
 	private Long totalCount;
 
+	private Long pageCount;
+
 	private List<Platform> platforms;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Long getPageSize() {
@@ -53,20 +53,12 @@ public class DescribeParentPlatformsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getPageNum() {
-		return this.pageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public Long getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Long pageCount) {
-		this.pageCount = pageCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotalCount() {
@@ -75,6 +67,14 @@ public class DescribeParentPlatformsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Long getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Long pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	public List<Platform> getPlatforms() {
@@ -87,60 +87,52 @@ public class DescribeParentPlatformsResponse extends AcsResponse {
 
 	public static class Platform {
 
-		private String id;
+		private String status;
 
-		private String name;
-
-		private String description;
+		private Long clientPort;
 
 		private String protocol;
 
-		private String status;
-
-		private String gbId;
+		private String clientGbId;
 
 		private String ip;
 
 		private Long port;
 
-		private String clientGbId;
-
-		private Boolean clientAuth;
-
 		private String clientUsername;
 
 		private String clientPassword;
 
+		private Boolean autoStart;
+
+		private Boolean clientAuth;
+
+		private String gbId;
+
+		private String description;
+
 		private String clientIp;
 
-		private Long clientPort;
-
-		private Boolean autoStart;
+		private String name;
 
 		private String createdTime;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getName() {
-			return this.name;
+		public Long getClientPort() {
+			return this.clientPort;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setClientPort(Long clientPort) {
+			this.clientPort = clientPort;
 		}
 
 		public String getBizProtocol() {
@@ -151,20 +143,12 @@ public class DescribeParentPlatformsResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getClientGbId() {
+			return this.clientGbId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getGbId() {
-			return this.gbId;
-		}
-
-		public void setGbId(String gbId) {
-			this.gbId = gbId;
+		public void setClientGbId(String clientGbId) {
+			this.clientGbId = clientGbId;
 		}
 
 		public String getIp() {
@@ -183,22 +167,6 @@ public class DescribeParentPlatformsResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getClientGbId() {
-			return this.clientGbId;
-		}
-
-		public void setClientGbId(String clientGbId) {
-			this.clientGbId = clientGbId;
-		}
-
-		public Boolean getClientAuth() {
-			return this.clientAuth;
-		}
-
-		public void setClientAuth(Boolean clientAuth) {
-			this.clientAuth = clientAuth;
-		}
-
 		public String getClientUsername() {
 			return this.clientUsername;
 		}
@@ -215,22 +183,6 @@ public class DescribeParentPlatformsResponse extends AcsResponse {
 			this.clientPassword = clientPassword;
 		}
 
-		public String getClientIp() {
-			return this.clientIp;
-		}
-
-		public void setClientIp(String clientIp) {
-			this.clientIp = clientIp;
-		}
-
-		public Long getClientPort() {
-			return this.clientPort;
-		}
-
-		public void setClientPort(Long clientPort) {
-			this.clientPort = clientPort;
-		}
-
 		public Boolean getAutoStart() {
 			return this.autoStart;
 		}
@@ -239,12 +191,60 @@ public class DescribeParentPlatformsResponse extends AcsResponse {
 			this.autoStart = autoStart;
 		}
 
+		public Boolean getClientAuth() {
+			return this.clientAuth;
+		}
+
+		public void setClientAuth(Boolean clientAuth) {
+			this.clientAuth = clientAuth;
+		}
+
+		public String getGbId() {
+			return this.gbId;
+		}
+
+		public void setGbId(String gbId) {
+			this.gbId = gbId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getClientIp() {
+			return this.clientIp;
+		}
+
+		public void setClientIp(String clientIp) {
+			this.clientIp = clientIp;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getCreatedTime() {
 			return this.createdTime;
 		}
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

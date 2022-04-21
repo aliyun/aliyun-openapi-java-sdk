@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVsDomainPvUvDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<PvUvDataInfo> pvUvDataInfos;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeVsDomainPvUvDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -89,9 +89,9 @@ public class DescribeVsDomainPvUvDataResponse extends AcsResponse {
 
 		private String pV;
 
-		private String uV;
-
 		private String timeStamp;
+
+		private String uV;
 
 		public String getPV() {
 			return this.pV;
@@ -101,20 +101,20 @@ public class DescribeVsDomainPvUvDataResponse extends AcsResponse {
 			this.pV = pV;
 		}
 
-		public String getUV() {
-			return this.uV;
-		}
-
-		public void setUV(String uV) {
-			this.uV = uV;
-		}
-
 		public String getTimeStamp() {
 			return this.timeStamp;
 		}
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public String getUV() {
+			return this.uV;
+		}
+
+		public void setUV(String uV) {
+			this.uV = uV;
 		}
 	}
 

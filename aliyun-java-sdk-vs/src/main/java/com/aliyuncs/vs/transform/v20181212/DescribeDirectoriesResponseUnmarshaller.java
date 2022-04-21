@@ -27,20 +27,20 @@ public class DescribeDirectoriesResponseUnmarshaller {
 	public static DescribeDirectoriesResponse unmarshall(DescribeDirectoriesResponse describeDirectoriesResponse, UnmarshallerContext _ctx) {
 		
 		describeDirectoriesResponse.setRequestId(_ctx.stringValue("DescribeDirectoriesResponse.RequestId"));
-		describeDirectoriesResponse.setPageSize(_ctx.longValue("DescribeDirectoriesResponse.PageSize"));
 		describeDirectoriesResponse.setPageNum(_ctx.longValue("DescribeDirectoriesResponse.PageNum"));
-		describeDirectoriesResponse.setPageCount(_ctx.longValue("DescribeDirectoriesResponse.PageCount"));
+		describeDirectoriesResponse.setPageSize(_ctx.longValue("DescribeDirectoriesResponse.PageSize"));
 		describeDirectoriesResponse.setTotalCount(_ctx.longValue("DescribeDirectoriesResponse.TotalCount"));
+		describeDirectoriesResponse.setPageCount(_ctx.longValue("DescribeDirectoriesResponse.PageCount"));
 
 		List<Directory> directories = new ArrayList<Directory>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDirectoriesResponse.Directories.Length"); i++) {
 			Directory directory = new Directory();
-			directory.setId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Id"));
-			directory.setName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Name"));
+			directory.setParentId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ParentId"));
 			directory.setDescription(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Description"));
 			directory.setGroupId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].GroupId"));
-			directory.setParentId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ParentId"));
+			directory.setName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Name"));
 			directory.setCreatedTime(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].CreatedTime"));
+			directory.setId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Id"));
 
 			directories.add(directory);
 		}

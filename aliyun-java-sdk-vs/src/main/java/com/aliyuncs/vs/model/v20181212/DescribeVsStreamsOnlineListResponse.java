@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVsStreamsOnlineListResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalPage;
 
 	private Integer pageNum;
 
 	private Integer pageSize;
 
-	private Integer totalNum;
+	private String requestId;
 
-	private Integer totalPage;
+	private Integer totalNum;
 
 	private List<LiveStreamOnlineInfo> onlineInfo;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalPage() {
+		return this.totalPage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public Integer getPageNum() {
@@ -61,20 +61,20 @@ public class DescribeVsStreamsOnlineListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalNum() {
 		return this.totalNum;
 	}
 
 	public void setTotalNum(Integer totalNum) {
 		this.totalNum = totalNum;
-	}
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
 	}
 
 	public List<LiveStreamOnlineInfo> getOnlineInfo() {
@@ -87,30 +87,30 @@ public class DescribeVsStreamsOnlineListResponse extends AcsResponse {
 
 	public static class LiveStreamOnlineInfo {
 
-		private String domainName;
+		private String publishTime;
 
 		private String appName;
 
-		private String streamName;
-
-		private String publishTime;
+		private String publishType;
 
 		private String publishUrl;
 
-		private String publishDomain;
-
-		private String publishType;
-
 		private String transcoded;
+
+		private String streamName;
+
+		private String domainName;
 
 		private String transcodeId;
 
-		public String getDomainName() {
-			return this.domainName;
+		private String publishDomain;
+
+		public String getPublishTime() {
+			return this.publishTime;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setPublishTime(String publishTime) {
+			this.publishTime = publishTime;
 		}
 
 		public String getAppName() {
@@ -121,20 +121,12 @@ public class DescribeVsStreamsOnlineListResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getStreamName() {
-			return this.streamName;
+		public String getPublishType() {
+			return this.publishType;
 		}
 
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
-
-		public String getPublishTime() {
-			return this.publishTime;
-		}
-
-		public void setPublishTime(String publishTime) {
-			this.publishTime = publishTime;
+		public void setPublishType(String publishType) {
+			this.publishType = publishType;
 		}
 
 		public String getPublishUrl() {
@@ -145,22 +137,6 @@ public class DescribeVsStreamsOnlineListResponse extends AcsResponse {
 			this.publishUrl = publishUrl;
 		}
 
-		public String getPublishDomain() {
-			return this.publishDomain;
-		}
-
-		public void setPublishDomain(String publishDomain) {
-			this.publishDomain = publishDomain;
-		}
-
-		public String getPublishType() {
-			return this.publishType;
-		}
-
-		public void setPublishType(String publishType) {
-			this.publishType = publishType;
-		}
-
 		public String getTranscoded() {
 			return this.transcoded;
 		}
@@ -169,12 +145,36 @@ public class DescribeVsStreamsOnlineListResponse extends AcsResponse {
 			this.transcoded = transcoded;
 		}
 
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
 		public String getTranscodeId() {
 			return this.transcodeId;
 		}
 
 		public void setTranscodeId(String transcodeId) {
 			this.transcodeId = transcodeId;
+		}
+
+		public String getPublishDomain() {
+			return this.publishDomain;
+		}
+
+		public void setPublishDomain(String publishDomain) {
+			this.publishDomain = publishDomain;
 		}
 	}
 

@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePurchasedDevicesResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageNum;
 
 	private Long pageSize;
 
-	private Long pageNum;
-
-	private Long pageCount;
+	private String requestId;
 
 	private Long totalCount;
 
+	private Long pageCount;
+
 	private List<Device> devices;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Long getPageSize() {
@@ -53,20 +53,12 @@ public class DescribePurchasedDevicesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getPageNum() {
-		return this.pageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public Long getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Long pageCount) {
-		this.pageCount = pageCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotalCount() {
@@ -75,6 +67,14 @@ public class DescribePurchasedDevicesResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Long getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Long pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	public List<Device> getDevices() {
@@ -87,53 +87,29 @@ public class DescribePurchasedDevicesResponse extends AcsResponse {
 
 	public static class Device {
 
-		private String id;
-
-		private String name;
-
-		private String description;
-
 		private String type;
 
 		private String subType;
 
-		private String registerCode;
-
 		private String vendor;
 
-		private String orderId;
+		private String description;
 
-		private String region;
+		private String registerCode;
 
 		private String groupId;
 
 		private String groupName;
 
+		private String region;
+
+		private String name;
+
 		private String createdTime;
 
-		public String getId() {
-			return this.id;
-		}
+		private String id;
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private String orderId;
 
 		public String getType() {
 			return this.type;
@@ -151,14 +127,6 @@ public class DescribePurchasedDevicesResponse extends AcsResponse {
 			this.subType = subType;
 		}
 
-		public String getRegisterCode() {
-			return this.registerCode;
-		}
-
-		public void setRegisterCode(String registerCode) {
-			this.registerCode = registerCode;
-		}
-
 		public String getVendor() {
 			return this.vendor;
 		}
@@ -167,20 +135,20 @@ public class DescribePurchasedDevicesResponse extends AcsResponse {
 			this.vendor = vendor;
 		}
 
-		public String getOrderId() {
-			return this.orderId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getRegion() {
-			return this.region;
+		public String getRegisterCode() {
+			return this.registerCode;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
+		public void setRegisterCode(String registerCode) {
+			this.registerCode = registerCode;
 		}
 
 		public String getGroupId() {
@@ -199,12 +167,44 @@ public class DescribePurchasedDevicesResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getCreatedTime() {
 			return this.createdTime;
 		}
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
 		}
 	}
 

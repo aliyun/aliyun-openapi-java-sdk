@@ -47,18 +47,18 @@ public class BatchStartStreamsResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String id;
+		private String error;
 
 		private String name;
 
-		private String error;
+		private String id;
 
-		public String getId() {
-			return this.id;
+		public String getError() {
+			return this.error;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setError(String error) {
+			this.error = error;
 		}
 
 		public String getName() {
@@ -69,12 +69,12 @@ public class BatchStartStreamsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getError() {
-			return this.error;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setError(String error) {
-			this.error = error;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

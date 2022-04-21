@@ -31,8 +31,8 @@ public class BatchUnbindPurchasedDevicesResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("BatchUnbindPurchasedDevicesResponse.Results.Length"); i++) {
 			Result result = new Result();
-			result.setDeviceId(_ctx.stringValue("BatchUnbindPurchasedDevicesResponse.Results["+ i +"].DeviceId"));
 			result.setError(_ctx.stringValue("BatchUnbindPurchasedDevicesResponse.Results["+ i +"].Error"));
+			result.setDeviceId(_ctx.stringValue("BatchUnbindPurchasedDevicesResponse.Results["+ i +"].DeviceId"));
 
 			results.add(result);
 		}

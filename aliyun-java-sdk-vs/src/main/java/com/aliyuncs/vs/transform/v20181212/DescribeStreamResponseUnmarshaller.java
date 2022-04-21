@@ -23,19 +23,19 @@ public class DescribeStreamResponseUnmarshaller {
 	public static DescribeStreamResponse unmarshall(DescribeStreamResponse describeStreamResponse, UnmarshallerContext _ctx) {
 		
 		describeStreamResponse.setRequestId(_ctx.stringValue("DescribeStreamResponse.RequestId"));
-		describeStreamResponse.setId(_ctx.stringValue("DescribeStreamResponse.Id"));
+		describeStreamResponse.setStatus(_ctx.stringValue("DescribeStreamResponse.Status"));
+		describeStreamResponse.setPlayDomain(_ctx.stringValue("DescribeStreamResponse.PlayDomain"));
+		describeStreamResponse.setBizProtocol(_ctx.stringValue("DescribeStreamResponse.Protocol"));
+		describeStreamResponse.setDeviceId(_ctx.stringValue("DescribeStreamResponse.DeviceId"));
+		describeStreamResponse.setHeight(_ctx.integerValue("DescribeStreamResponse.Height"));
+		describeStreamResponse.setGroupId(_ctx.stringValue("DescribeStreamResponse.GroupId"));
+		describeStreamResponse.setWidth(_ctx.integerValue("DescribeStreamResponse.Width"));
+		describeStreamResponse.setApp(_ctx.stringValue("DescribeStreamResponse.App"));
+		describeStreamResponse.setEnabled(_ctx.booleanValue("DescribeStreamResponse.Enabled"));
 		describeStreamResponse.setName(_ctx.stringValue("DescribeStreamResponse.Name"));
 		describeStreamResponse.setPushDomain(_ctx.stringValue("DescribeStreamResponse.PushDomain"));
-		describeStreamResponse.setPlayDomain(_ctx.stringValue("DescribeStreamResponse.PlayDomain"));
-		describeStreamResponse.setApp(_ctx.stringValue("DescribeStreamResponse.App"));
-		describeStreamResponse.setBizProtocol(_ctx.stringValue("DescribeStreamResponse.Protocol"));
-		describeStreamResponse.setGroupId(_ctx.stringValue("DescribeStreamResponse.GroupId"));
-		describeStreamResponse.setDeviceId(_ctx.stringValue("DescribeStreamResponse.DeviceId"));
-		describeStreamResponse.setEnabled(_ctx.booleanValue("DescribeStreamResponse.Enabled"));
-		describeStreamResponse.setStatus(_ctx.stringValue("DescribeStreamResponse.Status"));
-		describeStreamResponse.setHeight(_ctx.integerValue("DescribeStreamResponse.Height"));
-		describeStreamResponse.setWidth(_ctx.integerValue("DescribeStreamResponse.Width"));
 		describeStreamResponse.setCreatedTime(_ctx.stringValue("DescribeStreamResponse.CreatedTime"));
+		describeStreamResponse.setId(_ctx.stringValue("DescribeStreamResponse.Id"));
 	 
 	 	return describeStreamResponse;
 	}

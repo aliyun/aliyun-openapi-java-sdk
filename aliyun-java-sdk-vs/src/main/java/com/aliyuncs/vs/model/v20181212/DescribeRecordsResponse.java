@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long pageSize;
-
 	private Long pageNum;
 
-	private Long pageCount;
-
-	private Long totalCount;
+	private String requestId;
 
 	private String nextStartTime;
 
+	private Long pageSize;
+
+	private Long totalCount;
+
+	private Long pageCount;
+
 	private List<Record> records;
+
+	public Long getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +53,14 @@ public class DescribeRecordsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNextStartTime() {
+		return this.nextStartTime;
+	}
+
+	public void setNextStartTime(String nextStartTime) {
+		this.nextStartTime = nextStartTime;
 	}
 
 	public Long getPageSize() {
@@ -55,22 +71,6 @@ public class DescribeRecordsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public Long getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Long pageCount) {
-		this.pageCount = pageCount;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
@@ -79,12 +79,12 @@ public class DescribeRecordsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getNextStartTime() {
-		return this.nextStartTime;
+	public Long getPageCount() {
+		return this.pageCount;
 	}
 
-	public void setNextStartTime(String nextStartTime) {
-		this.nextStartTime = nextStartTime;
+	public void setPageCount(Long pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	public List<Record> getRecords() {
@@ -97,55 +97,31 @@ public class DescribeRecordsResponse extends AcsResponse {
 
 	public static class Record {
 
-		private String id;
-
-		private String streamId;
-
-		private String templateId;
-
 		private String type;
-
-		private String url;
-
-		private String fileFormat;
-
-		private String ossBucket;
-
-		private String ossObject;
-
-		private String ossEndpoint;
-
-		private String startTime;
-
-		private String endTime;
 
 		private Long height;
 
+		private String url;
+
+		private String ossBucket;
+
+		private String fileFormat;
+
+		private String streamId;
+
+		private String ossObject;
+
+		private String endTime;
+
+		private String startTime;
+
 		private Long width;
 
-		public String getId() {
-			return this.id;
-		}
+		private String templateId;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String id;
 
-		public String getStreamId() {
-			return this.streamId;
-		}
-
-		public void setStreamId(String streamId) {
-			this.streamId = streamId;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
-		}
+		private String ossEndpoint;
 
 		public String getType() {
 			return this.type;
@@ -153,62 +129,6 @@ public class DescribeRecordsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-
-		public String getFileFormat() {
-			return this.fileFormat;
-		}
-
-		public void setFileFormat(String fileFormat) {
-			this.fileFormat = fileFormat;
-		}
-
-		public String getOssBucket() {
-			return this.ossBucket;
-		}
-
-		public void setOssBucket(String ossBucket) {
-			this.ossBucket = ossBucket;
-		}
-
-		public String getOssObject() {
-			return this.ossObject;
-		}
-
-		public void setOssObject(String ossObject) {
-			this.ossObject = ossObject;
-		}
-
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
-		}
-
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
 		}
 
 		public Long getHeight() {
@@ -219,12 +139,92 @@ public class DescribeRecordsResponse extends AcsResponse {
 			this.height = height;
 		}
 
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public String getOssBucket() {
+			return this.ossBucket;
+		}
+
+		public void setOssBucket(String ossBucket) {
+			this.ossBucket = ossBucket;
+		}
+
+		public String getFileFormat() {
+			return this.fileFormat;
+		}
+
+		public void setFileFormat(String fileFormat) {
+			this.fileFormat = fileFormat;
+		}
+
+		public String getStreamId() {
+			return this.streamId;
+		}
+
+		public void setStreamId(String streamId) {
+			this.streamId = streamId;
+		}
+
+		public String getOssObject() {
+			return this.ossObject;
+		}
+
+		public void setOssObject(String ossObject) {
+			this.ossObject = ossObject;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
 		public Long getWidth() {
 			return this.width;
 		}
 
 		public void setWidth(Long width) {
 			this.width = width;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
+		}
+
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
 		}
 	}
 

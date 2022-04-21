@@ -22,19 +22,32 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class SyncDeviceChannelsRequest extends RpcAcsRequest<SyncDeviceChannelsResponse> {
+public class DescribeUserDevicesRequest extends RpcAcsRequest<DescribeUserDevicesResponse> {
 	   
+
+	private String ensInstanceIds;
 
 	private Long ownerId;
 
-	private String deviceId;
-	public SyncDeviceChannelsRequest() {
-		super("vs", "2018-12-12", "SyncDeviceChannels");
+	private String serverName;
+	public DescribeUserDevicesRequest() {
+		super("vs", "2018-12-12", "DescribeUserDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEnsInstanceIds() {
+		return this.ensInstanceIds;
+	}
+
+	public void setEnsInstanceIds(String ensInstanceIds) {
+		this.ensInstanceIds = ensInstanceIds;
+		if(ensInstanceIds != null){
+			putQueryParameter("EnsInstanceIds", ensInstanceIds);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -48,20 +61,20 @@ public class SyncDeviceChannelsRequest extends RpcAcsRequest<SyncDeviceChannelsR
 		}
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public String getServerName() {
+		return this.serverName;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		if(deviceId != null){
-			putQueryParameter("DeviceId", deviceId);
+	public void setServerName(String serverName) {
+		this.serverName = serverName;
+		if(serverName != null){
+			putQueryParameter("ServerName", serverName);
 		}
 	}
 
 	@Override
-	public Class<SyncDeviceChannelsResponse> getResponseClass() {
-		return SyncDeviceChannelsResponse.class;
+	public Class<DescribeUserDevicesResponse> getResponseClass() {
+		return DescribeUserDevicesResponse.class;
 	}
 
 }

@@ -47,11 +47,19 @@ public class DescribeVsStorageUsageDataResponse extends AcsResponse {
 
 	public static class StorageUsageDataModule {
 
+		private Integer storageDataValue;
+
 		private String timeStamp;
 
 		private String bucket;
 
-		private Integer storageDataValue;
+		public Integer getStorageDataValue() {
+			return this.storageDataValue;
+		}
+
+		public void setStorageDataValue(Integer storageDataValue) {
+			this.storageDataValue = storageDataValue;
+		}
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -67,14 +75,6 @@ public class DescribeVsStorageUsageDataResponse extends AcsResponse {
 
 		public void setBucket(String bucket) {
 			this.bucket = bucket;
-		}
-
-		public Integer getStorageDataValue() {
-			return this.storageDataValue;
-		}
-
-		public void setStorageDataValue(Integer storageDataValue) {
-			this.storageDataValue = storageDataValue;
 		}
 	}
 

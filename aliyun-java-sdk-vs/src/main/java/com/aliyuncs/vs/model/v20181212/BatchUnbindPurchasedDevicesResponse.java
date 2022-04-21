@@ -47,17 +47,9 @@ public class BatchUnbindPurchasedDevicesResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String deviceId;
-
 		private String error;
 
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
+		private String deviceId;
 
 		public String getError() {
 			return this.error;
@@ -65,6 +57,14 @@ public class BatchUnbindPurchasedDevicesResponse extends AcsResponse {
 
 		public void setError(String error) {
 			this.error = error;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 	}
 

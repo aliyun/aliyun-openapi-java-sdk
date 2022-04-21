@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UnbindTemplateResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String templateId;
-
 	private String templateType;
 
 	private String instanceId;
 
+	private String requestId;
+
 	private String instanceType;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-	}
+	private String templateId;
 
 	public String getTemplateType() {
 		return this.templateType;
@@ -66,12 +50,28 @@ public class UnbindTemplateResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
 
 	public void setInstanceType(String instanceType) {
 		this.instanceType = instanceType;
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
 	}
 
 	@Override

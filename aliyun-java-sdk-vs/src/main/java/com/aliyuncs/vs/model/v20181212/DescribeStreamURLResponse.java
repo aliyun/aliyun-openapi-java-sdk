@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStreamURLResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String url;
 
+	private String requestId;
+
 	private Long expireTime;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getUrl() {
 		return this.url;
@@ -44,6 +36,14 @@ public class DescribeStreamURLResponse extends AcsResponse {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getExpireTime() {

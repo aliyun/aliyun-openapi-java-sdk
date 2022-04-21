@@ -32,8 +32,8 @@ public class DescribeVsDomainRecordDataResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsDomainRecordDataResponse.RecordDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(_ctx.stringValue("DescribeVsDomainRecordDataResponse.RecordDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setRecordValue(_ctx.stringValue("DescribeVsDomainRecordDataResponse.RecordDataPerInterval["+ i +"].RecordValue"));
 			dataModule.setStreamCountValue(_ctx.stringValue("DescribeVsDomainRecordDataResponse.RecordDataPerInterval["+ i +"].StreamCountValue"));
+			dataModule.setRecordValue(_ctx.stringValue("DescribeVsDomainRecordDataResponse.RecordDataPerInterval["+ i +"].RecordValue"));
 
 			recordDataPerInterval.add(dataModule);
 		}

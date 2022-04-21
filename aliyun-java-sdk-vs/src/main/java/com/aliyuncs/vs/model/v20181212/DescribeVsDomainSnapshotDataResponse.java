@@ -47,17 +47,9 @@ public class DescribeVsDomainSnapshotDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
 		private String snapshotValue;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String timeStamp;
 
 		public String getSnapshotValue() {
 			return this.snapshotValue;
@@ -65,6 +57,14 @@ public class DescribeVsDomainSnapshotDataResponse extends AcsResponse {
 
 		public void setSnapshotValue(String snapshotValue) {
 			this.snapshotValue = snapshotValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

@@ -32,8 +32,8 @@ public class BatchResumeVsStreamResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("BatchResumeVsStreamResponse.ResumeResult.Length"); i++) {
 			ResumeResultInfo resumeResultInfo = new ResumeResultInfo();
 			resumeResultInfo.setResult(_ctx.stringValue("BatchResumeVsStreamResponse.ResumeResult["+ i +"].Result"));
-			resumeResultInfo.setDetail(_ctx.stringValue("BatchResumeVsStreamResponse.ResumeResult["+ i +"].Detail"));
 			resumeResultInfo.setCount(_ctx.integerValue("BatchResumeVsStreamResponse.ResumeResult["+ i +"].Count"));
+			resumeResultInfo.setDetail(_ctx.stringValue("BatchResumeVsStreamResponse.ResumeResult["+ i +"].Detail"));
 
 			List<String> channels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("BatchResumeVsStreamResponse.ResumeResult["+ i +"].Channels.Length"); j++) {

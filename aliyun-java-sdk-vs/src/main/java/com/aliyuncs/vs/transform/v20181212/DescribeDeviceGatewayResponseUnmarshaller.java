@@ -24,9 +24,9 @@ public class DescribeDeviceGatewayResponseUnmarshaller {
 		
 		describeDeviceGatewayResponse.setRequestId(_ctx.stringValue("DescribeDeviceGatewayResponse.RequestId"));
 		describeDeviceGatewayResponse.setHost(_ctx.stringValue("DescribeDeviceGatewayResponse.Host"));
+		describeDeviceGatewayResponse.setToken(_ctx.stringValue("DescribeDeviceGatewayResponse.Token"));
 		describeDeviceGatewayResponse.setPort(_ctx.longValue("DescribeDeviceGatewayResponse.Port"));
 		describeDeviceGatewayResponse.setBizProtocol(_ctx.stringValue("DescribeDeviceGatewayResponse.Protocol"));
-		describeDeviceGatewayResponse.setToken(_ctx.stringValue("DescribeDeviceGatewayResponse.Token"));
 	 
 	 	return describeDeviceGatewayResponse;
 	}

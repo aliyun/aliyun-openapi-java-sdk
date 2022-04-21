@@ -31,10 +31,10 @@ public class BatchBindPurchasedDevicesResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("BatchBindPurchasedDevicesResponse.Results.Length"); i++) {
 			Result result = new Result();
-			result.setRegion(_ctx.stringValue("BatchBindPurchasedDevicesResponse.Results["+ i +"].Region"));
+			result.setError(_ctx.stringValue("BatchBindPurchasedDevicesResponse.Results["+ i +"].Error"));
 			result.setGroupId(_ctx.stringValue("BatchBindPurchasedDevicesResponse.Results["+ i +"].GroupId"));
 			result.setDeviceId(_ctx.stringValue("BatchBindPurchasedDevicesResponse.Results["+ i +"].DeviceId"));
-			result.setError(_ctx.stringValue("BatchBindPurchasedDevicesResponse.Results["+ i +"].Error"));
+			result.setRegion(_ctx.stringValue("BatchBindPurchasedDevicesResponse.Results["+ i +"].Region"));
 
 			results.add(result);
 		}

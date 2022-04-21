@@ -23,10 +23,10 @@ public class CreateGroupResponseUnmarshaller {
 	public static CreateGroupResponse unmarshall(CreateGroupResponse createGroupResponse, UnmarshallerContext _ctx) {
 		
 		createGroupResponse.setRequestId(_ctx.stringValue("CreateGroupResponse.RequestId"));
-		createGroupResponse.setId(_ctx.stringValue("CreateGroupResponse.Id"));
 		createGroupResponse.setGbId(_ctx.stringValue("CreateGroupResponse.GbId"));
 		createGroupResponse.setGbIp(_ctx.stringValue("CreateGroupResponse.GbIp"));
 		createGroupResponse.setGbPort(_ctx.longValue("CreateGroupResponse.GbPort"));
+		createGroupResponse.setId(_ctx.stringValue("CreateGroupResponse.Id"));
 	 
 	 	return createGroupResponse;
 	}

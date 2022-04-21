@@ -32,16 +32,16 @@ public class ListBucketsResponseUnmarshaller {
 		List<BucketInfo> bucketInfos = new ArrayList<BucketInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListBucketsResponse.BucketInfos.Length"); i++) {
 			BucketInfo bucketInfo = new BucketInfo();
-			bucketInfo.setBucketName(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].BucketName"));
-			bucketInfo.setComment(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].Comment"));
-			bucketInfo.setBucketAcl(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].BucketAcl"));
-			bucketInfo.setDataRedundancyType(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].DataRedundancyType"));
 			bucketInfo.setStorageClass(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].StorageClass"));
-			bucketInfo.setDispatcherType(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].DispatcherType"));
+			bucketInfo.setDataRedundancyType(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].DataRedundancyType"));
 			bucketInfo.setResourceType(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].ResourceType"));
+			bucketInfo.setComment(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].Comment"));
+			bucketInfo.setDispatcherType(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].DispatcherType"));
 			bucketInfo.setCreateTime(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].CreateTime"));
-			bucketInfo.setModifyTime(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].ModifyTime"));
 			bucketInfo.setEndpoint(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].Endpoint"));
+			bucketInfo.setBucketAcl(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].BucketAcl"));
+			bucketInfo.setBucketName(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].BucketName"));
+			bucketInfo.setModifyTime(_ctx.stringValue("ListBucketsResponse.BucketInfos["+ i +"].ModifyTime"));
 
 			bucketInfos.add(bucketInfo);
 		}

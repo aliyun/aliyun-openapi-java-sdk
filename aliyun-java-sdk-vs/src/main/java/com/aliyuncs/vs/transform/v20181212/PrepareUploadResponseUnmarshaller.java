@@ -23,9 +23,9 @@ public class PrepareUploadResponseUnmarshaller {
 	public static PrepareUploadResponse unmarshall(PrepareUploadResponse prepareUploadResponse, UnmarshallerContext _ctx) {
 		
 		prepareUploadResponse.setRequestId(_ctx.stringValue("PrepareUploadResponse.RequestId"));
+		prepareUploadResponse.setAdditionInfo(_ctx.stringValue("PrepareUploadResponse.AdditionInfo"));
 		prepareUploadResponse.setBucketName(_ctx.stringValue("PrepareUploadResponse.BucketName"));
 		prepareUploadResponse.setEndpoint(_ctx.stringValue("PrepareUploadResponse.Endpoint"));
-		prepareUploadResponse.setAdditionInfo(_ctx.stringValue("PrepareUploadResponse.AdditionInfo"));
 	 
 	 	return prepareUploadResponse;
 	}

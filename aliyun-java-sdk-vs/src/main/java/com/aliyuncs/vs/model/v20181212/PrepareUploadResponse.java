@@ -26,11 +26,11 @@ public class PrepareUploadResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String additionInfo;
+
 	private String bucketName;
 
 	private String endpoint;
-
-	private String additionInfo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class PrepareUploadResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAdditionInfo() {
+		return this.additionInfo;
+	}
+
+	public void setAdditionInfo(String additionInfo) {
+		this.additionInfo = additionInfo;
 	}
 
 	public String getBucketName() {
@@ -54,14 +62,6 @@ public class PrepareUploadResponse extends AcsResponse {
 
 	public void setEndpoint(String endpoint) {
 		this.endpoint = endpoint;
-	}
-
-	public String getAdditionInfo() {
-		return this.additionInfo;
-	}
-
-	public void setAdditionInfo(String additionInfo) {
-		this.additionInfo = additionInfo;
 	}
 
 	@Override

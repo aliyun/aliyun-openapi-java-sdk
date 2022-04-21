@@ -28,43 +28,37 @@ public class DescribeGroupsResponseUnmarshaller {
 	public static DescribeGroupsResponse unmarshall(DescribeGroupsResponse describeGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describeGroupsResponse.setRequestId(_ctx.stringValue("DescribeGroupsResponse.RequestId"));
-		describeGroupsResponse.setPageSize(_ctx.longValue("DescribeGroupsResponse.PageSize"));
 		describeGroupsResponse.setPageNum(_ctx.longValue("DescribeGroupsResponse.PageNum"));
-		describeGroupsResponse.setPageCount(_ctx.longValue("DescribeGroupsResponse.PageCount"));
+		describeGroupsResponse.setPageSize(_ctx.longValue("DescribeGroupsResponse.PageSize"));
 		describeGroupsResponse.setTotalCount(_ctx.longValue("DescribeGroupsResponse.TotalCount"));
+		describeGroupsResponse.setPageCount(_ctx.longValue("DescribeGroupsResponse.PageCount"));
 
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGroupsResponse.Groups.Length"); i++) {
 			Group group = new Group();
-			group.setId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Id"));
-			group.setAliasId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].AliasId"));
-			group.setName(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Name"));
-			group.setDescription(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Description"));
-			group.setApp(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].App"));
-			group.setRegion(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Region"));
-			group.setInProtocol(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].InProtocol"));
-			group.setOutProtocol(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].OutProtocol"));
-			group.setEnabled(_ctx.booleanValue("DescribeGroupsResponse.Groups["+ i +"].Enabled"));
 			group.setStatus(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Status"));
-			group.setCreatedTime(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CreatedTime"));
-			group.setPushDomain(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].PushDomain"));
-			group.setPlayDomain(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].PlayDomain"));
 			group.setLazyPull(_ctx.booleanValue("DescribeGroupsResponse.Groups["+ i +"].LazyPull"));
-			group.setCallback(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Callback"));
+			group.setPlayDomain(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].PlayDomain"));
+			group.setGbPort(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].GbPort"));
 			group.setCaptureInterval(_ctx.integerValue("DescribeGroupsResponse.Groups["+ i +"].CaptureInterval"));
-			group.setCaptureImage(_ctx.integerValue("DescribeGroupsResponse.Groups["+ i +"].CaptureImage"));
-			group.setCaptureVideo(_ctx.integerValue("DescribeGroupsResponse.Groups["+ i +"].CaptureVideo"));
-			group.setCaptureOssBucket(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CaptureOssBucket"));
-			group.setCaptureOssPath(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CaptureOssPath"));
+			group.setCallback(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Callback"));
 			group.setGbId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbId"));
 			group.setGbIp(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbIp"));
-			group.setGbPort(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].GbPort"));
-
-			List<String> gbUdpPorts = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeGroupsResponse.Groups["+ i +"].GbUdpPorts.Length"); j++) {
-				gbUdpPorts.add(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbUdpPorts["+ j +"]"));
-			}
-			group.setGbUdpPorts(gbUdpPorts);
+			group.setCaptureImage(_ctx.integerValue("DescribeGroupsResponse.Groups["+ i +"].CaptureImage"));
+			group.setDescription(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Description"));
+			group.setRegion(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Region"));
+			group.setApp(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].App"));
+			group.setAliasId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].AliasId"));
+			group.setEnabled(_ctx.booleanValue("DescribeGroupsResponse.Groups["+ i +"].Enabled"));
+			group.setInProtocol(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].InProtocol"));
+			group.setCaptureOssPath(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CaptureOssPath"));
+			group.setCaptureOssBucket(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CaptureOssBucket"));
+			group.setOutProtocol(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].OutProtocol"));
+			group.setPushDomain(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].PushDomain"));
+			group.setName(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Name"));
+			group.setCreatedTime(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CreatedTime"));
+			group.setCaptureVideo(_ctx.integerValue("DescribeGroupsResponse.Groups["+ i +"].CaptureVideo"));
+			group.setId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Id"));
 
 			List<String> gbTcpPorts = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGroupsResponse.Groups["+ i +"].GbTcpPorts.Length"); j++) {
@@ -72,11 +66,17 @@ public class DescribeGroupsResponseUnmarshaller {
 			}
 			group.setGbTcpPorts(gbTcpPorts);
 
+			List<String> gbUdpPorts = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeGroupsResponse.Groups["+ i +"].GbUdpPorts.Length"); j++) {
+				gbUdpPorts.add(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbUdpPorts["+ j +"]"));
+			}
+			group.setGbUdpPorts(gbUdpPorts);
+
 			Stats stats = new Stats();
-			stats.setDeviceNum(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].Stats.DeviceNum"));
-			stats.setIedNum(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].Stats.IedNum"));
-			stats.setIpcNum(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].Stats.IpcNum"));
 			stats.setPlatformNum(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].Stats.PlatformNum"));
+			stats.setDeviceNum(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].Stats.DeviceNum"));
+			stats.setIpcNum(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].Stats.IpcNum"));
+			stats.setIedNum(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].Stats.IedNum"));
 			group.setStats(stats);
 
 			groups.add(group);

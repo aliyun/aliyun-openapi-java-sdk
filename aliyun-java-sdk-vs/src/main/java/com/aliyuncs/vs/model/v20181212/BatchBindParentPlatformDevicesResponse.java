@@ -47,11 +47,19 @@ public class BatchBindParentPlatformDevicesResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String error;
+
 		private String parentPlatformId;
 
 		private String deviceId;
 
-		private String error;
+		public String getError() {
+			return this.error;
+		}
+
+		public void setError(String error) {
+			this.error = error;
+		}
 
 		public String getParentPlatformId() {
 			return this.parentPlatformId;
@@ -67,14 +75,6 @@ public class BatchBindParentPlatformDevicesResponse extends AcsResponse {
 
 		public void setDeviceId(String deviceId) {
 			this.deviceId = deviceId;
-		}
-
-		public String getError() {
-			return this.error;
-		}
-
-		public void setError(String error) {
-			this.error = error;
 		}
 	}
 

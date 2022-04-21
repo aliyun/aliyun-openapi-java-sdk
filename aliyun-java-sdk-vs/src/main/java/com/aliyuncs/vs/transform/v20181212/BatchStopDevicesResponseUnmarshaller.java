@@ -37,9 +37,9 @@ public class BatchStopDevicesResponseUnmarshaller {
 			List<Stream> streams = new ArrayList<Stream>();
 			for (int j = 0; j < _ctx.lengthValue("BatchStopDevicesResponse.Results["+ i +"].Streams.Length"); j++) {
 				Stream stream = new Stream();
-				stream.setId(_ctx.stringValue("BatchStopDevicesResponse.Results["+ i +"].Streams["+ j +"].Id"));
-				stream.setName(_ctx.stringValue("BatchStopDevicesResponse.Results["+ i +"].Streams["+ j +"].Name"));
 				stream.setError(_ctx.stringValue("BatchStopDevicesResponse.Results["+ i +"].Streams["+ j +"].Error"));
+				stream.setName(_ctx.stringValue("BatchStopDevicesResponse.Results["+ i +"].Streams["+ j +"].Name"));
+				stream.setId(_ctx.stringValue("BatchStopDevicesResponse.Results["+ i +"].Streams["+ j +"].Id"));
 
 				streams.add(stream);
 			}

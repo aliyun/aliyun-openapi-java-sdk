@@ -23,10 +23,10 @@ public class UnbindTemplateResponseUnmarshaller {
 	public static UnbindTemplateResponse unmarshall(UnbindTemplateResponse unbindTemplateResponse, UnmarshallerContext _ctx) {
 		
 		unbindTemplateResponse.setRequestId(_ctx.stringValue("UnbindTemplateResponse.RequestId"));
-		unbindTemplateResponse.setTemplateId(_ctx.stringValue("UnbindTemplateResponse.TemplateId"));
 		unbindTemplateResponse.setTemplateType(_ctx.stringValue("UnbindTemplateResponse.TemplateType"));
 		unbindTemplateResponse.setInstanceId(_ctx.stringValue("UnbindTemplateResponse.InstanceId"));
 		unbindTemplateResponse.setInstanceType(_ctx.stringValue("UnbindTemplateResponse.InstanceType"));
+		unbindTemplateResponse.setTemplateId(_ctx.stringValue("UnbindTemplateResponse.TemplateId"));
 	 
 	 	return unbindTemplateResponse;
 	}

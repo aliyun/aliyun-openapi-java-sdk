@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStreamsResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageNum;
 
 	private Long pageSize;
 
-	private Long pageNum;
-
-	private Long pageCount;
+	private String requestId;
 
 	private Long totalCount;
 
+	private Long pageCount;
+
 	private List<Stream> streams;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Long getPageSize() {
@@ -53,20 +53,12 @@ public class DescribeStreamsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getPageNum() {
-		return this.pageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public Long getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Long pageCount) {
-		this.pageCount = pageCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotalCount() {
@@ -75,6 +67,14 @@ public class DescribeStreamsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Long getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Long pageCount) {
+		this.pageCount = pageCount;
 	}
 
 	public List<Stream> getStreams() {
@@ -87,38 +87,102 @@ public class DescribeStreamsResponse extends AcsResponse {
 
 	public static class Stream {
 
-		private String id;
+		private String status;
+
+		private String playDomain;
+
+		private String protocol;
+
+		private String deviceId;
+
+		private Integer height;
+
+		private String groupId;
+
+		private String app;
+
+		private Integer width;
+
+		private Boolean enabled;
 
 		private String name;
 
 		private String pushDomain;
 
-		private String playDomain;
-
-		private String app;
-
-		private String protocol;
-
-		private String groupId;
-
-		private String deviceId;
-
-		private Boolean enabled;
-
-		private String status;
-
-		private Integer height;
-
-		private Integer width;
-
 		private String createdTime;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getPlayDomain() {
+			return this.playDomain;
+		}
+
+		public void setPlayDomain(String playDomain) {
+			this.playDomain = playDomain;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public Integer getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Integer height) {
+			this.height = height;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getApp() {
+			return this.app;
+		}
+
+		public void setApp(String app) {
+			this.app = app;
+		}
+
+		public Integer getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Integer width) {
+			this.width = width;
+		}
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
 		}
 
 		public String getName() {
@@ -137,84 +201,20 @@ public class DescribeStreamsResponse extends AcsResponse {
 			this.pushDomain = pushDomain;
 		}
 
-		public String getPlayDomain() {
-			return this.playDomain;
-		}
-
-		public void setPlayDomain(String playDomain) {
-			this.playDomain = playDomain;
-		}
-
-		public String getApp() {
-			return this.app;
-		}
-
-		public void setApp(String app) {
-			this.app = app;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Integer getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(Integer height) {
-			this.height = height;
-		}
-
-		public Integer getWidth() {
-			return this.width;
-		}
-
-		public void setWidth(Integer width) {
-			this.width = width;
-		}
-
 		public String getCreatedTime() {
 			return this.createdTime;
 		}
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

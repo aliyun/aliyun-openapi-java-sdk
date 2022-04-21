@@ -46,48 +46,32 @@ public class GetBucketInfoResponse extends AcsResponse {
 
 	public static class BucketInfo {
 
-		private String bucketName;
-
-		private String comment;
-
-		private String bucketAcl;
+		private String storageClass;
 
 		private String dataRedundancyType;
 
-		private String storageClass;
+		private String resourceType;
+
+		private String comment;
 
 		private String dispatcherType;
 
-		private String resourceType;
-
 		private String createTime;
-
-		private String modifyTime;
 
 		private String endpoint;
 
-		public String getBucketName() {
-			return this.bucketName;
+		private String bucketAcl;
+
+		private String bucketName;
+
+		private String modifyTime;
+
+		public String getStorageClass() {
+			return this.storageClass;
 		}
 
-		public void setBucketName(String bucketName) {
-			this.bucketName = bucketName;
-		}
-
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
-		}
-
-		public String getBucketAcl() {
-			return this.bucketAcl;
-		}
-
-		public void setBucketAcl(String bucketAcl) {
-			this.bucketAcl = bucketAcl;
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
 		}
 
 		public String getDataRedundancyType() {
@@ -98,12 +82,20 @@ public class GetBucketInfoResponse extends AcsResponse {
 			this.dataRedundancyType = dataRedundancyType;
 		}
 
-		public String getStorageClass() {
-			return this.storageClass;
+		public String getResourceType() {
+			return this.resourceType;
 		}
 
-		public void setStorageClass(String storageClass) {
-			this.storageClass = storageClass;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
 		public String getDispatcherType() {
@@ -114,14 +106,6 @@ public class GetBucketInfoResponse extends AcsResponse {
 			this.dispatcherType = dispatcherType;
 		}
 
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -130,20 +114,36 @@ public class GetBucketInfoResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
 		public String getEndpoint() {
 			return this.endpoint;
 		}
 
 		public void setEndpoint(String endpoint) {
 			this.endpoint = endpoint;
+		}
+
+		public String getBucketAcl() {
+			return this.bucketAcl;
+		}
+
+		public void setBucketAcl(String bucketAcl) {
+			this.bucketAcl = bucketAcl;
+		}
+
+		public String getBucketName() {
+			return this.bucketName;
+		}
+
+		public void setBucketName(String bucketName) {
+			this.bucketName = bucketName;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

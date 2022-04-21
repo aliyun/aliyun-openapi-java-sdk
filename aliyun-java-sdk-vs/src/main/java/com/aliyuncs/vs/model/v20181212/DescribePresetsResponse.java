@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePresetsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String id;
 
+	private String requestId;
+
 	private List<Preset> presets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getId() {
 		return this.id;
@@ -45,6 +37,14 @@ public class DescribePresetsResponse extends AcsResponse {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Preset> getPresets() {
@@ -57,17 +57,9 @@ public class DescribePresetsResponse extends AcsResponse {
 
 	public static class Preset {
 
-		private String id;
-
 		private String name;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String id;
 
 		public String getName() {
 			return this.name;
@@ -75,6 +67,14 @@ public class DescribePresetsResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

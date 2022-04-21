@@ -47,72 +47,40 @@ public class DescribeVsStorageTrafficUsageDataResponse extends AcsResponse {
 
 	public static class TrafficUsageDataModule {
 
-		private String timeStamp;
-
-		private String bucket;
-
-		private Long lanTrafficInDataValue;
-
-		private Long lanTrafficOutDataValue;
-
-		private Long wanTrafficInDataValue;
-
-		private Long wanTrafficOutDataValue;
-
-		private Float lanBandwidthInDataValue;
-
 		private Float lanBandwidthOutDataValue;
-
-		private Float wanBandwidthInDataValue;
 
 		private Float wanBandwidthOutDataValue;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		private Float lanBandwidthInDataValue;
+
+		private Long lanTrafficInDataValue;
+
+		private Long wanTrafficOutDataValue;
+
+		private String timeStamp;
+
+		private Long wanTrafficInDataValue;
+
+		private Long lanTrafficOutDataValue;
+
+		private Float wanBandwidthInDataValue;
+
+		private String bucket;
+
+		public Float getLanBandwidthOutDataValue() {
+			return this.lanBandwidthOutDataValue;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setLanBandwidthOutDataValue(Float lanBandwidthOutDataValue) {
+			this.lanBandwidthOutDataValue = lanBandwidthOutDataValue;
 		}
 
-		public String getBucket() {
-			return this.bucket;
+		public Float getWanBandwidthOutDataValue() {
+			return this.wanBandwidthOutDataValue;
 		}
 
-		public void setBucket(String bucket) {
-			this.bucket = bucket;
-		}
-
-		public Long getLanTrafficInDataValue() {
-			return this.lanTrafficInDataValue;
-		}
-
-		public void setLanTrafficInDataValue(Long lanTrafficInDataValue) {
-			this.lanTrafficInDataValue = lanTrafficInDataValue;
-		}
-
-		public Long getLanTrafficOutDataValue() {
-			return this.lanTrafficOutDataValue;
-		}
-
-		public void setLanTrafficOutDataValue(Long lanTrafficOutDataValue) {
-			this.lanTrafficOutDataValue = lanTrafficOutDataValue;
-		}
-
-		public Long getWanTrafficInDataValue() {
-			return this.wanTrafficInDataValue;
-		}
-
-		public void setWanTrafficInDataValue(Long wanTrafficInDataValue) {
-			this.wanTrafficInDataValue = wanTrafficInDataValue;
-		}
-
-		public Long getWanTrafficOutDataValue() {
-			return this.wanTrafficOutDataValue;
-		}
-
-		public void setWanTrafficOutDataValue(Long wanTrafficOutDataValue) {
-			this.wanTrafficOutDataValue = wanTrafficOutDataValue;
+		public void setWanBandwidthOutDataValue(Float wanBandwidthOutDataValue) {
+			this.wanBandwidthOutDataValue = wanBandwidthOutDataValue;
 		}
 
 		public Float getLanBandwidthInDataValue() {
@@ -123,12 +91,44 @@ public class DescribeVsStorageTrafficUsageDataResponse extends AcsResponse {
 			this.lanBandwidthInDataValue = lanBandwidthInDataValue;
 		}
 
-		public Float getLanBandwidthOutDataValue() {
-			return this.lanBandwidthOutDataValue;
+		public Long getLanTrafficInDataValue() {
+			return this.lanTrafficInDataValue;
 		}
 
-		public void setLanBandwidthOutDataValue(Float lanBandwidthOutDataValue) {
-			this.lanBandwidthOutDataValue = lanBandwidthOutDataValue;
+		public void setLanTrafficInDataValue(Long lanTrafficInDataValue) {
+			this.lanTrafficInDataValue = lanTrafficInDataValue;
+		}
+
+		public Long getWanTrafficOutDataValue() {
+			return this.wanTrafficOutDataValue;
+		}
+
+		public void setWanTrafficOutDataValue(Long wanTrafficOutDataValue) {
+			this.wanTrafficOutDataValue = wanTrafficOutDataValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public Long getWanTrafficInDataValue() {
+			return this.wanTrafficInDataValue;
+		}
+
+		public void setWanTrafficInDataValue(Long wanTrafficInDataValue) {
+			this.wanTrafficInDataValue = wanTrafficInDataValue;
+		}
+
+		public Long getLanTrafficOutDataValue() {
+			return this.lanTrafficOutDataValue;
+		}
+
+		public void setLanTrafficOutDataValue(Long lanTrafficOutDataValue) {
+			this.lanTrafficOutDataValue = lanTrafficOutDataValue;
 		}
 
 		public Float getWanBandwidthInDataValue() {
@@ -139,12 +139,12 @@ public class DescribeVsStorageTrafficUsageDataResponse extends AcsResponse {
 			this.wanBandwidthInDataValue = wanBandwidthInDataValue;
 		}
 
-		public Float getWanBandwidthOutDataValue() {
-			return this.wanBandwidthOutDataValue;
+		public String getBucket() {
+			return this.bucket;
 		}
 
-		public void setWanBandwidthOutDataValue(Float wanBandwidthOutDataValue) {
-			this.wanBandwidthOutDataValue = wanBandwidthOutDataValue;
+		public void setBucket(String bucket) {
+			this.bucket = bucket;
 		}
 	}
 

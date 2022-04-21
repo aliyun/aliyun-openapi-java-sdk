@@ -24,19 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDirectoryResponse extends AcsResponse {
 
+	private String parentId;
+
 	private String requestId;
-
-	private String id;
-
-	private String name;
 
 	private String description;
 
 	private String groupId;
 
-	private String parentId;
+	private String name;
 
 	private String createdTime;
+
+	private String id;
+
+	public String getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,22 +52,6 @@ public class DescribeDirectoryResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getDescription() {
@@ -78,12 +70,12 @@ public class DescribeDirectoryResponse extends AcsResponse {
 		this.groupId = groupId;
 	}
 
-	public String getParentId() {
-		return this.parentId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setParentId(String parentId) {
-		this.parentId = parentId;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCreatedTime() {
@@ -92,6 +84,14 @@ public class DescribeDirectoryResponse extends AcsResponse {
 
 	public void setCreatedTime(String createdTime) {
 		this.createdTime = createdTime;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

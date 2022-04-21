@@ -31,16 +31,16 @@ public class DescribeVsStorageTrafficUsageDataResponseUnmarshaller {
 		List<TrafficUsageDataModule> trafficUsage = new ArrayList<TrafficUsageDataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage.Length"); i++) {
 			TrafficUsageDataModule trafficUsageDataModule = new TrafficUsageDataModule();
-			trafficUsageDataModule.setTimeStamp(_ctx.stringValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].TimeStamp"));
-			trafficUsageDataModule.setBucket(_ctx.stringValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].Bucket"));
-			trafficUsageDataModule.setLanTrafficInDataValue(_ctx.longValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].LanTrafficInDataValue"));
-			trafficUsageDataModule.setLanTrafficOutDataValue(_ctx.longValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].LanTrafficOutDataValue"));
-			trafficUsageDataModule.setWanTrafficInDataValue(_ctx.longValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].WanTrafficInDataValue"));
-			trafficUsageDataModule.setWanTrafficOutDataValue(_ctx.longValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].WanTrafficOutDataValue"));
-			trafficUsageDataModule.setLanBandwidthInDataValue(_ctx.floatValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].LanBandwidthInDataValue"));
 			trafficUsageDataModule.setLanBandwidthOutDataValue(_ctx.floatValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].LanBandwidthOutDataValue"));
-			trafficUsageDataModule.setWanBandwidthInDataValue(_ctx.floatValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].WanBandwidthInDataValue"));
 			trafficUsageDataModule.setWanBandwidthOutDataValue(_ctx.floatValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].WanBandwidthOutDataValue"));
+			trafficUsageDataModule.setLanBandwidthInDataValue(_ctx.floatValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].LanBandwidthInDataValue"));
+			trafficUsageDataModule.setLanTrafficInDataValue(_ctx.longValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].LanTrafficInDataValue"));
+			trafficUsageDataModule.setWanTrafficOutDataValue(_ctx.longValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].WanTrafficOutDataValue"));
+			trafficUsageDataModule.setTimeStamp(_ctx.stringValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].TimeStamp"));
+			trafficUsageDataModule.setWanTrafficInDataValue(_ctx.longValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].WanTrafficInDataValue"));
+			trafficUsageDataModule.setLanTrafficOutDataValue(_ctx.longValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].LanTrafficOutDataValue"));
+			trafficUsageDataModule.setWanBandwidthInDataValue(_ctx.floatValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].WanBandwidthInDataValue"));
+			trafficUsageDataModule.setBucket(_ctx.stringValue("DescribeVsStorageTrafficUsageDataResponse.TrafficUsage["+ i +"].Bucket"));
 
 			trafficUsage.add(trafficUsageDataModule);
 		}

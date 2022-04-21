@@ -23,8 +23,8 @@ public class StartStreamResponseUnmarshaller {
 	public static StartStreamResponse unmarshall(StartStreamResponse startStreamResponse, UnmarshallerContext _ctx) {
 		
 		startStreamResponse.setRequestId(_ctx.stringValue("StartStreamResponse.RequestId"));
-		startStreamResponse.setId(_ctx.stringValue("StartStreamResponse.Id"));
 		startStreamResponse.setName(_ctx.stringValue("StartStreamResponse.Name"));
+		startStreamResponse.setId(_ctx.stringValue("StartStreamResponse.Id"));
 	 
 	 	return startStreamResponse;
 	}

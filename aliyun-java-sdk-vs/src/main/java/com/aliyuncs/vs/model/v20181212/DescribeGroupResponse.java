@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGroupResponse extends AcsResponse {
 
+	private String status;
+
+	private Boolean lazyPull;
+
+	private String callback;
+
 	private String requestId;
-
-	private String id;
-
-	private String aliasId;
-
-	private String name;
 
 	private String description;
 
@@ -39,45 +39,69 @@ public class DescribeGroupResponse extends AcsResponse {
 
 	private String region;
 
+	private Boolean enabled;
+
 	private String inProtocol;
 
 	private String outProtocol;
 
-	private Boolean enabled;
-
-	private String status;
-
-	private String createdTime;
+	private String name;
 
 	private String pushDomain;
 
-	private String playDomain;
-
-	private Boolean lazyPull;
-
-	private String callback;
-
-	private Integer captureInterval;
-
-	private Integer captureImage;
+	private String createdTime;
 
 	private Integer captureVideo;
 
-	private String captureOssBucket;
+	private String playDomain;
 
-	private String captureOssPath;
+	private Integer captureInterval;
+
+	private Long gbPort;
 
 	private String gbId;
 
 	private String gbIp;
 
-	private Long gbPort;
+	private Integer captureImage;
 
-	private List<String> gbUdpPorts;
+	private String aliasId;
+
+	private String captureOssBucket;
+
+	private String captureOssPath;
+
+	private String id;
 
 	private List<String> gbTcpPorts;
 
+	private List<String> gbUdpPorts;
+
 	private Stats stats;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Boolean getLazyPull() {
+		return this.lazyPull;
+	}
+
+	public void setLazyPull(Boolean lazyPull) {
+		this.lazyPull = lazyPull;
+	}
+
+	public String getCallback() {
+		return this.callback;
+	}
+
+	public void setCallback(String callback) {
+		this.callback = callback;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -85,30 +109,6 @@ public class DescribeGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getAliasId() {
-		return this.aliasId;
-	}
-
-	public void setAliasId(String aliasId) {
-		this.aliasId = aliasId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getDescription() {
@@ -135,6 +135,14 @@ public class DescribeGroupResponse extends AcsResponse {
 		this.region = region;
 	}
 
+	public Boolean getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	public String getInProtocol() {
 		return this.inProtocol;
 	}
@@ -151,28 +159,12 @@ public class DescribeGroupResponse extends AcsResponse {
 		this.outProtocol = outProtocol;
 	}
 
-	public Boolean getEnabled() {
-		return this.enabled;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(String createdTime) {
-		this.createdTime = createdTime;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getPushDomain() {
@@ -183,44 +175,12 @@ public class DescribeGroupResponse extends AcsResponse {
 		this.pushDomain = pushDomain;
 	}
 
-	public String getPlayDomain() {
-		return this.playDomain;
+	public String getCreatedTime() {
+		return this.createdTime;
 	}
 
-	public void setPlayDomain(String playDomain) {
-		this.playDomain = playDomain;
-	}
-
-	public Boolean getLazyPull() {
-		return this.lazyPull;
-	}
-
-	public void setLazyPull(Boolean lazyPull) {
-		this.lazyPull = lazyPull;
-	}
-
-	public String getCallback() {
-		return this.callback;
-	}
-
-	public void setCallback(String callback) {
-		this.callback = callback;
-	}
-
-	public Integer getCaptureInterval() {
-		return this.captureInterval;
-	}
-
-	public void setCaptureInterval(Integer captureInterval) {
-		this.captureInterval = captureInterval;
-	}
-
-	public Integer getCaptureImage() {
-		return this.captureImage;
-	}
-
-	public void setCaptureImage(Integer captureImage) {
-		this.captureImage = captureImage;
+	public void setCreatedTime(String createdTime) {
+		this.createdTime = createdTime;
 	}
 
 	public Integer getCaptureVideo() {
@@ -231,20 +191,28 @@ public class DescribeGroupResponse extends AcsResponse {
 		this.captureVideo = captureVideo;
 	}
 
-	public String getCaptureOssBucket() {
-		return this.captureOssBucket;
+	public String getPlayDomain() {
+		return this.playDomain;
 	}
 
-	public void setCaptureOssBucket(String captureOssBucket) {
-		this.captureOssBucket = captureOssBucket;
+	public void setPlayDomain(String playDomain) {
+		this.playDomain = playDomain;
 	}
 
-	public String getCaptureOssPath() {
-		return this.captureOssPath;
+	public Integer getCaptureInterval() {
+		return this.captureInterval;
 	}
 
-	public void setCaptureOssPath(String captureOssPath) {
-		this.captureOssPath = captureOssPath;
+	public void setCaptureInterval(Integer captureInterval) {
+		this.captureInterval = captureInterval;
+	}
+
+	public Long getGbPort() {
+		return this.gbPort;
+	}
+
+	public void setGbPort(Long gbPort) {
+		this.gbPort = gbPort;
 	}
 
 	public String getGbId() {
@@ -263,20 +231,44 @@ public class DescribeGroupResponse extends AcsResponse {
 		this.gbIp = gbIp;
 	}
 
-	public Long getGbPort() {
-		return this.gbPort;
+	public Integer getCaptureImage() {
+		return this.captureImage;
 	}
 
-	public void setGbPort(Long gbPort) {
-		this.gbPort = gbPort;
+	public void setCaptureImage(Integer captureImage) {
+		this.captureImage = captureImage;
 	}
 
-	public List<String> getGbUdpPorts() {
-		return this.gbUdpPorts;
+	public String getAliasId() {
+		return this.aliasId;
 	}
 
-	public void setGbUdpPorts(List<String> gbUdpPorts) {
-		this.gbUdpPorts = gbUdpPorts;
+	public void setAliasId(String aliasId) {
+		this.aliasId = aliasId;
+	}
+
+	public String getCaptureOssBucket() {
+		return this.captureOssBucket;
+	}
+
+	public void setCaptureOssBucket(String captureOssBucket) {
+		this.captureOssBucket = captureOssBucket;
+	}
+
+	public String getCaptureOssPath() {
+		return this.captureOssPath;
+	}
+
+	public void setCaptureOssPath(String captureOssPath) {
+		this.captureOssPath = captureOssPath;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public List<String> getGbTcpPorts() {
@@ -285,6 +277,14 @@ public class DescribeGroupResponse extends AcsResponse {
 
 	public void setGbTcpPorts(List<String> gbTcpPorts) {
 		this.gbTcpPorts = gbTcpPorts;
+	}
+
+	public List<String> getGbUdpPorts() {
+		return this.gbUdpPorts;
+	}
+
+	public void setGbUdpPorts(List<String> gbUdpPorts) {
+		this.gbUdpPorts = gbUdpPorts;
 	}
 
 	public Stats getStats() {
@@ -297,13 +297,21 @@ public class DescribeGroupResponse extends AcsResponse {
 
 	public static class Stats {
 
-		private Long deviceNum;
+		private Long platformNum;
 
-		private Long iedNum;
+		private Long deviceNum;
 
 		private Long ipcNum;
 
-		private Long platformNum;
+		private Long iedNum;
+
+		public Long getPlatformNum() {
+			return this.platformNum;
+		}
+
+		public void setPlatformNum(Long platformNum) {
+			this.platformNum = platformNum;
+		}
 
 		public Long getDeviceNum() {
 			return this.deviceNum;
@@ -311,14 +319,6 @@ public class DescribeGroupResponse extends AcsResponse {
 
 		public void setDeviceNum(Long deviceNum) {
 			this.deviceNum = deviceNum;
-		}
-
-		public Long getIedNum() {
-			return this.iedNum;
-		}
-
-		public void setIedNum(Long iedNum) {
-			this.iedNum = iedNum;
 		}
 
 		public Long getIpcNum() {
@@ -329,12 +329,12 @@ public class DescribeGroupResponse extends AcsResponse {
 			this.ipcNum = ipcNum;
 		}
 
-		public Long getPlatformNum() {
-			return this.platformNum;
+		public Long getIedNum() {
+			return this.iedNum;
 		}
 
-		public void setPlatformNum(Long platformNum) {
-			this.platformNum = platformNum;
+		public void setIedNum(Long iedNum) {
+			this.iedNum = iedNum;
 		}
 	}
 

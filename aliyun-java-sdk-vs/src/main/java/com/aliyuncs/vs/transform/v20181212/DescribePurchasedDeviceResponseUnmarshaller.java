@@ -23,18 +23,18 @@ public class DescribePurchasedDeviceResponseUnmarshaller {
 	public static DescribePurchasedDeviceResponse unmarshall(DescribePurchasedDeviceResponse describePurchasedDeviceResponse, UnmarshallerContext _ctx) {
 		
 		describePurchasedDeviceResponse.setRequestId(_ctx.stringValue("DescribePurchasedDeviceResponse.RequestId"));
-		describePurchasedDeviceResponse.setId(_ctx.stringValue("DescribePurchasedDeviceResponse.Id"));
-		describePurchasedDeviceResponse.setName(_ctx.stringValue("DescribePurchasedDeviceResponse.Name"));
-		describePurchasedDeviceResponse.setDescription(_ctx.stringValue("DescribePurchasedDeviceResponse.Description"));
 		describePurchasedDeviceResponse.setType(_ctx.stringValue("DescribePurchasedDeviceResponse.Type"));
 		describePurchasedDeviceResponse.setSubType(_ctx.stringValue("DescribePurchasedDeviceResponse.SubType"));
-		describePurchasedDeviceResponse.setRegisterCode(_ctx.stringValue("DescribePurchasedDeviceResponse.RegisterCode"));
 		describePurchasedDeviceResponse.setVendor(_ctx.stringValue("DescribePurchasedDeviceResponse.Vendor"));
-		describePurchasedDeviceResponse.setOrderId(_ctx.stringValue("DescribePurchasedDeviceResponse.OrderId"));
-		describePurchasedDeviceResponse.setRegion(_ctx.stringValue("DescribePurchasedDeviceResponse.Region"));
+		describePurchasedDeviceResponse.setDescription(_ctx.stringValue("DescribePurchasedDeviceResponse.Description"));
+		describePurchasedDeviceResponse.setRegisterCode(_ctx.stringValue("DescribePurchasedDeviceResponse.RegisterCode"));
 		describePurchasedDeviceResponse.setGroupId(_ctx.stringValue("DescribePurchasedDeviceResponse.GroupId"));
 		describePurchasedDeviceResponse.setGroupName(_ctx.stringValue("DescribePurchasedDeviceResponse.GroupName"));
+		describePurchasedDeviceResponse.setRegion(_ctx.stringValue("DescribePurchasedDeviceResponse.Region"));
+		describePurchasedDeviceResponse.setName(_ctx.stringValue("DescribePurchasedDeviceResponse.Name"));
 		describePurchasedDeviceResponse.setCreatedTime(_ctx.stringValue("DescribePurchasedDeviceResponse.CreatedTime"));
+		describePurchasedDeviceResponse.setId(_ctx.stringValue("DescribePurchasedDeviceResponse.Id"));
+		describePurchasedDeviceResponse.setOrderId(_ctx.stringValue("DescribePurchasedDeviceResponse.OrderId"));
 	 
 	 	return describePurchasedDeviceResponse;
 	}

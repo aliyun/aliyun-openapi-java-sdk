@@ -27,26 +27,26 @@ public class DescribePurchasedDevicesResponseUnmarshaller {
 	public static DescribePurchasedDevicesResponse unmarshall(DescribePurchasedDevicesResponse describePurchasedDevicesResponse, UnmarshallerContext _ctx) {
 		
 		describePurchasedDevicesResponse.setRequestId(_ctx.stringValue("DescribePurchasedDevicesResponse.RequestId"));
-		describePurchasedDevicesResponse.setPageSize(_ctx.longValue("DescribePurchasedDevicesResponse.PageSize"));
 		describePurchasedDevicesResponse.setPageNum(_ctx.longValue("DescribePurchasedDevicesResponse.PageNum"));
-		describePurchasedDevicesResponse.setPageCount(_ctx.longValue("DescribePurchasedDevicesResponse.PageCount"));
+		describePurchasedDevicesResponse.setPageSize(_ctx.longValue("DescribePurchasedDevicesResponse.PageSize"));
 		describePurchasedDevicesResponse.setTotalCount(_ctx.longValue("DescribePurchasedDevicesResponse.TotalCount"));
+		describePurchasedDevicesResponse.setPageCount(_ctx.longValue("DescribePurchasedDevicesResponse.PageCount"));
 
 		List<Device> devices = new ArrayList<Device>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePurchasedDevicesResponse.Devices.Length"); i++) {
 			Device device = new Device();
-			device.setId(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Id"));
-			device.setName(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Name"));
-			device.setDescription(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Description"));
 			device.setType(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Type"));
 			device.setSubType(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].SubType"));
-			device.setRegisterCode(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].RegisterCode"));
 			device.setVendor(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Vendor"));
-			device.setOrderId(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].OrderId"));
-			device.setRegion(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Region"));
+			device.setDescription(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Description"));
+			device.setRegisterCode(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].RegisterCode"));
 			device.setGroupId(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].GroupId"));
 			device.setGroupName(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].GroupName"));
+			device.setRegion(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Region"));
+			device.setName(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Name"));
 			device.setCreatedTime(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].CreatedTime"));
+			device.setId(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].Id"));
+			device.setOrderId(_ctx.stringValue("DescribePurchasedDevicesResponse.Devices["+ i +"].OrderId"));
 
 			devices.add(device);
 		}

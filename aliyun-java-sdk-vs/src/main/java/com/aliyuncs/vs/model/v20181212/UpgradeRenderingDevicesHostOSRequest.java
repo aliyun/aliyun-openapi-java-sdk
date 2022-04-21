@@ -25,6 +25,8 @@ import com.aliyuncs.vs.Endpoint;
 public class UpgradeRenderingDevicesHostOSRequest extends RpcAcsRequest<UpgradeRenderingDevicesHostOSResponse> {
 	   
 
+	private String imageId;
+
 	private String romPath;
 
 	private Long ownerId;
@@ -41,6 +43,17 @@ public class UpgradeRenderingDevicesHostOSRequest extends RpcAcsRequest<UpgradeR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public String getRomPath() {

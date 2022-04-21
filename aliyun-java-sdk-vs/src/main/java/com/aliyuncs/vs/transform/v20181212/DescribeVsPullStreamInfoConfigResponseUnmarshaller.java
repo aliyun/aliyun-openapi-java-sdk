@@ -31,12 +31,12 @@ public class DescribeVsPullStreamInfoConfigResponseUnmarshaller {
 		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
-			liveAppRecord.setDomainName(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
+			liveAppRecord.setEndTime(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
 			liveAppRecord.setAppName(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].AppName"));
-			liveAppRecord.setStreamName(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
 			liveAppRecord.setSourceUrl(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].SourceUrl"));
 			liveAppRecord.setStartTime(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
-			liveAppRecord.setEndTime(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
+			liveAppRecord.setStreamName(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
+			liveAppRecord.setDomainName(_ctx.stringValue("DescribeVsPullStreamInfoConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
 
 			liveAppRecordList.add(liveAppRecord);
 		}

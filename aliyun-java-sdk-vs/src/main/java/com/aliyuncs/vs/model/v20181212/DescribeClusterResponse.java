@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClusterResponse extends AcsResponse {
 
+	private String status;
+
 	private String requestId;
-
-	private String clusterId;
-
-	private String name;
 
 	private String description;
 
 	private String maintainTime;
 
-	private String status;
+	private String name;
+
+	private String clusterId;
 
 	private List<InternalPort> internalPorts;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,22 +53,6 @@ public class DescribeClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getDescription() {
@@ -79,12 +71,20 @@ public class DescribeClusterResponse extends AcsResponse {
 		this.maintainTime = maintainTime;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	public List<InternalPort> getInternalPorts() {

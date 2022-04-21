@@ -47,24 +47,24 @@ public class DescribeVsPullStreamInfoConfigResponse extends AcsResponse {
 
 	public static class LiveAppRecord {
 
-		private String domainName;
+		private String endTime;
 
 		private String appName;
-
-		private String streamName;
 
 		private String sourceUrl;
 
 		private String startTime;
 
-		private String endTime;
+		private String streamName;
 
-		public String getDomainName() {
-			return this.domainName;
+		private String domainName;
+
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getAppName() {
@@ -73,14 +73,6 @@ public class DescribeVsPullStreamInfoConfigResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
 		}
 
 		public String getSourceUrl() {
@@ -99,12 +91,20 @@ public class DescribeVsPullStreamInfoConfigResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getStreamName() {
+			return this.streamName;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

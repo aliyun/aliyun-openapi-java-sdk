@@ -23,9 +23,9 @@ public class BindTemplateResponseUnmarshaller {
 	public static BindTemplateResponse unmarshall(BindTemplateResponse bindTemplateResponse, UnmarshallerContext _ctx) {
 		
 		bindTemplateResponse.setRequestId(_ctx.stringValue("BindTemplateResponse.RequestId"));
-		bindTemplateResponse.setTemplateId(_ctx.stringValue("BindTemplateResponse.TemplateId"));
 		bindTemplateResponse.setInstanceId(_ctx.stringValue("BindTemplateResponse.InstanceId"));
 		bindTemplateResponse.setInstanceType(_ctx.stringValue("BindTemplateResponse.InstanceType"));
+		bindTemplateResponse.setTemplateId(_ctx.stringValue("BindTemplateResponse.TemplateId"));
 	 
 	 	return bindTemplateResponse;
 	}

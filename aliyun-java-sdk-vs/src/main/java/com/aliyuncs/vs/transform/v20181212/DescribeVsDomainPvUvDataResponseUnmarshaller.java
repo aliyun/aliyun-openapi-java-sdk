@@ -27,17 +27,17 @@ public class DescribeVsDomainPvUvDataResponseUnmarshaller {
 	public static DescribeVsDomainPvUvDataResponse unmarshall(DescribeVsDomainPvUvDataResponse describeVsDomainPvUvDataResponse, UnmarshallerContext _ctx) {
 		
 		describeVsDomainPvUvDataResponse.setRequestId(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.RequestId"));
-		describeVsDomainPvUvDataResponse.setDomainName(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.DomainName"));
-		describeVsDomainPvUvDataResponse.setStartTime(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.StartTime"));
 		describeVsDomainPvUvDataResponse.setEndTime(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.EndTime"));
+		describeVsDomainPvUvDataResponse.setStartTime(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.StartTime"));
+		describeVsDomainPvUvDataResponse.setDomainName(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.DomainName"));
 		describeVsDomainPvUvDataResponse.setDataInterval(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.DataInterval"));
 
 		List<PvUvDataInfo> pvUvDataInfos = new ArrayList<PvUvDataInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsDomainPvUvDataResponse.PvUvDataInfos.Length"); i++) {
 			PvUvDataInfo pvUvDataInfo = new PvUvDataInfo();
 			pvUvDataInfo.setPV(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.PvUvDataInfos["+ i +"].PV"));
-			pvUvDataInfo.setUV(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.PvUvDataInfos["+ i +"].UV"));
 			pvUvDataInfo.setTimeStamp(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.PvUvDataInfos["+ i +"].TimeStamp"));
+			pvUvDataInfo.setUV(_ctx.stringValue("DescribeVsDomainPvUvDataResponse.PvUvDataInfos["+ i +"].UV"));
 
 			pvUvDataInfos.add(pvUvDataInfo);
 		}

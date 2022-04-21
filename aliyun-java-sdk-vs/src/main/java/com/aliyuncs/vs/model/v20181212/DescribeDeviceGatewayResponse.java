@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeviceGatewayResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String host;
+
+	private String token;
+
+	private String requestId;
 
 	private Long port;
 
 	private String protocol;
-
-	private String token;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getHost() {
 		return this.host;
@@ -48,6 +40,22 @@ public class DescribeDeviceGatewayResponse extends AcsResponse {
 
 	public void setHost(String host) {
 		this.host = host;
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPort() {
@@ -64,14 +72,6 @@ public class DescribeDeviceGatewayResponse extends AcsResponse {
 
 	public void setBizProtocol(String protocol) {
 		this.protocol = protocol;
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
 	}
 
 	@Override

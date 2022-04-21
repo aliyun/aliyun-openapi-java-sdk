@@ -31,10 +31,10 @@ public class BatchBindTemplateResponseUnmarshaller {
 		List<Binding> bindings = new ArrayList<Binding>();
 		for (int i = 0; i < _ctx.lengthValue("BatchBindTemplateResponse.Bindings.Length"); i++) {
 			Binding binding = new Binding();
-			binding.setTemplateId(_ctx.stringValue("BatchBindTemplateResponse.Bindings["+ i +"].TemplateId"));
+			binding.setError(_ctx.stringValue("BatchBindTemplateResponse.Bindings["+ i +"].Error"));
 			binding.setInstanceId(_ctx.stringValue("BatchBindTemplateResponse.Bindings["+ i +"].InstanceId"));
 			binding.setInstanceType(_ctx.stringValue("BatchBindTemplateResponse.Bindings["+ i +"].InstanceType"));
-			binding.setError(_ctx.stringValue("BatchBindTemplateResponse.Bindings["+ i +"].Error"));
+			binding.setTemplateId(_ctx.stringValue("BatchBindTemplateResponse.Bindings["+ i +"].TemplateId"));
 
 			bindings.add(binding);
 		}

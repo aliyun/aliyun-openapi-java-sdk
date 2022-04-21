@@ -27,11 +27,11 @@ public class DescribeClusterResponseUnmarshaller {
 	public static DescribeClusterResponse unmarshall(DescribeClusterResponse describeClusterResponse, UnmarshallerContext _ctx) {
 		
 		describeClusterResponse.setRequestId(_ctx.stringValue("DescribeClusterResponse.RequestId"));
-		describeClusterResponse.setClusterId(_ctx.stringValue("DescribeClusterResponse.ClusterId"));
-		describeClusterResponse.setName(_ctx.stringValue("DescribeClusterResponse.Name"));
+		describeClusterResponse.setStatus(_ctx.stringValue("DescribeClusterResponse.Status"));
 		describeClusterResponse.setDescription(_ctx.stringValue("DescribeClusterResponse.Description"));
 		describeClusterResponse.setMaintainTime(_ctx.stringValue("DescribeClusterResponse.MaintainTime"));
-		describeClusterResponse.setStatus(_ctx.stringValue("DescribeClusterResponse.Status"));
+		describeClusterResponse.setName(_ctx.stringValue("DescribeClusterResponse.Name"));
+		describeClusterResponse.setClusterId(_ctx.stringValue("DescribeClusterResponse.ClusterId"));
 
 		List<InternalPort> internalPorts = new ArrayList<InternalPort>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterResponse.InternalPorts.Length"); i++) {

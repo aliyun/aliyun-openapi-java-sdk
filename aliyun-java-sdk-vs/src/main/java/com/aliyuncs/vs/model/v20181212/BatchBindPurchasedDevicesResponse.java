@@ -47,20 +47,20 @@ public class BatchBindPurchasedDevicesResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String region;
+		private String error;
 
 		private String groupId;
 
 		private String deviceId;
 
-		private String error;
+		private String region;
 
-		public String getRegion() {
-			return this.region;
+		public String getError() {
+			return this.error;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
+		public void setError(String error) {
+			this.error = error;
 		}
 
 		public String getGroupId() {
@@ -79,12 +79,12 @@ public class BatchBindPurchasedDevicesResponse extends AcsResponse {
 			this.deviceId = deviceId;
 		}
 
-		public String getError() {
-			return this.error;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setError(String error) {
-			this.error = error;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 	}
 

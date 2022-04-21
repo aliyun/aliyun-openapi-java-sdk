@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVsDomainRegionDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
 	private String dataInterval;
 
-	private String startTime;
-
-	private String endTime;
-
 	private List<RegionProportionData> value;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,22 +77,6 @@ public class DescribeVsDomainRegionDataResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public List<RegionProportionData> getValue() {
 		return this.value;
 	}
@@ -87,60 +87,52 @@ public class DescribeVsDomainRegionDataResponse extends AcsResponse {
 
 	public static class RegionProportionData {
 
-		private String region;
+		private String totalQuery;
 
-		private String proportion;
+		private String totalBytes;
 
-		private String regionEname;
-
-		private String avgObjectSize;
+		private String avgResponseRate;
 
 		private String avgResponseTime;
+
+		private String reqErrRate;
+
+		private String avgObjectSize;
 
 		private String bps;
 
 		private String qps;
 
-		private String avgResponseRate;
+		private String regionEname;
 
-		private String reqErrRate;
+		private String region;
 
-		private String totalBytes;
+		private String proportion;
 
 		private String bytesProportion;
 
-		private String totalQuery;
-
-		public String getRegion() {
-			return this.region;
+		public String getTotalQuery() {
+			return this.totalQuery;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
+		public void setTotalQuery(String totalQuery) {
+			this.totalQuery = totalQuery;
 		}
 
-		public String getProportion() {
-			return this.proportion;
+		public String getTotalBytes() {
+			return this.totalBytes;
 		}
 
-		public void setProportion(String proportion) {
-			this.proportion = proportion;
+		public void setTotalBytes(String totalBytes) {
+			this.totalBytes = totalBytes;
 		}
 
-		public String getRegionEname() {
-			return this.regionEname;
+		public String getAvgResponseRate() {
+			return this.avgResponseRate;
 		}
 
-		public void setRegionEname(String regionEname) {
-			this.regionEname = regionEname;
-		}
-
-		public String getAvgObjectSize() {
-			return this.avgObjectSize;
-		}
-
-		public void setAvgObjectSize(String avgObjectSize) {
-			this.avgObjectSize = avgObjectSize;
+		public void setAvgResponseRate(String avgResponseRate) {
+			this.avgResponseRate = avgResponseRate;
 		}
 
 		public String getAvgResponseTime() {
@@ -149,6 +141,22 @@ public class DescribeVsDomainRegionDataResponse extends AcsResponse {
 
 		public void setAvgResponseTime(String avgResponseTime) {
 			this.avgResponseTime = avgResponseTime;
+		}
+
+		public String getReqErrRate() {
+			return this.reqErrRate;
+		}
+
+		public void setReqErrRate(String reqErrRate) {
+			this.reqErrRate = reqErrRate;
+		}
+
+		public String getAvgObjectSize() {
+			return this.avgObjectSize;
+		}
+
+		public void setAvgObjectSize(String avgObjectSize) {
+			this.avgObjectSize = avgObjectSize;
 		}
 
 		public String getBps() {
@@ -167,28 +175,28 @@ public class DescribeVsDomainRegionDataResponse extends AcsResponse {
 			this.qps = qps;
 		}
 
-		public String getAvgResponseRate() {
-			return this.avgResponseRate;
+		public String getRegionEname() {
+			return this.regionEname;
 		}
 
-		public void setAvgResponseRate(String avgResponseRate) {
-			this.avgResponseRate = avgResponseRate;
+		public void setRegionEname(String regionEname) {
+			this.regionEname = regionEname;
 		}
 
-		public String getReqErrRate() {
-			return this.reqErrRate;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setReqErrRate(String reqErrRate) {
-			this.reqErrRate = reqErrRate;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
-		public String getTotalBytes() {
-			return this.totalBytes;
+		public String getProportion() {
+			return this.proportion;
 		}
 
-		public void setTotalBytes(String totalBytes) {
-			this.totalBytes = totalBytes;
+		public void setProportion(String proportion) {
+			this.proportion = proportion;
 		}
 
 		public String getBytesProportion() {
@@ -197,14 +205,6 @@ public class DescribeVsDomainRegionDataResponse extends AcsResponse {
 
 		public void setBytesProportion(String bytesProportion) {
 			this.bytesProportion = bytesProportion;
-		}
-
-		public String getTotalQuery() {
-			return this.totalQuery;
-		}
-
-		public void setTotalQuery(String totalQuery) {
-			this.totalQuery = totalQuery;
 		}
 	}
 

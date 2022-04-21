@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVodStreamURLResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String url;
 
 	private String outProtocol;
 
+	private String requestId;
+
 	private Long port;
 
 	private String txId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getUrl() {
 		return this.url;
@@ -56,6 +48,14 @@ public class DescribeVodStreamURLResponse extends AcsResponse {
 
 	public void setOutProtocol(String outProtocol) {
 		this.outProtocol = outProtocol;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPort() {

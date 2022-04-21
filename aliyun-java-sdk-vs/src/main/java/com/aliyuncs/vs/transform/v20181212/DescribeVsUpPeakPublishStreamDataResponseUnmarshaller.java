@@ -31,11 +31,11 @@ public class DescribeVsUpPeakPublishStreamDataResponseUnmarshaller {
 		List<DescribeVsUpPeakPublishStreamData> describeVsUpPeakPublishStreamDatas = new ArrayList<DescribeVsUpPeakPublishStreamData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas.Length"); i++) {
 			DescribeVsUpPeakPublishStreamData describeVsUpPeakPublishStreamData = new DescribeVsUpPeakPublishStreamData();
-			describeVsUpPeakPublishStreamData.setPublishStreamNum(_ctx.integerValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas["+ i +"].PublishStreamNum"));
-			describeVsUpPeakPublishStreamData.setPeakTime(_ctx.stringValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas["+ i +"].PeakTime"));
 			describeVsUpPeakPublishStreamData.setQueryTime(_ctx.stringValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas["+ i +"].QueryTime"));
-			describeVsUpPeakPublishStreamData.setStatName(_ctx.stringValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas["+ i +"].StatName"));
 			describeVsUpPeakPublishStreamData.setBandWidth(_ctx.stringValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas["+ i +"].BandWidth"));
+			describeVsUpPeakPublishStreamData.setStatName(_ctx.stringValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas["+ i +"].StatName"));
+			describeVsUpPeakPublishStreamData.setPeakTime(_ctx.stringValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas["+ i +"].PeakTime"));
+			describeVsUpPeakPublishStreamData.setPublishStreamNum(_ctx.integerValue("DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamDatas["+ i +"].PublishStreamNum"));
 
 			describeVsUpPeakPublishStreamDatas.add(describeVsUpPeakPublishStreamData);
 		}

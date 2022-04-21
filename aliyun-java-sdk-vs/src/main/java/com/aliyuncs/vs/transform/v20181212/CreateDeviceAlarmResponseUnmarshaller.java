@@ -24,8 +24,8 @@ public class CreateDeviceAlarmResponseUnmarshaller {
 		
 		createDeviceAlarmResponse.setRequestId(_ctx.stringValue("CreateDeviceAlarmResponse.RequestId"));
 		createDeviceAlarmResponse.setUrl(_ctx.stringValue("CreateDeviceAlarmResponse.Url"));
-		createDeviceAlarmResponse.setExpire(_ctx.longValue("CreateDeviceAlarmResponse.Expire"));
 		createDeviceAlarmResponse.setAlarmId(_ctx.stringValue("CreateDeviceAlarmResponse.AlarmId"));
+		createDeviceAlarmResponse.setExpire(_ctx.longValue("CreateDeviceAlarmResponse.Expire"));
 		createDeviceAlarmResponse.setAlarmDelay(_ctx.longValue("CreateDeviceAlarmResponse.AlarmDelay"));
 	 
 	 	return createDeviceAlarmResponse;

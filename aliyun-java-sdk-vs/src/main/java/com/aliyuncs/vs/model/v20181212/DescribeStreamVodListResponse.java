@@ -47,17 +47,9 @@ public class DescribeStreamVodListResponse extends AcsResponse {
 
 	public static class Record {
 
-		private Long startTime;
-
 		private Long endTime;
 
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
+		private Long startTime;
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -65,6 +57,14 @@ public class DescribeStreamVodListResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 	}
 

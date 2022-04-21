@@ -27,23 +27,23 @@ public class DescribeVsStreamsOnlineListResponseUnmarshaller {
 	public static DescribeVsStreamsOnlineListResponse unmarshall(DescribeVsStreamsOnlineListResponse describeVsStreamsOnlineListResponse, UnmarshallerContext _ctx) {
 		
 		describeVsStreamsOnlineListResponse.setRequestId(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.RequestId"));
+		describeVsStreamsOnlineListResponse.setTotalPage(_ctx.integerValue("DescribeVsStreamsOnlineListResponse.TotalPage"));
 		describeVsStreamsOnlineListResponse.setPageNum(_ctx.integerValue("DescribeVsStreamsOnlineListResponse.PageNum"));
 		describeVsStreamsOnlineListResponse.setPageSize(_ctx.integerValue("DescribeVsStreamsOnlineListResponse.PageSize"));
 		describeVsStreamsOnlineListResponse.setTotalNum(_ctx.integerValue("DescribeVsStreamsOnlineListResponse.TotalNum"));
-		describeVsStreamsOnlineListResponse.setTotalPage(_ctx.integerValue("DescribeVsStreamsOnlineListResponse.TotalPage"));
 
 		List<LiveStreamOnlineInfo> onlineInfo = new ArrayList<LiveStreamOnlineInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsStreamsOnlineListResponse.OnlineInfo.Length"); i++) {
 			LiveStreamOnlineInfo liveStreamOnlineInfo = new LiveStreamOnlineInfo();
-			liveStreamOnlineInfo.setDomainName(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].DomainName"));
-			liveStreamOnlineInfo.setAppName(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].AppName"));
-			liveStreamOnlineInfo.setStreamName(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].StreamName"));
 			liveStreamOnlineInfo.setPublishTime(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishTime"));
-			liveStreamOnlineInfo.setPublishUrl(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishUrl"));
-			liveStreamOnlineInfo.setPublishDomain(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishDomain"));
+			liveStreamOnlineInfo.setAppName(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].AppName"));
 			liveStreamOnlineInfo.setPublishType(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishType"));
+			liveStreamOnlineInfo.setPublishUrl(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishUrl"));
 			liveStreamOnlineInfo.setTranscoded(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].Transcoded"));
+			liveStreamOnlineInfo.setStreamName(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].StreamName"));
+			liveStreamOnlineInfo.setDomainName(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].DomainName"));
 			liveStreamOnlineInfo.setTranscodeId(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].TranscodeId"));
+			liveStreamOnlineInfo.setPublishDomain(_ctx.stringValue("DescribeVsStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishDomain"));
 
 			onlineInfo.add(liveStreamOnlineInfo);
 		}

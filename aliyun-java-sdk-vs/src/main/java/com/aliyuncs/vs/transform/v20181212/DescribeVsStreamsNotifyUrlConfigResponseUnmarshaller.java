@@ -26,10 +26,10 @@ public class DescribeVsStreamsNotifyUrlConfigResponseUnmarshaller {
 		describeVsStreamsNotifyUrlConfigResponse.setRequestId(_ctx.stringValue("DescribeVsStreamsNotifyUrlConfigResponse.RequestId"));
 
 		LiveStreamsNotifyConfig liveStreamsNotifyConfig = new LiveStreamsNotifyConfig();
-		liveStreamsNotifyConfig.setDomainName(_ctx.stringValue("DescribeVsStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.DomainName"));
-		liveStreamsNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeVsStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyUrl"));
 		liveStreamsNotifyConfig.setAuthType(_ctx.stringValue("DescribeVsStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthType"));
 		liveStreamsNotifyConfig.setAuthKey(_ctx.stringValue("DescribeVsStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthKey"));
+		liveStreamsNotifyConfig.setDomainName(_ctx.stringValue("DescribeVsStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.DomainName"));
+		liveStreamsNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeVsStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyUrl"));
 		describeVsStreamsNotifyUrlConfigResponse.setLiveStreamsNotifyConfig(liveStreamsNotifyConfig);
 	 
 	 	return describeVsStreamsNotifyUrlConfigResponse;

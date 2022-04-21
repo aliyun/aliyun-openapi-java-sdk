@@ -27,15 +27,15 @@ public class DescribeVsDomainDetailResponseUnmarshaller {
 
 		DomainConfig domainConfig = new DomainConfig();
 		domainConfig.setGmtCreated(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.GmtCreated"));
-		domainConfig.setGmtModified(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.GmtModified"));
-		domainConfig.setDomainStatus(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.DomainStatus"));
-		domainConfig.setCname(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.Cname"));
-		domainConfig.setDomainName(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.DomainName"));
-		domainConfig.setDomainType(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.DomainType"));
-		domainConfig.setRegion(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.Region"));
 		domainConfig.setDescription(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.Description"));
 		domainConfig.setSSLProtocol(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.SSLProtocol"));
+		domainConfig.setRegion(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.Region"));
 		domainConfig.setScope(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.Scope"));
+		domainConfig.setCname(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.Cname"));
+		domainConfig.setDomainStatus(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.DomainStatus"));
+		domainConfig.setGmtModified(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.GmtModified"));
+		domainConfig.setDomainName(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.DomainName"));
+		domainConfig.setDomainType(_ctx.stringValue("DescribeVsDomainDetailResponse.DomainConfig.DomainType"));
 		describeVsDomainDetailResponse.setDomainConfig(domainConfig);
 	 
 	 	return describeVsDomainDetailResponse;

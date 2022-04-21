@@ -32,8 +32,8 @@ public class DescribePresetsResponseUnmarshaller {
 		List<Preset> presets = new ArrayList<Preset>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePresetsResponse.Presets.Length"); i++) {
 			Preset preset = new Preset();
-			preset.setId(_ctx.stringValue("DescribePresetsResponse.Presets["+ i +"].Id"));
 			preset.setName(_ctx.stringValue("DescribePresetsResponse.Presets["+ i +"].Name"));
+			preset.setId(_ctx.stringValue("DescribePresetsResponse.Presets["+ i +"].Id"));
 
 			presets.add(preset);
 		}

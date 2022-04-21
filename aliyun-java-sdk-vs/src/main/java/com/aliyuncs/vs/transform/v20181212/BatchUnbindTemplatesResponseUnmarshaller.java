@@ -31,11 +31,11 @@ public class BatchUnbindTemplatesResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("BatchUnbindTemplatesResponse.Results.Length"); i++) {
 			Result result = new Result();
-			result.setTemplateId(_ctx.stringValue("BatchUnbindTemplatesResponse.Results["+ i +"].TemplateId"));
+			result.setError(_ctx.stringValue("BatchUnbindTemplatesResponse.Results["+ i +"].Error"));
 			result.setTemplateType(_ctx.stringValue("BatchUnbindTemplatesResponse.Results["+ i +"].TemplateType"));
 			result.setInstanceId(_ctx.stringValue("BatchUnbindTemplatesResponse.Results["+ i +"].InstanceId"));
 			result.setInstanceType(_ctx.stringValue("BatchUnbindTemplatesResponse.Results["+ i +"].InstanceType"));
-			result.setError(_ctx.stringValue("BatchUnbindTemplatesResponse.Results["+ i +"].Error"));
+			result.setTemplateId(_ctx.stringValue("BatchUnbindTemplatesResponse.Results["+ i +"].TemplateId"));
 
 			results.add(result);
 		}

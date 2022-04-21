@@ -32,8 +32,8 @@ public class BatchForbidVsStreamResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("BatchForbidVsStreamResponse.ForbidResult.Length"); i++) {
 			ForbidResultInfo forbidResultInfo = new ForbidResultInfo();
 			forbidResultInfo.setResult(_ctx.stringValue("BatchForbidVsStreamResponse.ForbidResult["+ i +"].Result"));
-			forbidResultInfo.setDetail(_ctx.stringValue("BatchForbidVsStreamResponse.ForbidResult["+ i +"].Detail"));
 			forbidResultInfo.setCount(_ctx.integerValue("BatchForbidVsStreamResponse.ForbidResult["+ i +"].Count"));
+			forbidResultInfo.setDetail(_ctx.stringValue("BatchForbidVsStreamResponse.ForbidResult["+ i +"].Detail"));
 
 			List<String> channels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("BatchForbidVsStreamResponse.ForbidResult["+ i +"].Channels.Length"); j++) {

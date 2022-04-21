@@ -23,12 +23,12 @@ public class DescribeDirectoryResponseUnmarshaller {
 	public static DescribeDirectoryResponse unmarshall(DescribeDirectoryResponse describeDirectoryResponse, UnmarshallerContext _ctx) {
 		
 		describeDirectoryResponse.setRequestId(_ctx.stringValue("DescribeDirectoryResponse.RequestId"));
-		describeDirectoryResponse.setId(_ctx.stringValue("DescribeDirectoryResponse.Id"));
-		describeDirectoryResponse.setName(_ctx.stringValue("DescribeDirectoryResponse.Name"));
+		describeDirectoryResponse.setParentId(_ctx.stringValue("DescribeDirectoryResponse.ParentId"));
 		describeDirectoryResponse.setDescription(_ctx.stringValue("DescribeDirectoryResponse.Description"));
 		describeDirectoryResponse.setGroupId(_ctx.stringValue("DescribeDirectoryResponse.GroupId"));
-		describeDirectoryResponse.setParentId(_ctx.stringValue("DescribeDirectoryResponse.ParentId"));
+		describeDirectoryResponse.setName(_ctx.stringValue("DescribeDirectoryResponse.Name"));
 		describeDirectoryResponse.setCreatedTime(_ctx.stringValue("DescribeDirectoryResponse.CreatedTime"));
+		describeDirectoryResponse.setId(_ctx.stringValue("DescribeDirectoryResponse.Id"));
 	 
 	 	return describeDirectoryResponse;
 	}

@@ -27,16 +27,16 @@ public class DescribeVsDomainTrafficDataResponseUnmarshaller {
 	public static DescribeVsDomainTrafficDataResponse unmarshall(DescribeVsDomainTrafficDataResponse describeVsDomainTrafficDataResponse, UnmarshallerContext _ctx) {
 		
 		describeVsDomainTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.RequestId"));
-		describeVsDomainTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.DomainName"));
-		describeVsDomainTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.StartTime"));
 		describeVsDomainTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.EndTime"));
+		describeVsDomainTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.StartTime"));
+		describeVsDomainTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.DomainName"));
 		describeVsDomainTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.DataInterval"));
 
 		List<DataModule> trafficDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsDomainTrafficDataResponse.TrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setTrafficValue(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TrafficValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeVsDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
 
 			trafficDataPerInterval.add(dataModule);
 		}

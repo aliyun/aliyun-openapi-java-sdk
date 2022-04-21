@@ -27,27 +27,27 @@ public class DescribeStreamsResponseUnmarshaller {
 	public static DescribeStreamsResponse unmarshall(DescribeStreamsResponse describeStreamsResponse, UnmarshallerContext _ctx) {
 		
 		describeStreamsResponse.setRequestId(_ctx.stringValue("DescribeStreamsResponse.RequestId"));
-		describeStreamsResponse.setPageSize(_ctx.longValue("DescribeStreamsResponse.PageSize"));
 		describeStreamsResponse.setPageNum(_ctx.longValue("DescribeStreamsResponse.PageNum"));
-		describeStreamsResponse.setPageCount(_ctx.longValue("DescribeStreamsResponse.PageCount"));
+		describeStreamsResponse.setPageSize(_ctx.longValue("DescribeStreamsResponse.PageSize"));
 		describeStreamsResponse.setTotalCount(_ctx.longValue("DescribeStreamsResponse.TotalCount"));
+		describeStreamsResponse.setPageCount(_ctx.longValue("DescribeStreamsResponse.PageCount"));
 
 		List<Stream> streams = new ArrayList<Stream>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStreamsResponse.Streams.Length"); i++) {
 			Stream stream = new Stream();
-			stream.setId(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].Id"));
+			stream.setStatus(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].Status"));
+			stream.setPlayDomain(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].PlayDomain"));
+			stream.setBizProtocol(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].Protocol"));
+			stream.setDeviceId(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].DeviceId"));
+			stream.setHeight(_ctx.integerValue("DescribeStreamsResponse.Streams["+ i +"].Height"));
+			stream.setGroupId(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].GroupId"));
+			stream.setApp(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].App"));
+			stream.setWidth(_ctx.integerValue("DescribeStreamsResponse.Streams["+ i +"].Width"));
+			stream.setEnabled(_ctx.booleanValue("DescribeStreamsResponse.Streams["+ i +"].Enabled"));
 			stream.setName(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].Name"));
 			stream.setPushDomain(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].PushDomain"));
-			stream.setPlayDomain(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].PlayDomain"));
-			stream.setApp(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].App"));
-			stream.setBizProtocol(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].Protocol"));
-			stream.setGroupId(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].GroupId"));
-			stream.setDeviceId(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].DeviceId"));
-			stream.setEnabled(_ctx.booleanValue("DescribeStreamsResponse.Streams["+ i +"].Enabled"));
-			stream.setStatus(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].Status"));
-			stream.setHeight(_ctx.integerValue("DescribeStreamsResponse.Streams["+ i +"].Height"));
-			stream.setWidth(_ctx.integerValue("DescribeStreamsResponse.Streams["+ i +"].Width"));
 			stream.setCreatedTime(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].CreatedTime"));
+			stream.setId(_ctx.stringValue("DescribeStreamsResponse.Streams["+ i +"].Id"));
 
 			streams.add(stream);
 		}

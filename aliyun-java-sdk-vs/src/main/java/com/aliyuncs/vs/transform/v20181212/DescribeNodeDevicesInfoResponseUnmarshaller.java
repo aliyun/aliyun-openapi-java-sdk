@@ -37,10 +37,10 @@ public class DescribeNodeDevicesInfoResponseUnmarshaller {
 			List<DeviceInfo> deviceInfos = new ArrayList<DeviceInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNodeDevicesInfoResponse.NodeDevices["+ i +"].DeviceInfos.Length"); j++) {
 				DeviceInfo deviceInfo = new DeviceInfo();
+				deviceInfo.setServer(_ctx.stringValue("DescribeNodeDevicesInfoResponse.NodeDevices["+ i +"].DeviceInfos["+ j +"].Server"));
 				deviceInfo.setInstanceId(_ctx.stringValue("DescribeNodeDevicesInfoResponse.NodeDevices["+ i +"].DeviceInfos["+ j +"].InstanceId"));
 				deviceInfo.setName(_ctx.stringValue("DescribeNodeDevicesInfoResponse.NodeDevices["+ i +"].DeviceInfos["+ j +"].Name"));
 				deviceInfo.setIP(_ctx.stringValue("DescribeNodeDevicesInfoResponse.NodeDevices["+ i +"].DeviceInfos["+ j +"].IP"));
-				deviceInfo.setServer(_ctx.stringValue("DescribeNodeDevicesInfoResponse.NodeDevices["+ i +"].DeviceInfos["+ j +"].Server"));
 
 				deviceInfos.add(deviceInfo);
 			}

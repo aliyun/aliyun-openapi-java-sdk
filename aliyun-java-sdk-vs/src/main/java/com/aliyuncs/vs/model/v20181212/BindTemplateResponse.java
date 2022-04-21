@@ -26,11 +26,11 @@ public class BindTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String templateId;
-
 	private String instanceId;
 
 	private String instanceType;
+
+	private String templateId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +38,6 @@ public class BindTemplateResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
 	}
 
 	public String getInstanceId() {
@@ -62,6 +54,14 @@ public class BindTemplateResponse extends AcsResponse {
 
 	public void setInstanceType(String instanceType) {
 		this.instanceType = instanceType;
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
 	}
 
 	@Override

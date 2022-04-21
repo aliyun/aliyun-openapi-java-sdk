@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDeviceAlarmResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String url;
-
-	private Long expire;
 
 	private String alarmId;
 
+	private String requestId;
+
+	private Long expire;
+
 	private Long alarmDelay;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getUrl() {
 		return this.url;
@@ -50,20 +42,28 @@ public class CreateDeviceAlarmResponse extends AcsResponse {
 		this.url = url;
 	}
 
-	public Long getExpire() {
-		return this.expire;
-	}
-
-	public void setExpire(Long expire) {
-		this.expire = expire;
-	}
-
 	public String getAlarmId() {
 		return this.alarmId;
 	}
 
 	public void setAlarmId(String alarmId) {
 		this.alarmId = alarmId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getExpire() {
+		return this.expire;
+	}
+
+	public void setExpire(Long expire) {
+		this.expire = expire;
 	}
 
 	public Long getAlarmDelay() {

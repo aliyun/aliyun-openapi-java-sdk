@@ -31,9 +31,9 @@ public class DescribeVsStorageUsageDataResponseUnmarshaller {
 		List<StorageUsageDataModule> storageUsage = new ArrayList<StorageUsageDataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVsStorageUsageDataResponse.StorageUsage.Length"); i++) {
 			StorageUsageDataModule storageUsageDataModule = new StorageUsageDataModule();
+			storageUsageDataModule.setStorageDataValue(_ctx.integerValue("DescribeVsStorageUsageDataResponse.StorageUsage["+ i +"].StorageDataValue"));
 			storageUsageDataModule.setTimeStamp(_ctx.stringValue("DescribeVsStorageUsageDataResponse.StorageUsage["+ i +"].TimeStamp"));
 			storageUsageDataModule.setBucket(_ctx.stringValue("DescribeVsStorageUsageDataResponse.StorageUsage["+ i +"].Bucket"));
-			storageUsageDataModule.setStorageDataValue(_ctx.integerValue("DescribeVsStorageUsageDataResponse.StorageUsage["+ i +"].StorageDataValue"));
 
 			storageUsage.add(storageUsageDataModule);
 		}

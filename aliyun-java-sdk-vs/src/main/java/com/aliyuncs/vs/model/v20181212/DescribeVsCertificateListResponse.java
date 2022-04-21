@@ -69,32 +69,24 @@ public class DescribeVsCertificateListResponse extends AcsResponse {
 
 		public static class Cert {
 
-			private String certName;
-
-			private Long certId;
+			private Long lastTime;
 
 			private String fingerprint;
 
-			private String common;
+			private String certName;
 
 			private String issuer;
 
-			private Long lastTime;
+			private Long certId;
 
-			public String getCertName() {
-				return this.certName;
+			private String common;
+
+			public Long getLastTime() {
+				return this.lastTime;
 			}
 
-			public void setCertName(String certName) {
-				this.certName = certName;
-			}
-
-			public Long getCertId() {
-				return this.certId;
-			}
-
-			public void setCertId(Long certId) {
-				this.certId = certId;
+			public void setLastTime(Long lastTime) {
+				this.lastTime = lastTime;
 			}
 
 			public String getFingerprint() {
@@ -105,12 +97,12 @@ public class DescribeVsCertificateListResponse extends AcsResponse {
 				this.fingerprint = fingerprint;
 			}
 
-			public String getCommon() {
-				return this.common;
+			public String getCertName() {
+				return this.certName;
 			}
 
-			public void setCommon(String common) {
-				this.common = common;
+			public void setCertName(String certName) {
+				this.certName = certName;
 			}
 
 			public String getIssuer() {
@@ -121,12 +113,20 @@ public class DescribeVsCertificateListResponse extends AcsResponse {
 				this.issuer = issuer;
 			}
 
-			public Long getLastTime() {
-				return this.lastTime;
+			public Long getCertId() {
+				return this.certId;
 			}
 
-			public void setLastTime(Long lastTime) {
-				this.lastTime = lastTime;
+			public void setCertId(Long certId) {
+				this.certId = certId;
+			}
+
+			public String getCommon() {
+				return this.common;
+			}
+
+			public void setCommon(String common) {
+				this.common = common;
 			}
 		}
 	}

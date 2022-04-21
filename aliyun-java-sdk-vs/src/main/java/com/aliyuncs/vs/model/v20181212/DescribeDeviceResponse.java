@@ -24,123 +24,67 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String id;
-
-	private String name;
-
-	private String description;
-
-	private String groupId;
-
-	private String parentId;
-
-	private String directoryId;
-
 	private String type;
-
-	private Boolean autoStart;
-
-	private Boolean enabled;
-
-	private String protocol;
 
 	private String status;
 
-	private String gbId;
+	private String alarmMethod;
 
-	private String ip;
+	private String dsn;
 
 	private Long port;
 
-	private String url;
+	private Long posInterval;
 
-	private String username;
+	private String parentId;
 
 	private String password;
 
+	private Boolean autoPos;
+
+	private String params;
+
+	private String requestId;
+
+	private String description;
+
+	private Boolean enabled;
+
+	private String name;
+
+	private String channelSyncTime;
+
+	private String createdTime;
+
+	private String directoryId;
+
+	private String registeredTime;
+
+	private String protocol;
+
+	private String ip;
+
+	private String url;
+
+	private Boolean autoStart;
+
 	private String vendor;
 
-	private String dsn;
+	private String gbId;
+
+	private String groupId;
 
 	private String longitude;
 
 	private String latitude;
 
-	private Boolean autoPos;
+	private String id;
 
-	private Long posInterval;
-
-	private String alarmMethod;
-
-	private String createdTime;
-
-	private String registeredTime;
-
-	private String channelSyncTime;
-
-	private String params;
+	private String username;
 
 	private Stats stats;
 
 	private Directory directory;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public String getParentId() {
-		return this.parentId;
-	}
-
-	public void setParentId(String parentId) {
-		this.parentId = parentId;
-	}
-
-	public String getDirectoryId() {
-		return this.directoryId;
-	}
-
-	public void setDirectoryId(String directoryId) {
-		this.directoryId = directoryId;
-	}
 
 	public String getType() {
 		return this.type;
@@ -148,30 +92,6 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 	public void setType(String type) {
 		this.type = type;
-	}
-
-	public Boolean getAutoStart() {
-		return this.autoStart;
-	}
-
-	public void setAutoStart(Boolean autoStart) {
-		this.autoStart = autoStart;
-	}
-
-	public Boolean getEnabled() {
-		return this.enabled;
-	}
-
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-	}
-
-	public String getBizProtocol() {
-		return this.protocol;
-	}
-
-	public void setBizProtocol(String protocol) {
-		this.protocol = protocol;
 	}
 
 	public String getStatus() {
@@ -182,20 +102,20 @@ public class DescribeDeviceResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getGbId() {
-		return this.gbId;
+	public String getAlarmMethod() {
+		return this.alarmMethod;
 	}
 
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
+	public void setAlarmMethod(String alarmMethod) {
+		this.alarmMethod = alarmMethod;
 	}
 
-	public String getIp() {
-		return this.ip;
+	public String getDsn() {
+		return this.dsn;
 	}
 
-	public void setIp(String ip) {
-		this.ip = ip;
+	public void setDsn(String dsn) {
+		this.dsn = dsn;
 	}
 
 	public Long getPort() {
@@ -206,20 +126,20 @@ public class DescribeDeviceResponse extends AcsResponse {
 		this.port = port;
 	}
 
-	public String getUrl() {
-		return this.url;
+	public Long getPosInterval() {
+		return this.posInterval;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setPosInterval(Long posInterval) {
+		this.posInterval = posInterval;
 	}
 
-	public String getUsername() {
-		return this.username;
+	public String getParentId() {
+		return this.parentId;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
 	}
 
 	public String getPassword() {
@@ -230,6 +150,118 @@ public class DescribeDeviceResponse extends AcsResponse {
 		this.password = password;
 	}
 
+	public Boolean getAutoPos() {
+		return this.autoPos;
+	}
+
+	public void setAutoPos(Boolean autoPos) {
+		this.autoPos = autoPos;
+	}
+
+	public String getParams() {
+		return this.params;
+	}
+
+	public void setParams(String params) {
+		this.params = params;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Boolean getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getChannelSyncTime() {
+		return this.channelSyncTime;
+	}
+
+	public void setChannelSyncTime(String channelSyncTime) {
+		this.channelSyncTime = channelSyncTime;
+	}
+
+	public String getCreatedTime() {
+		return this.createdTime;
+	}
+
+	public void setCreatedTime(String createdTime) {
+		this.createdTime = createdTime;
+	}
+
+	public String getDirectoryId() {
+		return this.directoryId;
+	}
+
+	public void setDirectoryId(String directoryId) {
+		this.directoryId = directoryId;
+	}
+
+	public String getRegisteredTime() {
+		return this.registeredTime;
+	}
+
+	public void setRegisteredTime(String registeredTime) {
+		this.registeredTime = registeredTime;
+	}
+
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public Boolean getAutoStart() {
+		return this.autoStart;
+	}
+
+	public void setAutoStart(Boolean autoStart) {
+		this.autoStart = autoStart;
+	}
+
 	public String getVendor() {
 		return this.vendor;
 	}
@@ -238,12 +270,20 @@ public class DescribeDeviceResponse extends AcsResponse {
 		this.vendor = vendor;
 	}
 
-	public String getDsn() {
-		return this.dsn;
+	public String getGbId() {
+		return this.gbId;
 	}
 
-	public void setDsn(String dsn) {
-		this.dsn = dsn;
+	public void setGbId(String gbId) {
+		this.gbId = gbId;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 
 	public String getLongitude() {
@@ -262,60 +302,20 @@ public class DescribeDeviceResponse extends AcsResponse {
 		this.latitude = latitude;
 	}
 
-	public Boolean getAutoPos() {
-		return this.autoPos;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setAutoPos(Boolean autoPos) {
-		this.autoPos = autoPos;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public Long getPosInterval() {
-		return this.posInterval;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setPosInterval(Long posInterval) {
-		this.posInterval = posInterval;
-	}
-
-	public String getAlarmMethod() {
-		return this.alarmMethod;
-	}
-
-	public void setAlarmMethod(String alarmMethod) {
-		this.alarmMethod = alarmMethod;
-	}
-
-	public String getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(String createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public String getRegisteredTime() {
-		return this.registeredTime;
-	}
-
-	public void setRegisteredTime(String registeredTime) {
-		this.registeredTime = registeredTime;
-	}
-
-	public String getChannelSyncTime() {
-		return this.channelSyncTime;
-	}
-
-	public void setChannelSyncTime(String channelSyncTime) {
-		this.channelSyncTime = channelSyncTime;
-	}
-
-	public String getParams() {
-		return this.params;
-	}
-
-	public void setParams(String params) {
-		this.params = params;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public Stats getStats() {
@@ -336,22 +336,22 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 	public static class Stats {
 
-		private Long channelNum;
+		private Long failedNum;
 
 		private Long streamNum;
+
+		private Long channelNum;
 
 		private Long onlineNum;
 
 		private Long offlineNum;
 
-		private Long failedNum;
-
-		public Long getChannelNum() {
-			return this.channelNum;
+		public Long getFailedNum() {
+			return this.failedNum;
 		}
 
-		public void setChannelNum(Long channelNum) {
-			this.channelNum = channelNum;
+		public void setFailedNum(Long failedNum) {
+			this.failedNum = failedNum;
 		}
 
 		public Long getStreamNum() {
@@ -360,6 +360,14 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 		public void setStreamNum(Long streamNum) {
 			this.streamNum = streamNum;
+		}
+
+		public Long getChannelNum() {
+			return this.channelNum;
+		}
+
+		public void setChannelNum(Long channelNum) {
+			this.channelNum = channelNum;
 		}
 
 		public Long getOnlineNum() {
@@ -377,44 +385,28 @@ public class DescribeDeviceResponse extends AcsResponse {
 		public void setOfflineNum(Long offlineNum) {
 			this.offlineNum = offlineNum;
 		}
-
-		public Long getFailedNum() {
-			return this.failedNum;
-		}
-
-		public void setFailedNum(Long failedNum) {
-			this.failedNum = failedNum;
-		}
 	}
 
 	public static class Directory {
 
-		private String id;
-
-		private String name;
+		private String parentId;
 
 		private String description;
 
 		private String groupId;
 
-		private String parentId;
+		private String name;
 
 		private String createdTime;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		public String getParentId() {
+			return this.parentId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
 		}
 
 		public String getDescription() {
@@ -433,12 +425,12 @@ public class DescribeDeviceResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getParentId() {
-			return this.parentId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setParentId(String parentId) {
-			this.parentId = parentId;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getCreatedTime() {
@@ -447,6 +439,14 @@ public class DescribeDeviceResponse extends AcsResponse {
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 
