@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetContactWhiteListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
+
+	private Boolean success;
 
 	private ContactWhitelistList contactWhitelistList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -69,12 +61,20 @@ public class GetContactWhiteListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public ContactWhitelistList getContactWhitelistList() {
@@ -129,21 +129,53 @@ public class GetContactWhiteListResponse extends AcsResponse {
 
 		public static class ContactWhitelistList1 {
 
+			private Long creationTime;
+
+			private String remark;
+
+			private String phoneNumber;
+
+			private String operator;
+
 			private String contactWhiteListId;
 
 			private String instanceId;
-
-			private Long creationTime;
-
-			private String phoneNumber;
 
 			private String name;
 
 			private String creator;
 
-			private String operator;
+			public Long getCreationTime() {
+				return this.creationTime;
+			}
 
-			private String remark;
+			public void setCreationTime(Long creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
+			}
+
+			public String getPhoneNumber() {
+				return this.phoneNumber;
+			}
+
+			public void setPhoneNumber(String phoneNumber) {
+				this.phoneNumber = phoneNumber;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
+			}
 
 			public String getContactWhiteListId() {
 				return this.contactWhiteListId;
@@ -161,22 +193,6 @@ public class GetContactWhiteListResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public Long getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(Long creationTime) {
-				this.creationTime = creationTime;
-			}
-
-			public String getPhoneNumber() {
-				return this.phoneNumber;
-			}
-
-			public void setPhoneNumber(String phoneNumber) {
-				this.phoneNumber = phoneNumber;
-			}
-
 			public String getName() {
 				return this.name;
 			}
@@ -191,22 +207,6 @@ public class GetContactWhiteListResponse extends AcsResponse {
 
 			public void setCreator(String creator) {
 				this.creator = creator;
-			}
-
-			public String getOperator() {
-				return this.operator;
-			}
-
-			public void setOperator(String operator) {
-				this.operator = operator;
-			}
-
-			public String getRemark() {
-				return this.remark;
-			}
-
-			public void setRemark(String remark) {
-				this.remark = remark;
 			}
 		}
 	}

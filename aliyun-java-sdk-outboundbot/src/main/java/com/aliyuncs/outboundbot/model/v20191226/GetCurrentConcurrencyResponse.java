@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCurrentConcurrencyResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
+
+	private Integer currentConcurrency;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
-
 	private Integer maxConcurrentConversation;
 
-	private Integer currentConcurrency;
-
 	private String instanceId;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,6 +62,14 @@ public class GetCurrentConcurrencyResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getCurrentConcurrency() {
+		return this.currentConcurrency;
+	}
+
+	public void setCurrentConcurrency(Integer currentConcurrency) {
+		this.currentConcurrency = currentConcurrency;
 	}
 
 	public String getCode() {
@@ -72,28 +88,12 @@ public class GetCurrentConcurrencyResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Integer getMaxConcurrentConversation() {
 		return this.maxConcurrentConversation;
 	}
 
 	public void setMaxConcurrentConversation(Integer maxConcurrentConversation) {
 		this.maxConcurrentConversation = maxConcurrentConversation;
-	}
-
-	public Integer getCurrentConcurrency() {
-		return this.currentConcurrency;
-	}
-
-	public void setCurrentConcurrency(Integer currentConcurrency) {
-		this.currentConcurrency = currentConcurrency;
 	}
 
 	public String getInstanceId() {

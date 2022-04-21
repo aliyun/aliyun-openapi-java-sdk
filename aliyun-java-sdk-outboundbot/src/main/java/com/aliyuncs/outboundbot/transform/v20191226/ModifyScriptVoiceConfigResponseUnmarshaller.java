@@ -24,19 +24,19 @@ public class ModifyScriptVoiceConfigResponseUnmarshaller {
 	public static ModifyScriptVoiceConfigResponse unmarshall(ModifyScriptVoiceConfigResponse modifyScriptVoiceConfigResponse, UnmarshallerContext _ctx) {
 		
 		modifyScriptVoiceConfigResponse.setRequestId(_ctx.stringValue("ModifyScriptVoiceConfigResponse.RequestId"));
-		modifyScriptVoiceConfigResponse.setCode(_ctx.stringValue("ModifyScriptVoiceConfigResponse.Code"));
 		modifyScriptVoiceConfigResponse.setHttpStatusCode(_ctx.integerValue("ModifyScriptVoiceConfigResponse.HttpStatusCode"));
+		modifyScriptVoiceConfigResponse.setCode(_ctx.stringValue("ModifyScriptVoiceConfigResponse.Code"));
 		modifyScriptVoiceConfigResponse.setMessage(_ctx.stringValue("ModifyScriptVoiceConfigResponse.Message"));
 		modifyScriptVoiceConfigResponse.setSuccess(_ctx.booleanValue("ModifyScriptVoiceConfigResponse.Success"));
 
 		ScriptVoiceConfig scriptVoiceConfig = new ScriptVoiceConfig();
-		scriptVoiceConfig.setInstanceId(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.InstanceId"));
-		scriptVoiceConfig.setScriptContent(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptContent"));
-		scriptVoiceConfig.setScriptId(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptId"));
+		scriptVoiceConfig.setType(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.Type"));
 		scriptVoiceConfig.setScriptVoiceConfigId(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptVoiceConfigId"));
+		scriptVoiceConfig.setScriptContent(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptContent"));
+		scriptVoiceConfig.setInstanceId(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.InstanceId"));
+		scriptVoiceConfig.setScriptId(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptId"));
 		scriptVoiceConfig.setScriptWaveformRelation(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.ScriptWaveformRelation"));
 		scriptVoiceConfig.setSource(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.Source"));
-		scriptVoiceConfig.setType(_ctx.stringValue("ModifyScriptVoiceConfigResponse.ScriptVoiceConfig.Type"));
 		modifyScriptVoiceConfigResponse.setScriptVoiceConfig(scriptVoiceConfig);
 	 
 	 	return modifyScriptVoiceConfigResponse;

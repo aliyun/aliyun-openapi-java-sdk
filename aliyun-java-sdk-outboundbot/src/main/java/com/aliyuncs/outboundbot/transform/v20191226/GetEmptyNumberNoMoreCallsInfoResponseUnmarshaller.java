@@ -23,11 +23,11 @@ public class GetEmptyNumberNoMoreCallsInfoResponseUnmarshaller {
 	public static GetEmptyNumberNoMoreCallsInfoResponse unmarshall(GetEmptyNumberNoMoreCallsInfoResponse getEmptyNumberNoMoreCallsInfoResponse, UnmarshallerContext _ctx) {
 		
 		getEmptyNumberNoMoreCallsInfoResponse.setRequestId(_ctx.stringValue("GetEmptyNumberNoMoreCallsInfoResponse.RequestId"));
+		getEmptyNumberNoMoreCallsInfoResponse.setHttpStatusCode(_ctx.integerValue("GetEmptyNumberNoMoreCallsInfoResponse.HttpStatusCode"));
+		getEmptyNumberNoMoreCallsInfoResponse.setEmptyNumberNoMoreCalls(_ctx.booleanValue("GetEmptyNumberNoMoreCallsInfoResponse.EmptyNumberNoMoreCalls"));
 		getEmptyNumberNoMoreCallsInfoResponse.setSuccess(_ctx.booleanValue("GetEmptyNumberNoMoreCallsInfoResponse.Success"));
 		getEmptyNumberNoMoreCallsInfoResponse.setCode(_ctx.stringValue("GetEmptyNumberNoMoreCallsInfoResponse.Code"));
 		getEmptyNumberNoMoreCallsInfoResponse.setMessage(_ctx.stringValue("GetEmptyNumberNoMoreCallsInfoResponse.Message"));
-		getEmptyNumberNoMoreCallsInfoResponse.setHttpStatusCode(_ctx.integerValue("GetEmptyNumberNoMoreCallsInfoResponse.HttpStatusCode"));
-		getEmptyNumberNoMoreCallsInfoResponse.setEmptyNumberNoMoreCalls(_ctx.booleanValue("GetEmptyNumberNoMoreCallsInfoResponse.EmptyNumberNoMoreCalls"));
 	 
 	 	return getEmptyNumberNoMoreCallsInfoResponse;
 	}

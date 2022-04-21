@@ -23,11 +23,11 @@ public class ModifyIntentResponseUnmarshaller {
 	public static ModifyIntentResponse unmarshall(ModifyIntentResponse modifyIntentResponse, UnmarshallerContext _ctx) {
 		
 		modifyIntentResponse.setRequestId(_ctx.stringValue("ModifyIntentResponse.RequestId"));
-		modifyIntentResponse.setCode(_ctx.stringValue("ModifyIntentResponse.Code"));
 		modifyIntentResponse.setHttpStatusCode(_ctx.integerValue("ModifyIntentResponse.HttpStatusCode"));
-		modifyIntentResponse.setIntentId(_ctx.stringValue("ModifyIntentResponse.IntentId"));
-		modifyIntentResponse.setMessage(_ctx.stringValue("ModifyIntentResponse.Message"));
 		modifyIntentResponse.setSuccess(_ctx.booleanValue("ModifyIntentResponse.Success"));
+		modifyIntentResponse.setCode(_ctx.stringValue("ModifyIntentResponse.Code"));
+		modifyIntentResponse.setMessage(_ctx.stringValue("ModifyIntentResponse.Message"));
+		modifyIntentResponse.setIntentId(_ctx.stringValue("ModifyIntentResponse.IntentId"));
 	 
 	 	return modifyIntentResponse;
 	}

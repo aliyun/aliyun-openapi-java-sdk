@@ -30,54 +30,54 @@ public class ListJobGroupsAsyncResponseUnmarshaller {
 	public static ListJobGroupsAsyncResponse unmarshall(ListJobGroupsAsyncResponse listJobGroupsAsyncResponse, UnmarshallerContext _ctx) {
 		
 		listJobGroupsAsyncResponse.setRequestId(_ctx.stringValue("ListJobGroupsAsyncResponse.RequestId"));
+		listJobGroupsAsyncResponse.setTimeout(_ctx.booleanValue("ListJobGroupsAsyncResponse.Timeout"));
+		listJobGroupsAsyncResponse.setHttpStatusCode(_ctx.integerValue("ListJobGroupsAsyncResponse.HttpStatusCode"));
 		listJobGroupsAsyncResponse.setSuccess(_ctx.booleanValue("ListJobGroupsAsyncResponse.Success"));
+		listJobGroupsAsyncResponse.setVaild(_ctx.booleanValue("ListJobGroupsAsyncResponse.Vaild"));
 		listJobGroupsAsyncResponse.setCode(_ctx.stringValue("ListJobGroupsAsyncResponse.Code"));
 		listJobGroupsAsyncResponse.setMessage(_ctx.stringValue("ListJobGroupsAsyncResponse.Message"));
-		listJobGroupsAsyncResponse.setHttpStatusCode(_ctx.integerValue("ListJobGroupsAsyncResponse.HttpStatusCode"));
-		listJobGroupsAsyncResponse.setTotalCount(_ctx.integerValue("ListJobGroupsAsyncResponse.TotalCount"));
-		listJobGroupsAsyncResponse.setPageNumber(_ctx.integerValue("ListJobGroupsAsyncResponse.PageNumber"));
 		listJobGroupsAsyncResponse.setPageSize(_ctx.integerValue("ListJobGroupsAsyncResponse.PageSize"));
-		listJobGroupsAsyncResponse.setVaild(_ctx.booleanValue("ListJobGroupsAsyncResponse.Vaild"));
-		listJobGroupsAsyncResponse.setTimeout(_ctx.booleanValue("ListJobGroupsAsyncResponse.Timeout"));
+		listJobGroupsAsyncResponse.setPageNumber(_ctx.integerValue("ListJobGroupsAsyncResponse.PageNumber"));
+		listJobGroupsAsyncResponse.setTotalCount(_ctx.integerValue("ListJobGroupsAsyncResponse.TotalCount"));
 
 		List<JobGroup> jobGroups = new ArrayList<JobGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListJobGroupsAsyncResponse.JobGroups.Length"); i++) {
 			JobGroup jobGroup = new JobGroup();
+			jobGroup.setStatus(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Status"));
+			jobGroup.setCreationTime(_ctx.longValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].CreationTime"));
 			jobGroup.setJobGroupId(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].JobGroupId"));
 			jobGroup.setJobGroupName(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].JobGroupName"));
-			jobGroup.setJobGroupDescription(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].JobGroupDescription"));
-			jobGroup.setScriptId(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptId"));
-			jobGroup.setScriptName(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptName"));
-			jobGroup.setCreationTime(_ctx.longValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].CreationTime"));
-			jobGroup.setStatus(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Status"));
-			jobGroup.setJobDataParsingTaskId(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].JobDataParsingTaskId"));
-			jobGroup.setModifyTime(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ModifyTime"));
-			jobGroup.setScriptVersion(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptVersion"));
 			jobGroup.setTotalCallNum(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].TotalCallNum"));
+			jobGroup.setScriptId(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptId"));
+			jobGroup.setJobGroupDescription(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].JobGroupDescription"));
+			jobGroup.setJobDataParsingTaskId(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].JobDataParsingTaskId"));
+			jobGroup.setScriptName(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptName"));
+			jobGroup.setScriptVersion(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptVersion"));
+			jobGroup.setModifyTime(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ModifyTime"));
 
 			Strategy strategy = new Strategy();
-			strategy.setStartTime(_ctx.longValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Strategy.StartTime"));
 			strategy.setEndTime(_ctx.longValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Strategy.EndTime"));
+			strategy.setStartTime(_ctx.longValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Strategy.StartTime"));
 			jobGroup.setStrategy(strategy);
 
 			Progress progress = new Progress();
-			progress.setTotalJobs(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.TotalJobs"));
-			progress.setStatus(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.Status"));
 			progress.setTotalNotAnswered(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.TotalNotAnswered"));
-			progress.setTotalCompleted(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.TotalCompleted"));
+			progress.setStatus(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.Status"));
 			progress.setStartTime(_ctx.longValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.StartTime"));
-			progress.setDuration(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.Duration"));
-			progress.setExecutingNum(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.ExecutingNum"));
-			progress.setCancelledNum(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.CancelledNum"));
-			progress.setScheduling(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.Scheduling"));
 			progress.setFailedNum(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.FailedNum"));
 			progress.setPausedNum(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.PausedNum"));
+			progress.setCancelledNum(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.CancelledNum"));
+			progress.setTotalCompleted(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.TotalCompleted"));
+			progress.setTotalJobs(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.TotalJobs"));
+			progress.setDuration(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.Duration"));
+			progress.setScheduling(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.Scheduling"));
+			progress.setExecutingNum(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Progress.ExecutingNum"));
 			jobGroup.setProgress(progress);
 
 			ExportProgress exportProgress = new ExportProgress();
+			exportProgress.setStatus(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ExportProgress.Status"));
 			exportProgress.setFileHttpUrl(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ExportProgress.FileHttpUrl"));
 			exportProgress.setProgress(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ExportProgress.Progress"));
-			exportProgress.setStatus(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ExportProgress.Status"));
 			jobGroup.setExportProgress(exportProgress);
 
 			jobGroups.add(jobGroup);

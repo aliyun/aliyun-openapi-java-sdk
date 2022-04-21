@@ -24,27 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetConcurrentConversationQuotaResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
-
-	private Integer maxConcurrent;
-
-	private String message;
-
-	private Integer remainingConcurrent;
 
 	private String requestId;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String message;
+
+	private Integer remainingConcurrent;
+
+	private Integer maxConcurrent;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -54,12 +46,28 @@ public class GetConcurrentConversationQuotaResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public Integer getMaxConcurrent() {
-		return this.maxConcurrent;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxConcurrent(Integer maxConcurrent) {
-		this.maxConcurrent = maxConcurrent;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -78,20 +86,12 @@ public class GetConcurrentConversationQuotaResponse extends AcsResponse {
 		this.remainingConcurrent = remainingConcurrent;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getMaxConcurrent() {
+		return this.maxConcurrent;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMaxConcurrent(Integer maxConcurrent) {
+		this.maxConcurrent = maxConcurrent;
 	}
 
 	@Override

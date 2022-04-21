@@ -36,6 +36,7 @@ public class GetInstanceConfigResponseUnmarshaller {
 		instanceConfig.setMiniPlaybackSystemSwitch(_ctx.booleanValue("GetInstanceConfigResponse.Data.InstanceConfig.MiniPlaybackSystemSwitch"));
 		instanceConfig.setNewBargeInSystemSwitch(_ctx.booleanValue("GetInstanceConfigResponse.Data.InstanceConfig.NewBargeInSystemSwitch"));
 		instanceConfig.setSearchTaskFunctionSwitch(_ctx.booleanValue("GetInstanceConfigResponse.Data.InstanceConfig.SearchTaskFunctionSwitch"));
+		instanceConfig.setEsAllDataKeepDay(_ctx.longValue("GetInstanceConfigResponse.Data.InstanceConfig.EsAllDataKeepDay"));
 		data.setInstanceConfig(instanceConfig);
 		getInstanceConfigResponse.setData(data);
 	 

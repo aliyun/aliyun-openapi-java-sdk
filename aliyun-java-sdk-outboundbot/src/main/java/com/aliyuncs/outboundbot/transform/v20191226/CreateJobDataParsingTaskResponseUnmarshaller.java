@@ -23,10 +23,10 @@ public class CreateJobDataParsingTaskResponseUnmarshaller {
 	public static CreateJobDataParsingTaskResponse unmarshall(CreateJobDataParsingTaskResponse createJobDataParsingTaskResponse, UnmarshallerContext _ctx) {
 		
 		createJobDataParsingTaskResponse.setRequestId(_ctx.stringValue("CreateJobDataParsingTaskResponse.RequestId"));
+		createJobDataParsingTaskResponse.setHttpStatusCode(_ctx.integerValue("CreateJobDataParsingTaskResponse.HttpStatusCode"));
 		createJobDataParsingTaskResponse.setSuccess(_ctx.booleanValue("CreateJobDataParsingTaskResponse.Success"));
 		createJobDataParsingTaskResponse.setCode(_ctx.stringValue("CreateJobDataParsingTaskResponse.Code"));
 		createJobDataParsingTaskResponse.setMessage(_ctx.stringValue("CreateJobDataParsingTaskResponse.Message"));
-		createJobDataParsingTaskResponse.setHttpStatusCode(_ctx.integerValue("CreateJobDataParsingTaskResponse.HttpStatusCode"));
 		createJobDataParsingTaskResponse.setJobDataParsingTaskId(_ctx.stringValue("CreateJobDataParsingTaskResponse.JobDataParsingTaskId"));
 	 
 	 	return createJobDataParsingTaskResponse;

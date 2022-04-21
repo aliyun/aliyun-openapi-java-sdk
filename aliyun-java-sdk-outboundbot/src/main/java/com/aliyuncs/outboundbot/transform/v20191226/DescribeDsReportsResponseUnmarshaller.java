@@ -23,10 +23,10 @@ public class DescribeDsReportsResponseUnmarshaller {
 	public static DescribeDsReportsResponse unmarshall(DescribeDsReportsResponse describeDsReportsResponse, UnmarshallerContext _ctx) {
 		
 		describeDsReportsResponse.setRequestId(_ctx.stringValue("DescribeDsReportsResponse.RequestId"));
+		describeDsReportsResponse.setHttpStatusCode(_ctx.integerValue("DescribeDsReportsResponse.HttpStatusCode"));
 		describeDsReportsResponse.setSuccess(_ctx.booleanValue("DescribeDsReportsResponse.Success"));
 		describeDsReportsResponse.setCode(_ctx.stringValue("DescribeDsReportsResponse.Code"));
 		describeDsReportsResponse.setMessage(_ctx.stringValue("DescribeDsReportsResponse.Message"));
-		describeDsReportsResponse.setHttpStatusCode(_ctx.integerValue("DescribeDsReportsResponse.HttpStatusCode"));
 		describeDsReportsResponse.setDsReports(_ctx.stringValue("DescribeDsReportsResponse.DsReports"));
 	 
 	 	return describeDsReportsResponse;

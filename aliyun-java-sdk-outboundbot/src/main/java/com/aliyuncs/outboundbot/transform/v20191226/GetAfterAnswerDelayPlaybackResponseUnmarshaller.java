@@ -23,10 +23,10 @@ public class GetAfterAnswerDelayPlaybackResponseUnmarshaller {
 	public static GetAfterAnswerDelayPlaybackResponse unmarshall(GetAfterAnswerDelayPlaybackResponse getAfterAnswerDelayPlaybackResponse, UnmarshallerContext _ctx) {
 		
 		getAfterAnswerDelayPlaybackResponse.setRequestId(_ctx.stringValue("GetAfterAnswerDelayPlaybackResponse.RequestId"));
+		getAfterAnswerDelayPlaybackResponse.setHttpStatusCode(_ctx.integerValue("GetAfterAnswerDelayPlaybackResponse.HttpStatusCode"));
 		getAfterAnswerDelayPlaybackResponse.setSuccess(_ctx.booleanValue("GetAfterAnswerDelayPlaybackResponse.Success"));
 		getAfterAnswerDelayPlaybackResponse.setCode(_ctx.stringValue("GetAfterAnswerDelayPlaybackResponse.Code"));
 		getAfterAnswerDelayPlaybackResponse.setMessage(_ctx.stringValue("GetAfterAnswerDelayPlaybackResponse.Message"));
-		getAfterAnswerDelayPlaybackResponse.setHttpStatusCode(_ctx.integerValue("GetAfterAnswerDelayPlaybackResponse.HttpStatusCode"));
 		getAfterAnswerDelayPlaybackResponse.setAfterAnswerDelayPlayback(_ctx.integerValue("GetAfterAnswerDelayPlaybackResponse.AfterAnswerDelayPlayback"));
 	 
 	 	return getAfterAnswerDelayPlaybackResponse;

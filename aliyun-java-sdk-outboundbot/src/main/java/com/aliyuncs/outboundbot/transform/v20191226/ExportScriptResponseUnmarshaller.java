@@ -24,8 +24,8 @@ public class ExportScriptResponseUnmarshaller {
 	public static ExportScriptResponse unmarshall(ExportScriptResponse exportScriptResponse, UnmarshallerContext _ctx) {
 		
 		exportScriptResponse.setRequestId(_ctx.stringValue("ExportScriptResponse.RequestId"));
-		exportScriptResponse.setCode(_ctx.stringValue("ExportScriptResponse.Code"));
 		exportScriptResponse.setHttpStatusCode(_ctx.integerValue("ExportScriptResponse.HttpStatusCode"));
+		exportScriptResponse.setCode(_ctx.stringValue("ExportScriptResponse.Code"));
 		exportScriptResponse.setMessage(_ctx.stringValue("ExportScriptResponse.Message"));
 		exportScriptResponse.setSuccess(_ctx.booleanValue("ExportScriptResponse.Success"));
 

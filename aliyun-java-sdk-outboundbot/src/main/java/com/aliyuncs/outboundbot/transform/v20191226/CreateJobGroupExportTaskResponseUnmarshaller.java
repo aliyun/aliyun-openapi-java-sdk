@@ -23,10 +23,10 @@ public class CreateJobGroupExportTaskResponseUnmarshaller {
 	public static CreateJobGroupExportTaskResponse unmarshall(CreateJobGroupExportTaskResponse createJobGroupExportTaskResponse, UnmarshallerContext _ctx) {
 		
 		createJobGroupExportTaskResponse.setRequestId(_ctx.stringValue("CreateJobGroupExportTaskResponse.RequestId"));
+		createJobGroupExportTaskResponse.setHttpStatusCode(_ctx.integerValue("CreateJobGroupExportTaskResponse.HttpStatusCode"));
 		createJobGroupExportTaskResponse.setSuccess(_ctx.booleanValue("CreateJobGroupExportTaskResponse.Success"));
 		createJobGroupExportTaskResponse.setCode(_ctx.stringValue("CreateJobGroupExportTaskResponse.Code"));
 		createJobGroupExportTaskResponse.setMessage(_ctx.stringValue("CreateJobGroupExportTaskResponse.Message"));
-		createJobGroupExportTaskResponse.setHttpStatusCode(_ctx.integerValue("CreateJobGroupExportTaskResponse.HttpStatusCode"));
 		createJobGroupExportTaskResponse.setTaskId(_ctx.stringValue("CreateJobGroupExportTaskResponse.TaskId"));
 	 
 	 	return createJobGroupExportTaskResponse;

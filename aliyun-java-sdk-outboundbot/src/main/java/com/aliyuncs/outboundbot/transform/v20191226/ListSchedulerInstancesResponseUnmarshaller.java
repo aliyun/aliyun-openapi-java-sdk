@@ -27,19 +27,19 @@ public class ListSchedulerInstancesResponseUnmarshaller {
 	public static ListSchedulerInstancesResponse unmarshall(ListSchedulerInstancesResponse listSchedulerInstancesResponse, UnmarshallerContext _ctx) {
 		
 		listSchedulerInstancesResponse.setRequestId(_ctx.stringValue("ListSchedulerInstancesResponse.RequestId"));
-		listSchedulerInstancesResponse.setSuccess(_ctx.booleanValue("ListSchedulerInstancesResponse.Success"));
+		listSchedulerInstancesResponse.setHttpStatusCode(_ctx.integerValue("ListSchedulerInstancesResponse.HttpStatusCode"));
 		listSchedulerInstancesResponse.setCode(_ctx.stringValue("ListSchedulerInstancesResponse.Code"));
 		listSchedulerInstancesResponse.setMessage(_ctx.stringValue("ListSchedulerInstancesResponse.Message"));
-		listSchedulerInstancesResponse.setHttpStatusCode(_ctx.integerValue("ListSchedulerInstancesResponse.HttpStatusCode"));
+		listSchedulerInstancesResponse.setSuccess(_ctx.booleanValue("ListSchedulerInstancesResponse.Success"));
 
 		List<SchedulerInstance> schedulerInstances = new ArrayList<SchedulerInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListSchedulerInstancesResponse.SchedulerInstances.Length"); i++) {
 			SchedulerInstance schedulerInstance = new SchedulerInstance();
-			schedulerInstance.setOwnerId(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].OwnerId"));
-			schedulerInstance.setInstanceId(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].InstanceId"));
 			schedulerInstance.setBusiness(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].Business"));
 			schedulerInstance.setMaxConcurrency(_ctx.integerValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].MaxConcurrency"));
+			schedulerInstance.setInstanceId(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].InstanceId"));
 			schedulerInstance.setBaseStrategy(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].BaseStrategy"));
+			schedulerInstance.setOwnerId(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].OwnerId"));
 
 			schedulerInstances.add(schedulerInstance);
 		}

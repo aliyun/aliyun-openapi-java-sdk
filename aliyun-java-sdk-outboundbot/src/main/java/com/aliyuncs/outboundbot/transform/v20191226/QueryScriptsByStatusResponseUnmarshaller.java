@@ -28,8 +28,8 @@ public class QueryScriptsByStatusResponseUnmarshaller {
 	public static QueryScriptsByStatusResponse unmarshall(QueryScriptsByStatusResponse queryScriptsByStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryScriptsByStatusResponse.setRequestId(_ctx.stringValue("QueryScriptsByStatusResponse.RequestId"));
-		queryScriptsByStatusResponse.setCode(_ctx.stringValue("QueryScriptsByStatusResponse.Code"));
 		queryScriptsByStatusResponse.setHttpStatusCode(_ctx.integerValue("QueryScriptsByStatusResponse.HttpStatusCode"));
+		queryScriptsByStatusResponse.setCode(_ctx.stringValue("QueryScriptsByStatusResponse.Code"));
 		queryScriptsByStatusResponse.setMessage(_ctx.stringValue("QueryScriptsByStatusResponse.Message"));
 		queryScriptsByStatusResponse.setSuccess(_ctx.booleanValue("QueryScriptsByStatusResponse.Success"));
 
@@ -41,18 +41,18 @@ public class QueryScriptsByStatusResponseUnmarshaller {
 		List<Script> list = new ArrayList<Script>();
 		for (int i = 0; i < _ctx.lengthValue("QueryScriptsByStatusResponse.Scripts.List.Length"); i++) {
 			Script script = new Script();
-			script.setAppliedVersion(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].AppliedVersion"));
-			script.setDebugStatus(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].DebugStatus"));
-			script.setDebugVersion(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].DebugVersion"));
-			script.setIndustry(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].Industry"));
-			script.setIsDebugDrafted(_ctx.booleanValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].IsDebugDrafted"));
-			script.setIsDrafted(_ctx.booleanValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].IsDrafted"));
-			script.setScene(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].Scene"));
-			script.setScriptDescription(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].ScriptDescription"));
-			script.setScriptId(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].ScriptId"));
-			script.setScriptName(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].ScriptName"));
 			script.setStatus(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].Status"));
 			script.setUpdateTime(_ctx.longValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].UpdateTime"));
+			script.setScriptId(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].ScriptId"));
+			script.setAppliedVersion(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].AppliedVersion"));
+			script.setIsDebugDrafted(_ctx.booleanValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].IsDebugDrafted"));
+			script.setIndustry(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].Industry"));
+			script.setScriptDescription(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].ScriptDescription"));
+			script.setIsDrafted(_ctx.booleanValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].IsDrafted"));
+			script.setDebugStatus(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].DebugStatus"));
+			script.setDebugVersion(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].DebugVersion"));
+			script.setScene(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].Scene"));
+			script.setScriptName(_ctx.stringValue("QueryScriptsByStatusResponse.Scripts.List["+ i +"].ScriptName"));
 
 			list.add(script);
 		}

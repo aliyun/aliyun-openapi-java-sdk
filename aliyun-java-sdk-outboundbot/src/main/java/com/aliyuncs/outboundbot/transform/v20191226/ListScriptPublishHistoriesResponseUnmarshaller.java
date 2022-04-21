@@ -28,8 +28,8 @@ public class ListScriptPublishHistoriesResponseUnmarshaller {
 	public static ListScriptPublishHistoriesResponse unmarshall(ListScriptPublishHistoriesResponse listScriptPublishHistoriesResponse, UnmarshallerContext _ctx) {
 		
 		listScriptPublishHistoriesResponse.setRequestId(_ctx.stringValue("ListScriptPublishHistoriesResponse.RequestId"));
-		listScriptPublishHistoriesResponse.setCode(_ctx.stringValue("ListScriptPublishHistoriesResponse.Code"));
 		listScriptPublishHistoriesResponse.setHttpStatusCode(_ctx.integerValue("ListScriptPublishHistoriesResponse.HttpStatusCode"));
+		listScriptPublishHistoriesResponse.setCode(_ctx.stringValue("ListScriptPublishHistoriesResponse.Code"));
 		listScriptPublishHistoriesResponse.setMessage(_ctx.stringValue("ListScriptPublishHistoriesResponse.Message"));
 		listScriptPublishHistoriesResponse.setSuccess(_ctx.booleanValue("ListScriptPublishHistoriesResponse.Success"));
 
@@ -41,10 +41,10 @@ public class ListScriptPublishHistoriesResponseUnmarshaller {
 		List<PublishHistory> list = new ArrayList<PublishHistory>();
 		for (int i = 0; i < _ctx.lengthValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List.Length"); i++) {
 			PublishHistory publishHistory = new PublishHistory();
-			publishHistory.setDescription(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].Description"));
-			publishHistory.setInstanceId(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].InstanceId"));
 			publishHistory.setPublishTime(_ctx.longValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].PublishTime"));
+			publishHistory.setInstanceId(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].InstanceId"));
 			publishHistory.setScriptId(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].ScriptId"));
+			publishHistory.setDescription(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].Description"));
 			publishHistory.setScriptVersion(_ctx.stringValue("ListScriptPublishHistoriesResponse.ScriptPublishHistories.List["+ i +"].ScriptVersion"));
 
 			list.add(publishHistory);

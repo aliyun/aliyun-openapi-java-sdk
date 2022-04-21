@@ -25,7 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIntentStatisticsResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
+
+	private String groupId;
 
 	private Boolean success;
 
@@ -33,13 +37,9 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private Integer processIntentNum;
 
 	private String instanceId;
-
-	private String groupId;
-
-	private Integer processIntentNum;
 
 	private Integer globalIntentNum;
 
@@ -49,12 +49,28 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 
 	private List<IntentStatisticsItem1> intentsAfterNoAnswer;
 
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 
 	public Boolean getSuccess() {
@@ -81,12 +97,12 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public Integer getProcessIntentNum() {
+		return this.processIntentNum;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setProcessIntentNum(Integer processIntentNum) {
+		this.processIntentNum = processIntentNum;
 	}
 
 	public String getInstanceId() {
@@ -95,22 +111,6 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public Integer getProcessIntentNum() {
-		return this.processIntentNum;
-	}
-
-	public void setProcessIntentNum(Integer processIntentNum) {
-		this.processIntentNum = processIntentNum;
 	}
 
 	public Integer getGlobalIntentNum() {
@@ -147,19 +147,43 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 
 	public static class IntentStatisticsItem {
 
-		private String instanceId;
+		private String type;
 
 		private String groupId;
+
+		private Integer hitAfterNoAnswer;
+
+		private String instanceId;
+
+		private Integer hitNum;
 
 		private String intentId;
 
 		private String intentName;
 
-		private String type;
+		public String getType() {
+			return this.type;
+		}
 
-		private Integer hitNum;
+		public void setType(String type) {
+			this.type = type;
+		}
 
-		private Integer hitAfterNoAnswer;
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Integer getHitAfterNoAnswer() {
+			return this.hitAfterNoAnswer;
+		}
+
+		public void setHitAfterNoAnswer(Integer hitAfterNoAnswer) {
+			this.hitAfterNoAnswer = hitAfterNoAnswer;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -169,12 +193,12 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getGroupId() {
-			return this.groupId;
+		public Integer getHitNum() {
+			return this.hitNum;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setHitNum(Integer hitNum) {
+			this.hitNum = hitNum;
 		}
 
 		public String getIntentId() {
@@ -191,30 +215,6 @@ public class DescribeIntentStatisticsResponse extends AcsResponse {
 
 		public void setIntentName(String intentName) {
 			this.intentName = intentName;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Integer getHitNum() {
-			return this.hitNum;
-		}
-
-		public void setHitNum(Integer hitNum) {
-			this.hitNum = hitNum;
-		}
-
-		public Integer getHitAfterNoAnswer() {
-			return this.hitAfterNoAnswer;
-		}
-
-		public void setHitAfterNoAnswer(Integer hitAfterNoAnswer) {
-			this.hitAfterNoAnswer = hitAfterNoAnswer;
 		}
 	}
 

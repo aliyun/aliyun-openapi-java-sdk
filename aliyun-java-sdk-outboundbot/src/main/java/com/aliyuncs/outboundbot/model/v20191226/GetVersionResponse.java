@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetVersionResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
+
+	private String version;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
 
-	private String version;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +60,14 @@ public class GetVersionResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
@@ -66,22 +82,6 @@ public class GetVersionResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
 	}
 
 	@Override

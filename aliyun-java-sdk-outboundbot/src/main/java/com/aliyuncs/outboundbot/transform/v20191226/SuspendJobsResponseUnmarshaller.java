@@ -23,8 +23,8 @@ public class SuspendJobsResponseUnmarshaller {
 	public static SuspendJobsResponse unmarshall(SuspendJobsResponse suspendJobsResponse, UnmarshallerContext _ctx) {
 		
 		suspendJobsResponse.setRequestId(_ctx.stringValue("SuspendJobsResponse.RequestId"));
-		suspendJobsResponse.setCode(_ctx.stringValue("SuspendJobsResponse.Code"));
 		suspendJobsResponse.setHttpStatusCode(_ctx.integerValue("SuspendJobsResponse.HttpStatusCode"));
+		suspendJobsResponse.setCode(_ctx.stringValue("SuspendJobsResponse.Code"));
 		suspendJobsResponse.setMessage(_ctx.stringValue("SuspendJobsResponse.Message"));
 		suspendJobsResponse.setSuccess(_ctx.booleanValue("SuspendJobsResponse.Success"));
 	 

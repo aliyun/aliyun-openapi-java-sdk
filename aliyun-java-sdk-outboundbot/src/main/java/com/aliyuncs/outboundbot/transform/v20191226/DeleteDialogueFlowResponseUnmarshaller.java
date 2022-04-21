@@ -23,8 +23,8 @@ public class DeleteDialogueFlowResponseUnmarshaller {
 	public static DeleteDialogueFlowResponse unmarshall(DeleteDialogueFlowResponse deleteDialogueFlowResponse, UnmarshallerContext _ctx) {
 		
 		deleteDialogueFlowResponse.setRequestId(_ctx.stringValue("DeleteDialogueFlowResponse.RequestId"));
-		deleteDialogueFlowResponse.setCode(_ctx.stringValue("DeleteDialogueFlowResponse.Code"));
 		deleteDialogueFlowResponse.setHttpStatusCode(_ctx.integerValue("DeleteDialogueFlowResponse.HttpStatusCode"));
+		deleteDialogueFlowResponse.setCode(_ctx.stringValue("DeleteDialogueFlowResponse.Code"));
 		deleteDialogueFlowResponse.setMessage(_ctx.stringValue("DeleteDialogueFlowResponse.Message"));
 		deleteDialogueFlowResponse.setSuccess(_ctx.booleanValue("DeleteDialogueFlowResponse.Success"));
 	 

@@ -25,6 +25,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetBaseStrategyPeriodResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
+	private Boolean onlyWeekdays;
+
 	private String requestId;
 
 	private Boolean success;
@@ -33,11 +37,23 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
-
-	private Boolean onlyWeekdays;
-
 	private List<TimeFrame> workingTime;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public Boolean getOnlyWeekdays() {
+		return this.onlyWeekdays;
+	}
+
+	public void setOnlyWeekdays(Boolean onlyWeekdays) {
+		this.onlyWeekdays = onlyWeekdays;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -71,22 +87,6 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Boolean getOnlyWeekdays() {
-		return this.onlyWeekdays;
-	}
-
-	public void setOnlyWeekdays(Boolean onlyWeekdays) {
-		this.onlyWeekdays = onlyWeekdays;
-	}
-
 	public List<TimeFrame> getWorkingTime() {
 		return this.workingTime;
 	}
@@ -97,13 +97,21 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 
 	public static class TimeFrame {
 
-		private Long beginTimeMillis;
+		private String endTime;
 
-		private String beginTime;
+		private Long beginTimeMillis;
 
 		private Long endTimeMillis;
 
-		private String endTime;
+		private String beginTime;
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
 
 		public Long getBeginTimeMillis() {
 			return this.beginTimeMillis;
@@ -111,14 +119,6 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 
 		public void setBeginTimeMillis(Long beginTimeMillis) {
 			this.beginTimeMillis = beginTimeMillis;
-		}
-
-		public String getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(String beginTime) {
-			this.beginTime = beginTime;
 		}
 
 		public Long getEndTimeMillis() {
@@ -129,12 +129,12 @@ public class GetBaseStrategyPeriodResponse extends AcsResponse {
 			this.endTimeMillis = endTimeMillis;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getBeginTime() {
+			return this.beginTime;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setBeginTime(String beginTime) {
+			this.beginTime = beginTime;
 		}
 	}
 

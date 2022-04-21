@@ -25,33 +25,33 @@ public class DescribeGroupExecutingInfoResponseUnmarshaller {
 	public static DescribeGroupExecutingInfoResponse unmarshall(DescribeGroupExecutingInfoResponse describeGroupExecutingInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeGroupExecutingInfoResponse.setRequestId(_ctx.stringValue("DescribeGroupExecutingInfoResponse.RequestId"));
+		describeGroupExecutingInfoResponse.setHttpStatusCode(_ctx.integerValue("DescribeGroupExecutingInfoResponse.HttpStatusCode"));
+		describeGroupExecutingInfoResponse.setGroupId(_ctx.stringValue("DescribeGroupExecutingInfoResponse.GroupId"));
 		describeGroupExecutingInfoResponse.setSuccess(_ctx.booleanValue("DescribeGroupExecutingInfoResponse.Success"));
 		describeGroupExecutingInfoResponse.setCode(_ctx.stringValue("DescribeGroupExecutingInfoResponse.Code"));
 		describeGroupExecutingInfoResponse.setMessage(_ctx.stringValue("DescribeGroupExecutingInfoResponse.Message"));
-		describeGroupExecutingInfoResponse.setHttpStatusCode(_ctx.integerValue("DescribeGroupExecutingInfoResponse.HttpStatusCode"));
-		describeGroupExecutingInfoResponse.setGroupId(_ctx.stringValue("DescribeGroupExecutingInfoResponse.GroupId"));
 		describeGroupExecutingInfoResponse.setInstanceId(_ctx.stringValue("DescribeGroupExecutingInfoResponse.InstanceId"));
 
 		ExecutingInfo executingInfo = new ExecutingInfo();
-		executingInfo.setStartTime(_ctx.longValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.StartTime"));
 		executingInfo.setEndTime(_ctx.longValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.EndTime"));
-		executingInfo.setCallFailedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.CallFailedNum"));
-		executingInfo.setCallNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.CallNum"));
-		executingInfo.setCreatorName(_ctx.stringValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.CreatorName"));
-		executingInfo.setFinishedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.FinishedNum"));
+		executingInfo.setStartTime(_ctx.longValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.StartTime"));
 		executingInfo.setHangUpByClientNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.HangUpByClientNum"));
-		executingInfo.setTransferByIntentNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.TransferByIntentNum"));
+		executingInfo.setCreatorName(_ctx.stringValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.CreatorName"));
 		executingInfo.setTransferByNoAnswer(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.TransferByNoAnswer"));
+		executingInfo.setFinishedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.FinishedNum"));
+		executingInfo.setTransferByIntentNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.TransferByIntentNum"));
+		executingInfo.setCallNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.CallNum"));
+		executingInfo.setCallFailedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.CallFailedNum"));
 
 		JobsProgress jobsProgress = new JobsProgress();
-		jobsProgress.setTotalJobs(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.TotalJobs"));
+		jobsProgress.setSchedulingNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.SchedulingNum"));
 		jobsProgress.setTotalCompletedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.TotalCompletedNum"));
 		jobsProgress.setFailedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.FailedNum"));
+		jobsProgress.setPausedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.PausedNum"));
 		jobsProgress.setCancelledNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.CancelledNum"));
+		jobsProgress.setTotalJobs(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.TotalJobs"));
 		jobsProgress.setTotalNotAnsweredNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.TotalNotAnsweredNum"));
 		jobsProgress.setExecutingNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.ExecutingNum"));
-		jobsProgress.setPausedNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.PausedNum"));
-		jobsProgress.setSchedulingNum(_ctx.integerValue("DescribeGroupExecutingInfoResponse.ExecutingInfo.JobsProgress.SchedulingNum"));
 		executingInfo.setJobsProgress(jobsProgress);
 		describeGroupExecutingInfoResponse.setExecutingInfo(executingInfo);
 	 

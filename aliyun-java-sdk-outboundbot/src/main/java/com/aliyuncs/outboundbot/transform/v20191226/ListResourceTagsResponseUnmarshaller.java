@@ -28,15 +28,15 @@ public class ListResourceTagsResponseUnmarshaller {
 	public static ListResourceTagsResponse unmarshall(ListResourceTagsResponse listResourceTagsResponse, UnmarshallerContext _ctx) {
 		
 		listResourceTagsResponse.setRequestId(_ctx.stringValue("ListResourceTagsResponse.RequestId"));
-		listResourceTagsResponse.setSuccess(_ctx.booleanValue("ListResourceTagsResponse.Success"));
+		listResourceTagsResponse.setHttpStatusCode(_ctx.integerValue("ListResourceTagsResponse.HttpStatusCode"));
 		listResourceTagsResponse.setCode(_ctx.stringValue("ListResourceTagsResponse.Code"));
 		listResourceTagsResponse.setMessage(_ctx.stringValue("ListResourceTagsResponse.Message"));
-		listResourceTagsResponse.setHttpStatusCode(_ctx.integerValue("ListResourceTagsResponse.HttpStatusCode"));
+		listResourceTagsResponse.setSuccess(_ctx.booleanValue("ListResourceTagsResponse.Success"));
 
 		ResourceTags resourceTags = new ResourceTags();
-		resourceTags.setTotalCount(_ctx.integerValue("ListResourceTagsResponse.ResourceTags.TotalCount"));
 		resourceTags.setPageNumber(_ctx.integerValue("ListResourceTagsResponse.ResourceTags.PageNumber"));
 		resourceTags.setPageSize(_ctx.integerValue("ListResourceTagsResponse.ResourceTags.PageSize"));
+		resourceTags.setTotalCount(_ctx.integerValue("ListResourceTagsResponse.ResourceTags.TotalCount"));
 
 		List<ResourceTag> list = new ArrayList<ResourceTag>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourceTagsResponse.ResourceTags.List.Length"); i++) {

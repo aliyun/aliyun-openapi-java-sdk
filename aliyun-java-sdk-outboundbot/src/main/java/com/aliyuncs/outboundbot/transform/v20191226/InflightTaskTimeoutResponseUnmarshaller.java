@@ -23,10 +23,10 @@ public class InflightTaskTimeoutResponseUnmarshaller {
 	public static InflightTaskTimeoutResponse unmarshall(InflightTaskTimeoutResponse inflightTaskTimeoutResponse, UnmarshallerContext _ctx) {
 		
 		inflightTaskTimeoutResponse.setRequestId(_ctx.stringValue("InflightTaskTimeoutResponse.RequestId"));
-		inflightTaskTimeoutResponse.setSuccess(_ctx.booleanValue("InflightTaskTimeoutResponse.Success"));
+		inflightTaskTimeoutResponse.setHttpStatusCode(_ctx.integerValue("InflightTaskTimeoutResponse.HttpStatusCode"));
 		inflightTaskTimeoutResponse.setCode(_ctx.stringValue("InflightTaskTimeoutResponse.Code"));
 		inflightTaskTimeoutResponse.setMessage(_ctx.stringValue("InflightTaskTimeoutResponse.Message"));
-		inflightTaskTimeoutResponse.setHttpStatusCode(_ctx.integerValue("InflightTaskTimeoutResponse.HttpStatusCode"));
+		inflightTaskTimeoutResponse.setSuccess(_ctx.booleanValue("InflightTaskTimeoutResponse.Success"));
 	 
 	 	return inflightTaskTimeoutResponse;
 	}

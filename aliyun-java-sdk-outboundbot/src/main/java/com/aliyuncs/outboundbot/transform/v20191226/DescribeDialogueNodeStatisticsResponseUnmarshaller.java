@@ -27,25 +27,25 @@ public class DescribeDialogueNodeStatisticsResponseUnmarshaller {
 	public static DescribeDialogueNodeStatisticsResponse unmarshall(DescribeDialogueNodeStatisticsResponse describeDialogueNodeStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		describeDialogueNodeStatisticsResponse.setRequestId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.RequestId"));
-		describeDialogueNodeStatisticsResponse.setSuccess(_ctx.booleanValue("DescribeDialogueNodeStatisticsResponse.Success"));
-		describeDialogueNodeStatisticsResponse.setCode(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.Code"));
-		describeDialogueNodeStatisticsResponse.setMessage(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.Message"));
 		describeDialogueNodeStatisticsResponse.setHttpStatusCode(_ctx.integerValue("DescribeDialogueNodeStatisticsResponse.HttpStatusCode"));
 		describeDialogueNodeStatisticsResponse.setGroupId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.GroupId"));
-		describeDialogueNodeStatisticsResponse.setInstanceId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.InstanceId"));
+		describeDialogueNodeStatisticsResponse.setSuccess(_ctx.booleanValue("DescribeDialogueNodeStatisticsResponse.Success"));
 		describeDialogueNodeStatisticsResponse.setTotalCompleted(_ctx.integerValue("DescribeDialogueNodeStatisticsResponse.TotalCompleted"));
+		describeDialogueNodeStatisticsResponse.setCode(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.Code"));
+		describeDialogueNodeStatisticsResponse.setMessage(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.Message"));
+		describeDialogueNodeStatisticsResponse.setInstanceId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.InstanceId"));
 
 		List<NoAnswerDialogueNode> noAnswerDialogueNodes = new ArrayList<NoAnswerDialogueNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes.Length"); i++) {
 			NoAnswerDialogueNode noAnswerDialogueNode = new NoAnswerDialogueNode();
-			noAnswerDialogueNode.setId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].Id"));
-			noAnswerDialogueNode.setInstanceId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].InstanceId"));
-			noAnswerDialogueNode.setGroupId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].GroupId"));
-			noAnswerDialogueNode.setNodeId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].NodeId"));
-			noAnswerDialogueNode.setNodeName(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].NodeName"));
-			noAnswerDialogueNode.setHitNum(_ctx.integerValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].HitNum"));
-			noAnswerDialogueNode.setHangUpNum(_ctx.integerValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].HangUpNum"));
 			noAnswerDialogueNode.setNoAnswerNum(_ctx.integerValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].NoAnswerNum"));
+			noAnswerDialogueNode.setGroupId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].GroupId"));
+			noAnswerDialogueNode.setNodeName(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].NodeName"));
+			noAnswerDialogueNode.setHangUpNum(_ctx.integerValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].HangUpNum"));
+			noAnswerDialogueNode.setInstanceId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].InstanceId"));
+			noAnswerDialogueNode.setHitNum(_ctx.integerValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].HitNum"));
+			noAnswerDialogueNode.setId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].Id"));
+			noAnswerDialogueNode.setNodeId(_ctx.stringValue("DescribeDialogueNodeStatisticsResponse.NoAnswerDialogueNodes["+ i +"].NodeId"));
 
 			noAnswerDialogueNodes.add(noAnswerDialogueNode);
 		}

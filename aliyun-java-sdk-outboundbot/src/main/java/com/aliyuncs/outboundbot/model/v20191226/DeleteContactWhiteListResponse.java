@@ -24,7 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteContactWhiteListResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
+
+	private Integer affectedRows;
 
 	private Boolean success;
 
@@ -32,9 +36,13 @@ public class DeleteContactWhiteListResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
 
-	private Integer affectedRows;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +50,14 @@ public class DeleteContactWhiteListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getAffectedRows() {
+		return this.affectedRows;
+	}
+
+	public void setAffectedRows(Integer affectedRows) {
+		this.affectedRows = affectedRows;
 	}
 
 	public Boolean getSuccess() {
@@ -66,22 +82,6 @@ public class DeleteContactWhiteListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Integer getAffectedRows() {
-		return this.affectedRows;
-	}
-
-	public void setAffectedRows(Integer affectedRows) {
-		this.affectedRows = affectedRows;
 	}
 
 	@Override

@@ -26,17 +26,17 @@ public class GetTaskByUuidResponseUnmarshaller {
 		getTaskByUuidResponse.setRequestId(_ctx.stringValue("GetTaskByUuidResponse.RequestId"));
 
 		Task task = new Task();
-		task.setId(_ctx.stringValue("GetTaskByUuidResponse.Task.Id"));
-		task.setJobId(_ctx.stringValue("GetTaskByUuidResponse.Task.JobId"));
-		task.setPlannedTime(_ctx.longValue("GetTaskByUuidResponse.Task.PlannedTime"));
-		task.setActualTime(_ctx.longValue("GetTaskByUuidResponse.Task.ActualTime"));
-		task.setEndTime(_ctx.longValue("GetTaskByUuidResponse.Task.EndTime"));
-		task.setCallingNumber(_ctx.stringValue("GetTaskByUuidResponse.Task.CallingNumber"));
-		task.setCalledNumber(_ctx.stringValue("GetTaskByUuidResponse.Task.CalledNumber"));
-		task.setCallId(_ctx.stringValue("GetTaskByUuidResponse.Task.CallId"));
-		task.setEndReason(_ctx.integerValue("GetTaskByUuidResponse.Task.EndReason"));
-		task.setInstanceId(_ctx.stringValue("GetTaskByUuidResponse.Task.InstanceId"));
 		task.setJobGroupId(_ctx.stringValue("GetTaskByUuidResponse.Task.JobGroupId"));
+		task.setEndTime(_ctx.longValue("GetTaskByUuidResponse.Task.EndTime"));
+		task.setEndReason(_ctx.integerValue("GetTaskByUuidResponse.Task.EndReason"));
+		task.setPlannedTime(_ctx.longValue("GetTaskByUuidResponse.Task.PlannedTime"));
+		task.setJobId(_ctx.stringValue("GetTaskByUuidResponse.Task.JobId"));
+		task.setCallId(_ctx.stringValue("GetTaskByUuidResponse.Task.CallId"));
+		task.setCallingNumber(_ctx.stringValue("GetTaskByUuidResponse.Task.CallingNumber"));
+		task.setActualTime(_ctx.longValue("GetTaskByUuidResponse.Task.ActualTime"));
+		task.setInstanceId(_ctx.stringValue("GetTaskByUuidResponse.Task.InstanceId"));
+		task.setCalledNumber(_ctx.stringValue("GetTaskByUuidResponse.Task.CalledNumber"));
+		task.setId(_ctx.stringValue("GetTaskByUuidResponse.Task.Id"));
 		getTaskByUuidResponse.setTask(task);
 	 
 	 	return getTaskByUuidResponse;

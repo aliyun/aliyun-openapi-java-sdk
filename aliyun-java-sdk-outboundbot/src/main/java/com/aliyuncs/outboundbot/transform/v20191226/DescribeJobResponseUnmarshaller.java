@@ -21,6 +21,7 @@ import com.aliyuncs.outboundbot.model.v20191226.DescribeJobResponse;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobResponse.Job;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobResponse.Job.Contact;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobResponse.Job.KeyValuePair;
+import com.aliyuncs.outboundbot.model.v20191226.DescribeJobResponse.Job.Script;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobResponse.Job.SummaryItem;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobResponse.Job.Task;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobResponse.Job.Task.Contact3;
@@ -61,6 +62,23 @@ public class DescribeJobResponseUnmarshaller {
 			callingNumbers.add(_ctx.stringValue("DescribeJobResponse.Job.CallingNumbers["+ i +"]"));
 		}
 		job.setCallingNumbers(callingNumbers);
+
+		Script script = new Script();
+		script.setStatus(_ctx.stringValue("DescribeJobResponse.Job.Script.Status"));
+		script.setUpdateTime(_ctx.longValue("DescribeJobResponse.Job.Script.UpdateTime"));
+		script.setChatbotId(_ctx.stringValue("DescribeJobResponse.Job.Script.ChatbotId"));
+		script.setScriptId(_ctx.stringValue("DescribeJobResponse.Job.Script.ScriptId"));
+		script.setIsDebugDrafted(_ctx.booleanValue("DescribeJobResponse.Job.Script.IsDebugDrafted"));
+		script.setIndustry(_ctx.stringValue("DescribeJobResponse.Job.Script.Industry"));
+		script.setScriptDescription(_ctx.stringValue("DescribeJobResponse.Job.Script.ScriptDescription"));
+		script.setMiniPlaybackConfigEnabled(_ctx.booleanValue("DescribeJobResponse.Job.Script.MiniPlaybackConfigEnabled"));
+		script.setIsDrafted(_ctx.booleanValue("DescribeJobResponse.Job.Script.IsDrafted"));
+		script.setTtsConfig(_ctx.stringValue("DescribeJobResponse.Job.Script.TtsConfig"));
+		script.setDebugStatus(_ctx.stringValue("DescribeJobResponse.Job.Script.DebugStatus"));
+		script.setAsrConfig(_ctx.stringValue("DescribeJobResponse.Job.Script.AsrConfig"));
+		script.setScene(_ctx.stringValue("DescribeJobResponse.Job.Script.Scene"));
+		script.setName(_ctx.stringValue("DescribeJobResponse.Job.Script.Name"));
+		job.setScript(script);
 
 		List<Contact> contacts = new ArrayList<Contact>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeJobResponse.Job.Contacts.Length"); i++) {
@@ -138,6 +156,7 @@ public class DescribeJobResponseUnmarshaller {
 				conversationDetail.setTimestamp(_ctx.longValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Timestamp"));
 				conversationDetail.setSpeaker(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Speaker"));
 				conversationDetail.setScript(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Script"));
+				conversationDetail.setSequenceId(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].SequenceId"));
 
 				List<SummaryItem2> summary1 = new ArrayList<SummaryItem2>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {

@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSummaryInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
+
+	private Boolean success;
 
 	private List<AgentBotInstanceSummary> agentBotInstanceSummaryList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -69,12 +61,20 @@ public class GetSummaryInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<AgentBotInstanceSummary> getAgentBotInstanceSummaryList() {
@@ -87,21 +87,13 @@ public class GetSummaryInfoResponse extends AcsResponse {
 
 	public static class AgentBotInstanceSummary {
 
-		private Long totalCallTime;
-
 		private Long totalCallCount;
-
-		private Integer usedRecordingStorageSpace;
 
 		private String instanceId;
 
-		public Long getTotalCallTime() {
-			return this.totalCallTime;
-		}
+		private Long totalCallTime;
 
-		public void setTotalCallTime(Long totalCallTime) {
-			this.totalCallTime = totalCallTime;
-		}
+		private Integer usedRecordingStorageSpace;
 
 		public Long getTotalCallCount() {
 			return this.totalCallCount;
@@ -111,20 +103,28 @@ public class GetSummaryInfoResponse extends AcsResponse {
 			this.totalCallCount = totalCallCount;
 		}
 
-		public Integer getUsedRecordingStorageSpace() {
-			return this.usedRecordingStorageSpace;
-		}
-
-		public void setUsedRecordingStorageSpace(Integer usedRecordingStorageSpace) {
-			this.usedRecordingStorageSpace = usedRecordingStorageSpace;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Long getTotalCallTime() {
+			return this.totalCallTime;
+		}
+
+		public void setTotalCallTime(Long totalCallTime) {
+			this.totalCallTime = totalCallTime;
+		}
+
+		public Integer getUsedRecordingStorageSpace() {
+			return this.usedRecordingStorageSpace;
+		}
+
+		public void setUsedRecordingStorageSpace(Integer usedRecordingStorageSpace) {
+			this.usedRecordingStorageSpace = usedRecordingStorageSpace;
 		}
 	}
 

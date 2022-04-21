@@ -23,11 +23,11 @@ public class DeleteContactBlockListResponseUnmarshaller {
 	public static DeleteContactBlockListResponse unmarshall(DeleteContactBlockListResponse deleteContactBlockListResponse, UnmarshallerContext _ctx) {
 		
 		deleteContactBlockListResponse.setRequestId(_ctx.stringValue("DeleteContactBlockListResponse.RequestId"));
+		deleteContactBlockListResponse.setHttpStatusCode(_ctx.integerValue("DeleteContactBlockListResponse.HttpStatusCode"));
+		deleteContactBlockListResponse.setAffectedRows(_ctx.integerValue("DeleteContactBlockListResponse.AffectedRows"));
 		deleteContactBlockListResponse.setSuccess(_ctx.booleanValue("DeleteContactBlockListResponse.Success"));
 		deleteContactBlockListResponse.setCode(_ctx.stringValue("DeleteContactBlockListResponse.Code"));
 		deleteContactBlockListResponse.setMessage(_ctx.stringValue("DeleteContactBlockListResponse.Message"));
-		deleteContactBlockListResponse.setHttpStatusCode(_ctx.integerValue("DeleteContactBlockListResponse.HttpStatusCode"));
-		deleteContactBlockListResponse.setAffectedRows(_ctx.integerValue("DeleteContactBlockListResponse.AffectedRows"));
 	 
 	 	return deleteContactBlockListResponse;
 	}

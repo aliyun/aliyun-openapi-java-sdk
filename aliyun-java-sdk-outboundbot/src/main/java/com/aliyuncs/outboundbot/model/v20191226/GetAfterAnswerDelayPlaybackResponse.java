@@ -24,6 +24,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAfterAnswerDelayPlaybackResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
@@ -32,9 +34,15 @@ public class GetAfterAnswerDelayPlaybackResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
-
 	private Integer afterAnswerDelayPlayback;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,14 +74,6 @@ public class GetAfterAnswerDelayPlaybackResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Integer getAfterAnswerDelayPlayback() {

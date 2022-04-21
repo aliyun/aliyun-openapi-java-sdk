@@ -25,29 +25,29 @@ public class CreateInstanceResponseUnmarshaller {
 	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setCode(_ctx.stringValue("CreateInstanceResponse.Code"));
 		createInstanceResponse.setHttpStatusCode(_ctx.integerValue("CreateInstanceResponse.HttpStatusCode"));
+		createInstanceResponse.setCode(_ctx.stringValue("CreateInstanceResponse.Code"));
 		createInstanceResponse.setMessage(_ctx.stringValue("CreateInstanceResponse.Message"));
 		createInstanceResponse.setSuccess(_ctx.booleanValue("CreateInstanceResponse.Success"));
 
 		Instance instance = new Instance();
-		instance.setCallCenterInstanceId(_ctx.stringValue("CreateInstanceResponse.Instance.CallCenterInstanceId"));
 		instance.setCreationTime(_ctx.longValue("CreateInstanceResponse.Instance.CreationTime"));
-		instance.setInstanceDescription(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceDescription"));
-		instance.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceId"));
-		instance.setInstanceName(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceName"));
-		instance.setMaxConcurrentConversation(_ctx.integerValue("CreateInstanceResponse.Instance.MaxConcurrentConversation"));
-		instance.setNluServiceType(_ctx.stringValue("CreateInstanceResponse.Instance.NluServiceType"));
+		instance.setCallCenterInstanceId(_ctx.stringValue("CreateInstanceResponse.Instance.CallCenterInstanceId"));
 		instance.setOwner(_ctx.stringValue("CreateInstanceResponse.Instance.Owner"));
+		instance.setNluServiceType(_ctx.stringValue("CreateInstanceResponse.Instance.NluServiceType"));
+		instance.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceId"));
 		instance.setCreatorId(_ctx.longValue("CreateInstanceResponse.Instance.CreatorId"));
-		instance.setCreatorName(_ctx.stringValue("CreateInstanceResponse.Instance.CreatorName"));
 		instance.setOwnerName(_ctx.stringValue("CreateInstanceResponse.Instance.OwnerName"));
+		instance.setInstanceDescription(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceDescription"));
+		instance.setInstanceName(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceName"));
+		instance.setCreatorName(_ctx.stringValue("CreateInstanceResponse.Instance.CreatorName"));
 		instance.setResourceGroupId(_ctx.stringValue("CreateInstanceResponse.Instance.ResourceGroupId"));
+		instance.setMaxConcurrentConversation(_ctx.integerValue("CreateInstanceResponse.Instance.MaxConcurrentConversation"));
 
 		NluProfile nluProfile = new NluProfile();
 		nluProfile.setAccessKey(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.AccessKey"));
-		nluProfile.setEndpoint(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.Endpoint"));
 		nluProfile.setSecretKey(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.SecretKey"));
+		nluProfile.setEndpoint(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.Endpoint"));
 		instance.setNluProfile(nluProfile);
 		createInstanceResponse.setInstance(instance);
 	 

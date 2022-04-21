@@ -24,20 +24,20 @@ public class DescribeIntentResponseUnmarshaller {
 	public static DescribeIntentResponse unmarshall(DescribeIntentResponse describeIntentResponse, UnmarshallerContext _ctx) {
 		
 		describeIntentResponse.setRequestId(_ctx.stringValue("DescribeIntentResponse.RequestId"));
-		describeIntentResponse.setCode(_ctx.stringValue("DescribeIntentResponse.Code"));
 		describeIntentResponse.setHttpStatusCode(_ctx.integerValue("DescribeIntentResponse.HttpStatusCode"));
+		describeIntentResponse.setCode(_ctx.stringValue("DescribeIntentResponse.Code"));
 		describeIntentResponse.setMessage(_ctx.stringValue("DescribeIntentResponse.Message"));
 		describeIntentResponse.setSuccess(_ctx.booleanValue("DescribeIntentResponse.Success"));
 
 		Intent intent = new Intent();
-		intent.setCreateTime(_ctx.longValue("DescribeIntentResponse.Intent.CreateTime"));
+		intent.setUtterances(_ctx.stringValue("DescribeIntentResponse.Intent.Utterances"));
 		intent.setIntentDescription(_ctx.stringValue("DescribeIntentResponse.Intent.IntentDescription"));
-		intent.setIntentId(_ctx.stringValue("DescribeIntentResponse.Intent.IntentId"));
-		intent.setIntentName(_ctx.stringValue("DescribeIntentResponse.Intent.IntentName"));
+		intent.setUpdateTime(_ctx.longValue("DescribeIntentResponse.Intent.UpdateTime"));
+		intent.setCreateTime(_ctx.longValue("DescribeIntentResponse.Intent.CreateTime"));
 		intent.setKeywords(_ctx.stringValue("DescribeIntentResponse.Intent.Keywords"));
 		intent.setScriptId(_ctx.stringValue("DescribeIntentResponse.Intent.ScriptId"));
-		intent.setUpdateTime(_ctx.longValue("DescribeIntentResponse.Intent.UpdateTime"));
-		intent.setUtterances(_ctx.stringValue("DescribeIntentResponse.Intent.Utterances"));
+		intent.setIntentId(_ctx.stringValue("DescribeIntentResponse.Intent.IntentId"));
+		intent.setIntentName(_ctx.stringValue("DescribeIntentResponse.Intent.IntentName"));
 		describeIntentResponse.setIntent(intent);
 	 
 	 	return describeIntentResponse;

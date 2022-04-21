@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListScriptPublishHistoriesResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -37,20 +37,20 @@ public class ListScriptPublishHistoriesResponse extends AcsResponse {
 
 	private ScriptPublishHistories scriptPublishHistories;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -129,22 +129,22 @@ public class ListScriptPublishHistoriesResponse extends AcsResponse {
 
 		public static class PublishHistory {
 
-			private String description;
+			private Long publishTime;
 
 			private String instanceId;
 
-			private Long publishTime;
-
 			private String scriptId;
+
+			private String description;
 
 			private String scriptVersion;
 
-			public String getDescription() {
-				return this.description;
+			public Long getPublishTime() {
+				return this.publishTime;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
+			public void setPublishTime(Long publishTime) {
+				this.publishTime = publishTime;
 			}
 
 			public String getInstanceId() {
@@ -155,20 +155,20 @@ public class ListScriptPublishHistoriesResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public Long getPublishTime() {
-				return this.publishTime;
-			}
-
-			public void setPublishTime(Long publishTime) {
-				this.publishTime = publishTime;
-			}
-
 			public String getScriptId() {
 				return this.scriptId;
 			}
 
 			public void setScriptId(String scriptId) {
 				this.scriptId = scriptId;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getScriptVersion() {

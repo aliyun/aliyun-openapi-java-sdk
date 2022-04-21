@@ -28,10 +28,10 @@ public class GetContactBlockListResponseUnmarshaller {
 	public static GetContactBlockListResponse unmarshall(GetContactBlockListResponse getContactBlockListResponse, UnmarshallerContext _ctx) {
 		
 		getContactBlockListResponse.setRequestId(_ctx.stringValue("GetContactBlockListResponse.RequestId"));
-		getContactBlockListResponse.setSuccess(_ctx.booleanValue("GetContactBlockListResponse.Success"));
+		getContactBlockListResponse.setHttpStatusCode(_ctx.integerValue("GetContactBlockListResponse.HttpStatusCode"));
 		getContactBlockListResponse.setCode(_ctx.stringValue("GetContactBlockListResponse.Code"));
 		getContactBlockListResponse.setMessage(_ctx.stringValue("GetContactBlockListResponse.Message"));
-		getContactBlockListResponse.setHttpStatusCode(_ctx.integerValue("GetContactBlockListResponse.HttpStatusCode"));
+		getContactBlockListResponse.setSuccess(_ctx.booleanValue("GetContactBlockListResponse.Success"));
 
 		ContactBlocklistList contactBlocklistList = new ContactBlocklistList();
 		contactBlocklistList.setPageNumber(_ctx.integerValue("GetContactBlockListResponse.ContactBlocklistList.PageNumber"));
@@ -42,13 +42,13 @@ public class GetContactBlockListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetContactBlockListResponse.ContactBlocklistList.List.Length"); i++) {
 			ContactBlockList contactBlockList = new ContactBlockList();
 			contactBlockList.setContactBlockListId(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].ContactBlockListId"));
-			contactBlockList.setInstanceId(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].InstanceId"));
 			contactBlockList.setCreationTime(_ctx.longValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].CreationTime"));
+			contactBlockList.setRemark(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].Remark"));
 			contactBlockList.setPhoneNumber(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].PhoneNumber"));
+			contactBlockList.setOperator(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].Operator"));
+			contactBlockList.setInstanceId(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].InstanceId"));
 			contactBlockList.setName(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].Name"));
 			contactBlockList.setCreator(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].Creator"));
-			contactBlockList.setOperator(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].Operator"));
-			contactBlockList.setRemark(_ctx.stringValue("GetContactBlockListResponse.ContactBlocklistList.List["+ i +"].Remark"));
 
 			list.add(contactBlockList);
 		}

@@ -23,12 +23,12 @@ public class GetCurrentConcurrencyResponseUnmarshaller {
 	public static GetCurrentConcurrencyResponse unmarshall(GetCurrentConcurrencyResponse getCurrentConcurrencyResponse, UnmarshallerContext _ctx) {
 		
 		getCurrentConcurrencyResponse.setRequestId(_ctx.stringValue("GetCurrentConcurrencyResponse.RequestId"));
+		getCurrentConcurrencyResponse.setHttpStatusCode(_ctx.integerValue("GetCurrentConcurrencyResponse.HttpStatusCode"));
 		getCurrentConcurrencyResponse.setSuccess(_ctx.booleanValue("GetCurrentConcurrencyResponse.Success"));
+		getCurrentConcurrencyResponse.setCurrentConcurrency(_ctx.integerValue("GetCurrentConcurrencyResponse.CurrentConcurrency"));
 		getCurrentConcurrencyResponse.setCode(_ctx.stringValue("GetCurrentConcurrencyResponse.Code"));
 		getCurrentConcurrencyResponse.setMessage(_ctx.stringValue("GetCurrentConcurrencyResponse.Message"));
-		getCurrentConcurrencyResponse.setHttpStatusCode(_ctx.integerValue("GetCurrentConcurrencyResponse.HttpStatusCode"));
 		getCurrentConcurrencyResponse.setMaxConcurrentConversation(_ctx.integerValue("GetCurrentConcurrencyResponse.MaxConcurrentConversation"));
-		getCurrentConcurrencyResponse.setCurrentConcurrency(_ctx.integerValue("GetCurrentConcurrencyResponse.CurrentConcurrency"));
 		getCurrentConcurrencyResponse.setInstanceId(_ctx.stringValue("GetCurrentConcurrencyResponse.InstanceId"));
 	 
 	 	return getCurrentConcurrencyResponse;

@@ -28,10 +28,10 @@ public class GetContactWhiteListResponseUnmarshaller {
 	public static GetContactWhiteListResponse unmarshall(GetContactWhiteListResponse getContactWhiteListResponse, UnmarshallerContext _ctx) {
 		
 		getContactWhiteListResponse.setRequestId(_ctx.stringValue("GetContactWhiteListResponse.RequestId"));
-		getContactWhiteListResponse.setSuccess(_ctx.booleanValue("GetContactWhiteListResponse.Success"));
+		getContactWhiteListResponse.setHttpStatusCode(_ctx.integerValue("GetContactWhiteListResponse.HttpStatusCode"));
 		getContactWhiteListResponse.setCode(_ctx.stringValue("GetContactWhiteListResponse.Code"));
 		getContactWhiteListResponse.setMessage(_ctx.stringValue("GetContactWhiteListResponse.Message"));
-		getContactWhiteListResponse.setHttpStatusCode(_ctx.integerValue("GetContactWhiteListResponse.HttpStatusCode"));
+		getContactWhiteListResponse.setSuccess(_ctx.booleanValue("GetContactWhiteListResponse.Success"));
 
 		ContactWhitelistList contactWhitelistList = new ContactWhitelistList();
 		contactWhitelistList.setPageSize(_ctx.integerValue("GetContactWhiteListResponse.ContactWhitelistList.PageSize"));
@@ -41,14 +41,14 @@ public class GetContactWhiteListResponseUnmarshaller {
 		List<ContactWhitelistList1> list = new ArrayList<ContactWhitelistList1>();
 		for (int i = 0; i < _ctx.lengthValue("GetContactWhiteListResponse.ContactWhitelistList.List.Length"); i++) {
 			ContactWhitelistList1 contactWhitelistList1 = new ContactWhitelistList1();
+			contactWhitelistList1.setCreationTime(_ctx.longValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].CreationTime"));
+			contactWhitelistList1.setRemark(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].Remark"));
+			contactWhitelistList1.setPhoneNumber(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].PhoneNumber"));
+			contactWhitelistList1.setOperator(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].Operator"));
 			contactWhitelistList1.setContactWhiteListId(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].ContactWhiteListId"));
 			contactWhitelistList1.setInstanceId(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].InstanceId"));
-			contactWhitelistList1.setCreationTime(_ctx.longValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].CreationTime"));
-			contactWhitelistList1.setPhoneNumber(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].PhoneNumber"));
 			contactWhitelistList1.setName(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].Name"));
 			contactWhitelistList1.setCreator(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].Creator"));
-			contactWhitelistList1.setOperator(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].Operator"));
-			contactWhitelistList1.setRemark(_ctx.stringValue("GetContactWhiteListResponse.ContactWhitelistList.List["+ i +"].Remark"));
 
 			list.add(contactWhitelistList1);
 		}

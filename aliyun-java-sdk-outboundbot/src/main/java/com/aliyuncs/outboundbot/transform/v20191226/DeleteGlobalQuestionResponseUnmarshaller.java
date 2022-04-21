@@ -23,8 +23,8 @@ public class DeleteGlobalQuestionResponseUnmarshaller {
 	public static DeleteGlobalQuestionResponse unmarshall(DeleteGlobalQuestionResponse deleteGlobalQuestionResponse, UnmarshallerContext _ctx) {
 		
 		deleteGlobalQuestionResponse.setRequestId(_ctx.stringValue("DeleteGlobalQuestionResponse.RequestId"));
-		deleteGlobalQuestionResponse.setCode(_ctx.stringValue("DeleteGlobalQuestionResponse.Code"));
 		deleteGlobalQuestionResponse.setHttpStatusCode(_ctx.integerValue("DeleteGlobalQuestionResponse.HttpStatusCode"));
+		deleteGlobalQuestionResponse.setCode(_ctx.stringValue("DeleteGlobalQuestionResponse.Code"));
 		deleteGlobalQuestionResponse.setMessage(_ctx.stringValue("DeleteGlobalQuestionResponse.Message"));
 		deleteGlobalQuestionResponse.setSuccess(_ctx.booleanValue("DeleteGlobalQuestionResponse.Success"));
 	 

@@ -30,9 +30,9 @@ public class ModifyBatchJobsRequest extends RpcAcsRequest<ModifyBatchJobsRespons
 
 	private String jobFilePath;
 
-	private List<String> callingNumbers;
-
 	private String scriptId;
+
+	private List<String> callingNumbers;
 
 	private String instanceId;
 
@@ -76,6 +76,17 @@ public class ModifyBatchJobsRequest extends RpcAcsRequest<ModifyBatchJobsRespons
 		}
 	}
 
+	public String getScriptId() {
+		return this.scriptId;
+	}
+
+	public void setScriptId(String scriptId) {
+		this.scriptId = scriptId;
+		if(scriptId != null){
+			putQueryParameter("ScriptId", scriptId);
+		}
+	}
+
 	public List<String> getCallingNumbers() {
 		return this.callingNumbers;
 	}
@@ -87,17 +98,6 @@ public class ModifyBatchJobsRequest extends RpcAcsRequest<ModifyBatchJobsRespons
 				putQueryParameter("CallingNumber." + (i + 1) , callingNumbers.get(i));
 			}
 		}	
-	}
-
-	public String getScriptId() {
-		return this.scriptId;
-	}
-
-	public void setScriptId(String scriptId) {
-		this.scriptId = scriptId;
-		if(scriptId != null){
-			putQueryParameter("ScriptId", scriptId);
-		}
 	}
 
 	public String getInstanceId() {

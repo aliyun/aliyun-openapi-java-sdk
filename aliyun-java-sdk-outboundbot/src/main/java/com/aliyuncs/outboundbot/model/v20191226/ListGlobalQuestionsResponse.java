@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListGlobalQuestionsResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -37,20 +37,20 @@ public class ListGlobalQuestionsResponse extends AcsResponse {
 
 	private GlobalQuestions globalQuestions;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -129,25 +129,17 @@ public class ListGlobalQuestionsResponse extends AcsResponse {
 
 		public static class GlobalQuestion {
 
-			private String answers;
-
 			private String globalQuestionId;
 
-			private String globalQuestionName;
+			private String answers;
 
 			private String globalQuestionType;
+
+			private String globalQuestionName;
 
 			private String questions;
 
 			private String scriptId;
-
-			public String getAnswers() {
-				return this.answers;
-			}
-
-			public void setAnswers(String answers) {
-				this.answers = answers;
-			}
 
 			public String getGlobalQuestionId() {
 				return this.globalQuestionId;
@@ -157,12 +149,12 @@ public class ListGlobalQuestionsResponse extends AcsResponse {
 				this.globalQuestionId = globalQuestionId;
 			}
 
-			public String getGlobalQuestionName() {
-				return this.globalQuestionName;
+			public String getAnswers() {
+				return this.answers;
 			}
 
-			public void setGlobalQuestionName(String globalQuestionName) {
-				this.globalQuestionName = globalQuestionName;
+			public void setAnswers(String answers) {
+				this.answers = answers;
 			}
 
 			public String getGlobalQuestionType() {
@@ -171,6 +163,14 @@ public class ListGlobalQuestionsResponse extends AcsResponse {
 
 			public void setGlobalQuestionType(String globalQuestionType) {
 				this.globalQuestionType = globalQuestionType;
+			}
+
+			public String getGlobalQuestionName() {
+				return this.globalQuestionName;
+			}
+
+			public void setGlobalQuestionName(String globalQuestionName) {
+				this.globalQuestionName = globalQuestionName;
 			}
 
 			public String getQuestions() {

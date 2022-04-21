@@ -24,7 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
+
+	private String groupId;
 
 	private Boolean success;
 
@@ -32,13 +36,17 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
-
-	private String groupId;
-
 	private String instanceId;
 
 	private ExecutingInfo executingInfo;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +54,14 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 
 	public Boolean getSuccess() {
@@ -72,22 +88,6 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -106,33 +106,25 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
 	public static class ExecutingInfo {
 
-		private Long startTime;
-
 		private Long endTime;
 
-		private Integer callFailedNum;
-
-		private Integer callNum;
-
-		private String creatorName;
-
-		private Integer finishedNum;
+		private Long startTime;
 
 		private Integer hangUpByClientNum;
 
-		private Integer transferByIntentNum;
+		private String creatorName;
 
 		private Integer transferByNoAnswer;
 
+		private Integer finishedNum;
+
+		private Integer transferByIntentNum;
+
+		private Integer callNum;
+
+		private Integer callFailedNum;
+
 		private JobsProgress jobsProgress;
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -142,36 +134,12 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public Integer getCallFailedNum() {
-			return this.callFailedNum;
+		public Long getStartTime() {
+			return this.startTime;
 		}
 
-		public void setCallFailedNum(Integer callFailedNum) {
-			this.callFailedNum = callFailedNum;
-		}
-
-		public Integer getCallNum() {
-			return this.callNum;
-		}
-
-		public void setCallNum(Integer callNum) {
-			this.callNum = callNum;
-		}
-
-		public String getCreatorName() {
-			return this.creatorName;
-		}
-
-		public void setCreatorName(String creatorName) {
-			this.creatorName = creatorName;
-		}
-
-		public Integer getFinishedNum() {
-			return this.finishedNum;
-		}
-
-		public void setFinishedNum(Integer finishedNum) {
-			this.finishedNum = finishedNum;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getHangUpByClientNum() {
@@ -182,12 +150,12 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 			this.hangUpByClientNum = hangUpByClientNum;
 		}
 
-		public Integer getTransferByIntentNum() {
-			return this.transferByIntentNum;
+		public String getCreatorName() {
+			return this.creatorName;
 		}
 
-		public void setTransferByIntentNum(Integer transferByIntentNum) {
-			this.transferByIntentNum = transferByIntentNum;
+		public void setCreatorName(String creatorName) {
+			this.creatorName = creatorName;
 		}
 
 		public Integer getTransferByNoAnswer() {
@@ -196,6 +164,38 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
 		public void setTransferByNoAnswer(Integer transferByNoAnswer) {
 			this.transferByNoAnswer = transferByNoAnswer;
+		}
+
+		public Integer getFinishedNum() {
+			return this.finishedNum;
+		}
+
+		public void setFinishedNum(Integer finishedNum) {
+			this.finishedNum = finishedNum;
+		}
+
+		public Integer getTransferByIntentNum() {
+			return this.transferByIntentNum;
+		}
+
+		public void setTransferByIntentNum(Integer transferByIntentNum) {
+			this.transferByIntentNum = transferByIntentNum;
+		}
+
+		public Integer getCallNum() {
+			return this.callNum;
+		}
+
+		public void setCallNum(Integer callNum) {
+			this.callNum = callNum;
+		}
+
+		public Integer getCallFailedNum() {
+			return this.callFailedNum;
+		}
+
+		public void setCallFailedNum(Integer callFailedNum) {
+			this.callFailedNum = callFailedNum;
 		}
 
 		public JobsProgress getJobsProgress() {
@@ -208,28 +208,28 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
 		public static class JobsProgress {
 
-			private Integer totalJobs;
+			private Integer schedulingNum;
 
 			private Integer totalCompletedNum;
 
 			private Integer failedNum;
 
+			private Integer pausedNum;
+
 			private Integer cancelledNum;
+
+			private Integer totalJobs;
 
 			private Integer totalNotAnsweredNum;
 
 			private Integer executingNum;
 
-			private Integer pausedNum;
-
-			private Integer schedulingNum;
-
-			public Integer getTotalJobs() {
-				return this.totalJobs;
+			public Integer getSchedulingNum() {
+				return this.schedulingNum;
 			}
 
-			public void setTotalJobs(Integer totalJobs) {
-				this.totalJobs = totalJobs;
+			public void setSchedulingNum(Integer schedulingNum) {
+				this.schedulingNum = schedulingNum;
 			}
 
 			public Integer getTotalCompletedNum() {
@@ -248,12 +248,28 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 				this.failedNum = failedNum;
 			}
 
+			public Integer getPausedNum() {
+				return this.pausedNum;
+			}
+
+			public void setPausedNum(Integer pausedNum) {
+				this.pausedNum = pausedNum;
+			}
+
 			public Integer getCancelledNum() {
 				return this.cancelledNum;
 			}
 
 			public void setCancelledNum(Integer cancelledNum) {
 				this.cancelledNum = cancelledNum;
+			}
+
+			public Integer getTotalJobs() {
+				return this.totalJobs;
+			}
+
+			public void setTotalJobs(Integer totalJobs) {
+				this.totalJobs = totalJobs;
 			}
 
 			public Integer getTotalNotAnsweredNum() {
@@ -270,22 +286,6 @@ public class DescribeGroupExecutingInfoResponse extends AcsResponse {
 
 			public void setExecutingNum(Integer executingNum) {
 				this.executingNum = executingNum;
-			}
-
-			public Integer getPausedNum() {
-				return this.pausedNum;
-			}
-
-			public void setPausedNum(Integer pausedNum) {
-				this.pausedNum = pausedNum;
-			}
-
-			public Integer getSchedulingNum() {
-				return this.schedulingNum;
-			}
-
-			public void setSchedulingNum(Integer schedulingNum) {
-				this.schedulingNum = schedulingNum;
 			}
 		}
 	}

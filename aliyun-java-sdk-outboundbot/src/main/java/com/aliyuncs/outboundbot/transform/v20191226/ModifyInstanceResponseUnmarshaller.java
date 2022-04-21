@@ -25,28 +25,28 @@ public class ModifyInstanceResponseUnmarshaller {
 	public static ModifyInstanceResponse unmarshall(ModifyInstanceResponse modifyInstanceResponse, UnmarshallerContext _ctx) {
 		
 		modifyInstanceResponse.setRequestId(_ctx.stringValue("ModifyInstanceResponse.RequestId"));
-		modifyInstanceResponse.setCode(_ctx.stringValue("ModifyInstanceResponse.Code"));
 		modifyInstanceResponse.setHttpStatusCode(_ctx.integerValue("ModifyInstanceResponse.HttpStatusCode"));
+		modifyInstanceResponse.setCode(_ctx.stringValue("ModifyInstanceResponse.Code"));
 		modifyInstanceResponse.setMessage(_ctx.stringValue("ModifyInstanceResponse.Message"));
 		modifyInstanceResponse.setSuccess(_ctx.booleanValue("ModifyInstanceResponse.Success"));
 
 		Instance instance = new Instance();
-		instance.setCallCenterInstanceId(_ctx.stringValue("ModifyInstanceResponse.Instance.CallCenterInstanceId"));
 		instance.setCreationTime(_ctx.longValue("ModifyInstanceResponse.Instance.CreationTime"));
-		instance.setInstanceDescription(_ctx.stringValue("ModifyInstanceResponse.Instance.InstanceDescription"));
-		instance.setInstanceId(_ctx.stringValue("ModifyInstanceResponse.Instance.InstanceId"));
-		instance.setInstanceName(_ctx.stringValue("ModifyInstanceResponse.Instance.InstanceName"));
-		instance.setMaxConcurrentConversation(_ctx.integerValue("ModifyInstanceResponse.Instance.MaxConcurrentConversation"));
-		instance.setNluServiceType(_ctx.stringValue("ModifyInstanceResponse.Instance.NluServiceType"));
 		instance.setOwner(_ctx.stringValue("ModifyInstanceResponse.Instance.Owner"));
-		instance.setCreatorId(_ctx.longValue("ModifyInstanceResponse.Instance.CreatorId"));
+		instance.setCallCenterInstanceId(_ctx.stringValue("ModifyInstanceResponse.Instance.CallCenterInstanceId"));
+		instance.setNluServiceType(_ctx.stringValue("ModifyInstanceResponse.Instance.NluServiceType"));
+		instance.setInstanceName(_ctx.stringValue("ModifyInstanceResponse.Instance.InstanceName"));
 		instance.setCreatorName(_ctx.stringValue("ModifyInstanceResponse.Instance.CreatorName"));
+		instance.setMaxConcurrentConversation(_ctx.integerValue("ModifyInstanceResponse.Instance.MaxConcurrentConversation"));
 		instance.setOwnerName(_ctx.stringValue("ModifyInstanceResponse.Instance.OwnerName"));
+		instance.setCreatorId(_ctx.longValue("ModifyInstanceResponse.Instance.CreatorId"));
+		instance.setInstanceId(_ctx.stringValue("ModifyInstanceResponse.Instance.InstanceId"));
+		instance.setInstanceDescription(_ctx.stringValue("ModifyInstanceResponse.Instance.InstanceDescription"));
 
 		NluProfile nluProfile = new NluProfile();
 		nluProfile.setAccessKey(_ctx.stringValue("ModifyInstanceResponse.Instance.NluProfile.AccessKey"));
-		nluProfile.setEndpoint(_ctx.stringValue("ModifyInstanceResponse.Instance.NluProfile.Endpoint"));
 		nluProfile.setSecretKey(_ctx.stringValue("ModifyInstanceResponse.Instance.NluProfile.SecretKey"));
+		nluProfile.setEndpoint(_ctx.stringValue("ModifyInstanceResponse.Instance.NluProfile.Endpoint"));
 		instance.setNluProfile(nluProfile);
 		modifyInstanceResponse.setInstance(instance);
 	 

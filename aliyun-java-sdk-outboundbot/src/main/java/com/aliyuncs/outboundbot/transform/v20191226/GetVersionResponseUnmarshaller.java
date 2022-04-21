@@ -23,11 +23,11 @@ public class GetVersionResponseUnmarshaller {
 	public static GetVersionResponse unmarshall(GetVersionResponse getVersionResponse, UnmarshallerContext _ctx) {
 		
 		getVersionResponse.setRequestId(_ctx.stringValue("GetVersionResponse.RequestId"));
+		getVersionResponse.setHttpStatusCode(_ctx.integerValue("GetVersionResponse.HttpStatusCode"));
 		getVersionResponse.setSuccess(_ctx.booleanValue("GetVersionResponse.Success"));
+		getVersionResponse.setVersion(_ctx.stringValue("GetVersionResponse.Version"));
 		getVersionResponse.setCode(_ctx.stringValue("GetVersionResponse.Code"));
 		getVersionResponse.setMessage(_ctx.stringValue("GetVersionResponse.Message"));
-		getVersionResponse.setHttpStatusCode(_ctx.integerValue("GetVersionResponse.HttpStatusCode"));
-		getVersionResponse.setVersion(_ctx.stringValue("GetVersionResponse.Version"));
 	 
 	 	return getVersionResponse;
 	}

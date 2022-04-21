@@ -31,10 +31,10 @@ public class ListJobGroupsResponseUnmarshaller {
 	public static ListJobGroupsResponse unmarshall(ListJobGroupsResponse listJobGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listJobGroupsResponse.setRequestId(_ctx.stringValue("ListJobGroupsResponse.RequestId"));
-		listJobGroupsResponse.setCode(_ctx.stringValue("ListJobGroupsResponse.Code"));
 		listJobGroupsResponse.setHttpStatusCode(_ctx.integerValue("ListJobGroupsResponse.HttpStatusCode"));
-		listJobGroupsResponse.setMessage(_ctx.stringValue("ListJobGroupsResponse.Message"));
 		listJobGroupsResponse.setSuccess(_ctx.booleanValue("ListJobGroupsResponse.Success"));
+		listJobGroupsResponse.setCode(_ctx.stringValue("ListJobGroupsResponse.Code"));
+		listJobGroupsResponse.setMessage(_ctx.stringValue("ListJobGroupsResponse.Message"));
 		listJobGroupsResponse.setAsyncTaskId(_ctx.stringValue("ListJobGroupsResponse.AsyncTaskId"));
 
 		JobGroups jobGroups = new JobGroups();
@@ -45,36 +45,36 @@ public class ListJobGroupsResponseUnmarshaller {
 		List<JobGroup> list = new ArrayList<JobGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListJobGroupsResponse.JobGroups.List.Length"); i++) {
 			JobGroup jobGroup = new JobGroup();
-			jobGroup.setCreationTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CreationTime"));
-			jobGroup.setJobGroupDescription(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupDescription"));
-			jobGroup.setJobGroupId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupId"));
-			jobGroup.setJobGroupName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupName"));
-			jobGroup.setScriptId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptId"));
-			jobGroup.setScriptName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptName"));
-			jobGroup.setJobDataParsingTaskId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobDataParsingTaskId"));
-			jobGroup.setModifyTime(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ModifyTime"));
-			jobGroup.setScriptVersion(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptVersion"));
 			jobGroup.setStatus(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Status"));
+			jobGroup.setJobGroupId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupId"));
+			jobGroup.setCreationTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CreationTime"));
+			jobGroup.setJobGroupName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupName"));
 			jobGroup.setTotalCallNum(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].TotalCallNum"));
+			jobGroup.setScriptId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptId"));
+			jobGroup.setJobGroupDescription(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobGroupDescription"));
+			jobGroup.setJobDataParsingTaskId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobDataParsingTaskId"));
+			jobGroup.setScriptName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptName"));
+			jobGroup.setScriptVersion(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScriptVersion"));
+			jobGroup.setModifyTime(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ModifyTime"));
 
 			Progress progress = new Progress();
-			progress.setDuration(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Duration"));
-			progress.setStartTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.StartTime"));
-			progress.setStatus(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Status"));
-			progress.setTotalCompleted(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalCompleted"));
-			progress.setTotalJobs(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalJobs"));
 			progress.setTotalNotAnswered(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalNotAnswered"));
-			progress.setCancelledNum(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.CancelledNum"));
+			progress.setStatus(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Status"));
+			progress.setStartTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.StartTime"));
 			progress.setFailedNum(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.FailedNum"));
-			progress.setScheduling(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Scheduling"));
 			progress.setPausedNum(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.PausedNum"));
+			progress.setCancelledNum(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.CancelledNum"));
+			progress.setTotalJobs(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalJobs"));
+			progress.setTotalCompleted(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalCompleted"));
+			progress.setDuration(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Duration"));
 			progress.setExecutingNum(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.ExecutingNum"));
+			progress.setScheduling(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Scheduling"));
 			jobGroup.setProgress(progress);
 
 			ExportProgress exportProgress = new ExportProgress();
+			exportProgress.setStatus(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ExportProgress.Status"));
 			exportProgress.setFileHttpUrl(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ExportProgress.FileHttpUrl"));
 			exportProgress.setProgress(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ExportProgress.Progress"));
-			exportProgress.setStatus(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ExportProgress.Status"));
 			jobGroup.setExportProgress(exportProgress);
 
 			Strategy strategy = new Strategy();

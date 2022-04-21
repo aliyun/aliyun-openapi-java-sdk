@@ -23,10 +23,10 @@ public class TaskPreparingResponseUnmarshaller {
 	public static TaskPreparingResponse unmarshall(TaskPreparingResponse taskPreparingResponse, UnmarshallerContext _ctx) {
 		
 		taskPreparingResponse.setRequestId(_ctx.stringValue("TaskPreparingResponse.RequestId"));
+		taskPreparingResponse.setHttpStatusCode(_ctx.integerValue("TaskPreparingResponse.HttpStatusCode"));
 		taskPreparingResponse.setSuccess(_ctx.booleanValue("TaskPreparingResponse.Success"));
 		taskPreparingResponse.setCode(_ctx.stringValue("TaskPreparingResponse.Code"));
 		taskPreparingResponse.setMessage(_ctx.stringValue("TaskPreparingResponse.Message"));
-		taskPreparingResponse.setHttpStatusCode(_ctx.integerValue("TaskPreparingResponse.HttpStatusCode"));
 		taskPreparingResponse.setTaskId(_ctx.stringValue("TaskPreparingResponse.TaskId"));
 	 
 	 	return taskPreparingResponse;

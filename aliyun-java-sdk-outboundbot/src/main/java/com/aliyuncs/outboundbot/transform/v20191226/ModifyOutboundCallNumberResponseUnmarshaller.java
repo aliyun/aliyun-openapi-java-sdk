@@ -24,8 +24,8 @@ public class ModifyOutboundCallNumberResponseUnmarshaller {
 	public static ModifyOutboundCallNumberResponse unmarshall(ModifyOutboundCallNumberResponse modifyOutboundCallNumberResponse, UnmarshallerContext _ctx) {
 		
 		modifyOutboundCallNumberResponse.setRequestId(_ctx.stringValue("ModifyOutboundCallNumberResponse.RequestId"));
-		modifyOutboundCallNumberResponse.setCode(_ctx.stringValue("ModifyOutboundCallNumberResponse.Code"));
 		modifyOutboundCallNumberResponse.setHttpStatusCode(_ctx.integerValue("ModifyOutboundCallNumberResponse.HttpStatusCode"));
+		modifyOutboundCallNumberResponse.setCode(_ctx.stringValue("ModifyOutboundCallNumberResponse.Code"));
 		modifyOutboundCallNumberResponse.setMessage(_ctx.stringValue("ModifyOutboundCallNumberResponse.Message"));
 		modifyOutboundCallNumberResponse.setSuccess(_ctx.booleanValue("ModifyOutboundCallNumberResponse.Success"));
 

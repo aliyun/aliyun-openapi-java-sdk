@@ -23,10 +23,10 @@ public class TerminateCallResponseUnmarshaller {
 	public static TerminateCallResponse unmarshall(TerminateCallResponse terminateCallResponse, UnmarshallerContext _ctx) {
 		
 		terminateCallResponse.setRequestId(_ctx.stringValue("TerminateCallResponse.RequestId"));
-		terminateCallResponse.setSuccess(_ctx.booleanValue("TerminateCallResponse.Success"));
+		terminateCallResponse.setHttpStatusCode(_ctx.integerValue("TerminateCallResponse.HttpStatusCode"));
 		terminateCallResponse.setCode(_ctx.stringValue("TerminateCallResponse.Code"));
 		terminateCallResponse.setMessage(_ctx.stringValue("TerminateCallResponse.Message"));
-		terminateCallResponse.setHttpStatusCode(_ctx.integerValue("TerminateCallResponse.HttpStatusCode"));
+		terminateCallResponse.setSuccess(_ctx.booleanValue("TerminateCallResponse.Success"));
 	 
 	 	return terminateCallResponse;
 	}

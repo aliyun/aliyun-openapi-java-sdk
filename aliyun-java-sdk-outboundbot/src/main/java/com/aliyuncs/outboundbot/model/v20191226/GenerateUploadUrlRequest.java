@@ -22,16 +22,14 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
+public class GenerateUploadUrlRequest extends RpcAcsRequest<GenerateUploadUrlResponse> {
 	   
 
-	private String jobId;
+	private String fileName;
 
-	private String instanceId;
-
-	private Boolean withScript;
-	public DescribeJobRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeJob", "outboundbot");
+	private String key;
+	public GenerateUploadUrlRequest() {
+		super("OutboundBot", "2019-12-26", "GenerateUploadUrl", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getFileName() {
+		return this.fileName;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getKey() {
+		return this.key;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Boolean getWithScript() {
-		return this.withScript;
-	}
-
-	public void setWithScript(Boolean withScript) {
-		this.withScript = withScript;
-		if(withScript != null){
-			putQueryParameter("WithScript", withScript.toString());
+	public void setKey(String key) {
+		this.key = key;
+		if(key != null){
+			putQueryParameter("Key", key);
 		}
 	}
 
 	@Override
-	public Class<DescribeJobResponse> getResponseClass() {
-		return DescribeJobResponse.class;
+	public Class<GenerateUploadUrlResponse> getResponseClass() {
+		return GenerateUploadUrlResponse.class;
 	}
 
 }

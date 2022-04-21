@@ -24,7 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEmptyNumberNoMoreCallsInfoResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
+
+	private Boolean emptyNumberNoMoreCalls;
 
 	private Boolean success;
 
@@ -32,9 +36,13 @@ public class GetEmptyNumberNoMoreCallsInfoResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
 
-	private Boolean emptyNumberNoMoreCalls;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +50,14 @@ public class GetEmptyNumberNoMoreCallsInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getEmptyNumberNoMoreCalls() {
+		return this.emptyNumberNoMoreCalls;
+	}
+
+	public void setEmptyNumberNoMoreCalls(Boolean emptyNumberNoMoreCalls) {
+		this.emptyNumberNoMoreCalls = emptyNumberNoMoreCalls;
 	}
 
 	public Boolean getSuccess() {
@@ -66,22 +82,6 @@ public class GetEmptyNumberNoMoreCallsInfoResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Boolean getEmptyNumberNoMoreCalls() {
-		return this.emptyNumberNoMoreCalls;
-	}
-
-	public void setEmptyNumberNoMoreCalls(Boolean emptyNumberNoMoreCalls) {
-		this.emptyNumberNoMoreCalls = emptyNumberNoMoreCalls;
 	}
 
 	@Override

@@ -23,10 +23,10 @@ public class TagResourcesResponseUnmarshaller {
 	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext _ctx) {
 		
 		tagResourcesResponse.setRequestId(_ctx.stringValue("TagResourcesResponse.RequestId"));
-		tagResourcesResponse.setSuccess(_ctx.booleanValue("TagResourcesResponse.Success"));
+		tagResourcesResponse.setHttpStatusCode(_ctx.integerValue("TagResourcesResponse.HttpStatusCode"));
 		tagResourcesResponse.setCode(_ctx.stringValue("TagResourcesResponse.Code"));
 		tagResourcesResponse.setMessage(_ctx.stringValue("TagResourcesResponse.Message"));
-		tagResourcesResponse.setHttpStatusCode(_ctx.integerValue("TagResourcesResponse.HttpStatusCode"));
+		tagResourcesResponse.setSuccess(_ctx.booleanValue("TagResourcesResponse.Success"));
 	 
 	 	return tagResourcesResponse;
 	}

@@ -23,8 +23,8 @@ public class RollbackScriptResponseUnmarshaller {
 	public static RollbackScriptResponse unmarshall(RollbackScriptResponse rollbackScriptResponse, UnmarshallerContext _ctx) {
 		
 		rollbackScriptResponse.setRequestId(_ctx.stringValue("RollbackScriptResponse.RequestId"));
-		rollbackScriptResponse.setCode(_ctx.stringValue("RollbackScriptResponse.Code"));
 		rollbackScriptResponse.setHttpStatusCode(_ctx.integerValue("RollbackScriptResponse.HttpStatusCode"));
+		rollbackScriptResponse.setCode(_ctx.stringValue("RollbackScriptResponse.Code"));
 		rollbackScriptResponse.setMessage(_ctx.stringValue("RollbackScriptResponse.Message"));
 		rollbackScriptResponse.setSuccess(_ctx.booleanValue("RollbackScriptResponse.Success"));
 	 

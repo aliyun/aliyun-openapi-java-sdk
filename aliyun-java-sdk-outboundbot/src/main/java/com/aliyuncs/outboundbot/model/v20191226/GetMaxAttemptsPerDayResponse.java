@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMaxAttemptsPerDayResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
+
+	private Integer maxAttemptsPerDay;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
 
-	private Integer maxAttemptsPerDay;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +60,14 @@ public class GetMaxAttemptsPerDayResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Integer getMaxAttemptsPerDay() {
+		return this.maxAttemptsPerDay;
+	}
+
+	public void setMaxAttemptsPerDay(Integer maxAttemptsPerDay) {
+		this.maxAttemptsPerDay = maxAttemptsPerDay;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
@@ -66,22 +82,6 @@ public class GetMaxAttemptsPerDayResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Integer getMaxAttemptsPerDay() {
-		return this.maxAttemptsPerDay;
-	}
-
-	public void setMaxAttemptsPerDay(Integer maxAttemptsPerDay) {
-		this.maxAttemptsPerDay = maxAttemptsPerDay;
 	}
 
 	@Override

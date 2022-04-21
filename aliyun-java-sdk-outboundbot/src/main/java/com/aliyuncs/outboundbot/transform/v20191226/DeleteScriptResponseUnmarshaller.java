@@ -23,8 +23,8 @@ public class DeleteScriptResponseUnmarshaller {
 	public static DeleteScriptResponse unmarshall(DeleteScriptResponse deleteScriptResponse, UnmarshallerContext _ctx) {
 		
 		deleteScriptResponse.setRequestId(_ctx.stringValue("DeleteScriptResponse.RequestId"));
-		deleteScriptResponse.setCode(_ctx.stringValue("DeleteScriptResponse.Code"));
 		deleteScriptResponse.setHttpStatusCode(_ctx.integerValue("DeleteScriptResponse.HttpStatusCode"));
+		deleteScriptResponse.setCode(_ctx.stringValue("DeleteScriptResponse.Code"));
 		deleteScriptResponse.setMessage(_ctx.stringValue("DeleteScriptResponse.Message"));
 		deleteScriptResponse.setSuccess(_ctx.booleanValue("DeleteScriptResponse.Success"));
 	 

@@ -28,8 +28,8 @@ public class ListGlobalQuestionsResponseUnmarshaller {
 	public static ListGlobalQuestionsResponse unmarshall(ListGlobalQuestionsResponse listGlobalQuestionsResponse, UnmarshallerContext _ctx) {
 		
 		listGlobalQuestionsResponse.setRequestId(_ctx.stringValue("ListGlobalQuestionsResponse.RequestId"));
-		listGlobalQuestionsResponse.setCode(_ctx.stringValue("ListGlobalQuestionsResponse.Code"));
 		listGlobalQuestionsResponse.setHttpStatusCode(_ctx.integerValue("ListGlobalQuestionsResponse.HttpStatusCode"));
+		listGlobalQuestionsResponse.setCode(_ctx.stringValue("ListGlobalQuestionsResponse.Code"));
 		listGlobalQuestionsResponse.setMessage(_ctx.stringValue("ListGlobalQuestionsResponse.Message"));
 		listGlobalQuestionsResponse.setSuccess(_ctx.booleanValue("ListGlobalQuestionsResponse.Success"));
 
@@ -41,10 +41,10 @@ public class ListGlobalQuestionsResponseUnmarshaller {
 		List<GlobalQuestion> list = new ArrayList<GlobalQuestion>();
 		for (int i = 0; i < _ctx.lengthValue("ListGlobalQuestionsResponse.GlobalQuestions.List.Length"); i++) {
 			GlobalQuestion globalQuestion = new GlobalQuestion();
-			globalQuestion.setAnswers(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].Answers"));
 			globalQuestion.setGlobalQuestionId(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].GlobalQuestionId"));
-			globalQuestion.setGlobalQuestionName(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].GlobalQuestionName"));
+			globalQuestion.setAnswers(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].Answers"));
 			globalQuestion.setGlobalQuestionType(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].GlobalQuestionType"));
+			globalQuestion.setGlobalQuestionName(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].GlobalQuestionName"));
 			globalQuestion.setQuestions(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].Questions"));
 			globalQuestion.setScriptId(_ctx.stringValue("ListGlobalQuestionsResponse.GlobalQuestions.List["+ i +"].ScriptId"));
 

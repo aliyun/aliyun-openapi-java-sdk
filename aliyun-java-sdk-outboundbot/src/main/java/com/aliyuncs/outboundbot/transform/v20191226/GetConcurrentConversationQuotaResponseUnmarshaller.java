@@ -23,12 +23,12 @@ public class GetConcurrentConversationQuotaResponseUnmarshaller {
 	public static GetConcurrentConversationQuotaResponse unmarshall(GetConcurrentConversationQuotaResponse getConcurrentConversationQuotaResponse, UnmarshallerContext _ctx) {
 		
 		getConcurrentConversationQuotaResponse.setRequestId(_ctx.stringValue("GetConcurrentConversationQuotaResponse.RequestId"));
-		getConcurrentConversationQuotaResponse.setCode(_ctx.stringValue("GetConcurrentConversationQuotaResponse.Code"));
 		getConcurrentConversationQuotaResponse.setHttpStatusCode(_ctx.integerValue("GetConcurrentConversationQuotaResponse.HttpStatusCode"));
-		getConcurrentConversationQuotaResponse.setMaxConcurrent(_ctx.integerValue("GetConcurrentConversationQuotaResponse.MaxConcurrent"));
+		getConcurrentConversationQuotaResponse.setSuccess(_ctx.booleanValue("GetConcurrentConversationQuotaResponse.Success"));
+		getConcurrentConversationQuotaResponse.setCode(_ctx.stringValue("GetConcurrentConversationQuotaResponse.Code"));
 		getConcurrentConversationQuotaResponse.setMessage(_ctx.stringValue("GetConcurrentConversationQuotaResponse.Message"));
 		getConcurrentConversationQuotaResponse.setRemainingConcurrent(_ctx.integerValue("GetConcurrentConversationQuotaResponse.RemainingConcurrent"));
-		getConcurrentConversationQuotaResponse.setSuccess(_ctx.booleanValue("GetConcurrentConversationQuotaResponse.Success"));
+		getConcurrentConversationQuotaResponse.setMaxConcurrent(_ctx.integerValue("GetConcurrentConversationQuotaResponse.MaxConcurrent"));
 	 
 	 	return getConcurrentConversationQuotaResponse;
 	}

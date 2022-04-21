@@ -27,8 +27,8 @@ public class StartJobResponseUnmarshaller {
 	public static StartJobResponse unmarshall(StartJobResponse startJobResponse, UnmarshallerContext _ctx) {
 		
 		startJobResponse.setRequestId(_ctx.stringValue("StartJobResponse.RequestId"));
-		startJobResponse.setCode(_ctx.stringValue("StartJobResponse.Code"));
 		startJobResponse.setHttpStatusCode(_ctx.integerValue("StartJobResponse.HttpStatusCode"));
+		startJobResponse.setCode(_ctx.stringValue("StartJobResponse.Code"));
 		startJobResponse.setMessage(_ctx.stringValue("StartJobResponse.Message"));
 		startJobResponse.setSuccess(_ctx.booleanValue("StartJobResponse.Success"));
 

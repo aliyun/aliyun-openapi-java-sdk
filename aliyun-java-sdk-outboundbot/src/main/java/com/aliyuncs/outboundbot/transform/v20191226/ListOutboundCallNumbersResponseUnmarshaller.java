@@ -28,8 +28,8 @@ public class ListOutboundCallNumbersResponseUnmarshaller {
 	public static ListOutboundCallNumbersResponse unmarshall(ListOutboundCallNumbersResponse listOutboundCallNumbersResponse, UnmarshallerContext _ctx) {
 		
 		listOutboundCallNumbersResponse.setRequestId(_ctx.stringValue("ListOutboundCallNumbersResponse.RequestId"));
-		listOutboundCallNumbersResponse.setCode(_ctx.stringValue("ListOutboundCallNumbersResponse.Code"));
 		listOutboundCallNumbersResponse.setHttpStatusCode(_ctx.integerValue("ListOutboundCallNumbersResponse.HttpStatusCode"));
+		listOutboundCallNumbersResponse.setCode(_ctx.stringValue("ListOutboundCallNumbersResponse.Code"));
 		listOutboundCallNumbersResponse.setMessage(_ctx.stringValue("ListOutboundCallNumbersResponse.Message"));
 		listOutboundCallNumbersResponse.setSuccess(_ctx.booleanValue("ListOutboundCallNumbersResponse.Success"));
 

@@ -25,23 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
+	private String groupId;
+
 	private Boolean success;
+
+	private Integer totalCompleted;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
-
-	private String groupId;
-
 	private String instanceId;
 
-	private Integer totalCompleted;
-
 	private List<NoAnswerDialogueNode> noAnswerDialogueNodes;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,12 +59,28 @@ public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getTotalCompleted() {
+		return this.totalCompleted;
+	}
+
+	public void setTotalCompleted(Integer totalCompleted) {
+		this.totalCompleted = totalCompleted;
 	}
 
 	public String getCode() {
@@ -75,36 +99,12 @@ public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-	}
-
-	public Integer getTotalCompleted() {
-		return this.totalCompleted;
-	}
-
-	public void setTotalCompleted(Integer totalCompleted) {
-		this.totalCompleted = totalCompleted;
 	}
 
 	public List<NoAnswerDialogueNode> getNoAnswerDialogueNodes() {
@@ -117,36 +117,28 @@ public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 
 	public static class NoAnswerDialogueNode {
 
-		private String id;
-
-		private String instanceId;
+		private Integer noAnswerNum;
 
 		private String groupId;
 
-		private String nodeId;
-
 		private String nodeName;
-
-		private Integer hitNum;
 
 		private Integer hangUpNum;
 
-		private Integer noAnswerNum;
+		private String instanceId;
 
-		public String getId() {
-			return this.id;
+		private Integer hitNum;
+
+		private String id;
+
+		private String nodeId;
+
+		public Integer getNoAnswerNum() {
+			return this.noAnswerNum;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setNoAnswerNum(Integer noAnswerNum) {
+			this.noAnswerNum = noAnswerNum;
 		}
 
 		public String getGroupId() {
@@ -157,28 +149,12 @@ public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
-
 		public String getNodeName() {
 			return this.nodeName;
 		}
 
 		public void setNodeName(String nodeName) {
 			this.nodeName = nodeName;
-		}
-
-		public Integer getHitNum() {
-			return this.hitNum;
-		}
-
-		public void setHitNum(Integer hitNum) {
-			this.hitNum = hitNum;
 		}
 
 		public Integer getHangUpNum() {
@@ -189,12 +165,36 @@ public class DescribeDialogueNodeStatisticsResponse extends AcsResponse {
 			this.hangUpNum = hangUpNum;
 		}
 
-		public Integer getNoAnswerNum() {
-			return this.noAnswerNum;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setNoAnswerNum(Integer noAnswerNum) {
-			this.noAnswerNum = noAnswerNum;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getHitNum() {
+			return this.hitNum;
+		}
+
+		public void setHitNum(Integer hitNum) {
+			this.hitNum = hitNum;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 

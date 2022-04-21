@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTagsResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -39,20 +39,20 @@ public class ListTagsResponse extends AcsResponse {
 
 	private List<Tag> tags;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -97,29 +97,13 @@ public class ListTagsResponse extends AcsResponse {
 
 	public static class TagGroup {
 
-		private String scriptId;
-
-		private String tagGroup;
-
 		private String tagGroupId;
 
 		private Integer tagGroupIndex;
 
-		public String getScriptId() {
-			return this.scriptId;
-		}
+		private String tagGroup;
 
-		public void setScriptId(String scriptId) {
-			this.scriptId = scriptId;
-		}
-
-		public String getTagGroup() {
-			return this.tagGroup;
-		}
-
-		public void setTagGroup(String tagGroup) {
-			this.tagGroup = tagGroup;
-		}
+		private String scriptId;
 
 		public String getTagGroupId() {
 			return this.tagGroupId;
@@ -136,27 +120,6 @@ public class ListTagsResponse extends AcsResponse {
 		public void setTagGroupIndex(Integer tagGroupIndex) {
 			this.tagGroupIndex = tagGroupIndex;
 		}
-	}
-
-	public static class Tag {
-
-		private String scriptId;
-
-		private String tagGroup;
-
-		private String tagId;
-
-		private Integer tagIndex;
-
-		private String tagName;
-
-		public String getScriptId() {
-			return this.scriptId;
-		}
-
-		public void setScriptId(String scriptId) {
-			this.scriptId = scriptId;
-		}
 
 		public String getTagGroup() {
 			return this.tagGroup;
@@ -166,12 +129,41 @@ public class ListTagsResponse extends AcsResponse {
 			this.tagGroup = tagGroup;
 		}
 
-		public String getTagId() {
-			return this.tagId;
+		public String getScriptId() {
+			return this.scriptId;
 		}
 
-		public void setTagId(String tagId) {
-			this.tagId = tagId;
+		public void setScriptId(String scriptId) {
+			this.scriptId = scriptId;
+		}
+	}
+
+	public static class Tag {
+
+		private String tagGroup;
+
+		private String tagName;
+
+		private Integer tagIndex;
+
+		private String scriptId;
+
+		private String tagId;
+
+		public String getTagGroup() {
+			return this.tagGroup;
+		}
+
+		public void setTagGroup(String tagGroup) {
+			this.tagGroup = tagGroup;
+		}
+
+		public String getTagName() {
+			return this.tagName;
+		}
+
+		public void setTagName(String tagName) {
+			this.tagName = tagName;
 		}
 
 		public Integer getTagIndex() {
@@ -182,12 +174,20 @@ public class ListTagsResponse extends AcsResponse {
 			this.tagIndex = tagIndex;
 		}
 
-		public String getTagName() {
-			return this.tagName;
+		public String getScriptId() {
+			return this.scriptId;
 		}
 
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
+		public void setScriptId(String scriptId) {
+			this.scriptId = scriptId;
+		}
+
+		public String getTagId() {
+			return this.tagId;
+		}
+
+		public void setTagId(String tagId) {
+			this.tagId = tagId;
 		}
 	}
 

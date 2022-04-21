@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetContactBlockListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
+
+	private Boolean success;
 
 	private ContactBlocklistList contactBlocklistList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -69,12 +61,20 @@ public class GetContactBlockListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public ContactBlocklistList getContactBlocklistList() {
@@ -131,19 +131,19 @@ public class GetContactBlockListResponse extends AcsResponse {
 
 			private String contactBlockListId;
 
-			private String instanceId;
-
 			private Long creationTime;
 
+			private String remark;
+
 			private String phoneNumber;
+
+			private String operator;
+
+			private String instanceId;
 
 			private String name;
 
 			private String creator;
-
-			private String operator;
-
-			private String remark;
 
 			public String getContactBlockListId() {
 				return this.contactBlockListId;
@@ -151,14 +151,6 @@ public class GetContactBlockListResponse extends AcsResponse {
 
 			public void setContactBlockListId(String contactBlockListId) {
 				this.contactBlockListId = contactBlockListId;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
 			}
 
 			public Long getCreationTime() {
@@ -169,12 +161,36 @@ public class GetContactBlockListResponse extends AcsResponse {
 				this.creationTime = creationTime;
 			}
 
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
+			}
+
 			public String getPhoneNumber() {
 				return this.phoneNumber;
 			}
 
 			public void setPhoneNumber(String phoneNumber) {
 				this.phoneNumber = phoneNumber;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getName() {
@@ -191,22 +207,6 @@ public class GetContactBlockListResponse extends AcsResponse {
 
 			public void setCreator(String creator) {
 				this.creator = creator;
-			}
-
-			public String getOperator() {
-				return this.operator;
-			}
-
-			public void setOperator(String operator) {
-				this.operator = operator;
-			}
-
-			public String getRemark() {
-				return this.remark;
-			}
-
-			public void setRemark(String remark) {
-				this.remark = remark;
 			}
 		}
 	}

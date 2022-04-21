@@ -33,8 +33,8 @@ public class QueryJobsResponseUnmarshaller {
 	public static QueryJobsResponse unmarshall(QueryJobsResponse queryJobsResponse, UnmarshallerContext _ctx) {
 		
 		queryJobsResponse.setRequestId(_ctx.stringValue("QueryJobsResponse.RequestId"));
-		queryJobsResponse.setCode(_ctx.stringValue("QueryJobsResponse.Code"));
 		queryJobsResponse.setHttpStatusCode(_ctx.integerValue("QueryJobsResponse.HttpStatusCode"));
+		queryJobsResponse.setCode(_ctx.stringValue("QueryJobsResponse.Code"));
 		queryJobsResponse.setMessage(_ctx.stringValue("QueryJobsResponse.Message"));
 		queryJobsResponse.setSuccess(_ctx.booleanValue("QueryJobsResponse.Success"));
 
@@ -46,14 +46,14 @@ public class QueryJobsResponseUnmarshaller {
 		List<Job> list = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("QueryJobsResponse.Jobs.List.Length"); i++) {
 			Job job = new Job();
-			job.setFailureReason(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].FailureReason"));
+			job.setStatus(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Status"));
 			job.setJobGroupId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].JobGroupId"));
+			job.setScenarioId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].ScenarioId"));
+			job.setStrategyId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].StrategyId"));
 			job.setJobId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].JobId"));
 			job.setPriority(_ctx.integerValue("QueryJobsResponse.Jobs.List["+ i +"].Priority"));
+			job.setFailureReason(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].FailureReason"));
 			job.setReferenceId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].ReferenceId"));
-			job.setScenarioId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].ScenarioId"));
-			job.setStatus(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Status"));
-			job.setStrategyId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].StrategyId"));
 
 			List<String> callingNumbers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("QueryJobsResponse.Jobs.List["+ i +"].CallingNumbers.Length"); j++) {
@@ -64,14 +64,14 @@ public class QueryJobsResponseUnmarshaller {
 			List<Contact> contacts = new ArrayList<Contact>();
 			for (int j = 0; j < _ctx.lengthValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts.Length"); j++) {
 				Contact contact = new Contact();
+				contact.setPhoneNumber(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].PhoneNumber"));
+				contact.setState(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].State"));
 				contact.setContactId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].ContactId"));
-				contact.setContactName(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].ContactName"));
 				contact.setHonorific(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].Honorific"));
 				contact.setJobId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].JobId"));
-				contact.setPhoneNumber(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].PhoneNumber"));
-				contact.setReferenceId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].ReferenceId"));
+				contact.setContactName(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].ContactName"));
 				contact.setRole(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].Role"));
-				contact.setState(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].State"));
+				contact.setReferenceId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Contacts["+ j +"].ReferenceId"));
 
 				contacts.add(contact);
 			}
@@ -90,14 +90,14 @@ public class QueryJobsResponseUnmarshaller {
 			List<SummaryItem> summary = new ArrayList<SummaryItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryJobsResponse.Jobs.List["+ i +"].Summary.Length"); j++) {
 				SummaryItem summaryItem = new SummaryItem();
-				summaryItem.setCategory(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].Category"));
-				summaryItem.setContent(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].Content"));
-				summaryItem.setConversationDetailId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].ConversationDetailId"));
+				summaryItem.setSummaryName(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].SummaryName"));
 				summaryItem.setGroupId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].GroupId"));
 				summaryItem.setJobId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].JobId"));
-				summaryItem.setSummaryId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].SummaryId"));
-				summaryItem.setSummaryName(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].SummaryName"));
+				summaryItem.setCategory(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].Category"));
 				summaryItem.setTaskId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].TaskId"));
+				summaryItem.setContent(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].Content"));
+				summaryItem.setConversationDetailId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].ConversationDetailId"));
+				summaryItem.setSummaryId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Summary["+ j +"].SummaryId"));
 
 				summary.add(summaryItem);
 			}
@@ -106,28 +106,28 @@ public class QueryJobsResponseUnmarshaller {
 			List<Task> tasks = new ArrayList<Task>();
 			for (int j = 0; j < _ctx.lengthValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks.Length"); j++) {
 				Task task = new Task();
-				task.setActualTime(_ctx.longValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].ActualTime"));
-				task.setBrief(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Brief"));
-				task.setCallId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].CallId"));
-				task.setCalledNumber(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].CalledNumber"));
-				task.setCallingNumber(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].CallingNumber"));
-				task.setChatbotId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].ChatbotId"));
-				task.setDuration(_ctx.integerValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Duration"));
-				task.setJobId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].JobId"));
-				task.setPlanedTime(_ctx.longValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].PlanedTime"));
-				task.setScenarioId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].ScenarioId"));
 				task.setStatus(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Status"));
+				task.setPlanedTime(_ctx.longValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].PlanedTime"));
+				task.setChatbotId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].ChatbotId"));
+				task.setActualTime(_ctx.longValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].ActualTime"));
+				task.setCalledNumber(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].CalledNumber"));
+				task.setScenarioId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].ScenarioId"));
+				task.setJobId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].JobId"));
+				task.setCallId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].CallId"));
+				task.setCallingNumber(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].CallingNumber"));
+				task.setBrief(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Brief"));
+				task.setDuration(_ctx.integerValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Duration"));
 				task.setTaskId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].TaskId"));
 
 				Contact1 contact1 = new Contact1();
+				contact1.setPhoneNumber(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.PhoneNumber"));
+				contact1.setState(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.State"));
 				contact1.setContactId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ContactId"));
-				contact1.setContactName(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ContactName"));
 				contact1.setHonorific(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.Honorific"));
 				contact1.setJobId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.JobId"));
-				contact1.setPhoneNumber(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.PhoneNumber"));
-				contact1.setReferenceId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ReferenceId"));
+				contact1.setContactName(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ContactName"));
 				contact1.setRole(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.Role"));
-				contact1.setState(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.State"));
+				contact1.setReferenceId(_ctx.stringValue("QueryJobsResponse.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ReferenceId"));
 				task.setContact1(contact1);
 
 				tasks.add(task);

@@ -23,10 +23,10 @@ public class ChangeResourceGroupResponseUnmarshaller {
 	public static ChangeResourceGroupResponse unmarshall(ChangeResourceGroupResponse changeResourceGroupResponse, UnmarshallerContext _ctx) {
 		
 		changeResourceGroupResponse.setRequestId(_ctx.stringValue("ChangeResourceGroupResponse.RequestId"));
-		changeResourceGroupResponse.setSuccess(_ctx.booleanValue("ChangeResourceGroupResponse.Success"));
+		changeResourceGroupResponse.setHttpStatusCode(_ctx.integerValue("ChangeResourceGroupResponse.HttpStatusCode"));
 		changeResourceGroupResponse.setCode(_ctx.stringValue("ChangeResourceGroupResponse.Code"));
 		changeResourceGroupResponse.setMessage(_ctx.stringValue("ChangeResourceGroupResponse.Message"));
-		changeResourceGroupResponse.setHttpStatusCode(_ctx.integerValue("ChangeResourceGroupResponse.HttpStatusCode"));
+		changeResourceGroupResponse.setSuccess(_ctx.booleanValue("ChangeResourceGroupResponse.Success"));
 	 
 	 	return changeResourceGroupResponse;
 	}

@@ -127,6 +127,8 @@ public class DescribeJobResponse extends AcsResponse {
 
 		private List<String> callingNumbers;
 
+		private Script script;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -285,6 +287,14 @@ public class DescribeJobResponse extends AcsResponse {
 
 		public void setCallingNumbers(List<String> callingNumbers) {
 			this.callingNumbers = callingNumbers;
+		}
+
+		public Script getScript() {
+			return this.script;
+		}
+
+		public void setScript(Script script) {
+			this.script = script;
 		}
 
 		public static class Contact {
@@ -620,6 +630,8 @@ public class DescribeJobResponse extends AcsResponse {
 
 				private String script;
 
+				private String sequenceId;
+
 				private List<SummaryItem2> summary1;
 
 				public String getActionParams() {
@@ -660,6 +672,14 @@ public class DescribeJobResponse extends AcsResponse {
 
 				public void setScript(String script) {
 					this.script = script;
+				}
+
+				public String getSequenceId() {
+					return this.sequenceId;
+				}
+
+				public void setSequenceId(String sequenceId) {
+					this.sequenceId = sequenceId;
 				}
 
 				public List<SummaryItem2> getSummary1() {
@@ -785,6 +805,149 @@ public class DescribeJobResponse extends AcsResponse {
 				public void setReferenceId(String referenceId) {
 					this.referenceId = referenceId;
 				}
+			}
+		}
+
+		public static class Script {
+
+			private String status;
+
+			private Long updateTime;
+
+			private String chatbotId;
+
+			private String scriptId;
+
+			private Boolean isDebugDrafted;
+
+			private String industry;
+
+			private String scriptDescription;
+
+			private Boolean miniPlaybackConfigEnabled;
+
+			private Boolean isDrafted;
+
+			private String ttsConfig;
+
+			private String debugStatus;
+
+			private String asrConfig;
+
+			private String scene;
+
+			private String name;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public String getChatbotId() {
+				return this.chatbotId;
+			}
+
+			public void setChatbotId(String chatbotId) {
+				this.chatbotId = chatbotId;
+			}
+
+			public String getScriptId() {
+				return this.scriptId;
+			}
+
+			public void setScriptId(String scriptId) {
+				this.scriptId = scriptId;
+			}
+
+			public Boolean getIsDebugDrafted() {
+				return this.isDebugDrafted;
+			}
+
+			public void setIsDebugDrafted(Boolean isDebugDrafted) {
+				this.isDebugDrafted = isDebugDrafted;
+			}
+
+			public String getIndustry() {
+				return this.industry;
+			}
+
+			public void setIndustry(String industry) {
+				this.industry = industry;
+			}
+
+			public String getScriptDescription() {
+				return this.scriptDescription;
+			}
+
+			public void setScriptDescription(String scriptDescription) {
+				this.scriptDescription = scriptDescription;
+			}
+
+			public Boolean getMiniPlaybackConfigEnabled() {
+				return this.miniPlaybackConfigEnabled;
+			}
+
+			public void setMiniPlaybackConfigEnabled(Boolean miniPlaybackConfigEnabled) {
+				this.miniPlaybackConfigEnabled = miniPlaybackConfigEnabled;
+			}
+
+			public Boolean getIsDrafted() {
+				return this.isDrafted;
+			}
+
+			public void setIsDrafted(Boolean isDrafted) {
+				this.isDrafted = isDrafted;
+			}
+
+			public String getTtsConfig() {
+				return this.ttsConfig;
+			}
+
+			public void setTtsConfig(String ttsConfig) {
+				this.ttsConfig = ttsConfig;
+			}
+
+			public String getDebugStatus() {
+				return this.debugStatus;
+			}
+
+			public void setDebugStatus(String debugStatus) {
+				this.debugStatus = debugStatus;
+			}
+
+			public String getAsrConfig() {
+				return this.asrConfig;
+			}
+
+			public void setAsrConfig(String asrConfig) {
+				this.asrConfig = asrConfig;
+			}
+
+			public String getScene() {
+				return this.scene;
+			}
+
+			public void setScene(String scene) {
+				this.scene = scene;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

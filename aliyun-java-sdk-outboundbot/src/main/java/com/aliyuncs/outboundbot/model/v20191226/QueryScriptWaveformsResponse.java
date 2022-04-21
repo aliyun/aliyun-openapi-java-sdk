@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryScriptWaveformsResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -37,20 +37,20 @@ public class QueryScriptWaveformsResponse extends AcsResponse {
 
 	private List<ScriptWaveform> scriptWaveforms;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -87,22 +87,30 @@ public class QueryScriptWaveformsResponse extends AcsResponse {
 
 	public static class ScriptWaveform {
 
-		private String fileId;
-
-		private String fileName;
-
 		private String scriptContent;
-
-		private String scriptId;
 
 		private String scriptWaveformId;
 
-		public String getFileId() {
-			return this.fileId;
+		private String fileName;
+
+		private String scriptId;
+
+		private String fileId;
+
+		public String getScriptContent() {
+			return this.scriptContent;
 		}
 
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
+		public void setScriptContent(String scriptContent) {
+			this.scriptContent = scriptContent;
+		}
+
+		public String getScriptWaveformId() {
+			return this.scriptWaveformId;
+		}
+
+		public void setScriptWaveformId(String scriptWaveformId) {
+			this.scriptWaveformId = scriptWaveformId;
 		}
 
 		public String getFileName() {
@@ -113,14 +121,6 @@ public class QueryScriptWaveformsResponse extends AcsResponse {
 			this.fileName = fileName;
 		}
 
-		public String getScriptContent() {
-			return this.scriptContent;
-		}
-
-		public void setScriptContent(String scriptContent) {
-			this.scriptContent = scriptContent;
-		}
-
 		public String getScriptId() {
 			return this.scriptId;
 		}
@@ -129,12 +129,12 @@ public class QueryScriptWaveformsResponse extends AcsResponse {
 			this.scriptId = scriptId;
 		}
 
-		public String getScriptWaveformId() {
-			return this.scriptWaveformId;
+		public String getFileId() {
+			return this.fileId;
 		}
 
-		public void setScriptWaveformId(String scriptWaveformId) {
-			this.scriptWaveformId = scriptWaveformId;
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
 		}
 	}
 

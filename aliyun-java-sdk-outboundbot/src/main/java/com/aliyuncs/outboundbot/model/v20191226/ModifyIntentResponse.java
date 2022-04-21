@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyIntentResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
-
-	private String intentId;
-
-	private String message;
 
 	private String requestId;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String message;
+
+	private String intentId;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -50,22 +42,6 @@ public class ModifyIntentResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getIntentId() {
-		return this.intentId;
-	}
-
-	public void setIntentId(String intentId) {
-		this.intentId = intentId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -82,6 +58,30 @@ public class ModifyIntentResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getIntentId() {
+		return this.intentId;
+	}
+
+	public void setIntentId(String intentId) {
+		this.intentId = intentId;
 	}
 
 	@Override

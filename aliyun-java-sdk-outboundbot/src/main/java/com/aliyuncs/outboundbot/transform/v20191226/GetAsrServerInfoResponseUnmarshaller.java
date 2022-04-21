@@ -23,10 +23,10 @@ public class GetAsrServerInfoResponseUnmarshaller {
 	public static GetAsrServerInfoResponse unmarshall(GetAsrServerInfoResponse getAsrServerInfoResponse, UnmarshallerContext _ctx) {
 		
 		getAsrServerInfoResponse.setRequestId(_ctx.stringValue("GetAsrServerInfoResponse.RequestId"));
-		getAsrServerInfoResponse.setSuccess(_ctx.booleanValue("GetAsrServerInfoResponse.Success"));
+		getAsrServerInfoResponse.setHttpStatusCode(_ctx.integerValue("GetAsrServerInfoResponse.HttpStatusCode"));
 		getAsrServerInfoResponse.setCode(_ctx.stringValue("GetAsrServerInfoResponse.Code"));
 		getAsrServerInfoResponse.setMessage(_ctx.stringValue("GetAsrServerInfoResponse.Message"));
-		getAsrServerInfoResponse.setHttpStatusCode(_ctx.integerValue("GetAsrServerInfoResponse.HttpStatusCode"));
+		getAsrServerInfoResponse.setSuccess(_ctx.booleanValue("GetAsrServerInfoResponse.Success"));
 	 
 	 	return getAsrServerInfoResponse;
 	}

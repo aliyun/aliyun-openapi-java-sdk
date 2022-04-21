@@ -23,8 +23,8 @@ public class ResumeJobsResponseUnmarshaller {
 	public static ResumeJobsResponse unmarshall(ResumeJobsResponse resumeJobsResponse, UnmarshallerContext _ctx) {
 		
 		resumeJobsResponse.setRequestId(_ctx.stringValue("ResumeJobsResponse.RequestId"));
-		resumeJobsResponse.setCode(_ctx.stringValue("ResumeJobsResponse.Code"));
 		resumeJobsResponse.setHttpStatusCode(_ctx.integerValue("ResumeJobsResponse.HttpStatusCode"));
+		resumeJobsResponse.setCode(_ctx.stringValue("ResumeJobsResponse.Code"));
 		resumeJobsResponse.setMessage(_ctx.stringValue("ResumeJobsResponse.Message"));
 		resumeJobsResponse.setSuccess(_ctx.booleanValue("ResumeJobsResponse.Success"));
 	 

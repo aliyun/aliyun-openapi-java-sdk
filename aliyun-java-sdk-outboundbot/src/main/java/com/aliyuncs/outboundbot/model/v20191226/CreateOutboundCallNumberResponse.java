@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateOutboundCallNumberResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
-
-	private String message;
-
-	private String outboundCallNumberId;
 
 	private String requestId;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String message;
+
+	private String outboundCallNumberId;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -50,22 +42,6 @@ public class CreateOutboundCallNumberResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getOutboundCallNumberId() {
-		return this.outboundCallNumberId;
-	}
-
-	public void setOutboundCallNumberId(String outboundCallNumberId) {
-		this.outboundCallNumberId = outboundCallNumberId;
 	}
 
 	public String getRequestId() {
@@ -82,6 +58,30 @@ public class CreateOutboundCallNumberResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getOutboundCallNumberId() {
+		return this.outboundCallNumberId;
+	}
+
+	public void setOutboundCallNumberId(String outboundCallNumberId) {
+		this.outboundCallNumberId = outboundCallNumberId;
 	}
 
 	@Override

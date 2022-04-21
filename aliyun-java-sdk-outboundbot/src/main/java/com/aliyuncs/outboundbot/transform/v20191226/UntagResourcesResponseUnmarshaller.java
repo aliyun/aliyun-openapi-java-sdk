@@ -23,10 +23,10 @@ public class UntagResourcesResponseUnmarshaller {
 	public static UntagResourcesResponse unmarshall(UntagResourcesResponse untagResourcesResponse, UnmarshallerContext _ctx) {
 		
 		untagResourcesResponse.setRequestId(_ctx.stringValue("UntagResourcesResponse.RequestId"));
-		untagResourcesResponse.setSuccess(_ctx.booleanValue("UntagResourcesResponse.Success"));
+		untagResourcesResponse.setHttpStatusCode(_ctx.integerValue("UntagResourcesResponse.HttpStatusCode"));
 		untagResourcesResponse.setCode(_ctx.stringValue("UntagResourcesResponse.Code"));
 		untagResourcesResponse.setMessage(_ctx.stringValue("UntagResourcesResponse.Message"));
-		untagResourcesResponse.setHttpStatusCode(_ctx.integerValue("UntagResourcesResponse.HttpStatusCode"));
+		untagResourcesResponse.setSuccess(_ctx.booleanValue("UntagResourcesResponse.Success"));
 	 
 	 	return untagResourcesResponse;
 	}

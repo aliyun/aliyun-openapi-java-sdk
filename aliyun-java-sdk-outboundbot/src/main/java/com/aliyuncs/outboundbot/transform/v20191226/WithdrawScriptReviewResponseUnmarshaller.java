@@ -24,22 +24,22 @@ public class WithdrawScriptReviewResponseUnmarshaller {
 	public static WithdrawScriptReviewResponse unmarshall(WithdrawScriptReviewResponse withdrawScriptReviewResponse, UnmarshallerContext _ctx) {
 		
 		withdrawScriptReviewResponse.setRequestId(_ctx.stringValue("WithdrawScriptReviewResponse.RequestId"));
-		withdrawScriptReviewResponse.setCode(_ctx.stringValue("WithdrawScriptReviewResponse.Code"));
 		withdrawScriptReviewResponse.setHttpStatusCode(_ctx.integerValue("WithdrawScriptReviewResponse.HttpStatusCode"));
+		withdrawScriptReviewResponse.setCode(_ctx.stringValue("WithdrawScriptReviewResponse.Code"));
 		withdrawScriptReviewResponse.setMessage(_ctx.stringValue("WithdrawScriptReviewResponse.Message"));
 		withdrawScriptReviewResponse.setSuccess(_ctx.booleanValue("WithdrawScriptReviewResponse.Success"));
 
 		Script script = new Script();
-		script.setDebugStatus(_ctx.stringValue("WithdrawScriptReviewResponse.Script.DebugStatus"));
-		script.setIndustry(_ctx.stringValue("WithdrawScriptReviewResponse.Script.Industry"));
-		script.setIsDebugDrafted(_ctx.booleanValue("WithdrawScriptReviewResponse.Script.IsDebugDrafted"));
-		script.setIsDrafted(_ctx.booleanValue("WithdrawScriptReviewResponse.Script.IsDrafted"));
-		script.setScene(_ctx.stringValue("WithdrawScriptReviewResponse.Script.Scene"));
-		script.setScriptDescription(_ctx.stringValue("WithdrawScriptReviewResponse.Script.ScriptDescription"));
-		script.setScriptId(_ctx.stringValue("WithdrawScriptReviewResponse.Script.ScriptId"));
-		script.setScriptName(_ctx.stringValue("WithdrawScriptReviewResponse.Script.ScriptName"));
 		script.setStatus(_ctx.stringValue("WithdrawScriptReviewResponse.Script.Status"));
 		script.setUpdateTime(_ctx.longValue("WithdrawScriptReviewResponse.Script.UpdateTime"));
+		script.setIndustry(_ctx.stringValue("WithdrawScriptReviewResponse.Script.Industry"));
+		script.setScriptDescription(_ctx.stringValue("WithdrawScriptReviewResponse.Script.ScriptDescription"));
+		script.setIsDrafted(_ctx.booleanValue("WithdrawScriptReviewResponse.Script.IsDrafted"));
+		script.setDebugStatus(_ctx.stringValue("WithdrawScriptReviewResponse.Script.DebugStatus"));
+		script.setScriptId(_ctx.stringValue("WithdrawScriptReviewResponse.Script.ScriptId"));
+		script.setIsDebugDrafted(_ctx.booleanValue("WithdrawScriptReviewResponse.Script.IsDebugDrafted"));
+		script.setScriptName(_ctx.stringValue("WithdrawScriptReviewResponse.Script.ScriptName"));
+		script.setScene(_ctx.stringValue("WithdrawScriptReviewResponse.Script.Scene"));
 		withdrawScriptReviewResponse.setScript(script);
 	 
 	 	return withdrawScriptReviewResponse;

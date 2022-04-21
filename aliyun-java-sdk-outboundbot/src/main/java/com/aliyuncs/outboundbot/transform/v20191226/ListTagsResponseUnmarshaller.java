@@ -28,18 +28,18 @@ public class ListTagsResponseUnmarshaller {
 	public static ListTagsResponse unmarshall(ListTagsResponse listTagsResponse, UnmarshallerContext _ctx) {
 		
 		listTagsResponse.setRequestId(_ctx.stringValue("ListTagsResponse.RequestId"));
-		listTagsResponse.setCode(_ctx.stringValue("ListTagsResponse.Code"));
 		listTagsResponse.setHttpStatusCode(_ctx.integerValue("ListTagsResponse.HttpStatusCode"));
+		listTagsResponse.setCode(_ctx.stringValue("ListTagsResponse.Code"));
 		listTagsResponse.setMessage(_ctx.stringValue("ListTagsResponse.Message"));
 		listTagsResponse.setSuccess(_ctx.booleanValue("ListTagsResponse.Success"));
 
 		List<TagGroup> tagGroups = new ArrayList<TagGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagsResponse.TagGroups.Length"); i++) {
 			TagGroup tagGroup = new TagGroup();
-			tagGroup.setScriptId(_ctx.stringValue("ListTagsResponse.TagGroups["+ i +"].ScriptId"));
-			tagGroup.setTagGroup(_ctx.stringValue("ListTagsResponse.TagGroups["+ i +"].TagGroup"));
 			tagGroup.setTagGroupId(_ctx.stringValue("ListTagsResponse.TagGroups["+ i +"].TagGroupId"));
 			tagGroup.setTagGroupIndex(_ctx.integerValue("ListTagsResponse.TagGroups["+ i +"].TagGroupIndex"));
+			tagGroup.setTagGroup(_ctx.stringValue("ListTagsResponse.TagGroups["+ i +"].TagGroup"));
+			tagGroup.setScriptId(_ctx.stringValue("ListTagsResponse.TagGroups["+ i +"].ScriptId"));
 
 			tagGroups.add(tagGroup);
 		}
@@ -48,11 +48,11 @@ public class ListTagsResponseUnmarshaller {
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagsResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
-			tag.setScriptId(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].ScriptId"));
 			tag.setTagGroup(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].TagGroup"));
-			tag.setTagId(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].TagId"));
-			tag.setTagIndex(_ctx.integerValue("ListTagsResponse.Tags["+ i +"].TagIndex"));
 			tag.setTagName(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].TagName"));
+			tag.setTagIndex(_ctx.integerValue("ListTagsResponse.Tags["+ i +"].TagIndex"));
+			tag.setScriptId(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].ScriptId"));
+			tag.setTagId(_ctx.stringValue("ListTagsResponse.Tags["+ i +"].TagId"));
 
 			tags.add(tag);
 		}

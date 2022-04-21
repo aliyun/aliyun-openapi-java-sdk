@@ -28,18 +28,18 @@ public class DescribeTagHitsSummaryResponseUnmarshaller {
 	public static DescribeTagHitsSummaryResponse unmarshall(DescribeTagHitsSummaryResponse describeTagHitsSummaryResponse, UnmarshallerContext _ctx) {
 		
 		describeTagHitsSummaryResponse.setRequestId(_ctx.stringValue("DescribeTagHitsSummaryResponse.RequestId"));
-		describeTagHitsSummaryResponse.setCode(_ctx.stringValue("DescribeTagHitsSummaryResponse.Code"));
 		describeTagHitsSummaryResponse.setHttpStatusCode(_ctx.integerValue("DescribeTagHitsSummaryResponse.HttpStatusCode"));
+		describeTagHitsSummaryResponse.setCode(_ctx.stringValue("DescribeTagHitsSummaryResponse.Code"));
 		describeTagHitsSummaryResponse.setMessage(_ctx.stringValue("DescribeTagHitsSummaryResponse.Message"));
 		describeTagHitsSummaryResponse.setSuccess(_ctx.booleanValue("DescribeTagHitsSummaryResponse.Success"));
 
 		List<TagGroup> tagGroups = new ArrayList<TagGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTagHitsSummaryResponse.TagGroups.Length"); i++) {
 			TagGroup tagGroup = new TagGroup();
-			tagGroup.setId(_ctx.stringValue("DescribeTagHitsSummaryResponse.TagGroups["+ i +"].Id"));
-			tagGroup.setScriptId(_ctx.stringValue("DescribeTagHitsSummaryResponse.TagGroups["+ i +"].ScriptId"));
-			tagGroup.setTagGroup(_ctx.stringValue("DescribeTagHitsSummaryResponse.TagGroups["+ i +"].TagGroup"));
 			tagGroup.setTagGroupIndex(_ctx.integerValue("DescribeTagHitsSummaryResponse.TagGroups["+ i +"].TagGroupIndex"));
+			tagGroup.setTagGroup(_ctx.stringValue("DescribeTagHitsSummaryResponse.TagGroups["+ i +"].TagGroup"));
+			tagGroup.setScriptId(_ctx.stringValue("DescribeTagHitsSummaryResponse.TagGroups["+ i +"].ScriptId"));
+			tagGroup.setId(_ctx.stringValue("DescribeTagHitsSummaryResponse.TagGroups["+ i +"].Id"));
 
 			tagGroups.add(tagGroup);
 		}

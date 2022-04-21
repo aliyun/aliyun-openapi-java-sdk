@@ -23,8 +23,8 @@ public class SubmitBatchJobsResponseUnmarshaller {
 	public static SubmitBatchJobsResponse unmarshall(SubmitBatchJobsResponse submitBatchJobsResponse, UnmarshallerContext _ctx) {
 		
 		submitBatchJobsResponse.setRequestId(_ctx.stringValue("SubmitBatchJobsResponse.RequestId"));
-		submitBatchJobsResponse.setCode(_ctx.stringValue("SubmitBatchJobsResponse.Code"));
 		submitBatchJobsResponse.setHttpStatusCode(_ctx.integerValue("SubmitBatchJobsResponse.HttpStatusCode"));
+		submitBatchJobsResponse.setCode(_ctx.stringValue("SubmitBatchJobsResponse.Code"));
 		submitBatchJobsResponse.setMessage(_ctx.stringValue("SubmitBatchJobsResponse.Message"));
 		submitBatchJobsResponse.setSuccess(_ctx.booleanValue("SubmitBatchJobsResponse.Success"));
 	 

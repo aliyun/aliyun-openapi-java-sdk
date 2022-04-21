@@ -27,18 +27,18 @@ public class GetSummaryInfoResponseUnmarshaller {
 	public static GetSummaryInfoResponse unmarshall(GetSummaryInfoResponse getSummaryInfoResponse, UnmarshallerContext _ctx) {
 		
 		getSummaryInfoResponse.setRequestId(_ctx.stringValue("GetSummaryInfoResponse.RequestId"));
-		getSummaryInfoResponse.setSuccess(_ctx.booleanValue("GetSummaryInfoResponse.Success"));
+		getSummaryInfoResponse.setHttpStatusCode(_ctx.integerValue("GetSummaryInfoResponse.HttpStatusCode"));
 		getSummaryInfoResponse.setCode(_ctx.stringValue("GetSummaryInfoResponse.Code"));
 		getSummaryInfoResponse.setMessage(_ctx.stringValue("GetSummaryInfoResponse.Message"));
-		getSummaryInfoResponse.setHttpStatusCode(_ctx.integerValue("GetSummaryInfoResponse.HttpStatusCode"));
+		getSummaryInfoResponse.setSuccess(_ctx.booleanValue("GetSummaryInfoResponse.Success"));
 
 		List<AgentBotInstanceSummary> agentBotInstanceSummaryList = new ArrayList<AgentBotInstanceSummary>();
 		for (int i = 0; i < _ctx.lengthValue("GetSummaryInfoResponse.AgentBotInstanceSummaryList.Length"); i++) {
 			AgentBotInstanceSummary agentBotInstanceSummary = new AgentBotInstanceSummary();
-			agentBotInstanceSummary.setTotalCallTime(_ctx.longValue("GetSummaryInfoResponse.AgentBotInstanceSummaryList["+ i +"].TotalCallTime"));
 			agentBotInstanceSummary.setTotalCallCount(_ctx.longValue("GetSummaryInfoResponse.AgentBotInstanceSummaryList["+ i +"].TotalCallCount"));
-			agentBotInstanceSummary.setUsedRecordingStorageSpace(_ctx.integerValue("GetSummaryInfoResponse.AgentBotInstanceSummaryList["+ i +"].UsedRecordingStorageSpace"));
 			agentBotInstanceSummary.setInstanceId(_ctx.stringValue("GetSummaryInfoResponse.AgentBotInstanceSummaryList["+ i +"].InstanceId"));
+			agentBotInstanceSummary.setTotalCallTime(_ctx.longValue("GetSummaryInfoResponse.AgentBotInstanceSummaryList["+ i +"].TotalCallTime"));
+			agentBotInstanceSummary.setUsedRecordingStorageSpace(_ctx.integerValue("GetSummaryInfoResponse.AgentBotInstanceSummaryList["+ i +"].UsedRecordingStorageSpace"));
 
 			agentBotInstanceSummaryList.add(agentBotInstanceSummary);
 		}

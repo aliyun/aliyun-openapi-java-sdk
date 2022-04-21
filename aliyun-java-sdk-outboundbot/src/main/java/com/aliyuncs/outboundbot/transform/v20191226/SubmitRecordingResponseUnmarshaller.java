@@ -23,8 +23,8 @@ public class SubmitRecordingResponseUnmarshaller {
 	public static SubmitRecordingResponse unmarshall(SubmitRecordingResponse submitRecordingResponse, UnmarshallerContext _ctx) {
 		
 		submitRecordingResponse.setRequestId(_ctx.stringValue("SubmitRecordingResponse.RequestId"));
-		submitRecordingResponse.setCode(_ctx.stringValue("SubmitRecordingResponse.Code"));
 		submitRecordingResponse.setHttpStatusCode(_ctx.integerValue("SubmitRecordingResponse.HttpStatusCode"));
+		submitRecordingResponse.setCode(_ctx.stringValue("SubmitRecordingResponse.Code"));
 		submitRecordingResponse.setMessage(_ctx.stringValue("SubmitRecordingResponse.Message"));
 		submitRecordingResponse.setSuccess(_ctx.booleanValue("SubmitRecordingResponse.Success"));
 	 

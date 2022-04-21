@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ImportScriptResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
-
-	private String message;
 
 	private String requestId;
 
-	private String scriptId;
-
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String message;
+
+	private String scriptId;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -50,14 +42,6 @@ public class ImportScriptResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -68,20 +52,36 @@ public class ImportScriptResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getScriptId() {
-		return this.scriptId;
-	}
-
-	public void setScriptId(String scriptId) {
-		this.scriptId = scriptId;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getScriptId() {
+		return this.scriptId;
+	}
+
+	public void setScriptId(String scriptId) {
+		this.scriptId = scriptId;
 	}
 
 	@Override

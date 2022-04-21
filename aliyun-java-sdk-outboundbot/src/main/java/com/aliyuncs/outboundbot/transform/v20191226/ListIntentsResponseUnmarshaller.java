@@ -28,8 +28,8 @@ public class ListIntentsResponseUnmarshaller {
 	public static ListIntentsResponse unmarshall(ListIntentsResponse listIntentsResponse, UnmarshallerContext _ctx) {
 		
 		listIntentsResponse.setRequestId(_ctx.stringValue("ListIntentsResponse.RequestId"));
-		listIntentsResponse.setCode(_ctx.stringValue("ListIntentsResponse.Code"));
 		listIntentsResponse.setHttpStatusCode(_ctx.integerValue("ListIntentsResponse.HttpStatusCode"));
+		listIntentsResponse.setCode(_ctx.stringValue("ListIntentsResponse.Code"));
 		listIntentsResponse.setMessage(_ctx.stringValue("ListIntentsResponse.Message"));
 		listIntentsResponse.setSuccess(_ctx.booleanValue("ListIntentsResponse.Success"));
 
@@ -41,14 +41,14 @@ public class ListIntentsResponseUnmarshaller {
 		List<Intent> list = new ArrayList<Intent>();
 		for (int i = 0; i < _ctx.lengthValue("ListIntentsResponse.Intents.List.Length"); i++) {
 			Intent intent = new Intent();
-			intent.setCreateTime(_ctx.longValue("ListIntentsResponse.Intents.List["+ i +"].CreateTime"));
+			intent.setUtterances(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].Utterances"));
 			intent.setIntentDescription(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentDescription"));
-			intent.setIntentId(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentId"));
-			intent.setIntentName(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentName"));
+			intent.setUpdateTime(_ctx.longValue("ListIntentsResponse.Intents.List["+ i +"].UpdateTime"));
+			intent.setCreateTime(_ctx.longValue("ListIntentsResponse.Intents.List["+ i +"].CreateTime"));
 			intent.setKeywords(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].Keywords"));
 			intent.setScriptId(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].ScriptId"));
-			intent.setUpdateTime(_ctx.longValue("ListIntentsResponse.Intents.List["+ i +"].UpdateTime"));
-			intent.setUtterances(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].Utterances"));
+			intent.setIntentId(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentId"));
+			intent.setIntentName(_ctx.stringValue("ListIntentsResponse.Intents.List["+ i +"].IntentName"));
 
 			list.add(intent);
 		}

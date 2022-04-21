@@ -24,8 +24,8 @@ public class DialogueResponseUnmarshaller {
 	public static DialogueResponse unmarshall(DialogueResponse dialogueResponse, UnmarshallerContext _ctx) {
 		
 		dialogueResponse.setRequestId(_ctx.stringValue("DialogueResponse.RequestId"));
-		dialogueResponse.setCode(_ctx.stringValue("DialogueResponse.Code"));
 		dialogueResponse.setHttpStatusCode(_ctx.integerValue("DialogueResponse.HttpStatusCode"));
+		dialogueResponse.setCode(_ctx.stringValue("DialogueResponse.Code"));
 		dialogueResponse.setMessage(_ctx.stringValue("DialogueResponse.Message"));
 		dialogueResponse.setSuccess(_ctx.booleanValue("DialogueResponse.Success"));
 

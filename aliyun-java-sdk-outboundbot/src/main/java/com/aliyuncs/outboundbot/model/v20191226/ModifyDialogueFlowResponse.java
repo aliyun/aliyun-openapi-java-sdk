@@ -24,43 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyDialogueFlowResponse extends AcsResponse {
 
-	private String code;
-
-	private String dialogueFlowDefinition;
-
-	private String dialogueFlowId;
-
 	private Integer httpStatusCode;
 
-	private String message;
+	private String dialogueFlowDefinition;
 
 	private String requestId;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String dialogueFlowId;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String code;
 
-	public String getDialogueFlowDefinition() {
-		return this.dialogueFlowDefinition;
-	}
-
-	public void setDialogueFlowDefinition(String dialogueFlowDefinition) {
-		this.dialogueFlowDefinition = dialogueFlowDefinition;
-	}
-
-	public String getDialogueFlowId() {
-		return this.dialogueFlowId;
-	}
-
-	public void setDialogueFlowId(String dialogueFlowId) {
-		this.dialogueFlowId = dialogueFlowId;
-	}
+	private String message;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -70,12 +46,12 @@ public class ModifyDialogueFlowResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getDialogueFlowDefinition() {
+		return this.dialogueFlowDefinition;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setDialogueFlowDefinition(String dialogueFlowDefinition) {
+		this.dialogueFlowDefinition = dialogueFlowDefinition;
 	}
 
 	public String getRequestId() {
@@ -92,6 +68,30 @@ public class ModifyDialogueFlowResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getDialogueFlowId() {
+		return this.dialogueFlowId;
+	}
+
+	public void setDialogueFlowId(String dialogueFlowId) {
+		this.dialogueFlowId = dialogueFlowId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

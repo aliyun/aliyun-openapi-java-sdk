@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTagHitsSummaryResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -39,20 +39,20 @@ public class DescribeTagHitsSummaryResponse extends AcsResponse {
 
 	private List<TagHits> tagHitsList;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -97,28 +97,20 @@ public class DescribeTagHitsSummaryResponse extends AcsResponse {
 
 	public static class TagGroup {
 
-		private String id;
-
-		private String scriptId;
+		private Integer tagGroupIndex;
 
 		private String tagGroup;
 
-		private Integer tagGroupIndex;
+		private String scriptId;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		public Integer getTagGroupIndex() {
+			return this.tagGroupIndex;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getScriptId() {
-			return this.scriptId;
-		}
-
-		public void setScriptId(String scriptId) {
-			this.scriptId = scriptId;
+		public void setTagGroupIndex(Integer tagGroupIndex) {
+			this.tagGroupIndex = tagGroupIndex;
 		}
 
 		public String getTagGroup() {
@@ -129,12 +121,20 @@ public class DescribeTagHitsSummaryResponse extends AcsResponse {
 			this.tagGroup = tagGroup;
 		}
 
-		public Integer getTagGroupIndex() {
-			return this.tagGroupIndex;
+		public String getScriptId() {
+			return this.scriptId;
 		}
 
-		public void setTagGroupIndex(Integer tagGroupIndex) {
-			this.tagGroupIndex = tagGroupIndex;
+		public void setScriptId(String scriptId) {
+			this.scriptId = scriptId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

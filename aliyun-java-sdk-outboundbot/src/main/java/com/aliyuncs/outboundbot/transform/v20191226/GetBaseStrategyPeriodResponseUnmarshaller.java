@@ -27,19 +27,19 @@ public class GetBaseStrategyPeriodResponseUnmarshaller {
 	public static GetBaseStrategyPeriodResponse unmarshall(GetBaseStrategyPeriodResponse getBaseStrategyPeriodResponse, UnmarshallerContext _ctx) {
 		
 		getBaseStrategyPeriodResponse.setRequestId(_ctx.stringValue("GetBaseStrategyPeriodResponse.RequestId"));
+		getBaseStrategyPeriodResponse.setHttpStatusCode(_ctx.integerValue("GetBaseStrategyPeriodResponse.HttpStatusCode"));
+		getBaseStrategyPeriodResponse.setOnlyWeekdays(_ctx.booleanValue("GetBaseStrategyPeriodResponse.OnlyWeekdays"));
 		getBaseStrategyPeriodResponse.setSuccess(_ctx.booleanValue("GetBaseStrategyPeriodResponse.Success"));
 		getBaseStrategyPeriodResponse.setCode(_ctx.stringValue("GetBaseStrategyPeriodResponse.Code"));
 		getBaseStrategyPeriodResponse.setMessage(_ctx.stringValue("GetBaseStrategyPeriodResponse.Message"));
-		getBaseStrategyPeriodResponse.setHttpStatusCode(_ctx.integerValue("GetBaseStrategyPeriodResponse.HttpStatusCode"));
-		getBaseStrategyPeriodResponse.setOnlyWeekdays(_ctx.booleanValue("GetBaseStrategyPeriodResponse.OnlyWeekdays"));
 
 		List<TimeFrame> workingTime = new ArrayList<TimeFrame>();
 		for (int i = 0; i < _ctx.lengthValue("GetBaseStrategyPeriodResponse.WorkingTime.Length"); i++) {
 			TimeFrame timeFrame = new TimeFrame();
-			timeFrame.setBeginTimeMillis(_ctx.longValue("GetBaseStrategyPeriodResponse.WorkingTime["+ i +"].BeginTimeMillis"));
-			timeFrame.setBeginTime(_ctx.stringValue("GetBaseStrategyPeriodResponse.WorkingTime["+ i +"].BeginTime"));
-			timeFrame.setEndTimeMillis(_ctx.longValue("GetBaseStrategyPeriodResponse.WorkingTime["+ i +"].EndTimeMillis"));
 			timeFrame.setEndTime(_ctx.stringValue("GetBaseStrategyPeriodResponse.WorkingTime["+ i +"].EndTime"));
+			timeFrame.setBeginTimeMillis(_ctx.longValue("GetBaseStrategyPeriodResponse.WorkingTime["+ i +"].BeginTimeMillis"));
+			timeFrame.setEndTimeMillis(_ctx.longValue("GetBaseStrategyPeriodResponse.WorkingTime["+ i +"].EndTimeMillis"));
+			timeFrame.setBeginTime(_ctx.stringValue("GetBaseStrategyPeriodResponse.WorkingTime["+ i +"].BeginTime"));
 
 			workingTime.add(timeFrame);
 		}

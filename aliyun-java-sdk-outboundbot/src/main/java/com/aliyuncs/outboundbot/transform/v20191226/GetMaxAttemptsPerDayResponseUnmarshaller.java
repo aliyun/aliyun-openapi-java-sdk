@@ -23,11 +23,11 @@ public class GetMaxAttemptsPerDayResponseUnmarshaller {
 	public static GetMaxAttemptsPerDayResponse unmarshall(GetMaxAttemptsPerDayResponse getMaxAttemptsPerDayResponse, UnmarshallerContext _ctx) {
 		
 		getMaxAttemptsPerDayResponse.setRequestId(_ctx.stringValue("GetMaxAttemptsPerDayResponse.RequestId"));
+		getMaxAttemptsPerDayResponse.setHttpStatusCode(_ctx.integerValue("GetMaxAttemptsPerDayResponse.HttpStatusCode"));
 		getMaxAttemptsPerDayResponse.setSuccess(_ctx.booleanValue("GetMaxAttemptsPerDayResponse.Success"));
+		getMaxAttemptsPerDayResponse.setMaxAttemptsPerDay(_ctx.integerValue("GetMaxAttemptsPerDayResponse.MaxAttemptsPerDay"));
 		getMaxAttemptsPerDayResponse.setCode(_ctx.stringValue("GetMaxAttemptsPerDayResponse.Code"));
 		getMaxAttemptsPerDayResponse.setMessage(_ctx.stringValue("GetMaxAttemptsPerDayResponse.Message"));
-		getMaxAttemptsPerDayResponse.setHttpStatusCode(_ctx.integerValue("GetMaxAttemptsPerDayResponse.HttpStatusCode"));
-		getMaxAttemptsPerDayResponse.setMaxAttemptsPerDay(_ctx.integerValue("GetMaxAttemptsPerDayResponse.MaxAttemptsPerDay"));
 	 
 	 	return getMaxAttemptsPerDayResponse;
 	}

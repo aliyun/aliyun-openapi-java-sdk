@@ -23,12 +23,12 @@ public class DescribeJobGroupExportTaskProgressResponseUnmarshaller {
 	public static DescribeJobGroupExportTaskProgressResponse unmarshall(DescribeJobGroupExportTaskProgressResponse describeJobGroupExportTaskProgressResponse, UnmarshallerContext _ctx) {
 		
 		describeJobGroupExportTaskProgressResponse.setRequestId(_ctx.stringValue("DescribeJobGroupExportTaskProgressResponse.RequestId"));
-		describeJobGroupExportTaskProgressResponse.setSuccess(_ctx.booleanValue("DescribeJobGroupExportTaskProgressResponse.Success"));
-		describeJobGroupExportTaskProgressResponse.setCode(_ctx.stringValue("DescribeJobGroupExportTaskProgressResponse.Code"));
-		describeJobGroupExportTaskProgressResponse.setMessage(_ctx.stringValue("DescribeJobGroupExportTaskProgressResponse.Message"));
 		describeJobGroupExportTaskProgressResponse.setHttpStatusCode(_ctx.integerValue("DescribeJobGroupExportTaskProgressResponse.HttpStatusCode"));
 		describeJobGroupExportTaskProgressResponse.setFileHttpUrl(_ctx.stringValue("DescribeJobGroupExportTaskProgressResponse.FileHttpUrl"));
 		describeJobGroupExportTaskProgressResponse.setProgress(_ctx.floatValue("DescribeJobGroupExportTaskProgressResponse.Progress"));
+		describeJobGroupExportTaskProgressResponse.setSuccess(_ctx.booleanValue("DescribeJobGroupExportTaskProgressResponse.Success"));
+		describeJobGroupExportTaskProgressResponse.setCode(_ctx.stringValue("DescribeJobGroupExportTaskProgressResponse.Code"));
+		describeJobGroupExportTaskProgressResponse.setMessage(_ctx.stringValue("DescribeJobGroupExportTaskProgressResponse.Message"));
 	 
 	 	return describeJobGroupExportTaskProgressResponse;
 	}

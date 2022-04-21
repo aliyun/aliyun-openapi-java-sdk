@@ -27,19 +27,19 @@ public class ListTagResourcesResponseUnmarshaller {
 	public static ListTagResourcesResponse unmarshall(ListTagResourcesResponse listTagResourcesResponse, UnmarshallerContext _ctx) {
 		
 		listTagResourcesResponse.setRequestId(_ctx.stringValue("ListTagResourcesResponse.RequestId"));
+		listTagResourcesResponse.setHttpStatusCode(_ctx.integerValue("ListTagResourcesResponse.HttpStatusCode"));
+		listTagResourcesResponse.setNextToken(_ctx.stringValue("ListTagResourcesResponse.NextToken"));
 		listTagResourcesResponse.setSuccess(_ctx.booleanValue("ListTagResourcesResponse.Success"));
 		listTagResourcesResponse.setCode(_ctx.stringValue("ListTagResourcesResponse.Code"));
 		listTagResourcesResponse.setMessage(_ctx.stringValue("ListTagResourcesResponse.Message"));
-		listTagResourcesResponse.setHttpStatusCode(_ctx.integerValue("ListTagResourcesResponse.HttpStatusCode"));
-		listTagResourcesResponse.setNextToken(_ctx.stringValue("ListTagResourcesResponse.NextToken"));
 
 		List<TagResource> tagResources = new ArrayList<TagResource>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagResourcesResponse.TagResources.Length"); i++) {
 			TagResource tagResource = new TagResource();
-			tagResource.setTagKey(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].TagKey"));
+			tagResource.setResourceType(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].ResourceType"));
 			tagResource.setTagValue(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].TagValue"));
 			tagResource.setResourceId(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].ResourceId"));
-			tagResource.setResourceType(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].ResourceType"));
+			tagResource.setTagKey(_ctx.stringValue("ListTagResourcesResponse.TagResources["+ i +"].TagKey"));
 
 			tagResources.add(tagResource);
 		}

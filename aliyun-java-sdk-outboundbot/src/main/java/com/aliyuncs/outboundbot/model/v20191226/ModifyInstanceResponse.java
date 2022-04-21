@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyInstanceResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -36,20 +36,20 @@ public class ModifyInstanceResponse extends AcsResponse {
 
 	private Instance instance;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -86,37 +86,29 @@ public class ModifyInstanceResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String callCenterInstanceId;
-
 		private Long creationTime;
-
-		private String instanceDescription;
-
-		private String instanceId;
-
-		private String instanceName;
-
-		private Integer maxConcurrentConversation;
-
-		private String nluServiceType;
 
 		private String owner;
 
-		private Long creatorId;
+		private String callCenterInstanceId;
+
+		private String nluServiceType;
+
+		private String instanceName;
 
 		private String creatorName;
 
+		private Integer maxConcurrentConversation;
+
 		private String ownerName;
 
+		private Long creatorId;
+
+		private String instanceId;
+
+		private String instanceDescription;
+
 		private NluProfile nluProfile;
-
-		public String getCallCenterInstanceId() {
-			return this.callCenterInstanceId;
-		}
-
-		public void setCallCenterInstanceId(String callCenterInstanceId) {
-			this.callCenterInstanceId = callCenterInstanceId;
-		}
 
 		public Long getCreationTime() {
 			return this.creationTime;
@@ -124,46 +116,6 @@ public class ModifyInstanceResponse extends AcsResponse {
 
 		public void setCreationTime(Long creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getInstanceDescription() {
-			return this.instanceDescription;
-		}
-
-		public void setInstanceDescription(String instanceDescription) {
-			this.instanceDescription = instanceDescription;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public Integer getMaxConcurrentConversation() {
-			return this.maxConcurrentConversation;
-		}
-
-		public void setMaxConcurrentConversation(Integer maxConcurrentConversation) {
-			this.maxConcurrentConversation = maxConcurrentConversation;
-		}
-
-		public String getNluServiceType() {
-			return this.nluServiceType;
-		}
-
-		public void setNluServiceType(String nluServiceType) {
-			this.nluServiceType = nluServiceType;
 		}
 
 		public String getOwner() {
@@ -174,12 +126,28 @@ public class ModifyInstanceResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public Long getCreatorId() {
-			return this.creatorId;
+		public String getCallCenterInstanceId() {
+			return this.callCenterInstanceId;
 		}
 
-		public void setCreatorId(Long creatorId) {
-			this.creatorId = creatorId;
+		public void setCallCenterInstanceId(String callCenterInstanceId) {
+			this.callCenterInstanceId = callCenterInstanceId;
+		}
+
+		public String getNluServiceType() {
+			return this.nluServiceType;
+		}
+
+		public void setNluServiceType(String nluServiceType) {
+			this.nluServiceType = nluServiceType;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getCreatorName() {
@@ -190,12 +158,44 @@ public class ModifyInstanceResponse extends AcsResponse {
 			this.creatorName = creatorName;
 		}
 
+		public Integer getMaxConcurrentConversation() {
+			return this.maxConcurrentConversation;
+		}
+
+		public void setMaxConcurrentConversation(Integer maxConcurrentConversation) {
+			this.maxConcurrentConversation = maxConcurrentConversation;
+		}
+
 		public String getOwnerName() {
 			return this.ownerName;
 		}
 
 		public void setOwnerName(String ownerName) {
 			this.ownerName = ownerName;
+		}
+
+		public Long getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(Long creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
 		}
 
 		public NluProfile getNluProfile() {
@@ -210,9 +210,9 @@ public class ModifyInstanceResponse extends AcsResponse {
 
 			private String accessKey;
 
-			private String endpoint;
-
 			private String secretKey;
+
+			private String endpoint;
 
 			public String getAccessKey() {
 				return this.accessKey;
@@ -222,20 +222,20 @@ public class ModifyInstanceResponse extends AcsResponse {
 				this.accessKey = accessKey;
 			}
 
-			public String getEndpoint() {
-				return this.endpoint;
-			}
-
-			public void setEndpoint(String endpoint) {
-				this.endpoint = endpoint;
-			}
-
 			public String getSecretKey() {
 				return this.secretKey;
 			}
 
 			public void setSecretKey(String secretKey) {
 				this.secretKey = secretKey;
+			}
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
 			}
 		}
 	}

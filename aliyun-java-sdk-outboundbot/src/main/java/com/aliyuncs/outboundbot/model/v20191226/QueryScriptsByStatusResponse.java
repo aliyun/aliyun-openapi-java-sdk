@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryScriptsByStatusResponse extends AcsResponse {
 
-	private String code;
-
 	private Integer httpStatusCode;
+
+	private String code;
 
 	private String message;
 
@@ -37,20 +37,20 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 
 	private Scripts scripts;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -129,29 +129,53 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 
 		public static class Script {
 
+			private String status;
+
+			private Long updateTime;
+
+			private String scriptId;
+
 			private String appliedVersion;
+
+			private Boolean isDebugDrafted;
+
+			private String industry;
+
+			private String scriptDescription;
+
+			private Boolean isDrafted;
 
 			private String debugStatus;
 
 			private String debugVersion;
 
-			private String industry;
-
-			private Boolean isDebugDrafted;
-
-			private Boolean isDrafted;
-
 			private String scene;
-
-			private String scriptDescription;
-
-			private String scriptId;
 
 			private String scriptName;
 
-			private String status;
+			public String getStatus() {
+				return this.status;
+			}
 
-			private Long updateTime;
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Long getUpdateTime() {
+				return this.updateTime;
+			}
+
+			public void setUpdateTime(Long updateTime) {
+				this.updateTime = updateTime;
+			}
+
+			public String getScriptId() {
+				return this.scriptId;
+			}
+
+			public void setScriptId(String scriptId) {
+				this.scriptId = scriptId;
+			}
 
 			public String getAppliedVersion() {
 				return this.appliedVersion;
@@ -159,6 +183,38 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 
 			public void setAppliedVersion(String appliedVersion) {
 				this.appliedVersion = appliedVersion;
+			}
+
+			public Boolean getIsDebugDrafted() {
+				return this.isDebugDrafted;
+			}
+
+			public void setIsDebugDrafted(Boolean isDebugDrafted) {
+				this.isDebugDrafted = isDebugDrafted;
+			}
+
+			public String getIndustry() {
+				return this.industry;
+			}
+
+			public void setIndustry(String industry) {
+				this.industry = industry;
+			}
+
+			public String getScriptDescription() {
+				return this.scriptDescription;
+			}
+
+			public void setScriptDescription(String scriptDescription) {
+				this.scriptDescription = scriptDescription;
+			}
+
+			public Boolean getIsDrafted() {
+				return this.isDrafted;
+			}
+
+			public void setIsDrafted(Boolean isDrafted) {
+				this.isDrafted = isDrafted;
 			}
 
 			public String getDebugStatus() {
@@ -177,30 +233,6 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 				this.debugVersion = debugVersion;
 			}
 
-			public String getIndustry() {
-				return this.industry;
-			}
-
-			public void setIndustry(String industry) {
-				this.industry = industry;
-			}
-
-			public Boolean getIsDebugDrafted() {
-				return this.isDebugDrafted;
-			}
-
-			public void setIsDebugDrafted(Boolean isDebugDrafted) {
-				this.isDebugDrafted = isDebugDrafted;
-			}
-
-			public Boolean getIsDrafted() {
-				return this.isDrafted;
-			}
-
-			public void setIsDrafted(Boolean isDrafted) {
-				this.isDrafted = isDrafted;
-			}
-
 			public String getScene() {
 				return this.scene;
 			}
@@ -209,44 +241,12 @@ public class QueryScriptsByStatusResponse extends AcsResponse {
 				this.scene = scene;
 			}
 
-			public String getScriptDescription() {
-				return this.scriptDescription;
-			}
-
-			public void setScriptDescription(String scriptDescription) {
-				this.scriptDescription = scriptDescription;
-			}
-
-			public String getScriptId() {
-				return this.scriptId;
-			}
-
-			public void setScriptId(String scriptId) {
-				this.scriptId = scriptId;
-			}
-
 			public String getScriptName() {
 				return this.scriptName;
 			}
 
 			public void setScriptName(String scriptName) {
 				this.scriptName = scriptName;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Long getUpdateTime() {
-				return this.updateTime;
-			}
-
-			public void setUpdateTime(Long updateTime) {
-				this.updateTime = updateTime;
 			}
 		}
 	}

@@ -46,58 +46,34 @@ public class GetTaskByUuidResponse extends AcsResponse {
 
 	public static class Task {
 
-		private String id;
-
-		private String jobId;
-
-		private Long plannedTime;
-
-		private Long actualTime;
+		private String jobGroupId;
 
 		private Long endTime;
 
-		private String callingNumber;
+		private Integer endReason;
 
-		private String calledNumber;
+		private Long plannedTime;
+
+		private String jobId;
 
 		private String callId;
 
-		private Integer endReason;
+		private String callingNumber;
+
+		private Long actualTime;
 
 		private String instanceId;
 
-		private String jobGroupId;
+		private String calledNumber;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		public String getJobGroupId() {
+			return this.jobGroupId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public Long getPlannedTime() {
-			return this.plannedTime;
-		}
-
-		public void setPlannedTime(Long plannedTime) {
-			this.plannedTime = plannedTime;
-		}
-
-		public Long getActualTime() {
-			return this.actualTime;
-		}
-
-		public void setActualTime(Long actualTime) {
-			this.actualTime = actualTime;
+		public void setJobGroupId(String jobGroupId) {
+			this.jobGroupId = jobGroupId;
 		}
 
 		public Long getEndTime() {
@@ -108,20 +84,28 @@ public class GetTaskByUuidResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getCallingNumber() {
-			return this.callingNumber;
+		public Integer getEndReason() {
+			return this.endReason;
 		}
 
-		public void setCallingNumber(String callingNumber) {
-			this.callingNumber = callingNumber;
+		public void setEndReason(Integer endReason) {
+			this.endReason = endReason;
 		}
 
-		public String getCalledNumber() {
-			return this.calledNumber;
+		public Long getPlannedTime() {
+			return this.plannedTime;
 		}
 
-		public void setCalledNumber(String calledNumber) {
-			this.calledNumber = calledNumber;
+		public void setPlannedTime(Long plannedTime) {
+			this.plannedTime = plannedTime;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getCallId() {
@@ -132,12 +116,20 @@ public class GetTaskByUuidResponse extends AcsResponse {
 			this.callId = callId;
 		}
 
-		public Integer getEndReason() {
-			return this.endReason;
+		public String getCallingNumber() {
+			return this.callingNumber;
 		}
 
-		public void setEndReason(Integer endReason) {
-			this.endReason = endReason;
+		public void setCallingNumber(String callingNumber) {
+			this.callingNumber = callingNumber;
+		}
+
+		public Long getActualTime() {
+			return this.actualTime;
+		}
+
+		public void setActualTime(Long actualTime) {
+			this.actualTime = actualTime;
 		}
 
 		public String getInstanceId() {
@@ -148,12 +140,20 @@ public class GetTaskByUuidResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getJobGroupId() {
-			return this.jobGroupId;
+		public String getCalledNumber() {
+			return this.calledNumber;
 		}
 
-		public void setJobGroupId(String jobGroupId) {
-			this.jobGroupId = jobGroupId;
+		public void setCalledNumber(String calledNumber) {
+			this.calledNumber = calledNumber;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

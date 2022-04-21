@@ -23,8 +23,8 @@ public class PublishScriptResponseUnmarshaller {
 	public static PublishScriptResponse unmarshall(PublishScriptResponse publishScriptResponse, UnmarshallerContext _ctx) {
 		
 		publishScriptResponse.setRequestId(_ctx.stringValue("PublishScriptResponse.RequestId"));
-		publishScriptResponse.setCode(_ctx.stringValue("PublishScriptResponse.Code"));
 		publishScriptResponse.setHttpStatusCode(_ctx.integerValue("PublishScriptResponse.HttpStatusCode"));
+		publishScriptResponse.setCode(_ctx.stringValue("PublishScriptResponse.Code"));
 		publishScriptResponse.setMessage(_ctx.stringValue("PublishScriptResponse.Message"));
 		publishScriptResponse.setSuccess(_ctx.booleanValue("PublishScriptResponse.Success"));
 	 

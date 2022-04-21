@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSchedulerInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
+
+	private Boolean success;
 
 	private List<SchedulerInstance> schedulerInstances;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -69,12 +61,20 @@ public class ListSchedulerInstancesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<SchedulerInstance> getSchedulerInstances() {
@@ -87,31 +87,15 @@ public class ListSchedulerInstancesResponse extends AcsResponse {
 
 	public static class SchedulerInstance {
 
-		private String ownerId;
-
-		private String instanceId;
-
 		private String business;
 
 		private Integer maxConcurrency;
 
+		private String instanceId;
+
 		private String baseStrategy;
 
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String ownerId;
 
 		public String getBusiness() {
 			return this.business;
@@ -129,12 +113,28 @@ public class ListSchedulerInstancesResponse extends AcsResponse {
 			this.maxConcurrency = maxConcurrency;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getBaseStrategy() {
 			return this.baseStrategy;
 		}
 
 		public void setBaseStrategy(String baseStrategy) {
 			this.baseStrategy = baseStrategy;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
 		}
 	}
 

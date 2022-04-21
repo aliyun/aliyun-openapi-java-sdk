@@ -24,6 +24,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeJobGroupExportTaskProgressResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
+	private String fileHttpUrl;
+
+	private Float progress;
+
 	private String requestId;
 
 	private Boolean success;
@@ -32,11 +38,29 @@ public class DescribeJobGroupExportTaskProgressResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
 
-	private String fileHttpUrl;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
-	private Float progress;
+	public String getFileHttpUrl() {
+		return this.fileHttpUrl;
+	}
+
+	public void setFileHttpUrl(String fileHttpUrl) {
+		this.fileHttpUrl = fileHttpUrl;
+	}
+
+	public Float getProgress() {
+		return this.progress;
+	}
+
+	public void setProgress(Float progress) {
+		this.progress = progress;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -68,30 +92,6 @@ public class DescribeJobGroupExportTaskProgressResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getFileHttpUrl() {
-		return this.fileHttpUrl;
-	}
-
-	public void setFileHttpUrl(String fileHttpUrl) {
-		this.fileHttpUrl = fileHttpUrl;
-	}
-
-	public Float getProgress() {
-		return this.progress;
-	}
-
-	public void setProgress(Float progress) {
-		this.progress = progress;
 	}
 
 	@Override

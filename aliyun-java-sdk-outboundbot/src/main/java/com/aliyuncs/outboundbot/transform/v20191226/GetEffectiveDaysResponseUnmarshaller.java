@@ -23,11 +23,11 @@ public class GetEffectiveDaysResponseUnmarshaller {
 	public static GetEffectiveDaysResponse unmarshall(GetEffectiveDaysResponse getEffectiveDaysResponse, UnmarshallerContext _ctx) {
 		
 		getEffectiveDaysResponse.setRequestId(_ctx.stringValue("GetEffectiveDaysResponse.RequestId"));
+		getEffectiveDaysResponse.setHttpStatusCode(_ctx.integerValue("GetEffectiveDaysResponse.HttpStatusCode"));
+		getEffectiveDaysResponse.setEffectiveDays(_ctx.integerValue("GetEffectiveDaysResponse.EffectiveDays"));
 		getEffectiveDaysResponse.setSuccess(_ctx.booleanValue("GetEffectiveDaysResponse.Success"));
 		getEffectiveDaysResponse.setCode(_ctx.stringValue("GetEffectiveDaysResponse.Code"));
 		getEffectiveDaysResponse.setMessage(_ctx.stringValue("GetEffectiveDaysResponse.Message"));
-		getEffectiveDaysResponse.setHttpStatusCode(_ctx.integerValue("GetEffectiveDaysResponse.HttpStatusCode"));
-		getEffectiveDaysResponse.setEffectiveDays(_ctx.integerValue("GetEffectiveDaysResponse.EffectiveDays"));
 	 
 	 	return getEffectiveDaysResponse;
 	}

@@ -23,11 +23,11 @@ public class CreateGlobalQuestionResponseUnmarshaller {
 	public static CreateGlobalQuestionResponse unmarshall(CreateGlobalQuestionResponse createGlobalQuestionResponse, UnmarshallerContext _ctx) {
 		
 		createGlobalQuestionResponse.setRequestId(_ctx.stringValue("CreateGlobalQuestionResponse.RequestId"));
-		createGlobalQuestionResponse.setCode(_ctx.stringValue("CreateGlobalQuestionResponse.Code"));
-		createGlobalQuestionResponse.setGlobalQuestionId(_ctx.stringValue("CreateGlobalQuestionResponse.GlobalQuestionId"));
 		createGlobalQuestionResponse.setHttpStatusCode(_ctx.integerValue("CreateGlobalQuestionResponse.HttpStatusCode"));
-		createGlobalQuestionResponse.setMessage(_ctx.stringValue("CreateGlobalQuestionResponse.Message"));
+		createGlobalQuestionResponse.setGlobalQuestionId(_ctx.stringValue("CreateGlobalQuestionResponse.GlobalQuestionId"));
 		createGlobalQuestionResponse.setSuccess(_ctx.booleanValue("CreateGlobalQuestionResponse.Success"));
+		createGlobalQuestionResponse.setCode(_ctx.stringValue("CreateGlobalQuestionResponse.Code"));
+		createGlobalQuestionResponse.setMessage(_ctx.stringValue("CreateGlobalQuestionResponse.Message"));
 	 
 	 	return createGlobalQuestionResponse;
 	}

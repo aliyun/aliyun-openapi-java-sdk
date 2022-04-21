@@ -104,6 +104,8 @@ public class GetInstanceConfigResponse extends AcsResponse {
 
 			private Boolean searchTaskFunctionSwitch;
 
+			private Long esAllDataKeepDay;
+
 			public Boolean getMiniPlaybackSystemSwitch() {
 				return this.miniPlaybackSystemSwitch;
 			}
@@ -126,6 +128,14 @@ public class GetInstanceConfigResponse extends AcsResponse {
 
 			public void setSearchTaskFunctionSwitch(Boolean searchTaskFunctionSwitch) {
 				this.searchTaskFunctionSwitch = searchTaskFunctionSwitch;
+			}
+
+			public Long getEsAllDataKeepDay() {
+				return this.esAllDataKeepDay;
+			}
+
+			public void setEsAllDataKeepDay(Long esAllDataKeepDay) {
+				this.esAllDataKeepDay = esAllDataKeepDay;
 			}
 		}
 	}

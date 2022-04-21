@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateGlobalQuestionResponse extends AcsResponse {
 
-	private String code;
-
-	private String globalQuestionId;
-
 	private Integer httpStatusCode;
 
-	private String message;
+	private String globalQuestionId;
 
 	private String requestId;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getGlobalQuestionId() {
-		return this.globalQuestionId;
-	}
-
-	public void setGlobalQuestionId(String globalQuestionId) {
-		this.globalQuestionId = globalQuestionId;
-	}
+	private String message;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -60,12 +44,12 @@ public class CreateGlobalQuestionResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getGlobalQuestionId() {
+		return this.globalQuestionId;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setGlobalQuestionId(String globalQuestionId) {
+		this.globalQuestionId = globalQuestionId;
 	}
 
 	public String getRequestId() {
@@ -82,6 +66,22 @@ public class CreateGlobalQuestionResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
