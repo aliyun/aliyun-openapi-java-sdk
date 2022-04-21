@@ -1,3 +1,6 @@
+2022-04-21 Version: 1.36.0
+- Add API OfflineTaskFlow.
+
 2022-04-15 Version: 1.35.0
 - Rename the return of ListTaskFlow API.
 
