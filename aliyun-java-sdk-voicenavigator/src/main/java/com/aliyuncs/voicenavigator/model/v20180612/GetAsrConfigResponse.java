@@ -15,18 +15,18 @@
 package com.aliyuncs.voicenavigator.model.v20180612;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.voicenavigator.transform.v20180612.GetInstanceConfigResponseUnmarshaller;
+import com.aliyuncs.voicenavigator.transform.v20180612.GetAsrConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetInstanceConfigResponse extends AcsResponse {
-
-	private String requestId;
+public class GetAsrConfigResponse extends AcsResponse {
 
 	private Boolean success;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
@@ -36,20 +36,20 @@ public class GetInstanceConfigResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -86,43 +86,50 @@ public class GetInstanceConfigResponse extends AcsResponse {
 
 	public static class Data {
 
-		private InstanceConfig instanceConfig;
+		private String asrVocabularyId;
 
-		public InstanceConfig getInstanceConfig() {
-			return this.instanceConfig;
+		private String asrCustomizationId;
+
+		private String asrAcousticModelId;
+
+		private String asrClassVocabularyId;
+
+		public String getAsrVocabularyId() {
+			return this.asrVocabularyId;
 		}
 
-		public void setInstanceConfig(InstanceConfig instanceConfig) {
-			this.instanceConfig = instanceConfig;
+		public void setAsrVocabularyId(String asrVocabularyId) {
+			this.asrVocabularyId = asrVocabularyId;
 		}
 
-		public static class InstanceConfig {
+		public String getAsrCustomizationId() {
+			return this.asrCustomizationId;
+		}
 
-			private Boolean miniPlaybackSystemSwitch;
+		public void setAsrCustomizationId(String asrCustomizationId) {
+			this.asrCustomizationId = asrCustomizationId;
+		}
 
-			private Boolean newBargeInSystemSwitch;
+		public String getAsrAcousticModelId() {
+			return this.asrAcousticModelId;
+		}
 
-			public Boolean getMiniPlaybackSystemSwitch() {
-				return this.miniPlaybackSystemSwitch;
-			}
+		public void setAsrAcousticModelId(String asrAcousticModelId) {
+			this.asrAcousticModelId = asrAcousticModelId;
+		}
 
-			public void setMiniPlaybackSystemSwitch(Boolean miniPlaybackSystemSwitch) {
-				this.miniPlaybackSystemSwitch = miniPlaybackSystemSwitch;
-			}
+		public String getAsrClassVocabularyId() {
+			return this.asrClassVocabularyId;
+		}
 
-			public Boolean getNewBargeInSystemSwitch() {
-				return this.newBargeInSystemSwitch;
-			}
-
-			public void setNewBargeInSystemSwitch(Boolean newBargeInSystemSwitch) {
-				this.newBargeInSystemSwitch = newBargeInSystemSwitch;
-			}
+		public void setAsrClassVocabularyId(String asrClassVocabularyId) {
+			this.asrClassVocabularyId = asrClassVocabularyId;
 		}
 	}
 
 	@Override
-	public GetInstanceConfigResponse getInstance(UnmarshallerContext context) {
-		return	GetInstanceConfigResponseUnmarshaller.unmarshall(this, context);
+	public GetAsrConfigResponse getInstance(UnmarshallerContext context) {
+		return	GetAsrConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

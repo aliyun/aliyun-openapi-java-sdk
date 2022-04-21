@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListChatbotInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Long totalCount;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Bot> bots;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -67,6 +51,22 @@ public class ListChatbotInstancesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<Bot> getBots() {
 		return this.bots;
 	}
@@ -77,34 +77,26 @@ public class ListChatbotInstancesResponse extends AcsResponse {
 
 	public static class Bot {
 
-		private String instanceId;
-
-		private String timeZone;
+		private String introduction;
 
 		private String avatar;
 
-		private String languageCode;
-
-		private String name;
-
-		private String introduction;
+		private String timeZone;
 
 		private String createTime;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private String languageCode;
+
+		private String instanceId;
+
+		private String name;
+
+		public String getIntroduction() {
+			return this.introduction;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getTimeZone() {
-			return this.timeZone;
-		}
-
-		public void setTimeZone(String timeZone) {
-			this.timeZone = timeZone;
+		public void setIntroduction(String introduction) {
+			this.introduction = introduction;
 		}
 
 		public String getAvatar() {
@@ -115,28 +107,12 @@ public class ListChatbotInstancesResponse extends AcsResponse {
 			this.avatar = avatar;
 		}
 
-		public String getLanguageCode() {
-			return this.languageCode;
+		public String getTimeZone() {
+			return this.timeZone;
 		}
 
-		public void setLanguageCode(String languageCode) {
-			this.languageCode = languageCode;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getIntroduction() {
-			return this.introduction;
-		}
-
-		public void setIntroduction(String introduction) {
-			this.introduction = introduction;
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
 		}
 
 		public String getCreateTime() {
@@ -145,6 +121,30 @@ public class ListChatbotInstancesResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getLanguageCode() {
+			return this.languageCode;
+		}
+
+		public void setLanguageCode(String languageCode) {
+			this.languageCode = languageCode;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

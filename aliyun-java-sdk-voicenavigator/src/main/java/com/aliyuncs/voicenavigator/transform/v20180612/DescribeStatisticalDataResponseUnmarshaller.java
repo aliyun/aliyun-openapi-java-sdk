@@ -27,23 +27,23 @@ public class DescribeStatisticalDataResponseUnmarshaller {
 	public static DescribeStatisticalDataResponse unmarshall(DescribeStatisticalDataResponse describeStatisticalDataResponse, UnmarshallerContext _ctx) {
 		
 		describeStatisticalDataResponse.setRequestId(_ctx.stringValue("DescribeStatisticalDataResponse.RequestId"));
-		describeStatisticalDataResponse.setResolvedQuestionTotalNum(_ctx.longValue("DescribeStatisticalDataResponse.ResolvedQuestionTotalNum"));
-		describeStatisticalDataResponse.setConversationTotalNum(_ctx.longValue("DescribeStatisticalDataResponse.ConversationTotalNum"));
-		describeStatisticalDataResponse.setTotalResolutionRate(_ctx.stringValue("DescribeStatisticalDataResponse.TotalResolutionRate"));
-		describeStatisticalDataResponse.setTotalValidAnswerRate(_ctx.stringValue("DescribeStatisticalDataResponse.TotalValidAnswerRate"));
 		describeStatisticalDataResponse.setTotalDialoguePassRate(_ctx.stringValue("DescribeStatisticalDataResponse.TotalDialoguePassRate"));
 		describeStatisticalDataResponse.setTotalKnowledgeHitRate(_ctx.stringValue("DescribeStatisticalDataResponse.TotalKnowledgeHitRate"));
+		describeStatisticalDataResponse.setTotalResolutionRate(_ctx.stringValue("DescribeStatisticalDataResponse.TotalResolutionRate"));
+		describeStatisticalDataResponse.setTotalValidAnswerRate(_ctx.stringValue("DescribeStatisticalDataResponse.TotalValidAnswerRate"));
+		describeStatisticalDataResponse.setResolvedQuestionTotalNum(_ctx.longValue("DescribeStatisticalDataResponse.ResolvedQuestionTotalNum"));
+		describeStatisticalDataResponse.setConversationTotalNum(_ctx.longValue("DescribeStatisticalDataResponse.ConversationTotalNum"));
 
 		List<StatisticalDataReport> statisticalDataReports = new ArrayList<StatisticalDataReport>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStatisticalDataResponse.StatisticalDataReports.Length"); i++) {
 			StatisticalDataReport statisticalDataReport = new StatisticalDataReport();
-			statisticalDataReport.setStatisticalDate(_ctx.stringValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].StatisticalDate"));
+			statisticalDataReport.setKnowledgeHitRate(_ctx.stringValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].KnowledgeHitRate"));
 			statisticalDataReport.setResolvedQuestionNum(_ctx.integerValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].ResolvedQuestionNum"));
-			statisticalDataReport.setTotalConversationNum(_ctx.integerValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].TotalConversationNum"));
 			statisticalDataReport.setResolutionRate(_ctx.stringValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].ResolutionRate"));
+			statisticalDataReport.setStatisticalDate(_ctx.stringValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].StatisticalDate"));
+			statisticalDataReport.setTotalConversationNum(_ctx.integerValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].TotalConversationNum"));
 			statisticalDataReport.setValidAnswerRate(_ctx.stringValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].ValidAnswerRate"));
 			statisticalDataReport.setDialoguePassRate(_ctx.stringValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].DialoguePassRate"));
-			statisticalDataReport.setKnowledgeHitRate(_ctx.stringValue("DescribeStatisticalDataResponse.StatisticalDataReports["+ i +"].KnowledgeHitRate"));
 
 			statisticalDataReports.add(statisticalDataReport);
 		}

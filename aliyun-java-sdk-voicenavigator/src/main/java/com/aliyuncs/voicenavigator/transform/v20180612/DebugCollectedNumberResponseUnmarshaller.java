@@ -23,10 +23,10 @@ public class DebugCollectedNumberResponseUnmarshaller {
 	public static DebugCollectedNumberResponse unmarshall(DebugCollectedNumberResponse debugCollectedNumberResponse, UnmarshallerContext _ctx) {
 		
 		debugCollectedNumberResponse.setRequestId(_ctx.stringValue("DebugCollectedNumberResponse.RequestId"));
-		debugCollectedNumberResponse.setTextResponse(_ctx.stringValue("DebugCollectedNumberResponse.TextResponse"));
-		debugCollectedNumberResponse.setInterruptible(_ctx.booleanValue("DebugCollectedNumberResponse.Interruptible"));
 		debugCollectedNumberResponse.setAction(_ctx.stringValue("DebugCollectedNumberResponse.Action"));
+		debugCollectedNumberResponse.setInterruptible(_ctx.booleanValue("DebugCollectedNumberResponse.Interruptible"));
 		debugCollectedNumberResponse.setActionParams(_ctx.stringValue("DebugCollectedNumberResponse.ActionParams"));
+		debugCollectedNumberResponse.setTextResponse(_ctx.stringValue("DebugCollectedNumberResponse.TextResponse"));
 	 
 	 	return debugCollectedNumberResponse;
 	}

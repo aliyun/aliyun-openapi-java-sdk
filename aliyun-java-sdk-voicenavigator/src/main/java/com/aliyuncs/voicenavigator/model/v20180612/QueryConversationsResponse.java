@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryConversationsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Conversation> conversations;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class QueryConversationsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Conversation> getConversations() {
@@ -77,37 +77,21 @@ public class QueryConversationsResponse extends AcsResponse {
 
 	public static class Conversation {
 
-		private String callingNumber;
-
-		private Long beginTime;
-
 		private Long endTime;
-
-		private Boolean transferredToAgent;
-
-		private String skillGroupId;
-
-		private Integer userUtteranceCount;
 
 		private Integer effectiveAnswerCount;
 
+		private Boolean transferredToAgent;
+
+		private Long beginTime;
+
+		private String skillGroupId;
+
 		private String conversationId;
 
-		public String getCallingNumber() {
-			return this.callingNumber;
-		}
+		private String callingNumber;
 
-		public void setCallingNumber(String callingNumber) {
-			this.callingNumber = callingNumber;
-		}
-
-		public Long getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(Long beginTime) {
-			this.beginTime = beginTime;
-		}
+		private Integer userUtteranceCount;
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -115,30 +99,6 @@ public class QueryConversationsResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
-		}
-
-		public Boolean getTransferredToAgent() {
-			return this.transferredToAgent;
-		}
-
-		public void setTransferredToAgent(Boolean transferredToAgent) {
-			this.transferredToAgent = transferredToAgent;
-		}
-
-		public String getSkillGroupId() {
-			return this.skillGroupId;
-		}
-
-		public void setSkillGroupId(String skillGroupId) {
-			this.skillGroupId = skillGroupId;
-		}
-
-		public Integer getUserUtteranceCount() {
-			return this.userUtteranceCount;
-		}
-
-		public void setUserUtteranceCount(Integer userUtteranceCount) {
-			this.userUtteranceCount = userUtteranceCount;
 		}
 
 		public Integer getEffectiveAnswerCount() {
@@ -149,12 +109,52 @@ public class QueryConversationsResponse extends AcsResponse {
 			this.effectiveAnswerCount = effectiveAnswerCount;
 		}
 
+		public Boolean getTransferredToAgent() {
+			return this.transferredToAgent;
+		}
+
+		public void setTransferredToAgent(Boolean transferredToAgent) {
+			this.transferredToAgent = transferredToAgent;
+		}
+
+		public Long getBeginTime() {
+			return this.beginTime;
+		}
+
+		public void setBeginTime(Long beginTime) {
+			this.beginTime = beginTime;
+		}
+
+		public String getSkillGroupId() {
+			return this.skillGroupId;
+		}
+
+		public void setSkillGroupId(String skillGroupId) {
+			this.skillGroupId = skillGroupId;
+		}
+
 		public String getConversationId() {
 			return this.conversationId;
 		}
 
 		public void setConversationId(String conversationId) {
 			this.conversationId = conversationId;
+		}
+
+		public String getCallingNumber() {
+			return this.callingNumber;
+		}
+
+		public void setCallingNumber(String callingNumber) {
+			this.callingNumber = callingNumber;
+		}
+
+		public Integer getUserUtteranceCount() {
+			return this.userUtteranceCount;
+		}
+
+		public void setUserUtteranceCount(Integer userUtteranceCount) {
+			this.userUtteranceCount = userUtteranceCount;
 		}
 	}
 

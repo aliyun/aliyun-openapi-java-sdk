@@ -23,10 +23,10 @@ public class DebugDialogueResponseUnmarshaller {
 	public static DebugDialogueResponse unmarshall(DebugDialogueResponse debugDialogueResponse, UnmarshallerContext _ctx) {
 		
 		debugDialogueResponse.setRequestId(_ctx.stringValue("DebugDialogueResponse.RequestId"));
-		debugDialogueResponse.setTextResponse(_ctx.stringValue("DebugDialogueResponse.TextResponse"));
-		debugDialogueResponse.setInterruptible(_ctx.booleanValue("DebugDialogueResponse.Interruptible"));
 		debugDialogueResponse.setAction(_ctx.stringValue("DebugDialogueResponse.Action"));
+		debugDialogueResponse.setInterruptible(_ctx.booleanValue("DebugDialogueResponse.Interruptible"));
 		debugDialogueResponse.setActionParams(_ctx.stringValue("DebugDialogueResponse.ActionParams"));
+		debugDialogueResponse.setTextResponse(_ctx.stringValue("DebugDialogueResponse.TextResponse"));
 	 
 	 	return debugDialogueResponse;
 	}

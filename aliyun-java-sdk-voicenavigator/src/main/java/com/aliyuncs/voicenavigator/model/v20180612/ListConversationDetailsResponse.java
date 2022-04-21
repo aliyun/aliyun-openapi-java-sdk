@@ -47,26 +47,26 @@ public class ListConversationDetailsResponse extends AcsResponse {
 
 	public static class ConversationDetail {
 
-		private String conversationId;
+		private String action;
 
 		private String speaker;
 
-		private String utterance;
+		private Long createTime;
 
-		private String action;
+		private String conversationId;
 
 		private String actionParams;
 
-		private Long createTime;
-
 		private String sequenceId;
 
-		public String getConversationId() {
-			return this.conversationId;
+		private String utterance;
+
+		public String getAction() {
+			return this.action;
 		}
 
-		public void setConversationId(String conversationId) {
-			this.conversationId = conversationId;
+		public void setAction(String action) {
+			this.action = action;
 		}
 
 		public String getSpeaker() {
@@ -77,20 +77,20 @@ public class ListConversationDetailsResponse extends AcsResponse {
 			this.speaker = speaker;
 		}
 
-		public String getUtterance() {
-			return this.utterance;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setUtterance(String utterance) {
-			this.utterance = utterance;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
-		public String getAction() {
-			return this.action;
+		public String getConversationId() {
+			return this.conversationId;
 		}
 
-		public void setAction(String action) {
-			this.action = action;
+		public void setConversationId(String conversationId) {
+			this.conversationId = conversationId;
 		}
 
 		public String getActionParams() {
@@ -101,20 +101,20 @@ public class ListConversationDetailsResponse extends AcsResponse {
 			this.actionParams = actionParams;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
 		public String getSequenceId() {
 			return this.sequenceId;
 		}
 
 		public void setSequenceId(String sequenceId) {
 			this.sequenceId = sequenceId;
+		}
+
+		public String getUtterance() {
+			return this.utterance;
+		}
+
+		public void setUtterance(String utterance) {
+			this.utterance = utterance;
 		}
 	}
 

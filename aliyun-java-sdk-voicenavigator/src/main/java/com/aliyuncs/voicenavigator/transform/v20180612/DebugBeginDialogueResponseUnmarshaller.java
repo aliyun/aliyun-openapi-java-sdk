@@ -24,8 +24,8 @@ public class DebugBeginDialogueResponseUnmarshaller {
 		
 		debugBeginDialogueResponse.setRequestId(_ctx.stringValue("DebugBeginDialogueResponse.RequestId"));
 		debugBeginDialogueResponse.setAction(_ctx.stringValue("DebugBeginDialogueResponse.Action"));
-		debugBeginDialogueResponse.setActionParams(_ctx.stringValue("DebugBeginDialogueResponse.ActionParams"));
 		debugBeginDialogueResponse.setInterruptible(_ctx.booleanValue("DebugBeginDialogueResponse.Interruptible"));
+		debugBeginDialogueResponse.setActionParams(_ctx.stringValue("DebugBeginDialogueResponse.ActionParams"));
 		debugBeginDialogueResponse.setTextResponse(_ctx.stringValue("DebugBeginDialogueResponse.TextResponse"));
 	 
 	 	return debugBeginDialogueResponse;

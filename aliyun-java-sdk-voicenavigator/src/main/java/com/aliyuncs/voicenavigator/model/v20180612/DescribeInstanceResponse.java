@@ -25,25 +25,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceResponse extends AcsResponse {
 
+	private String status;
+
+	private Long modifyTime;
+
+	private String description;
+
 	private String requestId;
 
 	private String instanceId;
 
-	private String name;
-
-	private String description;
-
-	private String status;
-
 	private Long concurrency;
-
-	private Long modifyTime;
 
 	private String modifyUserName;
 
 	private String nluServiceType;
 
+	private String name;
+
 	private List<String> applicableOperations;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Long getModifyTime() {
+		return this.modifyTime;
+	}
+
+	public void setModifyTime(Long modifyTime) {
+		this.modifyTime = modifyTime;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,44 +85,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public Long getConcurrency() {
 		return this.concurrency;
 	}
 
 	public void setConcurrency(Long concurrency) {
 		this.concurrency = concurrency;
-	}
-
-	public Long getModifyTime() {
-		return this.modifyTime;
-	}
-
-	public void setModifyTime(Long modifyTime) {
-		this.modifyTime = modifyTime;
 	}
 
 	public String getModifyUserName() {
@@ -115,6 +107,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setNluServiceType(String nluServiceType) {
 		this.nluServiceType = nluServiceType;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<String> getApplicableOperations() {

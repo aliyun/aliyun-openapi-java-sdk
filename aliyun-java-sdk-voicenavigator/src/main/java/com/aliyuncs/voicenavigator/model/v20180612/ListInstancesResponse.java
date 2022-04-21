@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Instance> instances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Instance> getInstances() {
@@ -77,23 +77,55 @@ public class ListInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
+		private String status;
 
-		private String name;
+		private String nluServiceType;
+
+		private String modifyUserName;
 
 		private String description;
 
-		private String status;
+		private String instanceId;
+
+		private String name;
 
 		private Long concurrency;
 
 		private Long modifyTime;
 
-		private String modifyUserName;
-
-		private String nluServiceType;
-
 		private List<String> applicableOperations;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getNluServiceType() {
+			return this.nluServiceType;
+		}
+
+		public void setNluServiceType(String nluServiceType) {
+			this.nluServiceType = nluServiceType;
+		}
+
+		public String getModifyUserName() {
+			return this.modifyUserName;
+		}
+
+		public void setModifyUserName(String modifyUserName) {
+			this.modifyUserName = modifyUserName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -111,22 +143,6 @@ public class ListInstancesResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public Long getConcurrency() {
 			return this.concurrency;
 		}
@@ -141,22 +157,6 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setModifyTime(Long modifyTime) {
 			this.modifyTime = modifyTime;
-		}
-
-		public String getModifyUserName() {
-			return this.modifyUserName;
-		}
-
-		public void setModifyUserName(String modifyUserName) {
-			this.modifyUserName = modifyUserName;
-		}
-
-		public String getNluServiceType() {
-			return this.nluServiceType;
-		}
-
-		public void setNluServiceType(String nluServiceType) {
-			this.nluServiceType = nluServiceType;
 		}
 
 		public List<String> getApplicableOperations() {

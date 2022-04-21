@@ -27,17 +27,17 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private GreetingConfig greetingConfig;
-
-	private UnrecognizingConfig unrecognizingConfig;
-
 	private RepeatingConfig repeatingConfig;
 
 	private AskingBackConfig askingBackConfig;
 
-	private ComplainingConfig complainingConfig;
-
 	private SilenceTimeoutConfig silenceTimeoutConfig;
+
+	private GreetingConfig greetingConfig;
+
+	private UnrecognizingConfig unrecognizingConfig;
+
+	private ComplainingConfig complainingConfig;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,22 +45,6 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public GreetingConfig getGreetingConfig() {
-		return this.greetingConfig;
-	}
-
-	public void setGreetingConfig(GreetingConfig greetingConfig) {
-		this.greetingConfig = greetingConfig;
-	}
-
-	public UnrecognizingConfig getUnrecognizingConfig() {
-		return this.unrecognizingConfig;
-	}
-
-	public void setUnrecognizingConfig(UnrecognizingConfig unrecognizingConfig) {
-		this.unrecognizingConfig = unrecognizingConfig;
 	}
 
 	public RepeatingConfig getRepeatingConfig() {
@@ -79,14 +63,6 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 		this.askingBackConfig = askingBackConfig;
 	}
 
-	public ComplainingConfig getComplainingConfig() {
-		return this.complainingConfig;
-	}
-
-	public void setComplainingConfig(ComplainingConfig complainingConfig) {
-		this.complainingConfig = complainingConfig;
-	}
-
 	public SilenceTimeoutConfig getSilenceTimeoutConfig() {
 		return this.silenceTimeoutConfig;
 	}
@@ -95,90 +71,28 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 		this.silenceTimeoutConfig = silenceTimeoutConfig;
 	}
 
-	public static class GreetingConfig {
-
-		private String greetingWords;
-
-		private String sourceType;
-
-		private String intentTrigger;
-
-		public String getGreetingWords() {
-			return this.greetingWords;
-		}
-
-		public void setGreetingWords(String greetingWords) {
-			this.greetingWords = greetingWords;
-		}
-
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public String getIntentTrigger() {
-			return this.intentTrigger;
-		}
-
-		public void setIntentTrigger(String intentTrigger) {
-			this.intentTrigger = intentTrigger;
-		}
+	public GreetingConfig getGreetingConfig() {
+		return this.greetingConfig;
 	}
 
-	public static class UnrecognizingConfig {
+	public void setGreetingConfig(GreetingConfig greetingConfig) {
+		this.greetingConfig = greetingConfig;
+	}
 
-		private String prompt;
+	public UnrecognizingConfig getUnrecognizingConfig() {
+		return this.unrecognizingConfig;
+	}
 
-		private Integer threshold;
+	public void setUnrecognizingConfig(UnrecognizingConfig unrecognizingConfig) {
+		this.unrecognizingConfig = unrecognizingConfig;
+	}
 
-		private String finalPrompt;
+	public ComplainingConfig getComplainingConfig() {
+		return this.complainingConfig;
+	}
 
-		private String finalAction;
-
-		private String finalActionParams;
-
-		public String getPrompt() {
-			return this.prompt;
-		}
-
-		public void setPrompt(String prompt) {
-			this.prompt = prompt;
-		}
-
-		public Integer getThreshold() {
-			return this.threshold;
-		}
-
-		public void setThreshold(Integer threshold) {
-			this.threshold = threshold;
-		}
-
-		public String getFinalPrompt() {
-			return this.finalPrompt;
-		}
-
-		public void setFinalPrompt(String finalPrompt) {
-			this.finalPrompt = finalPrompt;
-		}
-
-		public String getFinalAction() {
-			return this.finalAction;
-		}
-
-		public void setFinalAction(String finalAction) {
-			this.finalAction = finalAction;
-		}
-
-		public String getFinalActionParams() {
-			return this.finalActionParams;
-		}
-
-		public void setFinalActionParams(String finalActionParams) {
-			this.finalActionParams = finalActionParams;
-		}
+	public void setComplainingConfig(ComplainingConfig complainingConfig) {
+		this.complainingConfig = complainingConfig;
 	}
 
 	public static class RepeatingConfig {
@@ -196,43 +110,19 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 
 	public static class AskingBackConfig {
 
-		private Boolean enabled;
-
-		private String prompt;
-
-		private Boolean enableNegativeFeedback;
-
 		private String negativeFeedbackPrompt;
 
 		private String negativeFeedbackAction;
 
 		private String negativeFeedbackActionParams;
 
+		private Boolean enableNegativeFeedback;
+
+		private Boolean enabled;
+
+		private String prompt;
+
 		private List<String> negativeFeedbackUtterances;
-
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
-		public String getPrompt() {
-			return this.prompt;
-		}
-
-		public void setPrompt(String prompt) {
-			this.prompt = prompt;
-		}
-
-		public Boolean getEnableNegativeFeedback() {
-			return this.enableNegativeFeedback;
-		}
-
-		public void setEnableNegativeFeedback(Boolean enableNegativeFeedback) {
-			this.enableNegativeFeedback = enableNegativeFeedback;
-		}
 
 		public String getNegativeFeedbackPrompt() {
 			return this.negativeFeedbackPrompt;
@@ -258,6 +148,30 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 			this.negativeFeedbackActionParams = negativeFeedbackActionParams;
 		}
 
+		public Boolean getEnableNegativeFeedback() {
+			return this.enableNegativeFeedback;
+		}
+
+		public void setEnableNegativeFeedback(Boolean enableNegativeFeedback) {
+			this.enableNegativeFeedback = enableNegativeFeedback;
+		}
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
+		}
+
+		public String getPrompt() {
+			return this.prompt;
+		}
+
+		public void setPrompt(String prompt) {
+			this.prompt = prompt;
+		}
+
 		public List<String> getNegativeFeedbackUtterances() {
 			return this.negativeFeedbackUtterances;
 		}
@@ -267,22 +181,54 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 		}
 	}
 
-	public static class ComplainingConfig {
+	public static class SilenceTimeoutConfig {
 
-		private String prompt;
+		private Long timeout;
+
+		private String intentTrigger;
+
+		private String finalPrompt;
+
+		private String sourceType;
 
 		private String finalAction;
 
+		private String prompt;
+
+		private Integer threshold;
+
 		private String finalActionParams;
 
-		private List<String> utterances1;
-
-		public String getPrompt() {
-			return this.prompt;
+		public Long getTimeout() {
+			return this.timeout;
 		}
 
-		public void setPrompt(String prompt) {
-			this.prompt = prompt;
+		public void setTimeout(Long timeout) {
+			this.timeout = timeout;
+		}
+
+		public String getIntentTrigger() {
+			return this.intentTrigger;
+		}
+
+		public void setIntentTrigger(String intentTrigger) {
+			this.intentTrigger = intentTrigger;
+		}
+
+		public String getFinalPrompt() {
+			return this.finalPrompt;
+		}
+
+		public void setFinalPrompt(String finalPrompt) {
+			this.finalPrompt = finalPrompt;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
 		}
 
 		public String getFinalAction() {
@@ -293,55 +239,12 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 			this.finalAction = finalAction;
 		}
 
-		public String getFinalActionParams() {
-			return this.finalActionParams;
-		}
-
-		public void setFinalActionParams(String finalActionParams) {
-			this.finalActionParams = finalActionParams;
-		}
-
-		public List<String> getUtterances1() {
-			return this.utterances1;
-		}
-
-		public void setUtterances1(List<String> utterances1) {
-			this.utterances1 = utterances1;
-		}
-	}
-
-	public static class SilenceTimeoutConfig {
-
-		private String prompt;
-
-		private Long timeout;
-
-		private Integer threshold;
-
-		private String finalPrompt;
-
-		private String finalAction;
-
-		private String finalActionParams;
-
-		private String sourceType;
-
-		private String intentTrigger;
-
 		public String getPrompt() {
 			return this.prompt;
 		}
 
 		public void setPrompt(String prompt) {
 			this.prompt = prompt;
-		}
-
-		public Long getTimeout() {
-			return this.timeout;
-		}
-
-		public void setTimeout(Long timeout) {
-			this.timeout = timeout;
 		}
 
 		public Integer getThreshold() {
@@ -351,6 +254,60 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 		public void setThreshold(Integer threshold) {
 			this.threshold = threshold;
 		}
+
+		public String getFinalActionParams() {
+			return this.finalActionParams;
+		}
+
+		public void setFinalActionParams(String finalActionParams) {
+			this.finalActionParams = finalActionParams;
+		}
+	}
+
+	public static class GreetingConfig {
+
+		private String intentTrigger;
+
+		private String greetingWords;
+
+		private String sourceType;
+
+		public String getIntentTrigger() {
+			return this.intentTrigger;
+		}
+
+		public void setIntentTrigger(String intentTrigger) {
+			this.intentTrigger = intentTrigger;
+		}
+
+		public String getGreetingWords() {
+			return this.greetingWords;
+		}
+
+		public void setGreetingWords(String greetingWords) {
+			this.greetingWords = greetingWords;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+	}
+
+	public static class UnrecognizingConfig {
+
+		private String finalPrompt;
+
+		private String finalAction;
+
+		private String finalActionParams;
+
+		private Integer threshold;
+
+		private String prompt;
 
 		public String getFinalPrompt() {
 			return this.finalPrompt;
@@ -376,20 +333,63 @@ public class DescribeNavigationConfigResponse extends AcsResponse {
 			this.finalActionParams = finalActionParams;
 		}
 
-		public String getSourceType() {
-			return this.sourceType;
+		public Integer getThreshold() {
+			return this.threshold;
 		}
 
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
+		public void setThreshold(Integer threshold) {
+			this.threshold = threshold;
 		}
 
-		public String getIntentTrigger() {
-			return this.intentTrigger;
+		public String getPrompt() {
+			return this.prompt;
 		}
 
-		public void setIntentTrigger(String intentTrigger) {
-			this.intentTrigger = intentTrigger;
+		public void setPrompt(String prompt) {
+			this.prompt = prompt;
+		}
+	}
+
+	public static class ComplainingConfig {
+
+		private String finalAction;
+
+		private String prompt;
+
+		private String finalActionParams;
+
+		private List<String> utterances1;
+
+		public String getFinalAction() {
+			return this.finalAction;
+		}
+
+		public void setFinalAction(String finalAction) {
+			this.finalAction = finalAction;
+		}
+
+		public String getPrompt() {
+			return this.prompt;
+		}
+
+		public void setPrompt(String prompt) {
+			this.prompt = prompt;
+		}
+
+		public String getFinalActionParams() {
+			return this.finalActionParams;
+		}
+
+		public void setFinalActionParams(String finalActionParams) {
+			this.finalActionParams = finalActionParams;
+		}
+
+		public List<String> getUtterances1() {
+			return this.utterances1;
+		}
+
+		public void setUtterances1(List<String> utterances1) {
+			this.utterances1 = utterances1;
 		}
 	}
 

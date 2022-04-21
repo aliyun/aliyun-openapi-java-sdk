@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DebugCollectedNumberResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String textResponse;
+	private String action;
 
 	private Boolean interruptible;
 
-	private String action;
+	private String requestId;
 
 	private String actionParams;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String textResponse;
+
+	public String getAction() {
+		return this.action;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getTextResponse() {
-		return this.textResponse;
-	}
-
-	public void setTextResponse(String textResponse) {
-		this.textResponse = textResponse;
+	public void setAction(String action) {
+		this.action = action;
 	}
 
 	public Boolean getInterruptible() {
@@ -58,12 +50,12 @@ public class DebugCollectedNumberResponse extends AcsResponse {
 		this.interruptible = interruptible;
 	}
 
-	public String getAction() {
-		return this.action;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAction(String action) {
-		this.action = action;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getActionParams() {
@@ -72,6 +64,14 @@ public class DebugCollectedNumberResponse extends AcsResponse {
 
 	public void setActionParams(String actionParams) {
 		this.actionParams = actionParams;
+	}
+
+	public String getTextResponse() {
+		return this.textResponse;
+	}
+
+	public void setTextResponse(String textResponse) {
+		this.textResponse = textResponse;
 	}
 
 	@Override

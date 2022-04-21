@@ -28,20 +28,20 @@ public class QueryConversationsResponseUnmarshaller {
 		
 		queryConversationsResponse.setRequestId(_ctx.stringValue("QueryConversationsResponse.RequestId"));
 		queryConversationsResponse.setTotalCount(_ctx.longValue("QueryConversationsResponse.TotalCount"));
-		queryConversationsResponse.setPageNumber(_ctx.integerValue("QueryConversationsResponse.PageNumber"));
 		queryConversationsResponse.setPageSize(_ctx.integerValue("QueryConversationsResponse.PageSize"));
+		queryConversationsResponse.setPageNumber(_ctx.integerValue("QueryConversationsResponse.PageNumber"));
 
 		List<Conversation> conversations = new ArrayList<Conversation>();
 		for (int i = 0; i < _ctx.lengthValue("QueryConversationsResponse.Conversations.Length"); i++) {
 			Conversation conversation = new Conversation();
-			conversation.setCallingNumber(_ctx.stringValue("QueryConversationsResponse.Conversations["+ i +"].CallingNumber"));
-			conversation.setBeginTime(_ctx.longValue("QueryConversationsResponse.Conversations["+ i +"].BeginTime"));
 			conversation.setEndTime(_ctx.longValue("QueryConversationsResponse.Conversations["+ i +"].EndTime"));
-			conversation.setTransferredToAgent(_ctx.booleanValue("QueryConversationsResponse.Conversations["+ i +"].TransferredToAgent"));
-			conversation.setSkillGroupId(_ctx.stringValue("QueryConversationsResponse.Conversations["+ i +"].SkillGroupId"));
-			conversation.setUserUtteranceCount(_ctx.integerValue("QueryConversationsResponse.Conversations["+ i +"].UserUtteranceCount"));
 			conversation.setEffectiveAnswerCount(_ctx.integerValue("QueryConversationsResponse.Conversations["+ i +"].EffectiveAnswerCount"));
+			conversation.setTransferredToAgent(_ctx.booleanValue("QueryConversationsResponse.Conversations["+ i +"].TransferredToAgent"));
+			conversation.setBeginTime(_ctx.longValue("QueryConversationsResponse.Conversations["+ i +"].BeginTime"));
+			conversation.setSkillGroupId(_ctx.stringValue("QueryConversationsResponse.Conversations["+ i +"].SkillGroupId"));
 			conversation.setConversationId(_ctx.stringValue("QueryConversationsResponse.Conversations["+ i +"].ConversationId"));
+			conversation.setCallingNumber(_ctx.stringValue("QueryConversationsResponse.Conversations["+ i +"].CallingNumber"));
+			conversation.setUserUtteranceCount(_ctx.integerValue("QueryConversationsResponse.Conversations["+ i +"].UserUtteranceCount"));
 
 			conversations.add(conversation);
 		}

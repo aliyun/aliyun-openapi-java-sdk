@@ -28,20 +28,20 @@ public class ListInstancesResponseUnmarshaller {
 		
 		listInstancesResponse.setRequestId(_ctx.stringValue("ListInstancesResponse.RequestId"));
 		listInstancesResponse.setTotalCount(_ctx.integerValue("ListInstancesResponse.TotalCount"));
-		listInstancesResponse.setPageNumber(_ctx.integerValue("ListInstancesResponse.PageNumber"));
 		listInstancesResponse.setPageSize(_ctx.integerValue("ListInstancesResponse.PageSize"));
+		listInstancesResponse.setPageNumber(_ctx.integerValue("ListInstancesResponse.PageNumber"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
+			instance.setStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Status"));
+			instance.setNluServiceType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluServiceType"));
+			instance.setModifyUserName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ModifyUserName"));
+			instance.setDescription(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Description"));
 			instance.setInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceId"));
 			instance.setName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Name"));
-			instance.setDescription(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Description"));
-			instance.setStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Status"));
 			instance.setConcurrency(_ctx.longValue("ListInstancesResponse.Instances["+ i +"].Concurrency"));
 			instance.setModifyTime(_ctx.longValue("ListInstancesResponse.Instances["+ i +"].ModifyTime"));
-			instance.setModifyUserName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ModifyUserName"));
-			instance.setNluServiceType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluServiceType"));
 
 			List<String> applicableOperations = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.Instances["+ i +"].ApplicableOperations.Length"); j++) {

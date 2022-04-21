@@ -33,20 +33,6 @@ public class DescribeNavigationConfigResponseUnmarshaller {
 		
 		describeNavigationConfigResponse.setRequestId(_ctx.stringValue("DescribeNavigationConfigResponse.RequestId"));
 
-		GreetingConfig greetingConfig = new GreetingConfig();
-		greetingConfig.setGreetingWords(_ctx.stringValue("DescribeNavigationConfigResponse.GreetingConfig.GreetingWords"));
-		greetingConfig.setSourceType(_ctx.stringValue("DescribeNavigationConfigResponse.GreetingConfig.SourceType"));
-		greetingConfig.setIntentTrigger(_ctx.stringValue("DescribeNavigationConfigResponse.GreetingConfig.IntentTrigger"));
-		describeNavigationConfigResponse.setGreetingConfig(greetingConfig);
-
-		UnrecognizingConfig unrecognizingConfig = new UnrecognizingConfig();
-		unrecognizingConfig.setPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.UnrecognizingConfig.Prompt"));
-		unrecognizingConfig.setThreshold(_ctx.integerValue("DescribeNavigationConfigResponse.UnrecognizingConfig.Threshold"));
-		unrecognizingConfig.setFinalPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.UnrecognizingConfig.FinalPrompt"));
-		unrecognizingConfig.setFinalAction(_ctx.stringValue("DescribeNavigationConfigResponse.UnrecognizingConfig.FinalAction"));
-		unrecognizingConfig.setFinalActionParams(_ctx.stringValue("DescribeNavigationConfigResponse.UnrecognizingConfig.FinalActionParams"));
-		describeNavigationConfigResponse.setUnrecognizingConfig(unrecognizingConfig);
-
 		RepeatingConfig repeatingConfig = new RepeatingConfig();
 
 		List<String> utterances = new ArrayList<String>();
@@ -57,12 +43,12 @@ public class DescribeNavigationConfigResponseUnmarshaller {
 		describeNavigationConfigResponse.setRepeatingConfig(repeatingConfig);
 
 		AskingBackConfig askingBackConfig = new AskingBackConfig();
-		askingBackConfig.setEnabled(_ctx.booleanValue("DescribeNavigationConfigResponse.AskingBackConfig.Enabled"));
-		askingBackConfig.setPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.AskingBackConfig.Prompt"));
-		askingBackConfig.setEnableNegativeFeedback(_ctx.booleanValue("DescribeNavigationConfigResponse.AskingBackConfig.EnableNegativeFeedback"));
 		askingBackConfig.setNegativeFeedbackPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.AskingBackConfig.NegativeFeedbackPrompt"));
 		askingBackConfig.setNegativeFeedbackAction(_ctx.stringValue("DescribeNavigationConfigResponse.AskingBackConfig.NegativeFeedbackAction"));
 		askingBackConfig.setNegativeFeedbackActionParams(_ctx.stringValue("DescribeNavigationConfigResponse.AskingBackConfig.NegativeFeedbackActionParams"));
+		askingBackConfig.setEnableNegativeFeedback(_ctx.booleanValue("DescribeNavigationConfigResponse.AskingBackConfig.EnableNegativeFeedback"));
+		askingBackConfig.setEnabled(_ctx.booleanValue("DescribeNavigationConfigResponse.AskingBackConfig.Enabled"));
+		askingBackConfig.setPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.AskingBackConfig.Prompt"));
 
 		List<String> negativeFeedbackUtterances = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNavigationConfigResponse.AskingBackConfig.NegativeFeedbackUtterances.Length"); i++) {
@@ -71,9 +57,34 @@ public class DescribeNavigationConfigResponseUnmarshaller {
 		askingBackConfig.setNegativeFeedbackUtterances(negativeFeedbackUtterances);
 		describeNavigationConfigResponse.setAskingBackConfig(askingBackConfig);
 
+		SilenceTimeoutConfig silenceTimeoutConfig = new SilenceTimeoutConfig();
+		silenceTimeoutConfig.setTimeout(_ctx.longValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.Timeout"));
+		silenceTimeoutConfig.setIntentTrigger(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.IntentTrigger"));
+		silenceTimeoutConfig.setFinalPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.FinalPrompt"));
+		silenceTimeoutConfig.setSourceType(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.SourceType"));
+		silenceTimeoutConfig.setFinalAction(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.FinalAction"));
+		silenceTimeoutConfig.setPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.Prompt"));
+		silenceTimeoutConfig.setThreshold(_ctx.integerValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.Threshold"));
+		silenceTimeoutConfig.setFinalActionParams(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.FinalActionParams"));
+		describeNavigationConfigResponse.setSilenceTimeoutConfig(silenceTimeoutConfig);
+
+		GreetingConfig greetingConfig = new GreetingConfig();
+		greetingConfig.setIntentTrigger(_ctx.stringValue("DescribeNavigationConfigResponse.GreetingConfig.IntentTrigger"));
+		greetingConfig.setGreetingWords(_ctx.stringValue("DescribeNavigationConfigResponse.GreetingConfig.GreetingWords"));
+		greetingConfig.setSourceType(_ctx.stringValue("DescribeNavigationConfigResponse.GreetingConfig.SourceType"));
+		describeNavigationConfigResponse.setGreetingConfig(greetingConfig);
+
+		UnrecognizingConfig unrecognizingConfig = new UnrecognizingConfig();
+		unrecognizingConfig.setFinalPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.UnrecognizingConfig.FinalPrompt"));
+		unrecognizingConfig.setFinalAction(_ctx.stringValue("DescribeNavigationConfigResponse.UnrecognizingConfig.FinalAction"));
+		unrecognizingConfig.setFinalActionParams(_ctx.stringValue("DescribeNavigationConfigResponse.UnrecognizingConfig.FinalActionParams"));
+		unrecognizingConfig.setThreshold(_ctx.integerValue("DescribeNavigationConfigResponse.UnrecognizingConfig.Threshold"));
+		unrecognizingConfig.setPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.UnrecognizingConfig.Prompt"));
+		describeNavigationConfigResponse.setUnrecognizingConfig(unrecognizingConfig);
+
 		ComplainingConfig complainingConfig = new ComplainingConfig();
-		complainingConfig.setPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.ComplainingConfig.Prompt"));
 		complainingConfig.setFinalAction(_ctx.stringValue("DescribeNavigationConfigResponse.ComplainingConfig.FinalAction"));
+		complainingConfig.setPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.ComplainingConfig.Prompt"));
 		complainingConfig.setFinalActionParams(_ctx.stringValue("DescribeNavigationConfigResponse.ComplainingConfig.FinalActionParams"));
 
 		List<String> utterances1 = new ArrayList<String>();
@@ -82,17 +93,6 @@ public class DescribeNavigationConfigResponseUnmarshaller {
 		}
 		complainingConfig.setUtterances1(utterances1);
 		describeNavigationConfigResponse.setComplainingConfig(complainingConfig);
-
-		SilenceTimeoutConfig silenceTimeoutConfig = new SilenceTimeoutConfig();
-		silenceTimeoutConfig.setPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.Prompt"));
-		silenceTimeoutConfig.setTimeout(_ctx.longValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.Timeout"));
-		silenceTimeoutConfig.setThreshold(_ctx.integerValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.Threshold"));
-		silenceTimeoutConfig.setFinalPrompt(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.FinalPrompt"));
-		silenceTimeoutConfig.setFinalAction(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.FinalAction"));
-		silenceTimeoutConfig.setFinalActionParams(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.FinalActionParams"));
-		silenceTimeoutConfig.setSourceType(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.SourceType"));
-		silenceTimeoutConfig.setIntentTrigger(_ctx.stringValue("DescribeNavigationConfigResponse.SilenceTimeoutConfig.IntentTrigger"));
-		describeNavigationConfigResponse.setSilenceTimeoutConfig(silenceTimeoutConfig);
 	 
 	 	return describeNavigationConfigResponse;
 	}

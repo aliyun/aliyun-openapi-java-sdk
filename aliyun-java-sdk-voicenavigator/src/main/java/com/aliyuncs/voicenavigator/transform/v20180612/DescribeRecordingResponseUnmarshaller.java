@@ -23,8 +23,8 @@ public class DescribeRecordingResponseUnmarshaller {
 	public static DescribeRecordingResponse unmarshall(DescribeRecordingResponse describeRecordingResponse, UnmarshallerContext _ctx) {
 		
 		describeRecordingResponse.setRequestId(_ctx.stringValue("DescribeRecordingResponse.RequestId"));
-		describeRecordingResponse.setFileName(_ctx.stringValue("DescribeRecordingResponse.FileName"));
 		describeRecordingResponse.setFilePath(_ctx.stringValue("DescribeRecordingResponse.FilePath"));
+		describeRecordingResponse.setFileName(_ctx.stringValue("DescribeRecordingResponse.FileName"));
 	 
 	 	return describeRecordingResponse;
 	}

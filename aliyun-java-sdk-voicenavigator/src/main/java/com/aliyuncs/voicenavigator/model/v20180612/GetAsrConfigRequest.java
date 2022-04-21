@@ -22,14 +22,14 @@ import com.aliyuncs.voicenavigator.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateNewBargeInSwitchRequest extends RpcAcsRequest<UpdateNewBargeInSwitchResponse> {
+public class GetAsrConfigRequest extends RpcAcsRequest<GetAsrConfigResponse> {
 	   
 
-	private String instanceId;
+	private String entryId;
 
-	private Boolean enable;
-	public UpdateNewBargeInSwitchRequest() {
-		super("VoiceNavigator", "2018-06-12", "UpdateNewBargeInSwitch", "voicebot");
+	private Integer configLevel;
+	public GetAsrConfigRequest() {
+		super("VoiceNavigator", "2018-06-12", "GetAsrConfig", "voicebot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class UpdateNewBargeInSwitchRequest extends RpcAcsRequest<UpdateNewBargeI
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getEntryId() {
+		return this.entryId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setEntryId(String entryId) {
+		this.entryId = entryId;
+		if(entryId != null){
+			putQueryParameter("EntryId", entryId);
 		}
 	}
 
-	public Boolean getEnable() {
-		return this.enable;
+	public Integer getConfigLevel() {
+		return this.configLevel;
 	}
 
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable.toString());
+	public void setConfigLevel(Integer configLevel) {
+		this.configLevel = configLevel;
+		if(configLevel != null){
+			putQueryParameter("ConfigLevel", configLevel.toString());
 		}
 	}
 
 	@Override
-	public Class<UpdateNewBargeInSwitchResponse> getResponseClass() {
-		return UpdateNewBargeInSwitchResponse.class;
+	public Class<GetAsrConfigResponse> getResponseClass() {
+		return GetAsrConfigResponse.class;
 	}
 
 }

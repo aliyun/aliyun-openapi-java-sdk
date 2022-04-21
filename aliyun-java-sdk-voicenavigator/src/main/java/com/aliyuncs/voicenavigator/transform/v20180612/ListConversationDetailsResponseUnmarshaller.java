@@ -31,13 +31,13 @@ public class ListConversationDetailsResponseUnmarshaller {
 		List<ConversationDetail> conversationDetails = new ArrayList<ConversationDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListConversationDetailsResponse.ConversationDetails.Length"); i++) {
 			ConversationDetail conversationDetail = new ConversationDetail();
-			conversationDetail.setConversationId(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].ConversationId"));
-			conversationDetail.setSpeaker(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].Speaker"));
-			conversationDetail.setUtterance(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].Utterance"));
 			conversationDetail.setAction(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].Action"));
-			conversationDetail.setActionParams(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].ActionParams"));
+			conversationDetail.setSpeaker(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].Speaker"));
 			conversationDetail.setCreateTime(_ctx.longValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].CreateTime"));
+			conversationDetail.setConversationId(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].ConversationId"));
+			conversationDetail.setActionParams(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].ActionParams"));
 			conversationDetail.setSequenceId(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].SequenceId"));
+			conversationDetail.setUtterance(_ctx.stringValue("ListConversationDetailsResponse.ConversationDetails["+ i +"].Utterance"));
 
 			conversationDetails.add(conversationDetail);
 		}

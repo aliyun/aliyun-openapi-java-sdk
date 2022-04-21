@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExportProgressResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
+	private String requestId;
+
 	private String fileHttpUrl;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -44,6 +36,14 @@ public class DescribeExportProgressResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getFileHttpUrl() {

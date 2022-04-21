@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRecordingResponse extends AcsResponse {
 
+	private String filePath;
+
 	private String requestId;
 
 	private String fileName;
 
-	private String filePath;
+	public String getFilePath() {
+		return this.filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeRecordingResponse extends AcsResponse {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
-	}
-
-	public String getFilePath() {
-		return this.filePath;
-	}
-
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
 	}
 
 	@Override

@@ -15,18 +15,18 @@
 package com.aliyuncs.voicenavigator.model.v20180612;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.voicenavigator.transform.v20180612.GetNewBargeInSwitchResponseUnmarshaller;
+import com.aliyuncs.voicenavigator.transform.v20180612.ModifyAsrConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetNewBargeInSwitchResponse extends AcsResponse {
-
-	private String requestId;
+public class ModifyAsrConfigResponse extends AcsResponse {
 
 	private Boolean success;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
@@ -36,20 +36,20 @@ public class GetNewBargeInSwitchResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -86,20 +86,20 @@ public class GetNewBargeInSwitchResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean enable;
+		private Integer affectedRows;
 
-		public Boolean getEnable() {
-			return this.enable;
+		public Integer getAffectedRows() {
+			return this.affectedRows;
 		}
 
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setAffectedRows(Integer affectedRows) {
+			this.affectedRows = affectedRows;
 		}
 	}
 
 	@Override
-	public GetNewBargeInSwitchResponse getInstance(UnmarshallerContext context) {
-		return	GetNewBargeInSwitchResponseUnmarshaller.unmarshall(this, context);
+	public ModifyAsrConfigResponse getInstance(UnmarshallerContext context) {
+		return	ModifyAsrConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

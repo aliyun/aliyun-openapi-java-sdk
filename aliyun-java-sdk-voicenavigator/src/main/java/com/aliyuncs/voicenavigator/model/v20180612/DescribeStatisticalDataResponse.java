@@ -25,21 +25,53 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStatisticalDataResponse extends AcsResponse {
 
+	private String totalDialoguePassRate;
+
+	private String totalKnowledgeHitRate;
+
+	private String totalResolutionRate;
+
+	private String totalValidAnswerRate;
+
 	private String requestId;
 
 	private Long resolvedQuestionTotalNum;
 
 	private Long conversationTotalNum;
 
-	private String totalResolutionRate;
-
-	private String totalValidAnswerRate;
-
-	private String totalDialoguePassRate;
-
-	private String totalKnowledgeHitRate;
-
 	private List<StatisticalDataReport> statisticalDataReports;
+
+	public String getTotalDialoguePassRate() {
+		return this.totalDialoguePassRate;
+	}
+
+	public void setTotalDialoguePassRate(String totalDialoguePassRate) {
+		this.totalDialoguePassRate = totalDialoguePassRate;
+	}
+
+	public String getTotalKnowledgeHitRate() {
+		return this.totalKnowledgeHitRate;
+	}
+
+	public void setTotalKnowledgeHitRate(String totalKnowledgeHitRate) {
+		this.totalKnowledgeHitRate = totalKnowledgeHitRate;
+	}
+
+	public String getTotalResolutionRate() {
+		return this.totalResolutionRate;
+	}
+
+	public void setTotalResolutionRate(String totalResolutionRate) {
+		this.totalResolutionRate = totalResolutionRate;
+	}
+
+	public String getTotalValidAnswerRate() {
+		return this.totalValidAnswerRate;
+	}
+
+	public void setTotalValidAnswerRate(String totalValidAnswerRate) {
+		this.totalValidAnswerRate = totalValidAnswerRate;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,38 +97,6 @@ public class DescribeStatisticalDataResponse extends AcsResponse {
 		this.conversationTotalNum = conversationTotalNum;
 	}
 
-	public String getTotalResolutionRate() {
-		return this.totalResolutionRate;
-	}
-
-	public void setTotalResolutionRate(String totalResolutionRate) {
-		this.totalResolutionRate = totalResolutionRate;
-	}
-
-	public String getTotalValidAnswerRate() {
-		return this.totalValidAnswerRate;
-	}
-
-	public void setTotalValidAnswerRate(String totalValidAnswerRate) {
-		this.totalValidAnswerRate = totalValidAnswerRate;
-	}
-
-	public String getTotalDialoguePassRate() {
-		return this.totalDialoguePassRate;
-	}
-
-	public void setTotalDialoguePassRate(String totalDialoguePassRate) {
-		this.totalDialoguePassRate = totalDialoguePassRate;
-	}
-
-	public String getTotalKnowledgeHitRate() {
-		return this.totalKnowledgeHitRate;
-	}
-
-	public void setTotalKnowledgeHitRate(String totalKnowledgeHitRate) {
-		this.totalKnowledgeHitRate = totalKnowledgeHitRate;
-	}
-
 	public List<StatisticalDataReport> getStatisticalDataReports() {
 		return this.statisticalDataReports;
 	}
@@ -107,26 +107,26 @@ public class DescribeStatisticalDataResponse extends AcsResponse {
 
 	public static class StatisticalDataReport {
 
-		private String statisticalDate;
+		private String knowledgeHitRate;
 
 		private Integer resolvedQuestionNum;
 
-		private Integer totalConversationNum;
-
 		private String resolutionRate;
+
+		private String statisticalDate;
+
+		private Integer totalConversationNum;
 
 		private String validAnswerRate;
 
 		private String dialoguePassRate;
 
-		private String knowledgeHitRate;
-
-		public String getStatisticalDate() {
-			return this.statisticalDate;
+		public String getKnowledgeHitRate() {
+			return this.knowledgeHitRate;
 		}
 
-		public void setStatisticalDate(String statisticalDate) {
-			this.statisticalDate = statisticalDate;
+		public void setKnowledgeHitRate(String knowledgeHitRate) {
+			this.knowledgeHitRate = knowledgeHitRate;
 		}
 
 		public Integer getResolvedQuestionNum() {
@@ -137,20 +137,28 @@ public class DescribeStatisticalDataResponse extends AcsResponse {
 			this.resolvedQuestionNum = resolvedQuestionNum;
 		}
 
-		public Integer getTotalConversationNum() {
-			return this.totalConversationNum;
-		}
-
-		public void setTotalConversationNum(Integer totalConversationNum) {
-			this.totalConversationNum = totalConversationNum;
-		}
-
 		public String getResolutionRate() {
 			return this.resolutionRate;
 		}
 
 		public void setResolutionRate(String resolutionRate) {
 			this.resolutionRate = resolutionRate;
+		}
+
+		public String getStatisticalDate() {
+			return this.statisticalDate;
+		}
+
+		public void setStatisticalDate(String statisticalDate) {
+			this.statisticalDate = statisticalDate;
+		}
+
+		public Integer getTotalConversationNum() {
+			return this.totalConversationNum;
+		}
+
+		public void setTotalConversationNum(Integer totalConversationNum) {
+			this.totalConversationNum = totalConversationNum;
 		}
 
 		public String getValidAnswerRate() {
@@ -167,14 +175,6 @@ public class DescribeStatisticalDataResponse extends AcsResponse {
 
 		public void setDialoguePassRate(String dialoguePassRate) {
 			this.dialoguePassRate = dialoguePassRate;
-		}
-
-		public String getKnowledgeHitRate() {
-			return this.knowledgeHitRate;
-		}
-
-		public void setKnowledgeHitRate(String knowledgeHitRate) {
-			this.knowledgeHitRate = knowledgeHitRate;
 		}
 	}
 

@@ -24,79 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeConversationResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String callingNumber;
-
-	private Long beginTime;
-
-	private Long endTime;
-
-	private Boolean transferredToAgent;
-
-	private String skillGroupId;
-
-	private Integer userUtteranceCount;
-
 	private Integer effectiveAnswerCount;
 
 	private String conversationId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Boolean transferredToAgent;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Long endTime;
 
-	public String getCallingNumber() {
-		return this.callingNumber;
-	}
+	private String requestId;
 
-	public void setCallingNumber(String callingNumber) {
-		this.callingNumber = callingNumber;
-	}
+	private Long beginTime;
 
-	public Long getBeginTime() {
-		return this.beginTime;
-	}
+	private String skillGroupId;
 
-	public void setBeginTime(Long beginTime) {
-		this.beginTime = beginTime;
-	}
+	private String callingNumber;
 
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-	}
-
-	public Boolean getTransferredToAgent() {
-		return this.transferredToAgent;
-	}
-
-	public void setTransferredToAgent(Boolean transferredToAgent) {
-		this.transferredToAgent = transferredToAgent;
-	}
-
-	public String getSkillGroupId() {
-		return this.skillGroupId;
-	}
-
-	public void setSkillGroupId(String skillGroupId) {
-		this.skillGroupId = skillGroupId;
-	}
-
-	public Integer getUserUtteranceCount() {
-		return this.userUtteranceCount;
-	}
-
-	public void setUserUtteranceCount(Integer userUtteranceCount) {
-		this.userUtteranceCount = userUtteranceCount;
-	}
+	private Integer userUtteranceCount;
 
 	public Integer getEffectiveAnswerCount() {
 		return this.effectiveAnswerCount;
@@ -112,6 +56,62 @@ public class DescribeConversationResponse extends AcsResponse {
 
 	public void setConversationId(String conversationId) {
 		this.conversationId = conversationId;
+	}
+
+	public Boolean getTransferredToAgent() {
+		return this.transferredToAgent;
+	}
+
+	public void setTransferredToAgent(Boolean transferredToAgent) {
+		this.transferredToAgent = transferredToAgent;
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Long beginTime) {
+		this.beginTime = beginTime;
+	}
+
+	public String getSkillGroupId() {
+		return this.skillGroupId;
+	}
+
+	public void setSkillGroupId(String skillGroupId) {
+		this.skillGroupId = skillGroupId;
+	}
+
+	public String getCallingNumber() {
+		return this.callingNumber;
+	}
+
+	public void setCallingNumber(String callingNumber) {
+		this.callingNumber = callingNumber;
+	}
+
+	public Integer getUserUtteranceCount() {
+		return this.userUtteranceCount;
+	}
+
+	public void setUserUtteranceCount(Integer userUtteranceCount) {
+		this.userUtteranceCount = userUtteranceCount;
 	}
 
 	@Override

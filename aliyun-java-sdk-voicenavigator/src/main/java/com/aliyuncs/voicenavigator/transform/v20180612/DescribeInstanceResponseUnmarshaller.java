@@ -26,14 +26,14 @@ public class DescribeInstanceResponseUnmarshaller {
 	public static DescribeInstanceResponse unmarshall(DescribeInstanceResponse describeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceResponse.setRequestId(_ctx.stringValue("DescribeInstanceResponse.RequestId"));
-		describeInstanceResponse.setInstanceId(_ctx.stringValue("DescribeInstanceResponse.InstanceId"));
-		describeInstanceResponse.setName(_ctx.stringValue("DescribeInstanceResponse.Name"));
-		describeInstanceResponse.setDescription(_ctx.stringValue("DescribeInstanceResponse.Description"));
 		describeInstanceResponse.setStatus(_ctx.stringValue("DescribeInstanceResponse.Status"));
-		describeInstanceResponse.setConcurrency(_ctx.longValue("DescribeInstanceResponse.Concurrency"));
 		describeInstanceResponse.setModifyTime(_ctx.longValue("DescribeInstanceResponse.ModifyTime"));
+		describeInstanceResponse.setDescription(_ctx.stringValue("DescribeInstanceResponse.Description"));
+		describeInstanceResponse.setInstanceId(_ctx.stringValue("DescribeInstanceResponse.InstanceId"));
+		describeInstanceResponse.setConcurrency(_ctx.longValue("DescribeInstanceResponse.Concurrency"));
 		describeInstanceResponse.setModifyUserName(_ctx.stringValue("DescribeInstanceResponse.ModifyUserName"));
 		describeInstanceResponse.setNluServiceType(_ctx.stringValue("DescribeInstanceResponse.NluServiceType"));
+		describeInstanceResponse.setName(_ctx.stringValue("DescribeInstanceResponse.Name"));
 
 		List<String> applicableOperations = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.ApplicableOperations.Length"); i++) {

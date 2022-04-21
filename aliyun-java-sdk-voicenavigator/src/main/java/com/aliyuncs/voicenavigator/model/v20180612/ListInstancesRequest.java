@@ -27,6 +27,8 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private Integer pageNumber;
 
+	private String nluServiceTypeListJsonString;
+
 	private Integer pageSize;
 	public ListInstancesRequest() {
 		super("VoiceNavigator", "2018-06-12", "ListInstances", "voicebot");
@@ -45,6 +47,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNluServiceTypeListJsonString() {
+		return this.nluServiceTypeListJsonString;
+	}
+
+	public void setNluServiceTypeListJsonString(String nluServiceTypeListJsonString) {
+		this.nluServiceTypeListJsonString = nluServiceTypeListJsonString;
+		if(nluServiceTypeListJsonString != null){
+			putQueryParameter("NluServiceTypeListJsonString", nluServiceTypeListJsonString);
 		}
 	}
 

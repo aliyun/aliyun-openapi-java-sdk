@@ -26,11 +26,11 @@ public class DebugBeginDialogueResponse extends AcsResponse {
 
 	private String action;
 
-	private String actionParams;
-
 	private Boolean interruptible;
 
 	private String requestId;
+
+	private String actionParams;
 
 	private String textResponse;
 
@@ -40,14 +40,6 @@ public class DebugBeginDialogueResponse extends AcsResponse {
 
 	public void setAction(String action) {
 		this.action = action;
-	}
-
-	public String getActionParams() {
-		return this.actionParams;
-	}
-
-	public void setActionParams(String actionParams) {
-		this.actionParams = actionParams;
 	}
 
 	public Boolean getInterruptible() {
@@ -64,6 +56,14 @@ public class DebugBeginDialogueResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getActionParams() {
+		return this.actionParams;
+	}
+
+	public void setActionParams(String actionParams) {
+		this.actionParams = actionParams;
 	}
 
 	public String getTextResponse() {
