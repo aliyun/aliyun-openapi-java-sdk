@@ -28,7 +28,7 @@ public class DeleteMonitorGroupDynamicRuleRequest extends RpcAcsRequest<DeleteMo
 
 	private String category;
 	public DeleteMonitorGroupDynamicRuleRequest() {
-		super("Cms", "2019-01-01", "DeleteMonitorGroupDynamicRule", "Cms");
+		super("Cms", "2019-01-01", "DeleteMonitorGroupDynamicRule", "cms");
 		setMethod(MethodType.POST);
 	}
 

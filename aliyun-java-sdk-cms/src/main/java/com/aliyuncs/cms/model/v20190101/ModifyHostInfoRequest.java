@@ -28,7 +28,7 @@ public class ModifyHostInfoRequest extends RpcAcsRequest<ModifyHostInfoResponse>
 
 	private String instanceId;
 	public ModifyHostInfoRequest() {
-		super("Cms", "2019-01-01", "ModifyHostInfo", "Cms");
+		super("Cms", "2019-01-01", "ModifyHostInfo", "cms");
 		setMethod(MethodType.POST);
 	}
 

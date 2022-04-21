@@ -41,7 +41,7 @@ public class CreateDynamicTagGroupRequest extends RpcAcsRequest<CreateDynamicTag
 
 	private String tagRegionId;
 	public CreateDynamicTagGroupRequest() {
-		super("Cms", "2019-01-01", "CreateDynamicTagGroup", "Cms");
+		super("Cms", "2019-01-01", "CreateDynamicTagGroup", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -29,7 +29,7 @@ public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 
 	private List<Tag> tags;
 	public AddTagsRequest() {
-		super("Cms", "2019-01-01", "AddTags", "Cms");
+		super("Cms", "2019-01-01", "AddTags", "cms");
 		setMethod(MethodType.POST);
 	}
 

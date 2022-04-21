@@ -36,7 +36,7 @@ public class CreateCmsSmspackageOrderRequest extends RpcAcsRequest<CreateCmsSmsp
 
 	private String periodUnit;
 	public CreateCmsSmspackageOrderRequest() {
-		super("Cms", "2019-01-01", "CreateCmsSmspackageOrder", "Cms");
+		super("Cms", "2019-01-01", "CreateCmsSmspackageOrder", "cms");
 		setMethod(MethodType.POST);
 	}
 

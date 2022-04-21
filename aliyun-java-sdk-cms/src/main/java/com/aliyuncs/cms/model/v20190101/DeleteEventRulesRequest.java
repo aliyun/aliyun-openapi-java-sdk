@@ -27,7 +27,7 @@ public class DeleteEventRulesRequest extends RpcAcsRequest<DeleteEventRulesRespo
 
 	private List<String> ruleNamess;
 	public DeleteEventRulesRequest() {
-		super("Cms", "2019-01-01", "DeleteEventRules", "Cms");
+		super("Cms", "2019-01-01", "DeleteEventRules", "cms");
 		setMethod(MethodType.POST);
 	}
 

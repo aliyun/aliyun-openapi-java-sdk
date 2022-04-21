@@ -54,7 +54,7 @@ public class DescribeAlertLogHistogramRequest extends RpcAcsRequest<DescribeAler
 
 	private String namespace;
 	public DescribeAlertLogHistogramRequest() {
-		super("Cms", "2019-01-01", "DescribeAlertLogHistogram", "Cms");
+		super("Cms", "2019-01-01", "DescribeAlertLogHistogram", "cms");
 		setMethod(MethodType.POST);
 	}
 

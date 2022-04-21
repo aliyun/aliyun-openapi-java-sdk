@@ -27,7 +27,7 @@ public class DisableEventRulesRequest extends RpcAcsRequest<DisableEventRulesRes
 
 	private List<String> ruleNamess;
 	public DisableEventRulesRequest() {
-		super("Cms", "2019-01-01", "DisableEventRules", "Cms");
+		super("Cms", "2019-01-01", "DisableEventRules", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class DescribeMetricRuleCountRequest extends RpcAcsRequest<DescribeMetric
 
 	private String metricName;
 	public DescribeMetricRuleCountRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleCount", "Cms");
+		super("Cms", "2019-01-01", "DescribeMetricRuleCount", "cms");
 		setMethod(MethodType.GET);
 	}
 

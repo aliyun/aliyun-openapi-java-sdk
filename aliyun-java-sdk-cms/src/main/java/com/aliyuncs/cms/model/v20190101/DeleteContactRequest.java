@@ -26,7 +26,7 @@ public class DeleteContactRequest extends RpcAcsRequest<DeleteContactResponse> {
 
 	private String contactName;
 	public DeleteContactRequest() {
-		super("Cms", "2019-01-01", "DeleteContact", "Cms");
+		super("Cms", "2019-01-01", "DeleteContact", "cms");
 		setMethod(MethodType.POST);
 	}
 

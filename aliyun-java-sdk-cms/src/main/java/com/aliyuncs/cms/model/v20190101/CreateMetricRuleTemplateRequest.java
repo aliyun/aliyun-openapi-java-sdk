@@ -31,7 +31,7 @@ public class CreateMetricRuleTemplateRequest extends RpcAcsRequest<CreateMetricR
 
 	private List<AlertTemplates> alertTemplatess;
 	public CreateMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "CreateMetricRuleTemplate", "Cms");
+		super("Cms", "2019-01-01", "CreateMetricRuleTemplate", "cms");
 		setMethod(MethodType.POST);
 	}
 

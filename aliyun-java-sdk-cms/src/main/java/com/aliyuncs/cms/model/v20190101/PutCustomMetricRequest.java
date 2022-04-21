@@ -27,7 +27,7 @@ public class PutCustomMetricRequest extends RpcAcsRequest<PutCustomMetricRespons
 
 	private List<MetricList> metricLists;
 	public PutCustomMetricRequest() {
-		super("Cms", "2019-01-01", "PutCustomMetric", "Cms");
+		super("Cms", "2019-01-01", "PutCustomMetric", "cms");
 		setMethod(MethodType.POST);
 	}
 

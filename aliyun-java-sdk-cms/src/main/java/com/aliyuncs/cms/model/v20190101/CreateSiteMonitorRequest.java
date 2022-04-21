@@ -38,7 +38,7 @@ public class CreateSiteMonitorRequest extends RpcAcsRequest<CreateSiteMonitorRes
 
 	private String interval;
 	public CreateSiteMonitorRequest() {
-		super("Cms", "2019-01-01", "CreateSiteMonitor", "Cms");
+		super("Cms", "2019-01-01", "CreateSiteMonitor", "cms");
 		setMethod(MethodType.POST);
 	}
 

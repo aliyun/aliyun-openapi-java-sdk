@@ -27,7 +27,7 @@ public class EnableMetricRulesRequest extends RpcAcsRequest<EnableMetricRulesRes
 
 	private List<String> ruleIds;
 	public EnableMetricRulesRequest() {
-		super("Cms", "2019-01-01", "EnableMetricRules", "Cms");
+		super("Cms", "2019-01-01", "EnableMetricRules", "cms");
 		setMethod(MethodType.POST);
 	}
 

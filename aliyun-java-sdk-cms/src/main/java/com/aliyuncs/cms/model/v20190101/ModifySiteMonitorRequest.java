@@ -40,7 +40,7 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 
 	private String taskId;
 	public ModifySiteMonitorRequest() {
-		super("Cms", "2019-01-01", "ModifySiteMonitor", "Cms");
+		super("Cms", "2019-01-01", "ModifySiteMonitor", "cms");
 		setMethod(MethodType.POST);
 	}
 

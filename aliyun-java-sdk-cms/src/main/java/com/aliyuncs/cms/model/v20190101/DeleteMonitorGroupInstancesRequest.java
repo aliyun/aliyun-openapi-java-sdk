@@ -30,7 +30,7 @@ public class DeleteMonitorGroupInstancesRequest extends RpcAcsRequest<DeleteMoni
 
 	private String category;
 	public DeleteMonitorGroupInstancesRequest() {
-		super("Cms", "2019-01-01", "DeleteMonitorGroupInstances", "Cms");
+		super("Cms", "2019-01-01", "DeleteMonitorGroupInstances", "cms");
 		setMethod(MethodType.POST);
 	}
 

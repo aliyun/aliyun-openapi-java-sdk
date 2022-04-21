@@ -1,3 +1,6 @@
+2022-04-21 Version: 7.0.43
+- Fix endpoint bug.
+
 2022-04-19 Version: 7.0.42
 - Add alert label.
 

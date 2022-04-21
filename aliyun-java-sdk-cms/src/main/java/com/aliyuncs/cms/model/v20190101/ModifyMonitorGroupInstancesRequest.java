@@ -29,7 +29,7 @@ public class ModifyMonitorGroupInstancesRequest extends RpcAcsRequest<ModifyMoni
 
 	private Long groupId;
 	public ModifyMonitorGroupInstancesRequest() {
-		super("Cms", "2019-01-01", "ModifyMonitorGroupInstances", "Cms");
+		super("Cms", "2019-01-01", "ModifyMonitorGroupInstances", "cms");
 		setMethod(MethodType.POST);
 	}
 

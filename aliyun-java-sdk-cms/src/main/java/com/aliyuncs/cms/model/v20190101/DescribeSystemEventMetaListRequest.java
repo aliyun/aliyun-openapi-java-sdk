@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeSystemEventMetaListRequest extends RpcAcsRequest<DescribeSystemEventMetaListResponse> {
 	   
 	public DescribeSystemEventMetaListRequest() {
-		super("Cms", "2019-01-01", "DescribeSystemEventMetaList", "Cms");
+		super("Cms", "2019-01-01", "DescribeSystemEventMetaList", "cms");
 		setMethod(MethodType.POST);
 	}
 

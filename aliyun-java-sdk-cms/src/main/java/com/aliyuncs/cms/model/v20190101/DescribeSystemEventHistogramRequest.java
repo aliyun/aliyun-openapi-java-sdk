@@ -42,7 +42,7 @@ public class DescribeSystemEventHistogramRequest extends RpcAcsRequest<DescribeS
 
 	private String status;
 	public DescribeSystemEventHistogramRequest() {
-		super("Cms", "2019-01-01", "DescribeSystemEventHistogram", "Cms");
+		super("Cms", "2019-01-01", "DescribeSystemEventHistogram", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -34,7 +34,7 @@ public class DescribeDynamicTagRuleListRequest extends RpcAcsRequest<DescribeDyn
 
 	private String tagRegionId;
 	public DescribeDynamicTagRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeDynamicTagRuleList", "Cms");
+		super("Cms", "2019-01-01", "DescribeDynamicTagRuleList", "cms");
 		setMethod(MethodType.POST);
 	}
 

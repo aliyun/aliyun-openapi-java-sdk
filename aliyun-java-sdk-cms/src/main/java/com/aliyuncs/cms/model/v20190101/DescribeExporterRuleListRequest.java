@@ -28,7 +28,7 @@ public class DescribeExporterRuleListRequest extends RpcAcsRequest<DescribeExpor
 
 	private Integer pageSize;
 	public DescribeExporterRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeExporterRuleList", "Cms");
+		super("Cms", "2019-01-01", "DescribeExporterRuleList", "cms");
 		setMethod(MethodType.POST);
 	}
 

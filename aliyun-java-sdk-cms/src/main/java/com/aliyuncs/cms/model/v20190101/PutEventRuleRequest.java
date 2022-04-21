@@ -39,7 +39,7 @@ public class PutEventRuleRequest extends RpcAcsRequest<PutEventRuleResponse> {
 
 	private String eventType;
 	public PutEventRuleRequest() {
-		super("Cms", "2019-01-01", "PutEventRule", "Cms");
+		super("Cms", "2019-01-01", "PutEventRule", "cms");
 		setMethod(MethodType.POST);
 	}
 

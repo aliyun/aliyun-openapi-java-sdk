@@ -33,7 +33,7 @@ public class PutContactGroupRequest extends RpcAcsRequest<PutContactGroupRespons
 
 	private List<String> contactNamess;
 	public PutContactGroupRequest() {
-		super("Cms", "2019-01-01", "PutContactGroup", "Cms");
+		super("Cms", "2019-01-01", "PutContactGroup", "cms");
 		setMethod(MethodType.POST);
 	}
 

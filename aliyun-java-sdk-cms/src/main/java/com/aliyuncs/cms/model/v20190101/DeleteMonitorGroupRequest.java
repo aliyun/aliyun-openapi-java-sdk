@@ -26,7 +26,7 @@ public class DeleteMonitorGroupRequest extends RpcAcsRequest<DeleteMonitorGroupR
 
 	private Long groupId;
 	public DeleteMonitorGroupRequest() {
-		super("Cms", "2019-01-01", "DeleteMonitorGroup", "Cms");
+		super("Cms", "2019-01-01", "DeleteMonitorGroup", "cms");
 		setMethod(MethodType.POST);
 	}
 

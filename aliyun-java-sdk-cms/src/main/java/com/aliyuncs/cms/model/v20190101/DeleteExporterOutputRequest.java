@@ -26,7 +26,7 @@ public class DeleteExporterOutputRequest extends RpcAcsRequest<DeleteExporterOut
 
 	private String destName;
 	public DeleteExporterOutputRequest() {
-		super("Cms", "2019-01-01", "DeleteExporterOutput", "Cms");
+		super("Cms", "2019-01-01", "DeleteExporterOutput", "cms");
 		setMethod(MethodType.POST);
 	}
 

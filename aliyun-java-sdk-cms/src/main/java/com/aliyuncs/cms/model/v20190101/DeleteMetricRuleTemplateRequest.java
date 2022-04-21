@@ -26,7 +26,7 @@ public class DeleteMetricRuleTemplateRequest extends RpcAcsRequest<DeleteMetricR
 
 	private String templateId;
 	public DeleteMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "DeleteMetricRuleTemplate", "Cms");
+		super("Cms", "2019-01-01", "DeleteMetricRuleTemplate", "cms");
 		setMethod(MethodType.POST);
 	}
 

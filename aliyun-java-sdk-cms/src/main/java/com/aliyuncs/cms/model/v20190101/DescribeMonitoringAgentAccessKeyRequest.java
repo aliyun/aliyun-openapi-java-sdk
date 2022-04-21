@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeMonitoringAgentAccessKeyRequest extends RpcAcsRequest<DescribeMonitoringAgentAccessKeyResponse> {
 	   
 	public DescribeMonitoringAgentAccessKeyRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitoringAgentAccessKey", "Cms");
+		super("Cms", "2019-01-01", "DescribeMonitoringAgentAccessKey", "cms");
 		setMethod(MethodType.POST);
 	}
 

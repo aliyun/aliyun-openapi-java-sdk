@@ -28,7 +28,7 @@ public class PutMonitoringConfigRequest extends RpcAcsRequest<PutMonitoringConfi
 
 	private Boolean enableInstallAgentNewECS;
 	public PutMonitoringConfigRequest() {
-		super("Cms", "2019-01-01", "PutMonitoringConfig", "Cms");
+		super("Cms", "2019-01-01", "PutMonitoringConfig", "cms");
 		setMethod(MethodType.POST);
 	}
 

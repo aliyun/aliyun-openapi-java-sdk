@@ -28,7 +28,7 @@ public class DescribeExporterOutputListRequest extends RpcAcsRequest<DescribeExp
 
 	private Integer pageSize;
 	public DescribeExporterOutputListRequest() {
-		super("Cms", "2019-01-01", "DescribeExporterOutputList", "Cms");
+		super("Cms", "2019-01-01", "DescribeExporterOutputList", "cms");
 		setMethod(MethodType.POST);
 	}
 

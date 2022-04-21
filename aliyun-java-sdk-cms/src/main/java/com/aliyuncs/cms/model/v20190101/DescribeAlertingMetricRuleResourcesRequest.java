@@ -36,7 +36,7 @@ public class DescribeAlertingMetricRuleResourcesRequest extends RpcAcsRequest<De
 
 	private String dimensions;
 	public DescribeAlertingMetricRuleResourcesRequest() {
-		super("Cms", "2019-01-01", "DescribeAlertingMetricRuleResources", "Cms");
+		super("Cms", "2019-01-01", "DescribeAlertingMetricRuleResources", "cms");
 		setMethod(MethodType.GET);
 	}
 

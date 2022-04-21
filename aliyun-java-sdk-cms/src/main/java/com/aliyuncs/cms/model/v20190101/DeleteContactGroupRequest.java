@@ -26,7 +26,7 @@ public class DeleteContactGroupRequest extends RpcAcsRequest<DeleteContactGroupR
 
 	private String contactGroupName;
 	public DeleteContactGroupRequest() {
-		super("Cms", "2019-01-01", "DeleteContactGroup", "Cms");
+		super("Cms", "2019-01-01", "DeleteContactGroup", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -29,7 +29,7 @@ public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMoni
 
 	private String groupId;
 	public CreateMonitorGroupInstancesRequest() {
-		super("Cms", "2019-01-01", "CreateMonitorGroupInstances", "Cms");
+		super("Cms", "2019-01-01", "CreateMonitorGroupInstances", "cms");
 		setMethod(MethodType.POST);
 	}
 

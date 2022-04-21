@@ -26,7 +26,7 @@ public class DescribeMetricRuleTargetsRequest extends RpcAcsRequest<DescribeMetr
 
 	private String ruleId;
 	public DescribeMetricRuleTargetsRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleTargets", "Cms");
+		super("Cms", "2019-01-01", "DescribeMetricRuleTargets", "cms");
 		setMethod(MethodType.POST);
 	}
 

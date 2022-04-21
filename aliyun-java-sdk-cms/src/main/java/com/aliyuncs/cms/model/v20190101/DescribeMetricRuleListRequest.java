@@ -44,7 +44,7 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 
 	private String dimensions;
 	public DescribeMetricRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleList", "Cms");
+		super("Cms", "2019-01-01", "DescribeMetricRuleList", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -56,7 +56,7 @@ public class DescribeAlertLogListRequest extends RpcAcsRequest<DescribeAlertLogL
 
 	private String ruleId;
 	public DescribeAlertLogListRequest() {
-		super("Cms", "2019-01-01", "DescribeAlertLogList", "Cms");
+		super("Cms", "2019-01-01", "DescribeAlertLogList", "cms");
 		setMethod(MethodType.POST);
 	}
 

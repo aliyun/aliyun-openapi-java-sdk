@@ -32,7 +32,7 @@ public class DescribeMonitorGroupNotifyPolicyListRequest extends RpcAcsRequest<D
 
 	private Integer pageSize;
 	public DescribeMonitorGroupNotifyPolicyListRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupNotifyPolicyList", "Cms");
+		super("Cms", "2019-01-01", "DescribeMonitorGroupNotifyPolicyList", "cms");
 		setMethod(MethodType.POST);
 	}
 

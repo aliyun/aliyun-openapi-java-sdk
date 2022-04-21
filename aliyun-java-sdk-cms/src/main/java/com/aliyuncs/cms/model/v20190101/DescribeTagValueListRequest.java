@@ -30,7 +30,7 @@ public class DescribeTagValueListRequest extends RpcAcsRequest<DescribeTagValueL
 
 	private String tagKey;
 	public DescribeTagValueListRequest() {
-		super("Cms", "2019-01-01", "DescribeTagValueList", "Cms");
+		super("Cms", "2019-01-01", "DescribeTagValueList", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class DescribeMonitorResourceQuotaAttributeRequest extends RpcAcsRequest<
 
 	private Boolean showUsed;
 	public DescribeMonitorResourceQuotaAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorResourceQuotaAttribute", "Cms");
+		super("Cms", "2019-01-01", "DescribeMonitorResourceQuotaAttribute", "cms");
 		setMethod(MethodType.POST);
 	}
 

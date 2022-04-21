@@ -29,7 +29,7 @@ public class RemoveTagsRequest extends RpcAcsRequest<RemoveTagsResponse> {
 
 	private List<Tag> tags;
 	public RemoveTagsRequest() {
-		super("Cms", "2019-01-01", "RemoveTags", "Cms");
+		super("Cms", "2019-01-01", "RemoveTags", "cms");
 		setMethod(MethodType.POST);
 	}
 

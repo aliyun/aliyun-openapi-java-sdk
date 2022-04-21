@@ -36,7 +36,7 @@ public class CreateCmsCallNumOrderRequest extends RpcAcsRequest<CreateCmsCallNum
 
 	private String phoneCount;
 	public CreateCmsCallNumOrderRequest() {
-		super("Cms", "2019-01-01", "CreateCmsCallNumOrder", "Cms");
+		super("Cms", "2019-01-01", "CreateCmsCallNumOrder", "cms");
 		setMethod(MethodType.POST);
 	}
 

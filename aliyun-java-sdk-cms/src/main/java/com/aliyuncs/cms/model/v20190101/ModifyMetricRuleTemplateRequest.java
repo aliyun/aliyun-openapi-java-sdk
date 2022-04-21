@@ -35,7 +35,7 @@ public class ModifyMetricRuleTemplateRequest extends RpcAcsRequest<ModifyMetricR
 
 	private List<AlertTemplates> alertTemplatess;
 	public ModifyMetricRuleTemplateRequest() {
-		super("Cms", "2019-01-01", "ModifyMetricRuleTemplate", "Cms");
+		super("Cms", "2019-01-01", "ModifyMetricRuleTemplate", "cms");
 		setMethod(MethodType.POST);
 	}
 

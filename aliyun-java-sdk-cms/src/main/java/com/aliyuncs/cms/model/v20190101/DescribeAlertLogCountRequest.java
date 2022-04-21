@@ -54,7 +54,7 @@ public class DescribeAlertLogCountRequest extends RpcAcsRequest<DescribeAlertLog
 
 	private String namespace;
 	public DescribeAlertLogCountRequest() {
-		super("Cms", "2019-01-01", "DescribeAlertLogCount", "Cms");
+		super("Cms", "2019-01-01", "DescribeAlertLogCount", "cms");
 		setMethod(MethodType.POST);
 	}
 

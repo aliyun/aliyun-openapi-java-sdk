@@ -42,7 +42,7 @@ public class DescribeSiteMonitorLogRequest extends RpcAcsRequest<DescribeSiteMon
 
 	private String filter;
 	public DescribeSiteMonitorLogRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorLog", "Cms");
+		super("Cms", "2019-01-01", "DescribeSiteMonitorLog", "cms");
 		setMethod(MethodType.POST);
 	}
 

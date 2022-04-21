@@ -28,7 +28,7 @@ public class DescribeEventRuleAttributeRequest extends RpcAcsRequest<DescribeEve
 
 	private String silenceTime;
 	public DescribeEventRuleAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeEventRuleAttribute", "Cms");
+		super("Cms", "2019-01-01", "DescribeEventRuleAttribute", "cms");
 		setMethod(MethodType.POST);
 	}
 

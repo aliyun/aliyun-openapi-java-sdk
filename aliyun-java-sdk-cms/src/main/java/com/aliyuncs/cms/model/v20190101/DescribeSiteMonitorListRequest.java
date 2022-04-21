@@ -34,7 +34,7 @@ public class DescribeSiteMonitorListRequest extends RpcAcsRequest<DescribeSiteMo
 
 	private String taskId;
 	public DescribeSiteMonitorListRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorList", "Cms");
+		super("Cms", "2019-01-01", "DescribeSiteMonitorList", "cms");
 		setMethod(MethodType.POST);
 	}
 

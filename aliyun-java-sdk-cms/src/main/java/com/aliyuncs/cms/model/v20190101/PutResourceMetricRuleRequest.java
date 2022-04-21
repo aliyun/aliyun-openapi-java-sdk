@@ -84,7 +84,7 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 
 	private String escalationsCriticalComparisonOperator;
 	public PutResourceMetricRuleRequest() {
-		super("Cms", "2019-01-01", "PutResourceMetricRule", "Cms");
+		super("Cms", "2019-01-01", "PutResourceMetricRule", "cms");
 		setMethod(MethodType.POST);
 	}
 

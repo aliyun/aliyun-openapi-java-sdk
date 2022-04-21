@@ -32,7 +32,7 @@ public class DescribeLogMonitorListRequest extends RpcAcsRequest<DescribeLogMoni
 
 	private String searchValue;
 	public DescribeLogMonitorListRequest() {
-		super("Cms", "2019-01-01", "DescribeLogMonitorList", "Cms");
+		super("Cms", "2019-01-01", "DescribeLogMonitorList", "cms");
 		setMethod(MethodType.POST);
 	}
 

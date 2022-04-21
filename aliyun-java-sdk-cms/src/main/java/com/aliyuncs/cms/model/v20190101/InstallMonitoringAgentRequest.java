@@ -31,7 +31,7 @@ public class InstallMonitoringAgentRequest extends RpcAcsRequest<InstallMonitori
 
 	private String installCommand;
 	public InstallMonitoringAgentRequest() {
-		super("Cms", "2019-01-01", "InstallMonitoringAgent", "Cms");
+		super("Cms", "2019-01-01", "InstallMonitoringAgent", "cms");
 		setMethod(MethodType.POST);
 	}
 

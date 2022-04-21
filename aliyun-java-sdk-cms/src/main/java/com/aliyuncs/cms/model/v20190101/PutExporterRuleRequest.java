@@ -37,7 +37,7 @@ public class PutExporterRuleRequest extends RpcAcsRequest<PutExporterRuleRespons
 
 	private String metricName;
 	public PutExporterRuleRequest() {
-		super("Cms", "2019-01-01", "PutExporterRule", "Cms");
+		super("Cms", "2019-01-01", "PutExporterRule", "cms");
 		setMethod(MethodType.POST);
 	}
 

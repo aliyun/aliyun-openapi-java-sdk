@@ -51,7 +51,7 @@ public class PutLogMonitorRequest extends RpcAcsRequest<PutLogMonitorResponse> {
 
 	private List<Aggregates> aggregatess;
 	public PutLogMonitorRequest() {
-		super("Cms", "2019-01-01", "PutLogMonitor", "Cms");
+		super("Cms", "2019-01-01", "PutLogMonitor", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -27,7 +27,7 @@ public class DeleteMetricRulesRequest extends RpcAcsRequest<DeleteMetricRulesRes
 
 	private List<String> ids;
 	public DeleteMetricRulesRequest() {
-		super("Cms", "2019-01-01", "DeleteMetricRules", "Cms");
+		super("Cms", "2019-01-01", "DeleteMetricRules", "cms");
 		setMethod(MethodType.POST);
 	}
 

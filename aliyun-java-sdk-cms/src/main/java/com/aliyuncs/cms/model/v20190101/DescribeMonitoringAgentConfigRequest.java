@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeMonitoringAgentConfigRequest extends RpcAcsRequest<DescribeMonitoringAgentConfigResponse> {
 	   
 	public DescribeMonitoringAgentConfigRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitoringAgentConfig", "Cms");
+		super("Cms", "2019-01-01", "DescribeMonitoringAgentConfig", "cms");
 		setMethod(MethodType.POST);
 	}
 

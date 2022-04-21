@@ -26,7 +26,7 @@ public class DescribeProductResourceTagKeyListRequest extends RpcAcsRequest<Desc
 
 	private String nextToken;
 	public DescribeProductResourceTagKeyListRequest() {
-		super("Cms", "2019-01-01", "DescribeProductResourceTagKeyList", "Cms");
+		super("Cms", "2019-01-01", "DescribeProductResourceTagKeyList", "cms");
 		setMethod(MethodType.POST);
 	}
 

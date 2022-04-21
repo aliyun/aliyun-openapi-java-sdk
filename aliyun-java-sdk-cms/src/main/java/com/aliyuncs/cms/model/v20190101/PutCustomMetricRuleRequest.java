@@ -56,7 +56,7 @@ public class PutCustomMetricRuleRequest extends RpcAcsRequest<PutCustomMetricRul
 
 	private String statistics;
 	public PutCustomMetricRuleRequest() {
-		super("Cms", "2019-01-01", "PutCustomMetricRule", "Cms");
+		super("Cms", "2019-01-01", "PutCustomMetricRule", "cms");
 		setMethod(MethodType.POST);
 	}
 

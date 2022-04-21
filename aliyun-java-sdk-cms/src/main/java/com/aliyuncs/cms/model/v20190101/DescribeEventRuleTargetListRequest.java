@@ -26,7 +26,7 @@ public class DescribeEventRuleTargetListRequest extends RpcAcsRequest<DescribeEv
 
 	private String ruleName;
 	public DescribeEventRuleTargetListRequest() {
-		super("Cms", "2019-01-01", "DescribeEventRuleTargetList", "Cms");
+		super("Cms", "2019-01-01", "DescribeEventRuleTargetList", "cms");
 		setMethod(MethodType.POST);
 	}
 

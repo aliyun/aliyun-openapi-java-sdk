@@ -31,7 +31,7 @@ public class PutMonitorGroupDynamicRuleRequest extends RpcAcsRequest<PutMonitorG
 
 	private Boolean isAsync;
 	public PutMonitorGroupDynamicRuleRequest() {
-		super("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "Cms");
+		super("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeSiteMonitorQuotaRequest extends RpcAcsRequest<DescribeSiteMonitorQuotaResponse> {
 	   
 	public DescribeSiteMonitorQuotaRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorQuota", "Cms");
+		super("Cms", "2019-01-01", "DescribeSiteMonitorQuota", "cms");
 		setMethod(MethodType.POST);
 	}
 

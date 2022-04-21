@@ -40,7 +40,7 @@ public class DescribeMetricRuleTemplateListRequest extends RpcAcsRequest<Describ
 
 	private Boolean order;
 	public DescribeMetricRuleTemplateListRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "Cms");
+		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class DescribeMonitoringAgentStatusesRequest extends RpcAcsRequest<Descri
 
 	private String instanceIds;
 	public DescribeMonitoringAgentStatusesRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitoringAgentStatuses", "Cms");
+		super("Cms", "2019-01-01", "DescribeMonitoringAgentStatuses", "cms");
 		setMethod(MethodType.POST);
 	}
 

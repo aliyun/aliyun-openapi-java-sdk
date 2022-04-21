@@ -32,7 +32,7 @@ public class DescribeSiteMonitorStatisticsRequest extends RpcAcsRequest<Describe
 
 	private String taskId;
 	public DescribeSiteMonitorStatisticsRequest() {
-		super("Cms", "2019-01-01", "DescribeSiteMonitorStatistics", "Cms");
+		super("Cms", "2019-01-01", "DescribeSiteMonitorStatistics", "cms");
 		setMethod(MethodType.POST);
 	}
 

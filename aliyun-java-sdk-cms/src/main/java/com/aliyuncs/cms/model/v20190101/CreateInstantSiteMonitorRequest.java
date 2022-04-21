@@ -36,7 +36,7 @@ public class CreateInstantSiteMonitorRequest extends RpcAcsRequest<CreateInstant
 
 	private String optionsJson;
 	public CreateInstantSiteMonitorRequest() {
-		super("Cms", "2019-01-01", "CreateInstantSiteMonitor", "Cms");
+		super("Cms", "2019-01-01", "CreateInstantSiteMonitor", "cms");
 		setMethod(MethodType.POST);
 	}
 

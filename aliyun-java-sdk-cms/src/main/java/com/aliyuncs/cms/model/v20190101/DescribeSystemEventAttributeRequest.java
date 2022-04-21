@@ -46,7 +46,7 @@ public class DescribeSystemEventAttributeRequest extends RpcAcsRequest<DescribeS
 
 	private String status;
 	public DescribeSystemEventAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeSystemEventAttribute", "Cms");
+		super("Cms", "2019-01-01", "DescribeSystemEventAttribute", "cms");
 		setMethod(MethodType.POST);
 	}
 

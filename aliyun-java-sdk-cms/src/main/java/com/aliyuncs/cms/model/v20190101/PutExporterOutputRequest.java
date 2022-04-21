@@ -32,7 +32,7 @@ public class PutExporterOutputRequest extends RpcAcsRequest<PutExporterOutputRes
 
 	private String desc;
 	public PutExporterOutputRequest() {
-		super("Cms", "2019-01-01", "PutExporterOutput", "Cms");
+		super("Cms", "2019-01-01", "PutExporterOutput", "cms");
 		setMethod(MethodType.POST);
 	}
 

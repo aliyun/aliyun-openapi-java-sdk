@@ -34,7 +34,7 @@ public class DescribeMetricMetaListRequest extends RpcAcsRequest<DescribeMetricM
 
 	private String metricName;
 	public DescribeMetricMetaListRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricMetaList", "Cms");
+		super("Cms", "2019-01-01", "DescribeMetricMetaList", "cms");
 		setMethod(MethodType.POST);
 	}
 

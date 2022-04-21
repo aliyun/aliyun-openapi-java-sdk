@@ -29,7 +29,7 @@ public class PutHybridMonitorMetricDataRequest extends RpcAcsRequest<PutHybridMo
 
 	private String namespace;
 	public PutHybridMonitorMetricDataRequest() {
-		super("Cms", "2019-01-01", "PutHybridMonitorMetricData", "Cms");
+		super("Cms", "2019-01-01", "PutHybridMonitorMetricData", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class DeleteMonitorGroupNotifyPolicyRequest extends RpcAcsRequest<DeleteM
 
 	private String groupId;
 	public DeleteMonitorGroupNotifyPolicyRequest() {
-		super("Cms", "2019-01-01", "DeleteMonitorGroupNotifyPolicy", "Cms");
+		super("Cms", "2019-01-01", "DeleteMonitorGroupNotifyPolicy", "cms");
 		setMethod(MethodType.POST);
 	}
 

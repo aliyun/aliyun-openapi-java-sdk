@@ -42,7 +42,7 @@ public class DescribeSystemEventCountRequest extends RpcAcsRequest<DescribeSyste
 
 	private String status;
 	public DescribeSystemEventCountRequest() {
-		super("Cms", "2019-01-01", "DescribeSystemEventCount", "Cms");
+		super("Cms", "2019-01-01", "DescribeSystemEventCount", "cms");
 		setMethod(MethodType.POST);
 	}
 

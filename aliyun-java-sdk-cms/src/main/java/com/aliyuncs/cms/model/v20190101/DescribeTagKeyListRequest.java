@@ -28,7 +28,7 @@ public class DescribeTagKeyListRequest extends RpcAcsRequest<DescribeTagKeyListR
 
 	private Integer pageSize;
 	public DescribeTagKeyListRequest() {
-		super("Cms", "2019-01-01", "DescribeTagKeyList", "Cms");
+		super("Cms", "2019-01-01", "DescribeTagKeyList", "cms");
 		setMethod(MethodType.POST);
 	}
 

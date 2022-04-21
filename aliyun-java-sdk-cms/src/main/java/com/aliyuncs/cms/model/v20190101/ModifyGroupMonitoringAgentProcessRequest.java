@@ -33,7 +33,7 @@ public class ModifyGroupMonitoringAgentProcessRequest extends RpcAcsRequest<Modi
 
 	private String id;
 	public ModifyGroupMonitoringAgentProcessRequest() {
-		super("Cms", "2019-01-01", "ModifyGroupMonitoringAgentProcess", "Cms");
+		super("Cms", "2019-01-01", "ModifyGroupMonitoringAgentProcess", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class DescribeMonitorGroupCategoriesRequest extends RpcAcsRequest<Describ
 
 	private Long groupId;
 	public DescribeMonitorGroupCategoriesRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupCategories", "Cms");
+		super("Cms", "2019-01-01", "DescribeMonitorGroupCategories", "cms");
 		setMethod(MethodType.POST);
 	}
 

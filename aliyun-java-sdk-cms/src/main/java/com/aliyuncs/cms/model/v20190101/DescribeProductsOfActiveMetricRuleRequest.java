@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeProductsOfActiveMetricRuleRequest extends RpcAcsRequest<DescribeProductsOfActiveMetricRuleResponse> {
 	   
 	public DescribeProductsOfActiveMetricRuleRequest() {
-		super("Cms", "2019-01-01", "DescribeProductsOfActiveMetricRule", "Cms");
+		super("Cms", "2019-01-01", "DescribeProductsOfActiveMetricRule", "cms");
 		setMethod(MethodType.POST);
 	}
 

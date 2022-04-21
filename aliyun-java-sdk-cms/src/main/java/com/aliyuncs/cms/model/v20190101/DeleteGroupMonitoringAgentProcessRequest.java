@@ -28,7 +28,7 @@ public class DeleteGroupMonitoringAgentProcessRequest extends RpcAcsRequest<Dele
 
 	private String id;
 	public DeleteGroupMonitoringAgentProcessRequest() {
-		super("Cms", "2019-01-01", "DeleteGroupMonitoringAgentProcess", "Cms");
+		super("Cms", "2019-01-01", "DeleteGroupMonitoringAgentProcess", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -42,7 +42,7 @@ public class DescribeMonitoringAgentHostsRequest extends RpcAcsRequest<DescribeM
 
 	private String status;
 	public DescribeMonitoringAgentHostsRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitoringAgentHosts", "Cms");
+		super("Cms", "2019-01-01", "DescribeMonitoringAgentHosts", "cms");
 		setMethod(MethodType.POST);
 	}
 

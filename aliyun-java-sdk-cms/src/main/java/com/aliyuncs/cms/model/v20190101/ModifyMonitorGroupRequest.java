@@ -30,7 +30,7 @@ public class ModifyMonitorGroupRequest extends RpcAcsRequest<ModifyMonitorGroupR
 
 	private String groupName;
 	public ModifyMonitorGroupRequest() {
-		super("Cms", "2019-01-01", "ModifyMonitorGroup", "Cms");
+		super("Cms", "2019-01-01", "ModifyMonitorGroup", "cms");
 		setMethod(MethodType.POST);
 	}
 

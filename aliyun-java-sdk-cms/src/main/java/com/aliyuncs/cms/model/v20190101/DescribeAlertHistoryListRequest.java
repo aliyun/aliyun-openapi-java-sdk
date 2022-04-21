@@ -48,7 +48,7 @@ public class DescribeAlertHistoryListRequest extends RpcAcsRequest<DescribeAlert
 
 	private String status;
 	public DescribeAlertHistoryListRequest() {
-		super("Cms", "2019-01-01", "DescribeAlertHistoryList", "Cms");
+		super("Cms", "2019-01-01", "DescribeAlertHistoryList", "cms");
 		setMethod(MethodType.POST);
 	}
 

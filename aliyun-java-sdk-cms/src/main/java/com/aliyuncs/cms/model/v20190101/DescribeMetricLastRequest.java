@@ -42,7 +42,7 @@ public class DescribeMetricLastRequest extends RpcAcsRequest<DescribeMetricLastR
 
 	private String dimensions;
 	public DescribeMetricLastRequest() {
-		super("Cms", "2019-01-01", "DescribeMetricLast", "Cms");
+		super("Cms", "2019-01-01", "DescribeMetricLast", "cms");
 		setMethod(MethodType.POST);
 	}
 

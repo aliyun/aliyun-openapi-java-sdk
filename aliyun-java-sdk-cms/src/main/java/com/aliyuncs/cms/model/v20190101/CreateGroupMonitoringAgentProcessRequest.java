@@ -35,7 +35,7 @@ public class CreateGroupMonitoringAgentProcessRequest extends RpcAcsRequest<Crea
 
 	private List<MatchExpress> matchExpresss;
 	public CreateGroupMonitoringAgentProcessRequest() {
-		super("Cms", "2019-01-01", "CreateGroupMonitoringAgentProcess", "Cms");
+		super("Cms", "2019-01-01", "CreateGroupMonitoringAgentProcess", "cms");
 		setMethod(MethodType.POST);
 	}
 

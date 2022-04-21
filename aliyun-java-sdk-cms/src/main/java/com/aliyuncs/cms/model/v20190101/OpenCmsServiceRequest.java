@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class OpenCmsServiceRequest extends RpcAcsRequest<OpenCmsServiceResponse> {
 	   
 	public OpenCmsServiceRequest() {
-		super("Cms", "2019-01-01", "OpenCmsService", "Cms");
+		super("Cms", "2019-01-01", "OpenCmsService", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class EnableSiteMonitorsRequest extends RpcAcsRequest<EnableSiteMonitorsR
 
 	private String taskIds;
 	public EnableSiteMonitorsRequest() {
-		super("Cms", "2019-01-01", "EnableSiteMonitors", "Cms");
+		super("Cms", "2019-01-01", "EnableSiteMonitors", "cms");
 		setMethod(MethodType.POST);
 	}
 

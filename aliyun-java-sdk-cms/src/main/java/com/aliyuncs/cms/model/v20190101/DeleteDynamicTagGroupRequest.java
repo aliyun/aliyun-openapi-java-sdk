@@ -26,7 +26,7 @@ public class DeleteDynamicTagGroupRequest extends RpcAcsRequest<DeleteDynamicTag
 
 	private String dynamicTagRuleId;
 	public DeleteDynamicTagGroupRequest() {
-		super("Cms", "2019-01-01", "DeleteDynamicTagGroup", "Cms");
+		super("Cms", "2019-01-01", "DeleteDynamicTagGroup", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -46,7 +46,7 @@ public class PutCustomEventRuleRequest extends RpcAcsRequest<PutCustomEventRuleR
 
 	private String ruleId;
 	public PutCustomEventRuleRequest() {
-		super("Cms", "2019-01-01", "PutCustomEventRule", "Cms");
+		super("Cms", "2019-01-01", "PutCustomEventRule", "cms");
 		setMethod(MethodType.POST);
 	}
 

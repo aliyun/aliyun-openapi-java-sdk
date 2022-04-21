@@ -30,7 +30,7 @@ public class DescribeProjectMetaRequest extends RpcAcsRequest<DescribeProjectMet
 
 	private String labels;
 	public DescribeProjectMetaRequest() {
-		super("Cms", "2019-01-01", "DescribeProjectMeta", "Cms");
+		super("Cms", "2019-01-01", "DescribeProjectMeta", "cms");
 		setMethod(MethodType.POST);
 	}
 

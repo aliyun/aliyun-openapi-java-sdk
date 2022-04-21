@@ -58,7 +58,7 @@ public class CreateCmsOrderRequest extends RpcAcsRequest<CreateCmsOrderResponse>
 
 	private String payType;
 	public CreateCmsOrderRequest() {
-		super("Cms", "2019-01-01", "CreateCmsOrder", "Cms");
+		super("Cms", "2019-01-01", "CreateCmsOrder", "cms");
 		setMethod(MethodType.POST);
 	}
 

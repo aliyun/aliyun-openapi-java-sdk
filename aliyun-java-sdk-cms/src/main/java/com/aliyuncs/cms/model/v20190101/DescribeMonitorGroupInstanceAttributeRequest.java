@@ -38,7 +38,7 @@ public class DescribeMonitorGroupInstanceAttributeRequest extends RpcAcsRequest<
 
 	private String keyword;
 	public DescribeMonitorGroupInstanceAttributeRequest() {
-		super("Cms", "2019-01-01", "DescribeMonitorGroupInstanceAttribute", "Cms");
+		super("Cms", "2019-01-01", "DescribeMonitorGroupInstanceAttribute", "cms");
 		setMethod(MethodType.POST);
 	}
 

@@ -38,7 +38,7 @@ public class PutContactRequest extends RpcAcsRequest<PutContactResponse> {
 
 	private String channelsSMS;
 	public PutContactRequest() {
-		super("Cms", "2019-01-01", "PutContact", "Cms");
+		super("Cms", "2019-01-01", "PutContact", "cms");
 		setMethod(MethodType.POST);
 	}
 

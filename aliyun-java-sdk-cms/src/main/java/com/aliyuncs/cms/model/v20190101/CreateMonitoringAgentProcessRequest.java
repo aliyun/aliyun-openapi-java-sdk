@@ -30,7 +30,7 @@ public class CreateMonitoringAgentProcessRequest extends RpcAcsRequest<CreateMon
 
 	private String processUser;
 	public CreateMonitoringAgentProcessRequest() {
-		super("Cms", "2019-01-01", "CreateMonitoringAgentProcess", "Cms");
+		super("Cms", "2019-01-01", "CreateMonitoringAgentProcess", "cms");
 		setMethod(MethodType.POST);
 	}
 

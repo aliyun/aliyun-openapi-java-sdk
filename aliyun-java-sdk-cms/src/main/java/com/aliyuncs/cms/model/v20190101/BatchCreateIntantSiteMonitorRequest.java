@@ -22,12 +22,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class BatchCreateOnceSiteMonitorRequest extends RpcAcsRequest<BatchCreateOnceSiteMonitorResponse> {
+public class BatchCreateIntantSiteMonitorRequest extends RpcAcsRequest<BatchCreateIntantSiteMonitorResponse> {
 	   
 
 	private List<TaskList> taskLists;
-	public BatchCreateOnceSiteMonitorRequest() {
-		super("Cms", "2019-01-01", "BatchCreateOnceSiteMonitor", "cms");
+	public BatchCreateIntantSiteMonitorRequest() {
+		super("Cms", "2019-01-01", "BatchCreateIntantSiteMonitor", "cms");
 		setMethod(MethodType.POST);
 	}
 
@@ -102,8 +102,8 @@ public class BatchCreateOnceSiteMonitorRequest extends RpcAcsRequest<BatchCreate
 	}
 
 	@Override
-	public Class<BatchCreateOnceSiteMonitorResponse> getResponseClass() {
-		return BatchCreateOnceSiteMonitorResponse.class;
+	public Class<BatchCreateIntantSiteMonitorResponse> getResponseClass() {
+		return BatchCreateIntantSiteMonitorResponse.class;
 	}
 
 }

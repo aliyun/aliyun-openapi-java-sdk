@@ -36,7 +36,7 @@ public class DescribeCustomEventCountRequest extends RpcAcsRequest<DescribeCusto
 
 	private String name;
 	public DescribeCustomEventCountRequest() {
-		super("Cms", "2019-01-01", "DescribeCustomEventCount", "Cms");
+		super("Cms", "2019-01-01", "DescribeCustomEventCount", "cms");
 		setMethod(MethodType.POST);
 	}
 
