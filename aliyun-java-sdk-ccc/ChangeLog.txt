@@ -1,3 +1,9 @@
+2022-04-22 Version: 2.4.2
+- Supported EndConference.
+- Supported StartConference.
+- Supported SignInGroup.
+- Supported RemovePhoneNumbers.
+
 2022-04-20 Version: 2.4.1
 - Supported ListMultiChannelRecordings.
 

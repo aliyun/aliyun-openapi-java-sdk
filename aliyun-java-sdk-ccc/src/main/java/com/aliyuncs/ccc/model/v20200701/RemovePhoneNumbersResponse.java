@@ -31,11 +31,9 @@ public class RemovePhoneNumbersResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
-
 	private String requestId;
 
-	private List<String> failureList;
+	private List<String> data;
 
 	private List<String> params;
 
@@ -63,14 +61,6 @@ public class RemovePhoneNumbersResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -79,12 +69,12 @@ public class RemovePhoneNumbersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getFailureList() {
-		return this.failureList;
+	public List<String> getData() {
+		return this.data;
 	}
 
-	public void setFailureList(List<String> failureList) {
-		this.failureList = failureList;
+	public void setData(List<String> data) {
+		this.data = data;
 	}
 
 	public List<String> getParams() {

@@ -29,13 +29,12 @@ public class RemovePhoneNumbersResponseUnmarshaller {
 		removePhoneNumbersResponse.setHttpStatusCode(_ctx.integerValue("RemovePhoneNumbersResponse.HttpStatusCode"));
 		removePhoneNumbersResponse.setCode(_ctx.stringValue("RemovePhoneNumbersResponse.Code"));
 		removePhoneNumbersResponse.setMessage(_ctx.stringValue("RemovePhoneNumbersResponse.Message"));
-		removePhoneNumbersResponse.setData(_ctx.stringValue("RemovePhoneNumbersResponse.Data"));
 
-		List<String> failureList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("RemovePhoneNumbersResponse.FailureList.Length"); i++) {
-			failureList.add(_ctx.stringValue("RemovePhoneNumbersResponse.FailureList["+ i +"]"));
+		List<String> data = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("RemovePhoneNumbersResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("RemovePhoneNumbersResponse.Data["+ i +"]"));
 		}
-		removePhoneNumbersResponse.setFailureList(failureList);
+		removePhoneNumbersResponse.setData(data);
 
 		List<String> params = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RemovePhoneNumbersResponse.Params.Length"); i++) {
