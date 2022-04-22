@@ -1,3 +1,6 @@
+2022-04-22 Version: 2.8.10
+- New add ManageGetRecordingRule api.
+
 2022-04-20 Version: 2.7.99
 - New add GlobalView api.
 
