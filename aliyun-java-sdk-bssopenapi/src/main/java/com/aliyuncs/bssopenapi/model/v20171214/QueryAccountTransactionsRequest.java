@@ -27,17 +27,23 @@ public class QueryAccountTransactionsRequest extends RpcAcsRequest<QueryAccountT
 
 	private Integer pageNum;
 
+	private String transactionType;
+
 	private String createTimeEnd;
 
 	private String recordID;
 
 	private Integer pageSize;
 
+	private String transactionChannel;
+
 	private String transactionChannelSN;
 
 	private String createTimeStart;
 
 	private String transactionNumber;
+
+	private String transactionFlow;
 	public QueryAccountTransactionsRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryAccountTransactions");
 		setMethod(MethodType.POST);
@@ -55,6 +61,17 @@ public class QueryAccountTransactionsRequest extends RpcAcsRequest<QueryAccountT
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getTransactionType() {
+		return this.transactionType;
+	}
+
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+		if(transactionType != null){
+			putQueryParameter("TransactionType", transactionType);
 		}
 	}
 
@@ -91,6 +108,17 @@ public class QueryAccountTransactionsRequest extends RpcAcsRequest<QueryAccountT
 		}
 	}
 
+	public String getTransactionChannel() {
+		return this.transactionChannel;
+	}
+
+	public void setTransactionChannel(String transactionChannel) {
+		this.transactionChannel = transactionChannel;
+		if(transactionChannel != null){
+			putQueryParameter("TransactionChannel", transactionChannel);
+		}
+	}
+
 	public String getTransactionChannelSN() {
 		return this.transactionChannelSN;
 	}
@@ -121,6 +149,17 @@ public class QueryAccountTransactionsRequest extends RpcAcsRequest<QueryAccountT
 		this.transactionNumber = transactionNumber;
 		if(transactionNumber != null){
 			putQueryParameter("TransactionNumber", transactionNumber);
+		}
+	}
+
+	public String getTransactionFlow() {
+		return this.transactionFlow;
+	}
+
+	public void setTransactionFlow(String transactionFlow) {
+		this.transactionFlow = transactionFlow;
+		if(transactionFlow != null){
+			putQueryParameter("TransactionFlow", transactionFlow);
 		}
 	}
 
