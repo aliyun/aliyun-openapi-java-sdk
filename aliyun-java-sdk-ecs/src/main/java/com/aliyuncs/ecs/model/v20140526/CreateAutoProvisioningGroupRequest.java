@@ -74,6 +74,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private Float maxSpotPrice;
 
+	private List<LaunchConfigurationArn> launchConfigurationArns;
+
 	private Boolean launchConfigurationPasswordInherit;
 
 	private String clientToken;
@@ -87,6 +89,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 	private String launchConfigurationUserData;
 
 	private String launchConfigurationCreditSpecification;
+
+	private LaunchConfigurationSystemDisk launchConfigurationSystemDisk;
 
 	private String launchConfigurationInstanceName;
 
@@ -429,6 +433,21 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
+	public List<LaunchConfigurationArn> getLaunchConfigurationArns() {
+		return this.launchConfigurationArns;
+	}
+
+	public void setLaunchConfigurationArns(List<LaunchConfigurationArn> launchConfigurationArns) {
+		this.launchConfigurationArns = launchConfigurationArns;	
+		if (launchConfigurationArns != null) {
+			for (int depth1 = 0; depth1 < launchConfigurationArns.size(); depth1++) {
+				putQueryParameter("LaunchConfiguration.Arn." + (depth1 + 1) + ".Rolearn" , launchConfigurationArns.get(depth1).getRolearn());
+				putQueryParameter("LaunchConfiguration.Arn." + (depth1 + 1) + ".RoleType" , launchConfigurationArns.get(depth1).getRoleType());
+				putQueryParameter("LaunchConfiguration.Arn." + (depth1 + 1) + ".AssumeRoleFor" , launchConfigurationArns.get(depth1).getAssumeRoleFor());
+			}
+		}	
+	}
+
 	public Boolean getLaunchConfigurationPasswordInherit() {
 		return this.launchConfigurationPasswordInherit;
 	}
@@ -504,6 +523,20 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		if(launchConfigurationCreditSpecification != null){
 			putQueryParameter("LaunchConfiguration.CreditSpecification", launchConfigurationCreditSpecification);
 		}
+	}
+
+	public LaunchConfigurationSystemDisk getLaunchConfigurationSystemDisk() {
+		return this.launchConfigurationSystemDisk;
+	}
+
+	public void setLaunchConfigurationSystemDisk(LaunchConfigurationSystemDisk launchConfigurationSystemDisk) {
+		this.launchConfigurationSystemDisk = launchConfigurationSystemDisk;	
+		if (launchConfigurationSystemDisk != null) {
+			
+				putQueryParameter("LaunchConfiguration.SystemDisk.Encrypted" , launchConfigurationSystemDisk.getEncrypted());
+				putQueryParameter("LaunchConfiguration.SystemDisk.KMSKeyId" , launchConfigurationSystemDisk.getKMSKeyId());
+				putQueryParameter("LaunchConfiguration.SystemDisk.EncryptAlgorithm" , launchConfigurationSystemDisk.getEncryptAlgorithm());
+		}	
 	}
 
 	public String getLaunchConfigurationInstanceName() {
@@ -916,6 +949,72 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setDiskCategory(String diskCategory) {
 			this.diskCategory = diskCategory;
+		}
+	}
+
+	public static class LaunchConfigurationArn {
+
+		private String rolearn;
+
+		private String roleType;
+
+		private Long assumeRoleFor;
+
+		public String getRolearn() {
+			return this.rolearn;
+		}
+
+		public void setRolearn(String rolearn) {
+			this.rolearn = rolearn;
+		}
+
+		public String getRoleType() {
+			return this.roleType;
+		}
+
+		public void setRoleType(String roleType) {
+			this.roleType = roleType;
+		}
+
+		public Long getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(Long assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
+		}
+	}
+
+	public static class LaunchConfigurationSystemDisk {
+
+		private String encrypted;
+
+		private String kMSKeyId;
+
+		private String encryptAlgorithm;
+
+		public String getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(String encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getEncryptAlgorithm() {
+			return this.encryptAlgorithm;
+		}
+
+		public void setEncryptAlgorithm(String encryptAlgorithm) {
+			this.encryptAlgorithm = encryptAlgorithm;
 		}
 	}
 
