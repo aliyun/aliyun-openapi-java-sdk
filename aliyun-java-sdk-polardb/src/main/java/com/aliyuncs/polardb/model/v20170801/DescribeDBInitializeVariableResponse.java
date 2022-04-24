@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInitializeVariableResponse extends AcsResponse {
 
+	private String dBVersion;
+
 	private String requestId;
 
 	private String dBType;
 
-	private String dBVersion;
-
 	private List<Variable> variables;
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class DescribeDBInitializeVariableResponse extends AcsResponse {
 
 	public void setDBType(String dBType) {
 		this.dBType = dBType;
-	}
-
-	public String getDBVersion() {
-		return this.dBVersion;
-	}
-
-	public void setDBVersion(String dBVersion) {
-		this.dBVersion = dBVersion;
 	}
 
 	public List<Variable> getVariables() {

@@ -25,29 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
+	private String comment;
+
 	private String requestId;
-
-	private String dBClusterId;
-
-	private String sourceRDSDBInstanceId;
-
-	private String migrationStatus;
-
-	private String topologies;
-
-	private Integer delayedSeconds;
 
 	private String expiredTime;
 
+	private String dBClusterId;
+
+	private String topologies;
+
 	private String rdsReadWriteMode;
+
+	private String sourceRDSDBInstanceId;
 
 	private String dBClusterReadWriteMode;
 
-	private String comment;
+	private Integer delayedSeconds;
+
+	private String migrationStatus;
 
 	private List<DBClusterEndpoint> dBClusterEndpointList;
 
 	private List<RdsEndpoint> rdsEndpointList;
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,46 +63,6 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
-	public String getSourceRDSDBInstanceId() {
-		return this.sourceRDSDBInstanceId;
-	}
-
-	public void setSourceRDSDBInstanceId(String sourceRDSDBInstanceId) {
-		this.sourceRDSDBInstanceId = sourceRDSDBInstanceId;
-	}
-
-	public String getMigrationStatus() {
-		return this.migrationStatus;
-	}
-
-	public void setMigrationStatus(String migrationStatus) {
-		this.migrationStatus = migrationStatus;
-	}
-
-	public String getTopologies() {
-		return this.topologies;
-	}
-
-	public void setTopologies(String topologies) {
-		this.topologies = topologies;
-	}
-
-	public Integer getDelayedSeconds() {
-		return this.delayedSeconds;
-	}
-
-	public void setDelayedSeconds(Integer delayedSeconds) {
-		this.delayedSeconds = delayedSeconds;
 	}
 
 	public String getExpiredTime() {
@@ -105,12 +73,36 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 		this.expiredTime = expiredTime;
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
+	public String getTopologies() {
+		return this.topologies;
+	}
+
+	public void setTopologies(String topologies) {
+		this.topologies = topologies;
+	}
+
 	public String getRdsReadWriteMode() {
 		return this.rdsReadWriteMode;
 	}
 
 	public void setRdsReadWriteMode(String rdsReadWriteMode) {
 		this.rdsReadWriteMode = rdsReadWriteMode;
+	}
+
+	public String getSourceRDSDBInstanceId() {
+		return this.sourceRDSDBInstanceId;
+	}
+
+	public void setSourceRDSDBInstanceId(String sourceRDSDBInstanceId) {
+		this.sourceRDSDBInstanceId = sourceRDSDBInstanceId;
 	}
 
 	public String getDBClusterReadWriteMode() {
@@ -121,12 +113,20 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 		this.dBClusterReadWriteMode = dBClusterReadWriteMode;
 	}
 
-	public String getComment() {
-		return this.comment;
+	public Integer getDelayedSeconds() {
+		return this.delayedSeconds;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setDelayedSeconds(Integer delayedSeconds) {
+		this.delayedSeconds = delayedSeconds;
+	}
+
+	public String getMigrationStatus() {
+		return this.migrationStatus;
+	}
+
+	public void setMigrationStatus(String migrationStatus) {
+		this.migrationStatus = migrationStatus;
 	}
 
 	public List<DBClusterEndpoint> getDBClusterEndpointList() {
@@ -179,9 +179,9 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 		public static class Address {
 
-			private String connectionString;
+			private String vSwitchId;
 
-			private String iPAddress;
+			private String connectionString;
 
 			private String netType;
 
@@ -189,7 +189,15 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 			private String vPCId;
 
-			private String vSwitchId;
+			private String iPAddress;
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
 
 			public String getConnectionString() {
 				return this.connectionString;
@@ -197,14 +205,6 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 			public void setConnectionString(String connectionString) {
 				this.connectionString = connectionString;
-			}
-
-			public String getIPAddress() {
-				return this.iPAddress;
-			}
-
-			public void setIPAddress(String iPAddress) {
-				this.iPAddress = iPAddress;
 			}
 
 			public String getNetType() {
@@ -231,12 +231,12 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 				this.vPCId = vPCId;
 			}
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
+			public String getIPAddress() {
+				return this.iPAddress;
 			}
 
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
+			public void setIPAddress(String iPAddress) {
+				this.iPAddress = iPAddress;
 			}
 		}
 	}
@@ -275,9 +275,9 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 		public static class Address2 {
 
-			private String connectionString;
+			private String vSwitchId;
 
-			private String iPAddress;
+			private String connectionString;
 
 			private String netType;
 
@@ -285,7 +285,15 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 			private String vPCId;
 
-			private String vSwitchId;
+			private String iPAddress;
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
 
 			public String getConnectionString() {
 				return this.connectionString;
@@ -293,14 +301,6 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 			public void setConnectionString(String connectionString) {
 				this.connectionString = connectionString;
-			}
-
-			public String getIPAddress() {
-				return this.iPAddress;
-			}
-
-			public void setIPAddress(String iPAddress) {
-				this.iPAddress = iPAddress;
 			}
 
 			public String getNetType() {
@@ -327,12 +327,12 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 				this.vPCId = vPCId;
 			}
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
+			public String getIPAddress() {
+				return this.iPAddress;
 			}
 
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
+			public void setIPAddress(String iPAddress) {
+				this.iPAddress = iPAddress;
 			}
 		}
 	}

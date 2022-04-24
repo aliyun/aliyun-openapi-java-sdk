@@ -29,9 +29,9 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Integer totalRecordCount;
-
 	private Integer pageRecordCount;
+
+	private Integer totalRecordCount;
 
 	private List<DBCluster> items;
 
@@ -51,20 +51,20 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<DBCluster> getItems() {
@@ -77,90 +77,58 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 
 	public static class DBCluster {
 
-		private String dBClusterId;
+		private String deletedTime;
 
-		private String dBClusterDescription;
-
-		private String payType;
-
-		private String dBClusterNetworkType;
-
-		private String regionId;
-
-		private String zoneId;
+		private String vpcId;
 
 		private String expireTime;
 
 		private String expired;
 
-		private String dBClusterStatus;
-
-		private String engine;
-
-		private String dBType;
-
-		private String dBVersion;
-
-		private String lockMode;
-
-		private Integer deletionLock;
-
 		private String createTime;
-
-		private String vpcId;
-
-		private Integer isDeleted;
-
-		private String deletedTime;
 
 		private String dBNodeClass;
 
-		public String getDBClusterId() {
-			return this.dBClusterId;
+		private String payType;
+
+		private String dBType;
+
+		private String lockMode;
+
+		private String regionId;
+
+		private Integer deletionLock;
+
+		private String dBVersion;
+
+		private String dBClusterId;
+
+		private String dBClusterStatus;
+
+		private Integer isDeleted;
+
+		private String dBClusterNetworkType;
+
+		private String dBClusterDescription;
+
+		private String zoneId;
+
+		private String engine;
+
+		public String getDeletedTime() {
+			return this.deletedTime;
 		}
 
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
+		public void setDeletedTime(String deletedTime) {
+			this.deletedTime = deletedTime;
 		}
 
-		public String getDBClusterDescription() {
-			return this.dBClusterDescription;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setDBClusterDescription(String dBClusterDescription) {
-			this.dBClusterDescription = dBClusterDescription;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getDBClusterNetworkType() {
-			return this.dBClusterNetworkType;
-		}
-
-		public void setDBClusterNetworkType(String dBClusterNetworkType) {
-			this.dBClusterNetworkType = dBClusterNetworkType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getExpireTime() {
@@ -179,20 +147,28 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 			this.expired = expired;
 		}
 
-		public String getDBClusterStatus() {
-			return this.dBClusterStatus;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDBClusterStatus(String dBClusterStatus) {
-			this.dBClusterStatus = dBClusterStatus;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public String getDBNodeClass() {
+			return this.dBNodeClass;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
+		public void setDBNodeClass(String dBNodeClass) {
+			this.dBNodeClass = dBNodeClass;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 
 		public String getDBType() {
@@ -203,20 +179,20 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 			this.dBType = dBType;
 		}
 
-		public String getDBVersion() {
-			return this.dBVersion;
-		}
-
-		public void setDBVersion(String dBVersion) {
-			this.dBVersion = dBVersion;
-		}
-
 		public String getLockMode() {
 			return this.lockMode;
 		}
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public Integer getDeletionLock() {
@@ -227,20 +203,28 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 			this.deletionLock = deletionLock;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getDBVersion() {
+			return this.dBVersion;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setDBVersion(String dBVersion) {
+			this.dBVersion = dBVersion;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getDBClusterId() {
+			return this.dBClusterId;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public String getDBClusterStatus() {
+			return this.dBClusterStatus;
+		}
+
+		public void setDBClusterStatus(String dBClusterStatus) {
+			this.dBClusterStatus = dBClusterStatus;
 		}
 
 		public Integer getIsDeleted() {
@@ -251,20 +235,36 @@ public class DescribeDBClustersWithBackupsResponse extends AcsResponse {
 			this.isDeleted = isDeleted;
 		}
 
-		public String getDeletedTime() {
-			return this.deletedTime;
+		public String getDBClusterNetworkType() {
+			return this.dBClusterNetworkType;
 		}
 
-		public void setDeletedTime(String deletedTime) {
-			this.deletedTime = deletedTime;
+		public void setDBClusterNetworkType(String dBClusterNetworkType) {
+			this.dBClusterNetworkType = dBClusterNetworkType;
 		}
 
-		public String getDBNodeClass() {
-			return this.dBNodeClass;
+		public String getDBClusterDescription() {
+			return this.dBClusterDescription;
 		}
 
-		public void setDBNodeClass(String dBNodeClass) {
-			this.dBNodeClass = dBNodeClass;
+		public void setDBClusterDescription(String dBClusterDescription) {
+			this.dBClusterDescription = dBClusterDescription;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 	}
 

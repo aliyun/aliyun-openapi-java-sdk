@@ -23,16 +23,16 @@ public class DescribeDBClusterVersionResponseUnmarshaller {
 	public static DescribeDBClusterVersionResponse unmarshall(DescribeDBClusterVersionResponse describeDBClusterVersionResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterVersionResponse.setRequestId(_ctx.stringValue("DescribeDBClusterVersionResponse.RequestId"));
-		describeDBClusterVersionResponse.setProxyVersionStatus(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyVersionStatus"));
 		describeDBClusterVersionResponse.setIsLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.IsLatestVersion"));
 		describeDBClusterVersionResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersion"));
 		describeDBClusterVersionResponse.setDBRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersion"));
 		describeDBClusterVersionResponse.setDBVersionStatus(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersionStatus"));
 		describeDBClusterVersionResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterVersionResponse.DBClusterId"));
-		describeDBClusterVersionResponse.setDBLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBLatestVersion"));
-		describeDBClusterVersionResponse.setProxyRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyRevisionVersion"));
 		describeDBClusterVersionResponse.setDBMinorVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBMinorVersion"));
+		describeDBClusterVersionResponse.setProxyRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyRevisionVersion"));
+		describeDBClusterVersionResponse.setProxyVersionStatus(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyVersionStatus"));
 		describeDBClusterVersionResponse.setProxyLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyLatestVersion"));
+		describeDBClusterVersionResponse.setDBLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBLatestVersion"));
 	 
 	 	return describeDBClusterVersionResponse;
 	}

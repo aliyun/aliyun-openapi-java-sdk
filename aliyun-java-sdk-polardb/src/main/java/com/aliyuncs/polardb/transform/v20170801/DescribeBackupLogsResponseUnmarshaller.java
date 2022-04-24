@@ -28,20 +28,20 @@ public class DescribeBackupLogsResponseUnmarshaller {
 		
 		describeBackupLogsResponse.setRequestId(_ctx.stringValue("DescribeBackupLogsResponse.RequestId"));
 		describeBackupLogsResponse.setTotalRecordCount(_ctx.stringValue("DescribeBackupLogsResponse.TotalRecordCount"));
-		describeBackupLogsResponse.setPageNumber(_ctx.stringValue("DescribeBackupLogsResponse.PageNumber"));
 		describeBackupLogsResponse.setPageRecordCount(_ctx.stringValue("DescribeBackupLogsResponse.PageRecordCount"));
+		describeBackupLogsResponse.setPageNumber(_ctx.stringValue("DescribeBackupLogsResponse.PageNumber"));
 
 		List<BackupLog> items = new ArrayList<BackupLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupLogsResponse.Items.Length"); i++) {
 			BackupLog backupLog = new BackupLog();
 			backupLog.setBackupLogId(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogId"));
-			backupLog.setBackupLogName(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogName"));
-			backupLog.setBackupLogStartTime(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogStartTime"));
-			backupLog.setBackupLogEndTime(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogEndTime"));
-			backupLog.setBackupLogSize(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogSize"));
-			backupLog.setDownloadLink(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].DownloadLink"));
 			backupLog.setIntranetDownloadLink(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].IntranetDownloadLink"));
 			backupLog.setLinkExpiredTime(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].LinkExpiredTime"));
+			backupLog.setBackupLogStartTime(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogStartTime"));
+			backupLog.setBackupLogEndTime(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogEndTime"));
+			backupLog.setDownloadLink(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].DownloadLink"));
+			backupLog.setBackupLogSize(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogSize"));
+			backupLog.setBackupLogName(_ctx.stringValue("DescribeBackupLogsResponse.Items["+ i +"].BackupLogName"));
 
 			items.add(backupLog);
 		}

@@ -32,15 +32,15 @@ public class DescribeParameterGroupResponseUnmarshaller {
 		List<ParameterGroupItem> parameterGroup = new ArrayList<ParameterGroupItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterGroupResponse.ParameterGroup.Length"); i++) {
 			ParameterGroupItem parameterGroupItem = new ParameterGroupItem();
+			parameterGroupItem.setDBType(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].DBType"));
 			parameterGroupItem.setDBVersion(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].DBVersion"));
-			parameterGroupItem.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ParameterGroupId"));
-			parameterGroupItem.setForceRestart(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ForceRestart"));
 			parameterGroupItem.setParameterGroupName(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ParameterGroupName"));
-			parameterGroupItem.setCreateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].CreateTime"));
-			parameterGroupItem.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ParameterGroupDesc"));
+			parameterGroupItem.setForceRestart(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ForceRestart"));
 			parameterGroupItem.setParameterGroupType(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ParameterGroupType"));
 			parameterGroupItem.setParameterCounts(_ctx.integerValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ParameterCounts"));
-			parameterGroupItem.setDBType(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].DBType"));
+			parameterGroupItem.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ParameterGroupDesc"));
+			parameterGroupItem.setCreateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].CreateTime"));
+			parameterGroupItem.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ParameterGroupId"));
 
 			List<ParameterDetailItem> parameterDetail = new ArrayList<ParameterDetailItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeParameterGroupResponse.ParameterGroup["+ i +"].ParameterDetail.Length"); j++) {

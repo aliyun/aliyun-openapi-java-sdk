@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupLogsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String totalRecordCount;
-
-	private String pageNumber;
 
 	private String pageRecordCount;
 
+	private String requestId;
+
+	private String pageNumber;
+
 	private List<BackupLog> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -51,20 +43,28 @@ public class DescribeBackupLogsResponse extends AcsResponse {
 		this.totalRecordCount = totalRecordCount;
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(String pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<BackupLog> getItems() {
@@ -79,19 +79,19 @@ public class DescribeBackupLogsResponse extends AcsResponse {
 
 		private String backupLogId;
 
-		private String backupLogName;
+		private String intranetDownloadLink;
+
+		private String linkExpiredTime;
 
 		private String backupLogStartTime;
 
 		private String backupLogEndTime;
 
-		private String backupLogSize;
-
 		private String downloadLink;
 
-		private String intranetDownloadLink;
+		private String backupLogSize;
 
-		private String linkExpiredTime;
+		private String backupLogName;
 
 		public String getBackupLogId() {
 			return this.backupLogId;
@@ -101,12 +101,20 @@ public class DescribeBackupLogsResponse extends AcsResponse {
 			this.backupLogId = backupLogId;
 		}
 
-		public String getBackupLogName() {
-			return this.backupLogName;
+		public String getIntranetDownloadLink() {
+			return this.intranetDownloadLink;
 		}
 
-		public void setBackupLogName(String backupLogName) {
-			this.backupLogName = backupLogName;
+		public void setIntranetDownloadLink(String intranetDownloadLink) {
+			this.intranetDownloadLink = intranetDownloadLink;
+		}
+
+		public String getLinkExpiredTime() {
+			return this.linkExpiredTime;
+		}
+
+		public void setLinkExpiredTime(String linkExpiredTime) {
+			this.linkExpiredTime = linkExpiredTime;
 		}
 
 		public String getBackupLogStartTime() {
@@ -125,14 +133,6 @@ public class DescribeBackupLogsResponse extends AcsResponse {
 			this.backupLogEndTime = backupLogEndTime;
 		}
 
-		public String getBackupLogSize() {
-			return this.backupLogSize;
-		}
-
-		public void setBackupLogSize(String backupLogSize) {
-			this.backupLogSize = backupLogSize;
-		}
-
 		public String getDownloadLink() {
 			return this.downloadLink;
 		}
@@ -141,20 +141,20 @@ public class DescribeBackupLogsResponse extends AcsResponse {
 			this.downloadLink = downloadLink;
 		}
 
-		public String getIntranetDownloadLink() {
-			return this.intranetDownloadLink;
+		public String getBackupLogSize() {
+			return this.backupLogSize;
 		}
 
-		public void setIntranetDownloadLink(String intranetDownloadLink) {
-			this.intranetDownloadLink = intranetDownloadLink;
+		public void setBackupLogSize(String backupLogSize) {
+			this.backupLogSize = backupLogSize;
 		}
 
-		public String getLinkExpiredTime() {
-			return this.linkExpiredTime;
+		public String getBackupLogName() {
+			return this.backupLogName;
 		}
 
-		public void setLinkExpiredTime(String linkExpiredTime) {
-			this.linkExpiredTime = linkExpiredTime;
+		public void setBackupLogName(String backupLogName) {
+			this.backupLogName = backupLogName;
 		}
 	}
 

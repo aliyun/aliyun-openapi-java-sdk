@@ -1,3 +1,6 @@
+2022-04-24 Version: 1.8.18
+- Support new feature.
+
 2022-03-09 Version: 1.8.17
 - Support modify params.
 

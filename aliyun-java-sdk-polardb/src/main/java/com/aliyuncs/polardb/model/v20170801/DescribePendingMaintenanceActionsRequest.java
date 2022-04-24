@@ -37,7 +37,7 @@ public class DescribePendingMaintenanceActionsRequest extends RpcAcsRequest<Desc
 
 	private Long ownerId;
 	public DescribePendingMaintenanceActionsRequest() {
-		super("polardb", "2017-08-01", "DescribePendingMaintenanceActions", "polardb");
+		super("polardb", "2017-08-01", "DescribePendingMaintenanceActions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

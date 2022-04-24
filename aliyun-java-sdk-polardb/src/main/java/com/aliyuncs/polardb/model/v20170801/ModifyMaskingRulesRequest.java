@@ -35,7 +35,7 @@ public class ModifyMaskingRulesRequest extends RpcAcsRequest<ModifyMaskingRulesR
 
 	private String ruleNameList;
 	public ModifyMaskingRulesRequest() {
-		super("polardb", "2017-08-01", "ModifyMaskingRules", "polardb");
+		super("polardb", "2017-08-01", "ModifyMaskingRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

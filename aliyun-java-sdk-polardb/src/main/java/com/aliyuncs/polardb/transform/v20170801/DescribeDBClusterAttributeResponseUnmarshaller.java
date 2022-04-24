@@ -76,6 +76,8 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setDBNodeId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeId"));
 			dBNode.setImciSwitch(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ImciSwitch"));
 			dBNode.setHotReplicaMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].HotReplicaMode"));
+			dBNode.setAddedCpuCores(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].AddedCpuCores"));
+			dBNode.setMasterId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MasterId"));
 
 			dBNodes.add(dBNode);
 		}

@@ -47,7 +47,7 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 
 	private String status;
 	public DescribeScheduleTasksRequest() {
-		super("polardb", "2017-08-01", "DescribeScheduleTasks", "polardb");
+		super("polardb", "2017-08-01", "DescribeScheduleTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

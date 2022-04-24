@@ -409,6 +409,10 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String hotReplicaMode;
 
+		private String addedCpuCores;
+
+		private String masterId;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -495,6 +499,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setHotReplicaMode(String hotReplicaMode) {
 			this.hotReplicaMode = hotReplicaMode;
+		}
+
+		public String getAddedCpuCores() {
+			return this.addedCpuCores;
+		}
+
+		public void setAddedCpuCores(String addedCpuCores) {
+			this.addedCpuCores = addedCpuCores;
+		}
+
+		public String getMasterId() {
+			return this.masterId;
+		}
+
+		public void setMasterId(String masterId) {
+			this.masterId = masterId;
 		}
 	}
 

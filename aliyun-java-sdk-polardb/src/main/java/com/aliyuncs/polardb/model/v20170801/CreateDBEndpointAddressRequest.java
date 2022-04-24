@@ -41,7 +41,7 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 
 	private String netType;
 	public CreateDBEndpointAddressRequest() {
-		super("polardb", "2017-08-01", "CreateDBEndpointAddress", "polardb");
+		super("polardb", "2017-08-01", "CreateDBEndpointAddress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

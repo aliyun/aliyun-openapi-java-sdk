@@ -43,7 +43,7 @@ public class ModifyAutoRenewAttributeRequest extends RpcAcsRequest<ModifyAutoRen
 
 	private String dBClusterIds;
 	public ModifyAutoRenewAttributeRequest() {
-		super("polardb", "2017-08-01", "ModifyAutoRenewAttribute", "polardb");
+		super("polardb", "2017-08-01", "ModifyAutoRenewAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

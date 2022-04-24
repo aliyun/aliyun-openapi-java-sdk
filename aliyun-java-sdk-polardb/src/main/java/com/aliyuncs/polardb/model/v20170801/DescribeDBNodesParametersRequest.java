@@ -37,7 +37,7 @@ public class DescribeDBNodesParametersRequest extends RpcAcsRequest<DescribeDBNo
 
 	private Long ownerId;
 	public DescribeDBNodesParametersRequest() {
-		super("polardb", "2017-08-01", "DescribeDBNodesParameters", "polardb");
+		super("polardb", "2017-08-01", "DescribeDBNodesParameters");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

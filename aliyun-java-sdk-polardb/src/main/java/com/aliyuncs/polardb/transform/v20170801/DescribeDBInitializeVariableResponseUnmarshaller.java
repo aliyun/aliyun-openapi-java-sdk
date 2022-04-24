@@ -27,8 +27,8 @@ public class DescribeDBInitializeVariableResponseUnmarshaller {
 	public static DescribeDBInitializeVariableResponse unmarshall(DescribeDBInitializeVariableResponse describeDBInitializeVariableResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInitializeVariableResponse.setRequestId(_ctx.stringValue("DescribeDBInitializeVariableResponse.RequestId"));
-		describeDBInitializeVariableResponse.setDBType(_ctx.stringValue("DescribeDBInitializeVariableResponse.DBType"));
 		describeDBInitializeVariableResponse.setDBVersion(_ctx.stringValue("DescribeDBInitializeVariableResponse.DBVersion"));
+		describeDBInitializeVariableResponse.setDBType(_ctx.stringValue("DescribeDBInitializeVariableResponse.DBType"));
 
 		List<Variable> variables = new ArrayList<Variable>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInitializeVariableResponse.Variables.Length"); i++) {

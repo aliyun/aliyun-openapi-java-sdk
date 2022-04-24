@@ -37,7 +37,7 @@ public class CloseDBClusterMigrationRequest extends RpcAcsRequest<CloseDBCluster
 
 	private Boolean continueEnableBinlog;
 	public CloseDBClusterMigrationRequest() {
-		super("polardb", "2017-08-01", "CloseDBClusterMigration", "polardb");
+		super("polardb", "2017-08-01", "CloseDBClusterMigration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

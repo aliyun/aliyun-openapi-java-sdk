@@ -28,19 +28,19 @@ public class DescribeDBClusterPerformanceResponseUnmarshaller {
 	public static DescribeDBClusterPerformanceResponse unmarshall(DescribeDBClusterPerformanceResponse describeDBClusterPerformanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterPerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.RequestId"));
-		describeDBClusterPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBClusterId"));
-		describeDBClusterPerformanceResponse.setEngine(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Engine"));
-		describeDBClusterPerformanceResponse.setDBType(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBType"));
 		describeDBClusterPerformanceResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBVersion"));
-		describeDBClusterPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.StartTime"));
 		describeDBClusterPerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.EndTime"));
+		describeDBClusterPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.StartTime"));
+		describeDBClusterPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBClusterId"));
+		describeDBClusterPerformanceResponse.setDBType(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBType"));
+		describeDBClusterPerformanceResponse.setEngine(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Engine"));
 
 		List<PerformanceItem> performanceKeys = new ArrayList<PerformanceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.PerformanceKeys.Length"); i++) {
 			PerformanceItem performanceItem = new PerformanceItem();
-			performanceItem.setDBNodeId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].DBNodeId"));
-			performanceItem.setMeasurement(_ctx.stringValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].Measurement"));
 			performanceItem.setMetricName(_ctx.stringValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].MetricName"));
+			performanceItem.setMeasurement(_ctx.stringValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].Measurement"));
+			performanceItem.setDBNodeId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].DBNodeId"));
 
 			List<PerformanceItemValue> points = new ArrayList<PerformanceItemValue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].Points.Length"); j++) {

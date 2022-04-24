@@ -25,12 +25,16 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeBackupPolicyResponse.RequestId"));
 		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
 		describeBackupPolicyResponse.setDataLevel1BackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel1BackupRetentionPeriod"));
-		describeBackupPolicyResponse.setBackupRetentionPolicyOnClusterDeletion(_ctx.stringValue("DescribeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion"));
 		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
-		describeBackupPolicyResponse.setBackupFrequency(_ctx.stringValue("DescribeBackupPolicyResponse.BackupFrequency"));
-		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
+		describeBackupPolicyResponse.setBackupRetentionPolicyOnClusterDeletion(_ctx.stringValue("DescribeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion"));
 		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
+		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
 		describeBackupPolicyResponse.setDataLevel2BackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel2BackupRetentionPeriod"));
+		describeBackupPolicyResponse.setBackupFrequency(_ctx.stringValue("DescribeBackupPolicyResponse.BackupFrequency"));
+		describeBackupPolicyResponse.setDataLevel1BackupFrequency(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel1BackupFrequency"));
+		describeBackupPolicyResponse.setDataLevel1BackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel1BackupPeriod"));
+		describeBackupPolicyResponse.setDataLevel1BackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel1BackupTime"));
+		describeBackupPolicyResponse.setDataLevel2BackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel2BackupPeriod"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

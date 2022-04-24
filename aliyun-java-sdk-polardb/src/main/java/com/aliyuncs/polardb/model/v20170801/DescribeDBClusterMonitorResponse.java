@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterMonitorResponse extends AcsResponse {
 
-	private String period;
-
 	private String requestId;
 
-	public String getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-	}
+	private String period;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class DescribeDBClusterMonitorResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
 	}
 
 	@Override

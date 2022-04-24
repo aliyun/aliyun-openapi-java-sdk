@@ -49,7 +49,7 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 
 	private String nodes;
 	public CreateDBClusterEndpointRequest() {
-		super("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb");
+		super("polardb", "2017-08-01", "CreateDBClusterEndpoint");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

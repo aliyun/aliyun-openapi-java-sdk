@@ -32,12 +32,12 @@ public class DescribeDBLinksResponseUnmarshaller {
 		List<DBLinkInfosItem> dBLinkInfos = new ArrayList<DBLinkInfosItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBLinksResponse.DBLinkInfos.Length"); i++) {
 			DBLinkInfosItem dBLinkInfosItem = new DBLinkInfosItem();
-			dBLinkInfosItem.setTargetDBInstanceName(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].TargetDBInstanceName"));
 			dBLinkInfosItem.setDBInstanceName(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].DBInstanceName"));
-			dBLinkInfosItem.setTargetDBName(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].TargetDBName"));
-			dBLinkInfosItem.setTargetAccount(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].TargetAccount"));
 			dBLinkInfosItem.setDBLinkName(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].DBLinkName"));
 			dBLinkInfosItem.setSourceDBName(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].SourceDBName"));
+			dBLinkInfosItem.setTargetDBName(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].TargetDBName"));
+			dBLinkInfosItem.setTargetDBInstanceName(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].TargetDBInstanceName"));
+			dBLinkInfosItem.setTargetAccount(_ctx.stringValue("DescribeDBLinksResponse.DBLinkInfos["+ i +"].TargetAccount"));
 
 			dBLinkInfos.add(dBLinkInfosItem);
 		}

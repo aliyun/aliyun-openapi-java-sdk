@@ -15,14 +15,14 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.ModifyDBNodeHotReplicaModeResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.ModifyDBNodesClassResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBNodeHotReplicaModeResponse extends AcsResponse {
+public class ModifyDBNodesClassResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -55,7 +55,7 @@ public class ModifyDBNodeHotReplicaModeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyDBNodeHotReplicaModeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBNodeHotReplicaModeResponseUnmarshaller.unmarshall(this, context);
+	public ModifyDBNodesClassResponse getInstance(UnmarshallerContext context) {
+		return	ModifyDBNodesClassResponseUnmarshaller.unmarshall(this, context);
 	}
 }

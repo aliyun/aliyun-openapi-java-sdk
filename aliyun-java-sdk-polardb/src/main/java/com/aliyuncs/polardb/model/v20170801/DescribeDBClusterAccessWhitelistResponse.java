@@ -57,19 +57,11 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 
 	public static class DBClusterIPArray {
 
-		private String dBClusterIPArrayName;
-
 		private String dBClusterIPArrayAttribute;
 
+		private String dBClusterIPArrayName;
+
 		private String securityIps;
-
-		public String getDBClusterIPArrayName() {
-			return this.dBClusterIPArrayName;
-		}
-
-		public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
-			this.dBClusterIPArrayName = dBClusterIPArrayName;
-		}
 
 		public String getDBClusterIPArrayAttribute() {
 			return this.dBClusterIPArrayAttribute;
@@ -77,6 +69,14 @@ public class DescribeDBClusterAccessWhitelistResponse extends AcsResponse {
 
 		public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
 			this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
+		}
+
+		public String getDBClusterIPArrayName() {
+			return this.dBClusterIPArrayName;
+		}
+
+		public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
+			this.dBClusterIPArrayName = dBClusterIPArrayName;
 		}
 
 		public String getSecurityIps() {

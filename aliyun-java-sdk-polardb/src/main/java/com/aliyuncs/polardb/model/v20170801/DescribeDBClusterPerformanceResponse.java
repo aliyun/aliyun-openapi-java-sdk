@@ -25,53 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String dBClusterId;
-
-	private String engine;
-
-	private String dBType;
-
 	private String dBVersion;
-
-	private String startTime;
 
 	private String endTime;
 
+	private String requestId;
+
+	private String startTime;
+
+	private String dBClusterId;
+
+	private String dBType;
+
+	private String engine;
+
 	private List<PerformanceItem> performanceKeys;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
-
-	public String getDBType() {
-		return this.dBType;
-	}
-
-	public void setDBType(String dBType) {
-		this.dBType = dBType;
-	}
 
 	public String getDBVersion() {
 		return this.dBVersion;
@@ -79,6 +47,22 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public void setDBVersion(String dBVersion) {
 		this.dBVersion = dBVersion;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getStartTime() {
@@ -89,12 +73,28 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getDBClusterId() {
+		return this.dBClusterId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
 	}
 
 	public List<PerformanceItem> getPerformanceKeys() {
@@ -107,20 +107,20 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public static class PerformanceItem {
 
-		private String dBNodeId;
+		private String metricName;
 
 		private String measurement;
 
-		private String metricName;
+		private String dBNodeId;
 
 		private List<PerformanceItemValue> points;
 
-		public String getDBNodeId() {
-			return this.dBNodeId;
+		public String getMetricName() {
+			return this.metricName;
 		}
 
-		public void setDBNodeId(String dBNodeId) {
-			this.dBNodeId = dBNodeId;
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
 		}
 
 		public String getMeasurement() {
@@ -131,12 +131,12 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 			this.measurement = measurement;
 		}
 
-		public String getMetricName() {
-			return this.metricName;
+		public String getDBNodeId() {
+			return this.dBNodeId;
 		}
 
-		public void setMetricName(String metricName) {
-			this.metricName = metricName;
+		public void setDBNodeId(String dBNodeId) {
+			this.dBNodeId = dBNodeId;
 		}
 
 		public List<PerformanceItemValue> getPoints() {

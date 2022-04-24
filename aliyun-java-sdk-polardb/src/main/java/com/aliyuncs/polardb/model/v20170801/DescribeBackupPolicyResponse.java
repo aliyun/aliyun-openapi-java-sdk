@@ -30,17 +30,25 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String backupRetentionPolicyOnClusterDeletion;
-
 	private String preferredBackupTime;
 
-	private String backupFrequency;
-
-	private String preferredNextBackupTime;
+	private String backupRetentionPolicyOnClusterDeletion;
 
 	private Integer backupRetentionPeriod;
 
+	private String preferredNextBackupTime;
+
 	private String dataLevel2BackupRetentionPeriod;
+
+	private String backupFrequency;
+
+	private String dataLevel1BackupFrequency;
+
+	private String dataLevel1BackupPeriod;
+
+	private String dataLevel1BackupTime;
+
+	private String dataLevel2BackupPeriod;
 
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
@@ -66,14 +74,6 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBackupRetentionPolicyOnClusterDeletion() {
-		return this.backupRetentionPolicyOnClusterDeletion;
-	}
-
-	public void setBackupRetentionPolicyOnClusterDeletion(String backupRetentionPolicyOnClusterDeletion) {
-		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
-	}
-
 	public String getPreferredBackupTime() {
 		return this.preferredBackupTime;
 	}
@@ -82,20 +82,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.preferredBackupTime = preferredBackupTime;
 	}
 
-	public String getBackupFrequency() {
-		return this.backupFrequency;
+	public String getBackupRetentionPolicyOnClusterDeletion() {
+		return this.backupRetentionPolicyOnClusterDeletion;
 	}
 
-	public void setBackupFrequency(String backupFrequency) {
-		this.backupFrequency = backupFrequency;
-	}
-
-	public String getPreferredNextBackupTime() {
-		return this.preferredNextBackupTime;
-	}
-
-	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
-		this.preferredNextBackupTime = preferredNextBackupTime;
+	public void setBackupRetentionPolicyOnClusterDeletion(String backupRetentionPolicyOnClusterDeletion) {
+		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
 	}
 
 	public Integer getBackupRetentionPeriod() {
@@ -106,12 +98,60 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
+	public String getPreferredNextBackupTime() {
+		return this.preferredNextBackupTime;
+	}
+
+	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
+		this.preferredNextBackupTime = preferredNextBackupTime;
+	}
+
 	public String getDataLevel2BackupRetentionPeriod() {
 		return this.dataLevel2BackupRetentionPeriod;
 	}
 
 	public void setDataLevel2BackupRetentionPeriod(String dataLevel2BackupRetentionPeriod) {
 		this.dataLevel2BackupRetentionPeriod = dataLevel2BackupRetentionPeriod;
+	}
+
+	public String getBackupFrequency() {
+		return this.backupFrequency;
+	}
+
+	public void setBackupFrequency(String backupFrequency) {
+		this.backupFrequency = backupFrequency;
+	}
+
+	public String getDataLevel1BackupFrequency() {
+		return this.dataLevel1BackupFrequency;
+	}
+
+	public void setDataLevel1BackupFrequency(String dataLevel1BackupFrequency) {
+		this.dataLevel1BackupFrequency = dataLevel1BackupFrequency;
+	}
+
+	public String getDataLevel1BackupPeriod() {
+		return this.dataLevel1BackupPeriod;
+	}
+
+	public void setDataLevel1BackupPeriod(String dataLevel1BackupPeriod) {
+		this.dataLevel1BackupPeriod = dataLevel1BackupPeriod;
+	}
+
+	public String getDataLevel1BackupTime() {
+		return this.dataLevel1BackupTime;
+	}
+
+	public void setDataLevel1BackupTime(String dataLevel1BackupTime) {
+		this.dataLevel1BackupTime = dataLevel1BackupTime;
+	}
+
+	public String getDataLevel2BackupPeriod() {
+		return this.dataLevel2BackupPeriod;
+	}
+
+	public void setDataLevel2BackupPeriod(String dataLevel2BackupPeriod) {
+		this.dataLevel2BackupPeriod = dataLevel2BackupPeriod;
 	}
 
 	@Override

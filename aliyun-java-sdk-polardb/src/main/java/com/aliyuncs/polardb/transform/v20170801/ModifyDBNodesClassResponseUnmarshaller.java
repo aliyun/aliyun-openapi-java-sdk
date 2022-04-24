@@ -14,16 +14,18 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.polardb.model.v20170801.RefreshProxyLevelResponse;
+import com.aliyuncs.polardb.model.v20170801.ModifyDBNodesClassResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RefreshProxyLevelResponseUnmarshaller {
+public class ModifyDBNodesClassResponseUnmarshaller {
 
-	public static RefreshProxyLevelResponse unmarshall(RefreshProxyLevelResponse refreshProxyLevelResponse, UnmarshallerContext _ctx) {
+	public static ModifyDBNodesClassResponse unmarshall(ModifyDBNodesClassResponse modifyDBNodesClassResponse, UnmarshallerContext _ctx) {
 		
-		refreshProxyLevelResponse.setRequestId(_ctx.stringValue("RefreshProxyLevelResponse.RequestId"));
+		modifyDBNodesClassResponse.setRequestId(_ctx.stringValue("ModifyDBNodesClassResponse.RequestId"));
+		modifyDBNodesClassResponse.setDBClusterId(_ctx.stringValue("ModifyDBNodesClassResponse.DBClusterId"));
+		modifyDBNodesClassResponse.setOrderId(_ctx.stringValue("ModifyDBNodesClassResponse.OrderId"));
 	 
-	 	return refreshProxyLevelResponse;
+	 	return modifyDBNodesClassResponse;
 	}
 }

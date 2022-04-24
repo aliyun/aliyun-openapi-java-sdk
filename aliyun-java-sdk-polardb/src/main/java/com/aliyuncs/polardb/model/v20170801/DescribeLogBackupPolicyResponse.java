@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogBackupPolicyResponse extends AcsResponse {
 
+	private Integer logBackupRetentionPeriod;
+
 	private String requestId;
 
 	private Integer enableBackupLog;
 
-	private Integer logBackupRetentionPeriod;
+	public Integer getLogBackupRetentionPeriod() {
+		return this.logBackupRetentionPeriod;
+	}
+
+	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
+		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeLogBackupPolicyResponse extends AcsResponse {
 
 	public void setEnableBackupLog(Integer enableBackupLog) {
 		this.enableBackupLog = enableBackupLog;
-	}
-
-	public Integer getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
-	}
-
-	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
 	}
 
 	@Override

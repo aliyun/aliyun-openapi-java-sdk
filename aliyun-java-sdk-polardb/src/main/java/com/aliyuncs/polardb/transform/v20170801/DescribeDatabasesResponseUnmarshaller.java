@@ -28,25 +28,25 @@ public class DescribeDatabasesResponseUnmarshaller {
 	public static DescribeDatabasesResponse unmarshall(DescribeDatabasesResponse describeDatabasesResponse, UnmarshallerContext _ctx) {
 		
 		describeDatabasesResponse.setRequestId(_ctx.stringValue("DescribeDatabasesResponse.RequestId"));
-		describeDatabasesResponse.setPageNumber(_ctx.integerValue("DescribeDatabasesResponse.PageNumber"));
 		describeDatabasesResponse.setPageRecordCount(_ctx.integerValue("DescribeDatabasesResponse.PageRecordCount"));
+		describeDatabasesResponse.setPageNumber(_ctx.integerValue("DescribeDatabasesResponse.PageNumber"));
 
 		List<Database> databases = new ArrayList<Database>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDatabasesResponse.Databases.Length"); i++) {
 			Database database = new Database();
-			database.setDBName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
-			database.setDBStatus(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus"));
 			database.setDBDescription(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBDescription"));
-			database.setCharacterSetName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].CharacterSetName"));
+			database.setDBStatus(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus"));
+			database.setDBName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
 			database.setEngine(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Engine"));
+			database.setCharacterSetName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].CharacterSetName"));
 
 			List<Account> accounts = new ArrayList<Account>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts.Length"); j++) {
 				Account account = new Account();
-				account.setAccountName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].AccountName"));
+				account.setPrivilegeStatus(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].PrivilegeStatus"));
 				account.setAccountStatus(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].AccountStatus"));
 				account.setAccountPrivilege(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege"));
-				account.setPrivilegeStatus(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].PrivilegeStatus"));
+				account.setAccountName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts["+ j +"].AccountName"));
 
 				accounts.add(account);
 			}

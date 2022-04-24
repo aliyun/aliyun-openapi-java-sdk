@@ -31,11 +31,11 @@ public class DescribeBackupTasksResponseUnmarshaller {
 		List<BackupJob> items = new ArrayList<BackupJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupTasksResponse.Items.Length"); i++) {
 			BackupJob backupJob = new BackupJob();
-			backupJob.setBackupJobId(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupJobId"));
-			backupJob.setBackupProgressStatus(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupProgressStatus"));
-			backupJob.setJobMode(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].JobMode"));
 			backupJob.setStartTime(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].StartTime"));
 			backupJob.setProcess(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].Process"));
+			backupJob.setBackupJobId(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupJobId"));
+			backupJob.setJobMode(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].JobMode"));
+			backupJob.setBackupProgressStatus(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupProgressStatus"));
 			backupJob.setTaskAction(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].TaskAction"));
 
 			items.add(backupJob);

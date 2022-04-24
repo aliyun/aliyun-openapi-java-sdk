@@ -23,8 +23,8 @@ public class DescribeLogBackupPolicyResponseUnmarshaller {
 	public static DescribeLogBackupPolicyResponse unmarshall(DescribeLogBackupPolicyResponse describeLogBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
 		describeLogBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeLogBackupPolicyResponse.RequestId"));
-		describeLogBackupPolicyResponse.setEnableBackupLog(_ctx.integerValue("DescribeLogBackupPolicyResponse.EnableBackupLog"));
 		describeLogBackupPolicyResponse.setLogBackupRetentionPeriod(_ctx.integerValue("DescribeLogBackupPolicyResponse.LogBackupRetentionPeriod"));
+		describeLogBackupPolicyResponse.setEnableBackupLog(_ctx.integerValue("DescribeLogBackupPolicyResponse.EnableBackupLog"));
 	 
 	 	return describeLogBackupPolicyResponse;
 	}

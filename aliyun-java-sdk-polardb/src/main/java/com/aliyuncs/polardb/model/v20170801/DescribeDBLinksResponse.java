@@ -57,25 +57,17 @@ public class DescribeDBLinksResponse extends AcsResponse {
 
 	public static class DBLinkInfosItem {
 
-		private String targetDBInstanceName;
-
 		private String dBInstanceName;
-
-		private String targetDBName;
-
-		private String targetAccount;
 
 		private String dBLinkName;
 
 		private String sourceDBName;
 
-		public String getTargetDBInstanceName() {
-			return this.targetDBInstanceName;
-		}
+		private String targetDBName;
 
-		public void setTargetDBInstanceName(String targetDBInstanceName) {
-			this.targetDBInstanceName = targetDBInstanceName;
-		}
+		private String targetDBInstanceName;
+
+		private String targetAccount;
 
 		public String getDBInstanceName() {
 			return this.dBInstanceName;
@@ -83,22 +75,6 @@ public class DescribeDBLinksResponse extends AcsResponse {
 
 		public void setDBInstanceName(String dBInstanceName) {
 			this.dBInstanceName = dBInstanceName;
-		}
-
-		public String getTargetDBName() {
-			return this.targetDBName;
-		}
-
-		public void setTargetDBName(String targetDBName) {
-			this.targetDBName = targetDBName;
-		}
-
-		public String getTargetAccount() {
-			return this.targetAccount;
-		}
-
-		public void setTargetAccount(String targetAccount) {
-			this.targetAccount = targetAccount;
 		}
 
 		public String getDBLinkName() {
@@ -115,6 +91,30 @@ public class DescribeDBLinksResponse extends AcsResponse {
 
 		public void setSourceDBName(String sourceDBName) {
 			this.sourceDBName = sourceDBName;
+		}
+
+		public String getTargetDBName() {
+			return this.targetDBName;
+		}
+
+		public void setTargetDBName(String targetDBName) {
+			this.targetDBName = targetDBName;
+		}
+
+		public String getTargetDBInstanceName() {
+			return this.targetDBInstanceName;
+		}
+
+		public void setTargetDBInstanceName(String targetDBInstanceName) {
+			this.targetDBInstanceName = targetDBInstanceName;
+		}
+
+		public String getTargetAccount() {
+			return this.targetAccount;
+		}
+
+		public void setTargetAccount(String targetAccount) {
+			this.targetAccount = targetAccount;
 		}
 	}
 

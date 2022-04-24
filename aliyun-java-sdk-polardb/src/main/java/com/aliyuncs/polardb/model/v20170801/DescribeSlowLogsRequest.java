@@ -22,12 +22,16 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBNodeHotReplicaModeRequest extends RpcAcsRequest<ModifyDBNodeHotReplicaModeResponse> {
+public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String dBNodeId;
+	private String startTime;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -35,11 +39,13 @@ public class ModifyDBNodeHotReplicaModeRequest extends RpcAcsRequest<ModifyDBNod
 
 	private String ownerAccount;
 
+	private String endTime;
+
 	private Long ownerId;
 
-	private String hotReplicaMode;
-	public ModifyDBNodeHotReplicaModeRequest() {
-		super("polardb", "2017-08-01", "ModifyDBNodeHotReplicaMode", "polardb");
+	private String dBName;
+	public DescribeSlowLogsRequest() {
+		super("polardb", "2017-08-01", "DescribeSlowLogs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +64,36 @@ public class ModifyDBNodeHotReplicaModeRequest extends RpcAcsRequest<ModifyDBNod
 		}
 	}
 
-	public String getDBNodeId() {
-		return this.dBNodeId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setDBNodeId(String dBNodeId) {
-		this.dBNodeId = dBNodeId;
-		if(dBNodeId != null){
-			putQueryParameter("DBNodeId", dBNodeId);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -102,6 +130,17 @@ public class ModifyDBNodeHotReplicaModeRequest extends RpcAcsRequest<ModifyDBNod
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -113,20 +152,20 @@ public class ModifyDBNodeHotReplicaModeRequest extends RpcAcsRequest<ModifyDBNod
 		}
 	}
 
-	public String getHotReplicaMode() {
-		return this.hotReplicaMode;
+	public String getDBName() {
+		return this.dBName;
 	}
 
-	public void setHotReplicaMode(String hotReplicaMode) {
-		this.hotReplicaMode = hotReplicaMode;
-		if(hotReplicaMode != null){
-			putQueryParameter("HotReplicaMode", hotReplicaMode);
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 
 	@Override
-	public Class<ModifyDBNodeHotReplicaModeResponse> getResponseClass() {
-		return ModifyDBNodeHotReplicaModeResponse.class;
+	public Class<DescribeSlowLogsResponse> getResponseClass() {
+		return DescribeSlowLogsResponse.class;
 	}
 
 }
