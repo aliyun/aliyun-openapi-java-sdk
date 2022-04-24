@@ -41,6 +41,8 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	private String createdTime;
 
+	private String routerTableId;
+
 	private List<CloudResourceSetType> cloudResources;
 
 	private List<String> vSwitchIds;
@@ -107,6 +109,14 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	public void setCreatedTime(String createdTime) {
 		this.createdTime = createdTime;
+	}
+
+	public String getRouterTableId() {
+		return this.routerTableId;
+	}
+
+	public void setRouterTableId(String routerTableId) {
+		this.routerTableId = routerTableId;
 	}
 
 	public List<CloudResourceSetType> getCloudResources() {

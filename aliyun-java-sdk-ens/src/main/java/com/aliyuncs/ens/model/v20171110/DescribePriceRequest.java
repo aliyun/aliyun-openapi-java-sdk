@@ -15,6 +15,9 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -24,9 +27,14 @@ import com.aliyuncs.http.MethodType;
 public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	   
 
+	@SerializedName("dataDisks")
+	private List<DataDisks> dataDisks;
+
 	private String ensRegionId;
 
 	private Integer period;
+
+	private String periodUnit;
 
 	private String internetChargeType;
 
@@ -40,6 +48,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	public DescribePriceRequest() {
 		super("Ens", "2017-11-10", "DescribePrice", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public List<DataDisks> getDataDisks() {
+		return this.dataDisks;
+	}
+
+	public void setDataDisks(List<DataDisks> dataDisks) {
+		this.dataDisks = dataDisks;	
+		if (dataDisks != null) {
+			putQueryParameter("DataDisks" , new Gson().toJson(dataDisks));
+		}	
 	}
 
 	public String getEnsRegionId() {
@@ -61,6 +80,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 
@@ -116,6 +146,31 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
+		}
+	}
+
+	public static class DataDisks {
+
+		@SerializedName("Size")
+		private Long size;
+
+		@SerializedName("Category")
+		private String category;
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 	}
 

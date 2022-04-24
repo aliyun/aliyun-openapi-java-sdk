@@ -91,6 +91,8 @@ public class DescribeNetworksResponse extends AcsResponse {
 
 		private String createdTime;
 
+		private String routerTableId;
+
 		private List<String> vSwitchIds;
 
 		public String getEnsRegionId() {
@@ -147,6 +149,14 @@ public class DescribeNetworksResponse extends AcsResponse {
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getRouterTableId() {
+			return this.routerTableId;
+		}
+
+		public void setRouterTableId(String routerTableId) {
+			this.routerTableId = routerTableId;
 		}
 
 		public List<String> getVSwitchIds() {

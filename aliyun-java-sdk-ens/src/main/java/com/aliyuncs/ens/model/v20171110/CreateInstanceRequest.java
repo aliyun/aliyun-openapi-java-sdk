@@ -56,6 +56,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String userData;
 
+	private Boolean passwordInherit;
+
 	private String instanceType;
 
 	private String dataDisk1Size;
@@ -245,6 +247,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public Boolean getPasswordInherit() {
+		return this.passwordInherit;
+	}
+
+	public void setPasswordInherit(Boolean passwordInherit) {
+		this.passwordInherit = passwordInherit;
+		if(passwordInherit != null){
+			putQueryParameter("PasswordInherit", passwordInherit.toString());
 		}
 	}
 

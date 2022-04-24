@@ -34,6 +34,7 @@ public class DescribeNetworkAttributeResponseUnmarshaller {
 		describeNetworkAttributeResponse.setStatus(_ctx.stringValue("DescribeNetworkAttributeResponse.Status"));
 		describeNetworkAttributeResponse.setDescription(_ctx.stringValue("DescribeNetworkAttributeResponse.Description"));
 		describeNetworkAttributeResponse.setCreatedTime(_ctx.stringValue("DescribeNetworkAttributeResponse.CreatedTime"));
+		describeNetworkAttributeResponse.setRouterTableId(_ctx.stringValue("DescribeNetworkAttributeResponse.RouterTableId"));
 
 		List<String> vSwitchIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAttributeResponse.VSwitchIds.Length"); i++) {

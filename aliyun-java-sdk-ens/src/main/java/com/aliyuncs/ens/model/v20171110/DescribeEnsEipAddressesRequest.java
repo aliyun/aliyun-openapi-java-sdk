@@ -26,6 +26,8 @@ public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEip
 
 	private String eipAddress;
 
+	private String ensRegionId;
+
 	private String allocationId;
 
 	private Integer pageNumber;
@@ -48,6 +50,17 @@ public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEip
 		this.eipAddress = eipAddress;
 		if(eipAddress != null){
 			putQueryParameter("EipAddress", eipAddress);
+		}
+	}
+
+	public String getEnsRegionId() {
+		return this.ensRegionId;
+	}
+
+	public void setEnsRegionId(String ensRegionId) {
+		this.ensRegionId = ensRegionId;
+		if(ensRegionId != null){
+			putQueryParameter("EnsRegionId", ensRegionId);
 		}
 	}
 
