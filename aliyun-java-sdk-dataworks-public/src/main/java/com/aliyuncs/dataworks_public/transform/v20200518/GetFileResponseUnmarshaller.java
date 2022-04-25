@@ -21,8 +21,10 @@ import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.File;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration;
+import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.InputContextParameter;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.NodeInputOutput;
 import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.NodeInputOutput1;
+import com.aliyuncs.dataworks_public.model.v20200518.GetFileResponse.Data.NodeConfiguration.OutputContextParameter;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -98,6 +100,28 @@ public class GetFileResponseUnmarshaller {
 			outputList.add(nodeInputOutput1);
 		}
 		nodeConfiguration.setOutputList(outputList);
+
+		List<InputContextParameter> inputParameters = new ArrayList<InputContextParameter>();
+		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.InputParameters.Length"); i++) {
+			InputContextParameter inputContextParameter = new InputContextParameter();
+			inputContextParameter.setParameterName(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.InputParameters["+ i +"].ParameterName"));
+			inputContextParameter.setValueSource(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.InputParameters["+ i +"].ValueSource"));
+
+			inputParameters.add(inputContextParameter);
+		}
+		nodeConfiguration.setInputParameters(inputParameters);
+
+		List<OutputContextParameter> outputParameters = new ArrayList<OutputContextParameter>();
+		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.OutputParameters.Length"); i++) {
+			OutputContextParameter outputContextParameter = new OutputContextParameter();
+			outputContextParameter.setParameterName(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.OutputParameters["+ i +"].ParameterName"));
+			outputContextParameter.setValue(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.OutputParameters["+ i +"].Value"));
+			outputContextParameter.setType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.OutputParameters["+ i +"].Type"));
+			outputContextParameter.setDescription(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.OutputParameters["+ i +"].Description"));
+
+			outputParameters.add(outputContextParameter);
+		}
+		nodeConfiguration.setOutputParameters(outputParameters);
 		data.setNodeConfiguration(nodeConfiguration);
 		getFileResponse.setData(data);
 	 

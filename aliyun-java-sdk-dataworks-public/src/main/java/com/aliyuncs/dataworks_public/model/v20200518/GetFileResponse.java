@@ -364,6 +364,10 @@ public class GetFileResponse extends AcsResponse {
 
 			private List<NodeInputOutput1> outputList;
 
+			private List<InputContextParameter> inputParameters;
+
+			private List<OutputContextParameter> outputParameters;
+
 			public String getRerunMode() {
 				return this.rerunMode;
 			}
@@ -492,6 +496,22 @@ public class GetFileResponse extends AcsResponse {
 				this.outputList = outputList;
 			}
 
+			public List<InputContextParameter> getInputParameters() {
+				return this.inputParameters;
+			}
+
+			public void setInputParameters(List<InputContextParameter> inputParameters) {
+				this.inputParameters = inputParameters;
+			}
+
+			public List<OutputContextParameter> getOutputParameters() {
+				return this.outputParameters;
+			}
+
+			public void setOutputParameters(List<OutputContextParameter> outputParameters) {
+				this.outputParameters = outputParameters;
+			}
+
 			public static class NodeInputOutput {
 
 				private String input;
@@ -535,6 +555,72 @@ public class GetFileResponse extends AcsResponse {
 
 				public void setOutput(String output) {
 					this.output = output;
+				}
+			}
+
+			public static class InputContextParameter {
+
+				private String parameterName;
+
+				private String valueSource;
+
+				public String getParameterName() {
+					return this.parameterName;
+				}
+
+				public void setParameterName(String parameterName) {
+					this.parameterName = parameterName;
+				}
+
+				public String getValueSource() {
+					return this.valueSource;
+				}
+
+				public void setValueSource(String valueSource) {
+					this.valueSource = valueSource;
+				}
+			}
+
+			public static class OutputContextParameter {
+
+				private String parameterName;
+
+				private String value;
+
+				private String type;
+
+				private String description;
+
+				public String getParameterName() {
+					return this.parameterName;
+				}
+
+				public void setParameterName(String parameterName) {
+					this.parameterName = parameterName;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getDescription() {
+					return this.description;
+				}
+
+				public void setDescription(String description) {
+					this.description = description;
 				}
 			}
 		}

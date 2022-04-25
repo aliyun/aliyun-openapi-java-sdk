@@ -55,6 +55,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String connectionName;
 
+	private String outputParameters;
+
 	private String paraValue;
 
 	private String resourceGroupIdentifier;
@@ -66,6 +68,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 	private Long endEffectDate;
 
 	private String fileName;
+
+	private String inputParameters;
 
 	private Boolean stop;
 
@@ -252,6 +256,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		}
 	}
 
+	public String getOutputParameters() {
+		return this.outputParameters;
+	}
+
+	public void setOutputParameters(String outputParameters) {
+		this.outputParameters = outputParameters;
+		if(outputParameters != null){
+			putBodyParameter("OutputParameters", outputParameters);
+		}
+	}
+
 	public String getParaValue() {
 		return this.paraValue;
 	}
@@ -315,6 +330,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.fileName = fileName;
 		if(fileName != null){
 			putBodyParameter("FileName", fileName);
+		}
+	}
+
+	public String getInputParameters() {
+		return this.inputParameters;
+	}
+
+	public void setInputParameters(String inputParameters) {
+		this.inputParameters = inputParameters;
+		if(inputParameters != null){
+			putBodyParameter("InputParameters", inputParameters);
 		}
 	}
 
