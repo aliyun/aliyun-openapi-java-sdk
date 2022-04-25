@@ -57,6 +57,8 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 
 	private String jdk;
 
+	private String resourceGroupId;
+
 	private Integer mem;
 
 	private String logicalRegionId;
@@ -249,6 +251,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		this.jdk = jdk;
 		if(jdk != null){
 			putQueryParameter("Jdk", jdk);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
