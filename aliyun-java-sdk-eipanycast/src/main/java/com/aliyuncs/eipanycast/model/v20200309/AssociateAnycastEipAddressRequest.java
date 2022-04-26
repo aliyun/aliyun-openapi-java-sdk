@@ -26,13 +26,13 @@ import com.aliyuncs.eipanycast.Endpoint;
 public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAnycastEipAddressResponse> {
 	   
 
-	private Boolean dryRun;
-
-	private String associationMode;
-
 	private String clientToken;
 
 	private List<PopLocations> popLocations;
+
+	private Boolean dryRun;
+
+	private String associationMode;
 
 	private String bindInstanceType;
 
@@ -50,28 +50,6 @@ public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
-	public String getAssociationMode() {
-		return this.associationMode;
-	}
-
-	public void setAssociationMode(String associationMode) {
-		this.associationMode = associationMode;
-		if(associationMode != null){
-			putQueryParameter("AssociationMode", associationMode);
-		}
 	}
 
 	public String getClientToken() {
@@ -99,6 +77,28 @@ public class AssociateAnycastEipAddressRequest extends RpcAcsRequest<AssociateAn
 				}
 			}
 		}	
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getAssociationMode() {
+		return this.associationMode;
+	}
+
+	public void setAssociationMode(String associationMode) {
+		this.associationMode = associationMode;
+		if(associationMode != null){
+			putQueryParameter("AssociationMode", associationMode);
+		}
 	}
 
 	public String getBindInstanceType() {

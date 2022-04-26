@@ -93,6 +93,8 @@ public class ListAnycastEipAddressesResponse extends AcsResponse {
 
 		private String name;
 
+		private Integer serviceManaged;
+
 		private List<AnycastEipBindInfo> anycastEipBindInfoList;
 
 		public String getStatus() {
@@ -197,6 +199,14 @@ public class ListAnycastEipAddressesResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Integer getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Integer serviceManaged) {
+			this.serviceManaged = serviceManaged;
 		}
 
 		public List<AnycastEipBindInfo> getAnycastEipBindInfoList() {

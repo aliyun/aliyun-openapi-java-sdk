@@ -36,6 +36,8 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 
 	private String anycastEipAddress;
 
+	private List<String> anycastIdss;
+
 	private String internetChargeType;
 
 	private String anycastId;
@@ -109,6 +111,19 @@ public class ListAnycastEipAddressesRequest extends RpcAcsRequest<ListAnycastEip
 		if(anycastEipAddress != null){
 			putQueryParameter("AnycastEipAddress", anycastEipAddress);
 		}
+	}
+
+	public List<String> getAnycastIdss() {
+		return this.anycastIdss;
+	}
+
+	public void setAnycastIdss(List<String> anycastIdss) {
+		this.anycastIdss = anycastIdss;	
+		if (anycastIdss != null) {
+			for (int i = 0; i < anycastIdss.size(); i++) {
+				putQueryParameter("AnycastIds." + (i + 1) , anycastIdss.get(i));
+			}
+		}	
 	}
 
 	public String getInternetChargeType() {

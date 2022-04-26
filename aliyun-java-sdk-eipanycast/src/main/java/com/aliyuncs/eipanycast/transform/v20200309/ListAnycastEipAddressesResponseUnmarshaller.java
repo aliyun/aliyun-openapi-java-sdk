@@ -47,6 +47,7 @@ public class ListAnycastEipAddressesResponseUnmarshaller {
 			anycast.setInternetChargeType(_ctx.stringValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].InternetChargeType"));
 			anycast.setBusinessStatus(_ctx.stringValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].BusinessStatus"));
 			anycast.setName(_ctx.stringValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].Name"));
+			anycast.setServiceManaged(_ctx.integerValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].ServiceManaged"));
 
 			List<AnycastEipBindInfo> anycastEipBindInfoList = new ArrayList<AnycastEipBindInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].AnycastEipBindInfoList.Length"); j++) {
