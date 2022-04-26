@@ -35,7 +35,7 @@ public class MonitorCallRequest extends RpcAcsRequest<MonitorCallResponse> {
 
 	private String monitoredUserId;
 	public MonitorCallRequest() {
-		super("CCC", "2020-07-01", "MonitorCall", "CCC");
+		super("CCC", "2020-07-01", "MonitorCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

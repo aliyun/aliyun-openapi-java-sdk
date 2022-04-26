@@ -29,7 +29,7 @@ public class GetHistoricalCampaignReportRequest extends RpcAcsRequest<GetHistori
 
 	private String instanceId;
 	public GetHistoricalCampaignReportRequest() {
-		super("CCC", "2020-07-01", "GetHistoricalCampaignReport", "CCC");
+		super("CCC", "2020-07-01", "GetHistoricalCampaignReport");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ListMonoRecordingsRequest extends RpcAcsRequest<ListMonoRecordingsR
 
 	private String instanceId;
 	public ListMonoRecordingsRequest() {
-		super("CCC", "2020-07-01", "ListMonoRecordings", "CCC");
+		super("CCC", "2020-07-01", "ListMonoRecordings");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

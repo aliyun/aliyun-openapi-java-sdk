@@ -33,7 +33,7 @@ public class RegisterDevicesRequest extends RpcAcsRequest<RegisterDevicesRespons
 
 	private String instanceId;
 	public RegisterDevicesRequest() {
-		super("CCC", "2020-07-01", "RegisterDevices", "CCC");
+		super("CCC", "2020-07-01", "RegisterDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

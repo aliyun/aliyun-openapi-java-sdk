@@ -37,7 +37,7 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 
 	private String displayId;
 	public ModifyUserRequest() {
-		super("CCC", "2020-07-01", "ModifyUser", "CCC");
+		super("CCC", "2020-07-01", "ModifyUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

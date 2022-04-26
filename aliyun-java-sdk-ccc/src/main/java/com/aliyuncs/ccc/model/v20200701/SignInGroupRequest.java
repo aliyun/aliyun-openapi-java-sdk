@@ -33,7 +33,7 @@ public class SignInGroupRequest extends RpcAcsRequest<SignInGroupResponse> {
 
 	private String instanceId;
 	public SignInGroupRequest() {
-		super("CCC", "2020-07-01", "SignInGroup", "CCC");
+		super("CCC", "2020-07-01", "SignInGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

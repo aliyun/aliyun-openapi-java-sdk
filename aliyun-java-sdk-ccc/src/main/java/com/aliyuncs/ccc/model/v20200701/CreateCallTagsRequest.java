@@ -29,7 +29,7 @@ public class CreateCallTagsRequest extends RpcAcsRequest<CreateCallTagsResponse>
 
 	private String callTagNameList;
 	public CreateCallTagsRequest() {
-		super("CCC", "2020-07-01", "CreateCallTags", "CCC");
+		super("CCC", "2020-07-01", "CreateCallTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class PauseCampaignRequest extends RpcAcsRequest<PauseCampaignResponse> {
 
 	private String campaignId;
 	public PauseCampaignRequest() {
-		super("CCC", "2020-07-01", "PauseCampaign", "CCC");
+		super("CCC", "2020-07-01", "PauseCampaign");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

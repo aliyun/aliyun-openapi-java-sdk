@@ -29,7 +29,7 @@ public class ImportCustomCallTaggingRequest extends RpcAcsRequest<ImportCustomCa
 
 	private String filePath;
 	public ImportCustomCallTaggingRequest() {
-		super("CCC", "2020-07-01", "ImportCustomCallTagging", "CCC");
+		super("CCC", "2020-07-01", "ImportCustomCallTagging");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

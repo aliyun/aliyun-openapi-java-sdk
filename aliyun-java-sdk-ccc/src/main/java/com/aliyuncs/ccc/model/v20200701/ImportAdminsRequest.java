@@ -29,7 +29,7 @@ public class ImportAdminsRequest extends RpcAcsRequest<ImportAdminsResponse> {
 
 	private String instanceId;
 	public ImportAdminsRequest() {
-		super("CCC", "2020-07-01", "ImportAdmins", "CCC");
+		super("CCC", "2020-07-01", "ImportAdmins");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

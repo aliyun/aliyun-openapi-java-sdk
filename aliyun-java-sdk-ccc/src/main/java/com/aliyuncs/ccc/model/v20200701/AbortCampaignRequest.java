@@ -29,7 +29,7 @@ public class AbortCampaignRequest extends RpcAcsRequest<AbortCampaignResponse> {
 
 	private String campaignId;
 	public AbortCampaignRequest() {
-		super("CCC", "2020-07-01", "AbortCampaign", "CCC");
+		super("CCC", "2020-07-01", "AbortCampaign");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
