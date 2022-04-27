@@ -31,6 +31,8 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 
 	private String password;
 
+	private Integer enable;
+
 	private String lang;
 
 	private String serviceRegionId;
@@ -89,6 +91,17 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public Integer getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Integer enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable.toString());
 		}
 	}
 
