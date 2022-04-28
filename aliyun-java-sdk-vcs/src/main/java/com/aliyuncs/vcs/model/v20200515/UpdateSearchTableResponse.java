@@ -15,30 +15,22 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vcs.transform.v20200515.ReportDeviceCapacityResponseUnmarshaller;
+import com.aliyuncs.vcs.transform.v20200515.UpdateSearchTableResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ReportDeviceCapacityResponse extends AcsResponse {
-
-	private String message;
+public class UpdateSearchTableResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String retryInterval;
+	private Boolean success;
 
 	private String code;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,12 +40,12 @@ public class ReportDeviceCapacityResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRetryInterval() {
-		return this.retryInterval;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setRetryInterval(String retryInterval) {
-		this.retryInterval = retryInterval;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getCode() {
@@ -64,9 +56,17 @@ public class ReportDeviceCapacityResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	@Override
-	public ReportDeviceCapacityResponse getInstance(UnmarshallerContext context) {
-		return	ReportDeviceCapacityResponseUnmarshaller.unmarshall(this, context);
+	public UpdateSearchTableResponse getInstance(UnmarshallerContext context) {
+		return	UpdateSearchTableResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

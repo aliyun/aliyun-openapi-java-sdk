@@ -14,20 +14,19 @@
 
 package com.aliyuncs.vcs.transform.v20200515;
 
-import com.aliyuncs.vcs.model.v20200515.PushBillsResponse;
+import com.aliyuncs.vcs.model.v20200515.UpdateSearchTableResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class PushBillsResponseUnmarshaller {
+public class UpdateSearchTableResponseUnmarshaller {
 
-	public static PushBillsResponse unmarshall(PushBillsResponse pushBillsResponse, UnmarshallerContext _ctx) {
+	public static UpdateSearchTableResponse unmarshall(UpdateSearchTableResponse updateSearchTableResponse, UnmarshallerContext _ctx) {
 		
-		pushBillsResponse.setRequestId(_ctx.stringValue("PushBillsResponse.RequestId"));
-		pushBillsResponse.setSuccess(_ctx.booleanValue("PushBillsResponse.Success"));
-		pushBillsResponse.setCode(_ctx.stringValue("PushBillsResponse.Code"));
-		pushBillsResponse.setMessage(_ctx.stringValue("PushBillsResponse.Message"));
-		pushBillsResponse.setData(_ctx.stringValue("PushBillsResponse.Data"));
+		updateSearchTableResponse.setRequestId(_ctx.stringValue("UpdateSearchTableResponse.RequestId"));
+		updateSearchTableResponse.setSuccess(_ctx.booleanValue("UpdateSearchTableResponse.Success"));
+		updateSearchTableResponse.setCode(_ctx.stringValue("UpdateSearchTableResponse.Code"));
+		updateSearchTableResponse.setMessage(_ctx.stringValue("UpdateSearchTableResponse.Message"));
 	 
-	 	return pushBillsResponse;
+	 	return updateSearchTableResponse;
 	}
 }

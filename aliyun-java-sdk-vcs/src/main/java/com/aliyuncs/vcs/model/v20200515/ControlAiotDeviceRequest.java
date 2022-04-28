@@ -37,6 +37,8 @@ public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceRes
 
 	private Long associatedPort;
 
+	private Boolean isProxy;
+
 	private String id;
 
 	private String doubleVerificationGroupEnabled;
@@ -137,6 +139,17 @@ public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceRes
 		this.associatedPort = associatedPort;
 		if(associatedPort != null){
 			putBodyParameter("AssociatedPort", associatedPort.toString());
+		}
+	}
+
+	public Boolean getIsProxy() {
+		return this.isProxy;
+	}
+
+	public void setIsProxy(Boolean isProxy) {
+		this.isProxy = isProxy;
+		if(isProxy != null){
+			putBodyParameter("IsProxy", isProxy.toString());
 		}
 	}
 

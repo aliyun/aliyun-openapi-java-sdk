@@ -15,31 +15,29 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vcs.transform.v20200515.PushBillsResponseUnmarshaller;
+import com.aliyuncs.vcs.transform.v20200515.CheckAIInstanceNameResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PushBillsResponse extends AcsResponse {
+public class CheckAIInstanceNameResponse extends AcsResponse {
 
-	private Boolean success;
+	private String message;
 
 	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Data data;
 
-	private String data;
-
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -58,25 +56,30 @@ public class PushBillsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
+	public static class Data {
+
+		private Boolean available;
+
+		public Boolean getAvailable() {
+			return this.available;
+		}
+
+		public void setAvailable(Boolean available) {
+			this.available = available;
+		}
+	}
+
 	@Override
-	public PushBillsResponse getInstance(UnmarshallerContext context) {
-		return	PushBillsResponseUnmarshaller.unmarshall(this, context);
+	public CheckAIInstanceNameResponse getInstance(UnmarshallerContext context) {
+		return	CheckAIInstanceNameResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

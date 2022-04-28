@@ -139,6 +139,8 @@ public class ListCorpsResponse extends AcsResponse {
 
 			private Integer deviceCount;
 
+			private Double yOfflineAcuUsed;
+
 			public String getParentCorpId() {
 				return this.parentCorpId;
 			}
@@ -217,6 +219,14 @@ public class ListCorpsResponse extends AcsResponse {
 
 			public void setDeviceCount(Integer deviceCount) {
 				this.deviceCount = deviceCount;
+			}
+
+			public Double getYOfflineAcuUsed() {
+				return this.yOfflineAcuUsed;
+			}
+
+			public void setYOfflineAcuUsed(Double yOfflineAcuUsed) {
+				this.yOfflineAcuUsed = yOfflineAcuUsed;
 			}
 		}
 	}

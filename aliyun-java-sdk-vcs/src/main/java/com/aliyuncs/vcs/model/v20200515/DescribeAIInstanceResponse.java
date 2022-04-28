@@ -141,6 +141,10 @@ public class DescribeAIInstanceResponse extends AcsResponse {
 
 			private Double storage;
 
+			private String instanceType;
+
+			private String dataSourceTimes;
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -267,6 +271,22 @@ public class DescribeAIInstanceResponse extends AcsResponse {
 
 			public void setStorage(Double storage) {
 				this.storage = storage;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getDataSourceTimes() {
+				return this.dataSourceTimes;
+			}
+
+			public void setDataSourceTimes(String dataSourceTimes) {
+				this.dataSourceTimes = dataSourceTimes;
 			}
 		}
 	}

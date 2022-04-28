@@ -37,9 +37,14 @@ public class CreateAIInstanceRequest extends RpcAcsRequest<CreateAIInstanceRespo
 
 	private String dataType;
 
+	private String instanceType;
+
 	private String projectId;
 
 	private String algorithmId;
+
+	@SerializedName("dataSourceTimes")
+	private List<DataSourceTimes> dataSourceTimes;
 
 	private Long spf;
 
@@ -104,6 +109,17 @@ public class CreateAIInstanceRequest extends RpcAcsRequest<CreateAIInstanceRespo
 		}
 	}
 
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putBodyParameter("InstanceType", instanceType);
+		}
+	}
+
 	public String getProjectId() {
 		return this.projectId;
 	}
@@ -124,6 +140,17 @@ public class CreateAIInstanceRequest extends RpcAcsRequest<CreateAIInstanceRespo
 		if(algorithmId != null){
 			putBodyParameter("AlgorithmId", algorithmId);
 		}
+	}
+
+	public List<DataSourceTimes> getDataSourceTimes() {
+		return this.dataSourceTimes;
+	}
+
+	public void setDataSourceTimes(List<DataSourceTimes> dataSourceTimes) {
+		this.dataSourceTimes = dataSourceTimes;	
+		if (dataSourceTimes != null) {
+			putBodyParameter("DataSourceTimes" , new Gson().toJson(dataSourceTimes));
+		}	
 	}
 
 	public Long getSpf() {
@@ -178,6 +205,31 @@ public class CreateAIInstanceRequest extends RpcAcsRequest<CreateAIInstanceRespo
 		this.algorithmName = algorithmName;
 		if(algorithmName != null){
 			putBodyParameter("AlgorithmName", algorithmName);
+		}
+	}
+
+	public static class DataSourceTimes {
+
+		@SerializedName("EndTime")
+		private String endTime;
+
+		@SerializedName("StartTime")
+		private String startTime;
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 	}
 

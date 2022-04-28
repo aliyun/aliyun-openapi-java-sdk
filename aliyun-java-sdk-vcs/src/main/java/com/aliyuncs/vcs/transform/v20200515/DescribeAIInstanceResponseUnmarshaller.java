@@ -55,6 +55,8 @@ public class DescribeAIInstanceResponseUnmarshaller {
 			recordsItem.setAcuUsed(_ctx.longValue("DescribeAIInstanceResponse.Data.Records["+ i +"].AcuUsed"));
 			recordsItem.setCameraNumber(_ctx.longValue("DescribeAIInstanceResponse.Data.Records["+ i +"].CameraNumber"));
 			recordsItem.setStorage(_ctx.doubleValue("DescribeAIInstanceResponse.Data.Records["+ i +"].Storage"));
+			recordsItem.setInstanceType(_ctx.stringValue("DescribeAIInstanceResponse.Data.Records["+ i +"].InstanceType"));
+			recordsItem.setDataSourceTimes(_ctx.stringValue("DescribeAIInstanceResponse.Data.Records["+ i +"].DataSourceTimes"));
 
 			records.add(recordsItem);
 		}

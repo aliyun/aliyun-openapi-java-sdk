@@ -22,22 +22,16 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAIInstanceRequest extends RpcAcsRequest<DescribeAIInstanceResponse> {
+public class DescribeSearchTablesRequest extends RpcAcsRequest<DescribeSearchTablesResponse> {
 	   
 
 	private Long pageNumber;
 
-	private String instanceId;
-
-	private String instanceName;
-
 	private Long pageSize;
 
-	private String instanceType;
-
-	private String projectId;
-	public DescribeAIInstanceRequest() {
-		super("Vcs", "2020-05-15", "DescribeAIInstance");
+	private String searchTableIds;
+	public DescribeSearchTablesRequest() {
+		super("Vcs", "2020-05-15", "DescribeSearchTables");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,28 +50,6 @@ public class DescribeAIInstanceRequest extends RpcAcsRequest<DescribeAIInstanceR
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putBodyParameter("InstanceName", instanceName);
-		}
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -89,31 +61,20 @@ public class DescribeAIInstanceRequest extends RpcAcsRequest<DescribeAIInstanceR
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public String getSearchTableIds() {
+		return this.searchTableIds;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putBodyParameter("InstanceType", instanceType);
-		}
-	}
-
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId);
+	public void setSearchTableIds(String searchTableIds) {
+		this.searchTableIds = searchTableIds;
+		if(searchTableIds != null){
+			putBodyParameter("SearchTableIds", searchTableIds);
 		}
 	}
 
 	@Override
-	public Class<DescribeAIInstanceResponse> getResponseClass() {
-		return DescribeAIInstanceResponse.class;
+	public Class<DescribeSearchTablesResponse> getResponseClass() {
+		return DescribeSearchTablesResponse.class;
 	}
 
 }

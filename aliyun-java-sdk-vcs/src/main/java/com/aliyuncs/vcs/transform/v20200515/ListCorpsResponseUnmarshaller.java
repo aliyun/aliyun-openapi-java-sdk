@@ -50,6 +50,7 @@ public class ListCorpsResponseUnmarshaller {
 			record.setCreateDate(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].CreateDate"));
 			record.setIconPath(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].IconPath"));
 			record.setDeviceCount(_ctx.integerValue("ListCorpsResponse.Data.Records["+ i +"].DeviceCount"));
+			record.setYOfflineAcuUsed(_ctx.doubleValue("ListCorpsResponse.Data.Records["+ i +"].YOfflineAcuUsed"));
 
 			records.add(record);
 		}

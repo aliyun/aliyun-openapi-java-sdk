@@ -1,3 +1,6 @@
+2022-04-28 Version: 3.1.4
+- The data service provides super password interface.
+
 2021-11-25 Version: 3.1.2
 - The data service provides task-policy interface.
 

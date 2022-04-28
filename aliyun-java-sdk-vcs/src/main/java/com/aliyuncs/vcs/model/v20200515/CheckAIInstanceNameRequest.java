@@ -22,49 +22,21 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAIInstanceRequest extends RpcAcsRequest<DescribeAIInstanceResponse> {
+public class CheckAIInstanceNameRequest extends RpcAcsRequest<CheckAIInstanceNameResponse> {
 	   
 
-	private Long pageNumber;
-
-	private String instanceId;
-
 	private String instanceName;
-
-	private Long pageSize;
 
 	private String instanceType;
 
 	private String projectId;
-	public DescribeAIInstanceRequest() {
-		super("Vcs", "2020-05-15", "DescribeAIInstance");
+	public CheckAIInstanceNameRequest() {
+		super("Vcs", "2020-05-15", "CheckAIInstanceName");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getInstanceName() {
@@ -75,17 +47,6 @@ public class DescribeAIInstanceRequest extends RpcAcsRequest<DescribeAIInstanceR
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putBodyParameter("InstanceName", instanceName);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -112,8 +73,8 @@ public class DescribeAIInstanceRequest extends RpcAcsRequest<DescribeAIInstanceR
 	}
 
 	@Override
-	public Class<DescribeAIInstanceResponse> getResponseClass() {
-		return DescribeAIInstanceResponse.class;
+	public Class<CheckAIInstanceNameResponse> getResponseClass() {
+		return CheckAIInstanceNameResponse.class;
 	}
 
 }
