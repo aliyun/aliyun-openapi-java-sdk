@@ -1,3 +1,6 @@
+2022-04-28 Version: 1.0.6
+- Publish sdk ververica.
+
 2022-04-08 Version: 1.0.5
 - Publish sdk ververica.
 
