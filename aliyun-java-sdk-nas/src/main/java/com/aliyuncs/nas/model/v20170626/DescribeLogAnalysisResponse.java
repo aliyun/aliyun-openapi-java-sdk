@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogAnalysisResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
-
 	private Integer totalCount;
 
 	private Integer pageSize;
 
+	private String requestId;
+
 	private Integer pageNumber;
 
+	private String code;
+
 	private List<Analysis> analyses;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -69,12 +53,28 @@ public class DescribeLogAnalysisResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public List<Analysis> getAnalyses() {
@@ -109,20 +109,20 @@ public class DescribeLogAnalysisResponse extends AcsResponse {
 
 		public static class MetaValue {
 
-			private String logstore;
+			private String roleArn;
 
 			private String region;
 
+			private String logstore;
+
 			private String project;
 
-			private String roleArn;
-
-			public String getLogstore() {
-				return this.logstore;
+			public String getRoleArn() {
+				return this.roleArn;
 			}
 
-			public void setLogstore(String logstore) {
-				this.logstore = logstore;
+			public void setRoleArn(String roleArn) {
+				this.roleArn = roleArn;
 			}
 
 			public String getRegion() {
@@ -133,20 +133,20 @@ public class DescribeLogAnalysisResponse extends AcsResponse {
 				this.region = region;
 			}
 
+			public String getLogstore() {
+				return this.logstore;
+			}
+
+			public void setLogstore(String logstore) {
+				this.logstore = logstore;
+			}
+
 			public String getProject() {
 				return this.project;
 			}
 
 			public void setProject(String project) {
 				this.project = project;
-			}
-
-			public String getRoleArn() {
-				return this.roleArn;
-			}
-
-			public void setRoleArn(String roleArn) {
-				this.roleArn = roleArn;
 			}
 		}
 	}

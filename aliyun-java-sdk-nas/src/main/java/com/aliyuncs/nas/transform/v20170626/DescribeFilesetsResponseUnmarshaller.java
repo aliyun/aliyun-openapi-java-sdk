@@ -38,7 +38,7 @@ public class DescribeFilesetsResponseUnmarshaller {
 			entrie.setFsetId(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].FsetId"));
 			entrie.setStatus(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].Status"));
 			entrie.setCreateTime(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].CreateTime"));
-			entrie.setUpdateTiem(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].UpdateTiem"));
+			entrie.setUpdateTime(_ctx.stringValue("DescribeFilesetsResponse.Entries["+ i +"].UpdateTime"));
 
 			entries.add(entrie);
 		}

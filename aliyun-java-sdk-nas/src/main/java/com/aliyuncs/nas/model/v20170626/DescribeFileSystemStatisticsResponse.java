@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
+	private List<FileSystem> fileSystems;
 
 	private List<FileSystemStatistic> fileSystemStatistics;
 
-	private List<FileSystem> fileSystems;
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,12 +69,12 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public List<FileSystem> getFileSystems() {
+		return this.fileSystems;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setFileSystems(List<FileSystem> fileSystems) {
+		this.fileSystems = fileSystems;
 	}
 
 	public List<FileSystemStatistic> getFileSystemStatistics() {
@@ -77,113 +85,60 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 		this.fileSystemStatistics = fileSystemStatistics;
 	}
 
-	public List<FileSystem> getFileSystems() {
-		return this.fileSystems;
-	}
-
-	public void setFileSystems(List<FileSystem> fileSystems) {
-		this.fileSystems = fileSystems;
-	}
-
-	public static class FileSystemStatistic {
-
-		private String fileSystemType;
-
-		private Integer totalCount;
-
-		private Long meteredSize;
-
-		private Integer expiredCount;
-
-		private Integer expiringCount;
-
-		public String getFileSystemType() {
-			return this.fileSystemType;
-		}
-
-		public void setFileSystemType(String fileSystemType) {
-			this.fileSystemType = fileSystemType;
-		}
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Long getMeteredSize() {
-			return this.meteredSize;
-		}
-
-		public void setMeteredSize(Long meteredSize) {
-			this.meteredSize = meteredSize;
-		}
-
-		public Integer getExpiredCount() {
-			return this.expiredCount;
-		}
-
-		public void setExpiredCount(Integer expiredCount) {
-			this.expiredCount = expiredCount;
-		}
-
-		public Integer getExpiringCount() {
-			return this.expiringCount;
-		}
-
-		public void setExpiringCount(Integer expiringCount) {
-			this.expiringCount = expiringCount;
-		}
-	}
-
 	public static class FileSystem {
 
-		private String fileSystemId;
+		private String status;
 
-		private String description;
+		private Long capacity;
+
+		private Long meteredIASize;
 
 		private String createTime;
 
-		private String expiredTime;
+		private String chargeType;
+
+		private String storageType;
 
 		private String regionId;
+
+		private String fileSystemType;
+
+		private String fileSystemId;
+
+		private Long meteredSize;
+
+		private String description;
+
+		private String expiredTime;
 
 		private String zoneId;
 
 		private String protocolType;
 
-		private String storageType;
-
-		private String fileSystemType;
-
-		private Long meteredSize;
-
-		private Long meteredIASize;
-
-		private Long capacity;
-
-		private String chargeType;
-
-		private String status;
-
 		private List<_Package> packages;
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Long getCapacity() {
+			return this.capacity;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCapacity(Long capacity) {
+			this.capacity = capacity;
+		}
+
+		public Long getMeteredIASize() {
+			return this.meteredIASize;
+		}
+
+		public void setMeteredIASize(Long meteredIASize) {
+			this.meteredIASize = meteredIASize;
 		}
 
 		public String getCreateTime() {
@@ -194,12 +149,20 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public String getChargeType() {
+			return this.chargeType;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
 		public String getRegionId() {
@@ -208,6 +171,46 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getFileSystemType() {
+			return this.fileSystemType;
+		}
+
+		public void setFileSystemType(String fileSystemType) {
+			this.fileSystemType = fileSystemType;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
+
+		public Long getMeteredSize() {
+			return this.meteredSize;
+		}
+
+		public void setMeteredSize(Long meteredSize) {
+			this.meteredSize = meteredSize;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public String getZoneId() {
@@ -226,13 +229,69 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 			this.protocolType = protocolType;
 		}
 
-		public String getStorageType() {
-			return this.storageType;
+		public List<_Package> getPackages() {
+			return this.packages;
 		}
 
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
+		public void setPackages(List<_Package> packages) {
+			this.packages = packages;
 		}
+
+		public static class _Package {
+
+			private String startTime;
+
+			private String expiredTime;
+
+			private Long size;
+
+			private String packageId;
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getExpiredTime() {
+				return this.expiredTime;
+			}
+
+			public void setExpiredTime(String expiredTime) {
+				this.expiredTime = expiredTime;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public String getPackageId() {
+				return this.packageId;
+			}
+
+			public void setPackageId(String packageId) {
+				this.packageId = packageId;
+			}
+		}
+	}
+
+	public static class FileSystemStatistic {
+
+		private String fileSystemType;
+
+		private Long meteredSize;
+
+		private Integer expiringCount;
+
+		private Integer totalCount;
+
+		private Integer expiredCount;
 
 		public String getFileSystemType() {
 			return this.fileSystemType;
@@ -250,87 +309,28 @@ public class DescribeFileSystemStatisticsResponse extends AcsResponse {
 			this.meteredSize = meteredSize;
 		}
 
-		public Long getMeteredIASize() {
-			return this.meteredIASize;
+		public Integer getExpiringCount() {
+			return this.expiringCount;
 		}
 
-		public void setMeteredIASize(Long meteredIASize) {
-			this.meteredIASize = meteredIASize;
+		public void setExpiringCount(Integer expiringCount) {
+			this.expiringCount = expiringCount;
 		}
 
-		public Long getCapacity() {
-			return this.capacity;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setCapacity(Long capacity) {
-			this.capacity = capacity;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public Integer getExpiredCount() {
+			return this.expiredCount;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public List<_Package> getPackages() {
-			return this.packages;
-		}
-
-		public void setPackages(List<_Package> packages) {
-			this.packages = packages;
-		}
-
-		public static class _Package {
-
-			private String packageId;
-
-			private Long size;
-
-			private String startTime;
-
-			private String expiredTime;
-
-			public String getPackageId() {
-				return this.packageId;
-			}
-
-			public void setPackageId(String packageId) {
-				this.packageId = packageId;
-			}
-
-			public Long getSize() {
-				return this.size;
-			}
-
-			public void setSize(Long size) {
-				this.size = size;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getExpiredTime() {
-				return this.expiredTime;
-			}
-
-			public void setExpiredTime(String expiredTime) {
-				this.expiredTime = expiredTime;
-			}
+		public void setExpiredCount(Integer expiredCount) {
+			this.expiredCount = expiredCount;
 		}
 	}
 

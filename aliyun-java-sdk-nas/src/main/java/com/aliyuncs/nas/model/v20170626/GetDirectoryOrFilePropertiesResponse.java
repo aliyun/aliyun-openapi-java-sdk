@@ -48,23 +48,23 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 
 		private String type;
 
-		private String inode;
+		private Boolean hasInfrequentAccessFile;
 
-		private String storageType;
+		private String mTime;
 
 		private String aTime;
 
 		private Long size;
 
-		private Boolean hasInfrequentAccessFile;
-
 		private String cTime;
+
+		private String storageType;
+
+		private String name;
 
 		private String retrieveTime;
 
-		private String mTime;
-
-		private String name;
+		private String inode;
 
 		public String getType() {
 			return this.type;
@@ -74,20 +74,20 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getInode() {
-			return this.inode;
+		public Boolean getHasInfrequentAccessFile() {
+			return this.hasInfrequentAccessFile;
 		}
 
-		public void setInode(String inode) {
-			this.inode = inode;
+		public void setHasInfrequentAccessFile(Boolean hasInfrequentAccessFile) {
+			this.hasInfrequentAccessFile = hasInfrequentAccessFile;
 		}
 
-		public String getStorageType() {
-			return this.storageType;
+		public String getMTime() {
+			return this.mTime;
 		}
 
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
+		public void setMTime(String mTime) {
+			this.mTime = mTime;
 		}
 
 		public String getATime() {
@@ -106,20 +106,28 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public Boolean getHasInfrequentAccessFile() {
-			return this.hasInfrequentAccessFile;
-		}
-
-		public void setHasInfrequentAccessFile(Boolean hasInfrequentAccessFile) {
-			this.hasInfrequentAccessFile = hasInfrequentAccessFile;
-		}
-
 		public String getCTime() {
 			return this.cTime;
 		}
 
 		public void setCTime(String cTime) {
 			this.cTime = cTime;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getRetrieveTime() {
@@ -130,20 +138,12 @@ public class GetDirectoryOrFilePropertiesResponse extends AcsResponse {
 			this.retrieveTime = retrieveTime;
 		}
 
-		public String getMTime() {
-			return this.mTime;
+		public String getInode() {
+			return this.inode;
 		}
 
-		public void setMTime(String mTime) {
-			this.mTime = mTime;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setInode(String inode) {
+			this.inode = inode;
 		}
 	}
 

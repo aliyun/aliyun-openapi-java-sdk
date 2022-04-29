@@ -36,20 +36,20 @@ public class DescribeMountTargetsResponseUnmarshaller {
 		List<MountTarget> mountTargets = new ArrayList<MountTarget>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets.Length"); i++) {
 			MountTarget mountTarget = new MountTarget();
-			mountTarget.setMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].MountTargetDomain"));
-			mountTarget.setNetworkType(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].NetworkType"));
 			mountTarget.setVpcId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VpcId"));
-			mountTarget.setVswId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VswId"));
-			mountTarget.setAccessGroup(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessGroup"));
 			mountTarget.setStatus(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Status"));
+			mountTarget.setMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].MountTargetDomain"));
+			mountTarget.setAccessGroup(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessGroup"));
 			mountTarget.setDualStackMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].DualStackMountTargetDomain"));
+			mountTarget.setVswId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VswId"));
+			mountTarget.setNetworkType(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].NetworkType"));
 
 			List<ClientMasterNode> clientMasterNodes = new ArrayList<ClientMasterNode>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes.Length"); j++) {
 				ClientMasterNode clientMasterNode = new ClientMasterNode();
 				clientMasterNode.setEcsId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsId"));
-				clientMasterNode.setEcsIp(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsIp"));
 				clientMasterNode.setDefaultPasswd(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].DefaultPasswd"));
+				clientMasterNode.setEcsIp(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsIp"));
 
 				clientMasterNodes.add(clientMasterNode);
 			}

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoSnapshotTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeAutoSnapshotTasksResponse extends AcsResponse {
 
 	private List<AutoSnapshotTask> autoSnapshotTasks;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {

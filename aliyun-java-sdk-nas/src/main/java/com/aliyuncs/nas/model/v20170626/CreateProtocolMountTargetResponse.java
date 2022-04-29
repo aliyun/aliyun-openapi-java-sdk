@@ -15,26 +15,18 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.nas.transform.v20170626.CreateSnapshotResponseUnmarshaller;
+import com.aliyuncs.nas.transform.v20170626.CreateProtocolMountTargetResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateSnapshotResponse extends AcsResponse {
-
-	private String snapshotId;
+public class CreateProtocolMountTargetResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-	}
+	private String exportId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +36,21 @@ public class CreateSnapshotResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getExportId() {
+		return this.exportId;
+	}
+
+	public void setExportId(String exportId) {
+		this.exportId = exportId;
+	}
+
 	@Override
-	public CreateSnapshotResponse getInstance(UnmarshallerContext context) {
-		return	CreateSnapshotResponseUnmarshaller.unmarshall(this, context);
+	public CreateProtocolMountTargetResponse getInstance(UnmarshallerContext context) {
+		return	CreateProtocolMountTargetResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

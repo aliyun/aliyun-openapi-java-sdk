@@ -22,8 +22,8 @@ import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Ldap;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget.ClientMasterNode;
-import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget.Tag;
-import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Tag2;
+import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget.Tag2;
+import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Tag;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem._Package;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -40,27 +40,28 @@ public class DescribeFileSystemsResponseUnmarshaller {
 		List<FileSystem> fileSystems = new ArrayList<FileSystem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems.Length"); i++) {
 			FileSystem fileSystem = new FileSystem();
-			fileSystem.setFileSystemId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].FileSystemId"));
-			fileSystem.setDescription(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Description"));
-			fileSystem.setCreateTime(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].CreateTime"));
-			fileSystem.setExpiredTime(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ExpiredTime"));
-			fileSystem.setRegionId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].RegionId"));
-			fileSystem.setZoneId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
-			fileSystem.setProtocolType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ProtocolType"));
-			fileSystem.setStorageType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].StorageType"));
-			fileSystem.setFileSystemType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].FileSystemType"));
-			fileSystem.setEncryptType(_ctx.integerValue("DescribeFileSystemsResponse.FileSystems["+ i +"].EncryptType"));
-			fileSystem.setMeteredSize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredSize"));
-			fileSystem.setMeteredIASize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredIASize"));
-			fileSystem.setBandwidth(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Bandwidth"));
-			fileSystem.setCapacity(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Capacity"));
-			fileSystem.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].AutoSnapshotPolicyId"));
 			fileSystem.setStatus(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Status"));
-			fileSystem.setChargeType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ChargeType"));
+			fileSystem.setMeteredIASize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredIASize"));
+			fileSystem.setCapacity(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Capacity"));
 			fileSystem.setMountTargetCountLimit(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargetCountLimit"));
-			fileSystem.setNasNamespaceId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].NasNamespaceId"));
-			fileSystem.setKMSKeyId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].KMSKeyId"));
+			fileSystem.setCreateTime(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].CreateTime"));
+			fileSystem.setChargeType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ChargeType"));
+			fileSystem.setStorageType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].StorageType"));
+			fileSystem.setMeteredSize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredSize"));
+			fileSystem.setDescription(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Description"));
+			fileSystem.setBandwidth(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Bandwidth"));
 			fileSystem.setVersion(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Version"));
+			fileSystem.setNasNamespaceId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].NasNamespaceId"));
+			fileSystem.setProtocolType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ProtocolType"));
+			fileSystem.setKMSKeyId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].KMSKeyId"));
+			fileSystem.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].AutoSnapshotPolicyId"));
+			fileSystem.setRegionId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].RegionId"));
+			fileSystem.setFileSystemType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].FileSystemType"));
+			fileSystem.setFileSystemId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].FileSystemId"));
+			fileSystem.setEncryptType(_ctx.integerValue("DescribeFileSystemsResponse.FileSystems["+ i +"].EncryptType"));
+			fileSystem.setExpiredTime(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ExpiredTime"));
+			fileSystem.setZoneId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
+			fileSystem.setVpcId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].VpcId"));
 
 			List<String> supportedFeatures = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].SupportedFeatures.Length"); j++) {
@@ -68,41 +69,57 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			}
 			fileSystem.setSupportedFeatures(supportedFeatures);
 
+			List<String> vswIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].VswIds.Length"); j++) {
+				vswIds.add(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].VswIds["+ j +"]"));
+			}
+			fileSystem.setVswIds(vswIds);
+
 			Ldap ldap = new Ldap();
 			ldap.setBindDN(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.BindDN"));
-			ldap.setURI(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.URI"));
 			ldap.setSearchBase(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.SearchBase"));
+			ldap.setURI(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.URI"));
 			fileSystem.setLdap(ldap);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			fileSystem.setTags(tags);
 
 			List<MountTarget> mountTargets = new ArrayList<MountTarget>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets.Length"); j++) {
 				MountTarget mountTarget = new MountTarget();
-				mountTarget.setMountTargetDomain(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].MountTargetDomain"));
-				mountTarget.setNetworkType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].NetworkType"));
 				mountTarget.setVpcId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].VpcId"));
-				mountTarget.setVswId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].VswId"));
-				mountTarget.setAccessGroupName(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].AccessGroupName"));
 				mountTarget.setStatus(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Status"));
+				mountTarget.setMountTargetDomain(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].MountTargetDomain"));
+				mountTarget.setAccessGroupName(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].AccessGroupName"));
 				mountTarget.setDualStackMountTargetDomain(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].DualStackMountTargetDomain"));
+				mountTarget.setVswId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].VswId"));
+				mountTarget.setNetworkType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].NetworkType"));
 
 				List<ClientMasterNode> clientMasterNodes = new ArrayList<ClientMasterNode>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes.Length"); k++) {
 					ClientMasterNode clientMasterNode = new ClientMasterNode();
 					clientMasterNode.setEcsId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].EcsId"));
-					clientMasterNode.setEcsIp(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].EcsIp"));
 					clientMasterNode.setDefaultPasswd(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].DefaultPasswd"));
+					clientMasterNode.setEcsIp(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].EcsIp"));
 
 					clientMasterNodes.add(clientMasterNode);
 				}
 				mountTarget.setClientMasterNodes(clientMasterNodes);
 
-				List<Tag> tags1 = new ArrayList<Tag>();
+				List<Tag2> tags1 = new ArrayList<Tag2>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags.Length"); k++) {
-					Tag tag = new Tag();
-					tag.setKey(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Key"));
-					tag.setValue(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Value"));
+					Tag2 tag2 = new Tag2();
+					tag2.setKey(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Key"));
+					tag2.setValue(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Value"));
 
-					tags1.add(tag);
+					tags1.add(tag2);
 				}
 				mountTarget.setTags1(tags1);
 
@@ -113,25 +130,15 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			List<_Package> packages = new ArrayList<_Package>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages.Length"); j++) {
 				_Package _package = new _Package();
-				_package.setPackageId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages["+ j +"].PackageId"));
-				_package.setPackageType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages["+ j +"].PackageType"));
-				_package.setSize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages["+ j +"].Size"));
 				_package.setStartTime(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages["+ j +"].StartTime"));
 				_package.setExpiredTime(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages["+ j +"].ExpiredTime"));
+				_package.setSize(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages["+ j +"].Size"));
+				_package.setPackageId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages["+ j +"].PackageId"));
+				_package.setPackageType(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Packages["+ j +"].PackageType"));
 
 				packages.add(_package);
 			}
 			fileSystem.setPackages(packages);
-
-			List<Tag2> tags = new ArrayList<Tag2>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags.Length"); j++) {
-				Tag2 tag2 = new Tag2();
-				tag2.setKey(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags["+ j +"].Key"));
-				tag2.setValue(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags["+ j +"].Value"));
-
-				tags.add(tag2);
-			}
-			fileSystem.setTags(tags);
 
 			fileSystems.add(fileSystem);
 		}

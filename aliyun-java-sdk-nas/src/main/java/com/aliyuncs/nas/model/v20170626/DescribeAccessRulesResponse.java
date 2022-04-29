@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccessRulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 
 	private List<AccessRule> accessRules;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,17 +77,25 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 
 	public static class AccessRule {
 
+		private String accessRuleId;
+
 		private String sourceCidrIp;
 
-		private Integer priority;
-
-		private String accessRuleId;
+		private String ipv6SourceCidrIp;
 
 		private String rWAccess;
 
 		private String userAccess;
 
-		private String ipv6SourceCidrIp;
+		private Integer priority;
+
+		public String getAccessRuleId() {
+			return this.accessRuleId;
+		}
+
+		public void setAccessRuleId(String accessRuleId) {
+			this.accessRuleId = accessRuleId;
+		}
 
 		public String getSourceCidrIp() {
 			return this.sourceCidrIp;
@@ -97,20 +105,12 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 			this.sourceCidrIp = sourceCidrIp;
 		}
 
-		public Integer getPriority() {
-			return this.priority;
+		public String getIpv6SourceCidrIp() {
+			return this.ipv6SourceCidrIp;
 		}
 
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public String getAccessRuleId() {
-			return this.accessRuleId;
-		}
-
-		public void setAccessRuleId(String accessRuleId) {
-			this.accessRuleId = accessRuleId;
+		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
 		}
 
 		public String getRWAccess() {
@@ -129,12 +129,12 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 			this.userAccess = userAccess;
 		}
 
-		public String getIpv6SourceCidrIp() {
-			return this.ipv6SourceCidrIp;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
-			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 	}
 

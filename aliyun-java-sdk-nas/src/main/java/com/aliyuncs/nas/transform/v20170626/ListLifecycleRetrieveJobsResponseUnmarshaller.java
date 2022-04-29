@@ -34,13 +34,13 @@ public class ListLifecycleRetrieveJobsResponseUnmarshaller {
 		List<LifecycleRetrieveJob> lifecycleRetrieveJobs = new ArrayList<LifecycleRetrieveJob>();
 		for (int i = 0; i < _ctx.lengthValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs.Length"); i++) {
 			LifecycleRetrieveJob lifecycleRetrieveJob = new LifecycleRetrieveJob();
-			lifecycleRetrieveJob.setStatus(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].Status"));
-			lifecycleRetrieveJob.setCreateTime(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].CreateTime"));
-			lifecycleRetrieveJob.setRetrievedFileCount(_ctx.longValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].RetrievedFileCount"));
-			lifecycleRetrieveJob.setUpdateTime(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].UpdateTime"));
 			lifecycleRetrieveJob.setFileSystemId(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].FileSystemId"));
-			lifecycleRetrieveJob.setJobId(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].JobId"));
+			lifecycleRetrieveJob.setStatus(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].Status"));
 			lifecycleRetrieveJob.setDiscoveredFileCount(_ctx.longValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].DiscoveredFileCount"));
+			lifecycleRetrieveJob.setUpdateTime(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].UpdateTime"));
+			lifecycleRetrieveJob.setRetrievedFileCount(_ctx.longValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].RetrievedFileCount"));
+			lifecycleRetrieveJob.setJobId(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].JobId"));
+			lifecycleRetrieveJob.setCreateTime(_ctx.stringValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].CreateTime"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListLifecycleRetrieveJobsResponse.LifecycleRetrieveJobs["+ i +"].Paths.Length"); j++) {

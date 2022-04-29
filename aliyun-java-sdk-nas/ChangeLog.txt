@@ -1,3 +1,6 @@
+2022-04-29 Version: 3.14.1
+- Supported CPFS Protocol.
+
 2021-12-17 Version: 3.14.0
 - Supported ACL for SMB.
 

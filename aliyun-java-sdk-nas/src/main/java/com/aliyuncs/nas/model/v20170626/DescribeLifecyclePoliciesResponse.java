@@ -27,9 +27,9 @@ public class DescribeLifecyclePoliciesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageSize;
-
 	private String requestId;
+
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeLifecyclePoliciesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -77,42 +77,26 @@ public class DescribeLifecyclePoliciesResponse extends AcsResponse {
 
 	public static class LifecyclePolicy {
 
-		private String path;
-
-		private String lifecyclePolicyName;
-
-		private String storageType;
+		private String fileSystemId;
 
 		private String lifecycleRuleName;
 
 		private String createTime;
 
-		private String fileSystemId;
+		private String path;
+
+		private String storageType;
+
+		private String lifecyclePolicyName;
 
 		private List<String> paths;
 
-		public String getPath() {
-			return this.path;
+		public String getFileSystemId() {
+			return this.fileSystemId;
 		}
 
-		public void setPath(String path) {
-			this.path = path;
-		}
-
-		public String getLifecyclePolicyName() {
-			return this.lifecyclePolicyName;
-		}
-
-		public void setLifecyclePolicyName(String lifecyclePolicyName) {
-			this.lifecyclePolicyName = lifecyclePolicyName;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 
 		public String getLifecycleRuleName() {
@@ -131,12 +115,28 @@ public class DescribeLifecyclePoliciesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
+		public String getPath() {
+			return this.path;
 		}
 
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getLifecyclePolicyName() {
+			return this.lifecyclePolicyName;
+		}
+
+		public void setLifecyclePolicyName(String lifecyclePolicyName) {
+			this.lifecyclePolicyName = lifecyclePolicyName;
 		}
 
 		public List<String> getPaths() {

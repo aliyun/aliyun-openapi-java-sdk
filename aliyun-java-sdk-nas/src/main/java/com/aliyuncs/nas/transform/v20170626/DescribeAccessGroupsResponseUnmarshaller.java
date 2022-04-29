@@ -36,11 +36,11 @@ public class DescribeAccessGroupsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccessGroupsResponse.AccessGroups.Length"); i++) {
 			AccessGroup accessGroup = new AccessGroup();
 			accessGroup.setAccessGroupName(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].AccessGroupName"));
+			accessGroup.setDescription(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Description"));
+			accessGroup.setCreateTime(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].CreateTime"));
 			accessGroup.setAccessGroupType(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].AccessGroupType"));
 			accessGroup.setRuleCount(_ctx.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].RuleCount"));
 			accessGroup.setMountTargetCount(_ctx.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].MountTargetCount"));
-			accessGroup.setDescription(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Description"));
-			accessGroup.setCreateTime(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].CreateTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Tags.Length"); j++) {

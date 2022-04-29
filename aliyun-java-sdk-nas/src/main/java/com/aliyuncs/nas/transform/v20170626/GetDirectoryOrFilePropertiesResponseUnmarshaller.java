@@ -27,15 +27,15 @@ public class GetDirectoryOrFilePropertiesResponseUnmarshaller {
 
 		Entry entry = new Entry();
 		entry.setType(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Type"));
-		entry.setInode(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Inode"));
-		entry.setStorageType(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.StorageType"));
+		entry.setHasInfrequentAccessFile(_ctx.booleanValue("GetDirectoryOrFilePropertiesResponse.Entry.HasInfrequentAccessFile"));
+		entry.setMTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.MTime"));
 		entry.setATime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.ATime"));
 		entry.setSize(_ctx.longValue("GetDirectoryOrFilePropertiesResponse.Entry.Size"));
-		entry.setHasInfrequentAccessFile(_ctx.booleanValue("GetDirectoryOrFilePropertiesResponse.Entry.HasInfrequentAccessFile"));
 		entry.setCTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.CTime"));
-		entry.setRetrieveTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.RetrieveTime"));
-		entry.setMTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.MTime"));
+		entry.setStorageType(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.StorageType"));
 		entry.setName(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Name"));
+		entry.setRetrieveTime(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.RetrieveTime"));
+		entry.setInode(_ctx.stringValue("GetDirectoryOrFilePropertiesResponse.Entry.Inode"));
 		getDirectoryOrFilePropertiesResponse.setEntry(entry);
 	 
 	 	return getDirectoryOrFilePropertiesResponse;

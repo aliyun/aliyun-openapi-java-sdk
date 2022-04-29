@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMountTargetsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 	private List<MountTarget> mountTargets;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,39 +77,23 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 	public static class MountTarget {
 
-		private String mountTargetDomain;
-
-		private String networkType;
-
 		private String vpcId;
-
-		private String vswId;
-
-		private String accessGroup;
 
 		private String status;
 
+		private String mountTargetDomain;
+
+		private String accessGroup;
+
 		private String dualStackMountTargetDomain;
+
+		private String vswId;
+
+		private String networkType;
 
 		private List<ClientMasterNode> clientMasterNodes;
 
 		private List<Tag> tags;
-
-		public String getMountTargetDomain() {
-			return this.mountTargetDomain;
-		}
-
-		public void setMountTargetDomain(String mountTargetDomain) {
-			this.mountTargetDomain = mountTargetDomain;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
-		}
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -117,22 +101,6 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getVswId() {
-			return this.vswId;
-		}
-
-		public void setVswId(String vswId) {
-			this.vswId = vswId;
-		}
-
-		public String getAccessGroup() {
-			return this.accessGroup;
-		}
-
-		public void setAccessGroup(String accessGroup) {
-			this.accessGroup = accessGroup;
 		}
 
 		public String getStatus() {
@@ -143,12 +111,44 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getMountTargetDomain() {
+			return this.mountTargetDomain;
+		}
+
+		public void setMountTargetDomain(String mountTargetDomain) {
+			this.mountTargetDomain = mountTargetDomain;
+		}
+
+		public String getAccessGroup() {
+			return this.accessGroup;
+		}
+
+		public void setAccessGroup(String accessGroup) {
+			this.accessGroup = accessGroup;
+		}
+
 		public String getDualStackMountTargetDomain() {
 			return this.dualStackMountTargetDomain;
 		}
 
 		public void setDualStackMountTargetDomain(String dualStackMountTargetDomain) {
 			this.dualStackMountTargetDomain = dualStackMountTargetDomain;
+		}
+
+		public String getVswId() {
+			return this.vswId;
+		}
+
+		public void setVswId(String vswId) {
+			this.vswId = vswId;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
 		}
 
 		public List<ClientMasterNode> getClientMasterNodes() {
@@ -171,9 +171,9 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 			private String ecsId;
 
-			private String ecsIp;
-
 			private String defaultPasswd;
+
+			private String ecsIp;
 
 			public String getEcsId() {
 				return this.ecsId;
@@ -183,20 +183,20 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 				this.ecsId = ecsId;
 			}
 
-			public String getEcsIp() {
-				return this.ecsIp;
-			}
-
-			public void setEcsIp(String ecsIp) {
-				this.ecsIp = ecsIp;
-			}
-
 			public String getDefaultPasswd() {
 				return this.defaultPasswd;
 			}
 
 			public void setDefaultPasswd(String defaultPasswd) {
 				this.defaultPasswd = defaultPasswd;
+			}
+
+			public String getEcsIp() {
+				return this.ecsIp;
+			}
+
+			public void setEcsIp(String ecsIp) {
+				this.ecsIp = ecsIp;
 			}
 		}
 

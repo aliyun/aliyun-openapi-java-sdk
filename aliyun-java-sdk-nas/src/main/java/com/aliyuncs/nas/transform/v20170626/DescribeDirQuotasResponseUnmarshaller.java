@@ -35,20 +35,20 @@ public class DescribeDirQuotasResponseUnmarshaller {
 		List<DirQuotaInfo> dirQuotaInfos = new ArrayList<DirQuotaInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDirQuotasResponse.DirQuotaInfos.Length"); i++) {
 			DirQuotaInfo dirQuotaInfo = new DirQuotaInfo();
+			dirQuotaInfo.setStatus(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].Status"));
 			dirQuotaInfo.setPath(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].Path"));
 			dirQuotaInfo.setDirInode(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].DirInode"));
-			dirQuotaInfo.setStatus(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].Status"));
 
 			List<UserQuotaInfo> userQuotaInfos = new ArrayList<UserQuotaInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos.Length"); j++) {
 				UserQuotaInfo userQuotaInfo = new UserQuotaInfo();
-				userQuotaInfo.setUserType(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].UserType"));
-				userQuotaInfo.setUserId(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].UserId"));
-				userQuotaInfo.setQuotaType(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].QuotaType"));
-				userQuotaInfo.setSizeLimit(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeLimit"));
-				userQuotaInfo.setSizeReal(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeReal"));
-				userQuotaInfo.setFileCountLimit(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].FileCountLimit"));
 				userQuotaInfo.setFileCountReal(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].FileCountReal"));
+				userQuotaInfo.setUserType(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].UserType"));
+				userQuotaInfo.setFileCountLimit(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].FileCountLimit"));
+				userQuotaInfo.setUserId(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].UserId"));
+				userQuotaInfo.setSizeLimit(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeLimit"));
+				userQuotaInfo.setQuotaType(_ctx.stringValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].QuotaType"));
+				userQuotaInfo.setSizeReal(_ctx.longValue("DescribeDirQuotasResponse.DirQuotaInfos["+ i +"].UserQuotaInfos["+ j +"].SizeReal"));
 
 				userQuotaInfos.add(userQuotaInfo);
 			}

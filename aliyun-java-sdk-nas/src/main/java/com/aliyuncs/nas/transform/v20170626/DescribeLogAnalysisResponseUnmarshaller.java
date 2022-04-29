@@ -28,10 +28,10 @@ public class DescribeLogAnalysisResponseUnmarshaller {
 	public static DescribeLogAnalysisResponse unmarshall(DescribeLogAnalysisResponse describeLogAnalysisResponse, UnmarshallerContext _ctx) {
 		
 		describeLogAnalysisResponse.setRequestId(_ctx.stringValue("DescribeLogAnalysisResponse.RequestId"));
-		describeLogAnalysisResponse.setCode(_ctx.stringValue("DescribeLogAnalysisResponse.Code"));
 		describeLogAnalysisResponse.setTotalCount(_ctx.integerValue("DescribeLogAnalysisResponse.TotalCount"));
 		describeLogAnalysisResponse.setPageSize(_ctx.integerValue("DescribeLogAnalysisResponse.PageSize"));
 		describeLogAnalysisResponse.setPageNumber(_ctx.integerValue("DescribeLogAnalysisResponse.PageNumber"));
+		describeLogAnalysisResponse.setCode(_ctx.stringValue("DescribeLogAnalysisResponse.Code"));
 
 		List<Analysis> analyses = new ArrayList<Analysis>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogAnalysisResponse.Analyses.Length"); i++) {
@@ -39,10 +39,10 @@ public class DescribeLogAnalysisResponseUnmarshaller {
 			analysis.setMetaKey(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaKey"));
 
 			MetaValue metaValue = new MetaValue();
-			metaValue.setLogstore(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Logstore"));
-			metaValue.setRegion(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Region"));
-			metaValue.setProject(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Project"));
 			metaValue.setRoleArn(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.RoleArn"));
+			metaValue.setRegion(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Region"));
+			metaValue.setLogstore(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Logstore"));
+			metaValue.setProject(_ctx.stringValue("DescribeLogAnalysisResponse.Analyses["+ i +"].MetaValue.Project"));
 			analysis.setMetaValue(metaValue);
 
 			analyses.add(analysis);

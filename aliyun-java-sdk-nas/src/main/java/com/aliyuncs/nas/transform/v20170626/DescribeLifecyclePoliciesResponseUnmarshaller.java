@@ -34,12 +34,12 @@ public class DescribeLifecyclePoliciesResponseUnmarshaller {
 		List<LifecyclePolicy> lifecyclePolicies = new ArrayList<LifecyclePolicy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies.Length"); i++) {
 			LifecyclePolicy lifecyclePolicy = new LifecyclePolicy();
-			lifecyclePolicy.setPath(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].Path"));
-			lifecyclePolicy.setLifecyclePolicyName(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].LifecyclePolicyName"));
-			lifecyclePolicy.setStorageType(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].StorageType"));
+			lifecyclePolicy.setFileSystemId(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].FileSystemId"));
 			lifecyclePolicy.setLifecycleRuleName(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].LifecycleRuleName"));
 			lifecyclePolicy.setCreateTime(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].CreateTime"));
-			lifecyclePolicy.setFileSystemId(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].FileSystemId"));
+			lifecyclePolicy.setPath(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].Path"));
+			lifecyclePolicy.setStorageType(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].StorageType"));
+			lifecyclePolicy.setLifecyclePolicyName(_ctx.stringValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].LifecyclePolicyName"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLifecyclePoliciesResponse.LifecyclePolicies["+ i +"].Paths.Length"); j++) {

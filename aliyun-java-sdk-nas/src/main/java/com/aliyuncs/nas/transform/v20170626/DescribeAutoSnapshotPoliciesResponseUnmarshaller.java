@@ -34,15 +34,15 @@ public class DescribeAutoSnapshotPoliciesResponseUnmarshaller {
 		List<AutoSnapshotPolicy> autoSnapshotPolicies = new ArrayList<AutoSnapshotPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies.Length"); i++) {
 			AutoSnapshotPolicy autoSnapshotPolicy = new AutoSnapshotPolicy();
-			autoSnapshotPolicy.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId"));
+			autoSnapshotPolicy.setTimePoints(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].TimePoints"));
+			autoSnapshotPolicy.setStatus(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].Status"));
+			autoSnapshotPolicy.setRepeatWeekdays(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RepeatWeekdays"));
 			autoSnapshotPolicy.setAutoSnapshotPolicyName(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyName"));
 			autoSnapshotPolicy.setCreateTime(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].CreateTime"));
+			autoSnapshotPolicy.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId"));
+			autoSnapshotPolicy.setRetentionDays(_ctx.integerValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RetentionDays"));
 			autoSnapshotPolicy.setFileSystemNums(_ctx.integerValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].FileSystemNums"));
 			autoSnapshotPolicy.setRegionId(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RegionId"));
-			autoSnapshotPolicy.setRepeatWeekdays(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RepeatWeekdays"));
-			autoSnapshotPolicy.setRetentionDays(_ctx.integerValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].RetentionDays"));
-			autoSnapshotPolicy.setStatus(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].Status"));
-			autoSnapshotPolicy.setTimePoints(_ctx.stringValue("DescribeAutoSnapshotPoliciesResponse.AutoSnapshotPolicies["+ i +"].TimePoints"));
 
 			autoSnapshotPolicies.add(autoSnapshotPolicy);
 		}

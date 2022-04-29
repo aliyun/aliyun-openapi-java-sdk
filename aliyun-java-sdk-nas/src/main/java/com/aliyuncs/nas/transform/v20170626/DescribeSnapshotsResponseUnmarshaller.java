@@ -34,18 +34,18 @@ public class DescribeSnapshotsResponseUnmarshaller {
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotsResponse.Snapshots.Length"); i++) {
 			Snapshot snapshot = new Snapshot();
-			snapshot.setCreateTime(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreateTime"));
-			snapshot.setDescription(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Description"));
-			snapshot.setProgress(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Progress"));
-			snapshot.setRemainTime(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RemainTime"));
-			snapshot.setRetentionDays(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RetentionDays"));
-			snapshot.setSnapshotId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
-			snapshot.setSnapshotName(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
-			snapshot.setSourceFileSystemId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceFileSystemId"));
-			snapshot.setSourceFileSystemSize(_ctx.longValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceFileSystemSize"));
 			snapshot.setStatus(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Status"));
-			snapshot.setEncryptType(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].EncryptType"));
+			snapshot.setProgress(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Progress"));
+			snapshot.setCreateTime(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreateTime"));
+			snapshot.setSourceFileSystemId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceFileSystemId"));
+			snapshot.setRetentionDays(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RetentionDays"));
+			snapshot.setRemainTime(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RemainTime"));
+			snapshot.setSourceFileSystemSize(_ctx.longValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceFileSystemSize"));
 			snapshot.setSourceFileSystemVersion(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceFileSystemVersion"));
+			snapshot.setSnapshotName(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
+			snapshot.setEncryptType(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].EncryptType"));
+			snapshot.setDescription(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Description"));
+			snapshot.setSnapshotId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
 
 			snapshots.add(snapshot);
 		}

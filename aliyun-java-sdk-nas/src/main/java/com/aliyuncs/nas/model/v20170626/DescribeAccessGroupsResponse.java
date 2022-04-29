@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccessGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 	private List<AccessGroup> accessGroups;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -79,15 +79,15 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 		private String accessGroupName;
 
+		private String description;
+
+		private String createTime;
+
 		private String accessGroupType;
 
 		private Integer ruleCount;
 
 		private Integer mountTargetCount;
-
-		private String description;
-
-		private String createTime;
 
 		private List<Tag> tags;
 
@@ -97,6 +97,22 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 		public void setAccessGroupName(String accessGroupName) {
 			this.accessGroupName = accessGroupName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getAccessGroupType() {
@@ -121,22 +137,6 @@ public class DescribeAccessGroupsResponse extends AcsResponse {
 
 		public void setMountTargetCount(Integer mountTargetCount) {
 			this.mountTargetCount = mountTargetCount;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public List<Tag> getTags() {

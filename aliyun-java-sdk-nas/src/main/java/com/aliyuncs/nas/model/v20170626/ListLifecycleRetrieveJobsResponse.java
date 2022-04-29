@@ -27,9 +27,9 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageSize;
-
 	private String requestId;
+
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -77,21 +77,29 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 
 	public static class LifecycleRetrieveJob {
 
-		private String status;
-
-		private String createTime;
-
-		private Long retrievedFileCount;
-
-		private String updateTime;
-
 		private String fileSystemId;
 
-		private String jobId;
+		private String status;
 
 		private Long discoveredFileCount;
 
+		private String updateTime;
+
+		private Long retrievedFileCount;
+
+		private String jobId;
+
+		private String createTime;
+
 		private List<String> paths;
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -101,20 +109,12 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public Long getDiscoveredFileCount() {
+			return this.discoveredFileCount;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getRetrievedFileCount() {
-			return this.retrievedFileCount;
-		}
-
-		public void setRetrievedFileCount(Long retrievedFileCount) {
-			this.retrievedFileCount = retrievedFileCount;
+		public void setDiscoveredFileCount(Long discoveredFileCount) {
+			this.discoveredFileCount = discoveredFileCount;
 		}
 
 		public String getUpdateTime() {
@@ -125,12 +125,12 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public String getFileSystemId() {
-			return this.fileSystemId;
+		public Long getRetrievedFileCount() {
+			return this.retrievedFileCount;
 		}
 
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
+		public void setRetrievedFileCount(Long retrievedFileCount) {
+			this.retrievedFileCount = retrievedFileCount;
 		}
 
 		public String getJobId() {
@@ -141,12 +141,12 @@ public class ListLifecycleRetrieveJobsResponse extends AcsResponse {
 			this.jobId = jobId;
 		}
 
-		public Long getDiscoveredFileCount() {
-			return this.discoveredFileCount;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDiscoveredFileCount(Long discoveredFileCount) {
-			this.discoveredFileCount = discoveredFileCount;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<String> getPaths() {

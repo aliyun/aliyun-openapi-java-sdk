@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDirQuotasResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 
 	private List<DirQuotaInfo> dirQuotaInfos;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,13 +77,21 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 
 	public static class DirQuotaInfo {
 
+		private String status;
+
 		private String path;
 
 		private String dirInode;
 
-		private String status;
-
 		private List<UserQuotaInfo> userQuotaInfos;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getPath() {
 			return this.path;
@@ -101,14 +109,6 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 			this.dirInode = dirInode;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public List<UserQuotaInfo> getUserQuotaInfos() {
 			return this.userQuotaInfos;
 		}
@@ -119,19 +119,27 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 
 		public static class UserQuotaInfo {
 
+			private Long fileCountReal;
+
 			private String userType;
-
-			private String userId;
-
-			private String quotaType;
-
-			private Long sizeLimit;
-
-			private Long sizeReal;
 
 			private Long fileCountLimit;
 
-			private Long fileCountReal;
+			private String userId;
+
+			private Long sizeLimit;
+
+			private String quotaType;
+
+			private Long sizeReal;
+
+			public Long getFileCountReal() {
+				return this.fileCountReal;
+			}
+
+			public void setFileCountReal(Long fileCountReal) {
+				this.fileCountReal = fileCountReal;
+			}
 
 			public String getUserType() {
 				return this.userType;
@@ -139,38 +147,6 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 
 			public void setUserType(String userType) {
 				this.userType = userType;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getQuotaType() {
-				return this.quotaType;
-			}
-
-			public void setQuotaType(String quotaType) {
-				this.quotaType = quotaType;
-			}
-
-			public Long getSizeLimit() {
-				return this.sizeLimit;
-			}
-
-			public void setSizeLimit(Long sizeLimit) {
-				this.sizeLimit = sizeLimit;
-			}
-
-			public Long getSizeReal() {
-				return this.sizeReal;
-			}
-
-			public void setSizeReal(Long sizeReal) {
-				this.sizeReal = sizeReal;
 			}
 
 			public Long getFileCountLimit() {
@@ -181,12 +157,36 @@ public class DescribeDirQuotasResponse extends AcsResponse {
 				this.fileCountLimit = fileCountLimit;
 			}
 
-			public Long getFileCountReal() {
-				return this.fileCountReal;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setFileCountReal(Long fileCountReal) {
-				this.fileCountReal = fileCountReal;
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public Long getSizeLimit() {
+				return this.sizeLimit;
+			}
+
+			public void setSizeLimit(Long sizeLimit) {
+				this.sizeLimit = sizeLimit;
+			}
+
+			public String getQuotaType() {
+				return this.quotaType;
+			}
+
+			public void setQuotaType(String quotaType) {
+				this.quotaType = quotaType;
+			}
+
+			public Long getSizeReal() {
+				return this.sizeReal;
+			}
+
+			public void setSizeReal(Long sizeReal) {
+				this.sizeReal = sizeReal;
 			}
 		}
 	}

@@ -27,8 +27,8 @@ public class DescribeLDAPConfigResponseUnmarshaller {
 
 		Ldap ldap = new Ldap();
 		ldap.setBindDN(_ctx.stringValue("DescribeLDAPConfigResponse.Ldap.BindDN"));
-		ldap.setURI(_ctx.stringValue("DescribeLDAPConfigResponse.Ldap.URI"));
 		ldap.setSearchBase(_ctx.stringValue("DescribeLDAPConfigResponse.Ldap.SearchBase"));
+		ldap.setURI(_ctx.stringValue("DescribeLDAPConfigResponse.Ldap.URI"));
 		describeLDAPConfigResponse.setLdap(ldap);
 	 
 	 	return describeLDAPConfigResponse;

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 
 	private List<AutoSnapshotPolicy> autoSnapshotPolicies;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,30 +77,46 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 
 	public static class AutoSnapshotPolicy {
 
-		private String autoSnapshotPolicyId;
+		private String timePoints;
+
+		private String status;
+
+		private String repeatWeekdays;
 
 		private String autoSnapshotPolicyName;
 
 		private String createTime;
 
+		private String autoSnapshotPolicyId;
+
+		private Integer retentionDays;
+
 		private Integer fileSystemNums;
 
 		private String regionId;
 
-		private String repeatWeekdays;
-
-		private Integer retentionDays;
-
-		private String status;
-
-		private String timePoints;
-
-		public String getAutoSnapshotPolicyId() {
-			return this.autoSnapshotPolicyId;
+		public String getTimePoints() {
+			return this.timePoints;
 		}
 
-		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		public void setTimePoints(String timePoints) {
+			this.timePoints = timePoints;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getRepeatWeekdays() {
+			return this.repeatWeekdays;
+		}
+
+		public void setRepeatWeekdays(String repeatWeekdays) {
+			this.repeatWeekdays = repeatWeekdays;
 		}
 
 		public String getAutoSnapshotPolicyName() {
@@ -119,6 +135,22 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
+		public Integer getRetentionDays() {
+			return this.retentionDays;
+		}
+
+		public void setRetentionDays(Integer retentionDays) {
+			this.retentionDays = retentionDays;
+		}
+
 		public Integer getFileSystemNums() {
 			return this.fileSystemNums;
 		}
@@ -133,38 +165,6 @@ public class DescribeAutoSnapshotPoliciesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getRepeatWeekdays() {
-			return this.repeatWeekdays;
-		}
-
-		public void setRepeatWeekdays(String repeatWeekdays) {
-			this.repeatWeekdays = repeatWeekdays;
-		}
-
-		public Integer getRetentionDays() {
-			return this.retentionDays;
-		}
-
-		public void setRetentionDays(Integer retentionDays) {
-			this.retentionDays = retentionDays;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getTimePoints() {
-			return this.timePoints;
-		}
-
-		public void setTimePoints(String timePoints) {
-			this.timePoints = timePoints;
 		}
 	}
 

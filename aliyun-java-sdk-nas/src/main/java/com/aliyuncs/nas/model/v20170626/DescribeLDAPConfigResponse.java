@@ -48,9 +48,9 @@ public class DescribeLDAPConfigResponse extends AcsResponse {
 
 		private String bindDN;
 
-		private String uRI;
-
 		private String searchBase;
+
+		private String uRI;
 
 		public String getBindDN() {
 			return this.bindDN;
@@ -60,20 +60,20 @@ public class DescribeLDAPConfigResponse extends AcsResponse {
 			this.bindDN = bindDN;
 		}
 
-		public String getURI() {
-			return this.uRI;
-		}
-
-		public void setURI(String uRI) {
-			this.uRI = uRI;
-		}
-
 		public String getSearchBase() {
 			return this.searchBase;
 		}
 
 		public void setSearchBase(String searchBase) {
 			this.searchBase = searchBase;
+		}
+
+		public String getURI() {
+			return this.uRI;
+		}
+
+		public void setURI(String uRI) {
+			this.uRI = uRI;
 		}
 	}
 

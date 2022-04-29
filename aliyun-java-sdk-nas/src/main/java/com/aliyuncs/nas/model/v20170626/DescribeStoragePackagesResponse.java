@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStoragePackagesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeStoragePackagesResponse extends AcsResponse {
 
 	private List<_Package> packages;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,35 +77,19 @@ public class DescribeStoragePackagesResponse extends AcsResponse {
 
 	public static class _Package {
 
-		private String startTime;
-
-		private String storageType;
-
 		private String status;
 
 		private String fileSystemId;
 
-		private String packageId;
+		private String startTime;
 
 		private String expiredTime;
 
 		private Long size;
 
-		public String getStartTime() {
-			return this.startTime;
-		}
+		private String storageType;
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
+		private String packageId;
 
 		public String getStatus() {
 			return this.status;
@@ -123,12 +107,12 @@ public class DescribeStoragePackagesResponse extends AcsResponse {
 			this.fileSystemId = fileSystemId;
 		}
 
-		public String getPackageId() {
-			return this.packageId;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setPackageId(String packageId) {
-			this.packageId = packageId;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getExpiredTime() {
@@ -145,6 +129,22 @@ public class DescribeStoragePackagesResponse extends AcsResponse {
 
 		public void setSize(Long size) {
 			this.size = size;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getPackageId() {
+			return this.packageId;
+		}
+
+		public void setPackageId(String packageId) {
+			this.packageId = packageId;
 		}
 	}
 

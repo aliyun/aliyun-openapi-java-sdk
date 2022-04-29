@@ -77,7 +77,7 @@ public class DescribeFilesetsResponse extends AcsResponse {
 
 		private String createTime;
 
-		private String updateTiem;
+		private String updateTime;
 
 		public String getDescription() {
 			return this.description;
@@ -119,12 +119,12 @@ public class DescribeFilesetsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTiem() {
-			return this.updateTiem;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setUpdateTiem(String updateTiem) {
-			this.updateTiem = updateTiem;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 	}
 

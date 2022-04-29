@@ -29,48 +29,35 @@ public class DescribeFileSystemStatisticsResponseUnmarshaller {
 	public static DescribeFileSystemStatisticsResponse unmarshall(DescribeFileSystemStatisticsResponse describeFileSystemStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		describeFileSystemStatisticsResponse.setRequestId(_ctx.stringValue("DescribeFileSystemStatisticsResponse.RequestId"));
+		describeFileSystemStatisticsResponse.setTotalCount(_ctx.integerValue("DescribeFileSystemStatisticsResponse.TotalCount"));
 		describeFileSystemStatisticsResponse.setPageSize(_ctx.integerValue("DescribeFileSystemStatisticsResponse.PageSize"));
 		describeFileSystemStatisticsResponse.setPageNumber(_ctx.integerValue("DescribeFileSystemStatisticsResponse.PageNumber"));
-		describeFileSystemStatisticsResponse.setTotalCount(_ctx.integerValue("DescribeFileSystemStatisticsResponse.TotalCount"));
-
-		List<FileSystemStatistic> fileSystemStatistics = new ArrayList<FileSystemStatistic>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics.Length"); i++) {
-			FileSystemStatistic fileSystemStatistic = new FileSystemStatistic();
-			fileSystemStatistic.setFileSystemType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].FileSystemType"));
-			fileSystemStatistic.setTotalCount(_ctx.integerValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].TotalCount"));
-			fileSystemStatistic.setMeteredSize(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].MeteredSize"));
-			fileSystemStatistic.setExpiredCount(_ctx.integerValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].ExpiredCount"));
-			fileSystemStatistic.setExpiringCount(_ctx.integerValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].ExpiringCount"));
-
-			fileSystemStatistics.add(fileSystemStatistic);
-		}
-		describeFileSystemStatisticsResponse.setFileSystemStatistics(fileSystemStatistics);
 
 		List<FileSystem> fileSystems = new ArrayList<FileSystem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFileSystemStatisticsResponse.FileSystems.Length"); i++) {
 			FileSystem fileSystem = new FileSystem();
-			fileSystem.setFileSystemId(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].FileSystemId"));
-			fileSystem.setDescription(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Description"));
+			fileSystem.setStatus(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Status"));
+			fileSystem.setCapacity(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Capacity"));
+			fileSystem.setMeteredIASize(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].MeteredIASize"));
 			fileSystem.setCreateTime(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].CreateTime"));
-			fileSystem.setExpiredTime(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].ExpiredTime"));
+			fileSystem.setChargeType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].ChargeType"));
+			fileSystem.setStorageType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].StorageType"));
 			fileSystem.setRegionId(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].RegionId"));
+			fileSystem.setFileSystemType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].FileSystemType"));
+			fileSystem.setFileSystemId(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].FileSystemId"));
+			fileSystem.setMeteredSize(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].MeteredSize"));
+			fileSystem.setDescription(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Description"));
+			fileSystem.setExpiredTime(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].ExpiredTime"));
 			fileSystem.setZoneId(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].ZoneId"));
 			fileSystem.setProtocolType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].ProtocolType"));
-			fileSystem.setStorageType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].StorageType"));
-			fileSystem.setFileSystemType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].FileSystemType"));
-			fileSystem.setMeteredSize(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].MeteredSize"));
-			fileSystem.setMeteredIASize(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].MeteredIASize"));
-			fileSystem.setCapacity(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Capacity"));
-			fileSystem.setChargeType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].ChargeType"));
-			fileSystem.setStatus(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Status"));
 
 			List<_Package> packages = new ArrayList<_Package>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Packages.Length"); j++) {
 				_Package _package = new _Package();
-				_package.setPackageId(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Packages["+ j +"].PackageId"));
-				_package.setSize(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Packages["+ j +"].Size"));
 				_package.setStartTime(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Packages["+ j +"].StartTime"));
 				_package.setExpiredTime(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Packages["+ j +"].ExpiredTime"));
+				_package.setSize(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Packages["+ j +"].Size"));
+				_package.setPackageId(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystems["+ i +"].Packages["+ j +"].PackageId"));
 
 				packages.add(_package);
 			}
@@ -79,6 +66,19 @@ public class DescribeFileSystemStatisticsResponseUnmarshaller {
 			fileSystems.add(fileSystem);
 		}
 		describeFileSystemStatisticsResponse.setFileSystems(fileSystems);
+
+		List<FileSystemStatistic> fileSystemStatistics = new ArrayList<FileSystemStatistic>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics.Length"); i++) {
+			FileSystemStatistic fileSystemStatistic = new FileSystemStatistic();
+			fileSystemStatistic.setFileSystemType(_ctx.stringValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].FileSystemType"));
+			fileSystemStatistic.setMeteredSize(_ctx.longValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].MeteredSize"));
+			fileSystemStatistic.setExpiringCount(_ctx.integerValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].ExpiringCount"));
+			fileSystemStatistic.setTotalCount(_ctx.integerValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].TotalCount"));
+			fileSystemStatistic.setExpiredCount(_ctx.integerValue("DescribeFileSystemStatisticsResponse.FileSystemStatistics["+ i +"].ExpiredCount"));
+
+			fileSystemStatistics.add(fileSystemStatistic);
+		}
+		describeFileSystemStatisticsResponse.setFileSystemStatistics(fileSystemStatistics);
 	 
 	 	return describeFileSystemStatisticsResponse;
 	}

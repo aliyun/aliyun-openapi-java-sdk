@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRegionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	private List<Region> regions;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,19 +77,11 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class Region {
 
-		private String regionId;
-
 		private String localName;
 
 		private String regionEndpoint;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public String getLocalName() {
 			return this.localName;
@@ -105,6 +97,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setRegionEndpoint(String regionEndpoint) {
 			this.regionEndpoint = regionEndpoint;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 
