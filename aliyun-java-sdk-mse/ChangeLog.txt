@@ -1,3 +1,6 @@
+2022-04-30 Version: 3.0.18
+- Add GrtApplicationList.
+
 2022-04-07 Version: 3.0.16
 - Add Message Queue Route API.
 

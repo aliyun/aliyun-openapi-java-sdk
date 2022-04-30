@@ -161,7 +161,11 @@ public class ListGatewayResponse extends AcsResponse {
 
 			private Boolean mustUpgrade;
 
+			private Boolean supportWasm;
+
 			private String currentVersion;
+
+			private String appVersion;
 
 			private String latestVersion;
 
@@ -309,12 +313,28 @@ public class ListGatewayResponse extends AcsResponse {
 				this.mustUpgrade = mustUpgrade;
 			}
 
+			public Boolean getSupportWasm() {
+				return this.supportWasm;
+			}
+
+			public void setSupportWasm(Boolean supportWasm) {
+				this.supportWasm = supportWasm;
+			}
+
 			public String getCurrentVersion() {
 				return this.currentVersion;
 			}
 
 			public void setCurrentVersion(String currentVersion) {
 				this.currentVersion = currentVersion;
+			}
+
+			public String getAppVersion() {
+				return this.appVersion;
+			}
+
+			public void setAppVersion(String appVersion) {
+				this.appVersion = appVersion;
 			}
 
 			public String getLatestVersion() {

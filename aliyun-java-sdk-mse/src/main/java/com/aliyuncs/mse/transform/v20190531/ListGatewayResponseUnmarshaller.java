@@ -60,7 +60,9 @@ public class ListGatewayResponseUnmarshaller {
 			gateways.setStatusDesc(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].StatusDesc"));
 			gateways.setUpgrade(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].Upgrade"));
 			gateways.setMustUpgrade(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].MustUpgrade"));
+			gateways.setSupportWasm(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].SupportWasm"));
 			gateways.setCurrentVersion(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].CurrentVersion"));
+			gateways.setAppVersion(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].AppVersion"));
 			gateways.setLatestVersion(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].LatestVersion"));
 			gateways.setVswitch2(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].Vswitch2"));
 			gateways.setInstanceId(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].InstanceId"));
