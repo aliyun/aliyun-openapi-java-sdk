@@ -28,6 +28,8 @@ public class UnTagResourcesRequest extends RpcAcsRequest<UnTagResourcesResponse>
 
 	private List<Tag> tag;
 
+	private Boolean all;
+
 	private List<String> resourceId;
 
 	private String resourceType;
@@ -57,6 +59,17 @@ public class UnTagResourcesRequest extends RpcAcsRequest<UnTagResourcesResponse>
 				}
 			}
 		}	
+	}
+
+	public Boolean getAll() {
+		return this.all;
+	}
+
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
+		}
 	}
 
 	public List<String> getResourceId() {

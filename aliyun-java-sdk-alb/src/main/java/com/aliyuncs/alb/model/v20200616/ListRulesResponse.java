@@ -448,9 +448,65 @@ public class ListRulesResponse extends AcsResponse {
 			}
 
 			public static class TrafficMirrorConfig {
+
+				private MirrorGroupConfig mirrorGroupConfig;
+
+				public MirrorGroupConfig getMirrorGroupConfig() {
+					return this.mirrorGroupConfig;
+				}
+
+				public void setMirrorGroupConfig(MirrorGroupConfig mirrorGroupConfig) {
+					this.mirrorGroupConfig = mirrorGroupConfig;
+				}
+
+				public static class MirrorGroupConfig {
+
+					private List<ServerGroupTuple2> serverGroupTuples1;
+
+					public List<ServerGroupTuple2> getServerGroupTuples1() {
+						return this.serverGroupTuples1;
+					}
+
+					public void setServerGroupTuples1(List<ServerGroupTuple2> serverGroupTuples1) {
+						this.serverGroupTuples1 = serverGroupTuples1;
+					}
+
+					public static class ServerGroupTuple2 {
+
+						private String serverGroupId;
+
+						private Integer weight;
+
+						public String getServerGroupId() {
+							return this.serverGroupId;
+						}
+
+						public void setServerGroupId(String serverGroupId) {
+							this.serverGroupId = serverGroupId;
+						}
+
+						public Integer getWeight() {
+							return this.weight;
+						}
+
+						public void setWeight(Integer weight) {
+							this.weight = weight;
+						}
+					}
+				}
 			}
 
 			public static class TrafficLimitConfig {
+
+				private Integer qPS;
+
+				public Integer getQPS() {
+					return this.qPS;
+				}
+
+				public void setQPS(Integer qPS) {
+					this.qPS = qPS;
+				}
 			}
 		}
 
@@ -469,6 +525,8 @@ public class ListRulesResponse extends AcsResponse {
 			private PathConfig pathConfig;
 
 			private QueryStringConfig queryStringConfig;
+
+			private SourceIpConfig sourceIpConfig;
 
 			public String getType() {
 				return this.type;
@@ -524,6 +582,14 @@ public class ListRulesResponse extends AcsResponse {
 
 			public void setQueryStringConfig(QueryStringConfig queryStringConfig) {
 				this.queryStringConfig = queryStringConfig;
+			}
+
+			public SourceIpConfig getSourceIpConfig() {
+				return this.sourceIpConfig;
+			}
+
+			public void setSourceIpConfig(SourceIpConfig sourceIpConfig) {
+				this.sourceIpConfig = sourceIpConfig;
 			}
 
 			public static class CookieConfig {
@@ -657,6 +723,19 @@ public class ListRulesResponse extends AcsResponse {
 					public void setValue(String value) {
 						this.value = value;
 					}
+				}
+			}
+
+			public static class SourceIpConfig {
+
+				private List<String> values9;
+
+				public List<String> getValues9() {
+					return this.values9;
+				}
+
+				public void setValues9(List<String> values9) {
+					this.values9 = values9;
 				}
 			}
 		}

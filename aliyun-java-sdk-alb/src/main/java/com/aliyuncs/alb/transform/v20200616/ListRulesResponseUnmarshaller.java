@@ -28,6 +28,8 @@ import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Action.RedirectCo
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Action.RewriteConfig;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Action.TrafficLimitConfig;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Action.TrafficMirrorConfig;
+import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Action.TrafficMirrorConfig.MirrorGroupConfig;
+import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Action.TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuple2;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.CookieConfig;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.CookieConfig.Value;
@@ -37,6 +39,7 @@ import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.MethodC
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.PathConfig;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.QueryStringConfig;
 import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.QueryStringConfig.Value8;
+import com.aliyuncs.alb.model.v20200616.ListRulesResponse.Rule.Condition.SourceIpConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -106,9 +109,23 @@ public class ListRulesResponseUnmarshaller {
 				action.setRewriteConfig(rewriteConfig);
 
 				TrafficMirrorConfig trafficMirrorConfig = new TrafficMirrorConfig();
+
+				MirrorGroupConfig mirrorGroupConfig = new MirrorGroupConfig();
+
+				List<ServerGroupTuple2> serverGroupTuples1 = new ArrayList<ServerGroupTuple2>();
+				for (int k = 0; k < _ctx.lengthValue("ListRulesResponse.Rules["+ i +"].RuleActions["+ j +"].TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuples.Length"); k++) {
+					ServerGroupTuple2 serverGroupTuple2 = new ServerGroupTuple2();
+					serverGroupTuple2.setServerGroupId(_ctx.stringValue("ListRulesResponse.Rules["+ i +"].RuleActions["+ j +"].TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuples["+ k +"].ServerGroupId"));
+					serverGroupTuple2.setWeight(_ctx.integerValue("ListRulesResponse.Rules["+ i +"].RuleActions["+ j +"].TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuples["+ k +"].Weight"));
+
+					serverGroupTuples1.add(serverGroupTuple2);
+				}
+				mirrorGroupConfig.setServerGroupTuples1(serverGroupTuples1);
+				trafficMirrorConfig.setMirrorGroupConfig(mirrorGroupConfig);
 				action.setTrafficMirrorConfig(trafficMirrorConfig);
 
 				TrafficLimitConfig trafficLimitConfig = new TrafficLimitConfig();
+				trafficLimitConfig.setQPS(_ctx.integerValue("ListRulesResponse.Rules["+ i +"].RuleActions["+ j +"].TrafficLimitConfig.QPS"));
 				action.setTrafficLimitConfig(trafficLimitConfig);
 
 				ruleActions.add(action);
@@ -182,6 +199,15 @@ public class ListRulesResponseUnmarshaller {
 				}
 				queryStringConfig.setValues7(values7);
 				condition.setQueryStringConfig(queryStringConfig);
+
+				SourceIpConfig sourceIpConfig = new SourceIpConfig();
+
+				List<String> values9 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("ListRulesResponse.Rules["+ i +"].RuleConditions["+ j +"].SourceIpConfig.Values.Length"); k++) {
+					values9.add(_ctx.stringValue("ListRulesResponse.Rules["+ i +"].RuleConditions["+ j +"].SourceIpConfig.Values["+ k +"]"));
+				}
+				sourceIpConfig.setValues9(values9);
+				condition.setSourceIpConfig(sourceIpConfig);
 
 				ruleConditions.add(condition);
 			}
