@@ -22,12 +22,12 @@ import com.aliyuncs.ocr.Endpoint;
  * @author auto create
  * @version 
  */
-public class RecognizeStructuredTaxiInvoicesRequest extends RpcAcsRequest<RecognizeStructuredTaxiInvoicesResponse> {
+public class RecognizeUkraineIdentityCardRequest extends RpcAcsRequest<RecognizeUkraineIdentityCardResponse> {
 	   
 
-	private String imageURL;
-	public RecognizeStructuredTaxiInvoicesRequest() {
-		super("ocr", "2019-12-30", "RecognizeStructuredTaxiInvoices");
+	private String imageUrl;
+	public RecognizeUkraineIdentityCardRequest() {
+		super("ocr", "2019-12-30", "RecognizeUkraineIdentityCard");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class RecognizeStructuredTaxiInvoicesRequest extends RpcAcsRequest<Recogn
 		} catch (Exception e) {}
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
+	public String getImageUrl() {
+		return this.imageUrl;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putBodyParameter("ImageUrl", imageUrl);
 		}
 	}
 
 	@Override
-	public Class<RecognizeStructuredTaxiInvoicesResponse> getResponseClass() {
-		return RecognizeStructuredTaxiInvoicesResponse.class;
+	public Class<RecognizeUkraineIdentityCardResponse> getResponseClass() {
+		return RecognizeUkraineIdentityCardResponse.class;
 	}
 
 }

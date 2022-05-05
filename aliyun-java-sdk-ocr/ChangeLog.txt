@@ -1,3 +1,6 @@
+2022-05-05 Version: 1.0.17
+- Release RecognizeUkraineIdentityCard.
+
 2022-03-09 Version: 1.0.16
 - Release RecognizeVideoCastCrewList.
 
