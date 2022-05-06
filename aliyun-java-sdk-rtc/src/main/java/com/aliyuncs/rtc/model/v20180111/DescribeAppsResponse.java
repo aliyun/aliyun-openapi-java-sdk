@@ -79,6 +79,8 @@ public class DescribeAppsResponse extends AcsResponse {
 
 		private String appType;
 
+		private String region;
+
 		private List<String> serviceAreas;
 
 		public Integer getStatus() {
@@ -127,6 +129,14 @@ public class DescribeAppsResponse extends AcsResponse {
 
 		public void setAppType(String appType) {
 			this.appType = appType;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public List<String> getServiceAreas() {

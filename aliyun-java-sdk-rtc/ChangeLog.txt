@@ -1,3 +1,6 @@
+2022-05-06 Version: 1.3.5
+- Add DescribeAppKey interface.
+
 2022-03-28 Version: 1.3.4
 - Support more params in text, clockWidget.
 

@@ -39,6 +39,7 @@ public class DescribeAppsResponseUnmarshaller {
 			app.setCreateTime(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].CreateTime"));
 			app.setBillType(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].BillType"));
 			app.setAppType(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].AppType"));
+			app.setRegion(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].Region"));
 
 			List<String> serviceAreas = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAppsResponse.AppList["+ i +"].ServiceAreas.Length"); j++) {
