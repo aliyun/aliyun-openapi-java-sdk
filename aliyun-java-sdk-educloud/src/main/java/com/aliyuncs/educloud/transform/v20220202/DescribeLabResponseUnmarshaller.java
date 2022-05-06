@@ -37,6 +37,9 @@ public class DescribeLabResponseUnmarshaller {
 		data.setLabId(_ctx.stringValue("DescribeLabResponse.Data.LabId"));
 		data.setTitle(_ctx.stringValue("DescribeLabResponse.Data.Title"));
 		data.setIntroduce(_ctx.stringValue("DescribeLabResponse.Data.Introduce"));
+		data.setTime(_ctx.stringValue("DescribeLabResponse.Data.Time"));
+		data.setCategory(_ctx.stringValue("DescribeLabResponse.Data.Category"));
+		data.setTag(_ctx.stringValue("DescribeLabResponse.Data.Tag"));
 
 		List<ChapterItem> chapter = new ArrayList<ChapterItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLabResponse.Data.Chapter.Length"); i++) {

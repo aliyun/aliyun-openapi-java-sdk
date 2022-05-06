@@ -21,14 +21,20 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetLabTokenRequest extends RpcAcsRequest<GetLabTokenResponse> {
+public class ListLabTokensRequest extends RpcAcsRequest<ListLabTokensResponse> {
 	   
 
 	private String ramUid;
 
 	private String labId;
-	public GetLabTokenRequest() {
-		super("EduCloud", "2022-02-02", "GetLabToken");
+
+	private Long finishStatus;
+
+	private Long pageSize;
+
+	private Long page;
+	public ListLabTokensRequest() {
+		super("EduCloud", "2022-02-02", "ListLabTokens");
 		setMethod(MethodType.GET);
 	}
 
@@ -54,9 +60,42 @@ public class GetLabTokenRequest extends RpcAcsRequest<GetLabTokenResponse> {
 		}
 	}
 
+	public Long getFinishStatus() {
+		return this.finishStatus;
+	}
+
+	public void setFinishStatus(Long finishStatus) {
+		this.finishStatus = finishStatus;
+		if(finishStatus != null){
+			putQueryParameter("FinishStatus", finishStatus.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getPage() {
+		return this.page;
+	}
+
+	public void setPage(Long page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
 	@Override
-	public Class<GetLabTokenResponse> getResponseClass() {
-		return GetLabTokenResponse.class;
+	public Class<ListLabTokensResponse> getResponseClass() {
+		return ListLabTokensResponse.class;
 	}
 
 }

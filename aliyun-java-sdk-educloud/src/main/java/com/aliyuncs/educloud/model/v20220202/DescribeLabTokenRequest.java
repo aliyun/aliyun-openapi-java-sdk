@@ -21,14 +21,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetLabTokenRequest extends RpcAcsRequest<GetLabTokenResponse> {
+public class DescribeLabTokenRequest extends RpcAcsRequest<DescribeLabTokenResponse> {
 	   
 
 	private String ramUid;
 
-	private String labId;
-	public GetLabTokenRequest() {
-		super("EduCloud", "2022-02-02", "GetLabToken");
+	private String orderId;
+	public DescribeLabTokenRequest() {
+		super("EduCloud", "2022-02-02", "DescribeLabToken");
 		setMethod(MethodType.GET);
 	}
 
@@ -43,20 +43,20 @@ public class GetLabTokenRequest extends RpcAcsRequest<GetLabTokenResponse> {
 		}
 	}
 
-	public String getLabId() {
-		return this.labId;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setLabId(String labId) {
-		this.labId = labId;
-		if(labId != null){
-			putQueryParameter("LabId", labId);
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 
 	@Override
-	public Class<GetLabTokenResponse> getResponseClass() {
-		return GetLabTokenResponse.class;
+	public Class<DescribeLabTokenResponse> getResponseClass() {
+		return DescribeLabTokenResponse.class;
 	}
 
 }

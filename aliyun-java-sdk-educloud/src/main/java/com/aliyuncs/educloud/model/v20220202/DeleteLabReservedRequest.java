@@ -21,42 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetLabTokenRequest extends RpcAcsRequest<GetLabTokenResponse> {
+public class DeleteLabReservedRequest extends RpcAcsRequest<DeleteLabReservedResponse> {
 	   
 
-	private String ramUid;
-
-	private String labId;
-	public GetLabTokenRequest() {
-		super("EduCloud", "2022-02-02", "GetLabToken");
-		setMethod(MethodType.GET);
+	private String reservedId;
+	public DeleteLabReservedRequest() {
+		super("EduCloud", "2022-02-02", "DeleteLabReserved");
+		setMethod(MethodType.POST);
 	}
 
-	public String getRamUid() {
-		return this.ramUid;
+	public String getReservedId() {
+		return this.reservedId;
 	}
 
-	public void setRamUid(String ramUid) {
-		this.ramUid = ramUid;
-		if(ramUid != null){
-			putQueryParameter("RamUid", ramUid);
-		}
-	}
-
-	public String getLabId() {
-		return this.labId;
-	}
-
-	public void setLabId(String labId) {
-		this.labId = labId;
-		if(labId != null){
-			putQueryParameter("LabId", labId);
+	public void setReservedId(String reservedId) {
+		this.reservedId = reservedId;
+		if(reservedId != null){
+			putBodyParameter("ReservedId", reservedId);
 		}
 	}
 
 	@Override
-	public Class<GetLabTokenResponse> getResponseClass() {
-		return GetLabTokenResponse.class;
+	public Class<DeleteLabReservedResponse> getResponseClass() {
+		return DeleteLabReservedResponse.class;
 	}
 
 }

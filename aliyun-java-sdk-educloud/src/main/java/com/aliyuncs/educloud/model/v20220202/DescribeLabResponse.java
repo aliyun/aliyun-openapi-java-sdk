@@ -83,6 +83,12 @@ public class DescribeLabResponse extends AcsResponse {
 
 		private String introduce;
 
+		private String time;
+
+		private String category;
+
+		private String tag;
+
 		private List<ChapterItem> chapter;
 
 		public String getLabId() {
@@ -107,6 +113,30 @@ public class DescribeLabResponse extends AcsResponse {
 
 		public void setIntroduce(String introduce) {
 			this.introduce = introduce;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 
 		public List<ChapterItem> getChapter() {
