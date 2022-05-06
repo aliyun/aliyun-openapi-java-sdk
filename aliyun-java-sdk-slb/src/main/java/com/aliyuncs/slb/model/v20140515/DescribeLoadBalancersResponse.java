@@ -133,6 +133,8 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String regionIdAlias;
 
+		private String instanceChargeType;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -357,6 +359,14 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setRegionIdAlias(String regionIdAlias) {
 			this.regionIdAlias = regionIdAlias;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
 		}
 
 		public List<Tag> getTags() {

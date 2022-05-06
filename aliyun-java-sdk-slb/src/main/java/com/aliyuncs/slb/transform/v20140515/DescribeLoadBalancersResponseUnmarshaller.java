@@ -63,6 +63,7 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 			loadBalancer.setBusinessStatus(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].BusinessStatus"));
 			loadBalancer.setDeleteProtection(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].DeleteProtection"));
 			loadBalancer.setRegionIdAlias(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].RegionIdAlias"));
+			loadBalancer.setInstanceChargeType(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].InstanceChargeType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].Tags.Length"); j++) {

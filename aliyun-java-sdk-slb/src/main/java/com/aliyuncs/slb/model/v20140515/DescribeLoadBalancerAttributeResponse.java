@@ -119,6 +119,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private Long cloudInstanceUid;
 
+	private String instanceChargeType;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -503,6 +505,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setCloudInstanceUid(Long cloudInstanceUid) {
 		this.cloudInstanceUid = cloudInstanceUid;
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
 	}
 
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {

@@ -75,6 +75,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setRenewalStatus(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.RenewalStatus"));
 		describeLoadBalancerAttributeResponse.setRenewalDuration(_ctx.integerValue("DescribeLoadBalancerAttributeResponse.RenewalDuration"));
 		describeLoadBalancerAttributeResponse.setCloudInstanceUid(_ctx.longValue("DescribeLoadBalancerAttributeResponse.CloudInstanceUid"));
+		describeLoadBalancerAttributeResponse.setInstanceChargeType(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.InstanceChargeType"));
 
 		List<String> labels = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.Labels.Length"); i++) {
