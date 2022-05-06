@@ -28,9 +28,9 @@ public class SwitchVpcRouteToBackUpZoneRequest extends RpcAcsRequest<SwitchVpcRo
 
 	private String clientToken;
 
-	private String cciotGwId;
+	private String greGwId;
 
-	private String zone;
+	private String cciotGwId;
 	public SwitchVpcRouteToBackUpZoneRequest() {
 		super("CCIoTGW", "2021-07-21", "SwitchVpcRouteToBackUpZone");
 		setMethod(MethodType.POST);
@@ -58,6 +58,17 @@ public class SwitchVpcRouteToBackUpZoneRequest extends RpcAcsRequest<SwitchVpcRo
 		}
 	}
 
+	public String getGreGwId() {
+		return this.greGwId;
+	}
+
+	public void setGreGwId(String greGwId) {
+		this.greGwId = greGwId;
+		if(greGwId != null){
+			putQueryParameter("GreGwId", greGwId);
+		}
+	}
+
 	public String getCciotGwId() {
 		return this.cciotGwId;
 	}
@@ -66,17 +77,6 @@ public class SwitchVpcRouteToBackUpZoneRequest extends RpcAcsRequest<SwitchVpcRo
 		this.cciotGwId = cciotGwId;
 		if(cciotGwId != null){
 			putQueryParameter("CciotGwId", cciotGwId);
-		}
-	}
-
-	public String getZone() {
-		return this.zone;
-	}
-
-	public void setZone(String zone) {
-		this.zone = zone;
-		if(zone != null){
-			putQueryParameter("Zone", zone);
 		}
 	}
 
