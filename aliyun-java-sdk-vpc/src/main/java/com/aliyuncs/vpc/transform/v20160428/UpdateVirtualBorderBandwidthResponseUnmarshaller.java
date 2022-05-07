@@ -24,7 +24,7 @@ public class UpdateVirtualBorderBandwidthResponseUnmarshaller {
 		
 		updateVirtualBorderBandwidthResponse.setRequestId(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.RequestId"));
 		updateVirtualBorderBandwidthResponse.setCode(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.Code"));
-		updateVirtualBorderBandwidthResponse.setHttpStatusCode(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.HttpStatusCode"));
+		updateVirtualBorderBandwidthResponse.setHttpStatusCode(_ctx.integerValue("UpdateVirtualBorderBandwidthResponse.HttpStatusCode"));
 		updateVirtualBorderBandwidthResponse.setMessage(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.Message"));
 		updateVirtualBorderBandwidthResponse.setSuccess(_ctx.booleanValue("UpdateVirtualBorderBandwidthResponse.Success"));
 	 

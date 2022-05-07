@@ -14,17 +14,17 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.RenewInstanceResponse;
+import com.aliyuncs.vpc.model.v20160428.CreatePublicIpAddressPoolResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RenewInstanceResponseUnmarshaller {
+public class CreatePublicIpAddressPoolResponseUnmarshaller {
 
-	public static RenewInstanceResponse unmarshall(RenewInstanceResponse renewInstanceResponse, UnmarshallerContext _ctx) {
+	public static CreatePublicIpAddressPoolResponse unmarshall(CreatePublicIpAddressPoolResponse createPublicIpAddressPoolResponse, UnmarshallerContext _ctx) {
 		
-		renewInstanceResponse.setRequestId(_ctx.stringValue("RenewInstanceResponse.RequestId"));
-		renewInstanceResponse.setOrderId(_ctx.stringValue("RenewInstanceResponse.OrderId"));
+		createPublicIpAddressPoolResponse.setRequestId(_ctx.stringValue("CreatePublicIpAddressPoolResponse.RequestId"));
+		createPublicIpAddressPoolResponse.setPulbicIpAddressPoolId(_ctx.stringValue("CreatePublicIpAddressPoolResponse.PulbicIpAddressPoolId"));
 	 
-	 	return renewInstanceResponse;
+	 	return createPublicIpAddressPoolResponse;
 	}
 }

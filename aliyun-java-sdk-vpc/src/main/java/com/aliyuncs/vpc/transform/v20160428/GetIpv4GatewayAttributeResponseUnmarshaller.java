@@ -30,6 +30,7 @@ public class GetIpv4GatewayAttributeResponseUnmarshaller {
 		getIpv4GatewayAttributeResponse.setEnabled(_ctx.booleanValue("GetIpv4GatewayAttributeResponse.Enabled"));
 		getIpv4GatewayAttributeResponse.setIpv4GatewayRouteTableId(_ctx.stringValue("GetIpv4GatewayAttributeResponse.Ipv4GatewayRouteTableId"));
 		getIpv4GatewayAttributeResponse.setIpv4GatewayName(_ctx.stringValue("GetIpv4GatewayAttributeResponse.Ipv4GatewayName"));
+		getIpv4GatewayAttributeResponse.setCreateTime(_ctx.stringValue("GetIpv4GatewayAttributeResponse.CreateTime"));
 	 
 	 	return getIpv4GatewayAttributeResponse;
 	}

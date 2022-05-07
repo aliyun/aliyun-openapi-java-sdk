@@ -115,6 +115,8 @@ public class DescribeVpnGatewaysResponse extends AcsResponse {
 
 		private String name;
 
+		private String networkType;
+
 		private List<Tag> tags;
 
 		private ReservationData reservationData;
@@ -269,6 +271,14 @@ public class DescribeVpnGatewaysResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
 		}
 
 		public List<Tag> getTags() {

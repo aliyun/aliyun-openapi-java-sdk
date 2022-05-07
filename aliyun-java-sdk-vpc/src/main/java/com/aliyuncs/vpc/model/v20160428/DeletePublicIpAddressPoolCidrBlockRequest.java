@@ -22,29 +22,42 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteExpressConnectRequest extends RpcAcsRequest<DeleteExpressConnectResponse> {
+public class DeletePublicIpAddressPoolCidrBlockRequest extends RpcAcsRequest<DeletePublicIpAddressPoolCidrBlockResponse> {
 	   
+
+	private String publicIpAddressPoolId;
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String routerInterfaceId;
-
 	private Long ownerId;
 
-	private Boolean force;
-	public DeleteExpressConnectRequest() {
-		super("Vpc", "2016-04-28", "DeleteExpressConnect", "vpc");
+	private String cidrBlock;
+	public DeletePublicIpAddressPoolCidrBlockRequest() {
+		super("Vpc", "2016-04-28", "DeletePublicIpAddressPoolCidrBlock", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPublicIpAddressPoolId() {
+		return this.publicIpAddressPoolId;
+	}
+
+	public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
+		this.publicIpAddressPoolId = publicIpAddressPoolId;
+		if(publicIpAddressPoolId != null){
+			putQueryParameter("PublicIpAddressPoolId", publicIpAddressPoolId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -66,6 +79,17 @@ public class DeleteExpressConnectRequest extends RpcAcsRequest<DeleteExpressConn
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -91,17 +115,6 @@ public class DeleteExpressConnectRequest extends RpcAcsRequest<DeleteExpressConn
 		}
 	}
 
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
-	}
-
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
-		if(routerInterfaceId != null){
-			putQueryParameter("RouterInterfaceId", routerInterfaceId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -113,20 +126,20 @@ public class DeleteExpressConnectRequest extends RpcAcsRequest<DeleteExpressConn
 		}
 	}
 
-	public Boolean getForce() {
-		return this.force;
+	public String getCidrBlock() {
+		return this.cidrBlock;
 	}
 
-	public void setForce(Boolean force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force.toString());
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
 		}
 	}
 
 	@Override
-	public Class<DeleteExpressConnectResponse> getResponseClass() {
-		return DeleteExpressConnectResponse.class;
+	public Class<DeletePublicIpAddressPoolCidrBlockResponse> getResponseClass() {
+		return DeletePublicIpAddressPoolCidrBlockResponse.class;
 	}
 
 }

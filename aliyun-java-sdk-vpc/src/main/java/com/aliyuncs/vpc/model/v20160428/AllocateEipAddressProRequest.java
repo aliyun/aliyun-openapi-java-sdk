@@ -30,6 +30,8 @@ public class AllocateEipAddressProRequest extends RpcAcsRequest<AllocateEipAddre
 
 	private Long resourceOwnerId;
 
+	private String publicIpAddressPoolId;
+
 	private String clientToken;
 
 	private String iSP;
@@ -87,6 +89,17 @@ public class AllocateEipAddressProRequest extends RpcAcsRequest<AllocateEipAddre
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPublicIpAddressPoolId() {
+		return this.publicIpAddressPoolId;
+	}
+
+	public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
+		this.publicIpAddressPoolId = publicIpAddressPoolId;
+		if(publicIpAddressPoolId != null){
+			putQueryParameter("PublicIpAddressPoolId", publicIpAddressPoolId);
 		}
 	}
 

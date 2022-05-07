@@ -15,14 +15,14 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.ModifyInstanceAutoRenewalAttributeResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.AddPublicIpAddressPoolCidrBlockResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyInstanceAutoRenewalAttributeResponse extends AcsResponse {
+public class AddPublicIpAddressPoolCidrBlockResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class ModifyInstanceAutoRenewalAttributeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyInstanceAutoRenewalAttributeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.unmarshall(this, context);
+	public AddPublicIpAddressPoolCidrBlockResponse getInstance(UnmarshallerContext context) {
+		return	AddPublicIpAddressPoolCidrBlockResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

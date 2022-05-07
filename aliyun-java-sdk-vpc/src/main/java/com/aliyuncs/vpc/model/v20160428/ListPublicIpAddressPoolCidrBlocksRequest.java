@@ -22,12 +22,16 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListPhysicalConnectionFeaturesRequest extends RpcAcsRequest<ListPhysicalConnectionFeaturesResponse> {
+public class ListPublicIpAddressPoolCidrBlocksRequest extends RpcAcsRequest<ListPublicIpAddressPoolCidrBlocksResponse> {
 	   
+
+	private String publicIpAddressPoolId;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String nextToken;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -35,14 +39,27 @@ public class ListPhysicalConnectionFeaturesRequest extends RpcAcsRequest<ListPhy
 
 	private Long ownerId;
 
-	private String physicalConnectionId;
-	public ListPhysicalConnectionFeaturesRequest() {
-		super("Vpc", "2016-04-28", "ListPhysicalConnectionFeatures", "vpc");
+	private String cidrBlock;
+
+	private Integer maxResults;
+	public ListPublicIpAddressPoolCidrBlocksRequest() {
+		super("Vpc", "2016-04-28", "ListPublicIpAddressPoolCidrBlocks", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPublicIpAddressPoolId() {
+		return this.publicIpAddressPoolId;
+	}
+
+	public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
+		this.publicIpAddressPoolId = publicIpAddressPoolId;
+		if(publicIpAddressPoolId != null){
+			putQueryParameter("PublicIpAddressPoolId", publicIpAddressPoolId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -56,14 +73,25 @@ public class ListPhysicalConnectionFeaturesRequest extends RpcAcsRequest<ListPhy
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -100,20 +128,31 @@ public class ListPhysicalConnectionFeaturesRequest extends RpcAcsRequest<ListPhy
 		}
 	}
 
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
+	public String getCidrBlock() {
+		return this.cidrBlock;
 	}
 
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		if(physicalConnectionId != null){
-			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
 	@Override
-	public Class<ListPhysicalConnectionFeaturesResponse> getResponseClass() {
-		return ListPhysicalConnectionFeaturesResponse.class;
+	public Class<ListPublicIpAddressPoolCidrBlocksResponse> getResponseClass() {
+		return ListPublicIpAddressPoolCidrBlocksResponse.class;
 	}
 
 }

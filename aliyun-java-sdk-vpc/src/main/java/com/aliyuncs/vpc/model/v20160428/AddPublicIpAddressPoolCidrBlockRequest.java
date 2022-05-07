@@ -22,31 +22,42 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<DescribeInstanceAutoRenewAttributeResponse> {
+public class AddPublicIpAddressPoolCidrBlockRequest extends RpcAcsRequest<AddPublicIpAddressPoolCidrBlockResponse> {
 	   
+
+	private String publicIpAddressPoolId;
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
+	private String clientToken;
 
-	private String renewalStatus;
-
-	private Integer pageSize;
-
-	private String instanceType;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private Long ownerId;
 
-	private String instanceId;
-	public DescribeInstanceAutoRenewAttributeRequest() {
-		super("Vpc", "2016-04-28", "DescribeInstanceAutoRenewAttribute", "vpc");
+	private String cidrBlock;
+	public AddPublicIpAddressPoolCidrBlockRequest() {
+		super("Vpc", "2016-04-28", "AddPublicIpAddressPoolCidrBlock", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPublicIpAddressPoolId() {
+		return this.publicIpAddressPoolId;
+	}
+
+	public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
+		this.publicIpAddressPoolId = publicIpAddressPoolId;
+		if(publicIpAddressPoolId != null){
+			putQueryParameter("PublicIpAddressPoolId", publicIpAddressPoolId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -60,47 +71,25 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getRenewalStatus() {
-		return this.renewalStatus;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setRenewalStatus(String renewalStatus) {
-		this.renewalStatus = renewalStatus;
-		if(renewalStatus != null){
-			putQueryParameter("RenewalStatus", renewalStatus);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -115,6 +104,17 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,20 +126,20 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getCidrBlock() {
+		return this.cidrBlock;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
 		}
 	}
 
 	@Override
-	public Class<DescribeInstanceAutoRenewAttributeResponse> getResponseClass() {
-		return DescribeInstanceAutoRenewAttributeResponse.class;
+	public Class<AddPublicIpAddressPoolCidrBlockResponse> getResponseClass() {
+		return AddPublicIpAddressPoolCidrBlockResponse.class;
 	}
 
 }

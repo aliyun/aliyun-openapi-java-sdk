@@ -39,6 +39,8 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 
 	private String ownerAccount;
 
+	private Integer aggregationInterval;
+
 	private Long ownerId;
 
 	private String resourceType;
@@ -129,6 +131,17 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getAggregationInterval() {
+		return this.aggregationInterval;
+	}
+
+	public void setAggregationInterval(Integer aggregationInterval) {
+		this.aggregationInterval = aggregationInterval;
+		if(aggregationInterval != null){
+			putQueryParameter("AggregationInterval", aggregationInterval.toString());
 		}
 	}
 

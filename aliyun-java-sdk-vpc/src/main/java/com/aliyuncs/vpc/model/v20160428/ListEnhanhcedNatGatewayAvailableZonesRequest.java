@@ -32,6 +32,8 @@ public class ListEnhanhcedNatGatewayAvailableZonesRequest extends RpcAcsRequest<
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String acceptLanguage;
 	public ListEnhanhcedNatGatewayAvailableZonesRequest() {
 		super("Vpc", "2016-04-28", "ListEnhanhcedNatGatewayAvailableZones", "vpc");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class ListEnhanhcedNatGatewayAvailableZonesRequest extends RpcAcsRequest<
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

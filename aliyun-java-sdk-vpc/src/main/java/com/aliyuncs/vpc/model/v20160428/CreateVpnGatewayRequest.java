@@ -31,6 +31,8 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 
 	private Boolean enableIpsec;
 
+	private String networkType;
+
 	private String instanceChargeType;
 
 	private Integer period;
@@ -95,6 +97,17 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.enableIpsec = enableIpsec;
 		if(enableIpsec != null){
 			putQueryParameter("EnableIpsec", enableIpsec.toString());
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 

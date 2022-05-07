@@ -71,6 +71,7 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			eipAddress.setBandwidthPackageType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageType"));
 			eipAddress.setHasReservationData(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].HasReservationData"));
 			eipAddress.setISP(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ISP"));
+			eipAddress.setPublicIpAddressPoolId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].PublicIpAddressPoolId"));
 
 			List<String> availableRegions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {

@@ -22,31 +22,44 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<DescribeNewProjectEipMonitorDataResponse> {
+public class UpdatePublicIpAddressPoolAttributeRequest extends RpcAcsRequest<UpdatePublicIpAddressPoolAttributeResponse> {
 	   
+
+	private String publicIpAddressPoolId;
 
 	private Long resourceOwnerId;
 
-	private String allocationId;
+	private String clientToken;
 
-	private String startTime;
+	private String description;
 
-	private Integer period;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
-	public DescribeNewProjectEipMonitorDataRequest() {
-		super("Vpc", "2016-04-28", "DescribeNewProjectEipMonitorData", "vpc");
+
+	private String name;
+	public UpdatePublicIpAddressPoolAttributeRequest() {
+		super("Vpc", "2016-04-28", "UpdatePublicIpAddressPoolAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPublicIpAddressPoolId() {
+		return this.publicIpAddressPoolId;
+	}
+
+	public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
+		this.publicIpAddressPoolId = publicIpAddressPoolId;
+		if(publicIpAddressPoolId != null){
+			putQueryParameter("PublicIpAddressPoolId", publicIpAddressPoolId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -60,36 +73,36 @@ public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<Descr
 		}
 	}
 
-	public String getAllocationId() {
-		return this.allocationId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setAllocationId(String allocationId) {
-		this.allocationId = allocationId;
-		if(allocationId != null){
-			putQueryParameter("AllocationId", allocationId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -115,17 +128,6 @@ public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<Descr
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -137,9 +139,20 @@ public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<Descr
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	@Override
-	public Class<DescribeNewProjectEipMonitorDataResponse> getResponseClass() {
-		return DescribeNewProjectEipMonitorDataResponse.class;
+	public Class<UpdatePublicIpAddressPoolAttributeResponse> getResponseClass() {
+		return UpdatePublicIpAddressPoolAttributeResponse.class;
 	}
 
 }

@@ -46,6 +46,7 @@ public class DescribeBgpGroupsResponseUnmarshaller {
 			bgpGroup.setKeepalive(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Keepalive"));
 			bgpGroup.setIsFake(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].IsFake"));
 			bgpGroup.setRouteLimit(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouteLimit"));
+			bgpGroup.setRouteQuota(_ctx.integerValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouteQuota"));
 			bgpGroup.setName(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Name"));
 			bgpGroup.setAuthKey(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].AuthKey"));
 

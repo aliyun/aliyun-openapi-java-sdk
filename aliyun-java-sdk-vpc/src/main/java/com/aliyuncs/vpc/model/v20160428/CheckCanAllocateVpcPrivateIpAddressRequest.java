@@ -22,20 +22,24 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteExpressCloudConnectionRequest extends RpcAcsRequest<DeleteExpressCloudConnectionResponse> {
+public class CheckCanAllocateVpcPrivateIpAddressRequest extends RpcAcsRequest<CheckCanAllocateVpcPrivateIpAddressResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String eccId;
+	private String ipVersion;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DeleteExpressCloudConnectionRequest() {
-		super("Vpc", "2016-04-28", "DeleteExpressCloudConnection", "vpc");
+
+	private String vSwitchId;
+
+	private String privateIpAddress;
+	public CheckCanAllocateVpcPrivateIpAddressRequest() {
+		super("Vpc", "2016-04-28", "CheckCanAllocateVpcPrivateIpAddress", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,14 +58,14 @@ public class DeleteExpressCloudConnectionRequest extends RpcAcsRequest<DeleteExp
 		}
 	}
 
-	public String getEccId() {
-		return this.eccId;
+	public String getIpVersion() {
+		return this.ipVersion;
 	}
 
-	public void setEccId(String eccId) {
-		this.eccId = eccId;
-		if(eccId != null){
-			putQueryParameter("EccId", eccId);
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+		if(ipVersion != null){
+			putQueryParameter("IpVersion", ipVersion);
 		}
 	}
 
@@ -98,9 +102,31 @@ public class DeleteExpressCloudConnectionRequest extends RpcAcsRequest<DeleteExp
 		}
 	}
 
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
 	@Override
-	public Class<DeleteExpressCloudConnectionResponse> getResponseClass() {
-		return DeleteExpressCloudConnectionResponse.class;
+	public Class<CheckCanAllocateVpcPrivateIpAddressResponse> getResponseClass() {
+		return CheckCanAllocateVpcPrivateIpAddressResponse.class;
 	}
 
 }

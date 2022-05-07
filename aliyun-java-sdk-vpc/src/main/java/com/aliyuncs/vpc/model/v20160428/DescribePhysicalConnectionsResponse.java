@@ -143,6 +143,8 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		private String vpconnStatus;
 
+		private String expectSpec;
+
 		public String getType() {
 			return this.type;
 		}
@@ -405,6 +407,14 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		public void setVpconnStatus(String vpconnStatus) {
 			this.vpconnStatus = vpconnStatus;
+		}
+
+		public String getExpectSpec() {
+			return this.expectSpec;
+		}
+
+		public void setExpectSpec(String expectSpec) {
+			this.expectSpec = expectSpec;
 		}
 	}
 

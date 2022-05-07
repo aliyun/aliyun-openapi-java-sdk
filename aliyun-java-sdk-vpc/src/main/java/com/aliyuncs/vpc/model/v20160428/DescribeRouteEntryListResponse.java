@@ -73,6 +73,8 @@ public class DescribeRouteEntryListResponse extends AcsResponse {
 
 		private String routeTableId;
 
+		private String gmtModified;
+
 		private List<NextHop> nextHops;
 
 		public String getStatus() {
@@ -137,6 +139,14 @@ public class DescribeRouteEntryListResponse extends AcsResponse {
 
 		public void setRouteTableId(String routeTableId) {
 			this.routeTableId = routeTableId;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public List<NextHop> getNextHops() {

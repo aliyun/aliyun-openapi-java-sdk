@@ -101,6 +101,8 @@ public class DescribeBgpGroupsResponse extends AcsResponse {
 
 		private String routeLimit;
 
+		private Integer routeQuota;
+
 		private String name;
 
 		private String authKey;
@@ -199,6 +201,14 @@ public class DescribeBgpGroupsResponse extends AcsResponse {
 
 		public void setRouteLimit(String routeLimit) {
 			this.routeLimit = routeLimit;
+		}
+
+		public Integer getRouteQuota() {
+			return this.routeQuota;
+		}
+
+		public void setRouteQuota(Integer routeQuota) {
+			this.routeQuota = routeQuota;
 		}
 
 		public String getName() {

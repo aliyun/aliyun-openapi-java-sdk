@@ -29,22 +29,24 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 	public static DescribeVpcAttributeResponse unmarshall(DescribeVpcAttributeResponse describeVpcAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeVpcAttributeResponse.setRequestId(_ctx.stringValue("DescribeVpcAttributeResponse.RequestId"));
-		describeVpcAttributeResponse.setVpcId(_ctx.stringValue("DescribeVpcAttributeResponse.VpcId"));
-		describeVpcAttributeResponse.setRegionId(_ctx.stringValue("DescribeVpcAttributeResponse.RegionId"));
-		describeVpcAttributeResponse.setStatus(_ctx.stringValue("DescribeVpcAttributeResponse.Status"));
-		describeVpcAttributeResponse.setVpcName(_ctx.stringValue("DescribeVpcAttributeResponse.VpcName"));
 		describeVpcAttributeResponse.setCreationTime(_ctx.stringValue("DescribeVpcAttributeResponse.CreationTime"));
-		describeVpcAttributeResponse.setCidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.CidrBlock"));
-		describeVpcAttributeResponse.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlock"));
-		describeVpcAttributeResponse.setVRouterId(_ctx.stringValue("DescribeVpcAttributeResponse.VRouterId"));
-		describeVpcAttributeResponse.setDescription(_ctx.stringValue("DescribeVpcAttributeResponse.Description"));
+		describeVpcAttributeResponse.setStatus(_ctx.stringValue("DescribeVpcAttributeResponse.Status"));
+		describeVpcAttributeResponse.setVpcId(_ctx.stringValue("DescribeVpcAttributeResponse.VpcId"));
 		describeVpcAttributeResponse.setIsDefault(_ctx.booleanValue("DescribeVpcAttributeResponse.IsDefault"));
 		describeVpcAttributeResponse.setClassicLinkEnabled(_ctx.booleanValue("DescribeVpcAttributeResponse.ClassicLinkEnabled"));
-		describeVpcAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeVpcAttributeResponse.ResourceGroupId"));
-		describeVpcAttributeResponse.setNetworkAclNum(_ctx.stringValue("DescribeVpcAttributeResponse.NetworkAclNum"));
 		describeVpcAttributeResponse.setOwnerId(_ctx.longValue("DescribeVpcAttributeResponse.OwnerId"));
-		describeVpcAttributeResponse.setDhcpOptionsSetId(_ctx.stringValue("DescribeVpcAttributeResponse.DhcpOptionsSetId"));
+		describeVpcAttributeResponse.setRegionId(_ctx.stringValue("DescribeVpcAttributeResponse.RegionId"));
+		describeVpcAttributeResponse.setVpcName(_ctx.stringValue("DescribeVpcAttributeResponse.VpcName"));
+		describeVpcAttributeResponse.setVRouterId(_ctx.stringValue("DescribeVpcAttributeResponse.VRouterId"));
 		describeVpcAttributeResponse.setDhcpOptionsSetStatus(_ctx.stringValue("DescribeVpcAttributeResponse.DhcpOptionsSetStatus"));
+		describeVpcAttributeResponse.setCidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.CidrBlock"));
+		describeVpcAttributeResponse.setDescription(_ctx.stringValue("DescribeVpcAttributeResponse.Description"));
+		describeVpcAttributeResponse.setNetworkAclNum(_ctx.stringValue("DescribeVpcAttributeResponse.NetworkAclNum"));
+		describeVpcAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeVpcAttributeResponse.ResourceGroupId"));
+		describeVpcAttributeResponse.setDhcpOptionsSetId(_ctx.stringValue("DescribeVpcAttributeResponse.DhcpOptionsSetId"));
+		describeVpcAttributeResponse.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlock"));
+		describeVpcAttributeResponse.setSupportIpv4Gateway(_ctx.booleanValue("DescribeVpcAttributeResponse.SupportIpv4Gateway"));
+		describeVpcAttributeResponse.setIpv4GatewayId(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv4GatewayId"));
 
 		List<String> vSwitchIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.VSwitchIds.Length"); i++) {
@@ -67,8 +69,8 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 		List<AssociatedCen> associatedCens = new ArrayList<AssociatedCen>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.AssociatedCens.Length"); i++) {
 			AssociatedCen associatedCen = new AssociatedCen();
-			associatedCen.setCenId(_ctx.stringValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenId"));
 			associatedCen.setCenOwnerId(_ctx.longValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenOwnerId"));
+			associatedCen.setCenId(_ctx.stringValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenId"));
 			associatedCen.setCenStatus(_ctx.stringValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenStatus"));
 
 			associatedCens.add(associatedCen);
@@ -78,8 +80,8 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 		List<CloudResourceSetType> cloudResources = new ArrayList<CloudResourceSetType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.CloudResources.Length"); i++) {
 			CloudResourceSetType cloudResourceSetType = new CloudResourceSetType();
-			cloudResourceSetType.setResourceType(_ctx.stringValue("DescribeVpcAttributeResponse.CloudResources["+ i +"].ResourceType"));
 			cloudResourceSetType.setResourceCount(_ctx.integerValue("DescribeVpcAttributeResponse.CloudResources["+ i +"].ResourceCount"));
+			cloudResourceSetType.setResourceType(_ctx.stringValue("DescribeVpcAttributeResponse.CloudResources["+ i +"].ResourceType"));
 
 			cloudResources.add(cloudResourceSetType);
 		}
@@ -88,8 +90,8 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 		List<Ipv6CidrBlock> ipv6CidrBlocks = new ArrayList<Ipv6CidrBlock>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.Ipv6CidrBlocks.Length"); i++) {
 			Ipv6CidrBlock ipv6CidrBlock = new Ipv6CidrBlock();
-			ipv6CidrBlock.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlocks["+ i +"].Ipv6CidrBlock"));
 			ipv6CidrBlock.setIpv6Isp(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlocks["+ i +"].Ipv6Isp"));
+			ipv6CidrBlock.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlocks["+ i +"].Ipv6CidrBlock"));
 
 			ipv6CidrBlocks.add(ipv6CidrBlock);
 		}

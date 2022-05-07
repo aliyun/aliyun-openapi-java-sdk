@@ -27,6 +27,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private Long resourceOwnerId;
 
+	private String publicIpAddressPoolId;
+
 	private String filter2Value;
 
 	private Boolean securityProtectionEnabled;
@@ -89,6 +91,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPublicIpAddressPoolId() {
+		return this.publicIpAddressPoolId;
+	}
+
+	public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
+		this.publicIpAddressPoolId = publicIpAddressPoolId;
+		if(publicIpAddressPoolId != null){
+			putQueryParameter("PublicIpAddressPoolId", publicIpAddressPoolId);
 		}
 	}
 

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.CancelExpressCloudConnectionResponse;
+import com.aliyuncs.vpc.model.v20160428.DeletePublicIpAddressPoolCidrBlockResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CancelExpressCloudConnectionResponseUnmarshaller {
+public class DeletePublicIpAddressPoolCidrBlockResponseUnmarshaller {
 
-	public static CancelExpressCloudConnectionResponse unmarshall(CancelExpressCloudConnectionResponse cancelExpressCloudConnectionResponse, UnmarshallerContext _ctx) {
+	public static DeletePublicIpAddressPoolCidrBlockResponse unmarshall(DeletePublicIpAddressPoolCidrBlockResponse deletePublicIpAddressPoolCidrBlockResponse, UnmarshallerContext _ctx) {
 		
-		cancelExpressCloudConnectionResponse.setRequestId(_ctx.stringValue("CancelExpressCloudConnectionResponse.RequestId"));
+		deletePublicIpAddressPoolCidrBlockResponse.setRequestId(_ctx.stringValue("DeletePublicIpAddressPoolCidrBlockResponse.RequestId"));
 	 
-	 	return cancelExpressCloudConnectionResponse;
+	 	return deletePublicIpAddressPoolCidrBlockResponse;
 	}
 }

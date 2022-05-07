@@ -115,6 +115,12 @@ public class DescribeBgpPeersResponse extends AcsResponse {
 
 		private String name;
 
+		private Integer advertisedRouteCount;
+
+		private Integer receivedRouteCount;
+
+		private String gmtModified;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -265,6 +271,30 @@ public class DescribeBgpPeersResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Integer getAdvertisedRouteCount() {
+			return this.advertisedRouteCount;
+		}
+
+		public void setAdvertisedRouteCount(Integer advertisedRouteCount) {
+			this.advertisedRouteCount = advertisedRouteCount;
+		}
+
+		public Integer getReceivedRouteCount() {
+			return this.receivedRouteCount;
+		}
+
+		public void setReceivedRouteCount(Integer receivedRouteCount) {
+			this.receivedRouteCount = receivedRouteCount;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 	}
 

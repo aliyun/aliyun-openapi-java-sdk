@@ -15,38 +15,16 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.ModifyCommonBandwidthPackagePayTypeResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.DeletePublicIpAddressPoolCidrBlockResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyCommonBandwidthPackagePayTypeResponse extends AcsResponse {
-
-	private String code;
-
-	private String message;
+public class DeletePublicIpAddressPoolCidrBlockResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Long orderId;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,16 +34,13 @@ public class ModifyCommonBandwidthPackagePayTypeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
+	@Override
+	public DeletePublicIpAddressPoolCidrBlockResponse getInstance(UnmarshallerContext context) {
+		return	DeletePublicIpAddressPoolCidrBlockResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public ModifyCommonBandwidthPackagePayTypeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyCommonBandwidthPackagePayTypeResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

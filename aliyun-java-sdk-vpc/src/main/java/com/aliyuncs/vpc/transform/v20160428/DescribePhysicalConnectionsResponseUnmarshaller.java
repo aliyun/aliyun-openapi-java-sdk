@@ -67,6 +67,7 @@ public class DescribePhysicalConnectionsResponseUnmarshaller {
 			physicalConnectionType.setVlanId(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].VlanId"));
 			physicalConnectionType.setOrderMode(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].OrderMode"));
 			physicalConnectionType.setVpconnStatus(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].VpconnStatus"));
+			physicalConnectionType.setExpectSpec(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ExpectSpec"));
 
 			physicalConnectionSet.add(physicalConnectionType);
 		}

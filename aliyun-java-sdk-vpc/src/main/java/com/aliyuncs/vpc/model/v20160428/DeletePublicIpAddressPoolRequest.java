@@ -22,29 +22,40 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
+public class DeletePublicIpAddressPoolRequest extends RpcAcsRequest<DeletePublicIpAddressPoolResponse> {
 	   
+
+	private String publicIpAddressPoolId;
 
 	private Long resourceOwnerId;
 
-	private Integer duration;
+	private String clientToken;
 
-	private String instanceType;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private Long ownerId;
-
-	private String instanceId;
-
-	private String pricingCycle;
-	public RenewInstanceRequest() {
-		super("Vpc", "2016-04-28", "RenewInstance", "vpc");
+	public DeletePublicIpAddressPoolRequest() {
+		super("Vpc", "2016-04-28", "DeletePublicIpAddressPool", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPublicIpAddressPoolId() {
+		return this.publicIpAddressPoolId;
+	}
+
+	public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
+		this.publicIpAddressPoolId = publicIpAddressPoolId;
+		if(publicIpAddressPoolId != null){
+			putQueryParameter("PublicIpAddressPoolId", publicIpAddressPoolId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -58,25 +69,25 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		}
 	}
 
-	public Integer getDuration() {
-		return this.duration;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -91,6 +102,17 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -102,31 +124,9 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getPricingCycle() {
-		return this.pricingCycle;
-	}
-
-	public void setPricingCycle(String pricingCycle) {
-		this.pricingCycle = pricingCycle;
-		if(pricingCycle != null){
-			putQueryParameter("PricingCycle", pricingCycle);
-		}
-	}
-
 	@Override
-	public Class<RenewInstanceResponse> getResponseClass() {
-		return RenewInstanceResponse.class;
+	public Class<DeletePublicIpAddressPoolResponse> getResponseClass() {
+		return DeletePublicIpAddressPoolResponse.class;
 	}
 
 }

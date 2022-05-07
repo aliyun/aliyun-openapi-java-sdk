@@ -27,25 +27,27 @@ public class DescribeFlowLogsResponseUnmarshaller {
 	public static DescribeFlowLogsResponse unmarshall(DescribeFlowLogsResponse describeFlowLogsResponse, UnmarshallerContext _ctx) {
 		
 		describeFlowLogsResponse.setRequestId(_ctx.stringValue("DescribeFlowLogsResponse.RequestId"));
-		describeFlowLogsResponse.setSuccess(_ctx.stringValue("DescribeFlowLogsResponse.Success"));
-		describeFlowLogsResponse.setTotalCount(_ctx.stringValue("DescribeFlowLogsResponse.TotalCount"));
-		describeFlowLogsResponse.setPageNumber(_ctx.stringValue("DescribeFlowLogsResponse.PageNumber"));
 		describeFlowLogsResponse.setPageSize(_ctx.stringValue("DescribeFlowLogsResponse.PageSize"));
+		describeFlowLogsResponse.setPageNumber(_ctx.stringValue("DescribeFlowLogsResponse.PageNumber"));
+		describeFlowLogsResponse.setTotalCount(_ctx.stringValue("DescribeFlowLogsResponse.TotalCount"));
+		describeFlowLogsResponse.setSuccess(_ctx.stringValue("DescribeFlowLogsResponse.Success"));
 
 		List<FlowLog> flowLogs = new ArrayList<FlowLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs.Length"); i++) {
 			FlowLog flowLog = new FlowLog();
-			flowLog.setFlowLogId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogId"));
-			flowLog.setFlowLogName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogName"));
-			flowLog.setDescription(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Description"));
+			flowLog.setStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Status"));
 			flowLog.setCreationTime(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].CreationTime"));
+			flowLog.setFlowLogName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogName"));
+			flowLog.setTrafficType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficType"));
 			flowLog.setResourceType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceType"));
-			flowLog.setResourceId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceId"));
+			flowLog.setDescription(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Description"));
 			flowLog.setProjectName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ProjectName"));
 			flowLog.setLogStoreName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].LogStoreName"));
-			flowLog.setStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Status"));
-			flowLog.setTrafficType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficType"));
+			flowLog.setResourceId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceId"));
 			flowLog.setRegionId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].RegionId"));
+			flowLog.setFlowLogId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogId"));
+			flowLog.setBusinessStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].BusinessStatus"));
+			flowLog.setAggregationInterval(_ctx.integerValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].AggregationInterval"));
 
 			flowLogs.add(flowLog);
 		}

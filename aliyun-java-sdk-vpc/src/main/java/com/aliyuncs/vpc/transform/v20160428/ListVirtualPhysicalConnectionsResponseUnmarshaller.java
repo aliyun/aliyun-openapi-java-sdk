@@ -62,6 +62,7 @@ public class ListVirtualPhysicalConnectionsResponseUnmarshaller {
 			virtualPhysicalConnection.setOrderMode(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].OrderMode"));
 			virtualPhysicalConnection.setAliUid(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].AliUid"));
 			virtualPhysicalConnection.setVlanId(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].VlanId"));
+			virtualPhysicalConnection.setExpectSpec(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ExpectSpec"));
 
 			virtualPhysicalConnections.add(virtualPhysicalConnection);
 		}

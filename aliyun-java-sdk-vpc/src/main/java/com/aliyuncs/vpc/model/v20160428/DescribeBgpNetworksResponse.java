@@ -85,6 +85,8 @@ public class DescribeBgpNetworksResponse extends AcsResponse {
 
 		private String routerId;
 
+		private String ipVersion;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -115,6 +117,14 @@ public class DescribeBgpNetworksResponse extends AcsResponse {
 
 		public void setRouterId(String routerId) {
 			this.routerId = routerId;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
 		}
 	}
 

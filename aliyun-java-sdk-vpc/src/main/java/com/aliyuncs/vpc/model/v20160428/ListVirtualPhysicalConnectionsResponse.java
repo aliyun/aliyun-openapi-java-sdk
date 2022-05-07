@@ -133,6 +133,8 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 
 		private String vlanId;
 
+		private String expectSpec;
+
 		public String getType() {
 			return this.type;
 		}
@@ -355,6 +357,14 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 
 		public void setVlanId(String vlanId) {
 			this.vlanId = vlanId;
+		}
+
+		public String getExpectSpec() {
+			return this.expectSpec;
+		}
+
+		public void setExpectSpec(String expectSpec) {
+			this.expectSpec = expectSpec;
 		}
 	}
 

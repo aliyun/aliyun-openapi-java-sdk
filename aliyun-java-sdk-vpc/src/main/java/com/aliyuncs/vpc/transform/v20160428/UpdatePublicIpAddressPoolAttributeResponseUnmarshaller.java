@@ -14,16 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.ModifyInstanceAutoRenewalAttributeResponse;
+import com.aliyuncs.vpc.model.v20160428.UpdatePublicIpAddressPoolAttributeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyInstanceAutoRenewalAttributeResponseUnmarshaller {
+public class UpdatePublicIpAddressPoolAttributeResponseUnmarshaller {
 
-	public static ModifyInstanceAutoRenewalAttributeResponse unmarshall(ModifyInstanceAutoRenewalAttributeResponse modifyInstanceAutoRenewalAttributeResponse, UnmarshallerContext _ctx) {
+	public static UpdatePublicIpAddressPoolAttributeResponse unmarshall(UpdatePublicIpAddressPoolAttributeResponse updatePublicIpAddressPoolAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyInstanceAutoRenewalAttributeResponse.setRequestId(_ctx.stringValue("ModifyInstanceAutoRenewalAttributeResponse.RequestId"));
+		updatePublicIpAddressPoolAttributeResponse.setRequestId(_ctx.stringValue("UpdatePublicIpAddressPoolAttributeResponse.RequestId"));
 	 
-	 	return modifyInstanceAutoRenewalAttributeResponse;
+	 	return updatePublicIpAddressPoolAttributeResponse;
 	}
 }

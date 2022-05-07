@@ -15,16 +15,26 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.DeleteExpressConnectResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.CheckCanAllocateVpcPrivateIpAddressResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteExpressConnectResponse extends AcsResponse {
+public class CheckCanAllocateVpcPrivateIpAddressResponse extends AcsResponse {
+
+	private Boolean canAllocate;
 
 	private String requestId;
+
+	public Boolean getCanAllocate() {
+		return this.canAllocate;
+	}
+
+	public void setCanAllocate(Boolean canAllocate) {
+		this.canAllocate = canAllocate;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,7 +45,12 @@ public class DeleteExpressConnectResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteExpressConnectResponse getInstance(UnmarshallerContext context) {
-		return	DeleteExpressConnectResponseUnmarshaller.unmarshall(this, context);
+	public CheckCanAllocateVpcPrivateIpAddressResponse getInstance(UnmarshallerContext context) {
+		return	CheckCanAllocateVpcPrivateIpAddressResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

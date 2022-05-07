@@ -37,6 +37,8 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 
 	private Long ownerId;
 
+	private String iPv6CidrBlock;
+
 	private String secondaryCidrBlock;
 
 	private String vpcId;
@@ -112,6 +114,17 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIPv6CidrBlock() {
+		return this.iPv6CidrBlock;
+	}
+
+	public void setIPv6CidrBlock(String iPv6CidrBlock) {
+		this.iPv6CidrBlock = iPv6CidrBlock;
+		if(iPv6CidrBlock != null){
+			putQueryParameter("IPv6CidrBlock", iPv6CidrBlock);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class UpdateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Update
 	private String token;
 
 	private String instanceId;
+
+	private String expectSpec;
 	public UpdateVirtualPhysicalConnectionRequest() {
 		super("Vpc", "2016-04-28", "UpdateVirtualPhysicalConnection", "vpc");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class UpdateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Update
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getExpectSpec() {
+		return this.expectSpec;
+	}
+
+	public void setExpectSpec(String expectSpec) {
+		this.expectSpec = expectSpec;
+		if(expectSpec != null){
+			putQueryParameter("ExpectSpec", expectSpec);
 		}
 	}
 

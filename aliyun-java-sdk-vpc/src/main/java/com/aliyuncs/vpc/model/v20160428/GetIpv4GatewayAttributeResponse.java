@@ -40,6 +40,8 @@ public class GetIpv4GatewayAttributeResponse extends AcsResponse {
 
 	private String ipv4GatewayName;
 
+	private String createTime;
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -102,6 +104,14 @@ public class GetIpv4GatewayAttributeResponse extends AcsResponse {
 
 	public void setIpv4GatewayName(String ipv4GatewayName) {
 		this.ipv4GatewayName = ipv4GatewayName;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	@Override

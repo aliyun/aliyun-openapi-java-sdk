@@ -15,26 +15,16 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.RenewInstanceResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.UpdatePublicIpAddressPoolAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RenewInstanceResponse extends AcsResponse {
-
-	private String orderId;
+public class UpdatePublicIpAddressPoolAttributeResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,7 +35,12 @@ public class RenewInstanceResponse extends AcsResponse {
 	}
 
 	@Override
-	public RenewInstanceResponse getInstance(UnmarshallerContext context) {
-		return	RenewInstanceResponseUnmarshaller.unmarshall(this, context);
+	public UpdatePublicIpAddressPoolAttributeResponse getInstance(UnmarshallerContext context) {
+		return	UpdatePublicIpAddressPoolAttributeResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

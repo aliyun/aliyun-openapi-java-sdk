@@ -147,6 +147,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String iSP;
 
+		private String publicIpAddressPoolId;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -433,6 +435,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setISP(String iSP) {
 			this.iSP = iSP;
+		}
+
+		public String getPublicIpAddressPoolId() {
+			return this.publicIpAddressPoolId;
+		}
+
+		public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
+			this.publicIpAddressPoolId = publicIpAddressPoolId;
 		}
 
 		public List<LockReason> getOperationLocks() {

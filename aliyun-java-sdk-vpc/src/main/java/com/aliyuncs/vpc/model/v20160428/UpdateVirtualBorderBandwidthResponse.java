@@ -26,7 +26,7 @@ public class UpdateVirtualBorderBandwidthResponse extends AcsResponse {
 
 	private String code;
 
-	private String httpStatusCode;
+	private Integer httpStatusCode;
 
 	private String message;
 
@@ -42,11 +42,11 @@ public class UpdateVirtualBorderBandwidthResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getHttpStatusCode() {
+	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
+	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
 	}
 

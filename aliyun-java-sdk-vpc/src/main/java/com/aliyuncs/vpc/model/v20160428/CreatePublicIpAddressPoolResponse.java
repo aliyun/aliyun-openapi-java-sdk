@@ -15,16 +15,26 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.CancelExpressCloudConnectionResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.CreatePublicIpAddressPoolResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CancelExpressCloudConnectionResponse extends AcsResponse {
+public class CreatePublicIpAddressPoolResponse extends AcsResponse {
+
+	private String pulbicIpAddressPoolId;
 
 	private String requestId;
+
+	public String getPulbicIpAddressPoolId() {
+		return this.pulbicIpAddressPoolId;
+	}
+
+	public void setPulbicIpAddressPoolId(String pulbicIpAddressPoolId) {
+		this.pulbicIpAddressPoolId = pulbicIpAddressPoolId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,7 +45,12 @@ public class CancelExpressCloudConnectionResponse extends AcsResponse {
 	}
 
 	@Override
-	public CancelExpressCloudConnectionResponse getInstance(UnmarshallerContext context) {
-		return	CancelExpressCloudConnectionResponseUnmarshaller.unmarshall(this, context);
+	public CreatePublicIpAddressPoolResponse getInstance(UnmarshallerContext context) {
+		return	CreatePublicIpAddressPoolResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

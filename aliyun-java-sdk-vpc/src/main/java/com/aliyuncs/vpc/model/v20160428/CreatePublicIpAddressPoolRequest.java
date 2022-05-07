@@ -22,28 +22,28 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse> {
+public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublicIpAddressPoolResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private Integer duration;
+	private String isp;
 
-	private String renewalStatus;
+	private String description;
 
-	private String instanceType;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private Long ownerId;
 
-	private String instanceId;
-
-	private String pricingCycle;
-	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyInstanceAutoRenewalAttribute", "vpc");
+	private String name;
+	public CreatePublicIpAddressPoolRequest() {
+		super("Vpc", "2016-04-28", "CreatePublicIpAddressPool", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,36 +73,36 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
-	public Integer getDuration() {
-		return this.duration;
+	public String getIsp() {
+		return this.isp;
 	}
 
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
+	public void setIsp(String isp) {
+		this.isp = isp;
+		if(isp != null){
+			putQueryParameter("Isp", isp);
 		}
 	}
 
-	public String getRenewalStatus() {
-		return this.renewalStatus;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setRenewalStatus(String renewalStatus) {
-		this.renewalStatus = renewalStatus;
-		if(renewalStatus != null){
-			putQueryParameter("RenewalStatus", renewalStatus);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -117,6 +117,17 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -128,31 +139,20 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getPricingCycle() {
-		return this.pricingCycle;
-	}
-
-	public void setPricingCycle(String pricingCycle) {
-		this.pricingCycle = pricingCycle;
-		if(pricingCycle != null){
-			putQueryParameter("PricingCycle", pricingCycle);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<ModifyInstanceAutoRenewalAttributeResponse> getResponseClass() {
-		return ModifyInstanceAutoRenewalAttributeResponse.class;
+	public Class<CreatePublicIpAddressPoolResponse> getResponseClass() {
+		return CreatePublicIpAddressPoolResponse.class;
 	}
 
 }

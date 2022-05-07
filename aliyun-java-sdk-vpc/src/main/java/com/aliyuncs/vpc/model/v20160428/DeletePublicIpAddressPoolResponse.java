@@ -15,14 +15,14 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.DeleteExpressCloudConnectionResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.DeletePublicIpAddressPoolResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteExpressCloudConnectionResponse extends AcsResponse {
+public class DeletePublicIpAddressPoolResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class DeleteExpressCloudConnectionResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteExpressCloudConnectionResponse getInstance(UnmarshallerContext context) {
-		return	DeleteExpressCloudConnectionResponseUnmarshaller.unmarshall(this, context);
+	public DeletePublicIpAddressPoolResponse getInstance(UnmarshallerContext context) {
+		return	DeletePublicIpAddressPoolResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

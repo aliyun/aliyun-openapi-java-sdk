@@ -33,6 +33,8 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 
 	private String ownerAccount;
 
+	private Integer aggregationInterval;
+
 	private Long ownerId;
 
 	private String flowLogId;
@@ -88,6 +90,17 @@ public class ModifyFlowLogAttributeRequest extends RpcAcsRequest<ModifyFlowLogAt
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getAggregationInterval() {
+		return this.aggregationInterval;
+	}
+
+	public void setAggregationInterval(Integer aggregationInterval) {
+		this.aggregationInterval = aggregationInterval;
+		if(aggregationInterval != null){
+			putQueryParameter("AggregationInterval", aggregationInterval.toString());
 		}
 	}
 
