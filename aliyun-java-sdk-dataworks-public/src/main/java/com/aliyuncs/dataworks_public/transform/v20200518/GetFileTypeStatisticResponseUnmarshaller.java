@@ -31,8 +31,8 @@ public class GetFileTypeStatisticResponseUnmarshaller {
 		List<ProgramTypeAndCount> programTypeAndCounts = new ArrayList<ProgramTypeAndCount>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileTypeStatisticResponse.ProgramTypeAndCounts.Length"); i++) {
 			ProgramTypeAndCount programTypeAndCount = new ProgramTypeAndCount();
-			programTypeAndCount.setProgramType(_ctx.stringValue("GetFileTypeStatisticResponse.ProgramTypeAndCounts["+ i +"].ProgramType"));
 			programTypeAndCount.setCount(_ctx.integerValue("GetFileTypeStatisticResponse.ProgramTypeAndCounts["+ i +"].Count"));
+			programTypeAndCount.setProgramType(_ctx.stringValue("GetFileTypeStatisticResponse.ProgramTypeAndCounts["+ i +"].ProgramType"));
 
 			programTypeAndCounts.add(programTypeAndCount);
 		}

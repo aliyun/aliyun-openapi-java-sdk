@@ -37,15 +37,15 @@ public class ListDataServiceGroupsResponseUnmarshaller {
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups.Length"); i++) {
 			Group group = new Group();
-			group.setTenantId(_ctx.longValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].TenantId"));
-			group.setGroupId(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].GroupId"));
-			group.setApiGatewayGroupId(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].ApiGatewayGroupId"));
-			group.setGroupName(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].GroupName"));
-			group.setDescription(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].Description"));
-			group.setCreatedTime(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].CreatedTime"));
 			group.setModifiedTime(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].ModifiedTime"));
-			group.setCreatorId(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].CreatorId"));
+			group.setDescription(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].Description"));
+			group.setGroupName(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].GroupName"));
+			group.setGroupId(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].GroupId"));
 			group.setProjectId(_ctx.longValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].ProjectId"));
+			group.setApiGatewayGroupId(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].ApiGatewayGroupId"));
+			group.setCreatorId(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].CreatorId"));
+			group.setCreatedTime(_ctx.stringValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].CreatedTime"));
+			group.setTenantId(_ctx.longValue("ListDataServiceGroupsResponse.GroupPagingResult.Groups["+ i +"].TenantId"));
 
 			groups.add(group);
 		}

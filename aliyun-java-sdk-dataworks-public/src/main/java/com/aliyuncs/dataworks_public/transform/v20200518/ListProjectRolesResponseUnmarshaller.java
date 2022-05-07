@@ -31,10 +31,10 @@ public class ListProjectRolesResponseUnmarshaller {
 		List<Role> projectRoleList = new ArrayList<Role>();
 		for (int i = 0; i < _ctx.lengthValue("ListProjectRolesResponse.ProjectRoleList.Length"); i++) {
 			Role role = new Role();
-			role.setProjectRoleCode(_ctx.stringValue("ListProjectRolesResponse.ProjectRoleList["+ i +"].ProjectRoleCode"));
 			role.setProjectRoleId(_ctx.integerValue("ListProjectRolesResponse.ProjectRoleList["+ i +"].ProjectRoleId"));
-			role.setProjectRoleName(_ctx.stringValue("ListProjectRolesResponse.ProjectRoleList["+ i +"].ProjectRoleName"));
 			role.setProjectRoleType(_ctx.stringValue("ListProjectRolesResponse.ProjectRoleList["+ i +"].ProjectRoleType"));
+			role.setProjectRoleName(_ctx.stringValue("ListProjectRolesResponse.ProjectRoleList["+ i +"].ProjectRoleName"));
+			role.setProjectRoleCode(_ctx.stringValue("ListProjectRolesResponse.ProjectRoleList["+ i +"].ProjectRoleCode"));
 
 			projectRoleList.add(role);
 		}

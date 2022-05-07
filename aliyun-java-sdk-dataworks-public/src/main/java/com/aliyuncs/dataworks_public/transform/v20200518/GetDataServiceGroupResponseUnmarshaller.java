@@ -26,15 +26,15 @@ public class GetDataServiceGroupResponseUnmarshaller {
 		getDataServiceGroupResponse.setRequestId(_ctx.stringValue("GetDataServiceGroupResponse.RequestId"));
 
 		Group group = new Group();
-		group.setTenantId(_ctx.longValue("GetDataServiceGroupResponse.Group.TenantId"));
-		group.setProjectId(_ctx.longValue("GetDataServiceGroupResponse.Group.ProjectId"));
-		group.setGroupId(_ctx.stringValue("GetDataServiceGroupResponse.Group.GroupId"));
-		group.setApiGatewayGroupId(_ctx.stringValue("GetDataServiceGroupResponse.Group.ApiGatewayGroupId"));
-		group.setGroupName(_ctx.stringValue("GetDataServiceGroupResponse.Group.GroupName"));
-		group.setDescription(_ctx.stringValue("GetDataServiceGroupResponse.Group.Description"));
-		group.setCreatedTime(_ctx.stringValue("GetDataServiceGroupResponse.Group.CreatedTime"));
 		group.setModifiedTime(_ctx.stringValue("GetDataServiceGroupResponse.Group.ModifiedTime"));
+		group.setDescription(_ctx.stringValue("GetDataServiceGroupResponse.Group.Description"));
+		group.setGroupName(_ctx.stringValue("GetDataServiceGroupResponse.Group.GroupName"));
+		group.setGroupId(_ctx.stringValue("GetDataServiceGroupResponse.Group.GroupId"));
+		group.setProjectId(_ctx.longValue("GetDataServiceGroupResponse.Group.ProjectId"));
+		group.setApiGatewayGroupId(_ctx.stringValue("GetDataServiceGroupResponse.Group.ApiGatewayGroupId"));
 		group.setCreatorId(_ctx.stringValue("GetDataServiceGroupResponse.Group.CreatorId"));
+		group.setCreatedTime(_ctx.stringValue("GetDataServiceGroupResponse.Group.CreatedTime"));
+		group.setTenantId(_ctx.longValue("GetDataServiceGroupResponse.Group.TenantId"));
 		getDataServiceGroupResponse.setGroup(group);
 	 
 	 	return getDataServiceGroupResponse;

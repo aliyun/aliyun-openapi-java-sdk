@@ -23,10 +23,10 @@ public class DeleteDataServiceApiResponseUnmarshaller {
 	public static DeleteDataServiceApiResponse unmarshall(DeleteDataServiceApiResponse deleteDataServiceApiResponse, UnmarshallerContext _ctx) {
 		
 		deleteDataServiceApiResponse.setRequestId(_ctx.stringValue("DeleteDataServiceApiResponse.RequestId"));
-		deleteDataServiceApiResponse.setData(_ctx.booleanValue("DeleteDataServiceApiResponse.Data"));
-		deleteDataServiceApiResponse.setErrorCode(_ctx.stringValue("DeleteDataServiceApiResponse.ErrorCode"));
-		deleteDataServiceApiResponse.setErrorMessage(_ctx.stringValue("DeleteDataServiceApiResponse.ErrorMessage"));
 		deleteDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("DeleteDataServiceApiResponse.HttpStatusCode"));
+		deleteDataServiceApiResponse.setData(_ctx.booleanValue("DeleteDataServiceApiResponse.Data"));
+		deleteDataServiceApiResponse.setErrorMessage(_ctx.stringValue("DeleteDataServiceApiResponse.ErrorMessage"));
+		deleteDataServiceApiResponse.setErrorCode(_ctx.stringValue("DeleteDataServiceApiResponse.ErrorCode"));
 		deleteDataServiceApiResponse.setSuccess(_ctx.booleanValue("DeleteDataServiceApiResponse.Success"));
 	 
 	 	return deleteDataServiceApiResponse;
