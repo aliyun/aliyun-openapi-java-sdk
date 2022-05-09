@@ -29,7 +29,7 @@ public class ListEmrAvailableConfigRequest extends RpcAcsRequest<ListEmrAvailabl
 
 	private String resourceGroupId;
 	public ListEmrAvailableConfigRequest() {
-		super("Emr", "2016-04-08", "ListEmrAvailableConfig");
+		super("Emr", "2016-04-08", "ListEmrAvailableConfig", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

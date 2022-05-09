@@ -35,7 +35,7 @@ public class ModifyScalingGroupV2Request extends RpcAcsRequest<ModifyScalingGrou
 
 	private String name;
 	public ModifyScalingGroupV2Request() {
-		super("Emr", "2016-04-08", "ModifyScalingGroupV2");
+		super("Emr", "2016-04-08", "ModifyScalingGroupV2", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

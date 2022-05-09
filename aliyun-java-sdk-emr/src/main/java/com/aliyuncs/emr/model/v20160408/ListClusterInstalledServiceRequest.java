@@ -33,7 +33,7 @@ public class ListClusterInstalledServiceRequest extends RpcAcsRequest<ListCluste
 
 	private Integer pageSize;
 	public ListClusterInstalledServiceRequest() {
-		super("Emr", "2016-04-08", "ListClusterInstalledService");
+		super("Emr", "2016-04-08", "ListClusterInstalledService", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

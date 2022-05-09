@@ -49,7 +49,7 @@ public class ListClusterServiceConfigHistoryRequest extends RpcAcsRequest<ListCl
 
 	private String comment;
 	public ListClusterServiceConfigHistoryRequest() {
-		super("Emr", "2016-04-08", "ListClusterServiceConfigHistory");
+		super("Emr", "2016-04-08", "ListClusterServiceConfigHistory", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

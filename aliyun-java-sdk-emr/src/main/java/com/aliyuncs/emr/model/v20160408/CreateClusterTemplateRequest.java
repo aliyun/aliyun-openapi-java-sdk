@@ -104,7 +104,7 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 	private Boolean highAvailabilityEnable;
 	public CreateClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "CreateClusterTemplate");
+		super("Emr", "2016-04-08", "CreateClusterTemplate", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

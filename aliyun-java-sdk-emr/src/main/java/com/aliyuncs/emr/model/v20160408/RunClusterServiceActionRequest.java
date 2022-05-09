@@ -60,7 +60,7 @@ public class RunClusterServiceActionRequest extends RpcAcsRequest<RunClusterServ
 
 	private Boolean turnOnMaintenanceMode;
 	public RunClusterServiceActionRequest() {
-		super("Emr", "2016-04-08", "RunClusterServiceAction");
+		super("Emr", "2016-04-08", "RunClusterServiceAction", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

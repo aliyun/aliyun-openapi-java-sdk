@@ -29,7 +29,7 @@ public class DescribeFlowProjectClusterSettingRequest extends RpcAcsRequest<Desc
 
 	private String projectId;
 	public DescribeFlowProjectClusterSettingRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowProjectClusterSetting");
+		super("Emr", "2016-04-08", "DescribeFlowProjectClusterSetting", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

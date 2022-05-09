@@ -42,7 +42,7 @@ public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolR
 
 	private String poolType;
 	public CreateResourcePoolRequest() {
-		super("Emr", "2016-04-08", "CreateResourcePool");
+		super("Emr", "2016-04-08", "CreateResourcePool", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

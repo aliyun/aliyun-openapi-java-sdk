@@ -29,7 +29,7 @@ public class StartFlowRequest extends RpcAcsRequest<StartFlowResponse> {
 
 	private String projectId;
 	public StartFlowRequest() {
-		super("Emr", "2016-04-08", "StartFlow");
+		super("Emr", "2016-04-08", "StartFlow", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

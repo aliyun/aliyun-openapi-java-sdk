@@ -35,7 +35,7 @@ public class CreateClusterWithTemplateRequest extends RpcAcsRequest<CreateCluste
 
 	private String templateBizId;
 	public CreateClusterWithTemplateRequest() {
-		super("Emr", "2016-04-08", "CreateClusterWithTemplate");
+		super("Emr", "2016-04-08", "CreateClusterWithTemplate", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

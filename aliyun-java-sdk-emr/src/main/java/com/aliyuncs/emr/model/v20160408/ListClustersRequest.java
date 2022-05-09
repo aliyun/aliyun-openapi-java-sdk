@@ -56,7 +56,7 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 
 	private List<String> clusterTypeLists;
 	public ListClustersRequest() {
-		super("Emr", "2016-04-08", "ListClusters");
+		super("Emr", "2016-04-08", "ListClusters", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

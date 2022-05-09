@@ -42,7 +42,7 @@ public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryR
 
 	private String projectId;
 	public ListFlowJobHistoryRequest() {
-		super("Emr", "2016-04-08", "ListFlowJobHistory");
+		super("Emr", "2016-04-08", "ListFlowJobHistory", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

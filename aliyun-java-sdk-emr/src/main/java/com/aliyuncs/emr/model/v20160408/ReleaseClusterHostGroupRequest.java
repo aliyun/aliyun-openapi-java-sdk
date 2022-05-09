@@ -27,13 +27,19 @@ public class ReleaseClusterHostGroupRequest extends RpcAcsRequest<ReleaseCluster
 
 	private Long resourceOwnerId;
 
+	private Boolean enableGracefulDecommission;
+
 	private String clusterId;
 
 	private String hostGroupId;
 
 	private String instanceIdList;
+
+	private Integer releaseNumber;
+
+	private Integer decommissionTimeout;
 	public ReleaseClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "ReleaseClusterHostGroup");
+		super("Emr", "2016-04-08", "ReleaseClusterHostGroup", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +55,17 @@ public class ReleaseClusterHostGroupRequest extends RpcAcsRequest<ReleaseCluster
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getEnableGracefulDecommission() {
+		return this.enableGracefulDecommission;
+	}
+
+	public void setEnableGracefulDecommission(Boolean enableGracefulDecommission) {
+		this.enableGracefulDecommission = enableGracefulDecommission;
+		if(enableGracefulDecommission != null){
+			putQueryParameter("EnableGracefulDecommission", enableGracefulDecommission.toString());
 		}
 	}
 
@@ -82,6 +99,28 @@ public class ReleaseClusterHostGroupRequest extends RpcAcsRequest<ReleaseCluster
 		this.instanceIdList = instanceIdList;
 		if(instanceIdList != null){
 			putQueryParameter("InstanceIdList", instanceIdList);
+		}
+	}
+
+	public Integer getReleaseNumber() {
+		return this.releaseNumber;
+	}
+
+	public void setReleaseNumber(Integer releaseNumber) {
+		this.releaseNumber = releaseNumber;
+		if(releaseNumber != null){
+			putQueryParameter("ReleaseNumber", releaseNumber.toString());
+		}
+	}
+
+	public Integer getDecommissionTimeout() {
+		return this.decommissionTimeout;
+	}
+
+	public void setDecommissionTimeout(Integer decommissionTimeout) {
+		this.decommissionTimeout = decommissionTimeout;
+		if(decommissionTimeout != null){
+			putQueryParameter("DecommissionTimeout", decommissionTimeout.toString());
 		}
 	}
 

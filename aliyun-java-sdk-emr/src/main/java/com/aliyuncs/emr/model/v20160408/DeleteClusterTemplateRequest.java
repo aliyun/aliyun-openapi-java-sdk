@@ -31,7 +31,7 @@ public class DeleteClusterTemplateRequest extends RpcAcsRequest<DeleteClusterTem
 
 	private String bizId;
 	public DeleteClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "DeleteClusterTemplate");
+		super("Emr", "2016-04-08", "DeleteClusterTemplate", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class RunScalingActionV2Request extends RpcAcsRequest<RunScalingActionV2R
 
 	private String actionParam;
 	public RunScalingActionV2Request() {
-		super("Emr", "2016-04-08", "RunScalingActionV2");
+		super("Emr", "2016-04-08", "RunScalingActionV2", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

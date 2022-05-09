@@ -35,7 +35,7 @@ public class ListResourcePoolRequest extends RpcAcsRequest<ListResourcePoolRespo
 
 	private String poolType;
 	public ListResourcePoolRequest() {
-		super("Emr", "2016-04-08", "ListResourcePool");
+		super("Emr", "2016-04-08", "ListResourcePool", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

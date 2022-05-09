@@ -42,7 +42,7 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 	private List<PromotionInfo> promotionInfos;
 	public ResizeClusterV2Request() {
-		super("Emr", "2016-04-08", "ResizeClusterV2");
+		super("Emr", "2016-04-08", "ResizeClusterV2", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

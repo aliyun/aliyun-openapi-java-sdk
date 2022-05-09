@@ -106,7 +106,7 @@ public class ModifyClusterTemplateRequest extends RpcAcsRequest<ModifyClusterTem
 
 	private Boolean highAvailabilityEnable;
 	public ModifyClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterTemplate");
+		super("Emr", "2016-04-08", "ModifyClusterTemplate", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

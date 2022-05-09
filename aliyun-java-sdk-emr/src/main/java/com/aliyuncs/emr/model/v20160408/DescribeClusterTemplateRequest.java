@@ -31,7 +31,7 @@ public class DescribeClusterTemplateRequest extends RpcAcsRequest<DescribeCluste
 
 	private String bizId;
 	public DescribeClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterTemplate");
+		super("Emr", "2016-04-08", "DescribeClusterTemplate", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class ListFlowProjectRequest extends RpcAcsRequest<ListFlowProjectRespons
 
 	private String projectId;
 	public ListFlowProjectRequest() {
-		super("Emr", "2016-04-08", "ListFlowProject");
+		super("Emr", "2016-04-08", "ListFlowProject", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ListFlowClusterAllHostsRequest extends RpcAcsRequest<ListFlowCluste
 
 	private String projectId;
 	public ListFlowClusterAllHostsRequest() {
-		super("Emr", "2016-04-08", "ListFlowClusterAllHosts");
+		super("Emr", "2016-04-08", "ListFlowClusterAllHosts", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeScalingConfigItemV2Request extends RpcAcsRequest<DescribeSc
 
 	private String scalingConfigItemId;
 	public DescribeScalingConfigItemV2Request() {
-		super("Emr", "2016-04-08", "DescribeScalingConfigItemV2");
+		super("Emr", "2016-04-08", "DescribeScalingConfigItemV2", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
