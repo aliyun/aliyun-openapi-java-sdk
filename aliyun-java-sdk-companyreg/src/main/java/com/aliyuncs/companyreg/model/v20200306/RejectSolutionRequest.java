@@ -29,7 +29,7 @@ public class RejectSolutionRequest extends RpcAcsRequest<RejectSolutionResponse>
 
 	private String solutionBizId;
 	public RejectSolutionRequest() {
-		super("companyreg", "2020-03-06", "RejectSolution");
+		super("companyreg", "2020-03-06", "RejectSolution", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

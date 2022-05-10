@@ -33,7 +33,7 @@ public class SubmitSolutionRequest extends RpcAcsRequest<SubmitSolutionResponse>
 
 	private String userId;
 	public SubmitSolutionRequest() {
-		super("companyreg", "2020-03-06", "SubmitSolution");
+		super("companyreg", "2020-03-06", "SubmitSolution", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

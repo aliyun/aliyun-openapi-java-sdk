@@ -25,7 +25,7 @@ import com.aliyuncs.companyreg.Endpoint;
 public class QueryUserNeedAuthRequest extends RpcAcsRequest<QueryUserNeedAuthResponse> {
 	   
 	public QueryUserNeedAuthRequest() {
-		super("companyreg", "2020-03-06", "QueryUserNeedAuth");
+		super("companyreg", "2020-03-06", "QueryUserNeedAuth", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

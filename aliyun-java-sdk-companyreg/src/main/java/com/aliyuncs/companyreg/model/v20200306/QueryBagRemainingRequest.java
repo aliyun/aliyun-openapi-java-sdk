@@ -27,7 +27,7 @@ public class QueryBagRemainingRequest extends RpcAcsRequest<QueryBagRemainingRes
 
 	private String bizType;
 	public QueryBagRemainingRequest() {
-		super("companyreg", "2020-03-06", "QueryBagRemaining");
+		super("companyreg", "2020-03-06", "QueryBagRemaining", "companyreg");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

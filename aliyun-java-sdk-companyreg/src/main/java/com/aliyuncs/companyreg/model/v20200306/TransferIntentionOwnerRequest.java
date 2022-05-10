@@ -33,7 +33,7 @@ public class TransferIntentionOwnerRequest extends RpcAcsRequest<TransferIntenti
 
 	private String remark;
 	public TransferIntentionOwnerRequest() {
-		super("companyreg", "2020-03-06", "TransferIntentionOwner");
+		super("companyreg", "2020-03-06", "TransferIntentionOwner", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

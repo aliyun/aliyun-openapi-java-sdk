@@ -31,7 +31,7 @@ public class QueryCommodityConfigRequest extends RpcAcsRequest<QueryCommodityCon
 
 	private String commodityCode;
 	public QueryCommodityConfigRequest() {
-		super("companyreg", "2020-03-06", "QueryCommodityConfig");
+		super("companyreg", "2020-03-06", "QueryCommodityConfig", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

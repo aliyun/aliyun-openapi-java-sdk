@@ -33,7 +33,7 @@ public class QueryPartnerIntentionListRequest extends RpcAcsRequest<QueryPartner
 
 	private Long pageNum;
 	public QueryPartnerIntentionListRequest() {
-		super("companyreg", "2020-03-06", "QueryPartnerIntentionList");
+		super("companyreg", "2020-03-06", "QueryPartnerIntentionList", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

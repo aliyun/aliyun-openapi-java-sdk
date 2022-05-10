@@ -27,7 +27,7 @@ public class QueryAvailableNumbersRequest extends RpcAcsRequest<QueryAvailableNu
 
 	private String bizType;
 	public QueryAvailableNumbersRequest() {
-		super("companyreg", "2020-03-06", "QueryAvailableNumbers");
+		super("companyreg", "2020-03-06", "QueryAvailableNumbers", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

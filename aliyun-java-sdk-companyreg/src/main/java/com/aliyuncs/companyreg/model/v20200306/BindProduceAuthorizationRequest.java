@@ -31,7 +31,7 @@ public class BindProduceAuthorizationRequest extends RpcAcsRequest<BindProduceAu
 
 	private String bizId;
 	public BindProduceAuthorizationRequest() {
-		super("companyreg", "2020-03-06", "BindProduceAuthorization");
+		super("companyreg", "2020-03-06", "BindProduceAuthorization", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

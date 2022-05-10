@@ -33,7 +33,7 @@ public class TransferProduceOwnerRequest extends RpcAcsRequest<TransferProduceOw
 
 	private String remark;
 	public TransferProduceOwnerRequest() {
-		super("companyreg", "2020-03-06", "TransferProduceOwner");
+		super("companyreg", "2020-03-06", "TransferProduceOwner", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

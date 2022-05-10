@@ -33,7 +33,7 @@ public class ListProduceAuthorizationRequest extends RpcAcsRequest<ListProduceAu
 
 	private Integer pageSize;
 	public ListProduceAuthorizationRequest() {
-		super("companyreg", "2020-03-06", "ListProduceAuthorization");
+		super("companyreg", "2020-03-06", "ListProduceAuthorization", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

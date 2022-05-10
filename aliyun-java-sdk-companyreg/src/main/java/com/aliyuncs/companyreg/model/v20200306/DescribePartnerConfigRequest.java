@@ -29,7 +29,7 @@ public class DescribePartnerConfigRequest extends RpcAcsRequest<DescribePartnerC
 
 	private String bizType;
 	public DescribePartnerConfigRequest() {
-		super("companyreg", "2020-03-06", "DescribePartnerConfig");
+		super("companyreg", "2020-03-06", "DescribePartnerConfig", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

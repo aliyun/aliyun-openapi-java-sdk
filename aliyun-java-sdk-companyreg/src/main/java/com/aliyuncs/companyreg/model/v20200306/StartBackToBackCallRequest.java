@@ -25,22 +25,46 @@ import com.aliyuncs.companyreg.Endpoint;
 public class StartBackToBackCallRequest extends RpcAcsRequest<StartBackToBackCallResponse> {
 	   
 
+	private String callCenterNumber;
+
+	private String mobileKey;
+
 	private String bizType;
 
 	private String caller;
-
-	private String callCenterNumber;
 
 	private Long skillType;
 
 	private String bizId;
 	public StartBackToBackCallRequest() {
-		super("companyreg", "2020-03-06", "StartBackToBackCall");
+		super("companyreg", "2020-03-06", "StartBackToBackCall", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCallCenterNumber() {
+		return this.callCenterNumber;
+	}
+
+	public void setCallCenterNumber(String callCenterNumber) {
+		this.callCenterNumber = callCenterNumber;
+		if(callCenterNumber != null){
+			putQueryParameter("CallCenterNumber", callCenterNumber);
+		}
+	}
+
+	public String getMobileKey() {
+		return this.mobileKey;
+	}
+
+	public void setMobileKey(String mobileKey) {
+		this.mobileKey = mobileKey;
+		if(mobileKey != null){
+			putQueryParameter("MobileKey", mobileKey);
+		}
 	}
 
 	public String getBizType() {
@@ -62,17 +86,6 @@ public class StartBackToBackCallRequest extends RpcAcsRequest<StartBackToBackCal
 		this.caller = caller;
 		if(caller != null){
 			putQueryParameter("Caller", caller);
-		}
-	}
-
-	public String getCallCenterNumber() {
-		return this.callCenterNumber;
-	}
-
-	public void setCallCenterNumber(String callCenterNumber) {
-		this.callCenterNumber = callCenterNumber;
-		if(callCenterNumber != null){
-			putQueryParameter("CallCenterNumber", callCenterNumber);
 		}
 	}
 
