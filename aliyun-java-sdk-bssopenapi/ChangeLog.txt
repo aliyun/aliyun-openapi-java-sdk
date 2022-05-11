@@ -1,3 +1,6 @@
+2022-05-11 Version: 1.7.12
+- Add release api and publish.
+
 2022-04-24 Version: 1.7.10
 - Bill api add query conditions and return data field.
 
