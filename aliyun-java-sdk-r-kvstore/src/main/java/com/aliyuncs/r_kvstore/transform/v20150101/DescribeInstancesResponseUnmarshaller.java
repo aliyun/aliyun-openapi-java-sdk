@@ -64,7 +64,6 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setInstanceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceType"));
 			kVStoreInstance.setHasRenewChangeOrder(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].HasRenewChangeOrder"));
 			kVStoreInstance.setRegionId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].RegionId"));
-			kVStoreInstance.setSearchKey(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SearchKey"));
 			kVStoreInstance.setEndTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EndTime"));
 			kVStoreInstance.setVSwitchId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].VSwitchId"));
 			kVStoreInstance.setNodeType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NodeType"));

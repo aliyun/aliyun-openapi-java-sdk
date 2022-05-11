@@ -73,10 +73,6 @@ public class DescribeInstancesOverviewResponse extends AcsResponse {
 
 		private String networkType;
 
-		private String connectionMode;
-
-		private Long port;
-
 		private String engineVersion;
 
 		private String instanceName;
@@ -163,22 +159,6 @@ public class DescribeInstancesOverviewResponse extends AcsResponse {
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
-		}
-
-		public String getConnectionMode() {
-			return this.connectionMode;
-		}
-
-		public void setConnectionMode(String connectionMode) {
-			this.connectionMode = connectionMode;
-		}
-
-		public Long getPort() {
-			return this.port;
-		}
-
-		public void setPort(Long port) {
-			this.port = port;
 		}
 
 		public String getEngineVersion() {

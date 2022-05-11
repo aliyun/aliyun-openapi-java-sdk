@@ -135,8 +135,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String regionId;
 
-		private String searchKey;
-
 		private String endTime;
 
 		private String vSwitchId;
@@ -389,14 +387,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getSearchKey() {
-			return this.searchKey;
-		}
-
-		public void setSearchKey(String searchKey) {
-			this.searchKey = searchKey;
 		}
 
 		public String getEndTime() {

@@ -40,8 +40,6 @@ public class DescribeInstancesOverviewResponseUnmarshaller {
 			kVStoreInstance.setChargeType(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].ChargeType"));
 			kVStoreInstance.setArchitectureType(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].ArchitectureType"));
 			kVStoreInstance.setNetworkType(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].NetworkType"));
-			kVStoreInstance.setConnectionMode(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].ConnectionMode"));
-			kVStoreInstance.setPort(_ctx.longValue("DescribeInstancesOverviewResponse.Instances["+ i +"].Port"));
 			kVStoreInstance.setEngineVersion(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].EngineVersion"));
 			kVStoreInstance.setInstanceName(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].InstanceName"));
 			kVStoreInstance.setGlobalInstanceId(_ctx.stringValue("DescribeInstancesOverviewResponse.Instances["+ i +"].GlobalInstanceId"));
