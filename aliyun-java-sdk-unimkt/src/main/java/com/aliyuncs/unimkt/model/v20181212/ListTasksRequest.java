@@ -25,23 +25,25 @@ import com.aliyuncs.unimkt.Endpoint;
 public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 	   
 
-	private Integer marketingType;
-
 	private String taskType;
-
-	private Long pageSize;
 
 	private String taskName;
 
 	private String endTime;
 
-	private Long pageIndex;
-
 	private String brandUserNick;
 
-	private String proxyUserNick;
-
 	private String startTime;
+
+	private Integer marketingType;
+
+	private Long currencyType;
+
+	private Long pageSize;
+
+	private Long pageIndex;
+
+	private String proxyUserNick;
 
 	private Long taskId;
 
@@ -55,17 +57,6 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Integer getMarketingType() {
-		return this.marketingType;
-	}
-
-	public void setMarketingType(Integer marketingType) {
-		this.marketingType = marketingType;
-		if(marketingType != null){
-			putBodyParameter("MarketingType", marketingType.toString());
-		}
-	}
-
 	public String getTaskType() {
 		return this.taskType;
 	}
@@ -74,17 +65,6 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		this.taskType = taskType;
 		if(taskType != null){
 			putBodyParameter("TaskType", taskType);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -110,17 +90,6 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		}
 	}
 
-	public Long getPageIndex() {
-		return this.pageIndex;
-	}
-
-	public void setPageIndex(Long pageIndex) {
-		this.pageIndex = pageIndex;
-		if(pageIndex != null){
-			putBodyParameter("PageIndex", pageIndex.toString());
-		}
-	}
-
 	public String getBrandUserNick() {
 		return this.brandUserNick;
 	}
@@ -132,17 +101,6 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		}
 	}
 
-	public String getProxyUserNick() {
-		return this.proxyUserNick;
-	}
-
-	public void setProxyUserNick(String proxyUserNick) {
-		this.proxyUserNick = proxyUserNick;
-		if(proxyUserNick != null){
-			putBodyParameter("ProxyUserNick", proxyUserNick);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -151,6 +109,61 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getMarketingType() {
+		return this.marketingType;
+	}
+
+	public void setMarketingType(Integer marketingType) {
+		this.marketingType = marketingType;
+		if(marketingType != null){
+			putBodyParameter("MarketingType", marketingType.toString());
+		}
+	}
+
+	public Long getCurrencyType() {
+		return this.currencyType;
+	}
+
+	public void setCurrencyType(Long currencyType) {
+		this.currencyType = currencyType;
+		if(currencyType != null){
+			putBodyParameter("CurrencyType", currencyType.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(Long pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putBodyParameter("PageIndex", pageIndex.toString());
+		}
+	}
+
+	public String getProxyUserNick() {
+		return this.proxyUserNick;
+	}
+
+	public void setProxyUserNick(String proxyUserNick) {
+		this.proxyUserNick = proxyUserNick;
+		if(proxyUserNick != null){
+			putBodyParameter("ProxyUserNick", proxyUserNick);
 		}
 	}
 

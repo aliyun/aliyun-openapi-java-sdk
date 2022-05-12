@@ -22,49 +22,19 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListResponse> {
+public class ListUnionMediaIndustryRequest extends RpcAcsRequest<ListUnionMediaIndustryResponse> {
 	   
-
-	private Long brandUserId;
-
-	private String brandUserNick;
 
 	private Long proxyUserId;
 
-	private Integer pageSize;
-
-	private Integer pageIndex;
-
 	private String channelId;
-	public QueryUnionTaskListRequest() {
-		super("UniMkt", "2018-12-12", "QueryUnionTaskList");
+	public ListUnionMediaIndustryRequest() {
+		super("UniMkt", "2018-12-12", "ListUnionMediaIndustry");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getBrandUserId() {
-		return this.brandUserId;
-	}
-
-	public void setBrandUserId(Long brandUserId) {
-		this.brandUserId = brandUserId;
-		if(brandUserId != null){
-			putQueryParameter("BrandUserId", brandUserId.toString());
-		}
-	}
-
-	public String getBrandUserNick() {
-		return this.brandUserNick;
-	}
-
-	public void setBrandUserNick(String brandUserNick) {
-		this.brandUserNick = brandUserNick;
-		if(brandUserNick != null){
-			putQueryParameter("BrandUserNick", brandUserNick);
-		}
 	}
 
 	public Long getProxyUserId() {
@@ -75,28 +45,6 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 		this.proxyUserId = proxyUserId;
 		if(proxyUserId != null){
 			putQueryParameter("ProxyUserId", proxyUserId.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageIndex() {
-		return this.pageIndex;
-	}
-
-	public void setPageIndex(Integer pageIndex) {
-		this.pageIndex = pageIndex;
-		if(pageIndex != null){
-			putQueryParameter("PageIndex", pageIndex.toString());
 		}
 	}
 
@@ -112,8 +60,8 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 	}
 
 	@Override
-	public Class<QueryUnionTaskListResponse> getResponseClass() {
-		return QueryUnionTaskListResponse.class;
+	public Class<ListUnionMediaIndustryResponse> getResponseClass() {
+		return ListUnionMediaIndustryResponse.class;
 	}
 
 }

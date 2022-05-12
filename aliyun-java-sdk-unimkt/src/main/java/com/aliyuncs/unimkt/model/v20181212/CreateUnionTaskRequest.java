@@ -15,6 +15,9 @@
 package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.unimkt.Endpoint;
 
@@ -25,35 +28,43 @@ import com.aliyuncs.unimkt.Endpoint;
 public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskResponse> {
 	   
 
+	private String clientToken;
+
+	private String channel;
+
+	private String startTime;
+
+	private String contentUrl;
+
+	private String mediaIndustry;
+
+	private Long quota;
+
+	private Integer industryLabelBagId;
+
 	private String taskType;
 
 	private String customCreativeType;
 
 	private String taskBizType;
 
-	private String clientToken;
-
 	private Long brandUserId;
 
 	private Long contentId;
-
-	private String channel;
 
 	private String endTime;
 
 	private String brandUserNick;
 
-	private String startTime;
-
 	private Long proxyUserId;
 
-	private String contentUrl;
+	@SerializedName("mediaIdWhiteList")
+	private List<String> mediaIdWhiteList;
+
+	@SerializedName("mediaIdBlackList")
+	private List<String> mediaIdBlackList;
 
 	private String taskRuleType;
-
-	private Long quota;
-
-	private Integer industryLabelBagId;
 
 	private String name;
 
@@ -67,6 +78,83 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getChannel() {
+		return this.channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+		if(channel != null){
+			putQueryParameter("Channel", channel);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getContentUrl() {
+		return this.contentUrl;
+	}
+
+	public void setContentUrl(String contentUrl) {
+		this.contentUrl = contentUrl;
+		if(contentUrl != null){
+			putQueryParameter("ContentUrl", contentUrl);
+		}
+	}
+
+	public String getMediaIndustry() {
+		return this.mediaIndustry;
+	}
+
+	public void setMediaIndustry(String mediaIndustry) {
+		this.mediaIndustry = mediaIndustry;
+		if(mediaIndustry != null){
+			putQueryParameter("MediaIndustry", mediaIndustry);
+		}
+	}
+
+	public Long getQuota() {
+		return this.quota;
+	}
+
+	public void setQuota(Long quota) {
+		this.quota = quota;
+		if(quota != null){
+			putQueryParameter("Quota", quota.toString());
+		}
+	}
+
+	public Integer getIndustryLabelBagId() {
+		return this.industryLabelBagId;
+	}
+
+	public void setIndustryLabelBagId(Integer industryLabelBagId) {
+		this.industryLabelBagId = industryLabelBagId;
+		if(industryLabelBagId != null){
+			putQueryParameter("IndustryLabelBagId", industryLabelBagId.toString());
+		}
 	}
 
 	public String getTaskType() {
@@ -102,17 +190,6 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public Long getBrandUserId() {
 		return this.brandUserId;
 	}
@@ -132,17 +209,6 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.contentId = contentId;
 		if(contentId != null){
 			putQueryParameter("ContentId", contentId.toString());
-		}
-	}
-
-	public String getChannel() {
-		return this.channel;
-	}
-
-	public void setChannel(String channel) {
-		this.channel = channel;
-		if(channel != null){
-			putQueryParameter("Channel", channel);
 		}
 	}
 
@@ -168,17 +234,6 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getProxyUserId() {
 		return this.proxyUserId;
 	}
@@ -190,15 +245,26 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		}
 	}
 
-	public String getContentUrl() {
-		return this.contentUrl;
+	public List<String> getMediaIdWhiteList() {
+		return this.mediaIdWhiteList;
 	}
 
-	public void setContentUrl(String contentUrl) {
-		this.contentUrl = contentUrl;
-		if(contentUrl != null){
-			putQueryParameter("ContentUrl", contentUrl);
-		}
+	public void setMediaIdWhiteList(List<String> mediaIdWhiteList) {
+		this.mediaIdWhiteList = mediaIdWhiteList;	
+		if (mediaIdWhiteList != null) {
+			putQueryParameter("MediaIdWhiteList" , new Gson().toJson(mediaIdWhiteList));
+		}	
+	}
+
+	public List<String> getMediaIdBlackList() {
+		return this.mediaIdBlackList;
+	}
+
+	public void setMediaIdBlackList(List<String> mediaIdBlackList) {
+		this.mediaIdBlackList = mediaIdBlackList;	
+		if (mediaIdBlackList != null) {
+			putQueryParameter("MediaIdBlackList" , new Gson().toJson(mediaIdBlackList));
+		}	
 	}
 
 	public String getTaskRuleType() {
@@ -209,28 +275,6 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.taskRuleType = taskRuleType;
 		if(taskRuleType != null){
 			putQueryParameter("TaskRuleType", taskRuleType);
-		}
-	}
-
-	public Long getQuota() {
-		return this.quota;
-	}
-
-	public void setQuota(Long quota) {
-		this.quota = quota;
-		if(quota != null){
-			putQueryParameter("Quota", quota.toString());
-		}
-	}
-
-	public Integer getIndustryLabelBagId() {
-		return this.industryLabelBagId;
-	}
-
-	public void setIndustryLabelBagId(Integer industryLabelBagId) {
-		this.industryLabelBagId = industryLabelBagId;
-		if(industryLabelBagId != null){
-			putQueryParameter("IndustryLabelBagId", industryLabelBagId.toString());
 		}
 	}
 

@@ -235,6 +235,8 @@ public class SearchAdvertisingResponse extends AcsResponse {
 
 					private Trackers trackers;
 
+					private Icon icon;
+
 					public String getId() {
 						return this.id;
 					}
@@ -347,6 +349,14 @@ public class SearchAdvertisingResponse extends AcsResponse {
 						this.trackers = trackers;
 					}
 
+					public Icon getIcon() {
+						return this.icon;
+					}
+
+					public void setIcon(Icon icon) {
+						this.icon = icon;
+					}
+
 					public static class Trackers {
 
 						private List<String> impressions;
@@ -357,6 +367,19 @@ public class SearchAdvertisingResponse extends AcsResponse {
 
 						public void setImpressions(List<String> impressions) {
 							this.impressions = impressions;
+						}
+					}
+
+					public static class Icon {
+
+						private String url;
+
+						public String getUrl() {
+							return this.url;
+						}
+
+						public void setUrl(String url) {
+							this.url = url;
 						}
 					}
 				}

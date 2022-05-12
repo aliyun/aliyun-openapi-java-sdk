@@ -23,6 +23,7 @@ import com.aliyuncs.unimkt.model.v20181212.SearchAdvertisingResponse.Result;
 import com.aliyuncs.unimkt.model.v20181212.SearchAdvertisingResponse.Result.SeatBidItem;
 import com.aliyuncs.unimkt.model.v20181212.SearchAdvertisingResponse.Result.SeatBidItem.BidItem;
 import com.aliyuncs.unimkt.model.v20181212.SearchAdvertisingResponse.Result.SeatBidItem.BidItem.Ad;
+import com.aliyuncs.unimkt.model.v20181212.SearchAdvertisingResponse.Result.SeatBidItem.BidItem.Ad.Icon;
 import com.aliyuncs.unimkt.model.v20181212.SearchAdvertisingResponse.Result.SeatBidItem.BidItem.Ad.Trackers;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -88,6 +89,10 @@ public class SearchAdvertisingResponseUnmarshaller {
 					}
 					trackers.setImpressions(impressions);
 					ad.setTrackers(trackers);
+
+					Icon icon = new Icon();
+					icon.setUrl(_ctx.stringValue("SearchAdvertisingResponse.Result.Seatbid["+ i +"].Bid["+ j +"].Ads["+ k +"].icon.url"));
+					ad.setIcon(icon);
 
 					ads.add(ad);
 				}

@@ -84,6 +84,7 @@ public class ListTasksResponseUnmarshaller {
 			effectMarketingTask.setTaskType(_ctx.stringValue("ListTasksResponse.Data.List["+ i +"].TaskType"));
 			effectMarketingTask.setPredictInfo(_ctx.stringValue("ListTasksResponse.Data.List["+ i +"].PredictInfo"));
 			effectMarketingTask.setActualInfo(_ctx.stringValue("ListTasksResponse.Data.List["+ i +"].ActualInfo"));
+			effectMarketingTask.setCurrencyType(_ctx.longValue("ListTasksResponse.Data.List["+ i +"].CurrencyType"));
 
 			PredictBankRegisterVO predictBankRegisterVO = new PredictBankRegisterVO();
 			predictBankRegisterVO.setInComingPartsNumber(_ctx.longValue("ListTasksResponse.Data.List["+ i +"].PredictBankRegisterVO.InComingPartsNumber"));

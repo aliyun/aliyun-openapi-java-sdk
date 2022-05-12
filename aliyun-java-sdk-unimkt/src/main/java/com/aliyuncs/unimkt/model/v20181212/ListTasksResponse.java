@@ -211,6 +211,8 @@ public class ListTasksResponse extends AcsResponse {
 
 			private String actualInfo;
 
+			private Long currencyType;
+
 			private PredictBankRegisterVO predictBankRegisterVO;
 
 			private ActualBankRegisterVO actualBankRegisterVO;
@@ -541,6 +543,14 @@ public class ListTasksResponse extends AcsResponse {
 
 			public void setActualInfo(String actualInfo) {
 				this.actualInfo = actualInfo;
+			}
+
+			public Long getCurrencyType() {
+				return this.currencyType;
+			}
+
+			public void setCurrencyType(Long currencyType) {
+				this.currencyType = currencyType;
 			}
 
 			public PredictBankRegisterVO getPredictBankRegisterVO() {
