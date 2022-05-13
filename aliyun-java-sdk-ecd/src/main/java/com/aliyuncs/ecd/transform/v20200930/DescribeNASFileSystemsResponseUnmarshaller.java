@@ -48,6 +48,7 @@ public class DescribeNASFileSystemsResponseUnmarshaller {
 			fileSystem.setDescription(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].Description"));
 			fileSystem.setZoneId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
 			fileSystem.setFileSystemStatus(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemStatus"));
+			fileSystem.setEncryptionEnabled(_ctx.booleanValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].EncryptionEnabled"));
 
 			fileSystems.add(fileSystem);
 		}

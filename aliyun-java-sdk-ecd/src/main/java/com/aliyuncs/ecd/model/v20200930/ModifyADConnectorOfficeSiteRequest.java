@@ -34,6 +34,8 @@ public class ModifyADConnectorOfficeSiteRequest extends RpcAcsRequest<ModifyADCo
 
 	private String domainPassword;
 
+	private String adHostname;
+
 	private String domainName;
 
 	private String officeSiteName;
@@ -43,6 +45,8 @@ public class ModifyADConnectorOfficeSiteRequest extends RpcAcsRequest<ModifyADCo
 	private String domainUserName;
 
 	private List<String> dnsAddresss;
+
+	private String oUName;
 	public ModifyADConnectorOfficeSiteRequest() {
 		super("ecd", "2020-09-30", "ModifyADConnectorOfficeSite");
 		setMethod(MethodType.POST);
@@ -95,6 +99,17 @@ public class ModifyADConnectorOfficeSiteRequest extends RpcAcsRequest<ModifyADCo
 		this.domainPassword = domainPassword;
 		if(domainPassword != null){
 			putQueryParameter("DomainPassword", domainPassword);
+		}
+	}
+
+	public String getAdHostname() {
+		return this.adHostname;
+	}
+
+	public void setAdHostname(String adHostname) {
+		this.adHostname = adHostname;
+		if(adHostname != null){
+			putQueryParameter("AdHostname", adHostname);
 		}
 	}
 
@@ -153,6 +168,17 @@ public class ModifyADConnectorOfficeSiteRequest extends RpcAcsRequest<ModifyADCo
 				putQueryParameter("DnsAddress." + (i + 1) , dnsAddresss.get(i));
 			}
 		}	
+	}
+
+	public String getOUName() {
+		return this.oUName;
+	}
+
+	public void setOUName(String oUName) {
+		this.oUName = oUName;
+		if(oUName != null){
+			putQueryParameter("OUName", oUName);
+		}
 	}
 
 	@Override

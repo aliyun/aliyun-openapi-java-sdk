@@ -42,6 +42,8 @@ public class ExportDesktopGroupInfoRequest extends RpcAcsRequest<ExportDesktopGr
 
 	private Integer maxResults;
 
+	private String langType;
+
 	private String chargeType;
 
 	private String policyGroupId;
@@ -143,6 +145,17 @@ public class ExportDesktopGroupInfoRequest extends RpcAcsRequest<ExportDesktopGr
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getLangType() {
+		return this.langType;
+	}
+
+	public void setLangType(String langType) {
+		this.langType = langType;
+		if(langType != null){
+			putQueryParameter("LangType", langType);
 		}
 	}
 

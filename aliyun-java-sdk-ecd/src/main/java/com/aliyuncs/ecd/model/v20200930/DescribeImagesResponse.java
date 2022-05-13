@@ -83,6 +83,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String gpuDriverVersion;
 
+		private String appVersion;
+
 		private List<String> supportedLanguages;
 
 		public String getCreationTime() {
@@ -187,6 +189,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setGpuDriverVersion(String gpuDriverVersion) {
 			this.gpuDriverVersion = gpuDriverVersion;
+		}
+
+		public String getAppVersion() {
+			return this.appVersion;
+		}
+
+		public void setAppVersion(String appVersion) {
+			this.appVersion = appVersion;
 		}
 
 		public List<String> getSupportedLanguages() {

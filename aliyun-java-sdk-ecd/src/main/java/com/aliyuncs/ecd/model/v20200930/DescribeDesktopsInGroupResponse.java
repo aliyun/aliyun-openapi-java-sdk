@@ -35,6 +35,12 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 	private Integer postPaidDesktopsTotalAmount;
 
+	private Integer onlinePrePaidDesktopsCount;
+
+	private Integer runningPrePaidDesktopsCount;
+
+	private Integer stopedPrePaidDesktopsCount;
+
 	private List<PaidDesktop> paidDesktops;
 
 	private List<PostPaidDesktop> postPaidDesktops;
@@ -79,6 +85,30 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 		this.postPaidDesktopsTotalAmount = postPaidDesktopsTotalAmount;
 	}
 
+	public Integer getOnlinePrePaidDesktopsCount() {
+		return this.onlinePrePaidDesktopsCount;
+	}
+
+	public void setOnlinePrePaidDesktopsCount(Integer onlinePrePaidDesktopsCount) {
+		this.onlinePrePaidDesktopsCount = onlinePrePaidDesktopsCount;
+	}
+
+	public Integer getRunningPrePaidDesktopsCount() {
+		return this.runningPrePaidDesktopsCount;
+	}
+
+	public void setRunningPrePaidDesktopsCount(Integer runningPrePaidDesktopsCount) {
+		this.runningPrePaidDesktopsCount = runningPrePaidDesktopsCount;
+	}
+
+	public Integer getStopedPrePaidDesktopsCount() {
+		return this.stopedPrePaidDesktopsCount;
+	}
+
+	public void setStopedPrePaidDesktopsCount(Integer stopedPrePaidDesktopsCount) {
+		this.stopedPrePaidDesktopsCount = stopedPrePaidDesktopsCount;
+	}
+
 	public List<PaidDesktop> getPaidDesktops() {
 		return this.paidDesktops;
 	}
@@ -110,6 +140,24 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 		private String endUserName;
 
 		private String managementFlag;
+
+		private String resetTime;
+
+		private String imageId;
+
+		private String imageName;
+
+		private Integer systemDiskSize;
+
+		private String osType;
+
+		private String gpuDriverVersion;
+
+		private String diskType;
+
+		private List<String> endUserIds;
+
+		private List<String> endUserNames;
 
 		public String getEndUserId() {
 			return this.endUserId;
@@ -166,6 +214,78 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 		public void setManagementFlag(String managementFlag) {
 			this.managementFlag = managementFlag;
 		}
+
+		public String getResetTime() {
+			return this.resetTime;
+		}
+
+		public void setResetTime(String resetTime) {
+			this.resetTime = resetTime;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public String getGpuDriverVersion() {
+			return this.gpuDriverVersion;
+		}
+
+		public void setGpuDriverVersion(String gpuDriverVersion) {
+			this.gpuDriverVersion = gpuDriverVersion;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public List<String> getEndUserIds() {
+			return this.endUserIds;
+		}
+
+		public void setEndUserIds(List<String> endUserIds) {
+			this.endUserIds = endUserIds;
+		}
+
+		public List<String> getEndUserNames() {
+			return this.endUserNames;
+		}
+
+		public void setEndUserNames(List<String> endUserNames) {
+			this.endUserNames = endUserNames;
+		}
 	}
 
 	public static class PostPaidDesktop {
@@ -189,6 +309,24 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 		private String endUserName;
 
 		private String managementFlag;
+
+		private String resetTime;
+
+		private String imageId;
+
+		private String imageName;
+
+		private Integer systemDiskSize;
+
+		private String osType;
+
+		private String gpuDriverVersion;
+
+		private String diskType;
+
+		private List<String> endUserIds1;
+
+		private List<String> endUserNames2;
 
 		public String getCreateDuration() {
 			return this.createDuration;
@@ -268,6 +406,78 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		public void setManagementFlag(String managementFlag) {
 			this.managementFlag = managementFlag;
+		}
+
+		public String getResetTime() {
+			return this.resetTime;
+		}
+
+		public void setResetTime(String resetTime) {
+			this.resetTime = resetTime;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public String getGpuDriverVersion() {
+			return this.gpuDriverVersion;
+		}
+
+		public void setGpuDriverVersion(String gpuDriverVersion) {
+			this.gpuDriverVersion = gpuDriverVersion;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public List<String> getEndUserIds1() {
+			return this.endUserIds1;
+		}
+
+		public void setEndUserIds1(List<String> endUserIds1) {
+			this.endUserIds1 = endUserIds1;
+		}
+
+		public List<String> getEndUserNames2() {
+			return this.endUserNames2;
+		}
+
+		public void setEndUserNames2(List<String> endUserNames2) {
+			this.endUserNames2 = endUserNames2;
 		}
 	}
 

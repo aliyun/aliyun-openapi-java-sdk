@@ -117,6 +117,14 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		private Long resetType;
 
+		private Long loadPolicy;
+
+		private Long bindAmount;
+
+		private Long ownType;
+
+		private String imageId;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -355,6 +363,38 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		public void setResetType(Long resetType) {
 			this.resetType = resetType;
+		}
+
+		public Long getLoadPolicy() {
+			return this.loadPolicy;
+		}
+
+		public void setLoadPolicy(Long loadPolicy) {
+			this.loadPolicy = loadPolicy;
+		}
+
+		public Long getBindAmount() {
+			return this.bindAmount;
+		}
+
+		public void setBindAmount(Long bindAmount) {
+			this.bindAmount = bindAmount;
+		}
+
+		public Long getOwnType() {
+			return this.ownType;
+		}
+
+		public void setOwnType(Long ownType) {
+			this.ownType = ownType;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 	}
 

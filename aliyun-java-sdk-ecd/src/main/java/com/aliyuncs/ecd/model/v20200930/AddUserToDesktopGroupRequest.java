@@ -31,6 +31,8 @@ public class AddUserToDesktopGroupRequest extends RpcAcsRequest<AddUserToDesktop
 	private String clientToken;
 
 	private String desktopGroupId;
+
+	private List<String> desktopGroupIdss;
 	public AddUserToDesktopGroupRequest() {
 		super("ecd", "2020-09-30", "AddUserToDesktopGroup");
 		setMethod(MethodType.POST);
@@ -73,6 +75,19 @@ public class AddUserToDesktopGroupRequest extends RpcAcsRequest<AddUserToDesktop
 		if(desktopGroupId != null){
 			putQueryParameter("DesktopGroupId", desktopGroupId);
 		}
+	}
+
+	public List<String> getDesktopGroupIdss() {
+		return this.desktopGroupIdss;
+	}
+
+	public void setDesktopGroupIdss(List<String> desktopGroupIdss) {
+		this.desktopGroupIdss = desktopGroupIdss;	
+		if (desktopGroupIdss != null) {
+			for (int i = 0; i < desktopGroupIdss.size(); i++) {
+				putQueryParameter("DesktopGroupIds." + (i + 1) , desktopGroupIdss.get(i));
+			}
+		}	
 	}
 
 	@Override

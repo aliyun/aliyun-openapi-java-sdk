@@ -63,6 +63,8 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private String vpcType;
+
 		private Boolean enableAdminAccess;
 
 		private Boolean enableCrossDesktopAccess;
@@ -111,6 +113,16 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		private Long desktopCount;
 
+		private Boolean needVerifyZeroDevice;
+
+		private Boolean cloudBoxOfficeSite;
+
+		private String ssoType;
+
+		private String protocolType;
+
+		private String adHostname;
+
 		private List<ADConnector> aDConnectors;
 
 		private List<Log> logs;
@@ -145,6 +157,14 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getVpcType() {
+			return this.vpcType;
+		}
+
+		public void setVpcType(String vpcType) {
+			this.vpcType = vpcType;
 		}
 
 		public Boolean getEnableAdminAccess() {
@@ -339,6 +359,46 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.desktopCount = desktopCount;
 		}
 
+		public Boolean getNeedVerifyZeroDevice() {
+			return this.needVerifyZeroDevice;
+		}
+
+		public void setNeedVerifyZeroDevice(Boolean needVerifyZeroDevice) {
+			this.needVerifyZeroDevice = needVerifyZeroDevice;
+		}
+
+		public Boolean getCloudBoxOfficeSite() {
+			return this.cloudBoxOfficeSite;
+		}
+
+		public void setCloudBoxOfficeSite(Boolean cloudBoxOfficeSite) {
+			this.cloudBoxOfficeSite = cloudBoxOfficeSite;
+		}
+
+		public String getSsoType() {
+			return this.ssoType;
+		}
+
+		public void setSsoType(String ssoType) {
+			this.ssoType = ssoType;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getAdHostname() {
+			return this.adHostname;
+		}
+
+		public void setAdHostname(String adHostname) {
+			this.adHostname = adHostname;
+		}
+
 		public List<ADConnector> getADConnectors() {
 			return this.aDConnectors;
 		}
@@ -399,6 +459,8 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 			private String networkInterfaceId;
 
+			private String specification;
+
 			public String getConnectorStatus() {
 				return this.connectorStatus;
 			}
@@ -437,6 +499,14 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 			public void setNetworkInterfaceId(String networkInterfaceId) {
 				this.networkInterfaceId = networkInterfaceId;
+			}
+
+			public String getSpecification() {
+				return this.specification;
+			}
+
+			public void setSpecification(String specification) {
+				this.specification = specification;
 			}
 		}
 

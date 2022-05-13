@@ -23,8 +23,6 @@ public class ModifyEntitlementResponseUnmarshaller {
 	public static ModifyEntitlementResponse unmarshall(ModifyEntitlementResponse modifyEntitlementResponse, UnmarshallerContext _ctx) {
 		
 		modifyEntitlementResponse.setRequestId(_ctx.stringValue("ModifyEntitlementResponse.RequestId"));
-		modifyEntitlementResponse.setTaskId(_ctx.stringValue("ModifyEntitlementResponse.TaskId"));
-		modifyEntitlementResponse.setStatus(_ctx.stringValue("ModifyEntitlementResponse.Status"));
 	 
 	 	return modifyEntitlementResponse;
 	}

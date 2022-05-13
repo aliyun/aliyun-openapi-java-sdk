@@ -29,6 +29,8 @@ public class DescribeDirectoriesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String adHostname;
+
 	private List<Directory> directories;
 
 	public String getNextToken() {
@@ -45,6 +47,14 @@ public class DescribeDirectoriesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAdHostname() {
+		return this.adHostname;
+	}
+
+	public void setAdHostname(String adHostname) {
+		this.adHostname = adHostname;
 	}
 
 	public List<Directory> getDirectories() {
@@ -349,6 +359,8 @@ public class DescribeDirectoriesResponse extends AcsResponse {
 
 			private String networkInterfaceId;
 
+			private String specification;
+
 			public String getConnectorStatus() {
 				return this.connectorStatus;
 			}
@@ -387,6 +399,14 @@ public class DescribeDirectoriesResponse extends AcsResponse {
 
 			public void setNetworkInterfaceId(String networkInterfaceId) {
 				this.networkInterfaceId = networkInterfaceId;
+			}
+
+			public String getSpecification() {
+				return this.specification;
+			}
+
+			public void setSpecification(String specification) {
+				this.specification = specification;
 			}
 		}
 

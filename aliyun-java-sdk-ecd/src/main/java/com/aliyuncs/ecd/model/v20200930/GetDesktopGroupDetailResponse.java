@@ -27,7 +27,7 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Desktop> desktops;
+	private Desktops desktops;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,19 +37,25 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Desktop> getDesktops() {
+	public Desktops getDesktops() {
 		return this.desktops;
 	}
 
-	public void setDesktops(List<Desktop> desktops) {
+	public void setDesktops(Desktops desktops) {
 		this.desktops = desktops;
 	}
 
-	public static class Desktop {
+	public static class Desktops {
+
+		private Integer status;
 
 		private String creationTime;
 
 		private String payType;
+
+		private Integer resetType;
+
+		private Integer loadPolicy;
 
 		private String policyGroupName;
 
@@ -83,6 +89,10 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		private String desktopGroupName;
 
+		private Integer bindAmount;
+
+		private Integer ownType;
+
 		private String systemDiskCategory;
 
 		private String officeSiteId;
@@ -107,9 +117,15 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		private String officeSiteType;
 
-		private Integer status;
+		private List<TimerInfo> timerInfos;
 
-		private Long resetType;
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -125,6 +141,22 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		public void setPayType(String payType) {
 			this.payType = payType;
+		}
+
+		public Integer getResetType() {
+			return this.resetType;
+		}
+
+		public void setResetType(Integer resetType) {
+			this.resetType = resetType;
+		}
+
+		public Integer getLoadPolicy() {
+			return this.loadPolicy;
+		}
+
+		public void setLoadPolicy(Integer loadPolicy) {
+			this.loadPolicy = loadPolicy;
 		}
 
 		public String getPolicyGroupName() {
@@ -255,6 +287,22 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 			this.desktopGroupName = desktopGroupName;
 		}
 
+		public Integer getBindAmount() {
+			return this.bindAmount;
+		}
+
+		public void setBindAmount(Integer bindAmount) {
+			this.bindAmount = bindAmount;
+		}
+
+		public Integer getOwnType() {
+			return this.ownType;
+		}
+
+		public void setOwnType(Integer ownType) {
+			this.ownType = ownType;
+		}
+
 		public String getSystemDiskCategory() {
 			return this.systemDiskCategory;
 		}
@@ -351,20 +399,45 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 			this.officeSiteType = officeSiteType;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public List<TimerInfo> getTimerInfos() {
+			return this.timerInfos;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setTimerInfos(List<TimerInfo> timerInfos) {
+			this.timerInfos = timerInfos;
 		}
 
-		public Long getResetType() {
-			return this.resetType;
-		}
+		public static class TimerInfo {
 
-		public void setResetType(Long resetType) {
-			this.resetType = resetType;
+			private Integer status;
+
+			private String cronExpression;
+
+			private Integer timerType;
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
+
+			public String getCronExpression() {
+				return this.cronExpression;
+			}
+
+			public void setCronExpression(String cronExpression) {
+				this.cronExpression = cronExpression;
+			}
+
+			public Integer getTimerType() {
+				return this.timerType;
+			}
+
+			public void setTimerType(Integer timerType) {
+				this.timerType = timerType;
+			}
 		}
 	}
 

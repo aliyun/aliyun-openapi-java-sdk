@@ -62,6 +62,10 @@ public class DescribeDesktopGroupsResponseUnmarshaller {
 			desktopGroup.setOfficeSiteType(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].OfficeSiteType"));
 			desktopGroup.setStatus(_ctx.integerValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].Status"));
 			desktopGroup.setResetType(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].ResetType"));
+			desktopGroup.setLoadPolicy(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].LoadPolicy"));
+			desktopGroup.setBindAmount(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].BindAmount"));
+			desktopGroup.setOwnType(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].OwnType"));
+			desktopGroup.setImageId(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].ImageId"));
 
 			desktopGroups.add(desktopGroup);
 		}

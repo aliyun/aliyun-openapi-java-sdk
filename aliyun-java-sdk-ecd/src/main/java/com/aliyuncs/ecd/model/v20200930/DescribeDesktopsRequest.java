@@ -32,6 +32,8 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String nextToken;
 
+	private Boolean queryFotaUpdate;
+
 	private String directoryId;
 
 	private List<String> endUserIds;
@@ -42,9 +44,13 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String groupId;
 
+	private String officeSiteName;
+
 	private List<String> excludedEndUserIds;
 
 	private Boolean filterDesktopGroup;
+
+	private String managementFlag;
 
 	private String expiredTime;
 
@@ -96,6 +102,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Boolean getQueryFotaUpdate() {
+		return this.queryFotaUpdate;
+	}
+
+	public void setQueryFotaUpdate(Boolean queryFotaUpdate) {
+		this.queryFotaUpdate = queryFotaUpdate;
+		if(queryFotaUpdate != null){
+			putQueryParameter("QueryFotaUpdate", queryFotaUpdate.toString());
 		}
 	}
 
@@ -158,6 +175,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}
 	}
 
+	public String getOfficeSiteName() {
+		return this.officeSiteName;
+	}
+
+	public void setOfficeSiteName(String officeSiteName) {
+		this.officeSiteName = officeSiteName;
+		if(officeSiteName != null){
+			putQueryParameter("OfficeSiteName", officeSiteName);
+		}
+	}
+
 	public List<String> getExcludedEndUserIds() {
 		return this.excludedEndUserIds;
 	}
@@ -179,6 +207,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.filterDesktopGroup = filterDesktopGroup;
 		if(filterDesktopGroup != null){
 			putQueryParameter("FilterDesktopGroup", filterDesktopGroup.toString());
+		}
+	}
+
+	public String getManagementFlag() {
+		return this.managementFlag;
+	}
+
+	public void setManagementFlag(String managementFlag) {
+		this.managementFlag = managementFlag;
+		if(managementFlag != null){
+			putQueryParameter("ManagementFlag", managementFlag);
 		}
 	}
 

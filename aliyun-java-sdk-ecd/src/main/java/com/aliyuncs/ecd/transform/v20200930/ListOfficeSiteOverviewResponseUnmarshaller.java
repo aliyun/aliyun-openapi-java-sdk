@@ -41,6 +41,7 @@ public class ListOfficeSiteOverviewResponseUnmarshaller {
 			officeSiteOverviewResult.setRunningEdsCount(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].RunningEdsCount"));
 			officeSiteOverviewResult.setRunningEdsCountForGroup(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].RunningEdsCountForGroup"));
 			officeSiteOverviewResult.setOfficeSiteName(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].OfficeSiteName"));
+			officeSiteOverviewResult.setVpcType(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].VpcType"));
 			officeSiteOverviewResult.setHasExpiredEdsCount(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].HasExpiredEdsCount"));
 			officeSiteOverviewResult.setHasExpiredEdsCountForGroup(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].HasExpiredEdsCountForGroup"));
 			officeSiteOverviewResult.setRegionId(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].RegionId"));

@@ -113,9 +113,11 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private String officeSiteName;
 
-		private String startTime;
-
 		private String directoryType;
+
+		private String officeSiteVpcType;
+
+		private String startTime;
 
 		private Integer cpu;
 
@@ -129,6 +131,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private String bundleId;
 
+		private String bundleName;
+
 		private String officeSiteType;
 
 		private String hostName;
@@ -141,6 +145,12 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private String gpuDriverVersion;
 
+		private String zoneType;
+
+		private String progress;
+
+		private String platform;
+
 		private List<Disk> disks;
 
 		private List<Tag> tags;
@@ -148,6 +158,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 		private List<Session> sessions;
 
 		private List<String> endUserIds;
+
+		private FotaUpdate fotaUpdate;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -333,20 +345,28 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.officeSiteName = officeSiteName;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
 		public String getDirectoryType() {
 			return this.directoryType;
 		}
 
 		public void setDirectoryType(String directoryType) {
 			this.directoryType = directoryType;
+		}
+
+		public String getOfficeSiteVpcType() {
+			return this.officeSiteVpcType;
+		}
+
+		public void setOfficeSiteVpcType(String officeSiteVpcType) {
+			this.officeSiteVpcType = officeSiteVpcType;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getCpu() {
@@ -397,6 +417,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.bundleId = bundleId;
 		}
 
+		public String getBundleName() {
+			return this.bundleName;
+		}
+
+		public void setBundleName(String bundleName) {
+			this.bundleName = bundleName;
+		}
+
 		public String getOfficeSiteType() {
 			return this.officeSiteType;
 		}
@@ -445,6 +473,30 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.gpuDriverVersion = gpuDriverVersion;
 		}
 
+		public String getZoneType() {
+			return this.zoneType;
+		}
+
+		public void setZoneType(String zoneType) {
+			this.zoneType = zoneType;
+		}
+
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
+		}
+
 		public List<Disk> getDisks() {
 			return this.disks;
 		}
@@ -477,6 +529,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.endUserIds = endUserIds;
 		}
 
+		public FotaUpdate getFotaUpdate() {
+			return this.fotaUpdate;
+		}
+
+		public void setFotaUpdate(FotaUpdate fotaUpdate) {
+			this.fotaUpdate = fotaUpdate;
+		}
+
 		public static class Disk {
 
 			private String diskType;
@@ -484,6 +544,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			private String diskId;
 
 			private Integer diskSize;
+
+			private String performanceLevel;
 
 			public String getDiskType() {
 				return this.diskType;
@@ -507,6 +569,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 			public void setDiskSize(Integer diskSize) {
 				this.diskSize = diskSize;
+			}
+
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
+			}
+
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
 			}
 		}
 
@@ -539,6 +609,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 			private String establishmentTime;
 
+			private String externalUserName;
+
 			public String getEndUserId() {
 				return this.endUserId;
 			}
@@ -553,6 +625,57 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 			public void setEstablishmentTime(String establishmentTime) {
 				this.establishmentTime = establishmentTime;
+			}
+
+			public String getExternalUserName() {
+				return this.externalUserName;
+			}
+
+			public void setExternalUserName(String externalUserName) {
+				this.externalUserName = externalUserName;
+			}
+		}
+
+		public static class FotaUpdate {
+
+			private String currentAppVersion;
+
+			private String newAppVersion;
+
+			private String releaseNote;
+
+			private Long size;
+
+			public String getCurrentAppVersion() {
+				return this.currentAppVersion;
+			}
+
+			public void setCurrentAppVersion(String currentAppVersion) {
+				this.currentAppVersion = currentAppVersion;
+			}
+
+			public String getNewAppVersion() {
+				return this.newAppVersion;
+			}
+
+			public void setNewAppVersion(String newAppVersion) {
+				this.newAppVersion = newAppVersion;
+			}
+
+			public String getReleaseNote() {
+				return this.releaseNote;
+			}
+
+			public void setReleaseNote(String releaseNote) {
+				this.releaseNote = releaseNote;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
 			}
 		}
 	}

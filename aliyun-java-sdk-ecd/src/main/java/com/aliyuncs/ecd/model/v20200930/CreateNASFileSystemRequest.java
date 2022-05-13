@@ -31,6 +31,8 @@ public class CreateNASFileSystemRequest extends RpcAcsRequest<CreateNASFileSyste
 
 	private String storageType;
 
+	private String encryptType;
+
 	private String name;
 	public CreateNASFileSystemRequest() {
 		super("ecd", "2020-09-30", "CreateNASFileSystem");
@@ -71,6 +73,17 @@ public class CreateNASFileSystemRequest extends RpcAcsRequest<CreateNASFileSyste
 		this.storageType = storageType;
 		if(storageType != null){
 			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getEncryptType() {
+		return this.encryptType;
+	}
+
+	public void setEncryptType(String encryptType) {
+		this.encryptType = encryptType;
+		if(encryptType != null){
+			putQueryParameter("EncryptType", encryptType);
 		}
 	}
 

@@ -52,6 +52,8 @@ public class DescribeClientEventsResponseUnmarshaller {
 			event.setClientVersion(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].ClientVersion"));
 			event.setOfficeSiteName(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].OfficeSiteName"));
 			event.setDesktopName(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DesktopName"));
+			event.setDesktopGroupId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DesktopGroupId"));
+			event.setDesktopGroupName(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DesktopGroupName"));
 
 			events.add(event);
 		}

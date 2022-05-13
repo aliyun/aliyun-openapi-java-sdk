@@ -59,12 +59,22 @@ public class ListDirectoryUsersResponse extends AcsResponse {
 
 		private String endUser;
 
+		private String displayName;
+
 		public String getEndUser() {
 			return this.endUser;
 		}
 
 		public void setEndUser(String endUser) {
 			this.endUser = endUser;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 	}
 

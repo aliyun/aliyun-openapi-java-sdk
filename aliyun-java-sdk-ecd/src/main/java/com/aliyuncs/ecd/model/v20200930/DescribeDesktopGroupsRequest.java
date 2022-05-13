@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -27,15 +28,21 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 
 	private String officeSiteId;
 
-	private Integer period;
+	private List<String> endUserIdss;
 
 	private String desktopGroupName;
 
 	private String desktopGroupId;
 
-	private String periodUnit;
-
 	private String nextToken;
+
+	private Integer period;
+
+	private Long ownType;
+
+	private List<String> excludedEndUserIdss;
+
+	private String periodUnit;
 
 	private Integer maxResults;
 
@@ -62,15 +69,17 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
+	public List<String> getEndUserIdss() {
+		return this.endUserIdss;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
+	public void setEndUserIdss(List<String> endUserIdss) {
+		this.endUserIdss = endUserIdss;	
+		if (endUserIdss != null) {
+			for (int i = 0; i < endUserIdss.size(); i++) {
+				putQueryParameter("EndUserIds." + (i + 1) , endUserIdss.get(i));
+			}
+		}	
 	}
 
 	public String getDesktopGroupName() {
@@ -95,17 +104,6 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
-	}
-
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -114,6 +112,52 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Long getOwnType() {
+		return this.ownType;
+	}
+
+	public void setOwnType(Long ownType) {
+		this.ownType = ownType;
+		if(ownType != null){
+			putQueryParameter("OwnType", ownType.toString());
+		}
+	}
+
+	public List<String> getExcludedEndUserIdss() {
+		return this.excludedEndUserIdss;
+	}
+
+	public void setExcludedEndUserIdss(List<String> excludedEndUserIdss) {
+		this.excludedEndUserIdss = excludedEndUserIdss;	
+		if (excludedEndUserIdss != null) {
+			for (int i = 0; i < excludedEndUserIdss.size(); i++) {
+				putQueryParameter("ExcludedEndUserIds." + (i + 1) , excludedEndUserIdss.get(i));
+			}
+		}	
+	}
+
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
 		}
 	}
 

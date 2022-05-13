@@ -34,6 +34,8 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 
 	private String verifyCode;
 
+	private Boolean needVerifyZeroDevice;
+
 	private Boolean enableAdminAccess;
 
 	private Integer bandwidth;
@@ -41,6 +43,8 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 	private String desktopAccessType;
 
 	private String officeSiteName;
+
+	private Boolean cloudBoxOfficeSite;
 
 	private List<String> vSwitchIds;
 
@@ -98,6 +102,17 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 		}
 	}
 
+	public Boolean getNeedVerifyZeroDevice() {
+		return this.needVerifyZeroDevice;
+	}
+
+	public void setNeedVerifyZeroDevice(Boolean needVerifyZeroDevice) {
+		this.needVerifyZeroDevice = needVerifyZeroDevice;
+		if(needVerifyZeroDevice != null){
+			putQueryParameter("NeedVerifyZeroDevice", needVerifyZeroDevice.toString());
+		}
+	}
+
 	public Boolean getEnableAdminAccess() {
 		return this.enableAdminAccess;
 	}
@@ -139,6 +154,17 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 		this.officeSiteName = officeSiteName;
 		if(officeSiteName != null){
 			putQueryParameter("OfficeSiteName", officeSiteName);
+		}
+	}
+
+	public Boolean getCloudBoxOfficeSite() {
+		return this.cloudBoxOfficeSite;
+	}
+
+	public void setCloudBoxOfficeSite(Boolean cloudBoxOfficeSite) {
+		this.cloudBoxOfficeSite = cloudBoxOfficeSite;
+		if(cloudBoxOfficeSite != null){
+			putQueryParameter("CloudBoxOfficeSite", cloudBoxOfficeSite.toString());
 		}
 	}
 

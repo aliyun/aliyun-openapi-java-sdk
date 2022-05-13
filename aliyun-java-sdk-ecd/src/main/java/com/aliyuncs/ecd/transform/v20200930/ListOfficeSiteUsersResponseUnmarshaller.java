@@ -33,6 +33,7 @@ public class ListOfficeSiteUsersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListOfficeSiteUsersResponse.Users.Length"); i++) {
 			User user = new User();
 			user.setEndUser(_ctx.stringValue("ListOfficeSiteUsersResponse.Users["+ i +"].EndUser"));
+			user.setDisplayName(_ctx.stringValue("ListOfficeSiteUsersResponse.Users["+ i +"].DisplayName"));
 
 			users.add(user);
 		}

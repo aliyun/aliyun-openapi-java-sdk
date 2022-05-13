@@ -29,8 +29,6 @@ public class ModifyEntitlementRequest extends RpcAcsRequest<ModifyEntitlementRes
 	private List<String> endUserIds;
 
 	private String desktopId;
-
-	private String taskId;
 	public ModifyEntitlementRequest() {
 		super("ecd", "2020-09-30", "ModifyEntitlement");
 		setMethod(MethodType.POST);
@@ -61,17 +59,6 @@ public class ModifyEntitlementRequest extends RpcAcsRequest<ModifyEntitlementRes
 		this.desktopId = desktopId;
 		if(desktopId != null){
 			putQueryParameter("DesktopId", desktopId);
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
 		}
 	}
 

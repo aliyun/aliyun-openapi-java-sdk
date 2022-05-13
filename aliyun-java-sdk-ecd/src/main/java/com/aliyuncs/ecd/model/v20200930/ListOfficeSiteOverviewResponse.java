@@ -75,6 +75,8 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 
 		private String officeSiteName;
 
+		private String vpcType;
+
 		private Integer hasExpiredEdsCount;
 
 		private Integer hasExpiredEdsCountForGroup;
@@ -151,6 +153,14 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 
 		public void setOfficeSiteName(String officeSiteName) {
 			this.officeSiteName = officeSiteName;
+		}
+
+		public String getVpcType() {
+			return this.vpcType;
+		}
+
+		public void setVpcType(String vpcType) {
+			this.vpcType = vpcType;
 		}
 
 		public Integer getHasExpiredEdsCount() {

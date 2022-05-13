@@ -25,7 +25,15 @@ import com.aliyuncs.ecd.Endpoint;
 public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupResponse> {
 	   
 
+	private String classify;
+
+	private String imageId;
+
 	private String scaleStrategyId;
+
+	private Long bindAmount;
+
+	private Long loadPolicy;
 
 	private String desktopGroupName;
 
@@ -57,6 +65,28 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		} catch (Exception e) {}
 	}
 
+	public String getClassify() {
+		return this.classify;
+	}
+
+	public void setClassify(String classify) {
+		this.classify = classify;
+		if(classify != null){
+			putQueryParameter("Classify", classify);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
 	public String getScaleStrategyId() {
 		return this.scaleStrategyId;
 	}
@@ -65,6 +95,28 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		this.scaleStrategyId = scaleStrategyId;
 		if(scaleStrategyId != null){
 			putQueryParameter("ScaleStrategyId", scaleStrategyId);
+		}
+	}
+
+	public Long getBindAmount() {
+		return this.bindAmount;
+	}
+
+	public void setBindAmount(Long bindAmount) {
+		this.bindAmount = bindAmount;
+		if(bindAmount != null){
+			putQueryParameter("BindAmount", bindAmount.toString());
+		}
+	}
+
+	public Long getLoadPolicy() {
+		return this.loadPolicy;
+	}
+
+	public void setLoadPolicy(Long loadPolicy) {
+		this.loadPolicy = loadPolicy;
+		if(loadPolicy != null){
+			putQueryParameter("LoadPolicy", loadPolicy.toString());
 		}
 	}
 

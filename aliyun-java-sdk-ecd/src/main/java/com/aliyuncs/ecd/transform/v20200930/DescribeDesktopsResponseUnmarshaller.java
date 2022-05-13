@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.Disk;
+import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.FotaUpdate;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.Session;
 import com.aliyuncs.ecd.model.v20200930.DescribeDesktopsResponse.Desktop.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -59,20 +60,25 @@ public class DescribeDesktopsResponseUnmarshaller {
 			desktop.setDesktopGroupId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopGroupId"));
 			desktop.setDesktopId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopId"));
 			desktop.setOfficeSiteName(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].OfficeSiteName"));
-			desktop.setStartTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].StartTime"));
 			desktop.setDirectoryType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DirectoryType"));
+			desktop.setOfficeSiteVpcType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].OfficeSiteVpcType"));
+			desktop.setStartTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].StartTime"));
 			desktop.setCpu(_ctx.integerValue("DescribeDesktopsResponse.Desktops["+ i +"].Cpu"));
 			desktop.setNetworkInterfaceIp(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].NetworkInterfaceIp"));
 			desktop.setExpiredTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ExpiredTime"));
 			desktop.setOsType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].OsType"));
 			desktop.setConnectionStatus(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ConnectionStatus"));
 			desktop.setBundleId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].BundleId"));
+			desktop.setBundleName(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].BundleName"));
 			desktop.setOfficeSiteType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].OfficeSiteType"));
 			desktop.setHostName(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].HostName"));
 			desktop.setDowngradeQuota(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].DowngradeQuota"));
 			desktop.setDowngradedTimes(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].DowngradedTimes"));
 			desktop.setGpuCategory(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].GpuCategory"));
 			desktop.setGpuDriverVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].GpuDriverVersion"));
+			desktop.setZoneType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ZoneType"));
+			desktop.setProgress(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Progress"));
+			desktop.setPlatform(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Platform"));
 
 			List<String> endUserIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].EndUserIds.Length"); j++) {
@@ -80,12 +86,20 @@ public class DescribeDesktopsResponseUnmarshaller {
 			}
 			desktop.setEndUserIds(endUserIds);
 
+			FotaUpdate fotaUpdate = new FotaUpdate();
+			fotaUpdate.setCurrentAppVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.CurrentAppVersion"));
+			fotaUpdate.setNewAppVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.NewAppVersion"));
+			fotaUpdate.setReleaseNote(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.ReleaseNote"));
+			fotaUpdate.setSize(_ctx.longValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.Size"));
+			desktop.setFotaUpdate(fotaUpdate);
+
 			List<Disk> disks = new ArrayList<Disk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].Disks.Length"); j++) {
 				Disk disk = new Disk();
 				disk.setDiskType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Disks["+ j +"].DiskType"));
 				disk.setDiskId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Disks["+ j +"].DiskId"));
 				disk.setDiskSize(_ctx.integerValue("DescribeDesktopsResponse.Desktops["+ i +"].Disks["+ j +"].DiskSize"));
+				disk.setPerformanceLevel(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Disks["+ j +"].PerformanceLevel"));
 
 				disks.add(disk);
 			}
@@ -106,6 +120,7 @@ public class DescribeDesktopsResponseUnmarshaller {
 				Session session = new Session();
 				session.setEndUserId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Sessions["+ j +"].EndUserId"));
 				session.setEstablishmentTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Sessions["+ j +"].EstablishmentTime"));
+				session.setExternalUserName(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Sessions["+ j +"].ExternalUserName"));
 
 				sessions.add(session);
 			}

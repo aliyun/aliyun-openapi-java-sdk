@@ -34,8 +34,6 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 
 	private Boolean enableInternetAccess;
 
-	private String type;
-
 	private String subDomainName;
 
 	private String domainPassword;
@@ -48,6 +46,8 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 
 	private String desktopAccessType;
 
+	private String adHostname;
+
 	private String domainName;
 
 	private Long specification;
@@ -59,6 +59,8 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 	private String domainUserName;
 
 	private String cidrBlock;
+
+	private String protocolType;
 
 	private List<String> dnsAddresss;
 	public CreateADConnectorOfficeSiteRequest() {
@@ -113,17 +115,6 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 		this.enableInternetAccess = enableInternetAccess;
 		if(enableInternetAccess != null){
 			putQueryParameter("EnableInternetAccess", enableInternetAccess.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 
@@ -193,6 +184,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 		}
 	}
 
+	public String getAdHostname() {
+		return this.adHostname;
+	}
+
+	public void setAdHostname(String adHostname) {
+		this.adHostname = adHostname;
+		if(adHostname != null){
+			putQueryParameter("AdHostname", adHostname);
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -256,6 +258,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 		this.cidrBlock = cidrBlock;
 		if(cidrBlock != null){
 			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
 		}
 	}
 

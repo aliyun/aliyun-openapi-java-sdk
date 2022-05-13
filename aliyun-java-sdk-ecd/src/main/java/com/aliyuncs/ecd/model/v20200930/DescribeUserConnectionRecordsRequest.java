@@ -25,15 +25,29 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeUserConnectionRecordsRequest extends RpcAcsRequest<DescribeUserConnectionRecordsResponse> {
 	   
 
+	private Long connectEndTimeFrom;
+
+	private Long connectDurationFrom;
+
+	private Long connectDurationTo;
+
 	private String endUserType;
 
 	private String desktopGroupId;
 
 	private String nextToken;
 
-	private Integer maxResults;
+	private Long connectStartTimeFrom;
 
 	private String endUserId;
+
+	private String desktopId;
+
+	private Long connectEndTimeTo;
+
+	private Long connectStartTimeTo;
+
+	private Integer maxResults;
 	public DescribeUserConnectionRecordsRequest() {
 		super("ecd", "2020-09-30", "DescribeUserConnectionRecords");
 		setMethod(MethodType.POST);
@@ -41,6 +55,39 @@ public class DescribeUserConnectionRecordsRequest extends RpcAcsRequest<Describe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getConnectEndTimeFrom() {
+		return this.connectEndTimeFrom;
+	}
+
+	public void setConnectEndTimeFrom(Long connectEndTimeFrom) {
+		this.connectEndTimeFrom = connectEndTimeFrom;
+		if(connectEndTimeFrom != null){
+			putQueryParameter("ConnectEndTimeFrom", connectEndTimeFrom.toString());
+		}
+	}
+
+	public Long getConnectDurationFrom() {
+		return this.connectDurationFrom;
+	}
+
+	public void setConnectDurationFrom(Long connectDurationFrom) {
+		this.connectDurationFrom = connectDurationFrom;
+		if(connectDurationFrom != null){
+			putQueryParameter("ConnectDurationFrom", connectDurationFrom.toString());
+		}
+	}
+
+	public Long getConnectDurationTo() {
+		return this.connectDurationTo;
+	}
+
+	public void setConnectDurationTo(Long connectDurationTo) {
+		this.connectDurationTo = connectDurationTo;
+		if(connectDurationTo != null){
+			putQueryParameter("ConnectDurationTo", connectDurationTo.toString());
+		}
 	}
 
 	public String getEndUserType() {
@@ -76,14 +123,14 @@ public class DescribeUserConnectionRecordsRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public Long getConnectStartTimeFrom() {
+		return this.connectStartTimeFrom;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setConnectStartTimeFrom(Long connectStartTimeFrom) {
+		this.connectStartTimeFrom = connectStartTimeFrom;
+		if(connectStartTimeFrom != null){
+			putQueryParameter("ConnectStartTimeFrom", connectStartTimeFrom.toString());
 		}
 	}
 
@@ -95,6 +142,50 @@ public class DescribeUserConnectionRecordsRequest extends RpcAcsRequest<Describe
 		this.endUserId = endUserId;
 		if(endUserId != null){
 			putQueryParameter("EndUserId", endUserId);
+		}
+	}
+
+	public String getDesktopId() {
+		return this.desktopId;
+	}
+
+	public void setDesktopId(String desktopId) {
+		this.desktopId = desktopId;
+		if(desktopId != null){
+			putQueryParameter("DesktopId", desktopId);
+		}
+	}
+
+	public Long getConnectEndTimeTo() {
+		return this.connectEndTimeTo;
+	}
+
+	public void setConnectEndTimeTo(Long connectEndTimeTo) {
+		this.connectEndTimeTo = connectEndTimeTo;
+		if(connectEndTimeTo != null){
+			putQueryParameter("ConnectEndTimeTo", connectEndTimeTo.toString());
+		}
+	}
+
+	public Long getConnectStartTimeTo() {
+		return this.connectStartTimeTo;
+	}
+
+	public void setConnectStartTimeTo(Long connectStartTimeTo) {
+		this.connectStartTimeTo = connectStartTimeTo;
+		if(connectStartTimeTo != null){
+			putQueryParameter("ConnectStartTimeTo", connectStartTimeTo.toString());
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

@@ -33,6 +33,7 @@ public class ListDirectoryUsersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListDirectoryUsersResponse.Users.Length"); i++) {
 			User user = new User();
 			user.setEndUser(_ctx.stringValue("ListDirectoryUsersResponse.Users["+ i +"].EndUser"));
+			user.setDisplayName(_ctx.stringValue("ListDirectoryUsersResponse.Users["+ i +"].DisplayName"));
 
 			users.add(user);
 		}

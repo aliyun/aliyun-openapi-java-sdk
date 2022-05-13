@@ -97,6 +97,10 @@ public class DescribeClientEventsResponse extends AcsResponse {
 
 		private String desktopName;
 
+		private String desktopGroupId;
+
+		private String desktopGroupName;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -255,6 +259,22 @@ public class DescribeClientEventsResponse extends AcsResponse {
 
 		public void setDesktopName(String desktopName) {
 			this.desktopName = desktopName;
+		}
+
+		public String getDesktopGroupId() {
+			return this.desktopGroupId;
+		}
+
+		public void setDesktopGroupId(String desktopGroupId) {
+			this.desktopGroupId = desktopGroupId;
+		}
+
+		public String getDesktopGroupName() {
+			return this.desktopGroupName;
+		}
+
+		public void setDesktopGroupName(String desktopGroupName) {
+			this.desktopGroupName = desktopGroupName;
 		}
 	}
 

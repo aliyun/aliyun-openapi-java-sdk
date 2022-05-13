@@ -89,6 +89,8 @@ public class DescribeNASFileSystemsResponse extends AcsResponse {
 
 		private String fileSystemStatus;
 
+		private Boolean encryptionEnabled;
+
 		public Long getCapacity() {
 			return this.capacity;
 		}
@@ -215,6 +217,14 @@ public class DescribeNASFileSystemsResponse extends AcsResponse {
 
 		public void setFileSystemStatus(String fileSystemStatus) {
 			this.fileSystemStatus = fileSystemStatus;
+		}
+
+		public Boolean getEncryptionEnabled() {
+			return this.encryptionEnabled;
+		}
+
+		public void setEncryptionEnabled(Boolean encryptionEnabled) {
+			this.encryptionEnabled = encryptionEnabled;
 		}
 	}
 

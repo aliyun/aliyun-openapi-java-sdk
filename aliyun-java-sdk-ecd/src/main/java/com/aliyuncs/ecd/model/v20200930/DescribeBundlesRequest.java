@@ -47,6 +47,8 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 	private String protocolType;
 
 	private Integer cpuCount;
+
+	private Boolean supportMultiSession;
 	public DescribeBundlesRequest() {
 		super("ecd", "2020-09-30", "DescribeBundles");
 		setMethod(MethodType.POST);
@@ -176,6 +178,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.cpuCount = cpuCount;
 		if(cpuCount != null){
 			putQueryParameter("CpuCount", cpuCount.toString());
+		}
+	}
+
+	public Boolean getSupportMultiSession() {
+		return this.supportMultiSession;
+	}
+
+	public void setSupportMultiSession(Boolean supportMultiSession) {
+		this.supportMultiSession = supportMultiSession;
+		if(supportMultiSession != null){
+			putQueryParameter("SupportMultiSession", supportMultiSession.toString());
 		}
 	}
 

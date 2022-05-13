@@ -37,6 +37,7 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 			officeSite.setStatus(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Status"));
 			officeSite.setCreationTime(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CreationTime"));
 			officeSite.setVpcId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].VpcId"));
+			officeSite.setVpcType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].VpcType"));
 			officeSite.setEnableAdminAccess(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].EnableAdminAccess"));
 			officeSite.setEnableCrossDesktopAccess(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].EnableCrossDesktopAccess"));
 			officeSite.setDesktopVpcEndpoint(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DesktopVpcEndpoint"));
@@ -61,6 +62,11 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 			officeSite.setOfficeSiteType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OfficeSiteType"));
 			officeSite.setNeedVerifyLoginRisk(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NeedVerifyLoginRisk"));
 			officeSite.setDesktopCount(_ctx.longValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DesktopCount"));
+			officeSite.setNeedVerifyZeroDevice(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NeedVerifyZeroDevice"));
+			officeSite.setCloudBoxOfficeSite(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CloudBoxOfficeSite"));
+			officeSite.setSsoType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SsoType"));
+			officeSite.setProtocolType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ProtocolType"));
+			officeSite.setAdHostname(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].AdHostname"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].VSwitchIds.Length"); j++) {
@@ -94,6 +100,7 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 				aDConnector.setADConnectorAddress(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].ADConnectorAddress"));
 				aDConnector.setTrustKey(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].TrustKey"));
 				aDConnector.setNetworkInterfaceId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].NetworkInterfaceId"));
+				aDConnector.setSpecification(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].Specification"));
 
 				aDConnectors.add(aDConnector);
 			}

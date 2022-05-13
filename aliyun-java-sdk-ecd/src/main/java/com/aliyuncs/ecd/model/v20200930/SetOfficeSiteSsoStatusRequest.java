@@ -27,6 +27,8 @@ public class SetOfficeSiteSsoStatusRequest extends RpcAcsRequest<SetOfficeSiteSs
 
 	private String officeSiteId;
 
+	private String ssoType;
+
 	private Boolean enableSso;
 	public SetOfficeSiteSsoStatusRequest() {
 		super("ecd", "2020-09-30", "SetOfficeSiteSsoStatus");
@@ -45,6 +47,17 @@ public class SetOfficeSiteSsoStatusRequest extends RpcAcsRequest<SetOfficeSiteSs
 		this.officeSiteId = officeSiteId;
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public String getSsoType() {
+		return this.ssoType;
+	}
+
+	public void setSsoType(String ssoType) {
+		this.ssoType = ssoType;
+		if(ssoType != null){
+			putQueryParameter("SsoType", ssoType);
 		}
 	}
 

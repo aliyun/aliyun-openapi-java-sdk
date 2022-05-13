@@ -31,6 +31,8 @@ public class DescribeUsersInGroupRequest extends RpcAcsRequest<DescribeUsersInGr
 
 	private String nextToken;
 
+	private Boolean queryUserDetail;
+
 	private Integer maxResults;
 
 	private String endUserId;
@@ -73,6 +75,17 @@ public class DescribeUsersInGroupRequest extends RpcAcsRequest<DescribeUsersInGr
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Boolean getQueryUserDetail() {
+		return this.queryUserDetail;
+	}
+
+	public void setQueryUserDetail(Boolean queryUserDetail) {
+		this.queryUserDetail = queryUserDetail;
+		if(queryUserDetail != null){
+			putQueryParameter("QueryUserDetail", queryUserDetail.toString());
 		}
 	}
 

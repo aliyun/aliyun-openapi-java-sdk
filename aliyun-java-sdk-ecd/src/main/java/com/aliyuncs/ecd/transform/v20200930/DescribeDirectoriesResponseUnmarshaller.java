@@ -30,6 +30,7 @@ public class DescribeDirectoriesResponseUnmarshaller {
 		
 		describeDirectoriesResponse.setRequestId(_ctx.stringValue("DescribeDirectoriesResponse.RequestId"));
 		describeDirectoriesResponse.setNextToken(_ctx.stringValue("DescribeDirectoriesResponse.NextToken"));
+		describeDirectoriesResponse.setAdHostname(_ctx.stringValue("DescribeDirectoriesResponse.AdHostname"));
 
 		List<Directory> directories = new ArrayList<Directory>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDirectoriesResponse.Directories.Length"); i++) {
@@ -89,6 +90,7 @@ public class DescribeDirectoriesResponseUnmarshaller {
 				aDConnector.setADConnectorAddress(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].ADConnectorAddress"));
 				aDConnector.setTrustKey(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].TrustKey"));
 				aDConnector.setNetworkInterfaceId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].NetworkInterfaceId"));
+				aDConnector.setSpecification(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].Specification"));
 
 				aDConnectors.add(aDConnector);
 			}

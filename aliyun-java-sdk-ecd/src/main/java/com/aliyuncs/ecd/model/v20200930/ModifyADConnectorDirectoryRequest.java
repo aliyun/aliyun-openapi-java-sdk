@@ -34,6 +34,8 @@ public class ModifyADConnectorDirectoryRequest extends RpcAcsRequest<ModifyADCon
 
 	private String directoryId;
 
+	private String adHostname;
+
 	private String domainName;
 
 	private String directoryName;
@@ -43,6 +45,8 @@ public class ModifyADConnectorDirectoryRequest extends RpcAcsRequest<ModifyADCon
 	private String domainUserName;
 
 	private List<String> dnsAddresss;
+
+	private String oUName;
 	public ModifyADConnectorDirectoryRequest() {
 		super("ecd", "2020-09-30", "ModifyADConnectorDirectory");
 		setMethod(MethodType.POST);
@@ -95,6 +99,17 @@ public class ModifyADConnectorDirectoryRequest extends RpcAcsRequest<ModifyADCon
 		this.directoryId = directoryId;
 		if(directoryId != null){
 			putQueryParameter("DirectoryId", directoryId);
+		}
+	}
+
+	public String getAdHostname() {
+		return this.adHostname;
+	}
+
+	public void setAdHostname(String adHostname) {
+		this.adHostname = adHostname;
+		if(adHostname != null){
+			putQueryParameter("AdHostname", adHostname);
 		}
 	}
 
@@ -153,6 +168,17 @@ public class ModifyADConnectorDirectoryRequest extends RpcAcsRequest<ModifyADCon
 				putQueryParameter("DnsAddress." + (i + 1) , dnsAddresss.get(i));
 			}
 		}	
+	}
+
+	public String getOUName() {
+		return this.oUName;
+	}
+
+	public void setOUName(String oUName) {
+		this.oUName = oUName;
+		if(oUName != null){
+			putQueryParameter("OUName", oUName);
+		}
 	}
 
 	@Override

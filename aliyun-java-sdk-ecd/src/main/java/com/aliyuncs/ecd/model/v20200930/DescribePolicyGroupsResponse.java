@@ -95,6 +95,16 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String gpuAcceleration;
 
+		private String recording;
+
+		private String recordingStartTime;
+
+		private String recordingEndTime;
+
+		private Long recordingFps;
+
+		private String cameraRedirect;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -255,6 +265,46 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setGpuAcceleration(String gpuAcceleration) {
 			this.gpuAcceleration = gpuAcceleration;
+		}
+
+		public String getRecording() {
+			return this.recording;
+		}
+
+		public void setRecording(String recording) {
+			this.recording = recording;
+		}
+
+		public String getRecordingStartTime() {
+			return this.recordingStartTime;
+		}
+
+		public void setRecordingStartTime(String recordingStartTime) {
+			this.recordingStartTime = recordingStartTime;
+		}
+
+		public String getRecordingEndTime() {
+			return this.recordingEndTime;
+		}
+
+		public void setRecordingEndTime(String recordingEndTime) {
+			this.recordingEndTime = recordingEndTime;
+		}
+
+		public Long getRecordingFps() {
+			return this.recordingFps;
+		}
+
+		public void setRecordingFps(Long recordingFps) {
+			this.recordingFps = recordingFps;
+		}
+
+		public String getCameraRedirect() {
+			return this.cameraRedirect;
+		}
+
+		public void setCameraRedirect(String cameraRedirect) {
+			this.cameraRedirect = cameraRedirect;
 		}
 
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {

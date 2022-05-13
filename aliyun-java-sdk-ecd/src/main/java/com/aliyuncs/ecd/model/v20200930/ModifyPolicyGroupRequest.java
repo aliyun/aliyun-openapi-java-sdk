@@ -46,15 +46,23 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
+	private String recording;
+
 	private String clipboard;
+
+	private Long recordingFps;
 
 	private String usbRedirect;
 
 	private String watermarkType;
 
+	private String recordingStartTime;
+
 	private List<RevokeAccessPolicyRule> revokeAccessPolicyRules;
 
 	private String watermark;
+
+	private String cameraRedirect;
 
 	private String html5Access;
 
@@ -69,6 +77,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 	private String watermarkTransparency;
 
 	private String name;
+
+	private String recordingEndTime;
 
 	private String policyGroupId;
 	public ModifyPolicyGroupRequest() {
@@ -219,6 +229,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}	
 	}
 
+	public String getRecording() {
+		return this.recording;
+	}
+
+	public void setRecording(String recording) {
+		this.recording = recording;
+		if(recording != null){
+			putQueryParameter("Recording", recording);
+		}
+	}
+
 	public String getClipboard() {
 		return this.clipboard;
 	}
@@ -227,6 +248,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.clipboard = clipboard;
 		if(clipboard != null){
 			putQueryParameter("Clipboard", clipboard);
+		}
+	}
+
+	public Long getRecordingFps() {
+		return this.recordingFps;
+	}
+
+	public void setRecordingFps(Long recordingFps) {
+		this.recordingFps = recordingFps;
+		if(recordingFps != null){
+			putQueryParameter("RecordingFps", recordingFps.toString());
 		}
 	}
 
@@ -252,6 +284,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public String getRecordingStartTime() {
+		return this.recordingStartTime;
+	}
+
+	public void setRecordingStartTime(String recordingStartTime) {
+		this.recordingStartTime = recordingStartTime;
+		if(recordingStartTime != null){
+			putQueryParameter("RecordingStartTime", recordingStartTime);
+		}
+	}
+
 	public List<RevokeAccessPolicyRule> getRevokeAccessPolicyRules() {
 		return this.revokeAccessPolicyRules;
 	}
@@ -274,6 +317,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.watermark = watermark;
 		if(watermark != null){
 			putQueryParameter("Watermark", watermark);
+		}
+	}
+
+	public String getCameraRedirect() {
+		return this.cameraRedirect;
+	}
+
+	public void setCameraRedirect(String cameraRedirect) {
+		this.cameraRedirect = cameraRedirect;
+		if(cameraRedirect != null){
+			putQueryParameter("CameraRedirect", cameraRedirect);
 		}
 	}
 
@@ -354,6 +408,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getRecordingEndTime() {
+		return this.recordingEndTime;
+	}
+
+	public void setRecordingEndTime(String recordingEndTime) {
+		this.recordingEndTime = recordingEndTime;
+		if(recordingEndTime != null){
+			putQueryParameter("RecordingEndTime", recordingEndTime);
 		}
 	}
 

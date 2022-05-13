@@ -32,6 +32,8 @@ public class ModifyOfficeSiteAttributeRequest extends RpcAcsRequest<ModifyOffice
 	private String officeSiteName;
 
 	private Boolean needVerifyLoginRisk;
+
+	private Boolean needVerifyZeroDevice;
 	public ModifyOfficeSiteAttributeRequest() {
 		super("ecd", "2020-09-30", "ModifyOfficeSiteAttribute");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class ModifyOfficeSiteAttributeRequest extends RpcAcsRequest<ModifyOffice
 		this.needVerifyLoginRisk = needVerifyLoginRisk;
 		if(needVerifyLoginRisk != null){
 			putQueryParameter("NeedVerifyLoginRisk", needVerifyLoginRisk.toString());
+		}
+	}
+
+	public Boolean getNeedVerifyZeroDevice() {
+		return this.needVerifyZeroDevice;
+	}
+
+	public void setNeedVerifyZeroDevice(Boolean needVerifyZeroDevice) {
+		this.needVerifyZeroDevice = needVerifyZeroDevice;
+		if(needVerifyZeroDevice != null){
+			putQueryParameter("NeedVerifyZeroDevice", needVerifyZeroDevice.toString());
 		}
 	}
 

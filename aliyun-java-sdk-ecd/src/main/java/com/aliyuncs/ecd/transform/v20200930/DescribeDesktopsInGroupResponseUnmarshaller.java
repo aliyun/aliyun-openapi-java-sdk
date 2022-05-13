@@ -32,6 +32,9 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 		describeDesktopsInGroupResponse.setNextToken(_ctx.stringValue("DescribeDesktopsInGroupResponse.NextToken"));
 		describeDesktopsInGroupResponse.setPaidDesktopsCount(_ctx.integerValue("DescribeDesktopsInGroupResponse.PaidDesktopsCount"));
 		describeDesktopsInGroupResponse.setPostPaidDesktopsTotalAmount(_ctx.integerValue("DescribeDesktopsInGroupResponse.PostPaidDesktopsTotalAmount"));
+		describeDesktopsInGroupResponse.setOnlinePrePaidDesktopsCount(_ctx.integerValue("DescribeDesktopsInGroupResponse.OnlinePrePaidDesktopsCount"));
+		describeDesktopsInGroupResponse.setRunningPrePaidDesktopsCount(_ctx.integerValue("DescribeDesktopsInGroupResponse.RunningPrePaidDesktopsCount"));
+		describeDesktopsInGroupResponse.setStopedPrePaidDesktopsCount(_ctx.integerValue("DescribeDesktopsInGroupResponse.StopedPrePaidDesktopsCount"));
 
 		List<PaidDesktop> paidDesktops = new ArrayList<PaidDesktop>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PaidDesktops.Length"); i++) {
@@ -43,6 +46,25 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 			paidDesktop.setDesktopId(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].DesktopId"));
 			paidDesktop.setEndUserName(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].EndUserName"));
 			paidDesktop.setManagementFlag(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].ManagementFlag"));
+			paidDesktop.setResetTime(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].ResetTime"));
+			paidDesktop.setImageId(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].ImageId"));
+			paidDesktop.setImageName(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].ImageName"));
+			paidDesktop.setSystemDiskSize(_ctx.integerValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].SystemDiskSize"));
+			paidDesktop.setOsType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].OsType"));
+			paidDesktop.setGpuDriverVersion(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].GpuDriverVersion"));
+			paidDesktop.setDiskType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].DiskType"));
+
+			List<String> endUserIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].EndUserIds.Length"); j++) {
+				endUserIds.add(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].EndUserIds["+ j +"]"));
+			}
+			paidDesktop.setEndUserIds(endUserIds);
+
+			List<String> endUserNames = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].EndUserNames.Length"); j++) {
+				endUserNames.add(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].EndUserNames["+ j +"]"));
+			}
+			paidDesktop.setEndUserNames(endUserNames);
 
 			paidDesktops.add(paidDesktop);
 		}
@@ -61,6 +83,25 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 			postPaidDesktop.setDesktopId(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].DesktopId"));
 			postPaidDesktop.setEndUserName(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].EndUserName"));
 			postPaidDesktop.setManagementFlag(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].ManagementFlag"));
+			postPaidDesktop.setResetTime(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].ResetTime"));
+			postPaidDesktop.setImageId(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].ImageId"));
+			postPaidDesktop.setImageName(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].ImageName"));
+			postPaidDesktop.setSystemDiskSize(_ctx.integerValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].SystemDiskSize"));
+			postPaidDesktop.setOsType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].OsType"));
+			postPaidDesktop.setGpuDriverVersion(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].GpuDriverVersion"));
+			postPaidDesktop.setDiskType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].DiskType"));
+
+			List<String> endUserIds1 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].EndUserIds.Length"); j++) {
+				endUserIds1.add(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].EndUserIds["+ j +"]"));
+			}
+			postPaidDesktop.setEndUserIds1(endUserIds1);
+
+			List<String> endUserNames2 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].EndUserNames.Length"); j++) {
+				endUserNames2.add(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].EndUserNames["+ j +"]"));
+			}
+			postPaidDesktop.setEndUserNames2(endUserNames2);
 
 			postPaidDesktops.add(postPaidDesktop);
 		}
