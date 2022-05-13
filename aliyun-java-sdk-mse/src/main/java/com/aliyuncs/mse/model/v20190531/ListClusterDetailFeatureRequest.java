@@ -22,45 +22,21 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailResponse> {
+public class ListClusterDetailFeatureRequest extends RpcAcsRequest<ListClusterDetailFeatureResponse> {
 	   
-
-	private Boolean aclSwitch;
-
-	private String orderId;
 
 	private String instanceId;
 
+	private String requestPars;
+
 	private String acceptLanguage;
-	public QueryClusterDetailRequest() {
-		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
+	public ListClusterDetailFeatureRequest() {
+		super("mse", "2019-05-31", "ListClusterDetailFeature", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getAclSwitch() {
-		return this.aclSwitch;
-	}
-
-	public void setAclSwitch(Boolean aclSwitch) {
-		this.aclSwitch = aclSwitch;
-		if(aclSwitch != null){
-			putQueryParameter("AclSwitch", aclSwitch.toString());
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -71,6 +47,17 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
@@ -86,8 +73,8 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 	}
 
 	@Override
-	public Class<QueryClusterDetailResponse> getResponseClass() {
-		return QueryClusterDetailResponse.class;
+	public Class<ListClusterDetailFeatureResponse> getResponseClass() {
+		return ListClusterDetailFeatureResponse.class;
 	}
 
 }

@@ -78,6 +78,7 @@ public class QueryClusterDetailResponseUnmarshaller {
 			instanceModel.setRole(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].Role"));
 			instanceModel.setHealthStatus(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].HealthStatus"));
 			instanceModel.setCreationTimestamp(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].CreationTimestamp"));
+			instanceModel.setZone(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].Zone"));
 
 			instanceModels.add(instanceModel);
 		}

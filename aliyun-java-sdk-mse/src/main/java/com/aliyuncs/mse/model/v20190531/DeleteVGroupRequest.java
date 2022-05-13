@@ -22,18 +22,14 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailResponse> {
+public class DeleteVGroupRequest extends RpcAcsRequest<DeleteVGroupResponse> {
 	   
 
-	private Boolean aclSwitch;
-
-	private String orderId;
-
-	private String instanceId;
+	private String name;
 
 	private String acceptLanguage;
-	public QueryClusterDetailRequest() {
-		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
+	public DeleteVGroupRequest() {
+		super("mse", "2019-05-31", "DeleteVGroup", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +37,14 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAclSwitch() {
-		return this.aclSwitch;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setAclSwitch(Boolean aclSwitch) {
-		this.aclSwitch = aclSwitch;
-		if(aclSwitch != null){
-			putQueryParameter("AclSwitch", aclSwitch.toString());
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 	}
 
 	@Override
-	public Class<QueryClusterDetailResponse> getResponseClass() {
-		return QueryClusterDetailResponse.class;
+	public Class<DeleteVGroupResponse> getResponseClass() {
+		return DeleteVGroupResponse.class;
 	}
 
 }

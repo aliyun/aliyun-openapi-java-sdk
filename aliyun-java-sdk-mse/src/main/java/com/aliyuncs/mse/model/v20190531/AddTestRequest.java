@@ -22,18 +22,20 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailResponse> {
+public class AddTestRequest extends RpcAcsRequest<AddTestResponse> {
 	   
 
-	private Boolean aclSwitch;
+	private Integer pageNumber;
 
-	private String orderId;
+	private String orderItem;
 
-	private String instanceId;
+	private Integer pageSize;
 
 	private String acceptLanguage;
-	public QueryClusterDetailRequest() {
-		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
+
+	private Boolean descSort;
+	public AddTestRequest() {
+		super("mse", "2019-05-31", "AddTest", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +43,36 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAclSwitch() {
-		return this.aclSwitch;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setAclSwitch(Boolean aclSwitch) {
-		this.aclSwitch = aclSwitch;
-		if(aclSwitch != null){
-			putQueryParameter("AclSwitch", aclSwitch.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getOrderItem() {
+		return this.orderItem;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setOrderItem(String orderItem) {
+		this.orderItem = orderItem;
+		if(orderItem != null){
+			putQueryParameter("OrderItem", orderItem);
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -85,9 +87,20 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		}
 	}
 
+	public Boolean getDescSort() {
+		return this.descSort;
+	}
+
+	public void setDescSort(Boolean descSort) {
+		this.descSort = descSort;
+		if(descSort != null){
+			putQueryParameter("DescSort", descSort.toString());
+		}
+	}
+
 	@Override
-	public Class<QueryClusterDetailResponse> getResponseClass() {
-		return QueryClusterDetailResponse.class;
+	public Class<AddTestResponse> getResponseClass() {
+		return AddTestResponse.class;
 	}
 
 }

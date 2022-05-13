@@ -121,6 +121,8 @@ public class ListListenersByConfigResponse extends AcsResponse {
 
 		private String md5;
 
+		private String status;
+
 		public String getIp() {
 			return this.ip;
 		}
@@ -135,6 +137,14 @@ public class ListListenersByConfigResponse extends AcsResponse {
 
 		public void setMd5(String md5) {
 			this.md5 = md5;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

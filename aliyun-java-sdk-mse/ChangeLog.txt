@@ -1,3 +1,6 @@
+2022-05-13 Version: 3.0.19
+- Add ListDashboardUrl api.
+
 2022-04-30 Version: 3.0.18
 - Add GrtApplicationList.
 

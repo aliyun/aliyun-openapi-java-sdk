@@ -443,6 +443,8 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 			private String creationTimestamp;
 
+			private String zone;
+
 			public String getPodName() {
 				return this.podName;
 			}
@@ -497,6 +499,14 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 			public void setCreationTimestamp(String creationTimestamp) {
 				this.creationTimestamp = creationTimestamp;
+			}
+
+			public String getZone() {
+				return this.zone;
+			}
+
+			public void setZone(String zone) {
+				this.zone = zone;
 			}
 		}
 	}

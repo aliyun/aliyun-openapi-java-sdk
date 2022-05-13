@@ -55,6 +55,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterForListModel.setVersionCode(_ctx.stringValue("ListClustersResponse.Data["+ i +"].VersionCode"));
 			clusterForListModel.setInstanceCount(_ctx.longValue("ListClustersResponse.Data["+ i +"].InstanceCount"));
 			clusterForListModel.setClusterName(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterName"));
+			clusterForListModel.setMseVersion(_ctx.stringValue("ListClustersResponse.Data["+ i +"].MseVersion"));
 
 			data.add(clusterForListModel);
 		}

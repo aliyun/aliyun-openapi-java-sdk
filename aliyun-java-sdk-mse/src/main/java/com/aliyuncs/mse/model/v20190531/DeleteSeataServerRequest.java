@@ -22,56 +22,19 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailResponse> {
+public class DeleteSeataServerRequest extends RpcAcsRequest<DeleteSeataServerResponse> {
 	   
 
-	private Boolean aclSwitch;
-
-	private String orderId;
-
-	private String instanceId;
-
 	private String acceptLanguage;
-	public QueryClusterDetailRequest() {
-		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
+
+	private String seataServerUniqueId;
+	public DeleteSeataServerRequest() {
+		super("mse", "2019-05-31", "DeleteSeataServer", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getAclSwitch() {
-		return this.aclSwitch;
-	}
-
-	public void setAclSwitch(Boolean aclSwitch) {
-		this.aclSwitch = aclSwitch;
-		if(aclSwitch != null){
-			putQueryParameter("AclSwitch", aclSwitch.toString());
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getAcceptLanguage() {
@@ -85,9 +48,20 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		}
 	}
 
+	public String getSeataServerUniqueId() {
+		return this.seataServerUniqueId;
+	}
+
+	public void setSeataServerUniqueId(String seataServerUniqueId) {
+		this.seataServerUniqueId = seataServerUniqueId;
+		if(seataServerUniqueId != null){
+			putQueryParameter("SeataServerUniqueId", seataServerUniqueId);
+		}
+	}
+
 	@Override
-	public Class<QueryClusterDetailResponse> getResponseClass() {
-		return QueryClusterDetailResponse.class;
+	public Class<DeleteSeataServerResponse> getResponseClass() {
+		return DeleteSeataServerResponse.class;
 	}
 
 }

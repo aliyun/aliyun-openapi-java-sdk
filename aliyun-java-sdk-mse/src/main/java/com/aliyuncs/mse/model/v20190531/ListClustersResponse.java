@@ -151,6 +151,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String clusterName;
 
+		private String mseVersion;
+
 		public String getEndDate() {
 			return this.endDate;
 		}
@@ -285,6 +287,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setClusterName(String clusterName) {
 			this.clusterName = clusterName;
+		}
+
+		public String getMseVersion() {
+			return this.mseVersion;
+		}
+
+		public void setMseVersion(String mseVersion) {
+			this.mseVersion = mseVersion;
 		}
 	}
 

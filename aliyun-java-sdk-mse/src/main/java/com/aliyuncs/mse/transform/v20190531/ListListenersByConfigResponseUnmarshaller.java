@@ -40,6 +40,7 @@ public class ListListenersByConfigResponseUnmarshaller {
 			Listener listener = new Listener();
 			listener.setIp(_ctx.stringValue("ListListenersByConfigResponse.Listeners["+ i +"].Ip"));
 			listener.setMd5(_ctx.stringValue("ListListenersByConfigResponse.Listeners["+ i +"].Md5"));
+			listener.setStatus(_ctx.stringValue("ListListenersByConfigResponse.Listeners["+ i +"].Status"));
 
 			listeners.add(listener);
 		}

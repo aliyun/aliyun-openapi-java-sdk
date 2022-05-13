@@ -22,55 +22,31 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailResponse> {
+public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	   
 
-	private Boolean aclSwitch;
-
-	private String orderId;
-
-	private String instanceId;
+	private String userId;
 
 	private String acceptLanguage;
-	public QueryClusterDetailRequest() {
-		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
-		setMethod(MethodType.POST);
+
+	private String region;
+	public ListInstancesRequest() {
+		super("mse", "2019-05-31", "ListInstances", "mse");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAclSwitch() {
-		return this.aclSwitch;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setAclSwitch(Boolean aclSwitch) {
-		this.aclSwitch = aclSwitch;
-		if(aclSwitch != null){
-			putQueryParameter("AclSwitch", aclSwitch.toString());
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -85,9 +61,20 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<QueryClusterDetailResponse> getResponseClass() {
-		return QueryClusterDetailResponse.class;
+	public Class<ListInstancesResponse> getResponseClass() {
+		return ListInstancesResponse.class;
 	}
 
 }

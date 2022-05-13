@@ -22,18 +22,20 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailResponse> {
+public class CreateVGroupRequest extends RpcAcsRequest<CreateVGroupResponse> {
 	   
 
-	private Boolean aclSwitch;
+	private String primaryUser;
 
-	private String orderId;
-
-	private String instanceId;
+	private String name;
 
 	private String acceptLanguage;
-	public QueryClusterDetailRequest() {
-		super("mse", "2019-05-31", "QueryClusterDetail", "mse");
+
+	private String seataServerUniqueId;
+
+	private String region;
+	public CreateVGroupRequest() {
+		super("mse", "2019-05-31", "CreateVGroup", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +43,25 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAclSwitch() {
-		return this.aclSwitch;
+	public String getPrimaryUser() {
+		return this.primaryUser;
 	}
 
-	public void setAclSwitch(Boolean aclSwitch) {
-		this.aclSwitch = aclSwitch;
-		if(aclSwitch != null){
-			putQueryParameter("AclSwitch", aclSwitch.toString());
+	public void setPrimaryUser(String primaryUser) {
+		this.primaryUser = primaryUser;
+		if(primaryUser != null){
+			putQueryParameter("PrimaryUser", primaryUser);
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
@@ -85,9 +76,31 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		}
 	}
 
+	public String getSeataServerUniqueId() {
+		return this.seataServerUniqueId;
+	}
+
+	public void setSeataServerUniqueId(String seataServerUniqueId) {
+		this.seataServerUniqueId = seataServerUniqueId;
+		if(seataServerUniqueId != null){
+			putQueryParameter("SeataServerUniqueId", seataServerUniqueId);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<QueryClusterDetailResponse> getResponseClass() {
-		return QueryClusterDetailResponse.class;
+	public Class<CreateVGroupResponse> getResponseClass() {
+		return CreateVGroupResponse.class;
 	}
 
 }
