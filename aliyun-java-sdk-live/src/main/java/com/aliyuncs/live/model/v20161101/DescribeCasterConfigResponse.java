@@ -27,25 +27,27 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	private Float delay;
 
-	private String callbackUrl;
-
 	private String urgentMaterialId;
+
+	private String callbackUrl;
 
 	private String programName;
 
-	private String requestId;
-
-	private String sideOutputUrl;
-
 	private String casterName;
-
-	private Integer programEffect;
 
 	private String casterId;
 
-	private Integer channelEnable;
+	private Integer programEffect;
 
 	private String domainName;
+
+	private Integer channelEnable;
+
+	private String requestId;
+
+	private String sideOutputUrlList;
+
+	private String sideOutputUrl;
 
 	private List<SyncGroup> syncGroupsConfig;
 
@@ -61,20 +63,20 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.delay = delay;
 	}
 
-	public String getCallbackUrl() {
-		return this.callbackUrl;
-	}
-
-	public void setCallbackUrl(String callbackUrl) {
-		this.callbackUrl = callbackUrl;
-	}
-
 	public String getUrgentMaterialId() {
 		return this.urgentMaterialId;
 	}
 
 	public void setUrgentMaterialId(String urgentMaterialId) {
 		this.urgentMaterialId = urgentMaterialId;
+	}
+
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
 	}
 
 	public String getProgramName() {
@@ -85,36 +87,12 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.programName = programName;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSideOutputUrl() {
-		return this.sideOutputUrl;
-	}
-
-	public void setSideOutputUrl(String sideOutputUrl) {
-		this.sideOutputUrl = sideOutputUrl;
-	}
-
 	public String getCasterName() {
 		return this.casterName;
 	}
 
 	public void setCasterName(String casterName) {
 		this.casterName = casterName;
-	}
-
-	public Integer getProgramEffect() {
-		return this.programEffect;
-	}
-
-	public void setProgramEffect(Integer programEffect) {
-		this.programEffect = programEffect;
 	}
 
 	public String getCasterId() {
@@ -125,12 +103,12 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.casterId = casterId;
 	}
 
-	public Integer getChannelEnable() {
-		return this.channelEnable;
+	public Integer getProgramEffect() {
+		return this.programEffect;
 	}
 
-	public void setChannelEnable(Integer channelEnable) {
-		this.channelEnable = channelEnable;
+	public void setProgramEffect(Integer programEffect) {
+		this.programEffect = programEffect;
 	}
 
 	public String getDomainName() {
@@ -139,6 +117,38 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
+	}
+
+	public Integer getChannelEnable() {
+		return this.channelEnable;
+	}
+
+	public void setChannelEnable(Integer channelEnable) {
+		this.channelEnable = channelEnable;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSideOutputUrlList() {
+		return this.sideOutputUrlList;
+	}
+
+	public void setSideOutputUrlList(String sideOutputUrlList) {
+		this.sideOutputUrlList = sideOutputUrlList;
+	}
+
+	public String getSideOutputUrl() {
+		return this.sideOutputUrl;
+	}
+
+	public void setSideOutputUrl(String sideOutputUrl) {
+		this.sideOutputUrl = sideOutputUrl;
 	}
 
 	public List<SyncGroup> getSyncGroupsConfig() {

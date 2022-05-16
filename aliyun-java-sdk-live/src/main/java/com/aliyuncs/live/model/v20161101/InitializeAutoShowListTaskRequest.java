@@ -35,6 +35,8 @@ public class InitializeAutoShowListTaskRequest extends RpcAcsRequest<InitializeA
 
 	private Long ownerId;
 
+	private String callBackUrl;
+
 	private String resourceIds;
 	public InitializeAutoShowListTaskRequest() {
 		super("live", "2016-11-01", "InitializeAutoShowListTask", "live");
@@ -97,6 +99,17 @@ public class InitializeAutoShowListTaskRequest extends RpcAcsRequest<InitializeA
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCallBackUrl() {
+		return this.callBackUrl;
+	}
+
+	public void setCallBackUrl(String callBackUrl) {
+		this.callBackUrl = callBackUrl;
+		if(callBackUrl != null){
+			putQueryParameter("CallBackUrl", callBackUrl);
 		}
 	}
 
