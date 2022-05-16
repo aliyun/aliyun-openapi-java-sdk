@@ -68,11 +68,11 @@ public class ListSkillGroupConfigResponseUnmarshaller {
 
 			List<RuleNameInfo> allRuleList = new ArrayList<RuleNameInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRuleList.Length"); j++) {
-				RuleNameInfo ruleNameInfo_ = new RuleNameInfo();
-				ruleNameInfo_.setRuleName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRuleList["+ j +"].RuleName"));
-				ruleNameInfo_.setRid(_ctx.longValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRuleList["+ j +"].Rid"));
+				RuleNameInfo ruleNameInfo1 = new RuleNameInfo();
+				ruleNameInfo1.setRuleName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRuleList["+ j +"].RuleName"));
+				ruleNameInfo1.setRid(_ctx.longValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRuleList["+ j +"].Rid"));
 
-				allRuleList.add(ruleNameInfo_);
+				allRuleList.add(ruleNameInfo1);
 			}
 			skillGroupConfig.setAllRuleList(allRuleList);
 

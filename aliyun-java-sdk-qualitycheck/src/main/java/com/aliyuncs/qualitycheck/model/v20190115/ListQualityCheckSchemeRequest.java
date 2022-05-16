@@ -21,12 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetTaskFileResultListRequest extends RpcAcsRequest<GetTaskFileResultListResponse> {
+public class ListQualityCheckSchemeRequest extends RpcAcsRequest<ListQualityCheckSchemeResponse> {
 	   
 
 	private String jsonStr;
-	public GetTaskFileResultListRequest() {
-		super("Qualitycheck", "2019-01-15", "GetTaskFileResultList");
+	public ListQualityCheckSchemeRequest() {
+		super("Qualitycheck", "2019-01-15", "ListQualityCheckScheme");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,8 +42,8 @@ public class GetTaskFileResultListRequest extends RpcAcsRequest<GetTaskFileResul
 	}
 
 	@Override
-	public Class<GetTaskFileResultListResponse> getResponseClass() {
-		return GetTaskFileResultListResponse.class;
+	public Class<ListQualityCheckSchemeResponse> getResponseClass() {
+		return ListQualityCheckSchemeResponse.class;
 	}
 
 }
