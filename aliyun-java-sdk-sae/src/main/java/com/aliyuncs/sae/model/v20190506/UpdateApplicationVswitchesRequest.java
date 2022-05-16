@@ -22,56 +22,30 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class UploadFilesRequest extends RoaAcsRequest<UploadFilesResponse> {
+public class UpdateApplicationVswitchesRequest extends RoaAcsRequest<UpdateApplicationVswitchesResponse> {
 	   
 
-	private String instanceId;
-
-	private String cloudUrl;
-
-	private String localpath;
+	private String vSwitchId;
 
 	private String appId;
-	public UploadFilesRequest() {
-		super("sae", "2019-05-06", "UploadFiles", "serverless");
-		setUriPattern("/pop/v1/sam/app/uploadFiles");
-		setMethod(MethodType.POST);
+	public UpdateApplicationVswitchesRequest() {
+		super("sae", "2019-05-06", "UpdateApplicationVswitches", "serverless");
+		setUriPattern("/pop/v1/sam/app/updateAppVswitches");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getCloudUrl() {
-		return this.cloudUrl;
-	}
-
-	public void setCloudUrl(String cloudUrl) {
-		this.cloudUrl = cloudUrl;
-		if(cloudUrl != null){
-			putQueryParameter("CloudUrl", cloudUrl);
-		}
-	}
-
-	public String getLocalpath() {
-		return this.localpath;
-	}
-
-	public void setLocalpath(String localpath) {
-		this.localpath = localpath;
-		if(localpath != null){
-			putQueryParameter("Localpath", localpath);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -87,8 +61,8 @@ public class UploadFilesRequest extends RoaAcsRequest<UploadFilesResponse> {
 	}
 
 	@Override
-	public Class<UploadFilesResponse> getResponseClass() {
-		return UploadFilesResponse.class;
+	public Class<UpdateApplicationVswitchesResponse> getResponseClass() {
+		return UpdateApplicationVswitchesResponse.class;
 	}
 
 }

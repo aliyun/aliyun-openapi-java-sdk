@@ -28,26 +28,26 @@ public class ListAppEventsResponseUnmarshaller {
 	public static ListAppEventsResponse unmarshall(ListAppEventsResponse listAppEventsResponse, UnmarshallerContext _ctx) {
 		
 		listAppEventsResponse.setRequestId(_ctx.stringValue("ListAppEventsResponse.RequestId"));
-		listAppEventsResponse.setCode(_ctx.stringValue("ListAppEventsResponse.Code"));
 		listAppEventsResponse.setMessage(_ctx.stringValue("ListAppEventsResponse.Message"));
-		listAppEventsResponse.setSuccess(_ctx.booleanValue("ListAppEventsResponse.Success"));
 		listAppEventsResponse.setErrorCode(_ctx.stringValue("ListAppEventsResponse.ErrorCode"));
+		listAppEventsResponse.setCode(_ctx.stringValue("ListAppEventsResponse.Code"));
+		listAppEventsResponse.setSuccess(_ctx.booleanValue("ListAppEventsResponse.Success"));
 
 		Data data = new Data();
 		data.setCurrentPage(_ctx.integerValue("ListAppEventsResponse.Data.CurrentPage"));
-		data.setPageSize(_ctx.integerValue("ListAppEventsResponse.Data.PageSize"));
 		data.setTotalSize(_ctx.integerValue("ListAppEventsResponse.Data.TotalSize"));
+		data.setPageSize(_ctx.integerValue("ListAppEventsResponse.Data.PageSize"));
 
 		List<AppEventEntityItem> appEventEntity = new ArrayList<AppEventEntityItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppEventsResponse.Data.AppEventEntity.Length"); i++) {
 			AppEventEntityItem appEventEntityItem = new AppEventEntityItem();
 			appEventEntityItem.setObjectKind(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].ObjectKind"));
-			appEventEntityItem.setObjectName(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].ObjectName"));
 			appEventEntityItem.setEventType(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].EventType"));
-			appEventEntityItem.setMessage(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].Message"));
-			appEventEntityItem.setFirstTimestamp(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].FirstTimestamp"));
 			appEventEntityItem.setLastTimestamp(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].LastTimestamp"));
+			appEventEntityItem.setMessage(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].Message"));
+			appEventEntityItem.setObjectName(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].ObjectName"));
 			appEventEntityItem.setReason(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].Reason"));
+			appEventEntityItem.setFirstTimestamp(_ctx.stringValue("ListAppEventsResponse.Data.AppEventEntity["+ i +"].FirstTimestamp"));
 
 			appEventEntity.add(appEventEntityItem);
 		}

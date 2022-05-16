@@ -23,10 +23,10 @@ public class UpdateNamespaceVpcResponseUnmarshaller {
 	public static UpdateNamespaceVpcResponse unmarshall(UpdateNamespaceVpcResponse updateNamespaceVpcResponse, UnmarshallerContext _ctx) {
 		
 		updateNamespaceVpcResponse.setRequestId(_ctx.stringValue("UpdateNamespaceVpcResponse.RequestId"));
-		updateNamespaceVpcResponse.setCode(_ctx.stringValue("UpdateNamespaceVpcResponse.Code"));
 		updateNamespaceVpcResponse.setMessage(_ctx.stringValue("UpdateNamespaceVpcResponse.Message"));
-		updateNamespaceVpcResponse.setErrorCode(_ctx.stringValue("UpdateNamespaceVpcResponse.ErrorCode"));
 		updateNamespaceVpcResponse.setTraceId(_ctx.stringValue("UpdateNamespaceVpcResponse.TraceId"));
+		updateNamespaceVpcResponse.setErrorCode(_ctx.stringValue("UpdateNamespaceVpcResponse.ErrorCode"));
+		updateNamespaceVpcResponse.setCode(_ctx.stringValue("UpdateNamespaceVpcResponse.Code"));
 		updateNamespaceVpcResponse.setSuccess(_ctx.booleanValue("UpdateNamespaceVpcResponse.Success"));
 	 
 	 	return updateNamespaceVpcResponse;

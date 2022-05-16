@@ -26,15 +26,15 @@ public class DescribeApplicationImageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
-	private Boolean success;
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
+
+	private Boolean success;
 
 	private Data data;
 
@@ -46,14 +46,6 @@ public class DescribeApplicationImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
@@ -62,12 +54,12 @@ public class DescribeApplicationImageResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -78,12 +70,20 @@ public class DescribeApplicationImageResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -96,30 +96,30 @@ public class DescribeApplicationImageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String crUrl;
+		private Integer repoId;
 
 		private String logo;
 
-		private String regionId;
+		private String repoOriginType;
 
-		private Integer repoId;
+		private String crUrl;
+
+		private String repoTag;
+
+		private String repoType;
 
 		private String repoName;
 
 		private String repoNamespace;
 
-		private String repoOriginType;
+		private String regionId;
 
-		private String repoType;
-
-		private String repoTag;
-
-		public String getCrUrl() {
-			return this.crUrl;
+		public Integer getRepoId() {
+			return this.repoId;
 		}
 
-		public void setCrUrl(String crUrl) {
-			this.crUrl = crUrl;
+		public void setRepoId(Integer repoId) {
+			this.repoId = repoId;
 		}
 
 		public String getLogo() {
@@ -130,20 +130,36 @@ public class DescribeApplicationImageResponse extends AcsResponse {
 			this.logo = logo;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getRepoOriginType() {
+			return this.repoOriginType;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setRepoOriginType(String repoOriginType) {
+			this.repoOriginType = repoOriginType;
 		}
 
-		public Integer getRepoId() {
-			return this.repoId;
+		public String getCrUrl() {
+			return this.crUrl;
 		}
 
-		public void setRepoId(Integer repoId) {
-			this.repoId = repoId;
+		public void setCrUrl(String crUrl) {
+			this.crUrl = crUrl;
+		}
+
+		public String getRepoTag() {
+			return this.repoTag;
+		}
+
+		public void setRepoTag(String repoTag) {
+			this.repoTag = repoTag;
+		}
+
+		public String getRepoType() {
+			return this.repoType;
+		}
+
+		public void setRepoType(String repoType) {
+			this.repoType = repoType;
 		}
 
 		public String getRepoName() {
@@ -162,28 +178,12 @@ public class DescribeApplicationImageResponse extends AcsResponse {
 			this.repoNamespace = repoNamespace;
 		}
 
-		public String getRepoOriginType() {
-			return this.repoOriginType;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setRepoOriginType(String repoOriginType) {
-			this.repoOriginType = repoOriginType;
-		}
-
-		public String getRepoType() {
-			return this.repoType;
-		}
-
-		public void setRepoType(String repoType) {
-			this.repoType = repoType;
-		}
-
-		public String getRepoTag() {
-			return this.repoTag;
-		}
-
-		public void setRepoTag(String repoTag) {
-			this.repoTag = repoTag;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

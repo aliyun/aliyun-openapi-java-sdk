@@ -25,34 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApplicationSlbsResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorCode;
+	private String requestId;
 
 	private String message;
 
-	private Boolean success;
-
 	private String traceId;
 
-	private String requestId;
+	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -63,14 +55,6 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
@@ -79,12 +63,28 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,15 +99,15 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 		private String internetIp;
 
-		private String intranetIp;
-
 		private String internetSlbId;
 
 		private String intranetSlbId;
 
-		private List<InternetItem> internet;
+		private String intranetIp;
 
 		private List<IntranetItem> intranet;
+
+		private List<InternetItem> internet;
 
 		public String getInternetIp() {
 			return this.internetIp;
@@ -115,14 +115,6 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 		public void setInternetIp(String internetIp) {
 			this.internetIp = internetIp;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
 		}
 
 		public String getInternetSlbId() {
@@ -141,12 +133,12 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 			this.intranetSlbId = intranetSlbId;
 		}
 
-		public List<InternetItem> getInternet() {
-			return this.internet;
+		public String getIntranetIp() {
+			return this.intranetIp;
 		}
 
-		public void setInternet(List<InternetItem> internet) {
-			this.internet = internet;
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
 		}
 
 		public List<IntranetItem> getIntranet() {
@@ -157,65 +149,30 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 			this.intranet = intranet;
 		}
 
-		public static class InternetItem {
+		public List<InternetItem> getInternet() {
+			return this.internet;
+		}
 
-			private Integer port;
-
-			private String protocol;
-
-			private Integer targetPort;
-
-			private String httpsCertId;
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
-			}
-
-			public String getBizProtocol() {
-				return this.protocol;
-			}
-
-			public void setBizProtocol(String protocol) {
-				this.protocol = protocol;
-			}
-
-			public Integer getTargetPort() {
-				return this.targetPort;
-			}
-
-			public void setTargetPort(Integer targetPort) {
-				this.targetPort = targetPort;
-			}
-
-			public String getHttpsCertId() {
-				return this.httpsCertId;
-			}
-
-			public void setHttpsCertId(String httpsCertId) {
-				this.httpsCertId = httpsCertId;
-			}
+		public void setInternet(List<InternetItem> internet) {
+			this.internet = internet;
 		}
 
 		public static class IntranetItem {
 
-			private Integer port;
+			private String httpsCertId;
 
 			private String protocol;
 
 			private Integer targetPort;
 
-			private String httpsCertId;
+			private Integer port;
 
-			public Integer getPort() {
-				return this.port;
+			public String getHttpsCertId() {
+				return this.httpsCertId;
 			}
 
-			public void setPort(Integer port) {
-				this.port = port;
+			public void setHttpsCertId(String httpsCertId) {
+				this.httpsCertId = httpsCertId;
 			}
 
 			public String getBizProtocol() {
@@ -234,12 +191,55 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 				this.targetPort = targetPort;
 			}
 
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+		}
+
+		public static class InternetItem {
+
+			private String httpsCertId;
+
+			private String protocol;
+
+			private Integer targetPort;
+
+			private Integer port;
+
 			public String getHttpsCertId() {
 				return this.httpsCertId;
 			}
 
 			public void setHttpsCertId(String httpsCertId) {
 				this.httpsCertId = httpsCertId;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
+			}
+
+			public Integer getTargetPort() {
+				return this.targetPort;
+			}
+
+			public void setTargetPort(Integer targetPort) {
+				this.targetPort = targetPort;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
 			}
 		}
 	}

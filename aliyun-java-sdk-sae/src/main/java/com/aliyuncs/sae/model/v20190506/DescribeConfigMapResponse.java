@@ -28,13 +28,13 @@ public class DescribeConfigMapResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
 
 	private Boolean success;
 
@@ -48,20 +48,20 @@ public class DescribeConfigMapResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -72,12 +72,12 @@ public class DescribeConfigMapResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -98,36 +98,36 @@ public class DescribeConfigMapResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long configMapId;
+		private Long updateTime;
 
-		private String name;
+		private Map<Object,Object> data;
 
 		private String namespaceId;
 
 		private String description;
 
-		private Map<Object,Object> data;
-
 		private Long createTime;
 
-		private Long updateTime;
+		private Long configMapId;
+
+		private String name;
 
 		private List<RelateApp> relateApps;
 
-		public Long getConfigMapId() {
-			return this.configMapId;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setConfigMapId(Long configMapId) {
-			this.configMapId = configMapId;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public String getName() {
-			return this.name;
+		public Map<Object,Object> getData() {
+			return this.data;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setData(Map<Object,Object> data) {
+			this.data = data;
 		}
 
 		public String getNamespaceId() {
@@ -146,14 +146,6 @@ public class DescribeConfigMapResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Map<Object,Object> getData() {
-			return this.data;
-		}
-
-		public void setData(Map<Object,Object> data) {
-			this.data = data;
-		}
-
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -162,12 +154,20 @@ public class DescribeConfigMapResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public Long getConfigMapId() {
+			return this.configMapId;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setConfigMapId(Long configMapId) {
+			this.configMapId = configMapId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<RelateApp> getRelateApps() {
@@ -180,17 +180,9 @@ public class DescribeConfigMapResponse extends AcsResponse {
 
 		public static class RelateApp {
 
-			private String appId;
-
 			private String appName;
 
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
+			private String appId;
 
 			public String getAppName() {
 				return this.appName;
@@ -198,6 +190,14 @@ public class DescribeConfigMapResponse extends AcsResponse {
 
 			public void setAppName(String appName) {
 				this.appName = appName;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 		}
 	}

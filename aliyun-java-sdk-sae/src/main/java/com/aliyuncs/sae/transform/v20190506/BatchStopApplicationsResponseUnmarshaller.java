@@ -24,10 +24,10 @@ public class BatchStopApplicationsResponseUnmarshaller {
 	public static BatchStopApplicationsResponse unmarshall(BatchStopApplicationsResponse batchStopApplicationsResponse, UnmarshallerContext _ctx) {
 		
 		batchStopApplicationsResponse.setRequestId(_ctx.stringValue("BatchStopApplicationsResponse.RequestId"));
-		batchStopApplicationsResponse.setCode(_ctx.stringValue("BatchStopApplicationsResponse.Code"));
 		batchStopApplicationsResponse.setMessage(_ctx.stringValue("BatchStopApplicationsResponse.Message"));
-		batchStopApplicationsResponse.setErrorCode(_ctx.stringValue("BatchStopApplicationsResponse.ErrorCode"));
 		batchStopApplicationsResponse.setTraceId(_ctx.stringValue("BatchStopApplicationsResponse.TraceId"));
+		batchStopApplicationsResponse.setErrorCode(_ctx.stringValue("BatchStopApplicationsResponse.ErrorCode"));
+		batchStopApplicationsResponse.setCode(_ctx.stringValue("BatchStopApplicationsResponse.Code"));
 		batchStopApplicationsResponse.setSuccess(_ctx.booleanValue("BatchStopApplicationsResponse.Success"));
 
 		Data data = new Data();

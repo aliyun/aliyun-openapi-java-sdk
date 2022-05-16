@@ -205,6 +205,8 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private String kafkaConfigs;
 
+		private String programmingLanguage;
+
 		private List<ConfigMapMountDescItem> configMapMountDesc;
 
 		private List<Tag> tags;
@@ -643,6 +645,14 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setKafkaConfigs(String kafkaConfigs) {
 			this.kafkaConfigs = kafkaConfigs;
+		}
+
+		public String getProgrammingLanguage() {
+			return this.programmingLanguage;
+		}
+
+		public void setProgrammingLanguage(String programmingLanguage) {
+			this.programmingLanguage = programmingLanguage;
 		}
 
 		public List<ConfigMapMountDescItem> getConfigMapMountDesc() {

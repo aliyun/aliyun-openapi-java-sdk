@@ -25,9 +25,9 @@ public class DeleteConfigMapResponseUnmarshaller {
 		
 		deleteConfigMapResponse.setRequestId(_ctx.stringValue("DeleteConfigMapResponse.RequestId"));
 		deleteConfigMapResponse.setMessage(_ctx.stringValue("DeleteConfigMapResponse.Message"));
-		deleteConfigMapResponse.setCode(_ctx.stringValue("DeleteConfigMapResponse.Code"));
-		deleteConfigMapResponse.setErrorCode(_ctx.stringValue("DeleteConfigMapResponse.ErrorCode"));
 		deleteConfigMapResponse.setTraceId(_ctx.stringValue("DeleteConfigMapResponse.TraceId"));
+		deleteConfigMapResponse.setErrorCode(_ctx.stringValue("DeleteConfigMapResponse.ErrorCode"));
+		deleteConfigMapResponse.setCode(_ctx.stringValue("DeleteConfigMapResponse.Code"));
 		deleteConfigMapResponse.setSuccess(_ctx.booleanValue("DeleteConfigMapResponse.Success"));
 
 		Data data = new Data();

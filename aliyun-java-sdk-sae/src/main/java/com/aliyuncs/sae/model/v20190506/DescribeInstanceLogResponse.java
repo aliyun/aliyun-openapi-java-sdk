@@ -26,17 +26,17 @@ public class DescribeInstanceLogResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
-
-	private Boolean success;
-
-	private String errorCode;
 
 	private String traceId;
 
 	private String data;
+
+	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,36 +46,12 @@ public class DescribeInstanceLogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getTraceId() {
@@ -92,6 +68,30 @@ public class DescribeInstanceLogResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

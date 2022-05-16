@@ -36,10 +36,10 @@ public class ListConsumedServicesResponseUnmarshaller {
 		List<ListConsumedServices> data = new ArrayList<ListConsumedServices>();
 		for (int i = 0; i < _ctx.lengthValue("ListConsumedServicesResponse.Data.Length"); i++) {
 			ListConsumedServices listConsumedServices = new ListConsumedServices();
-			listConsumedServices.setGroup2Ip(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Group2Ip"));
 			listConsumedServices.setType(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Type"));
-			listConsumedServices.setAppId(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].AppId"));
 			listConsumedServices.setVersion(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Version"));
+			listConsumedServices.setAppId(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].AppId"));
+			listConsumedServices.setGroup2Ip(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Group2Ip"));
 			listConsumedServices.setName(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Name"));
 
 			List<String> groups = new ArrayList<String>();

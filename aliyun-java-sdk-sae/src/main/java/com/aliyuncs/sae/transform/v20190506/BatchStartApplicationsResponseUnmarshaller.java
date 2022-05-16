@@ -24,10 +24,10 @@ public class BatchStartApplicationsResponseUnmarshaller {
 	public static BatchStartApplicationsResponse unmarshall(BatchStartApplicationsResponse batchStartApplicationsResponse, UnmarshallerContext _ctx) {
 		
 		batchStartApplicationsResponse.setRequestId(_ctx.stringValue("BatchStartApplicationsResponse.RequestId"));
-		batchStartApplicationsResponse.setCode(_ctx.stringValue("BatchStartApplicationsResponse.Code"));
 		batchStartApplicationsResponse.setMessage(_ctx.stringValue("BatchStartApplicationsResponse.Message"));
-		batchStartApplicationsResponse.setErrorCode(_ctx.stringValue("BatchStartApplicationsResponse.ErrorCode"));
 		batchStartApplicationsResponse.setTraceId(_ctx.stringValue("BatchStartApplicationsResponse.TraceId"));
+		batchStartApplicationsResponse.setErrorCode(_ctx.stringValue("BatchStartApplicationsResponse.ErrorCode"));
+		batchStartApplicationsResponse.setCode(_ctx.stringValue("BatchStartApplicationsResponse.Code"));
 		batchStartApplicationsResponse.setSuccess(_ctx.booleanValue("BatchStartApplicationsResponse.Success"));
 
 		Data data = new Data();

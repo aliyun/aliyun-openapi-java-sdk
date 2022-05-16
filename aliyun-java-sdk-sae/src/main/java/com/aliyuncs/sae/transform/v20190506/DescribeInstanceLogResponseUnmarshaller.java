@@ -23,12 +23,12 @@ public class DescribeInstanceLogResponseUnmarshaller {
 	public static DescribeInstanceLogResponse unmarshall(DescribeInstanceLogResponse describeInstanceLogResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceLogResponse.setRequestId(_ctx.stringValue("DescribeInstanceLogResponse.RequestId"));
-		describeInstanceLogResponse.setCode(_ctx.stringValue("DescribeInstanceLogResponse.Code"));
 		describeInstanceLogResponse.setMessage(_ctx.stringValue("DescribeInstanceLogResponse.Message"));
-		describeInstanceLogResponse.setSuccess(_ctx.booleanValue("DescribeInstanceLogResponse.Success"));
-		describeInstanceLogResponse.setErrorCode(_ctx.stringValue("DescribeInstanceLogResponse.ErrorCode"));
 		describeInstanceLogResponse.setTraceId(_ctx.stringValue("DescribeInstanceLogResponse.TraceId"));
 		describeInstanceLogResponse.setData(_ctx.stringValue("DescribeInstanceLogResponse.Data"));
+		describeInstanceLogResponse.setErrorCode(_ctx.stringValue("DescribeInstanceLogResponse.ErrorCode"));
+		describeInstanceLogResponse.setCode(_ctx.stringValue("DescribeInstanceLogResponse.Code"));
+		describeInstanceLogResponse.setSuccess(_ctx.booleanValue("DescribeInstanceLogResponse.Success"));
 	 
 	 	return describeInstanceLogResponse;
 	}

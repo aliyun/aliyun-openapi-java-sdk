@@ -27,15 +27,15 @@ public class DescribeIngressResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
-	private Boolean success;
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
+
+	private Boolean success;
 
 	private Data data;
 
@@ -47,14 +47,6 @@ public class DescribeIngressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
@@ -63,12 +55,12 @@ public class DescribeIngressResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -79,12 +71,20 @@ public class DescribeIngressResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -97,40 +97,36 @@ public class DescribeIngressResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long id;
-
-		private String name;
+		private String slbId;
 
 		private String namespaceId;
 
 		private String description;
 
-		private String slbId;
-
 		private Integer listenerPort;
+
+		private String slbType;
 
 		private String certId;
 
-		private String slbType;
+		private String name;
+
+		private Long id;
+
+		private String loadBalanceType;
+
+		private String listenerProtocol;
 
 		private List<Rule> rules;
 
 		private DefaultRule defaultRule;
 
-		public Long getId() {
-			return this.id;
+		public String getSlbId() {
+			return this.slbId;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setSlbId(String slbId) {
+			this.slbId = slbId;
 		}
 
 		public String getNamespaceId() {
@@ -149,20 +145,20 @@ public class DescribeIngressResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getSlbId() {
-			return this.slbId;
-		}
-
-		public void setSlbId(String slbId) {
-			this.slbId = slbId;
-		}
-
 		public Integer getListenerPort() {
 			return this.listenerPort;
 		}
 
 		public void setListenerPort(Integer listenerPort) {
 			this.listenerPort = listenerPort;
+		}
+
+		public String getSlbType() {
+			return this.slbType;
+		}
+
+		public void setSlbType(String slbType) {
+			this.slbType = slbType;
 		}
 
 		public String getCertId() {
@@ -173,12 +169,36 @@ public class DescribeIngressResponse extends AcsResponse {
 			this.certId = certId;
 		}
 
-		public String getSlbType() {
-			return this.slbType;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setSlbType(String slbType) {
-			this.slbType = slbType;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getLoadBalanceType() {
+			return this.loadBalanceType;
+		}
+
+		public void setLoadBalanceType(String loadBalanceType) {
+			this.loadBalanceType = loadBalanceType;
+		}
+
+		public String getListenerProtocol() {
+			return this.listenerProtocol;
+		}
+
+		public void setListenerProtocol(String listenerProtocol) {
+			this.listenerProtocol = listenerProtocol;
 		}
 
 		public List<Rule> getRules() {
@@ -199,22 +219,22 @@ public class DescribeIngressResponse extends AcsResponse {
 
 		public static class Rule {
 
-			private String appId;
+			private String appName;
 
 			private Integer containerPort;
 
 			private String domain;
 
+			private String appId;
+
 			private String path;
 
-			private String appName;
-
-			public String getAppId() {
-				return this.appId;
+			public String getAppName() {
+				return this.appName;
 			}
 
-			public void setAppId(String appId) {
-				this.appId = appId;
+			public void setAppName(String appName) {
+				this.appName = appName;
 			}
 
 			public Integer getContainerPort() {
@@ -233,31 +253,6 @@ public class DescribeIngressResponse extends AcsResponse {
 				this.domain = domain;
 			}
 
-			public String getPath() {
-				return this.path;
-			}
-
-			public void setPath(String path) {
-				this.path = path;
-			}
-
-			public String getAppName() {
-				return this.appName;
-			}
-
-			public void setAppName(String appName) {
-				this.appName = appName;
-			}
-		}
-
-		public static class DefaultRule {
-
-			private String appId;
-
-			private Integer containerPort;
-
-			private String appName;
-
 			public String getAppId() {
 				return this.appId;
 			}
@@ -265,6 +260,23 @@ public class DescribeIngressResponse extends AcsResponse {
 			public void setAppId(String appId) {
 				this.appId = appId;
 			}
+
+			public String getPath() {
+				return this.path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
+			}
+		}
+
+		public static class DefaultRule {
+
+			private Integer containerPort;
+
+			private String appName;
+
+			private String appId;
 
 			public Integer getContainerPort() {
 				return this.containerPort;
@@ -280,6 +292,14 @@ public class DescribeIngressResponse extends AcsResponse {
 
 			public void setAppName(String appName) {
 				this.appName = appName;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 		}
 	}

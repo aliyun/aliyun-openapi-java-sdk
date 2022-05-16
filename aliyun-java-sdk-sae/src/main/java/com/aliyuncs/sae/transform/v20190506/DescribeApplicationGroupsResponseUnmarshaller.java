@@ -27,27 +27,27 @@ public class DescribeApplicationGroupsResponseUnmarshaller {
 	public static DescribeApplicationGroupsResponse unmarshall(DescribeApplicationGroupsResponse describeApplicationGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describeApplicationGroupsResponse.setRequestId(_ctx.stringValue("DescribeApplicationGroupsResponse.RequestId"));
-		describeApplicationGroupsResponse.setCode(_ctx.stringValue("DescribeApplicationGroupsResponse.Code"));
 		describeApplicationGroupsResponse.setMessage(_ctx.stringValue("DescribeApplicationGroupsResponse.Message"));
 		describeApplicationGroupsResponse.setTraceId(_ctx.stringValue("DescribeApplicationGroupsResponse.TraceId"));
-		describeApplicationGroupsResponse.setSuccess(_ctx.booleanValue("DescribeApplicationGroupsResponse.Success"));
 		describeApplicationGroupsResponse.setErrorCode(_ctx.stringValue("DescribeApplicationGroupsResponse.ErrorCode"));
+		describeApplicationGroupsResponse.setCode(_ctx.stringValue("DescribeApplicationGroupsResponse.Code"));
+		describeApplicationGroupsResponse.setSuccess(_ctx.booleanValue("DescribeApplicationGroupsResponse.Success"));
 
 		List<ApplicationGroup> data = new ArrayList<ApplicationGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationGroupsResponse.Data.Length"); i++) {
 			ApplicationGroup applicationGroup = new ApplicationGroup();
-			applicationGroup.setGroupId(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].GroupId"));
-			applicationGroup.setGroupName(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].GroupName"));
-			applicationGroup.setGroupType(_ctx.integerValue("DescribeApplicationGroupsResponse.Data["+ i +"].GroupType"));
-			applicationGroup.setPackageType(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].PackageType"));
-			applicationGroup.setPackageVersion(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].PackageVersion"));
+			applicationGroup.setJdk(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].Jdk"));
 			applicationGroup.setImageUrl(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].ImageUrl"));
 			applicationGroup.setPackageUrl(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].PackageUrl"));
-			applicationGroup.setJdk(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].Jdk"));
+			applicationGroup.setPackageType(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].PackageType"));
+			applicationGroup.setPackageVersion(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].PackageVersion"));
+			applicationGroup.setGroupName(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].GroupName"));
+			applicationGroup.setGroupId(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].GroupId"));
 			applicationGroup.setWebContainer(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].WebContainer"));
-			applicationGroup.setEdasContainerVersion(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].EdasContainerVersion"));
 			applicationGroup.setReplicas(_ctx.integerValue("DescribeApplicationGroupsResponse.Data["+ i +"].Replicas"));
+			applicationGroup.setEdasContainerVersion(_ctx.stringValue("DescribeApplicationGroupsResponse.Data["+ i +"].EdasContainerVersion"));
 			applicationGroup.setRunningInstances(_ctx.integerValue("DescribeApplicationGroupsResponse.Data["+ i +"].RunningInstances"));
+			applicationGroup.setGroupType(_ctx.integerValue("DescribeApplicationGroupsResponse.Data["+ i +"].GroupType"));
 
 			data.add(applicationGroup);
 		}

@@ -24,11 +24,11 @@ public class StopApplicationResponseUnmarshaller {
 	public static StopApplicationResponse unmarshall(StopApplicationResponse stopApplicationResponse, UnmarshallerContext _ctx) {
 		
 		stopApplicationResponse.setRequestId(_ctx.stringValue("StopApplicationResponse.RequestId"));
-		stopApplicationResponse.setCode(_ctx.stringValue("StopApplicationResponse.Code"));
-		stopApplicationResponse.setSuccess(_ctx.booleanValue("StopApplicationResponse.Success"));
-		stopApplicationResponse.setErrorCode(_ctx.stringValue("StopApplicationResponse.ErrorCode"));
 		stopApplicationResponse.setMessage(_ctx.stringValue("StopApplicationResponse.Message"));
 		stopApplicationResponse.setTraceId(_ctx.stringValue("StopApplicationResponse.TraceId"));
+		stopApplicationResponse.setErrorCode(_ctx.stringValue("StopApplicationResponse.ErrorCode"));
+		stopApplicationResponse.setCode(_ctx.stringValue("StopApplicationResponse.Code"));
+		stopApplicationResponse.setSuccess(_ctx.booleanValue("StopApplicationResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("StopApplicationResponse.Data.ChangeOrderId"));

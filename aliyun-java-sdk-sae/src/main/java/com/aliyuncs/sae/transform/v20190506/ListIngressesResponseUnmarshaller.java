@@ -28,25 +28,27 @@ public class ListIngressesResponseUnmarshaller {
 	public static ListIngressesResponse unmarshall(ListIngressesResponse listIngressesResponse, UnmarshallerContext _ctx) {
 		
 		listIngressesResponse.setRequestId(_ctx.stringValue("ListIngressesResponse.RequestId"));
-		listIngressesResponse.setCode(_ctx.stringValue("ListIngressesResponse.Code"));
 		listIngressesResponse.setMessage(_ctx.stringValue("ListIngressesResponse.Message"));
-		listIngressesResponse.setSuccess(_ctx.booleanValue("ListIngressesResponse.Success"));
-		listIngressesResponse.setErrorCode(_ctx.stringValue("ListIngressesResponse.ErrorCode"));
 		listIngressesResponse.setTraceId(_ctx.stringValue("ListIngressesResponse.TraceId"));
+		listIngressesResponse.setErrorCode(_ctx.stringValue("ListIngressesResponse.ErrorCode"));
+		listIngressesResponse.setCode(_ctx.stringValue("ListIngressesResponse.Code"));
+		listIngressesResponse.setSuccess(_ctx.booleanValue("ListIngressesResponse.Success"));
 
 		Data data = new Data();
 
 		List<Ingress> ingressList = new ArrayList<Ingress>();
 		for (int i = 0; i < _ctx.lengthValue("ListIngressesResponse.Data.IngressList.Length"); i++) {
 			Ingress ingress = new Ingress();
-			ingress.setId(_ctx.longValue("ListIngressesResponse.Data.IngressList["+ i +"].Id"));
-			ingress.setName(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].Name"));
-			ingress.setNamespaceId(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].NamespaceId"));
 			ingress.setSlbId(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].SlbId"));
-			ingress.setListenerPort(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].ListenerPort"));
-			ingress.setCertId(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].CertId"));
+			ingress.setNamespaceId(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].NamespaceId"));
 			ingress.setDescription(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].Description"));
+			ingress.setListenerPort(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].ListenerPort"));
 			ingress.setSlbType(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].SlbType"));
+			ingress.setCertId(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].CertId"));
+			ingress.setName(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].Name"));
+			ingress.setId(_ctx.longValue("ListIngressesResponse.Data.IngressList["+ i +"].Id"));
+			ingress.setLoadBalanceType(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].LoadBalanceType"));
+			ingress.setListenerProtocol(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].ListenerProtocol"));
 
 			ingressList.add(ingress);
 		}

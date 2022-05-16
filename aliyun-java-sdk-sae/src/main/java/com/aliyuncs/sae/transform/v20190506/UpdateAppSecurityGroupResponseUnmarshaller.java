@@ -23,10 +23,10 @@ public class UpdateAppSecurityGroupResponseUnmarshaller {
 	public static UpdateAppSecurityGroupResponse unmarshall(UpdateAppSecurityGroupResponse updateAppSecurityGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateAppSecurityGroupResponse.setRequestId(_ctx.stringValue("UpdateAppSecurityGroupResponse.RequestId"));
-		updateAppSecurityGroupResponse.setCode(_ctx.stringValue("UpdateAppSecurityGroupResponse.Code"));
 		updateAppSecurityGroupResponse.setMessage(_ctx.stringValue("UpdateAppSecurityGroupResponse.Message"));
-		updateAppSecurityGroupResponse.setErrorCode(_ctx.stringValue("UpdateAppSecurityGroupResponse.ErrorCode"));
 		updateAppSecurityGroupResponse.setTraceId(_ctx.stringValue("UpdateAppSecurityGroupResponse.TraceId"));
+		updateAppSecurityGroupResponse.setErrorCode(_ctx.stringValue("UpdateAppSecurityGroupResponse.ErrorCode"));
+		updateAppSecurityGroupResponse.setCode(_ctx.stringValue("UpdateAppSecurityGroupResponse.Code"));
 		updateAppSecurityGroupResponse.setSuccess(_ctx.booleanValue("UpdateAppSecurityGroupResponse.Success"));
 	 
 	 	return updateAppSecurityGroupResponse;

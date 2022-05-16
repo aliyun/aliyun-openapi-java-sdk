@@ -27,15 +27,15 @@ public class ListLogConfigsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
-	private Boolean success;
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
+
+	private Boolean success;
 
 	private Data data;
 
@@ -47,14 +47,6 @@ public class ListLogConfigsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
@@ -63,12 +55,12 @@ public class ListLogConfigsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -79,12 +71,20 @@ public class ListLogConfigsResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,9 +99,9 @@ public class ListLogConfigsResponse extends AcsResponse {
 
 		private Integer currentPage;
 
-		private Integer pageSize;
-
 		private Integer totalSize;
+
+		private Integer pageSize;
 
 		private List<LogConfig> logConfigs;
 
@@ -113,20 +113,20 @@ public class ListLogConfigsResponse extends AcsResponse {
 			this.currentPage = currentPage;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public Integer getTotalSize() {
 			return this.totalSize;
 		}
 
 		public void setTotalSize(Integer totalSize) {
 			this.totalSize = totalSize;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public List<LogConfig> getLogConfigs() {
@@ -143,17 +143,17 @@ public class ListLogConfigsResponse extends AcsResponse {
 
 			private String logDir;
 
-			private String slsProject;
-
 			private String slsLogStore;
 
+			private String createTime;
+
 			private String storeType;
+
+			private String slsProject;
 
 			private String logType;
 
 			private String regionId;
-
-			private String createTime;
 
 			public String getConfigName() {
 				return this.configName;
@@ -171,14 +171,6 @@ public class ListLogConfigsResponse extends AcsResponse {
 				this.logDir = logDir;
 			}
 
-			public String getSlsProject() {
-				return this.slsProject;
-			}
-
-			public void setSlsProject(String slsProject) {
-				this.slsProject = slsProject;
-			}
-
 			public String getSlsLogStore() {
 				return this.slsLogStore;
 			}
@@ -187,12 +179,28 @@ public class ListLogConfigsResponse extends AcsResponse {
 				this.slsLogStore = slsLogStore;
 			}
 
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
 			public String getStoreType() {
 				return this.storeType;
 			}
 
 			public void setStoreType(String storeType) {
 				this.storeType = storeType;
+			}
+
+			public String getSlsProject() {
+				return this.slsProject;
+			}
+
+			public void setSlsProject(String slsProject) {
+				this.slsProject = slsProject;
 			}
 
 			public String getLogType() {
@@ -209,14 +217,6 @@ public class ListLogConfigsResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
 			}
 		}
 	}

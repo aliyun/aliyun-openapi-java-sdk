@@ -27,11 +27,11 @@ public class DescribeEdasContainersResponseUnmarshaller {
 	public static DescribeEdasContainersResponse unmarshall(DescribeEdasContainersResponse describeEdasContainersResponse, UnmarshallerContext _ctx) {
 		
 		describeEdasContainersResponse.setRequestId(_ctx.stringValue("DescribeEdasContainersResponse.RequestId"));
-		describeEdasContainersResponse.setCode(_ctx.stringValue("DescribeEdasContainersResponse.Code"));
 		describeEdasContainersResponse.setMessage(_ctx.stringValue("DescribeEdasContainersResponse.Message"));
-		describeEdasContainersResponse.setSuccess(_ctx.booleanValue("DescribeEdasContainersResponse.Success"));
-		describeEdasContainersResponse.setErrorCode(_ctx.stringValue("DescribeEdasContainersResponse.ErrorCode"));
 		describeEdasContainersResponse.setTraceId(_ctx.stringValue("DescribeEdasContainersResponse.TraceId"));
+		describeEdasContainersResponse.setErrorCode(_ctx.stringValue("DescribeEdasContainersResponse.ErrorCode"));
+		describeEdasContainersResponse.setCode(_ctx.stringValue("DescribeEdasContainersResponse.Code"));
+		describeEdasContainersResponse.setSuccess(_ctx.booleanValue("DescribeEdasContainersResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEdasContainersResponse.Data.Length"); i++) {

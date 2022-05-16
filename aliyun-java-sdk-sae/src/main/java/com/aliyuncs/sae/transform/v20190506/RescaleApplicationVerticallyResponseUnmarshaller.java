@@ -24,11 +24,11 @@ public class RescaleApplicationVerticallyResponseUnmarshaller {
 	public static RescaleApplicationVerticallyResponse unmarshall(RescaleApplicationVerticallyResponse rescaleApplicationVerticallyResponse, UnmarshallerContext _ctx) {
 		
 		rescaleApplicationVerticallyResponse.setRequestId(_ctx.stringValue("RescaleApplicationVerticallyResponse.RequestId"));
-		rescaleApplicationVerticallyResponse.setCode(_ctx.stringValue("RescaleApplicationVerticallyResponse.Code"));
-		rescaleApplicationVerticallyResponse.setSuccess(_ctx.booleanValue("RescaleApplicationVerticallyResponse.Success"));
-		rescaleApplicationVerticallyResponse.setErrorCode(_ctx.stringValue("RescaleApplicationVerticallyResponse.ErrorCode"));
 		rescaleApplicationVerticallyResponse.setMessage(_ctx.stringValue("RescaleApplicationVerticallyResponse.Message"));
 		rescaleApplicationVerticallyResponse.setTraceId(_ctx.stringValue("RescaleApplicationVerticallyResponse.TraceId"));
+		rescaleApplicationVerticallyResponse.setErrorCode(_ctx.stringValue("RescaleApplicationVerticallyResponse.ErrorCode"));
+		rescaleApplicationVerticallyResponse.setCode(_ctx.stringValue("RescaleApplicationVerticallyResponse.Code"));
+		rescaleApplicationVerticallyResponse.setSuccess(_ctx.booleanValue("RescaleApplicationVerticallyResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("RescaleApplicationVerticallyResponse.Data.ChangeOrderId"));

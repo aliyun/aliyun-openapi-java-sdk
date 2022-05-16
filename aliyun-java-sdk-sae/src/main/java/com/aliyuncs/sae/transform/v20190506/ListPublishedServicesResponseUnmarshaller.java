@@ -36,10 +36,10 @@ public class ListPublishedServicesResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPublishedServicesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setGroup2Ip(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Group2Ip"));
 			dataItem.setType(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Type"));
-			dataItem.setAppId(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].AppId"));
 			dataItem.setVersion(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Version"));
+			dataItem.setAppId(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].AppId"));
+			dataItem.setGroup2Ip(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Group2Ip"));
 			dataItem.setName(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Name"));
 
 			List<String> groups = new ArrayList<String>();

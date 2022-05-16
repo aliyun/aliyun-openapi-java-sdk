@@ -24,11 +24,11 @@ public class UnbindSlbResponseUnmarshaller {
 	public static UnbindSlbResponse unmarshall(UnbindSlbResponse unbindSlbResponse, UnmarshallerContext _ctx) {
 		
 		unbindSlbResponse.setRequestId(_ctx.stringValue("UnbindSlbResponse.RequestId"));
-		unbindSlbResponse.setCode(_ctx.stringValue("UnbindSlbResponse.Code"));
 		unbindSlbResponse.setMessage(_ctx.stringValue("UnbindSlbResponse.Message"));
-		unbindSlbResponse.setErrorCode(_ctx.stringValue("UnbindSlbResponse.ErrorCode"));
-		unbindSlbResponse.setSuccess(_ctx.booleanValue("UnbindSlbResponse.Success"));
 		unbindSlbResponse.setTraceId(_ctx.stringValue("UnbindSlbResponse.TraceId"));
+		unbindSlbResponse.setErrorCode(_ctx.stringValue("UnbindSlbResponse.ErrorCode"));
+		unbindSlbResponse.setCode(_ctx.stringValue("UnbindSlbResponse.Code"));
+		unbindSlbResponse.setSuccess(_ctx.booleanValue("UnbindSlbResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("UnbindSlbResponse.Data.ChangeOrderId"));

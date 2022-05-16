@@ -24,11 +24,11 @@ public class RestartInstancesResponseUnmarshaller {
 	public static RestartInstancesResponse unmarshall(RestartInstancesResponse restartInstancesResponse, UnmarshallerContext _ctx) {
 		
 		restartInstancesResponse.setRequestId(_ctx.stringValue("RestartInstancesResponse.RequestId"));
-		restartInstancesResponse.setCode(_ctx.stringValue("RestartInstancesResponse.Code"));
-		restartInstancesResponse.setSuccess(_ctx.booleanValue("RestartInstancesResponse.Success"));
-		restartInstancesResponse.setErrorCode(_ctx.stringValue("RestartInstancesResponse.ErrorCode"));
 		restartInstancesResponse.setMessage(_ctx.stringValue("RestartInstancesResponse.Message"));
 		restartInstancesResponse.setTraceId(_ctx.stringValue("RestartInstancesResponse.TraceId"));
+		restartInstancesResponse.setErrorCode(_ctx.stringValue("RestartInstancesResponse.ErrorCode"));
+		restartInstancesResponse.setCode(_ctx.stringValue("RestartInstancesResponse.Code"));
+		restartInstancesResponse.setSuccess(_ctx.booleanValue("RestartInstancesResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("RestartInstancesResponse.Data.ChangeOrderId"));

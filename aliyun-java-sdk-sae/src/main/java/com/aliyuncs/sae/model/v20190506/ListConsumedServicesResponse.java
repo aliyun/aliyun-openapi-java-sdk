@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListConsumedServicesResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String traceId;
 
@@ -39,20 +39,20 @@ public class ListConsumedServicesResponse extends AcsResponse {
 
 	private List<ListConsumedServices> data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getTraceId() {
@@ -97,13 +97,13 @@ public class ListConsumedServicesResponse extends AcsResponse {
 
 	public static class ListConsumedServices {
 
-		private String group2Ip;
-
 		private String type;
+
+		private String version;
 
 		private String appId;
 
-		private String version;
+		private String group2Ip;
 
 		private String name;
 
@@ -111,20 +111,20 @@ public class ListConsumedServicesResponse extends AcsResponse {
 
 		private List<String> ips;
 
-		public String getGroup2Ip() {
-			return this.group2Ip;
-		}
-
-		public void setGroup2Ip(String group2Ip) {
-			this.group2Ip = group2Ip;
-		}
-
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public String getAppId() {
@@ -135,12 +135,12 @@ public class ListConsumedServicesResponse extends AcsResponse {
 			this.appId = appId;
 		}
 
-		public String getVersion() {
-			return this.version;
+		public String getGroup2Ip() {
+			return this.group2Ip;
 		}
 
-		public void setVersion(String version) {
-			this.version = version;
+		public void setGroup2Ip(String group2Ip) {
+			this.group2Ip = group2Ip;
 		}
 
 		public String getName() {

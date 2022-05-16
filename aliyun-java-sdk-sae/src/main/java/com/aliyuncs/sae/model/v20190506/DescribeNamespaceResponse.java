@@ -26,15 +26,15 @@ public class DescribeNamespaceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
+	private String message;
+
+	private String traceId;
 
 	private String errorCode;
 
-	private String message;
+	private String code;
 
 	private Boolean success;
-
-	private String traceId;
 
 	private Data data;
 
@@ -46,12 +46,20 @@ public class DescribeNamespaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -62,12 +70,12 @@ public class DescribeNamespaceResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,14 +84,6 @@ public class DescribeNamespaceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
 	}
 
 	public Data getData() {
@@ -96,20 +96,20 @@ public class DescribeNamespaceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String regionId;
+		private String namespaceDescription;
 
 		private String namespaceId;
 
 		private String namespaceName;
 
-		private String namespaceDescription;
+		private String regionId;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getNamespaceDescription() {
+			return this.namespaceDescription;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setNamespaceDescription(String namespaceDescription) {
+			this.namespaceDescription = namespaceDescription;
 		}
 
 		public String getNamespaceId() {
@@ -128,12 +128,12 @@ public class DescribeNamespaceResponse extends AcsResponse {
 			this.namespaceName = namespaceName;
 		}
 
-		public String getNamespaceDescription() {
-			return this.namespaceDescription;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setNamespaceDescription(String namespaceDescription) {
-			this.namespaceDescription = namespaceDescription;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

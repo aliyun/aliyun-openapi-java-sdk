@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppEventsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
-
 	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorCode;
 
+	private String code;
+
+	private Boolean success;
+
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,6 +51,14 @@ public class ListAppEventsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getCode() {
@@ -53,28 +69,12 @@ public class ListAppEventsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -89,9 +89,9 @@ public class ListAppEventsResponse extends AcsResponse {
 
 		private Integer currentPage;
 
-		private Integer pageSize;
-
 		private Integer totalSize;
+
+		private Integer pageSize;
 
 		private List<AppEventEntityItem> appEventEntity;
 
@@ -103,20 +103,20 @@ public class ListAppEventsResponse extends AcsResponse {
 			this.currentPage = currentPage;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public Integer getTotalSize() {
 			return this.totalSize;
 		}
 
 		public void setTotalSize(Integer totalSize) {
 			this.totalSize = totalSize;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public List<AppEventEntityItem> getAppEventEntity() {
@@ -131,17 +131,17 @@ public class ListAppEventsResponse extends AcsResponse {
 
 			private String objectKind;
 
-			private String objectName;
-
 			private String eventType;
-
-			private String message;
-
-			private String firstTimestamp;
 
 			private String lastTimestamp;
 
+			private String message;
+
+			private String objectName;
+
 			private String reason;
+
+			private String firstTimestamp;
 
 			public String getObjectKind() {
 				return this.objectKind;
@@ -149,14 +149,6 @@ public class ListAppEventsResponse extends AcsResponse {
 
 			public void setObjectKind(String objectKind) {
 				this.objectKind = objectKind;
-			}
-
-			public String getObjectName() {
-				return this.objectName;
-			}
-
-			public void setObjectName(String objectName) {
-				this.objectName = objectName;
 			}
 
 			public String getEventType() {
@@ -167,22 +159,6 @@ public class ListAppEventsResponse extends AcsResponse {
 				this.eventType = eventType;
 			}
 
-			public String getMessage() {
-				return this.message;
-			}
-
-			public void setMessage(String message) {
-				this.message = message;
-			}
-
-			public String getFirstTimestamp() {
-				return this.firstTimestamp;
-			}
-
-			public void setFirstTimestamp(String firstTimestamp) {
-				this.firstTimestamp = firstTimestamp;
-			}
-
 			public String getLastTimestamp() {
 				return this.lastTimestamp;
 			}
@@ -191,12 +167,36 @@ public class ListAppEventsResponse extends AcsResponse {
 				this.lastTimestamp = lastTimestamp;
 			}
 
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
+
+			public String getObjectName() {
+				return this.objectName;
+			}
+
+			public void setObjectName(String objectName) {
+				this.objectName = objectName;
+			}
+
 			public String getReason() {
 				return this.reason;
 			}
 
 			public void setReason(String reason) {
 				this.reason = reason;
+			}
+
+			public String getFirstTimestamp() {
+				return this.firstTimestamp;
+			}
+
+			public void setFirstTimestamp(String firstTimestamp) {
+				this.firstTimestamp = firstTimestamp;
 			}
 		}
 	}

@@ -24,11 +24,11 @@ public class StartApplicationResponseUnmarshaller {
 	public static StartApplicationResponse unmarshall(StartApplicationResponse startApplicationResponse, UnmarshallerContext _ctx) {
 		
 		startApplicationResponse.setRequestId(_ctx.stringValue("StartApplicationResponse.RequestId"));
-		startApplicationResponse.setCode(_ctx.stringValue("StartApplicationResponse.Code"));
-		startApplicationResponse.setSuccess(_ctx.booleanValue("StartApplicationResponse.Success"));
-		startApplicationResponse.setErrorCode(_ctx.stringValue("StartApplicationResponse.ErrorCode"));
 		startApplicationResponse.setMessage(_ctx.stringValue("StartApplicationResponse.Message"));
 		startApplicationResponse.setTraceId(_ctx.stringValue("StartApplicationResponse.TraceId"));
+		startApplicationResponse.setErrorCode(_ctx.stringValue("StartApplicationResponse.ErrorCode"));
+		startApplicationResponse.setCode(_ctx.stringValue("StartApplicationResponse.Code"));
+		startApplicationResponse.setSuccess(_ctx.booleanValue("StartApplicationResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("StartApplicationResponse.Data.ChangeOrderId"));

@@ -27,15 +27,15 @@ public class ListIngressesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
-	private Boolean success;
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
+
+	private Boolean success;
 
 	private Data data;
 
@@ -47,14 +47,6 @@ public class ListIngressesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
@@ -63,12 +55,12 @@ public class ListIngressesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -79,12 +71,20 @@ public class ListIngressesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -109,36 +109,32 @@ public class ListIngressesResponse extends AcsResponse {
 
 		public static class Ingress {
 
-			private Long id;
-
-			private String name;
+			private String slbId;
 
 			private String namespaceId;
 
-			private String slbId;
+			private String description;
 
 			private String listenerPort;
 
-			private String certId;
-
-			private String description;
-
 			private String slbType;
 
-			public Long getId() {
-				return this.id;
+			private String certId;
+
+			private String name;
+
+			private Long id;
+
+			private String loadBalanceType;
+
+			private String listenerProtocol;
+
+			public String getSlbId() {
+				return this.slbId;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
+			public void setSlbId(String slbId) {
+				this.slbId = slbId;
 			}
 
 			public String getNamespaceId() {
@@ -149,12 +145,12 @@ public class ListIngressesResponse extends AcsResponse {
 				this.namespaceId = namespaceId;
 			}
 
-			public String getSlbId() {
-				return this.slbId;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setSlbId(String slbId) {
-				this.slbId = slbId;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getListenerPort() {
@@ -165,6 +161,14 @@ public class ListIngressesResponse extends AcsResponse {
 				this.listenerPort = listenerPort;
 			}
 
+			public String getSlbType() {
+				return this.slbType;
+			}
+
+			public void setSlbType(String slbType) {
+				this.slbType = slbType;
+			}
+
 			public String getCertId() {
 				return this.certId;
 			}
@@ -173,20 +177,36 @@ public class ListIngressesResponse extends AcsResponse {
 				this.certId = certId;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
+			public void setName(String name) {
+				this.name = name;
 			}
 
-			public String getSlbType() {
-				return this.slbType;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setSlbType(String slbType) {
-				this.slbType = slbType;
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getLoadBalanceType() {
+				return this.loadBalanceType;
+			}
+
+			public void setLoadBalanceType(String loadBalanceType) {
+				this.loadBalanceType = loadBalanceType;
+			}
+
+			public String getListenerProtocol() {
+				return this.listenerProtocol;
+			}
+
+			public void setListenerProtocol(String listenerProtocol) {
+				this.listenerProtocol = listenerProtocol;
 			}
 		}
 	}

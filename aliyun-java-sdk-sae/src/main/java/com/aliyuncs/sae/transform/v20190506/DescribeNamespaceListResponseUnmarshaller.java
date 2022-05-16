@@ -27,25 +27,25 @@ public class DescribeNamespaceListResponseUnmarshaller {
 	public static DescribeNamespaceListResponse unmarshall(DescribeNamespaceListResponse describeNamespaceListResponse, UnmarshallerContext _ctx) {
 		
 		describeNamespaceListResponse.setRequestId(_ctx.stringValue("DescribeNamespaceListResponse.RequestId"));
-		describeNamespaceListResponse.setCode(_ctx.stringValue("DescribeNamespaceListResponse.Code"));
 		describeNamespaceListResponse.setMessage(_ctx.stringValue("DescribeNamespaceListResponse.Message"));
-		describeNamespaceListResponse.setSuccess(_ctx.booleanValue("DescribeNamespaceListResponse.Success"));
-		describeNamespaceListResponse.setErrorCode(_ctx.stringValue("DescribeNamespaceListResponse.ErrorCode"));
 		describeNamespaceListResponse.setTraceId(_ctx.stringValue("DescribeNamespaceListResponse.TraceId"));
+		describeNamespaceListResponse.setErrorCode(_ctx.stringValue("DescribeNamespaceListResponse.ErrorCode"));
+		describeNamespaceListResponse.setCode(_ctx.stringValue("DescribeNamespaceListResponse.Code"));
+		describeNamespaceListResponse.setSuccess(_ctx.booleanValue("DescribeNamespaceListResponse.Success"));
 
 		List<RegionList> data = new ArrayList<RegionList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNamespaceListResponse.Data.Length"); i++) {
 			RegionList regionList = new RegionList();
-			regionList.setNamespaceName(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].NamespaceName"));
-			regionList.setNamespaceId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].NamespaceId"));
-			regionList.setAgentInstall(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].AgentInstall"));
-			regionList.setCurrent(_ctx.booleanValue("DescribeNamespaceListResponse.Data["+ i +"].Current"));
-			regionList.setCustom(_ctx.booleanValue("DescribeNamespaceListResponse.Data["+ i +"].Custom"));
-			regionList.setRegionId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].RegionId"));
-			regionList.setHybridCloudEnable(_ctx.booleanValue("DescribeNamespaceListResponse.Data["+ i +"].HybridCloudEnable"));
 			regionList.setVpcId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].VpcId"));
 			regionList.setVSwitchId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].VSwitchId"));
+			regionList.setCustom(_ctx.booleanValue("DescribeNamespaceListResponse.Data["+ i +"].Custom"));
+			regionList.setAgentInstall(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].AgentInstall"));
+			regionList.setNamespaceId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].NamespaceId"));
+			regionList.setHybridCloudEnable(_ctx.booleanValue("DescribeNamespaceListResponse.Data["+ i +"].HybridCloudEnable"));
 			regionList.setSecurityGroupId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].SecurityGroupId"));
+			regionList.setCurrent(_ctx.booleanValue("DescribeNamespaceListResponse.Data["+ i +"].Current"));
+			regionList.setNamespaceName(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].NamespaceName"));
+			regionList.setRegionId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].RegionId"));
 
 			data.add(regionList);
 		}

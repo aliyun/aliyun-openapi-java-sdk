@@ -41,6 +41,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String phpArmsConfigLocation;
 
+	private String programmingLanguage;
+
 	private String customHostAlias;
 
 	private Boolean deploy;
@@ -74,6 +76,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private Integer memory;
 
 	private String slsConfigs;
+
+	private String kafkaConfigs;
 
 	private Boolean openCollectToKafka;
 
@@ -219,6 +223,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.phpArmsConfigLocation = phpArmsConfigLocation;
 		if(phpArmsConfigLocation != null){
 			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
+		}
+	}
+
+	public String getProgrammingLanguage() {
+		return this.programmingLanguage;
+	}
+
+	public void setProgrammingLanguage(String programmingLanguage) {
+		this.programmingLanguage = programmingLanguage;
+		if(programmingLanguage != null){
+			putQueryParameter("ProgrammingLanguage", programmingLanguage);
 		}
 	}
 
@@ -406,6 +421,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.slsConfigs = slsConfigs;
 		if(slsConfigs != null){
 			putQueryParameter("SlsConfigs", slsConfigs);
+		}
+	}
+
+	public String getKafkaConfigs() {
+		return this.kafkaConfigs;
+	}
+
+	public void setKafkaConfigs(String kafkaConfigs) {
+		this.kafkaConfigs = kafkaConfigs;
+		if(kafkaConfigs != null){
+			putQueryParameter("KafkaConfigs", kafkaConfigs);
 		}
 	}
 

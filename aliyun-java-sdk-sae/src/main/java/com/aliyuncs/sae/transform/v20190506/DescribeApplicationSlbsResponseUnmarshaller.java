@@ -29,41 +29,41 @@ public class DescribeApplicationSlbsResponseUnmarshaller {
 	public static DescribeApplicationSlbsResponse unmarshall(DescribeApplicationSlbsResponse describeApplicationSlbsResponse, UnmarshallerContext _ctx) {
 		
 		describeApplicationSlbsResponse.setRequestId(_ctx.stringValue("DescribeApplicationSlbsResponse.RequestId"));
-		describeApplicationSlbsResponse.setCode(_ctx.stringValue("DescribeApplicationSlbsResponse.Code"));
-		describeApplicationSlbsResponse.setErrorCode(_ctx.stringValue("DescribeApplicationSlbsResponse.ErrorCode"));
 		describeApplicationSlbsResponse.setMessage(_ctx.stringValue("DescribeApplicationSlbsResponse.Message"));
-		describeApplicationSlbsResponse.setSuccess(_ctx.booleanValue("DescribeApplicationSlbsResponse.Success"));
 		describeApplicationSlbsResponse.setTraceId(_ctx.stringValue("DescribeApplicationSlbsResponse.TraceId"));
+		describeApplicationSlbsResponse.setErrorCode(_ctx.stringValue("DescribeApplicationSlbsResponse.ErrorCode"));
+		describeApplicationSlbsResponse.setCode(_ctx.stringValue("DescribeApplicationSlbsResponse.Code"));
+		describeApplicationSlbsResponse.setSuccess(_ctx.booleanValue("DescribeApplicationSlbsResponse.Success"));
 
 		Data data = new Data();
 		data.setInternetIp(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.InternetIp"));
-		data.setIntranetIp(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetIp"));
 		data.setInternetSlbId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.InternetSlbId"));
 		data.setIntranetSlbId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetSlbId"));
-
-		List<InternetItem> internet = new ArrayList<InternetItem>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationSlbsResponse.Data.Internet.Length"); i++) {
-			InternetItem internetItem = new InternetItem();
-			internetItem.setPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Port"));
-			internetItem.setBizProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Protocol"));
-			internetItem.setTargetPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].TargetPort"));
-			internetItem.setHttpsCertId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].HttpsCertId"));
-
-			internet.add(internetItem);
-		}
-		data.setInternet(internet);
+		data.setIntranetIp(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetIp"));
 
 		List<IntranetItem> intranet = new ArrayList<IntranetItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationSlbsResponse.Data.Intranet.Length"); i++) {
 			IntranetItem intranetItem = new IntranetItem();
-			intranetItem.setPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Port"));
+			intranetItem.setHttpsCertId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].HttpsCertId"));
 			intranetItem.setBizProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Protocol"));
 			intranetItem.setTargetPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].TargetPort"));
-			intranetItem.setHttpsCertId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].HttpsCertId"));
+			intranetItem.setPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Intranet["+ i +"].Port"));
 
 			intranet.add(intranetItem);
 		}
 		data.setIntranet(intranet);
+
+		List<InternetItem> internet = new ArrayList<InternetItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationSlbsResponse.Data.Internet.Length"); i++) {
+			InternetItem internetItem = new InternetItem();
+			internetItem.setHttpsCertId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].HttpsCertId"));
+			internetItem.setBizProtocol(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Protocol"));
+			internetItem.setTargetPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].TargetPort"));
+			internetItem.setPort(_ctx.integerValue("DescribeApplicationSlbsResponse.Data.Internet["+ i +"].Port"));
+
+			internet.add(internetItem);
+		}
+		data.setInternet(internet);
 		describeApplicationSlbsResponse.setData(data);
 	 
 	 	return describeApplicationSlbsResponse;

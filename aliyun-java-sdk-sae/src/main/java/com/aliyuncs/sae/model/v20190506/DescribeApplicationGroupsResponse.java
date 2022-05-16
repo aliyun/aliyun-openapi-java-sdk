@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApplicationGroupsResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
 	private String traceId;
 
-	private String requestId;
+	private String errorCode;
+
+	private String code;
 
 	private Boolean success;
 
-	private String errorCode;
-
 	private List<ApplicationGroup> data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -63,12 +63,20 @@ public class DescribeApplicationGroupsResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,14 +85,6 @@ public class DescribeApplicationGroupsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public List<ApplicationGroup> getData() {
@@ -97,68 +97,36 @@ public class DescribeApplicationGroupsResponse extends AcsResponse {
 
 	public static class ApplicationGroup {
 
-		private String groupId;
-
-		private String groupName;
-
-		private Integer groupType;
-
-		private String packageType;
-
-		private String packageVersion;
+		private String jdk;
 
 		private String imageUrl;
 
 		private String packageUrl;
 
-		private String jdk;
+		private String packageType;
+
+		private String packageVersion;
+
+		private String groupName;
+
+		private String groupId;
 
 		private String webContainer;
 
-		private String edasContainerVersion;
-
 		private Integer replicas;
+
+		private String edasContainerVersion;
 
 		private Integer runningInstances;
 
-		public String getGroupId() {
-			return this.groupId;
+		private Integer groupType;
+
+		public String getJdk() {
+			return this.jdk;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public Integer getGroupType() {
-			return this.groupType;
-		}
-
-		public void setGroupType(Integer groupType) {
-			this.groupType = groupType;
-		}
-
-		public String getPackageType() {
-			return this.packageType;
-		}
-
-		public void setPackageType(String packageType) {
-			this.packageType = packageType;
-		}
-
-		public String getPackageVersion() {
-			return this.packageVersion;
-		}
-
-		public void setPackageVersion(String packageVersion) {
-			this.packageVersion = packageVersion;
+		public void setJdk(String jdk) {
+			this.jdk = jdk;
 		}
 
 		public String getImageUrl() {
@@ -177,12 +145,36 @@ public class DescribeApplicationGroupsResponse extends AcsResponse {
 			this.packageUrl = packageUrl;
 		}
 
-		public String getJdk() {
-			return this.jdk;
+		public String getPackageType() {
+			return this.packageType;
 		}
 
-		public void setJdk(String jdk) {
-			this.jdk = jdk;
+		public void setPackageType(String packageType) {
+			this.packageType = packageType;
+		}
+
+		public String getPackageVersion() {
+			return this.packageVersion;
+		}
+
+		public void setPackageVersion(String packageVersion) {
+			this.packageVersion = packageVersion;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
 		public String getWebContainer() {
@@ -193,14 +185,6 @@ public class DescribeApplicationGroupsResponse extends AcsResponse {
 			this.webContainer = webContainer;
 		}
 
-		public String getEdasContainerVersion() {
-			return this.edasContainerVersion;
-		}
-
-		public void setEdasContainerVersion(String edasContainerVersion) {
-			this.edasContainerVersion = edasContainerVersion;
-		}
-
 		public Integer getReplicas() {
 			return this.replicas;
 		}
@@ -209,12 +193,28 @@ public class DescribeApplicationGroupsResponse extends AcsResponse {
 			this.replicas = replicas;
 		}
 
+		public String getEdasContainerVersion() {
+			return this.edasContainerVersion;
+		}
+
+		public void setEdasContainerVersion(String edasContainerVersion) {
+			this.edasContainerVersion = edasContainerVersion;
+		}
+
 		public Integer getRunningInstances() {
 			return this.runningInstances;
 		}
 
 		public void setRunningInstances(Integer runningInstances) {
 			this.runningInstances = runningInstances;
+		}
+
+		public Integer getGroupType() {
+			return this.groupType;
+		}
+
+		public void setGroupType(Integer groupType) {
+			this.groupType = groupType;
 		}
 	}
 

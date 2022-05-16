@@ -24,11 +24,11 @@ public class ConfirmPipelineBatchResponseUnmarshaller {
 	public static ConfirmPipelineBatchResponse unmarshall(ConfirmPipelineBatchResponse confirmPipelineBatchResponse, UnmarshallerContext _ctx) {
 		
 		confirmPipelineBatchResponse.setRequestId(_ctx.stringValue("ConfirmPipelineBatchResponse.RequestId"));
-		confirmPipelineBatchResponse.setCode(_ctx.stringValue("ConfirmPipelineBatchResponse.Code"));
-		confirmPipelineBatchResponse.setErrorCode(_ctx.stringValue("ConfirmPipelineBatchResponse.ErrorCode"));
 		confirmPipelineBatchResponse.setMessage(_ctx.stringValue("ConfirmPipelineBatchResponse.Message"));
-		confirmPipelineBatchResponse.setSuccess(_ctx.booleanValue("ConfirmPipelineBatchResponse.Success"));
 		confirmPipelineBatchResponse.setTraceId(_ctx.stringValue("ConfirmPipelineBatchResponse.TraceId"));
+		confirmPipelineBatchResponse.setErrorCode(_ctx.stringValue("ConfirmPipelineBatchResponse.ErrorCode"));
+		confirmPipelineBatchResponse.setCode(_ctx.stringValue("ConfirmPipelineBatchResponse.Code"));
+		confirmPipelineBatchResponse.setSuccess(_ctx.booleanValue("ConfirmPipelineBatchResponse.Success"));
 
 		Data data = new Data();
 		data.setPipelineId(_ctx.stringValue("ConfirmPipelineBatchResponse.Data.PipelineId"));

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListChangeOrdersResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String traceId;
 
@@ -39,20 +39,20 @@ public class ListChangeOrdersResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getTraceId() {
@@ -97,21 +97,13 @@ public class ListChangeOrdersResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer currentPage;
 
 		private Integer totalSize;
 
+		private Integer pageSize;
+
 		private List<ChangeOrder> changeOrderList;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -129,6 +121,14 @@ public class ListChangeOrdersResponse extends AcsResponse {
 			this.totalSize = totalSize;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public List<ChangeOrder> getChangeOrderList() {
 			return this.changeOrderList;
 		}
@@ -141,31 +141,31 @@ public class ListChangeOrdersResponse extends AcsResponse {
 
 			private Integer status;
 
-			private String description;
+			private String finishTime;
 
 			private String createTime;
 
-			private String changeOrderId;
-
-			private String createUserId;
-
-			private String batchType;
+			private String userId;
 
 			private String source;
 
-			private String groupId;
+			private Integer batchCount;
 
-			private String appId;
+			private String createUserId;
 
 			private String coTypeCode;
 
-			private String finishTime;
+			private String changeOrderId;
 
-			private String userId;
+			private String batchType;
+
+			private String groupId;
+
+			private String description;
 
 			private String coType;
 
-			private Integer batchCount;
+			private String appId;
 
 			public Integer getStatus() {
 				return this.status;
@@ -173,78 +173,6 @@ public class ListChangeOrdersResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getChangeOrderId() {
-				return this.changeOrderId;
-			}
-
-			public void setChangeOrderId(String changeOrderId) {
-				this.changeOrderId = changeOrderId;
-			}
-
-			public String getCreateUserId() {
-				return this.createUserId;
-			}
-
-			public void setCreateUserId(String createUserId) {
-				this.createUserId = createUserId;
-			}
-
-			public String getBatchType() {
-				return this.batchType;
-			}
-
-			public void setBatchType(String batchType) {
-				this.batchType = batchType;
-			}
-
-			public String getSource() {
-				return this.source;
-			}
-
-			public void setSource(String source) {
-				this.source = source;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-
-			public String getCoTypeCode() {
-				return this.coTypeCode;
-			}
-
-			public void setCoTypeCode(String coTypeCode) {
-				this.coTypeCode = coTypeCode;
 			}
 
 			public String getFinishTime() {
@@ -255,12 +183,84 @@ public class ListChangeOrdersResponse extends AcsResponse {
 				this.finishTime = finishTime;
 			}
 
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
 			public String getUserId() {
 				return this.userId;
 			}
 
 			public void setUserId(String userId) {
 				this.userId = userId;
+			}
+
+			public String getSource() {
+				return this.source;
+			}
+
+			public void setSource(String source) {
+				this.source = source;
+			}
+
+			public Integer getBatchCount() {
+				return this.batchCount;
+			}
+
+			public void setBatchCount(Integer batchCount) {
+				this.batchCount = batchCount;
+			}
+
+			public String getCreateUserId() {
+				return this.createUserId;
+			}
+
+			public void setCreateUserId(String createUserId) {
+				this.createUserId = createUserId;
+			}
+
+			public String getCoTypeCode() {
+				return this.coTypeCode;
+			}
+
+			public void setCoTypeCode(String coTypeCode) {
+				this.coTypeCode = coTypeCode;
+			}
+
+			public String getChangeOrderId() {
+				return this.changeOrderId;
+			}
+
+			public void setChangeOrderId(String changeOrderId) {
+				this.changeOrderId = changeOrderId;
+			}
+
+			public String getBatchType() {
+				return this.batchType;
+			}
+
+			public void setBatchType(String batchType) {
+				this.batchType = batchType;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getCoType() {
@@ -271,12 +271,12 @@ public class ListChangeOrdersResponse extends AcsResponse {
 				this.coType = coType;
 			}
 
-			public Integer getBatchCount() {
-				return this.batchCount;
+			public String getAppId() {
+				return this.appId;
 			}
 
-			public void setBatchCount(Integer batchCount) {
-				this.batchCount = batchCount;
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 		}
 	}

@@ -24,22 +24,22 @@ public class DescribeApplicationImageResponseUnmarshaller {
 	public static DescribeApplicationImageResponse unmarshall(DescribeApplicationImageResponse describeApplicationImageResponse, UnmarshallerContext _ctx) {
 		
 		describeApplicationImageResponse.setRequestId(_ctx.stringValue("DescribeApplicationImageResponse.RequestId"));
-		describeApplicationImageResponse.setCode(_ctx.stringValue("DescribeApplicationImageResponse.Code"));
 		describeApplicationImageResponse.setMessage(_ctx.stringValue("DescribeApplicationImageResponse.Message"));
-		describeApplicationImageResponse.setSuccess(_ctx.booleanValue("DescribeApplicationImageResponse.Success"));
-		describeApplicationImageResponse.setErrorCode(_ctx.stringValue("DescribeApplicationImageResponse.ErrorCode"));
 		describeApplicationImageResponse.setTraceId(_ctx.stringValue("DescribeApplicationImageResponse.TraceId"));
+		describeApplicationImageResponse.setErrorCode(_ctx.stringValue("DescribeApplicationImageResponse.ErrorCode"));
+		describeApplicationImageResponse.setCode(_ctx.stringValue("DescribeApplicationImageResponse.Code"));
+		describeApplicationImageResponse.setSuccess(_ctx.booleanValue("DescribeApplicationImageResponse.Success"));
 
 		Data data = new Data();
-		data.setCrUrl(_ctx.stringValue("DescribeApplicationImageResponse.Data.CrUrl"));
-		data.setLogo(_ctx.stringValue("DescribeApplicationImageResponse.Data.Logo"));
-		data.setRegionId(_ctx.stringValue("DescribeApplicationImageResponse.Data.RegionId"));
 		data.setRepoId(_ctx.integerValue("DescribeApplicationImageResponse.Data.RepoId"));
+		data.setLogo(_ctx.stringValue("DescribeApplicationImageResponse.Data.Logo"));
+		data.setRepoOriginType(_ctx.stringValue("DescribeApplicationImageResponse.Data.RepoOriginType"));
+		data.setCrUrl(_ctx.stringValue("DescribeApplicationImageResponse.Data.CrUrl"));
+		data.setRepoTag(_ctx.stringValue("DescribeApplicationImageResponse.Data.RepoTag"));
+		data.setRepoType(_ctx.stringValue("DescribeApplicationImageResponse.Data.RepoType"));
 		data.setRepoName(_ctx.stringValue("DescribeApplicationImageResponse.Data.RepoName"));
 		data.setRepoNamespace(_ctx.stringValue("DescribeApplicationImageResponse.Data.RepoNamespace"));
-		data.setRepoOriginType(_ctx.stringValue("DescribeApplicationImageResponse.Data.RepoOriginType"));
-		data.setRepoType(_ctx.stringValue("DescribeApplicationImageResponse.Data.RepoType"));
-		data.setRepoTag(_ctx.stringValue("DescribeApplicationImageResponse.Data.RepoTag"));
+		data.setRegionId(_ctx.stringValue("DescribeApplicationImageResponse.Data.RegionId"));
 		describeApplicationImageResponse.setData(data);
 	 
 	 	return describeApplicationImageResponse;

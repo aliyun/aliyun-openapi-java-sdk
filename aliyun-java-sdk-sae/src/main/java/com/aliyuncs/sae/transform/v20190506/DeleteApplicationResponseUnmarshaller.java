@@ -24,11 +24,11 @@ public class DeleteApplicationResponseUnmarshaller {
 	public static DeleteApplicationResponse unmarshall(DeleteApplicationResponse deleteApplicationResponse, UnmarshallerContext _ctx) {
 		
 		deleteApplicationResponse.setRequestId(_ctx.stringValue("DeleteApplicationResponse.RequestId"));
-		deleteApplicationResponse.setCode(_ctx.stringValue("DeleteApplicationResponse.Code"));
 		deleteApplicationResponse.setMessage(_ctx.stringValue("DeleteApplicationResponse.Message"));
-		deleteApplicationResponse.setSuccess(_ctx.booleanValue("DeleteApplicationResponse.Success"));
-		deleteApplicationResponse.setErrorCode(_ctx.stringValue("DeleteApplicationResponse.ErrorCode"));
 		deleteApplicationResponse.setTraceId(_ctx.stringValue("DeleteApplicationResponse.TraceId"));
+		deleteApplicationResponse.setErrorCode(_ctx.stringValue("DeleteApplicationResponse.ErrorCode"));
+		deleteApplicationResponse.setCode(_ctx.stringValue("DeleteApplicationResponse.Code"));
+		deleteApplicationResponse.setSuccess(_ctx.booleanValue("DeleteApplicationResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("DeleteApplicationResponse.Data.ChangeOrderId"));

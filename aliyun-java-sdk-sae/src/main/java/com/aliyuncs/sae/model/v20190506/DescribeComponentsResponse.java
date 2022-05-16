@@ -27,15 +27,15 @@ public class DescribeComponentsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
+	private String message;
+
+	private String traceId;
 
 	private String errorCode;
 
-	private String message;
+	private String code;
 
 	private Boolean success;
-
-	private String traceId;
 
 	private List<DataItem> data;
 
@@ -47,12 +47,20 @@ public class DescribeComponentsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -63,12 +71,12 @@ public class DescribeComponentsResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,14 +85,6 @@ public class DescribeComponentsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
 	}
 
 	public List<DataItem> getData() {
@@ -97,13 +97,21 @@ public class DescribeComponentsResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private String type;
+
 		private String componentKey;
 
 		private String componentDescription;
 
 		private Boolean expired;
 
-		private String type;
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 
 		public String getComponentKey() {
 			return this.componentKey;
@@ -127,14 +135,6 @@ public class DescribeComponentsResponse extends AcsResponse {
 
 		public void setExpired(Boolean expired) {
 			this.expired = expired;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
 		}
 	}
 

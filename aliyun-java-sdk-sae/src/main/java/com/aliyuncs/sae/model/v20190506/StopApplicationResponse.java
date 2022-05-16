@@ -26,15 +26,15 @@ public class StopApplicationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
-	private Boolean success;
-
-	private String errorCode;
-
 	private String message;
 
 	private String traceId;
+
+	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
 
 	private Data data;
 
@@ -44,30 +44,6 @@ public class StopApplicationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getMessage() {
@@ -84,6 +60,30 @@ public class StopApplicationResponse extends AcsResponse {
 
 	public void setTraceId(String traceId) {
 		this.traceId = traceId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {

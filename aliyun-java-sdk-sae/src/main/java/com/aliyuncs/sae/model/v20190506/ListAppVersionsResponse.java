@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAppVersionsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
-
 	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorCode;
 
+	private String code;
+
+	private Boolean success;
+
 	private List<PackageVersionEntity> data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,6 +51,14 @@ public class ListAppVersionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getCode() {
@@ -53,28 +69,12 @@ public class ListAppVersionsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public List<PackageVersionEntity> getData() {
@@ -87,22 +87,22 @@ public class ListAppVersionsResponse extends AcsResponse {
 
 	public static class PackageVersionEntity {
 
-		private String id;
+		private String type;
 
 		private String createTime;
 
-		private String warUrl;
-
-		private String type;
-
 		private String buildPackageUrl;
 
-		public String getId() {
-			return this.id;
+		private String warUrl;
+
+		private String id;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getCreateTime() {
@@ -113,6 +113,14 @@ public class ListAppVersionsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getBuildPackageUrl() {
+			return this.buildPackageUrl;
+		}
+
+		public void setBuildPackageUrl(String buildPackageUrl) {
+			this.buildPackageUrl = buildPackageUrl;
+		}
+
 		public String getWarUrl() {
 			return this.warUrl;
 		}
@@ -121,20 +129,12 @@ public class ListAppVersionsResponse extends AcsResponse {
 			this.warUrl = warUrl;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getBuildPackageUrl() {
-			return this.buildPackageUrl;
-		}
-
-		public void setBuildPackageUrl(String buildPackageUrl) {
-			this.buildPackageUrl = buildPackageUrl;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

@@ -15,22 +15,20 @@
 package com.aliyuncs.sae.model.v20190506;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sae.transform.v20190506.UploadFilesResponseUnmarshaller;
+import com.aliyuncs.sae.transform.v20190506.UpdateApplicationDescriptionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadFilesResponse extends AcsResponse {
+public class UpdateApplicationDescriptionResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String message;
 
 	private String traceId;
-
-	private String data;
 
 	private String errorCode;
 
@@ -62,14 +60,6 @@ public class UploadFilesResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -95,8 +85,8 @@ public class UploadFilesResponse extends AcsResponse {
 	}
 
 	@Override
-	public UploadFilesResponse getInstance(UnmarshallerContext context) {
-		return	UploadFilesResponseUnmarshaller.unmarshall(this, context);
+	public UpdateApplicationDescriptionResponse getInstance(UnmarshallerContext context) {
+		return	UpdateApplicationDescriptionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

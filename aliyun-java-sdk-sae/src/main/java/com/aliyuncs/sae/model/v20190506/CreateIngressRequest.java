@@ -33,9 +33,13 @@ public class CreateIngressRequest extends RoaAcsRequest<CreateIngressResponse> {
 
 	private String description;
 
+	private String loadBalanceType;
+
 	private String rules;
 
 	private String certId;
+
+	private String listenerProtocol;
 
 	private String defaultRule;
 	public CreateIngressRequest() {
@@ -92,6 +96,17 @@ public class CreateIngressRequest extends RoaAcsRequest<CreateIngressResponse> {
 		}
 	}
 
+	public String getLoadBalanceType() {
+		return this.loadBalanceType;
+	}
+
+	public void setLoadBalanceType(String loadBalanceType) {
+		this.loadBalanceType = loadBalanceType;
+		if(loadBalanceType != null){
+			putQueryParameter("LoadBalanceType", loadBalanceType);
+		}
+	}
+
 	public String getRules() {
 		return this.rules;
 	}
@@ -111,6 +126,17 @@ public class CreateIngressRequest extends RoaAcsRequest<CreateIngressResponse> {
 		this.certId = certId;
 		if(certId != null){
 			putQueryParameter("CertId", certId);
+		}
+	}
+
+	public String getListenerProtocol() {
+		return this.listenerProtocol;
+	}
+
+	public void setListenerProtocol(String listenerProtocol) {
+		this.listenerProtocol = listenerProtocol;
+		if(listenerProtocol != null){
+			putQueryParameter("ListenerProtocol", listenerProtocol);
 		}
 	}
 

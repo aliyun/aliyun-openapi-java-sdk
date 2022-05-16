@@ -27,15 +27,15 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
-	private Boolean success;
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
+
+	private Boolean success;
 
 	private List<RegionList> data;
 
@@ -47,14 +47,6 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
@@ -63,12 +55,12 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -79,12 +71,20 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<RegionList> getData() {
@@ -97,81 +97,25 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 
 	public static class RegionList {
 
-		private String namespaceName;
-
-		private String namespaceId;
-
-		private String agentInstall;
-
-		private Boolean current;
-
-		private Boolean custom;
-
-		private String regionId;
-
-		private Boolean hybridCloudEnable;
-
 		private String vpcId;
 
 		private String vSwitchId;
 
+		private Boolean custom;
+
+		private String agentInstall;
+
+		private String namespaceId;
+
+		private Boolean hybridCloudEnable;
+
 		private String securityGroupId;
 
-		public String getNamespaceName() {
-			return this.namespaceName;
-		}
+		private Boolean current;
 
-		public void setNamespaceName(String namespaceName) {
-			this.namespaceName = namespaceName;
-		}
+		private String namespaceName;
 
-		public String getNamespaceId() {
-			return this.namespaceId;
-		}
-
-		public void setNamespaceId(String namespaceId) {
-			this.namespaceId = namespaceId;
-		}
-
-		public String getAgentInstall() {
-			return this.agentInstall;
-		}
-
-		public void setAgentInstall(String agentInstall) {
-			this.agentInstall = agentInstall;
-		}
-
-		public Boolean getCurrent() {
-			return this.current;
-		}
-
-		public void setCurrent(Boolean current) {
-			this.current = current;
-		}
-
-		public Boolean getCustom() {
-			return this.custom;
-		}
-
-		public void setCustom(Boolean custom) {
-			this.custom = custom;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Boolean getHybridCloudEnable() {
-			return this.hybridCloudEnable;
-		}
-
-		public void setHybridCloudEnable(Boolean hybridCloudEnable) {
-			this.hybridCloudEnable = hybridCloudEnable;
-		}
+		private String regionId;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -189,12 +133,68 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
+		public Boolean getCustom() {
+			return this.custom;
+		}
+
+		public void setCustom(Boolean custom) {
+			this.custom = custom;
+		}
+
+		public String getAgentInstall() {
+			return this.agentInstall;
+		}
+
+		public void setAgentInstall(String agentInstall) {
+			this.agentInstall = agentInstall;
+		}
+
+		public String getNamespaceId() {
+			return this.namespaceId;
+		}
+
+		public void setNamespaceId(String namespaceId) {
+			this.namespaceId = namespaceId;
+		}
+
+		public Boolean getHybridCloudEnable() {
+			return this.hybridCloudEnable;
+		}
+
+		public void setHybridCloudEnable(Boolean hybridCloudEnable) {
+			this.hybridCloudEnable = hybridCloudEnable;
+		}
+
 		public String getSecurityGroupId() {
 			return this.securityGroupId;
 		}
 
 		public void setSecurityGroupId(String securityGroupId) {
 			this.securityGroupId = securityGroupId;
+		}
+
+		public Boolean getCurrent() {
+			return this.current;
+		}
+
+		public void setCurrent(Boolean current) {
+			this.current = current;
+		}
+
+		public String getNamespaceName() {
+			return this.namespaceName;
+		}
+
+		public void setNamespaceName(String namespaceName) {
+			this.namespaceName = namespaceName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

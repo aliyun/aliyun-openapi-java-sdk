@@ -27,19 +27,19 @@ public class DescribeComponentsResponseUnmarshaller {
 	public static DescribeComponentsResponse unmarshall(DescribeComponentsResponse describeComponentsResponse, UnmarshallerContext _ctx) {
 		
 		describeComponentsResponse.setRequestId(_ctx.stringValue("DescribeComponentsResponse.RequestId"));
-		describeComponentsResponse.setCode(_ctx.stringValue("DescribeComponentsResponse.Code"));
-		describeComponentsResponse.setErrorCode(_ctx.stringValue("DescribeComponentsResponse.ErrorCode"));
 		describeComponentsResponse.setMessage(_ctx.stringValue("DescribeComponentsResponse.Message"));
-		describeComponentsResponse.setSuccess(_ctx.booleanValue("DescribeComponentsResponse.Success"));
 		describeComponentsResponse.setTraceId(_ctx.stringValue("DescribeComponentsResponse.TraceId"));
+		describeComponentsResponse.setErrorCode(_ctx.stringValue("DescribeComponentsResponse.ErrorCode"));
+		describeComponentsResponse.setCode(_ctx.stringValue("DescribeComponentsResponse.Code"));
+		describeComponentsResponse.setSuccess(_ctx.booleanValue("DescribeComponentsResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeComponentsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setType(_ctx.stringValue("DescribeComponentsResponse.Data["+ i +"].Type"));
 			dataItem.setComponentKey(_ctx.stringValue("DescribeComponentsResponse.Data["+ i +"].ComponentKey"));
 			dataItem.setComponentDescription(_ctx.stringValue("DescribeComponentsResponse.Data["+ i +"].ComponentDescription"));
 			dataItem.setExpired(_ctx.booleanValue("DescribeComponentsResponse.Data["+ i +"].Expired"));
-			dataItem.setType(_ctx.stringValue("DescribeComponentsResponse.Data["+ i +"].Type"));
 
 			data.add(dataItem);
 		}

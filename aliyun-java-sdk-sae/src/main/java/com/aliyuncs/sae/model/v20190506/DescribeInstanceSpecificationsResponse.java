@@ -27,15 +27,15 @@ public class DescribeInstanceSpecificationsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
-	private Boolean success;
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
+
+	private Boolean success;
 
 	private List<DataItem> data;
 
@@ -47,14 +47,6 @@ public class DescribeInstanceSpecificationsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
@@ -63,12 +55,12 @@ public class DescribeInstanceSpecificationsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -79,12 +71,20 @@ public class DescribeInstanceSpecificationsResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -99,15 +99,15 @@ public class DescribeInstanceSpecificationsResponse extends AcsResponse {
 
 		private Integer cpu;
 
-		private Boolean enable;
-
-		private Integer id;
+		private Integer version;
 
 		private Integer memory;
 
 		private String specInfo;
 
-		private Integer version;
+		private Integer id;
+
+		private Boolean enable;
 
 		public Integer getCpu() {
 			return this.cpu;
@@ -117,20 +117,12 @@ public class DescribeInstanceSpecificationsResponse extends AcsResponse {
 			this.cpu = cpu;
 		}
 
-		public Boolean getEnable() {
-			return this.enable;
+		public Integer getVersion() {
+			return this.version;
 		}
 
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
-		}
-
-		public Integer getId() {
-			return this.id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
+		public void setVersion(Integer version) {
+			this.version = version;
 		}
 
 		public Integer getMemory() {
@@ -149,12 +141,20 @@ public class DescribeInstanceSpecificationsResponse extends AcsResponse {
 			this.specInfo = specInfo;
 		}
 
-		public Integer getVersion() {
-			return this.version;
+		public Integer getId() {
+			return this.id;
 		}
 
-		public void setVersion(Integer version) {
-			this.version = version;
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 	}
 

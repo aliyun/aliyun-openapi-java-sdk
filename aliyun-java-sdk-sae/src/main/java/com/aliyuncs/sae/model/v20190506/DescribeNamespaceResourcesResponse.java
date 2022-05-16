@@ -26,13 +26,13 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
 
 	private Boolean success;
 
@@ -46,20 +46,20 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -70,12 +70,12 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -96,85 +96,39 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String namespaceId;
-
-		private String namespaceName;
-
-		private String description;
-
-		private String userId;
-
-		private String belongRegion;
-
-		private String tenantId;
-
 		private String vpcId;
-
-		private String vSwitchId;
-
-		private String securityGroupId;
-
-		private Long appCount;
 
 		private String lastChangeOrderId;
 
+		private String belongRegion;
+
+		private String namespaceId;
+
+		private String securityGroupId;
+
+		private String userId;
+
+		private String namespaceName;
+
 		private String lastChangeOrderStatus;
+
+		private String vpcName;
+
+		private String vSwitchId;
+
+		private String description;
 
 		private Boolean lastChangeOrderRunning;
 
-		private String vpcName;
+		private Long appCount;
 
 		private String vSwitchName;
 
 		private Boolean notificationExpired;
 
-		public String getNamespaceId() {
-			return this.namespaceId;
-		}
+		private String tenantId;
 
-		public void setNamespaceId(String namespaceId) {
-			this.namespaceId = namespaceId;
-		}
-
-		public String getNamespaceName() {
-			return this.namespaceName;
-		}
-
-		public void setNamespaceName(String namespaceName) {
-			this.namespaceName = namespaceName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getBelongRegion() {
-			return this.belongRegion;
-		}
-
-		public void setBelongRegion(String belongRegion) {
-			this.belongRegion = belongRegion;
-		}
-
-		public String getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
+		private String jumpServerAppId;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -182,30 +136,6 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
-		}
-
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
-		}
-
-		public Long getAppCount() {
-			return this.appCount;
-		}
-
-		public void setAppCount(Long appCount) {
-			this.appCount = appCount;
 		}
 
 		public String getLastChangeOrderId() {
@@ -216,12 +146,76 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 			this.lastChangeOrderId = lastChangeOrderId;
 		}
 
+		public String getBelongRegion() {
+			return this.belongRegion;
+		}
+
+		public void setBelongRegion(String belongRegion) {
+			this.belongRegion = belongRegion;
+		}
+
+		public String getNamespaceId() {
+			return this.namespaceId;
+		}
+
+		public void setNamespaceId(String namespaceId) {
+			this.namespaceId = namespaceId;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getNamespaceName() {
+			return this.namespaceName;
+		}
+
+		public void setNamespaceName(String namespaceName) {
+			this.namespaceName = namespaceName;
+		}
+
 		public String getLastChangeOrderStatus() {
 			return this.lastChangeOrderStatus;
 		}
 
 		public void setLastChangeOrderStatus(String lastChangeOrderStatus) {
 			this.lastChangeOrderStatus = lastChangeOrderStatus;
+		}
+
+		public String getVpcName() {
+			return this.vpcName;
+		}
+
+		public void setVpcName(String vpcName) {
+			this.vpcName = vpcName;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Boolean getLastChangeOrderRunning() {
@@ -232,12 +226,12 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 			this.lastChangeOrderRunning = lastChangeOrderRunning;
 		}
 
-		public String getVpcName() {
-			return this.vpcName;
+		public Long getAppCount() {
+			return this.appCount;
 		}
 
-		public void setVpcName(String vpcName) {
-			this.vpcName = vpcName;
+		public void setAppCount(Long appCount) {
+			this.appCount = appCount;
 		}
 
 		public String getVSwitchName() {
@@ -254,6 +248,22 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 
 		public void setNotificationExpired(Boolean notificationExpired) {
 			this.notificationExpired = notificationExpired;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public String getJumpServerAppId() {
+			return this.jumpServerAppId;
+		}
+
+		public void setJumpServerAppId(String jumpServerAppId) {
+			this.jumpServerAppId = jumpServerAppId;
 		}
 	}
 

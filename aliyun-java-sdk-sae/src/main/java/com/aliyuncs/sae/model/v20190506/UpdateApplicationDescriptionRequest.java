@@ -22,43 +22,30 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DownloadFilesRequest extends RoaAcsRequest<DownloadFilesResponse> {
+public class UpdateApplicationDescriptionRequest extends RoaAcsRequest<UpdateApplicationDescriptionResponse> {
 	   
 
-	private String instanceId;
-
-	private String localpath;
+	private String appDescription;
 
 	private String appId;
-	public DownloadFilesRequest() {
-		super("sae", "2019-05-06", "DownloadFiles", "serverless");
-		setUriPattern("/pop/v1/sam/app/downloadFiles");
-		setMethod(MethodType.POST);
+	public UpdateApplicationDescriptionRequest() {
+		super("sae", "2019-05-06", "UpdateApplicationDescription", "serverless");
+		setUriPattern("/pop/v1/sam/app/updateAppDescription");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getAppDescription() {
+		return this.appDescription;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getLocalpath() {
-		return this.localpath;
-	}
-
-	public void setLocalpath(String localpath) {
-		this.localpath = localpath;
-		if(localpath != null){
-			putQueryParameter("Localpath", localpath);
+	public void setAppDescription(String appDescription) {
+		this.appDescription = appDescription;
+		if(appDescription != null){
+			putQueryParameter("AppDescription", appDescription);
 		}
 	}
 
@@ -74,8 +61,8 @@ public class DownloadFilesRequest extends RoaAcsRequest<DownloadFilesResponse> {
 	}
 
 	@Override
-	public Class<DownloadFilesResponse> getResponseClass() {
-		return DownloadFilesResponse.class;
+	public Class<UpdateApplicationDescriptionResponse> getResponseClass() {
+		return UpdateApplicationDescriptionResponse.class;
 	}
 
 }

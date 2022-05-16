@@ -27,21 +27,21 @@ public class DescribeInstanceSpecificationsResponseUnmarshaller {
 	public static DescribeInstanceSpecificationsResponse unmarshall(DescribeInstanceSpecificationsResponse describeInstanceSpecificationsResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceSpecificationsResponse.setRequestId(_ctx.stringValue("DescribeInstanceSpecificationsResponse.RequestId"));
-		describeInstanceSpecificationsResponse.setCode(_ctx.stringValue("DescribeInstanceSpecificationsResponse.Code"));
 		describeInstanceSpecificationsResponse.setMessage(_ctx.stringValue("DescribeInstanceSpecificationsResponse.Message"));
-		describeInstanceSpecificationsResponse.setSuccess(_ctx.booleanValue("DescribeInstanceSpecificationsResponse.Success"));
-		describeInstanceSpecificationsResponse.setErrorCode(_ctx.stringValue("DescribeInstanceSpecificationsResponse.ErrorCode"));
 		describeInstanceSpecificationsResponse.setTraceId(_ctx.stringValue("DescribeInstanceSpecificationsResponse.TraceId"));
+		describeInstanceSpecificationsResponse.setErrorCode(_ctx.stringValue("DescribeInstanceSpecificationsResponse.ErrorCode"));
+		describeInstanceSpecificationsResponse.setCode(_ctx.stringValue("DescribeInstanceSpecificationsResponse.Code"));
+		describeInstanceSpecificationsResponse.setSuccess(_ctx.booleanValue("DescribeInstanceSpecificationsResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSpecificationsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setCpu(_ctx.integerValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].Cpu"));
-			dataItem.setEnable(_ctx.booleanValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].Enable"));
-			dataItem.setId(_ctx.integerValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].Id"));
+			dataItem.setVersion(_ctx.integerValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].Version"));
 			dataItem.setMemory(_ctx.integerValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].Memory"));
 			dataItem.setSpecInfo(_ctx.stringValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].SpecInfo"));
-			dataItem.setVersion(_ctx.integerValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].Version"));
+			dataItem.setId(_ctx.integerValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].Id"));
+			dataItem.setEnable(_ctx.booleanValue("DescribeInstanceSpecificationsResponse.Data["+ i +"].Enable"));
 
 			data.add(dataItem);
 		}

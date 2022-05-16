@@ -28,11 +28,11 @@ public class DeleteConfigMapResponse extends AcsResponse {
 
 	private String message;
 
-	private String code;
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
 
 	private Boolean success;
 
@@ -54,12 +54,12 @@ public class DeleteConfigMapResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -70,12 +70,12 @@ public class DeleteConfigMapResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {

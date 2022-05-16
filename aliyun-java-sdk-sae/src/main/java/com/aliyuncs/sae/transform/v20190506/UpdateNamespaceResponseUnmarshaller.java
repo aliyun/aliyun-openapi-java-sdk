@@ -24,17 +24,17 @@ public class UpdateNamespaceResponseUnmarshaller {
 	public static UpdateNamespaceResponse unmarshall(UpdateNamespaceResponse updateNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		updateNamespaceResponse.setRequestId(_ctx.stringValue("UpdateNamespaceResponse.RequestId"));
-		updateNamespaceResponse.setCode(_ctx.stringValue("UpdateNamespaceResponse.Code"));
-		updateNamespaceResponse.setErrorCode(_ctx.stringValue("UpdateNamespaceResponse.ErrorCode"));
 		updateNamespaceResponse.setMessage(_ctx.stringValue("UpdateNamespaceResponse.Message"));
-		updateNamespaceResponse.setSuccess(_ctx.booleanValue("UpdateNamespaceResponse.Success"));
 		updateNamespaceResponse.setTraceId(_ctx.stringValue("UpdateNamespaceResponse.TraceId"));
+		updateNamespaceResponse.setErrorCode(_ctx.stringValue("UpdateNamespaceResponse.ErrorCode"));
+		updateNamespaceResponse.setCode(_ctx.stringValue("UpdateNamespaceResponse.Code"));
+		updateNamespaceResponse.setSuccess(_ctx.booleanValue("UpdateNamespaceResponse.Success"));
 
 		Data data = new Data();
-		data.setRegionId(_ctx.stringValue("UpdateNamespaceResponse.Data.RegionId"));
+		data.setNamespaceDescription(_ctx.stringValue("UpdateNamespaceResponse.Data.NamespaceDescription"));
 		data.setNamespaceId(_ctx.stringValue("UpdateNamespaceResponse.Data.NamespaceId"));
 		data.setNamespaceName(_ctx.stringValue("UpdateNamespaceResponse.Data.NamespaceName"));
-		data.setNamespaceDescription(_ctx.stringValue("UpdateNamespaceResponse.Data.NamespaceDescription"));
+		data.setRegionId(_ctx.stringValue("UpdateNamespaceResponse.Data.RegionId"));
 		updateNamespaceResponse.setData(data);
 	 
 	 	return updateNamespaceResponse;

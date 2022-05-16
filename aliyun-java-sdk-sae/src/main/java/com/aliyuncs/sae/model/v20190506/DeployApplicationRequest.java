@@ -71,6 +71,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String slsConfigs;
 
+	private String kafkaConfigs;
+
 	private Boolean openCollectToKafka;
 
 	private String commandArgs;
@@ -378,6 +380,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.slsConfigs = slsConfigs;
 		if(slsConfigs != null){
 			putQueryParameter("SlsConfigs", slsConfigs);
+		}
+	}
+
+	public String getKafkaConfigs() {
+		return this.kafkaConfigs;
+	}
+
+	public void setKafkaConfigs(String kafkaConfigs) {
+		this.kafkaConfigs = kafkaConfigs;
+		if(kafkaConfigs != null){
+			putQueryParameter("KafkaConfigs", kafkaConfigs);
 		}
 	}
 

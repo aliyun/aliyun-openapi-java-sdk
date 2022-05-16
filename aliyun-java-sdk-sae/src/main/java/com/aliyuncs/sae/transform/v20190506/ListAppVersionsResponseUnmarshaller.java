@@ -27,19 +27,19 @@ public class ListAppVersionsResponseUnmarshaller {
 	public static ListAppVersionsResponse unmarshall(ListAppVersionsResponse listAppVersionsResponse, UnmarshallerContext _ctx) {
 		
 		listAppVersionsResponse.setRequestId(_ctx.stringValue("ListAppVersionsResponse.RequestId"));
-		listAppVersionsResponse.setCode(_ctx.stringValue("ListAppVersionsResponse.Code"));
 		listAppVersionsResponse.setMessage(_ctx.stringValue("ListAppVersionsResponse.Message"));
-		listAppVersionsResponse.setSuccess(_ctx.booleanValue("ListAppVersionsResponse.Success"));
 		listAppVersionsResponse.setErrorCode(_ctx.stringValue("ListAppVersionsResponse.ErrorCode"));
+		listAppVersionsResponse.setCode(_ctx.stringValue("ListAppVersionsResponse.Code"));
+		listAppVersionsResponse.setSuccess(_ctx.booleanValue("ListAppVersionsResponse.Success"));
 
 		List<PackageVersionEntity> data = new ArrayList<PackageVersionEntity>();
 		for (int i = 0; i < _ctx.lengthValue("ListAppVersionsResponse.Data.Length"); i++) {
 			PackageVersionEntity packageVersionEntity = new PackageVersionEntity();
-			packageVersionEntity.setId(_ctx.stringValue("ListAppVersionsResponse.Data["+ i +"].Id"));
-			packageVersionEntity.setCreateTime(_ctx.stringValue("ListAppVersionsResponse.Data["+ i +"].CreateTime"));
-			packageVersionEntity.setWarUrl(_ctx.stringValue("ListAppVersionsResponse.Data["+ i +"].WarUrl"));
 			packageVersionEntity.setType(_ctx.stringValue("ListAppVersionsResponse.Data["+ i +"].Type"));
+			packageVersionEntity.setCreateTime(_ctx.stringValue("ListAppVersionsResponse.Data["+ i +"].CreateTime"));
 			packageVersionEntity.setBuildPackageUrl(_ctx.stringValue("ListAppVersionsResponse.Data["+ i +"].BuildPackageUrl"));
+			packageVersionEntity.setWarUrl(_ctx.stringValue("ListAppVersionsResponse.Data["+ i +"].WarUrl"));
+			packageVersionEntity.setId(_ctx.stringValue("ListAppVersionsResponse.Data["+ i +"].Id"));
 
 			data.add(packageVersionEntity);
 		}

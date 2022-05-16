@@ -183,7 +183,7 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 			private String condition;
 
-			private List<Item> items;
+			private List<Scrulesitem> items;
 
 			public String getPath() {
 				return this.path;
@@ -201,19 +201,19 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 				this.condition = condition;
 			}
 
-			public List<Item> getItems() {
+			public List<Scrulesitem> getItems() {
 				return this.items;
 			}
 
-			public void setItems(List<Item> items) {
+			public void setItems(List<Scrulesitem> items) {
 				this.items = items;
 			}
 
-			public static class Item {
+			public static class Scrulesitem {
 
-				private Integer index;
+				private String type;
 
-				private String expr;
+				private String name;
 
 				private String operator;
 
@@ -221,24 +221,24 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 				private String cond;
 
-				private String type;
+				private Integer index;
 
-				private String name;
+				private String expr;
 
-				public Integer getIndex() {
-					return this.index;
+				public String getType() {
+					return this.type;
 				}
 
-				public void setIndex(Integer index) {
-					this.index = index;
+				public void setType(String type) {
+					this.type = type;
 				}
 
-				public String getExpr() {
-					return this.expr;
+				public String getName() {
+					return this.name;
 				}
 
-				public void setExpr(String expr) {
-					this.expr = expr;
+				public void setName(String name) {
+					this.name = name;
 				}
 
 				public String getOperator() {
@@ -265,20 +265,20 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 					this.cond = cond;
 				}
 
-				public String getType() {
-					return this.type;
+				public Integer getIndex() {
+					return this.index;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setIndex(Integer index) {
+					this.index = index;
 				}
 
-				public String getName() {
-					return this.name;
+				public String getExpr() {
+					return this.expr;
 				}
 
-				public void setName(String name) {
-					this.name = name;
+				public void setExpr(String expr) {
+					this.expr = expr;
 				}
 			}
 		}
@@ -295,7 +295,7 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 			private String condition;
 
-			private List<Item2> items1;
+			private List<Item> items1;
 
 			public String getServiceName() {
 				return this.serviceName;
@@ -337,15 +337,15 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 				this.condition = condition;
 			}
 
-			public List<Item2> getItems1() {
+			public List<Item> getItems1() {
 				return this.items1;
 			}
 
-			public void setItems1(List<Item2> items1) {
+			public void setItems1(List<Item> items1) {
 				this.items1 = items1;
 			}
 
-			public static class Item2 {
+			public static class Item {
 
 				private Integer index;
 

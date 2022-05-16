@@ -27,15 +27,15 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorCode;
+
+	private Boolean success;
+
 	private String code;
 
 	private String message;
 
-	private String errorCode;
-
 	private String traceId;
-
-	private Boolean success;
 
 	private Data data;
 
@@ -45,6 +45,22 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getCode() {
@@ -63,28 +79,12 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
 
 	public void setTraceId(String traceId) {
 		this.traceId = traceId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {
@@ -139,98 +139,42 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 
 		public static class ChangeOrder {
 
-			private String namespaceId;
-
-			private Integer batchCount;
-
-			private String batchType;
-
-			private String changeOrderId;
-
-			private String coType;
-
-			private String coTypeCode;
-
-			private String createTime;
-
-			private String description;
+			private Integer status;
 
 			private String finishTime;
 
-			private String groupId;
+			private String namespaceId;
 
-			private String pipelines;
-
-			private String source;
-
-			private Integer status;
-
-			private String createUserId;
+			private String createTime;
 
 			private String userId;
 
-			public String getNamespaceId() {
-				return this.namespaceId;
+			private String source;
+
+			private String createUserId;
+
+			private Integer batchCount;
+
+			private String coTypeCode;
+
+			private String changeOrderId;
+
+			private String batchType;
+
+			private String description;
+
+			private String groupId;
+
+			private String coType;
+
+			private String pipelines;
+
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setNamespaceId(String namespaceId) {
-				this.namespaceId = namespaceId;
-			}
-
-			public Integer getBatchCount() {
-				return this.batchCount;
-			}
-
-			public void setBatchCount(Integer batchCount) {
-				this.batchCount = batchCount;
-			}
-
-			public String getBatchType() {
-				return this.batchType;
-			}
-
-			public void setBatchType(String batchType) {
-				this.batchType = batchType;
-			}
-
-			public String getChangeOrderId() {
-				return this.changeOrderId;
-			}
-
-			public void setChangeOrderId(String changeOrderId) {
-				this.changeOrderId = changeOrderId;
-			}
-
-			public String getCoType() {
-				return this.coType;
-			}
-
-			public void setCoType(String coType) {
-				this.coType = coType;
-			}
-
-			public String getCoTypeCode() {
-				return this.coTypeCode;
-			}
-
-			public void setCoTypeCode(String coTypeCode) {
-				this.coTypeCode = coTypeCode;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public String getFinishTime() {
@@ -241,20 +185,28 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 				this.finishTime = finishTime;
 			}
 
-			public String getGroupId() {
-				return this.groupId;
+			public String getNamespaceId() {
+				return this.namespaceId;
 			}
 
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setNamespaceId(String namespaceId) {
+				this.namespaceId = namespaceId;
 			}
 
-			public String getPipelines() {
-				return this.pipelines;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setPipelines(String pipelines) {
-				this.pipelines = pipelines;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 
 			public String getSource() {
@@ -265,14 +217,6 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 				this.source = source;
 			}
 
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
 			public String getCreateUserId() {
 				return this.createUserId;
 			}
@@ -281,12 +225,68 @@ public class ListNamespaceChangeOrdersResponse extends AcsResponse {
 				this.createUserId = createUserId;
 			}
 
-			public String getUserId() {
-				return this.userId;
+			public Integer getBatchCount() {
+				return this.batchCount;
 			}
 
-			public void setUserId(String userId) {
-				this.userId = userId;
+			public void setBatchCount(Integer batchCount) {
+				this.batchCount = batchCount;
+			}
+
+			public String getCoTypeCode() {
+				return this.coTypeCode;
+			}
+
+			public void setCoTypeCode(String coTypeCode) {
+				this.coTypeCode = coTypeCode;
+			}
+
+			public String getChangeOrderId() {
+				return this.changeOrderId;
+			}
+
+			public void setChangeOrderId(String changeOrderId) {
+				this.changeOrderId = changeOrderId;
+			}
+
+			public String getBatchType() {
+				return this.batchType;
+			}
+
+			public void setBatchType(String batchType) {
+				this.batchType = batchType;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getCoType() {
+				return this.coType;
+			}
+
+			public void setCoType(String coType) {
+				this.coType = coType;
+			}
+
+			public String getPipelines() {
+				return this.pipelines;
+			}
+
+			public void setPipelines(String pipelines) {
+				this.pipelines = pipelines;
 			}
 		}
 	}

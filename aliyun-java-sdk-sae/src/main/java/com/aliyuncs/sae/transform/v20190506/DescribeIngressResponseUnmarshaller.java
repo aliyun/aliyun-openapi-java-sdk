@@ -29,36 +29,38 @@ public class DescribeIngressResponseUnmarshaller {
 	public static DescribeIngressResponse unmarshall(DescribeIngressResponse describeIngressResponse, UnmarshallerContext _ctx) {
 		
 		describeIngressResponse.setRequestId(_ctx.stringValue("DescribeIngressResponse.RequestId"));
-		describeIngressResponse.setCode(_ctx.stringValue("DescribeIngressResponse.Code"));
 		describeIngressResponse.setMessage(_ctx.stringValue("DescribeIngressResponse.Message"));
-		describeIngressResponse.setSuccess(_ctx.booleanValue("DescribeIngressResponse.Success"));
-		describeIngressResponse.setErrorCode(_ctx.stringValue("DescribeIngressResponse.ErrorCode"));
 		describeIngressResponse.setTraceId(_ctx.stringValue("DescribeIngressResponse.TraceId"));
+		describeIngressResponse.setErrorCode(_ctx.stringValue("DescribeIngressResponse.ErrorCode"));
+		describeIngressResponse.setCode(_ctx.stringValue("DescribeIngressResponse.Code"));
+		describeIngressResponse.setSuccess(_ctx.booleanValue("DescribeIngressResponse.Success"));
 
 		Data data = new Data();
-		data.setId(_ctx.longValue("DescribeIngressResponse.Data.Id"));
-		data.setName(_ctx.stringValue("DescribeIngressResponse.Data.Name"));
+		data.setSlbId(_ctx.stringValue("DescribeIngressResponse.Data.SlbId"));
 		data.setNamespaceId(_ctx.stringValue("DescribeIngressResponse.Data.NamespaceId"));
 		data.setDescription(_ctx.stringValue("DescribeIngressResponse.Data.Description"));
-		data.setSlbId(_ctx.stringValue("DescribeIngressResponse.Data.SlbId"));
 		data.setListenerPort(_ctx.integerValue("DescribeIngressResponse.Data.ListenerPort"));
-		data.setCertId(_ctx.stringValue("DescribeIngressResponse.Data.CertId"));
 		data.setSlbType(_ctx.stringValue("DescribeIngressResponse.Data.SlbType"));
+		data.setCertId(_ctx.stringValue("DescribeIngressResponse.Data.CertId"));
+		data.setName(_ctx.stringValue("DescribeIngressResponse.Data.Name"));
+		data.setId(_ctx.longValue("DescribeIngressResponse.Data.Id"));
+		data.setLoadBalanceType(_ctx.stringValue("DescribeIngressResponse.Data.LoadBalanceType"));
+		data.setListenerProtocol(_ctx.stringValue("DescribeIngressResponse.Data.ListenerProtocol"));
 
 		DefaultRule defaultRule = new DefaultRule();
-		defaultRule.setAppId(_ctx.stringValue("DescribeIngressResponse.Data.DefaultRule.AppId"));
 		defaultRule.setContainerPort(_ctx.integerValue("DescribeIngressResponse.Data.DefaultRule.ContainerPort"));
 		defaultRule.setAppName(_ctx.stringValue("DescribeIngressResponse.Data.DefaultRule.AppName"));
+		defaultRule.setAppId(_ctx.stringValue("DescribeIngressResponse.Data.DefaultRule.AppId"));
 		data.setDefaultRule(defaultRule);
 
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIngressResponse.Data.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setAppId(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].AppId"));
+			rule.setAppName(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].AppName"));
 			rule.setContainerPort(_ctx.integerValue("DescribeIngressResponse.Data.Rules["+ i +"].ContainerPort"));
 			rule.setDomain(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].Domain"));
+			rule.setAppId(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].AppId"));
 			rule.setPath(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].Path"));
-			rule.setAppName(_ctx.stringValue("DescribeIngressResponse.Data.Rules["+ i +"].AppName"));
 
 			rules.add(rule);
 		}
