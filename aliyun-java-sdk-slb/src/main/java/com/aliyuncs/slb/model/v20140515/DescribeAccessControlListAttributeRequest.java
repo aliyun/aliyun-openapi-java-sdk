@@ -37,7 +37,7 @@ public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<Des
 
 	private Long ownerId;
 	public DescribeAccessControlListAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeAccessControlListAttribute", "Slb");
+		super("Slb", "2014-05-15", "DescribeAccessControlListAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

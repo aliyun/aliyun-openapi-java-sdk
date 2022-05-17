@@ -42,7 +42,7 @@ public class DescribeLoadBalancerListenersRequest extends RpcAcsRequest<Describe
 
 	private Integer maxResults;
 	public DescribeLoadBalancerListenersRequest() {
-		super("Slb", "2014-05-15", "DescribeLoadBalancerListeners", "Slb");
+		super("Slb", "2014-05-15", "DescribeLoadBalancerListeners", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

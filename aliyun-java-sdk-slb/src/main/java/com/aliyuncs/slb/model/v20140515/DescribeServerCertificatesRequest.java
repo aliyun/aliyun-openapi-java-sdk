@@ -37,7 +37,7 @@ public class DescribeServerCertificatesRequest extends RpcAcsRequest<DescribeSer
 
 	private String serverCertificateId;
 	public DescribeServerCertificatesRequest() {
-		super("Slb", "2014-05-15", "DescribeServerCertificates", "Slb");
+		super("Slb", "2014-05-15", "DescribeServerCertificates", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

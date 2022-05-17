@@ -39,7 +39,7 @@ public class UploadCACertificateRequest extends RpcAcsRequest<UploadCACertificat
 
 	private Long ownerId;
 	public UploadCACertificateRequest() {
-		super("Slb", "2014-05-15", "UploadCACertificate", "Slb");
+		super("Slb", "2014-05-15", "UploadCACertificate", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

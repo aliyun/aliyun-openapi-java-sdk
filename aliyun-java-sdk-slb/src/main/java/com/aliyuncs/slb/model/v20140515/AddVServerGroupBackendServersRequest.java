@@ -37,7 +37,7 @@ public class AddVServerGroupBackendServersRequest extends RpcAcsRequest<AddVServ
 
 	private Long ownerId;
 	public AddVServerGroupBackendServersRequest() {
-		super("Slb", "2014-05-15", "AddVServerGroupBackendServers", "Slb");
+		super("Slb", "2014-05-15", "AddVServerGroupBackendServers", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

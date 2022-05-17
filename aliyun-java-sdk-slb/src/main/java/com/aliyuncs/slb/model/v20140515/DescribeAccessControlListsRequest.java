@@ -43,7 +43,7 @@ public class DescribeAccessControlListsRequest extends RpcAcsRequest<DescribeAcc
 
 	private Long ownerId;
 	public DescribeAccessControlListsRequest() {
-		super("Slb", "2014-05-15", "DescribeAccessControlLists", "Slb");
+		super("Slb", "2014-05-15", "DescribeAccessControlLists", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

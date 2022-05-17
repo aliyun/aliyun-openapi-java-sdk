@@ -39,7 +39,7 @@ public class StartLoadBalancerListenerRequest extends RpcAcsRequest<StartLoadBal
 
 	private String loadBalancerId;
 	public StartLoadBalancerListenerRequest() {
-		super("Slb", "2014-05-15", "StartLoadBalancerListener", "Slb");
+		super("Slb", "2014-05-15", "StartLoadBalancerListener", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

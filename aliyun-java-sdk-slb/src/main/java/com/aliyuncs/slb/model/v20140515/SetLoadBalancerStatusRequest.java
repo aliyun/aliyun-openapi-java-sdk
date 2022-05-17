@@ -37,7 +37,7 @@ public class SetLoadBalancerStatusRequest extends RpcAcsRequest<SetLoadBalancerS
 
 	private String loadBalancerId;
 	public SetLoadBalancerStatusRequest() {
-		super("Slb", "2014-05-15", "SetLoadBalancerStatus", "Slb");
+		super("Slb", "2014-05-15", "SetLoadBalancerStatus", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

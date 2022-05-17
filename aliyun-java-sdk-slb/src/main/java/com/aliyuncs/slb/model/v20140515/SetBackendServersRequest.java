@@ -37,7 +37,7 @@ public class SetBackendServersRequest extends RpcAcsRequest<SetBackendServersRes
 
 	private String loadBalancerId;
 	public SetBackendServersRequest() {
-		super("Slb", "2014-05-15", "SetBackendServers", "Slb");
+		super("Slb", "2014-05-15", "SetBackendServers", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

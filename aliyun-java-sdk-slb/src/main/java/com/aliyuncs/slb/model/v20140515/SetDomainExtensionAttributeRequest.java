@@ -37,7 +37,7 @@ public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainE
 
 	private String serverCertificateId;
 	public SetDomainExtensionAttributeRequest() {
-		super("Slb", "2014-05-15", "SetDomainExtensionAttribute", "Slb");
+		super("Slb", "2014-05-15", "SetDomainExtensionAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

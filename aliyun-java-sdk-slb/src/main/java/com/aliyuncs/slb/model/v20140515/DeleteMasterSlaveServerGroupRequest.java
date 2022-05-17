@@ -35,7 +35,7 @@ public class DeleteMasterSlaveServerGroupRequest extends RpcAcsRequest<DeleteMas
 
 	private String masterSlaveServerGroupId;
 	public DeleteMasterSlaveServerGroupRequest() {
-		super("Slb", "2014-05-15", "DeleteMasterSlaveServerGroup", "Slb");
+		super("Slb", "2014-05-15", "DeleteMasterSlaveServerGroup", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

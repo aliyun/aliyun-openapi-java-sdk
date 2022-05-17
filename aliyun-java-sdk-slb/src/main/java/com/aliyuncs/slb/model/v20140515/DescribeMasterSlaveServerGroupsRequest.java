@@ -37,7 +37,7 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 
 	private String loadBalancerId;
 	public DescribeMasterSlaveServerGroupsRequest() {
-		super("Slb", "2014-05-15", "DescribeMasterSlaveServerGroups", "Slb");
+		super("Slb", "2014-05-15", "DescribeMasterSlaveServerGroups", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

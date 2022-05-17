@@ -37,7 +37,7 @@ public class RemoveBackendServersRequest extends RpcAcsRequest<RemoveBackendServ
 
 	private String loadBalancerId;
 	public RemoveBackendServersRequest() {
-		super("Slb", "2014-05-15", "RemoveBackendServers", "Slb");
+		super("Slb", "2014-05-15", "RemoveBackendServers", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

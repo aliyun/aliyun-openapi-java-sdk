@@ -35,7 +35,7 @@ public class DeleteTLSCipherPolicyRequest extends RpcAcsRequest<DeleteTLSCipherP
 
 	private Long ownerId;
 	public DeleteTLSCipherPolicyRequest() {
-		super("Slb", "2014-05-15", "DeleteTLSCipherPolicy", "Slb");
+		super("Slb", "2014-05-15", "DeleteTLSCipherPolicy", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

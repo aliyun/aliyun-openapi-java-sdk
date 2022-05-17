@@ -43,7 +43,7 @@ public class ListTLSCipherPoliciesRequest extends RpcAcsRequest<ListTLSCipherPol
 
 	private Integer maxItems;
 	public ListTLSCipherPoliciesRequest() {
-		super("Slb", "2014-05-15", "ListTLSCipherPolicies", "Slb");
+		super("Slb", "2014-05-15", "ListTLSCipherPolicies", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

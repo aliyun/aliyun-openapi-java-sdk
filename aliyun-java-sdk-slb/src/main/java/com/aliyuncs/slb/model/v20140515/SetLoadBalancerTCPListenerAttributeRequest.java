@@ -85,7 +85,7 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private String vServerGroup;
 	public SetLoadBalancerTCPListenerAttributeRequest() {
-		super("Slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute", "Slb");
+		super("Slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

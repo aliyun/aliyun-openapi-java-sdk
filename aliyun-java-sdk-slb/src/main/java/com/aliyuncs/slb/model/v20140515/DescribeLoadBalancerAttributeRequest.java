@@ -35,7 +35,7 @@ public class DescribeLoadBalancerAttributeRequest extends RpcAcsRequest<Describe
 
 	private String loadBalancerId;
 	public DescribeLoadBalancerAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeLoadBalancerAttribute", "Slb");
+		super("Slb", "2014-05-15", "DescribeLoadBalancerAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

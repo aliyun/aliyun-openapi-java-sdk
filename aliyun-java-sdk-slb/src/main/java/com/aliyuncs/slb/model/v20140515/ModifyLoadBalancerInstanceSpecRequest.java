@@ -39,7 +39,7 @@ public class ModifyLoadBalancerInstanceSpecRequest extends RpcAcsRequest<ModifyL
 
 	private String loadBalancerId;
 	public ModifyLoadBalancerInstanceSpecRequest() {
-		super("Slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec", "Slb");
+		super("Slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

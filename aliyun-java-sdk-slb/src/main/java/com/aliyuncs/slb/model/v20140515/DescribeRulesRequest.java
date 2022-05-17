@@ -39,7 +39,7 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 
 	private String loadBalancerId;
 	public DescribeRulesRequest() {
-		super("Slb", "2014-05-15", "DescribeRules", "Slb");
+		super("Slb", "2014-05-15", "DescribeRules", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

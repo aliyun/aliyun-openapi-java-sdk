@@ -39,7 +39,7 @@ public class SetVServerGroupAttributeRequest extends RpcAcsRequest<SetVServerGro
 
 	private String vServerGroupName;
 	public SetVServerGroupAttributeRequest() {
-		super("Slb", "2014-05-15", "SetVServerGroupAttribute", "Slb");
+		super("Slb", "2014-05-15", "SetVServerGroupAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

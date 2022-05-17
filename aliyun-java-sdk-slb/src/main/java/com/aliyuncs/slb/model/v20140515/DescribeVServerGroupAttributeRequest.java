@@ -35,7 +35,7 @@ public class DescribeVServerGroupAttributeRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 	public DescribeVServerGroupAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeVServerGroupAttribute", "Slb");
+		super("Slb", "2014-05-15", "DescribeVServerGroupAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

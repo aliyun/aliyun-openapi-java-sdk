@@ -35,7 +35,7 @@ public class DescribeDomainExtensionAttributeRequest extends RpcAcsRequest<Descr
 
 	private Long ownerId;
 	public DescribeDomainExtensionAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeDomainExtensionAttribute", "Slb");
+		super("Slb", "2014-05-15", "DescribeDomainExtensionAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

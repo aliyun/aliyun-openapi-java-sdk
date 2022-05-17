@@ -37,7 +37,7 @@ public class SetLoadBalancerDeleteProtectionRequest extends RpcAcsRequest<SetLoa
 
 	private String loadBalancerId;
 	public SetLoadBalancerDeleteProtectionRequest() {
-		super("Slb", "2014-05-15", "SetLoadBalancerDeleteProtection", "Slb");
+		super("Slb", "2014-05-15", "SetLoadBalancerDeleteProtection", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

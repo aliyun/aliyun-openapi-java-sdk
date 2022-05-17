@@ -42,7 +42,7 @@ public class SetTLSCipherPolicyAttributeRequest extends RpcAcsRequest<SetTLSCiph
 
 	private String name;
 	public SetTLSCipherPolicyAttributeRequest() {
-		super("Slb", "2014-05-15", "SetTLSCipherPolicyAttribute", "Slb");
+		super("Slb", "2014-05-15", "SetTLSCipherPolicyAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

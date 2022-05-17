@@ -39,7 +39,7 @@ public class ModifyLoadBalancerInstanceChargeTypeRequest extends RpcAcsRequest<M
 
 	private String internetChargeType;
 	public ModifyLoadBalancerInstanceChargeTypeRequest() {
-		super("Slb", "2014-05-15", "ModifyLoadBalancerInstanceChargeType", "Slb");
+		super("Slb", "2014-05-15", "ModifyLoadBalancerInstanceChargeType", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

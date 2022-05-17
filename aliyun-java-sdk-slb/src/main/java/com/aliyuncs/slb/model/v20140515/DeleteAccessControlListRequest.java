@@ -35,7 +35,7 @@ public class DeleteAccessControlListRequest extends RpcAcsRequest<DeleteAccessCo
 
 	private Long ownerId;
 	public DeleteAccessControlListRequest() {
-		super("Slb", "2014-05-15", "DeleteAccessControlList", "Slb");
+		super("Slb", "2014-05-15", "DeleteAccessControlList", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

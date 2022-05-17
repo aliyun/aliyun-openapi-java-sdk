@@ -69,7 +69,7 @@ public class SetRuleRequest extends RpcAcsRequest<SetRuleResponse> {
 
 	private String healthCheckHttpCode;
 	public SetRuleRequest() {
-		super("Slb", "2014-05-15", "SetRule", "Slb");
+		super("Slb", "2014-05-15", "SetRule", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

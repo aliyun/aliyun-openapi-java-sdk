@@ -39,7 +39,7 @@ public class DeleteLoadBalancerListenerRequest extends RpcAcsRequest<DeleteLoadB
 
 	private String loadBalancerId;
 	public DeleteLoadBalancerListenerRequest() {
-		super("Slb", "2014-05-15", "DeleteLoadBalancerListener", "Slb");
+		super("Slb", "2014-05-15", "DeleteLoadBalancerListener", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

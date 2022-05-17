@@ -41,7 +41,7 @@ public class RemoveListenerWhiteListItemRequest extends RpcAcsRequest<RemoveList
 
 	private String loadBalancerId;
 	public RemoveListenerWhiteListItemRequest() {
-		super("Slb", "2014-05-15", "RemoveListenerWhiteListItem", "Slb");
+		super("Slb", "2014-05-15", "RemoveListenerWhiteListItem", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

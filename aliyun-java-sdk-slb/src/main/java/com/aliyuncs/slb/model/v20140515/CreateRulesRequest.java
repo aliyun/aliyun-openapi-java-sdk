@@ -41,7 +41,7 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 
 	private String loadBalancerId;
 	public CreateRulesRequest() {
-		super("Slb", "2014-05-15", "CreateRules", "Slb");
+		super("Slb", "2014-05-15", "CreateRules", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

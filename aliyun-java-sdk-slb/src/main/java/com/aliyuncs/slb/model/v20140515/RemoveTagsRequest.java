@@ -37,7 +37,7 @@ public class RemoveTagsRequest extends RpcAcsRequest<RemoveTagsResponse> {
 
 	private String loadBalancerId;
 	public RemoveTagsRequest() {
-		super("Slb", "2014-05-15", "RemoveTags", "Slb");
+		super("Slb", "2014-05-15", "RemoveTags", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

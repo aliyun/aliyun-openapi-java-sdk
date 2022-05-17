@@ -39,7 +39,7 @@ public class DescribeHealthStatusRequest extends RpcAcsRequest<DescribeHealthSta
 
 	private String loadBalancerId;
 	public DescribeHealthStatusRequest() {
-		super("Slb", "2014-05-15", "DescribeHealthStatus", "Slb");
+		super("Slb", "2014-05-15", "DescribeHealthStatus", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

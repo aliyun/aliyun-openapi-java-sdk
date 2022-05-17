@@ -37,7 +37,7 @@ public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 
 	private String loadBalancerId;
 	public AddTagsRequest() {
-		super("Slb", "2014-05-15", "AddTags", "Slb");
+		super("Slb", "2014-05-15", "AddTags", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

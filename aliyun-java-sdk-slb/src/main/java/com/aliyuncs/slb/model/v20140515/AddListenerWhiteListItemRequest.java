@@ -41,7 +41,7 @@ public class AddListenerWhiteListItemRequest extends RpcAcsRequest<AddListenerWh
 
 	private String loadBalancerId;
 	public AddListenerWhiteListItemRequest() {
-		super("Slb", "2014-05-15", "AddListenerWhiteListItem", "Slb");
+		super("Slb", "2014-05-15", "AddListenerWhiteListItem", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

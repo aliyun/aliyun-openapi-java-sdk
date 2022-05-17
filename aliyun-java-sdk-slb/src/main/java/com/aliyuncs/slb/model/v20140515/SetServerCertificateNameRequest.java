@@ -37,7 +37,7 @@ public class SetServerCertificateNameRequest extends RpcAcsRequest<SetServerCert
 
 	private String serverCertificateName;
 	public SetServerCertificateNameRequest() {
-		super("Slb", "2014-05-15", "SetServerCertificateName", "Slb");
+		super("Slb", "2014-05-15", "SetServerCertificateName", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

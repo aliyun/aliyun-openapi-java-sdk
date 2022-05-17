@@ -39,7 +39,7 @@ public class CreateMasterSlaveServerGroupRequest extends RpcAcsRequest<CreateMas
 
 	private String loadBalancerId;
 	public CreateMasterSlaveServerGroupRequest() {
-		super("Slb", "2014-05-15", "CreateMasterSlaveServerGroup", "Slb");
+		super("Slb", "2014-05-15", "CreateMasterSlaveServerGroup", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

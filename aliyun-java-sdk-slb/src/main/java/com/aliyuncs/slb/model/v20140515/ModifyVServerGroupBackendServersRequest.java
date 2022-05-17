@@ -39,7 +39,7 @@ public class ModifyVServerGroupBackendServersRequest extends RpcAcsRequest<Modif
 
 	private String oldBackendServers;
 	public ModifyVServerGroupBackendServersRequest() {
-		super("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "Slb");
+		super("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

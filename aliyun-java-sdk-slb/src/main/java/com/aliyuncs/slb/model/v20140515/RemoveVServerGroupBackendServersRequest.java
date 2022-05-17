@@ -37,7 +37,7 @@ public class RemoveVServerGroupBackendServersRequest extends RpcAcsRequest<Remov
 
 	private Long ownerId;
 	public RemoveVServerGroupBackendServersRequest() {
-		super("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "Slb");
+		super("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

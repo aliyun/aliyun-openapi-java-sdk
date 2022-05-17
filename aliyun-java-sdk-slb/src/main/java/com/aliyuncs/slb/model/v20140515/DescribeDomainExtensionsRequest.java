@@ -39,7 +39,7 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 
 	private String loadBalancerId;
 	public DescribeDomainExtensionsRequest() {
-		super("Slb", "2014-05-15", "DescribeDomainExtensions", "Slb");
+		super("Slb", "2014-05-15", "DescribeDomainExtensions", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

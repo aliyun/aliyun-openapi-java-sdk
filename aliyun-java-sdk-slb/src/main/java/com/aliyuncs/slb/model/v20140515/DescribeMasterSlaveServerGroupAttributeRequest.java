@@ -35,7 +35,7 @@ public class DescribeMasterSlaveServerGroupAttributeRequest extends RpcAcsReques
 
 	private String masterSlaveServerGroupId;
 	public DescribeMasterSlaveServerGroupAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeMasterSlaveServerGroupAttribute", "Slb");
+		super("Slb", "2014-05-15", "DescribeMasterSlaveServerGroupAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
