@@ -51,6 +51,7 @@ public class DescribeCourseResponseUnmarshaller {
 			lesson.setLessonId(_ctx.stringValue("DescribeCourseResponse.Data.Lessons["+ i +"].LessonId"));
 			lesson.setTitle(_ctx.stringValue("DescribeCourseResponse.Data.Lessons["+ i +"].Title"));
 			lesson.setType(_ctx.stringValue("DescribeCourseResponse.Data.Lessons["+ i +"].Type"));
+			lesson.setDuration(_ctx.longValue("DescribeCourseResponse.Data.Lessons["+ i +"].Duration"));
 
 			lessons.add(lesson);
 		}
@@ -68,6 +69,7 @@ public class DescribeCourseResponseUnmarshaller {
 				lesson2.setLessonId(_ctx.stringValue("DescribeCourseResponse.Data.Chapter["+ i +"].Lessons["+ j +"].LessonId"));
 				lesson2.setTitle(_ctx.stringValue("DescribeCourseResponse.Data.Chapter["+ i +"].Lessons["+ j +"].Title"));
 				lesson2.setType(_ctx.stringValue("DescribeCourseResponse.Data.Chapter["+ i +"].Lessons["+ j +"].Type"));
+				lesson2.setDuration(_ctx.longValue("DescribeCourseResponse.Data.Chapter["+ i +"].Lessons["+ j +"].Duration"));
 
 				lessons1.add(lesson2);
 			}
@@ -85,6 +87,7 @@ public class DescribeCourseResponseUnmarshaller {
 					lesson4.setLessonId(_ctx.stringValue("DescribeCourseResponse.Data.Chapter["+ i +"].Unit["+ j +"].Lessons["+ k +"].LessonId"));
 					lesson4.setTitle(_ctx.stringValue("DescribeCourseResponse.Data.Chapter["+ i +"].Unit["+ j +"].Lessons["+ k +"].Title"));
 					lesson4.setType(_ctx.stringValue("DescribeCourseResponse.Data.Chapter["+ i +"].Unit["+ j +"].Lessons["+ k +"].Type"));
+					lesson4.setDuration(_ctx.longValue("DescribeCourseResponse.Data.Chapter["+ i +"].Unit["+ j +"].Lessons["+ k +"].Duration"));
 
 					lessons3.add(lesson4);
 				}

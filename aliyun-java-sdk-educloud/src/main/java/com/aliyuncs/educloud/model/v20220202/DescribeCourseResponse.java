@@ -175,6 +175,8 @@ public class DescribeCourseResponse extends AcsResponse {
 
 			private String type;
 
+			private Long duration;
+
 			public String getLessonId() {
 				return this.lessonId;
 			}
@@ -197,6 +199,14 @@ public class DescribeCourseResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public Long getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Long duration) {
+				this.duration = duration;
 			}
 		}
 
@@ -250,6 +260,8 @@ public class DescribeCourseResponse extends AcsResponse {
 
 				private String type;
 
+				private Long duration;
+
 				public String getLessonId() {
 					return this.lessonId;
 				}
@@ -272,6 +284,14 @@ public class DescribeCourseResponse extends AcsResponse {
 
 				public void setType(String type) {
 					this.type = type;
+				}
+
+				public Long getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(Long duration) {
+					this.duration = duration;
 				}
 			}
 
@@ -315,6 +335,8 @@ public class DescribeCourseResponse extends AcsResponse {
 
 					private String type;
 
+					private Long duration;
+
 					public String getLessonId() {
 						return this.lessonId;
 					}
@@ -337,6 +359,14 @@ public class DescribeCourseResponse extends AcsResponse {
 
 					public void setType(String type) {
 						this.type = type;
+					}
+
+					public Long getDuration() {
+						return this.duration;
+					}
+
+					public void setDuration(Long duration) {
+						this.duration = duration;
 					}
 				}
 			}
