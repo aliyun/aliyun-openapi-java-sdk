@@ -1,3 +1,6 @@
+2022-05-18 Version: 1.0.1
+- Apaas 营销人群圈选及任务管理接口
+
 2022-05-17 Version: 1.0.0
 get sts token 带调试环境
 
