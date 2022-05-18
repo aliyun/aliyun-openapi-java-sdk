@@ -31,6 +31,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String envs;
 
+	private String annotations;
+
 	private Integer requestsMem;
 
 	private String storageType;
@@ -53,19 +55,31 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String buildPackId;
 
+	private Boolean enableEmptyPushReject;
+
 	private String localVolume;
 
+	private String labels;
+
 	private Boolean useBodyEncoding;
+
+	private Integer losslessRuleFuncType;
 
 	private String emptyDirs;
 
 	private String packageType;
+
+	private Boolean losslessRuleRelated;
 
 	private String runtimeClassName;
 
 	private String postStart;
 
 	private String customAffinity;
+
+	private Boolean enableLosslessRule;
+
+	private Integer losslessRuleWarmupTime;
 
 	private String repoId;
 
@@ -109,6 +123,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String internetSlbProtocol;
 
+	private Integer losslessRuleDelayTime;
+
 	private String mountDescs;
 
 	private Integer replicas;
@@ -140,6 +156,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private String namespace;
 
 	private String applicationDescription;
+
+	private Boolean losslessRuleAligned;
 
 	private Integer requestsCpu;
 
@@ -184,6 +202,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.envs = envs;
 		if(envs != null){
 			putQueryParameter("Envs", envs);
+		}
+	}
+
+	public String getAnnotations() {
+		return this.annotations;
+	}
+
+	public void setAnnotations(String annotations) {
+		this.annotations = annotations;
+		if(annotations != null){
+			putQueryParameter("Annotations", annotations);
 		}
 	}
 
@@ -308,6 +337,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public Boolean getEnableEmptyPushReject() {
+		return this.enableEmptyPushReject;
+	}
+
+	public void setEnableEmptyPushReject(Boolean enableEmptyPushReject) {
+		this.enableEmptyPushReject = enableEmptyPushReject;
+		if(enableEmptyPushReject != null){
+			putQueryParameter("EnableEmptyPushReject", enableEmptyPushReject.toString());
+		}
+	}
+
 	public String getLocalVolume() {
 		return this.localVolume;
 	}
@@ -319,6 +359,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(String labels) {
+		this.labels = labels;
+		if(labels != null){
+			putQueryParameter("Labels", labels);
+		}
+	}
+
 	public Boolean getUseBodyEncoding() {
 		return this.useBodyEncoding;
 	}
@@ -327,6 +378,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.useBodyEncoding = useBodyEncoding;
 		if(useBodyEncoding != null){
 			putQueryParameter("UseBodyEncoding", useBodyEncoding.toString());
+		}
+	}
+
+	public Integer getLosslessRuleFuncType() {
+		return this.losslessRuleFuncType;
+	}
+
+	public void setLosslessRuleFuncType(Integer losslessRuleFuncType) {
+		this.losslessRuleFuncType = losslessRuleFuncType;
+		if(losslessRuleFuncType != null){
+			putQueryParameter("LosslessRuleFuncType", losslessRuleFuncType.toString());
 		}
 	}
 
@@ -349,6 +411,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.packageType = packageType;
 		if(packageType != null){
 			putQueryParameter("PackageType", packageType);
+		}
+	}
+
+	public Boolean getLosslessRuleRelated() {
+		return this.losslessRuleRelated;
+	}
+
+	public void setLosslessRuleRelated(Boolean losslessRuleRelated) {
+		this.losslessRuleRelated = losslessRuleRelated;
+		if(losslessRuleRelated != null){
+			putQueryParameter("LosslessRuleRelated", losslessRuleRelated.toString());
 		}
 	}
 
@@ -382,6 +455,28 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.customAffinity = customAffinity;
 		if(customAffinity != null){
 			putQueryParameter("CustomAffinity", customAffinity);
+		}
+	}
+
+	public Boolean getEnableLosslessRule() {
+		return this.enableLosslessRule;
+	}
+
+	public void setEnableLosslessRule(Boolean enableLosslessRule) {
+		this.enableLosslessRule = enableLosslessRule;
+		if(enableLosslessRule != null){
+			putQueryParameter("EnableLosslessRule", enableLosslessRule.toString());
+		}
+	}
+
+	public Integer getLosslessRuleWarmupTime() {
+		return this.losslessRuleWarmupTime;
+	}
+
+	public void setLosslessRuleWarmupTime(Integer losslessRuleWarmupTime) {
+		this.losslessRuleWarmupTime = losslessRuleWarmupTime;
+		if(losslessRuleWarmupTime != null){
+			putQueryParameter("LosslessRuleWarmupTime", losslessRuleWarmupTime.toString());
 		}
 	}
 
@@ -616,6 +711,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public Integer getLosslessRuleDelayTime() {
+		return this.losslessRuleDelayTime;
+	}
+
+	public void setLosslessRuleDelayTime(Integer losslessRuleDelayTime) {
+		this.losslessRuleDelayTime = losslessRuleDelayTime;
+		if(losslessRuleDelayTime != null){
+			putQueryParameter("LosslessRuleDelayTime", losslessRuleDelayTime.toString());
+		}
+	}
+
 	public String getMountDescs() {
 		return this.mountDescs;
 	}
@@ -789,6 +895,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.applicationDescription = applicationDescription;
 		if(applicationDescription != null){
 			putQueryParameter("ApplicationDescription", applicationDescription);
+		}
+	}
+
+	public Boolean getLosslessRuleAligned() {
+		return this.losslessRuleAligned;
+	}
+
+	public void setLosslessRuleAligned(Boolean losslessRuleAligned) {
+		this.losslessRuleAligned = losslessRuleAligned;
+		if(losslessRuleAligned != null){
+			putQueryParameter("LosslessRuleAligned", losslessRuleAligned.toString());
 		}
 	}
 

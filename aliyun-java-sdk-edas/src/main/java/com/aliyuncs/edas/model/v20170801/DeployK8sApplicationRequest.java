@@ -33,6 +33,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String envs;
 
+	private String annotations;
+
 	private Integer cpuLimit;
 
 	private String storageType;
@@ -55,17 +57,25 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String buildPackId;
 
+	private Boolean enableEmptyPushReject;
+
 	private String localVolume;
 
 	private String updateStrategy;
+
+	private String labels;
 
 	private Boolean useBodyEncoding;
 
 	private String changeOrderDesc;
 
+	private Integer losslessRuleFuncType;
+
 	private String emptyDirs;
 
 	private Integer mcpuLimit;
+
+	private Boolean losslessRuleRelated;
 
 	private String runtimeClassName;
 
@@ -74,6 +84,10 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private String postStart;
 
 	private String customAffinity;
+
+	private Boolean enableLosslessRule;
+
+	private Integer losslessRuleWarmupTime;
 
 	private String webContainer;
 
@@ -92,6 +106,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private String edasContainerVersion;
 
 	private String packageUrl;
+
+	private Integer losslessRuleDelayTime;
 
 	private String mountDescs;
 
@@ -120,6 +136,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private Integer mcpuRequest;
 
 	private String volumesStr;
+
+	private Boolean losslessRuleAligned;
 
 	private String javaStartUpConfig;
 	public DeployK8sApplicationRequest() {
@@ -173,6 +191,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.envs = envs;
 		if(envs != null){
 			putQueryParameter("Envs", envs);
+		}
+	}
+
+	public String getAnnotations() {
+		return this.annotations;
+	}
+
+	public void setAnnotations(String annotations) {
+		this.annotations = annotations;
+		if(annotations != null){
+			putQueryParameter("Annotations", annotations);
 		}
 	}
 
@@ -297,6 +326,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public Boolean getEnableEmptyPushReject() {
+		return this.enableEmptyPushReject;
+	}
+
+	public void setEnableEmptyPushReject(Boolean enableEmptyPushReject) {
+		this.enableEmptyPushReject = enableEmptyPushReject;
+		if(enableEmptyPushReject != null){
+			putQueryParameter("EnableEmptyPushReject", enableEmptyPushReject.toString());
+		}
+	}
+
 	public String getLocalVolume() {
 		return this.localVolume;
 	}
@@ -316,6 +356,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.updateStrategy = updateStrategy;
 		if(updateStrategy != null){
 			putQueryParameter("UpdateStrategy", updateStrategy);
+		}
+	}
+
+	public String getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(String labels) {
+		this.labels = labels;
+		if(labels != null){
+			putQueryParameter("Labels", labels);
 		}
 	}
 
@@ -341,6 +392,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public Integer getLosslessRuleFuncType() {
+		return this.losslessRuleFuncType;
+	}
+
+	public void setLosslessRuleFuncType(Integer losslessRuleFuncType) {
+		this.losslessRuleFuncType = losslessRuleFuncType;
+		if(losslessRuleFuncType != null){
+			putQueryParameter("LosslessRuleFuncType", losslessRuleFuncType.toString());
+		}
+	}
+
 	public String getEmptyDirs() {
 		return this.emptyDirs;
 	}
@@ -360,6 +422,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.mcpuLimit = mcpuLimit;
 		if(mcpuLimit != null){
 			putQueryParameter("McpuLimit", mcpuLimit.toString());
+		}
+	}
+
+	public Boolean getLosslessRuleRelated() {
+		return this.losslessRuleRelated;
+	}
+
+	public void setLosslessRuleRelated(Boolean losslessRuleRelated) {
+		this.losslessRuleRelated = losslessRuleRelated;
+		if(losslessRuleRelated != null){
+			putQueryParameter("LosslessRuleRelated", losslessRuleRelated.toString());
 		}
 	}
 
@@ -404,6 +477,28 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.customAffinity = customAffinity;
 		if(customAffinity != null){
 			putQueryParameter("CustomAffinity", customAffinity);
+		}
+	}
+
+	public Boolean getEnableLosslessRule() {
+		return this.enableLosslessRule;
+	}
+
+	public void setEnableLosslessRule(Boolean enableLosslessRule) {
+		this.enableLosslessRule = enableLosslessRule;
+		if(enableLosslessRule != null){
+			putQueryParameter("EnableLosslessRule", enableLosslessRule.toString());
+		}
+	}
+
+	public Integer getLosslessRuleWarmupTime() {
+		return this.losslessRuleWarmupTime;
+	}
+
+	public void setLosslessRuleWarmupTime(Integer losslessRuleWarmupTime) {
+		this.losslessRuleWarmupTime = losslessRuleWarmupTime;
+		if(losslessRuleWarmupTime != null){
+			putQueryParameter("LosslessRuleWarmupTime", losslessRuleWarmupTime.toString());
 		}
 	}
 
@@ -503,6 +598,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.packageUrl = packageUrl;
 		if(packageUrl != null){
 			putQueryParameter("PackageUrl", packageUrl);
+		}
+	}
+
+	public Integer getLosslessRuleDelayTime() {
+		return this.losslessRuleDelayTime;
+	}
+
+	public void setLosslessRuleDelayTime(Integer losslessRuleDelayTime) {
+		this.losslessRuleDelayTime = losslessRuleDelayTime;
+		if(losslessRuleDelayTime != null){
+			putQueryParameter("LosslessRuleDelayTime", losslessRuleDelayTime.toString());
 		}
 	}
 
@@ -657,6 +763,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.volumesStr = volumesStr;
 		if(volumesStr != null){
 			putQueryParameter("VolumesStr", volumesStr);
+		}
+	}
+
+	public Boolean getLosslessRuleAligned() {
+		return this.losslessRuleAligned;
+	}
+
+	public void setLosslessRuleAligned(Boolean losslessRuleAligned) {
+		this.losslessRuleAligned = losslessRuleAligned;
+		if(losslessRuleAligned != null){
+			putQueryParameter("LosslessRuleAligned", losslessRuleAligned.toString());
 		}
 	}
 
