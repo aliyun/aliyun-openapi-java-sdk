@@ -45,6 +45,7 @@ public class QueryBillToOSSSubscriptionResponseUnmarshaller {
 			item.setSubscribeTime(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].SubscribeTime"));
 			item.setSubscribeLanguage(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].SubscribeLanguage"));
 			item.setMultAccountRelSubscribe(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].MultAccountRelSubscribe"));
+			item.setBucketPath(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].BucketPath"));
 
 			items.add(item);
 		}

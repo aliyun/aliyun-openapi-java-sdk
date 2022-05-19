@@ -121,6 +121,8 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
 			private String multAccountRelSubscribe;
 
+			private String bucketPath;
+
 			public Long getBucketOwnerId() {
 				return this.bucketOwnerId;
 			}
@@ -167,6 +169,14 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
 			public void setMultAccountRelSubscribe(String multAccountRelSubscribe) {
 				this.multAccountRelSubscribe = multAccountRelSubscribe;
+			}
+
+			public String getBucketPath() {
+				return this.bucketPath;
+			}
+
+			public void setBucketPath(String bucketPath) {
+				this.bucketPath = bucketPath;
 			}
 		}
 	}

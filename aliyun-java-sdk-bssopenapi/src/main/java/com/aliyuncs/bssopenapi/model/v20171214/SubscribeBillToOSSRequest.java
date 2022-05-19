@@ -31,6 +31,8 @@ public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSR
 
 	private String subscribeBucket;
 
+	private String bucketPath;
+
 	private String beginBillingCycle;
 
 	private String multAccountRelSubscribe;
@@ -73,6 +75,17 @@ public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSR
 		this.subscribeBucket = subscribeBucket;
 		if(subscribeBucket != null){
 			putQueryParameter("SubscribeBucket", subscribeBucket);
+		}
+	}
+
+	public String getBucketPath() {
+		return this.bucketPath;
+	}
+
+	public void setBucketPath(String bucketPath) {
+		this.bucketPath = bucketPath;
+		if(bucketPath != null){
+			putQueryParameter("BucketPath", bucketPath);
 		}
 	}
 

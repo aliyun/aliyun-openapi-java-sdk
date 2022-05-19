@@ -1,3 +1,6 @@
+2022-05-19 Version: 1.7.13
+- Update SubscribeBillToOSS and QueryBillToOSSSubscription to support BucketPath.
+
 2022-05-11 Version: 1.7.12
 - Add release api and publish.
 
