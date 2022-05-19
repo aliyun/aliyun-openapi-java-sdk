@@ -22,14 +22,14 @@ public class GetRepoTagResponseUnmarshaller {
 
 	public static GetRepoTagResponse unmarshall(GetRepoTagResponse getRepoTagResponse, UnmarshallerContext _ctx) {
 		
-		getRepoTagResponse.setRequestId(_ctx.stringValue("GetRepoTagResponse.requestId"));
-		getRepoTagResponse.setStatus(_ctx.stringValue("GetRepoTagResponse.status"));
-		getRepoTagResponse.setTag(_ctx.stringValue("GetRepoTagResponse.tag"));
-		getRepoTagResponse.setDigest(_ctx.stringValue("GetRepoTagResponse.digest"));
-		getRepoTagResponse.setImageId(_ctx.stringValue("GetRepoTagResponse.imageId"));
-		getRepoTagResponse.setImageCreate(_ctx.longValue("GetRepoTagResponse.imageCreate"));
 		getRepoTagResponse.setImageUpdate(_ctx.longValue("GetRepoTagResponse.imageUpdate"));
+		getRepoTagResponse.setImageId(_ctx.stringValue("GetRepoTagResponse.imageId"));
+		getRepoTagResponse.setRequestId(_ctx.stringValue("GetRepoTagResponse.requestId"));
+		getRepoTagResponse.setDigest(_ctx.stringValue("GetRepoTagResponse.digest"));
 		getRepoTagResponse.setImageSize(_ctx.longValue("GetRepoTagResponse.imageSize"));
+		getRepoTagResponse.setTag(_ctx.stringValue("GetRepoTagResponse.tag"));
+		getRepoTagResponse.setImageCreate(_ctx.longValue("GetRepoTagResponse.imageCreate"));
+		getRepoTagResponse.setStatus(_ctx.stringValue("GetRepoTagResponse.status"));
 	 
 	 	return getRepoTagResponse;
 	}

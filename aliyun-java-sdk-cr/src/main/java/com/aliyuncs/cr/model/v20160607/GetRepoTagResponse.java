@@ -24,52 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRepoTagResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String status;
-
-	private String tag;
-
-	private String digest;
+	private Long imageUpdate;
 
 	private String imageId;
 
-	private Long imageCreate;
+	private String requestId;
 
-	private Long imageUpdate;
+	private String digest;
 
 	private Long imageSize;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String tag;
+
+	private Long imageCreate;
+
+	private String status;
+
+	public Long getImageUpdate() {
+		return this.imageUpdate;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
-
-	public String getDigest() {
-		return this.digest;
-	}
-
-	public void setDigest(String digest) {
-		this.digest = digest;
+	public void setImageUpdate(Long imageUpdate) {
+		this.imageUpdate = imageUpdate;
 	}
 
 	public String getImageId() {
@@ -80,20 +56,20 @@ public class GetRepoTagResponse extends AcsResponse {
 		this.imageId = imageId;
 	}
 
-	public Long getImageCreate() {
-		return this.imageCreate;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setImageCreate(Long imageCreate) {
-		this.imageCreate = imageCreate;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Long getImageUpdate() {
-		return this.imageUpdate;
+	public String getDigest() {
+		return this.digest;
 	}
 
-	public void setImageUpdate(Long imageUpdate) {
-		this.imageUpdate = imageUpdate;
+	public void setDigest(String digest) {
+		this.digest = digest;
 	}
 
 	public Long getImageSize() {
@@ -102,6 +78,30 @@ public class GetRepoTagResponse extends AcsResponse {
 
 	public void setImageSize(Long imageSize) {
 		this.imageSize = imageSize;
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	public Long getImageCreate() {
+		return this.imageCreate;
+	}
+
+	public void setImageCreate(Long imageCreate) {
+		this.imageCreate = imageCreate;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
