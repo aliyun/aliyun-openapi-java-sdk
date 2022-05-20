@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.ListDashboardsResponse;
 import com.aliyuncs.arms.model.v20190808.ListDashboardsResponse.DashboardVosItem;
+import com.aliyuncs.arms.model.v20190808.ListDashboardsResponse.DashboardVosItem.I18nChild;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +36,7 @@ public class ListDashboardsResponseUnmarshaller {
 			dashboardVosItem.setTime(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Time"));
 			dashboardVosItem.setNeedUpdate(_ctx.booleanValue("ListDashboardsResponse.DashboardVos["+ i +"].NeedUpdate"));
 			dashboardVosItem.setKind(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Kind"));
+			dashboardVosItem.setLanguage(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Language"));
 			dashboardVosItem.setUrl(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Url"));
 			dashboardVosItem.setHttpsUrl(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].HttpsUrl"));
 			dashboardVosItem.setDashboardType(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].DashboardType"));
@@ -52,6 +54,31 @@ public class ListDashboardsResponseUnmarshaller {
 				tags.add(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Tags["+ j +"]"));
 			}
 			dashboardVosItem.setTags(tags);
+
+			I18nChild i18nChild = new I18nChild();
+			i18nChild.setType(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Type"));
+			i18nChild.setTime(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Time"));
+			i18nChild.setNeedUpdate(_ctx.booleanValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.NeedUpdate"));
+			i18nChild.setKind(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Kind"));
+			i18nChild.setLanguage(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Language"));
+			i18nChild.setUrl(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Url"));
+			i18nChild.setHttpsUrl(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.HttpsUrl"));
+			i18nChild.setDashboardType(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.DashboardType"));
+			i18nChild.setExporter(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Exporter"));
+			i18nChild.setVersion(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Version"));
+			i18nChild.setIsArmsExporter(_ctx.booleanValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.IsArmsExporter"));
+			i18nChild.setHttpUrl(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.HttpUrl"));
+			i18nChild.setTitle(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Title"));
+			i18nChild.setName(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Name"));
+			i18nChild.setId(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Id"));
+			i18nChild.setUid(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Uid"));
+
+			List<String> tags1 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Tags.Length"); j++) {
+				tags1.add(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].I18nChild.Tags["+ j +"]"));
+			}
+			i18nChild.setTags1(tags1);
+			dashboardVosItem.setI18nChild(i18nChild);
 
 			dashboardVos.add(dashboardVosItem);
 		}

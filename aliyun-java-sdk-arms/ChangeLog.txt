@@ -1,3 +1,6 @@
+2022-05-20 Version: 2.8.12
+- Update ListDashBoards and AddPrometheusGlobalViewByAliClusterIds api.
+
 2022-04-22 Version: 2.8.10
 - New add ManageGetRecordingRule api.
 

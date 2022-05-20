@@ -31,6 +31,8 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 
 	private Boolean recreateSwitch;
 
+	private String language;
+
 	private String clusterId;
 
 	private String title;
@@ -75,6 +77,17 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 		this.recreateSwitch = recreateSwitch;
 		if(recreateSwitch != null){
 			putQueryParameter("RecreateSwitch", recreateSwitch.toString());
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 
