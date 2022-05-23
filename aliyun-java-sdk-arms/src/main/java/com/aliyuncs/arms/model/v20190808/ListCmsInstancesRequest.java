@@ -27,7 +27,7 @@ public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesRespo
 
 	private String clusterId;
 	public ListCmsInstancesRequest() {
-		super("ARMS", "2019-08-08", "ListCmsInstances");
+		super("ARMS", "2019-08-08", "ListCmsInstances", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

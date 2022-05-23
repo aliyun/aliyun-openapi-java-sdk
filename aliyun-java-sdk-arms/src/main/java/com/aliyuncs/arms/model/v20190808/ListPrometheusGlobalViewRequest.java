@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class ListPrometheusGlobalViewRequest extends RpcAcsRequest<ListPrometheusGlobalViewResponse> {
 	   
 	public ListPrometheusGlobalViewRequest() {
-		super("ARMS", "2019-08-08", "ListPrometheusGlobalView");
+		super("ARMS", "2019-08-08", "ListPrometheusGlobalView", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

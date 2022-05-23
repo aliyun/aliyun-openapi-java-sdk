@@ -27,7 +27,7 @@ public class DeleteCmsExporterRequest extends RpcAcsRequest<DeleteCmsExporterRes
 
 	private String clusterId;
 	public DeleteCmsExporterRequest() {
-		super("ARMS", "2019-08-08", "DeleteCmsExporter");
+		super("ARMS", "2019-08-08", "DeleteCmsExporter", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

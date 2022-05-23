@@ -29,7 +29,7 @@ public class SendTTSVerifyLinkRequest extends RpcAcsRequest<SendTTSVerifyLinkRes
 
 	private String phone;
 	public SendTTSVerifyLinkRequest() {
-		super("ARMS", "2019-08-08", "SendTTSVerifyLink");
+		super("ARMS", "2019-08-08", "SendTTSVerifyLink", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

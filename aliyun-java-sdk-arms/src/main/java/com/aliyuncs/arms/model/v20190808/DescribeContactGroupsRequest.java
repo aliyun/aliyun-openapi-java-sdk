@@ -33,7 +33,7 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 
 	private String contactGroupName;
 	public DescribeContactGroupsRequest() {
-		super("ARMS", "2019-08-08", "DescribeContactGroups");
+		super("ARMS", "2019-08-08", "DescribeContactGroups", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

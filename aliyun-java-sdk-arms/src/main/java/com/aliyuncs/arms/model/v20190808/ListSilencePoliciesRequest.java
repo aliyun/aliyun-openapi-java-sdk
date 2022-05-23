@@ -33,7 +33,7 @@ public class ListSilencePoliciesRequest extends RpcAcsRequest<ListSilencePolicie
 
 	private Long page;
 	public ListSilencePoliciesRequest() {
-		super("ARMS", "2019-08-08", "ListSilencePolicies");
+		super("ARMS", "2019-08-08", "ListSilencePolicies", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

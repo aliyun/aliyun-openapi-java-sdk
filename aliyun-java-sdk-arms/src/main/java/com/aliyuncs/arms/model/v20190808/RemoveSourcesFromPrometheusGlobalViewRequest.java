@@ -31,7 +31,7 @@ public class RemoveSourcesFromPrometheusGlobalViewRequest extends RpcAcsRequest<
 
 	private String groupName;
 	public RemoveSourcesFromPrometheusGlobalViewRequest() {
-		super("ARMS", "2019-08-08", "RemoveSourcesFromPrometheusGlobalView");
+		super("ARMS", "2019-08-08", "RemoveSourcesFromPrometheusGlobalView", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

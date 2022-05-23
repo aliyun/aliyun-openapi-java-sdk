@@ -27,7 +27,7 @@ public class UninstallPromClusterRequest extends RpcAcsRequest<UninstallPromClus
 
 	private String clusterId;
 	public UninstallPromClusterRequest() {
-		super("ARMS", "2019-08-08", "UninstallPromCluster");
+		super("ARMS", "2019-08-08", "UninstallPromCluster", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

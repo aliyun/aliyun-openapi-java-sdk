@@ -47,7 +47,7 @@ public class ListAlertsRequest extends RpcAcsRequest<ListAlertsResponse> {
 
 	private Long page;
 	public ListAlertsRequest() {
-		super("ARMS", "2019-08-08", "ListAlerts");
+		super("ARMS", "2019-08-08", "ListAlerts", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ListPrometheusAlertRulesRequest extends RpcAcsRequest<ListPrometheu
 
 	private Integer status;
 	public ListPrometheusAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "ListPrometheusAlertRules");
+		super("ARMS", "2019-08-08", "ListPrometheusAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class AddPrometheusGlobalViewByAliClusterIdsRequest extends RpcAcsRequest
 
 	private String groupName;
 	public AddPrometheusGlobalViewByAliClusterIdsRequest() {
-		super("ARMS", "2019-08-08", "AddPrometheusGlobalViewByAliClusterIds");
+		super("ARMS", "2019-08-08", "AddPrometheusGlobalViewByAliClusterIds", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

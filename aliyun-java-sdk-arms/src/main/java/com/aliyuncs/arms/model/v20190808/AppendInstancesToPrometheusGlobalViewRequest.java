@@ -31,7 +31,7 @@ public class AppendInstancesToPrometheusGlobalViewRequest extends RpcAcsRequest<
 
 	private String clusters;
 	public AppendInstancesToPrometheusGlobalViewRequest() {
-		super("ARMS", "2019-08-08", "AppendInstancesToPrometheusGlobalView");
+		super("ARMS", "2019-08-08", "AppendInstancesToPrometheusGlobalView", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

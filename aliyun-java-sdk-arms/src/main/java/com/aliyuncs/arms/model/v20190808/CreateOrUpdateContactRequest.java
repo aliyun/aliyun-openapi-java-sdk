@@ -33,7 +33,7 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 
 	private String email;
 	public CreateOrUpdateContactRequest() {
-		super("ARMS", "2019-08-08", "CreateOrUpdateContact");
+		super("ARMS", "2019-08-08", "CreateOrUpdateContact", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

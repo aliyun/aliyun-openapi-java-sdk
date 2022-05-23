@@ -27,7 +27,7 @@ public class DeleteWebhookContactRequest extends RpcAcsRequest<DeleteWebhookCont
 
 	private Long webhookId;
 	public DeleteWebhookContactRequest() {
-		super("ARMS", "2019-08-08", "DeleteWebhookContact");
+		super("ARMS", "2019-08-08", "DeleteWebhookContact", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

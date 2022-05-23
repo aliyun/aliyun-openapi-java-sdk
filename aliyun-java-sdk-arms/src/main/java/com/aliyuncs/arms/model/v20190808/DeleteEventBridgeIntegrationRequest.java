@@ -27,7 +27,7 @@ public class DeleteEventBridgeIntegrationRequest extends RpcAcsRequest<DeleteEve
 
 	private Long id;
 	public DeleteEventBridgeIntegrationRequest() {
-		super("ARMS", "2019-08-08", "DeleteEventBridgeIntegration");
+		super("ARMS", "2019-08-08", "DeleteEventBridgeIntegration", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

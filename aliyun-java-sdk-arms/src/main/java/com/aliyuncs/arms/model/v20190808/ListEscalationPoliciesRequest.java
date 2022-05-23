@@ -31,7 +31,7 @@ public class ListEscalationPoliciesRequest extends RpcAcsRequest<ListEscalationP
 
 	private Long page;
 	public ListEscalationPoliciesRequest() {
-		super("ARMS", "2019-08-08", "ListEscalationPolicies");
+		super("ARMS", "2019-08-08", "ListEscalationPolicies", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

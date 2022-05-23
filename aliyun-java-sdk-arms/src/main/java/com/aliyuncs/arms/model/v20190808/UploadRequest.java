@@ -33,7 +33,7 @@ public class UploadRequest extends RpcAcsRequest<UploadResponse> {
 
 	private String version;
 	public UploadRequest() {
-		super("ARMS", "2019-08-08", "Upload");
+		super("ARMS", "2019-08-08", "Upload", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

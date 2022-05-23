@@ -31,7 +31,7 @@ public class RemoveAliClusterIdsFromPrometheusGlobalViewRequest extends RpcAcsRe
 
 	private String groupName;
 	public RemoveAliClusterIdsFromPrometheusGlobalViewRequest() {
-		super("ARMS", "2019-08-08", "RemoveAliClusterIdsFromPrometheusGlobalView");
+		super("ARMS", "2019-08-08", "RemoveAliClusterIdsFromPrometheusGlobalView", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

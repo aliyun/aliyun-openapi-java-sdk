@@ -31,7 +31,7 @@ public class InstallCmsExporterRequest extends RpcAcsRequest<InstallCmsExporterR
 
 	private Boolean enableTag;
 	public InstallCmsExporterRequest() {
-		super("ARMS", "2019-08-08", "InstallCmsExporter");
+		super("ARMS", "2019-08-08", "InstallCmsExporter", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class QueryTracesRequest extends RpcAcsRequest<QueryTracesResponse> {
 
 	private Long startTime;
 	public QueryTracesRequest() {
-		super("ARMS", "2019-08-08", "QueryTraces");
+		super("ARMS", "2019-08-08", "QueryTraces", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

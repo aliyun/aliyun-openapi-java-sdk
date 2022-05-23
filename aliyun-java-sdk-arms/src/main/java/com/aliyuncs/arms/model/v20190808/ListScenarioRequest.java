@@ -33,7 +33,7 @@ public class ListScenarioRequest extends RpcAcsRequest<ListScenarioResponse> {
 
 	private String sign;
 	public ListScenarioRequest() {
-		super("ARMS", "2019-08-08", "ListScenario");
+		super("ARMS", "2019-08-08", "ListScenario", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

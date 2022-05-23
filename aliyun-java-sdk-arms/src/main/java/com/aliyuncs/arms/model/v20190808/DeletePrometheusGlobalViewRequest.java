@@ -27,7 +27,7 @@ public class DeletePrometheusGlobalViewRequest extends RpcAcsRequest<DeleteProme
 
 	private String globalViewClusterId;
 	public DeletePrometheusGlobalViewRequest() {
-		super("ARMS", "2019-08-08", "DeletePrometheusGlobalView");
+		super("ARMS", "2019-08-08", "DeletePrometheusGlobalView", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

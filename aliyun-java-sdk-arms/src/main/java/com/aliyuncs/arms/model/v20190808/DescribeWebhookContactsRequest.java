@@ -31,7 +31,7 @@ public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhoo
 
 	private Long page;
 	public DescribeWebhookContactsRequest() {
-		super("ARMS", "2019-08-08", "DescribeWebhookContacts");
+		super("ARMS", "2019-08-08", "DescribeWebhookContacts", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
