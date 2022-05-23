@@ -63,6 +63,7 @@ public class DescribeInstanceHistoryEventsResponseUnmarshaller {
 			extendedAttribute.setHostType(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostType"));
 			extendedAttribute.setHostId(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostId"));
 			extendedAttribute.setOnlineRepairPolicy(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.OnlineRepairPolicy"));
+			extendedAttribute.setRack(_ctx.stringValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Rack"));
 
 			List<String> migrationOptions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MigrationOptions.Length"); j++) {

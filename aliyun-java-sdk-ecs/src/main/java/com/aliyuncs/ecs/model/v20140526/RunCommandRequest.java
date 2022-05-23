@@ -52,6 +52,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private Boolean timed;
 
+	private Boolean dryRun;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -205,6 +207,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.timed = timed;
 		if(timed != null){
 			putQueryParameter("Timed", timed.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

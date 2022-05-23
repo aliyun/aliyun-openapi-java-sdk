@@ -295,7 +295,10 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.systemDisk = systemDisk;	
 		if (systemDisk != null) {
 			
+				putQueryParameter("SystemDisk.Encrypted" , systemDisk.getEncrypted());
+				putQueryParameter("SystemDisk.EncryptAlgorithm" , systemDisk.getEncryptAlgorithm());
 				putQueryParameter("SystemDisk.StorageClusterId" , systemDisk.getStorageClusterId());
+				putQueryParameter("SystemDisk.KMSKeyId" , systemDisk.getKMSKeyId());
 		}	
 	}
 
@@ -329,7 +332,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
@@ -915,7 +918,29 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public static class SystemDisk {
 
+		private Boolean encrypted;
+
+		private String encryptAlgorithm;
+
 		private String storageClusterId;
+
+		private String kMSKeyId;
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getEncryptAlgorithm() {
+			return this.encryptAlgorithm;
+		}
+
+		public void setEncryptAlgorithm(String encryptAlgorithm) {
+			this.encryptAlgorithm = encryptAlgorithm;
+		}
 
 		public String getStorageClusterId() {
 			return this.storageClusterId;
@@ -923,6 +948,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 		public void setStorageClusterId(String storageClusterId) {
 			this.storageClusterId = storageClusterId;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 	}
 

@@ -40,6 +40,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String resourceGroupId;
 
+	private String bootMode;
+
 	private String imageName;
 
 	private List<Tag> tags;
@@ -148,6 +150,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
+	public String getBootMode() {
+		return this.bootMode;
+	}
+
+	public void setBootMode(String bootMode) {
+		this.bootMode = bootMode;
+		if(bootMode != null){
+			putQueryParameter("BootMode", bootMode);
+		}
+	}
+
 	public String getImageName() {
 		return this.imageName;
 	}
@@ -167,7 +180,7 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	

@@ -245,6 +245,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private String onlineRepairPolicy;
 
+			private String rack;
+
 			private List<InactiveDisk> inactiveDisks;
 
 			private List<String> migrationOptions;
@@ -287,6 +289,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setOnlineRepairPolicy(String onlineRepairPolicy) {
 				this.onlineRepairPolicy = onlineRepairPolicy;
+			}
+
+			public String getRack() {
+				return this.rack;
+			}
+
+			public void setRack(String rack) {
+				this.rack = rack;
 			}
 
 			public List<InactiveDisk> getInactiveDisks() {

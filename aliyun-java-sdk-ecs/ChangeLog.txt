@@ -1,3 +1,7 @@
+2022-05-23 Version: 4.24.19
+- Support systemdisk encrypt and arns.
+- Update tag parameters.
+
 2022-04-24 Version: 4.24.18
 - Support systemdisk encrypt and arns.
 
