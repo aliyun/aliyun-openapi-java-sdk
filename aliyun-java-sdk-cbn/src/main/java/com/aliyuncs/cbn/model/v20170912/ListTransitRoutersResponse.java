@@ -97,6 +97,8 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 		private String serviceMode;
 
+		private Boolean supportMulticast;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -175,6 +177,14 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 		public void setServiceMode(String serviceMode) {
 			this.serviceMode = serviceMode;
+		}
+
+		public Boolean getSupportMulticast() {
+			return this.supportMulticast;
+		}
+
+		public void setSupportMulticast(Boolean supportMulticast) {
+			this.supportMulticast = supportMulticast;
 		}
 	}
 

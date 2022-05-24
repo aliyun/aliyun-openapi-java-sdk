@@ -31,6 +31,8 @@ public class DescribeCenRouteMapsRequest extends RpcAcsRequest<DescribeCenRouteM
 
 	private Integer pageNumber;
 
+	private String transitRouterRouteTableId;
+
 	private Integer pageSize;
 
 	private String transmitDirection;
@@ -83,6 +85,17 @@ public class DescribeCenRouteMapsRequest extends RpcAcsRequest<DescribeCenRouteM
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getTransitRouterRouteTableId() {
+		return this.transitRouterRouteTableId;
+	}
+
+	public void setTransitRouterRouteTableId(String transitRouterRouteTableId) {
+		this.transitRouterRouteTableId = transitRouterRouteTableId;
+		if(transitRouterRouteTableId != null){
+			putQueryParameter("TransitRouterRouteTableId", transitRouterRouteTableId);
 		}
 	}
 

@@ -22,16 +22,18 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateTransitRouterVbrAttachmentAttributeRequest extends RpcAcsRequest<UpdateTransitRouterVbrAttachmentAttributeResponse> {
+public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<ListTransitRouterMulticastDomainsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String transitRouterAttachmentName;
+	private String cenId;
 
-	private Boolean autoPublishRouteEnabled;
+	private String transitRouterMulticastDomainId;
+
+	private String nextToken;
 
 	private Boolean dryRun;
 
@@ -41,11 +43,11 @@ public class UpdateTransitRouterVbrAttachmentAttributeRequest extends RpcAcsRequ
 
 	private Long ownerId;
 
-	private String transitRouterAttachmentId;
+	private String transitRouterId;
 
-	private String transitRouterAttachmentDescription;
-	public UpdateTransitRouterVbrAttachmentAttributeRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterVbrAttachmentAttribute");
+	private Long maxResults;
+	public ListTransitRouterMulticastDomainsRequest() {
+		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomains");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,25 +77,36 @@ public class UpdateTransitRouterVbrAttachmentAttributeRequest extends RpcAcsRequ
 		}
 	}
 
-	public String getTransitRouterAttachmentName() {
-		return this.transitRouterAttachmentName;
+	public String getCenId() {
+		return this.cenId;
 	}
 
-	public void setTransitRouterAttachmentName(String transitRouterAttachmentName) {
-		this.transitRouterAttachmentName = transitRouterAttachmentName;
-		if(transitRouterAttachmentName != null){
-			putQueryParameter("TransitRouterAttachmentName", transitRouterAttachmentName);
+	public void setCenId(String cenId) {
+		this.cenId = cenId;
+		if(cenId != null){
+			putQueryParameter("CenId", cenId);
 		}
 	}
 
-	public Boolean getAutoPublishRouteEnabled() {
-		return this.autoPublishRouteEnabled;
+	public String getTransitRouterMulticastDomainId() {
+		return this.transitRouterMulticastDomainId;
 	}
 
-	public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
-		this.autoPublishRouteEnabled = autoPublishRouteEnabled;
-		if(autoPublishRouteEnabled != null){
-			putQueryParameter("AutoPublishRouteEnabled", autoPublishRouteEnabled.toString());
+	public void setTransitRouterMulticastDomainId(String transitRouterMulticastDomainId) {
+		this.transitRouterMulticastDomainId = transitRouterMulticastDomainId;
+		if(transitRouterMulticastDomainId != null){
+			putQueryParameter("TransitRouterMulticastDomainId", transitRouterMulticastDomainId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -141,31 +154,31 @@ public class UpdateTransitRouterVbrAttachmentAttributeRequest extends RpcAcsRequ
 		}
 	}
 
-	public String getTransitRouterAttachmentId() {
-		return this.transitRouterAttachmentId;
+	public String getTransitRouterId() {
+		return this.transitRouterId;
 	}
 
-	public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
-		this.transitRouterAttachmentId = transitRouterAttachmentId;
-		if(transitRouterAttachmentId != null){
-			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+	public void setTransitRouterId(String transitRouterId) {
+		this.transitRouterId = transitRouterId;
+		if(transitRouterId != null){
+			putQueryParameter("TransitRouterId", transitRouterId);
 		}
 	}
 
-	public String getTransitRouterAttachmentDescription() {
-		return this.transitRouterAttachmentDescription;
+	public Long getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setTransitRouterAttachmentDescription(String transitRouterAttachmentDescription) {
-		this.transitRouterAttachmentDescription = transitRouterAttachmentDescription;
-		if(transitRouterAttachmentDescription != null){
-			putQueryParameter("TransitRouterAttachmentDescription", transitRouterAttachmentDescription);
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
 	@Override
-	public Class<UpdateTransitRouterVbrAttachmentAttributeResponse> getResponseClass() {
-		return UpdateTransitRouterVbrAttachmentAttributeResponse.class;
+	public Class<ListTransitRouterMulticastDomainsResponse> getResponseClass() {
+		return ListTransitRouterMulticastDomainsResponse.class;
 	}
 
 }

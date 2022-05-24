@@ -46,6 +46,7 @@ public class ListTransitRouterVpcAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setVpcRegionId(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].VpcRegionId"));
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
 			transitRouterAttachment.setServiceMode(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ServiceMode"));
+			transitRouterAttachment.setChargeType(_ctx.stringValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ChargeType"));
 
 			List<ZoneMapping> zoneMappings = new ArrayList<ZoneMapping>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterVpcAttachmentsResponse.TransitRouterAttachments["+ i +"].ZoneMappings.Length"); j++) {

@@ -22,18 +22,12 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRouterResponse> {
+public class ListGrantVSwitchEnisRequest extends RpcAcsRequest<ListGrantVSwitchEnisResponse> {
 	   
-
-	private String transitRouterName;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String cenId;
-
-	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -41,27 +35,16 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 
 	private Long ownerId;
 
-	private String transitRouterDescription;
+	private String vSwitchId;
 
-	private Boolean supportMulticast;
-	public CreateTransitRouterRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouter");
+	private String vpcId;
+	public ListGrantVSwitchEnisRequest() {
+		super("Cbn", "2017-09-12", "ListGrantVSwitchEnis");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTransitRouterName() {
-		return this.transitRouterName;
-	}
-
-	public void setTransitRouterName(String transitRouterName) {
-		this.transitRouterName = transitRouterName;
-		if(transitRouterName != null){
-			putQueryParameter("TransitRouterName", transitRouterName);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -75,17 +58,6 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -94,17 +66,6 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
-		}
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -141,31 +102,31 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 		}
 	}
 
-	public String getTransitRouterDescription() {
-		return this.transitRouterDescription;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setTransitRouterDescription(String transitRouterDescription) {
-		this.transitRouterDescription = transitRouterDescription;
-		if(transitRouterDescription != null){
-			putQueryParameter("TransitRouterDescription", transitRouterDescription);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
-	public Boolean getSupportMulticast() {
-		return this.supportMulticast;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setSupportMulticast(Boolean supportMulticast) {
-		this.supportMulticast = supportMulticast;
-		if(supportMulticast != null){
-			putQueryParameter("SupportMulticast", supportMulticast.toString());
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
 	@Override
-	public Class<CreateTransitRouterResponse> getResponseClass() {
-		return CreateTransitRouterResponse.class;
+	public Class<ListGrantVSwitchEnisResponse> getResponseClass() {
+		return ListGrantVSwitchEnisResponse.class;
 	}
 
 }

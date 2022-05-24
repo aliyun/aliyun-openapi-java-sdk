@@ -99,6 +99,8 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		private String serviceMode;
 
+		private String chargeType;
+
 		private List<ZoneMapping> zoneMappings;
 
 		public String getCreationTime() {
@@ -187,6 +189,14 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		public void setServiceMode(String serviceMode) {
 			this.serviceMode = serviceMode;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 
 		public List<ZoneMapping> getZoneMappings() {

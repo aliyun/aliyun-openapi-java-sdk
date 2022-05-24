@@ -44,6 +44,7 @@ public class ListTransitRoutersResponseUnmarshaller {
 			transitRouter.setAliUid(_ctx.longValue("ListTransitRoutersResponse.TransitRouters["+ i +"].AliUid"));
 			transitRouter.setRegionId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].RegionId"));
 			transitRouter.setServiceMode(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].ServiceMode"));
+			transitRouter.setSupportMulticast(_ctx.booleanValue("ListTransitRoutersResponse.TransitRouters["+ i +"].SupportMulticast"));
 
 			transitRouters.add(transitRouter);
 		}

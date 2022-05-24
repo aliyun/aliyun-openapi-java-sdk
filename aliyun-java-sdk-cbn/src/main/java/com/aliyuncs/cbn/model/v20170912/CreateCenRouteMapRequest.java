@@ -36,6 +36,8 @@ public class CreateCenRouteMapRequest extends RpcAcsRequest<CreateCenRouteMapRes
 
 	private List<String> destinationCidrBlockss;
 
+	private String transitRouterRouteTableId;
+
 	private List<String> sourceInstanceIdss;
 
 	private List<String> sourceRegionIdss;
@@ -151,6 +153,17 @@ public class CreateCenRouteMapRequest extends RpcAcsRequest<CreateCenRouteMapRes
 				putQueryParameter("DestinationCidrBlocks." + (i + 1) , destinationCidrBlockss.get(i));
 			}
 		}	
+	}
+
+	public String getTransitRouterRouteTableId() {
+		return this.transitRouterRouteTableId;
+	}
+
+	public void setTransitRouterRouteTableId(String transitRouterRouteTableId) {
+		this.transitRouterRouteTableId = transitRouterRouteTableId;
+		if(transitRouterRouteTableId != null){
+			putQueryParameter("TransitRouterRouteTableId", transitRouterRouteTableId);
+		}
 	}
 
 	public List<String> getSourceInstanceIdss() {

@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -22,18 +23,16 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRouterResponse> {
+public class ListTransitRouterMulticastDomainVSwitchesRequest extends RpcAcsRequest<ListTransitRouterMulticastDomainVSwitchesResponse> {
 	   
-
-	private String transitRouterName;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String cenId;
 
-	private Boolean dryRun;
+	private List<String> vSwitchIdss;
+
+	private String nextToken;
 
 	private String resourceOwnerAccount;
 
@@ -41,27 +40,16 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 
 	private Long ownerId;
 
-	private String transitRouterDescription;
+	private String vpcId;
 
-	private Boolean supportMulticast;
-	public CreateTransitRouterRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouter");
+	private Integer maxResults;
+	public ListTransitRouterMulticastDomainVSwitchesRequest() {
+		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainVSwitches");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTransitRouterName() {
-		return this.transitRouterName;
-	}
-
-	public void setTransitRouterName(String transitRouterName) {
-		this.transitRouterName = transitRouterName;
-		if(transitRouterName != null){
-			putQueryParameter("TransitRouterName", transitRouterName);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -72,17 +60,6 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -97,14 +74,27 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public List<String> getVSwitchIdss() {
+		return this.vSwitchIdss;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
+	public void setVSwitchIdss(List<String> vSwitchIdss) {
+		this.vSwitchIdss = vSwitchIdss;	
+		if (vSwitchIdss != null) {
+			for (int i = 0; i < vSwitchIdss.size(); i++) {
+				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIdss.get(i));
+			}
+		}	
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -141,31 +131,31 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 		}
 	}
 
-	public String getTransitRouterDescription() {
-		return this.transitRouterDescription;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setTransitRouterDescription(String transitRouterDescription) {
-		this.transitRouterDescription = transitRouterDescription;
-		if(transitRouterDescription != null){
-			putQueryParameter("TransitRouterDescription", transitRouterDescription);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
-	public Boolean getSupportMulticast() {
-		return this.supportMulticast;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setSupportMulticast(Boolean supportMulticast) {
-		this.supportMulticast = supportMulticast;
-		if(supportMulticast != null){
-			putQueryParameter("SupportMulticast", supportMulticast.toString());
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateTransitRouterResponse> getResponseClass() {
-		return CreateTransitRouterResponse.class;
+	public Class<ListTransitRouterMulticastDomainVSwitchesResponse> getResponseClass() {
+		return ListTransitRouterMulticastDomainVSwitchesResponse.class;
 	}
 
 }

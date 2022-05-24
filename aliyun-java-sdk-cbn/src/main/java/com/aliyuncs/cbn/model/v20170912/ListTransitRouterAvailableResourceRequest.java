@@ -32,6 +32,8 @@ public class ListTransitRouterAvailableResourceRequest extends RpcAcsRequest<Lis
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Boolean supportMulticast;
 	public ListTransitRouterAvailableResourceRequest() {
 		super("Cbn", "2017-09-12", "ListTransitRouterAvailableResource");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class ListTransitRouterAvailableResourceRequest extends RpcAcsRequest<Lis
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getSupportMulticast() {
+		return this.supportMulticast;
+	}
+
+	public void setSupportMulticast(Boolean supportMulticast) {
+		this.supportMulticast = supportMulticast;
+		if(supportMulticast != null){
+			putQueryParameter("SupportMulticast", supportMulticast.toString());
 		}
 	}
 
