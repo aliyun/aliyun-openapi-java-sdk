@@ -27,21 +27,21 @@ public class DescribeSQLLogRecordsResponseUnmarshaller {
 	public static DescribeSQLLogRecordsResponse unmarshall(DescribeSQLLogRecordsResponse describeSQLLogRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeSQLLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeSQLLogRecordsResponse.RequestId"));
-		describeSQLLogRecordsResponse.setTotalRecordCount(_ctx.longValue("DescribeSQLLogRecordsResponse.TotalRecordCount"));
 		describeSQLLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeSQLLogRecordsResponse.PageNumber"));
 		describeSQLLogRecordsResponse.setPageRecordCount(_ctx.integerValue("DescribeSQLLogRecordsResponse.PageRecordCount"));
+		describeSQLLogRecordsResponse.setTotalRecordCount(_ctx.longValue("DescribeSQLLogRecordsResponse.TotalRecordCount"));
 
 		List<SQLRecord> items = new ArrayList<SQLRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogRecordsResponse.Items.Length"); i++) {
 			SQLRecord sQLRecord = new SQLRecord();
-			sQLRecord.setDBName(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].DBName"));
-			sQLRecord.setAccountName(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].AccountName"));
 			sQLRecord.setHostAddress(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].HostAddress"));
 			sQLRecord.setSQLText(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].SQLText"));
-			sQLRecord.setTotalExecutionTimes(_ctx.longValue("DescribeSQLLogRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
 			sQLRecord.setReturnRowCounts(_ctx.longValue("DescribeSQLLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			sQLRecord.setDBName(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].DBName"));
 			sQLRecord.setExecuteTime(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].ExecuteTime"));
 			sQLRecord.setThreadID(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].ThreadID"));
+			sQLRecord.setTotalExecutionTimes(_ctx.longValue("DescribeSQLLogRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
+			sQLRecord.setAccountName(_ctx.stringValue("DescribeSQLLogRecordsResponse.Items["+ i +"].AccountName"));
 
 			items.add(sQLRecord);
 		}

@@ -77,11 +77,19 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	public static class DBInstanceParameter {
 
+		private String parameterDescription;
+
 		private String parameterName;
 
 		private String parameterValue;
 
-		private String parameterDescription;
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
+		}
 
 		public String getParameterName() {
 			return this.parameterName;
@@ -97,14 +105,6 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setParameterValue(String parameterValue) {
 			this.parameterValue = parameterValue;
-		}
-
-		public String getParameterDescription() {
-			return this.parameterDescription;
-		}
-
-		public void setParameterDescription(String parameterDescription) {
-			this.parameterDescription = parameterDescription;
 		}
 	}
 

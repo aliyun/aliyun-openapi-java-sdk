@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceMonitorResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String period;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getPeriod() {
 		return this.period;
@@ -42,6 +34,14 @@ public class DescribeDBInstanceMonitorResponse extends AcsResponse {
 
 	public void setPeriod(String period) {
 		this.period = period;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -25,8 +25,6 @@ import com.aliyuncs.rds.Endpoint;
 public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccountNameAvailableResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String clientToken;
 
 	private String accountName;
@@ -45,17 +43,6 @@ public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccount
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getClientToken() {

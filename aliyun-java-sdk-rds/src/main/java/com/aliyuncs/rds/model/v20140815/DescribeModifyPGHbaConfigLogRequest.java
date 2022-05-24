@@ -22,26 +22,26 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateMigrateTaskForSQLServerRequest extends RpcAcsRequest<CreateMigrateTaskForSQLServerResponse> {
+public class DescribeModifyPGHbaConfigLogRequest extends RpcAcsRequest<DescribeModifyPGHbaConfigLogResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String isOnlineDB;
+	private String clientToken;
+
+	private String startTime;
 
 	private String dBInstanceId;
 
-	private String taskType;
-
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
+	private String endTime;
+
 	private Long ownerId;
-
-	private String oSSUrls;
-
-	private String dBName;
-	public CreateMigrateTaskForSQLServerRequest() {
-		super("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "rds");
+	public DescribeModifyPGHbaConfigLogRequest() {
+		super("Rds", "2014-08-15", "DescribeModifyPGHbaConfigLog", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,14 +60,25 @@ public class CreateMigrateTaskForSQLServerRequest extends RpcAcsRequest<CreateMi
 		}
 	}
 
-	public String getIsOnlineDB() {
-		return this.isOnlineDB;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setIsOnlineDB(String isOnlineDB) {
-		this.isOnlineDB = isOnlineDB;
-		if(isOnlineDB != null){
-			putQueryParameter("IsOnlineDB", isOnlineDB);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -82,17 +93,6 @@ public class CreateMigrateTaskForSQLServerRequest extends RpcAcsRequest<CreateMi
 		}
 	}
 
-	public String getTaskType() {
-		return this.taskType;
-	}
-
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -101,6 +101,28 @@ public class CreateMigrateTaskForSQLServerRequest extends RpcAcsRequest<CreateMi
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -115,31 +137,9 @@ public class CreateMigrateTaskForSQLServerRequest extends RpcAcsRequest<CreateMi
 		}
 	}
 
-	public String getOSSUrls() {
-		return this.oSSUrls;
-	}
-
-	public void setOSSUrls(String oSSUrls) {
-		this.oSSUrls = oSSUrls;
-		if(oSSUrls != null){
-			putQueryParameter("OSSUrls", oSSUrls);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	@Override
-	public Class<CreateMigrateTaskForSQLServerResponse> getResponseClass() {
-		return CreateMigrateTaskForSQLServerResponse.class;
+	public Class<DescribeModifyPGHbaConfigLogResponse> getResponseClass() {
+		return DescribeModifyPGHbaConfigLogResponse.class;
 	}
 
 }

@@ -27,22 +27,22 @@ public class DescribeDBProxyEndpointResponseUnmarshaller {
 	public static DescribeDBProxyEndpointResponse unmarshall(DescribeDBProxyEndpointResponse describeDBProxyEndpointResponse, UnmarshallerContext _ctx) {
 		
 		describeDBProxyEndpointResponse.setRequestId(_ctx.stringValue("DescribeDBProxyEndpointResponse.RequestId"));
-		describeDBProxyEndpointResponse.setDBProxyEndpointId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEndpointId"));
-		describeDBProxyEndpointResponse.setDBProxyConnectString(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectString"));
-		describeDBProxyEndpointResponse.setDBProxyConnectStringPort(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectStringPort"));
 		describeDBProxyEndpointResponse.setDBProxyConnectStringNetType(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectStringNetType"));
 		describeDBProxyEndpointResponse.setDBProxyFeatures(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyFeatures"));
-		describeDBProxyEndpointResponse.setReadOnlyInstanceMaxDelayTime(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceMaxDelayTime"));
-		describeDBProxyEndpointResponse.setReadOnlyInstanceDistributionType(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceDistributionType"));
 		describeDBProxyEndpointResponse.setReadOnlyInstanceWeight(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceWeight"));
-		describeDBProxyEndpointResponse.setDbProxyEndpointAliases(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointAliases"));
+		describeDBProxyEndpointResponse.setReadOnlyInstanceDistributionType(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceDistributionType"));
+		describeDBProxyEndpointResponse.setReadOnlyInstanceMaxDelayTime(_ctx.stringValue("DescribeDBProxyEndpointResponse.ReadOnlyInstanceMaxDelayTime"));
 		describeDBProxyEndpointResponse.setDbProxyEndpointReadWriteMode(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointReadWriteMode"));
+		describeDBProxyEndpointResponse.setDbProxyEndpointAliases(_ctx.stringValue("DescribeDBProxyEndpointResponse.DbProxyEndpointAliases"));
+		describeDBProxyEndpointResponse.setDBProxyEndpointId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEndpointId"));
+		describeDBProxyEndpointResponse.setDBProxyConnectStringPort(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectStringPort"));
+		describeDBProxyEndpointResponse.setDBProxyConnectString(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectString"));
 
 		List<EndpointConnectItemsItem> endpointConnectItems = new ArrayList<EndpointConnectItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyEndpointResponse.EndpointConnectItems.Length"); i++) {
 			EndpointConnectItemsItem endpointConnectItemsItem = new EndpointConnectItemsItem();
-			endpointConnectItemsItem.setDbProxyEndpointConnectString(_ctx.stringValue("DescribeDBProxyEndpointResponse.EndpointConnectItems["+ i +"].DbProxyEndpointConnectString"));
 			endpointConnectItemsItem.setDbProxyEndpointPort(_ctx.stringValue("DescribeDBProxyEndpointResponse.EndpointConnectItems["+ i +"].DbProxyEndpointPort"));
+			endpointConnectItemsItem.setDbProxyEndpointConnectString(_ctx.stringValue("DescribeDBProxyEndpointResponse.EndpointConnectItems["+ i +"].DbProxyEndpointConnectString"));
 			endpointConnectItemsItem.setDbProxyEndpointNetType(_ctx.stringValue("DescribeDBProxyEndpointResponse.EndpointConnectItems["+ i +"].DbProxyEndpointNetType"));
 
 			endpointConnectItems.add(endpointConnectItemsItem);

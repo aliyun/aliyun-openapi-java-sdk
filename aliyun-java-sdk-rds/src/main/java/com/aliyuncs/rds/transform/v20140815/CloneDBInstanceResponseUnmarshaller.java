@@ -24,9 +24,9 @@ public class CloneDBInstanceResponseUnmarshaller {
 		
 		cloneDBInstanceResponse.setRequestId(_ctx.stringValue("CloneDBInstanceResponse.RequestId"));
 		cloneDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CloneDBInstanceResponse.DBInstanceId"));
-		cloneDBInstanceResponse.setOrderId(_ctx.stringValue("CloneDBInstanceResponse.OrderId"));
-		cloneDBInstanceResponse.setConnectionString(_ctx.stringValue("CloneDBInstanceResponse.ConnectionString"));
 		cloneDBInstanceResponse.setPort(_ctx.stringValue("CloneDBInstanceResponse.Port"));
+		cloneDBInstanceResponse.setConnectionString(_ctx.stringValue("CloneDBInstanceResponse.ConnectionString"));
+		cloneDBInstanceResponse.setOrderId(_ctx.stringValue("CloneDBInstanceResponse.OrderId"));
 	 
 	 	return cloneDBInstanceResponse;
 	}

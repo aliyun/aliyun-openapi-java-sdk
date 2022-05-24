@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceDetailResponse extends AcsResponse {
 
-	private String requestId;
+	private String activationState;
 
 	private String dBInstanceId;
 
-	private String regionId;
-
 	private String licenseType;
 
-	private String activationState;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String regionId;
+
+	public String getActivationState() {
+		return this.activationState;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setActivationState(String activationState) {
+		this.activationState = activationState;
 	}
 
 	public String getDBInstanceId() {
@@ -50,14 +50,6 @@ public class DescribeDBInstanceDetailResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
 	public String getLicenseType() {
 		return this.licenseType;
 	}
@@ -66,12 +58,20 @@ public class DescribeDBInstanceDetailResponse extends AcsResponse {
 		this.licenseType = licenseType;
 	}
 
-	public String getActivationState() {
-		return this.activationState;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setActivationState(String activationState) {
-		this.activationState = activationState;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	@Override

@@ -26,22 +26,12 @@ public class CopyDatabaseBetweenInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dBInstanceId;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
 	}
 
 	@Override

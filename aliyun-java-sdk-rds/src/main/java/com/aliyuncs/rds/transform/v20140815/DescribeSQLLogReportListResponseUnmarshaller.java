@@ -29,9 +29,9 @@ public class DescribeSQLLogReportListResponseUnmarshaller {
 	public static DescribeSQLLogReportListResponse unmarshall(DescribeSQLLogReportListResponse describeSQLLogReportListResponse, UnmarshallerContext _ctx) {
 		
 		describeSQLLogReportListResponse.setRequestId(_ctx.stringValue("DescribeSQLLogReportListResponse.RequestId"));
-		describeSQLLogReportListResponse.setTotalRecordCount(_ctx.integerValue("DescribeSQLLogReportListResponse.TotalRecordCount"));
 		describeSQLLogReportListResponse.setPageNumber(_ctx.integerValue("DescribeSQLLogReportListResponse.PageNumber"));
 		describeSQLLogReportListResponse.setPageRecordCount(_ctx.integerValue("DescribeSQLLogReportListResponse.PageRecordCount"));
+		describeSQLLogReportListResponse.setTotalRecordCount(_ctx.integerValue("DescribeSQLLogReportListResponse.TotalRecordCount"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogReportListResponse.Items.Length"); i++) {
@@ -42,8 +42,8 @@ public class DescribeSQLLogReportListResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems.Length"); j++) {
 				LatencyTopNItem latencyTopNItem = new LatencyTopNItem();
 				latencyTopNItem.setSQLText(_ctx.stringValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText"));
-				latencyTopNItem.setAvgLatency(_ctx.longValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency"));
 				latencyTopNItem.setSQLExecuteTimes(_ctx.longValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes"));
+				latencyTopNItem.setAvgLatency(_ctx.longValue("DescribeSQLLogReportListResponse.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency"));
 
 				latencyTopNItems.add(latencyTopNItem);
 			}
@@ -52,8 +52,8 @@ public class DescribeSQLLogReportListResponseUnmarshaller {
 			List<QPSTopNItem> qPSTopNItems = new ArrayList<QPSTopNItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSQLLogReportListResponse.Items["+ i +"].QPSTopNItems.Length"); j++) {
 				QPSTopNItem qPSTopNItem = new QPSTopNItem();
-				qPSTopNItem.setSQLText(_ctx.stringValue("DescribeSQLLogReportListResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLText"));
 				qPSTopNItem.setSQLExecuteTimes(_ctx.longValue("DescribeSQLLogReportListResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLExecuteTimes"));
+				qPSTopNItem.setSQLText(_ctx.stringValue("DescribeSQLLogReportListResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLText"));
 
 				qPSTopNItems.add(qPSTopNItem);
 			}

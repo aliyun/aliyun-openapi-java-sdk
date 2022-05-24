@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TransformDBInstancePayTypeResponse extends AcsResponse {
 
+	private String dBInstanceId;
+
 	private String requestId;
+
+	private String expiredTime;
 
 	private Long orderId;
 
 	private String chargeType;
 
-	private String expiredTime;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
 
-	private String dBInstanceId;
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,6 +48,14 @@ public class TransformDBInstancePayTypeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getExpiredTime() {
+		return this.expiredTime;
+	}
+
+	public void setExpiredTime(String expiredTime) {
+		this.expiredTime = expiredTime;
 	}
 
 	public Long getOrderId() {
@@ -56,22 +72,6 @@ public class TransformDBInstancePayTypeResponse extends AcsResponse {
 
 	public void setChargeType(String chargeType) {
 		this.chargeType = chargeType;
-	}
-
-	public String getExpiredTime() {
-		return this.expiredTime;
-	}
-
-	public void setExpiredTime(String expiredTime) {
-		this.expiredTime = expiredTime;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
 	}
 
 	@Override

@@ -27,41 +27,41 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 	public static DescribeSlowLogRecordsResponse unmarshall(DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeSlowLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeSlowLogRecordsResponse.RequestId"));
-		describeSlowLogRecordsResponse.setDBInstanceId(_ctx.stringValue("DescribeSlowLogRecordsResponse.DBInstanceId"));
-		describeSlowLogRecordsResponse.setEngine(_ctx.stringValue("DescribeSlowLogRecordsResponse.Engine"));
-		describeSlowLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
-		describeSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
+		describeSlowLogRecordsResponse.setRowsAffectedCount(_ctx.longValue("DescribeSlowLogRecordsResponse.RowsAffectedCount"));
 		describeSlowLogRecordsResponse.setPageRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageRecordCount"));
+		describeSlowLogRecordsResponse.setWritesIOCount(_ctx.longValue("DescribeSlowLogRecordsResponse.WritesIOCount"));
 		describeSlowLogRecordsResponse.setSQLHash(_ctx.stringValue("DescribeSlowLogRecordsResponse.SQLHash"));
-		describeSlowLogRecordsResponse.setCPUTime(_ctx.longValue("DescribeSlowLogRecordsResponse.CPUTime"));
 		describeSlowLogRecordsResponse.setLogicalIORead(_ctx.longValue("DescribeSlowLogRecordsResponse.LogicalIORead"));
 		describeSlowLogRecordsResponse.setPhysicalIORead(_ctx.longValue("DescribeSlowLogRecordsResponse.PhysicalIORead"));
-		describeSlowLogRecordsResponse.setWritesIOCount(_ctx.longValue("DescribeSlowLogRecordsResponse.WritesIOCount"));
-		describeSlowLogRecordsResponse.setRowsAffectedCount(_ctx.longValue("DescribeSlowLogRecordsResponse.RowsAffectedCount"));
-		describeSlowLogRecordsResponse.setLastRowsAffectedCount(_ctx.longValue("DescribeSlowLogRecordsResponse.LastRowsAffectedCount"));
+		describeSlowLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
+		describeSlowLogRecordsResponse.setDBInstanceId(_ctx.stringValue("DescribeSlowLogRecordsResponse.DBInstanceId"));
+		describeSlowLogRecordsResponse.setEngine(_ctx.stringValue("DescribeSlowLogRecordsResponse.Engine"));
+		describeSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
+		describeSlowLogRecordsResponse.setCPUTime(_ctx.longValue("DescribeSlowLogRecordsResponse.CPUTime"));
 		describeSlowLogRecordsResponse.setUserName(_ctx.stringValue("DescribeSlowLogRecordsResponse.UserName"));
+		describeSlowLogRecordsResponse.setLastRowsAffectedCount(_ctx.longValue("DescribeSlowLogRecordsResponse.LastRowsAffectedCount"));
 
 		List<SQLSlowRecord> items = new ArrayList<SQLSlowRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
 			SQLSlowRecord sQLSlowRecord = new SQLSlowRecord();
 			sQLSlowRecord.setHostAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
-			sQLSlowRecord.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
-			sQLSlowRecord.setSQLText(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
-			sQLSlowRecord.setQueryTimes(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
-			sQLSlowRecord.setLockTimes(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LockTimes"));
-			sQLSlowRecord.setParseRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ParseRowCounts"));
-			sQLSlowRecord.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
-			sQLSlowRecord.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
-			sQLSlowRecord.setQueryTimeMS(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimeMS"));
-			sQLSlowRecord.setCpuTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].CpuTime"));
-			sQLSlowRecord.setLogicalIORead(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LogicalIORead"));
-			sQLSlowRecord.setPhysicalIORead(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].PhysicalIORead"));
-			sQLSlowRecord.setWriteIOCount(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].WriteIOCount"));
 			sQLSlowRecord.setRowsAffectedCount(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].RowsAffectedCount"));
-			sQLSlowRecord.setLastRowsAffectedCount(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LastRowsAffectedCount"));
-			sQLSlowRecord.setUserName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].UserName"));
+			sQLSlowRecord.setQueryTimes(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
+			sQLSlowRecord.setSQLText(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
+			sQLSlowRecord.setCpuTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].CpuTime"));
+			sQLSlowRecord.setQueryTimeMS(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimeMS"));
 			sQLSlowRecord.setApplicationName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ApplicationName"));
+			sQLSlowRecord.setLockTimes(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LockTimes"));
+			sQLSlowRecord.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
+			sQLSlowRecord.setLogicalIORead(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LogicalIORead"));
+			sQLSlowRecord.setWriteIOCount(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].WriteIOCount"));
+			sQLSlowRecord.setPhysicalIORead(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].PhysicalIORead"));
+			sQLSlowRecord.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			sQLSlowRecord.setParseRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ParseRowCounts"));
+			sQLSlowRecord.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
 			sQLSlowRecord.setClientHostName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ClientHostName"));
+			sQLSlowRecord.setUserName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].UserName"));
+			sQLSlowRecord.setLastRowsAffectedCount(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LastRowsAffectedCount"));
 
 			items.add(sQLSlowRecord);
 		}

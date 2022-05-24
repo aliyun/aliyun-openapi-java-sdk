@@ -15,6 +15,8 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -32,6 +34,9 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 	private String engineVersion;
 
 	private String resourceGroupId;
+
+	@SerializedName("serverlessConfiguration")
+	private ServerlessConfiguration serverlessConfiguration;
 
 	private String effectiveTime;
 
@@ -58,6 +63,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 	private String dBInstanceClass;
 
 	private String zoneId;
+
+	private String category;
 
 	private String payType;
 	public ModifyDBInstanceSpecRequest() {
@@ -111,6 +118,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
+	}
+
+	public ServerlessConfiguration getServerlessConfiguration() {
+		return this.serverlessConfiguration;
+	}
+
+	public void setServerlessConfiguration(ServerlessConfiguration serverlessConfiguration) {
+		this.serverlessConfiguration = serverlessConfiguration;	
+		if (serverlessConfiguration != null) {
+			putQueryParameter("ServerlessConfiguration" , new Gson().toJson(serverlessConfiguration));
+		}	
 	}
 
 	public String getEffectiveTime() {
@@ -256,6 +274,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
+		}
+	}
+
 	public String getPayType() {
 		return this.payType;
 	}
@@ -264,6 +293,31 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public static class ServerlessConfiguration {
+
+		@SerializedName("MinCapacity")
+		private Double minCapacity;
+
+		@SerializedName("MaxCapacity")
+		private Double maxCapacity;
+
+		public Double getMinCapacity() {
+			return this.minCapacity;
+		}
+
+		public void setMinCapacity(Double minCapacity) {
+			this.minCapacity = minCapacity;
+		}
+
+		public Double getMaxCapacity() {
+			return this.maxCapacity;
+		}
+
+		public void setMaxCapacity(Double maxCapacity) {
+			this.maxCapacity = maxCapacity;
 		}
 	}
 

@@ -47,23 +47,15 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
 	public static class DBInstanceIPArray {
 
-		private String dBInstanceIPArrayName;
-
 		private String dBInstanceIPArrayAttribute;
+
+		private String whitelistNetworkType;
+
+		private String dBInstanceIPArrayName;
 
 		private String securityIPType;
 
 		private String securityIPList;
-
-		private String whitelistNetworkType;
-
-		public String getDBInstanceIPArrayName() {
-			return this.dBInstanceIPArrayName;
-		}
-
-		public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
-			this.dBInstanceIPArrayName = dBInstanceIPArrayName;
-		}
 
 		public String getDBInstanceIPArrayAttribute() {
 			return this.dBInstanceIPArrayAttribute;
@@ -71,6 +63,22 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
 		public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
 			this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		}
+
+		public String getWhitelistNetworkType() {
+			return this.whitelistNetworkType;
+		}
+
+		public void setWhitelistNetworkType(String whitelistNetworkType) {
+			this.whitelistNetworkType = whitelistNetworkType;
+		}
+
+		public String getDBInstanceIPArrayName() {
+			return this.dBInstanceIPArrayName;
+		}
+
+		public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
+			this.dBInstanceIPArrayName = dBInstanceIPArrayName;
 		}
 
 		public String getSecurityIPType() {
@@ -87,14 +95,6 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
 		public void setSecurityIPList(String securityIPList) {
 			this.securityIPList = securityIPList;
-		}
-
-		public String getWhitelistNetworkType() {
-			return this.whitelistNetworkType;
-		}
-
-		public void setWhitelistNetworkType(String whitelistNetworkType) {
-			this.whitelistNetworkType = whitelistNetworkType;
 		}
 	}
 

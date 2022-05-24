@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AllocateInstancePublicConnectionResponse extends AcsResponse {
 
+	private String dbInstanceName;
+
 	private String requestId;
 
 	private String connectionString;
 
-	private String dbInstanceName;
+	public String getDbInstanceName() {
+		return this.dbInstanceName;
+	}
+
+	public void setDbInstanceName(String dbInstanceName) {
+		this.dbInstanceName = dbInstanceName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class AllocateInstancePublicConnectionResponse extends AcsResponse {
 
 	public void setConnectionString(String connectionString) {
 		this.connectionString = connectionString;
-	}
-
-	public String getDbInstanceName() {
-		return this.dbInstanceName;
-	}
-
-	public void setDbInstanceName(String dbInstanceName) {
-		this.dbInstanceName = dbInstanceName;
 	}
 
 	@Override

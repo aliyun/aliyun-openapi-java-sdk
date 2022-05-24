@@ -32,16 +32,16 @@ public class DescribeParameterGroupResponseUnmarshaller {
 		List<ParameterGroup> paramGroup = new ArrayList<ParameterGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterGroupResponse.ParamGroup.Length"); i++) {
 			ParameterGroup parameterGroup = new ParameterGroup();
-			parameterGroup.setParameterGroupType(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupType"));
-			parameterGroup.setParameterGroupName(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupName"));
-			parameterGroup.setParamCounts(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParamCounts"));
-			parameterGroup.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupDesc"));
-			parameterGroup.setForceRestart(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ForceRestart"));
-			parameterGroup.setEngine(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].Engine"));
-			parameterGroup.setEngineVersion(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].EngineVersion"));
-			parameterGroup.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupId"));
-			parameterGroup.setCreateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].CreateTime"));
 			parameterGroup.setUpdateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].UpdateTime"));
+			parameterGroup.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupDesc"));
+			parameterGroup.setCreateTime(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].CreateTime"));
+			parameterGroup.setForceRestart(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ForceRestart"));
+			parameterGroup.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupId"));
+			parameterGroup.setParameterGroupName(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupName"));
+			parameterGroup.setEngine(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].Engine"));
+			parameterGroup.setParamCounts(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParamCounts"));
+			parameterGroup.setEngineVersion(_ctx.stringValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].EngineVersion"));
+			parameterGroup.setParameterGroupType(_ctx.integerValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParameterGroupType"));
 
 			List<ParameterDetail> paramDetail = new ArrayList<ParameterDetail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeParameterGroupResponse.ParamGroup["+ i +"].ParamDetail.Length"); j++) {

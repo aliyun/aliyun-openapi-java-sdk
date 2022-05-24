@@ -23,8 +23,8 @@ public class DescribeHASwitchConfigResponseUnmarshaller {
 	public static DescribeHASwitchConfigResponse unmarshall(DescribeHASwitchConfigResponse describeHASwitchConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeHASwitchConfigResponse.setRequestId(_ctx.stringValue("DescribeHASwitchConfigResponse.RequestId"));
-		describeHASwitchConfigResponse.setHAConfig(_ctx.stringValue("DescribeHASwitchConfigResponse.HAConfig"));
 		describeHASwitchConfigResponse.setManualHATime(_ctx.stringValue("DescribeHASwitchConfigResponse.ManualHATime"));
+		describeHASwitchConfigResponse.setHAConfig(_ctx.stringValue("DescribeHASwitchConfigResponse.HAConfig"));
 	 
 	 	return describeHASwitchConfigResponse;
 	}

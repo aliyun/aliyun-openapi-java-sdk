@@ -84,6 +84,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setEngine(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].Engine"));
 			dBInstance.setDBInstanceClass(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstance.setSwitchWeight(_ctx.integerValue("DescribeDBInstancesResponse.Items["+ i +"].SwitchWeight"));
+			dBInstance.setDeletionProtection(_ctx.booleanValue("DescribeDBInstancesResponse.Items["+ i +"].DeletionProtection"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

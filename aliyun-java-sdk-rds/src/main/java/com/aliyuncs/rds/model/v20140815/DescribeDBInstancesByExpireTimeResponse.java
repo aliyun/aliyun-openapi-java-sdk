@@ -29,9 +29,9 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Integer totalRecordCount;
-
 	private Integer pageRecordCount;
+
+	private Integer totalRecordCount;
 
 	private List<DBInstanceExpireTime> items;
 
@@ -51,20 +51,20 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<DBInstanceExpireTime> getItems() {
@@ -77,33 +77,17 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 
 	public static class DBInstanceExpireTime {
 
-		private String dBInstanceId;
-
-		private String dBInstanceDescription;
-
 		private String expireTime;
-
-		private String dBInstanceStatus;
-
-		private String lockMode;
 
 		private String payType;
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
+		private String dBInstanceId;
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
+		private String dBInstanceStatus;
 
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
-		}
+		private String dBInstanceDescription;
 
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
-		}
+		private String lockMode;
 
 		public String getExpireTime() {
 			return this.expireTime;
@@ -111,6 +95,22 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 
 		public void setExpireTime(String expireTime) {
 			this.expireTime = expireTime;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
 		public String getDBInstanceStatus() {
@@ -121,20 +121,20 @@ public class DescribeDBInstancesByExpireTimeResponse extends AcsResponse {
 			this.dBInstanceStatus = dBInstanceStatus;
 		}
 
+		public String getDBInstanceDescription() {
+			return this.dBInstanceDescription;
+		}
+
+		public void setDBInstanceDescription(String dBInstanceDescription) {
+			this.dBInstanceDescription = dBInstanceDescription;
+		}
+
 		public String getLockMode() {
 			return this.lockMode;
 		}
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
 		}
 	}
 

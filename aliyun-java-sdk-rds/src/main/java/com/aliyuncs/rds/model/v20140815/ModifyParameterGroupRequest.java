@@ -29,6 +29,8 @@ public class ModifyParameterGroupRequest extends RpcAcsRequest<ModifyParameterGr
 
 	private String parameterGroupId;
 
+	private String modifyMode;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -66,6 +68,17 @@ public class ModifyParameterGroupRequest extends RpcAcsRequest<ModifyParameterGr
 		this.parameterGroupId = parameterGroupId;
 		if(parameterGroupId != null){
 			putQueryParameter("ParameterGroupId", parameterGroupId);
+		}
+	}
+
+	public String getModifyMode() {
+		return this.modifyMode;
+	}
+
+	public void setModifyMode(String modifyMode) {
+		this.modifyMode = modifyMode;
+		if(modifyMode != null){
+			putQueryParameter("ModifyMode", modifyMode);
 		}
 	}
 

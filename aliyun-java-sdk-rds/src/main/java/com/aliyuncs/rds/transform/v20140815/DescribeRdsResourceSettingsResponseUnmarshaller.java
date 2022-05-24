@@ -31,15 +31,15 @@ public class DescribeRdsResourceSettingsResponseUnmarshaller {
 		List<RdsInstanceResourceSetting> rdsInstanceResourceSettings = new ArrayList<RdsInstanceResourceSetting>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings.Length"); i++) {
 			RdsInstanceResourceSetting rdsInstanceResourceSetting = new RdsInstanceResourceSetting();
-			rdsInstanceResourceSetting.setStartDate(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].StartDate"));
-			rdsInstanceResourceSetting.setEndDate(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].EndDate"));
-			rdsInstanceResourceSetting.setResourceNiche(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].ResourceNiche"));
-			rdsInstanceResourceSetting.setNoticeBarContent(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].NoticeBarContent"));
-			rdsInstanceResourceSetting.setPoppedUpButtonText(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonText"));
 			rdsInstanceResourceSetting.setPoppedUpButtonType(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonType"));
-			rdsInstanceResourceSetting.setPoppedUpButtonUrl(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonUrl"));
+			rdsInstanceResourceSetting.setNoticeBarContent(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].NoticeBarContent"));
+			rdsInstanceResourceSetting.setEndDate(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].EndDate"));
 			rdsInstanceResourceSetting.setPoppedUpContent(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpContent"));
+			rdsInstanceResourceSetting.setStartDate(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].StartDate"));
+			rdsInstanceResourceSetting.setPoppedUpButtonText(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonText"));
 			rdsInstanceResourceSetting.setIsTop(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].IsTop"));
+			rdsInstanceResourceSetting.setResourceNiche(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].ResourceNiche"));
+			rdsInstanceResourceSetting.setPoppedUpButtonUrl(_ctx.stringValue("DescribeRdsResourceSettingsResponse.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonUrl"));
 
 			rdsInstanceResourceSettings.add(rdsInstanceResourceSetting);
 		}

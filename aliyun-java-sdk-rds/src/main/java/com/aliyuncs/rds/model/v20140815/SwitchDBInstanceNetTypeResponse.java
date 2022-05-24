@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SwitchDBInstanceNetTypeResponse extends AcsResponse {
 
+	private String newConnectionString;
+
 	private String requestId;
 
 	private String oldConnectionString;
 
-	private String newConnectionString;
+	public String getNewConnectionString() {
+		return this.newConnectionString;
+	}
+
+	public void setNewConnectionString(String newConnectionString) {
+		this.newConnectionString = newConnectionString;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class SwitchDBInstanceNetTypeResponse extends AcsResponse {
 
 	public void setOldConnectionString(String oldConnectionString) {
 		this.oldConnectionString = oldConnectionString;
-	}
-
-	public String getNewConnectionString() {
-		return this.newConnectionString;
-	}
-
-	public void setNewConnectionString(String newConnectionString) {
-		this.newConnectionString = newConnectionString;
 	}
 
 	@Override

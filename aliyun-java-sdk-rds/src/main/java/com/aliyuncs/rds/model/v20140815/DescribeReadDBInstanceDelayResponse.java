@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
 
-	private String readDBInstanceId;
+	private String requestId;
 
 	private Integer delayTime;
 
+	private String readDBInstanceId;
+
 	private List<ItemsItem> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -51,12 +43,12 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getReadDBInstanceId() {
-		return this.readDBInstanceId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setReadDBInstanceId(String readDBInstanceId) {
-		this.readDBInstanceId = readDBInstanceId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getDelayTime() {
@@ -65,6 +57,14 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 
 	public void setDelayTime(Integer delayTime) {
 		this.delayTime = delayTime;
+	}
+
+	public String getReadDBInstanceId() {
+		return this.readDBInstanceId;
+	}
+
+	public void setReadDBInstanceId(String readDBInstanceId) {
+		this.readDBInstanceId = readDBInstanceId;
 	}
 
 	public List<ItemsItem> getItems() {
@@ -81,9 +81,9 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 
 		private List<ReadonlyInstanceDelayItem> readonlyInstanceDelay;
 
-		private List<String> readDBInstanceNames;
-
 		private List<String> readDelayTimes;
+
+		private List<String> readDBInstanceNames;
 
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
@@ -101,14 +101,6 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 			this.readonlyInstanceDelay = readonlyInstanceDelay;
 		}
 
-		public List<String> getReadDBInstanceNames() {
-			return this.readDBInstanceNames;
-		}
-
-		public void setReadDBInstanceNames(List<String> readDBInstanceNames) {
-			this.readDBInstanceNames = readDBInstanceNames;
-		}
-
 		public List<String> getReadDelayTimes() {
 			return this.readDelayTimes;
 		}
@@ -117,38 +109,38 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 			this.readDelayTimes = readDelayTimes;
 		}
 
+		public List<String> getReadDBInstanceNames() {
+			return this.readDBInstanceNames;
+		}
+
+		public void setReadDBInstanceNames(List<String> readDBInstanceNames) {
+			this.readDBInstanceNames = readDBInstanceNames;
+		}
+
 		public static class ReadonlyInstanceDelayItem {
-
-			private String replayLatency;
-
-			private String flushLag;
-
-			private String flushLatency;
-
-			private String sendLatency;
-
-			private String writeLag;
-
-			private String replayLag;
 
 			private String writeLatency;
 
+			private String flushLatency;
+
 			private String readDBInstanceName;
 
-			public String getReplayLatency() {
-				return this.replayLatency;
+			private String writeLag;
+
+			private String flushLag;
+
+			private String sendLatency;
+
+			private String replayLag;
+
+			private String replayLatency;
+
+			public String getWriteLatency() {
+				return this.writeLatency;
 			}
 
-			public void setReplayLatency(String replayLatency) {
-				this.replayLatency = replayLatency;
-			}
-
-			public String getFlushLag() {
-				return this.flushLag;
-			}
-
-			public void setFlushLag(String flushLag) {
-				this.flushLag = flushLag;
+			public void setWriteLatency(String writeLatency) {
+				this.writeLatency = writeLatency;
 			}
 
 			public String getFlushLatency() {
@@ -159,12 +151,12 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 				this.flushLatency = flushLatency;
 			}
 
-			public String getSendLatency() {
-				return this.sendLatency;
+			public String getReadDBInstanceName() {
+				return this.readDBInstanceName;
 			}
 
-			public void setSendLatency(String sendLatency) {
-				this.sendLatency = sendLatency;
+			public void setReadDBInstanceName(String readDBInstanceName) {
+				this.readDBInstanceName = readDBInstanceName;
 			}
 
 			public String getWriteLag() {
@@ -175,6 +167,22 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 				this.writeLag = writeLag;
 			}
 
+			public String getFlushLag() {
+				return this.flushLag;
+			}
+
+			public void setFlushLag(String flushLag) {
+				this.flushLag = flushLag;
+			}
+
+			public String getSendLatency() {
+				return this.sendLatency;
+			}
+
+			public void setSendLatency(String sendLatency) {
+				this.sendLatency = sendLatency;
+			}
+
 			public String getReplayLag() {
 				return this.replayLag;
 			}
@@ -183,20 +191,12 @@ public class DescribeReadDBInstanceDelayResponse extends AcsResponse {
 				this.replayLag = replayLag;
 			}
 
-			public String getWriteLatency() {
-				return this.writeLatency;
+			public String getReplayLatency() {
+				return this.replayLatency;
 			}
 
-			public void setWriteLatency(String writeLatency) {
-				this.writeLatency = writeLatency;
-			}
-
-			public String getReadDBInstanceName() {
-				return this.readDBInstanceName;
-			}
-
-			public void setReadDBInstanceName(String readDBInstanceName) {
-				this.readDBInstanceName = readDBInstanceName;
+			public void setReplayLatency(String replayLatency) {
+				this.replayLatency = replayLatency;
 			}
 		}
 	}

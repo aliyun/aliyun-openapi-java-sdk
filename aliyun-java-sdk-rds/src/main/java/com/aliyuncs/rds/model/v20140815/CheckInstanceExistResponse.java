@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckInstanceExistResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean isExistInstance;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getIsExistInstance() {
 		return this.isExistInstance;
@@ -42,6 +34,14 @@ public class CheckInstanceExistResponse extends AcsResponse {
 
 	public void setIsExistInstance(Boolean isExistInstance) {
 		this.isExistInstance = isExistInstance;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

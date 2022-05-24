@@ -47,33 +47,17 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 
 	public static class DBInstanceWeight {
 
-		private String dBInstanceId;
-
-		private String dBInstanceType;
-
 		private String readonlyInstanceSQLDelayedTime;
 
 		private String availability;
 
 		private String weight;
 
+		private String dBInstanceType;
+
+		private String dBInstanceId;
+
 		private String role;
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getDBInstanceType() {
-			return this.dBInstanceType;
-		}
-
-		public void setDBInstanceType(String dBInstanceType) {
-			this.dBInstanceType = dBInstanceType;
-		}
 
 		public String getReadonlyInstanceSQLDelayedTime() {
 			return this.readonlyInstanceSQLDelayedTime;
@@ -97,6 +81,22 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 
 		public void setWeight(String weight) {
 			this.weight = weight;
+		}
+
+		public String getDBInstanceType() {
+			return this.dBInstanceType;
+		}
+
+		public void setDBInstanceType(String dBInstanceType) {
+			this.dBInstanceType = dBInstanceType;
+		}
+
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
 		public String getRole() {

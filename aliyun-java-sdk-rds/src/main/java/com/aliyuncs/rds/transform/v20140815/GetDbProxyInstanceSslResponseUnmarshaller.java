@@ -34,8 +34,8 @@ public class GetDbProxyInstanceSslResponseUnmarshaller {
 			dbProxyCertListItemsItem.setDbInstanceName(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].DbInstanceName"));
 			dbProxyCertListItemsItem.setEndpointName(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].EndpointName"));
 			dbProxyCertListItemsItem.setEndpointType(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].EndpointType"));
-			dbProxyCertListItemsItem.setCertCommonName(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].CertCommonName"));
 			dbProxyCertListItemsItem.setSslExpiredTime(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].SslExpiredTime"));
+			dbProxyCertListItemsItem.setCertCommonName(_ctx.stringValue("GetDbProxyInstanceSslResponse.DbProxyCertListItems["+ i +"].CertCommonName"));
 
 			dbProxyCertListItems.add(dbProxyCertListItemsItem);
 		}

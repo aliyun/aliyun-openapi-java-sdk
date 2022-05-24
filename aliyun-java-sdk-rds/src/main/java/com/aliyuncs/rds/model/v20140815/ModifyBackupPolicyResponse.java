@@ -26,19 +26,19 @@ public class ModifyBackupPolicyResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String compressType;
+
+	private String localLogRetentionSpace;
+
+	private Integer logBackupLocalRetentionNumber;
+
 	private String dBInstanceID;
 
 	private String enableBackupLog;
 
 	private Integer localLogRetentionHours;
 
-	private String localLogRetentionSpace;
-
 	private String highSpaceUsageProtection;
-
-	private String compressType;
-
-	private Integer logBackupLocalRetentionNumber;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +46,30 @@ public class ModifyBackupPolicyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCompressType() {
+		return this.compressType;
+	}
+
+	public void setCompressType(String compressType) {
+		this.compressType = compressType;
+	}
+
+	public String getLocalLogRetentionSpace() {
+		return this.localLogRetentionSpace;
+	}
+
+	public void setLocalLogRetentionSpace(String localLogRetentionSpace) {
+		this.localLogRetentionSpace = localLogRetentionSpace;
+	}
+
+	public Integer getLogBackupLocalRetentionNumber() {
+		return this.logBackupLocalRetentionNumber;
+	}
+
+	public void setLogBackupLocalRetentionNumber(Integer logBackupLocalRetentionNumber) {
+		this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
 	}
 
 	public String getDBInstanceID() {
@@ -72,36 +96,12 @@ public class ModifyBackupPolicyResponse extends AcsResponse {
 		this.localLogRetentionHours = localLogRetentionHours;
 	}
 
-	public String getLocalLogRetentionSpace() {
-		return this.localLogRetentionSpace;
-	}
-
-	public void setLocalLogRetentionSpace(String localLogRetentionSpace) {
-		this.localLogRetentionSpace = localLogRetentionSpace;
-	}
-
 	public String getHighSpaceUsageProtection() {
 		return this.highSpaceUsageProtection;
 	}
 
 	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
 		this.highSpaceUsageProtection = highSpaceUsageProtection;
-	}
-
-	public String getCompressType() {
-		return this.compressType;
-	}
-
-	public void setCompressType(String compressType) {
-		this.compressType = compressType;
-	}
-
-	public Integer getLogBackupLocalRetentionNumber() {
-		return this.logBackupLocalRetentionNumber;
-	}
-
-	public void setLogBackupLocalRetentionNumber(Integer logBackupLocalRetentionNumber) {
-		this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
 	}
 
 	@Override

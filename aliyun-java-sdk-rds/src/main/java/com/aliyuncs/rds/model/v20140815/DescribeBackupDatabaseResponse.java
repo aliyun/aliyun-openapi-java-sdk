@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupDatabaseResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String databaseNames;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDatabaseNames() {
 		return this.databaseNames;
@@ -42,6 +34,14 @@ public class DescribeBackupDatabaseResponse extends AcsResponse {
 
 	public void setDatabaseNames(String databaseNames) {
 		this.databaseNames = databaseNames;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

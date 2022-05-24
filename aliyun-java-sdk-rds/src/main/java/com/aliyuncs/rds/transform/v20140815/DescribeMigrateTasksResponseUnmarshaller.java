@@ -28,21 +28,21 @@ public class DescribeMigrateTasksResponseUnmarshaller {
 		
 		describeMigrateTasksResponse.setRequestId(_ctx.stringValue("DescribeMigrateTasksResponse.RequestId"));
 		describeMigrateTasksResponse.setDBInstanceId(_ctx.stringValue("DescribeMigrateTasksResponse.DBInstanceId"));
-		describeMigrateTasksResponse.setTotalRecordCount(_ctx.integerValue("DescribeMigrateTasksResponse.TotalRecordCount"));
 		describeMigrateTasksResponse.setPageNumber(_ctx.integerValue("DescribeMigrateTasksResponse.PageNumber"));
 		describeMigrateTasksResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrateTasksResponse.PageRecordCount"));
+		describeMigrateTasksResponse.setTotalRecordCount(_ctx.integerValue("DescribeMigrateTasksResponse.TotalRecordCount"));
 
 		List<MigrateTask> items = new ArrayList<MigrateTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMigrateTasksResponse.Items.Length"); i++) {
 			MigrateTask migrateTask = new MigrateTask();
-			migrateTask.setDBName(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].DBName"));
-			migrateTask.setMigrateTaskId(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].MigrateTaskId"));
-			migrateTask.setCreateTime(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].CreateTime"));
 			migrateTask.setEndTime(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].EndTime"));
-			migrateTask.setBackupMode(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].BackupMode"));
 			migrateTask.setStatus(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].Status"));
-			migrateTask.setIsDBReplaced(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].IsDBReplaced"));
 			migrateTask.setDescription(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].Description"));
+			migrateTask.setCreateTime(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].CreateTime"));
+			migrateTask.setDBName(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].DBName"));
+			migrateTask.setBackupMode(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].BackupMode"));
+			migrateTask.setMigrateTaskId(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].MigrateTaskId"));
+			migrateTask.setIsDBReplaced(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].IsDBReplaced"));
 
 			items.add(migrateTask);
 		}

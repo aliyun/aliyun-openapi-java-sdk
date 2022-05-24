@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceIpHostnameResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
 
+	private String requestId;
+
 	private String ipHostnameInfos;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -44,6 +36,14 @@ public class DescribeDBInstanceIpHostnameResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getIpHostnameInfos() {

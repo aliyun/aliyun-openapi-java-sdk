@@ -23,10 +23,10 @@ public class DescribeDBInstanceDetailResponseUnmarshaller {
 	public static DescribeDBInstanceDetailResponse unmarshall(DescribeDBInstanceDetailResponse describeDBInstanceDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceDetailResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceDetailResponse.RequestId"));
-		describeDBInstanceDetailResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceDetailResponse.DBInstanceId"));
-		describeDBInstanceDetailResponse.setRegionId(_ctx.stringValue("DescribeDBInstanceDetailResponse.RegionId"));
-		describeDBInstanceDetailResponse.setLicenseType(_ctx.stringValue("DescribeDBInstanceDetailResponse.LicenseType"));
 		describeDBInstanceDetailResponse.setActivationState(_ctx.stringValue("DescribeDBInstanceDetailResponse.ActivationState"));
+		describeDBInstanceDetailResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceDetailResponse.DBInstanceId"));
+		describeDBInstanceDetailResponse.setLicenseType(_ctx.stringValue("DescribeDBInstanceDetailResponse.LicenseType"));
+		describeDBInstanceDetailResponse.setRegionId(_ctx.stringValue("DescribeDBInstanceDetailResponse.RegionId"));
 	 
 	 	return describeDBInstanceDetailResponse;
 	}

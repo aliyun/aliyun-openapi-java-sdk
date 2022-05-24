@@ -22,12 +22,10 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogReportsResponse> {
+public class DescribeUpgradeMajorVersionTasksRequest extends RpcAcsRequest<DescribeUpgradeMajorVersionTasksResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String startTime;
 
 	private Integer pageNumber;
 
@@ -35,15 +33,17 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 
 	private String dBInstanceId;
 
+	private Integer taskId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
-	public DescribeSQLLogReportsRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLLogReports", "rds");
+
+	private String targetMajorVersion;
+	public DescribeUpgradeMajorVersionTasksRequest() {
+		super("Rds", "2014-08-15", "DescribeUpgradeMajorVersionTasks", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,17 +59,6 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -106,6 +95,17 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		}
 	}
 
+	public Integer getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(Integer taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -128,17 +128,6 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -150,9 +139,20 @@ public class DescribeSQLLogReportsRequest extends RpcAcsRequest<DescribeSQLLogRe
 		}
 	}
 
+	public String getTargetMajorVersion() {
+		return this.targetMajorVersion;
+	}
+
+	public void setTargetMajorVersion(String targetMajorVersion) {
+		this.targetMajorVersion = targetMajorVersion;
+		if(targetMajorVersion != null){
+			putQueryParameter("TargetMajorVersion", targetMajorVersion);
+		}
+	}
+
 	@Override
-	public Class<DescribeSQLLogReportsResponse> getResponseClass() {
-		return DescribeSQLLogReportsResponse.class;
+	public Class<DescribeUpgradeMajorVersionTasksResponse> getResponseClass() {
+		return DescribeUpgradeMajorVersionTasksResponse.class;
 	}
 
 }

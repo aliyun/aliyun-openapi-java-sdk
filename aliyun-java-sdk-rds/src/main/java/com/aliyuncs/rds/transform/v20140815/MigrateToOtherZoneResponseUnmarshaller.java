@@ -23,6 +23,8 @@ public class MigrateToOtherZoneResponseUnmarshaller {
 	public static MigrateToOtherZoneResponse unmarshall(MigrateToOtherZoneResponse migrateToOtherZoneResponse, UnmarshallerContext _ctx) {
 		
 		migrateToOtherZoneResponse.setRequestId(_ctx.stringValue("MigrateToOtherZoneResponse.RequestId"));
+		migrateToOtherZoneResponse.setDBInstanceId(_ctx.stringValue("MigrateToOtherZoneResponse.DBInstanceId"));
+		migrateToOtherZoneResponse.setOrderId(_ctx.longValue("MigrateToOtherZoneResponse.OrderId"));
 	 
 	 	return migrateToOtherZoneResponse;
 	}

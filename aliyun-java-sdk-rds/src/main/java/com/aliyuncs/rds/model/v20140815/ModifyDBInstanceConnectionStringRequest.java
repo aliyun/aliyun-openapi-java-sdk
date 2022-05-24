@@ -39,6 +39,8 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private Long ownerId;
 
+	private String babelfishPort;
+
 	private String currentConnectionString;
 
 	private String port;
@@ -125,6 +127,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBabelfishPort() {
+		return this.babelfishPort;
+	}
+
+	public void setBabelfishPort(String babelfishPort) {
+		this.babelfishPort = babelfishPort;
+		if(babelfishPort != null){
+			putQueryParameter("BabelfishPort", babelfishPort);
 		}
 	}
 

@@ -29,42 +29,42 @@ public class DescribeDBInstancesForCloneResponseUnmarshaller {
 		
 		describeDBInstancesForCloneResponse.setRequestId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.RequestId"));
 		describeDBInstancesForCloneResponse.setPageNumber(_ctx.integerValue("DescribeDBInstancesForCloneResponse.PageNumber"));
-		describeDBInstancesForCloneResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstancesForCloneResponse.TotalRecordCount"));
 		describeDBInstancesForCloneResponse.setPageRecordCount(_ctx.integerValue("DescribeDBInstancesForCloneResponse.PageRecordCount"));
+		describeDBInstancesForCloneResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstancesForCloneResponse.TotalRecordCount"));
 
 		List<DBInstance> items = new ArrayList<DBInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancesForCloneResponse.Items.Length"); i++) {
 			DBInstance dBInstance = new DBInstance();
-			dBInstance.setInsId(_ctx.integerValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].InsId"));
-			dBInstance.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceId"));
-			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceDescription"));
+			dBInstance.setVpcId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].VpcId"));
+			dBInstance.setReplicateId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ReplicateId"));
+			dBInstance.setTempDBInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].TempDBInstanceId"));
+			dBInstance.setDBInstanceStorageType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceStorageType"));
+			dBInstance.setCreateTime(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].CreateTime"));
 			dBInstance.setPayType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].PayType"));
-			dBInstance.setDBInstanceType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceType"));
-			dBInstance.setRegionId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].RegionId"));
-			dBInstance.setExpireTime(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ExpireTime"));
-			dBInstance.setDestroyTime(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DestroyTime"));
-			dBInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceStatus"));
-			dBInstance.setEngine(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].Engine"));
-			dBInstance.setDBInstanceNetType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceNetType"));
+			dBInstance.setMutriORsignle(_ctx.booleanValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].MutriORsignle"));
 			dBInstance.setConnectionMode(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ConnectionMode"));
 			dBInstance.setLockMode(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].LockMode"));
-			dBInstance.setCategory(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].Category"));
-			dBInstance.setDBInstanceStorageType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceStorageType"));
-			dBInstance.setDBInstanceClass(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceClass"));
-			dBInstance.setInstanceNetworkType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].InstanceNetworkType"));
-			dBInstance.setVpcCloudInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].VpcCloudInstanceId"));
-			dBInstance.setLockReason(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].LockReason"));
-			dBInstance.setZoneId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ZoneId"));
-			dBInstance.setMutriORsignle(_ctx.booleanValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].MutriORsignle"));
-			dBInstance.setCreateTime(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].CreateTime"));
 			dBInstance.setEngineVersion(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].EngineVersion"));
-			dBInstance.setGuardDBInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].GuardDBInstanceId"));
-			dBInstance.setTempDBInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].TempDBInstanceId"));
+			dBInstance.setVpcCloudInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].VpcCloudInstanceId"));
+			dBInstance.setInsId(_ctx.integerValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].InsId"));
+			dBInstance.setInstanceNetworkType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].InstanceNetworkType"));
 			dBInstance.setMasterInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].MasterInstanceId"));
-			dBInstance.setVpcId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].VpcId"));
+			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceDescription"));
+			dBInstance.setExpireTime(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ExpireTime"));
+			dBInstance.setDBInstanceNetType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceNetType"));
+			dBInstance.setDBInstanceType(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceType"));
+			dBInstance.setDestroyTime(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DestroyTime"));
+			dBInstance.setLockReason(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].LockReason"));
+			dBInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceStatus"));
+			dBInstance.setGuardDBInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].GuardDBInstanceId"));
+			dBInstance.setRegionId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].RegionId"));
 			dBInstance.setVSwitchId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].VSwitchId"));
-			dBInstance.setReplicateId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ReplicateId"));
 			dBInstance.setResourceGroupId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ResourceGroupId"));
+			dBInstance.setZoneId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ZoneId"));
+			dBInstance.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceId"));
+			dBInstance.setCategory(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].Category"));
+			dBInstance.setEngine(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].Engine"));
+			dBInstance.setDBInstanceClass(_ctx.stringValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].DBInstanceClass"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesForCloneResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

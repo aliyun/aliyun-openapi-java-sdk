@@ -29,6 +29,8 @@ public class RestoreTableRequest extends RpcAcsRequest<RestoreTableResponse> {
 
 	private String clientToken;
 
+	private Boolean instantRecovery;
+
 	private String tableMeta;
 
 	private String dBInstanceId;
@@ -70,6 +72,17 @@ public class RestoreTableRequest extends RpcAcsRequest<RestoreTableResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getInstantRecovery() {
+		return this.instantRecovery;
+	}
+
+	public void setInstantRecovery(Boolean instantRecovery) {
+		this.instantRecovery = instantRecovery;
+		if(instantRecovery != null){
+			putQueryParameter("InstantRecovery", instantRecovery.toString());
 		}
 	}
 

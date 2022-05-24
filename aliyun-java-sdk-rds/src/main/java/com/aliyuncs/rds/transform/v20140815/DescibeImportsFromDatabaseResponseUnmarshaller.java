@@ -27,18 +27,18 @@ public class DescibeImportsFromDatabaseResponseUnmarshaller {
 	public static DescibeImportsFromDatabaseResponse unmarshall(DescibeImportsFromDatabaseResponse descibeImportsFromDatabaseResponse, UnmarshallerContext _ctx) {
 		
 		descibeImportsFromDatabaseResponse.setRequestId(_ctx.stringValue("DescibeImportsFromDatabaseResponse.RequestId"));
-		descibeImportsFromDatabaseResponse.setTotalRecordCount(_ctx.integerValue("DescibeImportsFromDatabaseResponse.TotalRecordCount"));
 		descibeImportsFromDatabaseResponse.setPageNumber(_ctx.integerValue("DescibeImportsFromDatabaseResponse.PageNumber"));
 		descibeImportsFromDatabaseResponse.setPageRecordCount(_ctx.integerValue("DescibeImportsFromDatabaseResponse.PageRecordCount"));
+		descibeImportsFromDatabaseResponse.setTotalRecordCount(_ctx.integerValue("DescibeImportsFromDatabaseResponse.TotalRecordCount"));
 
 		List<ImportResultFromDB> items = new ArrayList<ImportResultFromDB>();
 		for (int i = 0; i < _ctx.lengthValue("DescibeImportsFromDatabaseResponse.Items.Length"); i++) {
 			ImportResultFromDB importResultFromDB = new ImportResultFromDB();
-			importResultFromDB.setImportId(_ctx.integerValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportId"));
-			importResultFromDB.setImportDataType(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataType"));
-			importResultFromDB.setImportDataStatus(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatus"));
-			importResultFromDB.setImportDataStatusDescription(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatusDescription"));
 			importResultFromDB.setIncrementalImportingTime(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].IncrementalImportingTime"));
+			importResultFromDB.setImportId(_ctx.integerValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportId"));
+			importResultFromDB.setImportDataStatus(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatus"));
+			importResultFromDB.setImportDataType(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataType"));
+			importResultFromDB.setImportDataStatusDescription(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatusDescription"));
 
 			items.add(importResultFromDB);
 		}

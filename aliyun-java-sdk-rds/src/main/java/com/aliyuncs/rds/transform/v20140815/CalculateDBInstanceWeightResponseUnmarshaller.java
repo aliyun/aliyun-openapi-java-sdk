@@ -31,11 +31,11 @@ public class CalculateDBInstanceWeightResponseUnmarshaller {
 		List<DBInstanceWeight> items = new ArrayList<DBInstanceWeight>();
 		for (int i = 0; i < _ctx.lengthValue("CalculateDBInstanceWeightResponse.Items.Length"); i++) {
 			DBInstanceWeight dBInstanceWeight = new DBInstanceWeight();
-			dBInstanceWeight.setDBInstanceId(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceId"));
-			dBInstanceWeight.setDBInstanceType(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceType"));
 			dBInstanceWeight.setReadonlyInstanceSQLDelayedTime(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
 			dBInstanceWeight.setAvailability(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Availability"));
 			dBInstanceWeight.setWeight(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Weight"));
+			dBInstanceWeight.setDBInstanceType(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceType"));
+			dBInstanceWeight.setDBInstanceId(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceWeight.setRole(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Role"));
 
 			items.add(dBInstanceWeight);

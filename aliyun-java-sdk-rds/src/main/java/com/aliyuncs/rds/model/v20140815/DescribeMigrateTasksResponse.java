@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMigrateTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
-
-	private Integer totalRecordCount;
 
 	private Integer pageNumber;
 
+	private String requestId;
+
 	private Integer pageRecordCount;
 
+	private Integer totalRecordCount;
+
 	private List<MigrateTask> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -51,14 +43,6 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +53,28 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<MigrateTask> getItems() {
@@ -87,45 +87,21 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 
 	public static class MigrateTask {
 
-		private String dBName;
-
-		private String migrateTaskId;
-
-		private String createTime;
-
 		private String endTime;
-
-		private String backupMode;
 
 		private String status;
 
-		private String isDBReplaced;
-
 		private String description;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+		private String createTime;
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
+		private String dBName;
 
-		public String getMigrateTaskId() {
-			return this.migrateTaskId;
-		}
+		private String backupMode;
 
-		public void setMigrateTaskId(String migrateTaskId) {
-			this.migrateTaskId = migrateTaskId;
-		}
+		private String migrateTaskId;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String isDBReplaced;
 
 		public String getEndTime() {
 			return this.endTime;
@@ -133,14 +109,6 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 
 		public void setEndTime(String endTime) {
 			this.endTime = endTime;
-		}
-
-		public String getBackupMode() {
-			return this.backupMode;
-		}
-
-		public void setBackupMode(String backupMode) {
-			this.backupMode = backupMode;
 		}
 
 		public String getStatus() {
@@ -151,20 +119,52 @@ public class DescribeMigrateTasksResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getIsDBReplaced() {
-			return this.isDBReplaced;
-		}
-
-		public void setIsDBReplaced(String isDBReplaced) {
-			this.isDBReplaced = isDBReplaced;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getBackupMode() {
+			return this.backupMode;
+		}
+
+		public void setBackupMode(String backupMode) {
+			this.backupMode = backupMode;
+		}
+
+		public String getMigrateTaskId() {
+			return this.migrateTaskId;
+		}
+
+		public void setMigrateTaskId(String migrateTaskId) {
+			this.migrateTaskId = migrateTaskId;
+		}
+
+		public String getIsDBReplaced() {
+			return this.isDBReplaced;
+		}
+
+		public void setIsDBReplaced(String isDBReplaced) {
+			this.isDBReplaced = isDBReplaced;
 		}
 	}
 

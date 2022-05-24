@@ -27,9 +27,9 @@ public class DescribeVSwitchesResponseUnmarshaller {
 	public static DescribeVSwitchesResponse unmarshall(DescribeVSwitchesResponse describeVSwitchesResponse, UnmarshallerContext _ctx) {
 		
 		describeVSwitchesResponse.setRequestId(_ctx.stringValue("DescribeVSwitchesResponse.RequestId"));
-		describeVSwitchesResponse.setTotalCount(_ctx.longValue("DescribeVSwitchesResponse.TotalCount"));
-		describeVSwitchesResponse.setPageNumber(_ctx.longValue("DescribeVSwitchesResponse.PageNumber"));
-		describeVSwitchesResponse.setPageSize(_ctx.longValue("DescribeVSwitchesResponse.PageSize"));
+		describeVSwitchesResponse.setTotalCount(_ctx.integerValue("DescribeVSwitchesResponse.TotalCount"));
+		describeVSwitchesResponse.setPageNumber(_ctx.integerValue("DescribeVSwitchesResponse.PageNumber"));
+		describeVSwitchesResponse.setPageSize(_ctx.integerValue("DescribeVSwitchesResponse.PageSize"));
 
 		List<VSwitch> vSwitchs = new ArrayList<VSwitch>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVSwitchesResponse.VSwitchs.Length"); i++) {

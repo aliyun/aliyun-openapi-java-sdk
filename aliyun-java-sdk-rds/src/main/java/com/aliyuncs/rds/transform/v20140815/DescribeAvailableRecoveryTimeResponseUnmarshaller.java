@@ -23,11 +23,11 @@ public class DescribeAvailableRecoveryTimeResponseUnmarshaller {
 	public static DescribeAvailableRecoveryTimeResponse unmarshall(DescribeAvailableRecoveryTimeResponse describeAvailableRecoveryTimeResponse, UnmarshallerContext _ctx) {
 		
 		describeAvailableRecoveryTimeResponse.setRequestId(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RequestId"));
-		describeAvailableRecoveryTimeResponse.setRecoveryBeginTime(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RecoveryBeginTime"));
 		describeAvailableRecoveryTimeResponse.setRecoveryEndTime(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RecoveryEndTime"));
-		describeAvailableRecoveryTimeResponse.setDBInstanceId(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.DBInstanceId"));
-		describeAvailableRecoveryTimeResponse.setRegionId(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RegionId"));
 		describeAvailableRecoveryTimeResponse.setCrossBackupId(_ctx.integerValue("DescribeAvailableRecoveryTimeResponse.CrossBackupId"));
+		describeAvailableRecoveryTimeResponse.setDBInstanceId(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.DBInstanceId"));
+		describeAvailableRecoveryTimeResponse.setRecoveryBeginTime(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RecoveryBeginTime"));
+		describeAvailableRecoveryTimeResponse.setRegionId(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RegionId"));
 	 
 	 	return describeAvailableRecoveryTimeResponse;
 	}

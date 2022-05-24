@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CloneDBInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
 
-	private String orderId;
-
-	private String connectionString;
+	private String requestId;
 
 	private String port;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String connectionString;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String orderId;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -50,12 +42,20 @@ public class CloneDBInstanceResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
 	}
 
 	public String getConnectionString() {
@@ -66,12 +66,12 @@ public class CloneDBInstanceResponse extends AcsResponse {
 		this.connectionString = connectionString;
 	}
 
-	public String getPort() {
-		return this.port;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setPort(String port) {
-		this.port = port;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

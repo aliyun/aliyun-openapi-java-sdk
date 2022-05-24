@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceName;
 
+	private String requestId;
+
 	private List<EcsSecurityGroupRelation> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBInstanceName() {
 		return this.dBInstanceName;
@@ -45,6 +37,14 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 
 	public void setDBInstanceName(String dBInstanceName) {
 		this.dBInstanceName = dBInstanceName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EcsSecurityGroupRelation> getItems() {
@@ -57,18 +57,18 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 
 	public static class EcsSecurityGroupRelation {
 
-		private String regionId;
+		private String networkType;
 
 		private String securityGroupId;
 
-		private String networkType;
+		private String regionId;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getNetworkType() {
+			return this.networkType;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
 		}
 
 		public String getSecurityGroupId() {
@@ -79,12 +79,12 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 			this.securityGroupId = securityGroupId;
 		}
 
-		public String getNetworkType() {
-			return this.networkType;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

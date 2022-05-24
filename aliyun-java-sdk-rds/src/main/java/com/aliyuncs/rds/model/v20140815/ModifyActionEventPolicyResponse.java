@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyActionEventPolicyResponse extends AcsResponse {
 
+	private String enableEventLog;
+
 	private String requestId;
 
 	private String regionId;
 
-	private String enableEventLog;
+	public String getEnableEventLog() {
+		return this.enableEventLog;
+	}
+
+	public void setEnableEventLog(String enableEventLog) {
+		this.enableEventLog = enableEventLog;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class ModifyActionEventPolicyResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
-	}
-
-	public String getEnableEventLog() {
-		return this.enableEventLog;
-	}
-
-	public void setEnableEventLog(String enableEventLog) {
-		this.enableEventLog = enableEventLog;
 	}
 
 	@Override

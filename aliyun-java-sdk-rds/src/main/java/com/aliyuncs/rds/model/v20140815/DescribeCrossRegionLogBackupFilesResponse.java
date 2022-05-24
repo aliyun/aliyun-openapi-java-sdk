@@ -25,46 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String regionId;
-
-	private String dBInstanceId;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
-
-	private Integer totalRecordCount;
+	private String requestId;
 
 	private Integer pageRecordCount;
 
+	private Integer totalRecordCount;
+
+	private String dBInstanceId;
+
 	private Integer pageNumber;
+
+	private String regionId;
 
 	private List<Item> items;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getStartTime() {
@@ -75,20 +59,12 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageRecordCount() {
@@ -99,12 +75,36 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<Item> getItems() {
@@ -117,49 +117,25 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 
 	public static class Item {
 
-		private Integer crossLogBackupId;
-
-		private String crossBackupRegion;
-
-		private Long crossLogBackupSize;
-
 		private String logBeginTime;
-
-		private String logEndTime;
-
-		private String crossDownloadLink;
-
-		private String crossIntranetDownloadLink;
 
 		private String linkExpiredTime;
 
+		private String crossIntranetDownloadLink;
+
 		private String logFileName;
+
+		private String crossBackupRegion;
+
+		private String crossDownloadLink;
+
+		private Long crossLogBackupSize;
 
 		private Integer instanceId;
 
-		public Integer getCrossLogBackupId() {
-			return this.crossLogBackupId;
-		}
+		private Integer crossLogBackupId;
 
-		public void setCrossLogBackupId(Integer crossLogBackupId) {
-			this.crossLogBackupId = crossLogBackupId;
-		}
-
-		public String getCrossBackupRegion() {
-			return this.crossBackupRegion;
-		}
-
-		public void setCrossBackupRegion(String crossBackupRegion) {
-			this.crossBackupRegion = crossBackupRegion;
-		}
-
-		public Long getCrossLogBackupSize() {
-			return this.crossLogBackupSize;
-		}
-
-		public void setCrossLogBackupSize(Long crossLogBackupSize) {
-			this.crossLogBackupSize = crossLogBackupSize;
-		}
+		private String logEndTime;
 
 		public String getLogBeginTime() {
 			return this.logBeginTime;
@@ -167,30 +143,6 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 
 		public void setLogBeginTime(String logBeginTime) {
 			this.logBeginTime = logBeginTime;
-		}
-
-		public String getLogEndTime() {
-			return this.logEndTime;
-		}
-
-		public void setLogEndTime(String logEndTime) {
-			this.logEndTime = logEndTime;
-		}
-
-		public String getCrossDownloadLink() {
-			return this.crossDownloadLink;
-		}
-
-		public void setCrossDownloadLink(String crossDownloadLink) {
-			this.crossDownloadLink = crossDownloadLink;
-		}
-
-		public String getCrossIntranetDownloadLink() {
-			return this.crossIntranetDownloadLink;
-		}
-
-		public void setCrossIntranetDownloadLink(String crossIntranetDownloadLink) {
-			this.crossIntranetDownloadLink = crossIntranetDownloadLink;
 		}
 
 		public String getLinkExpiredTime() {
@@ -201,6 +153,14 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 			this.linkExpiredTime = linkExpiredTime;
 		}
 
+		public String getCrossIntranetDownloadLink() {
+			return this.crossIntranetDownloadLink;
+		}
+
+		public void setCrossIntranetDownloadLink(String crossIntranetDownloadLink) {
+			this.crossIntranetDownloadLink = crossIntranetDownloadLink;
+		}
+
 		public String getLogFileName() {
 			return this.logFileName;
 		}
@@ -209,12 +169,52 @@ public class DescribeCrossRegionLogBackupFilesResponse extends AcsResponse {
 			this.logFileName = logFileName;
 		}
 
+		public String getCrossBackupRegion() {
+			return this.crossBackupRegion;
+		}
+
+		public void setCrossBackupRegion(String crossBackupRegion) {
+			this.crossBackupRegion = crossBackupRegion;
+		}
+
+		public String getCrossDownloadLink() {
+			return this.crossDownloadLink;
+		}
+
+		public void setCrossDownloadLink(String crossDownloadLink) {
+			this.crossDownloadLink = crossDownloadLink;
+		}
+
+		public Long getCrossLogBackupSize() {
+			return this.crossLogBackupSize;
+		}
+
+		public void setCrossLogBackupSize(Long crossLogBackupSize) {
+			this.crossLogBackupSize = crossLogBackupSize;
+		}
+
 		public Integer getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(Integer instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Integer getCrossLogBackupId() {
+			return this.crossLogBackupId;
+		}
+
+		public void setCrossLogBackupId(Integer crossLogBackupId) {
+			this.crossLogBackupId = crossLogBackupId;
+		}
+
+		public String getLogEndTime() {
+			return this.logEndTime;
+		}
+
+		public void setLogEndTime(String logEndTime) {
+			this.logEndTime = logEndTime;
 		}
 	}
 

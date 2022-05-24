@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyCollationTimeZoneResponse extends AcsResponse {
 
-	private String requestId;
+	private String collation;
 
 	private String dBInstanceId;
 
-	private String taskId;
+	private String requestId;
 
 	private String timezone;
 
-	private String collation;
+	private String taskId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCollation() {
+		return this.collation;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCollation(String collation) {
+		this.collation = collation;
 	}
 
 	public String getDBInstanceId() {
@@ -50,12 +50,12 @@ public class ModifyCollationTimeZoneResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTimezone() {
@@ -66,12 +66,12 @@ public class ModifyCollationTimeZoneResponse extends AcsResponse {
 		this.timezone = timezone;
 	}
 
-	public String getCollation() {
-		return this.collation;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setCollation(String collation) {
-		this.collation = collation;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override

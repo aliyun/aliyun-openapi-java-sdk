@@ -23,10 +23,10 @@ public class ModifyCollationTimeZoneResponseUnmarshaller {
 	public static ModifyCollationTimeZoneResponse unmarshall(ModifyCollationTimeZoneResponse modifyCollationTimeZoneResponse, UnmarshallerContext _ctx) {
 		
 		modifyCollationTimeZoneResponse.setRequestId(_ctx.stringValue("ModifyCollationTimeZoneResponse.RequestId"));
-		modifyCollationTimeZoneResponse.setDBInstanceId(_ctx.stringValue("ModifyCollationTimeZoneResponse.DBInstanceId"));
-		modifyCollationTimeZoneResponse.setTaskId(_ctx.stringValue("ModifyCollationTimeZoneResponse.TaskId"));
-		modifyCollationTimeZoneResponse.setTimezone(_ctx.stringValue("ModifyCollationTimeZoneResponse.Timezone"));
 		modifyCollationTimeZoneResponse.setCollation(_ctx.stringValue("ModifyCollationTimeZoneResponse.Collation"));
+		modifyCollationTimeZoneResponse.setDBInstanceId(_ctx.stringValue("ModifyCollationTimeZoneResponse.DBInstanceId"));
+		modifyCollationTimeZoneResponse.setTimezone(_ctx.stringValue("ModifyCollationTimeZoneResponse.Timezone"));
+		modifyCollationTimeZoneResponse.setTaskId(_ctx.stringValue("ModifyCollationTimeZoneResponse.TaskId"));
 	 
 	 	return modifyCollationTimeZoneResponse;
 	}

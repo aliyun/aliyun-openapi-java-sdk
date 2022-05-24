@@ -28,18 +28,18 @@ public class DescribeDBInstancesByExpireTimeResponseUnmarshaller {
 		
 		describeDBInstancesByExpireTimeResponse.setRequestId(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.RequestId"));
 		describeDBInstancesByExpireTimeResponse.setPageNumber(_ctx.integerValue("DescribeDBInstancesByExpireTimeResponse.PageNumber"));
-		describeDBInstancesByExpireTimeResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstancesByExpireTimeResponse.TotalRecordCount"));
 		describeDBInstancesByExpireTimeResponse.setPageRecordCount(_ctx.integerValue("DescribeDBInstancesByExpireTimeResponse.PageRecordCount"));
+		describeDBInstancesByExpireTimeResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstancesByExpireTimeResponse.TotalRecordCount"));
 
 		List<DBInstanceExpireTime> items = new ArrayList<DBInstanceExpireTime>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancesByExpireTimeResponse.Items.Length"); i++) {
 			DBInstanceExpireTime dBInstanceExpireTime = new DBInstanceExpireTime();
-			dBInstanceExpireTime.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceId"));
-			dBInstanceExpireTime.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceDescription"));
 			dBInstanceExpireTime.setExpireTime(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].ExpireTime"));
-			dBInstanceExpireTime.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceStatus"));
-			dBInstanceExpireTime.setLockMode(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].LockMode"));
 			dBInstanceExpireTime.setPayType(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].PayType"));
+			dBInstanceExpireTime.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceId"));
+			dBInstanceExpireTime.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceStatus"));
+			dBInstanceExpireTime.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].DBInstanceDescription"));
+			dBInstanceExpireTime.setLockMode(_ctx.stringValue("DescribeDBInstancesByExpireTimeResponse.Items["+ i +"].LockMode"));
 
 			items.add(dBInstanceExpireTime);
 		}

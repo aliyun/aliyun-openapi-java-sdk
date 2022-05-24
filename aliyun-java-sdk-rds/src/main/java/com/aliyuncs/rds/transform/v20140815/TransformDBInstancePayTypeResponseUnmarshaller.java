@@ -23,10 +23,10 @@ public class TransformDBInstancePayTypeResponseUnmarshaller {
 	public static TransformDBInstancePayTypeResponse unmarshall(TransformDBInstancePayTypeResponse transformDBInstancePayTypeResponse, UnmarshallerContext _ctx) {
 		
 		transformDBInstancePayTypeResponse.setRequestId(_ctx.stringValue("TransformDBInstancePayTypeResponse.RequestId"));
+		transformDBInstancePayTypeResponse.setDBInstanceId(_ctx.stringValue("TransformDBInstancePayTypeResponse.DBInstanceId"));
+		transformDBInstancePayTypeResponse.setExpiredTime(_ctx.stringValue("TransformDBInstancePayTypeResponse.ExpiredTime"));
 		transformDBInstancePayTypeResponse.setOrderId(_ctx.longValue("TransformDBInstancePayTypeResponse.OrderId"));
 		transformDBInstancePayTypeResponse.setChargeType(_ctx.stringValue("TransformDBInstancePayTypeResponse.ChargeType"));
-		transformDBInstancePayTypeResponse.setExpiredTime(_ctx.stringValue("TransformDBInstancePayTypeResponse.ExpiredTime"));
-		transformDBInstancePayTypeResponse.setDBInstanceId(_ctx.stringValue("TransformDBInstancePayTypeResponse.DBInstanceId"));
 	 
 	 	return transformDBInstancePayTypeResponse;
 	}

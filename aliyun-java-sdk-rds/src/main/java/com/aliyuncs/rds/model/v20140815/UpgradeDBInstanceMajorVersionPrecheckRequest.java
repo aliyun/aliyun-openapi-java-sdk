@@ -22,20 +22,16 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeOssDownloadsForSQLServerRequest extends RpcAcsRequest<DescribeOssDownloadsForSQLServerResponse> {
+public class UpgradeDBInstanceMajorVersionPrecheckRequest extends RpcAcsRequest<UpgradeDBInstanceMajorVersionPrecheckResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String migrateTaskId;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String dBInstanceId;
-	public DescribeOssDownloadsForSQLServerRequest() {
-		super("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "rds");
+
+	private String targetMajorVersion;
+	public UpgradeDBInstanceMajorVersionPrecheckRequest() {
+		super("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersionPrecheck", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,39 +50,6 @@ public class DescribeOssDownloadsForSQLServerRequest extends RpcAcsRequest<Descr
 		}
 	}
 
-	public String getMigrateTaskId() {
-		return this.migrateTaskId;
-	}
-
-	public void setMigrateTaskId(String migrateTaskId) {
-		this.migrateTaskId = migrateTaskId;
-		if(migrateTaskId != null){
-			putQueryParameter("MigrateTaskId", migrateTaskId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -98,9 +61,20 @@ public class DescribeOssDownloadsForSQLServerRequest extends RpcAcsRequest<Descr
 		}
 	}
 
+	public String getTargetMajorVersion() {
+		return this.targetMajorVersion;
+	}
+
+	public void setTargetMajorVersion(String targetMajorVersion) {
+		this.targetMajorVersion = targetMajorVersion;
+		if(targetMajorVersion != null){
+			putQueryParameter("TargetMajorVersion", targetMajorVersion);
+		}
+	}
+
 	@Override
-	public Class<DescribeOssDownloadsForSQLServerResponse> getResponseClass() {
-		return DescribeOssDownloadsForSQLServerResponse.class;
+	public Class<UpgradeDBInstanceMajorVersionPrecheckResponse> getResponseClass() {
+		return UpgradeDBInstanceMajorVersionPrecheckResponse.class;
 	}
 
 }

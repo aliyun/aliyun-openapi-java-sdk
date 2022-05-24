@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String dBInstanceId;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
+	private String dBInstanceId;
+
+	private String requestId;
 
 	private List<PerformanceKey> performanceKeys;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getStartTime() {
@@ -59,12 +51,20 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PerformanceKey> getPerformanceKeys() {
@@ -77,19 +77,11 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 	public static class PerformanceKey {
 
-		private String key;
-
 		private String valueFormat;
 
+		private String key;
+
 		private List<PerformanceValue> values;
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
 
 		public String getValueFormat() {
 			return this.valueFormat;
@@ -97,6 +89,14 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 		public void setValueFormat(String valueFormat) {
 			this.valueFormat = valueFormat;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 
 		public List<PerformanceValue> getValues() {
@@ -109,17 +109,9 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 		public static class PerformanceValue {
 
-			private String value;
-
 			private String date;
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+			private String value;
 
 			public String getDate() {
 				return this.date;
@@ -127,6 +119,14 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 			public void setDate(String date) {
 				this.date = date;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

@@ -27,11 +27,11 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long totalRecordCount;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
+
+	private Long totalRecordCount;
 
 	private List<SQLRecord> items;
 
@@ -41,14 +41,6 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Long totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageNumber() {
@@ -67,6 +59,14 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public Long getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Long totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	public List<SQLRecord> getItems() {
 		return this.items;
 	}
@@ -77,37 +77,21 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
 	public static class SQLRecord {
 
-		private String dBName;
-
-		private String accountName;
-
 		private String hostAddress;
 
 		private String sQLText;
 
-		private Long totalExecutionTimes;
-
 		private Long returnRowCounts;
+
+		private String dBName;
 
 		private String executeTime;
 
 		private String threadID;
 
-		public String getDBName() {
-			return this.dBName;
-		}
+		private Long totalExecutionTimes;
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
+		private String accountName;
 
 		public String getHostAddress() {
 			return this.hostAddress;
@@ -125,20 +109,20 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 			this.sQLText = sQLText;
 		}
 
-		public Long getTotalExecutionTimes() {
-			return this.totalExecutionTimes;
-		}
-
-		public void setTotalExecutionTimes(Long totalExecutionTimes) {
-			this.totalExecutionTimes = totalExecutionTimes;
-		}
-
 		public Long getReturnRowCounts() {
 			return this.returnRowCounts;
 		}
 
 		public void setReturnRowCounts(Long returnRowCounts) {
 			this.returnRowCounts = returnRowCounts;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
 		}
 
 		public String getExecuteTime() {
@@ -155,6 +139,22 @@ public class DescribeSQLLogRecordsResponse extends AcsResponse {
 
 		public void setThreadID(String threadID) {
 			this.threadID = threadID;
+		}
+
+		public Long getTotalExecutionTimes() {
+			return this.totalExecutionTimes;
+		}
+
+		public void setTotalExecutionTimes(Long totalExecutionTimes) {
+			this.totalExecutionTimes = totalExecutionTimes;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

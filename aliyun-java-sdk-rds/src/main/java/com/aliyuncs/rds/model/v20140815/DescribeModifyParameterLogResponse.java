@@ -27,17 +27,17 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String engine;
-
-	private String dBInstanceId;
-
-	private String engineVersion;
+	private Integer pageRecordCount;
 
 	private Integer totalRecordCount;
 
+	private String dBInstanceId;
+
+	private String engine;
+
 	private Integer pageNumber;
 
-	private Integer pageRecordCount;
+	private String engineVersion;
 
 	private List<ParameterChangeLog> items;
 
@@ -49,28 +49,12 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getEngine() {
-		return this.engine;
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
 	}
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -81,6 +65,22 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 		this.totalRecordCount = totalRecordCount;
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -89,12 +89,12 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
+	public String getEngineVersion() {
+		return this.engineVersion;
 	}
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
 	}
 
 	public List<ParameterChangeLog> getItems() {
@@ -107,22 +107,22 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 
 	public static class ParameterChangeLog {
 
-		private String modifyTime;
+		private String status;
 
 		private String oldParameterValue;
 
-		private String newParameterValue;
-
 		private String parameterName;
 
-		private String status;
+		private String newParameterValue;
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		private String modifyTime;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getOldParameterValue() {
@@ -133,14 +133,6 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 			this.oldParameterValue = oldParameterValue;
 		}
 
-		public String getNewParameterValue() {
-			return this.newParameterValue;
-		}
-
-		public void setNewParameterValue(String newParameterValue) {
-			this.newParameterValue = newParameterValue;
-		}
-
 		public String getParameterName() {
 			return this.parameterName;
 		}
@@ -149,12 +141,20 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 			this.parameterName = parameterName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getNewParameterValue() {
+			return this.newParameterValue;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setNewParameterValue(String newParameterValue) {
+			this.newParameterValue = newParameterValue;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

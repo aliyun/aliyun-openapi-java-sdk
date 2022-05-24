@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ImportDatabaseBetweenInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String importId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getImportId() {
 		return this.importId;
@@ -42,6 +34,14 @@ public class ImportDatabaseBetweenInstancesResponse extends AcsResponse {
 
 	public void setImportId(String importId) {
 		this.importId = importId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -24,8 +24,8 @@ public class ModifyDTCSecurityIpHostsForSQLServerResponseUnmarshaller {
 		
 		modifyDTCSecurityIpHostsForSQLServerResponse.setRequestId(_ctx.stringValue("ModifyDTCSecurityIpHostsForSQLServerResponse.RequestId"));
 		modifyDTCSecurityIpHostsForSQLServerResponse.setDBInstanceId(_ctx.stringValue("ModifyDTCSecurityIpHostsForSQLServerResponse.DBInstanceId"));
-		modifyDTCSecurityIpHostsForSQLServerResponse.setDTCSetResult(_ctx.stringValue("ModifyDTCSecurityIpHostsForSQLServerResponse.DTCSetResult"));
 		modifyDTCSecurityIpHostsForSQLServerResponse.setTaskId(_ctx.stringValue("ModifyDTCSecurityIpHostsForSQLServerResponse.TaskId"));
+		modifyDTCSecurityIpHostsForSQLServerResponse.setDTCSetResult(_ctx.stringValue("ModifyDTCSecurityIpHostsForSQLServerResponse.DTCSetResult"));
 	 
 	 	return modifyDTCSecurityIpHostsForSQLServerResponse;
 	}

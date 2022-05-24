@@ -33,9 +33,9 @@ public class DescribeParametersResponseUnmarshaller {
 		List<DBInstanceParameter> configParameters = new ArrayList<DBInstanceParameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParametersResponse.ConfigParameters.Length"); i++) {
 			DBInstanceParameter dBInstanceParameter = new DBInstanceParameter();
+			dBInstanceParameter.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterDescription"));
 			dBInstanceParameter.setParameterName(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterName"));
 			dBInstanceParameter.setParameterValue(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterValue"));
-			dBInstanceParameter.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterDescription"));
 
 			configParameters.add(dBInstanceParameter);
 		}
@@ -43,12 +43,12 @@ public class DescribeParametersResponseUnmarshaller {
 
 		List<DBInstanceParameter> runningParameters = new ArrayList<DBInstanceParameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParametersResponse.RunningParameters.Length"); i++) {
-			DBInstanceParameter dBInstanceParameter_ = new DBInstanceParameter();
-			dBInstanceParameter_.setParameterName(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterName"));
-			dBInstanceParameter_.setParameterValue(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterValue"));
-			dBInstanceParameter_.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterDescription"));
+			DBInstanceParameter dBInstanceParameter1 = new DBInstanceParameter();
+			dBInstanceParameter1.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterDescription"));
+			dBInstanceParameter1.setParameterName(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterName"));
+			dBInstanceParameter1.setParameterValue(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterValue"));
 
-			runningParameters.add(dBInstanceParameter_);
+			runningParameters.add(dBInstanceParameter1);
 		}
 		describeParametersResponse.setRunningParameters(runningParameters);
 	 

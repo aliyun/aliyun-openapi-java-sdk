@@ -27,11 +27,11 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalRecordCount;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
+
+	private Integer totalRecordCount;
 
 	private List<Item> items;
 
@@ -41,14 +41,6 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageNumber() {
@@ -65,6 +57,14 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<Item> getItems() {
@@ -111,9 +111,9 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 
 			private String sQLText;
 
-			private Long avgLatency;
-
 			private Long sQLExecuteTimes;
+
+			private Long avgLatency;
 
 			public String getSQLText() {
 				return this.sQLText;
@@ -121,6 +121,14 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 
 			public void setSQLText(String sQLText) {
 				this.sQLText = sQLText;
+			}
+
+			public Long getSQLExecuteTimes() {
+				return this.sQLExecuteTimes;
+			}
+
+			public void setSQLExecuteTimes(Long sQLExecuteTimes) {
+				this.sQLExecuteTimes = sQLExecuteTimes;
 			}
 
 			public Long getAvgLatency() {
@@ -130,6 +138,13 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 			public void setAvgLatency(Long avgLatency) {
 				this.avgLatency = avgLatency;
 			}
+		}
+
+		public static class QPSTopNItem {
+
+			private Long sQLExecuteTimes;
+
+			private String sQLText;
 
 			public Long getSQLExecuteTimes() {
 				return this.sQLExecuteTimes;
@@ -138,13 +153,6 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 			public void setSQLExecuteTimes(Long sQLExecuteTimes) {
 				this.sQLExecuteTimes = sQLExecuteTimes;
 			}
-		}
-
-		public static class QPSTopNItem {
-
-			private String sQLText;
-
-			private Long sQLExecuteTimes;
 
 			public String getSQLText() {
 				return this.sQLText;
@@ -152,14 +160,6 @@ public class DescribeSQLLogReportListResponse extends AcsResponse {
 
 			public void setSQLText(String sQLText) {
 				this.sQLText = sQLText;
-			}
-
-			public Long getSQLExecuteTimes() {
-				return this.sQLExecuteTimes;
-			}
-
-			public void setSQLExecuteTimes(Long sQLExecuteTimes) {
-				this.sQLExecuteTimes = sQLExecuteTimes;
 			}
 		}
 	}

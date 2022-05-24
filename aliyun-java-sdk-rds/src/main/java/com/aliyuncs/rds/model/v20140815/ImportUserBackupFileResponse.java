@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ImportUserBackupFileResponse extends AcsResponse {
 
-	private String backupId;
+	private Boolean status;
 
 	private String requestId;
 
-	private Boolean status;
+	private String backupId;
 
-	public String getBackupId() {
-		return this.backupId;
+	public Boolean getStatus() {
+		return this.status;
 	}
 
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
+	public void setStatus(Boolean status) {
+		this.status = status;
 	}
 
 	public String getRequestId() {
@@ -46,12 +46,12 @@ public class ImportUserBackupFileResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getStatus() {
-		return this.status;
+	public String getBackupId() {
+		return this.backupId;
 	}
 
-	public void setStatus(Boolean status) {
-		this.status = status;
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
 	}
 
 	@Override

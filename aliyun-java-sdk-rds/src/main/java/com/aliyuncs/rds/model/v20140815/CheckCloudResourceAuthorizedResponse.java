@@ -26,9 +26,9 @@ public class CheckCloudResourceAuthorizedResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer authorizationState;
-
 	private String roleArn;
+
+	private Integer authorizationState;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class CheckCloudResourceAuthorizedResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getAuthorizationState() {
-		return this.authorizationState;
-	}
-
-	public void setAuthorizationState(Integer authorizationState) {
-		this.authorizationState = authorizationState;
-	}
-
 	public String getRoleArn() {
 		return this.roleArn;
 	}
 
 	public void setRoleArn(String roleArn) {
 		this.roleArn = roleArn;
+	}
+
+	public Integer getAuthorizationState() {
+		return this.authorizationState;
+	}
+
+	public void setAuthorizationState(Integer authorizationState) {
+		this.authorizationState = authorizationState;
 	}
 
 	@Override

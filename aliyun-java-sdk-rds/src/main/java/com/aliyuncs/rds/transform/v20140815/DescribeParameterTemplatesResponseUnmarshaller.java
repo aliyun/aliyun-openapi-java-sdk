@@ -28,17 +28,17 @@ public class DescribeParameterTemplatesResponseUnmarshaller {
 		
 		describeParameterTemplatesResponse.setRequestId(_ctx.stringValue("DescribeParameterTemplatesResponse.RequestId"));
 		describeParameterTemplatesResponse.setEngine(_ctx.stringValue("DescribeParameterTemplatesResponse.Engine"));
-		describeParameterTemplatesResponse.setEngineVersion(_ctx.stringValue("DescribeParameterTemplatesResponse.EngineVersion"));
 		describeParameterTemplatesResponse.setParameterCount(_ctx.stringValue("DescribeParameterTemplatesResponse.ParameterCount"));
+		describeParameterTemplatesResponse.setEngineVersion(_ctx.stringValue("DescribeParameterTemplatesResponse.EngineVersion"));
 
 		List<TemplateRecord> parameters = new ArrayList<TemplateRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterTemplatesResponse.Parameters.Length"); i++) {
 			TemplateRecord templateRecord = new TemplateRecord();
+			templateRecord.setCheckingCode(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].CheckingCode"));
 			templateRecord.setParameterName(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterName"));
 			templateRecord.setParameterValue(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterValue"));
 			templateRecord.setForceModify(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceModify"));
 			templateRecord.setForceRestart(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceRestart"));
-			templateRecord.setCheckingCode(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].CheckingCode"));
 			templateRecord.setParameterDescription(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterDescription"));
 
 			parameters.add(templateRecord);

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListClassesResponse extends AcsResponse {
 
-	private String regionId;
-
 	private String requestId;
 
+	private String regionId;
+
 	private List<ClassList> items;
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListClassesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<ClassList> getItems() {
@@ -57,21 +57,61 @@ public class ListClassesResponse extends AcsResponse {
 
 	public static class ClassList {
 
+		private String maxIOPS;
+
+		private String cpu;
+
+		private String referencePrice;
+
+		private String maxConnections;
+
+		private String memoryClass;
+
 		private String classCode;
 
 		private String classGroup;
 
-		private String cpu;
-
-		private String maxConnections;
-
 		private String maxIOMBPS;
 
-		private String maxIOPS;
+		public String getMaxIOPS() {
+			return this.maxIOPS;
+		}
 
-		private String memoryClass;
+		public void setMaxIOPS(String maxIOPS) {
+			this.maxIOPS = maxIOPS;
+		}
 
-		private String referencePrice;
+		public String getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(String cpu) {
+			this.cpu = cpu;
+		}
+
+		public String getReferencePrice() {
+			return this.referencePrice;
+		}
+
+		public void setReferencePrice(String referencePrice) {
+			this.referencePrice = referencePrice;
+		}
+
+		public String getMaxConnections() {
+			return this.maxConnections;
+		}
+
+		public void setMaxConnections(String maxConnections) {
+			this.maxConnections = maxConnections;
+		}
+
+		public String getMemoryClass() {
+			return this.memoryClass;
+		}
+
+		public void setMemoryClass(String memoryClass) {
+			this.memoryClass = memoryClass;
+		}
 
 		public String getClassCode() {
 			return this.classCode;
@@ -89,52 +129,12 @@ public class ListClassesResponse extends AcsResponse {
 			this.classGroup = classGroup;
 		}
 
-		public String getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(String cpu) {
-			this.cpu = cpu;
-		}
-
-		public String getMaxConnections() {
-			return this.maxConnections;
-		}
-
-		public void setMaxConnections(String maxConnections) {
-			this.maxConnections = maxConnections;
-		}
-
 		public String getMaxIOMBPS() {
 			return this.maxIOMBPS;
 		}
 
 		public void setMaxIOMBPS(String maxIOMBPS) {
 			this.maxIOMBPS = maxIOMBPS;
-		}
-
-		public String getMaxIOPS() {
-			return this.maxIOPS;
-		}
-
-		public void setMaxIOPS(String maxIOPS) {
-			this.maxIOPS = maxIOPS;
-		}
-
-		public String getMemoryClass() {
-			return this.memoryClass;
-		}
-
-		public void setMemoryClass(String memoryClass) {
-			this.memoryClass = memoryClass;
-		}
-
-		public String getReferencePrice() {
-			return this.referencePrice;
-		}
-
-		public void setReferencePrice(String referencePrice) {
-			this.referencePrice = referencePrice;
 		}
 	}
 

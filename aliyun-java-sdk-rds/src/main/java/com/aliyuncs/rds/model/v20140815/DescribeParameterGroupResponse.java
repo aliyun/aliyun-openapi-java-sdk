@@ -47,50 +47,34 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 
 	public static class ParameterGroup {
 
-		private Integer parameterGroupType;
-
-		private String parameterGroupName;
-
-		private Integer paramCounts;
+		private String updateTime;
 
 		private String parameterGroupDesc;
 
+		private String createTime;
+
 		private Integer forceRestart;
-
-		private String engine;
-
-		private String engineVersion;
 
 		private String parameterGroupId;
 
-		private String createTime;
+		private String parameterGroupName;
 
-		private String updateTime;
+		private String engine;
+
+		private Integer paramCounts;
+
+		private String engineVersion;
+
+		private Integer parameterGroupType;
 
 		private List<ParameterDetail> paramDetail;
 
-		public Integer getParameterGroupType() {
-			return this.parameterGroupType;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setParameterGroupType(Integer parameterGroupType) {
-			this.parameterGroupType = parameterGroupType;
-		}
-
-		public String getParameterGroupName() {
-			return this.parameterGroupName;
-		}
-
-		public void setParameterGroupName(String parameterGroupName) {
-			this.parameterGroupName = parameterGroupName;
-		}
-
-		public Integer getParamCounts() {
-			return this.paramCounts;
-		}
-
-		public void setParamCounts(Integer paramCounts) {
-			this.paramCounts = paramCounts;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getParameterGroupDesc() {
@@ -101,28 +85,20 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			this.parameterGroupDesc = parameterGroupDesc;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public Integer getForceRestart() {
 			return this.forceRestart;
 		}
 
 		public void setForceRestart(Integer forceRestart) {
 			this.forceRestart = forceRestart;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
 		}
 
 		public String getParameterGroupId() {
@@ -133,20 +109,44 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			this.parameterGroupId = parameterGroupId;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getParameterGroupName() {
+			return this.parameterGroupName;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setParameterGroupName(String parameterGroupName) {
+			this.parameterGroupName = parameterGroupName;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getEngine() {
+			return this.engine;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public Integer getParamCounts() {
+			return this.paramCounts;
+		}
+
+		public void setParamCounts(Integer paramCounts) {
+			this.paramCounts = paramCounts;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public Integer getParameterGroupType() {
+			return this.parameterGroupType;
+		}
+
+		public void setParameterGroupType(Integer parameterGroupType) {
+			this.parameterGroupType = parameterGroupType;
 		}
 
 		public List<ParameterDetail> getParamDetail() {

@@ -26,9 +26,9 @@ public class CopyDatabaseResponse extends AcsResponse {
 
 	private String dBName;
 
-	private String dBStatus;
-
 	private String taskId;
+
+	private String dBStatus;
 
 	public String getDBName() {
 		return this.dBName;
@@ -38,20 +38,20 @@ public class CopyDatabaseResponse extends AcsResponse {
 		this.dBName = dBName;
 	}
 
-	public String getDBStatus() {
-		return this.dBStatus;
-	}
-
-	public void setDBStatus(String dBStatus) {
-		this.dBStatus = dBStatus;
-	}
-
 	public String getTaskId() {
 		return this.taskId;
 	}
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getDBStatus() {
+		return this.dBStatus;
+	}
+
+	public void setDBStatus(String dBStatus) {
+		this.dBStatus = dBStatus;
 	}
 
 	@Override

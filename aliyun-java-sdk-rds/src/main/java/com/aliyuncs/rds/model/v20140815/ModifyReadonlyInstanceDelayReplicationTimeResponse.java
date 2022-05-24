@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyReadonlyInstanceDelayReplicationTimeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
 
-	private String readSQLReplicationTime;
+	private String requestId;
 
 	private String taskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String readSQLReplicationTime;
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -48,12 +40,12 @@ public class ModifyReadonlyInstanceDelayReplicationTimeResponse extends AcsRespo
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getReadSQLReplicationTime() {
-		return this.readSQLReplicationTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setReadSQLReplicationTime(String readSQLReplicationTime) {
-		this.readSQLReplicationTime = readSQLReplicationTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskId() {
@@ -62,6 +54,14 @@ public class ModifyReadonlyInstanceDelayReplicationTimeResponse extends AcsRespo
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getReadSQLReplicationTime() {
+		return this.readSQLReplicationTime;
+	}
+
+	public void setReadSQLReplicationTime(String readSQLReplicationTime) {
+		this.readSQLReplicationTime = readSQLReplicationTime;
 	}
 
 	@Override

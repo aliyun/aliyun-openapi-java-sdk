@@ -27,11 +27,11 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long totalCount;
+	private Integer totalCount;
 
-	private Long pageNumber;
+	private Integer pageNumber;
 
-	private Long pageSize;
+	private Integer pageSize;
 
 	private List<VSwitch> vSwitchs;
 
@@ -43,27 +43,27 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalCount() {
+	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(Long totalCount) {
+	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(Long pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 	}
 
-	public Long getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 

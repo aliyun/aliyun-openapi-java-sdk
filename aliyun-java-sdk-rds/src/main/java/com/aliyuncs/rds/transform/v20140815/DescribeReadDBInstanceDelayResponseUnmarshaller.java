@@ -29,19 +29,13 @@ public class DescribeReadDBInstanceDelayResponseUnmarshaller {
 		
 		describeReadDBInstanceDelayResponse.setRequestId(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.RequestId"));
 		describeReadDBInstanceDelayResponse.setDBInstanceId(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.DBInstanceId"));
-		describeReadDBInstanceDelayResponse.setReadDBInstanceId(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.ReadDBInstanceId"));
 		describeReadDBInstanceDelayResponse.setDelayTime(_ctx.integerValue("DescribeReadDBInstanceDelayResponse.DelayTime"));
+		describeReadDBInstanceDelayResponse.setReadDBInstanceId(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.ReadDBInstanceId"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeReadDBInstanceDelayResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
 			itemsItem.setDBInstanceId(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].DBInstanceId"));
-
-			List<String> readDBInstanceNames = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadDBInstanceNames.Length"); j++) {
-				readDBInstanceNames.add(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadDBInstanceNames["+ j +"]"));
-			}
-			itemsItem.setReadDBInstanceNames(readDBInstanceNames);
 
 			List<String> readDelayTimes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadDelayTimes.Length"); j++) {
@@ -49,17 +43,23 @@ public class DescribeReadDBInstanceDelayResponseUnmarshaller {
 			}
 			itemsItem.setReadDelayTimes(readDelayTimes);
 
+			List<String> readDBInstanceNames = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadDBInstanceNames.Length"); j++) {
+				readDBInstanceNames.add(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadDBInstanceNames["+ j +"]"));
+			}
+			itemsItem.setReadDBInstanceNames(readDBInstanceNames);
+
 			List<ReadonlyInstanceDelayItem> readonlyInstanceDelay = new ArrayList<ReadonlyInstanceDelayItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay.Length"); j++) {
 				ReadonlyInstanceDelayItem readonlyInstanceDelayItem = new ReadonlyInstanceDelayItem();
-				readonlyInstanceDelayItem.setReplayLatency(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReplayLatency"));
-				readonlyInstanceDelayItem.setFlushLag(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].FlushLag"));
-				readonlyInstanceDelayItem.setFlushLatency(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].FlushLatency"));
-				readonlyInstanceDelayItem.setSendLatency(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].SendLatency"));
-				readonlyInstanceDelayItem.setWriteLag(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].WriteLag"));
-				readonlyInstanceDelayItem.setReplayLag(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReplayLag"));
 				readonlyInstanceDelayItem.setWriteLatency(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].WriteLatency"));
+				readonlyInstanceDelayItem.setFlushLatency(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].FlushLatency"));
 				readonlyInstanceDelayItem.setReadDBInstanceName(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReadDBInstanceName"));
+				readonlyInstanceDelayItem.setWriteLag(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].WriteLag"));
+				readonlyInstanceDelayItem.setFlushLag(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].FlushLag"));
+				readonlyInstanceDelayItem.setSendLatency(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].SendLatency"));
+				readonlyInstanceDelayItem.setReplayLag(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReplayLag"));
+				readonlyInstanceDelayItem.setReplayLatency(_ctx.stringValue("DescribeReadDBInstanceDelayResponse.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReplayLatency"));
 
 				readonlyInstanceDelay.add(readonlyInstanceDelayItem);
 			}

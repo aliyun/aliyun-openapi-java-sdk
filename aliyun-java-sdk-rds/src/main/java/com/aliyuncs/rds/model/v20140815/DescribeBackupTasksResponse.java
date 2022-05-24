@@ -47,26 +47,34 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 	public static class BackupJob {
 
-		private String backupProgressStatus;
+		private String process;
+
+		private String backupJobId;
 
 		private String backupStatus;
 
 		private String jobMode;
 
-		private String process;
-
-		private String taskAction;
-
-		private String backupJobId;
+		private String backupProgressStatus;
 
 		private String backupId;
 
-		public String getBackupProgressStatus() {
-			return this.backupProgressStatus;
+		private String taskAction;
+
+		public String getProcess() {
+			return this.process;
 		}
 
-		public void setBackupProgressStatus(String backupProgressStatus) {
-			this.backupProgressStatus = backupProgressStatus;
+		public void setProcess(String process) {
+			this.process = process;
+		}
+
+		public String getBackupJobId() {
+			return this.backupJobId;
+		}
+
+		public void setBackupJobId(String backupJobId) {
+			this.backupJobId = backupJobId;
 		}
 
 		public String getBackupStatus() {
@@ -85,28 +93,12 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 			this.jobMode = jobMode;
 		}
 
-		public String getProcess() {
-			return this.process;
+		public String getBackupProgressStatus() {
+			return this.backupProgressStatus;
 		}
 
-		public void setProcess(String process) {
-			this.process = process;
-		}
-
-		public String getTaskAction() {
-			return this.taskAction;
-		}
-
-		public void setTaskAction(String taskAction) {
-			this.taskAction = taskAction;
-		}
-
-		public String getBackupJobId() {
-			return this.backupJobId;
-		}
-
-		public void setBackupJobId(String backupJobId) {
-			this.backupJobId = backupJobId;
+		public void setBackupProgressStatus(String backupProgressStatus) {
+			this.backupProgressStatus = backupProgressStatus;
 		}
 
 		public String getBackupId() {
@@ -115,6 +107,14 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		public void setBackupId(String backupId) {
 			this.backupId = backupId;
+		}
+
+		public String getTaskAction() {
+			return this.taskAction;
+		}
+
+		public void setTaskAction(String taskAction) {
+			this.taskAction = taskAction;
 		}
 	}
 

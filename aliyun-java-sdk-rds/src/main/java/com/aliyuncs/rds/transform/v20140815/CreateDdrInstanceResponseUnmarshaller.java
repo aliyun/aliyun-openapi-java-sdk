@@ -24,9 +24,9 @@ public class CreateDdrInstanceResponseUnmarshaller {
 		
 		createDdrInstanceResponse.setRequestId(_ctx.stringValue("CreateDdrInstanceResponse.RequestId"));
 		createDdrInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateDdrInstanceResponse.DBInstanceId"));
-		createDdrInstanceResponse.setOrderId(_ctx.stringValue("CreateDdrInstanceResponse.OrderId"));
-		createDdrInstanceResponse.setConnectionString(_ctx.stringValue("CreateDdrInstanceResponse.ConnectionString"));
 		createDdrInstanceResponse.setPort(_ctx.stringValue("CreateDdrInstanceResponse.Port"));
+		createDdrInstanceResponse.setConnectionString(_ctx.stringValue("CreateDdrInstanceResponse.ConnectionString"));
+		createDdrInstanceResponse.setOrderId(_ctx.stringValue("CreateDdrInstanceResponse.OrderId"));
 	 
 	 	return createDdrInstanceResponse;
 	}

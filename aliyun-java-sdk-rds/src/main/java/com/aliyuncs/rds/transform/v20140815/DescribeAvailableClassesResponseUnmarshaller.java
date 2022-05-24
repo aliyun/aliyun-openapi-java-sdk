@@ -32,13 +32,13 @@ public class DescribeAvailableClassesResponseUnmarshaller {
 		List<DBInstanceClass> dBInstanceClasses = new ArrayList<DBInstanceClass>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableClassesResponse.DBInstanceClasses.Length"); i++) {
 			DBInstanceClass dBInstanceClass = new DBInstanceClass();
-			dBInstanceClass.setDBInstanceClass(_ctx.stringValue("DescribeAvailableClassesResponse.DBInstanceClasses["+ i +"].DBInstanceClass"));
 			dBInstanceClass.setStorageRange(_ctx.stringValue("DescribeAvailableClassesResponse.DBInstanceClasses["+ i +"].StorageRange"));
+			dBInstanceClass.setDBInstanceClass(_ctx.stringValue("DescribeAvailableClassesResponse.DBInstanceClasses["+ i +"].DBInstanceClass"));
 
 			DBInstanceStorageRange dBInstanceStorageRange = new DBInstanceStorageRange();
-			dBInstanceStorageRange.setMaxValue(_ctx.integerValue("DescribeAvailableClassesResponse.DBInstanceClasses["+ i +"].DBInstanceStorageRange.MaxValue"));
-			dBInstanceStorageRange.setMinValue(_ctx.integerValue("DescribeAvailableClassesResponse.DBInstanceClasses["+ i +"].DBInstanceStorageRange.MinValue"));
 			dBInstanceStorageRange.setStep(_ctx.integerValue("DescribeAvailableClassesResponse.DBInstanceClasses["+ i +"].DBInstanceStorageRange.Step"));
+			dBInstanceStorageRange.setMinValue(_ctx.integerValue("DescribeAvailableClassesResponse.DBInstanceClasses["+ i +"].DBInstanceStorageRange.MinValue"));
+			dBInstanceStorageRange.setMaxValue(_ctx.integerValue("DescribeAvailableClassesResponse.DBInstanceClasses["+ i +"].DBInstanceStorageRange.MaxValue"));
 			dBInstanceClass.setDBInstanceStorageRange(dBInstanceStorageRange);
 
 			dBInstanceClasses.add(dBInstanceClass);

@@ -31,8 +31,8 @@ public class DescribeTagsResponseUnmarshaller {
 		List<TagInfos> items = new ArrayList<TagInfos>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTagsResponse.Items.Length"); i++) {
 			TagInfos tagInfos = new TagInfos();
-			tagInfos.setTagKey(_ctx.stringValue("DescribeTagsResponse.Items["+ i +"].TagKey"));
 			tagInfos.setTagValue(_ctx.stringValue("DescribeTagsResponse.Items["+ i +"].TagValue"));
+			tagInfos.setTagKey(_ctx.stringValue("DescribeTagsResponse.Items["+ i +"].TagKey"));
 
 			List<String> dBInstanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTagsResponse.Items["+ i +"].DBInstanceIds.Length"); j++) {

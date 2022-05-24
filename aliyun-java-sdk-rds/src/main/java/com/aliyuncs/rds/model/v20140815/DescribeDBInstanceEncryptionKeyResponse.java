@@ -24,17 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String encryptionKey;
-
-	private String description;
-
-	private String keyUsage;
-
 	private String deleteDate;
 
-	private String creator;
+	private String requestId;
+
+	private String description;
 
 	private String origin;
 
@@ -42,37 +36,11 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 
 	private String encryptionKeyStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String keyUsage;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String encryptionKey;
 
-	public String getEncryptionKey() {
-		return this.encryptionKey;
-	}
-
-	public void setEncryptionKey(String encryptionKey) {
-		this.encryptionKey = encryptionKey;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getKeyUsage() {
-		return this.keyUsage;
-	}
-
-	public void setKeyUsage(String keyUsage) {
-		this.keyUsage = keyUsage;
-	}
+	private String creator;
 
 	public String getDeleteDate() {
 		return this.deleteDate;
@@ -82,12 +50,20 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 		this.deleteDate = deleteDate;
 	}
 
-	public String getCreator() {
-		return this.creator;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCreator(String creator) {
-		this.creator = creator;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getOrigin() {
@@ -112,6 +88,30 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 
 	public void setEncryptionKeyStatus(String encryptionKeyStatus) {
 		this.encryptionKeyStatus = encryptionKeyStatus;
+	}
+
+	public String getKeyUsage() {
+		return this.keyUsage;
+	}
+
+	public void setKeyUsage(String keyUsage) {
+		this.keyUsage = keyUsage;
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+	}
+
+	public String getCreator() {
+		return this.creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
 	}
 
 	@Override

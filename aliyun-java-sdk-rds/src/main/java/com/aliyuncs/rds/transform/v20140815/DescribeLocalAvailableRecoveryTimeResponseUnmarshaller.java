@@ -23,9 +23,9 @@ public class DescribeLocalAvailableRecoveryTimeResponseUnmarshaller {
 	public static DescribeLocalAvailableRecoveryTimeResponse unmarshall(DescribeLocalAvailableRecoveryTimeResponse describeLocalAvailableRecoveryTimeResponse, UnmarshallerContext _ctx) {
 		
 		describeLocalAvailableRecoveryTimeResponse.setRequestId(_ctx.stringValue("DescribeLocalAvailableRecoveryTimeResponse.RequestId"));
+		describeLocalAvailableRecoveryTimeResponse.setRecoveryEndTime(_ctx.stringValue("DescribeLocalAvailableRecoveryTimeResponse.RecoveryEndTime"));
 		describeLocalAvailableRecoveryTimeResponse.setDBInstanceId(_ctx.stringValue("DescribeLocalAvailableRecoveryTimeResponse.DBInstanceId"));
 		describeLocalAvailableRecoveryTimeResponse.setRecoveryBeginTime(_ctx.stringValue("DescribeLocalAvailableRecoveryTimeResponse.RecoveryBeginTime"));
-		describeLocalAvailableRecoveryTimeResponse.setRecoveryEndTime(_ctx.stringValue("DescribeLocalAvailableRecoveryTimeResponse.RecoveryEndTime"));
 	 
 	 	return describeLocalAvailableRecoveryTimeResponse;
 	}

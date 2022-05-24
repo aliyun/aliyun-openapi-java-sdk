@@ -35,6 +35,8 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String engineVersion;
 
+	private Boolean deletionProtection;
+
 	private String resourceGroupId;
 
 	private String tddlRegionConfig;
@@ -141,6 +143,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
 		}
 	}
 

@@ -23,7 +23,6 @@ public class CopyDatabaseBetweenInstancesResponseUnmarshaller {
 	public static CopyDatabaseBetweenInstancesResponse unmarshall(CopyDatabaseBetweenInstancesResponse copyDatabaseBetweenInstancesResponse, UnmarshallerContext _ctx) {
 		
 		copyDatabaseBetweenInstancesResponse.setRequestId(_ctx.stringValue("CopyDatabaseBetweenInstancesResponse.RequestId"));
-		copyDatabaseBetweenInstancesResponse.setDBInstanceId(_ctx.stringValue("CopyDatabaseBetweenInstancesResponse.DBInstanceId"));
 	 
 	 	return copyDatabaseBetweenInstancesResponse;
 	}

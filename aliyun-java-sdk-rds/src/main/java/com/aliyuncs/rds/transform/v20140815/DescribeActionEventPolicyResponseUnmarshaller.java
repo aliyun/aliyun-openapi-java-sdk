@@ -23,8 +23,8 @@ public class DescribeActionEventPolicyResponseUnmarshaller {
 	public static DescribeActionEventPolicyResponse unmarshall(DescribeActionEventPolicyResponse describeActionEventPolicyResponse, UnmarshallerContext _ctx) {
 		
 		describeActionEventPolicyResponse.setRequestId(_ctx.stringValue("DescribeActionEventPolicyResponse.RequestId"));
-		describeActionEventPolicyResponse.setRegionId(_ctx.stringValue("DescribeActionEventPolicyResponse.RegionId"));
 		describeActionEventPolicyResponse.setEnableEventLog(_ctx.stringValue("DescribeActionEventPolicyResponse.EnableEventLog"));
+		describeActionEventPolicyResponse.setRegionId(_ctx.stringValue("DescribeActionEventPolicyResponse.RegionId"));
 	 
 	 	return describeActionEventPolicyResponse;
 	}

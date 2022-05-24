@@ -27,11 +27,11 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalRecordCount;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
+
+	private Integer totalRecordCount;
 
 	private List<LogFile> items;
 
@@ -41,14 +41,6 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageNumber() {
@@ -67,6 +59,14 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	public List<LogFile> getItems() {
 		return this.items;
 	}
@@ -79,15 +79,15 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 		private String fileID;
 
-		private String logStatus;
-
-		private String logDownloadURL;
+		private String logStartTime;
 
 		private String logSize;
 
-		private String logStartTime;
+		private String logDownloadURL;
 
 		private String logEndTime;
+
+		private String logStatus;
 
 		public String getFileID() {
 			return this.fileID;
@@ -95,30 +95,6 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 
 		public void setFileID(String fileID) {
 			this.fileID = fileID;
-		}
-
-		public String getLogStatus() {
-			return this.logStatus;
-		}
-
-		public void setLogStatus(String logStatus) {
-			this.logStatus = logStatus;
-		}
-
-		public String getLogDownloadURL() {
-			return this.logDownloadURL;
-		}
-
-		public void setLogDownloadURL(String logDownloadURL) {
-			this.logDownloadURL = logDownloadURL;
-		}
-
-		public String getLogSize() {
-			return this.logSize;
-		}
-
-		public void setLogSize(String logSize) {
-			this.logSize = logSize;
 		}
 
 		public String getLogStartTime() {
@@ -129,12 +105,36 @@ public class DescribeSQLLogFilesResponse extends AcsResponse {
 			this.logStartTime = logStartTime;
 		}
 
+		public String getLogSize() {
+			return this.logSize;
+		}
+
+		public void setLogSize(String logSize) {
+			this.logSize = logSize;
+		}
+
+		public String getLogDownloadURL() {
+			return this.logDownloadURL;
+		}
+
+		public void setLogDownloadURL(String logDownloadURL) {
+			this.logDownloadURL = logDownloadURL;
+		}
+
 		public String getLogEndTime() {
 			return this.logEndTime;
 		}
 
 		public void setLogEndTime(String logEndTime) {
 			this.logEndTime = logEndTime;
+		}
+
+		public String getLogStatus() {
+			return this.logStatus;
+		}
+
+		public void setLogStatus(String logStatus) {
+			this.logStatus = logStatus;
 		}
 	}
 

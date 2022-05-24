@@ -25,61 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String dBProxyEndpointId;
-
-	private String dBProxyConnectString;
-
-	private String dBProxyConnectStringPort;
-
 	private String dBProxyConnectStringNetType;
 
 	private String dBProxyFeatures;
 
-	private String readOnlyInstanceMaxDelayTime;
-
-	private String readOnlyInstanceDistributionType;
+	private String requestId;
 
 	private String readOnlyInstanceWeight;
 
-	private String dbProxyEndpointAliases;
+	private String readOnlyInstanceDistributionType;
+
+	private String readOnlyInstanceMaxDelayTime;
 
 	private String dbProxyEndpointReadWriteMode;
 
+	private String dbProxyEndpointAliases;
+
+	private String dBProxyEndpointId;
+
+	private String dBProxyConnectStringPort;
+
+	private String dBProxyConnectString;
+
 	private List<EndpointConnectItemsItem> endpointConnectItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDBProxyEndpointId() {
-		return this.dBProxyEndpointId;
-	}
-
-	public void setDBProxyEndpointId(String dBProxyEndpointId) {
-		this.dBProxyEndpointId = dBProxyEndpointId;
-	}
-
-	public String getDBProxyConnectString() {
-		return this.dBProxyConnectString;
-	}
-
-	public void setDBProxyConnectString(String dBProxyConnectString) {
-		this.dBProxyConnectString = dBProxyConnectString;
-	}
-
-	public String getDBProxyConnectStringPort() {
-		return this.dBProxyConnectStringPort;
-	}
-
-	public void setDBProxyConnectStringPort(String dBProxyConnectStringPort) {
-		this.dBProxyConnectStringPort = dBProxyConnectStringPort;
-	}
 
 	public String getDBProxyConnectStringNetType() {
 		return this.dBProxyConnectStringNetType;
@@ -97,20 +65,12 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 		this.dBProxyFeatures = dBProxyFeatures;
 	}
 
-	public String getReadOnlyInstanceMaxDelayTime() {
-		return this.readOnlyInstanceMaxDelayTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setReadOnlyInstanceMaxDelayTime(String readOnlyInstanceMaxDelayTime) {
-		this.readOnlyInstanceMaxDelayTime = readOnlyInstanceMaxDelayTime;
-	}
-
-	public String getReadOnlyInstanceDistributionType() {
-		return this.readOnlyInstanceDistributionType;
-	}
-
-	public void setReadOnlyInstanceDistributionType(String readOnlyInstanceDistributionType) {
-		this.readOnlyInstanceDistributionType = readOnlyInstanceDistributionType;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getReadOnlyInstanceWeight() {
@@ -121,12 +81,20 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 		this.readOnlyInstanceWeight = readOnlyInstanceWeight;
 	}
 
-	public String getDbProxyEndpointAliases() {
-		return this.dbProxyEndpointAliases;
+	public String getReadOnlyInstanceDistributionType() {
+		return this.readOnlyInstanceDistributionType;
 	}
 
-	public void setDbProxyEndpointAliases(String dbProxyEndpointAliases) {
-		this.dbProxyEndpointAliases = dbProxyEndpointAliases;
+	public void setReadOnlyInstanceDistributionType(String readOnlyInstanceDistributionType) {
+		this.readOnlyInstanceDistributionType = readOnlyInstanceDistributionType;
+	}
+
+	public String getReadOnlyInstanceMaxDelayTime() {
+		return this.readOnlyInstanceMaxDelayTime;
+	}
+
+	public void setReadOnlyInstanceMaxDelayTime(String readOnlyInstanceMaxDelayTime) {
+		this.readOnlyInstanceMaxDelayTime = readOnlyInstanceMaxDelayTime;
 	}
 
 	public String getDbProxyEndpointReadWriteMode() {
@@ -135,6 +103,38 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
 	public void setDbProxyEndpointReadWriteMode(String dbProxyEndpointReadWriteMode) {
 		this.dbProxyEndpointReadWriteMode = dbProxyEndpointReadWriteMode;
+	}
+
+	public String getDbProxyEndpointAliases() {
+		return this.dbProxyEndpointAliases;
+	}
+
+	public void setDbProxyEndpointAliases(String dbProxyEndpointAliases) {
+		this.dbProxyEndpointAliases = dbProxyEndpointAliases;
+	}
+
+	public String getDBProxyEndpointId() {
+		return this.dBProxyEndpointId;
+	}
+
+	public void setDBProxyEndpointId(String dBProxyEndpointId) {
+		this.dBProxyEndpointId = dBProxyEndpointId;
+	}
+
+	public String getDBProxyConnectStringPort() {
+		return this.dBProxyConnectStringPort;
+	}
+
+	public void setDBProxyConnectStringPort(String dBProxyConnectStringPort) {
+		this.dBProxyConnectStringPort = dBProxyConnectStringPort;
+	}
+
+	public String getDBProxyConnectString() {
+		return this.dBProxyConnectString;
+	}
+
+	public void setDBProxyConnectString(String dBProxyConnectString) {
+		this.dBProxyConnectString = dBProxyConnectString;
 	}
 
 	public List<EndpointConnectItemsItem> getEndpointConnectItems() {
@@ -147,19 +147,11 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
 	public static class EndpointConnectItemsItem {
 
-		private String dbProxyEndpointConnectString;
-
 		private String dbProxyEndpointPort;
 
+		private String dbProxyEndpointConnectString;
+
 		private String dbProxyEndpointNetType;
-
-		public String getDbProxyEndpointConnectString() {
-			return this.dbProxyEndpointConnectString;
-		}
-
-		public void setDbProxyEndpointConnectString(String dbProxyEndpointConnectString) {
-			this.dbProxyEndpointConnectString = dbProxyEndpointConnectString;
-		}
 
 		public String getDbProxyEndpointPort() {
 			return this.dbProxyEndpointPort;
@@ -167,6 +159,14 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
 		public void setDbProxyEndpointPort(String dbProxyEndpointPort) {
 			this.dbProxyEndpointPort = dbProxyEndpointPort;
+		}
+
+		public String getDbProxyEndpointConnectString() {
+			return this.dbProxyEndpointConnectString;
+		}
+
+		public void setDbProxyEndpointConnectString(String dbProxyEndpointConnectString) {
+			this.dbProxyEndpointConnectString = dbProxyEndpointConnectString;
 		}
 
 		public String getDbProxyEndpointNetType() {

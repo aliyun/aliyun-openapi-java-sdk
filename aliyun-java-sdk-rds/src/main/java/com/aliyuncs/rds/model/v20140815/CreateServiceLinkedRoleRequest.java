@@ -22,7 +22,7 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAvailableDedicatedHostClassesRequest extends RpcAcsRequest<DescribeAvailableDedicatedHostClassesResponse> {
+public class CreateServiceLinkedRoleRequest extends RpcAcsRequest<CreateServiceLinkedRoleResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -31,11 +31,9 @@ public class DescribeAvailableDedicatedHostClassesRequest extends RpcAcsRequest<
 
 	private Long ownerId;
 
-	private String storageType;
-
-	private String zoneId;
-	public DescribeAvailableDedicatedHostClassesRequest() {
-		super("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds");
+	private String serviceLinkedRole;
+	public CreateServiceLinkedRoleRequest() {
+		super("Rds", "2014-08-15", "CreateServiceLinkedRole", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,31 +74,20 @@ public class DescribeAvailableDedicatedHostClassesRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getStorageType() {
-		return this.storageType;
+	public String getServiceLinkedRole() {
+		return this.serviceLinkedRole;
 	}
 
-	public void setStorageType(String storageType) {
-		this.storageType = storageType;
-		if(storageType != null){
-			putQueryParameter("StorageType", storageType);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setServiceLinkedRole(String serviceLinkedRole) {
+		this.serviceLinkedRole = serviceLinkedRole;
+		if(serviceLinkedRole != null){
+			putQueryParameter("ServiceLinkedRole", serviceLinkedRole);
 		}
 	}
 
 	@Override
-	public Class<DescribeAvailableDedicatedHostClassesResponse> getResponseClass() {
-		return DescribeAvailableDedicatedHostClassesResponse.class;
+	public Class<CreateServiceLinkedRoleResponse> getResponseClass() {
+		return CreateServiceLinkedRoleResponse.class;
 	}
 
 }

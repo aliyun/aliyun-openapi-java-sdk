@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogBackupFilesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalRecordCount;
+	private Long totalFileSize;
 
 	private Integer pageNumber;
 
+	private String requestId;
+
 	private Integer pageRecordCount;
 
-	private Long totalFileSize;
+	private Integer totalRecordCount;
 
 	private List<BinLogFile> items;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getTotalFileSize() {
+		return this.totalFileSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setTotalFileSize(Long totalFileSize) {
+		this.totalFileSize = totalFileSize;
 	}
 
 	public Integer getPageNumber() {
@@ -61,6 +53,14 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
@@ -69,12 +69,12 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
-	public Long getTotalFileSize() {
-		return this.totalFileSize;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setTotalFileSize(Long totalFileSize) {
-		this.totalFileSize = totalFileSize;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<BinLogFile> getItems() {
@@ -87,25 +87,17 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 
 	public static class BinLogFile {
 
-		private Long fileSize;
-
 		private String logBeginTime;
-
-		private String logEndTime;
-
-		private String downloadLink;
 
 		private String intranetDownloadLink;
 
 		private String linkExpiredTime;
 
-		public Long getFileSize() {
-			return this.fileSize;
-		}
+		private String downloadLink;
 
-		public void setFileSize(Long fileSize) {
-			this.fileSize = fileSize;
-		}
+		private String logEndTime;
+
+		private Long fileSize;
 
 		public String getLogBeginTime() {
 			return this.logBeginTime;
@@ -113,22 +105,6 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 
 		public void setLogBeginTime(String logBeginTime) {
 			this.logBeginTime = logBeginTime;
-		}
-
-		public String getLogEndTime() {
-			return this.logEndTime;
-		}
-
-		public void setLogEndTime(String logEndTime) {
-			this.logEndTime = logEndTime;
-		}
-
-		public String getDownloadLink() {
-			return this.downloadLink;
-		}
-
-		public void setDownloadLink(String downloadLink) {
-			this.downloadLink = downloadLink;
 		}
 
 		public String getIntranetDownloadLink() {
@@ -145,6 +121,30 @@ public class DescribeLogBackupFilesResponse extends AcsResponse {
 
 		public void setLinkExpiredTime(String linkExpiredTime) {
 			this.linkExpiredTime = linkExpiredTime;
+		}
+
+		public String getDownloadLink() {
+			return this.downloadLink;
+		}
+
+		public void setDownloadLink(String downloadLink) {
+			this.downloadLink = downloadLink;
+		}
+
+		public String getLogEndTime() {
+			return this.logEndTime;
+		}
+
+		public void setLogEndTime(String logEndTime) {
+			this.logEndTime = logEndTime;
+		}
+
+		public Long getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
 		}
 	}
 

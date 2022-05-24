@@ -29,11 +29,15 @@ public class ModifyParameterRequest extends RpcAcsRequest<ModifyParameterRespons
 
 	private String clientToken;
 
+	private String switchTimeMode;
+
 	private String parameterGroupId;
 
 	private String dBInstanceId;
 
 	private Boolean forcerestart;
+
+	private String switchTime;
 
 	private String resourceOwnerAccount;
 
@@ -73,6 +77,17 @@ public class ModifyParameterRequest extends RpcAcsRequest<ModifyParameterRespons
 		}
 	}
 
+	public String getSwitchTimeMode() {
+		return this.switchTimeMode;
+	}
+
+	public void setSwitchTimeMode(String switchTimeMode) {
+		this.switchTimeMode = switchTimeMode;
+		if(switchTimeMode != null){
+			putQueryParameter("SwitchTimeMode", switchTimeMode);
+		}
+	}
+
 	public String getParameterGroupId() {
 		return this.parameterGroupId;
 	}
@@ -103,6 +118,17 @@ public class ModifyParameterRequest extends RpcAcsRequest<ModifyParameterRespons
 		this.forcerestart = forcerestart;
 		if(forcerestart != null){
 			putQueryParameter("Forcerestart", forcerestart.toString());
+		}
+	}
+
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 

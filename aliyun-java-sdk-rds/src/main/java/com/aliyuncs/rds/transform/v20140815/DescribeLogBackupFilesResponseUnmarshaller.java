@@ -27,20 +27,20 @@ public class DescribeLogBackupFilesResponseUnmarshaller {
 	public static DescribeLogBackupFilesResponse unmarshall(DescribeLogBackupFilesResponse describeLogBackupFilesResponse, UnmarshallerContext _ctx) {
 		
 		describeLogBackupFilesResponse.setRequestId(_ctx.stringValue("DescribeLogBackupFilesResponse.RequestId"));
-		describeLogBackupFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeLogBackupFilesResponse.TotalRecordCount"));
+		describeLogBackupFilesResponse.setTotalFileSize(_ctx.longValue("DescribeLogBackupFilesResponse.TotalFileSize"));
 		describeLogBackupFilesResponse.setPageNumber(_ctx.integerValue("DescribeLogBackupFilesResponse.PageNumber"));
 		describeLogBackupFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeLogBackupFilesResponse.PageRecordCount"));
-		describeLogBackupFilesResponse.setTotalFileSize(_ctx.longValue("DescribeLogBackupFilesResponse.TotalFileSize"));
+		describeLogBackupFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeLogBackupFilesResponse.TotalRecordCount"));
 
 		List<BinLogFile> items = new ArrayList<BinLogFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogBackupFilesResponse.Items.Length"); i++) {
 			BinLogFile binLogFile = new BinLogFile();
-			binLogFile.setFileSize(_ctx.longValue("DescribeLogBackupFilesResponse.Items["+ i +"].FileSize"));
 			binLogFile.setLogBeginTime(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LogBeginTime"));
-			binLogFile.setLogEndTime(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LogEndTime"));
-			binLogFile.setDownloadLink(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].DownloadLink"));
 			binLogFile.setIntranetDownloadLink(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].IntranetDownloadLink"));
 			binLogFile.setLinkExpiredTime(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LinkExpiredTime"));
+			binLogFile.setDownloadLink(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].DownloadLink"));
+			binLogFile.setLogEndTime(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LogEndTime"));
+			binLogFile.setFileSize(_ctx.longValue("DescribeLogBackupFilesResponse.Items["+ i +"].FileSize"));
 
 			items.add(binLogFile);
 		}

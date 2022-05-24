@@ -29,9 +29,9 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Integer totalRecordCount;
-
 	private Integer pageRecordCount;
+
+	private Integer totalRecordCount;
 
 	private List<DBInstancePerformance> items;
 
@@ -51,20 +51,20 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<DBInstancePerformance> getItems() {
@@ -79,15 +79,15 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
 		private String cPUUsage;
 
-		private String iOPSUsage;
-
-		private String diskUsage;
-
 		private String sessionUsage;
 
 		private String dBInstanceId;
 
 		private String dBInstanceDescription;
+
+		private String iOPSUsage;
+
+		private String diskUsage;
 
 		public String getCPUUsage() {
 			return this.cPUUsage;
@@ -95,22 +95,6 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
 		public void setCPUUsage(String cPUUsage) {
 			this.cPUUsage = cPUUsage;
-		}
-
-		public String getIOPSUsage() {
-			return this.iOPSUsage;
-		}
-
-		public void setIOPSUsage(String iOPSUsage) {
-			this.iOPSUsage = iOPSUsage;
-		}
-
-		public String getDiskUsage() {
-			return this.diskUsage;
-		}
-
-		public void setDiskUsage(String diskUsage) {
-			this.diskUsage = diskUsage;
 		}
 
 		public String getSessionUsage() {
@@ -135,6 +119,22 @@ public class DescribeDBInstancesByPerformanceResponse extends AcsResponse {
 
 		public void setDBInstanceDescription(String dBInstanceDescription) {
 			this.dBInstanceDescription = dBInstanceDescription;
+		}
+
+		public String getIOPSUsage() {
+			return this.iOPSUsage;
+		}
+
+		public void setIOPSUsage(String iOPSUsage) {
+			this.iOPSUsage = iOPSUsage;
+		}
+
+		public String getDiskUsage() {
+			return this.diskUsage;
+		}
+
+		public void setDiskUsage(String diskUsage) {
+			this.diskUsage = diskUsage;
 		}
 	}
 

@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBinlogFilesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalRecordCount;
+	private Long totalFileSize;
 
 	private Integer pageNumber;
 
+	private String requestId;
+
 	private Integer pageRecordCount;
 
-	private Long totalFileSize;
+	private Integer totalRecordCount;
 
 	private List<BinLogFile> items;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getTotalFileSize() {
+		return this.totalFileSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setTotalFileSize(Long totalFileSize) {
+		this.totalFileSize = totalFileSize;
 	}
 
 	public Integer getPageNumber() {
@@ -61,6 +53,14 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
@@ -69,12 +69,12 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
-	public Long getTotalFileSize() {
-		return this.totalFileSize;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setTotalFileSize(Long totalFileSize) {
-		this.totalFileSize = totalFileSize;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<BinLogFile> getItems() {
@@ -87,56 +87,32 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 
 	public static class BinLogFile {
 
-		private Long fileSize;
-
-		private String logBeginTime;
-
-		private String logEndTime;
-
-		private String downloadLink;
+		private String remoteStatus;
 
 		private String intranetDownloadLink;
 
+		private String logBeginTime;
+
 		private String linkExpiredTime;
 
-		private String checksum;
-
-		private String hostInstanceID;
+		private String downloadLink;
 
 		private String logFileName;
 
-		private String remoteStatus;
+		private String checksum;
 
-		public Long getFileSize() {
-			return this.fileSize;
+		private String logEndTime;
+
+		private String hostInstanceID;
+
+		private Long fileSize;
+
+		public String getRemoteStatus() {
+			return this.remoteStatus;
 		}
 
-		public void setFileSize(Long fileSize) {
-			this.fileSize = fileSize;
-		}
-
-		public String getLogBeginTime() {
-			return this.logBeginTime;
-		}
-
-		public void setLogBeginTime(String logBeginTime) {
-			this.logBeginTime = logBeginTime;
-		}
-
-		public String getLogEndTime() {
-			return this.logEndTime;
-		}
-
-		public void setLogEndTime(String logEndTime) {
-			this.logEndTime = logEndTime;
-		}
-
-		public String getDownloadLink() {
-			return this.downloadLink;
-		}
-
-		public void setDownloadLink(String downloadLink) {
-			this.downloadLink = downloadLink;
+		public void setRemoteStatus(String remoteStatus) {
+			this.remoteStatus = remoteStatus;
 		}
 
 		public String getIntranetDownloadLink() {
@@ -147,6 +123,14 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 			this.intranetDownloadLink = intranetDownloadLink;
 		}
 
+		public String getLogBeginTime() {
+			return this.logBeginTime;
+		}
+
+		public void setLogBeginTime(String logBeginTime) {
+			this.logBeginTime = logBeginTime;
+		}
+
 		public String getLinkExpiredTime() {
 			return this.linkExpiredTime;
 		}
@@ -155,20 +139,12 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 			this.linkExpiredTime = linkExpiredTime;
 		}
 
-		public String getChecksum() {
-			return this.checksum;
+		public String getDownloadLink() {
+			return this.downloadLink;
 		}
 
-		public void setChecksum(String checksum) {
-			this.checksum = checksum;
-		}
-
-		public String getHostInstanceID() {
-			return this.hostInstanceID;
-		}
-
-		public void setHostInstanceID(String hostInstanceID) {
-			this.hostInstanceID = hostInstanceID;
+		public void setDownloadLink(String downloadLink) {
+			this.downloadLink = downloadLink;
 		}
 
 		public String getLogFileName() {
@@ -179,12 +155,36 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 			this.logFileName = logFileName;
 		}
 
-		public String getRemoteStatus() {
-			return this.remoteStatus;
+		public String getChecksum() {
+			return this.checksum;
 		}
 
-		public void setRemoteStatus(String remoteStatus) {
-			this.remoteStatus = remoteStatus;
+		public void setChecksum(String checksum) {
+			this.checksum = checksum;
+		}
+
+		public String getLogEndTime() {
+			return this.logEndTime;
+		}
+
+		public void setLogEndTime(String logEndTime) {
+			this.logEndTime = logEndTime;
+		}
+
+		public String getHostInstanceID() {
+			return this.hostInstanceID;
+		}
+
+		public void setHostInstanceID(String hostInstanceID) {
+			this.hostInstanceID = hostInstanceID;
+		}
+
+		public Long getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
 		}
 	}
 

@@ -54,7 +54,7 @@ public class Endpoint {
             put("cn-hangzhou-internal-test-2", "rds.aliyuncs.com");
             put("cn-hangzhou-test-306", "rds.aliyuncs.com");
             put("cn-shanghai-et2-b01", "rds.aliyuncs.com");
-            put("cn-hangzhou-finance", "rds.aliyuncs.com");
+            put("cn-hangzhou-finance", "rds-vpc.cn-hangzhou-finance.aliyuncs.com");
             put("ap-southeast-1", "rds.aliyuncs.com");
             put("cn-beijing-nu16-b01", "rds.aliyuncs.com");
             put("cn-edge-1", "rds.aliyuncs.com");

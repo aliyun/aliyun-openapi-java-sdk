@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCharacterSetNameResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String engine;
 
+	private String requestId;
+
 	private List<String> characterSetNameItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getEngine() {
 		return this.engine;
@@ -45,6 +37,14 @@ public class DescribeCharacterSetNameResponse extends AcsResponse {
 
 	public void setEngine(String engine) {
 		this.engine = engine;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getCharacterSetNameItems() {

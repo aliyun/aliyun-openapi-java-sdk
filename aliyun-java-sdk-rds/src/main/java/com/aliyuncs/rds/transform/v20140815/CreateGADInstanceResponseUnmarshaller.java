@@ -27,7 +27,8 @@ public class CreateGADInstanceResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setGadInstanceName(_ctx.stringValue("CreateGADInstanceResponse.Result.GadInstanceName"));
-		result.setCreateCount(_ctx.stringValue("CreateGADInstanceResponse.Result.CreateCount"));
+		result.setCreateMemberCount(_ctx.stringValue("CreateGADInstanceResponse.Result.CreateMemberCount"));
+		result.setTaskID(_ctx.stringValue("CreateGADInstanceResponse.Result.TaskID"));
 		createGADInstanceResponse.setResult(result);
 	 
 	 	return createGADInstanceResponse;

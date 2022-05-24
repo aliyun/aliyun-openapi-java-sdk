@@ -26,9 +26,9 @@ public class DescribeHASwitchConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String hAConfig;
-
 	private String manualHATime;
+
+	private String hAConfig;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class DescribeHASwitchConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getHAConfig() {
-		return this.hAConfig;
-	}
-
-	public void setHAConfig(String hAConfig) {
-		this.hAConfig = hAConfig;
-	}
-
 	public String getManualHATime() {
 		return this.manualHATime;
 	}
 
 	public void setManualHATime(String manualHATime) {
 		this.manualHATime = manualHATime;
+	}
+
+	public String getHAConfig() {
+		return this.hAConfig;
+	}
+
+	public void setHAConfig(String hAConfig) {
+		this.hAConfig = hAConfig;
 	}
 
 	@Override

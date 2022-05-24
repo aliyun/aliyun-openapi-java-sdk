@@ -27,6 +27,10 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 
 	private Long resourceOwnerId;
 
+	private Long dBInstanceStorage;
+
+	private String isModifySpec;
+
 	private String zoneIdSlave1;
 
 	private String zoneIdSlave2;
@@ -35,11 +39,15 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 
 	private String dBInstanceId;
 
+	private String switchTime;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String dBInstanceClass;
 
 	private String vSwitchId;
 
@@ -65,6 +73,28 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getDBInstanceStorage() {
+		return this.dBInstanceStorage;
+	}
+
+	public void setDBInstanceStorage(Long dBInstanceStorage) {
+		this.dBInstanceStorage = dBInstanceStorage;
+		if(dBInstanceStorage != null){
+			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getIsModifySpec() {
+		return this.isModifySpec;
+	}
+
+	public void setIsModifySpec(String isModifySpec) {
+		this.isModifySpec = isModifySpec;
+		if(isModifySpec != null){
+			putQueryParameter("IsModifySpec", isModifySpec);
 		}
 	}
 
@@ -112,6 +142,17 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		}
 	}
 
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -142,6 +183,17 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
 		}
 	}
 

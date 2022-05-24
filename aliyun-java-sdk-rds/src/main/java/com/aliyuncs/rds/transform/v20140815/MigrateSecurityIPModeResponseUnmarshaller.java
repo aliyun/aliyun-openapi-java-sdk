@@ -23,8 +23,8 @@ public class MigrateSecurityIPModeResponseUnmarshaller {
 	public static MigrateSecurityIPModeResponse unmarshall(MigrateSecurityIPModeResponse migrateSecurityIPModeResponse, UnmarshallerContext _ctx) {
 		
 		migrateSecurityIPModeResponse.setRequestId(_ctx.stringValue("MigrateSecurityIPModeResponse.RequestId"));
-		migrateSecurityIPModeResponse.setDBInstanceId(_ctx.stringValue("MigrateSecurityIPModeResponse.DBInstanceId"));
 		migrateSecurityIPModeResponse.setSecurityIPMode(_ctx.stringValue("MigrateSecurityIPModeResponse.SecurityIPMode"));
+		migrateSecurityIPModeResponse.setDBInstanceId(_ctx.stringValue("MigrateSecurityIPModeResponse.DBInstanceId"));
 	 
 	 	return migrateSecurityIPModeResponse;
 	}

@@ -28,18 +28,18 @@ public class DescribeDBInstancesByPerformanceResponseUnmarshaller {
 		
 		describeDBInstancesByPerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.RequestId"));
 		describeDBInstancesByPerformanceResponse.setPageNumber(_ctx.integerValue("DescribeDBInstancesByPerformanceResponse.PageNumber"));
-		describeDBInstancesByPerformanceResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstancesByPerformanceResponse.TotalRecordCount"));
 		describeDBInstancesByPerformanceResponse.setPageRecordCount(_ctx.integerValue("DescribeDBInstancesByPerformanceResponse.PageRecordCount"));
+		describeDBInstancesByPerformanceResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstancesByPerformanceResponse.TotalRecordCount"));
 
 		List<DBInstancePerformance> items = new ArrayList<DBInstancePerformance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancesByPerformanceResponse.Items.Length"); i++) {
 			DBInstancePerformance dBInstancePerformance = new DBInstancePerformance();
 			dBInstancePerformance.setCPUUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].CPUUsage"));
-			dBInstancePerformance.setIOPSUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].IOPSUsage"));
-			dBInstancePerformance.setDiskUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DiskUsage"));
 			dBInstancePerformance.setSessionUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].SessionUsage"));
 			dBInstancePerformance.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DBInstanceId"));
 			dBInstancePerformance.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DBInstanceDescription"));
+			dBInstancePerformance.setIOPSUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].IOPSUsage"));
+			dBInstancePerformance.setDiskUsage(_ctx.stringValue("DescribeDBInstancesByPerformanceResponse.Items["+ i +"].DiskUsage"));
 
 			items.add(dBInstancePerformance);
 		}

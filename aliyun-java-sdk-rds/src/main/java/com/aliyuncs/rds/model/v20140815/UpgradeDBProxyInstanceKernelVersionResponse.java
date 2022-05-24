@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpgradeDBProxyInstanceKernelVersionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceName;
 
+	private String requestId;
+
 	private String taskId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBInstanceName() {
 		return this.dBInstanceName;
@@ -44,6 +36,14 @@ public class UpgradeDBProxyInstanceKernelVersionResponse extends AcsResponse {
 
 	public void setDBInstanceName(String dBInstanceName) {
 		this.dBInstanceName = dBInstanceName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskId() {

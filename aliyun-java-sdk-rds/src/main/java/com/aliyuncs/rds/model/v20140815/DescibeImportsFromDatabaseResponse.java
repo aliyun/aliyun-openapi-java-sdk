@@ -27,11 +27,11 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalRecordCount;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
+
+	private Integer totalRecordCount;
 
 	private List<ImportResultFromDB> items;
 
@@ -41,14 +41,6 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageNumber() {
@@ -67,6 +59,14 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	public List<ImportResultFromDB> getItems() {
 		return this.items;
 	}
@@ -77,15 +77,23 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
 	public static class ImportResultFromDB {
 
-		private Integer importId;
+		private String incrementalImportingTime;
 
-		private String importDataType;
+		private Integer importId;
 
 		private String importDataStatus;
 
+		private String importDataType;
+
 		private String importDataStatusDescription;
 
-		private String incrementalImportingTime;
+		public String getIncrementalImportingTime() {
+			return this.incrementalImportingTime;
+		}
+
+		public void setIncrementalImportingTime(String incrementalImportingTime) {
+			this.incrementalImportingTime = incrementalImportingTime;
+		}
 
 		public Integer getImportId() {
 			return this.importId;
@@ -93,14 +101,6 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 
 		public void setImportId(Integer importId) {
 			this.importId = importId;
-		}
-
-		public String getImportDataType() {
-			return this.importDataType;
-		}
-
-		public void setImportDataType(String importDataType) {
-			this.importDataType = importDataType;
 		}
 
 		public String getImportDataStatus() {
@@ -111,20 +111,20 @@ public class DescibeImportsFromDatabaseResponse extends AcsResponse {
 			this.importDataStatus = importDataStatus;
 		}
 
+		public String getImportDataType() {
+			return this.importDataType;
+		}
+
+		public void setImportDataType(String importDataType) {
+			this.importDataType = importDataType;
+		}
+
 		public String getImportDataStatusDescription() {
 			return this.importDataStatusDescription;
 		}
 
 		public void setImportDataStatusDescription(String importDataStatusDescription) {
 			this.importDataStatusDescription = importDataStatusDescription;
-		}
-
-		public String getIncrementalImportingTime() {
-			return this.incrementalImportingTime;
-		}
-
-		public void setIncrementalImportingTime(String incrementalImportingTime) {
-			this.incrementalImportingTime = incrementalImportingTime;
 		}
 	}
 

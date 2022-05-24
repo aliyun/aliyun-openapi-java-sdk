@@ -28,16 +28,16 @@ public class DescribeMetaListResponseUnmarshaller {
 		
 		describeMetaListResponse.setRequestId(_ctx.stringValue("DescribeMetaListResponse.RequestId"));
 		describeMetaListResponse.setDBInstanceName(_ctx.stringValue("DescribeMetaListResponse.DBInstanceName"));
-		describeMetaListResponse.setPageNumber(_ctx.integerValue("DescribeMetaListResponse.PageNumber"));
+		describeMetaListResponse.setTotalPageCount(_ctx.integerValue("DescribeMetaListResponse.TotalPageCount"));
 		describeMetaListResponse.setPageRecordCount(_ctx.integerValue("DescribeMetaListResponse.PageRecordCount"));
 		describeMetaListResponse.setTotalRecordCount(_ctx.integerValue("DescribeMetaListResponse.TotalRecordCount"));
-		describeMetaListResponse.setTotalPageCount(_ctx.integerValue("DescribeMetaListResponse.TotalPageCount"));
+		describeMetaListResponse.setPageNumber(_ctx.integerValue("DescribeMetaListResponse.PageNumber"));
 
 		List<Meta> items = new ArrayList<Meta>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMetaListResponse.Items.Length"); i++) {
 			Meta meta = new Meta();
-			meta.setDatabase(_ctx.stringValue("DescribeMetaListResponse.Items["+ i +"].Database"));
 			meta.setTables(_ctx.stringValue("DescribeMetaListResponse.Items["+ i +"].Tables"));
+			meta.setDatabase(_ctx.stringValue("DescribeMetaListResponse.Items["+ i +"].Database"));
 			meta.setSize(_ctx.stringValue("DescribeMetaListResponse.Items["+ i +"].Size"));
 
 			items.add(meta);

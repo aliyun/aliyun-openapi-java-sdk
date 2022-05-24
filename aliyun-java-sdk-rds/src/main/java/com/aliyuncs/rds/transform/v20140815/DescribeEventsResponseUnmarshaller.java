@@ -27,25 +27,25 @@ public class DescribeEventsResponseUnmarshaller {
 	public static DescribeEventsResponse unmarshall(DescribeEventsResponse describeEventsResponse, UnmarshallerContext _ctx) {
 		
 		describeEventsResponse.setRequestId(_ctx.stringValue("DescribeEventsResponse.RequestId"));
-		describeEventsResponse.setTotalRecordCount(_ctx.integerValue("DescribeEventsResponse.TotalRecordCount"));
-		describeEventsResponse.setPageSize(_ctx.integerValue("DescribeEventsResponse.PageSize"));
 		describeEventsResponse.setPageNumber(_ctx.integerValue("DescribeEventsResponse.PageNumber"));
+		describeEventsResponse.setPageSize(_ctx.integerValue("DescribeEventsResponse.PageSize"));
+		describeEventsResponse.setTotalRecordCount(_ctx.integerValue("DescribeEventsResponse.TotalRecordCount"));
 
 		List<EventItemsItem> eventItems = new ArrayList<EventItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEventsResponse.EventItems.Length"); i++) {
 			EventItemsItem eventItemsItem = new EventItemsItem();
-			eventItemsItem.setEventId(_ctx.integerValue("DescribeEventsResponse.EventItems["+ i +"].EventId"));
-			eventItemsItem.setEventType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventType"));
 			eventItemsItem.setEventName(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventName"));
 			eventItemsItem.setEventTime(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventTime"));
-			eventItemsItem.setResourceType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].ResourceType"));
-			eventItemsItem.setResourceName(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].ResourceName"));
-			eventItemsItem.setRegionId(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].RegionId"));
 			eventItemsItem.setEventUserType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventUserType"));
-			eventItemsItem.setEventReason(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventReason"));
-			eventItemsItem.setEventPayload(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventPayload"));
 			eventItemsItem.setEventRecordTime(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventRecordTime"));
 			eventItemsItem.setCallerUid(_ctx.longValue("DescribeEventsResponse.EventItems["+ i +"].CallerUid"));
+			eventItemsItem.setRegionId(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].RegionId"));
+			eventItemsItem.setEventId(_ctx.integerValue("DescribeEventsResponse.EventItems["+ i +"].EventId"));
+			eventItemsItem.setEventType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventType"));
+			eventItemsItem.setResourceType(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].ResourceType"));
+			eventItemsItem.setEventPayload(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventPayload"));
+			eventItemsItem.setEventReason(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventReason"));
+			eventItemsItem.setResourceName(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].ResourceName"));
 
 			eventItems.add(eventItemsItem);
 		}

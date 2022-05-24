@@ -27,27 +27,27 @@ public class DescribeCrossRegionLogBackupFilesResponseUnmarshaller {
 	public static DescribeCrossRegionLogBackupFilesResponse unmarshall(DescribeCrossRegionLogBackupFilesResponse describeCrossRegionLogBackupFilesResponse, UnmarshallerContext _ctx) {
 		
 		describeCrossRegionLogBackupFilesResponse.setRequestId(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.RequestId"));
-		describeCrossRegionLogBackupFilesResponse.setRegionId(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.RegionId"));
-		describeCrossRegionLogBackupFilesResponse.setDBInstanceId(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.DBInstanceId"));
-		describeCrossRegionLogBackupFilesResponse.setStartTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.StartTime"));
 		describeCrossRegionLogBackupFilesResponse.setEndTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.EndTime"));
-		describeCrossRegionLogBackupFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.TotalRecordCount"));
+		describeCrossRegionLogBackupFilesResponse.setStartTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.StartTime"));
 		describeCrossRegionLogBackupFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.PageRecordCount"));
+		describeCrossRegionLogBackupFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.TotalRecordCount"));
+		describeCrossRegionLogBackupFilesResponse.setDBInstanceId(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.DBInstanceId"));
 		describeCrossRegionLogBackupFilesResponse.setPageNumber(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.PageNumber"));
+		describeCrossRegionLogBackupFilesResponse.setRegionId(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.RegionId"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCrossRegionLogBackupFilesResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setCrossLogBackupId(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossLogBackupId"));
-			item.setCrossBackupRegion(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossBackupRegion"));
-			item.setCrossLogBackupSize(_ctx.longValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossLogBackupSize"));
 			item.setLogBeginTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogBeginTime"));
-			item.setLogEndTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogEndTime"));
-			item.setCrossDownloadLink(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossDownloadLink"));
-			item.setCrossIntranetDownloadLink(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossIntranetDownloadLink"));
 			item.setLinkExpiredTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LinkExpiredTime"));
+			item.setCrossIntranetDownloadLink(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossIntranetDownloadLink"));
 			item.setLogFileName(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogFileName"));
+			item.setCrossBackupRegion(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossBackupRegion"));
+			item.setCrossDownloadLink(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossDownloadLink"));
+			item.setCrossLogBackupSize(_ctx.longValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossLogBackupSize"));
 			item.setInstanceId(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].InstanceId"));
+			item.setCrossLogBackupId(_ctx.integerValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].CrossLogBackupId"));
+			item.setLogEndTime(_ctx.stringValue("DescribeCrossRegionLogBackupFilesResponse.Items["+ i +"].LogEndTime"));
 
 			items.add(item);
 		}

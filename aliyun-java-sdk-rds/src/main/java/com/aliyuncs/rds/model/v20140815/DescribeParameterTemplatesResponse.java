@@ -29,9 +29,9 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 	private String engine;
 
-	private String engineVersion;
-
 	private String parameterCount;
+
+	private String engineVersion;
 
 	private List<TemplateRecord> parameters;
 
@@ -51,20 +51,20 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-	}
-
 	public String getParameterCount() {
 		return this.parameterCount;
 	}
 
 	public void setParameterCount(String parameterCount) {
 		this.parameterCount = parameterCount;
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
 	}
 
 	public List<TemplateRecord> getParameters() {
@@ -77,6 +77,8 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 	public static class TemplateRecord {
 
+		private String checkingCode;
+
 		private String parameterName;
 
 		private String parameterValue;
@@ -85,9 +87,15 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		private String forceRestart;
 
-		private String checkingCode;
-
 		private String parameterDescription;
+
+		public String getCheckingCode() {
+			return this.checkingCode;
+		}
+
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
+		}
 
 		public String getParameterName() {
 			return this.parameterName;
@@ -119,14 +127,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		public void setForceRestart(String forceRestart) {
 			this.forceRestart = forceRestart;
-		}
-
-		public String getCheckingCode() {
-			return this.checkingCode;
-		}
-
-		public void setCheckingCode(String checkingCode) {
-			this.checkingCode = checkingCode;
 		}
 
 		public String getParameterDescription() {

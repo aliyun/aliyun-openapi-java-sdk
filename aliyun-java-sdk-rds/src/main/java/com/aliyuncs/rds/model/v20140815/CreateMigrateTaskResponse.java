@@ -26,15 +26,15 @@ public class CreateMigrateTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dBInstanceId;
-
-	private String taskId;
-
 	private String dBName;
+
+	private String backupMode;
+
+	private String dBInstanceId;
 
 	private String migrateTaskId;
 
-	private String backupMode;
+	private String taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +42,6 @@ public class CreateMigrateTaskResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
 	}
 
 	public String getDBName() {
@@ -68,6 +52,22 @@ public class CreateMigrateTaskResponse extends AcsResponse {
 		this.dBName = dBName;
 	}
 
+	public String getBackupMode() {
+		return this.backupMode;
+	}
+
+	public void setBackupMode(String backupMode) {
+		this.backupMode = backupMode;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
 	public String getMigrateTaskId() {
 		return this.migrateTaskId;
 	}
@@ -76,12 +76,12 @@ public class CreateMigrateTaskResponse extends AcsResponse {
 		this.migrateTaskId = migrateTaskId;
 	}
 
-	public String getBackupMode() {
-		return this.backupMode;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override

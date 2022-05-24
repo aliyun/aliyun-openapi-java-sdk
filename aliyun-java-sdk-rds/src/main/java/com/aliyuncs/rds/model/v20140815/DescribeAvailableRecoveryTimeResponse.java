@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAvailableRecoveryTimeResponse extends AcsResponse {
 
+	private String recoveryEndTime;
+
 	private String requestId;
 
-	private String recoveryBeginTime;
-
-	private String recoveryEndTime;
+	private Integer crossBackupId;
 
 	private String dBInstanceId;
 
+	private String recoveryBeginTime;
+
 	private String regionId;
 
-	private Integer crossBackupId;
+	public String getRecoveryEndTime() {
+		return this.recoveryEndTime;
+	}
+
+	public void setRecoveryEndTime(String recoveryEndTime) {
+		this.recoveryEndTime = recoveryEndTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,20 +52,12 @@ public class DescribeAvailableRecoveryTimeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRecoveryBeginTime() {
-		return this.recoveryBeginTime;
+	public Integer getCrossBackupId() {
+		return this.crossBackupId;
 	}
 
-	public void setRecoveryBeginTime(String recoveryBeginTime) {
-		this.recoveryBeginTime = recoveryBeginTime;
-	}
-
-	public String getRecoveryEndTime() {
-		return this.recoveryEndTime;
-	}
-
-	public void setRecoveryEndTime(String recoveryEndTime) {
-		this.recoveryEndTime = recoveryEndTime;
+	public void setCrossBackupId(Integer crossBackupId) {
+		this.crossBackupId = crossBackupId;
 	}
 
 	public String getDBInstanceId() {
@@ -68,20 +68,20 @@ public class DescribeAvailableRecoveryTimeResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
+	public String getRecoveryBeginTime() {
+		return this.recoveryBeginTime;
+	}
+
+	public void setRecoveryBeginTime(String recoveryBeginTime) {
+		this.recoveryBeginTime = recoveryBeginTime;
+	}
+
 	public String getRegionId() {
 		return this.regionId;
 	}
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
-	}
-
-	public Integer getCrossBackupId() {
-		return this.crossBackupId;
-	}
-
-	public void setCrossBackupId(Integer crossBackupId) {
-		this.crossBackupId = crossBackupId;
 	}
 
 	@Override

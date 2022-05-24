@@ -183,6 +183,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private Integer switchWeight;
 
+		private Boolean deletionProtection;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public String getVpcId() {
@@ -567,6 +569,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setSwitchWeight(Integer switchWeight) {
 			this.switchWeight = switchWeight;
+		}
+
+		public Boolean getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(Boolean deletionProtection) {
+			this.deletionProtection = deletionProtection;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

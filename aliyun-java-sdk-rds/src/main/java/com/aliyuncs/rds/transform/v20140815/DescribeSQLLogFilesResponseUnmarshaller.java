@@ -27,19 +27,19 @@ public class DescribeSQLLogFilesResponseUnmarshaller {
 	public static DescribeSQLLogFilesResponse unmarshall(DescribeSQLLogFilesResponse describeSQLLogFilesResponse, UnmarshallerContext _ctx) {
 		
 		describeSQLLogFilesResponse.setRequestId(_ctx.stringValue("DescribeSQLLogFilesResponse.RequestId"));
-		describeSQLLogFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeSQLLogFilesResponse.TotalRecordCount"));
 		describeSQLLogFilesResponse.setPageNumber(_ctx.integerValue("DescribeSQLLogFilesResponse.PageNumber"));
 		describeSQLLogFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeSQLLogFilesResponse.PageRecordCount"));
+		describeSQLLogFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeSQLLogFilesResponse.TotalRecordCount"));
 
 		List<LogFile> items = new ArrayList<LogFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogFilesResponse.Items.Length"); i++) {
 			LogFile logFile = new LogFile();
 			logFile.setFileID(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].FileID"));
-			logFile.setLogStatus(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStatus"));
-			logFile.setLogDownloadURL(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogDownloadURL"));
-			logFile.setLogSize(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogSize"));
 			logFile.setLogStartTime(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStartTime"));
+			logFile.setLogSize(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogSize"));
+			logFile.setLogDownloadURL(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogDownloadURL"));
 			logFile.setLogEndTime(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogEndTime"));
+			logFile.setLogStatus(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStatus"));
 
 			items.add(logFile);
 		}

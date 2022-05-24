@@ -39,6 +39,8 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 
 	private Long ownerId;
 
+	private String babelfishPort;
+
 	private String port;
 	public AllocateInstancePublicConnectionRequest() {
 		super("Rds", "2014-08-15", "AllocateInstancePublicConnection", "rds");
@@ -123,6 +125,17 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBabelfishPort() {
+		return this.babelfishPort;
+	}
+
+	public void setBabelfishPort(String babelfishPort) {
+		this.babelfishPort = babelfishPort;
+		if(babelfishPort != null){
+			putQueryParameter("BabelfishPort", babelfishPort);
 		}
 	}
 

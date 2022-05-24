@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeOssDownloadsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
+
+	private String requestId;
 
 	private String migrateTaskId;
 
 	private List<OssDownload> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -47,6 +39,14 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMigrateTaskId() {
@@ -67,37 +67,21 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 
 	public static class OssDownload {
 
-		private String fileName;
-
-		private String createTime;
-
 		private String endTime;
-
-		private String backupMode;
-
-		private String fileSize;
 
 		private String status;
 
-		private String isAvailable;
-
 		private String description;
 
-		public String getFileName() {
-			return this.fileName;
-		}
+		private String createTime;
 
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
-		}
+		private String backupMode;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+		private String isAvailable;
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String fileName;
+
+		private String fileSize;
 
 		public String getEndTime() {
 			return this.endTime;
@@ -105,22 +89,6 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 
 		public void setEndTime(String endTime) {
 			this.endTime = endTime;
-		}
-
-		public String getBackupMode() {
-			return this.backupMode;
-		}
-
-		public void setBackupMode(String backupMode) {
-			this.backupMode = backupMode;
-		}
-
-		public String getFileSize() {
-			return this.fileSize;
-		}
-
-		public void setFileSize(String fileSize) {
-			this.fileSize = fileSize;
 		}
 
 		public String getStatus() {
@@ -131,6 +99,30 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getBackupMode() {
+			return this.backupMode;
+		}
+
+		public void setBackupMode(String backupMode) {
+			this.backupMode = backupMode;
+		}
+
 		public String getIsAvailable() {
 			return this.isAvailable;
 		}
@@ -139,12 +131,20 @@ public class DescribeOssDownloadsResponse extends AcsResponse {
 			this.isAvailable = isAvailable;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getFileName() {
+			return this.fileName;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public String getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(String fileSize) {
+			this.fileSize = fileSize;
 		}
 	}
 

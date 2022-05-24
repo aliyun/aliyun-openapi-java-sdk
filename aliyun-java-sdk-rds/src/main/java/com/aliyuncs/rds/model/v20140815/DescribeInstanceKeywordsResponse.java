@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceKeywordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String key;
 
+	private String requestId;
+
 	private List<String> words;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getKey() {
 		return this.key;
@@ -45,6 +37,14 @@ public class DescribeInstanceKeywordsResponse extends AcsResponse {
 
 	public void setKey(String key) {
 		this.key = key;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getWords() {

@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAccountsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String systemAdminAccountStatus;
 
 	private String systemAdminAccountFirstActivationTime;
 
 	private Integer pageNumber;
 
+	private String requestId;
+
 	private Integer totalRecordCount;
 
 	private List<DBInstanceAccount> accounts;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getSystemAdminAccountStatus() {
 		return this.systemAdminAccountStatus;
@@ -69,6 +61,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
 	}
@@ -87,35 +87,19 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class DBInstanceAccount {
 
-		private String dBInstanceId;
-
-		private String accountName;
-
 		private String accountStatus;
-
-		private String accountType;
 
 		private String accountDescription;
 
+		private String dBInstanceId;
+
 		private String privExceeded;
 
+		private String accountType;
+
+		private String accountName;
+
 		private List<DatabasePrivilege> databasePrivileges;
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
 
 		public String getAccountStatus() {
 			return this.accountStatus;
@@ -123,14 +107,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountStatus(String accountStatus) {
 			this.accountStatus = accountStatus;
-		}
-
-		public String getAccountType() {
-			return this.accountType;
-		}
-
-		public void setAccountType(String accountType) {
-			this.accountType = accountType;
 		}
 
 		public String getAccountDescription() {
@@ -141,12 +117,36 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountDescription = accountDescription;
 		}
 
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
 		public String getPrivExceeded() {
 			return this.privExceeded;
 		}
 
 		public void setPrivExceeded(String privExceeded) {
 			this.privExceeded = privExceeded;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {

@@ -16,6 +16,8 @@ package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -28,6 +30,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dBParamGroupId;
 
+	private String babelfishConfig;
+
 	private Long resourceOwnerId;
 
 	private Integer dBInstanceStorage;
@@ -35,6 +39,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String systemDBCharset;
 
 	private String engineVersion;
+
+	private Boolean deletionProtection;
 
 	private String resourceGroupId;
 
@@ -98,6 +104,9 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Integer amount;
 
+	@SerializedName("serverlessConfig")
+	private ServerlessConfig serverlessConfig;
+
 	private String usedTime;
 
 	private String targetMinorVersion;
@@ -130,6 +139,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBParamGroupId = dBParamGroupId;
 		if(dBParamGroupId != null){
 			putQueryParameter("DBParamGroupId", dBParamGroupId);
+		}
+	}
+
+	public String getBabelfishConfig() {
+		return this.babelfishConfig;
+	}
+
+	public void setBabelfishConfig(String babelfishConfig) {
+		this.babelfishConfig = babelfishConfig;
+		if(babelfishConfig != null){
+			putQueryParameter("BabelfishConfig", babelfishConfig);
 		}
 	}
 
@@ -174,6 +194,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public Boolean getDeletionProtection() {
+		return this.deletionProtection;
+	}
+
+	public void setDeletionProtection(Boolean deletionProtection) {
+		this.deletionProtection = deletionProtection;
+		if(deletionProtection != null){
+			putQueryParameter("DeletionProtection", deletionProtection.toString());
 		}
 	}
 
@@ -521,6 +552,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public ServerlessConfig getServerlessConfig() {
+		return this.serverlessConfig;
+	}
+
+	public void setServerlessConfig(ServerlessConfig serverlessConfig) {
+		this.serverlessConfig = serverlessConfig;	
+		if (serverlessConfig != null) {
+			putQueryParameter("ServerlessConfig" , new Gson().toJson(serverlessConfig));
+		}	
+	}
+
 	public String getUsedTime() {
 		return this.usedTime;
 	}
@@ -629,6 +671,31 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class ServerlessConfig {
+
+		@SerializedName("MinCapacity")
+		private Double minCapacity;
+
+		@SerializedName("MaxCapacity")
+		private Double maxCapacity;
+
+		public Double getMinCapacity() {
+			return this.minCapacity;
+		}
+
+		public void setMinCapacity(Double minCapacity) {
+			this.minCapacity = minCapacity;
+		}
+
+		public Double getMaxCapacity() {
+			return this.maxCapacity;
+		}
+
+		public void setMaxCapacity(Double maxCapacity) {
+			this.maxCapacity = maxCapacity;
 		}
 	}
 

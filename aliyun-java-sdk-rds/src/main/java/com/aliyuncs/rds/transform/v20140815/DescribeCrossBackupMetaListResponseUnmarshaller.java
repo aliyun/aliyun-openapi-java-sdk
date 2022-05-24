@@ -28,16 +28,16 @@ public class DescribeCrossBackupMetaListResponseUnmarshaller {
 		
 		describeCrossBackupMetaListResponse.setRequestId(_ctx.stringValue("DescribeCrossBackupMetaListResponse.RequestId"));
 		describeCrossBackupMetaListResponse.setDBInstanceName(_ctx.stringValue("DescribeCrossBackupMetaListResponse.DBInstanceName"));
-		describeCrossBackupMetaListResponse.setPageNumber(_ctx.integerValue("DescribeCrossBackupMetaListResponse.PageNumber"));
+		describeCrossBackupMetaListResponse.setTotalPageCount(_ctx.integerValue("DescribeCrossBackupMetaListResponse.TotalPageCount"));
 		describeCrossBackupMetaListResponse.setPageRecordCount(_ctx.integerValue("DescribeCrossBackupMetaListResponse.PageRecordCount"));
 		describeCrossBackupMetaListResponse.setTotalRecordCount(_ctx.integerValue("DescribeCrossBackupMetaListResponse.TotalRecordCount"));
-		describeCrossBackupMetaListResponse.setTotalPageCount(_ctx.integerValue("DescribeCrossBackupMetaListResponse.TotalPageCount"));
+		describeCrossBackupMetaListResponse.setPageNumber(_ctx.integerValue("DescribeCrossBackupMetaListResponse.PageNumber"));
 
 		List<Meta> items = new ArrayList<Meta>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCrossBackupMetaListResponse.Items.Length"); i++) {
 			Meta meta = new Meta();
-			meta.setDatabase(_ctx.stringValue("DescribeCrossBackupMetaListResponse.Items["+ i +"].Database"));
 			meta.setTables(_ctx.stringValue("DescribeCrossBackupMetaListResponse.Items["+ i +"].Tables"));
+			meta.setDatabase(_ctx.stringValue("DescribeCrossBackupMetaListResponse.Items["+ i +"].Database"));
 			meta.setSize(_ctx.stringValue("DescribeCrossBackupMetaListResponse.Items["+ i +"].Size"));
 
 			items.add(meta);

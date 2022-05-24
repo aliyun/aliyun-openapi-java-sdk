@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLocalAvailableRecoveryTimeResponse extends AcsResponse {
 
-	private String requestId;
+	private String recoveryEndTime;
 
 	private String dBInstanceId;
 
+	private String requestId;
+
 	private String recoveryBeginTime;
 
-	private String recoveryEndTime;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getRecoveryEndTime() {
+		return this.recoveryEndTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setRecoveryEndTime(String recoveryEndTime) {
+		this.recoveryEndTime = recoveryEndTime;
 	}
 
 	public String getDBInstanceId() {
@@ -48,20 +48,20 @@ public class DescribeLocalAvailableRecoveryTimeResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getRecoveryBeginTime() {
 		return this.recoveryBeginTime;
 	}
 
 	public void setRecoveryBeginTime(String recoveryBeginTime) {
 		this.recoveryBeginTime = recoveryBeginTime;
-	}
-
-	public String getRecoveryEndTime() {
-		return this.recoveryEndTime;
-	}
-
-	public void setRecoveryEndTime(String recoveryEndTime) {
-		this.recoveryEndTime = recoveryEndTime;
 	}
 
 	@Override

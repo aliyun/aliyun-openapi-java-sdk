@@ -43,6 +43,8 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 
 	private Integer usedTime;
 
+	private String autoRenew;
+
 	private String payType;
 	public TransformDBInstancePayTypeRequest() {
 		super("Rds", "2014-08-15", "TransformDBInstancePayType", "rds");
@@ -149,6 +151,17 @@ public class TransformDBInstancePayTypeRequest extends RpcAcsRequest<TransformDB
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public String getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(String autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew);
 		}
 	}
 

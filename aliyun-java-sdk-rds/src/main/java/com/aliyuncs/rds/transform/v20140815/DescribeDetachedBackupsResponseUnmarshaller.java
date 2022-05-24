@@ -27,36 +27,37 @@ public class DescribeDetachedBackupsResponseUnmarshaller {
 	public static DescribeDetachedBackupsResponse unmarshall(DescribeDetachedBackupsResponse describeDetachedBackupsResponse, UnmarshallerContext _ctx) {
 		
 		describeDetachedBackupsResponse.setRequestId(_ctx.stringValue("DescribeDetachedBackupsResponse.RequestId"));
-		describeDetachedBackupsResponse.setTotalRecordCount(_ctx.stringValue("DescribeDetachedBackupsResponse.TotalRecordCount"));
+		describeDetachedBackupsResponse.setTotalBackupSize(_ctx.longValue("DescribeDetachedBackupsResponse.TotalBackupSize"));
 		describeDetachedBackupsResponse.setPageNumber(_ctx.stringValue("DescribeDetachedBackupsResponse.PageNumber"));
 		describeDetachedBackupsResponse.setPageRecordCount(_ctx.stringValue("DescribeDetachedBackupsResponse.PageRecordCount"));
-		describeDetachedBackupsResponse.setTotalBackupSize(_ctx.longValue("DescribeDetachedBackupsResponse.TotalBackupSize"));
+		describeDetachedBackupsResponse.setTotalRecordCount(_ctx.stringValue("DescribeDetachedBackupsResponse.TotalRecordCount"));
 
 		List<Backup> items = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDetachedBackupsResponse.Items.Length"); i++) {
 			Backup backup = new Backup();
-			backup.setBackupId(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupId"));
-			backup.setDBInstanceId(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].DBInstanceId"));
-			backup.setBackupStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupStatus"));
-			backup.setBackupStartTime(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupStartTime"));
-			backup.setBackupEndTime(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupEndTime"));
-			backup.setBackupType(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupType"));
-			backup.setBackupMode(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupMode"));
-			backup.setBackupMethod(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupMethod"));
-			backup.setBackupDownloadURL(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupDownloadURL"));
-			backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupIntranetDownloadURL"));
-			backup.setBackupLocation(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupLocation"));
-			backup.setBackupExtractionStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupExtractionStatus"));
-			backup.setBackupScale(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupScale"));
-			backup.setBackupDBNames(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupDBNames"));
-			backup.setTotalBackupSize(_ctx.longValue("DescribeDetachedBackupsResponse.Items["+ i +"].TotalBackupSize"));
-			backup.setBackupSize(_ctx.longValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupSize"));
-			backup.setHostInstanceID(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].HostInstanceID"));
-			backup.setStoreStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].StoreStatus"));
-			backup.setMetaStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].MetaStatus"));
 			backup.setSlaveStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].SlaveStatus"));
 			backup.setConsistentTime(_ctx.longValue("DescribeDetachedBackupsResponse.Items["+ i +"].ConsistentTime"));
+			backup.setStoreStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].StoreStatus"));
+			backup.setBackupStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupStatus"));
+			backup.setBackupLocation(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupLocation"));
+			backup.setBackupType(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupType"));
+			backup.setBackupStartTime(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupStartTime"));
+			backup.setTotalBackupSize(_ctx.longValue("DescribeDetachedBackupsResponse.Items["+ i +"].TotalBackupSize"));
+			backup.setBackupDownloadURL(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupDownloadURL"));
 			backup.setIsAvail(_ctx.integerValue("DescribeDetachedBackupsResponse.Items["+ i +"].IsAvail"));
+			backup.setMetaStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].MetaStatus"));
+			backup.setBackupEndTime(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupEndTime"));
+			backup.setBackupDBNames(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupDBNames"));
+			backup.setBackupScale(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupScale"));
+			backup.setBackupId(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupId"));
+			backup.setHostInstanceID(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].HostInstanceID"));
+			backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupIntranetDownloadURL"));
+			backup.setBackupSize(_ctx.longValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupSize"));
+			backup.setBackupMode(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupMode"));
+			backup.setDBInstanceId(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].DBInstanceId"));
+			backup.setDBInstanceComment(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].DBInstanceComment"));
+			backup.setBackupExtractionStatus(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupExtractionStatus"));
+			backup.setBackupMethod(_ctx.stringValue("DescribeDetachedBackupsResponse.Items["+ i +"].BackupMethod"));
 
 			items.add(backup);
 		}

@@ -47,19 +47,11 @@ public class DescribeAvailableClassesResponse extends AcsResponse {
 
 	public static class DBInstanceClass {
 
-		private String dBInstanceClass;
-
 		private String storageRange;
 
+		private String dBInstanceClass;
+
 		private DBInstanceStorageRange dBInstanceStorageRange;
-
-		public String getDBInstanceClass() {
-			return this.dBInstanceClass;
-		}
-
-		public void setDBInstanceClass(String dBInstanceClass) {
-			this.dBInstanceClass = dBInstanceClass;
-		}
 
 		public String getStorageRange() {
 			return this.storageRange;
@@ -67,6 +59,14 @@ public class DescribeAvailableClassesResponse extends AcsResponse {
 
 		public void setStorageRange(String storageRange) {
 			this.storageRange = storageRange;
+		}
+
+		public String getDBInstanceClass() {
+			return this.dBInstanceClass;
+		}
+
+		public void setDBInstanceClass(String dBInstanceClass) {
+			this.dBInstanceClass = dBInstanceClass;
 		}
 
 		public DBInstanceStorageRange getDBInstanceStorageRange() {
@@ -79,18 +79,18 @@ public class DescribeAvailableClassesResponse extends AcsResponse {
 
 		public static class DBInstanceStorageRange {
 
-			private Integer maxValue;
+			private Integer step;
 
 			private Integer minValue;
 
-			private Integer step;
+			private Integer maxValue;
 
-			public Integer getMaxValue() {
-				return this.maxValue;
+			public Integer getStep() {
+				return this.step;
 			}
 
-			public void setMaxValue(Integer maxValue) {
-				this.maxValue = maxValue;
+			public void setStep(Integer step) {
+				this.step = step;
 			}
 
 			public Integer getMinValue() {
@@ -101,12 +101,12 @@ public class DescribeAvailableClassesResponse extends AcsResponse {
 				this.minValue = minValue;
 			}
 
-			public Integer getStep() {
-				return this.step;
+			public Integer getMaxValue() {
+				return this.maxValue;
 			}
 
-			public void setStep(Integer step) {
-				this.step = step;
+			public void setMaxValue(Integer maxValue) {
+				this.maxValue = maxValue;
 			}
 		}
 	}

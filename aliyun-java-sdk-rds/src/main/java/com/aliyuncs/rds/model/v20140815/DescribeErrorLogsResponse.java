@@ -27,9 +27,9 @@ public class DescribeErrorLogsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Integer pageRecordCount;
-
 	private String requestId;
+
+	private Integer pageRecordCount;
 
 	private Integer totalRecordCount;
 
@@ -43,20 +43,20 @@ public class DescribeErrorLogsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
 	}
 
 	public Integer getTotalRecordCount() {

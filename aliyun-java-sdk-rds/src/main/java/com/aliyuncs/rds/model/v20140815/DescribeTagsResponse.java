@@ -47,19 +47,11 @@ public class DescribeTagsResponse extends AcsResponse {
 
 	public static class TagInfos {
 
-		private String tagKey;
-
 		private String tagValue;
 
+		private String tagKey;
+
 		private List<String> dBInstanceIds;
-
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -67,6 +59,14 @@ public class DescribeTagsResponse extends AcsResponse {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 
 		public List<String> getDBInstanceIds() {

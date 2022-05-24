@@ -31,6 +31,8 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 
 	private String clientToken;
 
+	private String generalGroupName;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -79,6 +81,17 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getGeneralGroupName() {
+		return this.generalGroupName;
+	}
+
+	public void setGeneralGroupName(String generalGroupName) {
+		this.generalGroupName = generalGroupName;
+		if(generalGroupName != null){
+			putQueryParameter("GeneralGroupName", generalGroupName);
 		}
 	}
 

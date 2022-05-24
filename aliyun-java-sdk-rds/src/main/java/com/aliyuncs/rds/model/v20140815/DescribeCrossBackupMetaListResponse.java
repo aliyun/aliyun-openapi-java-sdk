@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceName;
 
-	private Integer pageNumber;
+	private Integer totalPageCount;
+
+	private String requestId;
 
 	private Integer pageRecordCount;
 
 	private Integer totalRecordCount;
 
-	private Integer totalPageCount;
+	private Integer pageNumber;
 
 	private List<Meta> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBInstanceName() {
 		return this.dBInstanceName;
@@ -55,12 +47,20 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 		this.dBInstanceName = dBInstanceName;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalPageCount() {
+		return this.totalPageCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalPageCount(Integer totalPageCount) {
+		this.totalPageCount = totalPageCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageRecordCount() {
@@ -79,12 +79,12 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 		this.totalRecordCount = totalRecordCount;
 	}
 
-	public Integer getTotalPageCount() {
-		return this.totalPageCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalPageCount(Integer totalPageCount) {
-		this.totalPageCount = totalPageCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Meta> getItems() {
@@ -97,19 +97,11 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 
 	public static class Meta {
 
-		private String database;
-
 		private String tables;
 
+		private String database;
+
 		private String size;
-
-		public String getDatabase() {
-			return this.database;
-		}
-
-		public void setDatabase(String database) {
-			this.database = database;
-		}
 
 		public String getTables() {
 			return this.tables;
@@ -117,6 +109,14 @@ public class DescribeCrossBackupMetaListResponse extends AcsResponse {
 
 		public void setTables(String tables) {
 			this.tables = tables;
+		}
+
+		public String getDatabase() {
+			return this.database;
+		}
+
+		public void setDatabase(String database) {
+			this.database = database;
 		}
 
 		public String getSize() {

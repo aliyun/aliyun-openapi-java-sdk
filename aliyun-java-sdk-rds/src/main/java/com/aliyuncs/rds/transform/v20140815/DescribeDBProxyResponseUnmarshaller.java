@@ -28,24 +28,25 @@ public class DescribeDBProxyResponseUnmarshaller {
 	public static DescribeDBProxyResponse unmarshall(DescribeDBProxyResponse describeDBProxyResponse, UnmarshallerContext _ctx) {
 		
 		describeDBProxyResponse.setRequestId(_ctx.stringValue("DescribeDBProxyResponse.RequestId"));
-		describeDBProxyResponse.setDBProxyServiceStatus(_ctx.stringValue("DescribeDBProxyResponse.DBProxyServiceStatus"));
-		describeDBProxyResponse.setDBProxyInstanceType(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceType"));
-		describeDBProxyResponse.setDBProxyInstanceNum(_ctx.integerValue("DescribeDBProxyResponse.DBProxyInstanceNum"));
-		describeDBProxyResponse.setDBProxyInstanceStatus(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceStatus"));
-		describeDBProxyResponse.setDBProxyInstanceCurrentMinorVersion(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceCurrentMinorVersion"));
 		describeDBProxyResponse.setDBProxyInstanceLatestMinorVersion(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceLatestMinorVersion"));
+		describeDBProxyResponse.setDBProxyInstanceCurrentMinorVersion(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceCurrentMinorVersion"));
+		describeDBProxyResponse.setDBProxyInstanceNum(_ctx.integerValue("DescribeDBProxyResponse.DBProxyInstanceNum"));
+		describeDBProxyResponse.setDBProxyInstanceType(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceType"));
+		describeDBProxyResponse.setDBProxyInstanceStatus(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceStatus"));
+		describeDBProxyResponse.setDBProxyServiceStatus(_ctx.stringValue("DescribeDBProxyResponse.DBProxyServiceStatus"));
 		describeDBProxyResponse.setDBProxyInstanceName(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceName"));
+		describeDBProxyResponse.setDBProxyInstanceSize(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceSize"));
 
 		List<DBProxyConnectStringItemsItem> dBProxyConnectStringItems = new ArrayList<DBProxyConnectStringItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyResponse.DBProxyConnectStringItems.Length"); i++) {
 			DBProxyConnectStringItemsItem dBProxyConnectStringItemsItem = new DBProxyConnectStringItemsItem();
-			dBProxyConnectStringItemsItem.setDBProxyEndpointId(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyEndpointId"));
-			dBProxyConnectStringItemsItem.setDBProxyConnectString(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectString"));
-			dBProxyConnectStringItemsItem.setDBProxyConnectStringPort(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringPort"));
+			dBProxyConnectStringItemsItem.setDBProxyConnectStringNetWorkType(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringNetWorkType"));
 			dBProxyConnectStringItemsItem.setDBProxyConnectStringNetType(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringNetType"));
 			dBProxyConnectStringItemsItem.setDBProxyVpcInstanceId(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyVpcInstanceId"));
 			dBProxyConnectStringItemsItem.setDBProxyEndpointName(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyEndpointName"));
-			dBProxyConnectStringItemsItem.setDBProxyConnectStringNetWorkType(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringNetWorkType"));
+			dBProxyConnectStringItemsItem.setDBProxyEndpointId(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyEndpointId"));
+			dBProxyConnectStringItemsItem.setDBProxyConnectStringPort(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringPort"));
+			dBProxyConnectStringItemsItem.setDBProxyConnectString(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectString"));
 
 			dBProxyConnectStringItems.add(dBProxyConnectStringItemsItem);
 		}
@@ -54,10 +55,10 @@ public class DescribeDBProxyResponseUnmarshaller {
 		List<DbProxyEndpointItemsItem> dbProxyEndpointItems = new ArrayList<DbProxyEndpointItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyResponse.DbProxyEndpointItems.Length"); i++) {
 			DbProxyEndpointItemsItem dbProxyEndpointItemsItem = new DbProxyEndpointItemsItem();
+			dbProxyEndpointItemsItem.setDbProxyEndpointAliases(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyEndpointAliases"));
 			dbProxyEndpointItemsItem.setDbProxyEndpointName(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyEndpointName"));
 			dbProxyEndpointItemsItem.setDbProxyEndpointType(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyEndpointType"));
 			dbProxyEndpointItemsItem.setDbProxyReadWriteMode(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyReadWriteMode"));
-			dbProxyEndpointItemsItem.setDbProxyEndpointAliases(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyEndpointAliases"));
 
 			dbProxyEndpointItems.add(dbProxyEndpointItemsItem);
 		}

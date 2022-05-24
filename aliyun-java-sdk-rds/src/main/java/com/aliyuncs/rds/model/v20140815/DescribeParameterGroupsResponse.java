@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParameterGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean signalForOptimizeParams;
 
+	private String requestId;
+
 	private List<ParameterGroup> parameterGroups;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSignalForOptimizeParams() {
 		return this.signalForOptimizeParams;
@@ -45,6 +37,14 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 
 	public void setSignalForOptimizeParams(Boolean signalForOptimizeParams) {
 		this.signalForOptimizeParams = signalForOptimizeParams;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ParameterGroup> getParameterGroups() {
@@ -57,48 +57,32 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 
 	public static class ParameterGroup {
 
-		private Integer parameterGroupType;
-
-		private String parameterGroupName;
-
-		private Integer paramCounts;
+		private String updateTime;
 
 		private String parameterGroupDesc;
 
-		private Integer forceRestart;
-
-		private String engine;
-
-		private String engineVersion;
-
 		private String createTime;
 
-		private String updateTime;
+		private Integer forceRestart;
 
 		private String parameterGroupId;
 
-		public Integer getParameterGroupType() {
-			return this.parameterGroupType;
+		private String parameterGroupName;
+
+		private String engine;
+
+		private Integer paramCounts;
+
+		private String engineVersion;
+
+		private Integer parameterGroupType;
+
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setParameterGroupType(Integer parameterGroupType) {
-			this.parameterGroupType = parameterGroupType;
-		}
-
-		public String getParameterGroupName() {
-			return this.parameterGroupName;
-		}
-
-		public void setParameterGroupName(String parameterGroupName) {
-			this.parameterGroupName = parameterGroupName;
-		}
-
-		public Integer getParamCounts() {
-			return this.paramCounts;
-		}
-
-		public void setParamCounts(Integer paramCounts) {
-			this.paramCounts = paramCounts;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getParameterGroupDesc() {
@@ -109,12 +93,36 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 			this.parameterGroupDesc = parameterGroupDesc;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public Integer getForceRestart() {
 			return this.forceRestart;
 		}
 
 		public void setForceRestart(Integer forceRestart) {
 			this.forceRestart = forceRestart;
+		}
+
+		public String getParameterGroupId() {
+			return this.parameterGroupId;
+		}
+
+		public void setParameterGroupId(String parameterGroupId) {
+			this.parameterGroupId = parameterGroupId;
+		}
+
+		public String getParameterGroupName() {
+			return this.parameterGroupName;
+		}
+
+		public void setParameterGroupName(String parameterGroupName) {
+			this.parameterGroupName = parameterGroupName;
 		}
 
 		public String getEngine() {
@@ -125,6 +133,14 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
+		public Integer getParamCounts() {
+			return this.paramCounts;
+		}
+
+		public void setParamCounts(Integer paramCounts) {
+			this.paramCounts = paramCounts;
+		}
+
 		public String getEngineVersion() {
 			return this.engineVersion;
 		}
@@ -133,28 +149,12 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 			this.engineVersion = engineVersion;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public Integer getParameterGroupType() {
+			return this.parameterGroupType;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getParameterGroupId() {
-			return this.parameterGroupId;
-		}
-
-		public void setParameterGroupId(String parameterGroupId) {
-			this.parameterGroupId = parameterGroupId;
+		public void setParameterGroupType(Integer parameterGroupType) {
+			this.parameterGroupType = parameterGroupType;
 		}
 	}
 

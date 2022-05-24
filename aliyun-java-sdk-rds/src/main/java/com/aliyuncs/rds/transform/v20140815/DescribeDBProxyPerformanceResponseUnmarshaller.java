@@ -28,21 +28,21 @@ public class DescribeDBProxyPerformanceResponseUnmarshaller {
 	public static DescribeDBProxyPerformanceResponse unmarshall(DescribeDBProxyPerformanceResponse describeDBProxyPerformanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDBProxyPerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBProxyPerformanceResponse.RequestId"));
-		describeDBProxyPerformanceResponse.setDBInstanceId(_ctx.stringValue("DescribeDBProxyPerformanceResponse.DBInstanceId"));
-		describeDBProxyPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBProxyPerformanceResponse.StartTime"));
 		describeDBProxyPerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBProxyPerformanceResponse.EndTime"));
+		describeDBProxyPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBProxyPerformanceResponse.StartTime"));
+		describeDBProxyPerformanceResponse.setDBInstanceId(_ctx.stringValue("DescribeDBProxyPerformanceResponse.DBInstanceId"));
 
 		List<PerformanceKey> performanceKeys = new ArrayList<PerformanceKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyPerformanceResponse.PerformanceKeys.Length"); i++) {
 			PerformanceKey performanceKey = new PerformanceKey();
-			performanceKey.setKey(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Key"));
 			performanceKey.setValueFormat(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].ValueFormat"));
+			performanceKey.setKey(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Key"));
 
 			List<PerformanceValue> values = new ArrayList<PerformanceValue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Values.Length"); j++) {
 				PerformanceValue performanceValue = new PerformanceValue();
-				performanceValue.setValue(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Values["+ j +"].Value"));
 				performanceValue.setDate(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Values["+ j +"].Date"));
+				performanceValue.setValue(_ctx.stringValue("DescribeDBProxyPerformanceResponse.PerformanceKeys["+ i +"].Values["+ j +"].Value"));
 
 				values.add(performanceValue);
 			}
