@@ -60,6 +60,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setKindCode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].KindCode"));
 			dBInstance.setCloudType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CloudType"));
 			dBInstance.setCapacityUnit(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CapacityUnit"));
+			dBInstance.setStorageType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].StorageType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Tags.Length"); j++) {

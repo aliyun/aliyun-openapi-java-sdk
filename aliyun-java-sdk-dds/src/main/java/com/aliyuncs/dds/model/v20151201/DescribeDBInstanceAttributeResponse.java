@@ -119,6 +119,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String cloudType;
 
+		private String storageType;
+
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
@@ -415,6 +417,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setCloudType(String cloudType) {
 			this.cloudType = cloudType;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {

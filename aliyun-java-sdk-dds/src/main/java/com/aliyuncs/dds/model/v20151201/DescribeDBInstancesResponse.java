@@ -123,6 +123,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String capacityUnit;
 
+		private String storageType;
+
 		private List<Tag> tags;
 
 		private List<MongosAttribute> mongosList;
@@ -311,6 +313,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setCapacityUnit(String capacityUnit) {
 			this.capacityUnit = capacityUnit;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
 		public List<Tag> getTags() {

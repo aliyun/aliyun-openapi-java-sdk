@@ -34,6 +34,7 @@ public class DescribeRegionsResponseUnmarshaller {
 			DdsRegion ddsRegion = new DdsRegion();
 			ddsRegion.setZoneIds(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].ZoneIds"));
 			ddsRegion.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
+			ddsRegion.setRegionName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionName"));
 
 			List<Zone> zones = new ArrayList<Zone>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRegionsResponse.Regions["+ i +"].Zones.Length"); j++) {
