@@ -1,3 +1,6 @@
+2022-05-25 Version: 1.0.19
+- Kill Redis instance all sessions api.
+
 2022-05-20 Version: 1.0.18
 - Dbgateway support delete api.
 
