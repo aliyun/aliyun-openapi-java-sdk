@@ -86,6 +86,7 @@ public class DescribeMetricRuleTemplateAttributeResponseUnmarshaller {
 			info.setTimes(_ctx.integerValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Info.Times"));
 			info.setThreshold(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Info.Threshold"));
 			info.setStatistics(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Info.Statistics"));
+			info.setPreCondition(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Info.PreCondition"));
 			escalations.setInfo(info);
 
 			Warn warn = new Warn();
@@ -93,6 +94,7 @@ public class DescribeMetricRuleTemplateAttributeResponseUnmarshaller {
 			warn.setTimes(_ctx.integerValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Warn.Times"));
 			warn.setThreshold(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Warn.Threshold"));
 			warn.setStatistics(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Warn.Statistics"));
+			warn.setPreCondition(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Warn.PreCondition"));
 			escalations.setWarn(warn);
 
 			Critical critical = new Critical();
@@ -100,6 +102,7 @@ public class DescribeMetricRuleTemplateAttributeResponseUnmarshaller {
 			critical.setTimes(_ctx.integerValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Critical.Times"));
 			critical.setThreshold(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Critical.Threshold"));
 			critical.setStatistics(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Critical.Statistics"));
+			critical.setPreCondition(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates["+ i +"].Escalations.Critical.PreCondition"));
 			escalations.setCritical(critical);
 			alertTemplate.setEscalations(escalations);
 

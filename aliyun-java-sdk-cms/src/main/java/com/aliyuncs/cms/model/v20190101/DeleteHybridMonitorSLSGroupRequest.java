@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeActiveMetricRuleListRequest extends RpcAcsRequest<DescribeActiveMetricRuleListResponse> {
+public class DeleteHybridMonitorSLSGroupRequest extends RpcAcsRequest<DeleteHybridMonitorSLSGroupResponse> {
 	   
 
-	private String product;
-	public DescribeActiveMetricRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeActiveMetricRuleList", "cms");
-		setMethod(MethodType.GET);
+	private String sLSGroupName;
+	public DeleteHybridMonitorSLSGroupRequest() {
+		super("Cms", "2019-01-01", "DeleteHybridMonitorSLSGroup", "cms");
+		setMethod(MethodType.POST);
 	}
 
-	public String getProduct() {
-		return this.product;
+	public String getSLSGroupName() {
+		return this.sLSGroupName;
 	}
 
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
+	public void setSLSGroupName(String sLSGroupName) {
+		this.sLSGroupName = sLSGroupName;
+		if(sLSGroupName != null){
+			putQueryParameter("SLSGroupName", sLSGroupName);
 		}
 	}
 
 	@Override
-	public Class<DescribeActiveMetricRuleListResponse> getResponseClass() {
-		return DescribeActiveMetricRuleListResponse.class;
+	public Class<DeleteHybridMonitorSLSGroupResponse> getResponseClass() {
+		return DeleteHybridMonitorSLSGroupResponse.class;
 	}
 
 }

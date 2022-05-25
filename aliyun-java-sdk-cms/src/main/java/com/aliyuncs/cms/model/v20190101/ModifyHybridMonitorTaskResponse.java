@@ -15,31 +15,29 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20190101.BatchCreateOnceSiteMonitorResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20190101.ModifyHybridMonitorTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchCreateOnceSiteMonitorResponse extends AcsResponse {
-
-	private String requestId;
-
-	private String message;
-
-	private Boolean success;
-
-	private String data;
+public class ModifyHybridMonitorTaskResponse extends AcsResponse {
 
 	private String code;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String message;
+
+	private String requestId;
+
+	private String success;
+
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -50,33 +48,25 @@ public class BatchCreateOnceSiteMonitorResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(Boolean success) {
+	public void setSuccess(String success) {
 		this.success = success;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	@Override
-	public BatchCreateOnceSiteMonitorResponse getInstance(UnmarshallerContext context) {
-		return	BatchCreateOnceSiteMonitorResponseUnmarshaller.unmarshall(this, context);
+	public ModifyHybridMonitorTaskResponse getInstance(UnmarshallerContext context) {
+		return	ModifyHybridMonitorTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

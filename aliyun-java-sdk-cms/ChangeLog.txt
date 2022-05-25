@@ -1,3 +1,6 @@
+2022-05-25 Version: 7.0.44
+- Add Hybrid Monitor API.
+
 2022-04-21 Version: 7.0.43
 - Fix endpoint bug.
 

@@ -24,35 +24,24 @@ import com.aliyuncs.http.MethodType;
 public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorResponse> {
 	   
 
-	private String address;
-
 	private String taskName;
+
+	private String alertIds;
+
+	private String taskId;
+
+	private String address;
 
 	private String ispCities;
 
 	private String optionsJson;
 
-	private String alertIds;
-
 	private String intervalUnit;
 
 	private String interval;
-
-	private String taskId;
 	public ModifySiteMonitorRequest() {
 		super("Cms", "2019-01-01", "ModifySiteMonitor", "cms");
 		setMethod(MethodType.POST);
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		if(address != null){
-			putQueryParameter("Address", address);
-		}
 	}
 
 	public String getTaskName() {
@@ -63,6 +52,39 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 		this.taskName = taskName;
 		if(taskName != null){
 			putQueryParameter("TaskName", taskName);
+		}
+	}
+
+	public String getAlertIds() {
+		return this.alertIds;
+	}
+
+	public void setAlertIds(String alertIds) {
+		this.alertIds = alertIds;
+		if(alertIds != null){
+			putQueryParameter("AlertIds", alertIds);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
 		}
 	}
 
@@ -88,17 +110,6 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 		}
 	}
 
-	public String getAlertIds() {
-		return this.alertIds;
-	}
-
-	public void setAlertIds(String alertIds) {
-		this.alertIds = alertIds;
-		if(alertIds != null){
-			putQueryParameter("AlertIds", alertIds);
-		}
-	}
-
 	public String getIntervalUnit() {
 		return this.intervalUnit;
 	}
@@ -118,17 +129,6 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
 		}
 	}
 

@@ -67,6 +67,9 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 
 	private Integer silenceTime;
 
+	@SerializedName("prometheus")
+	private Prometheus prometheus;
+
 	@SerializedName("compositeExpression")
 	private CompositeExpression compositeExpression;
 
@@ -311,6 +314,17 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		}
 	}
 
+	public Prometheus getPrometheus() {
+		return this.prometheus;
+	}
+
+	public void setPrometheus(Prometheus prometheus) {
+		this.prometheus = prometheus;	
+		if (prometheus != null) {
+			putQueryParameter("Prometheus" , new Gson().toJson(prometheus));
+		}	
+	}
+
 	public CompositeExpression getCompositeExpression() {
 		return this.compositeExpression;
 	}
@@ -419,6 +433,78 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class Prometheus {
+
+		@SerializedName("PromQL")
+		private String promQL;
+
+		@SerializedName("Times")
+		private Integer times;
+
+		@SerializedName("Level")
+		private String level;
+
+		@SerializedName("Annotations")
+		private List<AnnotationsItem> annotations;
+
+		public String getPromQL() {
+			return this.promQL;
+		}
+
+		public void setPromQL(String promQL) {
+			this.promQL = promQL;
+		}
+
+		public Integer getTimes() {
+			return this.times;
+		}
+
+		public void setTimes(Integer times) {
+			this.times = times;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public List<AnnotationsItem> getAnnotations() {
+			return this.annotations;
+		}
+
+		public void setAnnotations(List<AnnotationsItem> annotations) {
+			this.annotations = annotations;
+		}
+
+		public static class AnnotationsItem {
+
+			@SerializedName("Value")
+			private String value;
+
+			@SerializedName("Key")
+			private String key;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 		}
 	}
 

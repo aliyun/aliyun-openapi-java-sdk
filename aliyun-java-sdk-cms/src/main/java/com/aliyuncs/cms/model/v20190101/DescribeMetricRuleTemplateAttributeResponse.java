@@ -407,6 +407,8 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 					private String statistics;
 
+					private String preCondition;
+
 					public String getComparisonOperator() {
 						return this.comparisonOperator;
 					}
@@ -437,6 +439,14 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 					public void setStatistics(String statistics) {
 						this.statistics = statistics;
+					}
+
+					public String getPreCondition() {
+						return this.preCondition;
+					}
+
+					public void setPreCondition(String preCondition) {
+						this.preCondition = preCondition;
 					}
 				}
 
@@ -450,6 +460,8 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 					private String statistics;
 
+					private String preCondition;
+
 					public String getComparisonOperator() {
 						return this.comparisonOperator;
 					}
@@ -480,6 +492,14 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 					public void setStatistics(String statistics) {
 						this.statistics = statistics;
+					}
+
+					public String getPreCondition() {
+						return this.preCondition;
+					}
+
+					public void setPreCondition(String preCondition) {
+						this.preCondition = preCondition;
 					}
 				}
 
@@ -493,6 +513,8 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 					private String statistics;
 
+					private String preCondition;
+
 					public String getComparisonOperator() {
 						return this.comparisonOperator;
 					}
@@ -523,6 +545,14 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 					public void setStatistics(String statistics) {
 						this.statistics = statistics;
+					}
+
+					public String getPreCondition() {
+						return this.preCondition;
+					}
+
+					public void setPreCondition(String preCondition) {
+						this.preCondition = preCondition;
 					}
 				}
 			}

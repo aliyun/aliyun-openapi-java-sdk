@@ -205,6 +205,8 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			private String httpKeyword;
 
+			private String httpHeader;
+
 			public String getHttpMethod() {
 				return this.httpMethod;
 			}
@@ -267,6 +269,14 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			public void setHttpKeyword(String httpKeyword) {
 				this.httpKeyword = httpKeyword;
+			}
+
+			public String getHttpHeader() {
+				return this.httpHeader;
+			}
+
+			public void setHttpHeader(String httpHeader) {
+				this.httpHeader = httpHeader;
 			}
 		}
 
