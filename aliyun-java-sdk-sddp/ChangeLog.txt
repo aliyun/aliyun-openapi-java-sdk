@@ -1,3 +1,6 @@
+2022-05-25 Version: 1.0.8
+- SampleSize add.
+
 2022-04-27 Version: 1.0.7
 - CreateDataLimit add enable filed.
 

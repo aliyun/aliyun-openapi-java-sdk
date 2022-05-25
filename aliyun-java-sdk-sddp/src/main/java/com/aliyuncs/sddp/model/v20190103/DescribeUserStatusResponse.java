@@ -126,6 +126,8 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 		private String displayTime;
 
+		private Integer dataManagerRole;
+
 		public Long getUseOssSize() {
 			return this.useOssSize;
 		}
@@ -444,6 +446,14 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 		public void setDisplayTime(String displayTime) {
 			this.displayTime = displayTime;
+		}
+
+		public Integer getDataManagerRole() {
+			return this.dataManagerRole;
+		}
+
+		public void setDataManagerRole(Integer dataManagerRole) {
+			this.dataManagerRole = dataManagerRole;
 		}
 	}
 

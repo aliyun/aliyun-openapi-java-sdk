@@ -27,6 +27,8 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 
 	private Integer ocrStatus;
 
+	private Integer samplingSize;
+
 	private String parentId;
 
 	private String password;
@@ -69,6 +71,17 @@ public class CreateDataLimitRequest extends RpcAcsRequest<CreateDataLimitRespons
 		this.ocrStatus = ocrStatus;
 		if(ocrStatus != null){
 			putQueryParameter("OcrStatus", ocrStatus.toString());
+		}
+	}
+
+	public Integer getSamplingSize() {
+		return this.samplingSize;
+	}
+
+	public void setSamplingSize(Integer samplingSize) {
+		this.samplingSize = samplingSize;
+		if(samplingSize != null){
+			putQueryParameter("SamplingSize", samplingSize.toString());
 		}
 	}
 

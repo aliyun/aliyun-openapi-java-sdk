@@ -27,6 +27,8 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 
 	private Boolean modifyPassword;
 
+	private Integer samplingSize;
+
 	private String password;
 
 	private Long id;
@@ -65,6 +67,17 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		this.modifyPassword = modifyPassword;
 		if(modifyPassword != null){
 			putQueryParameter("ModifyPassword", modifyPassword.toString());
+		}
+	}
+
+	public Integer getSamplingSize() {
+		return this.samplingSize;
+	}
+
+	public void setSamplingSize(Integer samplingSize) {
+		this.samplingSize = samplingSize;
+		if(samplingSize != null){
+			putQueryParameter("SamplingSize", samplingSize.toString());
 		}
 	}
 

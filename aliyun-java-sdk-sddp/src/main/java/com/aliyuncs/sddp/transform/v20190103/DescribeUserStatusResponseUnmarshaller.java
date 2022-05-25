@@ -66,6 +66,7 @@ public class DescribeUserStatusResponseUnmarshaller {
 		userStatus.setAssetScanned(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.AssetScanned"));
 		userStatus.setAlarmCount(_ctx.longValue("DescribeUserStatusResponse.UserStatus.AlarmCount"));
 		userStatus.setDisplayTime(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.DisplayTime"));
+		userStatus.setDataManagerRole(_ctx.integerValue("DescribeUserStatusResponse.UserStatus.DataManagerRole"));
 		describeUserStatusResponse.setUserStatus(userStatus);
 	 
 	 	return describeUserStatusResponse;
