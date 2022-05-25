@@ -1,3 +1,6 @@
+2022-05-25 Version: 1.0.18
+- Release RecognizeTurkeyIdentityCard RecognizeMalaysiaIdentityCard RecognizeRussiaIdentityCard RecognizeIndonesiaIdentityCard RecognizeIndonesiaIdentityCard.
+
 2022-05-05 Version: 1.0.17
 - Release RecognizeUkraineIdentityCard.
 
