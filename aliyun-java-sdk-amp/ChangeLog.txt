@@ -1,3 +1,6 @@
+2022-05-26 Version: 1.8.2
+- Automatically generate sdk tasks.
+
 2022-05-26 Version: 1.8.1
 - Automatically generate sdk tasks.
 
