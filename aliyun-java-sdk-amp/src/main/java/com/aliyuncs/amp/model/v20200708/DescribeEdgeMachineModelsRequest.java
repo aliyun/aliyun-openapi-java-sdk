@@ -26,7 +26,7 @@ public class DescribeEdgeMachineModelsRequest extends RoaAcsRequest<DescribeEdge
 
 	private String rRFEW;
 	public DescribeEdgeMachineModelsRequest() {
-		super("amp", "2020-07-08", "DescribeEdgeMachineModels", "ServiceCode");
+		super("amp", "2020-07-08", "DescribeEdgeMachineModels", "jeepproduct001");
 		setUriPattern("/edge_machines/models");
 		setMethod(MethodType.GET);
 	}

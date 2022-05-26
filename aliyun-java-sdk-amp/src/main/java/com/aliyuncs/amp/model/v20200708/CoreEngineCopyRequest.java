@@ -37,7 +37,7 @@ public class CoreEngineCopyRequest extends RoaAcsRequest<CoreEngineCopyResponse>
 	@SerializedName("param1")
 	private List<Param1> param1;
 	public CoreEngineCopyRequest() {
-		super("amp", "2020-07-08", "CoreEngineCopy", "ServiceCode");
+		super("amp", "2020-07-08", "CoreEngineCopy", "jeepproduct001");
 		setUriPattern("/api/new/demo");
 		setMethod(MethodType.POST);
 	}

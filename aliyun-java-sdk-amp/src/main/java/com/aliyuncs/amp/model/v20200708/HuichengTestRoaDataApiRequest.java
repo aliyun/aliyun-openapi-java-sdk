@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class HuichengTestRoaDataApiRequest extends RoaAcsRequest<HuichengTestRoaDataApiResponse> {
 	   
 	public HuichengTestRoaDataApiRequest() {
-		super("amp", "2020-07-08", "HuichengTestRoaDataApi", "ServiceCode");
+		super("amp", "2020-07-08", "HuichengTestRoaDataApi", "jeepproduct001");
 		setUriPattern("/HuichengTestRoaDataApi");
 		setMethod(MethodType.POST);
 	}

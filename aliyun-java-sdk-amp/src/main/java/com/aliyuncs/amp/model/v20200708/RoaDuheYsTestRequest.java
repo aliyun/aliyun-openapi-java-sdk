@@ -30,7 +30,7 @@ public class RoaDuheYsTestRequest extends RoaAcsRequest<RoaDuheYsTestResponse> {
 	@SerializedName("body")
 	private Body body;
 	public RoaDuheYsTestRequest() {
-		super("amp", "2020-07-08", "RoaDuheYsTest", "ServiceCode");
+		super("amp", "2020-07-08", "RoaDuheYsTest", "jeepproduct001");
 		setUriPattern("/roa/duhe/test");
 		setMethod(MethodType.POST);
 	}

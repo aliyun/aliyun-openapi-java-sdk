@@ -26,7 +26,7 @@ public class CreateClusterSpecial111Request extends RoaAcsRequest<CreateClusterS
 
 	private String add1;
 	public CreateClusterSpecial111Request() {
-		super("amp", "2020-07-08", "CreateClusterSpecial111", "ServiceCode");
+		super("amp", "2020-07-08", "CreateClusterSpecial111", "jeepproduct001");
 		setUriPattern("/clusters/[Cid]/[Pid]/[aaa]/sdasd11/[nnn]");
 		setMethod(MethodType.POST);
 	}

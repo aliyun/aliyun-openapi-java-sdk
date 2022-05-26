@@ -26,7 +26,7 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 
 	private String a;
 	public CreateClusterRequest() {
-		super("amp", "2020-07-08", "CreateCluster", "ServiceCode");
+		super("amp", "2020-07-08", "CreateCluster", "jeepproduct001");
 		setUriPattern("/clusters");
 		setMethod(MethodType.POST);
 	}

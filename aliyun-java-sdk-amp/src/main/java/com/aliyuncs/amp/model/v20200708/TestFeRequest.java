@@ -26,7 +26,7 @@ public class TestFeRequest extends RoaAcsRequest<TestFeResponse> {
 
 	private String add1;
 	public TestFeRequest() {
-		super("amp", "2020-07-08", "TestFe", "ServiceCode");
+		super("amp", "2020-07-08", "TestFe", "jeepproduct001");
 		setUriPattern("/efe/333");
 		setMethod(MethodType.POST);
 	}

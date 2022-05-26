@@ -26,7 +26,7 @@ public class CreateAPIRequest extends RoaAcsRequest<CreateAPIResponse> {
 
 	private String customize_config;
 	public CreateAPIRequest() {
-		super("amp", "2020-07-08", "CreateAPI", "ServiceCode");
+		super("amp", "2020-07-08", "CreateAPI", "jeepproduct001");
 		setUriPattern("/[acd]");
 		setMethod(MethodType.GET);
 	}

@@ -26,7 +26,7 @@ public class EdssRequest extends RoaAcsRequest<EdssResponse> {
 
 	private String a;
 	public EdssRequest() {
-		super("amp", "2020-07-08", "Edss", "ServiceCode");
+		super("amp", "2020-07-08", "Edss", "jeepproduct001");
 		setUriPattern("/efe/e");
 		setMethod(MethodType.POST);
 	}

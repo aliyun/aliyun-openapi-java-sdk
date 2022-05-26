@@ -40,7 +40,7 @@ public class MyRoaApiRequest extends RoaAcsRequest<MyRoaApiResponse> {
 
 	private String ownerid;
 	public MyRoaApiRequest() {
-		super("amp", "2020-07-08", "MyRoaApi", "ServiceCode");
+		super("amp", "2020-07-08", "MyRoaApi", "jeepproduct001");
 		setUriPattern("/my/roa/test");
 		setMethod(MethodType.GET);
 	}

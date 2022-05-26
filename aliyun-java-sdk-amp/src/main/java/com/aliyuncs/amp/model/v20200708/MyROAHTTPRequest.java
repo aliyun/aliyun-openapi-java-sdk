@@ -26,7 +26,7 @@ public class MyROAHTTPRequest extends RoaAcsRequest<MyROAHTTPResponse> {
 
 	private String requestId;
 	public MyROAHTTPRequest() {
-		super("amp", "2020-07-08", "MyROAHTTP", "ServiceCode");
+		super("amp", "2020-07-08", "MyROAHTTP", "jeepproduct001");
 		setUriPattern("/rpc/v1/demo8");
 		setMethod(MethodType.POST);
 	}

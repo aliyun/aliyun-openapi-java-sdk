@@ -37,7 +37,7 @@ public class CoreEngineRequest extends RoaAcsRequest<CoreEngineResponse> {
 
 	private String param2;
 	public CoreEngineRequest() {
-		super("amp", "2020-07-08", "CoreEngine", "ServiceCode");
+		super("amp", "2020-07-08", "CoreEngine", "jeepproduct001");
 		setUriPattern("/getVersion/demo");
 		setMethod(MethodType.POST);
 	}

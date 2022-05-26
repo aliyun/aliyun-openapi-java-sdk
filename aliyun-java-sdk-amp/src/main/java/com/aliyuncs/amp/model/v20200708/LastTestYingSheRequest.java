@@ -26,7 +26,7 @@ public class LastTestYingSheRequest extends RoaAcsRequest<LastTestYingSheRespons
 
 	private String body;
 	public LastTestYingSheRequest() {
-		super("amp", "2020-07-08", "LastTestYingShe", "ServiceCode");
+		super("amp", "2020-07-08", "LastTestYingShe", "jeepproduct001");
 		setUriPattern("/aef/yig");
 		setMethod(MethodType.POST);
 	}

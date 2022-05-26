@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class AAARequest extends RoaAcsRequest<AAAResponse> {
 	   
 	public AAARequest() {
-		super("amp", "2020-07-08", "AAA", "ServiceCode");
+		super("amp", "2020-07-08", "AAA", "jeepproduct001");
 		setUriPattern("/aa");
 		setMethod(MethodType.POST);
 	}

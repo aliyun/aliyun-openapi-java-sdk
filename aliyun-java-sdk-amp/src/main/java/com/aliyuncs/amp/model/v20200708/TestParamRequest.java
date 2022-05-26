@@ -26,7 +26,7 @@ public class TestParamRequest extends RoaAcsRequest<TestParamResponse> {
 
 	private String param;
 	public TestParamRequest() {
-		super("amp", "2020-07-08", "TestParam", "ServiceCode");
+		super("amp", "2020-07-08", "TestParam", "jeepproduct001");
 		setUriPattern("/test/param");
 		setMethod(MethodType.POST);
 	}

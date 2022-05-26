@@ -26,7 +26,7 @@ public class DingAPITcYRequest extends RoaAcsRequest<DingAPITcYResponse> {
 
 	private String queryIds;
 	public DingAPITcYRequest() {
-		super("amp", "2020-07-08", "DingAPITcY", "ServiceCode");
+		super("amp", "2020-07-08", "DingAPITcY", "jeepproduct001");
 		setUriPattern("/ding/t2y");
 		setMethod(MethodType.POST);
 	}

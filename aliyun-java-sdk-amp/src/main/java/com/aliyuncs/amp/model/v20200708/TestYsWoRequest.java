@@ -29,7 +29,7 @@ public class TestYsWoRequest extends RoaAcsRequest<TestYsWoResponse> {
 	@SerializedName("body")
 	private Body body;
 	public TestYsWoRequest() {
-		super("amp", "2020-07-08", "TestYsWo", "ServiceCode");
+		super("amp", "2020-07-08", "TestYsWo", "jeepproduct001");
 		setUriPattern("/efe/www");
 		setMethod(MethodType.POST);
 	}

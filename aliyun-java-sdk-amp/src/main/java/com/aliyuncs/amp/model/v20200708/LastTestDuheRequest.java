@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class LastTestDuheRequest extends RoaAcsRequest<LastTestDuheResponse> {
 	   
 	public LastTestDuheRequest() {
-		super("amp", "2020-07-08", "LastTestDuhe", "ServiceCode");
+		super("amp", "2020-07-08", "LastTestDuhe", "jeepproduct001");
 		setUriPattern("/aef/a");
 		setMethod(MethodType.POST);
 	}

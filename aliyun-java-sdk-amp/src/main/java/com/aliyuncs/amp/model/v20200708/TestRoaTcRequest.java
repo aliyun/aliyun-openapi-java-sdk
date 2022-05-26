@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class TestRoaTcRequest extends RoaAcsRequest<TestRoaTcResponse> {
 	   
 	public TestRoaTcRequest() {
-		super("amp", "2020-07-08", "TestRoaTc", "ServiceCode");
+		super("amp", "2020-07-08", "TestRoaTc", "jeepproduct001");
 		setUriPattern("/roa/tc");
 		setMethod(MethodType.POST);
 	}

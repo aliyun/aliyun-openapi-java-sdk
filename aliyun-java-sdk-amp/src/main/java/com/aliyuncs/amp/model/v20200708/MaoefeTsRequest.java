@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class MaoefeTsRequest extends RoaAcsRequest<MaoefeTsResponse> {
 	   
 	public MaoefeTsRequest() {
-		super("amp", "2020-07-08", "MaoefeTs", "ServiceCode");
+		super("amp", "2020-07-08", "MaoefeTs", "jeepproduct001");
 		setUriPattern("/eo/efe");
 		setMethod(MethodType.POST);
 	}

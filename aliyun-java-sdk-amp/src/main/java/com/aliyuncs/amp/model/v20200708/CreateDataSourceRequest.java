@@ -26,7 +26,7 @@ public class CreateDataSourceRequest extends RoaAcsRequest<CreateDataSourceRespo
 
 	private String body;
 	public CreateDataSourceRequest() {
-		super("amp", "2020-07-08", "CreateDataSource", "ServiceCode");
+		super("amp", "2020-07-08", "CreateDataSource", "jeepproduct001");
 		setUriPattern("/api/v1/datasources");
 		setMethod(MethodType.POST);
 	}

@@ -26,7 +26,7 @@ public class AsadasdasdRequest extends RoaAcsRequest<AsadasdasdResponse> {
 
 	private String a;
 	public AsadasdasdRequest() {
-		super("amp", "2020-07-08", "Asadasdasd", "ServiceCode");
+		super("amp", "2020-07-08", "Asadasdasd", "jeepproduct001");
 		setUriPattern("/asdxzc");
 		setMethod(MethodType.POST);
 	}

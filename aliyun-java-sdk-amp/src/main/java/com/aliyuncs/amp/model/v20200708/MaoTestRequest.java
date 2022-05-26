@@ -26,7 +26,7 @@ public class MaoTestRequest extends RoaAcsRequest<MaoTestResponse> {
 
 	private String aA;
 	public MaoTestRequest() {
-		super("amp", "2020-07-08", "MaoTest", "ServiceCode");
+		super("amp", "2020-07-08", "MaoTest", "jeepproduct001");
 		setUriPattern("/rmo/efe");
 		setMethod(MethodType.POST);
 	}

@@ -31,7 +31,7 @@ public class RoaHsfMutilTestRequest extends RoaAcsRequest<RoaHsfMutilTestRespons
 
 	private String id;
 	public RoaHsfMutilTestRequest() {
-		super("amp", "2020-07-08", "RoaHsfMutilTest", "ServiceCode");
+		super("amp", "2020-07-08", "RoaHsfMutilTest", "jeepproduct001");
 		setUriPattern("/roefe/efe");
 		setMethod(MethodType.POST);
 	}

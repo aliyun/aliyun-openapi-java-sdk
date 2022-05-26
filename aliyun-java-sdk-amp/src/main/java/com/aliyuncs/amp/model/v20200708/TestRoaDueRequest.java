@@ -26,7 +26,7 @@ public class TestRoaDueRequest extends RoaAcsRequest<TestRoaDueResponse> {
 
 	private Body body;
 	public TestRoaDueRequest() {
-		super("amp", "2020-07-08", "TestRoaDue", "ServiceCode");
+		super("amp", "2020-07-08", "TestRoaDue", "jeepproduct001");
 		setUriPattern("/efe/efe");
 		setMethod(MethodType.POST);
 	}

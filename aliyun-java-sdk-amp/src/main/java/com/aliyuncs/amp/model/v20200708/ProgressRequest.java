@@ -35,7 +35,7 @@ public class ProgressRequest extends RoaAcsRequest<ProgressResponse> {
 
 	private Integer addend;
 	public ProgressRequest() {
-		super("amp", "2020-07-08", "Progress", "ServiceCode");
+		super("amp", "2020-07-08", "Progress", "jeepproduct001");
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/Progress");
 		setMethod(MethodType.POST);

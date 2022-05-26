@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class TestSeeRequest extends RoaAcsRequest<TestSeeResponse> {
 	   
 	public TestSeeRequest() {
-		super("amp", "2020-07-08", "TestSee", "ServiceCode");
+		super("amp", "2020-07-08", "TestSee", "jeepproduct001");
 		setUriPattern("/wo/eii//ee");
 		setMethod(MethodType.POST);
 	}

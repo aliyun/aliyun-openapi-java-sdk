@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class SecondAPIRequest extends RoaAcsRequest<SecondAPIResponse> {
 	   
 	public SecondAPIRequest() {
-		super("amp", "2020-07-08", "SecondAPI", "ServiceCode");
+		super("amp", "2020-07-08", "SecondAPI", "jeepproduct001");
 		setUriPattern("/api/second");
 		setMethod(MethodType.POST);
 	}

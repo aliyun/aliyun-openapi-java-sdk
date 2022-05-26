@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DingAPITcTcRequest extends RoaAcsRequest<DingAPITcTcResponse> {
 	   
 	public DingAPITcTcRequest() {
-		super("amp", "2020-07-08", "DingAPITcTc", "ServiceCode");
+		super("amp", "2020-07-08", "DingAPITcTc", "jeepproduct001");
 		setUriPattern("/ding/tctc");
 		setMethod(MethodType.POST);
 	}

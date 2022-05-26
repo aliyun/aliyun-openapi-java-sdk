@@ -29,7 +29,7 @@ public class RoaHsfTestRequest extends RoaAcsRequest<RoaHsfTestResponse> {
 	@SerializedName("body")
 	private Body body;
 	public RoaHsfTestRequest() {
-		super("amp", "2020-07-08", "RoaHsfTest", "ServiceCode");
+		super("amp", "2020-07-08", "RoaHsfTest", "jeepproduct001");
 		setUriPattern("/roa/hsf/test");
 		setMethod(MethodType.POST);
 	}
