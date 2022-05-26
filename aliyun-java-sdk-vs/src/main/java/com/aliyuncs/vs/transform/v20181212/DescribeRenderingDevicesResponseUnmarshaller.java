@@ -45,9 +45,10 @@ public class DescribeRenderingDevicesResponseUnmarshaller {
 			device.setInstanceChargeType(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].InstanceChargeType"));
 			device.setServerName(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].ServerName"));
 			device.setDescription(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].Description"));
-			device.setPlatformType(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PlatformType"));
 			device.setInstanceName(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].InstanceName"));
+			device.setPlatformType(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PlatformType"));
 			device.setPeriodUnit(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PeriodUnit"));
+			device.setHostRom(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].HostRom"));
 			device.setEdgeNodeName(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].EdgeNodeName"));
 			device.setImageId(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].ImageId"));
 			device.setClusterId(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].ClusterId"));
@@ -71,6 +72,7 @@ public class DescribeRenderingDevicesResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos.Length"); j++) {
 				PodInfo podInfo = new PodInfo();
 				podInfo.setStatus(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Status"));
+				podInfo.setPodIp(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].PodIp"));
 				podInfo.setPodId(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].PodId"));
 
 				List<NetworkItem> network = new ArrayList<NetworkItem>();

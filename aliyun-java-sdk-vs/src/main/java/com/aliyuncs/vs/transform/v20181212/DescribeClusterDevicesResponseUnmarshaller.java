@@ -46,6 +46,7 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 			device.setPlatformType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PlatformType"));
 			device.setInstanceName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceName"));
 			device.setPeriodUnit(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PeriodUnit"));
+			device.setHostRom(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].HostRom"));
 			device.setEdgeNodeName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].EdgeNodeName"));
 			device.setServer(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Server"));
 			device.setImageId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].ImageId"));
@@ -69,6 +70,7 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos.Length"); j++) {
 				PodInfo podInfo = new PodInfo();
 				podInfo.setStatus(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Status"));
+				podInfo.setPodIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].PodIp"));
 				podInfo.setPodId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].PodId"));
 
 				List<NetworkItem> network = new ArrayList<NetworkItem>();

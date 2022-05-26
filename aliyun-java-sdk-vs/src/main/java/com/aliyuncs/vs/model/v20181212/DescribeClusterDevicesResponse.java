@@ -79,6 +79,8 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 		private String periodUnit;
 
+		private String hostRom;
+
 		private String edgeNodeName;
 
 		private String server;
@@ -175,6 +177,14 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 		public void setPeriodUnit(String periodUnit) {
 			this.periodUnit = periodUnit;
+		}
+
+		public String getHostRom() {
+			return this.hostRom;
+		}
+
+		public void setHostRom(String hostRom) {
+			this.hostRom = hostRom;
 		}
 
 		public String getEdgeNodeName() {
@@ -294,6 +304,8 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 			private String status;
 
+			private String podIp;
+
 			private String podId;
 
 			private List<NetworkItem> network;
@@ -304,6 +316,14 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getPodIp() {
+				return this.podIp;
+			}
+
+			public void setPodIp(String podIp) {
+				this.podIp = podIp;
 			}
 
 			public String getPodId() {

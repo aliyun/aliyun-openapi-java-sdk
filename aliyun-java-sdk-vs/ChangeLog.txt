@@ -1,3 +1,6 @@
+2022-05-26 Version: 1.11.12
+- Add PodIp for DescribeRenderingDevices and DescribeClusterDevices.
+
 2022-04-21 Version: 1.11.11
 - Add ImageId for UpgradeRenderingDevicesHostOSRequest.
 
