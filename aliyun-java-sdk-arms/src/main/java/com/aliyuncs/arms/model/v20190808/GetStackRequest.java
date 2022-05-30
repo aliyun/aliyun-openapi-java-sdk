@@ -27,9 +27,13 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 
 	private String traceID;
 
+	private Long endTime;
+
 	private String rpcID;
 
 	private String pid;
+
+	private Long startTime;
 	public GetStackRequest() {
 		super("ARMS", "2019-08-08", "GetStack", "arms");
 		setMethod(MethodType.POST);
@@ -47,6 +51,17 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 		this.traceID = traceID;
 		if(traceID != null){
 			putQueryParameter("TraceID", traceID);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -69,6 +84,17 @@ public class GetStackRequest extends RpcAcsRequest<GetStackResponse> {
 		this.pid = pid;
 		if(pid != null){
 			putQueryParameter("Pid", pid);
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

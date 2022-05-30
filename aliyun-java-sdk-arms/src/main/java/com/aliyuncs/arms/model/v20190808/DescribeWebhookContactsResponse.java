@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20190808.DescribeWebhookContactsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -125,9 +126,9 @@ public class DescribeWebhookContactsResponse extends AcsResponse {
 
 				private String url;
 
-				private String bizHeaders;
+				private Map<Object,Object> bizHeaders;
 
-				private String bizParams;
+				private Map<Object,Object> bizParams;
 
 				private String body;
 
@@ -149,19 +150,19 @@ public class DescribeWebhookContactsResponse extends AcsResponse {
 					this.url = url;
 				}
 
-				public String getBizHeaders() {
+				public Map<Object,Object> getBizHeaders() {
 					return this.bizHeaders;
 				}
 
-				public void setBizHeaders(String bizHeaders) {
+				public void setBizHeaders(Map<Object,Object> bizHeaders) {
 					this.bizHeaders = bizHeaders;
 				}
 
-				public String getBizParams() {
+				public Map<Object,Object> getBizParams() {
 					return this.bizParams;
 				}
 
-				public void setBizParams(String bizParams) {
+				public void setBizParams(Map<Object,Object> bizParams) {
 					this.bizParams = bizParams;
 				}
 

@@ -21,6 +21,7 @@ import com.aliyuncs.arms.model.v20190808.DescribeWebhookContactsResponse;
 import com.aliyuncs.arms.model.v20190808.DescribeWebhookContactsResponse.PageBean;
 import com.aliyuncs.arms.model.v20190808.DescribeWebhookContactsResponse.PageBean.WebhookContactsItem;
 import com.aliyuncs.arms.model.v20190808.DescribeWebhookContactsResponse.PageBean.WebhookContactsItem.Webhook;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,8 +45,8 @@ public class DescribeWebhookContactsResponseUnmarshaller {
 			Webhook webhook = new Webhook();
 			webhook.setBizMethod(_ctx.stringValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.Method"));
 			webhook.setUrl(_ctx.stringValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.Url"));
-			webhook.setBizHeaders(_ctx.stringValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.BizHeaders"));
-			webhook.setBizParams(_ctx.stringValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.BizParams"));
+			webhook.setBizHeaders(_ctx.mapValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.BizHeaders"));
+			webhook.setBizParams(_ctx.mapValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.BizParams"));
 			webhook.setBody(_ctx.stringValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.Body"));
 			webhook.setRecoverBody(_ctx.stringValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.RecoverBody"));
 			webhookContactsItem.setWebhook(webhook);
