@@ -634,6 +634,8 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 					private Integer to;
 
+					private String customizeCode;
+
 					public Integer getFrom() {
 						return this.from;
 					}
@@ -680,6 +682,14 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 					public void setTo(Integer to) {
 						this.to = to;
+					}
+
+					public String getCustomizeCode() {
+						return this.customizeCode;
+					}
+
+					public void setCustomizeCode(String customizeCode) {
+						this.customizeCode = customizeCode;
 					}
 				}
 

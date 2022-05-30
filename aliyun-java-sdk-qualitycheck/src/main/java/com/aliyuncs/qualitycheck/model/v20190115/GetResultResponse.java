@@ -157,6 +157,10 @@ public class GetResultResponse extends AcsResponse {
 
 		private List<HitScoreItem> hitScore;
 
+		private List<Long> schemeIdList;
+
+		private List<String> schemeNameList;
+
 		private Recording recording;
 
 		private Agent agent;
@@ -321,6 +325,22 @@ public class GetResultResponse extends AcsResponse {
 			this.hitScore = hitScore;
 		}
 
+		public List<Long> getSchemeIdList() {
+			return this.schemeIdList;
+		}
+
+		public void setSchemeIdList(List<Long> schemeIdList) {
+			this.schemeIdList = schemeIdList;
+		}
+
+		public List<String> getSchemeNameList() {
+			return this.schemeNameList;
+		}
+
+		public void setSchemeNameList(List<String> schemeNameList) {
+			this.schemeNameList = schemeNameList;
+		}
+
 		public Recording getRecording() {
 			return this.recording;
 		}
@@ -410,6 +430,10 @@ public class GetResultResponse extends AcsResponse {
 
 			private String rid;
 
+			private Long schemeId;
+
+			private Long schemeVersion;
+
 			private List<Hit> hits;
 
 			public String getType() {
@@ -442,6 +466,22 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setRid(String rid) {
 				this.rid = rid;
+			}
+
+			public Long getSchemeId() {
+				return this.schemeId;
+			}
+
+			public void setSchemeId(Long schemeId) {
+				this.schemeId = schemeId;
+			}
+
+			public Long getSchemeVersion() {
+				return this.schemeVersion;
+			}
+
+			public void setSchemeVersion(Long schemeVersion) {
+				this.schemeVersion = schemeVersion;
 			}
 
 			public List<Hit> getHits() {

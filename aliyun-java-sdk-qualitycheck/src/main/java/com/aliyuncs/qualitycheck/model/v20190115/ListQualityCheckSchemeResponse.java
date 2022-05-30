@@ -117,7 +117,7 @@ public class ListQualityCheckSchemeResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Integer schemeId;
+		private Long schemeId;
 
 		private String name;
 
@@ -139,15 +139,17 @@ public class ListQualityCheckSchemeResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private Long version;
+
 		private List<SchemeCheckTypeListItem> schemeCheckTypeList;
 
 		private List<RuleListItem> ruleList;
 
-		public Integer getSchemeId() {
+		public Long getSchemeId() {
 			return this.schemeId;
 		}
 
-		public void setSchemeId(Integer schemeId) {
+		public void setSchemeId(Long schemeId) {
 			this.schemeId = schemeId;
 		}
 
@@ -229,6 +231,14 @@ public class ListQualityCheckSchemeResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 
 		public List<SchemeCheckTypeListItem> getSchemeCheckTypeList() {

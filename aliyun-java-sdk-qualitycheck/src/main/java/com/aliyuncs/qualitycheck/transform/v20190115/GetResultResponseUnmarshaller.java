@@ -64,6 +64,18 @@ public class GetResultResponseUnmarshaller {
 			resultInfo.setReviewType(_ctx.integerValue("GetResultResponse.Data["+ i +"].ReviewType"));
 			resultInfo.setResolver(_ctx.stringValue("GetResultResponse.Data["+ i +"].Resolver"));
 
+			List<Long> schemeIdList = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("GetResultResponse.Data["+ i +"].SchemeIdList.Length"); j++) {
+				schemeIdList.add(_ctx.longValue("GetResultResponse.Data["+ i +"].SchemeIdList["+ j +"]"));
+			}
+			resultInfo.setSchemeIdList(schemeIdList);
+
+			List<String> schemeNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetResultResponse.Data["+ i +"].SchemeNameList.Length"); j++) {
+				schemeNameList.add(_ctx.stringValue("GetResultResponse.Data["+ i +"].SchemeNameList["+ j +"]"));
+			}
+			resultInfo.setSchemeNameList(schemeNameList);
+
 			Recording recording = new Recording();
 			recording.setRemark13(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark13"));
 			recording.setCallee(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Callee"));
@@ -120,6 +132,8 @@ public class GetResultResponseUnmarshaller {
 				hitResultItem.setReviewResult(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].ReviewResult"));
 				hitResultItem.setName(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Name"));
 				hitResultItem.setRid(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Rid"));
+				hitResultItem.setSchemeId(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].SchemeId"));
+				hitResultItem.setSchemeVersion(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].SchemeVersion"));
 
 				List<Hit> hits = new ArrayList<Hit>();
 				for (int k = 0; k < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits.Length"); k++) {

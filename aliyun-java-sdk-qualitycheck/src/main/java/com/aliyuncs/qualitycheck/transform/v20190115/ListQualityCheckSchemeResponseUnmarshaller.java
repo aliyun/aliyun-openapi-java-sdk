@@ -41,7 +41,7 @@ public class ListQualityCheckSchemeResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListQualityCheckSchemeResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setSchemeId(_ctx.integerValue("ListQualityCheckSchemeResponse.Data["+ i +"].SchemeId"));
+			dataItem.setSchemeId(_ctx.longValue("ListQualityCheckSchemeResponse.Data["+ i +"].SchemeId"));
 			dataItem.setName(_ctx.stringValue("ListQualityCheckSchemeResponse.Data["+ i +"].Name"));
 			dataItem.setDescription(_ctx.stringValue("ListQualityCheckSchemeResponse.Data["+ i +"].Description"));
 			dataItem.setDataType(_ctx.integerValue("ListQualityCheckSchemeResponse.Data["+ i +"].DataType"));
@@ -52,6 +52,7 @@ public class ListQualityCheckSchemeResponseUnmarshaller {
 			dataItem.setCreateTime(_ctx.stringValue("ListQualityCheckSchemeResponse.Data["+ i +"].CreateTime"));
 			dataItem.setUpdateUserName(_ctx.stringValue("ListQualityCheckSchemeResponse.Data["+ i +"].UpdateUserName"));
 			dataItem.setUpdateTime(_ctx.stringValue("ListQualityCheckSchemeResponse.Data["+ i +"].UpdateTime"));
+			dataItem.setVersion(_ctx.longValue("ListQualityCheckSchemeResponse.Data["+ i +"].Version"));
 
 			List<SchemeCheckTypeListItem> schemeCheckTypeList = new ArrayList<SchemeCheckTypeListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListQualityCheckSchemeResponse.Data["+ i +"].SchemeCheckTypeList.Length"); j++) {
