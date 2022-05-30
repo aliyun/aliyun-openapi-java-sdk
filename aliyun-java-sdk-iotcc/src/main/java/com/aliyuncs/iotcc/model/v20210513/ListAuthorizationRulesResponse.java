@@ -93,6 +93,8 @@ public class ListAuthorizationRulesResponse extends AcsResponse {
 
 		private String authorizationRuleId;
 
+		private String authorizationRuleType;
+
 		private List<String> sourceCidrs;
 
 		public String getIoTCloudConnectorId() {
@@ -157,6 +159,14 @@ public class ListAuthorizationRulesResponse extends AcsResponse {
 
 		public void setAuthorizationRuleId(String authorizationRuleId) {
 			this.authorizationRuleId = authorizationRuleId;
+		}
+
+		public String getAuthorizationRuleType() {
+			return this.authorizationRuleType;
+		}
+
+		public void setAuthorizationRuleType(String authorizationRuleType) {
+			this.authorizationRuleType = authorizationRuleType;
 		}
 
 		public List<String> getSourceCidrs() {

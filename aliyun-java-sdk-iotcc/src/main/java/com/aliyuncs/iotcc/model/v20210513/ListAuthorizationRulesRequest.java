@@ -33,6 +33,8 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 
 	private String nextToken;
 
+	private String authorizationRuleType;
+
 	private List<String> policys;
 
 	private List<String> authorizationRuleStatuss;
@@ -94,6 +96,17 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getAuthorizationRuleType() {
+		return this.authorizationRuleType;
+	}
+
+	public void setAuthorizationRuleType(String authorizationRuleType) {
+		this.authorizationRuleType = authorizationRuleType;
+		if(authorizationRuleType != null){
+			putQueryParameter("AuthorizationRuleType", authorizationRuleType);
 		}
 	}
 

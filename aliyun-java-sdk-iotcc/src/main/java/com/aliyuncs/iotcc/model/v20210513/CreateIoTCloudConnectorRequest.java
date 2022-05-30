@@ -28,6 +28,8 @@ public class CreateIoTCloudConnectorRequest extends RpcAcsRequest<CreateIoTCloud
 
 	private String iSP;
 
+	private String type;
+
 	private String ioTCloudConnectorDescription;
 
 	private Boolean wildcardDomainEnabled;
@@ -63,6 +65,17 @@ public class CreateIoTCloudConnectorRequest extends RpcAcsRequest<CreateIoTCloud
 		this.iSP = iSP;
 		if(iSP != null){
 			putQueryParameter("ISP", iSP);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

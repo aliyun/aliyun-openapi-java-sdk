@@ -42,6 +42,7 @@ public class ListAuthorizationRulesResponseUnmarshaller {
 			authorizationRuleModels.setAuthorizationRuleName(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].AuthorizationRuleName"));
 			authorizationRuleModels.setAuthorizationRuleDescription(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].AuthorizationRuleDescription"));
 			authorizationRuleModels.setAuthorizationRuleId(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].AuthorizationRuleId"));
+			authorizationRuleModels.setAuthorizationRuleType(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].AuthorizationRuleType"));
 
 			List<String> sourceCidrs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].SourceCidrs.Length"); j++) {

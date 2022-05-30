@@ -35,6 +35,10 @@ public class ListIoTCloudConnectorsRequest extends RpcAcsRequest<ListIoTCloudCon
 
 	private List<String> aPNs;
 
+	private String ioTCloudConnectorGroupId;
+
+	private Boolean isInGroup;
+
 	private List<String> vpcIds;
 
 	private Integer maxResults;
@@ -106,6 +110,28 @@ public class ListIoTCloudConnectorsRequest extends RpcAcsRequest<ListIoTCloudCon
 				putQueryParameter("APN." + (i + 1) , aPNs.get(i));
 			}
 		}	
+	}
+
+	public String getIoTCloudConnectorGroupId() {
+		return this.ioTCloudConnectorGroupId;
+	}
+
+	public void setIoTCloudConnectorGroupId(String ioTCloudConnectorGroupId) {
+		this.ioTCloudConnectorGroupId = ioTCloudConnectorGroupId;
+		if(ioTCloudConnectorGroupId != null){
+			putQueryParameter("IoTCloudConnectorGroupId", ioTCloudConnectorGroupId);
+		}
+	}
+
+	public Boolean getIsInGroup() {
+		return this.isInGroup;
+	}
+
+	public void setIsInGroup(Boolean isInGroup) {
+		this.isInGroup = isInGroup;
+		if(isInGroup != null){
+			putQueryParameter("IsInGroup", isInGroup.toString());
+		}
 	}
 
 	public List<String> getVpcIds() {

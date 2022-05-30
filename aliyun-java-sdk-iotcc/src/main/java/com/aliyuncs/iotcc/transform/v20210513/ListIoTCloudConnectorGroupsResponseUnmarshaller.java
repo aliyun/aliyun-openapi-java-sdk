@@ -49,6 +49,8 @@ public class ListIoTCloudConnectorGroupsResponseUnmarshaller {
 				ioTCloudConnectorsItem.setIoTCloudConnectorName(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].IoTCloudConnectorName"));
 				ioTCloudConnectorsItem.setIoTCloudConnectorDescription(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].IoTCloudConnectorDescription"));
 				ioTCloudConnectorsItem.setCreateTime(_ctx.longValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].CreateTime"));
+				ioTCloudConnectorsItem.setISP(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].ISP"));
+				ioTCloudConnectorsItem.setAPN(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].APN"));
 
 				ioTCloudConnectors.add(ioTCloudConnectorsItem);
 			}

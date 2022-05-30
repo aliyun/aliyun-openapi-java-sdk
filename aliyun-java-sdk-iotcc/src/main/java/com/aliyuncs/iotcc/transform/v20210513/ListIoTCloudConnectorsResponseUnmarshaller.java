@@ -46,6 +46,9 @@ public class ListIoTCloudConnectorsResponseUnmarshaller {
 			ioTCloudConnectorModels.setWildcardDomainEnabled(_ctx.booleanValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].WildcardDomainEnabled"));
 			ioTCloudConnectorModels.setCreateTime(_ctx.longValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].CreateTime"));
 			ioTCloudConnectorModels.setModifyTime(_ctx.longValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].ModifyTime"));
+			ioTCloudConnectorModels.setIoTCloudConnectorGroupId(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].IoTCloudConnectorGroupId"));
+			ioTCloudConnectorModels.setMode(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].Mode"));
+			ioTCloudConnectorModels.setIpFeature(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].IpFeature"));
 
 			List<String> vSwitchList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].VSwitchList.Length"); j++) {
