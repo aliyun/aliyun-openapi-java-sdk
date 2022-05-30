@@ -15,18 +15,26 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.AddASMIntegrationResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.DeleteGrafanaResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddASMIntegrationResponse extends AcsResponse {
+public class DeleteGrafanaResourceResponse extends AcsResponse {
+
+	private String data;
 
 	private String requestId;
 
-	private Boolean state;
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +44,9 @@ public class AddASMIntegrationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getState() {
-		return this.state;
-	}
-
-	public void setState(Boolean state) {
-		this.state = state;
-	}
-
 	@Override
-	public AddASMIntegrationResponse getInstance(UnmarshallerContext context) {
-		return	AddASMIntegrationResponseUnmarshaller.unmarshall(this, context);
+	public DeleteGrafanaResourceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteGrafanaResourceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

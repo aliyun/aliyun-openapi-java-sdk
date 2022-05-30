@@ -14,17 +14,17 @@
 
 package com.aliyuncs.arms.transform.v20190808;
 
-import com.aliyuncs.arms.model.v20190808.AddASMIntegrationResponse;
+import com.aliyuncs.arms.model.v20190808.DeleteGrafanaResourceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AddASMIntegrationResponseUnmarshaller {
+public class DeleteGrafanaResourceResponseUnmarshaller {
 
-	public static AddASMIntegrationResponse unmarshall(AddASMIntegrationResponse addASMIntegrationResponse, UnmarshallerContext _ctx) {
+	public static DeleteGrafanaResourceResponse unmarshall(DeleteGrafanaResourceResponse deleteGrafanaResourceResponse, UnmarshallerContext _ctx) {
 		
-		addASMIntegrationResponse.setRequestId(_ctx.stringValue("AddASMIntegrationResponse.RequestId"));
-		addASMIntegrationResponse.setState(_ctx.booleanValue("AddASMIntegrationResponse.State"));
+		deleteGrafanaResourceResponse.setRequestId(_ctx.stringValue("DeleteGrafanaResourceResponse.RequestId"));
+		deleteGrafanaResourceResponse.setData(_ctx.stringValue("DeleteGrafanaResourceResponse.Data"));
 	 
-	 	return addASMIntegrationResponse;
+	 	return deleteGrafanaResourceResponse;
 	}
 }

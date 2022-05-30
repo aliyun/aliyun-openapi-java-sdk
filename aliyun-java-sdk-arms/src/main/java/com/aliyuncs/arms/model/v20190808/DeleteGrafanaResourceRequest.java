@@ -22,17 +22,30 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddASMIntegrationRequest extends RpcAcsRequest<AddASMIntegrationResponse> {
+public class DeleteGrafanaResourceRequest extends RpcAcsRequest<DeleteGrafanaResourceResponse> {
 	   
 
+	private String clusterName;
+
 	private String clusterId;
-	public AddASMIntegrationRequest() {
-		super("ARMS", "2019-08-08", "AddASMIntegration", "arms");
+	public DeleteGrafanaResourceRequest() {
+		super("ARMS", "2019-08-08", "DeleteGrafanaResource", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putBodyParameter("ClusterName", clusterName);
+		}
 	}
 
 	public String getClusterId() {
@@ -42,13 +55,13 @@ public class AddASMIntegrationRequest extends RpcAcsRequest<AddASMIntegrationRes
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+			putBodyParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<AddASMIntegrationResponse> getResponseClass() {
-		return AddASMIntegrationResponse.class;
+	public Class<DeleteGrafanaResourceResponse> getResponseClass() {
+		return DeleteGrafanaResourceResponse.class;
 	}
 
 }
