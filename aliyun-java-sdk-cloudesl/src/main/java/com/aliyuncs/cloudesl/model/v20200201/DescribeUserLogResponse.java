@@ -25,93 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserLogResponse extends AcsResponse {
 
-	private String errorMessage;
-
-	private String errorCode;
-
-	private Integer pageNumber;
-
-	private String message;
-
-	private String dynamicCode;
-
-	private String code;
-
-	private Integer pageSize;
-
-	private String dynamicMessage;
-
 	private String requestId;
+
+	private String errorMessage;
 
 	private Boolean success;
 
+	private String errorCode;
+
+	private String code;
+
+	private String message;
+
+	private String dynamicMessage;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private Integer totalCount;
 
+	private String dynamicCode;
+
 	private List<UserLogInfo> userLogs;
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -119,6 +55,14 @@ public class DescribeUserLogResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -129,12 +73,68 @@ public class DescribeUserLogResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getDynamicCode() {
+		return this.dynamicCode;
+	}
+
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
 	}
 
 	public List<UserLogInfo> getUserLogs() {
@@ -147,50 +147,52 @@ public class DescribeUserLogResponse extends AcsResponse {
 
 	public static class UserLogInfo {
 
-		private String resultCode;
+		private String eslBarCode;
 
 		private String operationSendTime;
 
-		private String gmtCreate;
-
-		private String storeId;
-
-		private String gmtModified;
-
 		private String actionPrice;
 
-		private String operationStatus;
+		private String userId;
 
 		private String priceUnit;
 
-		private String logId;
+		private String resultCode;
 
-		private String itemShortTitle;
+		private String itemId;
+
+		private String gmtModified;
 
 		private String operationType;
 
 		private String operationResponseTime;
 
-		private String spendTime;
+		private String operationStatus;
 
-		private String eslBarCode;
+		private String storeId;
 
-		private String itemId;
+		private String itemShortTitle;
 
-		private String itemBarCode;
+		private String logId;
 
 		private Boolean bePromotion;
 
-		private String userId;
+		private String gmtCreate;
 
 		private Integer eslSignal;
 
-		public String getResultCode() {
-			return this.resultCode;
+		private String spendTime;
+
+		private String itemBarCode;
+
+		private String i18nResultKey;
+
+		public String getEslBarCode() {
+			return this.eslBarCode;
 		}
 
-		public void setResultCode(String resultCode) {
-			this.resultCode = resultCode;
+		public void setEslBarCode(String eslBarCode) {
+			this.eslBarCode = eslBarCode;
 		}
 
 		public String getOperationSendTime() {
@@ -201,30 +203,6 @@ public class DescribeUserLogResponse extends AcsResponse {
 			this.operationSendTime = operationSendTime;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getStoreId() {
-			return this.storeId;
-		}
-
-		public void setStoreId(String storeId) {
-			this.storeId = storeId;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
 		public String getActionPrice() {
 			return this.actionPrice;
 		}
@@ -233,12 +211,12 @@ public class DescribeUserLogResponse extends AcsResponse {
 			this.actionPrice = actionPrice;
 		}
 
-		public String getOperationStatus() {
-			return this.operationStatus;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setOperationStatus(String operationStatus) {
-			this.operationStatus = operationStatus;
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public String getPriceUnit() {
@@ -249,20 +227,28 @@ public class DescribeUserLogResponse extends AcsResponse {
 			this.priceUnit = priceUnit;
 		}
 
-		public String getLogId() {
-			return this.logId;
+		public String getResultCode() {
+			return this.resultCode;
 		}
 
-		public void setLogId(String logId) {
-			this.logId = logId;
+		public void setResultCode(String resultCode) {
+			this.resultCode = resultCode;
 		}
 
-		public String getItemShortTitle() {
-			return this.itemShortTitle;
+		public String getItemId() {
+			return this.itemId;
 		}
 
-		public void setItemShortTitle(String itemShortTitle) {
-			this.itemShortTitle = itemShortTitle;
+		public void setItemId(String itemId) {
+			this.itemId = itemId;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getOperationType() {
@@ -281,36 +267,36 @@ public class DescribeUserLogResponse extends AcsResponse {
 			this.operationResponseTime = operationResponseTime;
 		}
 
-		public String getSpendTime() {
-			return this.spendTime;
+		public String getOperationStatus() {
+			return this.operationStatus;
 		}
 
-		public void setSpendTime(String spendTime) {
-			this.spendTime = spendTime;
+		public void setOperationStatus(String operationStatus) {
+			this.operationStatus = operationStatus;
 		}
 
-		public String getEslBarCode() {
-			return this.eslBarCode;
+		public String getStoreId() {
+			return this.storeId;
 		}
 
-		public void setEslBarCode(String eslBarCode) {
-			this.eslBarCode = eslBarCode;
+		public void setStoreId(String storeId) {
+			this.storeId = storeId;
 		}
 
-		public String getItemId() {
-			return this.itemId;
+		public String getItemShortTitle() {
+			return this.itemShortTitle;
 		}
 
-		public void setItemId(String itemId) {
-			this.itemId = itemId;
+		public void setItemShortTitle(String itemShortTitle) {
+			this.itemShortTitle = itemShortTitle;
 		}
 
-		public String getItemBarCode() {
-			return this.itemBarCode;
+		public String getLogId() {
+			return this.logId;
 		}
 
-		public void setItemBarCode(String itemBarCode) {
-			this.itemBarCode = itemBarCode;
+		public void setLogId(String logId) {
+			this.logId = logId;
 		}
 
 		public Boolean getBePromotion() {
@@ -321,12 +307,12 @@ public class DescribeUserLogResponse extends AcsResponse {
 			this.bePromotion = bePromotion;
 		}
 
-		public String getUserId() {
-			return this.userId;
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public Integer getEslSignal() {
@@ -335,6 +321,30 @@ public class DescribeUserLogResponse extends AcsResponse {
 
 		public void setEslSignal(Integer eslSignal) {
 			this.eslSignal = eslSignal;
+		}
+
+		public String getSpendTime() {
+			return this.spendTime;
+		}
+
+		public void setSpendTime(String spendTime) {
+			this.spendTime = spendTime;
+		}
+
+		public String getItemBarCode() {
+			return this.itemBarCode;
+		}
+
+		public void setItemBarCode(String itemBarCode) {
+			this.itemBarCode = itemBarCode;
+		}
+
+		public String getI18nResultKey() {
+			return this.i18nResultKey;
+		}
+
+		public void setI18nResultKey(String i18nResultKey) {
+			this.i18nResultKey = i18nResultKey;
 		}
 	}
 

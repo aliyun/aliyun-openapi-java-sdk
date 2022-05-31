@@ -14,15 +14,16 @@
 
 package com.aliyuncs.cloudesl.model.v20200201;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.DescribeCompanyTemplateAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class DescribeCompanyTemplateAttributeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,6 +40,16 @@ public class BindEslDeviceResponse extends AcsResponse {
 	private String dynamicMessage;
 
 	private String dynamicCode;
+
+	private List<SelectItemInfo> categoryField;
+
+	private List<SelectItemInfo> fontType;
+
+	private List<SelectItemInfo> deviceType;
+
+	private List<SelectItemInfo> templateType;
+
+	private List<SelectItemInfo> sizeType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -104,13 +115,71 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
-	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public List<SelectItemInfo> getCategoryField() {
+		return this.categoryField;
+	}
+
+	public void setCategoryField(List<SelectItemInfo> categoryField) {
+		this.categoryField = categoryField;
+	}
+
+	public List<SelectItemInfo> getFontType() {
+		return this.fontType;
+	}
+
+	public void setFontType(List<SelectItemInfo> fontType) {
+		this.fontType = fontType;
+	}
+
+	public List<SelectItemInfo> getDeviceType() {
+		return this.deviceType;
+	}
+
+	public void setDeviceType(List<SelectItemInfo> deviceType) {
+		this.deviceType = deviceType;
+	}
+
+	public List<SelectItemInfo> getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(List<SelectItemInfo> templateType) {
+		this.templateType = templateType;
+	}
+
+	public List<SelectItemInfo> getSizeType() {
+		return this.sizeType;
+	}
+
+	public void setSizeType(List<SelectItemInfo> sizeType) {
+		this.sizeType = sizeType;
+	}
+
+	public static class SelectItemInfo {
+
+		private String label;
+
+		private String value;
+
+		public String getLabel() {
+			return this.label;
+		}
+
+		public void setLabel(String label) {
+			this.label = label;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeCompanyTemplateAttributeResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCompanyTemplateAttributeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

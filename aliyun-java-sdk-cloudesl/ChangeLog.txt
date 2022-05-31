@@ -1,3 +1,6 @@
+2022-05-31 Version: 2.1.0
+- Add Template API Support.
+
 2022-03-30 Version: 2.0.9
 - Add DescribeEslDevices TypeEncode search.
 

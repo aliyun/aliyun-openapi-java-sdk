@@ -15,14 +15,16 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.DescribeCompanyTemplateViewResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class DescribeCompanyTemplateViewResponse extends AcsResponse {
+
+	private String data;
 
 	private String requestId;
 
@@ -39,6 +41,14 @@ public class BindEslDeviceResponse extends AcsResponse {
 	private String dynamicMessage;
 
 	private String dynamicCode;
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -105,12 +115,7 @@ public class BindEslDeviceResponse extends AcsResponse {
 	}
 
 	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DescribeCompanyTemplateViewResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCompanyTemplateViewResponseUnmarshaller.unmarshall(this, context);
 	}
 }

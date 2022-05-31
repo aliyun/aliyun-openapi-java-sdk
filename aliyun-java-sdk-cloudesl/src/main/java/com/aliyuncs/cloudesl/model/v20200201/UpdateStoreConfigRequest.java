@@ -29,6 +29,8 @@ public class UpdateStoreConfigRequest extends RpcAcsRequest<UpdateStoreConfigRes
 
 	private String storeId;
 
+	private String subscribeContents;
+
 	private Boolean enableNotification;
 
 	private String notificationWebHook;
@@ -62,6 +64,17 @@ public class UpdateStoreConfigRequest extends RpcAcsRequest<UpdateStoreConfigRes
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public String getSubscribeContents() {
+		return this.subscribeContents;
+	}
+
+	public void setSubscribeContents(String subscribeContents) {
+		this.subscribeContents = subscribeContents;
+		if(subscribeContents != null){
+			putBodyParameter("SubscribeContents", subscribeContents);
 		}
 	}
 

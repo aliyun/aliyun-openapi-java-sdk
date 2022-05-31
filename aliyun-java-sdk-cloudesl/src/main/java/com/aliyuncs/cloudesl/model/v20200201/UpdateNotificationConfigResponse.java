@@ -15,14 +15,14 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.UpdateNotificationConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class UpdateNotificationConfigResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -105,8 +105,8 @@ public class BindEslDeviceResponse extends AcsResponse {
 	}
 
 	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public UpdateNotificationConfigResponse getInstance(UnmarshallerContext context) {
+		return	UpdateNotificationConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

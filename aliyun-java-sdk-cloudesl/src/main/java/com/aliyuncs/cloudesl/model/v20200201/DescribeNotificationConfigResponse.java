@@ -15,14 +15,14 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.DescribeNotificationConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class DescribeNotificationConfigResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,6 +39,16 @@ public class BindEslDeviceResponse extends AcsResponse {
 	private String dynamicMessage;
 
 	private String dynamicCode;
+
+	private String topic;
+
+	private String groupId;
+
+	private String endpoint;
+
+	private String tag;
+
+	private Boolean enable;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -104,9 +114,49 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
+	public String getEndpoint() {
+		return this.endpoint;
+	}
+
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	public Boolean getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+	}
+
 	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public DescribeNotificationConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeNotificationConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

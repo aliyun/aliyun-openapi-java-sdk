@@ -15,14 +15,14 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.VerifyNotificationConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class VerifyNotificationConfigResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,6 +39,12 @@ public class BindEslDeviceResponse extends AcsResponse {
 	private String dynamicMessage;
 
 	private String dynamicCode;
+
+	private Boolean result;
+
+	private String sendTime;
+
+	private String exceptionMessage;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -104,9 +110,33 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
+	public Boolean getResult() {
+		return this.result;
+	}
+
+	public void setResult(Boolean result) {
+		this.result = result;
+	}
+
+	public String getSendTime() {
+		return this.sendTime;
+	}
+
+	public void setSendTime(String sendTime) {
+		this.sendTime = sendTime;
+	}
+
+	public String getExceptionMessage() {
+		return this.exceptionMessage;
+	}
+
+	public void setExceptionMessage(String exceptionMessage) {
+		this.exceptionMessage = exceptionMessage;
+	}
+
 	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public VerifyNotificationConfigResponse getInstance(UnmarshallerContext context) {
+		return	VerifyNotificationConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

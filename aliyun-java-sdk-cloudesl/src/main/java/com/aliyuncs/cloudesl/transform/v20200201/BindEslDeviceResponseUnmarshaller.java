@@ -24,12 +24,12 @@ public class BindEslDeviceResponseUnmarshaller {
 		
 		bindEslDeviceResponse.setRequestId(_ctx.stringValue("BindEslDeviceResponse.RequestId"));
 		bindEslDeviceResponse.setErrorMessage(_ctx.stringValue("BindEslDeviceResponse.ErrorMessage"));
-		bindEslDeviceResponse.setErrorCode(_ctx.stringValue("BindEslDeviceResponse.ErrorCode"));
-		bindEslDeviceResponse.setMessage(_ctx.stringValue("BindEslDeviceResponse.Message"));
-		bindEslDeviceResponse.setDynamicCode(_ctx.stringValue("BindEslDeviceResponse.DynamicCode"));
-		bindEslDeviceResponse.setCode(_ctx.stringValue("BindEslDeviceResponse.Code"));
-		bindEslDeviceResponse.setDynamicMessage(_ctx.stringValue("BindEslDeviceResponse.DynamicMessage"));
 		bindEslDeviceResponse.setSuccess(_ctx.booleanValue("BindEslDeviceResponse.Success"));
+		bindEslDeviceResponse.setErrorCode(_ctx.stringValue("BindEslDeviceResponse.ErrorCode"));
+		bindEslDeviceResponse.setCode(_ctx.stringValue("BindEslDeviceResponse.Code"));
+		bindEslDeviceResponse.setMessage(_ctx.stringValue("BindEslDeviceResponse.Message"));
+		bindEslDeviceResponse.setDynamicMessage(_ctx.stringValue("BindEslDeviceResponse.DynamicMessage"));
+		bindEslDeviceResponse.setDynamicCode(_ctx.stringValue("BindEslDeviceResponse.DynamicCode"));
 	 
 	 	return bindEslDeviceResponse;
 	}

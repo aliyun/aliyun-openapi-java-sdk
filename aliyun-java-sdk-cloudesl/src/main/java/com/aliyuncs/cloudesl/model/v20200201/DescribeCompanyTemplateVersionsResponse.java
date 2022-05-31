@@ -14,15 +14,18 @@
 
 package com.aliyuncs.cloudesl.model.v20200201;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.DescribeCompanyTemplateVersionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class DescribeCompanyTemplateVersionsResponse extends AcsResponse {
+
+	private Integer totalCount;
 
 	private String requestId;
 
@@ -39,6 +42,20 @@ public class BindEslDeviceResponse extends AcsResponse {
 	private String dynamicMessage;
 
 	private String dynamicCode;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private List<SelectItemInfo> versions;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -104,9 +121,46 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public List<SelectItemInfo> getVersions() {
+		return this.versions;
+	}
+
+	public void setVersions(List<SelectItemInfo> versions) {
+		this.versions = versions;
+	}
+
+	public static class SelectItemInfo {
+
+		private String version;
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+	}
+
 	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public DescribeCompanyTemplateVersionsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCompanyTemplateVersionsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

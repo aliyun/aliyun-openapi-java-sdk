@@ -28,38 +28,39 @@ public class DescribeUserLogResponseUnmarshaller {
 		
 		describeUserLogResponse.setRequestId(_ctx.stringValue("DescribeUserLogResponse.RequestId"));
 		describeUserLogResponse.setErrorMessage(_ctx.stringValue("DescribeUserLogResponse.ErrorMessage"));
-		describeUserLogResponse.setErrorCode(_ctx.stringValue("DescribeUserLogResponse.ErrorCode"));
-		describeUserLogResponse.setPageNumber(_ctx.integerValue("DescribeUserLogResponse.PageNumber"));
-		describeUserLogResponse.setMessage(_ctx.stringValue("DescribeUserLogResponse.Message"));
-		describeUserLogResponse.setDynamicCode(_ctx.stringValue("DescribeUserLogResponse.DynamicCode"));
-		describeUserLogResponse.setCode(_ctx.stringValue("DescribeUserLogResponse.Code"));
-		describeUserLogResponse.setPageSize(_ctx.integerValue("DescribeUserLogResponse.PageSize"));
-		describeUserLogResponse.setDynamicMessage(_ctx.stringValue("DescribeUserLogResponse.DynamicMessage"));
 		describeUserLogResponse.setSuccess(_ctx.booleanValue("DescribeUserLogResponse.Success"));
+		describeUserLogResponse.setErrorCode(_ctx.stringValue("DescribeUserLogResponse.ErrorCode"));
+		describeUserLogResponse.setCode(_ctx.stringValue("DescribeUserLogResponse.Code"));
+		describeUserLogResponse.setMessage(_ctx.stringValue("DescribeUserLogResponse.Message"));
+		describeUserLogResponse.setDynamicMessage(_ctx.stringValue("DescribeUserLogResponse.DynamicMessage"));
+		describeUserLogResponse.setPageSize(_ctx.integerValue("DescribeUserLogResponse.PageSize"));
+		describeUserLogResponse.setPageNumber(_ctx.integerValue("DescribeUserLogResponse.PageNumber"));
 		describeUserLogResponse.setTotalCount(_ctx.integerValue("DescribeUserLogResponse.TotalCount"));
+		describeUserLogResponse.setDynamicCode(_ctx.stringValue("DescribeUserLogResponse.DynamicCode"));
 
 		List<UserLogInfo> userLogs = new ArrayList<UserLogInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserLogResponse.UserLogs.Length"); i++) {
 			UserLogInfo userLogInfo = new UserLogInfo();
-			userLogInfo.setResultCode(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ResultCode"));
+			userLogInfo.setEslBarCode(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].EslBarCode"));
 			userLogInfo.setOperationSendTime(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].OperationSendTime"));
-			userLogInfo.setGmtCreate(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].GmtCreate"));
-			userLogInfo.setStoreId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].StoreId"));
-			userLogInfo.setGmtModified(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].GmtModified"));
 			userLogInfo.setActionPrice(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ActionPrice"));
-			userLogInfo.setOperationStatus(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].OperationStatus"));
+			userLogInfo.setUserId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].UserId"));
 			userLogInfo.setPriceUnit(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].PriceUnit"));
-			userLogInfo.setLogId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].LogId"));
-			userLogInfo.setItemShortTitle(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ItemShortTitle"));
+			userLogInfo.setResultCode(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ResultCode"));
+			userLogInfo.setItemId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ItemId"));
+			userLogInfo.setGmtModified(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].GmtModified"));
 			userLogInfo.setOperationType(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].OperationType"));
 			userLogInfo.setOperationResponseTime(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].OperationResponseTime"));
-			userLogInfo.setSpendTime(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].SpendTime"));
-			userLogInfo.setEslBarCode(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].EslBarCode"));
-			userLogInfo.setItemId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ItemId"));
-			userLogInfo.setItemBarCode(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ItemBarCode"));
+			userLogInfo.setOperationStatus(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].OperationStatus"));
+			userLogInfo.setStoreId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].StoreId"));
+			userLogInfo.setItemShortTitle(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ItemShortTitle"));
+			userLogInfo.setLogId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].LogId"));
 			userLogInfo.setBePromotion(_ctx.booleanValue("DescribeUserLogResponse.UserLogs["+ i +"].BePromotion"));
-			userLogInfo.setUserId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].UserId"));
+			userLogInfo.setGmtCreate(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].GmtCreate"));
 			userLogInfo.setEslSignal(_ctx.integerValue("DescribeUserLogResponse.UserLogs["+ i +"].EslSignal"));
+			userLogInfo.setSpendTime(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].SpendTime"));
+			userLogInfo.setItemBarCode(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ItemBarCode"));
+			userLogInfo.setI18nResultKey(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].I18nResultKey"));
 
 			userLogs.add(userLogInfo);
 		}

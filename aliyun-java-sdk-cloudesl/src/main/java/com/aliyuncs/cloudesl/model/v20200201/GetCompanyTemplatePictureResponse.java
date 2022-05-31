@@ -15,14 +15,14 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.GetCompanyTemplatePictureResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class GetCompanyTemplatePictureResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,6 +33,8 @@ public class BindEslDeviceResponse extends AcsResponse {
 	private String errorCode;
 
 	private String code;
+
+	private String base64Picture;
 
 	private String message;
 
@@ -80,6 +82,14 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getBase64Picture() {
+		return this.base64Picture;
+	}
+
+	public void setBase64Picture(String base64Picture) {
+		this.base64Picture = base64Picture;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
@@ -105,12 +115,7 @@ public class BindEslDeviceResponse extends AcsResponse {
 	}
 
 	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public GetCompanyTemplatePictureResponse getInstance(UnmarshallerContext context) {
+		return	GetCompanyTemplatePictureResponseUnmarshaller.unmarshall(this, context);
 	}
 }

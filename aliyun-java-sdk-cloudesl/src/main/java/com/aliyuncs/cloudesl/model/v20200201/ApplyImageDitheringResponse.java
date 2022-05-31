@@ -15,30 +15,40 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.ApplyImageDitheringResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class ApplyImageDitheringResponse extends AcsResponse {
+
+	private String content;
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
-
-	private String errorCode;
-
-	private String code;
 
 	private String message;
 
-	private String dynamicMessage;
+	private String errorCode;
+
+	private String errorMessage;
+
+	private String code;
 
 	private String dynamicCode;
+
+	private String dynamicMessage;
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +56,6 @@ public class BindEslDeviceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -64,12 +66,28 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public String getCode() {
@@ -80,12 +98,12 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getDynamicCode() {
+		return this.dynamicCode;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
 	}
 
 	public String getDynamicMessage() {
@@ -96,17 +114,9 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
 	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public ApplyImageDitheringResponse getInstance(UnmarshallerContext context) {
+		return	ApplyImageDitheringResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

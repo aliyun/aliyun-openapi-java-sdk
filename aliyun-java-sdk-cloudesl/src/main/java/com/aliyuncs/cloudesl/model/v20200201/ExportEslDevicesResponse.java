@@ -15,14 +15,14 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.BindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.ExportEslDevicesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindEslDeviceResponse extends AcsResponse {
+public class ExportEslDevicesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,6 +39,8 @@ public class BindEslDeviceResponse extends AcsResponse {
 	private String dynamicMessage;
 
 	private String dynamicCode;
+
+	private String downloadAddress;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -104,9 +106,17 @@ public class BindEslDeviceResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
+	public String getDownloadAddress() {
+		return this.downloadAddress;
+	}
+
+	public void setDownloadAddress(String downloadAddress) {
+		this.downloadAddress = downloadAddress;
+	}
+
 	@Override
-	public BindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	BindEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public ExportEslDevicesResponse getInstance(UnmarshallerContext context) {
+		return	ExportEslDevicesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

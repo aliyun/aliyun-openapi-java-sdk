@@ -16,14 +16,14 @@ package com.aliyuncs.cloudesl.model.v20200201;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.DescribeStoreConfigResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.DescribeStoreByTemplateVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeStoreConfigResponse extends AcsResponse {
+public class DescribeStoreByTemplateVersionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -41,7 +41,7 @@ public class DescribeStoreConfigResponse extends AcsResponse {
 
 	private String dynamicCode;
 
-	private StoreConfigInfo storeConfigInfo;
+	private List<SelectItemInfo> stores;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -107,25 +107,41 @@ public class DescribeStoreConfigResponse extends AcsResponse {
 		this.dynamicCode = dynamicCode;
 	}
 
-	public StoreConfigInfo getStoreConfigInfo() {
-		return this.storeConfigInfo;
+	public List<SelectItemInfo> getStores() {
+		return this.stores;
 	}
 
-	public void setStoreConfigInfo(StoreConfigInfo storeConfigInfo) {
-		this.storeConfigInfo = storeConfigInfo;
+	public void setStores(List<SelectItemInfo> stores) {
+		this.stores = stores;
 	}
 
-	public static class StoreConfigInfo {
+	public static class SelectItemInfo {
+
+		private String storeName;
 
 		private String storeId;
 
-		private Boolean enableNotification;
+		private String parentId;
 
-		private String notificationWebHook;
+		private String userStoreCode;
 
-		private String notificationSilentTimes;
+		private String gmtModified;
 
-		private List<SubscribeContent> subscribeContents;
+		private String phone;
+
+		private String level;
+
+		private String templateVersion;
+
+		private String timeZone;
+
+		public String getStoreName() {
+			return this.storeName;
+		}
+
+		public void setStoreName(String storeName) {
+			this.storeName = storeName;
+		}
 
 		public String getStoreId() {
 			return this.storeId;
@@ -135,95 +151,66 @@ public class DescribeStoreConfigResponse extends AcsResponse {
 			this.storeId = storeId;
 		}
 
-		public Boolean getEnableNotification() {
-			return this.enableNotification;
+		public String getParentId() {
+			return this.parentId;
 		}
 
-		public void setEnableNotification(Boolean enableNotification) {
-			this.enableNotification = enableNotification;
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
 		}
 
-		public String getNotificationWebHook() {
-			return this.notificationWebHook;
+		public String getUserStoreCode() {
+			return this.userStoreCode;
 		}
 
-		public void setNotificationWebHook(String notificationWebHook) {
-			this.notificationWebHook = notificationWebHook;
+		public void setUserStoreCode(String userStoreCode) {
+			this.userStoreCode = userStoreCode;
 		}
 
-		public String getNotificationSilentTimes() {
-			return this.notificationSilentTimes;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setNotificationSilentTimes(String notificationSilentTimes) {
-			this.notificationSilentTimes = notificationSilentTimes;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
-		public List<SubscribeContent> getSubscribeContents() {
-			return this.subscribeContents;
+		public String getPhone() {
+			return this.phone;
 		}
 
-		public void setSubscribeContents(List<SubscribeContent> subscribeContents) {
-			this.subscribeContents = subscribeContents;
+		public void setPhone(String phone) {
+			this.phone = phone;
 		}
 
-		public static class SubscribeContent {
+		public String getLevel() {
+			return this.level;
+		}
 
-			private String category;
+		public void setLevel(String level) {
+			this.level = level;
+		}
 
-			private Boolean enable;
+		public String getTemplateVersion() {
+			return this.templateVersion;
+		}
 
-			private String threshold;
+		public void setTemplateVersion(String templateVersion) {
+			this.templateVersion = templateVersion;
+		}
 
-			private Boolean atAll;
+		public String getTimeZone() {
+			return this.timeZone;
+		}
 
-			private String atMobileList;
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
-			}
-
-			public Boolean getEnable() {
-				return this.enable;
-			}
-
-			public void setEnable(Boolean enable) {
-				this.enable = enable;
-			}
-
-			public String getThreshold() {
-				return this.threshold;
-			}
-
-			public void setThreshold(String threshold) {
-				this.threshold = threshold;
-			}
-
-			public Boolean getAtAll() {
-				return this.atAll;
-			}
-
-			public void setAtAll(Boolean atAll) {
-				this.atAll = atAll;
-			}
-
-			public String getAtMobileList() {
-				return this.atMobileList;
-			}
-
-			public void setAtMobileList(String atMobileList) {
-				this.atMobileList = atMobileList;
-			}
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
 		}
 	}
 
 	@Override
-	public DescribeStoreConfigResponse getInstance(UnmarshallerContext context) {
-		return	DescribeStoreConfigResponseUnmarshaller.unmarshall(this, context);
+	public DescribeStoreByTemplateVersionResponse getInstance(UnmarshallerContext context) {
+		return	DescribeStoreByTemplateVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

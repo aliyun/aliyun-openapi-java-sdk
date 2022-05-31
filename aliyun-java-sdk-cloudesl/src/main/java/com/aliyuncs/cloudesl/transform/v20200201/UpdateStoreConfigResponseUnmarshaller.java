@@ -24,12 +24,12 @@ public class UpdateStoreConfigResponseUnmarshaller {
 		
 		updateStoreConfigResponse.setRequestId(_ctx.stringValue("UpdateStoreConfigResponse.RequestId"));
 		updateStoreConfigResponse.setErrorMessage(_ctx.stringValue("UpdateStoreConfigResponse.ErrorMessage"));
-		updateStoreConfigResponse.setErrorCode(_ctx.stringValue("UpdateStoreConfigResponse.ErrorCode"));
-		updateStoreConfigResponse.setMessage(_ctx.stringValue("UpdateStoreConfigResponse.Message"));
-		updateStoreConfigResponse.setDynamicCode(_ctx.stringValue("UpdateStoreConfigResponse.DynamicCode"));
-		updateStoreConfigResponse.setCode(_ctx.stringValue("UpdateStoreConfigResponse.Code"));
-		updateStoreConfigResponse.setDynamicMessage(_ctx.stringValue("UpdateStoreConfigResponse.DynamicMessage"));
 		updateStoreConfigResponse.setSuccess(_ctx.booleanValue("UpdateStoreConfigResponse.Success"));
+		updateStoreConfigResponse.setErrorCode(_ctx.stringValue("UpdateStoreConfigResponse.ErrorCode"));
+		updateStoreConfigResponse.setCode(_ctx.stringValue("UpdateStoreConfigResponse.Code"));
+		updateStoreConfigResponse.setMessage(_ctx.stringValue("UpdateStoreConfigResponse.Message"));
+		updateStoreConfigResponse.setDynamicMessage(_ctx.stringValue("UpdateStoreConfigResponse.DynamicMessage"));
+		updateStoreConfigResponse.setDynamicCode(_ctx.stringValue("UpdateStoreConfigResponse.DynamicCode"));
 	 
 	 	return updateStoreConfigResponse;
 	}

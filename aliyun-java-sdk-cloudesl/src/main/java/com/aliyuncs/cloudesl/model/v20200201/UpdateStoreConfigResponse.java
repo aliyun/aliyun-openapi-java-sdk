@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateStoreConfigResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String errorMessage;
+
+	private Boolean success;
 
 	private String errorCode;
 
-	private String message;
-
-	private String dynamicCode;
-
 	private String code;
+
+	private String message;
 
 	private String dynamicMessage;
 
-	private String requestId;
+	private String dynamicCode;
 
-	private Boolean success;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getErrorMessage() {
 		return this.errorMessage;
@@ -46,6 +54,14 @@ public class UpdateStoreConfigResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -56,28 +72,20 @@ public class UpdateStoreConfigResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getDynamicMessage() {
@@ -88,20 +96,12 @@ public class UpdateStoreConfigResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getDynamicCode() {
+		return this.dynamicCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
 	}
 
 	@Override
