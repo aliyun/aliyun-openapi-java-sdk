@@ -28,25 +28,11 @@ import com.aliyuncs.http.MethodType;
 public class HuichengTestGrayRequest extends RpcAcsRequest<HuichengTestGrayResponse> {
 	   
 
-	@SerializedName("aaa")
-	private Aaa aaa;
-
 	@SerializedName("home")
 	private Home home;
 	public HuichengTestGrayRequest() {
-		super("AmpTest", "2020-12-30", "HuichengTestGray");
+		super("AmpTest", "2020-12-30", "HuichengTestGray", "AmpTest");
 		setMethod(MethodType.POST);
-	}
-
-	public Aaa getAaa() {
-		return this.aaa;
-	}
-
-	public void setAaa(Aaa aaa) {
-		this.aaa = aaa;	
-		if (aaa != null) {
-			putQueryParameter("a.a.a" , new Gson().toJson(aaa));
-		}	
 	}
 
 	public Home getHome() {
@@ -58,48 +44,6 @@ public class HuichengTestGrayRequest extends RpcAcsRequest<HuichengTestGrayRespo
 		if (home != null) {
 			putQueryParameter("Home" , new Gson().toJson(home));
 		}	
-	}
-
-	public static class Aaa {
-
-		@SerializedName("bbb")
-		private Bbb bbb;
-
-		public Bbb getBbb() {
-			return this.bbb;
-		}
-
-		public void setBbb(Bbb bbb) {
-			this.bbb = bbb;
-		}
-
-		public static class Bbb {
-
-			@SerializedName("ccc")
-			private Ccc ccc;
-
-			public Ccc getCcc() {
-				return this.ccc;
-			}
-
-			public void setCcc(Ccc ccc) {
-				this.ccc = ccc;
-			}
-
-			public static class Ccc {
-
-				@SerializedName("ddd")
-				private String ddd;
-
-				public String getDdd() {
-					return this.ddd;
-				}
-
-				public void setDdd(String ddd) {
-					this.ddd = ddd;
-				}
-			}
-		}
 	}
 
 	public static class Home {

@@ -31,7 +31,7 @@ public class HuichengTestGraySecondRequest extends RpcAcsRequest<HuichengTestGra
 	@SerializedName("home")
 	private Home home;
 	public HuichengTestGraySecondRequest() {
-		super("AmpTest", "2020-12-30", "HuichengTestGraySecond");
+		super("AmpTest", "2020-12-30", "HuichengTestGraySecond", "AmpTest");
 		setMethod(MethodType.POST);
 	}
 
