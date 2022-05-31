@@ -1,3 +1,6 @@
+2022-05-31 Version: 2.1.2
+- Support aggregator delivery.
+
 2022-02-23 Version: 2.1.1
 - Support remediation.
 

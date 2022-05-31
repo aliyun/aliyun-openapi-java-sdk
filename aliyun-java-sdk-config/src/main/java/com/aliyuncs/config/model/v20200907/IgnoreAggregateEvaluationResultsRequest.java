@@ -32,6 +32,8 @@ public class IgnoreAggregateEvaluationResultsRequest extends RpcAcsRequest<Ignor
 
 	private String reason;
 
+	private String ignoreDate;
+
 	@SerializedName("resources")
 	private List<Resources> resources;
 
@@ -64,6 +66,17 @@ public class IgnoreAggregateEvaluationResultsRequest extends RpcAcsRequest<Ignor
 		this.reason = reason;
 		if(reason != null){
 			putBodyParameter("Reason", reason);
+		}
+	}
+
+	public String getIgnoreDate() {
+		return this.ignoreDate;
+	}
+
+	public void setIgnoreDate(String ignoreDate) {
+		this.ignoreDate = ignoreDate;
+		if(ignoreDate != null){
+			putBodyParameter("IgnoreDate", ignoreDate);
 		}
 	}
 

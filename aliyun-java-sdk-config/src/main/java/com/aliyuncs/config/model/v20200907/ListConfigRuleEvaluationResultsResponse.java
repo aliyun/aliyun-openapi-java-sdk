@@ -201,6 +201,8 @@ public class ListConfigRuleEvaluationResultsResponse extends AcsResponse {
 
 					private String compliancePackId;
 
+					private String ignoreDate;
+
 					public Long getResourceOwnerId() {
 						return this.resourceOwnerId;
 					}
@@ -271,6 +273,14 @@ public class ListConfigRuleEvaluationResultsResponse extends AcsResponse {
 
 					public void setCompliancePackId(String compliancePackId) {
 						this.compliancePackId = compliancePackId;
+					}
+
+					public String getIgnoreDate() {
+						return this.ignoreDate;
+					}
+
+					public void setIgnoreDate(String ignoreDate) {
+						this.ignoreDate = ignoreDate;
 					}
 				}
 			}

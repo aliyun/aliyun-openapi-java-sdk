@@ -51,7 +51,7 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 		private Integer maxResults;
 
-		private String previousToken;
+		private Integer totalCount;
 
 		private List<DiscoveredResourceProfile> discoveredResourceProfileList;
 
@@ -71,12 +71,12 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 			this.maxResults = maxResults;
 		}
 
-		public String getPreviousToken() {
-			return this.previousToken;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPreviousToken(String previousToken) {
-			this.previousToken = previousToken;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public List<DiscoveredResourceProfile> getDiscoveredResourceProfileList() {

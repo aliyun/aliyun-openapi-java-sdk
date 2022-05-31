@@ -54,7 +54,11 @@ public class GetManagedRuleResponse extends AcsResponse {
 
 		private String defaultName;
 
+		private Map<Object,Object> optionalInputParameterDetails;
+
 		private String identifier;
+
+		private Map<Object,Object> compulsoryInputParameterDetails;
 
 		private String regionId;
 
@@ -77,10 +81,6 @@ public class GetManagedRuleResponse extends AcsResponse {
 		private List<String> labels;
 
 		private List<Map<Object,Object>> sourceConditions;
-
-		private List<String> optionalInputParameterDetails;
-
-		private List<String> compulsoryInputParameterDetails;
 
 		private Scope scope;
 
@@ -108,12 +108,28 @@ public class GetManagedRuleResponse extends AcsResponse {
 			this.defaultName = defaultName;
 		}
 
+		public Map<Object,Object> getOptionalInputParameterDetails() {
+			return this.optionalInputParameterDetails;
+		}
+
+		public void setOptionalInputParameterDetails(Map<Object,Object> optionalInputParameterDetails) {
+			this.optionalInputParameterDetails = optionalInputParameterDetails;
+		}
+
 		public String getIdentifier() {
 			return this.identifier;
 		}
 
 		public void setIdentifier(String identifier) {
 			this.identifier = identifier;
+		}
+
+		public Map<Object,Object> getCompulsoryInputParameterDetails() {
+			return this.compulsoryInputParameterDetails;
+		}
+
+		public void setCompulsoryInputParameterDetails(Map<Object,Object> compulsoryInputParameterDetails) {
+			this.compulsoryInputParameterDetails = compulsoryInputParameterDetails;
 		}
 
 		public String getRegionId() {
@@ -202,22 +218,6 @@ public class GetManagedRuleResponse extends AcsResponse {
 
 		public void setSourceConditions(List<Map<Object,Object>> sourceConditions) {
 			this.sourceConditions = sourceConditions;
-		}
-
-		public List<String> getOptionalInputParameterDetails() {
-			return this.optionalInputParameterDetails;
-		}
-
-		public void setOptionalInputParameterDetails(List<String> optionalInputParameterDetails) {
-			this.optionalInputParameterDetails = optionalInputParameterDetails;
-		}
-
-		public List<String> getCompulsoryInputParameterDetails() {
-			return this.compulsoryInputParameterDetails;
-		}
-
-		public void setCompulsoryInputParameterDetails(List<String> compulsoryInputParameterDetails) {
-			this.compulsoryInputParameterDetails = compulsoryInputParameterDetails;
 		}
 
 		public Scope getScope() {

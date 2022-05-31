@@ -35,7 +35,9 @@ public class GetManagedRuleResponseUnmarshaller {
 		managedRule.setRiskLevel(_ctx.integerValue("GetManagedRuleResponse.ManagedRule.RiskLevel"));
 		managedRule.setHelpHint(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.HelpHint"));
 		managedRule.setDefaultName(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.DefaultName"));
+		managedRule.setOptionalInputParameterDetails(_ctx.mapValue("GetManagedRuleResponse.ManagedRule.OptionalInputParameterDetails"));
 		managedRule.setIdentifier(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.Identifier"));
+		managedRule.setCompulsoryInputParameterDetails(_ctx.mapValue("GetManagedRuleResponse.ManagedRule.CompulsoryInputParameterDetails"));
 		managedRule.setRegionId(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.RegionId"));
 		managedRule.setDescription(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.Description"));
 		managedRule.setFunctionName(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.FunctionName"));
@@ -53,18 +55,6 @@ public class GetManagedRuleResponseUnmarshaller {
 
 		List<Map<Object, Object>> sourceConditions = _ctx.listMapValue("GetManagedRuleResponse.ManagedRule.SourceConditions");
 		managedRule.setSourceConditions(sourceConditions);
-
-		List<String> optionalInputParameterDetails = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetManagedRuleResponse.ManagedRule.OptionalInputParameterDetails.Length"); i++) {
-			optionalInputParameterDetails.add(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.OptionalInputParameterDetails["+ i +"]"));
-		}
-		managedRule.setOptionalInputParameterDetails(optionalInputParameterDetails);
-
-		List<String> compulsoryInputParameterDetails = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetManagedRuleResponse.ManagedRule.CompulsoryInputParameterDetails.Length"); i++) {
-			compulsoryInputParameterDetails.add(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.CompulsoryInputParameterDetails["+ i +"]"));
-		}
-		managedRule.setCompulsoryInputParameterDetails(compulsoryInputParameterDetails);
 
 		Scope scope = new Scope();
 

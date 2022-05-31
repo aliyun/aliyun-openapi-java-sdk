@@ -43,6 +43,7 @@ public class ListAggregateRemediationsResponseUnmarshaller {
 			remediation.setInvokeType(_ctx.stringValue("ListAggregateRemediationsResponse.Remediations["+ i +"].InvokeType"));
 			remediation.setConfigRuleId(_ctx.stringValue("ListAggregateRemediationsResponse.Remediations["+ i +"].ConfigRuleId"));
 			remediation.setLastSuccessfulInvocationTime(_ctx.longValue("ListAggregateRemediationsResponse.Remediations["+ i +"].LastSuccessfulInvocationTime"));
+			remediation.setRemediaitonOriginParams(_ctx.stringValue("ListAggregateRemediationsResponse.Remediations["+ i +"].RemediaitonOriginParams"));
 
 			remediations.add(remediation);
 		}

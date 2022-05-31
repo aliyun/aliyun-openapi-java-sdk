@@ -57,6 +57,7 @@ public class ListResourceEvaluationResultsResponseUnmarshaller {
 			evaluationResultQualifier.setConfigRuleId(_ctx.stringValue("ListResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleId"));
 			evaluationResultQualifier.setResourceName(_ctx.stringValue("ListResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceName"));
 			evaluationResultQualifier.setRegionId(_ctx.stringValue("ListResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.RegionId"));
+			evaluationResultQualifier.setIgnoreDate(_ctx.stringValue("ListResourceEvaluationResultsResponse.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.IgnoreDate"));
 			evaluationResultIdentifier.setEvaluationResultQualifier(evaluationResultQualifier);
 			evaluationResult.setEvaluationResultIdentifier(evaluationResultIdentifier);
 

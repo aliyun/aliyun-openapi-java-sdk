@@ -71,6 +71,8 @@ public class ListAggregateRemediationsResponse extends AcsResponse {
 
 		private Long lastSuccessfulInvocationTime;
 
+		private String remediaitonOriginParams;
+
 		public String getRemediationTemplateId() {
 			return this.remediationTemplateId;
 		}
@@ -165,6 +167,14 @@ public class ListAggregateRemediationsResponse extends AcsResponse {
 
 		public void setLastSuccessfulInvocationTime(Long lastSuccessfulInvocationTime) {
 			this.lastSuccessfulInvocationTime = lastSuccessfulInvocationTime;
+		}
+
+		public String getRemediaitonOriginParams() {
+			return this.remediaitonOriginParams;
+		}
+
+		public void setRemediaitonOriginParams(String remediaitonOriginParams) {
+			this.remediaitonOriginParams = remediaitonOriginParams;
 		}
 	}
 

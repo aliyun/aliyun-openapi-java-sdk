@@ -197,6 +197,8 @@ public class ListResourceEvaluationResultsResponse extends AcsResponse {
 
 					private String regionId;
 
+					private String ignoreDate;
+
 					public String getConfigRuleArn() {
 						return this.configRuleArn;
 					}
@@ -251,6 +253,14 @@ public class ListResourceEvaluationResultsResponse extends AcsResponse {
 
 					public void setRegionId(String regionId) {
 						this.regionId = regionId;
+					}
+
+					public String getIgnoreDate() {
+						return this.ignoreDate;
+					}
+
+					public void setIgnoreDate(String ignoreDate) {
+						this.ignoreDate = ignoreDate;
 					}
 				}
 			}

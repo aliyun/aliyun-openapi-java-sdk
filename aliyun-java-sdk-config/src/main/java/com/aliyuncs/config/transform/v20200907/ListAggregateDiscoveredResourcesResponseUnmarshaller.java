@@ -32,7 +32,7 @@ public class ListAggregateDiscoveredResourcesResponseUnmarshaller {
 		DiscoveredResourceProfiles discoveredResourceProfiles = new DiscoveredResourceProfiles();
 		discoveredResourceProfiles.setNextToken(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.NextToken"));
 		discoveredResourceProfiles.setMaxResults(_ctx.integerValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.MaxResults"));
-		discoveredResourceProfiles.setPreviousToken(_ctx.stringValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.PreviousToken"));
+		discoveredResourceProfiles.setTotalCount(_ctx.integerValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.TotalCount"));
 
 		List<DiscoveredResourceProfile> discoveredResourceProfileList = new ArrayList<DiscoveredResourceProfile>();
 		for (int i = 0; i < _ctx.lengthValue("ListAggregateDiscoveredResourcesResponse.DiscoveredResourceProfiles.DiscoveredResourceProfileList.Length"); i++) {
