@@ -1,3 +1,6 @@
+2022-06-02 Version: 3.26.4
+- Add ListK8sNamespaces.
+
 2022-05-18 Version: 3.26.3
 - Supported EnableEmptyPushReject for InsertK8sApplication.
 - Supported EnableLosslessRule for InsertK8sApplication.

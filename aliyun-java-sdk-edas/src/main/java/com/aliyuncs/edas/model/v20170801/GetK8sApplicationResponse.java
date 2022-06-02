@@ -129,7 +129,17 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 		public static class DeployGroup {
 
+			private String env;
+
 			private List<ComponentsItem> components;
+
+			public String getEnv() {
+				return this.env;
+			}
+
+			public void setEnv(String env) {
+				this.env = env;
+			}
 
 			public List<ComponentsItem> getComponents() {
 				return this.components;

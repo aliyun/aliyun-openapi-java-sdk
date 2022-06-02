@@ -117,6 +117,7 @@ public class GetK8sApplicationResponseUnmarshaller {
 		List<DeployGroup> deployGroups = new ArrayList<DeployGroup>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.DeployGroups.Length"); i++) {
 			DeployGroup deployGroup = new DeployGroup();
+			deployGroup.setEnv(_ctx.stringValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Env"));
 
 			List<ComponentsItem> components = new ArrayList<ComponentsItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Components.Length"); j++) {
