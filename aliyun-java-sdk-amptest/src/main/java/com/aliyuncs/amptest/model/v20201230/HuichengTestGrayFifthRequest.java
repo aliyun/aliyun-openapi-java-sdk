@@ -31,7 +31,7 @@ public class HuichengTestGrayFifthRequest extends RpcAcsRequest<HuichengTestGray
 	@SerializedName("home")
 	private Home home;
 	public HuichengTestGrayFifthRequest() {
-		super("AmpTest", "2020-12-30", "HuichengTestGrayFifth", "AmpTest");
+		super("AmpTest", "2020-12-30", "HuichengTestGrayFifth");
 		setMethod(MethodType.POST);
 	}
 
