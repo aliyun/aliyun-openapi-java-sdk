@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class HuichengetRequest extends RpcAcsRequest<HuichengetResponse> {
 	   
 	public HuichengetRequest() {
-		super("AmpTest", "2020-12-30", "Huichenget");
+		super("AmpTest", "2020-12-30", "Huichenget", "AmpTest");
 		setMethod(MethodType.POST);
 	}
 

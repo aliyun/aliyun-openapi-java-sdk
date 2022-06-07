@@ -31,7 +31,7 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 	@SerializedName("home")
 	private Home home;
 	public CreateRulesRequest() {
-		super("AmpTest", "2020-12-30", "CreateRules");
+		super("AmpTest", "2020-12-30", "CreateRules", "AmpTest");
 		setMethod(MethodType.POST);
 	}
 

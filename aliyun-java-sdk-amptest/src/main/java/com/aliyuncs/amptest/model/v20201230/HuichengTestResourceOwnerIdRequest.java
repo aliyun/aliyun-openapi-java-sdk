@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class HuichengTestResourceOwnerIdRequest extends RpcAcsRequest<HuichengTestResourceOwnerIdResponse> {
 	   
 	public HuichengTestResourceOwnerIdRequest() {
-		super("AmpTest", "2020-12-30", "HuichengTestResourceOwnerId");
+		super("AmpTest", "2020-12-30", "HuichengTestResourceOwnerId", "AmpTest");
 		setMethod(MethodType.GET);
 	}
 
