@@ -1,3 +1,6 @@
+2022-06-07 Version: 1.2.6
+- Add ListCostUnitOrders Open API.
+
 2022-04-12 Version: 1.2.5
 - Support verify id Token Send.
 
