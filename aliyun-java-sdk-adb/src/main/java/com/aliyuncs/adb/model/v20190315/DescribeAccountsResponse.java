@@ -47,21 +47,13 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class DBAccount {
 
-		private String accountName;
-
 		private String accountStatus;
 
 		private String accountDescription;
 
 		private String accountType;
 
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
+		private String accountName;
 
 		public String getAccountStatus() {
 			return this.accountStatus;
@@ -85,6 +77,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountType(String accountType) {
 			this.accountType = accountType;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

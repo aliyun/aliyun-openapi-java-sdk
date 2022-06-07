@@ -27,9 +27,9 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageSize;
-
 	private String requestId;
+
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -49,20 +49,20 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -109,11 +109,11 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 		private String tableName;
 
-		private Integer partitionNumber;
-
 		private String partitionDetail;
 
 		private String schemaName;
+
+		private Integer partitionNumber;
 
 		public String getTableName() {
 			return this.tableName;
@@ -121,14 +121,6 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 		public void setTableName(String tableName) {
 			this.tableName = tableName;
-		}
-
-		public Integer getPartitionNumber() {
-			return this.partitionNumber;
-		}
-
-		public void setPartitionNumber(Integer partitionNumber) {
-			this.partitionNumber = partitionNumber;
 		}
 
 		public String getPartitionDetail() {
@@ -145,6 +137,14 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 		public void setSchemaName(String schemaName) {
 			this.schemaName = schemaName;
+		}
+
+		public Integer getPartitionNumber() {
+			return this.partitionNumber;
+		}
+
+		public void setPartitionNumber(Integer partitionNumber) {
+			this.partitionNumber = partitionNumber;
 		}
 	}
 

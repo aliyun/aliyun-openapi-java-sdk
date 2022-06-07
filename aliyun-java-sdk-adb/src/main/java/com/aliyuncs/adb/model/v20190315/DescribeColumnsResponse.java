@@ -47,42 +47,26 @@ public class DescribeColumnsResponse extends AcsResponse {
 
 	public static class Column {
 
-		private String dBClusterId;
-
-		private String schemaName;
-
-		private String tableName;
+		private String type;
 
 		private String columnName;
 
-		private String type;
-
-		private Boolean primaryKey;
+		private String tableName;
 
 		private Boolean autoIncrementColumn;
 
-		public String getDBClusterId() {
-			return this.dBClusterId;
+		private String dBClusterId;
+
+		private Boolean primaryKey;
+
+		private String schemaName;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getColumnName() {
@@ -93,12 +77,28 @@ public class DescribeColumnsResponse extends AcsResponse {
 			this.columnName = columnName;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public Boolean getAutoIncrementColumn() {
+			return this.autoIncrementColumn;
+		}
+
+		public void setAutoIncrementColumn(Boolean autoIncrementColumn) {
+			this.autoIncrementColumn = autoIncrementColumn;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
 		}
 
 		public Boolean getPrimaryKey() {
@@ -109,12 +109,12 @@ public class DescribeColumnsResponse extends AcsResponse {
 			this.primaryKey = primaryKey;
 		}
 
-		public Boolean getAutoIncrementColumn() {
-			return this.autoIncrementColumn;
+		public String getSchemaName() {
+			return this.schemaName;
 		}
 
-		public void setAutoIncrementColumn(Boolean autoIncrementColumn) {
-			this.autoIncrementColumn = autoIncrementColumn;
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 	}
 

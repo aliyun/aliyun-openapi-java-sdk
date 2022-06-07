@@ -47,11 +47,19 @@ public class DescribeTablesResponse extends AcsResponse {
 
 	public static class Table {
 
+		private String tableName;
+
 		private String dBClusterId;
 
 		private String schemaName;
 
-		private String tableName;
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
 
 		public String getDBClusterId() {
 			return this.dBClusterId;
@@ -67,14 +75,6 @@ public class DescribeTablesResponse extends AcsResponse {
 
 		public void setSchemaName(String schemaName) {
 			this.schemaName = schemaName;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
 		}
 	}
 

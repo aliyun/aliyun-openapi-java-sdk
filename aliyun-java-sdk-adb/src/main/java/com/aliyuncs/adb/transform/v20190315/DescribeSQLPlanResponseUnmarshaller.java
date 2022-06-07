@@ -32,41 +32,41 @@ public class DescribeSQLPlanResponseUnmarshaller {
 
 		Detail detail = new Detail();
 		detail.setSQL(_ctx.stringValue("DescribeSQLPlanResponse.Detail.SQL"));
-		detail.setState(_ctx.stringValue("DescribeSQLPlanResponse.Detail.State"));
-		detail.setUser(_ctx.stringValue("DescribeSQLPlanResponse.Detail.User"));
-		detail.setClientIP(_ctx.stringValue("DescribeSQLPlanResponse.Detail.ClientIP"));
-		detail.setDatabase(_ctx.stringValue("DescribeSQLPlanResponse.Detail.Database"));
-		detail.setTotalStage(_ctx.longValue("DescribeSQLPlanResponse.Detail.TotalStage"));
-		detail.setTotalTask(_ctx.longValue("DescribeSQLPlanResponse.Detail.TotalTask"));
-		detail.setOutputRows(_ctx.longValue("DescribeSQLPlanResponse.Detail.OutputRows"));
 		detail.setOutputSize(_ctx.longValue("DescribeSQLPlanResponse.Detail.OutputSize"));
+		detail.setState(_ctx.stringValue("DescribeSQLPlanResponse.Detail.State"));
+		detail.setOutputRows(_ctx.longValue("DescribeSQLPlanResponse.Detail.OutputRows"));
+		detail.setUser(_ctx.stringValue("DescribeSQLPlanResponse.Detail.User"));
 		detail.setStartTime(_ctx.stringValue("DescribeSQLPlanResponse.Detail.StartTime"));
-		detail.setTotalTime(_ctx.longValue("DescribeSQLPlanResponse.Detail.TotalTime"));
+		detail.setTotalStage(_ctx.longValue("DescribeSQLPlanResponse.Detail.TotalStage"));
 		detail.setQueuedTime(_ctx.longValue("DescribeSQLPlanResponse.Detail.QueuedTime"));
+		detail.setTotalTime(_ctx.longValue("DescribeSQLPlanResponse.Detail.TotalTime"));
+		detail.setTotalTask(_ctx.longValue("DescribeSQLPlanResponse.Detail.TotalTask"));
+		detail.setDatabase(_ctx.stringValue("DescribeSQLPlanResponse.Detail.Database"));
+		detail.setPeakMemory(_ctx.longValue("DescribeSQLPlanResponse.Detail.PeakMemory"));
+		detail.setClientIP(_ctx.stringValue("DescribeSQLPlanResponse.Detail.ClientIP"));
 		detail.setPlanningTime(_ctx.longValue("DescribeSQLPlanResponse.Detail.PlanningTime"));
 		detail.setCPUTime(_ctx.longValue("DescribeSQLPlanResponse.Detail.CPUTime"));
-		detail.setPeakMemory(_ctx.longValue("DescribeSQLPlanResponse.Detail.PeakMemory"));
 		describeSQLPlanResponse.setDetail(detail);
 
 		List<SqlPlanStage> stageList = new ArrayList<SqlPlanStage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLPlanResponse.StageList.Length"); i++) {
 			SqlPlanStage sqlPlanStage = new SqlPlanStage();
-			sqlPlanStage.setStageId(_ctx.integerValue("DescribeSQLPlanResponse.StageList["+ i +"].StageId"));
 			sqlPlanStage.setState(_ctx.stringValue("DescribeSQLPlanResponse.StageList["+ i +"].State"));
-			sqlPlanStage.setOperatorCost(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].OperatorCost"));
-			sqlPlanStage.setPeakMemory(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].PeakMemory"));
-			sqlPlanStage.setCPUTimeMin(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].CPUTimeMin"));
-			sqlPlanStage.setCPUTimeMax(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].CPUTimeMax"));
 			sqlPlanStage.setCPUTimeAvg(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].CPUTimeAvg"));
-			sqlPlanStage.setInputSizeMin(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].InputSizeMin"));
-			sqlPlanStage.setInputSizeMax(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].InputSizeMax"));
-			sqlPlanStage.setInputSizeAvg(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].InputSizeAvg"));
-			sqlPlanStage.setScanSizeMin(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanSizeMin"));
-			sqlPlanStage.setScanSizeMax(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanSizeMax"));
-			sqlPlanStage.setScanSizeAvg(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanSizeAvg"));
-			sqlPlanStage.setScanTimeMin(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanTimeMin"));
+			sqlPlanStage.setCPUTimeMax(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].CPUTimeMax"));
+			sqlPlanStage.setOperatorCost(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].OperatorCost"));
 			sqlPlanStage.setScanTimeMax(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanTimeMax"));
+			sqlPlanStage.setInputSizeMax(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].InputSizeMax"));
+			sqlPlanStage.setStageId(_ctx.integerValue("DescribeSQLPlanResponse.StageList["+ i +"].StageId"));
+			sqlPlanStage.setScanSizeMax(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanSizeMax"));
+			sqlPlanStage.setCPUTimeMin(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].CPUTimeMin"));
+			sqlPlanStage.setScanTimeMin(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanTimeMin"));
+			sqlPlanStage.setScanSizeMin(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanSizeMin"));
+			sqlPlanStage.setInputSizeMin(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].InputSizeMin"));
+			sqlPlanStage.setPeakMemory(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].PeakMemory"));
 			sqlPlanStage.setScanTimeAvg(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanTimeAvg"));
+			sqlPlanStage.setScanSizeAvg(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].ScanSizeAvg"));
+			sqlPlanStage.setInputSizeAvg(_ctx.longValue("DescribeSQLPlanResponse.StageList["+ i +"].InputSizeAvg"));
 
 			stageList.add(sqlPlanStage);
 		}

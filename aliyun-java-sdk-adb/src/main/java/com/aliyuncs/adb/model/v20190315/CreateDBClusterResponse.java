@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDBClusterResponse extends AcsResponse {
 
-	private String resourceGroupId;
-
 	private String requestId;
+
+	private String resourceGroupId;
 
 	private String dBClusterId;
 
 	private String orderId;
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +38,14 @@ public class CreateDBClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public String getDBClusterId() {

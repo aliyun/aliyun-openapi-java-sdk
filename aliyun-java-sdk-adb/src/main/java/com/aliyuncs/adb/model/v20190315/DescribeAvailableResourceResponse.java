@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAvailableResourceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String regionId;
 
+	private String requestId;
+
 	private List<AvailableZone> availableZoneList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getRegionId() {
 		return this.regionId;
@@ -45,6 +37,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AvailableZone> getAvailableZoneList() {
@@ -135,9 +135,9 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					private String storageType;
 
-					private List<String> supportedStorageResource;
-
 					private List<String> supportedComputeResource;
+
+					private List<String> supportedStorageResource;
 
 					private SupportedElasticIOResource supportedElasticIOResource;
 
@@ -149,20 +149,20 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 						this.storageType = storageType;
 					}
 
-					public List<String> getSupportedStorageResource() {
-						return this.supportedStorageResource;
-					}
-
-					public void setSupportedStorageResource(List<String> supportedStorageResource) {
-						this.supportedStorageResource = supportedStorageResource;
-					}
-
 					public List<String> getSupportedComputeResource() {
 						return this.supportedComputeResource;
 					}
 
 					public void setSupportedComputeResource(List<String> supportedComputeResource) {
 						this.supportedComputeResource = supportedComputeResource;
+					}
+
+					public List<String> getSupportedStorageResource() {
+						return this.supportedStorageResource;
+					}
+
+					public void setSupportedStorageResource(List<String> supportedStorageResource) {
+						this.supportedStorageResource = supportedStorageResource;
 					}
 
 					public SupportedElasticIOResource getSupportedElasticIOResource() {
@@ -175,11 +175,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					public static class SupportedElasticIOResource {
 
+						private String step;
+
 						private String minCount;
 
 						private String maxCount;
 
-						private String step;
+						public String getStep() {
+							return this.step;
+						}
+
+						public void setStep(String step) {
+							this.step = step;
+						}
 
 						public String getMinCount() {
 							return this.minCount;
@@ -195,14 +203,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 						public void setMaxCount(String maxCount) {
 							this.maxCount = maxCount;
-						}
-
-						public String getStep() {
-							return this.step;
-						}
-
-						public void setStep(String step) {
-							this.step = step;
 						}
 					}
 				}
@@ -273,11 +273,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 						public static class NodeCount {
 
+							private String step;
+
 							private String minCount;
 
 							private String maxCount;
 
-							private String step;
+							public String getStep() {
+								return this.step;
+							}
+
+							public void setStep(String step) {
+								this.step = step;
+							}
 
 							public String getMinCount() {
 								return this.minCount;
@@ -293,14 +301,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 							public void setMaxCount(String maxCount) {
 								this.maxCount = maxCount;
-							}
-
-							public String getStep() {
-								return this.step;
-							}
-
-							public void setStep(String step) {
-								this.step = step;
 							}
 						}
 					}
@@ -319,11 +319,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 						public static class NodeCount1 {
 
+							private String step;
+
 							private String minCount;
 
 							private String maxCount;
 
-							private String step;
+							public String getStep() {
+								return this.step;
+							}
+
+							public void setStep(String step) {
+								this.step = step;
+							}
 
 							public String getMinCount() {
 								return this.minCount;
@@ -339,14 +347,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 							public void setMaxCount(String maxCount) {
 								this.maxCount = maxCount;
-							}
-
-							public String getStep() {
-								return this.step;
-							}
-
-							public void setStep(String step) {
-								this.step = step;
 							}
 						}
 					}

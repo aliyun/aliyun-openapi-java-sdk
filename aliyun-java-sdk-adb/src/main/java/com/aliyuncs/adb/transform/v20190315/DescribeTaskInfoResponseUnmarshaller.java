@@ -26,11 +26,11 @@ public class DescribeTaskInfoResponseUnmarshaller {
 		describeTaskInfoResponse.setRequestId(_ctx.stringValue("DescribeTaskInfoResponse.RequestId"));
 
 		TaskInfo taskInfo = new TaskInfo();
-		taskInfo.setTaskId(_ctx.integerValue("DescribeTaskInfoResponse.TaskInfo.TaskId"));
-		taskInfo.setBeginTime(_ctx.stringValue("DescribeTaskInfoResponse.TaskInfo.BeginTime"));
+		taskInfo.setStatus(_ctx.stringValue("DescribeTaskInfoResponse.TaskInfo.Status"));
 		taskInfo.setFinishTime(_ctx.stringValue("DescribeTaskInfoResponse.TaskInfo.FinishTime"));
 		taskInfo.setProgress(_ctx.stringValue("DescribeTaskInfoResponse.TaskInfo.Progress"));
-		taskInfo.setStatus(_ctx.stringValue("DescribeTaskInfoResponse.TaskInfo.Status"));
+		taskInfo.setBeginTime(_ctx.stringValue("DescribeTaskInfoResponse.TaskInfo.BeginTime"));
+		taskInfo.setTaskId(_ctx.integerValue("DescribeTaskInfoResponse.TaskInfo.TaskId"));
 		describeTaskInfoResponse.setTaskInfo(taskInfo);
 	 
 	 	return describeTaskInfoResponse;

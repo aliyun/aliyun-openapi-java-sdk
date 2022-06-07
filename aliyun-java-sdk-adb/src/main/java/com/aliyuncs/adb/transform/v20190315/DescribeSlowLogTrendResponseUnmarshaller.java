@@ -28,9 +28,9 @@ public class DescribeSlowLogTrendResponseUnmarshaller {
 	public static DescribeSlowLogTrendResponse unmarshall(DescribeSlowLogTrendResponse describeSlowLogTrendResponse, UnmarshallerContext _ctx) {
 		
 		describeSlowLogTrendResponse.setRequestId(_ctx.stringValue("DescribeSlowLogTrendResponse.RequestId"));
-		describeSlowLogTrendResponse.setDBClusterId(_ctx.stringValue("DescribeSlowLogTrendResponse.DBClusterId"));
-		describeSlowLogTrendResponse.setStartTime(_ctx.stringValue("DescribeSlowLogTrendResponse.StartTime"));
 		describeSlowLogTrendResponse.setEndTime(_ctx.stringValue("DescribeSlowLogTrendResponse.EndTime"));
+		describeSlowLogTrendResponse.setStartTime(_ctx.stringValue("DescribeSlowLogTrendResponse.StartTime"));
+		describeSlowLogTrendResponse.setDBClusterId(_ctx.stringValue("DescribeSlowLogTrendResponse.DBClusterId"));
 
 		List<SlowLogTrendItem> items = new ArrayList<SlowLogTrendItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogTrendResponse.Items.Length"); i++) {
@@ -41,8 +41,8 @@ public class DescribeSlowLogTrendResponseUnmarshaller {
 			List<SeriesItem> series = new ArrayList<SeriesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSlowLogTrendResponse.Items["+ i +"].Series.Length"); j++) {
 				SeriesItem seriesItem = new SeriesItem();
-				seriesItem.setName(_ctx.stringValue("DescribeSlowLogTrendResponse.Items["+ i +"].Series["+ j +"].Name"));
 				seriesItem.setValues(_ctx.stringValue("DescribeSlowLogTrendResponse.Items["+ i +"].Series["+ j +"].Values"));
+				seriesItem.setName(_ctx.stringValue("DescribeSlowLogTrendResponse.Items["+ i +"].Series["+ j +"].Name"));
 
 				series.add(seriesItem);
 			}

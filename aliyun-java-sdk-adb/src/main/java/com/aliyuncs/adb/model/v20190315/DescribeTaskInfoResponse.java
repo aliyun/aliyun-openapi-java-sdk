@@ -46,30 +46,22 @@ public class DescribeTaskInfoResponse extends AcsResponse {
 
 	public static class TaskInfo {
 
-		private Integer taskId;
-
-		private String beginTime;
+		private String status;
 
 		private String finishTime;
 
 		private String progress;
 
-		private String status;
+		private String beginTime;
 
-		public Integer getTaskId() {
-			return this.taskId;
+		private Integer taskId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setTaskId(Integer taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(String beginTime) {
-			this.beginTime = beginTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getFinishTime() {
@@ -88,12 +80,20 @@ public class DescribeTaskInfoResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getBeginTime() {
+			return this.beginTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setBeginTime(String beginTime) {
+			this.beginTime = beginTime;
+		}
+
+		public Integer getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(Integer taskId) {
+			this.taskId = taskId;
 		}
 	}
 

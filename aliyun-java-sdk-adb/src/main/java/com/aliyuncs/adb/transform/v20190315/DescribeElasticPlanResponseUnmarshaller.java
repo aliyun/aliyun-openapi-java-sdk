@@ -31,15 +31,15 @@ public class DescribeElasticPlanResponseUnmarshaller {
 		List<ElasticPlanInfo> elasticPlanList = new ArrayList<ElasticPlanInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeElasticPlanResponse.ElasticPlanList.Length"); i++) {
 			ElasticPlanInfo elasticPlanInfo = new ElasticPlanInfo();
-			elasticPlanInfo.setPlanName(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].PlanName"));
-			elasticPlanInfo.setResourcePoolName(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].ResourcePoolName"));
-			elasticPlanInfo.setElasticNodeNum(_ctx.integerValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].ElasticNodeNum"));
-			elasticPlanInfo.setStartTime(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].StartTime"));
 			elasticPlanInfo.setEndTime(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].EndTime"));
 			elasticPlanInfo.setWeeklyRepeat(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].WeeklyRepeat"));
+			elasticPlanInfo.setStartTime(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].StartTime"));
+			elasticPlanInfo.setResourcePoolName(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].ResourcePoolName"));
 			elasticPlanInfo.setStartDay(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].StartDay"));
-			elasticPlanInfo.setEndDay(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].EndDay"));
+			elasticPlanInfo.setElasticNodeNum(_ctx.integerValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].ElasticNodeNum"));
 			elasticPlanInfo.setEnable(_ctx.booleanValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].Enable"));
+			elasticPlanInfo.setEndDay(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].EndDay"));
+			elasticPlanInfo.setPlanName(_ctx.stringValue("DescribeElasticPlanResponse.ElasticPlanList["+ i +"].PlanName"));
 
 			elasticPlanList.add(elasticPlanInfo);
 		}

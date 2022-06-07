@@ -57,35 +57,19 @@ public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 
 	public static class Address {
 
-		private String vPCId;
-
-		private String port;
-
 		private String vSwitchId;
-
-		private String iPAddress;
 
 		private String connectionString;
 
-		private String connectionStringPrefix;
-
 		private String netType;
 
-		public String getVPCId() {
-			return this.vPCId;
-		}
+		private String port;
 
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
-		}
+		private String vPCId;
 
-		public String getPort() {
-			return this.port;
-		}
+		private String iPAddress;
 
-		public void setPort(String port) {
-			this.port = port;
-		}
+		private String connectionStringPrefix;
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -93,14 +77,6 @@ public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
-		}
-
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
-
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
 		}
 
 		public String getConnectionString() {
@@ -111,20 +87,44 @@ public class DescribeDBClusterNetInfoResponse extends AcsResponse {
 			this.connectionString = connectionString;
 		}
 
-		public String getConnectionStringPrefix() {
-			return this.connectionStringPrefix;
-		}
-
-		public void setConnectionStringPrefix(String connectionStringPrefix) {
-			this.connectionStringPrefix = connectionStringPrefix;
-		}
-
 		public String getNetType() {
 			return this.netType;
 		}
 
 		public void setNetType(String netType) {
 			this.netType = netType;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
+		}
+
+		public String getConnectionStringPrefix() {
+			return this.connectionStringPrefix;
+		}
+
+		public void setConnectionStringPrefix(String connectionStringPrefix) {
+			this.connectionStringPrefix = connectionStringPrefix;
 		}
 	}
 

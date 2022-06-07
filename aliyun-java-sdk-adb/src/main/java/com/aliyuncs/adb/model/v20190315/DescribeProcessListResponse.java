@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeProcessListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String totalCount;
-
-	private String pageNumber;
 
 	private String pageSize;
 
+	private String requestId;
+
+	private String pageNumber;
+
 	private List<Process> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeProcessListResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Process> getItems() {
@@ -77,11 +77,11 @@ public class DescribeProcessListResponse extends AcsResponse {
 
 	public static class Process {
 
-		private Integer id;
+		private String startTime;
+
+		private Integer time;
 
 		private String processId;
-
-		private String user;
 
 		private String host;
 
@@ -89,18 +89,26 @@ public class DescribeProcessListResponse extends AcsResponse {
 
 		private String command;
 
-		private Integer time;
+		private String user;
 
-		private String startTime;
+		private Integer id;
 
 		private String info;
 
-		public Integer getId() {
-			return this.id;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Integer getTime() {
+			return this.time;
+		}
+
+		public void setTime(Integer time) {
+			this.time = time;
 		}
 
 		public String getProcessId() {
@@ -109,14 +117,6 @@ public class DescribeProcessListResponse extends AcsResponse {
 
 		public void setProcessId(String processId) {
 			this.processId = processId;
-		}
-
-		public String getUser() {
-			return this.user;
-		}
-
-		public void setUser(String user) {
-			this.user = user;
 		}
 
 		public String getHost() {
@@ -143,20 +143,20 @@ public class DescribeProcessListResponse extends AcsResponse {
 			this.command = command;
 		}
 
-		public Integer getTime() {
-			return this.time;
+		public String getUser() {
+			return this.user;
 		}
 
-		public void setTime(Integer time) {
-			this.time = time;
+		public void setUser(String user) {
+			this.user = user;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public Integer getId() {
+			return this.id;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setId(Integer id) {
+			this.id = id;
 		}
 
 		public String getInfo() {

@@ -1,3 +1,6 @@
+2022-06-07 Version: 1.0.8
+- Support ModifyDBClusterPayType.
+
 2022-03-11 Version: 1.0.7
 - Support modify PayType.
 

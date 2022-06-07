@@ -23,8 +23,8 @@ public class DescribeOperatorPermissionResponseUnmarshaller {
 	public static DescribeOperatorPermissionResponse unmarshall(DescribeOperatorPermissionResponse describeOperatorPermissionResponse, UnmarshallerContext _ctx) {
 		
 		describeOperatorPermissionResponse.setRequestId(_ctx.stringValue("DescribeOperatorPermissionResponse.RequestId"));
-		describeOperatorPermissionResponse.setPrivileges(_ctx.stringValue("DescribeOperatorPermissionResponse.Privileges"));
 		describeOperatorPermissionResponse.setCreatedTime(_ctx.stringValue("DescribeOperatorPermissionResponse.CreatedTime"));
+		describeOperatorPermissionResponse.setPrivileges(_ctx.stringValue("DescribeOperatorPermissionResponse.Privileges"));
 		describeOperatorPermissionResponse.setExpiredTime(_ctx.stringValue("DescribeOperatorPermissionResponse.ExpiredTime"));
 		describeOperatorPermissionResponse.setDBClusterId(_ctx.stringValue("DescribeOperatorPermissionResponse.DBClusterId"));
 	 

@@ -27,9 +27,9 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	private String totalCount;
 
-	private String requestId;
-
 	private String pageSize;
+
+	private String requestId;
 
 	private String pageNumber;
 
@@ -45,20 +45,20 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPageNumber() {
@@ -87,88 +87,48 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public static class SlowLogRecord {
 
-		private String outputSize;
-
-		private String userName;
-
-		private String peakMemoryUsage;
-
-		private String executionStartTime;
-
-		private Long parseRowCounts;
-
-		private Long queryTime;
+		private String hostAddress;
 
 		private Long scanTime;
 
-		private String hostAddress;
-
 		private String sQLText;
 
-		private Long wallTime;
+		private String outputSize;
 
-		private Long scanRows;
+		private String peakMemoryUsage;
 
 		private String state;
 
-		private Long returnRowCounts;
-
-		private Long planningTime;
-
-		private String dBName;
-
-		private Long queueTime;
-
-		private String processID;
+		private Long wallTime;
 
 		private String scanSize;
 
-		public String getOutputSize() {
-			return this.outputSize;
+		private String executionStartTime;
+
+		private Long queryTime;
+
+		private Long returnRowCounts;
+
+		private Long scanRows;
+
+		private Long parseRowCounts;
+
+		private String dBName;
+
+		private Long planningTime;
+
+		private Long queueTime;
+
+		private String userName;
+
+		private String processID;
+
+		public String getHostAddress() {
+			return this.hostAddress;
 		}
 
-		public void setOutputSize(String outputSize) {
-			this.outputSize = outputSize;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getPeakMemoryUsage() {
-			return this.peakMemoryUsage;
-		}
-
-		public void setPeakMemoryUsage(String peakMemoryUsage) {
-			this.peakMemoryUsage = peakMemoryUsage;
-		}
-
-		public String getExecutionStartTime() {
-			return this.executionStartTime;
-		}
-
-		public void setExecutionStartTime(String executionStartTime) {
-			this.executionStartTime = executionStartTime;
-		}
-
-		public Long getParseRowCounts() {
-			return this.parseRowCounts;
-		}
-
-		public void setParseRowCounts(Long parseRowCounts) {
-			this.parseRowCounts = parseRowCounts;
-		}
-
-		public Long getQueryTime() {
-			return this.queryTime;
-		}
-
-		public void setQueryTime(Long queryTime) {
-			this.queryTime = queryTime;
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
 		}
 
 		public Long getScanTime() {
@@ -179,14 +139,6 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.scanTime = scanTime;
 		}
 
-		public String getHostAddress() {
-			return this.hostAddress;
-		}
-
-		public void setHostAddress(String hostAddress) {
-			this.hostAddress = hostAddress;
-		}
-
 		public String getSQLText() {
 			return this.sQLText;
 		}
@@ -195,20 +147,20 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.sQLText = sQLText;
 		}
 
-		public Long getWallTime() {
-			return this.wallTime;
+		public String getOutputSize() {
+			return this.outputSize;
 		}
 
-		public void setWallTime(Long wallTime) {
-			this.wallTime = wallTime;
+		public void setOutputSize(String outputSize) {
+			this.outputSize = outputSize;
 		}
 
-		public Long getScanRows() {
-			return this.scanRows;
+		public String getPeakMemoryUsage() {
+			return this.peakMemoryUsage;
 		}
 
-		public void setScanRows(Long scanRows) {
-			this.scanRows = scanRows;
+		public void setPeakMemoryUsage(String peakMemoryUsage) {
+			this.peakMemoryUsage = peakMemoryUsage;
 		}
 
 		public String getState() {
@@ -219,6 +171,38 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public Long getWallTime() {
+			return this.wallTime;
+		}
+
+		public void setWallTime(Long wallTime) {
+			this.wallTime = wallTime;
+		}
+
+		public String getScanSize() {
+			return this.scanSize;
+		}
+
+		public void setScanSize(String scanSize) {
+			this.scanSize = scanSize;
+		}
+
+		public String getExecutionStartTime() {
+			return this.executionStartTime;
+		}
+
+		public void setExecutionStartTime(String executionStartTime) {
+			this.executionStartTime = executionStartTime;
+		}
+
+		public Long getQueryTime() {
+			return this.queryTime;
+		}
+
+		public void setQueryTime(Long queryTime) {
+			this.queryTime = queryTime;
+		}
+
 		public Long getReturnRowCounts() {
 			return this.returnRowCounts;
 		}
@@ -227,12 +211,20 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.returnRowCounts = returnRowCounts;
 		}
 
-		public Long getPlanningTime() {
-			return this.planningTime;
+		public Long getScanRows() {
+			return this.scanRows;
 		}
 
-		public void setPlanningTime(Long planningTime) {
-			this.planningTime = planningTime;
+		public void setScanRows(Long scanRows) {
+			this.scanRows = scanRows;
+		}
+
+		public Long getParseRowCounts() {
+			return this.parseRowCounts;
+		}
+
+		public void setParseRowCounts(Long parseRowCounts) {
+			this.parseRowCounts = parseRowCounts;
 		}
 
 		public String getDBName() {
@@ -243,6 +235,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.dBName = dBName;
 		}
 
+		public Long getPlanningTime() {
+			return this.planningTime;
+		}
+
+		public void setPlanningTime(Long planningTime) {
+			this.planningTime = planningTime;
+		}
+
 		public Long getQueueTime() {
 			return this.queueTime;
 		}
@@ -251,20 +251,20 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.queueTime = queueTime;
 		}
 
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
 		public String getProcessID() {
 			return this.processID;
 		}
 
 		public void setProcessID(String processID) {
 			this.processID = processID;
-		}
-
-		public String getScanSize() {
-			return this.scanSize;
-		}
-
-		public void setScanSize(String scanSize) {
-			this.scanSize = scanSize;
 		}
 	}
 

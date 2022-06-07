@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeOperatorPermissionResponse extends AcsResponse {
 
+	private String createdTime;
+
 	private String requestId;
 
 	private String privileges;
 
-	private String createdTime;
-
 	private String expiredTime;
 
 	private String dBClusterId;
+
+	public String getCreatedTime() {
+		return this.createdTime;
+	}
+
+	public void setCreatedTime(String createdTime) {
+		this.createdTime = createdTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +56,6 @@ public class DescribeOperatorPermissionResponse extends AcsResponse {
 
 	public void setPrivileges(String privileges) {
 		this.privileges = privileges;
-	}
-
-	public String getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(String createdTime) {
-		this.createdTime = createdTime;
 	}
 
 	public String getExpiredTime() {

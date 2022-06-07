@@ -27,9 +27,9 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 
 	private String totalCount;
 
-	private String requestId;
-
 	private String pageSize;
+
+	private String requestId;
 
 	private String pageNumber;
 
@@ -45,20 +45,20 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPageNumber() {
@@ -87,21 +87,29 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 
 	public static class TableStatisticRecords {
 
+		private String schemaName;
+
 		private String tableName;
-
-		private Long coldDataSize;
-
-		private Long dataSize;
-
-		private Long primaryKeyIndexSize;
-
-		private Long indexSize;
 
 		private Long rowCount;
 
+		private Long dataSize;
+
+		private Long indexSize;
+
+		private Long primaryKeyIndexSize;
+
 		private Long partitionCount;
 
-		private String schemaName;
+		private Long coldDataSize;
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
 
 		public String getTableName() {
 			return this.tableName;
@@ -109,38 +117,6 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 
 		public void setTableName(String tableName) {
 			this.tableName = tableName;
-		}
-
-		public Long getColdDataSize() {
-			return this.coldDataSize;
-		}
-
-		public void setColdDataSize(Long coldDataSize) {
-			this.coldDataSize = coldDataSize;
-		}
-
-		public Long getDataSize() {
-			return this.dataSize;
-		}
-
-		public void setDataSize(Long dataSize) {
-			this.dataSize = dataSize;
-		}
-
-		public Long getPrimaryKeyIndexSize() {
-			return this.primaryKeyIndexSize;
-		}
-
-		public void setPrimaryKeyIndexSize(Long primaryKeyIndexSize) {
-			this.primaryKeyIndexSize = primaryKeyIndexSize;
-		}
-
-		public Long getIndexSize() {
-			return this.indexSize;
-		}
-
-		public void setIndexSize(Long indexSize) {
-			this.indexSize = indexSize;
 		}
 
 		public Long getRowCount() {
@@ -151,6 +127,30 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 			this.rowCount = rowCount;
 		}
 
+		public Long getDataSize() {
+			return this.dataSize;
+		}
+
+		public void setDataSize(Long dataSize) {
+			this.dataSize = dataSize;
+		}
+
+		public Long getIndexSize() {
+			return this.indexSize;
+		}
+
+		public void setIndexSize(Long indexSize) {
+			this.indexSize = indexSize;
+		}
+
+		public Long getPrimaryKeyIndexSize() {
+			return this.primaryKeyIndexSize;
+		}
+
+		public void setPrimaryKeyIndexSize(Long primaryKeyIndexSize) {
+			this.primaryKeyIndexSize = primaryKeyIndexSize;
+		}
+
 		public Long getPartitionCount() {
 			return this.partitionCount;
 		}
@@ -159,12 +159,12 @@ public class DescribeTableStatisticsResponse extends AcsResponse {
 			this.partitionCount = partitionCount;
 		}
 
-		public String getSchemaName() {
-			return this.schemaName;
+		public Long getColdDataSize() {
+			return this.coldDataSize;
 		}
 
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
+		public void setColdDataSize(Long coldDataSize) {
+			this.coldDataSize = coldDataSize;
 		}
 	}
 

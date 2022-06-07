@@ -67,45 +67,37 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 
 	public static class SqlPlanStage {
 
-		private Integer stageId;
-
 		private String state;
-
-		private Long operatorCost;
-
-		private Long peakMemory;
-
-		private Long cPUTimeMin;
-
-		private Long cPUTimeMax;
 
 		private Long cPUTimeAvg;
 
-		private Long inputSizeMin;
+		private Long cPUTimeMax;
 
-		private Long inputSizeMax;
-
-		private Long inputSizeAvg;
-
-		private Long scanSizeMin;
-
-		private Long scanSizeMax;
-
-		private Long scanSizeAvg;
-
-		private Long scanTimeMin;
+		private Long operatorCost;
 
 		private Long scanTimeMax;
 
+		private Long inputSizeMax;
+
+		private Integer stageId;
+
+		private Long scanSizeMax;
+
+		private Long cPUTimeMin;
+
+		private Long scanTimeMin;
+
+		private Long scanSizeMin;
+
+		private Long inputSizeMin;
+
+		private Long peakMemory;
+
 		private Long scanTimeAvg;
 
-		public Integer getStageId() {
-			return this.stageId;
-		}
+		private Long scanSizeAvg;
 
-		public void setStageId(Integer stageId) {
-			this.stageId = stageId;
-		}
+		private Long inputSizeAvg;
 
 		public String getState() {
 			return this.state;
@@ -113,38 +105,6 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public Long getOperatorCost() {
-			return this.operatorCost;
-		}
-
-		public void setOperatorCost(Long operatorCost) {
-			this.operatorCost = operatorCost;
-		}
-
-		public Long getPeakMemory() {
-			return this.peakMemory;
-		}
-
-		public void setPeakMemory(Long peakMemory) {
-			this.peakMemory = peakMemory;
-		}
-
-		public Long getCPUTimeMin() {
-			return this.cPUTimeMin;
-		}
-
-		public void setCPUTimeMin(Long cPUTimeMin) {
-			this.cPUTimeMin = cPUTimeMin;
-		}
-
-		public Long getCPUTimeMax() {
-			return this.cPUTimeMax;
-		}
-
-		public void setCPUTimeMax(Long cPUTimeMax) {
-			this.cPUTimeMax = cPUTimeMax;
 		}
 
 		public Long getCPUTimeAvg() {
@@ -155,60 +115,20 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 			this.cPUTimeAvg = cPUTimeAvg;
 		}
 
-		public Long getInputSizeMin() {
-			return this.inputSizeMin;
+		public Long getCPUTimeMax() {
+			return this.cPUTimeMax;
 		}
 
-		public void setInputSizeMin(Long inputSizeMin) {
-			this.inputSizeMin = inputSizeMin;
+		public void setCPUTimeMax(Long cPUTimeMax) {
+			this.cPUTimeMax = cPUTimeMax;
 		}
 
-		public Long getInputSizeMax() {
-			return this.inputSizeMax;
+		public Long getOperatorCost() {
+			return this.operatorCost;
 		}
 
-		public void setInputSizeMax(Long inputSizeMax) {
-			this.inputSizeMax = inputSizeMax;
-		}
-
-		public Long getInputSizeAvg() {
-			return this.inputSizeAvg;
-		}
-
-		public void setInputSizeAvg(Long inputSizeAvg) {
-			this.inputSizeAvg = inputSizeAvg;
-		}
-
-		public Long getScanSizeMin() {
-			return this.scanSizeMin;
-		}
-
-		public void setScanSizeMin(Long scanSizeMin) {
-			this.scanSizeMin = scanSizeMin;
-		}
-
-		public Long getScanSizeMax() {
-			return this.scanSizeMax;
-		}
-
-		public void setScanSizeMax(Long scanSizeMax) {
-			this.scanSizeMax = scanSizeMax;
-		}
-
-		public Long getScanSizeAvg() {
-			return this.scanSizeAvg;
-		}
-
-		public void setScanSizeAvg(Long scanSizeAvg) {
-			this.scanSizeAvg = scanSizeAvg;
-		}
-
-		public Long getScanTimeMin() {
-			return this.scanTimeMin;
-		}
-
-		public void setScanTimeMin(Long scanTimeMin) {
-			this.scanTimeMin = scanTimeMin;
+		public void setOperatorCost(Long operatorCost) {
+			this.operatorCost = operatorCost;
 		}
 
 		public Long getScanTimeMax() {
@@ -219,6 +139,70 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 			this.scanTimeMax = scanTimeMax;
 		}
 
+		public Long getInputSizeMax() {
+			return this.inputSizeMax;
+		}
+
+		public void setInputSizeMax(Long inputSizeMax) {
+			this.inputSizeMax = inputSizeMax;
+		}
+
+		public Integer getStageId() {
+			return this.stageId;
+		}
+
+		public void setStageId(Integer stageId) {
+			this.stageId = stageId;
+		}
+
+		public Long getScanSizeMax() {
+			return this.scanSizeMax;
+		}
+
+		public void setScanSizeMax(Long scanSizeMax) {
+			this.scanSizeMax = scanSizeMax;
+		}
+
+		public Long getCPUTimeMin() {
+			return this.cPUTimeMin;
+		}
+
+		public void setCPUTimeMin(Long cPUTimeMin) {
+			this.cPUTimeMin = cPUTimeMin;
+		}
+
+		public Long getScanTimeMin() {
+			return this.scanTimeMin;
+		}
+
+		public void setScanTimeMin(Long scanTimeMin) {
+			this.scanTimeMin = scanTimeMin;
+		}
+
+		public Long getScanSizeMin() {
+			return this.scanSizeMin;
+		}
+
+		public void setScanSizeMin(Long scanSizeMin) {
+			this.scanSizeMin = scanSizeMin;
+		}
+
+		public Long getInputSizeMin() {
+			return this.inputSizeMin;
+		}
+
+		public void setInputSizeMin(Long inputSizeMin) {
+			this.inputSizeMin = inputSizeMin;
+		}
+
+		public Long getPeakMemory() {
+			return this.peakMemory;
+		}
+
+		public void setPeakMemory(Long peakMemory) {
+			this.peakMemory = peakMemory;
+		}
+
 		public Long getScanTimeAvg() {
 			return this.scanTimeAvg;
 		}
@@ -226,39 +210,55 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 		public void setScanTimeAvg(Long scanTimeAvg) {
 			this.scanTimeAvg = scanTimeAvg;
 		}
+
+		public Long getScanSizeAvg() {
+			return this.scanSizeAvg;
+		}
+
+		public void setScanSizeAvg(Long scanSizeAvg) {
+			this.scanSizeAvg = scanSizeAvg;
+		}
+
+		public Long getInputSizeAvg() {
+			return this.inputSizeAvg;
+		}
+
+		public void setInputSizeAvg(Long inputSizeAvg) {
+			this.inputSizeAvg = inputSizeAvg;
+		}
 	}
 
 	public static class Detail {
 
 		private String sQL;
 
+		private Long outputSize;
+
 		private String state;
-
-		private String user;
-
-		private String clientIP;
-
-		private String database;
-
-		private Long totalStage;
-
-		private Long totalTask;
 
 		private Long outputRows;
 
-		private Long outputSize;
+		private String user;
 
 		private String startTime;
 
-		private Long totalTime;
+		private Long totalStage;
 
 		private Long queuedTime;
+
+		private Long totalTime;
+
+		private Long totalTask;
+
+		private String database;
+
+		private Long peakMemory;
+
+		private String clientIP;
 
 		private Long planningTime;
 
 		private Long cPUTime;
-
-		private Long peakMemory;
 
 		public String getSQL() {
 			return this.sQL;
@@ -266,62 +266,6 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 
 		public void setSQL(String sQL) {
 			this.sQL = sQL;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getUser() {
-			return this.user;
-		}
-
-		public void setUser(String user) {
-			this.user = user;
-		}
-
-		public String getClientIP() {
-			return this.clientIP;
-		}
-
-		public void setClientIP(String clientIP) {
-			this.clientIP = clientIP;
-		}
-
-		public String getDatabase() {
-			return this.database;
-		}
-
-		public void setDatabase(String database) {
-			this.database = database;
-		}
-
-		public Long getTotalStage() {
-			return this.totalStage;
-		}
-
-		public void setTotalStage(Long totalStage) {
-			this.totalStage = totalStage;
-		}
-
-		public Long getTotalTask() {
-			return this.totalTask;
-		}
-
-		public void setTotalTask(Long totalTask) {
-			this.totalTask = totalTask;
-		}
-
-		public Long getOutputRows() {
-			return this.outputRows;
-		}
-
-		public void setOutputRows(Long outputRows) {
-			this.outputRows = outputRows;
 		}
 
 		public Long getOutputSize() {
@@ -332,12 +276,52 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 			this.outputSize = outputSize;
 		}
 
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public Long getOutputRows() {
+			return this.outputRows;
+		}
+
+		public void setOutputRows(Long outputRows) {
+			this.outputRows = outputRows;
+		}
+
+		public String getUser() {
+			return this.user;
+		}
+
+		public void setUser(String user) {
+			this.user = user;
+		}
+
 		public String getStartTime() {
 			return this.startTime;
 		}
 
 		public void setStartTime(String startTime) {
 			this.startTime = startTime;
+		}
+
+		public Long getTotalStage() {
+			return this.totalStage;
+		}
+
+		public void setTotalStage(Long totalStage) {
+			this.totalStage = totalStage;
+		}
+
+		public Long getQueuedTime() {
+			return this.queuedTime;
+		}
+
+		public void setQueuedTime(Long queuedTime) {
+			this.queuedTime = queuedTime;
 		}
 
 		public Long getTotalTime() {
@@ -348,12 +332,36 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 			this.totalTime = totalTime;
 		}
 
-		public Long getQueuedTime() {
-			return this.queuedTime;
+		public Long getTotalTask() {
+			return this.totalTask;
 		}
 
-		public void setQueuedTime(Long queuedTime) {
-			this.queuedTime = queuedTime;
+		public void setTotalTask(Long totalTask) {
+			this.totalTask = totalTask;
+		}
+
+		public String getDatabase() {
+			return this.database;
+		}
+
+		public void setDatabase(String database) {
+			this.database = database;
+		}
+
+		public Long getPeakMemory() {
+			return this.peakMemory;
+		}
+
+		public void setPeakMemory(Long peakMemory) {
+			this.peakMemory = peakMemory;
+		}
+
+		public String getClientIP() {
+			return this.clientIP;
+		}
+
+		public void setClientIP(String clientIP) {
+			this.clientIP = clientIP;
 		}
 
 		public Long getPlanningTime() {
@@ -370,14 +378,6 @@ public class DescribeSQLPlanResponse extends AcsResponse {
 
 		public void setCPUTime(Long cPUTime) {
 			this.cPUTime = cPUTime;
-		}
-
-		public Long getPeakMemory() {
-			return this.peakMemory;
-		}
-
-		public void setPeakMemory(Long peakMemory) {
-			this.peakMemory = peakMemory;
 		}
 	}
 

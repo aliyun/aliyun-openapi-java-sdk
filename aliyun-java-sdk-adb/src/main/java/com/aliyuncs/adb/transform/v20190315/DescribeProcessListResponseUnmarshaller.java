@@ -28,20 +28,20 @@ public class DescribeProcessListResponseUnmarshaller {
 		
 		describeProcessListResponse.setRequestId(_ctx.stringValue("DescribeProcessListResponse.RequestId"));
 		describeProcessListResponse.setTotalCount(_ctx.stringValue("DescribeProcessListResponse.TotalCount"));
-		describeProcessListResponse.setPageNumber(_ctx.stringValue("DescribeProcessListResponse.PageNumber"));
 		describeProcessListResponse.setPageSize(_ctx.stringValue("DescribeProcessListResponse.PageSize"));
+		describeProcessListResponse.setPageNumber(_ctx.stringValue("DescribeProcessListResponse.PageNumber"));
 
 		List<Process> items = new ArrayList<Process>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeProcessListResponse.Items.Length"); i++) {
 			Process process = new Process();
-			process.setId(_ctx.integerValue("DescribeProcessListResponse.Items["+ i +"].Id"));
+			process.setStartTime(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].StartTime"));
+			process.setTime(_ctx.integerValue("DescribeProcessListResponse.Items["+ i +"].Time"));
 			process.setProcessId(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].ProcessId"));
-			process.setUser(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].User"));
 			process.setHost(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].Host"));
 			process.setDB(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].DB"));
 			process.setCommand(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].Command"));
-			process.setTime(_ctx.integerValue("DescribeProcessListResponse.Items["+ i +"].Time"));
-			process.setStartTime(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].StartTime"));
+			process.setUser(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].User"));
+			process.setId(_ctx.integerValue("DescribeProcessListResponse.Items["+ i +"].Id"));
 			process.setInfo(_ctx.stringValue("DescribeProcessListResponse.Items["+ i +"].Info"));
 
 			items.add(process);

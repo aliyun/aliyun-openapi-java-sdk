@@ -31,18 +31,18 @@ public class DescribeSQLPlanTaskResponseUnmarshaller {
 		List<SqlPlanTask> taskList = new ArrayList<SqlPlanTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLPlanTaskResponse.TaskList.Length"); i++) {
 			SqlPlanTask sqlPlanTask = new SqlPlanTask();
-			sqlPlanTask.setTaskId(_ctx.integerValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].TaskId"));
-			sqlPlanTask.setState(_ctx.stringValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].State"));
-			sqlPlanTask.setElapsedTime(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].ElapsedTime"));
-			sqlPlanTask.setPeakMemory(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].PeakMemory"));
-			sqlPlanTask.setOperatorCost(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].OperatorCost"));
-			sqlPlanTask.setInputRows(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].InputRows"));
-			sqlPlanTask.setInputSize(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].InputSize"));
-			sqlPlanTask.setOutputRows(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].OutputRows"));
-			sqlPlanTask.setOutputSize(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].OutputSize"));
-			sqlPlanTask.setScanRows(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].ScanRows"));
-			sqlPlanTask.setScanSize(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].ScanSize"));
 			sqlPlanTask.setScanCost(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].ScanCost"));
+			sqlPlanTask.setOutputSize(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].OutputSize"));
+			sqlPlanTask.setInputSize(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].InputSize"));
+			sqlPlanTask.setState(_ctx.stringValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].State"));
+			sqlPlanTask.setOperatorCost(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].OperatorCost"));
+			sqlPlanTask.setOutputRows(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].OutputRows"));
+			sqlPlanTask.setScanSize(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].ScanSize"));
+			sqlPlanTask.setElapsedTime(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].ElapsedTime"));
+			sqlPlanTask.setScanRows(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].ScanRows"));
+			sqlPlanTask.setPeakMemory(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].PeakMemory"));
+			sqlPlanTask.setTaskId(_ctx.integerValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].TaskId"));
+			sqlPlanTask.setInputRows(_ctx.longValue("DescribeSQLPlanTaskResponse.TaskList["+ i +"].InputRows"));
 
 			taskList.add(sqlPlanTask);
 		}

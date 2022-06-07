@@ -31,13 +31,13 @@ public class DescribeColumnsResponseUnmarshaller {
 		List<Column> items = new ArrayList<Column>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeColumnsResponse.Items.Length"); i++) {
 			Column column = new Column();
-			column.setDBClusterId(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].DBClusterId"));
-			column.setSchemaName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].SchemaName"));
-			column.setTableName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].TableName"));
-			column.setColumnName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].ColumnName"));
 			column.setType(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].Type"));
-			column.setPrimaryKey(_ctx.booleanValue("DescribeColumnsResponse.Items["+ i +"].PrimaryKey"));
+			column.setColumnName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].ColumnName"));
+			column.setTableName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].TableName"));
 			column.setAutoIncrementColumn(_ctx.booleanValue("DescribeColumnsResponse.Items["+ i +"].AutoIncrementColumn"));
+			column.setDBClusterId(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].DBClusterId"));
+			column.setPrimaryKey(_ctx.booleanValue("DescribeColumnsResponse.Items["+ i +"].PrimaryKey"));
+			column.setSchemaName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].SchemaName"));
 
 			items.add(column);
 		}

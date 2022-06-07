@@ -32,8 +32,8 @@ public class DescribeTableDetailResponseUnmarshaller {
 		List<Shard> items = new ArrayList<Shard>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTableDetailResponse.Items.Length"); i++) {
 			Shard shard = new Shard();
-			shard.setId(_ctx.integerValue("DescribeTableDetailResponse.Items["+ i +"].Id"));
 			shard.setSize(_ctx.longValue("DescribeTableDetailResponse.Items["+ i +"].Size"));
+			shard.setId(_ctx.integerValue("DescribeTableDetailResponse.Items["+ i +"].Id"));
 
 			items.add(shard);
 		}

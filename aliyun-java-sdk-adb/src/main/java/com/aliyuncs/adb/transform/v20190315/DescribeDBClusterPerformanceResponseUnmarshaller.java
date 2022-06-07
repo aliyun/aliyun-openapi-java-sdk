@@ -29,14 +29,14 @@ public class DescribeDBClusterPerformanceResponseUnmarshaller {
 		
 		describeDBClusterPerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.RequestId"));
 		describeDBClusterPerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.EndTime"));
-		describeDBClusterPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBClusterId"));
 		describeDBClusterPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.StartTime"));
+		describeDBClusterPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBClusterId"));
 
 		List<PerformanceItem> performances = new ArrayList<PerformanceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.Performances.Length"); i++) {
 			PerformanceItem performanceItem = new PerformanceItem();
-			performanceItem.setUnit(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Unit"));
 			performanceItem.setKey(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Key"));
+			performanceItem.setUnit(_ctx.stringValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Unit"));
 
 			List<SeriesItem> series = new ArrayList<SeriesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.Performances["+ i +"].Series.Length"); j++) {

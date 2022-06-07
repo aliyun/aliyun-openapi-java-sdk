@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAccountResponse extends AcsResponse {
 
+	private Integer taskId;
+
 	private String requestId;
 
 	private String dBClusterId;
 
-	private Integer taskId;
+	public Integer getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(Integer taskId) {
+		this.taskId = taskId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class CreateAccountResponse extends AcsResponse {
 
 	public void setDBClusterId(String dBClusterId) {
 		this.dBClusterId = dBClusterId;
-	}
-
-	public Integer getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
 	}
 
 	@Override

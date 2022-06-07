@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String endTime;
 
-	private String dBClusterId;
+	private String requestId;
 
 	private String startTime;
 
+	private String dBClusterId;
+
 	private List<PerformanceItem> performances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -51,12 +43,12 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getStartTime() {
@@ -65,6 +57,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<PerformanceItem> getPerformances() {
@@ -77,19 +77,11 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public static class PerformanceItem {
 
-		private String unit;
-
 		private String key;
 
+		private String unit;
+
 		private List<SeriesItem> series;
-
-		public String getUnit() {
-			return this.unit;
-		}
-
-		public void setUnit(String unit) {
-			this.unit = unit;
-		}
 
 		public String getKey() {
 			return this.key;
@@ -97,6 +89,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+
+		public String getUnit() {
+			return this.unit;
+		}
+
+		public void setUnit(String unit) {
+			this.unit = unit;
 		}
 
 		public List<SeriesItem> getSeries() {

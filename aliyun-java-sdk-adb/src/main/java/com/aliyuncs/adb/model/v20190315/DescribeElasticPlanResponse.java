@@ -47,55 +47,23 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 
 	public static class ElasticPlanInfo {
 
-		private String planName;
-
-		private String resourcePoolName;
-
-		private Integer elasticNodeNum;
-
-		private String startTime;
-
 		private String endTime;
 
 		private String weeklyRepeat;
 
+		private String startTime;
+
+		private String resourcePoolName;
+
 		private String startDay;
 
-		private String endDay;
+		private Integer elasticNodeNum;
 
 		private Boolean enable;
 
-		public String getPlanName() {
-			return this.planName;
-		}
+		private String endDay;
 
-		public void setPlanName(String planName) {
-			this.planName = planName;
-		}
-
-		public String getResourcePoolName() {
-			return this.resourcePoolName;
-		}
-
-		public void setResourcePoolName(String resourcePoolName) {
-			this.resourcePoolName = resourcePoolName;
-		}
-
-		public Integer getElasticNodeNum() {
-			return this.elasticNodeNum;
-		}
-
-		public void setElasticNodeNum(Integer elasticNodeNum) {
-			this.elasticNodeNum = elasticNodeNum;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
+		private String planName;
 
 		public String getEndTime() {
 			return this.endTime;
@@ -113,12 +81,44 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 			this.weeklyRepeat = weeklyRepeat;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getResourcePoolName() {
+			return this.resourcePoolName;
+		}
+
+		public void setResourcePoolName(String resourcePoolName) {
+			this.resourcePoolName = resourcePoolName;
+		}
+
 		public String getStartDay() {
 			return this.startDay;
 		}
 
 		public void setStartDay(String startDay) {
 			this.startDay = startDay;
+		}
+
+		public Integer getElasticNodeNum() {
+			return this.elasticNodeNum;
+		}
+
+		public void setElasticNodeNum(Integer elasticNodeNum) {
+			this.elasticNodeNum = elasticNodeNum;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 
 		public String getEndDay() {
@@ -129,12 +129,12 @@ public class DescribeElasticPlanResponse extends AcsResponse {
 			this.endDay = endDay;
 		}
 
-		public Boolean getEnable() {
-			return this.enable;
+		public String getPlanName() {
+			return this.planName;
 		}
 
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setPlanName(String planName) {
+			this.planName = planName;
 		}
 	}
 

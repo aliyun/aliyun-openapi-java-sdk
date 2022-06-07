@@ -47,78 +47,30 @@ public class DescribeElasticDailyPlanResponse extends AcsResponse {
 
 	public static class ElasticDailyPlanInfo {
 
-		private String planName;
-
-		private String resourcePoolName;
-
-		private Integer elasticNodeNum;
-
-		private String planStartTs;
-
-		private String planEndTs;
-
-		private String startTs;
-
-		private String endTs;
+		private Integer status;
 
 		private String day;
 
-		private Integer status;
+		private String resourcePoolName;
 
-		public String getPlanName() {
-			return this.planName;
+		private String startTs;
+
+		private String planEndTs;
+
+		private String planStartTs;
+
+		private Integer elasticNodeNum;
+
+		private String endTs;
+
+		private String planName;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setPlanName(String planName) {
-			this.planName = planName;
-		}
-
-		public String getResourcePoolName() {
-			return this.resourcePoolName;
-		}
-
-		public void setResourcePoolName(String resourcePoolName) {
-			this.resourcePoolName = resourcePoolName;
-		}
-
-		public Integer getElasticNodeNum() {
-			return this.elasticNodeNum;
-		}
-
-		public void setElasticNodeNum(Integer elasticNodeNum) {
-			this.elasticNodeNum = elasticNodeNum;
-		}
-
-		public String getPlanStartTs() {
-			return this.planStartTs;
-		}
-
-		public void setPlanStartTs(String planStartTs) {
-			this.planStartTs = planStartTs;
-		}
-
-		public String getPlanEndTs() {
-			return this.planEndTs;
-		}
-
-		public void setPlanEndTs(String planEndTs) {
-			this.planEndTs = planEndTs;
-		}
-
-		public String getStartTs() {
-			return this.startTs;
-		}
-
-		public void setStartTs(String startTs) {
-			this.startTs = startTs;
-		}
-
-		public String getEndTs() {
-			return this.endTs;
-		}
-
-		public void setEndTs(String endTs) {
-			this.endTs = endTs;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getDay() {
@@ -129,12 +81,60 @@ public class DescribeElasticDailyPlanResponse extends AcsResponse {
 			this.day = day;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getResourcePoolName() {
+			return this.resourcePoolName;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setResourcePoolName(String resourcePoolName) {
+			this.resourcePoolName = resourcePoolName;
+		}
+
+		public String getStartTs() {
+			return this.startTs;
+		}
+
+		public void setStartTs(String startTs) {
+			this.startTs = startTs;
+		}
+
+		public String getPlanEndTs() {
+			return this.planEndTs;
+		}
+
+		public void setPlanEndTs(String planEndTs) {
+			this.planEndTs = planEndTs;
+		}
+
+		public String getPlanStartTs() {
+			return this.planStartTs;
+		}
+
+		public void setPlanStartTs(String planStartTs) {
+			this.planStartTs = planStartTs;
+		}
+
+		public Integer getElasticNodeNum() {
+			return this.elasticNodeNum;
+		}
+
+		public void setElasticNodeNum(Integer elasticNodeNum) {
+			this.elasticNodeNum = elasticNodeNum;
+		}
+
+		public String getEndTs() {
+			return this.endTs;
+		}
+
+		public void setEndTs(String endTs) {
+			this.endTs = endTs;
+		}
+
+		public String getPlanName() {
+			return this.planName;
+		}
+
+		public void setPlanName(String planName) {
+			this.planName = planName;
 		}
 	}
 

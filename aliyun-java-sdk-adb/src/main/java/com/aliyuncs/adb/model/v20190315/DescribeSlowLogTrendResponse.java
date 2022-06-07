@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSlowLogTrendResponse extends AcsResponse {
 
-	private String requestId;
+	private String endTime;
 
-	private String dBClusterId;
+	private String requestId;
 
 	private String startTime;
 
-	private String endTime;
+	private String dBClusterId;
 
 	private List<SlowLogTrendItem> items;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
 	}
 
 	public String getStartTime() {
@@ -59,12 +59,12 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getDBClusterId() {
+		return this.dBClusterId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<SlowLogTrendItem> getItems() {
@@ -109,17 +109,9 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 
 		public static class SeriesItem {
 
-			private String name;
-
 			private String values;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getValues() {
 				return this.values;
@@ -127,6 +119,14 @@ public class DescribeSlowLogTrendResponse extends AcsResponse {
 
 			public void setValues(String values) {
 				this.values = values;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

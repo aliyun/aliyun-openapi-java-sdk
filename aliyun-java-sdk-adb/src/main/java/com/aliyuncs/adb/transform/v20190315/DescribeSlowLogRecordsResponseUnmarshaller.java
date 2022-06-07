@@ -35,24 +35,24 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 		List<SlowLogRecord> items = new ArrayList<SlowLogRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
 			SlowLogRecord slowLogRecord = new SlowLogRecord();
-			slowLogRecord.setOutputSize(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].OutputSize"));
-			slowLogRecord.setUserName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].UserName"));
-			slowLogRecord.setPeakMemoryUsage(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].PeakMemoryUsage"));
-			slowLogRecord.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
-			slowLogRecord.setParseRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ParseRowCounts"));
-			slowLogRecord.setQueryTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTime"));
-			slowLogRecord.setScanTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ScanTime"));
 			slowLogRecord.setHostAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
+			slowLogRecord.setScanTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ScanTime"));
 			slowLogRecord.setSQLText(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
-			slowLogRecord.setWallTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].WallTime"));
-			slowLogRecord.setScanRows(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ScanRows"));
+			slowLogRecord.setOutputSize(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].OutputSize"));
+			slowLogRecord.setPeakMemoryUsage(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].PeakMemoryUsage"));
 			slowLogRecord.setState(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].State"));
-			slowLogRecord.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
-			slowLogRecord.setPlanningTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].PlanningTime"));
-			slowLogRecord.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
-			slowLogRecord.setQueueTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueueTime"));
-			slowLogRecord.setProcessID(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ProcessID"));
+			slowLogRecord.setWallTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].WallTime"));
 			slowLogRecord.setScanSize(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ScanSize"));
+			slowLogRecord.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
+			slowLogRecord.setQueryTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTime"));
+			slowLogRecord.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			slowLogRecord.setScanRows(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ScanRows"));
+			slowLogRecord.setParseRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ParseRowCounts"));
+			slowLogRecord.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
+			slowLogRecord.setPlanningTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].PlanningTime"));
+			slowLogRecord.setQueueTime(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueueTime"));
+			slowLogRecord.setUserName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].UserName"));
+			slowLogRecord.setProcessID(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ProcessID"));
 
 			items.add(slowLogRecord);
 		}

@@ -47,92 +47,36 @@ public class DescribeSQLPlanTaskResponse extends AcsResponse {
 
 	public static class SqlPlanTask {
 
-		private Integer taskId;
-
-		private String state;
-
-		private Long elapsedTime;
-
-		private Long peakMemory;
-
-		private Long operatorCost;
-
-		private Long inputRows;
-
-		private Long inputSize;
-
-		private Long outputRows;
+		private Long scanCost;
 
 		private Long outputSize;
 
-		private Long scanRows;
+		private Long inputSize;
+
+		private String state;
+
+		private Long operatorCost;
+
+		private Long outputRows;
 
 		private Long scanSize;
 
-		private Long scanCost;
+		private Long elapsedTime;
 
-		public Integer getTaskId() {
-			return this.taskId;
+		private Long scanRows;
+
+		private Long peakMemory;
+
+		private Integer taskId;
+
+		private Long inputRows;
+
+		public Long getScanCost() {
+			return this.scanCost;
 		}
 
-		public void setTaskId(Integer taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public Long getElapsedTime() {
-			return this.elapsedTime;
-		}
-
-		public void setElapsedTime(Long elapsedTime) {
-			this.elapsedTime = elapsedTime;
-		}
-
-		public Long getPeakMemory() {
-			return this.peakMemory;
-		}
-
-		public void setPeakMemory(Long peakMemory) {
-			this.peakMemory = peakMemory;
-		}
-
-		public Long getOperatorCost() {
-			return this.operatorCost;
-		}
-
-		public void setOperatorCost(Long operatorCost) {
-			this.operatorCost = operatorCost;
-		}
-
-		public Long getInputRows() {
-			return this.inputRows;
-		}
-
-		public void setInputRows(Long inputRows) {
-			this.inputRows = inputRows;
-		}
-
-		public Long getInputSize() {
-			return this.inputSize;
-		}
-
-		public void setInputSize(Long inputSize) {
-			this.inputSize = inputSize;
-		}
-
-		public Long getOutputRows() {
-			return this.outputRows;
-		}
-
-		public void setOutputRows(Long outputRows) {
-			this.outputRows = outputRows;
+		public void setScanCost(Long scanCost) {
+			this.scanCost = scanCost;
 		}
 
 		public Long getOutputSize() {
@@ -143,12 +87,36 @@ public class DescribeSQLPlanTaskResponse extends AcsResponse {
 			this.outputSize = outputSize;
 		}
 
-		public Long getScanRows() {
-			return this.scanRows;
+		public Long getInputSize() {
+			return this.inputSize;
 		}
 
-		public void setScanRows(Long scanRows) {
-			this.scanRows = scanRows;
+		public void setInputSize(Long inputSize) {
+			this.inputSize = inputSize;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public Long getOperatorCost() {
+			return this.operatorCost;
+		}
+
+		public void setOperatorCost(Long operatorCost) {
+			this.operatorCost = operatorCost;
+		}
+
+		public Long getOutputRows() {
+			return this.outputRows;
+		}
+
+		public void setOutputRows(Long outputRows) {
+			this.outputRows = outputRows;
 		}
 
 		public Long getScanSize() {
@@ -159,12 +127,44 @@ public class DescribeSQLPlanTaskResponse extends AcsResponse {
 			this.scanSize = scanSize;
 		}
 
-		public Long getScanCost() {
-			return this.scanCost;
+		public Long getElapsedTime() {
+			return this.elapsedTime;
 		}
 
-		public void setScanCost(Long scanCost) {
-			this.scanCost = scanCost;
+		public void setElapsedTime(Long elapsedTime) {
+			this.elapsedTime = elapsedTime;
+		}
+
+		public Long getScanRows() {
+			return this.scanRows;
+		}
+
+		public void setScanRows(Long scanRows) {
+			this.scanRows = scanRows;
+		}
+
+		public Long getPeakMemory() {
+			return this.peakMemory;
+		}
+
+		public void setPeakMemory(Long peakMemory) {
+			this.peakMemory = peakMemory;
+		}
+
+		public Integer getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(Integer taskId) {
+			this.taskId = taskId;
+		}
+
+		public Long getInputRows() {
+			return this.inputRows;
+		}
+
+		public void setInputRows(Long inputRows) {
+			this.inputRows = inputRows;
 		}
 	}
 

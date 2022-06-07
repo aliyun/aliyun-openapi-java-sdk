@@ -35,14 +35,14 @@ public class DescribeTableStatisticsResponseUnmarshaller {
 		List<TableStatisticRecords> items = new ArrayList<TableStatisticRecords>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTableStatisticsResponse.Items.Length"); i++) {
 			TableStatisticRecords tableStatisticRecords = new TableStatisticRecords();
-			tableStatisticRecords.setTableName(_ctx.stringValue("DescribeTableStatisticsResponse.Items["+ i +"].TableName"));
-			tableStatisticRecords.setColdDataSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].ColdDataSize"));
-			tableStatisticRecords.setDataSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].DataSize"));
-			tableStatisticRecords.setPrimaryKeyIndexSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].PrimaryKeyIndexSize"));
-			tableStatisticRecords.setIndexSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].IndexSize"));
-			tableStatisticRecords.setRowCount(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].RowCount"));
-			tableStatisticRecords.setPartitionCount(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].PartitionCount"));
 			tableStatisticRecords.setSchemaName(_ctx.stringValue("DescribeTableStatisticsResponse.Items["+ i +"].SchemaName"));
+			tableStatisticRecords.setTableName(_ctx.stringValue("DescribeTableStatisticsResponse.Items["+ i +"].TableName"));
+			tableStatisticRecords.setRowCount(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].RowCount"));
+			tableStatisticRecords.setDataSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].DataSize"));
+			tableStatisticRecords.setIndexSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].IndexSize"));
+			tableStatisticRecords.setPrimaryKeyIndexSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].PrimaryKeyIndexSize"));
+			tableStatisticRecords.setPartitionCount(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].PartitionCount"));
+			tableStatisticRecords.setColdDataSize(_ctx.longValue("DescribeTableStatisticsResponse.Items["+ i +"].ColdDataSize"));
 
 			items.add(tableStatisticRecords);
 		}

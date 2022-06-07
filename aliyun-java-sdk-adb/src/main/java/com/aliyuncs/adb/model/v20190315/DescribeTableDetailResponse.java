@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTableDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long avgSize;
 
+	private String requestId;
+
 	private List<Shard> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getAvgSize() {
 		return this.avgSize;
@@ -45,6 +37,14 @@ public class DescribeTableDetailResponse extends AcsResponse {
 
 	public void setAvgSize(Long avgSize) {
 		this.avgSize = avgSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Shard> getItems() {
@@ -57,17 +57,9 @@ public class DescribeTableDetailResponse extends AcsResponse {
 
 	public static class Shard {
 
-		private Integer id;
-
 		private Long size;
 
-		public Integer getId() {
-			return this.id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
-		}
+		private Integer id;
 
 		public Long getSize() {
 			return this.size;
@@ -75,6 +67,14 @@ public class DescribeTableDetailResponse extends AcsResponse {
 
 		public void setSize(Long size) {
 			this.size = size;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
 		}
 	}
 

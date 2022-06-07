@@ -38,9 +38,9 @@ public class DescribeTablePartitionDiagnoseResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeTablePartitionDiagnoseResponse.Items.Length"); i++) {
 			TablePartitionDiagnose tablePartitionDiagnose = new TablePartitionDiagnose();
 			tablePartitionDiagnose.setTableName(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].TableName"));
-			tablePartitionDiagnose.setPartitionNumber(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].PartitionNumber"));
 			tablePartitionDiagnose.setPartitionDetail(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].PartitionDetail"));
 			tablePartitionDiagnose.setSchemaName(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].SchemaName"));
+			tablePartitionDiagnose.setPartitionNumber(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].PartitionNumber"));
 
 			items.add(tablePartitionDiagnose);
 		}

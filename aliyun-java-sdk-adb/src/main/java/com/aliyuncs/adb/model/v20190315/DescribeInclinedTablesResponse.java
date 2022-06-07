@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInclinedTablesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String totalCount;
-
-	private String pageNumber;
 
 	private String pageSize;
 
+	private String requestId;
+
+	private String pageNumber;
+
 	private List<Table> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeInclinedTablesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Table> getItems() {
@@ -77,31 +77,15 @@ public class DescribeInclinedTablesResponse extends AcsResponse {
 
 	public static class Table {
 
-		private String schema;
-
-		private String name;
-
 		private String type;
+
+		private String schema;
 
 		private Long size;
 
+		private String name;
+
 		private Boolean isIncline;
-
-		public String getSchema() {
-			return this.schema;
-		}
-
-		public void setSchema(String schema) {
-			this.schema = schema;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getType() {
 			return this.type;
@@ -111,12 +95,28 @@ public class DescribeInclinedTablesResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getSchema() {
+			return this.schema;
+		}
+
+		public void setSchema(String schema) {
+			this.schema = schema;
+		}
+
 		public Long getSize() {
 			return this.size;
 		}
 
 		public void setSize(Long size) {
 			this.size = size;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Boolean getIsIncline() {

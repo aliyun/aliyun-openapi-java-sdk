@@ -28,16 +28,16 @@ public class DescribeInclinedTablesResponseUnmarshaller {
 		
 		describeInclinedTablesResponse.setRequestId(_ctx.stringValue("DescribeInclinedTablesResponse.RequestId"));
 		describeInclinedTablesResponse.setTotalCount(_ctx.stringValue("DescribeInclinedTablesResponse.TotalCount"));
-		describeInclinedTablesResponse.setPageNumber(_ctx.stringValue("DescribeInclinedTablesResponse.PageNumber"));
 		describeInclinedTablesResponse.setPageSize(_ctx.stringValue("DescribeInclinedTablesResponse.PageSize"));
+		describeInclinedTablesResponse.setPageNumber(_ctx.stringValue("DescribeInclinedTablesResponse.PageNumber"));
 
 		List<Table> items = new ArrayList<Table>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInclinedTablesResponse.Items.Length"); i++) {
 			Table table = new Table();
-			table.setSchema(_ctx.stringValue("DescribeInclinedTablesResponse.Items["+ i +"].Schema"));
-			table.setName(_ctx.stringValue("DescribeInclinedTablesResponse.Items["+ i +"].Name"));
 			table.setType(_ctx.stringValue("DescribeInclinedTablesResponse.Items["+ i +"].Type"));
+			table.setSchema(_ctx.stringValue("DescribeInclinedTablesResponse.Items["+ i +"].Schema"));
 			table.setSize(_ctx.longValue("DescribeInclinedTablesResponse.Items["+ i +"].Size"));
+			table.setName(_ctx.stringValue("DescribeInclinedTablesResponse.Items["+ i +"].Name"));
 			table.setIsIncline(_ctx.booleanValue("DescribeInclinedTablesResponse.Items["+ i +"].IsIncline"));
 
 			items.add(table);
