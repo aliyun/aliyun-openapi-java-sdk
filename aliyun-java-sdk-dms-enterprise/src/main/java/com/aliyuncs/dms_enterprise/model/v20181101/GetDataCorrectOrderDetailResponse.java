@@ -79,6 +79,8 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 		private String status;
 
+		private String execMode;
+
 		private List<TaskCheckDO> preCheckDetail;
 
 		private List<Database> databaseList;
@@ -91,6 +93,14 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getExecMode() {
+			return this.execMode;
+		}
+
+		public void setExecMode(String execMode) {
+			this.execMode = execMode;
 		}
 
 		public List<TaskCheckDO> getPreCheckDetail() {

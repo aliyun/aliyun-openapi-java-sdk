@@ -36,6 +36,7 @@ public class GetDataCorrectOrderDetailResponseUnmarshaller {
 
 		DataCorrectOrderDetail dataCorrectOrderDetail = new DataCorrectOrderDetail();
 		dataCorrectOrderDetail.setStatus(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.Status"));
+		dataCorrectOrderDetail.setExecMode(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.ExecMode"));
 
 		OrderDetail orderDetail = new OrderDetail();
 		orderDetail.setRbSQL(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.RbSQL"));

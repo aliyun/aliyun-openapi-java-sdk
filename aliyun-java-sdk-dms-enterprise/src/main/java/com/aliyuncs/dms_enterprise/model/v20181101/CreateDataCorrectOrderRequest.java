@@ -123,6 +123,9 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 		@SerializedName("ExecSQL")
 		private String execSQL;
 
+		@SerializedName("ExecMode")
+		private String execMode;
+
 		@SerializedName("EstimateAffectRows")
 		private Long estimateAffectRows;
 
@@ -178,6 +181,14 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 
 		public void setExecSQL(String execSQL) {
 			this.execSQL = execSQL;
+		}
+
+		public String getExecMode() {
+			return this.execMode;
+		}
+
+		public void setExecMode(String execMode) {
+			this.execMode = execMode;
 		}
 
 		public Long getEstimateAffectRows() {

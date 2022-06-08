@@ -1,3 +1,8 @@
+2022-06-08 Version: 1.37.0
+- Support GetDataCorrectOrderDetail API to return execMode type.
+- Support CreateDataCorrectOrder, CreateFreeLockCorrectOrder API submit with execMode type.
+
+
 2022-04-21 Version: 1.36.0
 - Add API OfflineTaskFlow.
 
