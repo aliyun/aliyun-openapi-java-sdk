@@ -58,7 +58,7 @@ public class ListApplicationsWithTagRulesResponseUnmarshaller {
 				routeRule.setRules(_ctx.stringValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].RouteRules["+ j +"].Rules"));
 				routeRule.setId(_ctx.longValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].RouteRules["+ j +"].Id"));
 				routeRule.setRate(_ctx.integerValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].RouteRules["+ j +"].Rate"));
-				routeRule.setGmtModified(_ctx.longValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].RouteRules["+ j +"].GmtModified"));
+				routeRule.setGmtModified(_ctx.stringValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].RouteRules["+ j +"].GmtModified"));
 				routeRule.setEnable(_ctx.booleanValue("ListApplicationsWithTagRulesResponse.Data.Result["+ i +"].RouteRules["+ j +"].Enable"));
 
 				routeRules.add(routeRule);

@@ -189,7 +189,7 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 
 				private Integer rate;
 
-				private Long gmtModified;
+				private String gmtModified;
 
 				private Boolean enable;
 
@@ -265,11 +265,11 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 					this.rate = rate;
 				}
 
-				public Long getGmtModified() {
+				public String getGmtModified() {
 					return this.gmtModified;
 				}
 
-				public void setGmtModified(Long gmtModified) {
+				public void setGmtModified(String gmtModified) {
 					this.gmtModified = gmtModified;
 				}
 

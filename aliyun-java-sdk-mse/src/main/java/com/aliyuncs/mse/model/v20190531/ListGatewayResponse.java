@@ -179,6 +179,10 @@ public class ListGatewayResponse extends AcsResponse {
 
 			private String tag;
 
+			private String gatewayVersion;
+
+			private Boolean rollBack;
+
 			private List<SlbItem> slb;
 
 			private List<InternetSlbItem> internetSlb;
@@ -383,6 +387,22 @@ public class ListGatewayResponse extends AcsResponse {
 
 			public void setTag(String tag) {
 				this.tag = tag;
+			}
+
+			public String getGatewayVersion() {
+				return this.gatewayVersion;
+			}
+
+			public void setGatewayVersion(String gatewayVersion) {
+				this.gatewayVersion = gatewayVersion;
+			}
+
+			public Boolean getRollBack() {
+				return this.rollBack;
+			}
+
+			public void setRollBack(Boolean rollBack) {
+				this.rollBack = rollBack;
 			}
 
 			public List<SlbItem> getSlb() {

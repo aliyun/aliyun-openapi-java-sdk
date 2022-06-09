@@ -1,3 +1,6 @@
+2022-06-09 Version: 3.0.20
+- Fix listApplicationsWithTagRules response error.
+
 2022-05-13 Version: 3.0.19
 - Add ListDashboardUrl api.
 

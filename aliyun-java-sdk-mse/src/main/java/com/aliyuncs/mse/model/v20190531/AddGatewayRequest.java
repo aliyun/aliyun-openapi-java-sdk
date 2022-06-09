@@ -27,9 +27,17 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String internetSlbSpec;
 
+	private Boolean enableXtrace;
+
+	private String xtraceRatio;
+
 	private Integer replica;
 
 	private String vSwitchId2;
+
+	private Boolean enableHardwareAcceleration;
+
+	private Boolean enableSls;
 
 	private String spec;
 
@@ -66,6 +74,28 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
+	public Boolean getEnableXtrace() {
+		return this.enableXtrace;
+	}
+
+	public void setEnableXtrace(Boolean enableXtrace) {
+		this.enableXtrace = enableXtrace;
+		if(enableXtrace != null){
+			putQueryParameter("EnableXtrace", enableXtrace.toString());
+		}
+	}
+
+	public String getXtraceRatio() {
+		return this.xtraceRatio;
+	}
+
+	public void setXtraceRatio(String xtraceRatio) {
+		this.xtraceRatio = xtraceRatio;
+		if(xtraceRatio != null){
+			putQueryParameter("XtraceRatio", xtraceRatio);
+		}
+	}
+
 	public Integer getReplica() {
 		return this.replica;
 	}
@@ -85,6 +115,28 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		this.vSwitchId2 = vSwitchId2;
 		if(vSwitchId2 != null){
 			putQueryParameter("VSwitchId2", vSwitchId2);
+		}
+	}
+
+	public Boolean getEnableHardwareAcceleration() {
+		return this.enableHardwareAcceleration;
+	}
+
+	public void setEnableHardwareAcceleration(Boolean enableHardwareAcceleration) {
+		this.enableHardwareAcceleration = enableHardwareAcceleration;
+		if(enableHardwareAcceleration != null){
+			putQueryParameter("EnableHardwareAcceleration", enableHardwareAcceleration.toString());
+		}
+	}
+
+	public Boolean getEnableSls() {
+		return this.enableSls;
+	}
+
+	public void setEnableSls(Boolean enableSls) {
+		this.enableSls = enableSls;
+		if(enableSls != null){
+			putQueryParameter("EnableSls", enableSls.toString());
 		}
 	}
 

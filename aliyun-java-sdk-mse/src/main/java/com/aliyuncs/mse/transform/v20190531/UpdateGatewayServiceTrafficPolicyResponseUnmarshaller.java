@@ -54,6 +54,7 @@ public class UpdateGatewayServiceTrafficPolicyResponseUnmarshaller {
 
 		LoadBalancerSettings loadBalancerSettings = new LoadBalancerSettings();
 		loadBalancerSettings.setLoadbalancerType(_ctx.stringValue("UpdateGatewayServiceTrafficPolicyResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.LoadbalancerType"));
+		loadBalancerSettings.setWarmupDuration(_ctx.longValue("UpdateGatewayServiceTrafficPolicyResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.WarmupDuration"));
 
 		ConsistentHashLBConfig consistentHashLBConfig = new ConsistentHashLBConfig();
 		consistentHashLBConfig.setParameterName(_ctx.stringValue("UpdateGatewayServiceTrafficPolicyResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.ParameterName"));

@@ -62,6 +62,7 @@ public class GetGatewayRouteDetailResponseUnmarshaller {
 		data.setServices(_ctx.stringValue("GetGatewayRouteDetailResponse.Data.Services"));
 		data.setDestinationType(_ctx.stringValue("GetGatewayRouteDetailResponse.Data.DestinationType"));
 		data.setEnableWaf(_ctx.booleanValue("GetGatewayRouteDetailResponse.Data.EnableWaf"));
+		data.setAhasStatus(_ctx.integerValue("GetGatewayRouteDetailResponse.Data.AhasStatus"));
 
 		List<Long> domainIdList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("GetGatewayRouteDetailResponse.Data.DomainIdList.Length"); i++) {

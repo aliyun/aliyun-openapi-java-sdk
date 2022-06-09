@@ -69,6 +69,8 @@ public class ListGatewayResponseUnmarshaller {
 			gateways.setChargeType(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].ChargeType"));
 			gateways.setEndDate(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].EndDate"));
 			gateways.setTag(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].Tag"));
+			gateways.setGatewayVersion(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].GatewayVersion"));
+			gateways.setRollBack(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].RollBack"));
 
 			InitConfig initConfig = new InitConfig();
 			initConfig.setEnableWaf(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].InitConfig.EnableWaf"));

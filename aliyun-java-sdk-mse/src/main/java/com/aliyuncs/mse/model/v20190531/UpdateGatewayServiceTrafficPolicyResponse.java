@@ -235,6 +235,8 @@ public class UpdateGatewayServiceTrafficPolicyResponse extends AcsResponse {
 
 				private String loadbalancerType;
 
+				private Long warmupDuration;
+
 				private ConsistentHashLBConfig consistentHashLBConfig;
 
 				public String getLoadbalancerType() {
@@ -243,6 +245,14 @@ public class UpdateGatewayServiceTrafficPolicyResponse extends AcsResponse {
 
 				public void setLoadbalancerType(String loadbalancerType) {
 					this.loadbalancerType = loadbalancerType;
+				}
+
+				public Long getWarmupDuration() {
+					return this.warmupDuration;
+				}
+
+				public void setWarmupDuration(Long warmupDuration) {
+					this.warmupDuration = warmupDuration;
 				}
 
 				public ConsistentHashLBConfig getConsistentHashLBConfig() {

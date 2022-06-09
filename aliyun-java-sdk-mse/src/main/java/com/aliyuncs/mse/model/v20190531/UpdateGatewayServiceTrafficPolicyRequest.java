@@ -174,11 +174,22 @@ public class UpdateGatewayServiceTrafficPolicyRequest extends RpcAcsRequest<Upda
 
 		public static class LoadBalancerSettings {
 
+			@SerializedName("WarmupDuration")
+			private Long warmupDuration;
+
 			@SerializedName("LoadbalancerType")
 			private String loadbalancerType;
 
 			@SerializedName("ConsistentHashLBConfig")
 			private ConsistentHashLBConfig consistentHashLBConfig;
+
+			public Long getWarmupDuration() {
+				return this.warmupDuration;
+			}
+
+			public void setWarmupDuration(Long warmupDuration) {
+				this.warmupDuration = warmupDuration;
+			}
 
 			public String getLoadbalancerType() {
 				return this.loadbalancerType;
