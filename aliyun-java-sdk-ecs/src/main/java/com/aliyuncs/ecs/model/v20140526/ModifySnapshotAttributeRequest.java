@@ -33,8 +33,6 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 
 	private String snapshotName;
 
-	private Long instantAccessRetentionDays;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -42,8 +40,6 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 	private Long ownerId;
 
 	private Boolean disableInstantAccess;
-
-	private Long retentionDays;
 	public ModifySnapshotAttributeRequest() {
 		super("Ecs", "2014-05-26", "ModifySnapshotAttribute", "ecs");
 		setMethod(MethodType.POST);
@@ -97,17 +93,6 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 		}
 	}
 
-	public Long getInstantAccessRetentionDays() {
-		return this.instantAccessRetentionDays;
-	}
-
-	public void setInstantAccessRetentionDays(Long instantAccessRetentionDays) {
-		this.instantAccessRetentionDays = instantAccessRetentionDays;
-		if(instantAccessRetentionDays != null){
-			putQueryParameter("InstantAccessRetentionDays", instantAccessRetentionDays.toString());
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -149,17 +134,6 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 		this.disableInstantAccess = disableInstantAccess;
 		if(disableInstantAccess != null){
 			putQueryParameter("DisableInstantAccess", disableInstantAccess.toString());
-		}
-	}
-
-	public Long getRetentionDays() {
-		return this.retentionDays;
-	}
-
-	public void setRetentionDays(Long retentionDays) {
-		this.retentionDays = retentionDays;
-		if(retentionDays != null){
-			putQueryParameter("RetentionDays", retentionDays.toString());
 		}
 	}
 

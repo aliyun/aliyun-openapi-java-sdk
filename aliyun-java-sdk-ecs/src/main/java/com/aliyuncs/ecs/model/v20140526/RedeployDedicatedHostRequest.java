@@ -34,8 +34,6 @@ public class RedeployDedicatedHostRequest extends RpcAcsRequest<RedeployDedicate
 	private String dedicatedHostId;
 
 	private Long ownerId;
-
-	private Boolean waiveLocalDiskData;
 	public RedeployDedicatedHostRequest() {
 		super("Ecs", "2014-05-26", "RedeployDedicatedHost", "ecs");
 		setMethod(MethodType.POST);
@@ -97,17 +95,6 @@ public class RedeployDedicatedHostRequest extends RpcAcsRequest<RedeployDedicate
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Boolean getWaiveLocalDiskData() {
-		return this.waiveLocalDiskData;
-	}
-
-	public void setWaiveLocalDiskData(Boolean waiveLocalDiskData) {
-		this.waiveLocalDiskData = waiveLocalDiskData;
-		if(waiveLocalDiskData != null){
-			putQueryParameter("WaiveLocalDiskData", waiveLocalDiskData.toString());
 		}
 	}
 

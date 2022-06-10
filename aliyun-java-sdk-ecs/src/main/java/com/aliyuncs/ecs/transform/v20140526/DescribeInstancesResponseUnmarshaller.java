@@ -96,7 +96,6 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setCreditSpecification(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreditSpecification"));
 			instance.setInstanceTypeFamily(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceTypeFamily"));
 			instance.setOSType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSType"));
-			instance.setSpotInterruptionBehavior(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotInterruptionBehavior"));
 
 			List<String> rdmaIpAddress = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].RdmaIpAddress.Length"); j++) {

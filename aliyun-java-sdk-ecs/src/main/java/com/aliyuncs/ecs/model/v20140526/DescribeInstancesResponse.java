@@ -181,8 +181,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String oSType;
 
-		private String spotInterruptionBehavior;
-
 		private List<NetworkInterface> networkInterfaces;
 
 		private List<LockReason> operationLocks;
@@ -589,14 +587,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setOSType(String oSType) {
 			this.oSType = oSType;
-		}
-
-		public String getSpotInterruptionBehavior() {
-			return this.spotInterruptionBehavior;
-		}
-
-		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
-			this.spotInterruptionBehavior = spotInterruptionBehavior;
 		}
 
 		public List<NetworkInterface> getNetworkInterfaces() {

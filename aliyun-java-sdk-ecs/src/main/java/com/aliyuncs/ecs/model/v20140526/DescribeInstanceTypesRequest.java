@@ -38,8 +38,6 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	private String instanceTypeFamily;
 
-	private List<Filters> filters;
-
 	private Long ownerId;
 
 	private Long maxResults;
@@ -120,23 +118,6 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
-	public List<Filters> getFilters() {
-		return this.filters;
-	}
-
-	public void setFilters(List<Filters> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				if (filters.get(depth1) != null) {
-					
-						putQueryParameter("Filters." + (depth1 + 1) + ".Name" , filters.get(depth1).getName());
-						putQueryParameter("Filters." + (depth1 + 1) + ".Value" , filters.get(depth1).getValue());
-				}
-			}
-		}	
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -156,29 +137,6 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public static class Filters {
-
-		private String name;
-
-		private String value;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
 		}
 	}
 

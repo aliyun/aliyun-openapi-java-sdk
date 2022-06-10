@@ -62,8 +62,6 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 
 	private String instanceFamilyLevel;
 
-	private Boolean instanceTypeSupportIPv6;
-
 	private String zoneId;
 	public DescribeRecommendInstanceTypeRequest() {
 		super("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "ecs");
@@ -271,17 +269,6 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		this.instanceFamilyLevel = instanceFamilyLevel;
 		if(instanceFamilyLevel != null){
 			putQueryParameter("InstanceFamilyLevel", instanceFamilyLevel);
-		}
-	}
-
-	public Boolean getInstanceTypeSupportIPv6() {
-		return this.instanceTypeSupportIPv6;
-	}
-
-	public void setInstanceTypeSupportIPv6(Boolean instanceTypeSupportIPv6) {
-		this.instanceTypeSupportIPv6 = instanceTypeSupportIPv6;
-		if(instanceTypeSupportIPv6 != null){
-			putQueryParameter("InstanceTypeSupportIPv6", instanceTypeSupportIPv6.toString());
 		}
 	}
 

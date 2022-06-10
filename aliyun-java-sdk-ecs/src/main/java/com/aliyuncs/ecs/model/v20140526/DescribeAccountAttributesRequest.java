@@ -32,8 +32,6 @@ public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAcco
 
 	private String resourceOwnerAccount;
 
-	private String bizAliUid;
-
 	private Long ownerId;
 
 	private String zoneId;
@@ -78,17 +76,6 @@ public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAcco
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getBizAliUid() {
-		return this.bizAliUid;
-	}
-
-	public void setBizAliUid(String bizAliUid) {
-		this.bizAliUid = bizAliUid;
-		if(bizAliUid != null){
-			putQueryParameter("BizAliUid", bizAliUid);
 		}
 	}
 

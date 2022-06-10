@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -27,8 +26,6 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 	   
 
 	private Long resourceOwnerId;
-
-	private Boolean needInventoryScore;
 
 	private Float memory;
 
@@ -47,8 +44,6 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 	private String networkCategory;
 
 	private String instanceChargeType;
-
-	private List<String> instanceFeatureOptionss;
 
 	private String resourceOwnerAccount;
 
@@ -84,17 +79,6 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Boolean getNeedInventoryScore() {
-		return this.needInventoryScore;
-	}
-
-	public void setNeedInventoryScore(Boolean needInventoryScore) {
-		this.needInventoryScore = needInventoryScore;
-		if(needInventoryScore != null){
-			putQueryParameter("NeedInventoryScore", needInventoryScore.toString());
 		}
 	}
 
@@ -195,19 +179,6 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		if(instanceChargeType != null){
 			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
-	}
-
-	public List<String> getInstanceFeatureOptionss() {
-		return this.instanceFeatureOptionss;
-	}
-
-	public void setInstanceFeatureOptionss(List<String> instanceFeatureOptionss) {
-		this.instanceFeatureOptionss = instanceFeatureOptionss;	
-		if (instanceFeatureOptionss != null) {
-			for (int i = 0; i < instanceFeatureOptionss.size(); i++) {
-				putQueryParameter("InstanceFeatureOptions." + (i + 1) , instanceFeatureOptionss.get(i));
-			}
-		}	
 	}
 
 	public String getResourceOwnerAccount() {

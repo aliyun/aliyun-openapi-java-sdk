@@ -27,6 +27,8 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 
 	private Long resourceOwnerId;
 
+	private Boolean removeFromDeploymentSet;
+
 	private Integer deploymentSetGroupNo;
 
 	private String dedicatedHostClusterId;
@@ -69,6 +71,17 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getRemoveFromDeploymentSet() {
+		return this.removeFromDeploymentSet;
+	}
+
+	public void setRemoveFromDeploymentSet(Boolean removeFromDeploymentSet) {
+		this.removeFromDeploymentSet = removeFromDeploymentSet;
+		if(removeFromDeploymentSet != null){
+			putQueryParameter("RemoveFromDeploymentSet", removeFromDeploymentSet.toString());
 		}
 	}
 
