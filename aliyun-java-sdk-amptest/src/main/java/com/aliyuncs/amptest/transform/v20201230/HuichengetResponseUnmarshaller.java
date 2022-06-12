@@ -25,6 +25,7 @@ public class HuichengetResponseUnmarshaller {
 		huichengetResponse.setRequestId(_ctx.stringValue("HuichengetResponse.RequestId"));
 		huichengetResponse.setInstanceId4(_ctx.stringValue("HuichengetResponse.InstanceId4"));
 		huichengetResponse.setMessage(_ctx.stringValue("HuichengetResponse.Message"));
+		huichengetResponse.setCode(_ctx.stringValue("HuichengetResponse.Code"));
 	 
 	 	return huichengetResponse;
 	}
