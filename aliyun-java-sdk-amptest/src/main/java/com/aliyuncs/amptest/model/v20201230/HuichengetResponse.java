@@ -32,6 +32,8 @@ public class HuichengetResponse extends AcsResponse {
 
 	private String code;
 
+	private String context;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class HuichengetResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getContext() {
+		return this.context;
+	}
+
+	public void setContext(String context) {
+		this.context = context;
 	}
 
 	@Override
