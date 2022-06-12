@@ -23,6 +23,8 @@ public class HuichengetResponseUnmarshaller {
 	public static HuichengetResponse unmarshall(HuichengetResponse huichengetResponse, UnmarshallerContext _ctx) {
 		
 		huichengetResponse.setRequestId(_ctx.stringValue("HuichengetResponse.RequestId"));
+		huichengetResponse.setInstanceId4(_ctx.stringValue("HuichengetResponse.InstanceId4"));
+		huichengetResponse.setMessage(_ctx.stringValue("HuichengetResponse.Message"));
 	 
 	 	return huichengetResponse;
 	}

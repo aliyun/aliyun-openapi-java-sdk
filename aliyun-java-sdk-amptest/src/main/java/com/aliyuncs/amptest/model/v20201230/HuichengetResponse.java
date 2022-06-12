@@ -26,12 +26,32 @@ public class HuichengetResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String instanceId4;
+
+	private String message;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getInstanceId4() {
+		return this.instanceId4;
+	}
+
+	public void setInstanceId4(String instanceId4) {
+		this.instanceId4 = instanceId4;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
