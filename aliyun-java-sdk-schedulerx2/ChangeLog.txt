@@ -1,3 +1,6 @@
+2022-06-13 Version: 1.1.2
+- Create Job Support Setting Status.
+
 2022-04-06 Version: 1.1.1
 - Create App Group Support Schedule Busy Workers.
 

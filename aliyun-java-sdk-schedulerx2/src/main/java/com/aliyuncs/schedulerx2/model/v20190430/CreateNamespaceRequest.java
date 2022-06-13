@@ -27,8 +27,6 @@ public class CreateNamespaceRequest extends RpcAcsRequest<CreateNamespaceRespons
 
 	private String description;
 
-	private String source;
-
 	private String uid;
 
 	private String name;
@@ -49,17 +47,6 @@ public class CreateNamespaceRequest extends RpcAcsRequest<CreateNamespaceRespons
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
 		}
 	}
 

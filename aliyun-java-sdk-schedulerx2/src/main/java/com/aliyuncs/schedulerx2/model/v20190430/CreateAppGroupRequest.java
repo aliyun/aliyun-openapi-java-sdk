@@ -26,27 +26,27 @@ import com.aliyuncs.schedulerx2.Endpoint;
 public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse> {
 	   
 
-	private Integer maxJobs;
-
 	private String namespaceName;
 
 	private String namespaceSource;
 
 	private Boolean scheduleBusyWorkers;
 
-	private String groupId;
-
 	private String description;
 
-	private String monitorConfigJson;
-
 	private String appName;
+
+	private String monitorContactsJson;
+
+	private Integer maxJobs;
+
+	private String groupId;
+
+	private String monitorConfigJson;
 
 	private String namespace;
 
 	private String appKey;
-
-	private String monitorContactsJson;
 	public CreateAppGroupRequest() {
 		super("schedulerx2", "2019-04-30", "CreateAppGroup");
 		setProtocol(ProtocolType.HTTPS);
@@ -55,17 +55,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getMaxJobs() {
-		return this.maxJobs;
-	}
-
-	public void setMaxJobs(Integer maxJobs) {
-		this.maxJobs = maxJobs;
-		if(maxJobs != null){
-			putQueryParameter("MaxJobs", maxJobs.toString());
-		}
 	}
 
 	public String getNamespaceName() {
@@ -101,17 +90,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -123,17 +101,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		}
 	}
 
-	public String getMonitorConfigJson() {
-		return this.monitorConfigJson;
-	}
-
-	public void setMonitorConfigJson(String monitorConfigJson) {
-		this.monitorConfigJson = monitorConfigJson;
-		if(monitorConfigJson != null){
-			putQueryParameter("MonitorConfigJson", monitorConfigJson);
-		}
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -142,6 +109,50 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getMonitorContactsJson() {
+		return this.monitorContactsJson;
+	}
+
+	public void setMonitorContactsJson(String monitorContactsJson) {
+		this.monitorContactsJson = monitorContactsJson;
+		if(monitorContactsJson != null){
+			putQueryParameter("MonitorContactsJson", monitorContactsJson);
+		}
+	}
+
+	public Integer getMaxJobs() {
+		return this.maxJobs;
+	}
+
+	public void setMaxJobs(Integer maxJobs) {
+		this.maxJobs = maxJobs;
+		if(maxJobs != null){
+			putQueryParameter("MaxJobs", maxJobs.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getMonitorConfigJson() {
+		return this.monitorConfigJson;
+	}
+
+	public void setMonitorConfigJson(String monitorConfigJson) {
+		this.monitorConfigJson = monitorConfigJson;
+		if(monitorConfigJson != null){
+			putQueryParameter("MonitorConfigJson", monitorConfigJson);
 		}
 	}
 
@@ -164,17 +175,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.appKey = appKey;
 		if(appKey != null){
 			putQueryParameter("AppKey", appKey);
-		}
-	}
-
-	public String getMonitorContactsJson() {
-		return this.monitorContactsJson;
-	}
-
-	public void setMonitorContactsJson(String monitorContactsJson) {
-		this.monitorContactsJson = monitorContactsJson;
-		if(monitorContactsJson != null){
-			putQueryParameter("MonitorContactsJson", monitorContactsJson);
 		}
 	}
 

@@ -87,6 +87,8 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 	private Integer timeType;
 
 	private String parameters;
+
+	private Integer status;
 	public CreateJobRequest() {
 		super("schedulerx2", "2019-04-30", "CreateJob");
 		setMethod(MethodType.POST);
@@ -439,6 +441,17 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		this.parameters = parameters;
 		if(parameters != null){
 			putBodyParameter("Parameters", parameters);
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status.toString());
 		}
 	}
 
