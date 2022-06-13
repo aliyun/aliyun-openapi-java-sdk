@@ -93,6 +93,8 @@ public class ListGroupAuthorizationRulesResponse extends AcsResponse {
 
 		private String authorizationRuleId;
 
+		private String type;
+
 		private List<String> sourceCidrs;
 
 		public String getIoTCloudConnectorGroupId() {
@@ -157,6 +159,14 @@ public class ListGroupAuthorizationRulesResponse extends AcsResponse {
 
 		public void setAuthorizationRuleId(String authorizationRuleId) {
 			this.authorizationRuleId = authorizationRuleId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public List<String> getSourceCidrs() {

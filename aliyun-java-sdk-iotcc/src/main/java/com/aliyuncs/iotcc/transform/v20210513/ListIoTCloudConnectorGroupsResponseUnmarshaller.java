@@ -40,6 +40,7 @@ public class ListIoTCloudConnectorGroupsResponseUnmarshaller {
 			ioTCloudConnectorGroupsItem.setName(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].Name"));
 			ioTCloudConnectorGroupsItem.setDescription(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].Description"));
 			ioTCloudConnectorGroupsItem.setCreateTime(_ctx.longValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].CreateTime"));
+			ioTCloudConnectorGroupsItem.setType(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].Type"));
 
 			List<IoTCloudConnectorsItem> ioTCloudConnectors = new ArrayList<IoTCloudConnectorsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors.Length"); j++) {

@@ -24,27 +24,18 @@ import com.aliyuncs.http.MethodType;
 public class CreateIoTCloudConnectorGroupRequest extends RpcAcsRequest<CreateIoTCloudConnectorGroupResponse> {
 	   
 
-	private Boolean dryRun;
-
 	private String clientToken;
 
 	private String description;
+
+	private String type;
+
+	private Boolean dryRun;
 
 	private String name;
 	public CreateIoTCloudConnectorGroupRequest() {
 		super("IoTCC", "2021-05-13", "CreateIoTCloudConnectorGroup", "IoTCC");
 		setMethod(MethodType.POST);
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
 	}
 
 	public String getClientToken() {
@@ -66,6 +57,28 @@ public class CreateIoTCloudConnectorGroupRequest extends RpcAcsRequest<CreateIoT
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

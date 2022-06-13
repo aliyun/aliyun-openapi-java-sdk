@@ -31,6 +31,8 @@ public class CreateGroupAuthorizationRuleRequest extends RpcAcsRequest<CreateGro
 
 	private String destination;
 
+	private String type;
+
 	private String authorizationRuleDescription;
 
 	private String policy;
@@ -77,6 +79,17 @@ public class CreateGroupAuthorizationRuleRequest extends RpcAcsRequest<CreateGro
 		this.destination = destination;
 		if(destination != null){
 			putQueryParameter("Destination", destination);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

@@ -87,6 +87,8 @@ public class ListIoTCloudConnectorGroupsResponse extends AcsResponse {
 
 		private Long createTime;
 
+		private String type;
+
 		private List<IoTCloudConnectorsItem> ioTCloudConnectors;
 
 		public String getIoTCloudConnectorGroupId() {
@@ -127,6 +129,14 @@ public class ListIoTCloudConnectorGroupsResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public List<IoTCloudConnectorsItem> getIoTCloudConnectors() {

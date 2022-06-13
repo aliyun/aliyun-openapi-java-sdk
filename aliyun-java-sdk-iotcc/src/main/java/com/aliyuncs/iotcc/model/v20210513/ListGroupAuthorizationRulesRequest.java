@@ -29,6 +29,8 @@ public class ListGroupAuthorizationRulesRequest extends RpcAcsRequest<ListGroupA
 
 	private List<String> destinations;
 
+	private String type;
+
 	private List<String> authorizationRuleIdss;
 
 	private String nextToken;
@@ -71,6 +73,17 @@ public class ListGroupAuthorizationRulesRequest extends RpcAcsRequest<ListGroupA
 				putQueryParameter("Destination." + (i + 1) , destinations.get(i));
 			}
 		}	
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	public List<String> getAuthorizationRuleIdss() {

@@ -42,6 +42,7 @@ public class ListGroupAuthorizationRulesResponseUnmarshaller {
 			groupAuthorizationRuleModels.setAuthorizationRuleName(_ctx.stringValue("ListGroupAuthorizationRulesResponse.GroupAuthorizationRules["+ i +"].AuthorizationRuleName"));
 			groupAuthorizationRuleModels.setAuthorizationRuleDescription(_ctx.stringValue("ListGroupAuthorizationRulesResponse.GroupAuthorizationRules["+ i +"].AuthorizationRuleDescription"));
 			groupAuthorizationRuleModels.setAuthorizationRuleId(_ctx.stringValue("ListGroupAuthorizationRulesResponse.GroupAuthorizationRules["+ i +"].AuthorizationRuleId"));
+			groupAuthorizationRuleModels.setType(_ctx.stringValue("ListGroupAuthorizationRulesResponse.GroupAuthorizationRules["+ i +"].Type"));
 
 			List<String> sourceCidrs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListGroupAuthorizationRulesResponse.GroupAuthorizationRules["+ i +"].SourceCidrs.Length"); j++) {

@@ -25,6 +25,8 @@ import com.aliyuncs.http.MethodType;
 public class ListIoTCloudConnectorGroupsRequest extends RpcAcsRequest<ListIoTCloudConnectorGroupsResponse> {
 	   
 
+	private String type;
+
 	private String nextToken;
 
 	private List<String> ioTCloudConnectorGroupIdss;
@@ -37,6 +39,17 @@ public class ListIoTCloudConnectorGroupsRequest extends RpcAcsRequest<ListIoTClo
 	public ListIoTCloudConnectorGroupsRequest() {
 		super("IoTCC", "2021-05-13", "ListIoTCloudConnectorGroups", "IoTCC");
 		setMethod(MethodType.POST);
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	public String getNextToken() {

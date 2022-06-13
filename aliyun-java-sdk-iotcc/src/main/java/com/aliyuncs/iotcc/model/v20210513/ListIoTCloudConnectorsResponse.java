@@ -107,6 +107,8 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 
 		private String ipFeature;
 
+		private String type;
+
 		private List<String> vSwitchList;
 
 		public String getIoTCloudConnectorId() {
@@ -227,6 +229,14 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 
 		public void setIpFeature(String ipFeature) {
 			this.ipFeature = ipFeature;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public List<String> getVSwitchList() {
