@@ -35,6 +35,8 @@ public class HuichengetRequest extends RpcAcsRequest<HuichengetResponse> {
 	private String newName;
 
 	private String two;
+
+	private String three;
 	public HuichengetRequest() {
 		super("AmpTest", "2020-12-30", "Huichenget", "AmpTest");
 		setMethod(MethodType.POST);
@@ -103,6 +105,17 @@ public class HuichengetRequest extends RpcAcsRequest<HuichengetResponse> {
 		this.two = two;
 		if(two != null){
 			putQueryParameter("Two", two);
+		}
+	}
+
+	public String getThree() {
+		return this.three;
+	}
+
+	public void setThree(String three) {
+		this.three = three;
+		if(three != null){
+			putQueryParameter("Three", three);
 		}
 	}
 
