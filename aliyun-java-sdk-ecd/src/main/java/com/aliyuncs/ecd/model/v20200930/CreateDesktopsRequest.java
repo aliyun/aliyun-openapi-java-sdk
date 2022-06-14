@@ -26,6 +26,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse> {
 	   
 
+	private String volumeEncryptionKey;
+
 	private String officeSiteId;
 
 	private String bundleId;
@@ -41,6 +43,8 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 	private List<String> endUserIds;
 
 	private List<Tag> tags;
+
+	private Boolean volumeEncryptionEnabled;
 
 	private String desktopName;
 
@@ -72,6 +76,17 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVolumeEncryptionKey() {
+		return this.volumeEncryptionKey;
+	}
+
+	public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+		this.volumeEncryptionKey = volumeEncryptionKey;
+		if(volumeEncryptionKey != null){
+			putQueryParameter("VolumeEncryptionKey", volumeEncryptionKey);
+		}
 	}
 
 	public String getOfficeSiteId() {
@@ -165,6 +180,17 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Boolean getVolumeEncryptionEnabled() {
+		return this.volumeEncryptionEnabled;
+	}
+
+	public void setVolumeEncryptionEnabled(Boolean volumeEncryptionEnabled) {
+		this.volumeEncryptionEnabled = volumeEncryptionEnabled;
+		if(volumeEncryptionEnabled != null){
+			putQueryParameter("VolumeEncryptionEnabled", volumeEncryptionEnabled.toString());
+		}
 	}
 
 	public String getDesktopName() {

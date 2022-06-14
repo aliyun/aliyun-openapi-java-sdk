@@ -15,26 +15,16 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.CreateBandwidthResourcePackagesResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.ModifyImagePermissionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateBandwidthResourcePackagesResponse extends AcsResponse {
-
-	private Long orderId;
+public class ModifyImagePermissionResponse extends AcsResponse {
 
 	private String requestId;
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,8 +35,8 @@ public class CreateBandwidthResourcePackagesResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateBandwidthResourcePackagesResponse getInstance(UnmarshallerContext context) {
-		return	CreateBandwidthResourcePackagesResponseUnmarshaller.unmarshall(this, context);
+	public ModifyImagePermissionResponse getInstance(UnmarshallerContext context) {
+		return	ModifyImagePermissionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

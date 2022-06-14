@@ -15,7 +15,6 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -23,12 +22,10 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckUserTagsRequest extends RpcAcsRequest<CheckUserTagsResponse> {
+public class DescribeKmsKeysRequest extends RpcAcsRequest<DescribeKmsKeysResponse> {
 	   
-
-	private List<String> tagss;
-	public CheckUserTagsRequest() {
-		super("ecd", "2020-09-30", "CheckUserTags");
+	public DescribeKmsKeysRequest() {
+		super("ecd", "2020-09-30", "DescribeKmsKeys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -36,22 +33,9 @@ public class CheckUserTagsRequest extends RpcAcsRequest<CheckUserTagsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public List<String> getTagss() {
-		return this.tagss;
-	}
-
-	public void setTagss(List<String> tagss) {
-		this.tagss = tagss;	
-		if (tagss != null) {
-			for (int i = 0; i < tagss.size(); i++) {
-				putQueryParameter("Tags." + (i + 1) , tagss.get(i));
-			}
-		}	
-	}
-
 	@Override
-	public Class<CheckUserTagsResponse> getResponseClass() {
-		return CheckUserTagsResponse.class;
+	public Class<DescribeKmsKeysResponse> getResponseClass() {
+		return DescribeKmsKeysResponse.class;
 	}
 
 }

@@ -26,8 +26,6 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupResponse> {
 	   
 
-	private String watermarkCustomText;
-
 	private String preemptLogin;
 
 	private List<ClientType> clientTypes;
@@ -82,17 +80,6 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getWatermarkCustomText() {
-		return this.watermarkCustomText;
-	}
-
-	public void setWatermarkCustomText(String watermarkCustomText) {
-		this.watermarkCustomText = watermarkCustomText;
-		if(watermarkCustomText != null){
-			putQueryParameter("WatermarkCustomText", watermarkCustomText);
-		}
 	}
 
 	public String getPreemptLogin() {

@@ -14,20 +14,17 @@
 
 package com.aliyuncs.ecd.model.v20200930;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.DownloadRecordingsResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.CancelCopyImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DownloadRecordingsResponse extends AcsResponse {
+public class CancelCopyImageResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<DownloadUrl> downloadUrls;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,40 +34,9 @@ public class DownloadRecordingsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DownloadUrl> getDownloadUrls() {
-		return this.downloadUrls;
-	}
-
-	public void setDownloadUrls(List<DownloadUrl> downloadUrls) {
-		this.downloadUrls = downloadUrls;
-	}
-
-	public static class DownloadUrl {
-
-		private String url;
-
-		private String filePath;
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-
-		public String getFilePath() {
-			return this.filePath;
-		}
-
-		public void setFilePath(String filePath) {
-			this.filePath = filePath;
-		}
-	}
-
 	@Override
-	public DownloadRecordingsResponse getInstance(UnmarshallerContext context) {
-		return	DownloadRecordingsResponseUnmarshaller.unmarshall(this, context);
+	public CancelCopyImageResponse getInstance(UnmarshallerContext context) {
+		return	CancelCopyImageResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

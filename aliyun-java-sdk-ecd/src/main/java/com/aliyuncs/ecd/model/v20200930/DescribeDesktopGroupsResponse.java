@@ -125,6 +125,10 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		private String imageId;
 
+		private Boolean volumeEncryptionEnabled;
+
+		private String volumeEncryptionKey;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -395,6 +399,22 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+
+		public Boolean getVolumeEncryptionEnabled() {
+			return this.volumeEncryptionEnabled;
+		}
+
+		public void setVolumeEncryptionEnabled(Boolean volumeEncryptionEnabled) {
+			this.volumeEncryptionEnabled = volumeEncryptionEnabled;
+		}
+
+		public String getVolumeEncryptionKey() {
+			return this.volumeEncryptionKey;
+		}
+
+		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+			this.volumeEncryptionKey = volumeEncryptionKey;
 		}
 	}
 

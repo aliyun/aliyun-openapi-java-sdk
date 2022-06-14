@@ -22,14 +22,12 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeHardwareTerminalsRequest extends RpcAcsRequest<DescribeHardwareTerminalsResponse> {
+public class CancelCopyImageRequest extends RpcAcsRequest<CancelCopyImageResponse> {
 	   
 
-	private String hardwareVersion;
-
-	private String hardwareType;
-	public DescribeHardwareTerminalsRequest() {
-		super("ecd", "2020-09-30", "DescribeHardwareTerminals");
+	private String imageId;
+	public CancelCopyImageRequest() {
+		super("ecd", "2020-09-30", "CancelCopyImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class DescribeHardwareTerminalsRequest extends RpcAcsRequest<DescribeHard
 		} catch (Exception e) {}
 	}
 
-	public String getHardwareVersion() {
-		return this.hardwareVersion;
+	public String getImageId() {
+		return this.imageId;
 	}
 
-	public void setHardwareVersion(String hardwareVersion) {
-		this.hardwareVersion = hardwareVersion;
-		if(hardwareVersion != null){
-			putQueryParameter("HardwareVersion", hardwareVersion);
-		}
-	}
-
-	public String getHardwareType() {
-		return this.hardwareType;
-	}
-
-	public void setHardwareType(String hardwareType) {
-		this.hardwareType = hardwareType;
-		if(hardwareType != null){
-			putQueryParameter("HardwareType", hardwareType);
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 
 	@Override
-	public Class<DescribeHardwareTerminalsResponse> getResponseClass() {
-		return DescribeHardwareTerminalsResponse.class;
+	public Class<CancelCopyImageResponse> getResponseClass() {
+		return CancelCopyImageResponse.class;
 	}
 
 }

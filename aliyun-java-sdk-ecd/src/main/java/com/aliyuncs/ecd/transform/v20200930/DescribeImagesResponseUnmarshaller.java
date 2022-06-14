@@ -46,6 +46,9 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setGpuCategory(_ctx.booleanValue("DescribeImagesResponse.Images["+ i +"].GpuCategory"));
 			image.setGpuDriverVersion(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].GpuDriverVersion"));
 			image.setAppVersion(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].AppVersion"));
+			image.setVolumeEncryptionEnabled(_ctx.booleanValue("DescribeImagesResponse.Images["+ i +"].VolumeEncryptionEnabled"));
+			image.setVolumeEncryptionKey(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].VolumeEncryptionKey"));
+			image.setSharedCount(_ctx.integerValue("DescribeImagesResponse.Images["+ i +"].SharedCount"));
 
 			List<String> supportedLanguages = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagesResponse.Images["+ i +"].SupportedLanguages.Length"); j++) {

@@ -113,11 +113,9 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private String officeSiteName;
 
-		private String directoryType;
-
-		private String officeSiteVpcType;
-
 		private String startTime;
+
+		private String directoryType;
 
 		private Integer cpu;
 
@@ -148,6 +146,12 @@ public class DescribeDesktopsResponse extends AcsResponse {
 		private String zoneType;
 
 		private String progress;
+
+		private Boolean volumeEncryptionEnabled;
+
+		private String volumeEncryptionKey;
+
+		private String officeSiteVpcType;
 
 		private String platform;
 
@@ -345,28 +349,20 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.officeSiteName = officeSiteName;
 		}
 
-		public String getDirectoryType() {
-			return this.directoryType;
-		}
-
-		public void setDirectoryType(String directoryType) {
-			this.directoryType = directoryType;
-		}
-
-		public String getOfficeSiteVpcType() {
-			return this.officeSiteVpcType;
-		}
-
-		public void setOfficeSiteVpcType(String officeSiteVpcType) {
-			this.officeSiteVpcType = officeSiteVpcType;
-		}
-
 		public String getStartTime() {
 			return this.startTime;
 		}
 
 		public void setStartTime(String startTime) {
 			this.startTime = startTime;
+		}
+
+		public String getDirectoryType() {
+			return this.directoryType;
+		}
+
+		public void setDirectoryType(String directoryType) {
+			this.directoryType = directoryType;
 		}
 
 		public Integer getCpu() {
@@ -487,6 +483,30 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		public void setProgress(String progress) {
 			this.progress = progress;
+		}
+
+		public Boolean getVolumeEncryptionEnabled() {
+			return this.volumeEncryptionEnabled;
+		}
+
+		public void setVolumeEncryptionEnabled(Boolean volumeEncryptionEnabled) {
+			this.volumeEncryptionEnabled = volumeEncryptionEnabled;
+		}
+
+		public String getVolumeEncryptionKey() {
+			return this.volumeEncryptionKey;
+		}
+
+		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+			this.volumeEncryptionKey = volumeEncryptionKey;
+		}
+
+		public String getOfficeSiteVpcType() {
+			return this.officeSiteVpcType;
+		}
+
+		public void setOfficeSiteVpcType(String officeSiteVpcType) {
+			this.officeSiteVpcType = officeSiteVpcType;
 		}
 
 		public String getPlatform() {

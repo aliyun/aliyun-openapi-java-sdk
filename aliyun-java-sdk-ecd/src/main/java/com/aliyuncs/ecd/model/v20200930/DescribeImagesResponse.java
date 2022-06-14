@@ -85,6 +85,12 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String appVersion;
 
+		private Boolean volumeEncryptionEnabled;
+
+		private String volumeEncryptionKey;
+
+		private Integer sharedCount;
+
 		private List<String> supportedLanguages;
 
 		public String getCreationTime() {
@@ -197,6 +203,30 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setAppVersion(String appVersion) {
 			this.appVersion = appVersion;
+		}
+
+		public Boolean getVolumeEncryptionEnabled() {
+			return this.volumeEncryptionEnabled;
+		}
+
+		public void setVolumeEncryptionEnabled(Boolean volumeEncryptionEnabled) {
+			this.volumeEncryptionEnabled = volumeEncryptionEnabled;
+		}
+
+		public String getVolumeEncryptionKey() {
+			return this.volumeEncryptionKey;
+		}
+
+		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+			this.volumeEncryptionKey = volumeEncryptionKey;
+		}
+
+		public Integer getSharedCount() {
+			return this.sharedCount;
+		}
+
+		public void setSharedCount(Integer sharedCount) {
+			this.sharedCount = sharedCount;
 		}
 
 		public List<String> getSupportedLanguages() {

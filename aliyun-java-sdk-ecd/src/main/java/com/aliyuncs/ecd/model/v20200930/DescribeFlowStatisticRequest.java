@@ -15,7 +15,6 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -23,18 +22,20 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVirtualMFADevicesRequest extends RpcAcsRequest<DescribeVirtualMFADevicesResponse> {
+public class DescribeFlowStatisticRequest extends RpcAcsRequest<DescribeFlowStatisticResponse> {
 	   
 
 	private String officeSiteId;
 
-	private String nextToken;
+	private Integer period;
 
-	private Integer maxResults;
+	private Integer pageNumber;
 
-	private List<String> endUserIds;
-	public DescribeVirtualMFADevicesRequest() {
-		super("ecd", "2020-09-30", "DescribeVirtualMFADevices");
+	private Integer pageSize;
+
+	private String desktopId;
+	public DescribeFlowStatisticRequest() {
+		super("ecd", "2020-09-30", "DescribeFlowStatistic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,44 +54,53 @@ public class DescribeVirtualMFADevicesRequest extends RpcAcsRequest<DescribeVirt
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public Integer getPeriod() {
+		return this.period;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public List<String> getEndUserIds() {
-		return this.endUserIds;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setEndUserIds(List<String> endUserIds) {
-		this.endUserIds = endUserIds;	
-		if (endUserIds != null) {
-			for (int i = 0; i < endUserIds.size(); i++) {
-				putQueryParameter("EndUserId." + (i + 1) , endUserIds.get(i));
-			}
-		}	
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDesktopId() {
+		return this.desktopId;
+	}
+
+	public void setDesktopId(String desktopId) {
+		this.desktopId = desktopId;
+		if(desktopId != null){
+			putQueryParameter("DesktopId", desktopId);
+		}
 	}
 
 	@Override
-	public Class<DescribeVirtualMFADevicesResponse> getResponseClass() {
-		return DescribeVirtualMFADevicesResponse.class;
+	public Class<DescribeFlowStatisticResponse> getResponseClass() {
+		return DescribeFlowStatisticResponse.class;
 	}
 
 }

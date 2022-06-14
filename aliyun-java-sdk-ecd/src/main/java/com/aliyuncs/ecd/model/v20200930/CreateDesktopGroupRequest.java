@@ -26,6 +26,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupResponse> {
 	   
 
+	private String volumeEncryptionKey;
+
 	private String officeSiteId;
 
 	private String classify;
@@ -56,6 +58,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private Integer maxDesktopsCount;
 
+	private Boolean volumeEncryptionEnabled;
+
 	private Integer period;
 
 	private Integer allowAutoSetup;
@@ -84,6 +88,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVolumeEncryptionKey() {
+		return this.volumeEncryptionKey;
+	}
+
+	public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+		this.volumeEncryptionKey = volumeEncryptionKey;
+		if(volumeEncryptionKey != null){
+			putQueryParameter("VolumeEncryptionKey", volumeEncryptionKey);
+		}
 	}
 
 	public String getOfficeSiteId() {
@@ -250,6 +265,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.maxDesktopsCount = maxDesktopsCount;
 		if(maxDesktopsCount != null){
 			putQueryParameter("MaxDesktopsCount", maxDesktopsCount.toString());
+		}
+	}
+
+	public Boolean getVolumeEncryptionEnabled() {
+		return this.volumeEncryptionEnabled;
+	}
+
+	public void setVolumeEncryptionEnabled(Boolean volumeEncryptionEnabled) {
+		this.volumeEncryptionEnabled = volumeEncryptionEnabled;
+		if(volumeEncryptionEnabled != null){
+			putQueryParameter("VolumeEncryptionEnabled", volumeEncryptionEnabled.toString());
 		}
 	}
 

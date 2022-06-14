@@ -32,8 +32,6 @@ public class ExportDesktopListInfoRequest extends RpcAcsRequest<ExportDesktopLis
 
 	private String nextToken;
 
-	private String directoryId;
-
 	private List<String> endUserIds;
 
 	private List<String> desktopIds;
@@ -92,17 +90,6 @@ public class ExportDesktopListInfoRequest extends RpcAcsRequest<ExportDesktopLis
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getDirectoryId() {
-		return this.directoryId;
-	}
-
-	public void setDirectoryId(String directoryId) {
-		this.directoryId = directoryId;
-		if(directoryId != null){
-			putQueryParameter("DirectoryId", directoryId);
 		}
 	}
 

@@ -25,6 +25,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTypesResponse> {
 	   
 
+	private String appliedScope;
+
 	private Integer memorySize;
 
 	private Float gpuCount;
@@ -45,6 +47,17 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAppliedScope() {
+		return this.appliedScope;
+	}
+
+	public void setAppliedScope(String appliedScope) {
+		this.appliedScope = appliedScope;
+		if(appliedScope != null){
+			putQueryParameter("AppliedScope", appliedScope);
+		}
 	}
 
 	public Integer getMemorySize() {

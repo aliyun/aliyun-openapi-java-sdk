@@ -15,14 +15,14 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.ModifyNetworkPackageResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.AssociateNetworkPackageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyNetworkPackageResponse extends AcsResponse {
+public class AssociateNetworkPackageResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class ModifyNetworkPackageResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyNetworkPackageResponse getInstance(UnmarshallerContext context) {
-		return	ModifyNetworkPackageResponseUnmarshaller.unmarshall(this, context);
+	public AssociateNetworkPackageResponse getInstance(UnmarshallerContext context) {
+		return	AssociateNetworkPackageResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -22,30 +22,17 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyNetworkPackageRequest extends RpcAcsRequest<ModifyNetworkPackageResponse> {
+public class DissociateNetworkPackageRequest extends RpcAcsRequest<DissociateNetworkPackageResponse> {
 	   
 
-	private Integer bandwidth;
-
 	private String networkPackageId;
-	public ModifyNetworkPackageRequest() {
-		super("ecd", "2020-09-30", "ModifyNetworkPackage");
+	public DissociateNetworkPackageRequest() {
+		super("ecd", "2020-09-30", "DissociateNetworkPackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth.toString());
-		}
 	}
 
 	public String getNetworkPackageId() {
@@ -60,8 +47,8 @@ public class ModifyNetworkPackageRequest extends RpcAcsRequest<ModifyNetworkPack
 	}
 
 	@Override
-	public Class<ModifyNetworkPackageResponse> getResponseClass() {
-		return ModifyNetworkPackageResponse.class;
+	public Class<DissociateNetworkPackageResponse> getResponseClass() {
+		return DissociateNetworkPackageResponse.class;
 	}
 
 }

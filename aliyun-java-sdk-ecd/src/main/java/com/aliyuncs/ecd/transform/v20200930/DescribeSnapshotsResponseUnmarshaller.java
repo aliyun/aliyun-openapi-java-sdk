@@ -43,6 +43,8 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setSourceDiskSize(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskSize"));
 			snapshot.setSourceDiskType(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
 			snapshot.setDesktopId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].DesktopId"));
+			snapshot.setVolumeEncryptionEnabled(_ctx.booleanValue("DescribeSnapshotsResponse.Snapshots["+ i +"].VolumeEncryptionEnabled"));
+			snapshot.setVolumeEncryptionKey(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].VolumeEncryptionKey"));
 
 			snapshots.add(snapshot);
 		}

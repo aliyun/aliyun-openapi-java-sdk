@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.ecd.model.v20200930.DescribeUsersInGroupResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeUsersInGroupResponse.EndUser;
+import com.aliyuncs.ecd.model.v20200930.DescribeUsersInGroupResponse.EndUser.ExternalInfo;
+import com.aliyuncs.ecd.model.v20200930.DescribeUsersInGroupResponse.EndUser.UserSetPropertiesModelsItem;
+import com.aliyuncs.ecd.model.v20200930.DescribeUsersInGroupResponse.EndUser.UserSetPropertiesModelsItem.PropertyValuesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +45,34 @@ public class DescribeUsersInGroupResponseUnmarshaller {
 			endUser.setEndUserType(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserType"));
 			endUser.setEndUserPhone(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserPhone"));
 			endUser.setEndUserName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserName"));
+
+			ExternalInfo externalInfo = new ExternalInfo();
+			externalInfo.setExternalName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].ExternalInfo.ExternalName"));
+			externalInfo.setJobNumber(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].ExternalInfo.JobNumber"));
+			endUser.setExternalInfo(externalInfo);
+
+			List<UserSetPropertiesModelsItem> userSetPropertiesModels = new ArrayList<UserSetPropertiesModelsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels.Length"); j++) {
+				UserSetPropertiesModelsItem userSetPropertiesModelsItem = new UserSetPropertiesModelsItem();
+				userSetPropertiesModelsItem.setUserId(_ctx.longValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels["+ j +"].UserId"));
+				userSetPropertiesModelsItem.setUserName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels["+ j +"].UserName"));
+				userSetPropertiesModelsItem.setPropertyId(_ctx.longValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels["+ j +"].PropertyId"));
+				userSetPropertiesModelsItem.setPropertyKey(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels["+ j +"].PropertyKey"));
+				userSetPropertiesModelsItem.setPropertyType(_ctx.integerValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels["+ j +"].PropertyType"));
+
+				List<PropertyValuesItem> propertyValues = new ArrayList<PropertyValuesItem>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels["+ j +"].PropertyValues.Length"); k++) {
+					PropertyValuesItem propertyValuesItem = new PropertyValuesItem();
+					propertyValuesItem.setPropertyValueId(_ctx.longValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels["+ j +"].PropertyValues["+ k +"].PropertyValueId"));
+					propertyValuesItem.setPropertyValue(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserSetPropertiesModels["+ j +"].PropertyValues["+ k +"].PropertyValue"));
+
+					propertyValues.add(propertyValuesItem);
+				}
+				userSetPropertiesModelsItem.setPropertyValues(propertyValues);
+
+				userSetPropertiesModels.add(userSetPropertiesModelsItem);
+			}
+			endUser.setUserSetPropertiesModels(userSetPropertiesModels);
 
 			endUsers.add(endUser);
 		}

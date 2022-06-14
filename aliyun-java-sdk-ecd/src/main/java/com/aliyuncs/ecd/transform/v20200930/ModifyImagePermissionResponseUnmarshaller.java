@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import com.aliyuncs.ecd.model.v20200930.ModifyNetworkPackageResponse;
+import com.aliyuncs.ecd.model.v20200930.ModifyImagePermissionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyNetworkPackageResponseUnmarshaller {
+public class ModifyImagePermissionResponseUnmarshaller {
 
-	public static ModifyNetworkPackageResponse unmarshall(ModifyNetworkPackageResponse modifyNetworkPackageResponse, UnmarshallerContext _ctx) {
+	public static ModifyImagePermissionResponse unmarshall(ModifyImagePermissionResponse modifyImagePermissionResponse, UnmarshallerContext _ctx) {
 		
-		modifyNetworkPackageResponse.setRequestId(_ctx.stringValue("ModifyNetworkPackageResponse.RequestId"));
+		modifyImagePermissionResponse.setRequestId(_ctx.stringValue("ModifyImagePermissionResponse.RequestId"));
 	 
-	 	return modifyNetworkPackageResponse;
+	 	return modifyImagePermissionResponse;
 	}
 }

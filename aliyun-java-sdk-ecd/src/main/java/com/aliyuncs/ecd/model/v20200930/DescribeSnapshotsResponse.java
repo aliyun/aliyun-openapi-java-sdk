@@ -79,6 +79,10 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String desktopId;
 
+		private Boolean volumeEncryptionEnabled;
+
+		private String volumeEncryptionKey;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -165,6 +169,22 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setDesktopId(String desktopId) {
 			this.desktopId = desktopId;
+		}
+
+		public Boolean getVolumeEncryptionEnabled() {
+			return this.volumeEncryptionEnabled;
+		}
+
+		public void setVolumeEncryptionEnabled(Boolean volumeEncryptionEnabled) {
+			this.volumeEncryptionEnabled = volumeEncryptionEnabled;
+		}
+
+		public String getVolumeEncryptionKey() {
+			return this.volumeEncryptionKey;
+		}
+
+		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+			this.volumeEncryptionKey = volumeEncryptionKey;
 		}
 	}
 

@@ -53,6 +53,8 @@ public class DescribeVulListResponseUnmarshaller {
 			vulRecord.setOsVersion(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].OsVersion"));
 			vulRecord.setAliasName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].AliasName"));
 			vulRecord.setName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Name"));
+			vulRecord.setProgress(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].Progress"));
+			vulRecord.setDesktopGroupId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].DesktopGroupId"));
 
 			ExtendContentJson extendContentJson = new ExtendContentJson();
 

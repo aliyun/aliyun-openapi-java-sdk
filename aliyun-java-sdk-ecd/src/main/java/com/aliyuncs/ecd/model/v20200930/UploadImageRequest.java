@@ -25,6 +25,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class UploadImageRequest extends RpcAcsRequest<UploadImageResponse> {
 	   
 
+	private Boolean enableSecurityCheck;
+
 	private Boolean gpuCategory;
 
 	private String description;
@@ -49,6 +51,17 @@ public class UploadImageRequest extends RpcAcsRequest<UploadImageResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getEnableSecurityCheck() {
+		return this.enableSecurityCheck;
+	}
+
+	public void setEnableSecurityCheck(Boolean enableSecurityCheck) {
+		this.enableSecurityCheck = enableSecurityCheck;
+		if(enableSecurityCheck != null){
+			putQueryParameter("EnableSecurityCheck", enableSecurityCheck.toString());
+		}
 	}
 
 	public Boolean getGpuCategory() {

@@ -15,7 +15,6 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -23,12 +22,12 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteUserTagsRequest extends RpcAcsRequest<DeleteUserTagsResponse> {
+public class DescribeImagePermissionRequest extends RpcAcsRequest<DescribeImagePermissionResponse> {
 	   
 
-	private List<String> tagss;
-	public DeleteUserTagsRequest() {
-		super("ecd", "2020-09-30", "DeleteUserTags");
+	private String imageId;
+	public DescribeImagePermissionRequest() {
+		super("ecd", "2020-09-30", "DescribeImagePermission");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -36,22 +35,20 @@ public class DeleteUserTagsRequest extends RpcAcsRequest<DeleteUserTagsResponse>
 		} catch (Exception e) {}
 	}
 
-	public List<String> getTagss() {
-		return this.tagss;
+	public String getImageId() {
+		return this.imageId;
 	}
 
-	public void setTagss(List<String> tagss) {
-		this.tagss = tagss;	
-		if (tagss != null) {
-			for (int i = 0; i < tagss.size(); i++) {
-				putQueryParameter("Tags." + (i + 1) , tagss.get(i));
-			}
-		}	
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	@Override
-	public Class<DeleteUserTagsResponse> getResponseClass() {
-		return DeleteUserTagsResponse.class;
+	public Class<DescribeImagePermissionResponse> getResponseClass() {
+		return DescribeImagePermissionResponse.class;
 	}
 
 }

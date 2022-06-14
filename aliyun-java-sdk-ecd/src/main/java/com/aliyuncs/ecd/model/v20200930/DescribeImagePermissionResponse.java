@@ -14,17 +14,20 @@
 
 package com.aliyuncs.ecd.model.v20200930;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.DeleteUserTagsResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.DescribeImagePermissionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteUserTagsResponse extends AcsResponse {
+public class DescribeImagePermissionResponse extends AcsResponse {
 
 	private String requestId;
+
+	private List<String> aliUids;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +37,17 @@ public class DeleteUserTagsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<String> getAliUids() {
+		return this.aliUids;
+	}
+
+	public void setAliUids(List<String> aliUids) {
+		this.aliUids = aliUids;
+	}
+
 	@Override
-	public DeleteUserTagsResponse getInstance(UnmarshallerContext context) {
-		return	DeleteUserTagsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeImagePermissionResponse getInstance(UnmarshallerContext context) {
+		return	DescribeImagePermissionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

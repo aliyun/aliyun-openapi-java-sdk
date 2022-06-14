@@ -14,17 +14,17 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import com.aliyuncs.ecd.model.v20200930.CreateBandwidthResourcePackagesResponse;
+import com.aliyuncs.ecd.model.v20200930.CopyImageResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateBandwidthResourcePackagesResponseUnmarshaller {
+public class CopyImageResponseUnmarshaller {
 
-	public static CreateBandwidthResourcePackagesResponse unmarshall(CreateBandwidthResourcePackagesResponse createBandwidthResourcePackagesResponse, UnmarshallerContext _ctx) {
+	public static CopyImageResponse unmarshall(CopyImageResponse copyImageResponse, UnmarshallerContext _ctx) {
 		
-		createBandwidthResourcePackagesResponse.setRequestId(_ctx.stringValue("CreateBandwidthResourcePackagesResponse.RequestId"));
-		createBandwidthResourcePackagesResponse.setOrderId(_ctx.longValue("CreateBandwidthResourcePackagesResponse.OrderId"));
+		copyImageResponse.setRequestId(_ctx.stringValue("CopyImageResponse.RequestId"));
+		copyImageResponse.setImageId(_ctx.stringValue("CopyImageResponse.ImageId"));
 	 
-	 	return createBandwidthResourcePackagesResponse;
+	 	return copyImageResponse;
 	}
 }

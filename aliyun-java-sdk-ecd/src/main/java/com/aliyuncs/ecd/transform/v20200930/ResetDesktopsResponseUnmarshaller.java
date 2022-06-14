@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import com.aliyuncs.ecd.model.v20200930.CreateOrderForHardwareResponse;
+import com.aliyuncs.ecd.model.v20200930.ResetDesktopsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateOrderForHardwareResponseUnmarshaller {
+public class ResetDesktopsResponseUnmarshaller {
 
-	public static CreateOrderForHardwareResponse unmarshall(CreateOrderForHardwareResponse createOrderForHardwareResponse, UnmarshallerContext _ctx) {
+	public static ResetDesktopsResponse unmarshall(ResetDesktopsResponse resetDesktopsResponse, UnmarshallerContext _ctx) {
 		
-		createOrderForHardwareResponse.setRequestId(_ctx.stringValue("CreateOrderForHardwareResponse.RequestId"));
-		createOrderForHardwareResponse.setOrderId(_ctx.longValue("CreateOrderForHardwareResponse.OrderId"));
+		resetDesktopsResponse.setRequestId(_ctx.stringValue("ResetDesktopsResponse.RequestId"));
 	 
-	 	return createOrderForHardwareResponse;
+	 	return resetDesktopsResponse;
 	}
 }

@@ -15,24 +15,26 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.CreateOrderForHardwareResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.CreateDiskEncryptionServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateOrderForHardwareResponse extends AcsResponse {
+public class CreateDiskEncryptionServiceResponse extends AcsResponse {
 
-	private Long orderId;
+	private String orderId;
 
 	private String requestId;
 
-	public Long getOrderId() {
+	private Boolean success;
+
+	public String getOrderId() {
 		return this.orderId;
 	}
 
-	public void setOrderId(Long orderId) {
+	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
 
@@ -44,9 +46,17 @@ public class CreateOrderForHardwareResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	@Override
-	public CreateOrderForHardwareResponse getInstance(UnmarshallerContext context) {
-		return	CreateOrderForHardwareResponseUnmarshaller.unmarshall(this, context);
+	public CreateDiskEncryptionServiceResponse getInstance(UnmarshallerContext context) {
+		return	CreateDiskEncryptionServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

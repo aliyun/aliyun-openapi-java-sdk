@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import com.aliyuncs.ecd.model.v20200930.DeleteUserTagsResponse;
+import com.aliyuncs.ecd.model.v20200930.CancelCopyImageResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteUserTagsResponseUnmarshaller {
+public class CancelCopyImageResponseUnmarshaller {
 
-	public static DeleteUserTagsResponse unmarshall(DeleteUserTagsResponse deleteUserTagsResponse, UnmarshallerContext _ctx) {
+	public static CancelCopyImageResponse unmarshall(CancelCopyImageResponse cancelCopyImageResponse, UnmarshallerContext _ctx) {
 		
-		deleteUserTagsResponse.setRequestId(_ctx.stringValue("DeleteUserTagsResponse.RequestId"));
+		cancelCopyImageResponse.setRequestId(_ctx.stringValue("CancelCopyImageResponse.RequestId"));
 	 
-	 	return deleteUserTagsResponse;
+	 	return cancelCopyImageResponse;
 	}
 }

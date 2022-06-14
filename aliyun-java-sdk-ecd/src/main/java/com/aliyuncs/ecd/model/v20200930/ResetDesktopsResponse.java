@@ -15,18 +15,16 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.CheckUserTagsResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.ResetDesktopsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckUserTagsResponse extends AcsResponse {
+public class ResetDesktopsResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Boolean data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +34,9 @@ public class CheckUserTagsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
-	}
-
 	@Override
-	public CheckUserTagsResponse getInstance(UnmarshallerContext context) {
-		return	CheckUserTagsResponseUnmarshaller.unmarshall(this, context);
+	public ResetDesktopsResponse getInstance(UnmarshallerContext context) {
+		return	ResetDesktopsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

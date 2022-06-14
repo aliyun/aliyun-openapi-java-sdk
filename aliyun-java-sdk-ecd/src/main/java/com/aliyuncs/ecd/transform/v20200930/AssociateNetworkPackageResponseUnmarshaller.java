@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import com.aliyuncs.ecd.model.v20200930.CheckUserTagsResponse;
+import com.aliyuncs.ecd.model.v20200930.AssociateNetworkPackageResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CheckUserTagsResponseUnmarshaller {
+public class AssociateNetworkPackageResponseUnmarshaller {
 
-	public static CheckUserTagsResponse unmarshall(CheckUserTagsResponse checkUserTagsResponse, UnmarshallerContext _ctx) {
+	public static AssociateNetworkPackageResponse unmarshall(AssociateNetworkPackageResponse associateNetworkPackageResponse, UnmarshallerContext _ctx) {
 		
-		checkUserTagsResponse.setRequestId(_ctx.stringValue("CheckUserTagsResponse.RequestId"));
-		checkUserTagsResponse.setData(_ctx.booleanValue("CheckUserTagsResponse.Data"));
+		associateNetworkPackageResponse.setRequestId(_ctx.stringValue("AssociateNetworkPackageResponse.RequestId"));
 	 
-	 	return checkUserTagsResponse;
+	 	return associateNetworkPackageResponse;
 	}
 }

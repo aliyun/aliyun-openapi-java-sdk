@@ -15,7 +15,6 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -23,12 +22,14 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateUserTagsRequest extends RpcAcsRequest<CreateUserTagsResponse> {
+public class AssociateNetworkPackageRequest extends RpcAcsRequest<AssociateNetworkPackageResponse> {
 	   
 
-	private List<String> tagss;
-	public CreateUserTagsRequest() {
-		super("ecd", "2020-09-30", "CreateUserTags");
+	private String officeSiteId;
+
+	private String networkPackageId;
+	public AssociateNetworkPackageRequest() {
+		super("ecd", "2020-09-30", "AssociateNetworkPackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -36,22 +37,31 @@ public class CreateUserTagsRequest extends RpcAcsRequest<CreateUserTagsResponse>
 		} catch (Exception e) {}
 	}
 
-	public List<String> getTagss() {
-		return this.tagss;
+	public String getOfficeSiteId() {
+		return this.officeSiteId;
 	}
 
-	public void setTagss(List<String> tagss) {
-		this.tagss = tagss;	
-		if (tagss != null) {
-			for (int i = 0; i < tagss.size(); i++) {
-				putQueryParameter("Tags." + (i + 1) , tagss.get(i));
-			}
-		}	
+	public void setOfficeSiteId(String officeSiteId) {
+		this.officeSiteId = officeSiteId;
+		if(officeSiteId != null){
+			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public String getNetworkPackageId() {
+		return this.networkPackageId;
+	}
+
+	public void setNetworkPackageId(String networkPackageId) {
+		this.networkPackageId = networkPackageId;
+		if(networkPackageId != null){
+			putQueryParameter("NetworkPackageId", networkPackageId);
+		}
 	}
 
 	@Override
-	public Class<CreateUserTagsResponse> getResponseClass() {
-		return CreateUserTagsResponse.class;
+	public Class<AssociateNetworkPackageResponse> getResponseClass() {
+		return AssociateNetworkPackageResponse.class;
 	}
 
 }

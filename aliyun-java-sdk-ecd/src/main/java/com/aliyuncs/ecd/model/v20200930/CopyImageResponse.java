@@ -15,16 +15,26 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.CreateUserTagsResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.CopyImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateUserTagsResponse extends AcsResponse {
+public class CopyImageResponse extends AcsResponse {
+
+	private String imageId;
 
 	private String requestId;
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,8 +45,8 @@ public class CreateUserTagsResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateUserTagsResponse getInstance(UnmarshallerContext context) {
-		return	CreateUserTagsResponseUnmarshaller.unmarshall(this, context);
+	public CopyImageResponse getInstance(UnmarshallerContext context) {
+		return	CopyImageResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

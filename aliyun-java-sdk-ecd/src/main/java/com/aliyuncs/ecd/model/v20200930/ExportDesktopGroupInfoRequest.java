@@ -34,8 +34,6 @@ public class ExportDesktopGroupInfoRequest extends RpcAcsRequest<ExportDesktopGr
 
 	private String nextToken;
 
-	private String directoryId;
-
 	private List<String> endUserIds;
 
 	private String expiredTime;
@@ -99,17 +97,6 @@ public class ExportDesktopGroupInfoRequest extends RpcAcsRequest<ExportDesktopGr
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getDirectoryId() {
-		return this.directoryId;
-	}
-
-	public void setDirectoryId(String directoryId) {
-		this.directoryId = directoryId;
-		if(directoryId != null){
-			putQueryParameter("DirectoryId", directoryId);
 		}
 	}
 

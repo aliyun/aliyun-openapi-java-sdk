@@ -93,6 +93,10 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 
 		private String endUserName;
 
+		private List<UserSetPropertiesModelsItem> userSetPropertiesModels;
+
+		private ExternalInfo externalInfo;
+
 		public String getEndUserId() {
 			return this.endUserId;
 		}
@@ -155,6 +159,131 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 
 		public void setEndUserName(String endUserName) {
 			this.endUserName = endUserName;
+		}
+
+		public List<UserSetPropertiesModelsItem> getUserSetPropertiesModels() {
+			return this.userSetPropertiesModels;
+		}
+
+		public void setUserSetPropertiesModels(List<UserSetPropertiesModelsItem> userSetPropertiesModels) {
+			this.userSetPropertiesModels = userSetPropertiesModels;
+		}
+
+		public ExternalInfo getExternalInfo() {
+			return this.externalInfo;
+		}
+
+		public void setExternalInfo(ExternalInfo externalInfo) {
+			this.externalInfo = externalInfo;
+		}
+
+		public static class UserSetPropertiesModelsItem {
+
+			private Long userId;
+
+			private String userName;
+
+			private Long propertyId;
+
+			private String propertyKey;
+
+			private Integer propertyType;
+
+			private List<PropertyValuesItem> propertyValues;
+
+			public Long getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(Long userId) {
+				this.userId = userId;
+			}
+
+			public String getUserName() {
+				return this.userName;
+			}
+
+			public void setUserName(String userName) {
+				this.userName = userName;
+			}
+
+			public Long getPropertyId() {
+				return this.propertyId;
+			}
+
+			public void setPropertyId(Long propertyId) {
+				this.propertyId = propertyId;
+			}
+
+			public String getPropertyKey() {
+				return this.propertyKey;
+			}
+
+			public void setPropertyKey(String propertyKey) {
+				this.propertyKey = propertyKey;
+			}
+
+			public Integer getPropertyType() {
+				return this.propertyType;
+			}
+
+			public void setPropertyType(Integer propertyType) {
+				this.propertyType = propertyType;
+			}
+
+			public List<PropertyValuesItem> getPropertyValues() {
+				return this.propertyValues;
+			}
+
+			public void setPropertyValues(List<PropertyValuesItem> propertyValues) {
+				this.propertyValues = propertyValues;
+			}
+
+			public static class PropertyValuesItem {
+
+				private Long propertyValueId;
+
+				private String propertyValue;
+
+				public Long getPropertyValueId() {
+					return this.propertyValueId;
+				}
+
+				public void setPropertyValueId(Long propertyValueId) {
+					this.propertyValueId = propertyValueId;
+				}
+
+				public String getPropertyValue() {
+					return this.propertyValue;
+				}
+
+				public void setPropertyValue(String propertyValue) {
+					this.propertyValue = propertyValue;
+				}
+			}
+		}
+
+		public static class ExternalInfo {
+
+			private String externalName;
+
+			private String jobNumber;
+
+			public String getExternalName() {
+				return this.externalName;
+			}
+
+			public void setExternalName(String externalName) {
+				this.externalName = externalName;
+			}
+
+			public String getJobNumber() {
+				return this.jobNumber;
+			}
+
+			public void setJobNumber(String jobNumber) {
+				this.jobNumber = jobNumber;
+			}
 		}
 	}
 

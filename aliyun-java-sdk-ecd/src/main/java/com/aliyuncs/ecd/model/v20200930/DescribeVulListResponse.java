@@ -111,6 +111,10 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		private String name;
 
+		private Integer progress;
+
+		private String desktopGroupId;
+
 		private ExtendContentJson extendContentJson;
 
 		public Integer getStatus() {
@@ -247,6 +251,22 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public String getDesktopGroupId() {
+			return this.desktopGroupId;
+		}
+
+		public void setDesktopGroupId(String desktopGroupId) {
+			this.desktopGroupId = desktopGroupId;
 		}
 
 		public ExtendContentJson getExtendContentJson() {
