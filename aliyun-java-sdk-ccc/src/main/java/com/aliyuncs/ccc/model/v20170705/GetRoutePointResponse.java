@@ -32,13 +32,9 @@ public class GetRoutePointResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String statusCode;
-
 	private String code;
 
 	private String message;
-
-	private String statusDesc;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -72,14 +68,6 @@ public class GetRoutePointResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getStatusCode() {
-		return this.statusCode;
-	}
-
-	public void setStatusCode(String statusCode) {
-		this.statusCode = statusCode;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -94,14 +82,6 @@ public class GetRoutePointResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getStatusDesc() {
-		return this.statusDesc;
-	}
-
-	public void setStatusDesc(String statusDesc) {
-		this.statusDesc = statusDesc;
 	}
 
 	@Override

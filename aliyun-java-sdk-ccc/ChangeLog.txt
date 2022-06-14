@@ -1,3 +1,6 @@
+2022-06-14 Version: 1.0.36
+- Modify the return field of the GetRoutePoint api.
+
 2022-04-29 Version: 1.0.35
 - Modify SkillGroup basic information for ModifySkillGroupBasicInfo.
 

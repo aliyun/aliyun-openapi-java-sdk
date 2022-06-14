@@ -27,6 +27,10 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 
 	private String agentOssFileName;
 
+	private String accessPoint;
+
+	private String businessLabel;
+
 	private String description;
 
 	private String operatingSystemVersion;
@@ -41,6 +45,8 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 
 	private String clientIp;
 
+	private String officePoint;
+
 	private String speakerList;
 
 	private Long agentId;
@@ -51,9 +57,13 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 
 	private String servicePort;
 
+	private String faultType;
+
 	private String serviceIp;
 
 	private String instanceId;
+
+	private String clientExternalIp;
 
 	private String agentFilePath;
 
@@ -81,6 +91,28 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 		this.agentOssFileName = agentOssFileName;
 		if(agentOssFileName != null){
 			putQueryParameter("AgentOssFileName", agentOssFileName);
+		}
+	}
+
+	public String getAccessPoint() {
+		return this.accessPoint;
+	}
+
+	public void setAccessPoint(String accessPoint) {
+		this.accessPoint = accessPoint;
+		if(accessPoint != null){
+			putQueryParameter("AccessPoint", accessPoint);
+		}
+	}
+
+	public String getBusinessLabel() {
+		return this.businessLabel;
+	}
+
+	public void setBusinessLabel(String businessLabel) {
+		this.businessLabel = businessLabel;
+		if(businessLabel != null){
+			putQueryParameter("BusinessLabel", businessLabel);
 		}
 	}
 
@@ -161,6 +193,17 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 		}
 	}
 
+	public String getOfficePoint() {
+		return this.officePoint;
+	}
+
+	public void setOfficePoint(String officePoint) {
+		this.officePoint = officePoint;
+		if(officePoint != null){
+			putQueryParameter("OfficePoint", officePoint);
+		}
+	}
+
 	public String getSpeakerList() {
 		return this.speakerList;
 	}
@@ -216,6 +259,17 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 		}
 	}
 
+	public String getFaultType() {
+		return this.faultType;
+	}
+
+	public void setFaultType(String faultType) {
+		this.faultType = faultType;
+		if(faultType != null){
+			putQueryParameter("FaultType", faultType);
+		}
+	}
+
 	public String getServiceIp() {
 		return this.serviceIp;
 	}
@@ -235,6 +289,17 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientExternalIp() {
+		return this.clientExternalIp;
+	}
+
+	public void setClientExternalIp(String clientExternalIp) {
+		this.clientExternalIp = clientExternalIp;
+		if(clientExternalIp != null){
+			putQueryParameter("ClientExternalIp", clientExternalIp);
 		}
 	}
 
