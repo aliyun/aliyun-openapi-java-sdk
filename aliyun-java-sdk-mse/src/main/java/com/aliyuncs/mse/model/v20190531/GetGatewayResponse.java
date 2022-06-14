@@ -120,6 +120,8 @@ public class GetGatewayResponse extends AcsResponse {
 
 		private String endDate;
 
+		private String statusDesc;
+
 		private XtraceDetails xtraceDetails;
 
 		private LogConfigDetails logConfigDetails;
@@ -258,6 +260,14 @@ public class GetGatewayResponse extends AcsResponse {
 
 		public void setEndDate(String endDate) {
 			this.endDate = endDate;
+		}
+
+		public String getStatusDesc() {
+			return this.statusDesc;
+		}
+
+		public void setStatusDesc(String statusDesc) {
+			this.statusDesc = statusDesc;
 		}
 
 		public XtraceDetails getXtraceDetails() {
