@@ -1,3 +1,7 @@
+2022-06-14 Version: 1.0.4
+- Merchant login token support.
+- Instance application graylist support.
+
 2022-06-14 Version: 1.0.3
 - Merchant login token support.
 - Instance application graylist support.
