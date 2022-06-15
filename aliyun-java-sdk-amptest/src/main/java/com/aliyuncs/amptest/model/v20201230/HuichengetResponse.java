@@ -32,6 +32,12 @@ public class HuichengetResponse extends AcsResponse {
 
 	private String code;
 
+	private String age;
+
+	private String apple;
+
+	private String five;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +68,30 @@ public class HuichengetResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getAge() {
+		return this.age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getApple() {
+		return this.apple;
+	}
+
+	public void setApple(String apple) {
+		this.apple = apple;
+	}
+
+	public String getFive() {
+		return this.five;
+	}
+
+	public void setFive(String five) {
+		this.five = five;
 	}
 
 	@Override

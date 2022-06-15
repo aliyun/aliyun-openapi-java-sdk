@@ -32,6 +32,8 @@ public class HuichengetRequest extends RpcAcsRequest<HuichengetResponse> {
 
 	private String address;
 
+	private String four;
+
 	private String newName;
 
 	private String two;
@@ -83,6 +85,17 @@ public class HuichengetRequest extends RpcAcsRequest<HuichengetResponse> {
 		this.address = address;
 		if(address != null){
 			putQueryParameter("Address", address);
+		}
+	}
+
+	public String getFour() {
+		return this.four;
+	}
+
+	public void setFour(String four) {
+		this.four = four;
+		if(four != null){
+			putQueryParameter("Four", four);
 		}
 	}
 
