@@ -14,20 +14,27 @@
 
 package com.aliyuncs.arms.model.v20190808;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.SearchTagNamesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.CreateAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchTagNamesResponse extends AcsResponse {
+public class CreateAppResponse extends AcsResponse {
+
+	private String data;
 
 	private String requestId;
 
-	private List<String> tags;
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,21 +44,8 @@ public class SearchTagNamesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<String> tags) {
-		this.tags = tags;
-	}
-
 	@Override
-	public SearchTagNamesResponse getInstance(UnmarshallerContext context) {
-		return	SearchTagNamesResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public CreateAppResponse getInstance(UnmarshallerContext context) {
+		return	CreateAppResponseUnmarshaller.unmarshall(this, context);
 	}
 }

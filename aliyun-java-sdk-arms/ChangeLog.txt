@@ -1,3 +1,6 @@
+2022-06-15 Version: 2.8.16
+- Generated 2019-08-08 for `ARMS`.
+
 2022-05-30 Version: 2.8.15
 - Update DeleteGrafanaResource.
 

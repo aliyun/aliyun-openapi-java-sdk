@@ -59,7 +59,7 @@ public class UploadRequest extends RpcAcsRequest<UploadResponse> {
 	public void setFile(String file) {
 		this.file = file;
 		if(file != null){
-			putQueryParameter("File", file);
+			putBodyParameter("File", file);
 		}
 	}
 

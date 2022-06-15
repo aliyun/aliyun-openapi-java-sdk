@@ -15,26 +15,18 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.CMonitorAlertEventResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.DelAuthTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CMonitorAlertEventResponse extends AcsResponse {
-
-	private String requestId;
+public class DelAuthTokenResponse extends AcsResponse {
 
 	private String data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getData() {
 		return this.data;
@@ -44,9 +36,17 @@ public class CMonitorAlertEventResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
-	public CMonitorAlertEventResponse getInstance(UnmarshallerContext context) {
-		return	CMonitorAlertEventResponseUnmarshaller.unmarshall(this, context);
+	public DelAuthTokenResponse getInstance(UnmarshallerContext context) {
+		return	DelAuthTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

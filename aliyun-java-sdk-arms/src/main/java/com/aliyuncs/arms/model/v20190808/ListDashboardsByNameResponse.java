@@ -14,20 +14,27 @@
 
 package com.aliyuncs.arms.model.v20190808;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.SearchTagValuesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.ListDashboardsByNameResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchTagValuesResponse extends AcsResponse {
+public class ListDashboardsByNameResponse extends AcsResponse {
+
+	private String data;
 
 	private String requestId;
 
-	private List<String> values;
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,17 +44,9 @@ public class SearchTagValuesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getValues() {
-		return this.values;
-	}
-
-	public void setValues(List<String> values) {
-		this.values = values;
-	}
-
 	@Override
-	public SearchTagValuesResponse getInstance(UnmarshallerContext context) {
-		return	SearchTagValuesResponseUnmarshaller.unmarshall(this, context);
+	public ListDashboardsByNameResponse getInstance(UnmarshallerContext context) {
+		return	ListDashboardsByNameResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

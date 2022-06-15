@@ -22,30 +22,17 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetClusterInfoRequest extends RpcAcsRequest<GetClusterInfoResponse> {
+public class DelAuthTokenRequest extends RpcAcsRequest<DelAuthTokenResponse> {
 	   
 
-	private String queryUserId;
-
 	private String clusterId;
-	public GetClusterInfoRequest() {
-		super("ARMS", "2019-08-08", "GetClusterInfo", "arms");
+	public DelAuthTokenRequest() {
+		super("ARMS", "2019-08-08", "DelAuthToken", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getQueryUserId() {
-		return this.queryUserId;
-	}
-
-	public void setQueryUserId(String queryUserId) {
-		this.queryUserId = queryUserId;
-		if(queryUserId != null){
-			putQueryParameter("QueryUserId", queryUserId);
-		}
 	}
 
 	public String getClusterId() {
@@ -60,8 +47,8 @@ public class GetClusterInfoRequest extends RpcAcsRequest<GetClusterInfoResponse>
 	}
 
 	@Override
-	public Class<GetClusterInfoResponse> getResponseClass() {
-		return GetClusterInfoResponse.class;
+	public Class<DelAuthTokenResponse> getResponseClass() {
+		return DelAuthTokenResponse.class;
 	}
 
 }

@@ -14,17 +14,17 @@
 
 package com.aliyuncs.arms.transform.v20190808;
 
-import com.aliyuncs.arms.model.v20190808.CMonitorAlertEventResponse;
+import com.aliyuncs.arms.model.v20190808.CreateAppResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CMonitorAlertEventResponseUnmarshaller {
+public class CreateAppResponseUnmarshaller {
 
-	public static CMonitorAlertEventResponse unmarshall(CMonitorAlertEventResponse cMonitorAlertEventResponse, UnmarshallerContext _ctx) {
+	public static CreateAppResponse unmarshall(CreateAppResponse createAppResponse, UnmarshallerContext _ctx) {
 		
-		cMonitorAlertEventResponse.setRequestId(_ctx.stringValue("CMonitorAlertEventResponse.RequestId"));
-		cMonitorAlertEventResponse.setData(_ctx.stringValue("CMonitorAlertEventResponse.Data"));
+		createAppResponse.setRequestId(_ctx.stringValue("CreateAppResponse.RequestId"));
+		createAppResponse.setData(_ctx.stringValue("CreateAppResponse.Data"));
 	 
-	 	return cMonitorAlertEventResponse;
+	 	return createAppResponse;
 	}
 }

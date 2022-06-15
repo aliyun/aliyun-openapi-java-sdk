@@ -22,16 +22,16 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchTagNamesRequest extends RpcAcsRequest<SearchTagNamesResponse> {
+public class GetClusterInfoForArmsRequest extends RpcAcsRequest<GetClusterInfoForArmsResponse> {
 	   
 
-	private Long endTime;
+	private String clusterId;
 
-	private String pid;
+	private String userId;
 
-	private Long startTime;
-	public SearchTagNamesRequest() {
-		super("ARMS", "2019-08-08", "SearchTagNames", "arms");
+	private String md5;
+	public GetClusterInfoForArmsRequest() {
+		super("ARMS", "2019-08-08", "GetClusterInfoForArms", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class SearchTagNamesRequest extends RpcAcsRequest<SearchTagNamesResponse>
 		} catch (Exception e) {}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
-	public String getPid() {
-		return this.pid;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setPid(String pid) {
-		this.pid = pid;
-		if(pid != null){
-			putQueryParameter("Pid", pid);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
+	public String getMd5() {
+		return this.md5;
 	}
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
+	public void setMd5(String md5) {
+		this.md5 = md5;
+		if(md5 != null){
+			putQueryParameter("Md5", md5);
 		}
 	}
 
 	@Override
-	public Class<SearchTagNamesResponse> getResponseClass() {
-		return SearchTagNamesResponse.class;
+	public Class<GetClusterInfoForArmsResponse> getResponseClass() {
+		return GetClusterInfoForArmsResponse.class;
 	}
 
 }
