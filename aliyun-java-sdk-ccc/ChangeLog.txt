@@ -1,3 +1,6 @@
+2022-06-15 Version: 2.6.0
+- Supported GetConversationByContactId apis.
+
 2022-06-14 Version: 1.0.36
 - Modify the return field of the GetRoutePoint api.
 
