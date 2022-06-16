@@ -46,6 +46,7 @@ public class GetClusterResponseUnmarshaller {
 		cluster.setNodeNum(_ctx.integerValue("GetClusterResponse.Cluster.NodeNum"));
 		cluster.setClusterImportStatus(_ctx.integerValue("GetClusterResponse.Cluster.ClusterImportStatus"));
 		cluster.setClusterId(_ctx.stringValue("GetClusterResponse.Cluster.ClusterId"));
+		cluster.setSubClusterType(_ctx.stringValue("GetClusterResponse.Cluster.SubClusterType"));
 		getClusterResponse.setCluster(cluster);
 	 
 	 	return getClusterResponse;

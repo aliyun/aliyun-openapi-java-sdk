@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class EnableMockRuleRequest extends RoaAcsRequest<EnableMockRuleResponse> {
 	   
 
-	private Long id;
+	private Integer id;
 	public EnableMockRuleRequest() {
 		super("Edas", "2017-08-01", "EnableMockRule", "Edas");
 		setUriPattern("/pop/sp/api/mock/enableMockRule");
@@ -36,11 +36,11 @@ public class EnableMockRuleRequest extends RoaAcsRequest<EnableMockRuleResponse>
 		} catch (Exception e) {}
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());

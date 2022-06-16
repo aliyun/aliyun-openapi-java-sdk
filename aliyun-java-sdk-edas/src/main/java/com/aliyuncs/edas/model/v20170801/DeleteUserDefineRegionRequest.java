@@ -27,7 +27,7 @@ public class DeleteUserDefineRegionRequest extends RoaAcsRequest<DeleteUserDefin
 
 	private String regionTag;
 
-	private Long id;
+	private Integer id;
 	public DeleteUserDefineRegionRequest() {
 		super("Edas", "2017-08-01", "DeleteUserDefineRegion", "Edas");
 		setUriPattern("/pop/v5/user_region_def");
@@ -49,11 +49,11 @@ public class DeleteUserDefineRegionRequest extends RoaAcsRequest<DeleteUserDefin
 		}
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());

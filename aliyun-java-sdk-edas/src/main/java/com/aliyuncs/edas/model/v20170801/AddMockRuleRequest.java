@@ -45,7 +45,7 @@ public class AddMockRuleRequest extends RoaAcsRequest<AddMockRuleResponse> {
 
 	private String consumerAppsJson;
 
-	private Long mockType;
+	private Integer mockType;
 
 	private String region;
 	public AddMockRuleRequest() {
@@ -168,11 +168,11 @@ public class AddMockRuleRequest extends RoaAcsRequest<AddMockRuleResponse> {
 		}
 	}
 
-	public Long getMockType() {
+	public Integer getMockType() {
 		return this.mockType;
 	}
 
-	public void setMockType(Long mockType) {
+	public void setMockType(Integer mockType) {
 		this.mockType = mockType;
 		if(mockType != null){
 			putQueryParameter("MockType", mockType.toString());

@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class DeleteConfigTemplateRequest extends RoaAcsRequest<DeleteConfigTemplateResponse> {
 	   
 
-	private Long id;
+	private Integer id;
 	public DeleteConfigTemplateRequest() {
 		super("Edas", "2017-08-01", "DeleteConfigTemplate", "Edas");
 		setUriPattern("/pop/v5/config_template");
@@ -36,11 +36,11 @@ public class DeleteConfigTemplateRequest extends RoaAcsRequest<DeleteConfigTempl
 		} catch (Exception e) {}
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());

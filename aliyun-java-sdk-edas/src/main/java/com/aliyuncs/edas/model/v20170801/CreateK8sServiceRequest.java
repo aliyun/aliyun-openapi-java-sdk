@@ -31,6 +31,8 @@ public class CreateK8sServiceRequest extends RoaAcsRequest<CreateK8sServiceRespo
 
 	private String type;
 
+	private String externalTrafficPolicy;
+
 	private String servicePorts;
 	public CreateK8sServiceRequest() {
 		super("Edas", "2017-08-01", "CreateK8sService", "Edas");
@@ -72,6 +74,17 @@ public class CreateK8sServiceRequest extends RoaAcsRequest<CreateK8sServiceRespo
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getExternalTrafficPolicy() {
+		return this.externalTrafficPolicy;
+	}
+
+	public void setExternalTrafficPolicy(String externalTrafficPolicy) {
+		this.externalTrafficPolicy = externalTrafficPolicy;
+		if(externalTrafficPolicy != null){
+			putQueryParameter("ExternalTrafficPolicy", externalTrafficPolicy);
 		}
 	}
 

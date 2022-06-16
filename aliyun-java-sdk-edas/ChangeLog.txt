@@ -1,3 +1,7 @@
+2022-06-16 Version: 3.26.5
+- Supported ExternalTrafficPolicy for CreateK8sService.
+- Supported ExternalTrafficPolicy for UpdateK8sService.
+
 2022-06-02 Version: 3.26.4
 - Add ListK8sNamespaces.
 

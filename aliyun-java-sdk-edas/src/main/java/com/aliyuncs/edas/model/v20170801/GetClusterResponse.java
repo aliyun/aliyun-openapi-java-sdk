@@ -102,6 +102,8 @@ public class GetClusterResponse extends AcsResponse {
 
 		private String clusterId;
 
+		private String subClusterType;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -244,6 +246,14 @@ public class GetClusterResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
+		}
+
+		public String getSubClusterType() {
+			return this.subClusterType;
+		}
+
+		public void setSubClusterType(String subClusterType) {
+			this.subClusterType = subClusterType;
 		}
 	}
 

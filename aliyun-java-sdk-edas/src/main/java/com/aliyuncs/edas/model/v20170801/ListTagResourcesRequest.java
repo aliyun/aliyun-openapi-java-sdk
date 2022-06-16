@@ -15,8 +15,6 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.RoaAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.edas.Endpoint;
 
@@ -31,9 +29,9 @@ public class ListTagResourcesRequest extends RoaAcsRequest<ListTagResourcesRespo
 
 	private String resourceRegionId;
 
-	private List<Object> resourceIds;
+	private String resourceIds;
 
-	private List<Object> tags;
+	private String tags;
 	public ListTagResourcesRequest() {
 		super("Edas", "2017-08-01", "ListTagResources", "Edas");
 		setUriPattern("/pop/v5/tag/tags");
@@ -66,25 +64,25 @@ public class ListTagResourcesRequest extends RoaAcsRequest<ListTagResourcesRespo
 		}
 	}
 
-	public List<Object> getResourceIds() {
+	public String getResourceIds() {
 		return this.resourceIds;
 	}
 
-	public void setResourceIds(List<Object> resourceIds) {
+	public void setResourceIds(String resourceIds) {
 		this.resourceIds = resourceIds;
 		if(resourceIds != null){
-			putQueryParameter("ResourceIds", new Gson().toJson(resourceIds));
+			putQueryParameter("ResourceIds", resourceIds);
 		}
 	}
 
-	public List<Object> getTags() {
+	public String getTags() {
 		return this.tags;
 	}
 
-	public void setTags(List<Object> tags) {
+	public void setTags(String tags) {
 		this.tags = tags;
 		if(tags != null){
-			putQueryParameter("Tags", new Gson().toJson(tags));
+			putQueryParameter("Tags", tags);
 		}
 	}
 

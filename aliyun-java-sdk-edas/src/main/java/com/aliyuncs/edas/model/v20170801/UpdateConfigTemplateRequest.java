@@ -31,7 +31,7 @@ public class UpdateConfigTemplateRequest extends RoaAcsRequest<UpdateConfigTempl
 
 	private String description;
 
-	private Long id;
+	private Integer id;
 
 	private String content;
 	public UpdateConfigTemplateRequest() {
@@ -77,11 +77,11 @@ public class UpdateConfigTemplateRequest extends RoaAcsRequest<UpdateConfigTempl
 		}
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 		if(id != null){
 			putBodyParameter("Id", id.toString());
