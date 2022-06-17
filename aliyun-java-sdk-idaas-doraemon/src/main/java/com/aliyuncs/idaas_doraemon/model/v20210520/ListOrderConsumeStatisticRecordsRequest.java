@@ -27,6 +27,8 @@ public class ListOrderConsumeStatisticRecordsRequest extends RpcAcsRequest<ListO
 
 	private String statisticTimeMin;
 
+	private String aliOrderCode;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -49,6 +51,17 @@ public class ListOrderConsumeStatisticRecordsRequest extends RpcAcsRequest<ListO
 		this.statisticTimeMin = statisticTimeMin;
 		if(statisticTimeMin != null){
 			putQueryParameter("StatisticTimeMin", statisticTimeMin);
+		}
+	}
+
+	public String getAliOrderCode() {
+		return this.aliOrderCode;
+	}
+
+	public void setAliOrderCode(String aliOrderCode) {
+		this.aliOrderCode = aliOrderCode;
+		if(aliOrderCode != null){
+			putQueryParameter("AliOrderCode", aliOrderCode);
 		}
 	}
 

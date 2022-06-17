@@ -1,3 +1,6 @@
+2022-06-17 Version: 1.2.8
+- ListOrderConsumeStatisticRecords add AliOrderCode.
+
 2022-06-16 Version: 1.2.7
 - Add ListOrderConsumeStatisticRecords Open API.
 
