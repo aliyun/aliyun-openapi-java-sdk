@@ -25,11 +25,11 @@ import com.aliyuncs.imageenhan.Endpoint;
 public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeResponse> {
 	   
 
+	private Integer height;
+
 	private String url;
 
 	private Integer width;
-
-	private Integer height;
 	public ChangeImageSizeRequest() {
 		super("imageenhan", "2019-09-30", "ChangeImageSize", "imageenhan");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(Integer height) {
+		this.height = height;
+		if(height != null){
+			putBodyParameter("Height", height.toString());
+		}
 	}
 
 	public String getUrl() {
@@ -58,17 +69,6 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 		this.width = width;
 		if(width != null){
 			putBodyParameter("Width", width.toString());
-		}
-	}
-
-	public Integer getHeight() {
-		return this.height;
-	}
-
-	public void setHeight(Integer height) {
-		this.height = height;
-		if(height != null){
-			putBodyParameter("Height", height.toString());
 		}
 	}
 

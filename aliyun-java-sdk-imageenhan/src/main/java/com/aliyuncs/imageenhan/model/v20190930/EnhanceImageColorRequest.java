@@ -27,9 +27,9 @@ public class EnhanceImageColorRequest extends RpcAcsRequest<EnhanceImageColorRes
 
 	private String mode;
 
-	private String imageURL;
-
 	private String outputFormat;
+
+	private String imageURL;
 	public EnhanceImageColorRequest() {
 		super("imageenhan", "2019-09-30", "EnhanceImageColor", "imageenhan");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class EnhanceImageColorRequest extends RpcAcsRequest<EnhanceImageColorRes
 		}
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
-		}
-	}
-
 	public String getOutputFormat() {
 		return this.outputFormat;
 	}
@@ -69,6 +58,17 @@ public class EnhanceImageColorRequest extends RpcAcsRequest<EnhanceImageColorRes
 		this.outputFormat = outputFormat;
 		if(outputFormat != null){
 			putBodyParameter("OutputFormat", outputFormat);
+		}
+	}
+
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 

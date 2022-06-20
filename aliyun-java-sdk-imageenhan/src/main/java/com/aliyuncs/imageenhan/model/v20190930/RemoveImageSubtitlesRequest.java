@@ -31,9 +31,9 @@ public class RemoveImageSubtitlesRequest extends RpcAcsRequest<RemoveImageSubtit
 
 	private Float bX;
 
-	private String imageURL;
-
 	private Float bY;
+
+	private String imageURL;
 	public RemoveImageSubtitlesRequest() {
 		super("imageenhan", "2019-09-30", "RemoveImageSubtitles", "imageenhan");
 		setMethod(MethodType.POST);
@@ -76,17 +76,6 @@ public class RemoveImageSubtitlesRequest extends RpcAcsRequest<RemoveImageSubtit
 		}
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
-		}
-	}
-
 	public Float getBY() {
 		return this.bY;
 	}
@@ -95,6 +84,17 @@ public class RemoveImageSubtitlesRequest extends RpcAcsRequest<RemoveImageSubtit
 		this.bY = bY;
 		if(bY != null){
 			putBodyParameter("BY", bY.toString());
+		}
+	}
+
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 

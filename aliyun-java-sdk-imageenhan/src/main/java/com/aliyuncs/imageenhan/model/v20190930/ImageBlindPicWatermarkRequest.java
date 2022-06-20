@@ -27,13 +27,13 @@ public class ImageBlindPicWatermarkRequest extends RpcAcsRequest<ImageBlindPicWa
 
 	private String watermarkImageURL;
 
-	private Integer qualityFactor;
-
-	private String functionType;
-
 	private String logoURL;
 
 	private String outputFileType;
+
+	private Integer qualityFactor;
+
+	private String functionType;
 
 	private String originImageURL;
 	public ImageBlindPicWatermarkRequest() {
@@ -56,28 +56,6 @@ public class ImageBlindPicWatermarkRequest extends RpcAcsRequest<ImageBlindPicWa
 		}
 	}
 
-	public Integer getQualityFactor() {
-		return this.qualityFactor;
-	}
-
-	public void setQualityFactor(Integer qualityFactor) {
-		this.qualityFactor = qualityFactor;
-		if(qualityFactor != null){
-			putBodyParameter("QualityFactor", qualityFactor.toString());
-		}
-	}
-
-	public String getFunctionType() {
-		return this.functionType;
-	}
-
-	public void setFunctionType(String functionType) {
-		this.functionType = functionType;
-		if(functionType != null){
-			putBodyParameter("FunctionType", functionType);
-		}
-	}
-
 	public String getLogoURL() {
 		return this.logoURL;
 	}
@@ -97,6 +75,28 @@ public class ImageBlindPicWatermarkRequest extends RpcAcsRequest<ImageBlindPicWa
 		this.outputFileType = outputFileType;
 		if(outputFileType != null){
 			putBodyParameter("OutputFileType", outputFileType);
+		}
+	}
+
+	public Integer getQualityFactor() {
+		return this.qualityFactor;
+	}
+
+	public void setQualityFactor(Integer qualityFactor) {
+		this.qualityFactor = qualityFactor;
+		if(qualityFactor != null){
+			putBodyParameter("QualityFactor", qualityFactor.toString());
+		}
+	}
+
+	public String getFunctionType() {
+		return this.functionType;
+	}
+
+	public void setFunctionType(String functionType) {
+		this.functionType = functionType;
+		if(functionType != null){
+			putBodyParameter("FunctionType", functionType);
 		}
 	}
 

@@ -1,3 +1,6 @@
+2022-06-20 Version: 1.1.5
+- Update MakeSuperResolutionImage.
+
 2021-09-26 Version: 1.1.4
 - Update imageenhan.
 

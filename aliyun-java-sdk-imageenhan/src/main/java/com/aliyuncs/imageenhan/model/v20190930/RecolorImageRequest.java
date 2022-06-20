@@ -26,13 +26,13 @@ import com.aliyuncs.imageenhan.Endpoint;
 public class RecolorImageRequest extends RpcAcsRequest<RecolorImageResponse> {
 	   
 
-	private List<ColorTemplate> colorTemplates;
-
-	private String url;
-
 	private String mode;
 
 	private Integer colorCount;
+
+	private List<ColorTemplate> colorTemplates;
+
+	private String url;
 
 	private String refUrl;
 	public RecolorImageRequest() {
@@ -42,6 +42,28 @@ public class RecolorImageRequest extends RpcAcsRequest<RecolorImageResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putBodyParameter("Mode", mode);
+		}
+	}
+
+	public Integer getColorCount() {
+		return this.colorCount;
+	}
+
+	public void setColorCount(Integer colorCount) {
+		this.colorCount = colorCount;
+		if(colorCount != null){
+			putBodyParameter("ColorCount", colorCount.toString());
+		}
 	}
 
 	public List<ColorTemplate> getColorTemplates() {
@@ -65,28 +87,6 @@ public class RecolorImageRequest extends RpcAcsRequest<RecolorImageResponse> {
 		this.url = url;
 		if(url != null){
 			putBodyParameter("Url", url);
-		}
-	}
-
-	public String getMode() {
-		return this.mode;
-	}
-
-	public void setMode(String mode) {
-		this.mode = mode;
-		if(mode != null){
-			putBodyParameter("Mode", mode);
-		}
-	}
-
-	public Integer getColorCount() {
-		return this.colorCount;
-	}
-
-	public void setColorCount(Integer colorCount) {
-		this.colorCount = colorCount;
-		if(colorCount != null){
-			putBodyParameter("ColorCount", colorCount.toString());
 		}
 	}
 

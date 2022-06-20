@@ -27,15 +27,15 @@ public class ImageBlindCharacterWatermarkRequest extends RpcAcsRequest<ImageBlin
 
 	private String watermarkImageURL;
 
+	private String outputFileType;
+
+	private String text;
+
 	private Integer qualityFactor;
 
 	private String functionType;
 
-	private String outputFileType;
-
 	private String originImageURL;
-
-	private String text;
 	public ImageBlindCharacterWatermarkRequest() {
 		super("imageenhan", "2019-09-30", "ImageBlindCharacterWatermark", "imageenhan");
 		setMethod(MethodType.POST);
@@ -53,6 +53,28 @@ public class ImageBlindCharacterWatermarkRequest extends RpcAcsRequest<ImageBlin
 		this.watermarkImageURL = watermarkImageURL;
 		if(watermarkImageURL != null){
 			putBodyParameter("WatermarkImageURL", watermarkImageURL);
+		}
+	}
+
+	public String getOutputFileType() {
+		return this.outputFileType;
+	}
+
+	public void setOutputFileType(String outputFileType) {
+		this.outputFileType = outputFileType;
+		if(outputFileType != null){
+			putBodyParameter("OutputFileType", outputFileType);
+		}
+	}
+
+	public String getText() {
+		return this.text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+		if(text != null){
+			putBodyParameter("Text", text);
 		}
 	}
 
@@ -78,17 +100,6 @@ public class ImageBlindCharacterWatermarkRequest extends RpcAcsRequest<ImageBlin
 		}
 	}
 
-	public String getOutputFileType() {
-		return this.outputFileType;
-	}
-
-	public void setOutputFileType(String outputFileType) {
-		this.outputFileType = outputFileType;
-		if(outputFileType != null){
-			putBodyParameter("OutputFileType", outputFileType);
-		}
-	}
-
 	public String getOriginImageURL() {
 		return this.originImageURL;
 	}
@@ -97,17 +108,6 @@ public class ImageBlindCharacterWatermarkRequest extends RpcAcsRequest<ImageBlin
 		this.originImageURL = originImageURL;
 		if(originImageURL != null){
 			putBodyParameter("OriginImageURL", originImageURL);
-		}
-	}
-
-	public String getText() {
-		return this.text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-		if(text != null){
-			putBodyParameter("Text", text);
 		}
 	}
 

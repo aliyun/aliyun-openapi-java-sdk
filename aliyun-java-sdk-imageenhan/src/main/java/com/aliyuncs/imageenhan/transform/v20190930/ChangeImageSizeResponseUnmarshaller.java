@@ -30,10 +30,10 @@ public class ChangeImageSizeResponseUnmarshaller {
 		data.setUrl(_ctx.stringValue("ChangeImageSizeResponse.Data.Url"));
 
 		RetainLocation retainLocation = new RetainLocation();
-		retainLocation.setX(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.X"));
-		retainLocation.setY(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.Y"));
 		retainLocation.setWidth(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.Width"));
 		retainLocation.setHeight(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.Height"));
+		retainLocation.setY(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.Y"));
+		retainLocation.setX(_ctx.integerValue("ChangeImageSizeResponse.Data.RetainLocation.X"));
 		data.setRetainLocation(retainLocation);
 		changeImageSizeResponse.setData(data);
 	 

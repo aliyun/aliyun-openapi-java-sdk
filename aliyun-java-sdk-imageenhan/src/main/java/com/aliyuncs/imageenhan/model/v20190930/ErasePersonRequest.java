@@ -25,9 +25,9 @@ import com.aliyuncs.imageenhan.Endpoint;
 public class ErasePersonRequest extends RpcAcsRequest<ErasePersonResponse> {
 	   
 
-	private String imageURL;
-
 	private String userMask;
+
+	private String imageURL;
 	public ErasePersonRequest() {
 		super("imageenhan", "2019-09-30", "ErasePerson", "imageenhan");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class ErasePersonRequest extends RpcAcsRequest<ErasePersonResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImageURL() {
-		return this.imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
-		}
 	}
 
 	public String getUserMask() {
@@ -56,6 +45,17 @@ public class ErasePersonRequest extends RpcAcsRequest<ErasePersonResponse> {
 		this.userMask = userMask;
 		if(userMask != null){
 			putBodyParameter("UserMask", userMask);
+		}
+	}
+
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 

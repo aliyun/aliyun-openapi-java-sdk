@@ -35,10 +35,10 @@ public class IntelligentCompositionResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("IntelligentCompositionResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
 			element.setMinX(_ctx.integerValue("IntelligentCompositionResponse.Data.Elements["+ i +"].MinX"));
-			element.setMinY(_ctx.integerValue("IntelligentCompositionResponse.Data.Elements["+ i +"].MinY"));
-			element.setMaxX(_ctx.integerValue("IntelligentCompositionResponse.Data.Elements["+ i +"].MaxX"));
-			element.setMaxY(_ctx.integerValue("IntelligentCompositionResponse.Data.Elements["+ i +"].MaxY"));
 			element.setScore(_ctx.floatValue("IntelligentCompositionResponse.Data.Elements["+ i +"].Score"));
+			element.setMaxY(_ctx.integerValue("IntelligentCompositionResponse.Data.Elements["+ i +"].MaxY"));
+			element.setMaxX(_ctx.integerValue("IntelligentCompositionResponse.Data.Elements["+ i +"].MaxX"));
+			element.setMinY(_ctx.integerValue("IntelligentCompositionResponse.Data.Elements["+ i +"].MinY"));
 
 			elements.add(element);
 		}

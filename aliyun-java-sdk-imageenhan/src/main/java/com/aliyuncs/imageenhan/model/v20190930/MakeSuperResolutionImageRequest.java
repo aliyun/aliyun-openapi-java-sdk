@@ -29,7 +29,11 @@ public class MakeSuperResolutionImageRequest extends RpcAcsRequest<MakeSuperReso
 
 	private String mode;
 
+	private String outputFormat;
+
 	private String url;
+
+	private Long outputQuality;
 	public MakeSuperResolutionImageRequest() {
 		super("imageenhan", "2019-09-30", "MakeSuperResolutionImage", "imageenhan");
 		setMethod(MethodType.POST);
@@ -61,6 +65,17 @@ public class MakeSuperResolutionImageRequest extends RpcAcsRequest<MakeSuperReso
 		}
 	}
 
+	public String getOutputFormat() {
+		return this.outputFormat;
+	}
+
+	public void setOutputFormat(String outputFormat) {
+		this.outputFormat = outputFormat;
+		if(outputFormat != null){
+			putBodyParameter("OutputFormat", outputFormat);
+		}
+	}
+
 	public String getUrl() {
 		return this.url;
 	}
@@ -69,6 +84,17 @@ public class MakeSuperResolutionImageRequest extends RpcAcsRequest<MakeSuperReso
 		this.url = url;
 		if(url != null){
 			putBodyParameter("Url", url);
+		}
+	}
+
+	public Long getOutputQuality() {
+		return this.outputQuality;
+	}
+
+	public void setOutputQuality(Long outputQuality) {
+		this.outputQuality = outputQuality;
+		if(outputQuality != null){
+			putBodyParameter("OutputQuality", outputQuality.toString());
 		}
 	}
 

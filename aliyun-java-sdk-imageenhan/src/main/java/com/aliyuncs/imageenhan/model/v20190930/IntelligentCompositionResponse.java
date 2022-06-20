@@ -61,13 +61,13 @@ public class IntelligentCompositionResponse extends AcsResponse {
 
 			private Integer minX;
 
-			private Integer minY;
-
-			private Integer maxX;
+			private Float score;
 
 			private Integer maxY;
 
-			private Float score;
+			private Integer maxX;
+
+			private Integer minY;
 
 			public Integer getMinX() {
 				return this.minX;
@@ -77,20 +77,12 @@ public class IntelligentCompositionResponse extends AcsResponse {
 				this.minX = minX;
 			}
 
-			public Integer getMinY() {
-				return this.minY;
+			public Float getScore() {
+				return this.score;
 			}
 
-			public void setMinY(Integer minY) {
-				this.minY = minY;
-			}
-
-			public Integer getMaxX() {
-				return this.maxX;
-			}
-
-			public void setMaxX(Integer maxX) {
-				this.maxX = maxX;
+			public void setScore(Float score) {
+				this.score = score;
 			}
 
 			public Integer getMaxY() {
@@ -101,12 +93,20 @@ public class IntelligentCompositionResponse extends AcsResponse {
 				this.maxY = maxY;
 			}
 
-			public Float getScore() {
-				return this.score;
+			public Integer getMaxX() {
+				return this.maxX;
 			}
 
-			public void setScore(Float score) {
-				this.score = score;
+			public void setMaxX(Integer maxX) {
+				this.maxX = maxX;
+			}
+
+			public Integer getMinY() {
+				return this.minY;
+			}
+
+			public void setMinY(Integer minY) {
+				this.minY = minY;
 			}
 		}
 	}
