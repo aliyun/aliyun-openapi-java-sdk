@@ -22,8 +22,10 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateSoundCodeRequest extends RpcAcsRequest<CreateSoundCodeResponse> {
+public class UpdateSoundCodeRequest extends RpcAcsRequest<UpdateSoundCodeResponse> {
 	   
+
+	private String soundCode;
 
 	private Integer duration;
 
@@ -32,15 +34,24 @@ public class CreateSoundCodeRequest extends RpcAcsRequest<CreateSoundCodeRespons
 	private String soundCodeContent;
 
 	private String name;
-
-	private String openType;
-	public CreateSoundCodeRequest() {
-		super("Iot", "2018-01-20", "CreateSoundCode");
+	public UpdateSoundCodeRequest() {
+		super("Iot", "2018-01-20", "UpdateSoundCode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSoundCode() {
+		return this.soundCode;
+	}
+
+	public void setSoundCode(String soundCode) {
+		this.soundCode = soundCode;
+		if(soundCode != null){
+			putBodyParameter("SoundCode", soundCode);
+		}
 	}
 
 	public Integer getDuration() {
@@ -87,20 +98,9 @@ public class CreateSoundCodeRequest extends RpcAcsRequest<CreateSoundCodeRespons
 		}
 	}
 
-	public String getOpenType() {
-		return this.openType;
-	}
-
-	public void setOpenType(String openType) {
-		this.openType = openType;
-		if(openType != null){
-			putBodyParameter("OpenType", openType);
-		}
-	}
-
 	@Override
-	public Class<CreateSoundCodeResponse> getResponseClass() {
-		return CreateSoundCodeResponse.class;
+	public Class<UpdateSoundCodeResponse> getResponseClass() {
+		return UpdateSoundCodeResponse.class;
 	}
 
 }

@@ -137,6 +137,8 @@ public class QuerySoundCodeScheduleListResponse extends AcsResponse {
 
 			private String endDate;
 
+			private String openType;
+
 			public String getScheduleCode() {
 				return this.scheduleCode;
 			}
@@ -207,6 +209,14 @@ public class QuerySoundCodeScheduleListResponse extends AcsResponse {
 
 			public void setEndDate(String endDate) {
 				this.endDate = endDate;
+			}
+
+			public String getOpenType() {
+				return this.openType;
+			}
+
+			public void setOpenType(String openType) {
+				this.openType = openType;
 			}
 		}
 	}

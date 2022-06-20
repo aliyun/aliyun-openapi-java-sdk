@@ -22,36 +22,21 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateSoundCodeRequest extends RpcAcsRequest<CreateSoundCodeResponse> {
+public class BindLicenseProductRequest extends RpcAcsRequest<BindLicenseProductResponse> {
 	   
-
-	private Integer duration;
 
 	private String iotInstanceId;
 
-	private String soundCodeContent;
+	private String productKey;
 
-	private String name;
-
-	private String openType;
-	public CreateSoundCodeRequest() {
-		super("Iot", "2018-01-20", "CreateSoundCode");
+	private String licenseCode;
+	public BindLicenseProductRequest() {
+		super("Iot", "2018-01-20", "BindLicenseProduct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putBodyParameter("Duration", duration.toString());
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -61,46 +46,35 @@ public class CreateSoundCodeRequest extends RpcAcsRequest<CreateSoundCodeRespons
 	public void setIotInstanceId(String iotInstanceId) {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
-			putBodyParameter("IotInstanceId", iotInstanceId);
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
-	public String getSoundCodeContent() {
-		return this.soundCodeContent;
+	public String getProductKey() {
+		return this.productKey;
 	}
 
-	public void setSoundCodeContent(String soundCodeContent) {
-		this.soundCodeContent = soundCodeContent;
-		if(soundCodeContent != null){
-			putBodyParameter("SoundCodeContent", soundCodeContent);
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getLicenseCode() {
+		return this.licenseCode;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getOpenType() {
-		return this.openType;
-	}
-
-	public void setOpenType(String openType) {
-		this.openType = openType;
-		if(openType != null){
-			putBodyParameter("OpenType", openType);
+	public void setLicenseCode(String licenseCode) {
+		this.licenseCode = licenseCode;
+		if(licenseCode != null){
+			putQueryParameter("LicenseCode", licenseCode);
 		}
 	}
 
 	@Override
-	public Class<CreateSoundCodeResponse> getResponseClass() {
-		return CreateSoundCodeResponse.class;
+	public Class<BindLicenseProductResponse> getResponseClass() {
+		return BindLicenseProductResponse.class;
 	}
 
 }

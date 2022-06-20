@@ -44,6 +44,8 @@ public class QuerySoundCodeListResponseUnmarshaller {
 			items.setSoundCodeContent(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].SoundCodeContent"));
 			items.setDuration(_ctx.integerValue("QuerySoundCodeListResponse.Data.List["+ i +"].Duration"));
 			items.setGmtCreate(_ctx.longValue("QuerySoundCodeListResponse.Data.List["+ i +"].GmtCreate"));
+			items.setOpenType(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].OpenType"));
+			items.setName(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].Name"));
 
 			list.add(items);
 		}

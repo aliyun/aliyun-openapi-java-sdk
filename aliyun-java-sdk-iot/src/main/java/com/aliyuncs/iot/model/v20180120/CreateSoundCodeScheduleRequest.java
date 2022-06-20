@@ -34,6 +34,8 @@ public class CreateSoundCodeScheduleRequest extends RpcAcsRequest<CreateSoundCod
 	private String endDate;
 
 	private String name;
+
+	private String openType;
 	public CreateSoundCodeScheduleRequest() {
 		super("Iot", "2018-01-20", "CreateSoundCodeSchedule");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class CreateSoundCodeScheduleRequest extends RpcAcsRequest<CreateSoundCod
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getOpenType() {
+		return this.openType;
+	}
+
+	public void setOpenType(String openType) {
+		this.openType = openType;
+		if(openType != null){
+			putBodyParameter("OpenType", openType);
 		}
 	}
 

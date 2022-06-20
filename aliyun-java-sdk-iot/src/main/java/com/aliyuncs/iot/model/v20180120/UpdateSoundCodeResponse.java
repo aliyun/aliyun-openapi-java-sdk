@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.ResetThingResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.UpdateSoundCodeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ResetThingResponse extends AcsResponse {
+public class UpdateSoundCodeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,8 +31,6 @@ public class ResetThingResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
-
-	private String jobId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,16 +64,8 @@ public class ResetThingResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-
 	@Override
-	public ResetThingResponse getInstance(UnmarshallerContext context) {
-		return	ResetThingResponseUnmarshaller.unmarshall(this, context);
+	public UpdateSoundCodeResponse getInstance(UnmarshallerContext context) {
+		return	UpdateSoundCodeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

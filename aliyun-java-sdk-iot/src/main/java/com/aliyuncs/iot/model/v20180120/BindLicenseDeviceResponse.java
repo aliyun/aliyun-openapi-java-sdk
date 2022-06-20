@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.ResetThingResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.BindLicenseDeviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ResetThingResponse extends AcsResponse {
+public class BindLicenseDeviceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -32,7 +32,7 @@ public class ResetThingResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String jobId;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,16 +66,69 @@ public class ResetThingResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Long successSum;
+
+		private Long failSum;
+
+		private String resultCsvFile;
+
+		private Integer progress;
+
+		private String checkProgressId;
+
+		public Long getSuccessSum() {
+			return this.successSum;
+		}
+
+		public void setSuccessSum(Long successSum) {
+			this.successSum = successSum;
+		}
+
+		public Long getFailSum() {
+			return this.failSum;
+		}
+
+		public void setFailSum(Long failSum) {
+			this.failSum = failSum;
+		}
+
+		public String getResultCsvFile() {
+			return this.resultCsvFile;
+		}
+
+		public void setResultCsvFile(String resultCsvFile) {
+			this.resultCsvFile = resultCsvFile;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public String getCheckProgressId() {
+			return this.checkProgressId;
+		}
+
+		public void setCheckProgressId(String checkProgressId) {
+			this.checkProgressId = checkProgressId;
+		}
 	}
 
 	@Override
-	public ResetThingResponse getInstance(UnmarshallerContext context) {
-		return	ResetThingResponseUnmarshaller.unmarshall(this, context);
+	public BindLicenseDeviceResponse getInstance(UnmarshallerContext context) {
+		return	BindLicenseDeviceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

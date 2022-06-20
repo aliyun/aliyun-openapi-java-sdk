@@ -49,6 +49,7 @@ public class QuerySoundCodeScheduleListResponseUnmarshaller {
 			items.setEndTime(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].EndTime"));
 			items.setStartDate(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].StartDate"));
 			items.setEndDate(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].EndDate"));
+			items.setOpenType(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].OpenType"));
 
 			list.add(items);
 		}

@@ -41,6 +41,8 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 	private String topicFullName;
 
 	private String productKey;
+
+	private String deviceName;
 	public PubRequest() {
 		super("Iot", "2018-01-20", "Pub");
 		setMethod(MethodType.POST);
@@ -71,7 +73,7 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 	public void setMessageContent(String messageContent) {
 		this.messageContent = messageContent;
 		if(messageContent != null){
-			putQueryParameter("MessageContent", messageContent);
+			putBodyParameter("MessageContent", messageContent);
 		}
 	}
 
@@ -138,6 +140,17 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

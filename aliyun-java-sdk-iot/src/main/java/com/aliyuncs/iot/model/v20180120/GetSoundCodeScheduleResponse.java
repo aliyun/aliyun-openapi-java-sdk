@@ -94,6 +94,8 @@ public class GetSoundCodeScheduleResponse extends AcsResponse {
 
 		private String endDate;
 
+		private String openType;
+
 		public String getScheduleCode() {
 			return this.scheduleCode;
 		}
@@ -164,6 +166,14 @@ public class GetSoundCodeScheduleResponse extends AcsResponse {
 
 		public void setEndDate(String endDate) {
 			this.endDate = endDate;
+		}
+
+		public String getOpenType() {
+			return this.openType;
+		}
+
+		public void setOpenType(String openType) {
+			this.openType = openType;
 		}
 	}
 

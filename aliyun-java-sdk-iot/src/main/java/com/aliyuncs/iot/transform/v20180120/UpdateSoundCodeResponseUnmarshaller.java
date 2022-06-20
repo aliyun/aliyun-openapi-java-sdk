@@ -14,20 +14,19 @@
 
 package com.aliyuncs.iot.transform.v20180120;
 
-import com.aliyuncs.iot.model.v20180120.ResetThingResponse;
+import com.aliyuncs.iot.model.v20180120.UpdateSoundCodeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ResetThingResponseUnmarshaller {
+public class UpdateSoundCodeResponseUnmarshaller {
 
-	public static ResetThingResponse unmarshall(ResetThingResponse resetThingResponse, UnmarshallerContext _ctx) {
+	public static UpdateSoundCodeResponse unmarshall(UpdateSoundCodeResponse updateSoundCodeResponse, UnmarshallerContext _ctx) {
 		
-		resetThingResponse.setRequestId(_ctx.stringValue("ResetThingResponse.RequestId"));
-		resetThingResponse.setSuccess(_ctx.booleanValue("ResetThingResponse.Success"));
-		resetThingResponse.setCode(_ctx.stringValue("ResetThingResponse.Code"));
-		resetThingResponse.setErrorMessage(_ctx.stringValue("ResetThingResponse.ErrorMessage"));
-		resetThingResponse.setJobId(_ctx.stringValue("ResetThingResponse.JobId"));
+		updateSoundCodeResponse.setRequestId(_ctx.stringValue("UpdateSoundCodeResponse.RequestId"));
+		updateSoundCodeResponse.setSuccess(_ctx.booleanValue("UpdateSoundCodeResponse.Success"));
+		updateSoundCodeResponse.setCode(_ctx.stringValue("UpdateSoundCodeResponse.Code"));
+		updateSoundCodeResponse.setErrorMessage(_ctx.stringValue("UpdateSoundCodeResponse.ErrorMessage"));
 	 
-	 	return resetThingResponse;
+	 	return updateSoundCodeResponse;
 	}
 }

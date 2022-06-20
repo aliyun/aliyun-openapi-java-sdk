@@ -38,6 +38,7 @@ public class GetSoundCodeScheduleResponseUnmarshaller {
 		data.setEndTime(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.EndTime"));
 		data.setStartDate(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.StartDate"));
 		data.setEndDate(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.EndDate"));
+		data.setOpenType(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.OpenType"));
 		getSoundCodeScheduleResponse.setData(data);
 	 
 	 	return getSoundCodeScheduleResponse;

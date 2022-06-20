@@ -22,36 +22,23 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateSoundCodeRequest extends RpcAcsRequest<CreateSoundCodeResponse> {
+public class QueryImportedDeviceByApplyIdRequest extends RpcAcsRequest<QueryImportedDeviceByApplyIdResponse> {
 	   
-
-	private Integer duration;
 
 	private String iotInstanceId;
 
-	private String soundCodeContent;
+	private Integer pageSize;
 
-	private String name;
+	private Long applyId;
 
-	private String openType;
-	public CreateSoundCodeRequest() {
-		super("Iot", "2018-01-20", "CreateSoundCode");
+	private Integer pageNo;
+	public QueryImportedDeviceByApplyIdRequest() {
+		super("Iot", "2018-01-20", "QueryImportedDeviceByApplyId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putBodyParameter("Duration", duration.toString());
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -61,46 +48,46 @@ public class CreateSoundCodeRequest extends RpcAcsRequest<CreateSoundCodeRespons
 	public void setIotInstanceId(String iotInstanceId) {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
-			putBodyParameter("IotInstanceId", iotInstanceId);
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
-	public String getSoundCodeContent() {
-		return this.soundCodeContent;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSoundCodeContent(String soundCodeContent) {
-		this.soundCodeContent = soundCodeContent;
-		if(soundCodeContent != null){
-			putBodyParameter("SoundCodeContent", soundCodeContent);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Long getApplyId() {
+		return this.applyId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
+	public void setApplyId(Long applyId) {
+		this.applyId = applyId;
+		if(applyId != null){
+			putQueryParameter("ApplyId", applyId.toString());
 		}
 	}
 
-	public String getOpenType() {
-		return this.openType;
+	public Integer getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setOpenType(String openType) {
-		this.openType = openType;
-		if(openType != null){
-			putBodyParameter("OpenType", openType);
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateSoundCodeResponse> getResponseClass() {
-		return CreateSoundCodeResponse.class;
+	public Class<QueryImportedDeviceByApplyIdResponse> getResponseClass() {
+		return QueryImportedDeviceByApplyIdResponse.class;
 	}
 
 }

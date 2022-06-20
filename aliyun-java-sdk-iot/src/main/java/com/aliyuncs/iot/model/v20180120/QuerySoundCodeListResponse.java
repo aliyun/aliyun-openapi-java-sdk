@@ -127,6 +127,10 @@ public class QuerySoundCodeListResponse extends AcsResponse {
 
 			private Long gmtCreate;
 
+			private String openType;
+
+			private String name;
+
 			public String getSoundCode() {
 				return this.soundCode;
 			}
@@ -157,6 +161,22 @@ public class QuerySoundCodeListResponse extends AcsResponse {
 
 			public void setGmtCreate(Long gmtCreate) {
 				this.gmtCreate = gmtCreate;
+			}
+
+			public String getOpenType() {
+				return this.openType;
+			}
+
+			public void setOpenType(String openType) {
+				this.openType = openType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}
