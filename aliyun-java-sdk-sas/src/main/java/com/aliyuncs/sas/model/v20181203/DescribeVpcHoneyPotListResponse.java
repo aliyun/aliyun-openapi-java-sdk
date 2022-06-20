@@ -57,37 +57,29 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 
 	public static class VpcHoneyPotDTO {
 
-		private String vpcId;
-
 		private String vpcName;
 
-		private String vpcRegionId;
-
-		private Long createTime;
-
-		private String vpcStatus;
-
-		private String cidrBlock;
-
-		private Boolean honeyPotExistence;
-
-		private String honeyPotVpcSwitchId;
-
-		private String honeyPotInstanceStatus;
+		private String vpcId;
 
 		private String honeyPotEniInstanceId;
 
+		private String cidrBlock;
+
+		private String vpcStatus;
+
+		private Long createTime;
+
+		private String honeyPotVpcSwitchId;
+
+		private Boolean honeyPotExistence;
+
+		private String vpcRegionId;
+
 		private String honeyPotEcsInstanceStatus;
 
+		private String honeyPotInstanceStatus;
+
 		private List<VpcSwitchInfo> vpcSwitchIdList;
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
 
 		public String getVpcName() {
 			return this.vpcName;
@@ -97,60 +89,12 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 			this.vpcName = vpcName;
 		}
 
-		public String getVpcRegionId() {
-			return this.vpcRegionId;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setVpcRegionId(String vpcRegionId) {
-			this.vpcRegionId = vpcRegionId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getVpcStatus() {
-			return this.vpcStatus;
-		}
-
-		public void setVpcStatus(String vpcStatus) {
-			this.vpcStatus = vpcStatus;
-		}
-
-		public String getCidrBlock() {
-			return this.cidrBlock;
-		}
-
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
-		}
-
-		public Boolean getHoneyPotExistence() {
-			return this.honeyPotExistence;
-		}
-
-		public void setHoneyPotExistence(Boolean honeyPotExistence) {
-			this.honeyPotExistence = honeyPotExistence;
-		}
-
-		public String getHoneyPotVpcSwitchId() {
-			return this.honeyPotVpcSwitchId;
-		}
-
-		public void setHoneyPotVpcSwitchId(String honeyPotVpcSwitchId) {
-			this.honeyPotVpcSwitchId = honeyPotVpcSwitchId;
-		}
-
-		public String getHoneyPotInstanceStatus() {
-			return this.honeyPotInstanceStatus;
-		}
-
-		public void setHoneyPotInstanceStatus(String honeyPotInstanceStatus) {
-			this.honeyPotInstanceStatus = honeyPotInstanceStatus;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getHoneyPotEniInstanceId() {
@@ -161,12 +105,68 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 			this.honeyPotEniInstanceId = honeyPotEniInstanceId;
 		}
 
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getVpcStatus() {
+			return this.vpcStatus;
+		}
+
+		public void setVpcStatus(String vpcStatus) {
+			this.vpcStatus = vpcStatus;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getHoneyPotVpcSwitchId() {
+			return this.honeyPotVpcSwitchId;
+		}
+
+		public void setHoneyPotVpcSwitchId(String honeyPotVpcSwitchId) {
+			this.honeyPotVpcSwitchId = honeyPotVpcSwitchId;
+		}
+
+		public Boolean getHoneyPotExistence() {
+			return this.honeyPotExistence;
+		}
+
+		public void setHoneyPotExistence(Boolean honeyPotExistence) {
+			this.honeyPotExistence = honeyPotExistence;
+		}
+
+		public String getVpcRegionId() {
+			return this.vpcRegionId;
+		}
+
+		public void setVpcRegionId(String vpcRegionId) {
+			this.vpcRegionId = vpcRegionId;
+		}
+
 		public String getHoneyPotEcsInstanceStatus() {
 			return this.honeyPotEcsInstanceStatus;
 		}
 
 		public void setHoneyPotEcsInstanceStatus(String honeyPotEcsInstanceStatus) {
 			this.honeyPotEcsInstanceStatus = honeyPotEcsInstanceStatus;
+		}
+
+		public String getHoneyPotInstanceStatus() {
+			return this.honeyPotInstanceStatus;
+		}
+
+		public void setHoneyPotInstanceStatus(String honeyPotInstanceStatus) {
+			this.honeyPotInstanceStatus = honeyPotInstanceStatus;
 		}
 
 		public List<VpcSwitchInfo> getVpcSwitchIdList() {
@@ -179,19 +179,11 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 
 		public static class VpcSwitchInfo {
 
-			private String vpcSwitchId;
-
 			private String vpcSwitchName;
 
 			private String zoneId;
 
-			public String getVpcSwitchId() {
-				return this.vpcSwitchId;
-			}
-
-			public void setVpcSwitchId(String vpcSwitchId) {
-				this.vpcSwitchId = vpcSwitchId;
-			}
+			private String vpcSwitchId;
 
 			public String getVpcSwitchName() {
 				return this.vpcSwitchName;
@@ -208,25 +200,33 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
 			}
+
+			public String getVpcSwitchId() {
+				return this.vpcSwitchId;
+			}
+
+			public void setVpcSwitchId(String vpcSwitchId) {
+				this.vpcSwitchId = vpcSwitchId;
+			}
 		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -245,12 +245,12 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

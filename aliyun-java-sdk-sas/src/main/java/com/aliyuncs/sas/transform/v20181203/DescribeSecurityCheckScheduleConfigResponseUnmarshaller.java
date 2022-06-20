@@ -26,8 +26,8 @@ public class DescribeSecurityCheckScheduleConfigResponseUnmarshaller {
 		describeSecurityCheckScheduleConfigResponse.setRequestId(_ctx.stringValue("DescribeSecurityCheckScheduleConfigResponse.RequestId"));
 
 		RiskCheckJobConfig riskCheckJobConfig = new RiskCheckJobConfig();
-		riskCheckJobConfig.setStartTime(_ctx.integerValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.StartTime"));
 		riskCheckJobConfig.setEndTime(_ctx.integerValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.EndTime"));
+		riskCheckJobConfig.setStartTime(_ctx.integerValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.StartTime"));
 		riskCheckJobConfig.setDaysOfWeek(_ctx.stringValue("DescribeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig.DaysOfWeek"));
 		describeSecurityCheckScheduleConfigResponse.setRiskCheckJobConfig(riskCheckJobConfig);
 	 

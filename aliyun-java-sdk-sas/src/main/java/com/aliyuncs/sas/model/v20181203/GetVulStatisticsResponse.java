@@ -26,11 +26,11 @@ public class GetVulStatisticsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer vulAsapSum;
-
 	private Integer vulLaterSum;
 
 	private Integer vulNntfSum;
+
+	private Integer vulAsapSum;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +38,6 @@ public class GetVulStatisticsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getVulAsapSum() {
-		return this.vulAsapSum;
-	}
-
-	public void setVulAsapSum(Integer vulAsapSum) {
-		this.vulAsapSum = vulAsapSum;
 	}
 
 	public Integer getVulLaterSum() {
@@ -62,6 +54,14 @@ public class GetVulStatisticsResponse extends AcsResponse {
 
 	public void setVulNntfSum(Integer vulNntfSum) {
 		this.vulNntfSum = vulNntfSum;
+	}
+
+	public Integer getVulAsapSum() {
+		return this.vulAsapSum;
+	}
+
+	public void setVulAsapSum(Integer vulAsapSum) {
+		this.vulAsapSum = vulAsapSum;
 	}
 
 	@Override

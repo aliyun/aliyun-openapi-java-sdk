@@ -32,17 +32,17 @@ public class DescribeWebLockConfigListResponseUnmarshaller {
 		List<ConfigInfo> configList = new ArrayList<ConfigInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebLockConfigListResponse.ConfigList.Length"); i++) {
 			ConfigInfo configInfo = new ConfigInfo();
-			configInfo.setId(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].Id"));
-			configInfo.setUuid(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].Uuid"));
-			configInfo.setDir(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].Dir"));
 			configInfo.setExclusiveDir(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].ExclusiveDir"));
-			configInfo.setExclusiveFileType(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].ExclusiveFileType"));
-			configInfo.setLocalBackupDir(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].LocalBackupDir"));
-			configInfo.setMode(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].Mode"));
+			configInfo.setUuid(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].Uuid"));
 			configInfo.setInclusiveFileType(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].InclusiveFileType"));
-			configInfo.setExclusiveFile(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].ExclusiveFile"));
-			configInfo.setInclusiveFile(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].InclusiveFile"));
 			configInfo.setDefenceMode(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].DefenceMode"));
+			configInfo.setExclusiveFileType(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].ExclusiveFileType"));
+			configInfo.setInclusiveFile(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].InclusiveFile"));
+			configInfo.setMode(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].Mode"));
+			configInfo.setDir(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].Dir"));
+			configInfo.setExclusiveFile(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].ExclusiveFile"));
+			configInfo.setId(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].Id"));
+			configInfo.setLocalBackupDir(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].LocalBackupDir"));
 
 			configList.add(configInfo);
 		}

@@ -54,6 +54,7 @@ public class DescribeImageVulListResponseUnmarshaller {
 			vulRecord.setAliasName(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].AliasName"));
 			vulRecord.setName(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Name"));
 			vulRecord.setLevel(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Level"));
+			vulRecord.setCanFix(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].CanFix"));
 
 			List<String> layers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImageVulListResponse.VulRecords["+ i +"].Layers.Length"); j++) {

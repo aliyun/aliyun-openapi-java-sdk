@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeWebLockConfigListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<ConfigInfo> configList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeWebLockConfigListResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ConfigInfo> getConfigList() {
@@ -57,34 +57,34 @@ public class DescribeWebLockConfigListResponse extends AcsResponse {
 
 	public static class ConfigInfo {
 
-		private String id;
+		private String exclusiveDir;
 
 		private String uuid;
 
-		private String dir;
-
-		private String exclusiveDir;
-
-		private String exclusiveFileType;
-
-		private String localBackupDir;
-
-		private String mode;
-
 		private String inclusiveFileType;
-
-		private String exclusiveFile;
-
-		private String inclusiveFile;
 
 		private String defenceMode;
 
-		public String getId() {
-			return this.id;
+		private String exclusiveFileType;
+
+		private String inclusiveFile;
+
+		private String mode;
+
+		private String dir;
+
+		private String exclusiveFile;
+
+		private String id;
+
+		private String localBackupDir;
+
+		public String getExclusiveDir() {
+			return this.exclusiveDir;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setExclusiveDir(String exclusiveDir) {
+			this.exclusiveDir = exclusiveDir;
 		}
 
 		public String getUuid() {
@@ -95,20 +95,20 @@ public class DescribeWebLockConfigListResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
-		public String getDir() {
-			return this.dir;
+		public String getInclusiveFileType() {
+			return this.inclusiveFileType;
 		}
 
-		public void setDir(String dir) {
-			this.dir = dir;
+		public void setInclusiveFileType(String inclusiveFileType) {
+			this.inclusiveFileType = inclusiveFileType;
 		}
 
-		public String getExclusiveDir() {
-			return this.exclusiveDir;
+		public String getDefenceMode() {
+			return this.defenceMode;
 		}
 
-		public void setExclusiveDir(String exclusiveDir) {
-			this.exclusiveDir = exclusiveDir;
+		public void setDefenceMode(String defenceMode) {
+			this.defenceMode = defenceMode;
 		}
 
 		public String getExclusiveFileType() {
@@ -119,12 +119,12 @@ public class DescribeWebLockConfigListResponse extends AcsResponse {
 			this.exclusiveFileType = exclusiveFileType;
 		}
 
-		public String getLocalBackupDir() {
-			return this.localBackupDir;
+		public String getInclusiveFile() {
+			return this.inclusiveFile;
 		}
 
-		public void setLocalBackupDir(String localBackupDir) {
-			this.localBackupDir = localBackupDir;
+		public void setInclusiveFile(String inclusiveFile) {
+			this.inclusiveFile = inclusiveFile;
 		}
 
 		public String getMode() {
@@ -135,12 +135,12 @@ public class DescribeWebLockConfigListResponse extends AcsResponse {
 			this.mode = mode;
 		}
 
-		public String getInclusiveFileType() {
-			return this.inclusiveFileType;
+		public String getDir() {
+			return this.dir;
 		}
 
-		public void setInclusiveFileType(String inclusiveFileType) {
-			this.inclusiveFileType = inclusiveFileType;
+		public void setDir(String dir) {
+			this.dir = dir;
 		}
 
 		public String getExclusiveFile() {
@@ -151,20 +151,20 @@ public class DescribeWebLockConfigListResponse extends AcsResponse {
 			this.exclusiveFile = exclusiveFile;
 		}
 
-		public String getInclusiveFile() {
-			return this.inclusiveFile;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setInclusiveFile(String inclusiveFile) {
-			this.inclusiveFile = inclusiveFile;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getDefenceMode() {
-			return this.defenceMode;
+		public String getLocalBackupDir() {
+			return this.localBackupDir;
 		}
 
-		public void setDefenceMode(String defenceMode) {
-			this.defenceMode = defenceMode;
+		public void setLocalBackupDir(String localBackupDir) {
+			this.localBackupDir = localBackupDir;
 		}
 	}
 

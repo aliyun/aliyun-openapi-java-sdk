@@ -38,9 +38,13 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 
 	private String from;
 
+	private Long id;
+
 	private String tacticId;
 
 	private String lang;
+
+	private String uniqueInfo;
 
 	private String groupId;
 
@@ -126,6 +130,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		}
 	}
 
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
+	}
+
 	public String getTacticId() {
 		return this.tacticId;
 	}
@@ -145,6 +160,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getUniqueInfo() {
+		return this.uniqueInfo;
+	}
+
+	public void setUniqueInfo(String uniqueInfo) {
+		this.uniqueInfo = uniqueInfo;
+		if(uniqueInfo != null){
+			putQueryParameter("UniqueInfo", uniqueInfo);
 		}
 	}
 

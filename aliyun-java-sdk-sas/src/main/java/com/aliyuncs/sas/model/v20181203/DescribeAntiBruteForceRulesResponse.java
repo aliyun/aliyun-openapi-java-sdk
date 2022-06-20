@@ -57,54 +57,38 @@ public class DescribeAntiBruteForceRulesResponse extends AcsResponse {
 
 	public static class AntiBruteForceRule {
 
-		private Long id;
+		private Integer machineCount;
 
-		private Boolean defaultRule;
-
-		private String name;
-
-		private Integer span;
+		private Boolean enableSmartRule;
 
 		private Integer failCount;
 
 		private Integer forbiddenTime;
 
-		private Boolean enableSmartRule;
+		private Integer span;
 
-		private Integer machineCount;
+		private Boolean defaultRule;
+
+		private String name;
+
+		private Long id;
 
 		private List<String> uuidList;
 
-		public Long getId() {
-			return this.id;
+		public Integer getMachineCount() {
+			return this.machineCount;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setMachineCount(Integer machineCount) {
+			this.machineCount = machineCount;
 		}
 
-		public Boolean getDefaultRule() {
-			return this.defaultRule;
+		public Boolean getEnableSmartRule() {
+			return this.enableSmartRule;
 		}
 
-		public void setDefaultRule(Boolean defaultRule) {
-			this.defaultRule = defaultRule;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getSpan() {
-			return this.span;
-		}
-
-		public void setSpan(Integer span) {
-			this.span = span;
+		public void setEnableSmartRule(Boolean enableSmartRule) {
+			this.enableSmartRule = enableSmartRule;
 		}
 
 		public Integer getFailCount() {
@@ -123,20 +107,36 @@ public class DescribeAntiBruteForceRulesResponse extends AcsResponse {
 			this.forbiddenTime = forbiddenTime;
 		}
 
-		public Boolean getEnableSmartRule() {
-			return this.enableSmartRule;
+		public Integer getSpan() {
+			return this.span;
 		}
 
-		public void setEnableSmartRule(Boolean enableSmartRule) {
-			this.enableSmartRule = enableSmartRule;
+		public void setSpan(Integer span) {
+			this.span = span;
 		}
 
-		public Integer getMachineCount() {
-			return this.machineCount;
+		public Boolean getDefaultRule() {
+			return this.defaultRule;
 		}
 
-		public void setMachineCount(Integer machineCount) {
-			this.machineCount = machineCount;
+		public void setDefaultRule(Boolean defaultRule) {
+			this.defaultRule = defaultRule;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<String> getUuidList() {
@@ -150,20 +150,20 @@ public class DescribeAntiBruteForceRulesResponse extends AcsResponse {
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -182,12 +182,12 @@ public class DescribeAntiBruteForceRulesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScanTaskProgressResponse extends AcsResponse {
 
+	private String targetInfo;
+
 	private String requestId;
 
 	private String scanTaskProgress;
 
-	private String targetInfo;
+	public String getTargetInfo() {
+		return this.targetInfo;
+	}
+
+	public void setTargetInfo(String targetInfo) {
+		this.targetInfo = targetInfo;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeScanTaskProgressResponse extends AcsResponse {
 
 	public void setScanTaskProgress(String scanTaskProgress) {
 		this.scanTaskProgress = scanTaskProgress;
-	}
-
-	public String getTargetInfo() {
-		return this.targetInfo;
-	}
-
-	public void setTargetInfo(String targetInfo) {
-		this.targetInfo = targetInfo;
 	}
 
 	@Override

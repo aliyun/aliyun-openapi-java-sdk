@@ -29,7 +29,7 @@ public class QueryGroupedSecurityEventMarkMissListRequest extends RpcAcsRequest<
 
 	private String eventName;
 
-	private Long maxId;
+	private String disposalWay;
 
 	private String sourceIp;
 
@@ -71,14 +71,14 @@ public class QueryGroupedSecurityEventMarkMissListRequest extends RpcAcsRequest<
 		}
 	}
 
-	public Long getMaxId() {
-		return this.maxId;
+	public String getDisposalWay() {
+		return this.disposalWay;
 	}
 
-	public void setMaxId(Long maxId) {
-		this.maxId = maxId;
-		if(maxId != null){
-			putBodyParameter("MaxId", maxId.toString());
+	public void setDisposalWay(String disposalWay) {
+		this.disposalWay = disposalWay;
+		if(disposalWay != null){
+			putQueryParameter("DisposalWay", disposalWay);
 		}
 	}
 

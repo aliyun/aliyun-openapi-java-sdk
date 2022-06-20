@@ -30,10 +30,10 @@ public class DescribePropertyProcItemResponseUnmarshaller {
 		describePropertyProcItemResponse.setRequestId(_ctx.stringValue("DescribePropertyProcItemResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribePropertyProcItemResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertyProcItemResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribePropertyProcItemResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribePropertyProcItemResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribePropertyProcItemResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribePropertyProcItemResponse.PageInfo.Count"));
 		describePropertyProcItemResponse.setPageInfo(pageInfo);
 
 		List<PropertyProcItem> propertyItems = new ArrayList<PropertyProcItem>();

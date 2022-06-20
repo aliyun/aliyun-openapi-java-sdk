@@ -57,44 +57,28 @@ public class DescribeExposedStatisticsDetailResponse extends AcsResponse {
 
 	public static class StatisticsDetail {
 
-		private String exposureComponent;
-
-		private String exposureType;
-
-		private String exposureTypeId;
+		private String exposureIp;
 
 		private String exposurePort;
-
-		private String exposureIp;
 
 		private String exposureTypeInstanceName;
 
 		private Integer exposedCount;
 
+		private String exposureType;
+
 		private String regionId;
 
-		public String getExposureComponent() {
-			return this.exposureComponent;
+		private String exposureComponent;
+
+		private String exposureTypeId;
+
+		public String getExposureIp() {
+			return this.exposureIp;
 		}
 
-		public void setExposureComponent(String exposureComponent) {
-			this.exposureComponent = exposureComponent;
-		}
-
-		public String getExposureType() {
-			return this.exposureType;
-		}
-
-		public void setExposureType(String exposureType) {
-			this.exposureType = exposureType;
-		}
-
-		public String getExposureTypeId() {
-			return this.exposureTypeId;
-		}
-
-		public void setExposureTypeId(String exposureTypeId) {
-			this.exposureTypeId = exposureTypeId;
+		public void setExposureIp(String exposureIp) {
+			this.exposureIp = exposureIp;
 		}
 
 		public String getExposurePort() {
@@ -103,14 +87,6 @@ public class DescribeExposedStatisticsDetailResponse extends AcsResponse {
 
 		public void setExposurePort(String exposurePort) {
 			this.exposurePort = exposurePort;
-		}
-
-		public String getExposureIp() {
-			return this.exposureIp;
-		}
-
-		public void setExposureIp(String exposureIp) {
-			this.exposureIp = exposureIp;
 		}
 
 		public String getExposureTypeInstanceName() {
@@ -129,6 +105,14 @@ public class DescribeExposedStatisticsDetailResponse extends AcsResponse {
 			this.exposedCount = exposedCount;
 		}
 
+		public String getExposureType() {
+			return this.exposureType;
+		}
+
+		public void setExposureType(String exposureType) {
+			this.exposureType = exposureType;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -136,24 +120,40 @@ public class DescribeExposedStatisticsDetailResponse extends AcsResponse {
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
+
+		public String getExposureComponent() {
+			return this.exposureComponent;
+		}
+
+		public void setExposureComponent(String exposureComponent) {
+			this.exposureComponent = exposureComponent;
+		}
+
+		public String getExposureTypeId() {
+			return this.exposureTypeId;
+		}
+
+		public void setExposureTypeId(String exposureTypeId) {
+			this.exposureTypeId = exposureTypeId;
+		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -172,12 +172,12 @@ public class DescribeExposedStatisticsDetailResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

@@ -15,16 +15,18 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.StartImageVulScanResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.PublicPreCheckImageScanTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartImageVulScanResponse extends AcsResponse {
+public class PublicPreCheckImageScanTaskResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +36,40 @@ public class StartImageVulScanResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Integer scanImageCount;
+
+		private Integer needAuthCount;
+
+		public Integer getScanImageCount() {
+			return this.scanImageCount;
+		}
+
+		public void setScanImageCount(Integer scanImageCount) {
+			this.scanImageCount = scanImageCount;
+		}
+
+		public Integer getNeedAuthCount() {
+			return this.needAuthCount;
+		}
+
+		public void setNeedAuthCount(Integer needAuthCount) {
+			this.needAuthCount = needAuthCount;
+		}
+	}
+
 	@Override
-	public StartImageVulScanResponse getInstance(UnmarshallerContext context) {
-		return	StartImageVulScanResponseUnmarshaller.unmarshall(this, context);
+	public PublicPreCheckImageScanTaskResponse getInstance(UnmarshallerContext context) {
+		return	PublicPreCheckImageScanTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

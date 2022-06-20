@@ -33,8 +33,8 @@ public class DescribeBackupClientsResponseUnmarshaller {
 			BackupMachineDTO backupMachineDTO = new BackupMachineDTO();
 			backupMachineDTO.setUuid(_ctx.stringValue("DescribeBackupClientsResponse.Clients["+ i +"].Uuid"));
 			backupMachineDTO.setInstanceId(_ctx.stringValue("DescribeBackupClientsResponse.Clients["+ i +"].InstanceId"));
-			backupMachineDTO.setClientId(_ctx.stringValue("DescribeBackupClientsResponse.Clients["+ i +"].ClientId"));
 			backupMachineDTO.setClientStatus(_ctx.stringValue("DescribeBackupClientsResponse.Clients["+ i +"].ClientStatus"));
+			backupMachineDTO.setClientId(_ctx.stringValue("DescribeBackupClientsResponse.Clients["+ i +"].ClientId"));
 
 			clients.add(backupMachineDTO);
 		}

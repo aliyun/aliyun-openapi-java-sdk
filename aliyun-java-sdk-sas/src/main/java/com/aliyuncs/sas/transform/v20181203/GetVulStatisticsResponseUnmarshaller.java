@@ -23,9 +23,9 @@ public class GetVulStatisticsResponseUnmarshaller {
 	public static GetVulStatisticsResponse unmarshall(GetVulStatisticsResponse getVulStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		getVulStatisticsResponse.setRequestId(_ctx.stringValue("GetVulStatisticsResponse.RequestId"));
-		getVulStatisticsResponse.setVulAsapSum(_ctx.integerValue("GetVulStatisticsResponse.VulAsapSum"));
 		getVulStatisticsResponse.setVulLaterSum(_ctx.integerValue("GetVulStatisticsResponse.VulLaterSum"));
 		getVulStatisticsResponse.setVulNntfSum(_ctx.integerValue("GetVulStatisticsResponse.VulNntfSum"));
+		getVulStatisticsResponse.setVulAsapSum(_ctx.integerValue("GetVulStatisticsResponse.VulAsapSum"));
 	 
 	 	return getVulStatisticsResponse;
 	}

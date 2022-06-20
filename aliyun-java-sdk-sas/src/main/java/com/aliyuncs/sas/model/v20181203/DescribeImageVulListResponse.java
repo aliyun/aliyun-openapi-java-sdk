@@ -113,6 +113,8 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 		private String level;
 
+		private String canFix;
+
 		private List<String> layers;
 
 		private ExtendContentJson extendContentJson;
@@ -259,6 +261,14 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 		public void setLevel(String level) {
 			this.level = level;
+		}
+
+		public String getCanFix() {
+			return this.canFix;
+		}
+
+		public void setCanFix(String canFix) {
+			this.canFix = canFix;
 		}
 
 		public List<String> getLayers() {

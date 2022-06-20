@@ -31,9 +31,9 @@ public class DescribeUserBackupMachinesResponseUnmarshaller {
 		List<SimpleBackupMachine> machines = new ArrayList<SimpleBackupMachine>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserBackupMachinesResponse.Machines.Length"); i++) {
 			SimpleBackupMachine simpleBackupMachine = new SimpleBackupMachine();
-			simpleBackupMachine.setId(_ctx.longValue("DescribeUserBackupMachinesResponse.Machines["+ i +"].Id"));
 			simpleBackupMachine.setUuid(_ctx.stringValue("DescribeUserBackupMachinesResponse.Machines["+ i +"].Uuid"));
 			simpleBackupMachine.setPolicyName(_ctx.stringValue("DescribeUserBackupMachinesResponse.Machines["+ i +"].PolicyName"));
+			simpleBackupMachine.setId(_ctx.longValue("DescribeUserBackupMachinesResponse.Machines["+ i +"].Id"));
 
 			machines.add(simpleBackupMachine);
 		}

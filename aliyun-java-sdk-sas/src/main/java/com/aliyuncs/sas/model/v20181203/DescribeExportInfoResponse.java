@@ -24,62 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExportInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long id;
-
-	private String fileName;
-
-	private Integer currentCount;
-
-	private Integer totalCount;
+	private String link;
 
 	private Integer progress;
 
-	private String exportStatus;
+	private String requestId;
+
+	private Integer currentCount;
 
 	private String message;
 
-	private String link;
+	private String fileName;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Integer totalCount;
+
+	private String exportStatus;
+
+	private Long id;
+
+	public String getLink() {
+		return this.link;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
-
-	public Integer getCurrentCount() {
-		return this.currentCount;
-	}
-
-	public void setCurrentCount(Integer currentCount) {
-		this.currentCount = currentCount;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setLink(String link) {
+		this.link = link;
 	}
 
 	public Integer getProgress() {
@@ -90,12 +58,20 @@ public class DescribeExportInfoResponse extends AcsResponse {
 		this.progress = progress;
 	}
 
-	public String getExportStatus() {
-		return this.exportStatus;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setExportStatus(String exportStatus) {
-		this.exportStatus = exportStatus;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getCurrentCount() {
+		return this.currentCount;
+	}
+
+	public void setCurrentCount(Integer currentCount) {
+		this.currentCount = currentCount;
 	}
 
 	public String getMessage() {
@@ -106,12 +82,36 @@ public class DescribeExportInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getLink() {
-		return this.link;
+	public String getFileName() {
+		return this.fileName;
 	}
 
-	public void setLink(String link) {
-		this.link = link;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getExportStatus() {
+		return this.exportStatus;
+	}
+
+	public void setExportStatus(String exportStatus) {
+		this.exportStatus = exportStatus;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@Override

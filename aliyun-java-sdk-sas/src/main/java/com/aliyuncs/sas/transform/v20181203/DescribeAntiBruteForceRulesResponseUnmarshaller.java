@@ -30,23 +30,23 @@ public class DescribeAntiBruteForceRulesResponseUnmarshaller {
 		describeAntiBruteForceRulesResponse.setRequestId(_ctx.stringValue("DescribeAntiBruteForceRulesResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.PageInfo.Count"));
 		describeAntiBruteForceRulesResponse.setPageInfo(pageInfo);
 
 		List<AntiBruteForceRule> rules = new ArrayList<AntiBruteForceRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAntiBruteForceRulesResponse.Rules.Length"); i++) {
 			AntiBruteForceRule antiBruteForceRule = new AntiBruteForceRule();
-			antiBruteForceRule.setId(_ctx.longValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].Id"));
-			antiBruteForceRule.setDefaultRule(_ctx.booleanValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].DefaultRule"));
-			antiBruteForceRule.setName(_ctx.stringValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].Name"));
-			antiBruteForceRule.setSpan(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].Span"));
+			antiBruteForceRule.setMachineCount(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].MachineCount"));
+			antiBruteForceRule.setEnableSmartRule(_ctx.booleanValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].EnableSmartRule"));
 			antiBruteForceRule.setFailCount(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].FailCount"));
 			antiBruteForceRule.setForbiddenTime(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].ForbiddenTime"));
-			antiBruteForceRule.setEnableSmartRule(_ctx.booleanValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].EnableSmartRule"));
-			antiBruteForceRule.setMachineCount(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].MachineCount"));
+			antiBruteForceRule.setSpan(_ctx.integerValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].Span"));
+			antiBruteForceRule.setDefaultRule(_ctx.booleanValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].DefaultRule"));
+			antiBruteForceRule.setName(_ctx.stringValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].Name"));
+			antiBruteForceRule.setId(_ctx.longValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].Id"));
 
 			List<String> uuidList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAntiBruteForceRulesResponse.Rules["+ i +"].UuidList.Length"); j++) {

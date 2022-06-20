@@ -155,6 +155,12 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		private String level;
 
+		private Boolean bind;
+
+		private String osName;
+
+		private String authVersion;
+
 		private ExtendContentJson extendContentJson;
 
 		private ProcessInfo processInfo;
@@ -469,6 +475,30 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		public void setLevel(String level) {
 			this.level = level;
+		}
+
+		public Boolean getBind() {
+			return this.bind;
+		}
+
+		public void setBind(Boolean bind) {
+			this.bind = bind;
+		}
+
+		public String getOsName() {
+			return this.osName;
+		}
+
+		public void setOsName(String osName) {
+			this.osName = osName;
+		}
+
+		public String getAuthVersion() {
+			return this.authVersion;
+		}
+
+		public void setAuthVersion(String authVersion) {
+			this.authVersion = authVersion;
 		}
 
 		public ExtendContentJson getExtendContentJson() {

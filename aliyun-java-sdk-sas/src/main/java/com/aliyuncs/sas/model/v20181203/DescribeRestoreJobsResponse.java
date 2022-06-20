@@ -57,148 +57,92 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 
 	public static class RestoreJob {
 
-		private Long createdTime;
-
-		private Long updatedTime;
-
-		private String uuid;
-
-		private String message;
-
-		private String restoreId;
-
-		private String clientId;
-
-		private String vaultId;
-
-		private String snapshotId;
+		private String status;
 
 		private String snapshotHash;
 
-		private String source;
-
-		private String target;
-
-		private String status;
-
-		private String restoreType;
-
-		private Long speed;
-
-		private Long completeTime;
-
-		private Long eta;
-
-		private Long errorCount;
-
-		private Long bytesDone;
-
-		private Long bytesTotal;
-
-		private Long itemsDone;
-
-		private Long itemsTotal;
-
-		private Long actualBytes;
-
-		private Integer percentage;
-
-		private String errorType;
-
 		private String sourceClientId;
-
-		private String snapshotVersion;
-
-		private String instanceName;
-
-		private String internetIp;
-
-		private String intranetIp;
 
 		private String errorFileUrl;
 
-		private String requestId;
+		private String includes;
 
 		private String restoreName;
 
-		private String instanceId;
+		private String internetIp;
 
-		private Long duration;
+		private String vaultId;
 
-		private String exitCode;
+		private Long actualBytes;
 
-		private String errorFile;
+		private String message;
 
-		private String gmtCreate;
+		private Integer percentage;
 
 		private String gmtModified;
 
+		private String restoreType;
+
+		private String exitCode;
+
+		private String clientId;
+
+		private Long itemsDone;
+
+		private Long bytesTotal;
+
+		private String requestId;
+
+		private String instanceName;
+
+		private Long completeTime;
+
+		private String errorType;
+
+		private String snapshotVersion;
+
+		private String target;
+
+		private Long createdTime;
+
+		private String instanceId;
+
+		private String source;
+
+		private String intranetIp;
+
+		private String errorFile;
+
+		private String uuid;
+
 		private String excludes;
 
-		private String includes;
+		private Long speed;
 
-		public Long getCreatedTime() {
-			return this.createdTime;
+		private String snapshotId;
+
+		private Long updatedTime;
+
+		private String restoreId;
+
+		private String gmtCreate;
+
+		private Long eta;
+
+		private Long duration;
+
+		private Long errorCount;
+
+		private Long itemsTotal;
+
+		private Long bytesDone;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public Long getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(Long updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public String getRestoreId() {
-			return this.restoreId;
-		}
-
-		public void setRestoreId(String restoreId) {
-			this.restoreId = restoreId;
-		}
-
-		public String getClientId() {
-			return this.clientId;
-		}
-
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
-		}
-
-		public String getVaultId() {
-			return this.vaultId;
-		}
-
-		public void setVaultId(String vaultId) {
-			this.vaultId = vaultId;
-		}
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getSnapshotHash() {
@@ -209,164 +153,12 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.snapshotHash = snapshotHash;
 		}
 
-		public String getSource() {
-			return this.source;
-		}
-
-		public void setSource(String source) {
-			this.source = source;
-		}
-
-		public String getTarget() {
-			return this.target;
-		}
-
-		public void setTarget(String target) {
-			this.target = target;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getRestoreType() {
-			return this.restoreType;
-		}
-
-		public void setRestoreType(String restoreType) {
-			this.restoreType = restoreType;
-		}
-
-		public Long getSpeed() {
-			return this.speed;
-		}
-
-		public void setSpeed(Long speed) {
-			this.speed = speed;
-		}
-
-		public Long getCompleteTime() {
-			return this.completeTime;
-		}
-
-		public void setCompleteTime(Long completeTime) {
-			this.completeTime = completeTime;
-		}
-
-		public Long getEta() {
-			return this.eta;
-		}
-
-		public void setEta(Long eta) {
-			this.eta = eta;
-		}
-
-		public Long getErrorCount() {
-			return this.errorCount;
-		}
-
-		public void setErrorCount(Long errorCount) {
-			this.errorCount = errorCount;
-		}
-
-		public Long getBytesDone() {
-			return this.bytesDone;
-		}
-
-		public void setBytesDone(Long bytesDone) {
-			this.bytesDone = bytesDone;
-		}
-
-		public Long getBytesTotal() {
-			return this.bytesTotal;
-		}
-
-		public void setBytesTotal(Long bytesTotal) {
-			this.bytesTotal = bytesTotal;
-		}
-
-		public Long getItemsDone() {
-			return this.itemsDone;
-		}
-
-		public void setItemsDone(Long itemsDone) {
-			this.itemsDone = itemsDone;
-		}
-
-		public Long getItemsTotal() {
-			return this.itemsTotal;
-		}
-
-		public void setItemsTotal(Long itemsTotal) {
-			this.itemsTotal = itemsTotal;
-		}
-
-		public Long getActualBytes() {
-			return this.actualBytes;
-		}
-
-		public void setActualBytes(Long actualBytes) {
-			this.actualBytes = actualBytes;
-		}
-
-		public Integer getPercentage() {
-			return this.percentage;
-		}
-
-		public void setPercentage(Integer percentage) {
-			this.percentage = percentage;
-		}
-
-		public String getErrorType() {
-			return this.errorType;
-		}
-
-		public void setErrorType(String errorType) {
-			this.errorType = errorType;
-		}
-
 		public String getSourceClientId() {
 			return this.sourceClientId;
 		}
 
 		public void setSourceClientId(String sourceClientId) {
 			this.sourceClientId = sourceClientId;
-		}
-
-		public String getSnapshotVersion() {
-			return this.snapshotVersion;
-		}
-
-		public void setSnapshotVersion(String snapshotVersion) {
-			this.snapshotVersion = snapshotVersion;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
 		}
 
 		public String getErrorFileUrl() {
@@ -377,12 +169,12 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.errorFileUrl = errorFileUrl;
 		}
 
-		public String getRequestId() {
-			return this.requestId;
+		public String getIncludes() {
+			return this.includes;
 		}
 
-		public void setRequestId(String requestId) {
-			this.requestId = requestId;
+		public void setIncludes(String includes) {
+			this.includes = includes;
 		}
 
 		public String getRestoreName() {
@@ -393,44 +185,44 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.restoreName = restoreName;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getInternetIp() {
+			return this.internetIp;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
-		public Long getDuration() {
-			return this.duration;
+		public String getVaultId() {
+			return this.vaultId;
 		}
 
-		public void setDuration(Long duration) {
-			this.duration = duration;
+		public void setVaultId(String vaultId) {
+			this.vaultId = vaultId;
 		}
 
-		public String getExitCode() {
-			return this.exitCode;
+		public Long getActualBytes() {
+			return this.actualBytes;
 		}
 
-		public void setExitCode(String exitCode) {
-			this.exitCode = exitCode;
+		public void setActualBytes(Long actualBytes) {
+			this.actualBytes = actualBytes;
 		}
 
-		public String getErrorFile() {
-			return this.errorFile;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setErrorFile(String errorFile) {
-			this.errorFile = errorFile;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public Integer getPercentage() {
+			return this.percentage;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setPercentage(Integer percentage) {
+			this.percentage = percentage;
 		}
 
 		public String getGmtModified() {
@@ -441,6 +233,142 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public String getRestoreType() {
+			return this.restoreType;
+		}
+
+		public void setRestoreType(String restoreType) {
+			this.restoreType = restoreType;
+		}
+
+		public String getExitCode() {
+			return this.exitCode;
+		}
+
+		public void setExitCode(String exitCode) {
+			this.exitCode = exitCode;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
+		}
+
+		public Long getItemsDone() {
+			return this.itemsDone;
+		}
+
+		public void setItemsDone(Long itemsDone) {
+			this.itemsDone = itemsDone;
+		}
+
+		public Long getBytesTotal() {
+			return this.bytesTotal;
+		}
+
+		public void setBytesTotal(Long bytesTotal) {
+			this.bytesTotal = bytesTotal;
+		}
+
+		public String getRequestId() {
+			return this.requestId;
+		}
+
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public Long getCompleteTime() {
+			return this.completeTime;
+		}
+
+		public void setCompleteTime(Long completeTime) {
+			this.completeTime = completeTime;
+		}
+
+		public String getErrorType() {
+			return this.errorType;
+		}
+
+		public void setErrorType(String errorType) {
+			this.errorType = errorType;
+		}
+
+		public String getSnapshotVersion() {
+			return this.snapshotVersion;
+		}
+
+		public void setSnapshotVersion(String snapshotVersion) {
+			this.snapshotVersion = snapshotVersion;
+		}
+
+		public String getTarget() {
+			return this.target;
+		}
+
+		public void setTarget(String target) {
+			this.target = target;
+		}
+
+		public Long getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
 		public String getExcludes() {
 			return this.excludes;
 		}
@@ -449,31 +377,103 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.excludes = excludes;
 		}
 
-		public String getIncludes() {
-			return this.includes;
+		public Long getSpeed() {
+			return this.speed;
 		}
 
-		public void setIncludes(String includes) {
-			this.includes = includes;
+		public void setSpeed(Long speed) {
+			this.speed = speed;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public Long getUpdatedTime() {
+			return this.updatedTime;
+		}
+
+		public void setUpdatedTime(Long updatedTime) {
+			this.updatedTime = updatedTime;
+		}
+
+		public String getRestoreId() {
+			return this.restoreId;
+		}
+
+		public void setRestoreId(String restoreId) {
+			this.restoreId = restoreId;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Long getEta() {
+			return this.eta;
+		}
+
+		public void setEta(Long eta) {
+			this.eta = eta;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
+		}
+
+		public Long getErrorCount() {
+			return this.errorCount;
+		}
+
+		public void setErrorCount(Long errorCount) {
+			this.errorCount = errorCount;
+		}
+
+		public Long getItemsTotal() {
+			return this.itemsTotal;
+		}
+
+		public void setItemsTotal(Long itemsTotal) {
+			this.itemsTotal = itemsTotal;
+		}
+
+		public Long getBytesDone() {
+			return this.bytesDone;
+		}
+
+		public void setBytesDone(Long bytesDone) {
+			this.bytesDone = bytesDone;
 		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -492,12 +492,12 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

@@ -43,6 +43,7 @@ public class DescribeInstanceStatisticsResponseUnmarshaller {
 			dataItem.setVul(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Vul"));
 			dataItem.setHealth(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].Health"));
 			dataItem.setSysNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].SysNum"));
+			dataItem.setWeakPWNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].WeakPWNum"));
 
 			data.add(dataItem);
 		}

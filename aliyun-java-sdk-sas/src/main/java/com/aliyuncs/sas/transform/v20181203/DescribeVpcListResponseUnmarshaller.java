@@ -32,13 +32,13 @@ public class DescribeVpcListResponseUnmarshaller {
 		List<Vpc> vpcList = new ArrayList<Vpc>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcListResponse.VpcList.Length"); i++) {
 			Vpc vpc = new Vpc();
-			vpc.setInstanceId(_ctx.stringValue("DescribeVpcListResponse.VpcList["+ i +"].InstanceId"));
-			vpc.setMiddleStatus(_ctx.integerValue("DescribeVpcListResponse.VpcList["+ i +"].MiddleStatus"));
-			vpc.setInstanceName(_ctx.stringValue("DescribeVpcListResponse.VpcList["+ i +"].InstanceName"));
-			vpc.setRegionId(_ctx.stringValue("DescribeVpcListResponse.VpcList["+ i +"].RegionId"));
-			vpc.setInstanceDesc(_ctx.stringValue("DescribeVpcListResponse.VpcList["+ i +"].InstanceDesc"));
-			vpc.setEcsCount(_ctx.integerValue("DescribeVpcListResponse.VpcList["+ i +"].EcsCount"));
 			vpc.setStatus(_ctx.integerValue("DescribeVpcListResponse.VpcList["+ i +"].Status"));
+			vpc.setInstanceDesc(_ctx.stringValue("DescribeVpcListResponse.VpcList["+ i +"].InstanceDesc"));
+			vpc.setInstanceName(_ctx.stringValue("DescribeVpcListResponse.VpcList["+ i +"].InstanceName"));
+			vpc.setEcsCount(_ctx.integerValue("DescribeVpcListResponse.VpcList["+ i +"].EcsCount"));
+			vpc.setMiddleStatus(_ctx.integerValue("DescribeVpcListResponse.VpcList["+ i +"].MiddleStatus"));
+			vpc.setInstanceId(_ctx.stringValue("DescribeVpcListResponse.VpcList["+ i +"].InstanceId"));
+			vpc.setRegionId(_ctx.stringValue("DescribeVpcListResponse.VpcList["+ i +"].RegionId"));
 
 			vpcList.add(vpc);
 		}

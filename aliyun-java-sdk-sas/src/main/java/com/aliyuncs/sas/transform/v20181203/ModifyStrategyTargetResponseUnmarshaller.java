@@ -14,15 +14,16 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
-import com.aliyuncs.sas.model.v20181203.GetOpaDefenceDetailResponse;
+import com.aliyuncs.sas.model.v20181203.ModifyStrategyTargetResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetOpaDefenceDetailResponseUnmarshaller {
+public class ModifyStrategyTargetResponseUnmarshaller {
 
-	public static GetOpaDefenceDetailResponse unmarshall(GetOpaDefenceDetailResponse getOpaDefenceDetailResponse, UnmarshallerContext _ctx) {
+	public static ModifyStrategyTargetResponse unmarshall(ModifyStrategyTargetResponse modifyStrategyTargetResponse, UnmarshallerContext _ctx) {
 		
+		modifyStrategyTargetResponse.setRequestId(_ctx.stringValue("ModifyStrategyTargetResponse.RequestId"));
 	 
-	 	return getOpaDefenceDetailResponse;
+	 	return modifyStrategyTargetResponse;
 	}
 }

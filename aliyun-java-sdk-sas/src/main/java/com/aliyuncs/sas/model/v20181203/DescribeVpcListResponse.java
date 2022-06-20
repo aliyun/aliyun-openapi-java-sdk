@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVpcListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer count;
 
+	private String requestId;
+
 	private List<Vpc> vpcList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCount() {
 		return this.count;
@@ -45,6 +37,14 @@ public class DescribeVpcListResponse extends AcsResponse {
 
 	public void setCount(Integer count) {
 		this.count = count;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Vpc> getVpcList() {
@@ -57,50 +57,26 @@ public class DescribeVpcListResponse extends AcsResponse {
 
 	public static class Vpc {
 
-		private String instanceId;
-
-		private Integer middleStatus;
-
-		private String instanceName;
-
-		private String regionId;
+		private Integer status;
 
 		private String instanceDesc;
 
+		private String instanceName;
+
 		private Integer ecsCount;
 
-		private Integer status;
+		private Integer middleStatus;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private String instanceId;
+
+		private String regionId;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Integer getMiddleStatus() {
-			return this.middleStatus;
-		}
-
-		public void setMiddleStatus(Integer middleStatus) {
-			this.middleStatus = middleStatus;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getInstanceDesc() {
@@ -111,6 +87,14 @@ public class DescribeVpcListResponse extends AcsResponse {
 			this.instanceDesc = instanceDesc;
 		}
 
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
 		public Integer getEcsCount() {
 			return this.ecsCount;
 		}
@@ -119,12 +103,28 @@ public class DescribeVpcListResponse extends AcsResponse {
 			this.ecsCount = ecsCount;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Integer getMiddleStatus() {
+			return this.middleStatus;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setMiddleStatus(Integer middleStatus) {
+			this.middleStatus = middleStatus;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -15,24 +15,32 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.DeleteVulAutoRepairConfigResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.ModifyStrategyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteVulAutoRepairConfigResponse extends AcsResponse {
+public class ModifyStrategyResponse extends AcsResponse {
+
+	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private Integer totalCount;
+
 	private Boolean success;
 
-	private String code;
+	private Result result;
 
-	private String message;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
 
-	private Integer httpStatusCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,6 +48,14 @@ public class DeleteVulAutoRepairConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public Boolean getSuccess() {
@@ -50,33 +66,30 @@ public class DeleteVulAutoRepairConfigResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Result getResult() {
+		return this.result;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setResult(Result result) {
+		this.result = result;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
+	public static class Result {
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+		private Integer strategyId;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
+		public Integer getStrategyId() {
+			return this.strategyId;
+		}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+		public void setStrategyId(Integer strategyId) {
+			this.strategyId = strategyId;
+		}
 	}
 
 	@Override
-	public DeleteVulAutoRepairConfigResponse getInstance(UnmarshallerContext context) {
-		return	DeleteVulAutoRepairConfigResponseUnmarshaller.unmarshall(this, context);
+	public ModifyStrategyResponse getInstance(UnmarshallerContext context) {
+		return	ModifyStrategyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

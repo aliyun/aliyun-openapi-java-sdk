@@ -46,30 +46,30 @@ public class PublicSyncAndCreateImageScanTaskResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String status;
+		private String taskId;
 
 		private Integer totalCount;
 
-		private Integer progress;
-
-		private String taskId;
+		private Integer finishCount;
 
 		private Long collectTime;
 
-		private Integer finishCount;
-
 		private Long execTime;
+
+		private String status;
+
+		private Integer progress;
 
 		private String result;
 
 		private Boolean canCreate;
 
-		public String getStatus() {
-			return this.status;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public Integer getTotalCount() {
@@ -80,20 +80,12 @@ public class PublicSyncAndCreateImageScanTaskResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getProgress() {
-			return this.progress;
+		public Integer getFinishCount() {
+			return this.finishCount;
 		}
 
-		public void setProgress(Integer progress) {
-			this.progress = progress;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
+		public void setFinishCount(Integer finishCount) {
+			this.finishCount = finishCount;
 		}
 
 		public Long getCollectTime() {
@@ -104,20 +96,28 @@ public class PublicSyncAndCreateImageScanTaskResponse extends AcsResponse {
 			this.collectTime = collectTime;
 		}
 
-		public Integer getFinishCount() {
-			return this.finishCount;
-		}
-
-		public void setFinishCount(Integer finishCount) {
-			this.finishCount = finishCount;
-		}
-
 		public Long getExecTime() {
 			return this.execTime;
 		}
 
 		public void setExecTime(Long execTime) {
 			this.execTime = execTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
 		}
 
 		public String getResult() {

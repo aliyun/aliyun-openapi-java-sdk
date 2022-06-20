@@ -30,23 +30,23 @@ public class DescribeExposedStatisticsDetailResponseUnmarshaller {
 		describeExposedStatisticsDetailResponse.setRequestId(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeExposedStatisticsDetailResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeExposedStatisticsDetailResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeExposedStatisticsDetailResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeExposedStatisticsDetailResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeExposedStatisticsDetailResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeExposedStatisticsDetailResponse.PageInfo.Count"));
 		describeExposedStatisticsDetailResponse.setPageInfo(pageInfo);
 
 		List<StatisticsDetail> statisticsDetails = new ArrayList<StatisticsDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails.Length"); i++) {
 			StatisticsDetail statisticsDetail = new StatisticsDetail();
-			statisticsDetail.setExposureComponent(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureComponent"));
-			statisticsDetail.setExposureType(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureType"));
-			statisticsDetail.setExposureTypeId(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureTypeId"));
-			statisticsDetail.setExposurePort(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposurePort"));
 			statisticsDetail.setExposureIp(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureIp"));
+			statisticsDetail.setExposurePort(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposurePort"));
 			statisticsDetail.setExposureTypeInstanceName(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureTypeInstanceName"));
 			statisticsDetail.setExposedCount(_ctx.integerValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposedCount"));
+			statisticsDetail.setExposureType(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureType"));
 			statisticsDetail.setRegionId(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].RegionId"));
+			statisticsDetail.setExposureComponent(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureComponent"));
+			statisticsDetail.setExposureTypeId(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureTypeId"));
 
 			statisticsDetails.add(statisticsDetail);
 		}

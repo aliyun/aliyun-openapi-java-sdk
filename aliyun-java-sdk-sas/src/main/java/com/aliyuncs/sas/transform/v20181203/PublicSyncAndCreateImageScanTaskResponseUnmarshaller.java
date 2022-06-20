@@ -26,13 +26,13 @@ public class PublicSyncAndCreateImageScanTaskResponseUnmarshaller {
 		publicSyncAndCreateImageScanTaskResponse.setRequestId(_ctx.stringValue("PublicSyncAndCreateImageScanTaskResponse.RequestId"));
 
 		Data data = new Data();
-		data.setStatus(_ctx.stringValue("PublicSyncAndCreateImageScanTaskResponse.Data.Status"));
-		data.setTotalCount(_ctx.integerValue("PublicSyncAndCreateImageScanTaskResponse.Data.TotalCount"));
-		data.setProgress(_ctx.integerValue("PublicSyncAndCreateImageScanTaskResponse.Data.Progress"));
 		data.setTaskId(_ctx.stringValue("PublicSyncAndCreateImageScanTaskResponse.Data.TaskId"));
-		data.setCollectTime(_ctx.longValue("PublicSyncAndCreateImageScanTaskResponse.Data.CollectTime"));
+		data.setTotalCount(_ctx.integerValue("PublicSyncAndCreateImageScanTaskResponse.Data.TotalCount"));
 		data.setFinishCount(_ctx.integerValue("PublicSyncAndCreateImageScanTaskResponse.Data.FinishCount"));
+		data.setCollectTime(_ctx.longValue("PublicSyncAndCreateImageScanTaskResponse.Data.CollectTime"));
 		data.setExecTime(_ctx.longValue("PublicSyncAndCreateImageScanTaskResponse.Data.ExecTime"));
+		data.setStatus(_ctx.stringValue("PublicSyncAndCreateImageScanTaskResponse.Data.Status"));
+		data.setProgress(_ctx.integerValue("PublicSyncAndCreateImageScanTaskResponse.Data.Progress"));
 		data.setResult(_ctx.stringValue("PublicSyncAndCreateImageScanTaskResponse.Data.Result"));
 		data.setCanCreate(_ctx.booleanValue("PublicSyncAndCreateImageScanTaskResponse.Data.CanCreate"));
 		publicSyncAndCreateImageScanTaskResponse.setData(data);

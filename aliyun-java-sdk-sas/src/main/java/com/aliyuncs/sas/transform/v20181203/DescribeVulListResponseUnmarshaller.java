@@ -79,6 +79,9 @@ public class DescribeVulListResponseUnmarshaller {
 			vulRecord.setK8sNodeName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].K8sNodeName"));
 			vulRecord.setContainerName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ContainerName"));
 			vulRecord.setLevel(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Level"));
+			vulRecord.setBind(_ctx.booleanValue("DescribeVulListResponse.VulRecords["+ i +"].Bind"));
+			vulRecord.setOsName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].OsName"));
+			vulRecord.setAuthVersion(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].AuthVersion"));
 
 			ExtendContentJson extendContentJson = new ExtendContentJson();
 			extendContentJson.setStatus(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Status"));

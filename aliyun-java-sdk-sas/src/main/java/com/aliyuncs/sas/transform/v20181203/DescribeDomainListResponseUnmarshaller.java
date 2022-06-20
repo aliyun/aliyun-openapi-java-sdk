@@ -30,17 +30,17 @@ public class DescribeDomainListResponseUnmarshaller {
 		describeDomainListResponse.setRequestId(_ctx.stringValue("DescribeDomainListResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeDomainListResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeDomainListResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeDomainListResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeDomainListResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeDomainListResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeDomainListResponse.PageInfo.Count"));
 		describeDomainListResponse.setPageInfo(pageInfo);
 
 		List<DomainResponse> domainListResponseList = new ArrayList<DomainResponse>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainListResponse.DomainListResponseList.Length"); i++) {
 			DomainResponse domainResponse = new DomainResponse();
-			domainResponse.setDomain(_ctx.stringValue("DescribeDomainListResponse.DomainListResponseList["+ i +"].Domain"));
 			domainResponse.setIpList(_ctx.stringValue("DescribeDomainListResponse.DomainListResponseList["+ i +"].IpList"));
+			domainResponse.setDomain(_ctx.stringValue("DescribeDomainListResponse.DomainListResponseList["+ i +"].Domain"));
 
 			domainListResponseList.add(domainResponse);
 		}

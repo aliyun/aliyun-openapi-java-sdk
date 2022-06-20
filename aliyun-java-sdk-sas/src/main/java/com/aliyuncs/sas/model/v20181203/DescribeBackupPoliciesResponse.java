@@ -57,52 +57,44 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 
 	public static class BackupPolicy {
 
-		private Long id;
-
-		private String name;
+		private Integer clientErrorCount;
 
 		private String status;
 
+		private String policyVersion;
+
 		private String policy;
 
-		private String policyVersion;
+		private String upgradeStatus;
+
+		private Integer serviceErrorCount;
 
 		private String policyRegionId;
 
 		private String clientStatus;
 
-		private Integer clientErrorCount;
-
-		private Integer serviceErrorCount;
+		private String name;
 
 		private Integer healthClientCount;
 
-		private String upgradeStatus;
+		private Long id;
 
-		private List<String> uuidList;
+		private List<String> clientErrorUuidList;
 
 		private List<String> remarkedUuidList;
 
-		private List<String> clientErrorUuidList;
+		private List<String> uuidList;
 
 		private List<String> serviceErrorUuidList;
 
 		private List<String> healthClientUuidList;
 
-		public Long getId() {
-			return this.id;
+		public Integer getClientErrorCount() {
+			return this.clientErrorCount;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setClientErrorCount(Integer clientErrorCount) {
+			this.clientErrorCount = clientErrorCount;
 		}
 
 		public String getStatus() {
@@ -113,6 +105,14 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getPolicyVersion() {
+			return this.policyVersion;
+		}
+
+		public void setPolicyVersion(String policyVersion) {
+			this.policyVersion = policyVersion;
+		}
+
 		public String getPolicy() {
 			return this.policy;
 		}
@@ -121,12 +121,20 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 			this.policy = policy;
 		}
 
-		public String getPolicyVersion() {
-			return this.policyVersion;
+		public String getUpgradeStatus() {
+			return this.upgradeStatus;
 		}
 
-		public void setPolicyVersion(String policyVersion) {
-			this.policyVersion = policyVersion;
+		public void setUpgradeStatus(String upgradeStatus) {
+			this.upgradeStatus = upgradeStatus;
+		}
+
+		public Integer getServiceErrorCount() {
+			return this.serviceErrorCount;
+		}
+
+		public void setServiceErrorCount(Integer serviceErrorCount) {
+			this.serviceErrorCount = serviceErrorCount;
 		}
 
 		public String getPolicyRegionId() {
@@ -145,20 +153,12 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 			this.clientStatus = clientStatus;
 		}
 
-		public Integer getClientErrorCount() {
-			return this.clientErrorCount;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setClientErrorCount(Integer clientErrorCount) {
-			this.clientErrorCount = clientErrorCount;
-		}
-
-		public Integer getServiceErrorCount() {
-			return this.serviceErrorCount;
-		}
-
-		public void setServiceErrorCount(Integer serviceErrorCount) {
-			this.serviceErrorCount = serviceErrorCount;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getHealthClientCount() {
@@ -169,20 +169,20 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 			this.healthClientCount = healthClientCount;
 		}
 
-		public String getUpgradeStatus() {
-			return this.upgradeStatus;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setUpgradeStatus(String upgradeStatus) {
-			this.upgradeStatus = upgradeStatus;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
-		public List<String> getUuidList() {
-			return this.uuidList;
+		public List<String> getClientErrorUuidList() {
+			return this.clientErrorUuidList;
 		}
 
-		public void setUuidList(List<String> uuidList) {
-			this.uuidList = uuidList;
+		public void setClientErrorUuidList(List<String> clientErrorUuidList) {
+			this.clientErrorUuidList = clientErrorUuidList;
 		}
 
 		public List<String> getRemarkedUuidList() {
@@ -193,12 +193,12 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 			this.remarkedUuidList = remarkedUuidList;
 		}
 
-		public List<String> getClientErrorUuidList() {
-			return this.clientErrorUuidList;
+		public List<String> getUuidList() {
+			return this.uuidList;
 		}
 
-		public void setClientErrorUuidList(List<String> clientErrorUuidList) {
-			this.clientErrorUuidList = clientErrorUuidList;
+		public void setUuidList(List<String> uuidList) {
+			this.uuidList = uuidList;
 		}
 
 		public List<String> getServiceErrorUuidList() {
@@ -220,20 +220,20 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -252,12 +252,12 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

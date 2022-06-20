@@ -27,6 +27,8 @@ public class DescribeEmgVulItemRequest extends RpcAcsRequest<DescribeEmgVulItemR
 
 	private String scanType;
 
+	private Integer checkType;
+
 	private Integer pageSize;
 
 	private String lang;
@@ -53,6 +55,17 @@ public class DescribeEmgVulItemRequest extends RpcAcsRequest<DescribeEmgVulItemR
 		this.scanType = scanType;
 		if(scanType != null){
 			putQueryParameter("ScanType", scanType);
+		}
+	}
+
+	public Integer getCheckType() {
+		return this.checkType;
+	}
+
+	public void setCheckType(Integer checkType) {
+		this.checkType = checkType;
+		if(checkType != null){
+			putQueryParameter("CheckType", checkType.toString());
 		}
 	}
 

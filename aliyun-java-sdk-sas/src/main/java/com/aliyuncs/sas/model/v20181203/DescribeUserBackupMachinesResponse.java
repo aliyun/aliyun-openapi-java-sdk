@@ -47,19 +47,11 @@ public class DescribeUserBackupMachinesResponse extends AcsResponse {
 
 	public static class SimpleBackupMachine {
 
-		private Long id;
-
 		private String uuid;
 
 		private String policyName;
 
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long id;
 
 		public String getUuid() {
 			return this.uuid;
@@ -75,6 +67,14 @@ public class DescribeUserBackupMachinesResponse extends AcsResponse {
 
 		public void setPolicyName(String policyName) {
 			this.policyName = policyName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

@@ -71,6 +71,8 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 
 		private Integer sysNum;
 
+		private Integer weakPWNum;
+
 		public Integer getAccount() {
 			return this.account;
 		}
@@ -165,6 +167,14 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 
 		public void setSysNum(Integer sysNum) {
 			this.sysNum = sysNum;
+		}
+
+		public Integer getWeakPWNum() {
+			return this.weakPWNum;
+		}
+
+		public void setWeakPWNum(Integer weakPWNum) {
+			this.weakPWNum = weakPWNum;
 		}
 	}
 

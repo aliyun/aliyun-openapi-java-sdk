@@ -14,16 +14,15 @@
 
 package com.aliyuncs.sas.model.v20181203;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.ListCriteriaStrategyResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.CreateSuspEventNoteResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListCriteriaStrategyResponse extends AcsResponse {
+public class CreateSuspEventNoteResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -33,7 +32,7 @@ public class ListCriteriaStrategyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DataItem> data;
+	private Integer httpStatusCode;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -67,40 +66,17 @@ public class ListCriteriaStrategyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataItem> getData() {
-		return this.data;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setData(List<DataItem> data) {
-		this.data = data;
-	}
-
-	public static class DataItem {
-
-		private Long id;
-
-		private String value;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override
-	public ListCriteriaStrategyResponse getInstance(UnmarshallerContext context) {
-		return	ListCriteriaStrategyResponseUnmarshaller.unmarshall(this, context);
+	public CreateSuspEventNoteResponse getInstance(UnmarshallerContext context) {
+		return	CreateSuspEventNoteResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

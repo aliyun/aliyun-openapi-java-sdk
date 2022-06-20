@@ -30,17 +30,17 @@ public class DescribeBackupFilesResponseUnmarshaller {
 		describeBackupFilesResponse.setRequestId(_ctx.stringValue("DescribeBackupFilesResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeBackupFilesResponse.PageInfo.Count"));
 		describeBackupFilesResponse.setPageInfo(pageInfo);
 
 		List<BrowseFile> backupFiles = new ArrayList<BrowseFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupFilesResponse.BackupFiles.Length"); i++) {
 			BrowseFile browseFile = new BrowseFile();
-			browseFile.setName(_ctx.stringValue("DescribeBackupFilesResponse.BackupFiles["+ i +"].Name"));
 			browseFile.setType(_ctx.stringValue("DescribeBackupFilesResponse.BackupFiles["+ i +"].Type"));
+			browseFile.setName(_ctx.stringValue("DescribeBackupFilesResponse.BackupFiles["+ i +"].Name"));
 			browseFile.setSubtree(_ctx.stringValue("DescribeBackupFilesResponse.BackupFiles["+ i +"].Subtree"));
 			browseFile.setSize(_ctx.longValue("DescribeBackupFilesResponse.BackupFiles["+ i +"].Size"));
 

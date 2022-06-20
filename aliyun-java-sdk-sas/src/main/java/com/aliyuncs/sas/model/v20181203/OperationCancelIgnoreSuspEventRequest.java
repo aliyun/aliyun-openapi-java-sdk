@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.sas.Endpoint;
 
@@ -22,14 +23,12 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteVulAutoRepairConfigRequest extends RpcAcsRequest<DeleteVulAutoRepairConfigResponse> {
+public class OperationCancelIgnoreSuspEventRequest extends RpcAcsRequest<OperationCancelIgnoreSuspEventResponse> {
 	   
 
-	private String type;
-
-	private String aliasName;
-	public DeleteVulAutoRepairConfigRequest() {
-		super("Sas", "2018-12-03", "DeleteVulAutoRepairConfig");
+	private List<Long> securityEventIdss;
+	public OperationCancelIgnoreSuspEventRequest() {
+		super("Sas", "2018-12-03", "OperationCancelIgnoreSuspEvent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +36,22 @@ public class DeleteVulAutoRepairConfigRequest extends RpcAcsRequest<DeleteVulAut
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public List<Long> getSecurityEventIdss() {
+		return this.securityEventIdss;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getAliasName() {
-		return this.aliasName;
-	}
-
-	public void setAliasName(String aliasName) {
-		this.aliasName = aliasName;
-		if(aliasName != null){
-			putQueryParameter("AliasName", aliasName);
-		}
+	public void setSecurityEventIdss(List<Long> securityEventIdss) {
+		this.securityEventIdss = securityEventIdss;	
+		if (securityEventIdss != null) {
+			for (int i = 0; i < securityEventIdss.size(); i++) {
+				putQueryParameter("SecurityEventIds." + (i + 1) , securityEventIdss.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<DeleteVulAutoRepairConfigResponse> getResponseClass() {
-		return DeleteVulAutoRepairConfigResponse.class;
+	public Class<OperationCancelIgnoreSuspEventResponse> getResponseClass() {
+		return OperationCancelIgnoreSuspEventResponse.class;
 	}
 
 }

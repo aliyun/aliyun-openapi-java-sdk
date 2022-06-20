@@ -36,6 +36,7 @@ public class DescribeEmgVulItemResponseUnmarshaller {
 			GroupedVulItem groupedVulItem = new GroupedVulItem();
 			groupedVulItem.setStatus(_ctx.integerValue("DescribeEmgVulItemResponse.GroupedVulItems["+ i +"].Status"));
 			groupedVulItem.setType(_ctx.stringValue("DescribeEmgVulItemResponse.GroupedVulItems["+ i +"].Type"));
+			groupedVulItem.setCheckType(_ctx.integerValue("DescribeEmgVulItemResponse.GroupedVulItems["+ i +"].CheckType"));
 			groupedVulItem.setGmtLastCheck(_ctx.longValue("DescribeEmgVulItemResponse.GroupedVulItems["+ i +"].GmtLastCheck"));
 			groupedVulItem.setProgress(_ctx.integerValue("DescribeEmgVulItemResponse.GroupedVulItems["+ i +"].Progress"));
 			groupedVulItem.setDescription(_ctx.stringValue("DescribeEmgVulItemResponse.GroupedVulItems["+ i +"].Description"));

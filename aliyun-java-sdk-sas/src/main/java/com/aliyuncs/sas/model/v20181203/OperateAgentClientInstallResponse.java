@@ -47,11 +47,19 @@ public class OperateAgentClientInstallResponse extends AcsResponse {
 
 	public static class AegisCelintInstallRespose {
 
+		private String uuid;
+
 		private String instanceId;
 
 		private Long recordId;
 
-		private String uuid;
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -67,14 +75,6 @@ public class OperateAgentClientInstallResponse extends AcsResponse {
 
 		public void setRecordId(Long recordId) {
 			this.recordId = recordId;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
 		}
 	}
 

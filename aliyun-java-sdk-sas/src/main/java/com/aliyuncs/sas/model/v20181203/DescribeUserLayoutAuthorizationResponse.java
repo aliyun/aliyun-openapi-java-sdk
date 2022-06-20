@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserLayoutAuthorizationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean authorized;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getAuthorized() {
 		return this.authorized;
@@ -42,6 +34,14 @@ public class DescribeUserLayoutAuthorizationResponse extends AcsResponse {
 
 	public void setAuthorized(Boolean authorized) {
 		this.authorized = authorized;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

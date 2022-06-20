@@ -23,11 +23,11 @@ public class GetSuspiciousStatisticsResponseUnmarshaller {
 	public static GetSuspiciousStatisticsResponse unmarshall(GetSuspiciousStatisticsResponse getSuspiciousStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		getSuspiciousStatisticsResponse.setRequestId(_ctx.stringValue("GetSuspiciousStatisticsResponse.RequestId"));
-		getSuspiciousStatisticsResponse.setTotalCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.TotalCount"));
-		getSuspiciousStatisticsResponse.setTemindCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.TemindCount"));
-		getSuspiciousStatisticsResponse.setRemindCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.RemindCount"));
 		getSuspiciousStatisticsResponse.setSuspiciousCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.SuspiciousCount"));
+		getSuspiciousStatisticsResponse.setRemindCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.RemindCount"));
+		getSuspiciousStatisticsResponse.setTemindCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.TemindCount"));
 		getSuspiciousStatisticsResponse.setSeriousCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.SeriousCount"));
+		getSuspiciousStatisticsResponse.setTotalCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.TotalCount"));
 	 
 	 	return getSuspiciousStatisticsResponse;
 	}

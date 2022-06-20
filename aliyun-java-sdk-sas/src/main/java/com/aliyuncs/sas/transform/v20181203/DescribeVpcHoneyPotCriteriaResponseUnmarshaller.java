@@ -31,9 +31,9 @@ public class DescribeVpcHoneyPotCriteriaResponseUnmarshaller {
 		List<Criteria> criteriaList = new ArrayList<Criteria>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcHoneyPotCriteriaResponse.CriteriaList.Length"); i++) {
 			Criteria criteria = new Criteria();
-			criteria.setValues(_ctx.stringValue("DescribeVpcHoneyPotCriteriaResponse.CriteriaList["+ i +"].Values"));
-			criteria.setName(_ctx.stringValue("DescribeVpcHoneyPotCriteriaResponse.CriteriaList["+ i +"].Name"));
 			criteria.setType(_ctx.stringValue("DescribeVpcHoneyPotCriteriaResponse.CriteriaList["+ i +"].Type"));
+			criteria.setName(_ctx.stringValue("DescribeVpcHoneyPotCriteriaResponse.CriteriaList["+ i +"].Name"));
+			criteria.setValues(_ctx.stringValue("DescribeVpcHoneyPotCriteriaResponse.CriteriaList["+ i +"].Values"));
 
 			criteriaList.add(criteria);
 		}

@@ -15,14 +15,14 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.RetryInstallProbeResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.OperationCancelIgnoreSuspEventResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RetryInstallProbeResponse extends AcsResponse {
+public class OperationCancelIgnoreSuspEventResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -33,6 +33,8 @@ public class RetryInstallProbeResponse extends AcsResponse {
 	private String requestId;
 
 	private Integer httpStatusCode;
+
+	private Long timeCost;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -74,9 +76,17 @@ public class RetryInstallProbeResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
+	public Long getTimeCost() {
+		return this.timeCost;
+	}
+
+	public void setTimeCost(Long timeCost) {
+		this.timeCost = timeCost;
+	}
+
 	@Override
-	public RetryInstallProbeResponse getInstance(UnmarshallerContext context) {
-		return	RetryInstallProbeResponseUnmarshaller.unmarshall(this, context);
+	public OperationCancelIgnoreSuspEventResponse getInstance(UnmarshallerContext context) {
+		return	OperationCancelIgnoreSuspEventResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

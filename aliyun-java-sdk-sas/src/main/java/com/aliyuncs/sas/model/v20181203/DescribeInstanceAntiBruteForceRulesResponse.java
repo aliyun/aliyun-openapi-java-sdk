@@ -57,18 +57,18 @@ public class DescribeInstanceAntiBruteForceRulesResponse extends AcsResponse {
 
 	public static class InstanceAntiBruteForceRule {
 
-		private Long id;
+		private String uuid;
 
 		private String name;
 
-		private String uuid;
+		private Long id;
 
-		public Long getId() {
-			return this.id;
+		public String getUuid() {
+			return this.uuid;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
 		}
 
 		public String getName() {
@@ -79,31 +79,31 @@ public class DescribeInstanceAntiBruteForceRulesResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getUuid() {
-			return this.uuid;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 
 	public static class PageInfo {
 
-		private Integer count;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
-		private Integer currentPage;
+		private Integer count;
 
-		public Integer getCount() {
-			return this.count;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setCount(Integer count) {
-			this.count = count;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -122,12 +122,12 @@ public class DescribeInstanceAntiBruteForceRulesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getCount() {
+			return this.count;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

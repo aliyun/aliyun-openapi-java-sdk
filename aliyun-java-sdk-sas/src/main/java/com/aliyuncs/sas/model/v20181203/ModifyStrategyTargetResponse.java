@@ -15,18 +15,28 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.GetOpaDefenceDetailResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.ModifyStrategyTargetResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetOpaDefenceDetailResponse extends AcsResponse {
+public class ModifyStrategyTargetResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	@Override
-	public GetOpaDefenceDetailResponse getInstance(UnmarshallerContext context) {
-		return	GetOpaDefenceDetailResponseUnmarshaller.unmarshall(this, context);
+	public ModifyStrategyTargetResponse getInstance(UnmarshallerContext context) {
+		return	ModifyStrategyTargetResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

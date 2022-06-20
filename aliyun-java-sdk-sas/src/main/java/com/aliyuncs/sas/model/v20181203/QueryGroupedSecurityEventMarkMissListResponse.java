@@ -131,6 +131,8 @@ public class QueryGroupedSecurityEventMarkMissListResponse extends AcsResponse {
 
 		private String operate;
 
+		private String disposalWay;
+
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -225,6 +227,14 @@ public class QueryGroupedSecurityEventMarkMissListResponse extends AcsResponse {
 
 		public void setOperate(String operate) {
 			this.operate = operate;
+		}
+
+		public String getDisposalWay() {
+			return this.disposalWay;
+		}
+
+		public void setDisposalWay(String disposalWay) {
+			this.disposalWay = disposalWay;
 		}
 	}
 

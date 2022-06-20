@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstallCaptchaResponse extends AcsResponse {
 
+	private String deadline;
+
 	private String requestId;
 
 	private String captchaCode;
 
-	private String deadline;
+	public String getDeadline() {
+		return this.deadline;
+	}
+
+	public void setDeadline(String deadline) {
+		this.deadline = deadline;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeInstallCaptchaResponse extends AcsResponse {
 
 	public void setCaptchaCode(String captchaCode) {
 		this.captchaCode = captchaCode;
-	}
-
-	public String getDeadline() {
-		return this.deadline;
-	}
-
-	public void setDeadline(String deadline) {
-		this.deadline = deadline;
 	}
 
 	@Override

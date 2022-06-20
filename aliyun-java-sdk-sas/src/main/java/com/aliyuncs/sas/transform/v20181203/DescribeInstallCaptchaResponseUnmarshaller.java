@@ -23,8 +23,8 @@ public class DescribeInstallCaptchaResponseUnmarshaller {
 	public static DescribeInstallCaptchaResponse unmarshall(DescribeInstallCaptchaResponse describeInstallCaptchaResponse, UnmarshallerContext _ctx) {
 		
 		describeInstallCaptchaResponse.setRequestId(_ctx.stringValue("DescribeInstallCaptchaResponse.RequestId"));
-		describeInstallCaptchaResponse.setCaptchaCode(_ctx.stringValue("DescribeInstallCaptchaResponse.CaptchaCode"));
 		describeInstallCaptchaResponse.setDeadline(_ctx.stringValue("DescribeInstallCaptchaResponse.Deadline"));
+		describeInstallCaptchaResponse.setCaptchaCode(_ctx.stringValue("DescribeInstallCaptchaResponse.CaptchaCode"));
 	 
 	 	return describeInstallCaptchaResponse;
 	}

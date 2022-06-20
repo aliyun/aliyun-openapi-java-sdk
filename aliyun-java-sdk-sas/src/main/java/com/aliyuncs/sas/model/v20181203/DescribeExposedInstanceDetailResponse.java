@@ -47,48 +47,48 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 
 	public static class ExposedChain {
 
-		private String uuid;
+		private String exposureIp;
 
-		private String intranetIp;
+		private String groupNo;
 
 		private String internetIp;
 
-		private String exposureComponent;
+		private String instanceId;
 
 		private String exposureType;
 
-		private String exposurePort;
-
-		private String exposureIp;
+		private String intranetIp;
 
 		private String exposureTypeId;
 
-		private String instanceId;
+		private String regionId;
+
+		private String uuid;
+
+		private String exposurePort;
 
 		private String instanceName;
 
-		private String regionId;
-
-		private String groupNo;
+		private String exposureComponent;
 
 		private List<ScaVulRecord> realVulList;
 
 		private List<ScaVulRecord> allVulList;
 
-		public String getUuid() {
-			return this.uuid;
+		public String getExposureIp() {
+			return this.exposureIp;
 		}
 
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
+		public void setExposureIp(String exposureIp) {
+			this.exposureIp = exposureIp;
 		}
 
-		public String getIntranetIp() {
-			return this.intranetIp;
+		public String getGroupNo() {
+			return this.groupNo;
 		}
 
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
+		public void setGroupNo(String groupNo) {
+			this.groupNo = groupNo;
 		}
 
 		public String getInternetIp() {
@@ -99,12 +99,12 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 			this.internetIp = internetIp;
 		}
 
-		public String getExposureComponent() {
-			return this.exposureComponent;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setExposureComponent(String exposureComponent) {
-			this.exposureComponent = exposureComponent;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getExposureType() {
@@ -115,20 +115,12 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 			this.exposureType = exposureType;
 		}
 
-		public String getExposurePort() {
-			return this.exposurePort;
+		public String getIntranetIp() {
+			return this.intranetIp;
 		}
 
-		public void setExposurePort(String exposurePort) {
-			this.exposurePort = exposurePort;
-		}
-
-		public String getExposureIp() {
-			return this.exposureIp;
-		}
-
-		public void setExposureIp(String exposureIp) {
-			this.exposureIp = exposureIp;
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
 		}
 
 		public String getExposureTypeId() {
@@ -139,12 +131,28 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 			this.exposureTypeId = exposureTypeId;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public String getExposurePort() {
+			return this.exposurePort;
+		}
+
+		public void setExposurePort(String exposurePort) {
+			this.exposurePort = exposurePort;
 		}
 
 		public String getInstanceName() {
@@ -155,20 +163,12 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getExposureComponent() {
+			return this.exposureComponent;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getGroupNo() {
-			return this.groupNo;
-		}
-
-		public void setGroupNo(String groupNo) {
-			this.groupNo = groupNo;
+		public void setExposureComponent(String exposureComponent) {
+			this.exposureComponent = exposureComponent;
 		}
 
 		public List<ScaVulRecord> getRealVulList() {
@@ -189,22 +189,22 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 
 		public static class ScaVulRecord {
 
-			private String aliasName;
+			private String type;
 
 			private String necessity;
 
-			private String name;
-
-			private String type;
-
 			private String uuid;
 
-			public String getAliasName() {
-				return this.aliasName;
+			private String aliasName;
+
+			private String name;
+
+			public String getType() {
+				return this.type;
 			}
 
-			public void setAliasName(String aliasName) {
-				this.aliasName = aliasName;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getNecessity() {
@@ -215,28 +215,28 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 				this.necessity = necessity;
 			}
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getUuid() {
 				return this.uuid;
 			}
 
 			public void setUuid(String uuid) {
 				this.uuid = uuid;
+			}
+
+			public String getAliasName() {
+				return this.aliasName;
+			}
+
+			public void setAliasName(String aliasName) {
+				this.aliasName = aliasName;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

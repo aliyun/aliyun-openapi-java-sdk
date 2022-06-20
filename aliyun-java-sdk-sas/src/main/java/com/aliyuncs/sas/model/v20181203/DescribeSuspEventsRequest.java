@@ -44,6 +44,8 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 
 	private String from;
 
+	private Long id;
+
 	private String tacticId;
 
 	private String lang;
@@ -176,6 +178,17 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		this.from = from;
 		if(from != null){
 			putQueryParameter("From", from);
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 

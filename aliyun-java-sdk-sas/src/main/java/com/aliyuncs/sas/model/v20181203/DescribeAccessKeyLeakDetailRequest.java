@@ -22,12 +22,12 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetHoneypotNodeRequest extends RpcAcsRequest<GetHoneypotNodeResponse> {
+public class DescribeAccessKeyLeakDetailRequest extends RpcAcsRequest<DescribeAccessKeyLeakDetailResponse> {
 	   
 
-	private String nodeId;
-	public GetHoneypotNodeRequest() {
-		super("Sas", "2018-12-03", "GetHoneypotNode");
+	private Long id;
+	public DescribeAccessKeyLeakDetailRequest() {
+		super("Sas", "2018-12-03", "DescribeAccessKeyLeakDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class GetHoneypotNodeRequest extends RpcAcsRequest<GetHoneypotNodeRespons
 		} catch (Exception e) {}
 	}
 
-	public String getNodeId() {
-		return this.nodeId;
+	public Long getId() {
+		return this.id;
 	}
 
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 
 	@Override
-	public Class<GetHoneypotNodeResponse> getResponseClass() {
-		return GetHoneypotNodeResponse.class;
+	public Class<DescribeAccessKeyLeakDetailResponse> getResponseClass() {
+		return DescribeAccessKeyLeakDetailResponse.class;
 	}
 
 }

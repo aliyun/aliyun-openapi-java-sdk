@@ -30,18 +30,18 @@ public class DescribeInstanceAntiBruteForceRulesResponseUnmarshaller {
 		describeInstanceAntiBruteForceRulesResponse.setRequestId(_ctx.stringValue("DescribeInstanceAntiBruteForceRulesResponse.RequestId"));
 
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCount(_ctx.integerValue("DescribeInstanceAntiBruteForceRulesResponse.PageInfo.Count"));
+		pageInfo.setCurrentPage(_ctx.integerValue("DescribeInstanceAntiBruteForceRulesResponse.PageInfo.CurrentPage"));
 		pageInfo.setPageSize(_ctx.integerValue("DescribeInstanceAntiBruteForceRulesResponse.PageInfo.PageSize"));
 		pageInfo.setTotalCount(_ctx.integerValue("DescribeInstanceAntiBruteForceRulesResponse.PageInfo.TotalCount"));
-		pageInfo.setCurrentPage(_ctx.integerValue("DescribeInstanceAntiBruteForceRulesResponse.PageInfo.CurrentPage"));
+		pageInfo.setCount(_ctx.integerValue("DescribeInstanceAntiBruteForceRulesResponse.PageInfo.Count"));
 		describeInstanceAntiBruteForceRulesResponse.setPageInfo(pageInfo);
 
 		List<InstanceAntiBruteForceRule> rules = new ArrayList<InstanceAntiBruteForceRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAntiBruteForceRulesResponse.Rules.Length"); i++) {
 			InstanceAntiBruteForceRule instanceAntiBruteForceRule = new InstanceAntiBruteForceRule();
-			instanceAntiBruteForceRule.setId(_ctx.longValue("DescribeInstanceAntiBruteForceRulesResponse.Rules["+ i +"].Id"));
-			instanceAntiBruteForceRule.setName(_ctx.stringValue("DescribeInstanceAntiBruteForceRulesResponse.Rules["+ i +"].Name"));
 			instanceAntiBruteForceRule.setUuid(_ctx.stringValue("DescribeInstanceAntiBruteForceRulesResponse.Rules["+ i +"].Uuid"));
+			instanceAntiBruteForceRule.setName(_ctx.stringValue("DescribeInstanceAntiBruteForceRulesResponse.Rules["+ i +"].Name"));
+			instanceAntiBruteForceRule.setId(_ctx.longValue("DescribeInstanceAntiBruteForceRulesResponse.Rules["+ i +"].Id"));
 
 			rules.add(instanceAntiBruteForceRule);
 		}

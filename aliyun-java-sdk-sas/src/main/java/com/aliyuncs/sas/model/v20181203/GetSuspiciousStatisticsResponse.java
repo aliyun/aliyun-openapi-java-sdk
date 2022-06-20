@@ -24,40 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSuspiciousStatisticsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalCount;
-
-	private Integer temindCount;
+	private Integer suspiciousCount;
 
 	private Integer remindCount;
 
-	private Integer suspiciousCount;
+	private String requestId;
+
+	private Integer temindCount;
 
 	private Integer seriousCount;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Integer totalCount;
+
+	public Integer getSuspiciousCount() {
+		return this.suspiciousCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getTemindCount() {
-		return this.temindCount;
-	}
-
-	public void setTemindCount(Integer temindCount) {
-		this.temindCount = temindCount;
+	public void setSuspiciousCount(Integer suspiciousCount) {
+		this.suspiciousCount = suspiciousCount;
 	}
 
 	public Integer getRemindCount() {
@@ -68,12 +52,20 @@ public class GetSuspiciousStatisticsResponse extends AcsResponse {
 		this.remindCount = remindCount;
 	}
 
-	public Integer getSuspiciousCount() {
-		return this.suspiciousCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuspiciousCount(Integer suspiciousCount) {
-		this.suspiciousCount = suspiciousCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTemindCount() {
+		return this.temindCount;
+	}
+
+	public void setTemindCount(Integer temindCount) {
+		this.temindCount = temindCount;
 	}
 
 	public Integer getSeriousCount() {
@@ -82,6 +74,14 @@ public class GetSuspiciousStatisticsResponse extends AcsResponse {
 
 	public void setSeriousCount(Integer seriousCount) {
 		this.seriousCount = seriousCount;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	@Override

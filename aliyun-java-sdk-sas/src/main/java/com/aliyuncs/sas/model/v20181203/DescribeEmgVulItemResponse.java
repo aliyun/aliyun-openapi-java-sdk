@@ -81,6 +81,8 @@ public class DescribeEmgVulItemResponse extends AcsResponse {
 
 		private String type;
 
+		private Integer checkType;
+
 		private Long gmtLastCheck;
 
 		private Integer progress;
@@ -109,6 +111,14 @@ public class DescribeEmgVulItemResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Integer getCheckType() {
+			return this.checkType;
+		}
+
+		public void setCheckType(Integer checkType) {
+			this.checkType = checkType;
 		}
 
 		public Long getGmtLastCheck() {

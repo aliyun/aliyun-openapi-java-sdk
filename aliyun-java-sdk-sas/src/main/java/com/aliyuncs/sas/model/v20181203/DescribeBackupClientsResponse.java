@@ -51,9 +51,9 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private String clientId;
-
 		private String clientStatus;
+
+		private String clientId;
 
 		public String getUuid() {
 			return this.uuid;
@@ -71,20 +71,20 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getClientId() {
-			return this.clientId;
-		}
-
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
-		}
-
 		public String getClientStatus() {
 			return this.clientStatus;
 		}
 
 		public void setClientStatus(String clientStatus) {
 			this.clientStatus = clientStatus;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
 		}
 	}
 

@@ -31,9 +31,9 @@ public class OperateAgentClientInstallResponseUnmarshaller {
 		List<AegisCelintInstallRespose> aegisCelintInstallResposeList = new ArrayList<AegisCelintInstallRespose>();
 		for (int i = 0; i < _ctx.lengthValue("OperateAgentClientInstallResponse.AegisCelintInstallResposeList.Length"); i++) {
 			AegisCelintInstallRespose aegisCelintInstallRespose = new AegisCelintInstallRespose();
+			aegisCelintInstallRespose.setUuid(_ctx.stringValue("OperateAgentClientInstallResponse.AegisCelintInstallResposeList["+ i +"].Uuid"));
 			aegisCelintInstallRespose.setInstanceId(_ctx.stringValue("OperateAgentClientInstallResponse.AegisCelintInstallResposeList["+ i +"].InstanceId"));
 			aegisCelintInstallRespose.setRecordId(_ctx.longValue("OperateAgentClientInstallResponse.AegisCelintInstallResposeList["+ i +"].RecordId"));
-			aegisCelintInstallRespose.setUuid(_ctx.stringValue("OperateAgentClientInstallResponse.AegisCelintInstallResposeList["+ i +"].Uuid"));
 
 			aegisCelintInstallResposeList.add(aegisCelintInstallRespose);
 		}

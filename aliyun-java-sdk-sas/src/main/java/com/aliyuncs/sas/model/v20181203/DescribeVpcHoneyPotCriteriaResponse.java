@@ -47,18 +47,18 @@ public class DescribeVpcHoneyPotCriteriaResponse extends AcsResponse {
 
 	public static class Criteria {
 
-		private String values;
+		private String type;
 
 		private String name;
 
-		private String type;
+		private String values;
 
-		public String getValues() {
-			return this.values;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setValues(String values) {
-			this.values = values;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getName() {
@@ -69,12 +69,12 @@ public class DescribeVpcHoneyPotCriteriaResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getValues() {
+			return this.values;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setValues(String values) {
+			this.values = values;
 		}
 	}
 

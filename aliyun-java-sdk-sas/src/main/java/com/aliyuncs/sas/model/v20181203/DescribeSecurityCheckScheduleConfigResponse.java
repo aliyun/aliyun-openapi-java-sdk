@@ -46,19 +46,11 @@ public class DescribeSecurityCheckScheduleConfigResponse extends AcsResponse {
 
 	public static class RiskCheckJobConfig {
 
-		private Integer startTime;
-
 		private Integer endTime;
 
+		private Integer startTime;
+
 		private String daysOfWeek;
-
-		public Integer getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Integer startTime) {
-			this.startTime = startTime;
-		}
 
 		public Integer getEndTime() {
 			return this.endTime;
@@ -66,6 +58,14 @@ public class DescribeSecurityCheckScheduleConfigResponse extends AcsResponse {
 
 		public void setEndTime(Integer endTime) {
 			this.endTime = endTime;
+		}
+
+		public Integer getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Integer startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getDaysOfWeek() {

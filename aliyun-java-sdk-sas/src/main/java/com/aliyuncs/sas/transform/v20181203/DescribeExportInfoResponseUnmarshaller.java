@@ -23,14 +23,14 @@ public class DescribeExportInfoResponseUnmarshaller {
 	public static DescribeExportInfoResponse unmarshall(DescribeExportInfoResponse describeExportInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeExportInfoResponse.setRequestId(_ctx.stringValue("DescribeExportInfoResponse.RequestId"));
-		describeExportInfoResponse.setId(_ctx.longValue("DescribeExportInfoResponse.Id"));
-		describeExportInfoResponse.setFileName(_ctx.stringValue("DescribeExportInfoResponse.FileName"));
-		describeExportInfoResponse.setCurrentCount(_ctx.integerValue("DescribeExportInfoResponse.CurrentCount"));
-		describeExportInfoResponse.setTotalCount(_ctx.integerValue("DescribeExportInfoResponse.TotalCount"));
-		describeExportInfoResponse.setProgress(_ctx.integerValue("DescribeExportInfoResponse.Progress"));
-		describeExportInfoResponse.setExportStatus(_ctx.stringValue("DescribeExportInfoResponse.ExportStatus"));
-		describeExportInfoResponse.setMessage(_ctx.stringValue("DescribeExportInfoResponse.Message"));
 		describeExportInfoResponse.setLink(_ctx.stringValue("DescribeExportInfoResponse.Link"));
+		describeExportInfoResponse.setProgress(_ctx.integerValue("DescribeExportInfoResponse.Progress"));
+		describeExportInfoResponse.setCurrentCount(_ctx.integerValue("DescribeExportInfoResponse.CurrentCount"));
+		describeExportInfoResponse.setMessage(_ctx.stringValue("DescribeExportInfoResponse.Message"));
+		describeExportInfoResponse.setFileName(_ctx.stringValue("DescribeExportInfoResponse.FileName"));
+		describeExportInfoResponse.setTotalCount(_ctx.integerValue("DescribeExportInfoResponse.TotalCount"));
+		describeExportInfoResponse.setExportStatus(_ctx.stringValue("DescribeExportInfoResponse.ExportStatus"));
+		describeExportInfoResponse.setId(_ctx.longValue("DescribeExportInfoResponse.Id"));
 	 
 	 	return describeExportInfoResponse;
 	}

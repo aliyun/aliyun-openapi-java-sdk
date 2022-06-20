@@ -56,6 +56,7 @@ public class QueryGroupedSecurityEventMarkMissListResponseUnmarshaller {
 			listItem.setFiledAliasName(_ctx.stringValue("QueryGroupedSecurityEventMarkMissListResponse.List["+ i +"].FiledAliasName"));
 			listItem.setFieldValue(_ctx.stringValue("QueryGroupedSecurityEventMarkMissListResponse.List["+ i +"].FieldValue"));
 			listItem.setOperate(_ctx.stringValue("QueryGroupedSecurityEventMarkMissListResponse.List["+ i +"].Operate"));
+			listItem.setDisposalWay(_ctx.stringValue("QueryGroupedSecurityEventMarkMissListResponse.List["+ i +"].DisposalWay"));
 
 			list.add(listItem);
 		}
