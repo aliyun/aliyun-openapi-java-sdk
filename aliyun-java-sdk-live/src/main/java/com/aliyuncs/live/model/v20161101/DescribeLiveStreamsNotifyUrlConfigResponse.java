@@ -46,32 +46,24 @@ public class DescribeLiveStreamsNotifyUrlConfigResponse extends AcsResponse {
 
 	public static class LiveStreamsNotifyConfig {
 
-		private String notifyReqAuth;
-
-		private String authType;
+		private String domainName;
 
 		private String notifyUrl;
 
+		private String notifyReqAuth;
+
 		private String notifyAuthKey;
+
+		private String authType;
 
 		private String authKey;
 
-		private String domainName;
-
-		public String getNotifyReqAuth() {
-			return this.notifyReqAuth;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setNotifyReqAuth(String notifyReqAuth) {
-			this.notifyReqAuth = notifyReqAuth;
-		}
-
-		public String getAuthType() {
-			return this.authType;
-		}
-
-		public void setAuthType(String authType) {
-			this.authType = authType;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getNotifyUrl() {
@@ -82,6 +74,14 @@ public class DescribeLiveStreamsNotifyUrlConfigResponse extends AcsResponse {
 			this.notifyUrl = notifyUrl;
 		}
 
+		public String getNotifyReqAuth() {
+			return this.notifyReqAuth;
+		}
+
+		public void setNotifyReqAuth(String notifyReqAuth) {
+			this.notifyReqAuth = notifyReqAuth;
+		}
+
 		public String getNotifyAuthKey() {
 			return this.notifyAuthKey;
 		}
@@ -90,20 +90,20 @@ public class DescribeLiveStreamsNotifyUrlConfigResponse extends AcsResponse {
 			this.notifyAuthKey = notifyAuthKey;
 		}
 
+		public String getAuthType() {
+			return this.authType;
+		}
+
+		public void setAuthType(String authType) {
+			this.authType = authType;
+		}
+
 		public String getAuthKey() {
 			return this.authKey;
 		}
 
 		public void setAuthKey(String authKey) {
 			this.authKey = authKey;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
 		}
 	}
 

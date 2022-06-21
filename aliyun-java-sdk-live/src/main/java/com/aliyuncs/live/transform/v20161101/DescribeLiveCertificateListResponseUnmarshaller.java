@@ -35,12 +35,12 @@ public class DescribeLiveCertificateListResponseUnmarshaller {
 		List<Cert> certList = new ArrayList<Cert>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList.Length"); i++) {
 			Cert cert = new Cert();
-			cert.setLastTime(_ctx.longValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].LastTime"));
-			cert.setFingerprint(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Fingerprint"));
 			cert.setCertName(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].CertName"));
-			cert.setIssuer(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
 			cert.setCertId(_ctx.longValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].CertId"));
+			cert.setFingerprint(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Fingerprint"));
 			cert.setCommon(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Common"));
+			cert.setIssuer(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
+			cert.setLastTime(_ctx.longValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].LastTime"));
 
 			certList.add(cert);
 		}

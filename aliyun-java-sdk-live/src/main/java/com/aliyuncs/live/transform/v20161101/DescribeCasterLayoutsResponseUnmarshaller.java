@@ -36,26 +36,26 @@ public class DescribeCasterLayoutsResponseUnmarshaller {
 			Layout layout = new Layout();
 			layout.setLayoutId(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].LayoutId"));
 
-			List<String> mixList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList.Length"); j++) {
-				mixList.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList["+ j +"]"));
-			}
-			layout.setMixList(mixList);
-
 			List<String> blendList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].BlendList.Length"); j++) {
 				blendList.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].BlendList["+ j +"]"));
 			}
 			layout.setBlendList(blendList);
 
+			List<String> mixList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList.Length"); j++) {
+				mixList.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList["+ j +"]"));
+			}
+			layout.setMixList(mixList);
+
 			List<VideoLayer> videoLayers = new ArrayList<VideoLayer>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers.Length"); j++) {
 				VideoLayer videoLayer = new VideoLayer();
-				videoLayer.setWidthNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized"));
-				videoLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration"));
-				videoLayer.setHeightNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized"));
 				videoLayer.setFillMode(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FillMode"));
+				videoLayer.setHeightNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized"));
+				videoLayer.setWidthNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized"));
 				videoLayer.setPositionRefer(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer"));
+				videoLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration"));
 
 				List<Float> positionNormalizeds = new ArrayList<Float>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds.Length"); k++) {
@@ -71,8 +71,8 @@ public class DescribeCasterLayoutsResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers.Length"); j++) {
 				AudioLayer audioLayer = new AudioLayer();
 				audioLayer.setVolumeRate(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].VolumeRate"));
-				audioLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration"));
 				audioLayer.setValidChannel(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].ValidChannel"));
+				audioLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration"));
 
 				audioLayers.add(audioLayer);
 			}

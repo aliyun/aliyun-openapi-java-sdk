@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRoomListResponse extends AcsResponse {
 
-	private Integer totalPage;
-
 	private String requestId;
 
 	private Integer totalNum;
 
+	private Integer totalPage;
+
 	private List<Room> roomList;
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class DescribeRoomListResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
+
 	public List<Room> getRoomList() {
 		return this.roomList;
 	}
@@ -67,22 +67,22 @@ public class DescribeRoomListResponse extends AcsResponse {
 
 	public static class Room {
 
-		private String forbidStream;
+		private String roomId;
 
 		private String anchorId;
 
-		private String roomId;
+		private Integer roomStatus;
+
+		private String forbidStream;
 
 		private String createTime;
 
-		private Integer roomStatus;
-
-		public String getForbidStream() {
-			return this.forbidStream;
+		public String getRoomId() {
+			return this.roomId;
 		}
 
-		public void setForbidStream(String forbidStream) {
-			this.forbidStream = forbidStream;
+		public void setRoomId(String roomId) {
+			this.roomId = roomId;
 		}
 
 		public String getAnchorId() {
@@ -93,12 +93,20 @@ public class DescribeRoomListResponse extends AcsResponse {
 			this.anchorId = anchorId;
 		}
 
-		public String getRoomId() {
-			return this.roomId;
+		public Integer getRoomStatus() {
+			return this.roomStatus;
 		}
 
-		public void setRoomId(String roomId) {
-			this.roomId = roomId;
+		public void setRoomStatus(Integer roomStatus) {
+			this.roomStatus = roomStatus;
+		}
+
+		public String getForbidStream() {
+			return this.forbidStream;
+		}
+
+		public void setForbidStream(String forbidStream) {
+			this.forbidStream = forbidStream;
 		}
 
 		public String getCreateTime() {
@@ -107,14 +115,6 @@ public class DescribeRoomListResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
-		}
-
-		public Integer getRoomStatus() {
-			return this.roomStatus;
-		}
-
-		public void setRoomStatus(Integer roomStatus) {
-			this.roomStatus = roomStatus;
 		}
 	}
 

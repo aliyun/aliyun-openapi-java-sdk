@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddCasterEpisodeResponse extends AcsResponse {
 
-	private String episodeId;
-
 	private String requestId;
 
-	public String getEpisodeId() {
-		return this.episodeId;
-	}
-
-	public void setEpisodeId(String episodeId) {
-		this.episodeId = episodeId;
-	}
+	private String episodeId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class AddCasterEpisodeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getEpisodeId() {
+		return this.episodeId;
+	}
+
+	public void setEpisodeId(String episodeId) {
+		this.episodeId = episodeId;
 	}
 
 	@Override

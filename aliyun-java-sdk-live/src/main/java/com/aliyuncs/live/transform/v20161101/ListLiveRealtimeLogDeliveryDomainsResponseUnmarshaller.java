@@ -31,8 +31,8 @@ public class ListLiveRealtimeLogDeliveryDomainsResponseUnmarshaller {
 		List<Domains> content = new ArrayList<Domains>();
 		for (int i = 0; i < _ctx.lengthValue("ListLiveRealtimeLogDeliveryDomainsResponse.Content.Length"); i++) {
 			Domains domains = new Domains();
-			domains.setStatus(_ctx.stringValue("ListLiveRealtimeLogDeliveryDomainsResponse.Content["+ i +"].Status"));
 			domains.setDomainName(_ctx.stringValue("ListLiveRealtimeLogDeliveryDomainsResponse.Content["+ i +"].DomainName"));
+			domains.setStatus(_ctx.stringValue("ListLiveRealtimeLogDeliveryDomainsResponse.Content["+ i +"].Status"));
 
 			content.add(domains);
 		}

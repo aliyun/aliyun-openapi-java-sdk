@@ -47,17 +47,9 @@ public class ListLiveRealtimeLogDeliveryDomainsResponse extends AcsResponse {
 
 	public static class Domains {
 
-		private String status;
-
 		private String domainName;
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String status;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -65,6 +57,14 @@ public class ListLiveRealtimeLogDeliveryDomainsResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

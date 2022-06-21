@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddMultiRateConfigResponse extends AcsResponse {
 
-	private Integer code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private Integer code;
 
 	private List<FailedTemplates> body;
 
-	public Integer getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class AddMultiRateConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public List<FailedTemplates> getBody() {
@@ -67,41 +67,33 @@ public class AddMultiRateConfigResponse extends AcsResponse {
 
 	public static class FailedTemplates {
 
-		private Integer audioBitrate;
-
 		private String template;
-
-		private Integer height;
 
 		private String templateType;
 
-		private Integer bandWidth;
-
-		private Integer profile;
-
-		private Integer audioRate;
-
-		private String audioCodec;
-
-		private String gop;
+		private Integer height;
 
 		private Integer width;
 
+		private Integer fps;
+
+		private String gop;
+
 		private Integer videoBitrate;
 
-		private Integer audioChannelNum;
-
-		private Integer fps;
+		private Integer profile;
 
 		private String audioProfile;
 
-		public Integer getAudioBitrate() {
-			return this.audioBitrate;
-		}
+		private String audioCodec;
 
-		public void setAudioBitrate(Integer audioBitrate) {
-			this.audioBitrate = audioBitrate;
-		}
+		private Integer audioRate;
+
+		private Integer audioBitrate;
+
+		private Integer audioChannelNum;
+
+		private Integer bandWidth;
 
 		public String getTemplate() {
 			return this.template;
@@ -109,14 +101,6 @@ public class AddMultiRateConfigResponse extends AcsResponse {
 
 		public void setTemplate(String template) {
 			this.template = template;
-		}
-
-		public Integer getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(Integer height) {
-			this.height = height;
 		}
 
 		public String getTemplateType() {
@@ -127,44 +111,12 @@ public class AddMultiRateConfigResponse extends AcsResponse {
 			this.templateType = templateType;
 		}
 
-		public Integer getBandWidth() {
-			return this.bandWidth;
+		public Integer getHeight() {
+			return this.height;
 		}
 
-		public void setBandWidth(Integer bandWidth) {
-			this.bandWidth = bandWidth;
-		}
-
-		public Integer getProfile() {
-			return this.profile;
-		}
-
-		public void setProfile(Integer profile) {
-			this.profile = profile;
-		}
-
-		public Integer getAudioRate() {
-			return this.audioRate;
-		}
-
-		public void setAudioRate(Integer audioRate) {
-			this.audioRate = audioRate;
-		}
-
-		public String getAudioCodec() {
-			return this.audioCodec;
-		}
-
-		public void setAudioCodec(String audioCodec) {
-			this.audioCodec = audioCodec;
-		}
-
-		public String getGop() {
-			return this.gop;
-		}
-
-		public void setGop(String gop) {
-			this.gop = gop;
+		public void setHeight(Integer height) {
+			this.height = height;
 		}
 
 		public Integer getWidth() {
@@ -175,12 +127,68 @@ public class AddMultiRateConfigResponse extends AcsResponse {
 			this.width = width;
 		}
 
+		public Integer getFps() {
+			return this.fps;
+		}
+
+		public void setFps(Integer fps) {
+			this.fps = fps;
+		}
+
+		public String getGop() {
+			return this.gop;
+		}
+
+		public void setGop(String gop) {
+			this.gop = gop;
+		}
+
 		public Integer getVideoBitrate() {
 			return this.videoBitrate;
 		}
 
 		public void setVideoBitrate(Integer videoBitrate) {
 			this.videoBitrate = videoBitrate;
+		}
+
+		public Integer getProfile() {
+			return this.profile;
+		}
+
+		public void setProfile(Integer profile) {
+			this.profile = profile;
+		}
+
+		public String getAudioProfile() {
+			return this.audioProfile;
+		}
+
+		public void setAudioProfile(String audioProfile) {
+			this.audioProfile = audioProfile;
+		}
+
+		public String getAudioCodec() {
+			return this.audioCodec;
+		}
+
+		public void setAudioCodec(String audioCodec) {
+			this.audioCodec = audioCodec;
+		}
+
+		public Integer getAudioRate() {
+			return this.audioRate;
+		}
+
+		public void setAudioRate(Integer audioRate) {
+			this.audioRate = audioRate;
+		}
+
+		public Integer getAudioBitrate() {
+			return this.audioBitrate;
+		}
+
+		public void setAudioBitrate(Integer audioBitrate) {
+			this.audioBitrate = audioBitrate;
 		}
 
 		public Integer getAudioChannelNum() {
@@ -191,20 +199,12 @@ public class AddMultiRateConfigResponse extends AcsResponse {
 			this.audioChannelNum = audioChannelNum;
 		}
 
-		public Integer getFps() {
-			return this.fps;
+		public Integer getBandWidth() {
+			return this.bandWidth;
 		}
 
-		public void setFps(Integer fps) {
-			this.fps = fps;
-		}
-
-		public String getAudioProfile() {
-			return this.audioProfile;
-		}
-
-		public void setAudioProfile(String audioProfile) {
-			this.audioProfile = audioProfile;
+		public void setBandWidth(Integer bandWidth) {
+			this.bandWidth = bandWidth;
 		}
 	}
 

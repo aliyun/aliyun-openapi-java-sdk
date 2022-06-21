@@ -31,10 +31,10 @@ public class DescribeLiveDomainRecordUsageDataResponseUnmarshaller {
 		List<DataModule> recordUsageData = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData.Length"); i++) {
 			DataModule dataModule = new DataModule();
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].TimeStamp"));
+			dataModule.setDomain(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Domain"));
 			dataModule.setType(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Type"));
 			dataModule.setDuration(_ctx.longValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Duration"));
-			dataModule.setDomain(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Domain"));
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].TimeStamp"));
 			dataModule.setCount(_ctx.longValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData["+ i +"].Count"));
 
 			recordUsageData.add(dataModule);

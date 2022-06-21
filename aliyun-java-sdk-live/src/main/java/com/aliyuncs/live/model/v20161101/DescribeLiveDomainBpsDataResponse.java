@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDomainBpsDataResponse extends AcsResponse {
 
-	private String endTime;
-
-	private String startTime;
-
 	private String requestId;
 
 	private String domainName;
 
+	private String startTime;
+
+	private String endTime;
+
 	private String dataInterval;
 
 	private List<DataModule> bpsDataPerInterval;
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class DescribeLiveDomainBpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,21 +87,13 @@ public class DescribeLiveDomainBpsDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String bpsValue;
-
 		private String timeStamp;
 
-		private String httpsBpsValue;
+		private String bpsValue;
 
 		private String httpBpsValue;
 
-		public String getBpsValue() {
-			return this.bpsValue;
-		}
-
-		public void setBpsValue(String bpsValue) {
-			this.bpsValue = bpsValue;
-		}
+		private String httpsBpsValue;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -111,12 +103,12 @@ public class DescribeLiveDomainBpsDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public String getHttpsBpsValue() {
-			return this.httpsBpsValue;
+		public String getBpsValue() {
+			return this.bpsValue;
 		}
 
-		public void setHttpsBpsValue(String httpsBpsValue) {
-			this.httpsBpsValue = httpsBpsValue;
+		public void setBpsValue(String bpsValue) {
+			this.bpsValue = bpsValue;
 		}
 
 		public String getHttpBpsValue() {
@@ -125,6 +117,14 @@ public class DescribeLiveDomainBpsDataResponse extends AcsResponse {
 
 		public void setHttpBpsValue(String httpBpsValue) {
 			this.httpBpsValue = httpBpsValue;
+		}
+
+		public String getHttpsBpsValue() {
+			return this.httpsBpsValue;
+		}
+
+		public void setHttpsBpsValue(String httpsBpsValue) {
+			this.httpsBpsValue = httpsBpsValue;
 		}
 	}
 

@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveUserBillPredictionResponse extends AcsResponse {
 
-	private String endTime;
+	private String requestId;
 
 	private String startTime;
 
-	private String requestId;
+	private String endTime;
 
 	private String billType;
 
 	private List<BillPredictionDataItem> billPredictionData;
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getStartTime() {
@@ -51,12 +51,12 @@ public class DescribeLiveUserBillPredictionResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getBillType() {
@@ -79,9 +79,9 @@ public class DescribeLiveUserBillPredictionResponse extends AcsResponse {
 
 		private Float value;
 
-		private String timeStp;
-
 		private String area;
+
+		private String timeStp;
 
 		public Float getValue() {
 			return this.value;
@@ -91,20 +91,20 @@ public class DescribeLiveUserBillPredictionResponse extends AcsResponse {
 			this.value = value;
 		}
 
-		public String getTimeStp() {
-			return this.timeStp;
-		}
-
-		public void setTimeStp(String timeStp) {
-			this.timeStp = timeStp;
-		}
-
 		public String getArea() {
 			return this.area;
 		}
 
 		public void setArea(String area) {
 			this.area = area;
+		}
+
+		public String getTimeStp() {
+			return this.timeStp;
+		}
+
+		public void setTimeStp(String timeStp) {
+			this.timeStp = timeStp;
 		}
 	}
 

@@ -69,33 +69,17 @@ public class DescribeLiveCertificateListResponse extends AcsResponse {
 
 		public static class Cert {
 
-			private Long lastTime;
-
-			private String fingerprint;
-
 			private String certName;
-
-			private String issuer;
 
 			private Long certId;
 
+			private String fingerprint;
+
 			private String common;
 
-			public Long getLastTime() {
-				return this.lastTime;
-			}
+			private String issuer;
 
-			public void setLastTime(Long lastTime) {
-				this.lastTime = lastTime;
-			}
-
-			public String getFingerprint() {
-				return this.fingerprint;
-			}
-
-			public void setFingerprint(String fingerprint) {
-				this.fingerprint = fingerprint;
-			}
+			private Long lastTime;
 
 			public String getCertName() {
 				return this.certName;
@@ -103,14 +87,6 @@ public class DescribeLiveCertificateListResponse extends AcsResponse {
 
 			public void setCertName(String certName) {
 				this.certName = certName;
-			}
-
-			public String getIssuer() {
-				return this.issuer;
-			}
-
-			public void setIssuer(String issuer) {
-				this.issuer = issuer;
 			}
 
 			public Long getCertId() {
@@ -121,12 +97,36 @@ public class DescribeLiveCertificateListResponse extends AcsResponse {
 				this.certId = certId;
 			}
 
+			public String getFingerprint() {
+				return this.fingerprint;
+			}
+
+			public void setFingerprint(String fingerprint) {
+				this.fingerprint = fingerprint;
+			}
+
 			public String getCommon() {
 				return this.common;
 			}
 
 			public void setCommon(String common) {
 				this.common = common;
+			}
+
+			public String getIssuer() {
+				return this.issuer;
+			}
+
+			public void setIssuer(String issuer) {
+				this.issuer = issuer;
+			}
+
+			public Long getLastTime() {
+				return this.lastTime;
+			}
+
+			public void setLastTime(Long lastTime) {
+				this.lastTime = lastTime;
 			}
 		}
 	}

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterSyncGroupResponse extends AcsResponse {
 
-	private String casterId;
-
 	private String requestId;
 
+	private String casterId;
+
 	private List<SyncGroup> syncGroups;
-
-	public String getCasterId() {
-		return this.casterId;
-	}
-
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeCasterSyncGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCasterId() {
+		return this.casterId;
+	}
+
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
 	}
 
 	public List<SyncGroup> getSyncGroups() {
@@ -57,19 +57,11 @@ public class DescribeCasterSyncGroupResponse extends AcsResponse {
 
 	public static class SyncGroup {
 
-		private String hostResourceId;
-
 		private Integer mode;
 
+		private String hostResourceId;
+
 		private List<String> resourceIds;
-
-		public String getHostResourceId() {
-			return this.hostResourceId;
-		}
-
-		public void setHostResourceId(String hostResourceId) {
-			this.hostResourceId = hostResourceId;
-		}
 
 		public Integer getMode() {
 			return this.mode;
@@ -77,6 +69,14 @@ public class DescribeCasterSyncGroupResponse extends AcsResponse {
 
 		public void setMode(Integer mode) {
 			this.mode = mode;
+		}
+
+		public String getHostResourceId() {
+			return this.hostResourceId;
+		}
+
+		public void setHostResourceId(String hostResourceId) {
+			this.hostResourceId = hostResourceId;
 		}
 
 		public List<String> getResourceIds() {

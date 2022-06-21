@@ -47,80 +47,32 @@ public class DescribeLiveDomainCertificateInfoResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String status;
-
-		private String certLife;
-
-		private String certExpireTime;
-
-		private String sSLPub;
-
-		private String sSLProtocol;
-
-		private String certType;
-
-		private String certDomainName;
+		private String domainName;
 
 		private String certName;
 
+		private String certDomainName;
+
+		private String certExpireTime;
+
+		private String certLife;
+
 		private String certOrg;
 
-		private String domainName;
+		private String certType;
 
-		public String getStatus() {
-			return this.status;
+		private String sSLProtocol;
+
+		private String status;
+
+		private String sSLPub;
+
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCertLife() {
-			return this.certLife;
-		}
-
-		public void setCertLife(String certLife) {
-			this.certLife = certLife;
-		}
-
-		public String getCertExpireTime() {
-			return this.certExpireTime;
-		}
-
-		public void setCertExpireTime(String certExpireTime) {
-			this.certExpireTime = certExpireTime;
-		}
-
-		public String getSSLPub() {
-			return this.sSLPub;
-		}
-
-		public void setSSLPub(String sSLPub) {
-			this.sSLPub = sSLPub;
-		}
-
-		public String getSSLProtocol() {
-			return this.sSLProtocol;
-		}
-
-		public void setSSLProtocol(String sSLProtocol) {
-			this.sSLProtocol = sSLProtocol;
-		}
-
-		public String getCertType() {
-			return this.certType;
-		}
-
-		public void setCertType(String certType) {
-			this.certType = certType;
-		}
-
-		public String getCertDomainName() {
-			return this.certDomainName;
-		}
-
-		public void setCertDomainName(String certDomainName) {
-			this.certDomainName = certDomainName;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getCertName() {
@@ -131,6 +83,30 @@ public class DescribeLiveDomainCertificateInfoResponse extends AcsResponse {
 			this.certName = certName;
 		}
 
+		public String getCertDomainName() {
+			return this.certDomainName;
+		}
+
+		public void setCertDomainName(String certDomainName) {
+			this.certDomainName = certDomainName;
+		}
+
+		public String getCertExpireTime() {
+			return this.certExpireTime;
+		}
+
+		public void setCertExpireTime(String certExpireTime) {
+			this.certExpireTime = certExpireTime;
+		}
+
+		public String getCertLife() {
+			return this.certLife;
+		}
+
+		public void setCertLife(String certLife) {
+			this.certLife = certLife;
+		}
+
 		public String getCertOrg() {
 			return this.certOrg;
 		}
@@ -139,12 +115,36 @@ public class DescribeLiveDomainCertificateInfoResponse extends AcsResponse {
 			this.certOrg = certOrg;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getCertType() {
+			return this.certType;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setCertType(String certType) {
+			this.certType = certType;
+		}
+
+		public String getSSLProtocol() {
+			return this.sSLProtocol;
+		}
+
+		public void setSSLProtocol(String sSLProtocol) {
+			this.sSLProtocol = sSLProtocol;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSSLPub() {
+			return this.sSLPub;
+		}
+
+		public void setSSLPub(String sSLPub) {
+			this.sSLPub = sSLPub;
 		}
 	}
 

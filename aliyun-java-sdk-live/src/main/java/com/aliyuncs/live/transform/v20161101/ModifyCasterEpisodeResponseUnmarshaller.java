@@ -23,8 +23,8 @@ public class ModifyCasterEpisodeResponseUnmarshaller {
 	public static ModifyCasterEpisodeResponse unmarshall(ModifyCasterEpisodeResponse modifyCasterEpisodeResponse, UnmarshallerContext _ctx) {
 		
 		modifyCasterEpisodeResponse.setRequestId(_ctx.stringValue("ModifyCasterEpisodeResponse.RequestId"));
-		modifyCasterEpisodeResponse.setEpisodeId(_ctx.stringValue("ModifyCasterEpisodeResponse.EpisodeId"));
 		modifyCasterEpisodeResponse.setCasterId(_ctx.stringValue("ModifyCasterEpisodeResponse.CasterId"));
+		modifyCasterEpisodeResponse.setEpisodeId(_ctx.stringValue("ModifyCasterEpisodeResponse.EpisodeId"));
 	 
 	 	return modifyCasterEpisodeResponse;
 	}

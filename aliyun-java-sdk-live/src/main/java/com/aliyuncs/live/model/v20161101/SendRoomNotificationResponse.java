@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SendRoomNotificationResponse extends AcsResponse {
 
-	private String messageId;
-
 	private String requestId;
 
-	public String getMessageId() {
-		return this.messageId;
-	}
-
-	public void setMessageId(String messageId) {
-		this.messageId = messageId;
-	}
+	private String messageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class SendRoomNotificationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessageId() {
+		return this.messageId;
+	}
+
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
 	}
 
 	@Override

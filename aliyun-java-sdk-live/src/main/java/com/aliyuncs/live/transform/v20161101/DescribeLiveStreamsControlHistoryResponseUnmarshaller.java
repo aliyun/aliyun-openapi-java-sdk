@@ -31,10 +31,10 @@ public class DescribeLiveStreamsControlHistoryResponseUnmarshaller {
 		List<LiveStreamControlInfo> controlInfo = new ArrayList<LiveStreamControlInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo.Length"); i++) {
 			LiveStreamControlInfo liveStreamControlInfo = new LiveStreamControlInfo();
-			liveStreamControlInfo.setClientIP(_ctx.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].ClientIP"));
-			liveStreamControlInfo.setTimeStamp(_ctx.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].TimeStamp"));
-			liveStreamControlInfo.setAction(_ctx.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].Action"));
 			liveStreamControlInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].StreamName"));
+			liveStreamControlInfo.setClientIP(_ctx.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].ClientIP"));
+			liveStreamControlInfo.setAction(_ctx.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].Action"));
+			liveStreamControlInfo.setTimeStamp(_ctx.stringValue("DescribeLiveStreamsControlHistoryResponse.ControlInfo["+ i +"].TimeStamp"));
 
 			controlInfo.add(liveStreamControlInfo);
 		}

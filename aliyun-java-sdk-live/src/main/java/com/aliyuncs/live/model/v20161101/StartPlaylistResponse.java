@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartPlaylistResponse extends AcsResponse {
 
-	private String programId;
-
 	private String requestId;
 
+	private String programId;
+
 	private StreamInfo streamInfo;
-
-	public String getProgramId() {
-		return this.programId;
-	}
-
-	public void setProgramId(String programId) {
-		this.programId = programId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class StartPlaylistResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getProgramId() {
+		return this.programId;
+	}
+
+	public void setProgramId(String programId) {
+		this.programId = programId;
 	}
 
 	public StreamInfo getStreamInfo() {
@@ -57,21 +57,13 @@ public class StartPlaylistResponse extends AcsResponse {
 
 	public static class StreamInfo {
 
-		private String appName;
-
 		private String domainName;
+
+		private String appName;
 
 		private String streamName;
 
 		private List<Stream> streams;
-
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
 
 		public String getDomainName() {
 			return this.domainName;
@@ -79,6 +71,14 @@ public class StartPlaylistResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
 		public String getStreamName() {
@@ -99,21 +99,13 @@ public class StartPlaylistResponse extends AcsResponse {
 
 		public static class Stream {
 
-			private String quality;
-
 			private String pullFlvUrl;
-
-			private String pullM3U8Url;
 
 			private String pullRtmpUrl;
 
-			public String getQuality() {
-				return this.quality;
-			}
+			private String pullM3U8Url;
 
-			public void setQuality(String quality) {
-				this.quality = quality;
-			}
+			private String quality;
 
 			public String getPullFlvUrl() {
 				return this.pullFlvUrl;
@@ -121,6 +113,14 @@ public class StartPlaylistResponse extends AcsResponse {
 
 			public void setPullFlvUrl(String pullFlvUrl) {
 				this.pullFlvUrl = pullFlvUrl;
+			}
+
+			public String getPullRtmpUrl() {
+				return this.pullRtmpUrl;
+			}
+
+			public void setPullRtmpUrl(String pullRtmpUrl) {
+				this.pullRtmpUrl = pullRtmpUrl;
 			}
 
 			public String getPullM3U8Url() {
@@ -131,12 +131,12 @@ public class StartPlaylistResponse extends AcsResponse {
 				this.pullM3U8Url = pullM3U8Url;
 			}
 
-			public String getPullRtmpUrl() {
-				return this.pullRtmpUrl;
+			public String getQuality() {
+				return this.quality;
 			}
 
-			public void setPullRtmpUrl(String pullRtmpUrl) {
-				this.pullRtmpUrl = pullRtmpUrl;
+			public void setQuality(String quality) {
+				this.quality = quality;
 			}
 		}
 	}

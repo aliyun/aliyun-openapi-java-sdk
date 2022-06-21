@@ -32,10 +32,10 @@ public class DescribeLiveStreamSnapshotInfoResponseUnmarshaller {
 		List<LiveStreamSnapshotInfo> liveStreamSnapshotInfoList = new ArrayList<LiveStreamSnapshotInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList.Length"); i++) {
 			LiveStreamSnapshotInfo liveStreamSnapshotInfo = new LiveStreamSnapshotInfo();
-			liveStreamSnapshotInfo.setOssObject(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssObject"));
-			liveStreamSnapshotInfo.setOssBucket(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssBucket"));
-			liveStreamSnapshotInfo.setCreateTime(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].CreateTime"));
 			liveStreamSnapshotInfo.setOssEndpoint(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssEndpoint"));
+			liveStreamSnapshotInfo.setOssBucket(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssBucket"));
+			liveStreamSnapshotInfo.setOssObject(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssObject"));
+			liveStreamSnapshotInfo.setCreateTime(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].CreateTime"));
 
 			liveStreamSnapshotInfoList.add(liveStreamSnapshotInfo);
 		}

@@ -31,8 +31,8 @@ public class DescribeLiveAudioAuditConfigResponseUnmarshaller {
 		List<LiveAudioAuditConfig> liveAudioAuditConfigList = new ArrayList<LiveAudioAuditConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveAudioAuditConfigResponse.LiveAudioAuditConfigList.Length"); i++) {
 			LiveAudioAuditConfig liveAudioAuditConfig = new LiveAudioAuditConfig();
-			liveAudioAuditConfig.setAppName(_ctx.stringValue("DescribeLiveAudioAuditConfigResponse.LiveAudioAuditConfigList["+ i +"].AppName"));
 			liveAudioAuditConfig.setDomainName(_ctx.stringValue("DescribeLiveAudioAuditConfigResponse.LiveAudioAuditConfigList["+ i +"].DomainName"));
+			liveAudioAuditConfig.setAppName(_ctx.stringValue("DescribeLiveAudioAuditConfigResponse.LiveAudioAuditConfigList["+ i +"].AppName"));
 			liveAudioAuditConfig.setStreamName(_ctx.stringValue("DescribeLiveAudioAuditConfigResponse.LiveAudioAuditConfigList["+ i +"].StreamName"));
 			liveAudioAuditConfig.setBizType(_ctx.stringValue("DescribeLiveAudioAuditConfigResponse.LiveAudioAuditConfigList["+ i +"].BizType"));
 

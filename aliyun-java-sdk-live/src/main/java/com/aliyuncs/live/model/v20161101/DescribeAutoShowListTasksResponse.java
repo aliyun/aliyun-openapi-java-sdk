@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoShowListTasksResponse extends AcsResponse {
 
-	private String autoShowListTasks;
-
 	private String requestId;
 
-	public String getAutoShowListTasks() {
-		return this.autoShowListTasks;
-	}
-
-	public void setAutoShowListTasks(String autoShowListTasks) {
-		this.autoShowListTasks = autoShowListTasks;
-	}
+	private String autoShowListTasks;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class DescribeAutoShowListTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAutoShowListTasks() {
+		return this.autoShowListTasks;
+	}
+
+	public void setAutoShowListTasks(String autoShowListTasks) {
+		this.autoShowListTasks = autoShowListTasks;
 	}
 
 	@Override

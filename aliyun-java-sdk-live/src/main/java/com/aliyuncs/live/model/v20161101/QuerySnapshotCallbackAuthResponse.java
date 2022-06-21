@@ -26,11 +26,11 @@ public class QuerySnapshotCallbackAuthResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String callbackAuthKey;
-
 	private String domainName;
 
 	private String callbackReqAuth;
+
+	private String callbackAuthKey;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +38,6 @@ public class QuerySnapshotCallbackAuthResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCallbackAuthKey() {
-		return this.callbackAuthKey;
-	}
-
-	public void setCallbackAuthKey(String callbackAuthKey) {
-		this.callbackAuthKey = callbackAuthKey;
 	}
 
 	public String getDomainName() {
@@ -62,6 +54,14 @@ public class QuerySnapshotCallbackAuthResponse extends AcsResponse {
 
 	public void setCallbackReqAuth(String callbackReqAuth) {
 		this.callbackReqAuth = callbackReqAuth;
+	}
+
+	public String getCallbackAuthKey() {
+		return this.callbackAuthKey;
+	}
+
+	public void setCallbackAuthKey(String callbackAuthKey) {
+		this.callbackAuthKey = callbackAuthKey;
 	}
 
 	@Override

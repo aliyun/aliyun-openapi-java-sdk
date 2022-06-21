@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAllCustomTemplatesResponse extends AcsResponse {
 
-	private String customTemplates;
-
 	private String requestId;
 
-	public String getCustomTemplates() {
-		return this.customTemplates;
-	}
-
-	public void setCustomTemplates(String customTemplates) {
-		this.customTemplates = customTemplates;
-	}
+	private String customTemplates;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class GetAllCustomTemplatesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCustomTemplates() {
+		return this.customTemplates;
+	}
+
+	public void setCustomTemplates(String customTemplates) {
+		this.customTemplates = customTemplates;
 	}
 
 	@Override

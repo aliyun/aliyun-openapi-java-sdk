@@ -28,23 +28,23 @@ public class DescribeLiveSnapshotConfigResponseUnmarshaller {
 		
 		describeLiveSnapshotConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.RequestId"));
 		describeLiveSnapshotConfigResponse.setPageNum(_ctx.integerValue("DescribeLiveSnapshotConfigResponse.PageNum"));
-		describeLiveSnapshotConfigResponse.setOrder(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.Order"));
-		describeLiveSnapshotConfigResponse.setTotalPage(_ctx.integerValue("DescribeLiveSnapshotConfigResponse.TotalPage"));
 		describeLiveSnapshotConfigResponse.setPageSize(_ctx.integerValue("DescribeLiveSnapshotConfigResponse.PageSize"));
+		describeLiveSnapshotConfigResponse.setOrder(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.Order"));
 		describeLiveSnapshotConfigResponse.setTotalNum(_ctx.integerValue("DescribeLiveSnapshotConfigResponse.TotalNum"));
+		describeLiveSnapshotConfigResponse.setTotalPage(_ctx.integerValue("DescribeLiveSnapshotConfigResponse.TotalPage"));
 
 		List<LiveStreamSnapshotConfig> liveStreamSnapshotConfigList = new ArrayList<LiveStreamSnapshotConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList.Length"); i++) {
 			LiveStreamSnapshotConfig liveStreamSnapshotConfig = new LiveStreamSnapshotConfig();
-			liveStreamSnapshotConfig.setOverwriteOssObject(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].OverwriteOssObject"));
-			liveStreamSnapshotConfig.setTimeInterval(_ctx.integerValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].TimeInterval"));
-			liveStreamSnapshotConfig.setAppName(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].AppName"));
-			liveStreamSnapshotConfig.setCreateTime(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].CreateTime"));
-			liveStreamSnapshotConfig.setOssBucket(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].OssBucket"));
 			liveStreamSnapshotConfig.setDomainName(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].DomainName"));
-			liveStreamSnapshotConfig.setCallback(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].Callback"));
-			liveStreamSnapshotConfig.setSequenceOssObject(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject"));
+			liveStreamSnapshotConfig.setAppName(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].AppName"));
+			liveStreamSnapshotConfig.setTimeInterval(_ctx.integerValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].TimeInterval"));
 			liveStreamSnapshotConfig.setOssEndpoint(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].OssEndpoint"));
+			liveStreamSnapshotConfig.setOssBucket(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].OssBucket"));
+			liveStreamSnapshotConfig.setOverwriteOssObject(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].OverwriteOssObject"));
+			liveStreamSnapshotConfig.setSequenceOssObject(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject"));
+			liveStreamSnapshotConfig.setCreateTime(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].CreateTime"));
+			liveStreamSnapshotConfig.setCallback(_ctx.stringValue("DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList["+ i +"].Callback"));
 
 			liveStreamSnapshotConfigList.add(liveStreamSnapshotConfig);
 		}

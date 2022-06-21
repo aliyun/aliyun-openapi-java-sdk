@@ -33,19 +33,19 @@ public class DescribeCastersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeCastersResponse.CasterList.Length"); i++) {
 			Caster caster = new Caster();
 			caster.setStatus(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].Status"));
+			caster.setNormType(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].NormType"));
+			caster.setCasterId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterId"));
+			caster.setCasterName(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterName"));
+			caster.setCreateTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CreateTime"));
+			caster.setStartTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].StartTime"));
 			caster.setPurchaseTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].PurchaseTime"));
 			caster.setExpireTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ExpireTime"));
-			caster.setCreateTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CreateTime"));
-			caster.setCasterName(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterName"));
 			caster.setChargeType(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ChargeType"));
 			caster.setCasterTemplate(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterTemplate"));
-			caster.setRoomId(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].RoomId"));
-			caster.setCasterId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterId"));
 			caster.setChannelEnable(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].ChannelEnable"));
 			caster.setLastModified(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].LastModified"));
-			caster.setStartTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].StartTime"));
-			caster.setNormType(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].NormType"));
 			caster.setDuration(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].Duration"));
+			caster.setRoomId(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].RoomId"));
 
 			casterList.add(caster);
 		}

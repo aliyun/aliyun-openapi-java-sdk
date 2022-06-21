@@ -27,16 +27,16 @@ public class DescribeLiveUserBillPredictionResponseUnmarshaller {
 	public static DescribeLiveUserBillPredictionResponse unmarshall(DescribeLiveUserBillPredictionResponse describeLiveUserBillPredictionResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveUserBillPredictionResponse.setRequestId(_ctx.stringValue("DescribeLiveUserBillPredictionResponse.RequestId"));
-		describeLiveUserBillPredictionResponse.setEndTime(_ctx.stringValue("DescribeLiveUserBillPredictionResponse.EndTime"));
 		describeLiveUserBillPredictionResponse.setStartTime(_ctx.stringValue("DescribeLiveUserBillPredictionResponse.StartTime"));
+		describeLiveUserBillPredictionResponse.setEndTime(_ctx.stringValue("DescribeLiveUserBillPredictionResponse.EndTime"));
 		describeLiveUserBillPredictionResponse.setBillType(_ctx.stringValue("DescribeLiveUserBillPredictionResponse.BillType"));
 
 		List<BillPredictionDataItem> billPredictionData = new ArrayList<BillPredictionDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveUserBillPredictionResponse.BillPredictionData.Length"); i++) {
 			BillPredictionDataItem billPredictionDataItem = new BillPredictionDataItem();
 			billPredictionDataItem.setValue(_ctx.floatValue("DescribeLiveUserBillPredictionResponse.BillPredictionData["+ i +"].Value"));
-			billPredictionDataItem.setTimeStp(_ctx.stringValue("DescribeLiveUserBillPredictionResponse.BillPredictionData["+ i +"].TimeStp"));
 			billPredictionDataItem.setArea(_ctx.stringValue("DescribeLiveUserBillPredictionResponse.BillPredictionData["+ i +"].Area"));
+			billPredictionDataItem.setTimeStp(_ctx.stringValue("DescribeLiveUserBillPredictionResponse.BillPredictionData["+ i +"].TimeStp"));
 
 			billPredictionData.add(billPredictionDataItem);
 		}

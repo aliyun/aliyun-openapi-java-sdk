@@ -29,16 +29,16 @@ public class EditPlaylistResponseUnmarshaller {
 	public static EditPlaylistResponse unmarshall(EditPlaylistResponse editPlaylistResponse, UnmarshallerContext _ctx) {
 		
 		editPlaylistResponse.setRequestId(_ctx.stringValue("EditPlaylistResponse.RequestId"));
-		editPlaylistResponse.setCasterId(_ctx.stringValue("EditPlaylistResponse.CasterId"));
 		editPlaylistResponse.setProgramId(_ctx.stringValue("EditPlaylistResponse.ProgramId"));
+		editPlaylistResponse.setCasterId(_ctx.stringValue("EditPlaylistResponse.CasterId"));
 
 		Items items = new Items();
 
 		List<SuccessItem> successItems = new ArrayList<SuccessItem>();
 		for (int i = 0; i < _ctx.lengthValue("EditPlaylistResponse.Items.SuccessItems.Length"); i++) {
 			SuccessItem successItem = new SuccessItem();
-			successItem.setItemName(_ctx.stringValue("EditPlaylistResponse.Items.SuccessItems["+ i +"].ItemName"));
 			successItem.setItemId(_ctx.stringValue("EditPlaylistResponse.Items.SuccessItems["+ i +"].ItemId"));
+			successItem.setItemName(_ctx.stringValue("EditPlaylistResponse.Items.SuccessItems["+ i +"].ItemName"));
 
 			successItems.add(successItem);
 		}
@@ -47,8 +47,8 @@ public class EditPlaylistResponseUnmarshaller {
 		List<FailedItem> failedItems = new ArrayList<FailedItem>();
 		for (int i = 0; i < _ctx.lengthValue("EditPlaylistResponse.Items.FailedItems.Length"); i++) {
 			FailedItem failedItem = new FailedItem();
-			failedItem.setItemName(_ctx.stringValue("EditPlaylistResponse.Items.FailedItems["+ i +"].ItemName"));
 			failedItem.setItemId(_ctx.stringValue("EditPlaylistResponse.Items.FailedItems["+ i +"].ItemId"));
+			failedItem.setItemName(_ctx.stringValue("EditPlaylistResponse.Items.FailedItems["+ i +"].ItemName"));
 
 			failedItems.add(failedItem);
 		}

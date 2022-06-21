@@ -23,12 +23,12 @@ public class DescribeLiveEdgeTransferResponseUnmarshaller {
 	public static DescribeLiveEdgeTransferResponse unmarshall(DescribeLiveEdgeTransferResponse describeLiveEdgeTransferResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveEdgeTransferResponse.setRequestId(_ctx.stringValue("DescribeLiveEdgeTransferResponse.RequestId"));
-		describeLiveEdgeTransferResponse.setHttpDns(_ctx.stringValue("DescribeLiveEdgeTransferResponse.HttpDns"));
+		describeLiveEdgeTransferResponse.setDomainName(_ctx.stringValue("DescribeLiveEdgeTransferResponse.DomainName"));
 		describeLiveEdgeTransferResponse.setAppName(_ctx.stringValue("DescribeLiveEdgeTransferResponse.AppName"));
-		describeLiveEdgeTransferResponse.setTransferArgs(_ctx.stringValue("DescribeLiveEdgeTransferResponse.TransferArgs"));
 		describeLiveEdgeTransferResponse.setStreamName(_ctx.stringValue("DescribeLiveEdgeTransferResponse.StreamName"));
 		describeLiveEdgeTransferResponse.setTargetDomainList(_ctx.stringValue("DescribeLiveEdgeTransferResponse.TargetDomainList"));
-		describeLiveEdgeTransferResponse.setDomainName(_ctx.stringValue("DescribeLiveEdgeTransferResponse.DomainName"));
+		describeLiveEdgeTransferResponse.setTransferArgs(_ctx.stringValue("DescribeLiveEdgeTransferResponse.TransferArgs"));
+		describeLiveEdgeTransferResponse.setHttpDns(_ctx.stringValue("DescribeLiveEdgeTransferResponse.HttpDns"));
 	 
 	 	return describeLiveEdgeTransferResponse;
 	}

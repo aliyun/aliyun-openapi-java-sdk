@@ -31,8 +31,8 @@ public class DescribeLiveDomainMappingResponseUnmarshaller {
 		List<LiveDomainModel> liveDomainModels = new ArrayList<LiveDomainModel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainMappingResponse.LiveDomainModels.Length"); i++) {
 			LiveDomainModel liveDomainModel = new LiveDomainModel();
-			liveDomainModel.setType(_ctx.stringValue("DescribeLiveDomainMappingResponse.LiveDomainModels["+ i +"].Type"));
 			liveDomainModel.setDomainName(_ctx.stringValue("DescribeLiveDomainMappingResponse.LiveDomainModels["+ i +"].DomainName"));
+			liveDomainModel.setType(_ctx.stringValue("DescribeLiveDomainMappingResponse.LiveDomainModels["+ i +"].Type"));
 
 			liveDomainModels.add(liveDomainModel);
 		}

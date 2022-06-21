@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
-	private Integer pageNum;
-
 	private String requestId;
 
-	private String order;
-
-	private Integer totalPage;
+	private Integer pageNum;
 
 	private Integer pageSize;
 
+	private String order;
+
 	private Integer totalNum;
 
+	private Integer totalPage;
+
 	private List<RecordIndexInfo> recordIndexInfoList;
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,20 +47,12 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrder() {
-		return this.order;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setOrder(String order) {
-		this.order = order;
-	}
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Integer getPageSize() {
@@ -79,12 +63,28 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+	}
+
 	public Integer getTotalNum() {
 		return this.totalNum;
 	}
 
 	public void setTotalNum(Integer totalNum) {
 		this.totalNum = totalNum;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<RecordIndexInfo> getRecordIndexInfoList() {
@@ -97,57 +97,33 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
 	public static class RecordIndexInfo {
 
-		private String recordUrl;
-
-		private String streamName;
-
-		private String createTime;
-
 		private String recordId;
 
-		private Integer height;
-
-		private String ossBucket;
+		private String recordUrl;
 
 		private String domainName;
 
-		private String ossObject;
-
-		private String endTime;
-
 		private String appName;
 
-		private String startTime;
+		private String streamName;
 
-		private Integer width;
-
-		private Float duration;
+		private String ossBucket;
 
 		private String ossEndpoint;
 
-		public String getRecordUrl() {
-			return this.recordUrl;
-		}
+		private String ossObject;
 
-		public void setRecordUrl(String recordUrl) {
-			this.recordUrl = recordUrl;
-		}
+		private String startTime;
 
-		public String getStreamName() {
-			return this.streamName;
-		}
+		private String endTime;
 
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
+		private Float duration;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+		private Integer height;
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private Integer width;
+
+		private String createTime;
 
 		public String getRecordId() {
 			return this.recordId;
@@ -157,20 +133,12 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 			this.recordId = recordId;
 		}
 
-		public Integer getHeight() {
-			return this.height;
+		public String getRecordUrl() {
+			return this.recordUrl;
 		}
 
-		public void setHeight(Integer height) {
-			this.height = height;
-		}
-
-		public String getOssBucket() {
-			return this.ossBucket;
-		}
-
-		public void setOssBucket(String ossBucket) {
-			this.ossBucket = ossBucket;
+		public void setRecordUrl(String recordUrl) {
+			this.recordUrl = recordUrl;
 		}
 
 		public String getDomainName() {
@@ -181,28 +149,44 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 			this.domainName = domainName;
 		}
 
-		public String getOssObject() {
-			return this.ossObject;
-		}
-
-		public void setOssObject(String ossObject) {
-			this.ossObject = ossObject;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
 		public String getAppName() {
 			return this.appName;
 		}
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getOssBucket() {
+			return this.ossBucket;
+		}
+
+		public void setOssBucket(String ossBucket) {
+			this.ossBucket = ossBucket;
+		}
+
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
+		}
+
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
+		}
+
+		public String getOssObject() {
+			return this.ossObject;
+		}
+
+		public void setOssObject(String ossObject) {
+			this.ossObject = ossObject;
 		}
 
 		public String getStartTime() {
@@ -213,12 +197,12 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Integer getWidth() {
-			return this.width;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setWidth(Integer width) {
-			this.width = width;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public Float getDuration() {
@@ -229,12 +213,28 @@ public class DescribeLiveStreamRecordIndexFilesResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
+		public Integer getHeight() {
+			return this.height;
 		}
 
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
+		public void setHeight(Integer height) {
+			this.height = height;
+		}
+
+		public Integer getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Integer width) {
+			this.width = width;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 
-	private Integer pageNum;
-
 	private String requestId;
 
-	private String order;
-
-	private Integer totalPage;
+	private Integer pageNum;
 
 	private Integer pageSize;
 
+	private String order;
+
 	private Integer totalNum;
 
+	private Integer totalPage;
+
 	private List<LiveStreamSnapshotConfig> liveStreamSnapshotConfigList;
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,20 +47,12 @@ public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrder() {
-		return this.order;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setOrder(String order) {
-		this.order = order;
-	}
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Integer getPageSize() {
@@ -79,12 +63,28 @@ public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+	}
+
 	public Integer getTotalNum() {
 		return this.totalNum;
 	}
 
 	public void setTotalNum(Integer totalNum) {
 		this.totalNum = totalNum;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<LiveStreamSnapshotConfig> getLiveStreamSnapshotConfigList() {
@@ -97,38 +97,30 @@ public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 
 	public static class LiveStreamSnapshotConfig {
 
-		private String overwriteOssObject;
-
-		private Integer timeInterval;
+		private String domainName;
 
 		private String appName;
 
-		private String createTime;
-
-		private String ossBucket;
-
-		private String domainName;
-
-		private String callback;
-
-		private String sequenceOssObject;
+		private Integer timeInterval;
 
 		private String ossEndpoint;
 
-		public String getOverwriteOssObject() {
-			return this.overwriteOssObject;
+		private String ossBucket;
+
+		private String overwriteOssObject;
+
+		private String sequenceOssObject;
+
+		private String createTime;
+
+		private String callback;
+
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setOverwriteOssObject(String overwriteOssObject) {
-			this.overwriteOssObject = overwriteOssObject;
-		}
-
-		public Integer getTimeInterval() {
-			return this.timeInterval;
-		}
-
-		public void setTimeInterval(Integer timeInterval) {
-			this.timeInterval = timeInterval;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getAppName() {
@@ -139,12 +131,20 @@ public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public Integer getTimeInterval() {
+			return this.timeInterval;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setTimeInterval(Integer timeInterval) {
+			this.timeInterval = timeInterval;
+		}
+
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
+		}
+
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
 		}
 
 		public String getOssBucket() {
@@ -155,20 +155,12 @@ public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 			this.ossBucket = ossBucket;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getOverwriteOssObject() {
+			return this.overwriteOssObject;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getCallback() {
-			return this.callback;
-		}
-
-		public void setCallback(String callback) {
-			this.callback = callback;
+		public void setOverwriteOssObject(String overwriteOssObject) {
+			this.overwriteOssObject = overwriteOssObject;
 		}
 
 		public String getSequenceOssObject() {
@@ -179,12 +171,20 @@ public class DescribeLiveSnapshotConfigResponse extends AcsResponse {
 			this.sequenceOssObject = sequenceOssObject;
 		}
 
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getCallback() {
+			return this.callback;
+		}
+
+		public void setCallback(String callback) {
+			this.callback = callback;
 		}
 	}
 

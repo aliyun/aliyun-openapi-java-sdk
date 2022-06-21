@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyCasterLayoutResponse extends AcsResponse {
 
-	private String layoutId;
-
 	private String requestId;
 
-	public String getLayoutId() {
-		return this.layoutId;
-	}
-
-	public void setLayoutId(String layoutId) {
-		this.layoutId = layoutId;
-	}
+	private String layoutId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class ModifyCasterLayoutResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLayoutId() {
+		return this.layoutId;
+	}
+
+	public void setLayoutId(String layoutId) {
+		this.layoutId = layoutId;
 	}
 
 	@Override

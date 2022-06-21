@@ -23,8 +23,8 @@ public class DeleteCasterLayoutResponseUnmarshaller {
 	public static DeleteCasterLayoutResponse unmarshall(DeleteCasterLayoutResponse deleteCasterLayoutResponse, UnmarshallerContext _ctx) {
 		
 		deleteCasterLayoutResponse.setRequestId(_ctx.stringValue("DeleteCasterLayoutResponse.RequestId"));
-		deleteCasterLayoutResponse.setLayoutId(_ctx.stringValue("DeleteCasterLayoutResponse.LayoutId"));
 		deleteCasterLayoutResponse.setCasterId(_ctx.stringValue("DeleteCasterLayoutResponse.CasterId"));
+		deleteCasterLayoutResponse.setLayoutId(_ctx.stringValue("DeleteCasterLayoutResponse.LayoutId"));
 	 
 	 	return deleteCasterLayoutResponse;
 	}

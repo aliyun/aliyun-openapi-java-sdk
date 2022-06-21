@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddLiveStreamWatermarkResponse extends AcsResponse {
 
-	private String templateId;
-
 	private String requestId;
 
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-	}
+	private String templateId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class AddLiveStreamWatermarkResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
 	}
 
 	@Override

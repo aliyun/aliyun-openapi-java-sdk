@@ -32,8 +32,8 @@ public class DescribeCasterSyncGroupResponseUnmarshaller {
 		List<SyncGroup> syncGroups = new ArrayList<SyncGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterSyncGroupResponse.SyncGroups.Length"); i++) {
 			SyncGroup syncGroup = new SyncGroup();
-			syncGroup.setHostResourceId(_ctx.stringValue("DescribeCasterSyncGroupResponse.SyncGroups["+ i +"].HostResourceId"));
 			syncGroup.setMode(_ctx.integerValue("DescribeCasterSyncGroupResponse.SyncGroups["+ i +"].Mode"));
+			syncGroup.setHostResourceId(_ctx.stringValue("DescribeCasterSyncGroupResponse.SyncGroups["+ i +"].HostResourceId"));
 
 			List<String> resourceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterSyncGroupResponse.SyncGroups["+ i +"].ResourceIds.Length"); j++) {

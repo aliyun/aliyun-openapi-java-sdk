@@ -103,8 +103,8 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 		if (audioLayers != null) {
 			for (int depth1 = 0; depth1 < audioLayers.size(); depth1++) {
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".VolumeRate" , audioLayers.get(depth1).getVolumeRate());
-				putQueryParameter("AudioLayer." + (depth1 + 1) + ".FixedDelayDuration" , audioLayers.get(depth1).getFixedDelayDuration());
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".ValidChannel" , audioLayers.get(depth1).getValidChannel());
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".FixedDelayDuration" , audioLayers.get(depth1).getFixedDelayDuration());
 			}
 		}	
 	}
@@ -117,16 +117,16 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 		this.videoLayers = videoLayers;	
 		if (videoLayers != null) {
 			for (int depth1 = 0; depth1 < videoLayers.size(); depth1++) {
-				putQueryParameter("VideoLayer." + (depth1 + 1) + ".FixedDelayDuration" , videoLayers.get(depth1).getFixedDelayDuration());
 				putQueryParameter("VideoLayer." + (depth1 + 1) + ".FillMode" , videoLayers.get(depth1).getFillMode());
 				putQueryParameter("VideoLayer." + (depth1 + 1) + ".HeightNormalized" , videoLayers.get(depth1).getHeightNormalized());
+				putQueryParameter("VideoLayer." + (depth1 + 1) + ".WidthNormalized" , videoLayers.get(depth1).getWidthNormalized());
 				putQueryParameter("VideoLayer." + (depth1 + 1) + ".PositionRefer" , videoLayers.get(depth1).getPositionRefer());
 				if (videoLayers.get(depth1).getPositionNormalizeds() != null) {
 					for (int i = 0; i < videoLayers.get(depth1).getPositionNormalizeds().size(); i++) {
 						putQueryParameter("VideoLayer." + (depth1 + 1) + ".PositionNormalized." + (i + 1) , videoLayers.get(depth1).getPositionNormalizeds().get(i));
 					}
 				}
-				putQueryParameter("VideoLayer." + (depth1 + 1) + ".WidthNormalized" , videoLayers.get(depth1).getWidthNormalized());
+				putQueryParameter("VideoLayer." + (depth1 + 1) + ".FixedDelayDuration" , videoLayers.get(depth1).getFixedDelayDuration());
 			}
 		}	
 	}
@@ -148,9 +148,9 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 
 		private Float volumeRate;
 
-		private Integer fixedDelayDuration;
-
 		private String validChannel;
+
+		private Integer fixedDelayDuration;
 
 		public Float getVolumeRate() {
 			return this.volumeRate;
@@ -160,14 +160,6 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 			this.volumeRate = volumeRate;
 		}
 
-		public Integer getFixedDelayDuration() {
-			return this.fixedDelayDuration;
-		}
-
-		public void setFixedDelayDuration(Integer fixedDelayDuration) {
-			this.fixedDelayDuration = fixedDelayDuration;
-		}
-
 		public String getValidChannel() {
 			return this.validChannel;
 		}
@@ -175,21 +167,6 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 		public void setValidChannel(String validChannel) {
 			this.validChannel = validChannel;
 		}
-	}
-
-	public static class VideoLayer {
-
-		private Integer fixedDelayDuration;
-
-		private String fillMode;
-
-		private Float heightNormalized;
-
-		private String positionRefer;
-
-		private List<Float> positionNormalizeds;
-
-		private Float widthNormalized;
 
 		public Integer getFixedDelayDuration() {
 			return this.fixedDelayDuration;
@@ -198,6 +175,21 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 		public void setFixedDelayDuration(Integer fixedDelayDuration) {
 			this.fixedDelayDuration = fixedDelayDuration;
 		}
+	}
+
+	public static class VideoLayer {
+
+		private String fillMode;
+
+		private Float heightNormalized;
+
+		private Float widthNormalized;
+
+		private String positionRefer;
+
+		private List<Float> positionNormalizeds;
+
+		private Integer fixedDelayDuration;
 
 		public String getFillMode() {
 			return this.fillMode;
@@ -213,6 +205,14 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 
 		public void setHeightNormalized(Float heightNormalized) {
 			this.heightNormalized = heightNormalized;
+		}
+
+		public Float getWidthNormalized() {
+			return this.widthNormalized;
+		}
+
+		public void setWidthNormalized(Float widthNormalized) {
+			this.widthNormalized = widthNormalized;
 		}
 
 		public String getPositionRefer() {
@@ -231,12 +231,12 @@ public class ModifyCasterLayoutRequest extends RpcAcsRequest<ModifyCasterLayoutR
 			this.positionNormalizeds = positionNormalizeds;
 		}
 
-		public Float getWidthNormalized() {
-			return this.widthNormalized;
+		public Integer getFixedDelayDuration() {
+			return this.fixedDelayDuration;
 		}
 
-		public void setWidthNormalized(Float widthNormalized) {
-			this.widthNormalized = widthNormalized;
+		public void setFixedDelayDuration(Integer fixedDelayDuration) {
+			this.fixedDelayDuration = fixedDelayDuration;
 		}
 	}
 

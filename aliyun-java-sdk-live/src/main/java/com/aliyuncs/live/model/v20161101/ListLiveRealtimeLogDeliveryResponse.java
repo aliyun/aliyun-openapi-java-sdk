@@ -47,40 +47,24 @@ public class ListLiveRealtimeLogDeliveryResponse extends AcsResponse {
 
 	public static class RealtimeLogDeliveryInfo {
 
-		private String status;
-
-		private Integer dmId;
-
-		private String region;
+		private String project;
 
 		private String logstore;
 
-		private String project;
+		private String region;
 
 		private String domainName;
 
-		public String getStatus() {
-			return this.status;
+		private Integer dmId;
+
+		private String status;
+
+		public String getProject() {
+			return this.project;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Integer getDmId() {
-			return this.dmId;
-		}
-
-		public void setDmId(Integer dmId) {
-			this.dmId = dmId;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
+		public void setProject(String project) {
+			this.project = project;
 		}
 
 		public String getLogstore() {
@@ -91,12 +75,12 @@ public class ListLiveRealtimeLogDeliveryResponse extends AcsResponse {
 			this.logstore = logstore;
 		}
 
-		public String getProject() {
-			return this.project;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setProject(String project) {
-			this.project = project;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getDomainName() {
@@ -105,6 +89,22 @@ public class ListLiveRealtimeLogDeliveryResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public Integer getDmId() {
+			return this.dmId;
+		}
+
+		public void setDmId(Integer dmId) {
+			this.dmId = dmId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

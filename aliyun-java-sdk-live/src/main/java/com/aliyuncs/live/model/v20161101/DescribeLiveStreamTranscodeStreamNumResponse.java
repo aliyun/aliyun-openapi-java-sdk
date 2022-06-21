@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamTranscodeStreamNumResponse extends AcsResponse {
 
-	private Long untranscodeNumber;
-
-	private Long lazyTranscodedNumber;
-
-	private Long transcodedNumber;
-
 	private String requestId;
 
 	private Long total;
 
-	public Long getUntranscodeNumber() {
-		return this.untranscodeNumber;
-	}
+	private Long transcodedNumber;
 
-	public void setUntranscodeNumber(Long untranscodeNumber) {
-		this.untranscodeNumber = untranscodeNumber;
-	}
+	private Long untranscodeNumber;
 
-	public Long getLazyTranscodedNumber() {
-		return this.lazyTranscodedNumber;
-	}
-
-	public void setLazyTranscodedNumber(Long lazyTranscodedNumber) {
-		this.lazyTranscodedNumber = lazyTranscodedNumber;
-	}
-
-	public Long getTranscodedNumber() {
-		return this.transcodedNumber;
-	}
-
-	public void setTranscodedNumber(Long transcodedNumber) {
-		this.transcodedNumber = transcodedNumber;
-	}
+	private Long lazyTranscodedNumber;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,6 +48,30 @@ public class DescribeLiveStreamTranscodeStreamNumResponse extends AcsResponse {
 
 	public void setTotal(Long total) {
 		this.total = total;
+	}
+
+	public Long getTranscodedNumber() {
+		return this.transcodedNumber;
+	}
+
+	public void setTranscodedNumber(Long transcodedNumber) {
+		this.transcodedNumber = transcodedNumber;
+	}
+
+	public Long getUntranscodeNumber() {
+		return this.untranscodeNumber;
+	}
+
+	public void setUntranscodeNumber(Long untranscodeNumber) {
+		this.untranscodeNumber = untranscodeNumber;
+	}
+
+	public Long getLazyTranscodedNumber() {
+		return this.lazyTranscodedNumber;
+	}
+
+	public void setLazyTranscodedNumber(Long lazyTranscodedNumber) {
+		this.lazyTranscodedNumber = lazyTranscodedNumber;
 	}
 
 	@Override

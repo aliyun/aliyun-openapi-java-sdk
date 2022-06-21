@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamsBlockListResponse extends AcsResponse {
 
-	private Integer pageNum;
-
 	private String requestId;
 
-	private Integer totalPage;
+	private String domainName;
+
+	private Integer pageNum;
 
 	private Integer pageSize;
 
 	private Integer totalNum;
 
-	private String domainName;
+	private Integer totalPage;
 
 	private List<String> streamUrls;
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,12 +47,20 @@ public class DescribeLiveStreamsBlockListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalPage() {
-		return this.totalPage;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public Integer getPageSize() {
@@ -79,12 +79,12 @@ public class DescribeLiveStreamsBlockListResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public Integer getTotalPage() {
+		return this.totalPage;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<String> getStreamUrls() {

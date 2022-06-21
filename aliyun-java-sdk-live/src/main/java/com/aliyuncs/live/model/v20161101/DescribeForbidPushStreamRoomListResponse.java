@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeForbidPushStreamRoomListResponse extends AcsResponse {
 
-	private Integer totalPage;
-
 	private String requestId;
 
 	private Integer totalNum;
 
+	private Integer totalPage;
+
 	private List<Room> roomList;
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class DescribeForbidPushStreamRoomListResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
+
 	public List<Room> getRoomList() {
 		return this.roomList;
 	}
@@ -67,20 +67,20 @@ public class DescribeForbidPushStreamRoomListResponse extends AcsResponse {
 
 	public static class Room {
 
-		private String opEndTime;
+		private String roomId;
 
 		private String anchorId;
 
 		private String opStartTime;
 
-		private String roomId;
+		private String opEndTime;
 
-		public String getOpEndTime() {
-			return this.opEndTime;
+		public String getRoomId() {
+			return this.roomId;
 		}
 
-		public void setOpEndTime(String opEndTime) {
-			this.opEndTime = opEndTime;
+		public void setRoomId(String roomId) {
+			this.roomId = roomId;
 		}
 
 		public String getAnchorId() {
@@ -99,12 +99,12 @@ public class DescribeForbidPushStreamRoomListResponse extends AcsResponse {
 			this.opStartTime = opStartTime;
 		}
 
-		public String getRoomId() {
-			return this.roomId;
+		public String getOpEndTime() {
+			return this.opEndTime;
 		}
 
-		public void setRoomId(String roomId) {
-			this.roomId = roomId;
+		public void setOpEndTime(String opEndTime) {
+			this.opEndTime = opEndTime;
 		}
 	}
 

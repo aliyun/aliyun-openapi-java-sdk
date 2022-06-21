@@ -47,19 +47,35 @@ public class DescribeLiveStreamWatermarkRulesResponse extends AcsResponse {
 
 	public static class RuleInfo {
 
-		private String domain;
+		private String ruleId;
 
-		private String description;
+		private String name;
+
+		private String domain;
 
 		private String app;
 
 		private String stream;
 
-		private String name;
-
 		private String templateId;
 
-		private String ruleId;
+		private String description;
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getDomain() {
 			return this.domain;
@@ -67,14 +83,6 @@ public class DescribeLiveStreamWatermarkRulesResponse extends AcsResponse {
 
 		public void setDomain(String domain) {
 			this.domain = domain;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getApp() {
@@ -93,14 +101,6 @@ public class DescribeLiveStreamWatermarkRulesResponse extends AcsResponse {
 			this.stream = stream;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getTemplateId() {
 			return this.templateId;
 		}
@@ -109,12 +109,12 @@ public class DescribeLiveStreamWatermarkRulesResponse extends AcsResponse {
 			this.templateId = templateId;
 		}
 
-		public String getRuleId() {
-			return this.ruleId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

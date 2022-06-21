@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveRealtimeLogAuthorizedResponse extends AcsResponse {
 
-	private String authorizedStatus;
-
 	private String requestId;
 
-	public String getAuthorizedStatus() {
-		return this.authorizedStatus;
-	}
-
-	public void setAuthorizedStatus(String authorizedStatus) {
-		this.authorizedStatus = authorizedStatus;
-	}
+	private String authorizedStatus;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class DescribeLiveRealtimeLogAuthorizedResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAuthorizedStatus() {
+		return this.authorizedStatus;
+	}
+
+	public void setAuthorizedStatus(String authorizedStatus) {
+		this.authorizedStatus = authorizedStatus;
 	}
 
 	@Override

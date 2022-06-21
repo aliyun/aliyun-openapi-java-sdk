@@ -27,9 +27,9 @@ public class DescribeLiveDomainOnlineUserNumResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer userCount;
-
 	private Integer streamCount;
+
+	private Integer userCount;
 
 	private List<LiveStreamOnlineUserNumInfo> onlineUserInfo;
 
@@ -41,20 +41,20 @@ public class DescribeLiveDomainOnlineUserNumResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getUserCount() {
-		return this.userCount;
-	}
-
-	public void setUserCount(Integer userCount) {
-		this.userCount = userCount;
-	}
-
 	public Integer getStreamCount() {
 		return this.streamCount;
 	}
 
 	public void setStreamCount(Integer streamCount) {
 		this.streamCount = streamCount;
+	}
+
+	public Integer getUserCount() {
+		return this.userCount;
+	}
+
+	public void setUserCount(Integer userCount) {
+		this.userCount = userCount;
 	}
 
 	public List<LiveStreamOnlineUserNumInfo> getOnlineUserInfo() {
@@ -89,17 +89,9 @@ public class DescribeLiveDomainOnlineUserNumResponse extends AcsResponse {
 
 		public static class Info {
 
-			private Long userNumber;
-
 			private String transcodeTemplate;
 
-			public Long getUserNumber() {
-				return this.userNumber;
-			}
-
-			public void setUserNumber(Long userNumber) {
-				this.userNumber = userNumber;
-			}
+			private Long userNumber;
 
 			public String getTranscodeTemplate() {
 				return this.transcodeTemplate;
@@ -107,6 +99,14 @@ public class DescribeLiveDomainOnlineUserNumResponse extends AcsResponse {
 
 			public void setTranscodeTemplate(String transcodeTemplate) {
 				this.transcodeTemplate = transcodeTemplate;
+			}
+
+			public Long getUserNumber() {
+				return this.userNumber;
+			}
+
+			public void setUserNumber(Long userNumber) {
+				this.userNumber = userNumber;
 			}
 		}
 	}

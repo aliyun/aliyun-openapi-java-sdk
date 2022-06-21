@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class InitializeAutoShowListTaskResponse extends AcsResponse {
 
-	private String streamList;
-
 	private String requestId;
 
 	private String casterId;
 
-	public String getStreamList() {
-		return this.streamList;
-	}
-
-	public void setStreamList(String streamList) {
-		this.streamList = streamList;
-	}
+	private String streamList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,6 +44,14 @@ public class InitializeAutoShowListTaskResponse extends AcsResponse {
 
 	public void setCasterId(String casterId) {
 		this.casterId = casterId;
+	}
+
+	public String getStreamList() {
+		return this.streamList;
+	}
+
+	public void setStreamList(String streamList) {
+		this.streamList = streamList;
 	}
 
 	@Override

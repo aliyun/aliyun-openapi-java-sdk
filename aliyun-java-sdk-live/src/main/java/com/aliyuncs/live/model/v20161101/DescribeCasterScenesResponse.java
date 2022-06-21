@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterScenesResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<Scene> sceneList;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Scene> getSceneList() {
@@ -57,55 +57,23 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 	public static class Scene {
 
-		private Integer status;
-
-		private String layoutId;
-
-		private String outputType;
-
-		private String rtsUrl;
-
 		private String sceneId;
 
 		private String sceneName;
 
+		private String outputType;
+
+		private String layoutId;
+
 		private String streamUrl;
+
+		private String rtsUrl;
+
+		private Integer status;
 
 		private List<StreamInfo> streamInfos;
 
 		private List<String> componentIds;
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getLayoutId() {
-			return this.layoutId;
-		}
-
-		public void setLayoutId(String layoutId) {
-			this.layoutId = layoutId;
-		}
-
-		public String getOutputType() {
-			return this.outputType;
-		}
-
-		public void setOutputType(String outputType) {
-			this.outputType = outputType;
-		}
-
-		public String getRtsUrl() {
-			return this.rtsUrl;
-		}
-
-		public void setRtsUrl(String rtsUrl) {
-			this.rtsUrl = rtsUrl;
-		}
 
 		public String getSceneId() {
 			return this.sceneId;
@@ -123,12 +91,44 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 			this.sceneName = sceneName;
 		}
 
+		public String getOutputType() {
+			return this.outputType;
+		}
+
+		public void setOutputType(String outputType) {
+			this.outputType = outputType;
+		}
+
+		public String getLayoutId() {
+			return this.layoutId;
+		}
+
+		public void setLayoutId(String layoutId) {
+			this.layoutId = layoutId;
+		}
+
 		public String getStreamUrl() {
 			return this.streamUrl;
 		}
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
+		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public List<StreamInfo> getStreamInfos() {
@@ -149,11 +149,19 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 		public static class StreamInfo {
 
+			private String transcodeConfig;
+
 			private String videoFormat;
 
 			private String outputStreamUrl;
 
-			private String transcodeConfig;
+			public String getTranscodeConfig() {
+				return this.transcodeConfig;
+			}
+
+			public void setTranscodeConfig(String transcodeConfig) {
+				this.transcodeConfig = transcodeConfig;
+			}
 
 			public String getVideoFormat() {
 				return this.videoFormat;
@@ -169,14 +177,6 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 			public void setOutputStreamUrl(String outputStreamUrl) {
 				this.outputStreamUrl = outputStreamUrl;
-			}
-
-			public String getTranscodeConfig() {
-				return this.transcodeConfig;
-			}
-
-			public void setTranscodeConfig(String transcodeConfig) {
-				this.transcodeConfig = transcodeConfig;
 			}
 		}
 	}

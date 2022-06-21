@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddPlaylistItemsResponse extends AcsResponse {
 
-	private String programId;
-
 	private String requestId;
 
+	private String programId;
+
 	private Items items;
-
-	public String getProgramId() {
-		return this.programId;
-	}
-
-	public void setProgramId(String programId) {
-		this.programId = programId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getProgramId() {
+		return this.programId;
+	}
+
+	public void setProgramId(String programId) {
+		this.programId = programId;
 	}
 
 	public Items getItems() {
@@ -79,17 +79,9 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 		public static class SuccessItem {
 
-			private String itemName;
-
 			private String itemId;
 
-			public String getItemName() {
-				return this.itemName;
-			}
-
-			public void setItemName(String itemName) {
-				this.itemName = itemName;
-			}
+			private String itemName;
 
 			public String getItemId() {
 				return this.itemId;
@@ -97,22 +89,22 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 			public void setItemId(String itemId) {
 				this.itemId = itemId;
+			}
+
+			public String getItemName() {
+				return this.itemName;
+			}
+
+			public void setItemName(String itemName) {
+				this.itemName = itemName;
 			}
 		}
 
 		public static class FailedItem {
 
-			private String itemName;
-
 			private String itemId;
 
-			public String getItemName() {
-				return this.itemName;
-			}
-
-			public void setItemName(String itemName) {
-				this.itemName = itemName;
-			}
+			private String itemName;
 
 			public String getItemId() {
 				return this.itemId;
@@ -120,6 +112,14 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 			public void setItemId(String itemId) {
 				this.itemId = itemId;
+			}
+
+			public String getItemName() {
+				return this.itemName;
+			}
+
+			public void setItemName(String itemName) {
+				this.itemName = itemName;
 			}
 		}
 	}

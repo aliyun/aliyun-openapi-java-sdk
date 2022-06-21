@@ -47,29 +47,45 @@ public class DescribeLiveStreamWatermarksResponse extends AcsResponse {
 
 	public static class Watermark {
 
+		private String templateId;
+
+		private String name;
+
 		private Integer type;
 
-		private Float xOffset;
+		private String description;
 
 		private Integer refWidth;
+
+		private Integer refHeight;
+
+		private Float xOffset;
 
 		private Float yOffset;
 
 		private Integer height;
 
-		private Integer refHeight;
-
-		private String pictureUrl;
-
 		private Integer transparency;
-
-		private String description;
 
 		private String offsetCorner;
 
-		private String name;
+		private String pictureUrl;
 
-		private String templateId;
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public Integer getType() {
 			return this.type;
@@ -79,12 +95,12 @@ public class DescribeLiveStreamWatermarksResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public Float getXOffset() {
-			return this.xOffset;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setXOffset(Float xOffset) {
-			this.xOffset = xOffset;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Integer getRefWidth() {
@@ -93,6 +109,22 @@ public class DescribeLiveStreamWatermarksResponse extends AcsResponse {
 
 		public void setRefWidth(Integer refWidth) {
 			this.refWidth = refWidth;
+		}
+
+		public Integer getRefHeight() {
+			return this.refHeight;
+		}
+
+		public void setRefHeight(Integer refHeight) {
+			this.refHeight = refHeight;
+		}
+
+		public Float getXOffset() {
+			return this.xOffset;
+		}
+
+		public void setXOffset(Float xOffset) {
+			this.xOffset = xOffset;
 		}
 
 		public Float getYOffset() {
@@ -111,36 +143,12 @@ public class DescribeLiveStreamWatermarksResponse extends AcsResponse {
 			this.height = height;
 		}
 
-		public Integer getRefHeight() {
-			return this.refHeight;
-		}
-
-		public void setRefHeight(Integer refHeight) {
-			this.refHeight = refHeight;
-		}
-
-		public String getPictureUrl() {
-			return this.pictureUrl;
-		}
-
-		public void setPictureUrl(String pictureUrl) {
-			this.pictureUrl = pictureUrl;
-		}
-
 		public Integer getTransparency() {
 			return this.transparency;
 		}
 
 		public void setTransparency(Integer transparency) {
 			this.transparency = transparency;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getOffsetCorner() {
@@ -151,20 +159,12 @@ public class DescribeLiveStreamWatermarksResponse extends AcsResponse {
 			this.offsetCorner = offsetCorner;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getPictureUrl() {
+			return this.pictureUrl;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setPictureUrl(String pictureUrl) {
+			this.pictureUrl = pictureUrl;
 		}
 	}
 

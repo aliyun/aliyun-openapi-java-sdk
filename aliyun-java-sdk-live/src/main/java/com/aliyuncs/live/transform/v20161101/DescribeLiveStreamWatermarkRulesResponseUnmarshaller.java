@@ -31,13 +31,13 @@ public class DescribeLiveStreamWatermarkRulesResponseUnmarshaller {
 		List<RuleInfo> ruleInfoList = new ArrayList<RuleInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList.Length"); i++) {
 			RuleInfo ruleInfo = new RuleInfo();
+			ruleInfo.setRuleId(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].RuleId"));
+			ruleInfo.setName(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].Name"));
 			ruleInfo.setDomain(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].Domain"));
-			ruleInfo.setDescription(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].Description"));
 			ruleInfo.setApp(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].App"));
 			ruleInfo.setStream(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].Stream"));
-			ruleInfo.setName(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].Name"));
 			ruleInfo.setTemplateId(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].TemplateId"));
-			ruleInfo.setRuleId(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].RuleId"));
+			ruleInfo.setDescription(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList["+ i +"].Description"));
 
 			ruleInfoList.add(ruleInfo);
 		}

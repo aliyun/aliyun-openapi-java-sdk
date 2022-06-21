@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamSnapshotInfoResponse extends AcsResponse {
 
-	private String nextStartTime;
-
 	private String requestId;
 
+	private String nextStartTime;
+
 	private List<LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
-
-	public String getNextStartTime() {
-		return this.nextStartTime;
-	}
-
-	public void setNextStartTime(String nextStartTime) {
-		this.nextStartTime = nextStartTime;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeLiveStreamSnapshotInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNextStartTime() {
+		return this.nextStartTime;
+	}
+
+	public void setNextStartTime(String nextStartTime) {
+		this.nextStartTime = nextStartTime;
 	}
 
 	public List<LiveStreamSnapshotInfo> getLiveStreamSnapshotInfoList() {
@@ -57,20 +57,20 @@ public class DescribeLiveStreamSnapshotInfoResponse extends AcsResponse {
 
 	public static class LiveStreamSnapshotInfo {
 
-		private String ossObject;
+		private String ossEndpoint;
 
 		private String ossBucket;
 
+		private String ossObject;
+
 		private String createTime;
 
-		private String ossEndpoint;
-
-		public String getOssObject() {
-			return this.ossObject;
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
 		}
 
-		public void setOssObject(String ossObject) {
-			this.ossObject = ossObject;
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
 		}
 
 		public String getOssBucket() {
@@ -81,20 +81,20 @@ public class DescribeLiveStreamSnapshotInfoResponse extends AcsResponse {
 			this.ossBucket = ossBucket;
 		}
 
+		public String getOssObject() {
+			return this.ossObject;
+		}
+
+		public void setOssObject(String ossObject) {
+			this.ossObject = ossObject;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
-		}
-
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
 		}
 	}
 

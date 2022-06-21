@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDomainBpsDataByTimeStampResponse extends AcsResponse {
 
-	private String timeStamp;
-
 	private String requestId;
 
 	private String domainName;
 
+	private String timeStamp;
+
 	private List<BpsDataModel> bpsDataList;
-
-	public String getTimeStamp() {
-		return this.timeStamp;
-	}
-
-	public void setTimeStamp(String timeStamp) {
-		this.timeStamp = timeStamp;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class DescribeLiveDomainBpsDataByTimeStampResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
+	public String getTimeStamp() {
+		return this.timeStamp;
+	}
+
+	public void setTimeStamp(String timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
 	public List<BpsDataModel> getBpsDataList() {
 		return this.bpsDataList;
 	}
@@ -67,21 +67,13 @@ public class DescribeLiveDomainBpsDataByTimeStampResponse extends AcsResponse {
 
 	public static class BpsDataModel {
 
-		private String locationName;
-
 		private String timeStamp;
+
+		private String locationName;
 
 		private String ispName;
 
 		private Long bps;
-
-		public String getLocationName() {
-			return this.locationName;
-		}
-
-		public void setLocationName(String locationName) {
-			this.locationName = locationName;
-		}
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -89,6 +81,14 @@ public class DescribeLiveDomainBpsDataByTimeStampResponse extends AcsResponse {
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public String getLocationName() {
+			return this.locationName;
+		}
+
+		public void setLocationName(String locationName) {
+			this.locationName = locationName;
 		}
 
 		public String getIspName() {

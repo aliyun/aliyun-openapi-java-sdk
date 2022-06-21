@@ -26,20 +26,20 @@ public class DescribeLiveStreamRecordIndexFileResponseUnmarshaller {
 		describeLiveStreamRecordIndexFileResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RequestId"));
 
 		RecordIndexInfo recordIndexInfo = new RecordIndexInfo();
-		recordIndexInfo.setRecordUrl(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.RecordUrl"));
-		recordIndexInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.StreamName"));
-		recordIndexInfo.setCreateTime(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.CreateTime"));
 		recordIndexInfo.setRecordId(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.RecordId"));
-		recordIndexInfo.setHeight(_ctx.integerValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.Height"));
-		recordIndexInfo.setOssBucket(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.OssBucket"));
+		recordIndexInfo.setRecordUrl(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.RecordUrl"));
 		recordIndexInfo.setDomainName(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.DomainName"));
-		recordIndexInfo.setOssObject(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.OssObject"));
-		recordIndexInfo.setEndTime(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.EndTime"));
 		recordIndexInfo.setAppName(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.AppName"));
-		recordIndexInfo.setStartTime(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.StartTime"));
-		recordIndexInfo.setWidth(_ctx.integerValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.Width"));
-		recordIndexInfo.setDuration(_ctx.floatValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.Duration"));
+		recordIndexInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.StreamName"));
+		recordIndexInfo.setOssBucket(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.OssBucket"));
 		recordIndexInfo.setOssEndpoint(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.OssEndpoint"));
+		recordIndexInfo.setOssObject(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.OssObject"));
+		recordIndexInfo.setStartTime(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.StartTime"));
+		recordIndexInfo.setEndTime(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.EndTime"));
+		recordIndexInfo.setDuration(_ctx.floatValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.Duration"));
+		recordIndexInfo.setHeight(_ctx.integerValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.Height"));
+		recordIndexInfo.setWidth(_ctx.integerValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.Width"));
+		recordIndexInfo.setCreateTime(_ctx.stringValue("DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo.CreateTime"));
 		describeLiveStreamRecordIndexFileResponse.setRecordIndexInfo(recordIndexInfo);
 	 
 	 	return describeLiveStreamRecordIndexFileResponse;

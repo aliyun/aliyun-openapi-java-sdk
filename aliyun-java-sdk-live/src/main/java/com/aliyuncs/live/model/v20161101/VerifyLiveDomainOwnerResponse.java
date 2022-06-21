@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class VerifyLiveDomainOwnerResponse extends AcsResponse {
 
-	private String content;
-
 	private String requestId;
 
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
+	private String content;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class VerifyLiveDomainOwnerResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	@Override

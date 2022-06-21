@@ -31,9 +31,9 @@ public class DescribeLiveDomainTimeShiftDataResponseUnmarshaller {
 		List<DataModule> timeShiftData = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainTimeShiftDataResponse.TimeShiftData.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setType(_ctx.stringValue("DescribeLiveDomainTimeShiftDataResponse.TimeShiftData["+ i +"].Type"));
 			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainTimeShiftDataResponse.TimeShiftData["+ i +"].TimeStamp"));
 			dataModule.setSize(_ctx.stringValue("DescribeLiveDomainTimeShiftDataResponse.TimeShiftData["+ i +"].Size"));
+			dataModule.setType(_ctx.stringValue("DescribeLiveDomainTimeShiftDataResponse.TimeShiftData["+ i +"].Type"));
 
 			timeShiftData.add(dataModule);
 		}

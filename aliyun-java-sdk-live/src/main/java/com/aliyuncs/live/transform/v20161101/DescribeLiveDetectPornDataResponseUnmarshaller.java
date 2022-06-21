@@ -31,14 +31,14 @@ public class DescribeLiveDetectPornDataResponseUnmarshaller {
 		List<DataModule> detectPornData = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDetectPornDataResponse.DetectPornData.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setDomain(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Domain"));
-			dataModule.setRegion(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Region"));
-			dataModule.setApp(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].App"));
-			dataModule.setStream(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Stream"));
 			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].TimeStamp"));
-			dataModule.setCount(_ctx.longValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Count"));
-			dataModule.setScene(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Scene"));
+			dataModule.setApp(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].App"));
+			dataModule.setDomain(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Domain"));
+			dataModule.setStream(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Stream"));
 			dataModule.setFee(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Fee"));
+			dataModule.setScene(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Scene"));
+			dataModule.setRegion(_ctx.stringValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Region"));
+			dataModule.setCount(_ctx.longValue("DescribeLiveDetectPornDataResponse.DetectPornData["+ i +"].Count"));
 
 			detectPornData.add(dataModule);
 		}

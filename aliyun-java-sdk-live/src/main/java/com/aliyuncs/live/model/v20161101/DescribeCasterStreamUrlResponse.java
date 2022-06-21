@@ -67,24 +67,32 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 	public static class CasterStream {
 
-		private String rtsUrl;
-
-		private String rtmpUrl;
-
 		private String sceneId;
-
-		private Integer outputType;
 
 		private String streamUrl;
 
+		private String rtmpUrl;
+
+		private String rtsUrl;
+
+		private Integer outputType;
+
 		private List<StreamInfo> streamInfos;
 
-		public String getRtsUrl() {
-			return this.rtsUrl;
+		public String getSceneId() {
+			return this.sceneId;
 		}
 
-		public void setRtsUrl(String rtsUrl) {
-			this.rtsUrl = rtsUrl;
+		public void setSceneId(String sceneId) {
+			this.sceneId = sceneId;
+		}
+
+		public String getStreamUrl() {
+			return this.streamUrl;
+		}
+
+		public void setStreamUrl(String streamUrl) {
+			this.streamUrl = streamUrl;
 		}
 
 		public String getRtmpUrl() {
@@ -95,12 +103,12 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 			this.rtmpUrl = rtmpUrl;
 		}
 
-		public String getSceneId() {
-			return this.sceneId;
+		public String getRtsUrl() {
+			return this.rtsUrl;
 		}
 
-		public void setSceneId(String sceneId) {
-			this.sceneId = sceneId;
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
 		}
 
 		public Integer getOutputType() {
@@ -109,14 +117,6 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 		public void setOutputType(Integer outputType) {
 			this.outputType = outputType;
-		}
-
-		public String getStreamUrl() {
-			return this.streamUrl;
-		}
-
-		public void setStreamUrl(String streamUrl) {
-			this.streamUrl = streamUrl;
 		}
 
 		public List<StreamInfo> getStreamInfos() {
@@ -129,11 +129,19 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 		public static class StreamInfo {
 
+			private String transcodeConfig;
+
 			private String videoFormat;
 
 			private String outputStreamUrl;
 
-			private String transcodeConfig;
+			public String getTranscodeConfig() {
+				return this.transcodeConfig;
+			}
+
+			public void setTranscodeConfig(String transcodeConfig) {
+				this.transcodeConfig = transcodeConfig;
+			}
 
 			public String getVideoFormat() {
 				return this.videoFormat;
@@ -149,14 +157,6 @@ public class DescribeCasterStreamUrlResponse extends AcsResponse {
 
 			public void setOutputStreamUrl(String outputStreamUrl) {
 				this.outputStreamUrl = outputStreamUrl;
-			}
-
-			public String getTranscodeConfig() {
-				return this.transcodeConfig;
-			}
-
-			public void setTranscodeConfig(String transcodeConfig) {
-				this.transcodeConfig = transcodeConfig;
 			}
 		}
 	}

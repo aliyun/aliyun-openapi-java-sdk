@@ -47,17 +47,9 @@ public class DescribeLiveStreamHistoryUserNumResponse extends AcsResponse {
 
 	public static class LiveStreamUserNumInfo {
 
-		private String userNum;
-
 		private String streamTime;
 
-		public String getUserNum() {
-			return this.userNum;
-		}
-
-		public void setUserNum(String userNum) {
-			this.userNum = userNum;
-		}
+		private String userNum;
 
 		public String getStreamTime() {
 			return this.streamTime;
@@ -65,6 +57,14 @@ public class DescribeLiveStreamHistoryUserNumResponse extends AcsResponse {
 
 		public void setStreamTime(String streamTime) {
 			this.streamTime = streamTime;
+		}
+
+		public String getUserNum() {
+			return this.userNum;
+		}
+
+		public void setUserNum(String userNum) {
+			this.userNum = userNum;
 		}
 	}
 

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddCasterVideoResourceResponse extends AcsResponse {
 
-	private String resourceId;
-
 	private String requestId;
 
-	public String getResourceId() {
-		return this.resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-	}
+	private String resourceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class AddCasterVideoResourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
 	}
 
 	@Override

@@ -26,11 +26,11 @@ public class DescribeLiveStreamsBlockListResponseUnmarshaller {
 	public static DescribeLiveStreamsBlockListResponse unmarshall(DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamsBlockListResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.RequestId"));
+		describeLiveStreamsBlockListResponse.setDomainName(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.DomainName"));
 		describeLiveStreamsBlockListResponse.setPageNum(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.PageNum"));
-		describeLiveStreamsBlockListResponse.setTotalPage(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.TotalPage"));
 		describeLiveStreamsBlockListResponse.setPageSize(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.PageSize"));
 		describeLiveStreamsBlockListResponse.setTotalNum(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.TotalNum"));
-		describeLiveStreamsBlockListResponse.setDomainName(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.DomainName"));
+		describeLiveStreamsBlockListResponse.setTotalPage(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.TotalPage"));
 
 		List<String> streamUrls = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsBlockListResponse.StreamUrls.Length"); i++) {

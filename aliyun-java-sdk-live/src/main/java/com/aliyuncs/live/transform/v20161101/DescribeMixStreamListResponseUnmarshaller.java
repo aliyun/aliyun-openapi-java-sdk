@@ -32,15 +32,15 @@ public class DescribeMixStreamListResponseUnmarshaller {
 		List<MixStreamInfo> mixStreamList = new ArrayList<MixStreamInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMixStreamListResponse.MixStreamList.Length"); i++) {
 			MixStreamInfo mixStreamInfo = new MixStreamInfo();
-			mixStreamInfo.setMixStreamTemplate(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].MixStreamTemplate"));
-			mixStreamInfo.setAppName(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].AppName"));
-			mixStreamInfo.setLayoutId(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].LayoutId"));
-			mixStreamInfo.setStreamName(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].StreamName"));
-			mixStreamInfo.setGmtCreate(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].GmtCreate"));
 			mixStreamInfo.setMixstreamId(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].MixstreamId"));
-			mixStreamInfo.setGmtModified(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].GmtModified"));
-			mixStreamInfo.setInputStreamNumber(_ctx.integerValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].InputStreamNumber"));
 			mixStreamInfo.setDomainName(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].DomainName"));
+			mixStreamInfo.setAppName(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].AppName"));
+			mixStreamInfo.setStreamName(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].StreamName"));
+			mixStreamInfo.setLayoutId(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].LayoutId"));
+			mixStreamInfo.setInputStreamNumber(_ctx.integerValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].InputStreamNumber"));
+			mixStreamInfo.setMixStreamTemplate(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].MixStreamTemplate"));
+			mixStreamInfo.setGmtCreate(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].GmtCreate"));
+			mixStreamInfo.setGmtModified(_ctx.stringValue("DescribeMixStreamListResponse.MixStreamList["+ i +"].GmtModified"));
 
 			mixStreamList.add(mixStreamInfo);
 		}

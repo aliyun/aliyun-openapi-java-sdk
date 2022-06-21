@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPlaylistResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<ProgramInfo> programList;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListPlaylistResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<ProgramInfo> getProgramList() {
@@ -57,32 +57,24 @@ public class ListPlaylistResponse extends AcsResponse {
 
 	public static class ProgramInfo {
 
-		private Integer status;
-
-		private Integer repeatNumber;
+		private String programId;
 
 		private String programName;
-
-		private String programId;
 
 		private String casterId;
 
 		private String domainName;
 
-		public Integer getStatus() {
-			return this.status;
+		private Integer repeatNumber;
+
+		private Integer status;
+
+		public String getProgramId() {
+			return this.programId;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public Integer getRepeatNumber() {
-			return this.repeatNumber;
-		}
-
-		public void setRepeatNumber(Integer repeatNumber) {
-			this.repeatNumber = repeatNumber;
+		public void setProgramId(String programId) {
+			this.programId = programId;
 		}
 
 		public String getProgramName() {
@@ -91,14 +83,6 @@ public class ListPlaylistResponse extends AcsResponse {
 
 		public void setProgramName(String programName) {
 			this.programName = programName;
-		}
-
-		public String getProgramId() {
-			return this.programId;
-		}
-
-		public void setProgramId(String programId) {
-			this.programId = programId;
 		}
 
 		public String getCasterId() {
@@ -115,6 +99,22 @@ public class ListPlaylistResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public Integer getRepeatNumber() {
+			return this.repeatNumber;
+		}
+
+		public void setRepeatNumber(Integer repeatNumber) {
+			this.repeatNumber = repeatNumber;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 	}
 

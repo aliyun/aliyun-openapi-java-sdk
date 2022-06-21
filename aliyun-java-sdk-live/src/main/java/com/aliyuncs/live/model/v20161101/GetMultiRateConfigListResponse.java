@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMultiRateConfigListResponse extends AcsResponse {
 
-	private Integer code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private Integer code;
 
 	private List<Info> groupInfo;
 
-	public Integer getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class GetMultiRateConfigListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public List<Info> getGroupInfo() {
@@ -67,29 +67,13 @@ public class GetMultiRateConfigListResponse extends AcsResponse {
 
 	public static class Info {
 
-		private String groupId;
-
-		private Integer count;
-
 		private String app;
 
 		private String avFormat;
 
-		public String getGroupId() {
-			return this.groupId;
-		}
+		private String groupId;
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public Integer getCount() {
-			return this.count;
-		}
-
-		public void setCount(Integer count) {
-			this.count = count;
-		}
+		private Integer count;
 
 		public String getApp() {
 			return this.app;
@@ -105,6 +89,22 @@ public class GetMultiRateConfigListResponse extends AcsResponse {
 
 		public void setAvFormat(String avFormat) {
 			this.avFormat = avFormat;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

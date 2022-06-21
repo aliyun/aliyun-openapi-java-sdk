@@ -23,9 +23,9 @@ public class DescribeLiveCertificateDetailResponseUnmarshaller {
 	public static DescribeLiveCertificateDetailResponse unmarshall(DescribeLiveCertificateDetailResponse describeLiveCertificateDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveCertificateDetailResponse.setRequestId(_ctx.stringValue("DescribeLiveCertificateDetailResponse.RequestId"));
-		describeLiveCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeLiveCertificateDetailResponse.CertName"));
 		describeLiveCertificateDetailResponse.setCert(_ctx.stringValue("DescribeLiveCertificateDetailResponse.Cert"));
 		describeLiveCertificateDetailResponse.setCertId(_ctx.longValue("DescribeLiveCertificateDetailResponse.CertId"));
+		describeLiveCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeLiveCertificateDetailResponse.CertName"));
 	 
 	 	return describeLiveCertificateDetailResponse;
 	}

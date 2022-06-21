@@ -46,29 +46,13 @@ public class DescribeLiveRecordNotifyConfigResponse extends AcsResponse {
 
 	public static class LiveRecordNotifyConfig {
 
-		private Boolean needStatusNotify;
-
-		private String onDemandUrl;
-
 		private String domainName;
 
 		private String notifyUrl;
 
-		public Boolean getNeedStatusNotify() {
-			return this.needStatusNotify;
-		}
+		private String onDemandUrl;
 
-		public void setNeedStatusNotify(Boolean needStatusNotify) {
-			this.needStatusNotify = needStatusNotify;
-		}
-
-		public String getOnDemandUrl() {
-			return this.onDemandUrl;
-		}
-
-		public void setOnDemandUrl(String onDemandUrl) {
-			this.onDemandUrl = onDemandUrl;
-		}
+		private Boolean needStatusNotify;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -84,6 +68,22 @@ public class DescribeLiveRecordNotifyConfigResponse extends AcsResponse {
 
 		public void setNotifyUrl(String notifyUrl) {
 			this.notifyUrl = notifyUrl;
+		}
+
+		public String getOnDemandUrl() {
+			return this.onDemandUrl;
+		}
+
+		public void setOnDemandUrl(String onDemandUrl) {
+			this.onDemandUrl = onDemandUrl;
+		}
+
+		public Boolean getNeedStatusNotify() {
+			return this.needStatusNotify;
+		}
+
+		public void setNeedStatusNotify(Boolean needStatusNotify) {
+			this.needStatusNotify = needStatusNotify;
 		}
 	}
 

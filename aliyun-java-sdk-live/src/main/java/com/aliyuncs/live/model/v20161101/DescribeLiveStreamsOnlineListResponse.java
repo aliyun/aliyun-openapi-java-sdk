@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
-	private Integer totalPage;
+	private String requestId;
 
 	private Integer pageNum;
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Integer totalNum;
+
+	private Integer totalPage;
 
 	private List<LiveStreamOnlineInfo> onlineInfo;
 
-	public Integer getTotalPage() {
-		return this.totalPage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNum() {
@@ -61,20 +61,20 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalNum() {
 		return this.totalNum;
 	}
 
 	public void setTotalNum(Integer totalNum) {
 		this.totalNum = totalNum;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<LiveStreamOnlineInfo> getOnlineInfo() {
@@ -87,68 +87,60 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 	public static class LiveStreamOnlineInfo {
 
-		private Integer audioDataRate;
+		private String domainName;
 
-		private Integer frameRate;
-
-		private String publishUrl;
+		private String appName;
 
 		private String streamName;
 
-		private Integer audioCodecId;
+		private String publishTime;
 
-		private Integer height;
+		private String publishUrl;
 
-		private Integer videoDataRate;
+		private String publishDomain;
 
-		private String domainName;
+		private String streamUrlArgs;
+
+		private String publishType;
+
+		private String transcoded;
 
 		private String transcodeId;
 
 		private String transcodeDrm;
 
-		private String publishDomain;
-
-		private String publishTime;
-
-		private String appName;
-
-		private String publishType;
-
-		private Integer videoCodecId;
-
-		private String transcoded;
-
-		private Integer width;
+		private String serverIp;
 
 		private String clientIp;
 
-		private String serverIp;
+		private Integer videoCodecId;
 
-		private String streamUrlArgs;
+		private Integer videoDataRate;
 
-		public Integer getAudioDataRate() {
-			return this.audioDataRate;
+		private Integer frameRate;
+
+		private Integer width;
+
+		private Integer height;
+
+		private Integer audioCodecId;
+
+		private Integer audioDataRate;
+
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setAudioDataRate(Integer audioDataRate) {
-			this.audioDataRate = audioDataRate;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
-		public Integer getFrameRate() {
-			return this.frameRate;
+		public String getAppName() {
+			return this.appName;
 		}
 
-		public void setFrameRate(Integer frameRate) {
-			this.frameRate = frameRate;
-		}
-
-		public String getPublishUrl() {
-			return this.publishUrl;
-		}
-
-		public void setPublishUrl(String publishUrl) {
-			this.publishUrl = publishUrl;
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
 		public String getStreamName() {
@@ -159,36 +151,52 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 			this.streamName = streamName;
 		}
 
-		public Integer getAudioCodecId() {
-			return this.audioCodecId;
+		public String getPublishTime() {
+			return this.publishTime;
 		}
 
-		public void setAudioCodecId(Integer audioCodecId) {
-			this.audioCodecId = audioCodecId;
+		public void setPublishTime(String publishTime) {
+			this.publishTime = publishTime;
 		}
 
-		public Integer getHeight() {
-			return this.height;
+		public String getPublishUrl() {
+			return this.publishUrl;
 		}
 
-		public void setHeight(Integer height) {
-			this.height = height;
+		public void setPublishUrl(String publishUrl) {
+			this.publishUrl = publishUrl;
 		}
 
-		public Integer getVideoDataRate() {
-			return this.videoDataRate;
+		public String getPublishDomain() {
+			return this.publishDomain;
 		}
 
-		public void setVideoDataRate(Integer videoDataRate) {
-			this.videoDataRate = videoDataRate;
+		public void setPublishDomain(String publishDomain) {
+			this.publishDomain = publishDomain;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getStreamUrlArgs() {
+			return this.streamUrlArgs;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setStreamUrlArgs(String streamUrlArgs) {
+			this.streamUrlArgs = streamUrlArgs;
+		}
+
+		public String getPublishType() {
+			return this.publishType;
+		}
+
+		public void setPublishType(String publishType) {
+			this.publishType = publishType;
+		}
+
+		public String getTranscoded() {
+			return this.transcoded;
+		}
+
+		public void setTranscoded(String transcoded) {
+			this.transcoded = transcoded;
 		}
 
 		public String getTranscodeId() {
@@ -207,60 +215,12 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 			this.transcodeDrm = transcodeDrm;
 		}
 
-		public String getPublishDomain() {
-			return this.publishDomain;
+		public String getServerIp() {
+			return this.serverIp;
 		}
 
-		public void setPublishDomain(String publishDomain) {
-			this.publishDomain = publishDomain;
-		}
-
-		public String getPublishTime() {
-			return this.publishTime;
-		}
-
-		public void setPublishTime(String publishTime) {
-			this.publishTime = publishTime;
-		}
-
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
-
-		public String getPublishType() {
-			return this.publishType;
-		}
-
-		public void setPublishType(String publishType) {
-			this.publishType = publishType;
-		}
-
-		public Integer getVideoCodecId() {
-			return this.videoCodecId;
-		}
-
-		public void setVideoCodecId(Integer videoCodecId) {
-			this.videoCodecId = videoCodecId;
-		}
-
-		public String getTranscoded() {
-			return this.transcoded;
-		}
-
-		public void setTranscoded(String transcoded) {
-			this.transcoded = transcoded;
-		}
-
-		public Integer getWidth() {
-			return this.width;
-		}
-
-		public void setWidth(Integer width) {
-			this.width = width;
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
 		}
 
 		public String getClientIp() {
@@ -271,20 +231,60 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 			this.clientIp = clientIp;
 		}
 
-		public String getServerIp() {
-			return this.serverIp;
+		public Integer getVideoCodecId() {
+			return this.videoCodecId;
 		}
 
-		public void setServerIp(String serverIp) {
-			this.serverIp = serverIp;
+		public void setVideoCodecId(Integer videoCodecId) {
+			this.videoCodecId = videoCodecId;
 		}
 
-		public String getStreamUrlArgs() {
-			return this.streamUrlArgs;
+		public Integer getVideoDataRate() {
+			return this.videoDataRate;
 		}
 
-		public void setStreamUrlArgs(String streamUrlArgs) {
-			this.streamUrlArgs = streamUrlArgs;
+		public void setVideoDataRate(Integer videoDataRate) {
+			this.videoDataRate = videoDataRate;
+		}
+
+		public Integer getFrameRate() {
+			return this.frameRate;
+		}
+
+		public void setFrameRate(Integer frameRate) {
+			this.frameRate = frameRate;
+		}
+
+		public Integer getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Integer width) {
+			this.width = width;
+		}
+
+		public Integer getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Integer height) {
+			this.height = height;
+		}
+
+		public Integer getAudioCodecId() {
+			return this.audioCodecId;
+		}
+
+		public void setAudioCodecId(Integer audioCodecId) {
+			this.audioCodecId = audioCodecId;
+		}
+
+		public Integer getAudioDataRate() {
+			return this.audioDataRate;
+		}
+
+		public void setAudioDataRate(Integer audioDataRate) {
+			this.audioDataRate = audioDataRate;
 		}
 	}
 

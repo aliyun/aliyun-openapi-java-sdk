@@ -25,28 +25,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainUsageDataResponse extends AcsResponse {
 
-	private String endTime;
+	private String requestId;
+
+	private String domainName;
 
 	private String startTime;
 
-	private String requestId;
-
-	private String area;
+	private String endTime;
 
 	private String field;
 
-	private String domainName;
+	private String area;
 
 	private String dataInterval;
 
 	private List<DataModule> usageDataPerInterval;
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
 	public String getStartTime() {
@@ -57,20 +65,12 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getField() {
@@ -81,12 +81,12 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 		this.field = field;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getArea() {
+		return this.area;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setArea(String area) {
+		this.area = area;
 	}
 
 	public String getDataInterval() {
@@ -107,17 +107,9 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String value;
-
 		private String timeStamp;
 
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
+		private String value;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -125,6 +117,14 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

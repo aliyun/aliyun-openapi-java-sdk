@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDomainRealTimeBpsDataResponse extends AcsResponse {
 
-	private String endTime;
-
-	private String startTime;
-
 	private String requestId;
 
 	private String domainName;
 
+	private String startTime;
+
+	private String endTime;
+
 	private String dataInterval;
 
 	private List<DataModule> realTimeBpsDataPerInterval;
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class DescribeLiveDomainRealTimeBpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,17 +87,9 @@ public class DescribeLiveDomainRealTimeBpsDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String value;
-
 		private String timeStamp;
 
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
+		private String value;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -105,6 +97,14 @@ public class DescribeLiveDomainRealTimeBpsDataResponse extends AcsResponse {
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

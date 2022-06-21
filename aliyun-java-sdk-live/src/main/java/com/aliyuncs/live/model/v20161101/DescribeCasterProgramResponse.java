@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterProgramResponse extends AcsResponse {
 
-	private String programName;
-
 	private String requestId;
 
-	private Integer programEffect;
-
 	private String casterId;
+
+	private String programName;
+
+	private Integer programEffect;
 
 	private Integer total;
 
 	private List<Episode> episodes;
-
-	public String getProgramName() {
-		return this.programName;
-	}
-
-	public void setProgramName(String programName) {
-		this.programName = programName;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,20 +45,28 @@ public class DescribeCasterProgramResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getProgramEffect() {
-		return this.programEffect;
-	}
-
-	public void setProgramEffect(Integer programEffect) {
-		this.programEffect = programEffect;
-	}
-
 	public String getCasterId() {
 		return this.casterId;
 	}
 
 	public void setCasterId(String casterId) {
 		this.casterId = casterId;
+	}
+
+	public String getProgramName() {
+		return this.programName;
+	}
+
+	public void setProgramName(String programName) {
+		this.programName = programName;
+	}
+
+	public Integer getProgramEffect() {
+		return this.programEffect;
+	}
+
+	public void setProgramEffect(Integer programEffect) {
+		this.programEffect = programEffect;
 	}
 
 	public Integer getTotal() {
@@ -87,54 +87,30 @@ public class DescribeCasterProgramResponse extends AcsResponse {
 
 	public static class Episode {
 
-		private Integer status;
-
-		private String endTime;
-
-		private String startTime;
-
-		private String episodeName;
+		private String episodeId;
 
 		private String episodeType;
 
-		private String episodeId;
+		private String episodeName;
 
 		private String resourceId;
 
+		private String startTime;
+
+		private String endTime;
+
 		private String switchType;
+
+		private Integer status;
 
 		private List<String> componentIds;
 
-		public Integer getStatus() {
-			return this.status;
+		public String getEpisodeId() {
+			return this.episodeId;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEpisodeName() {
-			return this.episodeName;
-		}
-
-		public void setEpisodeName(String episodeName) {
-			this.episodeName = episodeName;
+		public void setEpisodeId(String episodeId) {
+			this.episodeId = episodeId;
 		}
 
 		public String getEpisodeType() {
@@ -145,12 +121,12 @@ public class DescribeCasterProgramResponse extends AcsResponse {
 			this.episodeType = episodeType;
 		}
 
-		public String getEpisodeId() {
-			return this.episodeId;
+		public String getEpisodeName() {
+			return this.episodeName;
 		}
 
-		public void setEpisodeId(String episodeId) {
-			this.episodeId = episodeId;
+		public void setEpisodeName(String episodeName) {
+			this.episodeName = episodeName;
 		}
 
 		public String getResourceId() {
@@ -161,12 +137,36 @@ public class DescribeCasterProgramResponse extends AcsResponse {
 			this.resourceId = resourceId;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
 		public String getSwitchType() {
 			return this.switchType;
 		}
 
 		public void setSwitchType(String switchType) {
 			this.switchType = switchType;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public List<String> getComponentIds() {

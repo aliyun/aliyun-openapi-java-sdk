@@ -79,11 +79,19 @@ public class DescribeLiveDomainRecordDataResponse extends AcsResponse {
 
 		public static class Detail {
 
+			private Integer mP4;
+
 			private Integer fLV;
 
 			private Integer tS;
 
-			private Integer mP4;
+			public Integer getMP4() {
+				return this.mP4;
+			}
+
+			public void setMP4(Integer mP4) {
+				this.mP4 = mP4;
+			}
 
 			public Integer getFLV() {
 				return this.fLV;
@@ -99,14 +107,6 @@ public class DescribeLiveDomainRecordDataResponse extends AcsResponse {
 
 			public void setTS(Integer tS) {
 				this.tS = tS;
-			}
-
-			public Integer getMP4() {
-				return this.mP4;
-			}
-
-			public void setMP4(Integer mP4) {
-				this.mP4 = mP4;
 			}
 		}
 	}

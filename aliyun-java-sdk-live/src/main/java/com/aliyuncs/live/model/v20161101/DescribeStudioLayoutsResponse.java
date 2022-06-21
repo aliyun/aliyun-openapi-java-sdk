@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStudioLayoutsResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<StudioLayout> studioLayouts;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<StudioLayout> getStudioLayouts() {
@@ -57,11 +57,11 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 	public static class StudioLayout {
 
-		private String layoutType;
-
 		private String layoutId;
 
 		private String layoutName;
+
+		private String layoutType;
 
 		private List<ScreenInputConfig> screenInputConfigList;
 
@@ -72,14 +72,6 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 		private CommonConfig commonConfig;
 
 		private BgImageConfig bgImageConfig;
-
-		public String getLayoutType() {
-			return this.layoutType;
-		}
-
-		public void setLayoutType(String layoutType) {
-			this.layoutType = layoutType;
-		}
 
 		public String getLayoutId() {
 			return this.layoutId;
@@ -95,6 +87,14 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 		public void setLayoutName(String layoutName) {
 			this.layoutName = layoutName;
+		}
+
+		public String getLayoutType() {
+			return this.layoutType;
+		}
+
+		public void setLayoutType(String layoutType) {
+			this.layoutType = layoutType;
 		}
 
 		public List<ScreenInputConfig> getScreenInputConfigList() {
@@ -139,34 +139,34 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 		public static class ScreenInputConfig {
 
-			private Integer portraitType;
+			private String id;
 
 			private Integer index;
-
-			private String positionX;
-
-			private String color;
-
-			private Boolean onlyAudio;
-
-			private Float heightNormalized;
-
-			private String positionY;
 
 			private String channelId;
 
 			private String videoResourceId;
 
-			private String id;
+			private String color;
+
+			private String positionX;
+
+			private String positionY;
+
+			private Float heightNormalized;
+
+			private Integer portraitType;
+
+			private Boolean onlyAudio;
 
 			private AudioConfig audioConfig;
 
-			public Integer getPortraitType() {
-				return this.portraitType;
+			public String getId() {
+				return this.id;
 			}
 
-			public void setPortraitType(Integer portraitType) {
-				this.portraitType = portraitType;
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public Integer getIndex() {
@@ -175,46 +175,6 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 			public void setIndex(Integer index) {
 				this.index = index;
-			}
-
-			public String getPositionX() {
-				return this.positionX;
-			}
-
-			public void setPositionX(String positionX) {
-				this.positionX = positionX;
-			}
-
-			public String getColor() {
-				return this.color;
-			}
-
-			public void setColor(String color) {
-				this.color = color;
-			}
-
-			public Boolean getOnlyAudio() {
-				return this.onlyAudio;
-			}
-
-			public void setOnlyAudio(Boolean onlyAudio) {
-				this.onlyAudio = onlyAudio;
-			}
-
-			public Float getHeightNormalized() {
-				return this.heightNormalized;
-			}
-
-			public void setHeightNormalized(Float heightNormalized) {
-				this.heightNormalized = heightNormalized;
-			}
-
-			public String getPositionY() {
-				return this.positionY;
-			}
-
-			public void setPositionY(String positionY) {
-				this.positionY = positionY;
 			}
 
 			public String getChannelId() {
@@ -233,12 +193,52 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 				this.videoResourceId = videoResourceId;
 			}
 
-			public String getId() {
-				return this.id;
+			public String getColor() {
+				return this.color;
 			}
 
-			public void setId(String id) {
-				this.id = id;
+			public void setColor(String color) {
+				this.color = color;
+			}
+
+			public String getPositionX() {
+				return this.positionX;
+			}
+
+			public void setPositionX(String positionX) {
+				this.positionX = positionX;
+			}
+
+			public String getPositionY() {
+				return this.positionY;
+			}
+
+			public void setPositionY(String positionY) {
+				this.positionY = positionY;
+			}
+
+			public Float getHeightNormalized() {
+				return this.heightNormalized;
+			}
+
+			public void setHeightNormalized(Float heightNormalized) {
+				this.heightNormalized = heightNormalized;
+			}
+
+			public Integer getPortraitType() {
+				return this.portraitType;
+			}
+
+			public void setPortraitType(Integer portraitType) {
+				this.portraitType = portraitType;
+			}
+
+			public Boolean getOnlyAudio() {
+				return this.onlyAudio;
+			}
+
+			public void setOnlyAudio(Boolean onlyAudio) {
+				this.onlyAudio = onlyAudio;
 			}
 
 			public AudioConfig getAudioConfig() {
@@ -275,25 +275,33 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 		public static class MediaInputConfig {
 
+			private String id;
+
 			private Integer index;
-
-			private Float heightNormalized;
-
-			private String fillMode;
-
-			private String positionRefer;
 
 			private String channelId;
 
 			private String videoResourceId;
 
-			private Float widthNormalized;
-
 			private String imageMaterialId;
 
-			private String id;
+			private String fillMode;
+
+			private String positionRefer;
+
+			private Float widthNormalized;
+
+			private Float heightNormalized;
 
 			private List<Float> positionNormalized;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
 
 			public Integer getIndex() {
 				return this.index;
@@ -303,12 +311,28 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 				this.index = index;
 			}
 
-			public Float getHeightNormalized() {
-				return this.heightNormalized;
+			public String getChannelId() {
+				return this.channelId;
 			}
 
-			public void setHeightNormalized(Float heightNormalized) {
-				this.heightNormalized = heightNormalized;
+			public void setChannelId(String channelId) {
+				this.channelId = channelId;
+			}
+
+			public String getVideoResourceId() {
+				return this.videoResourceId;
+			}
+
+			public void setVideoResourceId(String videoResourceId) {
+				this.videoResourceId = videoResourceId;
+			}
+
+			public String getImageMaterialId() {
+				return this.imageMaterialId;
+			}
+
+			public void setImageMaterialId(String imageMaterialId) {
+				this.imageMaterialId = imageMaterialId;
 			}
 
 			public String getFillMode() {
@@ -327,22 +351,6 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 				this.positionRefer = positionRefer;
 			}
 
-			public String getChannelId() {
-				return this.channelId;
-			}
-
-			public void setChannelId(String channelId) {
-				this.channelId = channelId;
-			}
-
-			public String getVideoResourceId() {
-				return this.videoResourceId;
-			}
-
-			public void setVideoResourceId(String videoResourceId) {
-				this.videoResourceId = videoResourceId;
-			}
-
 			public Float getWidthNormalized() {
 				return this.widthNormalized;
 			}
@@ -351,20 +359,12 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 				this.widthNormalized = widthNormalized;
 			}
 
-			public String getImageMaterialId() {
-				return this.imageMaterialId;
+			public Float getHeightNormalized() {
+				return this.heightNormalized;
 			}
 
-			public void setImageMaterialId(String imageMaterialId) {
-				this.imageMaterialId = imageMaterialId;
-			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
+			public void setHeightNormalized(Float heightNormalized) {
+				this.heightNormalized = heightNormalized;
 			}
 
 			public List<Float> getPositionNormalized() {
@@ -378,17 +378,9 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 		public static class LayerOrderConfig {
 
-			private String type;
-
 			private String id;
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
+			private String type;
 
 			public String getId() {
 				return this.id;
@@ -397,21 +389,21 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 			public void setId(String id) {
 				this.id = id;
 			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 		}
 
 		public static class CommonConfig {
 
-			private String channelId;
-
 			private String videoResourceId;
 
-			public String getChannelId() {
-				return this.channelId;
-			}
-
-			public void setChannelId(String channelId) {
-				this.channelId = channelId;
-			}
+			private String channelId;
 
 			public String getVideoResourceId() {
 				return this.videoResourceId;
@@ -420,17 +412,33 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 			public void setVideoResourceId(String videoResourceId) {
 				this.videoResourceId = videoResourceId;
 			}
+
+			public String getChannelId() {
+				return this.channelId;
+			}
+
+			public void setChannelId(String channelId) {
+				this.channelId = channelId;
+			}
 		}
 
 		public static class BgImageConfig {
+
+			private String id;
 
 			private String materialId;
 
 			private String imageUrl;
 
-			private String id;
-
 			private String locationId;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
 
 			public String getMaterialId() {
 				return this.materialId;
@@ -446,14 +454,6 @@ public class DescribeStudioLayoutsResponse extends AcsResponse {
 
 			public void setImageUrl(String imageUrl) {
 				this.imageUrl = imageUrl;
-			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
 			}
 
 			public String getLocationId() {

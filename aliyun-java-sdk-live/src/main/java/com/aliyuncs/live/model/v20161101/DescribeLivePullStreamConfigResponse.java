@@ -47,28 +47,28 @@ public class DescribeLivePullStreamConfigResponse extends AcsResponse {
 
 	public static class LiveAppRecord {
 
-		private String endTime;
+		private String domainName;
 
 		private String appName;
 
-		private String sourceUrl;
-
-		private String startTime;
-
-		private String always;
-
 		private String streamName;
+
+		private String sourceUrl;
 
 		private String sourceUsing;
 
-		private String domainName;
+		private String startTime;
 
-		public String getEndTime() {
-			return this.endTime;
+		private String endTime;
+
+		private String always;
+
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getAppName() {
@@ -79,36 +79,20 @@ public class DescribeLivePullStreamConfigResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getSourceUrl() {
-			return this.sourceUrl;
-		}
-
-		public void setSourceUrl(String sourceUrl) {
-			this.sourceUrl = sourceUrl;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getAlways() {
-			return this.always;
-		}
-
-		public void setAlways(String always) {
-			this.always = always;
-		}
-
 		public String getStreamName() {
 			return this.streamName;
 		}
 
 		public void setStreamName(String streamName) {
 			this.streamName = streamName;
+		}
+
+		public String getSourceUrl() {
+			return this.sourceUrl;
+		}
+
+		public void setSourceUrl(String sourceUrl) {
+			this.sourceUrl = sourceUrl;
 		}
 
 		public String getSourceUsing() {
@@ -119,12 +103,28 @@ public class DescribeLivePullStreamConfigResponse extends AcsResponse {
 			this.sourceUsing = sourceUsing;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getAlways() {
+			return this.always;
+		}
+
+		public void setAlways(String always) {
+			this.always = always;
 		}
 	}
 

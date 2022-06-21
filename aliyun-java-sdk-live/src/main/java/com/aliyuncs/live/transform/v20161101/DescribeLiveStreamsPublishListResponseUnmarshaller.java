@@ -27,27 +27,27 @@ public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 	public static DescribeLiveStreamsPublishListResponse unmarshall(DescribeLiveStreamsPublishListResponse describeLiveStreamsPublishListResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamsPublishListResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.RequestId"));
-		describeLiveStreamsPublishListResponse.setTotalPage(_ctx.integerValue("DescribeLiveStreamsPublishListResponse.TotalPage"));
 		describeLiveStreamsPublishListResponse.setPageNum(_ctx.integerValue("DescribeLiveStreamsPublishListResponse.PageNum"));
 		describeLiveStreamsPublishListResponse.setPageSize(_ctx.integerValue("DescribeLiveStreamsPublishListResponse.PageSize"));
 		describeLiveStreamsPublishListResponse.setTotalNum(_ctx.integerValue("DescribeLiveStreamsPublishListResponse.TotalNum"));
+		describeLiveStreamsPublishListResponse.setTotalPage(_ctx.integerValue("DescribeLiveStreamsPublishListResponse.TotalPage"));
 
 		List<LiveStreamPublishInfo> publishInfo = new ArrayList<LiveStreamPublishInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsPublishListResponse.PublishInfo.Length"); i++) {
 			LiveStreamPublishInfo liveStreamPublishInfo = new LiveStreamPublishInfo();
-			liveStreamPublishInfo.setEdgeNodeAddr(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].EdgeNodeAddr"));
-			liveStreamPublishInfo.setPublishUrl(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishUrl"));
-			liveStreamPublishInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamName"));
 			liveStreamPublishInfo.setDomainName(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].DomainName"));
-			liveStreamPublishInfo.setStopTime(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StopTime"));
-			liveStreamPublishInfo.setTranscodeId(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].TranscodeId"));
-			liveStreamPublishInfo.setPublishDomain(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishDomain"));
 			liveStreamPublishInfo.setAppName(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].AppName"));
+			liveStreamPublishInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamName"));
+			liveStreamPublishInfo.setStreamUrl(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamUrl"));
 			liveStreamPublishInfo.setPublishTime(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishTime"));
+			liveStreamPublishInfo.setStopTime(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StopTime"));
+			liveStreamPublishInfo.setPublishUrl(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishUrl"));
+			liveStreamPublishInfo.setClientAddr(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].ClientAddr"));
+			liveStreamPublishInfo.setEdgeNodeAddr(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].EdgeNodeAddr"));
+			liveStreamPublishInfo.setPublishDomain(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishDomain"));
 			liveStreamPublishInfo.setPublishType(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishType"));
 			liveStreamPublishInfo.setTranscoded(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].Transcoded"));
-			liveStreamPublishInfo.setClientAddr(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].ClientAddr"));
-			liveStreamPublishInfo.setStreamUrl(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamUrl"));
+			liveStreamPublishInfo.setTranscodeId(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].TranscodeId"));
 
 			publishInfo.add(liveStreamPublishInfo);
 		}

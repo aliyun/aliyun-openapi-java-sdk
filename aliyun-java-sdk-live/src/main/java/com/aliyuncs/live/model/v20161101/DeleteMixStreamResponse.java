@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteMixStreamResponse extends AcsResponse {
 
-	private String mixStreamId;
-
 	private String requestId;
 
-	public String getMixStreamId() {
-		return this.mixStreamId;
-	}
-
-	public void setMixStreamId(String mixStreamId) {
-		this.mixStreamId = mixStreamId;
-	}
+	private String mixStreamId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class DeleteMixStreamResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMixStreamId() {
+		return this.mixStreamId;
+	}
+
+	public void setMixStreamId(String mixStreamId) {
+		this.mixStreamId = mixStreamId;
 	}
 
 	@Override

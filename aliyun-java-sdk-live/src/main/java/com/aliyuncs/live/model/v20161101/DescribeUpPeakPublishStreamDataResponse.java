@@ -47,38 +47,22 @@ public class DescribeUpPeakPublishStreamDataResponse extends AcsResponse {
 
 	public static class DescribeUpPeakPublishStreamData {
 
-		private String queryTime;
-
-		private String bandWidth;
-
-		private String statName;
+		private Integer publishStreamNum;
 
 		private String peakTime;
 
-		private Integer publishStreamNum;
+		private String queryTime;
 
-		public String getQueryTime() {
-			return this.queryTime;
+		private String statName;
+
+		private String bandWidth;
+
+		public Integer getPublishStreamNum() {
+			return this.publishStreamNum;
 		}
 
-		public void setQueryTime(String queryTime) {
-			this.queryTime = queryTime;
-		}
-
-		public String getBandWidth() {
-			return this.bandWidth;
-		}
-
-		public void setBandWidth(String bandWidth) {
-			this.bandWidth = bandWidth;
-		}
-
-		public String getStatName() {
-			return this.statName;
-		}
-
-		public void setStatName(String statName) {
-			this.statName = statName;
+		public void setPublishStreamNum(Integer publishStreamNum) {
+			this.publishStreamNum = publishStreamNum;
 		}
 
 		public String getPeakTime() {
@@ -89,12 +73,28 @@ public class DescribeUpPeakPublishStreamDataResponse extends AcsResponse {
 			this.peakTime = peakTime;
 		}
 
-		public Integer getPublishStreamNum() {
-			return this.publishStreamNum;
+		public String getQueryTime() {
+			return this.queryTime;
 		}
 
-		public void setPublishStreamNum(Integer publishStreamNum) {
-			this.publishStreamNum = publishStreamNum;
+		public void setQueryTime(String queryTime) {
+			this.queryTime = queryTime;
+		}
+
+		public String getStatName() {
+			return this.statName;
+		}
+
+		public void setStatName(String statName) {
+			this.statName = statName;
+		}
+
+		public String getBandWidth() {
+			return this.bandWidth;
+		}
+
+		public void setBandWidth(String bandWidth) {
+			this.bandWidth = bandWidth;
 		}
 	}
 

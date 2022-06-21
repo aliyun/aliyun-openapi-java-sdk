@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveDomainRealtimeLogDeliveryResponse extends AcsResponse {
 
-	private String status;
-
-	private String logstore;
+	private String requestId;
 
 	private String project;
 
-	private String requestId;
-
 	private String region;
 
-	public String getStatus() {
-		return this.status;
+	private String logstore;
+
+	private String status;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getLogstore() {
-		return this.logstore;
-	}
-
-	public void setLogstore(String logstore) {
-		this.logstore = logstore;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getProject() {
@@ -58,20 +50,28 @@ public class DescribeLiveDomainRealtimeLogDeliveryResponse extends AcsResponse {
 		this.project = project;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getRegion() {
 		return this.region;
 	}
 
 	public void setRegion(String region) {
 		this.region = region;
+	}
+
+	public String getLogstore() {
+		return this.logstore;
+	}
+
+	public void setLogstore(String logstore) {
+		this.logstore = logstore;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override

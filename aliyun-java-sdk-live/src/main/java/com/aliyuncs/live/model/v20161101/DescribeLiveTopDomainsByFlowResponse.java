@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveTopDomainsByFlowResponse extends AcsResponse {
 
-	private Long domainOnlineCount;
-
-	private String endTime;
+	private String requestId;
 
 	private String startTime;
 
-	private String requestId;
+	private String endTime;
 
 	private Long domainCount;
 
+	private Long domainOnlineCount;
+
 	private List<TopDomain> topDomains;
 
-	public Long getDomainOnlineCount() {
-		return this.domainOnlineCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDomainOnlineCount(Long domainOnlineCount) {
-		this.domainOnlineCount = domainOnlineCount;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getStartTime() {
@@ -61,12 +53,12 @@ public class DescribeLiveTopDomainsByFlowResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public Long getDomainCount() {
@@ -75,6 +67,14 @@ public class DescribeLiveTopDomainsByFlowResponse extends AcsResponse {
 
 	public void setDomainCount(Long domainCount) {
 		this.domainCount = domainCount;
+	}
+
+	public Long getDomainOnlineCount() {
+		return this.domainOnlineCount;
+	}
+
+	public void setDomainOnlineCount(Long domainOnlineCount) {
+		this.domainOnlineCount = domainOnlineCount;
 	}
 
 	public List<TopDomain> getTopDomains() {
@@ -87,26 +87,26 @@ public class DescribeLiveTopDomainsByFlowResponse extends AcsResponse {
 
 	public static class TopDomain {
 
-		private Long maxBps;
+		private String domainName;
 
 		private Long rank;
 
-		private Long totalAccess;
+		private String totalTraffic;
 
 		private String trafficPercent;
 
-		private String domainName;
-
-		private String totalTraffic;
+		private Long maxBps;
 
 		private String maxBpsTime;
 
-		public Long getMaxBps() {
-			return this.maxBps;
+		private Long totalAccess;
+
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setMaxBps(Long maxBps) {
-			this.maxBps = maxBps;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public Long getRank() {
@@ -117,12 +117,12 @@ public class DescribeLiveTopDomainsByFlowResponse extends AcsResponse {
 			this.rank = rank;
 		}
 
-		public Long getTotalAccess() {
-			return this.totalAccess;
+		public String getTotalTraffic() {
+			return this.totalTraffic;
 		}
 
-		public void setTotalAccess(Long totalAccess) {
-			this.totalAccess = totalAccess;
+		public void setTotalTraffic(String totalTraffic) {
+			this.totalTraffic = totalTraffic;
 		}
 
 		public String getTrafficPercent() {
@@ -133,20 +133,12 @@ public class DescribeLiveTopDomainsByFlowResponse extends AcsResponse {
 			this.trafficPercent = trafficPercent;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public Long getMaxBps() {
+			return this.maxBps;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getTotalTraffic() {
-			return this.totalTraffic;
-		}
-
-		public void setTotalTraffic(String totalTraffic) {
-			this.totalTraffic = totalTraffic;
+		public void setMaxBps(Long maxBps) {
+			this.maxBps = maxBps;
 		}
 
 		public String getMaxBpsTime() {
@@ -155,6 +147,14 @@ public class DescribeLiveTopDomainsByFlowResponse extends AcsResponse {
 
 		public void setMaxBpsTime(String maxBpsTime) {
 			this.maxBpsTime = maxBpsTime;
+		}
+
+		public Long getTotalAccess() {
+			return this.totalAccess;
+		}
+
+		public void setTotalAccess(Long totalAccess) {
+			this.totalAccess = totalAccess;
 		}
 	}
 

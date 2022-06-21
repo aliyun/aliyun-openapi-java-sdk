@@ -22,30 +22,19 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainStreamWaterLevelRequest extends RpcAcsRequest<DescribeLiveDomainStreamWaterLevelResponse> {
+public class DescribeLiveUserQuotaRequest extends RpcAcsRequest<DescribeLiveUserQuotaResponse> {
 	   
 
-	private String liveRegion;
-
 	private Long ownerId;
-	public DescribeLiveDomainStreamWaterLevelRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainStreamWaterLevel", "live");
+
+	private String securityToken;
+	public DescribeLiveUserQuotaRequest() {
+		super("live", "2016-11-01", "DescribeLiveUserQuota", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getLiveRegion() {
-		return this.liveRegion;
-	}
-
-	public void setLiveRegion(String liveRegion) {
-		this.liveRegion = liveRegion;
-		if(liveRegion != null){
-			putQueryParameter("LiveRegion", liveRegion);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -59,9 +48,20 @@ public class DescribeLiveDomainStreamWaterLevelRequest extends RpcAcsRequest<Des
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
 	@Override
-	public Class<DescribeLiveDomainStreamWaterLevelResponse> getResponseClass() {
-		return DescribeLiveDomainStreamWaterLevelResponse.class;
+	public Class<DescribeLiveUserQuotaResponse> getResponseClass() {
+		return DescribeLiveUserQuotaResponse.class;
 	}
 
 }

@@ -31,11 +31,11 @@ public class DescribeLiveDrmUsageDataResponseUnmarshaller {
 		List<DataModule> drmUsageData = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDrmUsageDataResponse.DrmUsageData.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setDomain(_ctx.stringValue("DescribeLiveDrmUsageDataResponse.DrmUsageData["+ i +"].Domain"));
 			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDrmUsageDataResponse.DrmUsageData["+ i +"].TimeStamp"));
-			dataModule.setCount(_ctx.longValue("DescribeLiveDrmUsageDataResponse.DrmUsageData["+ i +"].Count"));
-			dataModule.setDrmType(_ctx.stringValue("DescribeLiveDrmUsageDataResponse.DrmUsageData["+ i +"].DrmType"));
+			dataModule.setDomain(_ctx.stringValue("DescribeLiveDrmUsageDataResponse.DrmUsageData["+ i +"].Domain"));
 			dataModule.setRegion(_ctx.stringValue("DescribeLiveDrmUsageDataResponse.DrmUsageData["+ i +"].Region"));
+			dataModule.setDrmType(_ctx.stringValue("DescribeLiveDrmUsageDataResponse.DrmUsageData["+ i +"].DrmType"));
+			dataModule.setCount(_ctx.longValue("DescribeLiveDrmUsageDataResponse.DrmUsageData["+ i +"].Count"));
 
 			drmUsageData.add(dataModule);
 		}

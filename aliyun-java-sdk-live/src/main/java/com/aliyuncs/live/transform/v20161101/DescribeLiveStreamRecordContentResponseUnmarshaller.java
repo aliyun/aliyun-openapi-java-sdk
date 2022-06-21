@@ -31,12 +31,12 @@ public class DescribeLiveStreamRecordContentResponseUnmarshaller {
 		List<RecordContentInfo> recordContentInfoList = new ArrayList<RecordContentInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList.Length"); i++) {
 			RecordContentInfo recordContentInfo = new RecordContentInfo();
-			recordContentInfo.setEndTime(_ctx.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].EndTime"));
-			recordContentInfo.setStartTime(_ctx.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].StartTime"));
-			recordContentInfo.setDuration(_ctx.floatValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].Duration"));
+			recordContentInfo.setOssEndpoint(_ctx.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].OssEndpoint"));
 			recordContentInfo.setOssBucket(_ctx.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].OssBucket"));
 			recordContentInfo.setOssObjectPrefix(_ctx.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].OssObjectPrefix"));
-			recordContentInfo.setOssEndpoint(_ctx.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].OssEndpoint"));
+			recordContentInfo.setStartTime(_ctx.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].StartTime"));
+			recordContentInfo.setEndTime(_ctx.stringValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].EndTime"));
+			recordContentInfo.setDuration(_ctx.floatValue("DescribeLiveStreamRecordContentResponse.RecordContentInfoList["+ i +"].Duration"));
 
 			recordContentInfoList.add(recordContentInfo);
 		}

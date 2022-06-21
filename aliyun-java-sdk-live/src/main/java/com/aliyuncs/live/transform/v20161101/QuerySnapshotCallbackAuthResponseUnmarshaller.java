@@ -23,9 +23,9 @@ public class QuerySnapshotCallbackAuthResponseUnmarshaller {
 	public static QuerySnapshotCallbackAuthResponse unmarshall(QuerySnapshotCallbackAuthResponse querySnapshotCallbackAuthResponse, UnmarshallerContext _ctx) {
 		
 		querySnapshotCallbackAuthResponse.setRequestId(_ctx.stringValue("QuerySnapshotCallbackAuthResponse.RequestId"));
-		querySnapshotCallbackAuthResponse.setCallbackAuthKey(_ctx.stringValue("QuerySnapshotCallbackAuthResponse.CallbackAuthKey"));
 		querySnapshotCallbackAuthResponse.setDomainName(_ctx.stringValue("QuerySnapshotCallbackAuthResponse.DomainName"));
 		querySnapshotCallbackAuthResponse.setCallbackReqAuth(_ctx.stringValue("QuerySnapshotCallbackAuthResponse.CallbackReqAuth"));
+		querySnapshotCallbackAuthResponse.setCallbackAuthKey(_ctx.stringValue("QuerySnapshotCallbackAuthResponse.CallbackAuthKey"));
 	 
 	 	return querySnapshotCallbackAuthResponse;
 	}

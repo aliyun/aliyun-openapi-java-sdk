@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMixStreamListResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<MixStreamInfo> mixStreamList;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeMixStreamListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<MixStreamInfo> getMixStreamList() {
@@ -57,30 +57,38 @@ public class DescribeMixStreamListResponse extends AcsResponse {
 
 	public static class MixStreamInfo {
 
-		private String mixStreamTemplate;
-
-		private String appName;
-
-		private String layoutId;
-
-		private String streamName;
-
-		private String gmtCreate;
-
 		private String mixstreamId;
-
-		private String gmtModified;
-
-		private Integer inputStreamNumber;
 
 		private String domainName;
 
-		public String getMixStreamTemplate() {
-			return this.mixStreamTemplate;
+		private String appName;
+
+		private String streamName;
+
+		private String layoutId;
+
+		private Integer inputStreamNumber;
+
+		private String mixStreamTemplate;
+
+		private String gmtCreate;
+
+		private String gmtModified;
+
+		public String getMixstreamId() {
+			return this.mixstreamId;
 		}
 
-		public void setMixStreamTemplate(String mixStreamTemplate) {
-			this.mixStreamTemplate = mixStreamTemplate;
+		public void setMixstreamId(String mixstreamId) {
+			this.mixstreamId = mixstreamId;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getAppName() {
@@ -91,14 +99,6 @@ public class DescribeMixStreamListResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getLayoutId() {
-			return this.layoutId;
-		}
-
-		public void setLayoutId(String layoutId) {
-			this.layoutId = layoutId;
-		}
-
 		public String getStreamName() {
 			return this.streamName;
 		}
@@ -107,28 +107,12 @@ public class DescribeMixStreamListResponse extends AcsResponse {
 			this.streamName = streamName;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getLayoutId() {
+			return this.layoutId;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getMixstreamId() {
-			return this.mixstreamId;
-		}
-
-		public void setMixstreamId(String mixstreamId) {
-			this.mixstreamId = mixstreamId;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setLayoutId(String layoutId) {
+			this.layoutId = layoutId;
 		}
 
 		public Integer getInputStreamNumber() {
@@ -139,12 +123,28 @@ public class DescribeMixStreamListResponse extends AcsResponse {
 			this.inputStreamNumber = inputStreamNumber;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getMixStreamTemplate() {
+			return this.mixStreamTemplate;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setMixStreamTemplate(String mixStreamTemplate) {
+			this.mixStreamTemplate = mixStreamTemplate;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 	}
 

@@ -32,13 +32,13 @@ public class DescribeToutiaoLivePlayResponseUnmarshaller {
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeToutiaoLivePlayResponse.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
-			contentItem.setDomain(_ctx.stringValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].Domain"));
-			contentItem.setBandwidth(_ctx.floatValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].Bandwidth"));
-			contentItem.setStreamName(_ctx.stringValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].StreamName"));
 			contentItem.setApp(_ctx.stringValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].App"));
-			contentItem.setPlayNum(_ctx.longValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].PlayNum"));
-			contentItem.setTimestamp(_ctx.longValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].Timestamp"));
+			contentItem.setBandwidth(_ctx.floatValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].Bandwidth"));
 			contentItem.setCdnName(_ctx.stringValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].CdnName"));
+			contentItem.setDomain(_ctx.stringValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].Domain"));
+			contentItem.setPlayNum(_ctx.longValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].PlayNum"));
+			contentItem.setStreamName(_ctx.stringValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].StreamName"));
+			contentItem.setTimestamp(_ctx.longValue("DescribeToutiaoLivePlayResponse.Content["+ i +"].Timestamp"));
 
 			content.add(contentItem);
 		}

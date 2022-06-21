@@ -47,19 +47,11 @@ public class DescribeLiveAudioAuditNotifyConfigResponse extends AcsResponse {
 
 	public static class LiveAudioAuditNotifyConfig {
 
-		private String callbackTemplate;
-
 		private String domainName;
 
 		private String callback;
 
-		public String getCallbackTemplate() {
-			return this.callbackTemplate;
-		}
-
-		public void setCallbackTemplate(String callbackTemplate) {
-			this.callbackTemplate = callbackTemplate;
-		}
+		private String callbackTemplate;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -75,6 +67,14 @@ public class DescribeLiveAudioAuditNotifyConfigResponse extends AcsResponse {
 
 		public void setCallback(String callback) {
 			this.callback = callback;
+		}
+
+		public String getCallbackTemplate() {
+			return this.callbackTemplate;
+		}
+
+		public void setCallbackTemplate(String callbackTemplate) {
+			this.callbackTemplate = callbackTemplate;
 		}
 	}
 

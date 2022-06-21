@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterComponentsResponse extends AcsResponse {
 
-	private Integer total;
-
 	private String requestId;
 
+	private Integer total;
+
 	private List<Component> components;
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Component> getComponents() {
@@ -57,15 +57,15 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 	public static class Component {
 
-		private String effect;
+		private String componentId;
 
 		private String componentName;
 
-		private String componentId;
+		private String locationId;
 
 		private String componentType;
 
-		private String locationId;
+		private String effect;
 
 		private ComponentLayer componentLayer;
 
@@ -75,12 +75,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 		private CaptionLayerContent captionLayerContent;
 
-		public String getEffect() {
-			return this.effect;
+		public String getComponentId() {
+			return this.componentId;
 		}
 
-		public void setEffect(String effect) {
-			this.effect = effect;
+		public void setComponentId(String componentId) {
+			this.componentId = componentId;
 		}
 
 		public String getComponentName() {
@@ -91,12 +91,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 			this.componentName = componentName;
 		}
 
-		public String getComponentId() {
-			return this.componentId;
+		public String getLocationId() {
+			return this.locationId;
 		}
 
-		public void setComponentId(String componentId) {
-			this.componentId = componentId;
+		public void setLocationId(String locationId) {
+			this.locationId = locationId;
 		}
 
 		public String getComponentType() {
@@ -107,12 +107,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 			this.componentType = componentType;
 		}
 
-		public String getLocationId() {
-			return this.locationId;
+		public String getEffect() {
+			return this.effect;
 		}
 
-		public void setLocationId(String locationId) {
-			this.locationId = locationId;
+		public void setEffect(String effect) {
+			this.effect = effect;
 		}
 
 		public ComponentLayer getComponentLayer() {
@@ -149,22 +149,22 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 		public static class ComponentLayer {
 
-			private Integer transparency;
+			private Float heightNormalized;
 
 			private Float widthNormalized;
 
-			private Float heightNormalized;
-
 			private String positionRefer;
+
+			private Integer transparency;
 
 			private List<Float> positionNormalizeds;
 
-			public Integer getTransparency() {
-				return this.transparency;
+			public Float getHeightNormalized() {
+				return this.heightNormalized;
 			}
 
-			public void setTransparency(Integer transparency) {
-				this.transparency = transparency;
+			public void setHeightNormalized(Float heightNormalized) {
+				this.heightNormalized = heightNormalized;
 			}
 
 			public Float getWidthNormalized() {
@@ -175,20 +175,20 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.widthNormalized = widthNormalized;
 			}
 
-			public Float getHeightNormalized() {
-				return this.heightNormalized;
-			}
-
-			public void setHeightNormalized(Float heightNormalized) {
-				this.heightNormalized = heightNormalized;
-			}
-
 			public String getPositionRefer() {
 				return this.positionRefer;
 			}
 
 			public void setPositionRefer(String positionRefer) {
 				this.positionRefer = positionRefer;
+			}
+
+			public Integer getTransparency() {
+				return this.transparency;
+			}
+
+			public void setTransparency(Integer transparency) {
+				this.transparency = transparency;
 			}
 
 			public List<Float> getPositionNormalizeds() {
@@ -202,17 +202,25 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 		public static class TextLayerContent {
 
+			private String text;
+
 			private String color;
 
-			private String borderColor;
-
-			private Float borderWidthNormalized;
-
-			private String text;
+			private String fontName;
 
 			private Float sizeNormalized;
 
-			private String fontName;
+			private Float borderWidthNormalized;
+
+			private String borderColor;
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
+			}
 
 			public String getColor() {
 				return this.color;
@@ -222,28 +230,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.color = color;
 			}
 
-			public String getBorderColor() {
-				return this.borderColor;
+			public String getFontName() {
+				return this.fontName;
 			}
 
-			public void setBorderColor(String borderColor) {
-				this.borderColor = borderColor;
-			}
-
-			public Float getBorderWidthNormalized() {
-				return this.borderWidthNormalized;
-			}
-
-			public void setBorderWidthNormalized(Float borderWidthNormalized) {
-				this.borderWidthNormalized = borderWidthNormalized;
-			}
-
-			public String getText() {
-				return this.text;
-			}
-
-			public void setText(String text) {
-				this.text = text;
+			public void setFontName(String fontName) {
+				this.fontName = fontName;
 			}
 
 			public Float getSizeNormalized() {
@@ -254,12 +246,20 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.sizeNormalized = sizeNormalized;
 			}
 
-			public String getFontName() {
-				return this.fontName;
+			public Float getBorderWidthNormalized() {
+				return this.borderWidthNormalized;
 			}
 
-			public void setFontName(String fontName) {
-				this.fontName = fontName;
+			public void setBorderWidthNormalized(Float borderWidthNormalized) {
+				this.borderWidthNormalized = borderWidthNormalized;
+			}
+
+			public String getBorderColor() {
+				return this.borderColor;
+			}
+
+			public void setBorderColor(String borderColor) {
+				this.borderColor = borderColor;
 			}
 		}
 
@@ -278,33 +278,57 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 		public static class CaptionLayerContent {
 
+			private String locationId;
+
+			private Integer ptsOffset;
+
+			private Integer wordsCount;
+
 			private String color;
 
-			private Float wordSpaceNormalized;
-
-			private Float borderWidthNormalized;
+			private String fontName;
 
 			private String sourceLan;
 
-			private Integer wordCountPerLine;
-
 			private String targetLan;
-
-			private String borderColor;
-
-			private String locationId;
-
-			private Float lineSpaceNormalized;
 
 			private Boolean showSourceLan;
 
 			private Float sizeNormalized;
 
-			private Integer wordsCount;
+			private Float borderWidthNormalized;
 
-			private String fontName;
+			private String borderColor;
 
-			private Integer ptsOffset;
+			private Integer wordCountPerLine;
+
+			private Float wordSpaceNormalized;
+
+			private Float lineSpaceNormalized;
+
+			public String getLocationId() {
+				return this.locationId;
+			}
+
+			public void setLocationId(String locationId) {
+				this.locationId = locationId;
+			}
+
+			public Integer getPtsOffset() {
+				return this.ptsOffset;
+			}
+
+			public void setPtsOffset(Integer ptsOffset) {
+				this.ptsOffset = ptsOffset;
+			}
+
+			public Integer getWordsCount() {
+				return this.wordsCount;
+			}
+
+			public void setWordsCount(Integer wordsCount) {
+				this.wordsCount = wordsCount;
+			}
 
 			public String getColor() {
 				return this.color;
@@ -314,20 +338,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.color = color;
 			}
 
-			public Float getWordSpaceNormalized() {
-				return this.wordSpaceNormalized;
+			public String getFontName() {
+				return this.fontName;
 			}
 
-			public void setWordSpaceNormalized(Float wordSpaceNormalized) {
-				this.wordSpaceNormalized = wordSpaceNormalized;
-			}
-
-			public Float getBorderWidthNormalized() {
-				return this.borderWidthNormalized;
-			}
-
-			public void setBorderWidthNormalized(Float borderWidthNormalized) {
-				this.borderWidthNormalized = borderWidthNormalized;
+			public void setFontName(String fontName) {
+				this.fontName = fontName;
 			}
 
 			public String getSourceLan() {
@@ -338,44 +354,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.sourceLan = sourceLan;
 			}
 
-			public Integer getWordCountPerLine() {
-				return this.wordCountPerLine;
-			}
-
-			public void setWordCountPerLine(Integer wordCountPerLine) {
-				this.wordCountPerLine = wordCountPerLine;
-			}
-
 			public String getTargetLan() {
 				return this.targetLan;
 			}
 
 			public void setTargetLan(String targetLan) {
 				this.targetLan = targetLan;
-			}
-
-			public String getBorderColor() {
-				return this.borderColor;
-			}
-
-			public void setBorderColor(String borderColor) {
-				this.borderColor = borderColor;
-			}
-
-			public String getLocationId() {
-				return this.locationId;
-			}
-
-			public void setLocationId(String locationId) {
-				this.locationId = locationId;
-			}
-
-			public Float getLineSpaceNormalized() {
-				return this.lineSpaceNormalized;
-			}
-
-			public void setLineSpaceNormalized(Float lineSpaceNormalized) {
-				this.lineSpaceNormalized = lineSpaceNormalized;
 			}
 
 			public Boolean getShowSourceLan() {
@@ -394,28 +378,44 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.sizeNormalized = sizeNormalized;
 			}
 
-			public Integer getWordsCount() {
-				return this.wordsCount;
+			public Float getBorderWidthNormalized() {
+				return this.borderWidthNormalized;
 			}
 
-			public void setWordsCount(Integer wordsCount) {
-				this.wordsCount = wordsCount;
+			public void setBorderWidthNormalized(Float borderWidthNormalized) {
+				this.borderWidthNormalized = borderWidthNormalized;
 			}
 
-			public String getFontName() {
-				return this.fontName;
+			public String getBorderColor() {
+				return this.borderColor;
 			}
 
-			public void setFontName(String fontName) {
-				this.fontName = fontName;
+			public void setBorderColor(String borderColor) {
+				this.borderColor = borderColor;
 			}
 
-			public Integer getPtsOffset() {
-				return this.ptsOffset;
+			public Integer getWordCountPerLine() {
+				return this.wordCountPerLine;
 			}
 
-			public void setPtsOffset(Integer ptsOffset) {
-				this.ptsOffset = ptsOffset;
+			public void setWordCountPerLine(Integer wordCountPerLine) {
+				this.wordCountPerLine = wordCountPerLine;
+			}
+
+			public Float getWordSpaceNormalized() {
+				return this.wordSpaceNormalized;
+			}
+
+			public void setWordSpaceNormalized(Float wordSpaceNormalized) {
+				this.wordSpaceNormalized = wordSpaceNormalized;
+			}
+
+			public Float getLineSpaceNormalized() {
+				return this.lineSpaceNormalized;
+			}
+
+			public void setLineSpaceNormalized(Float lineSpaceNormalized) {
+				this.lineSpaceNormalized = lineSpaceNormalized;
 			}
 		}
 	}

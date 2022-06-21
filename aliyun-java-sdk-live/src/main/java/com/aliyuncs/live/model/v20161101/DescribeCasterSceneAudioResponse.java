@@ -79,9 +79,9 @@ public class DescribeCasterSceneAudioResponse extends AcsResponse {
 
 		private Float volumeRate;
 
-		private Integer fixedDelayDuration;
-
 		private String validChannel;
+
+		private Integer fixedDelayDuration;
 
 		public Float getVolumeRate() {
 			return this.volumeRate;
@@ -91,20 +91,20 @@ public class DescribeCasterSceneAudioResponse extends AcsResponse {
 			this.volumeRate = volumeRate;
 		}
 
-		public Integer getFixedDelayDuration() {
-			return this.fixedDelayDuration;
-		}
-
-		public void setFixedDelayDuration(Integer fixedDelayDuration) {
-			this.fixedDelayDuration = fixedDelayDuration;
-		}
-
 		public String getValidChannel() {
 			return this.validChannel;
 		}
 
 		public void setValidChannel(String validChannel) {
 			this.validChannel = validChannel;
+		}
+
+		public Integer getFixedDelayDuration() {
+			return this.fixedDelayDuration;
+		}
+
+		public void setFixedDelayDuration(Integer fixedDelayDuration) {
+			this.fixedDelayDuration = fixedDelayDuration;
 		}
 	}
 

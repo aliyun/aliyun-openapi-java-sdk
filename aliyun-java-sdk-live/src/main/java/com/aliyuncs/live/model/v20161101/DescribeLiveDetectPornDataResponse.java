@@ -47,36 +47,28 @@ public class DescribeLiveDetectPornDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String domain;
-
-		private String region;
+		private String timeStamp;
 
 		private String app;
 
+		private String domain;
+
 		private String stream;
-
-		private String timeStamp;
-
-		private Long count;
-
-		private String scene;
 
 		private String fee;
 
-		public String getDomain() {
-			return this.domain;
+		private String scene;
+
+		private String region;
+
+		private Long count;
+
+		public String getTimeStamp() {
+			return this.timeStamp;
 		}
 
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public String getApp() {
@@ -87,6 +79,14 @@ public class DescribeLiveDetectPornDataResponse extends AcsResponse {
 			this.app = app;
 		}
 
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
 		public String getStream() {
 			return this.stream;
 		}
@@ -95,20 +95,12 @@ public class DescribeLiveDetectPornDataResponse extends AcsResponse {
 			this.stream = stream;
 		}
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		public String getFee() {
+			return this.fee;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-
-		public Long getCount() {
-			return this.count;
-		}
-
-		public void setCount(Long count) {
-			this.count = count;
+		public void setFee(String fee) {
+			this.fee = fee;
 		}
 
 		public String getScene() {
@@ -119,12 +111,20 @@ public class DescribeLiveDetectPornDataResponse extends AcsResponse {
 			this.scene = scene;
 		}
 
-		public String getFee() {
-			return this.fee;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setFee(String fee) {
-			this.fee = fee;
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public Long getCount() {
+			return this.count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
 		}
 	}
 

@@ -31,18 +31,18 @@ public class DescribeLiveStreamWatermarksResponseUnmarshaller {
 		List<Watermark> watermarkList = new ArrayList<Watermark>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamWatermarksResponse.WatermarkList.Length"); i++) {
 			Watermark watermark = new Watermark();
+			watermark.setTemplateId(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].TemplateId"));
+			watermark.setName(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Name"));
 			watermark.setType(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Type"));
-			watermark.setXOffset(_ctx.floatValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].XOffset"));
+			watermark.setDescription(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Description"));
 			watermark.setRefWidth(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].RefWidth"));
+			watermark.setRefHeight(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].RefHeight"));
+			watermark.setXOffset(_ctx.floatValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].XOffset"));
 			watermark.setYOffset(_ctx.floatValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].YOffset"));
 			watermark.setHeight(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Height"));
-			watermark.setRefHeight(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].RefHeight"));
-			watermark.setPictureUrl(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].PictureUrl"));
 			watermark.setTransparency(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Transparency"));
-			watermark.setDescription(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Description"));
 			watermark.setOffsetCorner(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].OffsetCorner"));
-			watermark.setName(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Name"));
-			watermark.setTemplateId(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].TemplateId"));
+			watermark.setPictureUrl(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].PictureUrl"));
 
 			watermarkList.add(watermark);
 		}

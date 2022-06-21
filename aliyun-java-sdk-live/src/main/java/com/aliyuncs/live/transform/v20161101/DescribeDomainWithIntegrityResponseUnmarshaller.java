@@ -33,17 +33,17 @@ public class DescribeDomainWithIntegrityResponseUnmarshaller {
 			ContentItem contentItem = new ContentItem();
 			contentItem.setName(_ctx.stringValue("DescribeDomainWithIntegrityResponse.Content["+ i +"].Name"));
 
-			List<String> points = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDomainWithIntegrityResponse.Content["+ i +"].Points.Length"); j++) {
-				points.add(_ctx.stringValue("DescribeDomainWithIntegrityResponse.Content["+ i +"].Points["+ j +"]"));
-			}
-			contentItem.setPoints(points);
-
 			List<String> columns = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDomainWithIntegrityResponse.Content["+ i +"].Columns.Length"); j++) {
 				columns.add(_ctx.stringValue("DescribeDomainWithIntegrityResponse.Content["+ i +"].Columns["+ j +"]"));
 			}
 			contentItem.setColumns(columns);
+
+			List<String> points = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainWithIntegrityResponse.Content["+ i +"].Points.Length"); j++) {
+				points.add(_ctx.stringValue("DescribeDomainWithIntegrityResponse.Content["+ i +"].Points["+ j +"]"));
+			}
+			contentItem.setPoints(points);
 
 			content.add(contentItem);
 		}

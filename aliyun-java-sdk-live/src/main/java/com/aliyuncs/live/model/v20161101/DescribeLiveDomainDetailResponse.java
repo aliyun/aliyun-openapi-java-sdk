@@ -46,53 +46,29 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 
 	public static class DomainDetail {
 
-		private String sSLPub;
-
-		private String gmtModified;
-
-		private String domainName;
-
 		private String gmtCreated;
 
-		private String liveDomainType;
-
-		private String description;
-
-		private String region;
-
-		private String sSLProtocol;
-
-		private String certName;
+		private String gmtModified;
 
 		private String domainStatus;
 
 		private String cname;
 
+		private String domainName;
+
+		private String liveDomainType;
+
+		private String region;
+
+		private String description;
+
+		private String sSLProtocol;
+
+		private String sSLPub;
+
 		private String scope;
 
-		public String getSSLPub() {
-			return this.sSLPub;
-		}
-
-		public void setSSLPub(String sSLPub) {
-			this.sSLPub = sSLPub;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String certName;
 
 		public String getGmtCreated() {
 			return this.gmtCreated;
@@ -102,44 +78,12 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 			this.gmtCreated = gmtCreated;
 		}
 
-		public String getLiveDomainType() {
-			return this.liveDomainType;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setLiveDomainType(String liveDomainType) {
-			this.liveDomainType = liveDomainType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getSSLProtocol() {
-			return this.sSLProtocol;
-		}
-
-		public void setSSLProtocol(String sSLProtocol) {
-			this.sSLProtocol = sSLProtocol;
-		}
-
-		public String getCertName() {
-			return this.certName;
-		}
-
-		public void setCertName(String certName) {
-			this.certName = certName;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getDomainStatus() {
@@ -158,12 +102,68 @@ public class DescribeLiveDomainDetailResponse extends AcsResponse {
 			this.cname = cname;
 		}
 
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getLiveDomainType() {
+			return this.liveDomainType;
+		}
+
+		public void setLiveDomainType(String liveDomainType) {
+			this.liveDomainType = liveDomainType;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSSLProtocol() {
+			return this.sSLProtocol;
+		}
+
+		public void setSSLProtocol(String sSLProtocol) {
+			this.sSLProtocol = sSLProtocol;
+		}
+
+		public String getSSLPub() {
+			return this.sSLPub;
+		}
+
+		public void setSSLPub(String sSLPub) {
+			this.sSLPub = sSLPub;
+		}
+
 		public String getScope() {
 			return this.scope;
 		}
 
 		public void setScope(String scope) {
 			this.scope = scope;
+		}
+
+		public String getCertName() {
+			return this.certName;
+		}
+
+		public void setCertName(String certName) {
+			this.certName = certName;
 		}
 	}
 

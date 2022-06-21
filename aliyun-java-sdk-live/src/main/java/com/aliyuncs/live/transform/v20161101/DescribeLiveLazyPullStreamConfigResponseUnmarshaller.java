@@ -31,14 +31,14 @@ public class DescribeLiveLazyPullStreamConfigResponseUnmarshaller {
 		List<LiveLazyPullConfig> liveLazyPullConfigList = new ArrayList<LiveLazyPullConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList.Length"); i++) {
 			LiveLazyPullConfig liveLazyPullConfig = new LiveLazyPullConfig();
+			liveLazyPullConfig.setDomainName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].DomainName"));
 			liveLazyPullConfig.setAppName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].AppName"));
-			liveLazyPullConfig.setPullArgs(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullArgs"));
+			liveLazyPullConfig.setPullDomainName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullDomainName"));
 			liveLazyPullConfig.setPullAppName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAppName"));
 			liveLazyPullConfig.setPullProtocol(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullProtocol"));
-			liveLazyPullConfig.setPullAuthKey(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthKey"));
-			liveLazyPullConfig.setPullDomainName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullDomainName"));
-			liveLazyPullConfig.setDomainName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].DomainName"));
 			liveLazyPullConfig.setPullAuthType(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthType"));
+			liveLazyPullConfig.setPullAuthKey(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthKey"));
+			liveLazyPullConfig.setPullArgs(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullArgs"));
 
 			liveLazyPullConfigList.add(liveLazyPullConfig);
 		}

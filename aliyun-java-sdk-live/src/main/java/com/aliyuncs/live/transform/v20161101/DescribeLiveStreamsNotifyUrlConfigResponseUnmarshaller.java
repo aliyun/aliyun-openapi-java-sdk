@@ -26,12 +26,12 @@ public class DescribeLiveStreamsNotifyUrlConfigResponseUnmarshaller {
 		describeLiveStreamsNotifyUrlConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.RequestId"));
 
 		LiveStreamsNotifyConfig liveStreamsNotifyConfig = new LiveStreamsNotifyConfig();
-		liveStreamsNotifyConfig.setNotifyReqAuth(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyReqAuth"));
-		liveStreamsNotifyConfig.setAuthType(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthType"));
-		liveStreamsNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyUrl"));
-		liveStreamsNotifyConfig.setNotifyAuthKey(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyAuthKey"));
-		liveStreamsNotifyConfig.setAuthKey(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthKey"));
 		liveStreamsNotifyConfig.setDomainName(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.DomainName"));
+		liveStreamsNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyUrl"));
+		liveStreamsNotifyConfig.setNotifyReqAuth(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyReqAuth"));
+		liveStreamsNotifyConfig.setNotifyAuthKey(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyAuthKey"));
+		liveStreamsNotifyConfig.setAuthType(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthType"));
+		liveStreamsNotifyConfig.setAuthKey(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthKey"));
 		describeLiveStreamsNotifyUrlConfigResponse.setLiveStreamsNotifyConfig(liveStreamsNotifyConfig);
 	 
 	 	return describeLiveStreamsNotifyUrlConfigResponse;

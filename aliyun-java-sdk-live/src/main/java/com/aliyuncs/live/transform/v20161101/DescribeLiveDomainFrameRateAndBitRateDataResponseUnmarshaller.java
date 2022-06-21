@@ -31,10 +31,10 @@ public class DescribeLiveDomainFrameRateAndBitRateDataResponseUnmarshaller {
 		List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos = new ArrayList<FrameRateAndBitRateInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos.Length"); i++) {
 			FrameRateAndBitRateInfo frameRateAndBitRateInfo = new FrameRateAndBitRateInfo();
-			frameRateAndBitRateInfo.setVideoFrameRate(_ctx.floatValue("DescribeLiveDomainFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate"));
-			frameRateAndBitRateInfo.setStreamUrl(_ctx.stringValue("DescribeLiveDomainFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].StreamUrl"));
 			frameRateAndBitRateInfo.setAudioFrameRate(_ctx.floatValue("DescribeLiveDomainFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate"));
 			frameRateAndBitRateInfo.setBitRate(_ctx.floatValue("DescribeLiveDomainFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].BitRate"));
+			frameRateAndBitRateInfo.setVideoFrameRate(_ctx.floatValue("DescribeLiveDomainFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate"));
+			frameRateAndBitRateInfo.setStreamUrl(_ctx.stringValue("DescribeLiveDomainFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].StreamUrl"));
 
 			frameRateAndBitRateInfos.add(frameRateAndBitRateInfo);
 		}

@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
-	private Integer totalPage;
+	private String requestId;
 
 	private Integer pageNum;
 
 	private Integer pageSize;
 
-	private String requestId;
-
 	private Integer totalNum;
+
+	private Integer totalPage;
 
 	private List<LiveStreamPublishInfo> publishInfo;
 
-	public Integer getTotalPage() {
-		return this.totalPage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNum() {
@@ -61,20 +61,20 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalNum() {
 		return this.totalNum;
 	}
 
 	public void setTotalNum(Integer totalNum) {
 		this.totalNum = totalNum;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public List<LiveStreamPublishInfo> getPublishInfo() {
@@ -87,55 +87,31 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 	public static class LiveStreamPublishInfo {
 
-		private String edgeNodeAddr;
-
-		private String publishUrl;
-
-		private String streamName;
-
 		private String domainName;
-
-		private String stopTime;
-
-		private String transcodeId;
-
-		private String publishDomain;
 
 		private String appName;
 
+		private String streamName;
+
+		private String streamUrl;
+
 		private String publishTime;
+
+		private String stopTime;
+
+		private String publishUrl;
+
+		private String clientAddr;
+
+		private String edgeNodeAddr;
+
+		private String publishDomain;
 
 		private String publishType;
 
 		private String transcoded;
 
-		private String clientAddr;
-
-		private String streamUrl;
-
-		public String getEdgeNodeAddr() {
-			return this.edgeNodeAddr;
-		}
-
-		public void setEdgeNodeAddr(String edgeNodeAddr) {
-			this.edgeNodeAddr = edgeNodeAddr;
-		}
-
-		public String getPublishUrl() {
-			return this.publishUrl;
-		}
-
-		public void setPublishUrl(String publishUrl) {
-			this.publishUrl = publishUrl;
-		}
-
-		public String getStreamName() {
-			return this.streamName;
-		}
-
-		public void setStreamName(String streamName) {
-			this.streamName = streamName;
-		}
+		private String transcodeId;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -143,30 +119,6 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
-		}
-
-		public String getStopTime() {
-			return this.stopTime;
-		}
-
-		public void setStopTime(String stopTime) {
-			this.stopTime = stopTime;
-		}
-
-		public String getTranscodeId() {
-			return this.transcodeId;
-		}
-
-		public void setTranscodeId(String transcodeId) {
-			this.transcodeId = transcodeId;
-		}
-
-		public String getPublishDomain() {
-			return this.publishDomain;
-		}
-
-		public void setPublishDomain(String publishDomain) {
-			this.publishDomain = publishDomain;
 		}
 
 		public String getAppName() {
@@ -177,12 +129,68 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
+		public String getStreamName() {
+			return this.streamName;
+		}
+
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getStreamUrl() {
+			return this.streamUrl;
+		}
+
+		public void setStreamUrl(String streamUrl) {
+			this.streamUrl = streamUrl;
+		}
+
 		public String getPublishTime() {
 			return this.publishTime;
 		}
 
 		public void setPublishTime(String publishTime) {
 			this.publishTime = publishTime;
+		}
+
+		public String getStopTime() {
+			return this.stopTime;
+		}
+
+		public void setStopTime(String stopTime) {
+			this.stopTime = stopTime;
+		}
+
+		public String getPublishUrl() {
+			return this.publishUrl;
+		}
+
+		public void setPublishUrl(String publishUrl) {
+			this.publishUrl = publishUrl;
+		}
+
+		public String getClientAddr() {
+			return this.clientAddr;
+		}
+
+		public void setClientAddr(String clientAddr) {
+			this.clientAddr = clientAddr;
+		}
+
+		public String getEdgeNodeAddr() {
+			return this.edgeNodeAddr;
+		}
+
+		public void setEdgeNodeAddr(String edgeNodeAddr) {
+			this.edgeNodeAddr = edgeNodeAddr;
+		}
+
+		public String getPublishDomain() {
+			return this.publishDomain;
+		}
+
+		public void setPublishDomain(String publishDomain) {
+			this.publishDomain = publishDomain;
 		}
 
 		public String getPublishType() {
@@ -201,20 +209,12 @@ public class DescribeLiveStreamsPublishListResponse extends AcsResponse {
 			this.transcoded = transcoded;
 		}
 
-		public String getClientAddr() {
-			return this.clientAddr;
+		public String getTranscodeId() {
+			return this.transcodeId;
 		}
 
-		public void setClientAddr(String clientAddr) {
-			this.clientAddr = clientAddr;
-		}
-
-		public String getStreamUrl() {
-			return this.streamUrl;
-		}
-
-		public void setStreamUrl(String streamUrl) {
-			this.streamUrl = streamUrl;
+		public void setTranscodeId(String transcodeId) {
+			this.transcodeId = transcodeId;
 		}
 	}
 
