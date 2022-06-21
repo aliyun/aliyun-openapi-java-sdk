@@ -34,6 +34,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private LoadBalancerBillingConfig loadBalancerBillingConfig;
 
+	private String addressIpVersion;
+
 	private Boolean deletionProtectionEnabled;
 
 	private String resourceGroupId;
@@ -103,6 +105,17 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 			
 				putQueryParameter("LoadBalancerBillingConfig.PayType" , loadBalancerBillingConfig.getPayType());
 		}	
+	}
+
+	public String getAddressIpVersion() {
+		return this.addressIpVersion;
+	}
+
+	public void setAddressIpVersion(String addressIpVersion) {
+		this.addressIpVersion = addressIpVersion;
+		if(addressIpVersion != null){
+			putQueryParameter("AddressIpVersion", addressIpVersion);
+		}
 	}
 
 	public Boolean getDeletionProtectionEnabled() {

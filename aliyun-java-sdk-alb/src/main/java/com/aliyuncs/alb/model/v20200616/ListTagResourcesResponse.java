@@ -31,8 +31,6 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalCount;
-
 	private List<TagResource> tagResources;
 
 	public Integer getMaxResults() {
@@ -57,14 +55,6 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public List<TagResource> getTagResources() {

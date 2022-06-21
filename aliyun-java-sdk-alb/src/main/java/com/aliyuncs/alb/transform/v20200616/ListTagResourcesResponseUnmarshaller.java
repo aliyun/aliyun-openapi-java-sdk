@@ -29,7 +29,6 @@ public class ListTagResourcesResponseUnmarshaller {
 		listTagResourcesResponse.setRequestId(_ctx.stringValue("ListTagResourcesResponse.RequestId"));
 		listTagResourcesResponse.setMaxResults(_ctx.integerValue("ListTagResourcesResponse.MaxResults"));
 		listTagResourcesResponse.setNextToken(_ctx.stringValue("ListTagResourcesResponse.NextToken"));
-		listTagResourcesResponse.setTotalCount(_ctx.integerValue("ListTagResourcesResponse.TotalCount"));
 
 		List<TagResource> tagResources = new ArrayList<TagResource>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagResourcesResponse.TagResources.Length"); i++) {
