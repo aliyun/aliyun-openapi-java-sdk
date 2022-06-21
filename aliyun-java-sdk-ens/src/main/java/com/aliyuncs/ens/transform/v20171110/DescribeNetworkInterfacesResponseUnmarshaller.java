@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeNetworkInterfacesResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeNetworkInterfacesResponse.NetworkInterfaceSet;
+import com.aliyuncs.ens.model.v20171110.DescribeNetworkInterfacesResponse.NetworkInterfaceSet.PrivateIpSet;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,16 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 			networkInterfaceSet.setPrimaryIpType(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrimaryIpType"));
 			networkInterfaceSet.setStatus(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Status"));
 			networkInterfaceSet.setVSwitchId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].VSwitchId"));
+
+			List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets.Length"); j++) {
+				PrivateIpSet privateIpSet = new PrivateIpSet();
+				privateIpSet.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].PrivateIpAddress"));
+				privateIpSet.setPrimary(_ctx.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].Primary"));
+
+				privateIpSets.add(privateIpSet);
+			}
+			networkInterfaceSet.setPrivateIpSets(privateIpSets);
 
 			networkInterfaceSets.add(networkInterfaceSet);
 		}

@@ -48,6 +48,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Long period;
 
+	private Boolean publicIpIdentification;
+
 	private String vSwitchId;
 
 	private String privateIpAddress;
@@ -194,6 +196,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getPublicIpIdentification() {
+		return this.publicIpIdentification;
+	}
+
+	public void setPublicIpIdentification(Boolean publicIpIdentification) {
+		this.publicIpIdentification = publicIpIdentification;
+		if(publicIpIdentification != null){
+			putQueryParameter("PublicIpIdentification", publicIpIdentification.toString());
 		}
 	}
 

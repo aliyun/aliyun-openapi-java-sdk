@@ -26,6 +26,8 @@ public class DeleteLoadBalancerListenerRequest extends RpcAcsRequest<DeleteLoadB
 
 	private Integer listenerPort;
 
+	private String listenerProtocol;
+
 	private String loadBalancerId;
 	public DeleteLoadBalancerListenerRequest() {
 		super("Ens", "2017-11-10", "DeleteLoadBalancerListener", "ens");
@@ -40,6 +42,17 @@ public class DeleteLoadBalancerListenerRequest extends RpcAcsRequest<DeleteLoadB
 		this.listenerPort = listenerPort;
 		if(listenerPort != null){
 			putQueryParameter("ListenerPort", listenerPort.toString());
+		}
+	}
+
+	public String getListenerProtocol() {
+		return this.listenerProtocol;
+	}
+
+	public void setListenerProtocol(String listenerProtocol) {
+		this.listenerProtocol = listenerProtocol;
+		if(listenerProtocol != null){
+			putQueryParameter("ListenerProtocol", listenerProtocol);
 		}
 	}
 

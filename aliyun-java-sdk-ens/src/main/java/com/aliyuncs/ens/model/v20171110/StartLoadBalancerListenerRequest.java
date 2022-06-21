@@ -26,6 +26,8 @@ public class StartLoadBalancerListenerRequest extends RpcAcsRequest<StartLoadBal
 
 	private Integer listenerPort;
 
+	private String listenerProtocol;
+
 	private String loadBalancerId;
 	public StartLoadBalancerListenerRequest() {
 		super("Ens", "2017-11-10", "StartLoadBalancerListener", "ens");
@@ -40,6 +42,17 @@ public class StartLoadBalancerListenerRequest extends RpcAcsRequest<StartLoadBal
 		this.listenerPort = listenerPort;
 		if(listenerPort != null){
 			putQueryParameter("ListenerPort", listenerPort.toString());
+		}
+	}
+
+	public String getListenerProtocol() {
+		return this.listenerProtocol;
+	}
+
+	public void setListenerProtocol(String listenerProtocol) {
+		this.listenerProtocol = listenerProtocol;
+		if(listenerProtocol != null){
+			putQueryParameter("ListenerProtocol", listenerProtocol);
 		}
 	}
 

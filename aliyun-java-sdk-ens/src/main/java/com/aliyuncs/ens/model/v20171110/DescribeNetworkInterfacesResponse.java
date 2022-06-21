@@ -95,6 +95,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private List<PrivateIpSet> privateIpSets;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -165,6 +167,37 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public List<PrivateIpSet> getPrivateIpSets() {
+			return this.privateIpSets;
+		}
+
+		public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
+			this.privateIpSets = privateIpSets;
+		}
+
+		public static class PrivateIpSet {
+
+			private String privateIpAddress;
+
+			private Boolean primary;
+
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
+			}
+
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
+			}
+
+			public Boolean getPrimary() {
+				return this.primary;
+			}
+
+			public void setPrimary(Boolean primary) {
+				this.primary = primary;
+			}
 		}
 	}
 
