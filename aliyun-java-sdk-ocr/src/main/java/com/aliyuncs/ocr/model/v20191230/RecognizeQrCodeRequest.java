@@ -28,7 +28,7 @@ public class RecognizeQrCodeRequest extends RpcAcsRequest<RecognizeQrCodeRespons
 
 	private List<Tasks> taskss;
 	public RecognizeQrCodeRequest() {
-		super("ocr", "2019-12-30", "RecognizeQrCode");
+		super("ocr", "2019-12-30", "RecognizeQrCode", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class RecognizeTakeoutOrderRequest extends RpcAcsRequest<RecognizeTakeout
 
 	private String imageURL;
 	public RecognizeTakeoutOrderRequest() {
-		super("ocr", "2019-12-30", "RecognizeTakeoutOrder");
+		super("ocr", "2019-12-30", "RecognizeTakeoutOrder", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

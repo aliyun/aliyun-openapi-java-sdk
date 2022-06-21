@@ -29,7 +29,7 @@ public class RecognizeVATInvoiceRequest extends RpcAcsRequest<RecognizeVATInvoic
 
 	private String fileURL;
 	public RecognizeVATInvoiceRequest() {
-		super("ocr", "2019-12-30", "RecognizeVATInvoice");
+		super("ocr", "2019-12-30", "RecognizeVATInvoice", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

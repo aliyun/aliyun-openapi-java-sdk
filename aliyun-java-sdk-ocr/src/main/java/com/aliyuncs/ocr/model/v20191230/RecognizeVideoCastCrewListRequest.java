@@ -35,7 +35,7 @@ public class RecognizeVideoCastCrewListRequest extends RpcAcsRequest<RecognizeVi
 
 	private String videoUrl;
 	public RecognizeVideoCastCrewListRequest() {
-		super("ocr", "2019-12-30", "RecognizeVideoCastCrewList");
+		super("ocr", "2019-12-30", "RecognizeVideoCastCrewList", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

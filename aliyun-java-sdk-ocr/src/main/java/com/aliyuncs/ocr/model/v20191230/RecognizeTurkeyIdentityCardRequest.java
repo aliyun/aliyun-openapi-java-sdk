@@ -27,7 +27,7 @@ public class RecognizeTurkeyIdentityCardRequest extends RpcAcsRequest<RecognizeT
 
 	private String imageUrl;
 	public RecognizeTurkeyIdentityCardRequest() {
-		super("ocr", "2019-12-30", "RecognizeTurkeyIdentityCard");
+		super("ocr", "2019-12-30", "RecognizeTurkeyIdentityCard", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

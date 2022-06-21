@@ -27,7 +27,7 @@ public class RecognizeVideoCharacterRequest extends RpcAcsRequest<RecognizeVideo
 
 	private String videoURL;
 	public RecognizeVideoCharacterRequest() {
-		super("ocr", "2019-12-30", "RecognizeVideoCharacter");
+		super("ocr", "2019-12-30", "RecognizeVideoCharacter", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

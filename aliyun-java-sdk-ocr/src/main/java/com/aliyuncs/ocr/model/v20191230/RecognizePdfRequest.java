@@ -27,7 +27,7 @@ public class RecognizePdfRequest extends RpcAcsRequest<RecognizePdfResponse> {
 
 	private String fileURL;
 	public RecognizePdfRequest() {
-		super("ocr", "2019-12-30", "RecognizePdf");
+		super("ocr", "2019-12-30", "RecognizePdf", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

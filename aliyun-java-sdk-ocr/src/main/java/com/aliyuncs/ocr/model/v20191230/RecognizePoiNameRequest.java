@@ -27,7 +27,7 @@ public class RecognizePoiNameRequest extends RpcAcsRequest<RecognizePoiNameRespo
 
 	private String imageURL;
 	public RecognizePoiNameRequest() {
-		super("ocr", "2019-12-30", "RecognizePoiName");
+		super("ocr", "2019-12-30", "RecognizePoiName", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

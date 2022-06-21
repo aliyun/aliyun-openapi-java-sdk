@@ -27,7 +27,7 @@ public class RecognizeMalaysiaIdentityCardRequest extends RpcAcsRequest<Recogniz
 
 	private String imageUrl;
 	public RecognizeMalaysiaIdentityCardRequest() {
-		super("ocr", "2019-12-30", "RecognizeMalaysiaIdentityCard");
+		super("ocr", "2019-12-30", "RecognizeMalaysiaIdentityCard", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

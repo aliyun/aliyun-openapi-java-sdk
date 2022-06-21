@@ -27,7 +27,7 @@ public class RecognizeAccountPageRequest extends RpcAcsRequest<RecognizeAccountP
 
 	private String imageURL;
 	public RecognizeAccountPageRequest() {
-		super("ocr", "2019-12-30", "RecognizeAccountPage");
+		super("ocr", "2019-12-30", "RecognizeAccountPage", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

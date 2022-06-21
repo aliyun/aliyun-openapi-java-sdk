@@ -27,7 +27,7 @@ public class RecognizeQuotaInvoiceRequest extends RpcAcsRequest<RecognizeQuotaIn
 
 	private String imageURL;
 	public RecognizeQuotaInvoiceRequest() {
-		super("ocr", "2019-12-30", "RecognizeQuotaInvoice");
+		super("ocr", "2019-12-30", "RecognizeQuotaInvoice", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

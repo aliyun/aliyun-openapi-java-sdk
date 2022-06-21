@@ -27,7 +27,7 @@ public class RecognizeVerificationcodeRequest extends RpcAcsRequest<RecognizeVer
 
 	private String imageURL;
 	public RecognizeVerificationcodeRequest() {
-		super("ocr", "2019-12-30", "RecognizeVerificationcode");
+		super("ocr", "2019-12-30", "RecognizeVerificationcode", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

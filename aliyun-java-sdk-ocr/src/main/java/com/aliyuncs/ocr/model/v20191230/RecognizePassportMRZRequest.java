@@ -27,7 +27,7 @@ public class RecognizePassportMRZRequest extends RpcAcsRequest<RecognizePassport
 
 	private String imageURL;
 	public RecognizePassportMRZRequest() {
-		super("ocr", "2019-12-30", "RecognizePassportMRZ");
+		super("ocr", "2019-12-30", "RecognizePassportMRZ", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

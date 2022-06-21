@@ -27,7 +27,7 @@ public class RecognizeVietnamIdentityCardRequest extends RpcAcsRequest<Recognize
 
 	private String imageUrl;
 	public RecognizeVietnamIdentityCardRequest() {
-		super("ocr", "2019-12-30", "RecognizeVietnamIdentityCard");
+		super("ocr", "2019-12-30", "RecognizeVietnamIdentityCard", "ocr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
