@@ -22,14 +22,18 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
+public class UpdateGatewaySpecRequest extends RpcAcsRequest<UpdateGatewaySpecResponse> {
 	   
 
 	private String gatewayUniqueId;
 
+	private Integer replica;
+
+	private String spec;
+
 	private String acceptLanguage;
-	public GetMseSourceRequest() {
-		super("mse", "2019-05-31", "GetMseSource", "mse");
+	public UpdateGatewaySpecRequest() {
+		super("mse", "2019-05-31", "UpdateGatewaySpec", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +52,28 @@ public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 		}
 	}
 
+	public Integer getReplica() {
+		return this.replica;
+	}
+
+	public void setReplica(Integer replica) {
+		this.replica = replica;
+		if(replica != null){
+			putQueryParameter("Replica", replica.toString());
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putQueryParameter("Spec", spec);
+		}
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -60,8 +86,8 @@ public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 	}
 
 	@Override
-	public Class<GetMseSourceResponse> getResponseClass() {
-		return GetMseSourceResponse.class;
+	public Class<UpdateGatewaySpecResponse> getResponseClass() {
+		return UpdateGatewaySpecResponse.class;
 	}
 
 }

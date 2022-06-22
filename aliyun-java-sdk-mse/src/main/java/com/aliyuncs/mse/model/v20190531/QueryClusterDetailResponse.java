@@ -145,6 +145,8 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 		private String chargeType;
 
+		private String orderClusterVersion;
+
 		private List<InstanceModel> instanceModels;
 
 		public String getVpcId() {
@@ -417,6 +419,14 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
+		}
+
+		public String getOrderClusterVersion() {
+			return this.orderClusterVersion;
+		}
+
+		public void setOrderClusterVersion(String orderClusterVersion) {
+			this.orderClusterVersion = orderClusterVersion;
 		}
 
 		public List<InstanceModel> getInstanceModels() {

@@ -22,29 +22,31 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
+public class ListVgroupsRequest extends RpcAcsRequest<ListVgroupsResponse> {
 	   
 
-	private String gatewayUniqueId;
+	private String userId;
 
 	private String acceptLanguage;
-	public GetMseSourceRequest() {
-		super("mse", "2019-05-31", "GetMseSource", "mse");
-		setMethod(MethodType.POST);
+
+	private String region;
+	public ListVgroupsRequest() {
+		super("mse", "2019-05-31", "ListVgroups", "mse");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getGatewayUniqueId() {
-		return this.gatewayUniqueId;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setGatewayUniqueId(String gatewayUniqueId) {
-		this.gatewayUniqueId = gatewayUniqueId;
-		if(gatewayUniqueId != null){
-			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -59,9 +61,20 @@ public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<GetMseSourceResponse> getResponseClass() {
-		return GetMseSourceResponse.class;
+	public Class<ListVgroupsResponse> getResponseClass() {
+		return ListVgroupsResponse.class;
 	}
 
 }
