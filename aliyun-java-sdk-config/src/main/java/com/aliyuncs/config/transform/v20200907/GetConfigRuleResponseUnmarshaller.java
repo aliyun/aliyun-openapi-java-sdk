@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule;
+import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.Compliance;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.ConfigRuleEvaluationStatus;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.CreateBy;
 import com.aliyuncs.config.model.v20200907.GetConfigRuleResponse.ConfigRule.ManagedRule;
@@ -55,6 +56,7 @@ public class GetConfigRuleResponseUnmarshaller {
 		configRule.setTagValueScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.TagValueScope"));
 		configRule.setConfigRuleTriggerTypes(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.ConfigRuleTriggerTypes"));
 		configRule.setTagKeyLogicScope(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.TagKeyLogicScope"));
+		configRule.setAccountId(_ctx.longValue("GetConfigRuleResponse.ConfigRule.AccountId"));
 
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.Source.Owner"));
@@ -130,6 +132,11 @@ public class GetConfigRuleResponseUnmarshaller {
 		}
 		scope.setComplianceResourceTypes(complianceResourceTypes);
 		configRule.setScope(scope);
+
+		Compliance compliance = new Compliance();
+		compliance.setComplianceType(_ctx.stringValue("GetConfigRuleResponse.ConfigRule.Compliance.ComplianceType"));
+		compliance.setCount(_ctx.integerValue("GetConfigRuleResponse.ConfigRule.Compliance.Count"));
+		configRule.setCompliance(compliance);
 		getConfigRuleResponse.setConfigRule(configRule);
 	 
 	 	return getConfigRuleResponse;

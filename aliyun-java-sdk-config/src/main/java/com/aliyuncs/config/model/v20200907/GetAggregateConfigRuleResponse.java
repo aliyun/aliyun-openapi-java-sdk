@@ -90,6 +90,8 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 		private String excludeAccountIdsScope;
 
+		private Long accountId;
+
 		private Source source;
 
 		private ManagedRule managedRule;
@@ -99,6 +101,8 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 		private ConfigRuleEvaluationStatus configRuleEvaluationStatus;
 
 		private Scope scope;
+
+		private Compliance compliance;
 
 		public Integer getRiskLevel() {
 			return this.riskLevel;
@@ -268,6 +272,14 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 			this.excludeAccountIdsScope = excludeAccountIdsScope;
 		}
 
+		public Long getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(Long accountId) {
+			this.accountId = accountId;
+		}
+
 		public Source getSource() {
 			return this.source;
 		}
@@ -306,6 +318,14 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 		public void setScope(Scope scope) {
 			this.scope = scope;
+		}
+
+		public Compliance getCompliance() {
+			return this.compliance;
+		}
+
+		public void setCompliance(Compliance compliance) {
+			this.compliance = compliance;
 		}
 
 		public static class Source {
@@ -666,6 +686,29 @@ public class GetAggregateConfigRuleResponse extends AcsResponse {
 
 			public void setComplianceResourceTypes(List<String> complianceResourceTypes) {
 				this.complianceResourceTypes = complianceResourceTypes;
+			}
+		}
+
+		public static class Compliance {
+
+			private String complianceType;
+
+			private Integer count;
+
+			public String getComplianceType() {
+				return this.complianceType;
+			}
+
+			public void setComplianceType(String complianceType) {
+				this.complianceType = complianceType;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
 			}
 		}
 	}

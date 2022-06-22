@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule;
+import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.Compliance;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.ConfigRuleEvaluationStatus;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.CreateBy;
 import com.aliyuncs.config.model.v20200907.GetAggregateConfigRuleResponse.ConfigRule.ManagedRule;
@@ -58,6 +59,7 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 		configRule.setFolderIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.FolderIdsScope"));
 		configRule.setExcludeFolderIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeFolderIdsScope"));
 		configRule.setExcludeAccountIdsScope(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.ExcludeAccountIdsScope"));
+		configRule.setAccountId(_ctx.longValue("GetAggregateConfigRuleResponse.ConfigRule.AccountId"));
 
 		Source source = new Source();
 		source.setOwner(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Source.Owner"));
@@ -133,6 +135,11 @@ public class GetAggregateConfigRuleResponseUnmarshaller {
 		}
 		scope.setComplianceResourceTypes(complianceResourceTypes);
 		configRule.setScope(scope);
+
+		Compliance compliance = new Compliance();
+		compliance.setComplianceType(_ctx.stringValue("GetAggregateConfigRuleResponse.ConfigRule.Compliance.ComplianceType"));
+		compliance.setCount(_ctx.integerValue("GetAggregateConfigRuleResponse.ConfigRule.Compliance.Count"));
+		configRule.setCompliance(compliance);
 		getAggregateConfigRuleResponse.setConfigRule(configRule);
 	 
 	 	return getAggregateConfigRuleResponse;

@@ -32,7 +32,7 @@ public class ListCompliancePacksRequest extends RpcAcsRequest<ListCompliancePack
 	private String status;
 	public ListCompliancePacksRequest() {
 		super("Config", "2020-09-07", "ListCompliancePacks");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

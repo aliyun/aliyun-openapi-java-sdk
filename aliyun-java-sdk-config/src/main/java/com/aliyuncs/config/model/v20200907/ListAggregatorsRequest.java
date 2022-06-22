@@ -30,7 +30,7 @@ public class ListAggregatorsRequest extends RpcAcsRequest<ListAggregatorsRespons
 	private Integer maxResults;
 	public ListAggregatorsRequest() {
 		super("Config", "2020-09-07", "ListAggregators");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

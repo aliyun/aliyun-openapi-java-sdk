@@ -1,3 +1,6 @@
+2022-06-22 Version: 2.1.3
+- Fix bugs.
+
 2022-05-31 Version: 2.1.2
 - Support aggregator delivery.
 
