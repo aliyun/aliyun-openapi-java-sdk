@@ -22,20 +22,14 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
+public class ListTransitRouterVpnAttachmentsRequest extends RpcAcsRequest<ListTransitRouterVpnAttachmentsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String cenId;
 
-	private String description;
-
-	private String projectName;
-
-	private String logStoreName;
+	private String nextToken;
 
 	private String resourceOwnerAccount;
 
@@ -43,13 +37,13 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 
 	private Long ownerId;
 
+	private String transitRouterId;
+
 	private String transitRouterAttachmentId;
 
-	private Long interval;
-
-	private String flowLogName;
-	public CreateFlowlogRequest() {
-		super("Cbn", "2017-09-12", "CreateFlowlog");
+	private Integer maxResults;
+	public ListTransitRouterVpnAttachmentsRequest() {
+		super("Cbn", "2017-09-12", "ListTransitRouterVpnAttachments");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,17 +62,6 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -90,36 +73,14 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public String getLogStoreName() {
-		return this.logStoreName;
-	}
-
-	public void setLogStoreName(String logStoreName) {
-		this.logStoreName = logStoreName;
-		if(logStoreName != null){
-			putQueryParameter("LogStoreName", logStoreName);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -156,6 +117,17 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 		}
 	}
 
+	public String getTransitRouterId() {
+		return this.transitRouterId;
+	}
+
+	public void setTransitRouterId(String transitRouterId) {
+		this.transitRouterId = transitRouterId;
+		if(transitRouterId != null){
+			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
 	public String getTransitRouterAttachmentId() {
 		return this.transitRouterAttachmentId;
 	}
@@ -167,31 +139,20 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 		}
 	}
 
-	public Long getInterval() {
-		return this.interval;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setInterval(Long interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
-		}
-	}
-
-	public String getFlowLogName() {
-		return this.flowLogName;
-	}
-
-	public void setFlowLogName(String flowLogName) {
-		this.flowLogName = flowLogName;
-		if(flowLogName != null){
-			putQueryParameter("FlowLogName", flowLogName);
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateFlowlogResponse> getResponseClass() {
-		return CreateFlowlogResponse.class;
+	public Class<ListTransitRouterVpnAttachmentsResponse> getResponseClass() {
+		return ListTransitRouterVpnAttachmentsResponse.class;
 	}
 
 }

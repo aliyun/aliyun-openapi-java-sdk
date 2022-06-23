@@ -22,7 +22,7 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
+public class DisableCenVpcFlowStatisticRequest extends RpcAcsRequest<DisableCenVpcFlowStatisticResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -31,25 +31,13 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 
 	private String cenId;
 
-	private String description;
-
-	private String projectName;
-
-	private String logStoreName;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String transitRouterAttachmentId;
-
-	private Long interval;
-
-	private String flowLogName;
-	public CreateFlowlogRequest() {
-		super("Cbn", "2017-09-12", "CreateFlowlog");
+	public DisableCenVpcFlowStatisticRequest() {
+		super("Cbn", "2017-09-12", "DisableCenVpcFlowStatistic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,39 +78,6 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public String getLogStoreName() {
-		return this.logStoreName;
-	}
-
-	public void setLogStoreName(String logStoreName) {
-		this.logStoreName = logStoreName;
-		if(logStoreName != null){
-			putQueryParameter("LogStoreName", logStoreName);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -156,42 +111,9 @@ public class CreateFlowlogRequest extends RpcAcsRequest<CreateFlowlogResponse> {
 		}
 	}
 
-	public String getTransitRouterAttachmentId() {
-		return this.transitRouterAttachmentId;
-	}
-
-	public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
-		this.transitRouterAttachmentId = transitRouterAttachmentId;
-		if(transitRouterAttachmentId != null){
-			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
-		}
-	}
-
-	public Long getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Long interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
-		}
-	}
-
-	public String getFlowLogName() {
-		return this.flowLogName;
-	}
-
-	public void setFlowLogName(String flowLogName) {
-		this.flowLogName = flowLogName;
-		if(flowLogName != null){
-			putQueryParameter("FlowLogName", flowLogName);
-		}
-	}
-
 	@Override
-	public Class<CreateFlowlogResponse> getResponseClass() {
-		return CreateFlowlogResponse.class;
+	public Class<DisableCenVpcFlowStatisticResponse> getResponseClass() {
+		return DisableCenVpcFlowStatisticResponse.class;
 	}
 
 }
