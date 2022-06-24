@@ -46,6 +46,11 @@ public class PushTemplateRequest extends RpcAcsRequest<PushTemplateResponse> {
 	private String strategyContent;
 
 	private String classification;
+<<<<<<< Updated upstream:aliyun-java-sdk-mpaas/src/main/java/com/aliyuncs/mpaas/model/v20200710/PushTemplateRequest.java
+=======
+
+	private Long expiredSeconds;
+>>>>>>> Stashed changes:aliyun-java-sdk-mpaas/src/main/java/com/aliyuncs/mpaas/model/v20201028/PushTemplateRequest.java
 
 	private Long expiredSeconds;
 
