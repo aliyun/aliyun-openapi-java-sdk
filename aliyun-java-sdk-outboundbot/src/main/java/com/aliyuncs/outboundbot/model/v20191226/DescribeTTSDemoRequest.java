@@ -36,6 +36,8 @@ public class DescribeTTSDemoRequest extends RpcAcsRequest<DescribeTTSDemoRespons
 	private String text;
 
 	private Integer speechRate;
+
+	private Integer pitchRate;
 	public DescribeTTSDemoRequest() {
 		super("OutboundBot", "2019-12-26", "DescribeTTSDemo", "outboundbot");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class DescribeTTSDemoRequest extends RpcAcsRequest<DescribeTTSDemoRespons
 		this.speechRate = speechRate;
 		if(speechRate != null){
 			putQueryParameter("SpeechRate", speechRate.toString());
+		}
+	}
+
+	public Integer getPitchRate() {
+		return this.pitchRate;
+	}
+
+	public void setPitchRate(Integer pitchRate) {
+		this.pitchRate = pitchRate;
+		if(pitchRate != null){
+			putQueryParameter("PitchRate", pitchRate.toString());
 		}
 	}
 

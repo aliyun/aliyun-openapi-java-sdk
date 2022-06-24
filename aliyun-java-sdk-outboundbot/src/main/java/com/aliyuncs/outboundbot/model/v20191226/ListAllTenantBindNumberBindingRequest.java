@@ -24,8 +24,6 @@ import com.aliyuncs.outboundbot.Endpoint;
  */
 public class ListAllTenantBindNumberBindingRequest extends RpcAcsRequest<ListAllTenantBindNumberBindingResponse> {
 	   
-
-	private String tenant;
 	public ListAllTenantBindNumberBindingRequest() {
 		super("OutboundBot", "2019-12-26", "ListAllTenantBindNumberBinding", "outboundbot");
 		setMethod(MethodType.POST);
@@ -33,17 +31,6 @@ public class ListAllTenantBindNumberBindingRequest extends RpcAcsRequest<ListAll
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTenant() {
-		return this.tenant;
-	}
-
-	public void setTenant(String tenant) {
-		this.tenant = tenant;
-		if(tenant != null){
-			putQueryParameter("Tenant", tenant);
-		}
 	}
 
 	@Override

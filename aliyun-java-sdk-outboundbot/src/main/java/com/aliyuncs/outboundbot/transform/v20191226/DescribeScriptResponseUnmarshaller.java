@@ -41,13 +41,15 @@ public class DescribeScriptResponseUnmarshaller {
 		script.setIsDebugDrafted(_ctx.booleanValue("DescribeScriptResponse.Script.IsDebugDrafted"));
 		script.setIndustry(_ctx.stringValue("DescribeScriptResponse.Script.Industry"));
 		script.setScriptDescription(_ctx.stringValue("DescribeScriptResponse.Script.ScriptDescription"));
-		script.setMiniPlaybackConfigEnabled(_ctx.booleanValue("DescribeScriptResponse.Script.MiniPlaybackConfigEnabled"));
+		script.setMiniPlaybackEnable(_ctx.booleanValue("DescribeScriptResponse.Script.MiniPlaybackEnable"));
 		script.setIsDrafted(_ctx.booleanValue("DescribeScriptResponse.Script.IsDrafted"));
 		script.setTtsConfig(_ctx.stringValue("DescribeScriptResponse.Script.TtsConfig"));
 		script.setDebugStatus(_ctx.stringValue("DescribeScriptResponse.Script.DebugStatus"));
 		script.setAsrConfig(_ctx.stringValue("DescribeScriptResponse.Script.AsrConfig"));
 		script.setScene(_ctx.stringValue("DescribeScriptResponse.Script.Scene"));
 		script.setScriptName(_ctx.stringValue("DescribeScriptResponse.Script.ScriptName"));
+		script.setNewBargeInEnable(_ctx.booleanValue("DescribeScriptResponse.Script.NewBargeInEnable"));
+		script.setLongWaitEnable(_ctx.booleanValue("DescribeScriptResponse.Script.LongWaitEnable"));
 		describeScriptResponse.setScript(script);
 	 
 	 	return describeScriptResponse;

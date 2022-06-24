@@ -27,6 +27,8 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 
 	private String callId;
 
+	private String scriptId;
+
 	private String calledNumber;
 
 	private String callType;
@@ -61,6 +63,17 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		this.callId = callId;
 		if(callId != null){
 			putQueryParameter("CallId", callId);
+		}
+	}
+
+	public String getScriptId() {
+		return this.scriptId;
+	}
+
+	public void setScriptId(String scriptId) {
+		this.scriptId = scriptId;
+		if(scriptId != null){
+			putQueryParameter("ScriptId", scriptId);
 		}
 	}
 

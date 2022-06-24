@@ -48,6 +48,8 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 
 	private String scriptDescription;
 
+	private Boolean longWaitEnable;
+
 	private List<String> scriptContents;
 	public CreateScriptRequest() {
 		super("OutboundBot", "2019-12-26", "CreateScript", "outboundbot");
@@ -178,6 +180,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		this.scriptDescription = scriptDescription;
 		if(scriptDescription != null){
 			putQueryParameter("ScriptDescription", scriptDescription);
+		}
+	}
+
+	public Boolean getLongWaitEnable() {
+		return this.longWaitEnable;
+	}
+
+	public void setLongWaitEnable(Boolean longWaitEnable) {
+		this.longWaitEnable = longWaitEnable;
+		if(longWaitEnable != null){
+			putQueryParameter("LongWaitEnable", longWaitEnable.toString());
 		}
 	}
 

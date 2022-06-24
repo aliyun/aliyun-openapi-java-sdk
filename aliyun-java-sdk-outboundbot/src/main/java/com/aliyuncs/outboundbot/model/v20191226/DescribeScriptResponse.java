@@ -140,7 +140,7 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		private String scriptDescription;
 
-		private Boolean miniPlaybackConfigEnabled;
+		private Boolean miniPlaybackEnable;
 
 		private Boolean isDrafted;
 
@@ -153,6 +153,10 @@ public class DescribeScriptResponse extends AcsResponse {
 		private String scene;
 
 		private String scriptName;
+
+		private Boolean newBargeInEnable;
+
+		private Boolean longWaitEnable;
 
 		public String getStatus() {
 			return this.status;
@@ -210,12 +214,12 @@ public class DescribeScriptResponse extends AcsResponse {
 			this.scriptDescription = scriptDescription;
 		}
 
-		public Boolean getMiniPlaybackConfigEnabled() {
-			return this.miniPlaybackConfigEnabled;
+		public Boolean getMiniPlaybackEnable() {
+			return this.miniPlaybackEnable;
 		}
 
-		public void setMiniPlaybackConfigEnabled(Boolean miniPlaybackConfigEnabled) {
-			this.miniPlaybackConfigEnabled = miniPlaybackConfigEnabled;
+		public void setMiniPlaybackEnable(Boolean miniPlaybackEnable) {
+			this.miniPlaybackEnable = miniPlaybackEnable;
 		}
 
 		public Boolean getIsDrafted() {
@@ -264,6 +268,22 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		public void setScriptName(String scriptName) {
 			this.scriptName = scriptName;
+		}
+
+		public Boolean getNewBargeInEnable() {
+			return this.newBargeInEnable;
+		}
+
+		public void setNewBargeInEnable(Boolean newBargeInEnable) {
+			this.newBargeInEnable = newBargeInEnable;
+		}
+
+		public Boolean getLongWaitEnable() {
+			return this.longWaitEnable;
+		}
+
+		public void setLongWaitEnable(Boolean longWaitEnable) {
+			this.longWaitEnable = longWaitEnable;
 		}
 	}
 

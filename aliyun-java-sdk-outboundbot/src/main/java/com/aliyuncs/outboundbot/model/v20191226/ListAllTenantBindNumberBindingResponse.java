@@ -107,6 +107,8 @@ public class ListAllTenantBindNumberBindingResponse extends AcsResponse {
 
 			private String serializedParams;
 
+			private String billingType;
+
 			private List<String> instanceNameList;
 
 			public String getBindingId() {
@@ -139,6 +141,14 @@ public class ListAllTenantBindNumberBindingResponse extends AcsResponse {
 
 			public void setSerializedParams(String serializedParams) {
 				this.serializedParams = serializedParams;
+			}
+
+			public String getBillingType() {
+				return this.billingType;
+			}
+
+			public void setBillingType(String billingType) {
+				this.billingType = billingType;
 			}
 
 			public List<String> getInstanceNameList() {

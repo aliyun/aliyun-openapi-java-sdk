@@ -42,6 +42,7 @@ public class ListAllTenantBindNumberBindingResponseUnmarshaller {
 			listItem.setNumber(_ctx.stringValue("ListAllTenantBindNumberBindingResponse.Data.List["+ i +"].Number"));
 			listItem.setTrunkName(_ctx.stringValue("ListAllTenantBindNumberBindingResponse.Data.List["+ i +"].TrunkName"));
 			listItem.setSerializedParams(_ctx.stringValue("ListAllTenantBindNumberBindingResponse.Data.List["+ i +"].SerializedParams"));
+			listItem.setBillingType(_ctx.stringValue("ListAllTenantBindNumberBindingResponse.Data.List["+ i +"].BillingType"));
 
 			List<String> instanceNameList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListAllTenantBindNumberBindingResponse.Data.List["+ i +"].InstanceNameList.Length"); j++) {

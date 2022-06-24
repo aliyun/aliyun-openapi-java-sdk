@@ -145,7 +145,7 @@ public class ListScriptsResponse extends AcsResponse {
 
 			private String debugStatus;
 
-			private Boolean miniPlaybackEnabled;
+			private Boolean miniPlaybackEnable;
 
 			private String rejectReason;
 
@@ -156,6 +156,8 @@ public class ListScriptsResponse extends AcsResponse {
 			private String scriptName;
 
 			private Boolean newBargeInEnable;
+
+			private Boolean longWaitEnable;
 
 			public String getStatus() {
 				return this.status;
@@ -221,12 +223,12 @@ public class ListScriptsResponse extends AcsResponse {
 				this.debugStatus = debugStatus;
 			}
 
-			public Boolean getMiniPlaybackEnabled() {
-				return this.miniPlaybackEnabled;
+			public Boolean getMiniPlaybackEnable() {
+				return this.miniPlaybackEnable;
 			}
 
-			public void setMiniPlaybackEnabled(Boolean miniPlaybackEnabled) {
-				this.miniPlaybackEnabled = miniPlaybackEnabled;
+			public void setMiniPlaybackEnable(Boolean miniPlaybackEnable) {
+				this.miniPlaybackEnable = miniPlaybackEnable;
 			}
 
 			public String getRejectReason() {
@@ -267,6 +269,14 @@ public class ListScriptsResponse extends AcsResponse {
 
 			public void setNewBargeInEnable(Boolean newBargeInEnable) {
 				this.newBargeInEnable = newBargeInEnable;
+			}
+
+			public Boolean getLongWaitEnable() {
+				return this.longWaitEnable;
+			}
+
+			public void setLongWaitEnable(Boolean longWaitEnable) {
+				this.longWaitEnable = longWaitEnable;
 			}
 		}
 	}

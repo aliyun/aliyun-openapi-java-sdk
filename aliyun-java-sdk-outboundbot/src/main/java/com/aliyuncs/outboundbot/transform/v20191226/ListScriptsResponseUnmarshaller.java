@@ -49,12 +49,13 @@ public class ListScriptsResponseUnmarshaller {
 			script.setScriptDescription(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptDescription"));
 			script.setIsDrafted(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].IsDrafted"));
 			script.setDebugStatus(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].DebugStatus"));
-			script.setMiniPlaybackEnabled(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].MiniPlaybackEnabled"));
+			script.setMiniPlaybackEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].MiniPlaybackEnable"));
 			script.setRejectReason(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].RejectReason"));
 			script.setFailReason(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].FailReason"));
 			script.setScene(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].Scene"));
 			script.setScriptName(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptName"));
 			script.setNewBargeInEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].NewBargeInEnable"));
+			script.setLongWaitEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].LongWaitEnable"));
 
 			list.add(script);
 		}
