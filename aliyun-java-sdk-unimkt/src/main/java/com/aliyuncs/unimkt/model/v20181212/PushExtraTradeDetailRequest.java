@@ -36,15 +36,15 @@ public class PushExtraTradeDetailRequest extends RpcAcsRequest<PushExtraTradeDet
 
 	private String deviceSn;
 
-	private String commodityName;
-
 	private String channelId;
+
+	private String commodityName;
 
 	private Long tradeTime;
 
 	private Float tradePrice;
 	public PushExtraTradeDetailRequest() {
-		super("UniMkt", "2018-12-12", "PushExtraTradeDetail");
+		super("UniMkt", "2018-12-12", "PushExtraTradeDetail", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -108,17 +108,6 @@ public class PushExtraTradeDetailRequest extends RpcAcsRequest<PushExtraTradeDet
 		}
 	}
 
-	public String getCommodityName() {
-		return this.commodityName;
-	}
-
-	public void setCommodityName(String commodityName) {
-		this.commodityName = commodityName;
-		if(commodityName != null){
-			putBodyParameter("CommodityName", commodityName);
-		}
-	}
-
 	public String getChannelId() {
 		return this.channelId;
 	}
@@ -127,6 +116,17 @@ public class PushExtraTradeDetailRequest extends RpcAcsRequest<PushExtraTradeDet
 		this.channelId = channelId;
 		if(channelId != null){
 			putBodyParameter("ChannelId", channelId);
+		}
+	}
+
+	public String getCommodityName() {
+		return this.commodityName;
+	}
+
+	public void setCommodityName(String commodityName) {
+		this.commodityName = commodityName;
+		if(commodityName != null){
+			putBodyParameter("CommodityName", commodityName);
 		}
 	}
 

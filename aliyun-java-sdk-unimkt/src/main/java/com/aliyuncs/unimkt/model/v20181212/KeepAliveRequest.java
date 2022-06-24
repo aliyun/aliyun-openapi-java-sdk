@@ -36,7 +36,7 @@ public class KeepAliveRequest extends RpcAcsRequest<KeepAliveResponse> {
 
 	private String channelId;
 	public KeepAliveRequest() {
-		super("UniMkt", "2018-12-12", "KeepAlive");
+		super("UniMkt", "2018-12-12", "KeepAlive", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

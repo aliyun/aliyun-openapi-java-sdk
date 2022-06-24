@@ -43,7 +43,7 @@ public class QueryFlowRequest extends RpcAcsRequest<QueryFlowResponse> {
 
 	private String flowId;
 	public QueryFlowRequest() {
-		super("UniMkt", "2018-12-12", "QueryFlow");
+		super("UniMkt", "2018-12-12", "QueryFlow", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

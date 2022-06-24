@@ -39,7 +39,7 @@ public class QueryTenantUserRequest extends RpcAcsRequest<QueryTenantUserRespons
 
 	private String userSite;
 	public QueryTenantUserRequest() {
-		super("UniMkt", "2018-12-12", "QueryTenantUser");
+		super("UniMkt", "2018-12-12", "QueryTenantUser", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

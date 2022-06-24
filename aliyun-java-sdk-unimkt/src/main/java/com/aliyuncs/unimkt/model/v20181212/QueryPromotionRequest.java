@@ -28,15 +28,15 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 
 	private String proxyChannelId;
 
+	private String extra;
+
 	private String alipayOpenId;
 
 	private String userId;
 
-	private String extra;
-
 	private String channelId;
 	public QueryPromotionRequest() {
-		super("UniMkt", "2018-12-12", "QueryPromotion");
+		super("UniMkt", "2018-12-12", "QueryPromotion", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -53,6 +53,17 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		this.proxyChannelId = proxyChannelId;
 		if(proxyChannelId != null){
 			putBodyParameter("ProxyChannelId", proxyChannelId);
+		}
+	}
+
+	public String getExtra() {
+		return this.extra;
+	}
+
+	public void setExtra(String extra) {
+		this.extra = extra;
+		if(extra != null){
+			putBodyParameter("Extra", extra);
 		}
 	}
 
@@ -75,17 +86,6 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
-		}
-	}
-
-	public String getExtra() {
-		return this.extra;
-	}
-
-	public void setExtra(String extra) {
-		this.extra = extra;
-		if(extra != null){
-			putBodyParameter("Extra", extra);
 		}
 	}
 

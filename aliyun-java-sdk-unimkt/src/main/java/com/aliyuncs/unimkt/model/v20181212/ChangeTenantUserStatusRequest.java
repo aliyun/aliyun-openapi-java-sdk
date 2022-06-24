@@ -45,7 +45,7 @@ public class ChangeTenantUserStatusRequest extends RpcAcsRequest<ChangeTenantUse
 
 	private String status;
 	public ChangeTenantUserStatusRequest() {
-		super("UniMkt", "2018-12-12", "ChangeTenantUserStatus");
+		super("UniMkt", "2018-12-12", "ChangeTenantUserStatus", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
