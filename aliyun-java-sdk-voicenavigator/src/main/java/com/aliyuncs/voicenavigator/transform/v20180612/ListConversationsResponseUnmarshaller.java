@@ -44,6 +44,7 @@ public class ListConversationsResponseUnmarshaller {
 			conversation.setRounds(_ctx.integerValue("ListConversationsResponse.Conversations["+ i +"].Rounds"));
 			conversation.setHasLastPlaybackCompleted(_ctx.booleanValue("ListConversationsResponse.Conversations["+ i +"].HasLastPlaybackCompleted"));
 			conversation.setSandBox(_ctx.booleanValue("ListConversationsResponse.Conversations["+ i +"].SandBox"));
+			conversation.setCalledNumber(_ctx.stringValue("ListConversationsResponse.Conversations["+ i +"].CalledNumber"));
 
 			conversations.add(conversation);
 		}

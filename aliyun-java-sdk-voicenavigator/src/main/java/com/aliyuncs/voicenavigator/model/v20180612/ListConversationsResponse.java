@@ -97,6 +97,8 @@ public class ListConversationsResponse extends AcsResponse {
 
 		private Boolean sandBox;
 
+		private String calledNumber;
+
 		public Long getEndTime() {
 			return this.endTime;
 		}
@@ -175,6 +177,14 @@ public class ListConversationsResponse extends AcsResponse {
 
 		public void setSandBox(Boolean sandBox) {
 			this.sandBox = sandBox;
+		}
+
+		public String getCalledNumber() {
+			return this.calledNumber;
+		}
+
+		public void setCalledNumber(String calledNumber) {
+			this.calledNumber = calledNumber;
 		}
 	}
 
