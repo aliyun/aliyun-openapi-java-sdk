@@ -579,6 +579,8 @@ public class ListTasksResponse extends AcsResponse {
 
 				private Long swipingCardNumber;
 
+				private Long placeOrderNumber;
+
 				public Long getInComingPartsNumber() {
 					return this.inComingPartsNumber;
 				}
@@ -609,6 +611,14 @@ public class ListTasksResponse extends AcsResponse {
 
 				public void setSwipingCardNumber(Long swipingCardNumber) {
 					this.swipingCardNumber = swipingCardNumber;
+				}
+
+				public Long getPlaceOrderNumber() {
+					return this.placeOrderNumber;
+				}
+
+				public void setPlaceOrderNumber(Long placeOrderNumber) {
+					this.placeOrderNumber = placeOrderNumber;
 				}
 			}
 
@@ -622,6 +632,8 @@ public class ListTasksResponse extends AcsResponse {
 
 				private Long swipingCardNumber;
 
+				private Long placeOrderNumber;
+
 				public Long getInComingPartsNumber() {
 					return this.inComingPartsNumber;
 				}
@@ -652,6 +664,14 @@ public class ListTasksResponse extends AcsResponse {
 
 				public void setSwipingCardNumber(Long swipingCardNumber) {
 					this.swipingCardNumber = swipingCardNumber;
+				}
+
+				public Long getPlaceOrderNumber() {
+					return this.placeOrderNumber;
+				}
+
+				public void setPlaceOrderNumber(Long placeOrderNumber) {
+					this.placeOrderNumber = placeOrderNumber;
 				}
 			}
 		}

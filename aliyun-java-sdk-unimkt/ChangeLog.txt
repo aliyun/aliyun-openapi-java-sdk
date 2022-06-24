@@ -1,3 +1,6 @@
+2022-06-24 Version: 2.4.10
+- OpenBankCard add PlaceOrderNum.
+
 2022-05-12 Version: 2.5.0
 - Union Task API.
 

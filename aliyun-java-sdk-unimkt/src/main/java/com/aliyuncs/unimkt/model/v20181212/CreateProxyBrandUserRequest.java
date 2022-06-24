@@ -25,19 +25,19 @@ import com.aliyuncs.unimkt.Endpoint;
 public class CreateProxyBrandUserRequest extends RpcAcsRequest<CreateProxyBrandUserResponse> {
 	   
 
-	private String contactName;
-
 	private String clientToken;
-
-	private String company;
 
 	private String industry;
 
 	private String brandUserNick;
 
-	private String contactPhone;
-
 	private Long proxyUserId;
+
+	private String contactName;
+
+	private String company;
+
+	private String contactPhone;
 
 	private String channelId;
 	public CreateProxyBrandUserRequest() {
@@ -49,17 +49,6 @@ public class CreateProxyBrandUserRequest extends RpcAcsRequest<CreateProxyBrandU
 		} catch (Exception e) {}
 	}
 
-	public String getContactName() {
-		return this.contactName;
-	}
-
-	public void setContactName(String contactName) {
-		this.contactName = contactName;
-		if(contactName != null){
-			putQueryParameter("ContactName", contactName);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -68,17 +57,6 @@ public class CreateProxyBrandUserRequest extends RpcAcsRequest<CreateProxyBrandU
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getCompany() {
-		return this.company;
-	}
-
-	public void setCompany(String company) {
-		this.company = company;
-		if(company != null){
-			putQueryParameter("Company", company);
 		}
 	}
 
@@ -104,17 +82,6 @@ public class CreateProxyBrandUserRequest extends RpcAcsRequest<CreateProxyBrandU
 		}
 	}
 
-	public String getContactPhone() {
-		return this.contactPhone;
-	}
-
-	public void setContactPhone(String contactPhone) {
-		this.contactPhone = contactPhone;
-		if(contactPhone != null){
-			putQueryParameter("ContactPhone", contactPhone);
-		}
-	}
-
 	public Long getProxyUserId() {
 		return this.proxyUserId;
 	}
@@ -123,6 +90,39 @@ public class CreateProxyBrandUserRequest extends RpcAcsRequest<CreateProxyBrandU
 		this.proxyUserId = proxyUserId;
 		if(proxyUserId != null){
 			putQueryParameter("ProxyUserId", proxyUserId.toString());
+		}
+	}
+
+	public String getContactName() {
+		return this.contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+		if(contactName != null){
+			putQueryParameter("ContactName", contactName);
+		}
+	}
+
+	public String getCompany() {
+		return this.company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+		if(company != null){
+			putQueryParameter("Company", company);
+		}
+	}
+
+	public String getContactPhone() {
+		return this.contactPhone;
+	}
+
+	public void setContactPhone(String contactPhone) {
+		this.contactPhone = contactPhone;
+		if(contactPhone != null){
+			putQueryParameter("ContactPhone", contactPhone);
 		}
 	}
 

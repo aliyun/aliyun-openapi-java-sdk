@@ -36,9 +36,9 @@ public class PushExtraTradeDetailRequest extends RpcAcsRequest<PushExtraTradeDet
 
 	private String deviceSn;
 
-	private String channelId;
-
 	private String commodityName;
+
+	private String channelId;
 
 	private Long tradeTime;
 
@@ -108,17 +108,6 @@ public class PushExtraTradeDetailRequest extends RpcAcsRequest<PushExtraTradeDet
 		}
 	}
 
-	public String getChannelId() {
-		return this.channelId;
-	}
-
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-		if(channelId != null){
-			putBodyParameter("ChannelId", channelId);
-		}
-	}
-
 	public String getCommodityName() {
 		return this.commodityName;
 	}
@@ -127,6 +116,17 @@ public class PushExtraTradeDetailRequest extends RpcAcsRequest<PushExtraTradeDet
 		this.commodityName = commodityName;
 		if(commodityName != null){
 			putBodyParameter("CommodityName", commodityName);
+		}
+	}
+
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putBodyParameter("ChannelId", channelId);
 		}
 	}
 

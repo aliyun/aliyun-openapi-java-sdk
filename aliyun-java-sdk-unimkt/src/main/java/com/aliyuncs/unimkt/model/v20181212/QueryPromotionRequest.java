@@ -28,11 +28,11 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 
 	private String proxyChannelId;
 
-	private String extra;
-
 	private String alipayOpenId;
 
 	private String userId;
+
+	private String extra;
 
 	private String channelId;
 	public QueryPromotionRequest() {
@@ -56,17 +56,6 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		}
 	}
 
-	public String getExtra() {
-		return this.extra;
-	}
-
-	public void setExtra(String extra) {
-		this.extra = extra;
-		if(extra != null){
-			putBodyParameter("Extra", extra);
-		}
-	}
-
 	public String getAlipayOpenId() {
 		return this.alipayOpenId;
 	}
@@ -86,6 +75,17 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getExtra() {
+		return this.extra;
+	}
+
+	public void setExtra(String extra) {
+		this.extra = extra;
+		if(extra != null){
+			putBodyParameter("Extra", extra);
 		}
 	}
 

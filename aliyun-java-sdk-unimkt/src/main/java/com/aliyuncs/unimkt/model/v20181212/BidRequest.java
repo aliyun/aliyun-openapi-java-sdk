@@ -26,14 +26,11 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchAdvertisingRequest extends RpcAcsRequest<SearchAdvertisingResponse> {
+public class BidRequest extends RpcAcsRequest<BidResponse> {
 	   
 
 	@SerializedName("app")
 	private App app;
-
-	@SerializedName("ext")
-	private Map<String,String> ext;
 
 	private Integer test;
 
@@ -44,8 +41,10 @@ public class SearchAdvertisingRequest extends RpcAcsRequest<SearchAdvertisingRes
 
 	@SerializedName("user")
 	private User user;
-	public SearchAdvertisingRequest() {
-		super("UniMkt", "2018-12-12", "SearchAdvertising");
+
+	private Integer dealtype;
+	public BidRequest() {
+		super("UniMkt", "2018-12-12", "Bid");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,17 +60,6 @@ public class SearchAdvertisingRequest extends RpcAcsRequest<SearchAdvertisingRes
 		this.app = app;	
 		if (app != null) {
 			putQueryParameter("App" , new Gson().toJson(app));
-		}	
-	}
-
-	public Map<String,String> getExt() {
-		return this.ext;
-	}
-
-	public void setExt(Map<String,String> ext) {
-		this.ext = ext;	
-		if (ext != null) {
-			putQueryParameter("Ext" , new Gson().toJson(ext));
 		}	
 	}
 
@@ -117,6 +105,17 @@ public class SearchAdvertisingRequest extends RpcAcsRequest<SearchAdvertisingRes
 		if (user != null) {
 			putQueryParameter("User" , new Gson().toJson(user));
 		}	
+	}
+
+	public Integer getDealtype() {
+		return this.dealtype;
+	}
+
+	public void setDealtype(Integer dealtype) {
+		this.dealtype = dealtype;
+		if(dealtype != null){
+			putQueryParameter("Dealtype", dealtype.toString());
+		}
 	}
 
 	public static class App {
@@ -182,32 +181,32 @@ public class SearchAdvertisingRequest extends RpcAcsRequest<SearchAdvertisingRes
 
 	public static class User {
 
-		@SerializedName("Uid")
-		private String uid;
+		@SerializedName("Usertype")
+		private String usertype;
 
-		@SerializedName("Uidtype")
-		private String uidtype;
+		@SerializedName("Id")
+		private String id;
 
-		public String getUid() {
-			return this.uid;
+		public String getUsertype() {
+			return this.usertype;
 		}
 
-		public void setUid(String uid) {
-			this.uid = uid;
+		public void setUsertype(String usertype) {
+			this.usertype = usertype;
 		}
 
-		public String getUidtype() {
-			return this.uidtype;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setUidtype(String uidtype) {
-			this.uidtype = uidtype;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 
 	@Override
-	public Class<SearchAdvertisingResponse> getResponseClass() {
-		return SearchAdvertisingResponse.class;
+	public Class<BidResponse> getResponseClass() {
+		return BidResponse.class;
 	}
 
 }
