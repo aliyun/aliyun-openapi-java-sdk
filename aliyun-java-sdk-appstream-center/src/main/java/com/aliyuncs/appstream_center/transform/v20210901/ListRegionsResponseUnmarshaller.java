@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.appstream_center.model.v20210901.ListRegionsResponse;
+import com.aliyuncs.appstream_center.model.v20210901.ListRegionsResponse.RegionModelsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,9 +28,12 @@ public class ListRegionsResponseUnmarshaller {
 		
 		listRegionsResponse.setRequestId(_ctx.stringValue("ListRegionsResponse.RequestId"));
 
-		List<String> regionModels = new ArrayList<String>();
+		List<RegionModelsItem> regionModels = new ArrayList<RegionModelsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRegionsResponse.RegionModels.Length"); i++) {
-			regionModels.add(_ctx.stringValue("ListRegionsResponse.RegionModels["+ i +"]"));
+			RegionModelsItem regionModelsItem = new RegionModelsItem();
+			regionModelsItem.setRegionId(_ctx.stringValue("ListRegionsResponse.RegionModels["+ i +"].regionId"));
+
+			regionModels.add(regionModelsItem);
 		}
 		listRegionsResponse.setRegionModels(regionModels);
 	 

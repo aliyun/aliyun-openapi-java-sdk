@@ -27,7 +27,7 @@ public class ListRegionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> regionModels;
+	private List<RegionModelsItem> regionModels;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,12 +37,25 @@ public class ListRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getRegionModels() {
+	public List<RegionModelsItem> getRegionModels() {
 		return this.regionModels;
 	}
 
-	public void setRegionModels(List<String> regionModels) {
+	public void setRegionModels(List<RegionModelsItem> regionModels) {
 		this.regionModels = regionModels;
+	}
+
+	public static class RegionModelsItem {
+
+		private String regionId;
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
 	}
 
 	@Override
