@@ -42,6 +42,7 @@ public class DescribeContactsResponseUnmarshaller {
 			contacts.setPhone(_ctx.stringValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].Phone"));
 			contacts.setEmail(_ctx.stringValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].Email"));
 			contacts.setIsVerify(_ctx.booleanValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].IsVerify"));
+			contacts.setReissueSendNotice(_ctx.longValue("DescribeContactsResponse.PageBean.AlertContacts["+ i +"].ReissueSendNotice"));
 
 			alertContacts.add(contacts);
 		}

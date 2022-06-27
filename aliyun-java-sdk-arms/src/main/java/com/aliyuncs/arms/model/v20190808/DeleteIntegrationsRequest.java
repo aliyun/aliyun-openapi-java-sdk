@@ -22,16 +22,12 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetEstimateFeeInfoRequest extends RpcAcsRequest<GetEstimateFeeInfoResponse> {
+public class DeleteIntegrationsRequest extends RpcAcsRequest<DeleteIntegrationsResponse> {
 	   
 
-	private Long usageCn;
-
-	private Long usageFn;
-
-	private String targetUserId;
-	public GetEstimateFeeInfoRequest() {
-		super("ARMS", "2019-08-08", "GetEstimateFeeInfo", "arms");
+	private Long integrationId;
+	public DeleteIntegrationsRequest() {
+		super("ARMS", "2019-08-08", "DeleteIntegrations", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class GetEstimateFeeInfoRequest extends RpcAcsRequest<GetEstimateFeeInfoR
 		} catch (Exception e) {}
 	}
 
-	public Long getUsageCn() {
-		return this.usageCn;
+	public Long getIntegrationId() {
+		return this.integrationId;
 	}
 
-	public void setUsageCn(Long usageCn) {
-		this.usageCn = usageCn;
-		if(usageCn != null){
-			putQueryParameter("UsageCn", usageCn.toString());
-		}
-	}
-
-	public Long getUsageFn() {
-		return this.usageFn;
-	}
-
-	public void setUsageFn(Long usageFn) {
-		this.usageFn = usageFn;
-		if(usageFn != null){
-			putQueryParameter("UsageFn", usageFn.toString());
-		}
-	}
-
-	public String getTargetUserId() {
-		return this.targetUserId;
-	}
-
-	public void setTargetUserId(String targetUserId) {
-		this.targetUserId = targetUserId;
-		if(targetUserId != null){
-			putQueryParameter("TargetUserId", targetUserId);
+	public void setIntegrationId(Long integrationId) {
+		this.integrationId = integrationId;
+		if(integrationId != null){
+			putQueryParameter("IntegrationId", integrationId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetEstimateFeeInfoResponse> getResponseClass() {
-		return GetEstimateFeeInfoResponse.class;
+	public Class<DeleteIntegrationsResponse> getResponseClass() {
+		return DeleteIntegrationsResponse.class;
 	}
 
 }

@@ -15,26 +15,18 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.GetUserCommercialStatusResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.DeleteIntegrationsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetUserCommercialStatusResponse extends AcsResponse {
-
-	private String data;
+public class DeleteIntegrationsResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private Boolean isSuccess;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,9 +36,17 @@ public class GetUserCommercialStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
 	@Override
-	public GetUserCommercialStatusResponse getInstance(UnmarshallerContext context) {
-		return	GetUserCommercialStatusResponseUnmarshaller.unmarshall(this, context);
+	public DeleteIntegrationsResponse getInstance(UnmarshallerContext context) {
+		return	DeleteIntegrationsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

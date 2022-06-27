@@ -14,17 +14,17 @@
 
 package com.aliyuncs.arms.transform.v20190808;
 
-import com.aliyuncs.arms.model.v20190808.TagResourcesResponse;
+import com.aliyuncs.arms.model.v20190808.GetClusterAllUrlResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class TagResourcesResponseUnmarshaller {
+public class GetClusterAllUrlResponseUnmarshaller {
 
-	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext _ctx) {
+	public static GetClusterAllUrlResponse unmarshall(GetClusterAllUrlResponse getClusterAllUrlResponse, UnmarshallerContext _ctx) {
 		
-		tagResourcesResponse.setRequestId(_ctx.stringValue("TagResourcesResponse.RequestId"));
-		tagResourcesResponse.setData(_ctx.stringValue("TagResourcesResponse.Data"));
+		getClusterAllUrlResponse.setRequestId(_ctx.stringValue("GetClusterAllUrlResponse.RequestId"));
+		getClusterAllUrlResponse.setData(_ctx.stringValue("GetClusterAllUrlResponse.Data"));
 	 
-	 	return tagResourcesResponse;
+	 	return getClusterAllUrlResponse;
 	}
 }

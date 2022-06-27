@@ -99,6 +99,8 @@ public class DescribeContactsResponse extends AcsResponse {
 
 			private Boolean isVerify;
 
+			private Long reissueSendNotice;
+
 			public Float getContactId() {
 				return this.contactId;
 			}
@@ -137,6 +139,14 @@ public class DescribeContactsResponse extends AcsResponse {
 
 			public void setIsVerify(Boolean isVerify) {
 				this.isVerify = isVerify;
+			}
+
+			public Long getReissueSendNotice() {
+				return this.reissueSendNotice;
+			}
+
+			public void setReissueSendNotice(Long reissueSendNotice) {
+				this.reissueSendNotice = reissueSendNotice;
 			}
 		}
 	}

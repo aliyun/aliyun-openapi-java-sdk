@@ -27,6 +27,8 @@ public class InstallCmsExporterRequest extends RpcAcsRequest<InstallCmsExporterR
 
 	private String clusterId;
 
+	private String directArgs;
+
 	private String cmsArgs;
 
 	private Boolean enableTag;
@@ -47,6 +49,17 @@ public class InstallCmsExporterRequest extends RpcAcsRequest<InstallCmsExporterR
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getDirectArgs() {
+		return this.directArgs;
+	}
+
+	public void setDirectArgs(String directArgs) {
+		this.directArgs = directArgs;
+		if(directArgs != null){
+			putQueryParameter("DirectArgs", directArgs);
 		}
 	}
 

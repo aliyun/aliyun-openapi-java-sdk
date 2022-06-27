@@ -14,17 +14,17 @@
 
 package com.aliyuncs.arms.transform.v20190808;
 
-import com.aliyuncs.arms.model.v20190808.GetEstimateFeeInfoResponse;
+import com.aliyuncs.arms.model.v20190808.DeleteIntegrationsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetEstimateFeeInfoResponseUnmarshaller {
+public class DeleteIntegrationsResponseUnmarshaller {
 
-	public static GetEstimateFeeInfoResponse unmarshall(GetEstimateFeeInfoResponse getEstimateFeeInfoResponse, UnmarshallerContext _ctx) {
+	public static DeleteIntegrationsResponse unmarshall(DeleteIntegrationsResponse deleteIntegrationsResponse, UnmarshallerContext _ctx) {
 		
-		getEstimateFeeInfoResponse.setRequestId(_ctx.stringValue("GetEstimateFeeInfoResponse.RequestId"));
-		getEstimateFeeInfoResponse.setData(_ctx.stringValue("GetEstimateFeeInfoResponse.Data"));
+		deleteIntegrationsResponse.setRequestId(_ctx.stringValue("DeleteIntegrationsResponse.RequestId"));
+		deleteIntegrationsResponse.setIsSuccess(_ctx.booleanValue("DeleteIntegrationsResponse.IsSuccess"));
 	 
-	 	return getEstimateFeeInfoResponse;
+	 	return deleteIntegrationsResponse;
 	}
 }

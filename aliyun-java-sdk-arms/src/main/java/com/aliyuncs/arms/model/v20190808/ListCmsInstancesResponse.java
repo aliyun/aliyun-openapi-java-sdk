@@ -87,6 +87,8 @@ public class ListCmsInstancesResponse extends AcsResponse {
 
 			private String url;
 
+			private String source;
+
 			public String getDescr() {
 				return this.descr;
 			}
@@ -157,6 +159,14 @@ public class ListCmsInstancesResponse extends AcsResponse {
 
 			public void setUrl(String url) {
 				this.url = url;
+			}
+
+			public String getSource() {
+				return this.source;
+			}
+
+			public void setSource(String source) {
+				this.source = source;
 			}
 		}
 	}

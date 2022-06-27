@@ -33,6 +33,8 @@ public class ListDashboardsByNameRequest extends RpcAcsRequest<ListDashboardsByN
 
 	private String clusterId;
 
+	private Boolean onlyQuery;
+
 	private String groupName;
 
 	private String clusterType;
@@ -88,6 +90,17 @@ public class ListDashboardsByNameRequest extends RpcAcsRequest<ListDashboardsByN
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Boolean getOnlyQuery() {
+		return this.onlyQuery;
+	}
+
+	public void setOnlyQuery(Boolean onlyQuery) {
+		this.onlyQuery = onlyQuery;
+		if(onlyQuery != null){
+			putQueryParameter("OnlyQuery", onlyQuery.toString());
 		}
 	}
 

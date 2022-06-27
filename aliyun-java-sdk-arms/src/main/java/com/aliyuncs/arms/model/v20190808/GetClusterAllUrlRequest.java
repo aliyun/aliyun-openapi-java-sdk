@@ -22,14 +22,12 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class OpenArmsServiceRequest extends RpcAcsRequest<OpenArmsServiceResponse> {
+public class GetClusterAllUrlRequest extends RpcAcsRequest<GetClusterAllUrlResponse> {
 	   
 
-	private Long ownerId;
-
-	private String type;
-	public OpenArmsServiceRequest() {
-		super("ARMS", "2019-08-08", "OpenArmsService", "arms");
+	private String clusterId;
+	public GetClusterAllUrlRequest() {
+		super("ARMS", "2019-08-08", "GetClusterAllUrl", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class OpenArmsServiceRequest extends RpcAcsRequest<OpenArmsServiceRespons
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<OpenArmsServiceResponse> getResponseClass() {
-		return OpenArmsServiceResponse.class;
+	public Class<GetClusterAllUrlResponse> getResponseClass() {
+		return GetClusterAllUrlResponse.class;
 	}
 
 }

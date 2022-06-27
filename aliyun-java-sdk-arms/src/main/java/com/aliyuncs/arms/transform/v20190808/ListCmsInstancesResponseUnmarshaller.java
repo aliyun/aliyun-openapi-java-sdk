@@ -44,6 +44,7 @@ public class ListCmsInstancesResponseUnmarshaller {
 			productsItem.setTime(_ctx.stringValue("ListCmsInstancesResponse.Data.Products["+ i +"].Time"));
 			productsItem.setType(_ctx.stringValue("ListCmsInstancesResponse.Data.Products["+ i +"].Type"));
 			productsItem.setUrl(_ctx.stringValue("ListCmsInstancesResponse.Data.Products["+ i +"].Url"));
+			productsItem.setSource(_ctx.stringValue("ListCmsInstancesResponse.Data.Products["+ i +"].Source"));
 
 			products.add(productsItem);
 		}

@@ -31,6 +31,7 @@ public class CreateOrUpdateContactResponseUnmarshaller {
 		alertContact.setPhone(_ctx.stringValue("CreateOrUpdateContactResponse.AlertContact.Phone"));
 		alertContact.setEmail(_ctx.stringValue("CreateOrUpdateContactResponse.AlertContact.Email"));
 		alertContact.setIsVerify(_ctx.booleanValue("CreateOrUpdateContactResponse.AlertContact.IsVerify"));
+		alertContact.setReissueSendNotice(_ctx.longValue("CreateOrUpdateContactResponse.AlertContact.ReissueSendNotice"));
 		createOrUpdateContactResponse.setAlertContact(alertContact);
 	 
 	 	return createOrUpdateContactResponse;

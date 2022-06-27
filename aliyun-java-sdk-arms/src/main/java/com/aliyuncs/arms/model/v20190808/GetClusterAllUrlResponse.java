@@ -15,26 +15,18 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.UntagResourcesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.GetClusterAllUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UntagResourcesResponse extends AcsResponse {
-
-	private String requestId;
+public class GetClusterAllUrlResponse extends AcsResponse {
 
 	private String data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getData() {
 		return this.data;
@@ -44,9 +36,17 @@ public class UntagResourcesResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
-	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
+	public GetClusterAllUrlResponse getInstance(UnmarshallerContext context) {
+		return	GetClusterAllUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
