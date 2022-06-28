@@ -1,3 +1,6 @@
+2022-06-28 Version: 1.0.3
+- Update RecognizeVideoCastCrewList.
+
 2021-02-01 Version: 1.0.2
 - Release UnderstandVideoContent.
 

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.videorecog.model.v20200320;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.videorecog.transform.v20200320.UnderstandVideoContentResponseUnmarshaller;
+import com.aliyuncs.videorecog.transform.v20200320.SplitVideoPartsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UnderstandVideoContentResponse extends AcsResponse {
+public class SplitVideoPartsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -67,73 +67,53 @@ public class UnderstandVideoContentResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Map<Object,Object> tagInfo;
+		private List<ElementsItem> elements;
 
-		private VideoInfo videoInfo;
-
-		public Map<Object,Object> getTagInfo() {
-			return this.tagInfo;
+		public List<ElementsItem> getElements() {
+			return this.elements;
 		}
 
-		public void setTagInfo(Map<Object,Object> tagInfo) {
-			this.tagInfo = tagInfo;
+		public void setElements(List<ElementsItem> elements) {
+			this.elements = elements;
 		}
 
-		public VideoInfo getVideoInfo() {
-			return this.videoInfo;
-		}
+		public static class ElementsItem {
 
-		public void setVideoInfo(VideoInfo videoInfo) {
-			this.videoInfo = videoInfo;
-		}
+			private Float beginTime;
 
-		public static class VideoInfo {
+			private Float endTime;
 
-			private Long width;
+			private Long index;
 
-			private Long height;
-
-			private Long duration;
-
-			private Float fps;
-
-			public Long getWidth() {
-				return this.width;
+			public Float getBeginTime() {
+				return this.beginTime;
 			}
 
-			public void setWidth(Long width) {
-				this.width = width;
+			public void setBeginTime(Float beginTime) {
+				this.beginTime = beginTime;
 			}
 
-			public Long getHeight() {
-				return this.height;
+			public Float getEndTime() {
+				return this.endTime;
 			}
 
-			public void setHeight(Long height) {
-				this.height = height;
+			public void setEndTime(Float endTime) {
+				this.endTime = endTime;
 			}
 
-			public Long getDuration() {
-				return this.duration;
+			public Long getIndex() {
+				return this.index;
 			}
 
-			public void setDuration(Long duration) {
-				this.duration = duration;
-			}
-
-			public Float getFps() {
-				return this.fps;
-			}
-
-			public void setFps(Float fps) {
-				this.fps = fps;
+			public void setIndex(Long index) {
+				this.index = index;
 			}
 		}
 	}
 
 	@Override
-	public UnderstandVideoContentResponse getInstance(UnmarshallerContext context) {
-		return	UnderstandVideoContentResponseUnmarshaller.unmarshall(this, context);
+	public SplitVideoPartsResponse getInstance(UnmarshallerContext context) {
+		return	SplitVideoPartsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

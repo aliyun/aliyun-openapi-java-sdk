@@ -26,17 +26,17 @@ public class UnderstandVideoContentResponseUnmarshaller {
 	public static UnderstandVideoContentResponse unmarshall(UnderstandVideoContentResponse understandVideoContentResponse, UnmarshallerContext _ctx) {
 		
 		understandVideoContentResponse.setRequestId(_ctx.stringValue("UnderstandVideoContentResponse.RequestId"));
-		understandVideoContentResponse.setMessage(_ctx.stringValue("UnderstandVideoContentResponse.Message"));
 		understandVideoContentResponse.setCode(_ctx.stringValue("UnderstandVideoContentResponse.Code"));
+		understandVideoContentResponse.setMessage(_ctx.stringValue("UnderstandVideoContentResponse.Message"));
 
 		Data data = new Data();
 		data.setTagInfo(_ctx.mapValue("UnderstandVideoContentResponse.Data.TagInfo"));
 
 		VideoInfo videoInfo = new VideoInfo();
-		videoInfo.setFps(_ctx.floatValue("UnderstandVideoContentResponse.Data.VideoInfo.Fps"));
-		videoInfo.setDuration(_ctx.longValue("UnderstandVideoContentResponse.Data.VideoInfo.Duration"));
-		videoInfo.setHeight(_ctx.longValue("UnderstandVideoContentResponse.Data.VideoInfo.Height"));
 		videoInfo.setWidth(_ctx.longValue("UnderstandVideoContentResponse.Data.VideoInfo.Width"));
+		videoInfo.setHeight(_ctx.longValue("UnderstandVideoContentResponse.Data.VideoInfo.Height"));
+		videoInfo.setDuration(_ctx.longValue("UnderstandVideoContentResponse.Data.VideoInfo.Duration"));
+		videoInfo.setFps(_ctx.floatValue("UnderstandVideoContentResponse.Data.VideoInfo.Fps"));
 		data.setVideoInfo(videoInfo);
 		understandVideoContentResponse.setData(data);
 	 
