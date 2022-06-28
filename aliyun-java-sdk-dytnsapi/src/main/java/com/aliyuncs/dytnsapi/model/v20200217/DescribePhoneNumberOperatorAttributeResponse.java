@@ -15,14 +15,14 @@
 package com.aliyuncs.dytnsapi.model.v20200217;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dytnsapi.transform.v20200217.ThreeElementsVerificationResponseUnmarshaller;
+import com.aliyuncs.dytnsapi.transform.v20200217.DescribePhoneNumberOperatorAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ThreeElementsVerificationResponse extends AcsResponse {
+public class DescribePhoneNumberOperatorAttributeResponse extends AcsResponse {
 
 	private String code;
 
@@ -68,7 +68,15 @@ public class ThreeElementsVerificationResponse extends AcsResponse {
 
 		private String basicCarrier;
 
-		private Integer isConsistent;
+		private String carrier;
+
+		private Boolean isNumberPortability;
+
+		private Long numberSegment;
+
+		private String city;
+
+		private String province;
 
 		public String getBasicCarrier() {
 			return this.basicCarrier;
@@ -78,18 +86,50 @@ public class ThreeElementsVerificationResponse extends AcsResponse {
 			this.basicCarrier = basicCarrier;
 		}
 
-		public Integer getIsConsistent() {
-			return this.isConsistent;
+		public String getCarrier() {
+			return this.carrier;
 		}
 
-		public void setIsConsistent(Integer isConsistent) {
-			this.isConsistent = isConsistent;
+		public void setCarrier(String carrier) {
+			this.carrier = carrier;
+		}
+
+		public Boolean getIsNumberPortability() {
+			return this.isNumberPortability;
+		}
+
+		public void setIsNumberPortability(Boolean isNumberPortability) {
+			this.isNumberPortability = isNumberPortability;
+		}
+
+		public Long getNumberSegment() {
+			return this.numberSegment;
+		}
+
+		public void setNumberSegment(Long numberSegment) {
+			this.numberSegment = numberSegment;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
 		}
 	}
 
 	@Override
-	public ThreeElementsVerificationResponse getInstance(UnmarshallerContext context) {
-		return	ThreeElementsVerificationResponseUnmarshaller.unmarshall(this, context);
+	public DescribePhoneNumberOperatorAttributeResponse getInstance(UnmarshallerContext context) {
+		return	DescribePhoneNumberOperatorAttributeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

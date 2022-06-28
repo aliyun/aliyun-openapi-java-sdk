@@ -14,11 +14,8 @@
 
 package com.aliyuncs.dytnsapi.transform.v20200217;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.dytnsapi.model.v20200217.ThreeElementsVerificationResponse;
-import com.aliyuncs.dytnsapi.model.v20200217.ThreeElementsVerificationResponse.DataItem;
+import com.aliyuncs.dytnsapi.model.v20200217.ThreeElementsVerificationResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,14 +27,9 @@ public class ThreeElementsVerificationResponseUnmarshaller {
 		threeElementsVerificationResponse.setCode(_ctx.stringValue("ThreeElementsVerificationResponse.Code"));
 		threeElementsVerificationResponse.setMessage(_ctx.stringValue("ThreeElementsVerificationResponse.Message"));
 
-		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < _ctx.lengthValue("ThreeElementsVerificationResponse.Data.Length"); i++) {
-			DataItem dataItem = new DataItem();
-			dataItem.setIsConsistent(_ctx.integerValue("ThreeElementsVerificationResponse.Data["+ i +"].IsConsistent"));
-			dataItem.setBasicCarrier(_ctx.stringValue("ThreeElementsVerificationResponse.Data["+ i +"].BasicCarrier"));
-
-			data.add(dataItem);
-		}
+		Data data = new Data();
+		data.setBasicCarrier(_ctx.stringValue("ThreeElementsVerificationResponse.Data.BasicCarrier"));
+		data.setIsConsistent(_ctx.integerValue("ThreeElementsVerificationResponse.Data.IsConsistent"));
 		threeElementsVerificationResponse.setData(data);
 	 
 	 	return threeElementsVerificationResponse;

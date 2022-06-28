@@ -14,11 +14,8 @@
 
 package com.aliyuncs.dytnsapi.transform.v20200217;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.dytnsapi.model.v20200217.TwoElementsVerificationResponse;
-import com.aliyuncs.dytnsapi.model.v20200217.TwoElementsVerificationResponse.DataItem;
+import com.aliyuncs.dytnsapi.model.v20200217.TwoElementsVerificationResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,14 +27,9 @@ public class TwoElementsVerificationResponseUnmarshaller {
 		twoElementsVerificationResponse.setCode(_ctx.stringValue("TwoElementsVerificationResponse.Code"));
 		twoElementsVerificationResponse.setMessage(_ctx.stringValue("TwoElementsVerificationResponse.Message"));
 
-		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < _ctx.lengthValue("TwoElementsVerificationResponse.Data.Length"); i++) {
-			DataItem dataItem = new DataItem();
-			dataItem.setIsConsistent(_ctx.integerValue("TwoElementsVerificationResponse.Data["+ i +"].IsConsistent"));
-			dataItem.setBasicCarrier(_ctx.stringValue("TwoElementsVerificationResponse.Data["+ i +"].BasicCarrier"));
-
-			data.add(dataItem);
-		}
+		Data data = new Data();
+		data.setIsConsistent(_ctx.integerValue("TwoElementsVerificationResponse.Data.IsConsistent"));
+		data.setBasicCarrier(_ctx.stringValue("TwoElementsVerificationResponse.Data.BasicCarrier"));
 		twoElementsVerificationResponse.setData(data);
 	 
 	 	return twoElementsVerificationResponse;
