@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVerifySettingResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String bizType;
-
 	private String bizName;
+
+	private String requestId;
 
 	private String solution;
 
+	private String bizType;
+
 	private List<String> stepList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-	}
 
 	public String getBizName() {
 		return this.bizName;
@@ -59,12 +43,28 @@ public class CreateVerifySettingResponse extends AcsResponse {
 		this.bizName = bizName;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getSolution() {
 		return this.solution;
 	}
 
 	public void setSolution(String solution) {
 		this.solution = solution;
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
 	}
 
 	public List<String> getStepList() {

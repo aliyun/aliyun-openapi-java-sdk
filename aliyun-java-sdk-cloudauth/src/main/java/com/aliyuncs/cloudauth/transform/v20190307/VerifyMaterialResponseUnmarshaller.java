@@ -25,31 +25,31 @@ public class VerifyMaterialResponseUnmarshaller {
 	public static VerifyMaterialResponse unmarshall(VerifyMaterialResponse verifyMaterialResponse, UnmarshallerContext _ctx) {
 		
 		verifyMaterialResponse.setRequestId(_ctx.stringValue("VerifyMaterialResponse.RequestId"));
-		verifyMaterialResponse.setVerifyToken(_ctx.stringValue("VerifyMaterialResponse.VerifyToken"));
-		verifyMaterialResponse.setVerifyStatus(_ctx.integerValue("VerifyMaterialResponse.VerifyStatus"));
 		verifyMaterialResponse.setAuthorityComparisionScore(_ctx.floatValue("VerifyMaterialResponse.AuthorityComparisionScore"));
+		verifyMaterialResponse.setVerifyStatus(_ctx.integerValue("VerifyMaterialResponse.VerifyStatus"));
+		verifyMaterialResponse.setVerifyToken(_ctx.stringValue("VerifyMaterialResponse.VerifyToken"));
 		verifyMaterialResponse.setIdCardFaceComparisonScore(_ctx.floatValue("VerifyMaterialResponse.IdCardFaceComparisonScore"));
 
 		Material material = new Material();
-		material.setFaceImageUrl(_ctx.stringValue("VerifyMaterialResponse.Material.FaceImageUrl"));
-		material.setIdCardName(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardName"));
 		material.setIdCardNumber(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardNumber"));
-		material.setFaceQuality(_ctx.stringValue("VerifyMaterialResponse.Material.FaceQuality"));
 		material.setFaceGlobalUrl(_ctx.stringValue("VerifyMaterialResponse.Material.FaceGlobalUrl"));
+		material.setFaceImageUrl(_ctx.stringValue("VerifyMaterialResponse.Material.FaceImageUrl"));
 		material.setFaceMask(_ctx.stringValue("VerifyMaterialResponse.Material.FaceMask"));
+		material.setIdCardName(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardName"));
+		material.setFaceQuality(_ctx.stringValue("VerifyMaterialResponse.Material.FaceQuality"));
 
 		IdCardInfo idCardInfo = new IdCardInfo();
-		idCardInfo.setNumber(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Number"));
-		idCardInfo.setAddress(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Address"));
-		idCardInfo.setNationality(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Nationality"));
-		idCardInfo.setEndDate(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.EndDate"));
-		idCardInfo.setFrontImageUrl(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.FrontImageUrl"));
-		idCardInfo.setAuthority(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Authority"));
 		idCardInfo.setSex(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Sex"));
-		idCardInfo.setName(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Name"));
-		idCardInfo.setBirth(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Birth"));
-		idCardInfo.setBackImageUrl(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.BackImageUrl"));
+		idCardInfo.setEndDate(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.EndDate"));
+		idCardInfo.setAuthority(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Authority"));
+		idCardInfo.setAddress(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Address"));
+		idCardInfo.setNumber(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Number"));
 		idCardInfo.setStartDate(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.StartDate"));
+		idCardInfo.setBackImageUrl(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.BackImageUrl"));
+		idCardInfo.setNationality(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Nationality"));
+		idCardInfo.setBirth(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Birth"));
+		idCardInfo.setName(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.Name"));
+		idCardInfo.setFrontImageUrl(_ctx.stringValue("VerifyMaterialResponse.Material.IdCardInfo.FrontImageUrl"));
 		material.setIdCardInfo(idCardInfo);
 		verifyMaterialResponse.setMaterial(material);
 	 

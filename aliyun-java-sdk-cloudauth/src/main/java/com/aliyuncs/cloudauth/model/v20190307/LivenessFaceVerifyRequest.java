@@ -53,7 +53,7 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 
 	private String crop;
 	public LivenessFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "LivenessFaceVerify", "cloudauth");
+		super("Cloudauth", "2019-03-07", "LivenessFaceVerify");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

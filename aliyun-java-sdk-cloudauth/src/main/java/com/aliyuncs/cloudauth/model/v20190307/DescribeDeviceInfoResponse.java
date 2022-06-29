@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeviceInfoResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<DeviceInfo> deviceInfoList;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeDeviceInfoResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,22 +77,22 @@ public class DescribeDeviceInfoResponse extends AcsResponse {
 
 	public static class DeviceInfo {
 
-		private String deviceId;
+		private String expiredDay;
 
 		private String userDeviceId;
 
-		private String bizType;
+		private String deviceId;
 
 		private String beginDay;
 
-		private String expiredDay;
+		private String bizType;
 
-		public String getDeviceId() {
-			return this.deviceId;
+		public String getExpiredDay() {
+			return this.expiredDay;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
+		public void setExpiredDay(String expiredDay) {
+			this.expiredDay = expiredDay;
 		}
 
 		public String getUserDeviceId() {
@@ -103,12 +103,12 @@ public class DescribeDeviceInfoResponse extends AcsResponse {
 			this.userDeviceId = userDeviceId;
 		}
 
-		public String getBizType() {
-			return this.bizType;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
 		public String getBeginDay() {
@@ -119,12 +119,12 @@ public class DescribeDeviceInfoResponse extends AcsResponse {
 			this.beginDay = beginDay;
 		}
 
-		public String getExpiredDay() {
-			return this.expiredDay;
+		public String getBizType() {
+			return this.bizType;
 		}
 
-		public void setExpiredDay(String expiredDay) {
-			this.expiredDay = expiredDay;
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 	}
 

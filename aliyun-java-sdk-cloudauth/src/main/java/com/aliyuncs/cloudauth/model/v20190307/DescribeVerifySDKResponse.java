@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVerifySDKResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String sdkUrl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSdkUrl() {
 		return this.sdkUrl;
@@ -42,6 +34,14 @@ public class DescribeVerifySDKResponse extends AcsResponse {
 
 	public void setSdkUrl(String sdkUrl) {
 		this.sdkUrl = sdkUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

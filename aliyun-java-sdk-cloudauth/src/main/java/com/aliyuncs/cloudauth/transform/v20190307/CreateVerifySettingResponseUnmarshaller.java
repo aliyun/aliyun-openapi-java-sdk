@@ -26,9 +26,9 @@ public class CreateVerifySettingResponseUnmarshaller {
 	public static CreateVerifySettingResponse unmarshall(CreateVerifySettingResponse createVerifySettingResponse, UnmarshallerContext _ctx) {
 		
 		createVerifySettingResponse.setRequestId(_ctx.stringValue("CreateVerifySettingResponse.RequestId"));
-		createVerifySettingResponse.setBizType(_ctx.stringValue("CreateVerifySettingResponse.BizType"));
 		createVerifySettingResponse.setBizName(_ctx.stringValue("CreateVerifySettingResponse.BizName"));
 		createVerifySettingResponse.setSolution(_ctx.stringValue("CreateVerifySettingResponse.Solution"));
+		createVerifySettingResponse.setBizType(_ctx.stringValue("CreateVerifySettingResponse.BizType"));
 
 		List<String> stepList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateVerifySettingResponse.StepList.Length"); i++) {

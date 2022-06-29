@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVerifyTokenResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String verifyPageUrl;
+
+	private String requestId;
 
 	private String verifyToken;
 
 	private OssUploadToken ossUploadToken;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getVerifyPageUrl() {
 		return this.verifyPageUrl;
@@ -46,6 +38,14 @@ public class DescribeVerifyTokenResponse extends AcsResponse {
 
 	public void setVerifyPageUrl(String verifyPageUrl) {
 		this.verifyPageUrl = verifyPageUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getVerifyToken() {
@@ -66,59 +66,19 @@ public class DescribeVerifyTokenResponse extends AcsResponse {
 
 	public static class OssUploadToken {
 
-		private String bucket;
-
-		private String endPoint;
-
-		private String path;
-
-		private Long expired;
-
-		private String secret;
-
 		private String key;
 
 		private String token;
 
-		public String getBucket() {
-			return this.bucket;
-		}
+		private String secret;
 
-		public void setBucket(String bucket) {
-			this.bucket = bucket;
-		}
+		private Long expired;
 
-		public String getEndPoint() {
-			return this.endPoint;
-		}
+		private String path;
 
-		public void setEndPoint(String endPoint) {
-			this.endPoint = endPoint;
-		}
+		private String endPoint;
 
-		public String getPath() {
-			return this.path;
-		}
-
-		public void setPath(String path) {
-			this.path = path;
-		}
-
-		public Long getExpired() {
-			return this.expired;
-		}
-
-		public void setExpired(Long expired) {
-			this.expired = expired;
-		}
-
-		public String getSecret() {
-			return this.secret;
-		}
-
-		public void setSecret(String secret) {
-			this.secret = secret;
-		}
+		private String bucket;
 
 		public String getKey() {
 			return this.key;
@@ -134,6 +94,46 @@ public class DescribeVerifyTokenResponse extends AcsResponse {
 
 		public void setToken(String token) {
 			this.token = token;
+		}
+
+		public String getSecret() {
+			return this.secret;
+		}
+
+		public void setSecret(String secret) {
+			this.secret = secret;
+		}
+
+		public Long getExpired() {
+			return this.expired;
+		}
+
+		public void setExpired(Long expired) {
+			this.expired = expired;
+		}
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getEndPoint() {
+			return this.endPoint;
+		}
+
+		public void setEndPoint(String endPoint) {
+			this.endPoint = endPoint;
+		}
+
+		public String getBucket() {
+			return this.bucket;
+		}
+
+		public void setBucket(String bucket) {
+			this.bucket = bucket;
 		}
 	}
 

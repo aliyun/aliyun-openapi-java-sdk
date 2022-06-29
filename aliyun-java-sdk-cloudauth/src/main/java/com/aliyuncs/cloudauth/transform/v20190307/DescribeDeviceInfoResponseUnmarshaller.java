@@ -27,18 +27,18 @@ public class DescribeDeviceInfoResponseUnmarshaller {
 	public static DescribeDeviceInfoResponse unmarshall(DescribeDeviceInfoResponse describeDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeDeviceInfoResponse.setRequestId(_ctx.stringValue("DescribeDeviceInfoResponse.RequestId"));
-		describeDeviceInfoResponse.setPageSize(_ctx.integerValue("DescribeDeviceInfoResponse.PageSize"));
 		describeDeviceInfoResponse.setCurrentPage(_ctx.integerValue("DescribeDeviceInfoResponse.CurrentPage"));
+		describeDeviceInfoResponse.setPageSize(_ctx.integerValue("DescribeDeviceInfoResponse.PageSize"));
 		describeDeviceInfoResponse.setTotalCount(_ctx.integerValue("DescribeDeviceInfoResponse.TotalCount"));
 
 		List<DeviceInfo> deviceInfoList = new ArrayList<DeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDeviceInfoResponse.DeviceInfoList.Length"); i++) {
 			DeviceInfo deviceInfo = new DeviceInfo();
-			deviceInfo.setDeviceId(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].DeviceId"));
-			deviceInfo.setUserDeviceId(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].UserDeviceId"));
-			deviceInfo.setBizType(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].BizType"));
-			deviceInfo.setBeginDay(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].BeginDay"));
 			deviceInfo.setExpiredDay(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].ExpiredDay"));
+			deviceInfo.setUserDeviceId(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].UserDeviceId"));
+			deviceInfo.setDeviceId(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].DeviceId"));
+			deviceInfo.setBeginDay(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].BeginDay"));
+			deviceInfo.setBizType(_ctx.stringValue("DescribeDeviceInfoResponse.DeviceInfoList["+ i +"].BizType"));
 
 			deviceInfoList.add(deviceInfo);
 		}

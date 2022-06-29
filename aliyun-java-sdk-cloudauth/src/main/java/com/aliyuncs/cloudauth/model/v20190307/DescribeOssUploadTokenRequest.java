@@ -25,7 +25,7 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class DescribeOssUploadTokenRequest extends RpcAcsRequest<DescribeOssUploadTokenResponse> {
 	   
 	public DescribeOssUploadTokenRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeOssUploadToken", "cloudauth");
+		super("Cloudauth", "2019-03-07", "DescribeOssUploadToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

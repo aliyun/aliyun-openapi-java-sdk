@@ -35,6 +35,8 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 
 	private String certifyId;
 
+	private String encryptType;
+
 	private String certNo;
 
 	private String outerOrderNo;
@@ -61,7 +63,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 
 	private String crop;
 	public ContrastFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "ContrastFaceVerify", "cloudauth");
+		super("Cloudauth", "2019-03-07", "ContrastFaceVerify");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -121,6 +123,17 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 		this.certifyId = certifyId;
 		if(certifyId != null){
 			putBodyParameter("CertifyId", certifyId);
+		}
+	}
+
+	public String getEncryptType() {
+		return this.encryptType;
+	}
+
+	public void setEncryptType(String encryptType) {
+		this.encryptType = encryptType;
+		if(encryptType != null){
+			putBodyParameter("EncryptType", encryptType);
 		}
 	}
 

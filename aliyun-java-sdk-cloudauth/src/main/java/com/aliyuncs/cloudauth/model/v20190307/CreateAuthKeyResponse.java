@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAuthKeyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String authKey;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getAuthKey() {
 		return this.authKey;
@@ -42,6 +34,14 @@ public class CreateAuthKeyResponse extends AcsResponse {
 
 	public void setAuthKey(String authKey) {
 		this.authKey = authKey;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

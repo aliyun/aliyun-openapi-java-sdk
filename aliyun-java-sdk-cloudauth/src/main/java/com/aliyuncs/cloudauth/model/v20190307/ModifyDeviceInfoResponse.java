@@ -26,15 +26,15 @@ public class ModifyDeviceInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String deviceId;
-
 	private String userDeviceId;
 
-	private String bizType;
+	private String deviceId;
+
+	private String expiredDay;
 
 	private String beginDay;
 
-	private String expiredDay;
+	private String bizType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +42,6 @@ public class ModifyDeviceInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDeviceId() {
-		return this.deviceId;
-	}
-
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
 	}
 
 	public String getUserDeviceId() {
@@ -60,12 +52,20 @@ public class ModifyDeviceInfoResponse extends AcsResponse {
 		this.userDeviceId = userDeviceId;
 	}
 
-	public String getBizType() {
-		return this.bizType;
+	public String getDeviceId() {
+		return this.deviceId;
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public String getExpiredDay() {
+		return this.expiredDay;
+	}
+
+	public void setExpiredDay(String expiredDay) {
+		this.expiredDay = expiredDay;
 	}
 
 	public String getBeginDay() {
@@ -76,12 +76,12 @@ public class ModifyDeviceInfoResponse extends AcsResponse {
 		this.beginDay = beginDay;
 	}
 
-	public String getExpiredDay() {
-		return this.expiredDay;
+	public String getBizType() {
+		return this.bizType;
 	}
 
-	public void setExpiredDay(String expiredDay) {
-		this.expiredDay = expiredDay;
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
 	}
 
 	@Override

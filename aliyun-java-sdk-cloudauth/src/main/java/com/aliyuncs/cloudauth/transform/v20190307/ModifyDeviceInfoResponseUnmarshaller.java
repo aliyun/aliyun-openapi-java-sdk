@@ -23,11 +23,11 @@ public class ModifyDeviceInfoResponseUnmarshaller {
 	public static ModifyDeviceInfoResponse unmarshall(ModifyDeviceInfoResponse modifyDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
 		modifyDeviceInfoResponse.setRequestId(_ctx.stringValue("ModifyDeviceInfoResponse.RequestId"));
-		modifyDeviceInfoResponse.setDeviceId(_ctx.stringValue("ModifyDeviceInfoResponse.DeviceId"));
 		modifyDeviceInfoResponse.setUserDeviceId(_ctx.stringValue("ModifyDeviceInfoResponse.UserDeviceId"));
-		modifyDeviceInfoResponse.setBizType(_ctx.stringValue("ModifyDeviceInfoResponse.BizType"));
-		modifyDeviceInfoResponse.setBeginDay(_ctx.stringValue("ModifyDeviceInfoResponse.BeginDay"));
+		modifyDeviceInfoResponse.setDeviceId(_ctx.stringValue("ModifyDeviceInfoResponse.DeviceId"));
 		modifyDeviceInfoResponse.setExpiredDay(_ctx.stringValue("ModifyDeviceInfoResponse.ExpiredDay"));
+		modifyDeviceInfoResponse.setBeginDay(_ctx.stringValue("ModifyDeviceInfoResponse.BeginDay"));
+		modifyDeviceInfoResponse.setBizType(_ctx.stringValue("ModifyDeviceInfoResponse.BizType"));
 	 
 	 	return modifyDeviceInfoResponse;
 	}

@@ -26,13 +26,13 @@ public class DescribeOssUploadTokenResponseUnmarshaller {
 		describeOssUploadTokenResponse.setRequestId(_ctx.stringValue("DescribeOssUploadTokenResponse.RequestId"));
 
 		OssUploadToken ossUploadToken = new OssUploadToken();
-		ossUploadToken.setBucket(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.Bucket"));
-		ossUploadToken.setEndPoint(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.EndPoint"));
-		ossUploadToken.setPath(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.Path"));
-		ossUploadToken.setExpired(_ctx.longValue("DescribeOssUploadTokenResponse.OssUploadToken.Expired"));
-		ossUploadToken.setSecret(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.Secret"));
 		ossUploadToken.setKey(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.Key"));
 		ossUploadToken.setToken(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.Token"));
+		ossUploadToken.setSecret(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.Secret"));
+		ossUploadToken.setExpired(_ctx.longValue("DescribeOssUploadTokenResponse.OssUploadToken.Expired"));
+		ossUploadToken.setPath(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.Path"));
+		ossUploadToken.setEndPoint(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.EndPoint"));
+		ossUploadToken.setBucket(_ctx.stringValue("DescribeOssUploadTokenResponse.OssUploadToken.Bucket"));
 		describeOssUploadTokenResponse.setOssUploadToken(ossUploadToken);
 	 
 	 	return describeOssUploadTokenResponse;
