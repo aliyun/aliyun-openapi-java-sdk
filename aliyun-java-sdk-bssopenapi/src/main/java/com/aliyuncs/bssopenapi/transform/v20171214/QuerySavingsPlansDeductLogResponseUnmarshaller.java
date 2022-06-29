@@ -51,6 +51,7 @@ public class QuerySavingsPlansDeductLogResponseUnmarshaller {
 			savingsPlansDeductDetailResponse.setDeductCommodity(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductCommodity"));
 			savingsPlansDeductDetailResponse.setDeductRate(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductRate"));
 			savingsPlansDeductDetailResponse.setDeductFee(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductFee"));
+			savingsPlansDeductDetailResponse.setOwnerId(_ctx.longValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].OwnerId"));
 
 			items.add(savingsPlansDeductDetailResponse);
 		}

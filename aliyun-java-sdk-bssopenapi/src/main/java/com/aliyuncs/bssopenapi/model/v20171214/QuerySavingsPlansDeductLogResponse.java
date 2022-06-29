@@ -141,6 +141,8 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 
 			private String deductFee;
 
+			private Long ownerId;
+
 			public String getEndTime() {
 				return this.endTime;
 			}
@@ -227,6 +229,14 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 
 			public void setDeductFee(String deductFee) {
 				this.deductFee = deductFee;
+			}
+
+			public Long getOwnerId() {
+				return this.ownerId;
+			}
+
+			public void setOwnerId(Long ownerId) {
+				this.ownerId = ownerId;
 			}
 		}
 	}
