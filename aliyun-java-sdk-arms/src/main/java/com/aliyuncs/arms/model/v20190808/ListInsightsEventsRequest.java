@@ -22,20 +22,18 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class UploadRequest extends RpcAcsRequest<UploadResponse> {
+public class ListInsightsEventsRequest extends RpcAcsRequest<ListInsightsEventsResponse> {
 	   
 
-	private String fileName;
+	private String insightsTypes;
 
-	private String file;
-
-	private String edition;
+	private String endTime;
 
 	private String pid;
 
-	private String version;
-	public UploadRequest() {
-		super("ARMS", "2019-08-08", "Upload", "arms");
+	private String startTime;
+	public ListInsightsEventsRequest() {
+		super("ARMS", "2019-08-08", "ListInsightsEvents", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,36 +41,25 @@ public class UploadRequest extends RpcAcsRequest<UploadResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getFileName() {
-		return this.fileName;
+	public String getInsightsTypes() {
+		return this.insightsTypes;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
+	public void setInsightsTypes(String insightsTypes) {
+		this.insightsTypes = insightsTypes;
+		if(insightsTypes != null){
+			putQueryParameter("InsightsTypes", insightsTypes);
 		}
 	}
 
-	public String getFile() {
-		return this.file;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setFile(String file) {
-		this.file = file;
-		if(file != null){
-			putBodyParameter("File", file);
-		}
-	}
-
-	public String getEdition() {
-		return this.edition;
-	}
-
-	public void setEdition(String edition) {
-		this.edition = edition;
-		if(edition != null){
-			putQueryParameter("Edition", edition);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -87,20 +74,20 @@ public class UploadRequest extends RpcAcsRequest<UploadResponse> {
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
 	@Override
-	public Class<UploadResponse> getResponseClass() {
-		return UploadResponse.class;
+	public Class<ListInsightsEventsResponse> getResponseClass() {
+		return ListInsightsEventsResponse.class;
 	}
 
 }

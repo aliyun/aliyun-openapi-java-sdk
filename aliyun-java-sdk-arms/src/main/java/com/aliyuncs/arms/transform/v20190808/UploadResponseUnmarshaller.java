@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.transform.v20190808;
 
 import com.aliyuncs.arms.model.v20190808.UploadResponse;
+import com.aliyuncs.arms.model.v20190808.UploadResponse.UploadResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +24,12 @@ public class UploadResponseUnmarshaller {
 	public static UploadResponse unmarshall(UploadResponse uploadResponse, UnmarshallerContext _ctx) {
 		
 		uploadResponse.setRequestId(_ctx.stringValue("UploadResponse.RequestId"));
-		uploadResponse.setFid(_ctx.stringValue("UploadResponse.Fid"));
-		uploadResponse.setFileName(_ctx.stringValue("UploadResponse.FileName"));
-		uploadResponse.setVersion(_ctx.stringValue("UploadResponse.Version"));
-		uploadResponse.setUploadTime(_ctx.stringValue("UploadResponse.UploadTime"));
+
+		UploadResult uploadResult = new UploadResult();
+		uploadResult.setFid(_ctx.stringValue("UploadResponse.UploadResult.Fid"));
+		uploadResult.setFileName(_ctx.stringValue("UploadResponse.UploadResult.FileName"));
+		uploadResult.setUploadTime(_ctx.stringValue("UploadResponse.UploadResult.UploadTime"));
+		uploadResponse.setUploadResult(uploadResult);
 	 
 	 	return uploadResponse;
 	}

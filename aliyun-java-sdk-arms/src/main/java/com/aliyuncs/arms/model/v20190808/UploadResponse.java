@@ -26,13 +26,7 @@ public class UploadResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String fid;
-
-	private String fileName;
-
-	private String version;
-
-	private String uploadTime;
+	private UploadResult uploadResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,36 +36,45 @@ public class UploadResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getFid() {
-		return this.fid;
+	public UploadResult getUploadResult() {
+		return this.uploadResult;
 	}
 
-	public void setFid(String fid) {
-		this.fid = fid;
+	public void setUploadResult(UploadResult uploadResult) {
+		this.uploadResult = uploadResult;
 	}
 
-	public String getFileName() {
-		return this.fileName;
-	}
+	public static class UploadResult {
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
+		private String fid;
 
-	public String getVersion() {
-		return this.version;
-	}
+		private String fileName;
 
-	public void setVersion(String version) {
-		this.version = version;
-	}
+		private String uploadTime;
 
-	public String getUploadTime() {
-		return this.uploadTime;
-	}
+		public String getFid() {
+			return this.fid;
+		}
 
-	public void setUploadTime(String uploadTime) {
-		this.uploadTime = uploadTime;
+		public void setFid(String fid) {
+			this.fid = fid;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public String getUploadTime() {
+			return this.uploadTime;
+		}
+
+		public void setUploadTime(String uploadTime) {
+			this.uploadTime = uploadTime;
+		}
 	}
 
 	@Override
