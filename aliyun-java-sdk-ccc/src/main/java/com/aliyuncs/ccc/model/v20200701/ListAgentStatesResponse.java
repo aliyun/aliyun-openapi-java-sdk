@@ -143,6 +143,8 @@ public class ListAgentStatesResponse extends AcsResponse {
 
 			private String instanceId;
 
+			private String breakCode;
+
 			public String getLoginName() {
 				return this.loginName;
 			}
@@ -197,6 +199,14 @@ public class ListAgentStatesResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getBreakCode() {
+				return this.breakCode;
+			}
+
+			public void setBreakCode(String breakCode) {
+				this.breakCode = breakCode;
 			}
 		}
 	}

@@ -50,6 +50,9 @@ public class ListRealtimeAgentStatesResponseUnmarshaller {
 			agentState.setCounterParty(_ctx.stringValue("ListRealtimeAgentStatesResponse.Data.List["+ i +"].CounterParty"));
 			agentState.setWorkMode(_ctx.stringValue("ListRealtimeAgentStatesResponse.Data.List["+ i +"].WorkMode"));
 			agentState.setOutboundScenario(_ctx.booleanValue("ListRealtimeAgentStatesResponse.Data.List["+ i +"].OutboundScenario"));
+			agentState.setMobile(_ctx.stringValue("ListRealtimeAgentStatesResponse.Data.List["+ i +"].Mobile"));
+			agentState.setCallType(_ctx.stringValue("ListRealtimeAgentStatesResponse.Data.List["+ i +"].CallType"));
+			agentState.setDuration(_ctx.longValue("ListRealtimeAgentStatesResponse.Data.List["+ i +"].Duration"));
 
 			List<String> skillGroupIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListRealtimeAgentStatesResponse.Data.List["+ i +"].SkillGroupIdList.Length"); j++) {

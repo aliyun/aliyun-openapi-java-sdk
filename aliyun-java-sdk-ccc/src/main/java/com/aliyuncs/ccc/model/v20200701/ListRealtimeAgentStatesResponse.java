@@ -139,6 +139,12 @@ public class ListRealtimeAgentStatesResponse extends AcsResponse {
 
 			private Boolean outboundScenario;
 
+			private String mobile;
+
+			private String callType;
+
+			private Long duration;
+
 			private List<String> skillGroupIdList;
 
 			private List<String> skillGroupNameList;
@@ -221,6 +227,30 @@ public class ListRealtimeAgentStatesResponse extends AcsResponse {
 
 			public void setOutboundScenario(Boolean outboundScenario) {
 				this.outboundScenario = outboundScenario;
+			}
+
+			public String getMobile() {
+				return this.mobile;
+			}
+
+			public void setMobile(String mobile) {
+				this.mobile = mobile;
+			}
+
+			public String getCallType() {
+				return this.callType;
+			}
+
+			public void setCallType(String callType) {
+				this.callType = callType;
+			}
+
+			public Long getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Long duration) {
+				this.duration = duration;
 			}
 
 			public List<String> getSkillGroupIdList() {

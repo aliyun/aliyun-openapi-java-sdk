@@ -36,6 +36,8 @@ public class ListAgentStatesRequest extends RpcAcsRequest<ListAgentStatesRespons
 	private Integer pageSize;
 
 	private String state;
+
+	private Boolean excludeOfflineUsers;
 	public ListAgentStatesRequest() {
 		super("CCC", "2020-07-01", "ListAgentStates", "CCC");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class ListAgentStatesRequest extends RpcAcsRequest<ListAgentStatesRespons
 		this.state = state;
 		if(state != null){
 			putQueryParameter("State", state);
+		}
+	}
+
+	public Boolean getExcludeOfflineUsers() {
+		return this.excludeOfflineUsers;
+	}
+
+	public void setExcludeOfflineUsers(Boolean excludeOfflineUsers) {
+		this.excludeOfflineUsers = excludeOfflineUsers;
+		if(excludeOfflineUsers != null){
+			putQueryParameter("ExcludeOfflineUsers", excludeOfflineUsers.toString());
 		}
 	}
 

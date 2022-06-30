@@ -25,6 +25,10 @@ import com.aliyuncs.ccc.Endpoint;
 public class ListRealtimeAgentStatesRequest extends RpcAcsRequest<ListRealtimeAgentStatesResponse> {
 	   
 
+	private String callTypeList;
+
+	private String query;
+
 	private Boolean outboundScenario;
 
 	private Integer pageNumber;
@@ -49,6 +53,28 @@ public class ListRealtimeAgentStatesRequest extends RpcAcsRequest<ListRealtimeAg
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCallTypeList() {
+		return this.callTypeList;
+	}
+
+	public void setCallTypeList(String callTypeList) {
+		this.callTypeList = callTypeList;
+		if(callTypeList != null){
+			putQueryParameter("CallTypeList", callTypeList);
+		}
+	}
+
+	public String getQuery() {
+		return this.query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+		if(query != null){
+			putQueryParameter("Query", query);
+		}
 	}
 
 	public Boolean getOutboundScenario() {
