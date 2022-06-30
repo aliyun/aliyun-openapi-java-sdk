@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSchedulerRulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String totalCount;
 
+	private String requestId;
+
 	private List<SchedulerRule> schedulerRules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 
 	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SchedulerRule> getSchedulerRules() {
@@ -57,22 +57,22 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 
 	public static class SchedulerRule {
 
-		private String ruleName;
+		private String ruleType;
 
 		private String cname;
 
-		private String ruleType;
+		private String ruleName;
 
 		private List<Rule> rules;
 
 		private Param param;
 
-		public String getRuleName() {
-			return this.ruleName;
+		public String getRuleType() {
+			return this.ruleType;
 		}
 
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
+		public void setRuleType(String ruleType) {
+			this.ruleType = ruleType;
 		}
 
 		public String getCname() {
@@ -83,12 +83,12 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 			this.cname = cname;
 		}
 
-		public String getRuleType() {
-			return this.ruleType;
+		public String getRuleName() {
+			return this.ruleName;
 		}
 
-		public void setRuleType(String ruleType) {
-			this.ruleType = ruleType;
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 
 		public List<Rule> getRules() {
@@ -111,17 +111,17 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 
 			private String type;
 
+			private Integer status;
+
 			private String value;
 
 			private Integer valueType;
 
 			private Integer priority;
 
-			private Integer status;
+			private Integer restoreDelay;
 
 			private String regionId;
-
-			private Integer restoreDelay;
 
 			public String getType() {
 				return this.type;
@@ -129,6 +129,14 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public String getValue() {
@@ -155,12 +163,12 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public Integer getRestoreDelay() {
+				return this.restoreDelay;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
+			public void setRestoreDelay(Integer restoreDelay) {
+				this.restoreDelay = restoreDelay;
 			}
 
 			public String getRegionId() {
@@ -169,14 +177,6 @@ public class DescribeSchedulerRulesResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
-			}
-
-			public Integer getRestoreDelay() {
-				return this.restoreDelay;
-			}
-
-			public void setRestoreDelay(Integer restoreDelay) {
-				this.restoreDelay = restoreDelay;
 			}
 		}
 

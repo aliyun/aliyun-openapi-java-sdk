@@ -31,11 +31,11 @@ public class DescribeInstanceIdsResponseUnmarshaller {
 		List<Instance> instanceIds = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceIdsResponse.InstanceIds.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceId(_ctx.stringValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].InstanceId"));
-			instance.setRemark(_ctx.stringValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].Remark"));
-			instance.setEdition(_ctx.integerValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].Edition"));
-			instance.setIpVersion(_ctx.stringValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].IpVersion"));
 			instance.setIpMode(_ctx.stringValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].IpMode"));
+			instance.setEdition(_ctx.integerValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].Edition"));
+			instance.setInstanceId(_ctx.stringValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].InstanceId"));
+			instance.setIpVersion(_ctx.stringValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].IpVersion"));
+			instance.setRemark(_ctx.stringValue("DescribeInstanceIdsResponse.InstanceIds["+ i +"].Remark"));
 
 			instanceIds.add(instance);
 		}

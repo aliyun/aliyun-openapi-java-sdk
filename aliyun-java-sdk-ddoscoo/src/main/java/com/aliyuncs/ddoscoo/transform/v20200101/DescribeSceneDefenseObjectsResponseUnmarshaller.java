@@ -32,8 +32,8 @@ public class DescribeSceneDefenseObjectsResponseUnmarshaller {
 		List<Object> objects = new ArrayList<Object>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSceneDefenseObjectsResponse.Objects.Length"); i++) {
 			Object object = new Object();
-			object.setPolicyId(_ctx.stringValue("DescribeSceneDefenseObjectsResponse.Objects["+ i +"].PolicyId"));
 			object.setDomain(_ctx.stringValue("DescribeSceneDefenseObjectsResponse.Objects["+ i +"].Domain"));
+			object.setPolicyId(_ctx.stringValue("DescribeSceneDefenseObjectsResponse.Objects["+ i +"].PolicyId"));
 			object.setVip(_ctx.stringValue("DescribeSceneDefenseObjectsResponse.Objects["+ i +"].Vip"));
 
 			objects.add(object);

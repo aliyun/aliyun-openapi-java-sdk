@@ -32,16 +32,16 @@ public class DescribeInstanceDetailsResponseUnmarshaller {
 		List<InstanceDetail> instanceDetails = new ArrayList<InstanceDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceDetailsResponse.InstanceDetails.Length"); i++) {
 			InstanceDetail instanceDetail = new InstanceDetail();
-			instanceDetail.setInstanceId(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].InstanceId"));
 			instanceDetail.setLine(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].Line"));
+			instanceDetail.setInstanceId(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].InstanceId"));
 
 			List<EipInfo> eipInfos = new ArrayList<EipInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos.Length"); j++) {
 				EipInfo eipInfo = new EipInfo();
-				eipInfo.setEip(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].Eip"));
 				eipInfo.setStatus(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].Status"));
-				eipInfo.setIpVersion(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].IpVersion"));
 				eipInfo.setIpMode(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].IpMode"));
+				eipInfo.setEip(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].Eip"));
+				eipInfo.setIpVersion(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].IpVersion"));
 
 				eipInfos.add(eipInfo);
 			}

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeWebAccessLogStatusResponse extends AcsResponse {
 
-	private String requestId;
+	private String slsLogstore;
 
 	private Boolean slsStatus;
 
-	private String slsLogstore;
-
 	private String slsProject;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	public String getSlsLogstore() {
+		return this.slsLogstore;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSlsLogstore(String slsLogstore) {
+		this.slsLogstore = slsLogstore;
 	}
 
 	public Boolean getSlsStatus() {
@@ -48,20 +48,20 @@ public class DescribeWebAccessLogStatusResponse extends AcsResponse {
 		this.slsStatus = slsStatus;
 	}
 
-	public String getSlsLogstore() {
-		return this.slsLogstore;
-	}
-
-	public void setSlsLogstore(String slsLogstore) {
-		this.slsLogstore = slsLogstore;
-	}
-
 	public String getSlsProject() {
 		return this.slsProject;
 	}
 
 	public void setSlsProject(String slsProject) {
 		this.slsProject = slsProject;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

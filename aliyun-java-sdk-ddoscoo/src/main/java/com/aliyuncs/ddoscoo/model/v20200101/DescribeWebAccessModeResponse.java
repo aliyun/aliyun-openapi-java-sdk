@@ -47,17 +47,9 @@ public class DescribeWebAccessModeResponse extends AcsResponse {
 
 	public static class DomainMode {
 
-		private String domain;
-
 		private Integer accessMode;
 
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
+		private String domain;
 
 		public Integer getAccessMode() {
 			return this.accessMode;
@@ -65,6 +57,14 @@ public class DescribeWebAccessModeResponse extends AcsResponse {
 
 		public void setAccessMode(Integer accessMode) {
 			this.accessMode = accessMode;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 	}
 

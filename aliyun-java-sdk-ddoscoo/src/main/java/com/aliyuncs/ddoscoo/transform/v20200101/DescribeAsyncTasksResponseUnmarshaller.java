@@ -32,13 +32,13 @@ public class DescribeAsyncTasksResponseUnmarshaller {
 		List<AsyncTask> asyncTasks = new ArrayList<AsyncTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAsyncTasksResponse.AsyncTasks.Length"); i++) {
 			AsyncTask asyncTask = new AsyncTask();
-			asyncTask.setTaskId(_ctx.longValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].TaskId"));
 			asyncTask.setEndTime(_ctx.longValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].EndTime"));
+			asyncTask.setTaskType(_ctx.integerValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].TaskType"));
 			asyncTask.setStartTime(_ctx.longValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].StartTime"));
+			asyncTask.setTaskParams(_ctx.stringValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].TaskParams"));
 			asyncTask.setTaskStatus(_ctx.integerValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].TaskStatus"));
 			asyncTask.setTaskResult(_ctx.stringValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].TaskResult"));
-			asyncTask.setTaskParams(_ctx.stringValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].TaskParams"));
-			asyncTask.setTaskType(_ctx.integerValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].TaskType"));
+			asyncTask.setTaskId(_ctx.longValue("DescribeAsyncTasksResponse.AsyncTasks["+ i +"].TaskId"));
 
 			asyncTasks.add(asyncTask);
 		}

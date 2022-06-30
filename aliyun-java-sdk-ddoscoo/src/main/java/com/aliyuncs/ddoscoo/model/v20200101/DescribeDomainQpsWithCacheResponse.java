@@ -25,29 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainQpsWithCacheResponse extends AcsResponse {
 
+	private Long startTime;
+
 	private String requestId;
 
 	private Integer interval;
 
-	private Long startTime;
-
-	private List<String> totals;
-
 	private List<String> blocks;
 
-	private List<String> cacheHits;
-
-	private List<String> preciseBlocks;
-
-	private List<String> regionBlocks;
-
-	private List<String> ipBlockQps;
-
-	private List<String> ccJsQps;
+	private List<String> ccBlockQps;
 
 	private List<String> preciseJsQps;
 
-	private List<String> ccBlockQps;
+	private List<String> ccJsQps;
+
+	private List<String> regionBlocks;
+
+	private List<String> preciseBlocks;
+
+	private List<String> cacheHits;
+
+	private List<String> totals;
+
+	private List<String> ipBlockQps;
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,22 +73,6 @@ public class DescribeDomainQpsWithCacheResponse extends AcsResponse {
 		this.interval = interval;
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-	}
-
-	public List<String> getTotals() {
-		return this.totals;
-	}
-
-	public void setTotals(List<String> totals) {
-		this.totals = totals;
-	}
-
 	public List<String> getBlocks() {
 		return this.blocks;
 	}
@@ -89,44 +81,12 @@ public class DescribeDomainQpsWithCacheResponse extends AcsResponse {
 		this.blocks = blocks;
 	}
 
-	public List<String> getCacheHits() {
-		return this.cacheHits;
+	public List<String> getCcBlockQps() {
+		return this.ccBlockQps;
 	}
 
-	public void setCacheHits(List<String> cacheHits) {
-		this.cacheHits = cacheHits;
-	}
-
-	public List<String> getPreciseBlocks() {
-		return this.preciseBlocks;
-	}
-
-	public void setPreciseBlocks(List<String> preciseBlocks) {
-		this.preciseBlocks = preciseBlocks;
-	}
-
-	public List<String> getRegionBlocks() {
-		return this.regionBlocks;
-	}
-
-	public void setRegionBlocks(List<String> regionBlocks) {
-		this.regionBlocks = regionBlocks;
-	}
-
-	public List<String> getIpBlockQps() {
-		return this.ipBlockQps;
-	}
-
-	public void setIpBlockQps(List<String> ipBlockQps) {
-		this.ipBlockQps = ipBlockQps;
-	}
-
-	public List<String> getCcJsQps() {
-		return this.ccJsQps;
-	}
-
-	public void setCcJsQps(List<String> ccJsQps) {
-		this.ccJsQps = ccJsQps;
+	public void setCcBlockQps(List<String> ccBlockQps) {
+		this.ccBlockQps = ccBlockQps;
 	}
 
 	public List<String> getPreciseJsQps() {
@@ -137,12 +97,52 @@ public class DescribeDomainQpsWithCacheResponse extends AcsResponse {
 		this.preciseJsQps = preciseJsQps;
 	}
 
-	public List<String> getCcBlockQps() {
-		return this.ccBlockQps;
+	public List<String> getCcJsQps() {
+		return this.ccJsQps;
 	}
 
-	public void setCcBlockQps(List<String> ccBlockQps) {
-		this.ccBlockQps = ccBlockQps;
+	public void setCcJsQps(List<String> ccJsQps) {
+		this.ccJsQps = ccJsQps;
+	}
+
+	public List<String> getRegionBlocks() {
+		return this.regionBlocks;
+	}
+
+	public void setRegionBlocks(List<String> regionBlocks) {
+		this.regionBlocks = regionBlocks;
+	}
+
+	public List<String> getPreciseBlocks() {
+		return this.preciseBlocks;
+	}
+
+	public void setPreciseBlocks(List<String> preciseBlocks) {
+		this.preciseBlocks = preciseBlocks;
+	}
+
+	public List<String> getCacheHits() {
+		return this.cacheHits;
+	}
+
+	public void setCacheHits(List<String> cacheHits) {
+		this.cacheHits = cacheHits;
+	}
+
+	public List<String> getTotals() {
+		return this.totals;
+	}
+
+	public void setTotals(List<String> totals) {
+		this.totals = totals;
+	}
+
+	public List<String> getIpBlockQps() {
+		return this.ipBlockQps;
+	}
+
+	public void setIpBlockQps(List<String> ipBlockQps) {
+		this.ipBlockQps = ipBlockQps;
 	}
 
 	@Override

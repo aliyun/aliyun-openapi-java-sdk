@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSlsOpenStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean slsOpenStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getSlsOpenStatus() {
 		return this.slsOpenStatus;
@@ -42,6 +34,14 @@ public class DescribeSlsOpenStatusResponse extends AcsResponse {
 
 	public void setSlsOpenStatus(Boolean slsOpenStatus) {
 		this.slsOpenStatus = slsOpenStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

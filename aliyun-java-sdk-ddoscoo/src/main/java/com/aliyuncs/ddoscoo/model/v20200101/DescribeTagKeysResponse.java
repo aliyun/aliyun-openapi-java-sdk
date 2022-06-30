@@ -77,17 +77,9 @@ public class DescribeTagKeysResponse extends AcsResponse {
 
 	public static class TagKey {
 
-		private String tagKey;
-
 		private Integer tagCount;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public Integer getTagCount() {
 			return this.tagCount;
@@ -95,6 +87,14 @@ public class DescribeTagKeysResponse extends AcsResponse {
 
 		public void setTagCount(Integer tagCount) {
 			this.tagCount = tagCount;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

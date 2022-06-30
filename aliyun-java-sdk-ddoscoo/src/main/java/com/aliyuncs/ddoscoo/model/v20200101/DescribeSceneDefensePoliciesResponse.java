@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSceneDefensePoliciesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Policy> policies;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeSceneDefensePoliciesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Policy> getPolicies() {
@@ -57,54 +57,30 @@ public class DescribeSceneDefensePoliciesResponse extends AcsResponse {
 
 	public static class Policy {
 
-		private String policyId;
-
-		private String name;
-
-		private String template;
-
-		private Long startTime;
+		private Integer done;
 
 		private Long endTime;
 
 		private Integer status;
 
-		private Integer done;
+		private Long startTime;
 
 		private Integer objectCount;
 
+		private String template;
+
+		private String policyId;
+
+		private String name;
+
 		private List<Policy1> runtimePolicies;
 
-		public String getPolicyId() {
-			return this.policyId;
+		public Integer getDone() {
+			return this.done;
 		}
 
-		public void setPolicyId(String policyId) {
-			this.policyId = policyId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getTemplate() {
-			return this.template;
-		}
-
-		public void setTemplate(String template) {
-			this.template = template;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
+		public void setDone(Integer done) {
+			this.done = done;
 		}
 
 		public Long getEndTime() {
@@ -123,12 +99,12 @@ public class DescribeSceneDefensePoliciesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Integer getDone() {
-			return this.done;
+		public Long getStartTime() {
+			return this.startTime;
 		}
 
-		public void setDone(Integer done) {
-			this.done = done;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getObjectCount() {
@@ -137,6 +113,30 @@ public class DescribeSceneDefensePoliciesResponse extends AcsResponse {
 
 		public void setObjectCount(Integer objectCount) {
 			this.objectCount = objectCount;
+		}
+
+		public String getTemplate() {
+			return this.template;
+		}
+
+		public void setTemplate(String template) {
+			this.template = template;
+		}
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<Policy1> getRuntimePolicies() {
@@ -149,21 +149,13 @@ public class DescribeSceneDefensePoliciesResponse extends AcsResponse {
 
 		public static class Policy1 {
 
-			private Integer policyType;
-
 			private Integer status;
 
 			private String oldValue;
 
 			private String newValue;
 
-			public Integer getPolicyType() {
-				return this.policyType;
-			}
-
-			public void setPolicyType(Integer policyType) {
-				this.policyType = policyType;
-			}
+			private Integer policyType;
 
 			public Integer getStatus() {
 				return this.status;
@@ -187,6 +179,14 @@ public class DescribeSceneDefensePoliciesResponse extends AcsResponse {
 
 			public void setNewValue(String newValue) {
 				this.newValue = newValue;
+			}
+
+			public Integer getPolicyType() {
+				return this.policyType;
+			}
+
+			public void setPolicyType(Integer policyType) {
+				this.policyType = policyType;
 			}
 		}
 	}

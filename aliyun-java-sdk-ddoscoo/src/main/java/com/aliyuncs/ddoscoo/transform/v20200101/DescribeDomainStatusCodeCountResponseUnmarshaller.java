@@ -23,30 +23,18 @@ public class DescribeDomainStatusCodeCountResponseUnmarshaller {
 	public static DescribeDomainStatusCodeCountResponse unmarshall(DescribeDomainStatusCodeCountResponse describeDomainStatusCodeCountResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainStatusCodeCountResponse.setRequestId(_ctx.stringValue("DescribeDomainStatusCodeCountResponse.RequestId"));
-		describeDomainStatusCodeCountResponse.setStatus2XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status2XX"));
-		describeDomainStatusCodeCountResponse.setStatus501(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status501"));
 		describeDomainStatusCodeCountResponse.setStatus502(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status502"));
+		describeDomainStatusCodeCountResponse.setStatus405(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status405"));
+		describeDomainStatusCodeCountResponse.setStatus3XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status3XX"));
 		describeDomainStatusCodeCountResponse.setStatus503(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status503"));
+		describeDomainStatusCodeCountResponse.setStatus4XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status4XX"));
+		describeDomainStatusCodeCountResponse.setStatus2XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status2XX"));
+		describeDomainStatusCodeCountResponse.setStatus5XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status5XX"));
 		describeDomainStatusCodeCountResponse.setStatus504(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status504"));
 		describeDomainStatusCodeCountResponse.setStatus200(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status200"));
-		describeDomainStatusCodeCountResponse.setStatus405(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status405"));
-		describeDomainStatusCodeCountResponse.setStatus5XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status5XX"));
-		describeDomainStatusCodeCountResponse.setStatus4XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status4XX"));
 		describeDomainStatusCodeCountResponse.setStatus403(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status403"));
 		describeDomainStatusCodeCountResponse.setStatus404(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status404"));
-		describeDomainStatusCodeCountResponse.setStatus3XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status3XX"));
-		describeDomainStatusCodeCountResponse.setStatus2XX1(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status2XX"));
-		describeDomainStatusCodeCountResponse.setStatus5012(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status501"));
-		describeDomainStatusCodeCountResponse.setStatus5023(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status502"));
-		describeDomainStatusCodeCountResponse.setStatus5034(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status503"));
-		describeDomainStatusCodeCountResponse.setStatus5045(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status504"));
-		describeDomainStatusCodeCountResponse.setStatus2006(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status200"));
-		describeDomainStatusCodeCountResponse.setStatus4057(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status405"));
-		describeDomainStatusCodeCountResponse.setStatus5XX8(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status5XX"));
-		describeDomainStatusCodeCountResponse.setStatus4XX9(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status4XX"));
-		describeDomainStatusCodeCountResponse.setStatus40310(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status403"));
-		describeDomainStatusCodeCountResponse.setStatus40411(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status404"));
-		describeDomainStatusCodeCountResponse.setStatus3XX12(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status3XX"));
+		describeDomainStatusCodeCountResponse.setStatus501(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status501"));
 	 
 	 	return describeDomainStatusCodeCountResponse;
 	}

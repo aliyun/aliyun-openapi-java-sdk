@@ -32,9 +32,9 @@ public class DescribeOpEntitiesResponseUnmarshaller {
 		List<OpEntity> opEntities = new ArrayList<OpEntity>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOpEntitiesResponse.OpEntities.Length"); i++) {
 			OpEntity opEntity = new OpEntity();
-			opEntity.setGmtCreate(_ctx.longValue("DescribeOpEntitiesResponse.OpEntities["+ i +"].GmtCreate"));
 			opEntity.setEntityType(_ctx.integerValue("DescribeOpEntitiesResponse.OpEntities["+ i +"].EntityType"));
 			opEntity.setEntityObject(_ctx.stringValue("DescribeOpEntitiesResponse.OpEntities["+ i +"].EntityObject"));
+			opEntity.setGmtCreate(_ctx.longValue("DescribeOpEntitiesResponse.OpEntities["+ i +"].GmtCreate"));
 			opEntity.setOpAction(_ctx.integerValue("DescribeOpEntitiesResponse.OpEntities["+ i +"].OpAction"));
 			opEntity.setOpAccount(_ctx.stringValue("DescribeOpEntitiesResponse.OpEntities["+ i +"].OpAccount"));
 			opEntity.setOpDesc(_ctx.stringValue("DescribeOpEntitiesResponse.OpEntities["+ i +"].OpDesc"));

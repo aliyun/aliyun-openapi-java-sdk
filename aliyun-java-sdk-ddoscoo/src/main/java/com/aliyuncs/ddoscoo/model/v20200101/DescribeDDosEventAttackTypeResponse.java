@@ -47,17 +47,9 @@ public class DescribeDDosEventAttackTypeResponse extends AcsResponse {
 
 	public static class EventAttackType {
 
-		private String attackType;
-
 		private Long inPkts;
 
-		public String getAttackType() {
-			return this.attackType;
-		}
-
-		public void setAttackType(String attackType) {
-			this.attackType = attackType;
-		}
+		private String attackType;
 
 		public Long getInPkts() {
 			return this.inPkts;
@@ -65,6 +57,14 @@ public class DescribeDDosEventAttackTypeResponse extends AcsResponse {
 
 		public void setInPkts(Long inPkts) {
 			this.inPkts = inPkts;
+		}
+
+		public String getAttackType() {
+			return this.attackType;
+		}
+
+		public void setAttackType(String attackType) {
+			this.attackType = attackType;
 		}
 	}
 

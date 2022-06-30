@@ -67,17 +67,19 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 
 		private String ccTemplate;
 
+		private String httpsExt;
+
 		private Boolean ccEnabled;
 
 		private String sslCiphers;
 
-		private Boolean ssl13Enabled;
-
 		private Boolean ccRuleEnabled;
 
-		private Boolean punishStatus;
+		private Boolean ssl13Enabled;
 
 		private Integer rsType;
+
+		private Boolean punishStatus;
 
 		private Boolean proxyEnabled;
 
@@ -91,19 +93,17 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 
 		private Boolean https2HttpEnable;
 
-		private String httpsExt;
-
 		private List<ProxyConfig> proxyTypes;
 
-		private List<String> blackList;
-
-		private List<String> whiteList;
+		private List<String> instanceIds;
 
 		private List<String> customCiphers;
 
-		private List<String> realServers;
+		private List<String> whiteList;
 
-		private List<String> instanceIds;
+		private List<String> blackList;
+
+		private List<String> realServers;
 
 		public String getDomain() {
 			return this.domain;
@@ -145,6 +145,14 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.ccTemplate = ccTemplate;
 		}
 
+		public String getHttpsExt() {
+			return this.httpsExt;
+		}
+
+		public void setHttpsExt(String httpsExt) {
+			this.httpsExt = httpsExt;
+		}
+
 		public Boolean getCcEnabled() {
 			return this.ccEnabled;
 		}
@@ -161,14 +169,6 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.sslCiphers = sslCiphers;
 		}
 
-		public Boolean getSsl13Enabled() {
-			return this.ssl13Enabled;
-		}
-
-		public void setSsl13Enabled(Boolean ssl13Enabled) {
-			this.ssl13Enabled = ssl13Enabled;
-		}
-
 		public Boolean getCcRuleEnabled() {
 			return this.ccRuleEnabled;
 		}
@@ -177,12 +177,12 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.ccRuleEnabled = ccRuleEnabled;
 		}
 
-		public Boolean getPunishStatus() {
-			return this.punishStatus;
+		public Boolean getSsl13Enabled() {
+			return this.ssl13Enabled;
 		}
 
-		public void setPunishStatus(Boolean punishStatus) {
-			this.punishStatus = punishStatus;
+		public void setSsl13Enabled(Boolean ssl13Enabled) {
+			this.ssl13Enabled = ssl13Enabled;
 		}
 
 		public Integer getRsType() {
@@ -191,6 +191,14 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 
 		public void setRsType(Integer rsType) {
 			this.rsType = rsType;
+		}
+
+		public Boolean getPunishStatus() {
+			return this.punishStatus;
+		}
+
+		public void setPunishStatus(Boolean punishStatus) {
+			this.punishStatus = punishStatus;
 		}
 
 		public Boolean getProxyEnabled() {
@@ -241,14 +249,6 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.https2HttpEnable = https2HttpEnable;
 		}
 
-		public String getHttpsExt() {
-			return this.httpsExt;
-		}
-
-		public void setHttpsExt(String httpsExt) {
-			this.httpsExt = httpsExt;
-		}
-
 		public List<ProxyConfig> getProxyTypes() {
 			return this.proxyTypes;
 		}
@@ -257,20 +257,12 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.proxyTypes = proxyTypes;
 		}
 
-		public List<String> getBlackList() {
-			return this.blackList;
+		public List<String> getInstanceIds() {
+			return this.instanceIds;
 		}
 
-		public void setBlackList(List<String> blackList) {
-			this.blackList = blackList;
-		}
-
-		public List<String> getWhiteList() {
-			return this.whiteList;
-		}
-
-		public void setWhiteList(List<String> whiteList) {
-			this.whiteList = whiteList;
+		public void setInstanceIds(List<String> instanceIds) {
+			this.instanceIds = instanceIds;
 		}
 
 		public List<String> getCustomCiphers() {
@@ -281,20 +273,28 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.customCiphers = customCiphers;
 		}
 
+		public List<String> getWhiteList() {
+			return this.whiteList;
+		}
+
+		public void setWhiteList(List<String> whiteList) {
+			this.whiteList = whiteList;
+		}
+
+		public List<String> getBlackList() {
+			return this.blackList;
+		}
+
+		public void setBlackList(List<String> blackList) {
+			this.blackList = blackList;
+		}
+
 		public List<String> getRealServers() {
 			return this.realServers;
 		}
 
 		public void setRealServers(List<String> realServers) {
 			this.realServers = realServers;
-		}
-
-		public List<String> getInstanceIds() {
-			return this.instanceIds;
-		}
-
-		public void setInstanceIds(List<String> instanceIds) {
-			this.instanceIds = instanceIds;
 		}
 
 		public static class ProxyConfig {

@@ -47,35 +47,27 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 	public static class InstanceSpec {
 
-		private String instanceId;
-
 		private Integer baseBandwidth;
-
-		private Integer elasticBandwidth;
-
-		private Integer portLimit;
-
-		private Integer siteLimit;
-
-		private Integer domainLimit;
-
-		private Integer bandwidthMbps;
-
-		private Integer defenseCount;
-
-		private String functionVersion;
 
 		private Integer qpsLimit;
 
+		private Integer bandwidthMbps;
+
 		private Integer elasticBw;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private Integer defenseCount;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private Integer siteLimit;
+
+		private Integer portLimit;
+
+		private Integer elasticBandwidth;
+
+		private String functionVersion;
+
+		private String instanceId;
+
+		private Integer domainLimit;
 
 		public Integer getBaseBandwidth() {
 			return this.baseBandwidth;
@@ -83,62 +75,6 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		public void setBaseBandwidth(Integer baseBandwidth) {
 			this.baseBandwidth = baseBandwidth;
-		}
-
-		public Integer getElasticBandwidth() {
-			return this.elasticBandwidth;
-		}
-
-		public void setElasticBandwidth(Integer elasticBandwidth) {
-			this.elasticBandwidth = elasticBandwidth;
-		}
-
-		public Integer getPortLimit() {
-			return this.portLimit;
-		}
-
-		public void setPortLimit(Integer portLimit) {
-			this.portLimit = portLimit;
-		}
-
-		public Integer getSiteLimit() {
-			return this.siteLimit;
-		}
-
-		public void setSiteLimit(Integer siteLimit) {
-			this.siteLimit = siteLimit;
-		}
-
-		public Integer getDomainLimit() {
-			return this.domainLimit;
-		}
-
-		public void setDomainLimit(Integer domainLimit) {
-			this.domainLimit = domainLimit;
-		}
-
-		public Integer getBandwidthMbps() {
-			return this.bandwidthMbps;
-		}
-
-		public void setBandwidthMbps(Integer bandwidthMbps) {
-			this.bandwidthMbps = bandwidthMbps;
-		}
-
-		public Integer getDefenseCount() {
-			return this.defenseCount;
-		}
-
-		public void setDefenseCount(Integer defenseCount) {
-			this.defenseCount = defenseCount;
-		}
-
-		public String getFunctionVersion() {
-			return this.functionVersion;
-		}
-
-		public void setFunctionVersion(String functionVersion) {
-			this.functionVersion = functionVersion;
 		}
 
 		public Integer getQpsLimit() {
@@ -149,12 +85,76 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 			this.qpsLimit = qpsLimit;
 		}
 
+		public Integer getBandwidthMbps() {
+			return this.bandwidthMbps;
+		}
+
+		public void setBandwidthMbps(Integer bandwidthMbps) {
+			this.bandwidthMbps = bandwidthMbps;
+		}
+
 		public Integer getElasticBw() {
 			return this.elasticBw;
 		}
 
 		public void setElasticBw(Integer elasticBw) {
 			this.elasticBw = elasticBw;
+		}
+
+		public Integer getDefenseCount() {
+			return this.defenseCount;
+		}
+
+		public void setDefenseCount(Integer defenseCount) {
+			this.defenseCount = defenseCount;
+		}
+
+		public Integer getSiteLimit() {
+			return this.siteLimit;
+		}
+
+		public void setSiteLimit(Integer siteLimit) {
+			this.siteLimit = siteLimit;
+		}
+
+		public Integer getPortLimit() {
+			return this.portLimit;
+		}
+
+		public void setPortLimit(Integer portLimit) {
+			this.portLimit = portLimit;
+		}
+
+		public Integer getElasticBandwidth() {
+			return this.elasticBandwidth;
+		}
+
+		public void setElasticBandwidth(Integer elasticBandwidth) {
+			this.elasticBandwidth = elasticBandwidth;
+		}
+
+		public String getFunctionVersion() {
+			return this.functionVersion;
+		}
+
+		public void setFunctionVersion(String functionVersion) {
+			this.functionVersion = functionVersion;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getDomainLimit() {
+			return this.domainLimit;
+		}
+
+		public void setDomainLimit(Integer domainLimit) {
+			this.domainLimit = domainLimit;
 		}
 	}
 

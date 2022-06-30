@@ -46,19 +46,13 @@ public class DescribeDefenseCountStatisticsResponse extends AcsResponse {
 
 	public static class DefenseCountStatistics {
 
-		private Integer defenseCountTotalUsageOfCurrentMonth;
-
 		private Integer flowPackCountRemain;
 
 		private Integer maxUsableDefenseCountCurrentMonth;
 
-		public Integer getDefenseCountTotalUsageOfCurrentMonth() {
-			return this.defenseCountTotalUsageOfCurrentMonth;
-		}
+		private Integer defenseCountTotalUsageOfCurrentMonth;
 
-		public void setDefenseCountTotalUsageOfCurrentMonth(Integer defenseCountTotalUsageOfCurrentMonth) {
-			this.defenseCountTotalUsageOfCurrentMonth = defenseCountTotalUsageOfCurrentMonth;
-		}
+		private Integer secHighSpeedCountRemain;
 
 		public Integer getFlowPackCountRemain() {
 			return this.flowPackCountRemain;
@@ -74,6 +68,22 @@ public class DescribeDefenseCountStatisticsResponse extends AcsResponse {
 
 		public void setMaxUsableDefenseCountCurrentMonth(Integer maxUsableDefenseCountCurrentMonth) {
 			this.maxUsableDefenseCountCurrentMonth = maxUsableDefenseCountCurrentMonth;
+		}
+
+		public Integer getDefenseCountTotalUsageOfCurrentMonth() {
+			return this.defenseCountTotalUsageOfCurrentMonth;
+		}
+
+		public void setDefenseCountTotalUsageOfCurrentMonth(Integer defenseCountTotalUsageOfCurrentMonth) {
+			this.defenseCountTotalUsageOfCurrentMonth = defenseCountTotalUsageOfCurrentMonth;
+		}
+
+		public Integer getSecHighSpeedCountRemain() {
+			return this.secHighSpeedCountRemain;
+		}
+
+		public void setSecHighSpeedCountRemain(Integer secHighSpeedCountRemain) {
+			this.secHighSpeedCountRemain = secHighSpeedCountRemain;
 		}
 	}
 

@@ -32,19 +32,19 @@ public class DescribeHealthCheckListResponseUnmarshaller {
 		List<HealthCheckItem> healthCheckList = new ArrayList<HealthCheckItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHealthCheckListResponse.HealthCheckList.Length"); i++) {
 			HealthCheckItem healthCheckItem = new HealthCheckItem();
+			healthCheckItem.setFrontendPort(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].FrontendPort"));
 			healthCheckItem.setInstanceId(_ctx.stringValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].InstanceId"));
 			healthCheckItem.setBizProtocol(_ctx.stringValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].Protocol"));
-			healthCheckItem.setFrontendPort(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].FrontendPort"));
 
 			HealthCheck healthCheck = new HealthCheck();
+			healthCheck.setTimeout(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Timeout"));
 			healthCheck.setType(_ctx.stringValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Type"));
 			healthCheck.setDomain(_ctx.stringValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Domain"));
-			healthCheck.setUri(_ctx.stringValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Uri"));
-			healthCheck.setDown(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Down"));
 			healthCheck.setInterval(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Interval"));
-			healthCheck.setPort(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Port"));
-			healthCheck.setTimeout(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Timeout"));
 			healthCheck.setUp(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Up"));
+			healthCheck.setDown(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Down"));
+			healthCheck.setPort(_ctx.integerValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Port"));
+			healthCheck.setUri(_ctx.stringValue("DescribeHealthCheckListResponse.HealthCheckList["+ i +"].HealthCheck.Uri"));
 			healthCheckItem.setHealthCheck(healthCheck);
 
 			healthCheckList.add(healthCheckItem);

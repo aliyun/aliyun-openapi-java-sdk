@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeOpEntitiesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<OpEntity> opEntities;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeOpEntitiesResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<OpEntity> getOpEntities() {
@@ -57,25 +57,17 @@ public class DescribeOpEntitiesResponse extends AcsResponse {
 
 	public static class OpEntity {
 
-		private Long gmtCreate;
-
 		private Integer entityType;
 
 		private String entityObject;
+
+		private Long gmtCreate;
 
 		private Integer opAction;
 
 		private String opAccount;
 
 		private String opDesc;
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
 
 		public Integer getEntityType() {
 			return this.entityType;
@@ -91,6 +83,14 @@ public class DescribeOpEntitiesResponse extends AcsResponse {
 
 		public void setEntityObject(String entityObject) {
 			this.entityObject = entityObject;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public Integer getOpAction() {

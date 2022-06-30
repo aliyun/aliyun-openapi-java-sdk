@@ -37,8 +37,8 @@ public class DescribeWebAreaBlockConfigsResponseUnmarshaller {
 			List<Region> regionList = new ArrayList<Region>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeWebAreaBlockConfigsResponse.AreaBlockConfigs["+ i +"].RegionList.Length"); j++) {
 				Region region = new Region();
-				region.setBlock(_ctx.integerValue("DescribeWebAreaBlockConfigsResponse.AreaBlockConfigs["+ i +"].RegionList["+ j +"].Block"));
 				region.setRegion(_ctx.stringValue("DescribeWebAreaBlockConfigsResponse.AreaBlockConfigs["+ i +"].RegionList["+ j +"].Region"));
+				region.setBlock(_ctx.integerValue("DescribeWebAreaBlockConfigsResponse.AreaBlockConfigs["+ i +"].RegionList["+ j +"].Block"));
 
 				regionList.add(region);
 			}

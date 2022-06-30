@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSceneDefenseObjectsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Object> objects;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeSceneDefenseObjectsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Object> getObjects() {
@@ -57,19 +57,11 @@ public class DescribeSceneDefenseObjectsResponse extends AcsResponse {
 
 	public static class Object {
 
-		private String policyId;
-
 		private String domain;
 
+		private String policyId;
+
 		private String vip;
-
-		public String getPolicyId() {
-			return this.policyId;
-		}
-
-		public void setPolicyId(String policyId) {
-			this.policyId = policyId;
-		}
 
 		public String getDomain() {
 			return this.domain;
@@ -77,6 +69,14 @@ public class DescribeSceneDefenseObjectsResponse extends AcsResponse {
 
 		public void setDomain(String domain) {
 			this.domain = domain;
+		}
+
+		public String getPolicyId() {
+			return this.policyId;
+		}
+
+		public void setPolicyId(String policyId) {
+			this.policyId = policyId;
 		}
 
 		public String getVip() {

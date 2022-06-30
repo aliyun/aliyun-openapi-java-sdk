@@ -32,16 +32,16 @@ public class DescribeHealthCheckStatusResponseUnmarshaller {
 		List<Status> healthCheckStatus = new ArrayList<Status>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHealthCheckStatusResponse.HealthCheckStatus.Length"); i++) {
 			Status status = new Status();
+			status.setStatus(_ctx.stringValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].Status"));
+			status.setFrontendPort(_ctx.integerValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].FrontendPort"));
 			status.setInstanceId(_ctx.stringValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].InstanceId"));
 			status.setBizProtocol(_ctx.stringValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].Protocol"));
-			status.setFrontendPort(_ctx.integerValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].FrontendPort"));
-			status.setStatus(_ctx.stringValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].Status"));
 
 			List<RealServerStatus> realServerStatusList = new ArrayList<RealServerStatus>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].RealServerStatusList.Length"); j++) {
 				RealServerStatus realServerStatus = new RealServerStatus();
-				realServerStatus.setAddress(_ctx.stringValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].RealServerStatusList["+ j +"].Address"));
 				realServerStatus.setStatus(_ctx.stringValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].RealServerStatusList["+ j +"].Status"));
+				realServerStatus.setAddress(_ctx.stringValue("DescribeHealthCheckStatusResponse.HealthCheckStatus["+ i +"].RealServerStatusList["+ j +"].Address"));
 
 				realServerStatusList.add(realServerStatus);
 			}

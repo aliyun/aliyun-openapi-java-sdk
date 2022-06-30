@@ -47,19 +47,11 @@ public class DescribePortMaxConnsResponse extends AcsResponse {
 
 	public static class PortMaxConnsItem {
 
-		private String port;
-
 		private String ip;
 
+		private String port;
+
 		private Long cps;
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
 
 		public String getIp() {
 			return this.ip;
@@ -67,6 +59,14 @@ public class DescribePortMaxConnsResponse extends AcsResponse {
 
 		public void setIp(String ip) {
 			this.ip = ip;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
 		}
 
 		public Long getCps() {

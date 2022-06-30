@@ -32,12 +32,12 @@ public class DescribeDefenseRecordsResponseUnmarshaller {
 		List<DefenseRecord> defenseRecords = new ArrayList<DefenseRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDefenseRecordsResponse.DefenseRecords.Length"); i++) {
 			DefenseRecord defenseRecord = new DefenseRecord();
-			defenseRecord.setStartTime(_ctx.longValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].StartTime"));
 			defenseRecord.setEndTime(_ctx.longValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].EndTime"));
-			defenseRecord.setInstanceId(_ctx.stringValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].InstanceId"));
 			defenseRecord.setStatus(_ctx.integerValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].Status"));
-			defenseRecord.setAttackPeak(_ctx.longValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].AttackPeak"));
+			defenseRecord.setStartTime(_ctx.longValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].StartTime"));
 			defenseRecord.setEventCount(_ctx.integerValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].EventCount"));
+			defenseRecord.setInstanceId(_ctx.stringValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].InstanceId"));
+			defenseRecord.setAttackPeak(_ctx.longValue("DescribeDefenseRecordsResponse.DefenseRecords["+ i +"].AttackPeak"));
 
 			defenseRecords.add(defenseRecord);
 		}

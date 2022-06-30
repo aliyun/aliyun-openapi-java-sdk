@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeWebRulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<WebRule> webRules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<WebRule> getWebRules() {
@@ -59,37 +59,37 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		private String domain;
 
-		private Boolean ccEnabled;
-
-		private Boolean ccRuleEnabled;
-
-		private String ccTemplate;
+		private Boolean http2HttpsEnable;
 
 		private String sslProtocols;
 
+		private Integer punishReason;
+
+		private String ccTemplate;
+
+		private Boolean ccEnabled;
+
 		private String sslCiphers;
-
-		private Boolean http2Enable;
-
-		private Boolean ocspEnabled;
-
-		private Boolean http2HttpsEnable;
-
-		private Boolean https2HttpEnable;
-
-		private String policyMode;
-
-		private Boolean proxyEnabled;
 
 		private Boolean ssl13Enabled;
 
+		private Boolean ccRuleEnabled;
+
+		private Boolean ocspEnabled;
+
 		private Boolean punishStatus;
 
-		private Integer punishReason;
+		private Boolean proxyEnabled;
+
+		private String certName;
+
+		private String policyMode;
 
 		private String cname;
 
-		private String certName;
+		private Boolean http2Enable;
+
+		private Boolean https2HttpEnable;
 
 		private List<ProxyConfig> proxyTypes;
 
@@ -101,68 +101,14 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		private List<String> customCiphers;
 
+		private GmCert gmCert;
+
 		public String getDomain() {
 			return this.domain;
 		}
 
 		public void setDomain(String domain) {
 			this.domain = domain;
-		}
-
-		public Boolean getCcEnabled() {
-			return this.ccEnabled;
-		}
-
-		public void setCcEnabled(Boolean ccEnabled) {
-			this.ccEnabled = ccEnabled;
-		}
-
-		public Boolean getCcRuleEnabled() {
-			return this.ccRuleEnabled;
-		}
-
-		public void setCcRuleEnabled(Boolean ccRuleEnabled) {
-			this.ccRuleEnabled = ccRuleEnabled;
-		}
-
-		public String getCcTemplate() {
-			return this.ccTemplate;
-		}
-
-		public void setCcTemplate(String ccTemplate) {
-			this.ccTemplate = ccTemplate;
-		}
-
-		public String getSslProtocols() {
-			return this.sslProtocols;
-		}
-
-		public void setSslProtocols(String sslProtocols) {
-			this.sslProtocols = sslProtocols;
-		}
-
-		public String getSslCiphers() {
-			return this.sslCiphers;
-		}
-
-		public void setSslCiphers(String sslCiphers) {
-			this.sslCiphers = sslCiphers;
-		}
-
-		public Boolean getHttp2Enable() {
-			return this.http2Enable;
-		}
-
-		public void setHttp2Enable(Boolean http2Enable) {
-			this.http2Enable = http2Enable;
-		}
-
-		public Boolean getOcspEnabled() {
-			return this.ocspEnabled;
-		}
-
-		public void setOcspEnabled(Boolean ocspEnabled) {
-			this.ocspEnabled = ocspEnabled;
 		}
 
 		public Boolean getHttp2HttpsEnable() {
@@ -173,44 +119,12 @@ public class DescribeWebRulesResponse extends AcsResponse {
 			this.http2HttpsEnable = http2HttpsEnable;
 		}
 
-		public Boolean getHttps2HttpEnable() {
-			return this.https2HttpEnable;
+		public String getSslProtocols() {
+			return this.sslProtocols;
 		}
 
-		public void setHttps2HttpEnable(Boolean https2HttpEnable) {
-			this.https2HttpEnable = https2HttpEnable;
-		}
-
-		public String getPolicyMode() {
-			return this.policyMode;
-		}
-
-		public void setPolicyMode(String policyMode) {
-			this.policyMode = policyMode;
-		}
-
-		public Boolean getProxyEnabled() {
-			return this.proxyEnabled;
-		}
-
-		public void setProxyEnabled(Boolean proxyEnabled) {
-			this.proxyEnabled = proxyEnabled;
-		}
-
-		public Boolean getSsl13Enabled() {
-			return this.ssl13Enabled;
-		}
-
-		public void setSsl13Enabled(Boolean ssl13Enabled) {
-			this.ssl13Enabled = ssl13Enabled;
-		}
-
-		public Boolean getPunishStatus() {
-			return this.punishStatus;
-		}
-
-		public void setPunishStatus(Boolean punishStatus) {
-			this.punishStatus = punishStatus;
+		public void setSslProtocols(String sslProtocols) {
+			this.sslProtocols = sslProtocols;
 		}
 
 		public Integer getPunishReason() {
@@ -221,12 +135,68 @@ public class DescribeWebRulesResponse extends AcsResponse {
 			this.punishReason = punishReason;
 		}
 
-		public String getCname() {
-			return this.cname;
+		public String getCcTemplate() {
+			return this.ccTemplate;
 		}
 
-		public void setCname(String cname) {
-			this.cname = cname;
+		public void setCcTemplate(String ccTemplate) {
+			this.ccTemplate = ccTemplate;
+		}
+
+		public Boolean getCcEnabled() {
+			return this.ccEnabled;
+		}
+
+		public void setCcEnabled(Boolean ccEnabled) {
+			this.ccEnabled = ccEnabled;
+		}
+
+		public String getSslCiphers() {
+			return this.sslCiphers;
+		}
+
+		public void setSslCiphers(String sslCiphers) {
+			this.sslCiphers = sslCiphers;
+		}
+
+		public Boolean getSsl13Enabled() {
+			return this.ssl13Enabled;
+		}
+
+		public void setSsl13Enabled(Boolean ssl13Enabled) {
+			this.ssl13Enabled = ssl13Enabled;
+		}
+
+		public Boolean getCcRuleEnabled() {
+			return this.ccRuleEnabled;
+		}
+
+		public void setCcRuleEnabled(Boolean ccRuleEnabled) {
+			this.ccRuleEnabled = ccRuleEnabled;
+		}
+
+		public Boolean getOcspEnabled() {
+			return this.ocspEnabled;
+		}
+
+		public void setOcspEnabled(Boolean ocspEnabled) {
+			this.ocspEnabled = ocspEnabled;
+		}
+
+		public Boolean getPunishStatus() {
+			return this.punishStatus;
+		}
+
+		public void setPunishStatus(Boolean punishStatus) {
+			this.punishStatus = punishStatus;
+		}
+
+		public Boolean getProxyEnabled() {
+			return this.proxyEnabled;
+		}
+
+		public void setProxyEnabled(Boolean proxyEnabled) {
+			this.proxyEnabled = proxyEnabled;
 		}
 
 		public String getCertName() {
@@ -235,6 +205,38 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		public void setCertName(String certName) {
 			this.certName = certName;
+		}
+
+		public String getPolicyMode() {
+			return this.policyMode;
+		}
+
+		public void setPolicyMode(String policyMode) {
+			this.policyMode = policyMode;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public Boolean getHttp2Enable() {
+			return this.http2Enable;
+		}
+
+		public void setHttp2Enable(Boolean http2Enable) {
+			this.http2Enable = http2Enable;
+		}
+
+		public Boolean getHttps2HttpEnable() {
+			return this.https2HttpEnable;
+		}
+
+		public void setHttps2HttpEnable(Boolean https2HttpEnable) {
+			this.https2HttpEnable = https2HttpEnable;
 		}
 
 		public List<ProxyConfig> getProxyTypes() {
@@ -275,6 +277,14 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		public void setCustomCiphers(List<String> customCiphers) {
 			this.customCiphers = customCiphers;
+		}
+
+		public GmCert getGmCert() {
+			return this.gmCert;
+		}
+
+		public void setGmCert(GmCert gmCert) {
+			this.gmCert = gmCert;
 		}
 
 		public static class ProxyConfig {
@@ -320,6 +330,39 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 			public void setRealServer(String realServer) {
 				this.realServer = realServer;
+			}
+		}
+
+		public static class GmCert {
+
+			private String certId;
+
+			private Long gmEnable;
+
+			private Long gmOnly;
+
+			public String getCertId() {
+				return this.certId;
+			}
+
+			public void setCertId(String certId) {
+				this.certId = certId;
+			}
+
+			public Long getGmEnable() {
+				return this.gmEnable;
+			}
+
+			public void setGmEnable(Long gmEnable) {
+				this.gmEnable = gmEnable;
+			}
+
+			public Long getGmOnly() {
+				return this.gmOnly;
+			}
+
+			public void setGmOnly(Long gmOnly) {
+				this.gmOnly = gmOnly;
 			}
 		}
 	}

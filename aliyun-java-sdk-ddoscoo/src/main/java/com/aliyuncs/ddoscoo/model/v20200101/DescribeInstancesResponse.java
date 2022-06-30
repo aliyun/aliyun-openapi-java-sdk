@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<Instance> instances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Instance> getInstances() {
@@ -57,43 +57,27 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
-		private String remark;
-
 		private Integer status;
-
-		private Integer debtStatus;
-
-		private Long expireTime;
-
-		private Long createTime;
-
-		private Integer edition;
-
-		private Integer enabled;
-
-		private String connInstanceId;
-
-		private String ipVersion;
 
 		private String ipMode;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private Integer debtStatus;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private Integer edition;
 
-		public String getRemark() {
-			return this.remark;
-		}
+		private String ipVersion;
 
-		public void setRemark(String remark) {
-			this.remark = remark;
-		}
+		private Long expireTime;
+
+		private String remark;
+
+		private Long createTime;
+
+		private Integer enabled;
+
+		private String instanceId;
+
+		private String connInstanceId;
 
 		public Integer getStatus() {
 			return this.status;
@@ -101,6 +85,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public String getIpMode() {
+			return this.ipMode;
+		}
+
+		public void setIpMode(String ipMode) {
+			this.ipMode = ipMode;
 		}
 
 		public Integer getDebtStatus() {
@@ -111,44 +103,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.debtStatus = debtStatus;
 		}
 
-		public Long getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(Long expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
 		public Integer getEdition() {
 			return this.edition;
 		}
 
 		public void setEdition(Integer edition) {
 			this.edition = edition;
-		}
-
-		public Integer getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Integer enabled) {
-			this.enabled = enabled;
-		}
-
-		public String getConnInstanceId() {
-			return this.connInstanceId;
-		}
-
-		public void setConnInstanceId(String connInstanceId) {
-			this.connInstanceId = connInstanceId;
 		}
 
 		public String getIpVersion() {
@@ -159,12 +119,52 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.ipVersion = ipVersion;
 		}
 
-		public String getIpMode() {
-			return this.ipMode;
+		public Long getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setIpMode(String ipMode) {
-			this.ipMode = ipMode;
+		public void setExpireTime(Long expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Integer getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Integer enabled) {
+			this.enabled = enabled;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getConnInstanceId() {
+			return this.connInstanceId;
+		}
+
+		public void setConnInstanceId(String connInstanceId) {
+			this.connInstanceId = connInstanceId;
 		}
 	}
 

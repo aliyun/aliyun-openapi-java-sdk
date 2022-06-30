@@ -32,15 +32,15 @@ public class DescribeDDosAllEventListResponseUnmarshaller {
 		List<AttackEvent> attackEvents = new ArrayList<AttackEvent>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDDosAllEventListResponse.AttackEvents.Length"); i++) {
 			AttackEvent attackEvent = new AttackEvent();
-			attackEvent.setPps(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Pps"));
-			attackEvent.setEventType(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].EventType"));
-			attackEvent.setPort(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Port"));
-			attackEvent.setIp(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Ip"));
-			attackEvent.setStartTime(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].StartTime"));
 			attackEvent.setEndTime(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].EndTime"));
-			attackEvent.setMbps(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Mbps"));
+			attackEvent.setStartTime(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].StartTime"));
+			attackEvent.setEventType(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].EventType"));
 			attackEvent.setRegion(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Region"));
+			attackEvent.setMbps(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Mbps"));
+			attackEvent.setIp(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Ip"));
 			attackEvent.setArea(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Area"));
+			attackEvent.setPort(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Port"));
+			attackEvent.setPps(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Pps"));
 
 			attackEvents.add(attackEvent);
 		}

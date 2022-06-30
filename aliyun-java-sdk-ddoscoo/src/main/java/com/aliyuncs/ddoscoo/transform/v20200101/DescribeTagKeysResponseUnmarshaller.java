@@ -34,8 +34,8 @@ public class DescribeTagKeysResponseUnmarshaller {
 		List<TagKey> tagKeys = new ArrayList<TagKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTagKeysResponse.TagKeys.Length"); i++) {
 			TagKey tagKey = new TagKey();
-			tagKey.setTagKey(_ctx.stringValue("DescribeTagKeysResponse.TagKeys["+ i +"].TagKey"));
 			tagKey.setTagCount(_ctx.integerValue("DescribeTagKeysResponse.TagKeys["+ i +"].TagCount"));
+			tagKey.setTagKey(_ctx.stringValue("DescribeTagKeysResponse.TagKeys["+ i +"].TagKey"));
 
 			tagKeys.add(tagKey);
 		}

@@ -32,10 +32,10 @@ public class DescribeAutoCcBlacklistResponseUnmarshaller {
 		List<AutoCcBlacklistItem> autoCcBlacklist = new ArrayList<AutoCcBlacklistItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAutoCcBlacklistResponse.AutoCcBlacklist.Length"); i++) {
 			AutoCcBlacklistItem autoCcBlacklistItem = new AutoCcBlacklistItem();
-			autoCcBlacklistItem.setDestIp(_ctx.stringValue("DescribeAutoCcBlacklistResponse.AutoCcBlacklist["+ i +"].DestIp"));
-			autoCcBlacklistItem.setSourceIp(_ctx.stringValue("DescribeAutoCcBlacklistResponse.AutoCcBlacklist["+ i +"].SourceIp"));
-			autoCcBlacklistItem.setEndTime(_ctx.longValue("DescribeAutoCcBlacklistResponse.AutoCcBlacklist["+ i +"].EndTime"));
 			autoCcBlacklistItem.setType(_ctx.stringValue("DescribeAutoCcBlacklistResponse.AutoCcBlacklist["+ i +"].Type"));
+			autoCcBlacklistItem.setDestIp(_ctx.stringValue("DescribeAutoCcBlacklistResponse.AutoCcBlacklist["+ i +"].DestIp"));
+			autoCcBlacklistItem.setEndTime(_ctx.longValue("DescribeAutoCcBlacklistResponse.AutoCcBlacklist["+ i +"].EndTime"));
+			autoCcBlacklistItem.setSourceIp(_ctx.stringValue("DescribeAutoCcBlacklistResponse.AutoCcBlacklist["+ i +"].SourceIp"));
 
 			autoCcBlacklist.add(autoCcBlacklistItem);
 		}

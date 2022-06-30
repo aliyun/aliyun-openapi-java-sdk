@@ -1,3 +1,6 @@
+2022-06-30 Version: 1.0.5
+- Update sdk.
+
 2021-11-15 Version: 1.0.4
 - Generated 2020-01-01 for `ddoscoo`.
 

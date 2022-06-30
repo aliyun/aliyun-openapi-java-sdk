@@ -31,8 +31,8 @@ public class DescribeDomainViewSourceProvincesResponseUnmarshaller {
 		List<Province> sourceProvinces = new ArrayList<Province>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainViewSourceProvincesResponse.SourceProvinces.Length"); i++) {
 			Province province = new Province();
-			province.setCount(_ctx.longValue("DescribeDomainViewSourceProvincesResponse.SourceProvinces["+ i +"].Count"));
 			province.setProvinceId(_ctx.stringValue("DescribeDomainViewSourceProvincesResponse.SourceProvinces["+ i +"].ProvinceId"));
+			province.setCount(_ctx.longValue("DescribeDomainViewSourceProvincesResponse.SourceProvinces["+ i +"].Count"));
 
 			sourceProvinces.add(province);
 		}

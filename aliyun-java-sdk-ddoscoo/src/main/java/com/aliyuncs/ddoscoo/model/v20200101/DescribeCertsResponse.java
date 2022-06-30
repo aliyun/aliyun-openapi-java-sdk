@@ -47,26 +47,50 @@ public class DescribeCertsResponse extends AcsResponse {
 
 	public static class CertItem {
 
-		private Integer id;
+		private String endDate;
+
+		private Boolean domainRelated;
+
+		private String startDate;
+
+		private String issuer;
 
 		private String name;
 
 		private String common;
 
-		private String issuer;
+		private Integer id;
 
-		private String startDate;
-
-		private String endDate;
-
-		private Boolean domainRelated;
-
-		public Integer getId() {
-			return this.id;
+		public String getEndDate() {
+			return this.endDate;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
+		}
+
+		public Boolean getDomainRelated() {
+			return this.domainRelated;
+		}
+
+		public void setDomainRelated(Boolean domainRelated) {
+			this.domainRelated = domainRelated;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public String getIssuer() {
+			return this.issuer;
+		}
+
+		public void setIssuer(String issuer) {
+			this.issuer = issuer;
 		}
 
 		public String getName() {
@@ -85,36 +109,12 @@ public class DescribeCertsResponse extends AcsResponse {
 			this.common = common;
 		}
 
-		public String getIssuer() {
-			return this.issuer;
+		public Integer getId() {
+			return this.id;
 		}
 
-		public void setIssuer(String issuer) {
-			this.issuer = issuer;
-		}
-
-		public String getStartDate() {
-			return this.startDate;
-		}
-
-		public void setStartDate(String startDate) {
-			this.startDate = startDate;
-		}
-
-		public String getEndDate() {
-			return this.endDate;
-		}
-
-		public void setEndDate(String endDate) {
-			this.endDate = endDate;
-		}
-
-		public Boolean getDomainRelated() {
-			return this.domainRelated;
-		}
-
-		public void setDomainRelated(Boolean domainRelated) {
-			this.domainRelated = domainRelated;
+		public void setId(Integer id) {
+			this.id = id;
 		}
 	}
 

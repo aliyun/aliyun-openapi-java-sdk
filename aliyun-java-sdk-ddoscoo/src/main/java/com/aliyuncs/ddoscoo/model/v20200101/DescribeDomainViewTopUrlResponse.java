@@ -47,18 +47,18 @@ public class DescribeDomainViewTopUrlResponse extends AcsResponse {
 
 	public static class Url {
 
-		private Long count;
+		private String url;
 
 		private String domain;
 
-		private String url;
+		private Long count;
 
-		public Long getCount() {
-			return this.count;
+		public String getUrl() {
+			return this.url;
 		}
 
-		public void setCount(Long count) {
-			this.count = count;
+		public void setUrl(String url) {
+			this.url = url;
 		}
 
 		public String getDomain() {
@@ -69,12 +69,12 @@ public class DescribeDomainViewTopUrlResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public String getUrl() {
-			return this.url;
+		public Long getCount() {
+			return this.count;
 		}
 
-		public void setUrl(String url) {
-			this.url = url;
+		public void setCount(Long count) {
+			this.count = count;
 		}
 	}
 

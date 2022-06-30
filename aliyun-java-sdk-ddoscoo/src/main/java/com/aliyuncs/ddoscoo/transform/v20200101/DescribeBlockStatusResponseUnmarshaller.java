@@ -37,9 +37,9 @@ public class DescribeBlockStatusResponseUnmarshaller {
 			List<BlockStatusItem> blockStatusList = new ArrayList<BlockStatusItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBlockStatusResponse.StatusList["+ i +"].BlockStatusList.Length"); j++) {
 				BlockStatusItem blockStatusItem = new BlockStatusItem();
+				blockStatusItem.setEndTime(_ctx.longValue("DescribeBlockStatusResponse.StatusList["+ i +"].BlockStatusList["+ j +"].EndTime"));
 				blockStatusItem.setStartTime(_ctx.longValue("DescribeBlockStatusResponse.StatusList["+ i +"].BlockStatusList["+ j +"].StartTime"));
 				blockStatusItem.setLine(_ctx.stringValue("DescribeBlockStatusResponse.StatusList["+ i +"].BlockStatusList["+ j +"].Line"));
-				blockStatusItem.setEndTime(_ctx.longValue("DescribeBlockStatusResponse.StatusList["+ i +"].BlockStatusList["+ j +"].EndTime"));
 				blockStatusItem.setBlockStatus(_ctx.stringValue("DescribeBlockStatusResponse.StatusList["+ i +"].BlockStatusList["+ j +"].BlockStatus"));
 
 				blockStatusList.add(blockStatusItem);

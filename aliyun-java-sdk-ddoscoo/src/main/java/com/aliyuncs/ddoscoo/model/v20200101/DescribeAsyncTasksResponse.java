@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAsyncTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<AsyncTask> asyncTasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeAsyncTasksResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AsyncTask> getAsyncTasks() {
@@ -57,27 +57,19 @@ public class DescribeAsyncTasksResponse extends AcsResponse {
 
 	public static class AsyncTask {
 
-		private Long taskId;
-
 		private Long endTime;
 
+		private Integer taskType;
+
 		private Long startTime;
+
+		private String taskParams;
 
 		private Integer taskStatus;
 
 		private String taskResult;
 
-		private String taskParams;
-
-		private Integer taskType;
-
-		public Long getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(Long taskId) {
-			this.taskId = taskId;
-		}
+		private Long taskId;
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -87,12 +79,28 @@ public class DescribeAsyncTasksResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
+		public Integer getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(Integer taskType) {
+			this.taskType = taskType;
+		}
+
 		public Long getStartTime() {
 			return this.startTime;
 		}
 
 		public void setStartTime(Long startTime) {
 			this.startTime = startTime;
+		}
+
+		public String getTaskParams() {
+			return this.taskParams;
+		}
+
+		public void setTaskParams(String taskParams) {
+			this.taskParams = taskParams;
 		}
 
 		public Integer getTaskStatus() {
@@ -111,20 +119,12 @@ public class DescribeAsyncTasksResponse extends AcsResponse {
 			this.taskResult = taskResult;
 		}
 
-		public String getTaskParams() {
-			return this.taskParams;
+		public Long getTaskId() {
+			return this.taskId;
 		}
 
-		public void setTaskParams(String taskParams) {
-			this.taskParams = taskParams;
-		}
-
-		public Integer getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(Integer taskType) {
-			this.taskType = taskType;
+		public void setTaskId(Long taskId) {
+			this.taskId = taskId;
 		}
 	}
 

@@ -26,9 +26,9 @@ public class DescribeDomainOverviewResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long maxHttps;
-
 	private Long maxHttp;
+
+	private Long maxHttps;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class DescribeDomainOverviewResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getMaxHttps() {
-		return this.maxHttps;
-	}
-
-	public void setMaxHttps(Long maxHttps) {
-		this.maxHttps = maxHttps;
-	}
-
 	public Long getMaxHttp() {
 		return this.maxHttp;
 	}
 
 	public void setMaxHttp(Long maxHttp) {
 		this.maxHttp = maxHttp;
+	}
+
+	public Long getMaxHttps() {
+		return this.maxHttps;
+	}
+
+	public void setMaxHttps(Long maxHttps) {
+		this.maxHttps = maxHttps;
 	}
 
 	@Override

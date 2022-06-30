@@ -69,15 +69,23 @@ public class DescribeWebPreciseAccessRuleResponse extends AcsResponse {
 
 		public static class Rule {
 
+			private String action;
+
 			private String owner;
 
 			private Long expires;
 
 			private String name;
 
-			private String action;
-
 			private List<Condition> conditionList;
+
+			public String getAction() {
+				return this.action;
+			}
+
+			public void setAction(String action) {
+				this.action = action;
+			}
 
 			public String getOwner() {
 				return this.owner;
@@ -103,14 +111,6 @@ public class DescribeWebPreciseAccessRuleResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getAction() {
-				return this.action;
-			}
-
-			public void setAction(String action) {
-				this.action = action;
-			}
-
 			public List<Condition> getConditionList() {
 				return this.conditionList;
 			}
@@ -125,9 +125,9 @@ public class DescribeWebPreciseAccessRuleResponse extends AcsResponse {
 
 				private String field;
 
-				private String headerName;
-
 				private String content;
+
+				private String headerName;
 
 				public String getMatchMethod() {
 					return this.matchMethod;
@@ -145,20 +145,20 @@ public class DescribeWebPreciseAccessRuleResponse extends AcsResponse {
 					this.field = field;
 				}
 
-				public String getHeaderName() {
-					return this.headerName;
-				}
-
-				public void setHeaderName(String headerName) {
-					this.headerName = headerName;
-				}
-
 				public String getContent() {
 					return this.content;
 				}
 
 				public void setContent(String content) {
 					this.content = content;
+				}
+
+				public String getHeaderName() {
+					return this.headerName;
+				}
+
+				public void setHeaderName(String headerName) {
+					this.headerName = headerName;
 				}
 			}
 		}

@@ -24,6 +24,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSlsLogstoreInfoResponse extends AcsResponse {
 
+	private Integer ttl;
+
 	private String requestId;
 
 	private Long quota;
@@ -34,7 +36,13 @@ public class DescribeSlsLogstoreInfoResponse extends AcsResponse {
 
 	private String project;
 
-	private Integer ttl;
+	public Integer getTtl() {
+		return this.ttl;
+	}
+
+	public void setTtl(Integer ttl) {
+		this.ttl = ttl;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -74,14 +82,6 @@ public class DescribeSlsLogstoreInfoResponse extends AcsResponse {
 
 	public void setProject(String project) {
 		this.project = project;
-	}
-
-	public Integer getTtl() {
-		return this.ttl;
-	}
-
-	public void setTtl(Integer ttl) {
-		this.ttl = ttl;
 	}
 
 	@Override

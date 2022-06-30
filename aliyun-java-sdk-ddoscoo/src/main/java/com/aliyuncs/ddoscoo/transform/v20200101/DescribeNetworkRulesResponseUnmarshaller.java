@@ -32,11 +32,11 @@ public class DescribeNetworkRulesResponseUnmarshaller {
 		List<NetworkRule> networkRules = new ArrayList<NetworkRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkRulesResponse.NetworkRules.Length"); i++) {
 			NetworkRule networkRule = new NetworkRule();
+			networkRule.setFrontendPort(_ctx.integerValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].FrontendPort"));
+			networkRule.setIsAutoCreate(_ctx.booleanValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].IsAutoCreate"));
 			networkRule.setInstanceId(_ctx.stringValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].InstanceId"));
 			networkRule.setBizProtocol(_ctx.stringValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].Protocol"));
-			networkRule.setFrontendPort(_ctx.integerValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].FrontendPort"));
 			networkRule.setBackendPort(_ctx.integerValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].BackendPort"));
-			networkRule.setIsAutoCreate(_ctx.booleanValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].IsAutoCreate"));
 
 			List<String> realServers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkRulesResponse.NetworkRules["+ i +"].RealServers.Length"); j++) {

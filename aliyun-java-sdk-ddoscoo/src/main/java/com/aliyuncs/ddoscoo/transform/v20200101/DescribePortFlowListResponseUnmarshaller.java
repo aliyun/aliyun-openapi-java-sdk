@@ -31,15 +31,15 @@ public class DescribePortFlowListResponseUnmarshaller {
 		List<PortFlow> portFlowList = new ArrayList<PortFlow>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePortFlowListResponse.PortFlowList.Length"); i++) {
 			PortFlow portFlow = new PortFlow();
-			portFlow.setAttackBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].AttackBps"));
-			portFlow.setAttackPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].AttackPps"));
-			portFlow.setOutPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].OutPps"));
 			portFlow.setIndex(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].Index"));
 			portFlow.setTime(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].Time"));
-			portFlow.setInBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].InBps"));
-			portFlow.setOutBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].OutBps"));
 			portFlow.setInPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].InPps"));
+			portFlow.setInBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].InBps"));
 			portFlow.setRegion(_ctx.stringValue("DescribePortFlowListResponse.PortFlowList["+ i +"].Region"));
+			portFlow.setOutPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].OutPps"));
+			portFlow.setAttackPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].AttackPps"));
+			portFlow.setOutBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].OutBps"));
+			portFlow.setAttackBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].AttackBps"));
 
 			portFlowList.add(portFlow);
 		}

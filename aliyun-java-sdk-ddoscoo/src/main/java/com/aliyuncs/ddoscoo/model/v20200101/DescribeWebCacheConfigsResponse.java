@@ -47,13 +47,21 @@ public class DescribeWebCacheConfigsResponse extends AcsResponse {
 
 	public static class CacheConfig {
 
+		private String domain;
+
 		private String mode;
 
 		private Integer enable;
 
-		private String domain;
-
 		private List<CustomRule> customRules;
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
 
 		public String getMode() {
 			return this.mode;
@@ -71,14 +79,6 @@ public class DescribeWebCacheConfigsResponse extends AcsResponse {
 			this.enable = enable;
 		}
 
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
 		public List<CustomRule> getCustomRules() {
 			return this.customRules;
 		}
@@ -91,9 +91,9 @@ public class DescribeWebCacheConfigsResponse extends AcsResponse {
 
 			private String mode;
 
-			private String name;
-
 			private Long cacheTtl;
+
+			private String name;
 
 			private String uri;
 
@@ -105,20 +105,20 @@ public class DescribeWebCacheConfigsResponse extends AcsResponse {
 				this.mode = mode;
 			}
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
 			public Long getCacheTtl() {
 				return this.cacheTtl;
 			}
 
 			public void setCacheTtl(Long cacheTtl) {
 				this.cacheTtl = cacheTtl;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getUri() {

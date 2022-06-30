@@ -31,11 +31,11 @@ public class DescribeInstanceStatisticsResponseUnmarshaller {
 		List<InstanceStatistic> instanceStatistics = new ArrayList<InstanceStatistic>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceStatisticsResponse.InstanceStatistics.Length"); i++) {
 			InstanceStatistic instanceStatistic = new InstanceStatistic();
-			instanceStatistic.setInstanceId(_ctx.stringValue("DescribeInstanceStatisticsResponse.InstanceStatistics["+ i +"].InstanceId"));
-			instanceStatistic.setPortUsage(_ctx.integerValue("DescribeInstanceStatisticsResponse.InstanceStatistics["+ i +"].PortUsage"));
 			instanceStatistic.setDomainUsage(_ctx.integerValue("DescribeInstanceStatisticsResponse.InstanceStatistics["+ i +"].DomainUsage"));
-			instanceStatistic.setSiteUsage(_ctx.integerValue("DescribeInstanceStatisticsResponse.InstanceStatistics["+ i +"].SiteUsage"));
 			instanceStatistic.setDefenseCountUsage(_ctx.integerValue("DescribeInstanceStatisticsResponse.InstanceStatistics["+ i +"].DefenseCountUsage"));
+			instanceStatistic.setInstanceId(_ctx.stringValue("DescribeInstanceStatisticsResponse.InstanceStatistics["+ i +"].InstanceId"));
+			instanceStatistic.setSiteUsage(_ctx.integerValue("DescribeInstanceStatisticsResponse.InstanceStatistics["+ i +"].SiteUsage"));
+			instanceStatistic.setPortUsage(_ctx.integerValue("DescribeInstanceStatisticsResponse.InstanceStatistics["+ i +"].PortUsage"));
 
 			instanceStatistics.add(instanceStatistic);
 		}

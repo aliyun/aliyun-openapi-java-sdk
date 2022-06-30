@@ -31,8 +31,8 @@ public class DescribePortViewSourceIspsResponseUnmarshaller {
 		List<Isp> isps = new ArrayList<Isp>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePortViewSourceIspsResponse.Isps.Length"); i++) {
 			Isp isp = new Isp();
-			isp.setIspId(_ctx.stringValue("DescribePortViewSourceIspsResponse.Isps["+ i +"].IspId"));
 			isp.setCount(_ctx.longValue("DescribePortViewSourceIspsResponse.Isps["+ i +"].Count"));
+			isp.setIspId(_ctx.stringValue("DescribePortViewSourceIspsResponse.Isps["+ i +"].IspId"));
 
 			isps.add(isp);
 		}

@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDDosEventMaxResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long mbps;
-
 	private Long qps;
+
+	private String requestId;
 
 	private Long cps;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getMbps() {
-		return this.mbps;
-	}
-
-	public void setMbps(Long mbps) {
-		this.mbps = mbps;
-	}
+	private Long mbps;
 
 	public Long getQps() {
 		return this.qps;
@@ -56,12 +40,28 @@ public class DescribeDDosEventMaxResponse extends AcsResponse {
 		this.qps = qps;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getCps() {
 		return this.cps;
 	}
 
 	public void setCps(Long cps) {
 		this.cps = cps;
+	}
+
+	public Long getMbps() {
+		return this.mbps;
+	}
+
+	public void setMbps(Long mbps) {
+		this.mbps = mbps;
 	}
 
 	@Override

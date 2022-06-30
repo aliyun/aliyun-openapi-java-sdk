@@ -23,8 +23,8 @@ public class DescribeWebAccessLogStatusResponseUnmarshaller {
 	public static DescribeWebAccessLogStatusResponse unmarshall(DescribeWebAccessLogStatusResponse describeWebAccessLogStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeWebAccessLogStatusResponse.setRequestId(_ctx.stringValue("DescribeWebAccessLogStatusResponse.RequestId"));
-		describeWebAccessLogStatusResponse.setSlsStatus(_ctx.booleanValue("DescribeWebAccessLogStatusResponse.SlsStatus"));
 		describeWebAccessLogStatusResponse.setSlsLogstore(_ctx.stringValue("DescribeWebAccessLogStatusResponse.SlsLogstore"));
+		describeWebAccessLogStatusResponse.setSlsStatus(_ctx.booleanValue("DescribeWebAccessLogStatusResponse.SlsStatus"));
 		describeWebAccessLogStatusResponse.setSlsProject(_ctx.stringValue("DescribeWebAccessLogStatusResponse.SlsProject"));
 	 
 	 	return describeWebAccessLogStatusResponse;

@@ -32,8 +32,8 @@ public class DescribeCnameReusesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeCnameReusesResponse.CnameReuses.Length"); i++) {
 			CnameReuse cnameReuse = new CnameReuse();
 			cnameReuse.setDomain(_ctx.stringValue("DescribeCnameReusesResponse.CnameReuses["+ i +"].Domain"));
-			cnameReuse.setEnable(_ctx.integerValue("DescribeCnameReusesResponse.CnameReuses["+ i +"].Enable"));
 			cnameReuse.setCname(_ctx.stringValue("DescribeCnameReusesResponse.CnameReuses["+ i +"].Cname"));
+			cnameReuse.setEnable(_ctx.integerValue("DescribeCnameReusesResponse.CnameReuses["+ i +"].Enable"));
 
 			cnameReuses.add(cnameReuse);
 		}

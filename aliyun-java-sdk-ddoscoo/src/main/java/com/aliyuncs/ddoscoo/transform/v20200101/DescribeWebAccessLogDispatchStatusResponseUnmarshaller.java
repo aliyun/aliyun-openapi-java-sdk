@@ -32,8 +32,8 @@ public class DescribeWebAccessLogDispatchStatusResponseUnmarshaller {
 		List<SlsConfigStatusItem> slsConfigStatus = new ArrayList<SlsConfigStatusItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebAccessLogDispatchStatusResponse.SlsConfigStatus.Length"); i++) {
 			SlsConfigStatusItem slsConfigStatusItem = new SlsConfigStatusItem();
-			slsConfigStatusItem.setEnable(_ctx.booleanValue("DescribeWebAccessLogDispatchStatusResponse.SlsConfigStatus["+ i +"].Enable"));
 			slsConfigStatusItem.setDomain(_ctx.stringValue("DescribeWebAccessLogDispatchStatusResponse.SlsConfigStatus["+ i +"].Domain"));
+			slsConfigStatusItem.setEnable(_ctx.booleanValue("DescribeWebAccessLogDispatchStatusResponse.SlsConfigStatus["+ i +"].Enable"));
 
 			slsConfigStatus.add(slsConfigStatusItem);
 		}

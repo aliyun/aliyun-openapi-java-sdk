@@ -47,19 +47,11 @@ public class DescribeInstanceDetailsResponse extends AcsResponse {
 
 	public static class InstanceDetail {
 
-		private String instanceId;
-
 		private String line;
 
+		private String instanceId;
+
 		private List<EipInfo> eipInfos;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public String getLine() {
 			return this.line;
@@ -67,6 +59,14 @@ public class DescribeInstanceDetailsResponse extends AcsResponse {
 
 		public void setLine(String line) {
 			this.line = line;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<EipInfo> getEipInfos() {
@@ -79,21 +79,13 @@ public class DescribeInstanceDetailsResponse extends AcsResponse {
 
 		public static class EipInfo {
 
-			private String eip;
-
 			private String status;
-
-			private String ipVersion;
 
 			private String ipMode;
 
-			public String getEip() {
-				return this.eip;
-			}
+			private String eip;
 
-			public void setEip(String eip) {
-				this.eip = eip;
-			}
+			private String ipVersion;
 
 			public String getStatus() {
 				return this.status;
@@ -103,20 +95,28 @@ public class DescribeInstanceDetailsResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getIpVersion() {
-				return this.ipVersion;
-			}
-
-			public void setIpVersion(String ipVersion) {
-				this.ipVersion = ipVersion;
-			}
-
 			public String getIpMode() {
 				return this.ipMode;
 			}
 
 			public void setIpMode(String ipMode) {
 				this.ipMode = ipMode;
+			}
+
+			public String getEip() {
+				return this.eip;
+			}
+
+			public void setEip(String eip) {
+				this.eip = eip;
+			}
+
+			public String getIpVersion() {
+				return this.ipVersion;
+			}
+
+			public void setIpVersion(String ipVersion) {
+				this.ipVersion = ipVersion;
 			}
 		}
 	}

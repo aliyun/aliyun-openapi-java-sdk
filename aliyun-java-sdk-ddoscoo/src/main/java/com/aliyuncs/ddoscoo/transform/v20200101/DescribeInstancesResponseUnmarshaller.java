@@ -32,17 +32,17 @@ public class DescribeInstancesResponseUnmarshaller {
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
-			instance.setRemark(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Remark"));
 			instance.setStatus(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Status"));
-			instance.setDebtStatus(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DebtStatus"));
-			instance.setExpireTime(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].ExpireTime"));
-			instance.setCreateTime(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].CreateTime"));
-			instance.setEdition(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Edition"));
-			instance.setEnabled(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Enabled"));
-			instance.setConnInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnInstanceId"));
-			instance.setIpVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IpVersion"));
 			instance.setIpMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IpMode"));
+			instance.setDebtStatus(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DebtStatus"));
+			instance.setEdition(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Edition"));
+			instance.setIpVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IpVersion"));
+			instance.setExpireTime(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].ExpireTime"));
+			instance.setRemark(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Remark"));
+			instance.setCreateTime(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].CreateTime"));
+			instance.setEnabled(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Enabled"));
+			instance.setInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
+			instance.setConnInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnInstanceId"));
 
 			instances.add(instance);
 		}

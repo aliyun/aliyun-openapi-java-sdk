@@ -31,9 +31,9 @@ public class DescribeDomainViewTopUrlResponseUnmarshaller {
 		List<Url> urlList = new ArrayList<Url>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainViewTopUrlResponse.UrlList.Length"); i++) {
 			Url url = new Url();
-			url.setCount(_ctx.longValue("DescribeDomainViewTopUrlResponse.UrlList["+ i +"].Count"));
-			url.setDomain(_ctx.stringValue("DescribeDomainViewTopUrlResponse.UrlList["+ i +"].Domain"));
 			url.setUrl(_ctx.stringValue("DescribeDomainViewTopUrlResponse.UrlList["+ i +"].Url"));
+			url.setDomain(_ctx.stringValue("DescribeDomainViewTopUrlResponse.UrlList["+ i +"].Domain"));
+			url.setCount(_ctx.longValue("DescribeDomainViewTopUrlResponse.UrlList["+ i +"].Count"));
 
 			urlList.add(url);
 		}

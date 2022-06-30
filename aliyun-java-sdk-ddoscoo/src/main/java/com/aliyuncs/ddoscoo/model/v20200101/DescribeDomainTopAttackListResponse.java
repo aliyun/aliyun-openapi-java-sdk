@@ -47,19 +47,11 @@ public class DescribeDomainTopAttackListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long count;
-
 		private Long attack;
 
 		private String domain;
 
-		public Long getCount() {
-			return this.count;
-		}
-
-		public void setCount(Long count) {
-			this.count = count;
-		}
+		private Long count;
 
 		public Long getAttack() {
 			return this.attack;
@@ -75,6 +67,14 @@ public class DescribeDomainTopAttackListResponse extends AcsResponse {
 
 		public void setDomain(String domain) {
 			this.domain = domain;
+		}
+
+		public Long getCount() {
+			return this.count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
 		}
 	}
 

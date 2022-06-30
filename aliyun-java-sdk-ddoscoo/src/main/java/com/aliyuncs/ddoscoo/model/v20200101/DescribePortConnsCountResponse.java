@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePortConnsCountResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long conns;
+	private Long inActConns;
 
 	private Long actConns;
 
-	private Long inActConns;
+	private String requestId;
 
 	private Long cps;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Long conns;
+
+	public Long getInActConns() {
+		return this.inActConns;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getConns() {
-		return this.conns;
-	}
-
-	public void setConns(Long conns) {
-		this.conns = conns;
+	public void setInActConns(Long inActConns) {
+		this.inActConns = inActConns;
 	}
 
 	public Long getActConns() {
@@ -58,12 +50,12 @@ public class DescribePortConnsCountResponse extends AcsResponse {
 		this.actConns = actConns;
 	}
 
-	public Long getInActConns() {
-		return this.inActConns;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setInActConns(Long inActConns) {
-		this.inActConns = inActConns;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getCps() {
@@ -72,6 +64,14 @@ public class DescribePortConnsCountResponse extends AcsResponse {
 
 	public void setCps(Long cps) {
 		this.cps = cps;
+	}
+
+	public Long getConns() {
+		return this.conns;
+	}
+
+	public void setConns(Long conns) {
+		this.conns = conns;
 	}
 
 	@Override

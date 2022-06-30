@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDefenseRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<DefenseRecord> defenseRecords;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeDefenseRecordsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DefenseRecord> getDefenseRecords() {
@@ -57,25 +57,17 @@ public class DescribeDefenseRecordsResponse extends AcsResponse {
 
 	public static class DefenseRecord {
 
-		private Long startTime;
-
 		private Long endTime;
-
-		private String instanceId;
 
 		private Integer status;
 
-		private Long attackPeak;
+		private Long startTime;
 
 		private Integer eventCount;
 
-		public Long getStartTime() {
-			return this.startTime;
-		}
+		private String instanceId;
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
+		private Long attackPeak;
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -83,14 +75,6 @@ public class DescribeDefenseRecordsResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
 		}
 
 		public Integer getStatus() {
@@ -101,12 +85,12 @@ public class DescribeDefenseRecordsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Long getAttackPeak() {
-			return this.attackPeak;
+		public Long getStartTime() {
+			return this.startTime;
 		}
 
-		public void setAttackPeak(Long attackPeak) {
-			this.attackPeak = attackPeak;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getEventCount() {
@@ -115,6 +99,22 @@ public class DescribeDefenseRecordsResponse extends AcsResponse {
 
 		public void setEventCount(Integer eventCount) {
 			this.eventCount = eventCount;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getAttackPeak() {
+			return this.attackPeak;
+		}
+
+		public void setAttackPeak(Long attackPeak) {
+			this.attackPeak = attackPeak;
 		}
 	}
 

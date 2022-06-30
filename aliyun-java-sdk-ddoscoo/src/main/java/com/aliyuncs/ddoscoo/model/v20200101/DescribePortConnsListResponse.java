@@ -47,25 +47,17 @@ public class DescribePortConnsListResponse extends AcsResponse {
 
 	public static class Conn {
 
-		private Long conns;
-
 		private Long actConns;
 
 		private Long inActConns;
-
-		private Long cps;
 
 		private Long index;
 
 		private Long time;
 
-		public Long getConns() {
-			return this.conns;
-		}
+		private Long cps;
 
-		public void setConns(Long conns) {
-			this.conns = conns;
-		}
+		private Long conns;
 
 		public Long getActConns() {
 			return this.actConns;
@@ -83,14 +75,6 @@ public class DescribePortConnsListResponse extends AcsResponse {
 			this.inActConns = inActConns;
 		}
 
-		public Long getCps() {
-			return this.cps;
-		}
-
-		public void setCps(Long cps) {
-			this.cps = cps;
-		}
-
 		public Long getIndex() {
 			return this.index;
 		}
@@ -105,6 +89,22 @@ public class DescribePortConnsListResponse extends AcsResponse {
 
 		public void setTime(Long time) {
 			this.time = time;
+		}
+
+		public Long getCps() {
+			return this.cps;
+		}
+
+		public void setCps(Long cps) {
+			this.cps = cps;
+		}
+
+		public Long getConns() {
+			return this.conns;
+		}
+
+		public void setConns(Long conns) {
+			this.conns = conns;
 		}
 	}
 

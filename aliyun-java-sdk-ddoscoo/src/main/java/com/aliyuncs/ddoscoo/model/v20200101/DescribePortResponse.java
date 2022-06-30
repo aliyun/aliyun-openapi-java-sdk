@@ -61,9 +61,9 @@ public class DescribePortResponse extends AcsResponse {
 
 		private Boolean isAutoCreate;
 
-		private String frontendProtocol;
-
 		private String instanceId;
+
+		private String frontendProtocol;
 
 		private Integer backendPort;
 
@@ -85,20 +85,20 @@ public class DescribePortResponse extends AcsResponse {
 			this.isAutoCreate = isAutoCreate;
 		}
 
-		public String getFrontendProtocol() {
-			return this.frontendProtocol;
-		}
-
-		public void setFrontendProtocol(String frontendProtocol) {
-			this.frontendProtocol = frontendProtocol;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getFrontendProtocol() {
+			return this.frontendProtocol;
+		}
+
+		public void setFrontendProtocol(String frontendProtocol) {
+			this.frontendProtocol = frontendProtocol;
 		}
 
 		public Integer getBackendPort() {

@@ -31,16 +31,16 @@ public class DescribeWebCcProtectSwitchResponseUnmarshaller {
 		List<ProtectSwitch> protectSwitchList = new ArrayList<ProtectSwitch>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList.Length"); i++) {
 			ProtectSwitch protectSwitch = new ProtectSwitch();
-			protectSwitch.setDomain(_ctx.stringValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].Domain"));
 			protectSwitch.setBlackWhiteListEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].BlackWhiteListEnable"));
-			protectSwitch.setRegionBlockEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].RegionBlockEnable"));
-			protectSwitch.setCcEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcEnable"));
-			protectSwitch.setCcCustomRuleEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcCustomRuleEnable"));
-			protectSwitch.setPreciseRuleEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].PreciseRuleEnable"));
-			protectSwitch.setAiRuleEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].AiRuleEnable"));
-			protectSwitch.setCcTemplate(_ctx.stringValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcTemplate"));
 			protectSwitch.setAiTemplate(_ctx.stringValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].AiTemplate"));
+			protectSwitch.setPreciseRuleEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].PreciseRuleEnable"));
+			protectSwitch.setDomain(_ctx.stringValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].Domain"));
 			protectSwitch.setAiMode(_ctx.stringValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].AiMode"));
+			protectSwitch.setAiRuleEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].AiRuleEnable"));
+			protectSwitch.setRegionBlockEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].RegionBlockEnable"));
+			protectSwitch.setCcTemplate(_ctx.stringValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcTemplate"));
+			protectSwitch.setCcCustomRuleEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcCustomRuleEnable"));
+			protectSwitch.setCcEnable(_ctx.integerValue("DescribeWebCcProtectSwitchResponse.ProtectSwitchList["+ i +"].CcEnable"));
 
 			protectSwitchList.add(protectSwitch);
 		}

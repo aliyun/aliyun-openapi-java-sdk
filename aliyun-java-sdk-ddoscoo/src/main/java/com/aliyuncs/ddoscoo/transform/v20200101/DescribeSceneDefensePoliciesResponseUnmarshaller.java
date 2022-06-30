@@ -33,22 +33,22 @@ public class DescribeSceneDefensePoliciesResponseUnmarshaller {
 		List<Policy> policies = new ArrayList<Policy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSceneDefensePoliciesResponse.Policies.Length"); i++) {
 			Policy policy = new Policy();
-			policy.setPolicyId(_ctx.stringValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].PolicyId"));
-			policy.setName(_ctx.stringValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].Name"));
-			policy.setTemplate(_ctx.stringValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].Template"));
-			policy.setStartTime(_ctx.longValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].StartTime"));
+			policy.setDone(_ctx.integerValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].Done"));
 			policy.setEndTime(_ctx.longValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].EndTime"));
 			policy.setStatus(_ctx.integerValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].Status"));
-			policy.setDone(_ctx.integerValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].Done"));
+			policy.setStartTime(_ctx.longValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].StartTime"));
 			policy.setObjectCount(_ctx.integerValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].ObjectCount"));
+			policy.setTemplate(_ctx.stringValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].Template"));
+			policy.setPolicyId(_ctx.stringValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].PolicyId"));
+			policy.setName(_ctx.stringValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].Name"));
 
 			List<Policy1> runtimePolicies = new ArrayList<Policy1>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].RuntimePolicies.Length"); j++) {
 				Policy1 policy1 = new Policy1();
-				policy1.setPolicyType(_ctx.integerValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].RuntimePolicies["+ j +"].PolicyType"));
 				policy1.setStatus(_ctx.integerValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].RuntimePolicies["+ j +"].Status"));
 				policy1.setOldValue(_ctx.stringValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].RuntimePolicies["+ j +"].oldValue"));
 				policy1.setNewValue(_ctx.stringValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].RuntimePolicies["+ j +"].NewValue"));
+				policy1.setPolicyType(_ctx.integerValue("DescribeSceneDefensePoliciesResponse.Policies["+ i +"].RuntimePolicies["+ j +"].PolicyType"));
 
 				runtimePolicies.add(policy1);
 			}

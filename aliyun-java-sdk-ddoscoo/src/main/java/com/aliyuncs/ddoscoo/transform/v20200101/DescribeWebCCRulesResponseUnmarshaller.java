@@ -32,13 +32,13 @@ public class DescribeWebCCRulesResponseUnmarshaller {
 		List<WebCCRule> webCCRules = new ArrayList<WebCCRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebCCRulesResponse.WebCCRules.Length"); i++) {
 			WebCCRule webCCRule = new WebCCRule();
-			webCCRule.setName(_ctx.stringValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Name"));
+			webCCRule.setTtl(_ctx.integerValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Ttl"));
 			webCCRule.setAct(_ctx.stringValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Act"));
-			webCCRule.setCount(_ctx.integerValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Count"));
 			webCCRule.setInterval(_ctx.integerValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Interval"));
 			webCCRule.setMode(_ctx.stringValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Mode"));
-			webCCRule.setTtl(_ctx.integerValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Ttl"));
+			webCCRule.setName(_ctx.stringValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Name"));
 			webCCRule.setUri(_ctx.stringValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Uri"));
+			webCCRule.setCount(_ctx.integerValue("DescribeWebCCRulesResponse.WebCCRules["+ i +"].Count"));
 
 			webCCRules.add(webCCRule);
 		}

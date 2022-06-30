@@ -47,30 +47,22 @@ public class DescribeInstanceIdsResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
-		private String remark;
+		private String ipMode;
 
 		private Integer edition;
 
+		private String instanceId;
+
 		private String ipVersion;
 
-		private String ipMode;
+		private String remark;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getIpMode() {
+			return this.ipMode;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setIpMode(String ipMode) {
+			this.ipMode = ipMode;
 		}
 
 		public Integer getEdition() {
@@ -81,6 +73,14 @@ public class DescribeInstanceIdsResponse extends AcsResponse {
 			this.edition = edition;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getIpVersion() {
 			return this.ipVersion;
 		}
@@ -89,12 +89,12 @@ public class DescribeInstanceIdsResponse extends AcsResponse {
 			this.ipVersion = ipVersion;
 		}
 
-		public String getIpMode() {
-			return this.ipMode;
+		public String getRemark() {
+			return this.remark;
 		}
 
-		public void setIpMode(String ipMode) {
-			this.ipMode = ipMode;
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 	}
 

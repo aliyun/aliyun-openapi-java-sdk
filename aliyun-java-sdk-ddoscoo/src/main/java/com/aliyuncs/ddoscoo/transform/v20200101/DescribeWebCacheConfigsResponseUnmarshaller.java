@@ -32,16 +32,16 @@ public class DescribeWebCacheConfigsResponseUnmarshaller {
 		List<CacheConfig> domainCacheConfigs = new ArrayList<CacheConfig>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs.Length"); i++) {
 			CacheConfig cacheConfig = new CacheConfig();
+			cacheConfig.setDomain(_ctx.stringValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].Domain"));
 			cacheConfig.setMode(_ctx.stringValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].Mode"));
 			cacheConfig.setEnable(_ctx.integerValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].Enable"));
-			cacheConfig.setDomain(_ctx.stringValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].Domain"));
 
 			List<CustomRule> customRules = new ArrayList<CustomRule>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].CustomRules.Length"); j++) {
 				CustomRule customRule = new CustomRule();
 				customRule.setMode(_ctx.stringValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].Mode"));
-				customRule.setName(_ctx.stringValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].Name"));
 				customRule.setCacheTtl(_ctx.longValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].CacheTtl"));
+				customRule.setName(_ctx.stringValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].Name"));
 				customRule.setUri(_ctx.stringValue("DescribeWebCacheConfigsResponse.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].Uri"));
 
 				customRules.add(customRule);

@@ -31,10 +31,10 @@ public class DescribePortAutoCcStatusResponseUnmarshaller {
 		List<Status> portAutoCcStatus = new ArrayList<Status>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePortAutoCcStatusResponse.PortAutoCcStatus.Length"); i++) {
 			Status status = new Status();
+			status.set_Switch(_ctx.stringValue("DescribePortAutoCcStatusResponse.PortAutoCcStatus["+ i +"].Switch"));
 			status.setMode(_ctx.stringValue("DescribePortAutoCcStatusResponse.PortAutoCcStatus["+ i +"].Mode"));
 			status.setWebSwitch(_ctx.stringValue("DescribePortAutoCcStatusResponse.PortAutoCcStatus["+ i +"].WebSwitch"));
 			status.setWebMode(_ctx.stringValue("DescribePortAutoCcStatusResponse.PortAutoCcStatus["+ i +"].WebMode"));
-			status.set_Switch(_ctx.stringValue("DescribePortAutoCcStatusResponse.PortAutoCcStatus["+ i +"].Switch"));
 
 			portAutoCcStatus.add(status);
 		}

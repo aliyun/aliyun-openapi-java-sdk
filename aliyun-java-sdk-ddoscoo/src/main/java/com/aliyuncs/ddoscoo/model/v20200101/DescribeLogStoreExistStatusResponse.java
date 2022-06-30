@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogStoreExistStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean existStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getExistStatus() {
 		return this.existStatus;
@@ -42,6 +34,14 @@ public class DescribeLogStoreExistStatusResponse extends AcsResponse {
 
 	public void setExistStatus(Boolean existStatus) {
 		this.existStatus = existStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

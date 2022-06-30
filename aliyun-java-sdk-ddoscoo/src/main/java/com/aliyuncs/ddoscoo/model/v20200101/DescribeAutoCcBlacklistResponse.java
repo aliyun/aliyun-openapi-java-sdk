@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoCcBlacklistResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<AutoCcBlacklistItem> autoCcBlacklist;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeAutoCcBlacklistResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AutoCcBlacklistItem> getAutoCcBlacklist() {
@@ -57,13 +57,21 @@ public class DescribeAutoCcBlacklistResponse extends AcsResponse {
 
 	public static class AutoCcBlacklistItem {
 
-		private String destIp;
+		private String type;
 
-		private String sourceIp;
+		private String destIp;
 
 		private Long endTime;
 
-		private String type;
+		private String sourceIp;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 
 		public String getDestIp() {
 			return this.destIp;
@@ -71,14 +79,6 @@ public class DescribeAutoCcBlacklistResponse extends AcsResponse {
 
 		public void setDestIp(String destIp) {
 			this.destIp = destIp;
-		}
-
-		public String getSourceIp() {
-			return this.sourceIp;
-		}
-
-		public void setSourceIp(String sourceIp) {
-			this.sourceIp = sourceIp;
 		}
 
 		public Long getEndTime() {
@@ -89,12 +89,12 @@ public class DescribeAutoCcBlacklistResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getSourceIp() {
+			return this.sourceIp;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setSourceIp(String sourceIp) {
+			this.sourceIp = sourceIp;
 		}
 	}
 

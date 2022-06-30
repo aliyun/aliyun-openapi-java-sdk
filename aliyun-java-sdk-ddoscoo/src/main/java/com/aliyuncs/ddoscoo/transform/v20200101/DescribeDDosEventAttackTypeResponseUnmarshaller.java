@@ -31,8 +31,8 @@ public class DescribeDDosEventAttackTypeResponseUnmarshaller {
 		List<EventAttackType> attackTypes = new ArrayList<EventAttackType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDDosEventAttackTypeResponse.AttackTypes.Length"); i++) {
 			EventAttackType eventAttackType = new EventAttackType();
-			eventAttackType.setAttackType(_ctx.stringValue("DescribeDDosEventAttackTypeResponse.AttackTypes["+ i +"].AttackType"));
 			eventAttackType.setInPkts(_ctx.longValue("DescribeDDosEventAttackTypeResponse.AttackTypes["+ i +"].InPkts"));
+			eventAttackType.setAttackType(_ctx.stringValue("DescribeDDosEventAttackTypeResponse.AttackTypes["+ i +"].AttackType"));
 
 			attackTypes.add(eventAttackType);
 		}

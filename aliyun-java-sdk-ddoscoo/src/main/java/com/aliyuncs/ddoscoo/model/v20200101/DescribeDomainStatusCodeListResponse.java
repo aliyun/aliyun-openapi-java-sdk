@@ -29,8 +29,6 @@ public class DescribeDomainStatusCodeListResponse extends AcsResponse {
 
 	private List<StatusCode> statusCodeList;
 
-	private List<StatusCode> statusCodeList1;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -47,43 +45,35 @@ public class DescribeDomainStatusCodeListResponse extends AcsResponse {
 		this.statusCodeList = statusCodeList;
 	}
 
-	public List<StatusCode> getStatusCodeList1() {
-		return this.statusCodeList1;
-	}
-
-	public void setStatusCodeList1(List<StatusCode> statusCodeList1) {
-		this.statusCodeList1 = statusCodeList1;
-	}
-
 	public static class StatusCode {
 
 		private Integer index;
 
+		private Long status502;
+
 		private Long time;
+
+		private Long status405;
+
+		private Long status3XX;
+
+		private Long status503;
+
+		private Long status4XX;
 
 		private Long status2XX;
 
-		private Long status501;
-
-		private Long status502;
-
-		private Long status503;
+		private Long status5XX;
 
 		private Long status504;
 
 		private Long status200;
 
-		private Long status405;
-
-		private Long status5XX;
-
-		private Long status4XX;
-
 		private Long status403;
 
 		private Long status404;
 
-		private Long status3XX;
+		private Long status501;
 
 		public Integer getIndex() {
 			return this.index;
@@ -91,30 +81,6 @@ public class DescribeDomainStatusCodeListResponse extends AcsResponse {
 
 		public void setIndex(Integer index) {
 			this.index = index;
-		}
-
-		public Long getTime() {
-			return this.time;
-		}
-
-		public void setTime(Long time) {
-			this.time = time;
-		}
-
-		public Long getStatus2XX() {
-			return this.status2XX;
-		}
-
-		public void setStatus2XX(Long status2XX) {
-			this.status2XX = status2XX;
-		}
-
-		public Long getStatus501() {
-			return this.status501;
-		}
-
-		public void setStatus501(Long status501) {
-			this.status501 = status501;
 		}
 
 		public Long getStatus502() {
@@ -125,12 +91,60 @@ public class DescribeDomainStatusCodeListResponse extends AcsResponse {
 			this.status502 = status502;
 		}
 
+		public Long getTime() {
+			return this.time;
+		}
+
+		public void setTime(Long time) {
+			this.time = time;
+		}
+
+		public Long getStatus405() {
+			return this.status405;
+		}
+
+		public void setStatus405(Long status405) {
+			this.status405 = status405;
+		}
+
+		public Long getStatus3XX() {
+			return this.status3XX;
+		}
+
+		public void setStatus3XX(Long status3XX) {
+			this.status3XX = status3XX;
+		}
+
 		public Long getStatus503() {
 			return this.status503;
 		}
 
 		public void setStatus503(Long status503) {
 			this.status503 = status503;
+		}
+
+		public Long getStatus4XX() {
+			return this.status4XX;
+		}
+
+		public void setStatus4XX(Long status4XX) {
+			this.status4XX = status4XX;
+		}
+
+		public Long getStatus2XX() {
+			return this.status2XX;
+		}
+
+		public void setStatus2XX(Long status2XX) {
+			this.status2XX = status2XX;
+		}
+
+		public Long getStatus5XX() {
+			return this.status5XX;
+		}
+
+		public void setStatus5XX(Long status5XX) {
+			this.status5XX = status5XX;
 		}
 
 		public Long getStatus504() {
@@ -149,30 +163,6 @@ public class DescribeDomainStatusCodeListResponse extends AcsResponse {
 			this.status200 = status200;
 		}
 
-		public Long getStatus405() {
-			return this.status405;
-		}
-
-		public void setStatus405(Long status405) {
-			this.status405 = status405;
-		}
-
-		public Long getStatus5XX() {
-			return this.status5XX;
-		}
-
-		public void setStatus5XX(Long status5XX) {
-			this.status5XX = status5XX;
-		}
-
-		public Long getStatus4XX() {
-			return this.status4XX;
-		}
-
-		public void setStatus4XX(Long status4XX) {
-			this.status4XX = status4XX;
-		}
-
 		public Long getStatus403() {
 			return this.status403;
 		}
@@ -189,12 +179,12 @@ public class DescribeDomainStatusCodeListResponse extends AcsResponse {
 			this.status404 = status404;
 		}
 
-		public Long getStatus3XX() {
-			return this.status3XX;
+		public Long getStatus501() {
+			return this.status501;
 		}
 
-		public void setStatus3XX(Long status3XX) {
-			this.status3XX = status3XX;
+		public void setStatus501(Long status501) {
+			this.status501 = status501;
 		}
 	}
 

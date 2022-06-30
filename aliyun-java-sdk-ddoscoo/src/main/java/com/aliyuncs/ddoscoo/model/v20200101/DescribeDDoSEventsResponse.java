@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDDoSEventsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long total;
 
+	private String requestId;
+
 	private List<Data> dDoSEvents;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class DescribeDDoSEventsResponse extends AcsResponse {
 
 	public void setTotal(Long total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Data> getDDoSEvents() {
@@ -57,21 +57,69 @@ public class DescribeDDoSEventsResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long endTime;
+
+		private Long startTime;
+
+		private String eventType;
+
+		private String region;
+
+		private String ip;
+
+		private String port;
+
 		private Long bps;
 
 		private Long pps;
 
-		private String eventType;
+		public Long getEndTime() {
+			return this.endTime;
+		}
 
-		private String ip;
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
 
-		private Long startTime;
+		public Long getStartTime() {
+			return this.startTime;
+		}
 
-		private Long endTime;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
 
-		private String port;
+		public String getEventType() {
+			return this.eventType;
+		}
 
-		private String region;
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
 
 		public Long getBps() {
 			return this.bps;
@@ -87,54 +135,6 @@ public class DescribeDDoSEventsResponse extends AcsResponse {
 
 		public void setPps(Long pps) {
 			this.pps = pps;
-		}
-
-		public String getEventType() {
-			return this.eventType;
-		}
-
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
 		}
 	}
 

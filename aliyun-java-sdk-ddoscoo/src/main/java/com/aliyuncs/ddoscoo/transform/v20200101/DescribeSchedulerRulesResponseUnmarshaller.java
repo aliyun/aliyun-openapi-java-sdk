@@ -35,9 +35,9 @@ public class DescribeSchedulerRulesResponseUnmarshaller {
 		List<SchedulerRule> schedulerRules = new ArrayList<SchedulerRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSchedulerRulesResponse.SchedulerRules.Length"); i++) {
 			SchedulerRule schedulerRule = new SchedulerRule();
-			schedulerRule.setRuleName(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].RuleName"));
-			schedulerRule.setCname(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Cname"));
 			schedulerRule.setRuleType(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].RuleType"));
+			schedulerRule.setCname(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Cname"));
+			schedulerRule.setRuleName(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].RuleName"));
 
 			Param param = new Param();
 			param.setParamType(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Param.ParamType"));
@@ -51,12 +51,12 @@ public class DescribeSchedulerRulesResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules.Length"); j++) {
 				Rule rule = new Rule();
 				rule.setType(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].Type"));
+				rule.setStatus(_ctx.integerValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].Status"));
 				rule.setValue(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].Value"));
 				rule.setValueType(_ctx.integerValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].ValueType"));
 				rule.setPriority(_ctx.integerValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].Priority"));
-				rule.setStatus(_ctx.integerValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].Status"));
-				rule.setRegionId(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].RegionId"));
 				rule.setRestoreDelay(_ctx.integerValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].RestoreDelay"));
+				rule.setRegionId(_ctx.stringValue("DescribeSchedulerRulesResponse.SchedulerRules["+ i +"].Rules["+ j +"].RegionId"));
 
 				rules.add(rule);
 			}

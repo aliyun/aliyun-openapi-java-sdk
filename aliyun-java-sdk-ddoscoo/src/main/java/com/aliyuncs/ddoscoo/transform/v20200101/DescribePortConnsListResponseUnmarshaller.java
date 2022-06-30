@@ -31,12 +31,12 @@ public class DescribePortConnsListResponseUnmarshaller {
 		List<Conn> connsList = new ArrayList<Conn>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePortConnsListResponse.ConnsList.Length"); i++) {
 			Conn conn = new Conn();
-			conn.setConns(_ctx.longValue("DescribePortConnsListResponse.ConnsList["+ i +"].Conns"));
 			conn.setActConns(_ctx.longValue("DescribePortConnsListResponse.ConnsList["+ i +"].ActConns"));
 			conn.setInActConns(_ctx.longValue("DescribePortConnsListResponse.ConnsList["+ i +"].InActConns"));
-			conn.setCps(_ctx.longValue("DescribePortConnsListResponse.ConnsList["+ i +"].Cps"));
 			conn.setIndex(_ctx.longValue("DescribePortConnsListResponse.ConnsList["+ i +"].Index"));
 			conn.setTime(_ctx.longValue("DescribePortConnsListResponse.ConnsList["+ i +"].Time"));
+			conn.setCps(_ctx.longValue("DescribePortConnsListResponse.ConnsList["+ i +"].Cps"));
+			conn.setConns(_ctx.longValue("DescribePortConnsListResponse.ConnsList["+ i +"].Conns"));
 
 			connsList.add(conn);
 		}

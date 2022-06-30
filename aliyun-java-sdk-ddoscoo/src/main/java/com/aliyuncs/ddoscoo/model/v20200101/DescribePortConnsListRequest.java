@@ -32,9 +32,9 @@ public class DescribePortConnsListRequest extends RpcAcsRequest<DescribePortConn
 
 	private Long endTime;
 
-	private List<String> instanceIdss;
-
 	private String port;
+
+	private List<String> instanceIdss;
 
 	private Integer interval;
 	public DescribePortConnsListRequest() {
@@ -79,6 +79,17 @@ public class DescribePortConnsListRequest extends RpcAcsRequest<DescribePortConn
 		}
 	}
 
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
 	public List<String> getInstanceIdss() {
 		return this.instanceIdss;
 	}
@@ -90,17 +101,6 @@ public class DescribePortConnsListRequest extends RpcAcsRequest<DescribePortConn
 				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
 			}
 		}	
-	}
-
-	public String getPort() {
-		return this.port;
-	}
-
-	public void setPort(String port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port);
-		}
 	}
 
 	public Integer getInterval() {

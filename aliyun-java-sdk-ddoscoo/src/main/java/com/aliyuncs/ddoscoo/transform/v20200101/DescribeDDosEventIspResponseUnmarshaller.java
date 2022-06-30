@@ -31,8 +31,8 @@ public class DescribeDDosEventIspResponseUnmarshaller {
 		List<EventIsp> isps = new ArrayList<EventIsp>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDDosEventIspResponse.Isps.Length"); i++) {
 			EventIsp eventIsp = new EventIsp();
-			eventIsp.setIsp(_ctx.stringValue("DescribeDDosEventIspResponse.Isps["+ i +"].Isp"));
 			eventIsp.setInPkts(_ctx.longValue("DescribeDDosEventIspResponse.Isps["+ i +"].InPkts"));
+			eventIsp.setIsp(_ctx.stringValue("DescribeDDosEventIspResponse.Isps["+ i +"].Isp"));
 
 			isps.add(eventIsp);
 		}

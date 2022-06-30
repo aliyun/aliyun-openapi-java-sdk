@@ -23,10 +23,10 @@ public class DescribePortConnsCountResponseUnmarshaller {
 	public static DescribePortConnsCountResponse unmarshall(DescribePortConnsCountResponse describePortConnsCountResponse, UnmarshallerContext _ctx) {
 		
 		describePortConnsCountResponse.setRequestId(_ctx.stringValue("DescribePortConnsCountResponse.RequestId"));
-		describePortConnsCountResponse.setConns(_ctx.longValue("DescribePortConnsCountResponse.Conns"));
-		describePortConnsCountResponse.setActConns(_ctx.longValue("DescribePortConnsCountResponse.ActConns"));
 		describePortConnsCountResponse.setInActConns(_ctx.longValue("DescribePortConnsCountResponse.InActConns"));
+		describePortConnsCountResponse.setActConns(_ctx.longValue("DescribePortConnsCountResponse.ActConns"));
 		describePortConnsCountResponse.setCps(_ctx.longValue("DescribePortConnsCountResponse.Cps"));
+		describePortConnsCountResponse.setConns(_ctx.longValue("DescribePortConnsCountResponse.Conns"));
 	 
 	 	return describePortConnsCountResponse;
 	}

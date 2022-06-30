@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ddoscoo.model.v20200101.DescribeWebRulesResponse;
 import com.aliyuncs.ddoscoo.model.v20200101.DescribeWebRulesResponse.WebRule;
+import com.aliyuncs.ddoscoo.model.v20200101.DescribeWebRulesResponse.WebRule.GmCert;
 import com.aliyuncs.ddoscoo.model.v20200101.DescribeWebRulesResponse.WebRule.ProxyConfig;
 import com.aliyuncs.ddoscoo.model.v20200101.DescribeWebRulesResponse.WebRule.RealServer;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,22 +36,22 @@ public class DescribeWebRulesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebRulesResponse.WebRules.Length"); i++) {
 			WebRule webRule = new WebRule();
 			webRule.setDomain(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].Domain"));
-			webRule.setCcEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].CcEnabled"));
-			webRule.setCcRuleEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].CcRuleEnabled"));
-			webRule.setCcTemplate(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].CcTemplate"));
-			webRule.setSslProtocols(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].SslProtocols"));
-			webRule.setSslCiphers(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].SslCiphers"));
-			webRule.setHttp2Enable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Http2Enable"));
-			webRule.setOcspEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].OcspEnabled"));
 			webRule.setHttp2HttpsEnable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Http2HttpsEnable"));
-			webRule.setHttps2HttpEnable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Https2HttpEnable"));
-			webRule.setPolicyMode(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].PolicyMode"));
-			webRule.setProxyEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].ProxyEnabled"));
-			webRule.setSsl13Enabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Ssl13Enabled"));
-			webRule.setPunishStatus(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].PunishStatus"));
+			webRule.setSslProtocols(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].SslProtocols"));
 			webRule.setPunishReason(_ctx.integerValue("DescribeWebRulesResponse.WebRules["+ i +"].PunishReason"));
-			webRule.setCname(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].Cname"));
+			webRule.setCcTemplate(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].CcTemplate"));
+			webRule.setCcEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].CcEnabled"));
+			webRule.setSslCiphers(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].SslCiphers"));
+			webRule.setSsl13Enabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Ssl13Enabled"));
+			webRule.setCcRuleEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].CcRuleEnabled"));
+			webRule.setOcspEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].OcspEnabled"));
+			webRule.setPunishStatus(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].PunishStatus"));
+			webRule.setProxyEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].ProxyEnabled"));
 			webRule.setCertName(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].CertName"));
+			webRule.setPolicyMode(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].PolicyMode"));
+			webRule.setCname(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].Cname"));
+			webRule.setHttp2Enable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Http2Enable"));
+			webRule.setHttps2HttpEnable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Https2HttpEnable"));
 
 			List<String> whiteList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeWebRulesResponse.WebRules["+ i +"].WhiteList.Length"); j++) {
@@ -69,6 +70,12 @@ public class DescribeWebRulesResponseUnmarshaller {
 				customCiphers.add(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].CustomCiphers["+ j +"]"));
 			}
 			webRule.setCustomCiphers(customCiphers);
+
+			GmCert gmCert = new GmCert();
+			gmCert.setCertId(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].GmCert.CertId"));
+			gmCert.setGmEnable(_ctx.longValue("DescribeWebRulesResponse.WebRules["+ i +"].GmCert.GmEnable"));
+			gmCert.setGmOnly(_ctx.longValue("DescribeWebRulesResponse.WebRules["+ i +"].GmCert.GmOnly"));
+			webRule.setGmCert(gmCert);
 
 			List<ProxyConfig> proxyTypes = new ArrayList<ProxyConfig>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeWebRulesResponse.WebRules["+ i +"].ProxyTypes.Length"); j++) {

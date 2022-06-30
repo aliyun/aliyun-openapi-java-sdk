@@ -47,17 +47,9 @@ public class DescribePortViewSourceProvincesResponse extends AcsResponse {
 
 	public static class Province {
 
-		private Long count;
-
 		private String provinceId;
 
-		public Long getCount() {
-			return this.count;
-		}
-
-		public void setCount(Long count) {
-			this.count = count;
-		}
+		private Long count;
 
 		public String getProvinceId() {
 			return this.provinceId;
@@ -65,6 +57,14 @@ public class DescribePortViewSourceProvincesResponse extends AcsResponse {
 
 		public void setProvinceId(String provinceId) {
 			this.provinceId = provinceId;
+		}
+
+		public Long getCount() {
+			return this.count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
 		}
 	}
 

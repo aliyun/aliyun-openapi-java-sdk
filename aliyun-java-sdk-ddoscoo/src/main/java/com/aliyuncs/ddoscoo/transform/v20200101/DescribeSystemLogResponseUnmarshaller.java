@@ -32,14 +32,14 @@ public class DescribeSystemLogResponseUnmarshaller {
 		List<SystemLogItem> systemLog = new ArrayList<SystemLogItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSystemLogResponse.SystemLog.Length"); i++) {
 			SystemLogItem systemLogItem = new SystemLogItem();
-			systemLogItem.setGmtCreate(_ctx.longValue("DescribeSystemLogResponse.SystemLog["+ i +"].GmtCreate"));
-			systemLogItem.setGmtModified(_ctx.longValue("DescribeSystemLogResponse.SystemLog["+ i +"].GmtModified"));
+			systemLogItem.setStatus(_ctx.integerValue("DescribeSystemLogResponse.SystemLog["+ i +"].Status"));
 			systemLogItem.setEntityType(_ctx.integerValue("DescribeSystemLogResponse.SystemLog["+ i +"].EntityType"));
 			systemLogItem.setEntityObject(_ctx.stringValue("DescribeSystemLogResponse.SystemLog["+ i +"].EntityObject"));
+			systemLogItem.setGmtCreate(_ctx.longValue("DescribeSystemLogResponse.SystemLog["+ i +"].GmtCreate"));
 			systemLogItem.setOpAction(_ctx.integerValue("DescribeSystemLogResponse.SystemLog["+ i +"].OpAction"));
+			systemLogItem.setGmtModified(_ctx.longValue("DescribeSystemLogResponse.SystemLog["+ i +"].GmtModified"));
 			systemLogItem.setOpAccount(_ctx.stringValue("DescribeSystemLogResponse.SystemLog["+ i +"].OpAccount"));
 			systemLogItem.setOpDesc(_ctx.stringValue("DescribeSystemLogResponse.SystemLog["+ i +"].OpDesc"));
-			systemLogItem.setStatus(_ctx.integerValue("DescribeSystemLogResponse.SystemLog["+ i +"].Status"));
 
 			systemLog.add(systemLogItem);
 		}

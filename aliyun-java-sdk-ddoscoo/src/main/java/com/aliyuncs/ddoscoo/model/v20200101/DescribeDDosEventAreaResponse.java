@@ -47,17 +47,9 @@ public class DescribeDDosEventAreaResponse extends AcsResponse {
 
 	public static class EventArea {
 
-		private String area;
-
 		private Long inPkts;
 
-		public String getArea() {
-			return this.area;
-		}
-
-		public void setArea(String area) {
-			this.area = area;
-		}
+		private String area;
 
 		public Long getInPkts() {
 			return this.inPkts;
@@ -65,6 +57,14 @@ public class DescribeDDosEventAreaResponse extends AcsResponse {
 
 		public void setInPkts(Long inPkts) {
 			this.inPkts = inPkts;
+		}
+
+		public String getArea() {
+			return this.area;
+		}
+
+		public void setArea(String area) {
+			this.area = area;
 		}
 	}
 

@@ -47,21 +47,13 @@ public class DescribeBlackholeStatusResponse extends AcsResponse {
 
 	public static class BlackholeStatusItem {
 
-		private Long startTime;
-
 		private Long endTime;
+
+		private Long startTime;
 
 		private String ip;
 
 		private String blackStatus;
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -69,6 +61,14 @@ public class DescribeBlackholeStatusResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getIp() {

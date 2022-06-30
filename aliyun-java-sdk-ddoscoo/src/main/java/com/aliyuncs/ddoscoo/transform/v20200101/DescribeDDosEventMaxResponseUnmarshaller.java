@@ -23,9 +23,9 @@ public class DescribeDDosEventMaxResponseUnmarshaller {
 	public static DescribeDDosEventMaxResponse unmarshall(DescribeDDosEventMaxResponse describeDDosEventMaxResponse, UnmarshallerContext _ctx) {
 		
 		describeDDosEventMaxResponse.setRequestId(_ctx.stringValue("DescribeDDosEventMaxResponse.RequestId"));
-		describeDDosEventMaxResponse.setMbps(_ctx.longValue("DescribeDDosEventMaxResponse.Mbps"));
 		describeDDosEventMaxResponse.setQps(_ctx.longValue("DescribeDDosEventMaxResponse.Qps"));
 		describeDDosEventMaxResponse.setCps(_ctx.longValue("DescribeDDosEventMaxResponse.Cps"));
+		describeDDosEventMaxResponse.setMbps(_ctx.longValue("DescribeDDosEventMaxResponse.Mbps"));
 	 
 	 	return describeDDosEventMaxResponse;
 	}

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeWebCCRulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<WebCCRule> webCCRules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeWebCCRulesResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<WebCCRule> getWebCCRules() {
@@ -57,26 +57,26 @@ public class DescribeWebCCRulesResponse extends AcsResponse {
 
 	public static class WebCCRule {
 
-		private String name;
+		private Integer ttl;
 
 		private String act;
-
-		private Integer count;
 
 		private Integer interval;
 
 		private String mode;
 
-		private Integer ttl;
+		private String name;
 
 		private String uri;
 
-		public String getName() {
-			return this.name;
+		private Integer count;
+
+		public Integer getTtl() {
+			return this.ttl;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setTtl(Integer ttl) {
+			this.ttl = ttl;
 		}
 
 		public String getAct() {
@@ -85,14 +85,6 @@ public class DescribeWebCCRulesResponse extends AcsResponse {
 
 		public void setAct(String act) {
 			this.act = act;
-		}
-
-		public Integer getCount() {
-			return this.count;
-		}
-
-		public void setCount(Integer count) {
-			this.count = count;
 		}
 
 		public Integer getInterval() {
@@ -111,12 +103,12 @@ public class DescribeWebCCRulesResponse extends AcsResponse {
 			this.mode = mode;
 		}
 
-		public Integer getTtl() {
-			return this.ttl;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setTtl(Integer ttl) {
-			this.ttl = ttl;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getUri() {
@@ -125,6 +117,14 @@ public class DescribeWebCCRulesResponse extends AcsResponse {
 
 		public void setUri(String uri) {
 			this.uri = uri;
+		}
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
 		}
 	}
 

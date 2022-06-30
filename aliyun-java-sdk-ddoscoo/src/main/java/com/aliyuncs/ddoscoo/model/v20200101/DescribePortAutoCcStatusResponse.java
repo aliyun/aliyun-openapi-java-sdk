@@ -47,13 +47,21 @@ public class DescribePortAutoCcStatusResponse extends AcsResponse {
 
 	public static class Status {
 
+		private String _switch;
+
 		private String mode;
 
 		private String webSwitch;
 
 		private String webMode;
 
-		private String _switch;
+		public String get_Switch() {
+			return this._switch;
+		}
+
+		public void set_Switch(String _switch) {
+			this._switch = _switch;
+		}
 
 		public String getMode() {
 			return this.mode;
@@ -77,14 +85,6 @@ public class DescribePortAutoCcStatusResponse extends AcsResponse {
 
 		public void setWebMode(String webMode) {
 			this.webMode = webMode;
-		}
-
-		public String get_Switch() {
-			return this._switch;
-		}
-
-		public void set_Switch(String _switch) {
-			this._switch = _switch;
 		}
 	}
 

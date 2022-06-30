@@ -31,8 +31,8 @@ public class DescribePortMaxConnsResponseUnmarshaller {
 		List<PortMaxConnsItem> portMaxConns = new ArrayList<PortMaxConnsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePortMaxConnsResponse.PortMaxConns.Length"); i++) {
 			PortMaxConnsItem portMaxConnsItem = new PortMaxConnsItem();
-			portMaxConnsItem.setPort(_ctx.stringValue("DescribePortMaxConnsResponse.PortMaxConns["+ i +"].Port"));
 			portMaxConnsItem.setIp(_ctx.stringValue("DescribePortMaxConnsResponse.PortMaxConns["+ i +"].Ip"));
+			portMaxConnsItem.setPort(_ctx.stringValue("DescribePortMaxConnsResponse.PortMaxConns["+ i +"].Port"));
 			portMaxConnsItem.setCps(_ctx.longValue("DescribePortMaxConnsResponse.PortMaxConns["+ i +"].Cps"));
 
 			portMaxConns.add(portMaxConnsItem);

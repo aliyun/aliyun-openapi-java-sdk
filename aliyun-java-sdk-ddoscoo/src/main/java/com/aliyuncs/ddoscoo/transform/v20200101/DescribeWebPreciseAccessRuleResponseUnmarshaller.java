@@ -38,18 +38,18 @@ public class DescribeWebPreciseAccessRuleResponseUnmarshaller {
 			List<Rule> ruleList = new ArrayList<Rule>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList.Length"); j++) {
 				Rule rule = new Rule();
+				rule.setAction(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Action"));
 				rule.setOwner(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Owner"));
 				rule.setExpires(_ctx.longValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Expires"));
 				rule.setName(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Name"));
-				rule.setAction(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Action"));
 
 				List<Condition> conditionList = new ArrayList<Condition>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList.Length"); k++) {
 					Condition condition = new Condition();
 					condition.setMatchMethod(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].MatchMethod"));
 					condition.setField(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].Field"));
-					condition.setHeaderName(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].HeaderName"));
 					condition.setContent(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].Content"));
+					condition.setHeaderName(_ctx.stringValue("DescribeWebPreciseAccessRuleResponse.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].HeaderName"));
 
 					conditionList.add(condition);
 				}

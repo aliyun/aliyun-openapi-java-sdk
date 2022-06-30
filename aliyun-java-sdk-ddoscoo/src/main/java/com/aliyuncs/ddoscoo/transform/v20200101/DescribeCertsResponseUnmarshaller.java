@@ -31,13 +31,13 @@ public class DescribeCertsResponseUnmarshaller {
 		List<CertItem> certs = new ArrayList<CertItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCertsResponse.Certs.Length"); i++) {
 			CertItem certItem = new CertItem();
-			certItem.setId(_ctx.integerValue("DescribeCertsResponse.Certs["+ i +"].Id"));
-			certItem.setName(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].Name"));
-			certItem.setCommon(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].Common"));
-			certItem.setIssuer(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].Issuer"));
-			certItem.setStartDate(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].StartDate"));
 			certItem.setEndDate(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].EndDate"));
 			certItem.setDomainRelated(_ctx.booleanValue("DescribeCertsResponse.Certs["+ i +"].DomainRelated"));
+			certItem.setStartDate(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].StartDate"));
+			certItem.setIssuer(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].Issuer"));
+			certItem.setName(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].Name"));
+			certItem.setCommon(_ctx.stringValue("DescribeCertsResponse.Certs["+ i +"].Common"));
+			certItem.setId(_ctx.integerValue("DescribeCertsResponse.Certs["+ i +"].Id"));
 
 			certs.add(certItem);
 		}

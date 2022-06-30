@@ -37,30 +37,30 @@ public class DescribeNetworkRuleAttributesResponseUnmarshaller {
 		List<NetworkRuleAttribute> networkRuleAttributes = new ArrayList<NetworkRuleAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes.Length"); i++) {
 			NetworkRuleAttribute networkRuleAttribute = new NetworkRuleAttribute();
+			networkRuleAttribute.setFrontendPort(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].FrontendPort"));
 			networkRuleAttribute.setInstanceId(_ctx.stringValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].InstanceId"));
 			networkRuleAttribute.setBizProtocol(_ctx.stringValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Protocol"));
-			networkRuleAttribute.setFrontendPort(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].FrontendPort"));
 
 			Config config = new Config();
-			config.setPersistenceTimeout(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.PersistenceTimeout"));
-			config.setSynproxy(_ctx.stringValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Synproxy"));
 			config.setNodataConn(_ctx.stringValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.NodataConn"));
+			config.setSynproxy(_ctx.stringValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Synproxy"));
+			config.setPersistenceTimeout(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.PersistenceTimeout"));
 
 			Sla sla = new Sla();
+			sla.setMaxconnEnable(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Sla.MaxconnEnable"));
+			sla.setCpsEnable(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Sla.CpsEnable"));
 			sla.setCps(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Sla.Cps"));
 			sla.setMaxconn(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Sla.Maxconn"));
-			sla.setCpsEnable(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Sla.CpsEnable"));
-			sla.setMaxconnEnable(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Sla.MaxconnEnable"));
 			config.setSla(sla);
 
 			Slimit slimit = new Slimit();
-			slimit.setCps(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.Cps"));
-			slimit.setMaxconn(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.Maxconn"));
-			slimit.setCpsEnable(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.CpsEnable"));
-			slimit.setCpsMode(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.CpsMode"));
 			slimit.setMaxconnEnable(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.MaxconnEnable"));
-			slimit.setBps(_ctx.longValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.Bps"));
+			slimit.setCpsEnable(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.CpsEnable"));
+			slimit.setCps(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.Cps"));
 			slimit.setPps(_ctx.longValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.Pps"));
+			slimit.setBps(_ctx.longValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.Bps"));
+			slimit.setMaxconn(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.Maxconn"));
+			slimit.setCpsMode(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Slimit.CpsMode"));
 			config.setSlimit(slimit);
 
 			PayloadLen payloadLen = new PayloadLen();
@@ -73,10 +73,10 @@ public class DescribeNetworkRuleAttributesResponseUnmarshaller {
 			List<SblackItem> sblack = new ArrayList<SblackItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack.Length"); j++) {
 				SblackItem sblackItem = new SblackItem();
+				sblackItem.setType(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].Type"));
 				sblackItem.setDuring(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].During"));
 				sblackItem.setExpires(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].Expires"));
 				sblackItem.setCnt(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].Cnt"));
-				sblackItem.setType(_ctx.integerValue("DescribeNetworkRuleAttributesResponse.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].Type"));
 
 				sblack.add(sblackItem);
 			}

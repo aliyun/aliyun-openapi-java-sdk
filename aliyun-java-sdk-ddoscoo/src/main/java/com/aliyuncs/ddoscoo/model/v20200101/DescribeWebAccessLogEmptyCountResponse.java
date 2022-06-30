@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeWebAccessLogEmptyCountResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer availableCount;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getAvailableCount() {
 		return this.availableCount;
@@ -42,6 +34,14 @@ public class DescribeWebAccessLogEmptyCountResponse extends AcsResponse {
 
 	public void setAvailableCount(Integer availableCount) {
 		this.availableCount = availableCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

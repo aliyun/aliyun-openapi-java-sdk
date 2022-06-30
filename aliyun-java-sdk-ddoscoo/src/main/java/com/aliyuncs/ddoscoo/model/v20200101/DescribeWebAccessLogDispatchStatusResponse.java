@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeWebAccessLogDispatchStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<SlsConfigStatusItem> slsConfigStatus;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeWebAccessLogDispatchStatusResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SlsConfigStatusItem> getSlsConfigStatus() {
@@ -57,17 +57,9 @@ public class DescribeWebAccessLogDispatchStatusResponse extends AcsResponse {
 
 	public static class SlsConfigStatusItem {
 
-		private Boolean enable;
-
 		private String domain;
 
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
-		}
+		private Boolean enable;
 
 		public String getDomain() {
 			return this.domain;
@@ -75,6 +67,14 @@ public class DescribeWebAccessLogDispatchStatusResponse extends AcsResponse {
 
 		public void setDomain(String domain) {
 			this.domain = domain;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 	}
 

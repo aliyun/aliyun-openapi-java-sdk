@@ -32,14 +32,14 @@ public class DescribeDDoSEventsResponseUnmarshaller {
 		List<Data> dDoSEvents = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDDoSEventsResponse.DDoSEvents.Length"); i++) {
 			Data data = new Data();
+			data.setEndTime(_ctx.longValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].EndTime"));
+			data.setStartTime(_ctx.longValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].StartTime"));
+			data.setEventType(_ctx.stringValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].EventType"));
+			data.setRegion(_ctx.stringValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].Region"));
+			data.setIp(_ctx.stringValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].Ip"));
+			data.setPort(_ctx.stringValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].Port"));
 			data.setBps(_ctx.longValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].Bps"));
 			data.setPps(_ctx.longValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].Pps"));
-			data.setEventType(_ctx.stringValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].EventType"));
-			data.setIp(_ctx.stringValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].Ip"));
-			data.setStartTime(_ctx.longValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].StartTime"));
-			data.setEndTime(_ctx.longValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].EndTime"));
-			data.setPort(_ctx.stringValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].Port"));
-			data.setRegion(_ctx.stringValue("DescribeDDoSEventsResponse.DDoSEvents["+ i +"].Region"));
 
 			dDoSEvents.add(data);
 		}

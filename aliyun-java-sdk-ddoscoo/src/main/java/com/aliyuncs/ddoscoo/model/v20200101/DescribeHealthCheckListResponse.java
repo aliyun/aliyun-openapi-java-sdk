@@ -47,13 +47,21 @@ public class DescribeHealthCheckListResponse extends AcsResponse {
 
 	public static class HealthCheckItem {
 
+		private Integer frontendPort;
+
 		private String instanceId;
 
 		private String protocol;
 
-		private Integer frontendPort;
-
 		private HealthCheck healthCheck;
+
+		public Integer getFrontendPort() {
+			return this.frontendPort;
+		}
+
+		public void setFrontendPort(Integer frontendPort) {
+			this.frontendPort = frontendPort;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -71,14 +79,6 @@ public class DescribeHealthCheckListResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public Integer getFrontendPort() {
-			return this.frontendPort;
-		}
-
-		public void setFrontendPort(Integer frontendPort) {
-			this.frontendPort = frontendPort;
-		}
-
 		public HealthCheck getHealthCheck() {
 			return this.healthCheck;
 		}
@@ -89,21 +89,29 @@ public class DescribeHealthCheckListResponse extends AcsResponse {
 
 		public static class HealthCheck {
 
+			private Integer timeout;
+
 			private String type;
 
 			private String domain;
 
-			private String uri;
+			private Integer interval;
+
+			private Integer up;
 
 			private Integer down;
 
-			private Integer interval;
-
 			private Integer port;
 
-			private Integer timeout;
+			private String uri;
 
-			private Integer up;
+			public Integer getTimeout() {
+				return this.timeout;
+			}
+
+			public void setTimeout(Integer timeout) {
+				this.timeout = timeout;
+			}
 
 			public String getType() {
 				return this.type;
@@ -121,12 +129,20 @@ public class DescribeHealthCheckListResponse extends AcsResponse {
 				this.domain = domain;
 			}
 
-			public String getUri() {
-				return this.uri;
+			public Integer getInterval() {
+				return this.interval;
 			}
 
-			public void setUri(String uri) {
-				this.uri = uri;
+			public void setInterval(Integer interval) {
+				this.interval = interval;
+			}
+
+			public Integer getUp() {
+				return this.up;
+			}
+
+			public void setUp(Integer up) {
+				this.up = up;
 			}
 
 			public Integer getDown() {
@@ -137,14 +153,6 @@ public class DescribeHealthCheckListResponse extends AcsResponse {
 				this.down = down;
 			}
 
-			public Integer getInterval() {
-				return this.interval;
-			}
-
-			public void setInterval(Integer interval) {
-				this.interval = interval;
-			}
-
 			public Integer getPort() {
 				return this.port;
 			}
@@ -153,20 +161,12 @@ public class DescribeHealthCheckListResponse extends AcsResponse {
 				this.port = port;
 			}
 
-			public Integer getTimeout() {
-				return this.timeout;
+			public String getUri() {
+				return this.uri;
 			}
 
-			public void setTimeout(Integer timeout) {
-				this.timeout = timeout;
-			}
-
-			public Integer getUp() {
-				return this.up;
-			}
-
-			public void setUp(Integer up) {
-				this.up = up;
+			public void setUri(String uri) {
+				this.uri = uri;
 			}
 		}
 	}

@@ -32,10 +32,10 @@ public class DescribeAutoCcWhitelistResponseUnmarshaller {
 		List<AutoCcWhitelistItem> autoCcWhitelist = new ArrayList<AutoCcWhitelistItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAutoCcWhitelistResponse.AutoCcWhitelist.Length"); i++) {
 			AutoCcWhitelistItem autoCcWhitelistItem = new AutoCcWhitelistItem();
-			autoCcWhitelistItem.setDestIp(_ctx.stringValue("DescribeAutoCcWhitelistResponse.AutoCcWhitelist["+ i +"].DestIp"));
-			autoCcWhitelistItem.setSourceIp(_ctx.stringValue("DescribeAutoCcWhitelistResponse.AutoCcWhitelist["+ i +"].SourceIp"));
-			autoCcWhitelistItem.setEndTime(_ctx.longValue("DescribeAutoCcWhitelistResponse.AutoCcWhitelist["+ i +"].EndTime"));
 			autoCcWhitelistItem.setType(_ctx.stringValue("DescribeAutoCcWhitelistResponse.AutoCcWhitelist["+ i +"].Type"));
+			autoCcWhitelistItem.setDestIp(_ctx.stringValue("DescribeAutoCcWhitelistResponse.AutoCcWhitelist["+ i +"].DestIp"));
+			autoCcWhitelistItem.setEndTime(_ctx.longValue("DescribeAutoCcWhitelistResponse.AutoCcWhitelist["+ i +"].EndTime"));
+			autoCcWhitelistItem.setSourceIp(_ctx.stringValue("DescribeAutoCcWhitelistResponse.AutoCcWhitelist["+ i +"].SourceIp"));
 
 			autoCcWhitelist.add(autoCcWhitelistItem);
 		}

@@ -31,8 +31,8 @@ public class DescribePortViewSourceProvincesResponseUnmarshaller {
 		List<Province> sourceProvinces = new ArrayList<Province>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePortViewSourceProvincesResponse.SourceProvinces.Length"); i++) {
 			Province province = new Province();
-			province.setCount(_ctx.longValue("DescribePortViewSourceProvincesResponse.SourceProvinces["+ i +"].Count"));
 			province.setProvinceId(_ctx.stringValue("DescribePortViewSourceProvincesResponse.SourceProvinces["+ i +"].ProvinceId"));
+			province.setCount(_ctx.longValue("DescribePortViewSourceProvincesResponse.SourceProvinces["+ i +"].Count"));
 
 			sourceProvinces.add(province);
 		}

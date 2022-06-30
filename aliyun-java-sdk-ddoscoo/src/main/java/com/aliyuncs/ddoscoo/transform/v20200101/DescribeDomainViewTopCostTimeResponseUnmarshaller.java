@@ -32,8 +32,8 @@ public class DescribeDomainViewTopCostTimeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainViewTopCostTimeResponse.UrlList.Length"); i++) {
 			Url url = new Url();
 			url.setCostTime(_ctx.floatValue("DescribeDomainViewTopCostTimeResponse.UrlList["+ i +"].CostTime"));
-			url.setDomain(_ctx.stringValue("DescribeDomainViewTopCostTimeResponse.UrlList["+ i +"].Domain"));
 			url.setUrl(_ctx.stringValue("DescribeDomainViewTopCostTimeResponse.UrlList["+ i +"].Url"));
+			url.setDomain(_ctx.stringValue("DescribeDomainViewTopCostTimeResponse.UrlList["+ i +"].Domain"));
 
 			urlList.add(url);
 		}

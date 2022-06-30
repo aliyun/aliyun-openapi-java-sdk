@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAttackAnalysisMaxQpsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long qps;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getQps() {
 		return this.qps;
@@ -42,6 +34,14 @@ public class DescribeAttackAnalysisMaxQpsResponse extends AcsResponse {
 
 	public void setQps(Long qps) {
 		this.qps = qps;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

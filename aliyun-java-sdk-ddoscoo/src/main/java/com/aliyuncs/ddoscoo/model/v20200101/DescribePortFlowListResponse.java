@@ -47,47 +47,23 @@ public class DescribePortFlowListResponse extends AcsResponse {
 
 	public static class PortFlow {
 
-		private Long attackBps;
-
-		private Long attackPps;
-
-		private Long outPps;
-
 		private Long index;
 
 		private Long time;
 
-		private Long inBps;
-
-		private Long outBps;
-
 		private Long inPps;
+
+		private Long inBps;
 
 		private String region;
 
-		public Long getAttackBps() {
-			return this.attackBps;
-		}
+		private Long outPps;
 
-		public void setAttackBps(Long attackBps) {
-			this.attackBps = attackBps;
-		}
+		private Long attackPps;
 
-		public Long getAttackPps() {
-			return this.attackPps;
-		}
+		private Long outBps;
 
-		public void setAttackPps(Long attackPps) {
-			this.attackPps = attackPps;
-		}
-
-		public Long getOutPps() {
-			return this.outPps;
-		}
-
-		public void setOutPps(Long outPps) {
-			this.outPps = outPps;
-		}
+		private Long attackBps;
 
 		public Long getIndex() {
 			return this.index;
@@ -105,12 +81,44 @@ public class DescribePortFlowListResponse extends AcsResponse {
 			this.time = time;
 		}
 
+		public Long getInPps() {
+			return this.inPps;
+		}
+
+		public void setInPps(Long inPps) {
+			this.inPps = inPps;
+		}
+
 		public Long getInBps() {
 			return this.inBps;
 		}
 
 		public void setInBps(Long inBps) {
 			this.inBps = inBps;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public Long getOutPps() {
+			return this.outPps;
+		}
+
+		public void setOutPps(Long outPps) {
+			this.outPps = outPps;
+		}
+
+		public Long getAttackPps() {
+			return this.attackPps;
+		}
+
+		public void setAttackPps(Long attackPps) {
+			this.attackPps = attackPps;
 		}
 
 		public Long getOutBps() {
@@ -121,20 +129,12 @@ public class DescribePortFlowListResponse extends AcsResponse {
 			this.outBps = outBps;
 		}
 
-		public Long getInPps() {
-			return this.inPps;
+		public Long getAttackBps() {
+			return this.attackBps;
 		}
 
-		public void setInPps(Long inPps) {
-			this.inPps = inPps;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
+		public void setAttackBps(Long attackBps) {
+			this.attackBps = attackBps;
 		}
 	}
 

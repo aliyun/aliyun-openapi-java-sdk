@@ -47,33 +47,25 @@ public class DescribeWebCcProtectSwitchResponse extends AcsResponse {
 
 	public static class ProtectSwitch {
 
-		private String domain;
-
 		private Integer blackWhiteListEnable;
-
-		private Integer regionBlockEnable;
-
-		private Integer ccEnable;
-
-		private Integer ccCustomRuleEnable;
-
-		private Integer preciseRuleEnable;
-
-		private Integer aiRuleEnable;
-
-		private String ccTemplate;
 
 		private String aiTemplate;
 
+		private Integer preciseRuleEnable;
+
+		private String domain;
+
 		private String aiMode;
 
-		public String getDomain() {
-			return this.domain;
-		}
+		private Integer aiRuleEnable;
 
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
+		private Integer regionBlockEnable;
+
+		private String ccTemplate;
+
+		private Integer ccCustomRuleEnable;
+
+		private Integer ccEnable;
 
 		public Integer getBlackWhiteListEnable() {
 			return this.blackWhiteListEnable;
@@ -81,54 +73,6 @@ public class DescribeWebCcProtectSwitchResponse extends AcsResponse {
 
 		public void setBlackWhiteListEnable(Integer blackWhiteListEnable) {
 			this.blackWhiteListEnable = blackWhiteListEnable;
-		}
-
-		public Integer getRegionBlockEnable() {
-			return this.regionBlockEnable;
-		}
-
-		public void setRegionBlockEnable(Integer regionBlockEnable) {
-			this.regionBlockEnable = regionBlockEnable;
-		}
-
-		public Integer getCcEnable() {
-			return this.ccEnable;
-		}
-
-		public void setCcEnable(Integer ccEnable) {
-			this.ccEnable = ccEnable;
-		}
-
-		public Integer getCcCustomRuleEnable() {
-			return this.ccCustomRuleEnable;
-		}
-
-		public void setCcCustomRuleEnable(Integer ccCustomRuleEnable) {
-			this.ccCustomRuleEnable = ccCustomRuleEnable;
-		}
-
-		public Integer getPreciseRuleEnable() {
-			return this.preciseRuleEnable;
-		}
-
-		public void setPreciseRuleEnable(Integer preciseRuleEnable) {
-			this.preciseRuleEnable = preciseRuleEnable;
-		}
-
-		public Integer getAiRuleEnable() {
-			return this.aiRuleEnable;
-		}
-
-		public void setAiRuleEnable(Integer aiRuleEnable) {
-			this.aiRuleEnable = aiRuleEnable;
-		}
-
-		public String getCcTemplate() {
-			return this.ccTemplate;
-		}
-
-		public void setCcTemplate(String ccTemplate) {
-			this.ccTemplate = ccTemplate;
 		}
 
 		public String getAiTemplate() {
@@ -139,12 +83,68 @@ public class DescribeWebCcProtectSwitchResponse extends AcsResponse {
 			this.aiTemplate = aiTemplate;
 		}
 
+		public Integer getPreciseRuleEnable() {
+			return this.preciseRuleEnable;
+		}
+
+		public void setPreciseRuleEnable(Integer preciseRuleEnable) {
+			this.preciseRuleEnable = preciseRuleEnable;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
 		public String getAiMode() {
 			return this.aiMode;
 		}
 
 		public void setAiMode(String aiMode) {
 			this.aiMode = aiMode;
+		}
+
+		public Integer getAiRuleEnable() {
+			return this.aiRuleEnable;
+		}
+
+		public void setAiRuleEnable(Integer aiRuleEnable) {
+			this.aiRuleEnable = aiRuleEnable;
+		}
+
+		public Integer getRegionBlockEnable() {
+			return this.regionBlockEnable;
+		}
+
+		public void setRegionBlockEnable(Integer regionBlockEnable) {
+			this.regionBlockEnable = regionBlockEnable;
+		}
+
+		public String getCcTemplate() {
+			return this.ccTemplate;
+		}
+
+		public void setCcTemplate(String ccTemplate) {
+			this.ccTemplate = ccTemplate;
+		}
+
+		public Integer getCcCustomRuleEnable() {
+			return this.ccCustomRuleEnable;
+		}
+
+		public void setCcCustomRuleEnable(Integer ccCustomRuleEnable) {
+			this.ccCustomRuleEnable = ccCustomRuleEnable;
+		}
+
+		public Integer getCcEnable() {
+			return this.ccEnable;
+		}
+
+		public void setCcEnable(Integer ccEnable) {
+			this.ccEnable = ccEnable;
 		}
 	}
 

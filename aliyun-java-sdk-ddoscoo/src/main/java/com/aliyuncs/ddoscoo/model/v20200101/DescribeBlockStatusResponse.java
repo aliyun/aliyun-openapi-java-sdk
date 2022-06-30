@@ -69,13 +69,21 @@ public class DescribeBlockStatusResponse extends AcsResponse {
 
 		public static class BlockStatusItem {
 
+			private Long endTime;
+
 			private Long startTime;
 
 			private String line;
 
-			private Long endTime;
-
 			private String blockStatus;
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
 
 			public Long getStartTime() {
 				return this.startTime;
@@ -91,14 +99,6 @@ public class DescribeBlockStatusResponse extends AcsResponse {
 
 			public void setLine(String line) {
 				this.line = line;
-			}
-
-			public Long getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(Long endTime) {
-				this.endTime = endTime;
 			}
 
 			public String getBlockStatus() {

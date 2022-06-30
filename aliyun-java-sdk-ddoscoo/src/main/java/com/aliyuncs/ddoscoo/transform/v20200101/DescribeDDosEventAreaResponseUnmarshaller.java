@@ -31,8 +31,8 @@ public class DescribeDDosEventAreaResponseUnmarshaller {
 		List<EventArea> areas = new ArrayList<EventArea>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDDosEventAreaResponse.Areas.Length"); i++) {
 			EventArea eventArea = new EventArea();
-			eventArea.setArea(_ctx.stringValue("DescribeDDosEventAreaResponse.Areas["+ i +"].Area"));
 			eventArea.setInPkts(_ctx.longValue("DescribeDDosEventAreaResponse.Areas["+ i +"].InPkts"));
+			eventArea.setArea(_ctx.stringValue("DescribeDDosEventAreaResponse.Areas["+ i +"].Area"));
 
 			areas.add(eventArea);
 		}

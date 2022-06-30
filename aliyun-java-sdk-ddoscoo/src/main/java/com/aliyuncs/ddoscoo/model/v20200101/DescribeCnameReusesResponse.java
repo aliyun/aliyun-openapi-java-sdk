@@ -49,9 +49,9 @@ public class DescribeCnameReusesResponse extends AcsResponse {
 
 		private String domain;
 
-		private Integer enable;
-
 		private String cname;
+
+		private Integer enable;
 
 		public String getDomain() {
 			return this.domain;
@@ -61,20 +61,20 @@ public class DescribeCnameReusesResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public Integer getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Integer enable) {
-			this.enable = enable;
-		}
-
 		public String getCname() {
 			return this.cname;
 		}
 
 		public void setCname(String cname) {
 			this.cname = cname;
+		}
+
+		public Integer getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Integer enable) {
+			this.enable = enable;
 		}
 	}
 

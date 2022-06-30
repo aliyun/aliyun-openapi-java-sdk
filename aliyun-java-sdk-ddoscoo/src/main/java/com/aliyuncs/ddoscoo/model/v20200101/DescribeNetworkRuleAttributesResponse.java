@@ -47,13 +47,21 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 
 	public static class NetworkRuleAttribute {
 
+		private Integer frontendPort;
+
 		private String instanceId;
 
 		private String protocol;
 
-		private Integer frontendPort;
-
 		private Config config;
+
+		public Integer getFrontendPort() {
+			return this.frontendPort;
+		}
+
+		public void setFrontendPort(Integer frontendPort) {
+			this.frontendPort = frontendPort;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -71,14 +79,6 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public Integer getFrontendPort() {
-			return this.frontendPort;
-		}
-
-		public void setFrontendPort(Integer frontendPort) {
-			this.frontendPort = frontendPort;
-		}
-
 		public Config getConfig() {
 			return this.config;
 		}
@@ -89,11 +89,11 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 
 		public static class Config {
 
-			private Integer persistenceTimeout;
+			private String nodataConn;
 
 			private String synproxy;
 
-			private String nodataConn;
+			private Integer persistenceTimeout;
 
 			private Sla sla;
 
@@ -103,12 +103,12 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 
 			private Cc cc;
 
-			public Integer getPersistenceTimeout() {
-				return this.persistenceTimeout;
+			public String getNodataConn() {
+				return this.nodataConn;
 			}
 
-			public void setPersistenceTimeout(Integer persistenceTimeout) {
-				this.persistenceTimeout = persistenceTimeout;
+			public void setNodataConn(String nodataConn) {
+				this.nodataConn = nodataConn;
 			}
 
 			public String getSynproxy() {
@@ -119,12 +119,12 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 				this.synproxy = synproxy;
 			}
 
-			public String getNodataConn() {
-				return this.nodataConn;
+			public Integer getPersistenceTimeout() {
+				return this.persistenceTimeout;
 			}
 
-			public void setNodataConn(String nodataConn) {
-				this.nodataConn = nodataConn;
+			public void setPersistenceTimeout(Integer persistenceTimeout) {
+				this.persistenceTimeout = persistenceTimeout;
 			}
 
 			public Sla getSla() {
@@ -161,13 +161,29 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 
 			public static class Sla {
 
+				private Integer maxconnEnable;
+
+				private Integer cpsEnable;
+
 				private Integer cps;
 
 				private Integer maxconn;
 
-				private Integer cpsEnable;
+				public Integer getMaxconnEnable() {
+					return this.maxconnEnable;
+				}
 
-				private Integer maxconnEnable;
+				public void setMaxconnEnable(Integer maxconnEnable) {
+					this.maxconnEnable = maxconnEnable;
+				}
+
+				public Integer getCpsEnable() {
+					return this.cpsEnable;
+				}
+
+				public void setCpsEnable(Integer cpsEnable) {
+					this.cpsEnable = cpsEnable;
+				}
 
 				public Integer getCps() {
 					return this.cps;
@@ -183,55 +199,31 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 
 				public void setMaxconn(Integer maxconn) {
 					this.maxconn = maxconn;
-				}
-
-				public Integer getCpsEnable() {
-					return this.cpsEnable;
-				}
-
-				public void setCpsEnable(Integer cpsEnable) {
-					this.cpsEnable = cpsEnable;
-				}
-
-				public Integer getMaxconnEnable() {
-					return this.maxconnEnable;
-				}
-
-				public void setMaxconnEnable(Integer maxconnEnable) {
-					this.maxconnEnable = maxconnEnable;
 				}
 			}
 
 			public static class Slimit {
 
-				private Integer cps;
-
-				private Integer maxconn;
+				private Integer maxconnEnable;
 
 				private Integer cpsEnable;
 
-				private Integer cpsMode;
-
-				private Integer maxconnEnable;
-
-				private Long bps;
+				private Integer cps;
 
 				private Long pps;
 
-				public Integer getCps() {
-					return this.cps;
+				private Long bps;
+
+				private Integer maxconn;
+
+				private Integer cpsMode;
+
+				public Integer getMaxconnEnable() {
+					return this.maxconnEnable;
 				}
 
-				public void setCps(Integer cps) {
-					this.cps = cps;
-				}
-
-				public Integer getMaxconn() {
-					return this.maxconn;
-				}
-
-				public void setMaxconn(Integer maxconn) {
-					this.maxconn = maxconn;
+				public void setMaxconnEnable(Integer maxconnEnable) {
+					this.maxconnEnable = maxconnEnable;
 				}
 
 				public Integer getCpsEnable() {
@@ -242,20 +234,20 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 					this.cpsEnable = cpsEnable;
 				}
 
-				public Integer getCpsMode() {
-					return this.cpsMode;
+				public Integer getCps() {
+					return this.cps;
 				}
 
-				public void setCpsMode(Integer cpsMode) {
-					this.cpsMode = cpsMode;
+				public void setCps(Integer cps) {
+					this.cps = cps;
 				}
 
-				public Integer getMaxconnEnable() {
-					return this.maxconnEnable;
+				public Long getPps() {
+					return this.pps;
 				}
 
-				public void setMaxconnEnable(Integer maxconnEnable) {
-					this.maxconnEnable = maxconnEnable;
+				public void setPps(Long pps) {
+					this.pps = pps;
 				}
 
 				public Long getBps() {
@@ -266,12 +258,20 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 					this.bps = bps;
 				}
 
-				public Long getPps() {
-					return this.pps;
+				public Integer getMaxconn() {
+					return this.maxconn;
 				}
 
-				public void setPps(Long pps) {
-					this.pps = pps;
+				public void setMaxconn(Integer maxconn) {
+					this.maxconn = maxconn;
+				}
+
+				public Integer getCpsMode() {
+					return this.cpsMode;
+				}
+
+				public void setCpsMode(Integer cpsMode) {
+					this.cpsMode = cpsMode;
 				}
 			}
 
@@ -312,13 +312,21 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 
 				public static class SblackItem {
 
+					private Integer type;
+
 					private Integer during;
 
 					private Integer expires;
 
 					private Integer cnt;
 
-					private Integer type;
+					public Integer getType() {
+						return this.type;
+					}
+
+					public void setType(Integer type) {
+						this.type = type;
+					}
 
 					public Integer getDuring() {
 						return this.during;
@@ -342,14 +350,6 @@ public class DescribeNetworkRuleAttributesResponse extends AcsResponse {
 
 					public void setCnt(Integer cnt) {
 						this.cnt = cnt;
-					}
-
-					public Integer getType() {
-						return this.type;
-					}
-
-					public void setType(Integer type) {
-						this.type = type;
 					}
 				}
 			}

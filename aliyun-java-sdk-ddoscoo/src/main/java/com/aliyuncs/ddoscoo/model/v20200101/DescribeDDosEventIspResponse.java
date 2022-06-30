@@ -47,17 +47,9 @@ public class DescribeDDosEventIspResponse extends AcsResponse {
 
 	public static class EventIsp {
 
-		private String isp;
-
 		private Long inPkts;
 
-		public String getIsp() {
-			return this.isp;
-		}
-
-		public void setIsp(String isp) {
-			this.isp = isp;
-		}
+		private String isp;
 
 		public Long getInPkts() {
 			return this.inPkts;
@@ -65,6 +57,14 @@ public class DescribeDDosEventIspResponse extends AcsResponse {
 
 		public void setInPkts(Long inPkts) {
 			this.inPkts = inPkts;
+		}
+
+		public String getIsp() {
+			return this.isp;
+		}
+
+		public void setIsp(String isp) {
+			this.isp = isp;
 		}
 	}
 

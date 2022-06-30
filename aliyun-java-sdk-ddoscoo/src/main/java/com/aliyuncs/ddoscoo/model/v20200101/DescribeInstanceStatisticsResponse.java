@@ -47,31 +47,15 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 
 	public static class InstanceStatistic {
 
-		private String instanceId;
-
-		private Integer portUsage;
-
 		private Integer domainUsage;
-
-		private Integer siteUsage;
 
 		private Integer defenseCountUsage;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String instanceId;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private Integer siteUsage;
 
-		public Integer getPortUsage() {
-			return this.portUsage;
-		}
-
-		public void setPortUsage(Integer portUsage) {
-			this.portUsage = portUsage;
-		}
+		private Integer portUsage;
 
 		public Integer getDomainUsage() {
 			return this.domainUsage;
@@ -79,6 +63,22 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 
 		public void setDomainUsage(Integer domainUsage) {
 			this.domainUsage = domainUsage;
+		}
+
+		public Integer getDefenseCountUsage() {
+			return this.defenseCountUsage;
+		}
+
+		public void setDefenseCountUsage(Integer defenseCountUsage) {
+			this.defenseCountUsage = defenseCountUsage;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Integer getSiteUsage() {
@@ -89,12 +89,12 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 			this.siteUsage = siteUsage;
 		}
 
-		public Integer getDefenseCountUsage() {
-			return this.defenseCountUsage;
+		public Integer getPortUsage() {
+			return this.portUsage;
 		}
 
-		public void setDefenseCountUsage(Integer defenseCountUsage) {
-			this.defenseCountUsage = defenseCountUsage;
+		public void setPortUsage(Integer portUsage) {
+			this.portUsage = portUsage;
 		}
 	}
 

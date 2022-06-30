@@ -32,10 +32,10 @@ public class DescribeTagResourcesResponseUnmarshaller {
 		List<TagResource> tagResources = new ArrayList<TagResource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTagResourcesResponse.TagResources.Length"); i++) {
 			TagResource tagResource = new TagResource();
+			tagResource.setTagValue(_ctx.stringValue("DescribeTagResourcesResponse.TagResources["+ i +"].TagValue"));
 			tagResource.setResourceType(_ctx.stringValue("DescribeTagResourcesResponse.TagResources["+ i +"].ResourceType"));
 			tagResource.setResourceId(_ctx.stringValue("DescribeTagResourcesResponse.TagResources["+ i +"].ResourceId"));
 			tagResource.setTagKey(_ctx.stringValue("DescribeTagResourcesResponse.TagResources["+ i +"].TagKey"));
-			tagResource.setTagValue(_ctx.stringValue("DescribeTagResourcesResponse.TagResources["+ i +"].TagValue"));
 
 			tagResources.add(tagResource);
 		}

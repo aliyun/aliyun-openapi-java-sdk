@@ -47,15 +47,31 @@ public class DescribeHealthCheckStatusResponse extends AcsResponse {
 
 	public static class Status {
 
+		private String status;
+
+		private Integer frontendPort;
+
 		private String instanceId;
 
 		private String protocol;
 
-		private Integer frontendPort;
-
-		private String status;
-
 		private List<RealServerStatus> realServerStatusList;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getFrontendPort() {
+			return this.frontendPort;
+		}
+
+		public void setFrontendPort(Integer frontendPort) {
+			this.frontendPort = frontendPort;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -73,22 +89,6 @@ public class DescribeHealthCheckStatusResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public Integer getFrontendPort() {
-			return this.frontendPort;
-		}
-
-		public void setFrontendPort(Integer frontendPort) {
-			this.frontendPort = frontendPort;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public List<RealServerStatus> getRealServerStatusList() {
 			return this.realServerStatusList;
 		}
@@ -99,17 +99,9 @@ public class DescribeHealthCheckStatusResponse extends AcsResponse {
 
 		public static class RealServerStatus {
 
-			private String address;
-
 			private String status;
 
-			public String getAddress() {
-				return this.address;
-			}
-
-			public void setAddress(String address) {
-				this.address = address;
-			}
+			private String address;
 
 			public String getStatus() {
 				return this.status;
@@ -117,6 +109,14 @@ public class DescribeHealthCheckStatusResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getAddress() {
+				return this.address;
+			}
+
+			public void setAddress(String address) {
+				this.address = address;
 			}
 		}
 	}

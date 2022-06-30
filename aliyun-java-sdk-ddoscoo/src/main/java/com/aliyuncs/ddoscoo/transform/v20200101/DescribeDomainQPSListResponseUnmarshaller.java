@@ -31,15 +31,15 @@ public class DescribeDomainQPSListResponseUnmarshaller {
 		List<DomainQPS> domainQPSList = new ArrayList<DomainQPS>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainQPSListResponse.DomainQPSList.Length"); i++) {
 			DomainQPS domainQPS = new DomainQPS();
-			domainQPS.setMaxQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].MaxQps"));
-			domainQPS.setMaxAttackQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].MaxAttackQps"));
-			domainQPS.setMaxNormalQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].MaxNormalQps"));
-			domainQPS.setAttackQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].AttackQps"));
-			domainQPS.setTotalQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].TotalQps"));
-			domainQPS.setCacheHits(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].CacheHits"));
-			domainQPS.setTotalCount(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].TotalCount"));
 			domainQPS.setIndex(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].Index"));
 			domainQPS.setTime(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].Time"));
+			domainQPS.setMaxAttackQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].MaxAttackQps"));
+			domainQPS.setAttackQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].AttackQps"));
+			domainQPS.setMaxQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].MaxQps"));
+			domainQPS.setMaxNormalQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].MaxNormalQps"));
+			domainQPS.setTotalQps(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].TotalQps"));
+			domainQPS.setTotalCount(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].TotalCount"));
+			domainQPS.setCacheHits(_ctx.longValue("DescribeDomainQPSListResponse.DomainQPSList["+ i +"].CacheHits"));
 
 			domainQPSList.add(domainQPS);
 		}

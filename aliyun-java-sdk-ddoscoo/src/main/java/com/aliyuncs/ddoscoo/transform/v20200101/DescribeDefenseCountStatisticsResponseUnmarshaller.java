@@ -26,9 +26,10 @@ public class DescribeDefenseCountStatisticsResponseUnmarshaller {
 		describeDefenseCountStatisticsResponse.setRequestId(_ctx.stringValue("DescribeDefenseCountStatisticsResponse.RequestId"));
 
 		DefenseCountStatistics defenseCountStatistics = new DefenseCountStatistics();
-		defenseCountStatistics.setDefenseCountTotalUsageOfCurrentMonth(_ctx.integerValue("DescribeDefenseCountStatisticsResponse.DefenseCountStatistics.DefenseCountTotalUsageOfCurrentMonth"));
 		defenseCountStatistics.setFlowPackCountRemain(_ctx.integerValue("DescribeDefenseCountStatisticsResponse.DefenseCountStatistics.FlowPackCountRemain"));
 		defenseCountStatistics.setMaxUsableDefenseCountCurrentMonth(_ctx.integerValue("DescribeDefenseCountStatisticsResponse.DefenseCountStatistics.MaxUsableDefenseCountCurrentMonth"));
+		defenseCountStatistics.setDefenseCountTotalUsageOfCurrentMonth(_ctx.integerValue("DescribeDefenseCountStatisticsResponse.DefenseCountStatistics.DefenseCountTotalUsageOfCurrentMonth"));
+		defenseCountStatistics.setSecHighSpeedCountRemain(_ctx.integerValue("DescribeDefenseCountStatisticsResponse.DefenseCountStatistics.SecHighSpeedCountRemain"));
 		describeDefenseCountStatisticsResponse.setDefenseCountStatistics(defenseCountStatistics);
 	 
 	 	return describeDefenseCountStatisticsResponse;

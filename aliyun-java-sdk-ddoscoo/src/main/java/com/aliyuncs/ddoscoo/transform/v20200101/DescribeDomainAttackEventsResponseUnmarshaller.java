@@ -32,9 +32,9 @@ public class DescribeDomainAttackEventsResponseUnmarshaller {
 		List<Data> domainAttackEvents = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainAttackEventsResponse.DomainAttackEvents.Length"); i++) {
 			Data data = new Data();
-			data.setDomain(_ctx.stringValue("DescribeDomainAttackEventsResponse.DomainAttackEvents["+ i +"].Domain"));
-			data.setStartTime(_ctx.longValue("DescribeDomainAttackEventsResponse.DomainAttackEvents["+ i +"].StartTime"));
 			data.setEndTime(_ctx.longValue("DescribeDomainAttackEventsResponse.DomainAttackEvents["+ i +"].EndTime"));
+			data.setStartTime(_ctx.longValue("DescribeDomainAttackEventsResponse.DomainAttackEvents["+ i +"].StartTime"));
+			data.setDomain(_ctx.stringValue("DescribeDomainAttackEventsResponse.DomainAttackEvents["+ i +"].Domain"));
 			data.setMaxQps(_ctx.longValue("DescribeDomainAttackEventsResponse.DomainAttackEvents["+ i +"].MaxQps"));
 
 			domainAttackEvents.add(data);

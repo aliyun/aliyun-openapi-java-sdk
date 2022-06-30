@@ -31,8 +31,8 @@ public class DescribeBlackholeStatusResponseUnmarshaller {
 		List<BlackholeStatusItem> blackholeStatus = new ArrayList<BlackholeStatusItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBlackholeStatusResponse.BlackholeStatus.Length"); i++) {
 			BlackholeStatusItem blackholeStatusItem = new BlackholeStatusItem();
-			blackholeStatusItem.setStartTime(_ctx.longValue("DescribeBlackholeStatusResponse.BlackholeStatus["+ i +"].StartTime"));
 			blackholeStatusItem.setEndTime(_ctx.longValue("DescribeBlackholeStatusResponse.BlackholeStatus["+ i +"].EndTime"));
+			blackholeStatusItem.setStartTime(_ctx.longValue("DescribeBlackholeStatusResponse.BlackholeStatus["+ i +"].StartTime"));
 			blackholeStatusItem.setIp(_ctx.stringValue("DescribeBlackholeStatusResponse.BlackholeStatus["+ i +"].Ip"));
 			blackholeStatusItem.setBlackStatus(_ctx.stringValue("DescribeBlackholeStatusResponse.BlackholeStatus["+ i +"].BlackStatus"));
 

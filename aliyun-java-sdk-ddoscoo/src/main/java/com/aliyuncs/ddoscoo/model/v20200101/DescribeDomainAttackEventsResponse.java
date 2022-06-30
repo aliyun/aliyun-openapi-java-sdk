@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainAttackEventsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<Data> domainAttackEvents;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeDomainAttackEventsResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Data> getDomainAttackEvents() {
@@ -57,20 +57,20 @@ public class DescribeDomainAttackEventsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String domain;
+		private Long endTime;
 
 		private Long startTime;
 
-		private Long endTime;
+		private String domain;
 
 		private Long maxQps;
 
-		public String getDomain() {
-			return this.domain;
+		public Long getEndTime() {
+			return this.endTime;
 		}
 
-		public void setDomain(String domain) {
-			this.domain = domain;
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
 		}
 
 		public Long getStartTime() {
@@ -81,12 +81,12 @@ public class DescribeDomainAttackEventsResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Long getEndTime() {
-			return this.endTime;
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public Long getMaxQps() {

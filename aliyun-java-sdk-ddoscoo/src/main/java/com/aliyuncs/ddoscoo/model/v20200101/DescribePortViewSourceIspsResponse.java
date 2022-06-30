@@ -47,17 +47,9 @@ public class DescribePortViewSourceIspsResponse extends AcsResponse {
 
 	public static class Isp {
 
-		private String ispId;
-
 		private Long count;
 
-		public String getIspId() {
-			return this.ispId;
-		}
-
-		public void setIspId(String ispId) {
-			this.ispId = ispId;
-		}
+		private String ispId;
 
 		public Long getCount() {
 			return this.count;
@@ -65,6 +57,14 @@ public class DescribePortViewSourceIspsResponse extends AcsResponse {
 
 		public void setCount(Long count) {
 			this.count = count;
+		}
+
+		public String getIspId() {
+			return this.ispId;
+		}
+
+		public void setIspId(String ispId) {
+			this.ispId = ispId;
 		}
 	}
 

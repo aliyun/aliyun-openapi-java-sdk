@@ -31,8 +31,8 @@ public class DescribeWebAccessModeResponseUnmarshaller {
 		List<DomainMode> domainModes = new ArrayList<DomainMode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWebAccessModeResponse.DomainModes.Length"); i++) {
 			DomainMode domainMode = new DomainMode();
-			domainMode.setDomain(_ctx.stringValue("DescribeWebAccessModeResponse.DomainModes["+ i +"].Domain"));
 			domainMode.setAccessMode(_ctx.integerValue("DescribeWebAccessModeResponse.DomainModes["+ i +"].AccessMode"));
+			domainMode.setDomain(_ctx.stringValue("DescribeWebAccessModeResponse.DomainModes["+ i +"].Domain"));
 
 			domainModes.add(domainMode);
 		}

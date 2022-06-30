@@ -31,9 +31,9 @@ public class DescribeDomainTopAttackListResponseUnmarshaller {
 		List<Data> attackList = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainTopAttackListResponse.AttackList.Length"); i++) {
 			Data data = new Data();
-			data.setCount(_ctx.longValue("DescribeDomainTopAttackListResponse.AttackList["+ i +"].Count"));
 			data.setAttack(_ctx.longValue("DescribeDomainTopAttackListResponse.AttackList["+ i +"].Attack"));
 			data.setDomain(_ctx.stringValue("DescribeDomainTopAttackListResponse.AttackList["+ i +"].Domain"));
+			data.setCount(_ctx.longValue("DescribeDomainTopAttackListResponse.AttackList["+ i +"].Count"));
 
 			attackList.add(data);
 		}

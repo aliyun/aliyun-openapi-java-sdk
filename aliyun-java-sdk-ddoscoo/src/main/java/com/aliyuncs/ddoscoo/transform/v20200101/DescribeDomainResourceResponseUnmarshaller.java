@@ -38,31 +38,25 @@ public class DescribeDomainResourceResponseUnmarshaller {
 			webRule.setSslProtocols(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].SslProtocols"));
 			webRule.setPunishReason(_ctx.integerValue("DescribeDomainResourceResponse.WebRules["+ i +"].PunishReason"));
 			webRule.setCcTemplate(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].CcTemplate"));
+			webRule.setHttpsExt(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].HttpsExt"));
 			webRule.setCcEnabled(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].CcEnabled"));
 			webRule.setSslCiphers(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].SslCiphers"));
-			webRule.setSsl13Enabled(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].Ssl13Enabled"));
 			webRule.setCcRuleEnabled(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].CcRuleEnabled"));
-			webRule.setPunishStatus(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].PunishStatus"));
+			webRule.setSsl13Enabled(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].Ssl13Enabled"));
 			webRule.setRsType(_ctx.integerValue("DescribeDomainResourceResponse.WebRules["+ i +"].RsType"));
+			webRule.setPunishStatus(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].PunishStatus"));
 			webRule.setProxyEnabled(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].ProxyEnabled"));
 			webRule.setCertName(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].CertName"));
 			webRule.setPolicyMode(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].PolicyMode"));
 			webRule.setCname(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].Cname"));
 			webRule.setHttp2Enable(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].Http2Enable"));
 			webRule.setHttps2HttpEnable(_ctx.booleanValue("DescribeDomainResourceResponse.WebRules["+ i +"].Https2HttpEnable"));
-			webRule.setHttpsExt(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].HttpsExt"));
 
-			List<String> blackList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].BlackList.Length"); j++) {
-				blackList.add(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].BlackList["+ j +"]"));
+			List<String> instanceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].InstanceIds.Length"); j++) {
+				instanceIds.add(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].InstanceIds["+ j +"]"));
 			}
-			webRule.setBlackList(blackList);
-
-			List<String> whiteList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].WhiteList.Length"); j++) {
-				whiteList.add(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].WhiteList["+ j +"]"));
-			}
-			webRule.setWhiteList(whiteList);
+			webRule.setInstanceIds(instanceIds);
 
 			List<String> customCiphers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].CustomCiphers.Length"); j++) {
@@ -70,17 +64,23 @@ public class DescribeDomainResourceResponseUnmarshaller {
 			}
 			webRule.setCustomCiphers(customCiphers);
 
+			List<String> whiteList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].WhiteList.Length"); j++) {
+				whiteList.add(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].WhiteList["+ j +"]"));
+			}
+			webRule.setWhiteList(whiteList);
+
+			List<String> blackList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].BlackList.Length"); j++) {
+				blackList.add(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].BlackList["+ j +"]"));
+			}
+			webRule.setBlackList(blackList);
+
 			List<String> realServers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].RealServers.Length"); j++) {
 				realServers.add(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].RealServers["+ j +"]"));
 			}
 			webRule.setRealServers(realServers);
-
-			List<String> instanceIds = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].InstanceIds.Length"); j++) {
-				instanceIds.add(_ctx.stringValue("DescribeDomainResourceResponse.WebRules["+ i +"].InstanceIds["+ j +"]"));
-			}
-			webRule.setInstanceIds(instanceIds);
 
 			List<ProxyConfig> proxyTypes = new ArrayList<ProxyConfig>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResourceResponse.WebRules["+ i +"].ProxyTypes.Length"); j++) {

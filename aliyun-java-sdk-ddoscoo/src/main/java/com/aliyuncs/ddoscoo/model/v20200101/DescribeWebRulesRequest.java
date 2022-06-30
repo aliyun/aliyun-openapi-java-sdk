@@ -26,6 +26,8 @@ import com.aliyuncs.ddoscoo.Endpoint;
 public class DescribeWebRulesRequest extends RpcAcsRequest<DescribeWebRulesResponse> {
 	   
 
+	private String cname;
+
 	private Integer pageNumber;
 
 	private String resourceGroupId;
@@ -44,6 +46,17 @@ public class DescribeWebRulesRequest extends RpcAcsRequest<DescribeWebRulesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCname() {
+		return this.cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
+		if(cname != null){
+			putQueryParameter("Cname", cname);
+		}
 	}
 
 	public Integer getPageNumber() {

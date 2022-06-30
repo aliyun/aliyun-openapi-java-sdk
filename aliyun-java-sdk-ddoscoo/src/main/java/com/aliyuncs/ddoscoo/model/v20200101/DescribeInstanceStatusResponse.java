@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceStatusResponse extends AcsResponse {
 
+	private Integer instanceStatus;
+
 	private String requestId;
 
 	private String instanceId;
 
-	private Integer instanceStatus;
+	public Integer getInstanceStatus() {
+		return this.instanceStatus;
+	}
+
+	public void setInstanceStatus(Integer instanceStatus) {
+		this.instanceStatus = instanceStatus;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeInstanceStatusResponse extends AcsResponse {
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-	}
-
-	public Integer getInstanceStatus() {
-		return this.instanceStatus;
-	}
-
-	public void setInstanceStatus(Integer instanceStatus) {
-		this.instanceStatus = instanceStatus;
 	}
 
 	@Override

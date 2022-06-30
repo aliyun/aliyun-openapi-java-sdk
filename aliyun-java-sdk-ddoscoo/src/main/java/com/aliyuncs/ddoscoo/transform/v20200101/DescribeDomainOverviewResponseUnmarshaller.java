@@ -23,8 +23,8 @@ public class DescribeDomainOverviewResponseUnmarshaller {
 	public static DescribeDomainOverviewResponse unmarshall(DescribeDomainOverviewResponse describeDomainOverviewResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainOverviewResponse.setRequestId(_ctx.stringValue("DescribeDomainOverviewResponse.RequestId"));
-		describeDomainOverviewResponse.setMaxHttps(_ctx.longValue("DescribeDomainOverviewResponse.MaxHttps"));
 		describeDomainOverviewResponse.setMaxHttp(_ctx.longValue("DescribeDomainOverviewResponse.MaxHttp"));
+		describeDomainOverviewResponse.setMaxHttps(_ctx.longValue("DescribeDomainOverviewResponse.MaxHttps"));
 	 
 	 	return describeDomainOverviewResponse;
 	}

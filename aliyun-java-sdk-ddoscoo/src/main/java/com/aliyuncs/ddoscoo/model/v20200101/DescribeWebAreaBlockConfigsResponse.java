@@ -69,17 +69,9 @@ public class DescribeWebAreaBlockConfigsResponse extends AcsResponse {
 
 		public static class Region {
 
-			private Integer block;
-
 			private String region;
 
-			public Integer getBlock() {
-				return this.block;
-			}
-
-			public void setBlock(Integer block) {
-				this.block = block;
-			}
+			private Integer block;
 
 			public String getRegion() {
 				return this.region;
@@ -87,6 +79,14 @@ public class DescribeWebAreaBlockConfigsResponse extends AcsResponse {
 
 			public void setRegion(String region) {
 				this.region = region;
+			}
+
+			public Integer getBlock() {
+				return this.block;
+			}
+
+			public void setBlock(Integer block) {
+				this.block = block;
 			}
 		}
 	}

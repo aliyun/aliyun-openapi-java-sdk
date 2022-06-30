@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSystemLogResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long total;
 
+	private String requestId;
+
 	private List<SystemLogItem> systemLog;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotal() {
 		return this.total;
@@ -45,6 +37,14 @@ public class DescribeSystemLogResponse extends AcsResponse {
 
 	public void setTotal(Long total) {
 		this.total = total;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SystemLogItem> getSystemLog() {
@@ -57,36 +57,28 @@ public class DescribeSystemLogResponse extends AcsResponse {
 
 	public static class SystemLogItem {
 
-		private Long gmtCreate;
-
-		private Long gmtModified;
+		private Integer status;
 
 		private Integer entityType;
 
 		private String entityObject;
 
+		private Long gmtCreate;
+
 		private Integer opAction;
+
+		private Long gmtModified;
 
 		private String opAccount;
 
 		private String opDesc;
 
-		private Integer status;
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getEntityType() {
@@ -105,12 +97,28 @@ public class DescribeSystemLogResponse extends AcsResponse {
 			this.entityObject = entityObject;
 		}
 
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public Integer getOpAction() {
 			return this.opAction;
 		}
 
 		public void setOpAction(Integer opAction) {
 			this.opAction = opAction;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getOpAccount() {
@@ -127,14 +135,6 @@ public class DescribeSystemLogResponse extends AcsResponse {
 
 		public void setOpDesc(String opDesc) {
 			this.opDesc = opDesc;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
 		}
 	}
 

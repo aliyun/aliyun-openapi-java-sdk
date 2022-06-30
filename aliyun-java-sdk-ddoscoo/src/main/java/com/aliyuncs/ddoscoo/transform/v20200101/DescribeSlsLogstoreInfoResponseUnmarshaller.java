@@ -23,11 +23,11 @@ public class DescribeSlsLogstoreInfoResponseUnmarshaller {
 	public static DescribeSlsLogstoreInfoResponse unmarshall(DescribeSlsLogstoreInfoResponse describeSlsLogstoreInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeSlsLogstoreInfoResponse.setRequestId(_ctx.stringValue("DescribeSlsLogstoreInfoResponse.RequestId"));
+		describeSlsLogstoreInfoResponse.setTtl(_ctx.integerValue("DescribeSlsLogstoreInfoResponse.Ttl"));
 		describeSlsLogstoreInfoResponse.setQuota(_ctx.longValue("DescribeSlsLogstoreInfoResponse.Quota"));
 		describeSlsLogstoreInfoResponse.setLogStore(_ctx.stringValue("DescribeSlsLogstoreInfoResponse.LogStore"));
 		describeSlsLogstoreInfoResponse.setUsed(_ctx.longValue("DescribeSlsLogstoreInfoResponse.Used"));
 		describeSlsLogstoreInfoResponse.setProject(_ctx.stringValue("DescribeSlsLogstoreInfoResponse.Project"));
-		describeSlsLogstoreInfoResponse.setTtl(_ctx.integerValue("DescribeSlsLogstoreInfoResponse.Ttl"));
 	 
 	 	return describeSlsLogstoreInfoResponse;
 	}

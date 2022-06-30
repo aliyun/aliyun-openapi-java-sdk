@@ -32,9 +32,9 @@ public class DescribePortConnsCountRequest extends RpcAcsRequest<DescribePortCon
 
 	private Long endTime;
 
-	private List<String> instanceIdss;
-
 	private String port;
+
+	private List<String> instanceIdss;
 	public DescribePortConnsCountRequest() {
 		super("ddoscoo", "2020-01-01", "DescribePortConnsCount");
 		setMethod(MethodType.POST);
@@ -77,6 +77,17 @@ public class DescribePortConnsCountRequest extends RpcAcsRequest<DescribePortCon
 		}
 	}
 
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
 	public List<String> getInstanceIdss() {
 		return this.instanceIdss;
 	}
@@ -88,17 +99,6 @@ public class DescribePortConnsCountRequest extends RpcAcsRequest<DescribePortCon
 				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
 			}
 		}	
-	}
-
-	public String getPort() {
-		return this.port;
-	}
-
-	public void setPort(String port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port);
-		}
 	}
 
 	@Override

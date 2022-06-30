@@ -37,8 +37,8 @@ public class DescribeWebInstanceRelationsResponseUnmarshaller {
 			List<InstanceDetail> instanceDetails = new ArrayList<InstanceDetail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeWebInstanceRelationsResponse.WebInstanceRelations["+ i +"].InstanceDetails.Length"); j++) {
 				InstanceDetail instanceDetail = new InstanceDetail();
-				instanceDetail.setInstanceId(_ctx.stringValue("DescribeWebInstanceRelationsResponse.WebInstanceRelations["+ i +"].InstanceDetails["+ j +"].InstanceId"));
 				instanceDetail.setFunctionVersion(_ctx.stringValue("DescribeWebInstanceRelationsResponse.WebInstanceRelations["+ i +"].InstanceDetails["+ j +"].FunctionVersion"));
+				instanceDetail.setInstanceId(_ctx.stringValue("DescribeWebInstanceRelationsResponse.WebInstanceRelations["+ i +"].InstanceDetails["+ j +"].InstanceId"));
 
 				List<String> eipList = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeWebInstanceRelationsResponse.WebInstanceRelations["+ i +"].InstanceDetails["+ j +"].EipList.Length"); k++) {

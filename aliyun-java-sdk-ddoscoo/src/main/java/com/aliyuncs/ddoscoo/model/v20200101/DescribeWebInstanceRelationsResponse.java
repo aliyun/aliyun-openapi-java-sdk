@@ -69,19 +69,11 @@ public class DescribeWebInstanceRelationsResponse extends AcsResponse {
 
 		public static class InstanceDetail {
 
-			private String instanceId;
-
 			private String functionVersion;
 
+			private String instanceId;
+
 			private List<String> eipList;
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
 
 			public String getFunctionVersion() {
 				return this.functionVersion;
@@ -89,6 +81,14 @@ public class DescribeWebInstanceRelationsResponse extends AcsResponse {
 
 			public void setFunctionVersion(String functionVersion) {
 				this.functionVersion = functionVersion;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public List<String> getEipList() {

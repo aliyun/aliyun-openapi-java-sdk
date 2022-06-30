@@ -23,8 +23,8 @@ public class DescribeInstanceStatusResponseUnmarshaller {
 	public static DescribeInstanceStatusResponse unmarshall(DescribeInstanceStatusResponse describeInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeInstanceStatusResponse.RequestId"));
-		describeInstanceStatusResponse.setInstanceId(_ctx.stringValue("DescribeInstanceStatusResponse.InstanceId"));
 		describeInstanceStatusResponse.setInstanceStatus(_ctx.integerValue("DescribeInstanceStatusResponse.InstanceStatus"));
+		describeInstanceStatusResponse.setInstanceId(_ctx.stringValue("DescribeInstanceStatusResponse.InstanceId"));
 	 
 	 	return describeInstanceStatusResponse;
 	}

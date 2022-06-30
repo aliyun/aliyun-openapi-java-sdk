@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeL7RsPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String proxyMode;
 
+	private String requestId;
+
 	private List<AttributeItem> attributes;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getProxyMode() {
 		return this.proxyMode;
@@ -45,6 +37,14 @@ public class DescribeL7RsPolicyResponse extends AcsResponse {
 
 	public void setProxyMode(String proxyMode) {
 		this.proxyMode = proxyMode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AttributeItem> getAttributes() {

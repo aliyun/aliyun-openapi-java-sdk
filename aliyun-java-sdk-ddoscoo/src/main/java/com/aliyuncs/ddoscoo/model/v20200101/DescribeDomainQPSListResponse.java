@@ -47,79 +47,23 @@ public class DescribeDomainQPSListResponse extends AcsResponse {
 
 	public static class DomainQPS {
 
-		private Long maxQps;
-
-		private Long maxAttackQps;
-
-		private Long maxNormalQps;
-
-		private Long attackQps;
-
-		private Long totalQps;
-
-		private Long cacheHits;
-
-		private Long totalCount;
-
 		private Long index;
 
 		private Long time;
 
-		public Long getMaxQps() {
-			return this.maxQps;
-		}
+		private Long maxAttackQps;
 
-		public void setMaxQps(Long maxQps) {
-			this.maxQps = maxQps;
-		}
+		private Long attackQps;
 
-		public Long getMaxAttackQps() {
-			return this.maxAttackQps;
-		}
+		private Long maxQps;
 
-		public void setMaxAttackQps(Long maxAttackQps) {
-			this.maxAttackQps = maxAttackQps;
-		}
+		private Long maxNormalQps;
 
-		public Long getMaxNormalQps() {
-			return this.maxNormalQps;
-		}
+		private Long totalQps;
 
-		public void setMaxNormalQps(Long maxNormalQps) {
-			this.maxNormalQps = maxNormalQps;
-		}
+		private Long totalCount;
 
-		public Long getAttackQps() {
-			return this.attackQps;
-		}
-
-		public void setAttackQps(Long attackQps) {
-			this.attackQps = attackQps;
-		}
-
-		public Long getTotalQps() {
-			return this.totalQps;
-		}
-
-		public void setTotalQps(Long totalQps) {
-			this.totalQps = totalQps;
-		}
-
-		public Long getCacheHits() {
-			return this.cacheHits;
-		}
-
-		public void setCacheHits(Long cacheHits) {
-			this.cacheHits = cacheHits;
-		}
-
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
+		private Long cacheHits;
 
 		public Long getIndex() {
 			return this.index;
@@ -135,6 +79,62 @@ public class DescribeDomainQPSListResponse extends AcsResponse {
 
 		public void setTime(Long time) {
 			this.time = time;
+		}
+
+		public Long getMaxAttackQps() {
+			return this.maxAttackQps;
+		}
+
+		public void setMaxAttackQps(Long maxAttackQps) {
+			this.maxAttackQps = maxAttackQps;
+		}
+
+		public Long getAttackQps() {
+			return this.attackQps;
+		}
+
+		public void setAttackQps(Long attackQps) {
+			this.attackQps = attackQps;
+		}
+
+		public Long getMaxQps() {
+			return this.maxQps;
+		}
+
+		public void setMaxQps(Long maxQps) {
+			this.maxQps = maxQps;
+		}
+
+		public Long getMaxNormalQps() {
+			return this.maxNormalQps;
+		}
+
+		public void setMaxNormalQps(Long maxNormalQps) {
+			this.maxNormalQps = maxNormalQps;
+		}
+
+		public Long getTotalQps() {
+			return this.totalQps;
+		}
+
+		public void setTotalQps(Long totalQps) {
+			this.totalQps = totalQps;
+		}
+
+		public Long getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public Long getCacheHits() {
+			return this.cacheHits;
+		}
+
+		public void setCacheHits(Long cacheHits) {
+			this.cacheHits = cacheHits;
 		}
 	}
 

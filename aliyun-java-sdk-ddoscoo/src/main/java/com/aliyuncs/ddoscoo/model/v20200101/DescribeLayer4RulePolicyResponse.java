@@ -25,39 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLayer4RulePolicyResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String instanceId;
-
 	private Integer frontendPort;
-
-	private Integer backendPort;
-
-	private String forwardProtocol;
 
 	private String bakMode;
 
+	private String requestId;
+
 	private Integer currentIndex;
+
+	private String forwardProtocol;
+
+	private String instanceId;
+
+	private Integer backendPort;
 
 	private List<PriRealServersItem> priRealServers;
 
 	private List<SecRealServersItem> secRealServers;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
 
 	public Integer getFrontendPort() {
 		return this.frontendPort;
@@ -65,22 +49,6 @@ public class DescribeLayer4RulePolicyResponse extends AcsResponse {
 
 	public void setFrontendPort(Integer frontendPort) {
 		this.frontendPort = frontendPort;
-	}
-
-	public Integer getBackendPort() {
-		return this.backendPort;
-	}
-
-	public void setBackendPort(Integer backendPort) {
-		this.backendPort = backendPort;
-	}
-
-	public String getForwardProtocol() {
-		return this.forwardProtocol;
-	}
-
-	public void setForwardProtocol(String forwardProtocol) {
-		this.forwardProtocol = forwardProtocol;
 	}
 
 	public String getBakMode() {
@@ -91,12 +59,44 @@ public class DescribeLayer4RulePolicyResponse extends AcsResponse {
 		this.bakMode = bakMode;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getCurrentIndex() {
 		return this.currentIndex;
 	}
 
 	public void setCurrentIndex(Integer currentIndex) {
 		this.currentIndex = currentIndex;
+	}
+
+	public String getForwardProtocol() {
+		return this.forwardProtocol;
+	}
+
+	public void setForwardProtocol(String forwardProtocol) {
+		this.forwardProtocol = forwardProtocol;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public Integer getBackendPort() {
+		return this.backendPort;
+	}
+
+	public void setBackendPort(Integer backendPort) {
+		this.backendPort = backendPort;
 	}
 
 	public List<PriRealServersItem> getPriRealServers() {
@@ -117,24 +117,24 @@ public class DescribeLayer4RulePolicyResponse extends AcsResponse {
 
 	public static class PriRealServersItem {
 
-		private String instanceId;
+		private Integer frontendPort;
 
 		private String eip;
 
-		private Integer frontendPort;
-
 		private String protocol;
-
-		private String realServer;
 
 		private Integer currentIndex;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private String instanceId;
+
+		private String realServer;
+
+		public Integer getFrontendPort() {
+			return this.frontendPort;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setFrontendPort(Integer frontendPort) {
+			this.frontendPort = frontendPort;
 		}
 
 		public String getEip() {
@@ -145,14 +145,6 @@ public class DescribeLayer4RulePolicyResponse extends AcsResponse {
 			this.eip = eip;
 		}
 
-		public Integer getFrontendPort() {
-			return this.frontendPort;
-		}
-
-		public void setFrontendPort(Integer frontendPort) {
-			this.frontendPort = frontendPort;
-		}
-
 		public String getBizProtocol() {
 			return this.protocol;
 		}
@@ -161,43 +153,51 @@ public class DescribeLayer4RulePolicyResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public String getRealServer() {
-			return this.realServer;
-		}
-
-		public void setRealServer(String realServer) {
-			this.realServer = realServer;
-		}
-
 		public Integer getCurrentIndex() {
 			return this.currentIndex;
 		}
 
 		public void setCurrentIndex(Integer currentIndex) {
 			this.currentIndex = currentIndex;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRealServer() {
+			return this.realServer;
+		}
+
+		public void setRealServer(String realServer) {
+			this.realServer = realServer;
 		}
 	}
 
 	public static class SecRealServersItem {
 
-		private String instanceId;
+		private Integer frontendPort;
 
 		private String eip;
 
-		private Integer frontendPort;
-
 		private String protocol;
-
-		private String realServer;
 
 		private Integer currentIndex;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private String instanceId;
+
+		private String realServer;
+
+		public Integer getFrontendPort() {
+			return this.frontendPort;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setFrontendPort(Integer frontendPort) {
+			this.frontendPort = frontendPort;
 		}
 
 		public String getEip() {
@@ -208,14 +208,6 @@ public class DescribeLayer4RulePolicyResponse extends AcsResponse {
 			this.eip = eip;
 		}
 
-		public Integer getFrontendPort() {
-			return this.frontendPort;
-		}
-
-		public void setFrontendPort(Integer frontendPort) {
-			this.frontendPort = frontendPort;
-		}
-
 		public String getBizProtocol() {
 			return this.protocol;
 		}
@@ -224,20 +216,28 @@ public class DescribeLayer4RulePolicyResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public String getRealServer() {
-			return this.realServer;
-		}
-
-		public void setRealServer(String realServer) {
-			this.realServer = realServer;
-		}
-
 		public Integer getCurrentIndex() {
 			return this.currentIndex;
 		}
 
 		public void setCurrentIndex(Integer currentIndex) {
 			this.currentIndex = currentIndex;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRealServer() {
+			return this.realServer;
+		}
+
+		public void setRealServer(String realServer) {
+			this.realServer = realServer;
 		}
 	}
 
