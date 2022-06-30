@@ -31,7 +31,7 @@ public class UpdateFaceEntityRequest extends RpcAcsRequest<UpdateFaceEntityRespo
 
 	private String dbName;
 	public UpdateFaceEntityRequest() {
-		super("facebody", "2019-12-30", "UpdateFaceEntity");
+		super("facebody", "2019-12-30", "UpdateFaceEntity", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class AddBodyTraceRequest extends RpcAcsRequest<AddBodyTraceResponse> {
 
 	private Long dbId;
 	public AddBodyTraceRequest() {
-		super("facebody", "2019-12-30", "AddBodyTrace");
+		super("facebody", "2019-12-30", "AddBodyTrace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

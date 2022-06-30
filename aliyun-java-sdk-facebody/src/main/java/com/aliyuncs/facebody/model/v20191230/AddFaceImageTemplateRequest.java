@@ -29,7 +29,7 @@ public class AddFaceImageTemplateRequest extends RpcAcsRequest<AddFaceImageTempl
 
 	private String imageURL;
 	public AddFaceImageTemplateRequest() {
-		super("facebody", "2019-12-30", "AddFaceImageTemplate");
+		super("facebody", "2019-12-30", "AddFaceImageTemplate", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

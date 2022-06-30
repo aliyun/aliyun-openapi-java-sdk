@@ -31,7 +31,7 @@ public class ListBodyPersonRequest extends RpcAcsRequest<ListBodyPersonResponse>
 
 	private Long dbId;
 	public ListBodyPersonRequest() {
-		super("facebody", "2019-12-30", "ListBodyPerson");
+		super("facebody", "2019-12-30", "ListBodyPerson", "facebody");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

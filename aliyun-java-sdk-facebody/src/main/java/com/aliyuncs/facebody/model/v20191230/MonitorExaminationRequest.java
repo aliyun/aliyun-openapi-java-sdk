@@ -29,7 +29,7 @@ public class MonitorExaminationRequest extends RpcAcsRequest<MonitorExaminationR
 
 	private String imageURL;
 	public MonitorExaminationRequest() {
-		super("facebody", "2019-12-30", "MonitorExamination");
+		super("facebody", "2019-12-30", "MonitorExamination", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

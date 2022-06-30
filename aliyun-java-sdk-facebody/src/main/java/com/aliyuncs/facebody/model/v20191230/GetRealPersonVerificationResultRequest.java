@@ -29,7 +29,7 @@ public class GetRealPersonVerificationResultRequest extends RpcAcsRequest<GetRea
 
 	private String verificationToken;
 	public GetRealPersonVerificationResultRequest() {
-		super("facebody", "2019-12-30", "GetRealPersonVerificationResult");
+		super("facebody", "2019-12-30", "GetRealPersonVerificationResult", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class FaceFilterRequest extends RpcAcsRequest<FaceFilterResponse> {
 
 	private String imageURL;
 	public FaceFilterRequest() {
-		super("facebody", "2019-12-30", "FaceFilter");
+		super("facebody", "2019-12-30", "FaceFilter", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

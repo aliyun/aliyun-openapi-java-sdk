@@ -27,7 +27,7 @@ public class DetectChefCapRequest extends RpcAcsRequest<DetectChefCapResponse> {
 
 	private String imageURL;
 	public DetectChefCapRequest() {
-		super("facebody", "2019-12-30", "DetectChefCap");
+		super("facebody", "2019-12-30", "DetectChefCap", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DetectPedestrianIntrusionRequest extends RpcAcsRequest<DetectPedest
 
 	private String imageURL;
 	public DetectPedestrianIntrusionRequest() {
-		super("facebody", "2019-12-30", "DetectPedestrianIntrusion");
+		super("facebody", "2019-12-30", "DetectPedestrianIntrusion", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

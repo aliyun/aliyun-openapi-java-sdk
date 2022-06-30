@@ -29,7 +29,7 @@ public class ExtractFingerPrintRequest extends RpcAcsRequest<ExtractFingerPrintR
 
 	private String imageURL;
 	public ExtractFingerPrintRequest() {
-		super("facebody", "2019-12-30", "ExtractFingerPrint");
+		super("facebody", "2019-12-30", "ExtractFingerPrint", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

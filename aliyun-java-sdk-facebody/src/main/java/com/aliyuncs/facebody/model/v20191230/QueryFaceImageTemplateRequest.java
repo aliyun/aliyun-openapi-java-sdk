@@ -29,7 +29,7 @@ public class QueryFaceImageTemplateRequest extends RpcAcsRequest<QueryFaceImageT
 
 	private String templateId;
 	public QueryFaceImageTemplateRequest() {
-		super("facebody", "2019-12-30", "QueryFaceImageTemplate");
+		super("facebody", "2019-12-30", "QueryFaceImageTemplate", "facebody");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

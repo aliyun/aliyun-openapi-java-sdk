@@ -29,7 +29,7 @@ public class DeleteFaceEntityRequest extends RpcAcsRequest<DeleteFaceEntityRespo
 
 	private String dbName;
 	public DeleteFaceEntityRequest() {
-		super("facebody", "2019-12-30", "DeleteFaceEntity");
+		super("facebody", "2019-12-30", "DeleteFaceEntity", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

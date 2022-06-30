@@ -31,7 +31,7 @@ public class GenRealPersonVerificationTokenRequest extends RpcAcsRequest<GenReal
 
 	private String certificateName;
 	public GenRealPersonVerificationTokenRequest() {
-		super("facebody", "2019-12-30", "GenRealPersonVerificationToken");
+		super("facebody", "2019-12-30", "GenRealPersonVerificationToken", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

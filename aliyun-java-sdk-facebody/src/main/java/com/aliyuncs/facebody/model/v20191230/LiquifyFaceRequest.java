@@ -29,7 +29,7 @@ public class LiquifyFaceRequest extends RpcAcsRequest<LiquifyFaceResponse> {
 
 	private String imageURL;
 	public LiquifyFaceRequest() {
-		super("facebody", "2019-12-30", "LiquifyFace");
+		super("facebody", "2019-12-30", "LiquifyFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

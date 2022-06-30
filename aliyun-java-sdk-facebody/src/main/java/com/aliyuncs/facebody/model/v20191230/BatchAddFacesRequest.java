@@ -41,7 +41,7 @@ public class BatchAddFacesRequest extends RpcAcsRequest<BatchAddFacesResponse> {
 	@SerializedName("faces")
 	private List<Faces> faces;
 	public BatchAddFacesRequest() {
-		super("facebody", "2019-12-30", "BatchAddFaces");
+		super("facebody", "2019-12-30", "BatchAddFaces", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

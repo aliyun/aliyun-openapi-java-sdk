@@ -56,7 +56,7 @@ public class BeautifyBodyRequest extends RpcAcsRequest<BeautifyBodyResponse> {
 	@SerializedName("poseList")
 	private List<PoseList> poseList;
 	public BeautifyBodyRequest() {
-		super("facebody", "2019-12-30", "BeautifyBody");
+		super("facebody", "2019-12-30", "BeautifyBody", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,13 +24,39 @@ import com.aliyuncs.facebody.Endpoint;
  */
 public class ListFaceDbsRequest extends RpcAcsRequest<ListFaceDbsResponse> {
 	   
+
+	private Long limit;
+
+	private Long offset;
 	public ListFaceDbsRequest() {
-		super("facebody", "2019-12-30", "ListFaceDbs");
+		super("facebody", "2019-12-30", "ListFaceDbs", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Long limit) {
+		this.limit = limit;
+		if(limit != null){
+			putBodyParameter("Limit", limit.toString());
+		}
+	}
+
+	public Long getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(Long offset) {
+		this.offset = offset;
+		if(offset != null){
+			putBodyParameter("Offset", offset.toString());
+		}
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public class RetouchSkinRequest extends RpcAcsRequest<RetouchSkinResponse> {
 
 	private String imageURL;
 	public RetouchSkinRequest() {
-		super("facebody", "2019-12-30", "RetouchSkin");
+		super("facebody", "2019-12-30", "RetouchSkin", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
