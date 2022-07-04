@@ -1,3 +1,7 @@
+2022-07-04 Version: 2.0.1
+- Update API error codes.
+- Adjust parameters verification rules for some APIs.
+
 2022-03-04 Version: 2.0.0
 - Initialize APIs.
 

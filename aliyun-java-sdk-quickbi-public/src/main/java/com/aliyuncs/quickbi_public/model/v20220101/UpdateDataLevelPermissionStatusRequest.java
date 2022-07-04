@@ -16,7 +16,6 @@ package com.aliyuncs.quickbi_public.model.v20220101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.quickbi_public.Endpoint;
 
 /**
  * @author auto create
@@ -31,12 +30,8 @@ public class UpdateDataLevelPermissionStatusRequest extends RpcAcsRequest<Update
 
 	private String cubeId;
 	public UpdateDataLevelPermissionStatusRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "quickbi");
+		super("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "quick");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Integer getIsOpen() {
