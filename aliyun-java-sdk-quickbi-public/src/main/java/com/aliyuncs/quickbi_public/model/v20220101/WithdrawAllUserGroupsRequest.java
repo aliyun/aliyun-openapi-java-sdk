@@ -26,7 +26,7 @@ public class WithdrawAllUserGroupsRequest extends RpcAcsRequest<WithdrawAllUserG
 
 	private String userId;
 	public WithdrawAllUserGroupsRequest() {
-		super("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "quick");
+		super("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class QueryReadableResourcesListByUserIdRequest extends RpcAcsRequest<Que
 
 	private String userId;
 	public QueryReadableResourcesListByUserIdRequest() {
-		super("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserId", "quick");
+		super("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserId", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

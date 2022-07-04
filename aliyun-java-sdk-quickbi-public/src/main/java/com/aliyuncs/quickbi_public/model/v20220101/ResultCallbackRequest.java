@@ -30,7 +30,7 @@ public class ResultCallbackRequest extends RpcAcsRequest<ResultCallbackResponse>
 
 	private Integer status;
 	public ResultCallbackRequest() {
-		super("quickbi-public", "2022-01-01", "ResultCallback", "quick");
+		super("quickbi-public", "2022-01-01", "ResultCallback", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

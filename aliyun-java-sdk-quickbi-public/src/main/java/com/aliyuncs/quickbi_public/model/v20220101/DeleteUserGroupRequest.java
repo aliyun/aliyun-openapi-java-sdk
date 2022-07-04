@@ -26,7 +26,7 @@ public class DeleteUserGroupRequest extends RpcAcsRequest<DeleteUserGroupRespons
 
 	private String userGroupId;
 	public DeleteUserGroupRequest() {
-		super("quickbi-public", "2022-01-01", "DeleteUserGroup", "quick");
+		super("quickbi-public", "2022-01-01", "DeleteUserGroup", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

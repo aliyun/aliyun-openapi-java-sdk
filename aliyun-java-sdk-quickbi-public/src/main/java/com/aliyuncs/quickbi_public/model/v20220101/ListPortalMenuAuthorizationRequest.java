@@ -26,7 +26,7 @@ public class ListPortalMenuAuthorizationRequest extends RpcAcsRequest<ListPortal
 
 	private String dataPortalId;
 	public ListPortalMenuAuthorizationRequest() {
-		super("quickbi-public", "2022-01-01", "ListPortalMenuAuthorization", "quick");
+		super("quickbi-public", "2022-01-01", "ListPortalMenuAuthorization", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

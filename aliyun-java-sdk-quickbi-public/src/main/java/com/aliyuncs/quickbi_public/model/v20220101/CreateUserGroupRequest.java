@@ -32,7 +32,7 @@ public class CreateUserGroupRequest extends RpcAcsRequest<CreateUserGroupRespons
 
 	private String parentUserGroupId;
 	public CreateUserGroupRequest() {
-		super("quickbi-public", "2022-01-01", "CreateUserGroup", "quick");
+		super("quickbi-public", "2022-01-01", "CreateUserGroup", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

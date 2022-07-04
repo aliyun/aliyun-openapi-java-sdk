@@ -26,7 +26,7 @@ public class QueryShareListRequest extends RpcAcsRequest<QueryShareListResponse>
 
 	private String reportId;
 	public QueryShareListRequest() {
-		super("quickbi-public", "2022-01-01", "QueryShareList", "quick");
+		super("quickbi-public", "2022-01-01", "QueryShareList", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

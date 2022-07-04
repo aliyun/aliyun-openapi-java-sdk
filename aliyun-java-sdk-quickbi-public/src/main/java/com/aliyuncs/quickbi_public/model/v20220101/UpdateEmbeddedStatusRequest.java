@@ -28,7 +28,7 @@ public class UpdateEmbeddedStatusRequest extends RpcAcsRequest<UpdateEmbeddedSta
 
 	private Boolean thirdPartAuthFlag;
 	public UpdateEmbeddedStatusRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "quick");
+		super("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class DeleteDataLevelPermissionRuleUsersRequest extends RpcAcsRequest<Del
 
 	private String deleteUserModel;
 	public DeleteDataLevelPermissionRuleUsersRequest() {
-		super("quickbi-public", "2022-01-01", "DeleteDataLevelPermissionRuleUsers", "quick");
+		super("quickbi-public", "2022-01-01", "DeleteDataLevelPermissionRuleUsers", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

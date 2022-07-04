@@ -32,7 +32,7 @@ public class QueryWorkspaceUserListRequest extends RpcAcsRequest<QueryWorkspaceU
 
 	private String workspaceId;
 	public QueryWorkspaceUserListRequest() {
-		super("quickbi-public", "2022-01-01", "QueryWorkspaceUserList", "quick");
+		super("quickbi-public", "2022-01-01", "QueryWorkspaceUserList", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

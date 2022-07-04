@@ -26,7 +26,7 @@ public class DeleteTicketRequest extends RpcAcsRequest<DeleteTicketResponse> {
 
 	private String ticket;
 	public DeleteTicketRequest() {
-		super("quickbi-public", "2022-01-01", "DeleteTicket", "quick");
+		super("quickbi-public", "2022-01-01", "DeleteTicket", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

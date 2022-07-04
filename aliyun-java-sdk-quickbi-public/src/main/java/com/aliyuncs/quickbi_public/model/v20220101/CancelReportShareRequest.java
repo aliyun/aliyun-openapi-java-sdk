@@ -30,7 +30,7 @@ public class CancelReportShareRequest extends RpcAcsRequest<CancelReportShareRes
 
 	private String shareToIds;
 	public CancelReportShareRequest() {
-		super("quickbi-public", "2022-01-01", "CancelReportShare", "quick");
+		super("quickbi-public", "2022-01-01", "CancelReportShare", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

@@ -34,7 +34,7 @@ public class AddDataLevelPermissionWhiteListRequest extends RpcAcsRequest<AddDat
 
 	private String cubeId;
 	public AddDataLevelPermissionWhiteListRequest() {
-		super("quickbi-public", "2022-01-01", "AddDataLevelPermissionWhiteList", "quick");
+		super("quickbi-public", "2022-01-01", "AddDataLevelPermissionWhiteList", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

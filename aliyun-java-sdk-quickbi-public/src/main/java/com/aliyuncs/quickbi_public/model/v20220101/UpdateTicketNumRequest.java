@@ -28,7 +28,7 @@ public class UpdateTicketNumRequest extends RpcAcsRequest<UpdateTicketNumRespons
 
 	private Integer ticketNum;
 	public UpdateTicketNumRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateTicketNum", "quick");
+		super("quickbi-public", "2022-01-01", "UpdateTicketNum", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

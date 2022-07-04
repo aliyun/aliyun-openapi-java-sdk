@@ -26,7 +26,7 @@ public class QueryUserGroupListByParentIdRequest extends RpcAcsRequest<QueryUser
 
 	private String parentUserGroupId;
 	public QueryUserGroupListByParentIdRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserGroupListByParentId", "quick");
+		super("quickbi-public", "2022-01-01", "QueryUserGroupListByParentId", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

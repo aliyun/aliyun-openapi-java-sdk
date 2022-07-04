@@ -32,7 +32,7 @@ public class ListSharedReportsRequest extends RpcAcsRequest<ListSharedReportsRes
 
 	private String userId;
 	public ListSharedReportsRequest() {
-		super("quickbi-public", "2022-01-01", "ListSharedReports", "quick");
+		super("quickbi-public", "2022-01-01", "ListSharedReports", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

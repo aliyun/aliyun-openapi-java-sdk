@@ -26,7 +26,7 @@ public class QueryDatasetDetailInfoRequest extends RpcAcsRequest<QueryDatasetDet
 
 	private String datasetId;
 	public QueryDatasetDetailInfoRequest() {
-		super("quickbi-public", "2022-01-01", "QueryDatasetDetailInfo", "quick");
+		super("quickbi-public", "2022-01-01", "QueryDatasetDetailInfo", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

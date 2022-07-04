@@ -28,7 +28,7 @@ public class SaveFavoritesRequest extends RpcAcsRequest<SaveFavoritesResponse> {
 
 	private String userId;
 	public SaveFavoritesRequest() {
-		super("quickbi-public", "2022-01-01", "SaveFavorites", "quick");
+		super("quickbi-public", "2022-01-01", "SaveFavorites", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

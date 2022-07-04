@@ -21,12 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryWorksBloodRelationshipRequest extends RpcAcsRequest<QueryWorksBloodRelationshipResponse> {
+public class QueryEmbeddedStatusRequest extends RpcAcsRequest<QueryEmbeddedStatusResponse> {
 	   
 
 	private String worksId;
-	public QueryWorksBloodRelationshipRequest() {
-		super("quickbi-public", "2022-01-01", "QueryWorksBloodRelationship", "quickbi");
+	public QueryEmbeddedStatusRequest() {
+		super("quickbi-public", "2022-01-01", "QueryEmbeddedStatus", "quickbi");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,8 +42,8 @@ public class QueryWorksBloodRelationshipRequest extends RpcAcsRequest<QueryWorks
 	}
 
 	@Override
-	public Class<QueryWorksBloodRelationshipResponse> getResponseClass() {
-		return QueryWorksBloodRelationshipResponse.class;
+	public Class<QueryEmbeddedStatusResponse> getResponseClass() {
+		return QueryEmbeddedStatusResponse.class;
 	}
 
 }

@@ -26,7 +26,7 @@ public class QueryDatasetSwitchInfoRequest extends RpcAcsRequest<QueryDatasetSwi
 
 	private String cubeId;
 	public QueryDatasetSwitchInfoRequest() {
-		super("quickbi-public", "2022-01-01", "QueryDatasetSwitchInfo", "quick");
+		super("quickbi-public", "2022-01-01", "QueryDatasetSwitchInfo", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

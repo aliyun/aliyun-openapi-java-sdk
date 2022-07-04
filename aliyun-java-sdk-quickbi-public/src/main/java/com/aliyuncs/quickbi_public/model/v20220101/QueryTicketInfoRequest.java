@@ -26,7 +26,7 @@ public class QueryTicketInfoRequest extends RpcAcsRequest<QueryTicketInfoRespons
 
 	private String ticket;
 	public QueryTicketInfoRequest() {
-		super("quickbi-public", "2022-01-01", "QueryTicketInfo", "quick");
+		super("quickbi-public", "2022-01-01", "QueryTicketInfo", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

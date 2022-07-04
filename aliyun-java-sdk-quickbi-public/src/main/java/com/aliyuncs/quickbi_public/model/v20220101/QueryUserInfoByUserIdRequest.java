@@ -26,7 +26,7 @@ public class QueryUserInfoByUserIdRequest extends RpcAcsRequest<QueryUserInfoByU
 
 	private String userId;
 	public QueryUserInfoByUserIdRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserInfoByUserId", "quick");
+		super("quickbi-public", "2022-01-01", "QueryUserInfoByUserId", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

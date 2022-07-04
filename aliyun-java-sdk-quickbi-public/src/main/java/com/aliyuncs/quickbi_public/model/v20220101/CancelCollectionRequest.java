@@ -28,7 +28,7 @@ public class CancelCollectionRequest extends RpcAcsRequest<CancelCollectionRespo
 
 	private String userId;
 	public CancelCollectionRequest() {
-		super("quickbi-public", "2022-01-01", "CancelCollection", "quick");
+		super("quickbi-public", "2022-01-01", "CancelCollection", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

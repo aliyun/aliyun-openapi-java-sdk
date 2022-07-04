@@ -30,7 +30,7 @@ public class UpdateDataLevelPermissionStatusRequest extends RpcAcsRequest<Update
 
 	private String cubeId;
 	public UpdateDataLevelPermissionStatusRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "quick");
+		super("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

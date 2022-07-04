@@ -26,7 +26,7 @@ public class ListCollectionsRequest extends RpcAcsRequest<ListCollectionsRespons
 
 	private String userId;
 	public ListCollectionsRequest() {
-		super("quickbi-public", "2022-01-01", "ListCollections", "quick");
+		super("quickbi-public", "2022-01-01", "ListCollections", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

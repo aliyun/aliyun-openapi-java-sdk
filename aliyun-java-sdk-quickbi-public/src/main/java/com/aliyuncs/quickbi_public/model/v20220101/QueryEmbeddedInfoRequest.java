@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class QueryEmbeddedInfoRequest extends RpcAcsRequest<QueryEmbeddedInfoResponse> {
 	   
 	public QueryEmbeddedInfoRequest() {
-		super("quickbi-public", "2022-01-01", "QueryEmbeddedInfo", "quick");
+		super("quickbi-public", "2022-01-01", "QueryEmbeddedInfo", "quickbi");
 		setMethod(MethodType.POST);
 	}
 

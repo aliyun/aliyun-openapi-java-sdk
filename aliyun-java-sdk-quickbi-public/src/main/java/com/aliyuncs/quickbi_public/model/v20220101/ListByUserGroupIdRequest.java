@@ -26,7 +26,7 @@ public class ListByUserGroupIdRequest extends RpcAcsRequest<ListByUserGroupIdRes
 
 	private String userGroupIds;
 	public ListByUserGroupIdRequest() {
-		super("quickbi-public", "2022-01-01", "ListByUserGroupId", "quick");
+		super("quickbi-public", "2022-01-01", "ListByUserGroupId", "quickbi");
 		setMethod(MethodType.POST);
 	}
 
