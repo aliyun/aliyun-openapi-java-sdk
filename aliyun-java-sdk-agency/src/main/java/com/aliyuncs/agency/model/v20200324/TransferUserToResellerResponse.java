@@ -12,32 +12,25 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.agency.model.v20210609;
+package com.aliyuncs.agency.model.v20200324;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.agency.transform.v20210609.QueryFusionOrderListResponseUnmarshaller;
+import com.aliyuncs.agency.transform.v20200324.TransferUserToResellerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryFusionOrderListResponse extends AcsResponse {
+public class TransferUserToResellerResponse extends AcsResponse {
 
 	private String msg;
 
-	private Integer total;
-
 	private String code;
 
-	private Integer pageNo;
+	private Boolean data;
 
 	private String requestId;
-
-	private Integer pageSize;
-
-	private List<String> data;
 
 	public String getMsg() {
 		return this.msg;
@@ -45,14 +38,6 @@ public class QueryFusionOrderListResponse extends AcsResponse {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
 	}
 
 	public String getCode() {
@@ -63,12 +48,12 @@ public class QueryFusionOrderListResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public Boolean getData() {
+		return this.data;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -79,29 +64,8 @@ public class QueryFusionOrderListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public List<String> getData() {
-		return this.data;
-	}
-
-	public void setData(List<String> data) {
-		this.data = data;
-	}
-
 	@Override
-	public QueryFusionOrderListResponse getInstance(UnmarshallerContext context) {
-		return	QueryFusionOrderListResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public TransferUserToResellerResponse getInstance(UnmarshallerContext context) {
+		return	TransferUserToResellerResponseUnmarshaller.unmarshall(this, context);
 	}
 }

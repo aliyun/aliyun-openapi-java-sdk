@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.agency.model.v20210609;
+package com.aliyuncs.agency.model.v20200324;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,14 @@ import com.aliyuncs.agency.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetOwnerAgreementInstanceRequest extends RpcAcsRequest<GetOwnerAgreementInstanceResponse> {
+public class GetCustomerRebateTypeRequest extends RpcAcsRequest<GetCustomerRebateTypeResponse> {
 	   
 
-	private String aliyunUid;
-	public GetOwnerAgreementInstanceRequest() {
-		super("Agency", "2021-06-09", "GetOwnerAgreementInstance");
+	private Long transferUid;
+
+	private String siteId;
+	public GetCustomerRebateTypeRequest() {
+		super("Agency", "2020-03-24", "GetCustomerRebateType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetOwnerAgreementInstanceRequest extends RpcAcsRequest<GetOwnerAgre
 		} catch (Exception e) {}
 	}
 
-	public String getAliyunUid() {
-		return this.aliyunUid;
+	public Long getTransferUid() {
+		return this.transferUid;
 	}
 
-	public void setAliyunUid(String aliyunUid) {
-		this.aliyunUid = aliyunUid;
-		if(aliyunUid != null){
-			putQueryParameter("AliyunUid", aliyunUid);
+	public void setTransferUid(Long transferUid) {
+		this.transferUid = transferUid;
+		if(transferUid != null){
+			putQueryParameter("TransferUid", transferUid.toString());
+		}
+	}
+
+	public String getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(String siteId) {
+		this.siteId = siteId;
+		if(siteId != null){
+			putQueryParameter("SiteId", siteId);
 		}
 	}
 
 	@Override
-	public Class<GetOwnerAgreementInstanceResponse> getResponseClass() {
-		return GetOwnerAgreementInstanceResponse.class;
+	public Class<GetCustomerRebateTypeResponse> getResponseClass() {
+		return GetCustomerRebateTypeResponse.class;
 	}
 
 }

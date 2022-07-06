@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.agency.model.v20210609;
+package com.aliyuncs.agency.model.v20200324;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,14 @@ import com.aliyuncs.agency.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetPartnerByUidRequest extends RpcAcsRequest<GetPartnerByUidResponse> {
+public class CreateBpmsResultRequest extends RpcAcsRequest<CreateBpmsResultResponse> {
 	   
 
-	private String aliyunUid;
-	public GetPartnerByUidRequest() {
-		super("Agency", "2021-06-09", "GetPartnerByUid");
+	private String bpmsResultId;
+
+	private String applyStatus;
+	public CreateBpmsResultRequest() {
+		super("Agency", "2020-03-24", "CreateBpmsResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetPartnerByUidRequest extends RpcAcsRequest<GetPartnerByUidRespons
 		} catch (Exception e) {}
 	}
 
-	public String getAliyunUid() {
-		return this.aliyunUid;
+	public String getBpmsResultId() {
+		return this.bpmsResultId;
 	}
 
-	public void setAliyunUid(String aliyunUid) {
-		this.aliyunUid = aliyunUid;
-		if(aliyunUid != null){
-			putQueryParameter("AliyunUid", aliyunUid);
+	public void setBpmsResultId(String bpmsResultId) {
+		this.bpmsResultId = bpmsResultId;
+		if(bpmsResultId != null){
+			putQueryParameter("BpmsResultId", bpmsResultId);
+		}
+	}
+
+	public String getApplyStatus() {
+		return this.applyStatus;
+	}
+
+	public void setApplyStatus(String applyStatus) {
+		this.applyStatus = applyStatus;
+		if(applyStatus != null){
+			putQueryParameter("ApplyStatus", applyStatus);
 		}
 	}
 
 	@Override
-	public Class<GetPartnerByUidResponse> getResponseClass() {
-		return GetPartnerByUidResponse.class;
+	public Class<CreateBpmsResultResponse> getResponseClass() {
+		return CreateBpmsResultResponse.class;
 	}
 
 }
